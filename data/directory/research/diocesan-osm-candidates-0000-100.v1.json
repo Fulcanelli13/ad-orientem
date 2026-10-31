@@ -1,0 +1,3054 @@
+{
+  "schema": "AO_DIOCESAN_OVERPASS_PIN_CANDIDATES_V1",
+  "started_at": "2026-10-31T06:00:25.971Z",
+  "as_of": "2026-10-31T06:29:33.781Z",
+  "source_audit": "data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json",
+  "source_count": 442,
+  "offset": 0,
+  "limit": 100,
+  "rows_written": 100,
+  "provider": "OpenStreetMap Overpass / ODbL",
+  "query_style": "ONE_SOURCE_SITE_PER_BOUNDED_REQUEST",
+  "policy": "Only research candidates. No automatic coordinate promotion, operator proof or photograph approvals. Network errors and skipped sites are NOT no-matches.",
+  "fetched_count": 25,
+  "unqueried_count": 58,
+  "matched_count": 23,
+  "summary": {
+    "NETWORK_FAILED": 17,
+    "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED": 18,
+    "MULTIPLE_NEARBY_CHURCHES_REVIEW": 5,
+    "NO_MATCHED_OSM_CHURCH": 2,
+    "NOT_QUERIED_PROVIDER_OUTAGE": 58
+  },
+  "rows": [
+    {
+      "physical_group_id": "RG-01BD453A902C",
+      "source_id": "AO-AMER-R28-US-29-14",
+      "name": "St Joseph the Worker Catholic",
+      "country": "US",
+      "source_lat": 37.198379,
+      "source_lng": -93.285794,
+      "source_description": "Springfield, MO (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "HTTP 502"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-028C2D07EF1C",
+      "source_id": "AO-AMER-R28-US-30-19",
+      "name": "St Mary",
+      "country": "US",
+      "source_lat": 39.64462,
+      "source_lng": -77.724979,
+      "source_description": "Hagerstown, MD (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:956997178",
+          "source_url": "https://www.openstreetmap.org/way/956997178",
+          "name": "Saint Mary Catholic Church",
+          "lat": 39.6446277,
+          "lng": -77.7249439,
+          "distance_m": 3,
+          "name_shared_tokens": [
+            "mary"
+          ],
+          "score": 100,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "West Washington Street",
+            "addr:housenumber": "224"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "node:358252687",
+          "source_url": "https://www.openstreetmap.org/node/358252687",
+          "name": "First Presbyterian Church",
+          "lat": 39.6437072,
+          "lng": -77.7244377,
+          "distance_m": 112,
+          "name_shared_tokens": [],
+          "score": 22,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-02DEF502169C",
+      "source_id": "AO-AMER-R26-CA-04-05",
+      "name": "St. Oliver Plunkett",
+      "country": "CA",
+      "source_lat": 47.601888,
+      "source_lng": -52.705592,
+      "source_description": "St. John's (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:808024090",
+          "source_url": "https://www.openstreetmap.org/way/808024090",
+          "name": "St. Paul's Roman Catholic Church",
+          "lat": 47.6018297,
+          "lng": -52.7063465,
+          "distance_m": 57,
+          "name_shared_tokens": [],
+          "score": 34,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Newfoundland Drive",
+            "addr:housenumber": "340"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0320E86C5E56",
+      "source_id": "AO-AMER-R28-US-19-03",
+      "name": "Sacred Heart",
+      "country": "US",
+      "source_lat": 33.730452,
+      "source_lng": -116.365598,
+      "source_description": "43775 Deep Canyon Rd, Palm Desert CA",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:105811081",
+          "source_url": "https://www.openstreetmap.org/way/105811081",
+          "name": "Sacred Heart Catholic Church",
+          "lat": 33.7303742,
+          "lng": -116.3656147,
+          "distance_m": 9,
+          "name_shared_tokens": [
+            "sacred",
+            "heart"
+          ],
+          "score": 99,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "relation:1506001",
+          "source_url": "https://www.openstreetmap.org/relation/1506001",
+          "name": "Sacred Heart Catholic Church",
+          "lat": 33.7301957,
+          "lng": -116.3654012,
+          "distance_m": 34,
+          "name_shared_tokens": [
+            "sacred",
+            "heart"
+          ],
+          "score": 95,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": true,
+      "review_status": "MULTIPLE_NEARBY_CHURCHES_REVIEW",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-039BD5307887",
+      "source_id": "AO-WORLD-R35-BR-10-14",
+      "name": "São João Maria Vianney, Imaculado Coração de Nossa Senhora do Rosário de Fátima",
+      "country": "BR",
+      "source_lat": -21.750176,
+      "source_lng": -41.347555,
+      "source_description": "354 - Parque Leopoldina (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "HTTP 504"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-03A3AE24D334",
+      "source_id": "AO-AMER-R28-US-19-07",
+      "name": "Sacred Heart Catholic",
+      "country": "US",
+      "source_lat": 32.060232,
+      "source_lng": -81.099493,
+      "source_description": "Savannah, GA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:358788695",
+          "source_url": "https://www.openstreetmap.org/node/358788695",
+          "name": "Sacred Heart Church",
+          "lat": 32.0604,
+          "lng": -81.0995,
+          "distance_m": 19,
+          "name_shared_tokens": [
+            "sacred",
+            "heart"
+          ],
+          "score": 92,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": "Bull Street",
+            "addr:housenumber": "1707"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "way:950223950",
+          "source_url": "https://www.openstreetmap.org/way/950223950",
+          "name": null,
+          "lat": 32.0603972,
+          "lng": -81.0993736,
+          "distance_m": 22,
+          "name_shared_tokens": [],
+          "score": 34,
+          "feature_tags": {
+            "amenity": null,
+            "building": "church",
+            "religion": null,
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "HTTP 502"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-03BF18E211FA",
+      "source_id": "AO-EUR-DE-073",
+      "name": "Maria-Schnee-Kapelle (Mary of the Snows Chapel)",
+      "country": "DE",
+      "source_lat": 49.018216,
+      "source_lng": 12.105648,
+      "source_description": "93047 Regensburg (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:367734530",
+          "source_url": "https://www.openstreetmap.org/node/367734530",
+          "name": "Maria Schnee",
+          "lat": 49.0181781,
+          "lng": 12.1055868,
+          "distance_m": 6,
+          "name_shared_tokens": [
+            "maria",
+            "schnee"
+          ],
+          "score": 64,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-04A1B56A72CF",
+      "source_id": "AO-AMER-R28-US-23-01",
+      "name": "San Secondo d'Asti",
+      "country": "US",
+      "source_lat": 34.064089,
+      "source_lng": -117.5834,
+      "source_description": "250 N Turner Avenue, Guasti (Ontario), CA 91761",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-04F62704BC60",
+      "source_id": "AO-AMER-R28-US-34-01",
+      "name": "St Peter Catholic Student Center",
+      "country": "US",
+      "source_lat": 31.543205,
+      "source_lng": -97.123704,
+      "source_description": "Waco, TX (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-053444577833",
+      "source_id": "AO-AMER-R28-US-37-12",
+      "name": "St. Mary of the Assumption Church",
+      "country": "US",
+      "source_lat": 42.099841,
+      "source_lng": -75.90496,
+      "source_description": "Binghamton, NY (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:357636529",
+          "source_url": "https://www.openstreetmap.org/node/357636529",
+          "name": "Saint Mary's Catholic Church",
+          "lat": 42.1001159,
+          "lng": -75.904926,
+          "distance_m": 31,
+          "name_shared_tokens": [
+            "mary"
+          ],
+          "score": 67,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-05E1D8753555",
+      "source_id": "AO-AMER-R28-US-24-03",
+      "name": "St Anthony",
+      "country": "US",
+      "source_lat": 45.675888,
+      "source_lng": -108.774859,
+      "source_description": "Laurel, MT (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:10281664327",
+          "source_url": "https://www.openstreetmap.org/node/10281664327",
+          "name": "St Anthony's Catholic Church",
+          "lat": 45.6759069,
+          "lng": -108.7751063,
+          "distance_m": 19,
+          "name_shared_tokens": [
+            "anthony"
+          ],
+          "score": 92,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-06296505CFF3",
+      "source_id": "AO-AMER-R28-US-31-09",
+      "name": "St Mary Catholic Parish",
+      "country": "US",
+      "source_lat": 45.659628,
+      "source_lng": -110.549708,
+      "source_description": "Livingston, MT (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "HTTP 504"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-06B5DD03D3AF",
+      "source_id": "AO-AMER-R28-US-37-09",
+      "name": "St. Mary Help of Christians",
+      "country": "US",
+      "source_lat": 43.726443,
+      "source_lng": -97.38981,
+      "source_description": "Salem, South Dakota (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:12745417411",
+          "source_url": "https://www.openstreetmap.org/node/12745417411",
+          "name": "St Mary's Catholic Church",
+          "lat": 43.7267599,
+          "lng": -97.3901237,
+          "distance_m": 43,
+          "name_shared_tokens": [
+            "mary"
+          ],
+          "score": 50,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-06FF8F6BD4B6",
+      "source_id": "AO-EUR-IT-021",
+      "name": "Chiesa del Sacro Cuore, detta ‘dei Sacconi'",
+      "country": "IT",
+      "source_lat": 43.211524,
+      "source_lng": 13.283223,
+      "source_description": "",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:304168167",
+          "source_url": "https://www.openstreetmap.org/way/304168167",
+          "name": "Chiesa del Sacro Cuore",
+          "lat": 43.2116103,
+          "lng": 13.2828901,
+          "distance_m": 29,
+          "name_shared_tokens": [
+            "sacro",
+            "cuore"
+          ],
+          "score": 61,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Via Filippo Corridoni",
+            "addr:housenumber": "10"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0712DCD78856",
+      "source_id": "AO-WORLD-R35-BR-05-19",
+      "name": "Igreja Nossa Senhora do Rosário dos Homens Pretos",
+      "country": "BR",
+      "source_lat": -1.45274,
+      "source_lng": -48.49717,
+      "source_description": "337 - Campina (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:1267548521",
+          "source_url": "https://www.openstreetmap.org/way/1267548521",
+          "name": "Igreja Nossa Senhora do Rosário dos Homens Pretos",
+          "lat": -1.4526174,
+          "lng": -48.497261,
+          "distance_m": 17,
+          "name_shared_tokens": [
+            "nossa",
+            "senhora",
+            "rosario",
+            "homens",
+            "pretos"
+          ],
+          "score": 98,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Rua Padre Prudêncio",
+            "addr:housenumber": "291"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "node:2930426352",
+          "source_url": "https://www.openstreetmap.org/node/2930426352",
+          "name": null,
+          "lat": -1.4524515,
+          "lng": -48.4970339,
+          "distance_m": 35,
+          "name_shared_tokens": [],
+          "score": 32,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-07FDD0150233",
+      "source_id": "AO-ASIA-PH-001",
+      "name": "Chapel of St. Augustine",
+      "country": "PH",
+      "source_lat": 14.5895,
+      "source_lng": 120.9747,
+      "source_description": "General Luna Street, Intramuros, Manila 1002, Philippines",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:89571506",
+          "source_url": "https://www.openstreetmap.org/way/89571506",
+          "name": "San Agustin Church",
+          "lat": 14.5889152,
+          "lng": 120.975345,
+          "distance_m": 95,
+          "name_shared_tokens": [],
+          "score": 29,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "General Luna Street",
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "way:267201806",
+          "source_url": "https://www.openstreetmap.org/way/267201806",
+          "name": "Joy Student Center",
+          "lat": 14.590189,
+          "lng": 120.9760698,
+          "distance_m": 166,
+          "name_shared_tokens": [],
+          "score": 14,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0952E5611381",
+      "source_id": "AO-WORLD-R35-AU-03-03",
+      "name": "St Joseph",
+      "country": "AU",
+      "source_lat": -36.364322,
+      "source_lng": 144.701918,
+      "source_description": "St Joseph's, Rochester, VIC, Australia",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:672567804",
+          "source_url": "https://www.openstreetmap.org/node/672567804",
+          "name": "St Joseph's Church",
+          "lat": -36.3650838,
+          "lng": 144.703225,
+          "distance_m": 144,
+          "name_shared_tokens": [
+            "joseph"
+          ],
+          "score": 80,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0A22291A4428",
+      "source_id": "AO-AMER-R28-US-26-06",
+      "name": "St Frances Cabrini",
+      "country": "US",
+      "source_lat": 31.281956,
+      "source_lng": -92.455895,
+      "source_description": "Alexandria, LA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:1062235053",
+          "source_url": "https://www.openstreetmap.org/way/1062235053",
+          "name": "Saint Frances Cabrini Catholic Church",
+          "lat": 31.282011,
+          "lng": -92.455895,
+          "distance_m": 6,
+          "name_shared_tokens": [
+            "frances",
+            "cabrini"
+          ],
+          "score": 99,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "East Texas Avenue",
+            "addr:housenumber": "2211"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0A6B76396C09",
+      "source_id": "AO-EUR-DE-002",
+      "name": "Adelhauser Kirche Mariä Verkündigung und Sankt Katharina",
+      "country": "DE",
+      "source_lat": 47.992845,
+      "source_lng": 7.85144,
+      "source_description": "Freiburg im Breisgau (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0AFAF04ADE71",
+      "source_id": "AO-EUR-DE-136",
+      "name": "St Mariä Himmelfahrt",
+      "country": "DE",
+      "source_lat": 50.867995,
+      "source_lng": 6.091263,
+      "source_description": "52134 Herzogenrath (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:243988946",
+          "source_url": "https://www.openstreetmap.org/way/243988946",
+          "name": "Mariä Himmelfahrt",
+          "lat": 50.8679565,
+          "lng": 6.0912411,
+          "distance_m": 5,
+          "name_shared_tokens": [
+            "maria",
+            "himmelfahrt"
+          ],
+          "score": 99,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0B4710CCF4A4",
+      "source_id": "AO-AMER-R28-US-30-06",
+      "name": "St Malachy",
+      "country": "US",
+      "source_lat": 35.131248,
+      "source_lng": -118.45356,
+      "source_description": "Tehachapi, CA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "node:358840798",
+          "source_url": "https://www.openstreetmap.org/node/358840798",
+          "name": "Saint Malachys Catholic Church",
+          "lat": 35.1309683,
+          "lng": -118.4534002,
+          "distance_m": 34,
+          "name_shared_tokens": [],
+          "score": 37,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "way:759731723",
+          "source_url": "https://www.openstreetmap.org/way/759731723",
+          "name": null,
+          "lat": 35.1309973,
+          "lng": -118.4530452,
+          "distance_m": 54,
+          "name_shared_tokens": [],
+          "score": 29,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": true,
+      "review_status": "MULTIPLE_NEARBY_CHURCHES_REVIEW",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0B7DBF338EFB",
+      "source_id": "AO-WORLD-R35-BR-07-04",
+      "name": "Instituto Magnificat",
+      "country": "BR",
+      "source_lat": -29.679259,
+      "source_lng": -53.810569,
+      "source_description": "1786 - Passo D'areia (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:381930126",
+          "source_url": "https://www.openstreetmap.org/way/381930126",
+          "name": null,
+          "lat": -29.6793427,
+          "lng": -53.8105632,
+          "distance_m": 9,
+          "name_shared_tokens": [],
+          "score": 41,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "apartments",
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": "Rua Ernesto Beck",
+            "addr:housenumber": "1786"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0B8749A10D66",
+      "source_id": "AO-AMER-R28-US-27-09",
+      "name": "St John Baptist Catholic",
+      "country": "US",
+      "source_lat": 32.370995,
+      "source_lng": -86.299357,
+      "source_description": "Montgomery, AL (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:692352694",
+          "source_url": "https://www.openstreetmap.org/way/692352694",
+          "name": "Saint John the Baptist Catholic Church",
+          "lat": 32.3710127,
+          "lng": -86.2993657,
+          "distance_m": 2,
+          "name_shared_tokens": [
+            "john",
+            "baptist"
+          ],
+          "score": 100,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "South Union Street",
+            "addr:housenumber": "543"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "node:358959658",
+          "source_url": "https://www.openstreetmap.org/node/358959658",
+          "name": "First Congregational Church",
+          "lat": 32.3715273,
+          "lng": -86.2996911,
+          "distance_m": 67,
+          "name_shared_tokens": [],
+          "score": 28,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": null,
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0BA8006DB9FE",
+      "source_id": "AO-AMER-R26-US-04-01",
+      "name": "Christ the King Chapel",
+      "country": "US",
+      "source_lat": 34.239243,
+      "source_lng": -86.721085,
+      "source_description": "Cullman, AL (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "HTTP 502"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "HTTP 504"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0CD08643932B",
+      "source_id": "AO-WORLD-R35-AU-04-01",
+      "name": "St. Albert Chapel",
+      "country": "AU",
+      "source_lat": -37.8016,
+      "source_lng": 144.9701,
+      "source_description": "Melbourne, Victoria (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:1016758027",
+          "source_url": "https://www.openstreetmap.org/way/1016758027",
+          "name": "Sacred Heart Church",
+          "lat": -37.8028128,
+          "lng": 144.9691221,
+          "distance_m": 160,
+          "name_shared_tokens": [],
+          "score": 20,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": "Rathdowne Street",
+            "addr:housenumber": "169"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://overpass-api.de/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0CF7DF0C68AC",
+      "source_id": "LMD:saint-patricks-church-albury-australia",
+      "name": "Saint Patrick's Church Albury, Australia",
+      "country": "AU",
+      "source_lat": -36.0832333,
+      "source_lng": 146.917215,
+      "source_description": "Albury, Australia (inherited label locality only; no new address corroboration)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:460667287",
+          "source_url": "https://www.openstreetmap.org/way/460667287",
+          "name": "St Patrick's Catholic Church",
+          "lat": -36.083298,
+          "lng": 146.9171806,
+          "distance_m": 8,
+          "name_shared_tokens": [
+            "patrick"
+          ],
+          "score": 60,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Smollett Street",
+            "addr:housenumber": "515"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0D877FEB085B",
+      "source_id": "AO-AMER-R28-US-19-05",
+      "name": "Sacred Heart",
+      "country": "US",
+      "source_lat": 45.955149,
+      "source_lng": -94.530467,
+      "source_description": "Sacred Heart Church, Flensburg, MN",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-0F97C0B3318A",
+      "source_id": "AO-WORLD-R35-BR-03-11",
+      "name": "Capela Tradicionalista Santa Terezinha",
+      "country": "BR",
+      "source_lat": -21.601794,
+      "source_lng": -41.314729,
+      "source_description": "Campos dos Goytacazes - RJ (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-105297E8CDC0",
+      "source_id": "AO-AMER-R28-US-19-16",
+      "name": "Sacred Heart Parish",
+      "country": "US",
+      "source_lat": 19.493743,
+      "source_lng": -154.942998,
+      "source_description": "Pāhoa, HI (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NO_MATCHED_OSM_CHURCH",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-11071B3095B2",
+      "source_id": "AO-AMER-R28-US-19-10",
+      "name": "Sacred Heart Chapel",
+      "country": "US",
+      "source_lat": 41.701835,
+      "source_lng": -70.246809,
+      "source_description": "32 Summer St, Yarmouth Port, MA 02675",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-1245282D1EAE",
+      "source_id": "AO-AMER-R28-US-31-04",
+      "name": "St Mary",
+      "country": "US",
+      "source_lat": 44.672817,
+      "source_lng": -74.977962,
+      "source_description": "Potsdam, NY (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "HTTP 504"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-129AD2FB533B",
+      "source_id": "AO-EUR-PL-010",
+      "name": "Chapel in Mother of God, Queen of Poland Parish",
+      "country": "PL",
+      "source_lat": 52.33846,
+      "source_lng": 21.240112,
+      "source_description": "Wołomin (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:497706272",
+          "source_url": "https://www.openstreetmap.org/way/497706272",
+          "name": "Kaplica pw. Matki Bożej Królowej Polski",
+          "lat": 52.3384009,
+          "lng": 21.2401274,
+          "distance_m": 7,
+          "name_shared_tokens": [],
+          "score": 41,
+          "feature_tags": {
+            "amenity": null,
+            "building": "chapel",
+            "religion": null,
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Kurkowa",
+            "addr:housenumber": "35"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "way:221568056",
+          "source_url": "https://www.openstreetmap.org/way/221568056",
+          "name": "Kościół pw. Matki Bożej Królowej Polski",
+          "lat": 52.3384607,
+          "lng": 21.239401,
+          "distance_m": 48,
+          "name_shared_tokens": [],
+          "score": 35,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Kurkowa",
+            "addr:housenumber": "35"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": true,
+      "review_status": "MULTIPLE_NEARBY_CHURCHES_REVIEW",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-12E1E9D493AB",
+      "source_id": "AO-WORLD-R35-AU-03-06",
+      "name": "St Joseph’s College Chapel",
+      "country": "AU",
+      "source_lat": -27.360275,
+      "source_lng": 153.063973,
+      "source_description": "Boondall QLD 4034 (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NO_MATCHED_OSM_CHURCH",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-13041FAB483E",
+      "source_id": "AO-AMER-R28-US-24-19",
+      "name": "St Benedict Catholic",
+      "country": "US",
+      "source_lat": 46.823379,
+      "source_lng": -92.101705,
+      "source_description": "Duluth, MN (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-1343D3163DDA",
+      "source_id": "AO-AMER-R28-US-29-03",
+      "name": "St Joseph Catholic",
+      "country": "US",
+      "source_lat": 44.601145,
+      "source_lng": -92.814053,
+      "source_description": "23955 Nicolai Ave E, Miesville (Hastings mailing), MN 55033",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:451807338",
+          "source_url": "https://www.openstreetmap.org/way/451807338",
+          "name": "St. Joseph Catholic Church",
+          "lat": 44.6010506,
+          "lng": -92.8134968,
+          "distance_m": 45,
+          "name_shared_tokens": [
+            "joseph"
+          ],
+          "score": 94,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "catholic",
+            "operator": null,
+            "addr:street": null,
+            "addr:housenumber": null
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": false,
+      "review_status": "CANDIDATE_NOT_INDEPENDENTLY_VERIFIED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-13979625992D",
+      "source_id": "AO-WORLD-R35-AR-01-14",
+      "name": "Chapel of San Juan de Luz",
+      "country": "AR",
+      "source_lat": -34.3794,
+      "source_lng": -58.717897,
+      "source_description": "Cno. a S. Benito 4000 (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-143B6D0503FF",
+      "source_id": "LMD:saint-aloysius-church-caulfield-north-australia",
+      "name": "Saint Aloysius Church Caulfield North, Australia",
+      "country": "AU",
+      "source_lat": -37.8732358,
+      "source_lng": 145.0257345,
+      "source_description": "Caulfield North, Australia (inherited label locality only; no new address corroboration)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:80821784",
+          "source_url": "https://www.openstreetmap.org/way/80821784",
+          "name": "St Aloysius (Newman Parish)",
+          "lat": -37.8731863,
+          "lng": 145.0256353,
+          "distance_m": 10,
+          "name_shared_tokens": [
+            "aloysius"
+          ],
+          "score": 55,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Balaclava Road",
+            "addr:housenumber": "233"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "node:8856085948",
+          "source_url": "https://www.openstreetmap.org/node/8856085948",
+          "name": "St Aloysius (Newman Parish)",
+          "lat": -37.8732397,
+          "lng": 145.0258821,
+          "distance_m": 13,
+          "name_shared_tokens": [
+            "aloysius"
+          ],
+          "score": 55,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "Balaclava Road",
+            "addr:housenumber": "233"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": true,
+      "review_status": "MULTIPLE_NEARBY_CHURCHES_REVIEW",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-16998B9BAA28",
+      "source_id": "AO-AMER-R28-US-24-10",
+      "name": "St Anthony the Abbot",
+      "country": "US",
+      "source_lat": 28.537492,
+      "source_lng": -82.390866,
+      "source_description": "20428 Cortez Blvd, Brooksville, FL 34601",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "HTTP 502"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-16E6EA20716E",
+      "source_id": "AO-AMER-R27-US-06-06",
+      "name": "Holy Family Parish",
+      "country": "US",
+      "source_lat": 43.043687,
+      "source_lng": -74.852518,
+      "source_description": "Little Falls, NY (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [
+        {
+          "osm_ref": "way:816003106",
+          "source_url": "https://www.openstreetmap.org/way/816003106",
+          "name": "Saint Mary Catholic Church",
+          "lat": 43.043633,
+          "lng": -74.8527635,
+          "distance_m": 21,
+          "name_shared_tokens": [],
+          "score": 39,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": "church",
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "East Main Street",
+            "addr:housenumber": "763"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        },
+        {
+          "osm_ref": "node:357633483",
+          "source_url": "https://www.openstreetmap.org/node/357633483",
+          "name": "Saint Mary's Roman Catholic Church",
+          "lat": 43.0436111,
+          "lng": -74.8527778,
+          "distance_m": 23,
+          "name_shared_tokens": [],
+          "score": 39,
+          "feature_tags": {
+            "amenity": "place_of_worship",
+            "building": null,
+            "religion": "christian",
+            "denomination": "roman_catholic",
+            "operator": null,
+            "addr:street": "East Main Street",
+            "addr:housenumber": "763"
+          },
+          "review_status": "CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED"
+        }
+      ],
+      "ambiguous": true,
+      "review_status": "MULTIPLE_NEARBY_CHURCHES_REVIEW",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "FETCH_SUCCESS",
+      "fetch_provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-18659A3C6ECE",
+      "source_id": "AO-AMER-R28-US-23-03",
+      "name": "Shrine Chapel of the Blessed Sacrament",
+      "country": "US",
+      "source_lat": 40.567239,
+      "source_lng": -74.635148,
+      "source_description": "52 W Somerset St, Raritan, NJ 08869",
+      "operator_scope": "ORATORY_OF_ST_PHILIP_NERI_PASTORAL_CARE_CONFIRMED",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-1867E9AFAF15",
+      "source_id": "AO-AMER-R28-US-23-14",
+      "name": "St Agnes",
+      "country": "US",
+      "source_lat": 30.44135,
+      "source_lng": -91.179627,
+      "source_description": "Baton Rouge, LA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-19429258007E",
+      "source_id": "AO-EUR-IT-045",
+      "name": "Church of Poor Saint Francis",
+      "country": "IT",
+      "source_lat": 43.7765,
+      "source_lng": 11.25997,
+      "source_description": "",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NETWORK_FAILED",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NETWORK_FAILED",
+      "fetch_provider": null,
+      "fetch_errors": [
+        {
+          "provider": "https://overpass.private.coffee/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://overpass-api.de/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "provider": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+          "message": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "physical_group_id": "RG-1958DCBE707F",
+      "source_id": "AO-AMER-R27-US-07-15",
+      "name": "Holy Trinity Catholic",
+      "country": "US",
+      "source_lat": 38.779587,
+      "source_lng": -77.598789,
+      "source_description": "Gainesville, VA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-19FC3C61905B",
+      "source_id": "AO-AMER-R28-US-24-13",
+      "name": "St Augustine",
+      "country": "US",
+      "source_lat": 44.894146,
+      "source_lng": -93.03872,
+      "source_description": "South St Paul, MN (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1AB4B0A20509",
+      "source_id": "AO-EUR-IT-057",
+      "name": "Oratory of S.s. Pietro and Caterina",
+      "country": "IT",
+      "source_lat": 44.310251,
+      "source_lng": 8.48021,
+      "source_description": "17100 Savona SV (locality only; street not established — source unverified)",
+      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1AFBE8EE30F3",
+      "source_id": "AO-WORLD-R35-BR-03-12",
+      "name": "Capela de Santo Agostinho",
+      "country": "BR",
+      "source_lat": -9.924869,
+      "source_lng": -67.806307,
+      "source_description": "Rio Branco - AC (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1B6796BAB48D",
+      "source_id": "AO-WORLD-R35-BR-05-14",
+      "name": "Igreja Nossa Senhora do Amparo",
+      "country": "BR",
+      "source_lat": -5.094785,
+      "source_lng": -42.814477,
+      "source_description": "270 - Centro (Sul) (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1E6163972C9B",
+      "source_id": "LMD:church-of-saint-michael-the-archangel-belfield-australia",
+      "name": "Church of Saint Michael the Archangel Belfield, Australia",
+      "country": "AU",
+      "source_lat": -33.9015654,
+      "source_lng": 151.0881652,
+      "source_description": "Belfield, Australia (inherited label locality only; no new address corroboration)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1E66940FD754",
+      "source_id": "AO-AMER-R27-US-14-05",
+      "name": "Our Lady of Lourdes",
+      "country": "US",
+      "source_lat": 39.071361,
+      "source_lng": -84.532328,
+      "source_description": "1101 Amsterdam Rd, Park Hills, KY",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1E8C88FE3586",
+      "source_id": "AO-EUR-DE-063",
+      "name": "Maria Königin",
+      "country": "DE",
+      "source_lat": 53.919477,
+      "source_lng": 10.704726,
+      "source_description": "23611 Bad Schwartau (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1EA095B17019",
+      "source_id": "AO-EUR-IT-073",
+      "name": "St Anthony of Padua",
+      "country": "IT",
+      "source_lat": 37.610181,
+      "source_lng": 15.165465,
+      "source_description": "",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1F732393AC9E",
+      "source_id": "AO-AMER-R27-US-15-01",
+      "name": "Our Lady of Perpetual Help",
+      "country": "US",
+      "source_lat": 29.975695,
+      "source_lng": -90.248052,
+      "source_description": "Kenner, LA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-1FD25E6D42FA",
+      "source_id": "AO-EUR-DE-123",
+      "name": "St Jobstkirche am Friedhof",
+      "country": "DE",
+      "source_lat": 49.26796,
+      "source_lng": 11.47166,
+      "source_description": "St Jobst, Regensburger Straße 16, 92318 Neumarkt",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-20DDA8C9C2AC",
+      "source_id": "AO-EUR-IT-003",
+      "name": "Arciconfraternita della Misericordia",
+      "country": "IT",
+      "source_lat": 45.072982,
+      "source_lng": 7.676855,
+      "source_description": "Chiesa della Misericordia, Torino, Italy",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-21432CC51482",
+      "source_id": "AO-AMER-R28-US-23-17",
+      "name": "St Andrew the Apostle",
+      "country": "US",
+      "source_lat": 39.210015,
+      "source_lng": -94.547411,
+      "source_description": "Gladstone, MO (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-21AADD84647E",
+      "source_id": "AO-AMER-R27-US-07-12",
+      "name": "Holy Trinity",
+      "country": "US",
+      "source_lat": 44.878401,
+      "source_lng": -93.040877,
+      "source_description": "749 6th Ave S, South St Paul, MN",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-225567F42E88",
+      "source_id": "AO-EUR-GB-012",
+      "name": "Catholic of Our Lady of Dolours, Hendon",
+      "country": "GB",
+      "source_lat": 51.588112,
+      "source_lng": -0.227182,
+      "source_description": "4 Egerton Gardens, London NW4 4BA",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-227A8D09CCC4",
+      "source_id": "AO-AMER-R28-US-29-10",
+      "name": "St Joseph Parish",
+      "country": "US",
+      "source_lat": 41.453048,
+      "source_lng": -74.410654,
+      "source_description": "149 Cottage St, Middletown, NY",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-227ABD6FFBED",
+      "source_id": "AO-EUR-IT-013",
+      "name": "Cenacolo della Santissima Trinita",
+      "country": "IT",
+      "source_lat": 44.03769,
+      "source_lng": 12.546767,
+      "source_description": "Rimini, Italy (secondary directory locality only; no street verified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-22B3FAF5E5FD",
+      "source_id": "AO-EUR-DE-084",
+      "name": "Pfarrkirche Sankt Josef (Parish Church of Saint Joseph)",
+      "country": "DE",
+      "source_lat": 49.984189,
+      "source_lng": 9.146709,
+      "source_description": "63741 Aschaffenburg (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-22D58E74DD03",
+      "source_id": "AO-AMER-R28-US-19-13",
+      "name": "Sacred Heart Mission: Mission of the Cathedral",
+      "country": "US",
+      "source_lat": 25.904763,
+      "source_lng": -97.502594,
+      "source_description": "Brownsville, TX (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2339765E0FFC",
+      "source_id": "AO-EUR-IT-031",
+      "name": "Chiesa di San Giorgio",
+      "country": "IT",
+      "source_lat": 40.678828,
+      "source_lng": 14.759197,
+      "source_description": "",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-23A785A0A399",
+      "source_id": "AO-AMER-R26-US-03-20",
+      "name": "Christ the King Catholic",
+      "country": "US",
+      "source_lat": 38.97391,
+      "source_lng": -94.595577,
+      "source_description": "Kansas City, KS (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-257C9B24AEA3",
+      "source_id": "AO-AMER-R28-US-37-16",
+      "name": "St. Mary's Visitation",
+      "country": "US",
+      "source_lat": 43.045972,
+      "source_lng": -88.076057,
+      "source_description": "Elm Grove, WI (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2674F3049DD5",
+      "source_id": "AO-WORLD-R35-AR-01-08",
+      "name": "Capilla San Miguel Arcángel",
+      "country": "AR",
+      "source_lat": -34.6152,
+      "source_lng": -58.4231,
+      "source_description": "Buenos Aires, Ciudad Autónoma de Buenos Aires (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-26B7A119F23C",
+      "source_id": "AO-WORLD-R35-BR-08-09",
+      "name": "Paróquia Jesus Cristo Ressucitado",
+      "country": "BR",
+      "source_lat": -10.938179,
+      "source_lng": -37.052368,
+      "source_description": "Aracaju - SE (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-26E3516DAF49",
+      "source_id": "AO-AMER-R28-US-36-03",
+      "name": "St Wenceslaus",
+      "country": "US",
+      "source_lat": 41.20656,
+      "source_lng": -96.618056,
+      "source_description": "Wahoo, NE (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-26F7622CB850",
+      "source_id": "AO-AMER-R28-US-25-17",
+      "name": "St Columbanus",
+      "country": "US",
+      "source_lat": 41.312982,
+      "source_lng": -73.90397,
+      "source_description": "122 Oregon Rd, Cortlandt Manor, NY",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-27005F1C1EF6",
+      "source_id": "AO-EUR-IT-006",
+      "name": "Beata Vergine del Rosario",
+      "country": "IT",
+      "source_lat": 45.64945,
+      "source_lng": 13.770502,
+      "source_description": "Beata Vergine del Rosario, Piazza Vecchia, Trieste",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-27811F398592",
+      "source_id": "AO-AMER-R28-US-38-05",
+      "name": "St. Paul's",
+      "country": "US",
+      "source_lat": 45.5694119,
+      "source_lng": -94.1748981,
+      "source_description": "St Cloud, MN (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2799D3D5D1A7",
+      "source_id": "AO-AMER-R28-US-32-01",
+      "name": "St Mary of Pine Bluff Catholic",
+      "country": "US",
+      "source_lat": 43.055696,
+      "source_lng": -89.657967,
+      "source_description": "3673 County Road P, Cross Plains, WI",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-27BB58850457",
+      "source_id": "AO-AMER-R28-US-26-19",
+      "name": "St Hedwig",
+      "country": "US",
+      "source_lat": 42.136431,
+      "source_lng": -80.075744,
+      "source_description": "Erie, PA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-27DBA41B403D",
+      "source_id": "AO-AMER-R28-US-33-07",
+      "name": "St Patrick",
+      "country": "US",
+      "source_lat": 38.319781,
+      "source_lng": -77.640592,
+      "source_description": "Fredericksburg, VA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-289458D30EB5",
+      "source_id": "AO-AMER-R28-US-24-02",
+      "name": "St Anthony",
+      "country": "US",
+      "source_lat": 44.45516,
+      "source_lng": -73.214435,
+      "source_description": "Burlington, VT (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-28F0D44655E0",
+      "source_id": "AO-AMER-R28-US-30-20",
+      "name": "St Mary",
+      "country": "US",
+      "source_lat": 40.247929,
+      "source_lng": -97.39124,
+      "source_description": "Alexandria, NE (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-297CCE36BAB2",
+      "source_id": "AO-WORLD-R35-BR-08-01",
+      "name": "Mosteiro de Nossa Senhora da Fé e Rosário",
+      "country": "BR",
+      "source_lat": -12.647063,
+      "source_lng": -38.454687,
+      "source_description": "BA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2A9EE96CB9D0",
+      "source_id": "AO-AMER-R27-US-15-03",
+      "name": "Our Lady of Perpetual Help",
+      "country": "US",
+      "source_lat": 43.803063,
+      "source_lng": -123.047996,
+      "source_description": "Cottage Grove, OR (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2B17BF197D61",
+      "source_id": "AO-EUR-IT-044",
+      "name": "Christ the King",
+      "country": "IT",
+      "source_lat": 46.488087,
+      "source_lng": 11.325538,
+      "source_description": "",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2E1E229E79EC",
+      "source_id": "AO-EUR-IT-060",
+      "name": "Parrocchia di Santa Chiara",
+      "country": "IT",
+      "source_lat": 44.834303,
+      "source_lng": 11.628316,
+      "source_description": "Ferrara, Italy (secondary directory locality only; no street verified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2E634483B0D4",
+      "source_id": "AO-EUR-IT-015",
+      "name": "Chiesa Di San Gottardo",
+      "country": "IT",
+      "source_lat": 45.917904,
+      "source_lng": 13.457535,
+      "source_description": "Mariano del Friuli, Italy (secondary directory locality only; no street verified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2F2990F08561",
+      "source_id": "AO-AMER-R28-US-29-16",
+      "name": "St Jude Thaddeus",
+      "country": "US",
+      "source_lat": 26.18789,
+      "source_lng": -98.172163,
+      "source_description": "Pharr, TX (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2F2D3B4C5AAD",
+      "source_id": "AO-AMER-R28-US-39-13",
+      "name": "The Oratory of Ss. Gregory and Augustine",
+      "country": "US",
+      "source_lat": 38.6269925,
+      "source_lng": -90.312214,
+      "source_description": "Richmond Heights, MO (locality only; street not established — source unverified)",
+      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-2FFE4B7147D4",
+      "source_id": "AO-EUR-DE-020",
+      "name": "Filialkirche St Maria (Rosenkranzkirche)",
+      "country": "DE",
+      "source_lat": 50.537245,
+      "source_lng": 9.693293,
+      "source_description": "Fulda (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-30C71492B0A6",
+      "source_id": "AO-EUR-IT-068",
+      "name": "San Giuseppe a Capo le Case",
+      "country": "IT",
+      "source_lat": 41.903883,
+      "source_lng": 12.485819,
+      "source_description": "Roma, Italy (secondary directory locality only; no street verified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-325D5F8F2242",
+      "source_id": "AO-EUR-DE-144",
+      "name": "St Peter und Paul",
+      "country": "DE",
+      "source_lat": 51.282794,
+      "source_lng": 12.369436,
+      "source_description": "04416 Markkleeberg (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-32B03306458A",
+      "source_id": "AO-AMER-R28-US-37-13",
+      "name": "St. Mary's",
+      "country": "US",
+      "source_lat": 43.590353,
+      "source_lng": -88.450647,
+      "source_description": "Lomira, WI (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-33046AA6C90B",
+      "source_id": "AO-EUR-DE-099",
+      "name": "Schwesternheim",
+      "country": "DE",
+      "source_lat": 48.773202,
+      "source_lng": 11.439427,
+      "source_description": "85055 Ingolstadt (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-334200B5444E",
+      "source_id": "AO-EUR-IT-069",
+      "name": "Sant'Anna al Laterano",
+      "country": "IT",
+      "source_lat": 41.89073,
+      "source_lng": 12.502465,
+      "source_description": "Roma, Italy (secondary directory locality only; no street verified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-3390C2A72524",
+      "source_id": "AO-AMER-R28-US-29-11",
+      "name": "St Joseph Parish",
+      "country": "US",
+      "source_lat": 44.941047,
+      "source_lng": -123.032329,
+      "source_description": "Salem, OR (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-33DCC4563668",
+      "source_id": "AO-AMER-R28-US-33-10",
+      "name": "St Patrick Catholic",
+      "country": "US",
+      "source_lat": 37.798983,
+      "source_lng": -121.071709,
+      "source_description": "Ripon, CA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-34F2CA8BE433",
+      "source_id": "AO-AMER-R27-US-07-07",
+      "name": "Holy Rosary Parish",
+      "country": "US",
+      "source_lat": 45.533139,
+      "source_lng": -122.66219,
+      "source_description": "Portland, OR (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-34FDCB6355B4",
+      "source_id": "AO-EUR-IT-004",
+      "name": "Basilica di San Ferdinando a Palazzo",
+      "country": "IT",
+      "source_lat": 40.837551,
+      "source_lng": 14.248638,
+      "source_description": "",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-352B7084A497",
+      "source_id": "AO-AMER-R26-US-05-13",
+      "name": "Holy Cross Chapel",
+      "country": "US",
+      "source_lat": 38.8896,
+      "source_lng": -77.1121,
+      "source_description": "Arlington, Virginia (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-3540FAB4FC07",
+      "source_id": "AO-AMER-R26-CA-04-10",
+      "name": "Sts Joachim and Ann",
+      "country": "CA",
+      "source_lat": 49.053509,
+      "source_lng": -122.470206,
+      "source_description": "2827 273 Street, Aldergrove, BC V4W 3J9",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-35E58DA4D687",
+      "source_id": "AO-AMER-R28-US-32-07",
+      "name": "St Mary's of Pine Grove",
+      "country": "US",
+      "source_lat": 38.611182,
+      "source_lng": -82.682707,
+      "source_description": "Ironton, OH (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-35E771C445F0",
+      "source_id": "AO-AMER-R27-US-09-13",
+      "name": "Maria Lanakila Catholic",
+      "country": "US",
+      "source_lat": 20.875039,
+      "source_lng": -156.676517,
+      "source_description": "Lahaina, HI (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-35EF98B8D652",
+      "source_id": "AO-AMER-R28-US-30-16",
+      "name": "St Martin of Tours Catholic",
+      "country": "US",
+      "source_lat": 38.245495,
+      "source_lng": -85.738902,
+      "source_description": "Louisville, KY (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-372AD5E27D43",
+      "source_id": "AO-AMER-R28-US-35-01",
+      "name": "St Stephen Catholic",
+      "country": "US",
+      "source_lat": 45.514534,
+      "source_lng": -122.619798,
+      "source_description": "1112 SE 41st Ave, Portland, OR 97214",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-37CCCFDB7771",
+      "source_id": "AO-AMER-R26-US-02-10",
+      "name": "Blessed Sacrament",
+      "country": "US",
+      "source_lat": 33.48894,
+      "source_lng": -86.855644,
+      "source_description": "Birmingham, AL (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    },
+    {
+      "physical_group_id": "RG-37D8B62B58AB",
+      "source_id": "AO-AMER-R28-US-26-03",
+      "name": "St Edward",
+      "country": "US",
+      "source_lat": 37.539558,
+      "source_lng": -122.027673,
+      "source_description": "Newark, CA (locality only; street not established — source unverified)",
+      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "candidates": [],
+      "ambiguous": false,
+      "review_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "promote_automatically": false,
+      "photo_approved": false,
+      "fetch_status": "NOT_QUERIED_PROVIDER_OUTAGE",
+      "fetch_provider": null,
+      "fetch_errors": []
+    }
+  ]
+}
