@@ -11,7 +11,7 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
-import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats} from "./choir-source-beats.js";
+import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats,choirLitanyLineParts} from "./choir-source-beats.js";
 import "./choir-family-styles.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
@@ -2527,7 +2527,7 @@ function renderPenitential(){
   ${guideCue(L('PAUSE','PAUSE'),L('Remain briefly in silence after the doxology or final verse, then continue when ready.','Demeurez brièvement en silence après la doxologie ou le dernier verset, puis continuez lorsque vous êtes prêt.'))}`;
  const chapter=sourcedDevotionalCard({kind:'penitential',id:'penitential-'+i,title,index:i,total:PEN_PSALMS.length,body});
  return `${head(L('Seven Penitential Psalms','Sept psaumes pénitentiels'),L('Traditional penitential psalmody · guided sequence','Psalmodie pénitentielle traditionnelle · séquence guidée'))}
- <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="penitential" data-ao-devotional-final="${final}">
+ <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-choir-route="penitential" data-ao-devotional-owner="penitential" data-ao-devotional-final="${final}">
  ${chapter}
  ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-pen-litany>${esc(L("Continue with Litany of the Saints","Continuer avec les Litanies des saints"))}</button></div>`:""}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Guide to the traditional sequence','Guide de la séquence traditionnelle'))}</summary>
@@ -2611,13 +2611,16 @@ function renderLitany(){
  if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}<p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
  LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step));
  const st=LIT.sections[LIT.step],final=LIT.step===LIT.sections.length-1;
- const text=st.lines.map(line=>`<p class="aoP435930LitanyLine">${esc(line)}</p>`).join('');
+ const text=st.lines.map(line=>choirLitanyLineParts(line).map(part=>
+  '<p class="aoP435930LitanyLine'+
+  (part.kind==='response'?' aoChoirResponse':'')+
+  '">'+esc(part.raw.trim())+'</p>').join('')).join('');
  const body=`${guideNow(st.title,L('Pray the historical wording in order. In a group, agree who leads the responses; this transcription does not assign every voice.','Priez le texte historique dans l’ordre. En groupe, convenez de la répartition des répons ; cette transcription n’attribue pas chaque voix.'))}
   <article class="aoP435930LitanyPrayer ${S.rosary.recitation==='group'?'aoP435930GroupRecitation':''}"><div class="aoP435930LitanyVerses" data-ao-private-litany-invocations="true">${text}</div></article>
   ${guideCue(L('PACE','RYTHME'),L('Leave a small breath between invocations. The repetition is part of the prayer, not text to skim.','Laissez un léger souffle entre les invocations. La répétition fait partie de la prière ; ce n’est pas un texte à parcourir rapidement.'))}`;
  const card=sourcedDevotionalCard({kind:'litany',id:'litany-'+LIT.step,title:st.title,index:LIT.step,total:LIT.sections.length,body});
  return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}
- <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="litany" data-ao-devotional-final="${final}">
+ <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-choir-route="saints" data-ao-devotional-owner="litany" data-ao-devotional-final="${final}">
  <details class="aoPrivateLitanyEditionChooser"><summary>${esc(L('Edition & liturgical use','Édition et usage liturgique'))}</summary>${batch03LitanyUseOptions()}</details>
  ${card}
  ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button></div>`:''}
