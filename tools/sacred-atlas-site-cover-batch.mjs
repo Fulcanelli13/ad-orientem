@@ -7,12 +7,13 @@
  * Outputs permanent, non-published metadata; never invent Place identities.
  */
 import {readFile,writeFile} from "node:fs/promises";
-const input="data/geography/research/sacred-atlas-site-covers-batch-001.v1.json";
-const output="data/geography/research/sacred-atlas-site-covers-batch-001.results.json";
+const batchId=process.argv[2]&&/^00[1-5]$/.test(process.argv[2])?process.argv[2]:"001";
+const input=`data/geography/research/sacred-atlas-site-covers-batch-${batchId}.v1.json`;
+const output=`data/geography/research/sacred-atlas-site-covers-batch-${batchId}.results.json`;
 const manifest=JSON.parse(await readFile(input,"utf8"));
-if(manifest.total!==100||manifest.sites.length!==100)throw Error("Expected 100 canonical Place sites");
+if(manifest.total!==manifest.sites.length||manifest.total<1||manifest.total>100)throw Error("Expected up to 100 canonical Place sites");
 const unique=new Set(manifest.sites.map(s=>s.place_id));
-if(unique.size!==100)throw Error("Duplicate canonical site in batch");
+if(unique.size!==manifest.total)throw Error("Duplicate canonical site in batch");
 const UA="AdOrientem Sacred Atlas photo research/1.0 (https://github.com/Fulcanelli13/ad-orientem)";
 const API="https://commons.wikimedia.org/w/api.php";
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -78,7 +79,7 @@ if(process.argv.includes("--selftest")){
  const wrong={place_id:"place:CD:notre-dame-du-congo-cathedral-kinshasa",site_name:"Notre-Dame du Congo Kinshasa",city:"Kinshasa"};
  if(!licenseInfo("CC BY-SA 4.0").photo_license_candidate||licenseInfo("CC BY-NC 4.0").photo_license_candidate)throw Error("Licence gate broken");
  if(score(wrong,"File:Notre-Dame de la paix de Bukavu.jpg")>=0.5)throw Error("Wrong-city title accepted");
- if(unique.size!==100)throw Error("Coverage broken");
+ if(unique.size!==manifest.total)throw Error("Coverage broken");
  console.log("PASS: 100 unique exact Places, noncommercial photo rejected, wrong-city textual match rejected");
  process.exit(0);
 }
@@ -130,13 +131,13 @@ async function worker(){
    }
   }catch(e){record.state="SOURCE_LOOKUP_FAILED_OR_CHANGED";record.error=String(e).slice(0,250)}
   records[j]=record;
-  if((j+1)%10===0)console.log("Searched Place index "+(j+1)+"/100");
+  if((j+1)%10===0)console.log("Searched Place index "+(j+1)+"/"+manifest.total);
   await sleep(300);
  }
 }
 await Promise.all(Array.from({length:3},()=>worker()));
 const summary={
- locations:100,reuse_approved_gallery:records.filter(x=>x.previous_gallery_asset).length,
+ locations:manifest.total,reuse_approved_gallery:records.filter(x=>x.previous_gallery_asset).length,
  source_file_candidates:records.reduce((n,x)=>n+x.candidates.length,0),
  locations_with_compatible_photo_metadata:records.filter(x=>x.candidates.some(z=>z.metadata_preflight_passed)).length,
  pinned_current_source_sha_changed:records.filter(x=>x.error?.includes("SHA1 mismatch")).length,
@@ -145,5 +146,5 @@ const summary={
  original_image_bytes_acquired:0,app_cover_published:0
 };
 await writeFile(output,JSON.stringify({schema:"AO_SACRED_ATLAS_SITE_COVER_COMMONS_BATCH_RESULTS_V1",as_of:new Date().toISOString(),input,summary,records},null,2)+"\n");
-console.log("Site cover batch 001:",JSON.stringify(summary));
+console.log("Site cover batch "+batchId+":",JSON.stringify(summary));
 if(summary.source_file_candidates===0)throw Error("Commons produced no source file candidates");
