@@ -23,7 +23,7 @@ try{
  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-US"});
  const page=await context.newPage(),pageErrors=[];
  page.on("pageerror",e=>pageErrors.push(String(e?.message??e)));
- await page.goto("http://127.0.0.1:4199/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ // Standalone Bible reader contract uses its original Home entry via explicit rollback.\n // Current H7 Home enters Scripture through its canonical Gospel route.\n await page.goto("http://127.0.0.1:4199/index.html?aoTodayH4=0",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true &&
    globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.installed===true,null,{timeout:30000});
  const entry=page.locator("[data-home-scripture]");
