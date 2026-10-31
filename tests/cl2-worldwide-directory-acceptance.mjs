@@ -25,15 +25,15 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1869);
+assert.equal(world.filter(x=>x.map_publishable).length,1880);
 // The external Photo Finder must consume exactly the approved runtime site
 // markers. Never regress to the frozen R49 snapshot or create photo-search
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:22,refined_existing_site_pins:9,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,34);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,34);
+assert.deepEqual(photoPins.counts,{new_site_pins:33,refined_existing_site_pins:9,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,45);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,45);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
@@ -48,7 +48,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,713);
+assert.equal(newSites.length,702);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -57,12 +57,38 @@ assert.ok(newSites.every(x=>x.summary.includes("not been independently verified"
 assert.equal(newSites.filter(x=>x.source_links.length===0).length<=196,true);
 const noSource=newSites.filter(x=>x.source_links.length===0);
 assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-listed")));
+
+// Explicit diocesan-source cohort: recover its missing physical site geometry
+// without including institute/community sites in the diocesan photo queue.
+const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=>x[0]));
+assert.equal(diocesanGroupIds.size,584);
+const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
+assert.equal(diocesan.length,584);
+assert.equal(diocesan.filter(x=>x.map_publishable).length,546);
+assert.equal(diocesan.filter(x=>!x.map_publishable).length,38);
+for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"]]){
+ const item=diocesan.find(x=>x.physical_group_id===group);
+ assert.ok(item?.map_publishable,"Diocesan site must be pinned: "+group);
+ assert.equal(item.map_state,"PROVISIONAL");
+ assert.equal(item.affiliation_scope,"SOURCE_LABEL_ONLY");
+}
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Thirty-one separately reviewed physical site or address references may be shown
+// Forty-two separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
+ ["RG-14C05BCC015B","AO-B38-LOC-ES-3F0F660D197","Basílica de Santa Maria d'Alacant",38.3462,-0.47922,"osm:way:22560738","site"],
+ ["RG-3B5F15EA02ED","AO-B38-LOC-BE-97765C5D89C","Heilig-Bloedbasiliek",51.20812,3.22667,"osm:way:39262789","site"],
+ ["RG-DF3BA1A9A39C","AO-B38-LOC-ES-4FEB6B1C9A5","Concatedral de Santa María de Cáceres",39.47454,-6.37002,"osm:way:385037723","site"],
+ ["RG-3EE76EFE0DC3","AO-B38-LOC-NL-D7C692A1473","St.-Andreaskerk",52.80061,6.05811,"osm:way:269912643","site"],
+ ["RG-270210292F78","AO-B38-LOC-NL-B7C2C6728E5","Onze Lieve Vrouw ter Nood Bedevaartkapel",52.58319,4.68817,"osm:way:44665187","site"],
+ ["RG-AA00B3C74515","AO-B38-LOC-NL-37690D7D21D","Sint-Petrus'-Bandenkerk",51.36839,5.22087,"osm:way:278352768","site"],
+ ["RG-77CC30491D1E","AO-B38-LOC-NL-15C79B5490C","Heilige Lodewijkkerk",52.156028,4.491611,"rijksmonument:25593","site"],
+ ["RG-769233567FB2","AO-B39-LOC-SK-E4BB98A95578","Kaplnka Panny Márie Fatimskej",48.3789569,17.5891077,"osm:node:7811161449","site"],
+ ["RG-A9687EEF16FC","AO-B39-LOC-SK-393C9FE0F607","Kostol Mena Panny Márie",48.1472,17.20745,"osm:way:64977390","site"],
+ ["RG-5A52F4C1379D","AO-B39-LOC-HU-0EF092BCC855","Szent István-Templom",46.98846,17.70316,"miserend:1932","site"],
+ ["RG-B68-086D5372D517","AO-RSCH-B68-086D5372D517","St. Laurentius — St Joseph altar",49.377453,8.377311,"kirchbau:50267","site"],
  ["RG-A39E87B5A30C","AO-EUR-GB-008",
   "Brompton Oratory (The London Oratory)",51.49714,-0.16964,"osm:way:851727368"],
  ["RG-DA2F4D212252","ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS",
@@ -222,11 +248,11 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1869);
-assert.equal(vm.addressOnly,713);
+assert.equal(vm.mapped,1880);
+assert.equal(vm.addressOnly,702);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/713/);
+assert.match(html,/702/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
