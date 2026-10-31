@@ -140,6 +140,36 @@ assert.equal(delayed.manualOnly,true);
 assert.ok(!poly.events.some(e=>e.id==="BENEDICTUS_CONTINUOUS"));
 assert.equal(plan.events.filter(e=>e.id.startsWith("BENEDICTUS")).length,0,
  "Unknown local Schola practice cannot invent timing");
+
+ // The production 65-card reader does NOT use AO.CANON.07 as its
+ // sourceSectionId: it retains a 30-card base macro there and carries
+ // the certified 14-part Canon identity in explicit provenance.
+ // This must recover every Canon moment without title heuristics.
+ const macroCanon=cards.map(card=>/^AO\.CANON\./.test(card.sourceSectionId)?{
+   ...card,sourceSectionId:"AO.CARD.016",
+   provenance:{liveStructure:"SOURCE_FIRST_CANON",
+     canonSegmentId:card.sourceSectionId},
+ }:card);
+ const fromRealProvenance=buildScholaMusicItinerary({...args,
+   cards:macroCanon,sanctusPerformance:"POLYPHONIC"});
+ for(const id of ["CANON","HOST_CONSECRATION_SILENCE",
+   "CHALICE_CONSECRATION_SILENCE","BENEDICTUS_AFTER_CHALICE"]){
+   assert.ok(fromRealProvenance.events.some(e=>e.id===id),
+     "Curated Canon provenance lost source-owned Schola event "+id);
+   assert.ok(!fromRealProvenance.unresolved.some(e=>e.id===id),
+     "Curated Canon provenance left a false unresolved source section "+id);
+ }
+ const realChalice=fromRealProvenance.events.find(e=>
+   e.id==="CHALICE_CONSECRATION_SILENCE");
+ assert.equal(realChalice.sourceRef,"AO.SM.B053");
+ assert.equal(realChalice.card.sourceSectionId,"AO.CANON.07");
+ assert.ok(fromRealProvenance.events.find(e=>
+   e.id==="BENEDICTUS_AFTER_CHALICE").cardIndex>
+   realChalice.cardIndex,"Post-Chalice Benedictus lost its exact source ordering");
+ assert.equal(fromRealProvenance.events.find(e=>
+   e.id==="BENEDICTUS_AFTER_CHALICE").manualOnly,true,
+   "Recovered Canon provenance must never trigger automatic singing");
+
 const requiem=buildScholaMusicItinerary({...args,
  resolvedMass:{overlays:["REQUIEM"]}});
 for(const id of ["GLORIA","GLORIA_INTONATION","CREDO",
