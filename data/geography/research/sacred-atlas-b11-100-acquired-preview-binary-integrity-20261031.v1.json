@@ -1,0 +1,1167 @@
+{
+  "schema": "AO_SACRED_ATLAS_B11_USER_ACQUIRED_100_BINARY_INTEGRITY_QA_V1",
+  "date": "2026-10-31",
+  "source_archive": "AO_Sacred_Atlas_Objects_100_of_247_RESEARCH (1).zip",
+  "source_archive_sha256": "91d6ed7fc078f69f56f33e1c38040d4149f7b6a2d278217e1c2b39c233ea1d80",
+  "metadata_source": "Existing Sacred_Atlas_100_Strict_Editorial_Audit.csv plus new binary SHA256/Pillow/OpenCV decode measurements",
+  "summary": {
+    "preview_files_decoded": 100,
+    "sha256_against_archive_manifest_verified": 100,
+    "distinct_file_hashes": 94,
+    "duplicate_assignments": 6,
+    "unacquired_targets": 147,
+    "previous_user_KEEP_decisions_preserved_total": 20,
+    "prior_KEEP_in_photo_archive": 12,
+    "editorial_qa_counts": {
+      "SHORTLIST_SITE": 16,
+      "REPLACE_QUALITY": 19,
+      "SHORTLIST_OBJECT": 13,
+      "REASSIGN_CONTEXT": 27,
+      "REJECT_WRONG": 21,
+      "DEDUPLICATE": 4
+    },
+    "technical_flags_not_hard_rejections": {
+      "short_edge_lt_1200": 7,
+      "high_shadow_content": 7
+    },
+    "new_full_original_downloads": 0,
+    "images_published": 0
+  },
+  "warnings": [
+    "This is a validation of actual existing user archive's 100 optimized JPEGs, not acquisition of 100 new original Wikimedia files.",
+    "The earlier strict editorial assessments are reused, not represented as fresh independent external verification.",
+    "Technical flags are review only and do not automatically reject a sacred image.",
+    "Source file metadata still requires up-to-date rights checks, underlying protected object status, provenance, exact identity and original image sharpness.",
+    "No user vote changed, no live asset promoted."
+  ],
+  "rows": [
+    {
+      "n": 1,
+      "id": "subject:focus:knock-original-gable",
+      "place": "place:IE:knock-shrine",
+      "sha256": "60a081580e11963a1678084ecae3dc3424993ff9790f0d3b31a9bf7d964c7e53",
+      "preview": "1920x1505",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 2,
+      "id": "subject:focus:lourdes-massabielle-grotto",
+      "place": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "sha256": "d713fd4c83f916c5d5a5214b8aa77ab4cdee6dde4089dc1a003b8156a9e526de",
+      "preview": "1920x1293",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 3,
+      "id": "subject:focus:nevers-bernadette-glass-shrine",
+      "place": "place:FR:espace-bernadette-nevers",
+      "sha256": "1121cf6befbc9f28a81e9d1a5bdd6adb9a0ad58ae9f2ceedced7331501616dc9",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 4,
+      "id": "subject:focus:jasna-gora-black-madonna",
+      "place": "place:PL:jasna-gora",
+      "sha256": "b7e88cb4e7bbe211437b03e2c4cbab1de1465bef88e14b08d81256f70b21908e",
+      "preview": "1920x2230",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 5,
+      "id": "subject:focus:guadalupe-tilma",
+      "place": "place:MX:basilica-guadalupe-mexico-city",
+      "sha256": "874c4222130599b6662e16e9b474fe4bbe6d516eebb9efd63dd6902fec539b1d",
+      "preview": "1429x1820",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 6,
+      "id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
+      "place": "place:DE:altoetting-gnadenkapelle",
+      "sha256": "287a66f3bad93bcf5d3f7a29e0b2b0027eece2d9a0af4202df46cd9b5d7bd540",
+      "preview": "1920x2880",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 7,
+      "id": "subject:focus:mariazell-magna-mater-statue",
+      "place": "place:AT:mariazell-basilica",
+      "sha256": "f2a7b2409805d6c4147c33c365a386123f0fd65d38800c11e3ffce64b10f9009",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 8,
+      "id": "subject:round1-review:FR:sanctuary-of-our-lady-of-rocamadour:11",
+      "place": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "sha256": "f415f806d7673336412f5b99b3c069c1aef4b95fdbff88c682f086a5504c5486",
+      "preview": "1920x2560",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 9,
+      "id": "subject:round1-review:IE:st-peters-oliver-plunkett-drogheda:12",
+      "place": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 10,
+      "id": "subject:round1-review:IN:basilica-bom-jesus-old-goa:13",
+      "place": "place:IN:basilica-bom-jesus-old-goa",
+      "sha256": "d3aadf3dace764a198d482d0015fc6573bf74f576972ce714d0f4381274157bc",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 11,
+      "id": "subject:round1-review:GB:walsingham-catholic-shrine:14",
+      "place": "place:GB:walsingham-catholic-shrine",
+      "sha256": "2c89662d24232f03bbf451d32393f7cfa09f6f385fb8521f120a89e154145df8",
+      "preview": "1536x2048",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 12,
+      "id": "subject:round1-review:FR:sanctuaire-sacre-coeur-paray:18",
+      "place": "place:FR:sanctuaire-sacre-coeur-paray",
+      "sha256": "b64cd752d716040df6b91a494d34b90aa64ac57d32d221f3bfdbf24a5042197c",
+      "preview": "1920x2880",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": true,
+      "release_allowed": false
+    },
+    {
+      "n": 13,
+      "id": "subject:focus:lourdes-grotto-spring",
+      "place": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "sha256": "156c01194a3af453096e2990c814bfe4054d104633edf4f27f846298d4ef9261",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 14,
+      "id": "subject:focus:padua-treasury-chapel",
+      "place": "place:IT:basilica-sant-antonio-padova",
+      "sha256": "ec6a1995b59d47a414906b57417e6356c19902e192e8fa90599197b145e7ed31",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 15,
+      "id": "subject:focus:fatima-apparitions-chapel",
+      "place": "place:PT:fatima-sanctuary",
+      "sha256": "f255f43944e412c73b635c42d9aaf07ea8e1bfa9b9c7e055beb5a0ed1ea5df7c",
+      "preview": "1674x1194",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 16,
+      "id": "subject:focus:rue-du-bac-catherine-shrine",
+      "place": "place:FR:rue-du-bac",
+      "sha256": "58e4e3a8e6d816d1565ea4f47fa90934074e5ab84628d137f92d71d9dd78a88c",
+      "preview": "1920x3018",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 17,
+      "id": "subject:relic:US:seton-emmitsburg",
+      "place": "place:US:seton-emmitsburg",
+      "sha256": "cbef5068b3c5b5298a783b64165d6211d31f8c58f5f6253e969a3bbfb530088d",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 18,
+      "id": "subject:relic:US:neumann-philadelphia",
+      "place": "place:US:st-john-neumann-philadelphia",
+      "sha256": "83fc93df923c8ed91889beee8852917ecddfe9a0e307e71b2185130b622fcc2e",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 19,
+      "id": "subject:relic:FR:crown-of-thorns-paris",
+      "place": "place:FR:notre-dame-paris",
+      "sha256": "ce7918d31f84bb5a98063c0805f5902ba9d2199eaa6b655273574deb913625ee",
+      "preview": "1920x1281",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 20,
+      "id": "subject:relic:FR:cross-paris",
+      "place": "place:FR:notre-dame-paris",
+      "sha256": "ce7918d31f84bb5a98063c0805f5902ba9d2199eaa6b655273574deb913625ee",
+      "preview": "1920x1281",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 21,
+      "id": "subject:relic:FR:holy-nail-paris",
+      "place": "place:FR:notre-dame-paris",
+      "sha256": "0e65590591d057f12748b7269a669f82caa14e2dda29eede555ae789f2d79a37",
+      "preview": "1920x1156",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 22,
+      "id": "subject:relic:IT:francis-assisi",
+      "place": "place:IT:basilica-san-francesco-assisi",
+      "sha256": "1975596b0c9043b1421703b3fe325808305f2ab3d6334f7305b5556dca1ea5a2",
+      "preview": "1920x3050",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 23,
+      "id": "subject:relic:IT:rita-cascia",
+      "place": "place:IT:basilica-santa-rita-cascia",
+      "sha256": "ca3bee77059505e97b2b4efe831443f2d580f448c4a1488ad4ec168d5ffc1b6a",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 24,
+      "id": "subject:relic:IT:nicholas-bari",
+      "place": "place:IT:basilica-san-nicola-bari",
+      "sha256": "f7aff1411eb687dbdef7671a506eaebf52510167d10f605ee90ac74c1bdfff65",
+      "preview": "1920x1508",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 25,
+      "id": "subject:relic:IT:padre-pio-rotondo",
+      "place": "place:IT:santuario-san-pio-rotondo",
+      "sha256": "eb6b1f80b4706e292e47b1a7ec05a8a7d4bbe94625587763426018cc6417094d",
+      "preview": "1920x1724",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 26,
+      "id": "subject:relic:IT:santa-croce-holy-nail",
+      "place": "place:IT:santa-croce-gerusalemme-rome",
+      "sha256": "b43973bee4a0241826c29e1bd474fd1e414f87ac1e9be31d5f37fa045f4ae3f0",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 27,
+      "id": "subject:relic:IT:santa-croce-titulus-crucis",
+      "place": "place:IT:santa-croce-gerusalemme-rome",
+      "sha256": "df6a1fc6283e20aadd103c5a1655ebe4671031a7dd300a76e1159bf9ccf83d24",
+      "preview": "1920x1394",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 28,
+      "id": "subject:relic:FR:magdalene-head-saint-maximin",
+      "place": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "sha256": "f3d76a6b23a5fbf6facf1d0eedad6dbfafbadb694a17a25ba31df152e2a2097e",
+      "preview": "1920x1079",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 29,
+      "id": "subject:relic:FR:martin-parents-lisieux",
+      "place": "place:FR:basilique-sainte-therese-lisieux",
+      "sha256": "c16939f68d61e5008422b2cf8e0a8d4e705827b7b4c88bad290a6cad585629de",
+      "preview": "1920x1272",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 30,
+      "id": "subject:relic:VA:peter-tomb",
+      "place": "place:VA:saint-peter-vatican",
+      "sha256": "aa50db6a13998f92ce81d486da51d9d709f5fdbd92943e32c1e540875eda9920",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 31,
+      "id": "subject:relic:ES:james-compostela",
+      "place": "place:ES:santiago-compostela-cathedral",
+      "sha256": "1bc78e8874bc2c7313267dd4db98165a3226fba854231ed097afa171cd098255",
+      "preview": "1280x991",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 32,
+      "id": "subject:relic:ES:lignum-crucis-liebana",
+      "place": "place:ES:santo-toribio-liebana",
+      "sha256": "e2a51adbfbe5d9908416e9a4136b10c3b98ec5b045e1e5ed7681469f6a923786",
+      "preview": "1920x2557",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 33,
+      "id": "subject:relic:ES:teresa-heart-alba",
+      "place": "place:ES:carmel-alba-tormes",
+      "sha256": "a667ef239251eedcf97b0c74745c177b6175cb0171fe3c3c750425fda497e726",
+      "preview": "1920x1080",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 34,
+      "id": "subject:relic:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "sha256": "ef643e987116fe054d7446bbb7624c2cad637a35c0248dae10d933008f9e1243",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 35,
+      "id": "subject:relic:FR:basilique-saint-denys-argenteuil",
+      "place": "place:FR:basilique-saint-denys-argenteuil",
+      "sha256": "61f429c68947b984448f55d873c9a76a71e0dbaac509dfead5791c2eeaa0aeab",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 36,
+      "id": "subject:relic:FR:cathedrale-notre-dame-amiens",
+      "place": "place:FR:cathedrale-notre-dame-amiens",
+      "sha256": "bbd6a07ace5d123995120f1425b0ecda81c7a069175e435f37114627ad55e37a",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 37,
+      "id": "subject:relic:FR:main-saint-quentin",
+      "place": "place:FR:basilique-saint-quentin-aisne",
+      "sha256": "53e30e5a156abb61a77293fc14071d9ddd6edc16014594e9876b2d6e4ef9333c",
+      "preview": "1656x2532",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 38,
+      "id": "subject:relic:DE:kolner-dom-three-kings",
+      "place": "place:DE:kolner-dom-three-kings",
+      "sha256": "719d7a8367277ed918270356659e191487fca792f85d233ea8a3f9442bf88beb",
+      "preview": "1280x2276",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 39,
+      "id": "subject:relic:IT:amalfi-sant-andrea",
+      "place": "place:IT:amalfi-sant-andrea",
+      "sha256": "48f49aee1e5ece2eaa47f0236b8cbe60754dcd49f2721b12d6fcc76d9cb54a13",
+      "preview": "1920x1285",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 40,
+      "id": "subject:relic:IT:sant-ambrogio-milano",
+      "place": "place:IT:sant-ambrogio-milano",
+      "sha256": "9d7bd915e87e9adc1fa6eb8c7482dde48e3d6478bea91187b82468b0e23fbaca",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 41,
+      "id": "subject:relic:IT:santa-giustina-padova",
+      "place": "place:IT:santa-giustina-padova",
+      "sha256": "6a742762a57094ff2fe4d84163ecb374aa8f2222b605c980f3cf359d75ca79e0",
+      "preview": "1920x1278",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 42,
+      "id": "subject:relic:IT:duomo-milano",
+      "place": "place:IT:duomo-milano",
+      "sha256": "d469a4e9131651a756c76a7cf7b4f7c922f146da94c878c389d92160abfa9ae5",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 43,
+      "id": "subject:relic:IT:anthony-padua-tongue",
+      "place": "place:IT:basilica-sant-antonio-padova",
+      "sha256": "7569b60f7c724d4a32c911d36ab815a0aa25ca0fa360127fe5557956f436f4e8",
+      "preview": "1920x2150",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 44,
+      "id": "subject:relic:IN:francis-xavier-goa",
+      "place": "place:IN:basilica-bom-jesus-old-goa",
+      "sha256": "82e5b3fe4a2dca0cc3fbd82c03911ed3237d3bfaef748600a4516f5495111339",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 45,
+      "id": "subject:relic:CA:anne-beaupre-1960-forearm",
+      "place": "place:CA:sainte-anne-de-beaupre",
+      "sha256": "9bd10ab9160bca3f61670f520afcdf56f526cace166dc9512c06c4daa86e44d3",
+      "preview": "1920x2880",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 46,
+      "id": "subject:relic:PT:jacinta-fatima",
+      "place": "place:PT:fatima-sanctuary",
+      "sha256": "93473cc30033d36190c646924ecd90143d222a31c5eaccc27e378c026b81ba77",
+      "preview": "1920x1080",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 47,
+      "id": "subject:relic:FR:chartres-voile-vierge",
+      "place": "place:FR:chartres-notre-dame",
+      "sha256": "037ced507b5b91a2d123b24f43f34cf59d5da564cbda5501e9e7b37faf7a2c2b",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 48,
+      "id": "subject:relic:IT:santa-chiara-assisi",
+      "place": "place:IT:santa-chiara-assisi",
+      "sha256": "e8bfdf9ec3882ce433c6e36c2c1b46e19f2e345a57ae62acacf30a59be7f0066",
+      "preview": "1920x2880",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 49,
+      "id": "subject:relic:IT:santa-maria-minerva-rome",
+      "place": "place:IT:santa-maria-minerva-rome",
+      "sha256": "6f54c53a6817f66cef8bdb2e778151e58265904eec8e5eb5b35f29f65f56975c",
+      "preview": "1920x1242",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 50,
+      "id": "subject:relic:IT:chiesa-gesu-rome",
+      "place": "place:IT:chiesa-gesu-rome",
+      "sha256": "7cd29834ac719403902f997761c18d663e56b59da36386627a4884b6d5970352",
+      "preview": "1920x1536",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 51,
+      "id": "subject:relic:FR:couvent-jacobins-toulouse",
+      "place": "place:FR:couvent-jacobins-toulouse",
+      "sha256": "5d94697dd7a8c729b3f9c0004b00ffa469ed838fa0259300ae60efff3c353ab2",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 52,
+      "id": "subject:relic:FR:collegiale-sainte-marthe-tarascon",
+      "place": "place:FR:collegiale-sainte-marthe-tarascon",
+      "sha256": "bef4b6ad2474734574c08d13964704c56588412c9c6dc0d8cf765ee4355ccb16",
+      "preview": "1920x1281",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 53,
+      "id": "subject:relic:IT:sant-agostino-campo-marzio",
+      "place": "place:IT:sant-agostino-campo-marzio",
+      "sha256": "1281091f04df505a9f015ca341deb06bd48034ede78921792c17700292a28cb0",
+      "preview": "1920x2880",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 54,
+      "id": "subject:relic:IT:cattedrale-sant-agata-catania",
+      "place": "place:IT:cattedrale-sant-agata-catania",
+      "sha256": "f3f1dd4f24a3146eec7e1818d6f0f471fb4b8eda68863f9fa2315a0bc0874cda",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 55,
+      "id": "subject:relic:IT:duomo-sant-eusebio-vercelli",
+      "place": "place:IT:duomo-sant-eusebio-vercelli",
+      "sha256": "dac6ec6bf84d0845c7a12fddee77dd5bb3837eba8302446046b36f9d0c2f1234",
+      "preview": "1920x1275",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 56,
+      "id": "subject:relic:IT:duomo-torino-sindone",
+      "place": "place:IT:duomo-torino-sindone",
+      "sha256": "75c5caf463ea4fdf2d120da847e71b1d1cb567ccd48e898f14340b8bb475ca87",
+      "preview": "1817x2280",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 57,
+      "id": "subject:relic:FR:cathedrale-saint-etienne-cahors",
+      "place": "place:FR:cathedrale-saint-etienne-cahors",
+      "sha256": "3303326a45b8f26bc6dda2fdb1b9cf59244242f16a404e31e5eddb2bb5383e57",
+      "preview": "3840x2880",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 58,
+      "id": "subject:relic:IT:santuario-volto-santo-manoppello",
+      "place": "place:IT:santuario-volto-santo-manoppello",
+      "sha256": "09c47446e958b58876edf8e207282e39a868540c390f66a972fcbb08cd891b29",
+      "preview": "1600x1200",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 59,
+      "id": "subject:relic:IE:oliver-plunkett-head-drogheda",
+      "place": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "DEDUPLICATE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 60,
+      "id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:grotto",
+      "place": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "sha256": "156c01194a3af453096e2990c814bfe4054d104633edf4f27f846298d4ef9261",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 61,
+      "id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:basilicas",
+      "place": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "sha256": "bc8c9e275fcb547f5231300521b6b978275a449a133f8aa6db591be71f98f6c2",
+      "preview": "3000x4000",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 62,
+      "id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:chapel",
+      "place": "place:FR:sanctuaire-sacre-coeur-paray",
+      "sha256": "b2c39d6331700a776f2388c196fe3f99411183f3b1fde7506556d3b87f5af1f6",
+      "preview": "3456x5184",
+      "technical_flags": [],
+      "strict_review": "DEDUPLICATE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 63,
+      "id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:buissonnets",
+      "place": "place:FR:basilique-sainte-therese-lisieux",
+      "sha256": "2e81018311b3e5af5931888f6038bf03c159dae26b4b8d3d03bb75b14c9e7799",
+      "preview": "2816x2112",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 64,
+      "id": "subject:guide-stop:FR:chartres-notre-dame:veil",
+      "place": "place:FR:chartres-notre-dame",
+      "sha256": "b5e47ae1cdb1ef59c92b705188153e47d43a8a538bd22deb55c10cb120a49602",
+      "preview": "2244x1479",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 65,
+      "id": "subject:guide-stop:FR:chartres-notre-dame:pilier",
+      "place": "place:FR:chartres-notre-dame",
+      "sha256": "0203171826e918d9e2d92f3fbdfa8e03c8503eefb1ebc391a354894206ca7580",
+      "preview": "1920x2880",
+      "technical_flags": [
+        "HIGH_SHADOW_CONTENT_REVIEW"
+      ],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 66,
+      "id": "subject:guide-stop:FR:chartres-notre-dame:labyrinth",
+      "place": "place:FR:chartres-notre-dame",
+      "sha256": "fa26ebb88ed029ee32e643794dc71fec930857c6539b6d5ac0a33241b8ec59b9",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_OBJECT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 67,
+      "id": "subject:guide-stop:FR:rue-du-bac:vincentian",
+      "place": "place:FR:rue-du-bac",
+      "sha256": "77fa926ab494ffcd12cc5594dfc387fe088e7d0d3e23966d52ae559b22ad74cc",
+      "preview": "1920x2880",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 68,
+      "id": "subject:guide-stop:FR:rue-du-bac:entrance",
+      "place": "place:FR:rue-du-bac",
+      "sha256": "9cc88fccbf373f1a83f0af9c77423ac055dfc10f928168d0489af9fb81f4d4c5",
+      "preview": "3840x2560",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 69,
+      "id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:statue",
+      "place": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "sha256": "ea2839d6a4837b3d698c6d556557f6fc014107ac9b0142c759d5b7fd3a15e26c",
+      "preview": "3840x5058",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 70,
+      "id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:exvotos",
+      "place": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "sha256": "f4a41bfb0b59338fa1d957711f8ef85c5c8a43c40d60d6fb7af1cad98cdb04d7",
+      "preview": "3518x2524",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 71,
+      "id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:crypt",
+      "place": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "sha256": "00dbe74da326045b26786909c87b6c151d9cd36fdd8e95cdcab615a780bffa4c",
+      "preview": "2048x3072",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 72,
+      "id": "subject:guide-stop:FR:pontmain:parish",
+      "place": "place:FR:pontmain",
+      "sha256": "8bac75463be6fba26edb46d2646a11584d5759aeefed9599a2bfa3254ed9c994",
+      "preview": "2392x4245",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 73,
+      "id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:virgin",
+      "place": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "sha256": "4506f29b9c8fdc17f178ab402968e7a9ac8a333ff49e94de9e1f6da346bae54d",
+      "preview": "2454x2777",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 74,
+      "id": "subject:guide-stop:IE:knock-shrine:chapel",
+      "place": "place:IE:knock-shrine",
+      "sha256": "60a081580e11963a1678084ecae3dc3424993ff9790f0d3b31a9bf7d964c7e53",
+      "preview": "1920x1505",
+      "technical_flags": [],
+      "strict_review": "DEDUPLICATE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 75,
+      "id": "subject:guide-stop:IE:knock-shrine:basilica",
+      "place": "place:IE:knock-shrine",
+      "sha256": "7acb3153b544303605991ee2d4f421d9a010e689d0b1fe503e68c40247573f47",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 76,
+      "id": "subject:guide-stop:IE:lough-derg-station-island:island",
+      "place": "place:IE:lough-derg-station-island",
+      "sha256": "3062d53b62801ee7a822c4a986289c1687a0645d5137feb7a05be8f130503856",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 77,
+      "id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:church",
+      "place": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 78,
+      "id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:shrine",
+      "place": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "DEDUPLICATE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 79,
+      "id": "subject:guide-stop:IE:solas-bhride-kildare:parish",
+      "place": "place:IE:solas-bhride-kildare",
+      "sha256": "29e178f996e753af5b39677a794dc1f67ef3380cd341449a336ca57dfce60f2a",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 80,
+      "id": "subject:guide-stop:PT:fatima-sanctuary:chapel",
+      "place": "place:PT:fatima-sanctuary",
+      "sha256": "be06ccfcb1c712b5969d711bc9cfca337aa8f5ee7f5541ea4fdf7b3b34692352",
+      "preview": "3840x2560",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 81,
+      "id": "subject:guide-stop:PT:fatima-sanctuary:rosary-basilica",
+      "place": "place:PT:fatima-sanctuary",
+      "sha256": "880ac594ee87d40cf58dac152fc4649f0a3b65d15e93cb51373564ae88154bdf",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 82,
+      "id": "subject:guide-stop:IT:loreto-santa-casa:basilica",
+      "place": "place:IT:loreto-santa-casa",
+      "sha256": "8f111717a9e103fd6a9859ee4b66f419516df85f030fc9ad44b9f1b357f4deaf",
+      "preview": "2385x1930",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 83,
+      "id": "subject:guide-stop:DE:altoetting-gnadenkapelle:chapel",
+      "place": "place:DE:altoetting-gnadenkapelle",
+      "sha256": "bf03daf4e63f8ef137fc864784e0e268101cb639da7f7aefbcc691cf35ce213f",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 84,
+      "id": "subject:guide-stop:PL:jasna-gora:icon-chapel",
+      "place": "place:PL:jasna-gora",
+      "sha256": "a863802c825f3b1dd895d9253e7955a7f0a06ac5b3eb1d77a6198eb1cae0cc63",
+      "preview": "3840x5754",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 85,
+      "id": "subject:guide-stop:PL:jasna-gora:basilica",
+      "place": "place:PL:jasna-gora",
+      "sha256": "e2d91d2a0374f88ffb991d073acaec923ae5f7c842c32a64295cf49df981adf4",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 86,
+      "id": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:new-basilica",
+      "place": "place:MX:basilica-guadalupe-mexico-city",
+      "sha256": "98686df722c3ecd934f366ec3aeffe0423c28fde1a136804465569747311589a",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 87,
+      "id": "subject:guide-stop:BR:aparecida-national-shrine:basilica",
+      "place": "place:BR:aparecida-national-shrine",
+      "sha256": "05bb568958b5ae08e3d855f5d932298b5b119aac38c7c0ae7003da3519e9f957",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 88,
+      "id": "subject:guide-stop:BR:aparecida-national-shrine:porto",
+      "place": "place:BR:aparecida-national-shrine",
+      "sha256": "b3515f02d3c4ebd5b2785e65abbe62fa76e29bcd82c02852513fe6106ad5d4c4",
+      "preview": "3840x2880",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 89,
+      "id": "subject:guide-stop:CA:sainte-anne-de-beaupre:basilica",
+      "place": "place:CA:sainte-anne-de-beaupre",
+      "sha256": "6a0a2ec3cd4db1389170d4888b3e565a87e741d9e046c3b4905909c63a3e6256",
+      "preview": "1920x2560",
+      "technical_flags": [],
+      "strict_review": "REASSIGN_CONTEXT",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 90,
+      "id": "subject:guide-stop:UG:namugongo-martyrs:basilica",
+      "place": "place:UG:namugongo-martyrs",
+      "sha256": "cc6d83cc2b6654287e0400ffa17efb8cede732175abc56e24c59d435298f8075",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 91,
+      "id": "subject:guide-stop:IT:basilica-san-francesco-assisi:crypt",
+      "place": "place:IT:basilica-san-francesco-assisi",
+      "sha256": "27a64fa849e80eb99051c7c6a3d6fbdc6cad9f76640b8ddec8ad3e40dedfdb22",
+      "preview": "1920x1920",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 92,
+      "id": "subject:guide-stop:IT:basilica-san-francesco-assisi:lower",
+      "place": "place:IT:basilica-san-francesco-assisi",
+      "sha256": "885504bd5096e11b059daef2f91ab5685303ae12a123608e0fc2e69bc4fb43f9",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 93,
+      "id": "subject:guide-stop:IT:basilica-san-francesco-assisi:upper",
+      "place": "place:IT:basilica-san-francesco-assisi",
+      "sha256": "344d76710d6e0a2e70f0519d45d74b2496449deef9194e470fb50db12f976691",
+      "preview": "1920x1440",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 94,
+      "id": "subject:guide-stop:IN:basilica-bom-jesus-old-goa:church",
+      "place": "place:IN:basilica-bom-jesus-old-goa",
+      "sha256": "5cd1e75f3c215fe24433b1b26be7d45860b4107720f28d4c3bd6615c518cdd54",
+      "preview": "1920x1078",
+      "technical_flags": [
+        "SHORT_EDGE_LT_1200_RESEARCH_PREVIEW"
+      ],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 95,
+      "id": "subject:guide-stop:IN:basilica-bom-jesus-old-goa:relics",
+      "place": "place:IN:basilica-bom-jesus-old-goa",
+      "sha256": "dd9451d153b1c43d72d8dc9ab4e2a64d740d2d5493cf315c7d757c048f921eac",
+      "preview": "1200x1600",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 96,
+      "id": "subject:guide-stop:AT:mariazell-basilica:grace",
+      "place": "place:AT:mariazell-basilica",
+      "sha256": "6888ee66b72506dfc75e15961bdc92d50a565cc17865c80753b861c8696a3190",
+      "preview": "1920x1442",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 97,
+      "id": "subject:guide-stop:US:champion-shrine:apparition",
+      "place": "place:US:champion-shrine",
+      "sha256": "78f55d0d50a60fca01d2b57961db8d9af04c6c2f2576f39345ee353ac7d5b9f0",
+      "preview": "1920x1280",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 98,
+      "id": "subject:guide-stop:HR:national-shrine-of-our-lady-of-marija-bistrica:church",
+      "place": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "sha256": "44377eb134314b40ef5649dbd8c29d0dcd85f34903a2a1fe644a5cd9d68e0154",
+      "preview": "1920x2880",
+      "technical_flags": [],
+      "strict_review": "REJECT_WRONG",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 99,
+      "id": "subject:guide-stop:IN:basilica-of-our-lady-of-good-health-vailankanni:basilica",
+      "place": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "sha256": "de912838710a1ef4266900e82a72a2e51249d976bbfa9734009b08d1f8bb7a5a",
+      "preview": "1920x2888",
+      "technical_flags": [],
+      "strict_review": "REPLACE_QUALITY",
+      "prior_keep": false,
+      "release_allowed": false
+    },
+    {
+      "n": 100,
+      "id": "subject:guide-stop:IN:basilica-of-our-lady-of-good-health-vailankanni:tank",
+      "place": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "sha256": "6024cc8804ce86efd2890c6d79d5cf740707fdbb32b2f8f1263642394abdb7b1",
+      "preview": "3072x1728",
+      "technical_flags": [],
+      "strict_review": "SHORTLIST_SITE",
+      "prior_keep": false,
+      "release_allowed": false
+    }
+  ]
+}
