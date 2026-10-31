@@ -59,7 +59,13 @@ assert.ok(canonical.gaps.some(x=>x.meaningId==="priest.action.hands_joined"),
   "The unresolved canonical priest-action meaning must remain on the explicit gap list");
 assert.ok(dom.includes("approvedPriestRubricGestureArt(event)"));
 assert.ok(dom.includes("icon.dataset.approvedPriestGestureEvent=event.id"));
-assert.ok(dom.includes("text.prepend(icon)"));
-assert.ok(dom.includes("text.textContent=short"),"1962 rubric text must remain");
+assert.ok(dom.includes('text.dataset.approvedInlineIcon="true"'),
+  "Only source-approved icon-backed rubrics may replace a LIVE caption");
+assert.ok(dom.includes('text.append(icon,copy);'),
+  "Approved source icon and rubric must remain in the same source-owned element");
+assert.ok(dom.includes('copy.textContent=short;'),
+  "Original 1962 rubric wording must remain available to assistive readers");
+assert.ok(dom.includes('text.setAttribute("aria-label",short)'),
+  "The approved image must retain an accessible, source-faithful action label");
 assert.equal(approvedPriestRubricGestureArt({id:"AO.RUB.C0263.03",shortAction:"JOINS HANDS"}),null);
 console.log("Approved priest gesture art: PASS — source-exact 2 published joins-hands rubrics in four forms x two languages, without action-rail pollution.");
