@@ -1,0 +1,64 @@
+{
+  "schema": "AO_DYK_R50_SOURCE_AND_612_CROSSBANK_SUMMARY_V1",
+  "date": "2026-10-31",
+  "status": "REVIEW_ONLY_SOME_SOURCE_HOLDS_REMAIN",
+  "private_612_lexical_audit": {
+    "repo": "Fulcanelli13/folio-core",
+    "branch": "research/did-you-know-discovery-r01-20261028",
+    "path": "data/discovery/research/r32-dyk-corrected500-v612-private-lexical-audit.v1.json",
+    "private_review_commit": "3123e9319a88e68d3406bce14f54e50458306f42",
+    "total_private": 612,
+    "eligible_research": 500,
+    "exact_english_collision_count": 0,
+    "exact_french_collision_count": 0,
+    "exact_source_id_collision_count": 0,
+    "above_025_lexical_overlap_count": 3,
+    "above_035_lexical_overlap_count": 0,
+    "selected_random_50_above_025_count": 0,
+    "manual_semantic_approved": false,
+    "private_texts_not_copied_here": true
+  },
+  "three_non_sample_overlaps": [
+    {
+      "research_id": "DYK-H04-W-B-176",
+      "status": "HOLD_SEMANTIC_DUPLICATE_RISK",
+      "reason": "Pilgrimage facts about Sainte-Anne-de-Beaupré overlap a private place-specific discovery; distinct angle or replacement needed."
+    },
+    {
+      "research_id": "DYK-H04-W-B-153",
+      "status": "HOLD_SEMANTIC_DUPLICATE_RISK",
+      "reason": "Lough Derg penitential-pilgrimage claim substantially overlaps private sanctuary discovery; narrow to a distinctive source action or replace."
+    },
+    {
+      "research_id": "DYK-GI-G319",
+      "status": "REWRITE_FOR_CURIOSITY_AND_GLOSSARY_SENSE",
+      "reason": "Ciborium-veil comparison shares wording about differing veils with private glossary-derived concepts; distinguish the reserved-vessel practice and avoid glossary restatement."
+    }
+  ],
+  "same50_source_progress": {
+    "original_fixed_seed": 20261031,
+    "drawn": 50,
+    "original_raw_draw_still_preserved": true,
+    "one_glossary_failure_replaced_transparently": true,
+    "revisions": 19,
+    "direct_weiser_folio_checks": 27,
+    "other_external_source_reviews": 6,
+    "original_pitre_folio_images_unavailable_for_fresh_check": true,
+    "remaining_original_pitre_evidence_must_be_accurately_categorized": true,
+    "still_unresolved_specific_1930_national_archives_caption": true,
+    "source_lexical_screen_not_a_semantic_approval": true
+  },
+  "release": {
+    "all_500_automatically_editorial_approved": false,
+    "public_h7_published_new_facts": 0,
+    "private_previews_not_published": true
+  },
+  "source_refs": [
+    "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "https://maternalheart.org/library/1962rubrics.pdf",
+    "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+    "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+    "https://parafia-maryi-krolowej.poznan.pl/wypominki/",
+    "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html"
+  ]
+}
