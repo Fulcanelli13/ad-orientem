@@ -25,15 +25,15 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1884);
+assert.equal(world.filter(x=>x.map_publishable).length,1890);
 // The external Photo Finder must consume exactly the approved runtime site
 // markers. Never regress to the frozen R49 snapshot or create photo-search
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:37,refined_existing_site_pins:9,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,49);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,49);
+assert.deepEqual(photoPins.counts,{new_site_pins:43,refined_existing_site_pins:9,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,55);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,55);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
@@ -48,7 +48,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,698);
+assert.equal(newSites.length,692);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -64,9 +64,9 @@ const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=
 assert.equal(diocesanGroupIds.size,584);
 const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
 assert.equal(diocesan.length,584);
-assert.equal(diocesan.filter(x=>x.map_publishable).length,550);
-assert.equal(diocesan.filter(x=>!x.map_publishable).length,34);
-for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"]]){
+assert.equal(diocesan.filter(x=>x.map_publishable).length,556);
+assert.equal(diocesan.filter(x=>!x.map_publishable).length,28);
+for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"],["RG-1EE1D2C9B3EB"],["RG-DE5F8ED4E2F7"],["RG-322AA8195E65"],["RG-C7F25752659D"],["RG-4D09923C6B74"],["RG-8DC436A75526"]]){
  const item=diocesan.find(x=>x.physical_group_id===group);
  assert.ok(item?.map_publishable,"Diocesan site must be pinned: "+group);
  assert.equal(item.map_state,"PROVISIONAL");
@@ -75,9 +75,15 @@ for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Forty-six separately reviewed physical site or address references may be shown
+// Fifty-two separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
+ ["RG-1EE1D2C9B3EB","AO-B39-LOC-HU-C9750B2A6BCA","Karolina-kápolna",47.7752,19.13221,"osm:way:297827179","site"],
+ ["RG-DE5F8ED4E2F7","AO-B39-LOC-PL-4B4A686B30D2","Kościół Matki Bożej Bolesnej",50.09753,18.54209,"osm:way:236882053","site"],
+ ["RG-322AA8195E65","AO-B39-LOC-PL-A28D536BB19E","Kościół Świętego Jerzego",52.53739,17.5931,"osm:way:75000179","site"],
+ ["RG-C7F25752659D","AO-B38-LOC-NL-19A47E978C1","Sint Josephkerk",52.38331,4.63887,"osm:way:265313243","site"],
+ ["RG-4D09923C6B74","AO-B39-LOC-IT-76322D1DA1C9","Chiesa del Gesù",40.69399,14.47883,"osm:way:734893276","site"],
+ ["RG-8DC436A75526","AO-B39-LOC-PL-CD2D71CC49A0","Kościół Świętych Jana i Pawła Męczenników",50.270021,18.996568,"odtur:12019","site"],
  ["RG-2CFE11950F95","AO-B38-LOC-BE-68ECD274D85","Église Saint-Sauveur",50.62438,5.39712,"osm:way:369175503","site"],
  ["RG-4E6E8B55676B","AO-B39-LOC-PL-08241A64B37C","Kościół Świętego Bartłomieja Stary",50.31106,18.66963,"osm:way:266470146","site"],
  ["RG-EE22A08568B9","AO-B38-LOC-ES-539E5EDAC4B","Sant Jordi de Vallcarca",41.41319,2.1441,"osm:way:233311642","site"],
@@ -252,11 +258,11 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1884);
-assert.equal(vm.addressOnly,698);
+assert.equal(vm.mapped,1890);
+assert.equal(vm.addressOnly,692);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/698/);
+assert.match(html,/692/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
