@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 // Retain the existing Schola test command; include session observation gates.
 import "./reader-schola-performance-ledger.mjs";
+import "./reader-mass-sung-dialogue-pairs.mjs";
 import {readFileSync} from "node:fs";
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
@@ -50,6 +51,12 @@ assert.equal(MASS_SCHOLA_EVENT_SPECS.length,36);
 const plan=buildScholaMusicItinerary(args);
 assert.equal(plan.supported,true);
 assert.equal(plan.activeClock,"SCHOLA_INDEPENDENT");
+const prefaceMusic=plan.events.find(e=>e.id==="PREFACE_DIALOGUE");
+assert.equal(prefaceMusic.sungDialogue.exchanges.length,3);
+assert.equal(prefaceMusic.sungDialogue.toneSelection.status,"NOT_SOURCE_CERTIFIED");
+assert.equal(plan.events.find(e=>e.id==="DISMISSAL").sungDialogue.exchanges.length,2);
+assert.equal(plan.events.find(e=>e.id==="CANON").sungDialogue,null);
+
 assert.equal(plan.sourceCardCount,cards.length);
 const musicEvents=plan.events.filter(e=>e.kind==="CHANT"||e.kind==="PRIEST_VOICE");
 assert.ok(musicEvents.length>=12,"Missing source-owned sung pieces or dialogue moments");
