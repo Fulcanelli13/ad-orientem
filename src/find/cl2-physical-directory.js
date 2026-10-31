@@ -43,6 +43,30 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-19BD1D3D4E73":Object.freeze({
+  sourceId:"AO-B39-LOC-HU-CEAC77F2EE49",name:"Árpád-házi Szent Erzsébet Ferences-Templom",country:"HU",addressNeedle:"Szombathely",placeId:null,
+  lat:47.23139,lng:16.62503,sourceRef:"miserend:1328",sourceUrl:"https://miserend.hu/templom/1328",
+  correctedAddress:"Szent Erzsébet tér 1, 9700 Szombathely, Hungary",precision:"site",reviewScope:"FRANCISCAN_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE",
+  evidence:Object.freeze(["https://szombathelyiferencesek.hu/","https://www.latinmassdir.org/country/hu/?view=list"]),
+ }),
+ "RG-2577094CF7E4":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-AD5AB9333B4F",name:"Kościół Trójcy Świętej Ormiański",country:"PL",addressNeedle:"Mikołowska 6",placeId:null,
+  lat:50.29152,lng:18.66781,sourceRef:"osm:way:187038655",sourceUrl:"https://www.openstreetmap.org/way/187038655",
+  correctedAddress:"ul. Mikołowska 6, 44-100 Gliwice, Poland",precision:"site",reviewScope:"ARMENIAN_CATHOLIC_ORDINARIATE_NOT_LATIN_DIOCESAN_PHOTO_QUEUE",
+  evidence:Object.freeze(["https://mapcarta.com/W187038655","https://ordynariat.ormianie.pl/"]),
+ }),
+ "RG-3E135A9E5C09":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-43049BF2ACE",name:"Monasterio de Santa María de la Rábida",country:"ES",addressNeedle:"",placeId:null,
+  lat:37.20756,lng:-6.92614,sourceRef:"osm:way:205028699",sourceUrl:"https://www.openstreetmap.org/way/205028699",
+  correctedAddress:"Monasterio de La Rábida, Palos de la Frontera, Huelva, Spain",precision:"site",reviewScope:"FRANCISCAN_FRIARY_NOT_DIOCESAN_PHOTO_QUEUE",
+  evidence:Object.freeze(["https://mapcarta.com/W205028699","https://www.franciscanos.org/monasterio-de-la-rabida/"]),
+ }),
+ "RG-AE6B9D48B695":Object.freeze({
+  sourceId:"AO-B39-LOC-HU-F6266E99F5B3",name:"Szent József Jezsuita Templom",country:"HU",addressNeedle:"Szeged",placeId:null,
+  lat:46.25193,lng:20.14357,sourceRef:"osm:way:1418288454",sourceUrl:"https://www.openstreetmap.org/way/1418288454",
+  correctedAddress:"Szent József jezsuita templom, Szeged, Hungary",precision:"site",reviewScope:"JESUIT_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE",
+  evidence:Object.freeze(["https://mapcarta.com/W1418288454","https://jezsuita.hu/"]),
+ }),
  "RG-A768309560A6":Object.freeze({
   sourceId:"AO-B39-LOC-SK-F3A4F0DCE391",
   name:"Kaplnka Svätého Leonarda",country:"SK",addressNeedle:"Doľany",placeId:null,
