@@ -38,8 +38,26 @@ try{
     const r=el.getBoundingClientRect();
     return {top:r.top,pixels:Math.max(0,Math.min(r.bottom,innerHeight-70)-Math.max(0,r.top)),height:innerHeight};
    });
+   const verticalStack=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const top=selector=>{
+     const element=root?.querySelector(selector),box=element?.getBoundingClientRect();
+     return box?{top:Math.round(box.top),height:Math.round(box.height)}:null;
+    };
+    return {
+     crown:top(".aoF07CrownBand"),
+     recitation:top(".aoF07MercyRecitation"),
+     chapters:top(".aoF07MercyChapterChips"),
+     progress:top(".aoMercyBeadNavigation"),
+     cardHead:top(".aoDevoCardHead"),
+     scroll:top(".aoDevoCardScroll"),
+     rubric:top(".aoF07MercyRubric"),
+     prayer:top(".aoMercyLine.aoMercyPrayer p")
+    };
+   });
    assert.ok(firstPrayer.pixels>=28,
-    "F07 first canonical prayer must show at least one readable line above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
+    "F07 first canonical prayer must show at least one readable line above the app dock at "+
+    width+"px: "+JSON.stringify({firstPrayer,verticalStack}));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
    const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
    await large.click();
