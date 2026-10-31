@@ -43,7 +43,7 @@ test("F11 Claude B-01/B-02/B-04/B-05: original public liturgy preserved",()=>{
  }
  assert.match(runtime,/benFeastOptions\(\)/);
  assert.match(runtime,/batch02SourceLinks\('benediction-optional-local'\)/);
- assert.match(runtime,/class="aoRiteOptionRow"/);
+ assert.match(runtime,/class="aoRiteOptionRow aoClaudeBenSettings"/);\n assert.match(runtime,/data-p435930-ben-settings/);\n assert.match(runtime,/aoClaudeAltarPlate/);
  assert.match(runtime,/BENEDICTION_1962_WITNESS\.url/);
  assert.match(runtime,/benedictionAlleluiaStatus\(selectedDateKey\(\)\)/);
  assert.match(runtime,/Stop interacting with the phone/);
