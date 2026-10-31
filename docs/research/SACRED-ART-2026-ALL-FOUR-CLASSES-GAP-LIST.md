@@ -9,7 +9,7 @@ Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Ear
 ---
 ## Latest matching checkpoint — Batch 12 (31 October 2026)
 
-**Current researched Class III subject identification: 126/165 dates (126/131 observed sanctoral dates).** Batch 12 recovers 3 exact-feast painting-subject matches (4 named historical art originals), leaving **5 multi-saint or dual-basilica dates without a single fully matching painted original**. Eight additional partial art/graphic sources clarify available alternatives but do not count as full matches. Manuscript painting and architectural frescoes are flagged as such, not misrepresented as oil canvases. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+**Current researched Class III subject identification: 126/165 dates (126/131 observed sanctoral dates).** Batch 12 recovers 3 exact-feast painting-subject matches (5 named historical art originals), leaving **5 multi-saint or dual-basilica dates without a single fully matching painted original**. Eight additional partial art/graphic sources clarify available alternatives but do not count as full matches. Manuscript painting and architectural frescoes are flagged as such, not misrepresented as oil canvases. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
 
 | Feast | Observation | Existing painting(s) | Safeguard |
 | --- | --- | --- | --- |
@@ -159,13 +159,17 @@ Further **partial research only**: 12 May, Cristoforo Roncalli/Pomarancio *St Do
 ### Batch 12 — final-eight source reconciliation (31 October 2026)
 
 Three 1962 principal feasts have newly documented matching **historical painted originals**:
-- **16 January, Pope St Marcellus I:** Pietro Gaia's 1590–99 oil painting *St Emidius consecrated by Pope St Marcellus* (ICCD 1100252222); Cesare Mariani's separate 1890 Pope Marcellus fresco (ICCD 1100254732).
+- **16 January, Pope St Marcellus I:** Pietro Gaia's 1590–99 oil painting *St Emidius consecrated by Pope St Marcellus* (ICCD 1100252222); Cesare Mariani's 1890 fresco (ICCD 1100254732); and **Juan Ramírez's c. 1515 oil-on-panel *San Marcelo Papa*** (Museo de Bellas Artes de Granada, accession CE0020; source Commons 1023×1271 only). Three distinct originals, all photography-held.
 - **22 January, Sts Vincent and Anastasius:** Alessandro Maganza's 1613 painting *Madonna and Child with Saints Vincent and Anastasius*, within San Vincenzo church at Thiene. Official Catholic church record explicitly names both saints. This is a single exact two-martyr work, not the Met's previously identity-unconfirmed Vincent of Lisbon.
 - **6 February, St Titus:** Georgios Klontzas's signed icon *Saint Titus, Bishop of Crete*, Vatican Museums Pinacoteca Room XVIII catalogue entry 11. Painted original, photo rights from Vatican Museums not free-certified.
 
 The other five feasts now have **8 additional source records** (partial paintings, a papal etching, and a tapestry). This is a positive inventory but cannot be counted as five full matching original paintings. Strong leads: Brera's Baroque oil *Martyrdom of Saints Rufina and Secunda* (1620–24, official ICCD 0300158485, **not** Seville's Justa/Rufina), the Pancras martyrdom oil in Sant'Alessandro Milan, Cola dell'Amatrice's Pope Victor I altarpiece (Zeri work 22049), the combined historical Caius/Soter etching (Calcografica S-FN14487), and the painted 1671 Barberini cartoon of Pope Urban VIII consecrating **only St Peter's** (Palazzo Barberini inv 2261).
 
 All relevant originals and artwork media are separated in `data/calendar/sacred-art-2026-last-eight-physical-source-reconciliation-batch12.v1.json`. No photograph received commercial app rights approval; no portrait, copy or unrelated saint has been substituted. Class III strict exact-subject research **123→126/131**, unresolved full-original subject gaps **8→5**, no new editorial approvals or live app images. Canonical 383 archive, 186 links, and user-rejected 68 annex works unchanged.
+
+### Single consolidated 131-date Class III subject collection
+
+The complete 131-row research candidate master now lives at `data/calendar/sacred-art-2026-classIII-sanctoral-complete-candidate-research-master.v1.json`. Each date lists canonical 383 candidates, accepted-856 source records, historical named-file and Breviarium records, newly researched museum sources, and separately stored partial/artifact evidence. This is a **source-first review staging census** of 204 dated source relationships, not 204 separately accepted painting originals or 204 licensed/curated image files. **52 feast dates have two or more distinct source research records**, some possibly photos of one original and requiring object-level deduplication. No new production images or date approvals were created. The five remaining full-original gaps are preserved.
 
 ### Current 5 unlinked Class III sanctoral dates
 
