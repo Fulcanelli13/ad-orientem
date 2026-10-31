@@ -23,13 +23,15 @@ const wave10=rd("commons-exact-pageid-wave10-20261031.v1.json");
 const remaining23=rd("remaining-23-source-identities-20261031.v1.json");
 const wave11=rd("museum-commons-legacy-source-wave11-20261031.v1.json");
 const remaining17=rd("remaining-17-source-identities-20261031.v1.json");
+const wave12=rd("original-object-provenance-wave12-20261031.v1.json");
+const remaining13=rd("remaining-13-source-identities-20261031.v1.json");
 const provisional=rd("provisional-one-choice-per-267-art-position.v1.json");
 test("1506 proposed original artwork placements are never released, including exact-ID photo-source recoveries",()=>{
  const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1506);
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
- assert.equal(x.nowStillWithoutSourcePages,46);
+ assert.equal(x.nowStillWithoutSourcePages,41);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave08,6);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave07,17);
  assert.equal(x.strictCCBYSAResearchPhotoHoldsWave07,7);
@@ -37,9 +39,9 @@ test("1506 proposed original artwork placements are never released, including ex
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave05,4);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave04,32);
  assert.equal(x.sourceLinksVerifiedBySubjectSourceWave03,11);
- assert.equal(x.nowWithSourcePages,1460);
+ assert.equal(x.nowWithSourcePages,1465);
  assert.equal(x.sourceLinksVerifiedByMetWave02,36);
- assert.equal(x.distinctSourceLessCandidateIdentities,17);
+ assert.equal(x.distinctSourceLessCandidateIdentities,13);
  assert.equal(x.pradoPhotoSourcesExcluded,17);
  assert.equal(x.unverifiedNameOnlySourceAlternatives,0);
  assert.equal(x.confirmedNewUserArtworkApprovals,0);
@@ -59,8 +61,8 @@ test("1506 proposed original artwork placements are never released, including ex
   }
  }
  assert.equal(active,1506);
- assert.equal(linked,1460);
- assert.equal(remaining,46);
+ assert.equal(linked,1465);
+ assert.equal(remaining,41);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);
 });
@@ -335,7 +337,7 @@ test("wave 8 verified exact Commons originals add six source links without new a
  for(const sh of index.shards){
   for(const sl of rd("collection-family-"+sh.family+".v1.json").slots)for(const x of sl.reviewCollection)if(!x.sourcePage)missing++;
  }
- assert.equal(missing,46);
+ assert.equal(missing,41);
  for(const entry of remaining34.items){
   assert.equal(entry.productionEnabled,false);
   assert.equal(entry.newApprovalGranted,false);
@@ -502,7 +504,56 @@ test("wave 11 exact original museum and Commons research source recovery keeps a
   for(const ref of entry.placements){
    const slot=rd("collection-family-"+ref.family+".v1.json").slots.find(x=>x.slot===ref.slot);
    assert.ok(slot);
-   assert.ok(slot.reviewCollection.some(x=>!x.sourcePage&&((x.sourceIDs||[]).join("||")||"UNKEYED::"+x.title+"::"+x.artist)===entry.identityKey));
+   assert.ok(slot.reviewCollection.some(x=>((x.sourceIDs||[]).join("||")||"UNKEYED::"+x.title+"::"+x.artist)===entry.identityKey));
   }
  }
+});
+
+test("wave 12 verifies source identities without converting documentary catalogue pages into photo rights",()=>{
+ assert.equal(wave12.counts.distinctOriginalIdentitiesResolved,4);
+ assert.equal(wave12.counts.placementSourceLinksRecovered,5);
+ assert.equal(wave12.counts.linkedNow,1465);
+ assert.equal(wave12.counts.stillMissingSourcePage,41);
+ assert.equal(wave12.counts.distinctRemainingOriginalIdentities,13);
+ for(const a of Object.values(wave12.safety))assert.equal(a,true);
+ let n=0;
+ for(const x of wave12.verifiedOriginals){
+  assert.ok(x.sourcePage.startsWith("https://"));
+  assert.equal(x.productionEnabled,false);
+  assert.equal(x.newArtApprovalGranted,false);
+  assert.equal(x.photoNativeQualityCertified,false);
+  assert.equal(x.imageDownloaded,false);
+  for(const p of x.placements){
+   const slot=rd("collection-family-"+p.family+".v1.json").slots.find(s=>s.slot===p.slot);
+   assert.ok(slot,p.slot);
+   const w=slot.reviewCollection.find(a=>((a.sourceIDs||[]).join("||")||"UNKEYED::"+a.title+"::"+a.artist)===x.identityKey);
+   assert.ok(w,x.identityKey);
+   assert.equal(w.sourcePage,x.sourcePage);
+   assert.equal(w.verifiedOriginalAccession,x.originalAccession);
+   assert.equal(w.photoSourceEligibility,x.photoHold);
+   assert.equal(w.productionEnabled,false);
+   if(x.identityKey.includes("Virgin of the Seven Sorrows")){
+    assert.equal(w.sourceEditorialStatus,"USER_FINAL_LOCKED");
+    assert.equal(w.fit,"FINAL_USER_LOCK");
+    assert.equal(w.verifiedOriginalAccession,"008327-000");
+   }
+   n++;
+  }
+ }
+ assert.equal(n,5);
+ assert.equal(remaining13.items.length,13);
+ assert.equal(remaining13.stats.missingSourcePlacementCandidates,41);
+ assert.equal(remaining13.stats.linkedPlacementCandidates,1465);
+ assert.equal(remaining13.items.reduce((n,x)=>n+x.placementCount,0),41);
+ assert.deepEqual(remaining13.stats.categories,{PRADO_PHOTO_QUARANTINE_INDEPENDENT_PHOTO:2,COMMONS_EXACT_SOURCE_PAGE_ID:7,CLEVELAND_OBJECT_ID:1,LEGACY_OR_MASTER_SOURCE:2,UNKEYED_ORIGINAL:1});
+ for(const x of remaining13.items){
+  assert.equal(x.productionEnabled,false);
+  assert.equal(x.newApprovalGranted,false);
+  for(const p of x.placements){
+   const slot=rd("collection-family-"+p.family+".v1.json").slots.find(s=>s.slot===p.slot);
+   assert.ok(slot);
+   assert.ok(slot.reviewCollection.some(w=>!w.sourcePage && ((w.sourceIDs||[]).join("||")||"UNKEYED::"+w.title+"::"+w.artist)===x.identityKey));
+  }
+ }
+ assert.ok(wave12.unresolvedIdentityAndRightsHolds.some(x=>x.identityKey.includes("Pentecost")&&x.candidates?.length===2));
 });
