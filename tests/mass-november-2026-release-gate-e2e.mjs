@@ -298,8 +298,14 @@ try{
              if(!globalThis.AO_R17_BROWSER_ENTRY.selectTodayOption("readerLanguage",language))
                throw Error("NOV02_READER_LANGUAGE_NOT_SELECTABLE:"+language);
              const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
-             const {mountNativeReaderPreview}=await import("/src/mass/reader-native-preview.js");
-             const api=await mountNativeReaderPreview({doc:document,prepared});
+             // The actual production bridge supplies the locked, audited
+             // canonical icon bank. A bare native mount has no resolver and
+             // falsely yields an iconless visual "pass".
+             const {mountR17Preview}=await import("/src/mass/browser-entry.js");
+             const mounted=await mountR17Preview({doc:document,prepared});
+             if(mounted.uiOwner!=="R17_NATIVE_PRODUCTION")
+               throw Error("NOV02_NOT_PRODUCTION_READER_OWNER");
+             const api=mounted.preview;
              const proper=api.model?.properSource??null;
              const sourceCards=(api.model?.cards??[]).filter(c=>
                String(c.sourceSectionId??c.sectionId)==="AO.CARD.006");
@@ -318,6 +324,35 @@ try{
                curated:api.root.dataset.r17CuratedReview,
                overlay:(prepared?.session?.resolvedMass?.overlays??[]).includes("REQUIEM"),
              };
+             // Inspect the exact approved source rubric and its artwork on
+             // the actual cue-bearing card. The Sequence can legitimately
+             // have no priest gesture; never invent one for that chant.
+             const rubricCard=(api.model?.cards??[]).find(card=>
+               (card.paragraphs??[]).some(p=>(p.sourceCueIds??[])
+                 .includes("AO.SM.C0072")));
+             if(!rubricCard||!api.showSection(rubricCard.sectionId))
+               throw Error("NOV02_APPROVED_COLLECT_RUBRIC_CARD_MISSING");
+             const approvedArt=api.root.querySelector(
+               '.ao-approved-priest-head-bow-rubric-art[data-approved-priest-head-bow-event="AO.RUB.C0072.01"]');
+             const sourceRubric=api.root.querySelector(
+               '.ao-live-rubric-action[data-rubric-id="AO.RUB.C0072.01"],'+
+               '.ao-missal-rubric-action[data-rubric-id="AO.RUB.C0072.01"]');
+             const artUrl=approvedArt?.style.maskImage||approvedArt?.style.webkitMaskImage||"";
+             proof.approvedRubric={
+               card:rubricCard.sectionId,
+               iconPresent:Boolean(approvedArt&&artUrl.includes("head_bow.svg")),
+               sourceRubricPresent:Boolean(sourceRubric),
+               iconUrl:artUrl.slice(0,180),
+             };
+             if(!proof.approvedRubric.iconPresent||
+                !proof.approvedRubric.sourceRubricPresent)
+               throw Error("NOV02_APPROVED_GESTURE_RUBRIC_NOT_RENDERED:"+
+                 JSON.stringify(proof.approvedRubric));
+             // Continue existing Sequence image contract, now with production
+             // icons actually enabled. This test's rubric inspection is
+             // isolated from the screenshot's source-card selection.
+             if(!api.showSection(sequenceCard.sectionId))
+               throw Error("NOV02_SEQUENCE_RESTORE_FAILED");
              globalThis.__AO_NOV02_NATIVE_PROOF=api;
              return proof;
            },language);
