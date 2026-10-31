@@ -1,0 +1,21 @@
+name: Sacred Art Four-Class 365-day Audit
+on:
+  pull_request:
+    paths:
+      - 'data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json'
+      - 'data/calendar/sacred-art-2026-class-i-ii-multiwork-crosswalk.v1.json'
+      - 'tests/sacred-art-365-class-coverage-audit.mjs'
+      - '.github/workflows/ao-sacred-art-365-coverage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-calendar-painting-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/sacred-art-365-class-coverage-audit.mjs
