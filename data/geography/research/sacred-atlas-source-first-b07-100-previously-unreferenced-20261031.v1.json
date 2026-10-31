@@ -5,9 +5,9 @@
   "important_caveat": "100 triaged source-first site targets, NOT 100 newly authenticated objects or 100 licensed photographs",
   "totals": {
     "sites_triaged": 100,
-    "authority_documented_exact_subjects": 14,
-    "incomplete_exact_subjects": 86,
-    "commons_named_photo_leads": 10,
+    "authority_documented_exact_subjects": 17,
+    "incomplete_exact_subjects": 83,
+    "commons_named_photo_leads": 11,
     "original_candidate_images_accepted": 0,
     "publication_approvals": 0
   },
@@ -859,13 +859,19 @@
       "country": "MT",
       "place_type": "shrine",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "Present Marian icon/fresco of Our Lady at National Shrine Mellieħa, which Malta's archdiocese describes as Byzantine-Sicilian in origin, probably c.11th century.",
+      "source_identity_evidence": [
+        {
+          "type": "CUSTODIAN_OR_OFFICIAL",
+          "url": "https://church.mt/doors-of-mercy/the-national-shrine-of-our-lady-of-mellieha/",
+          "scope": "Exact physical devotional subject identification, not rights approval"
+        }
+      ],
+      "known_object_distinctions": "St Luke painting it in AD 60 is a shrine tradition, NOT reliable object dating. Image in cave distinct from church exteriors.",
       "photo_candidate_count": 0,
       "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "next_step": "DISCOVER_SOURCE_IDENTICAL_OBJECT_PHOTOGRAPH_RIGHTS_AND_VISUAL_QA",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
@@ -1370,13 +1376,19 @@
       "country": "ES",
       "place_type": "chapel",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "Santa Cova rock cave and Chapel of the Holy Cave; the image at the cave chapel is a reproduction of the authentic Black Madonna at the Montserrat basilica.",
+      "source_identity_evidence": [
+        {
+          "type": "CUSTODIAN_OR_OFFICIAL",
+          "url": "https://abadiamontserrat.cat/en/seccio/santuari/Basilica-and-other-places-of-worship",
+          "scope": "Exact physical devotional subject identification, not rights approval"
+        }
+      ],
+      "known_object_distinctions": "Crucial false-original prevention: the real Madonna is in the BASILICA, whereas the cave chapel has a reproduction. Photograph holy rock/cave as primary site marker.",
       "photo_candidate_count": 0,
       "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "next_step": "DISCOVER_SOURCE_IDENTICAL_OBJECT_PHOTOGRAPH_RIGHTS_AND_VISUAL_QA",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
@@ -1568,13 +1580,37 @@
       "country": "CO",
       "place_type": "basilica",
       "owner_registry_status_at_intake": "NO_PRIOR_SOURCE_FIRST_REFERENCE",
-      "subject_identification_stage": "NEEDS_CUSTODIAN_OBJECT_RESEARCH",
-      "proposed_original_physical_subject": null,
-      "source_identity_evidence": [],
-      "known_object_distinctions": "No separately evidenced unique physical devotional object: shrine title/site type is not enough to infer a statue, relic, image or chapel-feature.",
-      "photo_candidate_count": 0,
-      "exact_commons_file_leads": [],
-      "next_step": "RESEARCH_CUSTODIAN_PRIMARY_PHYSICAL_OBJECT_THEN_FIND_PHOTO",
+      "subject_identification_stage": "PHYSICAL_SUBJECT_FROM_NAMED_AUTHORITATIVE_DESCRIPTION",
+      "proposed_original_physical_subject": "Venerated crucifix of Señor de los Milagros displayed at the Minor Basilica in Buga, distinct from processional replicas or generic exterior.",
+      "source_identity_evidence": [
+        {
+          "type": "CUSTODIAN_OR_OFFICIAL",
+          "url": "https://www.mintic.gov.co/portal/inicio/Sala-de-prensa/Noticias/82047%3AHomenaje-al-Senor-de-Los-Milagros-de-Buga",
+          "scope": "Exact physical devotional subject identification, not rights approval"
+        },
+        {
+          "type": "CUSTODIAN_OR_OFFICIAL",
+          "url": "https://www.policia.gov.co/noticia/presentes-en-basilica-menor-del-senor-los-milagros-buga",
+          "scope": "Exact physical devotional subject identification, not rights approval"
+        }
+      ],
+      "known_object_distinctions": "Government recounts miracle stories as tradition; crucifix is the physical subject. Verify exact original object before using Commons images.",
+      "photo_candidate_count": 1,
+      "exact_commons_file_leads": [
+        {
+          "file_title": "File:Señor de los Milagros, Buga, Valle..JPG",
+          "commons_file_url": "https://commons.wikimedia.org/wiki/File:Se%C3%B1or_de_los_Milagros,_Buga,_Valle..JPG",
+          "original_width": 1536,
+          "original_height": 2048,
+          "role": "EXACT_CRUCIFIX_CANDIDATE",
+          "commons_claimed_reuse_license": "FILE_PAGE_REVIEW_PENDING",
+          "quality_state": "FULL_RES_VISUAL_NOT_INSPECTED",
+          "source_identity_confirmed": false,
+          "photo_downloaded": false,
+          "photo_approved": false
+        }
+      ],
+      "next_step": "VERIFY_FILE_VISUAL_AND_RIGHTS_THEN_USER_REVIEW",
       "editorial_decision": "UNREVIEWED_NEW_RESEARCH_ONLY",
       "existing_user_approvals": "UNCHANGED",
       "no_site_hero_substitution": true,
