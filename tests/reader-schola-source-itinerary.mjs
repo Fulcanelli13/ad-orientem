@@ -5,6 +5,7 @@ import "./reader-mass-sung-dialogue-pairs.mjs";
 import "./reader-mass-1962-tone-family.mjs";
 import "./reader-mass-actual-tone-context.mjs";
 import "./reader-mass-m05-gabc-source-screen.mjs";
+import "./reader-mass-m06-notation-handoff.mjs";
 import {readFileSync} from "node:fs";
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
@@ -56,6 +57,10 @@ assert.equal(plan.supported,true);
 assert.equal(plan.activeClock,"SCHOLA_INDEPENDENT");
 const prefaceMusic=plan.events.find(e=>e.id==="PREFACE_DIALOGUE");
 assert.equal(prefaceMusic.sungDialogue.exchanges.length,3);
+assert.equal(prefaceMusic.notationHandoff.schema,"ao-mass-music-m06-notation-handoff-v1");
+assert.equal(prefaceMusic.notationHandoff.scoreAvailableToMassUser,false);
+assert.equal(prefaceMusic.notationHandoff.sourceCandidateId,null,
+ "An unclassified 1962 Mass cannot acquire a Preface melody");
 assert.equal(prefaceMusic.sungDialogue.toneSelection.status,"NOT_SOURCE_CERTIFIED");
 assert.equal(plan.events.find(e=>e.id==="DISMISSAL").sungDialogue.exchanges.length,2);
 assert.equal(plan.events.find(e=>e.id==="CANON").sungDialogue,null);
