@@ -2,6 +2,10 @@ name: Directory runtime snapshots — FSSP / ICKSP / IBP
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/directory-runtime-snapshots.yml"
+      - "tools/directory/validate-runtime-snapshots.mjs"
   schedule:
     - cron: "17 3 * * 1"
   push:
@@ -29,7 +33,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
