@@ -1,0 +1,36 @@
+name: Rauth Edinburgh — read-only 14-photo native source QA
+
+on:
+  push:
+    branches:
+      - research/rauth-edinburgh-14-public-domain-photo-review-20261031
+    paths:
+      - 'data/prayer/stations/rauth-edinburgh/series-photo-rights-research.v1.json'
+      - 'scripts/rauth_edinburgh_ephemeral_photo_qa.py'
+      - '.github/workflows/rauth-edinburgh-photo-source-qa.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'data/prayer/stations/rauth-edinburgh/series-photo-rights-research.v1.json'
+      - 'scripts/rauth_edinburgh_ephemeral_photo_qa.py'
+      - '.github/workflows/rauth-edinburgh-photo-source-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-native-photos:
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/research/rauth-edinburgh-14-public-domain-photo-review-20261031') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/rauth-edinburgh-14-public-domain-photo-review-20261031')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image metadata reader
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Inspect both 14-photo source sets without storing their photographs
+        run: python scripts/rauth_edinburgh_ephemeral_photo_qa.py
