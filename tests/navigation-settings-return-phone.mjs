@@ -44,6 +44,13 @@ try{
       }
       await page.waitForFunction(({api})=>globalThis[api]?.status?.()?.open===true||api==="AO_HOME_APP_V1", {api:owners[dest]},{timeout:30000});
       assert.equal(await page.locator(roots[dest]).count(),1,"Entry DOM missing "+dest);
+      let selectedFormationFamily=null;
+      if(dest==="learn"){
+        const family=page.locator('#ao-learn-modular-root button[data-ao-learn-family]').first();
+        await family.click();
+        selectedFormationFamily=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.status().family);
+        assert.ok(selectedFormationFamily,"Formation family did not open");
+      }
       const entry=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
       assert.equal(entry?.ok,true,"Settings failed to open over "+dest);
       await page.locator("#ao-settings-modular-root [data-settings-close]").waitFor({state:"visible"});
@@ -71,6 +78,12 @@ try{
       },roots[dest]);
       assert.equal(surface.visible,true,"Return screen hidden: "+dest);
       assert.equal(surface.focusHidden,false,"Return focus hidden: "+dest);
+      if(dest==="learn"){
+        await page.waitForFunction(expected=>globalThis.AO_LEARN_APP_V1?.status?.().family===expected,
+          selectedFormationFamily,{timeout:15000});
+        assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-back]').count()>=1,true,
+          "Formation family Back not available after Settings");
+      }
       if(dest!=="home"){
         const home=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
         assert.equal(home?.ok,true,"Home fails after Settings return to "+dest);
