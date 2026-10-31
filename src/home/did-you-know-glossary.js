@@ -25,8 +25,8 @@ export const HOME_DYK_GLOSSARY_FACTS=Object.freeze({
     "fr": "Le chant de l’aspersion dominicale change au temps pascal : Asperges me cède la place à Vidi aquam dans le rite romain traditionnel."
   },
   "G194": {
-    "en": "The thurifer carries the censer, but the incense is kept separately in a small boat until it is placed on the coals.",
-    "fr": "Le thuriféraire porte l’encensoir, mais l’encens est conservé à part dans une navette avant d’être déposé sur les charbons."
+    "en": "At the traditional Roman Mass, the thurible is entrusted to the thurifer and handled according to specific ceremonial directions—not simply swung at will.",
+    "fr": "À la messe romaine traditionnelle, l’encensoir est confié au thuriféraire et manié selon des règles cérémonielles précises, et non librement."
   },
   "G240": {
     "en": "At a Solemn Mass, the liturgical kiss of peace can pass among the ministers in ceremonial order; it is not a general congregational greeting.",
