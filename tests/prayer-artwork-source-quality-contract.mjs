@@ -6,15 +6,19 @@ const index=rd("all-267-source-linked-artwork-candidate-collection.v1.json");
 const provenance=rd("source-link-recovery-1506-placements-20261031.v1.json");
 const attribution=rd("artist-attribution-source-resolution-wave01.v1.json");
 const sourceQA=rd("priority-photo-source-and-licence-qa-wave01.v1.json");
+const metWave02=rd("met-source-verification-wave02-20261031.v1.json");
 const provisional=rd("provisional-one-choice-per-267-art-position.v1.json");
 test("1506 proposed original artwork placements are never released, including exact-ID photo-source recoveries",()=>{
  const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1506);
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
- assert.equal(x.nowStillWithoutSourcePages,204);
+ assert.equal(x.nowStillWithoutSourcePages,168);
+ assert.equal(x.nowWithSourcePages,1338);
+ assert.equal(x.sourceLinksVerifiedByMetWave02,36);
+ assert.equal(x.distinctSourceLessCandidateIdentities,62);
  assert.equal(x.pradoPhotoSourcesExcluded,17);
- assert.equal(x.unverifiedNameOnlySourceAlternatives,7);
+ assert.equal(x.unverifiedNameOnlySourceAlternatives,0);
  assert.equal(x.confirmedNewUserArtworkApprovals,0);
  assert.equal(x.publicReleaseEnabled,false);
  assert.equal(provenance.stats.exactArtworkIDRecovered,140);
@@ -32,8 +36,8 @@ test("1506 proposed original artwork placements are never released, including ex
   }
  }
  assert.equal(active,1506);
- assert.equal(linked,1302);
- assert.equal(remaining,204);
+ assert.equal(linked,1338);
+ assert.equal(remaining,168);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);
 });
@@ -65,4 +69,28 @@ test("priority photo QA and user review remain separate",()=>{
  assert.equal(sourceQA.productionPublicationAllowed,false);
  assert.equal(sourceQA.verifiedSources.length,8);
  assert.ok(sourceQA.verifiedSources.find(x=>x.slot==="HERO-21"&&/ASPECT_MISMATCH/.test(x.status)));
+});
+
+test("wave 2 exact Met original-source repair remains research-only and source-linked",()=>{
+ assert.equal(metWave02.counts.museumObjects,14);
+ assert.equal(metWave02.counts.sourcePlacementLinksRecovered,36);
+ assert.equal(metWave02.newUserApprovals,0);
+ assert.equal(metWave02.liveProductionEnabled,false);
+ assert.equal(metWave02.officialMuseumRecords.length,14);
+ let repaired=0;
+ for(const original of metWave02.officialMuseumRecords){
+  assert.ok(original.sourcePage.endsWith("/"+original.museumObjectID));
+  for(const source of original.slotReferences){
+   const shard=rd("collection-family-"+source.family+".v1.json");
+   const slot=shard.slots.find(x=>x.slot===source.slot);
+   assert.ok(slot,source.slot);
+   const painting=slot.reviewCollection.find(x=>x.sourcePage===original.sourcePage && x.sourceIDs.some(id=>source.originalIDs.includes(id)));
+   assert.ok(painting,source.slot);
+   assert.equal(painting.productionEnabled,false);
+   repaired++;
+  }
+ }
+ assert.equal(repaired,36);
+ const bosch=rd("collection-family-home.v1.json").slots.flatMap(s=>s.reviewCollection).find(a=>a.sourceIDs.includes("REVIEW::met:435725"));
+ assert.equal(bosch.artist,"Follower of Hieronymus Bosch");
 });
