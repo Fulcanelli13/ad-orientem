@@ -25,6 +25,10 @@ export function createAppNativeBackBridge({win=globalThis,shell}={}){
   }
   function record(surface){
     if(disposed||handling||!ACCEPT.has(surface))return false;
+    // The canonical shell opens Home internally while replacing one domain
+    // with another. Only a user-requested Home is a navigation destination.
+    const pending=shell.getPendingTarget?.();
+    if(surface==="home"&&pending&&pending!=="home")return false;
     if(expected){
       // Reopening Learn/Explore/Apostolate via the canonical shell makes a
       // transient hard-Home pass before the destination mounts. That is not
