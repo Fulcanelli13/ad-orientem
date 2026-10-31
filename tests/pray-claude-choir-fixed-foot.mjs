@@ -42,6 +42,34 @@ test("Kyrie/Christe and genuine source versicles do not acquire invented respons
  assert.equal(claudeChoirSourceUnits(""),null);
 });
 
+test("Claude refrain pulses once for each newly lit invocation, even when its text repeats",()=>{
+ const response={textContent:"pray for us"};
+ let pulses=0;
+ const bar={
+  hidden:false,dataset:{},
+  classList:{remove(){},add(name){if(name==="ring")pulses++;}},
+  querySelector(s){return s===".aoClaudeChoirResponseText"?response:null;},
+  get offsetWidth(){return 100;}
+ };
+ const card={querySelector(s){return s===".aoClaudeChoirResponse"?bar:null;}};
+ const invocation=i=>({
+  matches:s=>s===".aoClaudeChoirBeat",
+  dataset:{aoChoirAnswer:"pray for us",aoChoirSourceIndex:String(i)}
+ });
+ assert.equal(syncClaudeChoirBar(card,invocation(3)),true);
+ assert.equal(pulses,1,"first lit invocation must pulse");
+ assert.equal(syncClaudeChoirBar(card,invocation(3)),true);
+ assert.equal(pulses,1,"scroll recheck of same invocation must not replay");
+ assert.equal(syncClaudeChoirBar(card,invocation(4)),true);
+ assert.equal(pulses,2,"next invocation with same refrain must pulse");
+ assert.equal(response.textContent,"pray for us");
+ const withoutAnswer={matches:()=>true,dataset:{aoChoirAnswer:"",aoChoirSourceIndex:"5"}};
+ assert.equal(syncClaudeChoirBar(card,withoutAnswer),false);
+ assert.equal(bar.hidden,true);
+ assert.equal(syncClaudeChoirBar(card,invocation(4)),true);
+ assert.equal(pulses,3,"bar reappearing after a non-response beat must pulse");
+});
+
 test("Stable fixed response never replays animation on repeated focus/scroll updates",()=>{
  const response={textContent:"pray for us"};
  let reflows=0,ringStarts=0;
