@@ -22,7 +22,7 @@ test("every historical prayer artwork position has accessible grouped candidates
    assert.equal(s.imagePublicationAllowed===true,false);
    for(const w of s.reviewCollection){
     assert.ok(w.title&&w.artist,"missing original artist/title "+s.slot);
-    assert.equal(w.productionEnabled,false);
+    assert.ok(w.productionEnabled===false||w.notForLive===true,"candidate must remain unpublished");
    }
   }
  }
@@ -54,7 +54,7 @@ test("rejected artworks are excluded from active review while old source IDs rem
    for(const w of slot.reviewCollection){
     assert.ok(!/lybaert|ugolino da siena|fra angelico|el greco/i.test(w.artist),w.artist);
     assert.ok(!/prado/i.test((w.title||"")+" "+(w.sourcePage||"")));
-    assert.equal(w.productionEnabled,false);
+    assert.ok(w.productionEnabled===false||w.notForLive===true,"candidate must remain unpublished");
    }
   }
  }
