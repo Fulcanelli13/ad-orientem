@@ -49,10 +49,10 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
   '<div class="aoClaudeHolyDeck"><div class="aoClaudeHolyLace'+(flipped?' flip':'')+
    '" role="button" tabindex="0" data-p435930-essential-card-turn aria-label="'+esc(flipped?'Turn to front of card':'Turn to prayer text')+'">'+
    '<div class="aoClaudeHolyInner">'+
-   '<div class="aoClaudeHolyFace aoClaudeHolyFront"><div class="aoClaudeHolyPlate">'+image+'</div>'+
+   '<div class="aoClaudeHolyFace aoClaudeHolyFront" aria-hidden="'+String(flipped)+'"><div class="aoClaudeHolyPlate">'+image+'</div>'+
    '<div class="aoClaudeHolyTitle"><small lang="la">'+esc(latinIncipit)+'</small>'+
     '<h3>'+esc(title||id)+'</h3></div></div>'+
-   '<div class="aoClaudeHolyFace aoClaudeHolyBack"><div class="aoClaudeHolyOrn">✠</div>'+
+   '<div class="aoClaudeHolyFace aoClaudeHolyBack" aria-hidden="'+String(!flipped)+'"><div class="aoClaudeHolyOrn">✠</div>'+
     '<h4 lang="la">'+esc(latinIncipit)+'</h4>'+
     '<div class="aoClaudeHolyBackScroll aoP435930Text" data-ao-pray-semantic="1" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
     '<div class="aoClaudeHolyOrn aoClaudeHolyClosing">❦</div></div>'+
