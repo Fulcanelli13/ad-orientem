@@ -20,7 +20,12 @@ test("F11 Claude B-03: two real Latin-first hymn stanzas in both vernaculars",()
    assert.ok(source[language],id+" "+language+" original is required");
    const rendered=benedictionSungStanzas(id,source.la,source[language]);
    assert.equal(rendered?.length,2,id+" "+language+" must align original two stanzas");
-   const sep=t=>t.includes("\n\n")?"\n\n":"\n";
+   const sep=t=>t.includes("
+
+")?"
+
+":"
+";
    assert.equal(rendered.map(s=>s.latin).join(sep(source.la)),source.la);
    assert.equal(rendered.map(s=>s.vernacular).join(sep(source[language])),source[language]);
    assert.ok(rendered.every(s=>s.latin.trim()&&s.vernacular.trim()));
@@ -43,7 +48,9 @@ test("F11 Claude B-01/B-02/B-04/B-05: original public liturgy preserved",()=>{
  }
  assert.match(runtime,/benFeastOptions\(\)/);
  assert.match(runtime,/batch02SourceLinks\('benediction-optional-local'\)/);
- assert.match(runtime,/class="aoRiteOptionRow aoClaudeBenSettings"/);\n assert.match(runtime,/data-p435930-ben-settings/);\n assert.match(runtime,/aoClaudeAltarPlate/);
+ assert.match(runtime,/class="aoRiteOptionRow aoClaudeBenSettings"/);
+ assert.match(runtime,/data-p435930-ben-settings/);
+ assert.match(runtime,/aoClaudeAltarPlate/);
  assert.match(runtime,/BENEDICTION_1962_WITNESS\.url/);
  assert.match(runtime,/benedictionAlleluiaStatus\(selectedDateKey\(\)\)/);
  assert.match(runtime,/Stop interacting with the phone/);
