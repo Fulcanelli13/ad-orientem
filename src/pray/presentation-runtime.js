@@ -2,6 +2,7 @@ import "./confession-path-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
 import { stampArtworkRuntimeIdentity } from "./artwork-runtime-identity.v1.js";
+import { stampPrayerArtworkDomEvidence } from "./artwork-dom-evidence.v1.js";
 import "./presentation-styles.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
@@ -884,6 +885,7 @@ function decorateRosaryExact(r){
  ensureRosaryDonorRecitation(r);
  r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
  rosaryDonorArt(r,info);
+ stampPrayerArtworkDomEvidence(shell);
  rosaryDonorMysteryFx(r,info);
  // Source-first mystery context, not the uncertified 200-bead quotation bank.
  applyRosaryScripturePolicy(r,info,{french:isFr(),guided:S.rosary.mode==='guided'});
@@ -1422,7 +1424,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    // Preserve the historical closing prayer as a separate nonvisual art identity.
    const appendix=m.querySelector('.aoP435930SevenClosing');
    if(appendix)stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});
-  }lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
+  }stampPrayerArtworkDomEvidence(m);lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
 function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
