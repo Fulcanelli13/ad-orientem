@@ -25,15 +25,13 @@ Date: 2026-10-31
 
 **Penitence, dying, intercession (11)**: Life & Intentions generic door; Prayer for the Pope; five Penitential Psalm scenes (1/3/4/5/7); actual confessional interior; Prayer for Priests; occasional intercessions; lection cover. Seek David and Peter penitential paintings, an authentic confession image, and relevant priest/intercession works; prefer existing approved museum objects before new discovery.
 
-**Saints (2)**: St Anthony Nine Tuesdays cover and St Anthony lost-items prayer (same exact saint work can cover both); Litany Saints apostles and evangelists (third; two plus one novena elsewhere). [Note: novena Anthony is counted under Novenas below.]
+**Saints & Angels (2)**: St Anthony lost-items prayer and Litany of Saints (apostles/evangelists). The St Anthony Nine Tuesdays cover is counted separately under Novenas.
 
 **Novenas (2)**: generic Novenas door (may inherit child-cover rotation instead of one unrelated painting); St Anthony Nine Tuesdays (the precise art gap).
 
 **General doors (Daily, Our Lord, Our Lady: 3)**: consider dynamic rotation from already approved child routes rather than forcing an arbitrary generic picture.
 
 **Other (2)**: Act of Hope vignette; generic Hymns cover.
-
-**Additional (1)**: Our Lord generic door is one of the three general doors above; do not count twice.
 
 There are 11 **separate Pray-home seasonal** positions; these should inherit corresponding Calendar art only after original feast/hero locks and photographer rights are reconciled. No duplicate acquisitions.
 
