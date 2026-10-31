@@ -635,7 +635,8 @@ try{
    await page.waitForFunction(()=>{
      const card=document.querySelector("#aoPray435930.open .aoP435930Prayer");
      const text=card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"";
-     return text.length>=25;
+     // Short sourced aspirations (e.g. My Lord and my God) are genuinely under 25 characters.
+     return text.length>=10;
    },null,{timeout:7000}).catch(async failure=>{
      const diag=await page.evaluate(()=>{
        const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
@@ -685,7 +686,7 @@ try{
      return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip,.aoClaudeHolyBackScroll")?.textContent?.trim()||"",
        source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeHolySourcePanel .aoP435930Source")?.textContent?.trim()||""};
    });
-   assert.ok(prayer.body.length>=25,"Blank or unrendered canonical prayer: "+id);
+   assert.ok(prayer.body.length>=10,"Blank or unrendered canonical prayer: "+id);
    const flip=page.locator("#aoPray435930.open .aoP435930Prayer [data-p435930-flip]");
    if(await flip.count()){
      const faces=await flip.evaluate(x=>({vernHidden:x.querySelector("[data-face-v]")?.hidden,
