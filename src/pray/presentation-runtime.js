@@ -654,7 +654,7 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
- if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!opts.record){
+ if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!opts.record&&(view==='library'||view==='prayerOnly')){
   // Claude F01: the Holy Card is a reversible devotional object, not a
   // flat text document. Text still comes exclusively from canonical-data.
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
