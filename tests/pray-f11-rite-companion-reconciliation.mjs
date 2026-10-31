@@ -20,12 +20,7 @@ test("F11 Claude B-03: two real Latin-first hymn stanzas in both vernaculars",()
    assert.ok(source[language],id+" "+language+" original is required");
    const rendered=benedictionSungStanzas(id,source.la,source[language]);
    assert.equal(rendered?.length,2,id+" "+language+" must align original two stanzas");
-   const sep=t=>t.includes("
-
-")?"
-
-":"
-";
+   const sep=t=>t.includes("\n\n")?"\n\n":"\n";
    assert.equal(rendered.map(s=>s.latin).join(sep(source.la)),source.la);
    assert.equal(rendered.map(s=>s.vernacular).join(sep(source[language])),source[language]);
    assert.ok(rendered.every(s=>s.latin.trim()&&s.vernacular.trim()));
