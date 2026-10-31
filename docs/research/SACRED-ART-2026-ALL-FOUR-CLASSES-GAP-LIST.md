@@ -1,5 +1,39 @@
 # Ad Orientem 2026 Sacred Art — Four-class progress and exact matching-gap register
 
+## Latest matching checkpoint — Batch 4 (31 October 2026)
+
+**Current researched Class III subject identification: 52/165 dates (52/131 observed sanctoral dates).** This is 7 more than the previous 45, and leaves **79 sanctoral dates with no exact subject lead** across the three already reviewed corpora (383 canonical IDs, 856 previously accepted source cards, and W60/W72 historic named-file and scored art sources). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+
+| Feast | Observation | Existing painting(s) | Safeguard |
+| --- | --- | --- | --- |
+| 04 Feb | St Andrew Corsini | Guido Reni, two accepted photographic leads | Potential duplicate photos of one physical original |
+| 12 Feb | Seven Servite Founders | Agostino Masucci, Madonna with Seven Founders (AIC 1977.485) | Exact group painting; Commons CC0 metadata; photo/approval QA pending |
+| 05 Jun | St Boniface | Albrecht de Vriendt, Heilige Bonifatius van Mainz (KMSKA 1481) | User previously questioned who is depicted; research only |
+| 31 Jul | St Ignatius Loyola | Rubens Miracles and separate oil modello in 383 | Historic W72 five-star vs canonical UNREVIEWED retained independently |
+| 02 Oct | Guardian Angels | Pietro da Cortona, The Guardian Angel, already 383 APPROVED_LOCKED | Existing artwork found despite general feast title |
+| 24 Oct | St Raphael | Spanish Arcángel San Rafael source, historical W72 5; Pieter Lastman Tobit alternative | W72 score 5 != current canonical rating; photo rights unverified |
+| 23 Nov | St Clement I | Bernardino Fungai, Saint Clément retrouve sa famille (Strasbourg 453.b) | Previously accepted Commons source; no production release |
+
+Seven distinct dates, nine registered source relationships. All remain not certified for Homepage rotation. Do not interpret two Reni photo records as two physical paintings until accession comparison; keep human five-star W72 ratings separate from canonical 383 reviewer states.
+
+### Current 79 unlinked Class III sanctoral dates
+
+**01 (9)** — 16 St. Marcellus I; 20 Sts. Fabian & Sebastian; 22 Sts. Vincent & Anastasius; 23 St. Raymond of Peñafort; 24 St. Timothy; 26 St. Polycarp; 28 St. Peter Nolasco; 30 St. Martina; 31 St. John Bosco.
+**02 (4)** — 06 St. Titus; 07 St. Romuald; 10 St. Scholastica; 11 Our Lady of Lourdes.
+**04 (4)** — 14 St. Justin; 22 Sts. Soter & Caius; 24 St. Fidelis of Sigmaringen; 28 St. Paul of the Cross.
+**05 (9)** — 04 St. Monica; 05 St. Pius V; 07 St. Stanislaus; 12 Sts. Nereus, Achilleus, Domitilla, & Pancras; 15 St. John Baptist de la Salle; 16 St. Ubaldus; 18 St. Venantius; 19 St. Peter Celestine; 20 St. Bernardine of Siena.
+**06 (8)** — 01 St. Angela Merici; 10 St. Margaret of Scotland; 11 St. Barnabas; 17 St. Gregory Barbarigo; 19 St. Julia of Falconieri; 22 St. Paulinus of Nola; 25 St. William; 26 Sts. John & Paul.
+**07 (8)** — 03 St. Irenaeus; 07 Sts. Cyril & Methodius; 10 Seven Holy Brothers and Sts. Rufina & Secunda; 15 St. Henry the Emperor; 18 Camillus de Lellis; 20 St. Jerome Emiliani; 23 St. Apollinaris; 28 Sts. Nazarius & Celsus, St. Victor I & St. Innocent I.
+**08 (8)** — 05 Dedication of the Basilica of St. Mary Major; 07 St. Cajetan; 12 St. Clare; 17 St. Hyacinth; 19 St. John Eudes; 21 St. Jane Frances de Chantal; 27 St. Joseph Calasance; 31 St. Raymond Nonnatus.
+**09 (8)** — 02 St. Stephen of Hungary; 03 St. Pius X; 05 St. Lawrence Justinian; 10 St. Nicholas of Tolentino; 12 Most Holy Name of Mary; 16 Sts. Cornelius & Cyprian; 22 St. Thomas of Villanova; 28 St. Wenceslaus.
+**10 (9)** — 08 St. Bridget of Sweden; 09 St. John Leonardi; 10 St. Francis Borgia; 13 St. Edward; 14 St. Callistus I; 16 St. Hedwig; 19 St. Peter of Alcantara; 20 St. John Cantius; 23 St. Anthony Mary Claret.
+**11 (9)** — 10 St. Andrew Avellino; 12 St. Martin I; 13 St. Didacus; 14 St. Josaphat; 17 St. Gregory the Wonderworker; 18 Dedication of the Basilicas of Sts. Peter & Paul; 19 St. Elizabeth of Hungary; 20 St. Felix of Valois; 26 St. Sylvester.
+**12 (3)** — 02 St. Vivian; 04 St. Peter Chrysologus; 11 St. Damasus I.
+
+**Historical baseline:** The 98-gap Class III table farther down this document is the previous strict-383-only snapshot. It is not an updated list of physically missing paintings. New source match records are in data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json, and dates remain grounded in data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json.
+
+---
+
 ## Selected Class I painting originals — identity recovery Batch 3
 
 The earlier report's **28 selected Class I subjects without a 383-catalogue ID remain 28 canonical ID gaps**, but many now have accession-level original research. The added B05/B11/B17/B18/B21 crosswalk records **14 selected-painting/source relationships across 13 Class I dates**. For **11 dates**, an original museum/auction physical work is identified in the prior research, including **nine of the 28 outside-gallery IDs**.
