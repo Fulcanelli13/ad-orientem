@@ -56,7 +56,7 @@ def run():
  for n,titles in SEEDS.items():
   rec=next((r for r in rows if r["original_b12_queue_n"]==n),None)
   if not rec:raise ValueError("Missing canonical target "+str(n))
-  allowed={x["title"] for x in j["file_leads"] if x["n"]==n}
+  allowed={x["file_title"] for x in j["file_leads"] if x["n"]==n}
   if any(t not in allowed for t in titles):raise ValueError("Undocumented exact file seed "+str(n))
  if a.selftest:
   print("PASS: 124 IDs, 4 historic KEEP, 5 source-identified subjects, 9 exact-file leads, no generic download",flush=True)
