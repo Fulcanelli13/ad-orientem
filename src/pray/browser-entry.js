@@ -136,8 +136,12 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     }
     if(!opened){
       const fresh=await Promise.resolve(api.open("pray.hub",{returnContext:null}));
-      opened=fresh===true||fresh?.ok===true;
+      // Preserve the existing explicit owner-success contract: a failed
+      // fresh launch must never paint a live Prayer shell.
+      const opened=fresh;
+      if(opened!==true&&opened?.ok!==true)return false;
     }
+    opened=true;
     if(!opened)return false;
     stamp(win);
     if(receipt&&opened&&root(win)?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView===receipt.navigation?.view)
