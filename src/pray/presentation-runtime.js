@@ -2722,8 +2722,8 @@ async function ensureTenebrae(){
 function renderTenebrae(){
  if(!TEN.model&&!TEN.loading&&!TEN.error)setTimeout(()=>void ensureTenebrae(),0);
  return head(L('Office of Tenebrae','Office des Ténèbres'),L('Triduum · Matins and Lauds','Triduum · Matines et Laudes'))+
-  renderTenebraeBody({day:TEN.day,hour:TEN.hour,index:TEN.step,face:TEN.face,
-   french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error,guided:TEN.guided,ceremony:TEN.ceremony});
+  '<div data-ao-rite-owner="tenebrae">'+renderTenebraeBody({day:TEN.day,hour:TEN.hour,index:TEN.step,face:TEN.face,
+   french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error,guided:TEN.guided,ceremony:TEN.ceremony})+"</div>";
 }
 /**
  * Historical full Precious Blood (Raccolta 1857 §35 / 1910 §138).
@@ -3113,7 +3113,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   const chapters=stages.map((stage,i)=>({id:stage[0],title:titles[i]}));
   const reader=installSequentialDevotionalReader({
    mount:m,kind:'benediction',chapters,activeIndex:BEN.step,
-   paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text',
+   paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoRiteChantStanza,.aoP435930Prayer .aoP435930Flip:not(:has(.aoRiteChantStanza)),.aoP435930Prayer .aoP435930Text',
    timelineLabel:L('Benediction stages','Étapes de la Bénédiction'),
    onNavigate:i=>{BEN.step=i;render()}
   });
