@@ -83,7 +83,7 @@ async function main(){
  if(!Number.isInteger(offset)||offset<0||!Number.isInteger(limit)||limit<1||limit>pending.length||offset+limit>pending.length)
    throw Error("Invalid batch offset or limit. Pending: "+pending.length);
  const batch=pending.slice(offset,offset+limit),rows=[];
- const url=process.env.AO_OVERPASS_ENDPOINT||"https://overpass.kumi.systems/api/interpreter";
+ const url=process.env.AO_OVERPASS_ENDPOINT||"https://overpass.private.coffee/api/interpreter";
  if(!/^https:\/\//.test(url))throw Error("HTTPS Overpass endpoint required");
  for(let i=0;i<batch.length;i+=20){
   const group=batch.slice(i,i+20);const query=overpassQuery(group);
