@@ -29,6 +29,8 @@ export function dykPilotSourceFolioModel(selection,id,language="en"){
        !Array.isArray(s.pdf_pages_1based)||!s.pdf_pages_1based.length||
        !s.pdf_pages_1based.every(Number.isInteger))return null;
   }
+  if(!Array.isArray(s.pdf_pages_1based)||!s.pdf_pages_1based.length||
+     !s.pdf_pages_1based.every(x=>Number.isInteger(x)&&x>=1&&x<=5000))return null;
   const fr=language==="fr";
   const location=mass?"Ritus servandus, § "+s.ritus_locator:
     tr(fr,"Printed p. ","Page imprimée ")+s.printed_pages.join(", ")+
@@ -36,6 +38,8 @@ export function dykPilotSourceFolioModel(selection,id,language="en"){
   return Object.freeze({
     id:row.id,language:fr?"fr":"en",fact:c[fr?"fr":"en"],
     sourceTitle:s.title?.[fr?"fr":"en"]||"",sourceUrl:s.url,
+    sourcePageUrl:s.url+"#page="+s.pdf_pages_1based[0],
+    sourcePage:s.pdf_pages_1based[0],
     sourceId:row.source_id,sourceLocation:location,
     scope:c.scope,sourceType:s.type,
     reviewOnly:true,readOnly:true,linkedToR34:true
@@ -67,7 +71,7 @@ export function dykPilotSourceFolioMarkup(model){
     '<div class="aoDykSourceSource"><span class="aoDykSourceKicker">'+esc(tr(fr,"Original source","Source originale"))+'</span>'+
     '<p>'+esc(model.sourceTitle)+'</p>'+
     '<p class="aoDykSourceMeta">'+esc(model.sourceLocation)+' · '+esc(model.sourceId)+'</p>'+
-    '<p><a href="'+esc(model.sourceUrl)+'" target="_blank" rel="noopener noreferrer" data-dyk-original-source>'+
+    '<p><a href="'+esc(model.sourcePageUrl)+'" target="_blank" rel="noopener noreferrer" data-dyk-original-source>'+
     esc(tr(fr,"Consult original source","Consulter la source originale"))+'</a></p>'+
     '<p class="aoDykSourceScope">'+esc(tr(fr,
       "Historical or liturgical source context only; not proof of a current or universal custom. The external source link is pending browser verification.",
