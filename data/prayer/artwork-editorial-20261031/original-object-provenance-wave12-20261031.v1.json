@@ -63,13 +63,13 @@
     },
     {
       "identityKey": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
-      "sourcePage": "https://commons.wikimedia.org/wiki/File:0_L%27Immacul%C3%A9e_Conception_-_P.P._Rubens_-_Prado_-_P1627_-_(1).JPG",
+      "sourcePage": "https://www.wikidata.org/wiki/Q27700185",
       "originalAccession": "P1627",
       "institution": "Museo del Prado (original); independent 2013 photograph at Louvre-Lens",
-      "sourceType": "INDEPENDENT_PHOTOGRAPH_AT_LOUVRE_LENS_WITH_EXACT_MUSEUM_ACCESSION",
+      "sourceType": "WIKIDATA_CANONICAL_EXACT_ORIGINAL_ID_NO_PHOTO_PERMISSION",
       "photoLicense": "WIKIMEDIA_PD_ART_CLAIM_PHOTOGRAPHER_JEAN_POL_GRANDMONT_CREDIT_AND_JURISDICTION_REVIEW",
       "photoHold": "HOLD_INDEPENDENT_PHOTOGRAPH_COPYRIGHT_JURISDICTION_COLOR_NATIVE_CROP_AND_FRAME",
-      "note": "Exact Rubens Immaculate Conception P1627, photographer Jean-Pol GRANDMONT, 2013 independent photograph of Prado-owned original during Louvre-Lens exhibition, 2274x3155. Not Prado-provided photograph. Photograph metadata states © creator and credit request; do not assume unrestricted reuse or approval.",
+      "note": "Canonical Wikidata Q27700185 documents original Rubens Immaculate Conception P1627; independent Grandmont 2013 Louvre-Lens photograph tracked in RESTRICTED RESEARCH LEAD ONLY, not an active source image. No Prado photograph reinstated.",
       "userApprovalUnchanged": true,
       "placements": [
         {
@@ -81,7 +81,13 @@
       "productionEnabled": false,
       "photoNativeQualityCertified": false,
       "imageDownloaded": false,
-      "newArtApprovalGranted": false
+      "newArtApprovalGranted": false,
+      "independentResearchPhotoLead": {
+        "url": "https://commons.wikimedia.org/wiki/File:0_L%27Immacul%C3%A9e_Conception_-_P.P._Rubens_-_Prado_-_P1627_-_(1).JPG",
+        "photographer": "Jean-Pol GRANDMONT",
+        "context": "2013 Louvre-Lens exhibition",
+        "rights": "HOLD_PERMISSION_JURISDICTION_NATIVE_CROP_NO_RELEASE"
+      }
     },
     {
       "identityKey": "UNKEYED::The Virgin of the Seven Sorrows::Master of the Female Half-Lengths (attributed)",

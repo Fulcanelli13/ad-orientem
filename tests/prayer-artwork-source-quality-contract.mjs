@@ -530,6 +530,12 @@ test("wave 12 verifies source identities without converting documentary catalogu
    assert.ok(w,x.identityKey);
    assert.equal(w.sourcePage,x.sourcePage);
    assert.equal(w.verifiedOriginalAccession,x.originalAccession);
+   if(x.identityKey==="CANONICAL::ART-eter-aul-ubens-mmaculate-onception"){
+    assert.equal(w.sourcePage,"https://www.wikidata.org/wiki/Q27700185");
+    assert.equal(w.restrictedIndependentResearchPhotoLead.photographer,"Jean-Pol GRANDMONT");
+    assert.match(w.restrictedIndependentResearchPhotoLead.releaseEligibility,/NOT ACTIVE SOURCE OR APP ASSET/);
+    assert.equal(x.independentResearchPhotoLead.rights,"HOLD_PERMISSION_JURISDICTION_NATIVE_CROP_NO_RELEASE");
+   }
    assert.equal(w.photoSourceEligibility,x.photoHold);
    assert.equal(w.productionEnabled,false);
    if(x.identityKey.includes("Virgin of the Seven Sorrows")){
