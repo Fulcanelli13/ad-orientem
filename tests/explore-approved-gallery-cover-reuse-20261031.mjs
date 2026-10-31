@@ -34,5 +34,18 @@ for(const c of reused){
 }
 const invalid={...reused[0],asset_path:"assets/approved/place-gallery/not-a-reviewed-photo.webp",derivative_sha256:null};
 assert.equal(resolveApprovedPlaceMedia([invalid],invalid.place_id),null,"Unsafe gallery fallback rejected");
-assert.equal(resolveApprovedPlaceMedia(covers.items,"place:FR:notre-dame-paris"),null,"Notre-Dame is not prematurely marked approved");
-console.log("PASS: 21 exact-site Place covers reuse existing hash-matched approved gallery binaries; Notre-Dame retained in source acquisition queue");
+const notre=covers.items.filter(x=>x.place_id==="place:FR:notre-dame-paris");
+assert(notre.length<=1,"Notre-Dame must have at most one canonical Place cover");
+if(notre.length){
+ const n=notre[0];
+ assert.equal(n.source_place_ref,"COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE");
+ assert.equal(n.source_sha1,"6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5");
+ assert.equal(n.credit,"Chabe01");
+ assert.equal(n.license,"CC-BY-SA-4.0");
+ assert.equal(n.asset_path,"assets/approved/place-media/FR-notre-dame-paris-2026.webp");
+ assert(existsSync(n.asset_path),"Notre-Dame derivative missing");
+ assert.equal(createHash("sha256").update(readFileSync(n.asset_path)).digest("hex"),n.derivative_sha256);
+ assert(resolveApprovedPlaceMedia(covers.items,n.place_id),"Notre-Dame approved cover is not renderable");
+}
+
+console.log("PASS: 21 vetted gallery cover reuses, plus verified Notre-Dame original if acquired; no unverified media published");
