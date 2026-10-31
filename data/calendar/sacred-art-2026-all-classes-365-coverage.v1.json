@@ -2190,7 +2190,8 @@
     "Research image files acquired and SHA-verified are not by themselves granted app licences.",
     "Prior 75-priority saint-source programme and later art approvals not in the 383 index still need cross-module matching before claiming art physically absent.",
     "Where a physical painting has two catalogue IDs the exact original must be deduplicated before rotating.",
-    "Class II missing exact 383 matches includes a handful of already approved cross-module primaries (e.g. Lotto Rosary, MNAC Seven Sorrows), and anticipatory selected artwork reuse; specific date binding has not been user-approved."
+    "Class II missing exact 383 matches includes a handful of already approved cross-module primaries (e.g. Lotto Rosary, MNAC Seven Sorrows), and anticipatory selected artwork reuse; specific date binding has not been user-approved.",
+    "At least one unmatched group day already has a member-specific physical painting: 20 Jan has Saint Sebastian artworks but no verified exact joint Fabian/Sebastian composition. Separate partialGroupSaintPaintingLeads records preserve reuse without claiming group completion."
   ],
   "days": [
     {
@@ -2758,7 +2759,31 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "partialGroupSaintPaintingLeads": [
+        {
+          "artworkId": "ART-eter-aul-ubens-aint-ebastian",
+          "title": "Saint Sebastian",
+          "artist": "Peter Paul Rubens",
+          "role": "ONLY_SEBASTIAN_OF_FABIAN_SEBASTIAN_GROUP",
+          "photoReleaseCertified": false
+        },
+        {
+          "artworkId": "BERLIN-RUBENS-798H",
+          "title": "Saint Sebastian (Berlin, c. 1618) — conditional identification",
+          "artist": "Peter Paul Rubens",
+          "role": "ONLY_SEBASTIAN_OF_FABIAN_SEBASTIAN_GROUP",
+          "photoReleaseCertified": false
+        },
+        {
+          "artworkId": "cma-153406",
+          "title": "Portrait of a Youth as Saint Sebastian",
+          "artist": "Marco d'Oggiono",
+          "role": "ONLY_SEBASTIAN_OF_FABIAN_SEBASTIAN_GROUP",
+          "photoReleaseCertified": false
+        }
+      ],
+      "groupMatchingNote": "Potentially depicts Saint Sebastian only; does NOT count as an exact painting of Saints Fabian AND Sebastian and is not a complete group date hero."
     },
     {
       "date": "2026-01-21",
