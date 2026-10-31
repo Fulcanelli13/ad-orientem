@@ -7,6 +7,7 @@ import "./reader-mass-actual-tone-context.mjs";
 import "./reader-mass-m05-gabc-source-screen.mjs";
 import "./reader-mass-m06-notation-handoff.mjs";
 import "./reader-mass-m07-review-ledger.mjs";
+import "./reader-mass-m08-bulk-score-qa.mjs";
 import {readFileSync} from "node:fs";
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
