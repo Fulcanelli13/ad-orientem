@@ -186,7 +186,12 @@ export function installSequentialDevotionalReader({
       // Litany invocations use .88/.76 falloff without hiding their
       // original order, while other readers retain their original .56/.30.
       const adjacent=Math.abs(i-found)===1;
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
+      // F11 live rite: every sung stanza, versicle and collective reply
+      // illuminates independently. Previous text fades; upcoming remains
+      // legible. No liturgical moment advances automatically.
+      const f11Rite=kind==="benediction";
+      const power=f11Rite?(i===found?"1":i<found?".54":".80")
+        :canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65")
         :kind==="litany"?(adjacent?".88":".76"):(adjacent?".56":".30");
       p.style.setProperty("--ao-devo-focus",power);
