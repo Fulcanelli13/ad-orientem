@@ -94,6 +94,16 @@ try{
    await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.step===7&&
     document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-canonical-step='7'] .aoRosaryPrayerScroll")!==null,
     null,{timeout:12000});
+   // A PrayerBook Latin flip is a reading-face choice, not a new bead.
+   // Preserve it exactly when the canonical current card exposes both faces.
+   const flip=rosary.locator(".aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]");
+   const hasFlip=await flip.count()>0;
+   if(hasFlip){
+    await flip.click();
+    await page.waitForFunction(()=>document.querySelector(
+      "#aoPrayerBookRoot.open .aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]")?.dataset.face==="latin",
+      null,{timeout:10000});
+   }
    const before=await page.evaluate(()=>({
     method:globalThis.AO_ROSARY_V381.getMethod(),state:globalThis.AO_ROSARY_V381.state(),
     card:document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard")?.dataset.aoRosaryCanonicalStep,
@@ -114,6 +124,9 @@ try{
     rootVisible:!!document.querySelector("#aoPrayerBookRoot.open"),
     prayerVisible:!!document.querySelector("#aoPray435930.open"),
    }));
+   if(hasFlip)assert.equal(await rosary.locator(
+    ".aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]").getAttribute("data-face"),"latin",
+    "Rosary Latin face reset after Back");
    assert.equal(after.method,before.method,"Rosary method changed");
    assert.equal(after.state.set,before.state.set,"Mystery set changed");
    assert.equal(after.state.step,before.state.step,"Exact Rosary bead reset");
