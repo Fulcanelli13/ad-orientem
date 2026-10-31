@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "provenance": {
     "branch": "feature/tlm-visual-fallback-20261030",
-    "audit_blob_sha": "a0671c7c0aa8935a34c57e964499a2809c642647"
+    "audit_blob_sha": "17a2dad67e1d24bf193093466b8e278a85e2cd8e"
   },
   "policy": "Source-labelled diocesan is not independently verified operator ownership. Coordinates remain provisional. This is a screening queue, not source evidence, site verification, nor photograph approval. Exact building identity and acceptable licensed imagery must be independently reviewed.",
   "count": 434,
@@ -28,9 +28,9 @@
     "JP": 1
   },
   "by_photo_gate": {
-    "INHERITED_POINT_UNASSESSED": 417,
-    "OPERATOR_REQUIRES_REVIEW": 10,
-    "OPERATOR_EXCLUDED": 7
+    "INHERITED_POINT_UNASSESSED": 418,
+    "OPERATOR_REQUIRES_REVIEW": 6,
+    "OPERATOR_EXCLUDED": 10
   },
   "rows": [
     {
@@ -509,8 +509,8 @@
       "source_description": "17100 Savona SV (locality only; street not established — source unverified)",
       "lat": 44.310251,
       "lng": 8.48021,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "SAVONA_SS_PIETRO_CATERINA_CONFRATERNITY_SITE",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -990,8 +990,8 @@
       "source_description": "Richmond Heights, MO (locality only; street not established — source unverified)",
       "lat": 38.6269925,
       "lng": -90.312214,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "operator_scope": "ARCHDIOCESE_ST_LOUIS_PRIESTS_NON_TERRITORIAL_ORATORY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -1744,8 +1744,8 @@
       "source_description": "",
       "lat": 44.349957,
       "lng": 9.231538,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "RAPALLO_BIANCHI_ACTIVE_CONFRATERNITY_SITE",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -3629,8 +3629,8 @@
       "source_description": "97070 Würzburg (locality only; street not established — source unverified)",
       "lat": 49.796604,
       "lng": 9.935942,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "SSPX_14_NOTHELFER_WUERZBURG_CHAPEL_MINISTRY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
