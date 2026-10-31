@@ -51,7 +51,7 @@ try{
    assert.equal(await page.locator(".homeScreen [data-home-dyk-open]").count(),1,
     "Review hook must not replace the original six-card Discovery");
    assert.equal(await page.locator(".homeScreen .aoTodayV2Tabs").count(),0,
-    "Approved H4 must not revert to legacy tabs");
+    "H7 must not revert to legacy tabs");
    const buttons=review.locator("button[data-dyk-r34-source]");
    assert.equal(await buttons.count(),7);
    for(let i=0;i<7;i++){
@@ -104,7 +104,30 @@ try{
     assert.equal(await button.evaluate(el=>document.activeElement===el),true,
       "Source reader must restore focus to triggering review card");
    }
-   assert.equal(errors.length,0,"H4 source review page errors: "+errors.join(" | "));
+   // Exact review links must resolve the requested source ID without
+   // entering the public six-fact Home rotation.
+   for(const directId of ["DYK-UM02-014","DYK-M04-CANON-047"]){
+    await page.goto(origin+"/index.html?aoR17Reader=native&aoDykR34Review=1&aoDykFact="+directId,
+      {waitUntil:"domcontentloaded",timeout:60000});
+    const opened=page.locator(".aoDykSourceCard[data-dyk-source-folio='"+directId+"']");
+    await opened.waitFor({state:"visible",timeout:45000});
+    assert.equal(await page.locator("[data-home-dyk-open]").count(),1,
+      "Public Discovery must be retained when navigating direct QA links");
+    await page.keyboard.press("Escape");
+    assert.equal(await page.locator(".aoDykSourceCard").count(),0);
+    assert.equal(await page.locator(".homeScreen [data-dyk-r34-review] button").count(),7);
+   }
+   await page.goto(origin+"/index.html?aoR17Reader=native&aoDykR34Review=1&aoDykFact=G219",
+     {waitUntil:"domcontentloaded",timeout:60000});
+   await page.locator(".homeScreen [data-dyk-r34-review]").waitFor({state:"visible",timeout:45000});
+   assert.equal(await page.locator(".aoDykSourceCard").count(),0,
+     "Unlisted fact IDs cannot open a review folio");
+   await page.goto(origin+"/index.html?aoR17Reader=native&aoDykFact=DYK-UM02-014",
+     {waitUntil:"domcontentloaded",timeout:60000});
+   await page.locator(".homeScreen.aoH7Screens .aoH7HomeView").waitFor({state:"visible",timeout:45000});
+   assert.equal(await page.locator(".homeScreen [data-dyk-r34-review], .aoDykSourceCard").count(),0,
+     "Unpublished direct fact link cannot bypass the review flag");
+   assert.equal(errors.length,0,"H7 source review page errors: "+errors.join(" | "));
   }finally{await page.close()}
  }
  console.log("PASS H7 R34 QA: normal Home unchanged, seven real opt-in source journeys at 390/1280px, exact PDF pages and focus restore");

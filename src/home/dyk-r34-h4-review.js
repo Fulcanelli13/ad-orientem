@@ -1,5 +1,5 @@
-// Explicit, reversible H4 QA entrypoint for the unpublished R34 seven-card review.
-// This module never runs without ?aoDykR34Review=1. The ordinary H4 homepage
+// Explicit, reversible H7 QA entrypoint for the unpublished R34 seven-card review.
+// This module never runs without ?aoDykR34Review=1. Ordinary H7 Home
 // continues showing its six source-backed Glossary discoveries unchanged.
 import {dykPilotSourceFolioModel,createDykPilotSourceFolioOwner} from "./dyk-pilot-source-folio.js";
 const SOURCE=new URL("../../data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json",import.meta.url);
@@ -9,6 +9,17 @@ let owner=null;
 export function h4DykReviewEnabled(win=globalThis){
   try{return new URLSearchParams(win?.location?.search||"").get("aoDykR34Review")==="1"}
   catch{return false}
+}
+// A direct QA link must resolve to one of the seven source-verified IDs.
+// The fact parameter alone is NEVER a route or publication authorization.
+export function h7DykReviewDirectFact(win,data){
+  if(!h4DykReviewEnabled(win)||data?.status!=="EDITORIAL_SELECTION_NOT_LIVE")return null;
+  let id=null;
+  try{id=new URLSearchParams(win?.location?.search||"").get("aoDykFact")}catch{return null}
+  if(!id||!Array.isArray(data.records))return null;
+  return data.records.some(x=>x.id===id&&x.lane==="all-souls-november-2"&&
+    Boolean(dykPilotSourceFolioModel(data,id,"en"))&&
+    Boolean(dykPilotSourceFolioModel(data,id,"fr")))?id:null;
 }
 function read(win){
   if(load)return load;
@@ -82,6 +93,12 @@ export async function mountH4DykReview(win=globalThis){
       void owner.open({factId:id,language:host.dataset?.homeLanguage==="fr"?"fr":"en",trigger:button});
     });
     anchor.after(panel);
+    const directId=h7DykReviewDirectFact(win,data);
+    if(directId){
+      const button=[...panel.querySelectorAll("[data-dyk-r34-source]")]
+        .find(el=>el.dataset?.dykR34Source===directId);
+      if(button)await owner.open({factId:directId,language,trigger:button});
+    }
     return true;
   }catch(error){
     try{win?.console?.error?.("Unpublished R34 preview failed closed",error)}catch{}
