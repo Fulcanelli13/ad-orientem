@@ -121,7 +121,7 @@ const selected=new Map(I.map(x=>[x.id,x]));
 const strip=s=>String(s||"").replace(/<[^>]*>/g," ").replace(/&(?:amp|quot|nbsp|lt|gt);/g," ").replace(/\s+/g," ").trim();
 function save(){try{localStorage.setItem(STORAGE,JSON.stringify(cached))}catch{status("Local browser storage is full; export JSON to preserve the work.")}}
 function status(s){$("status").textContent=s}
-function count(){const done=I.filter(x=>cached[x.id]?.stage==="PINNED_CHECKED"||cached[x.id]?.stage==="DISCOVERED"||cached[x.id]?.stage==="NO_SAFE_LEAD").length;
+function count(){const done=I.filter(x=>cached[x.id]?.stage==="PINNED_CHECKED"||cached[x.id]?.stage==="DISCOVERED"||(["NO_SAFE_LEAD","REVIEW_LEADS"].includes(cached[x.id]?.stage)&&cached[x.id]?.search_version===2)).length;
  $("countProgress").textContent=done;$("countUnsolved").textContent=I.filter(x=>!x.pinned&&!cached[x.id]?.candidate).length;
  $("barFill").style.width=(100*done/I.length).toFixed(1)+"%";$("bar").setAttribute("aria-valuenow",done);
  return done}
@@ -183,27 +183,52 @@ async function verifyPinned(email){
   status("Pinned-source verification: "+Math.min(start+12,records.length)+"/"+records.length+" exact Commons files checked");
  }
 }
+// Earlier v1 search used all of the shrine and subject words as an AND query;
+// it returned zero eligible photo leads for all 179 unresolved subjects. V2 uses
+// two bounded, shorter object-specific Commons queries and retains candidates
+// for visual/rights review rather than treating a lexical miss as a rejection.
+function discoveryQueries(x){
+ const cleaned=x.title.replace(/\s*\([^)]*\)/g,"").replace(/\b(?:Original|Venerated|Silver|Glass|Displayed|Holy|Sacred|Shrine|Relic|Reliquary|Chap[e]?l|Statue)\b/gi," ").replace(/\s+/g," ").trim();
+ const fromSite=x.site.replace(/\s*[—–].*$/,"").replace(/^(?:Basilica|Basilique|Sanctuaire|Santuario|Chapel|Church of)\s+/i,"").trim();
+ const c=[cleaned,(cleaned.split(/\s+/).slice(0,4).join(" ")+" "+fromSite.split(/\s+/).slice(-2).join(" ")).trim()];
+ return [...new Set(c.filter(q=>q.length>4&&q.length<155))].slice(0,2);
+}
 async function discoverRemaining(email){
- const work=I.filter(x=>!x.pinned&&!["DISCOVERED","NO_SAFE_LEAD"].includes(cached[x.id]?.stage));
+ const work=I.filter(x=>!x.pinned&&!(["DISCOVERED","NO_SAFE_LEAD","REVIEW_LEADS"].includes(cached[x.id]?.stage)&&cached[x.id]?.search_version===2));
  for(let k=0;k<work.length;k++){
   if(stop)throw Error("PAUSED");
-  const x=work[k];
-  const q=(x.title+" "+x.site).slice(0,180);
+  const x=work[k],leads=new Map(),queries=discoveryQueries(x);
   try{
-   const pages=await api({generator:"search",gsrnamespace:"6",gsrsearch:q,gsrlimit:"9",gsrwhat:"text",
-    prop:"imageinfo",iiprop:"url|size|mime|sha1|extmetadata",iiurlwidth:$("size").value,
-    iiextmetadatafilter:"LicenseShortName|LicenseUrl|Artist|Attribution|Credit"},email);
-   const candidates=pages.map(p=>pageToCandidate(p,x,"NEW_UNVERIFIED_SOURCE_LEAD")).filter(c=>c&&c.eligible).sort((a,b)=>b.score-a.score);
-   const best=candidates.find(c=>c.score>=0.32);
-   mark(x,{stage:best?"DISCOVERED":"NO_SAFE_LEAD",candidate:best||null,
-     leads:candidates.slice(0,3).map(c=>({title:c.title,page:c.page,score:c.score})),
-     reason:best?"Textual and photographer licence candidate only; subject has NOT been visually matched":"No sufficiently matched Commons free-photo source from bounded search"});
+   for(const q of queries){
+    const pages=await api({generator:"search",gsrnamespace:"6",gsrsearch:q,gsrlimit:"10",gsrwhat:"text",
+      prop:"imageinfo",iiprop:"url|size|mime|sha1|extmetadata",iiurlwidth:$("size").value,
+      iiextmetadatafilter:"LicenseShortName|LicenseUrl|Artist|Attribution|Credit"},email);
+    for(const p of pages){
+     const c=pageToCandidate(p,x,"NEW_UNVERIFIED_SOURCE_LEAD_V2");
+     if(c?.eligible&&c.title&&!leads.has(c.title))leads.set(c.title,c);
+    }
+    // Two queries maximum. Don't infer physical identity merely from a title.
+    if(leads.size>=4)break;
+   }
+   const candidates=[...leads.values()].sort((a,b)=>b.score-a.score);
+   // KEEP votes protect the user-shown preview. Do not silently substitute.
+   const best=x.keep?null:candidates.find(c=>c.score>=0.32);
+   mark(x,{stage:best?"DISCOVERED":candidates.length?"REVIEW_LEADS":"NO_SAFE_LEAD",
+      candidate:best||null,search_version:2,queries,
+      leads:candidates.slice(0,6).map(c=>({title:c.title,page:c.page,author:c.author,lic:c.lic,score:c.score,
+        candidate_only:true})),
+      reason:best?"Free-photo candidate; exact object, rights and original pixels NOT confirmed":
+        candidates.length?"Free-licence Commons leads exist, but none is verified as the exact object":
+        "No suitable metadata candidate from two shorter subject-specific Commons queries. Not a copyright rejection."});
   }catch(e){
    if(String(e.message).includes("WIKIMEDIA_429")||String(e.message).includes("WIKIMEDIA_MAXLAG"))throw e;
    if(String(e.message)==="PAUSED")throw e;
-   mark(x,{stage:"SEARCH_ERROR",reason:String(e.message||e)});
+   mark(x,{stage:"SEARCH_ERROR",reason:String(e.message||e),search_version:2});
   }
-  if(k%5===0||k===work.length-1){count();render();status("Subject discovery "+(k+1)+"/"+work.length+"; records are saved locally")}
+  if(k%3===0||k===work.length-1){
+   count();render();
+   status("Improved exact-object discovery "+(k+1)+"/"+work.length+"; all finished records saved");
+  }
  }
 }
 function sanitize(s){return textNorm(s).replace(/\s+/g,"-").slice(0,72)||"unknown"}
