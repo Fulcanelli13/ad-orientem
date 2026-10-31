@@ -11,14 +11,17 @@
     "newlyApproved": 0,
     "productionClearedImages": 0,
     "remainingEditorialGaps": 68,
-    "highPriorityLowRes": 1
+    "highPriorityLowRes": 1,
+    "sourceCandidateFilesLocated": 14,
+    "etchingAlternatives": 7
   },
   "policy": [
     "Do not convert a Commons PDM mark alone into worldwide photographic clearance.",
     "Do not equate matching a Station scene to the user's approval of a new painting.",
     "Do not substitute a generalized Crucifixion for a fall, encounter, stripping or nailing scene.",
     "Only verified PD/CC0 exact photographic files may be activated; zero cost and unframed, with colour/sharpness/crop QA.",
-    "Keep all previously user-approved artwork, rejections and primary hero locks unchanged."
+    "Keep all previously user-approved artwork, rejections and primary hero locks unchanged.",
+    "Smithsonian open-access CC0 evidence for historical etching objects does not clear unrelated modern photographic reproductions of paintings."
   ],
   "entries": [
     {
@@ -57,7 +60,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING"
+      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328441",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_III%2C_He_Falls_Beneath_the_Cross_the_First_Time%2C_ca._1749_%28CH_18328441%29.jpg",
+          "width": 2711,
+          "height": 3998,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": true,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     },
     {
       "editorialSlot": "STG-pray.stations-05",
@@ -95,7 +121,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING"
+      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328445",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_V%2C_Simon_of_Cyrene_Helps_Him_to_Carry_the_Cross%2C_ca._1749_%28CH_18328445%29.jpg",
+          "width": 2537,
+          "height": 3980,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": false,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     },
     {
       "editorialSlot": "STG-pray.stations-07",
@@ -133,7 +182,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING"
+      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328451",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_VII%2C_He_falls_Beneath_the_Cross_the_Second_Time%2C_ca._1749_%28CH_18328451%29.jpg",
+          "width": 2677,
+          "height": 3980,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": false,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     },
     {
       "editorialSlot": "STG-pray.stations-08",
@@ -171,7 +243,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "HIGH_RESOLUTION_WEAK"
+      "qaPriority": "HIGH_RESOLUTION_WEAK",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328455",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_VIII%2C_He_Consoles_the_Weeping_Women%2C_ca._1749_%28CH_18328455%29.jpg",
+          "width": 2677,
+          "height": 3980,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": false,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     },
     {
       "editorialSlot": "STG-pray.stations-09",
@@ -209,7 +304,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING"
+      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328457",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_IX%2C_He_Falls_Beneath_the_Cross_the_Third_Time%2C_ca._1749_%28CH_18328457%29.jpg",
+          "width": 2685,
+          "height": 3996,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": false,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     },
     {
       "editorialSlot": "STG-pray.stations-10",
@@ -247,7 +365,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING"
+      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328459",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_X%2C_Jesus_Despoiled%2C_ca._1749_%28CH_18328459%29.jpg",
+          "width": 2637,
+          "height": 3980,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": false,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     },
     {
       "editorialSlot": "STG-pray.stations-11",
@@ -285,7 +426,30 @@
         "assetUrl": null,
         "runtimeDisplayEnabled": false
       },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING"
+      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
+      "altCandidates": [
+        {
+          "artist": "Giovanni Domenico Tiepolo",
+          "artwork": "Via Crucis",
+          "date": "circa 1749",
+          "medium": "etching on paper",
+          "collection": "Cooper Hewitt, Smithsonian Design Museum",
+          "cooperHewittCatalogNumber": "18328463",
+          "exactImageFilePage": "https://commons.wikimedia.org/wiki/File:Print%2C_Via_Crucis_-_Station_XI%2C_Jesus_is_Nailed_to_the_Cross%2C_ca._1749_%28CH_18328463%29.jpg",
+          "width": 2701,
+          "height": 4004,
+          "provenanceSource": "https://commons.wikimedia.org/wiki/Category:Giovanni_Domenico_Tiepolo",
+          "rightsEvidence": "COMMONS_PD_ART_AND_PDM; SMITHSONIAN_COOPER_HEWITT_CC0_COLLECTION_BASIS",
+          "institutionalObjectVerifiedExact": false,
+          "institutionalCC0Example": "https://collections.si.edu/search/detail/edanmdm:chndm_1931-67-67-2",
+          "approvedByUser": false,
+          "editorialApprovalRequired": true,
+          "photoNativeQAComplete": false,
+          "publicationReady": false,
+          "assetUrl": null,
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+        }
+      ]
     }
   ],
   "guardrails": [
