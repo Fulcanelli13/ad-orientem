@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-261733295B4C":Object.freeze({
+  sourceId:"AO-B39-LOC-IT-B7E3416FBF04",
+  name:"Cappella della Madonna di Pompignano",country:"IT",addressNeedle:"Acquarica del Capo LE",placeId:null,
+  lat:39.8976619,lng:18.2139344,sourceRef:"unavoce:google-place:ae1bcf27ad68348",
+  sourceUrl:"https://www.google.com/maps/place/Cappella+della+Madonna+di+Pompignano/@39.8976619,18.2117457,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae1bcf27ad68348!8m2!3d39.8976619!4d18.2139344",precision:"site",
+  correctedAddress:"Cappella della Madonna di Pompignano, campagna di Acquarica del Capo, Presicce-Acquarica (LE), Italy",
+  reviewScope:"UNAVOCE_LINKED_CHAPEL_PLACE_NOT_DESTROYED_SPECCHIA_SITE",
+  evidence:Object.freeze([
+    "https://www.unavoceitalia.org/wordpress/messe/lecce/",
+    "https://prolocoacquarica.wixsite.com/prolocoacquarica/post/cappella-della-madonna-di-pompignano"
+  ]),
+ }),
  "RG-2181DD7D9F32":Object.freeze({
   sourceId:"AO-B38-LOC-ES-370B93FA6BC",name:"Capilla de la Adoración Permanente",country:"ES",addressNeedle:"Albacete",placeId:null,
   lat:38.992969,lng:-1.851937,sourceRef:"independent:iglesiacercademi:oratorio-carmen-albacete",sourceUrl:"https://www.iglesiacercademi.com/albacete/oratorio-virgen-del-carmen/",
@@ -747,7 +759,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
