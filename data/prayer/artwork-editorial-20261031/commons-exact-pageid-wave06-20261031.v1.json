@@ -1,0 +1,253 @@
+{
+  "schema": "AO_PRAYER_ART_EXACT_COMMONS_FILE_SOURCE_WAVE06_V1",
+  "date": "2026-10-31",
+  "scope": "Original artwork source file Page IDs; 7 distinct image files reused in 23 candidate placement relationships",
+  "counts": {
+    "distinctConfirmedSourceFilePages": 7,
+    "placementSourcePagesRecovered": 23,
+    "sourceLinkedTotal": 1408,
+    "sourceMissingTotal": 98,
+    "remainingDistinctCandidateIdentities": 43
+  },
+  "publicationEnabled": false,
+  "newEditorialApprovals": 0,
+  "imageDownloaded": false,
+  "pixelsAndCropVisuallyTested": false,
+  "restrictions": [
+    "Exact Commons file Page ID matched for every source (not mere artist/title resemblance)",
+    "No reproduction rights, frame-free native crop, or app-release certification",
+    "Champaigne file is only a detail and Rosselli file has photography EXIF rights flag",
+    "Preserve all user approval/denial decisions unchanged"
+  ],
+  "nearMatchQuarantine": [
+    {
+      "candidateSourceID": "REVIEW::commons:186817730",
+      "nearMatches": [
+        15885965,
+        105390372,
+        105387945
+      ],
+      "status": "NOT_THE_SAVED_COMMONS_PAGE_ID_DO_NOT_REPLACE_BY_NAME"
+    },
+    {
+      "candidateSourceID": "REVIEW::commons:55389333",
+      "nearMatch": 15395378,
+      "status": "NOT_THE_SAVED_COMMONS_PAGE_ID_DO_NOT_REPLACE_BY_NAME"
+    },
+    {
+      "candidateSourceID": "REVIEW::commons:45590714",
+      "nearMatches": [
+        4122660,
+        21812502,
+        48541266
+      ],
+      "status": "DIFFERENT_SOURCE_FILE_PAGES_MAY_INCLUDE_DIFFERENT_ORIGINALS_DO_NOT_AUTO_ALIAS"
+    }
+  ],
+  "verifiedSources": [
+    {
+      "pageId": 33831598,
+      "file": "Annibale Carracci Crocifissione Berlino.jpg",
+      "dimensions": [
+        null,
+        null
+      ],
+      "rights": "COMMONS_PD_ART_CLAIM_UNREVIEWED_FOR_ALL_JURISDICTIONS",
+      "quality": "PHOTO_CROP_NOT_VERIFIED",
+      "notes": "Berlin Gemäldegalerie original, exact Commons File Page-ID checked",
+      "sourceID": "REVIEW::commons:33831598",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_Crocifissione_Berlino.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AAnnibale%20Carracci%20Crocifissione%20Berlino.jpg",
+      "placements": [
+        {
+          "slot": "STG-pray.rosary-11",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.precious_blood-06",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-05",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.stations-12",
+          "family": "6"
+        }
+      ]
+    },
+    {
+      "pageId": 4965555,
+      "file": "Champaigne La Crucifixion.jpg",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "rights": "COMMONS_PD_MARK_PHOTO_RIGHTS_SEPARATE",
+      "quality": "DETAIL_ONLY_NOT_WHOLE_PAINTING",
+      "notes": "Image is a cropped detail; cannot replace whole original in full-composition artwork slot without review",
+      "sourceID": "REVIEW::commons:4965555",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Champaigne_La_Crucifixion.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AChampaigne%20La%20Crucifixion.jpg",
+      "placements": [
+        {
+          "slot": "STG-pray.rosary-11",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.precious_blood-06",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-05",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.stations-12",
+          "family": "6"
+        }
+      ]
+    },
+    {
+      "pageId": 198985941,
+      "file": "Eugène Delacroix - Christ Carried Down to the Tomb.jpg",
+      "dimensions": [
+        2787,
+        3465
+      ],
+      "rights": "COMMONS_PD_ART_CLAIM_UNREVIEWED_FOR_ALL_JURISDICTIONS",
+      "quality": "VISUAL_FRAME_AND_CROP_PENDING",
+      "notes": "Tokyo National Museum of Western Art original P.1975-0002; September 2026 Commons upload",
+      "sourceID": "REVIEW::commons:198985941",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Christ_Carried_Down_to_the_Tomb.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AEug%C3%A8ne%20Delacroix%20-%20Christ%20Carried%20Down%20to%20the%20Tomb.jpg",
+      "placements": [
+        {
+          "slot": "STG-pray.five_wounds-01",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.stations-14",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.tenebrae-03",
+          "family": "6"
+        }
+      ]
+    },
+    {
+      "pageId": 74171702,
+      "file": "Frans Francken, II - The Annunciation - 1971.876 - Art Institute of Chicago.jpg",
+      "dimensions": [
+        1734,
+        2250
+      ],
+      "rights": "COMMONS_PD_ART_CLAIM_UNREVIEWED_FOR_ALL_JURISDICTIONS",
+      "quality": "VISUAL_FRAME_AND_CROP_PENDING",
+      "notes": "Chicago museum accession 1971.876",
+      "sourceID": "REVIEW::commons:74171702",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Frans_Francken%2C_II_-_The_Annunciation_-_1971.876_-_Art_Institute_of_Chicago.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AFrans%20Francken%2C%20II%20-%20The%20Annunciation%20-%201971.876%20-%20Art%20Institute%20of%20Chicago.jpg",
+      "placements": [
+        {
+          "slot": "STG-pray.angelus-05",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.angelus-06",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.rosary-02",
+          "family": "3"
+        },
+        {
+          "slot": "COV-novena.annunciation",
+          "family": "4"
+        }
+      ]
+    },
+    {
+      "pageId": 48454996,
+      "file": "Risen Christ - Guido Reni.jpg",
+      "dimensions": [
+        2430,
+        4027
+      ],
+      "rights": "COMMONS_PD_ART_CLAIM_UNREVIEWED_FOR_ALL_JURISDICTIONS",
+      "quality": "VISUAL_FRAME_AND_CROP_PENDING",
+      "notes": "MUZA Malta original",
+      "sourceID": "REVIEW::commons:48454996",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Risen_Christ_-_Guido_Reni.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3ARisen%20Christ%20-%20Guido%20Reni.jpg",
+      "placements": [
+        {
+          "slot": "STG-pray.angelus_regina-02",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.rosary-12",
+          "family": "3"
+        }
+      ]
+    },
+    {
+      "pageId": 77991201,
+      "file": "Matteo Rosselli - Saint John the Baptist.jpg",
+      "dimensions": [
+        4898,
+        6212
+      ],
+      "rights": "EXIF_PHOTOGRAPHER_COPYRIGHT_HOLDER_NEEDS_RIGHTS_JURISDICTION_REVIEW",
+      "quality": "VISUAL_FRAME_AND_CROP_PENDING",
+      "notes": "Rosselli auction-derived photo EXIF credits copyright to Arte Fotografica S.r.l.; no release without a clear rights basis",
+      "sourceID": "REVIEW::commons:77991201",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Matteo_Rosselli_-_Saint_John_the_Baptist.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AMatteo%20Rosselli%20-%20Saint%20John%20the%20Baptist.jpg",
+      "placements": [
+        {
+          "slot": "COV-weekday_benedictus",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.litany_saints-02",
+          "family": "8"
+        }
+      ]
+    },
+    {
+      "pageId": 3110508,
+      "file": "Guercino Pietà 2.jpg",
+      "dimensions": [
+        2719,
+        4113
+      ],
+      "rights": "COMMONS_PD_ART_CLAIM_UNREVIEWED_FOR_ALL_JURISDICTIONS",
+      "quality": "VISUAL_FRAME_AND_CROP_PENDING",
+      "notes": "Musee Conde, Chantilly original; exact page ID verified",
+      "sourceID": "REVIEW::commons:3110508",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Guercino_Piet%C3%A0_2.jpg",
+      "informationPage": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AGuercino%20Piet%C3%A0%202.jpg",
+      "placements": [
+        {
+          "slot": "STG-pray.five_wounds-01",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.stations-13",
+          "family": "6"
+        }
+      ]
+    }
+  ]
+}
