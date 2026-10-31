@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {test} from "node:test";
 import {CLAUDE_BENEDICTION_RAIL,claudeBenedictionRail} from "../src/pray/claude-benediction-altar-card.js";
+import {claudeAltarBilingualRows} from "../src/pray/claude-altar-card.js";
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 const css=readFileSync("src/pray/claude-benediction-altar-styles.js","utf8");
 const original=readFileSync("tests/fixtures/claude-prayer/altar-card.app-ui.css","utf8");
@@ -36,4 +37,23 @@ test("Actual chant and versicles retain canonical witnesses and independently fo
  assert.match(runtime,/sourceLine\(p\)/);
  assert.match(css,/aoRiteChantLatin/);
  assert.match(css,/aoRiteChantVernacular/);
+});
+
+test("Refuse false bilingual rows where one witness has an unmatched blank line",()=>{
+ const exact=claudeAltarBilingualRows({
+  latin:"Versiculus\\n\\nOratio",
+  vernacular:"Versicle\\n\\nPrayer",
+  esc,language:"en"
+ });
+ assert.match(exact,/aoClaudeAltarGap/);
+ assert.equal((exact.match(/aoClaudeAltarRow/g)||[]).length,2);
+ const invalid=claudeAltarBilingualRows({
+  latin:"Versiculus\\n\\nOratio",
+  vernacular:"Versicle\\nUnrelated insertion\\nPrayer",
+  esc,language:"en"
+ });
+ assert.equal(invalid,null,"Mismatched source sections must use the canonical fallback");
+ assert.equal(claudeAltarBilingualRows({
+  latin:"One\\nTwo",vernacular:"One",esc
+ }),null);
 });
