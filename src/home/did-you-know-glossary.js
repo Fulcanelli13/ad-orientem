@@ -1,3 +1,4 @@
+import {loadDykPrioritySelection,dykPublishedPick} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
 // Weiser/Pitrè research. The canonical Discovery owner replaces this adapter
@@ -99,5 +100,26 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
       "Notice indisponible pour le moment.":"Discovery temporarily unavailable.";
     button.querySelector("[data-home-dyk-title]").textContent=fr?"Source indisponible":"Source unavailable";
   });
+  // A released R34 discovery can replace the published Glossary fallback
+  // only when every source, EN/FR, semantic, date and destination gate passes.
+  // No R34 candidate currently passes; ordinary H7 remains unchanged.
+  void loadDykPrioritySelection(win).then(data=>{
+    const row=dykPublishedPick(data,date);
+    if(!row||!button.isConnected||button.disabled)return;
+    const currentDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
+      root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
+    if(currentDate!==date||button.closest(".homeScreen")?.dataset?.homeLanguage!==(fr?"fr":"en"))return;
+    const fact=row.pilot_home_copy||row.editorial_review_copy;
+    const historical=row.source_family!=="ROMAN_MASS_1962";
+    button.querySelector("[data-home-dyk-title]").textContent=historical?
+      (fr?"Coutumes et traditions":"Customs and traditions"):
+      (fr?"Le Canon romain":"The Roman Canon");
+    button.querySelector("[data-home-dyk-fact]").textContent=fact[fr?"fr":"en"];
+    button.querySelector("[data-home-dyk-source]").textContent=fr?
+      "Découverte · Lire la source ›":"Discovery · Read the source ›";
+    delete button.dataset.homeDykEntry;
+    button.dataset.homeDykFactId=row.id;
+    button.dataset.homeDykFactDate=date;
+  }).catch(()=>{}); // Unapproved, malformed or unavailable master: retain Glossary.
   return true;
 }
