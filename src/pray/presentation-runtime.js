@@ -1423,7 +1423,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;if(view==='sevenWords'){
    // Preserve the historical closing prayer as a separate nonvisual art identity.
    const appendix=m.querySelector('.aoP435930SevenClosing');
-   if(appendix)stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});
+   if(appendix){stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});stampPrayerArtworkDomEvidence(appendix);}
   }stampPrayerArtworkDomEvidence(m);if(view==='angelus'){
    // Per-utterance semantic identity: date/time contextual slots are not
    // automatically assigned to dynamic Angelus prayer cards.
