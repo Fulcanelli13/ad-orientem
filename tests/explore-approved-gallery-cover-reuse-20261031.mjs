@@ -35,17 +35,21 @@ for(const c of reused){
 const invalid={...reused[0],asset_path:"assets/approved/place-gallery/not-a-reviewed-photo.webp",derivative_sha256:null};
 assert.equal(resolveApprovedPlaceMedia([invalid],invalid.place_id),null,"Unsafe gallery fallback rejected");
 const notre=covers.items.filter(x=>x.place_id==="place:FR:notre-dame-paris");
-assert(notre.length<=1,"Notre-Dame must have at most one canonical Place cover");
-if(notre.length){
+assert.equal(notre.length,1,"Notre-Dame exact-source image must be acquired before this release is merged");
+{
  const n=notre[0];
  assert.equal(n.source_place_ref,"COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE");
  assert.equal(n.source_sha1,"6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5");
+ assert.equal(n.source_url,"https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre_Dame_-_Paris_IV_(FR75)_-_2026-09-17_-_4.jpg");
  assert.equal(n.credit,"Chabe01");
  assert.equal(n.license,"CC-BY-SA-4.0");
  assert.equal(n.asset_path,"assets/approved/place-media/FR-notre-dame-paris-2026.webp");
+ assert.equal(n.rights_verified,true);
+ assert.equal(n.subject_verified,true);
+ assert.equal(n.crop_reviewed,true);
  assert(existsSync(n.asset_path),"Notre-Dame derivative missing");
  assert.equal(createHash("sha256").update(readFileSync(n.asset_path)).digest("hex"),n.derivative_sha256);
  assert(resolveApprovedPlaceMedia(covers.items,n.place_id),"Notre-Dame approved cover is not renderable");
 }
 
-console.log("PASS: 21 vetted gallery cover reuses, plus verified Notre-Dame original if acquired; no unverified media published");
+console.log("PASS: 22 canonical Place cover additions: 21 checksum-verified gallery reuses plus SHA1-pinned Notre-Dame original WebP; no other Place media inferred");
