@@ -179,5 +179,36 @@
     "sourceArtwork": "The Way to Calvary",
     "imageLicense": "Getty Open Content CC0",
     "exactPhotoQAPassed": false
+  },
+  "sourceResearchUpdates": [
+    {
+      "key": "20261031-exact-stations-baroque",
+      "path": "data/prayer/artwork-editorial-20261030/stations-baroque-quality-and-rights-20261031.v1.json",
+      "workbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Baroque_Source_Review.xlsx",
+      "slotIDs": [
+        "STG-pray.stations-03",
+        "STG-pray.stations-07",
+        "STG-pray.stations-08",
+        "STG-pray.stations-09",
+        "STG-pray.stations-10",
+        "STG-pray.stations-11"
+      ],
+      "newlyEditorApproved": 0,
+      "photoFilesCertified": 0,
+      "pdPhotoReviewPending": [
+        "STG-pray.stations-11"
+      ],
+      "commerciallyLicensedPhotoExcluded": [
+        "STG-pray.stations-10"
+      ],
+      "remainingCanonicalEditorGaps": 67
+    }
+  ],
+  "currentConsolidatedEditorialCoverage": {
+    "mapped": 200,
+    "unmapped": 67,
+    "total": 267,
+    "method": "160 current previous approvals + 15 exact scene inheritances + 18 devotional subject inheritances + 7 previously explicit October 28 keeps; no new artworks approved during this research pass",
+    "photographsCleared": 0
   }
 }
