@@ -1743,6 +1743,42 @@ button.ao-schola-control{cursor:pointer}
   top:1px;right:1px
 }
 
+/* Canonical Mass cue-art sizing. Previous separate desktop / 320px rules
+   ranged from 27 to 52px for ordinary posture, gesture and priest art.
+   Keep ONE 32px glyph unit in the existing 48/52px cue surfaces, regardless
+   of the approved source asset or reading mode. This changes no SVG asset,
+   source cue, gesture identity, actor lane or cinematic timing. */
+.ao-reader-shell{--ao-cue-art-size:32px}
+.ao-reader-shell .ao-state-cell>.ao-icon-mask,
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon),
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-missal-gesture-icon,
+.ao-reader-shell .ao-rail .ao-icon-mask,
+.ao-reader-shell .ao-live-inline-rubrics
+  :is(.ao-approved-finger-rubric-art,.ao-approved-priest-gesture-rubric-art,.ao-approved-priest-head-bow-rubric-art){
+  width:var(--ao-cue-art-size);height:var(--ao-cue-art-size);
+  min-width:var(--ao-cue-art-size);min-height:var(--ao-cue-art-size);
+  max-width:var(--ao-cue-art-size);max-height:var(--ao-cue-art-size);
+  flex:0 0 var(--ao-cue-art-size);
+  mask-position:center;-webkit-mask-position:center;
+  mask-size:contain;-webkit-mask-size:contain;
+  background-size:contain;background-position:center
+}
+/* The secondary Missal priest-action badge carries the same 32px artwork,
+   in a 40px touch-free frame. The major mark retains emphasis in its
+   container, not an arbitrarily oversized drawing. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge{
+  width:40px;height:40px;right:1px;top:1px
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge[data-major="true"]{
+  width:44px;height:44px;right:0;top:0
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge .ao-icon-mask{
+  width:var(--ao-cue-art-size);height:var(--ao-cue-art-size);
+  min-width:var(--ao-cue-art-size);min-height:var(--ao-cue-art-size);
+  max-width:var(--ao-cue-art-size);max-height:var(--ao-cue-art-size);
+  flex:0 0 var(--ao-cue-art-size)
+}
+
 `;
 
 function esc(value){
