@@ -1,0 +1,363 @@
+{
+  "schema": "AO_DYK_RANDOM_50_REMEDIATION_OVERLAY_V1",
+  "date": "2026-10-31",
+  "status": "REVIEW_CORRECTIONS_SOURCE_CHECKS_ZERO_APPROVAL_OR_PUBLICATION",
+  "baseline": {
+    "population": 500,
+    "original_index_blob_sha": "844faad20dc20453d06f25a194b1073cc26eb8c9",
+    "original_sample_blob_sha": "9af5905a2a70df8388c9f669f5c309d58147d7d3",
+    "seed_uint32": 20261031,
+    "original_drawn_ids": [
+      "DYK-H04-W-A-051",
+      "DYK-H04-W-A-048",
+      "DYK-GI-G074",
+      "DYK-UM01-009",
+      "DYK-G365-CAL-020",
+      "DYK-UM01-022",
+      "DYK-H04-P-017",
+      "DYK-H04-W-B-010",
+      "DYK-G365-W-B-062",
+      "DYK-H04-W-A-109",
+      "DYK-G365-M-DEAD-003",
+      "DYK-H04-W-B-028",
+      "DYK-UM02-015",
+      "DYK-UM01-007",
+      "DYK-G500-W-H-017",
+      "DYK-G365-CAL-037",
+      "DYK-G365-M-BLSS-001",
+      "DYK-H04-W-B-105",
+      "DYK-UM01-014",
+      "DYK-G500-W-H-018",
+      "DYK-G500-W-UNIDX-008",
+      "DYK-G365-M-SJOS-001",
+      "DYK-UM01-030",
+      "DYK-H04-P-061",
+      "DYK-H04-W-B-089",
+      "DYK-GI-G094",
+      "DYK-UM02-008",
+      "DYK-G414-W-B-008",
+      "DYK-M04-CANON-042",
+      "DYK-H04-W-B-044",
+      "DYK-G365-CAL-032",
+      "DYK-G500-W-H-029",
+      "DYK-UM03-042",
+      "DYK-H04-W-A-074",
+      "DYK-UM02-022",
+      "DYK-H04-P-111",
+      "DYK-UM02-030",
+      "DYK-H04-W-B-014",
+      "DYK-G500-W-H-030",
+      "DYK-G461-W-C-008",
+      "DYK-H04-W-B-165",
+      "DYK-M04-CANON-047",
+      "DYK-UM02-024",
+      "DYK-G414-W-B-073",
+      "DYK-G414-W-B-023",
+      "DYK-H04-W-B-035",
+      "DYK-H04-P-119",
+      "DYK-UM02-050",
+      "DYK-G414-W-B-009",
+      "DYK-H04-W-A-078"
+    ]
+  },
+  "retired_from_eligible_review": [
+    {
+      "id": "DYK-GI-G074",
+      "reason": "Previously rejected for Did You Know Home fit in R25/R29; historic raw research retained, never counted as an approved fact.",
+      "replacement_id": "DYK-R50-W-P096-UKR-BREAD-CANDLE"
+    }
+  ],
+  "replacement": {
+    "id": "DYK-R50-W-P096-UKR-BREAD-CANDLE",
+    "replaces_id": "DYK-GI-G074",
+    "source_id": "WEI58-DIRECT-P096-UKR-BREAD-CANDLE",
+    "source_witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "source_title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+    "source": {
+      "printed_pages": [
+        96
+      ],
+      "pdf_page_zero_based": [
+        113
+      ]
+    },
+    "statement": {
+      "en": "In a Ukrainian Christmas custom recorded by Weiser, a church-blessed Christmas candle was set upright in a loaf of bread instead of a candlestick.",
+      "fr": "Dans une coutume ukrainienne de Noël rapportée par Weiser, on fichait une bougie de Noël bénie à l'église dans une miche de pain, plutôt que dans un chandelier."
+    },
+    "scope": "Historical and Ukrainian; this is a particular custom, not a liturgical rubric or a universal Ukrainian practice.",
+    "editorial_note": "Distinct from generic WEI58-08-005 family candle blessing DYK-H04-W-A-047. Direct reading p96 with exact candle-in-bread distinction.",
+    "source_page_image_directly_checked": true,
+    "publication_authorized": false,
+    "french_final_signoff": false,
+    "full_612_semantic_uniqueness_approved": false
+  },
+  "revisions": [
+    {
+      "id": "DYK-H04-W-A-048",
+      "kind": "SOURCE_SPAN_CORRECTION",
+      "revised_statement": null,
+      "source": {
+        "printed_pages": [
+          96,
+          97
+        ],
+        "pdf_page_zero_based": [
+          113,
+          114
+        ]
+      },
+      "note": "Candle type first described p96 and the Trinity symbolism completes p97; statement unchanged."
+    },
+    {
+      "id": "DYK-H04-W-B-165",
+      "kind": "BILINGUAL_SOURCE_PRECISION",
+      "revised_statement": {
+        "en": "For Saint John's feast, Weiser describes Breton fishing crews hoisting a barrel of discarded clothing to the tip of a ship's mainsail yard and setting its contents alight; the men then prayed and sang around the mast.",
+        "fr": "Pour la Saint-Jean, Weiser décrit des équipages de pêche bretons hissant un tonneau de vieux vêtements à l'extrémité de la vergue de grand-voile et y mettant le feu ; les hommes priaient et chantaient ensuite autour du mât."
+      },
+      "source": {
+        "printed_pages": [
+          330
+        ],
+        "pdf_page_zero_based": [
+          347
+        ]
+      },
+      "note": "The burning barrel reached the mainsail yard, not the mast; the men prayed and sang around the mast."
+    },
+    {
+      "id": "DYK-UM02-022",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "For First Friday Sacred Heart devotions, Weiser describes families lighting a vigil light before a statue of the Sacred Heart at home, alongside observances such as Mass and Communion in church.",
+        "fr": "Pour la dévotion des premiers vendredis au Sacré-Cœur, Weiser décrit des familles allumant chez elles une veilleuse devant une statue du Sacré-Cœur, en complément de pratiques à l'église comme la messe et la communion."
+      },
+      "source": {
+        "printed_pages": [
+          29
+        ],
+        "pdf_page_zero_based": [
+          46
+        ]
+      },
+      "note": "Replaces generic linkage with a source-specific home devotional action; don't present as mandatory."
+    },
+    {
+      "id": "DYK-G500-W-H-030",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "Weiser distinguishes the Easter Marian antiphon Regina Coeli laetare from another Catholic Easter hymn, Regina Coeli jubila, which he says first appeared in 1600.",
+        "fr": "Weiser distingue l'antienne mariale pascale Regina Coeli laetare d'un autre cantique pascal catholique, Regina Coeli jubila, apparu selon lui en 1600."
+      },
+      "source": {
+        "printed_pages": [
+          231
+        ],
+        "pdf_page_zero_based": [
+          248
+        ]
+      },
+      "note": "Concrete two-hymn distinction and 1600 historical date; not an equivalence of the texts."
+    },
+    {
+      "id": "DYK-G500-W-H-029",
+      "kind": "BILINGUAL_SOURCE_PRECISION",
+      "revised_statement": {
+        "en": "Weiser attributes O filii et filiae to the Franciscan Jean Tisserand and records its first publication in Paris in 1525; an English translation appeared in a London Catholic manual in 1748.",
+        "fr": "Weiser attribue O filii et filiae au franciscain Jean Tisserand et situe sa première publication à Paris en 1525 ; une traduction anglaise parut dans un manuel catholique à Londres en 1748."
+      },
+      "source": {
+        "printed_pages": [
+          229,
+          230
+        ],
+        "pdf_page_zero_based": [
+          246,
+          247
+        ]
+      },
+      "note": "The specific composition/date is on p229 and English translation crosses to p230, so p230 alone was inadequate."
+    },
+    {
+      "id": "DYK-G414-W-B-008",
+      "kind": "SOURCE_SPAN_CORRECTION",
+      "revised_statement": null,
+      "source": {
+        "printed_pages": [
+          195,
+          196
+        ],
+        "pdf_page_zero_based": [
+          212,
+          213
+        ]
+      },
+      "note": "Royal mandatum and alms on p195; earlier inherited pointer p196 alone was off by one."
+    }
+  ],
+  "original_folio_direct_checks": [
+    {
+      "id": "DYK-G500-W-H-017",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        172
+      ],
+      "pdf_page_zero_based": [
+        189
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p172: milk-food dispensations and almsgiving; keep historical scope",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G500-W-UNIDX-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        58
+      ],
+      "pdf_page_zero_based": [
+        75
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p58: central-European rough nights Saint Thomas, masks; folklore not approved ritual",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        195,
+        196
+      ],
+      "pdf_page_zero_based": [
+        212,
+        213
+      ],
+      "result": "MATCHED_CORRECTED_LOCATOR",
+      "explanation": "Weiser p195 names medieval kings and meal/alms, p196 continues general tradition",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G500-W-H-029",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        229,
+        230
+      ],
+      "pdf_page_zero_based": [
+        246,
+        247
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p229 first publication and p230 English translation; original pointer p230 alone inadequate",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G500-W-H-030",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        231
+      ],
+      "pdf_page_zero_based": [
+        248
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p231 distinguishes two different Regina Coeli hymn titles and first appearance 1600",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G461-W-C-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        222
+      ],
+      "pdf_page_zero_based": [
+        239
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p222: Easter octave White Week newly baptized in white clothing",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-073",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        258
+      ],
+      "pdf_page_zero_based": [
+        275
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p258: 1680 Vienna preaching at Trinity column, source claims column dedicated to Trinity",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-023",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        216
+      ],
+      "pdf_page_zero_based": [
+        233
+      ],
+      "result": "MATCHED_SCOPE_LIMIT",
+      "explanation": "Weiser p216 attributes Irish Easter-fire spread to missionaries; historical attribution not independently established",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-009",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        196,
+        197
+      ],
+      "pdf_page_zero_based": [
+        213,
+        214
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser pp196–197: French bells to Rome folktale, non-doctrinal",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    }
+  ],
+  "effective_roster_rules": [
+    "Retain all 500 historical raw research records unchanged in the archival composed index",
+    "For review only, exclude G074 and include the new sourced Ukrainian candle-bread fact, preserving 500 eligible review slots and the 49 other original draws",
+    "Apply revision copy and source-page corrections by record ID before any subsequent per-record approval",
+    "This is a repaired sample, not a fresh random 50/500 draw, and must not be represented as 50/50 successfully verified",
+    "Authoritative approval/publication flags and private H7 remain unchanged"
+  ],
+  "summary": {
+    "archival_research_records": 500,
+    "review_eligible_effective_records": 500,
+    "original_sample_unchanged_until_overlay": 50,
+    "post_repair_review_sample": 50,
+    "original_source_page_checks_this_pass": 9,
+    "correction_actions": 6,
+    "retired_glossary_records": 1,
+    "specific_replacement_records": 1,
+    "source_image_corroboration_independent_historiography": false,
+    "legacy_612_semantic_complete": false,
+    "all_50_finally_approved": false,
+    "new_publications": 0
+  }
+}
