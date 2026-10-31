@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 47,
+    "new_site_pins": 49,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -656,6 +656,28 @@
       "source_ref": "osm:way:245105097",
       "source_url": "https://www.openstreetmap.org/way/245105097",
       "review_scope": "DIOCESAN_CHURCH_HISTORIC_PARISH_SUPPRESSED_1805",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0BB62E04774C",
+      "source_id": "AO-B39-LOC-PL-83A0BDB437C1",
+      "name": "Kościół Ducha Świętego",
+      "lat": 50.3461,
+      "lng": 18.9278,
+      "source_ref": "commons:object-location:bytom-holy-spirit",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:Holy_Spirit_Church_in_Bytom",
+      "review_scope": "CHURCH_FILIAL_NOT_MAIN_PARISH_SITE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-783CD50DD217",
+      "source_id": "AO-B39-LOC-PL-EA168B0ACA4A",
+      "name": "Kościół Matki Bożej Śnieżnej",
+      "lat": 50.1705,
+      "lng": 18.90754,
+      "source_ref": "osm:way:169044576",
+      "source_url": "https://www.openstreetmap.org/way/169044576",
+      "review_scope": "HISTORIC_FILIAL_CHURCH_NOT_NEARBY_BASILICA",
       "place_id": null
     }
   ]
