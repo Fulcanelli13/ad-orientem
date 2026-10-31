@@ -8,6 +8,7 @@ on:
       - 'data/prayer/stations/rauth-edinburgh/series-photo-rights-research.v1.json'
       - 'scripts/rauth_edinburgh_ephemeral_photo_qa.py'
       - 'scripts/rauth_edinburgh_visual_diagnostics.py'
+      - 'scripts/rauth_original_photo_contact_sheet_ephemeral.py'
       - 'tests/prayer-rauth-14-original-photo-qa-gates.mjs'
       - 'data/prayer/stations/rauth-edinburgh/native-14-photo-visual-diagnostics-20261031.v1.json'
       - '.github/workflows/rauth-edinburgh-photo-source-qa.yml'
@@ -18,6 +19,7 @@ on:
       - 'data/prayer/stations/rauth-edinburgh/series-photo-rights-research.v1.json'
       - 'scripts/rauth_edinburgh_ephemeral_photo_qa.py'
       - 'scripts/rauth_edinburgh_visual_diagnostics.py'
+      - 'scripts/rauth_original_photo_contact_sheet_ephemeral.py'
       - 'tests/prayer-rauth-14-original-photo-qa-gates.mjs'
       - 'data/prayer/stations/rauth-edinburgh/native-14-photo-visual-diagnostics-20261031.v1.json'
       - '.github/workflows/rauth-edinburgh-photo-source-qa.yml'
@@ -44,3 +46,12 @@ jobs:
         run: python scripts/rauth_edinburgh_visual_diagnostics.py
       - name: Verify fourteen distinct photographs and all publication-rights locks
         run: node tests/prayer-rauth-14-original-photo-qa-gates.mjs
+      - name: Produce full-aspect, low-resolution editorial sheets (NOT production artwork)
+        run: python scripts/rauth_original_photo_contact_sheet_ephemeral.py
+      - name: Store private-review-only contact sheets (expires in one day)
+        uses: actions/upload-artifact@v4
+        with:
+          name: rauth-fourteen-paintings-internal-visual-review
+          path: /tmp/rauth-editorial-qa/*.jpg
+          retention-days: 1
+          if-no-files-found: error
