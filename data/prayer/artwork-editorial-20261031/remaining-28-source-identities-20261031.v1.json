@@ -1,0 +1,818 @@
+{
+  "schema": "AO_PRAYER_ART_28_REMAINING_SOURCE_IDENTITIES_V1",
+  "date": "2026-10-31",
+  "source": "11 canonical family candidate shards after Wave 9",
+  "stats": {
+    "linkedPlacementCandidates": 1442,
+    "missingSourcePlacementCandidates": 64,
+    "distinctMissingOriginalIdentities": 28,
+    "categories": {
+      "PRADO_PHOTO_QUARANTINE_INDEPENDENT_PHOTO": 2,
+      "COMMONS_EXACT_SOURCE_PAGE_ID": 13,
+      "CLEVELAND_OBJECT_ID": 3,
+      "LEGACY_OR_MASTER_SOURCE": 8,
+      "UNKEYED_ORIGINAL": 2
+    }
+  },
+  "safety": {
+    "productionEnabled": false,
+    "approvalOfNewArt": false,
+    "finalUserReviewDeferred": true
+  },
+  "items": [
+    {
+      "identityKey": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "sourceIDs": [
+        "CANONICAL::ART-itian-hrist-arrying-the-ross"
+      ],
+      "placements": [
+        {
+          "slot": "HERO-07",
+          "family": "home"
+        },
+        {
+          "slot": "STG-pray.rosary-10",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.precious_blood-05",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-04",
+          "family": "3"
+        },
+        {
+          "slot": "COV-pray.stations",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-02",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-03",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-04",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-05",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-06",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-07",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-08",
+          "family": "6"
+        },
+        {
+          "slot": "STG-pray.stations-09",
+          "family": "6"
+        }
+      ],
+      "originalSourceStatuses": [
+        "NEW_CANDIDATE_NOT_USER_APPROVED",
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 13,
+      "category": "PRADO_PHOTO_QUARANTINE_INDEPENDENT_PHOTO",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:55389333",
+      "title": "Annunciation",
+      "artist": "Giovanni Lanfranco",
+      "sourceIDs": [
+        "REVIEW::commons:55389333"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.angelus-05",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.angelus-06",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.rosary-02",
+          "family": "3"
+        },
+        {
+          "slot": "COV-novena.annunciation",
+          "family": "4"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED",
+        "USER_APPROVED_CROSS_PRAYER_REUSE"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 4,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:186817730",
+      "title": "The Annunciation \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "sourceIDs": [
+        "REVIEW::commons:186817730"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.angelus-05",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.angelus-06",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.rosary-02",
+          "family": "3"
+        },
+        {
+          "slot": "COV-novena.annunciation",
+          "family": "4"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED",
+        "USER_APPROVED_CROSS_PRAYER_REUSE"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 4,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::cma:127664",
+      "title": "Crucifixion",
+      "artist": "",
+      "sourceIDs": [
+        "REVIEW::cma:127664"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.rosary-11",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.precious_blood-06",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-05",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.stations-12",
+          "family": "6"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED",
+        "USER_APPROVED_CROSS_PRAYER_REUSE"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 4,
+      "category": "CLEVELAND_OBJECT_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "title": "Adoration of the Magi",
+      "artist": "Peter Paul Rubens",
+      "sourceIDs": [
+        "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi"
+      ],
+      "placements": [
+        {
+          "slot": "HERO-03",
+          "family": "home"
+        },
+        {
+          "slot": "STG-pray.rosary-04",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.adoration-01",
+          "family": "5"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED",
+        "USER_APPROVED_CROSS_PRAYER_REUSE"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 3,
+      "category": "PRADO_PHOTO_QUARANTINE_INDEPENDENT_PHOTO",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:45590714",
+      "title": "The lamentation over the dead Christ",
+      "artist": "Alessandro Turchi",
+      "sourceIDs": [
+        "REVIEW::commons:45590714"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.five_wounds-01",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.stations-13",
+          "family": "6"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED",
+        "USER_APPROVED_CROSS_PRAYER_REUSE"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 3,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:15179213",
+      "title": "French: La Prédication de saint Jean Baptiste | Predication of Saint John the Baptist",
+      "artist": "Francesco Albani",
+      "sourceIDs": [
+        "REVIEW::commons:15179213"
+      ],
+      "placements": [
+        {
+          "slot": "COV-weekday_benedictus",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.litany_saints-02",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 2,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:15385045",
+      "title": "Polish: Święte niewiasty u grobu Chrystusa | Holy Women at Christ' s Tomb \" \"",
+      "artist": "Annibale Carracci",
+      "sourceIDs": [
+        "REVIEW::commons:15385045"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.angelus_regina-02",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.rosary-12",
+          "family": "3"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 2,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:149912",
+      "title": "The Angel Is Opening Christ's Tomb",
+      "artist": "Benjamin Gerritsz Cuyp",
+      "sourceIDs": [
+        "REVIEW::commons:149912"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.angelus_regina-02",
+          "family": "1"
+        },
+        {
+          "slot": "STG-pray.rosary-12",
+          "family": "3"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 2,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:34313474",
+      "title": "The Adoration of the Kings \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "sourceIDs": [
+        "REVIEW::commons:34313474"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.rosary-04",
+          "family": "3"
+        },
+        {
+          "slot": "STG-pray.adoration-01",
+          "family": "5"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 2,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:98814200",
+      "title": "Mourning of Christ (Matthew 27:59–61; Mark 15:46–47; Luke 23:53–56; John 19:38–42) \" \"",
+      "artist": "Abraham Janssens I",
+      "sourceIDs": [
+        "REVIEW::commons:98814200"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.five_wounds-01",
+          "family": "3"
+        },
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 2,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:73497418",
+      "title": "Immaculate conception",
+      "artist": "Carlo Maratta",
+      "sourceIDs": [
+        "REVIEW::commons:73497418"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.immaculate_conception",
+          "family": "4"
+        },
+        {
+          "slot": "STG-litany_loreto_1962-03",
+          "family": "7"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 2,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "W07-006",
+      "title": "Madonna and Child with Saint Anthony of Padua",
+      "artist": "Anthony van Dyck",
+      "sourceIDs": [
+        "W07-006"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 2,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "W38-009",
+      "title": "Saint Anthony of Padua",
+      "artist": "Claudio Coello",
+      "sourceIDs": [
+        "W38-009"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 2,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "artist": "Peter Paul Rubens",
+      "sourceIDs": [
+        "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 2,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "G17-012",
+      "title": "Saint Anthony of Padua with the Infant Christ",
+      "artist": "Giuseppe Bazzani",
+      "sourceIDs": [
+        "G17-012"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 2,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "sdma-48-3-pittoni-anthony",
+      "title": "The Vision of Saint Anthony of Padua",
+      "artist": "Giovanni Battista Pittoni",
+      "sourceIDs": [
+        "sdma-48-3-pittoni-anthony"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 2,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "UNKEYED::Pentecost::Juan Bautista Maíno",
+      "title": "Pentecost",
+      "artist": "Juan Bautista Maíno",
+      "sourceIDs": [
+        null
+      ],
+      "placements": [
+        {
+          "slot": "HERO-14",
+          "family": "home"
+        }
+      ],
+      "originalSourceStatuses": [
+        "CROSS_MODULE_EDITORIAL_REUSE"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 1,
+      "category": "UNKEYED_ORIGINAL",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "UNKEYED::The Virgin of the Seven Sorrows::Master of the Female Half-Lengths (attributed)",
+      "title": "The Virgin of the Seven Sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "sourceIDs": [
+        null
+      ],
+      "placements": [
+        {
+          "slot": "COV-prayer.seven_sorrows_chaplet",
+          "family": "3"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_FINAL_LOCKED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "UNKEYED_ORIGINAL",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "carmel-lisieux-1925-therese-aux-roses",
+      "title": "Thérèse aux roses (1925)",
+      "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+      "sourceIDs": [
+        "carmel-lisieux-1925-therese-aux-roses"
+      ],
+      "placements": [
+        {
+          "slot": "COV-novena.st_therese",
+          "family": "4"
+        }
+      ],
+      "originalSourceStatuses": [
+        "EXISTING_RESEARCH_SUBJECT_NO_USABLE_PHOTOGRAPH"
+      ],
+      "historicallyApprovedLinked": false,
+      "placementCount": 1,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+      "title": "Immaculate Conception",
+      "artist": "Peter Paul Rubens",
+      "sourceIDs": [
+        "CANONICAL::ART-eter-aul-ubens-mmaculate-onception"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.montfort_consecration-03",
+          "family": "4"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:78990209",
+      "title": "Veil of Veronica",
+      "artist": "Francisco de Zurbarán",
+      "sourceIDs": [
+        "REVIEW::commons:78990209"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.stations-06",
+          "family": "6"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:23602078",
+      "title": "Madonna and Child",
+      "artist": "Francesco Solimena",
+      "sourceIDs": [
+        "REVIEW::commons:23602078"
+      ],
+      "placements": [
+        {
+          "slot": "STG-litany_loreto_1962-01",
+          "family": "7"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:54677503",
+      "title": "Madonna and Child with St Louis of Toulouse",
+      "artist": "David Teniers the Younger / After Polidoro da Lanciano",
+      "sourceIDs": [
+        "REVIEW::commons:54677503"
+      ],
+      "placements": [
+        {
+          "slot": "STG-litany_loreto_1962-01",
+          "family": "7"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::cma:97177",
+      "title": "Virgin and Child",
+      "artist": "Bernardino Luini (Italian, c. 1480-c. 1532)",
+      "sourceIDs": [
+        "REVIEW::cma:97177"
+      ],
+      "placements": [
+        {
+          "slot": "STG-litany_loreto_1962-01",
+          "family": "7"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "CLEVELAND_OBJECT_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::cma:142476",
+      "title": "John the Baptist",
+      "artist": "Robert Campin (Netherlandish, 1375/79–1444)",
+      "sourceIDs": [
+        "REVIEW::cma:142476"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.litany_saints-02",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "CLEVELAND_OBJECT_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "CANONICAL::ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "title": "Martyrdom of Saint Stephen",
+      "artist": "Juan de Juanes",
+      "sourceIDs": [
+        "CANONICAL::ART-uan-de-uanes-artyrdom-of-aint-tephen"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.litany_saints-04",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "LEGACY_OR_MASTER_SOURCE",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    },
+    {
+      "identityKey": "REVIEW::commons:80087092",
+      "title": "The Stoning of Saint Stephen",
+      "artist": "Adam Elsheimer",
+      "sourceIDs": [
+        "REVIEW::commons:80087092"
+      ],
+      "placements": [
+        {
+          "slot": "STG-pray.litany_saints-04",
+          "family": "8"
+        }
+      ],
+      "originalSourceStatuses": [
+        "USER_APPROVED"
+      ],
+      "historicallyApprovedLinked": true,
+      "placementCount": 1,
+      "category": "COMMONS_EXACT_SOURCE_PAGE_ID",
+      "sourcePage": null,
+      "newApprovalGranted": false,
+      "productionEnabled": false
+    }
+  ]
+}
