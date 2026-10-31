@@ -9,7 +9,9 @@
     "slots": 35,
     "originalSourceEdges": 150,
     "deduplicatedReviewOptions": 129,
-    "excludedDoNotSuggest": 20
+    "excludedDoNotSuggest": 20,
+    "sourceLinksRecoveredByExactID": 20,
+    "sourceLinkSuggestionsUnverified": 7
   },
   "slots": [
     {
@@ -41,7 +43,13 @@
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -642,14 +650,22 @@
           ],
           "artist": "Jacopo Vignali",
           "title": "Jacopo vignali, san michele arcangelo libera le anime del purgatorio",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:3098509"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -657,14 +673,22 @@
           ],
           "artist": "Workshop of Peter Paul Rubens",
           "title": "Saint Michael expelling Lucifer and the Rebellious Angels",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:30774976"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -672,14 +696,22 @@
           ],
           "artist": "Ignacio de Ries",
           "title": "Saint Michael the Archangel",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437729"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -687,14 +719,22 @@
           ],
           "artist": "Pieter van Lint",
           "title": "Saint Michael the Archangel",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:118105360"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -702,14 +742,22 @@
           ],
           "artist": "Giuseppe Cesari",
           "title": "The Archangel Michael \" \"",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:118823142"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -717,14 +765,22 @@
           ],
           "artist": "Francesco Maffei",
           "title": "The Archangel Michael overthrowing Lucifer",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Archangel_Michael_overthrowing_Lucifer.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:131068203"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -957,14 +1013,22 @@
           ],
           "artist": "Francesco Trevisani (Italian, 1656–1746)",
           "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1974.108",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::cma:147696"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -972,14 +1036,22 @@
           ],
           "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
           "title": "The Holy Family",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1998.10",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-160143"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -987,14 +1059,22 @@
           ],
           "artist": "Nicolas Poussin (French, 1594–1665)",
           "title": "The Holy Family on the Steps",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1981.18",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-150389"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1002,14 +1082,22 @@
           ],
           "artist": "Sebastiano Ricci",
           "title": "The Holy Family with Angels",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437458"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1222,14 +1310,22 @@
           ],
           "artist": "Francesco Trevisani (Italian, 1656–1746)",
           "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1974.108",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::cma:147696"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1237,14 +1333,22 @@
           ],
           "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
           "title": "The Holy Family",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1998.10",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-160143"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1252,14 +1356,22 @@
           ],
           "artist": "Nicolas Poussin (French, 1594–1665)",
           "title": "The Holy Family on the Steps",
-          "sourcePage": null,
+          "sourcePage": "https://clevelandart.org/art/1981.18",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-150389"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1267,14 +1379,22 @@
           ],
           "artist": "Sebastiano Ricci",
           "title": "The Holy Family with Angels",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437458"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1523,7 +1643,13 @@
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -1572,14 +1698,22 @@
           ],
           "artist": "Workshop of Peter Paul Rubens",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:34140055"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1587,14 +1721,22 @@
           ],
           "artist": "Anton Kern",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:28933083"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1602,14 +1744,22 @@
           ],
           "artist": "Denys Calvaert",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115220164"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1617,14 +1767,22 @@
           ],
           "artist": "Jean-Baptiste de Faudran",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:56890177"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1647,14 +1805,22 @@
           ],
           "artist": "Bartolomé Esteban Murillo",
           "title": "Adoration of the Magi",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "CONTEXTUAL_APPROVED_OR_EDITORIAL_REUSE",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "PRAYER::visit--murillo-magi"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1776,7 +1942,13 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -2051,14 +2223,22 @@
           ],
           "artist": "Christian Wilhelm Ernst Dietrich",
           "title": "Christ Healing the Sick",
-          "sourcePage": null,
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
           "sourceEditorialStatus": "USER_APPROVED",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-436199"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2129,7 +2309,13 @@
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -2176,7 +2362,13 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -2255,7 +2447,13 @@
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
@@ -2364,7 +2562,13 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
         }
       ],
       "imagePublicationAllowed": false
