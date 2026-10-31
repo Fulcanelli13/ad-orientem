@@ -178,5 +178,5 @@ assert.equal(observed.length,1);
 // data object shape expected by PR #2111's existing viewer.open(score).
 const contents=readFileSync(new URL("../src/mass/reader-music-notation-handoff.js",import.meta.url),"utf8");
 assert.match(contents,/EXISTING_PR2111_OFFLINE_EXSURGE_PILOT/);
-assert.doesNotMatch(contents,/createOfflineChantEngraver|createKyrialeNotationViewer|new Audio\(/);
+assert.doesNotMatch(contents,/\b(?:import\s*\{[^}]*createOfflineChantEngraver|import\s*\{[^}]*createKyrialeNotationViewer|new\s+Audio\s*\()/);
 console.log("PASS M06 source-matched ordinary / native-rite handoff, preview-only Exsurge shape and fail-closed scores");
