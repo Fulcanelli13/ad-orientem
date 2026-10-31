@@ -290,6 +290,35 @@ function render({witnessFocus=null}={}){const m=mount();if(!m)return;const n=N.i
    requestAnimationFrame(()=>restoreWitnessAnchor(m,witnessFocus));
   }else m.querySelector('button,[href],summary,[tabindex]:not([tabindex="-1"])')?.focus?.();
  })}
+// Native Back uses the Novena owner's own N state and source stage plan.
+// This in-memory receipt is never a saved novena-completion claim.
+function captureAppBackHandoff(){
+ const r=document.getElementById("aoPray435930"),m=mount();
+ if(!r?.classList?.contains("open")||m?.dataset?.aoPrayView!=="novenas")return null;
+ return Object.freeze({
+  screen:N.screen,id:N.id,day:N.day,mode:N.mode,stage:N.stage,
+  showEnglish:N.showEnglish,detailFromOverview
+ });
+}
+function restoreAppBackHandoff(receipt){
+ if(!receipt||typeof receipt!=="object")return false;
+ const screen=receipt.screen;
+ if(!["overview","weekly","detail","day"].includes(screen))return false;
+ const id=screen==="detail"||screen==="day"?String(receipt.id||""):null;
+ if(id&&!ALL_NOVENAS[id])return false;
+ const day=Number(receipt.day),stage=Number(receipt.stage);
+ if(!Number.isInteger(day)||day<1||day>9)return false;
+ const count=id?stages(ALL_NOVENAS[id]):1;
+ if(!Number.isInteger(stage)||stage<0||stage>=count)return false;
+ const opened=BASE_OPEN("pray.hub",{returnContext:null});
+ if(opened!==true&&opened?.ok!==true)return false;
+ OPEN_OPTS={};OPEN_RECEIPT=null;
+ N={...N,screen,id,day,stage,
+  mode:receipt.mode==="simple"?"simple":"guided",
+  showEnglish:receipt.showEnglish===true};
+ detailFromOverview=receipt.detailFromOverview===true;
+ render();return true;
+}
 function open(opts={}){
  OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
  OPEN_OPTS={...opts};N.stage=0;N.showEnglish=false;
@@ -353,7 +382,7 @@ if(MOD&&!MOD.__aoNovenasV3){
  window.AO_MODULES=wrapper;window.AO_MODULE_REGISTRY_V36=wrapper;
 }
 const qa=()=>({version:VERSION,corpusCount:Object.keys(CORPUS).length,allNineDays:Object.values(CORPUS).every(n=>n.days.length===9),forms:[...new Set(Object.values(CORPUS).map(n=>n.form))],patterns:[...new Set(Object.values(CORPUS).map(n=>novenaPattern(n)))],noCompletionTracking:true,noIntentStorage:true,supplementalCount:Object.keys(ADDITIONAL_NOVENAS).length,frenchHistoricalPrayerPolicy:'FAIL_CLOSED_EXPLICIT_EN_WITNESS_OPTION',calendarHooks:Object.fromEntries(Object.values(CORPUS).map(n=>[n.id,n.calendar.precision])),canonicalReuse:{ourFather:true,hailMary:true,gloryBe:true,loreto1962:true},pass:Object.keys(CORPUS).length===16&&Object.values(CORPUS).every(n=>n.days.length===9)});
-const NOVENA_API=Object.freeze({version:VERSION,open,close:BASE_CLOSE,state:()=>({...N}),corpus:CORPUS,supplemental:ADDITIONAL_NOVENAS,calendarStatus:id=>ALL_NOVENAS[id]?calStatus(ALL_NOVENAS[id]):null,qa});
+const NOVENA_API=Object.freeze({version:VERSION,open,close:BASE_CLOSE,captureAppBackHandoff,restoreAppBackHandoff,state:()=>({...N}),corpus:CORPUS,supplemental:ADDITIONAL_NOVENAS,calendarStatus:id=>ALL_NOVENAS[id]?calStatus(ALL_NOVENAS[id]):null,qa});
 window.AO_NOVENAS_V3=NOVENA_API;
 window.AO_NOVENAS_V2=NOVENA_API;
 window.AO_NOVENAS_V1=NOVENA_API;
