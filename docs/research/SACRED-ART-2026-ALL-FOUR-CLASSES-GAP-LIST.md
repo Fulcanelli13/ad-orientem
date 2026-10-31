@@ -7,9 +7,9 @@ The new four-class reverse index now connects 178 distinct 383-registry artwork 
 Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Earlier all383-artwork-reverse-index.v1.json remains historical I/II-only evidence, and never classifies the 205 unmatched artworks as needing replacement.
 
 ---
-## Latest matching checkpoint — Batch 11 (31 October 2026)
+## Latest matching checkpoint — Batch 12 (31 October 2026)
 
-**Current researched Class III subject identification: 123/165 dates (123/131 observed sanctoral dates).** Batch 11 adds 16 exact-subject research relationships with 23 provisional painted visual-source records, leaving **8 sanctoral dates without a full named exact-subject artwork lead**. Manuscript painting and architectural frescoes are flagged as such, not misrepresented as oil canvases. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+**Current researched Class III subject identification: 126/165 dates (126/131 observed sanctoral dates).** Batch 12 recovers 3 exact-feast painting-subject matches (4 named historical art originals), leaving **5 multi-saint or dual-basilica dates without a single fully matching painted original**. Eight additional partial art/graphic sources clarify available alternatives but do not count as full matches. Manuscript painting and architectural frescoes are flagged as such, not misrepresented as oil canvases. Batch 8 adds a *separate new-research catalogue* of 12 paintings from public museum, national heritage and Commons documentation; none is an accepted original or editorially approved date hero. The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
 
 | Feast | Observation | Existing painting(s) | Safeguard |
 | --- | --- | --- | --- |
@@ -156,20 +156,28 @@ Further **partial research only**: 12 May, Cristoforo Roncalli/Pomarancio *St Do
 
 **New batch effect:** researched Class III sanctoral subjects **107→123/131**, exact-subject gaps **24→8**, 23 new painting or painted-surface research records, one new partial multi-saint record. Canonical 383 works, 186 date links, prior rejections and production releases unchanged. Batch ledger: `data/calendar/sacred-art-2026-exact-sanctoral-research-batch11.v1.json`.
 
-### Current 8 unlinked Class III sanctoral dates
+### Batch 12 — final-eight source reconciliation (31 October 2026)
 
-The following dates do **not** have complete exact-feast iconography linked, after Batches 1–11. Group paintings depicting only some martyrs remain in partial-research records and do not close these gaps.
+Three 1962 principal feasts have newly documented matching **historical painted originals**:
+- **16 January, Pope St Marcellus I:** Pietro Gaia's 1590–99 oil painting *St Emidius consecrated by Pope St Marcellus* (ICCD 1100252222); Cesare Mariani's separate 1890 Pope Marcellus fresco (ICCD 1100254732).
+- **22 January, Sts Vincent and Anastasius:** Alessandro Maganza's 1613 painting *Madonna and Child with Saints Vincent and Anastasius*, within San Vincenzo church at Thiene. Official Catholic church record explicitly names both saints. This is a single exact two-martyr work, not the Met's previously identity-unconfirmed Vincent of Lisbon.
+- **6 February, St Titus:** Georgios Klontzas's signed icon *Saint Titus, Bishop of Crete*, Vatican Museums Pinacoteca Room XVIII catalogue entry 11. Painted original, photo rights from Vatican Museums not free-certified.
 
-| Date | Observed 1962 principal feast | Reason or next source |
+The other five feasts now have **8 additional source records** (partial paintings, a papal etching, and a tapestry). This is a positive inventory but cannot be counted as five full matching original paintings. Strong leads: Brera's Baroque oil *Martyrdom of Saints Rufina and Secunda* (1620–24, official ICCD 0300158485, **not** Seville's Justa/Rufina), the Pancras martyrdom oil in Sant'Alessandro Milan, Cola dell'Amatrice's Pope Victor I altarpiece (Zeri work 22049), the combined historical Caius/Soter etching (Calcografica S-FN14487), and the painted 1671 Barberini cartoon of Pope Urban VIII consecrating **only St Peter's** (Palazzo Barberini inv 2261).
+
+All relevant originals and artwork media are separated in `data/calendar/sacred-art-2026-last-eight-physical-source-reconciliation-batch12.v1.json`. No photograph received commercial app rights approval; no portrait, copy or unrelated saint has been substituted. Class III strict exact-subject research **123→126/131**, unresolved full-original subject gaps **8→5**, no new editorial approvals or live app images. Canonical 383 archive, 186 links, and user-rejected 68 annex works unchanged.
+
+### Current 5 unlinked Class III sanctoral dates
+
+These are genuine strict **one-painted-original covering the full liturgical subject** gaps, not an absence of any art. For the separate saints in composite feasts, historical visual leads are now recorded, but the app must not imply that an incomplete painting depicts everybody.
+
+| Date | Observed Class III feast | Researched component art and what is still missing |
 | --- | --- | --- |
-| 2026-01-16 | St. Marcellus I | Still no accepted exact painting original |
-| 2026-01-22 | Sts. Vincent & Anastasius | Vincent identity unsettled and Anastasius absent |
-| 2026-02-06 | St. Titus | Still no accepted exact painting original |
-| 2026-04-22 | Sts. Soter & Caius | Still no accepted exact painting original |
-| 2026-05-12 | Sts. Nereus, Achilleus, Domitilla, & Pancras | Pomarancio depicts Nereus, Achilleus and Domitilla, but no Pancras |
-| 2026-07-10 | Seven Holy Brothers and Sts. Rufina & Secunda | Seven-brothers identity unsettled; no Rufina and Secunda |
-| 2026-07-28 | Sts. Nazarius & Celsus, St. Victor I & St. Innocent I | Nazarius and Celsus partial only; both popes absent |
-| 2026-11-18 | Dedication of the Basilicas of Sts. Peter & Paul | Needs basilicas' actual dedication iconography, not portraits of Peter and Paul |
+| 2026-04-22 | Sts Soter and Caius | Official Istituto Centrale per la Grafica print depicts **both popes**, but is an etching (not a painting); Soter fresco is one member only |
+| 2026-05-12 | Nereus, Achilleus, Domitilla and Pancras | Pomarancio oil painting depicts **first three**; historic Ossona/Ferrario *Martyrdom of Pancras* depicts the fourth in **another** painting |
+| 2026-07-10 | Seven Holy Brothers, Rufina and Secunda | Brera Cerano/Morazzone/Procaccini oil depicts **Roman Rufina and Secunda** exactly; SevenBrothers.jpg remains unverified |
+| 2026-07-28 | Nazarius, Celsus, Victor I and Innocent I | Older Nazarius/Celsus pair; Cola dell'Amatrice painted **Pope Victor I** separately; Pope Innocent I still without exact painted match |
+| 2026-11-18 | Dedication of the Basilicas of Peter and Paul | 1671 *Urban VIII Consecrating St Peter's Basilica* painted cardboard cartoon (Palazzo Barberini inv 2261) and later woven tapestry cover **St Peter only**; not St Paul Outside the Walls |
 
 **Historical baseline:** The 98-gap Class III table farther down this document is the previous strict-383-only snapshot. It is not an updated list of physically missing paintings. New source match records are in data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json and data/calendar/sacred-art-2026-existing-source-matches-batch5.v1.json, and dates remain grounded in data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json.
 
