@@ -232,7 +232,7 @@ try{
  check((b.additionalErrors??[]).length===0,
   "NOV02_ADDITIONAL_SOURCE_BUILD_ERRORS:"+JSON.stringify(b.additionalErrors));
  const massUi=await (async()=>{
-   const out={cases:[],visualCases:[],orationCases:[],error:null,available:false};
+   const out={cases:[],visualCases:[],orationCases:[],rubricCases:[],error:null,available:false};
    try{
      const changed=await page.evaluate(async()=>await globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(
        "2026-11-02",{forceLoader:false,prefetch:false}));
@@ -348,6 +348,9 @@ try{
                 !proof.approvedRubric.sourceRubricPresent)
                throw Error("NOV02_APPROVED_GESTURE_RUBRIC_NOT_RENDERED:"+
                  JSON.stringify(proof.approvedRubric));
+             // Preserve this exact cue-owning card for a photographic
+             // LIVE icon / Missal rubrical comparison, not the hymn card.
+             globalThis.__AO_NOV02_RUBRIC_CARD=rubricCard.sectionId;
              // Continue existing Sequence image contract, now with production
              // icons actually enabled. This test's rubric inspection is
              // isolated from the screenshot's source-card selection.
@@ -398,6 +401,31 @@ try{
              // the DISTINCT appointed Collect, Secret and Postcommunion are
              // actually rendered at their own original source cards.
              await page.setViewportSize({width:390,height:844});
+             const exactRubric=await page.evaluate(()=>{
+               const api=globalThis.__AO_NOV02_NATIVE_PROOF;
+               const card=globalThis.__AO_NOV02_RUBRIC_CARD;
+               if(!api.showSection(card))throw Error("NOV02_CUE_RUBRIC_REOPEN_FAILED");
+               const rubric=api.root.querySelector(
+                 '[data-rubric-id="AO.RUB.C0072.01"]');
+               const icon=api.root.querySelector(
+                 '[data-approved-priest-head-bow-event="AO.RUB.C0072.01"]');
+               if(!rubric||!icon)
+                 throw Error("NOV02_CUE_RUBRIC_ART_NOT_VISIBLE_IN_SOURCE_DOM");
+               const style=getComputedStyle(rubric);
+               const imageStyle=getComputedStyle(icon);
+               const mode=api.root.querySelector("[data-ao-reader-shell]")?.dataset.mode;
+               const iconVisible=mode==="LIVE"&&imageStyle.display!=="none"&&
+                 !icon.hidden&&icon.getBoundingClientRect().width>=24;
+               const rubricText=rubric.textContent?.trim()??"";
+               if(!rubricText||style.display==="none"&&!iconVisible)
+                 throw Error("NOV02_CUE_RUBRIC_HIDDEN:"+mode+":"+rubricText);
+               return {card,mode,iconVisible,sourceRubricId:rubric.dataset.rubricId,
+                 text:rubricText,iconAsset:icon.dataset.approvedAsset??null};
+             });
+             const rubricFilename="all-souls-m"+massNumber+"-c0072-rubric-"+
+               mode.toLowerCase()+"-"+language+"-390.png";
+             await page.screenshot({path:resolve(dir,rubricFilename),fullPage:false});
+             out.rubricCases.push({massNumber,mode,language,filename:rubricFilename,...exactRubric});
              for(const oration of [
                {name:"collect",source:"AO.CARD.004",slot:"COLLECT_SET"},
                {name:"secret",source:"AO.CARD.011",slot:"SECRET_SET"},
@@ -430,6 +458,7 @@ try{
              await page.evaluate(()=>{
                try{globalThis.__AO_NOV02_NATIVE_PROOF?.destroy?.()}finally{
                  delete globalThis.__AO_NOV02_NATIVE_PROOF;
+                 delete globalThis.__AO_NOV02_RUBRIC_CARD;
                }
              });
            }
@@ -600,6 +629,13 @@ try{
   "NOV02_NATIVE_ALL_MASSES_BOTH_MODES_LANGUAGES_PHONES_NOT_CAPTURED");
  check(massUi.orationCases?.length===36,
   "NOV02_APPOINTED_ORATIONS_NATIVE_PHONE_CAPTURES_INCOMPLETE");
+ check(massUi.rubricCases?.length===12 &&
+   massUi.rubricCases.every(x=>x.sourceRubricId==="AO.RUB.C0072.01"&&
+     x.iconAsset==="you:head_bow"&&x.text),
+   "NOV02_APPROVED_SOURCE_RUBRIC_PHOTOGRAPHIC_EVIDENCE_INCOMPLETE");
+ check(massUi.rubricCases.filter(x=>x.mode==="LIVE").every(x=>x.iconVisible),
+   "NOV02_LIVE_APPROVED_GESTURE_ICON_NOT_VISIBLE");
+
  for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
    for(const language of ["en","fr"]){
      for(const mode of ["LIVE","MISSAL"]){
