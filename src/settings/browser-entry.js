@@ -178,7 +178,7 @@ export function createSettingsOwner(win=globalThis){
         resetAsk=false;mutate(()=>donor.clearData("reset-all"));return;
       }
       if(button.dataset.settingsBack!==undefined){event.preventDefault();back();return;}
-      if(button.dataset.settingsRoute){event.preventDefault();go(button.dataset.settingsRoute);return;}
+      if(button.dataset.settingsRoute||button.dataset.settingsBookRoute){event.preventDefault();go(button.dataset.settingsRoute||button.dataset.settingsBookRoute);return;}
       if(button.dataset.settingsCheckUpdate!==undefined){
         event.preventDefault();
         if(checkingUpdates||applyingUpdate)return;
