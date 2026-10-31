@@ -667,6 +667,13 @@ export function createHomeOwner(win=globalThis){
     markOwner();
     syncH7MassDoor();
     hydrateH4WeekColours(next);
+    // Unpublished R34 source review is explicit QA only. Never alter default H4.
+    try{
+      if(new URLSearchParams(win?.location?.search||"").get("aoDykR34Review")==="1")
+        void import("./dyk-r34-h4-review.js")
+          .then(module=>module.mountH4DykReview(win))
+          .catch(error=>win?.console?.error?.("DYK R34 review import failed",error));
+    }catch{}
     // Lazy on resolved Home only. Calendar and Home reuse the exact same
     // read model and network request; no second modern saint resolver.
     if(!requestedDailyHonours&&next?.resolution?.day?.main&&!next?.resolving){
