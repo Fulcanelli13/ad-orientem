@@ -313,6 +313,83 @@
         ]
       },
       "note": "Precise source's symbolic local name; prevent doctrinal misunderstanding."
+    },
+    {
+      "id": "DYK-H04-W-A-078",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "On Holy Innocents’ Day, some religious communities let novices sit first at meals and meetings, and sometimes even appointed the most recently professed member as superior for a single day.",
+        "fr": "Le jour des Saints Innocents, certaines communautés religieuses laissaient les novices prendre les premières places aux repas et aux réunions ; parfois même, le dernier profès devenait supérieur pour une seule journée."
+      },
+      "source": {
+        "printed_pages": [
+          133
+        ]
+      },
+      "note": "Specific one-day superior detail"
+    },
+    {
+      "id": "DYK-H04-W-B-028",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "After Easter Mass, some Europeans joined an ‘Easter walk’ through the fields behind a decorated crucifix or Easter candle, with prayers and hymns; Weiser links the custom to later Easter parades.",
+        "fr": "Après la messe de Pâques, des Européens faisaient autrefois une « promenade de Pâques » dans les champs derrière un crucifix orné ou le cierge pascal, en priant et chantant ; Weiser relie cet usage aux défilés pascals ultérieurs."
+      },
+      "source": {
+        "printed_pages": [
+          220,
+          221
+        ]
+      },
+      "note": "Concrete action and page span"
+    },
+    {
+      "id": "DYK-H04-W-B-014",
+      "kind": "SOURCE_SPAN_CORRECTION",
+      "revised_statement": null,
+      "source": {
+        "printed_pages": [
+          202,
+          203
+        ]
+      },
+      "note": "Good Friday hooded procession starts p202; p203 continues"
+    },
+    {
+      "id": "DYK-G365-M-BLSS-001",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "In the traditional Saint Blaise blessing, the priest holds two candles crossed beneath each person’s chin while asking God to protect them through the saint’s intercession. This blessing is not a mandatory part of Mass.",
+        "fr": "Dans l'ancienne bénédiction de saint Blaise, le prêtre tient deux cierges en croix sous le menton de chaque fidèle, demandant à Dieu de le protéger par l'intercession du saint. Cette bénédiction n'est pas un élément obligatoire de la messe."
+      },
+      "source": {
+        "source_url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881"
+      },
+      "note": "Specific ritual action, not a Mass obligation"
+    },
+    {
+      "id": "DYK-G365-M-DEAD-003",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "In the Polish custom of wypominki, parishioners submit written names of departed relatives or friends so that the names can be read aloud and remembered in communal prayers, especially during November.",
+        "fr": "Dans la coutume polonaise des wypominki, les paroissiens remettent les noms écrits de proches défunts afin qu'ils soient lus à voix haute et recommandés à la prière commune, surtout en novembre."
+      },
+      "source": {
+        "source_url": "https://parafia-maryi-krolowej.poznan.pl/wypominki/"
+      },
+      "note": "Polish source-specific detail; not generic Nov 2 definition"
+    },
+    {
+      "id": "DYK-G365-M-SJOS-001",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "At Saint Joseph Cathedral in Baton Rouge on 19 March 2026, a Sicilian-style Saint Joseph altar included a meatless communal lunch, and its surplus food was donated to local charities.",
+        "fr": "Le 19 mars 2026, à la cathédrale Saint-Joseph de Baton Rouge, un autel de tradition sicilienne s'accompagnait d'un repas communautaire sans viande ; les surplus alimentaires furent remis à des associations caritatives."
+      },
+      "source": {
+        "source_url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1"
+      },
+      "note": "Concrete diocesan 2026 witness"
     }
   ],
   "original_folio_direct_checks": [
@@ -561,6 +638,175 @@
       "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
       "historical_independence_verified": false,
       "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-051",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        99
+      ],
+      "pdf_page_zero_based": [
+        116
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Paradise plays and fir tree hung with apples",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-010",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        197
+      ],
+      "pdf_page_zero_based": [
+        214
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Green Thursday green-herb soup and spinach with eggs",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-109",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        184
+      ],
+      "pdf_page_zero_based": [
+        201
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Polish Lent herring and sour fermented rye soup",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-028",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        220,
+        221
+      ],
+      "pdf_page_zero_based": [
+        237,
+        238
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Easter walk with crucifix or Easter candle and prayers",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-007",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        124
+      ],
+      "pdf_page_zero_based": [
+        141
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Northern Slavic szopka puppet theatre",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-105",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        291
+      ],
+      "pdf_page_zero_based": [
+        308
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Portugal Assumption boat and sea blessing",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-014",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        184
+      ],
+      "pdf_page_zero_based": [
+        201
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Pretzels distributed to poor during Lent",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-089",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        269
+      ],
+      "pdf_page_zero_based": [
+        286
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Southern France harvest sheaf tied as a cross",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        206
+      ],
+      "pdf_page_zero_based": [
+        223
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Crossed Good Friday buns and explicitly folkloric healing belief",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-014",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        202,
+        203
+      ],
+      "pdf_page_zero_based": [
+        219,
+        220
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Good Friday hooded confraternities, two-page source",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-078",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        133
+      ],
+      "pdf_page_zero_based": [
+        150
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Innocents Day young novices and ceremonial one-day superior",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
     }
   ],
   "effective_roster_rules": [
@@ -575,14 +821,65 @@
     "review_eligible_effective_records": 500,
     "original_sample_unchanged_until_overlay": 50,
     "post_repair_review_sample": 50,
-    "original_source_page_checks_this_pass": 16,
-    "correction_actions": 13,
+    "original_source_page_checks_this_pass": 27,
+    "correction_actions": 19,
     "retired_glossary_records": 1,
     "specific_replacement_records": 1,
     "source_image_corroboration_independent_historiography": false,
     "legacy_612_semantic_complete": false,
     "all_50_finally_approved": false,
     "new_publications": 0,
-    "additional_weak_but_previously_unflagged_discoveries_rewritten": 7
-  }
+    "additional_weak_but_previously_unflagged_discoveries_rewritten": 7,
+    "other_web_source_reviews": 6
+  },
+  "other_verified_source_checks": [
+    {
+      "id": "DYK-GI-G094",
+      "result": "DIRECT_1962_RUBRICS_SCREEN_CONFIRMED",
+      "source": "https://maternalheart.org/library/1962rubrics.pdf",
+      "locator": "nn. 80, 83, 87, 89; PDF p15",
+      "notes": "Original 1962 rubric Greater/Lesser Litanies checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-M-BLSS-001",
+      "result": "DIRECT_RITUAL_PRAYERBOOK_SOURCE_CONFIRMED",
+      "source": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+      "locator": "Blessing of candles on Saint Blaise day",
+      "notes": "Historical crossed candle blessing and formula checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-M-SJOS-001",
+      "result": "DIRECT_DIOCESAN_2026_SOURCE_CONFIRMED",
+      "source": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+      "locator": "19 March 2026",
+      "notes": "Cathedral altar, meatless lunch, food donations checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-M-DEAD-003",
+      "result": "DIRECT_TWO_PRIMARY_OR_PARISH_SOURCES_CONFIRMED",
+      "source": "https://parafia-maryi-krolowej.poznan.pl/wypominki/",
+      "locator": "Wypominki / 2 November",
+      "notes": "Polish parish supports names read and communal prayers; France bishops support distinct 2 Nov observance",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-CAL-032",
+      "result": "PARTIAL_CATHOLIC_LEXICON_SECONDARY_CONFIRMED",
+      "source": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+      "locator": "Betlehemezés",
+      "notes": "Nativity plays and 17th century support; puppet vs actor variants unverified",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-CAL-037",
+      "result": "NATIONAL_ARCHIVE_PHOTO_CAPTION_NOT_RECHECKED",
+      "source": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+      "locator": "1930 near Kraków",
+      "notes": "PDF intermittent availability; actual photo caption not independently checked",
+      "publication_authorized": false
+    }
+  ]
 }
