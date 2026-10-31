@@ -23,6 +23,15 @@ assert.equal(39+added,65,"65-card single-Sanctus source-first LIVE product contr
 assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].titles,["Sanctus"],
   "Keep both Sanctus and Benedictus in one prayer card titled simply Sanctus");
 assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].after,[]);
+
+// Changing a genuine faithful posture changes the visible prayer card,
+// not a rail tile in the middle of the standing Offertory invitation.
+// No change to the 65-card denominator, one combined Sanctus or red Missal.
+assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.010"].after[0],{block:"B029"},
+ "The B030 Offertory antiphon's sitting posture must begin on the next LIVE card");
+assert.equal(CURATED_LIVE_GROUPS["AO.CARD.010"].after.length,5,
+ "Moving the Offertory boundary must not create or delete an approved card");
+
 assert.ok(CURATED_LIVE_GROUPS["AO.CARD.024"].titles[0].includes("Second Confiteor"));
 assert.doesNotMatch(browser,/aoLiveCards=(?:48|65)/,
   "Production entry must not accept any obsolete LIVE card-count query flag");
