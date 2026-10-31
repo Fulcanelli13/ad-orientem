@@ -63,6 +63,23 @@
       "paintingSlot": "COV-novena.st_therese",
       "copyrightStatus": "ORIGINAL_PD_IN_FRANCE_PHOTO_CC_BY_SA_4_0_NOT_STRICT_PD_CC0",
       "publicationStatus": "NOT_RELEASED"
+    },
+    {
+      "id": "prayer.adoration.kmska_224",
+      "source": "https://vlaamsekunstcollectie.be/en/collection/224",
+      "artist": "Anonymous South Netherlandish painter",
+      "title": "Adoration of the Sacrament",
+      "originalWorkPublicDomain": true,
+      "dateRange": "1480–1499",
+      "medium": "Oil on panel",
+      "subject": "Eucharistic Adoration, not the liturgical blessing with a monstrance",
+      "collection": "Royal Museum of Fine Arts Antwerp, object 224",
+      "copyrightStatus": "SOURCE_LABELS_IMAGE_CC0",
+      "originalPhotoAttribution": "Museum collection record; individual IIIF file/photo attribution to confirm",
+      "imageSubjectApproved": false,
+      "exactBenedictionScene": false,
+      "publicationStatus": "CANDIDATE_FOR_ADORATION_ONLY_NOT_BENEDICTION_NOT_RELEASED",
+      "note": "French page title La bénédiction du saint Sacrement is misleading compared with museum's English/Dutch iconographic classification; do not use as literal priestly blessing."
     }
   ],
   "forbiddances": [
@@ -1812,6 +1829,19 @@
         "blockedModernOriginal": 0,
         "unreviewed": 6
       }
+    }
+  ],
+  "additionalPreciseFindings": [
+    {
+      "group": "Benediction",
+      "finding": "Museum object title in French can say La bénédiction du saint Sacrement but iconography is 'Adoration of the Sacrament'. Avoid treating a title string as scene proof.",
+      "evidence": "https://kmska.be/fr/chefdoeuvre/la-benediction-du-saint-sacrement",
+      "rightsAlt": "https://vlaamsekunstcollectie.be/en/collection/224"
+    },
+    {
+      "group": "St Thérèse",
+      "finding": "Céline Martin, creator of Thérèse aux roses, died 1959. Under ordinary French life+70 copyright term, her paintings remain protected through 2029 without exception; do not count this as a PD image.",
+      "evidence": "https://archives.carmeldelisieux.fr/en/personnage/celine-martin/"
     }
   ]
 }
