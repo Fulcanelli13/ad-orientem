@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { properToReaderSlots,assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
 import { compileRogationReaderProper } from "../src/mass/rogation-reader-proper.js";
 import { adaptV346ResolvedMass, prepareMassSessionFromV346 } from "../src/mass/host-adapter.js";
+import "./reader-mass-actual-tone-context.mjs";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
 const base={
