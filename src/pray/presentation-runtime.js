@@ -2890,7 +2890,9 @@ function renderMercy(){
   const marker=step.decade
    ?(step.group==='large-bead'?L('Large bead','Gros grain'):L('Small bead ','Petit grain ')+step.bead)
    :L('Prayer ','Prière ')+(stepIndex+1);
-  const finalButton=CHAPLET_F07_PILOT_ENABLED&&stepIndex===steps.length-1\n   ?'<button type="button" class="aoMercyFinish" data-p435930-mercy-finish '+(selected?'':'hidden')+'>'+esc(L('Finish chaplet','Terminer le chapelet'))+'</button>':'';\n  return '<article tabindex="0" class="aoMercyLine aoDevoParagraph'+(selected?' aoMercyPrayer':'')+'" data-ao-mercy-step="'+stepIndex+'" data-ao-devo-active="'+selected+'"><small>'+esc(marker)+'</small><p>'+esc(mercyStepText(step,language))+'</p>'+finalButton+'</article>';
+  const finalButton=CHAPLET_F07_PILOT_ENABLED&&stepIndex===steps.length-1
+   ?'<button type="button" class="aoMercyFinish" data-p435930-mercy-finish '+(selected?'':'hidden')+'>'+esc(L('Finish chaplet','Terminer le chapelet'))+'</button>':'';
+  return '<article tabindex="0" class="aoMercyLine aoDevoParagraph'+(selected?' aoMercyPrayer':'')+'" data-ao-mercy-step="'+stepIndex+'" data-ao-devo-active="'+selected+'"><small>'+esc(marker)+'</small><p>'+esc(mercyStepText(step,language))+'</p>'+finalButton+'</article>';
  }).join('');
 
  const note=item.group==='large-bead'?L('Pray once on the large bead.','Récitez une fois sur le gros grain.'):item.group==='small-bead'?L('Pray on each of the ten small beads.','Récitez sur chacun des dix petits grains.'):item.group==='conclusion'?L('Repeat three times.','Répétez trois fois.'):'';
