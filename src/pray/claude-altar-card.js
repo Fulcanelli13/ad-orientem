@@ -16,7 +16,7 @@ export function claudeAltarRail(stages,index,{esc}={}){
    const item=stages[at];
    const active=id===current;
    return '<button type="button" data-p435930-ben-step="'+at+'" class="'+
-    (active?'cu':at<index?'dn':'')+(id==="blessing"?' key':'')+
+    (active?'cu':id!=="blessing"&&at<index?'dn':'')+(id==="blessing"?' key':'')+
     '" aria-current="'+(active?'step':'false')+'" aria-label="'+
     esc("Stage "+CLAUDE_ALTAR_ROMAN[romanIndex]+": "+item[1])+'">'+
     CLAUDE_ALTAR_ROMAN[romanIndex]+'</button>';
