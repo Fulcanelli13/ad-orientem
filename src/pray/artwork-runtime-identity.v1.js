@@ -98,6 +98,8 @@ export function resolveArtworkRuntimeIdentity(input={}){
   const i=index(n,7);return result("presentation:penitential:"+(i===null?"unknown":pad(i+1)),i===null?null:"STG-pray.penitential_psalms-"+pad(i+1),i===null?"INVALID_STEP":"EXACT_PSALM_STAGE");
  }
  if(view==="sevenWords"){
+  // The source's closing prayers are an appendix, not an eighth Gospel word.
+  if(input.section==="historicalConclusion")return result("presentation:seven-words:historical-conclusion","STG-pray.seven_words-08","SEPARATE_HISTORICAL_CONCLUSION_NOT_GOSPEL_SAYING");
   const i=index(n,7);return result("presentation:seven-words:"+(i===null?"unknown":pad(i+1)),i===null?null:"STG-pray.seven_words-"+pad(i+1),i===null?"INVALID_STEP":"EXACT_WORD_STAGE");
  }
  if(view==="confession"){
