@@ -30,6 +30,7 @@ export function h4Enabled(win=globalThis){
   try{return new URLSearchParams(win?.location?.search??"").get("aoTodayH4")!=="0"}catch{return true}
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null,properSections=[]}={}){
+  const formularies=Array.isArray(vm.formularies)?vm.formularies:[];
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
   const litColour=({"green":"green","vert":"green","white":"white","blanc":"white",
     "red":"red","rouge":"red","violet":"violet","purple":"violet",
@@ -126,7 +127,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="INTROIT"><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
   '<span class="rb">'+esc(say("The Proper","Le Propre"))+'</span>'+
   properSections.map(x=>'<button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="'+esc(x.id)+'"><span>'+esc(x.label)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
-  (vm.formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+vm.formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+
+  (formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+
   '<span class="rb">'+esc(say("Your Mass","Votre messe"))+'</span><button type="button" class="lrow" data-home-h4-change><span>'+esc(selectedChoices)+'</span><small>'+esc(say("Change","Modifier"))+'</small><span class="ch" aria-hidden="true">›</span></button>'+
   '</div><div class="endsp"></div></div><div class="foot">'+mainAction.replace('class="aoH4Primary"','class="aoH4Primary btn"')+
   unresolved+'<div class="mini"><button type="button" data-action="prepare">'+esc(say("Prepare","Se préparer"))+'</button>'+
