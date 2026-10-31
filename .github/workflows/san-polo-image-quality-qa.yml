@@ -7,6 +7,10 @@ on:
     paths:
       - 'scripts/san_polo_image_quality_qa.py'
       - 'scripts/san_polo_contact_sheet.py'
+      - 'src/pray/stations-verified-artwork-release.v1.js'
+      - 'src/pray/stations-verified-artwork-styles.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/prayer-stations-verified-artwork-release.mjs'
       - 'tests/prayer-san-polo-oil-archive.mjs'
       - 'tests/prayer-san-polo-prior-approvals.mjs'
       - '.github/workflows/san-polo-image-quality-qa.yml'
@@ -16,6 +20,10 @@ on:
     paths:
       - 'scripts/san_polo_image_quality_qa.py'
       - 'scripts/san_polo_contact_sheet.py'
+      - 'src/pray/stations-verified-artwork-release.v1.js'
+      - 'src/pray/stations-verified-artwork-styles.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/prayer-stations-verified-artwork-release.mjs'
       - '.github/workflows/san-polo-image-quality-qa.yml'
       - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
       - 'tests/prayer-san-polo-oil-archive.mjs'
@@ -52,3 +60,5 @@ jobs:
         run: node tests/prayer-san-polo-oil-archive.mjs
       - name: Verify six remaining scene gaps, existing approvals and zero accidental activation
         run: node tests/prayer-san-polo-prior-approvals.mjs
+      - name: Verify inert rights-gated Station image seam in the current Prayer reader
+        run: node tests/prayer-stations-verified-artwork-release.mjs
