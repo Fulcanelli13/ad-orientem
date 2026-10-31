@@ -44,11 +44,12 @@ export function claudeHorariumClock(hour=12,language="en"){
   '</div></div>';
 }
 /** The four groups are Claude's 3·3·3·9, not a count of Hail Mary beads.
+ * Index -1 is the unopened hour card: all bells remain unlit.
  * The existing canonical reader owns chapter count; the indicator updates
  * on user-selected card index without advancing anything automatically.
  */
 export function claudeHorariumStrokes(index=0){
- const active=Math.max(0,Math.min(3,Math.trunc(Number(index)||0)));
+ const active=Math.max(-1,Math.min(3,Math.trunc(Number(index)||0)));
  return '<div class="aoClaudeHorariumStrokes" role="group" aria-label="Angelus bell-stroke groups: three, three, three, nine">'+
   CLAUDE_HORARIUM_BELLS.map((number,i)=>
    '<span class="'+(i<active?'dn':i===active?'cu':'')+'" data-ao-bell-group="'+i+'" aria-label="'+number+' strokes">'+
@@ -58,7 +59,7 @@ export function claudeHorariumStrokes(index=0){
   '</div>';
 }
 export function syncClaudeHorariumStrokes(root,index){
- const active=Math.max(0,Math.min(3,Math.trunc(Number(index)||0)));
+ const active=Math.max(-1,Math.min(3,Math.trunc(Number(index)||0)));
  const row=root?.querySelector(".aoClaudeHorariumStrokes");
  if(!row)return false;
  row.querySelectorAll("[data-ao-bell-group]").forEach(node=>{
