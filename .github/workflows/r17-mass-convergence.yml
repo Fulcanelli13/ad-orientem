@@ -110,6 +110,8 @@ jobs:
       - name: Verify selected Gloria/Credo omissions and independent chant windows
         run: node tests/reader-gloria-credo-omission-phone.mjs
       - run: node tests/reader-phone-production-card-default.mjs
+      - name: Guard source-preserving English Dies irae translation against unscoped omission note
+        run: node tests/1962-all-souls-dies-irae-english-display.mjs
       - name: Gate 1–2 November 2026 source-owned Mass reader readiness
         run: node tests/mass-november-2026-release-gate-e2e.mjs
       - name: Retain November 1–2 evidence even on a failing release gate
