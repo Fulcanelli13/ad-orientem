@@ -39,12 +39,16 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
 
+  // Run archived full-app coverage against the explicitly supported H3
+  // rollback. The default H4 has its own genuine-phone visual acceptance
+  // in home-h11-appearance-acceptance.mjs (called earlier by this workflow).
+  // Do not silently weaken the old Prayer, Calendar and source handoffs.
   // This historical, full-app visual acceptance suite asserts the 9-card
   // grouped Prayer hub and the direct Angelus Folio path. Those remain the
   // supported rollback layout. The new DEFAULT 9-tile Prayer discovery and
   // optional Angelus entry are certified separately by
   // tests/pray-design-pilot-phone.mjs at 320px and 390px.
-  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native&aoPrayerPilot=0",
+  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native&aoPrayerPilot=0&aoTodayH4=0",
     {waitUntil:"domcontentloaded",timeout:90000});
 
   // Original v43.43 loader ownership: same boot/async DOM, exact Marian and
@@ -195,8 +199,6 @@ try{
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
-    h4:document.querySelectorAll(".homeScreen.aoTodayH4").length,
-    h4ReadGospel:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Read [data-action='gospel']").length,
     todayV2Sections:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2Zone,.aoTodayV2Below .aoTodayV2Zone").length,
     todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
     prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
@@ -206,15 +208,9 @@ try{
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  // The default H4 homeowner keeps Pray and Read separately, but does not
-  // retain the legacy two-.aoTodayV2Zone H1.1 markup. Require both H4
-  // sections explicitly rather than weakening the coverage to one zone.
-  const homeSectionsOk=homeAudit.h4===1
-    ?homeAudit.todayV2Sections===1 && homeAudit.h4ReadGospel===1
-    :homeAudit.todayV2Sections===2;
-  assert.ok(homeAudit.todayV2===1 && homeSectionsOk &&
+  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
     homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
-    "Home must render Pray and Read, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
+    "H1.1 must render Prayer and Read/Reflect, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
   assert.equal(homeAudit.prayerBeforeCalendar,true,"H1.1 requires the prayer entry before Calendar context");
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
@@ -273,35 +269,6 @@ try{
     assert.equal(s.display,"none",surface+" exposed Home beneath the active surface");
   };
 
-  const h4Home=await page.locator(".homeScreen.aoTodayH4").count()===1;
-  if(h4Home){
-    // H4 is a distinct production layout, not the retired H1.1 two-zone
-    // template. Preserve positive coverage of both reading and prayer.
-    const audit=await page.evaluate(()=>{
-      const h=document.querySelector(".homeScreen.aoTodayH4");
-      const size=el=>el?.getBoundingClientRect()?.height??0;
-      return {
-        dateOpen:h?.querySelectorAll(".aoH4DateOpen[data-home-calendar-view='picker']").length??0,
-        dateHeight:size(h?.querySelector(".aoH4DateOpen")),
-        prayer:h?.querySelectorAll(".aoTodayV2PrayerThroughDay .aoH4Prayer").length??0,
-        shortcuts:h?.querySelectorAll(".aoH4Chips button").length??0,
-        gospel:h?.querySelectorAll(".aoH4Read [data-action='gospel']").length??0,
-        readSection:h?.querySelectorAll(".aoTodayV2Below .aoTodayV2ReadReflect").length??0,
-        calendar:h?.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length??0,
-        mass:h?.querySelectorAll("[data-home-mass-entry]").length??0,
-        overflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
-      };
-    });
-    assert.equal(audit.dateOpen,1,"H4 lost the Calendar month opener");
-    assert.ok(audit.dateHeight>=44,"H4 Calendar opener is below 44px");
-    assert.equal(audit.prayer,1,"H4 lost the featured prayer");
-    assert.equal(audit.shortcuts,3,"H4 lost Rosary/Confession/Adoration");
-    assert.equal(audit.gospel,1,"H4 lost its source-linked Gospel");
-    assert.equal(audit.readSection,1,"H4 lost the Read section");
-    assert.ok(audit.calendar>=1,"H4 lost the week-to-Calendar route");
-    assert.equal(audit.mass,1,"H4 lost the canonical Mass entrance");
-    assert.ok(audit.overflow<=1,"H4 introduces horizontal overflow: "+JSON.stringify(audit));
-  }else{
   // Today v2 is the production Home owner. The old v43 celebration/Coming Up
   // classes were retired; certify the rendered editorial sections and entry points.
   const homeParity=await page.evaluate(()=>({
@@ -346,7 +313,6 @@ try{
   assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
   assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
   assert.equal(homeParity.unresolvedArt,0,"Home displayed an unapproved artwork placeholder");
-  }
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
@@ -414,51 +380,6 @@ try{
   }
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  if(h4Home){
-    // H4 intentionally has no redundant Calendar tabs on Home. Enter its
-    // embedded Month through the 44px date opener, verify cycle filtering,
-    // then return using the visible Calendar back control.
-    await page.locator(".homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view='picker']").click();
-    await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:15000});
-    await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
-    const month=await page.evaluate(()=>{
-      const h=document.querySelector(".homeScreen.aoTodayH4");
-      const r=h?.querySelector("#ao-calendar-modular-root");
-      return {
-        route:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
-        embedded:Boolean(r&&h.contains(r)),
-        calendarView:r?.dataset.aoCalendarView??null,
-        cells:r?.querySelectorAll(".aoCalV2MonthGrid [data-cal-pick-date]").length??0,
-        tabs:[...r?.querySelectorAll(".aoCalMonthTabs [data-cal-month-view]")??[]].map(b=>b.dataset.calMonthView),
-        majors:r?.querySelectorAll(".aoCalHybridMajorSection").length??0,
-        practices:r?.querySelectorAll(".aoCalHybridPracticesSection").length??0,
-        overflow:r?Math.max(0,r.scrollWidth-r.clientWidth):Infinity,
-      };
-    });
-    assert.equal(month.route,"home","H4 Calendar incorrectly changes app destination");
-    assert.equal(month.embedded,true,"H4 calendar root was not embedded");
-    assert.equal(month.cells,42,"H4 Month lost its 42 clickable days");
-    assert.deepEqual(month.tabs,["calendar","temporale","sanctorale"],
-      "H4 Month must retain All/Temporale/Sanctorale");
-    assert.equal(month.majors,1,"H4 Month lost major feasts");
-    assert.equal(month.practices,1,"H4 Month lost practices and customs");
-    assert.ok(month.overflow<=1,"H4 Month overflows phone: "+JSON.stringify(month));
-    await shot("02d-calendar-month");
-    for(const cycle of ["temporale","sanctorale"]){
-      await page.locator('#ao-calendar-modular-root [data-cal-month-view="'+cycle+'"]').click();
-      assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),cycle);
-      assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42);
-    }
-    await shot("02g-calendar-month-filters");
-    await page.locator(".homeScreen.aoTodayH4 [data-home-calendar-today]").click();
-    await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayH4 [data-home-calendar-inline]")?.hidden===true,
-      null,{timeout:10000});
-    assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4Read").count(),1,
-      "Returning from H4 Calendar must restore Read");
-    assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,
-      "Returning from H4 Calendar retained a stale embedded child");
-    await shot("02i-today-return");
-  }else{
   // A previously selected Month/Year lens may be retained across tabs.
   // Select Today through its public control before opening Day & sources.
   // Never force-click a hidden Read/Reflect row.
@@ -624,8 +545,6 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root").count(),0,
     "Today return retained a duplicate embedded Calendar");
   await shot("02i-today-return");
-
-  }
 
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
