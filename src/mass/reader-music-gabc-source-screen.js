@@ -20,7 +20,9 @@ export function researchGabcPhrases(gabc){
  if(split<0)return freeze([]);
  const body=raw.slice(split+HEADERS.length);
  return freeze(body.split(/\(\s*::\s*\)/).map(part=>norm(
-  part.replace(/<[^>]*>/g,"").replace(/\([^)]*\)/g,"")
+  part.replace(/<i>[^<]*<\/i>/gi,"")
+   .replace(/<sp>\s*[VR]\/\s*<\/sp>/gi,"")
+   .replace(/<[^>]*>/g,"").replace(/\([^)]*\)/g,"")
    .replace(/[{}]/g,"").replaceAll("~~~","").replaceAll("~~","")
  )).filter(Boolean));
 }
