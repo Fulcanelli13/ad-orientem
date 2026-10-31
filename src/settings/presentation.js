@@ -1,5 +1,6 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { DEFAULT_PREFERENCES } from "./donor-state.js";
+import { PREFERENCES_BOOK_CSS } from "./preferences-book-css.js";
 
 export const SETTINGS_PRESENTATION_VERSION="modular-settings-presentation-v4359.6";
 
@@ -63,25 +64,53 @@ html[data-ao-settings-surface="open"] #ao-global-ribbon{z-index:var(--ao-z-globa
 #${rootId} .aoSetSource{padding:12px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09))}#${rootId} .aoSetSource:last-child{border-bottom:0}#${rootId} .aoSetSource summary{cursor:pointer;min-height:var(--ao-control-h,44px);display:flex;align-items:center;font:650 var(--ao-type-ui-sm,12px)/1.25 var(--ao-font-ui,system-ui,sans-serif)}#${rootId} .aoSetSource p{margin:8px 0 0;color:var(--muted,#b3bac0);font-size:var(--ao-type-ui-sm,12px);line-height:1.45}#${rootId} .aoSetSourceKey{padding:10px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09));color:var(--muted,#b3bac0);font-size:var(--ao-type-ui-sm,12px)}#${rootId} .aoSetSourceKey:last-child{border-bottom:0}
 @media(max-width:430px){#${rootId} .aoSetWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}#${rootId} .aoSetRow{padding:11px}#${rootId} .aoSetSegments{max-width:54vw}#${rootId} .aoSetSelect{max-width:52vw}#${rootId} .aoSetRowText b{font-size:.86rem}}
 @media(max-width:350px){#${rootId} .aoSetWrap{padding-left:7px;padding-right:7px}#${rootId} .aoSetRow{grid-template-columns:minmax(0,1fr);gap:8px}#${rootId} .aoSetSegments{max-width:none;justify-content:flex-start}#${rootId} .aoSetSelect{max-width:100%;width:100%}#${rootId} .aoSetSwitch{justify-self:start}}
-`;
+`+PREFERENCES_BOOK_CSS;
 }
 
-export function renderSettingsToString(win=globalThis,{route="/settings",live=false,updateCheck="idle"}={}){
+export function renderSettingsToString(win=globalThis,{route="/settings",live=false,updateCheck="idle",familyOpen=1,resetAsk=false}={}){
   const vm=buildSettingsViewModel(win,{route,live,updateCheck}),p=vm.preferences,profiles=vm.profiles,fr=vm.language==="fr";
   const L=(en,frText)=>fr?(frText||en):en;
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const icon=(id,cls="aoSetInlineIcon")=>{const u=resolveCanonicalAssetUrl(id);return u?`<span class="${cls}" aria-hidden="true" data-ao-asset-id="${id}" style="-webkit-mask:url('${esc(u)}') center/contain no-repeat;mask:url('${esc(u)}') center/contain no-repeat"></span>`:"";};
   const path=(obj,key)=>String(key).split(".").reduce((v,k)=>v?.[k],obj);
-  const header=(title,landing=false)=>`<header class="aoSetTop">${landing?`<span></span>`:`<button type="button" data-settings-back aria-label="${esc(L("Back","Retour"))}">${icon("ao-ui-back","aoSetTopIcon")}</button>`}<div class="aoSetTitle"><small>${esc(L("SETTINGS","RÉGLAGES"))}</small><strong>${esc(title)}</strong></div><button type="button" data-settings-close aria-label="${esc(L("Close","Fermer"))}">${icon("ao-ui-close","aoSetTopIcon")}</button></header>`;
-  const section=(title,body)=>`<section class="aoSetSection"><h2>${esc(title)}</h2><div class="aoSetGroup">${body}</div></section>`;
-  const row=(title,sub,end="",attrs="")=>`<button type="button" class="aoSetRow" ${attrs}><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetRowEnd">${end}</span></button>`;
-  const routeRow=(title,sub,r)=>row(title,sub,icon("ao-ui-next"),`data-settings-route="${esc(r)}"`);
-  const infoRow=(title,sub,end="")=>`<div class="aoSetRow aoSetInfoRow" data-settings-info><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetRowEnd">${end}</span></div>`;
-  const seg=(label,key,items)=>{const active=path(p,key),structural=vm.live&&["mass.defaultExperience","mass.defaultForm","mass.defaultProfileId"].includes(key);return `<div class="aoSetRow"><span class="aoSetRowText"><b>${esc(label)}</b></span><span class="aoSetSegments">${items.map(([v,en,frt])=>`<button type="button" data-pref-path="${esc(key)}" data-pref-value="${esc(v)}"${structural?' data-setting-structural=""':''} class="${active===v?"active":""}" aria-pressed="${active===v}">${esc(L(en,frt))}</button>`).join("")}</span></div>`;};
-  const toggle=(title,sub,key)=>{const on=Boolean(path(p,key));return `<button type="button" class="aoSetRow" data-pref-toggle="${esc(key)}" aria-pressed="${on}"><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetSwitch ${on?"on":""}" aria-hidden="true"><i></i></span></button>`;};
-  const select=(title,sub,key,items)=>{const active=path(p,key);return `<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><select class="aoSetSelect" data-pref-select="${esc(key)}">${items.map(([v,en,frt])=>`<option value="${esc(v)}"${active===v?" selected":""}>${esc(L(en,frt))}</option>`).join("")}</select></label>`;};
-  const note=text=>`<div class="aoSetNote">${text}</div>`;
-  const shell=(title,body,landing=false)=>`${header(title,landing)}<main class="aoSetWrap">${body}</main><style>${settingsCss("ao-settings-modular-root")}</style>`;
+  const SECTIONS=[
+    ["I","Reading","Lecture","Appearance, text, contrast and paintings","Apparence, texte, contraste et peintures","/settings/accessibility"],
+    ["II","Languages","Langues","App, translation and Latin","Application, traductions et latin","/settings/language-reading"],
+    ["III","Holy Mass","Sainte Messe","Defaults for every new Mass","Choix pour chaque nouvelle Messe","/settings/mass"],
+    ["IV","My churches","Mes églises","Customs of the churches you attend","Usages des églises que vous fréquentez","/settings/local-customs"],
+    ["V","Prayer","Prière","Nine traditional prayer families","Neuf familles de prières","/settings/prayer"],
+    ["VI","On this device","Sur cet appareil","Screen, vibration, resume, reminders","Écran, vibrations, reprise, rappels","/settings/general"],
+    ["VII","Your data","Vos données","What is kept, and clearing it","Données conservées et suppression","/settings/privacy-data"],
+    ["VIII","About & sources","À propos et sources","Version, editions, art and licences","Version, éditions, art et licences","/settings/about-sources"]
+  ];
+  const sectionIndex=SECTIONS.findIndex(s=>s[5]===vm.route),current=SECTIONS[sectionIndex];
+  const header=(title,landing=false)=>'<header class="aoSetTop">'+
+    (landing?'<span class="aoPrefHeadStub" aria-hidden="true"></span>':
+      '<button type="button" data-settings-back aria-label="'+esc(L("Back","Retour"))+'">‹</button>')+
+    '<div class="aoSetTitle"><strong>'+esc(L("Preferences","Préférences"))+'</strong></div>'+
+    '<button type="button" data-settings-close aria-label="'+esc(L("Close","Fermer"))+'">×</button></header>';
+  const section=(title,body)=>'<section class="aoSetSection"><h2>'+esc(title)+'</h2><div class="aoSetGroup">'+body+'</div></section>';
+  const row=(title,sub,end="",attrs="")=>'<button type="button" class="aoSetRow" '+attrs+'><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetRowEnd">'+end+'</span></button>';
+  const routeRow=(title,sub,r)=>row(title,sub,'<span aria-hidden="true">☞</span>','data-settings-route="'+esc(r)+'"');
+  const infoRow=(title,sub,end="")=>'<div class="aoSetRow aoSetInfoRow" data-settings-info><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetRowEnd">'+end+'</span></div>';
+  const seg=(label,key,items)=>{const active=path(p,key);return '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(label)+'</b></span><span class="aoSetSegments" role="group" aria-label="'+esc(label)+'">'+items.map(([v,en,frt])=>
+    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
+  const toggle=(title,sub,key)=>'<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetSegments" role="group" aria-label="'+esc(title)+'">'+[[true,L("On","Oui")],[false,L("Off","Non")]].map(([v,label])=>
+    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+v+'" class="'+(path(p,key)===v?'active':'')+'" aria-pressed="'+(path(p,key)===v)+'">'+esc(label)+'</button>').join("")+'</span></div>';
+  // A native select is never used on the Preferences surface; even long choices
+  // remain ordinary words underlined in the verified liturgical colour.
+  const select=(title,sub,key,items)=>'<div class="aoPrefSelectGroup">'+seg(title,key,items)+(sub?'<p class="aoSetNote">'+esc(sub)+'</p>':"")+'</div>';
+  const note=text=>'<div class="aoSetNote">'+text+'</div>';
+  const shell=(title,body,landing=false)=>{
+    const next=sectionIndex>=0&&sectionIndex<7?SECTIONS[sectionIndex+1]:null;
+    const chapter=current?'<div class="aoPrefChapter"><span class="n">'+current[0]+'</span><h2>'+esc(L(current[1],current[2]))+'</h2></div>':"";
+    const ribbon='<button class="aoPrefRibbon" type="button" data-settings-contents aria-expanded="false" aria-label="'+esc(L("Contents","Sommaire"))+'"></button>';
+    const menu='<nav class="aoPrefDrop" data-settings-toc hidden aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-route="'+t[5]+'" class="'+(t===current?'current':'')+'"><span class="n">'+t[0]+'</span>'+esc(L(t[1],t[2]))+'</button>').join("")+'</nav>';
+    const foot='<footer class="aoPrefFoot"><span>'+esc(current?current[0]+" · "+L(current[1],current[2]):L("Contents","Sommaire"))+'</span>'+
+      (next?'<button type="button" data-settings-route="'+next[5]+'">'+esc(L("Next","Suite"))+' <b>'+next[0]+' ›</b></button>':'<span>✠</span>')+'</footer>';
+    return '<div class="aoPrefBook" data-ao-preferences-book="r1">'+header(title,landing)+ribbon+menu+
+      '<main class="aoSetWrap">'+chapter+body+'</main>'+foot+'<style>'+settingsCss("ao-settings-modular-root")+'</style></div>';
+  };
 
   if(vm.route==="/settings"||vm.route==="main"){
     return shell(L("Settings","Réglages"),
