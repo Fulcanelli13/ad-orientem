@@ -1,5 +1,6 @@
 import "./traditional-pray-styles.js";
 import { stampArtworkRuntimeIdentity } from "./artwork-runtime-identity.v1.js";
+import { stampPrayerArtworkDomEvidence } from "./artwork-dom-evidence.v1.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {
   SACRED_HYMNS_V381,
@@ -283,6 +284,7 @@ function render(){
   stampArtworkRuntimeIdentity(m,{owner:"traditional",route:S.route,screen:S.screen,prayerId:S.prayerId,daypart:S.daypart,dailyStep:S.dailyStep,stepPrayerId:dailyArtPrayer,examenStep:S.examenStep});
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   injectGlossaryAction();
+  stampPrayerArtworkDomEvidence(m);
   m.scrollTop=0;
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.()});
   return true;
