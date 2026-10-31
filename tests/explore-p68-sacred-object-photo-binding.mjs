@@ -18,7 +18,7 @@ const guides=[
 assert.equal(manifest.schema,"AO_SACRED_OBJECT_ACQUISITION_MANIFEST_P68_V1");
 assert.equal(manifest.photos.length,3);
 assert.equal(new Set(manifest.photos.map(x=>x.place_id)).size,3);
-assert.equal(phenomena.relics.length,122);
+assert.ok(phenomena.relics.length>=122,"Preserve the P68 relic baseline while allowing independently sourced later additions");
 assert.ok(originalGallery.items.length>=6);
 for(const row of manifest.photos){
  const original=relicById.get(row.relic_id);
