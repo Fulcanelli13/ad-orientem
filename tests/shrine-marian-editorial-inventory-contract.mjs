@@ -22,6 +22,7 @@ const knownPlaces=new Set(places.places.map(x=>x.place_id));
 const shrineIds=new Set(canonical.shrines.map(x=>x.shrine_id));
 const placeById=new Map(places.places.map(x=>[x.place_id,x]));
 const imageByPlace=new Map(images.items.map(x=>[x.place_id,x]));
+const approvedGallery=json("data/geography/approved-place-gallery.v1.json");
 const allGuides=[...oldGuideFiles.flatMap(path=>json(path).guides),...newGuides.guides,...newSaintGuides.guides,...globalMarianB2.guides];
 assert.equal(canonical.shrines.length,257);
 assert.equal(canonical.pilgrimages.length,240);
@@ -76,8 +77,21 @@ for(const entry of ledger.shrines){
   assert.equal(imageByPlace.get(entry.place_id)?.status,"APPROVED",
    entry.shrine_id+" frozen approved-photo evidence must remain published");
  } else if(imageByPlace.has(entry.place_id)){
-  assert.ok(imageByPlace.get(entry.place_id)?.review_method?.includes("Photo Finder editorial selection"),
-   entry.shrine_id+" newly approved hero requires independently sourced editorial decision");
+  const approvedPhoto=imageByPlace.get(entry.place_id);
+  const originalGalleryPhoto=approvedGallery.items.find(g=>
+    approvedPhoto?.source_place_ref==="APPROVED_GALLERY_COVER_REUSE_20261031"&&
+    g.media_id===approvedPhoto.gallery_media_id&&g.place_id===entry.place_id&&
+    g.status==="APPROVED"&&g.kind==="PHOTO"&&
+    ["place","architecture"].includes(g.chapter_id)&&
+    g.rights_verified&&g.subject_verified&&g.crop_reviewed&&
+    g.asset_path===approvedPhoto.asset_path&&
+    g.source_sha1===approvedPhoto.source_sha1&&
+    g.derivative_sha256===approvedPhoto.derivative_sha256&&
+    g.source_url===approvedPhoto.source_url&&
+    g.license===approvedPhoto.license&&g.license_url===approvedPhoto.license_url);
+  assert.ok(approvedPhoto?.review_method?.includes("Photo Finder editorial selection")||
+    originalGalleryPhoto,
+    entry.shrine_id+" newly approved hero requires source-matched editorial or approved-gallery evidence");
  }
 }
 for(const g of [...newGuides.guides,...newSaintGuides.guides]){
