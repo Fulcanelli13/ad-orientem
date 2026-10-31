@@ -424,6 +424,35 @@
         ]
       },
       "note": "Source's unique narrative and local artistic authorship; Italian OCR page checked in prior research, image not new."
+    },
+    {
+      "id": "DYK-G365-CAL-037",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "source": {
+        "source_url": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+        "printed_spread_pages": [
+          132,
+          133
+        ]
+      },
+      "revised_statement": {
+        "en": "An official Polish archive photograph dated 1930 documents women in Bronowice near Kraków decorating a house with chestnut branches for Pentecost, locally called Zielone Świątki (‘Green Holidays’).",
+        "fr": "Une photographie d'archives polonaises datée de 1930 montre des femmes de Bronowice, près de Cracovie, ornant une maison de rameaux de marronnier pour la Pentecôte, appelée localement Zielone Świątki (« fêtes vertes »)."
+      },
+      "note": "National Digital Archives original album English and Polish caption verified on pp132–133; do not ascribe magical properties as Catholic teaching; page image itself not independently re-rendered."
+    },
+    {
+      "id": "DYK-G365-CAL-032",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "source": {
+        "source_url": "https://mek.oszk.hu/02100/02115/html/1-713.html",
+        "text_heading": "betlehemezés, betlehemes játék"
+      },
+      "revised_statement": {
+        "en": "In Hungarian Christmas Nativity plays, a comic hard-of-hearing old shepherd could misunderstand an angel's Latin words; the ethnographic lexicon records both live-actor and puppet versions of the plays.",
+        "fr": "Dans des jeux de Noël hongrois, un vieux berger sourd pouvait, de manière comique, mal comprendre les mots latins d'un ange ; le lexique ethnographique décrit aussi bien des versions jouées par des acteurs que par des marionnettes."
+      },
+      "note": "Hungarian ethnographic dictionary section betlehemezés directly checked: 'pásztorok félreértik az angyal latin szavát', and 'élő szereplőkkel és a bábokkal'."
     }
   ],
   "original_folio_direct_checks": [
@@ -856,7 +885,7 @@
     "original_sample_unchanged_until_overlay": 50,
     "post_repair_review_sample": 50,
     "original_source_page_checks_this_pass": 27,
-    "correction_actions": 21,
+    "correction_actions": 23,
     "retired_glossary_records": 1,
     "specific_replacement_records": 1,
     "source_image_corroboration_independent_historiography": false,
@@ -864,7 +893,9 @@
     "all_50_finally_approved": false,
     "new_publications": 0,
     "additional_weak_but_previously_unflagged_discoveries_rewritten": 7,
-    "other_web_source_reviews": 7
+    "other_web_source_reviews": 7,
+    "remaining_specific_photo_caption_unchecked": false,
+    "original_pitre_images_uncertified": 4
   },
   "other_verified_source_checks": [
     {
@@ -901,19 +932,21 @@
     },
     {
       "id": "DYK-G365-CAL-032",
-      "result": "PARTIAL_CATHOLIC_LEXICON_SECONDARY_CONFIRMED",
+      "result": "DIRECT_HUNGARIAN_ETHNOGRAPHIC_LEXICON_TEXT_CONFIRMED",
       "source": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
       "locator": "Betlehemezés",
-      "notes": "Nativity plays and 17th century support; puppet vs actor variants unverified",
-      "publication_authorized": false
+      "notes": "Hungarian ethnographic dictionary section betlehemezés directly checked: 'pásztorok félreértik az angyal latin szavát', and 'élő szereplőkkel és a bábokkal'.",
+      "publication_authorized": false,
+      "method": "CURRENT_TURN_ORIGINAL_ETHNOGRAPHIC_ENTRY_TEXT"
     },
     {
       "id": "DYK-G365-CAL-037",
-      "result": "NATIONAL_ARCHIVE_PHOTO_CAPTION_NOT_RECHECKED",
+      "result": "DIRECT_ORIGINAL_NAC_PDF_CAPTION_CHECKED_PHOTO_IMAGE_NOT_RERENDERED",
       "source": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
       "locator": "1930 near Kraków",
-      "notes": "PDF intermittent availability; actual photo caption not independently checked",
-      "publication_authorized": false
+      "notes": "National Digital Archives original album English and Polish caption verified on pp132–133; do not ascribe magical properties as Catholic teaching; page image itself not independently re-rendered.",
+      "publication_authorized": false,
+      "method": "CURRENT_TURN_ORIGINAL_NAC_ALBUM_BILINGUAL_CAPTION_TEXT"
     },
     {
       "id": "DYK-M04-CANON-047",
