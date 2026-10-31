@@ -31,9 +31,9 @@ assert.equal(world.filter(x=>x.map_publishable).length,1914);
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:11,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,81);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,81);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:14,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,84);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,84);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
@@ -48,6 +48,9 @@ for(const pin of photoPins.pins){
 for(const [group,sourceId,lat,lng,ref,street] of [
  ["RG-014B017E0591","DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",51.287381,-0.08646362,"historicengland:1294941","Essendene Road"],
  ["RG-1A015C23D5BA","AO-AMER-R28-US-25-03",42.50055,-96.41809,"osm:node:354389668","703 West 5th Street"],
+ ["RG-368B7B3B5FA3","V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",44.95972,-93.12333,"nrhp:80002125","535 Thomas Avenue West"],
+ ["RG-46B891B2CE6E","AO-AMER-R26-US-03-08",30.22659,-93.21666,"nrhp:94001201","935 Bilbo Street"],
+ ["RG-48A5CF9C3C73","AO-AMER-R26-US-03-06",42.50094,-96.4069,"osm:node:354389830","1003 Douglas Street"],
 ]){
  const item=world.find(x=>x.physical_group_id===group);
  assert.ok(item,"Required corrected diocesan church building");
