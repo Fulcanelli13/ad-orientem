@@ -524,8 +524,19 @@ function head(title,sub=''){
  const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
   :'';
- const trailing=settings+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
- return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
+ const activeChoirId=view==='library'?LIB?.open:view==='prayerOnly'?prayerId:null;
+ const record=activeChoirId?P(activeChoirId):null;
+ const isChoirLitany=!!record&&choirKind(activeChoirId)==='litany';
+ const aa=isChoirLitany?'<button type="button" class="aoClaudeChoirAa" data-p435930-choir-aa aria-expanded="false" aria-controls="aoClaudeChoirAaMenu" aria-label="'+esc(L('Reading options','Options de lecture'))+'">Aa</button>':'';
+ const menu=isChoirLitany?'<div class="aoClaudeChoirAaMenu" id="aoClaudeChoirAaMenu" data-ao-claude-choir-menu hidden role="group" aria-label="'+esc(L('Reading options','Options de lecture'))+'">'+
+  '<div class="aoClaudeChoirMenuTitle">'+esc(L('Response bar','Barre des répons'))+'</div><div class="aoClaudeChoirMenuChoices">'+
+  '<button type="button" data-p435930-choir-response="bar" aria-pressed="'+String(!CLAUDE_CHOIR_PREF.inline)+'">'+esc(L('Shown','Affichée'))+'</button>'+
+  '<button type="button" data-p435930-choir-response="inline" aria-pressed="'+String(CLAUDE_CHOIR_PREF.inline)+'">'+esc(L('Inline','Dans le texte'))+'</button></div>'+
+  '<div class="aoClaudeChoirMenuTitle">'+esc(L('Language','Langue'))+'</div><div class="aoClaudeChoirMenuChoices">'+
+  ['en','fr','la'].filter(l=>!!record[l]).map(l=>'<button type="button" data-p435930-choir-language="'+l+'" lang="'+l+'" aria-pressed="'+String((CLAUDE_CHOIR_PREF.language||lang())===l)+'">'+l.toUpperCase()+'</button>').join('')+'</div>'+
+  '<div class="aoClaudeChoirMenuSource">'+(praySourceURL(record)?'<a href="'+esc(praySourceURL(record))+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(L('Source and historical witness','Source et témoin historique'))+'">ⓘ '+esc(L('Source','Source'))+'</a>':'')+'</div></div>':'';
+ const trailing=settings+prayerLanguage+aa+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
+ return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>${menu}`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
 function callout(text,type='info'){return `<div class="aoP435930Callout ${esc(type)}">${text}</div>`}
@@ -2969,6 +2980,8 @@ function installLibraryParagraphFocus(m,id){
  // of reparsing the prayer and erasing V./R. ownership.
  window.AO_PRAY_COHERENCE_V435930?.decorate?.();
  const choir=!!card.querySelector("[data-ao-choir-prayer]");
+ const isClaudeChoir=!!card.querySelector(".aoClaudeChoirPrayer");
+ if(isClaudeChoir)moveClaudeChoirBar(card);
  const lines=card.querySelectorAll(choir?".aoChoirBeat":
   ".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
  );
@@ -2978,12 +2991,14 @@ function installLibraryParagraphFocus(m,id){
  const reader=installSequentialDevotionalReader({
   mount:m,kind:"library",chapters:[{id,title}],
   activeIndex:0,paragraphSelector:choir?".aoChoirBeat":".aoLibraryLine",
+  onFocus:element=>{if(isClaudeChoir)syncClaudeChoirBar(card,element,{inline:CLAUDE_CHOIR_PREF.inline});},
   timelineLabel:L('Prayer timeline','Parcours de la prière')
  });
  // A one-card prayer has no meaningful chapter navigation or positional
  // progress. Remove the adapter's one-of-one chrome, but preserve its
  // card-local focus, bilingual flip observer, keyboard and scroll handlers.
  m.querySelector(".aoP435930LibraryReader .aoDevoSequenceTimeline")?.remove();
+ if(isClaudeChoir)syncClaudeChoirBar(card,null,{inline:CLAUDE_CHOIR_PREF.inline});
  const languageFaces=card.querySelectorAll("[data-face-v],[data-face-la]");
  if(languageFaces.length&&typeof MutationObserver==="function"){
   const observer=new MutationObserver(()=>reader?.focus?.());
@@ -3522,6 +3537,26 @@ function onClick(e){
   e.preventDefault?.();
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
   return;
+ }
+ if(b.matches('[data-p435930-choir-aa]')){
+  const panel=mount()?.querySelector('[data-ao-claude-choir-menu]');
+  if(!panel)return;
+  panel.hidden=!panel.hidden;
+  b.setAttribute('aria-expanded',String(!panel.hidden));
+  return;
+ }
+ if(b.hasAttribute('data-p435930-choir-response')){
+  const type=b.dataset.p435930ChoirResponse;
+  if(type!=='bar'&&type!=='inline')return;
+  CLAUDE_CHOIR_PREF.inline=type==='inline';
+  return render();
+ }
+ if(b.hasAttribute('data-p435930-choir-language')){
+  const key=b.dataset.p435930ChoirLanguage;
+  const record=P(view==='library'?LIB.open:prayerId);
+  if(!record?.[key])return;
+  CLAUDE_CHOIR_PREF.language=key;
+  return render();
  }
  if(b.matches('[data-p435930-choir-flip]')){
   const card=b.closest('[data-ao-choir-prayer]');
