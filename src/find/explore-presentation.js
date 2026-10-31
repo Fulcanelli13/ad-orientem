@@ -535,6 +535,37 @@ function availableTlmCommunityIds(vm,aff=[]){
   });
   return sorted.length?sorted:["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"];
 }
+// Show reader-facing community names; stable source codes remain in data attributes.
+function tlmCommunityLabel(id,lang){
+ const names={
+  DIOCESAN:["Diocesan","Diocésain"],OTHER:["Other","Autres"],UNKNOWN:["Unclassified","Non classés"],
+  CANONS_ST_JOHN_CANTIUS:["Canons of St John Cantius","Chanoines de Saint-Jean-de-Cantius"],
+  SSPX_SISTERS:["SSPX Sisters","Sœurs FSSPX"],
+  CAPUCHINS_MORGON:["Capuchins of Morgon","Capucins de Morgon"],
+  CARMELITE:["Carmelites","Carmélites"],
+  BENEDICTINE:["Benedictines","Bénédictins"],
+  BENEDICTINES_BELLAIGUE:["Benedictines of Bellaigue","Bénédictins de Bellaigue"],
+  DOMINICAN:["Dominicans","Dominicains"],
+  DOMINICAINES_FANJEAUX:["Dominican Sisters of Fanjeaux","Dominicaines de Fanjeaux"],
+  DOMINICANS_AVRILLE:["Dominicans of Avrillé","Dominicains d’Avrillé"],
+  ORATORIAN:["Oratorians","Oratoriens"],
+  TRANSFIGURATION:["Fraternity of the Transfiguration","Fraternité de la Transfiguration"],
+  PREMONSTRATENSIAN:["Premonstratensians","Prémontrés"],
+  MOSTEIRO_SANTA_CRUZ:["Santa Cruz monastery","Monastère Santa Cruz"],
+  INDEPENDENT:["Independent listing","Fiche indépendante"],
+  SJM:["Servants of Jesus and Mary","Serviteurs de Jésus et de Marie"],
+  SMMD:["Missionaries of Divine Mercy","Missionnaires de la Miséricorde divine"],
+ };
+ const text=names[id];
+ return text?text[lang==="fr"?1:0]:id.replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+}
+function tlmInstituteButton(id,aff,lang){
+ const emblem=massInstitutionEmblem(id);
+ return '<button type="button" data-find-affiliation="'+esc(id)+'" class="'+(aff.includes(id)?"active":"")+
+  '" aria-pressed="'+String(aff.includes(id))+'">'+
+  (emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':"")+
+  esc(tlmCommunityLabel(id,lang))+'</button>';
+}
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
@@ -548,14 +579,21 @@ function tlmFilters(vm){
     html+='</div>';
     if(vm.view==="map")html+='</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
+    const available=availableTlmCommunityIds(vm,aff);
+    const primary=new Set(["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV"]);
+    const first=available.filter(id=>primary.has(id)||aff.includes(id));
+    const other=available.filter(id=>!first.includes(id));
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
-    for(const id of availableTlmCommunityIds(vm,aff)){
-      const emblem=massInstitutionEmblem(id);
-      html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'
-        +(emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':'')
-        +esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id==="OTHER"?L(vm.language,"Other","Autres"):id)+'</button>';
+    for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
+    html+='</div>';
+    if(other.length){
+      html+='<details class="aoTlmMoreInstitutes"><summary>'+
+        esc(L(vm.language,"More institutes","Autres instituts"))+' ('+other.length+')</summary>'+
+        '<div class="aoFindAffiliations">';
+      for(const id of other)html+=tlmInstituteButton(id,aff,vm.language);
+      html+='</div></details>';
     }
-    html+='</div></div>';
+    html+='</div>';
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
@@ -571,7 +609,7 @@ function tlmFilters(vm){
     +'</div>';
   html+='<details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"More filters","Plus de filtres"))+'</summary>';
   html+='<section><small>'+esc(L(vm.language,"COMMUNITY / PROVIDER","COMMUNAUTÉ / INSTITUT"))+'</small><div class="aoFindAffiliations">';
-  for(const id of availableTlmCommunityIds(vm,aff))html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
+  for(const id of availableTlmCommunityIds(vm,aff))html+=tlmInstituteButton(id,aff,vm.language);
   html+='</div></section><section><small>'+esc(L(vm.language,"COMMUNION STATUS","STATUT DE COMMUNION"))+'</small><div>';
   html+=pill("unaCum","ANY",L(vm.language,"Any status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
   html+='</div></section><section><small>'+esc(L(vm.language,"LITURGY","LITURGIE"))+'</small><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div></section><section><small>'+esc(L(vm.language,"MASS TYPE","TYPE DE MESSE"))+'</small><div>';
