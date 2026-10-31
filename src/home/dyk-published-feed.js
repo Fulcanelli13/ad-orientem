@@ -37,6 +37,7 @@ export function dykPublishedCandidates(data,date){
           dest.verified_in_app===true));
  }).filter(row=>{
    const s=row.pilot_source_folio||row.editorial_source_reference;
+   if(!s)return false;
    const url=s.url||s.source_url;
    const pages=s.pdf_pages_1based;
    return safeUrl(url)&&s.source_record_id===row.source_id&&
