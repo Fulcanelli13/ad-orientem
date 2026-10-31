@@ -1,0 +1,282 @@
+{
+  "schema": "AO_SACRED_ATLAS_SOURCE_FIRST_BULK_530_V1",
+  "as_of": "2026-10-31",
+  "scope": "REFERENCE_QUEUE_NOT_PHOTOGRAPH_APPROVAL",
+  "strategy": "Authority/custodian physical object definition → exact photographed scene → Commons/GLAM free-use author/licence → high-quality photo QA → user approval → permanent optimized archive",
+  "important_distinction": "530 original canonical Places; 518 evidence-linked source-first reference IDs across 285 Places; other 245 Places have no separately documented focal sacred feature. B07/08 total 149 sites triaged but only 26 exact named features, all under unapproved photo holds.",
+  "source_references": [
+    {
+      "path": "data/geography/seed-registry.v1.json",
+      "role": "530 canonical Place owners and existing site cover decision states"
+    },
+    {
+      "path": "data/explore/sacred-phenomena-seed.v1.json",
+      "role": "127 traditional relic records and 33 apparition context records; app does not independently authenticate"
+    },
+    {
+      "path": "data/shrines/shrines-pilgrimages-seed.v1.json",
+      "role": "original shrine owners and their source IDs"
+    },
+    {
+      "path": "data/shrines/source-registry.v1.json",
+      "role": "846 primary and secondary source records linked to shrines"
+    },
+    {
+      "path": "data/shrines/editorial-master-inventory-20261021.v1.json",
+      "role": "118 Marian shrine category and existing site photo states"
+    },
+    {
+      "path": "data/geography/research/exact-sacred-subject-photo-inventory-20261031.v1.json",
+      "role": "research branch only; 88 guide stops and 20 precise object identities; not on main",
+      "ref": "research/explore-precise-sacred-subject-photo-search-20261031"
+    },
+    {
+      "path": "data/geography/research/sacred-atlas-source-first-objects-b01-20261031.v1.json",
+      "role": "14 previous source-first object leads; no imagery authorized"
+    }
+  ],
+  "batches": [
+    {
+      "name": "B02_RELICS_127",
+      "path": "data/geography/research/sacred-atlas-source-first-b02-relics-127-20261031.v1.json",
+      "count": 127
+    },
+    {
+      "name": "B03_MARIAN_118",
+      "path": "data/geography/research/sacred-atlas-source-first-b03-marian-118-20261031.v1.json",
+      "count": 118
+    },
+    {
+      "name": "B04_GUIDE_STOPS_88",
+      "path": "data/geography/research/sacred-atlas-source-first-b04-guide-stops-88-20261031.v1.json",
+      "count": 88
+    },
+    {
+      "name": "B05_PRECISE_OBJECTS_20",
+      "path": "data/geography/research/sacred-atlas-source-first-b05-precise-20-20261031.v1.json",
+      "count": 20
+    },
+    {
+      "name": "B06_NONMARIAN_SHRINES_139",
+      "path": "data/geography/research/sacred-atlas-source-first-b06-nonmarian-shrines-139-20261031.v1.json",
+      "count": 139
+    },
+    {
+      "name": "B07_FIRST_100_UNREFERENCED_SITES",
+      "path": "data/geography/research/sacred-atlas-source-first-b07-100-previously-unreferenced-20261031.v1.json",
+      "count": 100,
+      "verified_exact_physical_subject_references": 19,
+      "commons_named_file_leads": 13,
+      "unresolved_site_subjects": 81
+    },
+    {
+      "name": "B08_REMAINING_49_PILGRIMAGE_AND_BASILICA_SITES",
+      "path": "data/geography/research/sacred-atlas-source-first-b08-remainder-49-pilgrimage-sites-20261031.v1.json",
+      "count": 49,
+      "documented_physical_objects": 7,
+      "commons_file_leads": 5,
+      "still_unresolved": 42
+    }
+  ],
+  "stats": {
+    "canonical_places": 530,
+    "unique_places_with_evidence": 285,
+    "unique_places_without_object_refs": 245,
+    "relic_records": 127,
+    "marian_shrines": 118,
+    "guide_stops": 88,
+    "precise_targets": 20,
+    "source_first_reference_rows": 518,
+    "apparition_contexts_excluded_from_photographic_objects": 33,
+    "source_directness_currently_web_checked_relic_records": 19,
+    "b01_precise_source_first_reuse": 5,
+    "pub_approved": 0,
+    "images_downloaded": 0,
+    "note": "19 canonical relic records in independently rechecked custodian groups; other entries preserve registered URLs without a fresh web verification. Site-only/subject-unspecified rows are unresolved research, not achieved image matches.",
+    "nonmarian_shrine_source_rows": 139,
+    "nonmarian_owners_newly_linked": 45,
+    "b07_sites_triaged": 100,
+    "b07_new_evidenced_subjects": 19,
+    "b07_held_for_authoritative_object_identity": 81,
+    "b07_commons_named_photo_leads": 13,
+    "b08_remaining_shrine_sites_triaged": 49,
+    "b08_new_exact_subject_evidence": 7,
+    "b08_unresolved": 42,
+    "b08_named_photo_leads": 5
+  },
+  "web_reviewed_original_sources": [
+    {
+      "key": "NOTRE_DAME_PASSION",
+      "ids": [
+        "relic:FR:crown-of-thorns-paris",
+        "relic:FR:cross-paris",
+        "relic:FR:holy-nail-paris"
+      ],
+      "source_url": "https://www.notredamedeparis.fr/en/understand/history/saint-louis-and-the-relics-of-the-passion/",
+      "special_note": "Cathedral distinguishes Crown of Thorns (rush circle in crystal/gold tube), 24 cm cross fragment in crystal, and 9 cm nail in separate nail-shaped reliquary. Never assign one generic cathedral photograph to all three."
+    },
+    {
+      "key": "PADUA_TREASURY",
+      "ids": [
+        "relic:IT:anthony-padua-tongue",
+        "relic:IT:anthony-padua-jawbone",
+        "relic:IT:anthony-padua-voice",
+        "relic:IT:anthony-padua-bones",
+        "relic:IT:john-paul-ii-padua",
+        "relic:IT:true-cross-padua"
+      ],
+      "source_url": "https://www.santantonio.org/fr/node/607",
+      "special_note": "Basilica identifies 1436 tongue container, 1350 jawbone, 1981 vocal apparatus, 1982 body-fragment container, 1437 cross relic and John Paul II relic. Each a different target."
+    },
+    {
+      "key": "RUE_DU_BAC",
+      "ids": [
+        "relic:FR:catherine-laboure",
+        "relic:FR:louise-de-marillac",
+        "relic:FR:vincent-heart-rue-du-bac"
+      ],
+      "source_url": "https://www.medaille-miraculeuse.fr/chapelle-medaille-miraculeuse",
+      "special_note": "Custodian chapel annotated sanctuary photo identifies Catherine Labouré shrine (6), Vincent de Paul heart (7), Louise de Marillac shrine (8); do not use one whole-altar photograph as three distinct object portraits."
+    },
+    {
+      "key": "SAINT_MAURICE_TREASURY",
+      "ids": [
+        "relic:CH:abbaye-saint-maurice-agaune"
+      ],
+      "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/tresor/",
+      "special_note": "Abbey lists individual named reliquaries and vessel artifacts with historical inventory numbers; generic treasury hero is not exact saint reliquary."
+    }
+  ],
+  "commons_category_leads": [
+    {
+      "id": "relic:FR:crown-of-thorns-paris",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Relics_of_the_Crown_of_Thorns_(Notre-Dame_de_Paris)",
+          "scope": "Crown itself; contains separate historical reliquary subcategories",
+          "qa": "Do not select 1862 reliquary image as present-day crown view without explicit caption"
+        }
+      ]
+    },
+    {
+      "id": "relic:FR:cross-paris",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Reliquary_of_the_Nail_and_the_Wood_of_the_Cross",
+          "scope": "Distinct Wood of Cross and Nail, exact Notre-Dame collection",
+          "qa": "Confirm visible reliquary part and not Crown of Thorns"
+        }
+      ]
+    },
+    {
+      "id": "relic:FR:holy-nail-paris",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Reliquary_of_the_Nail_and_the_Wood_of_the_Cross",
+          "scope": "Distinct Wood of Cross and Nail",
+          "qa": "Confirm actual nail and display position"
+        }
+      ]
+    },
+    {
+      "id": "relic:IT:anthony-padua-tongue",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Relics_of_Saint_Anthony_of_Padua",
+          "scope": "Generic group includes different countries and other fragment reliquaries",
+          "qa": "Choose Padua 1436 tongue, not Cincinnati or other church"
+        }
+      ]
+    },
+    {
+      "id": "relic:IT:anthony-padua-jawbone",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Relics_of_Saint_Anthony_of_Padua",
+          "scope": "Padua jawbone 1350 distinct from tongue",
+          "qa": "Reject tongue-only photo if jawbone not shown"
+        }
+      ]
+    },
+    {
+      "id": "relic:CA:anne-beaupre-finger",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Reliquaries_of_Saint_Anne",
+          "scope": "Category has worldwide objects; match named Beaupré reliquary only",
+          "qa": "Image titled Sainte-Anne-de-Beaupré reliquaire de Ste Anne is lead, not source-cleared"
+        }
+      ]
+    },
+    {
+      "id": "relic:CA:anne-beaupre-1892-forearm",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Reliquaries_of_Saint_Anne",
+          "scope": "Beaupré's 1892 forearm fragment",
+          "qa": "Differentiate older forearm from 1960 major forearm"
+        }
+      ]
+    },
+    {
+      "id": "relic:CA:anne-beaupre-1960-forearm",
+      "urls": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Reliquaries_of_Saint_Anne",
+          "scope": "Beaupré's 1960 major forearm relic",
+          "qa": "Do not substitute Trier or Minden arm reliquary"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Nothing is published, and none of the user 20 KEEP decisions are changed.",
+    "All photograph candidate uploads must show the exact named object, not a generic church.",
+    "A title or internal shrine dedication does NOT establish the principal physical statue, tilma or icon.",
+    "Guide stops must be physically contained at the correct Place; no offsite accidental assignments.",
+    "Apparition events cannot have literal event photographs; use independently documented physical marker if relevant.",
+    "Relic authenticity claims remain attributed to sources, never app-certified.",
+    "Source registry links are research starting points, not proof a website page still resolves or grants image copyright.",
+    "Wikimedia categories do not grant licences, and visual rights/photo quality still need individual review.",
+    "No automated object-media publication, no overwrite of site heroes, no new payment or rights-holder contact.",
+    "B07 has 100 intake records, but ONLY the 19 positively documented physical subjects count as new referenced Place owners; no unverified shrine dedication is treated as a known object."
+  ],
+  "new_custodian_verified_this_batch": [
+    {
+      "ids": [
+        "relic:FR:curé-ars"
+      ],
+      "url": "https://www.arsnet.org/plan-du-sanctuaire/",
+      "distinction": "Body glass shrine in basilica right chapel, not saint statue/presbytery."
+    },
+    {
+      "ids": [
+        "relic:IT:francis-assisi",
+        "relic:IT:francis-first-companions"
+      ],
+      "url": "https://basilica.sanfrancesco.org/en/explore-the-basilica/tomb",
+      "distinction": "Saint's central stone sarcophagus versus four companions in surrounding niches."
+    },
+    {
+      "ids": [
+        "relic:ES:james-compostela"
+      ],
+      "url": "https://catedraldesantiago.es/en/pilgrimage/",
+      "distinction": "Silver reliquary of James below high altar versus accessible statue above."
+    },
+    {
+      "ids": [
+        "relic:IT:duomo-torino-sindone"
+      ],
+      "url": "https://sindone.org/la-sindone/dove-la-sindone/",
+      "distinction": "Shroud currently hidden inside conservation casing/metal box; no contemporary public-view photograph."
+    },
+    {
+      "ids": [
+        "relic:FR:basilique-saint-denys-argenteuil"
+      ],
+      "url": "https://saintetunique.com/",
+      "distinction": "Holy Tunic in usual chapel reliquary, not necessarily visible unfolded; 2025 exposition was temporary."
+    }
+  ]
+}
