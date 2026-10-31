@@ -27,8 +27,10 @@ assert.match(landing,/Preferences/);
 assert.equal((landing.match(/class="aoPrefContents"/g)||[]).length,1,"Exactly one visible contents list");
 assert.equal((landing.match(/<button type="button" data-settings-close /g)||[]).length,1,"Exactly one actionable Close");
 assert.equal((landing.match(/data-settings-contents/g)||[]).length,1,"One ribbon");
-for(const route of routes)assert.equal((landing.match(new RegExp('data-settings-route="'+route+'"','g'))||[]).length,1,"Exactly one visible contents destination: "+route);
-assert.ok(landing.includes('data-settings-book-route="'+route+'"'),"Ribbon destination must remain available: "+route);
+for(const route of routes){
+ assert.equal((landing.match(new RegExp('data-settings-route="'+route+'"','g'))||[]).length,1,"Exactly one visible contents destination: "+route);
+ assert.ok(landing.includes('data-settings-book-route="'+route+'"'),"Ribbon destination must remain available: "+route);
+}
 for(const x of ["Reading","Languages","Holy Mass","My churches","Prayer","On this device","Your data","About &amp; sources"])assert.ok(landing.includes(x),"Missing book chapter "+x);
 assert.doesNotMatch(landing,/43\.59\.99/,"Version belongs on About");
 const css=settingsCss();
