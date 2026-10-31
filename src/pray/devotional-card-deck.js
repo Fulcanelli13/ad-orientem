@@ -52,6 +52,13 @@ function voiceLine(doc,role,value){
  sign.dataset.aoSpeakerRole=role==="response"?"response":"versicle";
  row.append(sign,create(doc,"span","",value));return row;
 }
+function ordinaryPrayerHalf(doc,role,text){
+ const row=create(doc,"span","aoAngelusDialogueLine "+role+" aoDevoParagraph"+
+  (role==="response"?" aoHoursCollective":""));
+ row.dataset.aoAngelusVoice=role;
+ row.append(create(doc,"span","",text));
+ return row;
+}
 function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
  const el=create(doc,"span","aoDevoAppendixFace");
  const lines=String(text||"").split("\n").filter(x=>x.trim());
@@ -67,7 +74,7 @@ function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
     const repeat=create(doc,"span","aoFolioGloria");
     repeat.dataset.aoGloriaRepeat=String(i+1);
     const parts=recitationMode==="group"?angelusCommunalParts(prayer,"doxology"):null;
-    if(parts)parts.forEach(p=>repeat.append(voiceLine(doc,p.role,p.text)));
+    if(parts)parts.forEach(p=>repeat.append(ordinaryPrayerHalf(doc,p.role,p.text)));
     else repeat.append(create(doc,"span","aoDevoAppendixLine",prayer));
     el.append(repeat);
    }
