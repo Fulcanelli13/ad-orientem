@@ -29,6 +29,14 @@ for(const id of HOME_DYK_GLOSSARY_IDS){
     assert.notEqual(fact,entry.explanation[language],"Editorial copy should be a digest, not a pasted glossary paragraph");
   }
 }
+assert.match(HOME_DYK_GLOSSARY_FACTS.G194.en,/thurifer|ceremonial/i,
+  "Thurible discovery should explain its ceremonial handling");
+assert.doesNotMatch(HOME_DYK_GLOSSARY_FACTS.G194.en,/incense boat/i,
+  "Thurible and incense boat must not repeat the same observation");
+assert.match(HOME_DYK_GLOSSARY_FACTS.G195.en,/spoon|boat-shaped/i,
+  "Distinct incense-boat fact must preserve the vessel's function");
+assert.doesNotMatch(HOME_DYK_GLOSSARY_FACTS.G194.fr,/navette/i,
+  "French thurible fact must also be distinct from the incense boat");
 assert.equal(homeDidYouKnowSelect([], "2026-10-30"),null,"Unknown source must fail closed");
 const selected=homeDidYouKnowSelect(document.entries,"2026-10-31");
 assert.equal(homeDidYouKnowSelect(document.entries.map(e=>e.id!==selected.id?e:{...e,explanation:{en:"",fr:""}}),"2026-10-31"),null,
