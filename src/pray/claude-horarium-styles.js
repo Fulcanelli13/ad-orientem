@@ -108,6 +108,12 @@ export const CLAUDE_HORARIUM_STYLES=String.raw`
  border-bottom:3px double var(--rubric-red,#d4705f);
 }
 #aoPray435930 .aoP435930AngelusReader .aoHoursBellLine{display:none!important}
+/* The hour cover and the source-owned five-stage reader are distinct states.
+   Preserve the mounted cards and their state, but do not expose the first
+   prayer panel underneath Claude's explicit Begin-at-the-bell opening. */
+#aoPray435930 .aoP435930AngelusReader:has(.aoClaudeHorariumOpening) .aoAngelusRitualGrid{
+ display:none!important;
+}
 @media(max-width:359px){
  #aoPray435930 .aoClaudeHorariumClock{height:90px}
  #aoPray435930 .aoClaudeHorariumStrokes{gap:10px}
