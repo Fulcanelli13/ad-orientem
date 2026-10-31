@@ -31,3 +31,16 @@ A particular 2019 file may become a publication candidate **only after**:
 - existing 14-card prayer structure, V/R, recitation methods, cinematics and card boundaries retained during eventual reader integration.
 
 **Current release:** 0/14 Rauth photos legally cleared, 0/14 activated, no fees, no contact, no changes to approved images. The 2019 source is the only practical full-series photo candidate; all older photographs are backup provenance. Uncertainty is not a €0 licence.
+
+## 31 October addendum — exact-native visual diagnostics
+
+Read-only GitHub Actions run `41195668732` inspected **all fourteen original 2019 JPEGs** in memory and recorded each exact source SHA-256, exposure, grayscale contrast, local-edge variation, colour statistics, outer 2.5–3.5% image strips, and entropy. The result is permanently recorded as *metadata only* in `data/prayer/stations/rauth-edinburgh/native-14-photo-visual-diagnostics-20261031.v1.json`. No photographs were committed, redistributed in Actions artifacts, or switched on in the app.
+
+- **14/14** original files accessible, unique and dimensionally suitable for narrow-phone viewing.
+- **0** machine-detected major problems for extreme darkness, overexposure, uniformly dark or white edges, or unusually low local detail.
+- **1** advisory: Station XIV has a short side of 886 px, just 14 px below the 900-px preference. This is not a release blocker for a narrow phone by itself.
+- **14/14** still lack human confirmation that no decorative frame, perspective distortion, reflection or other non-painting visual remains. Do not call these photographs 'frameless' on the basis of numeric metrics.
+- **14/14** still require photo-specific UK-origin originality and relevant global distribution rights determination before they can count as PD/CC0 production assets. The owner's published ©2019 claim cannot be reinterpreted as a Creative Commons licence.
+- Targeted Wikimedia Commons check: the Edinburgh `Sacred Heart` category contains 18 high-resolution independently CC BY-SA church-location images by Auldcathy and a further exterior photograph; these do not establish a complete separately licensed set of fourteen individual paintings. Treat them as photographic location evidence until each individual artwork is matched and shown complete.
+
+The fail-closed regression test `tests/prayer-rauth-14-original-photo-qa-gates.mjs` passed on GitHub Actions run `41195902143`, preserving exact photo hashes, all 14 Station IDs, and zero premature publication.
