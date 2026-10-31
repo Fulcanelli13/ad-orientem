@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 59,
+    "new_site_pins": 60,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -788,6 +788,17 @@
       "source_ref": "osm:way:113958010",
       "source_url": "https://www.openstreetmap.org/way/113958010",
       "review_scope": "TOLEDO_MOSQUE_CHURCH_NOT_TALAVERA_OR_MADRIDEJOS",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-A768309560A6",
+      "source_id": "AO-B39-LOC-SK-F3A4F0DCE391",
+      "name": "Kaplnka Svätého Leonarda",
+      "lat": 48.420389,
+      "lng": 17.375139,
+      "source_ref": "heritage:pamiatkynaslovensku:leonarda-dolany",
+      "source_url": "https://www.pamiatkynaslovensku.sk/dolany-kaplnka-sv-leonarda-a-floriana",
+      "review_scope": "PEZINOK_SAINT_LEONARD_NOT_LEVOCA_SAINT_LEONARD_OR_SEBASTIAN",
       "place_id": null
     }
   ]
