@@ -25,6 +25,11 @@ test("Seven base stages and Blessing V own the rail; the public rite stage owner
  assert.match(html,/class="cu key" aria-current="step"/);
  assert.match(runtime,/claudeBenedictionRail\(stages,i,\{esc\}\)/);
  assert.match(runtime,/aoClaudeAltarCard/);
+ assert.match(runtime,/const plateCaption=baseIndex>=0/);
+ assert.doesNotMatch(runtime,/const plateCode=/,
+  "Draft plate identifiers must never appear as published artwork metadata");
+ assert.doesNotMatch(runtime,/ordinalEn\+' stage · plate '/,
+  "The rite header must name the actual stage, not a nonexistent plate");
  assert.match(runtime,/aoClaudeExternalBlessing/);
  assert.match(runtime,/benedictionVersiclesForDate/);
  assert.match(runtime,/Stop interacting with the phone/);
