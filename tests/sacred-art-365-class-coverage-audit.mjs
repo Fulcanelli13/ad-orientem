@@ -15,9 +15,9 @@ assert.equal(j.summary.I.noCatalogueIdentityCandidate,28);
 assert.equal(j.summary.II.anyCatalogueIdentityCandidate,18);
 assert.equal(j.summary.II.sanctoralPrincipalCount,24);
 assert.equal(j.summary.II.sanctoralWithoutIdentified383Candidate,7);
-assert.equal(j.summary.III.anyCatalogueIdentityCandidate,33);
+assert.equal(j.summary.III.anyCatalogueIdentityCandidate,36);
 assert.equal(j.summary.III.sanctoralPrincipalCount,131);
-assert.equal(j.summary.III.sanctoralWithoutIdentified383Candidate,98);
+assert.equal(j.summary.III.sanctoralWithoutIdentified383Candidate,95);
 assert.equal(j.summary.III.specialSeasonalReuseRequired,34);
 assert.equal(j.summary.IV.total,71);
 assert.equal(j.summary.IV.sanctoralPrincipalCount,0);
@@ -25,7 +25,7 @@ assert.equal(j.summary.IV.marianSaturdayReuseRequired,12);
 assert.equal(j.summary.IV.specialSeasonalReuseRequired,59);
 assert.equal(j.unmatched.I.length,0);
 assert.equal(j.unmatched.II.length,58);
-assert.equal(j.unmatched.III.length,132);
+assert.equal(j.unmatched.III.length,129);
 assert.equal(j.unmatched.IV.length,71);
 function art(date){return map.get(date)?.linkedCatalogueArt.map(a=>a.title.toLowerCase())||[]}
 assert.ok(art("2026-01-17").every(t=>!t.includes("padua")),"Abbot is not Anthony of Padua");
@@ -59,10 +59,10 @@ for(const row of selected.strictExactSaintResearch){
     assert.equal(a.homepageRotationApproved,false);
   }
 }
-assert.equal(j.summary.III.additionalUnlinked856ExactSubjectDateCandidates,12);
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,45);
-assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,120);
-assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length).length,86);
+assert.equal(j.summary.III.additionalUnlinked856ExactSubjectDateCandidates,15);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,52);
+assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,113);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length).length,79);
 assert.equal(selected.partialOrExcludedGroupOrDifferentSaint.find(x=>x.date==="2026-07-10").entries.length,1);
 assert.ok(!map.get("2026-07-10").additionalAcceptedSourceLeads,"Seville Rufina is not Roman Rufina or Secunda");
 assert.ok(map.get("2026-01-20").partialOrExcludedAcceptedSourceLeads.length>=4);
@@ -96,4 +96,32 @@ for(const link of classI.records){
 assert.ok(classI.records.find(x=>x.sourceRecordId==="B11-01").status.includes("REUSE_BLOCKED"),"Tissot museum photo not app-licensed");
 assert.equal(classI.records.find(x=>x.sourceRecordId==="B18-02").physicalOriginalObjectVerified,false,"Carracci exact object unresolved");
 assert.equal(classI.records.find(x=>x.sourceRecordId==="B11-09").physicalOriginalObjectVerified,false,"Sacchi physical accession unresolved");
+const batch4=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json",import.meta.url),"utf8"));
+assert.equal(batch4.counts.newMatchedClassIIISanctoralDates,7);
+assert.equal(batch4.counts.newCanonical383MatchedDates,3);
+assert.equal(batch4.counts.newAcceptedSourceOnlyMatchedDates,3);
+assert.equal(batch4.counts.newLegacyNamedFileOnlyMatchedDates,1);
+assert.equal(batch4.counts.nowUnmatchedClassIIISanctoral,79);
+assert.equal(j.summary.III.additionalLegacyNamedFileExactSubjectDates,1);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,79);
+assert.equal(batch4.rows.length,7);
+for(const row of batch4.rows){
+  const d=map.get(row.date);
+  assert.equal(d.rank,"III");
+  assert.equal(d.observedPrincipalId,row.principalId);
+  assert.equal(d.sourceMatchingStatus,"EXACT_SAINT_FEAST_RESEARCH_MATCH_PENDING_PUBLICATION_AND_DATE_APPROVAL");
+  assert.equal(row.dateSpecificEditorialApprovalNew,false);
+  assert.equal(row.liveHomeRotationEnabled,false);
+  assert.ok(row.works.length);
+  for(const w of row.works){assert.equal(w.photoReleaseCertified,false);assert.equal(w.rotationEligible,false);}
+}
+assert.ok(art("2026-10-02").some(t=>t.includes("guardian angel")));
+assert.ok(art("2026-07-31").some(t=>t.includes("ignatius")));
+assert.ok(art("2026-10-24").some(t=>t.includes("rafael")));
+const raphael=map.get("2026-10-24").linkedCatalogueArt[0];
+assert.equal(raphael.historicalW72Score,5);
+assert.equal(raphael.editorial,"UNREVIEWED");
+assert.ok(map.get("2026-02-12").additionalLegacyNamedFileLeads[0].sourceFile.includes("Masucci"));
+assert.ok(map.get("2026-06-05").identityUncertaintyWarnings.join(" ").includes("not sure who this chap is"));
+assert.ok(map.get("2026-02-04").identityUncertaintyWarnings.join(" ").includes("same physical original"));
 console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
