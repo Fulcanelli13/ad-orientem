@@ -6,7 +6,6 @@ on:
       - research/explore-precise-sacred-subject-photo-search-20261031
     paths:
       - "data/geography/research/sacred-atlas-commons-batch-*.results.json"
-  workflow_dispatch:
 
 permissions:
   contents: write
