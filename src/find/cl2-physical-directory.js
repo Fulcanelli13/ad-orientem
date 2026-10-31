@@ -43,6 +43,14 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-1EDB76F4B57B":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-61C6D5A95E5",name:"Iglesia del Salvador",country:"ES",addressNeedle:"",placeId:null,
+  lat:39.85656,lng:-4.02675,sourceRef:"osm:way:113958010",
+  sourceUrl:"https://www.openstreetmap.org/way/113958010",
+  correctedAddress:"Plaza del Salvador / Calle Santa Úrsula 5, 45002 Toledo, Spain",
+  precision:"site",reviewScope:"TOLEDO_MOSQUE_CHURCH_NOT_TALAVERA_OR_MADRIDEJOS",
+  evidence:Object.freeze(["https://mapcarta.com/es/W113958010","https://turismo.toledo.es/recursos/museos-y-monumentos/id619-iglesia-del-salvador.html","https://www.latinmassdir.org/country/es/page/2/?area=Pamplona&order=DESC&orderby=modified&view=list"]),
+ }),
  "RG-B30F94A20F69":Object.freeze({
   sourceId:"AO-B38-LOC-BE-29F03868623",name:"Église Saint-Hubert",country:"BE",addressNeedle:"Verviers",placeId:null,
   lat:50.57716,lng:5.86643,sourceRef:"osm:way:175896158",sourceUrl:"https://www.openstreetmap.org/way/175896158",
