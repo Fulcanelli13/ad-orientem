@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 55,
+    "new_site_pins": 58,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -744,6 +744,39 @@
       "source_ref": "commons:object-location:raciborz-saint-james",
       "source_url": "https://commons.wikimedia.org/wiki/File:Ko%C5%9Bci%C3%B3%C5%82_%C5%9Bw._Jakuba_w_Raciborzu_%28wn%C4%99trze_4%29.JPG",
       "review_scope": "FILIAL_SAINT_JAMES_NOT_ASSUMPTION_PARISH_CHURCH",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-B30F94A20F69",
+      "source_id": "AO-B38-LOC-BE-29F03868623",
+      "name": "Église Saint-Hubert",
+      "lat": 50.57716,
+      "lng": 5.86643,
+      "source_ref": "osm:way:175896158",
+      "source_url": "https://www.openstreetmap.org/way/175896158",
+      "review_scope": "HEUSY_SAINT_HUBERT_NOT_SAINT_ANTOINE_HUBERT",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-C3F8A4083DC9",
+      "source_id": "AO-B38-LOC-ES-6D3B4F8F243",
+      "name": "Capilla de San Roque",
+      "lat": 42.88346,
+      "lng": -8.54177,
+      "source_ref": "independent:sacristan-san-roque-santiago",
+      "source_url": "https://sacristan.io/church/es/santiago-de-compostela/capela-de-san-roque",
+      "review_scope": "SANTIAGO_CHAPEL_NOT_SAN_ROQUE_MELIDE_OR_PONTEVEDRA",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-D1C52ADC007B",
+      "source_id": "AO-B39-LOC-IT-2275C33A8E1A",
+      "name": "Chiesa della Madonna del Popolo",
+      "lat": 45.63336,
+      "lng": 8.38364,
+      "source_ref": "osm:way:256582212",
+      "source_url": "https://www.openstreetmap.org/way/256582212",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
       "place_id": null
     }
   ]
