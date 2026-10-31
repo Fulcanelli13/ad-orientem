@@ -107,5 +107,18 @@
     "editorial_approval_is_not_photo_permission": true,
     "no_runtime_image_activated": true,
     "never_override_user_rejections": true
-  }
+  },
+  "editorialHardRejections": [
+    {
+      "artist": "Théophile Lybaert",
+      "workFamily": "Stations of the Cross",
+      "userDecision": "EXPLICIT_REJECTION_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "scope": "ALL_AD_ORIENTEM_ARTWORK_CONTEXTS",
+      "mustNotBeSuggested": true,
+      "mustNotBeAutomaticallyMatched": true,
+      "licenseDoesNotOverrideRejection": true,
+      "detailLedger": "data/prayer/artwork-editorial-20261030/stations-seven-pd-photo-source-candidates-20261031.v1.json"
+    }
+  ]
 }
