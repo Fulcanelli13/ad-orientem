@@ -1,0 +1,1548 @@
+{
+  "schema": "AO_DYK_NEXT_601_640_PITRE_INHERITED_FOLIO_BILINGUAL_RESEARCH_V1",
+  "date": "2026-10-31",
+  "status": "RESEARCH_ONLY_UNAPPROVED_UNPUBLISHED",
+  "sequence_from": 601,
+  "sequence_to": 640,
+  "previous_total": 600,
+  "staged_total": 640,
+  "facts_count": 40,
+  "source_origin": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/customs-multibook-bulk150-20261026",
+    "source_registry_paths": [
+      "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+      "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+    ],
+    "method": "40 distinct prior visually checked original-page source actions, Italian folio anchor reconciled, original images NOT newly inspected; newly drafted editorial EN/FR claims; no independent external corroboration"
+  },
+  "review_gates": {
+    "whole_bank_500_and_private_612_rescreen_pending": true,
+    "individual_english_french_editorial_approval": false,
+    "source_deep_links_qa_pending": true,
+    "publication_authorized": false,
+    "all_original_page_images_freshly_inspected": false
+  },
+  "facts": [
+    {
+      "id": "DYK-G640-P-001",
+      "sequence": 601,
+      "source_id": "PIT1900-NEW-004",
+      "source_section": "ROSALIA_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "ROSALIA_PALERMO",
+      "statement": {
+        "en": "A Palermo Saint Rosalia street-novena verse recorded by Pitrè mentioned plague reports from Malta and protection attributed to the saint.",
+        "fr": "Un couplet de neuvaine chanté dans les rues de Palerme pour sainte Rosalie, recueilli par Pitrè, évoquait la peste à Malte et la protection attribuée à la sainte."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-004",
+        "printed_page": 12,
+        "scan_pdf_page_1based": 78,
+        "italian_anchor": "malta",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-002",
+      "sequence": 602,
+      "source_id": "PIT1900-NEW-011",
+      "source_section": "ROSALIA_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "ROSALIA_PALERMO",
+      "statement": {
+        "en": "At Palermo's older Saint Rosalia festino, bareback horse races took place on the second, third and fourth days.",
+        "fr": "Lors de l'ancien festino de sainte Rosalie à Palerme, des courses de chevaux montés à cru se déroulaient les deuxième, troisième et quatrième jours."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-011",
+        "printed_page": 17,
+        "scan_pdf_page_1based": 83,
+        "italian_anchor": "secondo terzo e quarto giorno",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-003",
+      "sequence": 603,
+      "source_id": "PIT1900-NEW-013",
+      "source_section": "ROSALIA_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "ROSALIA_PALERMO",
+      "statement": {
+        "en": "In 1895, petitioners in Palermo asked for the traditional five-day Saint Rosalia festino and its spectacles to be restored.",
+        "fr": "En 1895, des pétitionnaires de Palerme demandèrent le retour des cinq journées traditionnelles du festino de sainte Rosalie et de ses spectacles."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-013",
+        "printed_page": 19,
+        "scan_pdf_page_1based": 85,
+        "italian_anchor": "1895",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-004",
+      "sequence": 604,
+      "source_id": "PIT1900-NEW-016",
+      "source_section": "ROSALIA_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "ROSALIA_PALERMO",
+      "statement": {
+        "en": "Pitrè describes Palermo Cathedral brightly illuminated for Vespers during a historic Saint Rosalia festino.",
+        "fr": "Pitrè décrit la cathédrale de Palerme vivement illuminée pour les vêpres durant un ancien festino de sainte Rosalie."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-016",
+        "printed_page": 28,
+        "scan_pdf_page_1based": 90,
+        "italian_anchor": "il duomo tutto",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-005",
+      "sequence": 605,
+      "source_id": "PIT1900-NEW-031",
+      "source_section": "COSMAS_DAMIAN_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "COSMAS_DAMIAN_PALERMO",
+      "statement": {
+        "en": "At Palermo's Saints Cosmas and Damian festival, votive offerings were moved to make space and small devotional pictures were given in exchange for alms.",
+        "fr": "Lors de la fête des saints Côme et Damien à Palerme, on déplaçait des ex-voto pour faire place et l'on remettait de petites images pieuses en échange d'aumônes."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-031",
+        "printed_page": 72,
+        "scan_pdf_page_1based": 134,
+        "italian_anchor": "tabelle tutte piu o meno simili",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-006",
+      "sequence": 606,
+      "source_id": "PIT1900-NEW-038",
+      "source_section": "COSMAS_DAMIAN_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "COSMAS_DAMIAN_PALERMO",
+      "statement": {
+        "en": "Visitors to Palermo's Saints Cosmas and Damian festivities bought seasonal first fruits at a saint-day market to take home.",
+        "fr": "Les visiteurs de la fête des saints Côme et Damien à Palerme achetaient au marché des primeurs de saison pour les rapporter chez eux."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-038",
+        "printed_page": 75,
+        "scan_pdf_page_1based": 137,
+        "italian_anchor": "primizie",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-007",
+      "sequence": 607,
+      "source_id": "PIT1900-NEW-044",
+      "source_section": "COSMAS_DAMIAN_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "COSMAS_DAMIAN_PALERMO",
+      "statement": {
+        "en": "In an older Palermo procession for Saints Cosmas and Damian, the bearers moved the portable statues at a run towards the Capuchinelle area.",
+        "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, les porteurs avançaient en courant avec les statues vers le quartier des Capuchinelle."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-044",
+        "printed_page": 79,
+        "scan_pdf_page_1based": 141,
+        "italian_anchor": "prender la rincorsa e volare verso",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-008",
+      "sequence": 608,
+      "source_id": "PIT1900-NEW-050",
+      "source_section": "COSMAS_DAMIAN_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "COSMAS_DAMIAN_PALERMO",
+      "statement": {
+        "en": "Pitrè reports a Palermo belief that children's procession water jugs had healing powers at the feast of Saints Cosmas and Damian; no formal blessing is established.",
+        "fr": "Pitrè rapporte qu'à Palerme on attribuait des vertus curatives aux cruches d'eau des enfants de la procession des saints Côme et Damien ; aucune bénédiction formelle n'est établie."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-050",
+        "printed_page": 82,
+        "scan_pdf_page_1based": 144,
+        "italian_anchor": "acqua dei nostri piccolini dopo la processione",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-009",
+      "sequence": 609,
+      "source_id": "PIT1900-NEW-053",
+      "source_section": "COSMAS_DAMIAN_PALERMO",
+      "locality": "Palermo, Sicily",
+      "occasion": "COSMAS_DAMIAN_PALERMO",
+      "statement": {
+        "en": "A historic Palermo procession for Saints Cosmas and Damian passed along the old city walls towards the Castello and the fishing communities.",
+        "fr": "Une ancienne procession des saints Côme et Damien à Palerme suivait les vieux remparts vers le Castello et les quartiers des pêcheurs."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-053",
+        "printed_page": 83,
+        "scan_pdf_page_1based": 145,
+        "italian_anchor": "castello",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-010",
+      "sequence": 610,
+      "source_id": "PIT1900-NEW-061",
+      "source_section": "ASSUMPTION_PIAZZA_ARMERINA",
+      "locality": "Piazza Armerina, Sicily",
+      "occasion": "ASSUMPTION_PIAZZA_ARMERINA",
+      "statement": {
+        "en": "An elaborate Assumption celebration at Piazza Armerina once lasted five days and included civic races and bands.",
+        "fr": "Une célébration particulièrement développée de l'Assomption à Piazza Armerina durait autrefois cinq jours, avec des courses publiques et des fanfares."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-061",
+        "printed_page": 559,
+        "scan_pdf_page_1based": 617,
+        "italian_anchor": "cinque giorni",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-011",
+      "sequence": 611,
+      "source_id": "PIT1900-NEW-063",
+      "source_section": "ASSUMPTION_PIAZZA_ARMERINA",
+      "locality": "Piazza Armerina, Sicily",
+      "occasion": "ASSUMPTION_PIAZZA_ARMERINA",
+      "statement": {
+        "en": "On the final day of Piazza Armerina's Assumption festival, a Marian banner followed confraternities and their patron-saint statues in procession.",
+        "fr": "Le dernier jour de la fête de l'Assomption à Piazza Armerina, une bannière mariale suivait les confréries et les statues de leurs saints patrons en procession."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-063",
+        "printed_page": 559,
+        "scan_pdf_page_1based": 617,
+        "italian_anchor": "il vessillo vien condotto in giro",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-012",
+      "sequence": 612,
+      "source_id": "PIT1900-NEW-065",
+      "source_section": "ASSUMPTION_PIAZZA_ARMERINA",
+      "locality": "Piazza Armerina, Sicily",
+      "occasion": "ASSUMPTION_PIAZZA_ARMERINA",
+      "statement": {
+        "en": "Pitrè records that the privilege of carrying Piazza Armerina's Marian banner passed historically from clerics to municipal jurats.",
+        "fr": "Pitrè rapporte qu'à Piazza Armerina le privilège de porter la bannière mariale passa autrefois des clercs aux jurats de la ville."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-065",
+        "printed_page": 560,
+        "scan_pdf_page_1based": 618,
+        "italian_anchor": "giurati del comune",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-013",
+      "sequence": 613,
+      "source_id": "PIT1900-NEW-066",
+      "source_section": "ASSUMPTION_PIAZZA_ARMERINA",
+      "locality": "Piazza Armerina, Sicily",
+      "occasion": "ASSUMPTION_PIAZZA_ARMERINA",
+      "statement": {
+        "en": "An older Assumption procession at Piazza Armerina included a triumphal cart carrying an ornate throne for the Marian banner.",
+        "fr": "Une ancienne procession de l'Assomption à Piazza Armerina comportait un char triomphal avec un trône orné pour la bannière mariale."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-066",
+        "printed_page": 560,
+        "scan_pdf_page_1based": 618,
+        "italian_anchor": "un carro di trionfo",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-014",
+      "sequence": 614,
+      "source_id": "PIT1900-NEW-077",
+      "source_section": "SAINT_JAMES_GRATTERI",
+      "locality": "Gratteri, Palermo, Sicily",
+      "occasion": "SAINT_JAMES_GRATTERI",
+      "statement": {
+        "en": "At Gratteri, collectors carried Saint James's image through the village's steep, difficult streets.",
+        "fr": "À Gratteri, des quêteurs portaient l'image de saint Jacques à travers les rues escarpées et difficiles du village."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-077",
+        "printed_page": 124,
+        "scan_pdf_page_1based": 186,
+        "italian_anchor": "nelle vie piu ripide",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-015",
+      "sequence": 615,
+      "source_id": "PIT1900-NEW-094",
+      "source_section": "BLESSED_SACRAMENT_GERACI",
+      "locality": "Geraci Siculo, Palermo, Sicily",
+      "occasion": "BLESSED_SACRAMENT_GERACI",
+      "statement": {
+        "en": "At Geraci's Blessed Sacrament feast, a trumpeter and band headed paired mounted riders, with the younger participants before the elders.",
+        "fr": "Lors de la fête du Saint-Sacrement à Geraci, un trompettiste et une fanfare précédaient les cavaliers en paires, les plus jeunes devant les aînés."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-094",
+        "printed_page": 128,
+        "scan_pdf_page_1based": 190,
+        "italian_anchor": "a due a due si avanzano",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-016",
+      "sequence": 616,
+      "source_id": "PIT1900-NEW-098",
+      "source_section": "BLESSED_SACRAMENT_GERACI",
+      "locality": "Geraci Siculo, Palermo, Sicily",
+      "occasion": "BLESSED_SACRAMENT_GERACI",
+      "statement": {
+        "en": "Geraci's festival riders dismounted at the cathedral to make wax offerings, fulfil their vows and seek a blessing.",
+        "fr": "À Geraci, les cavaliers de la fête descendaient de cheval à la cathédrale pour offrir de la cire, accomplir leurs vœux et demander une bénédiction."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-098",
+        "printed_page": 129,
+        "scan_pdf_page_1based": 191,
+        "italian_anchor": "sciogliere il voto offrendo",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-017",
+      "sequence": 617,
+      "source_id": "PIT1900-NEW-101",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "Pitrè distinguishes first-day and second-day public processions for the old Saint Cyrus festival at Marineo.",
+        "fr": "Pitrè distingue les processions publiques du premier et du deuxième jour de l'ancienne fête de saint Cyr à Marineo."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-101",
+        "printed_page": 133,
+        "scan_pdf_page_1based": 195,
+        "italian_anchor": "le processioni son due",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-018",
+      "sequence": 618,
+      "source_id": "PIT1900-NEW-102",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "A large first-day Saint Cyrus procession at Marineo included devotees each carrying a lit candle.",
+        "fr": "Une grande procession du premier jour de la fête de saint Cyr à Marineo réunissait des fidèles portant chacun un cierge allumé."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-102",
+        "printed_page": 133,
+        "scan_pdf_page_1based": 195,
+        "italian_anchor": "il suo cero acceso",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-019",
+      "sequence": 619,
+      "source_id": "PIT1900-NEW-105",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "At Marineo's Saint Cyrus celebration, banners for Saint Michael, the Blessed Sacrament and the Holy Souls differed in their colours and lengths.",
+        "fr": "À la fête de saint Cyr à Marineo, les bannières de saint Michel, du Saint-Sacrement et des âmes du purgatoire se distinguaient par leurs couleurs et leurs longueurs."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-105",
+        "printed_page": 133,
+        "scan_pdf_page_1based": 195,
+        "italian_anchor": "varia di colore e di lunghezza",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-020",
+      "sequence": 620,
+      "source_id": "PIT1900-NEW-106",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "Women wearing their festival dress walked barefoot in Marineo's Saint Cyrus procession, Pitrè reports.",
+        "fr": "Des femmes en habit de fête marchaient pieds nus dans la procession de saint Cyr à Marineo, rapporte Pitrè."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-106",
+        "printed_page": 133,
+        "scan_pdf_page_1based": 195,
+        "italian_anchor": "scalzi",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-021",
+      "sequence": 621,
+      "source_id": "PIT1900-NEW-108",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "Behind Saint Cyrus's processional litter at Marineo, participants repeatedly called for the saint's help in the local vernacular.",
+        "fr": "Derrière le brancard de saint Cyr à Marineo, les participants réclamaient à plusieurs reprises l'aide du saint dans la langue locale."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-108",
+        "printed_page": 135,
+        "scan_pdf_page_1based": 197,
+        "italian_anchor": "din vi salvi santii cini",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-022",
+      "sequence": 622,
+      "source_id": "PIT1900-NEW-109",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "On the second day of the Saint Cyrus festival at Marineo, a mounted company brought offerings donated during the preceding year.",
+        "fr": "Le deuxième jour de la fête de saint Cyr à Marineo, une compagnie de cavaliers apportait les offrandes données pendant l'année précédente."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-109",
+        "printed_page": 135,
+        "scan_pdf_page_1based": 197,
+        "italian_anchor": "offerte",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-023",
+      "sequence": 623,
+      "source_id": "PIT1900-NEW-113",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "A historic Saint Cyrus triumphal cart at Marineo was large enough to accommodate two musical bands and numerous participants.",
+        "fr": "Un ancien char triomphal de saint Cyr à Marineo était assez grand pour accueillir deux fanfares et de nombreux participants."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-113",
+        "printed_page": 136,
+        "scan_pdf_page_1based": 198,
+        "italian_anchor": "bande",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-024",
+      "sequence": 624,
+      "source_id": "PIT1900-NEW-115",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "Marineo's costly Saint Cyrus cart procession was used instead of the large sacred play called the Dimostranza, not alongside it.",
+        "fr": "À Marineo, la coûteuse procession du char de saint Cyr remplaçait la grande représentation sacrée appelée Dimostranza ; les deux n'avaient pas lieu ensemble."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-115",
+        "printed_page": 135,
+        "scan_pdf_page_1based": 197,
+        "italian_anchor": "carro trionfale si costruisce di tanto",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-025",
+      "sequence": 625,
+      "source_id": "PIT1900-NEW-119",
+      "source_section": "SAINT_CYRUS_MARINEO",
+      "locality": "Marineo, Palermo, Sicily",
+      "occasion": "SAINT_CYRUS_MARINEO",
+      "statement": {
+        "en": "Marineo's Saint Cyrus sacred play included mounted and walking figures representing soldiers, hermits, angels, demons, virtues and vices.",
+        "fr": "La représentation sacrée de saint Cyr à Marineo comprenait des personnages à cheval ou à pied figurant soldats, ermites, anges, démons, vertus et vices."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-NEW-119",
+        "printed_page": 137,
+        "scan_pdf_page_1based": 199,
+        "italian_anchor": "vizi",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-026",
+      "sequence": 626,
+      "source_id": "PIT1900-IT-020",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Ribera, Agrigento, Sicily",
+      "occasion": "St Joseph, 19 March",
+      "statement": {
+        "en": "At Ribera, Saint Joseph's statue was carried through the town with the towering laurel-covered stràgula following behind.",
+        "fr": "À Ribera, la statue de saint Joseph parcourait la ville en procession, suivie de la haute stràgula garnie de laurier."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-020",
+        "printed_page": 447,
+        "scan_pdf_page_1based": 505,
+        "italian_anchor": "processione della statua di S.",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-027",
+      "sequence": 627,
+      "source_id": "PIT1900-IT-046",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Santa Croce Camerina, Ragusa, Sicily",
+      "occasion": "St Joseph, 19 March",
+      "statement": {
+        "en": "At Santa Croce Camerina, hospitality at the Saint Joseph votive house extended beyond the three ceremonial guests to other poor visitors.",
+        "fr": "À Santa Croce Camerina, l'hospitalité de la maison votive de saint Joseph s'étendait au-delà des trois convives symboliques à d'autres pauvres visiteurs."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-046",
+        "printed_page": 452,
+        "scan_pdf_page_1based": 510,
+        "italian_anchor": "servendo i poveri venuti",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-028",
+      "sequence": 628,
+      "source_id": "PIT1900-IT-056",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Catania, Sicily",
+      "occasion": "St Agatha, February",
+      "statement": {
+        "en": "For Saint Agatha's feast in Catania, the guilds' large processional candle structures were taken to the homes of their members.",
+        "fr": "Pour la fête de sainte Agathe à Catane, les grandes structures processionnelles des corporations, appelées candelore, étaient portées aux maisons de leurs membres."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-056",
+        "printed_page": 220,
+        "scan_pdf_page_1based": 278,
+        "italian_anchor": "giro dei vari membri",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-029",
+      "sequence": 629,
+      "source_id": "PIT1900-IT-059",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Catania, Sicily",
+      "occasion": "St Agatha, February",
+      "statement": {
+        "en": "Pitrè records Catania's Saint Agatha candelore arranged by the cathedral columns before or after the procession.",
+        "fr": "Pitrè décrit les candelore de sainte Agathe disposées près des colonnes de la cathédrale de Catane avant ou après la procession."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-059",
+        "printed_page": 222,
+        "scan_pdf_page_1based": 280,
+        "italian_anchor": "prima e dopo entro il Duomo, lungo i pilastri",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-030",
+      "sequence": 630,
+      "source_id": "PIT1900-IT-061",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Catania, Sicily",
+      "occasion": "St Agatha, February",
+      "statement": {
+        "en": "Torchlit groups at Catania Cathedral sang the local partiti hymns for Saint Agatha during her feast.",
+        "fr": "Des groupes éclairés aux flambeaux chantaient à la cathédrale de Catane les hymnes locaux appelés partiti en l'honneur de sainte Agathe."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-061",
+        "printed_page": 222,
+        "scan_pdf_page_1based": 280,
+        "italian_anchor": "preceduti da fiaccole",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-031",
+      "sequence": 631,
+      "source_id": "PIT1900-IT-063",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Catania, Sicily",
+      "occasion": "St Agatha, February",
+      "statement": {
+        "en": "In Catania's Saint Agatha devotion, some participants wore a white sacco with a black velvet cap, white gloves and a kerchief.",
+        "fr": "Pour la dévotion à sainte Agathe à Catane, certains participants portaient un sacco blanc, un bonnet de velours noir, des gants blancs et un mouchoir."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-063",
+        "printed_page": 225,
+        "scan_pdf_page_1based": 283,
+        "italian_anchor": "sopravveste bianca detto sacco",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-032",
+      "sequence": 632,
+      "source_id": "PIT1900-IT-070",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Catania, Sicily",
+      "occasion": "St Agatha, February",
+      "statement": {
+        "en": "At Saint Agatha's feast in Catania, her reliquary was carried by torchlight through Porta Uzeda before returning to the cathedral.",
+        "fr": "À Catane, pendant la fête de sainte Agathe, le reliquaire était porté aux flambeaux par la Porta Uzeda avant son retour à la cathédrale."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-070",
+        "printed_page": 230,
+        "scan_pdf_page_1based": 288,
+        "italian_anchor": "uscendo da porta Uzeda",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-033",
+      "sequence": 633,
+      "source_id": "PIT1900-IT-076",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Syracuse, Sicily",
+      "occasion": "St Lucy, 13 December",
+      "statement": {
+        "en": "At Syracuse on Saint Lucy's feast, her reliquary was moved from its chapel niche to the cathedral high altar on 13 December.",
+        "fr": "À Syracuse, pour la Sainte-Lucie, le reliquaire était transféré de sa niche de chapelle au maître-autel de la cathédrale le 13 décembre."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-076",
+        "printed_page": 275,
+        "scan_pdf_page_1based": 333,
+        "italian_anchor": "il trasporto delle reliquie",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-034",
+      "sequence": 634,
+      "source_id": "PIT1900-IT-078",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Syracuse, Sicily",
+      "occasion": "St Lucy, December",
+      "statement": {
+        "en": "A silver image of Saint Lucy was carried from Syracuse Cathedral to the suburban church dedicated to her in a historic procession.",
+        "fr": "Une image d'argent de sainte Lucie était portée en procession de la cathédrale de Syracuse jusqu'à l'église qui lui était dédiée hors du centre."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-078",
+        "printed_page": 275,
+        "scan_pdf_page_1based": 333,
+        "italian_anchor": "in processione V argenteo simulacro",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-035",
+      "sequence": 635,
+      "source_id": "PIT1900-IT-085",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Melilli, Syracuse, Sicily",
+      "occasion": "St Sebastian, May",
+      "statement": {
+        "en": "At Melilli, Saint Sebastian's statue showed the young martyr bound to a pillar and was carried through town on a fercolo.",
+        "fr": "À Melilli, la statue de saint Sébastien montrait le jeune martyr attaché à une colonne et parcourait la ville sur un fercolo."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-085",
+        "printed_page": 286,
+        "scan_pdf_page_1based": 344,
+        "italian_anchor": "Questa immagine con la sua splendida barella",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-036",
+      "sequence": 636,
+      "source_id": "PIT1900-IT-090",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Melilli, Syracuse, Sicily",
+      "occasion": "St Sebastian, May",
+      "statement": {
+        "en": "An old Saint Sebastian feast at Melilli was accompanied by a market for livestock and textiles.",
+        "fr": "Une ancienne fête de saint Sébastien à Melilli s'accompagnait d'un marché aux animaux et aux étoffes."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-090",
+        "printed_page": 290,
+        "scan_pdf_page_1based": 348,
+        "italian_anchor": "fiera degli animali",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-037",
+      "sequence": 637,
+      "source_id": "PIT1900-IT-093",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Palazzolo Acreide, Syracuse, Sicily",
+      "occasion": "St Paul Apostle, patronal feast",
+      "statement": {
+        "en": "Pilgrims from neighbouring towns joined the procession of Saint Paul's image at Palazzolo Acreide.",
+        "fr": "Des pèlerins des villes voisines rejoignaient la procession de l'image de saint Paul à Palazzolo Acreide."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-093",
+        "printed_page": 355,
+        "scan_pdf_page_1based": 413,
+        "italian_anchor": "lo imminente apparire della processione",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-038",
+      "sequence": 638,
+      "source_id": "PIT1900-IT-104",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Palazzolo Acreide, Syracuse, Sicily",
+      "occasion": "St Paul Apostle, patronal feast",
+      "statement": {
+        "en": "At Palazzolo Acreide, the image of Saint Paul was carried with a sword and serpent among the saint's customary emblems.",
+        "fr": "À Palazzolo Acreide, l'image de saint Paul était portée avec une épée et un serpent parmi les emblèmes de sa fête."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-104",
+        "printed_page": 359,
+        "scan_pdf_page_1based": 417,
+        "italian_anchor": "una spada rivolta all'ingiù",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-039",
+      "sequence": 639,
+      "source_id": "PIT1900-IT-117",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Agrigento (Girgenti), Sicily",
+      "occasion": "St Calogero, patronal feast",
+      "statement": {
+        "en": "For Saint Calogero at Agrigento, devotees made a month of pilgrimages to the saint's church near the town entrance.",
+        "fr": "Pour saint Calogero à Agrigente, des fidèles accomplissaient pendant un mois des pèlerinages à l'église du saint, près de l'entrée de la ville."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-117",
+        "printed_page": 381,
+        "scan_pdf_page_1based": 439,
+        "italian_anchor": "alla sua chiesa, ad oriente",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-G640-P-040",
+      "sequence": 640,
+      "source_id": "PIT1900-IT-118",
+      "source_section": "PITRE_1900_PREVIOUSLY_VERIFIED",
+      "locality": "Agrigento (Girgenti), Sicily",
+      "occasion": "St Calogero, patronal feast",
+      "statement": {
+        "en": "During Agrigento's Saint Calogero festivities, the smaller image of the saint was placed on a larger fercolo for a procession between churches.",
+        "fr": "Pendant la fête de saint Calogero à Agrigente, la petite image du saint était installée sur un grand fercolo pour une procession d'église en église."
+      },
+      "source": {
+        "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_path": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+        "source_record_id": "PIT1900-IT-118",
+        "printed_page": 382,
+        "scan_pdf_page_1based": 440,
+        "italian_anchor": "simulacro su d'una piccola bara",
+        "source_witness": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+        "original_source_page_image_checked_in_previous_research": true,
+        "fresh_image_checked_in_this_tranche": false,
+        "original_italian_text_locator_matched_in_prior_source_ledger": true,
+        "independent_historical_attestation": false
+      },
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true
+      },
+      "review": {
+        "source_ledger_reconciled": true,
+        "english_french_final_signoff": false,
+        "whole_bank_semantic_uniqueness_final": false,
+        "private_612_rescreen_pending": true,
+        "publication_authorized": false
+      }
+    }
+  ]
+}
