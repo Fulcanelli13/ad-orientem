@@ -131,7 +131,13 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
     let opened=false;
-    if(receipt?.navigation&&typeof api.restoreHandoff==="function"){
+    if(receipt?.rosary&&typeof api.restoreRosaryAppBackHandoff==="function"){
+      try{opened=api.restoreRosaryAppBackHandoff(receipt.rosary)===true}catch{opened=false}
+    }
+    if(!opened&&receipt?.novena&&typeof win?.AO_NOVENAS_V3?.restoreAppBackHandoff==="function"){
+      try{opened=win.AO_NOVENAS_V3.restoreAppBackHandoff(receipt.novena)===true}catch{opened=false}
+    }
+    if(!opened&&receipt?.navigation&&typeof api.restoreHandoff==="function"){
       try{opened=api.restoreHandoff(receipt.navigation)===true}catch{opened=false}
     }
     if(!opened){
@@ -144,7 +150,8 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     opened=true;
     if(!opened)return false;
     stamp(win);
-    if(receipt&&opened&&root(win)?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView===receipt.navigation?.view)
+    if(receipt&&opened&&root(win)?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView===
+      (receipt.novena?"novenas":receipt.navigation?.view))
       restoreScroll(receipt.scroll);
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;
@@ -153,17 +160,30 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   function close({preserveForBack=false}={}){
     const api=donor(win);
     if(typeof api?.close!=="function")return false;
-    // The app shell resets hidden owners before entering a new destination.
-    // Do not erase a receipt captured on the earlier Prayer -> Formation hop.
+    // The Rosary is the separate canonical PrayerBook sheet; Prayer's mount
+    // is already closed. Capture and suspend that source owner explicitly.
+    const rosary=preserveForBack?api.captureRosaryAppBackHandoff?.()??null:null;
+    if(rosary){
+      backReceipt={rosary};
+      return api.suspendRosaryAppBackHandoff?.()===true;
+    }
+    // Home/fresh entry must not leave an old Rosary sheet over another domain.
+    api.suspendRosaryAppBackHandoff?.();
+    // A hard-Home reset can happen again while navigating Back; do not erase
+    // the receipt captured on the original Prayer -> Formation transition.
     if(!root(win)?.classList?.contains("open"))return true;
     let captured=null;
-    if(preserveForBack&&typeof api.captureAppBackHandoff==="function"){
-      const navigation=api.captureAppBackHandoff();
-      if(navigation)captured={navigation,scroll:snapshotScroll()};
+    if(preserveForBack){
+      const novena=win?.AO_NOVENAS_V3?.captureAppBackHandoff?.();
+      if(novena)captured={novena,scroll:snapshotScroll()};
+      else if(typeof api.captureAppBackHandoff==="function"){
+        const navigation=api.captureAppBackHandoff();
+        if(navigation)captured={navigation,scroll:snapshotScroll()};
+      }
     }
     backReceipt=captured;
     if(captured)api.close({silent:true,preserve:true});
-    else if(preserveForBack)api.close({silent:true}); // clear private state without triggering a legacy return route
+    else if(preserveForBack)api.close({silent:true}); // clear private state without a legacy return route
     else api.close();
     return true;
   }
@@ -181,7 +201,8 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
       donorAvailable:typeof donor(win)?.open==="function",
       routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
       visibleOwner:node?.dataset?.aoPrayOwner??null,
-      open:Boolean(node?.classList?.contains?.("open")),
+      open:Boolean(node?.classList?.contains?.("open")||
+        win?.document?.querySelector?.('#aoPrayerBookRoot.open[data-ao-rosary-active-root="true"]')),
       returnAvailable:Boolean(backReceipt),
       donorState,
       presentationOwner:"AO_PRAY_V435930",
