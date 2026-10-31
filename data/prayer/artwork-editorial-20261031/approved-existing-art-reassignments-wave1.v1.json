@@ -18,10 +18,11 @@
     "directThereseSelection": 1,
     "tiepoloPaintings": 14,
     "mysticLambThematicBenediction": 1,
-    "totalArtRelationships": 68,
-    "newlyCoveredSlots": 60,
-    "coveredAfterWave": 220,
-    "stillWithoutApprovedArtAssignment": 47
+    "totalArtRelationships": 74,
+    "newlyCoveredSlots": 66,
+    "coveredAfterWave": 226,
+    "stillWithoutApprovedArtAssignment": 41,
+    "additionalPreciseReuse": 6
   },
   "invariants": [
     "Do not reactivate excluded/rejected artwork (Lybaert, Ugolino); do not assume existing source candidates were approved",
@@ -923,6 +924,75 @@
       "assetPath": "assets/prayer/user-approved/benediction-mystic-lamb.webp",
       "imagePublication": "ASSET_ON_PR_2128_UNMERGED",
       "displayedStage": "adoration"
+    },
+    {
+      "targetSlot": "COV-foundations_prayer_of_adoration",
+      "artworkId": "CANONICAL::W07-014",
+      "artworkTitle": "The Incredulity of Saint Thomas",
+      "artist": "Caravaggio",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg",
+      "sourceApprovedSlot": "STG-pray.five_wounds-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "relationship": "EXACT_GOSPEL_UTTERANCE_JOHN_20_28",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "REQUIRES_NATIVE_QA"
+    },
+    {
+      "targetSlot": "COV-dead_eternal_rest_singular",
+      "artworkId": "CANONICAL::met-437542",
+      "artworkTitle": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Peter Paul Rubens",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "sourceApprovedSlot": "COV-foundations_eternal_rest",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "relationship": "SAME_ETERNAL_REST_INTENTION_THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "REQUIRES_NATIVE_QA"
+    },
+    {
+      "targetSlot": "COV-prayer.communion",
+      "artworkTitle": "La Petite Cène (The Small Last Supper)",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
+      "sourceApprovedSlot": "USER_PREVIOUS_APPROVAL_CHAMPAIGNE_PETITE_CENE",
+      "sourceApprovalStatus": "USER_PREFERENCE_AND_PRIOR_SCENE_APPROVAL",
+      "relationship": "EXACT_EUCHARISTIC_INSTITUTION_THEMATIC_COMMUNION",
+      "approvalClass": "INHERIT_USER_PREFERRED_SCENE_PAINTING",
+      "photoRights": "PD-self uploader Tangopaso; 2816x2112",
+      "imagePublication": "NATIVE_FRAME_CROP_QA_PENDING"
+    },
+    {
+      "targetSlot": "COV-weekday_magnificat",
+      "artworkTitle": "The Visitation (1643–48)",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+      "sourceApprovedSlot": "STG-pray.rosary-03_PRIOR_SCENE_APPROVAL",
+      "sourceApprovalStatus": "USER_PREVIOUSLY_APPROVED_VISITATION_SCENE",
+      "relationship": "EXACT_BIBLICAL_MOMENT_MAGNIFICAT",
+      "approvalClass": "REUSE_PREVIOUSLY_APPROVED_VISITATION",
+      "photoRights": "Commons PD-Art, Princeton public-domain open image; native QA pending",
+      "imagePublication": "NATIVE_QA_PENDING"
+    },
+    {
+      "targetSlot": "STG-pray.adoration-02",
+      "artworkTitle": "The Adoration of the Mystic Lamb",
+      "artist": "Jan and Hubert van Eyck",
+      "sourceApprovedSlot": "STG-pray.benediction-03",
+      "sourceApprovalStatus": "DIRECT_USER_APPROVED_THEMATIC_ADORATION",
+      "relationship": "HEAVENLY_ADORATION_NOT_LITERAL_EXPOSITION",
+      "approvalClass": "REUSE_NEW_USER_SELECTION_IN_MATCHING_DEVOTION",
+      "assetPath": "assets/prayer/user-approved/benediction-mystic-lamb.webp",
+      "imagePublication": "PR_2128_ASSET_UNMERGED_NATIVE_PHONE_QA_PENDING"
+    },
+    {
+      "targetSlot": "STG-pray.seven_words-06",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Giovanni Antonio Bazzi)",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "relationship": "CONTEXT_CRUCIFIXION_NOT_ACTUAL_SPOKEN_WORDS",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NATIVE_QA_PENDING"
     }
   ],
   "remainingWithoutApprovedArt": [
@@ -1029,12 +1099,6 @@
       "existingCandidates": 5
     },
     {
-      "slot": "COV-foundations_prayer_of_adoration",
-      "door": "D2 Essential Prayers",
-      "label": "Card vignette",
-      "existingCandidates": 3
-    },
-    {
       "slot": "COV-novena.st_anthony_nine_tuesdays",
       "door": "D4 Novenas & Journeys",
       "label": "Cover",
@@ -1077,12 +1141,6 @@
       "existingCandidates": 4
     },
     {
-      "slot": "STG-pray.adoration-02",
-      "door": "D5 Holy Eucharist",
-      "label": "In stillness (exposition)",
-      "existingCandidates": 2
-    },
-    {
       "slot": "STG-pray.adoration.four_ends-02",
       "door": "D5 Holy Eucharist",
       "label": "Thanksgiving",
@@ -1101,27 +1159,9 @@
       "existingCandidates": 1
     },
     {
-      "slot": "COV-prayer.communion",
-      "door": "D5 Holy Eucharist",
-      "label": "Cover",
-      "existingCandidates": 8
-    },
-    {
       "slot": "STG-prayer.communion-02",
       "door": "D5 Holy Eucharist",
       "label": "After Communion",
-      "existingCandidates": 5
-    },
-    {
-      "slot": "STG-pray.seven_words-06",
-      "door": "D6 Our Lord",
-      "label": "'It is consummated'",
-      "existingCandidates": 4
-    },
-    {
-      "slot": "COV-weekday_magnificat",
-      "door": "D7 Our Lady",
-      "label": "Card vignette",
       "existingCandidates": 5
     },
     {
@@ -1141,12 +1181,6 @@
       "door": "D9 Life & Intentions",
       "label": "Card vignette",
       "existingCandidates": 1
-    },
-    {
-      "slot": "COV-dead_eternal_rest_singular",
-      "door": "D9 Life & Intentions",
-      "label": "Card vignette",
-      "existingCandidates": 3
     },
     {
       "slot": "STG-pray.penitential_psalms-01",
@@ -1291,11 +1325,6 @@
         "slot": "DOOR-D6",
         "label": "Our Lord",
         "candidateCount": 10
-      },
-      {
-        "slot": "STG-pray.seven_words-06",
-        "label": "'It is consummated'",
-        "candidateCount": 4
       }
     ],
     "D7 Our Lady": [
@@ -1303,11 +1332,6 @@
         "slot": "DOOR-D7",
         "label": "Our Lady",
         "candidateCount": 12
-      },
-      {
-        "slot": "COV-weekday_magnificat",
-        "label": "Card vignette",
-        "candidateCount": 5
       }
     ],
     "D9 Life & Intentions": [
@@ -1320,11 +1344,6 @@
         "slot": "COV-church_prayer_for_pope",
         "label": "Card vignette",
         "candidateCount": 1
-      },
-      {
-        "slot": "COV-dead_eternal_rest_singular",
-        "label": "Card vignette",
-        "candidateCount": 3
       },
       {
         "slot": "STG-pray.penitential_psalms-01",
@@ -1377,11 +1396,6 @@
         "slot": "COV-foundations_act_of_hope",
         "label": "Card vignette",
         "candidateCount": 5
-      },
-      {
-        "slot": "COV-foundations_prayer_of_adoration",
-        "label": "Card vignette",
-        "candidateCount": 3
       }
     ],
     "D5 Holy Eucharist": [
@@ -1416,11 +1430,6 @@
         "candidateCount": 4
       },
       {
-        "slot": "STG-pray.adoration-02",
-        "label": "In stillness (exposition)",
-        "candidateCount": 2
-      },
-      {
         "slot": "STG-pray.adoration.four_ends-02",
         "label": "Thanksgiving",
         "candidateCount": 2
@@ -1434,11 +1443,6 @@
         "slot": "STG-pray.benediction-02",
         "label": "Tantum Ergo · incensation",
         "candidateCount": 1
-      },
-      {
-        "slot": "COV-prayer.communion",
-        "label": "Cover",
-        "candidateCount": 8
       },
       {
         "slot": "STG-prayer.communion-02",
