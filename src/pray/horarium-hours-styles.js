@@ -72,6 +72,28 @@ export const HORARIUM_HOURS_STYLES=String.raw`
   padding-bottom:15px;margin-bottom:13px;
   border-bottom:1px solid var(--ao-hours-rule,var(--liturgical-border,rgba(213,181,126,.35)));
 }
+#aoPray435930 .aoP435930HoursLeonine .aoP435930PrayerHead{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+#aoPray435930 .aoP435930HoursLeonine .aoHoursLeonineLang{
+  min-height:44px;min-width:62px;padding:9px 12px;
+  border:1px solid var(--liturgical-border,rgba(213,181,126,.35));
+  border-radius:7px;background:transparent;color:var(--liturgical,#d8bd7d);
+  font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoP435930HoursLeonine .aoHoursLeonineLang:focus-visible{
+  outline:2px solid var(--liturgical,#d8bd7d);outline-offset:2px;
+}
+#aoPray435930 .aoP435930HoursLeonine .aoHoursLeonineFaces [hidden]{display:none!important}
+#aoPray435930 .aoP435930HoursLeonine .aoHoursLeonineSection{
+  max-width:58ch;margin:0 auto 25px;padding:0 0 18px;
+  border-bottom:1px solid var(--liturgical-border,rgba(213,181,126,.15));
+}
+#aoPray435930 .aoP435930HoursLeonine .aoHoursLeonineSection h4{
+  margin:0 0 16px;color:var(--liturgical,#d8bd7d);
+  font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.065em;
+}
 #aoPray435930 .aoP435930HoursLeonine .aoHoursLeonineParagraph{
   display:block;margin:0 0 clamp(18px,3.5vh,28px);
   font:400 clamp(18px,4.6vw,22px)/1.72 var(--ao-font-liturgical,Georgia,serif);
