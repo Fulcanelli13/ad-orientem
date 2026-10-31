@@ -124,13 +124,9 @@ export function auditM05GabcRecord({record,cueById=new Map(),aspergesFormulas=nu
  * M05 research record satisfies that requirement; the lack of such a
  * registry is intentional, not a reason to expose an unapproved score.
  */
-export function permittedPublicGregorianScore(sourceScreen,approvalRecord){
- if(!sourceScreen||sourceScreen.textParity!=="PINNED_TEXT_MATCHES_GABC"||
-    sourceScreen.facsimileMusicVerification!=="VERIFIED"||
-    approvalRecord?.approved!==true||
-    approvalRecord?.sourceId!==sourceScreen.sourceId||
-    approvalRecord?.userEditorialDecision!=="APPROVED"||
-    approvalRecord?.printedEditionVerified!==true||
-    approvalRecord?.approvedRights!=="GREGOBASE_CC0")return null;
- return freeze({sourceId:sourceScreen.sourceId,release:"SOURCE_AND_EDITORIAL_APPROVED"});
+export function permittedPublicGregorianScore(_sourceScreen,_approvalRecord){
+ // The repo has no trusted, user-approved, pinned publication manifest for
+ // this NEW collection. Caller-provided booleans are not approval evidence.
+ // A later, separately tested approval adapter must replace this hold.
+ return null;
 }
