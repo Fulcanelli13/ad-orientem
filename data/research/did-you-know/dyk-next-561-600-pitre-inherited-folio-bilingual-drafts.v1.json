@@ -989,8 +989,8 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "occasion": "St Paul Apostle, annual patronal feast",
       "statement": {
-        "en": "At Palazzolo Acreide's Saint Paul festival, live snakes were also displayed on trays decorated with coloured ribbons in the procession.",
-        "fr": "À la fête de saint Paul de Palazzolo Acreide, des serpents vivants étaient également présentés en procession sur des plateaux garnis de rubans colorés."
+        "en": "Pitrè also describes ribbon-decorated trays carried aloft at Palazzolo Acreide, with actual living reptiles resting on them among the festival offerings.",
+        "fr": "Pitrè décrit aussi à Palazzolo Acreide des plateaux ornés de rubans portés bien haut, sur lesquels reposaient de véritables reptiles vivants parmi les offrandes de fête."
       },
       "source": {
         "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
@@ -1013,7 +1013,8 @@
         "final_en": false,
         "final_fr": false,
         "semantic_against_existing_corpus_pending": true,
-        "publication_authorized": false
+        "publication_authorized": false,
+        "semantic_duplicate_review_pending": true
       }
     },
     {
@@ -1449,6 +1450,9 @@
     "description": "Reword familiar Holy Family and St Paul nouns to focus unique actions; one source replacement where duplicated",
     "second_pass_rewrites": [
       "DYK-G600-P-011"
+    ],
+    "internal_overlap_wording_fix": [
+      "DYK-G600-P-029"
     ]
   }
 }
