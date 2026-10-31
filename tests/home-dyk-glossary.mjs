@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {HOME_DYK_GLOSSARY_IDS,homeDidYouKnowSelect,homeDidYouKnowMarkup,hydrateHomeDidYouKnow} from "../src/home/did-you-know-glossary.js";
+import {HOME_DYK_GLOSSARY_IDS,homeDidYouKnowSelect,homeDidYouKnowMarkup,hydrateHomeDidYouKnow,HOME_DYK_GLOSSARY_FACTS} from "../src/home/did-you-know-glossary.js";
 
 const document=JSON.parse(readFileSync(new URL("../data/glossary/concepts-151-300.v1.json",import.meta.url),"utf8"));
 assert.equal(document.schema,"GLOSSARY_CONCEPTS_SOT_V1");
@@ -18,6 +18,17 @@ for(let day=1;day<=31;day++){
   chosen.add(entry.id);
 }
 assert.equal(chosen.size,6,"Date-based preview should reach all six source-backed Glossary entries");
+assert.deepEqual(Object.keys(HOME_DYK_GLOSSARY_FACTS).sort(),[...HOME_DYK_GLOSSARY_IDS].sort(),
+  "Every released Home preview needs explicit edited fact copy");
+for(const id of HOME_DYK_GLOSSARY_IDS){
+  const entry=document.entries.find(x=>x.id===id);
+  for(const language of ["en","fr"]){
+    const fact=HOME_DYK_GLOSSARY_FACTS[id][language];
+    assert.ok(fact?.length>=60&&fact.length<=190, id+" "+language+" needs a readable substantial fact");
+    assert.notEqual(fact,entry.short_definition[language],"Never display the glossary definition");
+    assert.notEqual(fact,entry.explanation[language],"Editorial copy should be a digest, not a pasted glossary paragraph");
+  }
+}
 assert.equal(homeDidYouKnowSelect([], "2026-10-30"),null,"Unknown source must fail closed");
 const selected=homeDidYouKnowSelect(document.entries,"2026-10-31");
 assert.equal(homeDidYouKnowSelect(document.entries.map(e=>e.id!==selected.id?e:{...e,explanation:{en:"",fr:""}}),"2026-10-31"),null,
@@ -29,14 +40,14 @@ const root={querySelector:k=>k===".homeScreen [data-home-dyk-open]"?button:null}
 const win={AO_RUNTIME_V8:{store:{getState:()=>({selectedDate:"2026-10-31"})}},fetch:async()=>({ok:true,json:async()=>document})};
 assert.equal(hydrateHomeDidYouKnow(root,win),true);
 await new Promise(resolve=>setImmediate(resolve));
-assert.equal(elements["[data-home-dyk-fact]"].textContent,selected.explanation.en,"Show the observation, not the definition");
+assert.equal(elements["[data-home-dyk-fact]"].textContent,HOME_DYK_GLOSSARY_FACTS[selected.id].en,"Show the edited bilingual discovery, not a definition");
 assert.notEqual(elements["[data-home-dyk-fact]"].textContent,selected.short_definition.en);
 assert.equal(elements["[data-home-dyk-title]"].textContent,selected.labels.en);
 assert.equal(button.disabled,false);
 homeNode.dataset.homeLanguage="fr";
 assert.equal(hydrateHomeDidYouKnow(root,win),true);
 await new Promise(resolve=>setImmediate(resolve));
-assert.equal(elements["[data-home-dyk-fact]"].textContent,selected.explanation.fr,"Use the matching French observation");
+assert.equal(elements["[data-home-dyk-fact]"].textContent,HOME_DYK_GLOSSARY_FACTS[selected.id].fr,"Use the edited French discovery");
 assert.notEqual(elements["[data-home-dyk-fact]"].textContent,selected.short_definition.fr);
 assert.match(homeDidYouKnowMarkup("en"),/DID YOU KNOW\?/);
 assert.match(homeDidYouKnowMarkup("fr"),/LE SAVIEZ-VOUS \?/);
