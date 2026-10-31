@@ -8,6 +8,7 @@ on:
       - 'data/calendar/sacred-art-2026-museum-multiwork-match-batch2.v1.json'
       - 'data/calendar/sacred-art-2026-classi-selected-museum-object-match-batch3.v1.json'
       - 'data/calendar/sacred-art-2026-existing-source-matches-batch4.v1.json'
+      - 'data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json'
       - 'tests/sacred-art-365-class-coverage-audit.mjs'
       - '.github/workflows/ao-sacred-art-365-coverage.yml'
   workflow_dispatch:
