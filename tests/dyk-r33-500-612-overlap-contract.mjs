@@ -1,0 +1,40 @@
+// Stage-only editorial review; never publishes DYK source candidates.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const dir="data/research/did-you-know/";
+const read=f=>JSON.parse(readFileSync(dir+f,"utf8"));
+const original=read("dyk-500-composed-research-master-index.v1.json");
+const sample=read("dyk-r50-corrected-50-record-review-edition.v1.json");
+const first=read("dyk-r50-sample-remediation-and-weiser-primary-source-checks.v1.json");
+const outside=read("dyk-r33-outside-sample-three-overlap-resolution.v1.json");
+const cross=read("dyk-r50-source-and-private-612-crossbank-summary.v1.json");
+const ids=new Set(original.rows.map(x=>x.id));
+assert.equal(ids.size,500);
+assert.equal(sample.sample.length,50);
+assert.equal(first.revisions.length,23);
+assert.equal(first.retired_from_eligible_review.length,1);
+assert.equal(outside.retirement_and_replacement.length,2);
+assert.equal(outside.existing_candidate_adjustments.length,1);
+const retired=[...first.retired_from_eligible_review.map(x=>x.id),...outside.retirement_and_replacement.map(x=>x.retire_id)];
+const added=[first.replacement,...outside.retirement_and_replacement.map(x=>x.replacement)];
+assert.equal(new Set(retired).size,3);
+assert.equal(new Set(added.map(x=>x.id)).size,3);
+for(const id of retired)assert.ok(ids.delete(id),"Retired ID not in archive: "+id);
+for(const a of added){
+ assert.ok(!ids.has(a.id),"Replacement ID collision "+a.id);
+ ids.add(a.id);
+ assert.ok(a.statement.en.length>40&&a.statement.fr.length>40);
+ assert.equal(a.publication_authorized,false);
+ assert.ok(a.source?.printed_pages?.length>0);
+}
+assert.equal(ids.size,500);
+assert.ok(sample.sample.every(x=>ids.has(x.id)&&x.eligible_for_automatic_publication===false));
+assert.ok(outside.existing_candidate_adjustments.every(x=>ids.has(x.id)&&!sample.sample.some(y=>y.id===x.id)));
+assert.equal(cross.private_612_lexical_audit.exact_english_collision_count,0);
+assert.equal(cross.private_612_lexical_audit.exact_french_collision_count,0);
+assert.equal(cross.private_612_lexical_audit.exact_source_id_collision_count,0);
+assert.equal(cross.private_612_lexical_audit.above_025_lexical_overlap_count,0);
+assert.equal(cross.private_612_lexical_audit.above_035_lexical_overlap_count,0);
+assert.equal(cross.release.all_500_automatically_editorial_approved,false);
+assert.equal(cross.release.public_h7_published_new_facts,0);
+console.log("PASS R33 research review: 500 effective candidates; 3 transparent retirements and replacements; zero exact or >=25% lexical private collisions; H7 unpublished");
