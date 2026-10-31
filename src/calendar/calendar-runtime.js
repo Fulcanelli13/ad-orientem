@@ -1602,7 +1602,7 @@ function paint(){
       input.value=previousCustomsSearch;
       const query=normaliseCustomSearch(previousCustomsSearch);
       for(const row of body.querySelectorAll("[data-cal-custom-item]"))
-        row.hidden=Boolean(query)&&!row.dataset.calCustomTerms?.includes(query);
+        row.hidden=!calendarCustomSearchMatches(row.dataset.calCustomTerms||"",query);
       for(const group of body.querySelectorAll("[data-cal-custom-year-group]"))
         group.hidden=![...group.querySelectorAll("[data-cal-custom-item]")].some(row=>!row.hidden);
     }
