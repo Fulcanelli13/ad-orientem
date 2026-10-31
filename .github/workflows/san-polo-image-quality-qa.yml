@@ -1,0 +1,30 @@
+name: San Polo Stations — read-only image diagnostics
+
+on:
+  push:
+    branches:
+      - research/stations-san-polo-oil-paintings-20261031
+    paths:
+      - 'scripts/san_polo_image_quality_qa.py'
+      - '.github/workflows/san-polo-image-quality-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-archived-14:
+    if: github.ref == 'refs/heads/research/stations-san-polo-oil-paintings-20261031'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install locked image diagnostics dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Run byte-verifying, no-write image diagnostics for all fourteen oils
+        run: python scripts/san_polo_image_quality_qa.py
+      - name: Validate preexisting archive integrity and unpublished release flags
+        run: node tests/prayer-san-polo-oil-archive.mjs
