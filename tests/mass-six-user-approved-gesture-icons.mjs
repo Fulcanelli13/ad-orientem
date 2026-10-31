@@ -79,4 +79,34 @@ for(const [cueId,label] of [
 assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0001",curated65FinalArt:true,
  priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,
  "canon:priest.position.foot");
+// Each of the five art-correction briefs is a source-locked, review-only
+// description. A written brief is NEVER authorization to activate an SVG.
+const artBriefs=json("../data/mass/gesture-art-review-five-source-specs-20261031.v1.json");
+assert.equal(artBriefs.schema,"ao-mass-five-priest-gesture-art-review-v1");
+assert.equal(artBriefs.status,"SOURCE_GROUNDED_DRAWING_BRIEFS_ONLY_NOT_PRODUCTION_ART");
+assert.equal(artBriefs.counts.drawingBriefs,5);
+assert.equal(artBriefs.counts.newArtworkApproved,0);
+assert.equal(artBriefs.counts.productionBindingsAdded,0);
+assert.equal(artBriefs.illustrationContract.forbidExistingArtifactSubstitution,true);
+assert.equal(artBriefs.illustrationContract.missalRedRubricsPreserved,true);
+assert.deepEqual(artBriefs.briefs.map(x=>x.cueId),[
+ "AO.SM.C0169","AO.SM.C0193","AO.SM.C0204","AO.SM.C0242","AO.SM.C0265"]);
+assert.ok(artBriefs.sourceReferences.some(x=>x.id==="MR62_RITUS"&&
+ x.role==="primary-normative"&&x.url.startsWith("https://")));
+const approveByCue=new Map(votes.items.map(x=>["AO.SM."+x.cueId,x.decision]));
+for(const brief of artBriefs.briefs){
+ assert.ok(/^AO\\.SM\\.C\\d{4}$/.test(brief.cueId),brief.cueId);
+ assert.ok(brief.section.startsWith("Ritus servandus "),brief.cueId);
+ assert.ok(brief.requiredPose.length>=4&&brief.forbidden.length>=3,
+  "Artwork needs positive and negative rubrical geometry: "+brief.cueId);
+ assert.equal(brief.researchOnly,true);
+ assert.equal(brief.userApprovedNewArt,false);
+ if(["AO.SM.C0193","AO.SM.C0204"].includes(brief.cueId))
+  assert.equal(approveByCue.get(brief.cueId),"APPROVE",
+   "Historical concept approval was lost");
+ if(brief.cueId==="AO.SM.C0169")
+  assert.equal(approveByCue.get(brief.cueId),"REJECT",
+   "Rejected October 29 original gained a silent new approval");
+}
+assert.match(artBriefs.briefs[4].requiredLiturgicalGate,/Requiescant in pace/);
 console.log("PASS six exact user-approved concepts retained, four LIVE-enabled and two accuracy-held; C0169 rejected, frozen bank/ceremonial source unchanged.");
