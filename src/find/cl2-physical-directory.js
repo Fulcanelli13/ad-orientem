@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-BBB3789ADB9A":Object.freeze({
+  sourceId:"AO-B39-LOC-IT-6FC8D0881AF4",name:"Chiesa dei Santi Simone e Giuda",country:"IT",addressNeedle:"Mantova",placeId:null,
+  lat:45.1604,lng:10.79139,sourceRef:"osm:way:245105097",
+  sourceUrl:"https://www.openstreetmap.org/way/245105097",correctedAddress:"Via Domenico Fernelli 17, Mantova, Italy",
+  precision:"site",reviewScope:"DIOCESAN_CHURCH_HISTORIC_PARISH_SUPPRESSED_1805",evidence:Object.freeze(["https://mapcarta.com/de/W245105097","https://it.wikipedia.org/wiki/Chiesa_dei_Santi_Simone_e_Giuda_(Mantova)"]),
+ }),
+ "RG-8CB13769F987":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-9947B9DFA3B",name:"Onze Lieve Vrouw Onbevlekt Ontvangen",country:"NL",addressNeedle:"Oss",placeId:null,
+  lat:51.769178,lng:5.522718,sourceRef:"rijksmonument:31870",
+  sourceUrl:"https://commons.wikimedia.org/wiki/Category:Onze-Lieve-Vrouw_Onbevlekt_Ontvangenkerk_(Oss)",correctedAddress:"Kerkstraat 15, 5341 BK Oss, Netherlands",
+  precision:"site",reviewScope:"CHURCH_OBJECT_POSITION_NOT_VERIFIED_DOOR",evidence:Object.freeze(["https://parochiewillibrordus.nl/index.php?ids=kerk_grotekerk&p=kerkpagina","https://erfgoedbrabantverhalen.nl/religieuze-gebouwen/onze-lieve-vrouw-onbevlekt-ontvangenkerk-4/","https://www.wikidata.org/wiki/Q17438831"]),
+ }),
  "RG-A0933DE542C7":Object.freeze({
   sourceId:"AO-B38-LOC-ES-E7A90BC3DB7",name:"Iglesia Cripta del Santísimo Cristo",country:"ES",addressNeedle:"Santander",placeId:null,
   lat:43.46081,lng:-3.80701,sourceRef:"osm:node:7704619785",sourceUrl:"https://www.openstreetmap.org/node/7704619785",
