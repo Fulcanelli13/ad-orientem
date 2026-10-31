@@ -1,0 +1,166 @@
+{
+  "schema": "ao-mass-five-priest-gesture-art-review-v1",
+  "batchDate": "2026-10-31",
+  "status": "SOURCE_GROUNDED_DRAWING_BRIEFS_ONLY_NOT_PRODUCTION_ART",
+  "authority": "Roman Missal 1962 Ritus servandus; existing canonical AO source cues",
+  "sourceReferences": [
+    {
+      "id": "MR62_RITUS",
+      "role": "primary-normative",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+    },
+    {
+      "id": "RITUS1962_HTML_TRANSCRIPTION",
+      "role": "independent-readable-witness",
+      "url": "https://1962ordo.today/1962-rubrics/"
+    }
+  ],
+  "approval": "Every new or corrected SVG needs explicit user visual approval and original rights/provenance before activation.",
+  "illustrationContract": {
+    "originalArtwork": "Use prior approved 29 October monochrome currentColor silhouette family only as a stylistic reference; do not modify the six approved original files.",
+    "format": "True vector SVG with currentColor, transparent background, no embedded raster/font, no facial detail.",
+    "roles": "PRIEST gesture, not priest position or faithful posture. The underlying 1962 prayer and source rubrics remain authoritative.",
+    "glyphReview": "Verify exact hand/object positions at 32px and 390px, with background/color inversion; capture LIVE and MISSAL EN/FR.",
+    "publication": "RESEARCH_ONLY until exact user approval, license record, SVG hash and source-/cue-specific browser checks.",
+    "forbidExistingArtifactSubstitution": true,
+    "maintain65Cards": true,
+    "missalRedRubricsPreserved": true,
+    "liveSourceTextFallback": true
+  },
+  "briefs": [
+    {
+      "cueId": "AO.SM.C0169",
+      "matrixGestureId": "GM.P.C0169.01",
+      "section": "Ritus servandus VIII.4",
+      "latin": "et elevatis oculis in caelum",
+      "moment": "Qui pridie, before Consecration",
+      "approvalHistory": "29 Oct candidate REJECTED; this is a different replacement drawing brief, not approval.",
+      "requiredPose": [
+        "Standing erect at the middle of the altar",
+        "Host held between right thumb and index finger, also supported between left thumb and index finger",
+        "Eyes briefly raised heavenward (towards the Cross), immediately lowered",
+        "Hands remain near altar/chest; no upward extension for adoration"
+      ],
+      "forbidden": [
+        "Host above priest's head",
+        "Major elevation pose",
+        "Looking toward an already elevated Host",
+        "Repurposing the explicitly rejected C0169.svg"
+      ],
+      "physicalReference": [
+        "MR62_RITUS VIII.4"
+      ],
+      "researchOnly": true,
+      "userApprovedNewArt": false
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "matrixGestureId": "GM.P.C0193.01",
+      "section": "Ritus servandus IX.2",
+      "latin": "Memento etiam, Domine",
+      "moment": "Silent commemoration of the faithful departed",
+      "approvalHistory": "29 Oct concept APPROVED; original exact SVG archived. Corrected visual not yet approved.",
+      "requiredPose": [
+        "Priest at centre of altar facing the Sacrament",
+        "Hands drawn together and lifted before the face",
+        "Gaze directed toward the Sacrament upon the altar",
+        "Ordinary altar context only; no vessel presented for Exposition"
+      ],
+      "forbidden": [
+        "Monstrance",
+        "Exposition/benediction of the Blessed Sacrament",
+        "Priest raising a Host or Chalice",
+        "Automatic promotion of the archived inaccurate original"
+      ],
+      "physicalReference": [
+        "MR62_RITUS IX.2"
+      ],
+      "researchOnly": true,
+      "userApprovedNewArt": false
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "matrixGestureId": "GM.P.C0204.01",
+      "section": "Ritus servandus IX.3",
+      "latin": "omnis honor et gloria",
+      "moment": "Minor elevation after five crosses at Per ipsum",
+      "approvalHistory": "29 Oct concept APPROVED; original exact SVG archived. Exact height not yet visually verified.",
+      "requiredPose": [
+        "Host in right hand, directly ABOVE the chalice",
+        "Left hand holding the chalice at the node beneath the cup",
+        "Host and chalice rising together only slightly from the altar",
+        "Clearly lower elevation than the major elevation of Host or Chalice"
+      ],
+      "forbidden": [
+        "Arms extended high above priest's head",
+        "Host and Chalice side by side at equal height",
+        "Only one Species raised",
+        "Generic large Consecration elevation image"
+      ],
+      "physicalReference": [
+        "MR62_RITUS IX.3"
+      ],
+      "researchOnly": true,
+      "userApprovedNewArt": false
+    },
+    {
+      "cueId": "AO.SM.C0242",
+      "matrixGestureId": null,
+      "section": "Ritus servandus X.6",
+      "latin": "Ecce Agnus Dei",
+      "moment": "Showing the Host before Communion of the faithful",
+      "approvalHistory": "No exact approved priest-action art. Existing priest-facing position image does not depict this action.",
+      "requiredPose": [
+        "Priest standing at altar centre facing communicants",
+        "Pyx/ciborium or paten held in left hand",
+        "One Host held between thumb and index finger of right hand",
+        "Host raised slightly OVER the pyx or paten"
+      ],
+      "forbidden": [
+        "Chalice in the priest's hands",
+        "Elevation of Host with both hands above priest's head",
+        "Confusing with Communion distribution at the rail",
+        "Using approved priest-facing position glyph as an action"
+      ],
+      "physicalReference": [
+        "MR62_RITUS X.6"
+      ],
+      "researchOnly": true,
+      "userApprovedNewArt": false
+    },
+    {
+      "cueId": "AO.SM.C0265",
+      "matrixGestureId": "GM.P.C0265.01",
+      "section": "Ritus servandus XII.1 and XII.4",
+      "latin": "Pater, et Filius, et Spiritus Sanctus",
+      "moment": "One final blessing of the people",
+      "approvalHistory": "No exact approved art. Existing Indulgentiam/absolution pictogram is not a substitute.",
+      "requiredPose": [
+        "Priest faces the people",
+        "Eyes lowered",
+        "Right hand extended with fingers joined to make one Sign of the Cross",
+        "Left hand remains on breast"
+      ],
+      "forbidden": [
+        "Sign of the Cross over himself",
+        "Indulgentiam gesture wrongly substituted",
+        "Double or triple blessing",
+        "Showing a blessing during Requiescant in pace or Benedicamus Domino endings"
+      ],
+      "requiredLiturgicalGate": "Suppress whenever 1962 rubrics omit the final blessing, notably Requiescant in pace and Benedicamus Domino.",
+      "physicalReference": [
+        "MR62_RITUS XII.1",
+        "MR62_RITUS XII.4"
+      ],
+      "researchOnly": true,
+      "userApprovedNewArt": false
+    }
+  ],
+  "counts": {
+    "drawingBriefs": 5,
+    "newArtworkApproved": 0,
+    "productionBindingsAdded": 0,
+    "existingApprovedConceptsHeld": 2,
+    "rejectedArtPreservedAsRejected": 1
+  }
+}
