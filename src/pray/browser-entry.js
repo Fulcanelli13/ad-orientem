@@ -159,6 +159,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     }
     backReceipt=captured;
     if(captured)api.close({silent:true,preserve:true});
+    else if(preserveForBack)api.close({silent:true}); // clear private state without triggering a legacy return route
     else api.close();
     return true;
   }
