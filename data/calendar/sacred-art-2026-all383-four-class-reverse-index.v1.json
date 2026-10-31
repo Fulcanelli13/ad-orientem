@@ -38,7 +38,7 @@
     "worksOnMoreThanOneDate": 8,
     "newAppImagesPublished": 0
   },
-  "meaning": "Every one of 383 canonical artwork IDs has a complete list of 2026 observed Class I-IV RESEARCH candidate date usages; zero new date user approvals or published image rights. Separate 856 accepted source IDs have not been forced into canonical 383 IDs. Artworks may have multiple date usages and each date multiple different paintings, with physical-object dedup and runtime gating.",
+  "meaning": "Every one of 383 canonical artwork IDs has a complete list of 2026 observed Class I-IV RESEARCH candidate date usages; zero new date user approvals or published image rights. Separate 856 accepted source IDs have not been forced into canonical 383 IDs. Artworks may have multiple date usages and each date multiple different paintings, with physical-object dedup and runtime gating. Existing Class I primary/date selection evidence is preserved where the underlying artwork ID matches; no blanket assertion that all placements were previously unapproved.",
   "artworks": [
     {
       "artworkId": "W05-027",
@@ -124,9 +124,10 @@
           "observedTitle": "St. Andrew",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -159,9 +160,10 @@
           "observedTitle": "St. Andrew",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "ACCEPTABLE_UNFINALIZED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -185,9 +187,10 @@
           "observedTitle": "St. James the Greater",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -225,9 +228,10 @@
           "observedTitle": "Sts. Philip & James",
           "artworkIdentityRelation": "PARTIAL_GROUP_ONLY",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -251,9 +255,10 @@
           "observedTitle": "Sts. Philip & James",
           "artworkIdentityRelation": "PARTIAL_GROUP_ONLY",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -277,9 +282,10 @@
           "observedTitle": "St. Bartholomew",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -312,9 +318,16 @@
           "observedTitle": "Low Sunday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "W07-014",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Caravaggio",
+            "selectedTitle": "The Incredulity of Saint Thomas",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         },
         {
           "date": "2026-12-21",
@@ -323,9 +336,10 @@
           "observedTitle": "St. Thomas",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -349,9 +363,10 @@
           "observedTitle": "St. Matthew",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -375,9 +390,10 @@
           "observedTitle": "St. Matthew",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -401,9 +417,10 @@
           "observedTitle": "Sts. Philip & James",
           "artworkIdentityRelation": "PARTIAL_GROUP_ONLY",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -450,9 +467,10 @@
           "observedTitle": "St. Matthias",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -546,9 +564,10 @@
           "observedTitle": "St. Mark",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -572,9 +591,10 @@
           "observedTitle": "St. Mark",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -598,9 +618,10 @@
           "observedTitle": "St. Mark",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -624,9 +645,10 @@
           "observedTitle": "St. Mark",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -691,9 +713,10 @@
           "observedPrincipalId": "sancti:12-07:3:w",
           "observedTitle": "St. Ambrose",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -716,9 +739,10 @@
           "observedPrincipalId": "sancti:12-07:3:w",
           "observedTitle": "St. Ambrose",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -741,9 +765,10 @@
           "observedPrincipalId": "sancti:12-07:3:w",
           "observedTitle": "St. Ambrose",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -766,9 +791,10 @@
           "observedPrincipalId": "sancti:12-07:3:w",
           "observedTitle": "St. Ambrose",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -791,9 +817,10 @@
           "observedPrincipalId": "sancti:08-28:3:w",
           "observedTitle": "St. Augustine",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -816,9 +843,10 @@
           "observedPrincipalId": "sancti:08-28:3:w",
           "observedTitle": "St. Augustine",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -841,9 +869,10 @@
           "observedPrincipalId": "sancti:09-30:3:w",
           "observedTitle": "St. Jerome",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -866,9 +895,10 @@
           "observedPrincipalId": "sancti:09-30:3:w",
           "observedTitle": "St. Jerome",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -919,9 +949,10 @@
           "observedPrincipalId": "sancti:07-14:3:w",
           "observedTitle": "St. Bonaventure",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -944,9 +975,10 @@
           "observedPrincipalId": "sancti:07-14:3:w",
           "observedTitle": "St. Bonaventure",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -969,9 +1001,10 @@
           "observedPrincipalId": "sancti:08-20:3:w",
           "observedTitle": "St. Bernard of Clairvaux",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1008,9 +1041,10 @@
           "observedPrincipalId": "sancti:10-15:3:w",
           "observedTitle": "St. Teresa of Avila",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1033,9 +1067,10 @@
           "observedPrincipalId": "sancti:04-30:3:w",
           "observedTitle": "St. Catherine of Siena",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1058,9 +1093,10 @@
           "observedPrincipalId": "sancti:04-30:3:w",
           "observedTitle": "St. Catherine of Siena",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1083,9 +1119,10 @@
           "observedPrincipalId": "sancti:04-30:3:w",
           "observedTitle": "St. Catherine of Siena",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1109,9 +1146,10 @@
           "observedTitle": "St. John of the Cross",
           "artworkIdentityRelation": "PAINTING_COPYRIGHT_RIGHTS_HOLD",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1162,9 +1200,10 @@
           "observedPrincipalId": "sancti:01-29:3:w",
           "observedTitle": "St. Francis de Sales",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1187,9 +1226,10 @@
           "observedPrincipalId": "sancti:01-29:3:w",
           "observedTitle": "St. Francis de Sales",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1212,9 +1252,10 @@
           "observedPrincipalId": "sancti:01-29:3:w",
           "observedTitle": "St. Francis de Sales",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1237,9 +1278,10 @@
           "observedPrincipalId": "sancti:05-02:3:w",
           "observedTitle": "St. Athanasius",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1290,9 +1332,10 @@
           "observedPrincipalId": "sancti:05-09:3:w",
           "observedTitle": "St. Gregory of Nazianzen",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1315,9 +1358,10 @@
           "observedPrincipalId": "sancti:01-27:3:w",
           "observedTitle": "St. John Chrysostom",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1368,9 +1412,10 @@
           "observedPrincipalId": "sancti:04-21:3:w",
           "observedTitle": "St. Anselm",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1393,9 +1438,10 @@
           "observedPrincipalId": "sancti:04-21:3:w",
           "observedTitle": "St. Anselm",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1488,9 +1534,10 @@
           "observedPrincipalId": "sancti:04-27:3:w",
           "observedTitle": "St. Peter Canisius",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1513,9 +1560,10 @@
           "observedPrincipalId": "sancti:04-27:3:w",
           "observedTitle": "St. Peter Canisius",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1538,9 +1586,10 @@
           "observedPrincipalId": "sancti:04-27:3:w",
           "observedTitle": "St. Peter Canisius",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1563,9 +1612,10 @@
           "observedPrincipalId": "sancti:07-21r:3:w",
           "observedTitle": "St. Laurence of Brindisi",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1588,9 +1638,10 @@
           "observedPrincipalId": "sancti:07-21r:3:w",
           "observedTitle": "St. Laurence of Brindisi",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1613,9 +1664,10 @@
           "observedPrincipalId": "sancti:02-09:3:w",
           "observedTitle": "St. Cyril of Alexandria",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1638,9 +1690,10 @@
           "observedPrincipalId": "sancti:06-18:3:w",
           "observedTitle": "St. Ephrem of Syria",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1663,9 +1716,10 @@
           "observedPrincipalId": "sancti:01-14:3:w",
           "observedTitle": "St. Hilary",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1688,9 +1742,10 @@
           "observedPrincipalId": "sancti:01-14:3:w",
           "observedTitle": "St. Hilary",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1713,9 +1768,10 @@
           "observedPrincipalId": "sancti:01-14:3:w",
           "observedTitle": "St. Hilary",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1804,9 +1860,10 @@
           "observedTitle": "Dedication of St. Michael the Archangel",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1830,9 +1887,10 @@
           "observedTitle": "St. Raphael the Archangel",
           "artworkIdentityRelation": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1884,9 +1942,10 @@
           "observedTitle": "St. Theresa of the Infant Jesus",
           "artworkIdentityRelation": "PAINTING_COPYRIGHT_RIGHTS_HOLD",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1923,9 +1982,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1948,9 +2008,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -1987,9 +2048,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2012,9 +2074,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2037,9 +2100,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2118,9 +2182,10 @@
           "observedPrincipalId": "sancti:08-25:3:w",
           "observedTitle": "St. Louis IX",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2167,9 +2232,10 @@
           "observedTitle": "St. Stephen",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2216,9 +2282,10 @@
           "observedTitle": "St. Lawrence",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2251,9 +2318,10 @@
           "observedTitle": "St. Lawrence",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2286,9 +2354,10 @@
           "observedTitle": "St. Lawrence",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2339,9 +2408,10 @@
           "observedPrincipalId": "sancti:08-04:3:w",
           "observedTitle": "St. Dominic",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2378,9 +2448,10 @@
           "observedPrincipalId": "sancti:08-04:3:w",
           "observedTitle": "St. Dominic",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2445,9 +2516,10 @@
           "observedPrincipalId": "sancti:12-03:3:w",
           "observedTitle": "St. Francis Xavier",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2470,9 +2542,10 @@
           "observedPrincipalId": "sancti:12-03:3:w",
           "observedTitle": "St. Francis Xavier",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2496,9 +2569,10 @@
           "observedTitle": "St. Ignatius Loyola",
           "artworkIdentityRelation": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2522,9 +2596,10 @@
           "observedTitle": "St. Ignatius Loyola",
           "artworkIdentityRelation": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2547,9 +2622,10 @@
           "observedPrincipalId": "sancti:10-17:3:w",
           "observedTitle": "St. Margaret Mary Alacoque",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2572,9 +2648,10 @@
           "observedPrincipalId": "sancti:08-08:3:w",
           "observedTitle": "St. John Mary Vianney",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2667,9 +2744,10 @@
           "observedPrincipalId": "sancti:01-21:3:r",
           "observedTitle": "St. Agnes",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2692,9 +2770,10 @@
           "observedPrincipalId": "sancti:01-21:3:r",
           "observedTitle": "St. Agnes",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2717,9 +2796,10 @@
           "observedPrincipalId": "sancti:01-21:3:r",
           "observedTitle": "St. Agnes",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2798,9 +2878,10 @@
           "observedPrincipalId": "sancti:11-25:3:r",
           "observedTitle": "St. Catherine of Alexandria",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2837,9 +2918,10 @@
           "observedPrincipalId": "sancti:07-22:3:w",
           "observedTitle": "St. Mary Magdalene",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2862,9 +2944,10 @@
           "observedPrincipalId": "sancti:07-22:3:w",
           "observedTitle": "St. Mary Magdalene",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2943,9 +3026,10 @@
           "observedPrincipalId": "sancti:11-11:3:w",
           "observedTitle": "St. Martin of Tours",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -2983,9 +3067,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3046,9 +3131,16 @@
           "observedTitle": "Sacred Heart of Jesus",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "commons-morlete-sacred-heart-1759",
+            "existingEditorialBasis": "APPROVED_DATE_SPECIFIC_20261019",
+            "selectedArtist": "Juan Patricio Morlete Ruiz",
+            "selectedTitle": "The Heart of Jesus",
+            "selectionProvenance": "main/src/calendar/approved-class-i-heroes-2026.js"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3072,9 +3164,10 @@
           "observedTitle": "Immaculate Heart of Mary",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3107,9 +3200,16 @@
           "observedTitle": "Corpus Christi",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "met-438434",
+            "existingEditorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+            "selectedArtist": "Jean-Auguste-Dominique Ingres",
+            "selectedTitle": "The Virgin Adoring the Host",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3132,9 +3232,10 @@
           "observedPrincipalId": "sancti:10-15:3:w",
           "observedTitle": "St. Teresa of Avila",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3293,9 +3394,10 @@
           "observedTitle": "Commemoration of the Baptism of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3328,9 +3430,10 @@
           "observedTitle": "Commemoration of the Baptism of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3363,9 +3466,10 @@
           "observedTitle": "Commemoration of the Baptism of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3518,9 +3622,10 @@
           "observedTitle": "II Sunday of Lent",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         },
         {
           "date": "2026-08-06",
@@ -3529,9 +3634,10 @@
           "observedTitle": "Transfiguration of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3652,9 +3758,10 @@
           "observedPrincipalId": "sancti:07-29:3:w",
           "observedTitle": "St. Martha",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3678,9 +3785,10 @@
           "observedTitle": "St. Thomas",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3713,9 +3821,10 @@
           "observedTitle": "Monday in the Octave of Easter",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3748,9 +3857,10 @@
           "observedTitle": "Monday in the Octave of Easter",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3811,9 +3921,16 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Philippe de Champaigne",
+            "selectedTitle": "The Annunciation",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3846,9 +3963,10 @@
           "observedTitle": "Visitation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -3979,9 +4097,16 @@
           "observedTitle": "The Precious Blood of Our Lord Jesus Christ",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Anthony van Dyck",
+            "selectedTitle": "The Lance Thrust",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4050,9 +4175,10 @@
           "observedTitle": "Vigil of Pentecost",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         },
         {
           "date": "2026-05-24",
@@ -4061,9 +4187,16 @@
           "observedTitle": "Pentecost Sunday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-ean-estout-entecost",
+            "existingEditorialBasis": "APPROVED_DATE_SPECIFIC_20261019",
+            "selectedArtist": "Jean II Restout",
+            "selectedTitle": "Pentecost",
+            "selectionProvenance": "main/src/calendar/approved-class-i-heroes-2026.js"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4096,9 +4229,16 @@
           "observedTitle": "Assumption of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Peter Paul Rubens",
+            "selectedTitle": "Assumption of the Virgin",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4299,9 +4439,16 @@
           "observedTitle": "Good Friday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Giandomenico Tiepolo",
+            "selectedTitle": "San Polo Via Crucis — Station 12: Death on the Cross",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4362,9 +4509,10 @@
           "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4401,9 +4549,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4427,9 +4576,10 @@
           "observedTitle": "Holy Guardian Angels",
           "artworkIdentityRelation": "EXACT_SAINT_OR_FEAST_SUBJECT_FROM_W72_RECONCILIATION",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4714,9 +4864,16 @@
           "observedTitle": "Epiphany of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Peter Paul Rubens",
+            "selectedTitle": "Adoration of the Magi",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4757,9 +4914,16 @@
           "observedTitle": "St. Joseph, Spouse of the Bl. Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Philippe de Champaigne",
+            "selectedTitle": "The Dream of Saint Joseph",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         },
         {
           "date": "2026-12-24",
@@ -4768,9 +4932,16 @@
           "observedTitle": "Vigil of Christmas",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Philippe de Champaigne",
+            "selectedTitle": "The Dream of Saint Joseph",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4803,9 +4974,16 @@
           "observedTitle": "IV Sunday of Lent",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Giovanni Lanfranco",
+            "selectedTitle": "Miracle of Loaves and Fishes",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4852,9 +5030,16 @@
           "observedTitle": "Ember Wednesday of Pentecost",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+            "existingEditorialBasis": "APPROVED_DATE_SPECIFIC_20261019",
+            "selectedArtist": "Philippe de Champaigne",
+            "selectedTitle": "La Petite Cène",
+            "selectionProvenance": "main/src/calendar/approved-class-i-heroes-2026.js"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4937,9 +5122,10 @@
           "observedTitle": "Vigil of Pentecost",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         },
         {
           "date": "2026-05-24",
@@ -4948,9 +5134,10 @@
           "observedTitle": "Pentecost Sunday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -4997,9 +5184,10 @@
           "observedTitle": "Ascension of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5032,9 +5220,10 @@
           "observedTitle": "Purification of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5067,9 +5256,10 @@
           "observedTitle": "Purification of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5130,9 +5320,10 @@
           "observedTitle": "Our Lady of the Rosary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5207,9 +5398,10 @@
           "observedTitle": "Assumption of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5270,9 +5462,10 @@
           "observedTitle": "Holy Innocents",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5361,9 +5554,10 @@
           "observedTitle": "Commemoration of the Baptism of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5438,9 +5632,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5473,9 +5668,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5522,9 +5718,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5557,9 +5754,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5592,9 +5790,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5627,9 +5826,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5676,9 +5876,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5711,9 +5912,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5746,9 +5948,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5795,9 +5998,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5830,9 +6034,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5865,9 +6070,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5900,9 +6106,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5935,9 +6142,10 @@
           "observedTitle": "Assumption of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -5970,9 +6178,10 @@
           "observedTitle": "Assumption of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6089,9 +6298,10 @@
           "observedTitle": "Epiphany of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6124,9 +6334,10 @@
           "observedTitle": "Epiphany of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6159,9 +6370,10 @@
           "observedTitle": "Epiphany of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6194,9 +6406,10 @@
           "observedTitle": "Epiphany of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6229,9 +6442,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6264,9 +6478,16 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "cma-143644",
+            "existingEditorialBasis": "USER_DATE_APPROVED_20261027",
+            "selectedArtist": "Bernardo Cavallino",
+            "selectedTitle": "Adoration of the Shepherds",
+            "selectionProvenance": "USER_DATE_DECISION_20261027"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6299,9 +6520,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6334,9 +6556,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6369,9 +6592,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6404,9 +6628,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6439,9 +6664,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6474,9 +6700,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6663,9 +6890,16 @@
           "observedTitle": "Feria IV of Holy Week",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "met-437986",
+            "existingEditorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+            "selectedArtist": "Caravaggio",
+            "selectedTitle": "The Denial of Saint Peter",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6702,9 +6936,10 @@
           "observedPrincipalId": "sancti:11-25:3:r",
           "observedTitle": "St. Catherine of Alexandria",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6727,9 +6962,10 @@
           "observedPrincipalId": "sancti:01-21:3:r",
           "observedTitle": "St. Agnes",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         },
         {
           "date": "2026-11-25",
@@ -6737,9 +6973,10 @@
           "observedPrincipalId": "sancti:11-25:3:r",
           "observedTitle": "St. Catherine of Alexandria",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6762,9 +6999,10 @@
           "observedPrincipalId": "sancti:01-17:3:w",
           "observedTitle": "St. Anthony",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6787,9 +7025,10 @@
           "observedPrincipalId": "sancti:08-29:3:r",
           "observedTitle": "Beheading of St. John the Baptist",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6827,9 +7066,10 @@
           "observedTitle": "St. Matthew",
           "artworkIdentityRelation": "EXACT_FEAST_SAINT_OR_SUBJECT_TITLE_RESEARCH",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6936,9 +7176,10 @@
           "observedPrincipalId": "sancti:09-30:3:w",
           "observedTitle": "St. Jerome",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -6989,9 +7230,10 @@
           "observedPrincipalId": "sancti:08-04:3:w",
           "observedTitle": "St. Dominic",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7014,9 +7256,10 @@
           "observedPrincipalId": "sancti:01-17:3:w",
           "observedTitle": "St. Anthony",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7039,9 +7282,10 @@
           "observedPrincipalId": "sancti:01-17:3:w",
           "observedTitle": "St. Anthony",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7064,9 +7308,10 @@
           "observedPrincipalId": "sancti:01-17:3:w",
           "observedTitle": "St. Anthony",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7089,9 +7334,10 @@
           "observedPrincipalId": "sancti:06-13:3:w",
           "observedTitle": "St. Anthony of Padua",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7128,9 +7374,10 @@
           "observedPrincipalId": "sancti:11-25:3:r",
           "observedTitle": "St. Catherine of Alexandria",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7153,9 +7400,10 @@
           "observedPrincipalId": "sancti:11-25:3:r",
           "observedTitle": "St. Catherine of Alexandria",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7178,9 +7426,10 @@
           "observedPrincipalId": "sancti:11-25:3:r",
           "observedTitle": "St. Catherine of Alexandria",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7231,9 +7480,10 @@
           "observedPrincipalId": "sancti:09-30:3:w",
           "observedTitle": "St. Jerome",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7270,9 +7520,10 @@
           "observedPrincipalId": "sancti:09-18:3:w",
           "observedTitle": "St. Joseph of Cupertino",
           "editorialStatusAtArtworkLevel": "PREVIOUSLY_RATED_ACCEPTABLE",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7459,9 +7710,10 @@
           "observedTitle": "The Nativity of Our Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7522,9 +7774,10 @@
           "observedTitle": "Epiphany of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7562,9 +7815,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7588,9 +7842,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7614,9 +7869,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7640,9 +7896,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7675,9 +7932,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7710,9 +7968,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7736,9 +7995,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7785,9 +8045,10 @@
           "observedTitle": "Purification of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7820,9 +8081,16 @@
           "observedTitle": "Ash Wednesday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "met-436839",
+            "existingEditorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+            "selectedArtist": "Georges de La Tour",
+            "selectedTitle": "The Penitent Magdalen",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7846,9 +8114,10 @@
           "observedTitle": "The Holy Family: Jesus, Mary & Joseph",
           "artworkIdentityRelation": "HOLY_FAMILY_DEPICTED_CONTEXTUAL",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7881,9 +8150,10 @@
           "observedTitle": "Annunciation of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -7938,9 +8208,10 @@
           "observedTitle": "Holy Thursday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         },
         {
           "date": "2026-05-27",
@@ -7949,9 +8220,10 @@
           "observedTitle": "Ember Wednesday of Pentecost",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8012,9 +8284,16 @@
           "observedTitle": "Ascension of the Lord",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "met-436835",
+            "existingEditorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+            "selectedArtist": "Hans Süss von Kulmbach",
+            "selectedTitle": "The Ascension of Christ",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8055,9 +8334,10 @@
           "observedTitle": "Vigil of Pentecost",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         },
         {
           "date": "2026-05-24",
@@ -8066,9 +8346,10 @@
           "observedTitle": "Pentecost Sunday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8101,9 +8382,16 @@
           "observedTitle": "Trinity Sunday",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "cma-136507",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Laurent Girardin",
+            "selectedTitle": "The Trinity",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8126,9 +8414,10 @@
           "observedPrincipalId": "sancti:08-29:3:r",
           "observedTitle": "Beheading of St. John the Baptist",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8161,9 +8450,16 @@
           "observedTitle": "Sts. Peter & Paul",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "met-442491",
+            "existingEditorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+            "selectedArtist": "Bartolomeo Manfredi",
+            "selectedTitle": "Saints Peter and Paul",
+            "selectionProvenance": "2026-10-20-53-date-overlay"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8186,9 +8482,10 @@
           "observedPrincipalId": "sancti:01-17:3:w",
           "observedTitle": "St. Anthony",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8221,9 +8518,10 @@
           "observedTitle": "Assumption of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "UNREVIEWED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8270,9 +8568,10 @@
           "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_5",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": null
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
@@ -8305,9 +8604,16 @@
           "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
           "artworkIdentityRelation": "LEGACY_EXACT_TITLE_RESEARCH_LINK",
           "editorialStatusAtArtworkLevel": "APPROVED_LOCKED",
-          "dateSpecificUserApproval": false,
           "photoReleaseCertified": false,
-          "homeRotationEligible": false
+          "homeRotationEligible": false,
+          "newDateApprovalIntroducedByThisMatchingPass": false,
+          "existingDateSelectionEvidence": {
+            "selectedArtworkId": "cma-135659",
+            "existingEditorialBasis": "USER_DATE_APPROVED_20261027",
+            "selectedArtist": "Bartolomé Esteban Murillo",
+            "selectedTitle": "The Immaculate Conception",
+            "selectionProvenance": "USER_DATE_DECISION_20261027"
+          }
         }
       ],
       "dateLinksWasOnlyIAndIIInOlderIndex": true
