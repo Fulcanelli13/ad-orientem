@@ -1,0 +1,188 @@
+{
+  "schema": "AO_SACRED_ART_2026_BREVIARIUM_83_ARCHIVE_EXACT_SUBJECT_BATCH7_V1",
+  "asOf": "2026-10-31",
+  "status": "RESEARCH_SUBJECT_MATCH_ONLY_NO_NEW_APPROVAL",
+  "sourceRefs": [
+    {
+      "path": "data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json",
+      "ref": "archive/sacred-art-master-20261030-v2",
+      "sha": "43865e5464f38c5615e6ec1ef0eb180017edd4d0"
+    },
+    {
+      "path": "data/calendar/sacred-art-breviarium-83-w2-cross-registry-institutional-leads-20261029.v1.json",
+      "ref": "archive/sacred-art-master-20261030-v2",
+      "sha": "59a05be5dcdf9cad57b55f68964e07213240f246"
+    },
+    {
+      "path": "data/research/sacred-art-catalogue451-snapshot.json",
+      "ref": "research/sacred-art-b35-40-gaps-source-recovery-20261024",
+      "sha": "620fd3a69c6aa45bb46508f4d44d1aa874ab0f64"
+    }
+  ],
+  "counts": {
+    "priorIdentifiedClassIIISanctoral": 53,
+    "nowIdentifiedClassIIISanctoral": 56,
+    "priorUnmatchedClassIIISanctoral": 78,
+    "nowUnmatchedClassIIISanctoral": 75,
+    "previouslyCollectedGalleryPlateCount": 83,
+    "newFeastSubjectsReconciled": 3,
+    "newSourcePhotoDownloads": 0,
+    "newUserApprovals": 0,
+    "newAppCertifiedImages": 0
+  },
+  "rows": [
+    {
+      "date": "2026-02-11",
+      "principalId": "sancti:02-11:3:w",
+      "observedTitle": "Our Lady of Lourdes",
+      "relation": "EXACT_FEAST_SAINT_OR_MARIAN_SUBJECT_RESEARCH",
+      "works": [
+        {
+          "breviarumPlateId": "plate-tojetti-lourdes",
+          "artist": "Virgilio Tojetti",
+          "title": "Our Lady of Lourdes",
+          "commonsFile": "Virgilio Tojetti 1877 Our Lady of Lourdes.jpg",
+          "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Virgilio_Tojetti_1877_Our_Lady_of_Lourdes.jpg",
+          "sourceSha1": "5aa283cddce24b806957738389e31f3ec29760c5",
+          "commonsNativePixels": [
+            825,
+            960
+          ],
+          "commonsFileBytes": 79950,
+          "commonsHistoricalLicenceMetadata": "Public domain",
+          "artisticIntakeTier": "SECONDARY_VISUAL_REVIEW",
+          "sourceQualityGate": "REPLACE_INSUFFICIENT_NATIVE_PHOTO",
+          "sourceResearchOnly": true,
+          "priorWorkPhysicalIdentityVerified": false,
+          "canonical383ArtworkId": null,
+          "newFeastEditorialApproval": false,
+          "fullNativePhotoCropVerified": false,
+          "exactImageRightsForAppVerified": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "warning": "Small 825×960 archival reproduction. Not app hero approved.",
+      "completeSubjectFeastIdentity": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "productionPhotoCertified": false,
+      "rotationEligible": false
+    },
+    {
+      "date": "2026-05-04",
+      "principalId": "sancti:05-04:3:w",
+      "observedTitle": "St. Monica",
+      "relation": "EXACT_FEAST_SAINT_OR_MARIAN_SUBJECT_RESEARCH",
+      "works": [
+        {
+          "breviarumPlateId": "plate-scheffer-monica",
+          "artist": "Ary Scheffer",
+          "title": "Saints Augustine and Monica",
+          "commonsFile": "Scheffer Saint Augustine and Saint Monica.jpg",
+          "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Scheffer_Saint_Augustine_and_Saint_Monica.jpg",
+          "sourceSha1": "c31e882a9e69e70b15ce2c64d4f9daa484f5b4b3",
+          "commonsNativePixels": [
+            556,
+            691
+          ],
+          "commonsFileBytes": 315807,
+          "commonsHistoricalLicenceMetadata": "Public domain",
+          "artisticIntakeTier": "SECONDARY_VISUAL_REVIEW",
+          "sourceQualityGate": "REPLACE_INSUFFICIENT_NATIVE_PHOTO",
+          "sourceResearchOnly": true,
+          "priorWorkPhysicalIdentityVerified": false,
+          "canonical383ArtworkId": null,
+          "newFeastEditorialApproval": false,
+          "fullNativePhotoCropVerified": false,
+          "exactImageRightsForAppVerified": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "warning": "St Monica appears with St Augustine; historic source only 556×691, so not a standalone portrait crop.",
+      "completeSubjectFeastIdentity": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "productionPhotoCertified": false,
+      "rotationEligible": false
+    },
+    {
+      "date": "2026-08-07",
+      "principalId": "sancti:08-07:3:w",
+      "observedTitle": "St. Cajetan",
+      "relation": "EXACT_FEAST_SAINT_OR_MARIAN_SUBJECT_RESEARCH",
+      "works": [
+        {
+          "breviarumPlateId": "plate-tiepolo-cajetan",
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "Saint Cajetan's Vision of the Holy Family",
+          "commonsFile": "(Venice) Saint Cajetan's Vision of the Holy Family by Giambattista Tiepolo - Gallerie Accademia.jpg",
+          "sourceFilePage": "https://commons.wikimedia.org/wiki/File:(Venice)_Saint_Cajetan%27s_Vision_of_the_Holy_Family_by_Giambattista_Tiepolo_-_Gallerie_Accademia.jpg",
+          "sourceSha1": "de30dcab0e87a0ad151db804eba18e48eb6af5b8",
+          "commonsNativePixels": [
+            6662,
+            11944
+          ],
+          "commonsFileBytes": 67432957,
+          "commonsHistoricalLicenceMetadata": "Public domain",
+          "artisticIntakeTier": "PRIORITY_PHOTOGRAPHIC_QA",
+          "sourceQualityGate": "LARGE_IMAGE_METADATA_ONLY_UNTIL_FREE_STORAGE_AND_REUSE",
+          "sourceResearchOnly": true,
+          "priorWorkPhysicalIdentityVerified": false,
+          "canonical383ArtworkId": null,
+          "newFeastEditorialApproval": false,
+          "fullNativePhotoCropVerified": false,
+          "exactImageRightsForAppVerified": false,
+          "homeRotationEligible": false
+        }
+      ],
+      "warning": "Large 6662×11944 image requires frame/exposure/photo-rights evaluation; source is a third-party photograph.",
+      "completeSubjectFeastIdentity": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "productionPhotoCertified": false,
+      "rotationEligible": false
+    }
+  ],
+  "olderCatalogue451Exclusion": {
+    "totalRows": 451,
+    "alreadyCanonical383": 383,
+    "extraRecords": 68,
+    "allExtraRecordsPermanentlyRejected": true,
+    "reintroducedRejections": 0,
+    "examples": [
+      {
+        "id": "ART-aspard-ughet-lijah-and-the-ngel",
+        "decision": "PERMANENTLY_REJECTED",
+        "title": "Elijah and the Angel"
+      },
+      {
+        "id": "commons-multscher-pentecost",
+        "decision": "PERMANENTLY_REJECTED",
+        "title": "The Descent of the Holy Spirit (Pentecost)"
+      },
+      {
+        "id": "met-437527",
+        "decision": "PERMANENTLY_REJECTED",
+        "title": "The Glorification of the Eucharist"
+      },
+      {
+        "id": "met-435618",
+        "decision": "PERMANENTLY_REJECTED",
+        "title": "The Trinity"
+      },
+      {
+        "id": "nga-357",
+        "decision": "PERMANENTLY_REJECTED",
+        "title": "The Angel of the Annunciation"
+      },
+      {
+        "id": "cma-130377",
+        "decision": "PERMANENTLY_REJECTED",
+        "title": "The Baptism of Christ"
+      }
+    ]
+  },
+  "nonClaims": [
+    "Gallery intake not equal to saint art visual approval",
+    "Commons public-domain metadata is not final app photo rights certification",
+    "No photographed-original identity assumption or 383 ID fabrication",
+    "No UI rotation, no reintroduced rejected images, no fee or licensing request"
+  ]
+}
