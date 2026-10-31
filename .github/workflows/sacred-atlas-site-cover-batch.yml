@@ -8,7 +8,6 @@ on:
       - "tools/sacred-atlas-site-cover-batch.mjs"
       - "data/geography/research/sacred-atlas-site-covers-batch-*.v1.json"
       - ".github/workflows/sacred-atlas-site-cover-batch.yml"
-  workflow_dispatch:
 
 permissions:
   contents: write
