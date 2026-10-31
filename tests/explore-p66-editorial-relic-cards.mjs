@@ -125,6 +125,39 @@ assert.ok(parayHtml.includes('data-explore-place-jump="treasures"'));
 assert.ok(parayHtml.includes('data-explore-place-jump="customs"'));
 assert.ok(!parayHtml.includes("Read Saint biography"),"Saints editorial review stays held");
 
+const openingPosition=parayHtml.indexOf('class="aoExploreEditorialOpening"');
+const treasuresPosition=parayHtml.indexOf('data-explore-place-chapter="treasures"');
+const storyContinuation=parayHtml.indexOf('class="aoExplorePlaceOpening aoExploreSourcedStory"');
+assert(openingPosition>=0&&treasuresPosition>openingPosition,
+  "Sourced sacred objects must follow the established sanctuary introduction");
+if(storyContinuation>=0)assert(treasuresPosition<storyContinuation,
+  "Sacred objects should precede the long sourced historical continuation");
+assert.equal((parayHtml.match(/data-explore-place-chapter="story"/g)||[]).length,1,
+  "An illustrated Place must not emit duplicate jump anchors");
+assert.ok(!parayHtml.includes("TLM AT THIS EXACT PLACE"),
+  "A shrine without an exact Mass Directory link must not display an empty TLM accordion");
+const parayFrench=render(paray.place_id,"fr");
+assert.ok(parayFrench.includes('data-explore-place-chapter="treasures"'));
+assert.ok(parayFrench.includes("HISTOIRE ET DÉVOTION")||!parayFrench.includes("aoExploreSourcedStory"),
+  "French chapter continuation must retain French heading");
+const linkedJourney=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:projection.byLens.shrines,
+  filters:{heritageCategories:[]},selectedPlaceId:paray.place_id,
+  placeProfiles:profiles,expandPlace:true,journeys:[{
+    id:"test-sourced-route",name:"Sourced journey fixture",edition:"test",
+    destinationPlaceId:paray.place_id,destinationRelation:"DESTINATION_PLACE",
+    sources:[{url:"https://example.org/source"}],namedStages:[]
+  }]
+}));
+assert.ok(linkedJourney.includes('data-explore-place-jump="journeys"'),
+  "Sourced journeys need a visible chapter shortcut");
+assert.ok(linkedJourney.includes('data-explore-place-chapter="journeys"'),
+  "The journey shortcut must have a destination");
+assert.ok(linkedJourney.indexOf('data-explore-place-chapter="journeys"')>
+          linkedJourney.indexOf('data-explore-place-chapter="guide"'),
+  "Journeys must not precede the sanctuary story or the published guide");
+
+
 const anne=profile("place:FR:sainte-anne-d-auray");
 assert.ok(anne.editorial_intro);
 assert.ok(!anne.site_customs.some(x=>x.id==="DEV-007"),"CONTEXT_ONLY Grand Pardon not published as Customs");
