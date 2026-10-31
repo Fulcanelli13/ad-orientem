@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-130C766CB4B6":Object.freeze({
+  sourceId:"AO-EUR-GB-011",name:"Cathedral Church of St Barnabas",country:"GB",addressNeedle:"Nottingham",placeId:null,
+  lat:52.954638,lng:-1.1571735,sourceRef:"historicengland:1247533",sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1247533",
+  correctedAddress:"Cathedral Church of St Barnabas, Derby Road, Nottingham NG1 5AE, United Kingdom",precision:"site",reviewScope:"GRADE_II_LISTED_CATHEDRAL_CHURCH_NOT_OTHER_NOTTINGHAM_SITE",
+  evidence:Object.freeze(["https://casework.jcnas.org.uk/case/98112","https://www.thewrennreport.co.uk/building/E60000075-f78abd5d-9661-4787-a8b3-7164e04d262f/cathedral-church-of-st-barnabas-and-attached-boundary-wall"]),
+ }),
+ "RG-1484AB15A7A1":Object.freeze({
+  sourceId:"AO-AMER-R27-US-06-18",name:"Holy Name of Jesus Cathedral",country:"US",addressNeedle:"Raleigh",placeId:null,
+  lat:35.7775,lng:-78.67016,sourceRef:"osm:way:553750193",sourceUrl:"https://www.openstreetmap.org/way/553750193",
+  correctedAddress:"Holy Name of Jesus Cathedral, 715 Nazareth Street, Raleigh, NC 27606, USA",precision:"site",reviewScope:"CATHEDRAL_BUILDING_NOT_ADJACENT_PARISH_CENTER",
+  evidence:Object.freeze(["https://mapcarta.com/W553750193","https://en.wikipedia.org/wiki/Holy_Name_of_Jesus_Cathedral_(Raleigh,_North_Carolina)"]),
+ }),
  "RG-368B7B3B5FA3":Object.freeze({
   sourceId:"V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",name:"Church of Saint Agnes",country:"US",addressNeedle:"535 Thomas Ave",placeId:null,
   lat:44.95972,lng:-93.12333,sourceRef:"nrhp:80002125",sourceUrl:"https://en.wikipedia.org/wiki/Church_of_St._Agnes_(Saint_Paul,_Minnesota)",
