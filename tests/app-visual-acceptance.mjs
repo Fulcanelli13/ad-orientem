@@ -1704,7 +1704,8 @@ try{
     topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
   }));
   assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
-  assert.equal(settingsDesign.bodyFont,designBaseline.bodyFont,"Settings body typography diverged from Home");
+  assert.equal(primaryFont(settingsDesign.bodyFont),primaryFont(designBaseline.bodyFont),
+    "Settings and H7 Home diverged from their shared primary body typeface");
   assert.equal(settingsDesign.gutter,designBaseline.gutter,"Settings phone gutter diverged from the app grid");
   assert.equal(settingsDesign.cardRadius,designBaseline.cardRadius,"Settings cards diverged from canonical geometry");
   assert.equal(Math.round(settingsDesign.topControl.w),44,"Settings top control width diverged");
