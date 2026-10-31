@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 64,
+    "new_site_pins": 66,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -843,6 +843,28 @@
       "source_ref": "osm:way:1418288454",
       "source_url": "https://www.openstreetmap.org/way/1418288454",
       "review_scope": "JESUIT_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-2181DD7D9F32",
+      "source_id": "AO-B38-LOC-ES-370B93FA6BC",
+      "name": "Capilla de la Adoración Permanente",
+      "lat": 38.992969,
+      "lng": -1.851937,
+      "source_ref": "independent:iglesiacercademi:oratorio-carmen-albacete",
+      "source_url": "https://www.iglesiacercademi.com/albacete/oratorio-virgen-del-carmen/",
+      "review_scope": "CARMELITE_THIRD_ORDER_ORATORY_DIOCESAN_ADORATION_NOT_OLD_OCTAVIO_CUARTERO",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-97D731A26655",
+      "source_id": "AO-B39-LOC-PL-8AB74ADAA7D6",
+      "name": "Kaplica Najświętszego Serca Jezusowego w Szpitalu Powiatowym",
+      "lat": 52.3251,
+      "lng": 17.5734,
+      "source_ref": "address:sprawdzadres:wrzesnia-slowackiego-2",
+      "source_url": "https://sprawdzadres.pl/wielkopolskie/wrzesnia/slowackiego/2",
+      "review_scope": "HOSPITAL_BUILDING_NOT_INTERIOR_CHAPEL_POSITION",
       "place_id": null
     }
   ]
