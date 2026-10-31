@@ -16211,5 +16211,24 @@
     "verification": "CURRENT_BRANCH_VS_MAIN_RECURSIVE_JSON_FIELD_COMPARE",
     "narrative_quality_signoff": "NOT_YET_SENTENCE_LEVEL_HISTORICAL_OR_TRANSLATION_CERTIFICATION",
     "note": "Existing editorial instructions in user-facing narrative were converted to pilgrim-facing sourced qualifications; EN/FR source URLs, IDs, sources and structured rights/status fields were not modified."
+  },
+  "mobile_preview_audit": {
+    "as_of": "2026-10-31",
+    "contract": "EXISTING_APPROVED_PLACE_COVER_OR_APPROVED_EXPLICIT_HERO_GALLERY_FALLBACK_ONLY",
+    "total_places": 530,
+    "approved_cover_places": 120,
+    "approved_hero_gallery_places": 21,
+    "distinct_published_preview_photo_places": 138,
+    "photo_free_preview_places": 392,
+    "photo_free_name_more_than_50_chars": 81,
+    "no_photo_layout": "ONE_COLUMN_NO_BLANK_PLACEHOLDER",
+    "approved_photo_layout": "EXISTING_TWO_COLUMN_UNCROPPED_CONTAIN",
+    "long_name_policy": "DO_NOT_CLAMP_OR_TRUNCATE_IN_SELECTED_PLACE_PREVIEW",
+    "sample_qa": {
+      "synthetic_no_photo": "V8_RENDERED_CORRECTLY",
+      "approved_real_photo": "V8_RENDERED_CORRECTLY",
+      "browser_320_390_430": "PENDING_GITHUB_ACTIONS_SCREENSHOT_ACCEPTANCE"
+    },
+    "notes": "Unlike the 410 sites without a dedicated cover, 18 have exact approved explicit gallery-HERO images; therefore 392 Place previews are actually photo-free. The model-side static render checks do not certify browser layout."
   }
 }
