@@ -17,14 +17,15 @@ export function claudeHorariumHourFromClock(hour=12){
  const n=Number(hour);
  return n<10?6:n<16?12:18;
 }
-export function claudeHorariumClock(hour=12){
+export function claudeHorariumClock(hour=12,language="en"){
+ const french=language==="fr";
  const h=HOURS.includes(+hour)?+hour:12;
  // This is Claude's literal three-point quadratic Bézier hour/sun layout.
  const t=(h-6)/12,P=[[24,96],[150,-36],[276,96]];
  const bx=(1-t)**2*P[0][0]+2*(1-t)*t*P[1][0]+t*t*P[2][0];
  const by=(1-t)**2*P[0][1]+2*(1-t)*t*P[1][1]+t*t*P[2][1];
  const sky=SKY[h],id="ao-prayer-horarium-sky";
- const svg='<svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Hour of the day">'+
+ const svg='<svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid slice" role="img" aria-label="\${french?"Heure de la journée":"Hour of the day"}">'+
   '<defs><linearGradient id="'+id+'" x1="0" y1="1" x2="0" y2="0">'+
   '<stop offset="0" stop-color="'+sky[1]+'" stop-opacity=".55"/>'+
   '<stop offset="1" stop-color="'+sky[0]+'" stop-opacity=".12"/></linearGradient></defs>'+
@@ -38,8 +39,8 @@ export function claudeHorariumClock(hour=12){
    return '<text x="'+x+'" y="108" text-anchor="middle" font-family="IM Fell English SC,Georgia" font-size="13" fill="currentColor" fill-opacity="'+(hh===h?1:.5)+'">'+CLAUDE_HORARIUM_HOUR_LABELS[hh]+'</text>';
   }).join('')+'</svg>';
  return '<div class="aoClaudeHorariumClock" data-ao-claude-horarium-hour="'+h+'">'+svg+
-  '<div class="aoClaudeHorariumHourTargets" role="group" aria-label="Angelus hour">'+
-  HOURS.map(hh=>'<button type="button" data-p435930-angelus-hour="'+hh+'" aria-pressed="'+String(h===hh)+'" aria-label="'+(hh===6?"Six in the morning":hh===12?"Noon":"Six in the evening")+'">'+CLAUDE_HORARIUM_HOUR_LABELS[hh]+'</button>').join('')+
+  '<div class="aoClaudeHorariumHourTargets" role="group" aria-label="\${french?"Heure de l’Angélus":"Angelus hour"}">'+
+  HOURS.map(hh=>'<button type="button" data-p435930-angelus-hour="'+hh+'" aria-pressed="'+String(h===hh)+'" aria-label="'+(french?(hh===6?"Six heures du matin":hh===12?"Midi":"Six heures du soir"):(hh===6?"Six in the morning":hh===12?"Noon":"Six in the evening"))+'">'+CLAUDE_HORARIUM_HOUR_LABELS[hh]+'</button>').join('')+
   '</div></div>';
 }
 /** The four groups are Claude's 3·3·3·9, not a count of Hail Mary beads.
