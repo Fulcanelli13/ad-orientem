@@ -7,9 +7,9 @@ The new four-class reverse index now connects 178 distinct 383-registry artwork 
 Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Earlier all383-artwork-reverse-index.v1.json remains historical I/II-only evidence, and never classifies the 205 unmatched artworks as needing replacement.
 
 ---
-## Latest matching checkpoint — Batch 5 (31 October 2026)
+## Latest matching checkpoint — Batch 7 (31 October 2026)
 
-**Current researched Class III subject identification: 53/165 dates (53/131 observed sanctoral dates).** This is 1 more than Batch 4's 52, and leaves **78 sanctoral dates with no exact subject lead** across the three already reviewed corpora (383 canonical IDs, 856 previously accepted source cards, and W60/W72 historic named-file and scored art sources). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
+**Current researched Class III subject identification: 56/165 dates (56/131 observed sanctoral dates).** This is 3 more than Batch 6's 53, and leaves **75 sanctoral dates with no exact subject lead** across the four existing corpora (383 canonical IDs, 856 previously accepted source cards, W60/W72 historic named-file and scored art sources, and the already-intaken 83 Breviarium Commons plates). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
 
 | Feast | Observation | Existing painting(s) | Safeguard |
 | --- | --- | --- | --- |
@@ -37,15 +37,23 @@ Other title collisions are *not* new exact matches: Sebastian without Fabian, Jo
 
 There are now **three newly recorded partial feast research associations**, separate from the existing Sebastian-only partial on 20 January. No direct exact full-feast match was newly established: **53/131** Class III sanctoral dates have complete-subject candidates; **78/131** remain without them. No user approvals, file-rights assertions, new downloads or production rotation. Structured evidence: `data/calendar/sacred-art-2026-partial-groups-existing-archive-batch6.v1.json`.
 
-### Current 78 unlinked Class III sanctoral dates
+### Batch 7 — three previously archived exact feast subjects recovered (83-gallery archive)
+
+- **11 February — Our Lady of Lourdes**: Virgilio Tojetti, *Our Lady of Lourdes* (1877), historical Commons file `Virgilio Tojetti 1877 Our Lady of Lourdes.jpg`, Breviarium plate `plate-tojetti-lourdes`. Archive source 825×960 px — **low resolution, replace**; no object accession, native-quality or rights approval.
+- **4 May — St Monica**: Ary Scheffer, *Saints Augustine and Monica*, `plate-scheffer-monica`, Commons source 556×691 px — **low resolution, replace**. The feast saint is depicted in a group composition, not an isolated portrait; image approval not presumed.
+- **7 August — St Cajetan**: Giovanni Battista Tiepolo, *Saint Cajetan's Vision of the Holy Family*, `plate-tiepolo-cajetan`, Commons source 6662×11944 px, large third-party photo; frame, visual integrity, exact photo licence and physical-original accession all must be checked before use. This is the strongest technical source of this batch, not a curatorial approval.
+
+These **three** plates were already indexed in `data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json` and independently triaged in W2; no new discovery/download/approval happened. The 451-image legacy snapshot's **68 records outside the canonical 383 are all permanently rejected** and must not be reintroduced as art candidates. Distinguish these from the genuinely new but uncertified exact saint-subject *relationships*: **53→56/131** matched Class III sanctoral dates, **78→75** outstanding. The 383-artwork / 186-date-link reverse index is unchanged. See `data/calendar/sacred-art-2026-breviarium-existing-subject-match-batch7.v1.json`. Only your explicit editorial approval can release any new hero.
+
+### Current 75 unlinked Class III sanctoral dates
 
 **01 (9)** — 16 St. Marcellus I; 20 Sts. Fabian & Sebastian; 22 Sts. Vincent & Anastasius; 23 St. Raymond of Peñafort; 24 St. Timothy; 26 St. Polycarp; 28 St. Peter Nolasco; 30 St. Martina; 31 St. John Bosco.
-**02 (4)** — 06 St. Titus; 07 St. Romuald; 10 St. Scholastica; 11 Our Lady of Lourdes.
+**02 (3)** — 06 St. Titus; 07 St. Romuald; 10 St. Scholastica.
 **04 (4)** — 14 St. Justin; 22 Sts. Soter & Caius; 24 St. Fidelis of Sigmaringen; 28 St. Paul of the Cross.
-**05 (9)** — 04 St. Monica; 05 St. Pius V; 07 St. Stanislaus; 12 Sts. Nereus, Achilleus, Domitilla, & Pancras; 15 St. John Baptist de la Salle; 16 St. Ubaldus; 18 St. Venantius; 19 St. Peter Celestine; 20 St. Bernardine of Siena.
+**05 (8)** — 05 St. Pius V; 07 St. Stanislaus; 12 Sts. Nereus, Achilleus, Domitilla, & Pancras; 15 St. John Baptist de la Salle; 16 St. Ubaldus; 18 St. Venantius; 19 St. Peter Celestine; 20 St. Bernardine of Siena.
 **06 (8)** — 01 St. Angela Merici; 10 St. Margaret of Scotland; 11 St. Barnabas; 17 St. Gregory Barbarigo; 19 St. Julia of Falconieri; 22 St. Paulinus of Nola; 25 St. William; 26 Sts. John & Paul.
 **07 (8)** — 03 St. Irenaeus; 07 Sts. Cyril & Methodius; 10 Seven Holy Brothers and Sts. Rufina & Secunda; 15 St. Henry the Emperor; 18 Camillus de Lellis; 20 St. Jerome Emiliani; 23 St. Apollinaris; 28 Sts. Nazarius & Celsus, St. Victor I & St. Innocent I.
-**08 (7)** — 05 Dedication of the Basilica of St. Mary Major; 07 St. Cajetan; 17 St. Hyacinth; 19 St. John Eudes; 21 St. Jane Frances de Chantal; 27 St. Joseph Calasance; 31 St. Raymond Nonnatus.
+**08 (6)** — 05 Dedication of the Basilica of St. Mary Major; 17 St. Hyacinth; 19 St. John Eudes; 21 St. Jane Frances de Chantal; 27 St. Joseph Calasance; 31 St. Raymond Nonnatus.
 **09 (8)** — 02 St. Stephen of Hungary; 03 St. Pius X; 05 St. Lawrence Justinian; 10 St. Nicholas of Tolentino; 12 Most Holy Name of Mary; 16 Sts. Cornelius & Cyprian; 22 St. Thomas of Villanova; 28 St. Wenceslaus.
 **10 (9)** — 08 St. Bridget of Sweden; 09 St. John Leonardi; 10 St. Francis Borgia; 13 St. Edward; 14 St. Callistus I; 16 St. Hedwig; 19 St. Peter of Alcantara; 20 St. John Cantius; 23 St. Anthony Mary Claret.
 **11 (9)** — 10 St. Andrew Avellino; 12 St. Martin I; 13 St. Didacus; 14 St. Josaphat; 17 St. Gregory the Wonderworker; 18 Dedication of the Basilicas of Sts. Peter & Paul; 19 St. Elizabeth of Hungary; 20 St. Felix of Valois; 26 St. Sylvester.
