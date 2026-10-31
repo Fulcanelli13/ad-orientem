@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 60,
+    "new_site_pins": 64,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -799,6 +799,50 @@
       "source_ref": "heritage:pamiatkynaslovensku:leonarda-dolany",
       "source_url": "https://www.pamiatkynaslovensku.sk/dolany-kaplnka-sv-leonarda-a-floriana",
       "review_scope": "PEZINOK_SAINT_LEONARD_NOT_LEVOCA_SAINT_LEONARD_OR_SEBASTIAN",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-19BD1D3D4E73",
+      "source_id": "AO-B39-LOC-HU-CEAC77F2EE49",
+      "name": "Árpád-házi Szent Erzsébet Ferences-Templom",
+      "lat": 47.23139,
+      "lng": 16.62503,
+      "source_ref": "miserend:1328",
+      "source_url": "https://miserend.hu/templom/1328",
+      "review_scope": "FRANCISCAN_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-2577094CF7E4",
+      "source_id": "AO-B39-LOC-PL-AD5AB9333B4F",
+      "name": "Kościół Trójcy Świętej Ormiański",
+      "lat": 50.29152,
+      "lng": 18.66781,
+      "source_ref": "osm:way:187038655",
+      "source_url": "https://www.openstreetmap.org/way/187038655",
+      "review_scope": "ARMENIAN_CATHOLIC_ORDINARIATE_NOT_LATIN_DIOCESAN_PHOTO_QUEUE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-3E135A9E5C09",
+      "source_id": "AO-B38-LOC-ES-43049BF2ACE",
+      "name": "Monasterio de Santa María de la Rábida",
+      "lat": 37.20756,
+      "lng": -6.92614,
+      "source_ref": "osm:way:205028699",
+      "source_url": "https://www.openstreetmap.org/way/205028699",
+      "review_scope": "FRANCISCAN_FRIARY_NOT_DIOCESAN_PHOTO_QUEUE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-AE6B9D48B695",
+      "source_id": "AO-B39-LOC-HU-F6266E99F5B3",
+      "name": "Szent József Jezsuita Templom",
+      "lat": 46.25193,
+      "lng": 20.14357,
+      "source_ref": "osm:way:1418288454",
+      "source_url": "https://www.openstreetmap.org/way/1418288454",
+      "review_scope": "JESUIT_ORDER_OPERATED_NOT_DIOCESAN_PHOTO_QUEUE",
       "place_id": null
     }
   ]
