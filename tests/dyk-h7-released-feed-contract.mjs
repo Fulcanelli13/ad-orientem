@@ -41,7 +41,8 @@ for(const path of [
  ["publication_days",[]]]){
  const broken=clone(data);let target=broken;
  const key=path[0].split(".");
- for(const part of key.slice(0,-1))target=target===broken?broken:target, target=part==="publication_stage"?target:target[part];
+ if(path[0]!=="publication_stage")target=broken.records.find(x=>x.id===row.id);
+ for(const part of key.slice(0,-1))target=target[part];
  target[key.at(-1)]=path[1];
  assert.equal(dykPublishedCandidates(broken,"2026-11-02").length,0,
    "Must fail closed when "+path[0]+" is missing or false");
