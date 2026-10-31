@@ -116,7 +116,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     return shell(L("Preferences","Préférences"),
       '<div class="aoPrefCover"><h1>'+esc(L("Preferences","Préférences"))+'</h1><p class="aoSetIntro">'+
       esc(L("These are your defaults. Inside a prayer, Aa changes them for that sitting only.","Voici vos choix habituels. Dans chaque prière, Aa les modifie seulement pour cette séance."))+'</p></div>'+
-      '<nav class="aoPrefContents" aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-route="'+t[5]+'"><span class="n">'+t[0]+'</span><span class="t">'+esc(L(t[1],t[2]))+'<small>'+esc(L(t[3],t[4]))+'</small></span><span class="f" aria-hidden="true">›</span></button>').join("")+'</nav>',true);
+      '<nav class="aoPrefContents" aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-route="'+t[5]+'"'+(t[5]==="/settings/about-sources"?' data-settings-sources':"")+'><span class="n">'+t[0]+'</span><span class="t">'+esc(L(t[1],t[2]))+'<small>'+esc(L(t[3],t[4]))+'</small></span><span class="f" aria-hidden="true">›</span></button>').join("")+'</nav>',true);
   }
   if(vm.route==="/settings/general"){
     return shell(L("General","Général"),
