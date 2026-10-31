@@ -46,7 +46,13 @@ class PhotoFinderTests(unittest.TestCase):
   self.assertEqual(len(second),20)
   self.assertEqual(len(set(x["place_id"] for x in first+second)),40)
   already=[x for x in first if mod.already_released(x,self.covers,self.gallery)]
-  self.assertEqual(len(already),12)
+  # The historical first release had twelve; later approved exact-site covers
+  # may close additional positions without changing the frozen slice order.
+  self.assertGreaterEqual(len(already),12)
+  self.assertEqual({x["place_id"] for x in already},
+                   {x["place_id"] for x in first}&
+                   {r["place_id"] for r in self.covers["items"]
+                    if r.get("status")=="APPROVED"})
   currently_approved={row["place_id"] for row in self.covers["items"]
                       if row.get("status")=="APPROVED"}
   self.assertEqual({x["place_id"] for x in second
