@@ -7,6 +7,9 @@ on:
       - "src/home/dyk-pilot-source-folio.js"
       - "src/home/dyk-r34-h4-review.js"
       - "src/home/browser-entry.js"
+      - "src/home/dyk-published-feed.js"
+      - "src/home/did-you-know-glossary.js"
+      - "tests/dyk-h7-*.mjs"
       - "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json"
       - "tests/dyk-r34-*.mjs"
       - "package.json"
@@ -39,8 +42,12 @@ jobs:
           node --check src/home/dyk-pilot-source-folio.js
           node --check src/home/dyk-r34-h4-review.js
           node --check src/home/browser-entry.js
+          node --check src/home/dyk-published-feed.js
+          node --check tests/dyk-h7-released-feed-phone.mjs
           node --check tests/dyk-r34-h4-review-e2e.mjs
       - name: Enforce unpublished H4 flag and seven-card source contract
         run: node tests/dyk-r34-h4-review-contract.mjs
       - name: Review all seven source folios in H4
         run: npm run test:dyk-r34-h4
+      - name: Verify released-only H7 Discovery in an actual phone browser
+        run: node tests/dyk-h7-released-feed-phone.mjs
