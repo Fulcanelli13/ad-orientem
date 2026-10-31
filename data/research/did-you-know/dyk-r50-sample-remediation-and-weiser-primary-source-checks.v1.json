@@ -194,6 +194,91 @@
         ]
       },
       "note": "Royal mandatum and alms on p195; earlier inherited pointer p196 alone was off by one."
+    },
+    {
+      "id": "DYK-H04-W-A-074",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "On Saint Stephen's Day, Swedish 'Staffan riders' once paraded through towns singing songs honouring the 'Saint of Horses,' a custom Weiser distinguishes from blessing horses.",
+        "fr": "Le jour de la Saint-Étienne, les « cavaliers de Staffan » défilaient autrefois dans des villes suédoises en chantant en l'honneur du « saint des chevaux » ; Weiser distingue cet usage de la bénédiction des chevaux."
+      },
+      "source": {
+        "printed_pages": [
+          129
+        ],
+        "pdf_page_zero_based": [
+          146
+        ]
+      },
+      "note": "Replaces an uninformative 'distinct from' with the named local actors and song."
+    },
+    {
+      "id": "DYK-UM02-024",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "According to Weiser, Pope Gelasius I prescribed in 494 that ordinations take place on Ember Saturdays, giving the seasonal fasts a particular connection to preparation for Holy Orders.",
+        "fr": "Selon Weiser, le pape Gélase Ier prescrivit en 494 que les ordinations aient lieu les samedis des Quatre-Temps, reliant ainsi spécialement ces jeûnes saisonniers à la préparation aux ordres sacrés."
+      },
+      "source": {
+        "printed_pages": [
+          32
+        ],
+        "pdf_page_zero_based": [
+          49
+        ]
+      },
+      "note": "Replaces generic harvest purpose with the dated Holy Orders connection; attribution remains to Weiser."
+    },
+    {
+      "id": "DYK-H04-W-B-035",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "Weiser describes an Easter Friday pilgrimage in the Austrian Tyrol whose participants walked ten hours each way to reach a shrine.",
+        "fr": "Weiser décrit dans le Tyrol autrichien un pèlerinage du vendredi de Pâques dont les participants marchaient dix heures à l'aller, puis autant au retour, pour rejoindre un sanctuaire."
+      },
+      "source": {
+        "printed_pages": [
+          225
+        ],
+        "pdf_page_zero_based": [
+          242
+        ]
+      },
+      "note": "The concrete ten-hour journey is recorded at p225; original text was vague."
+    },
+    {
+      "id": "DYK-G461-W-C-008",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "The early Christian Easter Octave was called 'White Week' in the West because newly baptized Christians wore white garments throughout it, changing back to ordinary clothes on the following Sunday.",
+        "fr": "Dans l'Occident chrétien ancien, l'octave de Pâques était appelée « Semaine blanche » parce que les nouveaux baptisés portaient des vêtements blancs toute la semaine, puis reprenaient leur tenue ordinaire le dimanche suivant."
+      },
+      "source": {
+        "printed_pages": [
+          222
+        ],
+        "pdf_page_zero_based": [
+          239
+        ]
+      },
+      "note": "Adds the unusual name, its origin and the return to ordinary clothes; source p222."
+    },
+    {
+      "id": "DYK-G414-W-B-023",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "Weiser attributes the spread of Easter Vigil bonfires to the European mainland partly to Irish missionaries of the sixth and seventh centuries, while recording the blessing of fire in Rome by the late ninth century.",
+        "fr": "Weiser attribue en partie la diffusion des feux de la vigile pascale sur le continent européen aux missionnaires irlandais des VIe et VIIe siècles, et situe l'intégration de la bénédiction du feu dans la liturgie romaine vers la fin du IXe siècle."
+      },
+      "source": {
+        "printed_pages": [
+          216
+        ],
+        "pdf_page_zero_based": [
+          233
+        ]
+      },
+      "note": "Source attribution, not an independently proven Irish origin; replace generic non-claim with the account's specific chronology."
     }
   ],
   "original_folio_direct_checks": [
@@ -337,6 +422,51 @@
       "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
       "historical_independence_verified": false,
       "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-074",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        129
+      ],
+      "pdf_page_zero_based": [
+        146
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p129: Sweden's Staffan riders and their singing distinct from horse blessings",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-024",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        32
+      ],
+      "pdf_page_zero_based": [
+        49
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p32: Gelasius 494 Ember Saturday ordinands",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-035",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        225
+      ],
+      "pdf_page_zero_based": [
+        242
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p225: Austrian Tyrol ten hours each way at Easter Friday pilgrimage",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
     }
   ],
   "effective_roster_rules": [
@@ -351,13 +481,14 @@
     "review_eligible_effective_records": 500,
     "original_sample_unchanged_until_overlay": 50,
     "post_repair_review_sample": 50,
-    "original_source_page_checks_this_pass": 9,
-    "correction_actions": 6,
+    "original_source_page_checks_this_pass": 12,
+    "correction_actions": 11,
     "retired_glossary_records": 1,
     "specific_replacement_records": 1,
     "source_image_corroboration_independent_historiography": false,
     "legacy_612_semantic_complete": false,
     "all_50_finally_approved": false,
-    "new_publications": 0
+    "new_publications": 0,
+    "additional_weak_but_previously_unflagged_discoveries_rewritten": 5
   }
 }
