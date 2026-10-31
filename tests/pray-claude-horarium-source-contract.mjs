@@ -30,6 +30,15 @@ test("Hours buttons, quadratic sun and bell groups reproduce actual Claude signa
  assert.equal((bars.match(/data-ao-bell-group=/g)||[]).length,4);
  assert.match(bars,/class="cu" data-ao-bell-group="2"/);
 });
+test("Claude hour-first opening is explicit and never invents a painting",()=>{
+ assert.match(runtime,/data-ao-horarium-intro/);
+ assert.match(runtime,/data-p435930-angelus-begin/);
+ assert.match(runtime,/ANGELUS_COVER_DISMISSED/);
+ assert.match(runtime,/angelusChoice\(\)/);
+ assert.match(styles,/aoClaudeHorariumPlateArt/);
+ assert.match(styles,/height:220px/);
+ assert.doesNotMatch(styles,/background-image:url\(/);
+});
 test("Canonical Angelus remains season-owned and progresses only with user navigation",()=>{
  assert.match(runtime,/const c=angelusChoice\(\),form=c.form/);
  assert.match(runtime,/angelusExactPosture\(/);
