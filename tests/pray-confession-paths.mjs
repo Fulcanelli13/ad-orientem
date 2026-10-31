@@ -93,5 +93,7 @@ assert.match(presentation,/data-ao-confession-speaker/,"Rite must label penitent
 assert.match(presentation,/data-ao-confession-latin-excerpt="priest-only"/,"Latin formula must be priest-only explanatory content");
 assert.ok(presentation.includes('cards[pos]?.id==="contrition-penance"?confessionContritionPicker'),"Act of Contrition must accompany the correct rehearsal step");
 assert.ok(presentation.includes("cardSequence[cardIndex]?.id===\'contrition-penance\'"),"Historical contrition alternative must not appear after absolution");
+assert.ok(presentation.includes("confessionRiteCards(CONF.path).findIndex(card=>card.id==='contrition-penance')"),"Contrition choice must respond on its actual card");
+assert.ok(presentation.includes("confessionRiteCards(CONF.path)[CONF.riteStep]?.id==='cross-and-blessing'"),"Sign-of-Cross cue must belong to its ritual step");
 assert.doesNotMatch(presentation,/data-p435930-exam="/,"Never collect marked sins");
 console.log("Confession quick, returning and optional general guidance contracts passed (5/13/14 examinations plus 9 pre-confessional role-labelled and 3 aftercare cards)");
