@@ -226,6 +226,8 @@ try{
  await page.locator("#aoPray435930 [data-p435930-angelus-begin]").click();
  assert.notEqual(await ritualGrid.evaluate(el=>getComputedStyle(el).display),"none",
   "Begin must reveal the original source-owned stage rail without advancing it");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-claude-horarium]").getAttribute("data-ao-horarium-opening"),"false",
+  "Opening state attribute must switch to reading after Begin");
  assert.equal(await opening.evaluate(el=>el.hidden),true,
   "Begin must remove only the opening artwork placeholder");
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1,
