@@ -69,7 +69,9 @@ assert.match(dom,/shell\.dataset\.canonInline="false"/);
 // Ecclesia Dei's marginal catechesis is not a LIVE-side rubric. Check the
 // production stylesheet, not just a policy note: source ceremonial brackets
 // become quiet, source-aligned italic text, and 52px icon rails contain no prose.
-const liveSourceRule=markup.match(/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]\{[\s\S]*?\n\}/)?.[0]??"";
+const liveSourceRules=[...markup.matchAll(/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]\{[\s\S]*?\n\}/g)];
+const liveSourceRule=liveSourceRules.at(-1)?.[0]??"";
+assert.ok(liveSourceRules.length>=2,"LIVE rubric override must follow the legacy CSS rule");
 assert.match(liveSourceRule,/border-radius:0;background:transparent/,
   "LIVE source rubrics must not use a grey boxed/card presentation");
 assert.match(liveSourceRule,/font:italic 400/,
