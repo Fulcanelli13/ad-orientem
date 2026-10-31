@@ -416,6 +416,191 @@ try{
    assert.equal(await page.locator(night+' [data-ao-devo-card="close"]').count(),1);
    await page.locator(night+' [data-p435930-night-finish]').tap();
    assert.equal(await page.locator(aRoot).count(),1,"Finish returns to established Adoration chooser");
+   // Review-only F07 w1: this is intentionally separate from baseline
+   // acceptance. A screenshot of the default reader is not w1 evidence.
+   await page.setViewportSize({width,height:width===320?568:844});
+   await page.goto("http://127.0.0.1:"+server.address().port+
+    "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.five_wounds",{returnContext:null}));
+   const pilot=rootSel+' .aoFiveWounds[data-ao-f07-variant="five-wounds"]';
+   assert.equal(await page.locator(pilot+' .aoF07WoundsCross').count(),1);
+   assert.equal(await page.locator(pilot+' [data-f07-wound-status]').count(),5);
+   assert.equal(await page.locator(pilot+' [data-f07-wound-status="current"]').count(),1);
+   assert.equal(await page.locator(pilot+' .aoF07WoundChips [data-p435930-five-wound]').count(),5);
+   assert.equal(await page.locator(pilot+' .aoF07LanguageOptions [data-p435930-five-language]').count(),3);
+   assert.equal(await page.locator(pilot+' .aoF07JumpDisclosure').count(),0,
+    "w1 uses direct wound chips, not a redundant Choose a wound panel");
+   const w1Opening=await page.evaluate(()=>{
+    const reader=document.querySelector('#aoPray435930.open .aoFiveWounds[data-ao-f07-variant="five-wounds"]');
+    const prayer=reader.querySelector('.aoFiveWoundsPrayerText').getBoundingClientRect();
+    const nav=reader.querySelector('.aoFiveWoundsActions').getBoundingClientRect();
+    const port=document.querySelector('#aoPray435930.open .aoP435930Mount').getBoundingClientRect();
+    return {prayerAboveDock:Math.max(0,Math.min(prayer.bottom,nav.top,port.bottom)-Math.max(prayer.top,port.top)),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(w1Opening.prayerAboveDock>=24&&w1Opening.overflow<=1,
+    "Claude w1 must show actual canonical prayer on short phones: "+JSON.stringify(w1Opening));
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-opening-'+width+'.png'),animations:"disabled"});
+   await page.locator(pilot+' [data-p435930-five-wound="3"]').click();
+   assert.equal(await page.locator(pilot+' .aoF07FiveWoundsMeta small').innerText(),"RIGHT HAND");
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"19 / 30");
+   await page.locator(pilot+' [data-p435930-five-next]').click();
+   await page.locator(pilot+' [data-p435930-five-next]').click();
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"21 / 30");
+   assert.equal(await page.locator(pilot+' .aoF07FiveWoundsMeta strong').innerText(),"Glory Be");
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-guided-'+width+'.png'),animations:"disabled"});
+   await page.locator(pilot+' .aoF07ReaderLanguage summary').click();
+   await page.locator(pilot+' [data-p435930-five-language="la"]').click();
+   assert.equal(await page.locator(pilot+' .aoFiveWoundsPrayerText').getAttribute('lang'),'la');
+   assert.match(await page.locator(pilot+' .aoFiveWoundsPrayerText').innerText(),/Gloria Patri/i);
+   await page.locator(pilot+' .aoF07ReaderLanguage summary').click();
+   await page.locator(pilot+' [data-p435930-five-language="fr"]').click();
+   assert.equal(await page.locator(pilot+' .aoFiveWoundsPrayerText').getAttribute('lang'),'fr');
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"21 / 30");
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-french-'+width+'.png'),animations:"disabled"});
+   await page.locator(pilot+' .aoF07ReaderLanguage summary').click();
+   await page.locator(pilot+' [data-p435930-five-language="en"]').click();
+   assert.equal(await page.locator(pilot+' .aoFiveWoundsPrayerText').getAttribute('lang'),'en');
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"21 / 30");
+   await page.locator(pilot+' [data-p435930-five-wound="4"]').click();
+   assert.equal(await page.locator(pilot+' .aoF07WoundDockCount').innerText(),"25 / 30");
+   assert.equal(await page.locator(pilot+' [data-f07-wound-status="current"]').count(),1);
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   await page.screenshot({path:resolve(out,'five-wounds-f07-w1-return-'+width+'.png'),animations:"disabled"});
+   console.log('PASS F07 Claude w1 Five Wounds '+width+'px: cross, chips, active prayer, dock and EN/FR/LA');
+
+   // Opt-in F07 Precious Blood: exercise the REAL reader, not the default
+   // historical source view; no phantom 47-dot dashboard.
+   await page.setViewportSize({width,height:width===320?568:844});
+   await page.goto("http://127.0.0.1:"+server.address().port+
+    "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.precious_blood",{returnContext:null}));
+   const bloodPilot=rootSel+' .aoPreciousBlood[data-ao-f07-variant="precious-blood"]';
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodProgress').count(),1);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodSegment').count(),7);
+   assert.equal(await page.locator(bloodPilot+' .aoPreciousBloodTop:visible').count(),0);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodLanguageOptions [data-p435930-blood-language]').count(),3);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodJump').count(),1);
+   assert.equal(await page.locator(bloodPilot+' .aoF07JumpDisclosure').count(),0);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'0');
+   assert.match(await page.locator(bloodPilot+' .aoPreciousBloodCard').innerText(),/O God, come to my assistance/);
+   const opening=await page.evaluate(()=>{
+    const r=document.querySelector('#aoPray435930.open .aoPreciousBlood[data-ao-f07-variant="precious-blood"]');
+    const p=r.querySelector('.aoPreciousBloodCard p').getBoundingClientRect();
+    const dock=r.querySelector('.aoPreciousBloodActions').getBoundingClientRect();
+    const port=document.querySelector('#aoPray435930.open .aoP435930Mount').getBoundingClientRect();
+    return {visiblePrayer:Math.max(0,Math.min(p.bottom,dock.top,port.bottom)-Math.max(p.top,port.top)),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(opening.visiblePrayer>=20&&opening.overflow<=1,
+    'F07 Precious Blood must show source opening prayer above dock: '+JSON.stringify(opening));
+   await page.screenshot({path:resolve(out,'precious-blood-f07-opening-'+width+'.png'),animations:'disabled'});
+   await page.locator(bloodPilot+' .aoF07BloodJump summary').click();
+   assert.equal(await page.locator(bloodPilot+' [data-p435930-blood-mystery]').count(),7);
+   await page.locator(bloodPilot+' [data-p435930-blood-mystery="6"]').click();
+   assert.match(await page.locator(bloodPilot+' .aoF07BloodContext strong').innerText(),/Piercing of His Side/);
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'42');
+   await page.locator(bloodPilot+' [data-p435930-blood-next]').click();
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'43');
+   await page.screenshot({path:resolve(out,'precious-blood-f07-seventh-'+width+'.png'),animations:'disabled'});
+   await page.locator(bloodPilot+' .aoF07BloodLanguage summary').click();
+   await page.locator(bloodPilot+' [data-p435930-blood-language="la"]').click();
+   assert.match(await page.locator(bloodPilot+' .aoPreciousBloodCard').innerText(),/Pater noster/i);
+   await page.locator(bloodPilot+' .aoF07BloodLanguage summary').click();
+   await page.locator(bloodPilot+' [data-p435930-blood-language="fr"]').click();
+   assert.equal(await page.locator(bloodPilot+' .aoPreciousBloodCard p').getAttribute('lang'),'fr');
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'43');
+   await page.screenshot({path:resolve(out,'precious-blood-f07-french-'+width+'.png'),animations:'disabled'});
+   await page.locator(bloodPilot+' .aoF07BloodLanguage summary').click();
+   await page.locator(bloodPilot+' [data-p435930-blood-language="en"]').click();
+   assert.equal(await page.locator(bloodPilot+' .aoPreciousBloodCard p').getAttribute('lang'),'en');
+   assert.equal(await page.locator(bloodPilot+' .aoF07BloodGuide').getAttribute('data-f07-completed'),'43');
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   console.log('PASS '+width+'px F07 Precious Blood: 7 segments, original 47 positions, full prayer, source-based jump and EN/FR/LA');
+
+   // F07 Claude c1: exercise the actual opt-in circular Little Crown,
+   // not the legacy two-strip default reader.
+   await page.setViewportSize({width,height:width===320?568:844});
+   await page.goto("http://127.0.0.1:"+server.address().port+
+    "/index.html?aoPrayerPilot=0&aoChapletF07Pilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.little_crown",{returnContext:null}));
+   const crownPilot=rootSel+' .aoLittleCrown[data-ao-f07-variant="little-crown"]';
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCircle').count(),1);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownBead').count(),15);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownBead.family').count(),3);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownBead:not(.family)').count(),12);
+   assert.equal(await page.locator(crownPilot+' [data-p435930-crown-bead="0"].active').count(),1);
+   assert.equal(await page.locator(crownPilot+' .aoF07JumpDisclosure').count(),0);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownAspiration').innerText(),/And the Word was made Flesh/);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownPrayerText').innerText(),/Our Father/);
+   const openingC1=await page.evaluate(()=>{
+    const r=document.querySelector('#aoPray435930.open .aoLittleCrown[data-ao-f07-variant="little-crown"]');
+    const p=r.querySelector('.aoLittleCrownPrayerText').getBoundingClientRect();
+    const nav=r.querySelector('.aoLittleCrownActions').getBoundingClientRect();
+    const port=document.querySelector('#aoPray435930.open .aoP435930Mount').getBoundingClientRect();
+    const dots=[...r.querySelectorAll('.aoF07LittleCrownBead')].map(b=>b.getBoundingClientRect());
+    return {prayerAboveDock:Math.max(0,Math.min(p.bottom,nav.top,port.bottom)-Math.max(p.top,port.top)),
+      minimumHitbox:Math.min(...dots.map(d=>Math.min(d.width,d.height))),
+      overlapPairs:dots.reduce((sum,d,i)=>sum+dots.slice(i+1).filter(e=>
+       Math.hypot(d.x+d.width/2-e.x-e.width/2,d.y+d.height/2-e.y-e.height/2)<47.5).length,0),
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(openingC1.minimumHitbox>=48&&openingC1.overlapPairs===0&&openingC1.overflow<=1,
+    "Little Crown c1 circular controls must be accessible and unclipped: "+JSON.stringify(openingC1));
+   assert.ok(openingC1.prayerAboveDock>=20,
+    "Prayer text must remain visible with the c1 circle: "+JSON.stringify(openingC1));
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-opening-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' [data-p435930-crown-bead="3"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownPrayerText').innerText(),/Hail Mary/);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownAspiration').innerText(),/And the Word was made Flesh/);
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-guided-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' .aoF07LittleCrownLanguage summary').click();
+   await page.locator(crownPilot+' [data-p435930-crown-language="la"]').click();
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownAspiration').innerText(),/Et Verbum caro factum est/);
+   assert.match(await page.locator(crownPilot+' .aoLittleCrownPrayerText').innerText(),/Ave Maria/);
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   await page.locator(crownPilot+' .aoF07LittleCrownLanguage summary').click();
+   await page.locator(crownPilot+' [data-p435930-crown-language="fr"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoLittleCrownPrayerText').getAttribute('lang'),'fr');
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-french-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' .aoF07LittleCrownLanguage summary').click();
+   await page.locator(crownPilot+' [data-p435930-crown-language="en"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoLittleCrownPrayerText').getAttribute('lang'),'en');
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'4');
+   // Report the actual tap hit-test after a language-rerender. The 390px
+   // failure named the sticky title as an interceptor; do not force click.
+   const crownHit=await page.evaluate(()=>{
+    const node=document.querySelector('#aoPray435930.open [data-p435930-crown-bead="14"]');
+    const head=document.querySelector('#aoPray435930.open .aoP435930Head');
+    const scroll=document.querySelector('#aoPray435930.open .aoP435930Mount');
+    const b=node.getBoundingClientRect(),h=head.getBoundingClientRect();
+    const x=b.left+b.width/2,y=b.top+b.height/2;
+    const atop=document.elementFromPoint(x,y);
+    return {bead:[b.x,b.y,b.width,b.height],header:[h.x,h.y,h.width,h.height],
+      headerPosition:getComputedStyle(head).position,headerZ:getComputedStyle(head).zIndex,
+      hit:atop?.outerHTML?.slice(0,200),scrollTop:scroll?.scrollTop,
+      scrollHeight:scroll?.scrollHeight,viewport:innerHeight,
+      actualOwner:node?.closest('.aoF07LittleCrownCircle')?.outerHTML?.slice(0,120)};
+   });
+   console.log("F07-CROWN-HIT "+width+" "+JSON.stringify(crownHit));
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-pre-last-"+width+".png"),animations:"disabled"});
+   await page.locator(crownPilot+' [data-p435930-crown-bead="14"]').click();
+   assert.equal(await page.locator(crownPilot+' .aoF07LittleCrownCentre').getAttribute('aria-valuenow'),'15');
+   assert.equal(await page.locator(crownPilot+' [data-p435930-crown-finish]').count(),1);
+   await page.screenshot({path:resolve(out,"little-crown-f07-c1-return-"+width+".png"),animations:"disabled"});
+   console.log("PASS F07 Claude c1 Little Crown "+width+"px: 15 source beads, 48px targets, aspiration, direct taps and EN/FR/LA");
+
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}

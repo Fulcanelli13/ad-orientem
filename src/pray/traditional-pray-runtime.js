@@ -1,4 +1,5 @@
 import "./traditional-pray-styles.js";
+import "./presentation-styles.js";
 import {dailyUxPilotEnabled,renderDailyUxContinuous,renderDailyBookPills,renderDailyReaderOptions} from "./daily-ux-pilot.js";
 import "./traditional-pray-direct-b16-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
@@ -346,10 +347,8 @@ function dailyHorizonMarkup(total){
 }
 function renderMorningEvening(){
  const plan=dailyReadingPlan(),rows=plan.rows;
- const intro=L("A traditional daily rule of prayer built from sourced Catholic forms. Foundational prayers may recur later in the Rosary or another devotion; that repetition belongs to the devotion and is not an error to be optimized away.","Une règle quotidienne traditionnelle bâtie à partir de formes catholiques sourcées. Les prières fondamentales peuvent revenir ensuite dans le Rosaire ou une autre dévotion ; cette répétition appartient à la dévotion et n’est pas une erreur à supprimer.");
  const guided=S.dailyMode==="guided",direct=S.dailyMode==="direct",browse=S.dailyMode==="list",continuous=DAILY_UX_PILOT_ENABLED&&S.dailyMode==="continuous";
  const choice=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Time of prayer","Moment de prière"))}"><button type="button" data-tp381-daypart="morning" aria-pressed="${S.daypart==="morning"}" class="${S.daypart==="morning"?"active":""}">${esc(L("Morning","Matin"))}</button><button type="button" data-tp381-daypart="evening" aria-pressed="${S.daypart==="evening"}" class="${S.daypart==="evening"?"active":""}">${esc(L("Evening","Soir"))}</button></nav>`;
- const options=`<details class="aoTP381SecondaryOptions" data-ao-daily-options><summary>${esc(L("About these prayers","À propos des prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(intro)}</p></div></details>`;
  const existingNav=`<nav class="aoDailyAccessNav" aria-label="${esc(L("Prayer navigation","Parcours des prières"))}"><button type="button" data-tp381-daily-mode="${guided?"list":direct?"list":"guided"}">${esc(guided?L("Choose a prayer","Choisir une prière"):direct?L("All prayers","Toutes les prières"):L("Pray in order","Prier dans l’ordre"))}</button></nav>`;
  const prefs=personalDailyPrefs();
  const editionPills=DAILY_UX_PILOT_ENABLED?renderDailyBookPills({edition:prefs.edition,L,esc}):"";
@@ -361,7 +360,7 @@ function renderMorningEvening(){
   :guided||direct?renderDailyGuided(rows)
   :plan.mode==="personal"?dailyPersonalList(rows,{esc,L,isFr:isFr()})
   :plan.mode==="approved"?dailyApprovedSequenceList(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]));
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody"><div class="aoDailyOpeningRail">${choice}${editionPills}${nav}</div>${guided?dailyHorizonMarkup(rows.length):""}${direct?'<small class="aoDailyDirectHint">'+esc(L("Individual prayer · not added to your daily rule","Prière individuelle · non ajoutée à votre règle quotidienne"))+'</small>':""}${body}${guided?dailyTimerControls():""}${dailyPersonalSettings(plan,prefs,{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN,showEdition:!DAILY_UX_PILOT_ENABLED})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody"><div class="aoDailyOpeningRail">${choice}${editionPills}${nav}</div>${guided?dailyHorizonMarkup(rows.length):""}${direct?'<small class="aoDailyDirectHint">'+esc(L("Individual prayer · not added to your daily rule","Prière individuelle · non ajoutée à votre règle quotidienne"))+'</small>':""}${body}${guided?dailyTimerControls():""}${dailyPersonalSettings(plan,prefs,{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN,showEdition:!DAILY_UX_PILOT_ENABLED})}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
 }
 const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella",...ICRSP_SEASONAL_HYMN_IDS_V1]);
 const hymnById=id=>SACRED_HYMNS_V381[id]||ICRSP_SEASONAL_HYMNS_V1[id]||null;
@@ -815,6 +814,34 @@ function injectGlossaryAction(){
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
+// Historical morning/evening and the wider traditional treasury share
+// the same discreet Aa and source-notes rule as the primary Prayer reader.
+function reconcileTraditionalPrayerSettings(m){
+ const header=m.querySelector('.aoP435930Head');
+ if(!header)return;
+ const candidates=[...m.querySelectorAll('.aoTP381Source,.aoDailyBookSourceNote,.aoTP381Lang,.aoDailyBookSelector,.aoDailyReadingOptions')];
+ const nodes=candidates.filter(x=>!candidates.some(y=>y!==x&&y.contains(x)));
+ if(!nodes.length)return;
+ const menu=document.createElement('details');
+ menu.className='aoPrayerBookMenu';
+ menu.innerHTML='<summary aria-label="'+esc(L("Prayer language and source notes","Langue de prière et notes de source"))+
+  '">Aa</summary><div class="aoPrayerBookMenuPanel"></div>';
+ const body=menu.querySelector('.aoPrayerBookMenuPanel');
+ const languages=nodes.filter(n=>n.matches('.aoTP381Lang,.aoDailyBookSelector,.aoDailyReadingOptions'));
+ // Text edition, reading depth and language are active settings, not provenance.
+ const references=nodes.filter(n=>!languages.includes(n));
+ languages.forEach(n=>body.append(n));
+ if(references.length){
+  const info=document.createElement('details');
+  info.className='aoPrayerBookSources';
+  info.innerHTML='<summary>ⓘ '+esc(L("Sources","Sources"))+'</summary>';
+  references.forEach(n=>info.append(n));
+  body.append(info);
+ }
+ const home=header.querySelector('.aoP435930Home');
+ if(home)home.before(menu);else header.append(menu);
+ header.classList.add('aoPrayerBookHead');
+}
 function render(){
   const m=mount();if(!m)return false;
   // The native disclosure can be opened or closed directly. Preserve its
@@ -829,6 +856,7 @@ function render(){
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  reconcileTraditionalPrayerSettings(m);
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
