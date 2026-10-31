@@ -5,8 +5,8 @@
 const freeze=Object.freeze;
 const HEADERS="%%";
 function norm(value){
- return String(value??"").replaceAll(/æ/gi,"ae").replaceAll(/œ/gi,"oe")
-  .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+ return String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+  .replaceAll(/æ/gi,"ae").replaceAll(/œ/gi,"oe")
   .toLowerCase().replaceAll("j","i").replace(/[^a-z0-9]/g,"");
 }
 export function canonicalChantComparisonText(value){return norm(value)}
