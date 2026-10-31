@@ -117,7 +117,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: november-2026-mass-readiness
-          path: artifacts/mass-november-readiness/report.json
+          path: |
+            artifacts/mass-november-readiness/report.json
+            artifacts/mass-november-readiness/all-souls-m*.png
           if-no-files-found: warn
           retention-days: 7
       - uses: actions/upload-artifact@v4
