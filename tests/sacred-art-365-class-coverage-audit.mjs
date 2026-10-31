@@ -60,9 +60,9 @@ for(const row of selected.strictExactSaintResearch){
   }
 }
 assert.equal(j.summary.III.additionalUnlinked856ExactSubjectDateCandidates,16);
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,67);
-assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,98);
-assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,64);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,84);
+assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,81);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,47);
 assert.equal(selected.partialOrExcludedGroupOrDifferentSaint.find(x=>x.date==="2026-07-10").entries.length,1);
 assert.ok(!map.get("2026-07-10").additionalAcceptedSourceLeads,"Seville Rufina is not Roman Rufina or Secunda");
 assert.ok(map.get("2026-01-20").partialOrExcludedAcceptedSourceLeads.length>=4);
@@ -103,7 +103,7 @@ assert.equal(batch4.counts.newAcceptedSourceOnlyMatchedDates,3);
 assert.equal(batch4.counts.newLegacyNamedFileOnlyMatchedDates,1);
 assert.equal(batch4.counts.nowUnmatchedClassIIISanctoral,79);
 assert.equal(j.summary.III.additionalLegacyNamedFileExactSubjectDates,1);
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,64);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,47);
 assert.equal(batch4.rows.length,7);
 for(const row of batch4.rows){
   const d=map.get(row.date);
@@ -154,8 +154,8 @@ assert.equal(map.get("2026-01-22").partialOrExcludedAcceptedSourceLeads[0].sourc
 assert.equal(map.get("2026-07-10").partialGroupLegacyNamedFileLeads[0].historicalFile,"File:SevenBrothers.jpg");
 assert.equal(map.get("2026-07-28").partialGroupLegacyNamedFileLeads.length,2);
 assert.ok(map.get("2026-07-10").partialOrExcludedAcceptedSourceLeads.some(x=>x.sourceCardId==="commons:29858581"));
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,67,"partial group matches never add dates; Batch 7 and 8 added exact subjects");
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,64);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,84,"partial feast groups do not inflate exact subject matches");
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,47);
 
 
 const batch7=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-breviarium-existing-subject-match-batch7.v1.json",import.meta.url),"utf8"));
@@ -192,7 +192,7 @@ assert.equal(batch8.counts.newUserEditorialApprovals,0);
 assert.equal(batch8.counts.newCanonical383ArtworkIds,0);
 assert.equal(batch8.counts.newLiveAppImages,0);
 assert.equal(j.summary.III.additionalNewExternalExactSubjectDates,11);
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllSourceRegistries,64);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllSourceRegistries,47);
 const q8=new Set();
 for(const row of batch8.rows) {
   const observed=map.get(row.date);
@@ -217,7 +217,40 @@ for(const row of batch8.rows) {
 }
 assert.equal(q8.size,12);
 assert.equal(map.get("2026-05-05").additionalNewMuseumLeads.length,2,"distinct Pius V paintings remain separate");
-assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,64);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,47);
+
+
+const batch9=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-exact-sanctoral-research-batch9.v1.json",import.meta.url),"utf8"));
+assert.equal(batch9.counts.newDateSubjects,17);
+assert.equal(batch9.counts.newSourcePaintingLeads,22);
+assert.equal(batch9.counts.classIIISanctoralMatchedAfter,84);
+assert.equal(batch9.counts.classIIISanctoralUnmatchedAfter,47);
+assert.equal(batch9.counts.newUserApprovals,0);
+assert.equal(batch9.counts.newProductionCertified,0);
+assert.equal(batch9.rows.length,17);
+const q9=new Set();
+for(const row of batch9.rows){
+ const d=map.get(row.date);
+ assert.equal(d.observedPrincipalId,row.principalId);
+ assert.equal(d.rank,"III");
+ assert.equal(d.linkedCatalogueArt.length,0);
+ assert.deepEqual(d.additionalNewMuseumLeads.map(z=>z.researchSourceId).filter(id=>row.works.some(w=>w.researchSourceId===id)),row.works.map(w=>w.researchSourceId));
+ assert.equal(row.dateArtworkApproved,false);
+ assert.equal(row.productionCertified,false);
+ for(const w of row.works){
+  assert.ok(!q9.has(w.researchSourceId));
+  q9.add(w.researchSourceId);
+  assert.equal(w.originalFileAcquired,false);
+  assert.equal(w.editorialApprovalForFeast,false);
+  assert.equal(w.homeRotationEligible,false);
+  assert.equal(w.photoRightsForProductionVerified,false);
+  assert.equal(w.nativeFramelessMobileHeroQA,false);
+ }
+}
+assert.equal(q9.size,22);
+assert.equal(batch9.rows.find(x=>x.date==="2026-01-30").works.length,2);
+assert.equal(batch9.rows.find(x=>x.date==="2026-10-08").works.length,2);
+assert.equal(batch9.rows.find(x=>x.date==="2026-09-28").works.length,2);
 
 const everyArt=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json",import.meta.url),"utf8"));
 assert.equal(everyArt.counts.canonicalArtworkIds,383);
