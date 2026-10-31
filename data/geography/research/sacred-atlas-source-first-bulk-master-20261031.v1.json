@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "scope": "REFERENCE_QUEUE_NOT_PHOTOGRAPH_APPROVAL",
   "strategy": "Authority/custodian physical object definition → exact photographed scene → Commons/GLAM free-use author/licence → high-quality photo QA → user approval → permanent optimized archive",
-  "important_distinction": "530 physical canonical Places, 492 source-first rows (many per Place) and 33 non-photographable apparition contexts: 525 linked research records are NOT 525 individual verified object photos.",
+  "important_distinction": "530 canonical Places; 492 previous source-first reference records + 19 exact documented B07 targets (511); 33 apparition contexts and 81 additional B07 intake sites are not new verified object identities. No new photo passed publication.",
   "source_references": [
     {
       "path": "data/geography/seed-registry.v1.json",
@@ -60,17 +60,25 @@
       "name": "B06_NONMARIAN_SHRINES_139",
       "path": "data/geography/research/sacred-atlas-source-first-b06-nonmarian-shrines-139-20261031.v1.json",
       "count": 139
+    },
+    {
+      "name": "B07_FIRST_100_UNREFERENCED_SITES",
+      "path": "data/geography/research/sacred-atlas-source-first-b07-100-previously-unreferenced-20261031.v1.json",
+      "count": 100,
+      "verified_exact_physical_subject_references": 19,
+      "commons_named_file_leads": 13,
+      "unresolved_site_subjects": 81
     }
   ],
   "stats": {
     "canonical_places": 530,
-    "unique_places_with_evidence": 259,
-    "unique_places_without_object_refs": 271,
+    "unique_places_with_evidence": 278,
+    "unique_places_without_object_refs": 252,
     "relic_records": 127,
     "marian_shrines": 118,
     "guide_stops": 88,
     "precise_targets": 20,
-    "source_first_reference_rows": 492,
+    "source_first_reference_rows": 511,
     "apparition_contexts_excluded_from_photographic_objects": 33,
     "source_directness_currently_web_checked_relic_records": 19,
     "b01_precise_source_first_reuse": 5,
@@ -78,7 +86,11 @@
     "images_downloaded": 0,
     "note": "19 canonical relic records in independently rechecked custodian groups; other entries preserve registered URLs without a fresh web verification. Site-only/subject-unspecified rows are unresolved research, not achieved image matches.",
     "nonmarian_shrine_source_rows": 139,
-    "nonmarian_owners_newly_linked": 45
+    "nonmarian_owners_newly_linked": 45,
+    "b07_sites_triaged": 100,
+    "b07_new_evidenced_subjects": 19,
+    "b07_held_for_authoritative_object_identity": 81,
+    "b07_commons_named_photo_leads": 13
   },
   "web_reviewed_original_sources": [
     {
@@ -214,7 +226,8 @@
     "Relic authenticity claims remain attributed to sources, never app-certified.",
     "Source registry links are research starting points, not proof a website page still resolves or grants image copyright.",
     "Wikimedia categories do not grant licences, and visual rights/photo quality still need individual review.",
-    "No automated object-media publication, no overwrite of site heroes, no new payment or rights-holder contact."
+    "No automated object-media publication, no overwrite of site heroes, no new payment or rights-holder contact.",
+    "B07 has 100 intake records, but ONLY the 19 positively documented physical subjects count as new referenced Place owners; no unverified shrine dedication is treated as a known object."
   ],
   "new_custodian_verified_this_batch": [
     {
