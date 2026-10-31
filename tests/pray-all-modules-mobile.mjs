@@ -182,10 +182,14 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/phone away/i);
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"say-sins");
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"contrition-penance");
+ for(const id of [
+   "cross-and-blessing","last-confession","say-sins","closing-accusation",
+   "counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"
+ ]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id,
+    "The source-owned nine-card traditional Confession rehearsal must keep its exact order");
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  for(const id of ["satisfaction","amendment"]){
