@@ -208,6 +208,14 @@ try{
  const opening=page.locator("#aoPray435930 [data-ao-horarium-intro]");
  assert.equal(await opening.count(),1,"Claude's Horarium opening plate is missing");
  assert.equal(await page.locator("#aoPray435930 .aoClaudeHorariumPlate").count(),1);
+ const hourMarks=await page.locator("#aoPray435930 .aoClaudeHorariumClock svg text").evaluateAll(nodes=>nodes.map(node=>{
+  const mark=node.getBoundingClientRect(),clock=node.closest(".aoClaudeHorariumClock").getBoundingClientRect();
+  return {text:node.textContent.trim(),within:mark.left>=clock.left-2&&mark.right<=clock.right+2};
+ }));
+ assert.deepEqual(hourMarks.map(x=>x.text),["vi","xii","xviii"],
+  "Claude's VI/XII/XVIII hour labels must exist");
+ assert.ok(hourMarks.every(x=>x.within),
+  "The opening arc must not crop VI or XVIII at 390px: "+JSON.stringify(hourMarks));
  assert.match(await opening.innerText(),/Angelus|Angélus/i);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1);
  const ritualGrid=page.locator("#aoPray435930 .aoAngelusRitualGrid");
