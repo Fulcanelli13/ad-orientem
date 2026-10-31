@@ -20,11 +20,20 @@ for(const candidate of pilot){
     assert.equal(model.sourcePageUrl,model.sourceUrl+"#page="+model.sourcePage);
     assert.equal(model.reviewOnly,true);
     assert.equal(model.readOnly,true);
-    assert.match(model.sourceLocation,model.sourceType==="ROMAN_RITUS"?/Ritus servandus, § IX\.2/:/31[1-4]/);
+    assert.match(model.sourceLocation,model.sourceType==="ROMAN_RITUS"?/Ritus servandus, §§ VIII\.3; IX\.2/:/31[1-4]/);
+    if(model.sourceType==="ROMAN_RITUS"){
+      assert.equal(model.sourcePageUrl,model.sourceUrl+"#page=13","Living Memento uses VIII.3");
+      assert.equal(model.secondarySourcePageUrl,model.sourceUrl+"#page=16","Departed Memento uses IX.2");
+      assert.equal(model.secondarySourcePage,16);
+    }else assert.equal(model.secondarySourcePageUrl,null,"Weiser is a one-page folio");
     const html=dykPilotSourceFolioMarkup(model);
     assert.match(html,/role="dialog" aria-modal="true"/);
     assert.match(html,/data-dyk-source-close/);
     assert.match(html,/data-dyk-original-source/);
+    if(model.sourceType==="ROMAN_RITUS"){
+      assert.match(html,/data-dyk-second-source/);
+      assert.ok(html.includes(model.secondarySourcePageUrl));
+    }else assert.doesNotMatch(html,/data-dyk-second-source/);
     assert.match(html,/rel="noopener noreferrer"/);
     assert.match(html,/Not published|Non publié/);
     assert.ok(html.includes(model.fact));
@@ -42,6 +51,9 @@ assert.equal(dykPilotSourceFolioModel({...r34,status:"PUBLISHED"},"DYK-UM02-014"
 assert.equal(dykPilotSourceFolioModel({...r34,records:[]},"DYK-UM02-014"),null);
 assert.equal(dykPilotSourceFolioMarkup({...dykPilotSourceFolioModel(r34,pilot[0].id),sourceUrl:"javascript:alert(1)"}),"");
 assert.equal(dykPilotSourceFolioMarkup({...dykPilotSourceFolioModel(r34,pilot[0].id),sourcePageUrl:"javascript:alert(1)"}),"");
+const canon=dykPilotSourceFolioModel(r34,"DYK-M04-CANON-047");
+assert.equal(dykPilotSourceFolioMarkup({...canon,secondarySourcePageUrl:"javascript:alert(1)"}),"",
+  "Second source must use a validated PDF page URL");
 const injected={...dykPilotSourceFolioModel(r34,pilot[0].id),fact:'<img src=x onerror="alert(1)">'};
 const guarded=dykPilotSourceFolioMarkup(injected);
 assert.ok(!guarded.includes("<img"));
