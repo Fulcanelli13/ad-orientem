@@ -13,6 +13,8 @@ on:
       - 'tests/prayer-stations-verified-artwork-release.mjs'
       - 'tests/prayer-san-polo-oil-archive.mjs'
       - 'tests/prayer-san-polo-prior-approvals.mjs'
+      - 'tests/prayer-san-polo-license-ready-assets.mjs'
+      - 'assets/stations/san-polo/**'
       - '.github/workflows/san-polo-image-quality-qa.yml'
   pull_request:
     branches:
@@ -28,6 +30,8 @@ on:
       - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
       - 'tests/prayer-san-polo-oil-archive.mjs'
       - 'tests/prayer-san-polo-prior-approvals.mjs'
+      - 'tests/prayer-san-polo-license-ready-assets.mjs'
+      - 'assets/stations/san-polo/**'
   workflow_dispatch:
 
 permissions:
@@ -62,3 +66,5 @@ jobs:
         run: node tests/prayer-san-polo-prior-approvals.mjs
       - name: Verify inert rights-gated Station image seam in the current Prayer reader
         run: node tests/prayer-stations-verified-artwork-release.mjs
+      - name: Verify staged 14/14 identical photo assets, credits and release locks
+        run: node tests/prayer-san-polo-license-ready-assets.mjs
