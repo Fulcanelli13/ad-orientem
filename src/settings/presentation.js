@@ -238,18 +238,26 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       section(L("DATA","DONNÉES"),row(L("Delete profile","Supprimer le profil"),"",icon("ao-ui-close"),`class="aoSetDanger" data-profile-delete="${esc(id)}"`)));
   }
   if(vm.route==="/settings/privacy-data"){
-    const dataRow=(en,frt,a,danger=false,disabled=false)=>row(L(en,frt),"",danger?icon("ao-ui-close"):"",`${danger?'class="aoSetDanger" ':''}data-data-action="${a}"${disabled?" disabled":""}`);
-    return shell(L("Privacy & Data","Confidentialité & données"),
-      section(L("DATA","DONNÉES"),
-        dataRow("Clear unfinished Mass","Effacer la Messe inachevée","clear-mass",false,vm.live)+
-        dataRow("Clear prayer sessions","Effacer les sessions de prière","clear-prayer")+
-        dataRow("Restore default settings","Rétablir les réglages par défaut","reset-preferences")+
-        dataRow("Delete saved churches","Supprimer les églises enregistrées","reset-profiles")+
-        dataRow("Clear learning progress","Effacer la progression d’apprentissage","clear-progress")+
-        dataRow("Clear bookmarks","Effacer les favoris","clear-bookmarks")+
-        dataRow("Clear temporary downloaded files","Effacer les fichiers temporaires téléchargés","clear-cache")+
-        dataRow("Reset the whole app","Réinitialiser toute l’application","reset-all",true))+
-      note(`<strong>${esc(L("Privacy","Confidentialité"))}</strong><br>${esc(L("Selections made during an examination of conscience are temporary and are not stored as a persistent list of sins.","Les sélections faites pendant un examen de conscience sont temporaires et ne sont pas enregistrées comme liste persistante de péchés."))}`));
+    const dataRow=(en,french,act,disabled=false)=>row(L(en,french),"",'<span aria-hidden="true">☞</span>','data-data-action="'+act+'"'+(disabled?" disabled":""));
+    const group=(title,body)=>'<div class="aoPrefDataGroup"><h3>'+esc(title)+'</h3>'+body+'</div>';
+    return shell(L("Your data","Vos données"),
+      note(esc(L("These controls clear saved information on this device. Each action has its own confirmation.","Ces contrôles effacent les informations conservées sur cet appareil. Chaque action demande confirmation.")))+
+      group(L("Progress","Progression"),
+        dataRow("An unfinished Mass","Une Messe inachevée","clear-mass",vm.live)+
+        dataRow("Prayer sessions","Sessions de prière","clear-prayer")+
+        dataRow("Learning progress","Progression de formation","clear-progress")+
+        dataRow("Bookmarks","Signets","clear-bookmarks"))+
+      group(L("Your lists","Vos listes"),
+        dataRow("Saved churches","Églises enregistrées","reset-profiles"))+
+      group(L("Storage","Stockage"),
+        dataRow("Temporary downloaded files","Fichiers temporaires téléchargés","clear-cache"))+
+      '<div class="aoPrefReset">'+(resetAsk?
+        '<p>'+esc(L("This cannot be undone. Your saved preferences, church profiles and supported session data will be cleared.","Cette opération est irréversible. Vos préférences, églises et données de séance prises en charge seront effacées."))+'</p>'+
+        '<button type="button" data-settings-reset-confirm'+(vm.live?' disabled':'')+'>'+esc(L("Yes, begin again","Oui, tout recommencer"))+' ☞</button>'+
+        '<button type="button" data-settings-reset-cancel>'+esc(L("Keep everything","Tout conserver"))+' ☞</button>':
+        '<p>'+esc(L("Begin again: return preferences, lists and saved progress to their initial state.","Tout recommencer : rétablir les préférences, les listes et la progression à leur état initial."))+'</p>'+
+        '<button type="button" data-settings-reset-ask'+(vm.live?' disabled':'')+'>'+esc(L("Begin again…","Tout recommencer…"))+' ☞</button>')+'</div>'+
+      note(esc(L("An examination of conscience is never stored as a persistent list of sins.","Un examen de conscience n’est jamais enregistré comme une liste permanente de péchés."))));
   }
   if(vm.route==="/settings/about-sources"||vm.route==="about-sources"){
     const sourceFamilies=fr?[
