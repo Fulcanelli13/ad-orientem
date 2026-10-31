@@ -13,7 +13,8 @@
     "excludedDoNotSuggest": 11,
     "candidatesWithExplicitNoPublicationGate": 139,
     "sourceLinksRecoveredByExactID": 4,
-    "sourceLinkSuggestionsUnverified": 0
+    "sourceLinkSuggestionsUnverified": 0,
+    "sourceLinksRecoveredByMuseumExactOriginal": 2
   },
   "slots": [
     {
@@ -1435,7 +1436,7 @@
           ],
           "title": "The Entry of Christ into Jerusalem",
           "artist": "Anthony van Dyck",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
           "fit": "PALM_SUNDAY_EXACT",
           "sourceEditorialStatus": "PREVIOUS_USER_APPROVAL_FOR_CALENDAR_DATE",
           "historicallyApprovedInOriginalLedger": false,
@@ -1451,7 +1452,14 @@
             "verifiedRights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING"
           },
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "nativeImageLead": {
+            "width": 5043,
+            "height": 3325,
+            "source": "Wikimedia Commons original of Indianapolis Newfields accession 58.3",
+            "license": "Commons PD-Art / PD-Mark; original artist died 1641; separate local-JX reproduction-law QA pending",
+            "frameCrop": "NATIVE_PIXEL_QA_PENDING"
+          }
         },
         {
           "sourceIDs": [
@@ -1476,7 +1484,7 @@
           ],
           "title": "Entry into Jerusalem",
           "artist": "Anthony van Dyck",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
           "fit": "DIRECT_SUBJECT_CANDIDATE",
           "sourceEditorialStatus": "CROSS_MODULE_EDITORIAL_REUSE",
           "historicallyApprovedInOriginalLedger": false,
@@ -1485,7 +1493,14 @@
           "publication": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
+          "photoCertification": "NOT_CLEARED",
+          "nativeImageLead": {
+            "width": 5043,
+            "height": 3325,
+            "source": "Wikimedia Commons original of Indianapolis Newfields accession 58.3",
+            "license": "Commons PD-Art / PD-Mark; original artist died 1641; separate local-JX reproduction-law QA pending",
+            "frameCrop": "NATIVE_PIXEL_QA_PENDING"
+          }
         }
       ],
       "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
