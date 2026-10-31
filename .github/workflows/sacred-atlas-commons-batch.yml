@@ -31,6 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Diagnose Wikimedia access before search
+        run: node tools/sacred-atlas-commons-diagnostic.mjs
       - name: Scan batch 001 (100 sacred subjects)
         run: node tools/sacred-atlas-commons-batch.mjs 001
       - name: Scan batch 002 (100 sacred subjects)
