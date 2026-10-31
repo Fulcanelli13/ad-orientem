@@ -154,8 +154,8 @@ assert.equal(map.get("2026-01-22").partialOrExcludedAcceptedSourceLeads[0].sourc
 assert.equal(map.get("2026-07-10").partialGroupLegacyNamedFileLeads[0].historicalFile,"File:SevenBrothers.jpg");
 assert.equal(map.get("2026-07-28").partialGroupLegacyNamedFileLeads.length,2);
 assert.ok(map.get("2026-07-10").partialOrExcludedAcceptedSourceLeads.some(x=>x.sourceCardId==="commons:29858581"));
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,53,"partial feasts must not inflate complete matches");
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,78);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,56,"partial group matches never add dates; Batch 7 added three exact subjects");
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,75);
 
 
 const batch7=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-breviarium-existing-subject-match-batch7.v1.json",import.meta.url),"utf8"));
