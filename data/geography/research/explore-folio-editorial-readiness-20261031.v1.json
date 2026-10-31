@@ -16197,5 +16197,19 @@
         "structural_review": "FIELDS_PRESENT_NOT_EDITORIALLY_CERTIFIED"
       }
     ]
+  },
+  "copyediting_review": {
+    "date": "2026-10-31",
+    "scope": "SIX_PUBLISHED_SHRINE_GUIDE_CORPORA_SOURCE_PRESERVING_COPYEDITING",
+    "records_read": 33,
+    "narrative_paragraphs": 127,
+    "changed_prose_fields": 49,
+    "structured_owner_or_source_changes": 0,
+    "verified_application_centric_guide_prose_remaining": 0,
+    "approved_images_added": 0,
+    "identity_source_and_media_policy": "UNCHANGED",
+    "verification": "CURRENT_BRANCH_VS_MAIN_RECURSIVE_JSON_FIELD_COMPARE",
+    "narrative_quality_signoff": "NOT_YET_SENTENCE_LEVEL_HISTORICAL_OR_TRANSLATION_CERTIFICATION",
+    "note": "Existing editorial instructions in user-facing narrative were converted to pilgrim-facing sourced qualifications; EN/FR source URLs, IDs, sources and structured rights/status fields were not modified."
   }
 }
