@@ -52,10 +52,13 @@ export function createAppNativeBackBridge({win=globalThis,shell}={}){
           record("settings"); // re-arm the same page for the next device Back
           return;
         }
-        expected=entry.surface;
+        const destination=entry.surface==="settings"
+          ?settings().status().returnSurface??"home":entry.surface;
+        expected=destination;
         settings().close();
-        // Closing Settings may reopen an asynchronously imported canonical
-        // module. Its owner emits the real destination when visible.
+        // Learn/Explore/Apostolate reopen asynchronously; others restore
+        // synchronously. Do not leave a stale suppressor for later journeys.
+        if(!["learn","find","apostolate"].includes(destination))expected=null;
         return;
       }
       if(entry.surface===origin)return;
