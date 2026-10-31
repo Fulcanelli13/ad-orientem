@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const root=new URL("../data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json",import.meta.url);
+const j=JSON.parse(readFileSync(root,"utf8"));
+const master=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-class-i-ii-multiwork-crosswalk.v1.json",import.meta.url),"utf8"));
+const map=new Map(j.days.map(x=>[x.date,x]));
+assert.equal(j.days.length,365,"one record for every observed principal date in 2026");
+assert.equal(map.size,365,"no duplicate dates");
+assert.deepEqual(Object.fromEntries(["I","II","III","IV"].map(k=>[k,j.summary[k].total])),{I:53,II:76,III:165,IV:71});
+for(const x of j.days){assert.ok(x.observedPrincipalId);assert.equal(x.noPublishedArtworkCertificationsFromResearch,true);assert.ok(["I","II","III","IV"].includes(x.rank));}
+for(const x of master.dates){let y=map.get(x.date);assert.equal(y.observedPrincipalId,x.observedPrincipalId);assert.equal(y.rank,x.liturgicalRank);assert.deepEqual(y.linkedCatalogueArt.slice(0,x.exactSubjectCatalogueCandidates.length).map(z=>z.artworkId),x.exactSubjectCatalogueCandidates.map(z=>z.artworkId));}
+assert.equal(j.summary.I.datedPrimaryAssociations,53);
+assert.equal(j.summary.I.anyCatalogueIdentityCandidate,25);
+assert.equal(j.summary.I.noCatalogueIdentityCandidate,28);
+assert.equal(j.summary.II.anyCatalogueIdentityCandidate,18);
+assert.equal(j.summary.II.sanctoralPrincipalCount,24);
+assert.equal(j.summary.II.sanctoralWithoutIdentified383Candidate,7);
+assert.equal(j.summary.III.anyCatalogueIdentityCandidate,33);
+assert.equal(j.summary.III.sanctoralPrincipalCount,131);
+assert.equal(j.summary.III.sanctoralWithoutIdentified383Candidate,98);
+assert.equal(j.summary.III.specialSeasonalReuseRequired,34);
+assert.equal(j.summary.IV.total,71);
+assert.equal(j.summary.IV.sanctoralPrincipalCount,0);
+assert.equal(j.summary.IV.marianSaturdayReuseRequired,12);
+assert.equal(j.summary.IV.specialSeasonalReuseRequired,59);
+assert.equal(j.unmatched.I.length,0);
+assert.equal(j.unmatched.II.length,58);
+assert.equal(j.unmatched.III.length,132);
+assert.equal(j.unmatched.IV.length,71);
+function art(date){return map.get(date)?.linkedCatalogueArt.map(a=>a.title.toLowerCase())||[]}
+assert.ok(art("2026-01-17").every(t=>!t.includes("padua")),"Abbot is not Anthony of Padua");
+assert.ok(art("2026-06-13").some(t=>t.includes("padua")),"Padua feast has correct artist titles");
+assert.ok(art("2026-06-18").some(t=>t.includes("effremo")),"Ephrem is identified by Italian title");
+assert.ok(art("2026-02-09").some(t=>t.includes("cyril of alexandria")),"Alexandria not Jerusalem");
+assert.ok(!art("2026-02-05").some(t=>t.includes("shrine of saint agatha")),"Lucy shrine scene is not portrait of Agatha");
+assert.ok(art("2026-05-11").some(t=>t.includes("saint philip")),"Phillip group has partial role");
+assert.ok(map.get("2026-05-11").linkedCatalogueArt.every(a=>a.status==="PARTIAL_GROUP_ONLY"||a.status==="LEGACY_EXACT_TITLE_RESEARCH_LINK"));
+assert.ok(map.get("2026-09-15").additionalStudy.some(a=>a.title.includes("Seven Sorrows")),"Preserve Seven Sorrows approved module reuse");
+assert.ok(map.get("2026-10-07").additionalStudy.some(a=>a.title.includes("Madonna del Rosario")),"Preserve selected Lotto Rosary artwork");
+assert.ok(art("2026-10-03").some(t=>t.includes("therese")),"Research identity exists, but may be copyright-held");
+assert.ok(j.days.filter(x=>x.rank==="IV").every(x=>!x.dateSelectedArt&&!x.linkedCatalogueArt.length),"No unapproved seasonal paintings auto-assigned");
+console.log("Sacred Art 2026: 365 exact dates, four-class reporting, anti-confusion and external reuse gates PASS");
