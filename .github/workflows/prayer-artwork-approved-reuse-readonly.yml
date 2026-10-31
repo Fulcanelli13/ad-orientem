@@ -4,6 +4,8 @@ on:
     paths:
       - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave1.v1.json'
       - 'tests/prayer-artwork-reuse-wave1-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave2.v1.json'
+      - 'tests/prayer-artwork-reuse-wave2-contract.mjs'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
@@ -19,4 +21,4 @@ jobs:
         with:
           node-version: '22'
       - name: Source-linked art mapping validation
-        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs
+        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs
