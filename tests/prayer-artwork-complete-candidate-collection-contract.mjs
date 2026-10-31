@@ -21,7 +21,7 @@ test("every historical prayer artwork position has accessible grouped candidates
    assert.ok(s.reviewCollection.length>0,"zero art candidates "+s.slot);
    assert.equal(s.imagePublicationAllowed===true,false);
    for(const w of s.reviewCollection){
-    assert.ok(w.title&&w.artist,"missing original artist/title "+s.slot);
+    assert.ok(w.title&&w.sourceIDs?.length,"missing original painting title/ID "+s.slot);
     assert.ok(w.productionEnabled===false||w.notForLive===true,"candidate must remain unpublished");
    }
   }
