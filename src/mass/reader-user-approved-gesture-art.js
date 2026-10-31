@@ -10,6 +10,17 @@ const CUES=Object.freeze({
  "AO.SM.C0263":"ao_1962_priest_c0263",
 });
 export const USER_APPROVED_MASS_GESTURE_KEYS=CUES;
+// The user approved these *concepts*, not incorrect ceremonial details.
+// Two exact originals remain archived and retain the approval ledger, but
+// must not become a LIVE pictogram until independently corrected and cleared:
+// C0193 incorrectly depicts a monstrance in the Memento of the Dead;
+// C0204 still requires proof of a *minor* rather than major elevation.
+// No substitute icon is inferred: the full source rubrics remain readable.
+export const USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS=Object.freeze({
+ "AO.SM.C0193":"WRONG_MONSTRANCE_OBJECT_MUST_BE_CORRECTED",
+ "AO.SM.C0204":"MINOR_VS_MAJOR_ELEVATION_CHECK_REQUIRED",
+});
+
 export const USER_APPROVED_MASS_GESTURE_ASSETS=Object.freeze({
  "ao_1962_priest_c0117":new URL("../../assets/extensions/mass-user-gesture-20261029/C0117.svg",import.meta.url).href,
  "ao_1962_priest_c0155":new URL("../../assets/extensions/mass-user-gesture-20261029/C0155.svg",import.meta.url).href,
@@ -21,7 +32,8 @@ export const USER_APPROVED_MASS_GESTURE_ASSETS=Object.freeze({
 export function userApprovedMassGestureArt({cueId=null,matrixAction=null,priestAction=null}={}){
  const cue=String(cueId??"");
  const key=CUES[cue]??null;
- if(!key||!matrixAction||!priestAction)return null;
+ if(!key||!matrixAction||!priestAction||
+    Object.prototype.hasOwnProperty.call(USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS,cue))return null;
  if(matrixAction.cueId!==cue||matrixAction.sourceGestureId!=="GM.P."+cue.slice(6)+".01"||
    matrixAction.owner!=="GESTURE_MATRIX_SOT"||
    matrixAction.authorityClass!=="1962_NORMATIVE"||
