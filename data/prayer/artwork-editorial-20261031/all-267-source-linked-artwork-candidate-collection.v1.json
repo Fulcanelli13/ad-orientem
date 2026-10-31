@@ -43,7 +43,7 @@
     "Generic family doors can rotate from approved child-route art; no generic-door image acquisition needed",
     "No fees, paid storage, copyright-owner contact, live reader changes, or new art approval in this PR",
     "There is one provisional assignment entry for each of 267 slots, but 23 entries are NOT user approved: never confuse completeness of candidate coverage with artistic approval or production release",
-    "Waves 2 and 3 leave 157 source-less candidate placements (59 unique unresolved candidate identities); a documentary link, even to a high-resolution institution, is not photograph rights or pixel/crop certification",
+    "Waves 2–4 leave 125 source-less candidate placements (51 unique unresolved candidate identities); verified Commons page IDs and file dimensions do not certify reproduction rights or mobile paint-only crop",
     "41 blank artist placements are two genuinely anonymous Cleveland originals and must not be ascribed an invented artist",
     "Seventeen previously listed Prado-origin photo URLs have been quarantined; paintings and prior approvals are retained, but those original sources are not permitted as candidate images"
   ],
@@ -154,17 +154,18 @@
     "priorityPhotoQA": "data/prayer/artwork-editorial-20261031/priority-photo-source-and-licence-qa-wave01.v1.json",
     "pradoPhotoQuarantine": "data/prayer/artwork-editorial-20261031/prado-origin-source-quarantine-20261031.v1.json",
     "metWave02": "data/prayer/artwork-editorial-20261031/met-source-verification-wave02-20261031.v1.json",
-    "subjectWave03": "data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json"
+    "subjectWave03": "data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json",
+    "commonsWave04": "data/prayer/artwork-editorial-20261031/commons-pageid-exact-source-wave04-20261031.v1.json"
   },
   "qaState": {
-    "status": "SOURCE_REPAIR_WAVE03_RECORDED; PHOTOS_NOT_PIXEL_OR_RIGHTS_CERTIFIED",
+    "status": "SOURCE_REPAIR_WAVE04_RECORDED; RIGHTS_AND_NATIVE_VISUAL_QA_NOT_CLEARED",
     "candidatePlacementRelationships": 1506,
     "originalMissingSourcePage": 329,
     "sourceLinksRestoredByExactArtworkID": 140,
     "sourceLinksAddedByDirectMuseumAndCommonsVerification": 2,
-    "nowStillWithoutSourcePages": 157,
+    "nowStillWithoutSourcePages": 125,
     "unverifiedNameOnlySourceAlternatives": 0,
-    "stillNoSourceLead": 157,
+    "stillNoSourceLead": 125,
     "anonymousArtistPlacementsResolvedAsKnownAnonymous": 41,
     "unresolvedOriginalArtistPlacements": 4,
     "confirmedNewUserArtworkApprovals": 0,
@@ -174,12 +175,15 @@
     "pradoPhotoSourcesExcluded": 17,
     "strictNoPradoPhotoSourcesInActiveCandidateList": true,
     "sourceLinksVerifiedByMetWave02": 36,
-    "nowWithSourcePages": 1349,
-    "distinctSourceLessCandidateIdentities": 59,
+    "nowWithSourcePages": 1381,
+    "distinctSourceLessCandidateIdentities": 51,
     "metMuseumOriginalsVerifiedInWave02": 14,
     "artistAttributionCorrectionsByMetSource": 1,
     "sourceLinkWave02Ledger": "data/prayer/artwork-editorial-20261031/met-source-verification-wave02-20261031.v1.json",
     "sourceLinksVerifiedBySubjectSourceWave03": 11,
-    "wave03Ledger": "data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json"
+    "wave03Ledger": "data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json",
+    "sourceLinksVerifiedByCommonsExactPageIDWave04": 32,
+    "commonsVerifiedOriginalFilePageIDsWave04": 8,
+    "wave04Ledger": "data/prayer/artwork-editorial-20261031/commons-pageid-exact-source-wave04-20261031.v1.json"
   }
 }
