@@ -1,0 +1,111 @@
+{
+  "schema": "AO_PRAYER_MASTER_MAP_RECONCILIATION_V1",
+  "date": "2026-10-31",
+  "authoritative_registry": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "accompanying_master_filename": "Ad_Orientem_Art_Matching_Map_Reconciled_2026-10-31.xlsx",
+  "scope": {
+    "workbook_positions": 275,
+    "canonical_editorial_slots": 267,
+    "noneditorial_rows": 8,
+    "affirmatively_approved_slots": 162,
+    "zero_affirmative_slots": 105,
+    "approved_placement_edges": 630,
+    "distinct_concrete_work_ids": 224,
+    "final_locked_unresolved_id_slots": [
+      "COV-pray.rosary",
+      "COV-prayer.seven_sorrows_chaplet",
+      "COV-pray.confession"
+    ],
+    "photo_files_production_cleared_by_this_audit": 0
+  },
+  "noneditorial_rows": [
+    {
+      "id": "STG-daily.morning-01",
+      "kind": "RUNTIME_AGGREGATE",
+      "policy": "INHERIT_CANONICAL_DAILY_PRAYER_SCENES"
+    },
+    {
+      "id": "STG-daily.evening-01",
+      "kind": "RUNTIME_AGGREGATE",
+      "policy": "INHERIT_CANONICAL_DAILY_PRAYER_SCENES"
+    },
+    {
+      "id": "COV-litany_loreto_current",
+      "kind": "ARTWORK_ALIAS",
+      "policy": "REUSE_COV-litany_loreto_1962_KEEP_TEXTS_DISTINCT"
+    },
+    {
+      "id": "ALIAS-pray.visit_blessed_sacrament",
+      "kind": "ARTWORK_ALIAS",
+      "policy": "INHERIT_ADORATION_PARENT"
+    },
+    {
+      "id": "ALIAS-pray.de_profundis",
+      "kind": "ARTWORK_ALIAS",
+      "policy": "INHERIT_PENITENTIAL_OR_DEAD_PARENT"
+    },
+    {
+      "id": "ALIAS-pray.eternal_rest",
+      "kind": "ARTWORK_ALIAS",
+      "policy": "INHERIT_ETERNAL_REST_PARENT"
+    },
+    {
+      "id": "NAV-pray.library",
+      "kind": "NAVIGATION",
+      "policy": "NO_INDEPENDENT_ARTWORK_SLOT"
+    },
+    {
+      "id": "NAV-pray.hub",
+      "kind": "NAVIGATION",
+      "policy": "NO_INDEPENDENT_ARTWORK_SLOT"
+    }
+  ],
+  "photo_source_review": {
+    "approved_works_reviewed": 25,
+    "rights_basis_pd_cc0_claims": 19,
+    "rights_with_attribution_or_sharealike_excluded": 3,
+    "rights_unknown_or_unverified": 3,
+    "production_ready": 0,
+    "source": "data/prayer/artwork-editorial-20261030/missing-art-approved-quality-rights-20261030.v1.json"
+  },
+  "important_runtime_rules": [
+    "ROSARY_MYSTERY_BEADS_INHERIT_MYSTERY_APPROVED_WORK_AND_OPENING_CONCLUSION_USE_OWN_CONTEXT",
+    "SEVEN_LAST_WORDS_HAS_SEVEN_GOSPEL_STAGES_AND_SEPARATE_HISTORICAL_CONCLUSION_ART",
+    "16_NOVENAS_648_GUIDED_DAY_STAGES_USE_CONTEXTUAL_INHERITANCE_NOT_648_DISTINCT_WORKS",
+    "BENEDICTION_SEVEN_RUNTIME_STAGES_FOUR_EDITORIAL_GROUPS_EXACT_BLESSING_IMAGE_HOLD",
+    "CHAPLETS_26_EDITORIAL_SLOTS_BUT_LIVE_BEAD_READERS_NOT_VERIFIED",
+    "ANGELUS_AND_REGINA_DYNAMIC_UNITS_MATCH_BY_CANONICAL_LATIN_NOT_SLOT_INDEX",
+    "HOLY_NAME_CHRIST_PORTRAIT_CONTEXTUAL_NOT_EXACT_DEPICTION"
+  ],
+  "publication_policy": {
+    "budget_eur": 0,
+    "strict_source_basis": [
+      "PUBLIC_DOMAIN",
+      "CC0_1_0"
+    ],
+    "excludes_under_current_strict_rule": [
+      "CC_BY",
+      "CC_BY_SA",
+      "UNVERIFIED_TERMS",
+      "NC",
+      "ND",
+      "PAID",
+      "FRAMED_EXTERNAL_SURROUNDS",
+      "WATERMARKED",
+      "LOW_RESOLUTION"
+    ],
+    "checks_required": [
+      "EXACT_ARTWORK_IDENTITY",
+      "EXACT_PHOTO_LICENSE_AND_TARGET_JURISDICTIONS",
+      "NATIVE_FILE",
+      "FRAME_FREE_PAINTED_COMPOSITION",
+      "RESOLUTION",
+      "TONAL_VISUAL_QUALITY",
+      "RESPONSIVE_CROP",
+      "EN_FR_BROWSER_DISPLAY"
+    ],
+    "editorial_approval_is_not_photo_permission": true,
+    "no_runtime_image_activated": true,
+    "never_override_user_rejections": true
+  }
+}
