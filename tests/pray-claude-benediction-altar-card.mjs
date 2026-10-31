@@ -41,19 +41,19 @@ test("Actual chant and versicles retain canonical witnesses and independently fo
 
 test("Refuse false bilingual rows where one witness has an unmatched blank line",()=>{
  const exact=claudeAltarBilingualRows({
-  latin:"Versiculus\\n\\nOratio",
-  vernacular:"Versicle\\n\\nPrayer",
+  latin:"Versiculus\n\nOratio",
+  vernacular:"Versicle\n\nPrayer",
   esc,language:"en"
  });
  assert.match(exact,/aoClaudeAltarGap/);
  assert.equal((exact.match(/aoClaudeAltarRow/g)||[]).length,2);
  const invalid=claudeAltarBilingualRows({
-  latin:"Versiculus\\n\\nOratio",
-  vernacular:"Versicle\\nUnrelated insertion\\nPrayer",
+  latin:"Versiculus\n\nOratio",
+  vernacular:"Versicle\nUnrelated insertion\nPrayer",
   esc,language:"en"
  });
  assert.equal(invalid,null,"Mismatched source sections must use the canonical fallback");
  assert.equal(claudeAltarBilingualRows({
-  latin:"One\\nTwo",vernacular:"One",esc
+  latin:"One\nTwo",vernacular:"One",esc
  }),null);
 });
