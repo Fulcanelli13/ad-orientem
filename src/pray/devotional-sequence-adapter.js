@@ -119,7 +119,10 @@ export function installSequentialDevotionalReader({
       stops.append(button);
     });
     timeline.append(stops);
-    parent.insertBefore(timeline,card);
+    // Claude F11 altar frame wraps the canonical focus card; insert the stage
+    // progress beside the frame, not before a non-child node.
+    const anchor=card.parentElement===parent?card:card.closest('.aoClaudeRiteLayout');
+    parent.insertBefore(timeline,anchor||null);
   }
   timeline.classList.add("aoDevoTimeline","aoDevoSequenceTimeline");
   timeline.dataset.aoDevotionalDeck=SEQUENTIAL_DEVOTIONAL_SCHEMA;
