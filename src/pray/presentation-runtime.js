@@ -639,18 +639,21 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
- if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!!p[lang()]&&!!p.la&&!opts.record){
-  // First five F01 holy cards: exact canonical substrings, no synthetic
-  // versicle/response labels. Both faces retain the same focus positions.
-  const beats=face=>essentialHolyCardParts(id,face,p[face])||[];
-  const beatHtml=face=>beats(face).map((part,index)=>
+ if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!opts.record){
+  // All F01 records share a presentation; canonical source remains the owner.
+  // A missing French or Latin face is never synthesized.
+  const primary=p[lang()]?lang():p.en?"en":p.la?"la":null;
+  if(!primary)return callout(esc(L('Prayer text not available.','Texte de la prière indisponible.')),'warn');
+  const canLatin=!!p.la&&primary!=="la";
+  const beatHtml=face=>(essentialHolyCardParts(id,face,p[face])||[]).map((part,index)=>
    '<p class="aoP435930EssentialBeat'+(part.collective?' aoP435930EssentialCollective':'')+
    '" data-ao-essential-index="'+index+'" lang="'+face+'">'+esc(part.text.trim())+'</p>').join('');
   return '<article class="aoP435930Prayer aoP435930EssentialCard" data-ao-essential-card="'+esc(id)+'">'+
+   languageNotice+
    '<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
-   '<button type="button" class="aoP435930EssentialLang" data-p435930-essential-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button></div>'+
-   '<div class="aoP435930EssentialFaces"><div data-face-v lang="'+lang()+'">'+beatHtml(lang())+'</div>'+
-   '<div data-face-la lang="la" hidden>'+beatHtml('la')+'</div></div>'+
+   (canLatin?'<button type="button" class="aoP435930EssentialLang" data-p435930-essential-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button>':'')+'</div>'+
+   '<div class="aoP435930EssentialFaces"><div data-face-v lang="'+primary+'">'+beatHtml(primary)+'</div>'+
+   (canLatin?'<div data-face-la lang="la" hidden>'+beatHtml('la')+'</div>':'')+'</div>'+
    originCapsule+sourceLine(p)+'</article>';
  }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
@@ -3507,7 +3510,9 @@ function onClick(e){
   const scroll=card.closest('.aoDevoCardScroll');
   const oldTop=active?.getBoundingClientRect().top;
   oldFace.hidden=true;newFace.hidden=false;
-  const target=newFace.querySelectorAll('.aoP435930EssentialBeat')[index];
+  const available=[...newFace.querySelectorAll('.aoP435930EssentialBeat')];
+  const mapped=Math.min(available.length-1,Math.round(index/Math.max(1,before.length-1)*Math.max(0,available.length-1)));
+  const target=available[mapped];
   if(scroll&&target&&oldTop!=null){
    scroll.scrollTop+=target.getBoundingClientRect().top-oldTop;
   }
