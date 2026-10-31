@@ -8,14 +8,15 @@ const expected=["03","05","07","08","09","10","11"].map(i=>"STG-pray.stations-"+
 assert.equal(entries.schema,"AO_PRAYER_STATIONS_SEVEN_PD_SOURCE_RESEARCH_V2");
 assert.deepEqual(entries.entries.map(e=>e.editorialSlot),expected);
 assert.deepEqual(entries.rejectedHistoricalCandidates.map(e=>e.editorialSlot),expected);
-assert.equal(entries.context.previousEditorialCovered,global.global.editoriallyCovered);
+assert.equal(entries.context.previousEditorialCovered,199);
+assert.equal(entries.context.currentEditorialCovered,global.global.editoriallyCovered);
 assert.equal(entries.context.remainingEditorialGaps,global.global.editoriallyUncovered);
 assert.equal(entries.context.remainingEditorialGaps,67);
 assert.equal(entries.context.currentEditorialCovered,200);
 assert.equal(entries.context.inheritedAlreadyApprovedPaintingSlots,1);
 assert.equal(entries.context.unmappedStationSlots,6);
 assert.equal(entries.context.newlyApproved,0);
-assert.equal(entries.context.activePaintingCandidates,0);
+assert.equal(entries.context.activePaintingCandidates,1);
 assert.equal(entries.context.unapprovedEtchingAlternatives,7);
 assert.equal(entries.context.lybaertArtworksExcluded,7);
 assert.equal(entries.context.newlyApproved,0);
