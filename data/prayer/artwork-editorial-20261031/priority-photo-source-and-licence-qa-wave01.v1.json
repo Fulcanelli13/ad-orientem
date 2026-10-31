@@ -1,0 +1,135 @@
+{
+  "schema": "AO_PRAYER_ART_PROVENANCE_AND_NATIVE_QUALITY_WAVE01_V1",
+  "date": "2026-10-31",
+  "scope": "Source/rights/quality triage only; every newly researched painting requires user's later single bulk review",
+  "noNewUserApproval": true,
+  "sourceLinkedPhotoAcquisitionDone": false,
+  "productionPublicationAllowed": false,
+  "verifiedSources": [
+    {
+      "slot": "HERO-08",
+      "artist": "Anthony van Dyck",
+      "title": "Entry of Christ into Jerusalem",
+      "museum": "Indianapolis Museum of Art/Newfields",
+      "accession": "58.3",
+      "source": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "originalNativeDimensions": [
+        5043,
+        3325
+      ],
+      "sourceRight": "Commons PD-Art; Indianpolis museum object is marked Public Domain",
+      "status": "EXACT_ORIGINAL_AND_NATIVE_PIXEL_METADATA_VERIFIED_NOT_IMAGE_CONTENT_QA",
+      "rightsAction": "Check exact PD-Art Commons photographic reproduction for relevant jurisdictions; no fees",
+      "visualAction": "Check paint-only crop and 320/390px composition before publishing",
+      "userDecision": "DATE_ALREADY_APPROVED; NO NEW_CHOICE"
+    },
+    {
+      "slot": "HERO-01",
+      "artist": "John Martin",
+      "title": "The Great Day of His Wrath",
+      "museum": "Tate Britain",
+      "source": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+      "originalNativeDimensions": [
+        3136,
+        2023
+      ],
+      "sourceRight": "Commons PD-Art but Tate Britain claims copyright in UK on faithful digital reproduction",
+      "status": "SOURCE_ORIGINAL_SIZE_VERIFIED_RIGHTS_JURISDICTION_FLAG",
+      "rightsAction": "Do not assume worldwide PD/CC0 from Commons US public-domain reproduction; resolve jurisdiction under zero-fee rights policy",
+      "visualAction": "Phone hero 90-95% cropped and frame-free QA; original width large enough",
+      "userDecision": "DATE_ALREADY_APPROVED; NO_NEW_CHOICE"
+    },
+    {
+      "slot": "HERO-21",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "museum": "Pinacoteca Vaticana",
+      "source": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "originalNativeDimensions": [
+        866,
+        1200
+      ],
+      "sourceRight": "Commons PD-Art reproduction, source from Lib-art",
+      "status": "LOW_NATIVE_RESOLUTION_AND_OBJECT_ASPECT_MISMATCH_HOLD",
+      "rightsAction": "Photographic reproduction law and quality require original source or better PD photo",
+      "visualAction": "Published metadata claim canvas height44 width51cm vs portrait digital 866x1200: inspect original identity/orientation/crop, do not upscale or pretend high-res",
+      "userDecision": "DATE_ALREADY_APPROVED; KEEP_PAINTING_NOT_LOW_QUALITY_PHOTO"
+    },
+    {
+      "slot": "STG-pray.confession-03",
+      "artist": "Giuseppe Molteni",
+      "title": "La confessione",
+      "museum": "Gallerie d'Italia Milano",
+      "source": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+      "originalNativeDimensions": [
+        1295,
+        1600
+      ],
+      "sourceRight": "Commons file describes PD-Art faithful reproduction and has structured metadata mentioning CC BY-SA 3.0; verify exact photograph before declaring strict PD/CC0",
+      "status": "PUBLIC_DOMAIN_AGE_BUT_PHOTO_META_MIXED_QA_HOLD",
+      "rightsAction": "Check source/file-level rights; no contact/payment",
+      "visualAction": "Painting remains in historical physical neo-Baroque frame according to museum, but whether digital rendition has visible external frame needs image inspection",
+      "userDecision": "NEW_RESEARCH_PENDING_SINGLE_FINAL_REVIEW"
+    },
+    {
+      "slot": "STG-pray.confession-03",
+      "artist": "Pietro Longhi",
+      "title": "The Confession",
+      "museum": "Uffizi Gallery",
+      "source": "https://commons.wikimedia.org/wiki/File:Pietro_Longhi_-_The_Confession_-_WGA13417.jpg",
+      "originalNativeDimensions": [
+        797,
+        986
+      ],
+      "sourceRight": "Commons PD-Art original reproducing Web Gallery of Art",
+      "status": "LOW_RESOLUTION_ALTERNATIVE",
+      "rightsAction": "Confirm file-level PD-Art in target jurisdiction; no payment",
+      "visualAction": "Below preferred 1200px edge, find better native source before prioritizing as full hero",
+      "userDecision": "NEW_RESEARCH_PENDING_SINGLE_FINAL_REVIEW"
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "artist": "Giovanni Battista Piazzetta",
+      "title": "The Supper at Emmaus",
+      "museum": "Cleveland Museum of Art",
+      "accession": "1931.245",
+      "source": "https://www.clevelandart.org/art/1931.245",
+      "sourceRight": "Museum explicitly permits copy, modification and distribution under Open Access",
+      "status": "OBJECT_AND_RIGHTS_CONFIRMED_NATIVE_IMAGE_QA_PENDING",
+      "visualAction": "Painting shows Emmaus, not Eucharistic thanksgiving rite; visually compare crop with Velázquez alternative",
+      "userDecision": "NEW_RESEARCH_PENDING_SINGLE_FINAL_REVIEW"
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "artist": "Diego Velázquez",
+      "title": "The Supper at Emmaus",
+      "museum": "Metropolitan Museum of Art",
+      "accession": "14.40.631",
+      "source": "https://www.metmuseum.org/art/collection/search/437871",
+      "sourceRight": "Met explicitly marks the museum artwork Public Domain",
+      "status": "OBJECT_AND_RIGHTS_CONFIRMED_NATIVE_IMAGE_QA_PENDING",
+      "visualAction": "Different original painting from Piazzetta despite same title; do not merge; not exact Thanksgiving",
+      "userDecision": "NEW_RESEARCH_PENDING_SINGLE_FINAL_REVIEW"
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "artist": "Spanish Painter",
+      "title": "The Mass of Saint Gregory",
+      "museum": "Metropolitan Museum of Art",
+      "accession": "1976.100.24",
+      "source": "https://www.metmuseum.org/art/collection/search/437722",
+      "sourceRight": "Met explicitly identifies artwork and image as Public Domain",
+      "status": "OBJECT_AND_RIGHTS_CONFIRMED_NATIVE_IMAGE_QA_PENDING",
+      "visualAction": "Painted rite not an illustration of the prayer's spoken words",
+      "userDecision": "NEW_RESEARCH_PENDING_SINGLE_FINAL_REVIEW"
+    }
+  ],
+  "guardrails": [
+    "PD-Art claims do not grant permission for any unrelated non-PD photograph",
+    "CMA Open Access and Met Public Domain museum claims confirmed for listed exact objects, not the entire candidate collection",
+    "Native file dimensions from Commons page are confirmed, but live 90–95% crop and absence of decorative frame are not yet certified",
+    "Physical frame of a museum original is not proof that the photographic image contains a frame",
+    "Any new artwork remains research; user will review complete gallery later",
+    "No edits to production assets or prayer modes, no contact with rights owners"
+  ]
+}

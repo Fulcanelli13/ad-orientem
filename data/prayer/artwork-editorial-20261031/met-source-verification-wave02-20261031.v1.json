@@ -1,0 +1,397 @@
+{
+  "schema": "AO_PRAYER_ART_MET_SOURCE_VERIFICATION_WAVE02_V1",
+  "date": "2026-10-31",
+  "purpose": "Recover exact museum artwork source pages in the catalogue without auto-approval or live release",
+  "rightsGate": "NOT_CERTIFIED_FOR_PRODUCTION",
+  "nativePhotoGate": "NOT_DOWNLOADED_NOT_PIXEL_OR_FRAME_VERIFIED",
+  "newUserApprovals": 0,
+  "liveProductionEnabled": false,
+  "counts": {
+    "museumObjects": 14,
+    "sourcePlacementLinksRecovered": 36,
+    "sourceLinksBefore": 1302,
+    "sourceLinksAfter": 1338,
+    "remainingMissingPlacements": 168,
+    "remainingDistinctMissingCandidateIdentities": 62,
+    "attributionCorrections": 1
+  },
+  "attributionCorrection": {
+    "sourceID": "REVIEW::met:435725",
+    "oldArtist": "Hieronymus Bosch",
+    "museumAttribution": "Follower of Hieronymus Bosch",
+    "reason": "The Met catalogues this original under a follower, not Bosch himself",
+    "sourcePage": "https://www.metmuseum.org/art/collection/search/435725"
+  },
+  "officialMuseumRecords": [
+    {
+      "museumObjectID": "435725",
+      "artist": "Follower of Hieronymus Bosch",
+      "title": "Christ's Descent into Hell",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/435725",
+      "slotReferences": [
+        {
+          "slot": "HERO-11",
+          "family": "home",
+          "originalIDs": [
+            "REVIEW::met:435725"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "436791",
+      "artist": "Joos van Cleve",
+      "title": "The Annunciation",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436791",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.angelus-05",
+          "family": "1",
+          "originalIDs": [
+            "CANONICAL::met-436791"
+          ]
+        },
+        {
+          "slot": "STG-pray.angelus-06",
+          "family": "1",
+          "originalIDs": [
+            "CANONICAL::met-436791"
+          ]
+        },
+        {
+          "slot": "STG-pray.rosary-02",
+          "family": "3",
+          "originalIDs": [
+            "CANONICAL::met-436791"
+          ]
+        },
+        {
+          "slot": "STG-novena.christmas-01",
+          "family": "4",
+          "originalIDs": [
+            "CANONICAL::met-436791"
+          ]
+        },
+        {
+          "slot": "COV-novena.annunciation",
+          "family": "4",
+          "originalIDs": [
+            "CANONICAL::met-436791"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "438776",
+      "artist": "Ludovico Carracci",
+      "title": "Madonna and Child with Saints",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438776",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.angelus_regina-01",
+          "family": "1",
+          "originalIDs": [
+            "REVIEW::met:438776"
+          ]
+        },
+        {
+          "slot": "STG-pray.montfort_consecration-03",
+          "family": "4",
+          "originalIDs": [
+            "REVIEW::met:438776"
+          ]
+        },
+        {
+          "slot": "STG-litany_loreto_1962-01",
+          "family": "7",
+          "originalIDs": [
+            "REVIEW::met:438776"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "438427",
+      "artist": "Ludovico Carracci",
+      "title": "The Lamentation",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438427",
+      "slotReferences": [
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3",
+          "originalIDs": [
+            "REVIEW::met:438427"
+          ]
+        },
+        {
+          "slot": "STG-pray.stations-13",
+          "family": "6",
+          "originalIDs": [
+            "REVIEW::met:438427"
+          ]
+        },
+        {
+          "slot": "STG-pray.seven_words-08",
+          "family": "6",
+          "originalIDs": [
+            "REVIEW::met:438427"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "439553",
+      "artist": "Domenichino (Domenico Zampieri)",
+      "title": "The Lamentation",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/439553",
+      "slotReferences": [
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3",
+          "originalIDs": [
+            "REVIEW::met:439553"
+          ]
+        },
+        {
+          "slot": "STG-pray.stations-13",
+          "family": "6",
+          "originalIDs": [
+            "REVIEW::met:439553"
+          ]
+        },
+        {
+          "slot": "STG-pray.seven_words-08",
+          "family": "6",
+          "originalIDs": [
+            "REVIEW::met:439553"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "437342",
+      "artist": "Scipione Pulzone (Il Gaetano)",
+      "title": "The Lamentation",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437342",
+      "slotReferences": [
+        {
+          "slot": "STG-prayer.seven_sorrows_chaplet-06",
+          "family": "3",
+          "originalIDs": [
+            "REVIEW::met:437342"
+          ]
+        },
+        {
+          "slot": "STG-pray.stations-13",
+          "family": "6",
+          "originalIDs": [
+            "REVIEW::met:437342"
+          ]
+        },
+        {
+          "slot": "STG-pray.seven_words-08",
+          "family": "6",
+          "originalIDs": [
+            "REVIEW::met:437342"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "438434",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+      "slotReferences": [
+        {
+          "slot": "DOOR-D5",
+          "family": "5",
+          "originalIDs": [
+            "CANONICAL::met-438434"
+          ]
+        },
+        {
+          "slot": "COV-pray.adoration",
+          "family": "5",
+          "originalIDs": [
+            "PRAYER::adoration--primary",
+            "CANONICAL::met-438434"
+          ]
+        },
+        {
+          "slot": "STG-pray.adoration-02",
+          "family": "5",
+          "originalIDs": [
+            "PRAYER::adoration--primary"
+          ]
+        },
+        {
+          "slot": "COV-pray.benediction",
+          "family": "5",
+          "originalIDs": [
+            "PRAYER::adoration--primary"
+          ]
+        },
+        {
+          "slot": "STG-pray.benediction-01",
+          "family": "5",
+          "originalIDs": [
+            "PRAYER::adoration--primary"
+          ]
+        },
+        {
+          "slot": "STG-pray.benediction-03",
+          "family": "5",
+          "originalIDs": [
+            "PRAYER::adoration--primary"
+          ]
+        },
+        {
+          "slot": "COV-pray.forty_hours",
+          "family": "5",
+          "originalIDs": [
+            "PRAYER::adoration--primary"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "437529",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Family with Saint Elizabeth, Saint John, and a Dove",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437529",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.adoration.night-01",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:437529"
+          ]
+        },
+        {
+          "slot": "STG-pray.adoration.night-04",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:437529"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "438025",
+      "artist": "Nicolas Poussin",
+      "title": "The Holy Family with Saint John the Baptist",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438025",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.adoration.night-01",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:438025"
+          ]
+        },
+        {
+          "slot": "STG-pray.adoration.night-04",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:438025"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "437455",
+      "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+      "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437455",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.adoration.night-01",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:437455"
+          ]
+        },
+        {
+          "slot": "STG-pray.adoration.night-04",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:437455"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "437528",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437528",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.adoration.night-01",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:437528"
+          ]
+        },
+        {
+          "slot": "STG-pray.adoration.night-04",
+          "family": "5",
+          "originalIDs": [
+            "REVIEW::met:437528"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "438824",
+      "artist": "Mattia Preti (Il Cavalier Calabrese)",
+      "title": "Saint John the Baptist Preaching",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438824",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.litany_saints-02",
+          "family": "8",
+          "originalIDs": [
+            "CANONICAL::met-438824"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "437738",
+      "artist": "Spanish Catalan Painter",
+      "title": "The Beheading of Saint John the Baptist",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437738",
+      "slotReferences": [
+        {
+          "slot": "STG-pray.litany_saints-02",
+          "family": "8",
+          "originalIDs": [
+            "CANONICAL::met-437738"
+          ]
+        }
+      ]
+    },
+    {
+      "museumObjectID": "436794",
+      "artist": "Joos van Cleve",
+      "title": "The Last Judgment",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436794",
+      "slotReferences": [
+        {
+          "slot": "COV-dead_fidelium_deus",
+          "family": "9",
+          "originalIDs": [
+            "CANONICAL::met-436794"
+          ]
+        }
+      ]
+    }
+  ],
+  "continuedRestrictions": [
+    "Preserve original artwork user decisions, no new user approval granted by links",
+    "Do not treat original museum source page as full-size image archive, licence, crop or framing certification",
+    "No Prado-origin photo substitution, no new image publication"
+  ]
+}

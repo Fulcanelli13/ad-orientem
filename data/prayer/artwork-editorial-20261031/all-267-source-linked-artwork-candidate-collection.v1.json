@@ -1,0 +1,194 @@
+{
+  "schema": "AO_PRAYER_COMPLETE_ARTWORK_CANDIDATE_COLLECTION_INDEX_V1",
+  "date": "2026-10-31",
+  "status": "COMPLETE_SOURCE_LINKED_CANDIDATE_CENSUS_READY_FOR_LATER_ONE_TIME_USER_REVIEW_NOT_RELEASE",
+  "reviewTiming": "AFTER_ALL_RESEARCH_AND_PROVISIONAL_MATCHING; DO_NOT_REQUEST_INTERIM_DECISIONS",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/prayer-artwork-approved-reuse-wave1-20261031",
+    "legacy": "research/prayer-existing-artwork-coverage-first-20261030/data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+    "curated23": "data/prayer/artwork-editorial-20261031/curated-research-proposal-matches-for-last-23.v1.json",
+    "previouslyApprovedWaves": [
+      "data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave1.v1.json",
+      "data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave2.v1.json",
+      "data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave3.v1.json"
+    ]
+  },
+  "counts": {
+    "slots": 267,
+    "historicalSourceEdges": 1651,
+    "deduplicatedUsableSourceAndCuratedOptions": 1506,
+    "originalEdgesExcludedFromSuggestionsBecauseWeakOrIneligibleOrExplicitlyRejected": 100,
+    "previouslyApprovedArtworkPositionLinks": 244,
+    "remainingPositionsNowContainingProvisionalShortlists": 23,
+    "sourceLinkedCandidateCoverage": 267,
+    "artworkPhotosNewlyReleased": 0,
+    "newResearchApproved": 0,
+    "curatedFinalGaps": 23,
+    "curatedCandidatePlacementProposals": 39,
+    "uniqueNewObjectIdentitiesBeyondLegacy": "NOT_CLAIMED_FROM_PLACEMENT_EDGES",
+    "onePerPositionProvisionalAssignments": 267,
+    "awaitingFinalUserArtworkReview": 23,
+    "currentSourceApprovedOrInheritedArtSlotCount": 244,
+    "newArtworkApprovedByThisResearch": 0
+  },
+  "hardRules": [
+    "The collection contains all historical source research edges, grouped with source IDs; excluded weak/rejected edges remain accessible for audit only, never automatically suggested",
+    "All NEW paintings remain candidates until the user's final bulk review; no individual approval batch requested in the interim",
+    "A prior approved painting may be REUSED only for a valid matching subject; the original approval does not certify a new photo or authorize stage publication",
+    "Previously user selected final hero locks override generic sorting and old research; notably Lotto Rosary, Ingres Adoration, Murillo Confession, MNAC Seven Sorrows",
+    "The user dislikes Ugolino Last Supper, and no Prado, Lybaert, El Greco or Fra Angelico should be resurfaced as active suggestions",
+    "Keep exact original-artwork identity distinct from artist/title duplicates; any several original source IDs require independent attribution/photo confirmation",
+    "Source-page URL does not imply archive downloaded; image native quality, reproduction rights, framing, 320/390px cropping and renderer binding remain independently pending",
+    "Generic family doors can rotate from approved child-route art; no generic-door image acquisition needed",
+    "No fees, paid storage, copyright-owner contact, live reader changes, or new art approval in this PR",
+    "There is one provisional assignment entry for each of 267 slots, but 23 entries are NOT user approved: never confuse completeness of candidate coverage with artistic approval or production release",
+    "Waves 2–5 leave 121 source-less candidate placements (50 distinct original identity groups); the remaining queue preserves unresolved source, photo quality, rights and approval gates",
+    "41 blank artist placements are two genuinely anonymous Cleveland originals and must not be ascribed an invented artist",
+    "Seventeen previously listed Prado-origin photo URLs have been quarantined; paintings and prior approvals are retained, but those original sources are not permitted as candidate images"
+  ],
+  "shards": [
+    {
+      "family": "home",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-home.v1.json",
+      "slots": 23,
+      "originalSourceEdges": 146,
+      "deduplicatedReviewOptions": 139,
+      "exclusions": 11
+    },
+    {
+      "family": "1",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-1.v1.json",
+      "slots": 22,
+      "originalSourceEdges": 174,
+      "deduplicatedReviewOptions": 154,
+      "exclusions": 5
+    },
+    {
+      "family": "2",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-2.v1.json",
+      "slots": 17,
+      "originalSourceEdges": 95,
+      "deduplicatedReviewOptions": 83,
+      "exclusions": 7
+    },
+    {
+      "family": "3",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-3.v1.json",
+      "slots": 46,
+      "originalSourceEdges": 344,
+      "deduplicatedReviewOptions": 324,
+      "exclusions": 10
+    },
+    {
+      "family": "4",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-4.v1.json",
+      "slots": 32,
+      "originalSourceEdges": 220,
+      "deduplicatedReviewOptions": 195,
+      "exclusions": 13
+    },
+    {
+      "family": "5",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-5.v1.json",
+      "slots": 35,
+      "originalSourceEdges": 150,
+      "deduplicatedReviewOptions": 129,
+      "exclusions": 20
+    },
+    {
+      "family": "6",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-6.v1.json",
+      "slots": 33,
+      "originalSourceEdges": 161,
+      "deduplicatedReviewOptions": 144,
+      "exclusions": 10
+    },
+    {
+      "family": "7",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-7.v1.json",
+      "slots": 12,
+      "originalSourceEdges": 98,
+      "deduplicatedReviewOptions": 88,
+      "exclusions": 9
+    },
+    {
+      "family": "8",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-8.v1.json",
+      "slots": 22,
+      "originalSourceEdges": 148,
+      "deduplicatedReviewOptions": 133,
+      "exclusions": 12
+    },
+    {
+      "family": "9",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-9.v1.json",
+      "slots": 24,
+      "originalSourceEdges": 111,
+      "deduplicatedReviewOptions": 113,
+      "exclusions": 3
+    },
+    {
+      "family": "other",
+      "path": "data/prayer/artwork-editorial-20261031/collection-family-other.v1.json",
+      "slots": 1,
+      "originalSourceEdges": 4,
+      "deduplicatedReviewOptions": 4,
+      "exclusions": 0
+    }
+  ],
+  "remainingInCollection": {
+    "seasonalHomepage": 11,
+    "prayerSpecific": 12
+  },
+  "remainingTechnicalGates": [
+    "Van Dyck Palm Sunday source page and native dimensions resolved; paint-only crop, frame and rights validation still pending",
+    "Improve 866px Ludovico Carracci All Souls hero native image",
+    "Check all native artwork crop/frame/color quality and usage rights",
+    "No public artwork changes until separate reviewed release and UI regression"
+  ],
+  "sources": {
+    "onePerPositionProvisional": "data/prayer/artwork-editorial-20261031/provisional-one-choice-per-267-art-position.v1.json",
+    "sourceRepairLedger": "data/prayer/artwork-editorial-20261031/source-link-recovery-1506-placements-20261031.v1.json",
+    "attributionAudit": "data/prayer/artwork-editorial-20261031/artist-attribution-source-resolution-wave01.v1.json",
+    "priorityPhotoQA": "data/prayer/artwork-editorial-20261031/priority-photo-source-and-licence-qa-wave01.v1.json",
+    "pradoPhotoQuarantine": "data/prayer/artwork-editorial-20261031/prado-origin-source-quarantine-20261031.v1.json",
+    "metWave02": "data/prayer/artwork-editorial-20261031/met-source-verification-wave02-20261031.v1.json",
+    "subjectWave03": "data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json",
+    "commonsWave04": "data/prayer/artwork-editorial-20261031/commons-pageid-exact-source-wave04-20261031.v1.json",
+    "commonsWave05": "data/prayer/artwork-editorial-20261031/commons-pageid-ricci-wave05-20261031.v1.json",
+    "remainingSourceAcquisitionQueue": "data/prayer/artwork-editorial-20261031/remaining-50-unique-source-acquisition-queue-20261031.v1.json"
+  },
+  "qaState": {
+    "status": "SOURCE_REPAIR_WAVE05_COMMITTED; PHOTO_CROP_RIGHTS_STILL_PENDING",
+    "candidatePlacementRelationships": 1506,
+    "originalMissingSourcePage": 329,
+    "sourceLinksRestoredByExactArtworkID": 140,
+    "sourceLinksAddedByDirectMuseumAndCommonsVerification": 2,
+    "nowStillWithoutSourcePages": 121,
+    "unverifiedNameOnlySourceAlternatives": 0,
+    "stillNoSourceLead": 121,
+    "anonymousArtistPlacementsResolvedAsKnownAnonymous": 41,
+    "unresolvedOriginalArtistPlacements": 4,
+    "confirmedNewUserArtworkApprovals": 0,
+    "allPixelsAndFrameCropsConfirmed": false,
+    "allRightsConfirmed": false,
+    "publicReleaseEnabled": false,
+    "pradoPhotoSourcesExcluded": 17,
+    "strictNoPradoPhotoSourcesInActiveCandidateList": true,
+    "sourceLinksVerifiedByMetWave02": 36,
+    "nowWithSourcePages": 1385,
+    "distinctSourceLessCandidateIdentities": 50,
+    "metMuseumOriginalsVerifiedInWave02": 14,
+    "artistAttributionCorrectionsByMetSource": 1,
+    "sourceLinkWave02Ledger": "data/prayer/artwork-editorial-20261031/met-source-verification-wave02-20261031.v1.json",
+    "sourceLinksVerifiedBySubjectSourceWave03": 11,
+    "wave03Ledger": "data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json",
+    "sourceLinksVerifiedByCommonsExactPageIDWave04": 32,
+    "commonsVerifiedOriginalFilePageIDsWave04": 8,
+    "wave04Ledger": "data/prayer/artwork-editorial-20261031/commons-pageid-exact-source-wave04-20261031.v1.json",
+    "sourceLinksVerifiedByCommonsExactPageIDWave05": 4,
+    "commonsVerifiedOriginalFilePageIDsWave05": 1,
+    "remainingQueue": "data/prayer/artwork-editorial-20261031/remaining-50-unique-source-acquisition-queue-20261031.v1.json"
+  }
+}

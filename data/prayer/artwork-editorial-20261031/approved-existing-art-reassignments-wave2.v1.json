@@ -1,0 +1,440 @@
+{
+  "schema": "AO_PRAYER_ART_APPROVED_REUSE_WAVE2_PREEXISTING_KEEPS_AND_DOORS_V1",
+  "date": "2026-10-31",
+  "purpose": "Existing human keeps and already approved same-subject reuse ONLY. No new artwork research or adoption; new subjects require explicit user selection.",
+  "sourcePr": 2144,
+  "sourcePriorReview": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+  "sourcePreviouslyApprovedOverlay": "data/prayer/artwork-editorial-20261030/approved-artwork-inheritance-overlay-20261031.v1.json",
+  "newResearchPolicy": {
+    "newCandidatesAutoAccepted": false,
+    "newCandidatesAutoPublished": false,
+    "requireExplicitUserApprovalForEveryNewPainting": true,
+    "pendingPreviouslySuggestedCandidates": [
+      "Antonio del Castillo, St Anthony",
+      "Francisco Goya, St Anthony",
+      "Guercino, St Peter Penitent",
+      "Aert de Gelder, King David"
+    ],
+    "userDidNotApproveAnyOfThese": true
+  },
+  "statistics": {
+    "baselineEditorialArtCovered": 226,
+    "addedNewlyCoveredPositions": 8,
+    "editorialCoveredAfterWave": 234,
+    "stillUncovered": 33,
+    "remainingPrayerOnly": 22,
+    "remainingSeasonalHomepage": 11,
+    "originalKeepsRestored": 7,
+    "contextualApprovedOnlyReuses": 2,
+    "genericDoorInheritedPools": 5
+  },
+  "priorUserKeeps": [
+    {
+      "targetSlot": "COV-daily.morning",
+      "originalReviewModule": "morning",
+      "sourceArtworkIds": [
+        "morning--primary"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": false
+    },
+    {
+      "targetSlot": "COV-daily.evening",
+      "originalReviewModule": "evening",
+      "sourceArtworkIds": [
+        "evening--primary",
+        "morning--millet-angelus",
+        "confession--latour-magdalen"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": false
+    },
+    {
+      "targetSlot": "COV-daily.nightly_examen",
+      "originalReviewModule": "examen",
+      "sourceArtworkIds": [
+        "confession--primary",
+        "confession--latour-magdalen"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": false
+    },
+    {
+      "targetSlot": "COV-pray.forty_hours",
+      "originalReviewModule": "forty-hours",
+      "sourceArtworkIds": [
+        "adoration--primary"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": false
+    },
+    {
+      "targetSlot": "COV-prayer.communion",
+      "originalReviewModule": "communion",
+      "sourceArtworkIds": [
+        "w2-franceschini",
+        "w4-ricci"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": false
+    },
+    {
+      "targetSlot": "COV-prayer.hymns",
+      "originalReviewModule": "hymns",
+      "sourceArtworkIds": [
+        "historic:peter paul rubens:assumption of the virgin"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": true
+    },
+    {
+      "targetSlot": "STG-pray.angelus-03",
+      "originalReviewModule": "evening",
+      "sourceArtworkIds": [
+        "morning--millet-angelus"
+      ],
+      "approval": "USER_KEEP_2026_10_28",
+      "sourceDecisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "usage": "PRESERVE_EXACT_OLDER_KEEP_NO_REPLACEMENT",
+      "imageRights": "NOT_VERIFIED_PD_CC0",
+      "imageQuality": "NOT_VERIFIED",
+      "publishable": false,
+      "wasMissingInWave1": false
+    }
+  ],
+  "existingApprovedContextualReuses": [
+    {
+      "targetSlot": "COV-pray.occasional_intercessions",
+      "sourceOverlay": "data/prayer/artwork-editorial-20261030/approved-artwork-inheritance-overlay-20261031.v1.json",
+      "approval": "PREVIOUSLY_APPROVED_DONOR_WORK_THEMATIC_REUSE",
+      "relationship": "DEVOTIONAL_SUBJECT_NOT_LITERAL_EVENT",
+      "artworks": [
+        {
+          "artworkId": "CANONICAL::met-436199",
+          "artist": "Christian Wilhelm Ernst Dietrich",
+          "title": "Christ Healing the Sick",
+          "approvedDonorSlot": "STG-pray.adoration.four_ends-04",
+          "exactFileLicense": "NOT_VERIFIED",
+          "photoQA": "NOT_VERIFIED",
+          "publishable": false
+        }
+      ],
+      "publishable": false
+    },
+    {
+      "targetSlot": "COV-prayer.lection",
+      "sourceOverlay": "data/prayer/artwork-editorial-20261030/approved-artwork-inheritance-overlay-20261031.v1.json",
+      "approval": "PREVIOUSLY_APPROVED_DONOR_WORK_THEMATIC_REUSE",
+      "relationship": "DEVOTIONAL_SUBJECT_NOT_LITERAL_EVENT",
+      "artworks": [
+        {
+          "artworkId": "REVIEW::commons:85666930",
+          "artist": "Jvillafruela",
+          "title": "Jacques Blanchard - Saint Jérôme écrivant",
+          "approvedDonorSlot": "STG-pray.confession-01",
+          "exactFileLicense": "NOT_VERIFIED",
+          "photoQA": "NOT_VERIFIED",
+          "publishable": false
+        }
+      ],
+      "publishable": false
+    }
+  ],
+  "derivedGenericDoorPools": [
+    {
+      "targetSlot": "DOOR-D1",
+      "routeType": "GENERIC_PRAYER_FAMILY_DOOR",
+      "relationship": "ROTATE_ONLY_FROM_CURRENT_ALREADY_APPROVED_CHILD_ROUTE_ART",
+      "existingDonorSlots": [
+        "COV-daily.morning",
+        "COV-daily.evening",
+        "COV-daily.nightly_examen"
+      ],
+      "requiresDirectSelectedPainting": false,
+      "sourcePolicy": "DEFER_TO_APPROVED_CHILD_ART_NO_NEW_ART_ACCEPTANCE",
+      "imagePublication": "NO_NEW_IMAGES_ADDED_OR_ACTIVATED"
+    },
+    {
+      "targetSlot": "DOOR-D4",
+      "routeType": "GENERIC_PRAYER_FAMILY_DOOR",
+      "relationship": "ROTATE_ONLY_FROM_CURRENT_ALREADY_APPROVED_CHILD_ROUTE_ART",
+      "existingDonorSlots": [
+        "COV-novena.annunciation",
+        "COV-novena.immaculate_conception",
+        "COV-novena.st_michael"
+      ],
+      "requiresDirectSelectedPainting": false,
+      "sourcePolicy": "DEFER_TO_APPROVED_CHILD_ART_NO_NEW_ART_ACCEPTANCE",
+      "imagePublication": "NO_NEW_IMAGES_ADDED_OR_ACTIVATED"
+    },
+    {
+      "targetSlot": "DOOR-D6",
+      "routeType": "GENERIC_PRAYER_FAMILY_DOOR",
+      "relationship": "ROTATE_ONLY_FROM_CURRENT_ALREADY_APPROVED_CHILD_ROUTE_ART",
+      "existingDonorSlots": [
+        "COV-devotion_consecration_christ_king",
+        "COV-prayer.sacred_heart",
+        "COV-novena.sacred_heart"
+      ],
+      "requiresDirectSelectedPainting": false,
+      "sourcePolicy": "DEFER_TO_APPROVED_CHILD_ART_NO_NEW_ART_ACCEPTANCE",
+      "imagePublication": "NO_NEW_IMAGES_ADDED_OR_ACTIVATED"
+    },
+    {
+      "targetSlot": "DOOR-D7",
+      "routeType": "GENERIC_PRAYER_FAMILY_DOOR",
+      "relationship": "ROTATE_ONLY_FROM_CURRENT_ALREADY_APPROVED_CHILD_ROUTE_ART",
+      "existingDonorSlots": [
+        "COV-marian_consecration_immaculate_heart",
+        "COV-litany_loreto_1962",
+        "COV-marian_hail_holy_queen"
+      ],
+      "requiresDirectSelectedPainting": false,
+      "sourcePolicy": "DEFER_TO_APPROVED_CHILD_ART_NO_NEW_ART_ACCEPTANCE",
+      "imagePublication": "NO_NEW_IMAGES_ADDED_OR_ACTIVATED"
+    },
+    {
+      "targetSlot": "DOOR-D9",
+      "routeType": "GENERIC_PRAYER_FAMILY_DOOR",
+      "relationship": "ROTATE_ONLY_FROM_CURRENT_ALREADY_APPROVED_CHILD_ROUTE_ART",
+      "existingDonorSlots": [
+        "COV-pray.confession",
+        "COV-foundations_eternal_rest",
+        "COV-prayer.good_death"
+      ],
+      "requiresDirectSelectedPainting": false,
+      "sourcePolicy": "DEFER_TO_APPROVED_CHILD_ART_NO_NEW_ART_ACCEPTANCE",
+      "imagePublication": "NO_NEW_IMAGES_ADDED_OR_ACTIVATED"
+    }
+  ],
+  "remaining": [
+    {
+      "slot": "HERO-01",
+      "door": "Pray home",
+      "label": "Advent",
+      "existingCandidates": 8
+    },
+    {
+      "slot": "HERO-05",
+      "door": "Pray home",
+      "label": "Septuagesima",
+      "existingCandidates": 7
+    },
+    {
+      "slot": "HERO-08",
+      "door": "Pray home",
+      "label": "Palm Sunday",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "HERO-09",
+      "door": "Pray home",
+      "label": "Holy Thursday",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-10",
+      "door": "Pray home",
+      "label": "Good Friday",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "HERO-16",
+      "door": "Pray home",
+      "label": "Corpus Christi",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "HERO-17",
+      "door": "Pray home",
+      "label": "Sacred Heart",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "HERO-18",
+      "door": "Pray home",
+      "label": "Time after Pentecost",
+      "existingCandidates": 10
+    },
+    {
+      "slot": "HERO-19",
+      "door": "Pray home",
+      "label": "Assumption",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-21",
+      "door": "Pray home",
+      "label": "All Souls",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-23",
+      "door": "Pray home",
+      "label": "Immaculate Conception",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "COV-foundations_act_of_hope",
+      "door": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "existingCandidates": 6
+    },
+    {
+      "slot": "COV-adoration_spiritual_communion",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-adoration_litany_blessed_sacrament",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "COV-benediction_adoremus_ps116",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.adoration.night-05",
+      "door": "D5 Holy Eucharist",
+      "label": "Spiritual Communion",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "door": "D5 Holy Eucharist",
+      "label": "Thanksgiving",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.benediction-01",
+      "door": "D5 Holy Eucharist",
+      "label": "Exposition · O Salutaris",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.benediction-02",
+      "door": "D5 Holy Eucharist",
+      "label": "Tantum Ergo · incensation",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "STG-prayer.communion-02",
+      "door": "D5 Holy Eucharist",
+      "label": "After Communion",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "door": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "existingCandidates": 6
+    },
+    {
+      "slot": "STG-pray.litany_saints-03",
+      "door": "D8 Saints & Angels",
+      "label": "Apostles and evangelists",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-church_prayer_for_pope",
+      "door": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-01",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, ne in furore",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-03",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, ne in furore (II)",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-04",
+      "door": "D9 Life & Intentions",
+      "label": "Miserere",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-05",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, exaudi",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-07",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, exaudi (II)",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "STG-pray.confession-03",
+      "door": "D9 Life & Intentions",
+      "label": "In the confessional",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "existingCandidates": 4
+    }
+  ]
+}

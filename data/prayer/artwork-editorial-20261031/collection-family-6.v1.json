@@ -1,0 +1,3113 @@
+{
+  "schema": "AO_PRAYER_ART_ALL_CANDIDATES_FAMILY_SHARD_V1",
+  "date": "2026-10-31",
+  "family": "6",
+  "source": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "policy": "ACCUMULATE_ALL_CANDIDATES_NOW; ALL_NEW_RESEARCH_NEEDS_USER_APPROVAL_IN_LATER_BULK_REVIEW",
+  "releasedImages": 0,
+  "stats": {
+    "slots": 33,
+    "originalSourceEdges": 161,
+    "deduplicatedReviewOptions": 144,
+    "excludedDoNotSuggest": 10,
+    "sourceLinksRecoveredByExactID": 11,
+    "sourceLinkSuggestionsUnverified": 0,
+    "museumDocumentedAnonymousPlacements": 19,
+    "unknownPainterOriginalIdentityOpen": 1,
+    "pradoPhotoSourceQuarantines": 9,
+    "sourceLinksVerifiedByMuseumSourceWave02": 6
+  },
+  "slots": [
+    {
+      "slot": "DOOR-D6",
+      "family": "D6 Our Lord",
+      "label": "Our Lord",
+      "originalSourceEdges": 12,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "PRAYER::regina--primary",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 2,
+          "childRouteSources": [
+            "COV-devotion_consecration_christ_king",
+            "COV-prayer.sacred_heart",
+            "COV-novena.sacred_heart"
+          ]
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::king--previtali"
+          ],
+          "artist": "Andrea Previtali",
+          "title": "Salvator Mundi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Andrea%20Previtali%20-%20Salvator%20Mundi%20-%20Google%20Art%20Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::king--primary"
+          ],
+          "artist": "Ambrosius Benson",
+          "title": "Salvator Mundi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::regina--jan-janssens"
+          ],
+          "artist": "Jan Janssens",
+          "title": "The Resurrection",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_Resurrection.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-78982"
+          ],
+          "artist": "Johann König (German, 1586–1642)",
+          "title": "The Resurrection of Christ",
+          "sourcePage": "https://clevelandart.org/art/2017.192",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::regina--murillo-resurrection"
+          ],
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Resurrection of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "title": "The Risen Christ Appearing to the Virgin",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-devotion_consecration_christ_king",
+      "family": "D6 Our Lord",
+      "label": "Card vignette",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:178038797"
+          ],
+          "artist": "Joos van Cleve",
+          "title": "Christ as Salvator Mundi \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Salvator_Mundi_-_Joos_van_Cleve_-_Mus%C3%A9e_du_Louvre_Peintures_RF_187.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::king--previtali"
+          ],
+          "artist": "Andrea Previtali",
+          "title": "Salvator Mundi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Andrea%20Previtali%20-%20Salvator%20Mundi%20-%20Google%20Art%20Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::king--primary"
+          ],
+          "artist": "Ambrosius Benson",
+          "title": "Salvator Mundi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-sacred_heart_short_prayer",
+      "family": "D6 Our Lord",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437978"
+          ],
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:199348815"
+          ],
+          "artist": "Eustache Le Sueur",
+          "title": "Eustache Le Sueur Ecce Homo",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_Ecce_Homo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-sacred_heart_aspiration_trust",
+      "family": "D6 Our Lord",
+      "label": "Card vignette",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.stations",
+      "family": "D6 Our Lord",
+      "label": "Cover",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::nga-137505",
+          "artist": "Cornelis van Poelenburch",
+          "title": "Christ Carrying the Cross",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-01",
+      "family": "D6 Our Lord",
+      "label": "Jesus is condemned to death",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 1, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:437978"
+          ],
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 01: Christ Condemned to Death",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_I_-_Jesus_is_sentenced_to_death_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-02",
+      "family": "D6 Our Lord",
+      "label": "Jesus takes up His Cross",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::nga-137505",
+          "artist": "Cornelis van Poelenburch",
+          "title": "Christ Carrying the Cross",
+          "originalStatus": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 2, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:22178536"
+          ],
+          "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+          "title": "The Way to Calvary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:22178536"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:75000039"
+          ],
+          "artist": "Domenichino",
+          "title": "The Way to Calvary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:75000039"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 02: Jesus Takes Up the Cross",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_II_-_Jesus_carries_his_cross_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-03",
+      "family": "D6 Our Lord",
+      "label": "Jesus falls the first time",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 3, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 03: First Fall",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_III_-_Jesus_falls_the_first_time_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-04",
+      "family": "D6 Our Lord",
+      "label": "Jesus meets His Mother",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::03",
+          "artist": "Théophile Lybaert",
+          "title": "Jesus meets His Mother",
+          "originalStatus": "USER_REJECTED_LATER_ARTISTIC_FIT",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 4, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04"
+          ],
+          "artist": "Attributed in Commons filename to Delacroix",
+          "title": "Solesmes — Fourth Station of the Way of the Cross",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord,_Fr)_chemin_de_Croix_par_Delacroix,_station_04.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::01"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "Via Crucis — Jesus encounters His Mother",
+          "sourcePage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-94846"
+          ],
+          "artist": "",
+          "title": "Pietà",
+          "sourcePage": "https://clevelandart.org/art/1915.407",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-05",
+      "family": "D6 Our Lord",
+      "label": "Simon of Cyrene helps Jesus",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 5, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 05: Simon of Cyrene Helps",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-06",
+      "family": "D6 Our Lord",
+      "label": "Veronica wipes the face of Jesus",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 6, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:78990209"
+          ],
+          "artist": "Francisco de Zurbarán",
+          "title": "Veil of Veronica",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 06: Veronica Wipes His Face",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VI_-_Veronica_wipes_the_face_of_Jesus_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437978"
+          ],
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-07",
+      "family": "D6 Our Lord",
+      "label": "Jesus falls the second time",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 7, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 07: Second Fall",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VII_-_Jesus_falls_the_second_time_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-08",
+      "family": "D6 Our Lord",
+      "label": "Jesus consoles the women of Jerusalem",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 8, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 08: Jesus Addresses the Women of Jerusalem",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VIII_-_Jesus_meets_the_women_of_Jerusalem_who_weep_by_Giandomenico_Tiepolo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-09",
+      "family": "D6 Our Lord",
+      "label": "Jesus falls the third time",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 9, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 09: Third Fall",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IX_-_Jesus_falls_the_third_time.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-itian-hrist-arrying-the-ross"
+          ],
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "sourcePage": null,
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-10",
+      "family": "D6 Our Lord",
+      "label": "Jesus is stripped of His garments",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 10, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 10: Stripping of His Garments",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_X_-_Jesus_is_stripped_of_his_garments.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-11",
+      "family": "D6 Our Lord",
+      "label": "Jesus is nailed to the Cross",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 11, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 11: Nailing to the Cross",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XI_-_Jesus_is_nailed_to_the_cross.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "D6 Our Lord",
+      "label": "Jesus dies on the Cross",
+      "originalSourceEdges": 9,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 12, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:437172"
+          ],
+          "artist": "Bartolomé Estebán Murillo",
+          "title": "The Crucifixion",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437172",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:115166028"
+          ],
+          "artist": "Hans Jordaens III",
+          "title": "Crucifixion",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115166028"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:127664"
+          ],
+          "artist": "",
+          "title": "Crucifixion",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "UNRESOLVED_OBJECT_IDENTITY",
+            "label": "Unidentified maker; source artwork ID REQUIRES museum catalog linkage",
+            "sourceRecordID": "REVIEW::cma:127664",
+            "artistNotKnown": null
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:4965555"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "French: La crucifixion",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:33831598"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross"
+          ],
+          "artist": "Giandomenico Tiepolo",
+          "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "D6 Our Lord",
+      "label": "Jesus is taken down from the Cross",
+      "originalSourceEdges": 13,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Descent from the Cross — Prado Passion series",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 13, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:15385030"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "Lamentation of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Lamentation_of_Christ_-_WGA4436.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:147368181"
+          ],
+          "artist": "Circle of Peter Paul Rubens",
+          "title": "The lamentation of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Circle_of_Peter_Paul_Rubens_-_The_Lamentation_of_Christ_(Alte_Pinakothek).jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:3110508"
+          ],
+          "artist": "Guercino",
+          "title": "La Pietà",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:35629944"
+          ],
+          "artist": "Domenichino",
+          "title": "Pietà",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:44220879"
+          ],
+          "artist": "Simon de Vos",
+          "title": "The Lamentation",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:438427"
+          ],
+          "artist": "Ludovico Carracci",
+          "title": "The Lamentation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438427",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:439553"
+          ],
+          "artist": "Domenichino (Domenico Zampieri)",
+          "title": "The Lamentation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/439553",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437342"
+          ],
+          "artist": "Scipione Pulzone (Il Gaetano)",
+          "title": "The Lamentation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437342",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:45590714"
+          ],
+          "artist": "Alessandro Turchi",
+          "title": "The lamentation over the dead Christ",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::kmska:0rpylv"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "Kruisafneming",
+          "sourcePage": "http://kmska.be/collection/work/data/0rpylv",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:22003615"
+          ],
+          "artist": "Francesco Solimena",
+          "title": "The Deposition",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::walters:16411"
+          ],
+          "artist": "Johann Michael Rottmayr",
+          "title": "The Deposition from the Cross",
+          "sourcePage": "https://purl.thewalters.org/art/37.788",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.stations-14",
+      "family": "D6 Our Lord",
+      "label": "Jesus is laid in the tomb",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Via Crucis 14, Giandomenico Tiepolo (San Polo original oils)",
+          "artist": "Giandomenico Tiepolo"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:67344360"
+          ],
+          "artist": "Adriaen van der Werff",
+          "title": "De graflegging van Christus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438338"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:78104681"
+          ],
+          "artist": "Kamal-ol-molk",
+          "title": "The Entombment of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:198985941"
+          ],
+          "artist": "Eugène Delacroix",
+          "title": "Christ Carried Down to the Tomb",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:638360"
+          ],
+          "artist": "Dirck van Baburen",
+          "title": "The bearing of Christ's body to the grave \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:638360"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "family": "D6 Our Lord",
+      "label": "Cover",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437172"
+          ],
+          "artist": "Bartolomé Estebán Murillo",
+          "title": "The Crucifixion",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-94846"
+          ],
+          "artist": "",
+          "title": "Pietà",
+          "sourcePage": "https://clevelandart.org/art/1915.407",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437862"
+          ],
+          "artist": "Juan de Valdés Leal",
+          "title": "Pietà",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:147368181"
+          ],
+          "artist": "Circle of Peter Paul Rubens",
+          "title": "The lamentation of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Circle_of_Peter_Paul_Rubens_-_The_Lamentation_of_Christ_(Alte_Pinakothek).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "family": "D6 Our Lord",
+      "label": "'Father, forgive them'",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-02",
+      "family": "D6 Our Lord",
+      "label": "'This day thou shalt be with me in Paradise'",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMS8561"
+          ],
+          "artist": "Ubekendt spansk mester",
+          "title": "The Good Thief (Saint Dismas)",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMS8561",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-03",
+      "family": "D6 Our Lord",
+      "label": "'Woman, behold thy son'",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-94846"
+          ],
+          "artist": "",
+          "title": "Pietà",
+          "sourcePage": "https://clevelandart.org/art/1915.407",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437862"
+          ],
+          "artist": "Juan de Valdés Leal",
+          "title": "Pietà",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437862"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "family": "D6 Our Lord",
+      "label": "'My God, why hast Thou forsaken me?'",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-05",
+      "family": "D6 Our Lord",
+      "label": "'I thirst'",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-06",
+      "family": "D6 Our Lord",
+      "label": "'It is consummated'",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Giovanni Antonio Bazzi)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+            "PRAYER::historic:anthony van dyck:the lance thrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-07",
+      "family": "D6 Our Lord",
+      "label": "'Into Thy hands I commend my spirit'",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Descent from the Cross — Prado Passion series",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-94846"
+          ],
+          "artist": "",
+          "title": "Pietà",
+          "sourcePage": "https://clevelandart.org/art/1915.407",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-94846"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          },
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437862"
+          ],
+          "artist": "Juan de Valdés Leal",
+          "title": "Pietà",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437862"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:22003615"
+          ],
+          "artist": "Francesco Solimena",
+          "title": "The Deposition",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_The_Deposition_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.seven_words-08",
+      "family": "D6 Our Lord",
+      "label": "Historical conclusion",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Descent from the Cross — Prado Passion series",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:438427"
+          ],
+          "artist": "Ludovico Carracci",
+          "title": "The Lamentation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438427",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:439553"
+          ],
+          "artist": "Domenichino (Domenico Zampieri)",
+          "title": "The Lamentation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/439553",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437342"
+          ],
+          "artist": "Scipione Pulzone (Il Gaetano)",
+          "title": "The Lamentation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437342",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437862"
+          ],
+          "artist": "Juan de Valdés Leal",
+          "title": "Pietà",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437862"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-94846"
+          ],
+          "artist": "",
+          "title": "Pietà",
+          "sourcePage": "https://clevelandart.org/art/1915.407",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.tenebrae",
+      "family": "D6 Our Lord",
+      "label": "Cover",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::met-442488"
+          ],
+          "artist": "Nicolas Poussin",
+          "title": "The Agony in the Garden",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/442488",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438338"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-438338"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+          ],
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:159324"
+          ],
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "Christus am Ölberg und der Engel mit dem Kelch (des Leidens).",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_012.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-01",
+      "family": "D6 Our Lord",
+      "label": "Tenebrae of Holy Thursday",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+          ],
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-442488"
+          ],
+          "artist": "Nicolas Poussin",
+          "title": "The Agony in the Garden",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/442488",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "family": "D6 Our Lord",
+      "label": "Tenebrae of Good Friday",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "artist": "",
+          "title": "Preparation for the Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-03",
+      "family": "D6 Our Lord",
+      "label": "Tenebrae of Holy Saturday",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Descent from the Cross — Prado Passion series",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:67344360"
+          ],
+          "artist": "Adriaen van der Werff",
+          "title": "De graflegging van Christus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:184527366"
+          ],
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438338"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:198985941"
+          ],
+          "artist": "Eugène Delacroix",
+          "title": "Christ Carried Down to the Tomb",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:638360"
+          ],
+          "artist": "Dirck van Baburen",
+          "title": "The bearing of Christ's body to the grave \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:638360"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:78104681"
+          ],
+          "artist": "Kamal-ol-molk",
+          "title": "The Entombment of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:78104681"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-prayer.sacred_heart",
+      "family": "D6 Our Lord",
+      "label": "Cover",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+            "PRAYER::historic:anthony van dyck:the lance thrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    }
+  ]
+}

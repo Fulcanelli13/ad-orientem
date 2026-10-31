@@ -1,0 +1,1772 @@
+{
+  "schema": "AO_PRAYER_ART_ALL_CANDIDATES_FAMILY_SHARD_V1",
+  "date": "2026-10-31",
+  "family": "2",
+  "source": "research/prayer-existing-artwork-coverage-first-20261030/data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "userDirection": "COLLECT_ALL_SOURCE_CANDIDATES_FIRST; USER_REVIEW_AFTER_COLLECTION_COMPLETE",
+  "newResearchApprovalStatus": "ALL_NEW_RESEARCH_AWAITS_BULK_USER_REVIEW",
+  "releaseEnabled": false,
+  "stats": {
+    "slots": 17,
+    "originalSourceEdges": 95,
+    "deduplicatedReviewOptions": 83,
+    "excludedDoNotSuggest": 7,
+    "candidatesWithExplicitNoPublicationGate": 83,
+    "sourceLinksRecoveredByExactID": 0,
+    "sourceLinkSuggestionsUnverified": 0,
+    "museumDocumentedAnonymousPlacements": 2,
+    "unknownPainterOriginalIdentityOpen": 0
+  },
+  "slots": [
+    {
+      "slot": "DOOR-D2",
+      "family": "D2 Essential Prayers",
+      "label": "Essential Prayers",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::nga-41661",
+          "title": "Christ among the Doctors [obverse]",
+          "artist": "Bernard van Orley",
+          "sourceDecision": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-159488"
+          ],
+          "title": "The Trinity",
+          "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+          "sourcePage": "https://clevelandart.org/art/1996.26",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "HERO::khm:GG-838"
+          ],
+          "title": "Adoration of the Trinity (Landauer Altarpiece)",
+          "artist": "Albrecht Dürer",
+          "sourcePage": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-136507"
+          ],
+          "title": "The Trinity",
+          "artist": "Laurent Girardin",
+          "sourcePage": "https://clevelandart.org/art/1960.79",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436672"
+          ],
+          "title": "Christ among the Doctors",
+          "artist": "Abraham Hondius",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436672",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:98001263"
+          ],
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Dirck van Baburen",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:98817605"
+          ],
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_sign_of_cross",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-136507"
+          ],
+          "title": "The Trinity",
+          "artist": "Laurent Girardin",
+          "sourcePage": "https://clevelandart.org/art/1960.79",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-159488"
+          ],
+          "title": "The Trinity",
+          "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+          "sourcePage": "https://clevelandart.org/art/1996.26",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "HERO::khm:GG-838"
+          ],
+          "title": "Adoration of the Trinity (Landauer Altarpiece)",
+          "artist": "Albrecht Dürer",
+          "sourcePage": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "title": "Preparation for the Crucifixion",
+          "artist": "",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED",
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+          ],
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_our_father",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes"
+          ],
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436672"
+          ],
+          "title": "Christ among the Doctors",
+          "artist": "Abraham Hondius",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436672",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:98001263"
+          ],
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Dirck van Baburen",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:98817605"
+          ],
+          "title": "Christ among the Doctors \" \"",
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::nga-41661"
+          ],
+          "title": "Christ among the Doctors [obverse]",
+          "artist": "Bernard van Orley",
+          "sourcePage": "https://www.nga.gov/artworks/41661",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 10,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "type": "wave1",
+          "work": "The Annunciation",
+          "artist": "Philippe de Champaigne"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-122338"
+          ],
+          "title": "The Annunciation",
+          "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+          "sourcePage": "https://clevelandart.org/art/1942.635",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437490"
+          ],
+          "title": "The Annunciation",
+          "artist": "Hans Memling",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437490",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438724"
+          ],
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::angelus--caravaggio"
+          ],
+          "title": "The Annunciation",
+          "artist": "Caravaggio",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::angelus--gentileschi"
+          ],
+          "title": "The Annunciation",
+          "artist": "Orazio Gentileschi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-aphael-and-iulio-omano-he-isitation"
+          ],
+          "title": "The Visitation",
+          "artist": "Raphael and Giulio Romano",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Visitaci%C3%B3n_de_Rafael.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435641"
+          ],
+          "title": "Madonna and Child",
+          "artist": "Giovanni Bellini",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435641",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::rosary--caravaggio"
+          ],
+          "title": "Madonna of the Rosary",
+          "artist": "Caravaggio",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150955"
+          ],
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "sourcePage": "https://clevelandart.org/art/1982.36",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142293"
+          ],
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "sourcePage": "https://clevelandart.org/art/1966.125",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "EARLIER_APPROVAL_REUSE_RECORDED",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_glory_be",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-136507"
+          ],
+          "title": "The Trinity",
+          "artist": "Laurent Girardin",
+          "sourcePage": "https://clevelandart.org/art/1960.79",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-159488"
+          ],
+          "title": "The Trinity",
+          "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+          "sourcePage": "https://clevelandart.org/art/1996.26",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "HERO::khm:GG-838"
+          ],
+          "title": "Adoration of the Trinity (Landauer Altarpiece)",
+          "artist": "Albrecht Dürer",
+          "sourcePage": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "title": "The Nativity or the Adoration of the Angels",
+          "artist": "Gerard Seghers",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "title": "Saint Cecilia and an Angel",
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_apostles_creed",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "title": "Resurrection of Christ",
+          "artist": "Peter Paul Rubens",
+          "sourceDecision": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::regina--jan-janssens"
+          ],
+          "title": "The Resurrection",
+          "artist": "Jan Janssens",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_Resurrection.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-78982"
+          ],
+          "title": "The Resurrection of Christ",
+          "artist": "Johann König (German, 1586–1642)",
+          "sourcePage": "https://clevelandart.org/art/2017.192",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::regina--murillo-resurrection"
+          ],
+          "title": "The Resurrection of Christ",
+          "artist": "Bartolomé Esteban Murillo",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-136507"
+          ],
+          "title": "The Trinity",
+          "artist": "Laurent Girardin",
+          "sourcePage": "https://clevelandart.org/art/1960.79",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-159488"
+          ],
+          "title": "The Trinity",
+          "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+          "sourcePage": "https://clevelandart.org/art/1996.26",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97181"
+          ],
+          "title": "Preparation for the Crucifixion",
+          "artist": "",
+          "sourcePage": "https://clevelandart.org/art/1916.816",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED",
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-97147"
+          ],
+          "title": "The Crucifixion",
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-sacrament_act_of_contrition",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "type": "wave1",
+          "work": "The Penitent Magdalen",
+          "artist": "Georges de La Tour"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:107336115"
+          ],
+          "title": "Magdalena penitente - Mateo Cerezo",
+          "artist": "Mateo Cerezo",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Magdalena_penitente_-_Mateo_Cerezo.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436839",
+            "PRAYER::confession--latour-magdalen"
+          ],
+          "title": "The Penitent Magdalen",
+          "artist": "Georges de La Tour",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436839",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:77219970"
+          ],
+          "title": "The penitent Magdalene",
+          "artist": "Guercino",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_The_penitent_Magdalene_2.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46675"
+          ],
+          "title": "The Prodigal Son",
+          "artist": "Pierre Puvis de Chavannes",
+          "sourcePage": "https://www.nga.gov/artworks/46675",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:161200952"
+          ],
+          "title": "The return of the prodigal son",
+          "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_-_The_return_of_the_prodigal_son.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "HERO::nga:34956",
+            "PRAYER::confession--primary"
+          ],
+          "title": "The Return of the Prodigal Son",
+          "artist": "Bartolomé Esteban Murillo",
+          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "EARLIER_APPROVAL_REUSE_RECORDED",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_act_of_faith",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "type": "wave1",
+          "work": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:158771859"
+          ],
+          "title": "Christ Appears to the Three Marys",
+          "artist": "Laurent de La Hyre",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::W07-014"
+          ],
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "title": "The Risen Christ Appearing to the Virgin",
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-ean-estout-entecost"
+          ],
+          "title": "Pentecost",
+          "artist": "Jean Restout",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "EARLIER_APPROVAL_REUSE_RECORDED",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_act_of_hope",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56247851"
+          ],
+          "title": "Christ healing the sick on the shore of the Sea of Galilee",
+          "artist": "Pierre Dulin",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:PeinturesMus%C3%A9eFabre048.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:38398823"
+          ],
+          "title": "Christ on the sea of Galilee",
+          "artist": "Simon de Vos",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_Christ_on_the_sea_of_Galilee.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "curatedRelationship": {
+            "status": "UNAPPROVED_OLDER_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+            "fit": "FAITH_TRUST_HOPE_CONTEXT",
+            "sourceEvidence": "Old candidate, not literal prayer formula",
+            "verifiedRights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING"
+          },
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:163982639"
+          ],
+          "title": "French: Laban cherchant ses idoles dans les bagages de Jacob | Laban Searching Jacob's Baggage for the Stolen Idols \" \"",
+          "artist": "Laurent de La Hyre",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Laban_cherchant_ses_idoles_dans_les_bagages_de_Jacob_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5354_%3B_MR_1848.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "HERO::new:jules-breton-song-of-the-lark-artic-94841",
+            "PRAYER::morning--primary"
+          ],
+          "title": "The Song of the Lark",
+          "artist": "Jules Breton",
+          "sourcePage": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_act_of_love",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "type": "wave1",
+          "work": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "title": "Holy Family with a Shepherd",
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "title": "The Holy Family on the Steps",
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "title": "The Return of the Holy Family to Nazareth",
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "EARLIER_APPROVAL_REUSE_RECORDED",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_guardian_angel",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::angel--franceschini"
+          ],
+          "title": "The Guardian Angel",
+          "artist": "Marcantonio Franceschini",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::angel--strozzi"
+          ],
+          "title": "The Guardian Angel",
+          "artist": "Bernardo Strozzi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-ietro-da-ortona-he-uardian-ngel"
+          ],
+          "title": "The Guardian Angel",
+          "artist": "Pietro da Cortona",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_grace_before_meals",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 12,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "title": "The Last Supper",
+          "artist": "Ugolino da Siena",
+          "sourceDecision": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        },
+        {
+          "id": "REVIEW::nga:12130",
+          "title": "The Last Supper",
+          "artist": "Sebastiano Ricci",
+          "sourceDecision": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        },
+        {
+          "id": "REVIEW::smk:KMSSP12",
+          "title": "The Last Supper",
+          "artist": "Girolamo Muziano",
+          "sourceDecision": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        },
+        {
+          "id": "REVIEW::smk:KMSSP405",
+          "title": "Supper at Emmaus",
+          "artist": "Rembrandt van Rijn (værksted); Rembrandt van Rijn",
+          "sourceDecision": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes"
+          ],
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "title": "Holy Family with a Shepherd",
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:147696"
+          ],
+          "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
+          "artist": "Francesco Trevisani (Italian, 1656–1746)",
+          "sourcePage": "https://clevelandart.org/art/1974.108",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "title": "The Holy Family",
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "title": "The Holy Family on the Steps",
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437458"
+          ],
+          "title": "The Holy Family with Angels",
+          "artist": "Sebastiano Ricci",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "title": "The Last Supper",
+          "artist": "Giovanni Lanfranco",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "title": "The Return of the Holy Family to Nazareth",
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_grace_after_meals",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "title": "The Last Supper",
+          "artist": "Ugolino da Siena",
+          "sourceDecision": "USER_APPROVED",
+          "exclusion": "DO_NOT_REINTRODUCE_AUTOMATICALLY"
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes"
+          ],
+          "title": "Miracle of Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::rijks:200109463"
+          ],
+          "title": "Het laatste avondmaal",
+          "artist": "Attribution not identified",
+          "sourcePage": "https://id.rijksmuseum.nl/200109463",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "title": "The Last Supper",
+          "artist": "Giovanni Lanfranco",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:12130"
+          ],
+          "title": "The Last Supper",
+          "artist": "Sebastiano Ricci",
+          "sourcePage": "https://www.nga.gov/artworks/12130",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMSSP405"
+          ],
+          "title": "Supper at Emmaus",
+          "artist": "Rembrandt van Rijn (værksted); Rembrandt van Rijn",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMSSP405",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-foundations_prayer_of_adoration",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "type": "wave1",
+          "work": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:158771859"
+          ],
+          "title": "Christ Appears to the Three Marys",
+          "artist": "Laurent de La Hyre",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::W07-014"
+          ],
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "title": "The Risen Christ Appearing to the Virgin",
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "EARLIER_APPROVAL_REUSE_RECORDED",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-mass_confiteor",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "type": "wave1",
+          "work": "The return of the prodigal son",
+          "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:161200952"
+          ],
+          "title": "The return of the prodigal son",
+          "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_-_The_return_of_the_prodigal_son.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:439120"
+          ],
+          "title": "The Mass of Saint Basil",
+          "artist": "Pierre Hubert Subleyras",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/439120",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48327311"
+          ],
+          "title": "The Mass of Saint Gregory the Great",
+          "artist": "Adriaen Isenbrandt",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adriaen_Ysenbrandt_-_The_Mass_of_Saint_Gregory_the_Great_-_69.PB.11_-_J._Paul_Getty_Museum.jpg",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "HERO::nga:34956",
+            "PRAYER::confession--primary"
+          ],
+          "title": "The Return of the Prodigal Son",
+          "artist": "Bartolomé Esteban Murillo",
+          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "EARLIER_APPROVAL_REUSE_RECORDED",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-sacrament_come_holy_spirit",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-pray.rosary-14::06"
+          ],
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-ean-estout-entecost"
+          ],
+          "title": "Pentecost",
+          "artist": "Jean Restout",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-traditional_veni_sancte_sequence",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "originalSourceEdges": 1,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-ean-estout-entecost"
+          ],
+          "title": "Pentecost",
+          "artist": "Jean Restout",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
+          "publication": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "productionEnabled": false,
+          "photoCertification": "NOT_CLEARED"
+        }
+      ],
+      "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
+      "imagesNotLive": true,
+      "imagePublicationAllowed": false
+    }
+  ]
+}

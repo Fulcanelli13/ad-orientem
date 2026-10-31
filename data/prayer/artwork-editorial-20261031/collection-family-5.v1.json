@@ -1,0 +1,2866 @@
+{
+  "schema": "AO_PRAYER_ART_ALL_CANDIDATES_FAMILY_SHARD_V1",
+  "date": "2026-10-31",
+  "family": "5",
+  "source": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "policy": "ACCUMULATE_ALL_CANDIDATES_NOW; ALL_NEW_RESEARCH_NEEDS_USER_APPROVAL_IN_LATER_BULK_REVIEW",
+  "releasedImages": 0,
+  "stats": {
+    "slots": 35,
+    "originalSourceEdges": 150,
+    "deduplicatedReviewOptions": 129,
+    "excludedDoNotSuggest": 20,
+    "sourceLinksRecoveredByExactID": 20,
+    "sourceLinkSuggestionsUnverified": 7,
+    "pradoPhotoSourceQuarantines": 1,
+    "sourceLinksVerifiedByMuseumSourceWave02": 15,
+    "sourceLinksVerifiedBySubjectSourceWave03": 5,
+    "sourceLinksVerifiedByCommonsPageIDWave04": 3
+  },
+  "slots": [
+    {
+      "slot": "DOOR-D5",
+      "family": "D5 Holy Eucharist",
+      "label": "Holy Eucharist",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438434"
+          ],
+          "artist": "Jean Auguste Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::rijks:200109463"
+          ],
+          "artist": "Attribution not identified",
+          "title": "Het laatste avondmaal",
+          "sourcePage": "https://id.rijksmuseum.nl/200109463",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::rijks:20027570"
+          ],
+          "artist": "Gerbrand van den Eeckhout",
+          "title": "Het laatste avondmaal",
+          "sourcePage": "https://id.rijksmuseum.nl/20027570",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:12130"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Last Supper",
+          "sourcePage": "https://www.nga.gov/artworks/12130",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMSSP12"
+          ],
+          "artist": "Girolamo Muziano",
+          "title": "The Last Supper",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMSSP12",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-adoration_anima_christi",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Lance Thrust",
+          "artist": "Anthony van Dyck"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437978"
+          ],
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:199348815"
+          ],
+          "artist": "Eustache Le Sueur",
+          "title": "Eustache Le Sueur Ecce Homo",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_Ecce_Homo.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::heart-jesus--primary",
+            "CANONICAL::commons-morlete-sacred-heart-1759"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-adoration_spiritual_communion",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::commons:48327311",
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:158771859"
+          ],
+          "artist": "Laurent de La Hyre",
+          "title": "Christ Appears to the Three Marys",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::W07-014"
+          ],
+          "artist": "Caravaggio",
+          "title": "The Incredulity of Saint Thomas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "title": "The Risen Christ Appearing to the Virgin",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-benediction_o_salutaris",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 1,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Saint Thomas Aquinas",
+          "artist": "Carlo Crivelli"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+          ],
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-benediction_tantum_ergo",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Saint Thomas Aquinas",
+          "artist": "Carlo Crivelli"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+          ],
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-benediction_divine_praises",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-159488"
+          ],
+          "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+          "title": "The Trinity",
+          "sourcePage": "https://clevelandart.org/art/1996.26",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "HERO::khm:GG-838"
+          ],
+          "artist": "Albrecht Dürer",
+          "title": "Adoration of the Trinity (Landauer Altarpiece)",
+          "sourcePage": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-136507"
+          ],
+          "artist": "Laurent Girardin",
+          "title": "The Trinity",
+          "sourcePage": "https://clevelandart.org/art/1960.79",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-adoration_litany_blessed_sacrament",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:12130"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Last Supper",
+          "sourcePage": "https://www.nga.gov/artworks/12130",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 1,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "artist": "Marcantonio Franceschini"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48327311"
+          ],
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adriaen_Ysenbrandt_-_The_Mass_of_Saint_Gregory_the_Great_-_69.PB.11_-_J._Paul_Getty_Museum.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 11,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+          ],
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:3098509"
+          ],
+          "artist": "Jacopo Vignali",
+          "title": "Jacopo vignali, san michele arcangelo libera le anime del purgatorio",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:3098509"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:30774976"
+          ],
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Michael expelling Lucifer and the Rebellious Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:30774976"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437729"
+          ],
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437729"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:118105360"
+          ],
+          "artist": "Pieter van Lint",
+          "title": "Saint Michael the Archangel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:118105360"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:118823142"
+          ],
+          "artist": "Giuseppe Cesari",
+          "title": "The Archangel Michael \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:118823142"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:131068203"
+          ],
+          "artist": "Francesco Maffei",
+          "title": "The Archangel Michael overthrowing Lucifer",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Archangel_Michael_overthrowing_Lucifer.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:131068203"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:29858165"
+          ],
+          "artist": "Francisco Goya",
+          "title": "Saint Gregory the Great, Pope",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18589500"
+          ],
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-benediction_adoremus_ps116",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "Adoration of the Mystic Lamb",
+          "artist": "Hubert and Jan van Eyck"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.adoration.night",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Holy Family",
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "D5 Holy Eucharist",
+      "label": "Prepare the home",
+      "originalSourceEdges": 10,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:147696"
+          ],
+          "artist": "Francesco Trevisani (Italian, 1656–1746)",
+          "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
+          "sourcePage": "https://clevelandart.org/art/1974.108",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::cma:147696"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-160143"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-150389"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437458"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Holy Family with Angels",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437458"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437529"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The Holy Family with Saint Elizabeth, Saint John, and a Dove",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437529",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:438025"
+          ],
+          "artist": "Nicolas Poussin",
+          "title": "The Holy Family with Saint John the Baptist",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438025",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437455"
+          ],
+          "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+          "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437455",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437528"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437528",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-02",
+      "family": "D5 Holy Eucharist",
+      "label": "Unite with Christ",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Agony in the Garden",
+          "artist": "Nicolas Poussin"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+          ],
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-442488"
+          ],
+          "artist": "Nicolas Poussin",
+          "title": "The Agony in the Garden",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/442488",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-03",
+      "family": "D5 Holy Eucharist",
+      "label": "Act of reparation",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::commons-morlete-sacred-heart-1759",
+            "PRAYER::heart-jesus--primary"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437978"
+          ],
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "D5 Holy Eucharist",
+      "label": "Family and Church",
+      "originalSourceEdges": 12,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:147696"
+          ],
+          "artist": "Francesco Trevisani (Italian, 1656–1746)",
+          "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
+          "sourcePage": "https://clevelandart.org/art/1974.108",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::cma:147696"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-160143"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::cma-150389"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437458"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Holy Family with Angels",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437458"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437529"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The Holy Family with Saint Elizabeth, Saint John, and a Dove",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437529",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:438025"
+          ],
+          "artist": "Nicolas Poussin",
+          "title": "The Holy Family with Saint John the Baptist",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438025",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437455"
+          ],
+          "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+          "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437455",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437528"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437528",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-05",
+      "family": "D5 Holy Eucharist",
+      "label": "Spiritual Communion",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::W07-014"
+          ],
+          "artist": "Caravaggio",
+          "title": "The Incredulity of Saint Thomas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "title": "The Risen Christ Appearing to the Virgin",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48327311"
+          ],
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adriaen_Ysenbrandt_-_The_Mass_of_Saint_Gregory_the_Great_-_69.PB.11_-_J._Paul_Getty_Museum.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-06",
+      "family": "D5 Holy Eucharist",
+      "label": "Entrust the night",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Guardian Angel",
+          "artist": "Bernardo Strozzi"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::angel--franceschini"
+          ],
+          "artist": "Marcantonio Franceschini",
+          "title": "The Guardian Angel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::angel--strozzi"
+          ],
+          "artist": "Bernardo Strozzi",
+          "title": "The Guardian Angel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.adoration",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:48327311",
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::met:439120",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::adoration--primary",
+            "CANONICAL::met-438434"
+          ],
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "FINAL_USER_LOCK",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "D5 Holy Eucharist",
+      "label": "At the tabernacle (Visit)",
+      "originalSourceEdges": 14,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:48327311",
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::met:439120",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "Adoration of the Magi",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:34140055"
+          ],
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:34140055"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:28933083"
+          ],
+          "artist": "Anton Kern",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:28933083"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:115220164"
+          ],
+          "artist": "Denys Calvaert",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115220164"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56890177"
+          ],
+          "artist": "Jean-Baptiste de Faudran",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:56890177"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:40907107"
+          ],
+          "artist": "Massimo Stanzione",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:'The_Adoration_of_the_Magi'_by_Massimo_Stanzione.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::visit--murillo-magi"
+          ],
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "CONTEXTUAL_APPROVED_OR_EDITORIAL_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "PRAYER::visit--murillo-magi"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:52809691"
+          ],
+          "artist": "Jacob Jordaens",
+          "title": "Adoration of the Magi .",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jordaens_Adoration_of_the_Magi.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "CONTEXTUAL_APPROVED_OR_EDITORIAL_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56890178"
+          ],
+          "artist": "Nicolas Pinson",
+          "title": "French: L'Adoration des mages",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:34313474"
+          ],
+          "artist": "Hendrick ter Brugghen",
+          "title": "The Adoration of the Kings \" \"",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:74483814"
+          ],
+          "artist": "François Lemoyne",
+          "title": "The Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Lemoyne_-_The_Adoration_of_the_Magi_-_BF.1989.4_-_Museum_of_Fine_Arts.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "family": "D5 Holy Eucharist",
+      "label": "In stillness (exposition)",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Adoration of the Mystic Lamb",
+          "artist": "Jan and Hubert van Eyck"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::adoration--primary"
+          ],
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.adoration.four_ends",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Nativity or the Adoration of the Angels",
+          "artist": "Gerard Seghers"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-01",
+      "family": "D5 Holy Eucharist",
+      "label": "Adoration",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Nativity or the Adoration of the Angels",
+          "artist": "Gerard Seghers"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "family": "D5 Holy Eucharist",
+      "label": "Thanksgiving",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CURATED-STG-pray.adoration.four_ends-02-0"
+          ],
+          "artist": "Giovanni Battista Piazzetta",
+          "title": "The Supper at Emmaus",
+          "sourcePage": "https://www.clevelandart.org/art/1931.245",
+          "sourceEditorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+          "fit": "EMMAUS_EUCHARISTIC_THEME_NOT_EXACT_THANKSGIVING",
+          "historicallyApprovedInOriginalLedger": false,
+          "priorApprovedInAnotherContext": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "CURATED_PREVIOUS_SELECTION_OR_NEW_RESEARCH",
+          "curatedCrosswalk": {
+            "status": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+            "fit": "EMMAUS_EUCHARISTIC_THEME_NOT_EXACT_THANKSGIVING",
+            "evidence": "Cleveland CC0 painting, dark Baroque, c.1720",
+            "rights": "CMA_CC0_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING"
+          },
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CURATED-STG-pray.adoration.four_ends-02-1"
+          ],
+          "artist": "Diego Velázquez",
+          "title": "The Supper at Emmaus",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437871",
+          "sourceEditorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+          "fit": "EMMAUS_EUCHARISTIC_THEME_NOT_EXACT_THANKSGIVING",
+          "historicallyApprovedInOriginalLedger": false,
+          "priorApprovedInAnotherContext": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "CURATED_PREVIOUS_SELECTION_OR_NEW_RESEARCH",
+          "curatedCrosswalk": {
+            "status": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+            "fit": "EMMAUS_EUCHARISTIC_THEME_NOT_EXACT_THANKSGIVING",
+            "evidence": "Met PD 1622–23",
+            "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING"
+          },
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-03",
+      "family": "D5 Holy Eucharist",
+      "label": "Reparation",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "artist": "Sodoma (Giovanni Antonio Bazzi)"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:77218618"
+          ],
+          "artist": "Guercino",
+          "title": "Saint Peter penitent",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMSST155"
+          ],
+          "artist": "Girolamo Troppa",
+          "title": "Saint Peter Penitent",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMSST155",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436721"
+          ],
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437978"
+          ],
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-04",
+      "family": "D5 Holy Eucharist",
+      "label": "Petition",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436199"
+          ],
+          "artist": "Christian Wilhelm Ernst Dietrich",
+          "title": "Christ Healing the Sick",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-436199"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.benediction",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:48327311",
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::met:439120",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::adoration--primary"
+          ],
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "USER_FINAL_LOCKED",
+          "fit": "FINAL_USER_LOCK",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.benediction-01",
+      "family": "D5 Holy Eucharist",
+      "label": "Exposition · O Salutaris",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::adoration--primary"
+          ],
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.benediction-02",
+      "family": "D5 Holy Eucharist",
+      "label": "Tantum Ergo · incensation",
+      "originalSourceEdges": 1,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "Saint Thomas Aquinas",
+          "artist": "Carlo Crivelli"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+          ],
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.benediction-03",
+      "family": "D5 Holy Eucharist",
+      "label": "The blessing",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:48327311",
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::met:439120",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Adoration of the Mystic Lamb",
+          "artist": "Jan and Hubert van Eyck"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::adoration--primary"
+          ],
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.benediction-04",
+      "family": "D5 Holy Eucharist",
+      "label": "Divine Praises · Adoremus",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.forty_hours",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:48327311",
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::met:439120",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean-Auguste-Dominique Ingres"
+        },
+        {
+          "wave": 2,
+          "userKeepIds": [
+            "adoration--primary"
+          ]
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::adoration--primary"
+          ],
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_APPROVED_OR_EDITORIAL_REUSE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "proposedIdentityCandidateSource": "https://www.metmuseum.org/art/collection/search/438434",
+          "sourceRecovery": {
+            "type": "ARTIST_TITLE_ONLY_REQUIRES_ORIGINAL_ID_VERIFICATION",
+            "reviewRequired": true,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "La Petite Cène (The Small Last Supper)",
+          "artist": "Philippe de Champaigne"
+        },
+        {
+          "wave": 2,
+          "userKeepIds": [
+            "w2-franceschini",
+            "w4-ricci"
+          ]
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:158771859"
+          ],
+          "artist": "Laurent de La Hyre",
+          "title": "Christ Appears to the Three Marys",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:1755068"
+          ],
+          "artist": "Wouter Crabeth II",
+          "title": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:De_ongelovige_thomas.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::rijks:200109463"
+          ],
+          "artist": "Attribution not identified",
+          "title": "Het laatste avondmaal",
+          "sourcePage": "https://id.rijksmuseum.nl/200109463",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::W07-014"
+          ],
+          "artist": "Caravaggio",
+          "title": "The Incredulity of Saint Thomas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:12130"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Last Supper",
+          "sourcePage": "https://www.nga.gov/artworks/12130",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "title": "The Risen Christ Appearing to the Virgin",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-prayer.communion-01",
+      "family": "D5 Holy Eucharist",
+      "label": "Before Communion",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::nga:12130",
+          "artist": "Sebastiano Ricci",
+          "title": "The Last Supper",
+          "originalStatus": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48577448"
+          ],
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436199"
+          ],
+          "artist": "Christian Wilhelm Ernst Dietrich",
+          "title": "Christ Healing the Sick",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-prayer.communion-02",
+      "family": "D5 Holy Eucharist",
+      "label": "After Communion",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "artist": "Sebastiano Ricci"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:158771859"
+          ],
+          "artist": "Laurent de La Hyre",
+          "title": "Christ Appears to the Three Marys",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::W07-014"
+          ],
+          "artist": "Caravaggio",
+          "title": "The Incredulity of Saint Thomas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:146167"
+          ],
+          "artist": "Francesco Solimena (Italian, 1657–1747)",
+          "title": "The Risen Christ Appearing to the Virgin",
+          "sourcePage": "https://clevelandart.org/art/1971.63",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:87865020"
+          ],
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    }
+  ]
+}

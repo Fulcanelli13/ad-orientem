@@ -1,0 +1,63 @@
+{
+  "schema": "AO_PRAYER_ART_ARTIST_ATTRIBUTION_EXACT_ORIGINAL_QA_V1",
+  "date": "2026-10-31",
+  "scope": "45 source placement records with blank historical painter, grouped by original museum object; do not treat as 45 different artists",
+  "counts": {
+    "blankArtistCandidatePlacements": 45,
+    "distinctSourceArtworkIds": 3,
+    "museumDocumentedAnonymousSourceWorks": 2,
+    "museumDocumentedAnonymousPlacements": 41,
+    "unresolvedSourceWorkIDs": 1,
+    "unresolvedPlacements": 4,
+    "primaryAssignmentAttributionMadeExplicit": 4
+  },
+  "originals": [
+    {
+      "originalId": "CANONICAL::cma-94846",
+      "currentCandidatePlacements": 13,
+      "originalTitle": "Pietà",
+      "museumAccession": "1915.407",
+      "museum": "Cleveland Museum of Art",
+      "medium": "oil on canvas",
+      "date": "late 1500s",
+      "artist": "Not attributed to an identified artist",
+      "geoSchool": "Possibly Florence, Italy, late 16th century or later",
+      "officialOriginal": "https://www.clevelandart.org/art/1915.407",
+      "quality": "PUBLIC_DOMAIN_OPEN_ACCESS_OBJECT_CATALOG_CONFIRMED; NO_NATIVE_PIXEL_CROP_QA",
+      "editorial": "PREVIOUS_USER_STATUS_UNCHANGED"
+    },
+    {
+      "originalId": "CANONICAL::cma-97181",
+      "currentCandidatePlacements": 28,
+      "originalTitle": "Preparation for the Crucifixion",
+      "museumAccession": "1916.816",
+      "museum": "Cleveland Museum of Art",
+      "medium": "oil on copper",
+      "date": "early 1600s",
+      "artist": "Artist unknown, according to museum",
+      "geoSchool": "Northern Italy, early 17th century",
+      "officialOriginal": "https://www.clevelandart.org/art/1916.816",
+      "quality": "PUBLIC_DOMAIN_OPEN_ACCESS_OBJECT_CATALOG_CONFIRMED; NO_NATIVE_PIXEL_CROP_QA",
+      "editorial": "PREVIOUS_USER_STATUS_UNCHANGED"
+    },
+    {
+      "originalId": "REVIEW::cma:127664",
+      "currentCandidatePlacements": 4,
+      "originalTitle": "Crucifixion",
+      "artist": "Not verified",
+      "officialOriginal": null,
+      "medium": null,
+      "sourceArtworkCatalogID": "127664",
+      "next": "Resolve original museum object ID and title before attempting photo/painting attribution",
+      "quality": "SOURCE_OBJECT_LINK_UNRESOLVED_NOT_TO_BE_USED_IN_FINAL_USER_GALLERY_WITHOUT_UNAMBIGUOUS_ID",
+      "editorial": "UNREVIEWED_SOURCE_RECORD_STATUS_UNCHANGED"
+    }
+  ],
+  "hardRules": [
+    "Known anonymous artist is not a research failure: never invent a named painter",
+    "Museum object accession is the stable original identity for Cleveland paintings",
+    "Source metadata open access does not equal actual current photo pixel/frame QA",
+    "Source work ID cma:127664 must not be substituted with a random Crucifixion by another artist",
+    "No new artwork approvals, fees, publication or master cover changes"
+  ]
+}

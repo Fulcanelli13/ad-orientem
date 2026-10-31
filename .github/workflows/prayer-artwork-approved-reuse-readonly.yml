@@ -1,0 +1,43 @@
+name: Prayer approved-art reuse contract (read only)
+on:
+  pull_request:
+    paths:
+      - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave1.v1.json'
+      - 'tests/prayer-artwork-reuse-wave1-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave2.v1.json'
+      - 'tests/prayer-artwork-reuse-wave2-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave3.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/new-art-gap-source-shortlist-20261031.v1.json'
+      - 'tests/prayer-artwork-reuse-wave3-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/all-267-source-linked-artwork-candidate-collection.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/collection-family-*.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/curated-research-proposal-matches-for-last-23.v1.json'
+      - 'tests/prayer-artwork-complete-candidate-collection-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/provisional-one-choice-per-267-art-position.v1.json'
+      - 'tests/prayer-artwork-provisional-267-assignment-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/source-link-recovery-1506-placements-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/artist-attribution-source-resolution-wave01.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/priority-photo-source-and-licence-qa-wave01.v1.json'
+      - 'tests/prayer-artwork-source-quality-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/prado-origin-source-quarantine-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/met-source-verification-wave02-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/subject-source-verification-wave03-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/commons-pageid-exact-source-wave04-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/commons-pageid-ricci-wave05-20261031.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/remaining-50-unique-source-acquisition-queue-20261031.v1.json'
+      - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source-linked art mapping validation
+        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs tests/prayer-artwork-provisional-267-assignment-contract.mjs tests/prayer-artwork-source-quality-contract.mjs
