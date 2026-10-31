@@ -35,7 +35,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  const latinBeats=bilingual?essentialHolyCardParts(id,"la",p.la)||[]:[];
  const latinIncipit=incipit(p),title=face==="fr"?(p.titleFr||p.title):p.title;
  const paragraphs=beats.map((part,i)=>{
-  const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial" aria-hidden="true">'+esc(text.charAt(0))+'</span>':'';
+  const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial">'+esc(text.charAt(0))+'</span>':'';
   const body=i===0?text.slice(1):text;
   return '<p class="aoP435930EssentialBeat aoLibraryLine'+(part.collective?' aoP435930EssentialCollective':'')+
    '" data-ao-essential-index="'+i+'" lang="'+language+'">'+initial+
