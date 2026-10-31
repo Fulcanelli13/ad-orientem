@@ -367,6 +367,22 @@ try{
       .getAttribute("aria-current"),"page",prefix+" selected Calendar Year not announced");
     assert.ok(await h4.locator(".aoTodayH4 .aoClockSector").count()>=6,
       prefix+" restored clock must retain the actual liturgical seasons");
+    // H7's outer view selector is the sole visible owner. The Calendar's
+    // older sticky navigation must never float over the Liturgical Clock.
+    const yearNavigation=await h4.evaluate(()=>{
+      const root=document.querySelector(".aoTodayH4 #ao-calendar-modular-root");
+      const legacy=root?.querySelector(".aoCalV2Tabs");
+      const current=document.querySelector(".aoTodayH4 .aoH4CalendarViews");
+      return {legacyDisplay:legacy?getComputedStyle(legacy).display:null,
+        currentDisplay:current?getComputedStyle(current).display:null,
+        currentButtons:current?.querySelectorAll("[data-home-calendar-view]").length??0};
+    });
+    assert.equal(yearNavigation.legacyDisplay,"none",
+      prefix+" legacy Calendar bar overlaps the Year wheel");
+    assert.equal(yearNavigation.currentDisplay,"grid",
+      prefix+" approved H7 Calendar navigation is missing");
+    assert.equal(yearNavigation.currentButtons,3,
+      prefix+" H7 Day/Month/Liturgical Year navigation is incomplete");
     await h4.screenshot({path:resolve(output,prefix+"-h4-year-clock-light.png"),fullPage:true});
     await h4.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
     await h4.waitForSelector('.aoTodayH4[data-ao-home-calendar-view="picker"] #ao-calendar-modular-root',

@@ -78,13 +78,13 @@ export const TODAY_H4_CSS=`
 .aoTodayH4 .aoH4CalendarBack button{width:44px;height:44px;border:0;background:transparent;color:var(--h4-ink)}
 .aoTodayH4 .aoH4CalendarBack strong{font:500 20px/1.2 var(--h4-serif)}
 .aoTodayH4 .aoH4CalendarInline:not([hidden]){display:block}
-/* H4 retired the former Today V2 Day/Month/Year tabs; the canonical
-   embedded Calendar must expose its own native view switcher instead. */
-/* Standalone Calendar tabs use -12px phone gutters. Embedded H4 gives
-   Calendar only 4px side padding: the -12px margins protrude by 8px,
-   exactly the Year phone overflow detected by visual acceptance. */
+/* H7 Calendar has a single Day / Month / Liturgical Year selector:
+   .aoH4CalendarViews owns navigation when the canonical Calendar is embedded.
+   Keep the Calendar's native sticky tabs for standalone use only. This rule
+   must not override calendar-runtime.js's embedded display:none with grid,
+   which previously duplicated the selector over the Liturgical Clock. */
 .aoTodayH4 #ao-calendar-modular-root[data-ao-calendar-embedded="true"] .aoCalV2Tabs{
-  display:grid!important;margin-inline:0!important;width:100%;min-width:0;
+  display:none!important;
 }
 /* The embedded 1962 Year/Clock inherits content-box width and insets from
    the standalone Calendar. Constrain its geometry to H4's actual phone slot
