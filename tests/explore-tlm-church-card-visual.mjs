@@ -67,6 +67,24 @@ try{
    // map search input: its input event can be superseded by list rendering.
    await page.locator('.aoFindBody[data-find-view="list"][data-explore-lens="tlm"]').waitFor({state:"visible",timeout:30000});
    await page.locator(".aoTlmVenueCard").first().waitFor({state:"visible",timeout:20000});
+   // Test the compact secondary community menu on real touch-width layouts.
+   // It must expose exact community filters without clipping or raw registry codes.
+   const more=page.locator(".aoTlmMoreInstitutes");
+   assert.equal(await more.count(),1,"Additional source communities need a compact disclosure");
+   await more.locator("summary").click();
+   const cantiusFilter=more.locator('[data-find-affiliation="CANONS_ST_JOHN_CANTIUS"]');
+   await cantiusFilter.waitFor({state:"visible",timeout:12000});
+   assert.match(await cantiusFilter.innerText(),
+     language==="fr"?/Chanoines de Saint-Jean-de-Cantius/:/Canons of St John Cantius/);
+   const menuBounds=await more.locator(".aoFindAffiliations").evaluate(el=>{
+     const bounds=el.getBoundingClientRect();
+     return {left:bounds.left,right:bounds.right,width:innerWidth,
+       height:bounds.height,overflow:el.scrollWidth-el.clientWidth};
+   });
+   assert.ok(menuBounds.left>=-2&&menuBounds.right<=width+2,
+     "Community menu must fit the phone viewport: "+JSON.stringify(menuBounds));
+   assert.ok(menuBounds.overflow<=2,"Community filters must wrap instead of scrolling horizontally");
+   await more.locator("summary").click();
    const search=page.locator("#ao-find-modular-root [data-find-query]");
    await search.fill("Cantius");
    // An institute-affiliation search may return other churches served by
