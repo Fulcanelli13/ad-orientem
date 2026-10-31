@@ -2,18 +2,21 @@
   "schema": "AO_PRAYER_STATIONS_SEVEN_PD_SOURCE_RESEARCH_V2",
   "asOf": "2026-10-31",
   "supersedes": "AO_PRAYER_STATIONS_SEVEN_PD_SOURCE_RESEARCH_V1",
-  "scope": "Seven outstanding exact-scene Stations remain OPEN. Théophile Lybaert's entire oil Stations cycle was directly rejected by user for artistic quality and is only in historical exclusions; etchings are research-only; no source or candidate is approved for application.",
+  "scope": "Six still-unmapped Station scenes, one newly resolved through an already-approved same-scene painting. Lybaert remains permanently excluded. Seven Tiepolo etchings remain unapproved references.",
   "sourceRegistry": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
-  "workbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Lybaert_Excluded.xlsx",
+  "workbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Station_V_Reconciled.xlsx",
   "context": {
     "previousEditorialCovered": 199,
     "previousEditorialGaps": 68,
-    "activePaintingCandidates": 0,
+    "activePaintingCandidates": 1,
     "unapprovedEtchingAlternatives": 7,
     "lybaertArtworksExcluded": 7,
     "newlyApproved": 0,
     "productionClearedImages": 0,
-    "remainingEditorialGaps": 68
+    "remainingEditorialGaps": 67,
+    "currentEditorialCovered": 200,
+    "unmappedStationSlots": 6,
+    "inheritedAlreadyApprovedPaintingSlots": 1
   },
   "hardExclusion": {
     "artist": "Théophile Lybaert",
@@ -33,7 +36,8 @@
     "Smithsonian open-access CC0 evidence for historical etching objects does not clear unrelated modern photographic reproductions of paintings.",
     "No Lybaert oil painting may appear in recommendations, candidate queues, rollovers, module/hero/stage mappings, or application assets.",
     "A historical rejected work is not a viable candidate even if its license is public domain.",
-    "Tiepolo etching alternatives are not user-approved and should not be promoted as preferred paintings."
+    "Tiepolo etching alternatives are not user-approved and should not be promoted as preferred paintings.",
+    "Station V can inherit the pre-approved Domenichino painting on semantic-scene grounds, but requires native crop/visual inspection before the Getty CC0 exact file is allowed in the app."
   ],
   "entries": [
     {
@@ -70,7 +74,8 @@
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
-      }
+      },
+      "inheritance": null
     },
     {
       "editorialSlot": "STG-pray.stations-05",
@@ -100,12 +105,27 @@
           "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
       ],
-      "actualPaintingSelection": "NONE",
-      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "actualPaintingSelection": "Domenichino — The Way to Calvary (already user-approved for Station II; same depicted Simon event)",
+      "artisticApproval": "SAME_SCENE_REUSE_OF_EXISTING_USER_APPROVAL_NOT_NEW_SELECTION",
       "publication": {
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
+      },
+      "inheritance": {
+        "from": "STG-pray.stations-02",
+        "artworkId": "REVIEW::commons:22178536",
+        "event": "Simon of Cyrene assisting Christ beneath the Cross",
+        "sourceIdentity": "Getty object 83.PC.373",
+        "imageSource": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary,_c._1610_(Getty_Center).jpg",
+        "rightsBasis": "Getty Open Content CC0 and Commons PD-Art",
+        "nativeResolution": [
+          8797,
+          7032
+        ],
+        "stillNeedsNativePhotoQA": true,
+        "publicationAllowed": false,
+        "displayInApp": false
       }
     },
     {
@@ -142,7 +162,8 @@
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
-      }
+      },
+      "inheritance": null
     },
     {
       "editorialSlot": "STG-pray.stations-08",
@@ -178,7 +199,8 @@
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
-      }
+      },
+      "inheritance": null
     },
     {
       "editorialSlot": "STG-pray.stations-09",
@@ -214,7 +236,8 @@
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
-      }
+      },
+      "inheritance": null
     },
     {
       "editorialSlot": "STG-pray.stations-10",
@@ -250,7 +273,8 @@
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
-      }
+      },
+      "inheritance": null
     },
     {
       "editorialSlot": "STG-pray.stations-11",
@@ -286,7 +310,8 @@
         "ready": false,
         "assetUrl": null,
         "runtimeDisplayEnabled": false
-      }
+      },
+      "inheritance": null
     }
   ],
   "rejectedHistoricalCandidates": [
