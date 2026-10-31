@@ -1,0 +1,549 @@
+{
+  "schema": "AO_SACRED_ATLAS_SOURCE_FIRST_PRECISE_SUBJECT_BATCH_V1",
+  "as_of": "2026-10-31",
+  "scope": "RESEARCH_ONLY_SOURCE_FIRST_ORIGINAL_OBJECT_MATCHING",
+  "provenance": "Official custodian/heritage references plus individually identified Wikimedia Commons file pages, reviewed 2026-10-31",
+  "source_archive_context": "31 Oct user supplied 100-image ZIP and strict 100-assignment editorial audit; existing 20 KEEP decisions remain unchanged",
+  "invariants": [
+    "Do not overwrite any of the previous 20 KEEP user votes.",
+    "Do not infer that a named relic photograph depicts exposed bones rather than a reliquary, case or church.",
+    "Do not treat Commons CC photographer label as automatic authorization for underlying modern sculpture, art or protected monuments.",
+    "Do not treat source metadata resolution as a positive visual-quality review.",
+    "Do not ingest photography into app or overwrite existing approved image binaries until source, rights, identity and user editorial review.",
+    "Do not re-use provenance from a different relic or different physical Place."
+  ],
+  "summary": {
+    "targets_processed": 14,
+    "one_original_photo_reuse_not_new": 1,
+    "prior_user_decisions_preserved": true,
+    "production_assets_modified": 0,
+    "photos_downloaded_in_this_batch": 0,
+    "publication_approvals": 0,
+    "exact_object_photographic_candidates": 13,
+    "authority_crossrefs_custodian_or_official": 9
+  },
+  "items": [
+    {
+      "subject_id": "subject:focus:guadalupe-tilma",
+      "canonical_place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "previous_100_batch_photo_index": 5,
+      "exact_physical_subject": "Original tilma of Juan Diego, displayed above the high altar of the New Basilica, Mexico City",
+      "custodian_or_primary_reference": [
+        {
+          "type": "CUSTODIAN",
+          "url": "https://virgendeguadalupe.org.mx/documentos-historicos/",
+          "scope": "Official Basilica context, historical tradition; not a photograph-specific catalogue"
+        },
+        {
+          "type": "OBJECT_CATEGORIZATION",
+          "url": "https://commons.wikimedia.org/wiki/Category:Original_image_of_Our_Lady_of_Guadalupe_(Tepeyac)",
+          "scope": "The original displayed tilma distinguished from copies"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:1531 Nuestra Señora de Guadalupe anagoria.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:1531_Nuestra_Se%C3%B1ora_de_Guadalupe_anagoria.jpg",
+          "width": 3168,
+          "height": 4752,
+          "photographer": "Nueva Basílica / Commons uploader Anagoria",
+          "commons_license_claim": "PD-ART/PDM claimed",
+          "image_role": "EXACT_IMAGE_REPRODUCTION_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Entire icon fills frame. Inspect retouching, original tonal fidelity and legal status; US public domain tagging noted as incomplete on Commons."
+        }
+      ],
+      "editorial_action": "REPLACE_PREVIOUS_FLAG_OBSCURED_IMAGE_WITH_RESEARCH_CANDIDATE",
+      "subject_match_note": "Previous image #005 dominated by Mexican flag; new photograph must show the original image, not replica, painting or frame.",
+      "blocking_gates": [
+        "US_AND_SOURCE_COUNTRY_PD_ART_REPRODUCTION_REVIEW",
+        "AUTHENTICITY_OF_DIGITAL_REPRODUCTION",
+        "VISUAL_CROP_AND_COLOR_REVIEW",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:focus:fatima-apparition-statue-plinth",
+      "canonical_place_id": "place:PT:fatima-sanctuary",
+      "previous_100_batch_photo_index": null,
+      "exact_physical_subject": "José Ferreira Thedim's original 1919–1920 statue in the Chapel of the Apparitions, distinct from processional copies",
+      "custodian_or_primary_reference": [
+        {
+          "type": "CUSTODIAN",
+          "url": "https://www.santuario-fatima.pt/en/pages/places-of-the-apparitions",
+          "scope": "Original statue donated in 1920, crowned in 1946, located in the Chapel"
+        },
+        {
+          "type": "EXACT_OBJECT_CATEGORY",
+          "url": "https://commons.wikimedia.org/wiki/Category:First_sculpture_of_Our_Lady_of_Fatima",
+          "scope": "Exact original sculpture, includes copies and documents; inspect actual file"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Fatima (3 – cropped).jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Fatima_(3_%E2%80%93_cropped).jpg",
+          "width": 1970,
+          "height": 3487,
+          "photographer": "Bingar1234",
+          "commons_license_claim": "CC BY-SA 4.0 for photograph",
+          "image_role": "EXACT_STATUE_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Crop derives from 2014 photograph; evaluate statue dominance and loss of context."
+        }
+      ],
+      "editorial_action": "NEW_PRECISE_OBJECT_SHORTLIST_NO_SUBSTITUTION",
+      "subject_match_note": "Earlier KEEP of user-shown preview remains in force; previous unpinned filename alone is not approval of this substitute.",
+      "blocking_gates": [
+        "THE_DIM_1920_SCULPTURE_AND_FREEDOM_OF_PANORAMA_LEGAL_REVIEW",
+        "IMAGE_DERIVATIVE_CHAIN",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
+      "canonical_place_id": "place:FR:espace-bernadette-nevers",
+      "previous_100_batch_photo_index": 3,
+      "exact_physical_subject": "Glass shrine containing Saint Bernadette's venerated remains inside the Saint-Gildard chapel, not the outdoor Lourdes replica",
+      "custodian_or_primary_reference": [
+        {
+          "type": "CUSTODIAN",
+          "url": "https://www.sainte-bernadette-soubirous-nevers.com/en/le-sanctuaire/",
+          "scope": "Glass shrine in Saint-Gildard since 1925"
+        },
+        {
+          "type": "CUSTODIAN_CONGREGATION",
+          "url": "https://congregation-soeurs-charite-nevers.fr/en/pages/bernadette-3/her-body/",
+          "scope": "Congregation confirms body in chapel"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Bernadette Soubirous-sarcophagus-2.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Bernadette_Soubirous-sarcophagus-2.jpg",
+          "width": 2272,
+          "height": 1704,
+          "photographer": "Roock / derivative by Rabanus Flavus",
+          "commons_license_claim": "CC BY-SA 3.0 migrated; dual GFDL",
+          "image_role": "EXACT_SHRINE_PHOTO_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Brightness-adjusted derivative of a 2006 photograph. Verify not overprocessed; attribution to both creators."
+        }
+      ],
+      "editorial_action": "REPLACE_LOW_QUALITY_EXISTING_IMAGE_WITH_RESEARCH_OPTION",
+      "subject_match_note": "Existing #003 has intrusive foreground flowers and distant body. New derivative needs modern fidelity and composition check.",
+      "blocking_gates": [
+        "PHOTOGRAPH_DERIVATIVE_LICENSE_CHAIN",
+        "PHOTO_DATE_AND_VISUAL_CROP_REVIEW",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:focus:jasna-gora-black-madonna",
+      "canonical_place_id": "place:PL:jasna-gora",
+      "previous_100_batch_photo_index": 4,
+      "exact_physical_subject": "Original miraculous icon of Our Lady of Częstochowa, not a reproduction elsewhere or generic monastery photograph",
+      "custodian_or_primary_reference": [
+        {
+          "type": "EXACT_CHAPEL_CATEGORY",
+          "url": "https://commons.wikimedia.org/wiki/Category:Chapel_of_Our_Lady_of_Cz%C4%99stochowa",
+          "scope": "Jasna Góra icon chapel; official custodian object record still to be added"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Czestochowa MB Czestochowska.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Czestochowa_MB_Czestochowska.jpg",
+          "width": 2660,
+          "height": 4134,
+          "photographer": "Andrzej Otrębski",
+          "commons_license_claim": "CC BY-SA 4.0",
+          "image_role": "EXACT_ICON_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Icon photographed with its riza. High resolution but check sharpness/exposure of face and crop."
+        }
+      ],
+      "editorial_action": "REPLACE_PREVIOUS_DARK_DISTANT_IMAGE_WITH_RESEARCH_OPTION",
+      "subject_match_note": "#004 icon rendered very small in nearly black chapel. Do not treat chapel and icon as interchangeable.",
+      "blocking_gates": [
+        "CUSTODIAN_OFFICIAL_CROSS_REFERENCE_PENDING",
+        "RIZA_VS_UNCOVERED_ICON_CAPTION",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
+      "canonical_place_id": "place:DE:altoetting-gnadenkapelle",
+      "previous_100_batch_photo_index": 6,
+      "exact_physical_subject": "Original early-Gothic Black Madonna (c. 1330), normally housed in Altötting's Gnadenkapelle",
+      "custodian_or_primary_reference": [
+        {
+          "type": "CITY_CUSTODIAN_INFORMATION",
+          "url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/the-madonna-of-altoetting/",
+          "scope": "Original 66 cm statue, early Gothic, venerated at Gnadenkapelle"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Gnadenbild, Gnadenkapelle Altötting.jpeg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Gnadenbild,_Gnadenkapelle_Alt%C3%B6tting.jpeg",
+          "width": 1166,
+          "height": 1835,
+          "photographer": "S. Finner (Siddhartha Finner)",
+          "commons_license_claim": "CC BY-SA 3.0",
+          "image_role": "EXACT_ORIGINAL_STATUE_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Photographed during the original statue's temporary placement in the parish church on 23 Feb 2011; excellent identity distinction, limited resolution."
+        }
+      ],
+      "editorial_action": "REPLACE_DARK_ALTAR_VIEW_WITH_ORIGINAL_STATUE_OPTION",
+      "subject_match_note": "#006 statue nearly invisible among altar ornaments; alternative shows actual same object in rare 2011 access, not current chapel view.",
+      "blocking_gates": [
+        "TEMPORARY_2011_LOCATION_EXPLICIT_CAPTION",
+        "PERMANENT_HERO_RESOLUTION_FIT_REVIEW",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:focus:mariazell-magna-mater-statue",
+      "canonical_place_id": "place:AT:mariazell-basilica",
+      "previous_100_batch_photo_index": 7,
+      "exact_physical_subject": "Magna Mater Austriae original Grace statue at Mariazell; object distinct from the monumental high altar and replicas",
+      "custodian_or_primary_reference": [
+        {
+          "type": "PRECISE_OBJECT_CATEGORY",
+          "url": "https://commons.wikimedia.org/wiki/Category:Magna_Mater_Austriae_(original_sculpture)",
+          "scope": "Original Grace statue differentiated from Mariazell interior images"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Gnadenstatue mit Kleid.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Gnadenstatue_mit_Kleid.jpg",
+          "width": 3024,
+          "height": 4032,
+          "photographer": "Launus",
+          "commons_license_claim": "CC BY-SA 4.0",
+          "image_role": "EXACT_STATUE_AND_ALTAR_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Photograph of original dressed statue at Grace altar; compare with earlier Launus image for object scale and reflections."
+        }
+      ],
+      "editorial_action": "NEW_ALTERNATIVE_TO_OLD_LOW_QUALITY_PHOTO",
+      "subject_match_note": "#007 was small/reflective; alternative is not yet proven better composition simply by larger pixels.",
+      "blocking_gates": [
+        "OFFICIAL_OBJECT_REFERENCE_PENDING",
+        "ALTAR_VS_STATUE_DOMINANCE",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:round1-review:IN:basilica-bom-jesus-old-goa:13",
+      "canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "previous_100_batch_photo_index": 10,
+      "exact_physical_subject": "Actual silver casket containing Saint Francis Xavier's remains in the chapel of Saint Francis Xavier, Basilica of Bom Jesus",
+      "custodian_or_primary_reference": [
+        {
+          "type": "GOA_TOURISM_OFFICIAL",
+          "url": "https://goa-tourism.com/church/basilica-of-bom-jesus/",
+          "scope": "Identifies exact chapel and silver casket, not exposed body"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Reliquary casket of Francis Xavier, Basilica of Bom Jesus.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Reliquary_casket_of_Francis_Xavier,_Basilica_of_Bom_Jesus.jpg",
+          "width": 2560,
+          "height": 1440,
+          "photographer": "Rohini",
+          "commons_license_claim": "CC BY 3.0",
+          "image_role": "EXACT_CASKET_AND_SHRINE_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Correct object in situ, but wide horizontal format and silver casket scale need inspection."
+        }
+      ],
+      "editorial_action": "REPLACE_PREVIOUS_GLASS_OBSCURED_PHOTO_WITH_RESEARCH_OPTION",
+      "subject_match_note": "#010 is dark, distant and soft. Distinguish casket from actual bodily remains and from basilica facade.",
+      "blocking_gates": [
+        "GOA_ASI_SITE_IMAGE_REUSE_CONDITIONS_CHECK",
+        "OBJECT_SCALE_AND_QUALITY",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:IT:anthony-padua-tongue",
+      "canonical_place_id": "place:IT:basilica-sant-antonio-padova",
+      "previous_100_batch_photo_index": 43,
+      "exact_physical_subject": "1436 Giuliano da Firenze reliquary for Saint Anthony's tongue; jawbone above dates 1350; vocal apparatus below dates 1981",
+      "custodian_or_primary_reference": [
+        {
+          "type": "BASILICA_CUSTODIAN",
+          "url": "https://www.santantonio.org/en/content/chapel-relics-treasury-chapel",
+          "scope": "Exact tongue, jawbone and vocal apparatus reliquaries and their positions"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:La-lingua-di-sant-antonio.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:La-lingua-di-sant-antonio.jpg",
+          "width": 960,
+          "height": 1280,
+          "photographer": "Elmiralaleh",
+          "commons_license_claim": "CC BY-SA 4.0",
+          "image_role": "RETAIN_EXISTING_EXACT_RELIQUARY_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "This is not a new acquisition: earlier #043 is already a high-priority exact-object candidate; crop quality and Italian heritage terms remain unresolved."
+        }
+      ],
+      "editorial_action": "RETAIN_PRIOR_EXACT_OBJECT_CANDIDATE_NOT_NEW",
+      "subject_match_note": "Avoid replacing correct photograph with an unrelated Genoa treasury interior (#014 was wrong site).",
+      "blocking_gates": [
+        "OBJECT_AND_NICHE_POSITION_VISUAL_CHECK",
+        "ITALIAN_CULTURAL_HERITAGE_REUSE_CONDITIONS",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:IT:santuario-volto-santo-manoppello",
+      "canonical_place_id": "place:IT:santuario-volto-santo-manoppello",
+      "previous_100_batch_photo_index": 58,
+      "exact_physical_subject": "Original venerated textile image of the Holy Face in the Manoppello sanctuary's main-altar reliquary, not the exterior facade",
+      "custodian_or_primary_reference": [
+        {
+          "type": "ITALIAN_CULTURAL_HERITAGE_AUTHORITY",
+          "url": "https://cultura.gov.it/luogo/santuario-del-volto-santo",
+          "scope": "Sanctuary contains textile image on main altar in silver reliquary"
+        },
+        {
+          "type": "OBJECT_RESEARCH",
+          "url": "https://manoppello.eu/eng/index.php?go=oblicze",
+          "scope": "Physical textile and its glass display; specialist website, not a reuse licence"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Volto santo di manoppello 2019-11-02.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Volto_santo_di_manoppello_2019-11-02.jpg",
+          "width": 3888,
+          "height": 5184,
+          "photographer": "ElfQrin",
+          "commons_license_claim": "CC BY-SA 4.0",
+          "image_role": "EXACT_FACE_VEIL_CLOSE_VIEW_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Commons author explicitly photographs textile weave close-up; inspect glare, sharpness, actual face and digital processing."
+        }
+      ],
+      "editorial_action": "REASSIGN_PREVIOUS_EXTERIOR_TO_SITE_GALLERY_FIND_EXACT_VEIL",
+      "subject_match_note": "Prior #058 showed exterior basilica, not venerated Face. New exact-object candidate is well aligned.",
+      "blocking_gates": [
+        "ITALIAN_CULTURAL_HERITAGE_REUSE_CONDITIONS",
+        "OBJECT_AND_PHOTOGRAPH_LICENSE",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:IT:padre-pio-rotondo",
+      "canonical_place_id": "place:IT:santuario-san-pio-rotondo",
+      "previous_100_batch_photo_index": 48,
+      "exact_physical_subject": "Shrine/urn associated with Saint Pio's body in San Giovanni Rotondo; do not substitute an organ or general church view",
+      "custodian_or_primary_reference": [
+        {
+          "type": "EXACT_MEDIA_OBJECT_CATEGORY",
+          "url": "https://commons.wikimedia.org/wiki/Category:Tomb_of_Padre_Pio",
+          "scope": "Dedicated tomb category; current shrine/custodian documentation pending"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:S.Giovanni Rotondo (30).jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:S.Giovanni_Rotondo_(30).jpg",
+          "width": 3264,
+          "height": 2448,
+          "photographer": "Principe88",
+          "commons_license_claim": "PD-self dedication (author claim)",
+          "image_role": "EXACT_URN_AT_HISTORICAL_DATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Uploader identifies the urn of Saint Pio; 2009 photograph, which may not represent 2026 display arrangement."
+        }
+      ],
+      "editorial_action": "REJECT_PREVIOUS_PIPE_ORGAN_AS_OBJECT_AND_RESEARCH_EXACT_SHRINE",
+      "subject_match_note": "Prior #025 showed church organ and had no relevance to the relic. Do not caption a dated urn photograph as today's installation.",
+      "blocking_gates": [
+        "CURRENT_DISPLAY_CUSTODIAN_CONFIRMATION_PENDING",
+        "PHOTOGRAPH_PUBLIC_DOMAIN_CLAIM_AND_ARCHITECTURAL_RIGHTS",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:FR:magdalene-head-saint-maximin",
+      "canonical_place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "previous_100_batch_photo_index": 28,
+      "exact_physical_subject": "1860 gilded-bronze and enamel head reliquary containing traditionally attributed relic of Saint Mary Magdalene in Saint-Maximin crypt",
+      "custodian_or_primary_reference": [
+        {
+          "type": "CUSTODIAN_PARISH",
+          "url": "https://paroissesaintmaximin.fr/basilique/les-saintes-reliques/",
+          "scope": "Correct 1860 head reliquary, position in crypt, annual procession"
+        },
+        {
+          "type": "DIOCESE",
+          "url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+          "scope": "Reliquary in crypt"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Basilique Sainte-Marie-Madeleine-bjs180808-10.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Basilique_Sainte-Marie-Madeleine-bjs180808-10.jpg",
+          "width": 4587,
+          "height": 3058,
+          "photographer": "Bjs",
+          "commons_license_claim": "CC BY-SA 4.0",
+          "image_role": "EXACT_1860_HEAD_RELIQUARY_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Commons caption expressly identifies relic container in basilica crypt, not unrelated Magdalene statuary."
+        }
+      ],
+      "editorial_action": "REJECT_OLD_WRONG_ENGLISH_CHURCH_IMAGE_AND_REPLACE_WITH_EXACT_OBJECT_LEAD",
+      "subject_match_note": "Prior #028 was geographically and historically unrelated.",
+      "blocking_gates": [
+        "RIGHTS_OF_1860_RELIQUARY_AND_PHOTO",
+        "GLASS_REFLECTIONS_AND_CROP_QA",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:IT:francis-assisi",
+      "canonical_place_id": "place:IT:basilica-san-francesco-assisi",
+      "previous_100_batch_photo_index": 22,
+      "exact_physical_subject": "Stone coffin and tomb of Saint Francis in the crypt of the Lower Basilica of San Francesco in Assisi",
+      "custodian_or_primary_reference": [
+        {
+          "type": "EXACT_SITE_OBJECT_CATEGORY",
+          "url": "https://commons.wikimedia.org/wiki/Category:Lower_Basilica_in_Assisi_-_Tomb_of_Saint_Francis",
+          "scope": "Category only for Assisi crypt tomb, not generic Francis-named churches"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Tomb of Saint Francis - Basilica di San Francesco - Assisi 2016.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Tomb_of_Saint_Francis_-_Basilica_di_San_Francesco_-_Assisi_2016.jpg",
+          "width": 3008,
+          "height": 5176,
+          "photographer": "José Luiz (Jbribeiro1)",
+          "commons_license_claim": "CC BY-SA 4.0",
+          "image_role": "EXACT_TOMB_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Tall portrait photograph explicitly situated at Assisi. Check dark exposure, coffin visibility and heritage restrictions."
+        }
+      ],
+      "editorial_action": "REJECT_WRONG_PRIOR_CHURCH_AND_REPLACE_WITH_EXACT_ASSISI_CRYPT",
+      "subject_match_note": "Old #022 (and duplicate later #091) portrayed unrelated church, not the crypt.",
+      "blocking_gates": [
+        "OFFICIAL_BASILICA_REFERENCE_PENDING",
+        "ITALIAN_CULTURAL_HERITAGE_REUSE_CONDITIONS",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:FR:chartres-voile-vierge",
+      "canonical_place_id": "place:FR:chartres-notre-dame",
+      "previous_100_batch_photo_index": 47,
+      "exact_physical_subject": "Sancta Camisia / Veil of the Virgin at Chartres, distinguish textile fragments, reliquary and newly reconfigured Treasury display",
+      "custodian_or_primary_reference": [
+        {
+          "type": "CATHEDRAL_OFFICIAL",
+          "url": "https://www.chartres-cathedrale.fr/decouvrir/le-tresor-de-la-cathedrale-de-chartres/l-histoire-du-tresor-de-notre-dame-de-chartres",
+          "scope": "Object history"
+        },
+        {
+          "type": "CATHEDRAL_OFFICIAL_TREASURY_RELEASE",
+          "url": "https://www.chartres-cathedrale.fr/content/download/9897175/file_fr/ABM-TRESOR_CP_A4_PRINT.pdf?inLanguage=fre-FR&version=4",
+          "scope": "Explicitly says relic veil was NOT moved into the newly displayed Treasury"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Chartres - cathédrale, intérieur (21).jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Chartres_-_cath%C3%A9drale,_int%C3%A9rieur_(21).jpg",
+          "width": 3264,
+          "height": 2448,
+          "photographer": "Commons uploader; author check required",
+          "commons_license_claim": "LICENCE_UNCONFIRMED_REVIEW_SOURCE",
+          "image_role": "EXACT_RELIQUARY_IN_SITU_CANDIDATE",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Commons description identifies reliquary of the veil, not close-up of silk textile. Do not market as a fabric portrait."
+        }
+      ],
+      "editorial_action": "REPLACE_DISTANT_RELIQUARY_PHOTO_AND_CORRECT_TREASURY_LOCATION_ASSUMPTION",
+      "subject_match_note": "Earlier #047 distant case shows little veil detail; new candidate only a reliquary view pending legal and photographic assessment.",
+      "blocking_gates": [
+        "PRECISE_RELIC_CURRENT_LOCATION_AND_DATE_CHECK",
+        "PHOTOGRAPHER_LICENSE_UNCONFIRMED",
+        "RELIQUARY_VS_SILK_DISTINCTION",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    },
+    {
+      "subject_id": "subject:relic:IT:nicholas-bari",
+      "canonical_place_id": "place:IT:basilica-san-nicola-bari",
+      "previous_100_batch_photo_index": 24,
+      "exact_physical_subject": "Crypt and tomb below Basilica di San Nicola in Bari, containing venerated relics; crypt is not an image of the bones",
+      "custodian_or_primary_reference": [
+        {
+          "type": "EXACT_SITE_CONTEXT",
+          "url": "https://commons.wikimedia.org/wiki/Category:Basilica_di_San_Nicola_(Bari)",
+          "scope": "Dedicated Basilica and crypt context; independent custodian page pending"
+        }
+      ],
+      "commons_candidates": [
+        {
+          "file_title": "File:Bari - San Nicola - 07.jpg",
+          "commons_file_page": "https://commons.wikimedia.org/wiki/File:Bari_-_San_Nicola_-_07.jpg",
+          "width": 6273,
+          "height": 4480,
+          "photographer": "Benjamin Smith",
+          "commons_license_claim": "COMMONS_LICENSE_REVIEW; ITALY_MIBAC_REUSE_WARNING",
+          "image_role": "CRYPT_CONTEXT_ONLY_NOT_ACTUAL_RELIC",
+          "visual_quality_review": "NOT_APPROVED_PENDING_FULL_IMAGE_INSPECTION",
+          "notes": "Sharp high-resolution crypt view, but no relic bones visible; Commons explicitly warns of Italian cultural heritage usage restrictions."
+        }
+      ],
+      "editorial_action": "REASSIGN_CONTEXT_ONLY_DO_NOT_CLAIM_NICHOLAS_RELIC_PHOTO",
+      "subject_match_note": "Previous #024 was the basilica exterior; new find provides crypt context but still not the actual relic.",
+      "blocking_gates": [
+        "ITALY_MIBAC_CULTURAL_HERITAGE_AUTHORIZATION_WARNING",
+        "ACTUAL_RELIC_NOT_VISIBLE",
+        "USER_APPROVAL_BEFORE_RELEASE"
+      ],
+      "status": "RESEARCH_ONLY_NOT_PUBLICATION_AUTHORIZED",
+      "user_prior_votes": "UNCHANGED"
+    }
+  ]
+}
