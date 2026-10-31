@@ -73,12 +73,12 @@
       "dateArtworkLinks": 79,
       "identifiableExternalArtSourceOnly": 0,
       "withoutExistingSourceOrPrimary": 130,
-      "additionalUnlinked856ExactSubjectDateCandidates": 15,
-      "identifiedDateSubjectOrCatalogueCandidates": 52,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 113,
+      "additionalUnlinked856ExactSubjectDateCandidates": 16,
+      "identifiedDateSubjectOrCatalogueCandidates": 53,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 112,
       "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0,
       "additionalLegacyNamedFileExactSubjectDates": 1,
-      "remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters": 79
+      "remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters": 78
     },
     "IV": {
       "total": 71,
@@ -7691,8 +7691,48 @@
       "linkedCatalogueArt": [],
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
-      "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "classSpecificState": "EXACT_SAINT_SUBJECT_IDENTIFIED_OLD_SOURCE_OR_CANONICAL",
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "walters:18326",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Claire of Assisi",
+          "sourceArtistAsRecorded": "Benedetto Coda",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "37.1084",
+          "sourceObjectUrl": "https://purl.thewalters.org/art/37.1084",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "rijks:200110753",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "De heilige Clara",
+          "sourceArtistAsRecorded": "Joseph Désiré Court",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "SK-C-303",
+          "sourceObjectUrl": "https://id.rijksmuseum.nl/200110753",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-08-13",
