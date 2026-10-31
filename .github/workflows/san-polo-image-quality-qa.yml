@@ -1,0 +1,70 @@
+name: San Polo Stations — read-only image diagnostics
+
+on:
+  push:
+    branches:
+      - research/stations-san-polo-oil-paintings-20261031
+    paths:
+      - 'scripts/san_polo_image_quality_qa.py'
+      - 'scripts/san_polo_contact_sheet.py'
+      - 'src/pray/stations-verified-artwork-release.v1.js'
+      - 'src/pray/stations-verified-artwork-styles.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/prayer-stations-verified-artwork-release.mjs'
+      - 'tests/prayer-san-polo-oil-archive.mjs'
+      - 'tests/prayer-san-polo-prior-approvals.mjs'
+      - 'tests/prayer-san-polo-license-ready-assets.mjs'
+      - 'assets/stations/san-polo/**'
+      - '.github/workflows/san-polo-image-quality-qa.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'scripts/san_polo_image_quality_qa.py'
+      - 'scripts/san_polo_contact_sheet.py'
+      - 'src/pray/stations-verified-artwork-release.v1.js'
+      - 'src/pray/stations-verified-artwork-styles.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/prayer-stations-verified-artwork-release.mjs'
+      - '.github/workflows/san-polo-image-quality-qa.yml'
+      - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
+      - 'tests/prayer-san-polo-oil-archive.mjs'
+      - 'tests/prayer-san-polo-prior-approvals.mjs'
+      - 'tests/prayer-san-polo-license-ready-assets.mjs'
+      - 'assets/stations/san-polo/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-archived-14:
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/research/stations-san-polo-oil-paintings-20261031') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/stations-san-polo-oil-paintings-20261031')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install locked image diagnostics dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Run byte-verifying, no-write image diagnostics for all fourteen oils
+        run: python scripts/san_polo_image_quality_qa.py
+      - name: Generate one temporary contact sheet of the exact fourteen archived WebPs
+        run: python scripts/san_polo_contact_sheet.py
+      - name: Preserve short-lived QA contact sheet for review (originals remain permanently in Git)
+        uses: actions/upload-artifact@v4
+        with:
+          name: san-polo-14-webp-contact-sheet
+          path: ${{ runner.temp }}/san-polo-qa/
+          retention-days: 3
+          if-no-files-found: error
+      - name: Validate preexisting archive integrity and unpublished release flags
+        run: node tests/prayer-san-polo-oil-archive.mjs
+      - name: Verify six remaining scene gaps, existing approvals and zero accidental activation
+        run: node tests/prayer-san-polo-prior-approvals.mjs
+      - name: Verify inert rights-gated Station image seam in the current Prayer reader
+        run: node tests/prayer-stations-verified-artwork-release.mjs
+      - name: Verify staged 14/14 identical photo assets, credits and release locks
+        run: node tests/prayer-san-polo-license-ready-assets.mjs
