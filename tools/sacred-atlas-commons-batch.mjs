@@ -56,7 +56,8 @@ async function getAPI(params){
    const json=await res.json();
    if(json.error?.code==="maxlag"){lastError=new Error("Commons maxlag");await sleep(2000*(n+1));continue;}
    if(json.error)throw Error("Commons "+JSON.stringify(json.error).slice(0,160));
-   return json.query?.pages||[];
+   const pages=json.query?.pages||[];
+   return Array.isArray(pages)?pages:Object.values(pages);
   }catch(e){lastError=e;await sleep(750*(n+1));}
  }
  throw lastError;
@@ -106,6 +107,7 @@ async function worker(){
   try{
    if(target.known_candidate_file){
     const pages=await getAPI({...imageProps,titles:target.known_candidate_file,redirects:"1"});
+    if(!pages.length)console.warn("Known Commons file returned no pages:",target.ordinal,target.known_candidate_file);
     record.candidate_searches.push({kind:"KNOWN_FILE",query:target.known_candidate_file});
     record.candidates=pages.filter(p=>!p.missing&&p.imageinfo).map(p=>candidate(target,p));
    }else{
@@ -128,6 +130,7 @@ async function worker(){
    if(target.user_keep_vote)record.state="EXISTING_KEEP_UNCHANGED_"+record.state;
   }catch(e){
    record.state="COMMONS_QUERY_FAILED";record.error=String(e?.message||e).slice(0,250);
+   if(index<40)console.warn("Commons query failed:",target.ordinal,record.error);
   }
   output[index]=record;
   if((index+1)%10===0)console.log("Completed target index "+(index+1)+"/"+manifest.total_targets);
@@ -153,4 +156,4 @@ const data={
 await mkdir(dirname(destination),{recursive:true});
 await writeFile(destination,JSON.stringify(data,null,2)+"\n");
 console.log("Batch 001 stats:",JSON.stringify(stats));
-if(stats.query_failures===manifest.total_targets)process.exitCode=2;
+if(stats.source_file_candidates_returned===0){console.error("ZERO COMMONS FILES RETURNED: service/API/search error, not cleared photo inventory");process.exitCode=2;}
