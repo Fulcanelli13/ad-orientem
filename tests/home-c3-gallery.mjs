@@ -9,14 +9,15 @@ const prayer=c3PrayerMarkup({fr:false,feature:{id:"angelus.evening"},
 assert.equal((prayer.match(/class="aoC3PrayerSlide"/g)||[]).length,4);
 assert.equal((prayer.match(/data-home-c3-prayer-step=/g)||[]).length,4);
 assert.equal((prayer.match(/aria-current="true"/g)||[]).length,1);
-for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
+for(const route of ["pray.angelus_regina","pray.confession","pray.adoration","pray.library"])
   assert.ok(prayer.includes(route),"Missing canonical route: "+route);
 assert.ok(prayer.includes('data-c3-feature="angelus.evening"'));
+assert.ok(!prayer.includes("pray.rosary"),"The single Rosary personal-rule chip must not duplicate in C3");
 assert.ok(prayer.includes('hidden aria-hidden="true"'));
 assert.ok(!prayer.includes("Montfort · 33"),"No fictional progress on Home");
 
 const french=c3PrayerMarkup({fr:true,attrs:'data-home-cu-route="pray.library"',role:"Prière",title:"Livre de prières",description:"Aujourd’hui"});
-assert.ok(french.includes("Rosaire"));assert.ok(french.includes("Choisir une prière"));
+assert.ok(french.includes("Toutes les prières"));assert.ok(french.includes("Choisir une prière"));
 assert.equal((french.match(/class="aoC3PrayerSlide"/g)||[]).length,4);
 const escaped=c3PrayerMarkup({attrs:'data-home-cu-route="pray.library"',title:'<script>alert("x")</script>'});
 assert.ok(!escaped.includes("<script>"),"Untrusted source title escaped");
