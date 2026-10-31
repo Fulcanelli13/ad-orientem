@@ -1,0 +1,1870 @@
+{
+  "schema": "AO_PRAYER_11_SUBJECT_GAPS_66_CANDIDATES_RECONCILED_V1",
+  "date": "2026-10-31",
+  "scope": "EDITORIAL SOURCE RECONCILIATION, NOT NEW APPROVAL OR PHOTOGRAPH RELEASE",
+  "baseRecords": {
+    "branch": "research/prayer-existing-artwork-coverage-first-20261030",
+    "originalReview": "AO_Prayer_Missing_Paintings_4to6_Candidates_Review_20261030.html",
+    "sourceApproval": "data/prayer/artwork-editorial-20261030/approved-unified-b06-b11-from-user-message.v1.json",
+    "sourceAssignments": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json"
+  },
+  "totals": {
+    "groups": 11,
+    "originalCandidates": 66,
+    "approvedCandidateReconciled": 12,
+    "excludedExplicitRejections": 1,
+    "nonPaintingReferences": 6,
+    "originalRightsBlocked": 1,
+    "unreviewedProposals": 46,
+    "preApprovedSemanticWorks": 3,
+    "exactBenedictionPaintingStillMissing": false,
+    "allTraditionalRosaryStageSubjectsAlreadyHavePaintings": true,
+    "optionalLuminousLiveStageIdsUnresolved": true,
+    "photosCertifiedPD_CC0": 0,
+    "exactBenedictionRitualPaintingNotFoundButThematicArtChosen": true,
+    "userChosenArtForBenedictionAndTherese": 2
+  },
+  "priorityCorrection": "Five optional Luminous mysteries are NOT user traditional 15-Rosary source; do not let absent stable optional IDs block the traditional Rosary launch.",
+  "knownRightsEvidence": [
+    {
+      "id": "prayer.institution_of_eucharist.champaigne.petite_cene",
+      "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "originalWorkPublicDomain": true,
+      "photoFileClaim": "PD-self photograph by uploader Tangopaso",
+      "imageDimensions": [
+        2816,
+        2112
+      ],
+      "paintingSlot": "SEM-rosary.institution_of_eucharist",
+      "userPreference": "Explicitly prefers Champaigne over da Siena; source is PD-self and matches scene",
+      "rightsEvidenceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
+      "copyrightStatus": "PHOTO_PUBLIC_DOMAIN_ASSERTED_BY_PHOTOGRAPHER",
+      "visualNativeCheck": "PENDING",
+      "publicationStatus": "RIGHTS_BASIS_FOUND_NOT_RELEASED"
+    },
+    {
+      "id": "prayer.rosary.ascension.kulmbach",
+      "source": "https://www.metmuseum.org/art/collection/search/436835",
+      "artist": "Hans Süss von Kulmbach",
+      "title": "The Ascension of Christ",
+      "originalWorkPublicDomain": true,
+      "paintingSlot": "STG-pray.rosary-13",
+      "userPreference": "Previously approved",
+      "copyrightStatus": "MET_PUBLIC_DOMAIN_OPEN_ACCESS_ART",
+      "visualNativeCheck": "PENDING",
+      "publicationStatus": "RIGHTS_BASIS_FOUND_NOT_RELEASED"
+    },
+    {
+      "id": "prayer.st_therese.mehoffer",
+      "source": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_%C5%9Awi%C4%99ta_Teresa_z_Lisieux.jpg",
+      "artist": "Józef Mehoffer",
+      "title": "Saint Thérèse",
+      "artistDeathYear": 1946,
+      "paintingSlot": "COV-novena.st_therese",
+      "copyrightStatus": "ORIGINAL_PD_IN_FRANCE_PHOTO_CC_BY_SA_4_0_NOT_STRICT_PD_CC0",
+      "publicationStatus": "NOT_RELEASED"
+    },
+    {
+      "id": "prayer.adoration.kmska_224",
+      "source": "https://vlaamsekunstcollectie.be/en/collection/224",
+      "artist": "Anonymous South Netherlandish painter",
+      "title": "Adoration of the Sacrament",
+      "originalWorkPublicDomain": true,
+      "dateRange": "1480–1499",
+      "medium": "Oil on panel",
+      "subject": "Eucharistic Adoration, not the liturgical blessing with a monstrance",
+      "collection": "Royal Museum of Fine Arts Antwerp, object 224",
+      "copyrightStatus": "SOURCE_LABELS_IMAGE_CC0",
+      "originalPhotoAttribution": "Museum collection record; individual IIIF file/photo attribution to confirm",
+      "imageSubjectApproved": false,
+      "exactBenedictionScene": false,
+      "publicationStatus": "CANDIDATE_FOR_ADORATION_ONLY_NOT_BENEDICTION_NOT_RELEASED",
+      "note": "French page title La bénédiction du saint Sacrement is misleading compared with museum's English/Dutch iconographic classification; do not use as literal priestly blessing."
+    }
+  ],
+  "forbiddances": [
+    "Never show a nonpainting as a proposed exact Benediction painting",
+    "Never reinstate Théophile Lybaert",
+    "Do not substitute Presentation for Circumcision",
+    "Do not substitute Pietà for the Fourth Sorrow encounter",
+    "Do not reuse Prado photographic sources",
+    "Never infer user approval of every Rauth Station from general preference",
+    "No mandatory paid licensing or copyright owner contact",
+    "Never treat user-approval of painting as photo-rights clearance",
+    "Do not silently rewrite previous Rosary bead-by-bead signature experience"
+  ],
+  "groups": [
+    {
+      "id": "STG-pray.benediction-03",
+      "title": "Benediction — the actual blessing",
+      "section": "Exact rite and liturgy",
+      "priority": "P1",
+      "reason": "No exact blessing painting was in the 989-work Prayer reuse set. These are five witnessed representations of the blessing, but most are photographs or historical illustrations. This is an iconographic-reference round, NOT five publishable paintings.",
+      "sceneStatus": "USER_SELECTED_VAN_EYCK_THEMATIC_LAMB_HEAVENLY_ADORATION_SOURCE_PD_ART_NATIVE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [
+        {
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "id": "PRAYER::adoration--primary",
+          "source": "",
+          "fit": "CONTEXTUAL_APPROVED_TEMPORARY_CARRYOVER",
+          "editorial": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "scope": "STG-pray.benediction-03",
+          "gate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        }
+      ],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "Benediction",
+          "artist": "R. and K. Wood / Harold A. Pfeiffer",
+          "source": "https://commons.wikimedia.org/wiki/File:Catholic_Picture_Dictionary_(Pfeiffer)_-_Benediction.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Catholic_Picture_Dictionary_(Pfeiffer)_-_Benediction.jpg?width=650",
+          "medium": "1948 printed illustration",
+          "grade": "EXACT RITE",
+          "note": "Illustrates the specific rite; 620 × 753 image, not an oil painting.",
+          "rights": "US PD claim on Commons; other jurisdictions to check",
+          "earlier": false,
+          "key": "STG-pray.benediction-03::01",
+          "decision": {
+            "status": "REFERENCE_ONLY_NOT_PAINTING",
+            "provenance": "Real oil painting requirement"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Benediction at St Anne’s Convent, Quamichan, 1912",
+          "artist": "Historic photograph; author to identify",
+          "source": "https://commons.wikimedia.org/wiki/File:Benediction_of_the_blessed_sacrament_St_Anne%27s_Convent%2C_Quamichan%2C_1912_(HS85-10-25651).jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Benediction_of_the_blessed_sacrament_St_Anne%27s_Convent%2C_Quamichan%2C_1912_(HS85-10-25651).jpg?width=650",
+          "medium": "1912 archival photograph",
+          "grade": "EXACT RITE",
+          "note": "Historical evidence; photographic rather than painted.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.benediction-03::02",
+          "decision": {
+            "status": "REFERENCE_ONLY_NOT_PAINTING",
+            "provenance": "Real oil painting requirement"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Benediction with the Blessed Sacrament at Warfhuizen",
+          "artist": "Sjouker",
+          "source": "https://commons.wikimedia.org/wiki/File:Zegen_Allerheiligste.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Zegen_Allerheiligste.jpg?width=650",
+          "medium": "2010 photograph",
+          "grade": "EXACT RITE",
+          "note": "Real monstrance blessing; Commons CC BY-SA 3.0 (attribution required).",
+          "rights": "CC BY-SA 3.0; attribution and share-alike compliance required",
+          "earlier": false,
+          "key": "STG-pray.benediction-03::03",
+          "decision": {
+            "status": "REFERENCE_ONLY_NOT_PAINTING",
+            "provenance": "Real oil painting requirement"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Benediction at St Peter’s, Bandra",
+          "artist": "Photographer not verified",
+          "source": "https://commons.wikimedia.org/wiki/File:Benediction_of_the_Blessed_Sacrament_by_Oswald_Cardian_Gracias_at_St._Peter%27s_Church%2C_Bandra.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Benediction_of_the_Blessed_Sacrament_by_Oswald_Cardian_Gracias_at_St._Peter%27s_Church%2C_Bandra.jpg?width=650",
+          "medium": "Photograph",
+          "grade": "EXACT RITE",
+          "note": "Ceremonial reference only; verify photographic rights.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.benediction-03::04",
+          "decision": {
+            "status": "REFERENCE_ONLY_NOT_PAINTING",
+            "provenance": "Real oil painting requirement"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Eucharistic Adoration (monstrance and clergy)",
+          "artist": "Adrian Mikołaj Głębocki",
+          "source": "https://artvee.com/dl/eucharistic-adoration/",
+          "image": "https://mdl.artvee.com/sftb/311587rg.jpg",
+          "medium": "19th-century lithograph",
+          "grade": "ADORATION, NOT BLESSING",
+          "note": "Good ecclesiastical visual, but no priest actively blessing; should not silently fill the Benediction scene.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.benediction-03::05",
+          "decision": {
+            "status": "REFERENCE_ONLY_NOT_PAINTING",
+            "provenance": "Real oil painting requirement"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Bishop of Marseille elevates the monstrance",
+          "artist": "19th-century illustrated press",
+          "source": "https://picryl.com/topics/bishop%2Bof%2Bmarseille",
+          "image": "https://cdn2.picryl.com/photo/1867/12/31/katholieke-illustratie-1867-1868-nr-17-p-133-de-bisschop-van-marseille-geeft-59081d-1024.jpg",
+          "medium": "1867 engraving",
+          "grade": "CEREMONIAL, VERIFY ACT",
+          "note": "Monstrance held aloft before congregants; distinguish elevation from the sign of the Cross.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.benediction-03::06",
+          "decision": {
+            "status": "REFERENCE_ONLY_NOT_PAINTING",
+            "provenance": "Real oil painting requirement"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 0,
+        "explicitRejections": 0,
+        "referenceOnly": 6,
+        "blockedModernOriginal": 0,
+        "unreviewed": 0
+      },
+      "currentEditorialChoice": {
+        "work": "Jan and Hubert van Eyck — Adoration of the Mystic Lamb",
+        "source": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+        "status": "USER_APPROVED_THEMATIC",
+        "notLiteralRite": true,
+        "photoRights": "COMMONS_PD_ART",
+        "imageNativeQA": "PENDING"
+      }
+    },
+    {
+      "id": "STG-pray.precious_blood-01",
+      "title": "Precious Blood — Circumcision",
+      "section": "Exact rite and liturgy",
+      "priority": "P1",
+      "reason": "Existing assignment confused the Presentation with the Circumcision. These six represent the Circumcision itself, not the Presentation.",
+      "sceneStatus": "EDITORIAL_SCENE_SOLVED_PHOTO_RIGHTS_AND_NATIVE_IMAGE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [
+        {
+          "artist": "Philippe de Champaigne",
+          "title": "Presentation of Jesus at the Temple",
+          "id": "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "source": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "id": "CANONICAL::cma-150955",
+          "source": "https://clevelandart.org/art/1982.36",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Franz Anton Maulbertsch (Austrian, 1724–1796)",
+          "title": "Study for \"The Presentation of Christ in the Temple\" (for Saint Ulrich, Vienna)",
+          "id": "REVIEW::cma:139532",
+          "source": "https://clevelandart.org/art/1963.326",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "id": "REVIEW::cma:142293",
+          "source": "https://clevelandart.org/art/1966.125",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Jacopo Tintoretto",
+          "title": "The Circumcision",
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::01",
+          "source": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED"
+        },
+        {
+          "artist": "Pieter van Lint",
+          "title": "The Circumcision of Christ",
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::02",
+          "source": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_The_Circumcision_of_Christ.Jpeg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED"
+        },
+        {
+          "artist": "Peter Paul Rubens",
+          "title": "The Circumcision of Christ",
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::05",
+          "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED"
+        },
+        {
+          "artist": "Orazio Gentileschi",
+          "title": "The Circumcision of Christ",
+          "id": "APPROVED_REVIEW::STG-pray.precious_blood-01::06",
+          "source": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.precious_blood-01",
+          "gate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED"
+        }
+      ],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "The Circumcision",
+          "artist": "Jacopo Tintoretto",
+          "source": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto-Circumcision.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Strong Venetian composition; exact subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.precious_blood-01::01",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Circumcision of Christ",
+          "artist": "Pieter van Lint",
+          "source": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_The_Circumcision_of_Christ.Jpeg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter_van_Lint_-_The_Circumcision_of_Christ.Jpeg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "17th-century painting; exact subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.precious_blood-01::02",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Circumcision of Christ",
+          "artist": "Louis Finson",
+          "source": "https://commons.wikimedia.org/wiki/File:Louis_Finson_-_The_circumcision.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Louis_Finson_-_The_circumcision.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Early Baroque; exact subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.precious_blood-01::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Circumcision",
+          "artist": "Stefano Pozzi",
+          "source": "https://commons.wikimedia.org/wiki/File:Stefano_Pozzi_-_The_Circumcision_-_1974.392_-_Art_Institute_of_Chicago.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stefano_Pozzi_-_The_Circumcision_-_1974.392_-_Art_Institute_of_Chicago.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Art Institute of Chicago; high resolution on Commons.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.precious_blood-01::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Circumcision of Christ",
+          "artist": "Peter Paul Rubens",
+          "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Check identity: Genoa / other Rubens Circumcision variants must not be conflated.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.precious_blood-01::05",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Circumcision of Christ",
+          "artist": "Orazio Gentileschi",
+          "source": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
+          "image": "https://www.meisterdrucke.jp/kunstwerke/1260px/Orazio_Gentileschi_-_The_circumcision_of_Christ_1607_-_%28MeisterDrucke-1198610%29.jpg",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "1607 composition; preview from third-party commercial reproduction, not cleared for publication.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.precious_blood-01::06",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 4,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 2
+      }
+    },
+    {
+      "id": "STG-prayer.seven_sorrows_chaplet-04",
+      "title": "Fourth Sorrow — Mary meets Christ carrying the Cross",
+      "section": "Exact rite and liturgy",
+      "priority": "P1",
+      "reason": "Keep the previously reviewed Giandomenico Tiepolo San Polo station. Pietà and Crucifixion paintings do not depict this meeting.",
+      "sceneStatus": "EDITORIAL_SCENE_SOLVED_PHOTO_RIGHTS_AND_NATIVE_IMAGE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [
+        {
+          "artist": "",
+          "title": "Pietà",
+          "id": "CANONICAL::cma-94846",
+          "source": "https://clevelandart.org/art/1915.407",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-prayer.seven_sorrows_chaplet-04",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "id": "REVIEW::met:436721",
+          "source": "https://www.metmuseum.org/art/collection/search/436721",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-prayer.seven_sorrows_chaplet-04",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "id": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+          "source": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-prayer.seven_sorrows_chaplet-04",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "id": "REVIEW::commons:184527366",
+          "source": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-prayer.seven_sorrows_chaplet-04",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Giandomenico Tiepolo",
+          "title": "Via Crucis — Jesus encounters His Mother",
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::01",
+          "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+          "fit": "EXACT SCENE / EXISTING",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-prayer.seven_sorrows_chaplet-04",
+          "gate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED"
+        },
+        {
+          "artist": "Attributed in Commons filename to Delacroix",
+          "title": "Solesmes — Fourth Station of the Way of the Cross",
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
+          "source": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord,_Fr)_chemin_de_Croix_par_Delacroix,_station_04.jpg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-prayer.seven_sorrows_chaplet-04",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING"
+        }
+      ],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "Via Crucis — Jesus encounters His Mother",
+          "artist": "Giandomenico Tiepolo",
+          "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+          "image": "https://chorusvenezia.org/wp-content/uploads/2022/03/Chiesa-di-San-Polo-10.jpg",
+          "medium": "Oil painting, San Polo Via Crucis",
+          "grade": "EXACT SCENE / EXISTING",
+          "note": "Existing Prayer registry candidate; source rights and full painted panel still need final review.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": true,
+          "key": "STG-prayer.seven_sorrows_chaplet-04::01",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Fourth Station",
+          "artist": "Venerio Trevisan",
+          "source": "https://zupavodnjan.com/crkve/sveti-blaz/venerio-trevisan",
+          "image": "https://zupavodnjan.com/wp-content/gallery/trevisan/krizniput_004.jpg",
+          "medium": "Painting, 1842",
+          "grade": "EXACT SCENE",
+          "note": "Exact painted encounter in the Vodnjan stations series.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-prayer.seven_sorrows_chaplet-04::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Jesus meets His Mother",
+          "artist": "Théophile Lybaert",
+          "source": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_His_Mother.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Theophile_Lybaert_-_Jesus_meets_His_Mother.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Exact Stations subject, Commons file; source and visual quality check.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-prayer.seven_sorrows_chaplet-04::03",
+          "decision": {
+            "status": "EXPLICITLY_REJECTED",
+            "provenance": "USER_REJECTED_LATER_ARTISTIC_FIT"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Solesmes — Fourth Station of the Way of the Cross",
+          "artist": "Attributed in Commons filename to Delacroix",
+          "source": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord%2C_Fr)_chemin_de_Croix_par_Delacroix%2C_station_04.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Solesmes_(Nord%2C_Fr)_chemin_de_Croix_par_Delacroix%2C_station_04.jpg?width=650",
+          "medium": "Painted station photograph",
+          "grade": "EXACT SCENE",
+          "note": "Attribution as recorded in file title; not independently verified.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-prayer.seven_sorrows_chaplet-04::04",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Fourth Station at Notre-Dame de la Couture",
+          "artist": "Church painting; artist to verify",
+          "source": "https://commons.wikimedia.org/wiki/File:Chemin_de_croix_(Notre-Dame_de_la_Couture)04.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chemin_de_croix_(Notre-Dame_de_la_Couture)04.jpg?width=650",
+          "medium": "Painted station photograph",
+          "grade": "EXACT SCENE",
+          "note": "Exact IV station; check frame and photo angle.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-prayer.seven_sorrows_chaplet-04::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Painting or fresco (photograph is only source), not a nonpainting reference"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Fourth Station of the Cross",
+          "artist": "Historical French-school painter, unattributed",
+          "source": "https://www.chairish.com/product/13039280/18th-century-french-oil-on-canvas-painting-fourth-station-of-the-cross",
+          "image": "https://chairish-prod.freetls.fastly.net/image/product/sized/05102b6a-f4c6-42ba-94e6-cb2ab8bbae8f/18th-century-french-oil-on-canvas-painting-fourth-station-of-the-cross-7842?aspect=fit&height=1600&width=1600",
+          "medium": "Oil painting, commercial photo",
+          "grade": "EXACT SCENE",
+          "note": "Art appears framed in supplied photograph; candidate identity and clean reproduction not yet verified.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-prayer.seven_sorrows_chaplet-04::06",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 2,
+        "explicitRejections": 1,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 3
+      }
+    },
+    {
+      "id": "COV-novena.st_therese",
+      "title": "St Thérèse of Lisieux — Novena cover",
+      "section": "Saint portrait / novena",
+      "priority": "P1",
+      "reason": "The Saint is not an unknown subject in our collection. Choose the best fitting portrait; several photographs of church paintings may need replacement. Rights for modern paintings remain unresolved.",
+      "sceneStatus": "USER_SELECTED_EXACT_PD_PHOTOGRAPH_LOW_RES_362x498_NATIVE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "Thérèse aux roses (1925)",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "source": "https://carmelite1.angelfire.com/therese/therese_roses.html",
+          "image": "https://www.angelfire.com/carmelite1/therese/images/therese_roses.jpg",
+          "medium": "Painting, source image pending",
+          "grade": "EXACT SAINT / ALREADY INDEXED",
+          "note": "Canonical 383 source work. Physical source image missing; artist died 1959, therefore rights must be checked by territory.",
+          "rights": "Copyright jurisdiction / exact photo rights unverified",
+          "earlier": true,
+          "key": "COV-novena.st_therese::01",
+          "decision": {
+            "status": "ORIGINAL_WORK_RIGHTS_BLOCKED",
+            "provenance": "Céline Martin died 1959; life+70 in France, not public domain before 2030 unless applicable rights exception or separate licence"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Święta Teresa z Lisieux",
+          "artist": "Józef Mehoffer",
+          "source": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_%C5%9Awi%C4%99ta_Teresa_z_Lisieux.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Mehoffer_-_%C5%9Awi%C4%99ta_Teresa_z_Lisieux.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Distinct painted Saint; prioritize cropped source with painting only.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "COV-novena.st_therese::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Painting of Thérèse de Lisieux (Stockholm)",
+          "artist": "Artist to verify",
+          "source": "https://commons.wikimedia.org/wiki/File:Painting_of_Th%C3%A9r%C3%A8se_de_Lisieux_Stockholm.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Painting_of_Th%C3%A9r%C3%A8se_de_Lisieux_Stockholm.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Source metadata and copyright need confirmation.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "COV-novena.st_therese::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Fresco of Sainte Thérèse, San Floriano",
+          "artist": "Church muralist to verify",
+          "source": "https://commons.wikimedia.org/wiki/File:Chiesa%2C_chiesa_di_San_Floriano_-_Affresco_santa_Teresina.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%2C_chiesa_di_San_Floriano_-_Affresco_santa_Teresina.jpg?width=650",
+          "medium": "Fresco photograph",
+          "grade": "EXACT SCENE",
+          "note": "Exact Saint; photo may include surrounding interior; clean painting crop not certified.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "COV-novena.st_therese::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Painting or fresco (photograph is only source), not a nonpainting reference"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Affresco Teresa di Lisieux, Pallanza",
+          "artist": "Church muralist to verify",
+          "source": "https://commons.wikimedia.org/wiki/File:Pallanza%2C_chiesa_di_San_Giuseppe_-_Affresco_Teresa_di_Lisieux.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pallanza%2C_chiesa_di_San_Giuseppe_-_Affresco_Teresa_di_Lisieux.jpg?width=650",
+          "medium": "Fresco photograph",
+          "grade": "EXACT SCENE",
+          "note": "Exact Saint, candidate source photo; inspect rights and background.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "COV-novena.st_therese::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Painting or fresco (photograph is only source), not a nonpainting reference"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Saint Thérèse with Crucifix and Roses, Kitzbühel",
+          "artist": "Artist to verify",
+          "source": "https://commons.wikimedia.org/wiki/File:Kitzb%C3%BChel._Spitalkirche%2C_Bildnis_Heilige_Theresia_mit_Kruzifix_und_Rosen%2C_Eingangswand_rechts.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kitzb%C3%BChel._Spitalkirche%2C_Bildnis_Heilige_Theresia_mit_Kruzifix_und_Rosen%2C_Eingangswand_rechts.jpg?width=650",
+          "medium": "Painting photograph",
+          "grade": "EXACT SCENE",
+          "note": "Exact Saint, but photograph likely includes frame or church wall.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "COV-novena.st_therese::06",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 0,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 1,
+        "unreviewed": 5
+      },
+      "currentEditorialChoice": {
+        "work": "Historical portrait of Saint Thérèse of Lisieux, pre-1897",
+        "source": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg",
+        "status": "USER_FINAL_PHOTO_APPROVED",
+        "photoRights": "PUBLIC_DOMAIN_COMMONS_FR_US",
+        "imageDimensions": [
+          362,
+          498
+        ],
+        "imageNativeQA": "PENDING"
+      }
+    },
+    {
+      "id": "STG-pray.rosary-03",
+      "title": "Rosary — The Visitation",
+      "section": "Traditional Rosary (limited pool)",
+      "priority": "P1",
+      "reason": "One existing direct candidate (Raphael and Giulio Romano). Add these distinct works and avoid multiple photographs of the same Champaigne painting.",
+      "sceneStatus": "EDITORIAL_SCENE_SOLVED_PHOTO_RIGHTS_AND_NATIVE_IMAGE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [
+        {
+          "artist": "Raphael and Giulio Romano",
+          "title": "The Visitation",
+          "id": "CANONICAL::ART-aphael-and-iulio-omano-he-isitation",
+          "source": "https://commons.wikimedia.org/wiki/File:Visitaci%C3%B3n_de_Rafael.jpg",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "editorial": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "scope": "STG-pray.rosary-03",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Philippe de Champaigne",
+          "title": "The Visitation",
+          "id": "APPROVED_REVIEW::STG-pray.rosary-03::01",
+          "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.rosary-03",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING"
+        }
+      ],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "The Visitation",
+          "artist": "Philippe de Champaigne",
+          "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Princeton Art Museum original, c.1643–48; image file 1487×2000.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-03::01",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Visitation",
+          "artist": "Simon de Vos",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Visitation_by_Simon_de_Vos%2C_c._1639.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Visitation_by_Simon_de_Vos%2C_c._1639.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "17th-century Flemish painting.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-03::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Visitation",
+          "artist": "Jacob Jordaens",
+          "source": "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_-_The_Visitation.JPG",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacob_Jordaens_-_The_Visitation.JPG?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Flemish Baroque painting.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-03::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Visitation",
+          "artist": "Michael Angelo Immenraet",
+          "source": "https://commons.wikimedia.org/wiki/File:Michael_Angelo_Immenraet_-_The_Visitation.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michael_Angelo_Immenraet_-_The_Visitation.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Exact Visitation subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-03::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Visitation",
+          "artist": "Marten Mandekens",
+          "source": "https://commons.wikimedia.org/wiki/File:Marten_Mandekens_-_The_Visitation.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Marten_Mandekens_-_The_Visitation.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "17th-century painting.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-03::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Visitation (existing reviewed candidate)",
+          "artist": "Raphael and Giulio Romano",
+          "source": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Visitation",
+          "image": "",
+          "medium": "Painting, existing candidate",
+          "grade": "EXACT SCENE / ALREADY IN PRAYER",
+          "note": "Existing direct candidate; locate true gallery asset in the prior review.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": true,
+          "key": "STG-pray.rosary-03::06",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "NEW_CANDIDATE_NOT_USER_APPROVED"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 2,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 4
+      }
+    },
+    {
+      "id": "STG-pray.rosary-13",
+      "title": "Rosary — The Ascension",
+      "section": "Traditional Rosary (limited pool)",
+      "priority": "P1",
+      "reason": "Two existing approved Ascension paintings (Wolffort and Hans Süss). Expand only with exact Ascension paintings.",
+      "sceneStatus": "EDITORIAL_SCENE_SOLVED_PHOTO_RIGHTS_AND_NATIVE_IMAGE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [
+        {
+          "artist": "Artus Wolffort",
+          "title": "Ascension — Antwerp Rosary cycle",
+          "id": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "source": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "editorial": "USER_APPROVED",
+          "scope": "STG-pray.rosary-13",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Hans Süss von Kulmbach",
+          "title": "The Ascension of Christ",
+          "id": "CANONICAL::met-436835",
+          "source": "https://www.metmuseum.org/art/collection/search/436835",
+          "fit": "HUMAN_EXPLICIT",
+          "editorial": "USER_APPROVED",
+          "scope": "STG-pray.rosary-13",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "David Teniers",
+          "title": "The Ascension (after Leandro Bassano)",
+          "id": "APPROVED_REVIEW::STG-pray.rosary-13::05",
+          "source": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.rosary-13",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED"
+        },
+        {
+          "artist": "Pietro Perugino",
+          "title": "The Ascension of Christ",
+          "id": "APPROVED_REVIEW::STG-pray.rosary-13::06",
+          "source": "https://commons.wikimedia.org/wiki/File:Pietro_Perugino_-_The_Ascension_of_Christ_-_WGA17257.jpg",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.rosary-13",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED"
+        }
+      ],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "Ascension of Jesus Christ",
+          "artist": "Artus Wolffort",
+          "source": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE / ALREADY IN PRAYER",
+          "note": "Already approved in Prayer; check edition/artist identity.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": true,
+          "key": "STG-pray.rosary-13::01",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Ascension of Christ",
+          "artist": "Hans Süss von Kulmbach",
+          "source": "https://www.metmuseum.org/art/collection/search/436835",
+          "image": "",
+          "medium": "Painting",
+          "grade": "EXACT SCENE / ALREADY IN PRAYER",
+          "note": "Existing user-approved Met artwork (object 436835).",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": true,
+          "key": "STG-pray.rosary-13::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Ascension",
+          "artist": "Ambrosius Benson",
+          "source": "https://commons.wikimedia.org/wiki/File:Ascensi%C3%B3n%2C_Ambrosius_Benson.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ascensi%C3%B3n%2C_Ambrosius_Benson.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "16th-century direct scene; inspect source image.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-13::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Ascension of Christ",
+          "artist": "Alonso de Herrera",
+          "source": "https://commons.wikimedia.org/wiki/File:Alonso_de_Herrera._Ascensi%C3%B3n_de_Cristo%2C_1617._Segovia%2C_iglesia_de_san_Andr%C3%A9s.JPG",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alonso_de_Herrera._Ascensi%C3%B3n_de_Cristo%2C_1617._Segovia%2C_iglesia_de_san_Andr%C3%A9s.JPG?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "17th-century church painting; source photo includes architectural context.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-13::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Ascension (after Leandro Bassano)",
+          "artist": "David Teniers",
+          "source": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg?width=650",
+          "medium": "Painting, copy",
+          "grade": "EXACT SCENE",
+          "note": "Artwork only 553×800 in this Commons record; lower priority for publishing.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-13::05",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Ascension of Christ",
+          "artist": "Pietro Perugino",
+          "source": "https://www.meisterdrucke.us/fine-art-prints/Pietro-Perugino/1000409/The-Ascension-of-Christ.html",
+          "image": "https://www.meisterdrucke.us/kunstwerke/1260px/Pietro_Perugino_-_The_Ascension_of_Christ_Painting_by_Pietro_Vannucci_dit_Il_Perugino_%28The_Perugin_-_%28MeisterDrucke-1000409%29.jpg",
+          "medium": "Painting, museum reproduction",
+          "grade": "EXACT SCENE",
+          "note": "Exact subject, Lyon. Verify museum original before publication.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-13::06",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 2,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 4
+      }
+    },
+    {
+      "id": "STG-pray.rosary-14",
+      "title": "Rosary — Descent of the Holy Ghost (Pentecost)",
+      "section": "Traditional Rosary (limited pool)",
+      "priority": "P1",
+      "reason": "Jean Restout already approved; broaden with distinct depictions of Pentecost, not generic Holy Spirit emblems.",
+      "sceneStatus": "EDITORIAL_SCENE_SOLVED_PHOTO_RIGHTS_AND_NATIVE_IMAGE_QA_PENDING",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [
+        {
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "id": "CANONICAL::ART-ean-estout-entecost",
+          "source": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "fit": "HUMAN_EXPLICIT",
+          "editorial": "USER_APPROVED",
+          "scope": "STG-pray.rosary-14",
+          "gate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "artist": "Mateo Cerezo",
+          "title": "Pentecost",
+          "id": "APPROVED_REVIEW::STG-pray.rosary-14::06",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "fit": "EXACT SCENE",
+          "editorial": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
+          "scope": "STG-pray.rosary-14",
+          "gate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;LOW_SOURCE_RESOLUTION_REPLACEMENT_NEEDED"
+        }
+      ],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "Pentecost",
+          "artist": "Jean II Restout",
+          "source": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean_II_Restout_-_Pentecost_-_WGA19318.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE / ALREADY IN PRAYER",
+          "note": "Existing approval; this is an alternate photographic version of the existing painting, not a new artwork.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": true,
+          "key": "STG-pray.rosary-14::01",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Pentecost",
+          "artist": "Francisco de Zurbarán",
+          "source": "https://commons.wikimedia.org/wiki/File:La_Pentecost%C3%A9s%2C_Francisco_de_Zurbar%C3%A1n.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Pentecost%C3%A9s%2C_Francisco_de_Zurbar%C3%A1n.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Spanish Baroque, direct subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-14::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Pentecost",
+          "artist": "Girolamo da Carpi",
+          "source": "https://commons.wikimedia.org/wiki/File:Girolamo_da_carpi%2C_pentecoste%2C_1525-50_ca._01.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Girolamo_da_carpi%2C_pentecoste%2C_1525-50_ca._01.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Direct scene with Holy Spirit descending.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-14::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Pentecost",
+          "artist": "Jacopo Zucchi",
+          "source": "https://commons.wikimedia.org/wiki/File:Jacopo_zucchi%2C_pentecoste%2C_1588%2C_01.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo_zucchi%2C_pentecoste%2C_1588%2C_01.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Italian late-Renaissance painting.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-14::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Descent of the Holy Spirit",
+          "artist": "Taddeo Gaddi",
+          "source": "https://commons.wikimedia.org/wiki/File:Taddeo_Gaddi_-_Die_Ausgie%C3%9Fung_des_Heiligen_Geistes%2C_um_1335-1345%2C_1073.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Taddeo_Gaddi_-_Die_Ausgie%C3%9Fung_des_Heiligen_Geistes%2C_um_1335-1345%2C_1073.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Historic exact-scene painting; earlier than preferred Baroque style.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-14::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Pentecost",
+          "artist": "Mateo Cerezo",
+          "source": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mateo_cerezo-la_venida_del_espiritu_santo.JPG?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Spanish Baroque, published Commons preview low-res; further source repair likely needed.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "STG-pray.rosary-14::06",
+          "decision": {
+            "status": "ALREADY_USER_APPROVED_FOR_SUBJECT",
+            "provenance": "USER_APPROVED_20261030_NEW_ARTWORK_REUSE"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 2,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 4
+      }
+    },
+    {
+      "id": "SEM-rosary.wedding_at_cana",
+      "title": "Optional Luminous — Wedding at Cana",
+      "section": "Optional Luminous mystery",
+      "priority": "P2",
+      "reason": "Two semantic proposals already accepted but without stable live-card IDs. These are additions, not substitutions for reviewed works.",
+      "sceneStatus": "OPTIONAL_NO_STABLE_LIVE_STAGE_IDS_DO_NOT_BLOCK_TRADITIONAL_ROSARY",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [],
+      "semanticPreviouslyApproved": [
+        {
+          "artist": "Sebastiano Ricci",
+          "title": "Hochzeit zu Kana",
+          "workId": "REVIEW::commons:158345",
+          "placementScope": "SEM-rosary.wedding_at_cana",
+          "editorialStatus": "PRIOR_APPROVED_SEMANTIC_ONLY_NO_LIVE_CARD_ID",
+          "source": "approved-unified-b06-b11-from-user-message.v1.json"
+        },
+        {
+          "artist": "Giuseppe Maria Crespi",
+          "title": "The Wedding at Cana \" \"",
+          "workId": "REVIEW::commons:74197382",
+          "placementScope": "SEM-rosary.wedding_at_cana",
+          "editorialStatus": "PRIOR_APPROVED_SEMANTIC_ONLY_NO_LIVE_CARD_ID",
+          "source": "approved-unified-b06-b11-from-user-message.v1.json"
+        }
+      ],
+      "works": [
+        {
+          "title": "The Wedding at Cana",
+          "artist": "Adam van Noort",
+          "source": "https://commons.wikimedia.org/wiki/File:Adam_van_Noort_-_Wedding_at_Cana.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Adam_van_Noort_-_Wedding_at_Cana.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Distinct Flemish painted scene.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.wedding_at_cana::01",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Wedding at Cana",
+          "artist": "Denys Calvaert",
+          "source": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_The_wedding_at_cana.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Denys_Calvaert_-_The_wedding_at_cana.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Exact biblical wedding miracle.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.wedding_at_cana::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Marriage at Cana",
+          "artist": "Gaetano Gandolfi",
+          "source": "https://commons.wikimedia.org/wiki/File:Gaetano_Gandolfi_-_The_Marriage_at_Cana_-_Walters_371919.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaetano_Gandolfi_-_The_Marriage_at_Cana_-_Walters_371919.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Walters collection, high-resolution scan.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.wedding_at_cana::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Wedding at Cana",
+          "artist": "Giovanni Paolo Panini",
+          "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Paolo_Panini_The_Wedding_at_Cana%2C_about_1725.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni_Paolo_Panini_The_Wedding_at_Cana%2C_about_1725.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "18th-century painted setting.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.wedding_at_cana::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Marriage at Cana",
+          "artist": "James Tissot",
+          "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Marriage_at_Cana_(Les_noces_de_Cana)_-_James_Tissot_-_overall.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Museum_-_The_Marriage_at_Cana_(Les_noces_de_Cana)_-_James_Tissot_-_overall.jpg?width=650",
+          "medium": "Gouache / painting",
+          "grade": "EXACT SCENE",
+          "note": "Narrative direct subject, modest Commons image 671×768.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.wedding_at_cana::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Wedding at Cana",
+          "artist": "Gerard David",
+          "source": "https://commons.wikimedia.org/wiki/File:Gerard_David_-_The_Marriage_at_Cana.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gerard_David_-_The_Marriage_at_Cana.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Early Netherlandish image, distinct composition.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.wedding_at_cana::06",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 0,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 6
+      }
+    },
+    {
+      "id": "SEM-rosary.proclamation_of_kingdom",
+      "title": "Optional Luminous — Proclamation of the Kingdom",
+      "section": "Optional Luminous mystery",
+      "priority": "P2",
+      "reason": "This mystery has no stable scene ID. Sermon on the Mount is an appropriate narrative episode of preaching, but must be labelled as a chosen episode—not the entire ministry.",
+      "sceneStatus": "OPTIONAL_NO_STABLE_LIVE_STAGE_IDS_DO_NOT_BLOCK_TRADITIONAL_ROSARY",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "The Sermon on the Mount",
+          "artist": "Carl Bloch",
+          "source": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bloch-SermonOnTheMount.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT PREACHING EPISODE",
+          "note": "Depicts Sermon on Mount, a defensible moment of public proclamation.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.proclamation_of_kingdom::01",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Sermon of the Beatitudes",
+          "artist": "James Tissot",
+          "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Sermon_of_the_Beatitudes_(La_sermon_des_b%C3%A9atitudes)_-_James_Tissot.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Museum_-_The_Sermon_of_the_Beatitudes_(La_sermon_des_b%C3%A9atitudes)_-_James_Tissot.jpg?width=650",
+          "medium": "Gouache / painting",
+          "grade": "EXACT PREACHING EPISODE",
+          "note": "Christ preaching Beatitudes.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.proclamation_of_kingdom::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Sermon on the Mount",
+          "artist": "Frans Francken II",
+          "source": "https://commons.wikimedia.org/wiki/File:Francken%2C_Frans_II_%E2%80%94_Die_Bergpredigt_%E2%80%94_1606.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francken%2C_Frans_II_%E2%80%94_Die_Bergpredigt_%E2%80%94_1606.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT PREACHING EPISODE",
+          "note": "Flemish 1606.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.proclamation_of_kingdom::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Sermon on the Mount",
+          "artist": "Jan Brueghel the Elder",
+          "source": "https://commons.wikimedia.org/wiki/File:Jan_Brueghel_the_Elder_-_The_Sermon_on_the_Mount_-_Google_Art_Project.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Brueghel_the_Elder_-_The_Sermon_on_the_Mount_-_Google_Art_Project.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT PREACHING EPISODE",
+          "note": "Wide 4366×3205 image; narrative busy but genuine subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.proclamation_of_kingdom::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "Le Sermon sur la montagne",
+          "artist": "Jean-Baptiste de Champaigne",
+          "source": "https://commons.wikimedia.org/wiki/File:Le_sermon_sur_la_montagne_-_Jean-Baptiste_de_Champaigne_-_MM_1938E146.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_sermon_sur_la_montagne_-_Jean-Baptiste_de_Champaigne_-_MM_1938E146.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT PREACHING EPISODE",
+          "note": "French Classical/Baroque, direct subject.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.proclamation_of_kingdom::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Sermon on the Mount",
+          "artist": "Claude Lorrain",
+          "source": "https://commons.wikimedia.org/wiki/File:Lorrain%2C_Claude_-_The_Sermon_on_the_Mount_(Frick_Collection%3B_c._1656).jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lorrain%2C_Claude_-_The_Sermon_on_the_Mount_(Frick_Collection%3B_c._1656).jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT PREACHING EPISODE",
+          "note": "Landscape dominated; useful only if the subject remains legible on mobile.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.proclamation_of_kingdom::06",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 0,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 6
+      }
+    },
+    {
+      "id": "SEM-rosary.transfiguration",
+      "title": "Optional Luminous — The Transfiguration",
+      "section": "Optional Luminous mystery",
+      "priority": "P2",
+      "reason": "The Transfiguration is an exact scene. Avoid Fra Angelico and El Greco per existing aesthetic decisions.",
+      "sceneStatus": "OPTIONAL_NO_STABLE_LIVE_STAGE_IDS_DO_NOT_BLOCK_TRADITIONAL_ROSARY",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [],
+      "semanticPreviouslyApproved": [],
+      "works": [
+        {
+          "title": "The Transfiguration",
+          "artist": "Peter Paul Rubens",
+          "source": "https://commons.wikimedia.org/wiki/Category:Transfiguration_by_Peter_Paul_Rubens",
+          "image": "",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Source category contains distinct work images; exact file needs selection.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.transfiguration::01",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Transfiguration",
+          "artist": "Ludovico Carracci",
+          "source": "https://commons.wikimedia.org/wiki/Category:Transfiguration_of_Jesus_Christ_by_Ludovico_Carracci_(Pinacoteca_Nazionale,_Bologna)",
+          "image": "",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Pinacoteca Nazionale Bologna original; source image selection and photo rights pending.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.transfiguration::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Transfiguration",
+          "artist": "Lorenzo Lotto",
+          "source": "https://commons.wikimedia.org/wiki/Category:Transfiguration_by_Lorenzo_Lotto",
+          "image": "",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Existing iconographic category with seventeen reproductions of this work; choose high-quality frameless source.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.transfiguration::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Transfiguration",
+          "artist": "Domenico Pugliani",
+          "source": "https://commons.wikimedia.org/wiki/File:Domenico_pugliani%2C_trasfigurazione%2C_1600-50_ca._01.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico_pugliani%2C_trasfigurazione%2C_1600-50_ca._01.jpg?width=650",
+          "medium": "Painting, 17th-century",
+          "grade": "EXACT SCENE",
+          "note": "",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.transfiguration::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Transfiguration and Saints",
+          "artist": "Bernardino Campi",
+          "source": "https://commons.wikimedia.org/wiki/File:Bernardino_campi%2C_trasfigurazione_e_santi%2C_1565%2C_00.JPG",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bernardino_campi%2C_trasfigurazione_e_santi%2C_1565%2C_00.JPG?width=650",
+          "medium": "Painting, 1565",
+          "grade": "EXACT SCENE",
+          "note": "Contains additional saints; subject needs a close composition check.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.transfiguration::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Transfiguration",
+          "artist": "Aelbrecht Bouts",
+          "source": "https://commons.wikimedia.org/wiki/File:Aelbrecht_Bouts%27s_painting_%27The_Transfiguration%27%2C_late_15th_Century.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Aelbrecht_Bouts%27s_painting_%27The_Transfiguration%27%2C_late_15th_Century.jpg?width=650",
+          "medium": "Painting, late 15th century",
+          "grade": "EXACT SCENE",
+          "note": "Small image size 467×746; low priority pending original photo.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.transfiguration::06",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 0,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 6
+      }
+    },
+    {
+      "id": "SEM-rosary.institution_of_eucharist",
+      "title": "Optional Luminous — Institution of the Eucharist",
+      "section": "Optional Luminous mystery",
+      "priority": "P2",
+      "reason": "Select Last Supper images which make the Eucharistic institution intelligible. Champaigne’s Petite Cène is already a stated artistic preference.",
+      "sceneStatus": "OPTIONAL_NO_STABLE_LIVE_STAGE_IDS_DO_NOT_BLOCK_TRADITIONAL_ROSARY",
+      "candidateCount": 6,
+      "existingHistoricalApprovedPaintings": [],
+      "semanticPreviouslyApproved": [
+        {
+          "artist": "Giovanni Lanfranco",
+          "title": "The Last Supper",
+          "workId": "REVIEW::commons:48577448",
+          "placementScope": "SEM-rosary.institution_of_eucharist",
+          "editorialStatus": "PRIOR_APPROVED_SEMANTIC_ONLY_NO_LIVE_CARD_ID",
+          "source": "approved-unified-b06-b11-from-user-message.v1.json"
+        }
+      ],
+      "works": [
+        {
+          "title": "La Petite Cène",
+          "artist": "Philippe de Champaigne",
+          "source": "https://commons.wikimedia.org/wiki/Category:La_C%C3%A8ne,_dite_La_Petite_C%C3%A8ne_(Louvre_INV_1125)",
+          "image": "",
+          "medium": "Painting",
+          "grade": "EXACT LAST SUPPER / USER PREFERENCE",
+          "note": "User explicitly prefers this to da Siena; check the Louvre INV 1125 exact painting and high-resolution photo.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": true,
+          "key": "SEM-rosary.institution_of_eucharist::01",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Last Supper",
+          "artist": "Valentin de Boulogne",
+          "source": "https://commons.wikimedia.org/wiki/File:Valentin_de_Boulogne_-_The_Last_Supper.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Valentin_de_Boulogne_-_The_Last_Supper.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "French Caravaggesque style.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.institution_of_eucharist::02",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Last Supper",
+          "artist": "Artus Wolffort and workshop",
+          "source": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_and_Workshop_-_The_Last_Supper.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artus_Wolffort_and_Workshop_-_The_Last_Supper.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Flemish Baroque painting.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.institution_of_eucharist::03",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Last Supper",
+          "artist": "Jacob Jordaens",
+          "source": "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_-_The_Last_Supper.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacob_Jordaens_-_The_Last_Supper.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Very high resolution, scene fidelity and source rights to inspect.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.institution_of_eucharist::04",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Last Supper",
+          "artist": "Vincenzo Malo",
+          "source": "https://commons.wikimedia.org/wiki/File:Vincenzo_Malo_-_The_Last_Supper.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincenzo_Malo_-_The_Last_Supper.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Flemish-Italian Baroque.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.institution_of_eucharist::05",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        },
+        {
+          "title": "The Last Supper",
+          "artist": "Frans Walschartz",
+          "source": "https://commons.wikimedia.org/wiki/File:Frans_Walschartz_-_The_Last_Supper.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans_Walschartz_-_The_Last_Supper.jpg?width=650",
+          "medium": "Painting",
+          "grade": "EXACT SCENE",
+          "note": "Alternative 17th-century Last Supper.",
+          "rights": "FILE RIGHTS / PHOTO QA PENDING",
+          "earlier": false,
+          "key": "SEM-rosary.institution_of_eucharist::06",
+          "decision": {
+            "status": "UNREVIEWED_PAINTING_ALTERNATIVE",
+            "provenance": "Candidate proposal not a user approval"
+          },
+          "photoRights": "NOT_VERIFIED_PER_FILE",
+          "visualQuality": "NOT_CERTIFIED_FRAMING_COLOUR_RESOLUTION",
+          "publicationEnabled": false
+        }
+      ],
+      "decisionCounts": {
+        "approvedReconciled": 0,
+        "explicitRejections": 0,
+        "referenceOnly": 0,
+        "blockedModernOriginal": 0,
+        "unreviewed": 6
+      }
+    }
+  ],
+  "additionalPreciseFindings": [
+    {
+      "group": "Benediction",
+      "finding": "Museum object title in French can say La bénédiction du saint Sacrement but iconography is 'Adoration of the Sacrament'. Avoid treating a title string as scene proof.",
+      "evidence": "https://kmska.be/fr/chefdoeuvre/la-benediction-du-saint-sacrement",
+      "rightsAlt": "https://vlaamsekunstcollectie.be/en/collection/224"
+    },
+    {
+      "group": "St Thérèse",
+      "finding": "Céline Martin, creator of Thérèse aux roses, died 1959. Under ordinary French life+70 copyright term, her paintings remain protected through 2029 without exception; do not count this as a PD image.",
+      "evidence": "https://archives.carmeldelisieux.fr/en/personnage/celine-martin/"
+    }
+  ],
+  "note": "Count reflects status of 66 old reviewed proposals; two NEW user decisions from 31 October are recorded in separate direct decision file and not silently inserted into old denominator.",
+  "userDirectDecisions": "data/prayer/artwork-editorial-20261031/user-direct-benediction-therese-selections.v1.json"
+}

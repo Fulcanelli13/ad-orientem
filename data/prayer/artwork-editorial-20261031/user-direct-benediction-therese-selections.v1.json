@@ -1,0 +1,61 @@
+{
+  "schema": "AO_20261031_USER_DIRECT_ARTWORK_DECISIONS_BENEDICTION_AND_THERESE_V1",
+  "date": "2026-10-31",
+  "instruction": "These are explicit user editorial selections for Prayer module. Preserve all older approvals/rejections and all unrelated slots. This record is authoritative over previous 'gap remains open' reports.",
+  "decisions": [
+    {
+      "slot": "STG-pray.benediction-03",
+      "programme": "Benediction",
+      "artwork": "The Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "date": "1432",
+      "scene": "Lamb of God surrounded by saints and angelic worshippers in heavenly adoration",
+      "workIdentity": "Ghent Altarpiece, central lower panel, Saint Bavo Cathedral, Ghent",
+      "userEditorial": "APPROVED_THEMATIC_SCENE",
+      "fit": "HEAVENLY_EUCHARISTIC_ADORATION_NOT_LITERAL_BENEDICTION_ACT",
+      "primarySource": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+      "sourceImagePixels": [
+        2725,
+        1577
+      ],
+      "rights": "WIKIMEDIA_COMMONS_PD_ART_PUBLIC_DOMAIN_MARK_1_0",
+      "rightsScope": "Faithful public-domain 2D-art reproduction; Commons warns about other jurisdictions; file itself is not Creative Commons CC0 grant",
+      "needsNativeQA": true,
+      "production": false,
+      "previousUserArtHistory": "In earlier Saints module review this painting was 'maybe', now explicitly selected for Benediction",
+      "doNotReplace": "COV-pray.benediction currently approved Ingres The Virgin Adoring the Host cover",
+      "textOrRiteChange": false
+    },
+    {
+      "slot": "COV-novena.st_therese",
+      "programme": "Saint Thérèse Novena",
+      "artwork": "Portrait of Thérèse of Lisieux",
+      "artist": "Unknown historical photographer",
+      "date": "Before 1897",
+      "scene": "Historic photograph of the saint seated beside a cross",
+      "userEditorial": "FINAL_PHOTOGRAPH_APPROVED",
+      "fit": "EXACT_SAINT_AUTHENTIC_LIFETIME_PHOTOGRAPH",
+      "primarySource": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg",
+      "originalFile": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Therese_lisieux_portrait.jpg",
+      "sourceImagePixels": [
+        362,
+        498
+      ],
+      "rights": "PUBLIC_DOMAIN_IN_FRANCE_AND_US_COMMONS_EXPLICIT_PD_TAGS",
+      "resolution": "LOW_ORIGINAL_362x498_NO_AI_UPSCALING_NO_ART_SUBSTITUTION",
+      "needsNativeQA": true,
+      "production": false,
+      "doNotUse": "Céline Martin Thérèse aux roses 1925 original still under ordinary France life+70 copyright until end of 2029; author died 1959",
+      "textOrRiteChange": false
+    }
+  ],
+  "globalConstraints": [
+    "Exact user-selected St Thérèse image must not be replaced with another photograph or painting unless user asks",
+    "User thematic Benediction scene is NOT an image of priest blessing with monstrance",
+    "Existing Ingres Benediction cover preserved",
+    "All preexisting selections including Stations and Rosary unaffected",
+    "All previously rejected Lybaert artworks excluded",
+    "Only PD/CC0 images or proven no-copyright faithful reproductions under project policy; Commons PD-Art tag differs from CC0 licence",
+    "Do not change Rosary bead-by-bead signature"
+  ]
+}
