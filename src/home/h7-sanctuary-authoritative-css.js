@@ -206,8 +206,8 @@ html[data-ao-h7-door-open] .aoH7Screens .aoH7DoorView:not([hidden]){height:100dv
 .aoH7Screens .btn[disabled]{opacity:.55}
 @media(max-width:359px){.aoH7Screens .hero{height:470px!important}}
 
-/* Production accessibility override outside @scope to match the H7 date button. */
-.aoH7Screens .aoH7HomeView .hero .date{min-height:44px!important;margin-block:-4px}
+/* A 46px CSS hit box remains at least 44px after the phone's fractional viewport scaling; negative margins preserve the original 36px visual spacing. */
+.aoH7Screens .aoH7HomeView .hero .date{min-height:46px!important;margin-block:-5px}
 /* Faithful H7 selectors mapped onto existing source-owned Home content. */
 .aoH7Screens .aoH7HomeView{height:auto!important;overflow:visible!important}
 .aoH7Screens .aoH7HomeView .sec{padding:0 var(--g)!important}
