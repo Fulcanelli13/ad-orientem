@@ -13,6 +13,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
 
   let active = normalizeAppSurface(initialSurface) ?? "home";
   let disposed = false;
+  let pendingTarget = null, pendingToken = 0;
   const listeners = new Set();
 
   function emit() {
@@ -40,6 +41,9 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
     const target = normalizeAppSurface(surface);
     if (!target) return result(false, active, { reason: "UNKNOWN_SURFACE" });
     if (resume&&target!=="mass") return result(false,active,{reason:"RESUME_MASS_ONLY"});
+    const token=++pendingToken;
+    pendingTarget=target;
+    try {
 
     // Settings is a top-level overlay and may be opened over an active Mass.
     // The locked donor deliberately handled it before the live-Mass leave guard.
@@ -124,6 +128,9 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
 
     setActive(target);
     return result(true, target);
+    } finally {
+      if(token===pendingToken)pendingTarget=null;
+    }
   }
 
   return Object.freeze({
@@ -132,6 +139,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
     setActive,
     syncCoreRoute,
     getActive: () => active,
+    getPendingTarget: () => pendingTarget,
     subscribe(listener) {
       if (typeof listener !== "function") throw new TypeError("listener must be a function");
       listeners.add(listener);

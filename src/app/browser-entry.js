@@ -17,6 +17,7 @@ import { installContextualStudyBridge } from "./contextual-study.js";
 import "../learn/browser-entry.js";
 import "../settings/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
+import { createAppNativeBackBridge } from "./native-back.js";
 import { createPresentationFxBridge } from "./presentation-fx.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
@@ -393,6 +394,7 @@ export function installAppShellBridge({
     visibleOwner: false,
     disposeVisibleOwner: null,
     liveSessionGuards: null,
+    nativeBack: null,
     presentationFx: null,
   };
 
@@ -440,6 +442,10 @@ export function installAppShellBridge({
       state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state, state.presentationFx);
       state.liveSessionGuards?.dispose?.();
       state.liveSessionGuards = installLiveSessionGuards({ win });
+      state.nativeBack?.dispose?.();
+      state.nativeBack=createAppNativeBackBridge({win,shell:state.controller});
+      if(state.controller?.getActive?.()!=="home")
+        state.nativeBack.record(state.controller.getActive());
       setDataset("ready");
     } catch {
       state.blocked = true;
@@ -514,6 +520,7 @@ export function installAppShellBridge({
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
         legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
         liveSessionGuards: state.liveSessionGuards?.status?.() ?? null,
+        nativeBack: state.nativeBack?.status?.() ?? null,
         nonMassConvergence: win?.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.() ?? null,
         presentationFx: state.presentationFx?.status?.() ?? null,
       });

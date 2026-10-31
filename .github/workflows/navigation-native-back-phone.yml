@@ -1,0 +1,33 @@
+name: Native Back and Formation return acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/app/native-back.js"
+      - "src/app/browser-entry.js"
+      - "src/app/host-adapter.js"
+      - "src/settings/browser-entry.js"
+      - "src/learn/browser-entry.js"
+      - "tests/navigation-settings-return-phone.mjs"
+      - "tests/navigation-native-back-phone.mjs"
+      - "tests/navigation-native-back-mass.mjs"
+      - ".github/workflows/navigation-native-back-phone.yml"
+permissions:
+  contents: read
+jobs:
+  native-back-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native Back in LIVE refusal and safe leaving
+        run: node tests/navigation-native-back-mass.mjs
+      - name: Settings Formation return, module owners and Home on phones
+        run: node tests/navigation-settings-return-phone.mjs
+      - name: Android browser Back, book navigation and Formation restoration
+        run: node tests/navigation-native-back-phone.mjs

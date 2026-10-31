@@ -25,7 +25,7 @@ export function createSettingsOwner(win=globalThis){
   const historicalSelectors=["#ao-settings-v4359","#ao-settings-v4358","#ao-settings-v4356","[data-ao-settings-owner^='AO_SETTINGS_V']","[data-v37-module='utility.settings']","[data-module='utility.settings']"];
   const donor=createSettingsDonorState(win);
   win.AO_SETTINGS_DONOR_V4359=donor;
-  let route="/settings",routeHistory=[],returnSurface="home",previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
+  let route="/settings",routeHistory=[],returnSurface="home",returnReceipt=null,previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
   let checkingUpdates=false,applyingUpdate=false,updateCheck="idle";
   let familyOpen=1,resetAsk=false;
 
@@ -100,7 +100,7 @@ export function createSettingsOwner(win=globalThis){
   // opens. Changing the active ribbon label on Close is NOT a return: the
   // original screen no longer exists. Re-enter its canonical owner, and only
   // mark the destination active after its real open operation succeeds.
-  function restoreClosedModule(target){
+  function restoreClosedModule(target,receipt=null){
     const owners={learn:win?.AO_LEARN_APP_V1,find:win?.AO_FIND_APP_V1,
       apostolate:win?.AO_APOSTOLATE_APP_V1};
     const owner=owners[target];
@@ -109,7 +109,13 @@ export function createSettingsOwner(win=globalThis){
       return;
     }
     void Promise.resolve().then(()=>shell()?.navigate?.(target)).then(result=>{
-      if((result===true||result?.ok===true)&&owner?.status?.()?.open===true)return;
+      if((result===true||result?.ok===true)&&owner?.status?.()?.open===true){
+        // Repaint the source owner's exact family rather than just its hub.
+        // Latin lesson restoration uses the existing canonical course API.
+        if(target==="learn"&&receipt&&owner?.restoreSettingsReturn)
+          return owner.restoreSettingsReturn(receipt);
+        return true;
+      }
       throw new Error("Settings could not restore "+target+"; returning Home");
     }).catch(error=>{
       try{win?.console?.error?.("Settings return failed",error)}catch{}
@@ -124,6 +130,7 @@ export function createSettingsOwner(win=globalThis){
       r.remove?.();
     }
     release();routeHistory=[];resetAsk=false;
+    const receipt=returnReceipt;returnReceipt=null;
     if(win.document?.documentElement?.dataset){delete win.document.documentElement.dataset.aoSettingsSurface;win.document.documentElement.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";}
     if(restoreSurface){
       const target=surface||returnSurface||"home";
@@ -131,7 +138,7 @@ export function createSettingsOwner(win=globalThis){
         // Previous focus belongs to an unmounted module. The reopened owner
         // supplies its own keyboard focus (and visible hub) instead.
         previousFocus=null;
-        restoreClosedModule(target);
+        restoreClosedModule(target,target==="learn"?receipt:null);
         return true;
       }
       // A LIVE Mass MUST NOT be reopened: Settings is merely an overlay and
@@ -159,13 +166,14 @@ export function createSettingsOwner(win=globalThis){
     if(route.startsWith("/settings/local-customs/"))return go("/settings/local-customs",{remember:false});
     return go("/settings",{remember:false});
   }
-  function open(target="/settings"){
+  function open(target="/settings",{returnReceipt:receipt=null}={}){
     const doc=win?.document,st=store();
     if(!doc?.body||typeof st?.getState!=="function")return false;
     if(!root()){
       previousFocus=doc.activeElement;
       const current=shell()?.getActive?.();
       returnSurface=current&&current!=="settings"?current:(isLive()?"mass":"home");
+      returnReceipt=returnSurface==="learn"?receipt:null;
     }
     routeHistory=[];route=normalizeSettingsRoute(target);resetAsk=false;suppressHistorical();
     let r=root();

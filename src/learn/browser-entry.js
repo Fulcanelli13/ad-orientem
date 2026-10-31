@@ -476,6 +476,41 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     return true;
   }
 
+  // Settings temporarily closes the Formation owner. Capture the current
+  // source-owned family and, for the Latin course, its named lesson. This is
+  // an in-memory return receipt, not a new persisted learning state.
+  function captureSettingsReturn(){
+    if(!state.open)return null;
+    const latin=state.child===LATIN_COURSE_ROUTE_ID
+      ?win?.AO_LATIN_COURSE_V1?.status?.():null;
+    return Object.freeze({
+      family:state.family,lastFamily:state.lastFamily,
+      query:state.discoveryQuery,reference:state.lastDiscoveryReference,
+      launcher:state.lastLauncher,
+      child:state.child===LATIN_COURSE_ROUTE_ID?LATIN_COURSE_ROUTE_ID:null,
+      lessonNumber:Number.isInteger(latin?.lesson)&&latin.lesson>0?latin.lesson:null
+    });
+  }
+  async function restoreSettingsReturn(receipt){
+    if(!state.open||!root(win)||!receipt||typeof receipt!=="object")return false;
+    // A cross-session or stale receipt must not reopen a child on Home.
+    if(win?.AO_APP_SHELL_V1?.getActive?.()!=="learn")return false;
+    state.family=typeof receipt.family==="string"?receipt.family:null;
+    state.lastFamily=typeof receipt.lastFamily==="string"?receipt.lastFamily:null;
+    state.discoveryQuery=String(receipt.query||"").slice(0,100);
+    state.lastDiscoveryReference=typeof receipt.reference==="string"?receipt.reference:null;
+    state.lastLauncher=typeof receipt.launcher==="string"?receipt.launcher:null;
+    state.error="";
+    showHub();
+    if(receipt.child===LATIN_COURSE_ROUTE_ID&&Number.isInteger(receipt.lessonNumber)){
+      // The course's canonical openLesson() selects the exact lesson. An
+      // uncommitted exercise response/phase is NOT restored or fabricated.
+      const opened=await openModule(LATIN_COURSE_ROUTE_ID,{lessonNumber:receipt.lessonNumber});
+      if(!opened){state.error=L(win,"The lesson could not be restored. Your Formation section is still available.","La leçon n’a pas pu être rétablie. Votre rubrique Formation reste accessible.");showHub();}
+    }
+    return true;
+  }
+
   function close(){
     ++launchEpoch;
     state.open=false;
@@ -581,7 +616,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.unsub=null;
   }
 
-  return Object.freeze({version:VERSION,open,close,openModule,restoreObservedChild,paint,status,dispose});
+  return Object.freeze({version:VERSION,open,close,openModule,restoreObservedChild,captureSettingsReturn,restoreSettingsReturn,paint,status,dispose});
 }
 
 function maybeOpenFormationResearchPreview(win){
