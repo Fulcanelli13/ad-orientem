@@ -42,7 +42,11 @@ for(const id of approved){
   actor:"FAITHFUL",authorityClass:"FAITHFUL_CUE_SOT"},priestAction:source}),null);
  const asset=USER_APPROVED_MASS_GESTURE_ASSETS[key];
  assert.ok(asset.endsWith("/assets/extensions/mass-user-gesture-20261029/"+id+".svg"));
- assert.equal(resolveUserApprovedMassGestureArt(key,()=>null),asset);
+ assert.equal(resolveUserApprovedMassGestureArt(key,()=>null),
+  USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS[cue]?null:asset);
+ if(USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS[cue])
+  assert.equal(resolveUserApprovedMassGestureArt(key,()=> "UNSAFE_FALLBACK"),null,
+   "Old cached key bypassed the accuracy hold: "+cue);
  const svg=readFileSync(new URL("../assets/extensions/mass-user-gesture-20261029/"+id+".svg",import.meta.url));
  const review=readFileSync(new URL("../assets/review/mass-adaptive-gesture-20261029/"+id+".svg",import.meta.url));
  const digest=createHash("sha256").update(svg).digest("hex");
@@ -52,6 +56,7 @@ for(const id of approved){
  assert.doesNotMatch(svg.toString("utf8"),/<(?:script|image|foreignObject)\b/i);
 }
 assert.equal(resolveUserApprovedMassGestureArt("ao_1962_priest_c0169",()=>null),null);
+assert.equal(resolveUserApprovedMassGestureArt("ao_1962_priest_c0169",()=> "UNSAFE_FALLBACK"),null);
 assert.equal(resolveUserApprovedMassGestureArt("stand",key=>"FROZEN_"+key),"FROZEN_stand");
 assert.equal(matrix.items.length,142);
 assert.equal(matrix.items.filter(x=>x.iconKey).length,125);
