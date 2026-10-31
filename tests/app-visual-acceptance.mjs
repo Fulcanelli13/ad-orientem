@@ -1588,7 +1588,13 @@ try{
     topControl:(()=>{const x=document.querySelector("#ao-learn-modular-root .aoLearnModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
   }));
   assert.equal(learnDesign.displayFont,designBaseline.displayFont,"Learn display typography diverged from the app system");
-  assert.equal(learnDesign.bodyFont,designBaseline.bodyFont,"Learn body typography diverged from Home");
+  // Original Claude H7 Home specifies additional platform fallback fonts,
+  // but both Home and Learn retain the approved EB Garamond primary family.
+  const primaryFont=stack=>String(stack).split(",")[0].trim().replaceAll('"',"");
+  assert.equal(primaryFont(learnDesign.bodyFont),primaryFont(designBaseline.bodyFont),
+    "Learn and H7 Home diverged from their shared primary body typeface");
+  assert.equal(primaryFont(learnDesign.bodyFont),"EB Garamond",
+    "Canonical EB Garamond body face was replaced");
   assert.equal(learnDesign.gutter,designBaseline.gutter,"Learn phone gutter diverged from the app grid");
   assert.equal(learnDesign.cardRadius,designBaseline.cardRadius,"Learn cards diverged from canonical geometry");
   assert.equal(Math.round(learnDesign.topControl.w),44,"Learn top control width diverged");

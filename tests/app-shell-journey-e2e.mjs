@@ -324,8 +324,15 @@ try{
   assert.equal(interruptedReload.savedSection,interrupted.section);
   assert.equal(interruptedReload.probe,"calendar-state-ok","unrelated local state changed during interrupted reload");
 
-  const homeResume=page.locator(".homeScreen [data-resume-mass]");
-  assert.equal(await homeResume.count(),1,"interrupted reload exposed no visible Home Resume card");
+  // H7 always opens a separate Mass door; its saved Resume action is there,
+  // not exposed as a competing primary button on the homepage.
+  const homeResume=page.locator(".aoH7DoorView [data-resume-mass]");
+  assert.equal(await homeResume.count(),1,"interrupted reload lost its H7 Mass-door Resume control");
+  assert.equal(await homeResume.isVisible(),false,
+    "H7 must hide Mass-door Resume until the user enters the Mass door");
+  await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+  await page.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
+  await homeResume.waitFor({state:"visible",timeout:10000});
   await homeResume.click();
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(expected=>
