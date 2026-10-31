@@ -6,6 +6,7 @@ on:
       - fix/explore-reuse-approved-gallery-as-covers-20261031
     paths:
       - "tools/acquire-notre-dame-paris-2026-cover.py"
+      - "tests/production-tree-hygiene.mjs"
       - ".github/workflows/acquire-notre-dame-paris-cover.yml"
 
 permissions:
@@ -33,6 +34,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Preserve exact review branch acquisition governance
+        run: node tests/production-tree-hygiene.mjs
       - name: Validate image, rights and site UI lookup
         run: node tests/explore-approved-gallery-cover-reuse-20261031.mjs
       - name: Commit verified WebP and metadata together to PR branch only
