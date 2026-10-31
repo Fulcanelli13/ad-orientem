@@ -284,10 +284,10 @@ try{
         dateOpen:h?.querySelectorAll(".aoH4DateOpen[data-home-calendar-view='picker']").length??0,
         dateHeight:size(h?.querySelector(".aoH4DateOpen")),
         prayer:h?.querySelectorAll(".aoTodayV2PrayerThroughDay .aoH4Prayer").length??0,
-        shortcuts:h?.querySelectorAll(".aoH4Chips [data-home-cu-route]").length??0,
+        shortcuts:h?.querySelectorAll(".aoH4Chips button").length??0,
         gospel:h?.querySelectorAll(".aoH4Read [data-action='gospel']").length??0,
-        catechism:h?.querySelectorAll(".aoH4Read [data-home-daily-catechism]").length??0,
-        calendar:h?.querySelectorAll(".aoH4WeekSection [data-home-calendar]").length??0,
+        readSection:h?.querySelectorAll(".aoTodayV2Below .aoTodayV2ReadReflect").length??0,
+        calendar:h?.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length??0,
         mass:h?.querySelectorAll("[data-home-mass-entry]").length??0,
         overflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
       };
@@ -297,7 +297,7 @@ try{
     assert.equal(audit.prayer,1,"H4 lost the featured prayer");
     assert.equal(audit.shortcuts,3,"H4 lost Rosary/Confession/Adoration");
     assert.equal(audit.gospel,1,"H4 lost its source-linked Gospel");
-    assert.equal(audit.catechism,1,"H4 lost Daily Catechism");
+    assert.equal(audit.readSection,1,"H4 lost the Read section");
     assert.ok(audit.calendar>=1,"H4 lost the week-to-Calendar route");
     assert.equal(audit.mass,1,"H4 lost the canonical Mass entrance");
     assert.ok(audit.overflow<=1,"H4 introduces horizontal overflow: "+JSON.stringify(audit));
