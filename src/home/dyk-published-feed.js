@@ -5,7 +5,7 @@ const SCHEMA="AO_DYK_R34_HIGH_SIGNAL_24_REVIEW_SELECTION_V1";
 const safeUrl=value=>typeof value==="string"&&/^https:\/\/[^<>"'\s]+$/.test(value);
 const clean=x=>typeof x==="string"?x.trim():"";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const validDate=x=>/^\d{4}-\d{2}-\d{2}$/.test(x||"")&&!Number.isNaN(Date.parse(x+"T12:00:00Z"));
+const validDate=x=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(x||""))return false;const date=new Date(x+"T12:00:00Z");return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===x;};
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
