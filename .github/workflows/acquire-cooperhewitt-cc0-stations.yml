@@ -1,13 +1,6 @@
 name: Acquire complete Cooper Hewitt 1749 Stations (CC0 research)
 
 on:
-  push:
-    branches:
-      - research/stations-cooperhewitt-cc0-20261031
-    paths:
-      - 'data/prayer/stations/cooperhewitt-via-crucis-1749/manifest.v1.json'
-      - 'scripts/acquire_cooperhewitt_stations.py'
-      - '.github/workflows/acquire-cooperhewitt-cc0-stations.yml'
   workflow_dispatch:
 
 permissions:
@@ -19,7 +12,7 @@ concurrency:
 
 jobs:
   acquire-all-14:
-    if: github.ref == 'refs/heads/research/stations-cooperhewitt-cc0-20261031'
+    if: ${{ false }} # User rejected etching medium; prevent further acquisition
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
