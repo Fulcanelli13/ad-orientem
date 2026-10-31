@@ -7,16 +7,18 @@ const provenance=rd("source-link-recovery-1506-placements-20261031.v1.json");
 const attribution=rd("artist-attribution-source-resolution-wave01.v1.json");
 const sourceQA=rd("priority-photo-source-and-licence-qa-wave01.v1.json");
 const metWave02=rd("met-source-verification-wave02-20261031.v1.json");
+const subjectWave03=rd("subject-source-verification-wave03-20261031.v1.json");
 const provisional=rd("provisional-one-choice-per-267-art-position.v1.json");
 test("1506 proposed original artwork placements are never released, including exact-ID photo-source recoveries",()=>{
  const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1506);
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
- assert.equal(x.nowStillWithoutSourcePages,168);
- assert.equal(x.nowWithSourcePages,1338);
+ assert.equal(x.nowStillWithoutSourcePages,157);
+ assert.equal(x.sourceLinksVerifiedBySubjectSourceWave03,11);
+ assert.equal(x.nowWithSourcePages,1349);
  assert.equal(x.sourceLinksVerifiedByMetWave02,36);
- assert.equal(x.distinctSourceLessCandidateIdentities,62);
+ assert.equal(x.distinctSourceLessCandidateIdentities,59);
  assert.equal(x.pradoPhotoSourcesExcluded,17);
  assert.equal(x.unverifiedNameOnlySourceAlternatives,0);
  assert.equal(x.confirmedNewUserArtworkApprovals,0);
@@ -36,8 +38,8 @@ test("1506 proposed original artwork placements are never released, including ex
   }
  }
  assert.equal(active,1506);
- assert.equal(linked,1338);
- assert.equal(remaining,168);
+ assert.equal(linked,1349);
+ assert.equal(remaining,157);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);
 });
@@ -93,4 +95,27 @@ test("wave 2 exact Met original-source repair remains research-only and source-l
  assert.equal(repaired,36);
  const bosch=rd("collection-family-home.v1.json").slots.flatMap(s=>s.reviewCollection).find(a=>a.sourceIDs.includes("REVIEW::met:435725"));
  assert.equal(bosch.artist,"Follower of Hieronymus Bosch");
+});
+
+test("wave 3 subject sources keep photo, rights, aspect-ratio and release gates separate",()=>{
+ assert.equal(subjectWave03.counts.sourcePlacementLinksRecovered,11);
+ assert.equal(subjectWave03.counts.stillWithoutSource,157);
+ assert.equal(subjectWave03.counts.distinctMissingCandidateIdentities,59);
+ assert.equal(subjectWave03.newArtApproved,0);
+ assert.equal(subjectWave03.releaseEnabled,false);
+ const lamb=subjectWave03.sources.find(s=>s.sourceID==="PRAYER::saints--vaneyck");
+ const mercy=subjectWave03.sources.find(s=>s.sourceID==="PRAYER::w1-kazimirowski");
+ const souls=subjectWave03.sources.find(s=>s.sourceID==="HERO-21");
+ assert.equal(lamb.count,7);
+ assert.equal(mercy.count,3);
+ assert.deepEqual(mercy.nativePhotoDimensions,[4553,7680]);
+ assert.equal(souls.count,1);
+ assert.match(souls.status,/LOW_RESOLUTION_HOLD/);
+ for(const sh of index.shards){
+  const data=rd("collection-family-"+sh.family+".v1.json");
+  for(const sl of data.slots)for(const painting of sl.reviewCollection){
+   if(painting.sourceIDs.includes("PRAYER::saints--vaneyck"))assert.equal(painting.sourcePage,lamb.link);
+   if(painting.sourceIDs.includes("PRAYER::w1-kazimirowski"))assert.equal(painting.sourcePage,mercy.link);
+  }
+ }
 });
