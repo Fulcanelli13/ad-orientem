@@ -43,6 +43,54 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-04ED0DAE5D46":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-8AFC063B0397",name:"Kościół Wniebowzięcia NMP",
+  country:"PL",addressNeedle:"Kościelna 1",placeId:null,
+  lat:50.003877,lng:18.462301,sourceRef:"osm:way:93211460",
+  sourceUrl:"https://www.openstreetmap.org/way/93211460",correctedAddress:"ul. Kościelna 1, 44-300 Wodzisław Śląski, Poland",
+  precision:"site",
+  evidence:Object.freeze(["https://www.archidiecezjakatowicka.pl/o-diecezji/parafie/37-wodzis%C5%82aw-slaski/313-wniebowziecia-najswietszej-maryi-panny-wodzislaw-slaski","https://commons.wikimedia.org/wiki/File:Ko%C5%9Bci%C3%B3%C5%82_WNMP_w_Wodzis%C5%82awiu_%C5%9Al%C4%85skim_a2.jpg"]),
+ }),
+ "RG-13C11CB31E3F":Object.freeze({
+  sourceId:"AO-B39-LOC-IT-65724603C504",name:"Oratorio di San Francesco Poverino",
+  country:"IT",addressNeedle:"Piazza Santissima Annunziata 2",placeId:null,
+  lat:43.776661,lng:11.260311,sourceRef:"independent:firenze-loggiato-san-francesco-poverino",
+  sourceUrl:"https://www.feelflorence.it/it/punti-di-interesse/oratorio-di-san-francesco-poverino",correctedAddress:"Piazza della Santissima Annunziata 2, 50122 Firenze, Italy",
+  precision:"site",reviewScope:"ORATORY_WITHIN_LOGGIA_NOT_INDEPENDENT_DOOR",
+  evidence:Object.freeze(["https://www.palazzospinelli.org/architetture/scheda.asp?ID=3207&ubicazione=annunziata","https://firenzeneidettagli.blogspot.com/2012/10/colonne-in-file-ortogonali.html","https://www.cittametropolitana.fi.it/wp-content/uploads/Elenco_Beni_FI.pdf"]),
+ }),
+ "RG-7E91D5FD0AC3":Object.freeze({
+  sourceId:"AO-B39-LOC-SK-FA51618C8159",name:"Kaplnka Svätého Michala Archanjela",
+  country:"SK",addressNeedle:"Nitra",placeId:null,
+  lat:48.31315521174904,lng:18.084892176995208,sourceRef:"osm:way:58219944",
+  sourceUrl:"https://www.openstreetmap.org/way/58219944",correctedAddress:"Kaplnka sv. Michala Archanjela, Na Vŕšku, Nitra 949 01, Slovakia",
+  precision:"site",
+  evidence:Object.freeze(["https://poi.oma.sk/w58219944","https://tripomatic.com/sk/poi/svateho-michala-archanjela-poi%3A156712"]),
+ }),
+ "RG-D2CECBA0C364":Object.freeze({
+  sourceId:"AO-B39-LOC-SK-A8267BEFF673",name:"Kostol Navštívenia Panny Márie",
+  country:"SK",addressNeedle:"Námestie SNP",placeId:null,
+  lat:48.1460325461052,lng:17.11044759831011,sourceRef:"osm:way:77918570",
+  sourceUrl:"https://www.openstreetmap.org/way/77918570",correctedAddress:"Námestie SNP 8, 811 06 Bratislava, Slovakia",
+  precision:"site",reviewScope:"HOSPITALLER_BROTHERS_CHURCH_NOT_INDEPENDENT_DIOCESAN_PARISH",
+  evidence:Object.freeze(["https://poi.oma.sk/w77918570","https://www.pamiatkynaslovensku.sk/bratislava-kostol-navstivenia-panny-marie-a-klastor-milosrdnych-bratov"]),
+ }),
+ "RG-F03B6AF4FA24":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-79F20E0188E",name:"Sint-Salviuskerk",
+  country:"NL",addressNeedle:"Limbricht",placeId:null,
+  lat:51.01252,lng:5.83907,sourceRef:"osm:way:282449190",
+  sourceUrl:"https://www.openstreetmap.org/way/282449190",correctedAddress:"Nieuwe Sint-Salviuskerk, Burgemeester Coonenplein 2, Limbricht, Netherlands",
+  precision:"site",reviewScope:"NEW_ACTIVE_PARISH_CHURCH_NOT_OLD_HISTORIC_SALVIUSKERK",
+  evidence:Object.freeze(["https://mapcarta.com/W282449190","https://commons.wikimedia.org/wiki/Category:Salviuskerk_(Limbricht)"]),
+ }),
+ "RG-CC73C2CBD613":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-D8909F2A26BE",name:"Kościół Świętego Jakuba",
+  country:"PL",addressNeedle:"plac Dominikański",placeId:null,
+  lat:50.092367,lng:18.220611,sourceRef:"commons:object-location:raciborz-saint-james",
+  sourceUrl:"https://commons.wikimedia.org/wiki/File:Ko%C5%9Bci%C3%B3%C5%82_%C5%9Bw._Jakuba_w_Raciborzu_%28wn%C4%99trze_4%29.JPG",correctedAddress:"Rynek 1 / plac Dominikański 1, 47-400 Racibórz, Poland",
+  precision:"site",reviewScope:"FILIAL_SAINT_JAMES_NOT_ASSUMPTION_PARISH_CHURCH",
+  evidence:Object.freeze(["https://farny-raciborz.pl/historia/kosciol-pw-sw-jakuba/","https://mapy.com/pl/?id=94266361&source=osm"]),
+ }),
  "RG-783CD50DD217":Object.freeze({
   sourceId:"AO-B39-LOC-PL-EA168B0ACA4A",name:"Kościół Matki Bożej Śnieżnej",country:"PL",addressNeedle:"Mikołów",placeId:null,
   lat:50.1705,lng:18.90754,sourceRef:"osm:way:169044576",sourceUrl:"https://www.openstreetmap.org/way/169044576",
@@ -623,7 +671,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:firenze-loggiato-san-francesco-poverino|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
