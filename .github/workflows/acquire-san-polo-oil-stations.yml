@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: acquire-san-polo-oils-1747
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   archive-14-oil-painting-photos:
