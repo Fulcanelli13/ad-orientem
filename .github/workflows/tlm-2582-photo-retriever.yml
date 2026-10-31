@@ -1,0 +1,38 @@
+name: TLM Atlas — 2,582-site Commons photo retriever
+on:
+  pull_request:
+    paths:
+      - "tools/directory/tlm-worldwide-photo-retriever.html"
+      - "tests/tlm-2582-photo-retriever.mjs"
+      - "tests/tlm-2582-photo-retriever-browser.mjs"
+      - ".github/workflows/tlm-2582-photo-retriever.yml"
+permissions:
+  contents: read
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/tlm-2582-photo-retriever.mjs
+  mocked-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/tlm-2582-photo-retriever-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tlm-photo-retriever-phone-mock
+          path: artifacts/tlm-worldwide-retriever/
+          if-no-files-found: warn
+          retention-days: 7
