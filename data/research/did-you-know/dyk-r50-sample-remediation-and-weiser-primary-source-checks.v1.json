@@ -279,6 +279,40 @@
         ]
       },
       "note": "Source attribution, not an independently proven Irish origin; replace generic non-claim with the account's specific chronology."
+    },
+    {
+      "id": "DYK-G365-CAL-020",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "For All Souls' Day in Puerto Rico, Weiser describes women carrying both flowers and water to distant graves because water was unavailable at the cemetery; the priest stopped to pray at each grave.",
+        "fr": "Pour la Commémoration des défunts à Porto Rico, Weiser décrit des femmes portant fleurs et eau jusqu'à des tombes éloignées, faute d'eau au cimetière ; le prêtre s'arrêtait pour prier à chaque tombe."
+      },
+      "source": {
+        "printed_pages": [
+          311
+        ],
+        "pdf_page_zero_based": [
+          328
+        ]
+      },
+      "note": "Source-specific distinctive water detail and prayer at graves, historical local scope."
+    },
+    {
+      "id": "DYK-G365-W-B-062",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "In a European Pentecost custom described by Weiser, people climbed hills at dawn to pray, calling it 'catching the Holy Ghost'—a symbolic folk expression, not a literal claim about the Holy Spirit.",
+        "fr": "Dans une coutume européenne de Pentecôte décrite par Weiser, on montait sur les collines à l'aube pour prier, parlant de « saisir le Saint-Esprit » : une expression populaire symbolique, non une affirmation littérale sur l'Esprit Saint."
+      },
+      "source": {
+        "printed_pages": [
+          253
+        ],
+        "pdf_page_zero_based": [
+          270
+        ]
+      },
+      "note": "Precise source's symbolic local name; prevent doctrinal misunderstanding."
     }
   ],
   "original_folio_direct_checks": [
@@ -467,6 +501,66 @@
       "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
       "historical_independence_verified": false,
       "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-009",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        188
+      ],
+      "pdf_page_zero_based": [
+        205
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser describes three post-Palm-Sunday days devoted to cleaning, done by Wednesday evening.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-CAL-020",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        311
+      ],
+      "pdf_page_zero_based": [
+        328
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser describes Puerto Rican All Souls cemetery flowers, transported water, priest's prayers.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-W-B-062",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        253
+      ],
+      "pdf_page_zero_based": [
+        270
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser records Pentecost dawn hill-climbing and symbolic name 'catching Holy Ghost'.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-044",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        238
+      ],
+      "pdf_page_zero_based": [
+        255
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser describes moulded Russian paska with relief crosses and Jesus Christ initials.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
     }
   ],
   "effective_roster_rules": [
@@ -481,14 +575,14 @@
     "review_eligible_effective_records": 500,
     "original_sample_unchanged_until_overlay": 50,
     "post_repair_review_sample": 50,
-    "original_source_page_checks_this_pass": 12,
-    "correction_actions": 11,
+    "original_source_page_checks_this_pass": 16,
+    "correction_actions": 13,
     "retired_glossary_records": 1,
     "specific_replacement_records": 1,
     "source_image_corroboration_independent_historiography": false,
     "legacy_612_semantic_complete": false,
     "all_50_finally_approved": false,
     "new_publications": 0,
-    "additional_weak_but_previously_unflagged_discoveries_rewritten": 5
+    "additional_weak_but_previously_unflagged_discoveries_rewritten": 7
   }
 }
