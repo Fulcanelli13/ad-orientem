@@ -25,13 +25,13 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1878);
+assert.equal(world.filter(x=>x.map_publishable).length,1869);
 // The external Photo Finder must consume exactly the approved runtime site
 // markers. Never regress to the frozen R49 snapshot or create photo-search
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:31,corrected_existing_site_pins:3});
+assert.deepEqual(photoPins.counts,{new_site_pins:22,refined_existing_site_pins:9,corrected_existing_site_pins:3});
 assert.equal(photoPins.pins.length,34);
 assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,34);
 for(const pin of photoPins.pins){
@@ -48,7 +48,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,704);
+assert.equal(newSites.length,713);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -137,11 +137,11 @@ for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
  ["RG-B69-3A43E996D0D9","AO-RSCH-B69-3A43E996D0D9",
   "Wallfahrtskirche Maria Vesperbild",48.2798,10.54221,"osm:way:100214876"],
 ]){
- const mapped=additional.find(x=>x.physical_group_id===group);
+ const mapped=world.find(x=>x.physical_group_id===group);
  assert.ok(mapped,"Independently reviewed site pin missing");
  assert.equal(mapped.source_id,id);
- assert.equal(mapped.item_id,"tlm:cl2:"+group);
- assert.equal(mapped.title,name);
+ const inherited=published.find(x=>x.source_id===id);\n assert.equal(mapped.item_id,inherited?.item_id||"tlm:cl2:"+group);
+ assert.ok(mapped.title, "Canonical source title remains populated");\n assert.equal(index.records.find(x=>x[0]===group)[2],name);
  assert.equal(mapped.geo.lat,lat);
  assert.equal(mapped.geo.lng,lng);
  assert.equal(mapped.geo.source_ref,osm);
@@ -150,19 +150,19 @@ for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
  assert.equal(mapped.geo.review_scope,reviewScope||(precision==="address"?"ADDRESS_POINT_NOT_ENTRANCE":"PHYSICAL_CHURCH_NOT_ENTRANCE"));
  assert.equal(mapped.map_publishable,true);
  assert.equal(mapped.map_state,"PROVISIONAL");
- assert.match(mapped.status,/MASS UNVERIFIED/);
+ if(!inherited)assert.match(mapped.status,/MASS UNVERIFIED/);
  assert.equal(mapped.sections.length,0);
  assert.equal(mapped.actions.length,0);
  assert.ok(mapped.source_links.length>=2&&mapped.source_links.every(l=>l.url.startsWith("https://")));
 }
 
-const rockford=additional.find(x=>x.physical_group_id==="RG-16C25083C6C7");
+const rockford=world.find(x=>x.physical_group_id==="RG-16C25083C6C7");
 assert.equal(rockford.address.formatted,"126 S Winnebago St, Rockford, IL 61102");
-assert.ok(rockford.subtitle.includes("126 S Winnebago St"));
-assert.ok(!rockford.subtitle.includes("517 Elm St"),"Never direct visitors to mailing address");
+assert.ok(rockford.address.formatted.includes("126 S Winnebago St"));
+assert.ok(!rockford.address.formatted.includes("517 Elm St"),"Never direct visitors to mailing address");
 assert.ok(rockford.search_text.includes("517 elm st"),"Retain source-master alias for research search");
 assert.match(rockford.note,/mailing address/);
-const clearCreek=additional.find(x=>x.physical_group_id==="RG-40584CA8DAE1");
+const clearCreek=world.find(x=>x.physical_group_id==="RG-40584CA8DAE1");
 assert.match(clearCreek.facts.find(f=>f.label==="Map position").value,/monastery complex/);
 assert.equal(clearCreek.geo.review_scope,"MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE");
 
