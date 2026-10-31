@@ -144,6 +144,53 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  min-height:44px;
 }
 #aoPray435930 .aoClaudeHolyFoot span{color:var(--liturgical,#6fae7e)}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLatinText{
+ border-bottom:1px solid var(--liturgical-border,#3a3228);
+ padding:0 0 8px;margin:0 0 12px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLatinText .aoP435930EssentialBeat{
+ font-size:.9em;font-style:italic;color:var(--hc-ink2);
+}
+#aoPray435930 .aoClaudeHolyAa{
+ min-width:44px;min-height:44px;flex:0 0 auto;
+ border:0;background:transparent;
+ font:italic 17px/1 var(--ao-font-liturgical,Georgia,serif);
+ color:var(--text,#ede4d3);
+}
+#aoPray435930 .aoClaudeHolyAa[aria-expanded="true"]{
+ color:var(--liturgical,#6fae7e);
+}
+#aoPray435930 .aoClaudeHolyAaMenu{
+ position:relative;z-index:20;
+ padding:11px 14px;max-width:640px;margin:0 auto 6px;
+ background:var(--surface-1,#18150f);
+ border-bottom:3px double var(--rubric-red,#d4705f);
+ color:var(--text,#ede4d3);
+}
+#aoPray435930 .aoClaudeHolyAaMenu[hidden]{display:none!important}
+#aoPray435930 .aoClaudeHolyAaMenu small{
+ display:block;font:400 14px/1.3 var(--ao-font-display,Georgia,serif);
+ color:var(--muted,#bfb4a1);margin-bottom:6px;
+}
+#aoPray435930 .aoClaudeHolyLanguageChoices{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+#aoPray435930 .aoClaudeHolyLanguageChoices button{
+ min-height:40px;padding:7px 11px;background:transparent;color:var(--text,#ede4d3);
+ border:0;border-bottom:1px solid var(--liturgical-border,#3a3228);
+ font:400 15px/1.2 var(--ao-font-liturgical,Georgia,serif);
+}
+#aoPray435930 .aoClaudeHolyLanguageChoices button[aria-pressed="true"]{
+ border-bottom-color:var(--liturgical,#6fae7e);
+ color:var(--liturgical,#6fae7e);
+}
+#aoPray435930 .aoClaudeHolySource{
+ display:block;text-align:right;
+ color:var(--muted,#bfb4a1);
+ font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoP435930LibraryReader:has(.aoClaudeHolyCard) .aoP435930Meta,
+#aoPray435930 .aoP435930LibraryReader:has(.aoClaudeHolyCard) .aoP435930GuideInfo{
+ display:none!important;
+}
 @media(max-width:359px){
  #aoPray435930 .aoClaudeHolyCaseHead h2{font-size:24px}
  #aoPray435930 .aoClaudeHolyCasePlate{height:60px}
