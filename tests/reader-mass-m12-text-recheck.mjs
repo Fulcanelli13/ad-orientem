@@ -43,11 +43,39 @@ assert.equal(matrix.schema,"ao-mass-music-m12-celebrant-and-special-rite-gaps-v1
 assert.equal(matrix.publication,"RESEARCH_HOLD");
 assert.equal(matrix.summary.families,19);
 assert.deepEqual(matrix.summary.statusCounts,{
- M05_SOURCE_CANDIDATE:6,SOURCE_SCORE_REQUIRED:11,
- SILENT_NOT_SUNG:1,M05_PARTIAL_CANDIDATE:1
+ M05_SOURCE_CANDIDATE:6,SOURCE_SCORE_REQUIRED:8,
+ SILENT_NOT_SUNG:1,M05_PARTIAL_CANDIDATE:1,
+ M12_SOURCE_CANDIDATE:2,M12_PARTIAL_SOURCE_CANDIDATE:1
 });
 assert.equal(new Set(matrix.families.map(x=>x.id)).size,19);
 const m05scores=new Map(m05.scores.map(x=>[x.id,x]));
+const m12=read("data/research/mass-music-m12-new-1961-score-leads.v1.json");
+assert.equal(m12.schema,"ao-mass-music-m12-retrieved-1961-score-leads-v1");
+assert.equal(m12.records.length,4);
+assert.deepEqual(m12.records.map(x=>x.gregobaseId),[832,2901,4490,4488]);
+assert.equal(new Set(m12.records.map(x=>x.gregobaseId)).size,4);
+const m12scores=new Map(m12.records.map(x=>[x.id,x]));
+const requiredTexts={
+ DISMISSAL_ITE_REGULAR_VIII:["Ite missa est","Deo gratias"],
+ DISMISSAL_BENEDICAMUS_VIII:["Benedicamus Domino","Deo gratias"],
+ GOSPEL_GREETING_AND_TITLE:["Dominus vobiscum","Et cum spiritu tuo",
+  "Sequentia sancti Evangelii secundum Matthaeum","Gloria tibi Domine"]
+};
+for(const s of m12.records){
+ assert.equal(s.sourceUrl,"https://gregobase.selapa.net/chant.php?id="+s.gregobaseId);
+ assert.equal(s.gabcUrl,
+  "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id="+s.gregobaseId);
+ assert.ok(s.sourceBookFolio.includes("1961"));
+ assert.equal(s.directGabcTextInspected,true);
+ assert.equal(s.notationCopiedIntoRepository,false);
+ assert.equal(s.printed1961NeumesCompared,false);
+ assert.equal(s.actual1962SelectedMassVerified,false);
+ assert.equal(s.userApproved,false);
+ assert.equal(s.publicReader,false);
+ if(requiredTexts[s.id])assert.deepEqual(s.sourceLatinPhrases,requiredTexts[s.id]);
+}
+assert.equal(m12.records.find(x=>x.gregobaseId===4490).coverage,
+ "PARTIAL_GOSPEL_PROCLAMATION_MISSING");
 for(const f of matrix.families){
  assert.equal(f.sourceTextOnly,true);
  assert.equal(f.notAnObservedPerformance,true);
@@ -58,6 +86,12 @@ for(const f of matrix.families){
   const known=m05scores.get(f.existingM05Id);
   assert.ok(known,"Missing M05 identity "+f.existingM05Id);
   assert.equal(known.renderApproved,false);
+ }else if(f.existingM12Id){
+  const lead=m12scores.get(f.existingM12Id);
+  assert.ok(lead,"Missing M12 score lead "+f.existingM12Id);
+  assert.equal(lead.userApproved,false);
+  assert.equal(lead.publicReader,false);
+  assert.ok(["M12_SOURCE_CANDIDATE","M12_PARTIAL_SOURCE_CANDIDATE"].includes(f.status));
  }else assert.ok(["SOURCE_SCORE_REQUIRED","SILENT_NOT_SUNG"].includes(f.status));
 }
 const secret=matrix.families.filter(f=>f.id==="SECRET_PRAYER_BODY");
@@ -72,6 +106,9 @@ for(const id of ["ITE_MISSA_EST_REGULAR","ITE_MISSA_EST_EASTER_DOUBLE",
 assert.equal(matrix.families.find(f=>f.id==="ITE_MISSA_EST_EASTER_DOUBLE").existingM05Id,
  "DISMISSAL_ITE_I");
 assert.ok(Object.values(matrix.holds).every(v=>v===false));
+assert.equal(matrix.families.filter(f=>f.existingM12Id).length,3);
+assert.equal(matrix.families.find(f=>f.id==="GOSPEL_PROCLAMATION").status,
+ "M12_PARTIAL_SOURCE_CANDIDATE");
 const schola=readFileSync(new URL("../src/mass/reader-schola-event-timeline.js",import.meta.url),"utf8");
 assert.doesNotMatch(schola,/reader-m12-text-recheck/);
 console.log("PASS M12 15 residuals, 12 archived score identities, 6/3/6 text spans, 19 rubric-correct research gaps");
