@@ -12,6 +12,9 @@ assert.equal(candidates.context.remainingEditorialGaps,approved.global.editorial
 assert.equal(candidates.context.remainingEditorialGaps,68);
 assert.equal(candidates.context.newlyApproved,0);
 assert.equal(candidates.context.productionClearedImages,0);
+assert.equal(candidates.context.sourceCandidateFilesLocated,14);
+assert.equal(candidates.context.etchingAlternatives,7);
+assert.equal(candidates.entries.filter(x=>x.altCandidates[0].institutionalObjectVerifiedExact).length,1);
 for(const row of candidates.entries){
  assert.ok(original.slots.some(x=>x.slot_id===row.editorialSlot));
  assert.equal(row.editorial.status,"NEW_CANDIDATE_NOT_USER_APPROVED");
@@ -26,6 +29,17 @@ for(const row of candidates.entries){
  assert.equal(row.publication.ready,false);
  assert.equal(row.publication.assetUrl,null);
  assert.equal(row.publication.runtimeDisplayEnabled,false);
+ assert.equal(row.altCandidates?.length,1);
+ const alt=row.altCandidates[0];
+ assert.equal(alt.medium,"etching on paper");
+ assert.equal(alt.approvedByUser,false);
+ assert.equal(alt.editorialApprovalRequired,true);
+ assert.equal(alt.photoNativeQAComplete,false);
+ assert.equal(alt.publicationReady,false);
+ assert.equal(alt.assetUrl,null);
+ assert.ok(alt.width>=2500&&alt.height>=3900);
+ assert.ok(alt.exactImageFilePage.startsWith("https://commons.wikimedia.org/wiki/File:Print"));
+
  assert.ok(row.file.width>0&&row.file.height>0);
  assert.ok(row.file.commonsPage.startsWith("https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_"));
 }
@@ -37,4 +51,4 @@ assert.equal(blessing.currentCarryover,"PRAYER::adoration--primary");
 assert.equal(blessing.publicationAllowed,false);
 const therese=candidates.guardrails.find(x=>x.id==="THERESA_PHOTOGRAPH_REUSE");
 assert.equal(therese.publicationAllowed,false);
-console.log("PASS seven stations exact-source research: 7 public-domain-mark claims, 0 approvals, 0 publishable photos, 68 unchanged editorial gaps.");
+console.log("PASS seven Stations: 14 researched oil/etching sources, 7 precise scenes, zero new approvals or publication, 68 editorial gaps unchanged.");
