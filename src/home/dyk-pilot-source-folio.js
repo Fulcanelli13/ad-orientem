@@ -58,7 +58,11 @@ const CSS=".aoDykSourceShade{position:fixed;inset:0;z-index:2147483620;backgroun
 ".aoDykSourceScope{font:13px/1.5 system-ui,sans-serif;color:var(--ao-text-secondary,#ccb894)}"+
 "@media(min-width:720px){.aoDykSourceShade{align-items:center;padding:20px}.aoDykSourceCard{border-radius:18px}}";
 export function dykPilotSourceFolioMarkup(model){
-  if(!model?.reviewOnly||!model?.linkedToR34||!safeUrl(model.sourceUrl))return "";
+  if(!model?.reviewOnly||!model?.linkedToR34||!safeUrl(model.sourceUrl)||
+     !safeUrl(model.sourcePageUrl)||
+     !model.sourcePageUrl.startsWith(model.sourceUrl+"#page=")||
+     !Number.isInteger(model.sourcePage)||model.sourcePage<1||model.sourcePage>5000||
+     model.sourcePageUrl!==model.sourceUrl+"#page="+model.sourcePage)return "";
   const fr=model.language==="fr";
   return '<style>'+CSS+'</style>'+
     '<div class="aoDykSourceShade" data-dyk-source-shade>'+
