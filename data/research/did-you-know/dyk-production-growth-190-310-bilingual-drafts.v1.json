@@ -6591,5 +6591,26 @@
         "publication_authorized": false
       }
     }
-  ]
+  ],
+  "crossbank_screen": {
+    "source_bank": "PRIVATE_612_EXISTING_DISCOVERY_PREVIEWS",
+    "checked_on": "2026-10-31",
+    "screened_new_bilingual_drafts": 121,
+    "exact_normalized_english_collision_count": 0,
+    "exact_normalized_french_collision_count": 0,
+    "exact_source_record_id_collision_count": 0,
+    "public_private_previews_copied": false,
+    "manual_semantic_review_deferred_until_milestone_500": true,
+    "status": "EXACT_IDENTITY_AND_TEXT_CHECK_ONLY_NOT_SEMANTIC_CLEARANCE"
+  },
+  "milestone_status": {
+    "target": 500,
+    "baseline_source_review": 189,
+    "new_bilingual_drafts": 121,
+    "total_bilingual_drafts": 310,
+    "remaining": 190,
+    "approved_for_publication": 0,
+    "main_h7_public_rotation_unchanged": true,
+    "human_review_deferred_by_user_until_500": true
+  }
 }
