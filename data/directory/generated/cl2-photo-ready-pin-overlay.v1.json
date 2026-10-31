@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 58,
+    "new_site_pins": 59,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -777,6 +777,17 @@
       "source_ref": "osm:way:256582212",
       "source_url": "https://www.openstreetmap.org/way/256582212",
       "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-1EDB76F4B57B",
+      "source_id": "AO-B38-LOC-ES-61C6D5A95E5",
+      "name": "Iglesia del Salvador",
+      "lat": 39.85656,
+      "lng": -4.02675,
+      "source_ref": "osm:way:113958010",
+      "source_url": "https://www.openstreetmap.org/way/113958010",
+      "review_scope": "TOLEDO_MOSQUE_CHURCH_NOT_TALAVERA_OR_MADRIDEJOS",
       "place_id": null
     }
   ]
