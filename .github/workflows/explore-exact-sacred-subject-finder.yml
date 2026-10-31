@@ -10,6 +10,8 @@ on:
       - "tests/explore-exact-sacred-subject-finder-20261031.mjs"
       - "data/geography/research/sacred-atlas-chat-photo-decisions-round1-20261031.v1.json"
       - "tests/explore-sacred-atlas-round1-decisions-20261031.mjs"
+      - "data/geography/research/sacred-atlas-round1-commons-rights-triage-20261031.v1.json"
+      - "tests/explore-sacred-atlas-round1-rights-triage-20261031.mjs"
       - "tests/explore-exact-sacred-subject-finder-browser-20261031.mjs"
       - ".github/workflows/explore-exact-sacred-subject-finder.yml"
   workflow_dispatch:
@@ -28,6 +30,7 @@ jobs:
           node-version: 22
       - run: node tests/explore-exact-sacred-subject-finder-20261031.mjs
       - run: node tests/explore-sacred-atlas-round1-decisions-20261031.mjs
+      - run: node tests/explore-sacred-atlas-round1-rights-triage-20261031.mjs
 
   exact-subject-browser:
     runs-on: ubuntu-latest
