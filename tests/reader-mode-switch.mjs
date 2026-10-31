@@ -314,7 +314,7 @@ for(const locale of ["en","fr"]){
    "Source B013/preparatory foot rites must not reappear in the Introit page");
  assert.equal(first.blocks[0].firstParagraphIndex,0);
  assert.ok(first.paragraphs.length>0 && first.paragraphs.some(p=>
-   (p.sourceCueIds??[]).some(id=>/^AO\\.SM\\.C004[23]$/.test(id))),
+   (p.sourceCueIds??[]).some(id=>id==="AO.SM.C0042"||id==="AO.SM.C0043")),
    "The actual selected Proper Introit lost its source paragraph");
  assert.equal(entered.previousCard(first.sectionId),null,
    "Back from the Introit must not open omitted foot prayers");
