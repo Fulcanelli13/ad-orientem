@@ -1,0 +1,71 @@
+{
+  "schema": "AO_DIOCESAN_PHYSICAL_SITE_COORDINATE_BLOCKERS_V1",
+  "as_of": "2026-10-31",
+  "scope": "Four remaining physical sites in frozen CL2 exact-Diocesan source-label cohort; source label is not an independently certified ownership claim",
+  "total_source_labelled": 584,
+  "mapped_on_review_branch": 580,
+  "blocked_without_coordinates": 4,
+  "photo_search_policy": "BLOCK photographs until correct building identity and independently sourced site coordinates are established; no inferred town, street, adjacent memorial or parent church substitutes",
+  "items": [
+    {
+      "physical_group_id": "RG-40C164A0B0B7",
+      "source_id": "AO-B39-LOC-PL-608672B6E8BF",
+      "name": "Kościół Świętego Jana Pawła II",
+      "country": "PL",
+      "site": "Dyrdy, ul. ks. Jana Antosza 1, Woźniki",
+      "status": "HOLD_CHURCH_BUILDING_NOT_INDEPENDENTLY_GEOLOCATED",
+      "known_reference": "Papal oak alongside the church at 50.574894,18.985690",
+      "not_acceptable_as_pin": "The adjacent papal oak is not the exact church building; the 1875 Marian chapel on Piaskowa is a different worship site",
+      "evidence": [
+        "https://odtur.pl/atrakcje/wozniki-dab-papieski-w-dyrdach-47183.html",
+        "https://diecezja.gliwice.pl/parafia/430",
+        "https://www.dyrdytrydencka.pl/",
+        "https://www.tradycja.org/index.php/dokumenty/mszeswiete"
+      ]
+    },
+    {
+      "physical_group_id": "RG-5EE981E628B6",
+      "source_id": "AO-B33-L-BR-6A30E534C9C3",
+      "name": "Capela da Santa Casa de Santo Amaro",
+      "country": "BR",
+      "site": "Avenida Adolfo Pinheiro 235, Santo Amaro, São Paulo, SP",
+      "status": "HOLD_PRECISE_CHAPEL_GEO_NOT_CORROBORATED",
+      "known_reference": "Diocese and independent building history agree on street address; map point not yet source-certified",
+      "not_acceptable_as_pin": "Do not substitute the geographically separate diocesan parish at Rua Artur Nascimento Júnior 95, nor the metro station beside the chapel",
+      "evidence": [
+        "https://diocesedesantoamaro.org.br/paroquias-da-diocese-de-santo-amaro/paroquia-rainha-santa-isabel-de-portugal/",
+        "https://www.descubrasampa.com.br/2021/04/capela-da-santa-casa-de-misericordia-de-santo-amaro.html",
+        "https://www.waze.com/live-map/directions/br/sp/capela-da-santa-casa-de-santo-amaro?to=place.ChIJ5WYP2BVRzpQRPVRu5ueHx4E"
+      ]
+    },
+    {
+      "physical_group_id": "RG-615FF6835AAE",
+      "source_id": "AO-B39-LOC-SK-FDC2361FC9C5",
+      "name": "Kaplnka Svätej Terézie z Lisieux",
+      "country": "SK",
+      "site": "Komenského, Poprad (unconfirmed)",
+      "status": "HOLD_SOURCE_CITY_CONFLICT",
+      "known_reference": "LatinMassDirectory says Poprad and Komenského but attributes the venue to Trnava and links Farnosť Beckov",
+      "not_acceptable_as_pin": "Do not substitute different St Thérèse chapels in Vyšné Hágy, Hranovnica, Prievidza or other Slovak localities before identity reconciliation",
+      "evidence": [
+        "https://www.latinmassdir.org/venue/kaplnka-svatej-terezie-z-lisieux-poprad-slovakia/",
+        "https://farabeckov.sk/farske-oznamy/"
+      ]
+    },
+    {
+      "physical_group_id": "RG-CF40DBEAD235",
+      "source_id": "AO-B39-LOC-PL-8CC811C5D8CD",
+      "name": "Kaplica Świętej Barbary przy parafii Świętego Krzyża",
+      "country": "PL",
+      "site": "ul. Jaskółcza 35, Zabrze, Poland",
+      "status": "HOLD_DISTINCT_CHAPEL_FOOTPRINT_NOT_IDENTIFIED",
+      "known_reference": "Parish Holy Cross church is separately listed at Jaskółcza 37; historical St Barbara chapel is associated with the parish site",
+      "not_acceptable_as_pin": "Do not substitute Holy Cross church's building pin or its Jaskółcza 37 postal coordinate for the Saint Barbara chapel",
+      "evidence": [
+        "https://www.tradycja.org/index.php/dokumenty/mszeswiete",
+        "https://miastozabrze.pl/miasto/miasto/obiekty-sakralne/",
+        "https://www.dioblina.eu/Kosciol_Krzyza_Swietego_Zabrze"
+      ]
+    }
+  ]
+}
