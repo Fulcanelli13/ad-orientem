@@ -132,6 +132,31 @@ assert.equal(batch5.rows[0].principalId,map.get("2026-08-12").observedPrincipalI
 assert.deepEqual(map.get("2026-08-12").additionalAcceptedSourceLeads.map(x=>x.sourceCardId),["walters:18326","rijks:200110753"]);
 assert.equal(map.get("2026-08-12").linkedCatalogueArt.length,0,"No false 383 identity");
 for(const w of batch5.rows[0].works){assert.equal(w.photoReleaseCertified,false);assert.equal(w.rotationEligible,false);assert.equal(w.editorialApprovalForFeast,false);assert.equal(w.canonicalArtworkId,null);}
+
+const partial6=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-partial-groups-existing-archive-batch6.v1.json",import.meta.url),"utf8"));
+assert.equal(partial6.counts.classIIISanctoralDatePartsNew,3);
+assert.equal(partial6.counts.completeFeastDateNew,0);
+assert.equal(partial6.counts.classIIISanctoralCompleteUnmatchedStill,78);
+assert.deepEqual(partial6.rows.map(x=>x.date),["2026-01-22","2026-07-10","2026-07-28"]);
+assert.deepEqual(partial6.rows.map(x=>x.works.length),[1,1,2]);
+for(const row of partial6.rows){
+  const observed=map.get(row.date);
+  assert.equal(row.principalId,observed.observedPrincipalId);
+  assert.equal(row.strictFullFeastMatch,false);
+  assert.equal(row.subjectIdentityVerified,false);
+  assert.equal(observed.partialGroupFeastFullMatch,false);
+  assert.equal(observed.linkedCatalogueArt.length,0);
+  assert.ok(!observed.additionalAcceptedSourceLeads?.length);
+  assert.ok(!observed.additionalLegacyNamedFileLeads?.length);
+  for(const w of row.works){assert.equal(w.photoReleaseCertified,false);assert.equal(w.rotationEligible,false);}
+}
+assert.equal(map.get("2026-01-22").partialOrExcludedAcceptedSourceLeads[0].sourceCardId,"met:435847");
+assert.equal(map.get("2026-07-10").partialGroupLegacyNamedFileLeads[0].historicalFile,"File:SevenBrothers.jpg");
+assert.equal(map.get("2026-07-28").partialGroupLegacyNamedFileLeads.length,2);
+assert.ok(map.get("2026-07-10").partialOrExcludedAcceptedSourceLeads.some(x=>x.sourceCardId==="commons:29858581"));
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,53,"partial feasts must not inflate complete matches");
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,78);
+
 const everyArt=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json",import.meta.url),"utf8"));
 assert.equal(everyArt.counts.canonicalArtworkIds,383);
 assert.equal(everyArt.counts.canonicalIdsLinkedAnyClass,178);
