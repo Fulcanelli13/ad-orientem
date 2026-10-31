@@ -23,10 +23,10 @@ for(const p of keeps.placements){
  assert.equal(p.publicationAllowed,false);
 }
 assert.ok(keeps.placements.some(x=>x.slot==="STG-pray.angelus-03"&&x.note.includes("evening")));
-assert.equal(keeps.global.editoriallyCovered,160+14+18+7);
+assert.equal(keeps.global.editoriallyCovered,160+15+18+7);
 assert.equal(keeps.global.editoriallyUncovered,267-keeps.global.editoriallyCovered);
 assert.equal(keeps.global.contextualProposalsNotApproved,38);
 assert.equal(keeps.global.certifiedPhotos,0);
 assert.equal(keeps.policy.onlyPDOrCC0NativePhotoAllowed,true);
 assert.equal(keeps.policy.noNewApproval,true);
-console.log(JSON.stringify({result:"PASS",sourceKept:keeps.sourceKeepCount,sourceRejected:keeps.sourcePlacementRejectionCount,additionalPreviouslyApprovedSlots:7,editoriallyCovered:199,gaps:68,certifiedPhotoFiles:0},null,2));
+console.log(JSON.stringify({result:"PASS",sourceKept:keeps.sourceKeepCount,sourceRejected:keeps.sourcePlacementRejectionCount,additionalPreviouslyApprovedSlots:7,editoriallyCovered:200,gaps:67,certifiedPhotoFiles:0},null,2));
