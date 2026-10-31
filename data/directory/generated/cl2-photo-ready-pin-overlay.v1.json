@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 33,
+    "new_site_pins": 37,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -502,6 +502,50 @@
       "source_ref": "kirchbau:50267",
       "source_url": "https://www.kirchbau.de/300_datenblatt.php?id=50267&name=keiner",
       "review_scope": "CHURCH_SITE_NOT_SPECIFIC_SIDE_ALTAR",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-2CFE11950F95",
+      "source_id": "AO-B38-LOC-BE-68ECD274D85",
+      "name": "Église Saint-Sauveur",
+      "lat": 50.62438,
+      "lng": 5.39712,
+      "source_ref": "osm:way:369175503",
+      "source_url": "https://www.openstreetmap.org/way/369175503",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-4E6E8B55676B",
+      "source_id": "AO-B39-LOC-PL-08241A64B37C",
+      "name": "Kościół Świętego Bartłomieja Stary",
+      "lat": 50.31106,
+      "lng": 18.66963,
+      "source_ref": "osm:way:266470146",
+      "source_url": "https://www.openstreetmap.org/way/266470146",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-EE22A08568B9",
+      "source_id": "AO-B38-LOC-ES-539E5EDAC4B",
+      "name": "Sant Jordi de Vallcarca",
+      "lat": 41.41319,
+      "lng": 2.1441,
+      "source_ref": "osm:way:233311642",
+      "source_url": "https://www.openstreetmap.org/way/233311642",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-48A5E9F09178",
+      "source_id": "AO-B39-LOC-PL-2622F5C3F4E5",
+      "name": "Kościół Opatrzności Bożej",
+      "lat": 52.755082,
+      "lng": 18.255326,
+      "source_ref": "odtur:8550",
+      "source_url": "https://odtur.pl/atrakcje/inowroclaw-kosciol-pw-opatrznosci-bozej-8550.html",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
       "place_id": null
     }
   ]
