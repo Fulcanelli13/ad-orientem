@@ -1,0 +1,65 @@
+{
+  "schema": "ao-mass-music-m07-2026-bounded-selected-text-evidence-v1",
+  "sourceArchive": {
+    "branch": "feature/chant-score-pilot-20261026",
+    "path": "data/mass/chant-corpus/gr1961-342-selected-proper-2026-ci-observations.v1.json",
+    "blobSha": "cb48a330ba5caf036a4601efbb9d7b541c04a1c3"
+  },
+  "status": "BOUNDED_2026_SELECTED_CALENDAR_MASS_TEXT_ONLY",
+  "scope": {
+    "year": 2026,
+    "datesChecked": 365,
+    "daysSourceReady": 365,
+    "dayResolverFailures": 0,
+    "distinctTextMatchedCandidateIds": 3,
+    "sourceMatchOccurrences": 4,
+    "datesWithMatches": 3,
+    "ambiguousVariantOccurrences": 0,
+    "candidateIdsNotObservedInSweep": 339,
+    "musicalFacsimileApprovals": 0,
+    "editorialPromotions": 0
+  },
+  "matches": [
+    {
+      "id": "GREGOBASE-195",
+      "trackId": "OFFERTORY",
+      "date": "2026-09-14",
+      "properSource": "Sancti/09-14",
+      "properSourceBlobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792",
+      "textStatus": "SELECTED_1962_TEXT_EVIDENCE",
+      "musicalApproval": false,
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-346",
+      "trackId": "COMMUNION",
+      "date": "2026-09-14",
+      "properSource": "Sancti/09-14",
+      "properSourceBlobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792",
+      "textStatus": "SELECTED_1962_TEXT_EVIDENCE",
+      "musicalApproval": false,
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-389",
+      "trackId": "INTROIT",
+      "date": "2026-10-04",
+      "properSource": "Tempora/Pent19-0",
+      "properSourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3",
+      "textStatus": "SELECTED_1962_TEXT_EVIDENCE",
+      "musicalApproval": false,
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-389",
+      "trackId": "INTROIT",
+      "date": "2026-10-05",
+      "properSource": "Tempora/Pent19-0",
+      "properSourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3",
+      "textStatus": "SELECTED_1962_TEXT_EVIDENCE",
+      "musicalApproval": false,
+      "editorialApproval": false
+    }
+  ],
+  "note": "These are 3 distinct text-matched GABC candidates across 4 selected calendar-Mass occurrences; never treat 339 unobserved IDs as disqualified or infer other dates/commemorations/votives."
+}
