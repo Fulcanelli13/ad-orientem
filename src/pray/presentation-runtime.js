@@ -3156,16 +3156,9 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
   const chapters=mercyChapters(steps,{french:isFr()});
   const current=chapters.findIndex(x=>MERCY.step>=x.start&&MERCY.step<x.start+x.entries.length);
-  installSequentialDevotionalReader({
-   mount:m,kind:'mercy',chapters,activeIndex:Math.max(0,current),
-   restoreStep:MERCY.step,paragraphSelector:'.aoMercyLine',
-   onNavigate:(i,chapter)=>{
-    MERCY.step=chapter.start;render();
-    // A bead change is enough; do not interrupt recitation with a chapter cinematic.
-   },
-   onFocus:paragraph=>{
-    const i=Number(paragraph.dataset.aoMercyStep);
-    if(!Number.isInteger(i)||i===MERCY.step)return;
+  const focusMercyParagraph=paragraph=>{
+    const i=Number(paragraph?.dataset.aoMercyStep);
+    if(!Number.isInteger(i)||i<0||i>=steps.length||i===MERCY.step)return;
     MERCY.step=i;
     m.querySelectorAll('.aoMercyPrayer').forEach(el=>el.classList.remove('aoMercyPrayer'));
     paragraph.classList.add('aoMercyPrayer');
@@ -3176,9 +3169,24 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
       const crown=m.querySelector('[data-ao-f07-crown]');
       if(crown)crown.outerHTML=renderMercyF07Crown(steps,i,{french:isFr()});
     }
-
-   }
+  };
+  installSequentialDevotionalReader({
+   mount:m,kind:'mercy',chapters,activeIndex:Math.max(0,current),
+   restoreStep:MERCY.step,paragraphSelector:'.aoMercyLine',
+   onNavigate:(i,chapter)=>{
+    MERCY.step=chapter.start;render();
+    // A bead change is enough; do not interrupt recitation with a chapter cinematic.
+   },
+   onFocus:focusMercyParagraph
   });
+  // A short final chapter may fit entirely within the reader without a scroll
+  // event. A direct tap focuses the exact existing prayer paragraph.
+  if(CHAPLET_F07_PILOT_ENABLED){
+   m.querySelector('.aoMercyReader .aoDevoCardScroll')?.addEventListener('click',e=>{
+    const paragraph=e.target.closest('.aoMercyLine[data-ao-mercy-step]');
+    if(paragraph)focusMercyParagraph(paragraph);
+   });
+  }
  });
 }
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
