@@ -1,5 +1,17 @@
 # Ad Orientem 2026 Sacred Art — Four-class progress and exact matching-gap register
 
+## Selected Class I painting originals — identity recovery Batch 3
+
+The earlier report's **28 selected Class I subjects without a 383-catalogue ID remain 28 canonical ID gaps**, but many now have accession-level original research. The added B05/B11/B17/B18/B21 crosswalk records **14 selected-painting/source relationships across 13 Class I dates**. For **11 dates**, an original museum/auction physical work is identified in the prior research, including **nine of the 28 outside-gallery IDs**.
+
+Identified among those nine: Kramskoi *Christ in the Wilderness* (Tretyakov 651); Caravaggio *Taking of Christ* (National Gallery of Ireland L.14702); approved Easter Vigil illustration objects Tissot *God Creating the World* (Morgan 1976.22:1, institutional photo rights blocked) and John Martin *Destruction of Pharaoh's Host* (Getty 2018.45, CC0 source route); Bouguereau *Holy Women at the Tomb* (KMSKA 1580); Henry Ossawa Tanner *Nicodemus* (1900.1); John Bridges *Peter's Wife's Mother* (1978.29); Benson *Salvator Mundi* (Christie's 2019 lot 4; auction photo rights hold); Saraceni *Paradise* (Met 1971.93, CC0 route); and Willmann *Family of Jesus Christ* (MNWr VIII-2328, photo rights hold). The number of object relations is greater than dates because the Easter Vigil has two distinct approved prophecy illustrations.
+
+Two further accession-verified choices are Raphael's *Transfiguration* (Vatican inv. 4) and Champaigne's preferred *La Petite Cène* (Louvre INV 1125). The latter common photographed source includes a visible gilt frame and is not eligible to be used uncropped. **All Souls' Carracci remains an original-object orientation/accession and photo-resolution HOLD**; Andrea Sacchi's approved St John Nativity still lacks independently confirmed physical accession. No image was released.
+
+Class I source-object links are stored in `data/calendar/sacred-art-2026-classi-selected-museum-object-match-batch3.v1.json`. The 28 outside-gallery records are still not auto-merged with the 383 canonical artwork IDs.
+
+---
+
 ## Matching progress — 31 October accepted-source Batch 1 + museum alternatives Batch 2
 
 The original four-class 383-art catalogue scorecard below remains a **strict 383-only comparison**. We have now independently reconciled a second, newer `856`-source accepted-image intake. This discovers **12 previously unlinked Class III dates** with **17 exact saint/subject source cards**, not previously counted as date identities in the 383 catalogue. **No new photo or feast selection was approved.**
