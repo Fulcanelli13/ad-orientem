@@ -663,5 +663,47 @@
       "publishable": false,
       "published": false
     }
-  ]
+  ],
+  "alternative_candidates": [
+    {
+      "for_round1_number": 20,
+      "site": "place:FR:notre-dame-la-salette-fallavaux",
+      "candidate": "File:Sanctuaire de Notre-Dame de La Salette - Statue 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Sanctuaire_de_Notre-Dame_de_La_Salette_-_Statue_02.jpg",
+      "photographer": "Tylwyth Eldar",
+      "photographer_license": "CC BY-SA 4.0",
+      "original_width": 3008,
+      "original_height": 2000,
+      "grounding": "Commons author describes actual Sanctuary of Our Lady of La Salette (Isère), 2 August 2018; image shows outdoor devotional statuary.",
+      "status": "VALID_SITE_ALTERNATIVE_UNAPPROVED",
+      "artwork_rights_verified": false,
+      "identity_match_to_user_original_preview": false,
+      "publication_approved": false,
+      "reason": "Previous CC0 photograph depicted La Rabatelière in Vendée, not original La Salette sanctuary. Replacement needs the user's visual approval."
+    },
+    {
+      "for_round1_number": 19,
+      "site": "place:BE:banneux",
+      "candidate": null,
+      "source_page": "https://commons.wikimedia.org/wiki/File:20140202_banneux15.JPG",
+      "photographer": "Jean Housen",
+      "photographer_license": "CC BY-SA 3.0",
+      "grounding": "This is Saint Michael chapel at the Banneux sanctuary, NOT the apparition chapel approved in the user preview.",
+      "status": "REJECT_ALTERNATIVE_WRONG_SUBSITE",
+      "publication_approved": false,
+      "reason": "Do not substitute another chapel within same grounds for exact Chapel of the Virgin of the Poor."
+    },
+    {
+      "for_round1_number": 5,
+      "site": "place:PT:fatima-sanctuary",
+      "candidate": null,
+      "source_page": "https://www.fatima.pt/pt/multimedia/images/nossa-senhora-do-rosario-de-fatima",
+      "photographer": null,
+      "photographer_license": null,
+      "status": "OFFICIAL_GALLERY_LICENSE_REQUIRED_DO_NOT_DOWNLOAD",
+      "publication_approved": false,
+      "reason": "Official sanctuary expressly states reuse of its image gallery requires licensing. Independently Commons-licensed works must remain legally distinct from official-gallery photos."
+    }
+  ],
+  "note": "Current triage: 18 independently named contemporary photo file pages, 1 undated historic postcard, 1 demonstrably wrong-site sculpture. All 20 original user KEEP votes stand; the new La Salette file is only a proposed substitute."
 }
