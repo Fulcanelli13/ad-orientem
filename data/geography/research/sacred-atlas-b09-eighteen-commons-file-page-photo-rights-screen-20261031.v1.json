@@ -1,0 +1,507 @@
+{
+  "schema": "AO_SACRED_ATLAS_B09_18_COMMONS_METADATA_QA_V1",
+  "date": "2026-10-31",
+  "scope": "RESEARCH_FILE_PAGE_LICENCE_AND_DIMENSIONS_ONLY_NO_ACCEPTANCE",
+  "source_pr": 2150,
+  "source_files": [
+    "data/geography/research/sacred-atlas-source-first-b07-100-previously-unreferenced-20261031.v1.json",
+    "data/geography/research/sacred-atlas-source-first-b08-remainder-49-pilgrimage-sites-20261031.v1.json"
+  ],
+  "count": 18,
+  "site_count": 13,
+  "counts_by_status": {
+    "METADATA_REVIEW_VISUAL_PENDING": 12,
+    "RESEARCH_ONLY_REPLACE_LOW_RES": 3,
+    "RESEARCH_ONLY_UPSCALED_SOURCE_HOLD": 1,
+    "CONDITIONAL_MEDIUM_RES_VISUAL_PENDING": 2
+  },
+  "license_declarations": {
+    "CC-BY-SA-4.0": 8,
+    "CC-BY-3.0": 1,
+    "CC-BY-SA-3.0": 4,
+    "CC-BY-SA-2.0": 1,
+    "PD-US-LOC-MATSON-NO-KNOWN-RESTRICTIONS": 1,
+    "CC0-1.0": 1,
+    "CC-BY-4.0": 1,
+    "PD-RELEASE-BY-PHOTOGRAPHER": 1
+  },
+  "policy": [
+    "All eighteen Commons pages were opened, their on-page licence/PD declarations read; checks of copyright ownership and underlying image/statue/heritage restrictions are NOT completed.",
+    "Reported pixels are from Commons file descriptions, not a visual full-resolution sharpness validation.",
+    "Reject candidate from hero shortlist if sub-1200 pixels on short side; allow research reuse only, with replacement requested.",
+    "Special case: LOC Matson upload is upscaled from 746x1024, therefore not eligible as a genuinely high-resolution original.",
+    "Do not merge distinct relics, images, processional replicas or protected works.",
+    "No user KEEP/Find another/Not relevant decisions are changed. No licensed photograph is automatically user-approved.",
+    "No assets downloaded or published; no contacts, permissions requests or payments."
+  ],
+  "original_photographic_candidates": [
+    {
+      "site_id": "place:DE:kevelaer-kerzenkapelle",
+      "original_subject_id": "subject:source-first-b07:place:DE:kevelaer-kerzenkapelle",
+      "original_subject_summary": "The historic Candle Chapel (Kerzenkapelle) of Kevelaer, built 1643–1645 as first pilgrimage church, with devotional candles/votive interior. The original image of Mary is in SEPARATE Gnadenkapelle.",
+      "source_batch": "B07",
+      "file_title": "File:Kevelaer, Kerzenkapelle -- 2014 -- 00711.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Kevelaer,_Kerzenkapelle_--_2014_--_00711.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 2885,
+        "height": 3854
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": "Dietmar Rabich",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Exact Candle Chapel architectural candidate; do not substitute Gnadenkapelle Marian icon.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:DE:kevelaer-kerzenkapelle",
+      "original_subject_id": "subject:source-first-b07:place:DE:kevelaer-kerzenkapelle",
+      "original_subject_summary": "The historic Candle Chapel (Kerzenkapelle) of Kevelaer, built 1643–1645 as first pilgrimage church, with devotional candles/votive interior. The original image of Mary is in SEPARATE Gnadenkapelle.",
+      "source_batch": "B07",
+      "file_title": "File:Kerzenkapelle Kevelaer.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Kerzenkapelle_Kevelaer.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 4596,
+        "height": 3380
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": "Mabit1",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Exact Candle Chapel altar interior; furnishings and crop still need inspection.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:ES:covadonga-santa-cueva",
+      "original_subject_id": "subject:source-first-b07:place:ES:covadonga-santa-cueva",
+      "original_subject_summary": "La Santina (Virgin of Covadonga) 16th-century Madonna-and-Child statue in the Holy Cave; surviving devotional image replaced older one destroyed by fire in 1777.",
+      "source_batch": "B07",
+      "file_title": "File:Altar de la Virgen de Covadonga (Santuario de Covadonga).jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Altar_de_la_Virgen_de_Covadonga_(Santuario_de_Covadonga).jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 3035,
+        "height": 4046
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": "Jl FilpoC",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Santa Cueva altar photo; visual verification of original statue and framing required.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "original_subject_id": "subject:source-first-b07:place:ES:basilica-nuestra-senora-atocha-madrid",
+      "original_subject_summary": "Original 13th-century polychromed wooden Virgen de Atocha, seated Madonna with Christ Child on left knee, about 76 cm; exposed wood or clothed states differ.",
+      "source_batch": "B07",
+      "file_title": "File:Virgen-de-atocha-madrid-1.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Virgen-de-atocha-madrid-1.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 3000,
+        "height": 4000
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-3.0",
+        "attribution_as_displayed": "Frayangelico",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Dominican custody is stated; verify image is original statue, not replica.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:IT:santuario-madonna-san-luca-bologna",
+      "original_subject_id": "subject:source-first-b07:place:IT:santuario-madonna-san-luca-bologna",
+      "original_subject_summary": "Original Madonna di San Luca Hodegetria icon of Mother and Child in the sanctuary above Bologna, with venerable 12th–13th-century painted surface.",
+      "source_batch": "B07",
+      "file_title": "File:The icon of the Madonna di San Luca, Bologna.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:The_icon_of_the_Madonna_di_San_Luca,_Bologna.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 812,
+        "height": 812
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-3.0",
+        "attribution_as_displayed": "Ввласенко",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "RESEARCH_ONLY_REPLACE_LOW_RES",
+      "screening_reason": "812-square image inadequate for high-quality hero. Find stronger authentic original-icon source.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:PH:basilica-our-lady-penafrancia-naga",
+      "original_subject_id": "subject:source-first-b07:place:PH:basilica-our-lady-penafrancia-naga",
+      "original_subject_summary": "Devotional image of Our Lady of Peñafrancia in Naga, distinct from its original historic parish church (Old Shrine) and later Basilica.",
+      "source_batch": "B07",
+      "file_title": "File:Peñafrancia Original Image.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Pe%C3%B1afrancia_Original_Image.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 400,
+        "height": 600
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-3.0",
+        "attribution_as_displayed": "Interaksyon",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "RESEARCH_ONLY_REPLACE_LOW_RES",
+      "screening_reason": "400x600; explicit file caption identifies original image but not acceptable hero resolution.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:ES:ermita-virgen-rocio-almonte",
+      "original_subject_id": "subject:source-first-b07:place:ES:ermita-virgen-rocio-almonte",
+      "original_subject_summary": "Venerated original dressed Virgin of Rocío and Child (Pastorcito) in the Almonte Rocío hermitage; processional and historical display locations can change.",
+      "source_batch": "B07",
+      "file_title": "File:Virgen del Rocío 01.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Virgen_del_Roc%C3%ADo_01.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 4000,
+        "height": 3000
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": "CarlosVdeHabsburgo",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "2023 image at Almonte hermitage; visual confirm original vs vestment changes and crop.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:PS:basilica-agony-gethsemane",
+      "original_subject_id": "subject:source-first-b07:place:PS:basilica-agony-gethsemane",
+      "original_subject_summary": "Exposed bare Rock of the Agony at the foot of the high altar of the Basilica of the Agony, Gethsemane; distinct from the outside Rock of the Apostles.",
+      "source_batch": "B07",
+      "file_title": "File:Basilica of Gethsemane - Altar and bedrock.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Basilica_of_Gethsemane_-_Altar_and_bedrock.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 2912,
+        "height": 4368
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-2.0",
+        "attribution_as_displayed": "Svetlana Grechkina",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Flickr upload via bot with documented 2013 CC licence snapshot; verify rock prominence and image detail.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:PS:basilica-agony-gethsemane",
+      "original_subject_id": "subject:source-first-b07:place:PS:basilica-agony-gethsemane",
+      "original_subject_summary": "Exposed bare Rock of the Agony at the foot of the high altar of the Basilica of the Agony, Gethsemane; distinct from the outside Rock of the Apostles.",
+      "source_batch": "B07",
+      "file_title": "File:The Basilica of Gethsemane (i.e., Church of All Nations or Church of the Agony). Int(erior), altar on 'Rock of Agony'. LOC matpc.02539.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:The_Basilica_of_Gethsemane_(i.e.,_Church_of_All_Nations_or_Church_of_the_Agony)._Int(erior),_altar_on_%27Rock_of_Agony%27._LOC_matpc.02539.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 4756,
+        "height": 6526
+      },
+      "commons_page_declaration": {
+        "photographic_license": "PD-US-LOC-MATSON-NO-KNOWN-RESTRICTIONS",
+        "attribution_as_displayed": "G. Eric and Edith Matson Photograph Collection",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "RESEARCH_ONLY_UPSCALED_SOURCE_HOLD",
+      "screening_reason": "4756x6526 upload explicitly enlarged from 746x1024; do not count as native high-resolution; non-US jurisdiction rights also need review.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:PH:baclaran-national-shrine-perpetual-help",
+      "original_subject_id": "subject:source-first-b07:place:PH:baclaran-national-shrine-perpetual-help",
+      "original_subject_summary": "Baclaran's own venerated image of Our Mother of Perpetual Help, transferred through Germany, Ireland and Australia before reaching Baclaran in 1906, over the sanctuary's main altar—not identical to the historic fifteenth-century Roman original.",
+      "source_batch": "B07",
+      "file_title": "File:Nuestra Señora del Perpetuo Socorro de Baclaran, 2024.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Nuestra_Se%C3%B1ora_del_Perpetuo_Socorro_de_Baclaran,_2024.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 1636,
+        "height": 1861
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC0-1.0",
+        "attribution_as_displayed": "Ihavearidiculousname",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "CONDITIONAL_MEDIUM_RES_VISUAL_PENDING",
+      "screening_reason": "1636x1861; 2024 icon taken down from altar; local Baclaran original, not Roman icon. Check photo sharpness.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:PH:baclaran-national-shrine-perpetual-help",
+      "original_subject_id": "subject:source-first-b07:place:PH:baclaran-national-shrine-perpetual-help",
+      "original_subject_summary": "Baclaran's own venerated image of Our Mother of Perpetual Help, transferred through Germany, Ireland and Australia before reaching Baclaran in 1906, over the sanctuary's main altar—not identical to the historic fifteenth-century Roman original.",
+      "source_batch": "B07",
+      "file_title": "File:Our Mother of Perpetual Help closeup 2023-06-14.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Our_Mother_of_Perpetual_Help_closeup_2023-06-14.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 4000,
+        "height": 3000
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": null,
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "4000x3000 close-up; verify correct local icon identity, exact crop, and image quality.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:CO:basilica-senor-milagros-buga",
+      "original_subject_id": "subject:source-first-b07:place:CO:basilica-senor-milagros-buga",
+      "original_subject_summary": "Venerated crucifix of Señor de los Milagros displayed at the Minor Basilica in Buga, distinct from processional replicas or generic exterior.",
+      "source_batch": "B07",
+      "file_title": "File:Señor de los Milagros, Buga, Valle..JPG",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Se%C3%B1or_de_los_Milagros,_Buga,_Valle..JPG",
+      "original_dimensions_reported_by_commons": {
+        "width": 1536,
+        "height": 2048
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-3.0",
+        "attribution_as_displayed": "William Sosa",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "CONDITIONAL_MEDIUM_RES_VISUAL_PENDING",
+      "screening_reason": "1536x2048; photo says crucifix in glass case behind basilica altar; visual sharpness/crop required.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:LT:trakai-visitation-basilica",
+      "original_subject_id": "subject:source-first-b07:place:LT:trakai-visitation-basilica",
+      "original_subject_summary": "Original icon painting of Mother of God of Trakai and Christ Child at Visitation Basilica, crowned in 1718 and not identical to later reproductions.",
+      "source_batch": "B07",
+      "file_title": "File:The Mother of God of Trakai.jpeg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:The_Mother_of_God_of_Trakai.jpeg",
+      "original_dimensions_reported_by_commons": {
+        "width": 926,
+        "height": 1170
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-4.0",
+        "attribution_as_displayed": "Europeana record (credited source); photographer unconfirmed",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "RESEARCH_ONLY_REPLACE_LOW_RES",
+      "screening_reason": "926x1170, not acceptable as full hero. Verify source attribution and original-work rights.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "original_subject_id": "subject:source-first-b08:place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "original_subject_summary": "Original medieval Porziuncola chapel inside the dome of the vast Santa Maria degli Angeli Basilica in Assisi; physically distinct from the nearby Chapel of the Transitus and the Rose Garden.",
+      "source_batch": "B08",
+      "file_title": "File:Assisi - Porziuncola - 2024-09-24 21-02-05 001.jpeg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Assisi_-_Porziuncola_-_2024-09-24_21-02-05_001.jpeg",
+      "original_dimensions_reported_by_commons": {
+        "width": 4928,
+        "height": 3264
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": null,
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Original chapel inside Santa Maria degli Angeli; Italian heritage/depicted art restrictions require separate check.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "original_subject_id": "subject:source-first-b08:place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "original_subject_summary": "Original medieval Porziuncola chapel inside the dome of the vast Santa Maria degli Angeli Basilica in Assisi; physically distinct from the nearby Chapel of the Transitus and the Rose Garden.",
+      "source_batch": "B08",
+      "file_title": "File:Portiuncula.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Portiuncula.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 2592,
+        "height": 3872
+      },
+      "commons_page_declaration": {
+        "photographic_license": "PD-RELEASE-BY-PHOTOGRAPHER",
+        "attribution_as_displayed": "Gunnar Bach Pedersen",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "2007 2592x3872 chapel view released into public domain by photographer; check Italian heritage and pictured-art rights.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:IT:basilica-santuario-madonna-tindari",
+      "original_subject_id": "subject:source-first-b08:place:IT:basilica-santuario-madonna-tindari",
+      "original_subject_summary": "Original venerated dark-wood Madonna-and-Child statue at the Madonna Bruna sanctuary in Tindari, Sicily, with associated 'Nigra sum sed formosa' inscription.",
+      "source_batch": "B08",
+      "file_title": "File:Patti Tindari Schwarze Madonna.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Patti_Tindari_Schwarze_Madonna.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 4048,
+        "height": 3040
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-3.0",
+        "attribution_as_displayed": "Clemensfranz",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "4K original object candidate; also dual CC BY 2.5 option on Commons, still check Italian restrictions.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:IT:basilica-san-domenico-siena",
+      "original_subject_id": "subject:source-first-b08:place:IT:basilica-san-domenico-siena",
+      "original_subject_summary": "Head relic of Saint Catherine of Siena in the 1466 Chapel of Saint Catherine, within Basilica San Domenico; separate thumb relic in silver and crystal reliquary along church's right wall.",
+      "source_batch": "B08",
+      "file_title": "File:Head of Saint Catherine of Siena - San Domenico - Siena 2016 (2).jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Head_of_Saint_Catherine_of_Siena_-_San_Domenico_-_Siena_2016_(2).jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 3392,
+        "height": 5136
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": "José Luiz Bernardes Ribeiro",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Original head relic, not thumb or Rome body; photographer attribution required; Italian heritage separately unresolved.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    },
+    {
+      "site_id": "place:IT:basilica-san-domenico-siena",
+      "original_subject_id": "subject:source-first-b08:place:IT:basilica-san-domenico-siena",
+      "original_subject_summary": "Head relic of Saint Catherine of Siena in the 1466 Chapel of Saint Catherine, within Basilica San Domenico; separate thumb relic in silver and crystal reliquary along church's right wall.",
+      "source_batch": "B08",
+      "file_title": "File:Finger of Saint Catherine of Siena - San Domenico - Siena 2016.jpg",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:Finger_of_Saint_Catherine_of_Siena_-_San_Domenico_-_Siena_2016.jpg",
+      "original_dimensions_reported_by_commons": {
+        "width": 3456,
+        "height": 5184
+      },
+      "commons_page_declaration": {
+        "photographic_license": "CC-BY-SA-4.0",
+        "attribution_as_displayed": "José Luiz Bernardes Ribeiro",
+        "checked_on": "2026-10-31",
+        "checked_by": "file_page_read",
+        "not_independent_legal_certification": true
+      },
+      "screening_status": "METADATA_REVIEW_VISUAL_PENDING",
+      "screening_reason": "Separate thumb/finger reliquary lead, not alternative photo of head; do not merge identities.",
+      "full_resolution_visual_qa": "NOT_DONE",
+      "underlying_artwork_heritage_rights": "NOT_CLEARED",
+      "user_editorial_approval": false,
+      "photo_downloaded": false,
+      "publication_permitted": false
+    }
+  ]
+}
