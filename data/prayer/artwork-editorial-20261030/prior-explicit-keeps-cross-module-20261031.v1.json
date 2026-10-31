@@ -1,0 +1,140 @@
+{
+  "schema": "AO_PRAYER_PREVIOUS_KEEP_CROSS_MODULE_RECONCILIATION_V1",
+  "date": "2026-10-31",
+  "source": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+  "sourceDecisionCount": 117,
+  "sourceKeepCount": 47,
+  "sourcePlacementRejectionCount": 51,
+  "policy": {
+    "noNewApproval": true,
+    "onlyExplicitKeeps": true,
+    "scopeLimitedToApprovedContext": true,
+    "doNotOverrideFinalHeroLocks": true,
+    "noPhotoPublished": true,
+    "onlyPDOrCC0NativePhotoAllowed": true,
+    "costEUR": 0
+  },
+  "master": "Ad_Orientem_Art_Matching_Map_2026-10-31_FINAL.xlsx",
+  "baseline": {
+    "canonicalEditorialSlots": 267,
+    "noneditorialMasterPositions": 8,
+    "historicApprovedSlots": 162,
+    "currentApprovedSlots": 160,
+    "currentGaps": 107,
+    "newSafeReuseSlots": 32,
+    "contextualProposals": 38,
+    "remainingGapsAfterSafeReuse": 75,
+    "newUnpublishedRelationships": 118,
+    "rules": 72,
+    "productionClearedImages": 0,
+    "tiers": {
+      "EXACT_SCENE": 14,
+      "DEVOTIONAL_SUBJECT": 18,
+      "CONTEXTUAL_REVIEW": 38,
+      "RESEARCH_REQUIRED": 1,
+      "PROTECTED_LOCK": 1
+    }
+  },
+  "additionalSlotCount": 7,
+  "global": {
+    "canonicalSlots": 267,
+    "activePriorApproved": 160,
+    "exactSceneReuse": 14,
+    "devotionalSubjectReuse": 18,
+    "additionalExplicitKeepSlots": 7,
+    "editoriallyCovered": 199,
+    "editoriallyUncovered": 68,
+    "contextualProposalsNotApproved": 38,
+    "certifiedPhotos": 0
+  },
+  "placements": [
+    {
+      "slot": "COV-daily.morning",
+      "reviewModule": "morning",
+      "originalReviewArtworkIds": [
+        "morning--primary"
+      ],
+      "userStatus": "KEEP",
+      "note": "Morning hero kept in October 28 review",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    },
+    {
+      "slot": "COV-daily.evening",
+      "reviewModule": "evening",
+      "originalReviewArtworkIds": [
+        "evening--primary",
+        "morning--millet-angelus",
+        "confession--latour-magdalen"
+      ],
+      "userStatus": "KEEP",
+      "note": "Three explicit Evening keeps; includes the Angelus painting",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    },
+    {
+      "slot": "COV-daily.nightly_examen",
+      "reviewModule": "examen",
+      "originalReviewArtworkIds": [
+        "confession--primary",
+        "confession--latour-magdalen"
+      ],
+      "userStatus": "KEEP",
+      "note": "Two explicit Examen keeps",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.forty_hours",
+      "reviewModule": "forty-hours",
+      "originalReviewArtworkIds": [
+        "adoration--primary"
+      ],
+      "userStatus": "KEEP",
+      "note": "Ingres kept for Forty Hours; frame/crop hold",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "reviewModule": "communion",
+      "originalReviewArtworkIds": [
+        "w2-franceschini",
+        "w4-ricci"
+      ],
+      "userStatus": "KEEP",
+      "note": "Both accepted; no Ugolino substitution",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    },
+    {
+      "slot": "COV-prayer.hymns",
+      "reviewModule": "hymns",
+      "originalReviewArtworkIds": [
+        "historic:peter paul rubens:assumption of the virgin"
+      ],
+      "userStatus": "KEEP",
+      "note": "Explicit user keep in Hymns",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.angelus-03",
+      "reviewModule": "evening",
+      "originalReviewArtworkIds": [
+        "morning--millet-angelus"
+      ],
+      "userStatus": "KEEP",
+      "note": "Explicit user note: also perfect for evening Angelus",
+      "license": "NOT_VERIFIED_PD_CC0",
+      "photoQuality": "NOT_VERIFIED",
+      "publicationAllowed": false
+    }
+  ]
+}
