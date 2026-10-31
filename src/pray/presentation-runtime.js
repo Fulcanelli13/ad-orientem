@@ -2306,6 +2306,20 @@ function onPrayTouchEnd(e){
  horizontalStep(dx<0?1:-1);
 }
 function captureResume(){return {view,familyId,navStack:[...navStack],prayerReturnView,prayerId}}
+// A safe navigation-only handoff for app Back. Confession, the independent
+// Rosary donor and external Novena/traditional readers are NOT recoverable
+// through this private-state-free surface. Their source owners remain intact.
+const SAFE_APP_BACK_VIEWS=new Set([
+ 'home','family','angelus','stations','library','prayerOnly',
+ 'benediction','mercy','fiveWounds','littleCrown','preciousBlood',
+ 'penitential','litany','sevenWords','rosaryMethods','josephSeven',
+ 'priests','occasionals','montfort'
+]);
+function captureAppBackHandoff(){
+ const r=document.getElementById(ROOT_ID);
+ if(!r?.classList?.contains('open')||!SAFE_APP_BACK_VIEWS.has(view))return null;
+ return captureResume();
+}
 function restoreHandoff(snapshot){if(!snapshot||typeof snapshot.view!=="string")return false;externalResume=null;return reopenResume(snapshot)}
 function reopenResume(snapshot){
  if(!snapshot)return false;
@@ -3867,7 +3881,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={restoreHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={restoreHandoff,captureAppBackHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
