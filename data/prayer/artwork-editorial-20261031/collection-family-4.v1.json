@@ -13,7 +13,9 @@
     "excludedDoNotSuggest": 13,
     "candidatesWithExplicitNoPublicationGate": 195,
     "sourceLinksRecoveredByExactID": 15,
-    "sourceLinkSuggestionsUnverified": 0
+    "sourceLinkSuggestionsUnverified": 0,
+    "museumDocumentedAnonymousPlacements": 3,
+    "unknownPainterOriginalIdentityOpen": 0
   },
   "slots": [
     {
@@ -1759,7 +1761,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
         },
         {
           "sourceIDs": [
@@ -3579,7 +3589,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
         },
         {
           "sourceIDs": [
@@ -4050,7 +4068,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter; possibly Italy, Florence, late 16th century or later",
+            "officialObject": "https://www.clevelandart.org/art/1915.407",
+            "sourceObjectAccession": "1915.407",
+            "artistNotKnown": true,
+            "medium": "oil on canvas"
+          }
         }
       ],
       "currentEditorialSummary": "CANDIDATE_RESEARCH_ONLY",
