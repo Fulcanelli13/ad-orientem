@@ -27,7 +27,8 @@ label{font-size:12px;color:#c5d0ce}
 input,select{background:#0b141d;color:var(--text);border:1px solid #52606a;border-radius:8px;padding:11px;min-height:43px;min-width:0}
 button{border:1px solid #6a6658;border-radius:8px;padding:11px 15px;min-height:44px;background:#1b2c37;color:var(--text)}
 button.primary{background:var(--gold);color:#14202a;border-color:var(--gold);font-weight:700}
-button.secondary{border-color:#537b78;color:#cce9e3}.running{color:var(--teal)}
+button.secondary{border-color:#537b78;color:#cce9e3}
+.restoreBtn{cursor:pointer;display:inline-flex;align-items:center;border:1px solid #537b78;color:#cce9e3;background:#1b2c37;border-radius:8px;padding:11px 15px;min-height:44px;margin:0;font-size:13px}.running{color:var(--teal)}
 .status{min-height:20px;margin-top:15px;font-size:13px;color:#d1dbe0;line-height:1.5}
 .progress{width:100%;height:10px;background:#24333c;border-radius:9px;overflow:hidden;margin-top:12px}
 .progress div{height:100%;width:0;background:linear-gradient(90deg,#649f95,#d7bb83);transition:width .25s}
@@ -71,14 +72,15 @@ footer{color:#a8b4b8;font-size:12px;line-height:1.6;padding:24px 0 35px}
 </div>
 <section class="panel">
 <h2>Retrieve the entire collection</h2>
-<p class="descr">Enter an email to identify requests to Wikimedia, as in the original TLM Church Photo Finder. The single action validates the 68 pinned sources, searches for the remaining 179 subjects and then builds a ZIP of eligible photo candidates with full source metadata. If Commons returns HTTP 429, work stops, preserves progress and can be resumed. Nothing is automatically published.</p>
+<p class="descr"><strong>Already downloaded a 247-target JSON report?</strong> Import it below, then choose <strong>Download found photos (ZIP)</strong>. This recovers the existing 63 Commons candidates without repeating the 179 earlier searches. For unresolved sacred objects, <strong>Retrieve all</strong> runs a second, narrower Commons discovery pass and exports another research ZIP. A Wikimedia HTTP 429 stops safely. Nothing is automatically published.</p>
 <div class="actions">
 <div class="control"><label for="contact">Contact email for Wikimedia requests</label><input type="email" id="contact" autocomplete="email" placeholder="you@example.com" required></div>
 <div class="control"><label for="size">Photo download size</label><select id="size"><option value="1600">1600 px — recommended</option><option value="1200">1200 px — smaller ZIP</option><option value="2000">2000 px — larger images</option></select></div>
 <button id="start" class="primary">Retrieve all 247 targets + ZIP</button>
 <button id="pause" class="secondary" disabled>Stop safely</button>
-<button id="zip" class="secondary">Export currently retrieved ZIP</button>
+<button id="zip" class="secondary">Download found photos (ZIP)</button>
 <button id="report">Export full research JSON</button>
+<label for="restore" class="restoreBtn">Import your previous 247-target report<input id="restore" type="file" accept=".json,application/json" hidden></label>
 </div>
 <div class="progress" role="progressbar" aria-label="Research progress" aria-valuemin="0" aria-valuemax="247" aria-valuenow="0" id="bar"><div id="barFill"></div></div>
 <div class="status" id="status" role="status" aria-live="polite">Ready. Existing source names and all user KEEP decisions are preserved.</div>
@@ -119,7 +121,7 @@ const selected=new Map(I.map(x=>[x.id,x]));
 const strip=s=>String(s||"").replace(/<[^>]*>/g," ").replace(/&(?:amp|quot|nbsp|lt|gt);/g," ").replace(/\s+/g," ").trim();
 function save(){try{localStorage.setItem(STORAGE,JSON.stringify(cached))}catch{status("Local browser storage is full; export JSON to preserve the work.")}}
 function status(s){$("status").textContent=s}
-function count(){const done=I.filter(x=>cached[x.id]?.stage==="PINNED_CHECKED"||cached[x.id]?.stage==="DISCOVERED"||cached[x.id]?.stage==="NO_SAFE_LEAD").length;
+function count(){const done=I.filter(x=>cached[x.id]?.stage==="PINNED_CHECKED"||cached[x.id]?.stage==="DISCOVERED"||(["NO_SAFE_LEAD","REVIEW_LEADS"].includes(cached[x.id]?.stage)&&cached[x.id]?.search_version===2)).length;
  $("countProgress").textContent=done;$("countUnsolved").textContent=I.filter(x=>!x.pinned&&!cached[x.id]?.candidate).length;
  $("barFill").style.width=(100*done/I.length).toFixed(1)+"%";$("bar").setAttribute("aria-valuenow",done);
  return done}
@@ -136,7 +138,7 @@ function relevance(x,title){const words=[...new Set(textNorm(x.title+" "+x.site)
 }
 function pageToCandidate(p,x,origin){const v=p.imageinfo?.[0],m=v?.extmetadata||{};if(!v)return null;
  const lic=strip(m.LicenseShortName?.value),url=strip(m.LicenseUrl?.value),author=strip(m.Artist?.value||m.Attribution?.value||m.Credit?.value);
- const eligible=allowed(lic,url)&&author.length>0&&v.width>=1200&&v.height>=700&&/^image\/(jpeg|png|webp)$/.test(v.mime||"")&&/^[a-f0-9]{40}$/.test(v.sha1||"");
+ const eligible=allowed(lic,url)&&author.length>0&&Math.min(v.width,v.height)>=700&&Math.max(v.width,v.height)>=1100&&/^image\/(jpeg|png|webp)$/.test(v.mime||"")&&/^[a-f0-9]{40}$/.test(v.sha1||"");
  return {title:p.title,page:srcTitle(p.title),original:v.url,thumb:v.thumburl||v.url,sha1:v.sha1,
  author,lic,licurl:url,width:v.width,height:v.height,mime:v.mime,score:relevance(x,p.title),eligible,origin,source_identity_verified:false,underlying_rights_cleared:false,publication_approved:false};
 }
@@ -181,27 +183,52 @@ async function verifyPinned(email){
   status("Pinned-source verification: "+Math.min(start+12,records.length)+"/"+records.length+" exact Commons files checked");
  }
 }
+// Earlier v1 search used all of the shrine and subject words as an AND query;
+// it returned zero eligible photo leads for all 179 unresolved subjects. V2 uses
+// two bounded, shorter object-specific Commons queries and retains candidates
+// for visual/rights review rather than treating a lexical miss as a rejection.
+function discoveryQueries(x){
+ const cleaned=x.title.replace(/\s*\([^)]*\)/g,"").replace(/\b(?:Original|Venerated|Silver|Glass|Displayed|Holy|Sacred|Shrine|Relic|Reliquary|Chap[e]?l|Statue)\b/gi," ").replace(/\s+/g," ").trim();
+ const fromSite=x.site.replace(/\s*[—–].*$/,"").replace(/^(?:Basilica|Basilique|Sanctuaire|Santuario|Chapel|Church of)\s+/i,"").trim();
+ const c=[cleaned,(cleaned.split(/\s+/).slice(0,4).join(" ")+" "+fromSite.split(/\s+/).slice(-2).join(" ")).trim()];
+ return [...new Set(c.filter(q=>q.length>4&&q.length<155))].slice(0,2);
+}
 async function discoverRemaining(email){
- const work=I.filter(x=>!x.pinned&&!["DISCOVERED","NO_SAFE_LEAD"].includes(cached[x.id]?.stage));
+ const work=I.filter(x=>!x.pinned&&!(["DISCOVERED","NO_SAFE_LEAD","REVIEW_LEADS"].includes(cached[x.id]?.stage)&&cached[x.id]?.search_version===2));
  for(let k=0;k<work.length;k++){
   if(stop)throw Error("PAUSED");
-  const x=work[k];
-  const q=(x.title+" "+x.site).slice(0,180);
+  const x=work[k],leads=new Map(),queries=discoveryQueries(x);
   try{
-   const pages=await api({generator:"search",gsrnamespace:"6",gsrsearch:q,gsrlimit:"9",gsrwhat:"text",
-    prop:"imageinfo",iiprop:"url|size|mime|sha1|extmetadata",iiurlwidth:$("size").value,
-    iiextmetadatafilter:"LicenseShortName|LicenseUrl|Artist|Attribution|Credit"},email);
-   const candidates=pages.map(p=>pageToCandidate(p,x,"NEW_UNVERIFIED_SOURCE_LEAD")).filter(c=>c&&c.eligible).sort((a,b)=>b.score-a.score);
-   const best=candidates.find(c=>c.score>=0.32);
-   mark(x,{stage:best?"DISCOVERED":"NO_SAFE_LEAD",candidate:best||null,
-     leads:candidates.slice(0,3).map(c=>({title:c.title,page:c.page,score:c.score})),
-     reason:best?"Textual and photographer licence candidate only; subject has NOT been visually matched":"No sufficiently matched Commons free-photo source from bounded search"});
+   for(const q of queries){
+    const pages=await api({generator:"search",gsrnamespace:"6",gsrsearch:q,gsrlimit:"10",gsrwhat:"text",
+      prop:"imageinfo",iiprop:"url|size|mime|sha1|extmetadata",iiurlwidth:$("size").value,
+      iiextmetadatafilter:"LicenseShortName|LicenseUrl|Artist|Attribution|Credit"},email);
+    for(const p of pages){
+     const c=pageToCandidate(p,x,"NEW_UNVERIFIED_SOURCE_LEAD_V2");
+     if(c?.eligible&&c.title&&!leads.has(c.title))leads.set(c.title,c);
+    }
+    // Two queries maximum. Don't infer physical identity merely from a title.
+    if(leads.size>=4)break;
+   }
+   const candidates=[...leads.values()].sort((a,b)=>b.score-a.score);
+   // KEEP votes protect the user-shown preview. Do not silently substitute.
+   const best=x.keep?null:candidates.find(c=>c.score>=0.32);
+   mark(x,{stage:best?"DISCOVERED":candidates.length?"REVIEW_LEADS":"NO_SAFE_LEAD",
+      candidate:best||null,search_version:2,queries,
+      leads:candidates.slice(0,6).map(c=>({title:c.title,page:c.page,author:c.author,lic:c.lic,score:c.score,
+        candidate_only:true})),
+      reason:best?"Free-photo candidate; exact object, rights and original pixels NOT confirmed":
+        candidates.length?"Free-licence Commons leads exist, but none is verified as the exact object":
+        "No suitable metadata candidate from two shorter subject-specific Commons queries. Not a copyright rejection."});
   }catch(e){
    if(String(e.message).includes("WIKIMEDIA_429")||String(e.message).includes("WIKIMEDIA_MAXLAG"))throw e;
    if(String(e.message)==="PAUSED")throw e;
-   mark(x,{stage:"SEARCH_ERROR",reason:String(e.message||e)});
+   mark(x,{stage:"SEARCH_ERROR",reason:String(e.message||e),search_version:2});
   }
-  if(k%5===0||k===work.length-1){count();render();status("Subject discovery "+(k+1)+"/"+work.length+"; records are saved locally")}
+  if(k%3===0||k===work.length-1){
+   count();render();
+   status("Improved exact-object discovery "+(k+1)+"/"+work.length+"; all finished records saved");
+  }
  }
 }
 function sanitize(s){return textNorm(s).replace(/\s+/g,"-").slice(0,72)||"unknown"}
@@ -226,24 +253,38 @@ async function exportZip(email){
  for(const x of I)if(!chosen(x)?.eligible)rejected.push([x.id,x.place,x.title,cached[x.id]?.stage||"UNSEARCHED",cached[x.id]?.reason||"No verified free-licence source metadata"]);
  for(const x of all){
   if(stop){report.errors.push("PAUSED_BY_USER");break}
-  const c=chosen(x),url=c.thumb;
-  if(!/^https:\/\/upload\.wikimedia\.org\//.test(url||"")){
-   rejected.push([x.id,x.place,x.title,"INVALID_DOWNLOAD_URL","Commons upload domain was not verified"]);continue;
+  const c=chosen(x),url=c.thumb||c.original;
+  let downloadUrl=null;
+  try{
+   downloadUrl=new URL(url);
+   if(downloadUrl.protocol!=="https:"||!["thumb.wikimedia.org","upload.wikimedia.org"].includes(downloadUrl.hostname)||
+      !downloadUrl.pathname.startsWith("/wikipedia/commons/")||downloadUrl.username||downloadUrl.password)
+     throw Error("Unexpected Wikimedia image origin");
+  }catch(e){
+   const reason="INVALID_DOWNLOAD_URL: "+String(e.message||e);
+   report.errors.push({subject:x.id,error:reason,url});
+   rejected.push([x.id,x.place,x.title,"INVALID_DOWNLOAD_URL",reason]);
+   rows.push([x.id,x.place,x.title,x.site,x.keep?"KEEP_UNCHANGED":"NO",c.title,c.page,c.sha1,c.author,c.lic,c.licurl,c.width+"x"+c.height,"","","FALSE","FALSE","FALSE",reason]);
+   continue;
   }
   if(total)await sleep(800);total++;
   status("Packaging eligible candidate photo "+total+"/"+all.length+" • "+x.title);
   let file="",hash="",err="";
   try{
-   const res=await fetch(url,{signal:AbortSignal.timeout(45000)});
+   const res=await fetch(downloadUrl.href,{signal:AbortSignal.timeout(60000)});
    if(res.status===429){rateLimit=res.headers.get("Retry-After")||"not supplied";throw Error("WIKIMEDIA_429_STOP")}
    if(!res.ok)throw Error("HTTP "+res.status);
+   const received=new URL(res.url);
+   if(!["thumb.wikimedia.org","upload.wikimedia.org"].includes(received.hostname)||received.protocol!=="https:")
+    throw Error("Wikimedia response redirected to unexpected host");
    if(Number(res.headers.get("content-length")||0)>12000000)throw Error("File exceeds 12MB limit");
    const blob=await res.blob();
    if(blob.size>12000000)throw Error("File exceeds 12MB limit");
-   if(!["image/jpeg","image/png","image/webp"].includes(blob.type))throw Error("Unsupported image MIME "+blob.type);
+   const mime=(blob.type||res.headers.get("content-type")||"").split(";")[0].toLowerCase();
+   if(!["image/jpeg","image/png","image/webp"].includes(mime))throw Error("Unsupported image MIME "+mime);
    if(bytes+blob.size>170000000)throw Error("ZIP byte budget reached (170MB)");
    const raw=await blob.arrayBuffer();hash=await sha256(raw);
-   const ext=blob.type==="image/png"?"png":blob.type==="image/webp"?"webp":"jpg";
+   const ext=mime==="image/png"?"png":mime==="image/webp"?"webp":"jpg";
    file="research_photos/"+String(x.i).padStart(3,"0")+"-"+sanitize(x.place)+"-"+sanitize(x.id.split(":").slice(-1)[0])+"."+ext;
    zip.file(file,raw);downloaded++;bytes+=blob.size;
   }catch(e){err=String(e.message||e);report.errors.push({subject:x.id,error:err});}
@@ -251,6 +292,19 @@ async function exportZip(email){
   if(err.includes("WIKIMEDIA_429")){stop=true;status("Wikimedia rate limit: download stopped. Partial ZIP can still be exported.");break}
   if(err.includes("ZIP byte budget")){status("ZIP reached 170MB budget, exporting partial collection");break}
  }
+ report.downloaded=downloaded;
+ report.attempted=total;
+ report.unavailable=all.length-downloaded;
+ const represented=new Set(rows.slice(1).map(row=>row[0]));
+ for(const x of all)if(!represented.has(x.id)){
+   const c=chosen(x);
+   const reason="NOT_ATTEMPTED_AFTER_STOP_OR_ZIP_BUDGET";
+   rejected.push([x.id,x.place,x.title,reason,"Request not sent; earlier work remains preserved"]);
+   rows.push([x.id,x.place,x.title,x.site,x.keep?"KEEP_UNCHANGED":"NO",c.title,c.page,c.sha1,c.author,c.lic,c.licurl,c.width+"x"+c.height,"","","FALSE","FALSE","FALSE",reason]);
+ }
+ report.all_candidates_accounted_for=rows.length-1===all.length;
+ report.unattempted=all.length-total-report.errors.filter(e=>e?.error?.startsWith("INVALID_DOWNLOAD_URL")).length;
+ report.note="Every eligible Commons candidate is recorded even if its image fails to download. Unresolved sources are not copyright rejections.";
  zip.file("source_attribution_and_sha256.csv",csv(rows));
  zip.file("unresolved_sources.csv",csv(rejected));
  zip.file("research_status.json",JSON.stringify(report,null,2));
@@ -258,7 +312,7 @@ async function exportZip(email){
  status("Building ZIP with "+downloaded+" downloaded candidate images and complete 247-target manifest…");
  const blob=await zip.generateAsync({type:"blob",compression:"STORE"},m=>{if(m.percent%20<1)status("Building research ZIP: "+Math.round(m.percent)+"%")});
  download("AO_Sacred_Atlas_Objects_"+downloaded+"_of_247_RESEARCH.zip",blob);
- status("ZIP generated: "+downloaded+" candidate photos and full 247-subject report. Not cleared for publication.");
+ status("ZIP generated: "+downloaded+"/"+all.length+" eligible candidate photos; "+report.errors.length+" download errors. All 247 subjects accounted for. Not cleared for publication.");
 }
 function tag(cls,txt){const e=document.createElement("span");e.className="tag "+cls;e.textContent=txt;return e}
 function render(){
@@ -296,6 +350,38 @@ $("filter").addEventListener("change",()=>{renderLimit=55;render()});
 $("more").addEventListener("click",()=>{renderLimit+=55;render()});
 $("pause").addEventListener("click",()=>{stop=true;status("Stop requested. Current finished items remain saved.")});
 $("report").addEventListener("click",exportJson);
+$("restore").addEventListener("change",async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+  const imported=JSON.parse(await file.text());
+  if(imported.schema!=="AO_SACRED_ATLAS_OBJECT_RESEARCH_EXPORT_V1"||
+     !Array.isArray(imported.records)||imported.records.length!==247)throw Error("Expected previous 247-target research JSON");
+  const byId=new Map(imported.records.map(r=>[r.id,r]));
+  if(byId.size!==247||I.some(x=>!byId.has(x.id)))throw Error("Photo target list does not match canonical 247");
+  let recovered=0;
+  for(const x of I){
+   const saved=byId.get(x.id),previous=saved?.acquisition;
+   if(!previous||typeof previous!=="object")continue;
+   if(!!saved.keep!==x.keep||saved.place!==x.place)throw Error("Prior KEEP or Place identity mismatch for "+x.id);
+   const c=previous.candidate;
+   if(c){
+    if(!c.eligible||typeof c.title!=="string"||!c.title.startsWith("File:")||
+       typeof c.sha1!=="string"||!/^[a-f0-9]{40}$/.test(c.sha1)||
+       (x.pinned&&(c.title!==x.pinned.title||c.sha1!==x.pinned.sha1))){
+      continue;
+    }
+   }
+   cached[x.id]={...previous,candidate:c?{...c,
+    source_identity_verified:false,underlying_rights_cleared:false,publication_approved:false}:null,
+    imported_from_user_report:true};
+   recovered++;
+  }
+  save();count();render();
+  status("Imported "+recovered+" of 247 saved source records. "+I.filter(x=>chosen(x)?.eligible).length+
+   " eligible Commons candidates available for corrected ZIP download. Existing KEEP decisions are preserved.");
+ }catch(error){status("Could not import previous report: "+String(error.message||error))}
+ e.target.value="";
+});
 $("zip").addEventListener("click",async()=>{if(busy)return;busy=true;stop=false;$("pause").disabled=false;
  try{await exportZip($("contact").value.trim())}finally{busy=false;$("pause").disabled=true}});
 $("start").addEventListener("click",async()=>{

@@ -31,42 +31,68 @@ try{
   assert.equal(payload.apparition_contexts.length,33);
   assert(payload.records.every(x=>!x.published&&!x.rights));
   assert(!JSON.stringify(payload).includes("testing@example.com"));
-  // Offline controlled run: all but the first source have prior checkpoints.
-  // No Commons requests and no actual image bytes are needed in this mocked test.
-  await page.evaluate(()=>{
-   const x=MASTER.items[0];
-   for(const item of MASTER.items){
-    cached[item.id]={
-     stage:item.id===x.id?"PINNED_CHECKED":item.pinned?"PINNED_CHECKED":"NO_SAFE_LEAD",
-     candidate:item.id===x.id?{
-      title:"File:Apparition Chapel with Stained Window.jpg",
-      page:"https://commons.wikimedia.org/wiki/File:Apparition_Chapel_with_Stained_Window.jpg",
-      thumb:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/mock.png",
-      sha1:item.pinned.sha1,author:"KnockShrine",lic:"CC BY-SA 4.0",
-      licurl:"https://creativecommons.org/licenses/by-sa/4.0/",width:4035,height:3163,
-      eligible:true,source_identity_verified:false,underlying_rights_cleared:false,publication_approved:false
-     }:null
+  // Regression: the earlier customer report had 59 Commons thumbnail-domain
+  // candidates plus 4 upload-domain candidates. Both approved Wikimedia
+  // serving hosts must enter the archive. Importing the report must not search.
+  const prior=JSON.parse(JSON.stringify(payload));
+  const pinned=prior.records.filter(x=>x.pinned).slice(0,2);
+  pinned.forEach((x,k)=>{
+    x.acquisition={
+      stage:"PINNED_CHECKED",
+      candidate:{
+        title:x.pinned.title,page:x.pinned.page,
+        thumb:k===0
+          ?"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/thumbnail-mock.jpg/1600px-thumbnail-mock.jpg"
+          :"https://upload.wikimedia.org/wikipedia/commons/8/8a/direct-mock.jpg",
+        original:x.pinned.original,sha1:x.pinned.sha1,
+        author:x.pinned.author,lic:x.pinned.lic,licurl:x.pinned.licurl,
+        width:x.pinned.width,height:x.pinned.height,eligible:true,
+        source_identity_verified:false,underlying_rights_cleared:false,publication_approved:false
+      }
     };
-   }
-   window.JSZip=class{
-    constructor(){this.items={}}
-    file(name,value){this.items[name]=value;return this}
-    async generateAsync(){return new Blob([JSON.stringify(Object.keys(this.items))],{type:"application/zip"})}
-   };
-   save();render();
   });
-  await page.route("https://upload.wikimedia.org/**",route=>route.fulfill({
-    status:200,contentType:"image/png",headers:{"Access-Control-Allow-Origin":"*"},
-    body:Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/v40AAAAASUVORK5CYII=","base64")
+  await page.locator("#restore").setInputFiles({
+    name:"AO_Sacred_Atlas_Object_Research_247.json",mimeType:"application/json",
+    buffer:Buffer.from(JSON.stringify(prior))
+  });
+  assert.match(await page.locator("#status").textContent(),/Imported 2 of 247 saved source records/);
+  const result=await page.evaluate(()=>({
+    titles:MASTER.items.filter(x=>chosen(x)?.eligible).map(x=>chosen(x).title),
+    keep:MASTER.items.filter(x=>x.keep).length
   }));
+  assert.equal(result.titles.length,2);
+  assert.equal(result.keep,20);
+  await page.evaluate(()=>{
+    window.JSZip=class{
+      constructor(){this.items={}}
+      file(name,value){this.items[name]=value;return this}
+      async generateAsync(){
+        return new Blob([JSON.stringify(Object.keys(this.items))],{type:"application/zip"});
+      }
+    };
+    render();
+  });
+  let imagesFetched=0;
+  const serve=route=>{
+    imagesFetched++;
+    return route.fulfill({
+      status:200,contentType:"image/png",
+      headers:{"Access-Control-Allow-Origin":"*"},
+      body:Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC0lEQVR42mP8/x8AAwMCAO+/v40AAAAASUVORK5CYII=","base64")
+    });
+  };
+  await page.route("https://upload.wikimedia.org/**",serve);
+  await page.route("https://thumb.wikimedia.org/**",serve);
   await page.locator("#contact").fill("testing@example.com");
-  const [zip]=await Promise.all([page.waitForEvent("download"),page.locator("#start").click()]);
+  const [zip]=await Promise.all([page.waitForEvent("download"),page.locator("#zip").click()]);
   const files=JSON.parse(await readFile(await zip.path(),"utf8"));
   assert(files.includes("source_attribution_and_sha256.csv"));
   assert(files.includes("unresolved_sources.csv"));
   assert(files.includes("research_status.json"));
   assert(files.some(x=>x.startsWith("research_photos/")));
-  assert.match(await page.locator("#status").textContent(),/ZIP generated: 1 candidate/);
+  assert.match(await page.locator("#status").textContent(),/ZIP generated: 2\/2 eligible candidate photos/);
+  assert.equal(imagesFetched,2,"Both Wikimedia image hosts must be downloaded");
+  assert.equal(files.filter(x=>x.startsWith("research_photos/")).length,2);
   assert.equal(errors.length,0,"Browser JS console errors");
   if(viewport.width===390)await page.screenshot({path:resolve(artifacts,"atlas-object-retriever-phone.png"),fullPage:false});
   await page.close();
