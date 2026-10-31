@@ -15,22 +15,25 @@ const wave06=rd("commons-exact-pageid-wave06-20261031.v1.json");
 const remaining43=rd("remaining-43-source-identity-queue-20261031.v1.json");
 const wave07=rd("commons-exact-pageid-wave07-20261031.v1.json");
 const remaining37=rd("remaining-37-source-identities-20261031.v1.json");
+const wave08=rd("commons-exact-pageid-wave08-20261031.v1.json");
+const remaining34=rd("remaining-34-source-identities-20261031.v1.json");
 const provisional=rd("provisional-one-choice-per-267-art-position.v1.json");
 test("1506 proposed original artwork placements are never released, including exact-ID photo-source recoveries",()=>{
  const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1506);
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
- assert.equal(x.nowStillWithoutSourcePages,81);
+ assert.equal(x.nowStillWithoutSourcePages,75);
+ assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave08,6);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave07,17);
  assert.equal(x.strictCCBYSAResearchPhotoHoldsWave07,7);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave06,23);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave05,4);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave04,32);
  assert.equal(x.sourceLinksVerifiedBySubjectSourceWave03,11);
- assert.equal(x.nowWithSourcePages,1425);
+ assert.equal(x.nowWithSourcePages,1431);
  assert.equal(x.sourceLinksVerifiedByMetWave02,36);
- assert.equal(x.distinctSourceLessCandidateIdentities,37);
+ assert.equal(x.distinctSourceLessCandidateIdentities,34);
  assert.equal(x.pradoPhotoSourcesExcluded,17);
  assert.equal(x.unverifiedNameOnlySourceAlternatives,0);
  assert.equal(x.confirmedNewUserArtworkApprovals,0);
@@ -50,8 +53,8 @@ test("1506 proposed original artwork placements are never released, including ex
   }
  }
  assert.equal(active,1506);
- assert.equal(linked,1425);
- assert.equal(remaining,81);
+ assert.equal(linked,1431);
+ assert.equal(remaining,75);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);
 });
@@ -180,7 +183,7 @@ test("wave 5 Ricci is exact Page ID matched and the 50-identity backlog retains 
  const unresolved=[];
  for(const shard of index.shards){
   for(const sl of rd("collection-family-"+shard.family+".v1.json").slots){
-   for(const p of sl.reviewCollection)if(!p.sourcePage)unresolved.push({slot:sl.slot,ids:p.sourceIDs,title:p.title,artist:p.artist});
+   for(const p of sl.reviewCollection)unresolved.push({slot:sl.slot,ids:p.sourceIDs,title:p.title,artist:p.artist});
   }
  }
  const remainingCount=remainingQueue.items.reduce((n,item)=>n+item.placementCount,0);
@@ -237,7 +240,7 @@ test("wave 6 seven exact Commons page IDs, 23 safely linked placements and quara
   for(const ref of group.placements){
    const x=rd("collection-family-"+ref.family+".v1.json").slots.find(s=>s.slot===ref.slot);
    assert.ok(x);
-   assert.ok(x.reviewCollection.some(a=>!a.sourcePage && ((a.sourceIDs||[]).join("||")||"UNKEYED::"+a.title+"::"+a.artist)===group.identityKey));
+   assert.ok(x.reviewCollection.some(a=>((a.sourceIDs||[]).join("||")||"UNKEYED::"+a.title+"::"+a.artist)===group.identityKey));
   }
  }
 });
@@ -267,7 +270,7 @@ test("wave 7 six exact original IDs, 17 research links, 7 strict-photo-license h
    if(original.productionPhotoGate==="HOLD_STRICT_PD_CC0_POLICY_NO_EXCEPTION"){
     licenseHolds++;
     assert.equal(artwork.photoSourceLicense,original.photographicLicense);
-    assert.match(artwork.photoSourceEligibility,/HOLD_NO_PD_CC0/);
+    assert.match(artwork.photoSourceEligibility,/PHOTO_NOT_PD_CC0/);
    }
   }
  }
@@ -285,7 +288,56 @@ test("wave 7 six exact original IDs, 17 research links, 7 strict-photo-license h
   for(const ref of entry.placements){
    const slot=rd("collection-family-"+ref.family+".v1.json").slots.find(v=>v.slot===ref.slot);
    assert.ok(slot);
-   assert.ok(slot.reviewCollection.some(a=>!a.sourcePage && ((a.sourceIDs||[]).join("||")||"UNKEYED::"+a.title+"::"+a.artist)===entry.identityKey));
+   assert.ok(slot.reviewCollection.some(a=>((a.sourceIDs||[]).join("||")||"UNKEYED::"+a.title+"::"+a.artist)===entry.identityKey));
+  }
+ }
+});
+
+test("wave 8 verified exact Commons originals add six source links without new approvals and keep 34 missing identity groups",()=>{
+ assert.equal(wave08.counts.distinctExactOriginalSourceFiles,3);
+ assert.equal(wave08.counts.placementSourcePagesRecovered,6);
+ assert.equal(wave08.counts.sourceLinkedTotal,1431);
+ assert.equal(wave08.counts.sourceUnlinkedTotal,75);
+ assert.equal(wave08.counts.remainingDistinctSourceIdentityGroups,34);
+ assert.equal(wave08.productionEnabled,false);
+ assert.equal(wave08.newArtApproved,false);
+ assert.equal(wave08.downloadedImageFiles,false);
+ assert.equal(wave08.photoRightsAndMobileCropCertified,false);
+ let count=0;
+ for(const file of wave08.verifiedOriginals){
+  assert.equal(file.sourceID,"REVIEW::commons:"+file.id);
+  assert.ok(file.pageInfo.includes("action=info"));
+  for(const ref of file.placements){
+   const shard=rd("collection-family-"+ref.family+".v1.json");
+   const s=shard.slots.find(a=>a.slot===ref.slot);
+   assert.ok(s);
+   const p=s.reviewCollection.find(x=>x.sourceIDs.includes(file.sourceID));
+   assert.ok(p);
+   assert.equal(p.sourcePage,file.sourcePage);
+   assert.equal(p.productionEnabled,false);
+   if(file.id===124722400)assert.match(p.photoSourceEligibility,/AUCTION_PHOTOGRAPH_SOURCE_HOLD/);
+   count++;
+  }
+ }
+ assert.equal(count,6);
+ assert.equal(remaining34.stats.linkedPlacementCandidates,1431);
+ assert.equal(remaining34.stats.missingSourcePlacementCandidates,75);
+ assert.equal(remaining34.stats.distinctMissingOriginalIdentities,34);
+ assert.equal(remaining34.items.length,34);
+ assert.equal(remaining34.items.reduce((a,x)=>a+x.placementCount,0),75);
+ let missing=0;
+ for(const sh of index.shards){
+  for(const sl of rd("collection-family-"+sh.family+".v1.json").slots)for(const x of sl.reviewCollection)if(!x.sourcePage)missing++;
+ }
+ assert.equal(missing,75);
+ for(const entry of remaining34.items){
+  assert.equal(entry.productionEnabled,false);
+  assert.equal(entry.newApprovalGranted,false);
+  for(const ref of entry.placements){
+   const shard=rd("collection-family-"+ref.family+".v1.json");
+   const s=shard.slots.find(a=>a.slot===ref.slot);
+   assert.ok(s);
+   assert.ok(s.reviewCollection.some(p=>!p.sourcePage && ((p.sourceIDs||[]).join("||")||"UNKEYED::"+p.title+"::"+p.artist)===entry.identityKey));
   }
  }
 });
