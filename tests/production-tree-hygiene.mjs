@@ -65,7 +65,8 @@ for(const name of workflows){
   }else if([
     "sacred-atlas-commons-batch.yml",
     "sacred-atlas-commons-autoselect.yml",
-    "sacred-atlas-site-cover-batch.yml"
+    "sacred-atlas-site-cover-batch.yml",
+    "sacred-atlas-site-cover-recovery.yml"
   ].includes(name)){
     // Source research only. These metadata collectors cannot approve images,
     // change app assets, write to main, or escape the one pinned research branch.
