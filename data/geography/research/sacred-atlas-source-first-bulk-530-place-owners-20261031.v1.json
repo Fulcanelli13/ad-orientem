@@ -3,10 +3,11 @@
   "as_of": "2026-10-31",
   "stats": {
     "places": 530,
-    "with_evidence": 259,
-    "without_evidence": 271,
-    "total_reference_rows": 492,
-    "nonmarian_added": 139
+    "with_evidence": 278,
+    "without_evidence": 252,
+    "total_reference_rows": 511,
+    "nonmarian_added": 139,
+    "b07_new_authoritatively_evidenced_sites": 19
   },
   "items": [
     {
@@ -265,10 +266,14 @@
       "physical_place_kind": "chapel",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:DE:kevelaer-kerzenkapelle"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -5488,10 +5493,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:IN:mount-mary-basilica-bandra"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -5530,10 +5539,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:PH:quiapo-national-shrine-jesus-nazareno"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -5642,10 +5655,14 @@
       "physical_place_kind": "chapel",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:ES:covadonga-santa-cueva"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6692,10 +6709,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:ES:basilica-nuestra-senora-atocha-madrid"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6706,10 +6727,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:FR:basilique-notre-dame-fourviere-lyon"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6720,10 +6745,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:FR:basilique-notre-dame-garde-marseille"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6748,10 +6777,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:IT:santuario-madonna-san-luca-bologna"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6762,10 +6795,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:IT:santuario-monte-berico-vicenza"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6776,10 +6813,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:MT:santwarju-madonna-mellieha"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6860,10 +6901,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:PH:basilica-our-lady-penafrancia-naga"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -6916,10 +6961,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:ES:ermita-virgen-rocio-almonte"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7014,10 +7063,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:PS:basilica-agony-gethsemane"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7042,10 +7095,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:PH:baclaran-national-shrine-perpetual-help"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7070,10 +7127,14 @@
       "physical_place_kind": "chapel",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:ES:capella-santa-cova-montserrat"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7196,10 +7257,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:CO:basilica-senor-milagros-buga"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7224,10 +7289,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:LT:trakai-visitation-basilica"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7364,10 +7433,14 @@
       "physical_place_kind": "shrine",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:PT:santuario-nossa-senhora-nazare"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
@@ -7896,10 +7969,14 @@
       "physical_place_kind": "basilica",
       "photo_site_cover_status": "DONE",
       "photo_site_cover_is_not_sacred_object_photo": true,
-      "source_first_subjects": {},
-      "source_first_record_count": 0,
+      "source_first_subjects": {
+        "b07_exact_source_identified": [
+          "subject:source-first-b07:place:ES:basilica-nuestra-senora-begona-bilbao"
+        ]
+      },
+      "source_first_record_count": 1,
       "apparition_context_ids": [],
-      "photo_object_review_stage": "NO_SACRED_SUBJECT_YET_REFERENCED",
+      "photo_object_review_stage": "B07_SOURCE_DESCRIBED_ORIGINAL_OBJECT_RIGHTS_PHOTO_REVIEW_PENDING",
       "priority": "RESEARCH_ONLY",
       "new_media_published": false
     },
