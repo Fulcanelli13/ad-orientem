@@ -1,0 +1,31 @@
+name: Sacred Atlas — source-first bulk 530-place research contracts
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "data/geography/research/sacred-atlas-source-first-bulk-master-20261031.v1.json"
+      - "data/geography/research/sacred-atlas-source-first-b02-relics-127-20261031.v1.json"
+      - "data/geography/research/sacred-atlas-source-first-b03-marian-118-20261031.v1.json"
+      - "data/geography/research/sacred-atlas-source-first-b04-guide-stops-88-20261031.v1.json"
+      - "data/geography/research/sacred-atlas-source-first-b05-precise-20-20261031.v1.json"
+      - "data/geography/research/sacred-atlas-source-first-bulk-530-place-owners-20261031.v1.json"
+      - "data/geography/research/sacred-atlas-source-first-apparition-contexts-33-20261031.v1.json"
+      - "tests/sacred-atlas-source-first-bulk-530-contract.mjs"
+      - ".github/workflows/sacred-atlas-source-first-bulk-530.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  source-first-registry-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify 530-place owner coverage and fail-closed identity/media states
+        run: node tests/sacred-atlas-source-first-bulk-530-contract.mjs
