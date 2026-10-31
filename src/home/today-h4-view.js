@@ -2,6 +2,8 @@
 // No fixture dates, Mass catalogue, art mapping, or parallel preference store.
 import { TODAY_H4_CSS } from "./today-h4-styles.js";
 import { H7_SANCTUARY_CSS } from "./h7-sanctuary-authoritative-css.js";
+import { HOME_C3_CSS } from "./c3-styles.js";
+import { c3PrayerMarkup,c3UpcomingMarkup } from "./c3-gallery.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
@@ -79,12 +81,12 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const prayerCaption=feature?.sub||say("Prayers for this day","Prières de ce jour");
   const rosaryRule=model.enricherVisible&&model.enricherRule?.kind==="static"&&model.enricherRule?.id==="rosary";
   const rosaryAttr=rosaryRule?'data-home-cu-static="rosary"':'data-home-cu-route="pray.rosary"';
-  const upcoming=(model.upcoming||[]).map(d=>'<button type="button" class="aoTodayV2Event aoTcmRow" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(d.date)+'"><span class="aoH4Eyebrow">'+esc(dateLabel(d.date,fr))+'</span><strong>'+esc(fr?d.fr:d.en)+'</strong><small>'+esc(dayOf(d.date,fr))+'</small></button>').join("");
+  const upcoming=c3UpcomingMarkup(model.upcoming||[],fr,dateLabel,dayOf);
   const spotlight=model.spotlight;
   const custom=spotlight?.article?'<button type="button" class="aoH4Custom" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(spotlight.contextDate)+'"><span class="aoH4Eyebrow">'+esc(say("Tradition","Coutume"))+'</span><strong>'+esc(spotlight.article.title[fr?"fr":"en"])+'</strong><small>'+esc(dateLabel(spotlight.contextDate,fr))+'</small></button>':"";
   const gospelSub=model.gospelReference||say("Available when the Proper resolves","Disponible après résolution du Propre");
 
-  return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'\n'+H7_SANCTUARY_CSS+'</style>'+
+  return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'\n'+H7_SANCTUARY_CSS+'\n'+HOME_C3_CSS+'</style>'+
   '<main class="homeScreen aoTodayV2 aoTodayH4 aoH7Screens lc-'+esc(litColour)+'" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
   '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Home","Retour à l’accueil"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong><button type="button" class="aoH4CalendarHelp" data-home-calendar-glossary aria-label="'+esc(say("Terms and definitions","Termes et définitions"))+'">?</button></div>'+
   '<nav class="aoH4CalendarViews" aria-label="'+esc(say("Calendar views","Vues du calendrier"))+'">'+
@@ -97,7 +99,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<div class="aoH7HomeView home">'+
   '<section class="celebrationBlock aoTodayV2Frontispiece hero aoH7Hero">'+
   '<div class="aoTodayV2Art"><div class="aoTodayV2ArtSource art" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="'+esc(say("No approved artwork","Aucune œuvre approuvée"))+'"></div></div></div>'+
-  '<div class="sh"></div><div class="top"><span class="wm">AD ORIENTEM</span>'+
+  '<div class="sh"></div><button class="aoC3Info aoC3MassInfo" type="button" data-home-c3-info="mass" hidden aria-label="'+esc(say("About this painting","À propos de ce tableau"))+'"><span>i</span></button><div class="top"><span class="wm">AD ORIENTEM</span>'+
   '<button class="ib" type="button" data-home-calendar data-home-calendar-view="picker" aria-label="'+esc(say("Calendar","Calendrier"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>'+
   '<button class="ib" type="button" data-home-settings aria-label="'+esc(say("Settings","Réglages"))+'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 5.2l2.1 2.1M16.7 16.7l2.1 2.1M5.2 18.8l2.1-2.1M16.7 7.3l2.1-2.1"/></svg></button></div>'+
   '<div class="aoTodayV2HeroActions tx"><button class="date" type="button" data-home-calendar data-home-calendar-view="picker" data-home-calendar-date="'+esc(vm.dateIso)+'"><span class="eb">'+esc(vm.isToday?say("Today","Aujourd’hui"):say("Selected","Jour choisi"))+'</span><b>'+esc(vm.dateTitle)+'</b><span aria-hidden="true">⌄</span></button>'+
@@ -110,14 +112,14 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<nav class="dateRail aoH4Week wk aoH7Week" aria-label="'+esc(say("Week","Semaine"))+'">'+week+'</nav>'+
   (coverage&&!coverage.complete?'<p class="aoH4Status" role="status">'+esc(say("Some translations are unavailable.","Certaines traductions sont indisponibles."))+'</p>':"")+
   '<section class="aoTodayV2PrayerThroughDay sec" id="ao-home-prayer-through-day" tabindex="-1"><div class="aoH4SectionHead"><h2>'+esc(say("Pray","Prier"))+'</h2><button type="button" data-home-cu-route="pray.library">'+esc(say("All prayers","Toutes les prières"))+' ›</button></div>'+
-  '<div class="aoTodayV2Zone aoTodayV2PrayNow"><button type="button" class="aoH4Prayer np" '+attrs+'><span class="aoH4PrayerGlyph" aria-hidden="true">✝</span><span class="aoH4PrayerText"><span class="aoH4Eyebrow">'+esc(nextRole)+(due?' · '+esc(due):'')+'</span><strong>'+esc(prayerTitle)+'</strong><small>'+esc(prayerCaption)+'</small></span><span aria-hidden="true">›</span></button>'+
+  '<div class="aoTodayV2Zone aoTodayV2PrayNow">'+c3PrayerMarkup({fr,feature,attrs,role:nextRole,title:prayerTitle,description:prayerCaption,due})+
   '<div class="aoH4Chips aoTodayV2PrayerShortcuts chips"><button '+rosaryAttr+' type="button">'+esc(say("Rosary","Rosaire"))+(rosaryRule?'<span class="aoH4Mine">'+esc(say("MY RULE","MA RÈGLE"))+'</span>':'')+'</button><button data-home-cu-route="pray.confession" type="button">'+esc(say("Confession","Confession"))+'</button><button data-home-cu-route="pray.adoration" type="button">'+esc(say("Adoration","Adoration"))+'</button></div></div></section>'+
   '<section class="aoTodayV2CalendarGlance"><div class="aoH4SectionHead"><h2>'+esc(say("This week","Cette semaine"))+'</h2><button type="button" data-home-calendar data-home-calendar-view="picker">'+esc(say("Calendar","Calendrier"))+' ›</button></div><div class="aoH4Upcoming aoTodayV2GlanceEvents wkc">'+upcoming+custom+'</div></section>'+
   '<section class="aoH4DiscoveryStandalone" aria-label="'+esc(say("Did you know?","Le saviez-vous ?"))+'">'+homeDidYouKnowMarkup(vm.language)+'</section>'+
   '<div class="aoTodayV2Below" data-ao-home-enricher-owner="'+HOME_ENRICHERS_VERSION+'"><section class="aoTodayV2ReadReflect"><div class="aoH4SectionHead"><h2>'+esc(say("Read","Lire"))+'</h2></div><div class="aoH4Read">'+
   '<button type="button" class="row" data-action="gospel"><span><strong>'+esc(say("Gospel of the Mass","Évangile de la messe"))+'</strong><small>'+esc(gospelSub)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>'+
   '</div></section></div><div style="height:32px"></div></div></div>'+
-  '<div class="aoH7DoorView" hidden><div class="band" style="height:150px"><div class="aoH7DoorArt art6"></div>'+
+  '<dialog class="aoC3ArtDialog" data-home-c3-art-dialog aria-label="'+esc(say("Painting information","Informations sur le tableau"))+'"><img data-c3-art-image alt=""><h2 data-c3-art-title></h2><p data-c3-art-meta></p><a data-c3-art-source href="#" target="_blank" rel="noopener noreferrer">'+esc(say("Source","Source"))+' ↗</a><div><button type="button" data-home-c3-close>'+esc(say("Close","Fermer"))+'</button></div></dialog>'+\n  '<div class="aoH7DoorView" hidden><div class="band" style="height:150px"><div class="aoH7DoorArt art6"></div>'+
   '<button type="button" class="ib back" data-home-h7-back aria-label="'+esc(say("Back","Retour"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></div>'+
   '<div class="body door"><div class="dhead"><span class="rb">'+esc([vm.weekday,vm.rank,vm.colour].filter(Boolean).join(" · "))+'</span><span class="cr">✠</span>'+
   '<h2>'+esc(vm.observedTitle)+'</h2><p class="ver">'+esc(vm.dateTitle)+'</p>'+
