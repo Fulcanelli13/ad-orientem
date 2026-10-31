@@ -33,6 +33,12 @@ assert(!missingEN.includes("aoHeritagePlaceThumb"),"No approved image means no e
 assert(missingEN.includes(noPhoto.name.replaceAll("\u0027","&#039;")),"Do not replace a full sacred Place name with abbreviated text");
 assert(!missingEN.includes("<img"),"No image means no speculative sacred image");
 assert(missingEN.includes('data-explore-expand-place'),"Same action opens the full Place sheet");
+const sourceOnly=compactHeritagePlaceSheet(vm({...noPhoto,shrines:[],counts:{}}));
+assert.match(sourceOnly,/data-approved-place-photo="no"/);
+assert(sourceOnly.includes("aoHeritageCardEmpty"),"Source-only Place should remain discoverable without placeholder art");
+assert(sourceOnly.includes('data-explore-expand-place'),"Text-only Place still opens the full source reader");
+assert(previewCss.includes(".aoHeritageCardEmpty"),"No-synopsis fallback must be placed inside the phone grid");
+
 const approvedCover=approved.find(x=>x.status==="APPROVED"&&x.rights_verified===true
   &&x.asset_path&&x.place_id);
 assert(approvedCover,"Existing approved Place media must be available for the exact-Place fixture");
