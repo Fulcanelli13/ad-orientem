@@ -140,8 +140,10 @@ for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
  const mapped=world.find(x=>x.physical_group_id===group);
  assert.ok(mapped,"Independently reviewed site pin missing");
  assert.equal(mapped.source_id,id);
- const inherited=published.find(x=>x.source_id===id);\n assert.equal(mapped.item_id,inherited?.item_id||"tlm:cl2:"+group);
- assert.ok(mapped.title, "Canonical source title remains populated");\n assert.equal(index.records.find(x=>x[0]===group)[2],name);
+ const inherited=published.find(x=>x.source_id===id);
+ assert.equal(mapped.item_id,inherited?.item_id||"tlm:cl2:"+group);
+ assert.ok(mapped.title, "Canonical source title remains populated");
+ assert.equal(index.records.find(x=>x[0]===group)[2],name);
  assert.equal(mapped.geo.lat,lat);
  assert.equal(mapped.geo.lng,lng);
  assert.equal(mapped.geo.source_ref,osm);
