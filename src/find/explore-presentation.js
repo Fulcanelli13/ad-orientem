@@ -134,9 +134,22 @@ function illustratedGuideHtml(profile,language){
  let html='<section class="aoExploreIllustratedGuide" data-explore-place-chapter="guide" aria-label="'+esc(L(language,"Pilgrimage guide","Guide du pèlerin"))+'">';
  html+='<header class="aoExploreGuideIntro"><small>'+esc(L(language,"PILGRIMAGE GUIDE","GUIDE DU PÈLERIN"))+'</small><h3>'+esc(loc(guide,"subtitle"))+'</h3><p>'+esc(loc(guide,"region"))+'</p><div class="aoExploreStoryEvidence">'+cite(guide.official_url,L(language,"Official website","Site officiel"))+'</div></header>';
 
+ // The opening folio already renders the first exact-source paragraph from
+ // this same guide. Keep its source and wording there; do not repeat it in
+ // the longer guide's first section. Never remove a different source witness.
+ let sharedOpeningRemoved=false;
+ const openingText=profile?.editorial_intro?.introduction?.[language];
+ const openingSource=profile?.editorial_intro?.source_url;
  for(const section of arr(guide.sections)){
+  const paragraphs=arr(section.paragraphs).filter(row=>{
+    if(!sharedOpeningRemoved&&openingText&&row?.[language]===openingText&&row?.source_url===openingSource){
+      sharedOpeningRemoved=true;return false;
+    }
+    return true;
+  });
+  if(!paragraphs.length)continue;
   html+='<section class="aoExploreGuideSection"><h4>'+esc(loc(section,"title"))+'</h4>';
-  for(const row of arr(section.paragraphs))html+='<article class="aoExploreGuideParagraph"><p>'+esc(row?.[language]||row?.en||"")+'</p><div class="aoExploreStoryEvidence">'+cite(row?.source_url,L(language,"Historical source","Source historique"))+'</div></article>';
+  for(const row of paragraphs)html+='<article class="aoExploreGuideParagraph"><p>'+esc(row?.[language]||row?.en||"")+'</p><div class="aoExploreStoryEvidence">'+cite(row?.source_url,L(language,"Historical source","Source historique"))+'</div></article>';
   html+='</section>';
  }
  if(arr(guide.stops).length){
