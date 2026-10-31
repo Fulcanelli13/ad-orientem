@@ -112,7 +112,9 @@ try{
       const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
       return Boolean(root)&&state?.selectedDate===date;
     },item.date,{timeout:45000});
-    const canonicalCustom=page.locator(".homeScreen #ao-calendar-modular-root .aoCalCustomArticle[data-cal-custom-id='"+item.id+"']");
+    // Day-context article is the route destination. The separate, collapsed
+    // all-year catalogue also contains the same canonical ID by design.
+    const canonicalCustom=page.locator(".homeScreen #ao-calendar-modular-root .aoCalPracticeContext .aoCalCustomArticle[data-cal-custom-id='"+item.id+"']");
     await canonicalCustom.waitFor({state:"visible",timeout:45000});
     assert.equal(await canonicalCustom.count(),1,
       "Calendar must show the exact published Customs article from H4");
