@@ -13,7 +13,8 @@
     "unique_source_ids": true,
     "manual_editorial_approval": false,
     "private_612_semantic_clearance": false,
-    "release_authorized": false
+    "release_authorized": false,
+    "semantic_vs_500_and_612_lexically_screened": true
   },
   "facts": [
     {
@@ -758,5 +759,19 @@
         ]
       }
     ]
+  },
+  "crossbank_screen": {
+    "date": "2026-10-31",
+    "status": "AUTOMATED_EN_FR_SOURCE_LEXICAL_SCREEN_NOT_MANUAL_SEMANTIC_SIGNOFF",
+    "compared_against_effective_500": true,
+    "compared_against_private_unpublished_612": true,
+    "private_preview_text_retained_in_private_repo": true,
+    "exact_id_or_source_english_french_collisions": 0,
+    "token_similarity_jaccard_at_least_0_25": 0,
+    "internal_20_token_similarity_at_least_0_25": 0,
+    "initial_four_high_overlap_candidates_revised": 4,
+    "actual_semantic_duplicates_replaced": 2,
+    "unverified_semantic_equivalence_larger_corpus_possible": true,
+    "publication_authorized": false
   }
 }
