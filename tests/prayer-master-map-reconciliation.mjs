@@ -48,5 +48,19 @@ assert.equal(lybaert.userDecision,"EXPLICIT_REJECTION_ARTISTIC_FIT");
 assert.equal(lybaert.mustNotBeSuggested,true);
 assert.equal(lybaert.mustNotBeAutomaticallyMatched,true);
 assert.equal(lybaert.licenseDoesNotOverrideRejection,true);
+const excludedArtists=new Map(ledger.editorialHardRejections.map(x=>[x.artist,x]));
+assert.equal(excludedArtists.get("El Greco")?.workFamily,"ALL_ARTWORK");
+assert.equal(excludedArtists.get("Fra Angelico")?.workFamily,"ALL_ARTWORK");
+assert.equal(excludedArtists.get("Ugolino da Siena")?.workFamily,"The Last Supper");
+for(const artist of ["El Greco","Fra Angelico","Ugolino da Siena"]){
+ assert.equal(excludedArtists.get(artist)?.mustNotBeSuggested,true);
+ assert.equal(excludedArtists.get(artist)?.licenseDoesNotOverrideRejection,true);
+}
+assert.equal(ledger.editorialExampleAudit.oldIllustrativeSlotMapRowsCorrected,78);
+assert.equal(ledger.currentCrossModuleCoverage.canonicalSlots,267);
+assert.equal(ledger.currentCrossModuleCoverage.covered,200);
+assert.equal(ledger.currentCrossModuleCoverage.gaps,67);
+assert.equal(ledger.currentCrossModuleCoverage.productionReadyNewPhotos,0);
+
 
 console.log(JSON.stringify({gate:"MASTER_275_TO_267_SOURCE_PARITY_NO_IMAGE_RELEASE",slots:rows.length,approved:c.affirmatively_approved_slots,gaps:c.zero_affirmative_slots,edges:c.approved_placement_edges,workIds:c.distinct_concrete_work_ids,extra:c.noneditorial_rows,photoReady:0},null,2));
