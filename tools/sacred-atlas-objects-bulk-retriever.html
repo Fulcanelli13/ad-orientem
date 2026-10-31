@@ -136,7 +136,7 @@ function relevance(x,title){const words=[...new Set(textNorm(x.title+" "+x.site)
 }
 function pageToCandidate(p,x,origin){const v=p.imageinfo?.[0],m=v?.extmetadata||{};if(!v)return null;
  const lic=strip(m.LicenseShortName?.value),url=strip(m.LicenseUrl?.value),author=strip(m.Artist?.value||m.Attribution?.value||m.Credit?.value);
- const eligible=allowed(lic,url)&&author.length>0&&v.width>=1200&&v.height>=700&&/^image\/(jpeg|png|webp)$/.test(v.mime||"")&&/^[a-f0-9]{40}$/.test(v.sha1||"");
+ const eligible=allowed(lic,url)&&author.length>0&&Math.min(v.width,v.height)>=700&&Math.max(v.width,v.height)>=1100&&/^image\/(jpeg|png|webp)$/.test(v.mime||"")&&/^[a-f0-9]{40}$/.test(v.sha1||"");
  return {title:p.title,page:srcTitle(p.title),original:v.url,thumb:v.thumburl||v.url,sha1:v.sha1,
  author,lic,licurl:url,width:v.width,height:v.height,mime:v.mime,score:relevance(x,p.title),eligible,origin,source_identity_verified:false,underlying_rights_cleared:false,publication_approved:false};
 }
@@ -226,24 +226,38 @@ async function exportZip(email){
  for(const x of I)if(!chosen(x)?.eligible)rejected.push([x.id,x.place,x.title,cached[x.id]?.stage||"UNSEARCHED",cached[x.id]?.reason||"No verified free-licence source metadata"]);
  for(const x of all){
   if(stop){report.errors.push("PAUSED_BY_USER");break}
-  const c=chosen(x),url=c.thumb;
-  if(!/^https:\/\/upload\.wikimedia\.org\//.test(url||"")){
-   rejected.push([x.id,x.place,x.title,"INVALID_DOWNLOAD_URL","Commons upload domain was not verified"]);continue;
+  const c=chosen(x),url=c.thumb||c.original;
+  let downloadUrl=null;
+  try{
+   downloadUrl=new URL(url);
+   if(downloadUrl.protocol!=="https:"||!["thumb.wikimedia.org","upload.wikimedia.org"].includes(downloadUrl.hostname)||
+      !downloadUrl.pathname.startsWith("/wikipedia/commons/")||downloadUrl.username||downloadUrl.password)
+     throw Error("Unexpected Wikimedia image origin");
+  }catch(e){
+   const reason="INVALID_DOWNLOAD_URL: "+String(e.message||e);
+   report.errors.push({subject:x.id,error:reason,url});
+   rejected.push([x.id,x.place,x.title,"INVALID_DOWNLOAD_URL",reason]);
+   rows.push([x.id,x.place,x.title,x.site,x.keep?"KEEP_UNCHANGED":"NO",c.title,c.page,c.sha1,c.author,c.lic,c.licurl,c.width+"x"+c.height,"","","FALSE","FALSE","FALSE",reason]);
+   continue;
   }
   if(total)await sleep(800);total++;
   status("Packaging eligible candidate photo "+total+"/"+all.length+" • "+x.title);
   let file="",hash="",err="";
   try{
-   const res=await fetch(url,{signal:AbortSignal.timeout(45000)});
+   const res=await fetch(downloadUrl.href,{signal:AbortSignal.timeout(60000)});
    if(res.status===429){rateLimit=res.headers.get("Retry-After")||"not supplied";throw Error("WIKIMEDIA_429_STOP")}
    if(!res.ok)throw Error("HTTP "+res.status);
+   const received=new URL(res.url);
+   if(!["thumb.wikimedia.org","upload.wikimedia.org"].includes(received.hostname)||received.protocol!=="https:")
+    throw Error("Wikimedia response redirected to unexpected host");
    if(Number(res.headers.get("content-length")||0)>12000000)throw Error("File exceeds 12MB limit");
    const blob=await res.blob();
    if(blob.size>12000000)throw Error("File exceeds 12MB limit");
-   if(!["image/jpeg","image/png","image/webp"].includes(blob.type))throw Error("Unsupported image MIME "+blob.type);
+   const mime=(blob.type||res.headers.get("content-type")||"").split(";")[0].toLowerCase();
+   if(!["image/jpeg","image/png","image/webp"].includes(mime))throw Error("Unsupported image MIME "+mime);
    if(bytes+blob.size>170000000)throw Error("ZIP byte budget reached (170MB)");
    const raw=await blob.arrayBuffer();hash=await sha256(raw);
-   const ext=blob.type==="image/png"?"png":blob.type==="image/webp"?"webp":"jpg";
+   const ext=mime==="image/png"?"png":mime==="image/webp"?"webp":"jpg";
    file="research_photos/"+String(x.i).padStart(3,"0")+"-"+sanitize(x.place)+"-"+sanitize(x.id.split(":").slice(-1)[0])+"."+ext;
    zip.file(file,raw);downloaded++;bytes+=blob.size;
   }catch(e){err=String(e.message||e);report.errors.push({subject:x.id,error:err});}
@@ -251,6 +265,11 @@ async function exportZip(email){
   if(err.includes("WIKIMEDIA_429")){stop=true;status("Wikimedia rate limit: download stopped. Partial ZIP can still be exported.");break}
   if(err.includes("ZIP byte budget")){status("ZIP reached 170MB budget, exporting partial collection");break}
  }
+ report.downloaded=downloaded;
+ report.attempted=total;
+ report.unavailable=all.length-downloaded;
+ report.all_candidates_accounted_for=rows.length-1===total+report.errors.filter(e=>e?.error?.startsWith("INVALID_DOWNLOAD_URL")).length;
+ report.note="Every eligible Commons candidate is recorded even if its image fails to download. Unresolved sources are not copyright rejections.";
  zip.file("source_attribution_and_sha256.csv",csv(rows));
  zip.file("unresolved_sources.csv",csv(rejected));
  zip.file("research_status.json",JSON.stringify(report,null,2));
@@ -258,7 +277,7 @@ async function exportZip(email){
  status("Building ZIP with "+downloaded+" downloaded candidate images and complete 247-target manifest…");
  const blob=await zip.generateAsync({type:"blob",compression:"STORE"},m=>{if(m.percent%20<1)status("Building research ZIP: "+Math.round(m.percent)+"%")});
  download("AO_Sacred_Atlas_Objects_"+downloaded+"_of_247_RESEARCH.zip",blob);
- status("ZIP generated: "+downloaded+" candidate photos and full 247-subject report. Not cleared for publication.");
+ status("ZIP generated: "+downloaded+"/"+all.length+" eligible candidate photos; "+report.errors.length+" download errors. All 247 subjects accounted for. Not cleared for publication.");
 }
 function tag(cls,txt){const e=document.createElement("span");e.className="tag "+cls;e.textContent=txt;return e}
 function render(){
