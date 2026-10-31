@@ -8,7 +8,7 @@ import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-boo
 import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards, visibleMassCardTitle } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
-import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
+import { projectGranularMissalCards, projectIntroitEntryMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
@@ -471,7 +471,16 @@ export async function prepareNativeReaderPreview({
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
     : String(model.presentationMode??"").toUpperCase()==="MISSAL"
-      ? projectGranularMissalCards(model,{language:prepared?.readerPreferences?.language??"en"})
+      ? (()=>{
+          const book=projectGranularMissalCards(model,{
+            language:prepared?.readerPreferences?.language??"en",
+          });
+          return explicitIntroitEntry
+            ? projectIntroitEntryMissalCards(book,{
+                language:prepared?.readerPreferences?.language??"en",
+              })
+            : book;
+        })()
       : model;
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
   if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
@@ -2862,7 +2871,11 @@ export async function mountNativeReaderPreview({
     readerModel=ready.curatedEligible && ready.curatedIntroitEntry===true &&
       rebuilt.mode==="LIVE" && [64,65,66].includes(rebuilt.presentationModel.totalCards)
       ? projectCuratedIntroitEntryLiveCards(rebuilt.presentationModel)
-      : rebuilt.presentationModel;
+      : ready.curatedIntroitEntry===true && rebuilt.mode==="MISSAL"
+        ? projectIntroitEntryMissalCards(rebuilt.presentationModel,{
+            language:prepared?.readerPreferences?.language??"en",
+          })
+        : rebuilt.presentationModel;
 
     const anchored=findReaderModeAnchorCard(readerModel,anchor)??readerModel.cardBySequence(1);
     if(!anchored)throw new Error("MODE_SWITCH_ANCHOR_UNAVAILABLE");
