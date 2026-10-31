@@ -75,6 +75,7 @@ try{
     catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
     discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-open]").length,
     begin:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-begin]").length,
+    resume:document.querySelectorAll(".homeScreen.aoTodayH4 [data-resume-mass]").length,
     change:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
@@ -98,6 +99,7 @@ try{
   assert.equal(cold.catechism,0,"H4 must not restore the retired Home Catechism");
   assert.equal(cold.discovery,1,"H4 must show one standalone Did You Know below This week");
   assert.equal(cold.begin,1,"H4 must expose exactly one source-gated Begin Mass");
+  assert.equal(cold.resume,0,"A cold Home without a saved Mass must not claim Resume");
   assert.equal(cold.change,1,"H4 Mass choices must have one discreet Change control");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
@@ -528,6 +530,7 @@ try{
     catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
     discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-open]").length,
     begin:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-begin]").length,
+    resume:document.querySelectorAll(".homeScreen.aoTodayH4 [data-resume-mass]").length,
     change:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
     donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
       const style=getComputedStyle(node);
@@ -548,7 +551,10 @@ try{
   assert.equal(homeOwnership.gospel,1,"Home return lost the appointed Gospel");
   assert.equal(homeOwnership.catechism,0,"Home return revived the retired daily Catechism");
   assert.equal(homeOwnership.discovery,1,"Home return lost standalone Did You Know");
-  assert.equal(homeOwnership.begin,1,"Home return lost its source-gated Begin Mass");
+  // A deliberately suspended Mass replaces the fresh Begin door with one
+  // explicit Resume action. Do not create two competing Mass entry controls.
+  assert.equal(homeOwnership.begin,0,"Suspended Mass must not expose a competing fresh Begin");
+  assert.equal(homeOwnership.resume,1,"Home return lost the checkpoint's Resume Mass door");
   assert.equal(homeOwnership.change,1,"Home return lost discreet Mass choices");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
