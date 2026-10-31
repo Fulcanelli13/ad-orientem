@@ -319,8 +319,9 @@ try{
  await page.emulateMedia({reducedMotion:"no-preference"});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
- // The Incarnation has two visible focus beats; the paired Latin face stays mounted but hidden.
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length && !x.closest("[hidden]")).length),2);
+ // Both source V/R lines and the two Hail Mary halves are independently focusable.
+ // Only the active vernacular or Latin face is counted: four visible beats total.
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length && !x.closest("[hidden]")).length),4);
  const devotionalScroll=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
  assert.equal(await devotionalScroll.evaluate(x=>getComputedStyle(x).overflowY),"auto");
  await devotionalScroll.evaluate(x=>{x.scrollTop=80;x.dispatchEvent(new Event("scroll"))});
