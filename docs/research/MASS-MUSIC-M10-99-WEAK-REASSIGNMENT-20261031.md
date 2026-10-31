@@ -58,6 +58,12 @@ New required regression: `tests/reader-mass-m10-weak-reassignment.mjs` (imported
 
 These ledgers do not supersede the original 1962 DayResolver, the 1961 chant source metadata, the M08 five Sequence sources, the 65-card Mass LIVE reader, or the existing Exsurge renderer in #2111.
 
+## Residual acquisition queue — 45 occurrences
+
+A separate `data/research/mass-music-m10-residual45-priority.v1.json` now contains the **45 unmatched donor occurrences**, representing **28 distinct original score IDs**. Musical roles: 17 Tract, 16 Alleluia, 10 Gradual, 1 Offertory, 1 Communion; therefore **43 of the 45 are pre-Gospel research priorities**.
+
+The 17 Tract and 16 Alleluia references appear under broad "Graduale" sections in the source metadata, which is **not by itself proof of the selected 1962 chant role**. Investigate exact rite/season before claiming missing music or searching for replacements. The queue preserves source owner/SHA, original score identity, normalized Latin, and explicitly says none of these 45 is rejected or proved absent from the printed book. The regression suite checks 45 source-exact records, 28 distinct IDs and nonapproval alongside the six large M10 batches.
+
 ## Priorities for the next pass
 
 **M11A — Adjudicate and extend existing alternatives:** take the 54 same-role alternative relationships first and verify original 1961 printed text, musical mode, verses and *actual* selected 1962 Proper/role. Preserve multiple exact matches for final editorial review. Prioritize structurally ambiguous graduale section relationships.
