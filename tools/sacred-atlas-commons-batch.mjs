@@ -114,12 +114,15 @@ async function worker(){
    publication_approved:false
   };
   try{
-   if(target.known_candidate_file){
+   const prohibitedOriginal=["WRONG_PHYSICAL_SITE_DO_NOT_PUBLISH","ARCHIVAL_POSTCARD_PUBLIC_DOMAIN_EVIDENCE_INCOMPLETE"].includes(target.known_candidate_hold);
+   if(target.known_candidate_file&&!prohibitedOriginal){
     const pages=await getAPI({...imageProps,titles:target.known_candidate_file,redirects:"1"});
-    if(!pages.length)console.warn("Known Commons file returned no pages:",target.ordinal,target.known_candidate_file);
     record.candidate_searches.push({kind:"KNOWN_FILE",query:target.known_candidate_file});
     record.candidates=pages.filter(p=>!p.missing&&p.imageinfo).map(p=>candidate(target,p));
-   }else{
+   }
+   // A false/weak original match must not consume the user's entire slot.
+   // Search correct-place alternatives automatically: the user delegated replacements.
+   if(prohibitedOriginal||!record.candidates.some(c=>c.preliminary_free_photo_candidate)){
     for(const q of queryVariants(target)){
      record.candidate_searches.push({kind:"COMMONS_SEARCH",query:q});
      const pages=await getAPI({...imageProps,generator:"search",gsrsearch:q,gsrnamespace:"6",gsrlimit:"8",gsrwhat:"text"});
@@ -134,8 +137,9 @@ async function worker(){
    record.candidates=record.candidates.slice(0,5);
    const plausible=record.candidates.find(c=>c.preliminary_free_photo_candidate&&c.textual_relevance_score>=0.18);
    const unsafe=["WRONG_PHYSICAL_SITE_DO_NOT_PUBLISH","ARCHIVAL_POSTCARD_PUBLIC_DOMAIN_EVIDENCE_INCOMPLETE"];
-   record.state=unsafe.includes(target.known_candidate_hold)?"IDENTITY_OR_HISTORICAL_HOLD":
-    plausible?"FREE_PHOTOGRAPH_LICENSE_CANDIDATE_IDENTITY_AND_ARTWORK_PENDING":"NO_PLAUSIBLE_CLEARLY_FREE_PHOTO_YET";
+   record.state=unsafe.includes(target.known_candidate_hold)
+    ?(plausible?"AUTOMATIC_REPLACEMENT_CANDIDATE_REQUIRES_SUBSITE_AND_RIGHTS_VERIFICATION":"IDENTITY_OR_HISTORICAL_HOLD")
+    :plausible?"FREE_PHOTOGRAPH_LICENSE_CANDIDATE_IDENTITY_AND_ARTWORK_PENDING":"NO_PLAUSIBLE_CLEARLY_FREE_PHOTO_YET";
    if(target.user_keep_vote)record.state="EXISTING_KEEP_UNCHANGED_"+record.state;
   }catch(e){
    record.state="COMMONS_QUERY_FAILED";record.error=String(e?.message||e).slice(0,250);
