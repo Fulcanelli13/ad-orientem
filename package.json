@@ -153,7 +153,7 @@
     "test:directory-geocoding": "node tests/directory-geocoding.mjs",
     "test:novena-context": "node tests/novena-context-sot.mjs",
     "test:explore-surface": "node tests/explore-surface.mjs && node tests/explore-map-first-v2.mjs && node tests/explore-cartography-style.mjs && node tests/explore-map-font-stack.mjs && node tests/explore-mass-map-context.mjs && node tests/explore-institution-emblems.mjs && node tests/explore-cluster-interactions.mjs && node tests/explore-pilgrimage-journey.mjs && node tests/sacred-geography-medjugorje-r71.mjs && node tests/sacred-geography-r72-world-anchors.mjs && node tests/sacred-geography-r73-major-shrines.mjs && node tests/sacred-geography-r74-essential-sites.mjs && node tests/sacred-geography-r75-essential-sites.mjs && node tests/sacred-geography-r76-essential-sites.mjs && node tests/sacred-geography-r77-essential-sites.mjs && node tests/sacred-geography-r78-identity-adjudication.mjs && node tests/sacred-geography-r79-major-church-sites.mjs",
-    "test:explore-place-profiles": "node tests/explore-place-profiles.mjs && node tests/explore-editorial-folio-readiness-20261031.mjs && node tests/explore-p66-editorial-relic-cards.mjs",
+    "test:explore-place-profiles": "node tests/explore-place-profiles.mjs && node tests/explore-editorial-folio-readiness-20261031.mjs && node tests/explore-p66-editorial-relic-cards.mjs && node tests/explore-p0-mobile-preview-20261031.mjs",
     "test:directory-official-geo": "node tests/directory-official-geo.mjs",
     "test:catholic-life-retirement": "node tests/catholic-life-retirement.mjs",
     "test:catholic-life-final-absorption": "node tests/catholic-life-final-absorption.mjs",
