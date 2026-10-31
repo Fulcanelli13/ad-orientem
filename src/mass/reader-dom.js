@@ -4709,10 +4709,18 @@ export function createReaderDomAdapter({
           // uppercase English Sung-donor mnemonic as a French LIVE rubric.
           // A complete published R17 source event sequence is required; on
           // any draft/partial event the original paragraph fails open.
+          // The Mementos need a short LIVE orientation, not their full
+          // multi-clause ceremonial description. Reuse the exact existing
+          // English/French source bracket; print the complete certified
+          // movement in traditional red Missal mode instead.
+          const liveBriefMemento=mode==="LIVE"&&p.kind==="RUBRIC"&&
+            p.sourceCueIds?.length===1 &&
+            ["AO.SM.C0155","AO.SM.C0193"].includes(p.sourceCueIds[0]);
+          const liveBriefCopy=liveBriefMemento
+            ? missalSourceRubricCopy(p,{language:frenchReader?"fr":"en"}) : null;
           const liveMemento=mode==="LIVE"&&p.kind==="RUBRIC"&&
             p.sourceCueIds?.length===1 &&
-            ["AO.SM.C0117","AO.SM.C0155","AO.SM.C0193","AO.SM.C0263"]
-              .includes(p.sourceCueIds[0]);
+            ["AO.SM.C0117","AO.SM.C0263"].includes(p.sourceCueIds[0]);
           const conciseSource=bookRubric ? conciseMissalSourceRubric(p,{
             form:prepared?.session?.resolvedMass?.form,
             language:frenchReader?"fr":"en",
@@ -4720,7 +4728,8 @@ export function createReaderDomAdapter({
             form:prepared?.session?.resolvedMass?.form,
             language:frenchReader?"fr":"en",
           }):null;
-          renderReaderText(primary,conciseSource?.text??bookRubric?.text ??
+          renderReaderText(primary,conciseSource?.text??bookRubric?.text??
+            liveBriefCopy?.text??
             (p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary));
           if(bookRubric){
             node.dataset.missalRubricLanguage=bookRubric.requestedLanguage;
