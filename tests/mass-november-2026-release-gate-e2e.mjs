@@ -423,9 +423,13 @@ try{
                    scroll.getBoundingClientRect().top+scroll.scrollTop;
                  scroll.scrollTop=Math.max(0,scrollTop-scroll.clientHeight*.39);
                  await frame();
-                 if(api.getActiveCue()!=="AO.SM.C0072")
-                   throw Error("NOV02_C0072_SOURCE_FOCUS_NOT_ACTIVE:"+
-                     String(api.getActiveCue()));
+                 // C0070 can remain the separate ceremony focus owner
+                 // while the publication-bearing C0072 rubric is visible.
+                 // Do not forge a change in the priest's observed cue just
+                 // to photograph his exact source-linked head-bow artwork.
+                 // Validate its original paragraph and screen visibility
+                 // below; source placement, not simulated priest movement,
+                 // is the evidence this screenshot is intended to capture.
                }
                const rubric=api.root.querySelector(
                  '[data-rubric-id="AO.RUB.C0072.01"]');
@@ -438,11 +442,17 @@ try{
                const iconVisible=mode==="LIVE"&&imageStyle.display!=="none"&&
                  !icon.hidden&&icon.getBoundingClientRect().width>=24;
                const rubricText=rubric.textContent?.trim()??"";
+               const sourceRow=[...api.root.querySelectorAll(".ao-reader-paragraph")]
+                 .find(row=>String(row.dataset.sourceCueIds??"").split(" ")
+                   .includes("AO.SM.C0072")&&row.contains(rubric));
+               const sourceVisible=Boolean(sourceRow&&
+                 sourceRow.getBoundingClientRect().bottom>0 &&
+                 sourceRow.getBoundingClientRect().top<innerHeight);
                const caption=rubric.querySelector(".ao-approved-inline-rubric-copy");
                const captionStyle=caption?getComputedStyle(caption):null;
                const captionVisuallyHidden=captionStyle?.position==="absolute"&&
                  caption.getBoundingClientRect().width<=2;
-               if(!rubricText||!caption||!icon||
+               if(!rubricText||!caption||!icon||!sourceVisible||
                   (mode==="LIVE"&&(!iconVisible||!captionVisuallyHidden))||
                   (mode==="MISSAL"&&(captionVisuallyHidden||
                     !rubricText.toLowerCase().includes("priest")&&
@@ -450,6 +460,7 @@ try{
                  throw Error("NOV02_APPROVED_RUBRIC_ICON_OR_PRINT_INVALID:"+
                    JSON.stringify({mode,iconVisible,captionVisuallyHidden,rubricText}));
                return {card,mode,iconVisible,captionVisuallyHidden,
+                 sourceVisible,sourceCueIds:sourceRow?.dataset.sourceCueIds??null,
                  activeCue:api.getActiveCue(),sourceRubricId:rubric.dataset.rubricId,
                  text:rubricText,iconAsset:icon.dataset.approvedAsset??null};
              });
@@ -692,8 +703,9 @@ try{
      x.iconAsset==="you:head_bow"&&x.text),
    "NOV02_APPROVED_SOURCE_RUBRIC_PHOTOGRAPHIC_EVIDENCE_INCOMPLETE");
  check(massUi.rubricCases.filter(x=>x.mode==="LIVE").every(x=>
-   x.iconVisible&&x.captionVisuallyHidden&&x.activeCue==="AO.SM.C0072"),
-   "NOV02_LIVE_APPROVED_GESTURE_ICON_OR_CUE_NOT_VISIBLE");
+   x.iconVisible&&x.captionVisuallyHidden&&x.sourceVisible&&
+   x.sourceCueIds?.split(" ").includes("AO.SM.C0072")),
+   "NOV02_LIVE_APPROVED_GESTURE_ICON_NOT_SOURCE_ANCHORED_OR_VISIBLE");
  check(massUi.rubricCases.filter(x=>x.mode==="MISSAL").every(x=>
    !x.captionVisuallyHidden&&x.text),
    "NOV02_MISSAL_SOURCE_RUBRIC_TEXT_NOT_PRINTED");
