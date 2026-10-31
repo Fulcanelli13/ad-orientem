@@ -143,6 +143,25 @@ const requiem=buildScholaMusicItinerary({...args,
 for(const id of ["GLORIA","GLORIA_INTONATION","CREDO",
  "CREDO_INTONATION","BLESSING"])assert.ok(!requiem.events.some(e=>e.id===id));
 assert.ok(requiem.events.some(e=>e.id==="AGNUS_DEI"));
+const explicitRequiem=buildScholaMusicItinerary({...args,
+ resolvedMass:{actualCelebration:{type:"REQUIEM"},overlays:[]}});
+for(const id of ["GLORIA","CREDO","BLESSING"])
+ assert.ok(!explicitRequiem.events.some(e=>e.id===id));
+assert.equal(explicitRequiem.events.find(e=>e.id==="OFFERTORY_ORGAN_OPTION")
+ .organPermission.status,"SOLO_FORBIDDEN");
+// An explicit funeral absolution suppresses the Mass's Last Gospel;
+// it must not leave a fictional Last Gospel or recessional organ event.
+const funeral=buildScholaMusicItinerary({...args,
+ resolvedMass:{overlays:["REQUIEM"]},
+ massPlan:{normalLastGospel:false,followingGraphs:["REQUIEM_ABSOLUTION"]}});
+assert.ok(funeral.events.some(e=>e.id==="AGNUS_DEI"));
+assert.ok(!funeral.events.some(e=>e.id==="LAST_GOSPEL"));
+assert.ok(!funeral.events.some(e=>e.id==="RECESSIONAL_ORGAN_OPTION"));
+assert.ok(!funeral.events.some(e=>["GLORIA","CREDO","BLESSING"].includes(e.id)));
+assert.ok(requiem.events.some(e=>e.id==="LAST_GOSPEL"),
+ "Ordinary Requiem without an absolution must keep the Last Gospel");
+assert.ok(plan.events.some(e=>e.id==="RECESSIONAL_ORGAN_OPTION"),
+ "Non-Requiem ordinary ending lost its source-owned option");
 const noSequence=buildScholaMusicItinerary({...args,
  cards:makeCards({withFollowup:false})});
 assert.ok(!noSequence.events.some(e=>e.id==="PRE_GOSPEL_FOLLOWUP"));

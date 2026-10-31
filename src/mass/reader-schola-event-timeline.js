@@ -1,4 +1,5 @@
 import {resolve1962OrganPermission} from "./reader-rite-music-authority.js";
+import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 // Source-first, read-only Schola event itinerary for the existing curated
 // LIVE Mass cards. Musical windows are not evidence of observed singing.
 // Source blocks and exact curated IDs, never historical numeric card slots,
@@ -127,7 +128,7 @@ export function organAuthorityForScholaEvent(event,resolvedMass){
  if(event?.kind!=="ORGAN_OPTION")return null;
  const plan=resolvedMass?.provenance?.organ1962??null;
  const verified=plan?.verified===true&&plan.source==="LITURGICAL_PLAN_1962";
- const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
+ const requiem=isExplicitRequiemMass({session:{resolvedMass}});
  const season=verified&&KNOWN_SEASONS.has(String(plan?.season??"").toUpperCase())
    ?String(plan.season).toUpperCase():null;
  const base=freeze({authority:"EXISTING_1958_ORGAN_PERMISSION",
@@ -166,7 +167,7 @@ const empty=(reason)=>freeze({schema:"ao-schola-music-itinerary-v1",supported:fa
  * the place of the 1958 organ-permission resolver.
  */
 export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerformance="UNSPECIFIED",
- resolvedMass=null}={}){
+ resolvedMass=null,massPlan=null}={}){
  const selected=String(form??"").toUpperCase();
  if(selected==="LOW")return empty("LOW_MASS_HAS_NO_SCHOLA");
  if(!SUNG.has(selected))return empty("UNSUPPORTED_SUNG_FORM");
@@ -183,7 +184,7 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   arr.push({card,index});bySource.set(source,arr);bySection.set(String(card.sectionId),index);
  });
  const available=new Set(tracks.map(t=>typeof t==="string"?t:t?.id).filter(Boolean));
- const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
+ const requiem=isExplicitRequiemMass({session:{resolvedMass}});
  const styles=new Set(["GREGORIAN","POLYPHONIC"]);
  const setting=styles.has(sanctusPerformance)?sanctusPerformance:"UNSPECIFIED";
  const events=[],unresolved=[];
@@ -193,6 +194,11 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   if(spec.needs && !available.has(spec.needs))continue;
   if(spec.trackId&&!available.has(spec.trackId))continue;
   if(requiem && (spec.needs==="GLORIA"||spec.needs==="CREDO"||spec.omitForRequiem))continue;
+  // Funeral Absolution (and other plan-owned endings) may suppress the
+  // Last Gospel altogether. Never retain its music or recessional event
+  // merely because the underlying immutable source cards contain it.
+  if(massPlan?.normalLastGospel===false &&
+     (spec.id==="LAST_GOSPEL"||spec.id==="RECESSIONAL_ORGAN_OPTION"))continue;
   if(spec.performance && spec.performance!==setting)continue;
   const sourceCards=bySource.get(spec.at.section)??[];
   if(!sourceCards.length){unresolved.push(freeze({id:spec.id,reason:"MISSING_CANONICAL_SOURCE_SECTION"}));continue;}

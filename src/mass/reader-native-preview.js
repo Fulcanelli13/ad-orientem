@@ -2956,6 +2956,7 @@ export async function mountNativeReaderPreview({
       cards:readerModel?.cards.filter(visibleCardAllowed),
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
+      massPlan:prepared.session.plan,
       tracks:ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme),
@@ -2984,6 +2985,7 @@ export async function mountNativeReaderPreview({
         cards:readerModel?.cards.filter(visibleCardAllowed),
         form:prepared.session.resolvedMass.form,
         resolvedMass:prepared.session.resolvedMass,
+        massPlan:prepared.session.plan,
         tracks:ready.scholaState?.trackIds??[],
         sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
       }),scholaLocalProgramme);

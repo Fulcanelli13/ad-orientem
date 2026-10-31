@@ -36,6 +36,15 @@ for(const form of ["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
       prepared:{session:{resolvedMass:{form,overlays:[]}},
         readerPreferences:{language}}
     });
+    // The source Proper and the sung Ordinary must agree on omissions:
+    // a Requiem never exposes either omitted chant in the track picker.
+    assert.ok(!req.trackIds.includes("GLORIA"),form+"/"+language+" has Requiem Gloria");
+    assert.ok(!req.trackIds.includes("CREDO"),form+"/"+language+" has Requiem Credo");
+    assert.ok(ordinary.trackIds.includes("GLORIA"),"Ordinary Gloria disappeared");
+    assert.ok(ordinary.trackIds.includes("CREDO"),"Ordinary Credo disappeared");
+    assert.equal(req.selectTrack("GLORIA").schola,null,"A hidden Gloria remained selectable");
+    assert.equal(req.syncCue("AO.SM.C0055").schola,null,"Gloria source cue reopened an omitted chant");
+    assert.equal(req.activateForCard(9).schola,null,"Credo source card reopened an omitted chant");
     const seg=req.tracks.find(x=>x.id==="AGNUS_DEI").segments;
     const plain=ordinary.tracks.find(x=>x.id==="AGNUS_DEI").segments;
     assert.equal(seg.length,3,"Requiem Schola Agnus must retain three chant cues");
@@ -51,6 +60,27 @@ for(const form of ["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
     assert.equal(req.next().schola.cueId,"AO.SM.C0223");
   }
 }
+
+// A selected Calendar All Souls Mass is still a Requiem through its
+// verified Proper overlay; an ordinary Proper's explicit omissions must
+// also agree with the Schola, without mutating the standard tracks.
+const allSoulsSchola=createNativeScholaController({
+  sungCorpus:sung,properSlots,
+  prepared:{session:{resolvedMass:{
+    form:"SOLEMN",actualCelebration:{type:"CALENDAR",id:"mass_of_day"},
+    overlays:["REQUIEM"],proper:{sourcePath:"Sancti/11-02m1"},
+  }}},
+});
+assert.ok(!allSoulsSchola.trackIds.includes("GLORIA"));
+assert.ok(!allSoulsSchola.trackIds.includes("CREDO"));
+assert.ok(allSoulsSchola.trackIds.includes("AGNUS_DEI"));
+const seasonalOmissions=createNativeScholaController({
+  sungCorpus:sung,properSlots,
+  prepared:{session:{resolvedMass:{form:"SOLEMN",overlays:[],
+    provenance:{gloria:false,credo:false}}}},
+});
+assert.ok(!seasonalOmissions.trackIds.includes("GLORIA"));
+assert.ok(!seasonalOmissions.trackIds.includes("CREDO"));
 
 const frenchGloria=frenchSchola.selectTrack("GLORIA");
 assert.equal(frenchGloria.schola.cueId,"AO.SM.C0055","Schola must start Et in terra pax after celebrant intonation");

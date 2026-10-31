@@ -1,4 +1,5 @@
 import {resolve1962OrganPermission} from "./reader-rite-music-authority.js";
+import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 
 // Presentation only; the existing 1958 authority decides the norm.
 // No clock, microphone, MIDI state, liturgical-calendar guess, or local-organ claim.
@@ -34,7 +35,7 @@ function verifiedOrdinaryContext(resolvedMass){
   if(resolvedMass?.form==="LOW")return null;
   // Existing resolved Requiem ownership is sufficient for the general
   // no-solo-organ rule; chant accompaniment is a distinct §83c question.
-  const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
+  const requiem=isExplicitRequiemMass({session:{resolvedMass}});
   // The product does not yet guarantee a universally source-owned season
   // field. Trust only an explicitly verified 1962 plan field, never date/title.
   const declared=resolvedMass?.provenance?.organ1962;
