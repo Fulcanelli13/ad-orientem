@@ -6,6 +6,9 @@ on:
       - 'tests/prayer-artwork-reuse-wave1-contract.mjs'
       - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave2.v1.json'
       - 'tests/prayer-artwork-reuse-wave2-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave3.v1.json'
+      - 'data/prayer/artwork-editorial-20261031/new-art-gap-source-shortlist-20261031.v1.json'
+      - 'tests/prayer-artwork-reuse-wave3-contract.mjs'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
@@ -21,4 +24,4 @@ jobs:
         with:
           node-version: '22'
       - name: Source-linked art mapping validation
-        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs
+        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs
