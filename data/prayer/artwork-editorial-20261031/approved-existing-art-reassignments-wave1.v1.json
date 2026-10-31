@@ -1,0 +1,1469 @@
+{
+  "schema": "AO_PRAYER_REASSIGN_APPROVED_ART_EXISTING_COLLECTION_WAVE1_V1",
+  "asOf": "2026-10-31",
+  "scope": "EDITORIAL ASSIGNMENTS ONLY; NOT A LIVE-IMAGE PUBLISH OR PERMISSION OVERRIDE",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/prayer-existing-artwork-coverage-first-20261030",
+    "path": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+    "sourceReconciliationPR": 2110
+  },
+  "baseline": {
+    "slots": 267,
+    "priorApprovedSlotCount": 160
+  },
+  "wave": {
+    "reusedFromPreviousApprovals": 50,
+    "lockedCoverInheritance": 2,
+    "directThereseSelection": 1,
+    "tiepoloPaintings": 14,
+    "mysticLambThematicBenediction": 1,
+    "totalArtRelationships": 68,
+    "newlyCoveredSlots": 60,
+    "coveredAfterWave": 220,
+    "stillWithoutApprovedArtAssignment": 47
+  },
+  "invariants": [
+    "Do not reactivate excluded/rejected artwork (Lybaert, Ugolino); do not assume existing source candidates were approved",
+    "Do not override final cover locks, notably Lotto Rosary, Ingres Adoration, Murillo Confession, MNAC Seven Sorrows",
+    "One artwork can serve many genuine matched events, but omitted checkbox is not rejection",
+    "No misleading claims that a contextual painting depicts a precise spoken rubric or sacrament blessing",
+    "No photo live without verified identity/license/crop/native QA and true reader-stage join; all asset publication remains disabled in this research master",
+    "Preserve all 14 pre-approved individual Stations choices as alternatives to the Tiepolo complete cycle",
+    "No paid rights, no rights-owner contact, no changes to prayer text or Rosary donor architecture"
+  ],
+  "assignments": [
+    {
+      "targetSlot": "COV-foundations_morning_offering",
+      "artworkId": "PRAYER::heart-jesus--primary",
+      "artworkTitle": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceApprovedSlot": "COV-novena.sacred_heart",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.angelus",
+      "artworkId": "CANONICAL::met-438724",
+      "artworkTitle": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceApprovedSlot": "STG-pray.angelus-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-438724",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.angelus-01",
+      "artworkId": "CANONICAL::met-438724",
+      "artworkTitle": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceApprovedSlot": "STG-pray.angelus-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-438724",
+      "relationship": "THEMATIC_TIME",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.angelus-02",
+      "artworkId": "CANONICAL::met-438724",
+      "artworkTitle": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceApprovedSlot": "STG-pray.angelus-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-438724",
+      "relationship": "THEMATIC_TIME",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.angelus-03",
+      "artworkId": "CANONICAL::met-438724",
+      "artworkTitle": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceApprovedSlot": "STG-pray.angelus-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-438724",
+      "relationship": "THEMATIC_TIME",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.angelus-04",
+      "artworkId": "CANONICAL::cma-122338",
+      "artworkTitle": "The Annunciation",
+      "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1942.635",
+      "sourceApprovedSlot": "STG-pray.angelus-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-122338",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-daily.morning",
+      "artworkId": "REVIEW::commons:87865020",
+      "artworkTitle": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+      "sourceApprovedSlot": "STG-litany_loreto_1962-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:87865020",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-daily.evening",
+      "artworkId": "REVIEW::commons:87865020",
+      "artworkTitle": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+      "sourceApprovedSlot": "STG-litany_loreto_1962-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:87865020",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-daily.nightly_examen",
+      "artworkId": "CANONICAL::met-436839",
+      "artworkTitle": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/436839",
+      "sourceApprovedSlot": "STG-pray.confession-02",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "CANONICAL::met-436839",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-daily.personal_rule",
+      "artworkId": "REVIEW::commons:87865020",
+      "artworkTitle": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+      "sourceApprovedSlot": "STG-litany_loreto_1962-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:87865020",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-foundations_hail_mary",
+      "artworkId": "CANONICAL::met-438724",
+      "artworkTitle": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceApprovedSlot": "STG-pray.angelus-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-438724",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-sacrament_act_of_contrition",
+      "artworkId": "CANONICAL::met-436839",
+      "artworkTitle": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/436839",
+      "sourceApprovedSlot": "STG-pray.confession-02",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "CANONICAL::met-436839",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-foundations_act_of_faith",
+      "artworkId": "CANONICAL::W07-014",
+      "artworkTitle": "The Incredulity of Saint Thomas",
+      "artist": "Caravaggio",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+      "sourceApprovedSlot": "STG-pray.five_wounds-05",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "CANONICAL::W07-014",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-foundations_act_of_love",
+      "artworkId": "PRAYER::heart-jesus--primary",
+      "artworkTitle": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceApprovedSlot": "COV-novena.sacred_heart",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-mass_confiteor",
+      "artworkId": "REVIEW::commons:161200952",
+      "artworkTitle": "The return of the prodigal son",
+      "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_-_The_return_of_the_prodigal_son.jpg",
+      "sourceApprovedSlot": "STG-pray.confession-04",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:161200952",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.rosary-10",
+      "artworkId": "REVIEW::commons:22178536",
+      "artworkTitle": "The Way to Calvary",
+      "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+      "sourceApprovedSlot": "STG-pray.precious_blood-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:22178536",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.rosary-17",
+      "artworkId": "REVIEW::met:435853",
+      "artworkTitle": "The Coronation of the Virgin",
+      "artist": "Annibale Carracci",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/435853",
+      "sourceApprovedSlot": "STG-pray.angelus_regina-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::met:435853",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-novena.christmas",
+      "artworkId": "CANONICAL::cma-143644",
+      "artworkTitle": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "sourceFilePage": "https://clevelandart.org/art/1968.100",
+      "sourceApprovedSlot": "STG-pray.angelus-07",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-143644",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-novena.holy_face_1887",
+      "artworkId": "REVIEW::commons:199348815",
+      "artworkTitle": "Eustache Le Sueur Ecce Homo",
+      "artist": "Eustache Le Sueur",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_Ecce_Homo.jpg",
+      "sourceApprovedSlot": "STG-pray.rosary-09",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:199348815",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.montfort_consecration-01",
+      "artworkId": "CANONICAL::met-436839",
+      "artworkTitle": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/436839",
+      "sourceApprovedSlot": "STG-pray.confession-02",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "CANONICAL::met-436839",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.montfort_consecration-02",
+      "artworkId": "CANONICAL::met-436839",
+      "artworkTitle": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/436839",
+      "sourceApprovedSlot": "STG-pray.confession-02",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "CANONICAL::met-436839",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.montfort_consecration-05",
+      "artworkId": "REVIEW::met:435853",
+      "artworkTitle": "The Coronation of the Virgin",
+      "artist": "Annibale Carracci",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/435853",
+      "sourceApprovedSlot": "STG-pray.angelus_regina-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::met:435853",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-programme.first_friday",
+      "artworkId": "PRAYER::heart-jesus--primary",
+      "artworkTitle": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceApprovedSlot": "COV-novena.sacred_heart",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-adoration_anima_christi",
+      "artworkId": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "artworkTitle": "The Lance Thrust",
+      "artist": "Anthony van Dyck",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "sourceApprovedSlot": "COV-pray.precious_blood",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-benediction_o_salutaris",
+      "artworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+      "artworkTitle": "Saint Thomas Aquinas",
+      "artist": "Carlo Crivelli",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "sourceApprovedSlot": "STG-pray.litany_saints-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+      "relationship": "AUTHOR_PORTRAIT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-benediction_tantum_ergo",
+      "artworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+      "artworkTitle": "Saint Thomas Aquinas",
+      "artist": "Carlo Crivelli",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "sourceApprovedSlot": "STG-pray.litany_saints-05",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+      "relationship": "AUTHOR_PORTRAIT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.adoration.night",
+      "artworkId": "CANONICAL::cma-160143",
+      "artworkTitle": "The Holy Family",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "sourceFilePage": "https://clevelandart.org/art/1998.10",
+      "sourceApprovedSlot": "STG-pray.adoration.night-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-160143",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.adoration.night-02",
+      "artworkId": "CANONICAL::met-442488",
+      "artworkTitle": "The Agony in the Garden",
+      "artist": "Nicolas Poussin",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/442488",
+      "sourceApprovedSlot": "HERO-06",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-442488",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.adoration.night-06",
+      "artworkId": "PRAYER::angel--strozzi",
+      "artworkTitle": "The Guardian Angel",
+      "artist": "Bernardo Strozzi",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+      "sourceApprovedSlot": "DOOR-D8",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "PRAYER::angel--strozzi",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.adoration.four_ends",
+      "artworkId": "REVIEW::commons:93153411",
+      "artworkTitle": "The Nativity or the Adoration of the Angels",
+      "artist": "Gerard Seghers",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "sourceApprovedSlot": "HERO-02",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "REVIEW::commons:93153411",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.adoration.four_ends-01",
+      "artworkId": "REVIEW::commons:93153411",
+      "artworkTitle": "The Nativity or the Adoration of the Angels",
+      "artist": "Gerard Seghers",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "sourceApprovedSlot": "HERO-02",
+      "sourceApprovalStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+      "sourceApprovalArtworkId": "REVIEW::commons:93153411",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.adoration.four_ends-03",
+      "artworkId": "REVIEW::met:437978",
+      "artworkTitle": "Christ Presented to the People (Ecce Homo)",
+      "artist": "Sodoma (Giovanni Antonio Bazzi)",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/437978",
+      "sourceApprovedSlot": "HERO-07",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::met:437978",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.forty_hours",
+      "artworkId": "PRAYER::adoration--primary",
+      "artworkTitle": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "sourceFilePage": "",
+      "sourceApprovedSlot": "DOOR-D5",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::met-438434",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-sacred_heart_short_prayer",
+      "artworkId": "PRAYER::heart-jesus--primary",
+      "artworkTitle": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceApprovedSlot": "COV-novena.sacred_heart",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-sacred_heart_aspiration_trust",
+      "artworkId": "PRAYER::heart-jesus--primary",
+      "artworkTitle": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceApprovedSlot": "COV-novena.sacred_heart",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::commons-morlete-sacred-heart-1759",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.stations",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.seven_words",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "EXACT_EVENT",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.seven_words-01",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "EVENT_NOT_WORDS",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.seven_words-02",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "EVENT_NOT_WORDS",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.seven_words-04",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "EVENT_NOT_WORDS",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.seven_words-05",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "EVENT_NOT_WORDS",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.tenebrae-02",
+      "artworkId": "CANONICAL::cma-97147",
+      "artworkTitle": "The Crucifixion",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "sourceFilePage": "https://clevelandart.org/art/1916.786",
+      "sourceApprovedSlot": "STG-pray.rosary-11",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "CANONICAL::cma-97147",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-marian_hail_holy_queen",
+      "artworkId": "REVIEW::met:435853",
+      "artworkTitle": "The Coronation of the Virgin",
+      "artist": "Annibale Carracci",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/435853",
+      "sourceApprovedSlot": "STG-pray.angelus_regina-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::met:435853",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-marian_memorare",
+      "artworkId": "REVIEW::commons:18589500",
+      "artworkTitle": "The Virgin of Consolation",
+      "artist": "William-Adolphe Bouguereau",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+      "sourceApprovedSlot": "STG-litany_loreto_1962-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:18589500",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-sub_tuum",
+      "artworkId": "REVIEW::commons:18589500",
+      "artworkTitle": "The Virgin of Consolation",
+      "artist": "William-Adolphe Bouguereau",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+      "sourceApprovedSlot": "STG-litany_loreto_1962-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::commons:18589500",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-devotion_memorare_st_joseph",
+      "artworkId": "PRAYER::joseph--primary",
+      "artworkTitle": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "sourceApprovedSlot": "STG-novena.christmas-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "PRAYER::joseph--primary",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-devotion_litany_st_joseph",
+      "artworkId": "PRAYER::joseph--primary",
+      "artworkTitle": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "sourceApprovedSlot": "STG-novena.christmas-01",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "PRAYER::joseph--primary",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-devotion_ad_te_beate_ioseph",
+      "artworkId": "REVIEW::met:436101",
+      "artworkTitle": "The Rest on the Flight into Egypt",
+      "artist": "Gerard David",
+      "sourceFilePage": "https://www.metmuseum.org/art/collection/search/436101",
+      "sourceApprovedSlot": "STG-prayer.seven_sorrows_chaplet-02",
+      "sourceApprovalStatus": "USER_APPROVED",
+      "sourceApprovalArtworkId": "REVIEW::met:436101",
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "COV-pray.penitential_psalms",
+      "artworkId": "HERO::nga:34956",
+      "artworkTitle": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "sourceFilePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "sourceApprovedSlot": "COV-pray.confession",
+      "sourceApprovalStatus": "USER_FINAL_LOCKED",
+      "sourceApprovalArtworkId": null,
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.penitential_psalms-02",
+      "artworkId": "HERO::nga:34956",
+      "artworkTitle": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "sourceFilePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "sourceApprovedSlot": "COV-pray.confession",
+      "sourceApprovalStatus": "USER_FINAL_LOCKED",
+      "sourceApprovalArtworkId": null,
+      "relationship": "THEMATIC",
+      "approvalClass": "REUSE_SAME_HISTORICALLY_APPROVED_PAINTING",
+      "imagePublication": "NOT_AUTHORIZED_BY_THIS_DATASET"
+    },
+    {
+      "targetSlot": "STG-pray.rosary-01",
+      "artworkTitle": "Madonna del Rosario",
+      "artist": "Lorenzo Lotto",
+      "sourceApprovedSlot": "COV-pray.rosary",
+      "sourceApprovalStatus": "USER_FINAL_LOCKED",
+      "relationship": "INHERIT_ROSARY_FINAL_COVER_NO_NEW_IMAGE",
+      "approvalClass": "REUSE_FINAL_COVER",
+      "imagePublication": "AWAIT_ORIGINAL_ASSET_BINDING_AND_QA",
+      "sourceFilePage": null
+    },
+    {
+      "targetSlot": "COV-novena.seven_sorrows",
+      "artworkTitle": "Virgin of the Seven Sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "sourceApprovedSlot": "FINAL_USER_APPROVAL_2026_10_26",
+      "sourceApprovalStatus": "USER_FINAL_SELECTED_MODULE_HERO",
+      "relationship": "SAME_DEVOTION_COVER",
+      "approvalClass": "INHERIT_USER_FINAL_SELECTED_SORROWS_HERO",
+      "imagePublication": "AWAIT_EXACT_MNAC_ASSET_AND_QA",
+      "sourceFilePage": null
+    },
+    {
+      "targetSlot": "COV-novena.st_therese",
+      "artworkTitle": "Therese_lisieux_portrait.jpg",
+      "artist": "Historical photograph of St Thérèse",
+      "sourceApprovedSlot": "PR_2128_USER_SELECTED",
+      "sourceApprovalStatus": "USER_FINAL_SELECTED_PUBLIC_DOMAIN",
+      "relationship": "EXACT_SAINT",
+      "approvalClass": "DIRECT_USER_SELECTION",
+      "imagePublication": "ASSET_ON_PR_2128_UNMERGED_362x498_NATIVE_QA_PENDING",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg"
+    },
+    {
+      "targetSlot": "STG-pray.stations-01",
+      "artworkTitle": "Via Crucis 1, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-01.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-02",
+      "artworkTitle": "Via Crucis 2, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-02.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-03",
+      "artworkTitle": "Via Crucis 3, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-03.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-04",
+      "artworkTitle": "Via Crucis 4, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-04.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-05",
+      "artworkTitle": "Via Crucis 5, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-05.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-06",
+      "artworkTitle": "Via Crucis 6, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-06.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-07",
+      "artworkTitle": "Via Crucis 7, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-07.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-08",
+      "artworkTitle": "Via Crucis 8, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-08.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-09",
+      "artworkTitle": "Via Crucis 9, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-09.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-10",
+      "artworkTitle": "Via Crucis 10, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-10.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-11",
+      "artworkTitle": "Via Crucis 11, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-11.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-12",
+      "artworkTitle": "Via Crucis 12, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-12.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-13",
+      "artworkTitle": "Via Crucis 13, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-13.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.stations-14",
+      "artworkTitle": "Via Crucis 14, Giandomenico Tiepolo (San Polo original oils)",
+      "artist": "Giandomenico Tiepolo",
+      "sourceApprovedSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+      "sourceApprovalStatus": "USER_APPROVED_COMPLETE_14_PAINTING_CYCLE",
+      "relationship": "EXACT_NUMBERED_STATION",
+      "approvalClass": "DIRECT_USER_SERIES_SELECTION",
+      "assetPath": "assets/stations/san-polo/station-14.webp",
+      "assetSourcePR": 2121,
+      "licence": "CC BY-SA 4.0 Didier Descouens / Archaeodontosaurus",
+      "licenceException": "USER_AUTHORIZED_FOURTEEN_FILES_ONLY",
+      "imagePublication": "QA_PHONE_320_390_AND_RIGHTS_LABEL_RUNTIME_GATES_OPEN"
+    },
+    {
+      "targetSlot": "STG-pray.benediction-03",
+      "artworkTitle": "The Adoration of the Mystic Lamb",
+      "artist": "Jan and Hubert van Eyck",
+      "sourceApprovedSlot": "PR_2128_USER_SELECTED",
+      "sourceApprovalStatus": "USER_APPROVED_THEMATIC_ADORATION_ONLY",
+      "relationship": "THEMATIC_HEAVENLY_ADORATION_NOT_LITERAL_BLESSING",
+      "approvalClass": "DIRECT_USER_SELECTION",
+      "assetPath": "assets/prayer/user-approved/benediction-mystic-lamb.webp",
+      "imagePublication": "ASSET_ON_PR_2128_UNMERGED",
+      "displayedStage": "adoration"
+    }
+  ],
+  "remainingWithoutApprovedArt": [
+    {
+      "slot": "HERO-01",
+      "door": "Pray home",
+      "label": "Advent",
+      "existingCandidates": 8
+    },
+    {
+      "slot": "HERO-05",
+      "door": "Pray home",
+      "label": "Septuagesima",
+      "existingCandidates": 7
+    },
+    {
+      "slot": "HERO-08",
+      "door": "Pray home",
+      "label": "Palm Sunday",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "HERO-09",
+      "door": "Pray home",
+      "label": "Holy Thursday",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-10",
+      "door": "Pray home",
+      "label": "Good Friday",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "HERO-16",
+      "door": "Pray home",
+      "label": "Corpus Christi",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "HERO-17",
+      "door": "Pray home",
+      "label": "Sacred Heart",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "HERO-18",
+      "door": "Pray home",
+      "label": "Time after Pentecost",
+      "existingCandidates": 10
+    },
+    {
+      "slot": "HERO-19",
+      "door": "Pray home",
+      "label": "Assumption",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-21",
+      "door": "Pray home",
+      "label": "All Souls",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-23",
+      "door": "Pray home",
+      "label": "Immaculate Conception",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "DOOR-D1",
+      "door": "D1 Daily Prayer",
+      "label": "Daily Prayer",
+      "existingCandidates": 8
+    },
+    {
+      "slot": "DOOR-D4",
+      "door": "D4 Novenas & Journeys",
+      "label": "Novenas & Journeys",
+      "existingCandidates": 12
+    },
+    {
+      "slot": "DOOR-D6",
+      "door": "D6 Our Lord",
+      "label": "Our Lord",
+      "existingCandidates": 10
+    },
+    {
+      "slot": "DOOR-D7",
+      "door": "D7 Our Lady",
+      "label": "Our Lady",
+      "existingCandidates": 12
+    },
+    {
+      "slot": "DOOR-D9",
+      "door": "D9 Life & Intentions",
+      "label": "Life & Intentions",
+      "existingCandidates": 10
+    },
+    {
+      "slot": "COV-foundations_act_of_hope",
+      "door": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-foundations_prayer_of_adoration",
+      "door": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "existingCandidates": 6
+    },
+    {
+      "slot": "COV-adoration_spiritual_communion",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-adoration_litany_blessed_sacrament",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "COV-benediction_adoremus_ps116",
+      "door": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.adoration.night-05",
+      "door": "D5 Holy Eucharist",
+      "label": "Spiritual Communion",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "door": "D5 Holy Eucharist",
+      "label": "In stillness (exposition)",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "door": "D5 Holy Eucharist",
+      "label": "Thanksgiving",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.benediction-01",
+      "door": "D5 Holy Eucharist",
+      "label": "Exposition · O Salutaris",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.benediction-02",
+      "door": "D5 Holy Eucharist",
+      "label": "Tantum Ergo · incensation",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "door": "D5 Holy Eucharist",
+      "label": "Cover",
+      "existingCandidates": 8
+    },
+    {
+      "slot": "STG-prayer.communion-02",
+      "door": "D5 Holy Eucharist",
+      "label": "After Communion",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "STG-pray.seven_words-06",
+      "door": "D6 Our Lord",
+      "label": "'It is consummated'",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "COV-weekday_magnificat",
+      "door": "D7 Our Lady",
+      "label": "Card vignette",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "door": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "existingCandidates": 6
+    },
+    {
+      "slot": "STG-pray.litany_saints-03",
+      "door": "D8 Saints & Angels",
+      "label": "Apostles and evangelists",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-church_prayer_for_pope",
+      "door": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "COV-dead_eternal_rest_singular",
+      "door": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-01",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, ne in furore",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-03",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, ne in furore (II)",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-04",
+      "door": "D9 Life & Intentions",
+      "label": "Miserere",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-05",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, exaudi",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-07",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, exaudi (II)",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "STG-pray.confession-03",
+      "door": "D9 Life & Intentions",
+      "label": "In the confessional",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "COV-pray.occasional_intercessions",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "existingCandidates": 10
+    },
+    {
+      "slot": "COV-prayer.lection",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-prayer.hymns",
+      "door": "—",
+      "label": "Cover",
+      "existingCandidates": 4
+    }
+  ],
+  "remainingByDoor": {
+    "Pray home": [
+      {
+        "slot": "HERO-01",
+        "label": "Advent",
+        "candidateCount": 8
+      },
+      {
+        "slot": "HERO-05",
+        "label": "Septuagesima",
+        "candidateCount": 7
+      },
+      {
+        "slot": "HERO-08",
+        "label": "Palm Sunday",
+        "candidateCount": 2
+      },
+      {
+        "slot": "HERO-09",
+        "label": "Holy Thursday",
+        "candidateCount": 5
+      },
+      {
+        "slot": "HERO-10",
+        "label": "Good Friday",
+        "candidateCount": 1
+      },
+      {
+        "slot": "HERO-16",
+        "label": "Corpus Christi",
+        "candidateCount": 3
+      },
+      {
+        "slot": "HERO-17",
+        "label": "Sacred Heart",
+        "candidateCount": 2
+      },
+      {
+        "slot": "HERO-18",
+        "label": "Time after Pentecost",
+        "candidateCount": 10
+      },
+      {
+        "slot": "HERO-19",
+        "label": "Assumption",
+        "candidateCount": 5
+      },
+      {
+        "slot": "HERO-21",
+        "label": "All Souls",
+        "candidateCount": 5
+      },
+      {
+        "slot": "HERO-23",
+        "label": "Immaculate Conception",
+        "candidateCount": 2
+      }
+    ],
+    "D1 Daily Prayer": [
+      {
+        "slot": "DOOR-D1",
+        "label": "Daily Prayer",
+        "candidateCount": 8
+      }
+    ],
+    "D4 Novenas & Journeys": [
+      {
+        "slot": "DOOR-D4",
+        "label": "Novenas & Journeys",
+        "candidateCount": 12
+      },
+      {
+        "slot": "COV-novena.st_anthony_nine_tuesdays",
+        "label": "Cover",
+        "candidateCount": 6
+      }
+    ],
+    "D6 Our Lord": [
+      {
+        "slot": "DOOR-D6",
+        "label": "Our Lord",
+        "candidateCount": 10
+      },
+      {
+        "slot": "STG-pray.seven_words-06",
+        "label": "'It is consummated'",
+        "candidateCount": 4
+      }
+    ],
+    "D7 Our Lady": [
+      {
+        "slot": "DOOR-D7",
+        "label": "Our Lady",
+        "candidateCount": 12
+      },
+      {
+        "slot": "COV-weekday_magnificat",
+        "label": "Card vignette",
+        "candidateCount": 5
+      }
+    ],
+    "D9 Life & Intentions": [
+      {
+        "slot": "DOOR-D9",
+        "label": "Life & Intentions",
+        "candidateCount": 10
+      },
+      {
+        "slot": "COV-church_prayer_for_pope",
+        "label": "Card vignette",
+        "candidateCount": 1
+      },
+      {
+        "slot": "COV-dead_eternal_rest_singular",
+        "label": "Card vignette",
+        "candidateCount": 3
+      },
+      {
+        "slot": "STG-pray.penitential_psalms-01",
+        "label": "Domine, ne in furore",
+        "candidateCount": 3
+      },
+      {
+        "slot": "STG-pray.penitential_psalms-03",
+        "label": "Domine, ne in furore (II)",
+        "candidateCount": 2
+      },
+      {
+        "slot": "STG-pray.penitential_psalms-04",
+        "label": "Miserere",
+        "candidateCount": 3
+      },
+      {
+        "slot": "STG-pray.penitential_psalms-05",
+        "label": "Domine, exaudi",
+        "candidateCount": 2
+      },
+      {
+        "slot": "STG-pray.penitential_psalms-07",
+        "label": "Domine, exaudi (II)",
+        "candidateCount": 4
+      },
+      {
+        "slot": "STG-pray.confession-03",
+        "label": "In the confessional",
+        "candidateCount": 3
+      },
+      {
+        "slot": "COV-pray.for_priests",
+        "label": "Cover",
+        "candidateCount": 4
+      },
+      {
+        "slot": "COV-pray.occasional_intercessions",
+        "label": "Cover",
+        "candidateCount": 10
+      },
+      {
+        "slot": "COV-prayer.lection",
+        "label": "Cover",
+        "candidateCount": 5
+      }
+    ],
+    "D2 Essential Prayers": [
+      {
+        "slot": "COV-foundations_act_of_hope",
+        "label": "Card vignette",
+        "candidateCount": 5
+      },
+      {
+        "slot": "COV-foundations_prayer_of_adoration",
+        "label": "Card vignette",
+        "candidateCount": 3
+      }
+    ],
+    "D5 Holy Eucharist": [
+      {
+        "slot": "COV-adoration_spiritual_communion",
+        "label": "Card vignette",
+        "candidateCount": 5
+      },
+      {
+        "slot": "COV-adoration_litany_blessed_sacrament",
+        "label": "Card vignette",
+        "candidateCount": 3
+      },
+      {
+        "slot": "COV-benediction_versicles",
+        "label": "Card vignette",
+        "candidateCount": 1
+      },
+      {
+        "slot": "COV-adoration_lord_i_am_not_worthy",
+        "label": "Card vignette",
+        "candidateCount": 2
+      },
+      {
+        "slot": "COV-benediction_adoremus_ps116",
+        "label": "Card vignette",
+        "candidateCount": 2
+      },
+      {
+        "slot": "STG-pray.adoration.night-05",
+        "label": "Spiritual Communion",
+        "candidateCount": 4
+      },
+      {
+        "slot": "STG-pray.adoration-02",
+        "label": "In stillness (exposition)",
+        "candidateCount": 2
+      },
+      {
+        "slot": "STG-pray.adoration.four_ends-02",
+        "label": "Thanksgiving",
+        "candidateCount": 2
+      },
+      {
+        "slot": "STG-pray.benediction-01",
+        "label": "Exposition · O Salutaris",
+        "candidateCount": 2
+      },
+      {
+        "slot": "STG-pray.benediction-02",
+        "label": "Tantum Ergo · incensation",
+        "candidateCount": 1
+      },
+      {
+        "slot": "COV-prayer.communion",
+        "label": "Cover",
+        "candidateCount": 8
+      },
+      {
+        "slot": "STG-prayer.communion-02",
+        "label": "After Communion",
+        "candidateCount": 5
+      }
+    ],
+    "D8 Saints & Angels": [
+      {
+        "slot": "COV-devotion_st_anthony_lost_items",
+        "label": "Card vignette",
+        "candidateCount": 6
+      },
+      {
+        "slot": "STG-pray.litany_saints-03",
+        "label": "Apostles and evangelists",
+        "candidateCount": 3
+      }
+    ],
+    "—": [
+      {
+        "slot": "COV-prayer.hymns",
+        "label": "Cover",
+        "candidateCount": 4
+      }
+    ]
+  }
+}
