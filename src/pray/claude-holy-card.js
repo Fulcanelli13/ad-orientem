@@ -37,7 +37,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  const paragraphs=beats.map((part,i)=>{
   const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial" aria-hidden="true">'+esc(text.charAt(0))+'</span>':'';
   const body=i===0?text.slice(1):text;
-  return '<p class="aoP435930EssentialBeat'+(part.collective?' aoP435930EssentialCollective':'')+
+  return '<p class="aoP435930EssentialBeat aoLibraryLine'+(part.collective?' aoP435930EssentialCollective':'')+
    '" data-ao-essential-index="'+i+'" lang="'+language+'">'+initial+
    '<span>'+esc(body)+'</span></p>';
  }).join("");
@@ -54,7 +54,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
     '<h3>'+esc(title||id)+'</h3></div></div>'+
    '<div class="aoClaudeHolyFace aoClaudeHolyBack"><div class="aoClaudeHolyOrn">✠</div>'+
     '<h4 lang="la">'+esc(latinIncipit)+'</h4>'+
-    '<div class="aoClaudeHolyBackScroll" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
+    '<div class="aoClaudeHolyBackScroll aoP435930Text" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
     '<div class="aoClaudeHolyOrn aoClaudeHolyClosing">❦</div></div>'+
    '</div></div><div class="aoClaudeHolyHint">'+esc(flipped?'Tap to turn back · swipe for the next card':'Tap to turn the card over')+'</div></div>'+
    '</article>';
