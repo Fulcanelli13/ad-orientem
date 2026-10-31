@@ -20,7 +20,7 @@ assert.ok(patch.replacement.statement.en.length>50&&patch.replacement.statement.
 assert.equal(patch.replacement.source_page_image_directly_checked,true);
 assert.equal(patch.replacement.publication_authorized,false);
 assert.equal(patch.replacement.full_612_semantic_uniqueness_approved,false);
-assert.equal(patch.revisions.length,21);
+assert.equal(patch.revisions.length,23);
 assert.equal(patch.original_folio_direct_checks.length,27);
 assert.ok(patch.original_folio_direct_checks.every(x=>x.method==="CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT"&&x.historical_independence_verified===false));
 assert.equal(corrected.sample.length,50);
