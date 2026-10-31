@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {createReaderGestureMatrixController} from "../src/mass/reader-gesture-matrix.js";
 import {USER_APPROVED_MASS_GESTURE_KEYS,USER_APPROVED_MASS_GESTURE_ASSETS,
+ USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS,
  userApprovedMassGestureArt,resolveUserApprovedMassGestureArt} from "../src/mass/reader-user-approved-gesture-art.js";
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const votes=json("../data/mass/gesture-icon-user-review-20261029.v1.json");
@@ -15,6 +16,12 @@ assert.equal(Object.keys(USER_APPROVED_MASS_GESTURE_ASSETS).length,6);
 assert.deepEqual(votes.items.filter(x=>x.decision==="APPROVE").map(x=>x.cueId),approved);
 assert.equal(votes.items.find(x=>x.cueId==="C0169").decision,"REJECT");
 assert.equal(USER_APPROVED_MASS_GESTURE_KEYS["AO.SM.C0169"],undefined);
+assert.deepEqual(Object.keys(USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS).sort(),
+ ["AO.SM.C0193","AO.SM.C0204"]);
+assert.equal(votes.items.find(x=>x.cueId==="C0193").ceremonialStatus,
+ USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS["AO.SM.C0193"]);
+assert.equal(votes.items.find(x=>x.cueId==="C0204").ceremonialStatus,
+ USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS["AO.SM.C0204"]);
 for(const id of approved){
  const cue="AO.SM."+id,key=USER_APPROVED_MASS_GESTURE_KEYS[cue];
  assert.equal(key,"ao_1962_priest_"+id.toLowerCase());
@@ -22,7 +29,9 @@ for(const id of approved){
  assert.ok(source&&source.owner==="GESTURE_MATRIX_SOT",id+" no 1962 source action");
  assert.equal(source.sourceGestureId,"GM.P."+id+".01");
  assert.equal(source.iconKey,null,"Frozen 67-master bank was mutated");
- assert.equal(userApprovedMassGestureArt({cueId:cue,matrixAction:source,priestAction:source}),key);
+ assert.equal(userApprovedMassGestureArt({cueId:cue,matrixAction:source,priestAction:source}),
+  USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS[cue]?null:key,
+  id+" incorrect or uncertified concept was exposed before ceremonial clearance");
  assert.equal(userApprovedMassGestureArt({cueId:"AO.SM.C0169",matrixAction:source,priestAction:source}),null);
  assert.equal(userApprovedMassGestureArt({cueId:cue,matrixAction:source,
   priestAction:{...source,cueId:"AO.SM.C0169"}}),null,"Wrong source cue acquired icon");
@@ -46,4 +55,4 @@ assert.equal(resolveUserApprovedMassGestureArt("stand",key=>"FROZEN_"+key),"FROZ
 assert.equal(matrix.items.length,142);
 assert.equal(matrix.items.filter(x=>x.iconKey).length,125);
 assert.equal(bank.assets.length,67);
-console.log("PASS six distinct user-approved source-cue action SVGs activated as separate adaptive extension; C0169 rejected, no frozen-bank or card/source mutation.");
+console.log("PASS six exact user-approved concepts retained, four LIVE-enabled and two accuracy-held; C0169 rejected, frozen bank/ceremonial source unchanged.");
