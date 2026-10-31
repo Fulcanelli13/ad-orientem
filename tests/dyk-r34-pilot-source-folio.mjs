@@ -16,6 +16,8 @@ for(const candidate of pilot){
     assert.equal(model.language,language);
     assert.equal(model.fact,candidate.pilot_home_copy[language]);
     assert.equal(model.sourceUrl,candidate.pilot_source_folio.url);
+    assert.equal(model.sourcePage,candidate.pilot_source_folio.pdf_pages_1based[0]);
+    assert.equal(model.sourcePageUrl,model.sourceUrl+"#page="+model.sourcePage);
     assert.equal(model.reviewOnly,true);
     assert.equal(model.readOnly,true);
     assert.match(model.sourceLocation,model.sourceType==="ROMAN_RITUS"?/Ritus servandus, § IX\.2/:/31[1-4]/);
@@ -27,7 +29,7 @@ for(const candidate of pilot){
     assert.match(html,/Not published|Non publié/);
     assert.ok(html.includes(model.fact));
     assert.ok(html.includes(model.sourceId));
-    assert.ok(html.includes(model.sourceUrl.replaceAll("&","&amp;")));
+    assert.ok(html.includes(model.sourcePageUrl.replaceAll("&","&amp;")),"Deep link should target exact original PDF page");
     assert.ok(!html.includes("data-home-dyk-open"),"Must not silently replace live Home teaser");
     check.add(candidate.id+"/"+language);
   }
@@ -39,6 +41,7 @@ assert.equal(dykPilotSourceFolioModel(r34,"DYK-UM01-001","en"),null,"Non-pilot s
 assert.equal(dykPilotSourceFolioModel({...r34,status:"PUBLISHED"},"DYK-UM02-014"),null);
 assert.equal(dykPilotSourceFolioModel({...r34,records:[]},"DYK-UM02-014"),null);
 assert.equal(dykPilotSourceFolioMarkup({...dykPilotSourceFolioModel(r34,pilot[0].id),sourceUrl:"javascript:alert(1)"}),"");
+assert.equal(dykPilotSourceFolioMarkup({...dykPilotSourceFolioModel(r34,pilot[0].id),sourcePageUrl:"javascript:alert(1)"}),"");
 const injected={...dykPilotSourceFolioModel(r34,pilot[0].id),fact:'<img src=x onerror="alert(1)">'};
 const guarded=dykPilotSourceFolioMarkup(injected);
 assert.ok(!guarded.includes("<img"));
