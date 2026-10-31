@@ -221,8 +221,14 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/general Confession/);
- await press(conf+" [data-p435930-conf-next]");
- await press(conf+" [data-p435930-conf-next]");
+ for(const id of [
+   "cross-and-blessing","last-confession","say-sins","closing-accusation",
+   "counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"
+ ]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id,
+    "General Confession also retains the complete traditional rehearsal");
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
