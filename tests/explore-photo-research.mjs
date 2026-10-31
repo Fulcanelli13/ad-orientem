@@ -52,7 +52,17 @@ for(const item of approved.items){
   assert.ok(!approvedIds.has(item.place_id));approvedIds.add(item.place_id);
   assert.equal(item.status,"APPROVED");
   assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
-  assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
+  if(item.source_place_ref==="APPROVED_GALLERY_COVER_REUSE_20261031"){
+    assert.match(item.asset_path,/^assets\/approved\/place-gallery\/[a-zA-Z0-9_.-]+\.webp$/);
+    assert.match(item.source_sha1,/^[a-f0-9]{40}$/);
+    assert.match(item.derivative_sha256,/^[a-f0-9]{64}$/);
+    const original=existingGallery.items.find(x=>x.media_id===item.gallery_media_id&&x.place_id===item.place_id);
+    assert.ok(original&&original.status==="APPROVED"&&original.kind==="PHOTO"&&original.rights_verified&&original.subject_verified&&original.crop_reviewed);
+    for(const key of ["asset_path","source_url","source_sha1","derivative_sha256","credit","license","license_url","width","height"])
+      assert.equal(item[key],original[key],"Gallery cover must retain source-approved "+key);
+  }else{
+    assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
+  }
   assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
     "Only independently confirmed freely reusable site photos may be published");
   assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
@@ -101,6 +111,16 @@ for(const item of approved.items){
     assert.equal(item.source_sha1,c.source_sha1);
     assert.equal(item.derivative_sha256,c.sha256);
     assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"));
+  }else if(item.source_place_ref==="APPROVED_GALLERY_COVER_REUSE_20261031"){
+    const approvedGalleryItem=existingGallery.items.find(x=>x.media_id===item.gallery_media_id&&x.place_id===item.place_id);
+    assert.ok(approvedGalleryItem);
+    assert.equal(item.derivative_sha256,approvedGalleryItem.derivative_sha256);
+  }else if(item.source_place_ref==="COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE"){
+    assert.equal(item.place_id,"place:FR:notre-dame-paris");
+    assert.equal(item.credit,"Chabe01");
+    assert.equal(item.source_sha1,"6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5");
+    assert.equal(item.asset_path,"assets/approved/place-media/FR-notre-dame-paris-2026.webp");
+    assert.equal(item.license,"CC-BY-SA-4.0");
   }else if(item.source_place_ref==="PHOTO_FINDER_2026-10-30_R1"){
     assert.match(item.asset_path,/^assets\/approved\/place-media\/pf-[a-f0-9]{22}\.webp$/);
     const decision=finder.decisions[item.place_id];
