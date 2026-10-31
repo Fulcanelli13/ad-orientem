@@ -5,6 +5,7 @@ import {createReaderGestureMatrixController} from "../src/mass/reader-gesture-ma
 import {USER_APPROVED_MASS_GESTURE_KEYS,USER_APPROVED_MASS_GESTURE_ASSETS,
  USER_APPROVED_MASS_GESTURE_VISUAL_HOLDS,
  userApprovedMassGestureArt,resolveUserApprovedMassGestureArt} from "../src/mass/reader-user-approved-gesture-art.js";
+import {iconKeysForReaderState} from "../src/mass/reader-icons.js";
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const votes=json("../data/mass/gesture-icon-user-review-20261029.v1.json");
 const matrix=json("../data/mass/gesture-matrix.v1.json");
@@ -55,4 +56,22 @@ assert.equal(resolveUserApprovedMassGestureArt("stand",key=>"FROZEN_"+key),"FROZ
 assert.equal(matrix.items.length,142);
 assert.equal(matrix.items.filter(x=>x.iconKey).length,125);
 assert.equal(bank.assets.length,67);
+// Three different priest actions still need *exact* art, not donor substitutes.
+// In particular, indulgentiam != final blessing, and Ecce Agnus Dei !=
+// the major elevation at Consecration. Existing source rubrics must remain.
+for(const [cueId,label] of [
+ ["AO.SM.C0169","RAISES EYES"],
+ ["AO.SM.C0242","SHOWS SACRED HOST"],
+ ["AO.SM.C0265","BLESSES PEOPLE"]
+]){
+ const projected=iconKeysForReaderState({form:"MISSA_CANTATA_SIMPLE",cueId,
+  curated65FinalArt:true,priestAction:{cueId,label}});
+ assert.equal(projected.priestActionIconKey,null,
+   cueId+" accidentally borrowed inaccurate approved artwork");
+}
+// Unlike the rejected older foot illustrations, ref_112206 is the later
+// explicitly approved 21 Oct original. Retain the historical decision.
+assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0001",curated65FinalArt:true,
+ priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,
+ "canon:priest.position.foot");
 console.log("PASS six exact user-approved concepts retained, four LIVE-enabled and two accuracy-held; C0169 rejected, frozen bank/ceremonial source unchanged.");
