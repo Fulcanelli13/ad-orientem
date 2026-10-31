@@ -58,7 +58,9 @@ test("Canonical Angelus remains season-owned and progresses only with user navig
  assert.match(runtime,/angelusSaturdayVespersDate===selectedDateKey\(\)/);
  assert.match(runtime,/installAngelusCardDeck\(/);
  assert.match(runtime,/onCardChange:\(_card,index\)=>/);
- assert.match(runtime,/syncClaudeHorariumStrokes\(m,index-1\)/);
+ assert.match(runtime,/syncClaudeHorariumStrokes\(m,ANGELUS_COVER_DISMISSED\?Math\.min\(index,3\):-1\)/);
+ assert.match(runtime,/syncClaudeHorariumStrokes\(mount\(\),0\)/);
+ assert.match(runtime,/claudeHorariumStrokes\(openingVisible\?-1:Math\.min\(ANGELUS_CARD_INDEX,3\)\)/);
  assert.match(runtime,/data-p435930-angelus-hour/);
  assert.match(runtime,/claudeHorariumClock\(CLAUDE_ANGELUS_HOUR,lang\(\)\)/);
  assert.match(styles,/height:150px/);
