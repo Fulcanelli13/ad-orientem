@@ -26,19 +26,23 @@
     "historicApprovedSlots": 162,
     "currentApprovedSlots": 160,
     "currentGaps": 107,
-    "newSafeReuseSlots": 32,
+    "newSafeReuseSlots": 33,
     "contextualProposals": 38,
-    "remainingGapsAfterSafeReuse": 75,
-    "newUnpublishedRelationships": 118,
-    "rules": 72,
+    "remainingGapsAfterSafeReuse": 74,
+    "newUnpublishedRelationships": 119,
+    "rules": 73,
     "productionClearedImages": 0,
     "tiers": {
-      "EXACT_SCENE": 14,
+      "EXACT_SCENE": 15,
       "DEVOTIONAL_SUBJECT": 18,
       "CONTEXTUAL_REVIEW": 38,
       "RESEARCH_REQUIRED": 1,
       "PROTECTED_LOCK": 1
-    }
+    },
+    "editorialMappedAfterInheritedAndPriorKeeps": 200,
+    "editorialUnmappedAfterInheritedAndPriorKeeps": 67,
+    "explicitLaterLybaertOverrideCount": 2,
+    "photoFilesNewlyReady": 0
   },
   "finalLocksRequiringIdentity": [
     "COV-pray.rosary",
@@ -888,6 +892,18 @@
         "LAST_SUPPER"
       ],
       "sourceSlotStatus": "COVERED_PENDING_PHOTO_AND_RIGHTS_QA"
+    },
+    {
+      "slot": "STG-pray.stations-05",
+      "relationship": "EXACT_SCENE",
+      "artworkIds": [
+        "REVIEW::commons:22178536"
+      ],
+      "groups": [
+        "SIMON_OF_CYRENE_ASSISTING_FALLEN_CHRIST"
+      ],
+      "sourceSlotStatus": "USER_APPROVED_SOURCE_SCENE_IN_STATION_II_WITH_SIMON_DEPICTED",
+      "reviewNote": "Getty confirms Simon of Cyrene supporting fallen Christ within Domenichino's The Way to Calvary; user already approved the same work for Stations II. This inheritance applies to the depicted Simon event; not a replacement for the earlier placement."
     }
   ],
   "relationships": [
@@ -2188,6 +2204,46 @@
       "exactFileLicense": "NOT_VERIFIED",
       "photoQA": "NOT_VERIFIED",
       "publishable": false
+    },
+    {
+      "slot": "STG-pray.stations-05",
+      "artworkId": "REVIEW::commons:22178536",
+      "title": "The Way to Calvary",
+      "artist": "Domenichino (Domenico Zampieri)",
+      "approvedDonor": "STG-pray.stations-02",
+      "relationship": "EXACT_SCENE",
+      "exactFileLicense": "NOT_VERIFIED",
+      "photoQA": "NOT_VERIFIED",
+      "publishable": false,
+      "sourceEvidence": {
+        "museum": "J. Paul Getty Museum",
+        "accession": "83.PC.373",
+        "officialWorkPage": "https://www.getty.edu/art/collection/object/103RFK",
+        "sceneDescription": "https://artsandculture.google.com/asset/the-way-to-calvary-domenichino-domenico-zampieri/xgHg-b7no0EifA?hl=en",
+        "pdCC0SourceFile": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary,_c._1610_(Getty_Center).jpg",
+        "rightsPolicy": "https://www.getty.edu/projects/open-content-program/faqs/",
+        "nativeDimensions": [
+          8797,
+          7032
+        ],
+        "sourceClaim": "GETTY_OPEN_CONTENT_CC0_AND_COMMONS_PD_MARK",
+        "nativeFileQA": false,
+        "approvalBasis": "USER_APPROVED_IDENTICAL_PAINTING_AT_STATION_II",
+        "subjectScope": "SIMON_ASSISTING_FALLEN_CHRIST",
+        "note": "The photograph's exact file identity and crop still require independent QA before runtime use."
+      }
+    }
+  ],
+  "stageSpecificCaveats": [
+    {
+      "slot": "STG-pray.stations-05",
+      "sourceDonor": "STG-pray.stations-02",
+      "scene": "Simon assists Christ after He has fallen",
+      "gospel": "Luke 23:26",
+      "exactScene": true,
+      "userApprovedDonorWork": true,
+      "notNecessarilyCorrectForSourceStationII": true,
+      "artworkNotReleased": true
     }
   ]
 }
