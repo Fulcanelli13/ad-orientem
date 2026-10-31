@@ -100,7 +100,7 @@ try{
   assert.equal(cold.discovery,1,"H4 must show one standalone Did You Know below This week");
   assert.equal(cold.begin,1,"H4 must expose exactly one source-gated Begin Mass");
   assert.equal(cold.resume,0,"A cold Home without a saved Mass must not claim Resume");
-  assert.equal(cold.change,1,"H4 Mass choices must have one discreet Change control");
+  assert.equal(cold.change,2,"H7 must retain its one Mass-options Change and one footer shortcut");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
   assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
@@ -117,7 +117,7 @@ try{
    assert.equal(await page.locator("[data-ao-app-surface='home']").getAttribute("aria-label"),"Today");
   // H4's dated Calendar entry replaces retired Today V2 tabs. Calendar must
   // remain source-owned and embedded under Today, never a sixth surface.
-  const calendarEntry=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
+  const calendarEntry=page.locator('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]');
   assert.equal(await calendarEntry.count(),1,"H4 lost its dated Calendar entry");
   await calendarEntry.click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',{state:"visible",timeout:15000});
@@ -555,7 +555,7 @@ try{
   // explicit Resume action. Do not create two competing Mass entry controls.
   assert.equal(homeOwnership.begin,0,"Suspended Mass must not expose a competing fresh Begin");
   assert.equal(homeOwnership.resume,1,"Home return lost the checkpoint's Resume Mass door");
-  assert.equal(homeOwnership.change,1,"Home return lost discreet Mass choices");
+  assert.equal(homeOwnership.change,2,"Home return lost the H7 Mass-options or footer Change shortcut");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
   assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");

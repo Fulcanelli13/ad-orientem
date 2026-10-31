@@ -335,8 +335,10 @@ try{
   // H4's approved Begin button goes directly to the same source-gated R17
   // reader used by the canonical controller. Options are in Change; there is
   // no extra preflight dialog or fifth ribbon tab in this flow.
-  assert.equal(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count(),1,
-    "H4 Mass choices must remain available before beginning");
+  assert.equal(await page.locator(".aoH7DoorView .dsec [data-home-h4-change]").count(),1,
+    "H7 Mass-options row must retain its Change control");
+  assert.equal(await page.locator(".aoH7DoorView .foot .mini [data-home-h4-change]").count(),1,
+    "H7 footer must retain the original Change shortcut");
   await page.waitForFunction(()=>Boolean(document.querySelector(
     ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
   await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
