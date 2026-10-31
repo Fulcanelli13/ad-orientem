@@ -13,7 +13,9 @@
     "excludedDoNotSuggest": 7,
     "candidatesWithExplicitNoPublicationGate": 83,
     "sourceLinksRecoveredByExactID": 0,
-    "sourceLinkSuggestionsUnverified": 0
+    "sourceLinkSuggestionsUnverified": 0,
+    "museumDocumentedAnonymousPlacements": 2,
+    "unknownPainterOriginalIdentityOpen": 0
   },
   "slots": [
     {
@@ -214,7 +216,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
         },
         {
           "sourceIDs": [
@@ -757,7 +767,15 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED",
-          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK"
+          "artistIdentityStatus": "UNIDENTIFIED_OR_UNATTRIBUTED_HISTORICAL_WORK",
+          "artistAttribution": {
+            "status": "MUSEUM_CATALOGUED_ANONYMOUS",
+            "label": "Unidentified painter, Northern Italy, early 17th century",
+            "officialObject": "https://www.clevelandart.org/art/1916.816",
+            "sourceObjectAccession": "1916.816",
+            "artistNotKnown": true,
+            "medium": "oil on copper"
+          }
         },
         {
           "sourceIDs": [
