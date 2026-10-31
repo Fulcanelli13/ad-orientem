@@ -5,7 +5,7 @@
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
     "new_site_pins": 67,
-    "refined_existing_site_pins": 11,
+    "refined_existing_site_pins": 14,
     "corrected_existing_site_pins": 3
   },
   "pins": [
@@ -898,6 +898,39 @@
       "source_ref": "osm:node:354389668",
       "source_url": "https://www.openstreetmap.org/node/354389668",
       "review_scope": "ST_BONIFACE_WORSHIP_SITE_NOT_CATHEDRAL_OF_EPIPHANY_BUILDING",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-368B7B3B5FA3",
+      "source_id": "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",
+      "name": "Church of Saint Agnes",
+      "lat": 44.95972,
+      "lng": -93.12333,
+      "source_ref": "nrhp:80002125",
+      "source_url": "https://en.wikipedia.org/wiki/Church_of_St._Agnes_(Saint_Paul,_Minnesota)",
+      "review_scope": "HISTORIC_CHURCH_SITE_NOT_PARKING_OR_SCHOOL",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-46B891B2CE6E",
+      "source_id": "AO-AMER-R26-US-03-08",
+      "name": "Cathedral of the Immaculate Conception",
+      "lat": 30.22659,
+      "lng": -93.21666,
+      "source_ref": "nrhp:94001201",
+      "source_url": "https://en.wikipedia.org/wiki/Cathedral_of_the_Immaculate_Conception_(Lake_Charles,_Louisiana)",
+      "review_scope": "CATHEDRAL_CHURCH_NOT_SEPARATE_SAINT_BERNADETTE_ORATORY",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-48A5CF9C3C73",
+      "source_id": "AO-AMER-R26-US-03-06",
+      "name": "Cathedral of the Epiphany",
+      "lat": 42.50094,
+      "lng": -96.4069,
+      "source_ref": "osm:node:354389830",
+      "source_url": "https://www.openstreetmap.org/node/354389830",
+      "review_scope": "CATHEDRAL_CHURCH_AT_1003_DOUGLAS_NOT_1000_OFFICE_NOT_SAINT_BONIFACE",
       "place_id": null
     }
   ]
