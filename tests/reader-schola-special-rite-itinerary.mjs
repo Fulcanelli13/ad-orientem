@@ -97,6 +97,38 @@ const paschal=projectNativeRiteMusicItinerary({
 assert.deepEqual(ordinary.current.map(x=>x.id),["AO.MUS.ASP.ME"]);
 assert.equal(ordinary.current[0].musicMaterial.condition,"ORDINARY");
 assert.equal(ordinary.current[0].musicMaterial.usableAsScore,false);
+const ordinaryWithNotation=projectNativeRiteMusicItinerary({
+ registry,riteId:"ASPERGES",controller:aspControl,
+ sourcePayload:aspPayload,condition:"ORDINARY",
+ aspersionFormulaState:aspControl.project().formulaState
+});
+assert.equal(ordinaryWithNotation.current[0].notationHandoff.sourceCandidateId,"ASPERGES_NORMAL");
+assert.equal(ordinaryWithNotation.current[0].notationHandoff.scoreAvailableToMassUser,false);
+const passionControl=createAspergesReaderController({
+ graph:graphs.ASP,payload:aspPayload,
+ riteContext:{paschaltide:false,omitGloriaPatri:true}
+});
+passionControl.goTo("ASP-R02");
+const passionWithNotation=projectNativeRiteMusicItinerary({
+ registry,riteId:"ASPERGES",controller:passionControl,
+ sourcePayload:aspPayload,condition:"ORDINARY",
+ aspersionFormulaState:passionControl.project().formulaState
+});
+assert.equal(passionWithNotation.current[0].notationHandoff.reason,
+ "PASSIONTIDE_GLORIA_MUST_BE_SUPPRESSED_IN_VIEWER");
+const paschalControl=createAspergesReaderController({
+ graph:graphs.ASP,payload:aspPayload,
+ riteContext:{paschaltide:true,omitGloriaPatri:false}
+});
+paschalControl.goTo("ASP-R02");
+const paschalWithNotation=projectNativeRiteMusicItinerary({
+ registry,riteId:"ASPERGES",controller:paschalControl,
+ sourcePayload:aspPayload,condition:"PASCHAL",
+ aspersionFormulaState:paschalControl.project().formulaState
+});
+assert.equal(paschalWithNotation.current[0].notationHandoff.sourceCandidateId,"ASPERGES_PASCHAL");
+assert.equal(paschalWithNotation.current[0].notationHandoff.scoreAvailableToMassUser,false);
+
 
 assert.deepEqual(paschal.current.map(x=>x.id),["AO.MUS.ASP.VIDI"]);
 assert.equal(paschal.current[0].musicMaterial.condition,"PASCHAL");
