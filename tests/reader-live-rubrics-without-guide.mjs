@@ -65,4 +65,25 @@ assert.match(dom,/mode==="LIVE"\s*\? p\.publishedMissalRubrics\.filter\(event=>e
  "Printed VIII.6 server bell notes must never become LIVE reader events");
 assert.match(dom,/const alreadyPrintedRubric=\(mode==="MISSAL"\|\|mode==="LIVE"\)/);
 assert.match(dom,/shell\.dataset\.canonInline="false"/);
+// Ecclesia Dei's marginal catechesis is not a LIVE-side rubric. Check the
+// production stylesheet, not just a policy note: source ceremonial brackets
+// become quiet, source-aligned italic text, and 52px icon rails contain no prose.
+const liveSourceRule=markup.match(/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]\{[\s\S]*?\n\}/)?.[0]??"";
+assert.match(liveSourceRule,/border-radius:0;background:transparent/,
+  "LIVE source rubrics must not use a grey boxed/card presentation");
+assert.match(liveSourceRule,/font:italic 400/,
+  "LIVE source rubrics need small, unobtrusive Missal-serif type");
+assert.match(markup,/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]::before\{\s*display:none!important/,
+  "LIVE must not prepend a large generic RUBRIC label");
+assert.match(markup,/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]\[data-active="false"\]\{\s*opacity:\.38/,
+  "LIVE instruction text must respect paragraph focus");
+assert.match(markup,/\.ao-reader-shell\[data-mode="MISSAL"\]\{--ao-missal-rubric-red:#df7e80\}/,
+  "MISSAL rubrics must remain red, irrespective of the LIVE treatment");
+assert.match(markup,/\.ao-reader-shell\[data-mode="MISSAL"\] \.ao-missal-inline-rubrics\{/,
+  "MISSAL must retain its independent printed full-rubric surface");
+const ministerRule=markup.match(/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-rail-item\[data-channel="sacred-minister"\] \.ao-rail-copy\{[\s\S]*?\n\}/)?.[0]??"";
+assert.match(ministerRule,/display:none!important/,
+  "No tiny, explanatory minister words may occupy an icon-only LIVE rail");
+assert.doesNotMatch(ministerRule,/display:(?:block|-webkit-box)!important/,
+  "An older high-specificity minister rail override reintroduced marginal prose");
 console.log("PASS: LIVE 65 removes Guide from reader chrome, publishes only certified source-cue EN/FR priest rubrics, no copied explanations, staged exceptions guarded and canonical text untouched.");
