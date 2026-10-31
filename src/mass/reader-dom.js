@@ -496,18 +496,11 @@ background:rgba(225,207,145,.07);color:#ecf0e8;font:600 11px/1.3 var(--ao-font-u
   color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 85%,transparent);
   text-align:left;letter-spacing:0;overflow-wrap:break-word;
 }
-/* No new artwork/clock: one occasional Solemn minister *rubric*, not a
-   claimed observation or a priest-action clone. Only certified existing
-   sacredMinister states may populate this otherwise absent right-rail tile. */
-.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="sacred-minister"][data-active="true"]{
-  border-color:color-mix(in srgb,var(--ao-mass-accent) 34%,transparent);
-  background:color-mix(in srgb,var(--ao-mass-panel) 92%,transparent);
-  opacity:.91;padding:3px
-}
+/* No minister prose inside icon-shaped rails. The existing R18 exact-cue
+   Solemn/conditional directions remain source-adjacent inline; unresolved
+   icons stay hidden and are never replaced by tiny uppercase text. */
 .ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="sacred-minister"] .ao-rail-copy{
-  display:block!important;max-width:48px;font:600 7px/1.1 var(--ao-font-ui,system-ui,sans-serif);
-  letter-spacing:.015em;text-transform:uppercase;color:#d6ddd3;text-align:center;
-  overflow-wrap:break-word;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden
+  display:none!important
 }
 .ao-reader-shell:not([data-mode="LIVE"]) [data-channel="sacred-minister"]{display:none!important}
 
@@ -1295,6 +1288,31 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
   display:block;margin:1px 0;
 }
+/* Ecclesia Dei margins explain the liturgy; LIVE is for following it.
+   Preserve source-bracketed ceremonial text at its exact cue, but avoid a
+   second grey prayer card, a RUBRIC heading, or an explanatory rail. MISSAL
+   still prints the complete traditional red-italic instructions unchanged. */
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]{
+  display:block;max-width:66ch;margin:7px 0 9px;padding:4px 0 4px 11px;
+  border:0;border-left:2px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
+  border-radius:0;background:transparent;
+  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 85%,transparent);
+  font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
+  text-align:left;letter-spacing:0;overflow-wrap:break-word
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]::before{
+  display:none!important;content:none!important
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"] .ao-line-primary{
+  color:inherit;font:inherit;text-align:left
+}
+/* These remarks follow paragraph focus; they are not persistent commentary. */
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"][data-active="false"]{
+  opacity:.38
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"][data-active="true"]{
+  opacity:1
+}
 /* An exact approved source-gesture pictogram is the LIVE instruction.
    Preserve the original published rubric as accessible text (and show it in
    the red-ink MISSAL), but do not print a duplicate caption beside the icon.
@@ -1326,7 +1344,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[hidden],
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics[hidden]{display:none!important}
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph:not([data-active="true"])
-  .ao-live-inline-rubrics{opacity:.93}
+  .ao-live-inline-rubrics{opacity:.64}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
   summary{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
