@@ -91,9 +91,25 @@ try{
     document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']"),
     null,{timeout:20000});
    for(let i=0;i<7;i++)await rosary.locator("[data-lab-rosary-next]").click();
-   await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.step===7&&
-    document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-canonical-step='7'] .aoRosaryPrayerScroll")!==null,
-    null,{timeout:12000});
+   await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.step===7,null,{timeout:12000});
+   // Contemplation cards correctly do not have prayer paragraph scroll.
+   // Advance through the donor's own steps to the next real prayer card,
+   // and only then verify prayer focus and exact scroll restoration.
+   let foundPrayer=false;
+   for(let i=0;i<30;i++){
+    const source=await page.evaluate(()=>{
+     const state=window.AO_ROSARY_V381?.state?.(),card=document.querySelector(
+      "#aoPrayerBookRoot.open .aoRosaryActiveCard");
+     return {step:state?.step,visual:Number(card?.dataset.aoRosaryCanonicalStep),
+      prayer:!!card?.querySelector(".aoRosaryPrayerScroll")};
+    });
+    if(source.step===source.visual&&source.prayer){foundPrayer=true;break}
+    assert.ok(Number.isInteger(source.step)&&source.step>=0,"Rosary source step unavailable");
+    await rosary.locator("[data-lab-rosary-next]").click();
+    await page.waitForFunction(prev=>window.AO_ROSARY_V381?.state?.()?.step===prev+1,
+     source.step,{timeout:10000});
+   }
+   assert.equal(foundPrayer,true,"No canonical prayer bead reached after the Rosary contemplation card");
    // A PrayerBook Latin flip is a reading-face choice, not a new bead.
    // Preserve it exactly when the canonical current card exposes both faces.
    const flip=rosary.locator(".aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]");
