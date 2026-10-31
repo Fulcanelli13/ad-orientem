@@ -19,9 +19,12 @@
         "COV-devotion_st_anthony_lost_items"
       ],
       "fit": "EXACT_SAINT_AND_CHILD",
-      "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "status": "RESEARCH_ONLY_AWAIT_EXPLICIT_USER_APPROVAL",
       "nativeQA": "PENDING",
-      "note": "Strong first €0 source for both same-saint prayer slots, but not publication-ready"
+      "note": "Strong first €0 source for both same-saint prayer slots, but not publication-ready",
+      "historicalResearchStatus": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "userApprovalReceived": false,
+      "productionUseAllowed": false
     },
     {
       "work": "Saint Anthony of Padua and the Christ Child",
@@ -38,9 +41,12 @@
         "COV-devotion_st_anthony_lost_items"
       ],
       "fit": "EXACT_SAINT_AND_CHILD",
-      "status": "BACKUP_NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "status": "RESEARCH_ONLY_AWAIT_EXPLICIT_USER_APPROVAL",
       "nativeQA": "PENDING",
-      "note": "Check attribution/provenance and colour before selecting"
+      "note": "Check attribution/provenance and colour before selecting",
+      "historicalResearchStatus": "BACKUP_NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "userApprovalReceived": false,
+      "productionUseAllowed": false
     },
     {
       "work": "Saint Peter Penitent (by 1648, former Sotheby's sale work)",
@@ -56,10 +62,13 @@
         "STG-pray.penitential_psalms-03"
       ],
       "fit": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM_EVENT",
-      "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "status": "RESEARCH_ONLY_AWAIT_EXPLICIT_USER_APPROVAL",
       "nativeQA": "PENDING",
       "note": "DO NOT CONFUSE with National Galleries of Scotland NG39 1639 painting. The two original objects differ (Commons approx. 103.5x76cm, NGS 103.7x85.8cm). NGS online photograph by Antonia Reeve has limited personal/non-commercial licence, NOT an approved free reuse source. User has not accepted either.",
-      "gallery": "NONE_VERIFIED"
+      "gallery": "NONE_VERIFIED",
+      "historicalResearchStatus": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "userApprovalReceived": false,
+      "productionUseAllowed": false
     },
     {
       "work": "King David",
@@ -77,9 +86,12 @@
         "STG-pray.penitential_psalms-07"
       ],
       "fit": "KING_DAVID_THEMATIC_NOT_IDENTIFIABLE_SPECIFIC_PENITENTIAL_PSALM",
-      "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "status": "RESEARCH_ONLY_AWAIT_EXPLICIT_USER_APPROVAL",
       "nativeQA": "PENDING",
-      "note": "Sufficient photo dimensions, but discern whether frame is visible and validate use as a thematic David portrait"
+      "note": "Sufficient photo dimensions, but discern whether frame is visible and validate use as a thematic David portrait",
+      "historicalResearchStatus": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
+      "userApprovalReceived": false,
+      "productionUseAllowed": false
     },
     {
       "work": "The Tears of Saint Peter",
@@ -94,9 +106,12 @@
         "STG-pray.penitential_psalms-07"
       ],
       "fit": "THEMATIC_SAINT_PETER_REPENTANCE_NOT_LITERALLY_KING_DAVID_PSALM",
-      "status": "NEW_RESEARCH_CANDIDATE_NOT_USER_APPROVED",
+      "status": "RESEARCH_ONLY_AWAIT_EXPLICIT_USER_APPROVAL",
       "nativeQA": "PENDING",
-      "note": "Met 1612–13 oil on canvas. Distinct original from any prior Ribera subject approval; explicit approval of THIS painting required."
+      "note": "Met 1612–13 oil on canvas. Distinct original from any prior Ribera subject approval; explicit approval of THIS painting required.",
+      "historicalResearchStatus": "NEW_RESEARCH_CANDIDATE_NOT_USER_APPROVED",
+      "userApprovalReceived": false,
+      "productionUseAllowed": false
     }
   ],
   "explicitRejects": [
