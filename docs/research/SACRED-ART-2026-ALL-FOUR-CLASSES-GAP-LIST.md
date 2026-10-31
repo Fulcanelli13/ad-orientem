@@ -1,5 +1,47 @@
 # Ad Orientem 2026 Sacred Art — Four-class progress and exact matching-gap register
 
+## Matching progress — 31 October accepted-source Batch 1 + museum alternatives Batch 2
+
+The original four-class 383-art catalogue scorecard below remains a **strict 383-only comparison**. We have now independently reconciled a second, newer `856`-source accepted-image intake. This discovers **12 previously unlinked Class III dates** with **17 exact saint/subject source cards**, not previously counted as date identities in the 383 catalogue. **No new photo or feast selection was approved.**
+
+| Rank | Strict 383 catalogue/artwork date leads | Additional accepted-source-only exact date leads | Combined identified date subjects (research) | Still without any exact dated source lead |
+|---|---:|---:|---:|---:|
+| I | 53/53 dated subjects | 0 new | 53/53 | 0 subject dates, but 28 lack exact 383 identity |
+| II | 18/76 | 0 new strict feast bindings | 18/76 | 58, with some existing outside-catalogue / contextual leads |
+| III | 33/165 | **12** | **45/165** (45/131 sanctoral) | **120** = 86 sanctoral + 34 temporal weekdays |
+| IV | 0/71 | 0 | 0/71 | 59 ferias + 12 Marian Saturdays; shared reuse, not missing saints |
+
+### The 12 recovered Class III subjects — 17 accepted original source cards
+
+| 2026 date | Observed saint/event | Source artist and painting(s) | Exact source IDs |
+|---|---|---|---|
+| 15 Jan | St Paul the First Hermit | Mattia Preti; Jusepe de Ribera — *Saint Paul the Hermit* | `cma:144270`; `walters:37037` |
+| 5 Feb | St Agatha | Francesco Furini — *St Agatha* | `walters:34385` |
+| 13 Apr | St Hermenegild | Francisco Goya — *St Hermenegild in Prison* | `commons:29827881` |
+| 29 Apr | St Peter of Verona | Cima da Conegliano — *Saint Peter Martyr with Saints Nicholas and Benedict* | `commons:9734560` |
+| 6 Jun | St Norbert | Gerard Seghers — Norbert receives the habit; Cornelis de Vos — Norbert and restored church treasures | `kmska:6yxly9`; `kmska:n22nyq` |
+| 30 Jun | St Paul Apostle | Tintoretto — *Conversion of St Paul*; François de Nomé — *Paul Preaching to the Athenians* | `nga:46142`; `walters:37844` |
+| 8 Jul | St Elizabeth of Portugal | Francisco Goya — *Saint Isabel of Portugal Healing the Sick* | `commons:29827917` |
+| 19 Sep | St Januarius | Mattia Preti — *Martyrdom of Saint Gennaro* | `nga:112629` |
+| 6 Oct | St Bruno | Girolamo Marchesi — *Saint Bruno*; Carlo Sellitto source image; Eustache Le Sueur — *St Bruno in Prayer* | `walters:8257`; `commons:30447357`; `commons:149891814` |
+| 4 Nov | St Charles Borromeo | Alessandro Magnasco / attributed Clemente Spera — *St Carlo Borromeo Receiving the Oblates* | `commons:23980786` |
+| 16 Nov | St Gertrude the Great | Gregorio Vásquez — *Saint Gertrude the Great* | `commons:116859339` |
+| 21 Nov | Presentation of the Blessed Virgin | Eustache Le Sueur — *Presentation of the Virgin* | `commons:153725` |
+
+Source metadata concerns: the KMSKA Gerard Seghers source was accepted **with a request for a better-quality image**; the NGA Tintoretto *Conversion of St Paul* likewise has a quality correction. For Commons Sellitto, the imported "artist" field names photographer/contributor Edelseider and must not be mistaken for artist attribution. All source-object identity, artwork vs photo permissions, source SHA, original composition and frame-free native WebP mobile crops remain blocked pending verification.
+
+### Additional exact paintings researched alongside existing Class II/III matches
+
+A separate source batch records **nine** new museum-research date/work relationships across **eight dates**. These include Jusepe de Ribera's *Martyrdom of Saint Bartholomew* (24 Aug), Noël Nicolas Coypel's *Miracles of Saint James the Greater* (25 Jul), ter Brugghen's *Incredulity of Thomas* (21 Dec), Lodovico Carracci's *Dream of Saint Catherine of Alexandria* (25 Nov), and research leads for Matthew (21 Sep) and Mark (25 Apr). The two individual portraits of Philip and James the Less (11 May) are **partial group art**, and the Piazzetta *Saint Matthias?* (24 Feb) remains **unverified identity**; do not count those as exact paired feast or Matthias depictions.
+
+Several museum leads have exact accession duplicates **already** in the accepted 856 source cards (Ribera `nga:72037`, Coypel `cma:111479`). These are **one painting each**, not two.
+
+Excluded or partial matches: St Sebastian alone cannot cover the paired Fabian/Sebastian feast (20 Jan), the Venetian church *Santi Giovanni e Paolo* is not a depiction of Roman martyrs John and Paul (26 Jun), and St Justa and St Rufina of Seville are **not** the Roman Rufina and Secunda of 10 Jul. Vigils of John the Baptist and Assumption have anticipatory artwork leads but no automatic new feast-hero approval.
+
+Machine-readable ledgers: `data/calendar/sacred-art-2026-accepted-source-match-batch1.v1.json` and `data/calendar/sacred-art-2026-museum-multiwork-match-batch2.v1.json`. The 365-day file stores the provenance/reuse relationships without changing the 383-image canonical ratings, past editorial decisions or publication gates.
+
+---
+
 **Source baseline:** 1962 observed principal day engine for 2026, all 365 dates; B48 archived collection of 383 active, 107 historically approved, 68 excluded artwork records; Class I/II multiwork reconciliation from PR #2138; additional Class III title/subject alias reconciliation committed 31 October 2026.
 
 **This is a research crosswalk, not an app-release manifest.** "Missing" means no exact assigned painting/source association in this particular index; it does **NOT** establish the absence of a painting from the user's wider saint corpus, new museum acquisitions, unreviewed archival originals, or later date decisions. No € spent, no rights holder contacted, no previously locked approval or rejection changed.
