@@ -3430,7 +3430,12 @@ export function createReaderDomAdapter({
           : (french?"Versets et réponses":"Versicles and responses"))+
           " · "+n+" "+(french?"échange":"source-linked exchange")+
           (n>1?(french?"s":"s"):"")+" · "+
-          (french?"Tons musicaux à vérifier":"Musical tones awaiting verification");
+          (item.sungDialogue.toneSelection?.status==="RUBRICAL_FAMILY_RESOLVED_SCORE_PENDING"
+           ?(french?"Famille du ton de 1962 : ":"1962 tone family: ")+
+             (item.sungDialogue.toneSelection.toneFamily==="SOLEMN"
+               ?(french?"solennel":"solemn"):(french?"férial":"ferial"))+
+             (french?" · Partition non approuvée":" · Score not approved")
+           :(french?"Tons musicaux à vérifier":"Musical tones awaiting verification"));
         button.append(sourcePair);
       }
       if(item.id===current?.scholaEventSelection?.id)
