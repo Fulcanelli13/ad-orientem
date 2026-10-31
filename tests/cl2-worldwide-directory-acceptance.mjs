@@ -2,6 +2,8 @@
 // This proves one site per CL2 effective physical identity and that additional
 // source listings remain accessible without fabricated pins, times or status.
 import assert from "node:assert/strict";
+import {pendingRecords,overpassQuery,candidatesForSite} from "../tools/directory/diocesan-osm-candidate-scan.mjs";
+
 import {readFileSync} from "node:fs";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49}
  from "../src/find/preliminary-directory-r49.js";
@@ -165,6 +167,34 @@ for(const [id,lat,lng,ref,scope] of [["RG-E3F4A8F02E37",33.47143,-81.96676,"osm:
 }
 assert.equal(diocesanQualityByGroup.get("RG-3FF697320F55").photo_gate,"OPERATOR_EXCLUDED");
 assert.equal(diocesanQualityByGroup.get("RG-3FF697320F55").operator_scope,"NORbertine_CANONS_OF_ST_MICHAELS_ABBEY_MINISTRY".toUpperCase());
+
+const pendingOSM=pendingRecords(diocesanQuality);
+assert.equal(pendingOSM.length,442);
+assert.equal(new Set(pendingOSM.map(r=>r.physical_group_id)).size,442);
+assert.equal(pendingOSM.filter(r=>r.photo_gate==="OPERATOR_EXCLUDED").length,
+ diocesanQuality.records.filter(r=>r.coordinate_origin==="R49_INHERITED"&&
+  r.precision==="source_marker_unassessed"&&r.photo_gate==="OPERATOR_EXCLUDED").length,
+ "Operator-excluded venues are still geographically auditable, never photo-eligible");
+const osmq=overpassQuery(pendingOSM.slice(0,2));
+assert.match(osmq,/amenity/);assert.match(osmq,/building/);
+assert.throws(()=>overpassQuery(pendingOSM.slice(0,21)),/at most 20/);
+const sampleSite={...pendingOSM[0],name:"Saint Martin Catholic Church",lat:40,lng:-75,
+ source_ids:["TEST"],photo_gate:"INHERITED_POINT_UNASSESSED"};
+const sampleCandidates=candidatesForSite(sampleSite,[
+ {type:"way",id:42,center:{lat:40.00002,lon:-75.00002},tags:{name:"St Martin Catholic Church",amenity:"place_of_worship",religion:"christian",denomination:"catholic"}},
+ {type:"way",id:43,center:{lat:40.00002,lon:-75.00002},tags:{name:"St Martin Episcopal Church",amenity:"place_of_worship",religion:"christian",denomination:"anglican"}},
+ {type:"way",id:44,center:{lat:44,lon:-75},tags:{name:"St Martin Catholic Church",amenity:"place_of_worship"}}
+]);
+assert.equal(sampleCandidates.candidates.length,1,"Non-Catholic and remote churches must be filtered");
+assert.equal(sampleCandidates.candidates[0].osm_ref,"way:42");
+assert.equal(sampleCandidates.promote_automatically,false);
+assert.equal(sampleCandidates.photo_approved,false);
+const osmReviewQueue=read("data/directory/research/diocesan-inherited-pin-review-queue-20261031.v1.json");
+assert.equal(osmReviewQueue.count,442);
+assert.equal(osmReviewQueue.rows.length,442);
+assert.equal(new Set(osmReviewQueue.rows.map(r=>r.physical_group_id)).size,442);
+assert.ok(osmReviewQueue.rows.every(r=>!r.photo_approved&&r.review_status==="OSM_CANDIDATES_NOT_YET_FETCHED"));
+
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
