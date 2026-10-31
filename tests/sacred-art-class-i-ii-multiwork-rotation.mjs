@@ -2,6 +2,23 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {certifiedHomeArtworkCandidates,createHomeArtworkVisitRotator} from "../src/home/sacred-art-visit-rotation.js";
 const master=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-class-i-ii-multiwork-crosswalk.v1.json",import.meta.url),"utf8"));
+const reverse=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-all383-artwork-reverse-index.v1.json",import.meta.url),"utf8"));
+assert.equal(reverse.artworks.length,383);
+assert.equal(new Set(reverse.artworks.map(a=>a.artworkId)).size,383);
+assert.equal(reverse.statistics.catalogueIdsLinkedToClassIOrII,79);
+assert.equal(reverse.statistics.catalogueIdsNotYetLinkedToClassIOrII,304);
+assert.equal(reverse.statistics.historicallyApprovedArtworkIds,107);
+assert.equal(reverse.statistics.historicallyApprovedArtworkIdsWithAtLeastOneIorIILink,28);
+assert.equal(reverse.artworks.reduce((n,a)=>n+a.dateLinks.length,0),85);
+for(const a of reverse.artworks){
+  assert.equal(a.publicationStatus,"NO_NEW_RELEASE_APPROVED");
+  for(const d of a.dateLinks){
+    const row=master.dates.find(x=>x.date===d.date);
+    assert.ok(row,"no invented date in reverse index");
+    assert.equal(row.observedPrincipalId,d.observedPrincipalId);
+    assert.ok(row.exactSubjectCatalogueCandidates.some(x=>x.artworkId===a.artworkId));
+  }
+}
 assert.equal(master.dates.length,129,"all 53+76 observed Class I/II principal dates");
 assert.equal(master.dates.filter(d=>d.liturgicalRank==="I").length,53);
 assert.equal(master.dates.filter(d=>d.liturgicalRank==="II").length,76);
