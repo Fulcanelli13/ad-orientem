@@ -43,6 +43,42 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-1EE1D2C9B3EB":Object.freeze({
+  sourceId:"AO-B39-LOC-HU-C9750B2A6BCA",name:"Karolina-kápolna",country:"HU",addressNeedle:"Vác",placeId:null,
+  lat:47.7752,lng:19.13221,sourceRef:"osm:way:297827179",
+  sourceUrl:"https://www.openstreetmap.org/way/297827179",correctedAddress:"Karolina-kápolna, Vác, Hungary",
+  precision:"site",evidence:Object.freeze(["https://mapcarta.com/W297827179","https://miserend.hu/collection/relation%3A1440602"]),
+ }),
+ "RG-DE5F8ED4E2F7":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-4B4A686B30D2",name:"Kościół Matki Bożej Bolesnej",country:"PL",addressNeedle:"Rybnickiego 2",placeId:null,
+  lat:50.09753,lng:18.54209,sourceRef:"osm:way:236882053",
+  sourceUrl:"https://www.openstreetmap.org/way/236882053",correctedAddress:"ul. Franciszka Rybnickiego 2, 44-200 Rybnik, Poland",
+  precision:"site",evidence:Object.freeze(["https://mapcarta.com/fr/W236882053","https://archidiecezjakatowicka.pl/o-diecezji/parafie/31-rybnik","https://www.bolesna-rybnik.pl/kontakt,i10.html"]),
+ }),
+ "RG-322AA8195E65":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-A28D536BB19E",name:"Kościół Świętego Jerzego",country:"PL",addressNeedle:"Tumska",placeId:null,
+  lat:52.53739,lng:17.5931,sourceRef:"osm:way:75000179",
+  sourceUrl:"https://www.openstreetmap.org/way/75000179",correctedAddress:"Kościół św. Jerzego, ul. Tumska, Gniezno, Poland",
+  precision:"site",evidence:Object.freeze(["https://mapcarta.com/W75000179","https://archidiecezja.pl/duszpasterstwo/msza-sw-trydencka-w-archidiecezji-gnieznienskiej/"]),
+ }),
+ "RG-C7F25752659D":Object.freeze({
+  sourceId:"AO-B38-LOC-NL-19A47E978C1",name:"Sint Josephkerk",country:"NL",addressNeedle:"Haarlem",placeId:null,
+  lat:52.38331,lng:4.63887,sourceRef:"osm:way:265313243",
+  sourceUrl:"https://www.openstreetmap.org/way/265313243",correctedAddress:"Sint Josephkerk, Jansstraat 41, Haarlem, Netherlands",
+  precision:"site",evidence:Object.freeze(["https://mapcarta.com/W265313243","https://www.geonames.org/6951288/sint-josephkerk.html"]),
+ }),
+ "RG-4D09923C6B74":Object.freeze({
+  sourceId:"AO-B39-LOC-IT-76322D1DA1C9",name:"Chiesa del Gesù",country:"IT",addressNeedle:"Castellammare di Stabia",placeId:null,
+  lat:40.69399,lng:14.47883,sourceRef:"osm:way:734893276",
+  sourceUrl:"https://www.openstreetmap.org/way/734893276",correctedAddress:"Chiesa di Gesù e Maria, Strada Gesù 11, Castellammare di Stabia, Italy",
+  precision:"site",evidence:Object.freeze(["https://mapcarta.com/W734893276","https://it.wikipedia.org/wiki/Chiesa_di_Ges%C3%B9_e_Maria_(Castellammare_di_Stabia)"]),
+ }),
+ "RG-8DC436A75526":Object.freeze({
+  sourceId:"AO-B39-LOC-PL-CD2D71CC49A0",name:"Kościół Świętych Jana i Pawła Męczenników",country:"PL",addressNeedle:"Chorzowska 160",placeId:null,
+  lat:50.270021,lng:18.996568,sourceRef:"odtur:12019",
+  sourceUrl:"https://odtur.pl/atrakcje/katowice-kosciol-pw-ss-jana-i-pawla-meczennikow-w-katowicach-12019.html",correctedAddress:"ul. Chorzowska 160, 40-101 Katowice-Dąb, Poland",
+  precision:"site",evidence:Object.freeze(["https://parafie.net/parafia-sw-jana-i-pawla-meczennikow-katowice/","https://www.dioblina.eu/Kosciol_sw_Jana_i_Pawla_Meczennikow"]),
+ }),
  "RG-2CFE11950F95":Object.freeze({
   sourceId:"AO-B38-LOC-BE-68ECD274D85",name:"Église Saint-Sauveur",country:"BE",addressNeedle:"Grâce-Hollogne",placeId:null,
   lat:50.62438,lng:5.39712,sourceRef:"osm:way:369175503",sourceUrl:"https://www.openstreetmap.org/way/369175503",
