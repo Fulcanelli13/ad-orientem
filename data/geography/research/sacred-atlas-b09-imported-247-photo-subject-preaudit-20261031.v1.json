@@ -14,8 +14,9 @@
       "PINNED_METADATA_ONLY_FULL_RES_VISUAL_PENDING": 42,
       "TECHNICAL_LOW_RES_REPLACEMENT_RESEARCH": 3,
       "NO_PINNED_FILE_RESEARCH_REQUIRED": 179,
-      "WRONG_SUBJECT_OR_PLACE_EXCLUDE_FROM_USE": 13,
-      "NEEDS_EXACT_SUBJECT_VERIFICATION": 10
+      "WRONG_SUBJECT_OR_PLACE_EXCLUDE_FROM_USE": 12,
+      "NEEDS_EXACT_SUBJECT_VERIFICATION": 10,
+      "PINNED_FILE_EXACT_RELIQUARY_CAPTION_VERIFIED_VISUAL_QA_PENDING": 1
     },
     "sub_1200": 4,
     "under_1800": 11
@@ -27,7 +28,8 @@
     "Rights and author fields copied from user research export are NOT freshly authenticated Commons licence checks; independent page + underlying object rights checks remain.",
     "Photo pixel dimensions from research metadata do not show sharpness or native resolution; full-image inspection is still required.",
     "KEEP is an independent editorial flag, untouched by technical rejection or hold.",
-    "No downloads, publications, changes to site media or prior KEEP decisions; no contact, costs or permission requests."
+    "No downloads, publications, changes to site media or prior KEEP decisions; no contact, costs or permission requests.",
+    "Never classify a candidate as definite wrong merely from a generic filename where file description may identify exact sacred object; inspect file page first."
   ],
   "records": [
     {
@@ -2317,11 +2319,9 @@
       "canonical_site_name": "Cathédrale Notre-Dame de Chartres",
       "requested_subject": "Veil of the Virgin at Chartres",
       "editorial_keep_protected": false,
-      "acquisition_status": "WRONG_SUBJECT_OR_PLACE_EXCLUDE_FROM_USE",
-      "screening_flags": [
-        "OBVIOUS_WRONG_TARGET"
-      ],
-      "screening_note": "Chartres Virgin's veil; filename specifies cathedral interior rather than veil.",
+      "acquisition_status": "PINNED_FILE_EXACT_RELIQUARY_CAPTION_VERIFIED_VISUAL_QA_PENDING",
+      "screening_flags": [],
+      "screening_note": "Verified Wikimedia Commons caption identifies this photograph as the reliquary of the Virgin's Veil at Chartres Cathedral; earlier filename-only rejection was incorrect. File licensed/photo quality/underlying object still must be reviewed.",
       "pinned_file": {
         "file_title": "File:Chartres - cathédrale, intérieur (21).jpg",
         "commons_page": "https://commons.wikimedia.org/wiki/File%3AChartres_-_cath%C3%A9drale%2C_int%C3%A9rieur_(21).jpg",
@@ -2331,11 +2331,12 @@
         "nominal_width": 3264,
         "nominal_height": 2448
       },
-      "identity_confirmed": false,
+      "identity_confirmed": true,
       "license_independently_rechecked": false,
       "underlying_subject_rights_cleared": false,
       "full_resolution_visual_qa_completed": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "identity_evidence_url": "https://commons.wikimedia.org/wiki/File:Chartres_-_cath%C3%A9drale%2C_int%C3%A9rieur_%2821%29.jpg"
     },
     {
       "original_export_index": 117,
@@ -4842,6 +4843,14 @@
       "underlying_subject_rights_cleared": false,
       "full_resolution_visual_qa_completed": false,
       "publication_approved": false
+    }
+  ],
+  "corrections": [
+    {
+      "index": 116,
+      "date": "2026-10-31",
+      "reason": "Wikimedia Commons full caption confirms exact reliquary; original file title generic, so filename-only wrong-target heuristic was false positive.",
+      "url": "https://commons.wikimedia.org/wiki/File:Chartres_-_cath%C3%A9drale%2C_int%C3%A9rieur_%2821%29.jpg"
     }
   ]
 }
