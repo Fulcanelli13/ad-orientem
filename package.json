@@ -130,7 +130,7 @@
     "test:presentation-fx": "node tests/presentation-fx.mjs",
     "test:rc-interaction-qa": "node tests/release-candidate-interaction-qa.mjs",
     "test:pray-novenas": "node tests/pray-novenas.mjs && node tests/pray-novena-witness-contract.mjs && node tests/pray-novena-stage-progress-contract.mjs && node tests/pray-novena-reading-comfort-contract.mjs && node tests/pray-b25-holy-face-full-novena.mjs && node tests/icksp-divine-infant-king-novena.mjs && node tests/icksp-immaculate-conception-novena.mjs && node tests/icksp-therese-weekly-b04.mjs",
-    "test:pray-focus": "node tests/pray-focus.mjs && node --test tests/pray-f11-rite-companion-reconciliation.mjs",
+    "test:pray-focus": "node tests/pray-focus.mjs && node --test tests/pray-f11-rite-companion-reconciliation.mjs && node --test tests/pray-claude-benediction-altar-card.mjs",
     "test:devotional-action-cinematics": "node tests/devotional-action-cinematics.mjs",
     "test:pray-traditional": "node tests/pray-traditional-life.mjs && node tests/confession-nightly-contrition-b13.mjs && npm run test:icksp-batch01-reconcile && node tests/pray-reader-design-pilot-contract.mjs",
     "test:learn-traditional": "node tests/learn-traditional-life.mjs",
