@@ -1671,14 +1671,14 @@ function benFeastOptions(){
 }
 function renderBenediction(){
  const stages=benStages(),i=Math.max(0,Math.min(stages.length-1,BEN.step)),id=stages[i][0],titles=stages.map(x=>L(x[1],x[2]));let body='';
- // Decorative miniature follows Claude's exact .hd/.plate concept. It is
- // NOT an invented painting or an approved work from the sacred-art bank.
+ // Preserve Claude's compact manuscript caption, but never expose
+ // prototype-only Plate A/B/C/D identifiers as real sacred-art metadata.
+ // Actual painting titles appear only after a licensed gallery ID is bound.
  const baseIndex=BEN_STAGES.findIndex(x=>x[0]===id);
- const plateCode=['A','B','B','B','C','D','D'][baseIndex]||'';
  const ordinalEn=['First','Second','Third','Fourth','Fifth','Sixth','Seventh'][baseIndex]||String(i+1);
  const ordinalFr=['Première','Deuxième','Troisième','Quatrième','Cinquième','Sixième','Septième'][baseIndex]||String(i+1);
- const plateCaption=plateCode
-  ?L(ordinalEn+' stage · plate '+plateCode,ordinalFr+' étape · planche '+plateCode)
+ const plateCaption=baseIndex>=0
+  ?L(ordinalEn+' stage',ordinalFr+' étape')
   :L('Additional local stage','Étape locale supplémentaire');
  if(id==='exposition')body=`${guideNow(L('Attend to the Exposition','Soyez attentif à l’exposition'),L('When the Blessed Sacrament is exposed, turn your attention to the altar. If O Salutaris is actually sung, pray or sing it with the church; otherwise follow what is used.','Lorsque le Saint-Sacrement est exposé, tournez votre attention vers l’autel. Si O Salutaris est effectivement chanté, priez-le ou chantez-le avec l’assemblée ; sinon, suivez ce qui est utilisé.'))}${benSungPrayer('benediction_o_salutaris',L('If sung here','Si chanté ici'))}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Stay here until the opening hymn or prayers have finished and the service settles into adoration.','Restez ici jusqu’à la fin du chant ou des prières d’ouverture et jusqu’à ce que l’office entre dans l’adoration.'))}`;
  if(id==='adoration')body=`${guideNow(L('Remain with the public rite','Restez avec le rite public'),L('Adore in silence or follow the Scripture, prayer or sacred music actually being used. Do not fill the interval simply because the app has more text.','Adorez en silence ou suivez l’Écriture, la prière ou la musique sacrée réellement utilisées. Ne remplissez pas l’intervalle simplement parce que l’application contient davantage de texte.'))}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when Tantum Ergo begins, or when the service clearly moves into the hymn immediately before Benediction.','Avancez lorsque commence Tantum Ergo, ou lorsque l’office passe clairement au chant qui précède immédiatement la bénédiction.'))}`;
