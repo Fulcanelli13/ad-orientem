@@ -7,12 +7,18 @@ on:
     paths:
       - 'data/prayer/artwork-editorial-20261031/**'
       - 'tests/prayer-art-11-gap-66-candidates-policy.mjs'
+      - 'tests/prayer-approved-sacred-art-asset-integrity-20261031.mjs'
+      - 'src/pray/benediction-mystic-lamb-user-art.v1.js'
+      - 'src/pray/st-therese-selected-novena-cover.v1.js'
       - '.github/workflows/prayer-artwork-11-gap-consolidation.yml'
   pull_request:
     branches: [main]
     paths:
       - 'data/prayer/artwork-editorial-20261031/**'
       - 'tests/prayer-art-11-gap-66-candidates-policy.mjs'
+      - 'tests/prayer-approved-sacred-art-asset-integrity-20261031.mjs'
+      - 'src/pray/benediction-mystic-lamb-user-art.v1.js'
+      - 'src/pray/st-therese-selected-novena-cover.v1.js'
       - '.github/workflows/prayer-artwork-11-gap-consolidation.yml'
   workflow_dispatch:
 
@@ -29,6 +35,7 @@ jobs:
         with:
           node-version: 22
       - run: node tests/prayer-art-11-gap-66-candidates-policy.mjs
+      - run: node tests/prayer-approved-sacred-art-asset-integrity-20261031.mjs
       - name: Assert selected public-domain WebP artwork files exist
         run: |
           test -s assets/prayer/user-approved/benediction-mystic-lamb.webp
