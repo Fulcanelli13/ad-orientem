@@ -160,8 +160,11 @@ try{
  await page.locator("#ao-calendar-modular-root .aoCalHybridMajorSection").waitFor({timeout:8000});
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"picker");
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthView),"calendar");
- // The Today control is a navigation action, not merely a month-grid scroll.
- await page.locator("#ao-calendar-modular-root [data-cal-today]").click();
+ // Approved H7 Month Atlas deliberately has no redundant Today control.
+ // Day is the canonical view switch after browsing a source-owned month.
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-today]").count(),0,
+   "H7 Calendar must not reintroduce a redundant Today button");
+ await page.locator("#ao-calendar-modular-root [data-cal-view='day']").click();
  await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:8000});
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
 

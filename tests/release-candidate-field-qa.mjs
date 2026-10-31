@@ -151,10 +151,20 @@ async function openSurface(page,surface,width){
     // and the retired sixth shell destination.
     await page.locator("[data-ao-app-surface='home']").first().click();
     await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
-    const month=page.locator('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]');
-    assert.equal(await month.count(),1,width+"px H4 lost its dated Calendar entry");
-    assert.ok(await month.evaluate(el=>el.getBoundingClientRect().height)>=44,
-      width+"px H4 Calendar opener is below the phone touch target");
+    const month=page.locator('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]');
+    assert.equal(await month.count(),1,width+"px H7 lost its dated Calendar entry");
+    // Home can still be finishing its source repaint after shell navigation.
+    // Test the actual visible date button, never a hidden former DOM instance.
+    await month.waitFor({state:"visible",timeout:15000});
+    const dateHitArea=await month.evaluate(el=>{
+      const style=getComputedStyle(el),box=el.getBoundingClientRect();
+      return {height:box.height,width:box.width,cssMinHeight:style.minHeight,
+        display:style.display,visibility:style.visibility,
+        hiddenAncestor:Boolean(el.closest("[hidden]")),
+        activeScreen:document.querySelector(".homeScreen")?.dataset.aoHomeCalendarView||"home"};
+    });
+    assert.ok(dateHitArea.height>=44,
+      width+"px H7 Calendar date touch area below 44px: "+JSON.stringify(dateHitArea));
     await month.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
@@ -172,6 +182,14 @@ async function openSurface(page,surface,width){
       width+"px embedded Calendar unexpectedly replaced the Today app surface");
     assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
       width+"px Month lost its canonical Calendar body");
+    const year=page.locator('.aoH4CalendarViews [data-home-calendar-view="year"]');
+    await year.click();
+    await page.waitForSelector('.aoTodayH4 [data-ao-liturgical-clock="v1"] .aoClockDial',
+      {state:"visible",timeout:15000});
+    assert.equal(await year.getAttribute("aria-current"),"page",width+"px Liturgical Year active selector missing");
+    await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
+    await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
+      {state:"visible",timeout:15000});
   }else if(surface==="pray"){
     await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
     await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:10000});
@@ -264,8 +282,10 @@ try{
     // sheet; the retired mass-flow preflight MUST NOT be required here.
     assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
       "Mass must not become a fifth ribbon tab");
-    assert.equal(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count(),1,
+    assert.ok(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count()>=1,
       "H4 must expose the canonical Mass choices separately from Begin");
+    await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+    await page.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
     const massNav=page.locator(".homeScreen [data-home-h4-begin]").first();
     await massNav.waitFor({state:"visible",timeout:15000});
     await page.waitForFunction(()=>Boolean(document.querySelector(

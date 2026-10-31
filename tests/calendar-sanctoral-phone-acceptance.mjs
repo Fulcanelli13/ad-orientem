@@ -42,7 +42,11 @@ try{
    await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:50000});
    await page.waitForFunction(()=>Boolean(window.AO_RUNTIME_V8?.resolver?.resolveDay) &&
      Boolean(window.AO_APP_SHELL_V1?.status?.().visibleOwner),null,{timeout:45000});
-   const dayTab=page.locator('.homeScreen .aoTodayV2ReadReflect [data-home-calendar-view="day"]');
+   // H7 opens canonical Calendar via its top bar; Day is an embedded lens.
+   const calOpen=page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]');
+   await calOpen.waitFor({state:"visible",timeout:20000});
+   await calOpen.click();
+   const dayTab=page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]');
    await dayTab.waitFor({state:"visible",timeout:20000});
    await dayTab.click();
    const host=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
@@ -96,28 +100,25 @@ try{
    assert.ok(/^https:\/\/(?:press|www)\.vatican\.va\//.test(href||""),"Only Vatican sources in globally rendered memorials");
    assert.equal(await page.locator(".aoCalSecondarySaintCard a").getAttribute("rel"),"noopener noreferrer");
    await page.screenshot({path:resolve(output,"calendar-newman-"+width+".png"),fullPage:false,animations:"disabled"});
-   // The same saint appears in Home's observance summary, using the
-   // *same shared read model* and without creating another Mass entry.
-   await page.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
-   await page.waitForSelector(".homeScreen.aoTodayV2 .aoTodayV2CalendarGlance .aoTodayV2ObservedRow",
-     {state:"visible",timeout:25000});
-   const homeMetrics=await page.evaluate(()=>{
-     const screen=document.querySelector(".homeScreen.aoTodayV2");
-     const rows=[...screen.querySelectorAll(".aoTodayV2CalendarGlance .aoTodayV2ObservedRow")];
-     return {titles:rows.map(x=>x.textContent.trim()),
-       massCaveat:screen.querySelector(".aoTodayV2GlanceCaveat")?.textContent?.trim()||"",
-       buttons:screen.querySelectorAll("[data-home-mass-entry],[data-resume-mass]").length,
-       overflow:document.documentElement.scrollWidth-innerWidth,
-       readModelRequests:performance.getEntriesByType("resource")
-         .filter(x=>x.name.includes("living-sanctoral-read-model.v1.json")).length};
-   });
-   assert.ok(homeMetrics.titles.some(x=>/Newman/.test(x)),"Home omitted vetted Newman modern-date reference");
-   assert.ok(/The prescribed 1962 Mass remains unchanged/.test(homeMetrics.massCaveat),"Home confused modern saint with 1962 Mass");
-   assert.equal(homeMetrics.buttons,1,"Home must have one Mass entry");
-   assert.ok(homeMetrics.overflow<=1,"Home honour rows overflow phone width");
-   assert.equal(requests.filter(x=>x.status===200).length,1,"Home and Calendar must share one dataset request");
-   await page.screenshot({path:resolve(output,"home-observances-newman-"+width+".png"),fullPage:false,animations:"disabled"});
-   await page.locator('.aoTodayV2CalendarGlance [data-home-calendar-view="day"]').first().click();
+   // H7 Home keeps its approved layout; supplementary saints remain in Calendar.
+   await page.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
+   await page.waitForSelector(".aoH7HomeView",{state:"visible",timeout:15000});
+   const homeMetrics=await page.evaluate(()=>({
+     home:document.querySelectorAll(".aoH7HomeView:not([hidden])").length,
+     doorHidden:document.querySelector(".aoH7DoorView")?.hidden,
+     massEntry:document.querySelectorAll(".aoH7HomeView [data-home-h7-enter]").length,
+     overflow:document.documentElement.scrollWidth-innerWidth,
+     readModelRequests:performance.getEntriesByType("resource")
+       .filter(x=>x.name.includes("living-sanctoral-read-model.v1.json")).length,
+   }));
+   assert.equal(homeMetrics.home,1,"H7 Home not restored from Calendar");
+   assert.equal(homeMetrics.doorHidden,true,"Mass door opened when leaving Calendar");
+   assert.equal(homeMetrics.massEntry,1,"H7 must have one Enter Mass action");
+   assert.ok(homeMetrics.overflow<=1,"H7 Home horizontal overflow");
+   assert.equal(requests.filter(x=>x.status===200).length,1,"Calendar source should be loaded once");
+   await page.screenshot({path:resolve(output,"h7-home-after-newman-"+width+".png"),fullPage:false,animations:"disabled"});
+   await page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
    await host.waitFor({state:"visible",timeout:40000});
    const historic=await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2025-10-09"));
    assert.equal(historic,true);

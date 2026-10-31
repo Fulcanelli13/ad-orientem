@@ -194,14 +194,14 @@ try{
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
-    todayH4:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Door").length,
+    todayH4:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorView").length,
     prayer:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2PrayerThroughDay").length,
     thisWeek:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance").length,
     discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone").length,
     read:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect").length,
     prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayH4 .aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayH4 .aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
     discoveryAfterWeekBeforeRead:(()=>{const week=document.querySelector(".aoTodayH4 .aoTodayV2CalendarGlance");const discovery=document.querySelector(".aoTodayH4 .aoH4DiscoveryStandalone");const read=document.querySelector(".aoTodayH4 .aoTodayV2ReadReflect");return Boolean(week&&discovery&&read&&(week.compareDocumentPosition(discovery)&Node.DOCUMENT_POSITION_FOLLOWING)&&(discovery.compareDocumentPosition(read)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
-    datedCalendarEntry:document.querySelectorAll('.homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view="picker"]').length,
+    datedCalendarEntry:document.querySelectorAll('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]').length,
     h4CalendarLinks:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar]").length,
     catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
@@ -277,8 +277,8 @@ try{
   // H4 is the canonical Today door: protect real content hierarchy instead
   // of the removed Today V2/H1.1 micro-season and navigation tabs.
   const homeParity=await page.evaluate(()=>({
-    massDoor:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Door").length,
-    dateEntry:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DateOpen[data-home-calendar-view='picker']").length,
+    massDoor:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorView").length,
+    dateEntry:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view='picker']").length,
     weekCells:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Week [data-date]").length,
     prayer:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Prayer").length,
     prayerShortcuts:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2PrayerShortcuts button").length,
@@ -291,7 +291,7 @@ try{
     catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
     oldTabs:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2Tabs").length,
     choices:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
-    dateEntryHeight:document.querySelector(".homeScreen.aoTodayH4 .aoH4DateOpen")?.getBoundingClientRect().height??0,
+    dateEntryHeight:document.querySelector(".homeScreen.aoTodayH4 .aoH7HomeView .date")?.getBoundingClientRect().height??0,
     horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
     massEntry:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-mass-entry]").length,
     obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
@@ -310,7 +310,7 @@ try{
   assert.equal(homeParity.gospel,1,"H4 lost Gospel of the Mass");
   assert.equal(homeParity.catechism,0,"H4 must not put Catechism back on the homepage");
   assert.equal(homeParity.oldTabs,0,"Retired Today V2 tabs must not return");
-  assert.equal(homeParity.choices,1,"H4 Mass ceremony choices are missing");
+  assert.ok(homeParity.choices>=1,"H7 Mass ceremony choices are missing");
   assert.ok(homeParity.dateEntryHeight>=44,"H4 Calendar needs a 44px touch target");
   assert.ok(homeParity.horizontalOverflow<=1,"H4 has horizontal phone overflow");
   assert.equal(homeParity.massEntry,1,"H4 lacks a canonical Begin Mass entry");
@@ -335,10 +335,14 @@ try{
   // H4's approved Begin button goes directly to the same source-gated R17
   // reader used by the canonical controller. Options are in Change; there is
   // no extra preflight dialog or fifth ribbon tab in this flow.
-  assert.equal(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count(),1,
-    "H4 Mass choices must remain available before beginning");
+  assert.equal(await page.locator(".aoH7DoorView .dsec [data-home-h4-change]").count(),1,
+    "H7 Mass-options row must retain its Change control");
+  assert.equal(await page.locator(".aoH7DoorView .foot .mini [data-home-h4-change]").count(),1,
+    "H7 footer must retain the original Change shortcut");
   await page.waitForFunction(()=>Boolean(document.querySelector(
     ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
+  await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+  await page.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
   await page.locator(".homeScreen [data-home-h4-begin]").click();
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
@@ -1584,7 +1588,13 @@ try{
     topControl:(()=>{const x=document.querySelector("#ao-learn-modular-root .aoLearnModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
   }));
   assert.equal(learnDesign.displayFont,designBaseline.displayFont,"Learn display typography diverged from the app system");
-  assert.equal(learnDesign.bodyFont,designBaseline.bodyFont,"Learn body typography diverged from Home");
+  // Original Claude H7 Home specifies additional platform fallback fonts,
+  // but both Home and Learn retain the approved EB Garamond primary family.
+  const primaryFont=stack=>String(stack).split(",")[0].trim().replaceAll('"',"");
+  assert.equal(primaryFont(learnDesign.bodyFont),primaryFont(designBaseline.bodyFont),
+    "Learn and H7 Home diverged from their shared primary body typeface");
+  assert.equal(primaryFont(learnDesign.bodyFont),"EB Garamond",
+    "Canonical EB Garamond body face was replaced");
   assert.equal(learnDesign.gutter,designBaseline.gutter,"Learn phone gutter diverged from the app grid");
   assert.equal(learnDesign.cardRadius,designBaseline.cardRadius,"Learn cards diverged from canonical geometry");
   assert.equal(Math.round(learnDesign.topControl.w),44,"Learn top control width diverged");
@@ -1694,7 +1704,8 @@ try{
     topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
   }));
   assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
-  assert.equal(settingsDesign.bodyFont,designBaseline.bodyFont,"Settings body typography diverged from Home");
+  assert.equal(primaryFont(settingsDesign.bodyFont),primaryFont(designBaseline.bodyFont),
+    "Settings and H7 Home diverged from their shared primary body typeface");
   assert.equal(settingsDesign.gutter,designBaseline.gutter,"Settings phone gutter diverged from the app grid");
   assert.equal(settingsDesign.cardRadius,designBaseline.cardRadius,"Settings cards diverged from canonical geometry");
   assert.equal(Math.round(settingsDesign.topControl.w),44,"Settings top control width diverged");

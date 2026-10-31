@@ -3,7 +3,8 @@ import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { calendarObservanceAlias, verifiedFerialSundayMassName } from "../calendar/observance-title.js";
-import { latinIntroitIncipit } from "../calendar/ordo-mass-facts.js";
+import { latinIntroitIncipit, calendarOrdoMassFacts } from "../calendar/ordo-mass-facts.js";
+import { composeMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
 import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
@@ -179,7 +180,16 @@ export function renderHomeToString(state,win=globalThis){
   // Artwork is mounted into its own DOM island by renderHome.
   // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
-  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null});
+  // The preview and native R17 reader must agree on the identical bilingual
+  // text slots: do not infer available orations from raw fields.
+  const preview=currentProper?composeMassTextsSheet({
+    proper:currentProper,language:vm.language,date:vm.dateIso,
+    title:vm.observedTitle,sourceReady:vm.resolvedForSelection,
+  }):null;
+  const properSections=(preview?.sections??[])
+    .filter(section=>section.status==="READY")
+    .map(section=>({id:section.id,label:section.label}));
+  if(h4Enabled(win))return h4HomeView(vm,homeCalendar,{resume,coverage,properSections,choices:win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null,ordoFacts:calendarOrdoMassFacts(state.resolution,{language:vm.language})});
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
     resume.stepNumber?String(resume.stepNumber):"",

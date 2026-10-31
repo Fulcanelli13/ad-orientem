@@ -62,7 +62,7 @@ try{
     globalThis.AO_APP_SHELL_V1?.installed),null,{timeout:40000});
    assert.equal(await page.locator(".homeScreen .aoTodayV2Tabs").count(),0,
     "H4 must not regress to retired multi-tab Home");
-   assert.equal(await page.locator(".homeScreen .aoH4DateOpen[data-home-calendar-view='picker']").count(),1);
+   assert.equal(await page.locator(".homeScreen .aoH7HomeView .date[data-home-calendar-view='picker']").count(),1);
    assert.equal(await page.locator(".homeScreen [data-home-dyk-open]").count(),1,
     "H4 Discovery component must remain present after Customs changes");
    for(const item of cases){
@@ -72,7 +72,7 @@ try{
       "Date-specific Customs selection must use the published canonical article: "+item.date);
     assert.ok(article.sources?.length>=1,"Cannot surface an unsourced Customs article");
     assert.ok(article.title?.en?.length>6&&article.title?.fr?.length>6);
-    await page.locator(".homeScreen .aoH4DateOpen[data-home-calendar-view='picker']").click();
+    await page.locator(".homeScreen .aoH7HomeView .date[data-home-calendar-view='picker']").click();
     await page.waitForSelector(".homeScreen .aoH4CalendarInline #ao-calendar-modular-root",
       {state:"visible",timeout:45000});
     const selected=await page.evaluate(date=>globalThis.AO_CALENDAR_APP_V1.select(date,{closeAfter:false}),item.date);
