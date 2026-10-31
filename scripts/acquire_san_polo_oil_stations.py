@@ -39,7 +39,7 @@ def main():
     assert len(files)==14 and m["identification"]["medium"].startswith("OIL ON CANVAS")
     assert all(x["editorialStatus"]=="UNAPPROVED_COMPLETE_OIL_SERIES_RESEARCH" for x in files)
     titles=["File:"+x["commonsTitle"] for x in files]
-    args={"action":"query","prop":"imageinfo","iiprop":"url|sha1|size|extmetadata","format":"json","titles":"|".join(titles)}
+    args={"action":"query","prop":"imageinfo","iiprop":"url|sha1|size|extmetadata","iiurlwidth":"1920","format":"json","titles":"|".join(titles)}
     data=json.loads(fetch(API+"?"+urllib.parse.urlencode(args)))
     if "error" in data: raise RuntimeError(data["error"])
     lookup={}
@@ -81,20 +81,36 @@ def main():
                 raise RuntimeError(f"Unanticipated file licence {key}: {license!r}")
             if not license_url.startswith("https://creativecommons.org/licenses/by-sa/"):
                 raise RuntimeError("Unexpected licence URL for file "+key+": "+license_url)
-            # Wikimedia shared-runner IPs can be 429-throttled. Use an independent
-            # caching/resize origin to make ONE responsible request per source.
-            # The license remains the uploader's CC BY-SA; a proxy does not grant rights.
+            # Prefer Commons' official pregenerated thumbnail URLs, which
+            # require far less bandwidth than the 8-13 MB original photos.
+            # Treat HTTP 429 as a genuine source limit: do not spin on it.
+            # Proxy is only a source-backed cache fallback; not a new license.
             original_url=info["url"].split("?")[0]
-            image_source="WIKIMEDIA_DIRECT"
-            try:
-                photo=fetch(original_url,n=1)
-            except RuntimeError as exc:
-                print(f"Direct file throttled for {record['roman']}: {str(exc)[:130]}; using free cached source derivative",flush=True)
-                proxy="https://wsrv.nl/?" + urllib.parse.urlencode({
-                    "url":original_url,"w":2400,"output":"webp","q":87,
-                })
-                photo=fetch(proxy,n=3)
-                image_source="WESERV_CACHED_RESEARCH_DERIVATIVE"
+            thumb_url=info.get("thumburl")
+            candidates=[]
+            if thumb_url:
+                candidates.append(("COMMONS_OFFICIAL_1920_THUMBNAIL",thumb_url))
+            candidates.append(("WIKIMEDIA_DIRECT_ORIGINAL",original_url))
+            # Cache-backed proxy uses a correctly decoded source path.
+            # The previous attempt sent percent signs through two encoders
+            # and received HTTP 404 at the cache service.
+            canonical=urllib.parse.unquote(original_url)
+            proxy="https://wsrv.nl/?" + urllib.parse.urlencode({
+                "url":canonical,"w":1920,"output":"webp","q":88,
+            })
+            candidates.append(("CACHED_WIKIMEDIA_1920",proxy))
+            photo=None
+            image_source=None
+            errors=[]
+            for method,url in candidates:
+                try:
+                    photo=fetch(url,n=1)
+                    image_source=method
+                    break
+                except RuntimeError as exc:
+                    errors.append({"method":method,"error":str(exc)[:160]})
+            if photo is None:
+                raise RuntimeError("All official/source-backed image paths failed: "+json.dumps(errors))
             digest=hashlib.sha256(photo).hexdigest()
             if digest in seen: raise RuntimeError("Duplicate oil photo bytes")
             seen.add(digest)
@@ -103,9 +119,9 @@ def main():
                 native_width,native_height=info["width"],info["height"]
                 if abs(native_width-record["originalDimensions"][0])>4 or abs(native_height-record["originalDimensions"][1])>4:
                     raise RuntimeError(f"Commons source metadata changed for {record['roman']}: {(native_width,native_height)}")
-                if image_source=="WIKIMEDIA_DIRECT" and (width<3000 or height<3000):
+                if image_source=="WIKIMEDIA_DIRECT_ORIGINAL" and (width<3000 or height<3000):
                     raise RuntimeError("Low-resolution original oil photograph")
-                if image_source!="WIKIMEDIA_DIRECT" and max(width,height)<2000:
+                if image_source!="WIKIMEDIA_DIRECT_ORIGINAL" and max(width,height)<1800:
                     raise RuntimeError("Insufficient cached museum photo derivative quality")
                 canvas=ImageOps.exif_transpose(im).convert("RGB")
                 canvas.thumbnail((2400,2400),Image.Resampling.LANCZOS)
@@ -117,7 +133,7 @@ def main():
                     "station":record["station"],"roman":record["roman"],"subject":record["subject"],
                     "file":record["targetPath"],"sourceTitle":record["commonsTitle"],
                     "sourcePage":record["commonsPage"],"sourceDownloadURL":info["url"],
-                    "originalSHA256":digest if image_source=="WIKIMEDIA_DIRECT" else None,
+                    "originalSHA256":digest if image_source=="WIKIMEDIA_DIRECT_ORIGINAL" else None,
                     "originalCommonsSHA1":info.get("sha1"),
                     "receivedMediaSHA256":digest,
                     "retrieval":image_source,
