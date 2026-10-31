@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "src/app/native-back.js"
+      - "src/pray/browser-entry.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/navigation-prayer-return-phone.mjs"
       - "src/app/browser-entry.js"
       - "src/app/host-adapter.js"
       - "src/settings/browser-entry.js"
@@ -35,3 +38,5 @@ jobs:
         run: node tests/navigation-native-back-phone.mjs
       - name: P3 Latin exact return at 320px/390px in English and French
         run: node tests/navigation-latin-settings-return-phone.mjs
+      - name: P4 Prayer browser Back exact card and paragraph restoration
+        run: node tests/navigation-prayer-return-phone.mjs

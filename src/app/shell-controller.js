@@ -36,7 +36,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
   const unsubscribeCore = host.subscribeCoreRoute?.(syncCoreRoute) ?? (() => {});
   syncCoreRoute(host.currentCoreRoute?.());
 
-  async function go(surface, {resume=false}={}) {
+  async function go(surface, {resume=false,restorePrayer=false}={}) {
     if (disposed) return result(false, active, { reason: "DISPOSED" });
     const target = normalizeAppSurface(surface);
     if (!target) return result(false, active, { reason: "UNKNOWN_SURFACE" });
@@ -115,7 +115,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
       );
     } else {
       opened = Boolean(
-        await (host.defer?.(() => host.openDomain?.(target)) ?? host.openDomain?.(target)),
+        await (host.defer?.(() => host.openDomain?.(target,{restorePrayer:target==="pray"&&restorePrayer===true})) ?? host.openDomain?.(target,{restorePrayer:target==="pray"&&restorePrayer===true})),
       );
     }
 
