@@ -453,6 +453,33 @@ try{
                  activeCue:api.getActiveCue(),sourceRubricId:rubric.dataset.rubricId,
                  text:rubricText,iconAsset:icon.dataset.approvedAsset??null};
              });
+             // All ordinary approved cue glyphs use the same displayed
+             // 32px unit, including on a narrow phone and in the Missal.
+             // The tile/badge container can differ for major ceremonies,
+             // but not the SVG glyph size. No image-upscaling exceptions.
+             for(const width of [320,390]){
+               await page.setViewportSize({width,height:844});
+               const sizes=await page.evaluate(()=>{
+                 const root=document.getElementById("ao-r17-native-reader-preview");
+                 const selectors={
+                   inline:'.ao-approved-priest-head-bow-rubric-art[data-approved-priest-head-bow-event="AO.RUB.C0072.01"]',
+                   faithful:'[data-icon-slot="posture-top"]',
+                   priest:'[data-icon-slot="priest-position"]',
+                   rail:'.ao-rail .ao-icon-mask',
+                 };
+                 return Object.fromEntries(Object.entries(selectors).map(([key,selector])=>{
+                   const el=root?.querySelector(selector);
+                   const css=el?getComputedStyle(el):null;
+                   return [key,css?{width:parseFloat(css.width),
+                     height:parseFloat(css.height)}:null];
+                 }));
+               });
+               if(Object.entries(sizes).some(([key,x])=>
+                 !x||x.width!==32||x.height!==32))
+                 throw Error("NOV02_APPROVED_ICON_FAMILY_NONUNIFORM:"+JSON.stringify({
+                   mode,language,width,massNumber,sizes}));
+             }
+             await page.setViewportSize({width:390,height:844});
              const rubricFilename="all-souls-m"+massNumber+"-c0072-rubric-"+
                mode.toLowerCase()+"-"+language+"-390.png";
              await page.screenshot({path:resolve(dir,rubricFilename),fullPage:false});
