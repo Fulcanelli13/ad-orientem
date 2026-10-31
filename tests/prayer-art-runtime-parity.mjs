@@ -183,8 +183,10 @@ assert.ok(slots.get(sevenWordAppendix.slot)?.works.some(w=>w.eligible&&w.editori
   'Historical conclusion must retain its approved painting pool');
 assert.equal(presentationResolve('sevenWords',7).slot,null,
   'The historical conclusion must never become an eighth Gospel saying');
-assert.ok(presentation.includes("if(appendix)stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});"),
+assert.ok(presentation.includes("stampArtworkRuntimeIdentity(appendix,{owner:'presentation',view:'sevenWords',section:'historicalConclusion'});"),
   'Visible historical conclusion must carry a separate nonvisual artwork identity');
+assert.ok(presentation.includes("stampPrayerArtworkDomEvidence(appendix)"),
+  'The historical appendix must be audited independently from the Seventh Word');
 for(const [group,mode] of [
   ['adoration_visit','visit'],['adoration_holy_hour','holy'],['adoration_four_ends','four']
 ]){
