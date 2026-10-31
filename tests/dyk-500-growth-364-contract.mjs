@@ -17,11 +17,11 @@ assert.equal(next.count_by_lane.customs_master_historical_20,20);
 const oldIds=new Set([...prev.facts.map(x=>x.id),...priority.records.map(x=>x.id)]);
 const oldSources=new Set([...prev.facts.map(x=>x.source.source_id),...priority.records.map(x=>x.source_id)]);
 const ids=new Set(),sources=new Set(),en=new Set(),fr=new Set();
-const norm=s=>s.normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+const norm=s=>s.normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 for(const x of next.facts){
  assert.ok(!oldIds.has(x.id)&&!ids.has(x.id),"repeated ID: "+x.id);ids.add(x.id);
  assert.ok(!sources.has(x.source.source_id)&&!oldSources.has(x.source.source_id),"repeated source "+x.id);sources.add(x.source.source_id);
- assert.match(x.source.primary_witness,/^https:\\/\\//);
+ assert.ok(x.source.primary_witness.startsWith('https://'));
  assert.equal(x.source.source_owner_commit,next.research_source_commit);
  assert.ok(x.source.source_record_id&&x.source.source_record_file);
  assert.ok(x.statement.en.length>=45&&x.statement.fr.length>=45);
