@@ -25,12 +25,14 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
       '<small lang="la">'+esc(incipit(p)||p.title)+'</small></div></button>';
    }).join('')+'</div></section>';
 }
-export function claudeHolyCard({id,p,face="en",esc,flipped=false,artUrl=""}={}){
+export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl=""}={}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  if(!p||!id)return "";
- const language=p[face]?face:p.en?"en":p.la?"la":null;
+ const bilingual=face==="both"&&!!p.la&&!!p[vernacular];
+ const language=bilingual?vernacular:p[face]?face:p[vernacular]?vernacular:p.en?"en":p.la?"la":null;
  if(!language)return "";
  const beats=essentialHolyCardParts(id,language,p[language])||[];
+ const latinBeats=bilingual?essentialHolyCardParts(id,"la",p.la)||[]:[];
  const latinIncipit=incipit(p),title=face==="fr"?(p.titleFr||p.title):p.title;
  const paragraphs=beats.map((part,i)=>{
   const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial" aria-hidden="true">'+esc(text.charAt(0))+'</span>':'';
@@ -39,6 +41,8 @@ export function claudeHolyCard({id,p,face="en",esc,flipped=false,artUrl=""}={}){
    '" data-ao-essential-index="'+i+'" lang="'+language+'">'+initial+
    '<span>'+esc(body)+'</span></p>';
  }).join("");
+ const latinBlock=bilingual?'<div class="aoClaudeHolyLatinText" lang="la">'+latinBeats.map((part,i)=>
+  '<p class="aoP435930EssentialBeat" data-ao-essential-index="la-'+i+'">'+esc(part.text.trim())+'</p>').join('')+'</div>':'';
  const image=artUrl&&/^https:\/\//.test(artUrl)?
   '<img src="'+esc(artUrl)+'" alt="" loading="lazy" decoding="async">':'';
  return '<article class="aoP435930Prayer aoP435930EssentialCard aoClaudeHolyCard" data-ao-essential-card="'+esc(id)+'" data-ao-claude-holy-card>'+
@@ -50,7 +54,7 @@ export function claudeHolyCard({id,p,face="en",esc,flipped=false,artUrl=""}={}){
     '<h3>'+esc(title||id)+'</h3></div></div>'+
    '<div class="aoClaudeHolyFace aoClaudeHolyBack"><div class="aoClaudeHolyOrn">✠</div>'+
     '<h4 lang="la">'+esc(latinIncipit)+'</h4>'+
-    '<div class="aoClaudeHolyBackScroll" role="region" aria-label="'+esc(title||id)+'">'+paragraphs+'</div>'+
+    '<div class="aoClaudeHolyBackScroll" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
     '<div class="aoClaudeHolyOrn aoClaudeHolyClosing">❦</div></div>'+
    '</div></div><div class="aoClaudeHolyHint">'+esc(flipped?'Tap to turn back · swipe for the next card':'Tap to turn the card over')+'</div></div>'+
    '</article>';
