@@ -2964,7 +2964,30 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "partialOrExcludedAcceptedSourceLeads": [
+        {
+          "sourceCardId": "met:435847",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Vincent, Patron Saint of Lisbon",
+          "sourceArtistAsRecorded": "Frei Carlos",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "58.145.2",
+          "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/435847",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "relation": "PARTIAL_GROUP_ONE_MEMBER_IDENTITY_UNCONFIRMED",
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "partialGroupFeastResearchWarning": "Saint Vincent is titled Patron Saint of Lisbon; confirm identification with Vincent of Saragossa before allowing even this partial depiction as a subject match. Never equate Vincent with Anastasius or treat one painting as full two-martyr feast.",
+      "partialGroupFeastFullMatch": false
     },
     {
       "date": "2026-01-23",
@@ -6988,7 +7011,22 @@
           "homepageRotationApproved": false
         }
       ],
-      "acceptedSourceIdentityWarning": "Justa and Rufina of Seville are different from Rufina and Secunda of Rome; exclude."
+      "acceptedSourceIdentityWarning": "Justa and Rufina of Seville are different from Rufina and Secunda of Rome; exclude.",
+      "partialGroupLegacyNamedFileLeads": [
+        {
+          "historicalFile": "File:SevenBrothers.jpg",
+          "legacyIdentity": "group.seven-holy-brothers",
+          "priorHistoricalFileDirective": true,
+          "physicalOriginalVerified": false,
+          "commonsFileAccessVerified": false,
+          "photoReleaseCertified": false,
+          "rotationEligible": false,
+          "relation": "SEVEN_BROTHERS_GROUP_ONLY_RUFINA_SECUNDA_NOT_PRESENT",
+          "completeGroupMatch": false
+        }
+      ],
+      "partialGroupFeastResearchWarning": "Legacy filename SevenBrothers.jpg does not establish that subjects are the Roman brothers rather than unrelated Seven Sleepers or Maccabean martyrs. User historically excluded misleading Justa and Rufina of Seville, which remains disallowed.",
+      "partialGroupFeastFullMatch": false
     },
     {
       "date": "2026-07-11",
@@ -7338,7 +7376,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "partialGroupLegacyNamedFileLeads": [
+        {
+          "historicalFile": "File:St. Nazarius and St. Celsus Met DP891050.jpg",
+          "legacyIdentity": "group.nazarius-celsus",
+          "priorHistoricalFileDirective": true,
+          "physicalOriginalVerified": false,
+          "commonsFileAccessVerified": false,
+          "photoReleaseCertified": false,
+          "rotationEligible": false,
+          "relation": "NAZARIUS_CELSUS_ONLY_OF_FOUR_SAINTS",
+          "completeGroupMatch": false
+        },
+        {
+          "historicalFile": "File:Nazarius Celsus.jpg",
+          "legacyIdentity": "group.nazarius-celsus",
+          "priorHistoricalFileDirective": true,
+          "physicalOriginalVerified": false,
+          "commonsFileAccessVerified": false,
+          "photoReleaseCertified": false,
+          "rotationEligible": false,
+          "relation": "NAZARIUS_CELSUS_ONLY_OF_FOUR_SAINTS",
+          "completeGroupMatch": false
+        }
+      ],
+      "partialGroupFeastResearchWarning": "Two file names may depict same painting or derivative photos; source URL, physical identity, image rights and artist quality all require verification. No complete four-saint date binding.",
+      "partialGroupFeastFullMatch": false
     },
     {
       "date": "2026-07-29",
