@@ -146,6 +146,36 @@ try{
      atLastPhrase.cue,"Finishing choir track advanced priest cue");
    const sharedAdvance=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title);
    assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
+   // A delayed second Benedictus belongs to an explicitly selected
+   // polyphonic local practice. The source-first itinerary must not invent
+   // it for the default UNSPECIFIED or Gregorian setting.
+   const planBeforeRelease=page.locator("[data-schola-local-panel]");
+   await planBeforeRelease.locator("summary").click();
+   await planBeforeRelease.locator("[data-schola-local-sanctus]").selectOption("POLYPHONIC");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()
+     ?.sanctusPerformance==="POLYPHONIC");
+   const polyphonicEventCheck=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW, plan=api.getScholaPerformance();
+     const actual=api.model.cards;
+     const related=plan.events.filter(e=>/SANCTUS|BENEDICTUS|CHALICE/.test(e.id))
+       .map(e=>({id:e.id,status:e.status,eligible:e.performance?.eligible}));
+     return {
+       supported:plan.supported,reason:plan.reason,
+       style:api.getScholaState().sanctusPerformance,
+       present:plan.events.some(e=>e.id==="BENEDICTUS_AFTER_CHALICE"),
+       related,
+       unresolved:plan.unresolved.filter(e=>/BENEDICTUS|CHALICE/.test(e.id)),
+       chalice:actual.filter(c=>c.sourceSectionId==="AO.CANON.07")
+         .map(c=>({title:c.title,id:c.sectionId,sequence:c.sequence,
+           blocks:(c.blocks??[]).map(x=>({id:x.blockId,n:x.paragraphCount,omit:x.omittedByRite}))}))
+     };
+   });
+   assert.ok(polyphonicEventCheck.present,
+     "Polyphonic Benedictus absent from source-owned itinerary: "+JSON.stringify(polyphonicEventCheck));
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status),
+     "EXPECTED_NOT_OBSERVED","Selecting polyphony cannot itself prove Benedictus singing");
+   await planBeforeRelease.locator("summary").click();
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
@@ -276,6 +306,89 @@ try{
    assert.equal(await musicMenu.isVisible(),true);
    assert.ok(await musicMenu.locator("[data-schola-event-select]").count()>=25,
      "Schola source itinerary did not populate navigable events");
+
+   // Real phone actions must create ONLY the user's observed music states,
+   // without moving the priest, the chant syllable clock or a quiet interval.
+   const originalPerformance=await page.evaluate(()=>{
+     const l=window.__AO_PHONE_PREVIEW.getScholaPerformance();
+     return {schema:l.performanceSchema,
+       kyrie:l.events.find(x=>x.id==="KYRIE")?.performance.status,
+       quiet:l.events.find(x=>x.kind==="QUIET_INTERVAL")?.performance.eligible,
+       quietId:l.events.find(x=>x.kind==="QUIET_INTERVAL")?.id??null,
+       organ:l.events.find(x=>x.id==="ENTRANCE_ORGAN_OPTION")?.performance.eligible,
+       started:l.counts.started};
+   });
+   assert.equal(originalPerformance.schema,"ao-schola-performance-session-v1");
+   // The same human-authorized post-Chalice release that starts the delayed
+   // Benedictus must expose Finish and Undo; the priest cue must not move.
+   const benedictusAfterRelease=await page.evaluate(()=>window.__AO_PHONE_PREVIEW
+     .getScholaPerformance().events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")?.performance);
+   assert.equal(benedictusAfterRelease?.status,"STARTED_OBSERVED");
+   assert.equal(benedictusAfterRelease?.eligible,true,
+     "Post-Chalice observed Benedictus must be finishable in the music menu");
+   await musicMenu.locator(
+     '[data-schola-performance-event="BENEDICTUS_AFTER_CHALICE"][data-schola-performance-action="FINISH"]'
+   ).click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status==="FINISHED_OBSERVED");
+   await musicMenu.locator(
+     '[data-schola-performance-event="BENEDICTUS_AFTER_CHALICE"][data-schola-performance-action="RESET"]'
+   ).click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status==="EXPECTED_NOT_OBSERVED");
+   // Undo never requires replaying the Chalice gate, but the next START is
+   // still a separate manual "I hear it start" action.
+   await musicMenu.locator(
+     '[data-schola-performance-event="BENEDICTUS_AFTER_CHALICE"][data-schola-performance-action="START"]'
+   ).click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status==="STARTED_OBSERVED");
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),priestBeforeMusicPick,"Benedictus correction altered the priest Mass clock");
+   assert.equal(originalPerformance.kyrie,"EXPECTED_NOT_OBSERVED");
+   assert.equal(originalPerformance.quiet,false);
+   assert.ok(originalPerformance.quietId,
+     "Expected a source-backed quiet interval for this Sung Mass");
+   assert.equal(await musicMenu.locator(
+     '[data-schola-performance-row="'+originalPerformance.quietId+'"]').count(),0,
+     "Quiet or Canon interval must not be recordable as musical performance");
+   const performanceStart=musicMenu.locator(
+     '[data-schola-performance-event="KYRIE"][data-schola-performance-action="START"]');
+   await performanceStart.click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="KYRIE")?.performance.status==="STARTED_OBSERVED");
+   // The observed post-Chalice Benedictus remains STARTED while the visitor
+   // independently marks Kyrie STARTED; both count, without advancing music.
+   assert.match(await musicMenu.locator("[data-schola-performance-summary]").textContent(),
+     /2 started/);
+   assert.equal(await musicMenu.locator('[data-schola-performance-status="KYRIE"]').textContent(),
+     "You marked: started");
+   const selectedAfterStart=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   }));
+   assert.deepEqual(selectedAfterStart,priestBeforeMusicPick);
+   await musicMenu.locator(
+     '[data-schola-performance-event="KYRIE"][data-schola-performance-action="FINISH"]').click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="KYRIE")?.performance.status==="FINISHED_OBSERVED");
+   assert.match(await musicMenu.locator("[data-schola-performance-summary]").textContent(),
+     /1 finished/);
+   await page.screenshot({path:resolve(out,"schola-observed-performance-"+width+".png"),
+     animations:"disabled"});
+   await musicMenu.locator(
+     '[data-schola-performance-event="KYRIE"][data-schola-performance-action="RESET"]').click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
+     .events.find(x=>x.id==="KYRIE")?.performance.status==="EXPECTED_NOT_OBSERVED");
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().trackId),
+     "SANCTUS_BENEDICTUS","Recording music must not change the independent choir track");
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue()
+   })),priestBeforeMusicPick);
+
    const unselectedMotet=musicMenu.locator('[data-schola-event-select="OFFERTORY_LOCAL_MOTET"]');
    assert.equal(await unselectedMotet.isDisabled(),true,
      "Unplanned local motet must not be presented as a selectable performance");

@@ -146,14 +146,16 @@ async function openSurface(page,surface,width){
     // Settings is contextual, never an extra permanent destination.
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   }else if(surface==="calendar"){
-    // H4 owns Calendar inside Home. On the Today door open the date; on
-    // repeated visits use its Calendar-only view selector (not retired tabs).
+    // H4 keeps Calendar embedded under Today. Its dated Calendar opener
+    // replaces the old Month tab, and is distinct from contextual event links
+    // and the retired sixth shell destination.
     await page.locator("[data-ao-app-surface='home']").first().click();
-    await page.waitForSelector(".homeScreen.aoTodayH4",{state:"visible",timeout:10000});
-    const month=page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]');
-    assert.equal(await month.count(),1,width+"px H4 Calendar lost Month navigation");
-    if(await month.isVisible())await month.click();
-    else await page.locator(".aoTodayH4 .aoH4DateOpen").click();
+    await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
+    const month=page.locator('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]');
+    assert.equal(await month.count(),1,width+"px H4 lost its dated Calendar entry");
+    assert.ok(await month.evaluate(el=>el.getBoundingClientRect().height)>=44,
+      width+"px H4 Calendar opener is below the phone touch target");
+    await month.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
     assert.equal(await nav.count(),1,width+"px missing "+surface+" top-level navigation control");
@@ -174,8 +176,7 @@ async function openSurface(page,surface,width){
     await year.click();
     await page.waitForSelector('.aoTodayH4 [data-ao-liturgical-clock="v1"] .aoClockDial',
       {state:"visible",timeout:15000});
-    assert.equal(await year.getAttribute("aria-current"),"page",
-      width+"px Liturgical Year active selector missing");
+    assert.equal(await year.getAttribute("aria-current"),"page",width+"px Liturgical Year active selector missing");
     await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
     await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
       {state:"visible",timeout:15000});
@@ -266,32 +267,59 @@ try{
       }
     }
 
-    // Mass entry is included without starting a liturgy: RC geometry must prove
-    // that the production selection/preflight surface itself still fits every
-    // supported phone width.
+    // H4's sole Begin Mass action enters the source-verified native R17
+    // reader directly. Ceremony/reader choices live in its separate Change
+    // sheet; the retired mass-flow preflight MUST NOT be required here.
     assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
-      "Mass is not a fifth ribbon tab");
-    const calendarBack=page.locator(".aoH4CalendarBack [data-home-calendar-today]");
-    if(await calendarBack.isVisible())await calendarBack.click();
-    await page.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",{state:"visible",timeout:10000});
-    const massNav=page.locator(".homeScreen [data-home-h4-begin], .homeScreen [data-resume-mass]").first();
-    assert.equal(await massNav.count(),1,
-      viewport.width+"px Home lost the sole canonical Mass entry");
-    // Today owns Mass preparation: its Change sheet exposes the R17 choice
-    // model without starting the liturgy or entering an obsolete Mass tab.
-    const change=page.locator(".homeScreen [data-home-h4-change]");
-    await change.click();
-    await page.waitForSelector(".aoH4ChoiceDialog",{state:"visible",timeout:10000});
-    await assertViewportFit(page,"H4 Mass choices",viewport.width);
-    await assertNoLegacyLeak(page,"H4 Mass choices",viewport.width);
-    assert.ok(await page.locator(".aoH4ChoiceDialog [data-h4-option]").count()>=3,
-      viewport.width+"px R17 choice controls unavailable");
-    assert.equal(await page.locator("#ao-r17-native-reader-preview").count(),0,
-      "Opening choices must not start the R17 Mass");
-    await page.locator(".aoH4ChoiceDialog [data-h4-sheet-close]").first().click();
-    await page.waitForSelector(".aoH4ChoiceDialog",{state:"detached",timeout:10000});
+      "Mass must not become a fifth ribbon tab");
+    assert.ok(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count()>=1,
+      "H4 must expose the canonical Mass choices separately from Begin");
+    await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+    await page.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
+    const massNav=page.locator(".homeScreen [data-home-h4-begin]").first();
+    await massNav.waitFor({state:"visible",timeout:15000});
+    await page.waitForFunction(()=>Boolean(document.querySelector(
+      ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
+    await massNav.click();
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
+    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
+    await assertViewportFit(page,"Native Mass reader",viewport.width);
+    await assertNoLegacyLeak(page,"Native Mass reader",viewport.width);
+    const started=await page.evaluate(()=>({
+      nativeCount:document.querySelectorAll("#ao-r17-native-reader-preview").length,
+      nativeVisible:Boolean(document.getElementById("ao-r17-native-reader-preview")?.getClientRects().length),
+      preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.getClientRects().length),
+      legacyReader:document.documentElement.dataset.aoMassReaderUi==="LEGACY",
+    }));
+    assert.equal(started.nativeCount,1,viewport.width+"px H4 did not start one R17 Mass reader");
+    assert.equal(started.nativeVisible,true,viewport.width+"px R17 is hidden after Begin");
+    assert.equal(started.preflightVisible,false,viewport.width+"px H4 reopened the retired preflight");
+    assert.equal(started.legacyReader,false,viewport.width+"px H4 opened a legacy Mass reader");
+
+    // LIVE owns the screen and hides the global ribbon. Exit through R17's
+    // actual Home action, never through the deliberately hidden ribbon.
+    assert.equal(await visible(page,"#ao-global-ribbon"),false,
+      viewport.width+"px LIVE Mass must suppress the global ribbon");
+    const prompts=[];
+    const confirmLeave=async dialog=>{
+      prompts.push(dialog.message());
+      await dialog.accept();
+    };
+    page.on("dialog",confirmLeave);
+    await page.locator("#ao-r17-native-reader-preview [data-reader-home]").click();
+    const afterMass=page.locator("#ao-r17-native-reader-preview .aoReaderAfterMassChoice");
+    if(await afterMass.count()){
+      await afterMass.locator("[data-ao-return-home]").click();
+    }
+    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&
+      document.documentElement.dataset.aoM1MassRoot!=="true"&&
+      !document.getElementById("ao-r17-native-reader-preview"),null,{timeout:15000});
+    page.off("dialog",confirmLeave);
+    assert.equal(prompts.length,1,viewport.width+"px exiting LIVE Mass must ask once");
+    assert.match(prompts[0],/Mass is in progress\. Leave the Mass follower\?/,
+      viewport.width+"px LIVE Mass confirmation text changed");
     assert.equal(await visible(page,".homeScreen"),true,
-      viewport.width+"px closing choices must return to Today");
+      viewport.width+"px Today was not restored after leaving Mass");
 
     if(consoleErrors.length||failedResources.length)console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,consoleErrors,failedResources},null,2));
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
@@ -301,7 +329,7 @@ try{
     await context.close();
   }
 
-  console.log("RC field QA PASS — 320/360/390/430px assembled shell, four destinations plus Today-only Mass routing, H4 Mass choice geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
+  console.log("RC field QA PASS — 320/360/390/430px assembled shell, four destinations plus Today-only Mass routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));

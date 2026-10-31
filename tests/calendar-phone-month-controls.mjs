@@ -46,7 +46,7 @@ try{
      await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.close?.());
      await page.locator(".homeScreen.aoTodayV2").waitFor({state:"visible",timeout:20000});
    }
-   await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator('.aoCalV2MonthGrid').waitFor({state:"visible",timeout:40000});
    const metrics=await page.evaluate(()=>{

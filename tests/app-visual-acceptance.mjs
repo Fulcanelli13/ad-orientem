@@ -39,12 +39,12 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
 
-  // Historical Today and Prayer are explicitly rollback-only. The default H4\n  // Home and its Year Clock are certified by home-h11-appearance-acceptance.\n  // This historical, full-app visual acceptance suite asserts the 9-card
+  // This historical, full-app visual acceptance suite asserts the 9-card
   // grouped Prayer hub and the direct Angelus Folio path. Those remain the
   // supported rollback layout. The new DEFAULT 9-tile Prayer discovery and
   // optional Angelus entry are certified separately by
   // tests/pray-design-pilot-phone.mjs at 320px and 390px.
-  await page.goto("http://127.0.0.1:4186/index.html?aoTodayH4=0&aoR17Reader=native&aoPrayerPilot=0",
+  await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native&aoPrayerPilot=0",
     {waitUntil:"domcontentloaded",timeout:90000});
 
   // Original v43.43 loader ownership: same boot/async DOM, exact Marian and
@@ -194,20 +194,29 @@ try{
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
-    todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
-    todayV2Sections:document.querySelectorAll(".aoTodayV2PrayerThroughDay .aoTodayV2Zone,.aoTodayV2Below .aoTodayV2Zone").length,
-    todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
-    prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
-    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length,
+    todayH4:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorView").length,
+    prayer:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2PrayerThroughDay").length,
+    thisWeek:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance").length,
+    discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone").length,
+    read:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect").length,
+    prayerBeforeCalendar:(()=>{const pray=document.querySelector(".aoTodayH4 .aoTodayV2PrayerThroughDay");const calendar=document.querySelector(".aoTodayH4 .aoTodayV2CalendarGlance");return Boolean(pray&&calendar&&(pray.compareDocumentPosition(calendar)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
+    discoveryAfterWeekBeforeRead:(()=>{const week=document.querySelector(".aoTodayH4 .aoTodayV2CalendarGlance");const discovery=document.querySelector(".aoTodayH4 .aoH4DiscoveryStandalone");const read=document.querySelector(".aoTodayH4 .aoTodayV2ReadReflect");return Boolean(week&&discovery&&read&&(week.compareDocumentPosition(discovery)&Node.DOCUMENT_POSITION_FOLLOWING)&&(discovery.compareDocumentPosition(read)&Node.DOCUMENT_POSITION_FOLLOWING));})(),
+    datedCalendarEntry:document.querySelectorAll('.homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view="picker"]').length,
+    h4CalendarLinks:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar]").length,
+    catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
-    homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
-    "H1.1 must render Prayer and Read/Reflect, one Calendar summary and working Calendar links: "+JSON.stringify(homeAudit));
-  assert.equal(homeAudit.prayerBeforeCalendar,true,"H1.1 requires the prayer entry before Calendar context");
+  assert.ok(homeAudit.todayH4===1 && homeAudit.prayer===1 &&
+    homeAudit.thisWeek===1 && homeAudit.discovery===1 && homeAudit.read===1 &&
+    homeAudit.datedCalendarEntry===1 && homeAudit.h4CalendarLinks>=1,
+    "H4 must show the Mass door, Pray, This week, standalone Did you know, Read, and Calendar: "+JSON.stringify(homeAudit));
+  assert.equal(homeAudit.prayerBeforeCalendar,true,"H4 requires Pray before This week");
+  assert.equal(homeAudit.discoveryAfterWeekBeforeRead,true,
+    "H4 Did you know must stand alone beneath This week and above Read");
+  assert.equal(homeAudit.catechism,0,"H4 must not reintroduce Catechism on Home");
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
@@ -265,50 +274,48 @@ try{
     assert.equal(s.display,"none",surface+" exposed Home beneath the active surface");
   };
 
-  // Today v2 is the production Home owner. The old v43 celebration/Coming Up
-  // classes were retired; certify the rendered editorial sections and entry points.
+  // H4 is the canonical Today door: protect real content hierarchy instead
+  // of the removed Today V2/H1.1 micro-season and navigation tabs.
   const homeParity=await page.evaluate(()=>({
-    context:document.querySelectorAll(".homeScreen .aoTodayV2SeasonMicro").length,
-    sections:document.querySelectorAll(".homeScreen .aoTodayV2PrayerThroughDay .aoTodayV2Zone,.homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
-    prayerFeature:document.querySelectorAll(".homeScreen .aoTodayV2PrayerFeature [data-home-cu-route]").length,
-    prayerShortcuts:document.querySelectorAll(".homeScreen .aoTodayV2PrayerShortcuts [data-home-cu-route]").length,
-    gospel:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action='gospel']").length,
-    scripture:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-scripture]").length,
-    catechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
-    calendar:document.querySelectorAll(".homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]").length,
-    year:document.querySelectorAll('.homeScreen .aoTodayV2SeasonMicro[data-home-calendar-view="year"]').length,
-    upcoming:document.querySelectorAll('.homeScreen .aoTodayV2Tabs [data-home-calendar-view="picker"]').length,
-    upcomingDates:document.querySelectorAll('.homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]').length,
-    contextHeight:document.querySelector(".homeScreen .aoTodayV2SeasonMicro")?.getBoundingClientRect().height??0,
-    seasonControlStyle:(()=>{
-      const el=document.querySelector(".homeScreen .aoTodayV2SeasonMicro");
-      if(!el)return null;
-      const st=getComputedStyle(el),parent=getComputedStyle(el.parentElement);
-      return {height:st.height,minHeight:st.minHeight,display:st.display,visibility:st.visibility,
-        transform:st.transform,zoom:st.zoom,parentDisplay:parent.display,parentTransform:parent.transform,
-        rect:el.getBoundingClientRect().toJSON(),clientRects:el.getClientRects().length};
-    })(),
+    massDoor:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorView").length,
+    dateEntry:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7HomeView .date[data-home-calendar-view='picker']").length,
+    weekCells:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Week [data-date]").length,
+    prayer:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4Prayer").length,
+    prayerShortcuts:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2PrayerShortcuts button").length,
+    thisWeek:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance").length,
+    upcomingDates:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar-date]").length,
+    discovery:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone").length,
+    dyk:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-open],.homeScreen.aoTodayH4 .aoH4DiscoveryStandalone [data-home-dyk-entry]").length,
+    read:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect").length,
+    gospel:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2ReadReflect [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-daily-catechism]").length,
+    oldTabs:document.querySelectorAll(".homeScreen.aoTodayH4 .aoTodayV2Tabs").length,
+    choices:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
+    dateEntryHeight:document.querySelector(".homeScreen.aoTodayH4 .aoH7HomeView .date")?.getBoundingClientRect().height??0,
     horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
-    massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
+    massEntry:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-mass-entry]").length,
     obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
     unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
   }));
-  assert.equal(homeParity.context,1,"Today v2 lost its hero liturgical-season link");
-  assert.equal(homeParity.sections,2,"H1.1 retains Prayer and Read/Reflect across the homepage hierarchy");
-  assert.equal(homeParity.prayerFeature,1,"Today v2 lost its featured prayer entry");
-  assert.equal(homeParity.prayerShortcuts,3,"Today v2 lost the three prayer shortcuts");
-  assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
-  assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
-  assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
-  assert.ok(homeParity.calendar>=1,"Calendar at a glance must retain source-qualified upcoming date links");
-  assert.equal(homeParity.year,1,"The season link must still open the canonical Liturgical Year");
-  assert.equal(homeParity.upcoming,1,"The header Month tab replaces redundant Coming next CTA");
-  assert.ok(homeParity.upcomingDates>=1,"Upcoming dates must preserve Calendar Day entry");
-  assert.ok(homeParity.contextHeight>=44,"The compact season control must meet the 44px touch target: "+JSON.stringify(homeParity.seasonControlStyle));
-  assert.ok(homeParity.horizontalOverflow<=1,"Home decluttering introduced horizontal overflow");
-  assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
-  assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
-  assert.equal(homeParity.unresolvedArt,0,"Home displayed an unapproved artwork placeholder");
+  assert.equal(homeParity.massDoor,1,"H4 lost its sole Mass door");
+  assert.equal(homeParity.dateEntry,1,"H4 lost its canonical dated Calendar entry");
+  assert.equal(homeParity.weekCells,7,"H4 must retain the seven-day rail");
+  assert.equal(homeParity.prayer,1,"H4 must show one featured prayer");
+  assert.equal(homeParity.prayerShortcuts,3,"H4 must retain Rosary, Confession and Adoration");
+  assert.equal(homeParity.thisWeek,1,"H4 lost This week");
+  assert.ok(homeParity.upcomingDates>=1,"This week lost date-linked observances");
+  assert.equal(homeParity.discovery,1,"Did you know must remain a standalone section");
+  assert.ok(homeParity.dyk>=1,"Did you know must remain actionable");
+  assert.equal(homeParity.read,1,"H4 lost its minimal Read section");
+  assert.equal(homeParity.gospel,1,"H4 lost Gospel of the Mass");
+  assert.equal(homeParity.catechism,0,"H4 must not put Catechism back on the homepage");
+  assert.equal(homeParity.oldTabs,0,"Retired Today V2 tabs must not return");
+  assert.ok(homeParity.choices>=1,"H7 Mass ceremony choices are missing");
+  assert.ok(homeParity.dateEntryHeight>=44,"H4 Calendar needs a 44px touch target");
+  assert.ok(homeParity.horizontalOverflow<=1,"H4 has horizontal phone overflow");
+  assert.equal(homeParity.massEntry,1,"H4 lacks a canonical Begin Mass entry");
+  assert.equal(homeParity.obsoleteYearWheel,0,"Old decorative year wheel leaked onto H4");
+  assert.equal(homeParity.unresolvedArt,0,"H4 displayed an unapproved artwork placeholder");
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
@@ -325,67 +332,52 @@ try{
   assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
   await shot("01-home");
 
-  await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
-  await page.locator("[data-home-mass-entry]").click();
-  await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+  // H4's approved Begin button goes directly to the same source-gated R17
+  // reader used by the canonical controller. Options are in Change; there is
+  // no extra preflight dialog or fifth ribbon tab in this flow.
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count(),1,
+    "H4 Mass choices must remain available before beginning");
+  await page.waitForFunction(()=>Boolean(document.querySelector(
+    ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
+  await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+  await page.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
+  await page.locator(".homeScreen [data-home-h4-begin]").click();
+  await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
   const massEntry=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
-    preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop .aoMassFlow")),
-    nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    nativeCount:document.querySelectorAll("#ao-r17-native-reader-preview").length,
+    nativeVisible:Boolean(document.getElementById("ao-r17-native-reader-preview")?.getClientRects().length),
+    preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.getClientRects().length),
     donorLearnVisible:Boolean(document.getElementById("ao-v37-root")?.classList?.contains("aoV37ShellOpen")),
   }));
-  assert.equal(massEntry.active,"mass","Home Follow Mass did not activate the Mass destination");
-  assert.equal(massEntry.preflightVisible,true,"Home Follow Mass did not open the celebration preflight");
-  assert.equal(massEntry.nativeMounted,false,"fresh Mass entry bypassed preflight and mounted R17 immediately");
-  const preflightDonor=await page.evaluate(()=>{
-    const flow=document.querySelector("#ao-mass-flow-v1 .aoMassFlow");
-    const folio=flow?.querySelector("[data-ao-full-mass-preflight]");
-    const outline=e=>({tag:e.tagName,id:e.id,cls:String(e.className||"").slice(0,180),
-      data:Object.entries(e.dataset||{}).filter(([a])=>a.startsWith("ao")||a==="role").slice(0,9),
-      text:(e.textContent||"").trim().replace(/\\s+/g," ").slice(0,100),
-      display:getComputedStyle(e).display,visible:!!e.getClientRects().length,
-      parent:e.parentElement?.className||""});
-    return {flow:flow?outline(flow):null,
-      parents:folio?[folio.parentElement,folio.parentElement?.parentElement].filter(Boolean).map(outline):[],
-      siblings:folio?[...folio.parentElement.children].map(outline):[],
-      candidate:[...flow?.querySelectorAll?.("section,div,header,article,fieldset,h2,h3,button")||[]]
-        .filter(e=>e!==folio&&!folio?.contains(e)&&e.children.length<=5 &&
-         /MASS OF THE DAY|CONTENT READINESS|HOW DO YOU WANT TO FOLLOW|VOX|AD ORIENTEM MASS PREFLIGHT/.test((e.textContent||"").trim().replace(/\\s+/g," ").slice(0,110)))
-        .slice(0,35).map(outline)};
-  });
-  console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
-  await shot("01b-mass-preflight");
-  // M1 is a permanent Mass root, not a dismissible dialog. Leaving via the
-  // shell's Today tab is the supported action. The old close/hidden-backdrop
-  // assertion would erroneously fail a correct M1 implementation.
-  const permanentMassRoot=await page.evaluate(()=>
-    document.documentElement.dataset.aoM1MassRoot==="true");
-  if(permanentMassRoot){
-    await page.locator("[data-ao-app-surface='home']").click();
-    await page.waitForFunction(()=>
-      document.documentElement.dataset.aoM1MassRoot!=="true",null,{timeout:5000});
-  }else{
-    const massFlowClose=page.locator("#ao-mass-flow-v1 .aoMassFlowBackdrop [data-ao-close]").last();
-    if(await massFlowClose.isVisible())await massFlowClose.click();
-    await page.waitForFunction(()=>{
-      const backdrop=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-      return !backdrop||!backdrop.getClientRects().length||getComputedStyle(backdrop).visibility==="hidden";
-    },null,{timeout:5000});
-    await page.locator("[data-ao-app-surface='home']").click();
-  }
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+  assert.equal(massEntry.active,"mass","H4 Begin Mass did not open Mass");
+  assert.equal(massEntry.nativeCount,1,"H4 did not mount exactly one R17 reader");
+  assert.equal(massEntry.nativeVisible,true,"R17 reader is hidden after Begin");
+  assert.equal(massEntry.preflightVisible,false,"H4 reopened retired Mass preflight");
+  assert.equal(massEntry.donorLearnVisible,false,"Mass revealed legacy Learn");
+  await shot("01b-mass-reader-direct-entry");
+  // LIVE suppresses the global ribbon. Use the real reader Home control,
+  // including optional After Mass choice and explicit leave confirmation.
+  assert.equal(await page.locator("#ao-global-ribbon").isVisible(),false,
+    "LIVE Mass must hide the ordinary app navigation ribbon");
+  const leavePrompts=[];
+  const acceptLeave=async dialog=>{leavePrompts.push(dialog.message());await dialog.accept();};
+  page.on("dialog",acceptLeave);
+  await page.locator("#ao-r17-native-reader-preview [data-reader-home]").click();
+  const afterMass=page.locator("#ao-r17-native-reader-preview .aoReaderAfterMassChoice");
+  if(await afterMass.count())await afterMass.locator("[data-ao-return-home]").click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&
+    !document.getElementById("ao-r17-native-reader-preview"),null,{timeout:15000});
+  page.off("dialog",acceptLeave);
+  assert.equal(leavePrompts.length,1,"LIVE Mass must require one explicit leave confirmation");
+  assert.match(leavePrompts[0],/Mass is in progress\. Leave the Mass follower\?/);
 
-  // A previously selected Month/Year lens may be retained across tabs.
-  // Select Today through its public control before opening Day & sources.
-  // Never force-click a hidden Read/Reflect row.
-  const dayLink=page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']");
-  if(!await dayLink.isVisible()){
-    const todayLens=page.locator(".homeScreen .aoTodayV2Tabs [data-home-calendar-today]");
-    await todayLens.waitFor({state:"visible",timeout:10000});
-    await todayLens.click();
-    await dayLink.waitFor({state:"visible",timeout:10000});
-  }
+  // H4 deliberately has no old Read/Reflect calendar link or Today tabs.
+  // Open a real dated This week event, then exercise the source-owned
+  // embedded Calendar's own Day/Month/Year navigation.
+  const dayLink=page.locator(".homeScreen.aoTodayH4 .aoTodayV2CalendarGlance [data-home-calendar-view='day']").first();
+  assert.ok(await dayLink.isVisible(),"H4 This week must expose a dated Calendar entry");
   await dayLink.click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
@@ -474,8 +466,10 @@ try{
   assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width: "+JSON.stringify(inPageCalendar));
   await shot("02-calendar-day");
 
-  const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
-  await page.locator(todayTabs+" [data-home-calendar-view='year']").click();
+  const calendarTabs="#ao-calendar-modular-root .aoCalV2Tabs";
+  assert.equal(await page.locator(calendarTabs+" [data-cal-view]").count(),3,
+    "H4 embedded Calendar must expose Day, Month and Liturgical Year");
+  await page.locator(calendarTabs+" [data-cal-view='year']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:10000});
   const inlineYear=await page.evaluate(()=>({
     segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
@@ -488,7 +482,7 @@ try{
     seasons:document.querySelectorAll("#ao-calendar-modular-root [data-cal-clock-season]").length,
     obsoleteRings:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Ring").length,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
+    selected:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineYear.segments,0,"Home Year must not duplicate Clock as a separate season bar");
   assert.equal(inlineYear.periods,0,"Home Year must not stack eleven duplicate cards");
@@ -504,7 +498,7 @@ try{
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
-  await page.locator(todayTabs+" [data-home-calendar-view='picker']").click();
+  await page.locator(calendarTabs+" [data-cal-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
   const inlineMonth=await page.evaluate(()=>({
@@ -512,7 +506,7 @@ try{
     markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
     views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    active:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
+    active:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
@@ -533,7 +527,7 @@ try{
   }
   await shot("02g-calendar-month-filters");
 
-  await page.locator(todayTabs+" [data-home-calendar-today]").click();
+  await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarBack [data-home-calendar-today]").click();
   await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2 [data-home-calendar-inline]")?.hidden===true,
     null,{timeout:10000});
   assert.equal(await page.locator(".homeScreen .aoTodayV2ReadReflect").count(),1,
