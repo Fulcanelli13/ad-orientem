@@ -25,9 +25,12 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1847);
-const newSites=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&!x.map_publishable);
-assert.equal(newSites.length,735);
+assert.equal(world.filter(x=>x.map_publishable).length,1849);
+const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
+ !published.some(b=>b.source_id===x.source_id));
+assert.equal(additional.length,735);
+const newSites=additional.filter(x=>!x.map_publishable);
+assert.equal(newSites.length,733);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -39,6 +42,33 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
+// Two exact-name, exact-site independent OSM building matches can be shown
+// provisionally while *Mass usage and precise entrances remain unverified*.
+for(const [group,id,name,lat,lng,osm] of [
+ ["RG-B65-AFB4955D79E8","AO-RSCH-B65-AFB4955D79E8",
+  "Kerzenkapelle",51.58389,6.24377,"osm:way:152838071"],
+ ["RG-B69-3A43E996D0D9","AO-RSCH-B69-3A43E996D0D9",
+  "Wallfahrtskirche Maria Vesperbild",48.2798,10.54221,"osm:way:100214876"],
+]){
+ const mapped=additional.find(x=>x.physical_group_id===group);
+ assert.ok(mapped,"Independently reviewed site pin missing");
+ assert.equal(mapped.source_id,id);
+ assert.equal(mapped.item_id,"tlm:cl2:"+group);
+ assert.equal(mapped.title,name);
+ assert.equal(mapped.geo.lat,lat);
+ assert.equal(mapped.geo.lng,lng);
+ assert.equal(mapped.geo.source_ref,osm);
+ assert.equal(mapped.geo.precision,"site");
+ assert.equal(mapped.geo.approximate,true);
+ assert.equal(mapped.geo.review_scope,"PHYSICAL_CHURCH_NOT_ENTRANCE");
+ assert.equal(mapped.map_publishable,true);
+ assert.equal(mapped.map_state,"PROVISIONAL");
+ assert.match(mapped.status,/MASS UNVERIFIED/);
+ assert.equal(mapped.sections.length,0);
+ assert.equal(mapped.actions.length,0);
+ assert.ok(mapped.source_links.some(l=>l.url.startsWith("https://www.")));
+}
+
 // Two geographically divergent R49 aliases retain the canonical selected
 // church identity, but use an independently corroborated existing source pin.
 for(const [group,canonical,corrected,evidence,expectedAddress] of [
@@ -93,12 +123,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1847);
-assert.equal(vm.addressOnly,735);
+assert.equal(vm.mapped,1849);
+assert.equal(vm.addressOnly,733);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/735/);
+assert.match(html,/733/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 735 additional searchable list-only sites, 3 separate published additions");
+console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 733 list-only plus 2 independently verified site markers, 3 separate published additions");

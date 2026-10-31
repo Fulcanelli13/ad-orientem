@@ -39,6 +39,32 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
   ]),
  }),
 });
+// Only separately verified exact-building coordinates can promote an
+// unlocated CL2 research listing to a provisional physical-site marker.
+// Names, country, source ID and street must all match the frozen source row.
+const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-B65-AFB4955D79E8":Object.freeze({
+  sourceId:"AO-RSCH-B65-AFB4955D79E8",name:"Kerzenkapelle",
+  country:"DE",addressNeedle:"Kapellenplatz",placeId:"place:DE:kevelaer-kerzenkapelle",
+  lat:51.58389,lng:6.24377,sourceRef:"osm:way:152838071",
+  sourceUrl:"https://www.openstreetmap.org/way/152838071",
+  evidence:Object.freeze([
+   "https://mapcarta.com/de/W152838071",
+   "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung",
+  ]),
+ }),
+ "RG-B69-3A43E996D0D9":Object.freeze({
+  sourceId:"AO-RSCH-B69-3A43E996D0D9",name:"Wallfahrtskirche Maria Vesperbild",
+  country:"DE",addressNeedle:"Schellenbacher Straße 4",
+  placeId:"place:DE:maria-vesperbild",
+  lat:48.2798,lng:10.54221,sourceRef:"osm:way:100214876",
+  sourceUrl:"https://www.openstreetmap.org/way/100214876",
+  evidence:Object.freeze([
+   "https://mapcarta.com/de/W100214876",
+   "https://bistum-augsburg-portal.de/pfarreien/maria-vesperbild-wallfahrtsdirektion-mariae-schmerzen",
+  ]),
+ }),
+});
 const family=(aff,mapAffiliation)=>{
  const group=mapAffiliation?.(aff,"UNKNOWN");
  return T(group)||"OTHER";
@@ -85,6 +111,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
   const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
+  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??null;
   const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
   if(review&&(!selected||!sourceIds.includes(review.sourceId)||
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
@@ -92,7 +119,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     throw new Error("Unverifiable CL2 site coordinate adjudication: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
     ...(linked.flatMap(item=>(item.source_links??[]).map(s=>s.url))),
-    ...sourceUrls].filter(url=>https(url))).slice(0,12).map((url,i)=>Object.freeze({
+    ...sourceUrls,...(newPin?.evidence??[]),...(newPin?[newPin.sourceUrl]:[])].filter(url=>https(url))).slice(0,12).map((url,i)=>Object.freeze({
      id:anchor+"-source-"+i,title:i===0?"Original listing":"Additional research source",
      issuer:"CL2 physical-site sources",url
     }));
@@ -121,6 +148,14 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    }));
   }else{
    unmapped++;
+   if(newPin&&(!sourceIds.includes(newPin.sourceId)||T(name)!==newPin.name||
+     country!==newPin.country||!T(description).includes(newPin.addressNeedle)||
+     !newPin.placeId.startsWith("place:"+country+":")||
+     !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
+     !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
+     !/^osm:way:\d+$/.test(newPin.sourceRef)||
+     !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
+    throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
    const affiliationName=T(affiliation)||"Source affiliation not established";
    const community_id=family(affiliationName,mapAffiliation);
    result.push(Object.freeze({
@@ -131,14 +166,23 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     eyebrow:affiliationName,status:"RESEARCH-LISTED · MASS UNVERIFIED",
     title:T(name),subtitle:[T(description),country].filter(Boolean).join(" · "),
     summary:"Physical site recorded in the research master. Current traditional Mass use, the minister, liturgical books and timetable have not been independently verified.",
-    address:{formatted:T(description)||country},geo:null,map_publishable:false,
-    map_state:"ADDRESS_ONLY",facts:Object.freeze([
+    address:{formatted:T(description)||country},
+    geo:newPin?Object.freeze({
+     lat:newPin.lat,lng:newPin.lng,precision:"site",approximate:true,
+     attribution:"© OpenStreetMap contributors · ODbL 1.0",
+     source_ref:newPin.sourceRef,source_url:newPin.sourceUrl,
+     review_scope:"PHYSICAL_CHURCH_NOT_ENTRANCE",
+    }):null,
+    map_publishable:Boolean(newPin),
+    map_state:newPin?"PROVISIONAL":"ADDRESS_ONLY",facts:Object.freeze([
      {label:"Source identity",value:"CL2 physical-site master · "+anchor},
+     ...(newPin?[{label:"Map position",value:"Reviewed church building · entrance not independently verified"}]:[]),
      {label:"Affiliation",value:affiliationName+" (source label only)"},
      {label:"Mass times",value:"Unverified · no timetable published"},
     ]),sections:Object.freeze([]),actions:Object.freeze([]),
     source_links:Object.freeze(source_links),
-    note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling.",
+    note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
+     (newPin?" Physical church footprint independently matched to "+newPin.placeId+"; the entrance and Mass use are unverified.":""),
     search_text,
    }));
   }

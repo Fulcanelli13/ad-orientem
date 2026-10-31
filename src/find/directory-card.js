@@ -3,6 +3,16 @@ import { massInstitutionEmblem } from "./institution-emblems.js";
 const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const A=v=>Array.isArray(v)?v:[];
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
+const groupLabel=(id,lang)=>{
+ const codes={
+  CANONS_ST_JOHN_CANTIUS:["Canons of St John Cantius","Chanoines de Saint-Jean-de-Cantius"],
+  SSPX_SISTERS:["SSPX Sisters","Sœurs FSSPX"],
+  BENEDICTINE:["Benedictines","Bénédictins"],
+ };
+ const code=String(id??"");
+ return codes[code]?.[lang==="fr"?1:0]||
+   code.replaceAll("_"," ").toLowerCase().replace(/\b\p{L}/gu,c=>c.toUpperCase());
+};
 const path=/^assets\/approved\/(?:place-media|place-gallery)\/[A-Za-z0-9_-]+\.webp$/;
 // The credit's license label and URL must identify the same grant.
 // Keep the approved gallery's CC-BY-3.0 support without weakening release flags.
@@ -130,7 +140,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     +(photo?'<img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">':renderDirectoryIdentityFallback(item,language,"card"))
     +'</span><span class="aoTlmVenueContent"><span class="aoTlmVenueInstitution">'
     +(emblem?'<img src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':'')
-    +'<span>'+E(item.eyebrow||item.community_id||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
+    +'<span>'+E(item.eyebrow||groupLabel(item.community_id,language)||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
     +'<span class="aoTlmVenueSchedule">'+inlineIcon('schedule')+'<span>'+E(schedule)+'</span></span>'

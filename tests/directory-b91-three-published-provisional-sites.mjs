@@ -59,10 +59,10 @@ const api=async url=>{
 };
 const live=await loadPreliminaryR49({fetchImpl:api});
 assert.equal(live.length,2582,"Complete CL2 worldwide index must load without dropping the three B91 published additions");
-assert.equal(live.filter(x=>x.map_publishable).length,1847);
-assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,735);
+assert.equal(live.filter(x=>x.map_publishable).length,1849);
+assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,733);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   new URL("../data/directory/published-provisional-mass-sites-20261026.v1.json",import.meta.url).href,
   CL2_PHYSICAL_SITE_INDEX_URL]);
-console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 1847 mapped, 735 list-only, zero certified schedules");
+console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 1849 mapped, 733 list-only, zero certified schedules");
