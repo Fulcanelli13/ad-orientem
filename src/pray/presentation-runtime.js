@@ -10,6 +10,8 @@ import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, 
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
+import "./claude-holy-card-styles.js";
 import "./essential-holy-card-styles.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
@@ -515,6 +517,7 @@ function close({silent=false,preserve=false}={}){
   const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>{if(ret?.surface==='apostolate')void window?.AO_APP_SHELL_V1?.navigate?.('apostolate');else window.AO_NAV_V362?.restore?.(ret)});
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
+const CLAUDE_HOLY_PREF={language:null};
 function head(title,sub=''){
  const settings=view==='angelus'&&!(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY)?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
@@ -640,21 +643,11 @@ function prayerBlock(id,opts={}){
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
  if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!opts.record){
-  // All F01 records share a presentation; canonical source remains the owner.
-  // A missing French or Latin face is never synthesized.
-  const primary=p[lang()]?lang():p.en?"en":p.la?"la":null;
-  if(!primary)return callout(esc(L('Prayer text not available.','Texte de la prière indisponible.')),'warn');
-  const canLatin=!!p.la&&primary!=="la";
-  const beatHtml=face=>(essentialHolyCardParts(id,face,p[face])||[]).map((part,index)=>
-   '<p class="aoP435930EssentialBeat'+(part.collective?' aoP435930EssentialCollective':'')+
-   '" data-ao-essential-index="'+index+'" lang="'+face+'">'+esc(part.text.trim())+'</p>').join('');
-  return '<article class="aoP435930Prayer aoP435930EssentialCard" data-ao-essential-card="'+esc(id)+'">'+
-   languageNotice+
-   '<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
-   (canLatin?'<button type="button" class="aoP435930EssentialLang" data-p435930-essential-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button>':'')+'</div>'+
-   '<div class="aoP435930EssentialFaces"><div data-face-v lang="'+primary+'">'+beatHtml(primary)+'</div>'+
-   (canLatin?'<div data-face-la lang="la" hidden>'+beatHtml('la')+'</div>':'')+'</div>'+
-   originCapsule+sourceLine(p)+'</article>';
+  // Claude F01: the Holy Card is a reversible devotional object, not a
+  // flat text document. Text still comes exclusively from canonical-data.
+  const chosen=CLAUDE_HOLY_PREF.language&&p[CLAUDE_HOLY_PREF.language]?CLAUDE_HOLY_PREF.language:(p[lang()]?lang():p.en?'en':p.la?'la':null);
+  return chosen?claudeHolyCard({id,p,face:chosen,esc}):
+   callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
