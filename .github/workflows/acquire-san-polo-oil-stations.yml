@@ -50,7 +50,7 @@ jobs:
               assert hashlib.sha256(p.read_bytes()).hexdigest()==f['derivativeSHA256']
               assert f['artMedium']=='oil on canvas' and f['productionRightsGate']=='NOT_PD_CC0'
               assert f['artworkApproved'] is False and f['runtimeEnabled'] is False
-          print(f\"RESEARCH ARCHIVE: {x['photographsAcquired']}/14 oil paintings, blocked={x['failedCount']}; 0 published\")
+          print("RESEARCH ARCHIVE:", x["photographsAcquired"], "/14 oil paintings; blocked:", x["failedCount"], "; 0 published")
           PY
       - name: Commit every successfully acquired painting, even if other source files are rate-limited
         run: |
