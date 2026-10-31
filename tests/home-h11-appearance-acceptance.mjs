@@ -173,8 +173,8 @@ try{
 
     assert.equal(errors.length,0,"Unexpected H1.1 browser errors: "+JSON.stringify(errors));
     console.log("PASS H1.1 "+prefix+"px dark/light/auto Settings and embedded Calendar: "+JSON.stringify(light));
-    // H4 is a review-only source projection; test it on the genuine app,
-    // not the supplied prototype harness. The production H3 remains default.
+    // H4 is the production Home, tested on the genuine app alongside
+    // the explicit H3 rollback. Do not substitute prototype fixtures.
     const h4=await context.newPage(),h4Errors=[];
     h4.on("pageerror",error=>h4Errors.push(String(error?.message??error)));
     await h4.goto("http://127.0.0.1:4381/index.html",{waitUntil:"domcontentloaded",timeout:90000});
@@ -392,6 +392,40 @@ try{
       null,{timeout:10000});
     assert.equal(await h4.locator(".homeScreen.aoTodayH4").count(),1,
       "Closing exact DYK source must return to the same Home");
+
+    // The default H4 Mass door must actually reach the source-owned preflight.
+    // Capturing a visible Begin button alone cannot certify that navigation.
+    const begin=h4.locator(".homeScreen.aoTodayH4 [data-home-mass-entry]");
+    await begin.waitFor({state:"visible",timeout:20000});
+    await h4.waitForFunction(()=>!document.querySelector(
+      ".homeScreen.aoTodayH4 [data-home-mass-entry]")?.disabled,
+      null,{timeout:30000});
+    await begin.click();
+    try {
+      await h4.waitForFunction(()=>{
+        const b=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+        const style=b?getComputedStyle(b):null;
+        return globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass" &&
+          b?.isConnected===true && b.hidden!==true &&
+          style?.display!=="none" && style?.visibility!=="hidden";
+      },null,{timeout:20000});
+    }catch(error){
+      const state=await h4.evaluate(()=>({
+        active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+        preflightApi:typeof globalThis.AO_CELEBRATION_API?.openPreflight,
+        route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+        backdrop:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")),
+        backdropHidden:document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.hidden??null,
+        m1:document.documentElement.dataset.aoM1MassRoot??null,
+        homeError:document.querySelector("[data-home-shortcut-error]")?.textContent??null,
+      }));
+      throw Error(prefix+" H4 Mass door did not open its source-owned preflight: "+
+        JSON.stringify(state)+"; "+String(error));
+    }
+    await h4.screenshot({path:resolve(output,prefix+"-h4-mass-door-phone.png")});
+    await h4.locator("[data-ao-app-surface='home']").click();
+    await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",
+      {state:"visible",timeout:15000});
     assert.equal(h4Errors.length,0,prefix+" H4 page errors: "+JSON.stringify(h4Errors));
     await h4.close();
     await context.close();
