@@ -19,6 +19,7 @@ on:
       - 'data/prayer/artwork-editorial-20261031/artist-attribution-source-resolution-wave01.v1.json'
       - 'data/prayer/artwork-editorial-20261031/priority-photo-source-and-licence-qa-wave01.v1.json'
       - 'tests/prayer-artwork-source-quality-contract.mjs'
+      - 'data/prayer/artwork-editorial-20261031/prado-origin-source-quarantine-20261031.v1.json'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
   workflow_dispatch:
 permissions:
