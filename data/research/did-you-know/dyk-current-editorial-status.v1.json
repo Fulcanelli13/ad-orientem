@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CURRENT_EDITORIAL_MASTER_POINTER_R22_V1",
   "date": "2026-10-30",
-  "current_status": "R32_49_PITRE_ORIGINAL_PAGE_VIEWERS_LINKED_43_SCAN_PAGES_UNCONFIRMED_133_OF_189_PRIMARY_CORRESPONDENCE",
+  "current_status": "R33_PRIOR_PITRE_SOURCE_RESEARCH_RECOVERED_35_IMAGE_AND_14_OCR_168_189_STRICT_SOURCE_EVIDENCE_NO_REPEAT_PROGRAMME",
   "active_owners": {
     "complete_record_ledger": "dyk-r22-1001-current-master-index.v1.json",
     "identity_decisions": "dyk-r21-74-consolidation-adjudication.v1.json",
@@ -29,7 +29,9 @@
     "r31_private_post_rewrite_612_screen": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028:data/discovery/research/r31-dyk-189-v-612-post-rewrite-lexical-refresh.v1.json",
     "r31_public_crossbank_refresh": "dyk-r31-post-rewrite-189-vs-612-public-summary.v1.json",
     "r31_Pitre_primary_access_log": "dyk-r31-pitre-1900-primary-facsimile-access-status.v1.json",
-    "r32_pitre_original_page_viewer_manifest": "dyk-r32-pitre-49-individual-original-page-viewer-and-offset-audit.v1.json"
+    "r32_pitre_original_page_viewer_manifest": "dyk-r32-pitre-49-individual-original-page-viewer-and-offset-audit.v1.json",
+    "r33_existing_Pitre_primary_witness_restored": "dyk-r33-recover-existing-49-pitre-witnesses-and-close-false-research-queue.v1.json",
+    "r33_earlier_completed_customs_source_branch": "Fulcanelli13/ad-orientem@research/customs-multibook-bulk150-20261026"
   },
   "overall": {
     "generated_candidate_records": 1001,
@@ -55,12 +57,12 @@
     "latest_bilingual_draft_corrections": 13,
     "original_168_source_folio_checked": 26,
     "original_168_remaining_source_folio_review": 142,
-    "overall_source_text_correspondence_checked": 133,
+    "overall_source_text_correspondence_checked": 168,
     "original_168_bilingual_statements_corrected_r24": 26,
     "r24_original_weiser_pages_reviewed": 18,
     "total_bilingual_statements_corrected_in_r23_r24": 39,
-    "original_168_source_claims_checked": 112,
-    "original_168_remaining_source_review": 56,
+    "original_168_source_claims_checked": 147,
+    "original_168_remaining_source_review": 21,
     "r25_1962_mass_source_claims_checked": 15,
     "r25_1962_canon_claims_checked": 12,
     "r25_1962_mass_gesture_claims_checked": 3,
@@ -131,7 +133,19 @@
     "r32_original_scan_offset_plus62": 28,
     "r32_original_scan_offset_plus58": 19,
     "r32_Pitre_page_images_newly_read": 0,
-    "r32_direct_source_verification_increment": 0
+    "r32_direct_source_verification_increment": 0,
+    "r31_historical_direct_source_claims_checked_snapshot": 133,
+    "r31_historical_original_168_remaining_source_review_snapshot": 56,
+    "r33_recovered_Pitre_prior_original_page_image_source_checks": 35,
+    "r33_recovered_Pitre_prior_OCR_source_excerpts": 14,
+    "r33_prior_source_corpus_original_1900_page_verified": 422,
+    "r33_prior_Pitre_original_corpus_distinct_pages": 144,
+    "r33_new_source_images_read": 0,
+    "r33_original_Pitre_current_shortlist_provenance_mapped": 49,
+    "r33_Pitre_research_programme_required": false,
+    "r33_distinct_new_historical_authors_corroborated": 0,
+    "r33_source_evidence_present_strict_or_OCR": 182,
+    "r33_provenance_non_folio_remaining_categories": "5_GLOSSARY_ONLY_1_HYMN_SECONDARY_ONLY_1_WEISER_MISMATCH"
   },
   "adjudication": {
     "reviewed": 74,
@@ -170,11 +184,11 @@
     "source_claim_review_of_14_new_historical_cards": "PENDING_RECHECK",
     "source_text_correspondence_for_21_new_cards": "COMPLETE_21_OF_21_AFTER_THIRTEEN_CORRECTIONS",
     "pitre_upstream_page_pointer": "PACHINO_PRINTED_464_CARD_FIXED_UPSTREAM_454_ERRATUM_PENDING",
-    "original_168_source_specific_review": "112_CHECKED_56_REMAIN",
+    "original_168_source_specific_review": "147_PRIOR_OR_CURRENT_FACSIMILE_AND_TEXT_CLAIMS_CHECKED_14_OCR_ONLY_7_OTHER_SOURCE_TIERS",
     "bilingual_189_editorial_signoff": "0_APPROVED_189_PENDING",
     "existing_home_previews_semantic_novelty": "612_EXISTING_PREVIEW_ITEMS_NEED_FULL_COMPARISON",
     "r24_folio_image_review": "WEISER_26_CARDS_18_DISTINCT_PRINTED_PAGES_COMPLETE",
-    "total_189_source_claim_review": "133_CHECKED_56_REMAIN",
+    "total_189_source_claim_review": "168_STRICT_PRIOR_OR_CURRENT_FACSIMILE_OR_PRIMARY_TEXT_14_PITRE_OCR_ONLY_7_OTHER",
     "r25_8_glossary_home_fit": "8_EDITORIALLY_TRIAGED_5_PREFER_LEARN_3_HOME_REWRITE_CANDIDATES_NO_COMPOSITION_CHANGE",
     "final_189_independent_english_french_signoff": "0_APPROVED_189_PENDING",
     "pitre_49_provenance_not_certification": "49_CROSSWALKED_0_ORIGINAL_FACSIMILE_IMAGES_REOPENED",
@@ -192,12 +206,13 @@
     "home_bank_612_semantic_uniqueness": "NOT_STARTED_NEEDED_FOR_RELEASE",
     "independent_english_french_final_signoff": "0_APPROVED_189_PENDING",
     "r30_189_home_composition": "8_GLOSSARY_COPY_HOLDS_1_MOTHERING_DUPLICATE_HOLD_180_PROVISIONAL_MAX_NOT_APPROVED",
-    "Pitre_primary_1900_rechecks": "49_PENDING_OF_ORIGINAL_168_14_UPSTREAM_FACSIMILE_HOLDS",
+    "Pitre_primary_1900_rechecks": "NONE_REQUESTED_422_EXISTING_SOURCE_RECORDS_PRIOR_FOLIO_VERIFIED_35_PITRE_DYK_MATCHED_14_W05_OCR_ONLY",
     "r31_home_composition": "5_GLOSSARY_VERBATIM_COPY_HOLDS_1_MOTHERING_DUPLICATE_HOLD_183_PROVISIONAL_MAX_NOT_APPROVED",
     "r31_pitre_original_image_access": "ALTERNATIVE_FULL_VIEW_SOURCE_FOUND_IN_GOOGLE_BOOKS_BUT_49_DIRECT_WITNESSES_STILL_PENDING_14_IMAGE_HOLDS",
-    "r32_Pitre_1900_original_folio_read": "49_PAGE_VIEWERS_LINKED_43_DISTINCT_SCAN_PAGES_0_VISUALLY_CONFIRMED",
-    "r32_Pitre_scan_offset_reconciliation": "+66_FIRST_2_+62_MIDDLE_28_+58_LATE_19_PER_PAGE_VISUAL_PAGE_NUMBER_PENDING",
-    "r32_Pitre_priority_order": "14_PRIOR_FACSIMILE_UNVERIFIED_5_OTHER_RISKS_30_DEFAULT"
+    "r32_Pitre_1900_original_folio_read": "SUPERSEDED_R33_NO_REPEAT_35_ALREADY_PAGE_VERIFIED_14_OCR_REMATCHED",
+    "r32_Pitre_scan_offset_reconciliation": "ALREADY_DONE_ON_2026_10_24_PRIOR_SOURCE_LEDGER_INSERTED_PLATES",
+    "r32_Pitre_priority_order": "14_PRIOR_FACSIMILE_UNVERIFIED_5_OTHER_RISKS_30_DEFAULT",
+    "r33_NEXT_STRATEGY": "EDITORIAL_CONSOLIDATION_AND_HOME_NOVELTY_WITH_EXISTING_1000PLUS_CUSTOMS_RESEARCH_NOT_MORE_BULK_SOURCE_RECHECK"
   },
   "notes": [
     "The earlier 74 flags no longer mean 74 duplicate facts: 16 details are earmarked for absorption, 33 were wrongly linked, 16 are distinct comparisons, eight belong to existing Home glossary entries, one is held.",
@@ -213,6 +228,7 @@
     "R29: eight final non-held Weiser cards checked directly against 10 original printed folios; corrections include 1851 Boston Christmas gifts, Holy Ghost Hole white dove disc (not live dove), Good Friday buns and Pentecost dawn prayer. Basque ship-mast St Anthony claim remains unverified/mis-cited. Eight glossary-derived entries are verbatim copies of canonical glossary explanations, so 5 prefer Learn; 3 Home-rewrite proposals pending semantic novelty. Pitrè Noto Saint Conrad quote independently located within a University of Catania dissertation reproducing original Italian; corrected inaccurate white-clothing claim, without certifying the original Pitrè facsimile. No final approvals/releases.",
     "R30: used actual four 612-card unpublished Home preview shards in PRIVATE folio-core research branch to lexically screen all 189 source-first EN/FR shortlist statements: 0 exact EN, 0 exact FR, 0 shared source IDs, 0 English token similarity >=0.3, 5 weak topical neighbours preliminarily adjudicated as distinct or related, not final semantic clearance. Private detailed evidence ledger retained only in folio-core (do not leak preview records into public). All eight glossary cards are exact explanation copies and not independently eligible for Home until distinct rewrites; one of two Mothering Sunday variants held; provisional maximum 180 nonrepetitive Home candidates, none approved/published. All 49 Pitrè historical source claims still await full original verification; 14 facsimile page holds. No source-check numerator increase (131/189).",
     "R31: 3 verbatim glossary Home drafts replaced with source-specific EN/FR discoveries: 1960 rubrics (1962 use) Greater/Lesser Litanies, 1551 Council of Trent teaching on Extreme Unction via James 5, and secondary Catholic Encyclopedia history of O salutaris Hostia (last 2 stanzas of Verbum supernum prodiens). 2 primary textual checks added: 133/189 checked, 56 remain, 49 of those Pitrè unverified. Re-screened ALL CURRENT 189 vs private 612 previews: no exact EN/FR/source-id collisions, 5 topical lexical neighbours, 0 semantic final signoffs. Five exact glossary copies remain, one intra-shortlist Mothering Sunday hold: maximum 183 nonrepetitive draft Home candidates, none approved. Access alternatives to 1900 Pitrè recorded, zero newly verified original page images.",
-    "R32: discovered native Wikimedia Commons PDF 'Go to page' viewer for public-domain Pitrè 1900 632-page original PDF; 49 research cards now each carry explicit print-page and 1-based original-scan-page metadata plus corresponding Commons page-viewer URL. Grouped 43 distinct targeted scan pages and three pre-existing offset bands (+66 for 2, +62 for 28, +58 for 19). Arbitrary target-page images could not be opened by this tool, so no scan-page numeral/content certified, no direct source count increment, 14 prior facsimile holds and all 49 Pitrè primary checks remain outstanding. Added regression gate prohibiting automatic certification from links alone."
+    "R32: discovered native Wikimedia Commons PDF 'Go to page' viewer for public-domain Pitrè 1900 632-page original PDF; 49 research cards now each carry explicit print-page and 1-based original-scan-page metadata plus corresponding Commons page-viewer URL. Grouped 43 distinct targeted scan pages and three pre-existing offset bands (+66 for 2, +62 for 28, +58 for 19). Arbitrary target-page images could not be opened by this tool, so no scan-page numeral/content certified, no direct source count increment, 14 prior facsimile holds and all 49 Pitrè primary checks remain outstanding. Added regression gate prohibiting automatic certification from links alone.",
+    "CORRECTION R33: R26-R32 assumed 49 Pitrè facts needed new primary-source research; this ignored the user's completed 2026-10-24 422/422 original edition audit on research/customs-multibook-bulk150-20261026. Reconciled 35 DYK Pitrè IDs against previously inspected image+Italian anchor evidence (all page and scan locators exact); 14 later W05 records already had OCR passages rematched (but no individual image certification). +66/+62/+58 image offsets were already investigated, not an unsolved new issue. 133 prior rounds' source checks plus 35 recovered = 168 strict checked; 14 OCR-only and 7 other non-folio gaps. Do not rerun original Pitrè verification or ask user to check 43 scan pages. Pursue semantic uniqueness, clear engaging copy, app routing and expansion from existing 1000+ observations, keeping historical independent corroboration and publication gates distinct. 0 final approved/published."
   ]
 }
