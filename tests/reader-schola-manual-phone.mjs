@@ -343,8 +343,10 @@ try{
    await performanceStart.click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
      .events.find(x=>x.id==="KYRIE")?.performance.status==="STARTED_OBSERVED");
+   // The observed post-Chalice Benedictus remains STARTED while the visitor
+   // independently marks Kyrie STARTED; both count, without advancing music.
    assert.match(await musicMenu.locator("[data-schola-performance-summary]").textContent(),
-     /1 started/);
+     /2 started/);
    assert.equal(await musicMenu.locator('[data-schola-performance-status="KYRIE"]').textContent(),
      "You marked: started");
    const selectedAfterStart=await page.evaluate(()=>({
