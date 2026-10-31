@@ -70,3 +70,12 @@ The 395 already-selected Place covers remain final human editorial choices; do n
 
 ## 31 October implementation slice
 Draft branch `feature/explore-place-folio-priority-and-audit-20261031`: read-only completeness ledger; source-owned exact treasures displayed immediately after the published introduction, ahead of longer historical chapters; source-aware gallery heading when exact relic images exist; no empty unlinked TLM accordion; improved single-treasure layout. **No production publish and no content invention.**
+
+
+## 31 October continuation — editorial language and folio UX
+- Six guide corpora audited against original `main`: **49** English/French prose fields revised across the existing 33 published guides; **no non-prose data changes**, no ID/source/rights edits. The original 127 cited narrative paragraphs remain.
+- Explicit application-facing writing removed from published guide prose; doctrinal/historical qualifications are retained as natural visitor-facing descriptions. This is a copyediting pass, **not** independent factual certification or approval of Saints biographies.
+- Published introduction's exact original paragraph is now presented **once**; the later guide skips only that exact same text/source match in the same language, not another historical witness.
+- Documented journeys move below long-guide material, with a valid chapter navigation shortcut. When an opening exists, its story shortcut is the unique target and the later text uses a distinct history heading.
+- Added actual EN/FR folio regression fixtures for source-object order, nonduplicated opening and sourced journey placement. Added 33-guide editorial-copy contracts. They are registered under the existing Place-profile test command, but full Node / browser suites have **not** been executed in this review.
+- Code syntax parse and source read-back were checked. Full 320/390/430 desktop/mobile visual QA and approved Claude design fidelity remain publication blockers.
