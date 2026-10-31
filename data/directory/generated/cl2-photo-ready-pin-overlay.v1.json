@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 22,
+    "new_site_pins": 33,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -381,6 +381,127 @@
       "source_ref": "ao-research-icksp-federated-v13-icksp-stg-125",
       "source_url": "https://www.galwaymusiccentre.ie/contact-1",
       "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-14C05BCC015B",
+      "source_id": "AO-B38-LOC-ES-3F0F660D197",
+      "name": "Basílica de Santa Maria d'Alacant",
+      "lat": 38.3462,
+      "lng": -0.47922,
+      "source_ref": "osm:way:22560738",
+      "source_url": "https://www.openstreetmap.org/way/22560738",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-3B5F15EA02ED",
+      "source_id": "AO-B38-LOC-BE-97765C5D89C",
+      "name": "Heilig-Bloedbasiliek",
+      "lat": 51.20812,
+      "lng": 3.22667,
+      "source_ref": "osm:way:39262789",
+      "source_url": "https://www.openstreetmap.org/way/39262789",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-DF3BA1A9A39C",
+      "source_id": "AO-B38-LOC-ES-4FEB6B1C9A5",
+      "name": "Concatedral de Santa María de Cáceres",
+      "lat": 39.47454,
+      "lng": -6.37002,
+      "source_ref": "osm:way:385037723",
+      "source_url": "https://www.openstreetmap.org/way/385037723",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-3EE76EFE0DC3",
+      "source_id": "AO-B38-LOC-NL-D7C692A1473",
+      "name": "St.-Andreaskerk",
+      "lat": 52.80061,
+      "lng": 6.05811,
+      "source_ref": "osm:way:269912643",
+      "source_url": "https://www.openstreetmap.org/way/269912643",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-270210292F78",
+      "source_id": "AO-B38-LOC-NL-B7C2C6728E5",
+      "name": "Onze Lieve Vrouw ter Nood Bedevaartkapel",
+      "lat": 52.58319,
+      "lng": 4.68817,
+      "source_ref": "osm:way:44665187",
+      "source_url": "https://www.openstreetmap.org/way/44665187",
+      "review_scope": "BEDEVAART_CHURCH_NOT_SEPARATE_GENADKAPEL",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-AA00B3C74515",
+      "source_id": "AO-B38-LOC-NL-37690D7D21D",
+      "name": "Sint-Petrus'-Bandenkerk",
+      "lat": 51.36839,
+      "lng": 5.22087,
+      "source_ref": "osm:way:278352768",
+      "source_url": "https://www.openstreetmap.org/way/278352768",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-77CC30491D1E",
+      "source_id": "AO-B38-LOC-NL-15C79B5490C",
+      "name": "Heilige Lodewijkkerk",
+      "lat": 52.156028,
+      "lng": 4.491611,
+      "source_ref": "rijksmonument:25593",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:Heilige_Lodewijkkerk_(Leiden)",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-769233567FB2",
+      "source_id": "AO-B39-LOC-SK-E4BB98A95578",
+      "name": "Kaplnka Panny Márie Fatimskej",
+      "lat": 48.3789569,
+      "lng": 17.5891077,
+      "source_ref": "osm:node:7811161449",
+      "source_url": "https://www.openstreetmap.org/node/7811161449",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-A9687EEF16FC",
+      "source_id": "AO-B39-LOC-SK-393C9FE0F607",
+      "name": "Kostol Mena Panny Márie",
+      "lat": 48.1472,
+      "lng": 17.20745,
+      "source_ref": "osm:way:64977390",
+      "source_url": "https://www.openstreetmap.org/way/64977390",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-5A52F4C1379D",
+      "source_id": "AO-B39-LOC-HU-0EF092BCC855",
+      "name": "Szent István-Templom",
+      "lat": 46.98846,
+      "lng": 17.70316,
+      "source_ref": "miserend:1932",
+      "source_url": "https://miserend.hu/templom/1932",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-B68-086D5372D517",
+      "source_id": "AO-RSCH-B68-086D5372D517",
+      "name": "St. Laurentius — St Joseph altar",
+      "lat": 49.377453,
+      "lng": 8.377311,
+      "source_ref": "kirchbau:50267",
+      "source_url": "https://www.kirchbau.de/300_datenblatt.php?id=50267&name=keiner",
+      "review_scope": "CHURCH_SITE_NOT_SPECIFIC_SIDE_ALTAR",
       "place_id": null
     }
   ]
