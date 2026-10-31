@@ -66,6 +66,34 @@ assert.equal(sourceModel.totalCards,39);
 assert.equal(model.totalCards,65);
 assert.equal(model.cards.filter(card=>card.sourceSectionId==='AO.CARD.013').length,1);
 assert.equal(model.cards.find(card=>card.sourceSectionId==='AO.CARD.013')?.title,'Sanctus');
+
+// The first Offertory invitation is said standing (C0106-C0108); the
+// antiphon begins at B030/C0109 and has the default Sung sitting posture.
+// The user's LIVE rule is a card boundary at a posture change. Move the
+// existing first cut, never fabricate a seventh Offertory or a new cue.
+const offertoryCards=model.cards.filter(card=>card.sourceSectionId==="AO.CARD.010");
+assert.equal(offertoryCards.length,6,"65-card Offertory must not gain or lose cards");
+assert.deepEqual(offertoryCards.slice(0,2).map(card=>card.title),[
+ "Offertory · Invitation and Oremus",
+ "Offertory · Antiphon and Offering of the Bread"
+]);
+const containsBlock=(card,id)=>(card.blocks??[]).some(b=>
+ b.blockId===id&&b.firstParagraphIndex!=null&&b.paragraphCount>0);
+assert.ok(containsBlock(offertoryCards[0],"AO.SM.B028")&&
+ containsBlock(offertoryCards[0],"AO.SM.B029"),
+ "The standing Dominus vobiscum/Oremus must remain together");
+assert.ok(!containsBlock(offertoryCards[0],"AO.SM.B030"),
+ "The sitting Offertory antiphon must NOT remain on the standing invitation card");
+assert.ok(containsBlock(offertoryCards[1],"AO.SM.B030")&&
+ containsBlock(offertoryCards[1],"AO.SM.B031"),
+ "The actual Offertory Proper and Suscipe sancte Pater must share the sitting card");
+assert.ok(offertoryCards[0].paragraphs.some(p=>
+ (p.sourceCueIds??[]).includes("AO.SM.C0108")),
+ "Oremus lost its original standing-card source cue");
+assert.ok(offertoryCards[1].paragraphs.some(p=>
+ (p.sourceCueIds??[]).includes("AO.SM.C0110")),
+ "Offering of bread lost its original second-card source cue");
+
 const sourceUnits=data.sungCorpus.blocks.flatMap(b=>b.units.map(u=>({
   ...u,blockId:b.Block_ID,
 })));
