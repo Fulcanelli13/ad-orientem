@@ -1,0 +1,31 @@
+name: Prayer artwork editorial gap reconciliation
+
+on:
+  push:
+    branches:
+      - research/prayer-artwork-gap-consolidation-20261031
+    paths:
+      - 'data/prayer/artwork-editorial-20261031/**'
+      - 'tests/prayer-art-11-gap-66-candidates-policy.mjs'
+      - '.github/workflows/prayer-artwork-11-gap-consolidation.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/prayer/artwork-editorial-20261031/**'
+      - 'tests/prayer-art-11-gap-66-candidates-policy.mjs'
+      - '.github/workflows/prayer-artwork-11-gap-consolidation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-artwork-approval-and-rights-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/prayer-art-11-gap-66-candidates-policy.mjs
