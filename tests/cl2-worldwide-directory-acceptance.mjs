@@ -2,7 +2,7 @@
 // This proves one site per CL2 effective physical identity and that additional
 // source listings remain accessible without fabricated pins, times or status.
 import assert from "node:assert/strict";
-import {pendingRecords,reviewQueueRows,overpassQuery,candidatesForSite} from "../tools/directory/diocesan-osm-candidate-scan.mjs";
+import {pendingRecords,reviewQueueRows,overpassQuery,candidatesForSite,validatedOverpassPayload,requestOverpassSite} from "../tools/directory/diocesan-osm-candidate-scan.mjs";
 
 import {readFileSync} from "node:fs";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49}
@@ -175,6 +175,9 @@ assert.equal(pendingOSM.filter(r=>r.photo_gate==="OPERATOR_EXCLUDED").length,
  diocesanQuality.records.filter(r=>r.coordinate_origin==="R49_INHERITED"&&
   r.precision==="source_marker_unassessed"&&r.photo_gate==="OPERATOR_EXCLUDED").length,
  "Operator-excluded venues are still geographically auditable, never photo-eligible");
+assert.deepEqual(validatedOverpassPayload({elements:[]}),[]);
+assert.throws(()=>validatedOverpassPayload({elements:[],remark:'runtime error: Query timed out'}),/runtime failure/);
+assert.throws(()=>validatedOverpassPayload({remark:'none'}),/Malformed/);
 const osmq=overpassQuery(pendingOSM.slice(0,2));
 assert.match(osmq,/amenity/);assert.match(osmq,/building/);
 assert.throws(()=>overpassQuery(pendingOSM.slice(0,21)),/at most 20/);

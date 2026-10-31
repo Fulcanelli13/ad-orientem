@@ -24,7 +24,7 @@ jobs:
        github.event.pull_request.head.repo.full_name == github.repository &&
        github.head_ref == 'feature/tlm-visual-fallback-20261030')
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -58,15 +58,22 @@ jobs:
           assert.ok(report.rows.every(r=>known.has(r.physical_group_id)));
           assert.ok(report.rows.every(r=>r.promote_automatically===false && r.photo_approved===false));
           assert.ok(report.rows.every(r=>r.candidates.every(c=>c.review_status==='CANDIDATE_ONLY_NOT_VERIFIED_NOT_PHOTO_APPROVED')));
-          assert.ok(report.rows.some(r=>r.candidates.length>0),'No live OSM candidates returned');
-          console.log(JSON.stringify(report.summary));
+          assert.equal(report.rows_written,100);
+          assert.equal(report.fetched_count,report.rows.filter(r=>r.fetch_status==='FETCH_SUCCESS').length);
+          assert.equal(report.matched_count,report.rows.filter(r=>r.fetch_status==='FETCH_SUCCESS'&&r.candidates.length>0).length);
+          assert.ok(report.rows.every(r=>r.fetch_status==='FETCH_SUCCESS'||
+            (r.candidates.length===0 && ['NETWORK_FAILED','NOT_QUERIED_PROVIDER_OUTAGE'].includes(r.fetch_status))));
+          console.log(JSON.stringify({fetched:report.fetched_count,matched:report.matched_count,summary:report.summary}));
+          if(report.fetched_count===0)process.exitCode=1;
           NODE
       - name: Permanently commit research output to existing PR branch
+        if: always()
         env:
           HEAD_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f data/directory/research/diocesan-osm-candidates-0000-100.v1.json ]; then exit 0; fi
           git add data/directory/research/diocesan-osm-candidates-0000-100.v1.json
           git diff --cached --quiet && exit 0
           git commit -m "Explore research: first 100 OSM candidate records (not pin/photo approvals)"

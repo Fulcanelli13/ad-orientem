@@ -37,6 +37,7 @@ export function reviewQueueRows(ledger){
 export function overpassQuery(records,radius=180){
  if(!Number.isInteger(radius)||radius<20||radius>300)throw Error("Invalid radius");
  if(!records.length||records.length>20)throw Error("Review at most 20 pins per public API request");
+ // Call with one site from network code: never union distant countries into one costly query.
  const coords=r=>[r.lat,r.lng].map(n=>Number(n).toFixed(6)).join(",");
  for(const r of records)if(!Number.isFinite(r.lat)||!Number.isFinite(r.lng)||
   Math.abs(r.lat)>90||Math.abs(r.lng)>180)throw Error("Bad source coordinates");
@@ -44,7 +45,7 @@ export function overpassQuery(records,radius=180){
  "nwr(around:"+radius+","+coords(r)+")[\"amenity\"=\"place_of_worship\"];",
  "nwr(around:"+radius+","+coords(r)+")[\"building\"~\"^(church|chapel)$\"];"
  ]);
- return "[out:json][timeout:85];(\n"+requests.join("\n")+"\n);out center tags;";
+ return "[out:json][timeout:25];(\n"+requests.join("\n")+"\n);out center tags;";
 }
 export function rankCandidate(site,feature,radius=180){
  const lat=Number(feature?.lat??feature?.center?.lat),lng=Number(feature?.lon??feature?.center?.lon);
@@ -83,46 +84,98 @@ export function candidatesForSite(site,features,{radius=180}={}){
   review_status:top?(ambiguous?"MULTIPLE_NEARBY_CHURCHES_REVIEW":"CANDIDATE_NOT_INDEPENDENTLY_VERIFIED"):"NO_MATCHED_OSM_CHURCH",
   promote_automatically:false,photo_approved:false};
 }
+
+export function validatedOverpassPayload(data){
+ if(!data||!Array.isArray(data.elements))throw Error("Malformed Overpass response");
+ if(data.remark && /runtime error|out of memory|timed out|query killed|failed|rate limit/i.test(String(data.remark)))
+  throw Error("Overpass runtime failure: "+String(data.remark).slice(0,180));
+ return data.elements;
+}
 const argumentsMap=Object.fromEntries(process.argv.slice(2).filter(x=>x.startsWith("--")&&x.includes("="))
  .map(x=>x.slice(2).split(/=(.*)/s).slice(0,2)));
 const hasAll=process.argv.includes("--all");
+const endpoints=[
+ process.env.AO_OVERPASS_ENDPOINT,
+ "https://overpass.private.coffee/api/interpreter",
+ "https://overpass-api.de/api/interpreter",
+ "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+].filter((url,i,all)=>url&&all.indexOf(url)===i);
+if(endpoints.some(url=>!/^https:\/\//.test(url)))throw Error("Only HTTPS Overpass endpoints allowed");
+export async function requestOverpassSite(site,{request=fetch,timeoutMs=18000,providers=endpoints}={}){
+ const query=overpassQuery([site]);
+ const errors=[];
+ for(const provider of providers){
+  try{
+   const response=await request(provider,{method:"POST",
+    headers:{"Content-Type":"application/x-www-form-urlencoded",
+     "User-Agent":"Ad-Orientem-Open-Source-Atlas-Research/1.0"},
+    body:new URLSearchParams({data:query}).toString(),
+    signal:AbortSignal.timeout(timeoutMs)});
+   if(!response.ok)throw Error("HTTP "+response.status);
+   const features=validatedOverpassPayload(await response.json());
+   return {success:true,features,provider,errors};
+  }catch(err){
+   errors.push({provider,message:String(err.message||err).slice(0,200)});
+  }
+ }
+ return {success:false,features:[],provider:null,errors};
+}
+function failedRow(site,status,errors=[]){
+ return {...candidatesForSite(site,[]),review_status:status,
+  fetch_status:status,fetch_provider:null,fetch_errors:errors,
+  candidates:[],ambiguous:false,promote_automatically:false,photo_approved:false};
+}
 async function main(){
  const ledger=JSON.parse(readFileSync(source,"utf8"));
  const pending=pendingRecords(ledger);
  const offset=Number(argumentsMap.offset??0),limit=hasAll?pending.length:Number(argumentsMap.limit??100);
  if(!Number.isInteger(offset)||offset<0||!Number.isInteger(limit)||limit<1||limit>pending.length||offset+limit>pending.length)
-   throw Error("Invalid batch offset or limit. Pending: "+pending.length);
- const batch=pending.slice(offset,offset+limit),rows=[];
- const url=process.env.AO_OVERPASS_ENDPOINT||"https://overpass.private.coffee/api/interpreter";
- if(!/^https:\/\//.test(url))throw Error("HTTPS Overpass endpoint required");
- for(let i=0;i<batch.length;i+=20){
-  const group=batch.slice(i,i+20);const query=overpassQuery(group);
-  let result=null;
-  for(let attempt=0;attempt<3;attempt++){
-   try{
-    const response=await fetch(url,{method:"POST",headers:{"content-type":"application/x-www-form-urlencoded","User-Agent":"Ad-Orientem-Open-Source-Atlas-Research/1.0"},
-      body:new URLSearchParams({data:query}).toString(),signal:AbortSignal.timeout(100000)});
-    if(!response.ok)throw Error("HTTP "+response.status);
-    result=await response.json();
-    if(!Array.isArray(result.elements))throw Error("Malformed Overpass payload");
-    break;
-   }catch(err){
-    if(attempt===2)throw Error("Overpass batch "+i+" failed: "+err.message);
-    await delay(3500*(attempt+1));
+  throw Error("Invalid batch offset or limit. Pending: "+pending.length);
+ const batch=pending.slice(offset,offset+limit);
+ const file=resolve(argumentsMap.output||join(root,"data/directory/research/diocesan-osm-candidates-"+
+  String(offset).padStart(4,"0")+"-"+String(batch.length).padStart(3,"0")+".v1.json"));
+ const rows=[];
+ let consecutiveFailures=0;
+ const startedAt=new Date().toISOString();
+ for(const site of batch){
+  let result;
+  if(consecutiveFailures>=3){
+   result=failedRow(site,"NOT_QUERIED_PROVIDER_OUTAGE");
+  }else{
+   const response=await requestOverpassSite(site);
+   if(response.success){
+    consecutiveFailures=0;
+    result={...candidatesForSite(site,response.features),
+      fetch_status:"FETCH_SUCCESS",fetch_provider:response.provider,fetch_errors:response.errors};
+   }else{
+    consecutiveFailures++;
+    result=failedRow(site,"NETWORK_FAILED",response.errors);
    }
+   await delay(600);
   }
-  for(const r of group)rows.push(candidatesForSite(r,result.elements));
-  if(i+20<batch.length)await delay(2500);
+  rows.push(result);
+  // Checkpoint each group of ten so interrupted runs preserve processed evidence.
+  if(rows.length%10===0||rows.length===batch.length){
+   const summary=rows.reduce((o,r)=>(o[r.review_status]=(o[r.review_status]||0)+1,o),{});
+   const successful=rows.filter(r=>r.fetch_status==="FETCH_SUCCESS");
+   const output={schema:"AO_DIOCESAN_OVERPASS_PIN_CANDIDATES_V1",
+    started_at:startedAt,as_of:new Date().toISOString(),
+    source_audit:"data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json",
+    source_count:pending.length,offset,limit:batch.length,rows_written:rows.length,
+    provider:"OpenStreetMap Overpass / ODbL",query_style:"ONE_SOURCE_SITE_PER_BOUNDED_REQUEST",
+    policy:"Only research candidates. No automatic coordinate promotion, operator proof or photograph approvals. Network errors and skipped sites are NOT no-matches.",
+    fetched_count:successful.length,unqueried_count:rows.filter(r=>r.fetch_status==="NOT_QUERIED_PROVIDER_OUTAGE").length,
+    matched_count:successful.filter(r=>r.candidates.length>0).length,
+    summary,rows};
+   writeFileSync(file,JSON.stringify(output,null,2)+"\n");
+   process.stdout.write(JSON.stringify({checkpoint:rows.length,requested:batch.length,
+    fetched:output.fetched_count,matched:output.matched_count,summary})+"\n");
+  }
  }
- const summary=rows.reduce((a,x)=>(a[x.review_status]=(a[x.review_status]||0)+1,a),{});
- const output={schema:"AO_DIOCESAN_OVERPASS_PIN_CANDIDATES_V1",as_of:new Date().toISOString(),
-   source_audit:"data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json",
-   source_count:pending.length,offset,limit:batch.length,provider:"OpenStreetMap Overpass / ODbL",
-   policy:"Research-only candidates. Do NOT auto-promote coordinates, change ecclesial attribution, search photographs or treat an OSM feature as a reviewed church identity.",
-   summary,rows};
- const file=argumentsMap.output||join(root,"data/directory/research/diocesan-osm-candidates-"+String(offset).padStart(4,"0")+"-"+String(batch.length).padStart(3,"0")+".v1.json");
- writeFileSync(resolve(file),JSON.stringify(output,null,2)+"\n");
- process.stdout.write(JSON.stringify({output:file,scanned:batch.length,pending_total:pending.length,summary})+"\n");
+ const out=JSON.parse(readFileSync(file,"utf8"));
+ process.stdout.write(JSON.stringify({output:file,requested:batch.length,fetched:out.fetched_count,
+  matched:out.matched_count,summary:out.summary})+"\n");
 }
+
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))
  main().catch(err=>{process.stderr.write(err.stack+"\n");process.exitCode=1;});
