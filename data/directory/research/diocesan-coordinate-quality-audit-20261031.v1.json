@@ -30,8 +30,8 @@
     "photo_gates": {
       "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL": 58,
       "INHERITED_POINT_UNASSESSED": 494,
-      "OPERATOR_REQUIRES_REVIEW": 19,
-      "OPERATOR_EXCLUDED": 7,
+      "OPERATOR_REQUIRES_REVIEW": 13,
+      "OPERATOR_EXCLUDED": 13,
       "MISSING_COORDINATE": 4,
       "DISTINCT_BUILDING_OR_INTERIOR_PENDING": 2,
       "PUBLISHED_PROVISIONAL_NEEDS_EXACT_SITE_PHOTO_GATE": 3
@@ -254,9 +254,13 @@
       "coordinate_ref": "osm:way:128316070",
       "coordinate_evidence_url": "https://www.openstreetmap.org/way/128316070",
       "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "BOURNEMOUTH_ORATORY_CONGREGATION_MINISTRY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "Congregation of the Oratory associated with Bournemouth Sacred Heart; photo-queue exclusion is based on ministry, not civil ownership",
+      "operator_evidence": [
+        "https://www.bournemouthoratory.org.uk/what-is-the-oratory/"
+      ]
     },
     {
       "physical_group_id": "RG-04ED0DAE5D46",
@@ -7379,9 +7383,13 @@
       "coordinate_ref": "osm:way:851727368",
       "coordinate_evidence_url": "https://www.openstreetmap.org/way/851727368",
       "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "LONDON_ORATORY_CONGREGATION_CHURCH",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "The London Oratory explicitly identifies its Brompton church as the church of the Congregation, while also serving as a diocesan parish",
+      "operator_evidence": [
+        "https://www.bromptonoratory.co.uk/about-the-oratory"
+      ]
     },
     {
       "physical_group_id": "RG-A3A716030F90",
@@ -9024,9 +9032,13 @@
       "coordinate_ref": "V19:DIO-US-ADW-FRANCISCAN",
       "coordinate_evidence_url": "https://dcfranciscans.latinmassarlington.org/",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "HOLY_LAND_FRANCISCAN_FRIARS_MONASTERY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "The Franciscan Monastery is operated by Holy Land Franciscan Friars and is not a diocesan-only church photo subject",
+      "operator_evidence": [
+        "https://myfranciscan.org/about/our-mission/"
+      ]
     },
     {
       "physical_group_id": "RG-C3D631CA4F5C",
@@ -9484,9 +9496,13 @@
       "coordinate_ref": "AO-AMER-R26-US-05-06",
       "coordinate_evidence_url": "https://adorientem.church/find/friars-of-st-anthony-franciscan-monastery-kennebunk-200e014c",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "ST_ANTHONY_FRANCISCAN_FRIARS_MONASTERY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "The Kennebunk St Anthony Monastery is the community site of Franciscan Friars; retain its independent venue identity",
+      "operator_evidence": [
+        "https://www.framon.net/"
+      ]
     },
     {
       "physical_group_id": "RG-CDC22A087DFE",
@@ -9744,9 +9760,13 @@
       "coordinate_ref": "AO-AMER-R26-US-03-02",
       "coordinate_evidence_url": "https://adorientem.church/find/carmelite-monastery-of-the-infant-of-prague-traverse-city-31acb0eb",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "DISCALCED_CARMELITE_NUNS_INFANT_JESUS_OF_PRAGUE",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "Traverse City Infant Jesus of Prague Monastery belongs to Discalced Carmelite nuns, not a diocesan parish photo queue",
+      "operator_evidence": [
+        "https://dioceseofgaylord.org/vocations/religious-orders"
+      ]
     },
     {
       "physical_group_id": "RG-D1963C3C3E66",
@@ -10285,9 +10305,13 @@
       "coordinate_ref": "AO-AMER-R26-US-01-10",
       "coordinate_evidence_url": "https://adorientem.church/find/abbey-of-our-lady-of-ephesus-gower-ce21b473",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "BENEDICTINES_OF_MARY_OUR_LADY_OF_EPHESUS_ABBEY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "Abbey of Our Lady of Ephesus is the Benedictines of Mary Queen of Apostles community abbey, not diocesan parish",
+      "operator_evidence": [
+        "https://benedictinesofmary.org/"
+      ]
     },
     {
       "physical_group_id": "RG-DCFB2AE99B57",

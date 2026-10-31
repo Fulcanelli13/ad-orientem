@@ -145,7 +145,15 @@ for(const [id,scope] of [["RG-B95EC4107AE0","CINCINNATI_ORATORY_OLD_ST_MARY_MINI
  assert.equal(q.operator_scope,scope);
  assert.equal(q.photo_research_started,false);
 }
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,7);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,13);
+for(const [id,scope] of [["RG-04C900D93BC2","BOURNEMOUTH_ORATORY_CONGREGATION_MINISTRY"],["RG-A39E87B5A30C","LONDON_ORATORY_CONGREGATION_CHURCH"],["RG-C3C6FBC2EB32","HOLY_LAND_FRANCISCAN_FRIARS_MONASTERY"],["RG-CCD4ECF228D3","ST_ANTHONY_FRANCISCAN_FRIARS_MONASTERY"],["RG-D108C0D7C168","DISCALCED_CARMELITE_NUNS_INFANT_JESUS_OF_PRAGUE"],["RG-DCA9FF61B20D","BENEDICTINES_OF_MARY_OUR_LADY_OF_EPHESUS_ABBEY"]]){
+ const row=diocesanQualityByGroup.get(id);
+ assert.equal(row.photo_gate,"OPERATOR_EXCLUDED");
+ assert.equal(row.operator_scope,scope);
+ assert.ok(row.operator_evidence.every(url=>url.startsWith("https://")));
+ assert.equal(row.photo_research_started,false);
+}
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,13);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
