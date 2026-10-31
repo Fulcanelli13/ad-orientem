@@ -9,17 +9,17 @@ const text=path=>readFileSync(resolve(root,path),"utf8");
 const audit=JSON.parse(text("data/geography/research/explore-folio-editorial-readiness-20261031.v1.json"));
 const view=text("src/find/explore-presentation.js");
 const styles=text("src/find/heritage-style.js");
-const ids=rows=>new Set(rows.map(x=>x.place_id||x.shrine_id||x.relic_id||x.apparition_id||x.saint_id));
+const ids=(rows,key)=>new Set(rows.map(x=>x[key]));
 assert.equal(audit.schema,"AO_EXPLORE_EDITORIAL_READINESS_AUDIT_V1");
 assert.equal(audit.status,"READ_ONLY_RECONCILIATION_NOT_A_PUBLICATION_PERMISSION");
 for(const [name,count] of [["places","canonical_places"],["shrines","shrines"],["relics","relics"],["apparitions","apparitions"]]){
   assert.equal(audit[name].length,audit.coverage[count],name+" snapshot integrity");
 }
-assert.equal(ids(audit.places).size,audit.places.length,"one audited row per Place");
-assert.equal(ids(audit.shrines).size,audit.shrines.length,"one audited row per shrine");
-assert.equal(ids(audit.relics).size,audit.relics.length,"one audited row per relic");
-assert.equal(ids(audit.apparitions).size,audit.apparitions.length,"one audited row per apparition");
-const placeIds=ids(audit.places);
+assert.equal(ids(audit.places,"place_id").size,audit.places.length,"one audited row per Place");
+assert.equal(ids(audit.shrines,"shrine_id").size,audit.shrines.length,"one audited row per shrine");
+assert.equal(ids(audit.relics,"relic_id").size,audit.relics.length,"one audited row per relic");
+assert.equal(ids(audit.apparitions,"apparition_id").size,audit.apparitions.length,"one audited row per apparition");
+const placeIds=ids(audit.places,"place_id");
 for(const row of [...audit.shrines,...audit.relics,...audit.apparitions]){
   assert(placeIds.has(row.place_id),"all reviewed subjects must refer to an existing canonical Place");
 }
