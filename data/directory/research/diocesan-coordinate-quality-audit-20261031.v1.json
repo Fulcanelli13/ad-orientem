@@ -29,9 +29,9 @@
     },
     "photo_gates": {
       "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL": 69,
-      "INHERITED_POINT_UNASSESSED": 485,
-      "OPERATOR_EXCLUDED": 18,
-      "OPERATOR_REQUIRES_REVIEW": 6,
+      "INHERITED_POINT_UNASSESSED": 486,
+      "OPERATOR_EXCLUDED": 19,
+      "OPERATOR_REQUIRES_REVIEW": 4,
       "MISSING_COORDINATE": 4,
       "DISTINCT_BUILDING_OR_INTERIOR_PENDING": 2,
       "PUBLISHED_PROVISIONAL_NEEDS_EXACT_SITE_PHOTO_GATE": 3
@@ -10799,9 +10799,15 @@
       "coordinate_ref": "AO-AMER-R28-US-25-16",
       "coordinate_evidence_url": "https://adorientem.church/find/st-clement-oratory-glen-ullin-7351ffc2",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "BISMARCK_DIOCESE_ST_CLEMENT_HAYMARSH_ORATORY",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://bismarckdiocese.com/oratory",
+        "https://bismarckdiocese.com/parishfinder",
+        "https://bismarckdiocese.com/news/provisions-for-the-latin-mass"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-E586590BB5C8",
@@ -11684,9 +11690,15 @@
       "coordinate_ref": "AO-EUR-PL-032",
       "coordinate_evidence_url": "https://adorientem.church/find/chapel-of-the-order-of-the-carmelite-sisters-19-300-deecf526",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "ELK_DISCALCED_CARMELITE_SISTERS_MONASTERY_CHAPEL",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://karmel.elk.pl/o-nas/o-klasztorze.html",
+        "https://karmel.elk.pl/aktualnosci/uroczystosc-poswiecenia-kaplicy-i-zalozenie-klauzury-papieskiej-u-s-karmelitanek-w-witynach-k-elku.html",
+        "https://www.latinmassdir.org/country/pl/?communities=&days=&exclusive=&venue_status=&view=list"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-FC18299DDF0F",
