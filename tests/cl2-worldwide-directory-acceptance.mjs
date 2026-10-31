@@ -25,12 +25,12 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1863);
+assert.equal(world.filter(x=>x.map_publishable).length,1867);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,719);
+assert.equal(newSites.length,715);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -42,9 +42,19 @@ assert.ok(noSource.every(x=>x.source_ids.length>0&&x.note.includes("Research-lis
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Sixteen separately reviewed physical site or address references may be shown
+// Twenty separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
-for(const [group,id,name,lat,lng,osm,precision="site"] of [
+for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
+ ["RG-2E1FB8361143","AO-B35-L-GB-BF86E1483C54",
+  "St Mary's Church",53.38963,-2.5889,"osm:way:749035677","site"],
+ ["RG-3E26F1928075","AO-B36-L-GB-7FBD70FF3B8C",
+  "Lanherne Convent Chapel",50.4544,-4.9994,"historicengland:1144134","site",
+  "CONVENT_SITE_NOT_CHAPEL_ENTRANCE"],
+ ["RG-43C77660C303","AO-B34-L-GB-43BCEF5411CB",
+  "Douai Abbey",51.41,-1.1717,"historicengland:1156252","site"],
+ ["RG-2E17819D4F3E","AO-B51-FR-70ECC3A856F3",
+  "Abbaye canoniale Sainte-Marie de Lagrasse",
+  43.09034,2.61682,"osm:way:422967480","site"],
  ["RG-01F176BB1074","AO-B35-L-GB-91CDCC69A421",
   "Westminster Cathedral",51.49582,-0.13952,"osm:way:10810446","site"],
  ["RG-02AEBA830666","AO-B34-L-GB-D2A6AB6CE828",
@@ -90,7 +100,7 @@ for(const [group,id,name,lat,lng,osm,precision="site"] of [
  assert.equal(mapped.geo.source_ref,osm);
  assert.equal(mapped.geo.precision,precision);
  assert.equal(mapped.geo.approximate,true);
- assert.equal(mapped.geo.review_scope,precision==="address"?"ADDRESS_POINT_NOT_ENTRANCE":"PHYSICAL_CHURCH_NOT_ENTRANCE");
+ assert.equal(mapped.geo.review_scope,reviewScope||(precision==="address"?"ADDRESS_POINT_NOT_ENTRANCE":"PHYSICAL_CHURCH_NOT_ENTRANCE"));
  assert.equal(mapped.map_publishable,true);
  assert.equal(mapped.map_state,"PROVISIONAL");
  assert.match(mapped.status,/MASS UNVERIFIED/);
@@ -153,12 +163,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1863);
-assert.equal(vm.addressOnly,719);
+assert.equal(vm.mapped,1867);
+assert.equal(vm.addressOnly,715);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/719/);
+assert.match(html,/715/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 719 list-only plus 10 source-backed site/address markers, 3 separate published additions");
+console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 715 list-only plus 10 source-backed site/address markers, 3 separate published additions");

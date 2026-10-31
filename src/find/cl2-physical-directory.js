@@ -43,6 +43,51 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-2E1FB8361143":Object.freeze({
+  sourceId:"AO-B35-L-GB-BF86E1483C54",name:"St Mary's Church",
+  country:"GB",addressNeedle:"Smith Street",placeId:null,
+  lat:53.38963,lng:-2.5889,sourceRef:"osm:way:749035677",
+  sourceUrl:"https://www.openstreetmap.org/way/749035677",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W749035677",
+   "https://fssp.org.uk/warrington/",
+  ]),
+ }),
+ "RG-3E26F1928075":Object.freeze({
+  sourceId:"AO-B36-L-GB-7FBD70FF3B8C",
+  name:"Lanherne Convent Chapel",country:"GB",addressNeedle:"St Mawgan",
+  placeId:null,lat:50.4544,lng:-4.9994,precision:"site",
+  reviewScope:"CONVENT_SITE_NOT_CHAPEL_ENTRANCE",
+  sourceRef:"historicengland:1144134",
+  sourceUrl:"https://gb.britishlistedbuildings.co.uk/101144134-lanherne-carmelite-convent-mawgan-in-pydar/maps",
+  attribution:"Historic England listed building 1144134 · convent campus",
+  evidence:Object.freeze([
+   "https://icksp.org.uk/cornwall/support-our-apostolates-in-devon-and-cornwall/",
+   "https://historicengland.org.uk/listing/the-list/list-entry/1144134",
+  ]),
+ }),
+ "RG-43C77660C303":Object.freeze({
+  sourceId:"AO-B34-L-GB-43BCEF5411CB",name:"Douai Abbey",
+  country:"GB",addressNeedle:"Reading",placeId:null,
+  lat:51.41,lng:-1.1717,sourceRef:"historicengland:1156252",
+  sourceUrl:"https://britishlistedbuildings.co.uk/101156252-douai-abbey-church-woolhampton/maps",
+  attribution:"Historic England listed building 1156252 · church",
+  evidence:Object.freeze([
+   "https://historicengland.org.uk/listing/the-list/list-entry/1156252",
+   "https://lms.org.uk/list-of-churches",
+  ]),
+ }),
+ "RG-2E17819D4F3E":Object.freeze({
+  sourceId:"AO-B51-FR-70ECC3A856F3",
+  name:"Abbaye canoniale Sainte-Marie de Lagrasse",country:"FR",
+  addressNeedle:"Lagrasse",placeId:null,
+  lat:43.09034,lng:2.61682,sourceRef:"osm:way:422967480",
+  sourceUrl:"https://www.openstreetmap.org/way/422967480",
+  evidence:Object.freeze([
+   "https://mapcarta.com/W422967480",
+   "https://www.lagrasse.org/decouvrir-labbaye/horaires-des-offices/",
+  ]),
+ }),
  "RG-01F176BB1074":Object.freeze({
   sourceId:"AO-B35-L-GB-91CDCC69A421",name:"Westminster Cathedral",
   country:"GB",addressNeedle:"London",placeId:"place:GB:westminster-cathedral",
@@ -305,7 +350,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|churcheslist:[a-z0-9-]+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
    const affiliationName=T(affiliation)||"Source affiliation not established";
