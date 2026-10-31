@@ -26,6 +26,24 @@ assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published 
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
 assert.equal(world.filter(x=>x.map_publishable).length,1878);
+// The external Photo Finder must consume exactly the approved runtime site
+// markers. Never regress to the frozen R49 snapshot or create photo-search
+// coordinates independently of Explore's canonical physical-site projection.
+const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
+assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
+assert.deepEqual(photoPins.counts,{new_site_pins:31,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,34);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,34);
+for(const pin of photoPins.pins){
+ const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
+ assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
+ assert.ok(venue.source_ids.includes(pin.source_id),"Photo pin source identity differs from CL2");
+ assert.equal(venue.geo.lat,pin.lat,"Photo Finder pin latitude differs from Explore");
+ assert.equal(venue.geo.lng,pin.lon,"Photo Finder pin longitude differs from Explore");
+ assert.match(pin.source_url,/^https:\/\//);
+ assert.ok(pin.review_scope,"Photo Finder requires explicit site/entrance precision disclosure");
+}
+
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
