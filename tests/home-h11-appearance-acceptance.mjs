@@ -393,39 +393,45 @@ try{
     assert.equal(await h4.locator(".homeScreen.aoTodayH4").count(),1,
       "Closing exact DYK source must return to the same Home");
 
-    // The default H4 Mass door must actually reach the source-owned preflight.
-    // Capturing a visible Begin button alone cannot certify that navigation.
-    const begin=h4.locator(".homeScreen.aoTodayH4 [data-home-mass-entry]");
+    // Begin Mass is NOT the historical preflight opener. It enters the
+    // source-verified native 65-card R17 reader directly when Before Mass
+    // prayers are set to "none". Test that production path explicitly.
+    const beforeNone=await h4.evaluate(()=>
+      globalThis.AO_R17_BROWSER_ENTRY?.selectTodayOption?.("beforeMass","none"));
+    assert.equal(beforeNone,true,
+      "H4 Begin acceptance could not select direct R17 entry through the canonical Folio");
+    const begin=h4.locator(".homeScreen.aoTodayH4 [data-home-h4-begin]");
     await begin.waitFor({state:"visible",timeout:20000});
     await h4.waitForFunction(()=>!document.querySelector(
-      ".homeScreen.aoTodayH4 [data-home-mass-entry]")?.disabled,
+      ".homeScreen.aoTodayH4 [data-home-h4-begin]")?.disabled,
       null,{timeout:30000});
     await begin.click();
     try {
       await h4.waitForFunction(()=>{
-        const b=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
-        const style=b?getComputedStyle(b):null;
+        const reader=globalThis.AO_R17_BROWSER_ENTRY?.status?.();
         return globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass" &&
-          b?.isConnected===true && b.hidden!==true &&
-          style?.display!=="none" && style?.visibility!=="hidden";
-      },null,{timeout:20000});
+          reader?.nativeMounted===true &&
+          Boolean(globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass) &&
+          globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected===true;
+      },null,{timeout:30000});
     }catch(error){
       const state=await h4.evaluate(()=>({
         active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
-        preflightApi:typeof globalThis.AO_CELEBRATION_API?.openPreflight,
+        r17:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?
+          {installed:globalThis.AO_R17_BROWSER_ENTRY.status().installed,
+           nativeMounted:globalThis.AO_R17_BROWSER_ENTRY.status().nativeMounted,
+           resumable:globalThis.AO_R17_BROWSER_ENTRY.status().resumable}:null,
         route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
-        backdrop:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")),
-        backdropHidden:document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.hidden??null,
-        m1:document.documentElement.dataset.aoM1MassRoot??null,
+        nativeRoot:Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected),
+        massEngine:document.documentElement.dataset.aoMassEngine??null,
+        hasPrepared:Boolean(globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass),
+        preflight:document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop")?.hidden??null,
         homeError:document.querySelector("[data-home-shortcut-error]")?.textContent??null,
       }));
-      throw Error(prefix+" H4 Mass door did not open its source-owned preflight: "+
+      throw Error(prefix+" H4 Begin did not enter its R17 native reader: "+
         JSON.stringify(state)+"; "+String(error));
     }
-    await h4.screenshot({path:resolve(output,prefix+"-h4-mass-door-phone.png")});
-    await h4.locator("[data-ao-app-surface='home']").click();
-    await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH4Door",
-      {state:"visible",timeout:15000});
+    await h4.screenshot({path:resolve(output,prefix+"-h4-r17-direct-entry-phone.png")});
     assert.equal(h4Errors.length,0,prefix+" H4 page errors: "+JSON.stringify(h4Errors));
     await h4.close();
     await context.close();
