@@ -25,15 +25,15 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1896);
+assert.equal(world.filter(x=>x.map_publishable).length,1902);
 // The external Photo Finder must consume exactly the approved runtime site
 // markers. Never regress to the frozen R49 snapshot or create photo-search
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:49,refined_existing_site_pins:9,corrected_existing_site_pins:3});
-assert.equal(photoPins.pins.length,61);
-assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,61);
+assert.deepEqual(photoPins.counts,{new_site_pins:55,refined_existing_site_pins:9,corrected_existing_site_pins:3});
+assert.equal(photoPins.pins.length,67);
+assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,67);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
  assert.ok(venue&&venue.map_publishable&&venue.geo,"Photo index references an unmapped venue: "+pin.physical_group_id);
@@ -48,7 +48,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,686);
+assert.equal(newSites.length,680);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -64,9 +64,9 @@ const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=
 assert.equal(diocesanGroupIds.size,584);
 const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
 assert.equal(diocesan.length,584);
-assert.equal(diocesan.filter(x=>x.map_publishable).length,562);
-assert.equal(diocesan.filter(x=>!x.map_publishable).length,22);
-for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"],["RG-1EE1D2C9B3EB"],["RG-DE5F8ED4E2F7"],["RG-322AA8195E65"],["RG-C7F25752659D"],["RG-4D09923C6B74"],["RG-8DC436A75526"],["RG-938EAA84BA0A"],["RG-A0933DE542C7"],["RG-8CB13769F987"],["RG-BBB3789ADB9A"],["RG-0BB62E04774C"],["RG-783CD50DD217"]]){
+assert.equal(diocesan.filter(x=>x.map_publishable).length,568);
+assert.equal(diocesan.filter(x=>!x.map_publishable).length,16);
+for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"],["RG-1EE1D2C9B3EB"],["RG-DE5F8ED4E2F7"],["RG-322AA8195E65"],["RG-C7F25752659D"],["RG-4D09923C6B74"],["RG-8DC436A75526"],["RG-938EAA84BA0A"],["RG-A0933DE542C7"],["RG-8CB13769F987"],["RG-BBB3789ADB9A"],["RG-0BB62E04774C"],["RG-783CD50DD217"],["RG-04ED0DAE5D46"],["RG-13C11CB31E3F"],["RG-7E91D5FD0AC3"],["RG-D2CECBA0C364"],["RG-F03B6AF4FA24"],["RG-CC73C2CBD613"]]){
  const item=diocesan.find(x=>x.physical_group_id===group);
  assert.ok(item?.map_publishable,"Diocesan site must be pinned: "+group);
  assert.equal(item.map_state,"PROVISIONAL");
@@ -75,9 +75,15 @@ for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"
 const cantius=world.filter(x=>x.source_ids?.includes("V19:SJC-001"));
 assert.equal(cantius.length,1,"Canons of St John Cantius retains one exact source-backed church");
 assert.equal(cantius[0].map_publishable,true);
-// Fifty-eight separately reviewed physical site or address references may be shown
+// Sixty-four separately reviewed physical site or address references may be shown
 // provisionally. A site marker does NOT verify a Mass or precise entrance.
 for(const [group,id,name,lat,lng,osm,precision="site",reviewScope=null] of [
+ ["RG-04ED0DAE5D46","AO-B39-LOC-PL-8AFC063B0397","Kościół Wniebowzięcia NMP",50.003877,18.462301,"osm:way:93211460","site",null],
+ ["RG-13C11CB31E3F","AO-B39-LOC-IT-65724603C504","Oratorio di San Francesco Poverino",43.776661,11.260311,"independent:firenze-loggiato-san-francesco-poverino","site","ORATORY_WITHIN_LOGGIA_NOT_INDEPENDENT_DOOR"],
+ ["RG-7E91D5FD0AC3","AO-B39-LOC-SK-FA51618C8159","Kaplnka Svätého Michala Archanjela",48.31315521174904,18.084892176995208,"osm:way:58219944","site",null],
+ ["RG-D2CECBA0C364","AO-B39-LOC-SK-A8267BEFF673","Kostol Navštívenia Panny Márie",48.1460325461052,17.11044759831011,"osm:way:77918570","site","HOSPITALLER_BROTHERS_CHURCH_NOT_INDEPENDENT_DIOCESAN_PARISH"],
+ ["RG-F03B6AF4FA24","AO-B38-LOC-NL-79F20E0188E","Sint-Salviuskerk",51.01252,5.83907,"osm:way:282449190","site","NEW_ACTIVE_PARISH_CHURCH_NOT_OLD_HISTORIC_SALVIUSKERK"],
+ ["RG-CC73C2CBD613","AO-B39-LOC-PL-D8909F2A26BE","Kościół Świętego Jakuba",50.092367,18.220611,"commons:object-location:raciborz-saint-james","site","FILIAL_SAINT_JAMES_NOT_ASSUMPTION_PARISH_CHURCH"],
  ["RG-0BB62E04774C","AO-B39-LOC-PL-83A0BDB437C1","Kościół Ducha Świętego",50.3461,18.9278,"commons:object-location:bytom-holy-spirit","site","CHURCH_FILIAL_NOT_MAIN_PARISH_SITE"],
  ["RG-783CD50DD217","AO-B39-LOC-PL-EA168B0ACA4A","Kościół Matki Bożej Śnieżnej",50.1705,18.90754,"osm:way:169044576","site","HISTORIC_FILIAL_CHURCH_NOT_NEARBY_BASILICA"],
  ["RG-8CB13769F987","AO-B38-LOC-NL-9947B9DFA3B","Onze Lieve Vrouw Onbevlekt Ontvangen",51.769178,5.522718,"rijksmonument:31870","site","CHURCH_OBJECT_POSITION_NOT_VERIFIED_DOOR"],
@@ -264,11 +270,11 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1896);
-assert.equal(vm.addressOnly,686);
+assert.equal(vm.mapped,1902);
+assert.equal(vm.addressOnly,680);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/686/);
+assert.match(html,/680/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
