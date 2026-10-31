@@ -10,7 +10,7 @@
 import {readFile,writeFile,mkdir} from "node:fs/promises";
 import {dirname} from "node:path";
 
-const batchId=process.argv[2]||"001";
+const batchId=process.argv[2]==="--selftest"?"001":(process.argv[2]||"001");
 if(!/^00[123]$/.test(batchId))throw Error("Only manifests 001–003 are authorized");
 const source=`data/geography/research/sacred-atlas-commons-batch-${batchId}.manifest.json`;
 const destination=`data/geography/research/sacred-atlas-commons-batch-${batchId}.results.json`;
