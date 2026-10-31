@@ -154,8 +154,24 @@ try{
    await planBeforeRelease.locator("[data-schola-local-sanctus]").selectOption("POLYPHONIC");
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()
      ?.sanctusPerformance==="POLYPHONIC");
-   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
-     ?.events.some(e=>e.id==="BENEDICTUS_AFTER_CHALICE"));
+   const polyphonicEventCheck=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW, plan=api.getScholaPerformance();
+     const actual=api.model.cards;
+     const related=plan.events.filter(e=>/SANCTUS|BENEDICTUS|CHALICE/.test(e.id))
+       .map(e=>({id:e.id,status:e.status,eligible:e.performance?.eligible}));
+     return {
+       supported:plan.supported,reason:plan.reason,
+       style:api.getScholaState().sanctusPerformance,
+       present:plan.events.some(e=>e.id==="BENEDICTUS_AFTER_CHALICE"),
+       related,
+       unresolved:plan.unresolved.filter(e=>/BENEDICTUS|CHALICE/.test(e.id)),
+       chalice:actual.filter(c=>c.sourceSectionId==="AO.CANON.07")
+         .map(c=>({title:c.title,id:c.sectionId,sequence:c.sequence,
+           blocks:(c.blocks??[]).map(x=>({id:x.blockId,n:x.paragraphCount,omit:x.omittedByRite}))}))
+     };
+   });
+   assert.ok(polyphonicEventCheck.present,
+     "Polyphonic Benedictus absent from source-owned itinerary: "+JSON.stringify(polyphonicEventCheck));
    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaPerformance()
      .events.find(e=>e.id==="BENEDICTUS_AFTER_CHALICE")?.performance.status),
      "EXPECTED_NOT_OBSERVED","Selecting polyphony cannot itself prove Benedictus singing");
