@@ -1,19 +1,28 @@
 {
-  "schema": "AO_PRAYER_STATIONS_SEVEN_PD_SOURCE_RESEARCH_V1",
+  "schema": "AO_PRAYER_STATIONS_SEVEN_PD_SOURCE_RESEARCH_V2",
   "asOf": "2026-10-31",
-  "scope": "Source-led research for seven still-unapproved exact Stations scenes. This is NOT a production manifest, new editorial approval, or an authorization to reuse any image.",
+  "supersedes": "AO_PRAYER_STATIONS_SEVEN_PD_SOURCE_RESEARCH_V1",
+  "scope": "Seven outstanding exact-scene Stations remain OPEN. Théophile Lybaert's entire oil Stations cycle was directly rejected by user for artistic quality and is only in historical exclusions; etchings are research-only; no source or candidate is approved for application.",
   "sourceRegistry": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
-  "workbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Source_Pass.xlsx",
+  "workbook": "Ad_Orientem_Art_Matching_Map_2026-10-31_Lybaert_Excluded.xlsx",
   "context": {
     "previousEditorialCovered": 199,
     "previousEditorialGaps": 68,
-    "candidatesDiscovered": 7,
+    "activePaintingCandidates": 0,
+    "unapprovedEtchingAlternatives": 7,
+    "lybaertArtworksExcluded": 7,
     "newlyApproved": 0,
     "productionClearedImages": 0,
-    "remainingEditorialGaps": 68,
-    "highPriorityLowRes": 1,
-    "sourceCandidateFilesLocated": 14,
-    "etchingAlternatives": 7
+    "remainingEditorialGaps": 68
+  },
+  "hardExclusion": {
+    "artist": "Théophile Lybaert",
+    "cycle": "Stations of the Cross (1886–1887)",
+    "status": "USER_REJECTED_PERMANENT_EXCLUDE",
+    "reason": "Rejected by the user as artistically unsuitable for Ad Orientem; neither exact subject nor public-domain rights may override editorial taste.",
+    "scope": "ALL_FOURTEEN_STATIONS_AND_ALL_OTHER_AD_ORIENTEM_CONTEXTS",
+    "appliesToArtworkNotOnlyPhotograph": true,
+    "mayOnlyReverseByNewExplicitUserApproval": true
   },
   "policy": [
     "Do not convert a Commons PDM mark alone into worldwide photographic clearance.",
@@ -21,47 +30,17 @@
     "Do not substitute a generalized Crucifixion for a fall, encounter, stripping or nailing scene.",
     "Only verified PD/CC0 exact photographic files may be activated; zero cost and unframed, with colour/sharpness/crop QA.",
     "Keep all previously user-approved artwork, rejections and primary hero locks unchanged.",
-    "Smithsonian open-access CC0 evidence for historical etching objects does not clear unrelated modern photographic reproductions of paintings."
+    "Smithsonian open-access CC0 evidence for historical etching objects does not clear unrelated modern photographic reproductions of paintings.",
+    "No Lybaert oil painting may appear in recommendations, candidate queues, rollovers, module/hero/stage mappings, or application assets.",
+    "A historical rejected work is not a viable candidate even if its license is public domain.",
+    "Tiepolo etching alternatives are not user-approved and should not be promoted as preferred paintings."
   ],
   "entries": [
     {
       "editorialSlot": "STG-pray.stations-03",
       "stationRoman": "III",
       "exactScene": "Jesus falls the first time",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Jesus falls the first time",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_falls_the_first_time.jpg",
-        "width": 1357,
-        "height": 1029,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -81,48 +60,23 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
     },
     {
       "editorialSlot": "STG-pray.stations-05",
       "stationRoman": "V",
       "exactScene": "Simon of Cyrene carries the Cross",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Simon of Cyrene carries the Cross",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Simon_of_Cyrene_carries_the_cross.jpg",
-        "width": 1386,
-        "height": 1082,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -142,48 +96,23 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
     },
     {
       "editorialSlot": "STG-pray.stations-07",
       "stationRoman": "VII",
       "exactScene": "Jesus falls the second time",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Jesus falls the second time",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_falls_the_second_time.jpg",
-        "width": 1536,
-        "height": 1131,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -203,48 +132,23 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
     },
     {
       "editorialSlot": "STG-pray.stations-08",
       "stationRoman": "VIII",
       "exactScene": "Jesus meets the daughters of Jerusalem",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Jesus meets the daughters of Jerusalem",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_the_daughters_of_Jerusalem.jpg",
-        "width": 934,
-        "height": 676,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "HIGH_RESOLUTION_WEAK",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -264,48 +168,23 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
     },
     {
       "editorialSlot": "STG-pray.stations-09",
       "stationRoman": "IX",
       "exactScene": "Jesus falls the third time",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Jesus falls the third time",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_falls_the_third_time.jpg",
-        "width": 1429,
-        "height": 1045,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -325,48 +204,23 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
     },
     {
       "editorialSlot": "STG-pray.stations-10",
       "stationRoman": "X",
       "exactScene": "Jesus is stripped of His garments",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Jesus is stripped of His garments",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_is_stripped_of_His_garments.jpg",
-        "width": 1261,
-        "height": 951,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -386,48 +240,23 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
     },
     {
       "editorialSlot": "STG-pray.stations-11",
       "stationRoman": "XI",
       "exactScene": "Jesus is nailed to the Cross",
-      "proposedArtwork": {
-        "artist": "Théophile Lybaert",
-        "work": "Stations of the Cross — Jesus is nailed to the Cross",
-        "dates": "1886–1887",
-        "medium": "oil on panel",
-        "collection": "Our Lady of Grace Church, Antwerp"
-      },
-      "file": {
-        "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_is_nailed_to_the_cross.jpg",
-        "width": 1341,
-        "height": 1045,
-        "originalFileInspected": false,
-        "frameBoundaryVerified": false,
-        "tonalQualityVerified": false
-      },
-      "rights": {
-        "sourceClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
-        "freeUseEvidenceLocated": true,
-        "usAndOtherJurisdictionsIndependentlyVerified": false,
-        "photographicRightsIndependentReview": false,
-        "licenseCategoricallyReleaseReady": false
-      },
-      "editorial": {
-        "status": "NEW_CANDIDATE_NOT_USER_APPROVED",
-        "sameSceneExact": true,
-        "existingApprovalOverridden": false
-      },
-      "publication": {
-        "ready": false,
-        "assetUrl": null,
-        "runtimeDisplayEnabled": false
-      },
-      "qaPriority": "NATIVE_VISUAL_AND_CROP_QA_PENDING",
-      "altCandidates": [
+      "unapprovedEtchingResearch": [
         {
           "artist": "Giovanni Domenico Tiepolo",
           "artwork": "Via Crucis",
@@ -447,9 +276,117 @@
           "photoNativeQAComplete": false,
           "publicationReady": false,
           "assetUrl": null,
-          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings."
+          "artisticNote": "Historic monochrome etching: do not confuse with the separately rights-restricted modern colour photograph of Tiepolo's San Polo paintings.",
+          "availability": "RESEARCH_ONLY_NOT_USER_SELECTED"
         }
-      ]
+      ],
+      "actualPaintingSelection": "NONE",
+      "artisticApproval": "NOT_REQUESTED_OR_GRANTED",
+      "publication": {
+        "ready": false,
+        "assetUrl": null,
+        "runtimeDisplayEnabled": false
+      }
+    }
+  ],
+  "rejectedHistoricalCandidates": [
+    {
+      "editorialSlot": "STG-pray.stations-03",
+      "stationRoman": "III",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Jesus falls the first time",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_falls_the_first_time.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
+    },
+    {
+      "editorialSlot": "STG-pray.stations-05",
+      "stationRoman": "V",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Simon of Cyrene carries the Cross",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Simon_of_Cyrene_carries_the_cross.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
+    },
+    {
+      "editorialSlot": "STG-pray.stations-07",
+      "stationRoman": "VII",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Jesus falls the second time",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_falls_the_second_time.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
+    },
+    {
+      "editorialSlot": "STG-pray.stations-08",
+      "stationRoman": "VIII",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Jesus meets the daughters of Jerusalem",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_meets_the_daughters_of_Jerusalem.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
+    },
+    {
+      "editorialSlot": "STG-pray.stations-09",
+      "stationRoman": "IX",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Jesus falls the third time",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_falls_the_third_time.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
+    },
+    {
+      "editorialSlot": "STG-pray.stations-10",
+      "stationRoman": "X",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Jesus is stripped of His garments",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_is_stripped_of_His_garments.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
+    },
+    {
+      "editorialSlot": "STG-pray.stations-11",
+      "stationRoman": "XI",
+      "artist": "Théophile Lybaert",
+      "artwork": "Stations of the Cross — Jesus is nailed to the Cross",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Theophile_Lybaert_-_Jesus_is_nailed_to_the_cross.jpg",
+      "sourceRightsClaim": "WIKIMEDIA_COMMONS_PUBLIC_DOMAIN_MARK_1_0",
+      "decision": "USER_REJECTED_ARTISTIC_FIT",
+      "date": "2026-10-31",
+      "source": "Direct user response: 'who approved theophile lybaert? his stations of the cross is ugly...'",
+      "blockedAcrossAllPrayerAndOtherAdOrientemArtContexts": true,
+      "doNotResurfaceAsRecommendation": true,
+      "doNotRecheckOrSubstituteWithoutUserExplicitlyReversingRejection": true
     }
   ],
   "guardrails": [
