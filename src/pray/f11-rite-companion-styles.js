@@ -69,6 +69,29 @@ export const F11_RITE_CSS=String.raw`
 #aoPray435930 [data-ao-rite-owner="tenebrae"] .aoDevoCardScroll p{
  line-height:1.7;
 }
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteLiturgicalPrayer .aoP435930Flip{
+ display:block;width:100%;text-align:left;border:0;background:transparent;padding:0;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteLiturgicalPrayer [hidden]{
+ display:none!important;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteLiturgicalBeat{
+ display:block;margin:0 0 clamp(12px,2.7vh,21px);
+ font:400 clamp(18px,4.5vw,22px)/1.65 var(--ao-font-liturgical,Georgia,serif);
+ color:var(--text,#ece8de);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteLiturgicalResponse{
+ margin-left:clamp(10px,3vw,20px);padding:8px 12px;
+ border-left:2px solid var(--liturgical-border,rgba(198,178,136,.35));
+ background:var(--liturgical-soft,rgba(179,179,140,.055));
+ border-radius:0 6px 6px 0;
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteLiturgicalResponse[data-ao-devo-active="true"]{
+ opacity:1!important;border-left-color:var(--liturgical,#b9ca97);
+}
+#aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteStanzaGap{
+ display:block;height:12px;
+}
 @media(max-width:359px){
  #aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteOptionRow{gap:6px}
  #aoPray435930 [data-ao-rite-owner="benediction"] .aoRiteOptionRow summary{font-size:11px;padding-inline:8px}
