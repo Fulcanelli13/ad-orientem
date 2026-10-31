@@ -8,7 +8,8 @@ const cases=[
  ["VICTIMAE_PASCHALI","Tempora/Pasc0-0","BEFORE_LAST_ALLELUIA"],
  ["VENI_SANCTE_SPIRITUS","Tempora/Pent01-0","BEFORE_LAST_ALLELUIA"],
  ["LAUDA_SION","Tempora/Pent02-4","BEFORE_LAST_ALLELUIA"],
- ["STABAT_MATER","Sancti/09-15","AFTER_TRACT"]
+ ["STABAT_MATER","Sancti/09-15","BEFORE_LAST_ALLELUIA"],
+ ["STABAT_MATER","Tempora/Quad5-5","AFTER_TRACT"]
 ];
 const chosen=(key,path,opts={})=>({
  actualMass:{kind:"CALENDAR",sourceOwner:owner,sourcePath:path,
@@ -16,7 +17,8 @@ const chosen=(key,path,opts={})=>({
  sequenceWitness:{sequenceKey:key,sourceId:score[key],sourceRole:"SEQUENTIA",
   sourcePath:path,sourceOwner:owner,verified:true},
  preGospel:{sourceVerified:true,sourcePath:path,sourceOwner:owner,
-  hasTract:key==="STABAT_MATER",hasLastAlleluia:key!=="STABAT_MATER"}
+  hasTract:path==="Tempora/Quad5-5",
+  hasLastAlleluia:path!=="Tempora/Quad5-5"}
 });
 for(const [key,path,placement] of cases){
  const out=resolveM09SequenceSourceRule(chosen(key,path));
