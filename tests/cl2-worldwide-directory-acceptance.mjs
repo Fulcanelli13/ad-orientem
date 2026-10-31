@@ -36,10 +36,10 @@ assert.equal(diocesanQuality.counts.cl2_source_labelled_diocesan,584);
 assert.equal(diocesanQuality.counts.additional_b91_diocesan,3);
 assert.equal(diocesanQuality.counts.mapped,583);
 assert.equal(diocesanQuality.counts.missing,4);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,510);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,70);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,502);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,78);
 assert.equal(diocesanQuality.counts.by_coordinate_origin.B91_PUBLISHED_PROVISIONAL,3);
-assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,442);
+assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,434);
 const diocesanQualityByGroup=new Map(diocesanQuality.records.map(r=>[r.physical_group_id,r]));
 const blockedCoords=read("data/directory/research/diocesan-coordinate-blockers-20261031.v1.json");
 assert.equal(blockedCoords.items.length,4);
@@ -68,8 +68,8 @@ for(const row of diocesanQuality.records){
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:16});
-assert.equal(photoPins.pins.length,99);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:24});
+assert.equal(photoPins.pins.length,107);
 assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,86);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
@@ -155,7 +155,7 @@ for(const [id,scope] of [["RG-04C900D93BC2","BOURNEMOUTH_ORATORY_CONGREGATION_MI
  assert.ok(row.operator_evidence.every(url=>url.startsWith("https://")));
  assert.equal(row.photo_research_started,false);
 }
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,13);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,10);
 for(const [id,lat,lng,ref,scope] of [["RG-E3F4A8F02E37",33.47143,-81.96676,"osm:way:385944485","MOST_HOLY_TRINITY_CATHOLIC_CHURCH_BUILDING_NOT_CEMETERY_OR_BELL_AUDITORIUM"],["RG-84D250B1CFB3",40.90982,-73.87986,"osm:way:222072165","SAINT_PAUL_YONKERS_CATHOLIC_CHURCH_BUILDING_NOT_ADJACENT_SCHOOL"],["RG-ABD010C7A5D7",34.232194,-77.943306,"independent:basilica-shrine-wilmington-building","BASILICA_SHRINE_WILMINGTON_HISTORIC_CHURCH_NOT_ADJACENT_SCHOOL"]]){
  const church=world.find(r=>r.physical_group_id===id),aud=diocesanQualityByGroup.get(id),pin=photoPins.pins.find(r=>r.physical_group_id===id);
  assert.ok(church?.map_publishable&&aud&&pin,"Site precision crosswalk must exist");
@@ -169,8 +169,8 @@ assert.equal(diocesanQualityByGroup.get("RG-3FF697320F55").photo_gate,"OPERATOR_
 assert.equal(diocesanQualityByGroup.get("RG-3FF697320F55").operator_scope,"NORbertine_CANONS_OF_ST_MICHAELS_ABBEY_MINISTRY".toUpperCase());
 
 const pendingOSM=pendingRecords(diocesanQuality);
-assert.equal(pendingOSM.length,442);
-assert.equal(new Set(pendingOSM.map(r=>r.physical_group_id)).size,442);
+assert.equal(pendingOSM.length,434);
+assert.equal(new Set(pendingOSM.map(r=>r.physical_group_id)).size,434);
 assert.equal(pendingOSM.filter(r=>r.photo_gate==="OPERATOR_EXCLUDED").length,
  diocesanQuality.records.filter(r=>r.coordinate_origin==="R49_INHERITED"&&
   r.precision==="source_marker_unassessed"&&r.photo_gate==="OPERATOR_EXCLUDED").length,
@@ -193,8 +193,8 @@ assert.equal(sampleCandidates.candidates[0].osm_ref,"way:42");
 assert.equal(sampleCandidates.promote_automatically,false);
 assert.equal(sampleCandidates.photo_approved,false);
 const osmReviewQueue=read("data/directory/research/diocesan-inherited-pin-review-queue-20261031.v1.json");
-assert.equal(osmReviewQueue.count,442);
-assert.equal(osmReviewQueue.rows.length,442);
+assert.equal(osmReviewQueue.count,434);
+assert.equal(osmReviewQueue.rows.length,434);
 assert.deepEqual(
  osmReviewQueue.rows.slice().sort((a,b)=>a.physical_group_id.localeCompare(b.physical_group_id)),
  reviewQueueRows(diocesanQuality),
@@ -206,7 +206,7 @@ for(const key of Object.keys(osmReviewQueue.by_photo_gate)){
   "Review queue gate count must be derived, not copied from a stale earlier ledger");
 }
 
-assert.equal(new Set(osmReviewQueue.rows.map(r=>r.physical_group_id)).size,442);
+assert.equal(new Set(osmReviewQueue.rows.map(r=>r.physical_group_id)).size,434);
 assert.ok(osmReviewQueue.rows.every(r=>!r.photo_approved&&r.review_status==="OSM_CANDIDATES_NOT_YET_FETCHED"));
 
 for(const [id,scope,gate] of [["RG-90591ACAA073","DIOCESAN_HOLY_TRINITY_PARISH_ORATORY","INHERITED_POINT_UNASSESSED"],["RG-C64D549D0587","COVINGTON_DIOCESAN_HOLY_FAMILY_ORATORY","INHERITED_POINT_UNASSESSED"],["RG-E1B1D68CCBC1","BRIDGEPORT_DIOCESAN_GEORGETOWN_ORATORY","INHERITED_POINT_UNASSESSED"],["RG-13C11CB31E3F","FLORENCE_SAN_GIROLAMO_SAN_FRANCESCO_POVERINO_CONFRATERNITY","OPERATOR_EXCLUDED"]]){
@@ -216,8 +216,24 @@ for(const [id,scope,gate] of [["RG-90591ACAA073","DIOCESAN_HOLY_TRINITY_PARISH_O
  assert.equal(r.photo_research_started,false);
  assert.ok(r.operator_evidence.every(x=>x.startsWith("https://")));
 }
-assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,9);
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_REQUIRES_REVIEW,10);
 assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,15);
+
+// Exact separately sourced church footprints from completed Overpass batch.
+// A nearby feature does not by itself approve photos or Mass information.
+for(const [id,lat,lng,ref,scope] of [["RG-028C2D07EF1C",39.6446277,-77.7249439,"osm:way:956997178","HAGERSTOWN_SAINT_MARY_CHURCH_BUILDING_NOT_PARISH_OFFICE"],["RG-0320E86C5E56",33.7303742,-116.3656147,"osm:way:105811081","PALM_DESERT_SACRED_HEART_CHURCH_BUILDING_NOT_SCHOOL_CAMPUS_OR_RELATION"],["RG-03A3AE24D334",32.0603972,-81.0993736,"osm:way:950223950","SAVANNAH_SACRED_HEART_CHURCH_FOOTPRINT_ADJACENT_TO_NAMED_OSM_NODE"],["RG-0A22291A4428",31.282011,-92.455895,"osm:way:1062235053","ALEXANDRIA_FRANCES_CABRINI_CHURCH_BUILDING_NOT_SCHOOL_2215_TEXAS_AVENUE"],["RG-0AFAF04ADE71",50.8679565,6.0912411,"osm:way:243988946","HERZOGENRATH_MARIA_HIMMELFAHRT_PARISH_CHURCH_NOT_RECTORY"],["RG-0B8749A10D66",32.3710127,-86.2993657,"osm:way:692352694","MONTGOMERY_ST_JOHN_BAPTIST_CHURCH_NOT_533_UNION_CONVENT"],["RG-0712DCD78856",-1.4526174,-48.497261,"osm:way:1267548521","BELEM_NOSSA_SENHORA_ROSARIO_DOS_HOMENS_PRETOS_HERITAGE_CHURCH"],["RG-0CF7DF0C68AC",-36.083298,146.9171806,"osm:way:460667287","ALBURY_ST_PATRICK_CHURCH_NOT_ADJACENT_SCHOOL_OR_CHAPEL"]]){
+ const venue=world.find(x=>x.physical_group_id===id),q=diocesanQualityByGroup.get(id),
+       pin=photoPins.pins.find(x=>x.physical_group_id===id);
+ assert.ok(venue&&q&&pin,"Reviewed physical site must retain original source venue");
+ assert.equal(venue.geo.lat,lat);assert.equal(venue.geo.lng,lng);
+ assert.equal(venue.geo.source_ref,ref);assert.equal(venue.geo.review_scope,scope);
+ assert.equal(venue.geo.precision,"site");
+ assert.equal(q.coordinate_origin,"REVIEWED_SITE_OVERLAY");
+ assert.equal(q.photo_gate,"REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL");
+ assert.equal(q.photo_research_started,false);assert.equal(pin.lat,lat);assert.equal(pin.lon,lng);
+}
+assert.equal(diocesanQualityByGroup.get("RG-129AD2FB533B").photo_gate,"OPERATOR_REQUIRES_REVIEW");
+assert.equal(diocesanQualityByGroup.get("RG-129AD2FB533B").operator_scope,"DIOCESAN_PARISH_CHAPEL_IBP_MINISTRY_OPERATOR_EMBLEM_PENDING");
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);

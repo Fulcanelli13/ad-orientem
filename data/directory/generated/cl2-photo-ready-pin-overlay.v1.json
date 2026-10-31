@@ -6,7 +6,7 @@
   "counts": {
     "new_site_pins": 67,
     "refined_existing_site_pins": 16,
-    "corrected_existing_site_pins": 16
+    "corrected_existing_site_pins": 24
   },
   "pins": [
     {
@@ -1096,6 +1096,94 @@
       "source_ref": "independent:basilica-shrine-wilmington-building",
       "source_url": "https://en.wikipedia.org/wiki/Basilica_Shrine_of_St._Mary_(Wilmington,_North_Carolina)",
       "review_scope": "BASILICA_SHRINE_WILMINGTON_HISTORIC_CHURCH_NOT_ADJACENT_SCHOOL",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-028C2D07EF1C",
+      "source_id": "AO-AMER-R28-US-30-19",
+      "name": "St Mary",
+      "lat": 39.6446277,
+      "lon": -77.7249439,
+      "source_ref": "osm:way:956997178",
+      "source_url": "https://www.openstreetmap.org/way/956997178",
+      "review_scope": "HAGERSTOWN_SAINT_MARY_CHURCH_BUILDING_NOT_PARISH_OFFICE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0320E86C5E56",
+      "source_id": "AO-AMER-R28-US-19-03",
+      "name": "Sacred Heart",
+      "lat": 33.7303742,
+      "lon": -116.3656147,
+      "source_ref": "osm:way:105811081",
+      "source_url": "https://www.openstreetmap.org/way/105811081",
+      "review_scope": "PALM_DESERT_SACRED_HEART_CHURCH_BUILDING_NOT_SCHOOL_CAMPUS_OR_RELATION",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-03A3AE24D334",
+      "source_id": "AO-AMER-R28-US-19-07",
+      "name": "Sacred Heart Catholic",
+      "lat": 32.0603972,
+      "lon": -81.0993736,
+      "source_ref": "osm:way:950223950",
+      "source_url": "https://www.openstreetmap.org/way/950223950",
+      "review_scope": "SAVANNAH_SACRED_HEART_CHURCH_FOOTPRINT_ADJACENT_TO_NAMED_OSM_NODE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0A22291A4428",
+      "source_id": "AO-AMER-R28-US-26-06",
+      "name": "St Frances Cabrini",
+      "lat": 31.282011,
+      "lon": -92.455895,
+      "source_ref": "osm:way:1062235053",
+      "source_url": "https://www.openstreetmap.org/way/1062235053",
+      "review_scope": "ALEXANDRIA_FRANCES_CABRINI_CHURCH_BUILDING_NOT_SCHOOL_2215_TEXAS_AVENUE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0AFAF04ADE71",
+      "source_id": "AO-EUR-DE-136",
+      "name": "St Mariä Himmelfahrt",
+      "lat": 50.8679565,
+      "lon": 6.0912411,
+      "source_ref": "osm:way:243988946",
+      "source_url": "https://www.openstreetmap.org/way/243988946",
+      "review_scope": "HERZOGENRATH_MARIA_HIMMELFAHRT_PARISH_CHURCH_NOT_RECTORY",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0B8749A10D66",
+      "source_id": "AO-AMER-R28-US-27-09",
+      "name": "St John Baptist Catholic",
+      "lat": 32.3710127,
+      "lon": -86.2993657,
+      "source_ref": "osm:way:692352694",
+      "source_url": "https://www.openstreetmap.org/way/692352694",
+      "review_scope": "MONTGOMERY_ST_JOHN_BAPTIST_CHURCH_NOT_533_UNION_CONVENT",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0712DCD78856",
+      "source_id": "AO-WORLD-R35-BR-05-19",
+      "name": "Igreja Nossa Senhora do Rosário dos Homens Pretos",
+      "lat": -1.4526174,
+      "lon": -48.497261,
+      "source_ref": "osm:way:1267548521",
+      "source_url": "https://www.openstreetmap.org/way/1267548521",
+      "review_scope": "BELEM_NOSSA_SENHORA_ROSARIO_DOS_HOMENS_PRETOS_HERITAGE_CHURCH",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-0CF7DF0C68AC",
+      "source_id": "LMD:saint-patricks-church-albury-australia",
+      "name": "Saint Patrick's Church Albury, Australia",
+      "lat": -36.083298,
+      "lon": 146.9171806,
+      "source_ref": "osm:way:460667287",
+      "source_url": "https://www.openstreetmap.org/way/460667287",
+      "review_scope": "ALBURY_ST_PATRICK_CHURCH_NOT_ADJACENT_SCHOOL_OR_CHAPEL",
       "place_id": null
     }
   ]

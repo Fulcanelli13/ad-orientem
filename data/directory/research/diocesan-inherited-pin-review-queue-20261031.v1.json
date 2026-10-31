@@ -3,18 +3,18 @@
   "as_of": "2026-10-31",
   "provenance": {
     "branch": "feature/tlm-visual-fallback-20261030",
-    "audit_blob_sha": "ca3198a7bc834e21e3c4c7d7ed23ad81abff0ddb"
+    "audit_blob_sha": "a0671c7c0aa8935a34c57e964499a2809c642647"
   },
   "policy": "Source-labelled diocesan is not independently verified operator ownership. Coordinates remain provisional. This is a screening queue, not source evidence, site verification, nor photograph approval. Exact building identity and acceptable licensed imagery must be independently reviewed.",
-  "count": 442,
+  "count": 434,
   "by_country": {
-    "US": 259,
+    "US": 254,
     "CA": 7,
-    "BR": 40,
-    "DE": 39,
+    "BR": 39,
+    "DE": 38,
     "IT": 40,
     "PH": 2,
-    "AU": 16,
+    "AU": 15,
     "PL": 13,
     "AR": 5,
     "GB": 7,
@@ -28,9 +28,9 @@
     "JP": 1
   },
   "by_photo_gate": {
-    "INHERITED_POINT_UNASSESSED": 426,
-    "OPERATOR_EXCLUDED": 7,
-    "OPERATOR_REQUIRES_REVIEW": 9
+    "INHERITED_POINT_UNASSESSED": 417,
+    "OPERATOR_REQUIRES_REVIEW": 10,
+    "OPERATOR_EXCLUDED": 7
   },
   "rows": [
     {
@@ -41,19 +41,6 @@
       "source_description": "Springfield, MO (locality only; street not established — source unverified)",
       "lat": 37.198379,
       "lng": -93.285794,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
-      "physical_group_id": "RG-028C2D07EF1C",
-      "source_id": "AO-AMER-R28-US-30-19",
-      "name": "St Mary",
-      "country": "US",
-      "source_description": "Hagerstown, MD (locality only; street not established — source unverified)",
-      "lat": 39.64462,
-      "lng": -77.724979,
       "photo_gate": "INHERITED_POINT_UNASSESSED",
       "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
@@ -73,19 +60,6 @@
       "photo_approved": false
     },
     {
-      "physical_group_id": "RG-0320E86C5E56",
-      "source_id": "AO-AMER-R28-US-19-03",
-      "name": "Sacred Heart",
-      "country": "US",
-      "source_description": "43775 Deep Canyon Rd, Palm Desert CA",
-      "lat": 33.730452,
-      "lng": -116.365598,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
       "physical_group_id": "RG-039BD5307887",
       "source_id": "AO-WORLD-R35-BR-10-14",
       "name": "São João Maria Vianney, Imaculado Coração de Nossa Senhora do Rosário de Fátima",
@@ -93,19 +67,6 @@
       "source_description": "354 - Parque Leopoldina (locality only; street not established — source unverified)",
       "lat": -21.750176,
       "lng": -41.347555,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
-      "physical_group_id": "RG-03A3AE24D334",
-      "source_id": "AO-AMER-R28-US-19-07",
-      "name": "Sacred Heart Catholic",
-      "country": "US",
-      "source_description": "Savannah, GA (locality only; street not established — source unverified)",
-      "lat": 32.060232,
-      "lng": -81.099493,
       "photo_gate": "INHERITED_POINT_UNASSESSED",
       "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
@@ -216,19 +177,6 @@
       "photo_approved": false
     },
     {
-      "physical_group_id": "RG-0712DCD78856",
-      "source_id": "AO-WORLD-R35-BR-05-19",
-      "name": "Igreja Nossa Senhora do Rosário dos Homens Pretos",
-      "country": "BR",
-      "source_description": "337 - Campina (locality only; street not established — source unverified)",
-      "lat": -1.45274,
-      "lng": -48.49717,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
       "physical_group_id": "RG-07FDD0150233",
       "source_id": "AO-ASIA-PH-001",
       "name": "Chapel of St. Augustine",
@@ -255,19 +203,6 @@
       "photo_approved": false
     },
     {
-      "physical_group_id": "RG-0A22291A4428",
-      "source_id": "AO-AMER-R28-US-26-06",
-      "name": "St Frances Cabrini",
-      "country": "US",
-      "source_description": "Alexandria, LA (locality only; street not established — source unverified)",
-      "lat": 31.281956,
-      "lng": -92.455895,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
       "physical_group_id": "RG-0A6B76396C09",
       "source_id": "AO-EUR-DE-002",
       "name": "Adelhauser Kirche Mariä Verkündigung und Sankt Katharina",
@@ -275,19 +210,6 @@
       "source_description": "Freiburg im Breisgau (locality only; street not established — source unverified)",
       "lat": 47.992845,
       "lng": 7.85144,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
-      "physical_group_id": "RG-0AFAF04ADE71",
-      "source_id": "AO-EUR-DE-136",
-      "name": "St Mariä Himmelfahrt",
-      "country": "DE",
-      "source_description": "52134 Herzogenrath (locality only; street not established — source unverified)",
-      "lat": 50.867995,
-      "lng": 6.091263,
       "photo_gate": "INHERITED_POINT_UNASSESSED",
       "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
@@ -320,19 +242,6 @@
       "photo_approved": false
     },
     {
-      "physical_group_id": "RG-0B8749A10D66",
-      "source_id": "AO-AMER-R28-US-27-09",
-      "name": "St John Baptist Catholic",
-      "country": "US",
-      "source_description": "Montgomery, AL (locality only; street not established — source unverified)",
-      "lat": 32.370995,
-      "lng": -86.299357,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
       "physical_group_id": "RG-0BA8006DB9FE",
       "source_id": "AO-AMER-R26-US-04-01",
       "name": "Christ the King Chapel",
@@ -353,19 +262,6 @@
       "source_description": "Melbourne, Victoria (locality only; street not established — source unverified)",
       "lat": -37.8016,
       "lng": 144.9701,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
-      "photo_approved": false
-    },
-    {
-      "physical_group_id": "RG-0CF7DF0C68AC",
-      "source_id": "LMD:saint-patricks-church-albury-australia",
-      "name": "Saint Patrick's Church Albury, Australia",
-      "country": "AU",
-      "source_description": "Albury, Australia (inherited label locality only; no new address corroboration)",
-      "lat": -36.0832333,
-      "lng": 146.917215,
       "photo_gate": "INHERITED_POINT_UNASSESSED",
       "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
@@ -444,8 +340,8 @@
       "source_description": "Wołomin (locality only; street not established — source unverified)",
       "lat": 52.33846,
       "lng": 21.240112,
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
+      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
+      "operator_scope": "DIOCESAN_PARISH_CHAPEL_IBP_MINISTRY_OPERATOR_EMBLEM_PENDING",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
