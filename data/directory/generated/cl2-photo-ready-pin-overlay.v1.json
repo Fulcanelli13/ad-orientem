@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 66,
+    "new_site_pins": 67,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -865,6 +865,17 @@
       "source_ref": "address:sprawdzadres:wrzesnia-slowackiego-2",
       "source_url": "https://sprawdzadres.pl/wielkopolskie/wrzesnia/slowackiego/2",
       "review_scope": "HOSPITAL_BUILDING_NOT_INTERIOR_CHAPEL_POSITION",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-261733295B4C",
+      "source_id": "AO-B39-LOC-IT-B7E3416FBF04",
+      "name": "Cappella della Madonna di Pompignano",
+      "lat": 39.8976619,
+      "lng": 18.2139344,
+      "source_ref": "unavoce:google-place:ae1bcf27ad68348",
+      "source_url": "https://www.google.com/maps/place/Cappella+della+Madonna+di+Pompignano/@39.8976619,18.2117457,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae1bcf27ad68348!8m2!3d39.8976619!4d18.2139344",
+      "review_scope": "UNAVOCE_LINKED_CHAPEL_PLACE_NOT_DESTROYED_SPECCHIA_SITE",
       "place_id": null
     }
   ]
