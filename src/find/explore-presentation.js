@@ -177,28 +177,6 @@ function placeSheet(vm){
   }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
-  // Reciprocal navigation is restricted to independently documented canonical
-  // journey identities. It is not generated from nearby pins or name matching.
-  if(arr(vm.placeJourneys).length){
-    html+='<section class="aoExplorePlaceGroup aoExplorePlaceJourneys" data-explore-place-journeys>'+
-      '<h3>'+esc(L(vm.language,"Documented journeys associated with this place",
-        "Parcours attestés associés à ce lieu"))+'</h3>';
-    for(const journey of vm.placeJourneys){
-      const detail=journey.relation==="RELATED_SHRINE_NOT_TERMINUS"
-        ?L(vm.language,"Related Catholic shrine — NOT the pilgrimage terminus for this edition",
-          "Sanctuaire catholique associé — PAS le terminus de cette édition")
-        :journey.relation==="NAMED_STAGE"
-        ?L(vm.language,"Published stage "+journey.ordinal,"Étape attestée "+journey.ordinal)
-        :L(vm.language,"Linked pilgrimage destination place","Lieu de destination associé");
-      html+='<button type="button" class="aoExplorePlaceJourneyRow" data-explore-place-journey="'+esc(journey.routeId)+'">'+
-        '<strong>'+esc(journey.name)+'</strong>'+
-        '<small>'+esc(detail)+'</small><span aria-hidden="true">→</span></button>';
-    }
-    html+='<p>'+esc(L(vm.language,
-      "Published pilgrimage records; not live route navigation or current access information.",
-      "Parcours documentés ; ni navigation GPS ni informations d’accès en temps réel."))+'</p></section>';
-  }
-
   // Reader-first: only source-owned text and already linked devotions appear.
   // Chapter shortcuts scroll this Place sheet, never leave the application.
   const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
@@ -222,13 +200,14 @@ function placeSheet(vm){
   const hasNovenas=arr(profile.novenas).length>0;
   const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
-  if(profile.editorial_feature||chapters.length||hasGuide||hasGallery||hasTreasures||hasSiteCustoms){
+  if(profile.editorial_feature||chapters.length||hasGuide||hasGallery||hasTreasures||hasSiteCustoms||arr(vm.placeJourneys).length){
     html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
     if(chapters.length||synopsis||hasEditorialIntro)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
     if(hasTreasures)html+='<button type="button" data-explore-place-jump="treasures">'+esc(L(vm.language,"Sacred treasures","Trésors sacrés"))+'</button>';
     if(hasSiteCustoms)html+='<button type="button" data-explore-place-jump="customs">'+esc(L(vm.language,"Local customs","Coutumes locales"))+'</button>';
     if(hasGallery)html+='<button type="button" data-explore-place-jump="gallery">'+esc(L(vm.language,"Photographs","Photographies"))+'</button>';
     if(hasGuide)html+='<button type="button" data-explore-place-jump="guide">'+esc(L(vm.language,"Pilgrimage guide","Guide du pèlerin"))+'</button>';
+    if(arr(vm.placeJourneys).length)html+='<button type="button" data-explore-place-jump="journeys">'+esc(L(vm.language,"Journeys","Parcours"))+'</button>';
     if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
     if(hasCalendar)html+='<button type="button" data-explore-place-jump="calendar">'+esc(L(vm.language,"Calendar","Calendrier"))+'</button>';
     if(profile.directions_url)html+='<button type="button" data-explore-place-jump="visit">'+esc(L(vm.language,"Visit","Visiter"))+'</button>';
@@ -251,7 +230,8 @@ function placeSheet(vm){
       RELIC:["Relics and custody","Reliques et conservation"],
       TRADITION:["Devotional practice","Pratique dévotionnelle"],
     };
-    html+='<section class="aoExplorePlaceOpening aoExploreSourcedStory" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small>';
+    // Intro owns the story jump when published; never create a second story anchor.
+    html+='<section class="aoExplorePlaceOpening aoExploreSourcedStory"'+(hasEditorialIntro?'':' data-explore-place-chapter="story"')+'><small>'+esc(hasEditorialIntro?L(vm.language,"HISTORY AND DEVOTION","HISTOIRE ET DÉVOTION"):L(vm.language,"THE PLACE","LE LIEU"))+'</small>';
     for(const [index,chapter] of visibleChapters.entries()){
       const caption=KIND_LABELS[chapter.kind]??["Record","Fiche"];
       const narrative=vm.language==="fr"?chapter.body_fr:chapter.body_en;
@@ -267,6 +247,29 @@ function placeSheet(vm){
   if(hasSiteCustoms)html+=renderPlaceCustoms(profile,vm.language);
   if(hasGallery)html+=placeGalleryHtml(profile,vm.language);
   if(hasGuide)html+=illustratedGuideHtml(profile,vm.language);
+
+  // Reciprocal navigation is restricted to independently documented canonical
+  // journey identities. It is not generated from nearby pins or name matching.
+  if(arr(vm.placeJourneys).length){
+    html+='<section class="aoExplorePlaceGroup aoExplorePlaceJourneys" data-explore-place-journeys data-explore-place-chapter="journeys">'+
+      '<h3>'+esc(L(vm.language,"Documented journeys associated with this place",
+        "Parcours attestés associés à ce lieu"))+'</h3>';
+    for(const journey of vm.placeJourneys){
+      const detail=journey.relation==="RELATED_SHRINE_NOT_TERMINUS"
+        ?L(vm.language,"Related Catholic shrine — NOT the pilgrimage terminus for this edition",
+          "Sanctuaire catholique associé — PAS le terminus de cette édition")
+        :journey.relation==="NAMED_STAGE"
+        ?L(vm.language,"Published stage "+journey.ordinal,"Étape attestée "+journey.ordinal)
+        :L(vm.language,"Linked pilgrimage destination place","Lieu de destination associé");
+      html+='<button type="button" class="aoExplorePlaceJourneyRow" data-explore-place-journey="'+esc(journey.routeId)+'">'+
+        '<strong>'+esc(journey.name)+'</strong>'+
+        '<small>'+esc(detail)+'</small><span aria-hidden="true">→</span></button>';
+    }
+    html+='<p>'+esc(L(vm.language,
+      "Published pilgrimage records; not live route navigation or current access information.",
+      "Parcours documentés ; ni navigation GPS ni informations d’accès en temps réel."))+'</p></section>';
+  }
+
   if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
   if(!chapters.length&&!synopsis&&!hasEditorialIntro&&!hasTreasures)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
 
