@@ -1,5 +1,10 @@
 name: Explore diocesan OSM first 100 live candidates
 on:
+  push:
+    branches:
+      - "feature/tlm-visual-fallback-20261030"
+    paths:
+      - ".github/workflows/explore-diocesan-osm-first100.yml"
   pull_request:
     types: [opened, synchronize]
     paths:
@@ -13,15 +18,17 @@ concurrency:
 jobs:
   discover:
     if: >-
-      github.event_name == 'pull_request' &&
-      github.event.pull_request.head.repo.full_name == github.repository &&
-      github.head_ref == 'feature/tlm-visual-fallback-20261030'
+      (github.event_name == 'push' &&
+       github.ref_name == 'feature/tlm-visual-fallback-20261030') ||
+      (github.event_name == 'pull_request' &&
+       github.event.pull_request.head.repo.full_name == github.repository &&
+       github.head_ref == 'feature/tlm-visual-fallback-20261030')
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: true
       - uses: actions/setup-node@v4
         with:
@@ -56,7 +63,7 @@ jobs:
           NODE
       - name: Permanently commit research output to existing PR branch
         env:
-          HEAD_BRANCH: ${{ github.head_ref }}
+          HEAD_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
