@@ -238,7 +238,8 @@ try{
  assert.equal(await feastDetails.count(),1);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast]").isChecked(),false,
    "Feast material was silently forced into ordinary Benediction");
- await ensureSettings();\n await feastDetails.locator("summary").tap();
+ await ensureSettings();
+ await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").check();
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Feast options close during configuration");
  assert.equal((await snapshot()).stops,7,"Selecting the feast must not assume optional local ceremonies");
@@ -305,12 +306,14 @@ try{
    "Latin consecration does not replace the French text");
  await navigateStep(5);
  assert.equal((await snapshot()).card,"hymn","Consecration must lead to canonical Tantum Ergo");
- await ensureSettings();\n await feastDetails.locator("summary").tap();
+ await ensureSettings();
+ await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").check();
  assert.equal((await snapshot()).stops,11,"Explicit litany inclusion must add one optional card");
  assert.equal((await snapshot()).card,"hymn","Changing optional elements may not discard the current canonical stage");
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
- await ensureSettings();\n await feastDetails.locator("summary").tap();
+ await ensureSettings();
+ await feastDetails.locator("summary").tap();
  await navigateStep(4);
  assert.equal((await snapshot()).card,"king-sacred-heart-litany");
  const litanyVern=page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]");
@@ -333,7 +336,8 @@ try{
  await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-latin.png"),animations:"disabled"});
  await navigateStep(6);
  assert.equal((await snapshot()).card,"hymn","The complete optional litany must precede Consecration and Tantum Ergo");
- await ensureSettings();\n await feastDetails.locator("summary").tap();
+ await ensureSettings();
+ await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
  assert.equal((await snapshot()).stops,10);
  await navigateStep(9);
@@ -341,7 +345,8 @@ try{
  assert.equal(await page.locator(rootSel).getAttribute("data-ao-benediction-final"),"true");
  assert.ok(await page.locator(rootSel+" .aoP435930GuideNav").evaluate(x=>getComputedStyle(x).display)!=="none",
    "The optional celebration must not hide the final Reposition exit");
- await ensureSettings();\n await feastDetails.locator("summary").tap();
+ await ensureSettings();
+ await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").uncheck();
  assert.equal((await snapshot()).stops,7,"Ordinary Benediction was not restored on disabling feast");
  await navigateStep(2);
