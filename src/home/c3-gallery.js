@@ -23,12 +23,15 @@ function info(a,img){
 }
 export function c3PrayerMarkup({fr=false,feature=null,attrs="",role="",title="",description="",due=""}={}){
   const first=feature?.id??"prayer.library";
-  const pages=[
-    {id:first,title,desc:description,role:role+(due?" · "+due:""),action:attrs},
-    {id:"rosary",title:fr?"Rosaire":"Rosary",desc:fr?"Méditer les mystères":"Meditate on the mysteries",role:fr?"Prière":"Prayer",action:'data-home-cu-route="pray.rosary"'},
-    {id:"confession",title:"Confession",desc:fr?"Préparer son examen de conscience":"Prepare an examination of conscience",role:fr?"Prière":"Prayer",action:'data-home-cu-route="pray.confession"'},
-    {id:"adoration",title:"Adoration",desc:fr?"Prier devant le Saint-Sacrement":"Prayer before the Blessed Sacrament",role:fr?"Prière":"Prayer",action:'data-home-cu-route="pray.adoration"'}
+  const alternatives=[
+    {id:"confession",title:"Confession",desc:fr?"Préparer son examen de conscience":"Prepare an examination of conscience",role:fr?"Prière":"Prayer",route:"pray.confession"},
+    {id:"adoration",title:"Adoration",desc:fr?"Prier devant le Saint-Sacrement":"Prayer before the Blessed Sacrament",role:fr?"Prière":"Prayer",route:"pray.adoration"},
+    {id:"library",title:fr?"Toutes les prières":"Prayer library",desc:fr?"Choisir une prière":"Explore traditional prayers",role:fr?"Découvrir":"Discover",route:"pray.library"},
+    {id:"daily",title:fr?"Prières quotidiennes":"Daily prayers",desc:fr?"Matin et soir":"Morning and evening",role:fr?"Quotidien":"Daily",route:"pray.morning_evening"}
   ];
+  const selectedRoute=feature?.route??(/data-home-cu-route="([^"]+)"/.exec(attrs)?.[1]??null);
+  const pages=[{id:first,title,desc:description,role:role+(due?" · "+due:""),action:attrs},
+    ...alternatives.filter(item=>item.route!==selectedRoute).slice(0,3).map(item=>({...item,action:'data-home-cu-route="'+item.route+'"'}))];
   return '<div class="aoC3PrayerFrame" data-home-c3-prayer-deck data-c3-feature="'+esc(first)+'">'+
     pages.map((s,i)=>'<article class="aoC3PrayerSlide" data-home-c3-slide="'+i+'"'+(i?' hidden aria-hidden="true"':' aria-hidden="false"')+'>'+
       '<div class="aoC3PrayerArt" aria-hidden="true" data-c3-prayer-art="'+esc(s.id)+'"></div>'+
