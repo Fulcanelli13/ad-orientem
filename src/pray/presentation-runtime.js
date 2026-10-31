@@ -3539,6 +3539,7 @@ function onClick(e){
   ANGELUS_COVER_DISMISSED=true;
   const shell=mount()?.querySelector('[data-ao-claude-horarium]');
   shell?.classList.replace('aoClaudeHorariumOpening','aoClaudeHorariumReading');
+  if(shell)shell.dataset.aoHorariumOpening='false';
   const intro=shell?.querySelector('[data-ao-horarium-intro]');if(intro)intro.hidden=true;
   b.hidden=true;
   mount()?.querySelector('.aoP435930AngelusSequence .aoDevoCard:not([hidden]) .aoDevoCardScroll')?.focus?.({preventScroll:true});
