@@ -5,7 +5,7 @@
     "branch": "feature/tlm-visual-fallback-20261030",
     "index_sha": "5b362bb6f2cc9d7518db1cb10e9f0879d767be6b",
     "r49_sha": "5724c275c5040584954db197d9e5334055acff03",
-    "overlay_sha": "764573728899c44526f0cfe7d1a86357bf8546bd",
+    "overlay_sha": "da9fe23d068a65c95b7d9fbea55609e32a8c02b1",
     "external_sha": "91b5730051237f8957f6ba8dddc4f9d748cab302"
   },
   "policy": "Coordinates are NOT photograph approvals; no institute or community sites enter diocesan photo search. Listed affiliation is not independently verified ownership. Never treat an R49 inherited source marker as a certified church building.",
@@ -16,22 +16,22 @@
     "mapped": 583,
     "missing": 4,
     "by_coordinate_origin": {
-      "REVIEWED_SITE_OVERLAY": 59,
-      "R49_INHERITED": 521,
+      "REVIEWED_SITE_OVERLAY": 60,
+      "R49_INHERITED": 520,
       "NONE": 4,
       "B91_PUBLISHED_PROVISIONAL": 3
     },
     "inherited_precision": {
-      "source_marker_unassessed": 453,
+      "source_marker_unassessed": 452,
       "building": 32,
       "street": 19,
       "address": 17
     },
     "photo_gates": {
-      "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL": 50,
-      "INHERITED_POINT_UNASSESSED": 505,
+      "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL": 51,
+      "INHERITED_POINT_UNASSESSED": 503,
       "OPERATOR_REQUIRES_REVIEW": 19,
-      "OPERATOR_EXCLUDED": 4,
+      "OPERATOR_EXCLUDED": 5,
       "MISSING_COORDINATE": 4,
       "DISTINCT_BUILDING_OR_INTERIOR_PENDING": 2,
       "PUBLISHED_PROVISIONAL_NEEDS_EXACT_SITE_PHOTO_GATE": 3
@@ -1175,9 +1175,13 @@
       "coordinate_ref": "AO-AMER-R28-US-23-03",
       "coordinate_evidence_url": "https://adorientem.church/find/shrine-chapel-of-the-blessed-sacrament-raritan-c0af2f0e",
       "review_scope": null,
-      "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
-      "photo_research_started": false
+      "operator_scope": "ORATORY_OF_ST_PHILIP_NERI_PASTORAL_CARE_CONFIRMED",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://blessedsacramentshrine.com/who-we-are",
+        "https://raritanoratory.org/about-us"
+      ]
     },
     {
       "physical_group_id": "RG-1867E9AFAF15",
@@ -2428,15 +2432,15 @@
       "country": "US",
       "affiliation_source_label": "Diocesan",
       "source_description": "1700 Buford Hwy, Duluth, GA 30097",
-      "lat": 34.02444,
-      "lng": -84.101699,
-      "coordinate_origin": "R49_INHERITED",
-      "precision": "source_marker_unassessed",
-      "coordinate_ref": "AO-AMER-R28-US-38-01",
-      "coordinate_evidence_url": "https://adorientem.church/find/st-monica-duluth-23757a92",
-      "review_scope": null,
+      "lat": 34.02459,
+      "lng": -84.10151,
+      "coordinate_origin": "REVIEWED_SITE_OVERLAY",
+      "precision": "site",
+      "coordinate_ref": "osm:way:392483318",
+      "coordinate_evidence_url": "https://www.openstreetmap.org/way/392483318",
+      "review_scope": "CATHOLIC_PARISH_CHURCH_BUILDING_NOT_ENTRANCE",
       "operator_scope": "SOURCE_LABEL_DIOCESAN_UNCONFIRMED",
-      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_gate": "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL",
       "photo_research_started": false
     },
     {

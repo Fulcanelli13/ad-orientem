@@ -34,10 +34,10 @@ assert.equal(diocesanQuality.counts.cl2_source_labelled_diocesan,584);
 assert.equal(diocesanQuality.counts.additional_b91_diocesan,3);
 assert.equal(diocesanQuality.counts.mapped,583);
 assert.equal(diocesanQuality.counts.missing,4);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,521);
-assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,59);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.R49_INHERITED,520);
+assert.equal(diocesanQuality.counts.by_coordinate_origin.REVIEWED_SITE_OVERLAY,60);
 assert.equal(diocesanQuality.counts.by_coordinate_origin.B91_PUBLISHED_PROVISIONAL,3);
-assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,453);
+assert.equal(diocesanQuality.counts.inherited_precision.source_marker_unassessed,452);
 const diocesanQualityByGroup=new Map(diocesanQuality.records.map(r=>[r.physical_group_id,r]));
 const blockedCoords=read("data/directory/research/diocesan-coordinate-blockers-20261031.v1.json");
 assert.equal(blockedCoords.items.length,4);
@@ -66,8 +66,8 @@ for(const row of diocesanQuality.records){
 // coordinates independently of Explore's canonical physical-site projection.
 const photoPins=read("data/directory/generated/cl2-photo-ready-pin-overlay.v1.json");
 assert.equal(photoPins.schema,"AO_CL2_PHOTO_READY_PIN_OVERLAY_V1");
-assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:5});
-assert.equal(photoPins.pins.length,88);
+assert.deepEqual(photoPins.counts,{new_site_pins:67,refined_existing_site_pins:16,corrected_existing_site_pins:6});
+assert.equal(photoPins.pins.length,89);
 assert.equal(new Set(photoPins.pins.map(p=>p.physical_group_id)).size,86);
 for(const pin of photoPins.pins){
  const venue=world.find(x=>x.physical_group_id===pin.physical_group_id);
@@ -118,6 +118,17 @@ for(const [group,lat,lng,ref,scope] of [
 }
 assert.equal(diocesanQualityByGroup.get("RG-2ACA16F334CA").operator_scope,
  "DIOCESAN_ORATORY_CONFIRMED_BY_DIOCESE");
+const stMonica=world.find(x=>x.physical_group_id==="RG-3235F2E6494F");
+assert.ok(stMonica?.map_publishable);
+assert.equal(stMonica.geo.lat,34.02459);
+assert.equal(stMonica.geo.lng,-84.10151);
+assert.equal(stMonica.geo.source_ref,"osm:way:392483318");
+assert.equal(stMonica.geo.review_scope,"CATHOLIC_PARISH_CHURCH_BUILDING_NOT_ENTRANCE");
+const raritanGate=diocesanQualityByGroup.get("RG-18659A3C6ECE");
+assert.equal(raritanGate.photo_gate,"OPERATOR_EXCLUDED");
+assert.equal(raritanGate.operator_scope,"ORATORY_OF_ST_PHILIP_NERI_PASTORAL_CARE_CONFIRMED");
+assert.ok(raritanGate.operator_evidence.every(url=>url.startsWith("https://")));
+assert.equal(diocesanQuality.counts.photo_gates.OPERATOR_EXCLUDED,5);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);

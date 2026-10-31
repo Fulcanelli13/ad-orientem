@@ -43,6 +43,19 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+  "RG-3235F2E6494F":Object.freeze({
+   sourceId:"AO-AMER-R28-US-38-01",name:"St. Monica",country:"US",
+   addressNeedle:"1700 Buford Hwy",placeId:null,
+   lat:34.02459,lng:-84.10151,precision:"site",
+   sourceRef:"osm:way:392483318",
+   sourceUrl:"https://www.openstreetmap.org/way/392483318",
+   correctedAddress:"St. Monica Catholic Church, 1700 Buford Highway, Duluth, GA 30097, USA",
+   reviewScope:"CATHOLIC_PARISH_CHURCH_BUILDING_NOT_ENTRANCE",
+   evidence:Object.freeze([
+    "https://poiexplorer.com/north-america/united-states/georgia/gwinnett-county/johns-creek/religion/saint-monica-catholic-church-w392483318",
+    "https://saintmonicas.com/archdiocese-of-atlanta/"
+   ]),
+  }),
   "RG-18B421A46625":Object.freeze({
    sourceId:"AO-EUR-DE-082",name:"Paderborn Cathedral",country:"DE",
    addressNeedle:"Paderborn",placeId:null,
