@@ -51,6 +51,15 @@ export const HORARIUM_HOURS_STYLES=String.raw`
   border-left-color:var(--liturgical,#d8bd7d)!important;
   opacity:1!important;color:var(--text,#f1e7d7);
 }
+#aoPray435930 [data-ao-hours-family="rule"] .aoTP381TextParagraph.aoHoursCollective{
+  border-left:2px solid var(--ao-hours-rule);
+  background:var(--ao-hours-tint);
+  padding:10px 13px;margin-left:clamp(8px,3vw,18px);
+}
+#aoPray435930 [data-ao-hours-family="rule"] .aoTP381TextParagraph.aoHoursCollective[data-ao-devo-active="true"]{
+  opacity:1!important;color:var(--text,#f1e7d7);
+  border-left-color:var(--liturgical,#d8bd7d);
+}
 #aoPray435930 [data-ao-hours-family="rule"] .aoTP381GuideCard,
 #aoPray435930 [data-ao-hours-family="examen"] .aoTP381GuideCard{
   max-width:620px;margin-inline:auto;gap:clamp(15px,2.7vh,23px);
