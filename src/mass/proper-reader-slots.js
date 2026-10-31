@@ -1,6 +1,7 @@
 import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {correct1962ProperEditorialReferences} from "./1962-proper-editorial-corrections.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "./1962-ps113-alleluia-editorial.js";
+import {project1962AllSoulsDiesIraeEnglishDisplayRows,ALL_SOULS_DIES_IRAE_SOURCE_NOTE} from "./1962-all-souls-sequence-english.js";
 import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
 import {inspect1962PluralMartyrsFrenchOrationSource, reconcile1962PerpetuaFelicityNonVirginCommon, reconcile1962PluralFemaleMartyrsCommonFrench} from "./1962-plural-martyr-french-source.js";
 const REQUIRED_SLOTS = Object.freeze([
@@ -319,27 +320,35 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
       })})
     :chantSlot;
 
-  // Source proof and all frozen source text were validated ABOVE. Apply
-  // the one authorised English readability improvement only to output rows.
+  // Source proof and frozen trilingual Proper texts remain untouched.
+  // Apply only narrowly sourced display repairs AFTER validation.
   const presented={...slots};
-  let editorialApplied=false;
+  let pent21EditorialApplied=false,allSoulsEditorialApplied=false;
   for(const id of ["GRADUAL","ALLELUIA_TRACT_SEQUENCE"]){
     const entry=slots[id];
     if(entry?.status!=="READY")continue;
-    const rows=project1962Pent21AlleluiaDisplayRows(
+    const correctedPent21=project1962Pent21AlleluiaDisplayRows(
       proper,entry.data.paragraphs,{language:locale});
-    if(rows===entry.data.paragraphs)continue;
-    editorialApplied=true;
+    const correctedAllSouls=id==="ALLELUIA_TRACT_SEQUENCE"
+      ?project1962AllSoulsDiesIraeEnglishDisplayRows(
+        proper,correctedPent21,{language:locale})
+      :correctedPent21;
+    if(correctedAllSouls===entry.data.paragraphs)continue;
+    if(correctedPent21!==entry.data.paragraphs)pent21EditorialApplied=true;
+    if(correctedAllSouls!==correctedPent21)allSoulsEditorialApplied=true;
     presented[id]=Object.freeze({...entry,
-      data:Object.freeze({...entry.data,paragraphs:rows})});
+      data:Object.freeze({...entry.data,paragraphs:correctedAllSouls})});
   }
   const missing=REQUIRED_SLOTS.filter(slot=>!["READY","NOT_APPLICABLE"].includes(presented[slot].status));
   return Object.freeze({
     schema:"ao-reader-proper-slots-v1",
     sourcePath:proper.sourcePath??null,
     ...(proper.sourceEditorialCorrections?.length?{sourceEditorialCorrections:proper.sourceEditorialCorrections}:{}),
-    ...(editorialApplied?{displayTranslationCorrections:
-      Object.freeze([PS113_PENT21_ENGLISH_EDITORIAL])}:{}),
+    ...((pent21EditorialApplied||allSoulsEditorialApplied)?{displayTranslationCorrections:
+      Object.freeze([
+        ...(pent21EditorialApplied?[PS113_PENT21_ENGLISH_EDITORIAL]:[]),
+        ...(allSoulsEditorialApplied?[ALL_SOULS_DIES_IRAE_SOURCE_NOTE]:[]),
+      ])}:{}),
     slots:Object.freeze(presented),
     missing:Object.freeze(missing),
     ready:missing.length===0,
