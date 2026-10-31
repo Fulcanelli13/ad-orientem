@@ -56,19 +56,26 @@ export function syncClaudeChoirBar(card,element,{inline=false}={}){
   card.querySelector('.aoClaudeChoirBeat[data-ao-devo-active="true"]')||
   card.querySelector('.aoClaudeChoirBeat');
  const answer=focus?.dataset?.aoChoirAnswer||"";
+ const sourceIndex=focus?.dataset?.aoChoirSourceIndex;
  const show=!inline&&Boolean(answer);
+ const wasVisible=!bar.hidden;
  bar.hidden=!show;
  if(show){
   const text=bar.querySelector(".aoClaudeChoirResponseText");
-  // A stable refrain must not replay its animation every time the user
-  // changes paragraph focus or a scroll observer rechecks the same unit.
-  // Reanimate only when the actual source response changes.
-  if(text && text.textContent!==answer){
-   text.textContent=answer;
+  const responseChanged=Boolean(text&&text.textContent!==answer);
+  // Claude's source pulses for EACH NEW invocation, even when the response
+  // remains "pray for us". Scroll observers may recheck the same line, so
+  // key the pulse to its canonical source index instead of each callback.
+  const invocationChanged=sourceIndex!=null&&bar.dataset?.aoChoirFocusIndex!==sourceIndex;
+  if(text&&responseChanged)text.textContent=answer;
+  if(bar.dataset&&sourceIndex!=null)bar.dataset.aoChoirFocusIndex=sourceIndex;
+  if(text&&(responseChanged||invocationChanged||!wasVisible)){
    bar.classList.remove("ring");
    void bar.offsetWidth;
    bar.classList.add("ring");
   }
+ }else if(bar.dataset){
+  delete bar.dataset.aoChoirFocusIndex;
  }
  return show;
 }
