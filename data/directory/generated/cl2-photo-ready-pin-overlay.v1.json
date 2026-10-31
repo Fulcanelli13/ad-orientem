@@ -4,7 +4,7 @@
   "branch": "feature/tlm-visual-fallback-20261030",
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
-    "new_site_pins": 49,
+    "new_site_pins": 55,
     "refined_existing_site_pins": 9,
     "corrected_existing_site_pins": 3
   },
@@ -678,6 +678,72 @@
       "source_ref": "osm:way:169044576",
       "source_url": "https://www.openstreetmap.org/way/169044576",
       "review_scope": "HISTORIC_FILIAL_CHURCH_NOT_NEARBY_BASILICA",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-04ED0DAE5D46",
+      "source_id": "AO-B39-LOC-PL-8AFC063B0397",
+      "name": "Kościół Wniebowzięcia NMP",
+      "lat": 50.003877,
+      "lng": 18.462301,
+      "source_ref": "osm:way:93211460",
+      "source_url": "https://www.openstreetmap.org/way/93211460",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-13C11CB31E3F",
+      "source_id": "AO-B39-LOC-IT-65724603C504",
+      "name": "Oratorio di San Francesco Poverino",
+      "lat": 43.776661,
+      "lng": 11.260311,
+      "source_ref": "independent:firenze-loggiato-san-francesco-poverino",
+      "source_url": "https://www.feelflorence.it/it/punti-di-interesse/oratorio-di-san-francesco-poverino",
+      "review_scope": "ORATORY_WITHIN_LOGGIA_NOT_INDEPENDENT_DOOR",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-7E91D5FD0AC3",
+      "source_id": "AO-B39-LOC-SK-FA51618C8159",
+      "name": "Kaplnka Svätého Michala Archanjela",
+      "lat": 48.31315521174904,
+      "lng": 18.084892176995208,
+      "source_ref": "osm:way:58219944",
+      "source_url": "https://www.openstreetmap.org/way/58219944",
+      "review_scope": "PHYSICAL_CHURCH_NOT_ENTRANCE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-D2CECBA0C364",
+      "source_id": "AO-B39-LOC-SK-A8267BEFF673",
+      "name": "Kostol Navštívenia Panny Márie",
+      "lat": 48.1460325461052,
+      "lng": 17.11044759831011,
+      "source_ref": "osm:way:77918570",
+      "source_url": "https://www.openstreetmap.org/way/77918570",
+      "review_scope": "HOSPITALLER_BROTHERS_CHURCH_NOT_INDEPENDENT_DIOCESAN_PARISH",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-F03B6AF4FA24",
+      "source_id": "AO-B38-LOC-NL-79F20E0188E",
+      "name": "Sint-Salviuskerk",
+      "lat": 51.01252,
+      "lng": 5.83907,
+      "source_ref": "osm:way:282449190",
+      "source_url": "https://www.openstreetmap.org/way/282449190",
+      "review_scope": "NEW_ACTIVE_PARISH_CHURCH_NOT_OLD_HISTORIC_SALVIUSKERK",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-CC73C2CBD613",
+      "source_id": "AO-B39-LOC-PL-D8909F2A26BE",
+      "name": "Kościół Świętego Jakuba",
+      "lat": 50.092367,
+      "lng": 18.220611,
+      "source_ref": "commons:object-location:raciborz-saint-james",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ko%C5%9Bci%C3%B3%C5%82_%C5%9Bw._Jakuba_w_Raciborzu_%28wn%C4%99trze_4%29.JPG",
+      "review_scope": "FILIAL_SAINT_JAMES_NOT_ASSUMPTION_PARISH_CHURCH",
       "place_id": null
     }
   ]
