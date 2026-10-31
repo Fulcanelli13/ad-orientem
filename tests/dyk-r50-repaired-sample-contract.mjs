@@ -20,8 +20,8 @@ assert.ok(patch.replacement.statement.en.length>50&&patch.replacement.statement.
 assert.equal(patch.replacement.source_page_image_directly_checked,true);
 assert.equal(patch.replacement.publication_authorized,false);
 assert.equal(patch.replacement.full_612_semantic_uniqueness_approved,false);
-assert.equal(patch.revisions.length,11);
-assert.equal(patch.original_folio_direct_checks.length,12);
+assert.equal(patch.revisions.length,13);
+assert.equal(patch.original_folio_direct_checks.length,16);
 assert.ok(patch.original_folio_direct_checks.every(x=>x.method==="CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT"&&x.historical_independence_verified===false));
 assert.equal(corrected.sample.length,50);
 assert.equal(corrected.sample[2].original_disqualified_id,"DYK-GI-G074");
@@ -63,4 +63,4 @@ assert.equal(patch.summary.all_50_finally_approved,false);
 assert.equal(patch.summary.new_publications,0);
 assert.equal(originalIndex.quality.publication_authorized,false);
 assert.equal(originalIndex.quality.new_h7_publications,0);
-console.log("PASS DYK R50 repaired review-only sample: original 50 retained by draw, #3 substituted transparently, 12 source checks, 0 publication");
+console.log("PASS DYK R50 repaired review-only sample: original 50 retained by draw, #3 substituted transparently, 16 source checks, 0 publication");
