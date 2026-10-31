@@ -182,8 +182,12 @@ assert.match(prayPresentation,/data-ao-pray-module-asset/);
 assert.match(prayPresentation,/data-ao-asset-renderer="embedded-symbol"/);
 assert.doesNotMatch(prayPresentation,/AO_ICON_REGISTRY_V4333/,"PRAY regained the historical icon registry");
 assert.match(settingsOwner,/canonicalAssetIdForSurface\("settings"\)/);
-assert.match(settings,/ao-ui-back/);
-assert.match(settings,/ao-ui-close/);
-assert.match(settings,/ao-ui-next/);
+// Missal Preferences deliberately uses typographic Back/Close/next instead
+// of mask icons. Keep one actionable control for each, without importing a
+// new asset or enabling the historical Settings owner.
+assert.match(settings,/data-settings-back/);
+assert.match(settings,/data-settings-close/);
+assert.match(settings,/data-settings-route/);
+assert.match(settings,/PREFERENCES_BOOK_CSS/);
 
 console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols; "+CONSUMED_DEVOTIONAL_MASK_ASSETS.length+" consumed devotional masks are physically externalized.");
