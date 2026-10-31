@@ -52,3 +52,19 @@ Previews of the exact Commons source pages were visually inspected for Stations 
 - Photographic preview review (not exact-byte sign-off) includes additional official/source images for Station IV and VII. This does not resolve final crop, white balance, frame inclusion or mobile page QA of their archived WebPs.
 
 **Current decision:** no fee is necessary for these CC BY-SA photographs, but the project policy and artistic review gates remain in place. Do not merge a live release until those explicit gates and phone-reader QA are complete.
+
+
+## 31 October — actual byte/pixel QA result (GitHub Actions)
+
+[Read-only image diagnostics run #41175069994](https://github.com/Fulcanelli13/ad-orientem/actions/runs/41175069994) **completed successfully** on PR #2121, commit `e1b3cc540a0fe6d8ce02fc4663249ecd23d62835`. Every image was opened with Pillow, compared with its archived derivative SHA-256 and declared dimensions, and evaluated at a bounded thumbnail scale for exposure, luma variance, colour and outer-strip statistics.
+
+| Automated result | Count |
+| --- | ---: |
+| Distinct archived WebPs opened and SHA-256 verified | 14/14 |
+| Image dimensions >= 1800 × 2000 | 14/14 |
+| Potential uniform dark outer bands flagged | 0/14 |
+| Near-monochrome image flags | 0/14 |
+| Manual artistic/full-resolution crop sign-offs | 0/14 |
+| Published Station images | 0/14 |
+
+The same job initially revealed a pre-existing strict URL-string test mismatch (a CC BY-SA 4.0 source link with no terminal slash). The test now normalizes the terminal slash and the workflow passed with that correction. **This is a machine-level QA pass, not proof that every original painting is perfectly frame-free or artistically selected.**
