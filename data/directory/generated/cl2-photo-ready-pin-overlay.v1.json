@@ -5,7 +5,7 @@
   "policy": "Only pinned physical-site geometry; do not infer photograph identity, mass, entrance, owner or photo rights",
   "counts": {
     "new_site_pins": 67,
-    "refined_existing_site_pins": 14,
+    "refined_existing_site_pins": 16,
     "corrected_existing_site_pins": 3
   },
   "pins": [
@@ -931,6 +931,28 @@
       "source_ref": "osm:node:354389830",
       "source_url": "https://www.openstreetmap.org/node/354389830",
       "review_scope": "CATHEDRAL_CHURCH_AT_1003_DOUGLAS_NOT_1000_OFFICE_NOT_SAINT_BONIFACE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-130C766CB4B6",
+      "source_id": "AO-EUR-GB-011",
+      "name": "Cathedral Church of St Barnabas",
+      "lat": 52.954638,
+      "lng": -1.1571735,
+      "source_ref": "historicengland:1247533",
+      "source_url": "https://historicengland.org.uk/listing/the-list/list-entry/1247533",
+      "review_scope": "GRADE_II_LISTED_CATHEDRAL_CHURCH_NOT_OTHER_NOTTINGHAM_SITE",
+      "place_id": null
+    },
+    {
+      "physical_group_id": "RG-1484AB15A7A1",
+      "source_id": "AO-AMER-R27-US-06-18",
+      "name": "Holy Name of Jesus Cathedral",
+      "lat": 35.7775,
+      "lng": -78.67016,
+      "source_ref": "osm:way:553750193",
+      "source_url": "https://www.openstreetmap.org/way/553750193",
+      "review_scope": "CATHEDRAL_BUILDING_NOT_ADJACENT_PARISH_CENTER",
       "place_id": null
     }
   ]
