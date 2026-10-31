@@ -43,6 +43,18 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-A0933DE542C7":Object.freeze({
+  sourceId:"AO-B38-LOC-ES-E7A90BC3DB7",name:"Iglesia Cripta del Santísimo Cristo",country:"ES",addressNeedle:"Santander",placeId:null,
+  lat:43.46081,lng:-3.80701,sourceRef:"osm:node:7704619785",sourceUrl:"https://www.openstreetmap.org/node/7704619785",
+  correctedAddress:"Parroquia del Santísimo Cristo, Calle de los Azogues, 39002 Santander, Spain",precision:"site",reviewScope:"CRYPT_CHURCH_SITE_NOT_CATHEDRAL_ENTRANCE",
+  evidence:Object.freeze(["https://mapcarta.com/N7704619785","https://iglesiacercademi.com/santander/parroquia-del-santisimo-cristo/"]),
+ }),
+ "RG-938EAA84BA0A":Object.freeze({
+  sourceId:"AO-B39-LOC-IT-A5B23CB1B0E5",name:"Chiesa dei SS Cirillo e Metodio",country:"IT",addressNeedle:"Via Osteria di Dragoncello 12",placeId:null,
+  lat:41.789059,lng:12.344535,sourceRef:"turismoroma:158912",sourceUrl:"https://www.turismoroma.it/it/node/158912",
+  correctedAddress:"Via Osteria di Dragoncello 12, Acilia Nord, Roma, Italy",precision:"site",reviewScope:"OFFICIAL_MUNICIPAL_SITE_POSITION_NOT_ENTRANCE",
+  evidence:Object.freeze(["https://www.turismoroma.it/de/node/158912","https://www.santicirilloemetodio.it/"]),
+ }),
  "RG-1EE1D2C9B3EB":Object.freeze({
   sourceId:"AO-B39-LOC-HU-C9750B2A6BCA",name:"Karolina-kápolna",country:"HU",addressNeedle:"Vác",placeId:null,
   lat:47.7752,lng:19.13221,sourceRef:"osm:way:297827179",
@@ -587,7 +599,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
