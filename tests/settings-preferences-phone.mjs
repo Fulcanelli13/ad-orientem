@@ -86,6 +86,20 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.snapshot().preferences.mass.defaultForm),"solemn");
     await panel.locator("[data-settings-back]").click();
     await panel.locator('.aoPrefContents [data-settings-route="/settings/accessibility"]').click();
+    // The user explicitly chose manual folio turns. A vertical gesture must
+    // not change chapter, while an unmistakable horizontal gesture does.
+    await page.evaluate(()=>{
+      const h=document.querySelector("#ao-settings-modular-root .aoPrefChapter h2");
+      h.dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerId:42,clientX:170,clientY:220}));
+      h.dispatchEvent(new PointerEvent("pointerup",{bubbles:true,pointerId:42,clientX:172,clientY:120}));
+    });
+    assert.equal(await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1.status().path),"/settings/accessibility","Vertical pan turned a page");
+    await page.evaluate(()=>{
+      const h=document.querySelector("#ao-settings-modular-root .aoPrefChapter h2");
+      h.dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerId:43,clientX:280,clientY:220}));
+      h.dispatchEvent(new PointerEvent("pointerup",{bubbles:true,pointerId:43,clientX:120,clientY:220}));
+    });
+    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1.status().path==="/settings/language-reading");
     await panel.locator("[data-settings-contents]").click();
     await panel.locator('[data-settings-book-route="/settings/about-sources"]').click();
     await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1.status().path==="/settings/about-sources");
