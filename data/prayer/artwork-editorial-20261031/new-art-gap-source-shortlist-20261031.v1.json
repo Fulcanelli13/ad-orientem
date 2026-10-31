@@ -43,22 +43,23 @@
       "note": "Check attribution/provenance and colour before selecting"
     },
     {
-      "work": "Saint Peter Penitent",
+      "work": "Saint Peter Penitent (by 1648, former Sotheby's sale work)",
       "artist": "Guercino",
-      "museum": "National Galleries of Scotland, NG39",
+      "museum": "Private collection (2009 Sotheby's source), NOT Scottish National Gallery NG39",
       "image": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
       "pixels": [
         1421,
         1999
       ],
-      "claimedRights": "Wikimedia Commons PD-Art / Public Domain Mark",
+      "claimedRights": "Wikimedia Commons PD-Art reproduction of Sotheby's 2009 photograph, public-domain determination in USA; other jurisdiction/photograph conditions and native quality require verification",
       "targets": [
         "STG-pray.penitential_psalms-03"
       ],
       "fit": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM_EVENT",
       "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
       "nativeQA": "PENDING",
-      "note": "Prefer this higher resolution reference over the 600px and 477px captures"
+      "note": "DO NOT CONFUSE with National Galleries of Scotland NG39 1639 painting. The two original objects differ (Commons approx. 103.5x76cm, NGS 103.7x85.8cm). NGS online photograph by Antonia Reeve has limited personal/non-commercial licence, NOT an approved free reuse source. User has not accepted either.",
+      "gallery": "NONE_VERIFIED"
     },
     {
       "work": "King David",
@@ -79,6 +80,23 @@
       "status": "NEW_RESEARCH_CANDIDATE_NOT_HUMAN_APPROVED",
       "nativeQA": "PENDING",
       "note": "Sufficient photo dimensions, but discern whether frame is visible and validate use as a thematic David portrait"
+    },
+    {
+      "work": "The Tears of Saint Peter",
+      "artist": "Jusepe de Ribera",
+      "museum": "Metropolitan Museum of Art, New York; accession 2012.416",
+      "image": "https://www.metmuseum.org/art/collection/search/441971",
+      "commonsImage": "https://commons.wikimedia.org/wiki/File:The_Tears_of_Saint_Peter_MET_DP286357.jpg",
+      "claimedRights": "Met Open Access public-domain artwork and image; verify precise local file/open-access flag before production",
+      "targets": [
+        "STG-pray.penitential_psalms-03",
+        "STG-pray.penitential_psalms-04",
+        "STG-pray.penitential_psalms-07"
+      ],
+      "fit": "THEMATIC_SAINT_PETER_REPENTANCE_NOT_LITERALLY_KING_DAVID_PSALM",
+      "status": "NEW_RESEARCH_CANDIDATE_NOT_USER_APPROVED",
+      "nativeQA": "PENDING",
+      "note": "Met 1612–13 oil on canvas. Distinct original from any prior Ribera subject approval; explicit approval of THIS painting required."
     }
   ],
   "explicitRejects": [
@@ -89,5 +107,42 @@
       "reason": "The photographer Rvalette licenses Commons photo CC BY-SA 3.0, outside strict PD/CC0 policy and the scoped Tiepolo-14-only exception; do not automatically publish"
     }
   ],
-  "outstanding": "Native 1:1 photo-quality checks, exact attribution, any frames, source-rights jurisdiction, explicit future art editorial disposition and renderer/card join required. Do not change the 226/267 accepted-mapping count on research candidates."
+  "outstanding": "Native 1:1 photo-quality checks, exact attribution, any frames, source-rights jurisdiction, explicit future art editorial disposition and renderer/card join required. Do not change the 226/267 accepted-mapping count on research candidates.",
+  "purpose": "RESEARCH ONLY; every NEW painting requires direct user artwork approval before any accepted mapping, asset acquisition, production image or publication. Photo rights/quality gates separate.",
+  "newResearchEditorialGate": {
+    "status": "ALL_CANDIDATES_PENDING_EXPLICIT_USER_APPROVAL",
+    "noCandidateMayBeAutoApproved": true,
+    "approvedIds": [],
+    "requireFullArtworkIdentityAndNativePicture": true,
+    "approvedSourceReuseRule": "Earlier accepted SAME PAINTING may be inherited without reconfirmation, but these newly researched painting identities are not among them."
+  },
+  "verifiedExternalContext": [
+    {
+      "artist": "Marcantonio Franceschini",
+      "work": "The Last Communion of Saint Mary of Egypt",
+      "museum": "Met",
+      "id": "437977",
+      "url": "https://www.metmuseum.org/art/collection/search/437977",
+      "rights": "Public Domain",
+      "approval": "USER_ALREADY_KEPT_FOR_COMMUNION_2026_10_28"
+    },
+    {
+      "artist": "Sebastiano Ricci",
+      "work": "The Last Communion of Saint Mary of Egypt",
+      "museum": "NGA",
+      "id": "127587",
+      "url": "https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
+      "rights": "Public domain/open access museum collection subject to exact file QA",
+      "approval": "USER_ALREADY_KEPT_FOR_COMMUNION_2026_10_28"
+    },
+    {
+      "artist": "Aert de Gelder",
+      "work": "King David",
+      "museum": "Rijksmuseum",
+      "id": "SK-A-2695",
+      "url": "https://www.rijksmuseum.nl/en/collection/object/King-David--d019062aea85f018274b37f2c1dd6005",
+      "rights": "Public domain museum object",
+      "approval": "NEW_RESEARCH_UNAPPROVED"
+    }
+  ]
 }
