@@ -182,6 +182,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         seg(L("Angelus or Regina Cæli","Angélus ou Regina Cæli"),"prayer.angelus.seasonalForm",[["auto","By the season","Selon le temps"],["angelus","Angelus","Angélus"],["regina_caeli","Regina Cæli","Regina Cæli"]])+
         toggle(L("Concluding prayers","Prières finales"),"","prayer.angelus.traditionalConclusion")],
       ["II",L("Beads","Chapelets"),L("Rosary and chaplets","Rosaire et chapelets"),
+        seg(L("Recitation","Récitation"),"prayer.recitationMode",[["individual","Individual","Individuelle"],["group","Together","En groupe"]])+
         toggle(L("A verse before each Ave","Un verset avant chaque Ave"),"","prayer.rosary.verseBeforeAve")+
         toggle(L("Scripture before each mystery","Écriture avant chaque mystère"),"","prayer.rosary.scriptureCues")+
         toggle(L("Fatima prayer","Prière de Fatima"),"","prayer.rosary.fatimaPrayer")+
