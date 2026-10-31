@@ -3,7 +3,7 @@
   "as_of": "2026-10-31",
   "provenance": {
     "branch": "feature/tlm-visual-fallback-20261030",
-    "audit_blob_sha": "3ab5182a2f711d40db0b33ad655ebb3d62f9d088"
+    "audit_blob_sha": "d7a47c1aaccc68abdcf20dc350c2104cf5e0f679"
   },
   "policy": "Source-labelled diocesan is not independently verified operator ownership. Coordinates remain provisional. This is a screening queue, not source evidence, site verification, nor photograph approval. Exact building identity and acceptable licensed imagery must be independently reviewed.",
   "count": 434,
@@ -29,8 +29,8 @@
   },
   "by_photo_gate": {
     "INHERITED_POINT_UNASSESSED": 419,
-    "OPERATOR_REQUIRES_REVIEW": 4,
-    "OPERATOR_EXCLUDED": 11
+    "OPERATOR_EXCLUDED": 14,
+    "OPERATOR_REQUIRES_REVIEW": 1
   },
   "rows": [
     {
@@ -340,8 +340,8 @@
       "source_description": "Wołomin (locality only; street not established — source unverified)",
       "lat": 52.33846,
       "lng": 21.240112,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "DIOCESAN_PARISH_CHAPEL_IBP_MINISTRY_OPERATOR_EMBLEM_PENDING",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "WOLOMIN_DIOCESAN_PARISH_CHAPEL_IBP_CELEBRANT_MIXED_NOT_DIOCESAN_ONLY_PHOTO",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -1445,8 +1445,8 @@
       "source_description": "16128 Genova GE (locality only; street not established — source unverified)",
       "lat": 44.403875,
       "lng": 8.931447,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "GENOVA_SANT_ANTONIO_ABATE_MARINA_CONFRATERNITY_ORATORY",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
@@ -5306,8 +5306,8 @@
       "source_description": "44 - Centro (locality only; street not established — source unverified)",
       "lat": -21.758608,
       "lng": -41.323187,
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "operator_scope": "CAMPOS_VENERAVEL_TERCEIRA_ORDEM_CARMO_OWN_CHURCH",
       "review_status": "OSM_CANDIDATES_NOT_YET_FETCHED",
       "photo_approved": false
     },
