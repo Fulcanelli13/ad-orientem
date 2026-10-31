@@ -17,23 +17,27 @@
     "selected_random_50_above_025_count": 0,
     "manual_semantic_approved": false,
     "private_texts_not_copied_here": true,
-    "corrected_en_fr_after_revisions": 21
+    "corrected_en_fr_after_revisions": 21,
+    "next_recheck_required_after_new_overlay": true
   },
   "three_non_sample_overlaps": [
     {
       "research_id": "DYK-H04-W-B-176",
-      "status": "HOLD_SEMANTIC_DUPLICATE_RISK",
-      "reason": "Pilgrimage facts about Sainte-Anne-de-Beaupré overlap a private place-specific discovery; distinct angle or replacement needed."
+      "status": "RESEARCH_EDITORIAL_REPLACEMENT_OR_REWRITE_STAGED",
+      "reason": "Pilgrimage facts about Sainte-Anne-de-Beaupré overlap a private place-specific discovery; distinct angle or replacement needed.",
+      "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
     },
     {
       "research_id": "DYK-H04-W-B-153",
-      "status": "HOLD_SEMANTIC_DUPLICATE_RISK",
-      "reason": "Lough Derg penitential-pilgrimage claim substantially overlaps private sanctuary discovery; narrow to a distinctive source action or replace."
+      "status": "RESEARCH_EDITORIAL_REPLACEMENT_OR_REWRITE_STAGED",
+      "reason": "Lough Derg penitential-pilgrimage claim substantially overlaps private sanctuary discovery; narrow to a distinctive source action or replace.",
+      "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
     },
     {
       "research_id": "DYK-GI-G319",
-      "status": "REWRITE_FOR_CURIOSITY_AND_GLOSSARY_SENSE",
-      "reason": "Ciborium-veil comparison shares wording about differing veils with private glossary-derived concepts; distinguish the reserved-vessel practice and avoid glossary restatement."
+      "status": "RESEARCH_EDITORIAL_REPLACEMENT_OR_REWRITE_STAGED",
+      "reason": "Ciborium-veil comparison shares wording about differing veils with private glossary-derived concepts; distinguish the reserved-vessel practice and avoid glossary restatement.",
+      "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
     }
   ],
   "same50_source_progress": {
@@ -63,7 +67,8 @@
       "PARTIAL_CATHOLIC_LEXICON_SECONDARY_CONFIRMED": 1,
       "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW": 3,
       "DIRECT_1962_RITUS_SERVANDUS_SCREEN_CONFIRMED": 1
-    }
+    },
+    "fixed_50_untouched_by_r33": true
   },
   "release": {
     "all_500_automatically_editorial_approved": false,
