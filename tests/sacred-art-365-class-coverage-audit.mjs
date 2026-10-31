@@ -60,9 +60,9 @@ for(const row of selected.strictExactSaintResearch){
   }
 }
 assert.equal(j.summary.III.additionalUnlinked856ExactSubjectDateCandidates,16);
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,107);
-assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,58);
-assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,24);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,123);
+assert.equal(j.summary.III.remainingWithoutDatedSelectionOrAnyExactSourceCandidate,42);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,8);
 assert.equal(selected.partialOrExcludedGroupOrDifferentSaint.find(x=>x.date==="2026-07-10").entries.length,1);
 assert.ok(!map.get("2026-07-10").additionalAcceptedSourceLeads,"Seville Rufina is not Roman Rufina or Secunda");
 assert.ok(map.get("2026-01-20").partialOrExcludedAcceptedSourceLeads.length>=4);
@@ -103,7 +103,7 @@ assert.equal(batch4.counts.newAcceptedSourceOnlyMatchedDates,3);
 assert.equal(batch4.counts.newLegacyNamedFileOnlyMatchedDates,1);
 assert.equal(batch4.counts.nowUnmatchedClassIIISanctoral,79);
 assert.equal(j.summary.III.additionalLegacyNamedFileExactSubjectDates,1);
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,24);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,8);
 assert.equal(batch4.rows.length,7);
 for(const row of batch4.rows){
   const d=map.get(row.date);
@@ -154,8 +154,8 @@ assert.equal(map.get("2026-01-22").partialOrExcludedAcceptedSourceLeads[0].sourc
 assert.equal(map.get("2026-07-10").partialGroupLegacyNamedFileLeads[0].historicalFile,"File:SevenBrothers.jpg");
 assert.equal(map.get("2026-07-28").partialGroupLegacyNamedFileLeads.length,2);
 assert.ok(map.get("2026-07-10").partialOrExcludedAcceptedSourceLeads.some(x=>x.sourceCardId==="commons:29858581"));
-assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,107,"partial feast groups do not inflate exact subject matches");
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,24);
+assert.equal(j.summary.III.identifiedDateSubjectOrCatalogueCandidates,123,"partial feast groups do not inflate exact subject matches");
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllThreeSourceRegisters,8);
 
 
 const batch7=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-breviarium-existing-subject-match-batch7.v1.json",import.meta.url),"utf8"));
@@ -191,8 +191,8 @@ assert.equal(batch8.counts.toUnmatchedSanctoralDates,64);
 assert.equal(batch8.counts.newUserEditorialApprovals,0);
 assert.equal(batch8.counts.newCanonical383ArtworkIds,0);
 assert.equal(batch8.counts.newLiveAppImages,0);
-assert.equal(j.summary.III.additionalNewExternalExactSubjectDates,51);
-assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllSourceRegistries,24);
+assert.equal(j.summary.III.additionalNewExternalExactSubjectDates,67);
+assert.equal(j.summary.III.remainingUnmatchedSanctoralAcrossAllSourceRegistries,8);
 const q8=new Set();
 for(const row of batch8.rows) {
   const observed=map.get(row.date);
@@ -217,7 +217,7 @@ for(const row of batch8.rows) {
 }
 assert.equal(q8.size,12);
 assert.equal(map.get("2026-05-05").additionalNewMuseumLeads.length,2,"distinct Pius V paintings remain separate");
-assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,24);
+assert.equal(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).length,8);
 
 
 const batch9=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-exact-sanctoral-research-batch9.v1.json",import.meta.url),"utf8"));
@@ -259,8 +259,8 @@ assert.equal(batch10.counts.newPaintingSourceRecords,36);
 assert.equal(batch10.counts.classIIIMatchedAfter,107);
 assert.equal(batch10.counts.unmatchedSanctoralAfter,24);
 assert.equal(batch10.rows.length,23);
-assert.equal(j.summary.III.additionalNewExternalPaintingCandidateRecords,70);
-assert.equal(j.summary.III.additionalNewExternalExactSubjectDates,51);
+assert.equal(j.summary.III.additionalNewExternalPaintingCandidateRecords,93);
+assert.equal(j.summary.III.additionalNewExternalExactSubjectDates,67);
 const q10=new Set();
 for(const row of batch10.rows){
  const d=map.get(row.date);
@@ -287,6 +287,43 @@ assert.equal(map.get("2026-09-16").additionalNewMuseumLeads.length,1,"Veronese d
 assert.ok(map.get("2026-11-26").additionalNewMuseumLeads.every(x=>/abbot|gozzolini|silvester abate|sylvester/i.test(x.titleAsSource)),"Nov 26 must be Sylvester Gozzolini, not Pope Sylvester I");
 assert.ok(map.get("2026-09-03").additionalNewMuseumLeads.some(x=>x.verificationHolds.includes("Getty/Mondadori")),"do not clear modern Getty photo");
 assert.ok(batch10.rows.every(x=>x.works.length>=1));
+
+
+const batch11=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-exact-sanctoral-research-batch11.v1.json",import.meta.url),"utf8"));
+assert.equal(batch11.counts.newExactDates,16);
+assert.equal(batch11.counts.newNamedArtworkSourceRecords,23);
+assert.equal(batch11.counts.matchedDatesAfter,123);
+assert.equal(batch11.counts.remainingFullSubjectGapsAfter,8);
+assert.equal(batch11.counts.finalArtworksApproved,0);
+assert.equal(batch11.counts.productionImagesAdded,0);
+assert.equal(batch11.rows.length,16);
+const new11=new Set();
+for(const row of batch11.rows){
+ const observed=map.get(row.date);
+ assert.equal(observed.observedPrincipalId,row.principalId);
+ assert.equal(observed.rank,"III");
+ assert.equal(observed.linkedCatalogueArt.length,0);
+ assert.equal(row.editorialFeastApproval,false);
+ assert.deepEqual(observed.additionalNewMuseumLeads.map(x=>x.researchSourceId),row.candidateArtworks.map(x=>x.researchSourceId));
+ for(const artwork of row.candidateArtworks){
+   assert.ok(!new11.has(artwork.researchSourceId));
+   new11.add(artwork.researchSourceId);
+   assert.equal(artwork.originalFileDownloaded,false);
+   assert.equal(artwork.canonical383ArtId,null);
+   assert.equal(artwork.finalUserArtworkSelection,false);
+   assert.equal(artwork.sourcePhotoRightsAppCleared,false);
+   assert.equal(artwork.rotationEligible,false);
+ }
+}
+assert.equal(new11.size,23);
+assert.equal(batch11.partialFeasts.length,1);
+assert.equal(batch11.partialFeasts[0].date,"2026-05-12");
+assert.equal(map.get("2026-05-12").partialGroupFeastFullMatch,false);
+assert.deepEqual(map.get("2026-05-12").partialGroupNewResearchLeads[0].missingSaints,["Saint Pancras"]);
+assert.equal(map.get("2026-01-20").additionalNewMuseumLeads.length,2,"all Fabian and Sebastian together");
+assert.equal(map.get("2026-06-26").additionalNewMuseumLeads.length,1,"both John and Paul together");
+assert.equal(map.get("2026-09-12").additionalNewMuseumLeads[0].artistAsSource,"Cristóbal de Villalpando");
+assert.deepEqual(j.days.filter(x=>x.rank==="III"&&x.observedPrincipalId.startsWith("sancti:")&&!x.linkedCatalogueArt.length&&!x.additionalAcceptedSourceLeads?.length&&!x.additionalLegacyNamedFileLeads?.length&&!x.additionalBreviariumSourceLeads?.length&&!x.additionalNewMuseumLeads?.length).map(x=>x.date),["2026-01-16","2026-01-22","2026-02-06","2026-04-22","2026-05-12","2026-07-10","2026-07-28","2026-11-18"]);
 
 const everyArt=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json",import.meta.url),"utf8"));
 assert.equal(everyArt.counts.canonicalArtworkIds,383);
