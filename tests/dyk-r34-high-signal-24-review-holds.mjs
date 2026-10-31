@@ -20,6 +20,33 @@ assert.equal(selection.counts.independently_signed_off,0);
 assert.equal(selection.counts.original_189_review_count,189);
 assert.equal(cards.size,189);
 assert.equal(selection.records.filter(x=>x.lane==="all-souls-november-2").length,7);
+assert.equal(selection.counts.all_souls_bilingual_pilot_rewrites,7);
+assert.equal(selection.pilot_existing_612_preview_comparison.legacy_preview_count,612);
+assert.equal(selection.pilot_existing_612_preview_comparison.final_semantic_editorial_approval,false);
+for(const entry of selection.records.filter(x=>x.lane==="all-souls-november-2")){
+  const copy=entry.pilot_home_copy;
+  const canon=cards.get(entry.id);
+  assert.ok(copy,"Missing hand-edited All Souls copy: "+entry.id);
+  for(const lang of ["en","fr"]){
+    assert.ok(copy[lang].length>=85&&copy[lang].length<=190,"Fact-length violation: "+entry.id+" "+lang);
+    assert.notEqual(copy[lang],canon.statement[lang],"Pilot teaser must be a distinct curiosity rewrite");
+  }
+  assert.equal(copy.review_status,"PROPOSED_SOURCE_BOUNDED_EDITORIAL_COPY");
+  assert.ok(copy.prior_source_review_locator,"Source locator absent: "+entry.id);
+  assert.equal(copy.final_english_signoff,false);
+  assert.equal(copy.final_french_signoff,false);
+  assert.equal(copy.novelty_against_private_612_approved,false);
+  assert.equal(copy.exact_destination_browser_verified,false);
+  assert.equal(copy.private_preview_exact_collisions,0);
+  assert.equal(copy.private_preview_source_id_collisions,0);
+  assert.ok(copy.nearest_original_612_token_jaccard<=0.125);
+  assert.equal(copy.semantic_novelty_status,"SCREENED_NO_OBVIOUS_DUPLICATE_NOT_INDEPENDENTLY_APPROVED");
+}
+const candle=selection.records.find(x=>x.id==="DYK-H04-W-B-133")?.pilot_home_copy;
+assert.ok(candle?.en.includes("All Saints’ evening")&&candle?.fr.includes("Le soir de la Toussaint"),"Candlemas-candle dusk is on All Saints evening, not dated automatically to Nov 2");
+const nights=selection.records.find(x=>x.id==="DYK-UM03-009")?.pilot_home_copy;
+assert.match(nights.en,/no official liturgical octave/i,"Folk Soul Nights may not become an official octave");
+
 assert.equal(selection.records.filter(x=>x.source_family==="WEISER_1958").length,15);
 assert.equal(selection.records.filter(x=>x.source_family==="PITRE_1900").length,5);
 assert.equal(selection.records.filter(x=>x.source_family==="ROMAN_MASS_1962").length,4);
