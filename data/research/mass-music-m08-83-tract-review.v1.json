@@ -1,0 +1,1570 @@
+{
+  "schema": "ao-mass-music-m08-83-tract-review-v1",
+  "source": "M07_GR1961_1195_ARCHIVE_AND_342_LATIN_TRIAGE",
+  "status": "83_STRUCTURAL_PASSES_1962_SELECTION_AND_MUSIC_UNVERIFIED",
+  "stats": {
+    "sourceStrong": 18,
+    "partial": 3,
+    "divergent": 5,
+    "noTextLead": 57,
+    "positionOrRoleRisk": 19
+  },
+  "records": [
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-18",
+      "sourceSha256": "c378761566e87725b5a04b5b9a37ee0307e4339c567da261f140dfb0d5f10410",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "PARTIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/05-31",
+          "section": "Tractus",
+          "sourceBlobSha": "8d1e76e3afb2dc24a884457184722be838d2175a",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 7
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-19",
+      "sourceSha256": "3c13ab62d3c64e0d8b04e563b68a196ee74167e1f2196067498138981ec3d61f",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-35",
+      "sourceSha256": "aa12ab5b74b8070f767ef5da1a6d32e42acf2779c958d7988ae4b2f010eb54b6",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-55",
+      "sourceSha256": "1346a818e0b17769c919ad47572818332511d8d2e186eccfd376e0dcf9ba28e4",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-56",
+      "sourceSha256": "fe418bda73aaedaf1c8b47c62bd37da6de3de5512de2a1496b1b707ad8357f78",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "DIVERGENT_EARLY_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Pasc2-0",
+          "section": "Graduale",
+          "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-63",
+      "sourceSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "DIVERGENT_EARLY_TEXT",
+      "evidenceCount": 6,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/08-06",
+          "section": "Graduale",
+          "sourceBlobSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Sancti/08-10",
+          "section": "Graduale",
+          "sourceBlobSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 3
+        },
+        {
+          "sourcePath": "Sancti/08-22",
+          "section": "Graduale",
+          "sourceBlobSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent11-0",
+          "section": "Graduale",
+          "sourceBlobSha": "da5b4cd6cfad7938787fac5b2bd15e3748586288",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 3
+        },
+        {
+          "sourcePath": "Tempora/Pent20-0",
+          "section": "Graduale",
+          "sourceBlobSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent20-0",
+          "section": "Graduale",
+          "sourceBlobSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-76",
+      "sourceSha256": "9da760b4a91252bf9fb2f8bcdbeb2b83fc9ae06a79fe8afd991355f7b6b3f8b2",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-92",
+      "sourceSha256": "07f05c3975eb6918e9a3a9f40e1932757a079d151dddf371ec74c3e2b2360cc0",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-110",
+      "sourceSha256": "a95a7d67a05c65c047670392fda5af90b4111b59b2c8bb2240b3d6303ef1c199",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-114",
+      "sourceSha256": "ee303d03036c3535b9e660e10a076b7236fbc85704ad41638480c7485cac0f20",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-144",
+      "sourceSha256": "6152943a55f73a7a89e21ce0c036b18b89d3308440221c254d50939c03c22eca",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-175",
+      "sourceSha256": "8085066c797eb854ac674f42a04aeeae16f9c4c6cbb24757624eb1dadcf697e9",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-176",
+      "sourceSha256": "1873058b5fd082c95d70fece8b6f5b5c1e89702a9373b1e061299d5ce9aa93db",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-219",
+      "sourceSha256": "6a7427a7daa087a065c968375f6d12f9d3906dd5e09adee0ba2138b7879e74bc",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-240",
+      "sourceSha256": "051e68e13b8a576cda56a8413a83c20d3024d1c9e4f505016f49148e34fea6bd",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-249",
+      "sourceSha256": "cf793605c99571eb3b501aad77e9b50a9c45e6f5954943d3e57af700b0126755",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "DIVERGENT_EARLY_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/06-24",
+          "section": "Graduale",
+          "sourceBlobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-250",
+      "sourceSha256": "4eff15ae164d93037e9782cfa91a9968eae36c2afc27b0310971b61214b3b3f9",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-256",
+      "sourceSha256": "2d923ab497dc24ce1d8e02ba98d8abccbcff9775f3dac746e4e837f21128fa96",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-266",
+      "sourceSha256": "86bcd8f2e5af1283e87fecf8398a228d729c40914c4a532a4fe0a144122f5d26",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-276",
+      "sourceSha256": "fc89b5fa5fa36c033ece6c637bdededd2d1943b16fb6d76865026b9eb068d36f",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "PARTIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad2-0",
+          "section": "Graduale",
+          "sourceBlobSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 6
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-305",
+      "sourceSha256": "a95602b7f0f6fb5aeffd6abe0630ee01fcbd5dcf3a367a43b62e0fde0a65ab5e",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-338",
+      "sourceSha256": "1b5b06aecb0b6aa451e826c661f4fefd443ffe41a7a0fa9915b63c965955030a",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-343",
+      "sourceSha256": "f96cf5bafb0aa375389a9cf5edcb47c4e0d0cb258dfc083a32bea6f62f37eb76",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-372",
+      "sourceSha256": "4350d22d132a88cdcf73444a794597c33ab30d9ab3f313e4d23d532ab42ee882",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad6-0",
+          "section": "Graduale",
+          "sourceBlobSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 9
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-380",
+      "sourceSha256": "bd9d244c3a1c6c32202a969ff69744700acf1f29060e14c248b7552d4b106047",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Pent04-0",
+          "section": "Graduale",
+          "sourceBlobSha": "bb3f6bc65d635934faf7cf20092d1bfb38a2db86",
+          "position": "POSITION_NOT_VERIFIED",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-412",
+      "sourceSha256": "f981580805e570cd526031789747e6f780fffa04a79e81a1b719893a4a322a5e",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-421",
+      "sourceSha256": "68b0fc5bab28a9c920b10474250e944c8ed8a4098baf052eccac99b08451f982",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-425",
+      "sourceSha256": "5d3a83aac02e7f7b27b65e6b72e672e23901d360f4fb5e8ee9951be8914c4c7e",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-437",
+      "sourceSha256": "f2bb8951c2c9bf05f84204b405dfa1df6b9ce36d733ce15a9f4b1e3a095e7a12",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-444",
+      "sourceSha256": "141445caf0220c16e1e5d00b156b41eb609568f5414d4823192fcecbd143c812",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-455",
+      "sourceSha256": "44e9438e0418b5c295e154fa9832ef5924e699b7b154f9fdc19fb3a7907bf6f9",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-483",
+      "sourceSha256": "f51233d9382d0610e591afc3331d945c6b2d2d084790af2c953deed11d363b3c",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/10-DU",
+          "section": "Tractus",
+          "sourceBlobSha": "a1ca57155d564dd18f00b2e9b36d73f0a55c0c89",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-485",
+      "sourceSha256": "46d7da85249cf1f7327bff0e03a95f6b127b4132ba71e7268cfece2616be415a",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 2,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/02-11",
+          "section": "Tractus",
+          "sourceBlobSha": "531e88caf016824e493ff4027e767e5b6934e3fa",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 10
+        },
+        {
+          "sourcePath": "Sancti/12-08",
+          "section": "Graduale",
+          "sourceBlobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 10
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-502",
+      "sourceSha256": "c6afb1bee012c62a77822711eb65930969c73b9df090f9a7118d64ed0206250c",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-516",
+      "sourceSha256": "542bd7135a147bb2a56f076d8ee2eb58051ec975e9f928ca3cd17ca60db77351",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-597",
+      "sourceSha256": "4d7183ea0f5e25643fe07f886a06e67be9fceaa77a758f248935c451380c66bd",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-644",
+      "sourceSha256": "7380e35914e8963e5a3d7ae7849ebbbb3c6da2df1506f1f7e1a9118ad983edff",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-660",
+      "sourceSha256": "53bdb260f45e398d28e40d25510c5886c77aef4437d79f66a8be9c145465d92d",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-671",
+      "sourceSha256": "344973604b4de62073280c02ac9d897f1a90469c18bb712dad8b71f1857e677b",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-682",
+      "sourceSha256": "43fbeb0c4ab2db3b18f7c8d3453a575f3b93656aee7cfe25a658ad963392aaec",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-689",
+      "sourceSha256": "54ce7bcb3c376c2cfc757dd6bffa02c3b62a70fc00cfbc101bb082e921e48dec",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/12-08",
+          "section": "Tractus",
+          "sourceBlobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-710",
+      "sourceSha256": "4e1199005e71a103125ae7ebae2be36d444832355182e29e8415e756c34104f1",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-728",
+      "sourceSha256": "9fdc6d04eab5d7dbf9aff3b741c1f1d18bc9620fdabe76435e4e5f3fd5e99554",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-729",
+      "sourceSha256": "5736d4dc4559c70aca535ef0bc39e99cafe01da05de75274b7fefcc86ae0670f",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-738",
+      "sourceSha256": "44e65cd0bebe64eca9b243e12f7f62435b178c35d7c5178281eaaffa26788981",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 3,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/03-25",
+          "section": "Tractus",
+          "sourceBlobSha": "aa5bb26608fad812b08336d69d7e51bdf6e5af2d",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        },
+        {
+          "sourcePath": "Sancti/08-15",
+          "section": "Graduale",
+          "sourceBlobSha": "4fa6f0074f1a6581fb857b9cd6b4db9148dcf1b2",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 8
+        },
+        {
+          "sourcePath": "Sancti/10-07",
+          "section": "Graduale",
+          "sourceBlobSha": "bcc36edae80c74ebbaa28ca96dfa0d62abd048f3",
+          "position": "VERSE_MARKED_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-739",
+      "sourceSha256": "87eda5971063f005e49d3d20d411662836798338cbbeeda745597a1e094cd449",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-742",
+      "sourceSha256": "690293b73be165639a8d1e3a2b1ab56e8a926c8320f0118866b1a1d6c04dbda6",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "PARTIAL_TEXT",
+      "evidenceCount": 2,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad5-0",
+          "section": "Graduale",
+          "sourceBlobSha": "f2395993e50862261732847c2bcb4a999bbdef1d",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 6
+        },
+        {
+          "sourcePath": "Tempora/Quad5-0",
+          "section": "Graduale",
+          "sourceBlobSha": "f2395993e50862261732847c2bcb4a999bbdef1d",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 6
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-763",
+      "sourceSha256": "c55a3247b54b91776dfc0925bc75f554dbf8e71b22d3cb410d283717c0cd4826",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-769",
+      "sourceSha256": "de019eaec2ca964118fc5609511c58692ca8304fbcd48b9bfddd0d9d8fb8a9ff",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-793",
+      "sourceSha256": "56ae16be6244a037a65b2d7a5fc189d5cdb7687c8d384f30c2682cc951033853",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/08-22",
+          "section": "Tractus",
+          "sourceBlobSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 10
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-824",
+      "sourceSha256": "9d28e7f18a15029891aa5eb51e20be25a06345f6f0434b450db838c244f47805",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 3,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Pent17-0",
+          "section": "Graduale",
+          "sourceBlobSha": "305356033d88b59493897818cd2760d13ebd863f",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 9
+        },
+        {
+          "sourcePath": "Tempora/Pent23-0",
+          "section": "Graduale",
+          "sourceBlobSha": "469c4a2799dc76d814731250361cd6d1a831ffc6",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 4
+        },
+        {
+          "sourcePath": "Tempora/Quadp1-0",
+          "section": "Graduale",
+          "sourceBlobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-837",
+      "sourceSha256": "09bcc28c2a2ea226714b0dd8248e5073a469699de27cef801d82dbe8156346e3",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "DIVERGENT_EARLY_TEXT",
+      "evidenceCount": 3,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Pent06-0",
+          "section": "Graduale",
+          "sourceBlobSha": "69bee3bc296f2f371b1091967a14c4bb07b12d2b",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent13-0",
+          "section": "Graduale",
+          "sourceBlobSha": "d116ba13695c45655c28b5092a6c20be04e4514a",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent21-0",
+          "section": "Graduale",
+          "sourceBlobSha": "8804e666d93fec358a44509e0219514c6142719e",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-858",
+      "sourceSha256": "974d02ad70de1dff6cb83abd597fbc16cc53f926f48468b4af862e25cdf9700d",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-883",
+      "sourceSha256": "d0225f04b76c85b3974797cdf8ad3f26ba0688a1dee567a9db98b06a83e9814f",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-884",
+      "sourceSha256": "e8f0a7329e64fc2d51d3fbbed330326295961877f1cf78e0a3b5e35f172f26e9",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/01-25",
+          "section": "Tractus",
+          "sourceBlobSha": "91ac84254b24ddcc3003dae689cb324e9eb54d29",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 11
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-889",
+      "sourceSha256": "7b9d39e8ff26323a71af02f58c351717d858e431279127bb4328adc005303730",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 2,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad1-0",
+          "section": "Graduale",
+          "sourceBlobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 9
+        },
+        {
+          "sourcePath": "Tempora/Quad4-0",
+          "section": "Graduale",
+          "sourceBlobSha": "5d15228d8cec83752d131693110f34aef89aaed1",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 3
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-925",
+      "sourceSha256": "25f02063b87c4d67667fed45c85d246d07523e6887199d9c029d388e50431ea9",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Pasc7-0",
+          "section": "Graduale",
+          "sourceBlobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 9
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-926",
+      "sourceSha256": "b005e5fd3f6293c439188e6c93b02b4c8ec32d949154af02acf854c0b36ac14b",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 2,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Pent23-0",
+          "section": "Graduale",
+          "sourceBlobSha": "469c4a2799dc76d814731250361cd6d1a831ffc6",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 8
+        },
+        {
+          "sourcePath": "Tempora/Quadp1-0",
+          "section": "Graduale",
+          "sourceBlobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 10
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-927",
+      "sourceSha256": "62d5778141b13dc33141864cc0897ed46d95285f14a94f200c2ee7bb8ef47a41",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 2,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad1-0",
+          "section": "Graduale",
+          "sourceBlobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        },
+        {
+          "sourcePath": "Tempora/Quad1-0",
+          "section": "Graduale",
+          "sourceBlobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-928",
+      "sourceSha256": "544f5243e56c5f53bb1b12b83bd85280e5e86deaa4315f1f4b0e6785721330bb",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-949",
+      "sourceSha256": "f0faaa1f79bb1d6d0054fa6fc3949af0642d93399e45d37054acef6f25f01668",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-968",
+      "sourceSha256": "18ba93623dfdb69e190b28f704c5a0c07cd6a844e410fd44cbfab4b516460142",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-969",
+      "sourceSha256": "3c108a2993fc81a63cdcdb0a98f4bc0e7b596d15e9bd8ae75c08f4e7aa457d12",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-978",
+      "sourceSha256": "17726c713319756f21729fb82121a6de0711d6b18ae4b513fe5f7e1972fb8ef3",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1005",
+      "sourceSha256": "06565d7c6b84f893a8c0ac69c79225056eaa608a183810401f21c30ccefc8db3",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1029",
+      "sourceSha256": "7edbdcd8488fa7bfc9f9ad40d423068391886852d449f76fa37930e73716ba85",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/06-29",
+          "section": "Graduale",
+          "sourceBlobSha": "98eace8b348a1743e090420a42ced72a548cc0fc",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 10
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1085",
+      "sourceSha256": "55abe95588bb4b345adc3acd6e583e5df57ad31c895a9b2a2215319a85d9b6fc",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1105",
+      "sourceSha256": "dccdc325b3e4604e154759320bb0ca06556de381d87832c13bdc0f9b27c6ca60",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1112",
+      "sourceSha256": "eb675eacf8047eb5ed3ce69390fc1a88ebb77446c8c7c9959d35c7ff9a0e7ee2",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1153",
+      "sourceSha256": "586a6a21cd9ce9073cdeaf34f2f03fcbf4e859a47805542d84b650a81eb53bd5",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1156",
+      "sourceSha256": "db6b9249611ec1541ba40bd426215975b50f262e2475eac543bc63552f95c751",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1157",
+      "sourceSha256": "4ec56b4c899023c26e7e153aae9614de8a387543a70d6ab129380d2de3d36a96",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Adv3-0",
+          "section": "Graduale",
+          "sourceBlobSha": "de744967d1d6e9ae6a3ccdff81360c8b5565e873",
+          "position": "VERSE_MARKED_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 9
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1167",
+      "sourceSha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "DIVERGENT_EARLY_TEXT",
+      "evidenceCount": 5,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/12-26",
+          "section": "Graduale",
+          "sourceBlobSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent01-0",
+          "section": "Graduale",
+          "sourceBlobSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+          "position": "EMBEDDED",
+          "risk": "EMBEDDED_TEXT_NOT_OPENING",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent02-0",
+          "section": "Graduale",
+          "sourceBlobSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        },
+        {
+          "sourcePath": "Tempora/Pent05-0",
+          "section": "Graduale",
+          "sourceBlobSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+          "position": "VERSE_MARKED_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 3
+        },
+        {
+          "sourcePath": "Tempora/Pent12-0",
+          "section": "Graduale",
+          "sourceBlobSha": "83f334b8cfaa68f3db52d659074b1e2a0ffb26f9",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 2
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1178",
+      "sourceSha256": "d2073f92488be2861ff9fe1598abcc028a6bf094aff4c5a859c9717df9699b3c",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1240",
+      "sourceSha256": "1f11c5f385a02e251e41818de95146bd83811828ad82e0bfdbca80d8ddb5a3c0",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1244",
+      "sourceSha256": "46651f36030a1a74b148fa7c2c67e2bb5ec182f97b6db87e9540318b0b1902c5",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1247",
+      "sourceSha256": "75bfd5bf4a3eec1f8813f46f549b38366142fe804d342b47a9f7b43599b9451a",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1281",
+      "sourceSha256": "781ecc9f6c06a5face6701bd005bf30f00a22a1719dfd87a293bd6e70b078ce0",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1299",
+      "sourceSha256": "80d6b49ef91f10c9e366aed8d8cd46798c15a83580cdabb2731ad4840c79c3e4",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1329",
+      "sourceSha256": "4c98fabdbd2b430db85560d8abbf0f8bed95b7317b8ca7edaec6fc343bed839c",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad3-0",
+          "section": "Graduale",
+          "sourceBlobSha": "447369909971f79c5aede5f5554c073707613589",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 9
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1346",
+      "sourceSha256": "526c766672370689c5650d5a691058f62ed200391966e9a6f9dde85b34aa1550",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Sancti/02-02",
+          "section": "Tractus",
+          "sourceBlobSha": "16c4f9b4cf99f6719a7701ad71c9f4789600854d",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 10
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1370",
+      "sourceSha256": "a8b958c0c46352560c5aa893f606995b9d5746068dac02ab9336ff86ec25c695",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "NO_SOURCE_TEXT_LEAD",
+      "evidenceCount": 0,
+      "candidateProperRefs": [],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "1962": "NOT_CERTIFIED",
+      "id": "GREGOBASE-1377",
+      "sourceSha256": "14fd02ac526e4a53c4cc6f6e60dcbbf53b9283904a55447d7c7056606621664b",
+      "role": "TRACT",
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "sourceTextEvidence": "STRONG_INITIAL_TEXT",
+      "evidenceCount": 1,
+      "candidateProperRefs": [
+        {
+          "sourcePath": "Tempora/Quad4-0",
+          "section": "Graduale",
+          "sourceBlobSha": "5d15228d8cec83752d131693110f34aef89aaed1",
+          "position": "LINE_OPENING",
+          "risk": "UNADJUDICATED",
+          "initialWords": 12
+        }
+      ],
+      "needsSyllableToNoteCollation": true,
+      "needsCompleteVerseAndRoleCheck": true,
+      "editorialApproval": false,
+      "publicReader": false
+    }
+  ]
+}
