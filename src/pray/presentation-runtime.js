@@ -9,6 +9,8 @@ import "./first-monthly-direct-prayers-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
+import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import "./essential-holy-card-styles.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
@@ -637,6 +639,20 @@ function prayerBlock(id,opts={}){
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
  const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
+ if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!!p[lang()]&&!!p.la&&!opts.record){
+  // First five F01 holy cards: exact canonical substrings, no synthetic
+  // versicle/response labels. Both faces retain the same focus positions.
+  const beats=face=>essentialHolyCardParts(id,face,p[face])||[];
+  const beatHtml=face=>beats(face).map((part,index)=>
+   '<p class="aoP435930EssentialBeat'+(part.collective?' aoP435930EssentialCollective':'')+
+   '" data-ao-essential-index="'+index+'" lang="'+face+'">'+esc(part.text.trim())+'</p>').join('');
+  return '<article class="aoP435930Prayer aoP435930EssentialCard" data-ao-essential-card="'+esc(id)+'">'+
+   '<div class="aoP435930PrayerHead"><div><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div>'+
+   '<button type="button" class="aoP435930EssentialLang" data-p435930-essential-flip aria-pressed="false" aria-label="'+esc(L('Read in Latin','Lire en latin'))+'">Latin</button></div>'+
+   '<div class="aoP435930EssentialFaces"><div data-face-v lang="'+lang()+'">'+beatHtml(lang())+'</div>'+
+   '<div data-face-la lang="la" hidden>'+beatHtml('la')+'</div></div>'+
+   originCapsule+sourceLine(p)+'</article>';
+ }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
 function selectedDateKey(){
@@ -2924,15 +2940,17 @@ function installLibraryParagraphFocus(m,id){
  // versicles, responses and stanza breaks. Reuse its semantic output instead
  // of reparsing the prayer and erasing V./R. ownership.
  window.AO_PRAY_COHERENCE_V435930?.decorate?.();
- const lines=card.querySelectorAll(
-  ".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
+ const essentials=!!card.querySelector("[data-ao-essential-card]");
+ const lines=card.querySelectorAll(essentials
+  ?".aoP435930EssentialBeat"
+  :".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
  );
  lines.forEach(line=>line.classList.add("aoLibraryLine"));
  const p=P(id);
  const title=p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière');
  const reader=installSequentialDevotionalReader({
   mount:m,kind:"library",chapters:[{id,title}],
-  activeIndex:0,paragraphSelector:".aoLibraryLine",
+  activeIndex:0,paragraphSelector:essentials?".aoP435930EssentialBeat":".aoLibraryLine",
   timelineLabel:L('Prayer timeline','Parcours de la prière')
  });
  // A one-card prayer has no meaningful chapter navigation or positional
@@ -3476,6 +3494,28 @@ function onClick(e){
  if(b.dataset.p435930External){
   e.preventDefault?.();
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
+  return;
+ }
+ if(b.matches('[data-p435930-essential-flip]')){
+  const card=b.closest('[data-ao-essential-card]');
+  const vern=card?.querySelector('[data-face-v]'),latin=card?.querySelector('[data-face-la]');
+  if(!vern||!latin)return;
+  const oldFace=latin.hidden?vern:latin,newFace=latin.hidden?latin:vern;
+  const before=[...oldFace.querySelectorAll('.aoP435930EssentialBeat')];
+  const active=before.find(x=>x.dataset.aoDevoActive==='true')||before[0];
+  const index=Math.max(0,before.indexOf(active));
+  const scroll=card.closest('.aoDevoCardScroll');
+  const oldTop=active?.getBoundingClientRect().top;
+  oldFace.hidden=true;newFace.hidden=false;
+  const target=newFace.querySelectorAll('.aoP435930EssentialBeat')[index];
+  if(scroll&&target&&oldTop!=null){
+   scroll.scrollTop+=target.getBoundingClientRect().top-oldTop;
+  }
+  const latinShown=newFace===latin;
+  b.textContent=latinShown?(isFr()?'Français':'English'):'Latin';
+  b.setAttribute('aria-pressed',String(latinShown));
+  b.setAttribute('aria-label',latinShown?L('Read in vernacular','Lire en langue vernaculaire'):L('Read in Latin','Lire en latin'));
+  queueMicrotask(()=>window.AO_PRAY_COHERENCE_V435930?.decorate?.());
   return;
  }
  if(b.matches('[data-p435930-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
