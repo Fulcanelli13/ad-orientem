@@ -45,6 +45,21 @@ for(const art of Object.values(APPROVED_FINGER_ART)){
  assert.equal(later?.status,"unreviewed",
   "The October 20 historical lock is immutable; the earlier explicit approval is reconciled at presentation binding");
 }
-assert.ok(dom.includes("text.prepend(icon);"));
-assert.ok(dom.includes("text.textContent=short;"),"Source rubric copy must remain legible");
+// The rendered LIVE pictogram now replaces only its redundant visual
+// caption. Source rubrics must remain available to screen readers and in the
+// MISSAL's full printed red-ink direction, not be discarded from the DOM.
+assert.ok(dom.includes('text.dataset.approvedInlineIcon="true"'),
+  "Source-approved finger/gesture artwork must retain its exact rubric owner");
+assert.ok(dom.includes('copy.className="ao-approved-inline-rubric-copy"'),
+  "Accessible published source copy must remain under the icon");
+assert.ok(dom.includes('copy.textContent=short;'),
+  "Approved source rubric text may not be deleted");
+assert.ok(dom.includes('text.setAttribute("aria-label",short)'),
+  "Icon requires the complete sourced accessible label");
+assert.ok(dom.includes('text.append(icon,copy);'),
+  "The approved image and published text must share their exact source event");
+assert.ok(dom.includes('.ao-live-rubric-action[data-approved-inline-icon="true"]'),
+  "LIVE caption-replacement must be explicitly scoped to approved artwork");
+assert.ok(dom.includes('.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics'),
+  "MISSAL must preserve its printed source rubric rather than hiding its text");
 console.log("Approved finger art: PASS — two exact priest source states, historical approvals preserved; no action/voice/position substitution.");
