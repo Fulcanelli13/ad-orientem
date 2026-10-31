@@ -6,7 +6,7 @@ on:
       - research/explore-precise-sacred-subject-photo-search-20261031
     paths:
       - "tools/sacred-atlas-site-cover-batch.mjs"
-      - "data/geography/research/sacred-atlas-site-covers-batch-001.v1.json"
+      - "data/geography/research/sacred-atlas-site-covers-batch-*.v1.json"
       - ".github/workflows/sacred-atlas-site-cover-batch.yml"
   workflow_dispatch:
 
@@ -20,7 +20,7 @@ concurrency:
 jobs:
   missing-place-covers:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,25 +30,35 @@ jobs:
           node-version: "22"
       - name: Contract tests for source and location identity
         run: node tools/sacred-atlas-site-cover-batch.mjs --selftest
-      - name: Read exact Commons files and source licensing for 100 missing covers
-        run: node tools/sacred-atlas-site-cover-batch.mjs
-      - name: Verify research output is complete and non-public
+      - name: Read exact Commons photo sources and licensing · all 410 missing covers
+        run: |
+          for id in 001 002 003 004 005; do
+            node tools/sacred-atlas-site-cover-batch.mjs "$id"
+          done
+      - name: Verify 410 unique researched sites, 0 premature publication
         run: |
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
-            const x=JSON.parse(readFileSync("data/geography/research/sacred-atlas-site-covers-batch-001.results.json"));
-            if(x.records.length!==100||x.summary.locations!==100||x.summary.app_cover_published!==0)process.exit(1);
-            if(x.records.some(r=>r.candidates.some(c=>c.publishable||c.published||c.exact_physical_site_visually_verified)))process.exit(1);
-            if(x.records.some(r=>r.place_id==="place:CD:notre-dame-du-congo-cathedral-kinshasa"&&r.candidates.some(c=>/Bukavu/i.test(c.commons_title))))process.exit(1);
-            console.log(x.summary);
+            const seen=new Set();
+            let total=0;
+            for(const [id,n] of [["001",100],["002",100],["003",100],["004",100],["005",10]]){
+              const x=JSON.parse(readFileSync("data/geography/research/sacred-atlas-site-covers-batch-"+id+".results.json"));
+              if(x.records.length!==n||x.summary.locations!==n||x.summary.app_cover_published!==0)process.exit(1);
+              if(x.records.some(r=>r.candidates.some(c=>c.publishable||c.published||c.exact_physical_site_visually_verified)))process.exit(1);
+              if(x.records.some(r=>r.place_id==="place:CD:notre-dame-du-congo-cathedral-kinshasa"&&r.candidates.some(c=>/Bukavu/i.test(c.commons_title))))process.exit(1);
+              for(const r of x.records){if(seen.has(r.place_id))process.exit(1);seen.add(r.place_id);}
+              total+=n;
+              console.log(id,JSON.stringify(x.summary));
+            }
+            if(total!==410||seen.size!==410)process.exit(1);
           '
-      - name: Persist source metadata on research branch; never publish binaries
+      - name: Permanently persist 410-site source metadata; never publish images
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/geography/research/sacred-atlas-site-covers-batch-001.results.json
+          git add data/geography/research/sacred-atlas-site-covers-batch-00*.results.json
           if git diff --cached --quiet; then echo "No differences"; exit 0; fi
-          git commit -m "research(atlas): persist 100 exact-site Commons cover source checks"
+          git commit -m "research(atlas): persist 410 exact-site Commons cover source and licence checks"
           git fetch origin research/explore-precise-sacred-subject-photo-search-20261031
           git rebase origin/research/explore-precise-sacred-subject-photo-search-20261031
           git push origin HEAD:research/explore-precise-sacred-subject-photo-search-20261031
