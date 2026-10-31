@@ -1,5 +1,12 @@
 # Ad Orientem 2026 Sacred Art — Four-class progress and exact matching-gap register
 
+## Four-class physical-artwork reverse index — complete 383 registry
+
+The new four-class reverse index now connects 178 distinct 383-registry artwork IDs to at least one observed date, producing 186 research date-to-artwork links: Class I 65, Class II 42, Class III 79, Class IV 0. The remaining 205 canonical IDs are not matched to an observed 2026 principal date by this conservative exact subject method; they are not 205 missing/unusable paintings and may belong to Rosary, prayer, bible and non-observed saints. Eight gallery IDs currently have links to more than one observed date. Their image bytes are NEVER duplicated to rotate; a shared original is one object with multiple possible valid placements.
+
+Path: data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json. Earlier all383-artwork-reverse-index.v1.json remains historical I/II-only evidence, and never classifies the 205 unmatched artworks as needing replacement.
+
+---
 ## Latest matching checkpoint — Batch 4 (31 October 2026)
 
 **Current researched Class III subject identification: 52/165 dates (52/131 observed sanctoral dates).** This is 7 more than the previous 45, and leaves **79 sanctoral dates with no exact subject lead** across the three already reviewed corpora (383 canonical IDs, 856 previously accepted source cards, and W60/W72 historic named-file and scored art sources). The other 34 Class III dates are seasonal ferias; no standalone painting required. A research identity link is not approval of the photo or placement for the calendar.
