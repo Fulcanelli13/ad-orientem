@@ -442,6 +442,17 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
      !Number.isFinite(siteGeoSource.geo.lng)||review.evidence.some(x=>!https(x))))
     throw new Error("Unverifiable CL2 site coordinate adjudication: "+anchor);
+  // A reviewed source-site marker can refine an existing R49 point as well as
+  // add geometry for a previously list-only CL2 physical site. Validate its
+  // exact source row before either operation.
+  if(newPin&&(!sourceIds.includes(newPin.sourceId)||T(name)!==newPin.name||
+     country!==newPin.country||!T(description).includes(newPin.addressNeedle)||
+     (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
+     !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
+     !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
+    throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
     ...(linked.flatMap(item=>(item.source_links??[]).map(s=>s.url))),
     ...sourceUrls,...(newPin?.evidence??[]),...(newPin?[newPin.sourceUrl]:[])].filter(url=>https(url))).slice(0,12).map((url,i)=>Object.freeze({
@@ -461,11 +472,18 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     precision:"source_marker_unassessed",approximate:true,
     source_ref:review.sourceId,source_url:review.evidence[0],
     review_scope:"PHYSICAL_CHURCH_NOT_ENTRANCE",
+   }):newPin?Object.freeze({...selected.geo,
+    lat:newPin.lat,lng:newPin.lng,precision:newPin.precision||"site",
+    approximate:true,source_ref:newPin.sourceRef,source_url:newPin.sourceUrl,
+    attribution:newPin.attribution||"© OpenStreetMap contributors · ODbL 1.0",
+    review_scope:newPin.reviewScope||"PHYSICAL_CHURCH_NOT_ENTRANCE",
    }):selected.geo;
    result.push(Object.freeze({...selected,
-    ...(review?{
-     geo:siteGeo,address:Object.freeze({formatted:T(description)}),
-     note:T(selected.note)+" Site marker cross-checked against the church building, not a verified entrance.",
+    ...(review||newPin?{
+     geo:siteGeo,
+     address:Object.freeze({formatted:newPin?.correctedAddress||T(description)}),
+     note:T(selected.note)+" Site marker cross-checked against the physical church site, not a verified entrance."+
+      (newPin?.correctedAddress?" Source-master address was a mailing address; corrected visitor church address used.":""),
     }:{}),
     physical_group_id:anchor,source_ids:Object.freeze([...sourceIds]),
     physical_site_source:"CL2_MASTER",source_links:Object.freeze(source_links),
@@ -473,14 +491,6 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    }));
   }else{
    unmapped++;
-   if(newPin&&(!sourceIds.includes(newPin.sourceId)||T(name)!==newPin.name||
-     country!==newPin.country||!T(description).includes(newPin.addressNeedle)||
-     (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
-     !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
-     !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|churcheslist:[a-z0-9-]+|historicengland:\d+)$/.test(newPin.sourceRef)||
-     !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
-    throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
    const affiliationName=T(affiliation)||"Source affiliation not established";
    const community_id=family(affiliationName,mapAffiliation);
    result.push(Object.freeze({
