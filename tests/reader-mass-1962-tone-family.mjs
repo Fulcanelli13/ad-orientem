@@ -107,7 +107,8 @@ assert.equal(projectMassSungDialogue({eventId:"GOSPEL",form:"SOLEMN",
 // Check that the existing runtime itinerary still projects exactly one
 // grouped Preface dialogue (not three generated Mass cards).
 const content=readFileSync(new URL("../src/mass/reader-schola-event-timeline.js",import.meta.url),"utf8");
-assert.match(content,/sungDialogue:projectMassSungDialogue\(/);
+assert.match(content,/const sungDialogue=projectMassSungDialogue\(/);
+assert.match(content,/sungDialogue,notationHandoff,/);
 assert.match(content,/form:selected,resolvedMass,massPlan/);
 assert.doesNotMatch(readFileSync(new URL("../src/mass/reader-mass-1962-tone-family.js",import.meta.url),"utf8"),
  /setTimeout|getUserMedia|Date\.now|\.play\(|\.advance\(/);
