@@ -41,6 +41,16 @@ assert.equal(types.filter(x=>x==="UNKNOWN").length,ledger.photo_source_review.ri
 assert.equal(ledger.photo_source_review.production_ready,0);
 assert.deepEqual(ledger.publication_policy.strict_source_basis,["PUBLIC_DOMAIN","CC0_1_0"]);
 assert.equal(ledger.publication_policy.no_runtime_image_activated,true);
+assert.equal(ledger.currentConsolidatedEditorialCoverage.mapped,200);
+assert.equal(ledger.currentConsolidatedEditorialCoverage.unmapped,67);
+assert.equal(ledger.currentConsolidatedEditorialCoverage.photographsCleared,0);
+const newPass=ledger.sourceResearchUpdates.find(x=>x.key==="20261031-exact-stations-baroque");
+assert.ok(newPass,"New six-Station image-source QA must be linked from canonical master");
+assert.equal(newPass.newlyEditorApproved,0);
+assert.equal(newPass.photoFilesCertified,0);
+assert.deepEqual(newPass.commerciallyLicensedPhotoExcluded,["STG-pray.stations-10"]);
+assert.deepEqual(newPass.pdPhotoReviewPending,["STG-pray.stations-11"]);
+
 assert.ok(Array.isArray(ledger.editorialHardRejections));
 const lybaert=ledger.editorialHardRejections.find(x=>x.artist==="Théophile Lybaert");
 assert.ok(lybaert,"User rejection of entire Lybaert Stations cycle must be durable");
