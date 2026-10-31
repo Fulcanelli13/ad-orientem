@@ -124,6 +124,10 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.equal((await state()).id,"contrition-penance");
  assert.equal(await page.locator(sel+" [data-ao-confession-act]").count(),1);
+ await page.locator(sel+" [data-p435930-conf-contrition='piusx']").tap();
+ assert.equal(await page.locator(sel+" [data-p435930-conf-contrition='piusx']").getAttribute("aria-pressed"),"true","Contrition selection must respond on the actual prayer card");
+ await page.locator(sel+" [data-p435930-conf-contrition='standard']").tap();
+ assert.equal(await page.locator(sel+" [data-p435930-conf-contrition='standard']").getAttribute("aria-pressed"),"true");
  await page.locator(timeline+" [data-ao-devo-chapter='7']").tap();
  assert.equal((await state()).id,"priest-absolution");
  assert.equal(await page.locator(sel+" [data-ao-confession-latin-excerpt='priest-only']").count(),1);
