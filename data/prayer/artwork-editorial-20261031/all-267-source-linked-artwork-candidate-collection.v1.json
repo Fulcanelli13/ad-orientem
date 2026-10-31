@@ -44,7 +44,8 @@
     "No fees, paid storage, copyright-owner contact, live reader changes, or new art approval in this PR",
     "There is one provisional assignment entry for each of 267 slots, but 23 entries are NOT user approved: never confuse completeness of candidate coverage with artistic approval or production release",
     "Do not equate source link recovered with image downloaded or licensed; still 187 missing source pages across research placements",
-    "41 blank artist placements are two genuinely anonymous Cleveland originals and must not be ascribed an invented artist"
+    "41 blank artist placements are two genuinely anonymous Cleveland originals and must not be ascribed an invented artist",
+    "Seventeen previously listed Prado-origin photo URLs have been quarantined; paintings and prior approvals are retained, but those original sources are not permitted as candidate images"
   ],
   "shards": [
     {
@@ -150,7 +151,8 @@
     "onePerPositionProvisional": "data/prayer/artwork-editorial-20261031/provisional-one-choice-per-267-art-position.v1.json",
     "sourceRepairLedger": "data/prayer/artwork-editorial-20261031/source-link-recovery-1506-placements-20261031.v1.json",
     "attributionAudit": "data/prayer/artwork-editorial-20261031/artist-attribution-source-resolution-wave01.v1.json",
-    "priorityPhotoQA": "data/prayer/artwork-editorial-20261031/priority-photo-source-and-licence-qa-wave01.v1.json"
+    "priorityPhotoQA": "data/prayer/artwork-editorial-20261031/priority-photo-source-and-licence-qa-wave01.v1.json",
+    "pradoPhotoQuarantine": "data/prayer/artwork-editorial-20261031/prado-origin-source-quarantine-20261031.v1.json"
   },
   "qaState": {
     "status": "SOURCE_REPAIR_PASS1_COMPLETED; CATALOGUE_NOT_PIXEL_CERTIFIED",
@@ -158,14 +160,16 @@
     "originalMissingSourcePage": 329,
     "sourceLinksRestoredByExactArtworkID": 140,
     "sourceLinksAddedByDirectMuseumAndCommonsVerification": 2,
-    "nowStillWithoutSourcePages": 187,
+    "nowStillWithoutSourcePages": 204,
     "unverifiedNameOnlySourceAlternatives": 7,
-    "stillNoSourceLead": 180,
+    "stillNoSourceLead": 197,
     "anonymousArtistPlacementsResolvedAsKnownAnonymous": 41,
     "unresolvedOriginalArtistPlacements": 4,
     "confirmedNewUserArtworkApprovals": 0,
     "allPixelsAndFrameCropsConfirmed": false,
     "allRightsConfirmed": false,
-    "publicReleaseEnabled": false
+    "publicReleaseEnabled": false,
+    "pradoPhotoSourcesExcluded": 17,
+    "strictNoPradoPhotoSourcesInActiveCandidateList": true
   }
 }
