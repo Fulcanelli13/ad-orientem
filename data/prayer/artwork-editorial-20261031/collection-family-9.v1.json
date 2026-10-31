@@ -9,7 +9,9 @@
     "slots": 24,
     "originalSourceEdges": 111,
     "deduplicatedReviewOptions": 113,
-    "excludedDoNotSuggest": 3
+    "excludedDoNotSuggest": 3,
+    "sourceLinksRecoveredByExactID": 3,
+    "sourceLinkSuggestionsUnverified": 0
   },
   "slots": [
     {
@@ -1310,14 +1312,24 @@
           ],
           "artist": "Bartolomé Esteban Murillo",
           "title": "The Return of the Prodigal Son",
-          "sourcePage": null,
+          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
           "sourceEditorialStatus": "USER_FINAL_LOCKED",
           "fit": "FINAL_USER_LOCK",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              null,
+              "HERO::nga:34956",
+              "PRAYER::confession--primary"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -1958,14 +1970,23 @@
           ],
           "artist": "Philippe de Champaigne",
           "title": "The Dream of Saint Joseph",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+              "PRAYER::joseph--primary"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
@@ -2000,14 +2021,23 @@
           ],
           "artist": "Philippe de Champaigne",
           "title": "The Dream of Saint Joseph",
-          "sourcePage": null,
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
           "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
           "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
           "historicallyApprovedInOriginalLedger": true,
           "requiresExplicitUserApproval": false,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+              "PRAYER::joseph--primary"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
         },
         {
           "sourceIDs": [
