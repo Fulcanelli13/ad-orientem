@@ -32,7 +32,10 @@
       "uniqueArtIdLinks": 60,
       "dateArtworkLinks": 65,
       "identifiableExternalArtSourceOnly": 0,
-      "withoutExistingSourceOrPrimary": 0
+      "withoutExistingSourceOrPrimary": 0,
+      "additionalUnlinked856ExactSubjectDateCandidates": 0,
+      "identifiedDateSubjectOrCatalogueCandidates": 53,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 0
     },
     "II": {
       "total": 76,
@@ -48,7 +51,10 @@
       "uniqueArtIdLinks": 42,
       "dateArtworkLinks": 42,
       "identifiableExternalArtSourceOnly": 24,
-      "withoutExistingSourceOrPrimary": 31
+      "withoutExistingSourceOrPrimary": 31,
+      "additionalUnlinked856ExactSubjectDateCandidates": 0,
+      "identifiedDateSubjectOrCatalogueCandidates": 18,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 58
     },
     "III": {
       "total": 165,
@@ -64,7 +70,10 @@
       "uniqueArtIdLinks": 74,
       "dateArtworkLinks": 75,
       "identifiableExternalArtSourceOnly": 0,
-      "withoutExistingSourceOrPrimary": 130
+      "withoutExistingSourceOrPrimary": 130,
+      "additionalUnlinked856ExactSubjectDateCandidates": 12,
+      "identifiedDateSubjectOrCatalogueCandidates": 45,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 120
     },
     "IV": {
       "total": 71,
@@ -80,7 +89,10 @@
       "uniqueArtIdLinks": 0,
       "dateArtworkLinks": 0,
       "identifiableExternalArtSourceOnly": 0,
-      "withoutExistingSourceOrPrimary": 71
+      "withoutExistingSourceOrPrimary": 71,
+      "additionalUnlinked856ExactSubjectDateCandidates": 0,
+      "identifiedDateSubjectOrCatalogueCandidates": 0,
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 71
     }
   },
   "unmatched": {
@@ -2191,7 +2203,9 @@
     "Prior 75-priority saint-source programme and later art approvals not in the 383 index still need cross-module matching before claiming art physically absent.",
     "Where a physical painting has two catalogue IDs the exact original must be deduplicated before rotating.",
     "Class II missing exact 383 matches includes a handful of already approved cross-module primaries (e.g. Lotto Rosary, MNAC Seven Sorrows), and anticipatory selected artwork reuse; specific date binding has not been user-approved.",
-    "At least one unmatched group day already has a member-specific physical painting: 20 Jan has Saint Sebastian artworks but no verified exact joint Fabian/Sebastian composition. Separate partialGroupSaintPaintingLeads records preserve reuse without claiming group completion."
+    "At least one unmatched group day already has a member-specific physical painting: 20 Jan has Saint Sebastian artworks but no verified exact joint Fabian/Sebastian composition. Separate partialGroupSaintPaintingLeads records preserve reuse without claiming group completion.",
+    "Research Batch 1 matches 12 Class III dates to 17 previously accepted 856-source photos; source acceptance is not an artwork-to-feast approval, image rights, source SHA or live publication.",
+    "Class II contextual anticipatory source choices and partial Group Saints do NOT count as complete exact date bindings."
   ],
   "days": [
     {
@@ -2643,7 +2657,47 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "cma:144270",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Paul the Hermit",
+          "sourceArtistAsRecorded": "Mattia Preti (Italian, 1613–1699)",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1969.109",
+          "sourceObjectUrl": "https://clevelandart.org/art/1969.109",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "walters:37037",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Paul the Hermit",
+          "sourceArtistAsRecorded": "Jusepe de Ribera",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "37.278",
+          "sourceObjectUrl": "https://purl.thewalters.org/art/37.278",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-01-16",
@@ -2783,7 +2837,82 @@
           "photoReleaseCertified": false
         }
       ],
-      "groupMatchingNote": "Potentially depicts Saint Sebastian only; does NOT count as an exact painting of Saints Fabian AND Sebastian and is not a complete group date hero."
+      "groupMatchingNote": "Potentially depicts Saint Sebastian only; does NOT count as an exact painting of Saints Fabian AND Sebastian and is not a complete group date hero.",
+      "partialOrExcludedAcceptedSourceLeads": [
+        {
+          "sourceCardId": "nga:332",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Sebastian",
+          "sourceArtistAsRecorded": "Tanzio da Varallo",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1939.1.191",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/332",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "nga:46100",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Sebastian",
+          "sourceArtistAsRecorded": "Amico Aspertini",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1961.9.1",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/46100",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "kmska:ahksg5",
+          "sourceSelection": "IMPORT_WITH_CORRECTIONS",
+          "sourceTitle": "Marteldood van de heilige Sebastianus van Rome",
+          "sourceArtistAsRecorded": "Schilder: Ambrosius Francken I",
+          "sourceCorrection": "picture a bit tiny",
+          "sourceObjectAccession": "154",
+          "sourceObjectUrl": "http://kmska.be/collection/work/data/ahksg5",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "smk:KMSSP113",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Sebastian",
+          "sourceArtistAsRecorded": "Eugenio Cajés; Unknown",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "KMSSP113",
+          "sourceObjectUrl": "https://open.smk.dk/en/artwork/image/KMSSP113",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "acceptedSourceIdentityWarning": "Sebastian alone does not depict the complete Fabian/Sebastian paired feast."
     },
     {
       "date": "2026-01-21",
@@ -3128,7 +3257,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "walters:34385",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "St. Agatha",
+          "sourceArtistAsRecorded": "Francesco Furini",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "37.1839",
+          "sourceObjectUrl": "https://purl.thewalters.org/art/37.1839",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-02-06",
@@ -4483,7 +4634,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:29827881",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "St Hermenegild in Prision",
+          "sourceArtistAsRecorded": "Goya y Lucientes, Francisco",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Goya_y_Lucientes%2C_Francisco_-_St_Hermenegild_in_Prision_-_Google_Art_Project.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-04-14",
@@ -4784,7 +4957,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:9734560",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Peter Martyr with Saints Nicholas and Benedict",
+          "sourceArtistAsRecorded": "Giovanni Battista Cima da Conegliano",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Cima_da_conegliano%2C_san_pietro_martire_e_santi_01.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-04-30",
@@ -5597,7 +5792,47 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "kmska:6yxly9",
+          "sourceSelection": "IMPORT_WITH_CORRECTIONS",
+          "sourceTitle": "Heilige Norbertus van Magdeburg ontvangt het kleed van zijn orde",
+          "sourceArtistAsRecorded": "Schilder: Gerard Seghers",
+          "sourceCorrection": "can have much better quality",
+          "sourceObjectAccession": "513",
+          "sourceObjectUrl": "http://kmska.be/collection/work/data/6yxly9",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "kmska:n22nyq",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "De teruggave van de kerkschatten aan de heilige Norbertus na de overwinning op de ketterij van Tanchelmus, met portret van de familie Snoeck",
+          "sourceArtistAsRecorded": "Schilder: Cornelis de Vos",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "107",
+          "sourceObjectUrl": "http://kmska.be/collection/work/data/n22nyq",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-06-07",
@@ -5946,7 +6181,28 @@
         }
       ],
       "classSpecificState": "EXISTING_OUTSIDE_383_ARTWORK_REUSE_OR_MUSEUM_LEAD",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:89059784",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Birth of St John the Baptist",
+          "sourceArtistAsRecorded": "Luca Giordano",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Birth_of_St_John_the_Baptist_(Giordano).jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "acceptedSourceContextualWarning": "Birth scene anticipates the next day's Nativity, not literal Vigil Gospel."
     },
     {
       "date": "2026-06-24",
@@ -6065,7 +6321,47 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "nga:46142",
+          "sourceSelection": "IMPORT_WITH_CORRECTIONS",
+          "sourceTitle": "The Conversion of Saint Paul",
+          "sourceArtistAsRecorded": "Jacopo Tintoretto",
+          "sourceCorrection": "need better quality",
+          "sourceObjectAccession": "1961.9.43",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/46142",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "walters:37844",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "St. Paul Preaching to the Athenians",
+          "sourceArtistAsRecorded": "François de Nomé",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "37.328",
+          "sourceObjectUrl": "https://purl.thewalters.org/art/37.328",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-07-01",
@@ -6212,7 +6508,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:29827917",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Isabel of Portugal Healing the Wounds of a Sick Woman",
+          "sourceArtistAsRecorded": "Goya y Lucientes, Francisco",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Goya_y_Lucientes%2C_Francisco_-_Saint_Isabel_of_Portugal_Healing_the_Wounds_of_a_Sick_Woman_-_Google_Art_Project.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-07-09",
@@ -6238,7 +6556,28 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "partialOrExcludedAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:29858581",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Justa and Saint Rufina",
+          "sourceArtistAsRecorded": "Antonio María Esquivel",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Antonio_M%C2%AA_Esquivel_-_Saint_Justa_and_Saint_Rufina_-_Google_Art_Project.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "acceptedSourceIdentityWarning": "Justa and Rufina of Seville are different from Rufina and Secunda of Rome; exclude."
     },
     {
       "date": "2026-07-11",
@@ -6922,7 +7261,100 @@
         }
       ],
       "classSpecificState": "EXISTING_OUTSIDE_383_ARTWORK_REUSE_OR_MUSEUM_LEAD",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "nga:46131",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "The Assumption of the Virgin",
+          "sourceArtistAsRecorded": "Studio of Sir Peter Paul Rubens",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1961.9.32",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/46131",
+          "canonical383Status": "CONFIRMED_IDENTITY",
+          "canonicalArtworkId": "nga-46131",
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "nga:46145",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "The Assumption of the Virgin",
+          "sourceArtistAsRecorded": "Juan de Valdés Leal",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1961.9.46",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/46145",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "nga:46470",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "The Assumption of the Virgin",
+          "sourceArtistAsRecorded": "Nicolas Poussin",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1963.5.1",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/46470",
+          "canonical383Status": "CONFIRMED_IDENTITY",
+          "canonicalArtworkId": "nga-46470",
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "nga:50280",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "The Assumption of the Virgin",
+          "sourceArtistAsRecorded": "Michel Sittow",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "1965.1.1",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/50280",
+          "canonical383Status": "CONFIRMED_IDENTITY",
+          "canonicalArtworkId": "nga-50280",
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "rijks:200108871",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Assumption of the Virgin",
+          "sourceArtistAsRecorded": "Jacob de Wet (I)",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "SK-A-1853",
+          "sourceObjectUrl": "https://id.rijksmuseum.nl/200108871",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "acceptedSourceContextualWarning": "Assumption on Vigil is anticipatory and not a literal Vigil Gospel."
     },
     {
       "date": "2026-08-15",
@@ -7558,7 +7990,28 @@
         }
       ],
       "classSpecificState": "EXISTING_OUTSIDE_383_ARTWORK_REUSE_OR_MUSEUM_LEAD",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "met:436721",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sourceArtistAsRecorded": "Adriaen Isenbrant",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "04.32",
+          "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/436721",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "acceptedSourceContextualWarning": "Mater Dolorosa paired with Ecce Homo is contextual, not the specific approved Seven Sorrows module artwork."
     },
     {
       "date": "2026-09-16",
@@ -7621,7 +8074,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "nga:112629",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "The Martyrdom of Saint Gennaro",
+          "sourceArtistAsRecorded": "Mattia Preti",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "2000.75.1",
+          "sourceObjectUrl": "https://www.nga.gov/artworks/112629",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-09-20",
@@ -7964,7 +8439,65 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "walters:8257",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Bruno",
+          "sourceArtistAsRecorded": "Girolamo Marchesi",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "37.423",
+          "sourceObjectUrl": "https://purl.thewalters.org/art/37.423",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "commons:30447357",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Carlo Sellitto, Saint Bruno",
+          "sourceArtistAsRecorded": "Edelseider",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Carlo_Sellitto%2C_Saint_Bruno.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        },
+        {
+          "sourceCardId": "commons:149891814",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "German: Der Heilige Bruno im Gebet | St. Bruno in Prayer \" \"",
+          "sourceArtistAsRecorded": "Eustache Le Sueur",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Le_Sueur%2C_Eustache_-_Der_heilige_Bruno_im_Gebet_-_Gem%C3%A4ldegalerie_Berlin.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-10-07",
@@ -8452,7 +8985,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:23980786",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Carlo Borromeo Receiving the Oblates",
+          "sourceArtistAsRecorded": "Alessandro Magnasco / Attributed to Clemente Spera",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Alessandro_Magnasco_-_Saint_Carlo_Borromeo_Receiving_the_Oblates_-_Google_Art_Project.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-11-05",
@@ -8646,7 +9201,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:116859339",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Gregorio Vasquez de Arce y Ceballos - Saint Gertrude the Great",
+          "sourceArtistAsRecorded": "Gregorio Vasquez de Arce y Ceballos",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Gregorio_Vasquez_de_Arce_y_Ceballos_-_Saint_Gertrude_the_Great.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-11-17",
@@ -8711,7 +9288,29 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "NO_EXACT_SAINT_TITLE_MATCH_IN_383",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "additionalAcceptedSourceLeads": [
+        {
+          "sourceCardId": "commons:153725",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Presentation of the Virgin \" \"",
+          "sourceArtistAsRecorded": "Eustache Le Sueur",
+          "sourceCorrection": null,
+          "sourceObjectAccession": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_001.jpg",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false
+        }
+      ],
+      "sourceMatchingStatus": "856_ACCEPTED_SOURCE_EXACT_SAINT_SUBJECT_PENDING_DATE_APPROVAL",
+      "remainingExact383ArtworkIdentityMissing": true
     },
     {
       "date": "2026-11-22",
