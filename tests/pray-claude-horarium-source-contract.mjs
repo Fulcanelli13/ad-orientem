@@ -22,6 +22,15 @@ test("Hours buttons, quadratic sun and bell groups reproduce actual Claude signa
   assert.equal((html.match(/data-p435930-angelus-hour=/g)||[]).length,3);
   assert.match(html,new RegExp('data-ao-claude-horarium-hour="'+hour+'"'));
  }
+ const french=claudeHorariumClock(12,"fr");
+ assert.match(french,/aria-label="Heure de la journée"/);
+ assert.match(french,/aria-label="Heure de l’Angélus"/);
+ assert.match(french,/aria-label="Six heures du matin"/);
+ assert.match(french,/aria-label="Midi"/);
+ assert.match(french,/aria-label="Six heures du soir"/);
+ const english=claudeHorariumClock(12,"en");
+ assert.match(english,/aria-label="Angelus hour"/);
+ assert.match(english,/aria-label="Six in the evening"/);
  assert.equal(claudeHorariumHourFromClock(7),6);
  assert.equal(claudeHorariumHourFromClock(13),12);
  assert.equal(claudeHorariumHourFromClock(19),18);
@@ -47,7 +56,7 @@ test("Canonical Angelus remains season-owned and progresses only with user navig
  assert.match(runtime,/onCardChange:\(_card,index\)=>/);
  assert.match(runtime,/syncClaudeHorariumStrokes\(m,Math.max\(0,index-1\)\)/);
  assert.match(runtime,/data-p435930-angelus-hour/);
- assert.match(runtime,/claudeHorariumClock\(CLAUDE_ANGELUS_HOUR\)/);
+ assert.match(runtime,/claudeHorariumClock\(CLAUDE_ANGELUS_HOUR,lang\(\)\)/);
  assert.match(styles,/height:150px/);
  assert.match(styles,/max-width:359px/);
 });
