@@ -48,7 +48,8 @@
       "sourceShaVerified": true,
       "roleSegmentCounts": {
         "GRADUAL": 2,
-        "ALLELUIA": 1
+        "ALLELUIA": 1,
+        "OFFERTORY": 1
       },
       "matches": [
         {
@@ -81,9 +82,14 @@
           "id": "GREGOBASE-143",
           "originalRole": "of",
           "donor": "benedicam dominum qui tribuit mihi intellectum providebam deum in conspectu meo semper quoniam a dextris est mihi ne commovear",
-          "sourceTextMatches": 0,
-          "sourceSegments": [],
-          "classification": "NO_EXACT_SOURCE_LINE"
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "OFFERTORY"
+            }
+          ],
+          "classification": "OFFERTORY"
         }
       ]
     },
