@@ -1,0 +1,48 @@
+name: Exact Sacred Subject Photo Finder contracts
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "data/geography/research/exact-sacred-subject-photo-inventory-20261031.v1.json"
+      - "tools/precise-sacred-subject-photo-finder.html"
+      - "tests/explore-exact-sacred-subject-finder-20261031.mjs"
+      - "tests/explore-exact-sacred-subject-finder-browser-20261031.mjs"
+      - ".github/workflows/explore-exact-sacred-subject-finder.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/explore-exact-sacred-subject-finder-20261031.mjs
+
+  exact-subject-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Validate mocked Commons query, rights hold and decisions export
+        run: node tests/explore-exact-sacred-subject-finder-browser-20261031.mjs
+      - name: Preserve test-only screenshots (not sacred artwork archive)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-sacred-subject-finder-phones
+          path: artifacts/explore-sacred-subject-finder/
+          if-no-files-found: warn
+          retention-days: 7
