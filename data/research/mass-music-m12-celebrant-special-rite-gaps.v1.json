@@ -1,0 +1,288 @@
+{
+  "schema": "ao-mass-music-m12-celebrant-and-special-rite-gaps-v1",
+  "publication": "RESEARCH_HOLD",
+  "summary": {
+    "families": 19,
+    "statusCounts": {
+      "M05_SOURCE_CANDIDATE": 6,
+      "SOURCE_SCORE_REQUIRED": 11,
+      "SILENT_NOT_SUNG": 1,
+      "M05_PARTIAL_CANDIDATE": 1
+    }
+  },
+  "rubricalSources": [
+    {
+      "authority": "1962 General Rubrics 480-481",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+      "topic": "Secret prayers are said silently; only the terminal Per omnia is pronounced aloud"
+    },
+    {
+      "authority": "1962 General Rubrics 507-510",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+      "topic": "Ite, Benedicamus, Requiescant, Easter octave, blessing and Last Gospel exceptions"
+    },
+    {
+      "authority": "Liber Usualis 1961",
+      "url": "https://propria.org/wp-content/uploads/2019/10/liber-usualis-1961.pdf",
+      "topic": "Musical facsimile authority still requires note-by-note comparison and exact edition identity"
+    }
+  ],
+  "sourceCandidateCorpus": "data/research/mass-music-m05-cc0-gabc-seven-20261031.v1.json",
+  "scopePolicy": "No automatic score promotion, no invented chant for silent texts, no date/title inference of seasonal or mass formulas, no publication or audio.",
+  "families": [
+    {
+      "id": "ORATION_GREETING_SOLEMN",
+      "event": "COLLECT_POSTCOMMUNION",
+      "toneFamily": "SOLEMN",
+      "status": "M05_SOURCE_CANDIDATE",
+      "existingM05Id": "ORATIONS_FESTIVE",
+      "scope": "Dominus vobiscum and Et cum spiritu tuo only, not the orations",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "ORATION_GREETING_FERIAL",
+      "event": "COLLECT_POSTCOMMUNION",
+      "toneFamily": "FERIAL",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Require paired celebrant and response in the same printed ferial tone",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "COLLECT_TONE_SOLEMN",
+      "event": "COLLECT",
+      "toneFamily": "SOLEMN",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Variable Collect melody, conclusions and Amen; includes multiple Collects where source requires",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "COLLECT_TONE_FERIAL",
+      "event": "COLLECT",
+      "toneFamily": "FERIAL",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Variable Collect melody, conclusions and Amen; use source-selected orations",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "POSTCOMMUNION_TONE_SOLEMN",
+      "event": "POSTCOMMUNION",
+      "toneFamily": "SOLEMN",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Variable Postcommunion melody, conclusions and Amen; retain additional prayers",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "POSTCOMMUNION_TONE_FERIAL",
+      "event": "POSTCOMMUNION",
+      "toneFamily": "FERIAL",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Variable Postcommunion melody, conclusions and Amen; retain additional prayers",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "SECRET_PRAYER_BODY",
+      "event": "SECRET",
+      "toneFamily": "SILENT",
+      "status": "SILENT_NOT_SUNG",
+      "existingM05Id": null,
+      "scope": "1962 General Rubrics 480-481: Secret body said silently, not a full sung score target",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "SECRET_ENDING_PREFACE_SOLEMN",
+      "event": "PREFACE_DIALOGUE",
+      "toneFamily": "SOLEMN",
+      "status": "M05_SOURCE_CANDIDATE",
+      "existingM05Id": "PREFACE_SOLEMN",
+      "scope": "Per omnia saecula saeculorum and Amen already occur in the full solemn Preface dialogue research GABC",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "SECRET_ENDING_PREFACE_FERIAL",
+      "event": "PREFACE_DIALOGUE",
+      "toneFamily": "FERIAL",
+      "status": "M05_SOURCE_CANDIDATE",
+      "existingM05Id": "PREFACE_FERIAL",
+      "scope": "Per omnia saecula saeculorum and Amen already occur in the full ferial Preface dialogue research GABC",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "VARIABLE_PREFACE_BODY",
+      "event": "PREFACE_DIALOGUE",
+      "toneFamily": "SOURCE_SELECTED",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "The full Preface dialogue exists in M05 but variable Preface body tones and endings still need source collation",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "PATERNOSTER_COMPLETE",
+      "event": "PATERNOSTER",
+      "toneFamily": "SOLEMN_OR_FERIAL",
+      "status": "M05_PARTIAL_CANDIDATE",
+      "existingM05Id": "PATERNOSTER_COMMON",
+      "scope": "Existing source covers Et ne nos inducas and Sed libera nos only; require complete Pater noster text and 1962 tone selection",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "GOSPEL_PROCLAMATION",
+      "event": "GOSPEL",
+      "toneFamily": "GOSPEL_SPECIFIC",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Full Gospel chant formula, initials, endings and dialogue; deacon at Solemn Mass, priest at Missa cantata",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "ITE_MISSA_EST_REGULAR",
+      "event": "DISMISSAL",
+      "toneFamily": "SOURCE_SELECTED",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Normal Ite missa est and Deo gratias, including permitted Kyriale melody variants; do not use Easter double Alleluia",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "ITE_MISSA_EST_EASTER_DOUBLE",
+      "event": "DISMISSAL",
+      "toneFamily": "EASTER_OCTAVE",
+      "status": "M05_SOURCE_CANDIDATE",
+      "existingM05Id": "DISMISSAL_ITE_I",
+      "scope": "Ite missa est, alleluia, alleluia with Deo gratias, alleluia, alleluia; exact source selected-Mass gate",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "BENEDICAMUS_DOMINO",
+      "event": "DISMISSAL",
+      "toneFamily": "PROCESSIONAL_ENDING",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Benedicamus Domino and Deo gratias; 1962 processional-ending rule rather than older no-Gloria heuristics",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "REQUIESCANT_IN_PACE",
+      "event": "DISMISSAL",
+      "toneFamily": "REQUIEM",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Requiescant in pace and Amen; omit normal Ite/Deo gratias at an explicit Requiem",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "ASPERGES_ANTIPHON_PSALM",
+      "event": "ASPERGES",
+      "toneFamily": "NON_PASCHAL",
+      "status": "M05_SOURCE_CANDIDATE",
+      "existingM05Id": "ASPERGES_NORMAL",
+      "scope": "Antiphon, Psalm 50, Gloria Patri available as unapproved source text and GABC; Passiontide Gloria restriction preserved",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "VIDI_AQUAM_ANTIPHON_PSALM",
+      "event": "ASPERGES",
+      "toneFamily": "PASCHAL",
+      "status": "M05_SOURCE_CANDIDATE",
+      "existingM05Id": "ASPERGES_PASCHAL",
+      "scope": "Antiphon, Psalm 117, Gloria Patri available as unapproved source text and GABC",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "ASPERSION_CELEBRANT_RESPONSES",
+      "event": "ASPERGES",
+      "toneFamily": "SOURCE_SELECTED",
+      "status": "SOURCE_SCORE_REQUIRED",
+      "existingM05Id": null,
+      "scope": "Complete concluding versicles, responses and prayer not established by the two antiphon GABCs alone",
+      "sourceTextOnly": true,
+      "notAnObservedPerformance": true,
+      "printedNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    }
+  ],
+  "holds": {
+    "selected1962MassVerified": false,
+    "scoreFacsimileCompared": false,
+    "allFamiliesComplete": false,
+    "editorialCollectionApproved": false,
+    "publicMusic": false
+  }
+}
