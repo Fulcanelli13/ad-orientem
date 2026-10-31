@@ -25,12 +25,12 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,1855);
+assert.equal(world.filter(x=>x.map_publishable).length,1857);
 const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,727);
+assert.equal(newSites.length,725);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -45,8 +45,12 @@ assert.equal(cantius[0].map_publishable,true);
 // Two exact-name, exact-site independent OSM building matches can be shown
 // provisionally while *Mass usage and precise entrances remain unverified*.
 for(const [group,id,name,lat,lng,osm,precision="site"] of [
+ ["RG-03C2AD02BC81","AO-B50-SSPV-US-FC03F5009C8",
+  "Immaculate Heart of Mary Church",47.5244,-111.27331,"osm:node:9251507643","site"],
+ ["RG-0611CE5E7367","AO-B51-FR-782F8A2B2031",
+  "Monastère Saint-Benoît",43.41996,6.12229,"osm:node:12702212301","site"],
  ["RG-02EBA275AC72","AO-B50-CMRI-US-C169C047AC2",
-  "Most Holy Rosary Church",42.71278,-85.46250,"usgs:gnis:2572764","site"],
+  "Most Holy Rosary Church",42.71278,-85.46250,"usgs:gnis:2572564","site"],
  ["RG-03AE4CE86D2B","AO-B56-US-5EF870DC7969",
   "Blessed Sacrament Church — Martinez",38.016898,-122.130969,
   "churcheslist:blessed-sacrament-church-45","address"],
@@ -136,12 +140,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,1855);
-assert.equal(vm.addressOnly,727);
+assert.equal(vm.mapped,1857);
+assert.equal(vm.addressOnly,725);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/727/);
+assert.match(html,/725/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 727 list-only plus 8 source-backed site/address markers, 3 separate published additions");
+console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 725 list-only plus 10 source-backed site/address markers, 3 separate published additions");

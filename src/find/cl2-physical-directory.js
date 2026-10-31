@@ -43,6 +43,26 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-03C2AD02BC81":Object.freeze({
+  sourceId:"AO-B50-SSPV-US-FC03F5009C8",name:"Immaculate Heart of Mary Church",
+  country:"US",addressNeedle:"2200 Smelter Ave",placeId:null,
+  lat:47.5244,lng:-111.27331,sourceRef:"osm:node:9251507643",
+  sourceUrl:"https://www.openstreetmap.org/node/9251507643",
+  evidence:Object.freeze([
+   "https://mapcarta.com/23662928",
+   "https://stpiusvchapel.org/mass-locations/",
+  ]),
+ }),
+ "RG-0611CE5E7367":Object.freeze({
+  sourceId:"AO-B51-FR-782F8A2B2031",name:"Monastère Saint-Benoît",
+  country:"FR",addressNeedle:"4763 route Théodore Linari",placeId:null,
+  lat:43.41996,lng:6.12229,sourceRef:"osm:node:12702212301",
+  sourceUrl:"https://www.openstreetmap.org/node/12702212301",
+  evidence:Object.freeze([
+   "https://mapcarta.com/fr/N12702212301",
+   "https://www.monasterebrignoles.org/contact.html",
+  ]),
+ }),
  "RG-02EBA275AC72":Object.freeze({
   sourceId:"AO-B50-CMRI-US-C169C047AC2",name:"Most Holy Rosary Church",country:"US",
   addressNeedle:"314 E Main St",placeId:null,
@@ -224,7 +244,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:osm:way:\d+|usgs:gnis:\d+|churcheslist:[a-z0-9-]+)$/.test(newPin.sourceRef)||
+     !/^(?:osm:(?:way|node):\d+|usgs:gnis:\d+|churcheslist:[a-z0-9-]+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
    const affiliationName=T(affiliation)||"Source affiliation not established";
