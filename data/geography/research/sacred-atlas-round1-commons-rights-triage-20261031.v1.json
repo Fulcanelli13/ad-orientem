@@ -181,7 +181,10 @@
       "pixel_quality_assessed": false,
       "identity_verified": false,
       "publishable": false,
-      "published": false
+      "published": false,
+      "artwork_author_evidence": "The Sanctuary of Fatima identifies José Ferreira Thedim (1892–1971) as the sculptor of the 1920 statue; https://www.fatima.pt/pt/news/santuario-de-fatima-edita-livro-estudo-cientifico-da-escultura-de-nossa-senhora-do-rosario-de-fatima-2017-03-10",
+      "artwork_rights_verdict": "UNRESOLVED: Commons claims Thedim dedicated the sculpture to the public domain on delivery in 1920. An object's donation/transfer does NOT by itself establish a legally effective transfer or waiver of copyright. The underlying dedication evidence and territorial effect need independent verification; his 1971 death otherwise presents a normal EU term through 2041. The Commons photo license does not cure this.",
+      "independent_license_constraint": "Official Sanctuary of Fatima image gallery requires licensing; do not import it. https://www.fatima.pt/pt/multimedia/images/nossa-senhora-do-rosario-de-fatima"
     },
     {
       "number": 6,
@@ -469,7 +472,9 @@
       "pixel_quality_assessed": false,
       "identity_verified": false,
       "publishable": false,
-      "published": false
+      "published": false,
+      "artwork_author_evidence": "Catholic National Shrine identifies current Slipper Chapel statue as Marcel Barbeau design, carved by W.F. Knight in 1954; https://www.walsingham.org.uk/our-story/ ; https://taking-stock.org.uk/building/walsingham-chapel-of-st-catherine-slipper-chapel/",
+      "artwork_rights_verdict": "HIGH_RISK_MODERN_STATUE: 1954 original design/work is not equivalent to the ancient Marian iconography. Confirm sculptor/designer death dates and transferable rights; Commons photographer CC BY 3.0 alone does not clear it."
     },
     {
       "number": 15,
@@ -565,7 +570,9 @@
       "pixel_quality_assessed": false,
       "identity_verified": false,
       "publishable": false,
-      "published": false
+      "published": false,
+      "artwork_author_evidence": "Québec official heritage registry identifies the miraculous statue in the north transept as work of Mathias Zens' atelier. Independent construction account identifies a 1926–27 replica by de Vischer based on the 1881 Zens model; https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=93392&methode=consulter&type=bien . Reconcile object chronology before determining sculptural copyright.",
+      "artwork_rights_verdict": "UNRESOLVED_OBJECT_VERSION: do not assume the currently photographed statue is the 1881 original or automatically public domain. Identify exact visible object and original/replacement chronology before attributing creator/date."
     },
     {
       "number": 18,
@@ -661,7 +668,9 @@
       "pixel_quality_assessed": false,
       "identity_verified": false,
       "publishable": false,
-      "published": false
+      "published": false,
+      "artwork_author_evidence": "Musée d'Orsay monument inventory records an 1864 La Salette-Fallavaux statue group designed by Henri-Hamilton Barrême (d. 1866), located at the actual original sanctuary; https://anosgrandshommes.musee-orsay.fr/index.php/Detail/objects/3959",
+      "artwork_rights_verdict": "WRONG_SITE_FIRST_CANDIDATE: do not publish. The 2018 correctly located replacement might show original 1864 monument (to verify visually/object mapping); old sculptor death would suggest expired sculptural copyright, but photo rights and exact depicted statue require verification."
     }
   ],
   "alternative_candidates": [
@@ -705,5 +714,14 @@
       "reason": "Official sanctuary expressly states reuse of its image gallery requires licensing. Independently Commons-licensed works must remain legally distinct from official-gallery photos."
     }
   ],
-  "note": "Current triage: 18 independently named contemporary photo file pages, 1 undated historic postcard, 1 demonstrably wrong-site sculpture. All 20 original user KEEP votes stand; the new La Salette file is only a proposed substitute."
+  "note": "Current triage: 18 independently named contemporary photo file pages, 1 undated historic postcard, 1 demonstrably wrong-site sculpture. All 20 original user KEEP votes stand; the new La Salette file is only a proposed substitute.",
+  "corroboration_status": "FOUR_ARTWORK_FINDINGS_RESEARCHED_NO_CHANGE_TO_CLEARANCE_FLAGS",
+  "corroboration_as_of": "2026-10-31",
+  "corroboration_policies": [
+    "Commoner's photograph CC licence cannot transfer underlying modern sculpture rights.",
+    "Sale or gift of physical statue is not itself proof of copyright dedication.",
+    "Where historic object may be an early twentieth-century replacement, verify the specific photographed object.",
+    "Do not use official rights-reserved photography even if an independently created Commons photograph of the same subject is free.",
+    "Exact displayed preview remains unmatched for all twenty; no production approval inferred."
+  ]
 }
