@@ -84,7 +84,7 @@ const properTitles=Object.freeze({
   POSTCOMMUNION_SET:["Postcommunion","Postcommunion"],
 });
 function labelFor(meta,locale){
-  const exact=properTitles[meta.properSlot];
+  const exact=properTitles[meta.properSlot]??properTitles[meta.title];
   return exact?exact[locale==="fr"?1:0]:String(meta.title??meta.blockId);
 }
 // Actual-Mass-owner contextual rubric, not a timed priest/minister event.
@@ -146,7 +146,8 @@ export function missalPrayerHeadingsForCard(card,{language="en",resolvedMass=nul
         : shortDescriptions[block.blockId.replace("AO.SM.","")]?.[locale==="fr"?1:0]??null,
     })));
 }
-function subsections(card,groups){
+function subsections(card,groups,{language="en"}={}){
+  const locale=String(language).toLowerCase().startsWith("fr")?"fr":"en";
   const blocks=card.blocks??[];
   const expected=blocks.map(x=>x.blockId);
   const specified=groups.flat().map(canonicalBlockId);
@@ -185,7 +186,7 @@ function subsections(card,groups){
           sectionId:"AO.MISSAL."+card.sectionId.slice(-3)+"."+(index+1),
           sourceSectionId:card.sectionId,
           sourceSequence:card.sequence,sequence:null,
-          title:groupBlocks[0].title,
+          title:labelFor(groupBlocks[0],locale),
           paragraphs:Object.freeze([]),blocks:Object.freeze(groupBlocks),
           eventIds:Object.freeze([]),sourceEventIds:card.eventIds??Object.freeze([]),
           missalPresentation:true,
@@ -198,8 +199,11 @@ function subsections(card,groups){
       groupBlocks=[...pendingEmptyBlocks,...groupBlocks];
       pendingEmptyBlocks=[];
     }
-    const title=groupBlocks.length===1?labelFor(titledBlock,"en"):
-      String(titledBlock.title??card.title);
+    // Compound Secret/Collect pages can begin with a Proper block whose
+    // raw title is the registry key (e.g. SECRET_SET), not a prayer name.
+    const properTitle=properTitles[titledBlock.properSlot]??properTitles[titledBlock.title];
+    const title=groupBlocks.length===1||properTitle
+      ?labelFor(titledBlock,locale):String(titledBlock.title??card.title);
     results.push(Object.freeze({...card,
       sectionId:"AO.MISSAL."+card.sectionId.slice(-3)+"."+(index+1),
       sourceSectionId:card.sectionId,sourceSequence:card.sequence,
@@ -218,7 +222,7 @@ function subsections(card,groups){
   }
   return results;
 }
-export function projectGranularMissalCards(model){
+export function projectGranularMissalCards(model,{language="en"}={}){
   if(!model||!Array.isArray(model.cards))throw new TypeError("Missal source model required");
   if(String(model.presentationMode??"").toUpperCase()!=="MISSAL")return model;
   const cards=[];
@@ -226,7 +230,7 @@ export function projectGranularMissalCards(model){
     const key=String(card.sourceSectionId??card.sectionId??"").slice(-3);
     const groups=SPLITS[key];
     if(groups && Array.isArray(card.blocks) && card.blocks.length>1)
-      cards.push(...subsections(card,groups));
+      cards.push(...subsections(card,groups,{language}));
     else cards.push(card);
   }
   const final=Object.freeze(cards.map((card,i)=>Object.freeze({...card,sequence:i+1})));
