@@ -43,6 +43,41 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ "RG-02EBA275AC72":Object.freeze({
+  sourceId:"AO-B50-CMRI-US-C169C047AC2",name:"Most Holy Rosary Church",country:"US",
+  addressNeedle:"314 E Main St",placeId:null,
+  lat:42.71278,lng:-85.46250,precision:"site",
+  sourceRef:"usgs:gnis:2572764",
+  sourceUrl:"https://topoquest.com/map/usgs-24k/michigan/middleville/29132",
+  attribution:"USGS Geographic Names Information System · named church site",
+  evidence:Object.freeze([
+   "https://www.mostholyrosarycmri.org/",
+   "https://churcheslist.com/most-holy-rosary-church-2",
+  ]),
+ }),
+ "RG-03AE4CE86D2B":Object.freeze({
+  sourceId:"AO-B56-US-5EF870DC7969",name:"Blessed Sacrament Church — Martinez",
+  country:"US",addressNeedle:"1150 Mellus St",placeId:null,
+  lat:38.016898,lng:-122.130969,precision:"address",
+  reviewScope:"ADDRESS_POINT_NOT_ENTRANCE",
+  sourceRef:"churcheslist:blessed-sacrament-church-45",
+  sourceUrl:"https://churcheslist.com/blessed-sacrament-church-45",
+  attribution:"ChurchesList · approximate public street-address coordinate",
+  evidence:Object.freeze([
+   "https://martinezchamber.com/wp-content/uploads/RelocationGuideJune2015.pdf",
+   "https://romancatholicinstitute.org/mass-centers/",
+  ]),
+ }),
+ "RG-B65-C4264A1A8340":Object.freeze({
+  sourceId:"AO-RSCH-B65-C4264A1A8340",name:"St Antonius",country:"CH",
+  addressNeedle:"Kannenfeldstrasse 35",placeId:null,
+  lat:47.5638664,lng:7.572879,sourceRef:"osm:way:266520642",
+  sourceUrl:"https://www.openstreetmap.org/way/266520642",
+  evidence:Object.freeze([
+   "https://www.antoniuskirche.ch/kontakt",
+   "https://www.antoniuskirche.ch/agenda?ShowStart=109&category=A1B328W5&instanceId=HC39P2DA&location=all&startDate=04.09.2026",
+  ]),
+ }),
  "RG-2447873BB8F5":Object.freeze({
   sourceId:"AO-B41-LOC-IT-8584201FAF73",
   name:"Seminario Internazionale San Filippo Neri",
@@ -189,7 +224,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^osm:way:\d+$/.test(newPin.sourceRef)||
+     !/^(?:osm:way:\d+|usgs:gnis:\d+|churcheslist:[a-z0-9-]+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
    const affiliationName=T(affiliation)||"Source affiliation not established";
@@ -204,10 +239,10 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     summary:"Physical site recorded in the research master. Current traditional Mass use, the minister, liturgical books and timetable have not been independently verified.",
     address:{formatted:T(description)||country},
     geo:newPin?Object.freeze({
-     lat:newPin.lat,lng:newPin.lng,precision:"site",approximate:true,
-     attribution:"© OpenStreetMap contributors · ODbL 1.0",
+     lat:newPin.lat,lng:newPin.lng,precision:newPin.precision||"site",approximate:true,
+     attribution:newPin.attribution||"© OpenStreetMap contributors · ODbL 1.0",
      source_ref:newPin.sourceRef,source_url:newPin.sourceUrl,
-     review_scope:"PHYSICAL_CHURCH_NOT_ENTRANCE",
+     review_scope:newPin.reviewScope||"PHYSICAL_CHURCH_NOT_ENTRANCE",
     }):null,
     map_publishable:Boolean(newPin),
     map_state:newPin?"PROVISIONAL":"ADDRESS_ONLY",facts:Object.freeze([
