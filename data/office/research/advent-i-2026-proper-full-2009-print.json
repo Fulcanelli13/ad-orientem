@@ -1,0 +1,65 @@
+{
+  "schema": "ao.office.advent-i-2026-proper-full-2009-print-v1",
+  "civilDate": "2026-11-28",
+  "officeDate": "2026-11-29",
+  "officePart": "FIRST",
+  "language": "la",
+  "pinnedRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+  "pinnedLatinSourceBlobs": {
+    "Tempora/Adv1-0": "f38a896d314286c721ae94065a4cfec828550023",
+    "Psalterium/Special/Major Special": "40c785ed7ae820cd10ba92dd47c115c5b6565312"
+  },
+  "witness": {
+    "url": "https://media.musicasacra.com/books/breviarium5x8.pdf",
+    "name": "Diurnale Romanum, David Siefker, 2009 Latin-English proof edition",
+    "type": "SECONDARY_2009_PROOF_NOT_1961_TYPICA",
+    "printedPages": [
+      26,
+      27,
+      224,
+      225
+    ],
+    "pdfZeroPages": [
+      25,
+      26,
+      223,
+      224
+    ],
+    "comparison": "Six complete hymn stanzas, five complete antiphons, chapter, complete Magnificat antiphon, collect body excluding Qui vivis, and two seasonal versicle lines",
+    "technique": "Independently transcribed directly from rendered printed PDF pages, normalized word-for-word comparison without accents, ligatures, punctuation or printed line breaks; no OCR and no raw printed text archived",
+    "independentlyPrinted1961Typica": false
+  },
+  "lexicalSha256": {
+    "ant1": "23a1e9833114e7396af55199292c5e162f592468aee4661b82009a116ec53055",
+    "ant2": "a6f7e14939641947fd50c2a0cc757ec7c8ac5114850e24dc2069989dbbc0c8ca",
+    "ant3": "61366137fa5d82ac2a657aabbdc5685d509e1f44eeef256131b371b28996454f",
+    "ant4": "fe28fa77ef002befc582a8023b77140a9d566330f00f6f95eb0f56d323dab4d4",
+    "ant5": "f8b5f97d1e7512b01bb7febb16deae01842d54c61766a9ae67d3af657dd18705",
+    "chapter": "5e6e488cf45dde5a62f62faae42fabbe70cc1d3055e06a5d3f5bb7eb4ff8dd46",
+    "magnificatAnt": "bb3058b604cafc86e1951065ed5da6446fbb47e9da1b72dbe2f03616ce17e238",
+    "collectBody": "c876ea35d4de0b5d697359ce6fced3b63f4253071468907471f441d97843810b",
+    "hymn1": "b67e2664bea5a2c30e0d81f724dcadf5661ae6607699642c35e61a8209982156",
+    "hymn2": "a23ece988f060a97b6eaab2e1e82b285f10156643923a81cb41f48b4982dbc94",
+    "hymn3": "c712af7431e2986acbc1ef46ccf5728abf775e5dcf2dc63d5e6fd18ccf64e725",
+    "hymn4": "443eb5885ff6d456144f27f3429776379d50e1ed0787571ef102bb2648feb8a6",
+    "hymn5": "9a2926264f3b94cb70adaae97e50be7b64e02b5469448de8879f15e04e253748",
+    "hymn6": "ea8d9c3f1de00f244b220505e80435c8435bf7793cc83f73ea025e864140728b",
+    "versicleV": "97d19d11e1fd1bd1c01a98a079a4aa54f59b91387085aa192c9782162121fa19",
+    "versicleR": "b2015ea9ef0d8798ca6a9ffdc3767ffb1dce0040c6486bd8ce656d8ff40b4b67"
+  },
+  "normalization": "ao-latin-lexical-v1 expansion of Latin ligatures; combining-diacritic removal; i/j equivalence; punctuation, musical marks and line breaks removed. Meaningful word changes fail.",
+  "comparedCompleteLatinTextUnits": 16,
+  "printedHymnStanzas": 6,
+  "printedAntiphonTexts": 6,
+  "printedVersicleLines": 2,
+  "printedChapterTexts": 1,
+  "printedCollectBodies": 1,
+  "collectEndingCertified": false,
+  "antiphonChantPointingCertified": false,
+  "full1961PrimaryPrintedCollation": false,
+  "localCalendarCertified": false,
+  "englishFrenchCertified": false,
+  "rightsApproved": false,
+  "publishable": false,
+  "published": false
+}
