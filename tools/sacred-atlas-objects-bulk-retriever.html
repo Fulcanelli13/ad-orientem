@@ -27,7 +27,8 @@ label{font-size:12px;color:#c5d0ce}
 input,select{background:#0b141d;color:var(--text);border:1px solid #52606a;border-radius:8px;padding:11px;min-height:43px;min-width:0}
 button{border:1px solid #6a6658;border-radius:8px;padding:11px 15px;min-height:44px;background:#1b2c37;color:var(--text)}
 button.primary{background:var(--gold);color:#14202a;border-color:var(--gold);font-weight:700}
-button.secondary{border-color:#537b78;color:#cce9e3}.running{color:var(--teal)}
+button.secondary{border-color:#537b78;color:#cce9e3}
+.restoreBtn{cursor:pointer;display:inline-flex;align-items:center;border:1px solid #537b78;color:#cce9e3;background:#1b2c37;border-radius:8px;padding:11px 15px;min-height:44px;margin:0;font-size:13px}.running{color:var(--teal)}
 .status{min-height:20px;margin-top:15px;font-size:13px;color:#d1dbe0;line-height:1.5}
 .progress{width:100%;height:10px;background:#24333c;border-radius:9px;overflow:hidden;margin-top:12px}
 .progress div{height:100%;width:0;background:linear-gradient(90deg,#649f95,#d7bb83);transition:width .25s}
@@ -79,6 +80,7 @@ footer{color:#a8b4b8;font-size:12px;line-height:1.6;padding:24px 0 35px}
 <button id="pause" class="secondary" disabled>Stop safely</button>
 <button id="zip" class="secondary">Export currently retrieved ZIP</button>
 <button id="report">Export full research JSON</button>
+<label for="restore" class="restoreBtn">Import your previous 247-target report<input id="restore" type="file" accept=".json,application/json" hidden></label>
 </div>
 <div class="progress" role="progressbar" aria-label="Research progress" aria-valuemin="0" aria-valuemax="247" aria-valuenow="0" id="bar"><div id="barFill"></div></div>
 <div class="status" id="status" role="status" aria-live="polite">Ready. Existing source names and all user KEEP decisions are preserved.</div>
@@ -315,6 +317,38 @@ $("filter").addEventListener("change",()=>{renderLimit=55;render()});
 $("more").addEventListener("click",()=>{renderLimit+=55;render()});
 $("pause").addEventListener("click",()=>{stop=true;status("Stop requested. Current finished items remain saved.")});
 $("report").addEventListener("click",exportJson);
+$("restore").addEventListener("change",async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+  const imported=JSON.parse(await file.text());
+  if(imported.schema!=="AO_SACRED_ATLAS_OBJECT_RESEARCH_EXPORT_V1"||
+     !Array.isArray(imported.records)||imported.records.length!==247)throw Error("Expected previous 247-target research JSON");
+  const byId=new Map(imported.records.map(r=>[r.id,r]));
+  if(byId.size!==247||I.some(x=>!byId.has(x.id)))throw Error("Photo target list does not match canonical 247");
+  let recovered=0;
+  for(const x of I){
+   const saved=byId.get(x.id),previous=saved?.acquisition;
+   if(!previous||typeof previous!=="object")continue;
+   if(!!saved.keep!==x.keep||saved.place!==x.place)throw Error("Prior KEEP or Place identity mismatch for "+x.id);
+   const c=previous.candidate;
+   if(c){
+    if(!c.eligible||typeof c.title!=="string"||!c.title.startsWith("File:")||
+       typeof c.sha1!=="string"||!/^[a-f0-9]{40}$/.test(c.sha1)||
+       (x.pinned&&(c.title!==x.pinned.title||c.sha1!==x.pinned.sha1))){
+      continue;
+    }
+   }
+   cached[x.id]={...previous,candidate:c?{...c,
+    source_identity_verified:false,underlying_rights_cleared:false,publication_approved:false}:null,
+    imported_from_user_report:true};
+   recovered++;
+  }
+  save();count();render();
+  status("Imported "+recovered+" of 247 saved source records. "+I.filter(x=>chosen(x)?.eligible).length+
+   " eligible Commons candidates available for corrected ZIP download. Existing KEEP decisions are preserved.");
+ }catch(error){status("Could not import previous report: "+String(error.message||error))}
+ e.target.value="";
+});
 $("zip").addEventListener("click",async()=>{if(busy)return;busy=true;stop=false;$("pause").disabled=false;
  try{await exportZip($("contact").value.trim())}finally{busy=false;$("pause").disabled=true}});
 $("start").addEventListener("click",async()=>{
