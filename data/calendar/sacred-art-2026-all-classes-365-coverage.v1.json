@@ -35,7 +35,8 @@
       "withoutExistingSourceOrPrimary": 0,
       "additionalUnlinked856ExactSubjectDateCandidates": 0,
       "identifiedDateSubjectOrCatalogueCandidates": 53,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 0
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 0,
+      "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 11
     },
     "II": {
       "total": 76,
@@ -54,7 +55,8 @@
       "withoutExistingSourceOrPrimary": 31,
       "additionalUnlinked856ExactSubjectDateCandidates": 0,
       "identifiedDateSubjectOrCatalogueCandidates": 18,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 58
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 58,
+      "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0
     },
     "III": {
       "total": 165,
@@ -73,7 +75,8 @@
       "withoutExistingSourceOrPrimary": 130,
       "additionalUnlinked856ExactSubjectDateCandidates": 12,
       "identifiedDateSubjectOrCatalogueCandidates": 45,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 120
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 120,
+      "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0
     },
     "IV": {
       "total": 71,
@@ -92,7 +95,8 @@
       "withoutExistingSourceOrPrimary": 71,
       "additionalUnlinked856ExactSubjectDateCandidates": 0,
       "identifiedDateSubjectOrCatalogueCandidates": 0,
-      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 71
+      "remainingWithoutDatedSelectionOrAnyExactSourceCandidate": 71,
+      "daysWithExplicitSelectedPaintingPhysicalObjectResearch": 0
     }
   },
   "unmatched": {
@@ -2205,7 +2209,8 @@
     "Class II missing exact 383 matches includes a handful of already approved cross-module primaries (e.g. Lotto Rosary, MNAC Seven Sorrows), and anticipatory selected artwork reuse; specific date binding has not been user-approved.",
     "At least one unmatched group day already has a member-specific physical painting: 20 Jan has Saint Sebastian artworks but no verified exact joint Fabian/Sebastian composition. Separate partialGroupSaintPaintingLeads records preserve reuse without claiming group completion.",
     "Research Batch 1 matches 12 Class III dates to 17 previously accepted 856-source photos; source acceptance is not an artwork-to-feast approval, image rights, source SHA or live publication.",
-    "Class II contextual anticipatory source choices and partial Group Saints do NOT count as complete exact date bindings."
+    "Class II contextual anticipatory source choices and partial Group Saints do NOT count as complete exact date bindings.",
+    "Class I Batch 3 adds exact institution/object-accession research for existing selected paintings where B05/B11/B17/B18/B21 already document them. Does not establish user's exact approved photo pixels, app rights, or crop; the Morgan Tissot and Carracci All Souls remain blocked."
   ],
   "days": [
     {
@@ -3557,7 +3562,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-02-22",
+          "principalId": "tempora:Quad1-0:1:v",
+          "class": "I",
+          "feast": "I Sunday of Lent",
+          "selectedArtist": "Ivan Kramskoi",
+          "selectedTitle": "Christ in the Desert",
+          "sourceResearchBatch": "B05",
+          "sourceRecordId": "B05-01",
+          "status": "TRETYAKOV_651_IDENTIFIED_PROVISIONAL_PD_ART",
+          "sourceOriginalArtist": "Ivan Kramskoi",
+          "sourceOriginalTitle": "Christ in the Wilderness (Christ in the Desert)",
+          "sourceOriginalAccession": "651",
+          "sourceMuseumObjectUrl": "https://my.tretyakov.ru/app/masterpiece/8448",
+          "sourceObjectInstitution": "State Tretyakov Gallery",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": null
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-02-23",
@@ -3701,7 +3732,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-03-01",
+          "principalId": "tempora:Quad2-0:1:v",
+          "class": "I",
+          "feast": "II Sunday of Lent",
+          "selectedArtist": "Raphael",
+          "selectedTitle": "The Transfiguration",
+          "sourceResearchBatch": "B05",
+          "sourceRecordId": "B05-02",
+          "status": "VATICAN_INV4_IDENTIFIED_CC_BY4_PHOTO_ROUTE",
+          "sourceOriginalArtist": "Raphael",
+          "sourceOriginalTitle": "The Transfiguration",
+          "sourceOriginalAccession": "Inv. 4",
+          "sourceMuseumObjectUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html",
+          "sourceObjectInstitution": "Vatican Museums, Pinacoteca",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": null
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-03-02",
@@ -4321,7 +4378,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-03-31",
+          "principalId": "tempora:Quad6-2:1:v",
+          "class": "I",
+          "feast": "Feria III of Holy Week",
+          "selectedArtist": "Caravaggio",
+          "selectedTitle": "The Taking of Christ",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-08",
+          "status": "CARAVAGGIO_DUBLIN_2882_IDENTIFIED_RIGHTS_HOLD",
+          "sourceOriginalArtist": "Michelangelo Merisi da Caravaggio",
+          "sourceOriginalTitle": "The Taking of Christ",
+          "sourceOriginalAccession": "L.14702; online object 2882",
+          "sourceMuseumObjectUrl": "https://onlinecollection.nationalgallery.ie/objects/2882/the-taking-of-christ",
+          "sourceObjectInstitution": "National Gallery of Ireland, indefinite loan from Jesuit Community, Leeson Street, Dublin",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Exact arrest and kiss of Judas episode; existing Passion-narrative excerpt association preserved."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-04-01",
@@ -4386,7 +4469,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-04-02",
+          "principalId": "tempora:Quad6-4r:1:w",
+          "class": "I",
+          "feast": "Holy Thursday",
+          "selectedArtist": "Philippe de Champaigne",
+          "selectedTitle": "La Petite Cène",
+          "sourceResearchBatch": "B17",
+          "sourceRecordId": "B17-01",
+          "status": "CHAMPAIGNE_LOUVRE_INV1125_IDENTIFIED_FRAME_VISIBLE",
+          "sourceOriginalArtist": "Philippe de Champaigne",
+          "sourceOriginalTitle": "La Cène, dite La Petite Cène",
+          "sourceOriginalAccession": "INV 1125 / MR 614",
+          "sourceMuseumObjectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+          "sourceObjectInstitution": "Musée du Louvre",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Philippe de Champaigne, La Petite Cène (user-preferred over Ugolino Last Supper)"
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-04-03",
@@ -4440,7 +4549,56 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-04-04",
+          "principalId": "tempora:Quad6-6r:1:vw",
+          "class": "I",
+          "feast": "Holy Saturday",
+          "selectedArtist": "James Tissot; John Martin",
+          "selectedTitle": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-01",
+          "status": "MORGAN_1976_22_1_IDENTIFIED_PHOTO_REUSE_BLOCKED",
+          "sourceOriginalArtist": "James Tissot",
+          "sourceOriginalTitle": "God Creating the World",
+          "sourceOriginalAccession": "1976.22:1",
+          "sourceMuseumObjectUrl": "https://www.themorgan.org/drawings/item/110083",
+          "sourceObjectInstitution": "The Morgan Library & Museum, Morgan Family Collection",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Exact Genesis creation subject; represents the opening of Genesis, not all four Easter Vigil prophecies."
+        },
+        {
+          "date": "2026-04-04",
+          "principalId": "tempora:Quad6-6r:1:vw",
+          "class": "I",
+          "feast": "Holy Saturday",
+          "selectedArtist": "James Tissot; John Martin",
+          "selectedTitle": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-02",
+          "status": "GETTY_2018_45_IDENTIFIED_CC0_ROUTE",
+          "sourceOriginalArtist": "John Martin",
+          "sourceOriginalTitle": "The Destruction of Pharaoh's Host",
+          "sourceOriginalAccession": "2018.45; web object 103QTX",
+          "sourceMuseumObjectUrl": "https://www.getty.edu/art/collection/object/103QTX",
+          "sourceObjectInstitution": "J. Paul Getty Museum",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Exact Exodus 14 destruction of Pharaoh's army. Getty's institutional narrative identifies Exodus 14:26–31."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-04-05",
@@ -4462,7 +4620,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-04-05",
+          "principalId": "tempora:Pasc0-0:1:w",
+          "class": "I",
+          "feast": "Easter Sunday",
+          "selectedArtist": "William-Adolphe Bouguereau",
+          "selectedTitle": "The Holy Women at the Tomb",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-06",
+          "status": "BOUGUEREAU_KMSKA1580_IDENTIFIED_CC0_ROUTE",
+          "sourceOriginalArtist": "William Adolphe Bouguereau",
+          "sourceOriginalTitle": "The Holy Women at the Tomb",
+          "sourceOriginalAccession": "1580",
+          "sourceMuseumObjectUrl": "https://www.kmska.be/en/masterpiece/the-holy-women-at-the-tomb",
+          "sourceObjectInstitution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Exact Mark 16:1–8 empty-tomb scene, as identified by KMSKA; approved Easter Sunday label preserved."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-04-06",
@@ -5626,7 +5810,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-05-25",
+          "principalId": "tempora:Pasc7-1:1:r",
+          "class": "I",
+          "feast": "Monday after Pentecost",
+          "selectedArtist": "Henry Ossawa Tanner",
+          "selectedTitle": "Nicodemus",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-07",
+          "status": "TANNER_1900_1_IDENTIFIED_PHOTO_RIGHTS_QA_PENDING",
+          "sourceOriginalArtist": "Henry Ossawa Tanner",
+          "sourceOriginalTitle": "Nicodemus",
+          "sourceOriginalAccession": "1900.1",
+          "sourceMuseumObjectUrl": "https://www.pafa.org/museum/collection/item/nicodemus",
+          "sourceObjectInstitution": "Pennsylvania Academy of the Fine Arts (PAFA)",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Related John 3 context: nocturnal teaching of Nicodemus, not a literal illustration of every verse of the Pentecost Monday Gospel."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-05-26",
@@ -5757,7 +5967,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-05-30",
+          "principalId": "tempora:Pasc7-6:1:r",
+          "class": "I",
+          "feast": "Ember Saturday of Pentecost",
+          "selectedArtist": "John Bridges",
+          "selectedTitle": "Jesus Restoring to Health Peter's Wife's Mother",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-05",
+          "status": "JOHN_BRIDGES_OBJECT_IDENTIFIED_PHOTO_QA_PENDING",
+          "sourceOriginalArtist": "John Bridges (active 1818–1854)",
+          "sourceOriginalTitle": "Jesus Restoring to Health Peter's Wife's Mother",
+          "sourceOriginalAccession": "1978.29",
+          "sourceMuseumObjectUrl": "https://www.artsbma.org/collection/jesus-restoring-to-health-peters-wifes-mother/",
+          "sourceObjectInstitution": "Birmingham Museum of Art, Alabama",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Exact healing of Peter's mother-in-law; museum cites Mark 1:30–31. Calendar relation remains the existing Gospel-episode association."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-05-31",
@@ -6318,7 +6554,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-06-24",
+          "principalId": "sancti:06-24:1:w",
+          "class": "I",
+          "feast": "Nativity of St. John the Baptist",
+          "selectedArtist": "Andrea Sacchi",
+          "selectedTitle": "The Birth of Saint John the Baptist",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-09",
+          "status": "SACCHI_SELECTED_TITLE_ONLY_ORIGINAL_OBJECT_UNRESOLVED",
+          "sourceOriginalArtist": "Andrea Sacchi",
+          "sourceOriginalTitle": "The Birth of Saint John the Baptist",
+          "sourceOriginalAccession": null,
+          "sourceMuseumObjectUrl": null,
+          "sourceObjectInstitution": null,
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": false,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Approved title-level identity preserved."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-06-25",
@@ -8988,7 +9250,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-10-25",
+          "principalId": "sancti:10-DU:1:w",
+          "class": "I",
+          "feast": "Christ the King",
+          "selectedArtist": "Ambrosius Benson",
+          "selectedTitle": "Salvator Mundi",
+          "sourceResearchBatch": "B21",
+          "sourceRecordId": "B21-01",
+          "status": "BENSON_CHRISTIES_2019_LOT4_IDENTITY_RIGHTS_HOLD",
+          "sourceOriginalArtist": "Ambrosius Benson",
+          "sourceOriginalTitle": "Salvator Mundi",
+          "sourceOriginalAccession": null,
+          "sourceMuseumObjectUrl": "https://www.christies.com/zh/lot/lot-6238407",
+          "sourceObjectInstitution": null,
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "User-approved Ambrosius Benson Salvator Mundi; preserve selection"
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-10-26",
@@ -9101,7 +9389,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-11-01",
+          "principalId": "sancti:11-01:1:w",
+          "class": "I",
+          "feast": "All Saints",
+          "selectedArtist": "Carlo Saraceni",
+          "selectedTitle": "Paradise",
+          "sourceResearchBatch": "B18",
+          "sourceRecordId": "B18-01",
+          "status": "SARACENI_MET_1971_93_IDENTIFIED_CC0_PREVIEW",
+          "sourceOriginalArtist": "Carlo Saraceni",
+          "sourceOriginalTitle": "Paradise",
+          "sourceOriginalAccession": "1971.93",
+          "sourceMuseumObjectUrl": "https://www.metmuseum.org/art/collection/search/437607",
+          "sourceObjectInstitution": "Metropolitan Museum of Art",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "SOURCE_AND_RIGHTS_VERIFIED; ORIGINAL_FILE_NOT_ACQUIRED; CROPS_NOT_CERTIFIED"
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-11-02",
@@ -9125,7 +9439,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-11-02",
+          "principalId": "sancti:11-02m1:1:b",
+          "class": "I",
+          "feast": "Commemoration of All Souls",
+          "selectedArtist": "Ludovico Carracci",
+          "selectedTitle": "An Angel Frees the Souls of Purgatory",
+          "sourceResearchBatch": "B18",
+          "sourceRecordId": "B18-02",
+          "status": "CARRACCI_ACCESSION_AND_DIMENSION_CONFLICT_HOLD",
+          "sourceOriginalArtist": "Ludovico Carracci",
+          "sourceOriginalTitle": "An Angel Frees the Souls of Purgatory",
+          "sourceOriginalAccession": "UNVERIFIED",
+          "sourceMuseumObjectUrl": null,
+          "sourceObjectInstitution": "Vatican Pinacoteca",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": false,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "QUALITY_BLOCKED; MORE_DETAIL_AND_OBJECT_IDENTITY_PROOF_REQUIRED"
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-11-03",
@@ -9840,7 +10180,33 @@
       "additionalNewMuseumLeads": [],
       "additionalStudy": [],
       "classSpecificState": "OLDER_I_II_DATA_ONLY",
-      "noPublishedArtworkCertificationsFromResearch": true
+      "noPublishedArtworkCertificationsFromResearch": true,
+      "selectedPaintingPhysicalSourceLeads": [
+        {
+          "date": "2026-12-06",
+          "principalId": "tempora:Adv2-0:1:v",
+          "class": "I",
+          "feast": "II Sunday of Advent",
+          "selectedArtist": "Michael Willmann",
+          "selectedTitle": "The Family of Christ",
+          "sourceResearchBatch": "B11",
+          "sourceRecordId": "B11-03",
+          "status": "WILLMANN_OBJECT_IDENTIFIED_RIGHTS_HOLD",
+          "sourceOriginalArtist": "Michael Lucas Leopold Willmann",
+          "sourceOriginalTitle": "The Family of Jesus Christ",
+          "sourceOriginalAccession": "MNWr VIII-2328",
+          "sourceMuseumObjectUrl": "https://muzeumcyfrowe.mnwr.pl/en/exhibit/p/mnwr_viii-2328",
+          "sourceObjectInstitution": "National Museum in Wrocław",
+          "selectedImageExactFileMatchVerified": false,
+          "physicalOriginalObjectVerified": true,
+          "photoRightsForCommercialAppApproved": false,
+          "originalPhotoSha256Verified": false,
+          "productionMobileCropApproved": false,
+          "productionMasterCertified": false,
+          "notes": "Related genealogy/Root of Jesse theme; not a literal portrait of Jesse or a Gospel narrative for Advent II."
+        }
+      ],
+      "classIOriginalIdentityReconciliation": "SOURCE_OBJECT_RESEARCH_RECORDED_NO_PUBLICATION"
     },
     {
       "date": "2026-12-07",
