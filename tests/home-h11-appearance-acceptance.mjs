@@ -253,6 +253,8 @@ try{
     await h4.locator(".aoH7HomeView [data-home-h7-enter]").click();
     await h4.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
     assert.equal(await h4.locator(".aoH7HomeView").isHidden(),true,"H7 Home must hide while Mass door is open");
+    assert.equal(await h4.locator("#ao-global-ribbon").isVisible(),false,"H7 Mass door must replace the global ribbon with fixed Begin Mass");
+    assert.equal(await h4.locator(".aoH7DoorView .foot [data-home-h4-begin],.aoH7DoorView .foot [data-resume-mass]").count(),1,"H7 Mass door lost its one fixed Begin/Resume action");
     // Change is a modal presentation over the one R17 source-owned preflight.
     await h4.waitForFunction(()=>Boolean(globalThis.AO_R17_BROWSER_ENTRY?.installed),null,{timeout:15000});
     await h4.locator(".aoH7DoorView [data-home-h4-change]").first().click();
@@ -354,6 +356,7 @@ try{
     await h4.locator("[data-mass-texts-close]").click();
     await h4.locator(".aoH7DoorView [data-home-h7-back]").click();
     await h4.waitForSelector(".aoH7HomeView",{state:"visible",timeout:10000});
+    assert.equal(await h4.locator("#ao-global-ribbon").isVisible(),true,"H7 Home must restore global navigation after returning from Mass door");
     await h4.locator(".aoH7HomeView .date[data-home-calendar-view=\"picker\"]").click();
     await h4.waitForSelector(".aoTodayH4[data-ao-home-calendar-view='picker'] #ao-calendar-modular-root",{state:"attached",timeout:25000});
     await h4.screenshot({path:resolve(output,prefix+"-h4-calendar-light.png")});

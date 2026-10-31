@@ -272,7 +272,9 @@ export function createHomeOwner(win=globalThis){
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4.aoH7Screens");
     const home=screen?.querySelector?.(".aoH7HomeView");
     const door=screen?.querySelector?.(".aoH7DoorView");
-    if(!home||!door)return false;
+    if(!home||!door){win?.document?.documentElement?.removeAttribute?.("data-ao-h7-door-open");return false;}
+    // The H7 Mass door has a fixed Begin action instead of the global ribbon.
+    win?.document?.documentElement?.toggleAttribute?.("data-ao-h7-door-open",h7MassDoorOpen);
     home.hidden=h7MassDoorOpen;
     door.hidden=!h7MassDoorOpen;
     if(h7MassDoorOpen){
@@ -691,7 +693,7 @@ export function createHomeOwner(win=globalThis){
     }
     unsubscribe=store.subscribe(next=>{
       if(next?.route==="home")paint(next);
-      else{h7MassDoorOpen=false;closeH4ChoicesSheet(win);}
+      else{h7MassDoorOpen=false;win?.document?.documentElement?.removeAttribute?.("data-ao-h7-door-open");closeH4ChoicesSheet(win);}
     });
     paint(store.getState());
     return true;

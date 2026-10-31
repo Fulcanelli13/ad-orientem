@@ -190,6 +190,9 @@ body.w320 .grid button{height:48px}
 .aoH7Screens .aoH7DoorArt img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
 .aoH7Screens [hidden]{display:none!important}
 .aoH7Screens .aoH7DoorView{display:flex;flex-direction:column;height:calc(100dvh - var(--ao-global-ribbon-h,68px));min-height:0;overflow:hidden}
+/* H7 original: Mass door replaces the app ribbon with the fixed Begin control. */
+html[data-ao-h7-door-open] #ao-global-ribbon{display:none!important}
+html[data-ao-h7-door-open] .aoH7Screens .aoH7DoorView:not([hidden]){height:100dvh!important;max-height:100dvh!important;padding-bottom:env(safe-area-inset-bottom,0px)}
 /* Author-level display rules must not defeat the native hidden attribute. */
 .aoH7Screens .aoH7HomeView[hidden],.aoH7Screens .aoH7DoorView[hidden]{display:none!important}
 .aoH7Screens .aoH7DoorView>.body{flex:1 1 auto;min-height:0;overflow-y:auto}
