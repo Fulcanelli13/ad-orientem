@@ -1,0 +1,37 @@
+name: DYK R34 source-folio review (unpublished)
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/dyk-r34-pilot-source-visual.yml"
+      - "src/home/dyk-pilot-source-folio.js"
+      - "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json"
+      - "tests/dyk-r34-pilot-source-folio*.mjs"
+      - "package.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dyk-r34-pilot-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-folio-chromium:
+    name: Seven All Souls sources · phone and desktop
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify R34 provenance and release holds
+        run: node tests/dyk-r34-high-signal-24-review-holds.mjs && node tests/dyk-r34-pilot-source-folio.mjs
+      - name: Check real browser at 390px and 1280px, in English and French
+        run: npm run test:dyk-pilot-browser
