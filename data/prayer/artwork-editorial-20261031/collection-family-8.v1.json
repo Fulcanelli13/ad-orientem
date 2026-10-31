@@ -8,8 +8,8 @@
   "stats": {
     "slots": 22,
     "originalSourceEdges": 148,
-    "deduplicatedReviewOptions": 133,
-    "excludedDoNotSuggest": 12,
+    "deduplicatedReviewOptions": 132,
+    "excludedDoNotSuggest": 13,
     "sourceLinksRecoveredByExactID": 19,
     "sourceLinkSuggestionsUnverified": 0,
     "pradoPhotoSourceQuarantines": 1,
@@ -473,7 +473,17 @@
       "family": "D8 Saints & Angels",
       "label": "Card vignette",
       "originalSourceEdges": 6,
-      "excludedFromSuggestions": [],
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:163857127",
+          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+          "sourceDecision": "NOT_RELEVANT_TO_PRAYER_ONLY",
+          "exclusion": "HISTORICALLY_USER_MARKED_NOT_RELEVANT_TO_PRAYER_B01_B05",
+          "originalSourcePage": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
+          "sourceLedger": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json"
+        }
+      ],
       "approvedReuseLinkedEarlier": [],
       "reviewCollection": [
         {
@@ -495,21 +505,6 @@
             "evidence": "Same backup for both prayers",
             "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING"
           },
-          "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
-        },
-        {
-          "sourceIDs": [
-            "REVIEW::commons:163857127"
-          ],
-          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
-          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
-          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "historicallyApprovedInOriginalLedger": false,
-          "requiresExplicitUserApproval": true,
-          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
           "productionEnabled": false
         },

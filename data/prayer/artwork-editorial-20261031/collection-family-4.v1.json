@@ -9,9 +9,9 @@
   "stats": {
     "slots": 32,
     "originalSourceEdges": 220,
-    "deduplicatedReviewOptions": 195,
-    "excludedDoNotSuggest": 13,
-    "candidatesWithExplicitNoPublicationGate": 195,
+    "deduplicatedReviewOptions": 194,
+    "excludedDoNotSuggest": 14,
+    "candidatesWithExplicitNoPublicationGate": 194,
     "sourceLinksRecoveredByExactID": 15,
     "sourceLinkSuggestionsUnverified": 0,
     "museumDocumentedAnonymousPlacements": 3,
@@ -2634,7 +2634,17 @@
       "family": "D4 Novenas & Journeys",
       "label": "Cover",
       "originalSourceEdges": 6,
-      "excludedFromSuggestions": [],
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:163857127",
+          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+          "sourceDecision": "NOT_RELEVANT_TO_PRAYER_ONLY",
+          "exclusion": "HISTORICALLY_USER_MARKED_NOT_RELEVANT_TO_PRAYER_B01_B05",
+          "originalSourcePage": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
+          "sourceLedger": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json"
+        }
+      ],
       "approvedReuseLinkedEarlier": [],
       "reviewCollection": [
         {
@@ -2658,23 +2668,6 @@
             "sourceEvidence": "2491x3000; attribution QA",
             "verifiedRights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING"
           },
-          "productionEnabled": false,
-          "photoCertification": "NOT_CLEARED"
-        },
-        {
-          "sourceIDs": [
-            "REVIEW::commons:163857127"
-          ],
-          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
-          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
-          "historicallyApprovedInOriginalLedger": false,
-          "requiresExplicitUserApproval": true,
-          "identityAndNativePixelQA": "NOT_VERIFIED_FOR_THIS_SLOT",
-          "publication": false,
-          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "productionEnabled": false,
           "photoCertification": "NOT_CLEARED"
         },

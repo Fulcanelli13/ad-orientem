@@ -17,8 +17,8 @@
   "counts": {
     "slots": 267,
     "historicalSourceEdges": 1651,
-    "deduplicatedUsableSourceAndCuratedOptions": 1506,
-    "originalEdgesExcludedFromSuggestionsBecauseWeakOrIneligibleOrExplicitlyRejected": 100,
+    "deduplicatedUsableSourceAndCuratedOptions": 1504,
+    "originalEdgesExcludedFromSuggestionsBecauseWeakOrIneligibleOrExplicitlyRejected": 102,
     "previouslyApprovedArtworkPositionLinks": 244,
     "remainingPositionsNowContainingProvisionalShortlists": 23,
     "sourceLinkedCandidateCoverage": 267,
@@ -85,8 +85,8 @@
       "path": "data/prayer/artwork-editorial-20261031/collection-family-4.v1.json",
       "slots": 32,
       "originalSourceEdges": 220,
-      "deduplicatedReviewOptions": 195,
-      "exclusions": 13
+      "deduplicatedReviewOptions": 194,
+      "exclusions": 14
     },
     {
       "family": "5",
@@ -117,8 +117,8 @@
       "path": "data/prayer/artwork-editorial-20261031/collection-family-8.v1.json",
       "slots": 22,
       "originalSourceEdges": 148,
-      "deduplicatedReviewOptions": 133,
-      "exclusions": 12
+      "deduplicatedReviewOptions": 132,
+      "exclusions": 13
     },
     {
       "family": "9",
@@ -172,7 +172,7 @@
   },
   "qaState": {
     "status": "SOURCE_WAVE12_OWNER_PROVENANCE_DOCUMENTED_PHOTO_LICENSE_AND_CROP_PENDING",
-    "candidatePlacementRelationships": 1506,
+    "candidatePlacementRelationships": 1504,
     "originalMissingSourcePage": 329,
     "sourceLinksRestoredByExactArtworkID": 140,
     "sourceLinksAddedByDirectMuseumAndCommonsVerification": 2,
@@ -188,7 +188,7 @@
     "pradoPhotoSourcesExcluded": 17,
     "strictNoPradoPhotoSourcesInActiveCandidateList": true,
     "sourceLinksVerifiedByMetWave02": 36,
-    "nowWithSourcePages": 1465,
+    "nowWithSourcePages": 1463,
     "distinctSourceLessCandidateIdentities": 13,
     "metMuseumOriginalsVerifiedInWave02": 14,
     "artistAttributionCorrectionsByMetSource": 1,
@@ -227,6 +227,16 @@
     "userSourceDecisionLedgersNowImportedVerbatim": true,
     "sourceDecisionPriorityRule": "ORIGINAL_USER_KEEP_REJECT_ELSEWHERE_BETTER_PHOTO_AND_VERBATIM_NOTES_ALWAYS_OVERRIDE_DERIVED_PROVISIONAL_PLACEMENTS",
     "provisionalAssignmentsAreApprovals": false,
-    "reviewHTMLV1SupersededBecauseMissingHistoricalComments": true
+    "reviewHTMLV1SupersededBecauseMissingHistoricalComments": true,
+    "userNotRelevantToPrayerReinstatementFixed": {
+      "artworkId": "REVIEW::commons:163857127",
+      "slots": [
+        "COV-novena.st_anthony_nine_tuesdays",
+        "COV-devotion_st_anthony_lost_items"
+      ],
+      "activeOptionsRemoved": 2,
+      "historicalSourcePreserved": true
+    },
+    "originalSourceResearchHistoryStillTracks1506BeforeEditorialExclusion": true
   }
 }

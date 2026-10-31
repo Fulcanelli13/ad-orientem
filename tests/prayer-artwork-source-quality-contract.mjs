@@ -27,7 +27,7 @@ const wave12=rd("original-object-provenance-wave12-20261031.v1.json");
 const remaining13=rd("remaining-13-source-identities-20261031.v1.json");
 const provisional=rd("provisional-one-choice-per-267-art-position.v1.json");
 test("1506 proposed original artwork placements are never released, including exact-ID photo-source recoveries",()=>{
- const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1506);
+ const x=index.qaState;assert.equal(x.candidatePlacementRelationships,1504);
  assert.equal(x.originalMissingSourcePage,329);
  assert.equal(x.sourceLinksRestoredByExactArtworkID,140);
  assert.equal(x.sourceLinksAddedByDirectMuseumAndCommonsVerification,2);
@@ -39,7 +39,7 @@ test("1506 proposed original artwork placements are never released, including ex
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave05,4);
  assert.equal(x.sourceLinksVerifiedByCommonsExactPageIDWave04,32);
  assert.equal(x.sourceLinksVerifiedBySubjectSourceWave03,11);
- assert.equal(x.nowWithSourcePages,1465);
+ assert.equal(x.nowWithSourcePages,1463);
  assert.equal(x.sourceLinksVerifiedByMetWave02,36);
  assert.equal(x.distinctSourceLessCandidateIdentities,13);
  assert.equal(x.pradoPhotoSourcesExcluded,17);
@@ -60,8 +60,8 @@ test("1506 proposed original artwork placements are never released, including ex
    if(w.artistAttribution?.status==="UNRESOLVED_OBJECT_IDENTITY")unresolvedAnonymous++;
   }
  }
- assert.equal(active,1506);
- assert.equal(linked,1465);
+ assert.equal(active,1504);
+ assert.equal(linked,1463);
  assert.equal(remaining,41);
  assert.equal(anonymous,41);
  assert.equal(unresolvedAnonymous,4);

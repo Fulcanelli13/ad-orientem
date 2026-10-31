@@ -28,8 +28,8 @@ test("every historical prayer artwork position has accessible grouped candidates
  }
  assert.equal(slots.size,267);
  assert.equal(edges,1651);
- assert.equal(candidates,1506);
- assert.equal(excluded,100);
+ assert.equal(candidates,1504);
+ assert.equal(excluded,102);
  assert.equal(index.counts.artworkPhotosNewlyReleased,0);
  assert.equal(index.counts.newResearchApproved,0);
 });
