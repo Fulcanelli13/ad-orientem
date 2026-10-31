@@ -1,0 +1,27 @@
+name: Navigation return and LIVE guard phone acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/app/**"
+      - "src/settings/**"
+      - "tests/navigation-settings-return-phone.mjs"
+      - "tests/app-shell-journey-e2e.mjs"
+      - ".github/workflows/navigation-return-phone.yml"
+permissions:
+  contents: read
+jobs:
+  navigation-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Module return matrix and actual visible Home at 320 and 390px
+        run: node tests/navigation-settings-return-phone.mjs
+      - name: Full native Mass, Settings LIVE guard, Back, Home, Resume journey
+        run: node tests/app-shell-journey-e2e.mjs

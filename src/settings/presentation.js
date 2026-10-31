@@ -94,9 +94,9 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
   const routeRow=(title,sub,r)=>row(title,sub,'<span aria-hidden="true">☞</span>','data-settings-route="'+esc(r)+'"');
   const infoRow=(title,sub,end="")=>'<div class="aoSetRow aoSetInfoRow" data-settings-info><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetRowEnd">'+end+'</span></div>';
   const seg=(label,key,items)=>{const active=path(p,key);return '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(label)+'</b></span><span class="aoSetSegments" role="group" aria-label="'+esc(label)+'">'+items.map(([v,en,frt])=>
-    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
+    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+esc(v)+'"'+(key.startsWith("mass.")?' data-setting-structural':"")+' class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
   const toggle=(title,sub,key)=>'<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(title)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</span><span class="aoSetSegments" role="group" aria-label="'+esc(title)+'">'+[[true,L("On","Oui")],[false,L("Off","Non")]].map(([v,label])=>
-    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+v+'" class="'+(path(p,key)===v?'active':'')+'" aria-pressed="'+(path(p,key)===v)+'">'+esc(label)+'</button>').join("")+'</span></div>';
+    '<button type="button" data-pref-path="'+esc(key)+'" data-pref-value="'+v+'"'+(key.startsWith("mass.")?' data-setting-structural':"")+' class="'+(path(p,key)===v?'active':'')+'" aria-pressed="'+(path(p,key)===v)+'">'+esc(label)+'</button>').join("")+'</span></div>';
   // A native select is never used on the Preferences surface; even long choices
   // remain ordinary words underlined in the verified liturgical colour.
   const select=(title,sub,key,items)=>'<div class="aoPrefSelectGroup">'+seg(title,key,items)+(sub?'<p class="aoSetNote">'+esc(sub)+'</p>':"")+'</div>';
@@ -221,11 +221,11 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     const id=decodeURIComponent(vm.route.split("/").pop()),pr=profiles.find(x=>x.id===id);
     if(!pr)return shell(L("Local Church & Customs","Église locale & usages"),`<div class="aoSetEmpty">${esc(L("Profile not found.","Profil introuvable."))}</div>`);
     const customSelect=(title,key,items)=>{const active=pr.customs?.[key];return '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(title)+'</b></span><span class="aoSetSegments" role="group" aria-label="'+esc(title)+'">'+
-      items.map(([v,en,frt])=>'<button type="button" data-profile-id="'+esc(id)+'" data-profile-key="'+esc(key)+'" data-profile-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
+      items.map(([v,en,frt])=>'<button type="button" data-setting-structural data-profile-id="'+esc(id)+'" data-profile-key="'+esc(key)+'" data-profile-value="'+esc(v)+'" class="'+(active===v?'active':'')+'" aria-pressed="'+(active===v)+'">'+esc(L(en,frt))+'</button>').join("")+'</span></div>';};
     const unspecified=[["unspecified","Not specified","Non précisé"]];
     return shell(pr.name,
       section(L("CHURCH","ÉGLISE"),`<label class="aoSetRow"><span class="aoSetRowText"><b>${esc(L("Church name","Nom de l’église"))}</b></span><input class="aoSetProfileName" data-profile-name="${esc(id)}" value="${esc(pr.name)}"></label>`+
-        '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(L("Use as my usual church","Utiliser comme mon église habituelle"))+'</b></span><span class="aoSetSegments"><button type="button" data-profile-use-default="'+esc(id)+'" aria-pressed="'+(p.mass.defaultProfileId===id)+'" class="'+(p.mass.defaultProfileId===id?'active':'')+'">'+esc(L("Use","Choisir"))+'</button></span></div>')+
+        '<div class="aoSetRow aoPrefChoice"><span class="aoSetRowText"><b>'+esc(L("Use as my usual church","Utiliser comme mon église habituelle"))+'</b></span><span class="aoSetSegments"><button type="button" data-setting-structural data-profile-use-default="'+esc(id)+'" aria-pressed="'+(p.mass.defaultProfileId===id)+'" class="'+(p.mass.defaultProfileId===id?'active':'')+'">'+esc(L("Use","Choisir"))+'</button></span></div>')+
       section(L("LOCAL CUSTOMS","USAGES LOCAUX"),
         customSelect(L("Holy Communion","Sainte Communion"),"communionPractice",[...unspecified,["usually_offered","Usually distributed","Habituellement distribuée"],["usually_not_offered","Usually not distributed","Habituellement non distribuée"]])+
         customSelect(L("Incense at Sung Mass","Encens à la Messe chantée"),"incensePractice",[...unspecified,["usually_used","Usually used","Habituellement utilisé"],["usually_not_used","Usually not used","Habituellement non utilisé"]])+
@@ -237,7 +237,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         customSelect(L("When is the Benedictus sung?","Quand chante-t-on le Benedictus ?"),"sanctusHandling",[...unspecified,["gregorian_continuous","With the Sanctus","Avec le Sanctus"],["deferred_benedictus","After the Consecration","Après la Consécration"]])+
         customSelect(L("Marian antiphon after Mass","Antienne mariale après la Messe"),"marianAntiphon",[["none","None","Aucune"],["salve_regina","Salve Regina","Salve Regina"]]))+
       note(esc(L("Detailed event-level posture editing remains gated; saved local practice never changes Mass text, priest rubrics or liturgical law.","L’édition détaillée des postures reste limitée ; les usages locaux enregistrés ne changent jamais le texte de la Messe, les rubriques du prêtre ni la loi liturgique.")))+
-      section(L("DATA","DONNÉES"),row(L("Delete profile","Supprimer le profil"),"",icon("ao-ui-close"),`class="aoSetDanger" data-profile-delete="${esc(id)}"`)));
+      section(L("DATA","DONNÉES"),row(L("Delete profile","Supprimer le profil"),"",icon("ao-ui-close"),`class="aoSetDanger" data-setting-structural data-profile-delete="${esc(id)}"`)));
   }
   if(vm.route==="/settings/privacy-data"){
     const dataRow=(en,french,act,disabled=false)=>row(L(en,french),"",'<span aria-hidden="true">☞</span>','data-data-action="'+act+'"'+(disabled?" disabled":""));
