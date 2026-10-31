@@ -135,7 +135,23 @@ for(const [id,card] of integratedById){
   assert.deepEqual(card.prior_statement_for_editorial_comparison,older.statement);
   assert.deepEqual(card.r21_provenance.original_fact_ids,proposal.originating_fact_ids);
   assert.equal(card.r21_provenance.new_fact_generated,false);
- }else assert.deepEqual(card,older);
+ }else{
+  // R21 established the 168 identities. Subsequent R24-R33 passes improved
+  // original-folio citations and corrected historical copy in place: the
+  // identity test must reject unexplained changes, not revert verified edits.
+  for(const key of ["id","source_batch","category","editorial_copy_method",
+                    "original_language_text","gates","release"])
+    assert.deepEqual(card[key],older[key],id+" immutable "+key);
+  for(const key of ["family","source_id","source_path","deep_link"])
+    assert.deepEqual(card.source?.[key],older.source?.[key],id+" source "+key);
+  if(JSON.stringify(card)!==JSON.stringify(older)){
+    const sourceReviewKeys=Object.keys(card).filter(key=>/^r(?:2[4-9]|3[0-3])_/.test(key));
+    assert.ok(sourceReviewKeys.length>0,
+      "A changed R21 record must carry its later source-review provenance: "+id);
+    assert.ok(card.statement?.en?.trim()&&card.statement?.fr?.trim(),
+      "Verified record lost bilingual editorial copy: "+id);
+  }
+ }
 }
 assert.equal(revised,9);
 assert.equal(reviewCurrent.optional_reserve_proposals.length,3);
