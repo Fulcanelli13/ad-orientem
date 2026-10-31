@@ -7,6 +7,13 @@ on:
     paths:
       - 'scripts/san_polo_image_quality_qa.py'
       - '.github/workflows/san-polo-image-quality-qa.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'scripts/san_polo_image_quality_qa.py'
+      - '.github/workflows/san-polo-image-quality-qa.yml'
+      - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
   workflow_dispatch:
 
 permissions:
@@ -14,7 +21,7 @@ permissions:
 
 jobs:
   verify-archived-14:
-    if: github.ref == 'refs/heads/research/stations-san-polo-oil-paintings-20261031'
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/research/stations-san-polo-oil-paintings-20261031') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/stations-san-polo-oil-paintings-20261031')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
