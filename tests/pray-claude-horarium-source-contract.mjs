@@ -45,7 +45,7 @@ test("Claude hour-first opening is explicit and never invents a painting",()=>{
  assert.match(runtime,/ANGELUS_COVER_DISMISSED/);
  assert.match(runtime,/angelusChoice\(\)/);
  assert.match(styles,/aoClaudeHorariumPlateArt/);
- assert.match(styles,/height:220px/);
+ assert.match(styles,/aoClaudeHorariumOpening \\.aoClaudeHorariumClock\\{height:150px\\}/);
  assert.doesNotMatch(styles,/background-image:url\(/);
 });
 test("Canonical Angelus remains season-owned and progresses only with user navigation",()=>{
