@@ -52,6 +52,9 @@ test("F11 Claude B-01/B-02/B-04/B-05: original public liturgy preserved",()=>{
  assert.match(runtime,/benSungPrayer\('benediction_o_salutaris'/);
  assert.match(runtime,/benSungPrayer\('benediction_tantum_ergo'/);
  assert.match(runtime,/data-ao-rite-chant-stanza/);
+ assert.match(runtime,/benLiturgicalPrayer\(/);
+ assert.match(runtime,/aoRiteLiturgicalBeat/);
+ assert.match(runtime,/aoRiteLiturgicalResponse/);
  assert.match(focus,/f11Rite=kind==="benediction"/);
  assert.match(focus,/i===found\?"1":i<found\?"\.54":"\.80"/);
  assert.match(css,/\.aoRiteChantVernacular/);
