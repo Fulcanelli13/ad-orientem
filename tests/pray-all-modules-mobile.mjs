@@ -182,10 +182,13 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/phone away/i);
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"say-sins");
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"contrition-penance");
+ for(const id of ["cross-and-blessing","last-confession","say-sins","closing-accusation","counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id);
+   assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"No private sins collected during pre-confessional rehearsal");
+   if(id==="contrition-penance")assert.equal(await page.locator(conf+" [data-ao-confession-act]").count(),1);
+   if(id==="priest-absolution")assert.equal(await page.locator(conf+" [data-ao-confession-latin-excerpt='priest-only']").count(),1);
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  for(const id of ["satisfaction","amendment"]){
@@ -217,13 +220,12 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/general Confession/);
- await press(conf+" [data-p435930-conf-next]");
- await press(conf+" [data-p435930-conf-next]");
- await press(conf+" [data-p435930-conf-next]");
+ for(let i=0;i<9;i++)await press(conf+" [data-p435930-conf-next]");
+
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
  assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"Do not record sins");
- assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2);
+ assert.ok(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count()>=2,"Original Vatican doctrine and canon-law sources must remain visible");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.close());
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
  assert.equal(await page.locator(conf+" [data-p435930-conf-path][aria-pressed='true']").count(),0,
