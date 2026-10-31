@@ -105,7 +105,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     const next=sectionIndex>=0&&sectionIndex<7?SECTIONS[sectionIndex+1]:null;
     const chapter=current?'<div class="aoPrefChapter"><span class="n">'+current[0]+'</span><h2>'+esc(L(current[1],current[2]))+'</h2></div>':"";
     const ribbon='<button class="aoPrefRibbon" type="button" data-settings-contents aria-expanded="false" aria-label="'+esc(L("Contents","Sommaire"))+'"></button>';
-    const menu='<nav class="aoPrefDrop" data-settings-toc hidden aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-route="'+t[5]+'" class="'+(t===current?'current':'')+'"><span class="n">'+t[0]+'</span>'+esc(L(t[1],t[2]))+'</button>').join("")+'</nav>';
+    const menu='<nav class="aoPrefDrop" data-settings-toc hidden aria-label="'+esc(L("Contents","Sommaire"))+'">'+SECTIONS.map(t=>'<button type="button" data-settings-book-route="'+t[5]+'" class="'+(t===current?'current':'')+'"><span class="n">'+t[0]+'</span>'+esc(L(t[1],t[2]))+'</button>').join("")+'</nav>';
     const foot='<footer class="aoPrefFoot"><span>'+esc(current?current[0]+" · "+L(current[1],current[2]):L("Contents","Sommaire"))+'</span>'+
       (next?'<button type="button" data-settings-route="'+next[5]+'">'+esc(L("Next","Suite"))+' <b>'+next[0]+' ›</b></button>':'<span>✠</span>')+'</footer>';
     return '<div class="aoPrefBook" data-ao-preferences-book="r1">'+header(title,landing)+ribbon+menu+
