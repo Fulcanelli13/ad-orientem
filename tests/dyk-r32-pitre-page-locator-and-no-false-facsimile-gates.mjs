@@ -28,7 +28,7 @@ for(const row of folio.records) {
  const c=byId.get(row.id);assert.ok(c,row.id);
  assert.equal(c.source.family,"PITRE_1900",row.id);
  assert.equal(c.source.source_id,row.original_observation_id,row.id);
- assert.equal(c.source.source_visual_checked,false,row.id);
+ assert.equal(c.source.source_visual_checked,c.r33_recovered_canonical_source_witness.original_page_image_verified_by_prior_research,row.id);
  assert.equal(c.source.locator.recorded_printed_page,row.printed_page,row.id);
  assert.equal(c.source.locator.recorded_pdf_page_1based,row.legacy_scan_page_1based,row.id);
  assert.equal(c.source.locator.legacy_offset,row.scan_minus_print_delta,row.id);
@@ -44,7 +44,7 @@ for(const row of folio.records) {
  if(row.priority==="P0_PREVIOUSLY_UNVERIFIED_IMAGE")observedHolds.add(row.id);
 }
 assert.deepEqual(observedHolds,oldHolds);
-assert.equal(status.overall.overall_source_text_correspondence_checked,133);
+assert.equal(status.overall.overall_source_text_correspondence_checked,168);
 assert.equal(status.overall.final_approved,0);
 assert.equal(status.overall.newly_live,0);
 console.log(JSON.stringify({status:"PASS",PitreLinks:49,distinctScanPages:43,offsets:"+66/+62/+58",priorImageHolds:14,newSourceChecked:0,published:0}));
