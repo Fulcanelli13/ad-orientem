@@ -20,7 +20,7 @@ const server=http.createServer(async(req,res)=>{
  }catch(e){res.writeHead(e.code==="ENOENT"?404:500);res.end(String(e?.message??e));}
 });
 await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
-const url="http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native";
+const url="http://127.0.0.1:"+server.address().port+"/index.html?aoTodayH4=0&aoR17Reader=native";
 let browser;
 try{
  browser=await chromium.launch({headless:true});
