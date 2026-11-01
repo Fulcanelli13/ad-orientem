@@ -572,6 +572,22 @@ function tlmInstituteButton(id,aff,lang){
   (emblem?'<img data-tlm-emblem-image src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':"")+
   esc(tlmCommunityLabel(id,lang))+'</button>';
 }
+function tlmEvidenceFilters(vm){
+  const counts=vm.tlmSiteEvidenceCounts??{},selected=vm.filters?.siteEvidence??"ALL";
+  const options=[
+    ["ALL",L(vm.language,"All sites","Tous les lieux")],
+    ["REVIEWED_PIN",L(vm.language,"Source-reviewed site pin","Repère de site vérifié par source")],
+    ["SOURCE_PIN",L(vm.language,"Provisional map pin","Repère cartographique provisoire")],
+    ["ADDRESS_ONLY",L(vm.language,"Address only","Adresse uniquement")],
+  ];
+  return '<section class="aoTlmEvidenceFacets" aria-label="'+esc(L(vm.language,"Location evidence","Preuves de localisation"))+'">'+
+    '<strong>'+esc(L(vm.language,"Location evidence","Preuves de localisation"))+'</strong>'+
+    '<div class="aoTlmEvidenceOptions">'+options.map(([value,name])=>
+      pill("siteEvidence",value,name+" ("+String(counts[value]??0)+")",selected)).join("")+'</div>'+
+    '<small>'+esc(L(vm.language,
+      "A reviewed site pin is source-supported geography, not a confirmed church entrance or current Mass. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
+      "Un repère vérifié par source concerne la géographie, non une entrée confirmée ni une messe actuelle. Aucune conclusion sur « una cum », le missel, le statut canonique ou le célébrant n’est déduite de l’affiliation."))+'</small></section>';
+}
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
@@ -591,13 +607,14 @@ function tlmFilters(vm){
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
     html+='</div>';
-    if(vm.view==="map")html+=otherMarkup+'</details>';
+    if(vm.view==="map")html+=tlmEvidenceFilters(vm)+otherMarkup+'</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
     html+='</div>';
     if(vm.view!=="map")html+=otherMarkup;
     html+='</div>';
+    if(vm.view!=="map")html+=tlmEvidenceFilters(vm);
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
@@ -630,6 +647,7 @@ export function buildExploreViewModel({
   loadedProviders=[],
   unavailableProviders=[],
   tlmAvailableCommunities=[],
+  tlmSiteEvidenceCounts=null,
   view="list",
   filters={},
   saintsRelease=null,
@@ -665,6 +683,7 @@ export function buildExploreViewModel({
     loadedProviders:arr(loadedProviders),
     unavailableProviders:arr(unavailableProviders),
     tlmAvailableCommunities:arr(tlmAvailableCommunities),
+    tlmSiteEvidenceCounts,
     view,
     filters,
     journeyOpen:Boolean(journeyOpen),
