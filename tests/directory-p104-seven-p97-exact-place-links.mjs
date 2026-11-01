@@ -29,8 +29,10 @@ assert.equal(p104.schema,"AO_SACRED_PLACES_P104_SEVEN_P97_EXACT_DIRECTORY_CHURCH
 assert.deepEqual(p104.baseline,{places:522,sources:830,crosswalk:522,unlinked:257,geo_areas:146,directory_links:15});
 assert.deepEqual(p104.proposed,{places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22});
 assert.ok(RELEASES.some(r=>r.id==="P104"),"Historical P104 must remain frozen");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,23]);
-assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.links]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,24]);
+assert.deepEqual([geo.places.length,src.sources.length],[LIVE.places,LIVE.sources]);
+assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
+  "Historical source links must persist; later individually verified venue joins may extend them");
 assertExploreGeographyRegistry(geo);
 assert.equal(p104.published_new.length,7);
 assert.ok(media.items.length>=36+laterPhotoRelease.photos.length,"Historical P104/P106 original approved covers remain, later independent covers may extend the registry");
@@ -68,12 +70,18 @@ for(const r of p104.published_new){
  }
  assert.equal(sources.get(r.source_ids[0]).url,r.source_site_url);
  assert.equal(sources.get(r.source_ids[1]).url,r.source_geo_url);
- assert.equal(media.items.some(x=>x.place_id===r.place_id),laterApproved.has(r.place_id),"Only separately verified P106 may approve post-P104 photos");
+ const releasedJihlava=r.place_id==="place:CZ:st-ignatius-jihlava";
+ assert.equal(media.items.some(x=>x.place_id===r.place_id),laterApproved.has(r.place_id)||releasedJihlava,
+  "Only separately source-verified P106 photo covers or Jihlava P107 release may be approved");
  const attached=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:r.venue_id}],{directoryPlaceLinks:geo.directoryPlaceLinks,approved:media.items,gallery:[]});
  if(laterApproved.has(r.place_id)){
    const later=laterApproved.get(r.place_id);
    assert.equal(later.venue_id,r.venue_id);
    assert.equal(attached[0].cover_media?.derivative_sha256,later.sha256);
+ }else if(releasedJihlava){
+   assert.equal(attached[0].cover_media?.derivative_sha256,
+    "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+    "Jihlava P107 independently approved image must retain exact derivative hash");
  }else assert.equal(attached[0].cover_media,undefined,"No unreviewed P104 photo");
  assert.equal(r.approved_photo,false);
  assert.equal(r.published_photo,false);
@@ -83,7 +91,7 @@ for(const r of p104.published_new){
  assert.equal(pair[0].distance_m,m);
 }
 assert.equal(cross.counts.canonical_places,LIVE.places);
-assert.equal(cross.counts.confirmed_links,LIVE.links);
+assert.equal(cross.counts.confirmed_links,23,"Frozen P92 research snapshot predates P106");
 assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
 assert.equal(p104.research_holds.length,4);
 const gnd=cross.candidate_pairs.find(p=>p.venue_id==="ao-research-icksp-federated-v13-icksp-stg-112"&&p.place_id==="place:DE:altoetting-gnadenkapelle");

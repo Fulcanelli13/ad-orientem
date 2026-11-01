@@ -11,9 +11,13 @@ const heritage=j("data/explore/heritage-place-reconciliation.review.v1.json");
 const shrines=j("data/shrines/shrines-pilgrimages-seed.v1.json");
 assert.equal(manifest.schema,"AO_SACRED_PLACES_P61_FOUR_VERIFIED_CATHOLIC_BUILDINGS_V1");
 assert.ok(RELEASES.some(r=>r.id==="P61"),"P61 historical release preserved");
-assert.equal(RELEASES.at(-1).id,"P105");
+assert.ok(RELEASES.some(r=>r.id==="P105"),"Historical P105 release preserved");
+assert.ok(RELEASES.some(r=>r.id==="P106"),"Subsequent exact Guadalupe link retained");
 assert.ok(LEDGER.releases.some(r=>r.id==="P61"));
-assert.equal(LEDGER.releases.at(-1).id,"P105");
+assert.ok(LEDGER.releases.some(r=>r.id==="P105"));
+assert.ok(LEDGER.releases.some(r=>r.id==="P106"));
+assert.ok(RELEASES.findIndex(r=>r.id==="P106")>RELEASES.findIndex(r=>r.id==="P105"),
+  "Cumulative source release chain must not reorder historical Places");
 assert.deepEqual(manifest.baseline,{places:512,sources:810,crosswalk:512,unlinked:253,geo_areas:146,directory_links:9});
 assert.deepEqual(manifest.proposed,{places:516,sources:818,crosswalk:516,unlinked:257,geo_areas:146,directory_links:9});
 assert.equal(manifest.published_new.length,4);

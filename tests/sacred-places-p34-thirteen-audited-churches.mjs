@@ -32,7 +32,8 @@ assert.equal(sourceById.size,src.sources.length);
 const incomingIds=new Set(m.published_new.map(x=>x.place_id));
 const p34Index=RELEASES.findIndex(r=>r.id==="P34");
 assert.ok(p34Index>=0);
-const laterReleaseIds=new Set(RELEASES.slice(p34Index+1).flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
+const laterReleaseIds=new Set(RELEASES.slice(p34Index+1).flatMap(r=>
+  r.data.new_places===0?[]:(r.data.published_new||[]).map(x=>x.place_id)));
 const oldPlaces=geo.places.filter(p=>!incomingIds.has(p.place_id)&&!laterReleaseIds.has(p.place_id));
 assert.equal(oldPlaces.length,m.baseline.places);
 const oldRefs=new Set(oldPlaces.map(p=>p.geo?.source_ref).filter(Boolean));

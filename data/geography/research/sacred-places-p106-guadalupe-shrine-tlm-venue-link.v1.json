@@ -1,0 +1,63 @@
+{
+  "schema": "AO_SACRED_PLACES_P106_GUADALUPE_SHRINE_TLM_EXACT_VENUE_V1",
+  "date": "2026-11-01",
+  "scope": "EXACT_DIRECTORY_VENUE_TO_EXISTING_SACRED_PLACE_WITH_APPROVED_COVER",
+  "baseline": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 23
+  },
+  "proposed": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "new_places": 0,
+  "confirmed_directory_links_added": 1,
+  "published_new": [],
+  "historical_holds_preserved": {
+    "old_provider_scan": "2026-10-07 FSSP/ICKSP/IBP search returned no record; remains true as a narrow historical claim",
+    "old_spatial_screen": "2026-10-29 P92 source marker was 171.1 m from complex anchor; remains historically true",
+    "new_proof": "2026-11-01 first-party exact address + already present independent local Directory ID in complete CL2 worldwide corpus",
+    "remaining_pin_hold": "Do not treat historical 171.1m marker as exact church building pin"
+  },
+  "policy": {
+    "no_archive_photo_promotion": true,
+    "use_existing_rights_verified_approved_cover_only": true,
+    "no_new_map_pin": true,
+    "no_new_mass_time_or_missal_claim": true,
+    "no_institutional_ownership_claim": true,
+    "preserve_original_venue_id": true,
+    "preserve_historical_research_snapshots": true,
+    "zero_cost": true
+  },
+  "published_links": [
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "venue_id": "AO-AMER-R28-US-23-05",
+      "link_id": "link:directory-place:US:guadalupe-shrine-la-crosse",
+      "physical_anchor_id": "RG-ACCD4654B950",
+      "identity_provenance": "Pinned CL2 worldwide physical index source AO-AMER-R28-US-23-05 and first-party operator address agree exactly on shrine name, street, ZIP and locality.",
+      "address": "5250 Justin Road, La Crosse, WI 54601",
+      "first_party_source_url": "https://guadalupeshrine.org/hours-locations/",
+      "owner_announces_traditional_latin_mass": true,
+      "approved_existing_cover": "assets/approved/place-media/pf-d2cc2fb4fdbf658d031f42.webp",
+      "approved_cover_source": "https://commons.wikimedia.org/wiki/File:Guadalupe_Shrine_Front.jpg",
+      "approved_cover_rights": "CC-BY-3.0",
+      "source_pin_precision": "source_marker_unassessed",
+      "canonical_place_precision": "complex_anchor",
+      "historical_pin_to_complex_distance_m": 171.1,
+      "coordinate_promotion": false,
+      "venue_building_gps_certified": false,
+      "place_identity_resolved": true,
+      "newly_approved_images": 0,
+      "new_mass_schedule_rows": 0
+    }
+  ]
+}

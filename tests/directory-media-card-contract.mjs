@@ -212,4 +212,42 @@ for(const held of ["place:DE:friedhofskirche-st-michael-altoetting","place:FR:ba
  assert.ok(!approvedMedia.items.some(x=>x.place_id===held),"Other P107 alternatives remain unpublished");
 }
 
+// Wave A: already-approved Guadalupe Shrine artwork must reach only its exact
+// CL2/R28 TLM venue, never a similarly named chapel or an address-only guess.
+// Shrine owner: https://guadalupeshrine.org/hours-locations/
+// 5250 Justin Road, La Crosse, WI 54601 (also in the frozen CL2 source).
+const guadPlace="place:US:guadalupe-shrine-la-crosse";
+const guadVenueId="AO-AMER-R28-US-23-05";
+const guadApproved=approvedMedia.items.filter(m=>m.place_id===guadPlace);
+assert.equal(guadApproved.length,1,"Guadalupe should retain its one independently approved photo");
+assert.equal(guadApproved[0].rights_verified,true);
+assert.equal(guadApproved[0].subject_verified,true);
+assert.equal(guadApproved[0].crop_reviewed,true);
+const guadCanonical=geo.places.find(p=>p.place_id===guadPlace);
+assert.equal(guadCanonical?.address?.line1,"5250 Justin Road");
+assert.equal(guadCanonical?.address?.postal_code,"54601");
+const guadLinks=geo.directoryPlaceLinks.filter(l=>l.place_id===guadPlace||l.venue_id===guadVenueId);
+assert.equal(guadLinks.length,1,"Exactly one verified Guadalupe venue/Place mapping must exist");
+assert.equal(guadLinks[0].venue_id,guadVenueId);
+assert.equal(guadLinks[0].place_id,guadPlace);
+assert.equal(guadLinks[0].confidence,"CONFIRMED");
+assert.equal(guadLinks[0].relationship,"LOCATED_AT");
+const guadVenue={kind:"TLM_VENUE",source_id:guadVenueId,item_id:"tlm:guadalupe-shrine-exact",
+  title:"Shrine of Our Lady of Guadalupe",community_id:"DIOCESAN",
+  eyebrow:"Official source",source_links:[],sections:[]};
+const [guadAttached,guadDifferent]=attachApprovedDirectoryMedia(
+  [guadVenue,{...guadVenue,source_id:"different-guadalupe-church-not-linked",item_id:"tlm:guadalupe-different"}],
+  {directoryPlaceLinks:geo.directoryPlaceLinks,approved:approvedMedia.items,gallery:[]});
+assert.equal(guadAttached.place_id,guadPlace);
+assert.equal(guadAttached.cover_media?.asset_path,guadApproved[0].asset_path);
+assert.equal(eligibleDirectoryImage(guadAttached.cover_media,guadPlace),true);
+for(const lang of ["en","fr"]){
+ assert.ok(renderDirectoryVenueCard(guadAttached,lang).includes('src="'+guadApproved[0].asset_path+'"'),
+  "Real Guadalupe picture missing from "+lang+" TLM card");
+}
+assert.equal(guadDifferent.cover_media,undefined,
+ "Unlinked same-name shrine/church must not receive the Guadalupe photograph");
+assert.equal(guadDifferent.place_id,undefined,
+ "Unlinked venue must not acquire a Place identity by name similarity");
+
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");

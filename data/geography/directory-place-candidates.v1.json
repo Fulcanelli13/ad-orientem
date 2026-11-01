@@ -34,7 +34,7 @@
       "candidate_id": "candidate:directory-place:US:guadalupe-la-crosse-tlm",
       "place_id": "place:US:guadalupe-shrine-la-crosse",
       "relationship_if_resolved": "LOCATED_AT",
-      "status": "IDENTITY_RESOLUTION_REQUIRED",
+      "status": "RESOLVED_CONFIRMED_LINK",
       "claim_summary": "The official Shrine of Our Lady of Guadalupe schedule publishes a current Traditional Latin Mass at the shrine.",
       "schedule_context": {
         "monday_through_saturday": "08:30 Traditional Latin",
@@ -56,7 +56,25 @@
         "SSPX_OR_OTHER_LIVE_SOURCES",
         "NON_INSTITUTE_DIOCESAN_OR_LOCAL_DIRECTORY_RECORDS"
       ],
-      "guardrail": "Do not create a Directory→Place link until a current Directory venue record is independently identified as this Shrine. The official shrine schedule proves the Mass, not the existence of a canonical Directory venue."
+      "guardrail": "RESOLVED: the original requirement for an independently identified canonical Directory venue is now satisfied by the pinned CL2 source ID and identical first-party shrine address; do not infer any other Guadalupe venue or Mass property.",
+      "resolution": {
+        "resolved_on": "2026-11-01",
+        "resolved_by": "AO_EXPLORE_WAVE_A_EXACT_SITE_CROSSWALK",
+        "venue_id": "AO-AMER-R28-US-23-05",
+        "physical_anchor_id": "RG-ACCD4654B950",
+        "place_id": "place:US:guadalupe-shrine-la-crosse",
+        "matched_name": "Shrine of Our Lady of Guadalupe",
+        "matched_exact_address": "5250 Justin Road, La Crosse, WI 54601",
+        "operator_source": "https://guadalupeshrine.org/hours-locations/",
+        "directory_source": "https://guadalupeshrine.org/hours-locations/",
+        "directory_index": "data/directory/generated/cl2-physical-site-index.v1.json",
+        "directory_index_source_id": "AO-AMER-R28-US-23-05",
+        "approved_media": "assets/approved/place-media/pf-d2cc2fb4fdbf658d031f42.webp",
+        "existing_place_media_only": true,
+        "publication_scope": "VENUE_TO_PLACE_IDENTITY_AND_ALREADY_APPROVED_COVER",
+        "prohibitions": "No independent ownership/Una Cum/Missal classification claims or automatic timetable publication",
+        "original_scan_status": "Historical October 7 FSSP/ICKSP/IBP scan had no match; later CL2 source-index row independently establishes exact diocesan/local venue"
+      }
     },
     {
       "candidate_id": "candidate:directory-place:GB:walsingham-lms-tlm",

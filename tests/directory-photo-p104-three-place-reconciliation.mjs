@@ -17,7 +17,9 @@ const meters=(a,b,c,d)=>{const h=Math.sin((c-a)*rad/2)**2+Math.cos(a*rad)*Math.c
 assert.equal(c.schema,"AO_DIRECTORY_PHOTO_P104_THREE_EXACT_PLACE_RECONCILIATION_V1");
 assert.equal(c.state,"RESEARCH_PROPOSAL_FOR_SACRED_PLACES_OWNER_NOT_CANONICAL_RELEASE");
 assert.deepEqual(c.candidates.map(x=>x.photo_contact_id),[61,71,195]);
-assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.links]);
+assert.deepEqual([geo.places.length,src.sources.length],[LIVE.places,LIVE.sources]);
+assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
+  "Historic P104 source links must persist; later exact venue links may extend them");
 assert.equal(r49.records.length,1879);
 assert.equal(c.summary.link_ready_for_owner_review,1);
 assert.equal(c.summary.r49_geo_or_venue_holds,2);
@@ -66,6 +68,10 @@ for(const x of c.candidates){
  assert.equal(x.source_photo_approved,false);
 }
 const simulated=assertExploreGeographyRegistry({geoAreas:geo.geoAreas,places:[...geo.places,...proposedRemaining],directoryPlaceLinks:geo.directoryPlaceLinks});
-assert.deepEqual([simulated.counts.places,simulated.counts.directoryPlaceLinks],[532,23]);
-assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length],[530,23]);
+assert.equal(simulated.counts.places,532);
+assert.equal(simulated.counts.directoryPlaceLinks,geo.directoryPlaceLinks.length,
+  "Simulation retains all current separately verified Directory links");
+assert.equal(geo.places.length,530);
+assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
+  "Historical P104 venue links must persist through independently verified additions");
 console.log("PASS historical photo P104: Hannover now canonically linked; Kolbermoor and Blandford remain held; no publication.");

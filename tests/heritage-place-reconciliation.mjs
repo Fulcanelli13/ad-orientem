@@ -69,6 +69,15 @@ for(const entry of R.place_crosswalk){
   assert.ok(!entry.record_ids.relics,"Historical snapshot must not claim a subsequent source verification");
   delete historicalIds.relics;
  }
+ if(entry.place_id==="place:US:guadalupe-shrine-la-crosse"){
+  // Wave A independently resolved the old Guadalupe source-identity hold.
+  // The earlier heritage crosswalk remains immutable and does not
+  // retrospectively claim the newer exact TLM venue→Shrine association.
+  assert.deepEqual(actualIds.directory_links,["link:directory-place:US:guadalupe-shrine-la-crosse"]);
+  assert.ok(!entry.record_ids.directory_links,
+    "October heritage snapshot must not claim the later exact Guadalupe link");
+  delete historicalIds.directory_links;
+ }
  assert.deepEqual(entry.record_ids,historicalIds,"record crosswalk changed for "+entry.place_id);
  const hasCoordinates=Number.isFinite(place.geo?.lat)&&Number.isFinite(place.geo?.lng);
  const status=!hasCoordinates?"PENDING_COORDINATES":place.geo?.source_url?
@@ -142,6 +151,11 @@ for(const [count,value] of Object.entries({
  directory_place_links:G.directoryPlaceLinks.length,
 })){
  if(count==="canonical_customs"||count==="custom_attestations")continue; // earlier dated baseline accounted for above
+ if(count==="directory_place_links"){
+  assert.equal(value,R.counts[count]+1,
+   "One independently verified Guadalupe venue link extends the frozen heritage snapshot");
+  continue;
+ }
  assert.equal(R.counts[count]+(count==="relic_claims"?5:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
 }
 const noRefs=R.place_crosswalk.filter(p=>!Object.keys(p.record_ids).length).map(p=>p.place_id);

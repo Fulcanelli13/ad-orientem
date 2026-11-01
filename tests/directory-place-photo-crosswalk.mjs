@@ -7,6 +7,14 @@ const r49=read("data/directory/preliminary-map-r49.v1.json");
 const cover=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 const review=read("data/geography/research/directory-place-photo-screen-p92-20261029.v1.json");
+const candidates=read("data/geography/directory-place-candidates.v1.json");
+const guadalupeResolution=candidates.candidates.find(c=>c.candidate_id==="candidate:directory-place:US:guadalupe-la-crosse-tlm");
+assert.equal(guadalupeResolution?.status,"RESOLVED_CONFIRMED_LINK");
+assert.equal(guadalupeResolution.resolution?.venue_id,"AO-AMER-R28-US-23-05");
+assert.equal(guadalupeResolution.resolution?.physical_anchor_id,"RG-ACCD4654B950");
+assert.equal(guadalupeResolution.resolution?.matched_exact_address,"5250 Justin Road, La Crosse, WI 54601");
+const isGuadalupePair=p=>p.venue_id==="AO-AMER-R28-US-23-05"&&
+ p.place_id==="place:US:guadalupe-shrine-la-crosse";
 const live=buildScreen(geo,r49,cover,gallery);
 // P92 is a dated immutable research snapshot, not a perpetual photo-count oracle.
 // New source-verified media may only turn false photo flags to true; spatial
@@ -18,12 +26,25 @@ for(const pair of live.candidate_pairs){
  assert.ok(old,"New spatial/identity pair requires a separate Place review");
  const {place_has_approved_photo:now,...stable}=pair;
  const {place_has_approved_photo:before,...frozen}=old;
- assert.deepEqual(stable,frozen,"New photo approval cannot change a frozen Place/site identity pair");
+ if(isGuadalupePair(pair)){
+  // Preserve the immutable 29 Oct P92 proximity finding: 171.1 m between
+  // source marker and Shrine complex anchor is NOT an exact-building pin.
+  // A later source-first venue identity review resolved LOCATED_AT by the
+  // owner-published exact address and pinned CL2 venue; no pin was moved.
+  assert.equal(frozen.disposition,"EXACT_BUILDING_EVIDENCE_REQUIRED_HOLD");
+  assert.equal(stable.disposition,"EXISTING_CONFIRMED_LINK");
+  assert.equal(stable.distance_m,171.1);
+  assert.deepEqual(stable,{...frozen,disposition:"EXISTING_CONFIRMED_LINK"},
+    "Guadalupe resolution may change only its exact-link disposition");
+ }else{
+  assert.deepEqual(stable,frozen,"New photo approval cannot change a frozen Place/site identity pair");
+ }
  if(before)assert.equal(now,true,"Cannot revoke an existing approved-photo flag");
 }
 assert.equal(live.counts.venues_screened,review.counts.venues_screened);
 assert.equal(live.counts.canonical_places,review.counts.canonical_places);
-assert.equal(live.counts.confirmed_links,review.counts.confirmed_links);
+assert.ok(live.counts.confirmed_links>=review.counts.confirmed_links+1,
+  "P92 immutable 23 links plus the separately source-confirmed Guadalupe venue");
 assert.equal(live.counts.within_350m_pairs,review.counts.within_350m_pairs);
 assert.ok(live.counts.nearby_approved_photo_pairs>=review.counts.nearby_approved_photo_pairs);
 assert.ok(live.counts.exact_confirmed_photo_joins>=review.counts.exact_confirmed_photo_joins);
@@ -60,7 +81,14 @@ assert.equal(wrongChapel?.place_has_approved_photo,true);
 assert.notEqual(wrongChapel?.disposition,"EXISTING_CONFIRMED_LINK");
 for(const row of geo.directoryPlaceLinks){
  const pair=review.candidate_pairs.find(x=>x.venue_id===row.venue_id&&x.place_id===row.place_id);
- if(pair)assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
+ if(pair){
+  if(isGuadalupePair(row)){
+   assert.equal(pair.disposition,"EXACT_BUILDING_EVIDENCE_REQUIRED_HOLD",
+     "The historical marker-to-complex proximity hold must be preserved");
+   assert.equal(live.candidate_pairs.find(x=>isGuadalupePair(x))?.disposition,
+     "EXISTING_CONFIRMED_LINK","Later first-party address evidence must resolve only identity");
+  }else assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
+ }
 }
 assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
  venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,live.counts.exact_confirmed_photo_joins);
