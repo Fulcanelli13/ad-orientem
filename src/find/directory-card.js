@@ -131,7 +131,8 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
       useNamed?'<span class="aoTlmVenueNamedMark" data-mark-length="'+mark.length+'" aria-hidden="true">'+E(mark)+'</span>':
         '<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')+
     '<small>'+E(useNamed?L(language,"Listed as: ","Selon la source : ")+label:label)+'</small>'+
-    (emblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmOrderSymbolNote">'+E(L(language,"Order-wide symbol · not house arms","Symbole de l’ordre · non celui de la maison"))+'</small>':'')+
+    (emblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmOrderSymbolNote">'+E(L(language,"Order-wide symbol · not house arms","Symbole de l’ordre · non celui de la maison"))+'</small>':
+     emblem?.symbolScope==="INDEPENDENT_INSIGNIA_RENDERING"?'<small class="aoTlmOrderSymbolNote">'+E(L(language,"Independent cross drawing · not official logo","Dessin indépendant de la croix · non-logo officiel"))+'</small>':'')+
     '</span>';
 }
 
