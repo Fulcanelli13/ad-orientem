@@ -270,11 +270,13 @@ try{
     const modalWidth=await h4.evaluate(()=>{
       const box=document.querySelector(".aoH4ChoiceDialog")?.getBoundingClientRect();
       return {left:box?.left,right:box?.right,viewport:innerWidth,
-        options:document.querySelectorAll(".aoH4ChoiceDialog [data-h4-option]").length};
+        options:[...document.querySelectorAll(".aoH4ChoiceDialog [data-h4-option]")].map(el=>el.dataset.h4Option).sort()};
     });
     assert.ok(modalWidth.left>=-1&&modalWidth.right<=modalWidth.viewport+1,
       prefix+" H4 Change sheet overflow: "+JSON.stringify(modalWidth));
-    assert.equal(modalWidth.options,5,prefix+" Change must not duplicate Mass preflight inputs");
+    assert.deepEqual(modalWidth.options,
+      ["afterMass","aspersion","beforeMass","form","readerLanguage","readerMode"],
+      prefix+" Change must expose the five R17 selections and the one Sunday Asperges option without duplicates");
     await h4.locator('[data-h4-option="readerMode"]').selectOption("MISSAL");
     await h4.waitForFunction(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.readerMode==="MISSAL");
     await h4.locator('[data-h4-option="readerLanguage"]').selectOption("fr");
