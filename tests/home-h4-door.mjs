@@ -76,7 +76,11 @@ assert.match(html,/data-home-h4-begin/);
 assert.match(html,/data-home-h4-change/);
 const modal=h4ChoicesMarkup({chosenForm:"SOLEMN",formChangeAllowed:true,readerMode:"MISSAL",
   experience:{language:"fr",before:"prepare",after:"thanksgiving"}},{language:"en"});
-assert.equal((modal.match(/data-h4-option=/g)||[]).length,5,"Mass, ceremony, reader, language and prayer choices use one sheet");
+assert.equal((modal.match(/data-h4-option=/g)||[]).length,6,"Mass, ceremony, conditional aspersion, reader, language and prayer choices use one sheet");
+assert.match(modal,/data-h4-option="aspersion" disabled/,"Uncertified weekday/Low Mass cannot enable Sunday aspersion");
+const sunday=h4ChoicesMarkup({chosenForm:"SOLEMN",formChangeAllowed:true,aspersionAllowed:true,aspersionSelected:true,readerMode:"LIVE",experience:{language:"en",before:"none",after:"none"}},{language:"en"});
+assert.match(sunday,/data-h4-option="aspersion"/,"Sung Sunday exposes a source-gated aspersion selector");
+assert.match(sunday,/value="yes" selected/,"Explicit Sunday aspersion must be reflected in H7 choices");
 assert.match(modal,/data-h4-different-mass/,"Other Mass must use canonical resolver");
 assert.match(modal,/value="SOLEMN" selected/,"Source preflight ceremony must populate sheet");
 assert.match(modal,/value="MISSAL" selected/,"Source preflight reader must populate sheet");
