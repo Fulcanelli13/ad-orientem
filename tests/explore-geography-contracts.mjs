@@ -373,10 +373,32 @@ assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:DE:kevel
 
 const guadalupeCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:US:guadalupe-la-crosse-tlm");
 assert.ok(guadalupeCandidate,"Guadalupe Shrine TLM identity-resolution candidate missing");
-assert.equal(guadalupeCandidate.status,"IDENTITY_RESOLUTION_REQUIRED");
+assert.equal(guadalupeCandidate.status,"RESOLVED_CONFIRMED_LINK");
 assert.equal(guadalupeCandidate.place_id,"place:US:guadalupe-shrine-la-crosse");
-assert.deepEqual(guadalupeCandidate.generated_provider_scan.exact_or_text_matches,[]);
-assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:US:guadalupe-shrine-la-crosse"),false,"unresolved Guadalupe TLM candidate leaked into canonical Directory→Place links");
+assert.deepEqual(guadalupeCandidate.generated_provider_scan.exact_or_text_matches,[],
+  "October 7 three-provider scan remains immutable historical evidence");
+assert.equal(guadalupeCandidate.resolution?.venue_id,"AO-AMER-R28-US-23-05");
+assert.equal(guadalupeCandidate.resolution?.physical_anchor_id,"RG-ACCD4654B950");
+assert.equal(guadalupeCandidate.resolution?.matched_exact_address,"5250 Justin Road, La Crosse, WI 54601");
+assert.equal(guadalupeCandidate.resolution?.operator_source,
+  "https://guadalupeshrine.org/hours-locations/");
+const guadalupeSourceIndex=readJson("../data/directory/generated/cl2-physical-site-index.v1.json");
+const guadalupePhysical=guadalupeSourceIndex.records.find(row=>row[0]==="RG-ACCD4654B950");
+assert.ok(guadalupePhysical,"Resolved Guadalupe site must remain present in current CL2 physical index");
+assert.ok(guadalupePhysical[1].includes(guadalupeCandidate.resolution.venue_id));
+assert.equal(guadalupePhysical[2],"Shrine of Our Lady of Guadalupe");
+assert.equal(guadalupePhysical[4],guadalupeCandidate.resolution.matched_exact_address);
+assert.ok(guadalupePhysical[6].includes(guadalupeCandidate.resolution.operator_source));
+const guadalupePlace=seed.places.find(place=>place.place_id===guadalupeCandidate.place_id);
+assert.equal(guadalupePlace?.address?.line1,"5250 Justin Road");
+assert.equal(guadalupePlace?.address?.postal_code,"54601");
+const guadalupeLinks=seed.directoryPlaceLinks.filter(link=>
+  link.place_id===guadalupeCandidate.place_id||link.venue_id===guadalupeCandidate.resolution.venue_id);
+assert.equal(guadalupeLinks.length,1,
+  "Only the exactly sourced Guadalupe TLM venue may inherit this Place");
+assert.equal(guadalupeLinks[0].venue_id,guadalupeCandidate.resolution.venue_id);
+assert.equal(guadalupeLinks[0].confidence,"CONFIRMED");
+assert.equal(guadalupeLinks[0].relationship,"LOCATED_AT");
 
 const walsinghamCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:GB:walsingham-lms-tlm");
 assert.ok(walsinghamCandidate,"Walsingham TLM identity-resolution candidate missing");
