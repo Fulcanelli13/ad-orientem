@@ -6,8 +6,9 @@ export function dailyUxPilotEnabled(search){
  try{return new URLSearchParams(String(search||"").replace(/^\?/,"")).get("aoDailyUxPilot")!=="0"}
  catch{return true}
 }
-export function renderDailyUxModes({mode,L,esc}){
- const options=[["guided",L("Cards","Cartes")],["continuous",L("Continuous","Continu")],["list",L("Browse","Choisir")]];
+export function renderDailyUxModes({mode,L,esc,omitBrowse=false}){
+ // A first-class Browse button can own the only list action on guided pages.
+ const options=[["guided",L("Cards","Cartes")],["continuous",L("Continuous","Continu")],["list",L("Browse","Choisir")]].filter(([id])=>!omitBrowse||id!=="list");
  return '<nav class="aoDailyUxModes" role="group" aria-label="'+esc(L("Daily reading presentation","Présentation de la règle quotidienne"))+'">'+
   options.map(([id,title])=>'<button type="button" data-tp381-daily-presentation="'+id+'" aria-pressed="'+String(mode===id)+'">'+esc(title)+'</button>').join("")+
   '</nav>';
@@ -44,10 +45,10 @@ export function renderDailyBookPills({edition,L,esc}){
   '</details>'+
  '</section>';
 }
-export function renderDailyReaderOptions({mode,L,esc}){
+export function renderDailyReaderOptions({mode,L,esc,omitBrowse=false}){
  const label=mode==="continuous"?L("Continuous","Continu"):mode==="list"?L("Browse","Choisir"):L("Cards","Cartes");
  return '<details class="aoDailyReadingOptions"><summary>'+esc(L("Reading layout","Mode de lecture"))+' <strong>'+esc(label)+'</strong></summary>'+
-  renderDailyUxModes({mode,L,esc})+'</details>';
+  renderDailyUxModes({mode,L,esc,omitBrowse})+'</details>';
 }
 export function renderDailyUxContinuous({rows,renderRow,titleFor,esc,L}){
  if(!Array.isArray(rows)||!rows.length)throw new RangeError("Source-owned daily rows required");
