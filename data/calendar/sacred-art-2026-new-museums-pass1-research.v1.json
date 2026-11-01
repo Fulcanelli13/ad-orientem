@@ -1,0 +1,152 @@
+{
+  "schema": "AO_SACRED_ART_NEW_MUSEUMS_PASS1_RESEARCH_V1",
+  "asOf": "2026-11-02",
+  "status": "RESEARCH_ONLY_NO_NEW_USER_APPROVAL_NO_IMAGE_PUBLICATION",
+  "policy": {
+    "scope": "Find image-eligible artwork subjects from museum collections not yet systematically harvested. Do not replace prior choices.",
+    "exclude": [
+      "Historical user-rejected work identities",
+      "Fra Angelico and El Greco",
+      "Prado image sources",
+      "Photos or secondary prints treated as independent originals",
+      "NC or ND rights incompatible with the app"
+    ],
+    "preservation": "All existing exact-date approved works, Prayer/Rosary/Atlas art assignments and original identity locks outrank this research. New alternatives require explicit review.",
+    "acquisition": "€0; no rights enquiries, owner contacts, fees, paid subscriptions or automated source replacements",
+    "releaseGate": "Exact original identity + full archive dedup including accepted-856 + human editorial approval + image rights + native image/frameless composition + phone QA before publication"
+  },
+  "checkedAgainst": [
+    "2026 Class I-IV 365-day research calendar",
+    "383 active artwork reverse index",
+    "451 legacy artwork intake",
+    "Class I/II source crosswalk",
+    "Class III 131-day research master"
+  ],
+  "unverifiedDedup": [
+    "Complete 856 accepted-source inventory beyond currently integrated 2026 links",
+    "Other unpublished historical work branches and private review outcomes"
+  ],
+  "sourcesPolicies": [
+    {
+      "institution": "Städel Museum",
+      "url": "https://sammlung.staedelmuseum.de/en/concept",
+      "claim": "Public-domain object images freely downloadable and reusable"
+    },
+    {
+      "institution": "Bayerische Staatsgemäldesammlungen",
+      "url": "https://www.sammlung.pinakothek.de/en/usage",
+      "claim": "CC BY-SA 4.0 applies to labelled downloadable public-domain artwork images"
+    },
+    {
+      "institution": "Art in Flanders",
+      "url": "https://artinflanders.be/en/download-free-images",
+      "claim": "Object-level labels and collection-specific terms govern free use; cannot assume all images are cleared"
+    },
+    {
+      "institution": "Paris Musées",
+      "url": "https://www.paris.fr/pages/150-000-oeuvres-des-musees-de-la-ville-de-paris-en-libre-utilisation-7420",
+      "claim": "CC0 catalogue exists; no date-specific candidates captured in this first pass"
+    },
+    {
+      "institution": "Web umenia",
+      "url": "https://www.webumenia.sk/en/informacie",
+      "claim": "Public-domain images may be downloaded for commercial use; no new candidates captured in this first pass"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "staedel:123",
+      "date": "2026-07-02",
+      "rank": "II",
+      "feast": "Visitation of the Blessed Virgin Mary",
+      "artist": "Giuseppe Maria Crespi",
+      "title": "The Visitation",
+      "museum": "Städel Museum, Frankfurt",
+      "inventory": "123",
+      "url": "https://sammlung.staedelmuseum.de/en/work/the-visitation",
+      "rights": "Public Domain (individual museum object record)",
+      "role": "EXACT_SUBJECT_ALTERNATIVE",
+      "quality": "Original photo resolution and frame-free crop not yet certified"
+    },
+    {
+      "id": "bsg:7386",
+      "date": "2026-07-02",
+      "rank": "II",
+      "feast": "Visitation of the Blessed Virgin Mary",
+      "artist": "Victor Janssens",
+      "title": "Maria Heimsuchung",
+      "museum": "Bayerische Staatsgemäldesammlungen",
+      "inventory": "7386",
+      "url": "https://www.sammlung.pinakothek.de/en/artwork/7yxY3n5GYm",
+      "rights": "CC BY-SA 4.0 (individual museum object record)",
+      "role": "EXACT_SUBJECT_ALTERNATIVE",
+      "quality": "Download offered; original pixels, framing and tonal quality not yet inspected; BY-SA redistribution obligations"
+    },
+    {
+      "id": "staedel:621",
+      "date": "2026-08-10",
+      "rank": "II",
+      "feast": "St Lawrence",
+      "artist": "Bartholomeus Breenbergh",
+      "title": "The Martyrdom of Saint Lawrence",
+      "museum": "Städel Museum, Frankfurt",
+      "inventory": "621",
+      "url": "https://sammlung.staedelmuseum.de/en/work/the-martyrdom-of-saint-lawrence",
+      "rights": "Public Domain (individual museum object record)",
+      "role": "EXACT_SUBJECT_ALTERNATIVE",
+      "quality": "Object photo visible; native file / crop not yet certified"
+    },
+    {
+      "id": "brugge:OLV_0006_I",
+      "date": "2026-09-15",
+      "rank": "II",
+      "feast": "Seven Sorrows of the Blessed Virgin Mary",
+      "artist": "Adriaan Isenbrandt",
+      "title": "Our Lady of Seven Sorrows",
+      "museum": "Musea Brugge, Church of Our Lady; Art in Flanders image service",
+      "inventory": "OLV_0006_I",
+      "url": "https://artinflanders.be/en/artwork/our-lady-7-sorrows-6",
+      "museumObjectUrl": "https://collectie.museabrugge.be/en/collection/work/id/OLV_0006_I",
+      "rights": "Public domain (specific Art in Flanders image record; check download terms)",
+      "role": "EXACT_SUBJECT_ALTERNATIVE",
+      "quality": "Multiple image PID/photo IDs refer to ONE original; choose highest quality frameless official photo; download process may require form"
+    },
+    {
+      "id": "bsg:7604",
+      "date": "2026-08-24",
+      "rank": "II",
+      "feast": "St Bartholomew",
+      "artist": "Jusepe de Ribera",
+      "title": "Hl. Bartholomäus",
+      "museum": "Bayerische Staatsgemäldesammlungen – Alte Pinakothek",
+      "inventory": "7604",
+      "url": "https://www.sammlung.pinakothek.de/de/artwork/Qr4D0204pE",
+      "rights": "CC BY-SA 4.0 (individual museum object record)",
+      "role": "EXACT_SAINT_ALTERNATIVE",
+      "quality": "Baroque portrait; separate physical Munich original, not an image from the Prado; native photo and frame QA pending"
+    }
+  ],
+  "knownPreviouslyResearchedNotNew": [
+    {
+      "artist": "Stefan Lochner",
+      "title": "Martyrdom of Ss Simon and Jude",
+      "source": "Städel Museum",
+      "note": "Already named in existing Class I/II crosswalk; do not present as newly discovered."
+    }
+  ],
+  "resultCounts": {
+    "firstPassInstitutionalObjectLeads": 5,
+    "distinctLiturgicalDates": 4,
+    "photographsAcquired": 0,
+    "photoQualityCertified": 0,
+    "full856DedupCertified": 0,
+    "newEditorialApprovals": 0,
+    "imagesPublished": 0
+  },
+  "nextActions": [
+    "Finish authoritative 856-source and older art-branch physical-object dedup before asserting net-new count",
+    "Resolve direct original files and exact individual image permissions; check cropped/framed composition",
+    "Prepare one user review contact sheet grouped by feast without re-showing existing locked primary artwork as a new proposal",
+    "Only promote affirmatively selected, rights-cleared work after phone QA"
+  ]
+}
