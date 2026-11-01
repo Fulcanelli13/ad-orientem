@@ -130,6 +130,23 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),1,
     "Prayer-entry Angelus should have the approved optional opening");
+   const cover=page.locator(base+" .aoPrayPilotAngelusEntry");
+   assert.equal(await cover.locator(".aoPrayPilotAngelusArtSlot").count(),1,
+     "Approved full-height hour entry keeps an unassigned artwork slot rather than invented art");
+   assert.equal(await cover.locator(".aoPrayPilotBellGroup").count(),4,"Traditional bell sequence groups 3+3+3+9");
+   assert.equal(await cover.locator(".aoPrayPilotBellDot").count(),18);
+   const firstFold=await cover.evaluate(el=>{
+      const actions=el.querySelector(".aoPrayPilotAngelusActions"),begin=el.querySelector("[data-p435930-pilot-angelus-begin]");
+      const alone=el.querySelector("[data-p435930-pilot-angelus-recitation]");
+      const hero=el.querySelector(".aoPrayPilotAngelusHero").getBoundingClientRect();
+      const b=begin.getBoundingClientRect(),a=alone.getBoundingClientRect();
+      return {heroHeight:hero.height,beginTop:b.top,beginBottom:b.bottom,recitationTop:a.top,
+       navTop:document.querySelector(".aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect()?.top||innerHeight};
+   });
+   assert.ok(firstFold.heroHeight>=180&&firstFold.beginBottom<firstFold.recitationTop,
+     "Approved Angelus cover uses a full-height art band and Begin ABOVE recitation: "+JSON.stringify(firstFold));
+   assert.ok(firstFold.beginBottom<firstFold.navTop,
+     "Begin must remain visible above the fixed app navigation at "+width+": "+JSON.stringify(firstFold));
    const group=page.locator(base+' [data-p435930-pilot-angelus-recitation="group"]');
    assert.equal(await group.count(),1,"F04 entry must expose existing Alone/With others recitation");
    await group.click();
