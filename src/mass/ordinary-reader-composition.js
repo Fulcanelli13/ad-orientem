@@ -14,6 +14,21 @@ const COMPOSITE_RULES = Object.freeze({
       }),
     }),
   ]),
+  // The immutable Low and Sung donors split one *single* versicle into
+  // C0141 and C0142, causing "Deo nostro / our God" to float alone.
+  // Recompose visually; retain both source cue IDs and the response C0143.
+  "AO.SM.B044": Object.freeze([
+    Object.freeze({
+      sourceCueIds:Object.freeze(["AO.SM.C0141","AO.SM.C0142"]),
+      id:"AO.SM.C0141+AO.SM.C0142",
+      kind:"VERSICLE",
+      latin:"℣. Grátias agámus Dómino Deo nostro.",
+      vernacular:Object.freeze({
+        en:"Let us give thanks to the Lord our God.",
+        fr:"Rendons grâces au Seigneur notre Dieu.",
+      }),
+    }),
+  ]),
   "AO.SM.B027": Object.freeze([
     Object.freeze({
       sourceCueIds:Object.freeze(["AO.SM.C0089","AO.SM.C0090"]),
