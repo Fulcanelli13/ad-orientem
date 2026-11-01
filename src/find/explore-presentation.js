@@ -641,9 +641,11 @@ function tlmCl27Filters(vm){
     "Filters use explicit evidence scopes. Unknown means not publicly established, not No. Source-group names are not verified celebrant identities. Two parish sources identify specific 1962 celebrations only.",
     "Les filtres respectent la portée des sources. Inconnu signifie non établi publiquement, et non Non. Un groupe répertorié ne prouve pas l’identité du célébrant. Deux sources paroissiales attestent uniquement certaines célébrations de 1962."))+'</p>';
   for(const axis of PUBLIC_CL27_AXES){
+    const scopeFr={COMMUNITY:"COMMUNAUTÉ",MINISTRY:"MINISTÈRE",CELEBRATION:"CÉLÉBRATION",ORGANIZER:"ORGANISATEUR",VENUE:"LIEU"};
+    const scope=vm.language==="fr"?axis.scope.split(" / ").map(x=>scopeFr[x]??x).join(" / "):axis.scope;
     html+='<section class="aoTlmCl27Axis" data-cl27-axis="'+esc(axis.key)+'"><strong>'+
       esc(vm.language==="fr"?axis.fr:axis.en)+'</strong><small>'+
-      esc(L(vm.language,"Scope: ","Portée : ")+axis.scope)+'</small>';
+      esc(L(vm.language,"Scope: ","Portée : ")+scope)+'</small>';
     if(axis.key==="institute_or_community"){
       html+='<p>'+esc(L(vm.language,
         "Use the institute/community buttons above. These are source-reported group labels, not proof of a particular ministry or celebration.",
