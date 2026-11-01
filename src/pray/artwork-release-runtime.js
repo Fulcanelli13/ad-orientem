@@ -25,7 +25,7 @@ export function releaseClearedPrayerArtwork(slotId,{
 }={}){
   if(typeof slotId!=="string" || !Object.hasOwn(authority,slotId))return null;
   const selection=authority[slotId];
-  if(!selection || selection.held || selection.door ||
+  if(!selection || selection.held ||
     !selection.title || !selection.artist)return null;
   const asset=Object.hasOwn(manifest,slotId)?manifest[slotId]:null;
   if(!asset || typeof asset!=="object")return null;
@@ -34,7 +34,8 @@ export function releaseClearedPrayerArtwork(slotId,{
     asset.artist!==selection.artist || asset.editorialApproved!==true ||
     asset.publicationState!=="READY_FOR_PUBLICATION" ||
     asset.productionEnabled!==true || !localImage(asset.path) ||
-    !proof || proof.exactOriginalObjectVerified!==true ||
+    !proof || (selection.door && proof.categoryDoorExactArtworkApproved!==true) ||
+    proof.exactOriginalObjectVerified!==true ||
     proof.approvedForThisExactPrayerSlot!==true ||
     proof.actualFileReuseRightsCleared!==true ||
     proof.originalSourceFileArchived!==true ||
@@ -59,13 +60,19 @@ export function releaseClearedPrayerArtwork(slotId,{
     sourceCollectionUrl:asset.sourceCollectionUrl});
 }
 export function prayerArtworkSlotForView({
-  view,prayerId=null,libraryId=null,angelusForm="angelus",
+  view,prayerId=null,libraryId=null,familyId=null,angelusForm="angelus",
   stationIndex=null,penitentialIndex=null,sevenWordsIndex=null
 }={}){
   const index=(n,max)=>{
     if(!Number.isInteger(n)||n<0||n>=max)return null;
     return String(n+1).padStart(2,"0");
   };
+  if(view==="family"){
+    const doors={daily:"DOOR-D1",library:"DOOR-D2",chaplets:"DOOR-D3",
+      novenas:"DOOR-D4",eucharistic:"DOOR-D5",ourlord:"DOOR-D6",
+      marian:"DOOR-D7",saints:"DOOR-D8",intentions:"DOOR-D9"};
+    return Object.hasOwn(doors,familyId)?doors[familyId]:null;
+  }
   if(view==="angelus")return angelusForm==="regina"?
     "COV-pray.angelus_regina":"COV-pray.angelus";
   if(view==="stations"){
