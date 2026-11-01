@@ -74,5 +74,43 @@ assert.deepEqual({...ledger.publication}, {
  publiclyAvailableScores:0,noNewGabcCopied:true,noNewAudio:true,
  sourceArchiveInSeparateUnmergedPR:1749,
  approvalRequired:"ONE_FINAL_USER_COLLECTION_REVIEW"});
+
+const auditStatus=new Map([
+ [752,"FULL_ANTIPHON_AND_PSALM_AFTER_ORTHOGRAPHY"],
+ [371,"FULL_SOURCE_GRADUAL_AND_VERSE_TEXT"],
+ [1237,"FULL_SOURCE_ALLELUIA_VERSE_TEXT"],
+ [835,"SOURCE_POINTER_UNRESOLVED_AT_PINNED_COMMIT"],
+ [345,"FULL_SOURCE_COMMUNION_TEXT_AFTER_ORTHOGRAPHY"]
+]);
+assert.equal(ledger.evidenceReview.status,
+ "SOURCE_PAGES_IDENTIFIED_BUT_NOTE_BY_NOTE_FACSIMILE_NOT_COLLATED");
+assert.equal(ledger.evidenceReview.inheritedOffertorySourcePointer,"@Commune/C3a-1");
+assert.equal(ledger.evidenceReview.inheritedOffertoryOriginalAvailability,
+ "NOT_FOUND_AT_PINNED_COMMIT");
+assert.equal(ledger.evidenceReview.sourceSelectionApproved,false);
+assert.equal(ledger.evidenceReview.scoreNotesVerified,0);
+assert.equal(ledger.evidenceReview.newPublicScores,0);
+for(const c of ledger.properCandidates){
+ const proof=c.pinned1962SourceTextEvidence;
+ assert.equal(proof.status,auditStatus.get(c.sourceId));
+ assert.equal(proof.sourceRole,c.role);
+ assert.equal(proof.originalSourceBlobSha,ledger.churchCalendar.sourceBlobSha);
+ assert.equal(proof.originalSourceCommit,"ad8783641455bae38a8eb5782b34241a7b3ff2ef");
+ assert.equal(proof.originalGabcArchivePullRequest,1749);
+ assert.equal(proof.musicalParity,"NOT_CHECKED");
+ assert.equal(proof.scoreNotes,"NOT_CHECKED");
+ assert.equal(proof.published,false);
+ assert.ok(proof.sourceParts.length>0);
+}
+assert.deepEqual(ledger.properCandidates[0]
+ .pinned1962SourceTextEvidence.orthographicVariants,
+ ["sollemnitate/solemnitate"]);
+assert.deepEqual(ledger.properCandidates[4]
+ .pinned1962SourceTextEvidence.orthographicVariants,
+ ["coelorum/caelorum"]);
+assert.match(ledger.properCandidates[3]
+ .pinned1962SourceTextEvidence.caution,/outside Eastertide/,
+ "All Saints Offertory seasonal Alleluia must never be assumed from raw GABC");
+
 assert.equal(new Set(ledger.properCandidates.map(x=>x.originalArchiveId)).size,5);
 console.log("PASS: All Saints 2026 source-locked five Proper leads and ordinary Asperges; no approved scores or audio");
