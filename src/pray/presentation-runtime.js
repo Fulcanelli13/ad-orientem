@@ -74,7 +74,7 @@ import {rosaryR2PilotEnabled,applyRosaryR2Pilot} from "./rosary-r2-pilot.js";
 import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENINGS, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
-import {chapletF07PilotEnabled,chapletF07VariantsEnabled,renderMercyF07Crown,mercyF07RoleMarkup} from "./chaplet-f07-pilot.js";
+import {chapletF07PilotEnabled,chapletF07VariantsEnabled,renderMercyF07Crown,renderMercyF07Entry,mercyF07RoleMarkup} from "./chaplet-f07-pilot.js";
 import {renderF07FiveWounds,renderF07PreciousBlood,renderF07LittleCrown} from "./chaplet-f07-variants.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -291,7 +291,7 @@ function load(){
 }
 let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
-let MERCY={step:0,includeClosing:false,guide:'guided',optionsOpen:false,finished:false};
+let MERCY={step:0,includeClosing:false,guide:'guided',optionsOpen:false,finished:false,entered:false};
 let FIVE_WOUNDS={index:0,latin:false};
 let LITTLE_CROWN={index:0,latin:false};
 let PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false};
@@ -488,7 +488,7 @@ function open(id,opts={}){
     decorateRosary();setTimeout(decorateRosary,0);
     return true;
   }
-  else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;MERCY.finished=false;}
+  else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;MERCY.finished=false;MERCY.entered=false;}
   // Direct-entry aliases must initialize exactly like the family-card route.
   // These three source-owned chaplets were registered in
   // internal-route-owner.js but absent from this entry dispatcher.
@@ -2615,7 +2615,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MONTFORT.day,MONTFORT.target,MONTFORT.completed.join(','),MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,LITTLE_CROWN.index,LITTLE_CROWN.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,ADOR.nightStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MONTFORT.day,MONTFORT.target,MONTFORT.completed.join(','),MERCY.step,MERCY.includeClosing,MERCY.guide,MERCY.entered,MERCY.finished,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,LITTLE_CROWN.index,LITTLE_CROWN.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,ADOR.nightStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -3201,6 +3201,11 @@ function renderFiveWounds(){
 }
 function renderMercy(){
  const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
+ if(CHAPLET_F07_PILOT_ENABLED&&!MERCY.entered&&!MERCY.finished){
+  const french=isFr();
+  return head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))+
+   renderMercyF07Entry(steps,{french,source:MERCY_WITNESSES[french?'fr':'en']});
+ }
  if(CHAPLET_F07_PILOT_ENABLED&&MERCY.finished){
   return head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Prayer complete','Prière achevée'))+
    '<main class="aoP435930Body aoMercyReader" data-ao-mercy-complete="true">'+
@@ -3583,7 +3588,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    }
   });
  });
- if(view==='mercy'&&!MERCY.finished)queueMicrotask(()=>{
+ if(view==='mercy'&&!MERCY.finished&&(!CHAPLET_F07_PILOT_ENABLED||MERCY.entered))queueMicrotask(()=>{
   const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
   const chapters=mercyChapters(steps,{french:isFr()});
   const current=chapters.findIndex(x=>MERCY.step>=x.start&&MERCY.step<x.start+x.entries.length);
@@ -3629,7 +3634,7 @@ function routeOwn(id){
  if(next==='stations'){STATIONS.step=0;lastStationsFxStep=null}
  if(next==='tenebrae'){TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.loading=false;TEN.epoch++}
  if(next==='angelus'){ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
- if(next==='mercy')MERCY.step=0;
+ if(next==='mercy'){MERCY.step=0;MERCY.finished=false;MERCY.entered=false}
  if(next==='fiveWounds'){FIVE_WOUNDS.index=0;FIVE_WOUNDS.latin=false}
  if(next==='littleCrown'){LITTLE_CROWN={index:0,latin:false}}
  if(next==='preciousBlood'){PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false}}
@@ -3929,7 +3934,7 @@ function onClick(e){
     PRIESTS.latin=!PRIESTS.latin;return render();
   }
  }
- if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;MERCY.finished=false;navStack=[];return render()}
+ if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;MERCY.finished=false;MERCY.entered=false;navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-customize')){
   ROSARY_CHOOSER.optionsOpen=!ROSARY_CHOOSER.optionsOpen;
@@ -3945,16 +3950,19 @@ function onClick(e){
  if(b.hasAttribute('data-p435930-rosary-method-launch'))return launchTraditionalRosaryMethod(b.dataset.p435930RosaryMethodLaunch);
  if(b.hasAttribute('data-p435930-rosary-fifteen'))return launchFifteenRosary();
  if(view==='mercy'){
+  if(b.hasAttribute('data-p435930-mercy-begin')&&CHAPLET_F07_PILOT_ENABLED){
+   MERCY.step=0;MERCY.finished=false;MERCY.entered=true;return render();
+  }
   if(b.hasAttribute('data-p435930-mercy-finish')){
    const final=divineMercySteps({includeClosing:MERCY.includeClosing}).length-1;
    if(MERCY.step!==final||!CHAPLET_F07_PILOT_ENABLED)return;
    MERCY.finished=true;return render();
   }
   if(b.hasAttribute('data-p435930-mercy-again')){
-   MERCY.finished=false;MERCY.step=0;return render();
+   MERCY.finished=false;MERCY.entered=false;MERCY.step=0;return render();
   }
   if(b.hasAttribute('data-p435930-mercy-return')){
-   MERCY.finished=false;return backToParent();
+   MERCY.finished=false;MERCY.entered=false;return backToParent();
   }
   if(b.hasAttribute('data-p435930-mercy-chapter')){
    const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
