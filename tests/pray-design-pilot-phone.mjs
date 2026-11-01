@@ -194,6 +194,30 @@ try{
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0,
     "direct homepage Angelus entry must skip the cinematic introduction");
+
+   // Claude c1 Adoration: two stacked, illustrated-but-unpublished entry
+   // surfaces, visible guided forms, and preservation of both real readers.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+   const chooser=page.locator(base+' [data-ao-adoration-chooser="quiet-v2"]');
+   assert.equal(await chooser.count(),1);
+   const cards=chooser.locator('.aoAdorationPrimaryGrid button');
+   assert.equal(await cards.count(),2,"Approved Adoration c1 has two principal entry cards");
+   const geom=await cards.evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,height:r.height}}));
+   assert.ok(geom[0].height>=160&&geom[1].top>=geom[0].bottom,
+     "Adoration entry cards must stack vertically at "+width+"px: "+JSON.stringify(geom));
+   assert.ok(await chooser.locator('.aoAdorationMethodsDisclosure[open] .aoP435930BigGrid button').count()>=4,
+     "Approved Claude c1 guided forms must be visible, not hidden behind a collapsed disclosure");
+   assert.equal(await chooser.locator('.aoAdorationPrimaryGrid [data-ao-art-binding=unassigned]').count(),2,
+     "Do not publish uncertified Adoration paintings or illustrations");
+   await page.screenshot({path:resolve(output,"adoration-claude-c1-"+width+".png"),animations:"disabled"});
+   await chooser.locator('[data-p435930-ador-mode="visit"]').click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().adorationMode),"visit",
+     "The approved Visit artwork card must open the canonical guided Visit");
+   await page.locator(base+' [data-p435930-ador-home]').click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().adorationMode),"home");
+   await page.locator(base+' [data-p435930-ador-mode="open"]').click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().adorationMode),"open",
+     "The Silent Adoration card must retain its canonical untimed reader");
    assert.deepEqual(errors,[],"Uncaught pilot JavaScript errors at "+width+": "+errors.join("; "));
    console.log("PASS "+width+"px: nine non-overlapping shelves, Marian source reader, Daily Angelus, search and direct bypass");
   }finally{await page.close()}
