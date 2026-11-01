@@ -11,6 +11,8 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import "./benediction-mystic-lamb-user-art-styles.js";
+import {renderSelectedBenedictionArtwork} from "./benediction-mystic-lamb-user-art.v1.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
 import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
 import "./claude-holy-card-styles.js";
@@ -1935,7 +1937,7 @@ function renderBenediction(){
   <section class="aoDevoCard aoClaudeAltarCard" data-ao-devo-card="${esc(id)}" data-ao-altar-moment="${esc(id)}">
    <div class="aoClaudeAltarInner">
     <header class="aoDevoCardHead aoClaudeAltarHead"><div class="aoClaudeAltarPlate" aria-hidden="true"><div class="aoClaudeAltarPlateArt"></div></div><div class="aoClaudeAltarHeading"><small class="aoDevoCardNumber">${esc(plateCaption)}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></div></header>
-    <div class="aoDevoCardScroll aoClaudeAltarScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${body}</div>
+    <div class="aoDevoCardScroll aoClaudeAltarScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${renderSelectedBenedictionArtwork(id,isFr())}${body}</div>
    </div>
   </section>
  </div>
