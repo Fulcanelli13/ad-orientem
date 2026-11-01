@@ -32,6 +32,10 @@ for(const [source,expected] of [
  ["Ps. 75:9-10. Terra trémuit, et quiévit","Terra trémuit, et quiévit"],
  ["Malach 3:1; 1 Par 29:12 ℣. Ecce, advénit dominátor Dóminus","Ecce, advénit dominátor Dóminus"],
  ["1 Cor 5:7-8 Pascha nostrum immolátus est Christus","Pascha nostrum immolátus est Christus"],
+ ["Ps 1:2 et 3. Qui meditábitur in lege Dómini","Qui meditábitur in lege Dómini"],
+ ["Phil 2:10, 8 et 11 ℣. In nómine Jesu omne genu","In nómine Jesu omne genu"],
+ ["Is 66:10 et 11 ℣. Lætáre, Jerúsalem","Lætáre, Jerúsalem"],
+ ["Sedulius ℣. Salve, sancta parens","Salve, sancta parens"],
  ["Dómine Jesu Christe, Rex glóriæ","Dómine Jesu Christe, Rex glóriæ"]
 ])assert.equal(source1962ChantOpeningForMatch(source),expected);
 assert.equal(source1962ChantOpeningForMatch("!Ps 97:3\n℣. Viderunt omnes fines terrae salutare Dei nostri"),
@@ -50,7 +54,7 @@ const christmas={schema:"ao-reader-proper-slots-v1",ready:true,
 }};
 const citedChristmas=structuredClone(christmas);
 citedChristmas.slots.INTROIT.data.paragraphs[0].latin="Isa 9:6 ℣. Puer natus est nobis, et filius datus est nobis.";
-citedChristmas.slots.OFFERTORY.data.paragraphs[0].latin="Ps 88:12; 88:15 Tui sunt caeli, et tua est terra.";
+citedChristmas.slots.OFFERTORY.data.paragraphs[0].latin="Ps 88:12; 88:15 Tui sunt cœli, et tua est terra.";
 citedChristmas.slots.COMMUNION.data.paragraphs[0].latin="Ps 97:3 Viderunt omnes fines terrae salutare Dei nostri.";
 const cited=matchSelected1962ProperToGraduale({properSlots:citedChristmas,archive});
 for(const [name,id] of [["INTROIT","GREGOBASE-72"],["OFFERTORY","GREGOBASE-1274"],
