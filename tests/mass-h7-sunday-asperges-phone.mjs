@@ -38,7 +38,7 @@ try{
       const page=await ctx.newPage(),errors=[];
       page.on("pageerror",e=>errors.push(e.message));
       await page.goto("http://127.0.0.1:"+server.address().port+
-        "/index.html?aoTodayH4=0&aoR17Reader=native",
+        "/index.html?aoR17Reader=native&qa=mass-reader-phone",
         {waitUntil:"domcontentloaded",timeout:90000});
       await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate &&
         globalThis.AO_R17_BROWSER_ENTRY?.selectTodayOption),null,{timeout:90000});
@@ -48,6 +48,9 @@ try{
       await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===
         "2026-11-01"&&globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.proper?.status==="ready",
         null,{timeout:60000});
+      await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
+      await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
+        null,{timeout:35000});
       const enter=page.locator(".aoH7HomeView [data-home-h7-enter]");
       await enter.waitFor({state:"visible",timeout:35000});await enter.click();
       const door=page.locator(".aoH7DoorView:not([hidden])");
