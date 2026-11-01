@@ -310,6 +310,27 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   min-height:44px;background:#10202b;color:#ead9bc;border:1px solid rgba(205,180,132,.24);
   border-radius:9px;padding:9px 11px
 }
+.aoExploreTlmFilters .aoTlmEvidenceFacets{
+  display:grid;gap:8px;min-width:0;padding:9px 3px 8px;border-top:1px solid rgba(205,180,132,.22)
+}
+.aoExploreTlmFilters .aoTlmEvidenceFacets strong{
+  color:#d5bd8e;font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExploreTlmFilters .aoTlmEvidenceOptions{display:flex;flex-wrap:wrap;gap:6px}
+.aoExploreTlmFilters .aoTlmEvidenceOptions button{
+  min-height:44px;white-space:normal;text-align:left;
+  background:#10202b;color:#ead9bc;border:1px solid rgba(205,180,132,.24);
+  border-radius:9px;padding:8px 10px;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExploreTlmFilters .aoTlmEvidenceOptions button.active{
+  border-color:#d2b986;color:#0c1822;background:#d2b986
+}
+.aoExploreTlmFilters .aoTlmEvidenceFacets small{
+  color:#aeb8bb;font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra:has(.aoTlmMoreInstitutes[open]) .aoTlmEvidenceFacets{
+  display:none
+}
 /* Secondary communities are in the source-filter disclosure on the map,
    not in the 320px-wide fixed emblem row; list mode retains its original row. */
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes{

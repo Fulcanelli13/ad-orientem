@@ -1,6 +1,6 @@
 import { filterDirectoryRecords } from "./data-service.js";
 import { createScrollTapGuard } from "../app/scroll-tap-guard.js";
-import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49 } from "./preliminary-directory-r49.js";
+import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49,tlmSiteEvidenceCounts } from "./preliminary-directory-r49.js";
 import { loadExploreDataset } from "./explore-data-service.js";
 import {
   EXPLORE_LENSES,
@@ -160,6 +160,7 @@ export function createFindOwner(win=globalThis){
     lens:"heritage",
     view:"map",
     directoryGroup:"ALL",
+    siteEvidence:"ALL",
     query:"",
     saintCategory:"ALL",
     saintScope:"profiles",
@@ -501,6 +502,7 @@ export function createFindOwner(win=globalThis){
       loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
       tlmAvailableCommunities:state.lens==="tlm"?[...new Set((preliminary??[]).map(item=>item.community_id).filter(Boolean))]:[],
+      tlmSiteEvidenceCounts:state.lens==="tlm"?tlmSiteEvidenceCounts(preliminary??[]):null,
       view:state.view,
       filters:state,
       saintsRelease:dataset?.saintsRelease??null,

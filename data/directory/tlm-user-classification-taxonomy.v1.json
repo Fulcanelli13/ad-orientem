@@ -1,0 +1,314 @@
+{
+  "schema": "AO_TLM_USER_CLASSIFICATION_TAXONOMY_V1",
+  "effective_date": "2026-10-26",
+  "applies_to": "Ad Orientem existing worldwide Directory physical-site/source/ministry/celebration master",
+  "notice": "Administrative source labels are searchable research tags; they do not establish ecclesiastical standing, una cum, liturgical edition, Mass occurrence, or celebrant",
+  "dimensions": [
+    {
+      "key": "institute_or_community",
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "searchable_source_labels": [
+        "AASJMV",
+        "BENEDICTINE",
+        "CISTERCIAN",
+        "CMRI",
+        "CSPV",
+        "DIOCESAN_UNSPECIFIED",
+        "DOMINICAN",
+        "FSSP",
+        "FSVF",
+        "IBP",
+        "ICKSP",
+        "INDEPENDENT_CLERGY",
+        "LAY_ASSOCIATION",
+        "NORBERTINE",
+        "ORATORIAN",
+        "OTHER",
+        "PREMONSTRATENSIAN",
+        "RCI",
+        "RELIGIOUS_COMMUNITY",
+        "SMMD",
+        "SSPV",
+        "SSPX",
+        "SSPX_RESISTANCE",
+        "UNKNOWN"
+      ],
+      "publish_requires": "actual source-scoped association or role, not only web-directory section"
+    },
+    {
+      "key": "ecclesial_position",
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "values": [
+        "ROMAN_PONTIFF_RECOGNISED",
+        "SEDEVACANTIST",
+        "SEDEPRIVATIONIST",
+        "OTHER_POSITION",
+        "UNKNOWN"
+      ],
+      "publish_requires": "express first-party statement with timestamp and entity scope"
+    },
+    {
+      "key": "una_cum",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "YES",
+        "NO",
+        "VARIES_BY_CELEBRANT",
+        "VARIES_BY_OCCASION",
+        "DISPUTED",
+        "UNKNOWN"
+      ],
+      "publish_requires": "express source about the individual celebration/priest, NEVER venue or broad institute-only inference"
+    },
+    {
+      "key": "canonical_status",
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "values": [
+        "DATED_AUTHORITY_ASSERTION",
+        "UNKNOWN"
+      ],
+      "publish_requires": "dated and sourced ecclesiastical-authority statement, distinct from self-description"
+    },
+    {
+      "key": "liturgical_use",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "ROMAN",
+        "LYONESE",
+        "DOMINICAN",
+        "CARMELITE",
+        "PREMONSTRATENSIAN",
+        "BENEDICTINE",
+        "CISTERCIAN",
+        "AMBROSIAN",
+        "MOZARABIC",
+        "OTHER_LATIN_USAGE",
+        "EASTERN_CATHOLIC_DIFFERENT_LITURGY",
+        "UNKNOWN"
+      ],
+      "publish_requires": "source names actual rite/usages for this ministry or celebration",
+      "note": "Detailed usage extensions require corresponding B92 contract expansion before publication. Eastern Catholic liturgies must not be relabeled as the Roman 1962 Missal."
+    },
+    {
+      "key": "missal_edition",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "1962",
+        "PRE_1955",
+        "1955_REFORMED",
+        "1954_TRADITIONAL_AMBROSIAN",
+        "1965_TRANSITIONAL_ROMAN",
+        "1970_OR_2002_ORDINARY_FORM_LATIN",
+        "MIXED_OR_LOCAL",
+        "UNKNOWN"
+      ],
+      "publish_requires": "exact source-scoped liturgical book evidence; not inferred from name or 'Latin'",
+      "note": "Detailed values that are not in B92's current constrained enums remain research-only; Roman Latin Ordinary Form is not a TLM. 1962 is the Roman Missal edition, distinct from 1960 rubrical code."
+    },
+    {
+      "key": "rubrical_basis",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "1960",
+        "PRE_1955",
+        "1955",
+        "MIXED_OR_LOCAL",
+        "UNKNOWN"
+      ],
+      "publish_requires": "rubrical book/source for actual observance, 1960 is not a Missal edition"
+    },
+    {
+      "key": "organizer_role",
+      "subject": [
+        "ORGANIZER",
+        "MINISTRY"
+      ],
+      "values": [
+        "LAY_ASSOCIATION",
+        "DIOCESAN_MINISTRY",
+        "PRIESTLY_INSTITUTE",
+        "PRIESTLY_SOCIETY",
+        "RELIGIOUS_COMMUNITY",
+        "INDEPENDENT_CLERGY",
+        "SHARED",
+        "UNKNOWN"
+      ],
+      "publish_requires": "explicit provider/organizer evidence"
+    },
+    {
+      "key": "venue_owner_type",
+      "subject": [
+        "VENUE"
+      ],
+      "values": [
+        "DIOCESE_PARISH",
+        "RELIGIOUS_INSTITUTE",
+        "LAY_ASSOCIATION",
+        "PRIVATE_PERSON",
+        "OTHER",
+        "UNKNOWN"
+      ],
+      "publish_requires": "physical ownership rather than Mass organizer"
+    },
+    {
+      "key": "celebrant_relationship",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "OPERATED_BY",
+        "SERVED_BY",
+        "HOSTED_BY",
+        "OCCASIONAL_VISIT",
+        "SHARED_USE",
+        "UNKNOWN"
+      ],
+      "publish_requires": "named relationship and effective time"
+    },
+    {
+      "key": "mass_type",
+      "subject": [
+        "CELEBRATION"
+      ],
+      "values": [
+        "LOW",
+        "SUNG",
+        "SOLEMN",
+        "PONTIFICAL",
+        "REQUIEM",
+        "UNKNOWN"
+      ],
+      "publish_requires": "slot-specific official text"
+    },
+    {
+      "key": "schedule_and_location",
+      "subject": [
+        "VENUE",
+        "CELEBRATION"
+      ],
+      "values": [
+        "CURRENT",
+        "CONDITIONAL",
+        "HISTORIC",
+        "UNVERIFIED",
+        "NOT_OFFERED"
+      ],
+      "publish_requires": "independently authenticated exact worship structure, source, recurrence, exceptions and season"
+    }
+  ],
+  "source_evidence_states": [
+    "SOURCE_LABEL_ONLY",
+    "SOURCE_REPORTED_UNREVIEWED",
+    "DIRECT_WITNESS_REVIEWED",
+    "DISPUTED",
+    "UNKNOWN"
+  ],
+  "filter_rule": "Use source-labelled institute grouping now with qualifier. All doctrinal, canonical, liturgical and Una Cum user filters require vetted source-scoped assertions. Never fill UNKNOWN by affiliation.",
+  "base_classification_contract": "data/directory/classification-contract.v1.json (B92 PR #1724; must be reconciled rather than duplicated)",
+  "canonical_master": "data/directory/research/cl2-unified-20261026/manifest.json",
+  "public_approvals": 0,
+  "conversation_approved_browse_families": {
+    "heading": "Separate source institute grouping from the celebration's rite, Missal, ecclesial profile and source confidence",
+    "source_reported_institutes": [
+      "DIOCESAN_UNSPECIFIED",
+      "FSSP",
+      "ICKSP",
+      "IBP",
+      "SSPX",
+      "FSVF",
+      "CMRI",
+      "SSPV",
+      "CSPV",
+      "BENEDICTINE",
+      "ORATORIAN",
+      "DOMINICAN",
+      "PREMONSTRATENSIAN",
+      "INDEPENDENT_CLERGY",
+      "OTHER",
+      "UNKNOWN"
+    ],
+    "map_first_principles": [
+      "First keep every accepted physical venue findable with name, pin, source URL, and source-reported community label",
+      "Community labels drive provisional institute grouping, not public canonical or Una Cum approval",
+      "Use separate advanced dimensions for una cum, ecclesial position, exact rite and Missal, Mass type, verifiable schedule, canonical status, and source maturity",
+      "A particular venue can host distinct rites and priests; never force one ecclesial profile onto every Mass there",
+      "Sedevacantist and sedeprivationist cases need explicit authority-grounded classification; do not present as ordinary diocesan Mass candidates",
+      "Distinct institutes may coexist at one building; site/house/office/host building is not interchangeable"
+    ],
+    "first_party_publication": "0 new approved classifications or pins by this taxonomy alone"
+  },
+  "note_on_legacy_b92": "Preserve existing B92 classification-contract.v1 enums and evidence validator unchanged; extension labels added here are NOT valid B92 runtime assertions until a separately tested evidence-contract migration.",
+  "review_detail_extensions": {
+    "canonical_standing": {
+      "editorial_values": [
+        "CANONICALLY_REGULAR",
+        "CANONICAL_IRREGULARITY_DOCUMENTED",
+        "INDEPENDENT_STATUS_NOT_EVIDENCED",
+        "DISPUTED_OR_DATED_CHANGE",
+        "UNKNOWN"
+      ],
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "guidance": "These are descriptive review categories requiring the exact authority, scope and dated assertion; independent clergy is not synonymous with irregularity. Current B92 validator accepts only DATED_AUTHORITY_ASSERTION and UNKNOWN and must not ingest these directly."
+    },
+    "communion_profile": {
+      "pontiff_recognition": [
+        "YES",
+        "NO",
+        "DISPUTED",
+        "UNKNOWN"
+      ],
+      "local_ordinary_recognition": [
+        "YES",
+        "NO",
+        "DISPUTED",
+        "UNKNOWN"
+      ],
+      "pope_named_in_canon": [
+        "YES",
+        "NO",
+        "VARIES_BY_CELEBRANT",
+        "VARIES_BY_OCCASION",
+        "DISPUTED",
+        "UNKNOWN"
+      ],
+      "scope": [
+        "COMMUNITY",
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "guidance": "Recognizing a pope, recognizing a bishop, naming the pope during a particular celebration, and obtaining canonical faculties are distinct factual assertions."
+    },
+    "publication": {
+      "default_catholic_finder": "Only source-verified current Roman Catholic Mass candidates after the existing publication gates; status and rite remain explicit.",
+      "separately_categorised_eccposition": "Sedevacantist, sedeprivationist, SSPX-Resistance and other independently attested positions may be retained in the research census, but do not silently merge into ordinary Roman Catholic Mass recommendations.",
+      "source_label_only": "An institute heading from a directory is not proof of a celebrant, communion position, ecclesiastical approval, or chosen liturgical books.",
+      "held_missal": "Pre-1955, traditional Ambrosian, Roman 1965, Dominican or other traditional usage are never automatically mapped to the Roman 1962 Missal.",
+      "restricted_access": "Monasteries, houses, seminaries, schools, private chapels and temporary hosts require separate public-access and real worship-building checks."
+    }
+  }
+}
