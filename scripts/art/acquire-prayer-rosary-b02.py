@@ -118,7 +118,7 @@ def source_for(item):
     raise ValueError("Unsupported provider")
 
 def jpeg_size(data):
-    if not data.startswith(b"\\xff\\xd8"):
+    if not data.startswith(b"\xff\xd8"):
         raise ValueError("Source bytes are not a JPEG")
     n=len(data);i=2
     while i+4<n:
