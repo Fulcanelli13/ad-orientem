@@ -7,6 +7,8 @@ import {
   tlmSiteEvidence,tlmSiteEvidenceCounts,tlmCountryCounts
 } from "../src/find/preliminary-directory-r49.js";
 import {projectCL2PhysicalDirectory,CL2_PHYSICAL_SITE_COUNT} from "../src/find/cl2-physical-directory.js";
+import {PUBLIC_CL27_AXES,publicCL27FacetCounts,publicCL27Value,validPublicCL27Selection} from "../src/find/cl27-public-facets.js";
+import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 const load=path=>JSON.parse(readFileSync(path,"utf8"));
 const taxonomy=load("data/directory/tlm-user-classification-taxonomy.v1.json");
@@ -63,6 +65,40 @@ assert.equal(filterPreliminaryR49([{...full[0],country_code:null,subtitle:"Franc
 const claims=load("data/directory/cl27-approved-celebration-evidence-20261102.v1.json");
 const {attachPublishedCelebrationEvidence}=await import("../src/find/tlm-celebration-evidence.js");
 const published=attachPublishedCelebrationEvidence(full,claims);
+// CL27 public browse: all twelve axes are visible but unapproved taxonomy
+// values cannot become source-backed claims. Both published programme witnesses
+// concern selected celebrations, never a whole church, celebrant or institute.
+assert.deepEqual(new Set(PUBLIC_CL27_AXES.map(a=>a.key)),new Set(taxonomy.dimensions.map(x=>x.key)));
+const cl27Counts=publicCL27FacetCounts(published);
+assert.equal(cl27Counts.missal_edition["1962"],2);
+assert.equal(cl27Counts.missal_edition.UNKNOWN,2580);
+assert.equal(cl27Counts.liturgical_use.ROMAN,2);
+for(const axis of PUBLIC_CL27_AXES.filter(x=>!["institute_or_community","liturgical_use","missal_edition"].includes(x.key))){
+ assert.equal(cl27Counts[axis.key].UNKNOWN,2582,axis.key);
+}
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"1962"}}).length,2);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"UNKNOWN"}}).length,2580);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"ROMAN",missal_edition:"1962"},countryCodes:["US"]}).length,2);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"UNKNOWN",missal_edition:"1962"}}).length,0);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{una_cum:"UNKNOWN",missal_edition:"1962"}}).length,2);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{una_cum:"YES"}}).length,0);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{invalid_claim:"UNKNOWN"}}).length,0);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"PRE_1955"}}).length,0);
+assert.equal(publicCL27Value({...published[0],unaCum:"NO",canonical_status:"REGULAR"},"una_cum"),"UNKNOWN");
+assert.ok(validPublicCL27Selection("missal_edition","1962"));
+assert.ok(!validPublicCL27Selection("missal_edition","PRE_1955"));
+for(const lang of ["en","fr"]){
+ const markup=renderExploreToString(buildExploreViewModel({
+  language:lang,lens:"tlm",view:"list",items:published.slice(0,2),
+  filters:{directoryGroup:"ALL",affiliations:[],countryCodes:[],cl27Facets:{missal_edition:"1962"}},
+  tlmCl27Counts:cl27Counts,tlmAvailableCommunities:["DIOCESAN"]
+ }));
+ assert.equal((markup.match(/data-cl27-axis="/g)||[]).length,12);
+ assert.match(markup,/data-find-cl27-axis="missal_edition"/);
+ assert.match(markup,/data-find-cl27-value="1962"/);
+ assert.match(markup,/data-find-cl27-axis="una_cum"/);
+ assert.match(markup,lang==="fr"?/Non établi/:/Not established/);
+}
 assert.equal(filterPreliminaryR49(published,{celebrationEvidence:"SOURCE_1962",countryCodes:["US"]}).length,2);
 assert.equal(filterPreliminaryR49(published,{celebrationEvidence:"SOURCE_1962",countryCodes:["FR"]}).length,0);
 const byInstitute=filterPreliminaryR49(full,{affiliations:["FSSP"],siteEvidence:"REVIEWED_PIN"});

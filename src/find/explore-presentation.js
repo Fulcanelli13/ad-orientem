@@ -2,6 +2,7 @@ import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderDirectoryVenueCard,eligibleDirectoryImage,eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
 import {renderTlmChurchProfile} from "./tlm-church-profile.js";
+import {PUBLIC_CL27_AXES} from "./cl27-public-facets.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSacredPlaceFallback } from "./sacred-place-visual-fallback.js";
@@ -629,6 +630,43 @@ function tlmCelebrationFilters(vm){
       "A first-party schedule explicitly names the 1962 liturgical books for some Masses. This does not classify every celebration in that church. No Una Cum or canonical-status claim is implied.",
       "Un programme de première main nomme explicitement les livres liturgiques de 1962 pour certaines messes. Cela ne classe pas toutes les célébrations de cette église et ne présume ni « una cum » ni le statut canonique."))+'</small></section>';
 }
+// Advanced classification mirrors all 12 approved browse *dimensions*, not
+// 12 sets of certified claims. An unreviewed ministry/community label is never
+// a venue-wide canonical, Una Cum, liturgical or Missal assertion.
+function tlmCl27Filters(vm){
+  const counts=vm.tlmCl27Counts??{},selected=vm.filters?.cl27Facets??{};
+  let html='<details class="aoTlmCl27Facet"><summary>'+
+    esc(L(vm.language,"Detailed classifications · 12 axes","Classifications détaillées · 12 axes"))+
+    '</summary><p>'+esc(L(vm.language,
+    "Filters use explicit evidence scopes. Unknown means not publicly established, not No. Source-group names are not verified celebrant identities. Two parish sources identify specific 1962 celebrations only.",
+    "Les filtres respectent la portée des sources. Inconnu signifie non établi publiquement, et non Non. Un groupe répertorié ne prouve pas l’identité du célébrant. Deux sources paroissiales attestent uniquement certaines célébrations de 1962."))+'</p>';
+  for(const axis of PUBLIC_CL27_AXES){
+    const scopeFr={COMMUNITY:"COMMUNAUTÉ",MINISTRY:"MINISTÈRE",CELEBRATION:"CÉLÉBRATION",ORGANIZER:"ORGANISATEUR",VENUE:"LIEU"};
+    const scope=vm.language==="fr"?axis.scope.split(" / ").map(x=>scopeFr[x]??x).join(" / "):axis.scope;
+    html+='<section class="aoTlmCl27Axis" data-cl27-axis="'+esc(axis.key)+'"><strong>'+
+      esc(vm.language==="fr"?axis.fr:axis.en)+'</strong><small>'+
+      esc(L(vm.language,"Scope: ","Portée : ")+scope)+'</small>';
+    if(axis.key==="institute_or_community"){
+      html+='<p>'+esc(L(vm.language,
+        "Use the institute/community buttons above. These are source-reported group labels, not proof of a particular ministry or celebration.",
+        "Utilisez les boutons des instituts et communautés ci-dessus. Ces groupes proviennent des sources et n’attestent pas un ministère ou une célébration particulière."))+'</p></section>';
+      continue;
+    }
+    const amounts=counts[axis.key]??{},cur=selected[axis.key]??"ALL";
+    const options=[["ALL",L(vm.language,"Any evidence","Toutes les preuves")]];
+    if(axis.key==="liturgical_use"&&(amounts.ROMAN??0)>0)
+      options.push(["ROMAN",L(vm.language,"Roman use · specific Masses","Usage romain · messes précises")]);
+    if(axis.key==="missal_edition"&&(amounts["1962"]??0)>0)
+      options.push(["1962",L(vm.language,"1962 · specific Masses","1962 · messes précises")]);
+    options.push(["UNKNOWN",L(vm.language,"Not established","Non établi")]);
+    html+='<div class="aoTlmCl27Choices">';
+    for(const [value,label] of options)html+='<button type="button" data-find-cl27-axis="'+esc(axis.key)+
+      '" data-find-cl27-value="'+esc(value)+'" aria-pressed="'+String(cur===value)+
+      '" class="'+(cur===value?"active":"")+'">'+esc(label)+' ('+String(amounts[value]??0)+')</button>';
+    html+='</div></section>';
+  }
+  return html+'</details>';
+}
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
@@ -648,14 +686,14 @@ function tlmFilters(vm){
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
     html+='</div>';
-    if(vm.view==="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+otherMarkup+'</details>';
+    if(vm.view==="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+tlmCl27Filters(vm)+otherMarkup+'</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
     html+='</div>';
     if(vm.view!=="map")html+=otherMarkup;
     html+='</div>';
-    if(vm.view!=="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm);
+    if(vm.view!=="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+tlmCl27Filters(vm);
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
@@ -691,6 +729,7 @@ export function buildExploreViewModel({
   tlmSiteEvidenceCounts=null,
   tlmCountryCounts=null,
   tlmCelebrationEvidenceCounts=null,
+  tlmCl27Counts=null,
   view="list",
   filters={},
   saintsRelease=null,
@@ -729,6 +768,7 @@ export function buildExploreViewModel({
     tlmSiteEvidenceCounts,
     tlmCountryCounts,
     tlmCelebrationEvidenceCounts,
+    tlmCl27Counts,
     view,
     filters,
     journeyOpen:Boolean(journeyOpen),

@@ -15,6 +15,7 @@ import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { EXPLORE_MAP_FIRST_V2_STYLE } from "./explore-map-first-v2-style.js";
 import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia,loadDirectoryCardMedia,hideUnavailableDirectoryEmblem } from "./directory-card.js";
 import {TLM_CHURCH_PROFILE_STYLE} from "./tlm-church-profile.js";
+import {publicCL27FacetCounts,validPublicCL27Selection} from "./cl27-public-facets.js";
 import {tlmCelebrationEvidenceCounts} from "./tlm-celebration-evidence.js";
 import { discoverItemsWithinMapBounds, renderMapcnDiscoverRail } from "./mapcn-discover-rail.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
@@ -169,6 +170,7 @@ export function createFindOwner(win=globalThis){
     day:"ANY",
     affiliations:[],
     countryCodes:[],
+    cl27Facets:{},
     unaCum:"ANY",
     liturgy:"ANY",
     massType:"ANY",
@@ -508,6 +510,7 @@ export function createFindOwner(win=globalThis){
       tlmSiteEvidenceCounts:state.lens==="tlm"?tlmSiteEvidenceCounts(preliminary??[]):null,
       tlmCountryCounts:state.lens==="tlm"?tlmCountryCounts(preliminary??[]):null,
       tlmCelebrationEvidenceCounts:state.lens==="tlm"?tlmCelebrationEvidenceCounts(preliminary??[]):null,
+      tlmCl27Counts:state.lens==="tlm"?publicCL27FacetCounts(preliminary??[]):null,
       view:state.view,
       filters:state,
       saintsRelease:dataset?.saintsRelease??null,
@@ -1652,6 +1655,23 @@ export function createFindOwner(win=globalThis){
         const root=getRoot(win);
         if(filtersOpen){const x=root?.querySelector?.(".aoAtlasTlmExtra");if(x)x.open=true;}
         if(countryOpen){const x=root?.querySelector?.(".aoTlmCountryFacet");if(x)x.open=true;}
+      });
+      return;
+    }
+    const cl27=target?.closest?.("[data-find-cl27-axis]");
+    if(cl27&&state.lens==="tlm"){
+      const key=cl27.dataset.findCl27Axis,value=cl27.dataset.findCl27Value;
+      if(!validPublicCL27Selection(key,value))return;
+      const filtersOpen=Boolean(cl27.closest(".aoAtlasTlmExtra")?.open);
+      const detailsOpen=Boolean(cl27.closest(".aoTlmCl27Facet")?.open);
+      state.cl27Facets={...state.cl27Facets};
+      if(value==="ALL"||state.cl27Facets[key]===value)delete state.cl27Facets[key];
+      else state.cl27Facets[key]=value;
+      state.selectedId=null;state.displayLimit=24;
+      void paint().then(()=>{
+        const root=getRoot(win);
+        if(filtersOpen){const x=root?.querySelector?.(".aoAtlasTlmExtra");if(x)x.open=true;}
+        if(detailsOpen){const x=root?.querySelector?.(".aoTlmCl27Facet");if(x)x.open=true;}
       });
       return;
     }
