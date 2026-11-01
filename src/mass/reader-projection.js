@@ -2,6 +2,23 @@ import { dialogueLanguagePolicy, makeGuideState, resolveMomentState } from "./re
 
 const READY_TEXT = new Set(["READY","CACHED"]);
 
+/**
+ * In a printed bilingual dialogue the Latin primary already identifies the
+ * versicle/response. A repeated equivalent sign on the translated undertext
+ * is typographic duplication, not a second liturgical actor or response.
+ * Preserve the unchanged source text, cue IDs, and any mismatched roles
+ * (which require separate source adjudication).
+ */
+export function dialogueUndertextWithoutRepeatedRole(primary,vernacular){
+  if(vernacular==null)return vernacular;
+  const role=value=>String(value??"").match(/^(\\s*)(℣\\.|℟\\.|V\\.|R\\.)(\\s*)/u);
+  const la=role(primary),translation=role(vernacular);
+  if(!la||!translation)return vernacular;
+  const group=mark=>(mark==="℣."||mark==="V.")?"V":"R";
+  if(group(la[2])!==group(translation[2]))return vernacular;
+  return String(vernacular).slice(translation[0].length);
+}
+
 function normalizeStatus(value){
   return String(value ?? "").toUpperCase();
 }
@@ -55,7 +72,7 @@ export function projectResolvedReaderText(resolvedText){
       // at the same time. Cues, clock and event ownership are untouched.
       return Object.freeze({
         id:String(p.id??index),kind:p.kind,
-        primary:String(p.latin),secondary:String(p.vernacular),
+        primary:String(p.latin),secondary:dialogueUndertextWithoutRepeatedRole(p.latin,p.vernacular),
         alternate:null,replaceOnToggle:false,
         active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,
         liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,
@@ -92,7 +109,7 @@ export function projectResolvedReaderText(resolvedText){
         id:String(p.id ?? index),
         kind:p.kind==="VERSICLE" ? "TEXT" : "RESPONSE",
         primary:String(p.latin),
-        secondary:p.vernacular == null ? null : String(p.vernacular),
+        secondary:p.vernacular == null ? null : dialogueUndertextWithoutRepeatedRole(p.latin,p.vernacular),
         alternate:null,
         replaceOnToggle:false,
         active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,sourcePath:p.sourcePath,sourceAnchorCueId:p.sourceAnchorCueId,
