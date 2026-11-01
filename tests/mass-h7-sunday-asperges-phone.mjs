@@ -270,7 +270,9 @@ try{
       assert.ok(geometry.width>0,"Settled Requiem card has zero width");
       await page.screenshot({path:dir+"/all-souls-m"+(test.index+1)+"-"+test.width+
         "-"+test.language+"-h7-entry.png",animations:"disabled"});
-      if(test.form!=="LOW"){
+      if(test.form!=="LOW"&&!productionOrigin){
+        // The pre-release public-site audit must not expect an unpublished
+        // visual correction. The local source-backed H7 gate does certify it.
         // The production source-backed Requiem projects the §83c rule.
         // LIVE must retain this *data* but must not print its internal
         // '1958 RULE' caption above the actual prayer.
