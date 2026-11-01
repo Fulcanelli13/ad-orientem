@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
-import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,renderDirectoryIdentityFallback,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
+import {attachApprovedDirectoryMedia,eligibleDirectoryImage,eligibleVenueImage,eligibleRenderedDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,renderDirectoryIdentityFallback,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const hash="a".repeat(64);
 const photo={
@@ -28,14 +28,17 @@ const mediaData=await loadDirectoryCardMedia({fetchImpl:async url=>{
     ?{schema:"EXPLORE_GEOGRAPHY_SEED_V1",directoryPlaceLinks:[{venue_id:"public-venue-1",place_id:"place:FR:test",confidence:"CONFIRMED",relationship:"LOCATED_AT"}]}
     :url.endsWith("/approved-place-media.v1.json")
       ?{schema:"AO_APPROVED_PLACE_MEDIA_V1",items:[photo]}
-      :{schema:"AO_APPROVED_PLACE_GALLERY_V1",items:[]};
+      :url.endsWith("/approved-venue-media.v1.json")
+        ?{schema:"AO_APPROVED_TLM_VENUE_MEDIA_V1",items:[]}
+        :{schema:"AO_APPROVED_PLACE_GALLERY_V1",items:[]};
   return {ok:true,json:async()=>data};
 }});
-assert.equal(requests.length,3);
+assert.equal(requests.length,4);
+assert.equal(mediaData.venueApproved.length,0);
 assert.equal(mediaData.approved.length,1);
 assert.equal(mediaData.directoryPlaceLinks.length,1);
 const offline=await loadDirectoryCardMedia({fetchImpl:async()=>{throw new Error("offline")}});
-assert.deepEqual(offline,{directoryPlaceLinks:[],approved:[],gallery:[]});
+assert.deepEqual(offline,{directoryPlaceLinks:[],approved:[],gallery:[],venueApproved:[]});
 
 const args={directoryPlaceLinks:exact,approved:[photo],gallery:[]};
 const [linked]=attachApprovedDirectoryMedia([item],args);
@@ -249,5 +252,72 @@ assert.equal(guadDifferent.cover_media,undefined,
  "Unlinked same-name shrine/church must not receive the Guadalupe photograph");
 assert.equal(guadDifferent.place_id,undefined,
  "Unlinked venue must not acquire a Place identity by name similarity");
+
+
+// Venue-only photos must never require a made-up Sacred Place, nor leak to an
+// unrelated church with a similar dedication, postcode, provisional pin or owner.
+const directVenue={
+  ...photo,place_id:undefined,venue_id:"AO-EXACT-TLM-SOURCE-1",
+  license:"CC0-1.0",license_url:"https://creativecommons.org/publicdomain/zero/1.0/",
+  asset_path:"assets/approved/directory-media/AO-exact-tlm-source-1.webp",
+};
+const noPlace={...item,item_id:"tlm:direct-venue-photo",source_id:directVenue.venue_id};
+assert.equal(eligibleVenueImage(directVenue,noPlace.source_id),true);
+assert.equal(eligibleRenderedDirectoryImage(directVenue,noPlace),true);
+assert.equal(eligibleDirectoryImage(directVenue,"place:FR:test"),false);
+const noPlaceAttached=attachApprovedDirectoryMedia([noPlace],{venueApproved:[directVenue]})[0];
+assert.equal(noPlaceAttached.place_id,undefined);
+assert.equal(noPlaceAttached.cover_media.asset_path,directVenue.asset_path);
+for(const lang of ["en","fr"]){
+ const card=renderDirectoryVenueCard(noPlaceAttached,lang);
+ assert.match(card,/data-visual-kind="photo"/);
+ assert.ok(card.includes('src="'+directVenue.asset_path+'"'));
+}
+const unrelated=attachApprovedDirectoryMedia(
+ [{...noPlace,source_id:"AO-EXACT-TLM-SOURCE-OTHER",title:noPlace.title}],
+ {venueApproved:[directVenue]})[0];
+assert.equal(unrelated.cover_media,undefined,"Similar church name must never inherit a source-ID photo");
+assert.equal(unrelated.place_id,undefined);
+for(const invalid of [
+ {...directVenue,status:"CANDIDATE"},
+ {...directVenue,rights_verified:false},
+ {...directVenue,subject_verified:false},
+ {...directVenue,crop_reviewed:false},
+ {...directVenue,license_url:"https://example.org/unknown"},
+ {...directVenue,source_url:"http://commons.wikimedia.org/wiki/File:bad.jpg"},
+ {...directVenue,asset_path:"assets/approved/place-media/incorrect.webp"},
+ {...directVenue,venue_id:"AO-EXACT-TLM-SOURCE-OTHER"},
+ {...directVenue,place_id:"place:FR:unverified"},
+]){
+ assert.equal(eligibleVenueImage(invalid,noPlace.source_id),false);
+ assert.equal(attachApprovedDirectoryMedia([noPlace],{venueApproved:[invalid]})[0].cover_media,
+  undefined,"Unapproved exact-venue candidate must not be shown");
+}
+assert.equal(attachApprovedDirectoryMedia([noPlace],{venueApproved:[directVenue,directVenue]})[0].cover_media,undefined,
+ "Competing approved direct-venue photographs must fail closed");
+const placeWins=attachApprovedDirectoryMedia([item],{
+ directoryPlaceLinks:exact,approved:[photo],venueApproved:[{...directVenue,venue_id:item.source_id}],
+})[0];
+assert.equal(placeWins.cover_media.asset_path,photo.asset_path,
+ "Existing verified Place media takes priority over exact direct-venue image");
+const venueRegistry=JSON.parse(readFileSync(new URL("../data/directory/approved-venue-media.v1.json",import.meta.url),"utf8"));
+assert.equal(venueRegistry.schema,"AO_APPROVED_TLM_VENUE_MEDIA_V1");
+// Do not freeze the empty v1 registry forever: subsequent source-cleared
+// photo releases must be able to add records without rewriting historical
+// tests. Instead require *every* approved record to have a real exact TLM
+// venue and a local binary with its pinned hash, plus the rights/subject gates.
+const cl2Index=JSON.parse(readFileSync(new URL("../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url),"utf8"));
+const auditedVenueAssets=new Set();
+for(const image of venueRegistry.items){
+ assert.ok(eligibleVenueImage(image,image.venue_id),"Direct venue registry includes unapproved media");
+ assert.ok(cl2Index.records.some(row=>Array.isArray(row[1])&&row[1].includes(image.venue_id)),
+  "Approved venue media must point to an actual indexed TLM venue");
+ assert.ok(!auditedVenueAssets.has(image.venue_id),"Only one exact photo cover per venue");
+ auditedVenueAssets.add(image.venue_id);
+ const localBytes=readFileSync(new URL("../"+image.asset_path,import.meta.url));
+ assert.equal(createHash("sha256").update(localBytes).digest("hex"),image.derivative_sha256,
+  "Approved venue image binary must exist at exact checksum");
+}
+assert.ok(Array.isArray(venueRegistry.items),"Venue-media owner must remain an explicit audited registry");
 
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");

@@ -1,0 +1,13 @@
+{
+  "schema": "AO_APPROVED_TLM_VENUE_MEDIA_V1",
+  "version": "1.0.0",
+  "items": [],
+  "editorial_policy": {
+    "matching": "EXACT_VENUE_SOURCE_ID_ONLY",
+    "rights": "CC0/public-domain or explicit compatible Commons licence with reviewed source and attribution",
+    "publication": "Only APPROVED media with existing local asset hash may be shown; do not infer from similar church name, city, institution or provisional pin",
+    "priority": "Existing canonical Place cover first; approved exact venue cover only when Place photo unavailable",
+    "new_mappings": "A media image is attached to an existing 2,582-directory venue source ID; no new Place or geocoding is implied",
+    "status": "EMPTY_UNTIL_EDITORIAL_SOURCE_AND_BINARY_APPROVAL"
+  }
+}
