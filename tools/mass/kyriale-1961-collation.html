@@ -66,10 +66,10 @@ a{color:#c9dce9}
 </div>
 <label for="reviewNotes">Discrepancies, note positions, corrections, uncertainties</label>
 <textarea id="reviewNotes" placeholder="Identify the printed staff/system, syllable and GABC note group. Never silently alter the GABC."></textarea>
-<section id="agnusNotePanel" hidden aria-label="Agnus Dei VIII printed note-group audit">
-<div class="eyebrow">Agnus Dei VIII · original 1961 printed page 31*</div>
-<h2>Each of the 54 sung note groups</h2>
-<p class="hint">Select the syllable on the stated original staff system, then inspect its absolute pitch, neume signs, Latin underlay, and mora/episema marks against the GABC rendering. All four verdicts begin unreviewed, including previously spot-checked motifs. A completed review never publishes a score.</p>
+<section id="agnusNotePanel" hidden aria-label="Seven-score printed note-group audit">
+<div class="eyebrow" id="groupEditionLabel">1961 Solesmes printed witness · editorial only</div>
+<h2 id="groupSectionTitle">Source note groups</h2>
+<p class="hint">Select the syllable on the stated original staff system, then inspect its absolute pitch, neume signs, Latin underlay, and mora/episema marks against the GABC rendering. All four verdicts begin unreviewed, including previously spot-checked motifs. For multi-page scores, identify the exact printed folio and staff in the comments: no automatic folio or staff assignment is inferred. A completed review never publishes a score.</p>
 <div class="note-navigation">
 <button id="agnusPrev" type="button">Previous group</button>
 <div class="control"><label for="agnusGroupSelect">Sung note group and printed system</label><select id="agnusGroupSelect"></select></div>
@@ -86,21 +86,23 @@ a{color:#c9dce9}
 </div>
 <label for="agnusGroupComment">Exact printed note discrepancy (system, syllable, symbol)</label>
 <textarea id="agnusGroupComment" rows="2" placeholder="Record specific mismatch or uncertainty. Do not change the source transcription without evidence."></textarea>
-<div class="footer-actions"><small id="agnusGroupProgress">0/54 groups reviewed in all four categories</small><button id="agnusGroupSave" type="button">Save group verdict</button></div>
+<div class="footer-actions"><small id="agnusGroupProgress">0 source groups reviewed in all four categories</small><button id="agnusGroupSave" type="button">Save group verdict</button></div>
 </section>
 
 <p class="eyebrow">Pinned GABC checkpoints to inspect on the print</p><ul id="exampleFragments"></ul>
 <div class="footer-actions"><small id="progress">0 of 7 scores reviewed</small><div><button id="save" type="button">Save this page</button> <button id="export" type="button">Export review JSON</button></div></div>
-<p class="hint">Saved locally in this browser. For Agnus VIII, the 54 individual note-group verdicts are also included in the exported JSON. Public approval and publication are always false; no score is promoted automatically. Printed scans require internet; musical engraving uses the existing pinned local Exsurge.</p>
+<p class="hint">Saved locally in this browser. For all seven chants, every source-bearing GABC group (including any nonsyllabic melisma continuation) has individual review fields in the exported JSON. Group inventories are NOT printed-music certifications. Public approval and publication are always false; no score is promoted automatically. Printed scans require internet; musical engraving uses the existing pinned local Exsurge.</p>
 </section></main>
 <script type="module">
 import {offlineKyrialeResearchScore} from "../../src/mass/reader-kyriale-research-gabc.js";
+import {sourceNoteGroupInventory} from "../../src/mass/reader-kyriale-source-note-groups.js";
 import {createOfflineChantEngraver} from "../../src/mass/reader-chant-engraver.js";
 const base="../../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json";
 const $=id=>document.getElementById(id);
 const fields=["pitch","neume","underlay","rhythm"];
 const statuses=[["UNREVIEWED","Unreviewed"],["MATCH","Matches printed page"],["DIFFERENCE","Discrepancy found"],["UNCERTAIN","Uncertain · hold"]];
 let scoreIndex=0,pageIndex=0,noteGroupIndex=0,ledger=null,data={},token=0;
+const inventoryCache=new Map();
 const storageKey="ao-m22-kyriale-print-collation-local-v1";
 try{data=JSON.parse(localStorage.getItem(storageKey)||"{}")}catch{data={}}
 for(const id of [...fields,...fields.map(key=>"agnus"+key[0].toUpperCase()+key.slice(1))]){const select=$(id);for(const [value,label] of statuses){const option=document.createElement("option");option.value=value;option.textContent=label;select.appendChild(option)}}
@@ -111,58 +113,74 @@ function key(){return String(score().gregobaseId)+":"+score().printedPages[pageI
 function entry(){return data[key()]||{}}
 function persist(){try{localStorage.setItem(storageKey,JSON.stringify(data))}catch{}}
 function completePage(value){return fields.every(k=>value?.[k]==="MATCH")}
+function scoreGroups(s){
+ if(s.gregobaseId===2760)return s.noteGroupCollation.noteGroups;
+ if(!inventoryCache.has(s.gregobaseId)){
+  const original=offlineKyrialeResearchScore(s.movement,s.catalogueSelection);
+  if(original?.scoreId!=="GREGOBASE-"+s.gregobaseId)
+   throw new Error("Unmatched historical score identity: "+s.gregobaseId);
+  inventoryCache.set(s.gregobaseId,sourceNoteGroupInventory(original.gabc).groups);
+ }
+ return inventoryCache.get(s.gregobaseId);
+}
+function groupKey(s){return String(s.gregobaseId)+":"+s.printedPages[0]}
+function groupReviews(s){return data[groupKey(s)]?.groupReviews||{}}
+function completeSourceGroups(s){
+ return scoreGroups(s).every(g=>fields.every(k=>groupReviews(s)[g.ordinal]?.[k]==="MATCH"));
+}
 function completeScore(s){
- if(!s.printedPages.every(p=>completePage(data[String(s.gregobaseId)+":"+p])))return false;
- if(s.gregobaseId!==2760)return true;
- return s.noteGroupCollation?.noteGroups?.length===54 && s.noteGroupCollation.noteGroups.every(g=>
-  fields.every(k=>data["2760:31*"]?.groupReviews?.[g.ordinal]?.[k]==="MATCH"));
+ return s.printedPages.every(p=>completePage(data[String(s.gregobaseId)+":"+p]))&&completeSourceGroups(s);
 }
 function updateProgress(){
  const completed=ledger.scores.filter(completeScore).length;
- $("progress").textContent=completed+" of "+ledger.scores.length+" scores fully marked matching (NOT editorially approved)";
- if(score()?.gregobaseId===2760){
-  const reviews=data["2760:31*"]?.groupReviews||{};
-  const complete=score().noteGroupCollation.noteGroups.filter(g=>
-   fields.every(k=>["MATCH","DIFFERENCE","UNCERTAIN"].includes(reviews[g.ordinal]?.[k]))).length;
-  $("agnusGroupProgress").textContent=complete+"/54 groups assessed in all four categories (never automatically approved)";
- }
- const values=entry(),hasDiff=fields.some(k=>values[k]==="DIFFERENCE");
- $("completion").textContent=hasDiff?"DISCREPANCY · BLOCKED":completePage(values)?"Page checked · not approved":fields.some(k=>values[k]&&values[k]!=="UNREVIEWED")?"Review in progress":"Not reviewed";
+ $("progress").textContent=completed+" of "+ledger.scores.length+" scores marked fully matching at page AND note-group level (NOT editorially approved)";
+ const groups=scoreGroups(score()),reviews=groupReviews(score());
+ const assessed=groups.filter(g=>fields.every(k=>["MATCH","DIFFERENCE","UNCERTAIN"].includes(reviews[g.ordinal]?.[k]))).length;
+ $("agnusGroupProgress").textContent=assessed+"/"+groups.length+" source groups assessed in all four categories (never automatically approved)";
+ const values=entry(),hasDiff=fields.some(k=>values[k]==="DIFFERENCE")||
+  groups.some(g=>fields.some(k=>reviews[g.ordinal]?.[k]==="DIFFERENCE"));
+ $("completion").textContent=hasDiff?"DISCREPANCY · BLOCKED":completeScore(score())
+  ?"All source groups matched · NOT approved":completePage(values)
+  ?"Page checked · groups still require review":
+  fields.some(k=>values[k]&&values[k]!=="UNREVIEWED")?"Review in progress":"Not reviewed";
 }
+
 function loadInputs(){const e=entry();for(const k of fields)$(k).value=e[k]||"UNREVIEWED";$("reviewNotes").value=e.notes||"";updateProgress()}
 function save(){
- if(score()?.gregobaseId===2760)saveNoteGroup();
+ saveNoteGroup();
  const prior=entry();
  const value={...prior,notes:$("reviewNotes").value,updatedAt:new Date().toISOString()};
  for(const k of fields)value[k]=$(k).value;
  data[key()]=value;persist();updateProgress();
 }
-// The original 1961 folio has four Agnus-only staff systems.
- // None of the source-structure or visual motif reviews pre-approves a group.
-function noteGroups(){return score()?.noteGroupCollation?.noteGroups||[]}
+// Agnus VIII retains its precise 54-group/4-staff canonical mapping. For
+// all other chants, source tokens are indexed without inventing print positions.
+function noteGroups(){return scoreGroups(score())}
 function noteGroup(){return noteGroups()[noteGroupIndex]}
-function savedGroup(){return data["2760:31*"]?.groupReviews?.[noteGroup()?.ordinal]||{}}
+function savedGroup(){return groupReviews(score())[noteGroup()?.ordinal]||{}}
 function saveNoteGroup(){
- if(score()?.gregobaseId!==2760||$("agnusNotePanel").hidden||!noteGroup())return;
- const key="2760:31*",prior=data[key]||{},reviews=prior.groupReviews||{};
+ if($("agnusNotePanel").hidden||!noteGroup())return;
+ const k=groupKey(score()),prior=data[k]||{},reviews=prior.groupReviews||{};
  const value={...reviews[noteGroup().ordinal],comment:$("agnusGroupComment").value,
   updatedAt:new Date().toISOString()};
  for(const field of fields)value[field]=$("agnus"+field[0].toUpperCase()+field.slice(1)).value;
  reviews[noteGroup().ordinal]=value;
- data[key]={...prior,groupReviews:reviews};
- persist();
- updateProgress();
+ data[k]={...prior,groupReviews:reviews};
+ persist();updateProgress();
 }
 function renderNoteGroup(){
- const g=noteGroup();
- if(!g)return;
+ const g=noteGroup();if(!g)return;
  $("agnusGroupSelect").value=String(noteGroupIndex);
  $("agnusPrev").disabled=noteGroupIndex===0;
  $("agnusNext").disabled=noteGroupIndex===noteGroups().length-1;
- $("agnusGroupTitle").textContent="Invocation "+g.invocation+" · syllable "+g.syllable+
-  " · original staff system "+g.agnusPrintedSystem;
- $("agnusGroupDescription").textContent="Solesmes p.31* · group "+g.invocationNoteGroup+
-  " of 18 in this invocation · "+g.ordinal+"/54 overall";
+ const originalStaff=score().gregobaseId===2760?"original staff system "+g.agnusPrintedSystem:
+  "print staff not yet mapped · locate on original folio";
+ $("agnusGroupTitle").textContent=score().title+" · "+g.syllable+" · "+originalStaff;
+ $("agnusGroupDescription").textContent="Solesmes "+
+  (score().gregobaseId===2760?"p.31*":"folios "+score().printedPages.join(", ")+
+   " (candidate folios, exact group position not certified)")+
+  " · group "+g.ordinal+"/"+noteGroups().length+
+  (g.sourceTokenType==="NON_SYLLABIC_CONTINUATION"?" · note-bearing melisma without new syllable":"");
  $("agnusGroupSource").textContent="Source GABC: "+g.syllable+"("+g.gabcOriginalNotes+")";
  const value=savedGroup();
  for(const field of fields)$("agnus"+field[0].toUpperCase()+field.slice(1)).value=value[field]||"UNREVIEWED";
@@ -170,16 +188,17 @@ function renderNoteGroup(){
  updateProgress();
 }
 function renderNoteGroupPanel(){
- const panel=$("agnusNotePanel"),isAgnus=score()?.gregobaseId===2760;
- panel.hidden=!isAgnus;
- if(!isAgnus)return;
- const groups=noteGroups();
- if(groups.length!==54)throw new Error("Agnus source group mapping not reviewed");
+ const panel=$("agnusNotePanel"),s=score(),groups=scoreGroups(s);
+ panel.hidden=false;
+ if(s.gregobaseId===2760&&groups.length!==54)throw new Error("Agnus 54-group mapping changed");
+ $("groupEditionLabel").textContent=s.title+" · Solesmes 1961 · source GABC (not certified)";
+ $("groupSectionTitle").textContent="Inspect all "+groups.length+" source-bearing note groups";
  const select=$("agnusGroupSelect");select.replaceChildren();
  groups.forEach((g,i)=>{
-  const option=document.createElement("option");
-  option.value=String(i);option.textContent=g.ordinal+". "+g.syllable+" ("+
-   g.gabcOriginalNotes+") · inv "+g.invocation+" / printed staff "+g.agnusPrintedSystem;
+  const option=document.createElement("option");option.value=String(i);
+  option.textContent=g.ordinal+". "+g.syllable+" ("+g.gabcOriginalNotes+")"+
+   (s.gregobaseId===2760?" · inv "+g.invocation+" / printed staff "+g.agnusPrintedSystem:
+    " · folio to locate "+s.printedPages.join(" / "));
   select.appendChild(option);
  });
  noteGroupIndex=0;renderNoteGroup();
@@ -258,7 +277,10 @@ $("export").addEventListener("click",()=>{
    gregobaseId:s.gregobaseId,title:s.title,sourceUrl:s.sourceUrl,
    printedPages:s.printedPages,
    pages:s.printedPages.map(p=>({printedPage:p,...(data[String(s.gregobaseId)+":"+p]||{})})),
-   allPageCategoriesMarkedMatching:completeScore(s),editorialApproval:false,publicScore:false
+   allPageCategoriesMarkedMatching:s.printedPages.every(p=>completePage(data[String(s.gregobaseId)+":"+p])),
+   sourceNoteGroupCount:scoreGroups(s).length,allSourceGroupsMarkedMatching:completeSourceGroups(s),
+   groupReviews:groupReviews(s),fullyMarkedMatching:completeScore(s),
+   editorialApproval:false,publicScore:false
   }))};
  const blob=new Blob([JSON.stringify(out,null,2)],{type:"application/json"});
  const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;
