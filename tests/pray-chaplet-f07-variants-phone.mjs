@@ -28,7 +28,7 @@ try{
    const page=await browser.newPage({viewport:{width,height:width===320?568:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
    const errors=[];page.on("pageerror",e=>errors.push(e.message));
    try{
-    const base="http://127.0.0.1:"+server.address().port+"/index.html?aoChapletF07Pilot=1";
+    const base="http://127.0.0.1:"+server.address().port+"/index.html";
     await page.goto(base,{waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
@@ -51,7 +51,7 @@ try{
      assert.equal(await header.count(),1,"Home shortcut must remain reachable");
      assert.ok(await header.isVisible(),"Home shortcut must stay visible");
      assert.equal(await page.locator(prefix+" .aoP435930Head .aoP435930SessionLanguage:visible").count(),0,
-      "No duplicate EN/FR header control in the opt-in w1 reader");
+      "No duplicate EN/FR header control in the w1 default reader");
     }
     assert.equal(await page.locator(prefix+c.legacyNav).count(),c.kind==="precious-blood"?7:c.kind==="five-wounds"?5:15);
     if(c.kind==="little-crown"){
@@ -110,14 +110,14 @@ try{
  }
  const page=await browser.newPage({viewport:{width:320,height:568},isMobile:true,serviceWorkers:"block"});
  try{
-  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoChapletF07Pilot=0",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
   await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open());
   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
   for(const c of cases){
    await page.evaluate(route=>globalThis.AO_PRAY_V435930.open(route,{returnContext:null}),c.route);
    assert.equal(await page.locator("#aoPray435930.open [data-f07-variant]").count(),0,
-    c.route+" nonpilot default must remain unchanged");
+    c.route+" explicit rollback must restore the unchanged legacy reader");
   }
  }finally{await page.close()}
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
