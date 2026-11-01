@@ -1,0 +1,21 @@
+name: Four approved module paintings — exact-object source holds
+on:
+  pull_request:
+    paths:
+      - "tests/module-hero-four-exact-object-source-closure.mjs"
+      - "data/research/module-hero-four-exact-object-source-closure-20261101.v1.json"
+      - ".github/workflows/module-hero-four-exact-object-source-holds.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prohibit-copy-and-rights-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Confirm approved identities and reject unsafe photographic substitutions
+        run: node tests/module-hero-four-exact-object-source-closure.mjs
