@@ -268,6 +268,101 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  border-top:1px solid var(--border,rgba(255,255,255,.1))!important
 }
 
+
+/* Claude approved c1 opening composition. The two artwork surfaces remain
+   explicitly unassigned: visual layout is not image-publication approval. */
+#aoPray435930 .aoP435930Body.aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"]{
+ box-sizing:border-box;width:100%!important;max-width:650px!important;
+ margin:0 auto!important;padding:10px 13px 95px!important;gap:0!important;
+ display:flex!important;flex-direction:column!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoAdorationPrimaryGrid{
+ display:grid!important;grid-template-columns:1fr!important;gap:9px!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoAdorationPrimaryGrid button{
+ position:relative;isolation:isolate;box-sizing:border-box;display:flex!important;
+ flex-direction:column!important;align-items:flex-start!important;justify-content:flex-end!important;
+ min-height:179px!important;padding:19px 14px 14px!important;overflow:hidden;
+ border:1px solid rgba(206,180,139,.23)!important;border-radius:13px!important;
+ background:radial-gradient(ellipse 55% 75% at 65% 18%,rgba(173,139,86,.29),transparent 82%),linear-gradient(126deg,#392d22,#201b19 80%)!important;
+ box-shadow:inset 0 0 40px rgba(0,0,0,.27)!important;text-align:left;color:#f6e8d6!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoAdorationPrimaryGrid button.aoAdorationModeSilence{
+ background:radial-gradient(circle at 64% 34%,rgba(229,201,141,.32) 0%,rgba(142,115,60,.15) 21%,transparent 60%),linear-gradient(130deg,#4c412b,#201c17 80%)!important;
+}
+#aoPray435930 .aoAdorationPrimaryGrid .aoAdorationModeIcon{
+ display:grid;place-items:center;position:absolute;top:10px;left:50%;
+ width:84px;height:84px;transform:translateX(-50%);pointer-events:none;
+ color:rgba(225,198,149,.51)!important;opacity:.75;
+}
+#aoPray435930 .aoAdorationPrimaryGrid .aoAdorationModeIcon svg{
+ display:block;width:75px;height:75px;max-width:75px;max-height:75px;
+}
+#aoPray435930 .aoAdorationPrimaryGrid .aoAdorationModeSilence .aoAdorationModeIcon{
+ width:116px;height:116px;top:-4px;opacity:.85;
+}
+#aoPray435930 .aoAdorationPrimaryGrid .aoAdorationModeSilence .aoAdorationModeIcon svg{
+ width:102px;height:102px;max-width:102px;max-height:102px;
+}
+#aoPray435930 .aoAdorationPrimaryGrid .aoAdorationTime{
+ position:absolute;top:9px;right:9px;border-radius:999px;padding:4px 7px;
+ background:rgba(13,12,11,.7);color:#efe1ca;
+ font:500 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);font-style:normal;
+}
+#aoPray435930 .aoAdorationPrimaryGrid button small{
+ position:relative;z-index:1;display:block!important;
+ color:#d1b991!important;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:.12em!important;
+}
+#aoPray435930 .aoAdorationPrimaryGrid button b{
+ position:relative;z-index:1;display:block!important;
+ font:500 clamp(23px,5.7vw,27px)/1.12 Georgia,serif!important;
+ margin:4px 0 4px!important;text-shadow:0 2px 8px rgba(0,0,0,.75);
+}
+#aoPray435930 .aoAdorationPrimaryGrid button>span:not(.aoAdorationModeIcon){
+ position:relative;z-index:1;max-width:35ch;
+ font:italic 12px/1.3 Georgia,serif!important;color:#dfd1bf!important;
+ text-shadow:0 1px 6px rgba(0,0,0,.8);
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoAdorationMethodsDisclosure{
+ margin:8px 0 0!important;border:0!important;
+}
+#aoPray435930 .aoAdorationMethodsDisclosure>summary{
+ color:#c5ad7c!important;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:.11em;min-height:35px!important;padding:9px 0 4px!important;
+ text-transform:uppercase;font-style:normal!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid{
+ display:grid!important;grid-auto-flow:column!important;grid-template-columns:none!important;
+ grid-auto-columns:minmax(128px,1fr)!important;gap:7px!important;
+ overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+ margin:1px 0 8px!important;padding:0 0 4px!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid::-webkit-scrollbar{display:none}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid button{
+ box-sizing:border-box;min-height:108px!important;
+ padding:12px 11px!important;border:1px solid rgba(171,154,130,.22)!important;
+ border-radius:9px!important;background:#19232a!important;box-shadow:none!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid button b{
+ margin:0 0 5px!important;font:500 15px/1.25 Georgia,serif!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid button span{
+ font:italic 11px/1.35 Georgia,serif!important;
+}
+#aoPray435930 .aoAdorationChooserAfterword{
+ padding:7px 0 0!important;margin:7px 0 0!important;
+ font:italic 11px/1.55 Georgia,serif!important;
+}
+@media(max-width:360px){
+ #aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoAdorationPrimaryGrid{
+  grid-template-columns:1fr!important;
+ }
+ #aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoAdorationPrimaryGrid button{
+  min-height:165px!important;padding:16px 12px 12px!important;
+ }
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
