@@ -387,7 +387,7 @@ try{
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
    const aRoot=rootSel+' [data-ao-adoration-chooser]';
    assert.equal(await page.locator(aRoot).count(),1,"Adoration owner must show existing chooser");
-   await page.locator(aRoot+' details.aoAdorationMethodsDisclosure > summary').tap();
+   assert.equal(await page.locator(aRoot+' details.aoAdorationMethodsDisclosure').evaluate(el=>el.open),true,"Claude c1 guided choices must not be collapsed");
    const nightChoice=page.locator(aRoot+' [data-p435930-ador-mode="night"]');
    assert.equal(await nightChoice.count(),1,"Fr Mateo night mode must be nested in existing Adoration choices");
    await nightChoice.tap();
