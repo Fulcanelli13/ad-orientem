@@ -34,6 +34,13 @@ try{
     "m1 must distinguish Opening, Five decades and Closing");
    assert.equal(await entry.locator(".aoF07MercyEntryChips span").count(),2,
     "m1 must display duration and customary prayer time");
+   const beginGeometry=await entry.locator("[data-p435930-mercy-begin]").evaluate(el=>{
+    const rect=el.getBoundingClientRect(),nav=document.querySelector("#ao-global-ribbon");
+    const navTop=nav?.getClientRects().length?nav.getBoundingClientRect().top:innerHeight;
+    return {top:rect.top,bottom:rect.bottom,visibleBottom:Math.min(innerHeight,navTop)};
+   });
+   assert.ok(beginGeometry.top>=0&&beginGeometry.bottom<=beginGeometry.visibleBottom-8,
+    "Claude m1 Begin must be visible above the app dock without scrolling at "+width+"px: "+JSON.stringify(beginGeometry));
    assert.equal(await page.locator(base+".aoMercyLine").count(),0,
     "Opening prayer text may not bypass the m1 Begin decision");
    await page.screenshot({path:resolve(output,"mercy-m1-home-"+width+".png"),animations:"disabled"});
