@@ -168,6 +168,29 @@ assert.equal(hideUnavailableDirectoryEmblem({target:smallImage}),true);
 assert.equal(smallImage.hidden,true);
 assert.equal(hideUnavailableDirectoryEmblem({target:{matches:()=>false}}),false);
 const researchQueue=JSON.parse(readFileSync(new URL("../data/directory/research/tlm-emblem-acquisition-queue-20261030.v1.json",import.meta.url),"utf8"));
+const r06=JSON.parse(readFileSync(new URL("../data/directory/research/tlm-emblem-release-crosswalk-r06.v1.json",import.meta.url),"utf8"));
+assert.equal(r06.schema,"AO_TLM_EMBLEM_RELEASE_CROSSWALK_R06_V1");
+assert.equal(r06.records.length,41);
+assert.equal(r06.summary.image_group_mappings,13);
+assert.equal(r06.summary.distinct_image_urls,12);
+assert.equal(r06.summary.exact_source_text_fallbacks,17);
+assert.equal(r06.summary.no_single_group_emblem_by_design,9);
+assert.deepEqual(r06.records.map(x=>x.group_code).sort(),
+  researchQueue.groups.map(x=>x.group_code).sort(),"No original research group or explicit hold may be dropped");
+for(const row of r06.records){
+  assert.equal(row.image_reuse_final_approved,false,"No user final approval was invented for "+row.group_code);
+  assert.equal(row.no_automatic_affiliation_inference,true);
+  assert.equal(row.no_venue_publication_from_emblem,true);
+  if(row.visual_release==="RESEARCH_LICENSED_EMBLEM_RENDERED"){
+    assert.ok(massInstitutionEmblem(row.group_code),"Published emblem groups must be an exact subset");
+  }else assert.equal(massInstitutionEmblem(row.group_code),null,
+    "Uncleared or merely source-labelled groups must never acquire logos: "+row.group_code);
+}
+for(const code of ["TRANSFIGURATION","DOMINICAINES_FANJEAUX","DOMINICANS_AVRILLE","SSPX_SISTERS",
+                    "BENEDICTINES_BELLAIGUE","CARMELITE","CMRI","FSVF"]){
+  assert.ok(r06.records.find(x=>x.group_code===code).false_match_warning,
+    "Known attribution traps must remain explicitly quarantined");
+}
 assert.equal(researchQueue.schema,"AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1");
 assert.equal(researchQueue.groups.length,41);
 assert.equal(researchQueue.cl2_source_affiliation_audit.distinct_source_labels,138);
