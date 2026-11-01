@@ -166,15 +166,20 @@ try{
    });
    await page.waitForTimeout(400);
    const choirRect=await choir.evaluate(el=>{
-    const body=el.querySelector(".aoClaudeChoirScroll"),foot=el.querySelector(".aoClaudeChoirResponse");
+    // Claude's fixed response bar is a SIBLING of the scrolling litany,
+    // not a descendant. Its location outside the scroll is the fidelity gate.
+    const card=el.closest(".aoDevoCard"),
+      body=el.querySelector(".aoClaudeChoirScroll"),foot=card?.querySelector(".aoClaudeChoirResponse");
     const r=foot?.getBoundingClientRect();
     return {beats:el.querySelectorAll(".aoClaudeChoirBeat").length,
-     barPresent:!!foot,barHidden:foot?.hidden,barBottom:r?.bottom,barTop:r?.top,
+     barPresent:!!foot,barSibling:!!card&&foot?.parentElement===card,
+     barHidden:foot?.hidden,barBottom:r?.bottom,barTop:r?.top,
      active:el.querySelectorAll('.aoClaudeChoirBeat[data-ao-devo-active="true"]').length,
      response:foot?.querySelector(".aoClaudeChoirResponseText")?.textContent||"",
      inline:!!el.querySelector(".aoClaudeChoirInlineResponse")};
    });
-   assert.ok(choirRect.beats>=5&&choirRect.barPresent,"F03 must present source invocation rows and one response bar");
+   assert.ok(choirRect.beats>=5&&choirRect.barPresent&&choirRect.barSibling,
+    "F03 must present source invocation rows and a fixed response sibling outside the scroll");
    await page.screenshot({path:resolve(dest,"claude-f03-litany-"+width+"x"+height+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>({
     document:Math.max(0,document.documentElement.scrollWidth-innerWidth),
