@@ -48,6 +48,7 @@ on:
       - 'data/prayer/artwork-editorial-20261101/**'
       - 'tests/prayer-artwork-curatorial-reorganization-contract.mjs'
       - 'tests/prayer-artwork-scene-and-attribution-audit-contract.mjs'
+      - 'tests/prayer-artwork-cross-module-approval-evidence-contract.mjs'
       - 'src/pray/artwork-slot-authority.v1.js'
       - 'src/pray/artwork-release-runtime.js'
       - '.github/workflows/prayer-artwork-approved-reuse-readonly.yml'
@@ -65,4 +66,4 @@ jobs:
         with:
           node-version: '22'
       - name: Source-linked art mapping validation
-        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs tests/prayer-artwork-provisional-267-assignment-contract.mjs tests/prayer-artwork-source-quality-contract.mjs tests/prayer-artwork-historical-editorial-authority-contract.mjs tests/prayer-artwork-curatorial-reorganization-contract.mjs tests/prayer-artwork-scene-and-attribution-audit-contract.mjs
+        run: node --test tests/prayer-artwork-reuse-wave1-contract.mjs tests/prayer-artwork-reuse-wave2-contract.mjs tests/prayer-artwork-reuse-wave3-contract.mjs tests/prayer-artwork-complete-candidate-collection-contract.mjs tests/prayer-artwork-provisional-267-assignment-contract.mjs tests/prayer-artwork-source-quality-contract.mjs tests/prayer-artwork-historical-editorial-authority-contract.mjs tests/prayer-artwork-curatorial-reorganization-contract.mjs tests/prayer-artwork-scene-and-attribution-audit-contract.mjs tests/prayer-artwork-cross-module-approval-evidence-contract.mjs
