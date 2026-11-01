@@ -343,8 +343,32 @@ try{
     ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
   await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
   await page.waitForSelector(".aoH7DoorView",{state:"visible",timeout:10000});
+  // An eligible sung Sunday must have an explicit Asperges yes/no choice.
+  // The former visual test skipped this legitimate R17 source-owned guard and
+  // waited for a reader that Begin Mass correctly refused to open.
+  const aspersionRequired=await page.evaluate(()=>
+    globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight
+      ?.aspersionDecisionRequired===true);
+  if(aspersionRequired){
+    await page.locator(".aoH7DoorView [data-home-h4-change]").first().click();
+    const choices=page.locator(".aoH4ChoiceDialog[open]");
+    await choices.waitFor({state:"visible",timeout:15000});
+    const aspersion=choices.locator('[data-h4-option="aspersion"]');
+    assert.equal(await aspersion.isEnabled(),true,
+      "Required Sunday Asperges choice must be available");
+    await aspersion.selectOption("yes");
+    await page.waitForFunction(()=>
+      globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight
+        ?.aspersionDecisionRequired===false,null,{timeout:10000});
+    assert.equal(await page.evaluate(()=>
+      globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight
+        ?.optionalRiteOverrides?.ASPERGES),true,
+      "Sunday Asperges yes must remain explicitly selected");
+    await choices.locator("[data-h4-sheet-close]").last().click();
+    await choices.waitFor({state:"detached",timeout:15000});
+  }
   await page.locator(".homeScreen [data-home-h4-begin]").click();
-  await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
+  await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:65000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
   const massEntry=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,

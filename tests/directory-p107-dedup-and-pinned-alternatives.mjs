@@ -23,9 +23,9 @@ assert.equal(lead.reconciliation.address_mismatch,"POSTCODE_CONFLICT_HOLD_VERIFY
 assert.ok(lead.reconciliation.published_address.includes("CH45 2PG"));
 assert.ok(lead.reconciliation.official_address.includes("CH45 9LT"));
 assert.ok(!geo.directoryPlaceLinks.some(x=>x.venue_id==="ICKSP-STG-076"),"STG record not a canonical Place bridge without production ID");
-assert.equal(geo.places.length,529);
-assert.equal(geo.directoryPlaceLinks.length,22);
-assert.equal(media.items.length,40);
+assert.ok(geo.places.length>=529,"Preserve all P107 baseline Places as subsequent exact sites are added");
+assert.ok(geo.directoryPlaceLinks.length>=22,"P107 historical links must not be lost");
+assert.ok(media.items.length>=40,"Preserve original P107 media baseline as subsequent releases grow");
 const keys=Object.fromEntries(r49.columns.map((x,i)=>[x,i]));
 assert.equal(r49.records.filter(x=>x[keys.name]?.toLowerCase().includes("peter")&&x[keys.locality]?.toLowerCase().includes("new brighton")).length,0,"R49 omission remains historical evidence only");
 assert.equal(src.schema,"AO_P107_FOUR_PINNED_COMMONS_ALTERNATIVE_ORIGINALS_V1");
@@ -44,7 +44,15 @@ for(const r of src.records){
  assert.ok(r.license_url.startsWith("https://creativecommons.org/licenses/by-sa/"));
  assert.ok(r.source_page.startsWith("https://commons.wikimedia.org/wiki/File:"));
  assert.ok(geo.places.some(p=>p.place_id===r.place_id));
- assert.ok(!media.items.some(p=>p.place_id===r.place_id),"Four previous visual holds must remain unpublished");
+ if(r.row===309){
+  const released=media.items.filter(p=>p.place_id===r.place_id);
+  assert.equal(released.length,1,"Only the later individually approved Jihlava photo may be published");
+  assert.equal(released[0].source_url,r.source_page);
+  assert.equal(released[0].derivative_sha256,"f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24");
+ }else{
+  assert.ok(!media.items.some(p=>p.place_id===r.place_id),
+    "The other three P107 rejected alternatives must remain unpublished");
+ }
 }
 const stagedPath="data/directory/research/p107-four-webp-stage-audit.v1.json";
 const stagedFull=new URL("../"+stagedPath,import.meta.url);
@@ -71,4 +79,4 @@ if(fs.existsSync(stagedFull)){
   assert.equal(x.published,false);
  }
 }
-console.log("P107 PASS: New Brighton existing site, postcode mismatch retained, four images visually screened, only Jihlava staged, zero publication");
+console.log("P107 PASS: New Brighton existing site, postcode mismatch retained, four images visually screened, only Jihlava separately approved after source QA");

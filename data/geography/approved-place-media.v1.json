@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_PLACE_MEDIA_V1",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "items": [
     {
       "place_id": "place:AR:basilica-nuestra-senora-itati",
@@ -490,6 +490,31 @@
       "review_method": "Exact-Place approved gallery photo reused as cover; original and derivative unchanged, previously verified attribution, rights, subject and crop retained.",
       "source_place_ref": "APPROVED_GALLERY_COVER_REUSE_20261031",
       "gallery_media_id": "p77-place-078"
+    },
+    {
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/place-media/CZ-st-ignatius-jihlava.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Saint_Ignatius_of_Loyola_in_Jihlava_(8686).jpg",
+      "source_sha1": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+      "derivative_sha256": "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+      "credit": "Gampe",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1050,
+      "height": 1400,
+      "orientation": "portrait",
+      "alt_en": "Full cream-coloured Baroque facade and twin towers of the Church of Saint Ignatius of Loyola in Jihlava, seen from Masaryk Square",
+      "alt_fr": "Façade baroque claire et deux clochers de l’église Saint-Ignace-de-Loyola de Jihlava, vue depuis la place Masaryk",
+      "changes_en": "Pinned 3,000 × 4,000 Commons original decoded and resized to 1,050 × 1,400 WebP. Complete frame retained; no cropping or artistic modification.",
+      "changes_fr": "Original Commons vérifié de 3 000 × 4 000 pixels redimensionné au format WebP 1 050 × 1 400. Image entière conservée, sans recadrage ni retouche artistique.",
+      "reviewed_at": "2026-11-01",
+      "review_method": "P107 original source SHA-1 and derivative SHA-256 verified, complete 1,050 × 1,400 staged WebP visually reviewed in final Jihlava QA on 2026-10-30; Commons photographer and CC BY-SA 4.0 independently confirmed 2026-11-01; exact venue-to-Place CONFIRMED LOCATED_AT link already exists in seed registry. Release copies Git blob bytes without re-encoding.",
+      "source_place_ref": "AO-P104-309-SITE",
+      "source_media_qa": "data/directory/research/p107-jihlava-final-image-editorial-qa.v1.json"
     },
     {
       "place_id": "place:CZ:stara-boleslav-st-wenceslas",
