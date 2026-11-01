@@ -350,3 +350,60 @@ test('all five derived Prayer category doors remain unavailable even with spoofe
   }}}),null,slot);
  }
 });
+
+
+test('bulk source-acquisition manifests retain fourteen exact San Polo originals and twelve initial Commons leads',()=>{
+ const stations=read('data/prayer/artwork-editorial-20261101/tiepolo-san-polo-stations-14-source-photos-20261101.v1.json');
+ const batch=read('data/prayer/artwork-editorial-20261101/commons-originals-batch01-20261101.v1.json');
+ const routing=read('data/prayer/artwork-editorial-20261101/photo-provider-routing-124-20261101.v1.json');
+ assert.equal(stations.uniqueStations,14);
+ assert.equal(stations.records.length,14);
+ assert.equal(stations.stageOnly,true);
+ assert.equal(stations.releaseManifestChangeAllowed,false);
+ assert.equal(stations.productionRightsApprovedCount,0);
+ const stationIDs=new Set();
+ for(let i=0;i<14;i++){
+  const row=stations.records[i];
+  assert.equal(row.slot,'STG-pray.stations-'+String(i+1).padStart(2,'0'));
+  assert.ok(row.sourcePage.startsWith('https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_'));
+  assert.ok(!stationIDs.has(row.sourcePage));
+  stationIDs.add(row.sourcePage);
+  assert.equal(row.publicationAllowed,false);
+  assert.equal(row.photoRightsForAppCleared,false);
+  assert.equal(row.displayPhotoApproved,false);
+ }
+ assert.equal(batch.records.length,12);
+ assert.equal(batch.stageOnly,true);
+ assert.equal(batch.releaseManifestChangeAllowed,false);
+ assert.equal(batch.records.filter(x=>x.originalArtworkTitle==='Madonna del Rosario').length,2);
+ assert.equal(batch.records.filter(x=>x.expectedLicenseShortName==='CC BY 3.0').length,2);
+ assert.equal(batch.records.filter(x=>/prado/i.test(x.sourcePage)).length,0);
+ assert.ok(batch.blockedWithoutSubstitution.some(x=>x.slot==='COV-novena.st_therese'));
+ assert.ok(batch.blockedWithoutSubstitution.some(x=>x.slot==='COV-prayer.seven_sorrows_chaplet'));
+ assert.equal(routing.counts.originalArtworkCandidateGroups,124);
+ assert.equal(routing.counts.COMMONS_EXACT_FILE_METADATA,68);
+ assert.equal(routing.counts.MISSING_EXACT_IMAGE_SOURCE,20);
+ assert.equal(routing.counts.PRADO_PHOTO_HOLD,2);
+ for(const station of stations.records){
+  const row=routing.groups.find(x=>x.slots.includes(station.slot));
+  assert.equal(row.catalogueUrl,station.sourcePage);
+  assert.equal(row.providerLane,'COMMONS_EXACT_FILE_METADATA');
+  assert.equal(row.displayPhotoCertified,false);
+ }
+});
+
+test('the photo acquisition jobs only stage verified source originals, never mutate Prayer UI release manifest',()=>{
+ const script=readFileSync('scripts/art/acquire-prayer-originals-batch01.py','utf8');
+ const workflow=readFileSync('.github/workflows/prayer-artwork-originals-acquisition.yml','utf8');
+ const stationsWorkflow=readFileSync('.github/workflows/prayer-artwork-san-polo-acquisition.yml','utf8');
+ assert.match(script,/sha1\.hexdigest\(\)\.lower\(\)/);
+ assert.match(script,/upload\.wikimedia\.org/);
+ assert.match(script,/stageOnly/);
+ assert.match(script,/releaseManifestChangeAllowed/);
+ assert.match(workflow,/stage|Archive exact Wikimedia source originals/);
+ assert.match(stationsWorkflow,/source-rights metadata/);
+ assert.match(workflow,/PRAYER_RELEASED_IMAGE_ASSETS_V1/);
+ assert.match(stationsWorkflow,/PRAYER_RELEASED_IMAGE_ASSETS_V1/);
+ assert.doesNotMatch(workflow,/assets\/pray\/released/);
+ assert.doesNotMatch(stationsWorkflow,/assets\/pray\/released/);
+});
