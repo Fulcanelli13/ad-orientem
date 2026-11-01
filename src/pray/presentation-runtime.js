@@ -13,6 +13,8 @@ import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./benediction-mystic-lamb-user-art-styles.js";
 import {renderSelectedBenedictionArtwork} from "./benediction-mystic-lamb-user-art.v1.js";
+import "./prayer-cover-photo-qa-styles.js";
+import {renderPrayerSelectedCoverQA} from "./prayer-cover-photo-qa.v1.js";
 import "./stations-verified-artwork-styles.js";
 import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
@@ -1839,7 +1841,7 @@ function renderConfession(){
  const navigation=stageBoundary?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):CONF.stage===2?L('After Confession · when ready','Après la confession · lorsque vous êtes prêt'):CONF.stage===0?L('Begin examination','Commencer l’examen'):L('Continue to next section','Passer à la section suivante'))}</button></div>`:'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
  const initialProgress=CONF.stage===0?devotionalProgressMarkup({index:0,total:stages.length,language:lang(),unit:'stage'}):'';
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${CONF.stage===0?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true}):""}${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
