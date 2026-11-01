@@ -12,6 +12,10 @@ assert.equal(record.source_commit,"2d9a2b5a92b7ec435656fed901b908d29d3a49db");
 assert.equal(source.media_records.length,16);
 assert.equal(source.exceptions.length,4);
 assert.ok(approved.items.length>=168);
+const version=String(approved.version||"").split(".").map(Number);
+assert.equal(version.length,3,"Registry version is semver");
+assert.ok(version.every(Number.isInteger),"Registry version must contain integer components");
+assert.ok(version[0]>1||(version[0]===1&&(version[1]>6||(version[1]===6&&version[2]>=3))),"B8 registry may not revert version below 1.6.3 after B7 1.6.2");
 assert.equal(new Set(approved.items.map(x=>x.place_id)).size,approved.items.length);
 const map=new Map(approved.items.map(x=>[x.place_id,x]));
 for(const item of record.images){
