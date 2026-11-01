@@ -1,0 +1,1587 @@
+{
+  "schema": "AO_SACRED_ATLAS_530_PLACE_COVER_CLOSEOUT_V2",
+  "as_of": "2026-11-02",
+  "based_on": "data/geography/research/photo-finder-20261030/releases/sacred-atlas-530-cover-closure-106-v1.json",
+  "source_one_shot_report": "data/geography/research/photo-finder-20261030/releases/technical-59-one-pass-source-results-20261101.v1.json",
+  "release_manifest": "data/geography/research/photo-finder-20261030/releases/technical-59-five-original-cover-promotion-20261102.v1.json",
+  "original_user_choices": "data/geography/research/photo-finder-20261030/decisions.json",
+  "canonical_places": 530,
+  "editorial_decisions": 451,
+  "chosen_rank1_places": 395,
+  "explicit_none_choices": 56,
+  "approved_cover_count": 312,
+  "chosen_approved": 294,
+  "approved_outside_chosen": 18,
+  "chosen_pending": 101,
+  "none_without_photo": 51,
+  "unreviewed_without_photo": 66,
+  "missing_approved_photo": 218,
+  "counts_by_disposition": {
+    "author_attribution": 4,
+    "licence_verification": 30,
+    "source_identity_hold": 2,
+    "source_metadata_mismatch": 25,
+    "source_size_format": 26,
+    "unverified_public_domain_claim": 13,
+    "visual_watermark_hold": 1
+  },
+  "recovered_current_release": [
+    "place:BE:beauraing",
+    "place:NL:maastricht-sterre-der-zee",
+    "place:PT:sameiro-braga",
+    "place:US:st-alphonsus-baltimore",
+    "place:US:czestochowa-doylestown"
+  ],
+  "reclassified_nonrecorded": [
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "from": "no_persisted_exception",
+      "to": "source_metadata_mismatch",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "from": "no_persisted_exception",
+      "to": "licence_verification",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "from": "no_persisted_exception",
+      "to": "source_identity_hold",
+      "reason": "Frozen source plan excludes this first choice"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "from": "no_persisted_exception",
+      "to": "source_identity_hold",
+      "reason": "Frozen source plan excludes this first choice"
+    }
+  ],
+  "items": [
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "selected_file": "File:Notre-Dame-du-Cap Basilica @ Trois-Rivières, Quebec.jpg",
+      "source_sha1_claim": "d6a5bd22197ce07bc25997ee608417529c7ddd81",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Inphasis",
+      "claimed_dimensions": [
+        4000,
+        2250
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": "technical-59-one-pass-source-results-20261101",
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_FOR_EXACT_SOURCE_VERIFICATION",
+      "historical_disposition": "no_persisted_exception"
+    },
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "selected_file": "File:Heiloo, Heiligdom Onze Lieve Vrouw ter Nood, Bedevaartkerk, oost.jpg",
+      "source_sha1_claim": "caa6822542ab4a71d4e6b03d49340b775caf8848",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "M.arjon",
+      "claimed_dimensions": [
+        3264,
+        2448
+      ],
+      "disposition": "licence_verification",
+      "source_batch": "technical-59-one-pass-source-results-20261101",
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_FOR_EXACT_SOURCE_VERIFICATION",
+      "historical_disposition": "no_persisted_exception"
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "selected_file": "File:Sanctuaire marial de Pellevoisin, aile historique de 1897.jpg",
+      "source_sha1_claim": "b2e1f1d12c1b1a386390dca56d7942214fa47f76",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Esves-37240",
+      "claimed_dimensions": [
+        3456,
+        5184
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:DE:maria-vesperbild",
+      "selected_file": "File:MariaVesperbild Kirche (02).jpg",
+      "source_sha1_claim": "aec2be6e98327f9d0fabe777b8bd1852ebadfc8a",
+      "claimed_licence": "CC0",
+      "claimed_author": "Ordercrazy",
+      "claimed_dimensions": [
+        4000,
+        3000
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "selected_file": "File:Couvent St Joseph du Bessillon.jpg",
+      "source_sha1_claim": "60dde7e1fab72a64352c10aac2fd00d4b3ce263f",
+      "claimed_licence": "CC0",
+      "claimed_author": "FERNANDES Gilbert",
+      "claimed_dimensions": [
+        4128,
+        3096
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "selected_file": "File:Eglise ND de Graces Cotignac.jpg",
+      "source_sha1_claim": "d3462f76ab9000fa948a2a733be31b7c1c9e5aeb",
+      "claimed_licence": "CC0",
+      "claimed_author": "FERNANDES Gilbert",
+      "claimed_dimensions": [
+        4128,
+        3096
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "selected_file": "File:Chapelle Carmel - Lisieux (FR14) - 2021-11-12 - 3.jpg",
+      "source_sha1_claim": "591ac8bf741632f7f39730f7f38f334afeeab388",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Chabe01",
+      "claimed_dimensions": [
+        4032,
+        3024
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "selected_file": "File:Ars-sur-Formans Basilique Saint-Sixte Extérieur Dome 2.jpg",
+      "source_sha1_claim": "f9253b90c21ebd84bda107754cf5f710ac642e3f",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Zairon",
+      "claimed_dimensions": [
+        4579,
+        3193
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "selected_file": "File:Sanktuarium Miłosierdzia Bożego w Płocku.jpg",
+      "source_sha1_claim": "e5ee8662f0e83e74054ce12bc769935512e215aa",
+      "claimed_licence": "Public domain",
+      "claimed_author": "This photo was taken by Przemysław JahrAutorem zdjęcia jest Przemysław JahrWykorzystując zdjęcie proszę podać jako autora:Przemysław Jahr / Wikimedia Commons",
+      "claimed_dimensions": [
+        2269,
+        2103
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "selected_file": "File:Bari BW 2016-10-19 13-35-11 stitch.jpg",
+      "source_sha1_claim": "0d0979f53d11fb234c6456fe0c685156a5c6cbe4",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Berthold Werner",
+      "claimed_dimensions": [
+        7445,
+        6319
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 2,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:PL:gietrzwald-basilica",
+      "selected_file": "File:Sanctuary in Gietrzwałd, 2025, KsP.jpg",
+      "source_sha1_claim": "3f7a3a70b9b47fa973c0fdd45b8cbaf0d10a0b12",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Krzysztof Popławski",
+      "claimed_dimensions": [
+        7008,
+        4672
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "selected_file": "File:Rome - Italy (November 2025) - 194.jpg",
+      "source_sha1_claim": "cdc1374c3e9bb28f3e76604db257daea09da501f",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Another Believer",
+      "claimed_dimensions": [
+        4032,
+        3024
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "selected_file": "File:Basilique Notre Dame Victoires - Paris II (FR75) - 2026-04-11 - 1.jpg",
+      "source_sha1_claim": "282898af6fd0bb0568970cdd66127d167b1b2703",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Chabe01",
+      "claimed_dimensions": [
+        5712,
+        4284
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "selected_file": "File:Basilique Notre Dame Perpétuel Secours - Paris XI (FR75) - 2024-11-23 - 4.jpg",
+      "source_sha1_claim": "ed7ecf5cd8ae003fe2ec8300cb99648373cd2ea1",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Chabe01",
+      "claimed_dimensions": [
+        4032,
+        3024
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "selected_file": "File:Chapelle des Grottes de Saint-Antoine (Brive-la-Gaillarde).jpg",
+      "source_sha1_claim": "3265c9b5a1aad85e6f482a84ee74d0c2673cfd85",
+      "claimed_licence": "CC0",
+      "claimed_author": "FredSeiller",
+      "claimed_dimensions": [
+        3488,
+        2616
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "selected_file": "File:Basilique de Saint-Laurent-sur-Sèvre01.jpg",
+      "source_sha1_claim": "c6bb89c674b27851b33ef6689bd4decc6cdcbc16",
+      "claimed_licence": "CC0",
+      "claimed_author": "FredSeiller",
+      "claimed_dimensions": [
+        4608,
+        3456
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "selected_file": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+      "source_sha1_claim": "93ed31e7ed4e4b4fafd7b7c4460a088bf9c15b9e",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Alvesgaspar",
+      "claimed_dimensions": [
+        13066,
+        6823
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "selected_file": "File:StPaul.jpg",
+      "source_sha1_claim": "96d1ab3a7ddc15e0863f3dbbec8a900603e1e04b",
+      "claimed_licence": "CC BY 4.0",
+      "claimed_author": "StPaul.jpg",
+      "claimed_dimensions": [
+        8272,
+        5456
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "selected_file": "File:Basilica di Santa Maria Maggiore - Roma.jpg",
+      "source_sha1_claim": "3060be9647c5cbfcb32bc8c4031396f8075f0cb7",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "NikonZ7II",
+      "claimed_dimensions": [
+        6906,
+        5358
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "selected_file": "File:Church of the Holy Sepulchre (29430612918).jpg",
+      "source_sha1_claim": "e20ff97dee05d2a3259fe26385a9cf0a0c9c2926",
+      "claimed_licence": "CC0",
+      "claimed_author": "Gary Todd from Xinzheng, China",
+      "claimed_dimensions": [
+        6000,
+        4000
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 3,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "selected_file": "File:Cathédrale Cologne - Cologne (DEA2) - 2026-09-28 - 28.jpg",
+      "source_sha1_claim": "cd7c5eabba95aa137227e4894c4d3175733c7c78",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Chabe01",
+      "claimed_dimensions": [
+        4032,
+        3024
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 4,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "selected_file": "File:Milan Sant'Ambrogio 016 4923.jpg",
+      "source_sha1_claim": "9b46169c2023407127fe0ceadf975b2b07db01d2",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Ludvig14",
+      "claimed_dimensions": [
+        5997,
+        5138
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 4,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "selected_file": "File:Assisi - basilica di Santa Chiara - 2026-09-30 22-29-40 001.JPG",
+      "source_sha1_claim": "971b75c37b45fada17069479412c94355bbf306f",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Terragio67",
+      "claimed_dimensions": [
+        6000,
+        4000
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 4,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "selected_file": "File:Basilique de la Visitation - 207.jpg",
+      "source_sha1_claim": "9d63b8d058630f877940d263b051262a2a86628e",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Another one of my pictures: This photograph was taken by Medium69 (William Crochot) and released under the license stated below. You are free to use it for any ",
+      "claimed_dimensions": [
+        2259,
+        3388
+      ],
+      "disposition": "author_attribution",
+      "source_batch": 5,
+      "exception_reason": "ValueError: Source has no usable author attribution",
+      "next_action": "HOLD_UNTIL_SOURCE_AUTHOR_IS_PROVEN"
+    },
+    {
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "selected_file": "File:Sant'Agostino, Rome.jpg",
+      "source_sha1_claim": "8d591833484392dff5921a09762c93cb81117797",
+      "claimed_licence": "CC0",
+      "claimed_author": "Wilfredor",
+      "claimed_dimensions": [
+        5030,
+        4715
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 5,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "selected_file": "File:Catania BW 2025-04-25 15-15-28.jpg",
+      "source_sha1_claim": "715df2aebc20c2cf3ddc46acea9aed6a4fb6be6c",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Berthold Werner",
+      "claimed_dimensions": [
+        5823,
+        3872
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 5,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "selected_file": "File:Pagani-basi.jpg",
+      "source_sha1_claim": "b79a67d5fb5f745338d016e8102263ffbab105c6",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Bocachete",
+      "claimed_dimensions": [
+        2048,
+        1536
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:GR:saint-titus-heraklion",
+      "selected_file": "File:Outside church Hagios Titos Heraklion.jpg",
+      "source_sha1_claim": "6cf7de8e6763e2fb94413c9d46d3ac18efd062f6",
+      "claimed_licence": "CC0",
+      "claimed_author": "Jebulon",
+      "claimed_dimensions": [
+        4590,
+        2850
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 5,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "selected_file": "File:San Salvador - El Salvador (50899440617).jpg",
+      "source_sha1_claim": "be51e84320a5c3d92b8b52cbe529a48bb6f79454",
+      "claimed_licence": "CC BY 2.0",
+      "claimed_author": "Rômulo Gama Ferreira from Vitória-ES",
+      "claimed_dimensions": [
+        4896,
+        3672
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 5,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "selected_file": "File:Abbazia di San Colombano - Bobbio, Piacenza, Italia - 30 Maggio 2020.jpg",
+      "source_sha1_claim": "75d1726d9eb87b99348921af0b8c848df5e5f258",
+      "claimed_licence": "CC BY 4.0",
+      "claimed_author": "Giorgio Galeotti",
+      "claimed_dimensions": [
+        6807,
+        4862
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 5,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "selected_file": "File:Saint Hilaire Poitiers 2.jpg",
+      "source_sha1_claim": "1e01f20b67a1e071bbf51e65e5dfa0c5412cf936",
+      "claimed_licence": "CC BY 3.0",
+      "claimed_author": "Unknown author",
+      "claimed_dimensions": [
+        2048,
+        1191
+      ],
+      "disposition": "author_attribution",
+      "source_batch": 6,
+      "exception_reason": "ValueError: Source has no usable author attribution",
+      "next_action": "HOLD_UNTIL_SOURCE_AUTHOR_IS_PROVEN"
+    },
+    {
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "selected_file": "File:Dom und Liebfrauen Trier.jpg",
+      "source_sha1_claim": "df4056736b1815242abd2e1401e9281d1337afa1",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Berthold Werner",
+      "claimed_dimensions": [
+        2955,
+        2388
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 6,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "selected_file": "File:Fécamp Abbatiale de la Trinité Fassade 3.jpg",
+      "source_sha1_claim": "c9e0d2c18b90b4c7c0e0dd23e6dfe4a53324bfd8",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Zairon",
+      "claimed_dimensions": [
+        4499,
+        2895
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 6,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "selected_file": "File:Divine Mercy Sanctuary in Vilnius1.jpg",
+      "source_sha1_claim": "7861c64413a500df15555935fce2c017baa6a7f3",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Alma Pater",
+      "claimed_dimensions": [
+        2304,
+        3072
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "selected_file": "File:4719Padre Pio National Shrine 42.jpg",
+      "source_sha1_claim": "1cf1eba6687325a21bdafc28e837146aca657546",
+      "claimed_licence": "CC0",
+      "claimed_author": "Judgefloro",
+      "claimed_dimensions": [
+        4608,
+        3456
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 6,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "selected_file": "File:PopenguineChurch.JPG",
+      "source_sha1_claim": "eefb0268c1f830280c2ade435cf5ae0c213e9c81",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Ji-Elle",
+      "claimed_dimensions": [
+        3072,
+        2304
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "selected_file": "File:Jaffa BW 3.JPG",
+      "source_sha1_claim": "464041e6cdeb37ae3ef3a2a2c1f213976b9b1488",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Berthold Werner",
+      "claimed_dimensions": [
+        3524,
+        2350
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "selected_file": "File:Nazaret Verkuendigungsbasilika BW 16.JPG",
+      "source_sha1_claim": "7acd5c7e849f41a4e4a6ddaf4d99bca5cf794f06",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Berthold Werner",
+      "claimed_dimensions": [
+        2455,
+        3680
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "selected_file": "File:Church of the Transfiguration (Mount Tabor), 2019 (01).jpg",
+      "source_sha1_claim": "40969749ffa7694e460bc2cfd428d1149ddabb4c",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Bahnfrend",
+      "claimed_dimensions": [
+        6014,
+        4014
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "selected_file": "File:כנסיית הביקור מהאוויר.jpg",
+      "source_sha1_claim": "327e724e3d511ee147f4784abd9baa3b00f81cec",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "ליעד 747",
+      "claimed_dimensions": [
+        4000,
+        3000
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "selected_file": "File:Tháp chuông nhà thờ La Vang.JPG",
+      "source_sha1_claim": "df56c4525f298e79bb4ce48864eba4d20c788581",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Hoangvantoanajc",
+      "claimed_dimensions": [
+        2288,
+        1520
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "selected_file": "File:San Francesco, Lanciano 5.JPG",
+      "source_sha1_claim": "a8d496935e0107ec6101f7024746c8262dd02d2c",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Zitumassin",
+      "claimed_dimensions": [
+        1498,
+        1997
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "selected_file": "File:Fachada principal da Igreja de Santo Estêvão (Santo Milagre).jpg",
+      "source_sha1_claim": "81e7d94c1b10a57c1a83c46b2066cc164db7eb2c",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Threeohsix",
+      "claimed_dimensions": [
+        3000,
+        4000
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "selected_file": "File:Görög katolikus templom (8299. számú műemlék) 4.jpg",
+      "source_sha1_claim": "3019c9b2038552a261ec12609d716bc3bd463433",
+      "claimed_licence": "CC BY-SA 2.5",
+      "claimed_author": "Zurgiz",
+      "claimed_dimensions": [
+        1600,
+        1200
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "selected_file": "File:Shanghai - Basilique de She Shan - 33.jpg",
+      "source_sha1_claim": "1c70b5085f5401507bf69e60f797696f166f823c",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "This illustration was made by Peter Potrowl. Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu w",
+      "claimed_dimensions": [
+        1824,
+        1368
+      ],
+      "disposition": "author_attribution",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Source has no usable author attribution",
+      "next_action": "HOLD_UNTIL_SOURCE_AUTHOR_IS_PROVEN"
+    },
+    {
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "selected_file": "File:Manaoag Church facade in Pangasinan.jpg",
+      "source_sha1_claim": "989b7430038a1ecd89d5b753a6485a05f0a100a7",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Ramon FVelasquez",
+      "claimed_dimensions": [
+        1080,
+        1440
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "selected_file": "File:Esquipulas basilica.JPG",
+      "source_sha1_claim": "c4094f1e1546ccaaed3c628b203d7098320d3ebf",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Sapfan at English Wikipedia",
+      "claimed_dimensions": [
+        2496,
+        1872
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "selected_file": "File:Basílica de Caacupé.jpg",
+      "source_sha1_claim": "22568147e0e4053cd3b040b1ceb1ec3769c9b324",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Garcia.dennis",
+      "claimed_dimensions": [
+        3078,
+        2465
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": "retry-429-source-verification-20261101",
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_SOURCE_ORIGINAL_AND_DECODED_BYTES_MATCH_COMMONS_METADATA",
+      "previous_disposition": "source_access_429",
+      "previous_exception_reason": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "selected_file": "File:Basilica of Our Lady of the Angels, Cartago 01.jpg",
+      "source_sha1_claim": "8e8dfb7520dcbbb5cfdfddc3d782ad404529b125",
+      "claimed_licence": "CC0",
+      "claimed_author": "Bernard Gagnon",
+      "claimed_dimensions": [
+        4031,
+        2687
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 7,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "selected_file": "File:De extremo a extremo, Santuario Nacional de la Virgen del Cobre - panoramio.jpg",
+      "source_sha1_claim": "8b1bb3dd61b0ae12eab1e4ec2f55dd8645ffb114",
+      "claimed_licence": "CC BY 3.0",
+      "claimed_author": "DnTrotaMundos ☮",
+      "claimed_dimensions": [
+        4544,
+        2545
+      ],
+      "disposition": "visual_watermark_hold",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "KEEP_UNPUBLISHED_PENDING_CLEAN_EDITORIAL_SOURCE"
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "selected_file": "File:St Peter's Cathedral Basilica Kumasi (4).jpg",
+      "source_sha1_claim": "59837826884dc9a065e18e2f0fce85c46e0c9bae",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Noahalorwu",
+      "claimed_dimensions": [
+        6000,
+        3376
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 8,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "selected_file": "File:Pyhän Henrikin katedraali Helsinki 2022-09-18 01.jpg",
+      "source_sha1_claim": "10e720e0d33ac162d37861ea2f3636e12de0b0f6",
+      "claimed_licence": "CC0",
+      "claimed_author": "Leonhard Lenz",
+      "claimed_dimensions": [
+        7466,
+        4982
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 8,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:JP:oura-cathedral-nagasaki",
+      "selected_file": "File:Oura Cathedral 20180623.jpg",
+      "source_sha1_claim": "ec14d7c37596113fb00a2fa55352584e93250aaa",
+      "claimed_licence": "CC0",
+      "claimed_author": "Houjyou-Minori",
+      "claimed_dimensions": [
+        2252,
+        3000
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 8,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:ID:jakarta-cathedral",
+      "selected_file": "File:Cathedral of Jakarta - exterior (2025) - img 04.jpg",
+      "source_sha1_claim": "c06d6e38b449779d31970b82f5e3759c224996cb",
+      "claimed_licence": "CC BY 4.0",
+      "claimed_author": "Chainwit.",
+      "claimed_dimensions": [
+        3024,
+        4032
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 8,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:PH:manila-cathedral-intramuros",
+      "selected_file": "File:Catedral de la Inmaculada Concepción, Manila, Filipinas, 2023-08-26, DD 21.jpg",
+      "source_sha1_claim": "c14fcab676706bcd112671a2264e7de6eddd2663",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Diego Delso",
+      "claimed_dimensions": [
+        6213,
+        5695
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 9,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "selected_file": "File:Tbilisi Catholical church St. Maria.png",
+      "source_sha1_claim": "67ec216ecccd51d9a34b31c6ba888485fb109d9e",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Temuri",
+      "claimed_dimensions": [
+        2748,
+        3664
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "selected_file": "File:Kuwait City Holy Family Cathedral Exterior Facade.jpg",
+      "source_sha1_claim": "20d76b312fbd81b8db0cdd8741e4ad24a7561e79",
+      "claimed_licence": "CC BY 4.0",
+      "claimed_author": "Zairon",
+      "claimed_dimensions": [
+        4569,
+        2452
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": "retry-429-source-verification-20261101",
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_SOURCE_ORIGINAL_AND_DECODED_BYTES_MATCH_COMMONS_METADATA",
+      "previous_disposition": "source_access_429",
+      "previous_exception_reason": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)"
+    },
+    {
+      "place_id": "place:SC:immaculate-conception-cathedral-victoria",
+      "selected_file": "File:Cathedral of the Immaculate Conception, Seychelles 1.jpg",
+      "source_sha1_claim": "377cd689f32d141c4097b6fc9447d1d746e31bdd",
+      "claimed_licence": "CC0",
+      "claimed_author": "Vasilii Martynov",
+      "claimed_dimensions": [
+        4000,
+        3000
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 9,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "selected_file": "File:Dulce Nombre de Maria Cathedral Basilica.JPG",
+      "source_sha1_claim": "ddb57a34d088f6eed4c4caac144b245f7ee2c479",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Abasaa",
+      "claimed_dimensions": [
+        2048,
+        1536
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "selected_file": "File:Saipan Mount Carmel Cathedral.JPG",
+      "source_sha1_claim": "dd509b1cf05cd2498859540b32e97513f8ffe25c",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Abasaa",
+      "claimed_dimensions": [
+        2048,
+        1536
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "selected_file": "File:Cathedral in Willemstad, Curaçao.jpg",
+      "source_sha1_claim": "e274c283caa80537158ce2e533ab9e7eba954f67",
+      "claimed_licence": "CC BY 4.0",
+      "claimed_author": "Gerd Fahrenhorst",
+      "claimed_dimensions": [
+        4896,
+        3672
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 10,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:MH:cathedral-assumption-majuro",
+      "selected_file": "File:Cathedral of the Assumption, Majuro.jpg",
+      "source_sha1_claim": "0438cb172bfe8bee84f5560467608468b7d253d3",
+      "claimed_licence": "CC0",
+      "claimed_author": "Prefecture Apostolic of Marshall Islands",
+      "claimed_dimensions": [
+        2048,
+        1152
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 11,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:WF:cathedrale-assomption-mata-utu",
+      "selected_file": "File:179 Cathédrale de Mata-Utu - side view (36940866791).jpg",
+      "source_sha1_claim": "881fe70acb5915518214da7eed461ae89039bf32",
+      "claimed_licence": "CC BY-SA 2.0",
+      "claimed_author": "Brigitte & Heinz",
+      "claimed_dimensions": [
+        4896,
+        2752
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 11,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:LA:sacred-heart-cathedral-vientiane",
+      "selected_file": "File:Sacred Heart Cathedral, Vientiane 2.jpg",
+      "source_sha1_claim": "17b05181f1af20c9ffc77beebad632c7baeaec5a",
+      "claimed_licence": "CC0",
+      "claimed_author": "Mx. Granger",
+      "claimed_dimensions": [
+        3072,
+        2942
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 11,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:SB:holy-cross-cathedral-honiara",
+      "selected_file": "File:Service of Remembrance at Holy Cross Cathedral, Honiara (52270812716).jpg",
+      "source_sha1_claim": "39820e59da0fc25801217dd4eec521c31ca023cb",
+      "claimed_licence": "Public domain",
+      "claimed_author": "U.S. Embassy Australia",
+      "claimed_dimensions": [
+        6000,
+        4000
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:NP:assumption-cathedral-lalitpur",
+      "selected_file": "File:Assumption Church, Kathmandu, Nepal - June 2024.jpg",
+      "source_sha1_claim": "7d3e62c7f08b1277a49abb730d7964ff6e9404d3",
+      "claimed_licence": "CC0",
+      "claimed_author": "Fivestones",
+      "claimed_dimensions": [
+        4032,
+        3024
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 11,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:KN:immaculate-conception-cocathedral-basseterre",
+      "selected_file": "File:Basseterre Co-Cathedral of Immaculate Conception 2.JPG",
+      "source_sha1_claim": "512aa0f323afd2c9c9e8344315ddf9e43643f8a6",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Gertjan R.",
+      "claimed_dimensions": [
+        3240,
+        4320
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 11,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:CK:st-joseph-cathedral-avarua",
+      "selected_file": "File:St. Joseph's Cathedral, Avarua.jpg",
+      "source_sha1_claim": "a1b132d9cb52287eff1785eaccedc9242c5ccab9",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Tom Ackroyd",
+      "claimed_dimensions": [
+        3941,
+        2717
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 11,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
+      "selected_file": "File:France-003038 - Basilica of Notre-Dame de Fourvière (15939822990).jpg",
+      "source_sha1_claim": "a7b0ac4dcd85883277d9d327fb4d92b89e148858",
+      "claimed_licence": "CC BY-SA 2.0",
+      "claimed_author": "Dennis G. Jarvis",
+      "claimed_dimensions": [
+        6071,
+        4106
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 12,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:MX:catedral-basilica-san-juan-los-lagos",
+      "selected_file": "File:Basílica de San Juan de los Lagos.jpg",
+      "source_sha1_claim": "1b4a31304e1d00a19c4ce1c5df706151736839ff",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "pedro sanchez",
+      "claimed_dimensions": [
+        2104,
+        2728
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 12,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "selected_file": "File:Basilika-mariatrost-hoch-10-2021.jpg",
+      "source_sha1_claim": "10be7c04ff7944aa447181d8fb064508ac6a4bf9",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Strohmi93",
+      "claimed_dimensions": [
+        4000,
+        6000
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 13,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "selected_file": "File:Kevelaer, Germany - panoramio (113).jpg",
+      "source_sha1_claim": "5a1103f894555e12bf90a71c229c4d2f0c9a5b41",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Ben Bender",
+      "claimed_dimensions": [
+        2048,
+        1155
+      ],
+      "disposition": "source_identity_hold",
+      "source_batch": "technical-59-one-pass-source-results-20261101",
+      "exception_reason": "Frozen source plan excludes this first choice",
+      "next_action": "PRESERVE_EXACT_SOURCE_IDENTITY_HOLD",
+      "historical_disposition": "no_persisted_exception"
+    },
+    {
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "selected_file": "File:Madonna del Sasso, Orselina, Ticino.jpg",
+      "source_sha1_claim": "7ffe6ab1270455fe5f596117e0b768887efdea08",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Christian David",
+      "claimed_dimensions": [
+        10251,
+        7688
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 13,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:LT:trakai-visitation-basilica",
+      "selected_file": "File:Basilica Visitation Blessed Virgin Mary Trakai B.jpg",
+      "source_sha1_claim": "0f1a7662a4da36200464123b0d925992b7dd2fc8",
+      "claimed_licence": "CC0",
+      "claimed_author": "Mojmir Churavy",
+      "claimed_dimensions": [
+        3072,
+        4096
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 13,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "selected_file": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+      "source_sha1_claim": "ca025cb7c0d5815ccb25b5f5570e8a57331103d7",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Johann Jaritz",
+      "claimed_dimensions": [
+        4928,
+        3280
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 13,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:DO:catedral-primada-santo-domingo",
+      "selected_file": "File:Dominikanische Republik Santo Domingo Basilica Catedral Menor de Santa Maria 02.jpg",
+      "source_sha1_claim": "52e7898563838e2893e7771dfb4d756b4bad468d",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Georg Karl Ell",
+      "claimed_dimensions": [
+        7356,
+        4138
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 13,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "selected_file": "File:Igreja da Penha by Diego Baravelli III.jpg",
+      "source_sha1_claim": "dd35c6a4a1bcbf575cc8eb83eafd34b85ac93055",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Diego Baravelli",
+      "claimed_dimensions": [
+        5760,
+        3840
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 13,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:PT:santuario-nossa-senhora-nazare",
+      "selected_file": "File:Nazaré February 2013-8.jpg",
+      "source_sha1_claim": "283ea781bec35eaaee0b60fa69cba3597a5b63d3",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Alvesgaspar",
+      "claimed_dimensions": [
+        7013,
+        4407
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:DE:wieskirche",
+      "selected_file": "File:Wieskirche boenisch okt 2003.jpg",
+      "source_sha1_claim": "273e203687e313b5dad2403b9772a93a968f6932",
+      "claimed_licence": "CC BY-SA 2.0",
+      "claimed_author": "Bönisch",
+      "claimed_dimensions": [
+        2240,
+        1680
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "selected_file": "File:Reims Cathedral 016 8341.jpg",
+      "source_sha1_claim": "83713a58b52251dd4e7c01527b9396bbc7bd43bb",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Ludvig14",
+      "claimed_dimensions": [
+        5444,
+        7284
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "selected_file": "File:20211115.Valencia.-087.1.jpg",
+      "source_sha1_claim": "4ea34d2ff4ac1356ec4f7fe19f335517bc01ab3b",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Bybbisch94, Christian Gebhardt",
+      "claimed_dimensions": [
+        8000,
+        6000
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IN:st-andrews-basilica-arthunkal",
+      "selected_file": "File:Arthunkal Basilica.jpg",
+      "source_sha1_claim": "eed3bb615d61d1cf73210ecca76c2ef659bc54c6",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Vis M",
+      "claimed_dimensions": [
+        16320,
+        12240
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:DE:bamberger-dom",
+      "selected_file": "File:Bamberg Dom.jpg",
+      "source_sha1_claim": "aa2f0166fc93ab07aa86c4aae696e1364662ad52",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Berthold Werner",
+      "claimed_dimensions": [
+        3224,
+        2472
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "selected_file": "File:Church of the Assumption of the Virgin Mary in Hostýn (2).jpg",
+      "source_sha1_claim": "6b354b5e53cecb91d650927c432950ec0e970d0c",
+      "claimed_licence": "CC BY 3.0",
+      "claimed_author": "Radosław Botev",
+      "claimed_dimensions": [
+        4000,
+        3000
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:GT:basilica-santo-domingo-rosario-guatemala",
+      "selected_file": "File:Santo Domingo Church in Guatemala City, 2024. 11.jpg",
+      "source_sha1_claim": "4e5ab446bf716cc55eb73dd4d6a3462f71ea9e44",
+      "claimed_licence": "CC0",
+      "claimed_author": "Nerdoguate",
+      "claimed_dimensions": [
+        3659,
+        2020
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 14,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:LT:siluvos-svc-mergeles-marijos-gimimo-bazilika",
+      "selected_file": "File:Siluva Basilika Mariä Geburt 1.JPG",
+      "source_sha1_claim": "42b305eebf4f7021d85c1ecf2f4311f1a15a1b76",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Zairon",
+      "claimed_dimensions": [
+        3167,
+        2685
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 15,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "selected_file": "File:20060626-León San Isidoro.jpg",
+      "source_sha1_claim": "47f2f1b361f17219fb24c5e8d9a7f55c30e99fd5",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Unknown author",
+      "claimed_dimensions": [
+        2592,
+        1944
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 15,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "selected_file": "File:Bazylika Santa Maria degli Angeli Asyż.jpg",
+      "source_sha1_claim": "55b8fdf8190b9f114179aa150034266a8d39d038",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Unknown author",
+      "claimed_dimensions": [
+        1181,
+        949
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 15,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "selected_file": "File:Saint-Vincent-de-Paul - Basilique Notre-Dame de Buglose - 25.jpg",
+      "source_sha1_claim": "5d8a852d75e9aa0e0e2190c1329e34bdc95e8b35",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "This illustration was made by Peter Potrowl. Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu w",
+      "claimed_dimensions": [
+        1824,
+        1368
+      ],
+      "disposition": "author_attribution",
+      "source_batch": 16,
+      "exception_reason": "ValueError: Source has no usable author attribution",
+      "next_action": "HOLD_UNTIL_SOURCE_AUTHOR_IS_PROVEN"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-marienthal",
+      "selected_file": "File:Marienthal NotreDame03.JPG",
+      "source_sha1_claim": "ddabe51b23e3433a7f3e386afc11394d4f88c1c4",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "© Ralph Hammann - Wikimedia Commons",
+      "claimed_dimensions": [
+        3648,
+        2736
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 16,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "selected_file": "File:Poland Trzebnica - sanctuary of Hedwig.jpg",
+      "source_sha1_claim": "02bd292df52e6d4b791ddab33a6a4795b7b3aeca",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Own work",
+      "claimed_dimensions": [
+        2762,
+        2000
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 16,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "selected_file": "File:489A1758Bazylika konkatedralna Wniebowzięcia Najświętszej Maryi Panny w Gdańsku - widziana z Góry Gradowej.jpg",
+      "source_sha1_claim": "5998588f250cc54992df469d51cae8650c9ff9fe",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Radosław Dybała",
+      "claimed_dimensions": [
+        6720,
+        4480
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 16,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "selected_file": "File:BasilicaMenor-HormiguerosPR-02.JPG",
+      "source_sha1_claim": "2218b13687b15da93062d794e48ccf8255ac74ef",
+      "claimed_licence": "Public domain",
+      "claimed_author": "Jcarrillovii",
+      "claimed_dimensions": [
+        1075,
+        806
+      ],
+      "disposition": "unverified_public_domain_claim",
+      "source_batch": null,
+      "exception_reason": null,
+      "next_action": "HOLD_UNTIL_PUBLIC_DOMAIN_RIGHTS_BASIS_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0042",
+      "selected_file": "File:Strasbourg Cathedral Exterior - Diliff.jpg",
+      "source_sha1_claim": "30ba67362115f0641f32686e0941a7130482cdcb",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Diliff",
+      "claimed_dimensions": [
+        6574,
+        8402
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 16,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:DE:p42-sg-inv-0181",
+      "selected_file": "File:Abbazia di Ettal - Baviera.jpg",
+      "source_sha1_claim": "fca5152fc5f7aede50b9c0fa130db07b2e9dec7a",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Andrea Griffini at Italian Wikipedia",
+      "claimed_dimensions": [
+        2048,
+        1536
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 17,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "selected_file": "File:Santuario de El Quinche, El Quinche, Ecuador, 2015-07-21, DD 03.JPG",
+      "source_sha1_claim": "3d6b480719ca5e6aa64c3163b671cfbf45ef0029",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "Diego Delso",
+      "claimed_dimensions": [
+        7441,
+        4961
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 17,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "selected_file": "File:El Sant Crist, Balaguer-2.JPG",
+      "source_sha1_claim": "e08b56665103276d7e03690a732a198160d7e2df",
+      "claimed_licence": "CC BY-SA 3.0",
+      "claimed_author": "Deosringas",
+      "claimed_dimensions": [
+        2560,
+        1920
+      ],
+      "disposition": "source_metadata_mismatch",
+      "source_batch": 17,
+      "exception_reason": "ValueError: Decoded original differs from Commons metadata",
+      "next_action": "HOLD_UNTIL_CURRENT_ORIGINAL_BYTES_MATCH_PINNED_SHA1"
+    },
+    {
+      "place_id": "place:CH:p46-sg-0272-319525195",
+      "selected_file": "File:ND des marches face.jpg",
+      "source_sha1_claim": "e70f8be17bc02503fe284cd9d34256e6ec86e7ba",
+      "claimed_licence": "CC0",
+      "claimed_author": "P.Lechien",
+      "claimed_dimensions": [
+        1936,
+        2592
+      ],
+      "disposition": "licence_verification",
+      "source_batch": 17,
+      "exception_reason": "ValueError: Unsupported or unverifiable licence",
+      "next_action": "HOLD_UNTIL_EXACT_SOURCE_LICENCE_IS_VERIFIED"
+    },
+    {
+      "place_id": "place:KR:p48-sg-0628-210335697",
+      "selected_file": "File:Myeongdong Cathedral 6.jpg",
+      "source_sha1_claim": "86b2dfaa0e4aaa8c68bdd57cb51b56035ee91e1c",
+      "claimed_licence": "CC BY-SA 4.0",
+      "claimed_author": "kallerna",
+      "claimed_dimensions": [
+        6000,
+        4010
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 18,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:AT:p48-sg-0197-239345806",
+      "selected_file": "File:Salzburger Dom 2023-09-28 02.jpg",
+      "source_sha1_claim": "c193f76495633bf39a3cb9fd2c29487358461f20",
+      "claimed_licence": "CC0",
+      "claimed_author": "Leonhard Lenz",
+      "claimed_dimensions": [
+        8384,
+        5612
+      ],
+      "disposition": "source_size_format",
+      "source_batch": 18,
+      "exception_reason": "ValueError: Unsupported/oversized/undersized original",
+      "next_action": "HOLD_UNTIL_ORIGINAL_MEETS_PINNED_FORMAT_AND_SIZE"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "selected_file": "File:Santuario San Gabriele dell'Addolorata Abruzzo 03.JPG",
+      "source_sha1_claim": "6a3e8384f7344a5ad7425bd424e366ee2a4454c0",
+      "claimed_licence": "CC BY-SA 2.5",
+      "claimed_author": "freegiampi",
+      "claimed_dimensions": [
+        1600,
+        1200
+      ],
+      "disposition": "source_identity_hold",
+      "source_batch": "technical-59-one-pass-source-results-20261101",
+      "exception_reason": "Frozen source plan excludes this first choice",
+      "next_action": "PRESERVE_EXACT_SOURCE_IDENTITY_HOLD",
+      "historical_disposition": "no_persisted_exception"
+    }
+  ],
+  "stop_rule": "Source and editorial holdings remain source-specific. No more batch reselection, no automatic alternate Commons file; all remaining cards have approved illustration fallback."
+}
