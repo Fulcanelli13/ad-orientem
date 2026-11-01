@@ -88,6 +88,20 @@ export function prayerArtworkSlotForView({
   // player, never to a generic Prayer header or random rotation.
   return null;
 }
+/** Maps the traditional 15 Rosary mysteries to their fixed artwork slots.
+ * mi is the index within the selected five-mystery set, never a bead index.
+ * This deliberately does not add a Luminous-mystery set or alter donor state.
+ */
+export function prayerArtworkRosarySlotForChapter(chapter,{set="joyful"}={}){
+ if(!chapter||typeof chapter!=="object")return null;
+ if(chapter.id==="opening")return "STG-pray.rosary-01";
+ if(chapter.id==="conclusion")return "STG-pray.rosary-17";
+ const group={joyful:2,sorrowful:7,glorious:12}[String(set).toLowerCase()];
+ const mi=chapter.mi;
+ if(!Number.isInteger(group)||!Number.isInteger(mi)||mi<0||mi>=5)return null;
+ return "STG-pray.rosary-"+String(group+mi).padStart(2,"0");
+}
+
 export function renderReleasedPrayerArtwork(slotId,{
   manifest=PRAYER_RELEASED_IMAGE_ASSETS_V1,
   authority=PRAYER_ARTWORK_SLOT_AUTHORITY,
