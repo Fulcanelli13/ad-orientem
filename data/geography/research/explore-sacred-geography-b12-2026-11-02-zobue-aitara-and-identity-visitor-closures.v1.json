@@ -1,0 +1,334 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B12_V1",
+  "research_date": "2026-11-02",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_place_count": 530,
+    "previous_b11_main_count": 530,
+    "delta_since_b11": 0,
+    "research_branch_previous_head": "3c87efc36ff6fb0b710fee25b464ab30b0f49c50",
+    "historical_philippines_checkpoint": "347 Places, 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment; historical only",
+    "r70_candidate_count": 750,
+    "deduplication": "Checked 530 main Places, R70 queue and B03–B11 ledgers. Zobué not present; Aitara and Muxima already in B06; other site research retained as enrichments.",
+    "no_new_canonical_ids": true
+  },
+  "counts": {
+    "research_records": 8,
+    "new_distinct_primary_verified_research_sites": 1,
+    "existing_site_enrichments": 6,
+    "non_place_network_crosswalks": 1,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "research_id_policy": "SG-B12-* are additive research-only identifiers; SG-INV-* existing candidate identifiers preserved unchanged; null is not a canonical ID.",
+  "records": [
+    {
+      "record_id": "SG-B12-MZ-ZOBUE",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "MZ",
+      "name": "Sanctuary of the Immaculate Conception of Zobué, Tete",
+      "status": "NEW_DISTINCT_DIOCESAN_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "The Diocese of Tete documents an active Catholic sanctuary of the Immaculate Conception at Zobué, with a diocesan pilgrimage held on 15–16 August 2026. Hundreds of pilgrims joined the bishop for the Way of the Cross, Mass, candlelight procession, Rosary and overnight Eucharistic adoration. The separate hilltop Resurrection chapel on Monte da Esperança was visited during the vigil. The visiting Fatima statue is not a permanent relic, and the August Assumption celebration does not change the sanctuary's Immaculate Conception title.",
+      "summary_fr": "Le diocèse de Tete atteste un sanctuaire catholique de l'Immaculée Conception à Zobué et un pèlerinage diocésain les 15 et 16 août 2026. Des centaines de pèlerins ont participé au chemin de croix, à la messe présidée par l'évêque, à la procession aux flambeaux, au Rosaire et à l'adoration eucharistique nocturne. La chapelle de la Résurrection au sommet du Monte da Esperança est un lieu distinct visité pendant la veillée. La statue itinérante de Fátima n'est pas une relique permanente et la fête d'août ne modifie pas le vocable du sanctuaire.",
+      "history": "Diocese lists the local parish of Nossa Senhora da Conceição do Zobué (1950); sanctuary founding date not independently established",
+      "devotion": "Marian pilgrimage, Rosary, Way of the Cross, Eucharistic adoration",
+      "feast": "15–16 August 2026 diocesan pilgrimage; Sunday Mass of the Assumption; not an inferred 1962 rank or fixed annual date",
+      "relics": "No authenticated bodily relics reported; visiting Fatima statue distinct",
+      "visitor": "2026 public diocesan pilgrimage verified; routine opening hours and exact entrance not verified",
+      "evidence": [
+        {
+          "url": "https://www.diocesetete.org/noticias/noticias-da-diocese/realizacao-da-peregrinacao-diocesana-ao-santuario-do-zobue-tete.html",
+          "issuer": "Diocese of Tete, 6 September 2026",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Sanctuary identity, bishop, August 2026 programme, hilltop chapel and visiting image"
+        }
+      ],
+      "holds": [
+        "Exact church-versus-shrine-versus-Monte da Esperança chapel physical mapping",
+        "Original shrine decree, ordinary visitor timetable and precise entrance not retrieved",
+        "No coordinates, walking route or canonical ID created"
+      ]
+    },
+    {
+      "record_id": "SG-B12-TL-AITARA",
+      "candidate_id": "SG-INV-0682",
+      "canonical_place_id": null,
+      "country": "TL",
+      "name": "National Shrine of Our Lady of Aitara, Soibada",
+      "status": "EXISTING_B06_PROVISIONAL_STRENGTHENED;CUSTODIAL_DECREE_HELD",
+      "summary_en": "New authoritative evidence strengthens the B06 Aitara dossier: Timor-Leste's government development plan identifies the hilltop Marian shrine, church and convent near the banyan tree above Soibada; the official tourism portal lists Aitara as a pilgrimage attraction in Manatuto. Pope Francis publicly invoked the Virgin of Aitara as the country's heavenly patroness in September 2024, and a local October 2026 report documents active Catholic pilgrimage. The reported apparition remains local tradition, not a verified ecclesiastical judgment; no original national-shrine decree or opening schedule has been retrieved.",
+      "summary_fr": "Des sources officielles renforcent le dossier B06 d'Aitara : le plan de développement du Timor oriental situe le sanctuaire marial, l'église et le couvent près du grand banian, sur la colline dominant Soibada ; le portail touristique national répertorie ce pèlerinage à Manatuto. En septembre 2024, le pape François a invoqué la Vierge d'Aitara comme patronne céleste du pays, et un reportage d'octobre 2026 atteste un pèlerinage catholique actif. Le récit d'apparition demeure une tradition locale, sans jugement ecclésiastique retrouvé ; le décret de sanctuaire national et les horaires manquent.",
+      "history": "Government 2011–2030 plan describes an older church/shrine complex and local apparition tradition; no supernatural approval inferred",
+      "devotion": "Our Lady of Aitara, October pilgrimage and Marian prayer",
+      "feast": "Pilgrimage reported 15–16 October 2026; no permanent feast rubric assigned",
+      "relics": "No authenticated bodily relic inventory",
+      "visitor": "Pilgrimage in October 2026 evidenced; hill access described historically, current conditions and hours unverified",
+      "evidence": [
+        {
+          "url": "https://timor-leste.gov.tl/wp-content/uploads/2011/07/Timor-Leste-Strategic-Plan-2011-20303.pdf",
+          "issuer": "Government of Timor-Leste",
+          "tier": "GOVERNMENT_PRIMARY",
+          "support": "Official physical shrine description, Soibada hill and associated structures"
+        },
+        {
+          "url": "https://timorleste.tl/destinations/municipalities/manatuto",
+          "issuer": "Timor-Leste Ministry of Tourism",
+          "tier": "GOVERNMENT_PRIMARY",
+          "support": "Aitara listed among Manatuto attractions"
+        },
+        {
+          "url": "https://www.vatican.va/content/francesco/en/speeches/2024/september/documents/20240909-timor-leste-autorita.html",
+          "issuer": "Holy See, 9 September 2024",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "support": "Papal reference to Virgem de Aitara as heavenly patroness"
+        },
+        {
+          "url": "https://timorpost.com/munisipiu/tp-68470/peregrinu-sira-fiar-ba-iha-nossa-senhora-aitara/",
+          "issuer": "Timor Post, 16 October 2026",
+          "tier": "LOCAL_CLERGY_REPORT",
+          "support": "Pilgrimage with Salesian parish priest"
+        }
+      ],
+      "holds": [
+        "Original episcopal decree and current custodial visitor timetable absent",
+        "Banyan, shrine church and convent not individually geocoded",
+        "Local apparition tradition not certified as supernatural"
+      ]
+    },
+    {
+      "record_id": "SG-B12-KR-SUWON-HWASEONG-VISITOR",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "KR",
+      "name": "Suwon Hwaseong Martyrs Shrine — custodial Mass schedule",
+      "status": "EXISTING_B11_VISITOR_EVIDENCE_RECONCILED_WITH_LABEL_DISCREPANCY",
+      "summary_en": "The shrine's own parish website, showing its 1 November 2026 bulletin, provides a current programme: Sunday shrine Masses at 14:00 and 17:00; Monday 09:30; Tuesday–Friday 11:00; Saturday 11:00 devotional Mass; confessions on Wednesdays 14:00–17:00. The diocesan shrine listing labels Saturday 11:00 as a memorial prayer meeting, so the type of Saturday service remains source-conflicted even though the time agrees. Parish Sunday 07:00 and 10:00 and Saturday evening 19:30 are not shrine-only Masses.",
+      "summary_fr": "Le site paroissial du sanctuaire, avec le bulletin du 1er novembre 2026, précise les messes du sanctuaire : dimanche à 14 h et 17 h, lundi à 9 h 30, du mardi au vendredi à 11 h, samedi à 11 h (messe de dévotion), et confessions le mercredi de 14 h à 17 h. La fiche diocésaine désigne cependant le samedi à 11 h comme réunion de prière commémorative : la nature de l'office demeure contradictoire, non son heure. Les messes paroissiales du dimanche à 7 h et 10 h et du samedi soir à 19 h 30 ne doivent pas être étiquetées comme messes propres au sanctuaire.",
+      "history": "B11 established 1932 former church, 1979 present church, martyr memorial and relic evidence; not repeated",
+      "devotion": "Martyrs' memorial, shrine pilgrimage and confessions",
+      "feast": "No additional feast claim",
+      "relics": "B11 diocesan six-saints relic statement unchanged; no new certificate",
+      "visitor": "Current custodian schedule as published on site with 1 November 2026 bulletin; confirm before travel",
+      "evidence": [
+        {
+          "url": "https://suwons.net/",
+          "issuer": "Buksudong parish and Suwon Hwaseong Shrine",
+          "tier": "CUSTODIAL_PRIMARY",
+          "support": "Current 2026 Mass schedule and shrine-versus-parish distinction"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/6",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY_CONFLICT",
+          "support": "Saturday 11:00 labeled memorial prayer meeting"
+        }
+      ],
+      "holds": [
+        "Saturday service type discrepancy between custodian and diocesan descriptions",
+        "Schedules may change; no real-time opening claim"
+      ]
+    },
+    {
+      "record_id": "SG-B12-KR-DIDIMGIL-CLASSIFICATION",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "KR",
+      "name": "Suwon Didimgil pilgrimage — shrine-versus-stage crosswalk",
+      "status": "EXISTING_B11_NETWORK_CROSSWALK_REFINED_NOT_A_NEW_PLACE",
+      "summary_en": "The diocese's Didimgil page distinguishes its fifteen-shrine completion requirement from seventeen numbered walking-course stages. The seventeen include the diocesan offices and designated churches as route endpoints; they must not be converted into seventeen independent shrine identities. The page provides textual route descriptions and distances, not validated GIS linework.",
+      "summary_fr": "La page diocésaine du Didimgil distingue la visite des quinze sanctuaires de ses dix-sept étapes pédestres numérotées. Parmi les étapes figurent aussi l'administration diocésaine et certaines églises servant de départ ou d'arrivée ; il ne faut pas transformer ces dix-sept étapes en autant de sanctuaires distincts. Les itinéraires et distances publiés sont descriptifs, sans tracé SIG vérifié.",
+      "history": "Diocesan pilgrimage programme, not a physical shrine",
+      "devotion": "Walking pilgrimage, stamped pilgrim passport",
+      "feast": "Not applicable",
+      "relics": "Not applicable",
+      "visitor": "Diocesan site provides walking rules and stages; no synthetic route geometry",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/pilgrimage",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Fifteen-shrine rule, seventeen numbered stages, pilgrim stamps and descriptive paths"
+        }
+      ],
+      "holds": [
+        "Do not count seventeen stages as seventeen shrines",
+        "Do not convert descriptive waypoints into coordinates or walking route geometry"
+      ]
+    },
+    {
+      "record_id": "SG-B12-VN-TRA-KIEU-ACCESS",
+      "candidate_id": "SG-INV-0670",
+      "canonical_place_id": null,
+      "country": "VN",
+      "name": "Our Lady of Trà Kiệu — parish church and Bửu Châu hill",
+      "status": "EXISTING_B09_PHYSICAL_CROSSWALK_ENRICHED_ENTRANCES_HELD",
+      "summary_en": "The Diocese of Đà Nẵng documents the 2026 Marian pilgrimage with Mass at the main shrine centre and overnight Eucharistic adoration at the Bửu Châu hill oratory. An earlier diocesan procession account explicitly describes travel from the parish church frontage along the village road to the Marian shrine on the hill. This establishes distinct liturgical spaces and a historical procession connection, but not the precise current public entrances or a georeferenced walking route.",
+      "summary_fr": "Le diocèse de Đà Nẵng décrit le pèlerinage marial de 2026, avec messe au centre principal et adoration eucharistique nocturne à l'oratoire de la colline Bửu Châu. Un récit diocésain antérieur mentionne la procession depuis le parvis de l'église paroissiale, par la route du village, vers le sanctuaire marial de la colline. Les espaces liturgiques et leur lien processionnel sont donc attestés, sans preuve des entrées publiques actuelles ni d'un tracé pédestre géoréférencé.",
+      "history": "1885 Marian apparition accounts are diocesan devotional tradition; not a newly verified supernatural decree",
+      "devotion": "Marian procession, Eucharistic adoration, pilgrimage and confession",
+      "feast": "2026 annual pilgrimage held 29–30 May due to 31 May Trinity Sunday; do not treat as fixed date",
+      "relics": "No bodily relic inventory verified",
+      "visitor": "2026 programme proves pilgrim access during event, not ordinary opening times",
+      "evidence": [
+        {
+          "url": "https://giaophandanang.org/dai-hoi-duc-me-tra-kieu-2026/",
+          "issuer": "Diocese of Đà Nẵng, 31 May 2026",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 shrine centre and Bửu Châu hill liturgical programme"
+        },
+        {
+          "url": "https://giaophandanang.org/legio-mariae-giao-phan-da-nang-hanh-huong-nam-thanh-duc-me-tra-kieu/",
+          "issuer": "Diocese of Đà Nẵng",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Procession via village road from parish church to hill"
+        }
+      ],
+      "holds": [
+        "Exact entrances and independent hill-versus-church map geometry not established",
+        "No route generated from prose"
+      ]
+    },
+    {
+      "record_id": "SG-B12-PR-CUPEY-CATHEDRAL",
+      "candidate_id": "SG-INV-0471",
+      "canonical_place_id": null,
+      "country": "PR",
+      "name": "Cupey National Shrine — cathedral image identity exclusion",
+      "status": "EXISTING_B09_CUPEY_ENRICHED;MAIN_BUILDING_HELD",
+      "summary_en": "Two October 2026 Catholic reports require careful site separation. The 13 October historical symposium explicitly describes the Marian shrine and historic image inside San Juan Bautista Cathedral, whereas the 27 October sanctuary-vicar announcement schedules pilgrim events on 19 November and 5 December at Cupey. The latter also describes bus/parking arrangements and outdoor-event preparations. Neither proves the planned Cupey principal building is complete; the cathedral's historic image cannot be transferred to the Cupey Place.",
+      "summary_fr": "Deux articles catholiques d'octobre 2026 imposent une distinction précise : le colloque historique du 13 octobre traite du sanctuaire et de l'image ancienne à l'intérieur de la cathédrale San Juan Bautista, tandis que l'annonce du vicaire du 27 octobre programme des rassemblements de pèlerins les 19 novembre et 5 décembre à Cupey. Elle précise aussi l'organisation des autocars et du stationnement. Rien ne démontre l'achèvement de l'édifice principal prévu à Cupey ; l'image historique de la cathédrale ne doit pas être attribuée à ce site.",
+      "history": "Historic cathedral Marian image distinct from later Cupey shrine project",
+      "devotion": "Our Lady Mother of Divine Providence, Marian Jubilee",
+      "feast": "19 November 2026 patronal celebration announced; 5 December 2026 jubilee closing announced",
+      "relics": "No bodily relics verified; historic Marian image belongs to cathedral",
+      "visitor": "Cupey events advertised, with bus and parking guidance; routine opening and completed building unverified",
+      "evidence": [
+        {
+          "url": "https://elvisitantepr.com/dr-hector-balvanera-destaca-el-valor-historico-y-espiritual-del-santuario-de-la-madre-de-la-divina-providencia/",
+          "issuer": "El Visitante, 13 October 2026",
+          "tier": "CATHOLIC_PRESS_HISTORICAL_SYMPOSIUM",
+          "support": "Historic sanctuary/image explicitly inside San Juan cathedral"
+        },
+        {
+          "url": "https://elvisitantepr.com/santuario-de-la-providencia-anuncia-celebracion-de-la-patrona-y-clausura-del-ano-jubilar-mariano/",
+          "issuer": "El Visitante, 27 October 2026",
+          "tier": "CATHOLIC_PRESS_VICAR_ANNOUNCEMENT",
+          "support": "Cupey pilgrim event times and bus logistics"
+        }
+      ],
+      "holds": [
+        "Original signed vicariate letter not retrieved",
+        "Cupey main building completion and consecration unverified",
+        "Do not conflate cathedral and Cupey"
+      ]
+    },
+    {
+      "record_id": "SG-B12-CN-TIANJIN-NEGATIVE",
+      "candidate_id": "SG-INV-0612",
+      "canonical_place_id": null,
+      "country": "CN",
+      "name": "Claimed Our Lady of Lourdes Shrine, Tianjin",
+      "status": "EXISTING_B08_HELD;INDEPENDENT_OFFICIAL_TOURISM_NEGATIVE_COMPARATOR",
+      "summary_en": "A Chinese national tourist-office page independently identifies Tianjin's Wanghailou church as Notre-Dame-des-Victoires (Our Lady of Victory) and documents its reconstruction in 1904 after earlier destruction. This corroborates the B08 identity-exclusion finding with a stronger non-directory source. It does not authenticate a separate Our Lady of Lourdes shrine in Tianjin. The Lourdes candidate remains held, without coordinates, visitor schedule or identity substitution.",
+      "summary_fr": "Une notice de l'office national chinois du tourisme identifie l'église Wanghailou de Tianjin comme Notre-Dame-des-Victoires et date sa reconstruction de 1904 après les destructions précédentes. Cette source indépendante renforce l'exclusion déjà formulée en B08. Elle ne prouve pas l'existence d'un sanctuaire Notre-Dame de Lourdes distinct à Tianjin. La candidature Lourdes reste suspendue, sans coordonnées, horaires ni substitution de lieu.",
+      "history": "Wanghailou is a negative comparator, not the target",
+      "devotion": "Lourdes devotion at a distinct Tianjin site not established",
+      "feast": "Not established",
+      "relics": "Not established",
+      "visitor": "No verified Lourdes-shrine visiting evidence",
+      "evidence": [
+        {
+          "url": "https://www.china-tourism.de/en/discover/wanghailou_church/",
+          "issuer": "Tourist Office of the People's Republic of China",
+          "tier": "OFFICIAL_TOURISM_NEGATIVE_COMPARATOR",
+          "support": "Wanghailou = Our Lady of Victory, rebuilt 1904"
+        }
+      ],
+      "holds": [
+        "No original Tianjin Catholic custodian evidence for Lourdes",
+        "Do not replace Lourdes candidate with Wanghailou"
+      ]
+    },
+    {
+      "record_id": "SG-B12-AO-MUXIMA-FEAST",
+      "candidate_id": "SG-INV-0720",
+      "canonical_place_id": null,
+      "country": "AO",
+      "name": "Sanctuary of Our Lady of the Conception, Muxima",
+      "status": "EXISTING_B06_2026_FEAST_EVIDENCE_ADDED;BUILDING_HOLD_UNCHANGED",
+      "summary_en": "A Vatican News report dated 25 August 2026 documents the Diocese of Viana's planned annual pilgrimage at the existing Mama Muxima sanctuary for 3–6 September 2026, including a motorcyclists' pilgrimage and road-safety blessing. This provides dated visitor and devotional evidence beyond B06's April papal visit. The article is an announcement, not independent confirmation of the September event's completion, and it does not resolve conflicting descriptions of the new basilica's construction.",
+      "summary_fr": "Un article de Vatican News daté du 25 août 2026 annonce le pèlerinage annuel organisé par le diocèse de Viana au sanctuaire existant de Mama Muxima du 3 au 6 septembre 2026, avec une journée des motocyclistes et une bénédiction liée à la sécurité routière. Cette pièce apporte des données datées sur l'accueil des pèlerins, au-delà de la visite papale d'avril décrite en B06. Il s'agit d'une annonce, non d'une confirmation indépendante de la tenue des journées ; elle ne résout pas la contradiction concernant l'achèvement de la nouvelle basilique.",
+      "history": "Historic sanctuary and new construction distinct; B06 building identity hold preserved",
+      "devotion": "Immaculate Conception, Marian pilgrimage and blessing",
+      "feast": "3–6 September 2026 pilgrimage announced, not an inferred permanent liturgical feast",
+      "relics": "No bodily relic evidence",
+      "visitor": "Public pilgrimage advertised; routine opening hours and new building completion not established",
+      "evidence": [
+        {
+          "url": "https://www.vaticannews.va/en/africa/news/2026-08/angola-motorcycle-pilgrimage-to-the-shrine-of-our-lady-of-muxim.html",
+          "issuer": "Vatican News, 25 August 2026",
+          "tier": "CATHOLIC_NEWS_DIOCESAN_REPORT",
+          "support": "Diocese of Viana's September pilgrimage announcement"
+        }
+      ],
+      "holds": [
+        "2026 September pilgrimage completion not independently confirmed",
+        "Existing versus new building unresolved as in B06"
+      ]
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": null,
+      "task": "Zobué: obtain original shrine decree, entrance/address and routine pilgrimage access; separately identify Monte da Esperança chapel"
+    },
+    {
+      "candidate_id": "SG-INV-0682",
+      "task": "Aitara: original Baucau episcopal national-shrine decree and current custodial schedule; preserve apparition-tradition distinction"
+    },
+    {
+      "candidate_id": null,
+      "task": "Songol: source-check full diocesan history and current Mass programme; retain B11 provisional until evidenced"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Nishizaka: obtain contemporary Jesuit relic custody inventory resolving museum versus St Philip church"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana: original ecclesiastical national-shrine decree and 2026 feast/visitor notice"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd: visitor/security access and tomb custody, distinct from Our Lady of the Seeds"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Dili Fatima claimed shrine: remain held absent site-specific diocesan decree; do not conflate Balide, Suai or Manatuto"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Tianjin Lourdes: remain held until original Catholic institutional identity; do not substitute Wanghailou"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Cupey: main sanctuary building completion/consecration and original signed vicariate letter"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Trà Kiệu: precise entrances and current visitor access without inferred walking geometry"
+    }
+  ],
+  "restrictions": [
+    "No merge, publication, deployment, UI/code changes or canonical registry modifications",
+    "No invented coordinates, routes, relic certificates, shrine decrees or liturgical ranks",
+    "No fees, purchases or contacts with custodians"
+  ]
+}
