@@ -2,6 +2,7 @@ import { formatDisplayDate } from "../app/date-format.js";
 import { calendarDateForSemanticKey } from "../calendar/intelligence.js";
 import { existingPlaceEditorialConnections } from "./place-editorial-reuse.js";
 import { resolveRelicIndoorPlacement } from "./relic-indoor-location.js";
+import { resolveApprovedObjectPhotoReuse } from "./approved-object-photo-reuse.js";
 
 const arr=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
@@ -391,7 +392,9 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
         image:approvedGallery.find(photo=>photo.subject_relic_id===entry.id &&
           ["RELIQUARY_HOUSING_REPUTED_RELIC","GLASS_SHRINE_REPORTED_BODILY_REMAINS"].includes(photo.depicts_kind) &&
           /^\d{4}-\d{2}-\d{2}$/.test(photo.photographed_at||"") &&
-          photo.caption_en&&photo.caption_fr)??null,
+          photo.caption_en&&photo.caption_fr)??
+          resolveApprovedObjectPhotoReuse(dataset?.media?.objectPhotoReuses,dataset?.media?.approved,
+            placeId,entry.id),
         inside_location:resolveRelicIndoorPlacement(dataset?.sacredPhenomena?.indoorPlacement,entry.id,placeId),
         access_notice_en:raw?.access_notice_en??null,
         access_notice_fr:raw?.access_notice_fr??null,
