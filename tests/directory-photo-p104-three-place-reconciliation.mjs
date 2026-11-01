@@ -66,6 +66,6 @@ for(const x of c.candidates){
  assert.equal(x.source_photo_approved,false);
 }
 const simulated=assertExploreGeographyRegistry({geoAreas:geo.geoAreas,places:[...geo.places,...proposedRemaining],directoryPlaceLinks:geo.directoryPlaceLinks});
-assert.deepEqual([simulated.counts.places,simulated.counts.directoryPlaceLinks],[532,23]);
-assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length],[530,23]);
+assert.deepEqual([simulated.counts.places,simulated.counts.directoryPlaceLinks],[532,LIVE.links],"Historical two unresolved P104 sites plus current P108 venue link");
+assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length],[530,LIVE.links],"Canonical Place count unchanged; link count grows by independently attested P108");
 console.log("PASS historical photo P104: Hannover now canonically linked; Kolbermoor and Blandford remain held; no publication.");
