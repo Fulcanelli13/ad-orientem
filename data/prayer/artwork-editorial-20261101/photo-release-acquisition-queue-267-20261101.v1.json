@@ -1,0 +1,2616 @@
+{
+  "schema": "ao-prayer-artwork-photo-acquisition-queue.v1",
+  "asOf": "2026-11-01",
+  "productionAllowed": false,
+  "sourceMaster": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+  "editorialRule": "Each group is a catalogue identity research lead, not proof of original photograph identity/rights. Verify every work and exact downloadable image, deduplicate safely by original object, and record one per-slot public release manifest only after quality/license approval.",
+  "counts": {
+    "allMasterPositions": 267,
+    "positionsWithCurrentSelectedPainting": 248,
+    "uniqueCandidateArtworkGroups": 124,
+    "conflictedPrimaryPositionsHeld": 14,
+    "unassignedNonIndividualDoors": 5,
+    "photoReproductionsFullyCleared": 0
+  },
+  "queue": [
+    {
+      "key": "WORK::lorenzo lotto::madonna del rosario",
+      "artist": "Lorenzo Lotto",
+      "title": "Madonna del Rosario",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        null,
+        "HERO::fondazione-zeri:47818"
+      ],
+      "slots": [
+        "COV-pray.rosary",
+        "STG-pray.rosary-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P0_FINAL_LOCK"
+    },
+    {
+      "key": "WORK::master of the female half lengths attributed::the virgin of the seven sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "title": "The Virgin of the Seven Sorrows",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        null
+      ],
+      "slots": [
+        "COV-prayer.seven_sorrows_chaplet"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P0_FINAL_LOCK"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:therese_lisieux_portrait.jpg",
+      "artist": "Historical photograph of St Thérèse",
+      "title": "Therese_lisieux_portrait.jpg",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg",
+      "sourceIdentifiers": [],
+      "slots": [
+        "COV-novena.st_therese"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P0_FINAL_LOCK"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:peter_paul_rubens_-_resurrection_of_christ_triptych_(central_panel).jpg",
+      "artist": "Peter Paul Rubens",
+      "title": "Resurrection of Christ",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+        "PRAYER::regina--primary"
+      ],
+      "slots": [
+        "COV-pray.angelus_regina",
+        "STG-pray.angelus_regina-02",
+        "STG-pray.angelus_regina-04",
+        "STG-pray.rosary-12"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_RECOVERED_EXPLICIT"
+    },
+    {
+      "key": "URL::https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+      "artist": "Jules Breton",
+      "title": "The Song of the Lark",
+      "catalogueUrl": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+      "sourceIdentifiers": [
+        "PRAYER::morning--primary",
+        "HERO::new:jules-breton-song-of-the-lark-artic-94841"
+      ],
+      "slots": [
+        "COV-daily.morning"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_RECOVERED_EXPLICIT"
+    },
+    {
+      "key": "URL::https://artuk.org/discover/artworks/the-prayer-19241",
+      "artist": "Pierre-Édouard Frère",
+      "title": "The Prayer",
+      "catalogueUrl": "https://artuk.org/discover/artworks/the-prayer-19241",
+      "sourceIdentifiers": [
+        "PRAYER::evening--primary",
+        "HERO::artuk:op6-prayer-frere"
+      ],
+      "slots": [
+        "COV-daily.evening"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_RECOVERED_EXPLICIT"
+    },
+    {
+      "key": "WORK::peter paul rubens::the assumption of the virgin",
+      "artist": "Peter Paul Rubens",
+      "title": "The Assumption of the Virgin",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "PRAYER::historic:peter paul rubens:assumption of the virgin"
+      ],
+      "slots": [
+        "COV-prayer.hymns"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_RECOVERED_EXPLICIT"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:mateo_cerezo-la_venida_del_espiritu_santo.jpg",
+      "artist": "Mateo Cerezo",
+      "title": "Pentecost",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+      "sourceIdentifiers": [
+        "APPROVED_REVIEW::STG-pray.rosary-14::06"
+      ],
+      "slots": [
+        "HERO-14",
+        "COV-sacrament_come_holy_spirit",
+        "STG-pray.rosary-14",
+        "COV-novena.holy_ghost",
+        "STG-novena.holy_ghost-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:philippe%20de%20champaigne-pr%c3%a9sentation%20au%20temple.jpg",
+      "artist": "Philippe de Champaigne",
+      "title": "Presentation of Jesus at the Temple",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+      ],
+      "slots": [
+        "HERO-04",
+        "STG-pray.rosary-05",
+        "STG-prayer.seven_sorrows_chaplet-01",
+        "STG-pray.st_joseph_seven_sorrows-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:david_teniers_the_elder_-_the_agony_in_the_garden.jpg",
+      "artist": "David Teniers the Elder",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+      ],
+      "slots": [
+        "HERO-06",
+        "STG-pray.rosary-07",
+        "STG-pray.precious_blood-02",
+        "STG-pray.tenebrae-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1942.635",
+      "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+      "title": "The Annunciation",
+      "catalogueUrl": "https://clevelandart.org/art/1942.635",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-122338"
+      ],
+      "slots": [
+        "STG-pray.angelus-04",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06",
+        "STG-pray.rosary-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:charles_de_la_fosse_-_l%27assomption_vers_1680.jpg",
+      "artist": "Charles de La Fosse",
+      "title": "Assumption of Mary",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:15973724"
+      ],
+      "slots": [
+        "HERO-19",
+        "STG-pray.rosary-15",
+        "COV-novena.assumption"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436672",
+      "artist": "Abraham Hondius",
+      "title": "Christ among the Doctors",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436672",
+      "sourceIdentifiers": [
+        "CANONICAL::met-436672"
+      ],
+      "slots": [
+        "STG-pray.rosary-06",
+        "STG-prayer.seven_sorrows_chaplet-03",
+        "STG-pray.st_joseph_seven_sorrows-07"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:david_teniers_-_the_ascension_(copy_after_leandro_bassano)_wlc_p635.jpg",
+      "artist": "David Teniers",
+      "title": "The Ascension (after Leandro Bassano)",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+      "sourceIdentifiers": [
+        "APPROVED_REVIEW::STG-pray.rosary-13::05"
+      ],
+      "slots": [
+        "HERO-13",
+        "STG-pray.rosary-13"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:philippe_de_champaigne_-_the_visitation_-_y1994-17_-_princeton_university_art_museum.jpg",
+      "artist": "Philippe de Champaigne",
+      "title": "The Visitation",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+      "sourceIdentifiers": [
+        "APPROVED_REVIEW::STG-pray.rosary-03::01"
+      ],
+      "slots": [
+        "STG-pray.rosary-03",
+        "COV-weekday_magnificat"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:la_adoraci%c3%b3n_de_los_reyes_magos_(rubens%2c_prado).jpg",
+      "artist": "Peter Paul Rubens",
+      "title": "Adoration of the Magi",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi"
+      ],
+      "slots": [
+        "STG-pray.rosary-04",
+        "STG-pray.adoration-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:christ_at_the_column-caravaggio_(c._1607).jpg",
+      "artist": "Caravaggio",
+      "title": "Christ at the Column",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Christ_at_the_Column-Caravaggio_(c._1607).jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:15216589"
+      ],
+      "slots": [
+        "STG-pray.rosary-08",
+        "STG-pray.precious_blood-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:le_couronnement_d%27%c3%a9pines.jpg",
+      "artist": "Dirck van Baburen",
+      "title": "Christ Crowned with Thorns",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Le_Couronnement_d%27%C3%A9pines.JPG",
+      "sourceIdentifiers": [
+        "REVIEW::commons:20637285"
+      ],
+      "slots": [
+        "STG-pray.rosary-09"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:domenichino_(domenico_zampieri)_(italian)_-_the_way_to_calvary_-_google_art_project.jpg",
+      "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+      "title": "The Way to Calvary",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:22178536"
+      ],
+      "slots": [
+        "STG-pray.rosary-10"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:hans_jordaens_(iii)_-_the_crucifixion.jpg",
+      "artist": "Hans Jordaens III",
+      "title": "Crucifixion",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:115166028"
+      ],
+      "slots": [
+        "STG-pray.rosary-11"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 1 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 1, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 2 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 2, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 3 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 3, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 4 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 4, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 5 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 5, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-05"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 6 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 6, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 7 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 7, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-07"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 8 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 8, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-08"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 9 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 9, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-09"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 10 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 10, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-10"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 11 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 11, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-11"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 12 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 12, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-12"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 13 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 13, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-13"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "WORK::giandomenico tiepolo::via crucis 14 giandomenico tiepolo san polo original oils",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Via Crucis 14, Giandomenico Tiepolo (San Polo original oils)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.stations-14"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P1_SIGNATURE_PRAYER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:juan_patricio_morlete_ruiz_-_the_heart_of_jesus_-_google_art_project.jpg",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::heart-jesus--primary",
+        "CANONICAL::commons-morlete-sacred-heart-1759"
+      ],
+      "slots": [
+        "HERO-17",
+        "COV-foundations_morning_offering",
+        "COV-foundations_act_of_love",
+        "COV-novena.sacred_heart",
+        "COV-programme.first_friday",
+        "STG-programme.first_friday-01",
+        "STG-pray.adoration.night-03",
+        "COV-sacred_heart_short_prayer",
+        "COV-sacred_heart_aspiration_trust",
+        "COV-prayer.sacred_heart"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1916.786",
+      "artist": "Sodoma (Italian, 1477–1549)",
+      "title": "The Crucifixion",
+      "catalogueUrl": "https://clevelandart.org/art/1916.786",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-97147"
+      ],
+      "slots": [
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "COV-pray.stations",
+        "COV-pray.seven_words",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/437542",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/437542",
+      "sourceIdentifiers": [
+        "CANONICAL::met-437542"
+      ],
+      "slots": [
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "COV-foundations_eternal_rest",
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "COV-dead_eternal_rest_singular",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/438724",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceIdentifiers": [
+        "CANONICAL::met-438724",
+        "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation"
+      ],
+      "slots": [
+        "COV-pray.angelus",
+        "STG-pray.angelus-01",
+        "STG-pray.angelus-02",
+        "STG-pray.angelus-03",
+        "COV-foundations_hail_mary",
+        "COV-novena.annunciation"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1968.100",
+      "artist": "Bernardo Cavallino",
+      "title": "Adoration of the Shepherds",
+      "catalogueUrl": "https://clevelandart.org/art/1968.100",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-143644"
+      ],
+      "slots": [
+        "STG-pray.angelus-07",
+        "COV-pray.little_crown",
+        "STG-pray.little_crown-01",
+        "COV-novena.christmas",
+        "STG-novena.christmas-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436839",
+      "artist": "Georges de La Tour",
+      "title": "The Penitent Magdalen",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436839",
+      "sourceIdentifiers": [
+        "CANONICAL::met-436839",
+        "PRAYER::confession--latour-magdalen"
+      ],
+      "slots": [
+        "COV-daily.nightly_examen",
+        "COV-sacrament_act_of_contrition",
+        "STG-pray.montfort_consecration-01",
+        "STG-pray.montfort_consecration-02",
+        "STG-pray.confession-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:koning_david.aert_de_gelder.jpg",
+      "artist": "Aert de Gelder",
+      "title": "King David",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::rijks:20027909",
+        "CURATED-STG-pray.penitential_psalms-03-0",
+        "CURATED-STG-pray.penitential_psalms-05-0",
+        "CURATED-STG-pray.penitential_psalms-07-0"
+      ],
+      "slots": [
+        "STG-pray.penitential_psalms-01",
+        "STG-pray.penitential_psalms-03",
+        "STG-pray.penitential_psalms-04",
+        "STG-pray.penitential_psalms-05",
+        "STG-pray.penitential_psalms-07"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::jean auguste dominique ingres::the virgin adoring the host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "CANONICAL::met-438434",
+        "PRAYER::adoration--primary"
+      ],
+      "slots": [
+        "DOOR-D5",
+        "COV-pray.adoration",
+        "COV-pray.benediction",
+        "COV-pray.forty_hours"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/438434",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/438434",
+      "sourceIdentifiers": [
+        "PRAYER::adoration--primary"
+      ],
+      "slots": [
+        "COV-adoration_spiritual_communion",
+        "COV-adoration_litany_blessed_sacrament",
+        "STG-pray.adoration.night-05",
+        "STG-pray.benediction-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:saint_thomas_aquinas_(crivelli%2c_15th-century).jpg",
+      "artist": "Carlo Crivelli",
+      "title": "Saint Thomas Aquinas",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "slots": [
+        "COV-benediction_o_salutaris",
+        "COV-benediction_tantum_ergo",
+        "STG-pray.benediction-02",
+        "STG-pray.litany_saints-05"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:philippe_de_champaigne_(1602-1674)_-_the_dream_of_saint_joseph_-_ng6276_-_national_gallery.jpg",
+      "artist": "Philippe de Champaigne",
+      "title": "The Dream of Saint Joseph",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::joseph--primary",
+        "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+      ],
+      "slots": [
+        "COV-devotion_memorare_st_joseph",
+        "COV-devotion_litany_st_joseph",
+        "COV-pray.st_joseph_seven_sorrows",
+        "STG-pray.st_joseph_seven_sorrows-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:gerard_seghers_-_the_nativity_or_the_adoration_of_the_angels.jpg",
+      "artist": "Gerard Seghers",
+      "title": "The Nativity or the Adoration of the Angels",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:93153411"
+      ],
+      "slots": [
+        "HERO-02",
+        "COV-pray.adoration.four_ends",
+        "STG-pray.adoration.four_ends-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1960.79",
+      "artist": "Laurent Girardin",
+      "title": "The Trinity",
+      "catalogueUrl": "https://clevelandart.org/art/1960.79",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-136507"
+      ],
+      "slots": [
+        "HERO-15",
+        "COV-foundations_sign_of_cross",
+        "COV-foundations_glory_be"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:giovanni_lanfranco_-_miracle_of_the_bread_and_fish_-_wga12454.jpg",
+      "artist": "Giovanni Lanfranco",
+      "title": "Miracle of Loaves and Fishes",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes"
+      ],
+      "slots": [
+        "COV-foundations_our_father",
+        "COV-foundations_grace_before_meals",
+        "COV-foundations_grace_after_meals"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:the%20incredulity%20of%20saint%20thomas.jpg",
+      "artist": "Caravaggio",
+      "title": "The Incredulity of Saint Thomas",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::W07-014"
+      ],
+      "slots": [
+        "COV-foundations_act_of_faith",
+        "STG-pray.five_wounds-05",
+        "STG-pray.precious_blood-07"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:anthony_van_dyck_-_christ_on_the_cross_between_the_two_criminals.jpg",
+      "artist": "Anthony van Dyck",
+      "title": "The Lance Thrust",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+      ],
+      "slots": [
+        "COV-pray.precious_blood",
+        "STG-prayer.seven_sorrows_chaplet-05",
+        "COV-adoration_anima_christi"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436503",
+      "artist": "Luca Giordano",
+      "title": "The Flight into Egypt",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436503",
+      "sourceIdentifiers": [
+        "REVIEW::met:436503"
+      ],
+      "slots": [
+        "STG-prayer.seven_sorrows_chaplet-02",
+        "STG-pray.st_joseph_seven_sorrows-05",
+        "STG-pray.st_joseph_seven_sorrows-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:juan_patricio_morlete_ruiz_-_the_heart_of_mary_-_google_art_project.jpg",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Mary",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::heart-mary--primary",
+        "CANONICAL::B02-HEART-MARY-MORLETE"
+      ],
+      "slots": [
+        "COV-novena.immaculate_heart",
+        "COV-programme.first_saturday",
+        "COV-marian_consecration_immaculate_heart"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:guidoreni_michaeldefeatssatan.jpg",
+      "artist": "Guido Reni",
+      "title": "Archangel Michael Defeating Satan",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+      ],
+      "slots": [
+        "COV-novena.st_michael",
+        "COV-mass_devotion_leonine",
+        "COV-devotion_prayer_st_michael"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::hubert and jan van eyck::adoration of the mystic lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "title": "Adoration of the Mystic Lamb",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "slots": [
+        "STG-pray.benediction-04",
+        "COV-pray.litany_saints",
+        "STG-pray.litany_saints-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/437978",
+      "artist": "Sodoma (Giovanni Antonio Bazzi)",
+      "title": "Christ Presented to the People (Ecce Homo)",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/437978",
+      "sourceIdentifiers": [
+        "REVIEW::met:437978"
+      ],
+      "slots": [
+        "HERO-07",
+        "STG-pray.adoration.four_ends-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://collections.louvre.fr/ark:/53355/cl010062076",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "catalogueUrl": "https://collections.louvre.fr/ark:/53355/cl010062076",
+      "sourceIdentifiers": [
+        "CURATED-20261031-HERO-09-1",
+        "CURATED-20261031-HERO-16-1"
+      ],
+      "slots": [
+        "HERO-09",
+        "HERO-16"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436199",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "title": "Christ Healing the Sick",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436199",
+      "sourceIdentifiers": [
+        "CANONICAL::met-436199"
+      ],
+      "slots": [
+        "HERO-18",
+        "STG-litany_loreto_1962-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/437607",
+      "artist": "Carlo Saraceni",
+      "title": "Paradise",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/437607",
+      "sourceIdentifiers": [
+        "PRAYER::saints--saraceni"
+      ],
+      "slots": [
+        "HERO-20",
+        "STG-pray.litany_saints-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::francesco albani::french la pr dication de saint jean baptiste predication of saint john the baptist",
+      "artist": "Francesco Albani",
+      "title": "French: La Prédication de saint Jean Baptiste | Predication of Saint John the Baptist",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::commons:15179213"
+      ],
+      "slots": [
+        "COV-weekday_benedictus",
+        "STG-pray.litany_saints-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:jan_janssens_-_resurrection.jpg",
+      "artist": "Jan Janssens",
+      "title": "The Resurrection",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_Resurrection.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::regina--jan-janssens"
+      ],
+      "slots": [
+        "STG-pray.angelus-09",
+        "COV-foundations_apostles_creed"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1982.36",
+      "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+      "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+      "catalogueUrl": "https://clevelandart.org/art/1982.36",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-150955"
+      ],
+      "slots": [
+        "STG-pray.angelus_regina-01",
+        "STG-litany_loreto_1962-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::wouter crabeth ii::dutch de ongelovige thomas the incredulity of st thomas",
+      "artist": "Wouter Crabeth II",
+      "title": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::commons:1755068"
+      ],
+      "slots": [
+        "STG-pray.angelus_regina-03",
+        "STG-pray.five_wounds-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1996.26",
+      "artist": "Hendrik van Balen (Flemish, 1575–1632)",
+      "title": "The Trinity",
+      "catalogueUrl": "https://clevelandart.org/art/1996.26",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-159488"
+      ],
+      "slots": [
+        "DOOR-D2",
+        "COV-benediction_divine_praises"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:franceschini,_marcantonio_-_the_guardian_angel_-_google_art_project.jpg",
+      "artist": "Marcantonio Franceschini",
+      "title": "The Guardian Angel",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::angel--franceschini"
+      ],
+      "slots": [
+        "COV-foundations_guardian_angel",
+        "DOOR-D8"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:erasmus_quellinus_-_the_return_of_the_prodigal_son.jpg",
+      "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+      "title": "The return of the prodigal son",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_-_The_return_of_the_prodigal_son.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:161200952"
+      ],
+      "slots": [
+        "COV-mass_confiteor",
+        "STG-pray.confession-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:madonna%20of%20the%20rosary-caravaggio%20%281607%29.jpg",
+      "artist": "Caravaggio",
+      "title": "Madonna of the Rosary",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::rosary--caravaggio"
+      ],
+      "slots": [
+        "DOOR-D3",
+        "COV-pray.rosary_methods"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::eugeniusz kazimirowski::divine mercy the original 1934",
+      "artist": "Eugeniusz Kazimirowski",
+      "title": "Divine Mercy (the original, 1934)",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "PRAYER::w1-kazimirowski"
+      ],
+      "slots": [
+        "COV-pray.divine_mercy",
+        "STG-pray.divine_mercy-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.clevelandart.org/art/1916.816",
+      "artist": "",
+      "title": "Preparation for the Crucifixion",
+      "catalogueUrl": "https://www.clevelandart.org/art/1916.816",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-97181"
+      ],
+      "slots": [
+        "STG-pray.five_wounds-01",
+        "STG-pray.precious_blood-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:tintoretto-circumcision.jpg",
+      "artist": "Jacopo Tintoretto",
+      "title": "The Circumcision",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+      "sourceIdentifiers": [
+        "APPROVED_REVIEW::STG-pray.precious_blood-01::01"
+      ],
+      "slots": [
+        "STG-pray.precious_blood-01",
+        "STG-pray.st_joseph_seven_sorrows-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::ludovico carracci::the lamentation",
+      "artist": "Ludovico Carracci",
+      "title": "The Lamentation",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::met:438427"
+      ],
+      "slots": [
+        "STG-prayer.seven_sorrows_chaplet-06",
+        "STG-pray.seven_words-08"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:ultima_cena_-_lanfranco.jpg",
+      "artist": "Giovanni Lanfranco",
+      "title": "The Last Supper",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Ultima_Cena_-_Lanfranco.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:48577448"
+      ],
+      "slots": [
+        "COV-novena.corpus_christi",
+        "STG-prayer.communion-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:20090211_np_inmaculada.jpg",
+      "artist": "Diego Velázquez",
+      "title": "Immaculate Conception",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:20090211_NP_Inmaculada.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:11005776"
+      ],
+      "slots": [
+        "COV-novena.immaculate_conception",
+        "STG-litany_loreto_1962-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436781",
+      "artist": "Jan Joest of Kalkar",
+      "title": "The Adoration of the Christ Child",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436781",
+      "sourceIdentifiers": [
+        "REVIEW::met:436781"
+      ],
+      "slots": [
+        "STG-novena.st_therese-01",
+        "STG-pray.st_joseph_seven_sorrows-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:salvator_mundi_-_joos_van_cleve_-_mus%c3%a9e_du_louvre_peintures_rf_187.jpg",
+      "artist": "Joos van Cleve",
+      "title": "Christ as Salvator Mundi \" \"",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Salvator_Mundi_-_Joos_van_Cleve_-_Mus%C3%A9e_du_Louvre_Peintures_RF_187.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:178038797"
+      ],
+      "slots": [
+        "COV-novena.christ_the_king",
+        "COV-devotion_consecration_christ_king"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:aparici%c3%b3n_del_ni%c3%b1o_a_san_antonio_-_antonio_del_castillo_saavedra.jpg",
+      "artist": "Antonio del Castillo y Saavedra",
+      "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "sourceIdentifiers": [
+        "CURATED-20261031-COV-novena.st_anthony_nine_tuesdays-1",
+        "CURATED-COV-devotion_st_anthony_lost_items-0"
+      ],
+      "slots": [
+        "COV-novena.st_anthony_nine_tuesdays",
+        "COV-devotion_st_anthony_lost_items"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1959.189",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Immaculate Conception",
+      "catalogueUrl": "https://clevelandart.org/art/1959.189",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-135659"
+      ],
+      "slots": [
+        "STG-pray.montfort_consecration-03",
+        "COV-litany_loreto_1962"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:ghent_altarpiece_-_adoration_of_the_mystic_lamb.jpg",
+      "artist": "Hubert and Jan van Eyck",
+      "title": "Adoration of the Mystic Lamb",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "slots": [
+        "COV-benediction_versicles",
+        "COV-benediction_adoremus_ps116"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1949.185",
+      "artist": "Battista Dossi (Italian, c. 1490–1548)",
+      "title": "Holy Family with a Shepherd",
+      "catalogueUrl": "https://clevelandart.org/art/1949.185",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-126768"
+      ],
+      "slots": [
+        "STG-pray.adoration.night-01",
+        "STG-pray.adoration.night-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/442488",
+      "artist": "Nicolas Poussin",
+      "title": "The Agony in the Garden",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/442488",
+      "sourceIdentifiers": [
+        "CANONICAL::met-442488"
+      ],
+      "slots": [
+        "STG-pray.adoration.night-02",
+        "COV-pray.tenebrae"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::jan and hubert van eyck::the adoration of the mystic lamb",
+      "artist": "Jan and Hubert van Eyck",
+      "title": "The Adoration of the Mystic Lamb",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.adoration-02",
+        "STG-pray.benediction-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::christian wilhelm ernst dietrich::christ healing the sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "title": "Christ Healing the Sick",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "CANONICAL::met-436199"
+      ],
+      "slots": [
+        "STG-pray.adoration.four_ends-04",
+        "COV-pray.occasional_intercessions"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.clevelandart.org/art/1915.407",
+      "artist": "",
+      "title": "Pietà",
+      "catalogueUrl": "https://www.clevelandart.org/art/1915.407",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-94846"
+      ],
+      "slots": [
+        "STG-pray.seven_words-03",
+        "STG-pray.seven_words-07"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:bouguereau_-_virgin_of_consolation.jpg",
+      "artist": "William-Adolphe Bouguereau",
+      "title": "The Virgin of Consolation",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:18589500"
+      ],
+      "slots": [
+        "COV-marian_memorare",
+        "COV-sub_tuum"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:john_martin_-_the_great_day_of_his_wrath_-_google_art_project.jpg",
+      "artist": "John Martin",
+      "title": "The Great Day of His Wrath",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "CURATED-20261031-HERO-01-1"
+      ],
+      "slots": [
+        "HERO-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:bartolom%c3%a9_esteban_murillo_-_adoration_of_the_magi_-_google_art_project.jpg",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Adoration of the Magi",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::visit--murillo-magi"
+      ],
+      "slots": [
+        "HERO-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son",
+      "catalogueUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "sourceIdentifiers": [
+        "HERO::nga:34956",
+        "PRAYER::confession--primary"
+      ],
+      "slots": [
+        "HERO-05"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:entry_of_christ_into_jerusalem_by_anthony_van_dyck.jpg",
+      "artist": "Anthony van Dyck",
+      "title": "The Entry of Christ into Jerusalem",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "sourceIdentifiers": [
+        "CURATED-20261031-HERO-08-1",
+        null
+      ],
+      "slots": [
+        "HERO-08"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.clevelandart.org/art/1916.786",
+      "artist": "Sodoma",
+      "title": "The Crucifixion",
+      "catalogueUrl": "https://www.clevelandart.org/art/1916.786",
+      "sourceIdentifiers": [
+        "CURATED-20261031-HERO-10-1"
+      ],
+      "slots": [
+        "HERO-10"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::dchnwam::54a pierre paul rubens le christ triomphant de la mort et du p ch vers 1615 16",
+      "artist": "DCHNwam",
+      "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::commons:163856843"
+      ],
+      "slots": [
+        "HERO-11"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::ricci sebastiano::the resurrection",
+      "artist": "Ricci, Sebastiano",
+      "title": "The Resurrection",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::commons:22002144"
+      ],
+      "slots": [
+        "HERO-12"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:carracci-purgatory.jpg",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "sourceIdentifiers": [
+        "CURATED-20261031-HERO-21-1",
+        null
+      ],
+      "slots": [
+        "HERO-21"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:ambrosius%20benson%20-%20salvator%20mundi.jpeg",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+      "sourceIdentifiers": [
+        "PRAYER::king--primary"
+      ],
+      "slots": [
+        "HERO-22"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.clevelandart.org/art/1959.189",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Immaculate Conception",
+      "catalogueUrl": "https://www.clevelandart.org/art/1959.189",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-135659"
+      ],
+      "slots": [
+        "HERO-23"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::francesco solimena italian 1657 1747::the risen christ appearing to the virgin",
+      "artist": "Francesco Solimena (Italian, 1657–1747)",
+      "title": "The Risen Christ Appearing to the Virgin",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::cma:146167"
+      ],
+      "slots": [
+        "STG-pray.angelus-08"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:vierge_en_oraison_(il_sassoferrato).jpg",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:87865020"
+      ],
+      "slots": [
+        "COV-daily.personal_rule"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:simon_de_vos_-_christ_on_the_sea_of_galilee.jpg",
+      "artist": "Simon de Vos",
+      "title": "Christ on the Sea of Galilee",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_Christ_on_the_sea_of_Galilee.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:38398823"
+      ],
+      "slots": [
+        "COV-foundations_act_of_hope"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:the_incredulity_of_saint_thomas.jpg",
+      "artist": "Caravaggio",
+      "title": "The Incredulity of Saint Thomas",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::W07-014"
+      ],
+      "slots": [
+        "COV-foundations_prayer_of_adoration"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:jean_ii_restout_-_pentecost_-_wga19318.jpg",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-ean-estout-entecost"
+      ],
+      "slots": [
+        "COV-traditional_veni_sancte_sequence"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:sir_anthony_van_dyck_saint_francis_of_assisi_at_the_foot_of_the_cross114813).jpg",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Francis of Assisi at the foot of the Cross",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Sir_anthony_van_dyck_saint_francis_of_assisi_at_the_foot_of_the_cross114813).jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:103782584"
+      ],
+      "slots": [
+        "COV-pray.five_wounds"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436721",
+      "artist": "Adriaen Isenbrant",
+      "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436721",
+      "sourceIdentifiers": [
+        "REVIEW::met:436721"
+      ],
+      "slots": [
+        "STG-pray.precious_blood-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:titian%2c_christ_carrying_the_cross._oil_on_canvas%2c_67_x_77_cm%2c_c._1565._madrid%2c_museo_nacional_del_prado.jpg",
+      "artist": "Titian",
+      "title": "Christ Carrying the Cross",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+      "sourceIdentifiers": [
+        "CANONICAL::ART-itian-hrist-arrying-the-ross"
+      ],
+      "slots": [
+        "STG-pray.precious_blood-05"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:solesmes_(nord,_fr)_chemin_de_croix_par_delacroix,_station_04.jpg",
+      "artist": "Attributed in Commons filename to Delacroix",
+      "title": "Solesmes — Fourth Station of the Way of the Cross",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord,_Fr)_chemin_de_Croix_par_Delacroix,_station_04.jpg",
+      "sourceIdentifiers": [
+        "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04"
+      ],
+      "slots": [
+        "STG-prayer.seven_sorrows_chaplet-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/438338",
+      "artist": "Annibale Carracci",
+      "title": "The Burial of Christ",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/438338",
+      "sourceIdentifiers": [
+        "CANONICAL::met-438338"
+      ],
+      "slots": [
+        "STG-prayer.seven_sorrows_chaplet-07"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::master of the female half lengths attributed::virgin of the seven sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "title": "Virgin of the Seven Sorrows",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "COV-novena.seven_sorrows"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:giovanni_francesco_barbieri_-_saint_joseph_with_the_flowering_rod.jpg",
+      "artist": "Guercino",
+      "title": "Saint Joseph with the Flowering Rod",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Joseph_with_the_Flowering_Rod.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:77218157"
+      ],
+      "slots": [
+        "COV-novena.st_joseph"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:our_holy_mother_of_perpetual_succour.jpg",
+      "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+      "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "sourceIdentifiers": [
+        "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+      ],
+      "slots": [
+        "COV-novena.perpetual_help"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:eustache_le_sueur_ecce_homo.jpg",
+      "artist": "Eustache Le Sueur",
+      "title": "Eustache Le Sueur Ecce Homo",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_Ecce_Homo.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:199348815"
+      ],
+      "slots": [
+        "COV-novena.holy_face_1887"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:andrea%20previtali%20-%20salvator%20mundi%20-%20google%20art%20project.jpg",
+      "artist": "Andrea Previtali",
+      "title": "Salvator Mundi",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Andrea%20Previtali%20-%20Salvator%20Mundi%20-%20Google%20Art%20Project.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::king--previtali"
+      ],
+      "slots": [
+        "STG-pray.montfort_consecration-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::juan patricio morlete ruiz::the heart of mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Mary",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "CANONICAL::B02-HEART-MARY-MORLETE",
+        "PRAYER::heart-mary--primary"
+      ],
+      "slots": [
+        "STG-programme.first_saturday-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://clevelandart.org/art/1998.10",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "title": "The Holy Family",
+      "catalogueUrl": "https://clevelandart.org/art/1998.10",
+      "sourceIdentifiers": [
+        "CANONICAL::cma-160143"
+      ],
+      "slots": [
+        "COV-pray.adoration.night"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:bernardo_strozzi_-_the_guardian_angel_-_76.256_-_museum_of_fine_arts.jpg",
+      "artist": "Bernardo Strozzi",
+      "title": "The Guardian Angel",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+      "sourceIdentifiers": [
+        "PRAYER::angel--strozzi"
+      ],
+      "slots": [
+        "STG-pray.adoration.night-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.clevelandart.org/art/1931.245",
+      "artist": "Giovanni Battista Piazzetta",
+      "title": "The Supper at Emmaus",
+      "catalogueUrl": "https://www.clevelandart.org/art/1931.245",
+      "sourceIdentifiers": [
+        "CURATED-STG-pray.adoration.four_ends-02-0"
+      ],
+      "slots": [
+        "STG-pray.adoration.four_ends-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
+      "artist": "Sebastiano Ricci",
+      "title": "The Last Communion of Saint Mary of Egypt",
+      "catalogueUrl": "https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-prayer.communion-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::sodoma giovanni antonio bazzi::the crucifixion",
+      "artist": "Sodoma (Giovanni Antonio Bazzi)",
+      "title": "The Crucifixion",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [],
+      "slots": [
+        "STG-pray.seven_words-06"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:adriaen_van_der_werff_-_de_graflegging_van_christus_-_1967_(ok)_-_museum_boijmans_van_beuningen.jpg",
+      "artist": "Adriaen van der Werff",
+      "title": "De graflegging van Christus",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:67344360"
+      ],
+      "slots": [
+        "STG-pray.tenebrae-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/437490",
+      "artist": "Hans Memling",
+      "title": "The Annunciation",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/437490",
+      "sourceIdentifiers": [
+        "CANONICAL::met-437490"
+      ],
+      "slots": [
+        "STG-litany_loreto_1962-02"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://www.metmuseum.org/art/collection/search/436101",
+      "artist": "Gerard David",
+      "title": "The Rest on the Flight into Egypt",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/436101",
+      "sourceIdentifiers": [
+        "REVIEW::met:436101"
+      ],
+      "slots": [
+        "COV-devotion_ad_te_beate_ioseph"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::guido reni::reni and studio st joseph and the christ child lot 55",
+      "artist": "Guido Reni",
+      "title": "Reni - and Studio - St. Joseph and the Christ Child, lot.55",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::commons:124722400"
+      ],
+      "slots": [
+        "STG-pray.st_joseph_seven_sorrows-08"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:simon_vouet%2c_martyre_de_sainte-catherine_(avant_restauration).jpg",
+      "artist": "Simon Vouet",
+      "title": "Martyrdom of Saint Catherine",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Simon_Vouet%2C_Martyre_de_Sainte-Catherine_(avant_restauration).jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:81902276"
+      ],
+      "slots": [
+        "STG-pray.litany_saints-04"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:francisco_de_goya_-_saint_gregory_the_great%2c_pope_-_google_art_project.jpg",
+      "artist": "Francisco Goya",
+      "title": "Saint Gregory the Great, Pope",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:29858165"
+      ],
+      "slots": [
+        "COV-church_prayer_for_pope"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::bartolom esteban murillo::the return of the prodigal son",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        null,
+        "HERO::nga:34956",
+        "PRAYER::confession--primary"
+      ],
+      "slots": [
+        "COV-pray.confession"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:jacques_blanchard_-_saint_j%c3%a9r%c3%b4me_%c3%a9crivant.jpg",
+      "artist": "Jvillafruela",
+      "title": "Jacques Blanchard - Saint Jérôme écrivant",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Jacques_Blanchard_-_Saint_J%C3%A9r%C3%B4me_%C3%A9crivant.jpg",
+      "sourceIdentifiers": [
+        "REVIEW::commons:85666930"
+      ],
+      "slots": [
+        "STG-pray.confession-01"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "URL::https://commons.wikimedia.org/wiki/file:artgate_fondazione_cariplo_-_molteni_giuseppe%2c_la_confessione.jpg",
+      "artist": "Giuseppe Molteni",
+      "title": "La Confessione (The Confession)",
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+      "sourceIdentifiers": [
+        "CURATED-STG-pray.confession-03-0"
+      ],
+      "slots": [
+        "STG-pray.confession-03"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    },
+    {
+      "key": "WORK::jvillafruela::jacques blanchard saint j r me crivant",
+      "artist": "Jvillafruela",
+      "title": "Jacques Blanchard - Saint Jérôme écrivant",
+      "catalogueUrl": null,
+      "sourceIdentifiers": [
+        "REVIEW::commons:85666930"
+      ],
+      "slots": [
+        "COV-prayer.lection"
+      ],
+      "photographReleaseState": "UNVERIFIED",
+      "physicalFrameAbsent": null,
+      "licenseForActualFile": null,
+      "nativeDimensions": null,
+      "photosAcquired": 0,
+      "appRenderTested": false,
+      "priority": "P2_OTHER"
+    }
+  ],
+  "heldPositions": [
+    {
+      "slot": "STG-pray.rosary-16",
+      "reason": "Current Rubens Coronation original may match explicitly rejected Oct28 oil sketch, exact identity unresolved",
+      "preservedArtwork": {
+        "artist": "Peter Paul Rubens",
+        "title": "The coronation of the Virgin",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg"
+      }
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "reason": "Annibale Carracci Coronation used on closing Salve Regina; independent approval not established",
+      "preservedArtwork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      }
+    },
+    {
+      "slot": "COV-pray.montfort_consecration",
+      "reason": "Lochner Virgin Crowned by Angels was assigned to Coronation mystery only, not Montfort cover",
+      "preservedArtwork": {
+        "artist": "Stefan Lochner (German, 1400-c. 1452)",
+        "title": "The Virgin Crowned by Angels",
+        "sourcePage": "https://clevelandart.org/art/1968.20"
+      }
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "reason": "Annibale Carracci Coronation used on Montfort stage; independent approval not established",
+      "preservedArtwork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      }
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "reason": "Franceschini Last Communion rejected for Adoration context in Oct28 and not relevant in B02",
+      "preservedArtwork": {
+        "artist": "Marcantonio Franceschini",
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437977"
+      }
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "reason": "Champaigne La Petite Cene Communion cover conflicts with October rejection / unsupported derived preference; preserve older keeps",
+      "preservedArtwork": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène (The Small Last Supper)",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg"
+      }
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "reason": "Annibale Carracci Coronation used on Marian vignette; independent approval not established",
+      "preservedArtwork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      }
+    },
+    {
+      "slot": "STG-litany_loreto_1962-05",
+      "reason": "Annibale Carracci Coronation explicitly scoped to Rosary Coronation mystery in B04",
+      "preservedArtwork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      }
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "reason": "Annibale Carracci Coronation explicitly scoped to Rosary Coronation mystery in B04",
+      "preservedArtwork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      }
+    },
+    {
+      "slot": "COV-pray.penitential_psalms",
+      "reason": "Murillo Return of Prodigal Son was rejected for Penitential Psalms in Oct28; Confession cover lock remains untouched",
+      "preservedArtwork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+      }
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-02",
+      "reason": "Same Murillo work rejected for this prayer family; no substitute authorised",
+      "preservedArtwork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+      }
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "reason": "Spanish Painter Mass of Saint Gregory explicitly not relevant to Prayer in B02",
+      "preservedArtwork": {
+        "artist": "Spanish Painter",
+        "title": "The Mass of Saint Gregory",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437722"
+      }
+    },
+    {
+      "slot": "COV-prayer.good_death",
+      "reason": "Champaigne Dream of Saint Joseph Oct28 REJECT Good Death but later B01 says also fits; contradiction requires user decision",
+      "preservedArtwork": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "sourcePage": null
+      }
+    },
+    {
+      "slot": "STG-prayer.good_death-01",
+      "reason": "Champaigne Dream of Saint Joseph Oct28 REJECT dying context; Altomonte KEEP but better-photo required",
+      "preservedArtwork": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "sourcePage": null
+      }
+    }
+  ],
+  "unassignedDoors": [
+    "DOOR-D1",
+    "DOOR-D4",
+    "DOOR-D6",
+    "DOOR-D7",
+    "DOOR-D9"
+  ]
+}
