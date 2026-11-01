@@ -26,6 +26,17 @@ const extra=projectPublishedProvisionalMassSites(r49,
 const full=projectCL2PhysicalDirectory(extra,
   load("data/directory/generated/cl2-physical-site-index.v1.json"));
 assert.equal(full.length,CL2_PHYSICAL_SITE_COUNT+3);
+// P108 display-only correction: the exact shrine must not appear in Louisiana.
+// Its approved photograph and canonical Place link were already released in #2217.
+const laCrosse=full.filter(x=>x.physical_group_id==="RG-ACCD4654B950");
+assert.equal(laCrosse.length,1,"Exact Guadalupe La Crosse physical site");
+assert.equal(laCrosse[0].source_id,"AO-AMER-R28-US-23-05");
+assert.equal(laCrosse[0].country_code,"US");
+assert.equal(laCrosse[0].subtitle,"La Crosse, WI · US");
+assert.equal(laCrosse[0].address.formatted,"5250 Justin Road, La Crosse, WI 54601");
+assert.ok(!laCrosse[0].subtitle.includes("Louisiana"));
+assert.ok(laCrosse[0].source_links.some(x=>x.url==="https://guadalupeshrine.org/hours-locations/"));
+assert.ok(laCrosse[0].map_publishable,"Preserve existing provisional R49 pin");
 const counts=tlmSiteEvidenceCounts(full);
 assert.equal(counts.ALL,full.length);
 assert.equal(counts.ALL,counts.REVIEWED_PIN+counts.SOURCE_PIN+counts.ADDRESS_ONLY);
