@@ -19,7 +19,7 @@ button:hover{background:#415263}button:disabled{opacity:.4;cursor:not-allowed}
 .panel-head{padding:13px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:8px}
 .paper{background:#fbfaf7;color:#1b1a17;height:min(66vh,760px);min-height:310px;overflow:auto;display:flex;align-items:start;justify-content:flex-start}
 .paper img{width:100%;height:auto;max-width:none;display:block}
-.paper .empty{padding:30px;color:#57514a}
+.paper .empty{padding:30px;color:#57514a}.paper .print-error{padding:18px;color:#673c32;max-width:28ch}.paper .print-error[hidden]{display:none}
 #engraveViewport{width:100%;min-height:310px;padding:15px;overflow:auto;background:#fff;color:#111}
 #engraveViewport svg{max-width:100%;height:auto}
 .review{margin-top:20px;border:1px solid var(--line);background:var(--panel);padding:16px;border-radius:14px}
@@ -46,7 +46,7 @@ a{color:#c9dce9}
 </div>
 <div class="panes">
 <section class="panel"><div class="panel-head"><div><h2>Printed witness</h2><small id="pageReference">Solesmes · Graduale Romanum 1961</small></div><a id="sourcePdf" href="https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf" target="_blank" rel="noopener noreferrer">Open facsimile</a></div>
-<div class="paper" id="printStage"><img id="printImage" alt="Scanned original Solesmes 1961 Kyriale page"></div></section>
+<div class="paper" id="printStage"><img id="printImage" alt="Scanned original Solesmes 1961 Kyriale page"><p class="print-error" id="printLoadStatus" role="status" hidden>Original scanned page unavailable. Use “Open facsimile” above to compare the printed witness; do not certify music without viewing the original score.</p></div></section>
 <section class="panel"><div class="panel-head"><div><h2>Source-preserved GABC</h2><small id="scoreReference">Exact GregoBase candidate · research only</small></div><a id="gabcLink" target="_blank" rel="noopener noreferrer">Original GABC</a></div>
 <div id="engraveViewport" aria-label="Offline rendered Gregorian neumes"></div><div class="hint" id="engraveStatus" style="padding:10px 16px" role="status">No score loaded.</div></section>
 </div>
@@ -102,7 +102,12 @@ function renderPage(){
  $("previous").disabled=pageIndex===0;
  $("next").disabled=pageIndex===s.printedPages.length-1;
  $("pageReference").textContent="Solesmes 1961 · printed page "+p+" · "+(pageIndex+1)+"/"+s.printedPages.length;
- const img=$("printImage");img.src=url;img.alt="Original Solesmes 1961 printed page "+p+" for "+s.title;
+ const img=$("printImage"),imageStatus=$("printLoadStatus");
+ imageStatus.hidden=true;
+ img.alt="Original Solesmes 1961 printed page "+p+" for "+s.title;
+ img.onload=()=>{if(img.getAttribute("src")===url)imageStatus.hidden=true};
+ img.onerror=()=>{if(img.getAttribute("src")===url)imageStatus.hidden=false};
+ img.src=url;
  img.style.width=$("zoomRange").value+"%";
  $("sourcePdf").href=ledger.editionPdf;
  $("gabcLink").href=s.sourceUrl;
