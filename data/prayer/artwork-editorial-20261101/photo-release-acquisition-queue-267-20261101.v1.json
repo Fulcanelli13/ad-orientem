@@ -10,7 +10,11 @@
     "uniqueCandidateArtworkGroups": 124,
     "conflictedPrimaryPositionsHeld": 14,
     "unassignedNonIndividualDoors": 5,
-    "photoReproductionsFullyCleared": 0
+    "photoReproductionsFullyCleared": 0,
+    "photographSourceFilesArchived": 9,
+    "distinctArtworkGroupsWithArchivedOriginals": 8,
+    "remainingArtworkGroupsWithoutAnyIdentifiedSource": 20,
+    "stationsWithExactSourceFilePagesIdentified": 14
   },
   "queue": [
     {
@@ -26,13 +30,43 @@
         "COV-pray.rosary",
         "STG-pray.rosary-01"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 2,
       "appRenderTested": false,
-      "priority": "P0_FINAL_LOCK"
+      "priority": "P0_FINAL_LOCK",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "lotto-complete-01",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/lotto-complete-01.jpg",
+          "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+          "originalSha1": "c153ee8c96a5068f8889d2af0ccee40b2b632320",
+          "originalBytes": 3355634,
+          "licenseReported": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "photographerOrSourceCredit": "Lorenzo Lotto",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        },
+        {
+          "sourceId": "lotto-detail-11",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_11.jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/lotto-detail-11.jpg",
+          "sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+          "originalSha1": "486e226f89228abdb0e348be39e7eb92b29ac00c",
+          "originalBytes": 5277580,
+          "licenseReported": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "photographerOrSourceCredit": "Lorenzo Lotto",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "WORK::master of the female half lengths attributed::the virgin of the seven sorrows",
@@ -85,13 +119,29 @@
         "STG-pray.angelus_regina-04",
         "STG-pray.rosary-12"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_RECOVERED_EXPLICIT"
+      "priority": "P1_RECOVERED_EXPLICIT",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "rubens-resurrection-central",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/rubens-resurrection-central.jpg",
+          "sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+          "originalSha1": "86de2b5f40868bc29eb0010550733a03321f0b88",
+          "originalBytes": 4593377,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Peter Paul Rubens",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://www.artic.edu/artworks/94841/the-song-of-the-lark",
@@ -211,13 +261,29 @@
         "STG-pray.precious_blood-02",
         "STG-pray.tenebrae-01"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "teniers-agony",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/teniers-agony.jpg",
+          "sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+          "originalSha1": "4cb63ff9ce98e1c337f849e16debd3ec5d22eef5",
+          "originalBytes": 1916709,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "David Teniers the Elder",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://clevelandart.org/art/1942.635",
@@ -254,13 +320,29 @@
         "STG-pray.rosary-15",
         "COV-novena.assumption"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "lafosse-assumption",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/lafosse-assumption.jpg",
+          "sha256": "eb28462dec80c3155f517a10e8cdb9b4ec048dccbd621e7c1782cf407560af92",
+          "originalSha1": "bdd0797eca720226c952a74329091c72a78d1e00",
+          "originalBytes": 3533087,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Charles de La Fosse",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://www.metmuseum.org/art/collection/search/436672",
@@ -315,13 +397,29 @@
         "STG-pray.rosary-03",
         "COV-weekday_magnificat"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "champaigne-visitation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/champaigne-visitation.jpg",
+          "sha256": "89089ce72b82257f9f6aa1c589bcd2945b140f7a5a6cb8d6b797b4890a0521d8",
+          "originalSha1": "1d6e7eb333f32864cd4b4c97c96fd8b4e79aa19a",
+          "originalBytes": 594994,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Philippe de Champaigne",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:la_adoraci%c3%b3n_de_los_reyes_magos_(rubens%2c_prado).jpg",
@@ -355,13 +453,29 @@
         "STG-pray.rosary-08",
         "STG-pray.precious_blood-03"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "caravaggio-column",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Christ_at_the_Column-Caravaggio_(c._1607).jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/caravaggio-column.jpg",
+          "sha256": "65784503d23c665788ecf493ecda9074c0effc0191d385f82efda65322907466",
+          "originalSha1": "18532b6bca119bf815451a6a777d3b4f8387e3e1",
+          "originalBytes": 6436272,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Caravaggio",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:le_couronnement_d%27%c3%a9pines.jpg",
@@ -374,13 +488,29 @@
       "slots": [
         "STG-pray.rosary-09"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "baburen-thorns",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Couronnement_d%27%C3%A9pines.JPG",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/baburen-thorns.jpg",
+          "sha256": "461a1331552d4c4d12531fac090920edabecaa8a5c5819375c3b69ea03f167da",
+          "originalSha1": "2f6312cfe6f24678b3fb4d990026d24c62c5fc1e",
+          "originalBytes": 5703711,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Dirck van Baburen",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:domenichino_(domenico_zampieri)_(italian)_-_the_way_to_calvary_-_google_art_project.jpg",
@@ -393,13 +523,29 @@
       "slots": [
         "STG-pray.rosary-10"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "domenichino-calvary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/domenichino-calvary.jpg",
+          "sha256": "235e2d63f3680d3c7dc311d6819cc7a22d3993f45af171b18cbdc903bd4c0be0",
+          "originalSha1": "55e5ae3f5268453432162bd0f46d4f17f2330454",
+          "originalBytes": 3703789,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641) (1581 - 1641) – artist (Italian) Details on Google Art Project",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED"
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:hans_jordaens_(iii)_-_the_crucifixion.jpg",
@@ -435,7 +581,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_I_-_Jesus_is_sentenced_to_death_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 2 giandomenico tiepolo san polo original oils",
@@ -452,7 +607,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_II_-_Jesus_carries_his_cross_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 3 giandomenico tiepolo san polo original oils",
@@ -469,7 +633,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_III_-_Jesus_falls_the_first_time_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 4 giandomenico tiepolo san polo original oils",
@@ -486,7 +659,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 5 giandomenico tiepolo san polo original oils",
@@ -503,7 +685,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 6 giandomenico tiepolo san polo original oils",
@@ -520,7 +711,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VI_-_Veronica_wipes_the_face_of_Jesus_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 7 giandomenico tiepolo san polo original oils",
@@ -537,7 +737,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VII_-_Jesus_falls_the_second_time_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 8 giandomenico tiepolo san polo original oils",
@@ -554,7 +763,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VIII_-_Jesus_meets_the_women_of_Jerusalem_who_weep_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 9 giandomenico tiepolo san polo original oils",
@@ -571,7 +789,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IX_-_Jesus_falls_the_third_time.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 10 giandomenico tiepolo san polo original oils",
@@ -588,7 +815,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_X_-_Jesus_is_stripped_of_his_garments.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 11 giandomenico tiepolo san polo original oils",
@@ -605,7 +841,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XI_-_Jesus_is_nailed_to_the_cross.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 12 giandomenico tiepolo san polo original oils",
@@ -622,7 +867,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 13 giandomenico tiepolo san polo original oils",
@@ -639,7 +893,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XIII_-_Jesus_down_from_the_cross_and_his_body_is_returned_to_his_mother.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 14 giandomenico tiepolo san polo original oils",
@@ -656,7 +919,16 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "sourcePhotoCandidates": [
+        {
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XIV_-_Entombment_of_Christ_by_Giandomenico_Tiepolo.jpg",
+          "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+          "rights": "CC BY-SA 4.0 source candidate, PER_FILE_VERIFY",
+          "exactWorkSourceIdentified": true,
+          "archived": false
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:juan_patricio_morlete_ruiz_-_the_heart_of_jesus_-_google_art_project.jpg",
@@ -2612,5 +2884,13 @@
     "DOOR-D6",
     "DOOR-D7",
     "DOOR-D9"
-  ]
+  ],
+  "state20261101": {
+    "actualOriginalsArchived": 9,
+    "originalSourceArtworkGroupsWithFiles": 8,
+    "stationsWithSourcePages": 14,
+    "stationOriginalsArchived": "separate job pending",
+    "releaseManifestStillEmpty": true,
+    "rightsAndCropHumanSignoff": false
+  }
 }
