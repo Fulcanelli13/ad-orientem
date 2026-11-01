@@ -53,4 +53,12 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
 /* The original source-owned Calendar Class I artwork is also authoritative
    for today's Home hero. Crop just the image; attribution stays legible. */
 .aoH7Screens .aoH7Hero .aoC3DatedImage{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--ao-c3-x,50%) var(--ao-c3-y,30%);transform:scale(var(--ao-c3-zoom,1.075));transform-origin:center}
+
+/* Draft visual proof for the two exact source-owned Met hero photographs.
+   Full painted composition is contained, not center-cropped by the carousel. */
+.aoH7Screens .aoC3PrayerArt .aoC3StagedApprovedPhoto{
+  display:block;width:100%;height:100%;object-fit:contain;
+  object-position:right center;filter:brightness(.77);opacity:.88;
+  background:#080d10
+}
 `;
