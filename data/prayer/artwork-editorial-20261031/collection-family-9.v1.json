@@ -12,7 +12,8 @@
     "excludedDoNotSuggest": 3,
     "sourceLinksRecoveredByExactID": 3,
     "sourceLinkSuggestionsUnverified": 0,
-    "sourceLinksVerifiedByMuseumSourceWave02": 1
+    "sourceLinksVerifiedByMuseumSourceWave02": 1,
+    "reconciledCandidateCount20261101": 112
   },
   "slots": [
     {
@@ -1701,31 +1702,22 @@
       "family": "D9 Life & Intentions",
       "label": "Cover",
       "originalSourceEdges": 4,
-      "excludedFromSuggestions": [],
+      "excludedFromSuggestions": [
+        {
+          "id": "CURATED-COV-pray.for_priests-0",
+          "canonicalOriginalId": "CANONICAL::met-437722",
+          "title": "The Mass of Saint Gregory",
+          "artist": "Spanish Painter",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437722",
+          "originalStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+          "notForReview": true,
+          "reason": "B02 exact Met original 437722 NOT_RELEVANT_TO_PRAYER_ONLY; distinct same-titled works unaffected",
+          "decisionAuthority": "EXPLICIT_USER_REJECTION_OR_B02_NOT_RELEVANT",
+          "excludedOn": "2026-11-01"
+        }
+      ],
       "approvedReuseLinkedEarlier": [],
       "reviewCollection": [
-        {
-          "sourceIDs": [
-            "CURATED-COV-pray.for_priests-0"
-          ],
-          "artist": "Spanish Painter",
-          "title": "The Mass of Saint Gregory",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/437722",
-          "sourceEditorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
-          "fit": "CATHOLIC_PRIESTHOOD_THEME",
-          "historicallyApprovedInOriginalLedger": false,
-          "priorApprovedInAnotherContext": false,
-          "requiresExplicitUserApproval": true,
-          "sourceType": "CURATED_PREVIOUS_SELECTION_OR_NEW_RESEARCH",
-          "curatedCrosswalk": {
-            "status": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
-            "fit": "CATHOLIC_PRIESTHOOD_THEME",
-            "evidence": "Met PD original 1976.100.24, oil on wood",
-            "rights": "MET_PD_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING"
-          },
-          "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
-        },
         {
           "sourceIDs": [
             "REVIEW::commons:48327311"
@@ -1787,7 +1779,8 @@
           "productionEnabled": false
         }
       ],
-      "imagePublicationAllowed": false
+      "imagePublicationAllowed": false,
+      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL"
     },
     {
       "slot": "COV-pray.occasional_intercessions",
@@ -2202,5 +2195,13 @@
       ],
       "imagePublicationAllowed": false
     }
-  ]
+  ],
+  "reconciliation20261101": {
+    "reason": "Exact-work rejected research candidates must not remain selectable",
+    "removedCandidates": [
+      "CURATED-COV-pray.for_priests-0"
+    ],
+    "sourceLedgerUnmodified": true,
+    "productionEnabled": false
+  }
 }
