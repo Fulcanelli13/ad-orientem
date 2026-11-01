@@ -78,7 +78,7 @@ for(const row of ledger.scores){
  assert.equal(row.editorialScoreApproved,false);
  assert.equal(row.publicReader,false);
  assert.equal(row.publicationHold,"REQUIRES_NOTE_BY_NOTE_FACSIMILE_AND_EDITORIAL_REVIEW");
- assert.match(row.printedPage,/^\\d+\\*$/);
+ assert.match(row.printedPage,/^\d+\*$/);
  assert.equal(row.printedPdfPageIndex,parseInt(row.printedPage,10)+1);
  const matching=KYRIALE_RESEARCH_NOTATION_EXAMPLES.find(x=>
   x.movement===row.movement&&x.catalogueId===row.selection);
@@ -98,6 +98,6 @@ assert.equal(offlineKyrialeResearchScore("KYRIE","Mass VIII"),null);
 assert.equal(offlineKyrialeResearchScore("CREDO","MASS_08"),null);
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const sw=readFileSync(new URL("../sw.js",import.meta.url),"utf8");
-assert.doesNotMatch(dom,/data-schola-score-open|offlineKyrialeResearchScore\\(/);
-assert.doesNotMatch(sw,/OFFLINE_CRITICAL_CHANT_ENGRAVER|exsurge\\.min/);
+assert.doesNotMatch(dom,/data-schola-score-open|offlineKyrialeResearchScore\(/);
+assert.doesNotMatch(sw,/OFFLINE_CRITICAL_CHANT_ENGRAVER|exsurge\.min/);
 console.log("PASS seven original Solesmes 1961 printed score locations; offline Exsurge SVG render at phone widths; publication and Mass UI gates closed");
