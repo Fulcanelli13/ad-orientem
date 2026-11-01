@@ -302,6 +302,22 @@ assert.equal(placeWins.cover_media.asset_path,photo.asset_path,
  "Existing verified Place media takes priority over exact direct-venue image");
 const venueRegistry=JSON.parse(readFileSync(new URL("../data/directory/approved-venue-media.v1.json",import.meta.url),"utf8"));
 assert.equal(venueRegistry.schema,"AO_APPROVED_TLM_VENUE_MEDIA_V1");
-assert.deepEqual(venueRegistry.items,[],"No ZIP research candidates are auto-approved for release");
+// Do not freeze the empty v1 registry forever: subsequent source-cleared
+// photo releases must be able to add records without rewriting historical
+// tests. Instead require *every* approved record to have a real exact TLM
+// venue and a local binary with its pinned hash, plus the rights/subject gates.
+const cl2Index=JSON.parse(readFileSync(new URL("../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url),"utf8"));
+const auditedVenueAssets=new Set();
+for(const image of venueRegistry.items){
+ assert.ok(eligibleVenueImage(image,image.venue_id),"Direct venue registry includes unapproved media");
+ assert.ok(cl2Index.records.some(row=>Array.isArray(row[1])&&row[1].includes(image.venue_id)),
+  "Approved venue media must point to an actual indexed TLM venue");
+ assert.ok(!auditedVenueAssets.has(image.venue_id),"Only one exact photo cover per venue");
+ auditedVenueAssets.add(image.venue_id);
+ const localBytes=readFileSync(new URL("../"+image.asset_path,import.meta.url));
+ assert.equal(createHash("sha256").update(localBytes).digest("hex"),image.derivative_sha256,
+  "Approved venue image binary must exist at exact checksum");
+}
+assert.ok(Array.isArray(venueRegistry.items),"Venue-media owner must remain an explicit audited registry");
 
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
