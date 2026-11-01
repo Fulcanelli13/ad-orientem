@@ -198,7 +198,103 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M25_KYRIE_XI_PRINT_STRUCTURE_COLLATION",
+        "printedWitness": "1961 Graduale Romanum, printed pp. 38*–39* (original facsimile and GregoBase source scans directly inspected)",
+        "printedImages": [
+          "https://gregobase.selapa.net/sources/2/915.png",
+          "https://gregobase.selapa.net/sources/2/916.png"
+        ],
+        "editionUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "sourceGabcUrl": "https://gregobase.selapa.net/chant.php?id=2982",
+        "printSourceHistory": [
+          {
+            "date": "2024-04-06",
+            "kind": "SOURCE_GABC_PARITY",
+            "source": "https://gregobase.selapa.net/history.php?changeset=1712401231%7C2982%7C8322",
+            "finding": "Current source contains (c4) and all four phrase tokens, including <clear> before final asterisk; typesetting adjustments may affect SVG/print alignment."
+          },
+          {
+            "date": "2021-09-08",
+            "kind": "ACCENT_AND_TAG_CORRECTION",
+            "source": "https://gregobase.selapa.net/history.php?changeset=1631071238%7C2982%7C8590",
+            "finding": "Source history records removal of extraneous accent in Christe and added chant tags; do not reintroduce accented Christe solely from an older version."
+          }
+        ],
+        "printedStructureReview": "PRINTED_FOUR_PHRASE_AND_PAGE_BREAK_STRUCTURE_VISUALLY_CONFIRMED",
+        "scoreLevelStructuralFindings": [
+          "First Kyrie and the first repeated closing Kyrie share full melodic material apart from the printed star/formatting.",
+          "Final Kyrie starts with distinct (dfd)(cd)(d.gv.fgFD'Cd.) groups; shared following eleison is retained.",
+          "Print page break occurs inside the Christe textual phrase, so verify both 38* and 39* together."
+        ],
+        "printedPageBreakChecked": true,
+        "notatedPhraseCount": 4,
+        "totalExpectedInvocations": 9,
+        "phrases": [
+          {
+            "number": 1,
+            "invocation": "Kyrie eleison",
+            "printedPages": "38*",
+            "gabcLine": "(c4) KY(ixhi)ri(hg)e(hd..) *(,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) <i>iij.</i>(::)",
+            "printedRepeat": "iij.",
+            "sungOccurrences": 3,
+            "printedDescription": "The Orbis factor Kyrie starts at the foot of 38*. Complete first invocation; third repetition is specified by iij.",
+            "sourceGabcTokenCount": 10,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          },
+          {
+            "number": 2,
+            "invocation": "Christe eleison",
+            "printedPages": "38*→39*",
+            "gabcLine": "Chri(hg)ste(kv.jkJH'Gh.) (,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) <i>iij.</i>(::)",
+            "printedRepeat": "iij.",
+            "sungOccurrences": 3,
+            "printedDescription": "Christe begins after the first double bar on 38*. Its e-leison and iij continuation open 39*.",
+            "sourceGabcTokenCount": 8,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          },
+          {
+            "number": 3,
+            "invocation": "Kyrie eleison",
+            "printedPages": "39*",
+            "gabcLine": "Ký(ixhi)ri(hg)e(hd..) (,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) <i>ij.</i>(::)",
+            "printedRepeat": "ij.",
+            "sungOccurrences": 2,
+            "printedDescription": "Second Kyrie invocation of the first melodic type is printed in full on 39*, followed by ij.",
+            "sourceGabcTokenCount": 9,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          },
+          {
+            "number": 4,
+            "invocation": "Kyrie eleison",
+            "printedPages": "39*",
+            "gabcLine": "Ký(dfd)ri(cd)e(d.gv.fgFD'Cd.) <clear>*(,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) (::)",
+            "printedRepeat": null,
+            "sungOccurrences": 1,
+            "printedDescription": "Last Kyrie in the second staff on 39*: opening ornament changes; eleison ending returns to the common phrase.",
+            "sourceGabcTokenCount": 9,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          }
+        ],
+        "suspectedSourceDiscrepancies": [],
+        "discrepancyStatus": "FULL_MUSICAL_COMPARISON_NOT_PERFORMED",
+        "fullPrintedPitchParity": "NOT_CERTIFIED",
+        "fullPrintedNeumeParity": "NOT_CERTIFIED",
+        "fullRhythmicParity": "NOT_CERTIFIED",
+        "fullSyllableUnderlayParity": "NOT_CERTIFIED",
+        "userEditorialApproval": false,
+        "publicScore": false,
+        "nextAction": "Compare every printed note/clef/neume/rhythmic sign and syllable on both full pages against verbatim source GABC; log exact folio/system before changing anything."
+      }
     },
     {
       "gregobaseId": 1184,
@@ -238,7 +334,109 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M25_KYRIE_VIII_PRINT_STRUCTURE_COLLATION",
+        "printedWitness": "1961 Graduale Romanum, printed pp. 28*–29* (original facsimile and GregoBase source scans directly inspected)",
+        "printedImages": [
+          "https://gregobase.selapa.net/sources/2/905.png",
+          "https://gregobase.selapa.net/sources/2/906.png"
+        ],
+        "editionUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "sourceGabcUrl": "https://gregobase.selapa.net/chant.php?id=1184",
+        "printSourceHistory": [
+          {
+            "date": "2013-08-31",
+            "kind": "PUNCTUM_TO_VIRGA_HOLD",
+            "source": "https://gregobase.selapa.net/history.php?changeset=1377971172%7C1184%7C11",
+            "finding": "Source revision claims h.→hv. in second Kyrie; verify the printed virga and mora position directly before music certification."
+          },
+          {
+            "date": "2013-08-31",
+            "kind": "LAST_KYRIE_GV_TO_HV_HOLD",
+            "source": "https://gregobase.selapa.net/history.php?changeset=1377970609%7C1184%7C11",
+            "finding": "Source revision claims gv→hv at the end of the last Kyrie; inspect the original neume, not merely the revised GABC."
+          },
+          {
+            "date": "2023-08-24",
+            "kind": "ENGRAVING_SPACING_EDIT",
+            "source": "https://gregobase.selapa.net/history.php?changeset=1692896649%7C1184%7C8322",
+            "finding": "GABC history records punctum-mora placement, asterisk, spacings and note joins; these are NOT automatically identical to each Solesmes printed neume."
+          }
+        ],
+        "printedStructureReview": "PRINTED_FOUR_PHRASE_AND_TWO_INTERNAL_STAR_MARKERS_VISUALLY_CONFIRMED",
+        "scoreLevelStructuralFindings": [
+          "The first Kyrie has a musical star separating its own opening ornament from eleison.",
+          "Kyrie VIII's fourth, unrepeated phrase contains both asterisk and double-star/extra ornament; preserve the source-specific marker semantics.",
+          "Do not silently normalize the 2013 punctum/virga and last-Kyrie raised virga revisions."
+        ],
+        "printedPageBreakChecked": true,
+        "notatedPhraseCount": 4,
+        "totalExpectedInvocations": 9,
+        "phrases": [
+          {
+            "number": 1,
+            "invocation": "Kyrie eleison",
+            "printedPages": "28*",
+            "gabcLine": "(c3) KY(d)ri(gxfgh)e(h.ivHGh.) *~{~}(/[-2]kvIH'Ghih.) (,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) <i>iij.</i>(::)",
+            "printedRepeat": "iij.",
+            "sungOccurrences": 3,
+            "printedDescription": "De Angelis Kyrie begins near the foot of 28*, its first complete invocation and iij are visible.",
+            "sourceGabcTokenCount": 11,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          },
+          {
+            "number": 2,
+            "invocation": "Christe eleison",
+            "printedPages": "28*→29*",
+            "gabcLine": "Chri(f)ste(fvED'Cd.gxd!fg!hv.ivHGh.) (,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) <i>iij.</i>(::)",
+            "printedRepeat": "iij.",
+            "sungOccurrences": 3,
+            "printedDescription": "Christe begins on 28* and continues as eleison with iij at the top of 29*.",
+            "sourceGabcTokenCount": 8,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          },
+          {
+            "number": 3,
+            "invocation": "Kyrie eleison",
+            "printedPages": "29*",
+            "gabcLine": "Ký(k')ri(j)e(kvJI'jkh.1gxkhiv./[-0.5]fg!hv.) (,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) <i>ij.</i>(::)",
+            "printedRepeat": "ij.",
+            "sungOccurrences": 2,
+            "printedDescription": "Repeated final Kyrie type with ij on 29*; distinct ornamented melodic setting from first Kyrie.",
+            "sourceGabcTokenCount": 9,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          },
+          {
+            "number": 4,
+            "invocation": "Kyrie eleison",
+            "printedPages": "29*",
+            "gabcLine": "Ký(k')ri(j)e(kvJI'jkh.1) <clear>*(,) (kjkvJI'jkh.1gxkhiv./[-0.5]fg!hv.) <clear>**(,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) (::)",
+            "printedRepeat": null,
+            "sungOccurrences": 1,
+            "printedDescription": "Last, unrepeated Kyrie appears on 29* with an internal star and double-star in the GABC/printed score; same eleison motif closes it.",
+            "sourceGabcTokenCount": 11,
+            "printedTextAndRepeatStructure": "MATCH_OBSERVED",
+            "printedPitchHeightByHeight": "NOT_CERTIFIED",
+            "printedNeumeSignBySign": "NOT_CERTIFIED"
+          }
+        ],
+        "suspectedSourceDiscrepancies": [],
+        "discrepancyStatus": "FULL_MUSICAL_COMPARISON_NOT_PERFORMED",
+        "fullPrintedPitchParity": "NOT_CERTIFIED",
+        "fullPrintedNeumeParity": "NOT_CERTIFIED",
+        "fullRhythmicParity": "NOT_CERTIFIED",
+        "fullSyllableUnderlayParity": "NOT_CERTIFIED",
+        "userEditorialApproval": false,
+        "publicScore": false,
+        "nextAction": "Compare every printed note/clef/neume/rhythmic sign and syllable on both full pages against verbatim source GABC; log exact folio/system before changing anything."
+      }
     },
     {
       "gregobaseId": 961,
