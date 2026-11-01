@@ -4,6 +4,8 @@ Run on a networked, review-only runner: python tools/directory/stage_tlm_cc0_ori
 Requires Pillow. No production media, image registry, or source ledger is modified.
 """
 import hashlib
+import os
+import zipfile
 import io
 import json
 import re
@@ -90,31 +92,38 @@ def lookup_original(row):
     return image, current_license
 
 def stage(row):
-    imageinfo, license_name = lookup_original(row)
-    body = open_url(imageinfo["url"])
-    real_sha = hashlib.sha1(body).hexdigest()
-    if real_sha != row["commons_original_sha1"].lower():
-        raise ValueError("Downloaded original checksum differs from Commons API and pinned audit")
+    """Read previously supplied ZIP: source-hash proof, full-frame preview, no network."""
+    archives = os.environ.get("AO_TLM_ARCHIVES_DIR")
+    if not archives:
+        raise ValueError("AO_TLM_ARCHIVES_DIR required; no external acquisition allowed")
+    archive_path = Path(archives) / row["zip_batch"]
+    with zipfile.ZipFile(archive_path) as archive:
+        body = archive.read(row["zip_path"])
+    archived_sha256 = hashlib.sha256(body).hexdigest()
+    if archived_sha256 != row["zip_sha256"]:
+        raise ValueError("ZIP image hash differs from the frozen 739-image audit")
+    original_match = hashlib.sha1(body).hexdigest() == row["commons_original_sha1"].lower()
     with Image.open(io.BytesIO(body)) as raw:
         raw.load()
-        if [raw.width, raw.height] != row["source_native_dimensions"]:
-            raise ValueError("Original image dimensions mismatch")
+        if [raw.width, raw.height] != row["archive_preview_dimensions"]:
+            raise ValueError("Archive image dimensions mismatch frozen screen")
         frame = ImageOps.exif_transpose(raw).convert("RGB")
     original_display_dimensions = [frame.width, frame.height]
     frame.thumbnail((1600, 2000), Image.Resampling.LANCZOS)
-    # No centre-crop or content inference: preserve the entire photographed frame.
     target = OUT / "review-images" / (row["site_id"] + ".webp")
     target.parent.mkdir(parents=True, exist_ok=True)
-    frame.save(target, "WEBP", quality=88, method=6)
+    frame.save(target, "WEBP", quality=87, method=4)
     data = target.read_bytes()
     return {
-        "state": "STAGED_REVIEW_ONLY",
+        "state": "STAGED_EXACT_ORIGINAL_REVIEW_ONLY" if original_match else "STAGED_PREVIEW_REVIEW_ONLY",
         "commons_source_url": row["commons_page"],
-        "commons_original_sha1_verified": real_sha,
-        "commons_licence_verified": license_name,
+        "archived_image_sha256_verified": archived_sha256,
+        "matches_pinned_original_commons_sha1": original_match,
+        "commons_licence_claim_in_frozen_audit": row["claimed_license"],
+        "commons_current_licence_reverified": False,
         "original_dimensions": original_display_dimensions,
         "derivative_dimensions": [frame.width, frame.height],
-        "original_bytes": len(body),
+        "archive_bytes": len(body),
         "derivative_bytes": len(data),
         "review_derivative_sha256": hashlib.sha256(data).hexdigest(),
         "review_derivative_path": str(target.relative_to(ROOT)),
@@ -133,7 +142,7 @@ def contact_sheet(results, by_id):
         draw.text((x + 8, y + 6), identifier, fill=(0, 0, 0))
         name = by_id[identifier]["site_name"]
         draw.text((x + 8, y + 23), name[:36], fill=(0, 0, 0))
-        if r["state"] == "STAGED_REVIEW_ONLY":
+        if r["state"].startswith("STAGED_"):
             with Image.open(ROOT / r["review_derivative_path"]) as im:
                 preview = im.copy()
             preview.thumbnail((tile_w - 16, tile_h - 63))
@@ -151,6 +160,8 @@ def main():
     if manifest["stage_candidate_count"] > MAX_IMAGES:
         raise ValueError("Unbounded acquisition disallowed")
     by_id = load_rows(manifest["source_audit_parts"])
+    if not os.environ.get("AO_TLM_ARCHIVES_DIR"):
+        raise ValueError("Provide already-acquired local ZIPs; never retry Wikimedia HTTP 429")
     OUT.mkdir(parents=True, exist_ok=True)
     results = []
     for identifier in manifest["candidate_site_ids"]:
@@ -174,8 +185,10 @@ def main():
         print(identifier, result["state"], flush=True)
     receipt = {
         "schema": "AO_TLM_CC0_REVIEW_ONLY_RECEIPT_V1",
-        "candidate_count": len(results), "staged_count": sum(r["state"] == "STAGED_REVIEW_ONLY" for r in results),
-        "held_count": sum(r["state"] != "STAGED_REVIEW_ONLY" for r in results),
+        "candidate_count": len(results), "staged_count": sum(r["state"].startswith("STAGED_") for r in results),
+        "held_count": sum(not r["state"].startswith("STAGED_") for r in results),
+        "exact_original_count": sum(r["state"] == "STAGED_EXACT_ORIGINAL_REVIEW_ONLY" for r in results),
+        "preview_only_count": sum(r["state"] == "STAGED_PREVIEW_REVIEW_ONLY" for r in results),
         "public_approvals": 0, "publications": 0,
         "no_approved_media_mutations": True, "items": results,
     }
