@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
 import {spawnSync} from "node:child_process";
 import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
+import {sourceNoteGroupInventory} from "../src/mass/reader-kyriale-source-note-groups.js";
 const html=readFileSync(new URL("../tools/mass/kyriale-1961-collation.html",import.meta.url),"utf8");
 const ledger=JSON.parse(readFileSync(new URL("../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json",import.meta.url),"utf8"));
 assert.equal(ledger.scores.length,7);
@@ -12,6 +13,7 @@ assert.equal(syntax.status,0,"Broken inline module syntax: "+syntax.stderr);
 for(const path of [
  "../src/mass/reader-kyriale-research-gabc.js",
  "../src/mass/reader-chant-engraver.js",
+ "../src/mass/reader-kyriale-source-note-groups.js",
  "../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json"
 ])assert.ok(existsSync(new URL(path,import.meta.url)),"Research workbench module/ledger missing: "+path);
 assert.match(html,/<html lang="en"/);
@@ -29,7 +31,9 @@ for(const id of ["agnusNotePanel","agnusGroupSelect","agnusPrev","agnusNext",
  "agnusNeume","agnusUnderlay","agnusRhythm","agnusGroupComment",
  "agnusGroupProgress","agnusGroupSave"])
  assert.match(html,new RegExp('id="'+id+'"'),"Missing per-note Agnus source audit control: "+id);
-assert.match(html,/noteGroupCollation\?\.noteGroups/);
+assert.match(html,/noteGroupCollation\.noteGroups/);
+assert.match(html,/sourceNoteGroupInventory/);
+assert.match(html,/allSourceGroupsMarkedMatching/);
 assert.match(html,/function saveNoteGroup/);
 assert.match(html,/function completeScore/);
 assert.match(html,/groupReviews/);
@@ -56,9 +60,18 @@ for(const row of ledger.scores){
  assert.ok(score&&score.gabc,"Workbench source was disconnected: "+row.gregobaseId);
  assert.equal(score.scoreId,"GREGOBASE-"+row.gregobaseId);
  assert.equal(row.printedPages.length,row.printedPageImageUrls.length);
+ const inventory=sourceNoteGroupInventory(score.gabc);
+ const expected=({545:27,2982:27,1184:28,961:196,749:366,1384:55,2760:54})[row.gregobaseId];
+ assert.equal(inventory.noteBearingSourceTokens,expected,"Source token count changed: "+row.gregobaseId);
+ assert.ok(inventory.groups.every((g,i)=>g.ordinal===i+1&&g.printedPitchParity==="NOT_CERTIFIED"));
+ assert.equal(inventory.continuationTokens,row.gregobaseId===1184?1:0);
+ if(row.gregobaseId===2760)assert.deepEqual(
+  inventory.groups.map(g=>g.gabcOriginalNotes),
+  row.noteGroupCollation.noteGroups.map(g=>g.gabcOriginalNotes));
+
 }
 const publicReader=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const sw=readFileSync(new URL("../sw.js",import.meta.url),"utf8");
 assert.doesNotMatch(publicReader,/kyriale-1961-collation|data-schola-score-open/);
 assert.doesNotMatch(sw,/kyriale-1961-collation/);
-console.log("PASS M22 isolated 1961 Kyriale editorial workbench: printed 10-page witness + real offline SVG component, four independent notation decisions and JSON export; zero public score promotion");
+console.log("PASS M22 bulk 753 source note-bearing tokens across seven scores, including 54 Agnus groups; isolated 1961 Kyriale editorial workbench: printed 10-page witness + real offline SVG component, four independent notation decisions and JSON export; zero public score promotion");
