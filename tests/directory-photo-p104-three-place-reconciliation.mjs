@@ -68,6 +68,10 @@ for(const x of c.candidates){
  assert.equal(x.source_photo_approved,false);
 }
 const simulated=assertExploreGeographyRegistry({geoAreas:geo.geoAreas,places:[...geo.places,...proposedRemaining],directoryPlaceLinks:geo.directoryPlaceLinks});
-assert.deepEqual([simulated.counts.places,simulated.counts.directoryPlaceLinks],[532,23]);
-assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length],[530,23]);
+assert.equal(simulated.counts.places,532);
+assert.equal(simulated.counts.directoryPlaceLinks,geo.directoryPlaceLinks.length,
+  "Simulation retains all current separately verified Directory links");
+assert.equal(geo.places.length,530);
+assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
+  "Historical P104 venue links must persist through independently verified additions");
 console.log("PASS historical photo P104: Hannover now canonically linked; Kolbermoor and Blandford remain held; no publication.");
