@@ -68,7 +68,7 @@ try{
   assert.ok(state.w>100&&state.h>90&&state.h<=h*.36,JSON.stringify(state));
   assert.ok(state.documentOverflow<=2,JSON.stringify(state));
   assert.equal(state.paths,3);
-  assert.equal(state.inputCount,1);
+  assert.equal(state.inputCount,0,"Cover must not restore a sensitive text-entry field");
   assert.equal(state.release,'false');
   assert.equal(state.stage,'0');
   assert.match(state.figureCaption,/Murillo.*Prodigal Son/);
