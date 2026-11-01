@@ -175,7 +175,9 @@ function renderNoteGroup(){
  $("agnusNext").disabled=noteGroupIndex===noteGroups().length-1;
  const originalStaff=score().gregobaseId===2760?"original staff system "+g.agnusPrintedSystem:
   "print staff not yet mapped · locate on original folio";
- $("agnusGroupTitle").textContent=score().title+" · "+g.syllable+" · "+originalStaff;
+ $("agnusGroupTitle").textContent=score().title+" · "+
+  (score().gregobaseId===2760?"Invocation "+g.invocation+" · ":"")+
+  g.syllable+" · "+originalStaff;
  $("agnusGroupDescription").textContent="Solesmes "+
   (score().gregobaseId===2760?"p.31*":"folios "+score().printedPages.join(", ")+
    " (candidate folios, exact group position not certified)")+
