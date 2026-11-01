@@ -71,7 +71,7 @@ const map={hasImage(id){return sprites.has(id)},
   addImage(id,data,options){sprites.set(id,{data,options})}};
 assert.equal(registerExploreClusterBadge(map,{document}),true);
 const badgeGroups=["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","CAPUCHINS_MORGON","MILITIA_TEMPLI",
-  "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN",
+  "BENEDICTINE","DOMINICAN","CISTERCIAN","ORATORIAN","NORBERTINE","PREMONSTRATENSIAN",
   "OTHER","MIXED","PLACES"];
 for(const group of badgeGroups){
   const badge=sprites.get("ao-explore-cluster-badge-"+group);
