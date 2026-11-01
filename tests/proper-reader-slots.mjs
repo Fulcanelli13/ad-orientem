@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { properToReaderSlots, assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
+import { properToReaderSlots, assertReaderProperReady, selected1962AllSaintsOffertoryReading } from "../src/mass/proper-reader-slots.js";
 import {composeProperReaderParagraphs} from "../src/mass/proper-reader-composition.js";
 import {inspect1962PluralMartyrsFrenchOrationSource} from "../src/mass/1962-plural-martyr-french-source.js";
 
@@ -467,4 +467,43 @@ for(const entry of pluralMartyrCommons){
     .sourceEditorialCorrections?.length,1,
     "Multiple oration rows cannot be projected as one source");
 }
+
+const allSaintsRaw=Object.freeze({
+ lat:"Sap 3:1-3\\nJustórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ: visi sunt óculis insipiéntium mori: illi autem sunt in pace, allelúja.\\n(sed post Septuagesimam dicitur)\\npace.",
+ en:"Wis 3:1-3\\nThe souls of the just are in the hand of God, and no torment shall touch them. They seemed, in the view of the foolish, to be dead: but they are in peace, alleluia.\\n(sed post Septuagesimam dicitur)\\npeace.",
+ fr:"Sap 3:1-3\\nLes âmes des justes sont dans la main de Dieu, mais ils sont dans la paix. Alléluia.\\n(Après la Septuagésime, on omet l’alléluia.)",
+});
+const allSaints={...proper,sourcePath:"Sancti/11-01",offertory:allSaintsRaw};
+const reading=selected1962AllSaintsOffertoryReading(allSaints);
+assert.notEqual(reading,allSaintsRaw,
+ "The 1 November source seasonal alternative must not appear as sung text");
+assert.equal(reading.readerSourceVariant.status,
+ "NORMAL_1962_ALL_SAINTS_OFFERTORY_READING_ONLY");
+assert.equal(reading.readerSourceVariant.alternativeKeptInOriginalProper,true);
+assert.ok(reading.lat.endsWith("allelúja."));
+assert.ok(reading.en.endsWith("alleluia."));
+assert.ok(reading.fr.endsWith("Alléluia."));
+assert.doesNotMatch(JSON.stringify(reading),/Septuagesima(?:m)? dicitur|Après la Septuagésime/u);
+assert.match(allSaintsRaw.lat,/sed post Septuagesimam dicitur/,
+ "Preserve original authenticated Proper without modification");
+for(const language of ["en","fr"]){
+ const slot=properToReaderSlots(allSaints,{language}).slots.OFFERTORY;
+ assert.equal(slot.status,"READY");
+ assert.equal(slot.data.paragraphs.length,1);
+ assert.equal(slot.data.paragraphs[0].latin,reading.lat);
+ assert.equal(slot.data.paragraphs[0].vernacular,reading[language]);
+ assert.doesNotMatch(slot.data.paragraphs[0].vernacular,/Septuagesim|peace\.\s*$/iu,
+  "Non-applicable seasonal direction must not be read as ordinary Offertory");
+}
+for(const sourcePath of ["Sancti/11-02m1","Commune/C3a-1","Sancti/10-07"]){
+ assert.equal(selected1962AllSaintsOffertoryReading({
+  ...allSaints,sourcePath
+ }),allSaintsRaw,
+ "A non-All-Saints Proper must be entirely untouched");
+}
+assert.equal(selected1962AllSaintsOffertoryReading({
+ ...allSaints,offertory:{...allSaintsRaw,lat:allSaintsRaw.lat.replace("allelúja.","")}
+}).lat.endsWith("pace."),true,
+ "Unexpected source variants must remain unsplit (fail closed)");
+
 console.log("PASS ICKSP 1962 plural French Common C6b/C7b: source-owner, bilingual, idempotent, immutability and negative cases");
