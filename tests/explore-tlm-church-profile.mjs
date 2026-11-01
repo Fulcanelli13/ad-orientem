@@ -76,6 +76,52 @@ assert.doesNotMatch(mismatched,/src="assets\/approved\/place-media\/st-cantius.w
 assert.match(mismatched,/data-visual-kind="emblem"/);
 
 
+
+ // Regression: an exact approved Directory-venue photograph must survive
+ // compact-card -> expanded-profile navigation even without a Sacred Place ID.
+ const approvedVenueMedia=JSON.parse(readFileSync(new URL(
+   "../data/directory/approved-venue-media.v1.json",import.meta.url),"utf8")).items[0];
+ const sourceOnly={...item,source_id:approvedVenueMedia.venue_id,place_id:null,
+   title:"Church of Saint Pius V",raw:null,preliminary_group:"SSPX",community_id:"SSPX",
+   cover_media:approvedVenueMedia,address:{formatted:"Groombridge, East Sussex, United Kingdom"},
+   source_links:[{url:"https://example.org/groombridge",title:"Original site listing"}]};
+ const venueHtml=renderTlmChurchProfile(sourceOnly,"en");
+ assert.match(venueHtml,/src="assets\/approved\/directory-media\/GB-groombridge-st-pius-v.webp"/);
+ assert.match(venueHtml,/The Voice of Hassocks/);
+ assert.match(venueHtml,/Groombridge, East Sussex, United Kingdom/);
+ assert.match(venueHtml,/Original venue source/);
+ assert.match(venueHtml,/data-tlm-source-affiliation/);
+ assert.match(venueHtml,/aoTlmProfileEssentials/);
+ assert.match(venueHtml,/Una cum/);
+ assert.match(venueHtml,/Not established/);
+ assert.ok(venueHtml.includes("https://example.org/groombridge"));
+ const venueFr=renderTlmChurchProfile(sourceOnly,"fr");
+ assert.match(venueFr,/Source originale du lieu/);
+ assert.match(venueFr,/Identité liturgique en bref/);
+ // Never accept a photo based on a similar name, nearby coordinates, or an
+ // institution emblem. Exact venue-id and release/rights flags are mandatory.
+ assert.doesNotMatch(renderTlmChurchProfile({...sourceOnly,source_id:"UNRELATED"}),
+   /src="assets\/approved\/directory-media\/GB-groombridge-st-pius-v.webp"/);
+ assert.doesNotMatch(renderTlmChurchProfile({...sourceOnly,
+   cover_media:{...approvedVenueMedia,rights_verified:false}}),
+   /src="assets\/approved\/directory-media\/GB-groombridge-st-pius-v.webp"/);
+ // A source-owned 1962 witness applies only to its named celebrations,
+ // not every Mass in the building or an inferred Una Cum practice.
+ const scopedItem={...sourceOnly,cover_media:null,celebration_evidence:{
+   subject_scope:"NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE",
+   missal_edition:"1962",liturgical_use:"ROMAN",
+   source_url:"https://example.org/official-mass-schedule",
+   source_id:"EXACT",label_en:"Named Masses only",label_fr:"Messes précises",
+   detail_en:"Specific documented celebrations",detail_fr:"Célébrations précises attestées",
+   exception_en:"Exception remains documented",exception_fr:"Exception préservée"
+ }};
+ const scopedHtml=renderTlmChurchProfile(scopedItem);
+ assert.match(scopedHtml,/1962 · named Masses only/);
+ assert.match(scopedHtml,/Roman · named Masses only/);
+ assert.match(scopedHtml,/Una cum/);
+ assert.match(scopedHtml,/Not established/);
+ assert.ok(scopedHtml.includes("https://example.org/official-mass-schedule"));
+
 const fr=renderTlmChurchProfile(item,"fr");
 for(const phrase of ["Position ecclésiale","Non établi","Programme des messes","Retour à l’aperçu"])
  assert.ok(fr.includes(phrase),phrase);
