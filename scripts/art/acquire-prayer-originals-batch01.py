@@ -95,9 +95,9 @@ def verified_download(info,dest,used):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--download",action="store_true",help="Archive originals; without it only metadata is read")
-    p.add_argument("--limit",type=int,default=12,help="At most 12 exact research records")
+    p.add_argument("--limit",type=int,default=12,help="Number of exact research records, maximum 50")
     args=p.parse_args()
-    if not 1<=args.limit<=12:p.error("--limit must be 1..12")
+    if not 1<=args.limit<=50:p.error("--limit must be 1..50")
     raw=json.loads(LEDGER.read_text(encoding="utf-8"))
     records=raw["records"][:args.limit]
     assert raw["stageOnly"] is True and raw["releaseManifestChangeAllowed"] is False
@@ -130,7 +130,18 @@ def main():
                 record["status"]="BLOCKED_RESOLUTION";report["results"].append(record);continue
             if args.download:
                 ext=".jpg" if info.get("mime")=="image/jpeg" else ".png"
-                saved=verified_download(info,STAGE/(item["id"]+ext),used)
+                dest=STAGE/(item["id"]+ext)
+                if dest.is_file():
+                    raw=dest.read_bytes()
+                    prior_sha1=hashlib.sha1(raw).hexdigest().lower()
+                    if prior_sha1!=str(info.get("sha1") or "").lower() or len(raw)!=int(info.get("size") or 0):
+                        raise ValueError("Archived source changed; refused to overwrite evidence")
+                    saved={"file":str(dest.relative_to(ROOT)),"sha1":prior_sha1,
+                        "sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw)}
+                    record["existingOriginalReused"]=True
+                else:
+                    saved=verified_download(info,dest,used)
+                    record["existingOriginalReused"]=False
                 record.update(saved);used+=saved["bytes"];report["sourceFilesStaged"]+=1
                 record["status"]="STAGED_SOURCE_UNREVIEWED"
             else:record["status"]="METADATA_CHECKED_NOT_DOWNLOADED"
