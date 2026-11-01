@@ -34,3 +34,6 @@ assert.match(html,/AO_P79_PLACE_PHOTO_SELECTIONS_V2/);
 assert.match(html,/ao-p79-photo-review-v2-/);
 assert.match(html,/No approved-media entry/);
 console.log("P79 grouped photo-review contracts: pass; 430 candidates / 109 Places / "+snapshot.unapproved_site_count+" without approved media.");
+
+// Run exactly the prior frozen Photo Finder verification before publishing B7 Git blobs.
+await import("./photo-finder-b7-nine-preserved-covers-release.mjs");
