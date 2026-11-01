@@ -70,7 +70,9 @@ const document={createElement(type){
 const map={hasImage(id){return sprites.has(id)},
   addImage(id,data,options){sprites.set(id,{data,options})}};
 assert.equal(registerExploreClusterBadge(map,{document}),true);
-const badgeGroups=["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","OTHER","MIXED","PLACES"];
+const badgeGroups=["DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV",
+  "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN",
+  "OTHER","MIXED","PLACES"];
 for(const group of badgeGroups){
   const badge=sprites.get("ao-explore-cluster-badge-"+group);
   assert.ok(badge,"Required source-derived badge missing for "+group);
