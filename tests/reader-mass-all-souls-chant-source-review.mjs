@@ -61,7 +61,7 @@ assert.equal(seq.sourceFolio,lead.sourceFolio);
 assert.equal(byId.has(1198),false,
  "Separate Sequence source must not be falsely promoted to the 1,195-score Proper archive");
 assert.equal(seq.selected1962MassMatch,"NOT_VERIFIED");
-assert.equal(seq.completeLatinVerses,"NOT_VERIFIED");
+assert.equal(seq.completeLatinVerses,"GABC_TEXT_READ_BUT_1962_PARITY_NOT_CERTIFIED");
 assert.equal(seq.printed1961Neumes,"NOT_COMPARED");
 assert.equal(seq.editorialApproval,false);
 assert.equal(seq.publicReader,false);
