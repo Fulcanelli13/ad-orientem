@@ -192,7 +192,12 @@ export function installSequentialDevotionalReader({
       // F01 holy cards: previous beats fade, forthcoming beats stay legible.
       // Collective continuations follow the SAME activation rule as every beat.
       const essential=kind==="library"&&p.classList.contains("aoP435930EssentialBeat");
+      // Choir invocations and F11 sung stages illuminate independently; upcoming stays legible.
+      const choir=kind==="library"&&p.classList.contains("aoChoirBeat");
+      const choirRoute=kind==="hymns"||kind==="holyName";
+      const f11Rite=kind==="benediction";
       const power=essential?(i===found?"1":i<found?".50":".82")
+        :choir||choirRoute||f11Rite?(i===found?"1":i<found?".54":".80")
         :canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65")
         :kind==="litany"?(adjacent?".88":".76"):(adjacent?".56":".30");
@@ -259,7 +264,7 @@ export function installSequentialDevotionalReader({
   // Explicitly selecting a prayer paragraph changes the focus position,
   // not the prayer text, language, chapter or completion status.
   if(kind==="library")body.addEventListener("click",event=>{
-    const beat=event.target.closest?.(".aoP435930EssentialBeat");
+    const beat=event.target.closest?.(".aoP435930EssentialBeat,.aoChoirBeat");
     if(!beat||!body.contains(beat))return;
     const box=body.getBoundingClientRect(),rect=beat.getBoundingClientRect();
     body.scrollTop+=rect.top-box.top-box.height*.40;
