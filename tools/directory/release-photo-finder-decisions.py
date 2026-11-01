@@ -253,8 +253,14 @@ def frozen_original_schedule(covers,gallery):
     "APPROVED_GALLERY_COVER_REUSE_20261031",
     "COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE",
  }
+ # Jihlava was approved as an independent exact-site P107 photograph in #2208,
+ # after the original forty-cover review window had already been frozen.
+ # Filter by exact Place plus pinned derivative, not by its P104 source ID:
+ # other unrelated P104 church covers must retain their historic positions.
+ late_exact_jihlava=lambda i:(i.get("place_id")=="place:CZ:st-ignatius-jihlava"
+   and i.get("derivative_sha256")=="f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24")
  base_covers={**covers,"items":[i for i in covers["items"]
-   if i.get("source_place_ref") not in later_cover_sources]}
+   if i.get("source_place_ref") not in later_cover_sources and not late_exact_jihlava(i)]}
  base_gallery={**gallery,"items":[i for i in gallery["items"]
    if not (str(i.get("media_id") or "").startswith("pf-")
      and "Photo Finder editorial selection" in str(i.get("review_method") or ""))]}
