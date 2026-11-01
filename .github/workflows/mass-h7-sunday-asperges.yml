@@ -1,0 +1,33 @@
+name: Mass H7 Sunday Asperges selection
+on:
+  pull_request:
+    paths:
+      - "src/home/today-h4-change-sheet.js"
+      - "src/mass/full-mass-preflight.js"
+      - "tests/mass-h7-sunday-asperges-phone.mjs"
+      - ".github/workflows/mass-h7-sunday-asperges.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h7-sunday-aspersion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: node tests/reader-asperges.mjs
+      - run: node tests/reader-mode-switch.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: H7 two-step Home to Sunday Asperges to Foot of Altar, EN/FR
+        run: node tests/mass-h7-sunday-asperges-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mass-h7-sunday-asperges-phone
+          path: artifacts/mass-h7-sunday-asperges/
+          if-no-files-found: warn
+          retention-days: 7
