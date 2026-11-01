@@ -131,6 +131,18 @@ try{
       });
       assert.equal(after.firstBlock,"AO.SM.B001");
       assert.ok([65,66,67].includes(after.count),"Native curated Mass allows source-owned optional cards: "+after.count);
+      // A source card existing in the 65-card corpus is NOT enough: the
+      // actual selected Mass must allow navigation to Gloria and Credo.
+      const visible=await page.evaluate(()=>{
+        const api=window.AO_R17_NATIVE_READER_PREVIEW;
+        const go=id=>{const result=api.showSection(id),current=api.getCurrentCard();
+          return Boolean(result)&&String(current?.sourceSectionId??current?.sectionId)===id;};
+        const gloria=go("AO.CARD.003"),credo=go("AO.CARD.009"),
+          returned=go("AO.CARD.001");
+        return {gloria,credo,returned};
+      });
+      assert.deepEqual(visible,{gloria:true,credo:true,returned:true},
+        "All Saints selected reader omitted a required Ordinary section");
       assert.deepEqual(errors,[]);
       console.log("PASS H7 Sunday Asperges → Foot "+test.form+"/"+test.language);
     }finally{await ctx.close()}
