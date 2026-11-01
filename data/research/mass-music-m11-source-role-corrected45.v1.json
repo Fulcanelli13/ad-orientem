@@ -1,0 +1,1509 @@
+{
+  "schema": "ao-mass-music-m11-45-source-role-recovery-v1",
+  "sourceRepo": "DivinumOfficium/divinum-officium",
+  "sourceRef": "master",
+  "edition": "1962_ROMAN_MISSAL_LATIN",
+  "sourceFilesVerified": 28,
+  "sourceOccurrences": 45,
+  "originalScoreIds": 28,
+  "provisional": true,
+  "sourceRoleCounts": {
+    "GRADUAL": 36,
+    "ALLELUIA": 4,
+    "TRACT": 3,
+    "OFFERTORY": 1,
+    "COMMUNION": 1
+  },
+  "summary": {
+    "roleChange": 37,
+    "sourceAmbiguous": 0,
+    "missing": 0,
+    "withNew": 30,
+    "withNone": 15,
+    "relationships": 35,
+    "multiple": 5
+  },
+  "records": [
+    {
+      "originalScoreId": "GREGOBASE-249",
+      "sourcePath": "Sancti/06-24",
+      "sourceSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "misit dominus manum suam et tetigit os meum et dixit mihi",
+      "originalGabcSha256": "cf793605c99571eb3b501aad77e9b50a9c45e6f5954943d3e57af700b0126755",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-647",
+          "part": "gr",
+          "gabcSha256": "cdabbde606f6c781f8f91594e3eb23eb3b49e595b18022bf6e5f2468447776de",
+          "sourceFolio": "524",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=647",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Sancti/08-06",
+      "sourceSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "eructavit cor meum verbum bonum dico ego opera mea regi",
+      "originalGabcSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-654",
+          "part": "gr",
+          "gabcSha256": "b936ae538cdc5b0a5010e44b14807f2ce7bec44da9ac51e1fe760f7ecf6f7494",
+          "sourceFolio": "72**",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=654",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        },
+        {
+          "id": "GREGOBASE-1308",
+          "part": "gr",
+          "gabcSha256": "2bfd5eb237ac43800259bc60fb412d10a9396f0ebc4c739ff2d5bf2f2cf09d14",
+          "sourceFolio": "45",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1308",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 2,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Sancti/08-10",
+      "sourceSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "probasti domine cor meum et visitasti nocte",
+      "originalGabcSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1027",
+          "part": "gr",
+          "gabcSha256": "e0e76548d9a48de323d67851b3e1f1d971983bdb098ff23549bf53b240ef3c39",
+          "sourceFolio": "579",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1027",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Sancti/08-22",
+      "sourceSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "exsultabit cor meum in salutari tuo cantabo domino qui bona tribuit mihi et psallam nomini domini altissimi",
+      "originalGabcSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-778",
+          "part": "gr",
+          "gabcSha256": "a6849fb38a15d70a97698a0ac7989b16d6effcae6c1f255efc7049ba681ad27d",
+          "sourceFolio": "587A",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=778",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Sancti/12-26",
+      "sourceSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 3,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "adiuva me domine deus meus salvum me fac propter misericordiam tuam",
+      "originalGabcSha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-906",
+          "part": "gr",
+          "gabcSha256": "2a2bd607a074838dc8fac495cd05bb92a132bdda547017a9612f98b5a2e82683",
+          "sourceFolio": "36",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=906",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-56",
+      "sourcePath": "Tempora/Pasc2-0",
+      "sourceSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "originalScorePart": "tr",
+      "sourceSegment": "ALLELUIA",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "ALLELUIA"
+        }
+      ],
+      "correctedRoleCandidate": "al",
+      "roleConflict": true,
+      "donorLatin": "ego sum pastor bonus et cognosco oves meas et cognoscunt me meae alleluia",
+      "originalGabcSha256": "fe418bda73aaedaf1c8b47c62bd37da6de3de5512de2a1496b1b707ad8357f78",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1220",
+          "part": "al",
+          "gabcSha256": "008464a48525ffda7f95ff440822df7c2201742433fa4ea952b5b25bc3a7d0e2",
+          "sourceFolio": "264",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1220",
+          "latinEvidence": "FIRST_EIGHT_WORDS_ONLY"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "benedictus es domine deus patrum nostrorum et laudabilis in saecula alleluia",
+      "originalGabcSha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent02-0",
+      "sourceSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine deus meus in te speravi salvum me fac ex omnibus persequentibus me et libera me alleluia",
+      "originalGabcSha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent05-0",
+      "sourceSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine deus virtutum exaudi preces servorum tuorum",
+      "originalGabcSha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1226",
+          "part": "gr",
+          "gabcSha256": "920c2287602b02bdb7477dfba407f5284a038b30e28d226fe5be1331f7936d60",
+          "sourceFolio": "108",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1226",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-837",
+      "sourcePath": "Tempora/Pent06-0",
+      "sourceSha": "69bee3bc296f2f371b1091967a14c4bb07b12d2b",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine refugium factus es nobis a generatione et progenie",
+      "originalGabcSha256": "09bcc28c2a2ea226714b0dd8248e5073a469699de27cef801d82dbe8156346e3",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1046",
+          "part": "gr",
+          "gabcSha256": "00f700c5a20dbfd7d5f96d906953ae3534eb4f5c8f3cc138a1db437ac404094a",
+          "sourceFolio": "108",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1046",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        },
+        {
+          "id": "GREGOBASE-1108",
+          "part": "gr",
+          "gabcSha256": "9388ce2fd42f808cc779e7cc684fc0804a7f58283b908732d44cddbc53499705",
+          "sourceFolio": "381",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1108",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 2,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Tempora/Pent11-0",
+      "sourceSha": "da5b4cd6cfad7938787fac5b2bd15e3748586288",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "in deo speravit cor meum et adiutus sum et refloruit caro mea et ex voluntate mea confitebor illi",
+      "originalGabcSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-865",
+          "part": "gr",
+          "gabcSha256": "f340dbade4c9ff630f31222cc0dcadf40851e9c455125edc10bcde2fa56cb39b",
+          "sourceFolio": "348",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=865",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent12-0",
+      "sourceSha": "83f334b8cfaa68f3db52d659074b1e2a0ffb26f9",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine deus salutis meae in die clamavi et nocte coram te alleluia",
+      "originalGabcSha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-837",
+      "sourcePath": "Tempora/Pent13-0",
+      "sourceSha": "d116ba13695c45655c28b5092a6c20be04e4514a",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine refugium factus es nobis a generatione et progenie alleluia",
+      "originalGabcSha256": "09bcc28c2a2ea226714b0dd8248e5073a469699de27cef801d82dbe8156346e3",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1046",
+          "part": "gr",
+          "gabcSha256": "00f700c5a20dbfd7d5f96d906953ae3534eb4f5c8f3cc138a1db437ac404094a",
+          "sourceFolio": "108",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1046",
+          "latinEvidence": "FIRST_EIGHT_WORDS_ONLY"
+        },
+        {
+          "id": "GREGOBASE-1108",
+          "part": "gr",
+          "gabcSha256": "9388ce2fd42f808cc779e7cc684fc0804a7f58283b908732d44cddbc53499705",
+          "sourceFolio": "381",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1108",
+          "latinEvidence": "FIRST_EIGHT_WORDS_ONLY"
+        }
+      ],
+      "provisionalCandidateCount": 2,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Tempora/Pent20-0",
+      "sourceSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "paratum cor meum deus paratum cor meum cantabo et psallam tibi gloria mea alleluia",
+      "originalGabcSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Tempora/Pent20-0",
+      "sourceSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "paratum cor meum deus paratum cor meum cantabo et psallam tibi gloria mea alleluia",
+      "originalGabcSha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-837",
+      "sourcePath": "Tempora/Pent21-0",
+      "sourceSha": "8804e666d93fec358a44509e0219514c6142719e",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine refugium factus es nobis a generatione et progenie",
+      "originalGabcSha256": "09bcc28c2a2ea226714b0dd8248e5073a469699de27cef801d82dbe8156346e3",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1046",
+          "part": "gr",
+          "gabcSha256": "00f700c5a20dbfd7d5f96d906953ae3534eb4f5c8f3cc138a1db437ac404094a",
+          "sourceFolio": "108",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1046",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        },
+        {
+          "id": "GREGOBASE-1108",
+          "part": "gr",
+          "gabcSha256": "9388ce2fd42f808cc779e7cc684fc0804a7f58283b908732d44cddbc53499705",
+          "sourceFolio": "381",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1108",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 2,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-276",
+      "sourcePath": "Tempora/Quad2-0",
+      "sourceSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+      "originalScorePart": "tr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "tribulationes cordis mei dilatatae sunt de necessitatibus meis eripe me domine",
+      "originalGabcSha256": "fc89b5fa5fa36c033ece6c637bdededd2d1943b16fb6d76865026b9eb068d36f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-596",
+          "part": "gr",
+          "gabcSha256": "9db4cc14c7350f59b8f51fe7d35472492a267b262f328c27d67b8b384e8a98cf",
+          "sourceFolio": "112",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=596",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-802",
+      "sourcePath": "Sancti/01-01",
+      "sourceSha": "e2233f5812c8961e3c0e94dfeea641281ef31bf8",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "viderunt omnes fines terrae salutare dei nostri iubilate deo omnis terra",
+      "originalGabcSha256": "a86cbdece93173c8bf63bd4fd7735deddc6eac9233567e4e3af516ab77499767",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1163",
+          "part": "gr",
+          "gabcSha256": "d8b84063f51fcff7b2c3430081dba296e5e6bb2753d614b36da6bc087855c370",
+          "sourceFolio": "33",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1163",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-270",
+      "sourcePath": "Sancti/05-31",
+      "sourceSha": "8d1e76e3afb2dc24a884457184722be838d2175a",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "ipse habet in vestimento et in femore suo scriptum rex regum et dominus dominantium",
+      "originalGabcSha256": "efc6ce4492fdc6433e9b23f7ead05c09eadee65bb60d785d6718522d5353656c",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1368",
+          "part": "gr",
+          "gabcSha256": "80dbd702558a2d1e1aa5fc1cba70914df445c7ab1c453c0a17f20f21ea2ca032",
+          "sourceFolio": "504B",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1368",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-792",
+      "sourcePath": "Sancti/06-24",
+      "sourceSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "misit dominus manum suam et tetigit os meum et dixit mihi",
+      "originalGabcSha256": "53aecc4c093ebbb32588e8e9c44ab709a8ebdbe20d486f6e4b2d290c5a06c68c",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-647",
+          "part": "gr",
+          "gabcSha256": "cdabbde606f6c781f8f91594e3eb23eb3b49e595b18022bf6e5f2468447776de",
+          "sourceFolio": "524",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=647",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1076",
+      "sourcePath": "Sancti/08-06",
+      "sourceSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "speciosus forma prae filiis hominum diffusa est gratia in labiis tuis",
+      "originalGabcSha256": "6c25d44d0f17157f360434c377befdaef2555c8ee9b9d4c40eb2be55697520f1",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1308",
+          "part": "gr",
+          "gabcSha256": "2bfd5eb237ac43800259bc60fb412d10a9396f0ebc4c739ff2d5bf2f2cf09d14",
+          "sourceFolio": "45",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1308",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        },
+        {
+          "id": "GREGOBASE-1354",
+          "part": "gr",
+          "gabcSha256": "561e7c800d8bb3887b8958735d9bb1c3cc7b3d431211c8b1ff5cdda9334e4811",
+          "sourceFolio": "129**",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1354",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 2,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-134",
+      "sourcePath": "Sancti/12-26",
+      "sourceSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 3,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "adiuva me domine deus meus salvum me fac propter misericordiam tuam",
+      "originalGabcSha256": "d922d99324b0d4602f825659ef1ccad7aaf62d8132137557f24e3e0d8034335f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-906",
+          "part": "gr",
+          "gabcSha256": "2a2bd607a074838dc8fac495cd05bb92a132bdda547017a9612f98b5a2e82683",
+          "sourceFolio": "36",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=906",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1289",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "benedictus es domine qui intueris abyssos et sedes super cherubim",
+      "originalGabcSha256": "417dcb629fe2c63291f0e359cc3004bcc5114c85eb9243b8592f60fc7df2af77",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-965",
+          "part": "gr",
+          "gabcSha256": "f4231113501ddbf5317e35774448e3b211fb4fef8db8f718e0b2a034befe961e",
+          "sourceFolio": "308",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=965",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1289",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "benedictus es domine in firmamento caeli et laudabilis in saecula alleluia alleluia",
+      "originalGabcSha256": "417dcb629fe2c63291f0e359cc3004bcc5114c85eb9243b8592f60fc7df2af77",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-965",
+          "part": "gr",
+          "gabcSha256": "f4231113501ddbf5317e35774448e3b211fb4fef8db8f718e0b2a034befe961e",
+          "sourceFolio": "308",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=965",
+          "latinEvidence": "FIRST_EIGHT_WORDS_ONLY"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-539",
+      "sourcePath": "Tempora/Pent05-0",
+      "sourceSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine deus virtutum exaudi preces servorum tuorum",
+      "originalGabcSha256": "ce9b0712bf4d4b87070cb7a462dfcfe9e53fdee6691899601aec4f5d6839c546",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1226",
+          "part": "gr",
+          "gabcSha256": "920c2287602b02bdb7477dfba407f5284a038b30e28d226fe5be1331f7936d60",
+          "sourceFolio": "108",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1226",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1185",
+      "sourcePath": "Tempora/Pent13-0",
+      "sourceSha": "d116ba13695c45655c28b5092a6c20be04e4514a",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "exsurge domine et iudica causam tuam memor esto opprobrii servorum tuorum alleluia alleluia",
+      "originalGabcSha256": "7b796dd0c812d75fba6cf490f8ebd62de8e46bda5891293f769260d47e7e0d55",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1232",
+          "part": "gr",
+          "gabcSha256": "ab9b25de8643ca36111360ddf2654e85db064e0d66d489180001774d92f8001f",
+          "sourceFolio": "354",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1232",
+          "latinEvidence": "FIRST_EIGHT_WORDS_ONLY"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-635",
+      "sourcePath": "Tempora/Pent17-0",
+      "sourceSha": "305356033d88b59493897818cd2760d13ebd863f",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "verbo domini coeli firmati sunt et spiritu oris eius omnis virtus eorum alleluia alleluia",
+      "originalGabcSha256": "97760261550d481730e334e63be965663865c2eeeba65bb9497e224c51558a96",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1380",
+      "sourcePath": "Tempora/Pent21-0",
+      "sourceSha": "8804e666d93fec358a44509e0219514c6142719e",
+      "originalScorePart": "al",
+      "sourceSegment": "ALLELUIA",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 5,
+          "role": "ALLELUIA"
+        }
+      ],
+      "correctedRoleCandidate": "al",
+      "roleConflict": false,
+      "donorLatin": "in exitu israel de aegypto domus iacob de populo barbaro alleluia",
+      "originalGabcSha256": "9577406de5b194482dbb80cc69f4e6aa5838fabb12113cca7d4cb7464f54c824",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-879",
+      "sourcePath": "Tempora/Quad2-0",
+      "sourceSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "tribulationes cordis mei dilatatae sunt de necessitatibus meis eripe me domine",
+      "originalGabcSha256": "dc1ac7ab087feb0453c2724d14056d0ed2bf688cc29d4eaed0c38bd45a5c1e4f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-596",
+          "part": "gr",
+          "gabcSha256": "9db4cc14c7350f59b8f51fe7d35472492a267b262f328c27d67b8b384e8a98cf",
+          "sourceFolio": "112",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=596",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1185",
+      "sourcePath": "Tempora/Quad3-0",
+      "sourceSha": "447369909971f79c5aede5f5554c073707613589",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "exsurge domine non praevaleat homo iudicentur gentes in conspectu tuo",
+      "originalGabcSha256": "7b796dd0c812d75fba6cf490f8ebd62de8e46bda5891293f769260d47e7e0d55",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1298",
+          "part": "gr",
+          "gabcSha256": "d7ea7c525633dac7fbfb0b6bcca8b17a776ea056208e5cfd5095171888996a34",
+          "sourceFolio": "123",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1298",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-879",
+      "sourcePath": "Tempora/Quad5-0",
+      "sourceSha": "f2395993e50862261732847c2bcb4a999bbdef1d",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "eripe me domine de inimicis meis doce me facere voluntatem tuam",
+      "originalGabcSha256": "dc1ac7ab087feb0453c2724d14056d0ed2bf688cc29d4eaed0c38bd45a5c1e4f",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-760",
+          "part": "gr",
+          "gabcSha256": "5bf5f4cb0e9e843306fe41b15553e8e4071e940b2cf8a924de89cca2c45e8346",
+          "sourceFolio": "152",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=760",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1185",
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceSha": "20b73707547659737a86b142145f41c12fdc53c9",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "quoniam non in finem oblivio erit pauperis patientia pauperum non peribit in aeternum exsurge domine non praevaleat homo",
+      "originalGabcSha256": "7b796dd0c812d75fba6cf490f8ebd62de8e46bda5891293f769260d47e7e0d55",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-222",
+          "part": "gr",
+          "gabcSha256": "829e1725eaf16e11fe8dfefc59d270e67b0e5b6fc8bc9dff7b910381ee9e5983",
+          "sourceFolio": "74",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=222",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-841",
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceSha": "20b73707547659737a86b142145f41c12fdc53c9",
+      "originalScorePart": "al",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": true,
+      "donorLatin": "adiutor in opportunitatibus in tribulatione sperent in te qui noverunt te quoniam non derelinquis quaerentes te domine",
+      "originalGabcSha256": "10305808a5bfa783410da8b58b35c23bc90b9e127c09ecf2df29885bf6592825",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-222",
+          "part": "gr",
+          "gabcSha256": "829e1725eaf16e11fe8dfefc59d270e67b0e5b6fc8bc9dff7b910381ee9e5983",
+          "sourceFolio": "74",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=222",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-748",
+      "sourcePath": "Sancti/05-06",
+      "sourceSha": "8b1e559fa03c0f75e0166fd0dd8dd2d3a733737e",
+      "originalScorePart": "gr",
+      "sourceSegment": "ALLELUIA",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "ALLELUIA"
+        }
+      ],
+      "correctedRoleCandidate": "al",
+      "roleConflict": true,
+      "donorLatin": "iustus germinabit sicut lilium et florebit in aeternum ante dominum alleluia",
+      "originalGabcSha256": "11f8c8c45b3487e01b39c2f1f55cb5bcb2865d26f66efded37b02d41912e40a6",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1207",
+          "part": "al",
+          "gabcSha256": "d2845113abde8e7f0a8ac015dc10d8b71607212a680957b2cf84a5841c07d291",
+          "sourceFolio": "[40]",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1207",
+          "latinEvidence": "FIRST_EIGHT_WORDS_ONLY"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-348",
+      "sourcePath": "Tempora/Epi2-0",
+      "sourceSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+      "originalScorePart": "gr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": false,
+      "donorLatin": "laudate dominum omnes angeli eius laudate eum omnes virtutes eius alleluia",
+      "originalGabcSha256": "13807ee7ec64415537bc6c55191bf45a143c36abdc5aee57e17177b50aeaafb4",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-932",
+      "sourcePath": "Tempora/Pasc3-0",
+      "sourceSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "originalScorePart": "gr",
+      "sourceSegment": "ALLELUIA",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "ALLELUIA"
+        }
+      ],
+      "correctedRoleCandidate": "al",
+      "roleConflict": true,
+      "donorLatin": "redemptionem misit dominus populo suo alleluia",
+      "originalGabcSha256": "542f0dcbf498a672579c60bfcd9df10abe80881641702a8ad7ab76c3a9d1bc49",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-965",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "originalScorePart": "gr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": false,
+      "donorLatin": "benedictus es domine deus patrum nostrorum et laudabilis in saecula alleluia",
+      "originalGabcSha256": "f4231113501ddbf5317e35774448e3b211fb4fef8db8f718e0b2a034befe961e",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-697",
+      "sourcePath": "Tempora/Pent02-0",
+      "sourceSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+      "originalScorePart": "gr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": false,
+      "donorLatin": "ad dominum cum tribularer clamavi et exaudivit me",
+      "originalGabcSha256": "8dc5b13888fbe87974c2cbc38dad0c4f43918ee53b1167941fadffd230a71ebb",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-834",
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "originalScorePart": "gr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": false,
+      "donorLatin": "angelis suis deus mandavit de te ut custodiant te in omnibus viis tuis",
+      "originalGabcSha256": "0d247110f3d80ed7d5ff4c09a77f0f621944ce8e959793c7a44db0f220bebee1",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-834",
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "originalScorePart": "gr",
+      "sourceSegment": "TRACT",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 13,
+          "role": "TRACT"
+        }
+      ],
+      "correctedRoleCandidate": "tr",
+      "roleConflict": true,
+      "donorLatin": "quoniam angelis suis mandavit de te ut custodiant te in omnibus viis tuis",
+      "originalGabcSha256": "0d247110f3d80ed7d5ff4c09a77f0f621944ce8e959793c7a44db0f220bebee1",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-889",
+          "part": "tr",
+          "gabcSha256": "7b9d39e8ff26323a71af02f58c351717d858e431279127bb4328adc005303730",
+          "sourceFolio": "95",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=889",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-697",
+      "sourcePath": "Tempora/Quad3-0",
+      "sourceSha": "447369909971f79c5aede5f5554c073707613589",
+      "originalScorePart": "gr",
+      "sourceSegment": "TRACT",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 8,
+          "role": "TRACT"
+        }
+      ],
+      "correctedRoleCandidate": "tr",
+      "roleConflict": true,
+      "donorLatin": "et sicut oculi ancillae in manibus dominae suae ita oculi nostri ad dominum deum nostrum donec misereatur nostri",
+      "originalGabcSha256": "8dc5b13888fbe87974c2cbc38dad0c4f43918ee53b1167941fadffd230a71ebb",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-1329",
+          "part": "tr",
+          "gabcSha256": "4c98fabdbd2b430db85560d8abbf0f8bed95b7317b8ca7edaec6fc343bed839c",
+          "sourceFolio": "124",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1329",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-903",
+      "sourcePath": "Tempora/Quad6-0",
+      "sourceSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+      "originalScorePart": "gr",
+      "sourceSegment": "TRACT",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 11,
+          "role": "TRACT"
+        }
+      ],
+      "correctedRoleCandidate": "tr",
+      "roleConflict": true,
+      "donorLatin": "ego autem sum vermis et non homo opprobrium hominum et abiectio plebis",
+      "originalGabcSha256": "e65e346c8f36adb7f9b63d8d2707d7ebb9df604568d9021d7ee5b40103e01b1d",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [
+        {
+          "id": "GREGOBASE-372",
+          "part": "tr",
+          "gabcSha256": "4350d22d132a88cdcf73444a794597c33ab30d9ab3f313e4d23d532ab42ee882",
+          "sourceFolio": "180",
+          "sourceUrl": "https://gregobase.selapa.net/chant.php?id=372",
+          "latinEvidence": "FULL_DONOR_LINE_TEXT"
+        }
+      ],
+      "provisionalCandidateCount": 1,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-850",
+      "sourcePath": "Tempora/Quadp3-0",
+      "sourceSha": "ba4351128591379e04108d4a32d16ccc7ce15bb1",
+      "originalScorePart": "gr",
+      "sourceSegment": "GRADUAL",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "correctedRoleCandidate": "gr",
+      "roleConflict": false,
+      "donorLatin": "tu es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam",
+      "originalGabcSha256": "4c7ea051f524d546c514c7ddbe43b13595e10088078dcb4186b4db911fec49b9",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-143",
+      "sourcePath": "Tempora/Pent05-0",
+      "sourceSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "originalScorePart": "of",
+      "sourceSegment": "OFFERTORY",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "OFFERTORY"
+        }
+      ],
+      "correctedRoleCandidate": "of",
+      "roleConflict": false,
+      "donorLatin": "benedicam dominum qui tribuit mihi intellectum providebam deum in conspectu meo semper quoniam a dextris est mihi ne commovear",
+      "originalGabcSha256": "32ad219940907bd96a421ba459f3e21af85990408f30b3de1d680ff2820a7ecc",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-391",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "originalScorePart": "co",
+      "sourceSegment": "COMMUNION",
+      "sourceTextMatches": 1,
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "COMMUNION"
+        }
+      ],
+      "correctedRoleCandidate": "co",
+      "roleConflict": false,
+      "donorLatin": "benedicimus deum coeli et coram omnibus viventibus confitebimur ei quia fecit nobiscum misericordiam suam",
+      "originalGabcSha256": "5ccae2fb0cb7cb65cbe720986c0a29fcbed92934c559b71298795463484fdb95",
+      "sourceRevision": "PINNED_GIT_BLOB_VERIFIED",
+      "candidates": [],
+      "provisionalCandidateCount": 0,
+      "status": "CORRECTED_SOURCE_ROLE_TEXT_LEADS_ONLY",
+      "selected1962ProperVerified": false,
+      "printedMelodicNotesVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    }
+  ],
+  "release": "NO_AUTOMATIC_MASS_SCORE_REASSIGNMENT"
+}

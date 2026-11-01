@@ -1,0 +1,104 @@
+{
+  "schema": "ao-mass-music-m12-retrieved-1961-score-leads-v1",
+  "sourceBook": "The Liber Usualis (Solesmes, 1961)",
+  "sourceIndex": "https://gregobase.selapa.net/source.php?id=3",
+  "scope": "Verified directly against source 1961 metadata and its downloadable GABC text, but never against original printed note-for-note scans; research-only URL pointer registry, no copied GABC, no promotion.",
+  "notes": [
+    "1961 source-linked Ite VIII and Benedicamus VIII both contain the celebrant and Deo gratias reply in their original GABC. Their exact 1962 actual-Mass selection and printed pitches remain unverified.",
+    "Gospel source #4490 expressly states the sample Gospel reading was not entered. It provides only greeting, title and Gloria tibi dialogue.",
+    "Old solemn optional oration greeting #4488 must remain distinct from modern regular ferial family and optional text Pax vobis. It is not a whole oration melody.",
+    "GregoBase states GABC transcriptions are CC0; recording rights are not included."
+  ],
+  "records": [
+    {
+      "id": "DISMISSAL_ITE_REGULAR_VIII",
+      "gregobaseId": 832,
+      "name": "Ite VIII",
+      "sourceRole": "KYRIALE",
+      "sourceBookFolio": "1961 Graduale p. 31*; Liber Usualis p. 39",
+      "sourceLatinPhrases": [
+        "Ite missa est",
+        "Deo gratias"
+      ],
+      "coverage": "FULL_LEADER_RESPONSE_SOURCE_CANDIDATE",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=832",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=832",
+      "directGabcTextInspected": true,
+      "notationCopiedIntoRepository": false,
+      "printed1961NeumesCompared": false,
+      "actual1962SelectedMassVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "DISMISSAL_BENEDICAMUS_VIII",
+      "gregobaseId": 2901,
+      "name": "Benedicamus VIII",
+      "sourceRole": "KYRIALE",
+      "sourceBookFolio": "1961 Liber Usualis pp. 39-40",
+      "sourceLatinPhrases": [
+        "Benedicamus Domino",
+        "Deo gratias"
+      ],
+      "coverage": "FULL_LEADER_RESPONSE_SOURCE_CANDIDATE",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=2901",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=2901",
+      "directGabcTextInspected": true,
+      "notationCopiedIntoRepository": false,
+      "printed1961NeumesCompared": false,
+      "actual1962SelectedMassVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "GOSPEL_GREETING_AND_TITLE",
+      "gregobaseId": 4490,
+      "name": "Dominus vobiscum (Toni Evangelii)",
+      "sourceRole": "TONI_COMMUNES",
+      "sourceBookFolio": "1961 Graduale p. 126*; Liber Usualis p. 106",
+      "sourceLatinPhrases": [
+        "Dominus vobiscum",
+        "Et cum spiritu tuo",
+        "Sequentia sancti Evangelii secundum Matthaeum",
+        "Gloria tibi Domine"
+      ],
+      "coverage": "PARTIAL_GOSPEL_PROCLAMATION_MISSING",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4490",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4490",
+      "directGabcTextInspected": true,
+      "notationCopiedIntoRepository": false,
+      "printed1961NeumesCompared": false,
+      "actual1962SelectedMassVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    },
+    {
+      "id": "ORATION_OLD_SOLEMN_OPTION",
+      "gregobaseId": 4488,
+      "name": "Dominus vobiscum (Toni Orationum: old solemn ad libitum)",
+      "sourceRole": "TONI_COMMUNES",
+      "sourceBookFolio": "1961 Graduale p. 115*; Liber Usualis p. 100",
+      "sourceLatinPhrases": [
+        "Dominus vobiscum",
+        "Pax vobis",
+        "Et cum spiritu tuo"
+      ],
+      "coverage": "OPTIONAL_ORATION_GREETING_ONLY",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4488",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4488",
+      "directGabcTextInspected": true,
+      "notationCopiedIntoRepository": false,
+      "printed1961NeumesCompared": false,
+      "actual1962SelectedMassVerified": false,
+      "userApproved": false,
+      "publicReader": false
+    }
+  ],
+  "holds": {
+    "musicalCertification": false,
+    "editorialApproval": false,
+    "publishedReader": false,
+    "automaticMassSelection": false,
+    "audio": false
+  }
+}
