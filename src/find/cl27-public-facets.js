@@ -21,6 +21,9 @@ function exactBooks(item){
  const c=item?.celebration_evidence;
  return c?.subject_scope==="NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE"&&
    c?.source_kind==="PARISH_FIRST_PARTY"&&
+   c?.source_id===item?.source_id&&c?.cl2_anchor===item?.physical_group_id&&
+   c?.venue_name===item?.title&&
+   Array.isArray(item?.source_links)&&item.source_links.some(s=>s?.url===c?.source_url)&&
    c?.liturgical_use==="ROMAN"&&c?.missal_edition==="1962";
 }
 // Positive claims currently released: 2 explicit first-party celebrations.
