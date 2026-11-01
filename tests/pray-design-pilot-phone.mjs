@@ -214,7 +214,8 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().adorationMode),"visit",
      "The approved Visit artwork card must open the canonical guided Visit");
    const reverenceCue=page.locator(base+' .aoDevotionalActionCinematic .aoDevotionalActionContinue');
-   if(await reverenceCue.count())await reverenceCue.click(); // Preserve and acknowledge the canonical genuflection cue.
+   await reverenceCue.waitFor({state:"visible",timeout:8000});
+   await reverenceCue.click(); // Acknowledge the deferred, canonical Visit arrival reverence cue.
    await page.locator(base+' [data-p435930-ador-home]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().adorationMode),"home");
    await page.locator(base+' [data-p435930-ador-mode="open"]').click();
