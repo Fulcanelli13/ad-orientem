@@ -601,6 +601,15 @@ try{
   await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
+  // Claude a1 is an explicit hour-of-prayer entry. The a2/a3 Folio
+  // timeline is intentionally covered until Begin at the bell.
+  const angelusCover=page.locator("#aoPray435930 [data-ao-horarium-intro]");
+  assert.equal(await angelusCover.isVisible(),true,"Angelus lost its a1 hour-of-prayer opening");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930AngelusReader .aoDevoTimeline").isVisible(),false,
+    "Angelus leaked its source-owned reader beneath the a1 opening");
+  await page.locator("#aoPray435930 [data-p435930-angelus-begin]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-ao-claude-horarium]")?.dataset?.aoHorariumOpening==="false",null,{timeout:5000});
+  assert.equal(await angelusCover.isVisible(),false,"Angelus a1 opening remains visible after Begin");
   // Folio is the user-facing Angelus owner. The old donor ritual rail stays
   // hidden deliberately, avoiding duplicated persistent posture guidance.
   // Assert the visible source-owned Folio posture note, current prayer card,
