@@ -320,4 +320,34 @@ for(const image of venueRegistry.items){
 }
 assert.ok(Array.isArray(venueRegistry.items),"Venue-media owner must remain an explicit audited registry");
 
+// Wave A: the two already independently source-cleared and user-authorized
+// photographs are real repository binaries, rendered only for their own TLM
+// venue IDs; don't freeze this as the final lifetime media count.
+const waveACovers=[
+ ["SSPXMAP:OPE-002280","assets/approved/directory-media/GB-groombridge-st-pius-v.webp","2aac4d9122a20e32000261e040acc9a35f37fcdcc51cdddd0ca12957ac56a94d"],
+ ["AO-B35-L-GB-E4B83FC0EAF5","assets/approved/directory-media/GB-brighton-st-mary-magdalen.webp","f73bb8401082f27804496eb7e983067b6333f5dc9247cdd5637e35d8c363db61"],
+];
+for(const [venueId,assetPath,pinnedHash] of waveACovers){
+ const cover=venueRegistry.items.find(x=>x.venue_id===venueId);
+ assert.ok(cover,"Source-cleared Wave A photograph missing from registry: "+venueId);
+ assert.equal(cover.asset_path,assetPath);
+ assert.equal(cover.derivative_sha256,pinnedHash);
+ assert.equal(cover.license,"CC0-1.0");
+ assert.equal(cover.license_url,"https://creativecommons.org/publicdomain/zero/1.0/");
+ const candidate={...item,source_id:venueId,item_id:"tlm:wave-a:"+venueId,title:"St Mary Magdalen"};
+ const exactMedia=attachApprovedDirectoryMedia([candidate],{venueApproved:venueRegistry.items})[0];
+ assert.equal(exactMedia.place_id,undefined,"Wave A direct venue media must not invent canonical Place records");
+ assert.equal(exactMedia.cover_media?.asset_path,assetPath);
+ for(const language of ["en","fr"]){
+  const card=renderDirectoryVenueCard(exactMedia,language);
+  assert.match(card,/data-visual-kind="photo"/);
+  assert.ok(card.includes('src="'+assetPath+'"'),"Wave A image missing in "+language);
+  assert.ok(card.includes(language==="fr"?cover.alt_fr:cover.alt_en));
+ }
+ const sameNameOther=attachApprovedDirectoryMedia([{...candidate,source_id:"unrelated-"+venueId}],
+  {venueApproved:venueRegistry.items})[0];
+ assert.equal(sameNameOther.cover_media,undefined,"Similar-name venue borrowed photo without exact source ID");
+ assert.equal(eligibleVenueImage({...cover,status:"CANDIDATE"},venueId),false);
+}
+
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
