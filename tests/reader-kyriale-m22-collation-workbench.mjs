@@ -1,9 +1,19 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
+import {readFileSync,existsSync} from "node:fs";
+import {spawnSync} from "node:child_process";
 import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
 const html=readFileSync(new URL("../tools/mass/kyriale-1961-collation.html",import.meta.url),"utf8");
 const ledger=JSON.parse(readFileSync(new URL("../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json",import.meta.url),"utf8"));
 assert.equal(ledger.scores.length,7);
+const js=html.match(/<script type="module">([\s\S]*?)<\/script>/)?.[1];
+assert.ok(js?.length>1000,"Inline research module is missing");
+const syntax=spawnSync(process.execPath,["--check","--input-type=module"],{input:js,encoding:"utf8"});
+assert.equal(syntax.status,0,"Broken inline module syntax: "+syntax.stderr);
+for(const path of [
+ "../src/mass/reader-kyriale-research-gabc.js",
+ "../src/mass/reader-chant-engraver.js",
+ "../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json"
+])assert.ok(existsSync(new URL(path,import.meta.url)),"Research workbench module/ledger missing: "+path);
 assert.match(html,/<html lang="en"/);
 assert.match(html,/1961 Kyriale · notation collation/);
 assert.match(html,/offlineKyrialeResearchScore/);
