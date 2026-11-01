@@ -978,7 +978,11 @@ export function mountFullMassPreflight({
           .find(row=>row.id==="ASPERGES");
         return {aspersionAllowed:rite?.allowed===true,
           aspersionSelected:rite?.allowed===true&&
-            (riteOverrides.ASPERGES??rite?.fromSource??false)===true};
+            (riteOverrides.ASPERGES??rite?.fromSource??false)===true,
+          // A Sunday sung ceremony is eligible, not automatically observed.
+          // Require a real yes/no choice before H7 begins the Mass.
+          aspersionDecisionRequired:rite?.allowed===true&&
+            riteOverrides.ASPERGES===undefined&&rite?.fromSource!==true};
       }catch{return {aspersionAllowed:false,aspersionSelected:false}}})(),
       experience:selectedExperience(),step:folioStep,
       m1Preview,m1Focus}),
