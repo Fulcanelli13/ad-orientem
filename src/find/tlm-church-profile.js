@@ -3,7 +3,7 @@
  * Read-only presentation: no duplicate Place, schedule or ecclesial assertion registry.
  */
 import {massInstitutionEmblem} from "./institution-emblems.js";
-import {eligibleDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
+import {eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
 const A=v=>Array.isArray(v)?v:[];
 const T=v=>String(v??"").trim();
 const E=v=>T(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -75,8 +75,9 @@ export function renderTlmChurchProfile(item,language="en"){
  const v=buildTlmChurchProfile(item,language),venue=v.venue;
  const sourceLinks=A(item?.source_links).filter(s=>https(s?.url));
  const contact=venue?.contact??{};
- const hasPhoto=eligibleDirectoryImage(item?.cover_media,item?.place_id);
- const address=T(venue?.address?.formatted)||[venue?.address?.line1,venue?.address?.postal_code,venue?.address?.city,venue?.address?.country_code].map(T).filter(Boolean).join(", ");
+ // Apply exactly the same approved-image gate as the compact church card.
+ const hasPhoto=eligibleRenderedDirectoryImage(item?.cover_media,item);
+ const address=T(venue?.address?.formatted)||T(item?.address?.formatted)||[venue?.address?.line1,venue?.address?.postal_code,venue?.address?.city,venue?.address?.country_code].map(T).filter(Boolean).join(", ");
  const listedAffiliation=T(item?.eyebrow)||T(item?.community_id)||unknown(language);
  const listedEmblem=massInstitutionEmblem(item?.community_id);
  const one=v.ministries.length===1?v.ministries[0]:null;
@@ -109,6 +110,31 @@ export function renderTlmChurchProfile(item,language="en"){
    '</div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
   '</header></div>';
+
+ // At-a-glance liturgical identity is deliberately scoped. A published parish
+ // witness proves an edition for SOME celebrations, never the whole building.
+ // Other ministries and status remain unknown unless individually recorded.
+ const scoped=item?.celebration_evidence;
+ const exact= T(scoped?.subject_scope)==="NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE";
+ const edition=exact&&T(scoped?.missal_edition)==="1962"
+   ?L(language,"1962 · named Masses only","1962 · messes désignées seulement")
+   :one?one.missal:unknown(language);
+ const rite=exact&&T(scoped?.liturgical_use)==="ROMAN"
+   ?L(language,"Roman · named Masses only","Romain · messes désignées seulement")
+   :one?one.rite:unknown(language);
+ html+='<section class="aoTlmProfileEssentials" aria-label="'+E(L(language,
+   "Liturgical identity at a glance","Identité liturgique en bref"))+'">'+
+   detail(L(language,"Missal / books","Missel / livres"),edition,null)+
+   detail(L(language,"Rite","Rite"),rite,null)+
+   detail("Una cum",one?one.unaCum:unknown(language),null)+'</section>';
+ // Give every source-backed CL2 site a useful first action, even if it has
+ // no independently publishable recurring Mass timetable or contact object.
+ const primaryLink=values(contact.schedule_url).find(https)||
+   (exact&&https(scoped.source_url)?scoped.source_url:null)||
+   values(contact.website).find(https)||sourceLinks[0]?.url;
+ if(primaryLink)html+='<div class="aoTlmProfilePrimaryAction">'+
+   link(primaryLink,L(language,"Consult original church / Mass information",
+     "Consulter la source originale de l’église ou des messes"))+'</div>';
  // Preserve source-owned summaries only when their schedule content is
  // publishable. An unverified row can carry a stale timetable in item.summary:
  // suppress it even though ministry.schedules have already been filtered out.
@@ -180,10 +206,21 @@ export function renderTlmChurchProfile(item,language="en"){
  html+=renderDirectoryGallery(item,language);
  html+='<section class="aoTlmProfilePanel"><h3>'+E(L(language,"Visit & contacts","Visite et coordonnées"))+'</h3>';
  if(address)html+='<p class="aoTlmProfileAddress">'+E(address)+'</p>';
+ // The CL2 physical-site master may contain a more precise source description
+ // than an inherited R49 locality. Show it as a source description, never
+ // silently promote it to a verified address or church entrance.
+ const sourceLocation=T(item?.source_location_description);
+ if(sourceLocation&&sourceLocation!==address)
+   html+='<p class="aoTlmProfileSourceLocation"><strong>'+E(L(language,
+     "Location in original directory","Localisation selon l’annuaire d’origine"))+': </strong>'+
+     E(sourceLocation)+'</p>';
  if(item?.geo?.approximate||item?.geo?.indicative_only)html+='<p class="aoTlmProfileCaution">'+E(L(language,"Map pin is indicative; the entrance is not verified.","Repère cartographique indicatif ; entrée non vérifiée."))+'</p>';
  const urls=[...values(contact.website),...values(contact.schedule_url),...values(contact.bulletin_url)];
  const links=[...new Set(urls.filter(https))];
- if(links.length)html+='<div class="aoTlmProfileActions">'+links.slice(0,5).map((u,i)=>link(u,i===0?L(language,"Church / institute website","Site de l’église / institut"):L(language,"Schedule / bulletin source","Source horaires / bulletin"))).join("")+'</div>';
+ // CL2 directory records do not own a native contact object; never hide their
+ // original verified source behind an empty contact panel.
+ if(!links.length&&sourceLinks.length)links.push(sourceLinks[0].url);
+ if(links.length)html+='<div class="aoTlmProfileActions">'+links.slice(0,5).map((u,i)=>link(u,i===0?L(language,urls.length?"Church / institute website":"Original venue source",urls.length?"Site de l’église / institut":"Source originale du lieu"):L(language,"Schedule / bulletin source","Source horaires / bulletin"))).join("")+'</div>';
  const dirs=A(item?.actions).filter(a=>a?.label==="Directions"&&https(a?.url));
  if(dirs.length)html+='<div class="aoTlmProfileActions">'+link(dirs[0].url,L(language,"Directions on Google Maps","Itinéraire sur Google Maps"))+'</div>';
  if(values(contact.phone).length)html+=detail(L(language,"Telephone","Téléphone"),values(contact.phone).join(" · "),null);
@@ -238,6 +275,8 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 .aoTlmProfileActions a,.aoTlmProfileSources a{padding:9px 11px;background:#263540;border:1px solid #c4a76844;border-radius:9px;min-height:44px;box-sizing:border-box;font-size:12px}
 .aoTlmChurchProfile button[data-explore-open-place]{background:#302a20;color:#f4e0bb;border:1px solid #d8b576;border-radius:10px;min-height:44px;padding:9px 12px;text-align:left;max-width:100%}
 .aoTlmProfileAddress{overflow-wrap:anywhere}
+.aoTlmProfileSourceLocation{overflow-wrap:anywhere;color:#c4c9ca;font:12px/1.55 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTlmProfileSourceLocation strong{color:#e4cf9f}
 @media(max-width:560px){.aoTlmChurchProfile{width:100%;max-width:none;max-height:90dvh;padding:12px 13px max(30px,env(safe-area-inset-bottom));border-radius:18px 18px 0 0}.aoTlmProfilePanel{padding:12px}.aoTlmProfileIdentityGrid{gap:7px}.aoTlmProfileDatum{padding:9px 8px}.aoTlmProfileDatum strong{font-size:12px}.aoTlmProfileSchedule{flex-direction:column;gap:4px}.aoTlmProfileSchedule>span{max-width:none}}
 @media(prefers-reduced-motion:reduce){.aoTlmChurchProfile{scroll-behavior:auto}}
 
@@ -306,4 +345,13 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
  .aoTlmChurchProfile{padding-inline:11px}
  .aoTlmProfileSpotlight .aoTlmProfileHero img{max-height:185px}
 }
+
+/* Short, readable liturgical summary; assertions retain ministry or celebration scope. */
+.aoTlmProfileEssentials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0 9px}
+.aoTlmProfileEssentials .aoTlmProfileDatum{background:#152932;border-color:#d6b77e40;min-height:62px}
+.aoTlmProfileEssentials .aoTlmProfileDatum strong{font-size:13px;line-height:1.35}
+.aoTlmProfilePrimaryAction{margin:10px 0 14px}
+.aoTlmProfilePrimaryAction a{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:44px;padding:10px 14px;border-radius:11px;border:1px solid #d5bb8159;background:#2c322c;color:#f1d8a5;font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
+.aoTlmProfilePrimaryAction a:focus-visible{outline:2px solid #e8c48b;outline-offset:2px}
+@media(max-width:560px){.aoTlmProfileEssentials{gap:6px;margin:10px 0 8px}.aoTlmProfileEssentials .aoTlmProfileDatum{padding:9px 7px;min-height:59px}.aoTlmProfileEssentials .aoTlmProfileDatum small{font-size:9px}.aoTlmProfileEssentials .aoTlmProfileDatum strong{font-size:11px}}
 `;

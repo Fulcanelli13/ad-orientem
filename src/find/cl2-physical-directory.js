@@ -948,7 +948,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      note:T(selected.note)+" Site marker cross-checked against the physical church site, not a verified entrance."+
       (newPin?.correctedAddress?" Source-master address was a mailing address; corrected visitor church address used.":""),
     }:{}),
-    physical_group_id:anchor,country_code:country,source_ids:Object.freeze([...sourceIds]),
+    physical_group_id:anchor,country_code:country,source_location_description:T(description),source_ids:Object.freeze([...sourceIds]),
     physical_site_source:"CL2_MASTER",source_links:Object.freeze(source_links),
     search_text,affiliation_scope:"SOURCE_LABEL_ONLY",
    }));
@@ -958,7 +958,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    const community_id=family(affiliationName,mapAffiliation);
    result.push(Object.freeze({
     item_id:"tlm:cl2:"+anchor,source_id:sourceIds[0],
-    physical_group_id:anchor,country_code:country,source_ids:Object.freeze([...sourceIds]),
+    physical_group_id:anchor,country_code:country,source_location_description:T(description),source_ids:Object.freeze([...sourceIds]),
     physical_site_source:"CL2_MASTER",lens:"tlm",kind:"TLM_VENUE",
     community_id,preliminary_group:"UNKNOWN",affiliation_scope:"SOURCE_LABEL_ONLY",
     eyebrow:affiliationName,status:"RESEARCH-LISTED · MASS UNVERIFIED",
