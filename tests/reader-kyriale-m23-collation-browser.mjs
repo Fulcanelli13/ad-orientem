@@ -54,6 +54,23 @@ try{
    assert.match(await page.locator("#printImage").getAttribute("src"),/\/931\.png$/);
    assert.deepEqual(errors,[],"No workbench page or rendering errors");
 
+   // Exercise all seven source-preserved GABCs through the ACTUAL browser
+   // renderer, not merely the independent VM/parser tests.
+   for(const [index,sourceId] of [[0,545],[1,2982],[2,1184],[3,961],[4,749],[5,1384],[6,2760]]){
+    await page.locator("#scoreSelect").selectOption(String(index));
+    await page.waitForFunction(id=>{
+     const label=document.querySelector("#scoreReference")?.textContent??"";
+     const status=document.querySelector("#engraveStatus")?.textContent??"";
+     const svg=document.querySelector("#engraveViewport svg");
+     return label.includes("#"+id)&&status.includes("Offline SVG")&&
+      svg?.querySelectorAll("*").length>2&&svg.getBoundingClientRect().height>0;
+    },sourceId,{timeout:55000});
+   }
+   await page.locator("#scoreSelect").selectOption("0");
+   await page.waitForFunction(()=>document.querySelector("#engraveStatus")
+    ?.textContent?.includes("Offline SVG"),null,{timeout:55000});
+
+
    // A full one-page review is still NOT an editorial/publication approval.
    for(const key of ["pitch","neume","underlay","rhythm"])
     await page.locator("#"+key).selectOption("MATCH");
