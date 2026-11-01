@@ -38,6 +38,9 @@ const actual=renderPilotDiscovery({
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+assert.match(actual,/>Prayer<\/h2>/,"R1.1 approved quiet Prayer heading must be shown");
+assert.doesNotMatch(actual,/Enter into prayer|Choose a door or search|Find a prayer or devotion/,
+ "Rejected instructional heading, helper copy and redundant subtitle must stay absent");
 const placement=JSON.parse(readFileSync(new URL("../data/pray/art-placement-slots-20261030.v1.json",import.meta.url),"utf8"));
 assert.equal(placement.schema,"AO_ART_MATCHING_MAP_NORMALIZED_V1");
 assert.equal(placement.counts.slots,275);
