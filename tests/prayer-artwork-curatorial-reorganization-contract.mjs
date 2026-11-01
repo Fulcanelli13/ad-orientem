@@ -141,3 +141,33 @@ test('rejected exact-original candidates are excluded from active research witho
   assert.equal(master.count.activeCandidateRelationshipsAfterConfirmedRejections, 1501);
   assert.equal(master.count.excludedHistoricalCandidateRelationshipsAfterConfirmedRejections, 105);
 });
+
+
+test('B04 Coronation scope is applied in every original candidate shard', () => {
+  const exactIds = new Set(['REVIEW::cma:143761', 'REVIEW::met:435853']);
+  let authorised = 0, researchOnly = 0;
+  let candidates = 0, excluded = 0;
+  for (const family of ['home','1','2','3','4','5','6','7','8','9','other']) {
+    const shard = read('data/prayer/artwork-editorial-20261031/collection-family-' + family + '.v1.json');
+    for (const slot of shard.slots) {
+      candidates += (slot.reviewCollection || []).length;
+      excluded += (slot.excludedFromSuggestions || []).length;
+      for (const candidate of slot.reviewCollection || []) {
+        if (!candidate.sourceIDs?.some(id => exactIds.has(id))) continue;
+        assert.equal(candidate.eligibleForProduction, false, slot.slot);
+        assert.equal(candidate.reconciliation20261101.publicationAllowed, false, slot.slot);
+        if (slot.slot === 'STG-pray.rosary-16') {
+          authorised++;
+          assert.equal(candidate.approvedForThisExactSlot, true);
+        } else {
+          researchOnly++;
+          assert.equal(candidate.approvedForThisExactSlot, false, slot.slot);
+        }
+      }
+    }
+  }
+  assert.equal(authorised, 2);
+  assert.equal(researchOnly, 27);
+  assert.equal(candidates, 1501);
+  assert.equal(excluded, 105);
+});
