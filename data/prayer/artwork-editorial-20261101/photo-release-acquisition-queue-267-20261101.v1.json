@@ -223,7 +223,19 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "photoAcquisitionBlock": {
+        "sourceId": "cerezo-pentecost",
+        "status": "BLOCKED_RESOLUTION",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+        "sourceWidth": 567,
+        "sourceHeight": 479,
+        "fileLicenceReported": "Public domain",
+        "licenceMismatch": false,
+        "remediation": "FIND_HIGH_RES_PHOTO_OF_SAME_ORIGINAL_NO_UPSCALING",
+        "notEditorialRejection": true,
+        "releaseEligible": false
+      }
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:philippe%20de%20champaigne-pr%c3%a9sentation%20au%20temple.jpg",
@@ -245,7 +257,19 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "photoAcquisitionBlock": {
+        "sourceId": "champaigne-presentation",
+        "status": "BLOCKED_LICENSE",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne-Pr%C3%A9sentation_au_temple.jpg",
+        "sourceWidth": 2994,
+        "sourceHeight": 3906,
+        "fileLicenceReported": "Public domain",
+        "licenceMismatch": true,
+        "remediation": "RECONCILE_SOURCE_FILE_LICENSE_METADATA_AND_PHOTOGRAPHER_TERMS",
+        "notEditorialRejection": true,
+        "releaseEligible": false
+      }
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:david_teniers_the_elder_-_the_agony_in_the_garden.jpg",
@@ -383,7 +407,19 @@
       "nativeDimensions": null,
       "photosAcquired": 0,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "photoAcquisitionBlock": {
+        "sourceId": "teniers-ascension",
+        "status": "BLOCKED_RESOLUTION",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+        "sourceWidth": 553,
+        "sourceHeight": 800,
+        "fileLicenceReported": "Public domain",
+        "licenceMismatch": false,
+        "remediation": "FIND_HIGH_RES_PHOTO_OF_SAME_ORIGINAL_NO_UPSCALING",
+        "notEditorialRejection": true,
+        "releaseEligible": false
+      }
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:philippe_de_champaigne_-_the_visitation_-_y1994-17_-_princeton_university_art_museum.jpg",
@@ -2891,6 +2927,8 @@
     "stationsWithSourcePages": 14,
     "stationOriginalsArchived": "separate job pending",
     "releaseManifestStillEmpty": true,
-    "rightsAndCropHumanSignoff": false
+    "rightsAndCropHumanSignoff": false,
+    "firstBatchBlockedSources": 3,
+    "blockersRecordedNoSubstitution": true
   }
 }
