@@ -82,6 +82,15 @@ export const MASS_INSTITUTION_EMBLEMS=Object.freeze({
     symbolScope:"ORDER_FAMILY",
     reviewBeforeCommercialRelease:true,
   }),
+  ORATORIAN:Object.freeze({
+    label:"Oratorian Confederation",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Congregazione_oratorio_di_San_Filippo_Neri-Stemma.svg",
+    source:"https://commons.wikimedia.org/wiki/File:Congregazione_oratorio_di_San_Filippo_Neri-Stemma.svg",
+    rights:"CC BY-SA 4.0; Arrow303 (2024) and credited component artists. Historical blazon of the Confederation of the Oratory of Saint Philip Neri; not an individual congregation or Institute of St Philip Neri crest.",
+    licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
+    symbolScope:"ORDER_FAMILY",
+    reviewBeforeCommercialRelease:true,
+  }),
   CISTERCIAN:Object.freeze({
     label:"Cistercian Order",
     image:"https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Cistercian_Order.svg",
