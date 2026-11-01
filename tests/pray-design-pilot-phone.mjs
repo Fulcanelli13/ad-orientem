@@ -84,8 +84,12 @@ try{
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
     await page.locator(base+' [data-p435930-family="'+door+'"]').click();
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
-    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),0,
-      "The fixed app header already identifies the family; never duplicate its heading: "+door);
+    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),1,
+      "Each Claude door has one content title below its unassigned artwork band: "+door);
+    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding=unassigned]").count(),1,
+      "Door art must remain a labelled, unassigned slot until exact painting clearance: "+door);
+    assert.ok(await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-door-filter]").count()>=2,
+      "Source-scoped category filters must remain visible: "+door);
     if(door==="marian"){
       const featured=await page.locator(base+" .aoPrayDoorFeaturedCopy b").textContent();
       assert.equal(featured.trim(),"Litany of Loreto","Keep the readable editorial title; canonical source edition stays in the reader");
@@ -100,6 +104,14 @@ try{
       el.dataset.p435930Own||el.dataset.p435930External||el.dataset.p435930DoorPrayer));
     assert.ok(rows.length>=2,"Every real door needs at least two distinct source-owned entries: "+door);
     assert.equal(new Set(rows).size,rows.length,"Within-door duplicates: "+door);
+    const activeFacet=page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter]:not([data-p435930-door-filter=all])').first();
+    await activeFacet.click();
+    const chosen=await activeFacet.getAttribute('data-p435930-door-filter');
+    assert.equal(await activeFacet.getAttribute('aria-pressed'),'true',"Category filter must be interactive");
+    const shown=await page.locator(base+' [data-ao-prayer-shelf] [data-ao-pray-door-entry]:visible').evaluateAll(nodes=>nodes.map(n=>n.dataset.aoPrayDoorFacet));
+    assert.ok(shown.length>0&&shown.every(v=>v===chosen),"Filter cannot claim selection while leaving unrelated prayers visible: "+door);
+    await page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter=all]').click();
+    assert.equal(await page.locator(base+' [data-ao-prayer-shelf] [data-ao-pray-door-entry]:visible').count(),rows.length,"All must restore every unique shelf row");
     for(const id of rows){
       assert.equal(seen.has(id),false,"Prayer "+id+" appears in both "+seen.get(id)+" and "+door);
       seen.set(id,door);
