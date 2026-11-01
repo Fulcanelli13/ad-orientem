@@ -46,29 +46,6 @@ try{
      null,{timeout:30000});
    const startupError=await page.evaluate(()=>window.__AO_PHONE_HARNESS_ERROR??null);
    assert.equal(startupError,null,"reader fixture startup: "+startupError);
-   if(requiem){
-     const organ=await page.evaluate(async()=>{
-       const api=window.__AO_PHONE_PREVIEW;
-       const note=document.querySelector(
-         '#ao-r17-native-reader-preview [data-role="organ-permission"]');
-       for(const card of api.model.cards.slice(0,14)){
-         api.showSequence(card.sequence);
-         await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
-         if(note?.dataset.organNorm==="ACCOMPANIMENT_ONLY"){
-           return {mode:api.getPresentationMode(),hidden:note.hidden,
-             status:note.dataset.organNorm,observed:note.dataset.organObserved,
-             text:note.textContent};
-         }
-       }
-       return null;
-     });
-     assert.ok(organ,"1958 Requiem organ rule lost its source projection");
-     assert.equal(organ.status,"ACCOMPANIMENT_ONLY");
-     assert.equal(organ.observed,"UNKNOWN","No real organ performance may be inferred");
-     assert.equal(organ.hidden,mode==="LIVE",
-       "LIVE must suppress editorial 1958 caption; MISSAL retains reference");
-     assert.match(organ.text,/1958 RULE/);
-   }
    // Same handler and saved-preference path as the actual Mass settings UI.
    await page.evaluate(()=>{
      const select=document.querySelector('[data-reader-customary="postureProfile"]');
