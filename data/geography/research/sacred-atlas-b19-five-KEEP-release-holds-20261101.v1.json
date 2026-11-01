@@ -13,10 +13,11 @@
       "photo_license": "CC BY-SA 4.0",
       "photographer": "Aw58",
       "visually_correct": true,
-      "status": "STAGED_IN_DRAFT_RELEASE_PR_2203",
-      "remaining_gate": "Exact native Commons source SHA1, no-crop WebP asset byte hashing, automated gallery regression, deploy verification.",
+      "status": "MERGED_MAIN_NATIVE_COMMONS_ORIGINAL_APPROVED_GALLERY",
+      "remaining_gate": "Merged as commit 23e850b297ca99829548fd696a05ad461636c29f. Production Vercel READY/domain alias still must be independently confirmed.",
       "historical_object_context": "Medieval icon; Jasna Góra documents original image before 1400.",
-      "deployed": false
+      "deployed": false,
+      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f"
     },
     {
       "subject_id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
@@ -27,10 +28,11 @@
       "photo_license": "CC BY-SA 4.0",
       "photographer": "W. Bulach",
       "visually_correct": true,
-      "status": "STAGED_IN_DRAFT_RELEASE_PR_2203",
-      "remaining_gate": "Exact native Commons source SHA1, no-crop WebP asset byte hashing, automated gallery regression, deploy verification; preserve historical 2013 vestment context.",
+      "status": "MERGED_MAIN_NATIVE_COMMONS_ORIGINAL_APPROVED_GALLERY",
+      "remaining_gate": "Merged as commit 23e850b297ca99829548fd696a05ad461636c29f. Production Vercel READY/domain alias still must be independently confirmed.",
       "historical_object_context": "14th-century image of grace; altar garments/devotional setting pictured in 2013.",
-      "deployed": false
+      "deployed": false,
+      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f"
     },
     {
       "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
@@ -101,5 +103,10 @@
   ],
   "no_new_photo_user_approval_inferred": true,
   "allow_generic_same_place_fallback": false,
-  "published_new_images": 0
+  "published_new_images": 0,
+  "release_pr_merged": true,
+  "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+  "native_originals_sha1_and_webp_sha256_ci_passed": true,
+  "app_approved_gallery_item_count": 35,
+  "new_approved_marian_gallery_objects": 2
 }
