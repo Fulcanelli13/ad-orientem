@@ -2,6 +2,7 @@ import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderDirectoryVenueCard,eligibleDirectoryImage,eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
 import {renderTlmChurchProfile} from "./tlm-church-profile.js";
+import {renderTlmMapResultRail} from "./tlm-map-result-rail.js";
 import {PUBLIC_CL27_AXES} from "./cl27-public-facets.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
@@ -890,6 +891,11 @@ export function renderExploreToString(vm){
           ?L(vm.language,"These source listings have no publishable coordinates. Some contain only a locality or country. Use List to view them.","Ces fiches sourcées n’ont pas de coordonnées publiables. Certaines ne donnent qu’une localité ou un pays. Consultez-les en Liste.")
           :L(vm.language,"No publishable map points in this lens yet.","Aucun point cartographique publiable dans ce volet pour le moment.")
     )+'</span></div></div>';
+    // The MapLibre camera owns the visible region; this placeholder is
+    // replaced by exactly those mapped CL2 results after map load/movement.
+    if(vm.lens==="tlm")html+=renderTlmMapResultRail({
+      language:vm.language,items:[],selectedId:vm.selected?.item_id,loading:true,
+    });
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
       html+='<details class="aoMapLegend" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'"><summary>'+esc(L(vm.language,"Map symbols","Symboles de la carte"))+'</summary>'

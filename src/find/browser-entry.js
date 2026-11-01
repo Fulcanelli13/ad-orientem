@@ -18,6 +18,7 @@ import {TLM_CHURCH_PROFILE_STYLE} from "./tlm-church-profile.js";
 import {publicCL27FacetCounts,validPublicCL27Selection} from "./cl27-public-facets.js";
 import {tlmCelebrationEvidenceCounts} from "./tlm-celebration-evidence.js";
 import { discoverItemsWithinMapBounds, renderMapcnDiscoverRail } from "./mapcn-discover-rail.js";
+import {renderTlmMapResultRail} from "./tlm-map-result-rail.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
 import { projectSaintSourceIndexItems } from "./saints-source-index.js";
@@ -351,10 +352,35 @@ export function createFindOwner(win=globalThis){
   // there is no parallel search index, geocoder, or map instance.
   function syncMassViewport(){
     if(!openState||state.lens!=="tlm"||state.view!=="map"||!mapHandle)return;
-    const counter=getRoot(win)?.querySelector?.("[data-tlm-viewport-count]");
-    if(!counter)return;
-    try{counter.textContent=mappedVenueViewportLabel(mapHandle.viewportVenueStats?.(),language(win));}
-    catch{counter.textContent=mappedVenueViewportLabel(null,language(win));}
+    const root=getRoot(win);
+    const counter=root?.querySelector?.("[data-tlm-viewport-count]");
+    if(counter){
+      try{counter.textContent=mappedVenueViewportLabel(mapHandle.viewportVenueStats?.(),language(win));}
+      catch{counter.textContent=mappedVenueViewportLabel(null,language(win));}
+    }
+    // Same camera as the pins; no parallel location query. Render only
+    // source-owned mapped records currently inside MapLibre's visible bounds.
+    const rail=root?.querySelector?.("[data-tlm-map-rail]"),map=mapHandle.map;
+    if(!rail||!map||!lastExploreViewModel)return;
+    let bounds;
+    try{bounds=map.getBounds?.();}catch{return;}
+    if(!bounds||typeof bounds.contains!=="function")return;
+    const nearby=discoverItemsWithinMapBounds(lastExploreViewModel.items,bounds);
+    const center=map.getCenter?.();
+    const staged=win.document.createElement("div");
+    staged.innerHTML=renderTlmMapResultRail({
+      items:nearby,language:language(win),selectedId:state.selectedId,
+      center:center?{lat:center.lat,lng:center.lng}:null,
+    });
+    const replacement=staged.firstElementChild;
+    if(!replacement)return;
+    const oldDetails=rail.querySelector(".aoTlmMapRailDisclosure");
+    const newDetails=replacement.querySelector(".aoTlmMapRailDisclosure");
+    if(newDetails&&oldDetails)newDetails.open=oldDetails.open;
+    const scrollTop=rail.querySelector(".aoTlmMapRailItems")?.scrollTop??0;
+    rail.replaceWith(replacement);
+    const newItems=replacement.querySelector(".aoTlmMapRailItems");
+    if(newItems)newItems.scrollTop=scrollTop;
   }
 
   function syncDiscoverViewport(){
@@ -387,6 +413,12 @@ export function createFindOwner(win=globalThis){
     // Rebuilding the entire Explore surface after each search keystroke
     // detaches its focused input. Retain focus, caret and page position so
     // users can type a complete query, including on mobile keyboards.
+    // Preserve TLM filter disclosures before a full render. Reopening them
+    // only in paint().then() leaves a race where users see the newly selected
+    // option before the parent drawer has reopened.
+    const priorTlmFiltersOpen=Boolean(node.querySelector?.(".aoAtlasTlmExtra")?.open);
+    const priorTlmCountryOpen=Boolean(node.querySelector?.(".aoTlmCountryFacet")?.open);
+    const priorTlmInstitutesOpen=Boolean(node.querySelector?.(".aoTlmMoreInstitutes")?.open);
     const priorDiscoverScroll=node.querySelector?.(".aoMapcnDiscoverEntries")?.scrollTop??0;
     const priorDiscoverExpanded=node.querySelector?.("[data-mapcn-discover-rail]")?.dataset?.discoverExpanded==="true";
     const priorTimeMassScroll=node.querySelector?.(".aoTimeMassScroll")?.scrollTop??0;
@@ -552,6 +584,11 @@ export function createFindOwner(win=globalThis){
       surface.querySelectorAll(".aoFindSheetBackdrop").forEach(sheet=>sheet.remove());
       if(nextSheet)surface.append(nextSheet);
       // Map pin → list and list → folio share one canonical place selection.
+      // Selection-only sheets must keep the MapLibre canvas AND left-rail
+      // selection intact; do not rebuild the entire viewport on every tap.
+      surface.querySelectorAll?.("[data-tlm-map-rail] [data-explore-item]")
+        .forEach(button=>button.setAttribute("aria-current",
+          String(button.dataset.exploreItem===state.selectedId)));
       surface.querySelectorAll?.("[data-mapcn-discover-rail] [data-explore-open-place]")
         .forEach(button=>button.setAttribute("aria-current",
           String(button.dataset.exploreOpenPlace===state.selectedPlaceId)));
@@ -574,6 +611,13 @@ export function createFindOwner(win=globalThis){
         mapHandle.map.resize?.();
       }else node.innerHTML=rendered;
     }else node.innerHTML=rendered;
+    // Rehydrate native details synchronously, before an aria-pressed
+    // transition can be observed by the browser or the next click.
+    if(state.lens==="tlm"){
+      if(priorTlmFiltersOpen){const d=node.querySelector?.(".aoAtlasTlmExtra");if(d)d.open=true;}
+      if(priorTlmCountryOpen){const d=node.querySelector?.(".aoTlmCountryFacet");if(d)d.open=true;}
+      if(priorTlmInstitutesOpen){const d=node.querySelector?.(".aoTlmMoreInstitutes");if(d)d.open=true;}
+    }
     const discoverRail=node.querySelector?.("[data-mapcn-discover-rail]");
     if(discoverRail){
       discoverRail.dataset.discoverExpanded=String(priorDiscoverExpanded);
@@ -1675,6 +1719,7 @@ export function createFindOwner(win=globalThis){
       });
       return;
     }
+    if(state.lens==="tlm"&&target?.closest?.("[data-tlm-map-open-directory]")){setFilter("view","list");return;}
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
   }
 
