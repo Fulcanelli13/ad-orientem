@@ -57,7 +57,7 @@ export function index1961GradualeGabc(batches){
        throw new Error("UNTRUSTED_ARCHIVE_SCORE:"+row?.id);
      ids.add(id);counts[role]=(counts[role]??0)+1;
      const originalText=gabcLatin(row.gabc);
-     if(!originalText||words(originalText).length<2)
+     if(!originalText||words(originalText).length<1)
        throw new Error("EMPTY_ARCHIVE_LATIN:"+id);
      all.push(freeze({...row,normalizedScoreText:originalText}));
    }
