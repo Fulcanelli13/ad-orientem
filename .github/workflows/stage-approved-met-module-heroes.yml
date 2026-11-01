@@ -1,0 +1,45 @@
+name: Approved Met module hero source staging (no app publication)
+on:
+  pull_request:
+    paths:
+      - "scripts/art/stage-approved-met-module-heroes.py"
+      - ".github/workflows/stage-approved-met-module-heroes.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stage-approved-museum-photos:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Exact artwork identity / rights gate
+        run: python scripts/art/stage-approved-met-module-heroes.py --test
+      - name: Fetch two original museum JPEGs
+        run: python scripts/art/stage-approved-met-module-heroes.py
+      - name: Commit source photos to feature branch (never main)
+        run: |
+          test "$(git branch --show-current)" = "release/stage-approved-met-module-masters-20261102"
+          test -f assets/staged/sacred-art-met-approved/angelus-met-438724.jpg
+          test -f assets/staged/sacred-art-met-approved/adoration-met-438434.jpg
+          test -f assets/staged/sacred-art-met-approved/source-manifest.json
+          git add assets/staged/sacred-art-met-approved/
+          if ! git diff --cached --quiet; then
+            git -c user.name="Ad Orientem Museum Sources" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "stage approved Met original photos with exact provenance"
+            git push origin HEAD:refs/heads/release/stage-approved-met-module-masters-20261102
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: met-two-approved-source-review
+          path: assets/staged/sacred-art-met-approved/
+          retention-days: 7
+          if-no-files-found: warn
