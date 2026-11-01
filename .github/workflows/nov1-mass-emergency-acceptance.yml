@@ -1,0 +1,64 @@
+name: All Saints 2026 — urgent Mass field acceptance
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/nov1-mass-emergency-acceptance.yml"
+      - "tests/reader-all-saints-asperges-phone.mjs"
+      - "tests/calendar-imminent-mass-gate-2026.mjs"
+      - "tests/mass-november-2026-release-gate-e2e.mjs"
+      - "src/mass/**"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: all-saints-2026-mass-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  all-saints-source-and-reader:
+    name: real Nov 1 Proper + complete Asperges phones
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Original 1962 calendar source and EN/FR Mass-form preflight
+        run: node tests/calendar-imminent-mass-gate-2026.mjs
+      - name: Ordinary Sunday Asperges (not Vidi aquam) source rubrics and all responses
+        run: node tests/reader-asperges.mjs
+      - name: Full Asperges five-card LIVE/MISSAL phone sequence, EN/FR
+        run: node tests/reader-all-saints-asperges-phone.mjs
+      - name: Exact 2026 Nov 1 and Nov 2 native reader source and prayer checks
+        run: node tests/mass-november-2026-release-gate-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: all-saints-2026-mass-field-proof
+          path: |
+            artifacts/all-saints-asperges-phone/
+            artifacts/mass-november-readiness/report.json
+          if-no-files-found: warn
+          retention-days: 7
+  anonymous-production-phone:
+    name: deployed Mass LIVE smoke — 320 and 390px
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real public deployment, anonymous EN/FR LIVE and Schola controls
+        run: node tests/mass-reader-production-phone-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: all-saints-2026-production-phone-smoke
+          path: artifacts/mass-reader-production-smoke/
+          if-no-files-found: warn
+          retention-days: 7
