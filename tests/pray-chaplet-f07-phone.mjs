@@ -38,10 +38,31 @@ try{
     const r=el.getBoundingClientRect();
     return {top:r.top,pixels:Math.max(0,Math.min(r.bottom,innerHeight-70)-Math.max(0,r.top)),height:innerHeight};
    });
+   const verticalStack=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const top=selector=>{
+     const element=root?.querySelector(selector),box=element?.getBoundingClientRect();
+     return box?{top:Math.round(box.top),height:Math.round(box.height)}:null;
+    };
+    return {
+     crown:top(".aoF07CrownBand"),
+     recitation:top(".aoF07MercyRecitation"),
+     chapters:top(".aoF07MercyChapterChips"),
+     progress:top(".aoMercyBeadNavigation"),
+     cardHead:top(".aoDevoCardHead"),
+     scroll:top(".aoDevoCardScroll"),
+     rubric:top(".aoF07MercyRubric"),
+     prayer:top(".aoMercyLine.aoMercyPrayer p")
+    };
+   });
    assert.ok(firstPrayer.pixels>=28,
-    "F07 first canonical prayer must show at least one readable line above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
+    "F07 first canonical prayer must show at least one readable line above the app dock at "+
+    width+"px: "+JSON.stringify({firstPrayer,verticalStack}));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
-   const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
+   // The Claude pilot intentionally hides the old decade strip. Exercise the
+   // visible chapter control, not a hidden legacy button.
+   const large=page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="4"]');
+   assert.equal(await large.isVisible(),true,"First decade must have a visible chapter target");
    await large.click();
    assert.equal(await crown.getAttribute("data-position"),"4");
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
@@ -61,6 +82,32 @@ try{
     return {document:document.documentElement.scrollWidth-innerWidth,mount:(mount?.scrollWidth||0)-(mount?.clientWidth||0)};
    });
    assert.ok(overflow.document<=1&&overflow.mount<=1,"No 320/390 horizontal overflow: "+JSON.stringify(overflow));
+   // Navigation position is not proof a prayer was recited. Only an explicit
+   // click on Finish after the last source paragraph can complete the chaplet.
+   const closing=page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="59"]');
+   assert.equal(await closing.isVisible(),true,"Closing invocations need a visible chapter target");
+   await closing.click();
+   const finalAction=page.locator(base+'[data-p435930-mercy-finish]');
+   assert.equal(await finalAction.isVisible(),false,"Finish must remain hidden before the last Holy God");
+   // On a tall phone all three closing prayers may fit without scrolling.
+   // Tapping the exact final source paragraph must focus it and unlock Finish.
+   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').click();
+   await page.waitForFunction(()=>
+    document.querySelector('#aoPray435930.open [data-p435930-mercy-finish]')?.hidden===false,
+    null,{timeout:8000});
+   assert.equal(await finalAction.locator('xpath=ancestor::article').getAttribute('data-ao-mercy-step'),"61",
+    "Finish must remain attached to the actual last source prayer paragraph");
+   assert.equal(await finalAction.isVisible(),true,
+    "Finish must be visibly available when the last source prayer is focused");
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0,
+    "Simply reaching the final text must not mark the chaplet complete");
+   await finalAction.click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),1,
+    "Finish after the final source event must reveal completion");
+   await page.locator(base+'[data-p435930-mercy-again]').click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
+   assert.equal(await page.locator(base+'[data-ao-f07-crown]').getAttribute('data-position'),'0',
+    "Pray again must restart the same canonical 62-event sequence");
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}
