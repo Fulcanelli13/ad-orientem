@@ -19,6 +19,28 @@ assert.equal(sourceById.size,src.sources.length);
 assert.deepEqual(new Set(geo.places.map(p=>p.place_id)),new Set(cross.place_crosswalk.map(x=>x.place_id)),"Canonical and heritage Place owners must contain same physical IDs");
 assert.equal(new Set(CURRENT_RELEASE_PLACE_IDS).size,CURRENT_RELEASE_PLACE_IDS.length,"Duplicate Place ID across release manifests");
 for(const release of RELEASES){
+ if(release.data.new_places===0){
+  // A later source-confirmed venue bridge can refer to an EXISTING Place.
+  // It is not newly published geographic content and cannot be counted as
+  // a Place created after a frozen historical release.
+  assert.equal(release.data.published_new?.length??0,0,
+   release.id+" link-only release may not mint a new Place");
+  const bridges=release.data.published_links??[];
+  assert.equal(bridges.length,release.data.confirmed_directory_links_added,
+   release.id+" link-only release must enumerate exact new bridges");
+  for(const bridge of bridges){
+   const existingPlace=placeById.get(bridge.place_id);
+   assert.ok(existingPlace,"Linked Place must already exist: "+bridge.place_id);
+   assert.ok(isMapPublishablePlaceGeo(existingPlace.geo,existingPlace.address.country_code));
+   const exact=geo.directoryPlaceLinks.filter(link=>link.place_id===bridge.place_id&&
+    link.venue_id===bridge.venue_id&&link.link_id===bridge.link_id);
+   assert.equal(exact.length,1,release.id+" must retain exactly one exact identity bridge");
+   assert.equal(exact[0].confidence,"CONFIRMED");
+   assert.equal(exact[0].relationship,"LOCATED_AT");
+   assert.ok(exact[0].source_ids.length>=2);
+  }
+  continue;
+ }
  assert.ok(release.data.published_new?.length>0,release.id+" must contain place-specific release records");
  for(const item of release.data.published_new){
   const p=placeById.get(item.place_id);
