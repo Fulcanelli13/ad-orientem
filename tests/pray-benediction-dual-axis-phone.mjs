@@ -138,6 +138,19 @@ try{
  await swipe(-154,5);
  assert.equal((await snapshot()).card,"adoration","Horizontal swipe must change exactly one stage");
  assert.equal((await snapshot()).current,1);
+ const lamb=page.locator(rootSel+" [data-ao-user-selected-theme='mystic-lamb'] img");
+ assert.equal(await lamb.count(),1,
+   "User-approved Mystic Lamb original must appear at adoration, not as a blessing illustration");
+ const lambPixels=await lamb.evaluate(async img=>{
+   if(!img.complete)await new Promise((done,fail)=>{img.addEventListener("load",done,{once:true});img.addEventListener("error",fail,{once:true})});
+   const rect=img.getBoundingClientRect();
+   return {naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,width:rect.width,height:rect.height};
+ });
+ assert.ok(lambPixels.naturalWidth>1500&&lambPixels.naturalHeight>1000,
+   "The original selected Mystic Lamb photo failed to load");
+ assert.ok(lambPixels.width>100&&lambPixels.height>0&&lambPixels.height<=844*.31,
+   "The approved photograph disrupts the 390px Claude altar stage");
+ await page.screenshot({path:resolve(captures,"benediction-390-adoration-user-approved-mystic-lamb.png"),animations:"disabled"});
  await page.waitForTimeout(900);
  assert.equal((await snapshot()).index,1,"Rite advanced automatically instead of waiting for user");
  // The existing response is retained, never replaced by a generated substitute.
