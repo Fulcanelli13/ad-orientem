@@ -6,7 +6,14 @@
   "counts": {
     "originalArtworkCandidateGroups": 124,
     "MISSING_EXACT_IMAGE_SOURCE": 34,
-    "INVALID_CATALOGUE_URL": 90
+    "COMMONS_EXACT_FILE_METADATA": 54,
+    "ARTIC_INSTITUTIONAL_IMAGE": 1,
+    "ART_UK_COPYRIGHT_PHOTO_HOLD": 1,
+    "CMA_INSTITUTIONAL_OPEN_ACCESS": 14,
+    "MET_INSTITUTIONAL_OPEN_ACCESS": 15,
+    "PRADO_PHOTO_HOLD": 2,
+    "OTHER_CATALOGUE_SOURCE": 1,
+    "NGA_INSTITUTIONAL_OPEN_ACCESS": 2
   },
   "notes": [
     "Group count is deduplicated by catalogue URL or selected artist/title, not a verified original-object identity registry.",
@@ -65,9 +72,9 @@
       "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg",
       "priority": "P0_FINAL_LOCK",
       "sourceIdentifiers": [],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -88,9 +95,9 @@
         "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
         "PRAYER::regina--primary"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -108,9 +115,9 @@
         "PRAYER::morning--primary",
         "HERO::new:jules-breton-song-of-the-lark-artic-94841"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "ARTIC_INSTITUTIONAL_IMAGE",
+      "requiredAction": "VERIFY_AIC_IMAGE_RIGHTS_IIIF_AND_COLOR",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -128,9 +135,9 @@
         "PRAYER::evening--primary",
         "HERO::artuk:op6-prayer-frere"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "ART_UK_COPYRIGHT_PHOTO_HOLD",
+      "requiredAction": "FIND_RIGHTS_CLEARED_ALTERNATE_OF_SAME_ORIGINAL",
+      "photographRightsState": "PAGE_DISPLAY_NOT_REUSE_PERMISSION",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -170,9 +177,9 @@
       "sourceIdentifiers": [
         "APPROVED_REVIEW::STG-pray.rosary-14::06"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -192,9 +199,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -214,9 +221,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -236,9 +243,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-122338"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -257,9 +264,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:15973724"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -278,9 +285,9 @@
       "sourceIdentifiers": [
         "CANONICAL::met-436672"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -298,9 +305,9 @@
       "sourceIdentifiers": [
         "APPROVED_REVIEW::STG-pray.rosary-13::05"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -318,9 +325,9 @@
       "sourceIdentifiers": [
         "APPROVED_REVIEW::STG-pray.rosary-03::01"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -338,9 +345,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "PRADO_PHOTO_HOLD",
+      "requiredAction": "FIND_NON_PRADO_REPRODUCTION_OF_EXACT_ORIGINAL",
+      "photographRightsState": "SOURCE_PHOTOGRAPH_FORBIDDEN",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -358,9 +365,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:15216589"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -377,9 +384,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:20637285"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -396,9 +403,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:22178536"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -415,9 +422,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:115166028"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -682,9 +689,9 @@
         "PRAYER::heart-jesus--primary",
         "CANONICAL::commons-morlete-sacred-heart-1759"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -709,9 +716,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-97147"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -734,9 +741,9 @@
       "sourceIdentifiers": [
         "CANONICAL::met-437542"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -759,9 +766,9 @@
         "CANONICAL::met-438724",
         "CANONICAL::ART-hilippe-de-hampaigne-he-nnunciation"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -782,9 +789,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-143644"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -806,9 +813,9 @@
         "CANONICAL::met-436839",
         "PRAYER::confession--latour-magdalen"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -832,9 +839,9 @@
         "CURATED-STG-pray.penitential_psalms-05-0",
         "CURATED-STG-pray.penitential_psalms-07-0"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -877,9 +884,9 @@
       "sourceIdentifiers": [
         "PRAYER::adoration--primary"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -899,9 +906,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -922,9 +929,9 @@
         "PRAYER::joseph--primary",
         "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -943,9 +950,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:93153411"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -964,9 +971,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-136507"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -986,9 +993,9 @@
         "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
         "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1007,9 +1014,9 @@
       "sourceIdentifiers": [
         "CANONICAL::W07-014"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1028,9 +1035,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1049,9 +1056,9 @@
       "sourceIdentifiers": [
         "REVIEW::met:436503"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1071,9 +1078,9 @@
         "PRAYER::heart-mary--primary",
         "CANONICAL::B02-HEART-MARY-MORLETE"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1092,9 +1099,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1133,9 +1140,9 @@
       "sourceIdentifiers": [
         "REVIEW::met:437978"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1154,8 +1161,8 @@
         "CURATED-20261031-HERO-09-1",
         "CURATED-20261031-HERO-16-1"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
+      "providerLane": "OTHER_CATALOGUE_SOURCE",
+      "requiredAction": "IDENTIFY_ORIGINAL_AND_REUSABLE_PHOTO",
       "photographRightsState": "NOT_VERIFIED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
@@ -1174,9 +1181,9 @@
       "sourceIdentifiers": [
         "CANONICAL::met-436199"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1194,9 +1201,9 @@
       "sourceIdentifiers": [
         "PRAYER::saints--saraceni"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1234,9 +1241,9 @@
       "sourceIdentifiers": [
         "PRAYER::regina--jan-janssens"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1254,9 +1261,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-150955"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1294,9 +1301,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-159488"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1314,9 +1321,9 @@
       "sourceIdentifiers": [
         "PRAYER::angel--franceschini"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1334,9 +1341,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:161200952"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1354,9 +1361,9 @@
       "sourceIdentifiers": [
         "PRAYER::rosary--caravaggio"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1394,9 +1401,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-97181"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1414,9 +1421,9 @@
       "sourceIdentifiers": [
         "APPROVED_REVIEW::STG-pray.precious_blood-01::01"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1454,9 +1461,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:48577448"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1474,9 +1481,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:11005776"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1494,9 +1501,9 @@
       "sourceIdentifiers": [
         "REVIEW::met:436781"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1514,9 +1521,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:178038797"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1535,9 +1542,9 @@
         "CURATED-20261031-COV-novena.st_anthony_nine_tuesdays-1",
         "CURATED-COV-devotion_st_anthony_lost_items-0"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1555,9 +1562,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-135659"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1575,9 +1582,9 @@
       "sourceIdentifiers": [
         "PRAYER::saints--vaneyck"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1595,9 +1602,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-126768"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1615,9 +1622,9 @@
       "sourceIdentifiers": [
         "CANONICAL::met-442488"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1673,9 +1680,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-94846"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1693,9 +1700,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:18589500"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1712,9 +1719,9 @@
       "sourceIdentifiers": [
         "CURATED-20261031-HERO-01-1"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1731,9 +1738,9 @@
       "sourceIdentifiers": [
         "PRAYER::visit--murillo-magi"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1751,9 +1758,9 @@
         "HERO::nga:34956",
         "PRAYER::confession--primary"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "NGA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_NGA_OBJECT_AND_IIIF_NATIVE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1771,9 +1778,9 @@
         "CURATED-20261031-HERO-08-1",
         null
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1790,9 +1797,9 @@
       "sourceIdentifiers": [
         "CURATED-20261031-HERO-10-1"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1848,9 +1855,9 @@
         "CURATED-20261031-HERO-21-1",
         null
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1867,9 +1874,9 @@
       "sourceIdentifiers": [
         "PRAYER::king--primary"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1886,9 +1893,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-135659"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1924,9 +1931,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:87865020"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1943,9 +1950,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:38398823"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1962,9 +1969,9 @@
       "sourceIdentifiers": [
         "CANONICAL::W07-014"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -1981,9 +1988,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-ean-estout-entecost"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2000,9 +2007,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:103782584"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2019,9 +2026,9 @@
       "sourceIdentifiers": [
         "REVIEW::met:436721"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2038,9 +2045,9 @@
       "sourceIdentifiers": [
         "CANONICAL::ART-itian-hrist-arrying-the-ross"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "PRADO_PHOTO_HOLD",
+      "requiredAction": "FIND_NON_PRADO_REPRODUCTION_OF_EXACT_ORIGINAL",
+      "photographRightsState": "SOURCE_PHOTOGRAPH_FORBIDDEN",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2057,9 +2064,9 @@
       "sourceIdentifiers": [
         "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2076,9 +2083,9 @@
       "sourceIdentifiers": [
         "CANONICAL::met-438338"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2112,9 +2119,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:77218157"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2131,9 +2138,9 @@
       "sourceIdentifiers": [
         "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2150,9 +2157,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:199348815"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2169,9 +2176,9 @@
       "sourceIdentifiers": [
         "PRAYER::king--previtali"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2208,9 +2215,9 @@
       "sourceIdentifiers": [
         "CANONICAL::cma-160143"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2227,9 +2234,9 @@
       "sourceIdentifiers": [
         "PRAYER::angel--strozzi"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2246,9 +2253,9 @@
       "sourceIdentifiers": [
         "CURATED-STG-pray.adoration.four_ends-02-0"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "CMA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_CMA_OBJECT_CC0_AND_DOWNLOADABLE_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2263,9 +2270,9 @@
       "catalogueUrl": "https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
       "priority": "P2_OTHER",
       "sourceIdentifiers": [],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "NGA_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_NGA_OBJECT_AND_IIIF_NATIVE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2299,9 +2306,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:67344360"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2318,9 +2325,9 @@
       "sourceIdentifiers": [
         "CANONICAL::met-437490"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2337,9 +2344,9 @@
       "sourceIdentifiers": [
         "REVIEW::met:436101"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "MET_INSTITUTIONAL_OPEN_ACCESS",
+      "requiredAction": "VERIFY_MET_OBJECT_PUBLIC_DOMAIN_AND_PRIMARY_IMAGE",
+      "photographRightsState": "OBJECT_IS_NOT_FILE_APPROVAL",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2375,9 +2382,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:81902276"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2394,9 +2401,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:29858165"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2434,9 +2441,9 @@
       "sourceIdentifiers": [
         "REVIEW::commons:85666930"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
@@ -2453,9 +2460,9 @@
       "sourceIdentifiers": [
         "CURATED-STG-pray.confession-03-0"
       ],
-      "providerLane": "INVALID_CATALOGUE_URL",
-      "requiredAction": "CHECK_SOURCE_PAGE",
-      "photographRightsState": "NOT_VERIFIED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "CHECK_ACTUAL_FILE_LICENSE_SHA1_AND_PIXEL_QUALITY",
+      "photographRightsState": "FILE_METADATA_REQUIRED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
