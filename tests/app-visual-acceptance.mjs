@@ -1675,7 +1675,9 @@ try{
   const settingsParity=await page.evaluate(()=>({
     owner:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsOwner??null,
     presentation:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsPresentationOwner??null,
-    headings:[...document.querySelectorAll("#ao-settings-modular-root .aoSetSection > h2")].map(x=>x.textContent?.trim()??""),
+    book:document.querySelector("#ao-settings-modular-root [data-ao-preferences-book]")?.getAttribute("data-ao-preferences-book")??null,
+    chapterNumbers:[...document.querySelectorAll("#ao-settings-modular-root .aoPrefContents .n")].map(x=>x.textContent?.trim()??""),
+    chapters:[...document.querySelectorAll("#ao-settings-modular-root .aoPrefContents .t")].map(x=>x.firstChild?.textContent?.trim()??""),
     routes:[...document.querySelectorAll("#ao-settings-modular-root [data-settings-route]")].map(x=>x.getAttribute("data-settings-route")),
     sourcesLaunchers:document.querySelectorAll("#ao-settings-modular-root [data-settings-sources]").length,
     historicalVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
@@ -1685,7 +1687,9 @@ try{
   }));
   assert.equal(settingsParity.owner,"AO_SETTINGS_APP_V1");
   assert.equal(settingsParity.presentation,"modular-settings-presentation-v4359.6");
-  assert.deepEqual(settingsParity.headings,["APP & UPDATES","APP","MASS & PRAYER","DATA"],"Settings must expose installed-version controls before general preferences");
+  assert.equal(settingsParity.book,"r1","Claude R1 Preferences book was replaced by the retired Settings landing");
+  assert.deepEqual(settingsParity.chapterNumbers,["I","II","III","IV","V","VI","VII","VIII"],"Settings must present all eight Roman-numbered chapters");
+  assert.deepEqual(settingsParity.chapters,["Reading","Languages","Holy Mass","My churches","Prayer","On this device","Your data","About & sources"],"Settings chapter order changed from approved R1 book");
   for(const route of ["/settings/general","/settings/accessibility","/settings/language-reading","/settings/mass","/settings/local-customs","/settings/prayer","/settings/privacy-data","/settings/about-sources"]){
     assert.ok(settingsParity.routes.includes(route),route+" missing from restored Settings landing");
   }
@@ -1696,21 +1700,36 @@ try{
   assert.equal(settingsParity.embeddedHomeSettings,false,"retired Home Settings surface is visible beneath modular Settings");
   assert.ok(settingsParity.overflow<=1,"Settings has horizontal overflow on 390px phone geometry");
   assert.equal(settingsParity.topLevelSources,0,"Sources resurfaced as a seventh top-level destination");
-  const settingsDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetTitle strong")).fontFamily,
-    bodyFont:getComputedStyle(document.getElementById("ao-settings-modular-root")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetWrap")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetGroup")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
-  }));
-  assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
-  assert.equal(primaryFont(settingsDesign.bodyFont),primaryFont(designBaseline.bodyFont),
-    "Settings and H7 Home diverged from their shared primary body typeface");
-  assert.equal(settingsDesign.gutter,designBaseline.gutter,"Settings phone gutter diverged from the app grid");
-  assert.equal(settingsDesign.cardRadius,designBaseline.cardRadius,"Settings cards diverged from canonical geometry");
-  assert.equal(Math.round(settingsDesign.topControl.w),44,"Settings top control width diverged");
-  assert.equal(Math.round(settingsDesign.topControl.h),44,"Settings top control height diverged");
-  assert.equal(settingsDesign.topControl.r,"999px","Settings top control lost canonical circular geometry");
+  // The approved R1 book intentionally uses distinct reading typography and
+  // a manuscript-style ribbon: do not regress it to H7's rounded Settings cards.
+  const settingsDesign=await page.evaluate(()=>{
+    const root=document.getElementById("ao-settings-modular-root");
+    const top=root.querySelector(".aoSetTop");
+    const close=root.querySelector(".aoSetTop [data-settings-close]");
+    const ribbon=root.querySelector(".aoPrefRibbon");
+    const contents=root.querySelector(".aoPrefContents");
+    const wrap=root.querySelector(".aoSetWrap");
+    const box=close.getBoundingClientRect();
+    return {
+      bodyFont:getComputedStyle(root).fontFamily,
+      displayFont:getComputedStyle(root.querySelector(".aoSetTitle strong")).fontFamily,
+      gutter:getComputedStyle(wrap).paddingLeft,
+      headerRule:getComputedStyle(top).borderBottomStyle,
+      topControl:{w:box.width,h:box.height},
+      ribbonWidth:ribbon?.getBoundingClientRect().width??0,
+      contentsVisible:contents?.getBoundingClientRect().height>0,
+      nativeSelects:root.querySelectorAll("select").length,
+    };
+  });
+  assert.match(settingsDesign.bodyFont,/Sorts Mill Goudy|Iowan Old Style|Georgia/i,"Preferences book lost its approved reading typeface");
+  assert.match(settingsDesign.displayFont,/IM Fell English SC|Georgia/i,"Preferences header lost its approved small-caps typeface");
+  assert.equal(settingsDesign.gutter,"22px","Preferences book reading gutter changed");
+  assert.equal(settingsDesign.headerRule,"double","Preferences book lost its manuscript-style double rule");
+  assert.equal(Math.round(settingsDesign.topControl.w),36,"Preferences book close button no longer fits its source design");
+  assert.equal(Math.round(settingsDesign.topControl.h),36,"Preferences book close button has incorrect geometry");
+  assert.equal(Math.round(settingsDesign.ribbonWidth),13,"Preferences book contents bookmark is missing");
+  assert.equal(settingsDesign.contentsVisible,true,"All eight settings chapters must be visible on the cover");
+  assert.equal(settingsDesign.nativeSelects,0,"Preferences R1 must use explicit word controls instead of native selects");
   await shot("05-settings");
 
   await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
