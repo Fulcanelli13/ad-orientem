@@ -14,6 +14,7 @@ const groupLabel=(id,lang)=>{
    code.replaceAll("_"," ").toLowerCase().replace(/\b\p{L}/gu,c=>c.toUpperCase());
 };
 const path=/^assets\/approved\/(?:place-media|place-gallery)\/[A-Za-z0-9_-]+\.webp$/;
+const venuePath=/^assets\/approved\/directory-media\/[A-Za-z0-9_-]+\.webp$/;
 // The credit's license label and URL must identify the same grant.
 // Keep the approved gallery's CC-BY-3.0 support without weakening release flags.
 const licenseUrls=Object.freeze({
@@ -40,12 +41,30 @@ export function eligibleDirectoryImage(img,placeId){
     String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
 }
 
-// TLM uses a lightweight map loader. These three small, existing registries
+// A TLM venue need not have a canonical Sacred Place record. Media may be
+// joined directly by its immutable published Directory venue source_id, never
+// by church name, geographic proximity, office, provider or building inference.
+export function eligibleVenueImage(img,venueId){
+  return Boolean(img&&venueId&&img.venue_id===venueId&&!img.place_id&&
+    img.status==="APPROVED"&&venuePath.test(String(img.asset_path??""))&&
+    licenseUrls[String(img.license??"")]===String(img.license_url??"")&&
+    https(img.source_url)&&
+    img.rights_verified===true&&img.subject_verified===true&&img.crop_reviewed===true&&
+    /^[a-f0-9]{64}$/i.test(String(img.derivative_sha256??""))&&
+    String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
+}
+export function eligibleRenderedDirectoryImage(img,item){
+  return Boolean(item?.kind==="TLM_VENUE"&&
+    (eligibleDirectoryImage(img,item.place_id)||eligibleVenueImage(img,item.source_id)));
+}
+
+// TLM uses a lightweight map loader. These four small, existing registries
 // provide approved media without downloading the entire Explore data corpus.
 const MEDIA_URLS=Object.freeze({
   places:new URL("../../data/geography/seed-registry.v1.json",import.meta.url).href,
   approved:new URL("../../data/geography/approved-place-media.v1.json",import.meta.url).href,
   gallery:new URL("../../data/geography/approved-place-gallery.v1.json",import.meta.url).href,
+  venueApproved:new URL("../../data/directory/approved-venue-media.v1.json",import.meta.url).href,
 });
 export async function loadDirectoryCardMedia({fetchImpl=fetch}={}){
   const json=async url=>{
@@ -54,19 +73,21 @@ export async function loadDirectoryCardMedia({fetchImpl=fetch}={}){
       return response?.ok?await response.json():null;
     }catch{return null;}
   };
-  const [places,images,galleries]=await Promise.all([
+  const [places,images,galleries,venueImages]=await Promise.all([
     json(MEDIA_URLS.places),json(MEDIA_URLS.approved),json(MEDIA_URLS.gallery),
+    json(MEDIA_URLS.venueApproved),
   ]);
   return Object.freeze({
     directoryPlaceLinks:places?.schema==="EXPLORE_GEOGRAPHY_SEED_V1"?A(places.directoryPlaceLinks):[],
     approved:images?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?A(images.items):[],
     gallery:galleries?.schema==="AO_APPROVED_PLACE_GALLERY_V1"?A(galleries.items):[],
+    venueApproved:venueImages?.schema==="AO_APPROVED_TLM_VENUE_MEDIA_V1"?A(venueImages.items):[],
   });
 }
 
 // Source identity must be an exact, confirmed LOCATED_AT relation.
 // Never infer a Place from similar names, nearby provisional pins or an image query.
-export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],approved=[],gallery=[]}={}){
+export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],approved=[],gallery=[],venueApproved=[]}={}){
   const exact=new Map();
   for(const link of A(directoryPlaceLinks)){
     if(link?.confidence!=="CONFIRMED"||link?.relationship!=="LOCATED_AT"||!link?.venue_id||!link?.place_id)continue;
@@ -76,13 +97,18 @@ export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],appro
   return A(items).map(item=>{
     if(item?.kind!=="TLM_VENUE")return item;
     const placeId=exact.get(item.source_id);
-    if(!placeId)return item;
-    const covers=A(approved).filter(img=>eligibleDirectoryImage(img,placeId));
-    const photos=A(gallery).filter(img=>eligibleDirectoryImage(img,placeId));
-    // An exact canonical Place link exists even before its photo passes rights review.
-    // Preserve the link for the Directory/Explore model without publishing any unapproved media.
-    if(!covers.length&&!photos.length)return {...item,place_id:placeId};
-    return {...item,place_id:placeId,cover_media:covers[0]??photos[0],gallery_media:photos};
+    const covers=placeId?A(approved).filter(img=>eligibleDirectoryImage(img,placeId)):[];
+    const photos=placeId?A(gallery).filter(img=>eligibleDirectoryImage(img,placeId)):[];
+    const venueCovers=A(venueApproved).filter(img=>eligibleVenueImage(img,item.source_id));
+    // Multiple competing approved venue covers are ambiguous: fail closed.
+    const venueCover=venueCovers.length===1?venueCovers[0]:null;
+    // Exact canonical Place photos remain the first choice; venue-direct images
+    // may serve the 2,582-site Directory without fabricating a Sacred Place.
+    const cover=covers[0]??photos[0]??venueCover;
+    if(!placeId&&!cover)return item;
+    if(!cover)return {...item,place_id:placeId};
+    return {...item,...(placeId?{place_id:placeId}:{}),cover_media:cover,
+      ...(photos.length?{gallery_media:photos}:{})};
   });
 }
 const inlineIcon=(role)=>{
@@ -153,7 +179,7 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
 
 export function renderDirectoryVenueCard(item,language="en"){
   const img=item?.cover_media;
-  const photo=Boolean(img&&eligibleDirectoryImage(img,item.place_id));
+  const photo=Boolean(img&&eligibleRenderedDirectoryImage(img,item));
   // A large fallback emblem does not need a duplicate small badge.
   // Holy See arms are not an identity for an individual diocesan church.
   const emblem=photo&&String(item?.community_id??"").toUpperCase()!=="DIOCESAN"
