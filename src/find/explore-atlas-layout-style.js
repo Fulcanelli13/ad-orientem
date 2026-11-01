@@ -315,6 +315,11 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes{
   margin-top:8px;border-top:1px solid rgba(205,180,132,.22);padding-top:4px
 }
+/* Opening the long secondary affiliation list prioritizes its actual controls
+   rather than leaving the first row clipped beneath the grouping filters. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra:has(.aoTlmMoreInstitutes[open]) .aoExploreQuickFilters{
+  display:none
+}
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes>summary{
   min-height:44px;display:flex;align-items:center;padding:8px 4px;cursor:pointer;
   color:#e9d8ba;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)
