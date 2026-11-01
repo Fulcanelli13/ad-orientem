@@ -1,0 +1,32 @@
+name: C3 Living Gallery contract
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/home/c3-gallery.js"
+      - "src/home/c3-styles.js"
+      - "src/home/today-h4-view.js"
+      - "src/home/presentation.js"
+      - "src/home/browser-entry.js"
+      - "tests/home-c3-gallery.mjs"
+      - ".github/workflows/home-c3-gallery.yml"
+permissions:
+  contents: read
+jobs:
+  c3-home-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Parse C3 and H7 integration modules
+        run: |
+          node --check src/home/c3-gallery.js
+          node --check src/home/c3-styles.js
+          node --check src/home/today-h4-view.js
+          node --check src/home/presentation.js
+          node --check src/home/browser-entry.js
+      - name: Validate C3 source-owned Home contract
+        run: node tests/home-c3-gallery.mjs
