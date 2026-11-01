@@ -13,6 +13,7 @@ import "./reader-mass-m09-sequence-eligibility.mjs";
 import "./reader-mass-m10-weak-reassignment.mjs";
 import "./reader-mass-m11-source-role-recovery.mjs";
 import "./reader-mass-m12-text-recheck.mjs";
+import "./reader-mass-all-saints-source-review.mjs";
 import {readFileSync} from "node:fs";
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
