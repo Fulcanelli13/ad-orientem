@@ -151,9 +151,16 @@ const F07_STYLE=`
 #aoPray435930 .aoF07MercyBegin:focus-visible{outline:3px solid var(--liturgical,#c6ab82);outline-offset:3px}
 #aoPray435930 .aoF07MercyEntrySource{align-self:center;font:400 11px/1.4 system-ui,sans-serif;color:var(--muted,#beb2a4)}
 #aoPray435930 .aoF07MercyEntrySource a{color:inherit}
-#aoPray435930 .aoMercyCompletion{display:flex;flex-direction:column;align-items:center;gap:16px;justify-content:center;min-height:55vh;text-align:center}
-#aoPray435930 .aoMercyCompletion h2{font:500 28px/1.18 var(--ao-font-display,Georgia,serif)}
-#aoPray435930 .aoMercyCompletion button{min-height:48px;width:min(100%,260px);border-radius:999px}
+#aoPray435930 .aoMercyCompletion{display:flex;flex-direction:column;align-items:center;gap:12px;justify-content:center;min-height:55vh;text-align:center;padding:8px 12px;box-sizing:border-box}
+#aoPray435930 .aoF07MercyCompletionCrown{display:grid;place-items:center;width:84px;height:84px}
+#aoPray435930 .aoF07MercyCompletionCrown .aoF07CrownBand{display:block!important;width:84px;max-width:84px;margin:0!important;padding:0!important;border:0!important;background:transparent!important}
+#aoPray435930 .aoF07MercyCompletionCrown .aoF07CrownDiagram{width:84px;height:84px}
+#aoPray435930 .aoF07MercyCompletionCrown .aoF07CrownText{display:none!important}
+#aoPray435930 .aoMercyCompletion h2{font:500 28px/1.18 var(--ao-font-display,Georgia,serif);margin:0}
+#aoPray435930 .aoF07MercyCompletionQuote{margin:-5px 0 4px;font:italic 14px/1.4 var(--ao-font-liturgical,Georgia,serif);color:var(--muted,#beb2a4)}
+#aoPray435930 .aoMercyCompletion button{min-height:48px;width:min(100%,280px);border-radius:999px}
+#aoPray435930 .aoMercyCompletion .aoF07MercyCompletionReturn{background:var(--text,#eee6dc)!important;color:#241c18!important;border:0!important}
+#aoPray435930 .aoMercyCompletion .aoF07MercyCompletionAgain{background:transparent!important;color:var(--text,#eee)!important;border:1px solid var(--border,rgba(220,220,220,.24))!important}
 @media(max-width:359px) and (max-height:650px){
  #aoPray435930 .aoF07MercyEntry{gap:10px;padding:7px 12px 8px!important}
  #aoPray435930 .aoF07MercyEntryMark{width:58px;height:62px;font-size:29px}
