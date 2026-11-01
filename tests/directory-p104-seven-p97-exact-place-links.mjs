@@ -70,12 +70,18 @@ for(const r of p104.published_new){
  }
  assert.equal(sources.get(r.source_ids[0]).url,r.source_site_url);
  assert.equal(sources.get(r.source_ids[1]).url,r.source_geo_url);
- assert.equal(media.items.some(x=>x.place_id===r.place_id),laterApproved.has(r.place_id),"Only separately verified P106 may approve post-P104 photos");
+ const releasedJihlava=r.place_id==="place:CZ:st-ignatius-jihlava";
+ assert.equal(media.items.some(x=>x.place_id===r.place_id),laterApproved.has(r.place_id)||releasedJihlava,
+  "Only separately source-verified P106 photo covers or Jihlava P107 release may be approved");
  const attached=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:r.venue_id}],{directoryPlaceLinks:geo.directoryPlaceLinks,approved:media.items,gallery:[]});
  if(laterApproved.has(r.place_id)){
    const later=laterApproved.get(r.place_id);
    assert.equal(later.venue_id,r.venue_id);
    assert.equal(attached[0].cover_media?.derivative_sha256,later.sha256);
+ }else if(releasedJihlava){
+   assert.equal(attached[0].cover_media?.derivative_sha256,
+    "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+    "Jihlava P107 independently approved image must retain exact derivative hash");
  }else assert.equal(attached[0].cover_media,undefined,"No unreviewed P104 photo");
  assert.equal(r.approved_photo,false);
  assert.equal(r.published_photo,false);
