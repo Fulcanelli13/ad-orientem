@@ -97,6 +97,54 @@ export function createHomeOwner(win=globalThis){
   let c3PrayerIndex=0,c3PrayerFeature=null;
   let inlineCalendarRestoring=false;
   let requestedDailyHonours=false;
+  const civilToday=()=>{
+    const now=new (win?.Date??Date)();
+    return [now.getFullYear(),String(now.getMonth()+1).padStart(2,"0"),
+      String(now.getDate()).padStart(2,"0")].join("-");
+  };
+  let lastCivilToday=civilToday(),confirmedOtherDay=null;
+  function changeToCurrentDay(){
+    const today=civilToday();
+    confirmedOtherDay=null;lastCivilToday=today;
+    const calendar=win?.AO_CALENDAR_WEEK_CACHE_V4345;
+    if(typeof calendar?.revealDate!=="function")return false;
+    void Promise.resolve(calendar.revealDate(today,{forceLoader:false,prefetch:false}))
+      .then(ok=>{if(ok!==true)showRouteError("calendar.today",null)})
+      .catch(error=>{try{win?.console?.error?.("Current Mass-day re-resolution failed",error)}catch{}});
+    return true;
+  }
+  function checkDayRollover(){
+    const today=civilToday(),previous=lastCivilToday;
+    lastCivilToday=today;
+    if(today===previous||state(win)?.selectedDate!==previous)return false;
+    // The open page was on Today when local midnight passed. Resolve the new
+    // 1962 Calendar and Proper before allowing Home to open its Mass door.
+    return changeToCurrentDay();
+  }
+  function confirmDifferentMassDay(trigger){
+    const today=civilToday(),selected=state(win)?.selectedDate;
+    if(selected===today){confirmedOtherDay=null;return true;}
+    const key=selected+"|"+today;
+    if(confirmedOtherDay===key)return true;
+    confirmedOtherDay=key;
+    const doc=win?.document,anchor=trigger?.parentElement;
+    if(!doc?.createElement||!anchor)return false;
+    doc.querySelectorAll("[data-home-mass-date-warning]").forEach(x=>x.remove());
+    const box=doc.createElement("div");
+    box.dataset.homeMassDateWarning="true";
+    box.setAttribute("role","alert");
+    box.style.cssText="padding:10px 0;margin:6px 0;line-height:1.35";
+    const message=doc.createElement("p"),button=doc.createElement("button");
+    const fr=state(win)?.language==="fr";
+    message.textContent=fr
+      ?"La messe choisie est du "+selected+", mais aujourd’hui nous sommes le "+today+". Choisissez aujourd’hui, ou appuyez de nouveau sur Commencer pour confirmer la date choisie."
+      :"Selected Mass: "+selected+". Today: "+today+". Choose today's Mass, or press Begin selected Mass again to confirm the different date.";
+    button.type="button";button.dataset.homeMassUseToday="true";
+    button.textContent=fr?"Utiliser la messe d’aujourd’hui":"Use today's Mass";
+    button.style.cssText="display:block;min-height:40px;border:1px solid currentColor;background:transparent;color:inherit;padding:7px 12px";
+    box.append(message,button);anchor.appendChild(box);
+    return false;
+  }
   const weekColourCache=new Map(),weekColourPending=new Map();
   function hydrateH4WeekColours(current){
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4");
@@ -358,10 +406,16 @@ export function createHomeOwner(win=globalThis){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       closeC3ArtInfo(appRoot);return;
     }
+    const useToday=target?.closest?.("[data-home-mass-use-today]");
+    if(useToday){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      changeToCurrentDay();return;
+    }
     const h7Enter=target?.closest?.("[data-home-h7-enter]");
     if(h7Enter){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       if(state(win)?.route!=="home"||inlineCalendarView)return;
+      if(checkDayRollover())return;
       h7MassDoorOpen=true;
       syncH7MassDoor();
       const back=win?.document?.querySelector?.(".aoH7DoorView [data-home-h7-back]");
@@ -396,6 +450,16 @@ export function createHomeOwner(win=globalThis){
     if(h4Begin){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       if(h4Begin.disabled)return;
+      if(checkDayRollover())return;
+      if(!confirmDifferentMassDay(h4Begin))return;
+      const massPreflight=win?.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight;
+      if(massPreflight?.aspersionDecisionRequired===true){
+        // Do not silently omit Sunday's real ceremony or invent it from date.
+        // Direct the user to the existing H7 Yes/No selector.
+        const change=win?.document?.querySelector?.(".aoH7DoorView:not([hidden]) [data-home-h4-change]");
+        if(change?.click){change.click();return;}
+        showRouteError("mass.aspersion",h4Begin);return;
+      }
       const current=state(win);
       if(current?.route!=="home"||current?.resolving||
          current?.resolution?.proper?.status!=="ready"||
@@ -403,7 +467,9 @@ export function createHomeOwner(win=globalThis){
         showRouteError("mass.unavailable",h4Begin);return;
       }
       h4Begin.disabled=true;
-      void Promise.resolve(win?.AO_R17_BROWSER_ENTRY?.startFromToday?.())
+      void Promise.resolve(win?.AO_R17_BROWSER_ENTRY?.startFromToday?.({
+        allowSelectedDate:current?.selectedDate!==civilToday()
+      }))
         .then(result=>{
           if(result?.ok===true){clearRouteError();return;}
           showRouteError("mass.begin",h4Begin);
