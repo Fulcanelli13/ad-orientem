@@ -84,9 +84,9 @@ assert.equal(built.cards[1].paragraphs.some(x=>/Glória Patri/.test(x.latin)),tr
 
 const paschalVersicles=built.cards[3].paragraphs;
 for(const i of [0,1]){
- assert.match(paschalVersicles[i].latin,/Allelúia\\.$/,"Eastertide 1961 source adds Alleluia after first versicle and response");
- assert.match(paschalVersicles[i].english,/Alleluia\\.$/);
- assert.match(paschalVersicles[i].french,/Alléluia\\.$/);
+ assert.match(paschalVersicles[i].latin,/Allelúia\.$/,"Eastertide 1961 source adds Alleluia after first versicle and response");
+ assert.match(paschalVersicles[i].english,/Alleluia\.$/);
+ assert.match(paschalVersicles[i].french,/Alléluia\.$/);
 }
 assert.ok(paschalVersicles.slice(2).every(x=>!x.latin.endsWith("Allelúia.")),
  "Do not invent Paschal Alleluia on unrelated versicles, oration, or Amen");
