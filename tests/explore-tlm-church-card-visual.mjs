@@ -192,6 +192,38 @@ try{
    await expanded.locator("[data-explore-collapse-detail]").click();
    await preview.waitFor({state:"visible"});
    assert.equal(await page.locator(".aoTlmChurchProfile").count(),0,"Back must restore preview");
+
+   // Real exact-venue photograph test: the 2,582-site CL2 directory has
+   // source-owned photos without a Sacred Place. Opening screen 5 must not
+   // regress to an institute emblem when the compact card displays the photo.
+   await preview.locator("[data-find-close-detail]").click();
+   await page.locator(".aoExploreQuickPreview").waitFor({state:"detached"});
+   await page.locator("#ao-find-modular-root [data-find-query]").fill("Groombridge");
+   const groombridge=page.locator('.aoTlmVenueCard[data-explore-item="tlm:r49:SSPXMAP:OPE-002280"]');
+   await groombridge.waitFor({state:"visible",timeout:15000});
+   const venueCardPhoto=groombridge.locator('.aoTlmVenueVisual > img');
+   assert.equal(await venueCardPhoto.count(),1,"Groombridge must retain its approved exact-venue photograph");
+   assert.match(await venueCardPhoto.getAttribute("src"),/assets\/approved\/directory-media\/GB-groombridge-st-pius-v.webp$/);
+   await groombridge.click();
+   const venuePreview=page.locator(".aoExploreQuickPreview");
+   await venuePreview.waitFor({state:"visible"});
+   await venuePreview.locator("[data-explore-expand-detail]").click();
+   const venueExpanded=page.locator(".aoTlmChurchProfile");
+   await venueExpanded.waitFor({state:"visible"});
+   assert.equal(await venueExpanded.locator('.aoTlmProfileHero img[src$="GB-groombridge-st-pius-v.webp"]').count(),1,
+     "Expanded church profile must preserve the exact approved venue image");
+   assert.match(await venueExpanded.innerText(),/Station Road, Groombridge TN3 9QX/i,
+     "The physical-site address should not disappear from expanded details");
+   assert.equal(await venueExpanded.locator(".aoTlmProfileEssentials .aoTlmProfileDatum").count(),3);
+   assert.ok((await venueExpanded.locator('.aoTlmProfilePrimaryAction a[href^="https://"]').count())>=1,
+     "Original published venue source must be accessible without hunting in a footer");
+   const venueMetrics=await venueExpanded.evaluate(el=>({
+     left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,
+     overflow:el.scrollWidth-el.clientWidth,viewport:innerWidth
+   }));
+   assert.ok(venueMetrics.left>=-2&&venueMetrics.right<=width+2&&venueMetrics.overflow<=2,
+     "Approved venue photo/profile must not overflow: "+JSON.stringify(venueMetrics));
+   await captures("04-approved-venue-profile");
    measurements.push({width,language,title,metrics,passed:true});
    console.log("PASS TLM source-backed preview and church profile "+width+"px "+language);
   }catch(error){
