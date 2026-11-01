@@ -1037,6 +1037,55 @@ function clearRosaryDonorReturn(){
  const root=rosaryDonorRoot();if(root)delete root.dataset.aoPrayRosaryReturn;
  rosaryDonorReturnSnapshot=null;externalResume=null;
 }
+// The canonical Lab Ora Rosary is a separate preserved source player, not a
+// screen in the modular Prayer shell. Browser Back must only suspend its DOM,
+// never close/reset its donor state or manufacture another bead engine.
+function captureRosaryAppBackHandoff(){
+ const root=rosaryDonorRoot(),api=window.AO_ROSARY_V381;
+ const shell=root?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]');
+ const state=api?.state?.(),steps=api?.steps?.(),method=api?.getMethod?.();
+ if(!root?.classList?.contains('open')||root?.dataset?.aoRosaryActiveRoot!=='true'||
+    !shell||!state||!Array.isArray(steps)||!steps.length||
+    !Number.isInteger(state.step)||state.step<0||state.step>=steps.length||
+    typeof method!=='string'||!method||typeof state.set!=='string')return null;
+ const card=root.querySelector('.aoRosaryActiveCard'),flip=card?.querySelector('.lab-prayer-flip[data-pb-flip]'),
+   scroll=card?.querySelector('.aoRosaryPrayerScroll');
+ if(!card||Number(card.dataset.aoRosaryCanonicalStep)!==state.step)return null;
+ return Object.freeze({owner:'CANONICAL_LAB_ORA_ROSARY',method,set:state.set,step:state.step,
+   stepCount:steps.length,face:flip?.dataset?.face==='latin'?'latin':'vernacular',
+   scrollTop:scroll?Math.max(0,Math.floor(scroll.scrollTop||0)):null});
+}
+function suspendRosaryAppBackHandoff(){
+ const root=rosaryDonorRoot();
+ if(!root?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]'))return false;
+ root.classList.remove('open');root.setAttribute('aria-hidden','true');
+ return true;
+}
+function restoreRosaryAppBackHandoff(receipt){
+ if(receipt?.owner!=='CANONICAL_LAB_ORA_ROSARY')return false;
+ const root=rosaryDonorRoot(),api=window.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.(),
+   shell=root?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]');
+ if(!root||!shell||root.dataset.aoRosaryActiveRoot!=='true'||
+    !state||!Array.isArray(steps)||steps.length!==receipt.stepCount||
+    state.set!==receipt.set||state.step!==receipt.step||api?.getMethod?.()!==receipt.method)return false;
+ const card=root.querySelector('.aoRosaryActiveCard');
+ if(!card||Number(card.dataset.aoRosaryCanonicalStep)!==receipt.step)return false;
+ root.classList.add('open');root.setAttribute('aria-hidden','false');
+ // The existing source card/face/focus DOM is retained while suspended.
+ // Restore scroll only after the browser has made its owner visible again.
+ window.requestAnimationFrame?.(()=>window.requestAnimationFrame?.(()=>{
+   const shown=root.querySelector('.aoRosaryActiveCard');
+   if(!root.classList.contains('open')||Number(shown?.dataset.aoRosaryCanonicalStep)!==receipt.step)return;
+   const flip=shown.querySelector('.lab-prayer-flip[data-pb-flip]');
+   if(flip&&flip.dataset.face!==receipt.face)setRosaryPrayerLanguage(flip,receipt.face);
+   const scroll=shown.querySelector('.aoRosaryPrayerScroll');
+   if(scroll&&receipt.scrollTop!==null){
+     scroll.scrollTop=receipt.scrollTop;
+     scroll.dispatchEvent(new Event('scroll',{bubbles:true}));
+   }
+ }));
+ return true;
+}
 function returnFromRosaryDonor(e,root,snapshot){
  if(!root||!snapshot)return false;
  e?.preventDefault?.();e?.stopImmediatePropagation?.();
@@ -4450,7 +4499,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={restoreHandoff,captureAppBackHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={restoreHandoff,captureAppBackHandoff,captureRosaryAppBackHandoff,suspendRosaryAppBackHandoff,restoreRosaryAppBackHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
