@@ -4563,8 +4563,7 @@ export function createReaderDomAdapter({
         // The sermon is a genuine non-liturgical pause, not a missing prayer.
         // Give the faithful a simple bilingual prompt; never invent the
         // homily text or a priest's position from the reader clock.
-        if(current.paragraphs.length===0 &&
-          /^(?:Sermon|Homily)\b/i.test(String(current.sectionTitle??""))){
+        if(/^(?:Sermon|Homily)\b/i.test(String(current.sectionTitle??""))){
           const note=doc.createElement("p");
           note.className="ao-reader-homily-note";
           note.dataset.role="homily-pause-note";
