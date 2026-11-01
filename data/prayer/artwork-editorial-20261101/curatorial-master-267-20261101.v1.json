@@ -47,7 +47,17 @@
       "EXACT_TITLE_ARTIST": 38,
       "UNMATCHED_PRESERVE_SELECTED": 37,
       "UNIQUE_TITLE_ONLY_UNCONFIRMED": 2
-    }
+    },
+    "activeCrosswalkMethods": {
+      "EXACT_URL": 178,
+      "EXACT_TITLE_ARTIST": 34,
+      "UNMATCHED_PRESERVE_SELECTED": 34,
+      "HISTORIC_EXACT_WORK_CATALOG_LINK": 4,
+      "HOLD_NOT_AN_ACTIVE_PAINTING": 14,
+      "UNIQUE_TITLE_ONLY_UNCONFIRMED": 2,
+      "EXACT_HISTORIC_USER_ARTWORK_ID_SOURCE_PENDING": 1
+    },
+    "primaryHolds20261101": 14
   },
   "policy": {
     "seasonalHomepageRotation": "ONLY_IF_MULTIPLE_APPROVED_WORKS_FOR_SAME_OCCASION",
@@ -17151,7 +17161,7 @@
     }
   ],
   "publicationAllowed": false,
-  "sourceIdentityCrosswalk": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-267-20261101.v1.json",
+  "sourceIdentityCrosswalk": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-reconciled-267-20261101.v2.json",
   "decisionReconciliation20261101": {
     "asOf": "2026-11-01",
     "priorPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
@@ -17352,5 +17362,6 @@
         "originalArtworkId": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception"
       }
     ]
-  }
+  },
+  "sourceIdentityCrosswalkHistoricalSnapshot": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-267-20261101.v1.json"
 }
