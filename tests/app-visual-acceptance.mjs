@@ -1737,7 +1737,7 @@ try{
   const settingsAbout=await page.evaluate(()=>({
     sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetSource").length,
     provenanceLabels:(document.querySelector("#ao-settings-modular-root .aoSetSource:last-of-type p")?.textContent?.trim()||"").split(/\s*·\s*/).filter(Boolean),
-    aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSection:last-child .aoSetRow").length,
+    aboutRows:[...document.querySelectorAll("#ao-settings-modular-root .aoSetSection")].find(section=>section.querySelector(":scope > h2")?.textContent?.trim()==="ABOUT")?.querySelectorAll(".aoSetRow").length??0,
     version:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??"",
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
