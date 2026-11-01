@@ -196,7 +196,7 @@ test('Prayer UI authority contains all 267 corrected selections and preserves ev
   const row=bySlot.get(id);
   assert.ok(row,id);
   assert.equal(v.title,row.currentAssignment.painting?.title??null,id);
-  assert.equal(v.artist,row.currentAssignment.painting?.artist??null,id);
+  assert.equal(v.artist,row.currentAssignment.painting?.artist||null,id); // anonymous original represented as null in runtime metadata
   assert.equal(v.held,row.currentAssignment.mode==='HOLD_NO_ELIGIBLE_PRIMARY',id);
   assert.equal(v.door,id.startsWith('DOOR-'),id);
   assert.equal(v.productionApproved,false,id);
@@ -334,7 +334,20 @@ test('Prayer image acquisition queue deduplicates current choices but does not g
  assert.equal(ledger.counts.photoReproductionsFullyCleared,0);
  assert.equal(ledger.queue.reduce((n,x)=>n+x.slots.length,0),248);
  assert.equal(ledger.queue.some(x=>x.title==='Madonna del Rosario'&&x.priority==='P0_FINAL_LOCK'),true);
- assert.equal(ledger.queue.every(x=>x.photosAcquired===0&&x.photographReleaseState==='UNVERIFIED'),true);
+ // Archived originals are research assets, not release-certified photographs.
+ assert.equal(ledger.counts.photographSourceFilesArchived,9);
+ assert.equal(ledger.counts.distinctArtworkGroupsWithArchivedOriginals,8);
+ assert.equal(ledger.queue.reduce((n,x)=>n+(x.photosAcquired||0),0),9);
+ for(const x of ledger.queue) {
+  if(x.photosAcquired>0) {
+    assert.ok((x.archivedSourceFiles||[]).length>=x.photosAcquired,x.key);
+    assert.notEqual(x.photographReleaseState,'READY_FOR_PUBLICATION',x.key);
+    assert.ok(x.archivedSourceFiles.every(p=>p.publicationAllowed===false),x.key);
+  } else {
+    assert.equal(x.photographReleaseState,'UNVERIFIED',x.key);
+  }
+  assert.equal(x.appRenderTested,false,x.key);
+ }
 });
 
 test('all five derived Prayer category doors remain unavailable even with spoofed release proof',()=>{
