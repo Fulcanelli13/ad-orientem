@@ -34,7 +34,10 @@ test('verified painter is separate from legacy uploader; all 267 selections rema
 
   const slots = [
     'HERO-11','STG-pray.confession-01','COV-prayer.lection',
-    'STG-prayer.seven_sorrows_chaplet-04','STG-pray.rosary-15','COV-novena.assumption'
+    'STG-prayer.seven_sorrows_chaplet-04','STG-pray.rosary-15','COV-novena.assumption',
+    'COV-weekday_benedictus','STG-pray.litany_saints-02',
+    'STG-pray.angelus_regina-03','STG-pray.five_wounds-04',
+    'COV-daily.personal_rule','STG-pray.st_joseph_seven_sorrows-08'
   ];
   assert.equal(master.curatorialAuditAddendum20261101.verifiedAttributionAndPresentationSlots,slots.length);
   for (const slot of slots) {
@@ -60,6 +63,10 @@ test('verified painter is separate from legacy uploader; all 267 selections rema
   assert.equal(PRAYER_ARTWORK_SLOT_AUTHORITY['HERO-11'].displayArtist,'Peter Paul Rubens');
   assert.match(bySlot.get('HERO-11').verifiedWorkMetadata.attributionNote,/Joconde/);
   assert.equal(PRAYER_ARTWORK_SLOT_AUTHORITY['STG-prayer.seven_sorrows_chaplet-04'].displayArtist,null);
+  assert.equal(PRAYER_ARTWORK_SLOT_AUTHORITY['STG-pray.st_joseph_seven_sorrows-08'].displayArtist,'Guido Reni and studio');
+  assert.equal(PRAYER_ARTWORK_SLOT_AUTHORITY['STG-pray.st_joseph_seven_sorrows-08'].photoRightsApprovalRequired,true);
+  assert.equal(PRAYER_ARTWORK_SLOT_AUTHORITY['STG-pray.five_wounds-04'].displayTitle,'The Incredulity of Saint Thomas');
+  assert.equal(PRAYER_ARTWORK_SLOT_AUTHORITY['COV-daily.personal_rule'].displayTitle,'The Virgin in Prayer');
 });
 
 test('new scene relationship and scoped permissions are observational, not a change to approved paintings', () => {
