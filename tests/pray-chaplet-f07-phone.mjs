@@ -59,7 +59,10 @@ try{
     "F07 first canonical prayer must show at least one readable line above the app dock at "+
     width+"px: "+JSON.stringify({firstPrayer,verticalStack}));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
-   const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
+   // The Claude pilot intentionally hides the old decade strip. Exercise the
+   // visible chapter control, not a hidden legacy button.
+   const large=page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="4"]');
+   assert.equal(await large.isVisible(),true,"First decade must have a visible chapter target");
    await large.click();
    assert.equal(await crown.getAttribute("data-position"),"4");
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
@@ -81,7 +84,9 @@ try{
    assert.ok(overflow.document<=1&&overflow.mount<=1,"No 320/390 horizontal overflow: "+JSON.stringify(overflow));
    // Navigation position is not proof a prayer was recited. Only an explicit
    // click on Finish after the last source paragraph can complete the chaplet.
-   await page.locator(base+'[data-p435930-mercy-jump="59"]').click();
+   const closing=page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="59"]');
+   assert.equal(await closing.isVisible(),true,"Closing invocations need a visible chapter target");
+   await closing.click();
    const finalAction=page.locator(base+'[data-p435930-mercy-finish]');
    assert.equal(await finalAction.isVisible(),false,"Finish must remain hidden before the last Holy God");
    // On a tall phone all three closing prayers may fit without scrolling.
