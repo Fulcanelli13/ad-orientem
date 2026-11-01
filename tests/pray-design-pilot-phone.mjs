@@ -220,6 +220,27 @@ try{
    await page.locator(base+' [data-p435930-ador-mode="open"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().adorationMode),"open",
      "The Silent Adoration card must retain its canonical untimed reader");
+   await page.locator(base+' [data-p435930-ador-quiet-enter]').click();
+   assert.equal(await page.locator(base+' .aoAdorationPresenceQuiet[data-ao-adoration-quiet=true]').count(),1,
+     "Approved p1 presence screen must be a separate contemplative mode, never another devotional reader");
+   assert.equal(await page.locator(base+' .aoAdorationPresenceLamp').count(),1,"Sanctuary-lamp symbol must be present");
+   assert.equal(await page.locator(base+' .aoAdorationPresenceRing').count(),1,"Optional progress ring must be present");
+   assert.equal(await page.locator(base+' .aoAdorationPresenceActions button').count(),3,
+     "Approved p1 has Prayers, optional time and Public rite choices");
+   assert.equal(await page.locator(base+' [data-p435930-quiet-time]').innerText(),"30 min",
+     "Silence must start with NO running timer");
+   await page.screenshot({path:resolve(output,"adoration-presence-p1-"+width+".png"),animations:"disabled"});
+   await page.locator(base+' [data-p435930-quiet-time]').click();
+   assert.match(await page.locator(base+' .aoAdorationPresenceClock').innerText(),/30 min remaining|30 min restantes/,
+     "Optional 30 minute control must reuse the actual session timer");
+   await page.locator(base+' [data-p435930-quiet-time]').click();
+   assert.equal(await page.locator(base+' [data-p435930-quiet-time]').innerText(),"30 min","Timer can be stopped without certifying a completed devotion");
+   await page.locator(base+' [data-p435930-quiet-prayers]').click();
+   assert.equal(await page.locator(base+' .aoAdorationPresenceQuiet').count(),0,
+     "Prayers returns to existing reader rather than creating a separate corpus");
+   assert.equal(await page.locator(base+' .aoAdorationOptionDisclosure').first().evaluate(el=>el.open),true,
+     "Prayers exposes the existing optional source-owned texts");
+
    assert.deepEqual(errors,[],"Uncaught pilot JavaScript errors at "+width+": "+errors.join("; "));
    console.log("PASS "+width+"px: nine non-overlapping shelves, Marian source reader, Daily Angelus, search and direct bypass");
   }finally{await page.close()}
