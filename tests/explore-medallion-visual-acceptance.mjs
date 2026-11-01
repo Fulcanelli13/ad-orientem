@@ -647,6 +647,12 @@ try{
    await otherCommunities.locator(":scope > summary").click();
    assert.ok(await otherCommunities.locator("[data-find-affiliation]").count()>0,
      "Other source-reported institutes must be accessible through the map Filters drawer");
+   const firstSecondary=await otherCommunities.locator("[data-find-affiliation]").first().evaluate(el=>{
+     const button=el.getBoundingClientRect(),drawer=el.closest(".aoAtlasTlmExtra").getBoundingClientRect();
+     return {buttonTop:button.top,buttonBottom:button.bottom,drawerTop:drawer.top,drawerBottom:drawer.bottom};
+   });
+   assert.ok(firstSecondary.buttonTop>=firstSecondary.drawerTop&&firstSecondary.buttonBottom<=firstSecondary.drawerBottom,
+     "Opening Other communities must reveal usable affiliation buttons without a clipped first row: "+JSON.stringify(firstSecondary));
    const drawerGeometry=await sourceFilters.evaluate(el=>{
      const r=el.getBoundingClientRect();
      return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,
