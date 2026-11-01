@@ -1726,7 +1726,7 @@ try{
   assert.equal(settingsDesign.gutter,"22px","Preferences book reading gutter changed");
   assert.equal(settingsDesign.headerRule,"double","Preferences book lost its manuscript-style double rule");
   assert.equal(Math.round(settingsDesign.topControl.w),36,"Preferences book close button no longer fits its source design");
-  assert.equal(Math.round(settingsDesign.topControl.h),36,"Preferences book close button has incorrect geometry");
+  assert.ok(settingsDesign.topControl.h>=44&&settingsDesign.topControl.h<=48,"Preferences book close button must retain its accessible touch target");
   assert.equal(Math.round(settingsDesign.ribbonWidth),13,"Preferences book contents bookmark is missing");
   assert.equal(settingsDesign.contentsVisible,true,"All eight settings chapters must be visible on the cover");
   assert.equal(settingsDesign.nativeSelects,0,"Preferences R1 must use explicit word controls instead of native selects");
