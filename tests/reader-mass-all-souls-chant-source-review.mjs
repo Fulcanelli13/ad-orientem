@@ -73,4 +73,30 @@ assert.deepEqual(data.published,{
  publicNotationCount:0,noNewGabcCopied:true,noNewRenderer:true,
  userApprovalRequired:"ONE_FINAL_COMPLETE_COLLECTION_REVIEW"
 });
+// M15: a printed 1962 source witness corrects derivative Tract omission.
+assert.match(data.printed1962SourceWitness.title,/Missale Romanum/);
+assert.equal(data.printed1962SourceWitness.sourceComparisonNotMelodyProof,true);
+assert.match(data.printed1962SourceWitness.explicitlyObserved,/fidelium defunctorum/);
+assert.deepEqual(data.chantTextReview.map(x=>x.id),[766,1261,338,1199,241,1198]);
+assert.deepEqual(data.chantTextReview.map(x=>x.role),
+ ["INTROIT","GRADUAL","TRACT","OFFERTORY","COMMUNION","SEQUENCE"]);
+assert.equal(data.chantTextReview[2].status,"PRELIMINARY_TEXT_CORRESPONDENCE");
+assert.ok(data.chantTextReview[2].checkedParts[0].includes("defunctorum"));
+assert.equal(data.chantTextReview[5].status,"SOURCE_INDEXED_TEXT_NOT_FULL_GABC_COLLATED");
+// The donor's Sequentia flag is not permission to display/sing it at every Mass.
+assert.equal(data.sequenceRubric.allThreeOriginalSourceFilesSetSequentia,true);
+assert.equal(data.sequenceRubric.performance,"CONDITIONAL_NOT_ALWAYS_SUNG");
+assert.equal(data.sequenceRubric.doNotAutomaticallyOmitOrRequire,true);
+assert.equal(data.sequenceRubric.sourceOnlyNoReaderChange,true);
+// Reuse existing 1961 score index without treating other editions or funeral
+// absolution as a default All Souls chant.
+assert.deepEqual(data.additionalRequiemScoreLeads.map(x=>x.role),
+ ["KYRIE_REQUIEM","SANCTUS_REQUIEM","AGNUS_REQUIEM",
+  "DISMISSAL_REQUIEM","FUNERAL_ABSOLUTION_OPTION"]);
+assert.deepEqual(data.additionalRequiemScoreLeads.map(x=>x.gregobaseId),
+ [541,null,2118,823,null]);
+assert.ok(data.additionalRequiemScoreLeads.every(x=>
+ x.printedNotesVerified===false&&x.editorialApproval===false&&x.publicReader===false));
+assert.equal(data.additionalRequiemScoreLeads[4].ceremonyRequiresExplicitSelection,true);
+
 console.log("PASS: three All Souls source formularies, five archive-linked Requiem scores and one separate Dies irae lead; publication closed");
