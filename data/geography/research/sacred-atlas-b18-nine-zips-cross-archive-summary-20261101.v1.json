@@ -1,0 +1,103 @@
+{
+  "schema": "AO_SACRED_ATLAS_B18_USER_9_ZIPS_AUDIT_SUMMARY_V1",
+  "reviewed_at": "2026-11-01",
+  "scope": "User ZIP batches 01 02 03 06 07 08 09 10 11, not checkpoint-only attempted targets; research-only, zero publication",
+  "user_original_zip_batches_received": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "absent_batches": [
+    4,
+    5
+  ],
+  "checkpoint": {
+    "attempted_subject_ids": 203,
+    "unresolved_subject_ids": 141,
+    "completed_means_attempted": true
+  },
+  "verified_uploaded": {
+    "subject_records": 163,
+    "downloaded_image_files": 111,
+    "downloaded_subject_ids": 48,
+    "distinct_sha256_files": 105,
+    "full_original_images": 11,
+    "downloaded_preview_images": 100,
+    "decoded_images": 111,
+    "sha256_passed_images": 111,
+    "previously_known_distinct_hashes": 23,
+    "new_distinct_image_hashes_vs_prior_archives": 82
+  },
+  "visual_review": {
+    "exact_object_or_exact_guide_feature_candidates": 51,
+    "same_site_context_only": 27,
+    "wrong_subject_or_place_quarantined": 26,
+    "identity_or_scope_hold": 7,
+    "distinct_subjects_with_plausible_exact_image": 29,
+    "all_newly_approved": 0,
+    "published": 0
+  },
+  "cross_archive_reconciliation": {
+    "newly_downloaded_subject_ids_vs_A100_B15_B16": 6,
+    "of_those_with_plausibly_relevant_photo": 4,
+    "of_those_with_only_wrong_or_unverified_photo": 2,
+    "newly_plausibly_matched_subjects": [
+      "subject:focus:nevers-massabielle-replica",
+      "subject:guide-stop:PL:kalwaria-zebrzydowska:passion",
+      "subject:relic:CA:brother-andre-tomb-montreal",
+      "subject:relic:FR:curé-ars"
+    ],
+    "two_banneux_subject_ids_are_not_covered_by_exact_chapel_images": true
+  },
+  "missing_archive_subject_ids": [
+    "subject:relic:FR:basilique-sainte-marie-madeleine-vezelay",
+    "subject:relic:FR:saint-saturnin-toulouse",
+    "subject:relic:FR:phalange-saint-nicolas-port",
+    "subject:relic:FR:suaires-saints-sens",
+    "subject:relic:CH:abbaye-saint-maurice-agaune",
+    "subject:relic:DE:kolner-dom-three-kings",
+    "subject:relic:IT:basilica-san-marco-venezia",
+    "subject:relic:IT:basilica-san-domenico-bologna",
+    "subject:relic:IT:amalfi-sant-andrea",
+    "subject:relic:IT:ortona-san-tommaso",
+    "subject:relic:IT:salerno-duomo",
+    "subject:relic:DE:trier-sankt-matthias",
+    "subject:relic:IT:san-bartolomeo-isola",
+    "subject:relic:IT:san-pietro-ciel-doro",
+    "subject:relic:IT:santa-giustina-padova",
+    "subject:relic:IT:duomo-milano",
+    "subject:relic:FR:margaret-mary-paray",
+    "subject:relic:FR:bernadette-nevers",
+    "subject:relic:IT:anthony-padua-jawbone",
+    "subject:relic:IT:anthony-padua-voice",
+    "subject:relic:IT:anthony-padua-bones",
+    "subject:relic:IT:john-paul-ii-padua",
+    "subject:relic:IT:true-cross-padua",
+    "subject:relic:IN:francis-xavier-goa",
+    "subject:relic:CA:anne-beaupre-finger",
+    "subject:relic:CA:anne-beaupre-1892-forearm",
+    "subject:relic:CA:anne-beaupre-1960-forearm",
+    "subject:relic:PT:jacinta-fatima",
+    "subject:relic:PT:lucia-fatima",
+    "subject:relic:FR:chartres-voile-vierge",
+    "subject:relic:IT:chiesa-gesu-rome",
+    "subject:relic:FR:couvent-jacobins-toulouse",
+    "subject:relic:FR:collegiale-sainte-marthe-tarascon",
+    "subject:relic:FR:basilique-visitation-annecy",
+    "subject:relic:IT:sant-agostino-campo-marzio",
+    "subject:relic:IT:maria-ausiliatrice-torino",
+    "subject:relic:IT:sant-alfonso-pagani",
+    "subject:relic:IT:cattedrale-sant-agata-catania",
+    "subject:relic:IT:duomo-sant-eusebio-vercelli",
+    "subject:relic:ES:convento-san-juan-cruz-segovia"
+  ],
+  "safety": "Do not promote images directly from this research audit. Existing KEEP decisions immutable. Distinguish source original pixel dimensions from downloaded preview pixel dimensions. All new object images require visual subject, rights, quality, caption and editorial review.",
+  "sha256_and_visual_details_path": "data/geography/research/sacred-atlas-b18-111-actual-images-visual-decisions-20261101.csv",
+  "subject_attempt_status_path": "data/geography/research/sacred-atlas-b18-163-uploaded-subjects-status-20261101.csv"
+}
