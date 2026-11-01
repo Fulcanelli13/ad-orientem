@@ -2929,11 +2929,223 @@
   "publishedPhotos": 0,
   "mismatchedDonorConsolidation20261101": {
     "numberOfPlacements": 23,
-    "distinctOriginalIdentityGroups": 0,
+    "distinctOriginalIdentityGroups": 12,
     "placementsWithIndependentHistoricAcceptedArtworkRecord": 22,
-    "groupsWithIndependentHistoricAcceptedArtworkRecord": 0,
-    "groupsRequiringIdentityRecovery": [],
+    "groupsWithIndependentHistoricAcceptedArtworkRecord": 11,
+    "groupsRequiringIdentityRecovery": [
+      "The Crucifixion"
+    ],
     "important": "Original artwork accepted in an older Prayer batch does NOT prove exact target-slot authority; a later donor selection may simply differ. No painting is removed or promoted.",
-    "groups": []
+    "groups": [
+      {
+        "sourceArtworkId": "CANONICAL::met-438724",
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "affectedSlotIds": [
+          "COV-pray.angelus",
+          "STG-pray.angelus-01",
+          "STG-pray.angelus-02",
+          "COV-foundations_hail_mary"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": null,
+          "semanticTargets": []
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "REVIEW::commons:87865020",
+        "artist": "Giovanni Battista Salvi da Sassoferrato",
+        "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+        "affectedSlotIds": [
+          "COV-daily.personal_rule"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": null,
+        "originalB06Evidence": {
+          "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+          "sourceSlotProposals": [
+            "STG-litany_loreto_1962-01"
+          ]
+        },
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "REVIEW::commons:22178536",
+        "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+        "title": "The Way to Calvary",
+        "affectedSlotIds": [
+          "STG-pray.rosary-10"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": null,
+        "originalB06Evidence": {
+          "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+          "sourceSlotProposals": [
+            "STG-pray.precious_blood-05",
+            "STG-pray.stations-02"
+          ]
+        },
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "REVIEW::commons:199348815",
+        "artist": "Eustache Le Sueur",
+        "title": "Eustache Le Sueur Ecce Homo",
+        "affectedSlotIds": [
+          "COV-novena.holy_face_1887"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": null,
+        "originalB06Evidence": {
+          "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+          "sourceSlotProposals": [
+            "STG-pray.rosary-09",
+            "STG-pray.precious_blood-04"
+          ]
+        },
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "CANONICAL::cma-160143",
+        "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+        "title": "The Holy Family",
+        "affectedSlotIds": [
+          "COV-pray.adoration.night"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": null,
+          "semanticTargets": []
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "CANONICAL::met-442488",
+        "artist": "Nicolas Poussin",
+        "title": "The Agony in the Garden",
+        "affectedSlotIds": [
+          "STG-pray.adoration.night-02"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": "could fit in five wounds",
+          "semanticTargets": [
+            "five_wounds_possible"
+          ]
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "PRAYER::angel--strozzi",
+        "artist": "Bernardo Strozzi",
+        "title": "The Guardian Angel",
+        "affectedSlotIds": [
+          "STG-pray.adoration.night-06"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": null,
+          "semanticTargets": []
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "CANONICAL::cma-97147",
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "affectedSlotIds": [
+          "COV-pray.stations",
+          "COV-pray.seven_words",
+          "STG-pray.seven_words-01",
+          "STG-pray.seven_words-02",
+          "STG-pray.seven_words-04",
+          "STG-pray.seven_words-05",
+          "STG-pray.tenebrae-02"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": null,
+          "semanticTargets": []
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": null,
+        "artist": "Sodoma (Giovanni Antonio Bazzi)",
+        "title": "The Crucifixion",
+        "affectedSlotIds": [
+          "STG-pray.seven_words-06"
+        ],
+        "originalAcceptedInHistoricalReview": false,
+        "originalB01Evidence": null,
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "REVIEW::commons:18589500",
+        "artist": "William-Adolphe Bouguereau",
+        "title": "The Virgin of Consolation",
+        "affectedSlotIds": [
+          "COV-marian_memorare",
+          "COV-sub_tuum"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": null,
+        "originalB06Evidence": {
+          "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+          "sourceSlotProposals": [
+            "STG-litany_loreto_1962-01"
+          ]
+        },
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "PRAYER::joseph--primary",
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "affectedSlotIds": [
+          "COV-devotion_memorare_st_joseph",
+          "COV-devotion_litany_st_joseph"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": "also fits for prayer for good death",
+          "semanticTargets": [
+            "prayer_for_good_death"
+          ]
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      },
+      {
+        "sourceArtworkId": "REVIEW::met:436101",
+        "artist": "Gerard David",
+        "title": "The Rest on the Flight into Egypt",
+        "affectedSlotIds": [
+          "COV-devotion_ad_te_beate_ioseph"
+        ],
+        "originalAcceptedInHistoricalReview": true,
+        "originalB01Evidence": {
+          "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+          "originalUserInstruction": null,
+          "semanticTargets": []
+        },
+        "originalB06Evidence": null,
+        "exactTargetSlotApprovalNotEstablished": true
+      }
+    ]
   }
 }
