@@ -92,6 +92,98 @@ try{
       console.log("PASS H7 Sunday Asperges → Foot "+test.form+"/"+test.language);
     }finally{await ctx.close()}
   }
+
+  // 2 November: cover the actual H7 Home → Mass door handoff. The existing
+  // source-led November gate already audits the six modes and all three
+  // formularies; this tests only the previously uncovered user entry route.
+  for(const test of [
+    {index:0,form:"LOW",language:"en",width:390},
+    {index:1,form:"SOLEMN",language:"fr",width:320},
+    {index:2,form:"MISSA_CANTATA_INCENSE",language:"en",width:390},
+  ]){
+    const expected="Sancti/11-02m"+(test.index+1);
+    const ctx=await browser.newContext({viewport:{width:test.width,height:844},
+      isMobile:true,hasTouch:true,locale:test.language==="fr"?"fr-FR":"en-GB",
+      deviceScaleFactor:1,serviceWorkers:"block",reducedMotion:"reduce"});
+    try{
+      const page=await ctx.newPage(),errors=[];
+      page.on("pageerror",e=>errors.push(e.message));
+      await page.goto("http://127.0.0.1:"+server.address().port+
+        "/index.html?aoR17Reader=native&qa=mass-reader-phone",
+        {waitUntil:"domcontentloaded",timeout:90000});
+      await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate &&
+        globalThis.AO_R17_BROWSER_ENTRY?.selectTodayOption),null,{timeout:90000});
+      assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345
+        .revealDate("2026-11-02",{forceLoader:false,prefetch:false})),true);
+      await page.waitForFunction(()=>{const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+        return s?.selectedDate==="2026-11-02"&&s?.resolution?.date==="2026-11-02"&&
+          s?.resolution?.proper?.status==="ready"&&!s.resolving;},null,{timeout:60000});
+      await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
+      await page.locator(".aoH7HomeView [data-home-h7-enter]").waitFor({state:"visible",timeout:35000});
+      await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+      let door=page.locator(".aoH7DoorView:not([hidden])");
+      await door.waitFor({state:"visible",timeout:18000});
+      if(test.index!==0){
+        // Use the actual visible button; never mutate resolver internals
+        // or substitute a fictitious Proper in this entry acceptance.
+        const choice=door.locator('[data-formulary="'+test.index+'"]');
+        await choice.waitFor({state:"visible",timeout:18000});
+        await choice.click();
+        await page.waitForFunction(path=>{
+          const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+          return s?.selectedDate==="2026-11-02"&&s.resolution?.date==="2026-11-02"&&
+            s.resolution?.proper?.status==="ready"&&s.resolution?.proper?.data?.sourcePath===path;
+        },expected,{timeout:60000});
+        door=page.locator(".aoH7DoorView:not([hidden])");
+        if(!await door.isVisible()){
+          await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+          await door.waitFor({state:"visible",timeout:15000});
+        }
+      }
+      const calendar=await page.evaluate(()=>{
+        const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+        return {selectedDate:s?.selectedDate,resolvedDate:s?.resolution?.date,
+          source:s?.resolution?.proper?.data?.sourcePath};
+      });
+      assert.deepEqual(calendar,{selectedDate:"2026-11-02",
+        resolvedDate:"2026-11-02",source:expected},
+        "H7 selected the wrong All Souls Proper before Mass entry");
+      await door.locator("[data-home-h4-change]").first().click();
+      const choices=page.locator(".aoH4ChoiceDialog[open]");
+      await choices.waitFor({state:"visible",timeout:18000});
+      await choices.locator('[data-h4-option="form"]').selectOption(test.form);
+      const asp=choices.locator('[data-h4-option="aspersion"]');
+      assert.equal(await asp.isDisabled(),true,"Weekday Requiem must not suggest Sunday Asperges");
+      await choices.locator('[data-h4-option="beforeMass"]').selectOption("none");
+      await choices.locator('[data-h4-option="readerMode"]').selectOption("LIVE");
+      await choices.locator('[data-h4-option="readerLanguage"]').selectOption(test.language);
+      await choices.locator("[data-h4-sheet-close]").last().click();
+      const prepared=await page.evaluate(async()=>{
+        const p=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+        const m=p?.session?.resolvedMass;
+        return {date:m?.date,source:m?.proper?.data?.sourcePath??m?.proper?.sourcePath,
+          overlays:m?.overlays??[],readerMode:p?.readerPreferences?.mode};
+      });
+      assert.equal(prepared.date,"2026-11-02","Mass handoff silently reverted to yesterday");
+      assert.equal(prepared.source,expected,"Mass handoff replaced All Souls selected formulary");
+      assert.ok(prepared.overlays.includes("REQUIEM"),"All Souls lost Requiem overlay in H7");
+      assert.equal(prepared.readerMode,"LIVE","H7 did not retain the selected reader mode");
+      await door.locator("[data-home-h4-begin]").click();
+      await page.waitForFunction(()=>Boolean(window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()),
+        null,{timeout:65000});
+      const first=await page.evaluate(()=>{
+        const c=window.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard();
+        return {id:c?.id,sourceSection:c?.sourceSectionId??c?.sectionId,
+          total:window.AO_R17_NATIVE_READER_PREVIEW.model?.totalCards};
+      });
+      assert.equal(first.sourceSection,"AO.CARD.001",
+        "2 November should start the normal Requiem entry, not Sunday Asperges");
+      assert.deepEqual(errors,[]);
+      await page.screenshot({path:dir+"/all-souls-m"+(test.index+1)+"-"+test.width+
+        "-"+test.language+"-h7-entry.png",animations:"disabled"});
+      console.log("PASS H7 All Souls "+expected+" → LIVE Requiem "+test.form+"/"+test.language);
+    }finally{await ctx.close()}
+  }
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(ok));
