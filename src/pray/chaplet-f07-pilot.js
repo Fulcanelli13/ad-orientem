@@ -10,6 +10,16 @@ export function chapletF07PilotEnabled(win=globalThis){
  try{return new URLSearchParams(win.location?.search||"").get("aoChapletF07Pilot")==="1"}
  catch{return false}
 }
+/**
+ * The three source-specific w1/c1 readers have passed their opt-in phone
+ * acceptance and become the draft branch's default presentation.
+ * Explicit ?aoChapletF07Pilot=0 remains a safe legacy rollback.
+ * Divine Mercy m1/m2/m3 is still opt-in until prototype acceptance.
+ */
+export function chapletF07VariantsEnabled(win=globalThis){
+ try{return new URLSearchParams(win.location?.search||"").get("aoChapletF07Pilot")!=="0"}
+ catch{return false}
+}
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 export function renderMercyF07Crown(steps,index,{french=false}={}){
  const m=mercyBeadNavigationModel(steps,index,{french});
