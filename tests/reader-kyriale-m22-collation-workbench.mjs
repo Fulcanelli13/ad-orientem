@@ -82,4 +82,53 @@ const publicReader=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.
 const sw=readFileSync(new URL("../sw.js",import.meta.url),"utf8");
 assert.doesNotMatch(publicReader,/kyriale-1961-collation|data-schola-score-open/);
 assert.doesNotMatch(sw,/kyriale-1961-collation/);
+// M31 records actual visible short-score print comparisons. Do not turn an
+// underlay/contour observation into staff-pitch, rhythm, or editorial approval.
+const m31=JSON.parse(readFileSync(new URL(
+ "../data/research/mass-music-m31-five-short-score-print-visual-pass.v1.json",
+ import.meta.url),"utf8"));
+assert.equal(m31.schema,"ao-mass-music-m31-five-short-score-print-visual-pass-v1");
+assert.deepEqual(m31.scope.remainingLargeScores,["Gloria VIII","Credo III"]);
+assert.equal(m31.scope.visuallySurveyedCompleteShortScores,5);
+assert.equal(m31.scope.sourceNoteBearingGroupsInSurveyedScores,191);
+assert.equal(m31.scope.sourceSyllableBearingGroupsInSurveyedScores,190);
+assert.equal(m31.scope.visuallyMappedKyrieXviGroups,27);
+assert.equal(m31.scope.certifiedPrintedMusicalGroups,0);
+assert.equal(m31.scope.certifiedPublicDigitalScores,0);
+assert.equal(m31.noAutomaticPublication,true);
+assert.equal(m31.scoreReviews.length,5);
+const reviewedSourceIds=m31.scoreReviews.map(x=>x.gregobaseId);
+assert.deepEqual(reviewedSourceIds,[545,2982,1184,1384,2760]);
+for(const row of m31.scoreReviews){
+ const src=ledger.scores.find(s=>s.gregobaseId===row.gregobaseId);
+ assert.ok(src,"M31 source not in original seven-score source registry");
+ assert.deepEqual(row.originalScanUrls,src.printedPageImageUrls);
+ assert.deepEqual(row.printedPages,src.printedPages);
+ assert.equal(row.editorialApproval,false);
+ assert.equal(row.publicScore,false);
+ assert.equal(row.absolutePitchParity,"NOT_CERTIFIED");
+ assert.equal(row.completeNeumeSignParity,"NOT_CERTIFIED");
+ assert.equal(row.allRhythmMarksParity,"NOT_CERTIFIED");
+ assert.equal(row.independentFullUnderlayByGroupCertification,false);
+ const orig=offlineKyrialeResearchScore(src.movement,src.catalogueSelection);
+ const groups=sourceNoteGroupInventory(orig.gabc).groups;
+ assert.equal(groups.length,row.sourceBearingGroupCount);
+}
+const xvi=m31.kyrieXviGroupVisualMap;
+assert.equal(xvi.length,27);
+const kyrieSource=ledger.scores.find(s=>s.gregobaseId===545);
+const xviGroups=sourceNoteGroupInventory(
+ offlineKyrialeResearchScore(kyrieSource.movement,kyrieSource.catalogueSelection).gabc).groups;
+for(let i=0;i<xvi.length;i++){
+ const row=xvi[i],source=xviGroups[i];
+ assert.equal(row.ordinal,i+1);
+ assert.equal(row.originalLatinSyllable,source.syllable);
+ assert.equal(row.sourceGabcNotes,source.gabcOriginalNotes);
+ assert.equal(row.originalPrintSystem,i<14?1:2);
+ assert.equal(row.originalPrintPage,"54*");
+ assert.equal(row.exactAbsolutePitchAgainstOriginal,"NOT_CERTIFIED");
+ assert.equal(row.exactNeumeJoiningAndShapes,"NOT_CERTIFIED");
+ assert.equal(row.moraEpisemataAndRhythmicSigns,"NOT_CERTIFIED");
+ assert.equal(row.reviewerEditorialApproval,false);
+}
 console.log("PASS M22 bulk 753 source note-bearing tokens across seven scores, including 54 Agnus groups; isolated 1961 Kyriale editorial workbench: printed 10-page witness + real offline SVG component, four independent notation decisions and JSON export; zero public score promotion");
