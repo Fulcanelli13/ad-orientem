@@ -179,7 +179,7 @@ export function selected1962AllSaintsOffertoryReading(proper){
   // Fail closed unless the exact inherited source, main chant, normal
   // Alleluia ending AND all three source translations are recognizable.
   // A changed source edition or missing language cannot be truncated.
-  if(!/^Sap 3:1-3\nJust[oó]rum [aá]nim(?:æ|ae)\b/u.test(latin)||
+  if(!/^Sap 3:1-3\nJust[oó]rum [aá]nim(?:æ|ae)\s/u.test(latin)||
     !/allel[uú]ja\.\n\(sed post Septuagesimam dicitur\)\npace\.\s*$/u.test(latin)||
     !latinAlternative.test(latin)||
     !englishAlternative.test(en)||
