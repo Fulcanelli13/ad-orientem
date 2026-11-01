@@ -21,4 +21,8 @@ for(const release of RELEASES){
 }
 export const LIVE=Object.freeze({...current,unlinked:current.places_without_direct_claim,areas:current.geo_areas,links:current.directory_place_links});
 export const BASE=Object.freeze(historical);
-export const CURRENT_RELEASE_PLACE_IDS=Object.freeze(RELEASES.flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
+// Some subsequent releases verify only an exact venue→existing Place link.
+// Such a release must not turn that long-established Place into a “new Place”
+// in the original geographic completeness reconciliation.
+export const CURRENT_RELEASE_PLACE_IDS=Object.freeze(RELEASES.flatMap(r=>
+ r.data.new_places===0?[]:(r.data.published_new||[]).map(x=>x.place_id)));
