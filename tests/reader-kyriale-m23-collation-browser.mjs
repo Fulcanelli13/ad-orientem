@@ -178,8 +178,12 @@ try{
    assert.equal(exported.scores[4].pages[1].neume,"DIFFERENCE");
    assert.equal(exported.scores[4].pages[1].editorialApproval,undefined);
    const agnusEvidence=exported.scores.find(s=>s.gregobaseId===2760);
-   assert.equal(agnusEvidence.allPageCategoriesMarkedMatching,false,
+   assert.equal(agnusEvidence.allPageCategoriesMarkedMatching,true,
+    "The folio-level review was marked matching in this synthetic browser test");
+   assert.equal(agnusEvidence.allSourceGroupsMarkedMatching,false,
     "All 54 note groups must be independently marked MATCH, not inferred from page fields");
+   assert.equal(agnusEvidence.fullyMarkedMatching,false,
+    "Folio-level MATCH cannot count as full musical parity");
    assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.pitch,"MATCH");
    assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.neume,"DIFFERENCE");
    assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.underlay,"UNCERTAIN");
