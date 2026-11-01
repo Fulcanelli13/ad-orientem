@@ -34,7 +34,7 @@
       "candidate_id": "candidate:directory-place:US:guadalupe-la-crosse-tlm",
       "place_id": "place:US:guadalupe-shrine-la-crosse",
       "relationship_if_resolved": "LOCATED_AT",
-      "status": "IDENTITY_RESOLUTION_REQUIRED",
+      "status": "RESOLVED_CONFIRMED_DIRECTORY_VENUE",
       "claim_summary": "The official Shrine of Our Lady of Guadalupe schedule publishes a current Traditional Latin Mass at the shrine.",
       "schedule_context": {
         "monday_through_saturday": "08:30 Traditional Latin",
@@ -52,11 +52,18 @@
         ],
         "exact_or_text_matches": []
       },
-      "unresolved_scope": [
-        "SSPX_OR_OTHER_LIVE_SOURCES",
-        "NON_INSTITUTE_DIOCESAN_OR_LOCAL_DIRECTORY_RECORDS"
-      ],
-      "guardrail": "Do not create a Directory→Place link until a current Directory venue record is independently identified as this Shrine. The official shrine schedule proves the Mass, not the existence of a canonical Directory venue."
+      "unresolved_scope": [],
+      "guardrail": "Resolved to the exact named and addressed shrine complex via the source-owned CL2 record and official shrine site. Do not infer another chapel, ministry operator or current schedule from this identity link.",
+      "resolution": {
+        "date": "2026-11-01",
+        "venue_id": "AO-AMER-R28-US-23-05",
+        "cl2_physical_group_id": "RG-ACCD4654B950",
+        "place_id": "place:US:guadalupe-shrine-la-crosse",
+        "link_id": "link:directory-place:US:guadalupe-shrine-la-crosse",
+        "official_url": "https://guadalupeshrine.org/hours-locations/",
+        "independent_prior_scan_preserved": true,
+        "note": "2026-10-07 limited provider scan had no FSSP/ICKSP/IBP match; later CL2 worldwide venue owner contains source AO-AMER-R28-US-23-05 for the identical named Shrine, 5250 Justin Road, La Crosse WI 54601. This resolves place/venue identity only, not institute ownership, Mass book, or a new verified timetable."
+      }
     },
     {
       "candidate_id": "candidate:directory-place:GB:walsingham-lms-tlm",
