@@ -8,11 +8,11 @@ Continue from the original Oct 28 and Oct 30 decisions. Avoid re-asking for alre
 
 | Evidence class | Positions | Interpretation |
 | --- | ---: | --- |
-| Four explicit final covers and five deterministic restorations | 9 | Preserve exact selected originals |
+| Five explicit protected covers and five deterministic restorations | 10 | Preserve exact selected originals |
 | Earlier accepted proposals at presented slot | 97 | Subject to independent photo and original-identity QA |
 | Earlier accepted proposals carrying written semantic scope | 6 | Compare placement with written scope; checked box alone does not override it |
 | Historic October 28 module KEEP links | 3 | Follow the original module, selected artwork ID and destination |
-| Inherited art from approved donor prayer slots | 72 | Preserve current choice; trace donor approval and applicability, not 72 new approvals |
+| Inherited art requiring donor-identity trace | 71 | Preserve current choice; trace donor approval and applicability, not 71 new approvals |
 | Historic/accepted original without direct-slot evidence in this master | 38 | Find older evidence before making any replacement claim; **not** proof of rejection |
 | Research-only provisional positions | 22 | Hold for **one consolidated final review** |
 | Previously 'approved' Epiphany original with narrower written destination | 1 | Distinct written-scope conflict, separate from 22 purely provisional |
@@ -27,6 +27,24 @@ The historical report's **23 provisional positions** now comprise 22 explicitly 
 A follow-up exact-ID join against the original October 30 source records recovered **107 primary positions with original B01–B05 artwork-ID links** and **23 with B06–B11 ID links**. Among the **38 positions initially marked as lacking direct evidence in the current master**, **17 have explicit original written instructions**. These include the user’s positive instructions for *Adoration of the Magi* in the Rosary Nativity and Blessed Sacrament Visit, Caravaggio’s pierced side, Van Dyck’s *Lance Thrust*, the Divine Mercy image, and Lanfranco’s Loaves and Fishes in grace prayers and the Our Father.
 
 These are provenance links, not 17 automatically adjudicated exact-slot approvals. Keep all original natural-language scope restrictions; *recovery of a statement* does not imply that every current destination is authorised. The full 267-row evidence record includes the exact source artwork IDs, batch numbers, historical selected slots and verbatim notes.
+
+## Exact-work donor check and fourteen primary holds (later 1 Nov)
+
+The explicit user-supplied **St Thérèse portrait** was confirmed to be among the three canonical protected covers; the earlier ledger had mislabeled that one as merely inherited. The revised evidence census has **five protected covers** (including Confession and Ingres Benediction), **five deterministic restorations**, **71 inherited references** and **38 historic records without direct-slot evidence**.
+
+The [71-position donor identity ledger](../../data/prayer/artwork-editorial-20261101/donor-original-identity-triage-71-20261101.v1.json) separates:
+- 20 where the donor's current painting contains the **exact original artwork ID**;
+- 1 where the selected source URL matches the donor;
+- 2 where artist and title match but the original identity has not been independently confirmed;
+- **23 where the named donor slot currently displays a different original**, so that donor reference alone is not an adequate proof;
+- 8 older module-level references that require their archived module decisions;
+- 17 synthetic/historical sources (including all 14 numbered San Polo Stations), which are **not** necessarily missing approvals.
+
+No current paintings were rejected because of a faulty donor pointer. All 23 inconsistent pointers remain forensic leads to reconcile with the source-specific original decision, not licences to auto-substitute.
+
+The [14-held-primary scope ledger](../../data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json) finds **five already accepted, scope-eligible alternatives** across three held slots: two for the **Rosary Coronation** (Lochner and Carracci), two for the **Litany of Saints** section (Guido Reni's St Michael and Ignacio de Ries's St Michael), and one for **Good Death** (Simon de Vos's *Death of Saint Francis*). None is automatically appointed as the new primary; all fourteen holds stay intact. A further four offered alternatives have an incompatible written scope or a veto/hold.
+
+The [single 37-position future editorial review queue](../../data/prayer/artwork-editorial-20261101/one-time-final-editorial-review-queue-37-20261101.v1.json) consists of **22 provisional artwork slots + one Epiphany scope conflict + 14 holds**. It is not ready as an image gallery: only one of those 37 has an archived source photo in the current acquisition queue, and **none** has passed the original-photo rights and visual QA needed for publication. The 23 donor discrepancies are a separate **research correction** workflow, not 23 extra artworks for you to review.
 
 ## Targeted collection audit
 
@@ -64,10 +82,10 @@ These are provenance links, not 17 automatically adjudicated exact-slot approval
 
 ## Closure order (no individual user requests)
 
-1. First **reconcile the 110 inherited/indirect rows against older source IDs and original kept artwork records**, prioritizing those with verbatim destination notes. The absence of a direct row is not proof that the earlier approval did not happen.
+1. First **reconcile the 109 inherited/indirect rows against older source IDs and original kept artwork records**, prioritizing those with verbatim destination notes. The absence of a direct row is not proof that the earlier approval did not happen.
 2. Resolve the 14 holds by exact original-work identity and explicit scope, using already accepted exact-scene options before researching new art. Keep held records for traceability.
 3. Complete the 22 provisional proposals plus Epiphany scope issue as one final visual review, with real images, source/crop/licence evidence, contextual/exact labels, and a clear alternative only where it improves fidelity.
-4. Separately acquire and certify **actual photographs** at native size (90–95% painting-only crop, 320/390px mobile, original identity, attribution, CC/PD permission and modified-image disclosure). The archived twelve initial files and fourteen Stations source references are not themselves release approvals.
+4. Separately acquire and certify **actual photographs** at native size (90–95% painting-only crop, 320/390px mobile, original identity, attribution, CC/PD permission and modified-image disclosure). The staged originals (including nine currently counted in the deduplicated 124-work photo queue) and fourteen Stations source references are not themselves release approvals.
 5. Only after all applicable gates pass, update production Prayer artwork manifests and complete phone visual acceptance. Current runtime release manifest is intentionally empty.
 
 **No changes to painting selections, old user verdicts, prohibited images, Rosary architecture, production or fee constraints are authorized by this document.**
