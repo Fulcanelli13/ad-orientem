@@ -222,6 +222,9 @@ test('artwork release proof must include exact work, actual photo rights, SHA-25
   path:'assets/pray/released/song-of-the-lark.webp',
   publicationState:'READY_FOR_PUBLICATION',productionEnabled:true,editorialApproved:true,
   sourceCredit:'Art Institute of Chicago',sourceCollectionUrl:'https://www.artic.edu/artworks/94841/the-song-of-the-lark',
+  photographerCredit:'Art Institute of Chicago image service',
+  licenseName:'Public Domain Mark',licenseUrl:'https://creativecommons.org/publicdomain/mark/1.0/',
+  modificationsDescription:'Displayed in a responsive painting-only crop',
   releaseEvidence:{
    selectedOriginalArtworkId:selection.ids[0],
    exactOriginalObjectVerified:true,approvedForThisExactPrayerSlot:true,
@@ -239,11 +242,16 @@ test('artwork release proof must include exact work, actual photo rights, SHA-25
  assert.match(markup,/aoPrayReleasedArtFrame/);
  assert.match(markup,/Informations sur l’œuvre/);
  assert.match(markup,/Art Institute of Chicago/);
+ assert.match(markup,/Public Domain Mark/);
+ assert.match(markup,/responsive painting-only crop/);
+ assert.match(markup,/Photograph:/);
+
  assert.match(markup,/details/);
  const ensureDenied=(patch,key)=>{
   const copy=structuredClone(release);
-  if(key==='path')copy.path=patch;
-  else if(key==='editorialApproved')copy.editorialApproved=patch;
+  if(['path','editorialApproved','licenseName','licenseUrl',
+      'photographerCredit','modificationsDescription'].includes(key))
+    copy[key]=patch;
   else copy.releaseEvidence[key]=patch;
   assert.equal(releaseClearedPrayerArtwork(slot,{manifest:{[slot]:copy}}),null,key);
  };
@@ -255,6 +263,10 @@ test('artwork release proof must include exact work, actual photo rights, SHA-25
  ensureDenied('https://remote.example/painting.jpg','path');
  ensureDenied('invalid','sourceOriginalSha256');
  ensureDenied(false,'editorialApproved');
+ ensureDenied('', 'licenseUrl');
+ ensureDenied('http://invalid.example/license','licenseUrl');
+ ensureDenied('', 'photographerCredit');
+ ensureDenied('', 'modificationsDescription');
  const held='COV-prayer.communion';
  const attempt={...release,slotId:held,title:'La Petite Cène',artist:'Philippe de Champaigne'};
  assert.equal(releaseClearedPrayerArtwork(held,{manifest:{[held]:attempt}}),null);
