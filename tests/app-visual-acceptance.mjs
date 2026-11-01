@@ -883,6 +883,15 @@ try{
   // Only the final examination card reveals the real Continue to the rite.
   await page.locator("#aoPray435930 .aoP435930ConfessionReader [data-p435930-conf-next]").click();
   await page.waitForSelector("#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-section='2'] "+".aoDevoSequenceTimeline",{timeout:5000});
+  // The source-owned rite opens with the non-sacramental "Before you enter"
+  // introduction. The transient Sign-of-Cross cue belongs to the NEXT
+  // cross-and-blessing rehearsal card, never to the entire rite.
+  assert.equal(await page.locator("#aoPray435930 .aoP435930ConfessionReader [data-ao-devo-card='at-priest']").count(),1,
+    "Confession must begin with its canonical before-entry guide");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,
+    "The preliminary guide must not prematurely show the Sign of Cross");
+  await page.locator(confessionTimeline+" [data-ao-devo-chapter='1']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930ConfessionReader .aoDevoCard")?.dataset?.aoDevoCard==="cross-and-blessing",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
   const confessionRail=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
@@ -894,8 +903,9 @@ try{
   assert.match(confessionRail.stage,/Before entering|Avant d.enter/,"Confession rail must describe preparation, not a simulated in-confessional experience");
   // Preserve the historical visual-acceptance artifact name used by donor comparison.
   await shot("03h-pray-confession-in-confessional");
-  // Once the first rehearsal card is past, the transient cross cue disappears.
-  await page.locator(confessionTimeline+" [data-ao-devo-chapter='1']").click();
+  // The transient cross belongs to exactly one rehearsal card.
+  // "Say your sins" follows at source index 2, never at index 1.
+  await page.locator(confessionTimeline+" [data-ao-devo-chapter='2']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930ConfessionReader .aoDevoCard")?.dataset?.aoDevoCard==="say-sins",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Sign-of-Cross cue must not persist throughout rehearsal");
   assert.equal(await page.locator("#aoPray435930 [data-ao-confession-card='say-sins']").count(),1);
