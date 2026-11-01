@@ -60,7 +60,10 @@ export function projectCurated65PriestStation({
   if(enabled!==true||!FORMS.has(String(form??"")))return null;
   const n=number(cueId);
   if(sermonPause===true){
-    return Object.freeze({priestPosition:UNKNOWN,missalLocation:"GOSPEL_SIDE",
+    // Sermon location is intentionally unobserved. Do not surface an
+    // internal diagnostic as user-facing priest-position copy.
+    return Object.freeze({priestPosition:Object.freeze({...UNKNOWN,label:"—"}),
+      missalLocation:"GOSPEL_SIDE",
       reason:"SERMON_PREACHER_AND_POSITION_REQUIRE_OBSERVATION"});
   }
   if(n===null)return null;
