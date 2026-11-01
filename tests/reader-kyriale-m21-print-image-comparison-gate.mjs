@@ -231,4 +231,53 @@ assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
 assert.equal(ledger.closedGates.approvedForReaderCount,0);
 console.log("PASS M26 all 7 Ordinary pilot scores have source-pinned printed structural records; last four 3+5+18+19 clauses protected, zero pitch/neume certificates");
 
+// M27: explicitly limited independent visual note-group comparison of original
+// 1961 print and rendered GregoBase PDFs. Verbatim source invariants can be
+// asserted; visual observations are evidence, NOT automated pitch recognition.
+for(const [id,movement,selection,n] of [
+ [2760,"AGNUS_DEI","MASS_08",5],
+ [1384,"SANCTUS_BENEDICTUS","MASS_08",5],
+ [545,"KYRIE","MASS_16",2]
+]){
+ const row=ledger.scores.find(s=>s.gregobaseId===id),audit=row?.noteSpotChecks;
+ assert.ok(audit,"Source print-to-GABC spot check missing for "+id);
+ assert.equal(audit.auditId,"M27_NOTE_GROUP_VISUAL_SPOT_CHECK_"+id);
+ assert.equal(audit.checks.length,n);
+ assert.equal(audit.comparisonType,"VISUAL_RELATIVE_NEUME_CONTOUR_AND_GROUPING_ONLY");
+ assert.equal(audit.comparisonStatus,"SELECTED_PASSAGES_VISUALLY_AGREE_NOT_FULL_SCORE_PARITY");
+ assert.match(audit.sourceGabcRenderedPdf,/^https:\/\/gregobase\.selapa\.net\/download\.php\?format=pdf&id=\d+$/);
+ assert.ok(row.printedPageImageUrls.every(url=>audit.sourceOriginalScan.includes(url)));
+ const gabc=offlineKyrialeResearchScore(movement,selection).gabc;
+ for(const motif of audit.checks){
+  assert.ok(motif.id);
+  assert.ok(gabc.includes(motif.gabcVerbatimFragment),
+   "Audited note group changed from original source "+id+" "+motif.id);
+  assert.equal(motif.observation,"VISUAL_RELATIVE_CONTOUR_AGREEMENT");
+  assert.equal(motif.staffPitchMappedAbsolute,false);
+  assert.equal(motif.fullRhythmicSignsCertified,false);
+  assert.equal(motif.sourceGabcAdjusted,false);
+ }
+ assert.ok(audit.limits.length>=4);
+ assert.equal(audit.remainingToCheck,"ALL_REMAINING_NOTES_AND_RHYTHMIC_SIGNS");
+ assert.equal(audit.completeNoteByNoteReview,false);
+ assert.equal(audit.completeNeumeByNeumeReview,false);
+ assert.equal(audit.editorialApproved,false);
+ assert.equal(audit.publicScore,false);
+ assert.equal(row.noteByNotePitchParity,"NOT_CERTIFIED");
+ assert.equal(row.neumeShapeParity,"NOT_CERTIFIED");
+ assert.equal(row.accentOrRhythmParity,"NOT_CERTIFIED");
+ assert.equal(row.editorialApproval,false);
+ assert.equal(row.publicScore,false);
+}
+const agMotifs=ledger.scores.find(s=>s.gregobaseId===2760).noteSpotChecks.checks;
+assert.equal(agMotifs[0].gabcVerbatimFragment,agMotifs[2].gabcVerbatimFragment);
+assert.notEqual(agMotifs[0].gabcVerbatimFragment,agMotifs[1].gabcVerbatimFragment);
+const snMotifs=ledger.scores.find(s=>s.gregobaseId===1384).noteSpotChecks.checks;
+assert.notEqual(snMotifs[3].gabcVerbatimFragment,snMotifs[4].gabcVerbatimFragment);
+assert.equal(ledger.scores.filter(s=>s.noteSpotChecks).length,3);
+assert.equal(ledger.scores.reduce((n,s)=>n+(s.noteSpotChecks?.checks.length??0),0),12);
+assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
+assert.equal(ledger.closedGates.approvedForReaderCount,0);
+console.log("PASS M27 12 visually compared original-print melodic motif spot checks across Agnus, Sanctus and Kyrie XVI; full pitch/neume certificates remain 0");
+
 console.log("PASS M21 exact 10 primary 1961 printed-page images across seven scores; source GABC motif anchors and full score continuations pinned; zero false note certifications/public notation");

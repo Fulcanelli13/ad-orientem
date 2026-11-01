@@ -158,6 +158,51 @@
         "fullSyllableUnderlayParity": "NOT_CERTIFIED",
         "userEditorialApproval": false,
         "publicScore": false
+      },
+      "noteSpotChecks": {
+        "auditId": "M27_NOTE_GROUP_VISUAL_SPOT_CHECK_545",
+        "sourceScope": "ORIGINAL_SOLESMES_1961_PRINT_VS_GREGOBASE_GABC_RENDERED_PDF",
+        "sourceOriginalPages": [
+          "54*"
+        ],
+        "sourceOriginalScan": "https://gregobase.selapa.net/sources/2/931.png",
+        "sourceGabcRenderedPdf": "https://gregobase.selapa.net/download.php?format=pdf&id=545",
+        "observedAt": "2026-11-01",
+        "comparisonType": "VISUAL_RELATIVE_NEUME_CONTOUR_AND_GROUPING_ONLY",
+        "comparisonStatus": "SELECTED_PASSAGES_VISUALLY_AGREE_NOT_FULL_SCORE_PARITY",
+        "checks": [
+          {
+            "id": "KYRIE_XVI_FIRST",
+            "gabcVerbatimFragment": "KY(g)ri(hi)e(ii)",
+            "printVisualObservation": "Opening Kyrie shows the short rising and stationary note groups printed on p.54*",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "KYRIE_XVI_LAST_CADENCE",
+            "gabcVerbatimFragment": "son.(ighvGFE.)",
+            "printVisualObservation": "Final unrepeated Kyrie contains a noticeably longer, descending cadential figure in original print and rendered source, distinct from repeated Kyrie endings",
+            "musicalScope": "CADENTIAL_RELATIVE_CONTOUR",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          }
+        ],
+        "limits": [
+          "The comparison uses original 1961 page images and the generated GregoBase PDF at different page widths; staff and syllable coordinates have not been registered for automated equivalence.",
+          "Selected incipits and motifs were compared visually; do not infer that every note in each score was checked.",
+          "A match of relative contour does not establish absolute pitch, precise neume joining, horizontal episema or punctum-mora parity.",
+          "Current GregoBase history includes spacing and sign corrections. Compare fine horizontal and rhythmic marks with a higher-resolution print before approval."
+        ],
+        "remainingToCheck": "ALL_REMAINING_NOTES_AND_RHYTHMIC_SIGNS",
+        "completeNoteByNoteReview": false,
+        "completeNeumeByNeumeReview": false,
+        "editorialApproved": false,
+        "publicScore": false
       }
     },
     {
@@ -1137,6 +1182,82 @@
           "Check all rhythmic/episema/ictus details against 1961 print before enabling any public score.",
           "Confirm permitted 1962 selection/use and the community Schola's actual setting independently."
         ]
+      },
+      "noteSpotChecks": {
+        "auditId": "M27_NOTE_GROUP_VISUAL_SPOT_CHECK_1384",
+        "sourceScope": "ORIGINAL_SOLESMES_1961_PRINT_VS_GREGOBASE_GABC_RENDERED_PDF",
+        "sourceOriginalPages": [
+          "30*",
+          "31*"
+        ],
+        "sourceOriginalScan": "https://gregobase.selapa.net/sources/2/907.png;https://gregobase.selapa.net/sources/2/908.png",
+        "sourceGabcRenderedPdf": "https://gregobase.selapa.net/download.php?format=pdf&id=1384",
+        "observedAt": "2026-11-01",
+        "comparisonType": "VISUAL_RELATIVE_NEUME_CONTOUR_AND_GROUPING_ONLY",
+        "comparisonStatus": "SELECTED_PASSAGES_VISUALLY_AGREE_NOT_FULL_SCORE_PARITY",
+        "checks": [
+          {
+            "id": "SANCTUS_I_OPEN",
+            "gabcVerbatimFragment": "SAn(fg/hf/ggf~)ctus,(f.)",
+            "printVisualObservation": "First Sanctus begins with a multi-neume grouped ornament, followed by short closing note",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "SANCTUS_II_OPEN",
+            "gabcVerbatimFragment": "San(fe~)ctus,(dc..)",
+            "printVisualObservation": "Second Sanctus has a much shorter, distinct melodic descent; not the first Sanctus reused",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "SANCTUS_III_OPEN",
+            "gabcVerbatimFragment": "San(fghjhhvG~F~)ctus(gf..)",
+            "printVisualObservation": "Third Sanctus uses an extended rising/falling complex neume; source history contains earlier note-join alteration",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "HOSANNA_FIRST",
+            "gabcVerbatimFragment": "Ho(f)sán(fe~)na(dc)",
+            "printVisualObservation": "First Hosanna starts with the simple lower-note incipit printed on p.30*",
+            "musicalScope": "REFRAIN_DIFFERENCE",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "HOSANNA_SECOND",
+            "gabcVerbatimFragment": "Ho(j)sán(ixjkkvJH'i)na(gf)",
+            "printVisualObservation": "Second Hosanna opens in a higher, elaborate ornamental formula; printed on p.31*, not a verbatim repeat of the first",
+            "musicalScope": "REFRAIN_DIFFERENCE",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          }
+        ],
+        "limits": [
+          "The comparison uses original 1961 page images and the generated GregoBase PDF at different page widths; staff and syllable coordinates have not been registered for automated equivalence.",
+          "Selected incipits and motifs were compared visually; do not infer that every note in each score was checked.",
+          "A match of relative contour does not establish absolute pitch, precise neume joining, horizontal episema or punctum-mora parity.",
+          "Current GregoBase history includes spacing and sign corrections. Compare fine horizontal and rhythmic marks with a higher-resolution print before approval."
+        ],
+        "remainingToCheck": "ALL_REMAINING_NOTES_AND_RHYTHMIC_SIGNS",
+        "completeNoteByNoteReview": false,
+        "completeNeumeByNeumeReview": false,
+        "editorialApproved": false,
+        "publicScore": false
       }
     },
     {
@@ -1245,6 +1366,81 @@
           "Check all rhythmic/episema/ictus details against 1961 print before enabling any public score.",
           "Confirm permitted 1962 selection/use and the community Schola's actual setting independently."
         ]
+      },
+      "noteSpotChecks": {
+        "auditId": "M27_NOTE_GROUP_VISUAL_SPOT_CHECK_2760",
+        "sourceScope": "ORIGINAL_SOLESMES_1961_PRINT_VS_GREGOBASE_GABC_RENDERED_PDF",
+        "sourceOriginalPages": [
+          "31*"
+        ],
+        "sourceOriginalScan": "https://gregobase.selapa.net/sources/2/908.png",
+        "sourceGabcRenderedPdf": "https://gregobase.selapa.net/download.php?format=pdf&id=2760",
+        "observedAt": "2026-11-01",
+        "comparisonType": "VISUAL_RELATIVE_NEUME_CONTOUR_AND_GROUPING_ONLY",
+        "comparisonStatus": "SELECTED_PASSAGES_VISUALLY_AGREE_NOT_FULL_SCORE_PARITY",
+        "checks": [
+          {
+            "id": "AGNUS_I_OPEN",
+            "gabcVerbatimFragment": "A(fggf)gnus(gh)",
+            "printVisualObservation": "First invocation: four-note opening group followed by the two-note -gnus group; visibly repeats in the third invocation",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "AGNUS_II_OPEN",
+            "gabcVerbatimFragment": "A(f)gnus(hj)",
+            "printVisualObservation": "Second invocation: single opening note and raised -gnus two-note figure distinct from first and third",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "AGNUS_III_OPEN",
+            "gabcVerbatimFragment": "A(fggf)gnus(gh)",
+            "printVisualObservation": "Third invocation restores the first opening formula; printed on last system of p.31*",
+            "musicalScope": "RELATIVE_OPENING_AND_GROUPING",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "AGNUS_COMMON_MISERERE",
+            "gabcVerbatimFragment": "mi(f)se(gh)ré(h)re(ixgiH'Gh)",
+            "printVisualObservation": "Both first and second invocations visibly use the same response motif ending miserere nobis",
+            "musicalScope": "REPEATED_RESPONSE_CONTOUR",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          },
+          {
+            "id": "AGNUS_LAST_DONA",
+            "gabcVerbatimFragment": "do(f)na(gh) no(h)bis(ixgiH'Gh) pa(f_[oh:h]g_[oh:h]f_[oh:h])cem.(f.)",
+            "printVisualObservation": "Third response uses dona nobis pacem; the decorated nobis figure returns, with a descending final three-tone cadence and horizontal-sign motif",
+            "musicalScope": "RESPONSE_AND_CADENCE_CONTOUR",
+            "observation": "VISUAL_RELATIVE_CONTOUR_AGREEMENT",
+            "staffPitchMappedAbsolute": false,
+            "fullRhythmicSignsCertified": false,
+            "sourceGabcAdjusted": false
+          }
+        ],
+        "limits": [
+          "The comparison uses original 1961 page images and the generated GregoBase PDF at different page widths; staff and syllable coordinates have not been registered for automated equivalence.",
+          "Selected incipits and motifs were compared visually; do not infer that every note in each score was checked.",
+          "A match of relative contour does not establish absolute pitch, precise neume joining, horizontal episema or punctum-mora parity.",
+          "Current GregoBase history includes spacing and sign corrections. Compare fine horizontal and rhythmic marks with a higher-resolution print before approval."
+        ],
+        "remainingToCheck": "ALL_REMAINING_NOTES_AND_RHYTHMIC_SIGNS",
+        "completeNoteByNoteReview": false,
+        "completeNeumeByNeumeReview": false,
+        "editorialApproved": false,
+        "publicScore": false
       }
     }
   ],
