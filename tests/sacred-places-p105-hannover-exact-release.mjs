@@ -17,11 +17,12 @@ const proposed={places:530,sources:846,crosswalk:530,unlinked:257,geo_areas:146,
 assert.equal(p105.schema,"AO_SACRED_PLACES_P105_HANNOVER_CLEMENS_EXACT_PLACE_V1");
 assert.deepEqual(p105.baseline,baseline);
 assert.deepEqual(p105.proposed,proposed);
-assert.equal(RELEASES.at(-1).id,"P105");
-assert.equal(LEDGER.releases.at(-1).id,"P105");
+assert.ok(RELEASES.some(r=>r.id==="P105"),"Immutable P105 Hannover release must remain in the ledger");
+assert.equal(RELEASES.at(-1).id,"P108","P108 is a subsequent existing-Place link-only release");
+assert.equal(LEDGER.releases.at(-1).id,"P108");
 assert.equal(RELEASES.find(r=>r.id==="P104").data.proposed.places,529);
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links,LIVE.unlinked],[530,846,23,257]);
-assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,geo.directoryPlaceLinks.length],[530,846,530,23]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links,LIVE.unlinked],[530,846,24,257]);
+assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,geo.directoryPlaceLinks.length],[530,846,530,24]);
 assert.deepEqual([cross.counts.places_with_linked_records,cross.counts.places_without_direct_claim],[273,257]);
 assert.equal(cross.distinct_place_links.directory_links,23);
 assert.equal(p105.published_new.length,1);
