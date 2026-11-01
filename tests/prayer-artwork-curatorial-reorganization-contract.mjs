@@ -135,7 +135,12 @@ test('rejected exact-original candidates are excluded from active research witho
     const shard = read('data/prayer/artwork-editorial-20261031/collection-family-' + family + '.v1.json');
     const record = shard.slots.find(x => x.slot === slot);
     assert.ok(record, slot);
-    assert.ok(!(record.reviewCollection || []).some(x => x.sourceIDs?.includes(id)), 'active rejected ' + slot);
+    const historical = (record.reviewCollection || []).filter(x => x.sourceIDs?.includes(id));
+    assert.equal(historical.length, 1, 'historical source must not disappear: ' + slot);
+    assert.equal(historical[0].eligibleForReview, false, 'historical source must not be selectable: ' + slot);
+    assert.equal(historical[0].notForReview, true, slot);
+    assert.equal(historical[0].retainedAsSourceEvidenceOnly, true, slot);
+    assert.equal(historical[0].productionEnabled, false, slot);
     assert.ok((record.excludedFromSuggestions || []).some(x => x.id === id && x.notForReview === true), slot);
   }
   assert.equal(master.count.activeCandidateRelationshipsAfterConfirmedRejections, 1501);
@@ -146,11 +151,12 @@ test('rejected exact-original candidates are excluded from active research witho
 test('B04 Coronation scope is applied in every original candidate shard', () => {
   const exactIds = new Set(['REVIEW::cma:143761', 'REVIEW::met:435853']);
   let authorised = 0, researchOnly = 0;
-  let candidates = 0, excluded = 0;
+  let candidates = 0, selectable = 0, excluded = 0;
   for (const family of ['home','1','2','3','4','5','6','7','8','9','other']) {
     const shard = read('data/prayer/artwork-editorial-20261031/collection-family-' + family + '.v1.json');
     for (const slot of shard.slots) {
       candidates += (slot.reviewCollection || []).length;
+      selectable += (slot.reviewCollection || []).filter(x => x.eligibleForReview !== false && x.notForReview !== true).length;
       excluded += (slot.excludedFromSuggestions || []).length;
       for (const candidate of slot.reviewCollection || []) {
         if (!candidate.sourceIDs?.some(id => exactIds.has(id))) continue;
@@ -168,6 +174,7 @@ test('B04 Coronation scope is applied in every original candidate shard', () => 
   }
   assert.equal(authorised, 2);
   assert.equal(researchOnly, 27);
-  assert.equal(candidates, 1501);
+  assert.equal(candidates, 1504);
+  assert.equal(selectable, 1501);
   assert.equal(excluded, 105);
 });
