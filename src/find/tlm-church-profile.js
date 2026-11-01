@@ -104,7 +104,8 @@ export function renderTlmChurchProfile(item,language="en"){
    (introEmblem?'<img data-tlm-emblem-image src="'+E(introEmblem.image)+'" alt="" loading="lazy" decoding="async">':'')+
    '<div><small>'+E(v.ministries.length?L(language,"Ministry / community","Ministère / communauté"):L(language,"Affiliation · source-reported","Affiliation · selon la source"))+'</small>'+
    '<strong>'+E(introLabel)+'</strong>'+
-   (introEmblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmProfileOrderSymbolNote">'+E(L(language,"Order-level heraldry; not this house’s crest","Armes générales de l’ordre, non celles de cette maison"))+'</small>':'')+
+   (introEmblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmProfileOrderSymbolNote">'+E(L(language,"Order-level heraldry; not this house’s crest","Armes générales de l’ordre, non celles de cette maison"))+'</small>':
+    introEmblem?.symbolScope==="INDEPENDENT_INSIGNIA_RENDERING"?'<small class="aoTlmProfileOrderSymbolNote">'+E(L(language,"Public-domain geometric illustration of the published insignia; not an official supplied logo","Illustration géométrique du symbole publié, dans le domaine public ; pas un logo officiel fourni"))+'</small>':'')+
    '</div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
   '</header></div>';

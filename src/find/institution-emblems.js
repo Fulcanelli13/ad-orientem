@@ -49,6 +49,18 @@ export const MASS_INSTITUTION_EMBLEMS=Object.freeze({
     licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
     reviewBeforeCommercialRelease:true,
   }),
+  // Independently drawn public-domain geometry matching the organisation's
+  // published red octagonal cross. This is NOT a copied institutional logo.
+  MILITIA_TEMPLI:Object.freeze({
+    label:"Militia Templi",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Maltese_Cross_variant_red.svg",
+    source:"https://commons.wikimedia.org/wiki/File:Maltese_Cross_variant_red.svg",
+    officialIdentitySource:"https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/",
+    rights:"Public-domain geometry by AnonMoos (2010), independently made to replace a Militia Templi cross image. Not an official organisation-supplied logo; separate insignia rights must be reviewed.",
+    licenseUrl:"https://creativecommons.org/publicdomain/mark/1.0/",
+    symbolScope:"INDEPENDENT_INSIGNIA_RENDERING",
+    reviewBeforeCommercialRelease:true,
+  }),
   // Order-wide historical heraldry: only for a source record explicitly
   // classified by that ORDER_FAMILY code. It is not a local abbey's arms,
   // a claim of operator ownership, or an invented institute insignia.
