@@ -211,13 +211,37 @@
         "sourceParts": [
           "[Offertorium] @Commune/C3a-1"
         ],
-        "status": "SOURCE_POINTER_UNRESOLVED_AT_PINNED_COMMIT",
+        "status": "RESOLVED_SELECTED_MASS_LATIN_TEXT_PROOF_ONLY",
         "orthographicVariants": [],
         "caution": "Archive GABC includes terminal Alleluia. No date-only assumption that it is sung outside Eastertide",
         "musicalParity": "NOT_CHECKED",
         "scoreNotes": "NOT_CHECKED",
         "sourceRole": "OFFERTORY",
-        "published": false
+        "published": false,
+        "actualRuntimeProof": {
+          "owner": "PRODUCTION_1962_CALENDAR_SELECTED_PROPER",
+          "actualDate": "2026-11-01",
+          "principal": "sancti:11-01:1:w",
+          "sourcePath": "Sancti/11-01",
+          "formScope": [
+            "LOW",
+            "MISSA_CANTATA_SIMPLE",
+            "MISSA_CANTATA_INCENSE",
+            "SOLEMN"
+          ],
+          "languageScope": [
+            "en",
+            "fr"
+          ],
+          "sourceTextExcerpt": "Sap 3:1-3\\nJustórum ánimæ in manu Dei sunt",
+          "printedSourceVariant": "allelúja.\\n(sed post Septuagesimam dicitur)\\npace.",
+          "productionSourceResolution": "READY_WITH_UNSEGMENTED_CONDITIONAL_RUBRIC",
+          "bodyTextMatchTo1961ArchivedGabc": "PREFIX_AND_SUBSTANTIAL_WORDS_ONLY",
+          "scoreToneVerified": false,
+          "selected1962ChantApproved": false,
+          "proofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41273981099",
+          "caution": "The raw pinned DivinumOfficium source file delegates to @Commune/C3a-1 and that file was absent at inspected pinned location; production assembly nevertheless supplies text. The conditional after-Septuagesima phrase is a rubric, not extra sung text for 1 Nov."
+        }
       }
     },
     {
@@ -327,6 +351,17 @@
     ],
     "sourceSelectionApproved": false,
     "scoreNotesVerified": 0,
-    "newPublicScores": 0
+    "newPublicScores": 0,
+    "productionOffertoryResult": {
+      "sourcePath": "Sancti/11-01",
+      "date": "2026-11-01",
+      "printedTextStarts": "Justórum ánimæ in manu Dei sunt",
+      "productionTextSourceStatus": "RESOLVED_IN_ACTUAL_SELECTED_1962_PROPER",
+      "raw1970StyleText": false,
+      "explanatorySeasonalBranchInLatin": "(sed post Septuagesimam dicitur) pace.",
+      "separateReaderRubricSegmentation": "NOT_YET_SHIPPED",
+      "editorialScoreApproval": false,
+      "evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41273981099"
+    }
   }
 }
