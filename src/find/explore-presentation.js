@@ -573,6 +573,14 @@ function tlmInstituteButton(id,aff,lang){
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
+    const available=availableTlmCommunityIds(vm,aff);
+    const primary=new Set(["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV"]);
+    const first=available.filter(id=>primary.has(id)||(vm.view!=="map"&&aff.includes(id)));
+    const other=available.filter(id=>!first.includes(id));
+    const otherMarkup=other.length?'<details class="aoTlmMoreInstitutes"><summary>'+
+      esc(L(vm.language,"Other communities","Autres communautés"))+' ('+other.length+')</summary>'+
+      '<div class="aoFindAffiliations">'+
+      other.map(id=>tlmInstituteButton(id,aff,vm.language)).join("")+'</div></details>':"";
     let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
     if(vm.view==="map")html+='<details class="aoAtlasTlmExtra"><summary>'+esc(L(vm.language,"Filters","Filtres"))+'</summary>';
     html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
@@ -581,22 +589,12 @@ function tlmFilters(vm){
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
     html+='</div>';
-    if(vm.view==="map")html+='</details>';
+    if(vm.view==="map")html+=otherMarkup+'</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
-    const available=availableTlmCommunityIds(vm,aff);
-    const primary=new Set(["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV"]);
-    const first=available.filter(id=>primary.has(id)||aff.includes(id));
-    const other=available.filter(id=>!first.includes(id));
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
     html+='</div>';
-    if(other.length){
-      html+='<details class="aoTlmMoreInstitutes"><summary>'+
-        esc(L(vm.language,"Other communities","Autres communautés"))+' ('+other.length+')</summary>'+
-        '<div class="aoFindAffiliations">';
-      for(const id of other)html+=tlmInstituteButton(id,aff,vm.language);
-      html+='</div></details>';
-    }
+    if(vm.view!=="map")html+=otherMarkup;
     html+='</div>';
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",

@@ -629,6 +629,42 @@ try{
      "Mass search and logos must float OVER the map, not in stacked bars "+JSON.stringify(massLayout));
    assert.ok(massLayout.hasSourceFilterDrawer,
      "Existing source-affiliation/grouping filters must be accessible");
+   const filterGeometry=await page.evaluate(()=>{
+     const root=document.querySelector(".aoExploreSurface:has(.aoExploreTlmFilters)");
+     const strip=root?.querySelector(".aoTlmProviderStrip .aoFindAffiliations")?.getBoundingClientRect();
+     const drawer=root?.querySelector(".aoAtlasTlmExtra")?.getBoundingClientRect();
+     return {stripRight:strip?.right,drawerLeft:drawer?.left,
+       secondaryInStrip:root?.querySelectorAll(".aoTlmProviderStrip .aoTlmMoreInstitutes").length??-1};
+   });
+   assert.ok(filterGeometry.stripRight<=filterGeometry.drawerLeft+1,
+     "Source Filters must not cover the institute emblem scroller at "+width+": "+JSON.stringify(filterGeometry));
+   assert.equal(filterGeometry.secondaryInStrip,0,
+     "Other communities must remain accessible in the Filters disclosure, not clipped in the map strip");
+   const sourceFilters=page.locator("#ao-find-modular-root .aoAtlasTlmExtra");
+   await sourceFilters.locator(":scope > summary").click();
+   const otherCommunities=sourceFilters.locator(".aoTlmMoreInstitutes");
+   await otherCommunities.waitFor({state:"visible"});
+   await otherCommunities.locator(":scope > summary").click();
+   await page.waitForFunction(()=>document.querySelector(
+     "#ao-find-modular-root .aoAtlasTlmExtra .aoTlmMoreInstitutes"
+   )?.open===true,null,{timeout:3000});
+   assert.ok(await otherCommunities.locator("[data-find-affiliation]").count()>0,
+     "Other source-reported institutes must be accessible through the map Filters drawer");
+   const firstSecondary=await otherCommunities.locator("[data-find-affiliation]").first().evaluate(el=>{
+     const button=el.getBoundingClientRect(),drawer=el.closest(".aoAtlasTlmExtra").getBoundingClientRect();
+     return {buttonTop:button.top,buttonBottom:button.bottom,drawerTop:drawer.top,drawerBottom:drawer.bottom};
+   });
+   assert.ok(firstSecondary.buttonTop>=firstSecondary.drawerTop&&firstSecondary.buttonBottom<=firstSecondary.drawerBottom,
+     "Opening Other communities must reveal usable affiliation buttons without a clipped first row: "+JSON.stringify(firstSecondary));
+   const drawerGeometry=await sourceFilters.evaluate(el=>{
+     const r=el.getBoundingClientRect();
+     return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,
+       width:innerWidth,height:innerHeight,scrollable:el.scrollHeight>el.clientHeight};
+   });
+   assert.ok(drawerGeometry.left>=0&&drawerGeometry.right<=width+1&&drawerGeometry.bottom<=drawerGeometry.height+1,
+     "Expanded Mass Filters must remain within the phone viewport: "+JSON.stringify(drawerGeometry));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-mass-extra-filters.png"),fullPage:false});
+   await sourceFilters.locator(":scope > summary").click();
    await page.screenshot({path:resolve(out,"explore-"+width+"-mass-emblems.png"),fullPage:false});
    const closer=await page.evaluate(()=>{
      const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
