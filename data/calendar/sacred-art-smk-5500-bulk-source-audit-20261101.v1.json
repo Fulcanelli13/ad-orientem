@@ -1,0 +1,36 @@
+{
+  "schema": "AO_SMK_BULK_API_RUN_AUDIT_2026_V1",
+  "date": "2026-11-01",
+  "source": "https://api.smk.dk/api/v1/art/search/",
+  "completedRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41349408525",
+  "artifactId": 13101015848,
+  "results": {
+    "metadataRows": 5500,
+    "uniquePhysicalObjectNumbers": 5499,
+    "individualPublicDomainImageURLs": 5499,
+    "typedPaintingsAmongRetrieved": 280,
+    "artistFieldsPresent": 5499,
+    "titleFieldsExtracted": 0,
+    "religiousSubjectsRecognized": 0,
+    "filesDownloaded": 0,
+    "firstMalformedJSONPageAtOffset": 5500
+  },
+  "diagnosis": [
+    "The official art/search filter '[has_image:true],[object_names:maleri],[public_domain:true]' returns 0 records in 2026 despite its published documentation; '[has_image:true],[public_domain:true]' returns records.",
+    "The first retriever mapped 'titles_en'/'titles_da' but current live JSON contains 'titles' as a native property. All 5,499 output title strings were incorrectly blank, so zero art subject matches were artefacts of the parser, not collection scarcity.",
+    "A large result page ended in unterminated JSON at offset 5500; reduce page count to 150 and report incomplete census clearly."
+  ],
+  "corrections": {
+    "commit": "f0a5c57157d017c2e304699193870003df58263d",
+    "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41349662467",
+    "changes": [
+      "Native titles/content_description/labels fallback",
+      "SMK API filter discovery and fallback",
+      "150-record pagination",
+      "Separate user review and final original release gate"
+    ]
+  },
+  "status": "RESEARCH_AUDIT_ONLY_NO_ARTWORK_APPROVAL_NO_RELEASE",
+  "rights": "SMK API is filtered to public_domain=true and has_image=true; physical original object, final file and 856 source archive must still pass independent checks",
+  "message": "The first SMK bulk run verified working API connection to 5,500 public-domain image records, not 5,500 paintings and not artwork acquisition."
+}

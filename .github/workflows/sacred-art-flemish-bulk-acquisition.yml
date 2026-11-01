@@ -1,0 +1,49 @@
+name: Sacred Art — Flemish museum collection-scale acquisition
+# Imagehub 894-manifest pilot produced no eligible images; avoid 12-minute re-harvests on every PR push.
+# Keep a manual diagnostic hook only until paired LIDO metadata classification is implemented.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bulk-source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mount the existing canonical 2026 art evidence without changing it
+        uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-class-i-ii-multiwork-rotation-20261031
+          path: calendar-research
+          persist-credentials: false
+      - name: Mount the earlier physical-art archive for deduplication
+        uses: actions/checkout@v4
+        with:
+          ref: research/w60-sanctoral-art-physical-dedupe-20261015
+          path: art-research
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Test rights and dedup before network acquisition
+        run: python scripts/art/bulk-flemish-museum-harvest.py --self-test
+      - name: Enumerate ALL public Flemish IIIF manifests; acquire eligible painting reproductions in one bounded run
+        run: |
+          python scripts/art/bulk-flemish-museum-harvest.py \
+            --output artifacts/sacred-art-flemish-bulk \
+            --manifest-limit 1100 \
+            --download-limit 250 \
+            --max-output-mb 100 \
+            --existing calendar-research/data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json \
+            --existing art-research/data/research/sacred-art-bulk-source-intake-451-20261020.v1.json \
+            --existing calendar-research/data/calendar/sacred-art-2026-classIII-sanctoral-complete-candidate-research-master.v1.json
+      - name: Save one source and photograph review pack without publishing app assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-flemish-bulk-research-only
+          path: artifacts/sacred-art-flemish-bulk/
+          if-no-files-found: warn
+          retention-days: 1

@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SACRED_ART_BULK_ACQUISITION_423_VERIFIED_RUNS_V1",
+  "asOf": "2026-11-02",
+  "stage": "BULK_SOURCE_ACQUISITION_COMPLETE_REVIEW_AND_RELEASE_HOLDS_OPEN",
+  "status": "RESEARCH_ONLY_NO_APP_MEDIA_PUBLISHED",
+  "sourceProgram": {
+    "flemish": {
+      "catalogueRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41347958909",
+      "acquisitionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41352122521",
+      "artifactId": 13102085640,
+      "recordsHarvested": 32476,
+      "paintingTypeRecords": 4677,
+      "publicDomainOrCC0ReligiousPaintingSourceCandidates": 461,
+      "plannedDownloads": 350,
+      "imageFilesAcquired": 345,
+      "http403Failures": 2,
+      "dimensionFailures": 3,
+      "manifestExplicitOpenRightsFiles": 144,
+      "manifestNoExplicitRightsFiles": 201,
+      "exactPixelDuplicateExcessFiles": 40,
+      "exactPixelDistinctPreviewFiles": 305,
+      "explicitOpenRightsAmongPixelDistinctFiles": 141,
+      "rightsCaveat": "Public Domain/CC0 per artwork metadata does not by itself certify each photograph. 201 photo manifests lack affirmative rights data; all final publication holds remain closed.",
+      "dedupCaveat": "A distinct preview SHA/perceptual fingerprint is not evidence of a separate original painting."
+    },
+    "smk": {
+      "acquisitionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41349662467",
+      "artifactId": 13101517947,
+      "sourceRecordsInspected": 12000,
+      "paintingTypeRecords": 1063,
+      "religiousTextMatches": 658,
+      "provisionalCandidatePaintings": 100,
+      "imageFilesAcquired": 78,
+      "failedDownloads": 22,
+      "exactPixelDuplicateExcessFiles": 0,
+      "losslessOriginalImagesStored": 0,
+      "scope": "Public-domain SMK API source. Downloads were JPEG research derivatives, not verified archive masters."
+    }
+  },
+  "totals": {
+    "imageFilesAcquired": 423,
+    "imagePreviewFilesAfterExactPixelDedup": 383,
+    "productionImageMastersCertified": 0,
+    "userArtworkApprovalsAdded": 0,
+    "dateArtworkAssignmentsChanged": 0,
+    "productionAppImageAssetsAdded": 0
+  },
+  "gatePolicy": [
+    "Preserve all previous user artwork approvals, locks and permanent rejections",
+    "Crossmatch exact original identities against all historical 383, 451 and accepted-856 source registries; existing run did not exhaustively check 856",
+    "Distinguish artist-painted original from copies, historical prints and repeated placeholder imagery",
+    "Inspect image rights per photograph; ambiguous/undocumented image rights are a publication HOLD",
+    "Review genuine subject relevance, focus and high-resolution color/frame-free image QA",
+    "Perform 320px and 390px app visual QA before any production release",
+    "No outreach, no permission purchases or paid services"
+  ],
+  "pipelineFiles": [
+    "scripts/art/acquire-flemish-from-full-catalogue.py",
+    "scripts/art/bulk-smk-public-domain-paintings.py",
+    "scripts/art/bulk-flemish-oai-discovery.py"
+  ],
+  "workflowMode": "Research acquisition workflows switched to manual-only after successful completed runs, preventing repeated GitHub downloads on PR update.",
+  "release": "No approved or licensed original images automatically inserted into Homepage, Calendar, Prayers, Rosary or other app modules."
+}
