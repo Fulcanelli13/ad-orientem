@@ -211,6 +211,13 @@ assert.equal(station("AO.SM.C0250",{station:"PRIEST_TRACK_ASYNC"}).missalLocatio
  "Schola cue cannot force priest book transition");
 assert.equal(station("AO.SM.C0269",gospel).missalLocation,null,
  "Proper Last Gospel must not inherit ordinary book location");
+const homilyStation=projectCurated65PriestStation({
+ enabled:true,form:"MISSA_CANTATA_INCENSE",sermonPause:true,
+});
+assert.equal(homilyStation.priestPosition.station,"UNCONFIRMED");
+assert.equal(homilyStation.priestPosition.label,"—",
+ "The non-liturgical sermon pause must not expose an internal diagnostic or invent location");
+assert.equal(homilyStation.reason,"SERMON_PREACHER_AND_POSITION_REQUIRE_OBSERVATION");
 assert.equal(projectCurated65PriestStation({enabled:false,cueId:"AO.SM.C0144",sourcePosition:center}),null,
  "Do not affect 48-card fallback");
 assert.equal(projectCurated65PriestStation({enabled:true,cueId:"AO.SM.C0144",sourcePosition:center,form:"LOW"}),null,
