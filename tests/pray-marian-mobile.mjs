@@ -199,10 +199,39 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{state:"attached",timeout:12000});
  // Two navigation axes: timeline moves named cards, card-local scroll focuses
  // V/R paragraphs; native Prayer texts and translation controls stay intact.
- await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
+ await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{state:"attached",timeout:12000});
  assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
    "The first card must not show a blank cinematic or a rating-4 painting");
- // The prayer begins directly when no final-approved reproduction exists.
+ // Claude's original hour cover is an explicit, nonautomatic opening,
+ // with no invented painting or observed bell sound. Begin reveals the
+ // source-owned announcement without altering chapter/card position.
+ const opening=page.locator("#aoPray435930 [data-ao-horarium-intro]");
+ assert.equal(await opening.count(),1,"Claude's Horarium opening plate is missing");
+ assert.equal(await page.locator("#aoPray435930 .aoClaudeHorariumPlate").count(),1);
+ const hourMarks=await page.locator("#aoPray435930 .aoClaudeHorariumClock svg text").evaluateAll(nodes=>nodes.map(node=>{
+  const mark=node.getBoundingClientRect(),clock=node.closest(".aoClaudeHorariumClock").getBoundingClientRect();
+  return {text:node.textContent.trim(),within:mark.left>=clock.left-2&&mark.right<=clock.right+2};
+ }));
+ assert.deepEqual(hourMarks.map(x=>x.text),["vi","xii","xviii"],
+  "Claude's VI/XII/XVIII hour labels must exist");
+ assert.ok(hourMarks.every(x=>x.within),
+  "The opening arc must not crop VI or XVIII at 390px: "+JSON.stringify(hourMarks));
+ assert.match(await opening.innerText(),/Angelus|Angélus/i);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1);
+ const ritualGrid=page.locator("#aoPray435930 .aoAngelusRitualGrid");
+ assert.equal(await ritualGrid.evaluate(el=>getComputedStyle(el).display),"none",
+  "The canonical five-stage reader must remain mounted but hidden during Claude's hour-first opening");
+ await page.screenshot({path:resolve(captures,"09-angelus-claude-hour-opening-390.png"),
+  fullPage:false,animations:"disabled"});
+ await page.locator("#aoPray435930 [data-p435930-angelus-begin]").click();
+ assert.notEqual(await ritualGrid.evaluate(el=>getComputedStyle(el).display),"none",
+  "Begin must reveal the original source-owned stage rail without advancing it");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-claude-horarium]").getAttribute("data-ao-horarium-opening"),"false",
+  "Opening state attribute must switch to reading after Begin");
+ assert.equal(await opening.evaluate(el=>el.hidden),true,
+  "Begin must remove only the opening artwork placeholder");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").count(),1,
+  "Begin must not advance or replace the canonical source card");
  // Incarnation still receives its source-owned full posture cinematic.
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),5);
@@ -243,10 +272,18 @@ try{
   .filter(x=>x.getClientRects().length).some(x=>x.dataset.aoDevoActive==="true"),null,{timeout:9000});
  const paragraphEnergy=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>
   nodes.filter(x=>x.getClientRects().length).map(x=>({active:x.dataset.aoDevoActive,opacity:Number(getComputedStyle(x).opacity)})));
- assert.equal(paragraphEnergy.length,2,"Individual Angelus presents one V/R unit and one continuous Hail Mary");
- assert.ok(paragraphEnergy[0].opacity>paragraphEnergy[1].opacity,
-  "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
- assert.ok(paragraphEnergy[1].opacity<1,"Upcoming Hail Mary must be muted: "+JSON.stringify(paragraphEnergy));
+ // Approved Hours rule: every paragraph (including a collective response)
+ // owns an independent illumination stop. In the Announcement, two V/R
+ // halves and the two Hail Mary halves yield four source-owned stops.
+ assert.equal(paragraphEnergy.length,4,"Angelus Announcement must expose the V/R and Hail Mary halves independently");
+ assert.equal(paragraphEnergy.filter(x=>x.active==="true").length,1,
+  "Exactly one current Angelus paragraph must be fully illuminated");
+ assert.equal(paragraphEnergy[0].opacity,1,"The current source versicle must be fully lit");
+ assert.ok(paragraphEnergy.slice(1).every(x=>x.opacity<1&&x.opacity>=.5),
+  "Upcoming response and Hail Mary text must mute legibly: "+JSON.stringify(paragraphEnergy));
+ // Latin and vernacular faces both retain source ℣/℟ markup; only one face is visible.
+ const authenticMarkers=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .ao-liturgical-speaker").evaluateAll(nodes=>nodes.filter(n=>n.getClientRects().length>0).length);
+ assert.equal(authenticMarkers,2,"Only the source V/R pair may carry liturgical speaker markers");
  // The retired Latin-cross overlay must not obscure or compete with prayer.
  assert.equal(await page.locator("#aoPray435930 .aoCrossPad").count(),0,
   "Angelus must use the shared navigation, not crosses");
@@ -311,7 +348,9 @@ try{
  await page.emulateMedia({reducedMotion:"no-preference"});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),2);
+ // Both source V/R lines and the two Hail Mary halves are independently focusable.
+ // Only the active vernacular or Latin face is counted: four visible beats total.
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length && !x.closest("[hidden]")).length),4);
  const devotionalScroll=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
  assert.equal(await devotionalScroll.evaluate(x=>getComputedStyle(x).overflowY),"auto");
  await devotionalScroll.evaluate(x=>{x.scrollTop=80;x.dispatchEvent(new Event("scroll"))});
