@@ -66,6 +66,17 @@ try{
       svg?.querySelectorAll("*").length>2&&svg.getBoundingClientRect().height>0;
     },sourceId,{timeout:55000});
    }
+   // All seven must have source-only note group controls, with original Agnus staff mapping.
+   for(const [index,expected] of [[0,27],[1,27],[2,28],[3,196],[4,366],[5,55],[6,54]]){
+    await page.locator("#scoreSelect").selectOption(String(index));
+    await page.locator("#agnusNotePanel").waitFor({state:"visible"});
+    assert.equal(await page.locator("#agnusGroupSelect option").count(),expected);
+    assert.equal(await page.locator("#agnusPitch").inputValue(),"UNREVIEWED");
+   }
+   // Kyrie VIII has one source-bearing melismatic continuation, not an extra syllable.
+   await page.locator("#scoreSelect").selectOption("2");
+   await page.locator("#agnusGroupSelect").selectOption("3");
+   assert.match(await page.locator("#agnusGroupDescription").innerText(),/melisma without new syllable/);
    // 54 individual sung source-note groups, across four original printed systems.
    // Synthetic reviews in this E2E are tests ONLY, not real editorial decisions.
    await page.locator("#scoreSelect").selectOption("6");
@@ -113,7 +124,8 @@ try{
     await page.locator("#"+key).selectOption("MATCH");
    await page.locator("#reviewNotes").fill("Reviewed original printed folio 54*; independent reviewer must still approve.");
    await page.locator("#save").click();
-   assert.match(await page.locator("#progress").innerText(),/1 of 7/);
+   assert.match(await page.locator("#progress").innerText(),/0 of 7/,
+    "Page review alone never completes a score without every source note group");
    const local=await page.evaluate(()=>JSON.parse(
     localStorage.getItem("ao-m22-kyriale-print-collation-local-v1")||"{}"));
    assert.equal(local["545:54*"]?.pitch,"MATCH");
@@ -156,6 +168,11 @@ try{
    assert.equal(exported.allowAutomaticPublication,false);
    assert.equal(exported.publicScoreCount,0);
    assert.equal(exported.scores[0].allPageCategoriesMarkedMatching,true);
+   assert.equal(exported.scores[0].allSourceGroupsMarkedMatching,false);
+   assert.equal(exported.scores[0].sourceNoteGroupCount,27);
+   assert.equal(exported.scores[0].fullyMarkedMatching,false);
+   assert.deepEqual(exported.scores.map(x=>x.sourceNoteGroupCount),[27,27,28,196,366,55,54]);
+   assert.equal(exported.scores.reduce((n,s)=>n+s.sourceNoteGroupCount,0),753);
    assert.equal(exported.scores[0].publicScore,false);
    assert.equal(exported.scores[4].allPageCategoriesMarkedMatching,false);
    assert.equal(exported.scores[4].pages[1].neume,"DIFFERENCE");
