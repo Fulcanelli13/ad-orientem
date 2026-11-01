@@ -19,7 +19,28 @@ assert.equal(sourceById.size,src.sources.length);
 assert.deepEqual(new Set(geo.places.map(p=>p.place_id)),new Set(cross.place_crosswalk.map(x=>x.place_id)),"Canonical and heritage Place owners must contain same physical IDs");
 assert.equal(new Set(CURRENT_RELEASE_PLACE_IDS).size,CURRENT_RELEASE_PLACE_IDS.length,"Duplicate Place ID across release manifests");
 for(const release of RELEASES){
- assert.ok(release.data.published_new?.length>0,release.id+" must contain place-specific release records");
+ // Identity-only releases may add an exact link to an existing Place without
+ // inventing a newly published Place. Require explicit unchanged Place/source
+ // counts and one source-proven venue relation in that exceptional case.
+ const newPlaces=release.data.published_new??[];
+ if(!newPlaces.length){
+  assert.equal(release.id,"P108","Only explicit P108 identity-only link release is admitted");
+  assert.equal(release.data.new_places,0);
+  assert.equal(release.data.confirmed_directory_links_added,1);
+  for(const field of ["places","sources","crosswalk","unlinked","geo_areas"])
+   assert.equal(release.data.baseline[field],release.data.proposed[field],
+    "Identity-only P108 cannot change canonical Place/source counts");
+  assert.equal(release.data.proposed.directory_links,release.data.baseline.directory_links+1);
+  const p=release.data.confirmed_existing_place_link;
+  assert.ok(placeById.has(p.place_id),"P108 must reference an already-published Place");
+  const matches=geo.directoryPlaceLinks.filter(l=>l.link_id===p.link_id&&l.venue_id===p.venue_id&&l.place_id===p.place_id);
+  assert.equal(matches.length,1,"P108 must contribute exactly one confirmed original venue→Place link");
+  assert.equal(matches[0].relationship,"LOCATED_AT");
+  assert.equal(matches[0].confidence,"CONFIRMED");
+  assert.deepEqual(matches[0].source_ids,p.source_ids);
+  continue;
+ }
+ assert.ok(newPlaces.length>0,release.id+" must contain place-specific release records");
  for(const item of release.data.published_new){
   const p=placeById.get(item.place_id);
   assert.ok(p,"Release "+release.id+" Place missing: "+item.place_id);
