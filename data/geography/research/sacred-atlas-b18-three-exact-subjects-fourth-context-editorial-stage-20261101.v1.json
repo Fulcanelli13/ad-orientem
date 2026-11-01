@@ -1,0 +1,164 @@
+{
+  "schema": "AO_SACRED_ATLAS_B18_PRIORITY_EDITORIAL_STAGING_20261101_V1",
+  "as_of": "2026-11-01",
+  "disposition": "UNAPPROVED_RESEARCH_ONLY_NO_AUTO_PUBLICATION",
+  "baseline": {
+    "precise_targets": 247,
+    "prior_exact_or_site_matches": 44,
+    "b18_new_plausible_subjects": 28,
+    "distinct_B17_safe_provisional_reuses": 2,
+    "total_preliminary_matches_including_B17": 74,
+    "distinct_targets_with_downloaded_bytes": 136,
+    "targets_with_some_image_association_including_B17": 138,
+    "targets_without_any_image_association": 109
+  },
+  "all_B18_visual": {
+    "exact_match_images": 50,
+    "site_context_images": 28,
+    "wrong_subject_images": 26,
+    "identity_holds": 7,
+    "missing_zip_batches": [
+      4,
+      5
+    ],
+    "new_B18_photo_approvals": 0
+  },
+  "images": [
+    {
+      "subject_id": "subject:focus:nevers-massabielle-replica",
+      "status": "EXACT_REPLICA_AND_SCENE_RESEARCH_HOLD",
+      "photographs": [
+        {
+          "title": "File:Grotto at Nevers.jpg",
+          "sha256": "1735d398266cb73725077ea2cc9312b2e765a16ed323b053fc918cccaa04a5fd",
+          "saved_pixels": [
+            1920,
+            2560
+          ],
+          "photo_license": "CC BY-SA 4.0",
+          "credit": "Jabonsbachek",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Grotto_at_Nevers.jpg"
+        }
+      ],
+      "caption_en": "Replica of the Lourdes grotto in Nevers, showing a statue of Saint Bernadette. Not the original grotto at Lourdes.",
+      "caption_fr": "Reproduction de la grotte de Lourdes à Nevers, avec une statue de sainte Bernadette. Ce n’est pas la grotte originale de Lourdes.",
+      "pending": [
+        "underlying sculpture/artwork rights",
+        "user consolidated editorial approval"
+      ]
+    },
+    {
+      "subject_id": "subject:relic:FR:curé-ars",
+      "status": "EXACT_ARS_RELIQUARY_RESEARCH_HOLD",
+      "photographs": [
+        {
+          "title": "File:Châsse du saint Curé d'Ars - mars 2022.JPG",
+          "sha256": "7088e2dfe79ce0dcef6df8b7a65382024b2d0f86a867ce30b315689e7e64d840",
+          "saved_pixels": [
+            1920,
+            3079
+          ],
+          "photo_license": "CC0 1.0",
+          "credit": "Benoît Prieur",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2sse_du_saint_Cur%C3%A9_d%27Ars_-_mars_2022.JPG"
+        },
+        {
+          "title": "File:Châsse du saint Curé d'Ars - mars 2022 (2).JPG",
+          "sha256": "4b5420cebac62aa13bdad8f6c6c9db62b4405a6be5cccac9c33f3d32f36034c0",
+          "saved_pixels": [
+            1920,
+            2829
+          ],
+          "photo_license": "CC0 1.0",
+          "credit": "Benoît Prieur",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2sse_du_saint_Cur%C3%A9_d%27Ars_-_mars_2022_(2).JPG"
+        }
+      ],
+      "caption_en": "Shrine of Saint John Mary Vianney at Ars, photographed March 2022. Photo does not certify relic identity or present-day access.",
+      "caption_fr": "Châsse de saint Jean-Marie Vianney à Ars, photographiée en mars 2022. L’image n’atteste ni l’authenticité de la relique ni son accessibilité actuelle.",
+      "pending": [
+        "depicted shrine/effigy and 3D artwork rights",
+        "source native-resolution original vs saved preview",
+        "user consolidated editorial approval"
+      ]
+    },
+    {
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:passion",
+      "status": "EXACT_CALVARY_CHAPEL_CANDIDATE_SUBJECT_SCOPE_HOLD",
+      "photographs": [
+        {
+          "title": "File:Kalwaria-P chapels fc05.jpg",
+          "sha256": "59b1b9ad206153b803c7f9e790698c2f4db775a173ccc9cd1b9fab5b2d083805",
+          "saved_pixels": [
+            1920,
+            1280
+          ],
+          "photo_license": "CC BY-SA 4.0",
+          "credit": "Fczarnowski",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kalwaria-P_chapels_fc05.jpg"
+        },
+        {
+          "title": "File:Kalwaria-P chapels fc04.jpg",
+          "sha256": "ff2357d5800e0d96220c32a7a9da307194d1185317de48eee53893b5db414239",
+          "saved_pixels": [
+            1920,
+            1280
+          ],
+          "photo_license": "CC BY-SA 4.0",
+          "credit": "Fczarnowski",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kalwaria-P_chapels_fc04.jpg"
+        },
+        {
+          "title": "File:Kalwaria-P chapels fc07.jpg",
+          "sha256": "0d78d635ebce68f231a5a6ae53af4d747b229718044d3215350fafabf257dc7e",
+          "saved_pixels": [
+            1920,
+            1280
+          ],
+          "photo_license": "CC BY-SA 4.0",
+          "credit": "Fczarnowski",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kalwaria-P_chapels_fc07.jpg"
+        }
+      ],
+      "caption_en": "Historic chapel on the Passion pilgrimage route at Kalwaria Zebrzydowska. Three views apparently show the same chapel; the dedication is not yet verified.",
+      "caption_fr": "Chapelle historique du chemin de la Passion à Kalwaria Zebrzydowska. Les trois vues semblent représenter la même chapelle ; son vocable exact reste à vérifier.",
+      "pending": [
+        "verify exact chapel dedication",
+        "confirm Commons photo rights live",
+        "user consolidated editorial approval"
+      ]
+    },
+    {
+      "subject_id": "subject:relic:CA:brother-andre-tomb-montreal",
+      "status": "DOWNGRADED_TO_SITE_CONTEXT_NOT_TOMB",
+      "photographs": [
+        {
+          "title": "File:Beside the Tombeau du frere Andree.jpg",
+          "sha256": "7cac0507171eb8c678d156116fc42d5b9dffb76e85c1fbbf1206f6edeaf3547f",
+          "saved_pixels": [
+            1920,
+            3116
+          ],
+          "photo_license": "CC BY 3.0",
+          "credit": "Acarpentier",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Beside_the_Tombeau_du_frere_Andree.jpg"
+        }
+      ],
+      "caption_en": "Devotional area with a Saint Joseph statue and votive candles beside Brother André's tomb. The black granite tomb is not visible.",
+      "caption_fr": "Espace de dévotion avec statue de saint Joseph et cierges votifs près du tombeau du frère André. Le tombeau de granit noir n’est pas visible.",
+      "pending": [
+        "obtain exact tomb photo",
+        "rights in sculptural devotional statue"
+      ],
+      "custodian_url": "https://saint-joseph.org/en/the-staples/"
+    }
+  ],
+  "protected_existing_KEEP_decisions": 20,
+  "publication_flags": {
+    "approved": false,
+    "published": false,
+    "modify_original_approval": false
+  },
+  "source_audit": "data/geography/research/sacred-atlas-b18-111-actual-images-visual-decisions-20261101.csv",
+  "scope_warning": "B18 file paths beginning NAMED_COMMONS_ORIGINALS include 1920px preview bytes, not necessarily full original Commons pixels."
+}
