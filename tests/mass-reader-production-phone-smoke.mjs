@@ -66,7 +66,12 @@ try{
       assert.equal(response?.status(),200,"Public Vercel entry must return HTTP 200");
       await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
         null,{timeout:60000});
-      const massNav=page.locator('[data-ao-app-surface="mass"]');
+      // The current H7 home owns the Mass door. The obsolete app-surface
+      // selector was retired; exercise the same public entry as the
+      // independently maintained Mass preflight phone acceptance test.
+      await page.waitForFunction(()=>Boolean(globalThis.AO_CELEBRATION_API?.openPreflight),
+        null,{timeout:35000});
+      const massNav=page.locator(".homeScreen [data-home-mass-entry]");
       await massNav.waitFor({state:"visible",timeout:35000});
       await massNav.click();
       await page.waitForSelector("[data-ao-start-live]",{state:"visible",timeout:45000});
