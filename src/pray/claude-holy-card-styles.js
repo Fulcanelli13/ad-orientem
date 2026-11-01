@@ -191,6 +191,15 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
 #aoPray435930 .aoP435930LibraryReader:has(.aoClaudeHolyCard) .aoP435930GuideInfo{
  display:none!important;
 }
+/* Claude's height formula assumes one 168px chassis. Ad Orientem keeps a
+   persistent bottom nav and a canonical library-return row. On short phones,
+   fit the original lace/card within the actual available reading viewport. */
+@media(max-height:640px){
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+  height:min(520px,calc(100dvh - 335px));
+  min-height:min(210px,calc(100dvh - 335px));
+ }
+}
 @media(max-width:359px){
  #aoPray435930 .aoClaudeHolyCaseHead h2{font-size:24px}
  #aoPray435930 .aoClaudeHolyCasePlate{height:60px}
