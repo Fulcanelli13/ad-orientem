@@ -19,7 +19,7 @@ export function sourceNoteGroupInventory(gabc){
   // after the previous neume. This is NOT an additional sung syllable.
   const punctuationAttached=text===":"||text===";";
   const pending=punctuationAttached?
-   (between+match[1]).replace(/<[^>]*>/g,"").match(/([A-Za-zÀ-ž]+)\\s*[:;]\\s*$/)?.[1]:null;
+   (between+match[1]).replace(/<[^>]*>/g,"").match(/([A-Za-zÀ-ž]+)\s*[:;]\s*$/)?.[1]:null;
   if(punctuationAttached&&!pending)
    throw new Error("Printed syllable cannot be resolved before GABC punctuation token");
   const continuation=!punctuationAttached&&!/[A-Za-zÀ-ž]/.test(text);
