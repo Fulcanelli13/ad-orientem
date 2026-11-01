@@ -104,6 +104,21 @@ const SOURCE_NAMED_MONOGRAMS=Object.freeze({
   SJM:"SJM",
   CMRI:"CMRI",
   FSVF:"FSVF",
+  // Exact source group identities. These are editorial plain-text marks,
+  // not claims that an institution owns or endorses a given church or Mass.
+  SSPX_SISTERS:"SFSPX",
+  TRANSFIGURATION:"FT",
+  DOMINICAINES_FANJEAUX:"DEF",
+  DOMINICANS_AVRILLE:"DAV",
+  BENEDICTINES_BELLAIGUE:"BELL",
+  INSTITUTE_ST_PHILIP_NERI:"ISPN",
+  IMBC:"IMBC",
+  SMMD:"SMMD",
+  SSPV:"SSPV",
+  CSPV:"CSPV",
+  RCI:"RCI",
+  SOCIEDAD_TRENTO:"SST",
+  MOSTEIRO_SANTA_CRUZ:"MSC",
 });
 const namedSourceMark=(value)=>{
  const tokens=String(value??"").replace(/[^A-Za-zÀ-ÿ0-9 ]+/g," ").split(/\s+/).filter(Boolean);
@@ -210,13 +225,15 @@ img[data-tlm-emblem-image][hidden]{display:none!important}
 .aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:59px;height:59px;font-size:22px}
 .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:21px;letter-spacing:.015em}
 .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:17px;letter-spacing:0}
+.aoTlmVenueNamedMark[data-mark-length="5"]{font-size:14px;letter-spacing:0}
 .aoTlmVenueIdentity--preview .aoTlmVenueNamedMark[data-mark-length="3"],.aoTlmVenueIdentity--detail .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:26px}
 .aoTlmVenueIdentity--preview .aoTlmVenueNamedMark[data-mark-length="4"],.aoTlmVenueIdentity--detail .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:22px}
 .aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:18px}
 .aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:14px}
+.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="5"]{font-size:12px}
 .aoTlmVenueIdentity--detail .aoTlmVenueNamedMark,.aoTlmVenueIdentity--preview .aoTlmVenueNamedMark{width:78px;height:78px;font-size:29px}
 .aoTlmVenueIdentity[data-visual-kind="named"] small{text-transform:none;letter-spacing:.01em;font:600 12px/1.38 var(--ao-font-ui,system-ui,sans-serif);color:#dfd0b3}
-@media(max-width:420px){.aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:50px;height:50px;font-size:19px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:16px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:12px}.aoTlmVenueIdentity--card[data-visual-kind="named"] small{font-size:10px}}
+@media(max-width:420px){.aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:50px;height:50px;font-size:19px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:16px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:12px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="5"]{font-size:10px}.aoTlmVenueIdentity--card[data-visual-kind="named"] small{font-size:10px}}
 `;
 const DIRECTORY_VISUAL_FALLBACK_STYLE = "\n.aoTlmVenueIdentity{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;text-align:center;color:#dac39a}\n.aoTlmVenueIdentity img{display:block;width:75%;max-width:92px;height:87px;object-fit:contain}\n.aoTlmVenueIdentity .aoTlmVenueGlyph{width:68px;height:68px}\n.aoTlmVenueIdentity small{max-width:100%;padding:0 8px;font:650 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;text-transform:uppercase;color:#dac39a;overflow-wrap:anywhere}\n.aoTlmVenueIdentity--preview,.aoTlmVenueIdentity--detail{min-height:160px;border:1px solid rgba(217,197,154,.18);border-radius:11px;background:linear-gradient(150deg,#24394a,#0d1924);margin:8px 0 10px}\n.aoTlmVenueIdentity--preview img,.aoTlmVenueIdentity--detail img{max-width:140px;height:110px}\n.aoTlmVenueIdentity--detail{min-height:200px}\n.aoTlmVenueIdentity--detail img{max-width:170px;height:145px}\n@media(max-width:420px){.aoTlmVenueIdentity--card img{max-width:76px;height:70px}.aoTlmVenueIdentity--card small{font-size:9px}}\n";
 
