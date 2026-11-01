@@ -3770,7 +3770,12 @@ function onClick(e){
  if(PRAYER_PILOT_ENABLED&&view==='angelus'&&ANGELUS_PILOT_ENTRY&&b.hasAttribute('data-p435930-pilot-angelus-recitation')){
   const mode=b.dataset.p435930PilotAngelusRecitation;
   if(mode!=='individual'&&mode!=='group')return;
-  setRecitationMode(mode);return render();
+  setRecitationMode(mode);render();
+  // Mode selection is not entry navigation. Keep the full-hour artwork
+  // framed at its beginning even if the browser scrolled to reach the toggle.
+  if(mount())mount().scrollTop=0;
+  queueMicrotask(()=>{if(view==='angelus'&&ANGELUS_PILOT_ENTRY&&mount())mount().scrollTop=0});
+  return;
  }
  if(PRAYER_PILOT_ENABLED&&view==='angelus'&&b.hasAttribute('data-p435930-pilot-angelus-begin')){
   // The hour-first cover starts at its clock, not the previous pilot button's
