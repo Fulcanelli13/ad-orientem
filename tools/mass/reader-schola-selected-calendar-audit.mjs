@@ -111,7 +111,22 @@ try{
  await browser?.close();await new Promise(done=>server.close(done));
 }
 const summary=summarizeSelectedCalendarChants({dates,rows});
-const out={...summary,selectionMethod:
+assert.ok(summary.totalReadyDays>0,"NO_SELECTED_1962_PROPER_MATCHED: review date-source holds");
+const prior=JSON.parse(await readFile(resolve(root,
+ "data/research/mass-music-1962-source-roster-91.v1.json"),"utf8"));
+assert.equal(prior.sourceCount,91);
+const priorPaths=new Set(prior.sourceFiles.map(row=>row.path));
+const selectedPaths=[...new Set(rows.map(row=>row.sourcePath)
+ .filter(path=>/^(Tempora|Sancti|Commune)\/[A-Za-z0-9_-]+$/.test(path)))].sort();
+const outsidePrior=selectedPaths.filter(path=>!priorPaths.has(path));
+const alreadyKnown=selectedPaths.filter(path=>priorPaths.has(path));
+const selectionCrosswalk={priorAuthenticatedSourceFiles:91,
+ actualSelectedSourcePathCount:selectedPaths.length,
+ selectedPathsAmongPrior91:alreadyKnown.length,
+ selectedPathsOutsidePrior91:outsidePrior.length,
+ selectedNewPaths:outsidePrior,selectedExistingPaths:alreadyKnown,
+ sourcePathProofOnlyNotMusicalApproval:true};
+const out={...summary,selectionCrosswalk,selectionMethod:
  "Actual default 1962 DayResolver properToReaderSlots + existing 1195-score source-first role matcher; no feast-title inference, re-scrape, alternate Mass or publication",
  rows};
 const directory=resolve(root,"artifacts/mass");
