@@ -22,6 +22,12 @@ Continue from the original Oct 28 and Oct 30 decisions. Avoid re-asking for alre
 
 The historical report's **23 provisional positions** now comprise 22 explicitly provisional plus one Epiphany approval-scope conflict. This is a change in **triage label**, not an additional rejected painting. The **14 holds** are a separate axis. The older phrase “244 prior-approved links” is not an exact 244-slot editorial signoff.
 
+## Recovery of verbatim historic placement evidence
+
+A follow-up exact-ID join against the original October 30 source records recovered **107 primary positions with original B01–B05 artwork-ID links** and **23 with B06–B11 ID links**. Among the **38 positions initially marked as lacking direct evidence in the current master**, **17 have explicit original written instructions**. These include the user’s positive instructions for *Adoration of the Magi* in the Rosary Nativity and Blessed Sacrament Visit, Caravaggio’s pierced side, Van Dyck’s *Lance Thrust*, the Divine Mercy image, and Lanfranco’s Loaves and Fishes in grace prayers and the Our Father.
+
+These are provenance links, not 17 automatically adjudicated exact-slot approvals. Keep all original natural-language scope restrictions; *recovery of a statement* does not imply that every current destination is authorised. The full 267-row evidence record includes the exact source artwork IDs, batch numbers, historical selected slots and verbatim notes.
+
 ## Targeted collection audit
 
 ### Rosary: fixed Lotto cover, 15 traditional mysteries, no bead rotation
