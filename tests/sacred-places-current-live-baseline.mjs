@@ -28,7 +28,7 @@ for(const release of RELEASES){
   assert.ok(p.source_ids?.length>=1,"Identity source provenance not retained: "+item.place_id);
   for(const sid of p.source_ids)assert.ok(sourceById.has(sid),"Dangling typed site source "+sid);
   const links=geo.directoryPlaceLinks.filter(link=>link.place_id===p.place_id);
-  if(["P92","P99","P104","P105"].includes(release.id)){
+  if(["P92","P99","P104","P105","P106"].includes(release.id)){
     const expected=release.data.published_new.find(x=>x.place_id===p.place_id);
     assert.equal(links.length,1 ,"Exact Directory bridge release requires independently sourced venue relation");
     assert.equal(links[0].venue_id,expected.directory_venue_id??expected.venue_id);
