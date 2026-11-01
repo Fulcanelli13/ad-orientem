@@ -11,8 +11,8 @@ const approvedPhotoTypes=new Set([
   "RELIQUARY_HOUSING_REPUTED_RELIC",
   "GLASS_SHRINE_REPORTED_BODILY_REMAINS"
 ]);
-export function resolveApprovedObjectPhotoReuse(records,covers,placeId,relicId){
-  if(!txt(placeId)||!txt(relicId))return null;
+export function resolveApprovedObjectPhotoReuse(records,covers,placeId,relicId,ownerSourceUrl){
+  if(!txt(placeId)||!txt(relicId)||!https(ownerSourceUrl))return null;
   const matches=rows(records).filter(row=>row?.place_id===placeId&&row?.subject_relic_id===relicId);
   // Duplicate registrations are an editorial conflict: never choose the first.
   if(matches.length!==1)return null;
@@ -21,7 +21,7 @@ export function resolveApprovedObjectPhotoReuse(records,covers,placeId,relicId){
      !approvedPhotoTypes.has(row.depicts_kind)||
      row.photographic_subject_scope!=="SAME_PHYSICAL_SHRINE_HOUSING_RELIC_NOT_HEAD_DETAIL"||
      !/^\d{4}-\d{2}-\d{2}$/.test(txt(row.photographed_at))||
-     !/^https:\/\/[^\s]+$/.test(txt(row.official_subject_source_url))||
+     row.official_subject_source_url!==ownerSourceUrl||
      !hex40(row.approved_cover_source_sha1)||!hex64(row.approved_cover_derivative_sha256)||
      !/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/.test(txt(row.approved_cover_asset_path))||
      !txt(row.media_id)||!txt(row.label_en)||!txt(row.label_fr)||
