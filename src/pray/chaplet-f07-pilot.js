@@ -42,6 +42,28 @@ export function renderMercyF07Crown(steps,index,{french=false}={}){
    '<strong>'+esc(caption)+'</strong><span>'+esc(description)+'</span>'+
   '</figcaption></figure>';
 }
+/** Claude m1 home. Only presentation is new: the 55-bead diagram and source are unchanged. */
+export function renderMercyF07Entry(steps,{french=false,source=""}={}){
+ const tr=(en,fr)=>french?fr:en;
+ const safeSource=esc(source);
+ return '<main class="aoP435930Body aoF07MercyEntry" data-f07-mercy-entry="m1">'+
+  '<section class="aoF07MercyEntryHero">'+
+   '<span class="aoF07MercyEntryMark" aria-hidden="true">✝</span>'+
+   '<div><small>'+esc(tr("CHAPLET","CHAPELET"))+'</small>'+
+    '<h2>'+esc(tr("Divine Mercy Chaplet","Chapelet de la Divine Miséricorde"))+'</h2>'+
+    '<div class="aoF07MercyEntryChips"><span>'+esc(tr("≈ 8 min","≈ 8 min"))+'</span><span>'+esc(tr("Customarily at 3 pm","Traditionnellement à 15 h"))+'</span></div>'+
+   '</div></section>'+
+  '<section class="aoF07MercyEntryOutline">'+
+    renderMercyF07Crown(steps,0,{french})+
+   '<ol><li>'+esc(tr("Opening prayers","Prières initiales"))+'</li>'+
+    '<li>'+esc(tr("Five decades","Cinq dizaines"))+'</li>'+
+    '<li>'+esc(tr("Closing invocations","Invocations finales"))+'</li></ol>'+
+  '</section>'+
+  '<button type="button" class="aoF07MercyBegin" data-p435930-mercy-begin>'+esc(tr("Begin","Commencer"))+'</button>'+
+  '<details class="aoF07MercyEntrySource"><summary>ⓘ '+esc(tr("Source","Source"))+'</summary>'+
+    '<a href="'+safeSource+'" target="_blank" rel="noopener noreferrer">'+esc(tr("Published prayer sequence","Texte et ordre publiés"))+'</a></details>'+
+ '</main>';
+}
 export function mercyF07RoleLines(step,language="en"){
  if(!step||!["en","fr"].includes(language))return null;
  const text=mercyStepText(step,language);
@@ -105,6 +127,37 @@ const F07_STYLE=`
  #aoPray435930 .aoF07CrownText span{font-size:11px}
 }
 
+/* Claude F07 m1: dedicated home before canonical opening prayers. */
+#aoPray435930 .aoF07MercyEntry{display:flex;flex-direction:column;gap:18px;min-height:100%;box-sizing:border-box;padding:16px 15px 12px!important}
+#aoPray435930 .aoF07MercyEntryHero{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;align-items:center}
+#aoPray435930 .aoF07MercyEntryMark{display:grid;place-items:center;width:76px;height:82px;border:1px solid rgba(211,187,151,.35);border-radius:8px;background:linear-gradient(140deg,#776a55,#322b25);color:#e5d7be;font-size:38px}
+#aoPray435930 .aoF07MercyEntryHero h2{margin:5px 0 9px;font:500 26px/1.08 var(--ao-font-display,Georgia,serif);color:var(--text,#eee)}
+#aoPray435930 .aoF07MercyEntryHero small{font:600 10px/1.3 system-ui,sans-serif;letter-spacing:.16em;color:var(--liturgical,#c6ab82)}
+#aoPray435930 .aoF07MercyEntryChips{display:flex;gap:5px;flex-wrap:wrap}
+#aoPray435930 .aoF07MercyEntryChips span{padding:4px 7px;border-radius:5px;background:rgba(188,172,146,.14);font:500 10px/1.2 system-ui,sans-serif;color:var(--text,#eee)}
+#aoPray435930 .aoF07MercyEntryOutline{display:grid;grid-template-columns:94px minmax(0,1fr);align-items:center;gap:14px;padding:14px 12px;border:1px solid var(--border,rgba(220,220,220,.19));border-radius:11px}
+#aoPray435930 .aoF07MercyEntryOutline .aoF07CrownBand{display:block;max-width:94px;width:94px;padding:0;margin:0;border:0;background:transparent}
+#aoPray435930 .aoF07MercyEntryOutline .aoF07CrownDiagram{width:94px;height:94px}
+#aoPray435930 .aoF07MercyEntryOutline .aoF07CrownText{display:none}
+#aoPray435930 .aoF07MercyEntryOutline ol{display:grid;gap:9px;margin:0;padding-left:19px;font:400 14px/1.4 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#eee)}
+#aoPray435930 .aoF07MercyBegin{margin-top:auto;width:100%;min-height:49px;padding:12px 17px;border:0;border-radius:999px;background:var(--text,#eee6dc);color:#241c18;font:600 15px/1.2 system-ui,sans-serif}
+#aoPray435930 .aoF07MercyBegin:focus-visible{outline:3px solid var(--liturgical,#c6ab82);outline-offset:3px}
+#aoPray435930 .aoF07MercyEntrySource{align-self:center;font:400 11px/1.4 system-ui,sans-serif;color:var(--muted,#beb2a4)}
+#aoPray435930 .aoF07MercyEntrySource a{color:inherit}
+#aoPray435930 .aoMercyCompletion{display:flex;flex-direction:column;align-items:center;gap:16px;justify-content:center;min-height:55vh;text-align:center}
+#aoPray435930 .aoMercyCompletion h2{font:500 28px/1.18 var(--ao-font-display,Georgia,serif)}
+#aoPray435930 .aoMercyCompletion button{min-height:48px;width:min(100%,260px);border-radius:999px}
+@media(max-width:359px) and (max-height:650px){
+ #aoPray435930 .aoF07MercyEntry{gap:10px;padding:7px 12px 8px!important}
+ #aoPray435930 .aoF07MercyEntryMark{width:58px;height:62px;font-size:29px}
+ #aoPray435930 .aoF07MercyEntryHero{grid-template-columns:58px minmax(0,1fr);gap:10px}
+ #aoPray435930 .aoF07MercyEntryHero h2{font-size:21px;margin:2px 0 5px}
+ #aoPray435930 .aoF07MercyEntryOutline{padding:6px 10px;gap:10px}
+ #aoPray435930 .aoF07MercyEntryOutline .aoF07CrownDiagram{width:80px;height:80px}
+ #aoPray435930 .aoF07MercyEntryOutline .aoF07CrownBand{width:80px}
+ #aoPray435930 .aoF07MercyEntryOutline ol{gap:5px;font-size:12px}
+ #aoPray435930 .aoF07MercyBegin{min-height:46px}
+}
 /* Claude F07 m2: explicit canonical ℣/℟ fragments, legible active text. */
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{opacity:.4;transition:opacity .12s ease}
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine.aoMercyPrayer{opacity:1}
