@@ -96,6 +96,15 @@ const churchGlyph='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" st
 
 // Only source-matched, approved photographs outrank a venue's visual fallback.
 // An institution's emblem identifies its Mass ministry, never church ownership.
+// Explicit source-reported institute abbreviations. This is purely readable
+// typography, NOT copied artwork, fake arms, ecclesiastical endorsement or
+// permission to reuse any of the institute's copyrighted original logos.
+const SOURCE_NAMED_MONOGRAMS=Object.freeze({
+  CANONS_ST_JOHN_CANTIUS:"SJC",
+  SJM:"SJM",
+  CMRI:"CMRI",
+  FSVF:"FSVF",
+});
 const namedSourceMark=(value)=>{
  const tokens=String(value??"").replace(/[^A-Za-zÀ-ÿ0-9 ]+/g," ").split(/\s+/).filter(Boolean);
  const first=tokens.filter(t=>!/^(de|des|du|of|the|la|le|les|and|et|saint|st)$/i.test(t));
@@ -113,11 +122,13 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
     ?L(language,"Diocesan church","Église diocésaine")
     :L(language,"Church / chapel","Église / chapelle"));
   const mode=["card","preview","detail"].includes(variant)?variant:"card";
+  const mark=useNamed?(Object.hasOwn(SOURCE_NAMED_MONOGRAMS,group)
+    ?SOURCE_NAMED_MONOGRAMS[group]:namedSourceMark(sourceLabel)):"";
   // Names are explicit source labels; neither a monogram nor a logo establishes
   // a building's operator, status, rite or individual Mass's Una Cum.
   return '<span class="aoTlmVenueIdentity aoTlmVenueIdentity--'+mode+'" data-visual-kind="'+(emblem?"emblem":useNamed?"named":"neutral")+'">'+
     (emblem?'<span class="aoTlmVenueEmblemFrame"><span class="aoTlmVenueEmblemBackstop" aria-hidden="true">'+E(emblem.label)+'</span><img data-tlm-emblem-image src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async"></span>':
-      useNamed?'<span class="aoTlmVenueNamedMark" aria-hidden="true">'+E(namedSourceMark(sourceLabel))+'</span>':
+      useNamed?'<span class="aoTlmVenueNamedMark" data-mark-length="'+mark.length+'" aria-hidden="true">'+E(mark)+'</span>':
         '<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')+
     '<small>'+E(useNamed?L(language,"Listed as: ","Selon la source : ")+label:label)+'</small>'+
     (emblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmOrderSymbolNote">'+E(L(language,"Order-wide symbol · not house arms","Symbole de l’ordre · non celui de la maison"))+'</small>':'')+
@@ -196,9 +207,15 @@ img[data-tlm-emblem-image][hidden]{display:none!important}
 
 .aoTlmVenueNamedMark{width:69px;height:69px;display:grid;place-items:center;flex:none;border:1px solid rgba(222,195,144,.44);border-radius:50%;background:linear-gradient(140deg,#263e4c,#15232e);font:600 26px/1 var(--ao-font-display,Georgia,serif);letter-spacing:.04em;color:#ead8b5}
 .aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:59px;height:59px;font-size:22px}
+.aoTlmVenueNamedMark[data-mark-length="3"]{font-size:21px;letter-spacing:.015em}
+.aoTlmVenueNamedMark[data-mark-length="4"]{font-size:17px;letter-spacing:0}
+.aoTlmVenueIdentity--preview .aoTlmVenueNamedMark[data-mark-length="3"],.aoTlmVenueIdentity--detail .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:26px}
+.aoTlmVenueIdentity--preview .aoTlmVenueNamedMark[data-mark-length="4"],.aoTlmVenueIdentity--detail .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:22px}
+.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:18px}
+.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:14px}
 .aoTlmVenueIdentity--detail .aoTlmVenueNamedMark,.aoTlmVenueIdentity--preview .aoTlmVenueNamedMark{width:78px;height:78px;font-size:29px}
 .aoTlmVenueIdentity[data-visual-kind="named"] small{text-transform:none;letter-spacing:.01em;font:600 12px/1.38 var(--ao-font-ui,system-ui,sans-serif);color:#dfd0b3}
-@media(max-width:420px){.aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:50px;height:50px;font-size:19px}.aoTlmVenueIdentity--card[data-visual-kind="named"] small{font-size:10px}}
+@media(max-width:420px){.aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:50px;height:50px;font-size:19px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="3"]{font-size:16px}.aoTlmVenueIdentity--card .aoTlmVenueNamedMark[data-mark-length="4"]{font-size:12px}.aoTlmVenueIdentity--card[data-visual-kind="named"] small{font-size:10px}}
 `;
 const DIRECTORY_VISUAL_FALLBACK_STYLE = "\n.aoTlmVenueIdentity{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;text-align:center;color:#dac39a}\n.aoTlmVenueIdentity img{display:block;width:75%;max-width:92px;height:87px;object-fit:contain}\n.aoTlmVenueIdentity .aoTlmVenueGlyph{width:68px;height:68px}\n.aoTlmVenueIdentity small{max-width:100%;padding:0 8px;font:650 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;text-transform:uppercase;color:#dac39a;overflow-wrap:anywhere}\n.aoTlmVenueIdentity--preview,.aoTlmVenueIdentity--detail{min-height:160px;border:1px solid rgba(217,197,154,.18);border-radius:11px;background:linear-gradient(150deg,#24394a,#0d1924);margin:8px 0 10px}\n.aoTlmVenueIdentity--preview img,.aoTlmVenueIdentity--detail img{max-width:140px;height:110px}\n.aoTlmVenueIdentity--detail{min-height:200px}\n.aoTlmVenueIdentity--detail img{max-width:170px;height:145px}\n@media(max-width:420px){.aoTlmVenueIdentity--card img{max-width:76px;height:70px}.aoTlmVenueIdentity--card small{font-size:9px}}\n";
 
