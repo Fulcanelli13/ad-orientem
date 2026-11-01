@@ -3213,7 +3213,7 @@ function renderMercy(){
      '<div class="aoF07MercyCompletionCrown" aria-hidden="true">'+renderMercyF07Crown(steps,steps.length-1,{french:isFr()})+'</div>'+
      '<h2>'+esc(L('Chaplet complete','Chapelet terminé'))+'</h2>'+
      '<p class="aoF07MercyCompletionQuote">'+esc(L('“Jesus, I trust in You.”','« Jésus, j’ai confiance en vous. »'))+'</p>'+
-     '<button type="button" class="aoF07MercyCompletionReturn" data-p435930-mercy-return>'+esc(L('Return to Prayer','Retour aux prières'))+'</button>'+
+     '<button type="button" class="aoF07MercyCompletionReturn" data-p435930-mercy-return>'+esc(L('Return to Rosary & Chaplets','Retour au Rosaire et aux chapelets'))+'</button>'+
      '<button type="button" class="aoF07MercyCompletionAgain" data-p435930-mercy-again>'+esc(L('Pray again','Recommencer'))+'</button>'+
     '</section></main>';
  }
@@ -3981,7 +3981,8 @@ function onClick(e){
    MERCY.finished=false;MERCY.entered=false;MERCY.step=0;return render();
   }
   if(b.hasAttribute('data-p435930-mercy-return')){
-   MERCY.finished=false;MERCY.entered=false;return backToParent();
+   MERCY.finished=false;MERCY.entered=false;MERCY.step=0;
+   familyId='chaplets';view='family';navStack=[];return render();
   }
   if(b.hasAttribute('data-p435930-mercy-chapter')){
    const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
