@@ -65,31 +65,49 @@ export function buildAspergesPayload({graph,payload,riteContext={}}={}){
   const formula=payload.formulas?.[formulaState.formula];
   if(!formula?.antiphon || !formula?.psalm)throw new Error("Asperges formula text incomplete");
 
+  // Latin is the certified sung/ritual text; EN/FR are reading aids only.
+  // Never replace the source-owned Latin or assign a translated phrase to
+  // a new ceremonial cue, priest observation, chant clock or Mass event.
+  const chantRow=(id,key)=>freeze({
+    id,kind:"TEXT",latin:clean(formula[key]),
+    english:clean(formula.english?.[key]),french:clean(formula.french?.[key]),
+    sourceRecordId:"ASP-030",
+  });
   const chantRows=[
-    freeze({id:"ASP-030-A",kind:"TEXT",latin:clean(formula.antiphon),sourceRecordId:"ASP-030"}),
-    freeze({id:"ASP-030-P",kind:"TEXT",latin:clean(formula.psalm),sourceRecordId:"ASP-030"}),
+    chantRow("ASP-030-A","antiphon"),
+    chantRow("ASP-030-P","psalm"),
   ];
-  if(!formulaState.omitGloriaPatri){
-    chantRows.push(freeze({id:"ASP-030-G",kind:"TEXT",latin:clean(formula.gloria),sourceRecordId:"ASP-030"}));
-  }
-  chantRows.push(freeze({id:"ASP-030-R",kind:"TEXT",latin:clean(formula.antiphon),sourceRecordId:"ASP-030"}));
+  if(!formulaState.omitGloriaPatri)chantRows.push(chantRow("ASP-030-G","gloria"));
+  chantRows.push(chantRow("ASP-030-R","antiphon"));
 
-  const versicleRows=(payload.versicles??[]).map((x,index)=>freeze({
-    id:"ASP-050-"+String(index+1).padStart(2,"0"),
-    kind:String(x.kind??"TEXT").toUpperCase(),
-    latin:clean(x.latin),
-    sourceRecordId:"ASP-050",
+  const versicleRows=(payload.versicles??[]).map((x,index)=>{
+    const kind=String(x.kind??"TEXT").toUpperCase();
+    const marker=kind==="VERSICLE"?"℣. ":kind==="RESPONSE"?"℟. ":"";
+    return freeze({
+      id:"ASP-050-"+String(index+1).padStart(2,"0"),
+      kind,latin:marker+clean(x.latin),
+      english:clean(x.english),french:clean(x.french),
+      sourceRecordId:"ASP-050",
+    });
+  });
+  // The appointed Orémus belongs immediately before Exaudi nos; it was
+  // missing from the printed special-rite reader, not from the source rite.
+  versicleRows.push(freeze({
+    id:"ASP-050-OREMUS",kind:"VERSICLE",latin:"℣. Orémus.",
+    english:"Let us pray.",french:"Prions.",sourceRecordId:"ASP-050",
   }));
   versicleRows.push(freeze({
-    id:"ASP-050-PRAYER",
-    kind:"TEXT",
+    id:"ASP-050-PRAYER",kind:"TEXT",
     latin:clean(payload.prayer?.latin),
+    english:clean(payload.prayer?.english),
+    french:clean(payload.prayer?.french),
     sourceRecordId:"ASP-050",
   }));
   versicleRows.push(freeze({
-    id:"ASP-050-AMEN",
-    kind:"RESPONSE",
-    latin:clean(payload.prayer?.response),
+    id:"ASP-050-AMEN",kind:"RESPONSE",
+    latin:"℟. "+clean(payload.prayer?.response),
+    english:clean(payload.prayer?.responseEnglish),
+    french:clean(payload.prayer?.responseFrench),
     sourceRecordId:"ASP-050",
   }));
 
