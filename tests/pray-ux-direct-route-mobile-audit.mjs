@@ -168,11 +168,13 @@ try{
    const invocation=choir.locator('.aoClaudeChoirBeat[data-ao-choir-answer]:not([data-ao-choir-answer=""])').first();
    await invocation.waitFor({state:"attached",timeout:8000});
    await invocation.scrollIntoViewIfNeeded();
-   await invocation.evaluate(el=>{
-    const parent=el.closest(".aoDevoCardScroll");
-    if(parent)parent.dispatchEvent(new Event("scroll",{bubbles:true}));
-   });
-   await page.waitForTimeout(400);
+   const sourceAnswer=await invocation.getAttribute("data-ao-choir-answer");
+   assert.ok(sourceAnswer?.trim(),"The chosen response must come from the canonical litany source");
+   await invocation.click();
+   await page.waitForFunction(()=>{
+    const bar=document.querySelector("#aoPray435930.open .aoDevoCard .aoClaudeChoirResponse");
+    return !!bar&&!bar.hidden&&Boolean(bar.querySelector(".aoClaudeChoirResponseText")?.textContent.trim());
+   },null,{timeout:5000});
    const choirRect=await choir.evaluate(el=>{
     // Claude's fixed response bar is a SIBLING of the scrolling litany,
     // not a descendant. Its location outside the scroll is the fidelity gate.
@@ -188,6 +190,11 @@ try{
    });
    assert.ok(choirRect.beats>=5&&choirRect.barPresent&&choirRect.barSibling,
     "F03 must present source invocation rows and a fixed response sibling outside the scroll");
+   assert.equal(choirRect.barHidden,false,"A selected source invocation must light the fixed Choir response");
+   assert.equal(choirRect.response.trim(),sourceAnswer.trim(),
+    "The fixed Choir response must match its selected source invocation exactly");
+   assert.ok(choirRect.barBottom>choirRect.barTop&&choirRect.barTop<height-55,
+    "The fixed Choir response must be visible above phone navigation");
    await page.screenshot({path:resolve(dest,"claude-f03-litany-"+width+"x"+height+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>({
     document:Math.max(0,document.documentElement.scrollWidth-innerWidth),
