@@ -369,6 +369,11 @@ try{
         const rows=domRows.length;
         if(actual?.sectionId!==card.sectionId)defects.push("wrong card "+card.title);
         if(!rows && card.paragraphs.length)defects.push("blank rendered card "+card.title);
+        if(card.blocks?.some(b=>b.blockId==="AO.SM.B096")){
+          const note=document.querySelector('[data-role="homily-pause-note"]');
+          if(note?.textContent?.trim()!=="Listen to the homily.")
+            defects.push("Sermon pause should offer faithful-facing copy, not an internal position diagnostic");
+        }
         // Every canonical spoken/prayed paragraph must be independently
         // focusable even when one intonation owns two source workbook cues.
         // An untagged row silently disables gestures, responses and voice.
