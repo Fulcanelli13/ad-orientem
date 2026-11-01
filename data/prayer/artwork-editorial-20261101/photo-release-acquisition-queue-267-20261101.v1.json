@@ -11,8 +11,8 @@
     "conflictedPrimaryPositionsHeld": 14,
     "unassignedNonIndividualDoors": 5,
     "photoReproductionsFullyCleared": 0,
-    "photographSourceFilesArchived": 9,
-    "distinctArtworkGroupsWithArchivedOriginals": 8,
+    "photographSourceFilesArchived": 13,
+    "distinctArtworkGroupsWithArchivedOriginals": 12,
     "remainingArtworkGroupsWithoutAnyIdentifiedSource": 20,
     "stationsWithExactSourceFilePagesIdentified": 14
   },
@@ -251,11 +251,11 @@
         "STG-prayer.seven_sorrows_chaplet-01",
         "STG-pray.st_joseph_seven_sorrows-04"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
       "priority": "P1_SIGNATURE_PRAYER",
       "photoAcquisitionBlock": {
@@ -269,7 +269,30 @@
         "remediation": "RECONCILE_SOURCE_FILE_LICENSE_METADATA_AND_PHOTOGRAPHER_TERMS",
         "notEditorialRejection": true,
         "releaseEligible": false
-      }
+      },
+      "archivedSourceFiles": [
+        {
+          "sourceId": "rosary-presentation-champaigne-cc0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Presentation_of_Jesus_Christ_at_the_Temple_by_Philippe_de_Champaigne_(Brussels).jpg",
+          "sourcePhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/The_Presentation_of_Jesus_Christ_at_the_Temple_by_Philippe_de_Champaigne_%28Brussels%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceProvider": "Wikimedia Commons",
+          "sourceOriginalArtworkID": "STG-pray.rosary-05",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/rosary-presentation-champaigne-cc0.jpg",
+          "sha256": "098f0986c53af032288fe165acf053a683778902885c545b7f5781db878b60a0",
+          "originalSha1": "81fc9dd1558e897c5a15616742680a953db3cf9b",
+          "originalBytes": 3023453,
+          "nativeWidth": 3631,
+          "nativeHeight": 4853,
+          "licenseReported": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "photographerOrSourceCredit": "Karmakolle",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED",
+          "appImageReleaseCertified": false,
+          "exactOriginalIdentityMetadataVerified": true
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:david_teniers_the_elder_-_the_agony_in_the_garden.jpg",
@@ -323,13 +346,36 @@
         "STG-pray.angelus-06",
         "STG-pray.rosary-02"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "rosary-annunciation-bouts-cma",
+          "sourcePage": "https://www.clevelandart.org/art/1942.635",
+          "sourcePhotoUrl": "https://openaccess-cdn.clevelandart.org/1942.635/1942.635_print.jpg",
+          "sourceProvider": "Cleveland Museum of Art",
+          "sourceOriginalArtworkID": "STG-pray.rosary-02",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/rosary-annunciation-bouts-cma.jpg",
+          "sha256": "aa6178b97052ec2dff5ad2f9da58269a23cabfd311983fce7c1f9d2b66b4075a",
+          "originalSha1": "259ee98683c41b195a9faefac216cde1186e75b0",
+          "originalBytes": 7475699,
+          "nativeWidth": 2815,
+          "nativeHeight": 3400,
+          "licenseReported": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "photographerOrSourceCredit": "Cleveland Museum of Art Open Access",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED",
+          "appImageReleaseCertified": false,
+          "exactOriginalIdentityMetadataVerified": true
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:charles_de_la_fosse_-_l%27assomption_vers_1680.jpg",
@@ -381,13 +427,36 @@
         "STG-prayer.seven_sorrows_chaplet-03",
         "STG-pray.st_joseph_seven_sorrows-07"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "rosary-finding-hondius-met",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436672",
+          "sourcePhotoUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP147792.jpg",
+          "sourceProvider": "Metropolitan Museum of Art",
+          "sourceOriginalArtworkID": "STG-pray.rosary-06",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/rosary-finding-hondius-met.jpg",
+          "sha256": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+          "originalSha1": "72a15243a0d8045e462b44cddc3a80dd3e794925",
+          "originalBytes": 2015792,
+          "nativeWidth": 3895,
+          "nativeHeight": 2998,
+          "licenseReported": "Public domain",
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "photographerOrSourceCredit": "The Metropolitan Museum of Art Open Access",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED",
+          "appImageReleaseCertified": false,
+          "exactOriginalIdentityMetadataVerified": true
+        }
+      ]
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:david_teniers_-_the_ascension_(copy_after_leandro_bassano)_wlc_p635.jpg",
@@ -594,13 +663,36 @@
       "slots": [
         "STG-pray.rosary-11"
       ],
-      "photographReleaseState": "UNVERIFIED",
+      "photographReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
       "physicalFrameAbsent": null,
       "licenseForActualFile": null,
       "nativeDimensions": null,
-      "photosAcquired": 0,
+      "photosAcquired": 1,
       "appRenderTested": false,
-      "priority": "P1_SIGNATURE_PRAYER"
+      "priority": "P1_SIGNATURE_PRAYER",
+      "archivedSourceFiles": [
+        {
+          "sourceId": "rosary-crucifixion-jordaens-commons",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+          "sourcePhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Hans_Jordaens_%28III%29_-_The_Crucifixion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceProvider": "Wikimedia Commons",
+          "sourceOriginalArtworkID": "STG-pray.rosary-11",
+          "archivePath": "assets/staged/prayer-artwork-originals-20261101/rosary-crucifixion-jordaens-commons.jpg",
+          "sha256": "adb5a437742f5698292a7ce530c4041515cb2384e0c3b3a414e793fda5a433b2",
+          "originalSha1": "1b9d184313db42ce5894e5207bea87ce18c38737",
+          "originalBytes": 6444607,
+          "nativeWidth": 3713,
+          "nativeHeight": 2880,
+          "licenseReported": "Public domain",
+          "licenseUrl": "",
+          "photographerOrSourceCredit": "Hans Jordaens III",
+          "publicationAllowed": false,
+          "visualQA": "NOT_DONE",
+          "photoRightsForApp": "NOT_CLEARED",
+          "appImageReleaseCertified": false,
+          "exactOriginalIdentityMetadataVerified": true
+        }
+      ]
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 1 giandomenico tiepolo san polo original oils",
@@ -2930,5 +3022,27 @@
     "rightsAndCropHumanSignoff": false,
     "firstBatchBlockedSources": 3,
     "blockersRecordedNoSubstitution": true
+  },
+  "stateB02Rosary20261101": {
+    "sourceReport": "data/prayer/artwork-editorial-20261101/prayer-rosary-b02-acquisition-results.v1.json",
+    "sourceFilesArchived": 4,
+    "originalArtworkGroupsArchived": 4,
+    "newUniqueCumulativeArchiveGroups": 12,
+    "allStagedFilesCumulative": 13,
+    "masterPositionsUnchanged": 267,
+    "photographReleaseRightsApproved": 0,
+    "selectionChanges": 0,
+    "rosaryMysterySelectedOriginalsArchived": 11,
+    "rosaryTraditionalMysteries": 15,
+    "rosaryCoverLottoArchived": true,
+    "highResolutionOriginalsStillMissing": [
+      "STG-pray.rosary-04",
+      "STG-pray.rosary-13",
+      "STG-pray.rosary-14"
+    ],
+    "heldWithoutPrimary": [
+      "STG-pray.rosary-16",
+      "STG-pray.rosary-17"
+    ]
   }
 }
