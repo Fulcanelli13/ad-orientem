@@ -210,13 +210,34 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   cache=projectCL2PhysicalDirectory(extended,await full.json(),{mapAffiliation:providerGroup});
   return cache;
 }
-export function filterPreliminaryR49(items,{query="",directoryGroup="ALL",affiliations=[]}={}){
+/**
+ * Site-marker evidence is independent of every liturgical assertion.
+ * REVIEWED_PIN means a source-backed physical-site marker (NOT an entrance),
+ * SOURCE_PIN means a provisional/unassessed map marker, and ADDRESS_ONLY
+ * means the record has no safely publishable coordinates.
+ */
+export function tlmSiteEvidence(item){
+  if(!item?.map_publishable||!item?.geo||item.map_state==="ADDRESS_ONLY")return "ADDRESS_ONLY";
+  const geo=item.geo;
+  return geo.source_ref&&geo.source_url&&geo.review_scope?"REVIEWED_PIN":"SOURCE_PIN";
+}
+export function tlmSiteEvidenceCounts(items=[]){
+  const counts={ALL:0,REVIEWED_PIN:0,SOURCE_PIN:0,ADDRESS_ONLY:0};
+  for(const item of Array.isArray(items)?items:[]){
+    counts.ALL++;
+    counts[tlmSiteEvidence(item)]++;
+  }
+  return Object.freeze(counts);
+}
+export function filterPreliminaryR49(items,{query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL"}={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();
   const allowed=["ALL","ROME","SSPX","UNKNOWN"].includes(group)?group:"ROME";
   const aff=new Set((Array.isArray(affiliations)?affiliations:[]).map(x=>tidy(x).toUpperCase()));
+  const evidence=["ALL","REVIEWED_PIN","SOURCE_PIN","ADDRESS_ONLY"].includes(siteEvidence)?siteEvidence:"ALL";
   return Object.freeze((Array.isArray(items)?items:[]).filter(item=>
     (allowed==="ALL"||item.preliminary_group===allowed)&&
     (!aff.size||aff.has(item.community_id))&&
+    (evidence==="ALL"||tlmSiteEvidence(item)===evidence)&&
     (!q||item.search_text.includes(q))
   ));
 }
