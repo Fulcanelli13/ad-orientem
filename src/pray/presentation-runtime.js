@@ -1477,7 +1477,7 @@ function decorateRosary(){
   const chapters=rosaryNamedChapters(info.steps,{set:info.set,french:isFr(),titles});
   installRosaryActiveCard({
    root:r,stepIndex:info.index,
-   chapters,
+   chapters,set:info.set,language:lang(),
    navigate:start=>{
     const api=window.AO_ROSARY_V381;
     if(typeof api?.setStep==="function"&&api.setStep(start)!==false)
