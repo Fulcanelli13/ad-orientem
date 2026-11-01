@@ -4,8 +4,8 @@ import argparse, hashlib, io, json, time, urllib.parse, urllib.request
 from pathlib import Path
 from PIL import Image, ImageOps
 OBJECTS={
- "angelus":{"id":438724,"accession":"2004.31","artist":"Philippe de Champaigne","title":"The Annunciation","artwork_id":"ART-hilippe-de-hampaigne-he-nnunciation"},
- "adoration":{"id":438434,"accession":"2005.186","artist":"Jean Auguste Dominique Ingres","title":"The Virgin Adoring the Host","artwork_id":"met-438434"},
+ "angelus":{"id":438724,"accession":"2004.31","artist":"Philippe de Champaigne","title":"The Annunciation","artwork_id":"ART-hilippe-de-hampaigne-he-nnunciation","surface_crop":[90,82,3654,3545]},
+ "adoration":{"id":438434,"accession":"2005.186","artist":"Jean Auguste Dominique Ingres","title":"The Virgin Adoring the Host","artwork_id":"met-438434","surface_crop":[205,145,2960,3615]},
 }
 HOSTS={"collectionapi.metmuseum.org","images.metmuseum.org"}
 def fetch(url,limit=30000000):
@@ -60,6 +60,14 @@ def main():
    if im.format!="JPEG" or min(im.size)<1250 or im.width*im.height<2000000:raise ValueError("Not a high-resolution JPEG")
    w,h=im.size
    ImageOps.contain(im.convert("RGB"),(950,950)).save(dest/(module+"-review.jpg"),quality=86)
+   left,top,right,bottom=approved["surface_crop"]
+   assert 0<left<right<w and 0<top<bottom<h,"Crop extends outside original"
+   # The user selected the whole painting; eliminate photographed outer frame,
+   # preserve the artwork within. Derived file remains a reviewed *candidate*.
+   surface=im.crop((left,top,right,bottom)).convert("RGB")
+   candidate=dest/(module+"-frameless-candidate.webp")
+   surface.save(candidate,"WEBP",quality=90,method=6)
+   candidate_sha=hashlib.sha256(candidate.read_bytes()).hexdigest()
   local=dest/f"{module}-met-{obj}.jpg"
   local.write_bytes(raw)
   sha=hashlib.sha256(raw).hexdigest()
@@ -68,7 +76,9 @@ def main():
    "sourceURL":url,"objectPage":f"https://www.metmuseum.org/art/collection/search/{obj}",
    "rights":"Met Open Access isPublicDomain=true, original JPEG","file":str(local),
    "originalSha256":sha,"originalSizeBytes":len(raw),"width":w,"height":h,
-   "originalUnmodified":True,"humanPhotoAndCropApproved":False,"releasedInApp":False,
+   "originalUnmodified":True,"surfaceCrop":approved["surface_crop"],"framelessCandidatePath":str(candidate),
+   "framelessCandidateSha256":candidate_sha,"framelessCandidatePixels":[right-left,bottom-top],
+   "humanPhotoAndCropApproved":False,"releasedInApp":False,
    "status":"ORIGINAL_STAGED_FOR_APPROVED_ARTWORK_NOT_PUBLISHED"})
   print("ACQUIRED",module,obj,w,h,sha,flush=True)
  (dest/"source-manifest.json").write_text(json.dumps({"schema":"AO_APPROVED_MET_TWO_SOURCE_STAGING_V1",
