@@ -104,7 +104,7 @@ try{
     "Una Cum has no unapproved positive filter");
    const missal1962=page.locator('[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]');
    assert.equal(await missal1962.count(),1,"Two approved programme witnesses are filterable");
-   assert.match(await missal1962.innerText(),/\\(2\\)/);
+   assert.ok((await missal1962.innerText()).includes("(2)"),"Witness count remains two");
    await missal1962.click();
    await page.waitForFunction(()=>document.querySelector(
     '[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]'
