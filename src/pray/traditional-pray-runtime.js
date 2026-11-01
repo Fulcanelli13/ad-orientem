@@ -1,4 +1,7 @@
 import "./traditional-pray-styles.js";
+import {choirLitanyLineParts} from "./choir-source-beats.js";
+import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
+import "./choir-family-styles.js";
 import "./horarium-hours-styles.js";
 import {dailyUxPilotEnabled,renderDailyUxContinuous,renderDailyBookPills,renderDailyReaderOptions} from "./daily-ux-pilot.js";
 import "./traditional-pray-direct-b16-styles.js";
