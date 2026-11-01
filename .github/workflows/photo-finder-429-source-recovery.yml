@@ -74,4 +74,4 @@ jobs:
           PY
           git diff --cached --check
           git commit -m "research(explore): preserve exact eight frozen source retry results, without publication"
-          git push origin "HEAD:$GITHUB_REF_NAME"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

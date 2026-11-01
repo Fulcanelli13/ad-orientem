@@ -24,6 +24,7 @@ const reviewBranchMutationWorkflows=new Map([
   ["directory-geocode-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["photo-finder-release-covers.yml",/branches:\s*\n\s*-\s*["\']research\/photo-finder-release-20261030-b\*["\']/i],
   ["directory-icksp-research-geocode.yml",/branches:\s*\n\s*-\s*["']directory\/icksp-quality-\*["']/i],
+  ["photo-finder-429-source-recovery.yml",/branches:\s*\n\s*-\s*research\/photo-finder-112-source-hold-reconciliation-20261101/i],
 ]);
 for(const name of workflows){
   const path=join(workflowDir,name);
@@ -51,6 +52,19 @@ for(const name of workflows){
       assert.match(source,/git add -- docs\/research\/directory\/p79-canonical-place-photo-review\.html/);
       assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
       assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+    }
+    if(name==="photo-finder-429-source-recovery.yml"){
+      assert.match(source,/github\\.repository == 'Fulcanelli13\\/ad-orientem'/);
+      assert.match(source,/github\\.ref == 'refs\\/heads\\/research\\/photo-finder-112-source-hold-reconciliation-20261101'/);
+      assert.match(source,/paths:\\s*\\n\\s*-\\s*data\\/geography\\/research\\/photo-finder-20261030\\/\\.retry-429-source-verification/i);
+      assert.ok(source.includes("ONE_SHOT_EIGHT_ORIGINAL_429_2026-11-01"));
+      assert.ok(source.includes("AO_429_DRY_RUN=1"));
+      assert.ok(source.includes("retry-photo-finder-429.py"));
+      assert.ok(source.includes("RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"));
+      assert.doesNotMatch(source,/git add -- data\\/geography\\/approved-place-media/);
+      assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+      assert.doesNotMatch(source,/git\\s+add\\s+(?:-A|--all|\\.)/i);
+      assert.equal((source.match(/git\\s+push\\s+origin/g)||[]).length,1);
     }
     if(name==="directory-icksp-research-geocode.yml"){
       assert.match(source,/branches:[ \t]*\n[ \t]*-[ \t]*["']directory\/icksp-quality-\*["'][ \t]*\n[ \t]*paths:[ \t]*\n[ \t]*-[ \t]*["']data\/directory\/\.icksp-research-geocode-request["']/i,
