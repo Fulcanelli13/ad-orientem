@@ -11,7 +11,7 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
   ["FSSP","IBP","ICKSP","SSPX","AASJMV","CAPUCHINS_MORGON","MILITIA_TEMPLI",
-    "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"].sort(),
+    "BENEDICTINE","DOMINICAN","CISTERCIAN","ORATORIAN","NORBERTINE","PREMONSTRATENSIAN"].sort(),
   "Only source-qualified institute and order-family symbols may render");
 assert.equal(massInstitutionEmblem("diocesan"),null,
   "A diocesan venue is not the Holy See and must use a neutral identity");
@@ -37,7 +37,7 @@ const provisionalSites=projectPreliminaryR49(r49);
 const pictured=provisionalSites.filter(item=>massInstitutionEmblem(item.community_id));
 const neutral=provisionalSites.filter(item=>!massInstitutionEmblem(item.community_id));
 assert.equal(provisionalSites.length,1879);
-const familyCodes=["BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"];
+const familyCodes=["BENEDICTINE","DOMINICAN","CISTERCIAN","ORATORIAN","NORBERTINE","PREMONSTRATENSIAN"];
 const familySites=provisionalSites.filter(item=>familyCodes.includes(item.community_id));
 const morgonSites=provisionalSites.filter(item=>item.community_id==="CAPUCHINS_MORGON");
 assert.equal(morgonSites.length,5,"Keep all five explicitly sourced Capuchins of Morgon labels");
@@ -165,6 +165,13 @@ for(const lang of ["en","fr"]){
   assert.match(id,lang==="fr"?/Dessin indépendant de la croix/:/Independent cross drawing/);
   assert.doesNotMatch(id,/Militia_Templi_COA.svg/,
     "Do not substitute unauthorised blue shield or generic medieval Templar heraldry");
+}
+const oratorian=massInstitutionEmblem("ORATORIAN");
+assert.equal(oratorian.symbolScope,"ORDER_FAMILY");
+assert.match(oratorian.source,/Congregazione_oratorio_di_San_Filippo_Neri-Stemma/);
+for(const code of ["INSTITUTE_ST_PHILIP_NERI","ORATORIAN_PHILADELPHIA"]){
+  assert.equal(massInstitutionEmblem(code),null,"Confederation heraldry must not impersonate "+code);
+  assert.doesNotMatch(renderDirectoryIdentityFallback({community_id:code,eyebrow:code},"en","card"),/data-visual-kind="emblem"/);
 }
 assert.equal(massInstitutionEmblem("NORBERTINE").image,massInstitutionEmblem("PREMONSTRATENSIAN").image,
   "Norbertine and Premonstratensian share the same order-wide heraldry");
