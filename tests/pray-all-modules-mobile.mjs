@@ -695,7 +695,7 @@ try{
    const prayer=await page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open"),card=root?.querySelector(".aoP435930Prayer");
      return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip,.aoClaudeHolyBackScroll")?.textContent?.trim()||"",
-       source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeHolySourcePanel .aoP435930Source")?.textContent?.trim()||""};
+       source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeHolySourcePanel .aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeChoirMenuSource .aoP435930Source")?.textContent?.trim()||""};
    });
    assert.ok(prayer.body.length>=10,"Blank or unrendered canonical prayer: "+id);
    const flip=page.locator("#aoPray435930.open .aoP435930Prayer [data-p435930-flip]");
@@ -732,7 +732,7 @@ try{
    }
    if(["mass_confiteor","adoration_lord_i_am_not_worthy","litany_loreto_1962","litany_loreto_current","devotion_litany_st_joseph"].includes(id)){
      // Claude Holy Card keeps provenance in Aa; ordinary prayers retain their inline source sheet.
-     const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a, #aoPray435930.open .aoClaudeHolySourcePanel .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
+     const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a, #aoPray435930.open .aoClaudeHolySourcePanel .aoP435930Source a,#aoPray435930.open .aoClaudeChoirMenuSource .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
      assert.ok(sourceLinks.length>=2,"Missing primary/secondary edition references for "+id);
      assert.ok(sourceLinks.every(x=>x.startsWith("https://")),"Non-secure edition link: "+id);
      assert.match(prayer.source,/1962|2020|2021|traditional|traditionnelles|augmentée|expanded/i,
