@@ -18,12 +18,17 @@ for(const pair of live.candidate_pairs){
  assert.ok(old,"New spatial/identity pair requires a separate Place review");
  const {place_has_approved_photo:now,...stable}=pair;
  const {place_has_approved_photo:before,...frozen}=old;
- assert.deepEqual(stable,frozen,"New photo approval cannot change a frozen Place/site identity pair");
+ const isP108=pair.venue_id==="AO-AMER-R28-US-23-05"&&pair.place_id==="place:US:guadalupe-shrine-la-crosse";
+ if(isP108){
+  assert.equal(old.disposition,"EXACT_BUILDING_EVIDENCE_REQUIRED_HOLD","P92 historical uncertainty preserved");
+  assert.equal(stable.disposition,"EXISTING_CONFIRMED_LINK","P108 official source now resolves exact shrine identity");
+  assert.deepEqual({...stable,disposition:old.disposition},frozen,"P108 must change identity disposition only");
+ }else assert.deepEqual(stable,frozen,"New photo approval cannot change a frozen Place/site identity pair");
  if(before)assert.equal(now,true,"Cannot revoke an existing approved-photo flag");
 }
 assert.equal(live.counts.venues_screened,review.counts.venues_screened);
 assert.equal(live.counts.canonical_places,review.counts.canonical_places);
-assert.equal(live.counts.confirmed_links,review.counts.confirmed_links);
+assert.equal(live.counts.confirmed_links,review.counts.confirmed_links+1,"One later source-proven P108 exact Place link");
 assert.equal(live.counts.within_350m_pairs,review.counts.within_350m_pairs);
 assert.ok(live.counts.nearby_approved_photo_pairs>=review.counts.nearby_approved_photo_pairs);
 assert.ok(live.counts.exact_confirmed_photo_joins>=review.counts.exact_confirmed_photo_joins);
