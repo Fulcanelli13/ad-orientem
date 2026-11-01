@@ -1,0 +1,75 @@
+name: Prayer Rosary B02 source originals (research only)
+on:
+  push:
+    branches:
+      - research/prayer-artwork-approved-reuse-wave1-20261031
+    paths:
+      - .github/workflows/prayer-artwork-rosary-b02-acquisition.yml
+      - scripts/art/acquire-prayer-rosary-b02.py
+      - data/prayer/artwork-editorial-20261101/prayer-rosary-b02-exact-source-acquisition-20261101.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prayer-rosary-b02-staged-originals
+  cancel-in-progress: true
+
+jobs:
+  acquire-b02-exact-originals:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-approved-reuse-wave1-20261031
+          persist-credentials: true
+
+      - name: Compile acquisition script before any remote request
+        run: python3 -m py_compile scripts/art/acquire-prayer-rosary-b02.py
+
+      - name: Fetch exact original photo bytes with provider rights checks (research only)
+        id: acquire
+        continue-on-error: true
+        run: python3 scripts/art/acquire-prayer-rosary-b02.py --download
+
+      - name: Block any direct Prayer production publication
+        run: |
+          node --input-type=module - <<'JS'
+          import {PRAYER_RELEASED_IMAGE_ASSETS_V1} from './src/pray/artwork-release-runtime.js';
+          if(Object.keys(PRAYER_RELEASED_IMAGE_ASSETS_V1).length!==0) {
+            throw new Error('Exact source acquisition must not publish any Prayer artwork');
+          }
+          JS
+
+      - name: Ensure only research originals and acquisition evidence are committed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/prayer/artwork-editorial-20261101/prayer-rosary-b02-acquisition-results.v1.json
+          if test -d assets/staged/prayer-artwork-originals-20261101; then
+            git add -- assets/staged/prayer-artwork-originals-20261101
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(prayer-art): archive four exact B02 originals without release certification'
+            git pull --rebase origin research/prayer-artwork-approved-reuse-wave1-20261031
+            git push origin HEAD:refs/heads/research/prayer-artwork-approved-reuse-wave1-20261031
+          fi
+
+      - name: Retain temporary acquisition evidence for failure diagnosis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-rosary-b02-acquisition-report
+          path: data/prayer/artwork-editorial-20261101/prayer-rosary-b02-acquisition-results.v1.json
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Report partial or total source acquisition failures
+        if: steps.acquire.outcome == 'failure'
+        run: |
+          echo 'Some exact-source acquisition steps failed; see per-record metadata.'
+          echo 'No photo is released and no painting selection has changed.'
+          exit 1
