@@ -1,0 +1,353 @@
+{
+  "schema": "ao-mass-music-1962-external-inheritance-25-v1",
+  "ref": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "baseSourceCount": 91,
+  "uniqueInheritances": 33,
+  "additionalSources": [
+    {
+      "path": "Commune/C10a",
+      "uses": [
+        {
+          "usedBy": "Tempora/Adv4-0",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/03-25",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C2p",
+      "uses": [
+        {
+          "usedBy": "Sancti/05-06",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/05-06",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/05-06",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/04-25",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C6b",
+      "uses": [
+        {
+          "usedBy": "Sancti/02-02",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Quad5-4",
+      "uses": [
+        {
+          "usedBy": "Tempora/Pent20-0",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C4a",
+      "uses": [
+        {
+          "usedBy": "Sancti/06-24",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/12-27",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/12-27",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/08-03",
+      "uses": [
+        {
+          "usedBy": "Sancti/12-26",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/12-26",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/12-26",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/06-18t",
+      "uses": [
+        {
+          "usedBy": "Sancti/12-28",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C5-1",
+      "uses": [
+        {
+          "usedBy": "Sancti/03-19",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/01-25",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C2",
+      "uses": [
+        {
+          "usedBy": "Sancti/03-19",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/11-11",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/11-11",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C5b",
+      "uses": [
+        {
+          "usedBy": "Sancti/09-21",
+          "section": "Introitus"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/02-24",
+      "uses": [
+        {
+          "usedBy": "Sancti/06-29",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/07-25",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/07-25",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/08-24",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/08-24",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/11-30",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/06-11",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/06-11",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/06-11",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/10-18",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/10-18",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/Coronatio",
+      "uses": [
+        {
+          "usedBy": "Sancti/06-29",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C4-1",
+      "uses": [
+        {
+          "usedBy": "Sancti/11-11",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C4",
+      "uses": [
+        {
+          "usedBy": "Sancti/12-31",
+          "section": "GradualeP"
+        },
+        {
+          "usedBy": "Sancti/12-31",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Quad1-3",
+      "uses": [
+        {
+          "usedBy": "Tempora/Quad2-0",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/07-04oct",
+      "uses": [
+        {
+          "usedBy": "Sancti/07-25",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C3a-1",
+      "uses": [
+        {
+          "usedBy": "Sancti/11-01",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Pent01-0r",
+      "uses": [
+        {
+          "usedBy": "Tempora/Pent01-0",
+          "section": "Introitus"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C10Pasc",
+      "uses": [
+        {
+          "usedBy": "Sancti/07-02",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/08-14",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C10b",
+      "uses": [
+        {
+          "usedBy": "Sancti/08-14",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/03-25",
+          "section": "Introitus"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C10",
+      "uses": [
+        {
+          "usedBy": "Sancti/08-14",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/03-25",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Quad1-4",
+      "uses": [
+        {
+          "usedBy": "Tempora/Pent15-0",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Nat30",
+      "uses": [
+        {
+          "usedBy": "Sancti/01-01",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/01-01",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/01-01",
+          "section": "Communio"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C6-1",
+      "uses": [
+        {
+          "usedBy": "Sancti/07-22",
+          "section": "Introitus"
+        },
+        {
+          "usedBy": "Sancti/07-22",
+          "section": "Communio"
+        },
+        {
+          "usedBy": "Sancti/07-26",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "path": "Commune/C6a",
+      "uses": [
+        {
+          "usedBy": "Sancti/07-22",
+          "section": "Offertorium"
+        },
+        {
+          "usedBy": "Sancti/07-26",
+          "section": "Offertorium"
+        }
+      ]
+    }
+  ]
+}
