@@ -278,6 +278,9 @@ test('artwork surfaces follow current prayer/station and leave Rosary bead archi
  assert.equal(prayerArtworkSlotForView({view:'penitential',penitentialIndex:0}),'STG-pray.penitential_psalms-01');
  assert.equal(prayerArtworkSlotForView({view:'sevenWords',sevenWordsIndex:5}),'STG-pray.seven_words-06');
  assert.equal(prayerArtworkSlotForView({view:'prayerOnly',prayerId:'daily.morning'}),'COV-daily.morning');
+ assert.equal(prayerArtworkSlotForView({view:'family',familyId:'daily'}),'DOOR-D1');
+ assert.equal(prayerArtworkSlotForView({view:'family',familyId:'saints'}),'DOOR-D8');
+ assert.equal(prayerArtworkSlotForView({view:'family',familyId:'unknown'}),null);
  assert.equal(prayerArtworkSlotForView({view:'rosary'}),null);
  assert.equal(prayerArtworkSlotForView({view:'home'}),null);
  const presentation=readFileSync('src/pray/presentation-runtime.js','utf8');
@@ -306,4 +309,32 @@ test('Rosary painting stays fixed by mystery group, never by bead; 15 traditiona
  assert.match(rosary,/renderReleasedPrayerArtwork/);
  const presentation=readFileSync('src/pray/presentation-runtime.js','utf8');
  assert.match(presentation,/chapters,set:info.set,language:lang\(\)/);
+});
+
+test('Prayer image acquisition queue deduplicates current choices but does not grant release',()=>{
+ const ledger=read('data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json');
+ assert.equal(ledger.productionAllowed,false);
+ assert.equal(ledger.counts.allMasterPositions,267);
+ assert.equal(ledger.counts.positionsWithCurrentSelectedPainting,248);
+ assert.equal(ledger.counts.uniqueCandidateArtworkGroups,124);
+ assert.equal(ledger.counts.conflictedPrimaryPositionsHeld,14);
+ assert.equal(ledger.counts.unassignedNonIndividualDoors,5);
+ assert.equal(ledger.counts.photoReproductionsFullyCleared,0);
+ assert.equal(ledger.queue.reduce((n,x)=>n+x.slots.length,0),248);
+ assert.equal(ledger.queue.some(x=>x.title==='Madonna del Rosario'&&x.priority==='P0_FINAL_LOCK'),true);
+ assert.equal(ledger.queue.every(x=>x.photosAcquired===0&&x.photographReleaseState==='UNVERIFIED'),true);
+});
+
+test('all five derived Prayer category doors remain unavailable even with spoofed release proof',()=>{
+ const blocks=['DOOR-D1','DOOR-D4','DOOR-D6','DOOR-D7','DOOR-D9'];
+ for(const slot of blocks){
+  const row=PRAYER_ARTWORK_SLOT_AUTHORITY[slot];
+  assert.equal(row.door,true);
+  assert.equal(row.title,null);
+  assert.equal(releaseClearedPrayerArtwork(slot,{manifest:{[slot]:{
+   slotId:slot,title:'Invented Painting',artist:'Invented',
+   publicationState:'READY_FOR_PUBLICATION',productionEnabled:true,editorialApproved:true,
+   path:'assets/pray/released/invented.webp',releaseEvidence:{categoryDoorExactArtworkApproved:true}
+  }}}),null,slot);
+ }
 });
