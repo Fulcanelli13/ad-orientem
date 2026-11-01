@@ -64,7 +64,7 @@ for(const [venueId,[placeId,osm,sourceRow]] of expected){
  assert.ok(manifest.published_new.some(x=>x.place_id===placeId&&x.candidate_id==="P97-ROW-"+sourceRow&&x.photo_publication==="NONE"));
 }
 assert.equal(crosswalk.counts.canonical_places,LIVE.places);
-assert.equal(crosswalk.counts.confirmed_links,LIVE.links);
+assert.equal(crosswalk.counts.confirmed_links,23,"Frozen P92 spatial-screen snapshot predates P108's 24th link");
 assert.equal(crosswalk.counts.exact_confirmed_photo_joins,9,"two P95, three P102 and four P106 exact photos");
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(manifest.policy.photo_media_unapproved_until_native_rights_derivative_review,true);
