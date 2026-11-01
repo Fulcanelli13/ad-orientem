@@ -517,8 +517,8 @@ try{
   for(const x of cohorts.BVM_SATURDAY_MARIAN_CONFLICT)
     assert.equal(new Date(x.date+"T12:00:00Z").getUTCDay(),6,
       x.date+" Marian Saturday must be an actual Saturday");
-  assert.equal(summary.prefaceReview.unmapped,8);
-  assert.equal(summary.prefaceReview.ruleAndTextAgree,255);
+  assert.equal(summary.prefaceReview.unmapped,7);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,256);
   assert.equal(summary.prefaceReview.sourceConflict,100);
   await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
     schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
@@ -527,9 +527,9 @@ try{
     temporalRegister:"data/research/1962-temporal-preface-source-screen-20261027.v1.json",
     genericFeriaAndBvmRegister:"data/research/1962-generic-feria-bvm-preface-screen-20261027.v1.json",
     totalHistoricalUnmappedWorklist:194,
-    newlySourceMatchedWithheldFromEditorialApproval:136,
+    newlySourceMatchedWithheldFromEditorialApproval:137,
     newlySourceIdentifiedConflicts:50,
-    stillUnmapped:8,
+    stillUnmapped:7,
     stillRawSourceConflicts:100,
     independentPrefacesEditoriallyCertified:0,
     groupSizes:sizes,
