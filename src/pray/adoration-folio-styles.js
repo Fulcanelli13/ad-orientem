@@ -561,6 +561,16 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  text-transform:none;letter-spacing:0;font-style:italic!important;font-weight:400!important;
 }
 
+
+/* Keep the cross compass clear of the fixed posture/icon rails on narrow
+   screens. Only the compass width changes; chapter targets are unchanged. */
+@media(max-width:560px){
+ #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoSequenceTimeline{
+  box-sizing:border-box!important;width:calc(100% - 102px)!important;
+  max-width:280px!important;margin-left:auto!important;margin-right:auto!important;
+ }
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
