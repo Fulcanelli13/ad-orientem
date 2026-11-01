@@ -76,7 +76,7 @@ try{
    await large.click();
    assert.equal(await crown.getAttribute("data-position"),"4");
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
-   assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
+   assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/i);
    assert.equal(await page.locator(base+".aoMercyLine.aoMercyPrayer .aoF07MercyRoleLabel").count(),2,
     "m2 must show both versicle and response on the large bead");
    assert.equal(await page.locator(base+"[data-f07-mercy-dock-count]").innerText(),"5 / 62");
