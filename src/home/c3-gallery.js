@@ -6,7 +6,19 @@ const cleanArt=a=>a&&a.qualityGate==="PASS"&&typeof a.file==="string"&&
   /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(a.sourcePage??"")&&
   /^(public domain|cc0|cc by)/i.test(String(a.license??a.rights??""));
 const artUrl=(file,w)=>"https://commons.wikimedia.org/wiki/Special:Redirect/file/"+encodeURIComponent(file)+"?width="+w;
-const C3_EXACT_APPROVED_PATHS=Object.freeze({"2026-11-01":"Sancti/11-01","2026-11-02":"Sancti/11-02m1"});
+// Reuse *only* the existing Calendar's date-specific Commons previews, with
+// the exact 1962 Proper path. These are not bundled image masters or a new
+// artwork approval. The held Oct 25 / Nov 29 sources intentionally stay out.
+const C3_EXACT_APPROVED_PATHS=Object.freeze({
+  "2026-03-29":"Tempora/Quad6-0r",
+  "2026-04-02":"Tempora/Quad6-4r",
+  "2026-05-23":"Tempora/Pasc6-6",
+  "2026-05-24":"Tempora/Pasc7-0",
+  "2026-05-27":"Tempora/Pasc7-3",
+  "2026-06-12":"Tempora/Pent02-5",
+  "2026-11-01":"Sancti/11-01",
+  "2026-11-02":"Sancti/11-02m1"
+});
 function certifiedWeekArt(provider,date){
   const selection=APPROVED_CLASS_I_2026.find(r=>r.date===date),path=C3_EXACT_APPROVED_PATHS[date];
   if(!selection||!path||selection.imagePublicationStatus==="HELD_SOURCE_REUSE_RIGHTS")return null;
@@ -25,7 +37,7 @@ export function c3ApprovedDatedHomeArt(provider,state){
   return APPROVED_CLASS_I_2026.find(row=>row.date===date)??null;
 }
 function eligibleCalendarPreview(row){
-  return Boolean(row?.image&&row.imageTier==="commons-pd-art"&&
+  return Boolean(row?.image&&["commons-pd-art","commons-pd-self"].includes(row.imageTier)&&
     row.imagePublicationStatus==="REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"&&
     /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(row.source??"")&&
     /^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(row.image));
