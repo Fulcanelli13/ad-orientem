@@ -112,7 +112,12 @@ assert.doesNotMatch(angelus,/data-ao-incarnation/,"the presentation does not inv
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/if\(PRAYER_PILOT_ENABLED\)return renderPilotDiscovery/);
 assert.match(runtime,/if\(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY\)/);
-assert.match(runtime,/ANGELUS_PILOT_ENTRY=false;\s*return render\(\)/);
+assert.match(runtime,/ANGELUS_PILOT_ENTRY=false;render\(\);/,
+ "Pilot Angelus hands off to the actual Claude Horarium reader");
+assert.match(runtime,/if\(mount\(\)\)mount\(\)\.scrollTop=0;/,
+ "Entering Horarium resets the previous screen scroll synchronously");
+assert.match(runtime,/queueMicrotask\(\(\)=>\{if\(view==='angelus'&&mount\(\)\)mount\(\)\.scrollTop=0\}\);/,
+ "The delayed focus/render handoff must not scroll away from the opening clock");
 assert.match(runtime,/function angelusExactPosture\(\)/,"the real posture owner remains");
 assert.match(runtime,/installAngelusCardDeck\(/,"the real five\/four-card engine remains");
 assert.match(runtime,/if\(PRAYER_PILOT_ENABLED&&x.matches\('\[data-p435930-pilot-search\]'\)\)/);
