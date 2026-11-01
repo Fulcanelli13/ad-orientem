@@ -77,6 +77,14 @@ try{
    assert.equal(await crown.getAttribute("data-position"),"4");
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
    assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
+   assert.equal(await page.locator(base+".aoMercyLine.aoMercyPrayer .aoF07MercyRoleLabel").count(),2,
+    "m2 must show both versicle and response on the large bead");
+   assert.equal(await page.locator(base+"[data-f07-mercy-dock-count]").innerText(),"5 / 62");
+   await page.locator(base+"[data-p435930-mercy-next]").click();
+   assert.equal(await crown.getAttribute("data-position"),"5","Next must use the canonical cursor");
+   assert.equal(await page.locator(base+"[data-f07-mercy-dock-count]").innerText(),"6 / 62");
+   await page.locator(base+"[data-p435930-mercy-previous]").click();
+   assert.equal(await crown.getAttribute("data-position"),"4","Previous reverses the same cursor");
    await page.locator(base+".aoDevoCardScroll").evaluate(el=>{el.scrollTop+=200});
    await page.waitForFunction(()=>{
     const root=document.querySelector("#aoPray435930.open");
