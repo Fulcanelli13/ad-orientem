@@ -20,7 +20,8 @@
     "sourceLinksExactPageIdWave07": 2,
     "nonPDNonCC0PhotoSourcesStrictHoldWave07": 2,
     "sourceLinksExactPageIdWave08": 2,
-    "reconciledCandidateCount20261101": 131
+    "reconciledCandidateCount20261101": 131,
+    "sourceRowsPreserved20261101": 132
   },
   "slots": [
     {
@@ -623,10 +624,42 @@
           "verifiedOriginalMuseum": "San Diego Museum of Art",
           "verifiedOriginalAccession": "48.3",
           "originalSourceEvidence": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG"
+        },
+        {
+          "sourceIDs": [
+            "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_REJECTED_FOR_THIS_PRAYER_PLACEMENT",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "notForReview": true,
+          "eligibleForReview": false,
+          "eligibleForThisSlot": false,
+          "publication": false,
+          "photoCertification": "NOT_CLEARED",
+          "curatorialDisposition": "EXCLUDED_HISTORIC_SOURCE_PROVENANCE_ONLY",
+          "quarantineReason": "Oct28 rejected Rubens Saint Anthony of Padua with Christ Child for St Anthony devotion; not global artist veto",
+          "decisionAuthority": "EXPLICIT_USER_REJECTION_OR_B02_NOT_RELEVANT",
+          "originalSourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "retainedAsSourceEvidenceOnly": true
         }
       ],
       "imagePublicationAllowed": false,
-      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL"
+      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL",
+      "stats20261101": {
+        "sourceRowsPresent": 7,
+        "selectableReviewRows": 6,
+        "quarantinedOriginals": [
+          "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+        ]
+      }
     },
     {
       "slot": "COV-devotion_litany_st_joseph",
@@ -2624,7 +2657,9 @@
       "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
     ],
     "sourceLedgerUnmodified": true,
-    "productionEnabled": false
+    "productionEnabled": false,
+    "historicalSourceRowsRetained": true,
+    "excludedFromSelectableResearch": true
   },
   "scopeReconciliation20261101": {
     "rightsUnchanged": true,
