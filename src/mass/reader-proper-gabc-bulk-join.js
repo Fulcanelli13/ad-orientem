@@ -69,8 +69,17 @@ export function index1961GradualeGabc(batches){
  return freeze({schema:"ao-mass-1961-full-gabc-source-index-v1",count:1195,
   byRole:freeze(byRole),approvedDigitalScores:0});
 }
-function matchingPrefix(sourceText,scoreText){
- const a=words(sourceText),b=words(scoreText);
+function roleTokens(text,part){
+ const a=words(text);
+ // In certified Alleluia slots the source may print a double "Alleluia,
+ // alleluia." before the verse, but the GABC writes one melodic Alleluia.
+ // Compare the actual verse, never treat the repeated word as a melody ID.
+ if(part==="al")while(a[0]==="alleluia"||a[0]==="alleluia"||
+   a[0]==="v"||a[0]==="verse")a.shift();
+ return a;
+}
+function matchingPrefix(sourceText,scoreText,part){
+ const a=roleTokens(sourceText,part),b=roleTokens(scoreText,part);
  if(a.length<3||b.length<3)return 0;
  let matching=0;
  while(matching<a.length&&matching<b.length&&a[matching]===b[matching])matching++;
@@ -79,9 +88,9 @@ function matchingPrefix(sourceText,scoreText){
 function scan(sourceText,part,index,sourcePath){
  const corpus=index.byRole?.[part]??[];
  if(!corpus.length)return status("ARCHIVE_ROLE_MISSING","SOURCE_ARCHIVE_INCOMPLETE");
- const w=words(sourceText);
+ const w=roleTokens(sourceText,part);
  if(w.length<4)return status("INSUFFICIENT_SOURCE_LATIN","FOUR_SOURCE_WORDS_REQUIRED");
- const rows=corpus.map(rec=>({rec,prefix:matchingPrefix(sourceText,rec.normalizedScoreText)}))
+ const rows=corpus.map(rec=>({rec,prefix:matchingPrefix(sourceText,rec.normalizedScoreText,part)}))
   .filter(x=>x.prefix>=4)
   .sort((a,b)=>b.prefix-a.prefix||a.rec.gregobaseId-b.rec.gregobaseId);
  if(!rows.length)return status("NO_TEXT_CANDIDATE","NO_FOUR_WORD_OPENING_MATCH_WITHIN_SAME_ROLE");
