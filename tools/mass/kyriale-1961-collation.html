@@ -27,6 +27,12 @@ button:hover{background:#415263}button:disabled{opacity:.4;cursor:not-allowed}
 .checks{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:12px;margin:16px 0}
 .checks .control{min-width:0}
 #reviewNotes{min-height:82px;resize:vertical}
+#agnusNotePanel{margin:19px 0;padding:15px;border:1px solid var(--line);border-radius:12px;background:#161923}
+#agnusNotePanel[hidden]{display:none}
+.note-navigation{display:flex;gap:9px;align-items:end;flex-wrap:wrap;margin:12px 0}
+.note-navigation .control{flex:1;min-width:200px}
+#agnusGroupDescription{display:block;color:var(--sub);margin:9px 0;overflow-wrap:anywhere}
+#agnusGroupSource{display:block;margin:8px 0;color:#d9d0b4;overflow-wrap:anywhere}
 .footer-actions{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
 #exampleFragments{font-size:12px;margin:11px 0 0;padding:0;list-style:none}
 #exampleFragments li{border-bottom:1px solid var(--line);padding:6px 0;overflow-wrap:anywhere}
@@ -60,9 +66,32 @@ a{color:#c9dce9}
 </div>
 <label for="reviewNotes">Discrepancies, note positions, corrections, uncertainties</label>
 <textarea id="reviewNotes" placeholder="Identify the printed staff/system, syllable and GABC note group. Never silently alter the GABC."></textarea>
+<section id="agnusNotePanel" hidden aria-label="Agnus Dei VIII printed note-group audit">
+<div class="eyebrow">Agnus Dei VIII · original 1961 printed page 31*</div>
+<h2>Each of the 54 sung note groups</h2>
+<p class="hint">Select the syllable on the stated original staff system, then inspect its absolute pitch, neume signs, Latin underlay, and mora/episema marks against the GABC rendering. All four verdicts begin unreviewed, including previously spot-checked motifs. A completed review never publishes a score.</p>
+<div class="note-navigation">
+<button id="agnusPrev" type="button">Previous group</button>
+<div class="control"><label for="agnusGroupSelect">Sung note group and printed system</label><select id="agnusGroupSelect"></select></div>
+<button id="agnusNext" type="button">Next group</button>
+</div>
+<strong id="agnusGroupTitle">No group selected</strong>
+<small id="agnusGroupDescription"></small>
+<code id="agnusGroupSource"></code>
+<div class="checks">
+<div class="control"><label for="agnusPitch">Printed pitch</label><select id="agnusPitch"></select></div>
+<div class="control"><label for="agnusNeume">Neume shapes</label><select id="agnusNeume"></select></div>
+<div class="control"><label for="agnusUnderlay">Syllable placement</label><select id="agnusUnderlay"></select></div>
+<div class="control"><label for="agnusRhythm">Mora / episema signs</label><select id="agnusRhythm"></select></div>
+</div>
+<label for="agnusGroupComment">Exact printed note discrepancy (system, syllable, symbol)</label>
+<textarea id="agnusGroupComment" rows="2" placeholder="Record specific mismatch or uncertainty. Do not change the source transcription without evidence."></textarea>
+<div class="footer-actions"><small id="agnusGroupProgress">0/54 groups reviewed in all four categories</small><button id="agnusGroupSave" type="button">Save group verdict</button></div>
+</section>
+
 <p class="eyebrow">Pinned GABC checkpoints to inspect on the print</p><ul id="exampleFragments"></ul>
 <div class="footer-actions"><small id="progress">0 of 7 scores reviewed</small><div><button id="save" type="button">Save this page</button> <button id="export" type="button">Export review JSON</button></div></div>
-<p class="hint">Saved locally in this browser. Export to a JSON file for repository review. Public approval and publication are always false; no score is promoted automatically. Printed scans require internet; musical engraving uses the existing pinned local Exsurge.</p>
+<p class="hint">Saved locally in this browser. For Agnus VIII, the 54 individual note-group verdicts are also included in the exported JSON. Public approval and publication are always false; no score is promoted automatically. Printed scans require internet; musical engraving uses the existing pinned local Exsurge.</p>
 </section></main>
 <script type="module">
 import {offlineKyrialeResearchScore} from "../../src/mass/reader-kyriale-research-gabc.js";
@@ -71,10 +100,10 @@ const base="../../data/research/mass-music-m21-seven-print-image-parity-worklist
 const $=id=>document.getElementById(id);
 const fields=["pitch","neume","underlay","rhythm"];
 const statuses=[["UNREVIEWED","Unreviewed"],["MATCH","Matches printed page"],["DIFFERENCE","Discrepancy found"],["UNCERTAIN","Uncertain · hold"]];
-let scoreIndex=0,pageIndex=0,ledger=null,data={},token=0;
+let scoreIndex=0,pageIndex=0,noteGroupIndex=0,ledger=null,data={},token=0;
 const storageKey="ao-m22-kyriale-print-collation-local-v1";
 try{data=JSON.parse(localStorage.getItem(storageKey)||"{}")}catch{data={}}
-for(const key of fields){const s=$(key);for(const [value,label] of statuses){const op=document.createElement("option");op.value=value;op.textContent=label;s.appendChild(op)}}
+for(const id of [...fields,...fields.map(key=>"agnus"+key[0].toUpperCase()+key.slice(1))]){const select=$(id);for(const [value,label] of statuses){const option=document.createElement("option");option.value=value;option.textContent=label;select.appendChild(option)}}
 const engraver=createOfflineChantEngraver({viewport:$("engraveViewport")});
 engraver.observe();
 function score(){return ledger.scores[scoreIndex]}
@@ -82,20 +111,80 @@ function key(){return String(score().gregobaseId)+":"+score().printedPages[pageI
 function entry(){return data[key()]||{}}
 function persist(){try{localStorage.setItem(storageKey,JSON.stringify(data))}catch{}}
 function completePage(value){return fields.every(k=>value?.[k]==="MATCH")}
-function completeScore(s){return s.printedPages.every(p=>completePage(data[String(s.gregobaseId)+":"+p]))}
+function completeScore(s){
+ if(!s.printedPages.every(p=>completePage(data[String(s.gregobaseId)+":"+p])))return false;
+ if(s.gregobaseId!==2760)return true;
+ return s.noteGroupCollation?.noteGroups?.length===54 && s.noteGroupCollation.noteGroups.every(g=>
+  fields.every(k=>data["2760:31*"]?.groupReviews?.[g.ordinal]?.[k]==="MATCH"));
+}
 function updateProgress(){
  const completed=ledger.scores.filter(completeScore).length;
  $("progress").textContent=completed+" of "+ledger.scores.length+" scores fully marked matching (NOT editorially approved)";
+ if(score()?.gregobaseId===2760){
+  const reviews=data["2760:31*"]?.groupReviews||{};
+  const complete=score().noteGroupCollation.noteGroups.filter(g=>
+   fields.every(k=>["MATCH","DIFFERENCE","UNCERTAIN"].includes(reviews[g.ordinal]?.[k]))).length;
+  $("agnusGroupProgress").textContent=complete+"/54 groups assessed in all four categories (never automatically approved)";
+ }
  const values=entry(),hasDiff=fields.some(k=>values[k]==="DIFFERENCE");
  $("completion").textContent=hasDiff?"DISCREPANCY · BLOCKED":completePage(values)?"Page checked · not approved":fields.some(k=>values[k]&&values[k]!=="UNREVIEWED")?"Review in progress":"Not reviewed";
 }
 function loadInputs(){const e=entry();for(const k of fields)$(k).value=e[k]||"UNREVIEWED";$("reviewNotes").value=e.notes||"";updateProgress()}
 function save(){
+ if(score()?.gregobaseId===2760)saveNoteGroup();
  const prior=entry();
  const value={...prior,notes:$("reviewNotes").value,updatedAt:new Date().toISOString()};
  for(const k of fields)value[k]=$(k).value;
  data[key()]=value;persist();updateProgress();
 }
+// The original 1961 folio has four Agnus-only staff systems.
+ // None of the source-structure or visual motif reviews pre-approves a group.
+function noteGroups(){return score()?.noteGroupCollation?.noteGroups||[]}
+function noteGroup(){return noteGroups()[noteGroupIndex]}
+function savedGroup(){return data["2760:31*"]?.groupReviews?.[noteGroup()?.ordinal]||{}}
+function saveNoteGroup(){
+ if(score()?.gregobaseId!==2760||$("agnusNotePanel").hidden||!noteGroup())return;
+ const key="2760:31*",prior=data[key]||{},reviews=prior.groupReviews||{};
+ const value={...reviews[noteGroup().ordinal],comment:$("agnusGroupComment").value,
+  updatedAt:new Date().toISOString()};
+ for(const field of fields)value[field]=$("agnus"+field[0].toUpperCase()+field.slice(1)).value;
+ reviews[noteGroup().ordinal]=value;
+ data[key]={...prior,groupReviews:reviews};
+ persist();
+ updateProgress();
+}
+function renderNoteGroup(){
+ const g=noteGroup();
+ if(!g)return;
+ $("agnusGroupSelect").value=String(noteGroupIndex);
+ $("agnusPrev").disabled=noteGroupIndex===0;
+ $("agnusNext").disabled=noteGroupIndex===noteGroups().length-1;
+ $("agnusGroupTitle").textContent="Invocation "+g.invocation+" · syllable "+g.syllable+
+  " · original staff system "+g.agnusPrintedSystem;
+ $("agnusGroupDescription").textContent="Solesmes p.31* · group "+g.invocationNoteGroup+
+  " of 18 in this invocation · "+g.ordinal+"/54 overall";
+ $("agnusGroupSource").textContent="Source GABC: "+g.syllable+"("+g.gabcOriginalNotes+")";
+ const value=savedGroup();
+ for(const field of fields)$("agnus"+field[0].toUpperCase()+field.slice(1)).value=value[field]||"UNREVIEWED";
+ $("agnusGroupComment").value=value.comment||"";
+ updateProgress();
+}
+function renderNoteGroupPanel(){
+ const panel=$("agnusNotePanel"),isAgnus=score()?.gregobaseId===2760;
+ panel.hidden=!isAgnus;
+ if(!isAgnus)return;
+ const groups=noteGroups();
+ if(groups.length!==54)throw new Error("Agnus source group mapping not reviewed");
+ const select=$("agnusGroupSelect");select.replaceChildren();
+ groups.forEach((g,i)=>{
+  const option=document.createElement("option");
+  option.value=String(i);option.textContent=g.ordinal+". "+g.syllable+" ("+
+   g.gabcOriginalNotes+") · inv "+g.invocation+" / printed staff "+g.agnusPrintedSystem;
+  select.appendChild(option);
+ });
+ noteGroupIndex=0;renderNoteGroup();
+}
+
 function renderPage(){
  const s=score(),p=s.printedPages[pageIndex],url=s.printedPageImageUrls[pageIndex];
  $("pageSelect").value=String(pageIndex);
@@ -114,6 +203,7 @@ function renderPage(){
  $("exampleFragments").replaceChildren();
  for(const a of s.gabcNoteGroupAnchors){const li=document.createElement("li");const c=document.createElement("code");c.textContent=a;li.appendChild(c);$("exampleFragments").appendChild(li)}
  loadInputs();
+ renderNoteGroupPanel();
 }
 async function renderScore(){
  const s=score(),t=++token;
@@ -142,6 +232,22 @@ $("pageSelect").addEventListener("change",()=>{save();pageIndex=Number($("pageSe
 $("previous").addEventListener("click",()=>{if(pageIndex>0){save();pageIndex--;renderPage()}});
 $("next").addEventListener("click",()=>{if(pageIndex+1<score().printedPages.length){save();pageIndex++;renderPage()}});
 $("zoomRange").addEventListener("input",()=>{$("printImage").style.width=$("zoomRange").value+"%";$("zoomLabel").textContent=$("zoomRange").value+"%"});
+
+$("agnusGroupSelect").addEventListener("change",()=>{
+ saveNoteGroup();noteGroupIndex=Number($("agnusGroupSelect").value);renderNoteGroup();
+});
+$("agnusPrev").addEventListener("click",()=>{
+ if(noteGroupIndex>0){saveNoteGroup();noteGroupIndex--;renderNoteGroup()}
+});
+$("agnusNext").addEventListener("click",()=>{
+ if(noteGroupIndex+1<noteGroups().length){saveNoteGroup();noteGroupIndex++;renderNoteGroup()}
+});
+for(const field of fields){
+ $("agnus"+field[0].toUpperCase()+field.slice(1)).addEventListener("change",saveNoteGroup);
+}
+$("agnusGroupComment").addEventListener("change",saveNoteGroup);
+$("agnusGroupSave").addEventListener("click",saveNoteGroup);
+
 $("save").addEventListener("click",()=>{save();$("completion").textContent+=" · saved"});
 $("export").addEventListener("click",()=>{
  save();
