@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Archive up to three of the exact, source-matched Tiepolo San Polo originals.
+"""Archive all fourteen exact, source-matched Tiepolo San Polo originals.
 
 Uses the existing Prayer Commons original SHA verification and licence gate.
 Files remain in research staging; no App/Prayer release manifest changes.
@@ -17,6 +17,6 @@ module.LEDGER=root/"data/prayer/artwork-editorial-20261101/tiepolo-san-polo-stat
 module.REPORT=root/"data/prayer/artwork-editorial-20261101/tiepolo-san-polo-stations-originals-acquisition-batch01.v1.json"
 module.STAGE=root/"assets/staged/prayer-stations-san-polo-originals-20261101"
 module.MAX_FILE=16*1024*1024
-module.MAX_BATCH=42*1024*1024
-sys.argv=[sys.argv[0],"--download","--limit","3"]
+module.MAX_BATCH=180*1024*1024
+sys.argv=[sys.argv[0],"--download","--limit","14"]
 raise SystemExit(module.main())
