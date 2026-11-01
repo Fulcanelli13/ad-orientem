@@ -1,0 +1,33 @@
+{
+  "schema": "AO_PHOTO_FINDER_B8_EL_COBRE_VISUAL_HOLD_CORRECTION_V1",
+  "date": "2026-11-01",
+  "historical_publication_pr": 2220,
+  "historical_publication_commit": "682b4facefacae4f17765fca5ed18dda87c5ca5f",
+  "hold_evidence_pr": 2230,
+  "source_report": "data/geography/research/photo-finder-20261030/releases/b8-verification-report.json",
+  "source_publication_manifest": "data/geography/research/photo-finder-20261030/releases/b8-main-promotion-20261101.v1.json",
+  "visual_hold": {
+    "place_id": "place:CU:el-cobre-caridad-basilica",
+    "asset_path": "assets/approved/place-media/pf-1c53ceb1de9078a981f323.webp",
+    "source_sha1": "8b1bb3dd61b0ae12eab1e4ec2f55dd8645ffb114",
+    "derivative_sha256": "1d4f9e59dd99f78040c4d89bcb49db576dc3a2fdd24aeceeffa1a78352671780",
+    "reason": "Source-verified selected exterior bears a conspicuous photographer copyright mark along the lower frame; exclude from app publication without cropping, retouching or reversing editorial selection.",
+    "public_registry_status": "WITHHELD_VISUAL_REVIEW",
+    "selection_status": "PRESERVED_NOT_REJECTED"
+  },
+  "remaining_B8_approved": 15,
+  "approved_place_covers_before": 269,
+  "approved_place_covers_after": 268,
+  "approved_gallery_unchanged": 35,
+  "canonical_places_unchanged": 530,
+  "policy": {
+    "preserve_all_other_approved_covers": true,
+    "preserve_frozen_B8_source_report": true,
+    "preserve_editorial_choices": true,
+    "no_new_image_downloads": true,
+    "no_cropping_or_watermark_removal": true
+  },
+  "published_B9_and_B10_B15_preserved": 101,
+  "registry_version_after": "1.6.6",
+  "notes": "Visual publication hold correction on top of merged B9 and B10–B15 releases. Historical approval and frozen source manifests are retained as records of prior release, not retroactively edited. Only this public asset is removed."
+}
