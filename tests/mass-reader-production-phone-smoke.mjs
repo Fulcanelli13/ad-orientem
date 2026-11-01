@@ -76,24 +76,28 @@ try{
       await h7Entry.click();
       const h7Door=page.locator(".aoH7DoorView:not([hidden])");
       await h7Door.waitFor({state:"visible",timeout:18000});
-      const massNav=h7Door.locator("[data-home-mass-entry]");
+      // H7's native Door no longer uses the retired full-Mass folio.
+      // Select form/language/mode through the *existing* canonical Change sheet,
+      // then Begin enters R17 directly. Keep the live public entry unmocked.
+      const change=h7Door.locator("[data-home-h4-change]").first();
+      await change.waitFor({state:"visible",timeout:35000});
+      await change.click();
+      const choices=page.locator(".aoH4ChoiceDialog[open]");
+      await choices.waitFor({state:"visible",timeout:18000});
+      await choices.locator('[data-h4-option="form"]').selectOption(option.form);
+      await choices.locator('[data-h4-option="readerMode"]').selectOption("LIVE");
+      await choices.locator('[data-h4-option="readerLanguage"]').selectOption(option.language);
+      await choices.locator('[data-h4-option="beforeMass"]').selectOption("none");
+      assert.equal(await choices.locator('[data-h4-option="form"]').inputValue(),option.form);
+      await choices.locator("[data-h4-sheet-close]").last().click();
+      await choices.waitFor({state:"detached",timeout:18000});
+      const massNav=h7Door.locator("[data-home-h4-begin]");
       await massNav.waitFor({state:"visible",timeout:35000});
+      await page.waitForFunction(()=>{
+        const button=document.querySelector(".aoH7DoorView:not([hidden]) [data-home-h4-begin]");
+        return Boolean(button&&!button.disabled);
+      },null,{timeout:40000});
       await massNav.click();
-      await page.waitForSelector("[data-ao-start-live]",{state:"visible",timeout:45000});
-      const ceremony=page.locator('[data-folio-goto="ceremony"]');
-      if(await ceremony.isVisible())await ceremony.click();
-      const form=page.locator('[data-full-mass-form][value="'+option.form+'"]');
-      await form.waitFor({state:"attached",timeout:18000});
-      await form.check();
-      const reader=page.locator('[data-folio-goto="reader"]');
-      if(await reader.isVisible())await reader.click();
-      await page.locator('[data-full-mass-reader-mode][value="LIVE"]').check();
-      const language=page.locator("[data-folio-language]");
-      if(await language.count())await language.selectOption(option.language);
-      const none=page.locator('[data-folio-before][value="none"]');
-      if(await none.count())await none.check();
-      const start=page.locator("[data-ao-start-live]");
-      await start.click();
       await page.waitForFunction(()=>Boolean(
         window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId &&
         document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")),
