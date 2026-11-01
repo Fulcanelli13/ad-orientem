@@ -50,6 +50,13 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
     ?(ordoFacts[key]?say("Said","Dit"):say("Not said","Non dit")):"—";
   const prefaceText=verifiedOrdo&&ordoFacts.preface?.status==="MATCH"&&ordoFacts.preface.heading
     ?ordoFacts.preface.heading:"—";
+  // Mass door: print the certified privileged Sunday commemoration for this
+  // exact All Saints celebration; no inferred or unofficial Sunday label.
+  const commemorationMarkup=verifiedOrdo&&vm.dateIso==="2026-11-01"&&
+    ordoFacts.sourcePath==="Sancti/11-01"&&
+    Array.isArray(ordoFacts.commemorations)&&ordoFacts.commemorations.length
+      ?'<p class="why" data-home-mass-commemoration>'+esc(say("Commemoration","Commémoraison"))+
+        ' · '+esc(ordoFacts.commemorations.join("; "))+'</p>':"";
   const introitExcerpt=verifiedOrdo?ordoFacts.introitIncipit:null;
   const week=vm.week.map(d=>'<button type="button" class="dayCell'+(d.selected?' selected':'')+(d.today?' today td':'')+(new Date(d.date+'T12:00:00').getDay()===0?' su':'')+'" data-date="'+esc(d.date)+'" aria-pressed="'+d.selected+'"'+(d.selected?' aria-current="date"':'')+'><span class="w">'+esc(d.day)+'</span><b class="n">'+esc(d.number)+'</b><i class="aoWeekColour" data-home-week-colour="'+esc(d.date)+'" aria-hidden="true"></i></button>').join("");
   // Keep actual formulary identity ahead of the Calendar's attested weekday context.
@@ -124,7 +131,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<button type="button" class="ib back" data-home-h7-back aria-label="'+esc(say("Back","Retour"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></div>'+
   '<div class="body door"><div class="dhead"><span class="rb">'+esc([vm.weekday,vm.rank,vm.colour].filter(Boolean).join(" · "))+'</span><span class="cr">✠</span>'+
   '<h2>'+esc(vm.observedTitle)+'</h2><p class="ver">'+esc(vm.dateTitle)+'</p>'+
-  '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span>'+marksMarkup+'</div></div><div class="dr"></div>'+
+  '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span>'+marksMarkup+'</div>'+commemorationMarkup+'</div><div class="dr"></div>'+
   (subtitle?'<p class="why">'+esc(subtitle)+'</p>':"")+
   '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="INTROIT"><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
