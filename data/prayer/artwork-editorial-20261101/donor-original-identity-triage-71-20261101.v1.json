@@ -1,0 +1,2930 @@
+{
+  "schema": "AO_PRAYER_ART_DONOR_PROVENANCE_71_V1",
+  "date": "2026-11-01",
+  "sourceMaster": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+  "sourceApprovalEvidence": "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+  "purpose": "Forensic original-work identity trace of 71 inherited/reused placements after restoring explicit Therese cover lock. Source donor references are not themselves exact-target approvals.",
+  "interpretation": "Different current donor artwork can be caused by a later donor replacement or a mistaken reference. A mismatch is not evidence that the selected picture was rejected; never silently change it.",
+  "count": 71,
+  "classCounts": {
+    "CURRENT_DONOR_EXACT_ARTWORK_ID": 20,
+    "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL": 23,
+    "CURRENT_DONOR_TITLE_ARTIST_ONLY": 2,
+    "NON_SLOT_HISTORICAL_AUTHORITY_LABEL": 17,
+    "LEGACY_MODULE_NOT_CURRENT_SLOT": 8,
+    "CURRENT_DONOR_SOURCE_URL_MATCH": 1
+  },
+  "hardRule": "No auto-promotion of mismatched donor, user-approved contextual reuse retained, all original paints frozen",
+  "positions": [
+    {
+      "slot": "COV-foundations_morning_offering",
+      "family": "D1 Daily Prayer",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-novena.sacred_heart",
+          "sourceArtworkId": "PRAYER::heart-jesus--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Juan Patricio Morlete Ruiz",
+              "title": "The Heart of Jesus",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::commons-morlete-sacred-heart-1759",
+              "PRAYER::heart-jesus--primary"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-pray.angelus",
+      "family": "D1 Daily Prayer",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.angelus-05",
+          "sourceArtworkId": "CANONICAL::met-438724",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+              "title": "The Annunciation",
+              "sourcePage": "https://clevelandart.org/art/1942.635"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-122338"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.angelus-01",
+      "family": "D1 Daily Prayer",
+      "label": "Angelus at dawn",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.angelus-05",
+          "sourceArtworkId": "CANONICAL::met-438724",
+          "sourceRelationship": "THEMATIC_TIME",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+              "title": "The Annunciation",
+              "sourcePage": "https://clevelandart.org/art/1942.635"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-122338"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.angelus-02",
+      "family": "D1 Daily Prayer",
+      "label": "Angelus at noon",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.angelus-05",
+          "sourceArtworkId": "CANONICAL::met-438724",
+          "sourceRelationship": "THEMATIC_TIME",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+              "title": "The Annunciation",
+              "sourcePage": "https://clevelandart.org/art/1942.635"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-122338"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.angelus-04",
+      "family": "D1 Daily Prayer",
+      "label": "Angelus on 25 March",
+      "selectedOriginal": {
+        "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+        "title": "The Annunciation",
+        "sourcePage": "https://clevelandart.org/art/1942.635",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.angelus-05",
+          "sourceArtworkId": "CANONICAL::cma-122338",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+              "title": "The Annunciation",
+              "sourcePage": "https://clevelandart.org/art/1942.635"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-122338"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-daily.personal_rule",
+      "family": "D1 Daily Prayer",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Giovanni Battista Salvi da Sassoferrato",
+        "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-litany_loreto_1962-01",
+          "sourceArtworkId": "REVIEW::commons:87865020",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+              "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+              "sourcePage": "https://clevelandart.org/art/1982.36"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-150955"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-litany_loreto_1962-01"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-foundations_hail_mary",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.angelus-05",
+          "sourceArtworkId": "CANONICAL::met-438724",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+              "title": "The Annunciation",
+              "sourcePage": "https://clevelandart.org/art/1942.635"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-122338"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-sacrament_act_of_contrition",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Georges de La Tour",
+        "title": "The Penitent Magdalen",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/436839",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.confession-02",
+          "sourceArtworkId": "CANONICAL::met-436839",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Georges de La Tour",
+              "title": "The Penitent Magdalen",
+              "sourcePage": "https://www.metmuseum.org/art/collection/search/436839"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::met-436839"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "that's ideal for recollection",
+            "semanticTargets": [
+              "recollection"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-foundations_act_of_faith",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Caravaggio",
+        "title": "The Incredulity of Saint Thomas",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.five_wounds-05",
+          "sourceArtworkId": "CANONICAL::W07-014",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Caravaggio",
+              "title": "The Incredulity of Saint Thomas",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::W07-014"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "this is christ pierced on his side. so its fit anywhere christ being pierced mentioned; this fits in seven wounds and in five wounds of chirst",
+            "semanticTargets": [
+              "christ_pierced_side",
+              "seven_wounds",
+              "five_wounds"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-foundations_act_of_love",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-novena.sacred_heart",
+          "sourceArtworkId": "PRAYER::heart-jesus--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Juan Patricio Morlete Ruiz",
+              "title": "The Heart of Jesus",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::commons-morlete-sacred-heart-1759",
+              "PRAYER::heart-jesus--primary"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-foundations_prayer_of_adoration",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Caravaggio",
+        "title": "The Incredulity of Saint Thomas",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.five_wounds-05",
+          "sourceArtworkId": "CANONICAL::W07-014",
+          "sourceRelationship": "EXACT_GOSPEL_UTTERANCE_JOHN_20_28",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Caravaggio",
+              "title": "The Incredulity of Saint Thomas",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The%20Incredulity%20of%20Saint%20Thomas.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::W07-014"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "this is christ pierced on his side. so its fit anywhere christ being pierced mentioned; this fits in seven wounds and in five wounds of chirst",
+            "semanticTargets": [
+              "christ_pierced_side",
+              "seven_wounds",
+              "five_wounds"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-mass_confiteor",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+        "title": "The return of the prodigal son",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_-_The_return_of_the_prodigal_son.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.confession-04",
+          "sourceArtworkId": "REVIEW::commons:161200952",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Erasmus Quellinus II / Jan Erasmus Quellinus",
+              "title": "The return of the prodigal son",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_-_The_return_of_the_prodigal_son.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:161200952"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-pray.confession-04"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.rosary-01",
+      "family": "D3 Rosary & Chaplets",
+      "label": "Opening prayers",
+      "selectedOriginal": {
+        "artist": "Lorenzo Lotto",
+        "title": "Madonna del Rosario",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_TITLE_ARTIST_ONLY",
+      "traces": [
+        {
+          "referenceSlot": "COV-pray.rosary",
+          "sourceArtworkId": null,
+          "sourceRelationship": "INHERIT_ROSARY_FINAL_COVER_NO_NEW_IMAGE",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Lorenzo Lotto",
+              "title": "Madonna del Rosario",
+              "sourcePage": null
+            },
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_TITLE_ARTIST_ONLY",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.rosary-10",
+      "family": "D3 Rosary & Chaplets",
+      "label": "Carrying of the Cross",
+      "selectedOriginal": {
+        "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+        "title": "The Way to Calvary",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.precious_blood-05",
+          "sourceArtworkId": "REVIEW::commons:22178536",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Titian",
+              "title": "Christ Carrying the Cross",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::ART-itian-hrist-arrying-the-ross"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-pray.precious_blood-05",
+              "STG-pray.stations-02"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-novena.christmas",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Bernardo Cavallino",
+        "title": "Adoration of the Shepherds",
+        "sourcePage": "https://clevelandart.org/art/1968.100",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.angelus-07",
+          "sourceArtworkId": "CANONICAL::cma-143644",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Bernardo Cavallino",
+              "title": "Adoration of the Shepherds",
+              "sourcePage": "https://clevelandart.org/art/1968.100"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-143644"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-novena.seven_sorrows",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Master of the Female Half-Lengths (attributed)",
+        "title": "Virgin of the Seven Sorrows",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "FINAL_USER_APPROVAL_2026_10_26",
+          "sourceArtworkId": null,
+          "sourceRelationship": "SAME_DEVOTION_COVER",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-novena.holy_face_1887",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Eustache Le Sueur",
+        "title": "Eustache Le Sueur Ecce Homo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_Ecce_Homo.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-09",
+          "sourceArtworkId": "REVIEW::commons:199348815",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Dirck van Baburen",
+              "title": "Christ Crowned with Thorns",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Couronnement_d%27%C3%A9pines.JPG"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:20637285"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-pray.rosary-09",
+              "STG-pray.precious_blood-04"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-01",
+      "family": "D4 Novenas & Journeys",
+      "label": "Emptying of the spirit of the world",
+      "selectedOriginal": {
+        "artist": "Georges de La Tour",
+        "title": "The Penitent Magdalen",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/436839",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.confession-02",
+          "sourceArtworkId": "CANONICAL::met-436839",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Georges de La Tour",
+              "title": "The Penitent Magdalen",
+              "sourcePage": "https://www.metmuseum.org/art/collection/search/436839"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::met-436839"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "that's ideal for recollection",
+            "semanticTargets": [
+              "recollection"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-02",
+      "family": "D4 Novenas & Journeys",
+      "label": "Knowledge of self",
+      "selectedOriginal": {
+        "artist": "Georges de La Tour",
+        "title": "The Penitent Magdalen",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/436839",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.confession-02",
+          "sourceArtworkId": "CANONICAL::met-436839",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Georges de La Tour",
+              "title": "The Penitent Magdalen",
+              "sourcePage": "https://www.metmuseum.org/art/collection/search/436839"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::met-436839"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "that's ideal for recollection",
+            "semanticTargets": [
+              "recollection"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-programme.first_friday",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-novena.sacred_heart",
+          "sourceArtworkId": "PRAYER::heart-jesus--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Juan Patricio Morlete Ruiz",
+              "title": "The Heart of Jesus",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::commons-morlete-sacred-heart-1759",
+              "PRAYER::heart-jesus--primary"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-adoration_anima_christi",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Anthony van Dyck",
+        "title": "The Lance Thrust",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-pray.precious_blood",
+          "sourceArtworkId": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Anthony van Dyck",
+              "title": "The Lance Thrust",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::ART-nthony-van-yck-he-ance-hrust"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "lance thrust is actually christ pierced on his side. so its fit anywhere there is precious blood and christ being pierced mentiond; this fits in seven wounds and in five wounds of chirst; in the crucitixion in the rosary; and anywhere where there is crucifixion;",
+            "semanticTargets": [
+              "christ_pierced_side",
+              "precious_blood",
+              "seven_wounds",
+              "five_wounds",
+              "rosary_crucifixion",
+              "other_crucifixion_contexts"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-adoration_spiritual_communion",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "adoration",
+          "sourceArtworkId": "adoration--primary",
+          "sourceRelationship": "EUCHARISTIC_CONTEMPLATION_NOT_LITERAL_COMMUNION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Adoration",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Jean-Auguste-Dominique Ingres",
+              "title": "The Virgin Adoring the Host",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-benediction_o_salutaris",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Carlo Crivelli",
+        "title": "Saint Thomas Aquinas",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.litany_saints-05",
+          "sourceArtworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+          "sourceRelationship": "AUTHOR_PORTRAIT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Carlo Crivelli",
+              "title": "Saint Thomas Aquinas",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-benediction_tantum_ergo",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Carlo Crivelli",
+        "title": "Saint Thomas Aquinas",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.litany_saints-05",
+          "sourceArtworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+          "sourceRelationship": "AUTHOR_PORTRAIT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Carlo Crivelli",
+              "title": "Saint Thomas Aquinas",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-adoration_litany_blessed_sacrament",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "adoration",
+          "sourceArtworkId": "adoration--primary",
+          "sourceRelationship": "SAME_BLESSED_SACRAMENT_SUBJECT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Adoration",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Jean-Auguste-Dominique Ingres",
+              "title": "The Virgin Adoring the Host",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Hubert and Jan van Eyck",
+        "title": "Adoration of the Mystic Lamb",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "saints-litany",
+          "sourceArtworkId": "saints--vaneyck",
+          "sourceRelationship": "HEAVENLY_ADORATION_NOT_EXACT_VERSE",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Litany of the Saints",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Hubert and Jan van Eyck",
+              "title": "Adoration of the Mystic Lamb",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-benediction_adoremus_ps116",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Hubert and Jan van Eyck",
+        "title": "Adoration of the Mystic Lamb",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "saints-litany",
+          "sourceArtworkId": "saints--vaneyck",
+          "sourceRelationship": "ADORATION_NOT_LITERAL_PSALM_116",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Litany of the Saints",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Hubert and Jan van Eyck",
+              "title": "Adoration of the Mystic Lamb",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-pray.adoration.night",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+        "title": "The Holy Family",
+        "sourcePage": "https://clevelandart.org/art/1998.10",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.adoration.night-01",
+          "sourceArtworkId": "CANONICAL::cma-160143",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Battista Dossi (Italian, c. 1490–1548)",
+              "title": "Holy Family with a Shepherd",
+              "sourcePage": "https://clevelandart.org/art/1949.185"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-126768"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-02",
+      "family": "D5 Holy Eucharist",
+      "label": "Unite with Christ",
+      "selectedOriginal": {
+        "artist": "Nicolas Poussin",
+        "title": "The Agony in the Garden",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/442488",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "HERO-06",
+          "sourceArtworkId": "CANONICAL::met-442488",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "David Teniers the Elder",
+              "title": "Agony in the Garden — Antwerp Rosary cycle",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "could fit in five wounds",
+            "semanticTargets": [
+              "five_wounds_possible"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-05",
+      "family": "D5 Holy Eucharist",
+      "label": "Spiritual Communion",
+      "selectedOriginal": {
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "adoration",
+          "sourceArtworkId": "adoration--primary",
+          "sourceRelationship": "EUCHARISTIC_CONTEMPLATION_NOT_LITERAL_SPIRITUAL_COMMUNION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Adoration",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Jean-Auguste-Dominique Ingres",
+              "title": "The Virgin Adoring the Host",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.adoration.night-06",
+      "family": "D5 Holy Eucharist",
+      "label": "Entrust the night",
+      "selectedOriginal": {
+        "artist": "Bernardo Strozzi",
+        "title": "The Guardian Angel",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "DOOR-D8",
+          "sourceArtworkId": "PRAYER::angel--strozzi",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Marcantonio Franceschini",
+              "title": "The Guardian Angel",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg"
+            },
+            "currentOriginalIDs": [
+              "PRAYER::angel--franceschini"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "family": "D5 Holy Eucharist",
+      "label": "In stillness (exposition)",
+      "selectedOriginal": {
+        "artist": "Jan and Hubert van Eyck",
+        "title": "The Adoration of the Mystic Lamb",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_TITLE_ARTIST_ONLY",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.benediction-03",
+          "sourceArtworkId": null,
+          "sourceRelationship": "HEAVENLY_ADORATION_NOT_LITERAL_EXPOSITION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Jan and Hubert van Eyck",
+              "title": "The Adoration of the Mystic Lamb",
+              "sourcePage": null
+            },
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_TITLE_ARTIST_ONLY",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-pray.adoration.four_ends",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Gerard Seghers",
+        "title": "The Nativity or the Adoration of the Angels",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "HERO-02",
+          "sourceArtworkId": "REVIEW::commons:93153411",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Gerard Seghers",
+              "title": "The Nativity or the Adoration of the Angels",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:93153411"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-pray.rosary-04",
+              "STG-novena.christmas-01",
+              "STG-pray.st_joseph_seven_sorrows-02"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-01",
+      "family": "D5 Holy Eucharist",
+      "label": "Adoration",
+      "selectedOriginal": {
+        "artist": "Gerard Seghers",
+        "title": "The Nativity or the Adoration of the Angels",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "HERO-02",
+          "sourceArtworkId": "REVIEW::commons:93153411",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Gerard Seghers",
+              "title": "The Nativity or the Adoration of the Angels",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:93153411"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-pray.rosary-04",
+              "STG-novena.christmas-01",
+              "STG-pray.st_joseph_seven_sorrows-02"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-03",
+      "family": "D5 Holy Eucharist",
+      "label": "Reparation",
+      "selectedOriginal": {
+        "artist": "Sodoma (Giovanni Antonio Bazzi)",
+        "title": "Christ Presented to the People (Ecce Homo)",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "HERO-07",
+          "sourceArtworkId": "REVIEW::met:437978",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Sodoma (Giovanni Antonio Bazzi)",
+              "title": "Christ Presented to the People (Ecce Homo)",
+              "sourcePage": "https://www.metmuseum.org/art/collection/search/437978"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::met:437978"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.benediction-01",
+      "family": "D5 Holy Eucharist",
+      "label": "Exposition · O Salutaris",
+      "selectedOriginal": {
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "benediction",
+          "sourceArtworkId": "adoration--primary",
+          "sourceRelationship": "EXISTING_APPROVAL_SAME_DEVOTION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Benediction",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Jean-Auguste-Dominique Ingres",
+              "title": "The Virgin Adoring the Host",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.benediction-02",
+      "family": "D5 Holy Eucharist",
+      "label": "Tantum Ergo · incensation",
+      "selectedOriginal": {
+        "artist": "Carlo Crivelli",
+        "title": "Saint Thomas Aquinas",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_SOURCE_URL_MATCH",
+      "traces": [
+        {
+          "referenceSlot": "COV-benediction_tantum_ergo",
+          "sourceArtworkId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+          "sourceRelationship": "APPROVED_AUTHOR_PORTRAIT_NOT_DEPICITON_OF_INCENSATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Carlo Crivelli",
+              "title": "Saint Thomas Aquinas",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg"
+            },
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_SOURCE_URL_MATCH",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.benediction-03",
+      "family": "D5 Holy Eucharist",
+      "label": "The blessing",
+      "selectedOriginal": {
+        "artist": "Jan and Hubert van Eyck",
+        "title": "The Adoration of the Mystic Lamb",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "PR_2128_USER_SELECTED",
+          "sourceArtworkId": null,
+          "sourceRelationship": "THEMATIC_HEAVENLY_ADORATION_NOT_LITERAL_BLESSING",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-prayer.communion-02",
+      "family": "D5 Holy Eucharist",
+      "label": "After Communion",
+      "selectedOriginal": {
+        "artist": "Sebastiano Ricci",
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "sourcePage": "https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "communion",
+          "sourceArtworkId": "w4-ricci",
+          "sourceRelationship": "COMMUNION_CONTEXT_NOT_AFTER_COMMUNION_SCENE",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Traditional Communion Prayers",
+            "optionFound": false,
+            "originalOption": null,
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-sacred_heart_short_prayer",
+      "family": "D6 Our Lord",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-novena.sacred_heart",
+          "sourceArtworkId": "PRAYER::heart-jesus--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Juan Patricio Morlete Ruiz",
+              "title": "The Heart of Jesus",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::commons-morlete-sacred-heart-1759",
+              "PRAYER::heart-jesus--primary"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-sacred_heart_aspiration_trust",
+      "family": "D6 Our Lord",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-novena.sacred_heart",
+          "sourceArtworkId": "PRAYER::heart-jesus--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Juan Patricio Morlete Ruiz",
+              "title": "The Heart of Jesus",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::commons-morlete-sacred-heart-1759",
+              "PRAYER::heart-jesus--primary"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-pray.stations",
+      "family": "D6 Our Lord",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-01",
+      "family": "D6 Our Lord",
+      "label": "Jesus is condemned to death",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 1, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-02",
+      "family": "D6 Our Lord",
+      "label": "Jesus takes up His Cross",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 2, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-03",
+      "family": "D6 Our Lord",
+      "label": "Jesus falls the first time",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 3, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-04",
+      "family": "D6 Our Lord",
+      "label": "Jesus meets His Mother",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 4, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-05",
+      "family": "D6 Our Lord",
+      "label": "Simon of Cyrene helps Jesus",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 5, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-06",
+      "family": "D6 Our Lord",
+      "label": "Veronica wipes the face of Jesus",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 6, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-07",
+      "family": "D6 Our Lord",
+      "label": "Jesus falls the second time",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 7, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-08",
+      "family": "D6 Our Lord",
+      "label": "Jesus consoles the women of Jerusalem",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 8, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-09",
+      "family": "D6 Our Lord",
+      "label": "Jesus falls the third time",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 9, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-10",
+      "family": "D6 Our Lord",
+      "label": "Jesus is stripped of His garments",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 10, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-11",
+      "family": "D6 Our Lord",
+      "label": "Jesus is nailed to the Cross",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 11, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "D6 Our Lord",
+      "label": "Jesus dies on the Cross",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 12, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "D6 Our Lord",
+      "label": "Jesus is taken down from the Cross",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 13, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.stations-14",
+      "family": "D6 Our Lord",
+      "label": "Jesus is laid in the tomb",
+      "selectedOriginal": {
+        "artist": "Giandomenico Tiepolo",
+        "title": "Via Crucis 14, Giandomenico Tiepolo (San Polo original oils)",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "USER_SCOPE_AUTHORIZATION_2026_10_31",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_NUMBERED_STATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "family": "D6 Our Lord",
+      "label": "Cover",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "EXACT_EVENT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "family": "D6 Our Lord",
+      "label": "'Father, forgive them'",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "EVENT_NOT_WORDS",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.seven_words-02",
+      "family": "D6 Our Lord",
+      "label": "'This day thou shalt be with me in Paradise'",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "EVENT_NOT_WORDS",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "family": "D6 Our Lord",
+      "label": "'My God, why hast Thou forsaken me?'",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "EVENT_NOT_WORDS",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.seven_words-05",
+      "family": "D6 Our Lord",
+      "label": "'I thirst'",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "EVENT_NOT_WORDS",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.seven_words-06",
+      "family": "D6 Our Lord",
+      "label": "'It is consummated'",
+      "selectedOriginal": {
+        "artist": "Sodoma (Giovanni Antonio Bazzi)",
+        "title": "The Crucifixion",
+        "sourcePage": null,
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": null,
+          "sourceRelationship": "CONTEXT_CRUCIFIXION_NOT_ACTUAL_SPOKEN_WORDS",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "family": "D6 Our Lord",
+      "label": "Tenebrae of Good Friday",
+      "selectedOriginal": {
+        "artist": "Sodoma (Italian, 1477–1549)",
+        "title": "The Crucifixion",
+        "sourcePage": "https://clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-11",
+          "sourceArtworkId": "CANONICAL::cma-97147",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Hans Jordaens III",
+              "title": "Crucifixion",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::commons:115166028"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-marian_memorare",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "William-Adolphe Bouguereau",
+        "title": "The Virgin of Consolation",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-litany_loreto_1962-01",
+          "sourceArtworkId": "REVIEW::commons:18589500",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+              "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+              "sourcePage": "https://clevelandart.org/art/1982.36"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-150955"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-litany_loreto_1962-01"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-weekday_magnificat",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Visitation (1643–48)",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+      "traces": [
+        {
+          "referenceSlot": "STG-pray.rosary-03_PRIOR_SCENE_APPROVAL",
+          "sourceArtworkId": null,
+          "sourceRelationship": "EXACT_BIBLICAL_MOMENT_MAGNIFICAT",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "NON_SLOT_HISTORICAL_AUTHORITY_LABEL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-sub_tuum",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "William-Adolphe Bouguereau",
+        "title": "The Virgin of Consolation",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-litany_loreto_1962-01",
+          "sourceArtworkId": "REVIEW::commons:18589500",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+              "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+              "sourcePage": "https://clevelandart.org/art/1982.36"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-150955"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": null,
+          "independentB06Record": {
+            "status": "ACCEPTED_AS_SHOWN_IN_UNIFIED_REVIEW",
+            "sourceSlotProposals": [
+              "STG-litany_loreto_1962-01"
+            ]
+          },
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-devotion_memorare_st_joseph",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-novena.christmas-01",
+          "sourceArtworkId": "PRAYER::joseph--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Bernardo Cavallino",
+              "title": "Adoration of the Shepherds",
+              "sourcePage": "https://clevelandart.org/art/1968.100"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-143644"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "also fits for prayer for good death",
+            "semanticTargets": [
+              "prayer_for_good_death"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-devotion_litany_st_joseph",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-novena.christmas-01",
+          "sourceArtworkId": "PRAYER::joseph--primary",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Bernardo Cavallino",
+              "title": "Adoration of the Shepherds",
+              "sourcePage": "https://clevelandart.org/art/1968.100"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::cma-143644"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": "also fits for prayer for good death",
+            "semanticTargets": [
+              "prayer_for_good_death"
+            ]
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-devotion_ad_te_beate_ioseph",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Gerard David",
+        "title": "The Rest on the Flight into Egypt",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/436101",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+      "traces": [
+        {
+          "referenceSlot": "STG-prayer.seven_sorrows_chaplet-02",
+          "sourceArtworkId": "REVIEW::met:436101",
+          "sourceRelationship": "THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Luca Giordano",
+              "title": "The Flight into Egypt",
+              "sourcePage": "https://www.metmuseum.org/art/collection/search/436503"
+            },
+            "currentOriginalIDs": [
+              "REVIEW::met:436503"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_DIFFERENT_SELECTED_ORIGINAL",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-03",
+      "family": "D8 Saints & Angels",
+      "label": "Apostles and evangelists",
+      "selectedOriginal": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437607",
+        "originalArtworkIds": []
+      },
+      "traceClass": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+      "traces": [
+        {
+          "referenceSlot": "saints-litany",
+          "sourceArtworkId": "saints--saraceni",
+          "sourceRelationship": "HEAVENLY_ASSEMBLY_NOT_INDIVIDUAL_APOSTLE_IDENTIFICATION",
+          "donorSnapshot": {
+            "existsInCurrentMaster": false,
+            "currentSelectedOriginal": null,
+            "currentOriginalIDs": []
+          },
+          "legacySource": {
+            "module": "Litany of the Saints",
+            "optionFound": true,
+            "originalOption": {
+              "artist": "Carlo Saraceni",
+              "title": "Paradise",
+              "sourcePage": null
+            },
+            "oct28Decision": "keep",
+            "oct28Destination": null
+          },
+          "independentB01Record": null,
+          "independentB06Record": null,
+          "traceState": "LEGACY_MODULE_NOT_CURRENT_SLOT",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": false,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    },
+    {
+      "slot": "COV-dead_eternal_rest_singular",
+      "family": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "selectedOriginal": {
+        "artist": "Peter Paul Rubens",
+        "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+        "originalArtworkIds": []
+      },
+      "traceClass": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+      "traces": [
+        {
+          "referenceSlot": "COV-foundations_eternal_rest",
+          "sourceArtworkId": "CANONICAL::met-437542",
+          "sourceRelationship": "SAME_ETERNAL_REST_INTENTION_THEMATIC",
+          "donorSnapshot": {
+            "existsInCurrentMaster": true,
+            "currentSelectedOriginal": {
+              "artist": "Peter Paul Rubens",
+              "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+              "sourcePage": "https://www.metmuseum.org/art/collection/search/437542"
+            },
+            "currentOriginalIDs": [
+              "CANONICAL::met-437542"
+            ]
+          },
+          "legacySource": null,
+          "independentB01Record": {
+            "status": "ACCEPTED_FOR_PRAYER_REVIEW",
+            "originalUserInstruction": null,
+            "semanticTargets": []
+          },
+          "independentB06Record": null,
+          "traceState": "CURRENT_DONOR_EXACT_ARTWORK_ID",
+          "provesExactSlotApproval": false
+        }
+      ],
+      "editorialDisposition": "PRESERVE_SELECTED_ORIGINAL_RESEARCH_ONLY",
+      "canInferSameOriginalApprovalFromDonor": true,
+      "approvedForExactTargetSlotByThisTrace": false,
+      "productionEnabled": false
+    }
+  ],
+  "noChangesToSelections": true,
+  "newApprovals": 0,
+  "publishedPhotos": 0
+}
