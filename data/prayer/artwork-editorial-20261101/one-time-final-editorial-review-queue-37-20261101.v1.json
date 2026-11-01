@@ -1,0 +1,1254 @@
+{
+  "schema": "AO_PRAYER_ART_ONE_TIME_FINAL_REVIEW_QUEUE_V1",
+  "date": "2026-11-01",
+  "purpose": "Consolidated nonpublishing review scope. Hold for ONE complete image-based editorial review, never 37 separate approvals.",
+  "count": 37,
+  "byType": {
+    "PROVISIONAL": 22,
+    "APPROVAL_SCOPE_CONFLICT": 1,
+    "HELD_PRIMARY": 14
+  },
+  "blockedUntil": "Verified original identity and actual photograph native-resolution/rights/crop review, user scope and existing decisions consolidated into images.",
+  "rows": [
+    {
+      "slot": "HERO-01",
+      "family": "Pray home",
+      "label": "Advent",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-03",
+      "family": "Pray home",
+      "label": "Epiphany",
+      "reason": "APPROVAL_SCOPE_CONFLICT",
+      "primaryOrProvisionalWork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "Adoration of the Magi",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+        "originalArtworkIds": [
+          "PRAYER::visit--murillo-magi"
+        ]
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [
+        {
+          "artworkId": "PRAYER::visit--murillo-magi",
+          "note": "yes fits in visit to the blessed sacrament",
+          "scope": [
+            "visit_to_blessed_sacrament"
+          ]
+        }
+      ],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+          "title": "Adoration of the Magi",
+          "artist": "Peter Paul Rubens",
+          "scope": [
+            "visit_to_blessed_sacrament",
+            "rosary_nativity_mystery"
+          ],
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT"
+        }
+      ],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-05",
+      "family": "Pray home",
+      "label": "Septuagesima",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-08",
+      "family": "Pray home",
+      "label": "Palm Sunday",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-09",
+      "family": "Pray home",
+      "label": "Holy Thursday",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "sourcePage": "https://collections.louvre.fr/ark:/53355/cl010062076",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://collections.louvre.fr/ark:/53355/cl010062076",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-10",
+      "family": "Pray home",
+      "label": "Good Friday",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Sodoma",
+        "title": "The Crucifixion",
+        "sourcePage": "https://www.clevelandart.org/art/1916.786",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://www.clevelandart.org/art/1916.786",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-16",
+      "family": "Pray home",
+      "label": "Corpus Christi",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "sourcePage": "https://collections.louvre.fr/ark:/53355/cl010062076",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://collections.louvre.fr/ark:/53355/cl010062076",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-17",
+      "family": "Pray home",
+      "label": "Sacred Heart",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-18",
+      "family": "Pray home",
+      "label": "Time after Pentecost",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Christian Wilhelm Ernst Dietrich",
+        "title": "Christ Healing the Sick",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://www.metmuseum.org/art/collection/search/436199",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-19",
+      "family": "Pray home",
+      "label": "Assumption",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Charles de La Fosse",
+        "title": "Assumption of Mary",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 1,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
+      "photoReleaseState": "SOURCE_ORIGINAL_ARCHIVED_VISUAL_AND_CROP_QA_PENDING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-21",
+      "family": "Pray home",
+      "label": "All Souls",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "HERO-23",
+      "family": "Pray home",
+      "label": "Immaculate Conception",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Immaculate Conception",
+        "sourcePage": "https://www.clevelandart.org/art/1959.189",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://www.clevelandart.org/art/1959.189",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-foundations_act_of_hope",
+      "family": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Simon de Vos",
+        "title": "Christ on the Sea of Galilee",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_Christ_on_the_sea_of_Galilee.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_Christ_on_the_sea_of_Galilee.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.rosary-16",
+      "family": "D3 Rosary & Chaplets",
+      "label": "Coronation of Our Lady",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Peter Paul Rubens",
+        "title": "The coronation of the Virgin"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [
+        {
+          "artworkId": "REVIEW::cma:143761",
+          "artist": "Stefan Lochner",
+          "title": "The Virgin Crowned by Angels",
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "EXPLICIT_APPROVAL_EXACT_CORONATION_MYSTERY",
+          "notAnAutomaticPrimary": true
+        },
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "EXPLICIT_APPROVAL_EXACT_CORONATION_MYSTERY",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [
+        {
+          "id": "REVIEW::cma:143761",
+          "title": "The Virgin Crowned by Angels",
+          "artist": "Stefan Lochner",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION"
+        },
+        {
+          "id": "REVIEW::met:435853",
+          "title": "The Coronation of the Virgin",
+          "artist": "Annibale Carracci",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION"
+        }
+      ],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "family": "D3 Rosary & Chaplets",
+      "label": "Closing prayers (Salve Regina)",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Antonio del Castillo y Saavedra",
+        "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-pray.montfort_consecration",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Stefan Lochner (German, 1400-c. 1452)",
+        "title": "The Virgin Crowned by Angels"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [
+        {
+          "artworkId": "REVIEW::cma:143761",
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "BLOCKED_HISTORIC_EXCLUSION",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "family": "D4 Novenas & Journeys",
+      "label": "Act of consecration",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Marcantonio Franceschini",
+        "title": "The Last Communion of Saint Mary of Egypt"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "family": "D5 Holy Eucharist",
+      "label": "Thanksgiving",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Giovanni Battista Piazzetta",
+        "title": "The Supper at Emmaus",
+        "sourcePage": "https://www.clevelandart.org/art/1931.245",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://www.clevelandart.org/art/1931.245",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène (The Small Last Supper)"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [
+        {
+          "artworkId": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "rosary it also fits in institution of the eucharist",
+          "scope": [
+            "rosary_institution_of_eucharist"
+          ],
+          "eligibility": "BLOCKED_HISTORIC_EXCLUSION",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-litany_loreto_1962-05",
+      "family": "D7 Our Lady",
+      "label": "Queen of Angels … Queen of peace",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "WRITTEN_SCOPE_OUTSIDE_THIS_SLOT",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [
+        {
+          "id": "REVIEW::met:435853",
+          "title": "The Coronation of the Virgin",
+          "artist": "Annibale Carracci",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT"
+        }
+      ],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Antonio del Castillo y Saavedra",
+        "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "family": "D8 Saints & Angels",
+      "label": "Our Lady, angels and archangels",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [
+        {
+          "artworkId": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": null,
+          "scope": [],
+          "eligibility": "ACCEPTED_FOR_THIS_DISPLAYED_SLOT_NO_NARROWING_NOTE",
+          "notAnAutomaticPrimary": true
+        },
+        {
+          "artworkId": "CANONICAL::met-437729",
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": null,
+          "scope": [],
+          "eligibility": "ACCEPTED_FOR_THIS_DISPLAYED_SLOT_NO_NARROWING_NOTE",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "ineligibleOrContradictoryAlternatives": [
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "WRITTEN_SCOPE_OUTSIDE_THIS_SLOT",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [
+        {
+          "id": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+          "title": "Archangel Michael Defeating Satan",
+          "artist": "Guido Reni",
+          "scope": [],
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT"
+        },
+        {
+          "id": "CANONICAL::met-437729",
+          "title": "Saint Michael the Archangel",
+          "artist": "Ignacio de Ries",
+          "scope": [],
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT"
+        },
+        {
+          "id": "REVIEW::met:435853",
+          "title": "The Coronation of the Virgin",
+          "artist": "Annibale Carracci",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT"
+        }
+      ],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-church_prayer_for_pope",
+      "family": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Francisco Goya",
+        "title": "Saint Gregory the Great, Pope",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-pray.penitential_psalms",
+      "family": "D9 Life & Intentions",
+      "label": "Cover",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-01",
+      "family": "D9 Life & Intentions",
+      "label": "Domine, ne in furore",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-02",
+      "family": "D9 Life & Intentions",
+      "label": "Beati quorum",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-03",
+      "family": "D9 Life & Intentions",
+      "label": "Domine, ne in furore (II)",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-04",
+      "family": "D9 Life & Intentions",
+      "label": "Miserere",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-05",
+      "family": "D9 Life & Intentions",
+      "label": "Domine, exaudi",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-07",
+      "family": "D9 Life & Intentions",
+      "label": "Domine, exaudi (II)",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-pray.confession-03",
+      "family": "D9 Life & Intentions",
+      "label": "In the confessional",
+      "reason": "PROVISIONAL",
+      "primaryOrProvisionalWork": {
+        "artist": "Giuseppe Molteni",
+        "title": "La Confessione (The Confession)",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+        "originalArtworkIds": []
+      },
+      "previouslySelectedButHeldWork": null,
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+      "photoReleaseState": "UNVERIFIED",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "family": "D9 Life & Intentions",
+      "label": "Cover",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Spanish Painter",
+        "title": "The Mass of Saint Gregory"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "COV-prayer.good_death",
+      "family": "D9 Life & Intentions",
+      "label": "Cover",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [
+        {
+          "artworkId": "REVIEW::commons:97225770",
+          "artist": "Simon de Vos",
+          "title": "The Death of Saint Francis",
+          "decision": "USER_ACCEPTED_AS_SHOWN_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": null,
+          "scope": [],
+          "eligibility": "ACCEPTED_FOR_THIS_DISPLAYED_SLOT_NO_NARROWING_NOTE",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [
+        {
+          "id": "REVIEW::commons:97225770",
+          "title": "The Death of Saint Francis",
+          "artist": "Simon de Vos",
+          "scope": [],
+          "decision": "USER_ACCEPTED_AS_SHOWN_FOR_THIS_PLACEMENT"
+        }
+      ],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    },
+    {
+      "slot": "STG-prayer.good_death-01",
+      "family": "D9 Life & Intentions",
+      "label": "Commendation of the dying",
+      "reason": "HELD_PRIMARY",
+      "primaryOrProvisionalWork": null,
+      "previouslySelectedButHeldWork": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph"
+      },
+      "scopeConflictEvidence": [],
+      "eligibleAcceptedAlternativesFromHeldScopeReview": [],
+      "ineligibleOrContradictoryAlternatives": [],
+      "acceptedAlternativesForThisSlotNotAutoPrimary": [],
+      "sourceEvidencePaths": [
+        "data/prayer/artwork-editorial-20261101/cross-module-exact-slot-approval-evidence-267-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json",
+        "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json"
+      ],
+      "photoArchiveCounts": 0,
+      "photoSourceRecord": null,
+      "photoReleaseState": "NO_SELECTED_CURRENT_PAINTING",
+      "photoReadyForEditorialDisplay": false,
+      "photoApprovedForPublication": false,
+      "needsOneFutureCollectiveReview": true,
+      "noIndividualApprovalRequestNow": true
+    }
+  ],
+  "notReadyForUserReview": true,
+  "productionEnabled": false,
+  "paintingsChanged": 0,
+  "scopeOnlyResearch": true
+}
