@@ -35,22 +35,21 @@
     "new_distinct_image_hashes_vs_prior_archives": 82
   },
   "visual_review": {
-    "exact_object_or_exact_guide_feature_candidates": 51,
-    "same_site_context_only": 27,
+    "exact_object_or_exact_guide_feature_candidates": 50,
+    "same_site_context_only": 28,
     "wrong_subject_or_place_quarantined": 26,
     "identity_or_scope_hold": 7,
-    "distinct_subjects_with_plausible_exact_image": 29,
+    "distinct_subjects_with_plausible_exact_image": 28,
     "all_newly_approved": 0,
     "published": 0
   },
   "cross_archive_reconciliation": {
     "newly_downloaded_subject_ids_vs_A100_B15_B16": 6,
-    "of_those_with_plausibly_relevant_photo": 4,
-    "of_those_with_only_wrong_or_unverified_photo": 2,
+    "of_those_with_plausibly_relevant_photo": 3,
+    "of_those_with_only_wrong_or_unverified_photo": 3,
     "newly_plausibly_matched_subjects": [
       "subject:focus:nevers-massabielle-replica",
       "subject:guide-stop:PL:kalwaria-zebrzydowska:passion",
-      "subject:relic:CA:brother-andre-tomb-montreal",
       "subject:relic:FR:curé-ars"
     ],
     "two_banneux_subject_ids_are_not_covered_by_exact_chapel_images": true
@@ -99,5 +98,6 @@
   ],
   "safety": "Do not promote images directly from this research audit. Existing KEEP decisions immutable. Distinguish source original pixel dimensions from downloaded preview pixel dimensions. All new object images require visual subject, rights, quality, caption and editorial review.",
   "sha256_and_visual_details_path": "data/geography/research/sacred-atlas-b18-111-actual-images-visual-decisions-20261101.csv",
-  "subject_attempt_status_path": "data/geography/research/sacred-atlas-b18-163-uploaded-subjects-status-20261101.csv"
+  "subject_attempt_status_path": "data/geography/research/sacred-atlas-b18-163-uploaded-subjects-status-20261101.csv",
+  "correction": "Image B18 #42 photo titled 'Beside the Tombeau' is not the tomb: St Joseph sculpture and votive candle area. Accurate source page itself distinguishes 'beside'. 50 exact-feature image leads across 28 IDs. 3 newly photographed IDs with plausible exact-feature matches, not 4."
 }
