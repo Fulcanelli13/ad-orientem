@@ -1145,4 +1145,36 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoNetworkFoot{font-size:9px;max-height:47px}
 }
 
+/* Existing Explore medallion geometry, not an official symbol or substitute photo.
+   Reuse the exact approved-photo slot dimensions on desktop and mobile. */
+.aoHeritageSurface .aoSacredPlaceSymbolFallback{
+  margin:0;overflow:hidden;border:1px solid rgba(201,175,128,.30);
+  border-radius:8px;background:radial-gradient(ellipse at 50% 37%,#263746,#101c28 82%);
+}
+.aoHeritageSurface .aoSacredPlaceSymbolPlate{
+  display:grid;place-items:center;width:100%;min-height:180px;
+}
+.aoHeritageSurface .aoSacredPlaceSymbolPlate svg{
+  display:block;width:min(34%,100px);height:auto;aspect-ratio:1;
+  filter:drop-shadow(0 4px 13px rgba(0,0,0,.28));
+}
+.aoHeritageSurface .aoSacredPlaceSymbolFallback figcaption{
+  padding:7px 10px;text-align:center;color:#c7b690;
+  font:500 10px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+@media(min-width:800px){
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolPlate{height:min(24dvh,210px);min-height:146px}
+}
+@media(max-width:799px){
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolFallback{grid-column:1;grid-row:2/5;width:110px;min-height:136px}
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolPlate{width:110px;height:136px;min-height:136px}
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolPlate svg{width:66px}
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolFallback figcaption{display:none}
+}
+@media(max-width:360px){
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolFallback{width:83px}
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolPlate{width:83px;height:136px}
+  .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolPlate svg{width:57px}
+}
+
 `;
