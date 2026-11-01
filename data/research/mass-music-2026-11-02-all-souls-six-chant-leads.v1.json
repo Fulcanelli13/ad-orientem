@@ -291,13 +291,15 @@
     {
       "role": "SANCTUS_REQUIEM",
       "title": "Sanctus XVIII (Requiem section)",
-      "gregobaseId": null,
-      "sourceUrl": "https://gregobase.selapa.net/source.php?id=2",
+      "gregobaseId": 298,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=298",
       "graduale1961Page": "101*",
-      "evidence": "INDEX_ONLY_ID_NOT_YET_CONFIRMED",
+      "evidence": "EXACT_1961_SOURCE_INDEXED_ID_NOT_MELODY_CHECKED",
       "printedNotesVerified": false,
       "editorialApproval": false,
-      "publicReader": false
+      "publicReader": false,
+      "liberUsualis1961Page": "1814",
+      "note": "Identical source #298 also lists Graduale 1961 p.58* for Ordinary XVIII; Requiem edition explicitly listed at p.101*. Distinguish placement from separate new melody."
     },
     {
       "role": "AGNUS_REQUIEM",
@@ -338,7 +340,7 @@
   ],
   "remainingAfterM15": [
     "Run production selected 1962 Requiem for each Mass and compare the actual full source Proper with printed Missal, respecting variants",
-    "Resolve Sanctus XVIII and optional absolution exact 1961 original IDs and rubric applicability",
+    "Verify the existing Sanctus XVIII #298 melody's Requiem printed p.101* and no phantom separate Sanctuary setting; source optional absolution exact identity separately",
     "Verify complete Latin and score text for Kyrie, Sanctus, Agnus and Requiescant response, and full Dies irae sequence",
     "Check all Gregorian musical notes against printed 1961 scores, including Dies irae first-line custos and GABC transcription differences",
     "Check sequence applicability by the actual form/number/order of Masses, never merely by occurrence of Sequentia in donor metadata",
