@@ -143,7 +143,7 @@ for(const {community_id,eyebrow} of [
   {community_id:"SSPX_RESISTANCE",eyebrow:"Unclassified"},
 ]){
  const html=renderDirectoryIdentityFallback({community_id,eyebrow},"en","card");
- assert.doesNotMatch(html,/<img\\b/,"Neither an umbrella label nor unknown affiliation can inherit an image");
+ assert.doesNotMatch(html,/<img\b/,"Neither an umbrella label nor unknown affiliation can inherit an image");
 }
 assert.match(renderDirectoryIdentityFallback({community_id:"OTHER",eyebrow:"Canons of St John Cantius"}),/>CJ<\/span>/,
  "Without exact source ownership, retain generic source-derived initials");
