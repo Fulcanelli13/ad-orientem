@@ -407,3 +407,45 @@ test('the photo acquisition jobs only stage verified source originals, never mut
  assert.doesNotMatch(workflow,/assets\/pray\/released/);
  assert.doesNotMatch(stationsWorkflow,/assets\/pray\/released/);
 });
+
+test('historical Station paintings without source IDs can be released only after exact work identity reconciliation',()=>{
+ const slot='STG-pray.stations-01';
+ const authority=PRAYER_ARTWORK_SLOT_AUTHORITY[slot];
+ assert.equal(authority.ids.length,0);
+ const source=read('data/prayer/artwork-editorial-20261101/tiepolo-san-polo-stations-14-source-photos-20261101.v1.json').records[0].sourcePage;
+ const good={
+  slotId:slot,title:authority.title,artist:authority.artist,
+  path:'assets/pray/released/san-polo-station-01.webp',
+  publicationState:'READY_FOR_PUBLICATION',productionEnabled:true,editorialApproved:true,
+  sourceCredit:'Chiesa di San Polo, Venice',
+  photographerCredit:'Source photographer verified for the selected image file',
+  licenseName:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',
+  modificationsDescription:'Displayed with a responsive crop; original archived unchanged',
+  sourceCollectionUrl:source,
+  releaseEvidence:{
+   exactOriginalObjectVerified:true,approvedForThisExactPrayerSlot:true,
+   actualFileReuseRightsCleared:true,originalSourceFileArchived:true,
+   sourceOriginalSha256:'c'.repeat(64),releaseImageSha256:'d'.repeat(64),
+   nativeResolutionVerified:true,visualQualityHumanPassed:true,
+   physicalFrameAbsent:true,gallerySurroundAbsent:true,noSyntheticFill:true,
+   mobileCropApproved:true,desktopCropApproved:true,appRenderVerified:true,
+   nativeWidth:3326,nativeHeight:3710,
+   exactArtworkIdentityManuallyReconciled:true,
+   exactOriginalWorkTitle:authority.title,
+   exactOriginalWorkArtist:authority.artist,
+   exactOriginalWorkSourceUrl:source
+  }
+ };
+ assert.equal(releaseClearedPrayerArtwork(slot,{manifest:{[slot]:good}})?.title,authority.title);
+ const deny=(key,patch)=>{
+  const x=structuredClone(good);
+  x.releaseEvidence[key]=patch;
+  assert.equal(releaseClearedPrayerArtwork(slot,{manifest:{[slot]:x}}),null,key);
+ };
+ deny('exactArtworkIdentityManuallyReconciled',false);
+ deny('exactOriginalWorkArtist','Unknown substitute artist');
+ deny('exactOriginalWorkTitle','Another Station');
+ deny('exactOriginalWorkSourceUrl','');
+ deny('exactOriginalWorkSourceUrl','http://example.org/image');
+ deny('actualFileReuseRightsCleared',false);
+});
