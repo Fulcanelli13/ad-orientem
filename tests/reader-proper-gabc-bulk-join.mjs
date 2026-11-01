@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {index1961GradualeGabc,matchSelected1962ProperToGraduale,
-  sourceMatchedGabcForEditorialReview,MASS_GABC_BULK_MATCH_SCHEMA
+  sourceMatchedGabcForEditorialReview,MASS_GABC_BULK_MATCH_SCHEMA,source1962ChantOpeningForMatch
 } from "../src/mass/reader-proper-gabc-bulk-join.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
@@ -23,6 +23,19 @@ for(const rec of Object.values(archive.byRole).flat()){
    rec.sha256,rec.id+" GABC changed during archive promotion");
  assert.equal(rec.releaseStatus,"RESEARCH_IMPORT_NOT_EDITORIALLY_APPROVED");
 }
+// Source notes in the LIVE 1962 Proper are bibliographic references, not
+// GABC text. Do not allow their digits/book names to cause false negatives.
+for(const [source,expected] of [
+ ["Isa 9:6 ℣. Puer natus est nobis, et fílius datus est nobis.","Puer natus est nobis, et fílius datus est nobis."],
+ ["Ps 88:12; 88:15 Tui sunt cœli et tua est terra.","Tui sunt cœli et tua est terra."],
+ ["4 Esdr 2:34; 2:35 ℣. Réquiem ætérnam dona eis","Réquiem ætérnam dona eis"],
+ ["Ps. 75:9-10. Terra trémuit, et quiévit","Terra trémuit, et quiévit"],
+ ["Malach 3:1; 1 Par 29:12 ℣. Ecce, advénit dominátor Dóminus","Ecce, advénit dominátor Dóminus"],
+ ["1 Cor 5:7-8 Pascha nostrum immolátus est Christus","Pascha nostrum immolátus est Christus"],
+ ["Dómine Jesu Christe, Rex glóriæ","Dómine Jesu Christe, Rex glóriæ"]
+])assert.equal(source1962ChantOpeningForMatch(source),expected);
+assert.equal(source1962ChantOpeningForMatch("!Ps 97:3\n℣. Viderunt omnes fines terrae salutare Dei nostri"),
+ "Viderunt omnes fines terrae salutare Dei nostri");
 const mk=(text,group=null)=>({status:"READY",data:{paragraphs:[
  {id:"source-1962-1",latin:text,...(group?{liturgicalGroup:group}:{})}
 ]}});
@@ -35,6 +48,17 @@ const christmas={schema:"ao-reader-proper-slots-v1",ready:true,
  OFFERTORY:mk("Tui sunt caeli, et tua est terra."),
  COMMUNION:mk("Viderunt omnes fines terrae salutare Dei nostri."),
 }};
+const citedChristmas=structuredClone(christmas);
+citedChristmas.slots.INTROIT.data.paragraphs[0].latin="Isa 9:6 ℣. Puer natus est nobis, et filius datus est nobis.";
+citedChristmas.slots.OFFERTORY.data.paragraphs[0].latin="Ps 88:12; 88:15 Tui sunt caeli, et tua est terra.";
+citedChristmas.slots.COMMUNION.data.paragraphs[0].latin="Ps 97:3 Viderunt omnes fines terrae salutare Dei nostri.";
+const cited=matchSelected1962ProperToGraduale({properSlots:citedChristmas,archive});
+for(const [name,id] of [["INTROIT","GREGOBASE-72"],["OFFERTORY","GREGOBASE-1274"],
+ ["COMMUNION","GREGOBASE-1139"]]){
+ assert.equal(cited.tracks.find(t=>t.track===name).status,"UNIQUE_SOURCE_TEXT_CANDIDATE",
+   name+" should strip only the printed bibliography before matching");
+ assert.equal(cited.tracks.find(t=>t.track===name).scoreCandidates[0].scoreId,id);
+}
 const hit=matchSelected1962ProperToGraduale({properSlots:christmas,archive});
 assert.equal(hit.schema,MASS_GABC_BULK_MATCH_SCHEMA);
 assert.equal(hit.status,"SOURCE_FIRST_CANDIDATES_ONLY_NOT_SCORES");
