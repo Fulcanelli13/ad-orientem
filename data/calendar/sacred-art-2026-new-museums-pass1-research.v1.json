@@ -1,5 +1,5 @@
 {
-  "schema": "AO_SACRED_ART_NEW_MUSEUMS_PASS1_RESEARCH_V1",
+  "schema": "AO_SACRED_ART_NEW_MUSEUMS_PASS1_AND_2_RESEARCH_V2",
   "asOf": "2026-11-02",
   "status": "RESEARCH_ONLY_NO_NEW_USER_APPROVAL_NO_IMAGE_PUBLICATION",
   "policy": {
@@ -66,7 +66,11 @@
       "url": "https://sammlung.staedelmuseum.de/en/work/the-visitation",
       "rights": "Public Domain (individual museum object record)",
       "role": "EXACT_SUBJECT_ALTERNATIVE",
-      "quality": "Original photo resolution and frame-free crop not yet certified"
+      "quality": "Original photo resolution and frame-free crop not yet certified",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "Public Domain (individual museum object record)",
+      "fullHistoric856Dedup": "PENDING"
     },
     {
       "id": "bsg:7386",
@@ -80,7 +84,11 @@
       "url": "https://www.sammlung.pinakothek.de/en/artwork/7yxY3n5GYm",
       "rights": "CC BY-SA 4.0 (individual museum object record)",
       "role": "EXACT_SUBJECT_ALTERNATIVE",
-      "quality": "Download offered; original pixels, framing and tonal quality not yet inspected; BY-SA redistribution obligations"
+      "quality": "Download offered; original pixels, framing and tonal quality not yet inspected; BY-SA redistribution obligations",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "CC BY-SA 4.0 (individual museum object record)",
+      "fullHistoric856Dedup": "PENDING"
     },
     {
       "id": "staedel:621",
@@ -94,7 +102,11 @@
       "url": "https://sammlung.staedelmuseum.de/en/work/the-martyrdom-of-saint-lawrence",
       "rights": "Public Domain (individual museum object record)",
       "role": "EXACT_SUBJECT_ALTERNATIVE",
-      "quality": "Object photo visible; native file / crop not yet certified"
+      "quality": "Object photo visible; native file / crop not yet certified",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "Public Domain (individual museum object record)",
+      "fullHistoric856Dedup": "PENDING"
     },
     {
       "id": "brugge:OLV_0006_I",
@@ -109,7 +121,11 @@
       "museumObjectUrl": "https://collectie.museabrugge.be/en/collection/work/id/OLV_0006_I",
       "rights": "Public domain (specific Art in Flanders image record; check download terms)",
       "role": "EXACT_SUBJECT_ALTERNATIVE",
-      "quality": "Multiple image PID/photo IDs refer to ONE original; choose highest quality frameless official photo; download process may require form"
+      "quality": "Multiple image PID/photo IDs refer to ONE original; choose highest quality frameless official photo; download process may require form",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "Public domain (specific Art in Flanders image record; check download terms)",
+      "fullHistoric856Dedup": "PENDING"
     },
     {
       "id": "bsg:7604",
@@ -123,7 +139,74 @@
       "url": "https://www.sammlung.pinakothek.de/de/artwork/Qr4D0204pE",
       "rights": "CC BY-SA 4.0 (individual museum object record)",
       "role": "EXACT_SAINT_ALTERNATIVE",
-      "quality": "Baroque portrait; separate physical Munich original, not an image from the Prado; native photo and frame QA pending"
+      "quality": "Baroque portrait; separate physical Munich original, not an image from the Prado; native photo and frame QA pending",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "CC BY-SA 4.0 (individual museum object record)",
+      "fullHistoric856Dedup": "PENDING"
+    },
+    {
+      "id": "staedel:90",
+      "date": "2026-06-23",
+      "rank": "II",
+      "feast": "Vigil of the Nativity of St John the Baptist",
+      "artist": "Barent Fabritius",
+      "title": "The Birth and Naming of St John the Baptist",
+      "museum": "Städel Museum, Frankfurt",
+      "inventory": "90",
+      "url": "https://sammlung.staedelmuseum.de/en/work/the-birth-and-naming-of-st-john-the-baptist",
+      "rights": "Public Domain – stated on individual Städel object page; reusable under collection policy",
+      "role": "CONTEXTUAL_VIGIL_LEAD_BIRTH_EVENT_NOT_A_VIGIL_PAINTING",
+      "quality": "Original image not downloaded; native pixel count / frame and photo-colour certification pending",
+      "historicalDate": "ca. 1660–1669",
+      "medium": "Oil on canvas",
+      "provenance": "Städel 90; painting not drawing; Luke 1:57–63",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "Public Domain – stated on individual Städel object page; reusable under collection policy",
+      "fullHistoric856Dedup": "PENDING"
+    },
+    {
+      "id": "staedel:2434",
+      "date": "2026-08-14",
+      "rank": "II",
+      "feast": "Vigil of the Assumption of the Blessed Virgin Mary",
+      "artist": "Guido Reni",
+      "title": "Assumption of the Virgin",
+      "museum": "Städel Museum, Frankfurt",
+      "inventory": "2434",
+      "url": "https://sammlung.staedelmuseum.de/en/work/assumption-of-the-virgin",
+      "rights": "Public Domain – stated on individual Städel object page; reusable under collection policy",
+      "role": "CONTEXTUAL_VIGIL_LEAD_ASSUMPTION_MAIN_FEAST_IMAGE",
+      "quality": "Original image not downloaded; 1000px website preview viewed, dark border traces; require full download/crop check",
+      "historicalDate": "ca. 1598–1599",
+      "medium": "Oil on copper",
+      "provenance": "Städel 2434; physical painting on loan, source with unique inventory; not a standalone 'vigil' scene",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "Public Domain – stated on individual Städel object page; reusable under collection policy",
+      "fullHistoric856Dedup": "PENDING"
+    },
+    {
+      "id": "staedel:2443",
+      "date": "2026-07-25",
+      "rank": "II",
+      "feast": "St James the Greater",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint James the Greater",
+      "museum": "Städel Museum, Frankfurt",
+      "inventory": "2443",
+      "url": "https://sammlung.staedelmuseum.de/en/work/saint-james-the-greater",
+      "rights": "Public Domain – stated on individual Städel object page; reusable under collection policy",
+      "role": "EXACT_SAINT_ALTERNATIVE",
+      "quality": "Original image not downloaded; 1000px source preview examined; full resolution and frame inspection outstanding",
+      "historicalDate": "ca. 1615–1616",
+      "medium": "Oil on canvas",
+      "provenance": "Städel 2443, separate Ribera painting; original is not Prado source",
+      "editorialApproval": "UNREVIEWED_NEW_RESEARCH",
+      "productionPhotoCertified": false,
+      "commercialReuseApprovalNote": "Public Domain – stated on individual Städel object page; reusable under collection policy",
+      "fullHistoric856Dedup": "PENDING"
     }
   ],
   "knownPreviouslyResearchedNotNew": [
@@ -136,17 +219,41 @@
   ],
   "resultCounts": {
     "firstPassInstitutionalObjectLeads": 5,
-    "distinctLiturgicalDates": 4,
+    "secondPassInstitutionalObjectLeads": 3,
+    "totalInstitutionalObjectLeads": 8,
+    "distinctLiturgicalDates": 7,
+    "sourceWebPagesIndividuallyVerified": 8,
+    "ledgerComparisons": [
+      "383 canonical artworks",
+      "451 earlier source intake",
+      "131-day Class III source relationships",
+      "Class I/II crosswalk"
+    ],
+    "catalogue451383IIIExactArtistTitleCollisionCount": 0,
+    "full856DedupCertified": 0,
     "photographsAcquired": 0,
     "photoQualityCertified": 0,
-    "full856DedupCertified": 0,
     "newEditorialApprovals": 0,
     "imagesPublished": 0
   },
   "nextActions": [
-    "Finish authoritative 856-source and older art-branch physical-object dedup before asserting net-new count",
-    "Resolve direct original files and exact individual image permissions; check cropped/framed composition",
-    "Prepare one user review contact sheet grouped by feast without re-showing existing locked primary artwork as a new proposal",
-    "Only promote affirmatively selected, rights-cleared work after phone QA"
-  ]
+    "Recover the full 856 accepted-source inventory and deduplicate eight exact museum accession + title/artist identities before claiming net-new artwork count.",
+    "Pull direct museum original files for all high-value candidates and measure actual pixels; inspect physical border and crop, colour, source/original authenticity, checksum and required attribution.",
+    "Prioritize Städel 2443 Jusepe de Ribera for St James and Städel 123 Crespi Visitation; keep existing date-approved primaries untouched.",
+    "Use art-for-vigil images only as clearly contextual seasonal options, not as exact liturgical rubrics or substitute for approved dated art.",
+    "Prepare one concise grouped-by-feast review screen; add only editorially selected works to release queue. No auto-publish."
+  ],
+  "dedupAudit": {
+    "matchMethod": "Artist plus title normalization; object accession/source identifiers when held. Comparisons against full 383, older 451 and 204 Class III date/source records; no exact artist/title or accession collisions found in inspected subsets. Not a global provenance certification.",
+    "noMatchesOnInspectedLedgers": true,
+    "accepted856Gap": "Full 856 archive not available in consulted branch registries as one fully enumerable accepted-source corpus; therefore do not assert eight genuinely new physical objects for the entire app.",
+    "earlierKnownObjectExcluded": "Stefan Lochner Simon-and-Jude panel already present in B03 institutional research crosswalk, not counted.",
+    "partialSceneSemantics": "Fabritius and Reni correspond to principal sacred events appropriate as contextual vigil artwork; do not label them exact vigil illustrations."
+  },
+  "institutionalUsePolicy": {
+    "staedel": "https://sammlung.staedelmuseum.de/en/concept",
+    "rule": "Städel explicitly provides downloadable images labelled Public Domain for any purpose; credit Städel Museum, Frankfurt am Main. Do not use unrelated copyrighted objects.",
+    "brugge": "Art in Flanders Isenbrandt 'Our Lady of 7 Sorrows' source photo 0240002005, public domain; other photo records of same work are not additional paintings; requested museum object accession OLV_0006_I not shown in Art in Flanders inventory (shows 0000) and remains crosswalk verification pending.",
+    "bavaria": "Both selected Pinakothek individual object pages show CC BY-SA 4.0 Download; attribution, modifications and share-alike must accompany reuse."
+  }
 }
