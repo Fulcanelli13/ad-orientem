@@ -65,6 +65,33 @@ export function resolveKyrialeChoice(movement,id){
  const item=byId.get(String(id??""));
  return item?.availableMovements.includes(movement)?item:null;
 }
+// Source-linked notation leads from the existing unmerged 1961 score pilot
+// (#1749). These seven IDs are *research references*, not note-by-note
+// facsimile-validated scores, liturgical recommendations or actual singing.
+// Never infer a score merely from a typed local title; only explicit catalogue
+// selections are eligible to reveal their matching lead.
+export const KYRIALE_RESEARCH_NOTATION_EXAMPLES=freeze([
+ ["KYRIE","MASS_16",545,"Kyrie XVI","54*"],
+ ["KYRIE","MASS_11",2982,"Kyrie XI","38*"],
+ ["KYRIE","MASS_08",1184,"Kyrie VIII","28*"],
+ ["GLORIA","MASS_08",961,"Gloria VIII","29*"],
+ ["CREDO","CREDO_03",749,"Credo III","64*"],
+ ["SANCTUS_BENEDICTUS","MASS_08",1384,"Sanctus VIII · Benedictus","30*"],
+ ["AGNUS_DEI","MASS_08",2760,"Agnus Dei VIII","31*"],
+].map(([movement,catalogueId,sourceId,title,folio])=>freeze({
+ movement,catalogueId,scoreId:"GREGOBASE-"+sourceId,title,
+ printedWitness:"Graduale Romanum (Solesmes 1961), p. "+folio,
+ sourceUrl:"https://gregobase.selapa.net/chant.php?id="+sourceId,
+ status:"RESEARCH_TRANSCRIPTION_NOT_FACSIMILE_APPROVED",
+ scoreApproved:false,recordingApproved:false,observedPerformance:false,
+})));
+const notationBySelection=new Map(KYRIALE_RESEARCH_NOTATION_EXAMPLES.map(
+ record=>[record.movement+":"+record.catalogueId,record]));
+export function kyrialeResearchNotationPreview(movement,catalogueId){
+ const indexed=resolveKyrialeChoice(movement,catalogueId);
+ return indexed?notationBySelection.get(movement+":"+indexed.id)??null:null;
+}
+
 export function canonicalKyrialeSelection(value,movement){
  return resolveKyrialeChoice(movement,value)?.id??"";
 }
