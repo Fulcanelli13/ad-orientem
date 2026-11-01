@@ -379,6 +379,72 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
 }
 #aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink small{display:none!important}
 
+
+/* Approved Claude p1: optional sanctuary-lamp focus only in the stand-alone
+   Silent Adoration presence view. No prescribed duration or completion credit. */
+#aoPray435930 .aoAdorationQuietScreen.aoAdorationPresenceQuiet{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:flex-start!important;padding:clamp(42px,9dvh,82px) 14px 18px!important;
+ background:radial-gradient(ellipse 70% 48% at 50% 36%,#15120f 0%,#080b0f 85%)!important;
+}
+#aoPray435930 .aoAdorationPresenceIntro{text-align:center;max-width:340px}
+#aoPray435930 .aoAdorationPresenceIntro small{
+ color:#b29c7f!important;letter-spacing:.06em;font:italic 12px/1.4 Georgia,serif!important;
+}
+#aoPray435930 .aoAdorationPresenceIntro h2{
+ margin:4px 0 7px!important;color:#f0e4d4!important;
+ font:500 clamp(26px,6vw,32px)/1.2 Georgia,serif!important;
+}
+#aoPray435930 .aoAdorationPresenceIntro p{
+ font:italic 13px/1.55 Georgia,serif!important;color:#bdada0!important;
+ margin:0 auto!important;max-width:29ch!important;
+}
+#aoPray435930 .aoAdorationPresenceRing{
+ width:min(49vw,192px);height:min(49vw,192px);flex:none;
+ border-radius:50%;display:grid;place-items:center;margin:26px auto 9px;
+ background:conic-gradient(#e5bd72 var(--ao-quiet-progress),rgba(204,177,129,.16) 0);
+ position:relative;
+}
+#aoPray435930 .aoAdorationPresenceRing::before{
+ content:"";position:absolute;inset:2px;border-radius:50%;
+ background:radial-gradient(circle at 50% 60%,rgba(201,111,46,.11),#080b0f 65%);
+}
+#aoPray435930 .aoAdorationPresenceLamp{position:relative;width:58px;height:78px;filter:drop-shadow(0 0 19px rgba(227,135,61,.39))}
+#aoPray435930 .aoAdorationPresenceLamp::before{
+ content:"";position:absolute;left:21px;top:7px;width:16px;height:25px;
+ border-radius:70% 4% 70% 40%;transform:rotate(45deg);
+ background:linear-gradient(22deg,#e9a73b,#f8e6a0 68%,#fff6cb);
+ box-shadow:0 0 21px rgba(237,172,55,.9);
+}
+#aoPray435930 .aoAdorationPresenceLamp i{
+ position:absolute;left:13px;bottom:6px;width:32px;height:36px;
+ border:2px solid #a77c43;border-top:5px solid #e0bb6c;
+ border-radius:4px 4px 13px 13px;
+ background:linear-gradient(95deg,#68251e,#bf342b 45%,#68261c);
+ box-shadow:0 0 19px rgba(200,76,42,.28);
+}
+#aoPray435930 .aoAdorationPresenceLamp i::after{
+ content:"";position:absolute;left:13px;bottom:-11px;width:2px;height:10px;background:#ab8655;
+}
+#aoPray435930 .aoAdorationPresenceClock{
+ font:italic 11px/1.3 Georgia,serif!important;color:#aa9b8e!important;
+ margin:0!important;text-align:center;
+}
+#aoPray435930 .aoAdorationPresenceActions{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));
+ width:100%;max-width:465px;gap:7px;margin-top:auto;padding-bottom:11px;
+}
+#aoPray435930 .aoAdorationPresenceActions button{
+ min-height:49px!important;border:1px solid rgba(213,193,156,.20)!important;
+ border-radius:10px!important;background:#15191c!important;color:#e6ddd2!important;
+ font:500 12px/1.2 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoAdorationPresenceQuiet .aoAdorationQuietExit{
+ min-height:39px!important;padding:8px!important;margin:0 auto!important;
+ border:0!important;background:transparent!important;border-radius:0!important;
+ font:italic 12px/1.3 Georgia,serif!important;color:#b5a393!important;
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
