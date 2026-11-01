@@ -1202,12 +1202,14 @@ function syncRosaryPrefs(raw=S.rosary){
 }
 function restoreRosaryLaunchPrefs(raw,attempt=0){
  const prefs=normalizeRosaryPrefs(raw),root=rosaryDonorRoot();
- // Native recitation controls are installed by the existing Rosary decorator.
- // A fresh FR donor may have its source shell before those controls exist.
- if(root?.classList?.contains('open')&&root.querySelector('.pbShell')&&
-    !root.querySelector(`[data-ao-recitation="${prefs.recitation}"]`))
+ // The F12 canonical donor creates data-p435930-recitation, not the
+ // old data-ao-recitation. Initialize that control from the existing
+ // decorator only once its original PrayerBook shell has mounted.
+ const choice=()=>root?.querySelector?.(`[data-p435930-recitation="${prefs.recitation}"]`)
+   ||root?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
+ if(root?.classList?.contains('open')&&root.querySelector('.pbShell')&&!choice())
    decorateRosary();
- const native=root?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
+ const native=choice();
  if(!root?.classList?.contains('open')||!native){
   if(attempt<80)setTimeout(()=>restoreRosaryLaunchPrefs(prefs,attempt+1),25);
   return prefs
@@ -1218,7 +1220,8 @@ function restoreRosaryLaunchPrefs(raw,attempt=0){
  S.rosary.form=prefs.form;S.rosary.mode=prefs.mode;S.rosary.recitation=prefs.recitation;save();
  syncRosaryPrefs(prefs);decorateRosary();
  if(attempt<81)setTimeout(()=>{
-  const r=rosaryDonorRoot(),n=r?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
+  const r=rosaryDonorRoot(),n=r?.querySelector?.(`[data-p435930-recitation="${prefs.recitation}"]`)
+    ||r?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
   if(r?.classList?.contains('open')&&n&&!n.classList.contains('active'))restoreRosaryLaunchPrefs(prefs,81)
  },120);
  return prefs
