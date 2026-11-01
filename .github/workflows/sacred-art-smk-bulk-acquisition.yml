@@ -1,10 +1,7 @@
 name: Sacred Art — SMK public-domain paintings bulk acquisition
+# This bulk research intake has completed. Avoid repeat downloads on unrelated PR sync.
+# Run only by explicit manual dispatch for a justified source refresh.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - "scripts/art/bulk-smk-public-domain-paintings.py"
-      - ".github/workflows/sacred-art-smk-bulk-acquisition.yml"
   workflow_dispatch:
 permissions:
   contents: read
