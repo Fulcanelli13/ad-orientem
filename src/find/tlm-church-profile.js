@@ -3,7 +3,7 @@
  * Read-only presentation: no duplicate Place, schedule or ecclesial assertion registry.
  */
 import {massInstitutionEmblem} from "./institution-emblems.js";
-import {eligibleDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
+import {eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
 const A=v=>Array.isArray(v)?v:[];
 const T=v=>String(v??"").trim();
 const E=v=>T(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -75,8 +75,9 @@ export function renderTlmChurchProfile(item,language="en"){
  const v=buildTlmChurchProfile(item,language),venue=v.venue;
  const sourceLinks=A(item?.source_links).filter(s=>https(s?.url));
  const contact=venue?.contact??{};
- const hasPhoto=eligibleDirectoryImage(item?.cover_media,item?.place_id);
- const address=T(venue?.address?.formatted)||[venue?.address?.line1,venue?.address?.postal_code,venue?.address?.city,venue?.address?.country_code].map(T).filter(Boolean).join(", ");
+ // Apply exactly the same approved-image gate as the compact church card.
+ const hasPhoto=eligibleRenderedDirectoryImage(item?.cover_media,item);
+ const address=T(venue?.address?.formatted)||T(item?.address?.formatted)||[venue?.address?.line1,venue?.address?.postal_code,venue?.address?.city,venue?.address?.country_code].map(T).filter(Boolean).join(", ");
  const listedAffiliation=T(item?.eyebrow)||T(item?.community_id)||unknown(language);
  const listedEmblem=massInstitutionEmblem(item?.community_id);
  const one=v.ministries.length===1?v.ministries[0]:null;
@@ -183,7 +184,10 @@ export function renderTlmChurchProfile(item,language="en"){
  if(item?.geo?.approximate||item?.geo?.indicative_only)html+='<p class="aoTlmProfileCaution">'+E(L(language,"Map pin is indicative; the entrance is not verified.","Repère cartographique indicatif ; entrée non vérifiée."))+'</p>';
  const urls=[...values(contact.website),...values(contact.schedule_url),...values(contact.bulletin_url)];
  const links=[...new Set(urls.filter(https))];
- if(links.length)html+='<div class="aoTlmProfileActions">'+links.slice(0,5).map((u,i)=>link(u,i===0?L(language,"Church / institute website","Site de l’église / institut"):L(language,"Schedule / bulletin source","Source horaires / bulletin"))).join("")+'</div>';
+ // CL2 directory records do not own a native contact object; never hide their
+ // original verified source behind an empty contact panel.
+ if(!links.length&&sourceLinks.length)links.push(sourceLinks[0].url);
+ if(links.length)html+='<div class="aoTlmProfileActions">'+links.slice(0,5).map((u,i)=>link(u,i===0?L(language,urls.length?"Church / institute website":"Original venue source",urls.length?"Site de l’église / institut":"Source originale du lieu"):L(language,"Schedule / bulletin source","Source horaires / bulletin"))).join("")+'</div>';
  const dirs=A(item?.actions).filter(a=>a?.label==="Directions"&&https(a?.url));
  if(dirs.length)html+='<div class="aoTlmProfileActions">'+link(dirs[0].url,L(language,"Directions on Google Maps","Itinéraire sur Google Maps"))+'</div>';
  if(values(contact.phone).length)html+=detail(L(language,"Telephone","Téléphone"),values(contact.phone).join(" · "),null);
