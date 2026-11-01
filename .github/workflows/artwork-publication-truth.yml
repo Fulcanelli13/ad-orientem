@@ -1,0 +1,34 @@
+name: Sacred art publication identity and release truth
+on:
+  pull_request:
+    paths:
+      - "tests/artwork-publication-truth.mjs"
+      - "src/calendar/approved-class-i-heroes-2026.js"
+      - "src/pray/art-slot-map.v1.js"
+      - "src/find/institution-emblems.js"
+      - "data/pray/art-placement-slots-20261030.v1.json"
+      - "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json"
+      - "data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json"
+      - "data/directory/research/tlm-emblem-release-crosswalk-r06.v1.json"
+      - ".github/workflows/artwork-publication-truth.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-bound-identity-and-release:
+    name: Approved identity unchanged; no research art auto-published
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/artwork-publication-truth.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sacred-art-publication-truth
+          path: artifacts/artwork-publication-truth/
+          if-no-files-found: warn
+          retention-days: 14
