@@ -52,6 +52,13 @@ function voiceLine(doc,role,value){
  sign.dataset.aoSpeakerRole=role==="response"?"response":"versicle";
  row.append(sign,create(doc,"span","",value));return row;
 }
+function ordinaryPrayerHalf(doc,role,text){
+ const row=create(doc,"span","aoAngelusDialogueLine "+role+" aoDevoParagraph"+
+  (role==="response"?" aoHoursCollective":""));
+ row.dataset.aoAngelusVoice=role;
+ row.append(create(doc,"span","",text));
+ return row;
+}
 function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
  const el=create(doc,"span","aoDevoAppendixFace");
  const lines=String(text||"").split("\n").filter(x=>x.trim());
@@ -67,7 +74,7 @@ function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
     const repeat=create(doc,"span","aoFolioGloria");
     repeat.dataset.aoGloriaRepeat=String(i+1);
     const parts=recitationMode==="group"?angelusCommunalParts(prayer,"doxology"):null;
-    if(parts)parts.forEach(p=>repeat.append(voiceLine(doc,p.role,p.text)));
+    if(parts)parts.forEach(p=>repeat.append(ordinaryPrayerHalf(doc,p.role,p.text)));
     else repeat.append(create(doc,"span","aoDevoAppendixLine",prayer));
     el.append(repeat);
    }
@@ -196,7 +203,9 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   }
   const active=devotionalFocusIndex(body,all,{ratio:.41});
   all.forEach((p,i)=>{
-   const strength=i===active?"1":Math.abs(i-active)===1?".38":".18";
+   // Horarium focus: past is subdued, the next response remains legible.
+   // A collective reply brightens to the SAME full strength when active.
+   const strength=i===active?"1":i<active?".54":".80";
    p.style.setProperty("--ao-devo-focus",strength);
    // Legacy Angelus styles contain important whole-unit opacity declarations.
    // The shared card paragraph controller is the single active focus owner.

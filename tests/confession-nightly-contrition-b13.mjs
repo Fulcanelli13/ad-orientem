@@ -18,7 +18,7 @@ assert.match(pius.provenance.url,/wikisource\.org/);
 assert.equal(Object.keys(CONFESSION_PATHS).length,3);
 const sections=Array.from({length:10},(_,i)=>[String(i+1),["Question 1","Question 2"]]);
 assert.deepEqual(["regular","returning","general"].map(id=>confessionExaminationCards(id,sections).length),[5,13,14]);
-assert.deepEqual(confessionRiteCards("regular").map(c=>c.id),["at-priest","say-sins","contrition-penance"]);
+assert.deepEqual(confessionRiteCards("regular").map(c=>c.id),["at-priest","cross-and-blessing","last-confession","say-sins","closing-accusation","counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"]);
 assert.equal(NIGHTLY_EXAMEN_CARDS.filter(c=>c.id==="resolve").length,1,"One source-owned nightly resolution");
 assert.match(source,/function freshConfessionState\(\)\{return \{stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard",since:''\}\}/);
 assert.match(source,/function confessionContritionPicker\(kicker\)/);

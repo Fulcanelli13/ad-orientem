@@ -31,7 +31,35 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null})),true);
  const rootSel="#aoPray435930.open .aoP435930BenedictionReader";
  const timeline=rootSel+" .aoDevoSequenceTimeline";
- await page.waitForSelector(timeline,{timeout:12000});
+ await page.waitForSelector(timeline,{state:"attached",timeout:12000});
+ const roman=rootSel+" .aoClaudeRiteRail";
+ await page.waitForSelector(roman,{timeout:12000});
+ const navigateStep=async index=>{
+  // Claude's Aa sheet is a modal-like control panel; a real reader closes
+  // it before selecting a public-rite stage.
+  const aa=page.locator("#aoPray435930 .aoClaudeBenAa");
+  if(await aa.getAttribute("aria-expanded")==="true")await aa.click();
+  const extended=await page.locator(rootSel).getAttribute("data-ao-ben-extended")==="true";
+  const target=extended
+   ?timeline+" [data-ao-devo-chapter='"+index+"']"
+   :roman+" [data-p435930-ben-step='"+index+"']";
+  await page.locator(target).tap();
+ };
+ // Prototype Aa owns local rite configuration; the prayer must be visible
+ // immediately, without two large controls delaying the Roman altar card.
+ const settings=page.locator("#aoPray435930 .aoClaudeBenAa");
+ const options=page.locator("#aoPray435930 #aoBenOptions");
+ assert.equal(await settings.count(),1,"Claude's Aa must appear in the running header");
+ assert.equal(await options.evaluate(el=>el.hidden),true,
+  "The rite's editorial options must be closed on entry");
+ assert.equal(await page.locator(rootSel+" .aoClaudeAltarPlate").count(),1,
+  "The framed Claude plate is missing from the altar-card heading");
+ await settings.click();
+ assert.equal(await settings.getAttribute("aria-expanded"),"true");
+ assert.equal(await options.evaluate(el=>el.hidden),false);
+ await settings.click();
+ assert.equal(await settings.getAttribute("aria-expanded"),"false");
+ assert.equal(await options.evaluate(el=>el.hidden),true);
  const snapshot=()=>page.evaluate(()=>{
   const reader=document.querySelector("#aoPray435930.open .aoP435930BenedictionReader");
   const card=reader?.querySelector(".aoDevoCard"),scroll=card?.querySelector(".aoDevoCardScroll");
@@ -50,6 +78,24 @@ try{
  assert.match(cardText,/Exposition|O Salutaris/i,"Source-owned exposition prayer is missing");
  const guide=page.locator(rootSel+" [data-ao-benediction-guide]");
  assert.equal(await guide.evaluate(el=>el.open),false,"Historical guidance must be optional and below the prayer");
+ // Claude's ordinary seven-stage altar card shows one visible stage rail.
+ assert.equal(await page.locator(timeline).evaluate(el=>getComputedStyle(el).display),"none",
+  "The old horizontal timeline duplicates Claude's Roman I–VII margin");
+ assert.equal(await page.locator(roman+" button").count(),7,
+  "Exactly seven Roman stages must be available in the ordinary rite");
+ await navigateStep(2);
+ assert.equal((await snapshot()).card,"hymn");
+ const layout=await page.locator(rootSel+" [data-face-v]:not([hidden]) [data-ao-rite-chant-stanza]").evaluateAll(rows=>rows.map(row=>{
+  const latin=row.querySelector(".aoRiteChantLatin")?.getBoundingClientRect();
+  const vern=row.querySelector(".aoRiteChantVernacular")?.getBoundingClientRect();
+  return {latinLeft:latin?.left,vernLeft:vern?.left,latinWidth:latin?.width,vernWidth:vern?.width};
+ }));
+ assert.equal(layout.length,2,"The complete source has two sung Tantum Ergo stanzas");
+ assert.ok(layout.every(x=>x.vernLeft>x.latinLeft&&x.vernWidth>30&&x.latinWidth>30),
+  "Claude altar requires Latin and vernacular side by side at 390px: "+JSON.stringify(layout));
+ await page.screenshot({path:resolve(captures,"benediction-390-tantum-claude-rail.png"),animations:"disabled"});
+ await navigateStep(0);
+ assert.equal((await snapshot()).card,"exposition");
  await page.screenshot({path:resolve(captures,"benediction-390-exposition.png"),animations:"disabled"});
  // Actual phone locale and visual-salience acceptance, not only static selectors.
  const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
@@ -80,7 +126,7 @@ try{
   el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(60,338)]}));
  });
  assert.equal((await snapshot()).card,"adoration","Swiping the prayer text did not advance a card");
- await page.locator(timeline+" [data-ao-devo-chapter='0']").evaluate(el=>el.click());
+ await navigateStep(0);
  assert.equal((await snapshot()).card,"exposition");
  const swipe=async(dx,dy)=>page.locator(rootSel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:14,target:el,clientX:x,clientY:y});
@@ -95,11 +141,11 @@ try{
  await page.waitForTimeout(900);
  assert.equal((await snapshot()).index,1,"Rite advanced automatically instead of waiting for user");
  // The existing response is retained, never replaced by a generated substitute.
- await page.locator(timeline+" [data-ao-devo-chapter='3']").tap();
+ await navigateStep(3);
  state=await snapshot();
  assert.equal(state.card,"prayer");
  assert.match(await page.locator(rootSel+" .aoDevoCardScroll").innerText(),/Panem de caelo|Versicle|collect/i);
- await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ await navigateStep(4);
  assert.equal((await snapshot()).card,"blessing");
  assert.match(await page.locator(rootSel+" .aoDevoCardScroll").innerText(),/Stop interacting|Receive the Eucharistic blessing/i);
  const blessing=page.locator("body > .aoDevotionalActionCinematic");
@@ -154,7 +200,7 @@ try{
  await page.screenshot({path:resolve(captures,"benediction-390-full-cinematic.png"),animations:"disabled"});
  await blessing.locator(".aoDevotionalActionContinue").click();
  assert.equal(await blessing.count(),0,"Benediction cinematic did not yield to the unchanged prayer reader");
- await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
+ await navigateStep(5);
  assert.equal((await snapshot()).card,"praises");
  const praiseControl=page.locator(rootSel+" [data-p435930-ben-praises]");
  assert.equal(await praiseControl.count(),1,"Conditional Divine Praises selector missing");
@@ -163,7 +209,7 @@ try{
  assert.equal((await snapshot()).index,5,"Enabling Divine Praises changed the ceremony card");
  const after=await page.locator(rootSel+" .aoDevoCardScroll").innerText();
  assert.ok(after.length>before.length,"Canonical Divine Praises prayer did not appear on explicit selection");
- await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
+ await navigateStep(6);
  state=await snapshot();assert.equal(state.card,"reposition");
  assert.ok(state.nav&&state.nav!=="none","Finish action is missing after Reposition");
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-finish]").count(),1,"Reposition has one explicit finish action");
@@ -183,10 +229,16 @@ try{
  // Opt-in Christ the King celebration: procession before optional Royal Praises,
  // consecration of the human race before Tantum Ergo. Ordinary route above stays seven.
  await page.setViewportSize({width:390,height:844});
+ await settings.click();
+ assert.equal(await options.evaluate(el=>el.hidden),false);
+ const ensureSettings=async()=>{
+  if(await settings.getAttribute("aria-expanded")!=="true")await settings.click();
+ };
  const feastDetails=page.locator(rootSel+" [data-ao-ben-feast-options]");
  assert.equal(await feastDetails.count(),1);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast]").isChecked(),false,
    "Feast material was silently forced into ordinary Benediction");
+ await ensureSettings();
  await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").check();
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Feast options close during configuration");
@@ -195,13 +247,15 @@ try{
   await page.locator(rootSel+" [data-p435930-ben-feast-option='"+key+"']").check();
  }
  assert.equal((await snapshot()).stops,10,"Only three explicitly selected local ceremonies must be added");
- const sequence=await page.locator(timeline+" [data-ao-devo-chapter]").evaluateAll(els=>els.map(el=>el.getAttribute("data-ao-devo-chapter")));
+ assert.notEqual(await page.locator(timeline).evaluate(el=>getComputedStyle(el).display),"none",
+   "Extended Christ the King stages must remain reachable via their actual timeline");
+  const sequence=await page.locator(timeline+" [data-ao-devo-chapter]").evaluateAll(els=>els.map(el=>el.getAttribute("data-ao-devo-chapter")));
  assert.equal(sequence.length,10);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").isChecked(),false,
    "Unconfirmed Sacred Heart Litany must be opt-in");
- await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ await navigateStep(2);
  assert.equal((await snapshot()).card,"king-procession");
- await page.locator(timeline+" [data-ao-devo-chapter='3']").tap();
+ await navigateStep(3);
  assert.equal((await snapshot()).card,"king-royal-praises");
  assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-la]").innerText(),/Christus vincit/);
  const royalTextEn=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
@@ -239,7 +293,7 @@ try{
  await locale.click();
  assert.equal((await snapshot()).card,"king-royal-praises");
 
- await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ await navigateStep(4);
  assert.equal((await snapshot()).card,"king-consecration");
  assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Most sweet Jesus/);
  await locale.click();
@@ -250,15 +304,17 @@ try{
  await feastFlip.tap();
  assert.equal(await feastFlip.locator("[data-face-la]").evaluate(x=>x.hidden),false,
    "Latin consecration does not replace the French text");
- await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
+ await navigateStep(5);
  assert.equal((await snapshot()).card,"hymn","Consecration must lead to canonical Tantum Ergo");
+ await ensureSettings();
  await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").check();
  assert.equal((await snapshot()).stops,11,"Explicit litany inclusion must add one optional card");
  assert.equal((await snapshot()).card,"hymn","Changing optional elements may not discard the current canonical stage");
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
+ await ensureSettings();
  await feastDetails.locator("summary").tap();
- await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ await navigateStep(4);
  assert.equal((await snapshot()).card,"king-sacred-heart-litany");
  const litanyVern=page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]");
  const fullLitany=await litanyVern.innerText();
@@ -278,20 +334,22 @@ try{
  assert.equal(((await litanyLatin.locator("[data-face-la]").innerText()).match(/Cor Iesu,/g)||[]).length,33,
   "Latin face must contain every invocation, not a fragment");
  await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-latin.png"),animations:"disabled"});
- await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
+ await navigateStep(6);
  assert.equal((await snapshot()).card,"hymn","The complete optional litany must precede Consecration and Tantum Ergo");
+ await ensureSettings();
  await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
  assert.equal((await snapshot()).stops,10);
- await page.locator(timeline+" [data-ao-devo-chapter='9']").tap();
+ await navigateStep(9);
  assert.equal((await snapshot()).card,"reposition");
  assert.equal(await page.locator(rootSel).getAttribute("data-ao-benediction-final"),"true");
  assert.ok(await page.locator(rootSel+" .aoP435930GuideNav").evaluate(x=>getComputedStyle(x).display)!=="none",
    "The optional celebration must not hide the final Reposition exit");
+ await ensureSettings();
  await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").uncheck();
  assert.equal((await snapshot()).stops,7,"Ordinary Benediction was not restored on disabling feast");
- await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ await navigateStep(2);
  assert.equal((await snapshot()).card,"hymn");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
