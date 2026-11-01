@@ -40,7 +40,7 @@ The [71-position donor identity ledger](../../data/prayer/artwork-editorial-2026
 - 8 older module-level references that require their archived module decisions;
 - 17 synthetic/historical sources (including all 14 numbered San Polo Stations), which are **not** necessarily missing approvals.
 
-No current paintings were rejected because of a faulty donor pointer. All 23 inconsistent pointers remain forensic leads to reconcile with the source-specific original decision, not licences to auto-substitute.
+The 23 inconsistent donor pointers reduce to **12 distinct original-work groups**, so they do not require 23 separate painting searches. **Eleven groups (22 placements)** already carry independent B01–B11 historical Prayer-review acceptance for that exact source ID; the remaining *Sodoma Crucifixion* occurrence has no original source ID and must be crosswalked conservatively. The old acceptance is **artwork-level evidence**, not yet an exact approval for every destination. No current painting was rejected, replaced or approved automatically because of its donor pointer.
 
 The [14-held-primary scope ledger](../../data/prayer/artwork-editorial-20261101/held-primary-exact-scope-review-14-20261101.v1.json) finds **five already accepted, scope-eligible alternatives** across three held slots: two for the **Rosary Coronation** (Lochner and Carracci), two for the **Litany of Saints** section (Guido Reni's St Michael and Ignacio de Ries's St Michael), and one for **Good Death** (Simon de Vos's *Death of Saint Francis*). None is automatically appointed as the new primary; all fourteen holds stay intact. A further four offered alternatives have an incompatible written scope or a veto/hold.
 
