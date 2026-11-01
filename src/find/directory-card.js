@@ -116,7 +116,7 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
   // Names are explicit source labels; neither a monogram nor a logo establishes
   // a building's operator, status, rite or individual Mass's Una Cum.
   return '<span class="aoTlmVenueIdentity aoTlmVenueIdentity--'+mode+'" data-visual-kind="'+(emblem?"emblem":useNamed?"named":"neutral")+'">'+
-    (emblem?'<img src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':
+    (emblem?'<span class="aoTlmVenueEmblemFrame"><span class="aoTlmVenueEmblemBackstop" aria-hidden="true">'+E(emblem.label)+'</span><img data-tlm-emblem-image src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async"></span>':
       useNamed?'<span class="aoTlmVenueNamedMark" aria-hidden="true">'+E(namedSourceMark(sourceLabel))+'</span>':
         '<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')+
     '<small>'+E(useNamed?L(language,"Listed as: ","Selon la source : ")+label:label)+'</small></span>';
@@ -139,7 +139,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     +'<span class="aoTlmVenueVisual" data-visual-kind="'+(photo?"photo":"fallback")+'">'
     +(photo?'<img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">':renderDirectoryIdentityFallback(item,language,"card"))
     +'</span><span class="aoTlmVenueContent"><span class="aoTlmVenueInstitution">'
-    +(emblem?'<img src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':'')
+    +(emblem?'<img data-tlm-emblem-image src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':'')
     +'<span>'+E(item.eyebrow||groupLabel(item.community_id,language)||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
@@ -173,7 +173,23 @@ export function renderDirectoryGallery(item,language="en"){
       +'</figcaption></figure>').join("")
     +'</div></section>';
 }
+// Images are research/source-qualified institutional marks; a blocked remote
+// emblem must degrade to text rather than a broken icon or a blank card.
+export function hideUnavailableDirectoryEmblem(event){
+  const image=event?.target;
+  if(!image?.matches?.("img[data-tlm-emblem-image]"))return false;
+  const frame=image.closest?.(".aoTlmVenueEmblemFrame");
+  if(frame)frame.dataset.emblemState="unavailable";
+  else image.hidden=true;
+  return true;
+}
 const DIRECTORY_NAMED_IDENTITY_STYLE=String.raw`
+.aoTlmVenueEmblemFrame{position:relative;display:flex;justify-content:center;align-items:center;width:100%;min-height:87px}
+.aoTlmVenueEmblemFrame .aoTlmVenueEmblemBackstop{display:none;max-width:96%;color:#e7d2a6;font:700 23px/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.025em;overflow-wrap:anywhere}
+.aoTlmVenueEmblemFrame[data-emblem-state="unavailable"] img{display:none!important}
+.aoTlmVenueEmblemFrame[data-emblem-state="unavailable"] .aoTlmVenueEmblemBackstop{display:block}
+img[data-tlm-emblem-image][hidden]{display:none!important}
+
 .aoTlmVenueNamedMark{width:69px;height:69px;display:grid;place-items:center;flex:none;border:1px solid rgba(222,195,144,.44);border-radius:50%;background:linear-gradient(140deg,#263e4c,#15232e);font:600 26px/1 var(--ao-font-display,Georgia,serif);letter-spacing:.04em;color:#ead8b5}
 .aoTlmVenueIdentity--card .aoTlmVenueNamedMark{width:59px;height:59px;font-size:22px}
 .aoTlmVenueIdentity--detail .aoTlmVenueNamedMark,.aoTlmVenueIdentity--preview .aoTlmVenueNamedMark{width:78px;height:78px;font-size:29px}

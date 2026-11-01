@@ -6,7 +6,7 @@ import {
   massInstitutionImageId,registerMassInstitutionImages,
 } from "../src/find/institution-emblems.js";
 import { exploreMapFeatures, MASS_MAP_GROUP_COLORS } from "../src/find/map-runtime.js";
-import {renderDirectoryIdentityFallback} from "../src/find/directory-card.js";
+import {renderDirectoryIdentityFallback,hideUnavailableDirectoryEmblem} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
@@ -80,6 +80,26 @@ const noInventedLogo=renderDirectoryIdentityFallback({
 assert.match(noInventedLogo,/data-visual-kind="named"/);
 assert.doesNotMatch(noInventedLogo,/CMRI_emblem\.(png|svg)/);
 assert.match(renderDirectoryIdentityFallback({community_id:"DIOCESAN",eyebrow:"Diocesan"}),/data-visual-kind="neutral"/);
+// A cross-origin emblem failure must replace the large graphic with its actual
+// named institute initials, not leave a broken image or invent a new crest.
+const fsspFallback=renderDirectoryIdentityFallback({community_id:"FSSP",eyebrow:"FSSP"},"en","card");
+assert.match(fsspFallback,/data-visual-kind="emblem"/);
+assert.match(fsspFallback,/class="aoTlmVenueEmblemBackstop"[^>]*>FSSP</);
+assert.match(fsspFallback,/data-tlm-emblem-image/);
+const emblemFrame={dataset:{}};
+const emblemImage={
+  matches:selector=>selector==="img[data-tlm-emblem-image]",
+  closest:selector=>selector===".aoTlmVenueEmblemFrame"?emblemFrame:null,
+  hidden:false
+};
+assert.equal(hideUnavailableDirectoryEmblem({target:emblemImage}),true);
+assert.equal(emblemFrame.dataset.emblemState,"unavailable");
+assert.equal(emblemImage.hidden,false,"Visible textual emblem fallback replaces graphic");
+// Small secondary logo images have an adjacent textual institute label.
+const smallImage={...emblemImage,hidden:false,closest:()=>null};
+assert.equal(hideUnavailableDirectoryEmblem({target:smallImage}),true);
+assert.equal(smallImage.hidden,true);
+assert.equal(hideUnavailableDirectoryEmblem({target:{matches:()=>false}}),false);
 const researchQueue=JSON.parse(readFileSync(new URL("../data/directory/research/tlm-emblem-acquisition-queue-20261030.v1.json",import.meta.url),"utf8"));
 assert.equal(researchQueue.schema,"AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1");
 assert.equal(researchQueue.groups.length,41);

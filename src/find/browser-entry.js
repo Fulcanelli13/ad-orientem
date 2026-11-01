@@ -13,7 +13,7 @@ import {buildTimeMassBoard,validTimeMassDate} from "./mapcn-time-mass-board.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { EXPLORE_MAP_FIRST_V2_STYLE } from "./explore-map-first-v2-style.js";
-import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia,loadDirectoryCardMedia } from "./directory-card.js";
+import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia,loadDirectoryCardMedia,hideUnavailableDirectoryEmblem } from "./directory-card.js";
 import {TLM_CHURCH_PROFILE_STYLE} from "./tlm-church-profile.js";
 import { discoverItemsWithinMapBounds, renderMapcnDiscoverRail } from "./mapcn-discover-rail.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
@@ -1722,6 +1722,7 @@ export function createFindOwner(win=globalThis){
 
   win?.document?.addEventListener?.("scroll",onBibleTimelineScroll,true);
   win?.document?.addEventListener?.("click",onClick,true);
+  win?.document?.addEventListener?.("error",hideUnavailableDirectoryEmblem,true);
   win?.document?.addEventListener?.("input",onInput,true);
   win?.document?.addEventListener?.("change",onChange,true);
   win?.document?.addEventListener?.("keydown",onKeyDown,true);
