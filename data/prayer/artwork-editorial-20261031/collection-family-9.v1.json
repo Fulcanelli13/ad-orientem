@@ -13,7 +13,8 @@
     "sourceLinksRecoveredByExactID": 3,
     "sourceLinkSuggestionsUnverified": 0,
     "sourceLinksVerifiedByMuseumSourceWave02": 1,
-    "reconciledCandidateCount20261101": 112
+    "reconciledCandidateCount20261101": 112,
+    "sourceRowsPreserved20261101": 113
   },
   "slots": [
     {
@@ -1777,10 +1778,49 @@
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
           "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CURATED-COV-pray.for_priests-0"
+          ],
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437722",
+          "sourceEditorialStatus": "USER_REJECTED_FOR_THIS_PRAYER_PLACEMENT",
+          "fit": "CATHOLIC_PRIESTHOOD_THEME",
+          "historicallyApprovedInOriginalLedger": false,
+          "priorApprovedInAnotherContext": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "CURATED_PREVIOUS_SELECTION_OR_NEW_RESEARCH",
+          "curatedCrosswalk": {
+            "status": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+            "fit": "CATHOLIC_PRIESTHOOD_THEME",
+            "evidence": "Met PD original 1976.100.24, oil on wood",
+            "rights": "MET_PD_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING"
+          },
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "notForReview": true,
+          "eligibleForReview": false,
+          "eligibleForThisSlot": false,
+          "publication": false,
+          "photoCertification": "NOT_CLEARED",
+          "curatorialDisposition": "EXCLUDED_HISTORIC_SOURCE_PROVENANCE_ONLY",
+          "quarantineReason": "B02 exact Met original 437722 NOT_RELEVANT_TO_PRAYER_ONLY; distinct same-titled works unaffected",
+          "decisionAuthority": "EXPLICIT_USER_REJECTION_OR_B02_NOT_RELEVANT",
+          "originalSourceEditorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+          "retainedAsSourceEvidenceOnly": true
         }
       ],
       "imagePublicationAllowed": false,
-      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL"
+      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL",
+      "stats20261101": {
+        "sourceRowsPresent": 5,
+        "selectableReviewRows": 4,
+        "quarantinedOriginals": [
+          "CURATED-COV-pray.for_priests-0"
+        ]
+      }
     },
     {
       "slot": "COV-pray.occasional_intercessions",
@@ -2202,6 +2242,8 @@
       "CURATED-COV-pray.for_priests-0"
     ],
     "sourceLedgerUnmodified": true,
-    "productionEnabled": false
+    "productionEnabled": false,
+    "historicalSourceRowsRetained": true,
+    "excludedFromSelectableResearch": true
   }
 }
