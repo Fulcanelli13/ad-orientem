@@ -20,7 +20,24 @@
   },
   "new_places": 0,
   "confirmed_directory_links_added": 1,
-  "published_new": [
+  "published_new": [],
+  "historical_holds_preserved": {
+    "old_provider_scan": "2026-10-07 FSSP/ICKSP/IBP search returned no record; remains true as a narrow historical claim",
+    "old_spatial_screen": "2026-10-29 P92 source marker was 171.1 m from complex anchor; remains historically true",
+    "new_proof": "2026-11-01 first-party exact address + already present independent local Directory ID in complete CL2 worldwide corpus",
+    "remaining_pin_hold": "Do not treat historical 171.1m marker as exact church building pin"
+  },
+  "policy": {
+    "no_archive_photo_promotion": true,
+    "use_existing_rights_verified_approved_cover_only": true,
+    "no_new_map_pin": true,
+    "no_new_mass_time_or_missal_claim": true,
+    "no_institutional_ownership_claim": true,
+    "preserve_original_venue_id": true,
+    "preserve_historical_research_snapshots": true,
+    "zero_cost": true
+  },
+  "published_links": [
     {
       "place_id": "place:US:guadalupe-shrine-la-crosse",
       "venue_id": "AO-AMER-R28-US-23-05",
@@ -42,21 +59,5 @@
       "newly_approved_images": 0,
       "new_mass_schedule_rows": 0
     }
-  ],
-  "historical_holds_preserved": {
-    "old_provider_scan": "2026-10-07 FSSP/ICKSP/IBP search returned no record; remains true as a narrow historical claim",
-    "old_spatial_screen": "2026-10-29 P92 source marker was 171.1 m from complex anchor; remains historically true",
-    "new_proof": "2026-11-01 first-party exact address + already present independent local Directory ID in complete CL2 worldwide corpus",
-    "remaining_pin_hold": "Do not treat historical 171.1m marker as exact church building pin"
-  },
-  "policy": {
-    "no_archive_photo_promotion": true,
-    "use_existing_rights_verified_approved_cover_only": true,
-    "no_new_map_pin": true,
-    "no_new_mass_time_or_missal_claim": true,
-    "no_institutional_ownership_claim": true,
-    "preserve_original_venue_id": true,
-    "preserve_historical_research_snapshots": true,
-    "zero_cost": true
-  }
+  ]
 }
