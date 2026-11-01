@@ -1,4 +1,5 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
+import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
 } from "./tlm-celebration-evidence.js";
@@ -249,7 +250,7 @@ export function tlmCountryCounts(items=[]){
   return Object.freeze(counts);
 }
 export function filterPreliminaryR49(items,{
-  query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL",celebrationEvidence="ALL",countryCodes=[]
+  query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL",celebrationEvidence="ALL",countryCodes=[],cl27Facets={}
 }={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();
   const allowed=["ALL","ROME","SSPX","UNKNOWN"].includes(group)?group:"ROME";
@@ -262,6 +263,7 @@ export function filterPreliminaryR49(items,{
     (!aff.size||aff.has(item.community_id))&&
     (evidence==="ALL"||tlmSiteEvidence(item)===evidence)&&
     (liturgy==="ALL"||tlmCelebrationEvidenceClass(item)===liturgy)&&
+    matchesPublicCL27Facets(item,cl27Facets)&&
     (!countries.size||countries.has(tidy(item.country_code).toUpperCase()))&&
     (!q||item.search_text.includes(q))
   ));
