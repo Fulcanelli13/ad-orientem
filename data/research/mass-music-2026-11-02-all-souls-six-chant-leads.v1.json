@@ -1,0 +1,189 @@
+{
+  "schema": "ao-mass-music-2026-11-02-three-requiems-source-leads-v1",
+  "created": "2026-11-01",
+  "publication": "RESEARCH_HOLD",
+  "purpose": "Reuse existing score archive for all three All Souls formularies; no score promotion or selected-Mass musical certification",
+  "original1962Repository": "DivinumOfficium/divinum-officium",
+  "original1962Commit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "churchCalendar": {
+    "date": "2026-11-02",
+    "feast": "Commemoration of All the Faithful Departed",
+    "forms": [
+      "LOW",
+      "MISSA_CANTATA_SIMPLE",
+      "MISSA_CANTATA_INCENSE",
+      "SOLEMN"
+    ]
+  },
+  "selectedMassWitnesses": [
+    {
+      "mass": "I",
+      "sourcePath": "Sancti/11-02m1",
+      "originalSourceBlobSha": "5dc537fdbabcb257f54d24bb12d02f59ea1fa6bd",
+      "collectIncipit": "Fidelium, Deus, omnium Conditor et Redemptor",
+      "inheritance": "ex C9",
+      "noGloria": true,
+      "noCredo": true,
+      "sequenceRule": true
+    },
+    {
+      "mass": "II",
+      "sourcePath": "Sancti/11-02m2",
+      "originalSourceBlobSha": "463d11b23ed573ad84a720c5f476c9f1f48be52e",
+      "collectIncipit": "Deus, indulgentiarum Domine",
+      "inheritance": "ex C9",
+      "noGloria": true,
+      "noCredo": true,
+      "sequenceRule": true
+    },
+    {
+      "mass": "III",
+      "sourcePath": "Sancti/11-02m3",
+      "originalSourceBlobSha": "43d07bb659a6da36b7628710121f3c6318cc2651",
+      "collectIncipit": "Deus, veniae largitor et humanae salutis amator",
+      "inheritance": "ex C9",
+      "noGloria": true,
+      "noCredo": true,
+      "sequenceRule": true
+    }
+  ],
+  "inheritedProperWitness": {
+    "originalPointer": "ex C9",
+    "attemptedPinnedPath": "web/www/missa/Latin/Commune/C9.txt",
+    "status": "PARENT_FILE_NOT_FOUND_AT_PINNED_PATH",
+    "important": "Per-Mass source files contain the 3 different orations and Scripture readings but do not print the common Proper chants inline. This ledger MUST NOT certify the inherited C9 source text or score parity. App runtime resolves Requiem separately."
+  },
+  "properScoreLeads": [
+    {
+      "role": "INTROIT",
+      "incipit": "Requiem aeternam",
+      "originalArchiveId": "GREGOBASE-766",
+      "gregobaseId": 766,
+      "originalPart": "in",
+      "folio": "94*",
+      "originalGabcSha256": "27ce599a0eb1081996e1e8eb44552259e11c8251f28fc934abaa4448ad635e26",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=766",
+      "sourceEvidence": "1961_GRADUALE_ARCHIVE_ID_ROLE_AND_INCIPIT_ONLY",
+      "selected1962MassMatch": "NOT_VERIFIED",
+      "completeLatinVerses": "NOT_VERIFIED",
+      "printed1961Neumes": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false,
+      "audioPublished": false
+    },
+    {
+      "role": "GRADUAL",
+      "incipit": "Requiem aeternam",
+      "originalArchiveId": "GREGOBASE-1261",
+      "gregobaseId": 1261,
+      "originalPart": "gr",
+      "folio": "95*",
+      "originalGabcSha256": "8df98043931313f1b2bedf29cb484d5c6e26081e64367595fa6141ce3fb08a53",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1261",
+      "sourceEvidence": "1961_GRADUALE_ARCHIVE_ID_ROLE_AND_INCIPIT_ONLY",
+      "selected1962MassMatch": "NOT_VERIFIED",
+      "completeLatinVerses": "NOT_VERIFIED",
+      "printed1961Neumes": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false,
+      "audioPublished": false
+    },
+    {
+      "role": "TRACT",
+      "incipit": "Absolve, Domine",
+      "originalArchiveId": "GREGOBASE-338",
+      "gregobaseId": 338,
+      "originalPart": "tr",
+      "folio": "95*",
+      "originalGabcSha256": "1b5b06aecb0b6aa451e826c661f4fefd443ffe41a7a0fa9915b63c965955030a",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=338",
+      "sourceEvidence": "1961_GRADUALE_ARCHIVE_ID_ROLE_AND_INCIPIT_ONLY",
+      "selected1962MassMatch": "NOT_VERIFIED",
+      "completeLatinVerses": "NOT_VERIFIED",
+      "printed1961Neumes": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false,
+      "audioPublished": false
+    },
+    {
+      "role": "OFFERTORY",
+      "incipit": "Domine Jesu Christe",
+      "originalArchiveId": "GREGOBASE-1199",
+      "gregobaseId": 1199,
+      "originalPart": "of",
+      "folio": "100*",
+      "originalGabcSha256": "629c298acb2ed79f8001759d8044835a4dd9f3988da417e8941c918150e05778",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1199",
+      "sourceEvidence": "1961_GRADUALE_ARCHIVE_ID_ROLE_AND_INCIPIT_ONLY",
+      "selected1962MassMatch": "NOT_VERIFIED",
+      "completeLatinVerses": "NOT_VERIFIED",
+      "printed1961Neumes": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false,
+      "audioPublished": false
+    },
+    {
+      "role": "COMMUNION",
+      "incipit": "Lux aeterna",
+      "originalArchiveId": "GREGOBASE-241",
+      "gregobaseId": 241,
+      "originalPart": "co",
+      "folio": "102*",
+      "originalGabcSha256": "58c9b77d47882732fb22c0de88e2a329015e1a0503d4b9953153d72c4699f6d2",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=241",
+      "sourceEvidence": "1961_GRADUALE_ARCHIVE_ID_ROLE_AND_INCIPIT_ONLY",
+      "selected1962MassMatch": "NOT_VERIFIED",
+      "completeLatinVerses": "NOT_VERIFIED",
+      "printed1961Neumes": "NOT_COMPARED",
+      "editorialApproval": false,
+      "publicReader": false,
+      "audioPublished": false
+    }
+  ],
+  "sequenceSourceLead": {
+    "role": "SEQUENCE",
+    "incipit": "Dies irae",
+    "gregobaseId": 1198,
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1198",
+    "sourceFolio": "1810",
+    "sourceEdition": "Graduale Romanum 1961 p. 96*; Liber Usualis 1961 p. 1810",
+    "sourceReferenceId": "L07-012",
+    "sourceEvidence": "M07_SEQUENCE_SOURCE_INDEX_ONLY_NOT_IN_1195_GRADUALE_ARCHIVE",
+    "selected1962MassMatch": "NOT_VERIFIED",
+    "completeLatinVerses": "NOT_VERIFIED",
+    "printed1961Neumes": "NOT_COMPARED",
+    "editorialApproval": false,
+    "publicReader": false,
+    "audioPublished": false
+  },
+  "otherMusicBoundaries": {
+    "requiemOrdinary": "Kyrie, Sanctus and Agnus Dei require separate Requiem-setting verification; Gloria and Credo excluded by all 3 sources",
+    "disallowed": [
+      "GLORIA",
+      "CREDO",
+      "ALLELUIA",
+      "ASPERGES_SUNDAY"
+    ],
+    "dismissal": "Requiescant in pace / Amen rather than Ite missa est; Requiem melody still SOURCE_SCORE_REQUIRED",
+    "preface": "Prefatio Defunctorum set in all 3 sources; proper text/tone not note-certified",
+    "requiemAbsolution": "Not implied by November 2; only include if explicitly selected in actual ceremony",
+    "organ": "No inferred solo organ performance; apply existing 1958 rule gate"
+  },
+  "published": {
+    "selectedProperScoreCount": 0,
+    "facsimileNoteMatches": 0,
+    "recordingsApproved": 0,
+    "publicNotationCount": 0,
+    "noNewGabcCopied": true,
+    "noNewRenderer": true,
+    "userApprovalRequired": "ONE_FINAL_COMPLETE_COLLECTION_REVIEW"
+  },
+  "nextVerification": [
+    "Confirm the actual inherited C9 Proper against production-selected 1962 Requiem for Masses I/II/III",
+    "Compare the five archived original GABC Latin streams against each 1962 selected Proper, including full Tract and Offertory verses",
+    "Retrieve the distinct source-indexed Dies irae GABC from existing M07 lead; confirm full 1962 text and verses",
+    "Compare each score's notes/neumes with printed Graduale/Liber Usualis 1961 pages",
+    "Source-match Requiem Kyrie/Sanctus/Agnus, Preface of the Dead and Requiescant / Amen",
+    "Do not publish scores or audio before user's one complete collection review"
+  ]
+}
