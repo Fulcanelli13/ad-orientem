@@ -44,7 +44,15 @@ const nl=v=>esc(v).replace(/\n/g,'<br>');
 const novenaParagraphs=v=>String(v??'').replace(/\r\n/g,'\n')
  .split(/\n[ \t]*\n+/).filter(x=>x.trim())
  .map(x=>'<p class="aoN1PrayerParagraph">'+nl(x)+'</p>').join('');
-const isFr=()=>{try{const x=JSON.parse(localStorage.getItem('ao2:settings:v1')||'{}');return x.language==='fr'}catch{return false}};
+// Canonical modular Settings owns the UI language; historical localStorage
+// is only a fallback for standalone legacy readers without a Settings owner.
+const isFr=()=>{
+ const canonical=window.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.general?.uiLanguage;
+ if(canonical==='fr'||canonical==='en')return canonical==='fr';
+ const runtime=window.AO_RUNTIME_V8?.store?.getState?.()?.language;
+ if(runtime==='fr'||runtime==='en')return runtime==='fr';
+ try{return JSON.parse(localStorage.getItem('ao2:settings:v1')||'{}').language==='fr'}catch{return false}
+};
 const L=(en,fr)=>isFr()?fr:en;
 const txt=o=>o?(isFr()?o.fr:o.en)||o.en||o.fr||'':'';
 const startKindLabel=n=>n?.startKind===NOVENA_START_KIND.TRADITIONAL
