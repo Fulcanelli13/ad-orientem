@@ -36,6 +36,10 @@ class PhotoFinderTests(unittest.TestCase):
  def test_frozen_cover_windows_survive_successful_previous_batches(self):
   c,g=mod.frozen_original_schedule(self.covers,self.gallery)
   self.assertEqual(len(c["items"]),40)
+  # Independently vetted Pontmain cover remains approved, but must not move
+  # the frozen user-selected Photo Finder offset windows.
+  assert any(x["place_id"]=="place:FR:pontmain" for x in self.covers["items"])
+  self.assertNotIn("place:FR:pontmain",{x["place_id"] for x in c["items"]})
   self.assertGreaterEqual(len(self.covers["items"])-len(c["items"]),12)
   frozen=mod.source_status(self.rows,self.decisions,self.places,c,g)
   covers=[x for x in frozen["tasks"] if x["role"]=="cover"]
