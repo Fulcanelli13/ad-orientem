@@ -1,0 +1,85 @@
+{
+  "schema": "AO_SACRED_PLACES_P108_LA_CROSSE_GUADALUPE_DIRECTORY_PHOTO_LINK_V1",
+  "date": "2026-11-01",
+  "scope": "One exact existing Directory venue linked to one existing Sacred Place; approved existing Place cover reused via current runtime media resolver",
+  "baseline": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 23
+  },
+  "proposed": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "new_places": 0,
+  "confirmed_directory_links_added": 1,
+  "published_new": [],
+  "confirmed_existing_place_link": {
+    "link_id": "link:directory-place:US:guadalupe-shrine-la-crosse",
+    "venue_id": "AO-AMER-R28-US-23-05",
+    "physical_group_id": "RG-ACCD4654B950",
+    "place_id": "place:US:guadalupe-shrine-la-crosse",
+    "place_name": "Shrine of Our Lady of Guadalupe",
+    "official_address": "5250 Justin Road, La Crosse, WI 54601",
+    "source_ids": [
+      "SHR-GUADALUPE-SCHEDULE",
+      "AO-AMER-R28-US-23-05"
+    ],
+    "official_source_url": "https://guadalupeshrine.org/hours-locations/",
+    "official_liturgical_source_url": "https://guadalupeshrine.org/mass-schedules/",
+    "exact_cl2_source_url": "https://guadalupeshrine.org/hours-locations/",
+    "exact_cl2_venue_name": "Shrine of Our Lady of Guadalupe",
+    "exact_cl2_venue_physical_description": "5250 Justin Road, La Crosse, WI 54601",
+    "source_identity_evidence": "Exact named Shrine + exact street, postal code, city and state match across canonical Place owner, CL2 directory record, and shrine's official Hours & Location page. This establishes the same shrine complex without inferring a separate Votive Chapel, altar, operator or canonical affiliation.",
+    "approved_photo_asset_path": "assets/approved/place-media/pf-d2cc2fb4fdbf658d031f42.webp",
+    "approved_photo_original_file": "File:Guadalupe Shrine Front.jpg",
+    "approved_photo_original_sha1": "53a98bc8794a37e05f7a85d99dd406fab56c8e5d",
+    "approved_webp_sha256": "36d078da2813b14ff11a60c3610872c154b49d413be4c7d8daf95cfab31d6743",
+    "approved_photo_license": "CC-BY-3.0",
+    "approved_photo_credit": "Pgnielsen79 ( talk )",
+    "photo_verification": "Reuses existing approved canonical Place cover; current media registry has subject_verified, crop_reviewed and rights_verified true. No new Commons selection, download, derivative or rights decision.",
+    "mass_source_scope": "Official shrine publishes Traditional Latin Mass; no new times or liturgical labels imported into Directory by this release.",
+    "publication_scope": "Existing approved Place cover may now render in exact Directory church profile and map preview through the existing CONFIRMED LOCATED_AT gate."
+  },
+  "retained_holds": [
+    {
+      "place_id": "place:DE:kevelaer-kerzenkapelle",
+      "reason": "Candle Chapel distinct from Marian Grace Chapel; do not link name/street-only matches"
+    },
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "reason": "Other chapel at same pilgrimage precinct; photo cannot be inherited"
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "reason": "Other Gnadenkapelle labelled in Wigratzbad CL2 listing; same dedication is not same site"
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "reason": "La Médaille Miraculeuse dedication appears at Lattes; Paris chapel not the same physical church"
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "reason": "Annual pilgrimage does not resolve a canonical Directory venue"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "reason": "Parish church separate from St Winefride's Well, Directory identity unresolved"
+    }
+  ],
+  "no_new_photo_assets": true,
+  "no_new_masses_or_schedule_rows": true,
+  "no_photo_selection_changes": true,
+  "no_new_coordinates": true,
+  "no_owner_inference": true,
+  "verified_source_registry_sha": "3149b0363daa26664997033334513f6567f7cf4a",
+  "method": "Exact CL2 record/source URL checked against existing canonical Place identity and independent live official shrine page; approved local media record retained byte-for-byte",
+  "outcome": "READY_FOR_GATED_REVIEW_NOT_AUTOMATICALLY_MERGED"
+}
