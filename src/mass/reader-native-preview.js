@@ -2948,6 +2948,10 @@ export async function mountNativeReaderPreview({
       return active?projectNativeRiteMusicItinerary({
         registry:ready.riteMusicRegistry,riteId:active[0],
         controller:active[1],sourcePayload:active[2],condition:active[3],
+        // Exact source-owned seasonal formula, including Passiontide omission.
+        // Not a choir observation or permission to show unapproved scores.
+        aspersionFormulaState:active[0]==="ASPERGES"
+          ?ready.aspergesController?.project?.()?.formulaState??null:null,
       }):null;
     },
     scholaLocalProgramme:()=>scholaLocalProgramme,

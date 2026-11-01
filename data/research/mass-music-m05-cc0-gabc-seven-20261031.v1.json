@@ -1,0 +1,119 @@
+{
+  "schema": "ao-mass-music-m05-cc0-gabc-research-v1",
+  "acquiredDate": "2026-10-31",
+  "license": {
+    "scope": "GregoBase chant transcriptions",
+    "spdx": "CC0-1.0",
+    "source": "https://gregobase.selapa.net/?page_id=2",
+    "note": "GregoBase states all chant transcriptions are CC0; printed 1961 witness/source matching remains a separate step."
+  },
+  "policy": {
+    "repositoryResearchOnly": true,
+    "promotionStatus": "NOT_APPROVED",
+    "scoreSourceComparison": "PENDING_EXACT_FACSIMILE_CHECK",
+    "userEditorialApprovalRequired": true,
+    "automaticMassImport": false,
+    "noSound": true,
+    "doNotSubstituteLaterRubrics": true
+  },
+  "scores": [
+    {
+      "id": "PREFACE_SOLEMN",
+      "sourceId": 4449,
+      "sourceName": "Toni Praefationum (1. Tonus solemnis)",
+      "scoreFamily": "PREFACE_DIALOGUE",
+      "toneFamily": "SOLEMN",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 109",
+      "gabc": "name:Toni Praefationum (1. Tonus solemnis);\noffice-part:Toni Communes;\nbook:Graduale Romanum, 1961, p. 130* & The Liber Usualis, 1961, p. 109;\ntranscriber:Veronica Brandt;\n%%\n(c3) PER(c) ó(e)mni(f)a(f) saé(g)cu(f)la(f) sae(e)cu(f)ló(fe)rum.(e.) (::)\n<sp>R/</sp>. A(e)men.(ef..) (::)\n<nlba><sp>V/</sp>. Dó(e)mi(f)nus</nlba>(g) vo(ef)bís(gf)cum.(f.) (::)\n<sp>R/</sp>. Et(e) cum(f) spí(g)ri(e)tu(f) tu(gf)o.(f.) (::)\n<sp>V/</sp>. Sur(f!gwh)sum(g) cor(fg)da.(fe..) (::)\n<sp>R/</sp>. Ha(g)bé(f!gwh)mus(g) ad(g) Dó(fg)mi(f)num.(fe..) (::)\n<sp>V/</sp>. Grá(g)ti(fe)as(ef) a(g)gá(f!gwh)mus(g.) (,)\nDó(g)mi(f)no(fe) De(ef)o(g) no(fg)stro.(f.) (::)\n<sp>R/</sp>. Di(f!gwh)gnum(g) et(g) ju(fg)stum(f) est.(fe..) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=4449",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4449",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    },
+    {
+      "id": "PREFACE_FERIAL",
+      "sourceId": 4450,
+      "sourceName": "Toni Praefationum (2. Tonus ferialis)",
+      "scoreFamily": "PREFACE_DIALOGUE",
+      "toneFamily": "FERIAL",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 109",
+      "gabc": "name:Toni Praefationum (2. Tonus ferialis);\noffice-part:Toni Communes;\nbook:Graduale Romanum, 1961, p. 131* & The Liber Usualis, 1961, p. 109;\ntranscriber:Veronica Brandt;\n%%\n(c3) PER(c) ó(e)mni(f)a(f) saé(g)cu(f)la(f) sae(e)cu(f)ló(fe)rum.(e.) (::)\n<sp>R/</sp>. A(e)men.(ef..) (::)\n<nlba><sp>V/</sp>. Dó(e)mi(f)nus</nlba>(g) vo(ef)bís(g)cum.(f.) (::)\n<sp>R/</sp>. Et(e) cum(f) spí(g)ri(e)tu(f) tu(g)o.(f.) (::)\n<sp>V/</sp>. Sur(h)sum(g) cor(fg)da.(fe..) (::)\n<sp>R/</sp>. Ha(g)bé(h)mus(g) ad(f) Dó(g)mi(f)num.(fe..) (::)\n<sp>V/</sp>. Grá(h)ti(g)as(g) a(f)gá(g)mus(g.) (,)\n<nlba>Dó(g)mi(g)no</nlba>(g) De(e)o(f) no(g)stro.(f.) (::)\n<sp>R/</sp>. Di(h)gnum(g) et(f) ju(g)stum(f) est.(fe..) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=4450",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4450",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    },
+    {
+      "id": "ORATIONS_FESTIVE",
+      "sourceId": 4487,
+      "sourceName": "Dominus vobiscum (Toni Orationem: Tonus festivus.)",
+      "scoreFamily": "COLLECT_POSTCOMMUNION_GREETING",
+      "toneFamily": "SOLEMN",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 98",
+      "gabc": "name:Dominus vobiscum (Toni Orationem: Tonus festivus.);\noffice-part:Toni Communes;\nbook:Graduale Romanum, 1961, p. 113* & The Liber Usualis, 1961, p. 98;\n%%\n(c3) DO(h)mi(h)nus(h) vo(h)bís(h)cum.(h.) (::)\n<sp>R/</sp>. Et(h) cum(h) spí(h)ri(h)tu(h) tu(h)o.(h.) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=4487",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4487",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    },
+    {
+      "id": "PATERNOSTER_COMMON",
+      "sourceId": 7282,
+      "sourceName": "Per omnia ... Et ne nos inducas",
+      "scoreFamily": "PATERNOSTER_CONCLUSION",
+      "toneFamily": "SOURCE_TONE_UNRESOLVED",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 110",
+      "gabc": "name:Per omnia ... Et ne nos inducas;\noffice-part:Toni Communes;\nbook:Graduale Romanum, 1961, p. 132* & The Liber Usualis, 1961, p. 110;\ntranscriber:Veronica Brandt;\n%%\n(c3) PER(c) ó(e)mni(f)a(f) saé(g)cu(f)la(f) sae(e)cu(f)ló(fe)rum.(e.) (::) <sp>R/</sp>. A(e)men.(ef..) (::) <sp>V/</sp>. Et(c) ne(e) nos(f) in(f)dú(g)cas(f) in(f) ten(f)ta(e)ti(f)ó(fe)nem.(e.) (::) <sp>R/</sp>. Sed(e) lí(f)be(f)ra(f) nos(f) a(g) ma(fe)lo.(e.) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=7282",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=7282",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    },
+    {
+      "id": "ASPERGES_NORMAL",
+      "sourceId": 497,
+      "sourceName": "Asperges me",
+      "scoreFamily": "ASPERGES",
+      "toneFamily": "ORDINARY",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 11",
+      "gabc": "name:Asperges me;\noffice-part:Antiphona;\nmode:7;\nbook:Graduale Romanum, 1961, p. 1* & The Liber Usualis, 1961, p. 11 & Graduale Romanum, 1974, p. 707 & Chants of the Church, 1956, p. 1 & Gregorian Missal, 1990, p. 70 & Liber cantualis, 1983, p. 32;\ntranscriber:Andrew Hinkley;\ncommentary:Ps. 50, 9 et 3; XIII. s.;\n%%\n(c2) A(cd)SPER(fvED)GES(ef) me,(g.) (,) * Dó(h!iwj)mi(ji)ne,(hg) (,) hys(h)só(g_[oh:h]f)po,(ef) et(gvFD') mun(e)dá(cdc___)bor :(c.) (:) la(cd)vá(fvED)bis(ef) me,(g.) (;) et(g!hw!ivHG) su(fe)per(d') ni(f)vem(ef) de(gvFD')al(e)bá(cdc___)bor.(c.) (::) <i>Ps.~50.</i> Mi(cfe)se(fg)ré(g')re(g) me(gi)i,(h) De(hg)us,(gh..) *(:) se(ge)cún(fg~)dum(g') ma(g)gnam(g') mi(g)se(g')ri(g)cór(g!hwi)di(g')am(f) tu(fff)am.(dc..) (::) Gló(cfe)ri(fg)a(g) Pa(g)tri,(g') et(g) Fí(g)li(g)o,(g.) (,) et(g) Spi(g)rí(gi)tu(h')i(h) San(hg~)cto :(gh..) *(:) Sic(ge)ut(fg) e(g)rat(g') in(g) prin(g)cí(g')pi(g)o,(g.) (,) et(g) nunc,(gi) et(h) sem(hg~)per,(gh..) (:) et(ge) in(fg) saé(g)cu(g)la(g') sae(g)cu(g!hwi)ló(g')rum.(f) A(fff)men.(dc..) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=497",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=497",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    },
+    {
+      "id": "ASPERGES_PASCHAL",
+      "sourceId": 958,
+      "sourceName": "Vidi aquam",
+      "scoreFamily": "ASPERGES",
+      "toneFamily": "PASCHAL",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 12",
+      "gabc": "name:Vidi aquam;\noffice-part:Antiphona;\nmode:8;\nbook:Graduale Romanum, 1961, p. 2* & The Liber Usualis, 1961, p. 12 & Graduale Romanum, 1974, p. 708 & Chants of the Church, 1956, p. 2 & Gregorian Missal, 1990, p. 71 & Liber cantualis, 1983, p. 33;\ntranscriber:Andrew Hinkley;\ncommentary:Ezech 47, 1. 9; X. s.;\n%%\n(c3) VI(ef)di(fd/fe) a(efe___)quam(e.) *(,) e(e)gre(ef/hg)di(gf)én(hh)tem(fg) de(ef) tem(e!hh/if~)plo,(fe/fgf.) (;) a(ef) lá(e!hhi)te(f)re(fe) dex(f/hef)tro,(e[ll:1]d..) (;) al(e)le(efde)lú(ef/hfg){ia} :(fe..) (:) et(ef) o(e!fwg'!hv)mnes,(h') ad(h) quos(h) per(gf~)vé(gh)nit(g.) (,) a(hhhg)qua(fi) i(h_g)sta,(hiH'GhvG'FEfe..) (;) sal(e!hhhi)vi(h) fa(h!iwji)cti(hvGF) sunt,(f.) (,) et(fe~) di(f/hef)cent,(e[ll:1]d..) (;) al(ef)le(f)lú(fgf~){ia},(f.) (,) al(fvE~D~)le(ef/h.f!gwh)lú(efe___){ia}.(e.) (::)\n<i>Ps. 117.</i> Con(e)fi(fe)té(eh)mi(h)ni(h') Dó(h)mi(h)no(h) quó(hg)ni(hi)am(i) bo(hi)nus :(h.) *(:) quó(hf)ni(fh)am(h) in(h) saé(h')cu(h)lum(h) mi(h)se(h)ri(h)cór(hhg)di(ef)a(hg) e(f)jus.(e.) (::)\nGló(e)ri(fe)a(eh) Pa(h)tri,(h') et(h) Fí(h)li(h)o,(h.) (,) et(h) Spi(h)rí(hg)tu(hi)i(i) San(hi)cto.(h.) *(:) Sic(hf)ut(fh) e(h)rat(h') in(h) prin(h)cí(h')pi(h)o,(h.) (,) et(h) nunc,(hi) et(i) sem(hi)per,(h.) (:) et(hf) in(fh) saé(h)cu(h)la(h') sae(h)cu(hhg)ló(ef)rum.(hg) A(f)men.(e.) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=958",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=958",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    },
+    {
+      "id": "DISMISSAL_ITE_I",
+      "sourceId": 2988,
+      "sourceName": "Ite Ia",
+      "scoreFamily": "DISMISSAL",
+      "toneFamily": "PASCHAL_DOUBLE_ALLELUIA_CANDIDATE",
+      "sourceFolio": "Liber Usualis (Solesmes, 1961), p. 19",
+      "gabc": "name:Ite Ia;\noffice-part:Kyriale;\nmode:8;\nbook:Graduale Romanum, 1961, p. 239P & Graduale Romanum, 1961, p. 7* & The Liber Usualis, 1961, p. 19 & Chants of the Church, 1956, p. 7;\ntranscriber:Andrew Hinkley;\n%%\n(c4) I(g)te,(g) mis(g')sa(g) est,(h.) al(g)le(f)lú(gh~){ia},(h.) (,) al(h)le(gjIH'G)lú(fgh){ia}.(hg..) (::) (Z-)\n~~~<sp>R/</sp>. De(g)o(g) grá(g')ti(g)as,(h.) ~~al(g)le(f)lú(gh~){ia},(h.) (,) al(h)le(gjIH'G)lú(fgh){ia}.(hg..) (::)",
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=2988",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=2988",
+      "renderApproved": false,
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "textWitnessStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED"
+    }
+  ]
+}

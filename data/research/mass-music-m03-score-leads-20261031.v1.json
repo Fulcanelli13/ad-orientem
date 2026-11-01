@@ -191,7 +191,7 @@
     {
       "id": "DISMISSAL_ITE_I",
       "moment": "DISMISSAL",
-      "classification": "MASS_I",
+      "classification": "PASCHAL_DOUBLE_ALLELUIA_CANDIDATE",
       "title": "Ite Ia",
       "printedWitness": {
         "work": "Liber Usualis",
@@ -203,9 +203,9 @@
       "approval": "PENDING_USER_REVIEW",
       "scoreEncoding": "NOT_IMPORTED",
       "facsimileExactMatch": "PENDING",
-      "responseMatch": "PENDING",
+      "responseMatch": "GABC_CANDIDATE_HAS_BOTH_TURNS_NOT_FACSIMILE_VERIFIED",
       "licenceAssessment": "PENDING",
-      "sourceCaveat": "Check original complete celebrant/deacon dismissal and its response: online score splits the response into another GABC item."
+      "sourceCaveat": "GregoBase #2988 explicitly encodes Ite missa est, alleluia, alleluia and Deo gratias, alleluia, alleluia (second part marked ~~~); this is NOT a default year-round dismissal. Verify exact Easter-octave/Pentecost applicability and 1961 facsimile before any runtime use."
     }
   ]
 }

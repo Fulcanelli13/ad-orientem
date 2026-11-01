@@ -4,6 +4,7 @@
 // the editorial order of the music registry.
 import {resolveRiteMusicScene} from "./reader-rite-music-authority.js";
 import {sourceMusicMaterialGate} from "./reader-music-material-gate.js";
+import {resolveNativeAspersionNotationHandoff} from "./reader-music-notation-handoff.js";
 
 const freeze=Object.freeze;
 const SILENT_STAGES=new Set(["GF-PASS-320","GF-END-910"]);
@@ -41,6 +42,7 @@ function empty(reason,riteId=null,stageId=null){
  * The 1962 Mass Ordinary controller is not touched. */
 export function projectSpecialRiteMusicItinerary({
  registry,riteId,stageId,sourcePayload,condition=null,stageOrder,
+ aspersionFormulaState=null,
 }={}){
  if(registry?.schema!=="ao-mass-special-rite-music-events-v1"||
     registry?.policy?.noSyntheticChant!==true)return empty("REGISTRY_NOT_CERTIFIED");
@@ -77,6 +79,11 @@ export function projectSpecialRiteMusicItinerary({
     stageId:id,stageIndex:i,
     sourceOwner:"EXISTING_NATIVE_RITE",sourceFile:e.sourceFile,
     sourcePaths:freeze(e.sourceFound.map(x=>x.path)),
+    notationHandoff:riteId==="ASPERGES"?
+      resolveNativeAspersionNotationHandoff({
+        riteId,stageId:id,eventId:e.id,
+        formulaState:aspersionFormulaState
+      }):null,
     musicMaterial:sourceMusicMaterialGate({
       eventId:e.id,kind:e.kind,sourceOwner:"EXISTING_NATIVE_RITE",
       sourceRef:e.sourceFound.map(x=>x.path),
@@ -107,12 +114,13 @@ export function projectSpecialRiteMusicItinerary({
  });
 }
 export function projectNativeRiteMusicItinerary({
- registry,riteId,controller,sourcePayload,condition=null
+ registry,riteId,controller,sourcePayload,condition=null,
+ aspersionFormulaState=null
 }={}){
  const current=controller?.project?.();
  const stageId=current?.step?.recordId??current?.card?.id??current?.card?.recordId;
  return projectSpecialRiteMusicItinerary({
   registry,riteId,stageId,sourcePayload,condition,
-  stageOrder:nativeRiteStageOrder(controller),
+  stageOrder:nativeRiteStageOrder(controller),aspersionFormulaState,
  });
 }
