@@ -1,0 +1,4 @@
+// Minimal, card-contained artwork: never change Benediction cue timing or navigation.
+const css=".aoBenedictionSelectedArt{margin:8px 0 14px;text-align:center;max-width:100%;color:inherit}.aoBenedictionSelectedArt img{display:block;width:100%;max-height:38svh;object-fit:contain;object-position:center;background:transparent;border-radius:8px}.aoBenedictionSelectedArt figcaption{font-size:.69rem;line-height:1.42;opacity:.69;margin:7px auto 0;max-width:34rem}@media(max-width:540px){.aoBenedictionSelectedArt img{max-height:30svh}}";
+if(typeof document!=="undefined"&&!document.getElementById("ao-benediction-mystic-lamb-user-art")){const e=document.createElement("style");e.id="ao-benediction-mystic-lamb-user-art";e.textContent=css;document.head.appendChild(e)}
+export {css as BENEDICTION_ART_CSS};
