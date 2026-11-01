@@ -1,7 +1,23 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {c3PrayerMarkup,c3UpcomingMarkup,selectC3PrayerSlide,hydrateC3Art} from "../src/home/c3-gallery.js";
+import {c3PrayerMarkup,c3UpcomingMarkup,selectC3PrayerSlide,hydrateC3Art,c3ApprovedDatedHomeArt} from "../src/home/c3-gallery.js";
 import {HOME_C3_CSS} from "../src/home/c3-styles.js";
+
+// Today must use the exact user-selected Class I painting already present in
+// the canonical Calendar. A valid but unrelated generic Proper artwork is NOT
+// a substitute for Carlo Saraceni / Carracci on the two November feasts.
+const allSaints=c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-01"},{selectedDate:"2026-11-01"});
+assert.equal(allSaints?.artist,"Carlo Saraceni");
+assert.equal(allSaints?.title,"Paradise");
+assert.match(allSaints?.source??"",/Paradise_MET_DT1448/);
+assert.equal(allSaints?.imagePublicationStatus,"REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED");
+const allSouls=c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m1"},{selectedDate:"2026-11-02"});
+assert.equal(allSouls?.artist,"Ludovico Carracci");
+assert.match(allSouls?.title??"",/Souls of Purgatory/);
+assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m1"},{selectedDate:"2026-11-01"}),null);
+assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-01"},{selectedDate:"2026-11-03"}),null);
+assert.ok(HOME_C3_CSS.includes(".aoC3DatedImage"));
+assert.ok(HOME_C3_CSS.includes(".aoC3DatedCredit"));
 
 const prayer=c3PrayerMarkup({fr:false,feature:{id:"angelus.evening"},
   attrs:'data-home-cu-dynamic="angelus.evening" data-home-cu-route="pray.angelus_regina"',
