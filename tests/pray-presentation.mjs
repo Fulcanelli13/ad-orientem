@@ -623,4 +623,4 @@ assert.match(fourFolioCSS,/aoP435930Stations \.aoDevoCardScroll \.aoP435930Stati
 assert.match(fourFolioCSS,/aoP435930ConfessionReader \.aoDevoCardScroll \.aoP435930ConfQuestions li/);
 assert.match(runtime,/STATION_DATA\.alphonsus\?\.\[lang\(\)\]/);
 assert.match(runtime,/const ex=isFr\(\)\?DATA\.examFr:DATA\.exam/);
-assert.match(runtime,/CONF\.since/);
+assert.doesNotMatch(runtime,/CONF\\.since|data-p435930-since/,"Claude Confession must not collect free-text time estimates");
