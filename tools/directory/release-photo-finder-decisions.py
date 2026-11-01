@@ -253,8 +253,15 @@ def frozen_original_schedule(covers,gallery):
     "APPROVED_GALLERY_COVER_REUSE_20261031",
     "COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE",
  }
+ # Pontmain was an independently verified local gallery-to-cover promotion
+ # (2026-10-21), without source_place_ref. It was not part of the original
+ # frozen 40-cover Photo Finder offset baseline: preserve it in production but
+ # exclude precisely its SHA-locked asset from original batch scheduling.
+ later_pontmain=lambda i:(i.get("place_id")=="place:FR:pontmain" and
+   i.get("asset_path")=="assets/approved/place-media/FR-pontmain-basilica-east.webp" and
+   i.get("derivative_sha256")=="672b9f9da38f8c91fe7e70d93aabf662396ddaf81582f12445882c09a856fb9f")
  base_covers={**covers,"items":[i for i in covers["items"]
-   if i.get("source_place_ref") not in later_cover_sources]}
+   if i.get("source_place_ref") not in later_cover_sources and not later_pontmain(i)]}
  base_gallery={**gallery,"items":[i for i in gallery["items"]
    if not (str(i.get("media_id") or "").startswith("pf-")
      and "Photo Finder editorial selection" in str(i.get("review_method") or ""))]}
