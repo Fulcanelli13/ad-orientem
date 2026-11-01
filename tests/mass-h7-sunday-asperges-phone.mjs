@@ -135,8 +135,15 @@ try{
       // actual selected Mass must allow navigation to Gloria and Credo.
       const visible=await page.evaluate(()=>{
         const api=window.AO_R17_NATIVE_READER_PREVIEW;
-        const go=id=>{const result=api.showSection(id),current=api.getCurrentCard();
-          return Boolean(result)&&String(current?.sourceSectionId??current?.sectionId)===id;};
+        // LIVE has multiple distinct presentation sectionIds per source macro.
+        // showSection requires the real presentation section ID, never
+        // AO.CARD.00x (which is only a sourceSectionId on 65-card LIVE).
+        const go=sourceId=>{
+          const card=api.model.cards.find(c=>c.sourceSectionId===sourceId);
+          if(!card)return false;
+          const result=api.showSection(card.sectionId);
+          return Boolean(result)&&api.getCurrentCard()?.sectionId===card.sectionId;
+        };
         const gloria=go("AO.CARD.003"),credo=go("AO.CARD.009"),
           returned=go("AO.CARD.001");
         return {gloria,credo,returned};
