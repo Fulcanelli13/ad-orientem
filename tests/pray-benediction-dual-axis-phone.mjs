@@ -99,7 +99,8 @@ try{
    .map(el=>({label:el.textContent.trim(),buttonClass:el.className,outer:el.parentElement?.outerHTML.slice(0,1000),
     visible:Boolean(el.getClientRects().length&&getComputedStyle(el).display!=="none")}));
  });
- console.log("BENEDICTION_CLAUDE_RECITATION_AUDIT="+JSON.stringify(visibleRecitation));
+ assert.equal(visibleRecitation.filter(x=>x.visible).length,0,
+  "Claude F11 public Benediction must not show a private Individual/Group selector: "+JSON.stringify(visibleRecitation));
   await page.screenshot({path:resolve(captures,"benediction-390-tantum-claude-rail.png"),animations:"disabled"});
  await navigateStep(0);
  assert.equal((await snapshot()).card,"exposition");
