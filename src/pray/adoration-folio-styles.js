@@ -571,6 +571,32 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  }
 }
 
+
+/* The lamp and compass ARE the four / seven stage progress display.
+   Remove only the duplicate visual progress track; native chapter buttons
+   continue to expose aria-current and remain keyboard/touch operable. */
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoSequenceTimeline>.aoDevoProgress,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoSequenceTimeline>.aoDevoProgress{
+ display:none!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoSequenceTimeline .aoDevoStop.active,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoSequenceTimeline .aoDevoStop.active{
+ border:0!important;border-bottom:0!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoSequenceTimeline::before{
+ content:"";position:absolute;left:50%;top:72px;transform:translateX(-50%);
+ z-index:2;pointer-events:none;width:14px;height:24px;
+ border:1px solid #bc9e67;border-radius:3px 3px 6px 6px;
+ background:linear-gradient(95deg,#6d231b,#b83120 50%,#74241c);
+ box-shadow:0 0 15px rgba(235,131,55,.38);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoSequenceTimeline::after{
+ content:"";position:absolute;left:50%;top:65px;transform:translateX(-50%) rotate(45deg);
+ z-index:3;pointer-events:none;width:7px;height:11px;
+ border-radius:80% 0 75% 40%;background:linear-gradient(35deg,#ee8a2e,#fff3af);
+ box-shadow:0 0 11px rgba(248,177,67,.72);
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
