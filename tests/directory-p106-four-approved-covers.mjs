@@ -74,13 +74,22 @@ for(const rec of b.records){
 }
 assert.equal(b.records.find(x=>x.row===356).width,1024,"Original small Brewood photo never upscaled");
 const held=[...b.holds.map(x=>x.row),322];assert.deepEqual(held.sort((a,b)=>a-b),[309,315,320,322]);
-for(const placeId of ["place:CZ:st-ignatius-jihlava","place:DE:friedhofskirche-st-michael-altoetting",
+// The historical P106 holds remain in their source ledger. A subsequent
+// independent P107 final review accepted ONLY row 309 as an exact church
+// exterior; the other three weak/wrong-subject candidates remain on hold.
+const jFinal=read("data/directory/research/p107-jihlava-final-image-editorial-qa.v1.json");
+assert.equal(jFinal.site,"place:CZ:st-ignatius-jihlava");
+assert.equal(jFinal.status,"PRIMARY_EDITORIAL_ACCEPTED_RELEASE_IN_SEPARATE_PR");
+assert.equal(photos.items.filter(x=>x.place_id===jFinal.site).length,1,
+ "A later verified P107 photograph, not the P106 conditional original, may be published");
+for(const placeId of ["place:DE:friedhofskirche-st-michael-altoetting",
 "place:FR:basilique-saint-bernard-fontaine-les-dijon","place:FR:saint-louis-de-gonzague-pau"]){
- assert.equal(photos.items.some(x=>x.place_id===placeId),false,"Conditional/weak hero must not silently publish");
+ assert.equal(photos.items.some(x=>x.place_id===placeId),false,
+ "Other conditional/weak P106 hero alternatives must not silently publish");
 }
 const other=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:"fake-similar-name"}],{directoryPlaceLinks:geo.directoryPlaceLinks,approved:photos.items});
 assert.equal(other[0].cover_media,undefined);
 assert.ok(DIRECTORY_CARD_STYLE.includes("object-fit:contain;object-position:center"));
 assert.equal(manifest.counts.schedules_changed,0);
 assert.equal(manifest.counts.expense_eur,0);
-console.log("P106 PASS: four exact Place/site full-frame WebPs, source bytes, licences, EN/FR credits and three held heroes");
+console.log("P106 PASS: four exact Place/site full-frame WebPs, source bytes, licences, EN/FR credits and three held heroes (Jihlava separately cleared by P107)");
