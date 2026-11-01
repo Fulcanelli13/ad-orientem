@@ -8,6 +8,10 @@ on:
       - "src/pray/devotional-card-deck-styles.js"
       - "tests/pray-all-modules-mobile.mjs"
       - "tests/pray-confession-dual-axis-phone.mjs"
+      - "tests/pray-selected-confession-cover-phone-qa.mjs"
+      - "assets/staged/prayer-selected-cover-qa/**"
+      - "src/pray/prayer-cover-photo-qa.v1.js"
+      - "src/pray/prayer-cover-photo-qa-styles.js"
       - ".github/workflows/pray-confession-dual-axis.yml"
   workflow_dispatch:
 permissions:
@@ -29,11 +33,15 @@ jobs:
       - run: node tests/pray-guided-cards.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-confession-dual-axis-phone.mjs
+      - name: Verify user-approved archived cover file and 320/390px opt-in phone preview
+        run: node tests/pray-selected-confession-cover-phone-qa.mjs
       - name: Preserve privacy-safe Confession phone screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: confession-dual-axis-phone
-          path: artifacts/pray-confession-dual-axis
+          path: |
+            artifacts/pray-confession-dual-axis
+            artifacts/prayer-selected-cover-phone-qa
           if-no-files-found: warn
           retention-days: 21

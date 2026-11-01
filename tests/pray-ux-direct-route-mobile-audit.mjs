@@ -114,6 +114,100 @@ try{
    console.log("PASS "+width+"px: "+routes.length+" canonical Prayer internal entries, delegated Rosary contract.");
   }finally{await page.close()}
  }
+
+ // Claude final visual checkpoint: exercise the actual reader, not a source
+ // mock. Pinned prototype signatures are certified independently; these are
+ // screenshot/geometry evidence for the two missing F01/F03 user surfaces.
+ report.claudeVisual=[];
+ for(const [width,height] of [[320,568],[390,844]]){
+  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1,
+   isMobile:true,hasTouch:true,serviceWorkers:"block",reducedMotion:"reduce"});
+  const errors=[];page.on("pageerror",e=>errors.push(e.message));
+  try{
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
+    {waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:50000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+   const openLibrary=async()=>{
+    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
+    await page.locator("#aoPray435930.open [data-p435930-lib-open]").first().waitFor({timeout:12000});
+   };
+   await openLibrary();
+   await page.locator('#aoPray435930.open [data-p435930-lib-open="foundations_our_father"]').evaluate(el=>el.click());
+   const holy=page.locator("#aoPray435930.open .aoClaudeHolyCard");
+   await holy.waitFor({state:"visible",timeout:12000});
+   const holyFront=await holy.evaluate(el=>{
+    const r=el.getBoundingClientRect(),front=el.querySelector(".aoClaudeHolyFront");
+    return {width:r.width,flipped:el.querySelector(".aoClaudeHolyLace")?.classList.contains("flip"),
+     title:front?.querySelector("h3")?.textContent||"",artwork:!!front?.querySelector("img")};
+   });
+   assert.equal(holyFront.flipped,false,"F01 must initially present the approved card front");
+   if(height<=640){
+    const visibility=await holy.locator(".aoClaudeHolyTitle h3").evaluate(el=>{
+     const r=el.getBoundingClientRect();
+     return {top:r.top,bottom:r.bottom,viewport:innerHeight};
+    });
+    assert.ok(visibility.top>=0&&visibility.bottom<=height-64,
+     "Short-phone Holy Card title falls beneath fixed navigation: "+JSON.stringify(visibility));
+   }
+   await page.screenshot({path:resolve(dest,"claude-f01-front-"+width+"x"+height+".png"),animations:"disabled"});
+   await holy.locator("[data-p435930-essential-card-turn]").evaluate(el=>el.click());
+   await page.waitForFunction(()=>Boolean(document.querySelector("#aoPray435930.open .aoClaudeHolyLace.flip")),null,{timeout:9000});
+   const holyBack=await holy.evaluate(el=>{
+    const b=el.querySelector(".aoClaudeHolyBack");
+    return {paragraphs:b?.querySelectorAll(".aoP435930EssentialBeat").length||0,
+     scrollHeight:b?.querySelector(".aoClaudeHolyBackScroll")?.scrollHeight||0};
+   });
+   assert.equal(holyBack.paragraphs,6,"F01 Lord's Prayer must preserve six source-owned clauses");
+   await page.screenshot({path:resolve(dest,"claude-f01-back-"+width+"x"+height+".png"),animations:"disabled"});
+   await openLibrary();
+   await page.locator('#aoPray435930.open [data-p435930-lib-open="adoration_litany_blessed_sacrament"]').evaluate(el=>el.click());
+   const choir=page.locator("#aoPray435930.open .aoClaudeChoirPrayer");
+   await choir.waitFor({state:"visible",timeout:12000});
+   const invocation=choir.locator('.aoClaudeChoirBeat[data-ao-choir-answer]:not([data-ao-choir-answer=""])').first();
+   await invocation.waitFor({state:"attached",timeout:8000});
+   await invocation.scrollIntoViewIfNeeded();
+   const sourceAnswer=await invocation.getAttribute("data-ao-choir-answer");
+   assert.ok(sourceAnswer?.trim(),"The chosen response must come from the canonical litany source");
+   await invocation.click();
+   await page.waitForFunction(()=>{
+    const bar=document.querySelector("#aoPray435930.open .aoDevoCard .aoClaudeChoirResponse");
+    return !!bar&&!bar.hidden&&Boolean(bar.querySelector(".aoClaudeChoirResponseText")?.textContent.trim());
+   },null,{timeout:5000});
+   const choirRect=await choir.evaluate(el=>{
+    // Claude's fixed response bar is a SIBLING of the scrolling litany,
+    // not a descendant. Its location outside the scroll is the fidelity gate.
+    const card=el.closest(".aoDevoCard"),
+      body=el.querySelector(".aoClaudeChoirScroll"),foot=card?.querySelector(".aoClaudeChoirResponse");
+    const r=foot?.getBoundingClientRect();
+    return {beats:el.querySelectorAll(".aoClaudeChoirBeat").length,
+     barPresent:!!foot,barSibling:!!card&&foot?.parentElement===card,
+     barHidden:foot?.hidden,barBottom:r?.bottom,barTop:r?.top,
+     active:el.querySelectorAll('.aoClaudeChoirBeat[data-ao-devo-active="true"]').length,
+     response:foot?.querySelector(".aoClaudeChoirResponseText")?.textContent||"",
+     inline:!!el.querySelector(".aoClaudeChoirInlineResponse")};
+   });
+   assert.ok(choirRect.beats>=5&&choirRect.barPresent&&choirRect.barSibling,
+    "F03 must present source invocation rows and a fixed response sibling outside the scroll");
+   assert.equal(choirRect.barHidden,false,"A selected source invocation must light the fixed Choir response");
+   assert.equal(choirRect.response.trim(),sourceAnswer.trim(),
+    "The fixed Choir response must match its selected source invocation exactly");
+   assert.ok(choirRect.barBottom>choirRect.barTop&&choirRect.barTop<height-55,
+    "The fixed Choir response must be visible above phone navigation");
+   await page.screenshot({path:resolve(dest,"claude-f03-litany-"+width+"x"+height+".png"),animations:"disabled"});
+   const overflow=await page.evaluate(()=>({
+    document:Math.max(0,document.documentElement.scrollWidth-innerWidth),
+    mount:Math.max(0,document.querySelector("#aoPray435930 .aoP435930Mount")?.scrollWidth-
+      document.querySelector("#aoPray435930 .aoP435930Mount")?.clientWidth||0)
+   }));
+   report.claudeVisual.push({size:width+"x"+height,holyFront,holyBack,choir:choirRect,overflow,errors});
+   assert.ok(overflow.document<=1&&overflow.mount<=1,
+    "Claude F01/F03 visual phone overflow: "+JSON.stringify(overflow));
+   assert.deepEqual(errors,[],"F01/F03 unexpected browser errors");
+   console.log("PASS Claude original Prayer visual F01/F03 "+width+"x"+height);
+  }finally{await page.close()}
+ }
  await writeFile(resolve(dest,"route-screening.json"),JSON.stringify(report,null,2)+"\n");
  console.log("PASS all 54 direct-entry phone checks. Report: artifacts/pray-ux-unified/route-screening.json");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}

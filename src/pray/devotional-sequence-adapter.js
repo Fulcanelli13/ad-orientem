@@ -119,7 +119,10 @@ export function installSequentialDevotionalReader({
       stops.append(button);
     });
     timeline.append(stops);
-    parent.insertBefore(timeline,card);
+    // Claude F11 altar frame wraps the canonical focus card; insert the stage
+    // progress beside the frame, not before a non-child node.
+    const anchor=card.parentElement===parent?card:card.closest('.aoClaudeRiteLayout');
+    parent.insertBefore(timeline,anchor||null);
   }
   timeline.classList.add("aoDevoTimeline","aoDevoSequenceTimeline");
   timeline.dataset.aoDevotionalDeck=SEQUENTIAL_DEVOTIONAL_SCHEMA;
@@ -186,7 +189,16 @@ export function installSequentialDevotionalReader({
       // Litany invocations use .88/.76 falloff without hiding their
       // original order, while other readers retain their original .56/.30.
       const adjacent=Math.abs(i-found)===1;
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
+      // F01 holy cards: previous beats fade, forthcoming beats stay legible.
+      // Collective continuations follow the SAME activation rule as every beat.
+      const essential=kind==="library"&&p.classList.contains("aoP435930EssentialBeat");
+      // Choir invocations and F11 sung stages illuminate independently; upcoming stays legible.
+      const choir=kind==="library"&&p.classList.contains("aoChoirBeat");
+      const choirRoute=kind==="hymns"||kind==="holyName";
+      const f11Rite=kind==="benediction";
+      const power=essential?(i===found?"1":i<found?".50":".82")
+        :choir||choirRoute||f11Rite?(i===found?"1":i<found?".54":".80")
+        :canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65")
         :kind==="litany"?(adjacent?".88":".76"):(adjacent?".56":".30");
       p.style.setProperty("--ao-devo-focus",power);
@@ -249,6 +261,20 @@ export function installSequentialDevotionalReader({
       go(index+(dx<0?1:-1));
     }
   },{passive:true});
+  // Explicitly selecting a prayer paragraph changes the focus position,
+  // not the prayer text, language, chapter or completion status.
+  if(kind==="library")body.addEventListener("click",event=>{
+    const beat=event.target.closest?.(".aoP435930EssentialBeat,.aoChoirBeat");
+    if(!beat||!body.contains(beat))return;
+    const box=body.getBoundingClientRect(),rect=beat.getBoundingClientRect();
+    body.scrollTop+=rect.top-box.top-box.height*.40;
+    userScrolled=true;
+    // A source-owned Choir invocation has a response at the fixed foot,
+    // not inline. Make its user-selected answer visible on the same tap.
+    // The scroll focus pass will reconcile the visible invocation afterward.
+    if(beat.classList.contains("aoChoirBeat"))onFocus(beat);
+    queue();
+  });
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
   doc.defaultView?.addEventListener("resize",()=>{
     if(!body.isConnected)return;

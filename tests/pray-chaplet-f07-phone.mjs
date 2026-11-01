@@ -28,8 +28,25 @@ try{
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
    const base="#aoPray435930.open ";
+   const entry=page.locator(base+"[data-f07-mercy-entry='m1']");
+   assert.equal(await entry.count(),1,"Claude m1 must precede canonical opening prayers");
+   assert.equal(await entry.locator(".aoF07MercyEntryOutline li").count(),3,
+    "m1 must distinguish Opening, Five decades and Closing");
+   assert.equal(await entry.locator(".aoF07MercyEntryChips span").count(),2,
+    "m1 must display duration and customary prayer time");
+   const beginGeometry=await entry.locator("[data-p435930-mercy-begin]").evaluate(el=>{
+    const rect=el.getBoundingClientRect(),nav=document.querySelector("#ao-global-ribbon");
+    const navTop=nav?.getClientRects().length?nav.getBoundingClientRect().top:innerHeight;
+    return {top:rect.top,bottom:rect.bottom,visibleBottom:Math.min(innerHeight,navTop)};
+   });
+   assert.ok(beginGeometry.top>=0&&beginGeometry.bottom<=beginGeometry.visibleBottom-8,
+    "Claude m1 Begin must be visible above the app dock without scrolling at "+width+"px: "+JSON.stringify(beginGeometry));
+   assert.equal(await page.locator(base+".aoMercyLine").count(),0,
+    "Opening prayer text may not bypass the m1 Begin decision");
+   await page.screenshot({path:resolve(output,"mercy-m1-home-"+width+".png"),animations:"disabled"});
+   await page.locator(base+"[data-p435930-mercy-begin]").click();
    const crown=page.locator(base+"[data-ao-f07-crown]");
-   assert.equal(await crown.count(),1,"Opt-in F07 crown must be present in the actual Divine Mercy reader");
+   assert.equal(await crown.count(),1,"m2 crown must be present after explicit Begin");
    assert.equal(await crown.locator(".aoF07Bead").count(),55);
    assert.equal(await crown.getAttribute("data-total"),"62","The canonical five decades have 62 events by default");
    assert.equal(await page.locator(base+"[data-ao-mercy-bead-navigation]").count(),1,"The existing bead/decade navigator remains the owner");
@@ -38,14 +55,43 @@ try{
     const r=el.getBoundingClientRect();
     return {top:r.top,pixels:Math.max(0,Math.min(r.bottom,innerHeight-70)-Math.max(0,r.top)),height:innerHeight};
    });
+   const verticalStack=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const top=selector=>{
+     const element=root?.querySelector(selector),box=element?.getBoundingClientRect();
+     return box?{top:Math.round(box.top),height:Math.round(box.height)}:null;
+    };
+    return {
+     crown:top(".aoF07CrownBand"),
+     recitation:top(".aoF07MercyRecitation"),
+     chapters:top(".aoF07MercyChapterChips"),
+     progress:top(".aoMercyBeadNavigation"),
+     cardHead:top(".aoDevoCardHead"),
+     scroll:top(".aoDevoCardScroll"),
+     rubric:top(".aoF07MercyRubric"),
+     prayer:top(".aoMercyLine.aoMercyPrayer p")
+    };
+   });
    assert.ok(firstPrayer.pixels>=28,
-    "F07 first canonical prayer must show at least one readable line above the app dock at "+width+"px: "+JSON.stringify(firstPrayer));
+    "F07 first canonical prayer must show at least one readable line above the app dock at "+
+    width+"px: "+JSON.stringify({firstPrayer,verticalStack}));
    await page.screenshot({path:resolve(output,"mercy-crown-opening-"+width+".png"),animations:"disabled"});
-   const large=page.locator(base+'[data-p435930-mercy-jump="4"]');
+   // The Claude pilot intentionally hides the old decade strip. Exercise the
+   // visible chapter control, not a hidden legacy button.
+   const large=page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="4"]');
+   assert.equal(await large.isVisible(),true,"First decade must have a visible chapter target");
    await large.click();
    assert.equal(await crown.getAttribute("data-position"),"4");
    assert.equal(await crown.locator(".aoF07Bead-active").count(),1);
-   assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/);
+   assert.match(await crown.locator(".aoF07CrownText").innerText(),/Decade|Dizaine/i);
+   assert.equal(await page.locator(base+".aoMercyLine.aoMercyPrayer .aoF07MercyRoleLabel").count(),2,
+    "m2 must show both versicle and response on the large bead");
+   assert.equal(await page.locator(base+"[data-f07-mercy-dock-count]").innerText(),"5 / 62");
+   await page.locator(base+"[data-p435930-mercy-next]").click();
+   assert.equal(await crown.getAttribute("data-position"),"5","Next must use the canonical cursor");
+   assert.equal(await page.locator(base+"[data-f07-mercy-dock-count]").innerText(),"6 / 62");
+   await page.locator(base+"[data-p435930-mercy-previous]").click();
+   assert.equal(await crown.getAttribute("data-position"),"4","Previous reverses the same cursor");
    await page.locator(base+".aoDevoCardScroll").evaluate(el=>{el.scrollTop+=200});
    await page.waitForFunction(()=>{
     const root=document.querySelector("#aoPray435930.open");
@@ -61,6 +107,53 @@ try{
     return {document:document.documentElement.scrollWidth-innerWidth,mount:(mount?.scrollWidth||0)-(mount?.clientWidth||0)};
    });
    assert.ok(overflow.document<=1&&overflow.mount<=1,"No 320/390 horizontal overflow: "+JSON.stringify(overflow));
+   // Navigation position is not proof a prayer was recited. Only an explicit
+   // click on Finish after the last source paragraph can complete the chaplet.
+   const closing=page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="59"]');
+   assert.equal(await closing.isVisible(),true,"Closing invocations need a visible chapter target");
+   await closing.click();
+   const finalAction=page.locator(base+'[data-p435930-mercy-finish]');
+   assert.equal(await finalAction.isVisible(),false,"Finish must remain hidden before the last Holy God");
+   // On a tall phone all three closing prayers may fit without scrolling.
+   // Tapping the exact final source paragraph must focus it and unlock Finish.
+   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').click();
+   await page.waitForFunction(()=>
+    document.querySelector('#aoPray435930.open [data-p435930-mercy-finish]')?.hidden===false,
+    null,{timeout:8000});
+   assert.equal(await finalAction.locator('xpath=ancestor::article').getAttribute('data-ao-mercy-step'),"61",
+    "Finish must remain attached to the actual last source prayer paragraph");
+   assert.equal(await finalAction.isVisible(),true,
+    "Finish must be visibly available when the last source prayer is focused");
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0,
+    "Simply reaching the final text must not mark the chaplet complete");
+   await finalAction.click();
+   const completion=page.locator(base+'[data-f07-mercy-completion]');
+   assert.equal(await completion.count(),1,
+    "Finish after the final source event must reveal completion");
+   assert.equal(await completion.locator(".aoF07MercyCompletionCrown .aoF07Bead").count(),55,
+    "Claude m3 must retain the source-owned 55-bead completion crown");
+   assert.match(await completion.locator(".aoF07MercyCompletionQuote").innerText(),/trust|confiance/i,
+    "Claude m3 must retain the approved devotional closing line");
+   assert.deepEqual(await completion.locator("button").evaluateAll(nodes=>nodes.map(n=>
+    n.hasAttribute("data-p435930-mercy-return")?"return":n.hasAttribute("data-p435930-mercy-again")?"again":"unknown")),
+    ["return","again"],"m3 must show return as primary, pray again as secondary");
+   await page.screenshot({path:resolve(output,"mercy-m3-complete-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'[data-p435930-mercy-again]').click();
+   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
+   assert.equal(await entry.count(),1,"Pray again returns to the distinct m1 home");
+   await page.locator(base+"[data-p435930-mercy-begin]").click();
+   assert.equal(await page.locator(base+'[data-ao-f07-crown]').getAttribute('data-position'),'0',
+    "Beginning again must restart the same canonical 62-event sequence");
+   // The separate Claude m3 Return must open the actual Rosary & Chaplets
+   // collection, not the generic Prayer hub or a parallel chaplet router.
+   await page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="59"]').click();
+   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').click();
+   await page.locator(base+'[data-p435930-mercy-finish]').click();
+   assert.match(await page.locator(base+'[data-p435930-mercy-return]').innerText(),/Rosary|Rosaire/);
+   await page.locator(base+'[data-p435930-mercy-return]').click();
+   assert.equal(await page.locator(base+'.aoP435930Mount').getAttribute('data-ao-pray-view'),'family');
+   assert.equal(await page.locator(base+'[data-p435930-own="pray.divine_mercy"]').count(),1,
+    "m3 Return must expose the canonical Divine Mercy choice in Rosary & Chaplets");
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}

@@ -48,7 +48,12 @@ assert.match(modes,/data-tp381-daily-presentation="continuous" aria-pressed="tru
 const runtime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/const DAILY_UX_PILOT_ENABLED=dailyUxPilotEnabled/);
 assert.match(runtime,/renderDailyBookPills\(\{edition:prefs.edition,L,esc\}\)/);
-assert.match(runtime,/renderDailyReaderOptions\(\{mode:S.dailyMode,L,esc\}\)/);
+assert.match(runtime,/renderDailyReaderOptions\(\{mode:S.dailyMode,L,esc,omitBrowse:guided\}\)/);
+const guidedOptions=renderDailyReaderOptions({mode:"guided",L,esc,omitBrowse:true});
+assert.doesNotMatch(guidedOptions,/data-tp381-daily-presentation="list"/,
+ "Guided Hours use their first-class Browse control instead of a duplicate option");
+assert.match(guidedOptions,/data-tp381-daily-presentation="guided"/);
+assert.match(guidedOptions,/data-tp381-daily-presentation="continuous"/);
 assert.match(runtime,/showEdition:!DAILY_UX_PILOT_ENABLED/);
 assert.match(runtime,/return renderDailyUxContinuous\(\{rows,renderRow:dailyStageBody,titleFor:dailyUxRowTitle,esc,L\}\)/);
 assert.match(runtime,/const body=step===total\?"":dailyStageBody\(row\)/);

@@ -1,0 +1,574 @@
+{
+  "schema": "AO_STATIONS_SAN_POLO_14_PRIOR_APPROVAL_CONFLICT_FREE_CROSSWALK_V1",
+  "generatedUTC": "2026-10-31",
+  "sourceReferences": {
+    "prayerArtworkPR": 2110,
+    "prayerArtworkHeadSHA": "9895751857f0f7a0d1dfb9986e3994b41f065825",
+    "sourceRegistryPath": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+    "archivePR": 2121,
+    "archiveManifest": "data/prayer/stations/san-polo-tiepolo-oils-1747/research-stage-bindings.v1.json"
+  },
+  "policy": {
+    "noNewArtisticApprovals": true,
+    "preservePriorWorkApprovals": true,
+    "sourceApprovalAppliesToSameDepictedEvent": true,
+    "missingCheckboxIsNotRejection": true,
+    "doNotReplaceApprovedStationArtwork": true,
+    "doNotConfusePradoTiepoloWithSanPoloTiepolo": true,
+    "rejectedLybaertPermanentlyExcluded": true,
+    "strictPDCC0ProductionGateStillClosed": true,
+    "freeCCBYSAResearchArchiveAllowed": true,
+    "publicationEnabled": false
+  },
+  "summary": {
+    "stationCount": 14,
+    "stationSlotsWithAlreadyApprovedChoices": 7,
+    "stationSlotsWithoutAffirmativeApprovedPlacement": [
+      "III",
+      "V",
+      "VII",
+      "VIII",
+      "IX",
+      "X",
+      "XI"
+    ],
+    "sanPoloWorkHasPriorIndependentUserApprovalStation": [
+      "IV"
+    ],
+    "stationVSameSceneReusePreviouslyApproved": true,
+    "sourceImageFilesArchived": 14,
+    "sourceImageFilesPublished": 0,
+    "stationSlotsCoveredByApprovedPaintingOrValidSameSceneReuse": 8,
+    "sixUncoveredEditorialStations": [
+      "III",
+      "VII",
+      "VIII",
+      "IX",
+      "X",
+      "XI"
+    ],
+    "stationVIsSameSceneApprovedReuseNotYetNativePhotoCleared": true,
+    "note": "Seven slots contain approved placements in the prior ledger; an eighth, Station V, inherits the already-approved Domenichino painting from Station II on documented same-scene grounds. Six remain without an affirmative approved exact-scene placement. All photography and runtime remain blocked."
+  },
+  "entries": [
+    {
+      "station": 1,
+      "roman": "I",
+      "slotId": "STG-pray.stations-01",
+      "scene": "Jesus condemned to death",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-01.webp",
+        "sha256": "c9247def62a2054596556e23aaa405bbfeb1d90a72017c66087bbabeb40231d4",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "REVIEW::met:437978",
+          "artist": "Sodoma (Giovanni Antonio Bazzi)",
+          "title": "Christ Presented to the People (Ecce Homo)",
+          "editorialStatus": "USER_APPROVED",
+          "source": "https://www.metmuseum.org/art/collection/search/437978",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        }
+      ],
+      "existingApprovalCount": 1,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 2,
+      "roman": "II",
+      "slotId": "STG-pray.stations-02",
+      "scene": "Jesus takes up the Cross",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-02.webp",
+        "sha256": "e89a6ad53838243972f50548912a638c78dbf0bad2e52f02252944ec391ec3a0",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "REVIEW::commons:22178536",
+          "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+          "title": "The Way to Calvary",
+          "editorialStatus": "USER_APPROVED",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:75000039",
+          "artist": "Domenichino",
+          "title": "The Way to Calvary",
+          "editorialStatus": "USER_APPROVED",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        }
+      ],
+      "existingApprovalCount": 2,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 3,
+      "roman": "III",
+      "slotId": "STG-pray.stations-03",
+      "scene": "Jesus falls for the first time",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-03.webp",
+        "sha256": "e6ee33a5cebbe00ca628c0b8fd724e2c182366a96ad0e433b6fdb752d7de85df",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": true,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 4,
+      "roman": "IV",
+      "slotId": "STG-pray.stations-04",
+      "scene": "Jesus meets his Mother",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-04.webp",
+        "sha256": "36d980b8cef65109597647d3089db68ecec43aed86bafd7bf09c7a987a393edd",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::01",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Via Crucis — Jesus encounters His Mother",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+          "sourcePhotoGate": "RIGHTS_NOT_CLEARED;NATIVE_PHOTO_UNVERIFIED"
+        },
+        {
+          "id": "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04",
+          "artist": "Attributed in Commons filename to Delacroix",
+          "title": "Solesmes — Fourth Station of the Way of the Cross",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Solesmes_(Nord,_Fr)_chemin_de_Croix_par_Delacroix,_station_04.jpg",
+          "sourcePhotoGate": "PUBLIC_FILE_RIGHTS_BASIS_IDENTIFIED_PHOTO_QA_PENDING;PIXEL_SIZE_PLAUSIBLE_NATIVE_QA_PENDING"
+        }
+      ],
+      "existingApprovalCount": 2,
+      "previouslyApprovedSameSanPoloPainting": true,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 5,
+      "roman": "V",
+      "slotId": "STG-pray.stations-05",
+      "scene": "Simon of Cyrene helps Jesus",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-05.webp",
+        "sha256": "31553680f8c65aeb61bab8d7accd128a1984827402f8d6c375b33ef3bbdfc4eb",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": {
+        "sourceSlotId": "STG-pray.stations-02",
+        "painting": "The Way to Calvary",
+        "artist": "Domenichino",
+        "sourceArtworkId": "REVIEW::commons:22178536",
+        "reason": "Previously approved painting depicts Simon helping Jesus; documented same-scene reuse in PR #2110 source registry. This is not a new approval or cleared photo.",
+        "placementRequiresReconciliation": true,
+        "photoCleared": false
+      },
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 6,
+      "roman": "VI",
+      "slotId": "STG-pray.stations-06",
+      "scene": "Veronica wipes the face of Jesus",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-06.webp",
+        "sha256": "f545573d3e3d7c2a9db9631fe7d6d85dbf592ad08012e6a97011bc7cb5e292bd",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "REVIEW::commons:78990209",
+          "artist": "Francisco de Zurbarán",
+          "title": "Veil of Veronica",
+          "editorialStatus": "USER_APPROVED",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        }
+      ],
+      "existingApprovalCount": 1,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 7,
+      "roman": "VII",
+      "slotId": "STG-pray.stations-07",
+      "scene": "Jesus falls for the second time",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-07.webp",
+        "sha256": "14619fcc4a6be151127fa9ae7e1d29b5d3d2a9c993dba0967f7038dfab40f095",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": true,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 8,
+      "roman": "VIII",
+      "slotId": "STG-pray.stations-08",
+      "scene": "Jesus consoles the women of Jerusalem",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-08.webp",
+        "sha256": "a68faf8045006620956a37a27b17ef875c8c53261f819defd2e1f8b1f7b371a6",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": true,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 9,
+      "roman": "IX",
+      "slotId": "STG-pray.stations-09",
+      "scene": "Jesus falls for the third time",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-09.webp",
+        "sha256": "32846a979e64a18ef745b2ef8c71fea3854a6d429165a79c3d6897a81f158993",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": true,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 10,
+      "roman": "X",
+      "slotId": "STG-pray.stations-10",
+      "scene": "Jesus is stripped of his garments",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-10.webp",
+        "sha256": "88ba18e522f9978755282d58df5b9d1377a0bb9d22b0eae9c5b806e55534f896",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": true,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 11,
+      "roman": "XI",
+      "slotId": "STG-pray.stations-11",
+      "scene": "Jesus is nailed to the Cross",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-11.webp",
+        "sha256": "6ff0dc8d347d2c7df3ad65e6db9372c9960545852a588f7659b4f4a63850517b",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [],
+      "existingApprovalCount": 0,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": true,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 12,
+      "roman": "XII",
+      "slotId": "STG-pray.stations-12",
+      "scene": "Jesus dies on the Cross",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-12.webp",
+        "sha256": "a9c3e1338a52110989339f5af98c0055a6f1ad25c5b4cc61b961461282a65eba",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "REVIEW::met:437172",
+          "artist": "Bartolomé Estebán Murillo",
+          "title": "The Crucifixion",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://www.metmuseum.org/art/collection/search/437172",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:115166028",
+          "artist": "Hans Jordaens III",
+          "title": "Crucifixion",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::cma:127664",
+          "artist": null,
+          "title": "Crucifixion",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:4965555",
+          "artist": "Philippe de Champaigne",
+          "title": "French: La crucifixion",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:33831598",
+          "artist": "Annibale Carracci",
+          "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        }
+      ],
+      "existingApprovalCount": 6,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 13,
+      "roman": "XIII",
+      "slotId": "STG-pray.stations-13",
+      "scene": "Jesus is taken down from the Cross",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-13.webp",
+        "sha256": "213b617d1a39ae4a07d5d0558f51fb66900cae17d61aa9753988717a170bd3c7",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Descent from the Cross — Prado Passion series",
+          "editorialStatus": "USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:3110508",
+          "artist": "Guercino",
+          "title": "La Pietà",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:15385030",
+          "artist": "Annibale Carracci",
+          "title": "Lamentation of Christ",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Lamentation_of_Christ_-_WGA4436.jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:35629944",
+          "artist": "Domenichino",
+          "title": "Pietà",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:44220879",
+          "artist": "Simon de Vos",
+          "title": "The Lamentation",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:147368181",
+          "artist": "Circle of Peter Paul Rubens",
+          "title": "The lamentation of Christ",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": "https://commons.wikimedia.org/wiki/File:Circle_of_Peter_Paul_Rubens_-_The_Lamentation_of_Christ_(Alte_Pinakothek).jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:45590714",
+          "artist": "Alessandro Turchi",
+          "title": "The lamentation over the dead Christ",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::met:438427",
+          "artist": "Ludovico Carracci",
+          "title": "The Lamentation",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::met:439553",
+          "artist": "Domenichino (Domenico Zampieri)",
+          "title": "The Lamentation",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::met:437342",
+          "artist": "Scipione Pulzone (Il Gaetano)",
+          "title": "The Lamentation",
+          "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "source": null,
+          "sourcePhotoGate": "SOURCE_IDENTITY_RIGHTS_AND_PHOTO_QA_REQUIRED"
+        }
+      ],
+      "existingApprovalCount": 10,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    },
+    {
+      "station": 14,
+      "roman": "XIV",
+      "slotId": "STG-pray.stations-14",
+      "scene": "Jesus is laid in the tomb",
+      "archivedCandidate": {
+        "path": "data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-14.webp",
+        "sha256": "74ccdf8a9fc9406b980b4a553cbfea64d0379ac9d5ce400add0e1f41bb9f6da5",
+        "photoLicense": "CC BY-SA 4.0",
+        "licensePolicyExceptionApproved": false,
+        "productionApproved": false
+      },
+      "alreadyApprovedCandidateArtworks": [
+        {
+          "id": "CANONICAL::met-438338",
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "editorialStatus": "USER_APPROVED",
+          "source": "https://www.metmuseum.org/art/collection/search/438338",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:67344360",
+          "artist": "Adriaen van der Werff",
+          "title": "De graflegging van Christus",
+          "editorialStatus": "USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:Adriaen_van_der_Werff_-_De_graflegging_van_Christus_-_1967_(OK)_-_Museum_Boijmans_Van_Beuningen.jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:184527366",
+          "artist": "Titian",
+          "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+          "editorialStatus": "USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:78104681",
+          "artist": "Kamal-ol-molk",
+          "title": "The Entombment of Christ",
+          "editorialStatus": "USER_APPROVED",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
+          "sourcePhotoGate": "EXISTING_GALLERY_PHOTO_QA"
+        },
+        {
+          "id": "REVIEW::commons:198985941",
+          "artist": "Eugène Delacroix",
+          "title": "Christ Carried Down to the Tomb",
+          "editorialStatus": "USER_APPROVED",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        },
+        {
+          "id": "REVIEW::commons:638360",
+          "artist": "Dirck van Baburen",
+          "title": "The bearing of Christ's body to the grave \" \"",
+          "editorialStatus": "USER_APPROVED",
+          "source": null,
+          "sourcePhotoGate": "IMAGE_AND_RIGHTS_QA_REQUIRED"
+        }
+      ],
+      "existingApprovalCount": 6,
+      "previouslyApprovedSameSanPoloPainting": false,
+      "semanticReuseFromPreviouslyApprovedPainting": null,
+      "editorialGapInPriorReconciledMaster": false,
+      "publicationStatus": "HOLD_NO_APPROVAL_NO_PD_CC0_OR_POLICY_EXCEPTION",
+      "automaticReplaceExistingArtwork": false
+    }
+  ]
+}

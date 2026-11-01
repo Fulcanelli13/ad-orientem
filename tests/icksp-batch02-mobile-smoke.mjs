@@ -58,7 +58,7 @@ try{
   "Original six-stage visitor path must be retained");
 
  await open("pray.adoration");
- await page.locator(".aoAdorationMethodsDisclosure > summary").tap();
+ assert.equal(await page.locator(".aoAdorationMethodsDisclosure").evaluate(el=>el.open),true,"Claude c1 guided choices must be visible by default");
  await page.locator("[data-p435930-ador-mode='treasury']").tap();
  assert.equal(await page.locator("[data-ao-eucharistic-witness]").count(),3);
  const first=page.locator("[data-ao-eucharistic-witness='eucharistic_pange_lingua_full']");
@@ -75,7 +75,7 @@ try{
  await open("pray.adoration");
  if(await page.locator("[data-p435930-ador-home]").count())
   await page.locator("[data-p435930-ador-home]").evaluate(el=>el.click());
- await page.locator(".aoAdorationMethodsDisclosure > summary").evaluate(el=>el.click());
+ assert.equal(await page.locator(".aoAdorationMethodsDisclosure").evaluate(el=>el.open),true);
  await page.locator("[data-p435930-ador-mode='four']").evaluate(el=>el.click());
  const four="#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode='four']";
  assert.equal(await page.locator(four).getAttribute("data-ao-adoration-step"),"0");

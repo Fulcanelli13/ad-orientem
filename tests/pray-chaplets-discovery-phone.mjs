@@ -23,7 +23,7 @@ try{
   const page=await browser.newPage({viewport:{width,height:width===320?700:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoPrayerPilot=0",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoPrayerPilot=0&aoChapletF07Pilot=0",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
@@ -78,6 +78,8 @@ try{
    assert.equal(await page.locator(rootSel+" .aoP435930HomeIntro h2").count(),0,"Do not duplicate family title below app header");
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"No horizontal clipping");
    await page.screenshot({path:resolve(out,"rosary-chaplets-family-"+width+".png"),animations:"disabled"});
+   // Historical source-first B17 UI checks run explicitly against the preserved
+   // legacy rollback; staged-default F07 w1/c1 is checked independently at 320/390px.
    // The new Five Wounds uses one reader, existing prayers, and no duplicate top-level module.
    await page.locator(rootSel+' [data-p435930-own="pray.five_wounds"]').click();
    assert.equal(await page.locator(rootSel+' [data-ao-five-wounds-reader]').count(),1);
@@ -385,7 +387,7 @@ try{
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
    const aRoot=rootSel+' [data-ao-adoration-chooser]';
    assert.equal(await page.locator(aRoot).count(),1,"Adoration owner must show existing chooser");
-   await page.locator(aRoot+' details.aoAdorationMethodsDisclosure > summary').tap();
+   assert.equal(await page.locator(aRoot+' details.aoAdorationMethodsDisclosure').evaluate(el=>el.open),true,"Claude c1 guided choices must not be collapsed");
    const nightChoice=page.locator(aRoot+' [data-p435930-ador-mode="night"]');
    assert.equal(await nightChoice.count(),1,"Fr Mateo night mode must be nested in existing Adoration choices");
    await nightChoice.tap();

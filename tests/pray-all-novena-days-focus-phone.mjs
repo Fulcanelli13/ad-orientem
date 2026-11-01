@@ -76,15 +76,28 @@ try{
  for(const id of Object.keys(NOVENA_CORPUS_V4)){
   const corpus=NOVENA_CORPUS_V4[id];
   const pattern=corpus.pattern||(id==="immaculate_conception"?"OPENING_DAY_COMMON_CLOSE":"STANDARD");
-  // The source owner omits an empty Common-prayers card when neither common
-  // prayers nor a shared closing witness exists. Keep test parity with
-  // novenaChapters() rather than demanding an invented liturgical stage.
-  const chapters=pattern==="SOURCE_REPEAT_ONLY"
-    ?[{id:"prepare"},{id:"repeat"},{id:"close"}]
-    :novenaStageChapters({pattern,sharedClosing:!!corpus.sharedClosingText,
-      commonRequired:!!(corpus.commonPrayers?.length||corpus.sharedClosingText)});
+  // A source with no common prayers cannot produce a synthetic common-prayer chapter.
+  const chapters=novenaStageChapters({pattern,sharedClosing:!!corpus.sharedClosingText,
+   commonRequired:Array.isArray(corpus.commonPrayers)?corpus.commonPrayers.length>0:true});
   assert.equal(await page.evaluate(id=>window.AO_NOVENAS_V3.open({novenaId:id,returnContext:null}),id),true,
     "Cannot open novena "+id);
+  // Preserve the user-selected historical Thérèse photograph on its entry
+  // rather than silently substituting a new portrait or showing it elsewhere.
+  const chosenPhoto=page.locator("#aoPray435930.open [data-ao-user-selected-st-therese-photo='true'] img");
+  assert.equal(await chosenPhoto.count(),id==="st_therese"?1:0,
+    "Selected St Thérèse photo leaked into another novena or vanished from its entry: "+id);
+  if(id==="st_therese"){
+    const picture=await chosenPhoto.evaluate(async img=>{
+      if(!img.complete)await new Promise((done,fail)=>{img.addEventListener("load",done,{once:true});img.addEventListener("error",fail,{once:true})});
+      const rect=img.getBoundingClientRect();
+      return {width:img.naturalWidth,height:img.naturalHeight,displayWidth:rect.width,displayHeight:rect.height};
+    });
+    assert.deepEqual([picture.width,picture.height],[362,498],
+      "The selected original photograph is missing or its pixel identity changed");
+    assert.ok(picture.displayWidth>0&&picture.displayWidth<=310&&picture.displayHeight>0,
+      "Historical portrait is not legible at 390px phone size");
+    await page.screenshot({path:resolve(output,"st-therese-approved-portrait-390.png"),animations:"disabled"});
+  }
   await page.locator("#aoPray435930.open [data-n1-mode='guided']").evaluate(el=>el.click());
   await page.locator("#aoPray435930.open [data-n1-begin]").evaluate(el=>el.click());
   await page.waitForSelector("#aoPray435930.open .aoN1Reader[data-ao-novena-deck='guided']",{timeout:9000});

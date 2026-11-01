@@ -33,18 +33,22 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator(timeline).count(),0,"Path chooser is not a prayer card timeline");
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").isDisabled(),true);
- assert.equal(await page.locator(sel+" [data-p435930-since]").count(),1,
-  "Only the optional time since last Confession belongs in the preparation screen");
- assert.equal(await page.locator(sel+" input").count(),1,"Confession screen collects sensitive sin answers");
+ assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,
+  "No free-text time-since-Confession field may appear on the preparation screen");
+ assert.equal(await page.locator(sel+" input").count(),0,
+  "The private Confession preparation must not collect sensitive free-text answers");
+ assert.match(await page.locator(".aoP435930ConfProgressLabel").innerText(),/1 OF 4 · Prepare/i);
+ assert.equal(await page.locator("#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button").count(),4,
+  "Exactly four source-owned stage segments are required");
 
  const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
  assert.equal(await locale.count(),1,"Confession should share the devotional EN/FR header control");
  assert.equal((await locale.innerText()).trim(),"EN");
- await page.locator(sel+" [data-p435930-since]").fill("three weeks");
  await locale.click();
  assert.equal((await locale.innerText()).trim(),"FR");
- assert.equal(await page.locator(sel+" [data-p435930-since]").inputValue(),"three weeks",
-  "Switching language may not discard the private session-only time estimate");
+ assert.match(await page.locator(".aoP435930ConfProgressLabel").innerText(),/1 SUR 4 · Préparer/i);
+ assert.equal(await page.locator(sel+" input").count(),0,
+  "Changing language must not expose a sensitive text-entry control");
  assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
  await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
  await locale.click();
@@ -100,7 +104,8 @@ try{
  assert.equal((await locale.innerText()).trim(),"EN");
 
  assert.equal(st.nav,null,"Interior Confession cards must not render extra Previous/Next controls");
- assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,"Time estimate must not follow user into examination");
+ assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,"Time-since-Confession input must remain absent");
+ assert.match(await page.locator(".aoP435930ConfProgressLabel").innerText(),/2 OF 4 · Examination/i);
  await page.screenshot({path:resolve(captures,"regular-exam-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:16,target:node,clientX:x,clientY:y});
@@ -117,12 +122,24 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-prev]").count(),0);
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),1);
  await page.locator(sel+" [data-p435930-conf-next]").tap();
- st=await state();assert.equal(st.stage,2);assert.equal(st.stops,3);assert.equal(st.id,"at-priest");
+ st=await state();assert.equal(st.stage,2);assert.equal(st.stops,9);assert.equal(st.id,"at-priest");
  assert.match(await page.locator(sel+" .aoDevoCardScroll").innerText(),/phone away/i);
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),0,
   "Before entering rehearsal starts as a swipe-only card");
- await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.equal((await state()).id,"contrition-penance");
+ assert.equal(await page.locator(sel+" [data-ao-confession-act]").count(),1);
+ await page.screenshot({path:resolve(captures,"confession-390-act-of-contrition.png"),animations:"disabled"});
+ await page.locator(sel+" [data-p435930-conf-contrition='piusx']").tap();
+ assert.equal(await page.locator(sel+" [data-p435930-conf-contrition='piusx']").getAttribute("aria-pressed"),"true","Contrition selection must respond on the actual prayer card");
+ await page.locator(sel+" [data-p435930-conf-contrition='standard']").tap();
+ assert.equal(await page.locator(sel+" [data-p435930-conf-contrition='standard']").getAttribute("aria-pressed"),"true");
+ await page.locator(timeline+" [data-ao-devo-chapter='7']").tap();
+ assert.equal((await state()).id,"priest-absolution");
+ assert.equal(await page.locator(sel+" [data-ao-confession-latin-excerpt='priest-only']").count(),1);
+ await page.screenshot({path:resolve(captures,"confession-390-priest-absolution-guide.png"),animations:"disabled"});
+ await page.locator(timeline+" [data-ao-devo-chapter='8']").tap();
+ assert.equal((await state()).id,"leave-confessional");
  await page.locator(sel+" [data-p435930-conf-next]").tap();
  st=await state();assert.equal(st.stage,3);assert.equal(st.stops,3);assert.equal(st.id,"thanksgiving");
  await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
@@ -130,12 +147,26 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-clear]").count(),1);
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),1,
   "Final action must clear session preparation only on explicit exit");
- assert.equal(await page.locator(sel+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2,
- "Catholic doctrinal hyperlinks were discarded");
+ assert.ok(await page.locator(sel+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count()>=2,
+ "Original Vatican doctrinal and canon-law hyperlinks were discarded");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,"320px Confession overflows document");
  assert.equal((await state()).overflow,"auto");
  await page.screenshot({path:resolve(captures,"after-confession-320.png"),animations:"disabled"});
+ // Match the shortest supported phone as well as the roomy 320x720 case.
+ // Confession must not regress to horizontal overflow or trapped focus.
+ await page.setViewportSize({width:320,height:568});
+ const compact=await page.evaluate(()=>{
+  const root=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
+  const current=root?.querySelector(".aoDevoParagraph[data-ao-devo-active='true']");
+  const sc=root?.querySelector(".aoDevoCardScroll");
+  return {overflow:document.documentElement.scrollWidth-innerWidth,
+   hasFocus:!!current,scrollClient:sc?.clientHeight||0,scrollHeight:sc?.scrollHeight||0};
+ });
+ assert.ok(compact.overflow<=1,"Confession overflows 320x568: "+JSON.stringify(compact));
+ assert.ok(compact.hasFocus,"Confession loses active paragraph on 320x568");
+ assert.ok(compact.scrollClient>0,"Confession reading region collapsed on 320x568");
+ await page.screenshot({path:resolve(captures,"after-confession-320x568.png"),animations:"disabled"});
  // Restart clears session-local path; never save, mark, type or check off sins.
  await open();
  assert.equal(await page.locator(sel+" [data-p435930-conf-path][aria-pressed='true']").count(),0);
@@ -150,9 +181,14 @@ try{
   assert.equal(x.stops,count);assert.equal(x.id,id);assert.ok(x.active>=1,
    "Canonical exam step has no illuminated paragraph after paint");
   assert.equal(await page.locator(sel+" .aoP435930ConfOneCard input").count(),0,"Never record answers to examination questions");
+  if(path==="returning"){
+    await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+    assert.equal(await page.locator(sel+" .aoP435930ConfQuestions li").count(),7,"Extended commandment must preserve two original prompts and five additions");
+    await page.screenshot({path:resolve(captures,"returning-expanded-examination-320.png"),animations:"disabled"});
+  }
   await open();
  }
  assert.deepEqual(errors,[],"Browser errors: "+errors.join(" | "));
- console.log("PASS 390/320px Confession: 5/13/14 source examination steps, 3+3 rite/after, local gestures, consent and session privacy");
+ console.log("PASS 390/320px Confession: 5/13/14 source examination steps, 9+3 rite/after, local gestures, consent and session privacy");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done));}

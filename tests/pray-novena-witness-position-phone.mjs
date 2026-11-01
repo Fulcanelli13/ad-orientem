@@ -33,13 +33,16 @@ try{
   try{
    await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
-   await page.evaluate(()=>{const key="ao2:settings:v1",saved=JSON.parse(localStorage.getItem(key)||"{}");localStorage.setItem(key,JSON.stringify({...saved,language:"fr"}));localStorage.setItem("ao:novenas:n1:mode","simple");});
+   await page.evaluate(()=>{
+      globalThis.AO_SETTINGS_DONOR_V4359?.setPath("general.uiLanguage","fr");
+      localStorage.setItem("ao:novenas:n1:mode","simple");
+    });
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
    // The settings app may complete bootstrap *after* the Prayer module loads.
    // Apply this test's French locale after bootstrap so the Novena runtime
    // reads the intended current setting rather than an earlier default.
-   await page.evaluate(()=>{const key="ao2:settings:v1",saved=JSON.parse(localStorage.getItem(key)||"{}");localStorage.setItem(key,JSON.stringify({...saved,language:"fr"}));});
+   await page.waitForFunction(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.general?.uiLanguage==="fr");
    const rootSel="#aoPray435930.open";
    const open=async(id)=>{
     assert.equal(await page.evaluate(novenaId=>globalThis.AO_PRAY_V435930.open("pray.novenas",{novenaId,returnContext:null}),id),true);
@@ -122,7 +125,7 @@ try{
    assert.equal(await progress.locator(".done").count(),1);
    await page.locator(rootSel+' [data-n1-stage-prev]').click();
    assert.equal(await progress.getAttribute("aria-valuenow"),"1","Stage back must restore progress");
-   await page.evaluate(()=>{const k="ao2:settings:v1",v=JSON.parse(localStorage.getItem(k)||"{}");localStorage.setItem(k,JSON.stringify({...v,language:"en"}))});
+   await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("general.uiLanguage","en"));
    await open("holy_ghost");
    await page.locator(rootSel+' [data-n1-mode="guided"]').click();
    assert.equal(await progress.getAttribute("aria-valuemax"),"4","Holy Ghost must use four guided stages");
@@ -145,10 +148,7 @@ try{
    // B35: inspect actual computed type, provenance disclosures, touch targets
    // and sticky nav geometry in both EN and FR long-form source readers.
    const checkComfort=async(locale,id)=>{
-    await page.evaluate(language=>{
-     const k="ao2:settings:v1",v=JSON.parse(localStorage.getItem(k)||"{}");
-     localStorage.setItem(k,JSON.stringify({...v,language}));
-    },locale);
+    await page.evaluate(language=>globalThis.AO_SETTINGS_DONOR_V4359.setPath("general.uiLanguage",language),locale);
     await open(id);
     const sample=await page.evaluate(()=>{
      const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");

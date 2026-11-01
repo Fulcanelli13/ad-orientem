@@ -182,10 +182,14 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/phone away/i);
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"say-sins");
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"contrition-penance");
+ for(const id of [
+   "cross-and-blessing","last-confession","say-sins","closing-accusation",
+   "counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"
+ ]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id,
+    "The source-owned nine-card traditional Confession rehearsal must keep its exact order");
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  for(const id of ["satisfaction","amendment"]){
@@ -217,13 +221,20 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/general Confession/);
- await press(conf+" [data-p435930-conf-next]");
- await press(conf+" [data-p435930-conf-next]");
+ for(const id of [
+   "cross-and-blessing","last-confession","say-sins","closing-accusation",
+   "counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"
+ ]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id,
+    "General Confession also retains the complete traditional rehearsal");
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
  assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"Do not record sins");
- assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2);
+ assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),4,
+  "Two original doctrinal witnesses and two additional examination citations must remain accessible");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.close());
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
  assert.equal(await page.locator(conf+" [data-p435930-conf-path][aria-pressed='true']").count(),0,
@@ -635,7 +646,8 @@ try{
    await page.waitForFunction(()=>{
      const card=document.querySelector("#aoPray435930.open .aoP435930Prayer");
      const text=card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"";
-     return text.length>=25;
+     // Short sourced aspirations (e.g. My Lord and my God) are genuinely under 25 characters.
+     return text.length>=10;
    },null,{timeout:7000}).catch(async failure=>{
      const diag=await page.evaluate(()=>{
        const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
@@ -682,10 +694,10 @@ try{
      "Single prayer must have one title and a locally scrolling focus card without one-of-one chrome: "+id+" "+JSON.stringify(libraryDeck));
    const prayer=await page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open"),card=root?.querySelector(".aoP435930Prayer");
-     return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"",
-       source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||""};
+     return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip,.aoClaudeHolyBackScroll")?.textContent?.trim()||"",
+       source:card?.querySelector(".aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeHolySourcePanel .aoP435930Source")?.textContent?.trim()||root?.querySelector(".aoClaudeChoirMenuSource .aoP435930Source")?.textContent?.trim()||""};
    });
-   assert.ok(prayer.body.length>=25,"Blank or unrendered canonical prayer: "+id);
+   assert.ok(prayer.body.length>=10,"Blank or unrendered canonical prayer: "+id);
    const flip=page.locator("#aoPray435930.open .aoP435930Prayer [data-p435930-flip]");
    if(await flip.count()){
      const faces=await flip.evaluate(x=>({vernHidden:x.querySelector("[data-face-v]")?.hidden,
@@ -719,7 +731,8 @@ try{
      assert.ok(links.some(x=>x.includes("compendium-ccc_fr.html")),"French Compendium witness not linked");
    }
    if(["mass_confiteor","adoration_lord_i_am_not_worthy","litany_loreto_1962","litany_loreto_current","devotion_litany_st_joseph"].includes(id)){
-     const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
+     // Claude Holy Card keeps provenance in Aa; ordinary prayers retain their inline source sheet.
+     const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a, #aoPray435930.open .aoClaudeHolySourcePanel .aoP435930Source a,#aoPray435930.open .aoClaudeChoirMenuSource .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
      assert.ok(sourceLinks.length>=2,"Missing primary/secondary edition references for "+id);
      assert.ok(sourceLinks.every(x=>x.startsWith("https://")),"Non-secure edition link: "+id);
      assert.match(prayer.source,/1962|2020|2021|traditional|traditionnelles|augmentée|expanded/i,

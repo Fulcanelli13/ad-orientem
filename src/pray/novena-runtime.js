@@ -1,5 +1,7 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
 import { ICKSP_THERESE_DEVOTIONS_V1 } from "./icksp-therese-devotions.v1.js";
+import "./st-therese-selected-novena-cover-styles.js";
+import { selectedThereseNovenaCover } from "./st-therese-selected-novena-cover.v1.js";
 import { ICKSP_DIVINE_INFANT_KING_NOVENA_V1, monthlyInfantKingStatus } from "./icksp-divine-infant-king-novena.v1.js";
 import { ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1, annualInstituteImmaculateStatus } from "./icksp-immaculate-conception-novena.v1.js";
 import { NOVENA_HOLY_FACE_1887_B25 } from "./holy-face-janvier-1887-b25.js";
@@ -44,7 +46,15 @@ const nl=v=>esc(v).replace(/\n/g,'<br>');
 const novenaParagraphs=v=>String(v??'').replace(/\r\n/g,'\n')
  .split(/\n[ \t]*\n+/).filter(x=>x.trim())
  .map(x=>'<p class="aoN1PrayerParagraph">'+nl(x)+'</p>').join('');
-const isFr=()=>{try{const x=JSON.parse(localStorage.getItem('ao2:settings:v1')||'{}');return x.language==='fr'}catch{return false}};
+// Canonical modular Settings owns the UI language; historical localStorage
+// is only a fallback for standalone legacy readers without a Settings owner.
+const isFr=()=>{
+ const canonical=window.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.general?.uiLanguage;
+ if(canonical==='fr'||canonical==='en')return canonical==='fr';
+ const runtime=window.AO_RUNTIME_V8?.store?.getState?.()?.language;
+ if(runtime==='fr'||runtime==='en')return runtime==='fr';
+ try{return JSON.parse(localStorage.getItem('ao2:settings:v1')||'{}').language==='fr'}catch{return false}
+};
 const L=(en,fr)=>isFr()?fr:en;
 const txt=o=>o?(isFr()?o.fr:o.en)||o.en||o.fr||'':'';
 const startKindLabel=n=>n?.startKind===NOVENA_START_KIND.TRADITIONAL
@@ -118,6 +128,7 @@ function renderDetail(n){
   ?L(' · Transfer-aware 1962 date still under review',' · Date 1962 avec transfert encore à vérifier'):'';
  return `${head(txt(n.title),txt(n.family))}
   <main class="aoP435930Body aoN1DetailFolio" data-ao-novena-detail="quiet-v1">
+   ${selectedThereseNovenaCover(n.id,isFr())}
    <div class="aoN1ContextLine">
     <span>${esc(startKindLabel(n))}</span>
     <b>${esc(txt(n.traditionalStart))}</b>

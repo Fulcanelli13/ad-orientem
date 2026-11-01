@@ -91,6 +91,9 @@ try{
     const r=document.querySelector("#aoPrayerBookRoot"),shell=r?.querySelector(".pbShell"),
      api=window.AO_ROSARY_V381;
     return {rootOpen:r?.classList.contains("open"),sourceReady:!!api,
+     rootCount:document.querySelectorAll("#aoPrayerBookRoot").length,
+     rootClasses:r?.className,children:[...(r?.children||[])].slice(0,6).map(x=>x.className),
+     hasShell:!!shell,activeRoot:r?.dataset.aoRosaryActiveRoot||null,
      sourceSet:api?.state?.()?.set,sourceStep:api?.state?.()?.step,
      count:api?.steps?.()?.length||0,method:api?.getMethod?.(),
      exact:shell?.dataset.aoRosaryExactDonor||null,
@@ -103,7 +106,7 @@ try{
      document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']"),
      null,{timeout:20000});
    }catch(e){
-    console.error("P5 ROSARY START DIAGNOSTIC "+width+" "+language+" "+JSON.stringify(await rosaryState()));
+    console.error("P5 ROSARY START DIAGNOSTIC "+width+" "+language+" "+JSON.stringify({state:await rosaryState(),errors}));
     throw e;
    }
    for(let i=0;i<7;i++)await rosary.locator("[data-lab-rosary-next]").click();

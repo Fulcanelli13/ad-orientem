@@ -72,7 +72,11 @@ try{
  // the canonical five/four-card reader or invalid-route fail-closed behavior.
  const intro=page.locator('#aoPray435930.open [data-p435930-pilot-angelus-begin]');
  if(await intro.count())await intro.click();
- await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:9000});
+ // The Claude hour-first Horarium keeps the canonical deck mounted but
+ // intentionally hidden until Begin. Route acceptance must enter the rite.
+ const hourBegin=page.locator('#aoPray435930.open [data-p435930-angelus-begin]');
+ if(await hourBegin.count())await hourBegin.click();
+ await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{state:"visible",timeout:9000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
  assert.equal(await page.locator("#aoPray435930 [data-p435930-internal-route-error]").count(),0);
  assert.equal(errors.length,0,"Browser errors: "+JSON.stringify(errors));

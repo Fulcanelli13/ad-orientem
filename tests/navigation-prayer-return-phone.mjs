@@ -77,6 +77,10 @@ try{
     // Angelus: horizontal card position is source-owned. Back must not reset
     // card 3 to the first card or disable the existing paragraph focus controller.
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus"));
+    // Claude's hour-of-prayer cover intentionally hides the timeline until
+    // Begin; Back must preserve the actual reading stage, not the cover.
+    await prayer.locator('[data-p435930-angelus-begin]').click();
+    assert.equal(await prayer.locator('[data-ao-horarium-opening]').getAttribute("data-ao-horarium-opening"),"false");
     await prayer.locator('[data-ao-devo-jump="2"]').click();
     assert.equal(await prayer.locator('[data-ao-devo-jump="2"]').getAttribute("aria-current"),"step");
     await toBack(page);

@@ -13,87 +13,111 @@ export function prayerPilotEnabled(win){
   try{return new URLSearchParams(win.location.search).get("aoPrayerPilot")!=="0"}
   catch{return true}
 }
-export function prayerPilotAliases(L){
-  return {
-    marian:{
-      title:L("Our Lady","Notre-Dame"),
-      description:L("Marian prayer and consecration, with routes to their existing canonical readers.","Prières mariales et consécration, avec accès aux lecteurs canoniques existants."),
-      assetId:"ao-rich-rosary",
-      items:[
-        ["own","pray.angelus_regina",L("Angelus / Regina Cæli","Angélus / Regina Cæli"),L("Prayer of the hour","Prière de l'heure")],
-        ["own","pray.rosary",L("Holy Rosary","Saint Rosaire"),L("Traditional mysteries and Scripture","Mystères traditionnels et Écriture")],
-        ["own","programme.first_saturday",L("Five First Saturdays","Cinq premiers samedis"),L("Immaculate Heart devotion","Dévotion au Cœur Immaculé")],
-        ["own","pray.montfort_consecration",L("Montfort preparation","Préparation de Montfort"),L("33-day consecration preparation","Préparation de 33 jours")],
-        ["external","pray.novenas",L("Marian novenas","Neuvaines mariales"),L("Choose the source-defined novena","Choisissez la neuvaine sourcée")],
-        ["own","pray.library",L("Marian prayers in the library","Prières mariales dans le livre"),L("Browse canonical prayer texts","Parcourez les textes canoniques")]
-      ]
-    },
-    novenas:{
-      title:L("Novenas & Journeys","Neuvaines & parcours"),
-      description:L("Source-owned daily, weekly and monthly devotional journeys.","Parcours de dévotion quotidiens, hebdomadaires ou mensuels établis par les sources."),
-      assetId:"ao-rich-novenas",
-      items:[
-        ["external","pray.novenas",L("Novenas","Neuvaines"),L("Nine-day programmes","Parcours de neuf jours")],
-        ["own","pray.montfort_consecration",L("Montfort · 33 days","Montfort · 33 jours"),L("Preparation and consecration","Préparation et consécration")],
-        ["own","programme.first_friday",L("Nine First Fridays","Neuf premiers vendredis"),L("Sacred Heart devotion","Dévotion au Sacré-Cœur")],
-        ["own","programme.first_saturday",L("Five First Saturdays","Cinq premiers samedis"),L("Immaculate Heart devotion","Dévotion au Cœur Immaculé")]
-      ]
-    },
-    ourlord:{
-      title:L("Our Lord","Notre-Seigneur"),
-      description:L("The Passion, Sacred Heart and prayers addressed to Our Lord.","La Passion, le Sacré-Cœur et les prières adressées à Notre-Seigneur."),
-      assetId:"ao-rich-stations",
-      items:[
-        ["own","pray.stations",L("Stations of the Cross","Chemin de Croix"),L("Fourteen stations","Quatorze stations")],
-        ["own","pray.seven_words",L("Seven Last Words","Sept dernières Paroles"),L("Gospel and meditation","Évangile et méditation")],
-        ["own","pray.five_wounds",L("Five Wounds","Cinq Plaies"),L("Passionist chaplet","Chapelet passioniste")],
-        ["external","pray.sacred_heart",L("Sacred Heart","Sacré-Cœur"),L("Traditional prayers and reparation","Prières traditionnelles et réparation")],
-        ["own","programme.first_friday",L("Nine First Fridays","Neuf premiers vendredis"),L("Reparatory devotion","Dévotion réparatrice")]
-      ]
-    },
-    saints:{
-      title:L("Saints & Angels","Saints & anges"),
-      description:L("Prayers of intercession and devotions to the saints.","Prières d'intercession et dévotions aux saints."),
-      assetId:"ao-rich-prayer-library",
-      items:[
-        ["own","pray.litany_saints",L("Litany of the Saints","Litanies des saints"),L("Call and response","Invocations et répons")],
-        ["own","pray.st_joseph_seven_sorrows",L("St Joseph · Sorrows and Joys","Saint Joseph · Douleurs et Joies"),L("Seven paired meditations","Sept méditations en paires")],
-        ["external","pray.good_death",L("Good Death prayers","Prières pour une bonne mort"),L("St Joseph and final perseverance","Saint Joseph et persévérance finale")],
-        ["own","pray.for_priests",L("Prayers for priests","Prières pour les prêtres"),L("Intercession and vocations","Intercession et vocations")],
-        ["own","pray.library",L("Prayer Library","Livre de prières"),L("Find individual saints' prayers","Trouvez les prières aux saints")]
-      ]
-    },
-    intentions:{
-      title:L("Life & Intentions","Vie & intentions"),
-      description:L("Prayer for personal circumstances, spiritual preparation and particular needs.","Prière pour les circonstances personnelles, la préparation spirituelle et les besoins particuliers."),
-      assetId:"ao-rich-confession",
-      items:[
-        ["own","pray.occasional_intercessions",L("Occasional intercessions","Intercessions occasionnelles"),L("Family, sickness, peace and other needs","Famille, maladie, paix et autres besoins")],
-        ["own","pray.confession",L("Confession preparation","Préparation à la confession"),L("Examination and pastoral preparation","Examen et préparation")],
-        ["external","pray.good_death",L("Preparation for a Good Death","Préparation à une bonne mort"),L("Traditional prayers","Prières traditionnelles")],
-        ["external","pray.dying_companion",L("Dying Companion","Accompagnement du mourant"),L("Bedside prayer and priestly priority","Prière au chevet et priorité au prêtre")],
-        ["own","pray.library",L("Prayer Library","Livre de prières"),L("Individual prayers by need","Prières particulières selon les besoins")]
-      ]
-    }
-  };
-}
-// Preserve all six canonical families through the nine editorial doors.
-// Route identities and source-owned readers remain unchanged.
-const LEGACY_FAMILY_BRIDGES=Object.freeze({
- intentions:"penance",ourlord:"passion",novenas:"devotions"
+/**
+ * One visible shelf per complete devotion. Existing internal and external route
+ * identities are NOT changed; reader-internal methods and general hymns remain
+ * searchable without becoming duplicate family cards.
+ *
+ * "prayer" items are canonical single-text records from DATA.prayers, not
+ * newly authored prayers or independent devotional reader engines.
+ */
+export const PRAYER_DOOR_ORDER_V1=Object.freeze({
+ daily:["pray.morning_evening","pray.angelus_regina","pray.meal_prayers","pray.nightly_examen"],
+ chaplets:["pray.rosary","pray.divine_mercy","pray.five_wounds","pray.precious_blood","pray.little_crown"],
+ eucharistic:["pray.adoration","pray.benediction","pray.forty_hours","pray.communion_treasury"],
+ marian:["litany_loreto_1962","marian_memorare","marian_hail_holy_queen","sub_tuum","marian_consecration_immaculate_heart"],
+ novenas:["pray.novenas","programme.first_friday","programme.first_saturday","pray.montfort_consecration"],
+ ourlord:["pray.stations","pray.seven_words","pray.tenebrae","pray.sacred_heart","pray.holy_name_litany"],
+ saints:["pray.litany_saints","pray.st_joseph_seven_sorrows","devotion_prayer_st_michael","devotion_litany_st_joseph","devotion_st_anthony_lost_items","foundations_guardian_angel"],
+ intentions:["pray.confession","pray.penitential_psalms","pray.occasional_intercessions","pray.for_priests","pray.good_death","pray.dying_companion"],
+ library:[]
 });
-export function resolvedPrayerPilotFamilies(L,families){
- const aliases=prayerPilotAliases(L);
- for(const [door,canonical] of Object.entries(LEGACY_FAMILY_BRIDGES)){
-  const seen=new Set(aliases[door].items.map(item=>item[1]));
-  const additions=[];
-  for(const item of families?.[canonical]?.items||[]){
-   if(seen.has(item[1]))continue;
-   seen.add(item[1]);additions.push(item);
+export const PRAYER_SEARCH_ONLY_ROUTES_V1=Object.freeze(["pray.rosary_methods","pray.sacred_hymns"]);
+export const PRAYER_PRIMARY_DOOR_V1=Object.freeze(Object.fromEntries(
+ Object.entries(PRAYER_DOOR_ORDER_V1).flatMap(([door,ids])=>ids.map(id=>[id,door]))
+));
+export function prayerPilotAliases(L){
+ return {
+  marian:{
+   title:L("Our Lady","Notre-Dame"),
+   description:L("Traditional Marian litanies, antiphons and prayers.","Litanies, antiennes et prières mariales traditionnelles."),
+   assetId:"ao-rich-rosary",
+   items:[
+    ["prayer","litany_loreto_1962",L("Litany of Loreto","Litanies de Lorette"),L("Traditional invocations and responses","Invocations et répons traditionnels")],
+    ["prayer","marian_memorare",L("Memorare","Souvenez-vous"),L("Prayer for Our Lady's intercession","Prière demandant l'intercession de Notre-Dame")],
+    ["prayer","marian_hail_holy_queen",L("Hail Holy Queen","Salve Regina"),L("Marian antiphon","Antienne mariale")],
+    ["prayer","sub_tuum",L("Sub Tuum Praesidium","Sous l'abri de votre miséricorde"),L("Ancient Marian prayer","Ancienne prière mariale")],
+    ["prayer","marian_consecration_immaculate_heart",L("Consecration to the Immaculate Heart","Consécration au Cœur Immaculé"),L("Traditional consecration prayer","Prière traditionnelle de consécration")]
+   ]
+  },
+  novenas:{
+   title:L("Novenas & Journeys","Neuvaines & parcours"),
+   description:L("Daily and monthly programmes, each with its original prayer sequence.","Programmes quotidiens et mensuels, avec leurs prières propres."),
+   assetId:"ao-rich-novenas",
+   items:[
+    ["external","pray.novenas",L("Novenas","Neuvaines"),L("The canonical nine-day programmes","Programmes canoniques de neuf jours")],
+    ["own","programme.first_friday",L("Nine First Fridays","Neuf premiers vendredis"),L("Sacred Heart reparatory devotion","Dévotion réparatrice au Sacré-Cœur")],
+    ["own","programme.first_saturday",L("Five First Saturdays","Cinq premiers samedis"),L("Immaculate Heart devotion","Dévotion au Cœur Immaculé")],
+    ["own","pray.montfort_consecration",L("Montfort · 33 days","Montfort · 33 jours"),L("Preparation and consecration","Préparation et consécration")]
+   ]
+  },
+  ourlord:{
+   title:L("Our Lord","Notre-Seigneur"),
+   description:L("The Passion, Sacred Heart and Holy Name.","La Passion, le Sacré-Cœur et le Saint Nom."),
+   assetId:"ao-rich-stations",
+   items:[
+    ["own","pray.stations",L("Stations of the Cross","Chemin de Croix"),L("Fourteen Stations","Quatorze stations")],
+    ["own","pray.seven_words",L("Seven Last Words","Sept dernières Paroles"),L("Gospel words and meditation","Paroles évangéliques et méditation")],
+    ["own","pray.tenebrae",L("Office of Tenebrae","Office des Ténèbres"),L("Matins and Lauds of the Sacred Triduum","Matines et Laudes du Triduum")],
+    ["external","pray.sacred_heart",L("Sacred Heart","Sacré-Cœur"),L("Litany, reparation and consecration","Litanies, réparation et consécration")],
+    ["external","pray.holy_name_litany",L("Litany of the Holy Name","Litanies du Saint Nom"),L("Traditional Roman form","Forme romaine traditionnelle")]
+   ]
+  },
+  saints:{
+   title:L("Saints & Angels","Saints & anges"),
+   description:L("Traditional intercession and prayers to the saints and angels.","Intercession et prières aux saints et aux anges."),
+   assetId:"ao-rich-prayer-library",
+   items:[
+    ["own","pray.litany_saints",L("Litany of the Saints","Litanies des saints"),L("Call and response","Invocations et répons")],
+    ["own","pray.st_joseph_seven_sorrows",L("St Joseph · Sorrows and Joys","Saint Joseph · Douleurs et Joies"),L("Seven paired meditations","Sept méditations en paires")],
+    ["prayer","devotion_prayer_st_michael",L("Prayer to St Michael","Prière à saint Michel"),L("Traditional angelic intercession","Intercession angélique traditionnelle")],
+    ["prayer","devotion_litany_st_joseph",L("Litany of Saint Joseph","Litanies de saint Joseph"),L("Traditional litany","Litanies traditionnelles")],
+    ["prayer","devotion_st_anthony_lost_items",L("St Anthony","Saint Antoine"),L("Prayer for lost things","Prière pour les objets perdus")],
+    ["prayer","foundations_guardian_angel",L("Guardian Angel","Ange gardien"),L("Traditional guardian angel prayer","Prière traditionnelle à l'ange gardien")]
+   ]
+  },
+  intentions:{
+   title:L("Life & Intentions","Vie & intentions"),
+   description:L("Confession, penance, intercession and particular needs.","Confession, pénitence, intercession et intentions particulières."),
+   assetId:"ao-rich-confession",
+   items:[
+    ["own","pray.confession",L("Confession","Confession"),L("Examination, contrition and preparation","Examen, contrition et préparation")],
+    ["own","pray.penitential_psalms",L("Seven Penitential Psalms","Sept psaumes pénitentiels"),L("Traditional penitential sequence","Séquence pénitentielle traditionnelle")],
+    ["own","pray.occasional_intercessions",L("Occasional Intercessions","Intercessions occasionnelles"),L("Family, sickness, peace and other needs","Famille, maladie, paix et autres besoins")],
+    ["own","pray.for_priests",L("Prayers for Priests","Prières pour les prêtres"),L("Clergy and vocations","Clergé et vocations")],
+    ["external","pray.good_death",L("Preparation for a Good Death","Préparation à une bonne mort"),L("Final perseverance and traditional prayers","Persévérance finale et prières traditionnelles")],
+    ["external","pray.dying_companion",L("Dying Companion","Accompagnement du mourant"),L("Bedside prayer and priestly priority","Prière au chevet et priorité au prêtre")]
+   ]
   }
-  aliases[door]={...aliases[door],items:[...aliases[door].items,...additions]};
+ };
+}
+export function resolvedPrayerPilotFamilies(L,families){
+ const aliases=prayerPilotAliases(L),catalog={...families,...aliases};
+ const candidates=new Map();
+ // Preserve canonical family routes as discoverable source records, even when
+ // their old family placement is being retired.
+ for(const family of Object.values(catalog)){
+  for(const item of family?.items||[])if(!candidates.has(item[1]))candidates.set(item[1],item);
  }
- return {...families,...aliases};
+ const result={...catalog};
+ for(const [door,ids] of Object.entries(PRAYER_DOOR_ORDER_V1)){
+  const family=catalog[door];
+  if(!family)continue;
+  result[door]={...family,items:ids.map(id=>family.items?.find(item=>item[1]===id)||candidates.get(id)).filter(Boolean)};
+ }
+ // Search-only links preserve the original route without duplicating a shelf.
+ result.library={...result.library,searchItems:PRAYER_SEARCH_ONLY_ROUTES_V1.map(id=>candidates.get(id)).filter(Boolean)};
+ return result;
 }
 const MOSAIC=[
   {id:"chaplets",col:"1/5",row:"1/6",large:true},
@@ -144,9 +168,11 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
   };
   const routes=new Map();
   Object.values(all).forEach(f=>{
-    (f.items||[]).forEach(item=>{
+    [...(f.items||[]),...(f.searchItems||[])].forEach(item=>{
       const [owner,id,title,description]=item;
-      if(!routes.has(owner+":"+id))routes.set(owner+":"+id,{owner,id,title,description});
+      // Canonical single-text records are already indexed below as DATA.prayers.
+      if(owner==="prayer")return;
+      if(!routes.has(id))routes.set(id,{owner,id,title,description});
     });
   });
   const routeForm=id=>/novena|montfort|first_friday|first_saturday/.test(id)?"novena"
@@ -162,12 +188,12 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     '<b>'+esc(p.titleFr&&L("EN","FR")==="FR"?p.titleFr:p.title)+'</b>'+
     '<small>'+esc(L("Canonical prayer text","Texte canonique de prière"))+'</small></button>'
   ).join("");
-  return head(L("Pray","Prier"),L("Find a prayer or devotion","Trouvez une prière ou une dévotion"))+
+  return head(L("Pray","Prier"),"")+
     '<main class="aoP435930Body aoPrayPilotHome">'+
-      '<div class="aoPrayPilotTop"><h2>'+esc(L("Enter into prayer","Entrer en prière"))+'</h2>'+
+      '<div class="aoPrayPilotTop"><h2>'+esc(L("Prayer","Prière"))+'</h2>'+
       '<label class="aoPrayPilotSearch">'+assetIcon("ao-ui-search","aoPrayPilotSearchIcon")+
       '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+
-      '<p class="aoPrayPilotIntro">'+esc(L("Choose a door or search the existing prayer library and readers.","Choisissez une porte ou recherchez les prières et les lecteurs existants."))+'</p></div>'+
+      '</div>'+
       '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden>'+
       '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
       [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
@@ -178,24 +204,30 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
-export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual'}){
+export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual',hour=12}){
   const regina=form==="regina";
+  const selectedHour=[6,12,18].includes(hour)?hour:12;
+  const hourName=selectedHour===6?L("Dawn","Aube"):selectedHour===18?L("Dusk","Soir"):L("Midday","Midi");
+  const hourTime=String(selectedHour).padStart(2,"0")+":00";
+  const count=regina?[3,3,3]:[3,3,3,9]; // Decorative bell grouping only; not a substitute for the source prayer cards.
+  const strokes=count.map((n,i)=>'<span class="aoPrayPilotBellGroup" aria-hidden="true">'+Array.from({length:n},()=>'<span class="aoPrayPilotBellDot"></span>').join('')+'</span>').join('');
   return head(regina?"Regina Cæli":"Angelus",L("Prayer of the hour","Prière de l'heure"))+
     '<main class="aoP435930Body aoPrayPilotAngelusEntry">'+
-      '<section class="aoPrayPilotAngelusHero">'+
-        '<div class="aoPrayPilotAngelusSymbol" aria-hidden="true">'+moduleIcon("pray.angelus_regina")+'</div>'+
-        '<small>'+esc(L("A pause for prayer","Une pause pour prier"))+'</small>'+
-        '<h2>'+(regina?"Regina Cæli":"Angelus")+'</h2>'+
-        '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The Angel of the Lord declared unto Mary.","L'Ange du Seigneur apporta l'annonce à Marie."))+'</p>'+
-        '<div class="aoPrayPilotEntryMeta">'+esc(regina?L("Eastertide · stand according to local custom","Temps pascal · debout selon la coutume locale"):posture)+'</div>'+
+      '<section class="aoPrayPilotAngelusHero" data-ao-art-publication="unassigned">'+
+        '<small class="aoPrayPilotAngelusArtSlot">'+esc(L("ART SLOT · ANGELUS","EMPLACEMENT D’ART · ANGÉLUS"))+'</small>'+
+        '<div class="aoPrayPilotAngelusCoverCopy">'+
+          '<small class="aoPrayPilotHourEyebrow">'+moduleIcon("pray.angelus_regina")+'<span>'+esc(hourName+" · "+hourTime)+'</span></small>'+
+          '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+
+          '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The bell calls us to remember the Incarnation.","La cloche nous rappelle le mystère de l’Incarnation."))+'</p>'+
+          '<div class="aoPrayPilotBellMoments" aria-label="'+esc(L("Traditional bell sequence","Sonnerie traditionnelle"))+'">'+strokes+'</div>'+
+        '</div>'+
       '</section>'+
       '<div class="aoPrayPilotAngelusActions">'+
+        '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+esc(L("Begin","Commencer"))+'</button>'+
         '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
           '<button type="button" data-p435930-pilot-angelus-recitation="individual" aria-pressed="'+String(recitation!=='group')+'">'+esc(L("Alone","Seul"))+'</button>'+
           '<button type="button" data-p435930-pilot-angelus-recitation="group" aria-pressed="'+String(recitation==='group')+'">'+esc(L("With others","Avec d’autres"))+'</button>'+
         '</div>'+
-        '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+esc(L("Begin prayer","Commencer la prière"))+'</button>'+
-        '<p>'+esc(L("The existing named cards, prayer text, language faces and exact gesture cues are preserved.","Les cartes, textes, langues et gestes existants sont conservés."))+'</p>'+
       '</div>'+
     '</main>';
 }
@@ -233,20 +265,83 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotResult{display:block;width:100%;min-height:55px;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--border,#333);padding:10px 0;color:var(--text,#fff);cursor:pointer}",
     "#aoPray435930 .aoPrayPilotResult b{display:block;font:500 17px/1.25 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotResult small{display:block;margin-top:3px;color:var(--muted,#aaa);font-size:12px;line-height:1.35}",
-    "#aoPray435930 .aoPrayPilotAngelusEntry{display:flex;flex-direction:column;min-height:0}",
-    "#aoPray435930 .aoPrayPilotAngelusHero{flex:1;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px;background:linear-gradient(160deg,#28364b,#121923 68%,#10141b);color:#f3e9dc}",
+    "#aoPray435930 .aoPrayDoorInterior{box-sizing:border-box;width:100%;max-width:640px;margin:0 auto;padding:18px 16px 28px;min-width:0}",
+    "#aoPray435930 .aoPrayDoorHeading{margin:0 0 24px;padding:0}",
+    "#aoPray435930 .aoPrayDoorHeading small{font:600 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;color:var(--liturgical,#c9ae76)}",
+    "#aoPray435930 .aoPrayDoorHeading h2{font:600 clamp(27px,6vw,35px)/1.15 var(--ao-font-display,Georgia,serif);color:var(--text,#f3ead7);margin:7px 0 8px}",
+    "#aoPray435930 .aoPrayDoorHeading p{font:400 14px/1.5 var(--ao-font-display,Georgia,serif);color:var(--muted,#aaa);margin:0;max-width:45ch}",
+    "#aoPray435930 .aoPrayDoorFeatured{display:flex;align-items:center;gap:13px;min-height:132px;width:100%;padding:15px;border:1px solid var(--border,#4c4841);border-radius:12px;background:linear-gradient(120deg,var(--surface-2,#23313e),var(--surface-1,#18202a));color:var(--text,#f3ead7);text-align:left;cursor:pointer}",
+    "#aoPray435930 .aoPrayDoorFeaturedIcon{display:grid;place-items:center;flex:0 0 60px;width:60px;height:76px;color:var(--liturgical,#c9ae76)}",
+    "#aoPray435930 .aoPrayDoorFeaturedIcon svg{max-width:56px;max-height:66px}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy small{font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--liturgical,#c9ae76)}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy b{font:600 21px/1.24 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy span{font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#bbb)}",
+    "#aoPray435930 .aoPrayDoorFeatured>i,#aoPray435930 .aoPrayDoorShelfRow>i{flex:0 0 20px;color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayDoorShelfList{display:flex;flex-direction:column;margin-top:18px;border-top:1px solid var(--border,#4c4841)}",
+    "#aoPray435930 .aoPrayDoorShelfRow{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:70px;padding:13px 4px;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--border,#4c4841);color:var(--text,#f3ead7);cursor:pointer}",
+    "#aoPray435930 .aoPrayDoorShelfCopy{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px}",
+    "#aoPray435930 .aoPrayDoorShelfCopy b{font:600 17px/1.25 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayDoorShelfCopy small{font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayDoorContext{margin-top:18px;padding:13px 0 4px;border-top:1px solid var(--border,#4c4841);opacity:.85}",
+    "#aoPray435930 .aoP435930Body.aoPrayDoorInterior{width:100%!important;max-width:640px!important;padding:0 0 96px!important;gap:0!important;margin:0 auto!important;display:flex!important;flex-direction:column!important}",
+    "#aoPray435930 .aoPrayDoorArtwork{position:relative;min-height:180px;flex:0 0 180px;display:flex;align-items:flex-start;background:linear-gradient(150deg,#56708a 0%,#2c4056 53%,#121820 100%);border-bottom:1px solid rgba(255,255,255,.1)}",
+    "#aoPray435930 .aoPrayDoorArtwork-marian{background:linear-gradient(150deg,#4c6f95,#25405a 58%,#121b27)}",
+    "#aoPray435930 .aoPrayDoorArtwork-chaplets{background:linear-gradient(150deg,#624d7d,#352943 64%,#16111e)}",
+    "#aoPray435930 .aoPrayDoorArtwork-daily{background:linear-gradient(150deg,#896443,#493421 64%,#1b1510)}",
+    "#aoPray435930 .aoPrayDoorArtwork-novenas{background:linear-gradient(150deg,#42627a,#233947 64%,#121a24)}",
+    "#aoPray435930 .aoPrayDoorArtwork-eucharistic{background:linear-gradient(150deg,#807038,#454020 64%,#211c13)}",
+    "#aoPray435930 .aoPrayDoorArtwork-ourlord{background:linear-gradient(150deg,#7b4b4e,#3b2429 64%,#1b1215)}",
+    "#aoPray435930 .aoPrayDoorArtwork-saints{background:linear-gradient(150deg,#50765a,#294536 64%,#142219)}",
+    "#aoPray435930 .aoPrayDoorArtwork-intentions{background:linear-gradient(150deg,#766e63,#3e3a35 64%,#181818)}",
+    "#aoPray435930 .aoPrayDoorArtwork>small{margin:11px 0 0 10px;padding:3px 5px;background:rgba(0,0,0,.26);color:#ece5d8;letter-spacing:.07em;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoPrayDoorHeading{margin:0!important;padding:15px 14px 10px!important;background:#15120f}",
+    "#aoPray435930 .aoPrayDoorHeading h2{font-size:clamp(25px,6vw,30px)!important;margin:0 0 5px!important}",
+    "#aoPray435930 .aoPrayDoorHeading p{font-size:13px!important;line-height:1.38!important;max-width:48ch}",
+    "#aoPray435930 .aoPrayDoorFilters{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 12px 13px;background:#15120f}",
+    "#aoPray435930 .aoPrayDoorFilters::-webkit-scrollbar{display:none}",
+    "#aoPray435930 .aoPrayDoorFilters button{white-space:nowrap;flex:0 0 auto;border:1px solid rgba(255,255,255,.10);border-radius:999px;min-height:34px;padding:0 13px;background:#302b28;color:#e2d8ce;font:500 12px/1.1 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoPrayDoorFilters button[aria-pressed=true]{background:#efe6dc;color:#2b231f;border-color:#efe6dc}",
+    "#aoPray435930 .aoPrayDoorSectionLabel{display:block;padding:12px 14px 4px;color:#aaa0a0;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em}",
+    "#aoPray435930 .aoPrayDoorFeatured,#aoPray435930 .aoPrayDoorShelfRow{min-height:62px!important;gap:12px!important;padding:12px 14px!important;background:transparent!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.09)!important;border-radius:0!important;color:#f2e8dc!important}",
+    "#aoPray435930 .aoPrayDoorFeaturedIcon{display:none!important}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy{gap:2px!important}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy small{display:none!important}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy b,#aoPray435930 .aoPrayDoorShelfCopy b{font:500 17px/1.25 var(--ao-font-display,Georgia,serif)!important}",
+    "#aoPray435930 .aoPrayDoorFeaturedCopy span,#aoPray435930 .aoPrayDoorShelfCopy>small{display:none!important}",
+    "#aoPray435930 .aoPrayDoorLanguages{display:flex;gap:6px;margin-top:3px}",
+    "#aoPray435930 .aoPrayDoorLanguages small{font:500 10px/1.1 var(--ao-font-ui,system-ui,sans-serif);color:#bbaea7}",
+    "#aoPray435930 .aoPrayDoorFeatured::before,#aoPray435930 .aoPrayDoorShelfRow::before{content:\"≡\";font:17px/1 monospace;color:#aa6870}",
+    "#aoPray435930 .aoPrayDoorShelfList{margin:0!important;border:0!important}",
+    "#aoPray435930 .aoPrayDoorContext{margin:20px 14px 0!important}",
+    "#aoPray435930 [data-ao-pray-door-entry][hidden]{display:none!important}",
+    "@media(max-width:560px){#aoPray435930 .aoPrayDoorArtwork{min-height:160px;flex-basis:160px}}",
+    "#aoPray435930 .aoPrayDoorFeatured:focus-visible,#aoPray435930 .aoPrayDoorShelfRow:focus-visible{outline:2px solid var(--liturgical,#c9ae76);outline-offset:2px}",
+    "@media(max-width:359px){#aoPray435930 .aoPrayDoorInterior{padding:12px 12px 24px}#aoPray435930 .aoPrayDoorFeatured{gap:9px;padding:11px}#aoPray435930 .aoPrayDoorFeaturedIcon{flex-basis:47px;width:47px}#aoPray435930 .aoPrayDoorFeaturedCopy b{font-size:19px}}",
+    "#aoPray435930 .aoP435930Body.aoPrayPilotAngelusEntry{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;gap:0!important;padding:0!important;margin:0 auto!important;min-height:calc(100dvh - 120px)!important;box-sizing:border-box;background:#17110d}",
+    "#aoPray435930 .aoPrayPilotAngelusHero{flex:1 1 auto!important;min-height:270px!important;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 18px 12px;background:linear-gradient(153deg,#bc9261 0%,#795735 29%,#3b281b 61%,#17110d 100%);color:#f3e9dc}",
     "#aoPray435930 .aoPrayPilotAngelusSymbol{display:grid;place-items:center;flex:1;min-height:70px;max-height:170px;color:var(--liturgical,#c9ae76)}",
     "#aoPray435930 .aoPrayPilotAngelusSymbol svg{width:88px;height:88px;max-width:100%}",
     "#aoPray435930 .aoPrayPilotAngelusHero small{font:600 11px/1.2 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#dcc398}",
     "#aoPray435930 .aoPrayPilotAngelusHero h2{font:600 40px/1.1 var(--ao-font-display,Georgia,serif);margin:8px 0}",
     "#aoPray435930 .aoPrayPilotAngelusHero p{font:italic 17px/1.5 var(--ao-font-display,Georgia,serif);margin:0}",
     "#aoPray435930 .aoPrayPilotEntryMeta{margin-top:16px;font-size:13px;color:#e1c7a8}",
-    "#aoPray435930 .aoPrayPilotAngelusActions{padding:18px 20px 28px}",
-    "#aoPray435930 .aoPrayPilotRecitation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin-bottom:12px;padding:4px;border-radius:999px;background:var(--surface-1,#18202a)}",
-    "#aoPray435930 .aoPrayPilotRecitation button{min-width:0;min-height:44px;border:0;border-radius:999px;background:transparent;color:var(--muted,#ccc);font:600 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}",
-    "#aoPray435930 .aoPrayPilotRecitation button[aria-pressed=true]{background:var(--surface-2,#303b46);color:var(--text,#fff);box-shadow:0 1px 4px rgba(0,0,0,.16)}",
-    "#aoPray435930 .aoPrayPilotBegin{width:100%;min-height:52px;border:0;border-radius:999px;background:var(--liturgical,#c9ae76);color:#0d1520;font:600 16px/1.2 var(--ao-font-display,Georgia,serif)}",
+    "#aoPray435930 .aoPrayPilotAngelusActions{padding:6px 18px 18px;background:#17110d}",
+    "#aoPray435930 .aoPrayPilotRecitation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;margin:9px auto 0;padding:3px;border-radius:8px;background:#332a26;width:max-content;max-width:100%}",
+    "#aoPray435930 .aoPrayPilotRecitation button{min-width:62px;min-height:32px;padding:0 9px;border:0;border-radius:6px;background:transparent;color:#c0aea0;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoPrayPilotRecitation button[aria-pressed=true]{background:#6c5a52;color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.16)}",
+    "#aoPray435930 .aoPrayPilotBegin{width:100%;min-height:48px;border:0;border-radius:999px;background:#f5efe9;color:#28211d;font:600 16px/1.2 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotAngelusActions p{font:400 12px/1.45 var(--ao-font-display,Georgia,serif);color:var(--muted,#aaa);text-align:center}",
+    "#aoPray435930 .aoPrayPilotAngelusArtSlot{position:absolute;top:17px;left:14px;padding:2px 5px;background:rgba(17,13,10,.35);font:500 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:rgba(255,242,226,.77)}",
+    "#aoPray435930 .aoPrayPilotAngelusCoverCopy{width:100%;max-width:430px}",
+    "#aoPray435930 .aoPrayPilotAngelusCoverCopy .aoPrayPilotHourEyebrow{display:flex;align-items:center;gap:7px;font:600 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em;color:#e4cdab}",
+    "#aoPray435930 .aoPrayPilotHourEyebrow svg{width:16px;height:16px}",
+    "#aoPray435930 .aoPrayPilotAngelusCoverCopy h2{font-size:clamp(30px,7vw,38px);margin:7px 0 7px}",
+    "#aoPray435930 .aoPrayPilotAngelusCoverCopy p{font-size:15px;max-width:28ch;line-height:1.35;color:#e9d8c4}",
+    "#aoPray435930 .aoPrayPilotBellMoments{display:flex;align-items:center;gap:7px;flex-wrap:nowrap;margin-top:15px;min-height:9px}",
+    "#aoPray435930 .aoPrayPilotBellGroup{display:inline-flex;align-items:center;gap:3px}",
+    "#aoPray435930 .aoPrayPilotBellDot{display:inline-block;width:4px;height:4px;border:1px solid #e3c8a5;border-radius:50%;opacity:.75}",
+    "@media(max-height:620px){#aoPray435930 .aoPrayPilotAngelusHero{padding-bottom:8px}#aoPray435930 .aoPrayPilotAngelusActions{padding-bottom:11px}#aoPray435930 .aoPrayPilotAngelusArtSlot{top:8px}}",
     "@media(max-width:359px){#aoPray435930 .aoPrayPilotMosaic{grid-auto-rows:37px}#aoPray435930 .aoPrayPilotTileCaption{font-size:12px;padding:18px 6px 6px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:18px;padding:27px 9px 9px}#aoPray435930 .aoPrayPilotTop h2{font-size:25px}}",
     "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile{scroll-behavior:auto}}"
   ].join("\n");
