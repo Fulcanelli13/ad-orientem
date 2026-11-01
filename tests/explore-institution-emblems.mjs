@@ -107,6 +107,19 @@ for(const [code,label,mark] of [
   ["SJM","Servi Jesu et Mariae","SJM"],
   ["CMRI","Congregation of Mary Immaculate Queen","CMRI"],
   ["FSVF","Fraternity of Saint Vincent Ferrer","FSVF"],
+  ["SSPX_SISTERS","Sœurs de la Fraternité Saint Pie X","SFSPX"],
+  ["TRANSFIGURATION","Fraternité de la Transfiguration","FT"],
+  ["DOMINICAINES_FANJEAUX","Dominicaines de Fanjeaux","DEF"],
+  ["DOMINICANS_AVRILLE","Dominicains d'Avrillé","DAV"],
+  ["BENEDICTINES_BELLAIGUE","Bénédictins de Bellaigue","BELL"],
+  ["INSTITUTE_ST_PHILIP_NERI","Institute of Saint Philip Neri","ISPN"],
+  ["IMBC","Istituto Mater Boni Consilii","IMBC"],
+  ["SMMD","Society of the Missionaries of Divine Mercy","SMMD"],
+  ["SSPV","Society of Saint Pius V","SSPV"],
+  ["CSPV","Congregation of Saint Pius V","CSPV"],
+  ["RCI","Roman Catholic Institute","RCI"],
+  ["SOCIEDAD_TRENTO","Sociedad Sacerdotal Trento","SST"],
+  ["MOSTEIRO_SANTA_CRUZ","Mosteiro da Santa Cruz","MSC"],
 ]){
   assert.equal(massInstitutionEmblem(code),null,"Uncleared original insignia must not be rendered for "+code);
   for(const language of ["en","fr"]){
@@ -119,6 +132,18 @@ for(const [code,label,mark] of [
       assert.ok(html.includes(label),"Original named source must stay visible");
     }
   }
+}
+assert.equal(massInstitutionEmblem("SSPX_SISTERS"),null,
+ "Do not assign the priests' SSPX emblem to their distinct sisters");
+assert.equal(massInstitutionEmblem("TRANSFIGURATION"),null,
+ "Wikipedia's generic Orthodox cross is not an authenticated fraternity emblem");
+for(const {community_id,eyebrow} of [
+  {community_id:"DIOCESAN",eyebrow:"Diocesan"},
+  {community_id:"UNKNOWN",eyebrow:"Unknown"},
+  {community_id:"SSPX_RESISTANCE",eyebrow:"Unclassified"},
+]){
+ const html=renderDirectoryIdentityFallback({community_id,eyebrow},"en","card");
+ assert.doesNotMatch(html,/<img\\b/,"Neither an umbrella label nor unknown affiliation can inherit an image");
 }
 assert.match(renderDirectoryIdentityFallback({community_id:"OTHER",eyebrow:"Canons of St John Cantius"}),/>CJ<\/span>/,
  "Without exact source ownership, retain generic source-derived initials");
