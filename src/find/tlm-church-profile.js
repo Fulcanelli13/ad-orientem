@@ -206,6 +206,14 @@ export function renderTlmChurchProfile(item,language="en"){
  html+=renderDirectoryGallery(item,language);
  html+='<section class="aoTlmProfilePanel"><h3>'+E(L(language,"Visit & contacts","Visite et coordonnées"))+'</h3>';
  if(address)html+='<p class="aoTlmProfileAddress">'+E(address)+'</p>';
+ // The CL2 physical-site master may contain a more precise source description
+ // than an inherited R49 locality. Show it as a source description, never
+ // silently promote it to a verified address or church entrance.
+ const sourceLocation=T(item?.source_location_description);
+ if(sourceLocation&&sourceLocation!==address)
+   html+='<p class="aoTlmProfileSourceLocation"><strong>'+E(L(language,
+     "Location in original directory","Localisation selon l’annuaire d’origine"))+': </strong>'+
+     E(sourceLocation)+'</p>';
  if(item?.geo?.approximate||item?.geo?.indicative_only)html+='<p class="aoTlmProfileCaution">'+E(L(language,"Map pin is indicative; the entrance is not verified.","Repère cartographique indicatif ; entrée non vérifiée."))+'</p>';
  const urls=[...values(contact.website),...values(contact.schedule_url),...values(contact.bulletin_url)];
  const links=[...new Set(urls.filter(https))];
@@ -267,6 +275,8 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 .aoTlmProfileActions a,.aoTlmProfileSources a{padding:9px 11px;background:#263540;border:1px solid #c4a76844;border-radius:9px;min-height:44px;box-sizing:border-box;font-size:12px}
 .aoTlmChurchProfile button[data-explore-open-place]{background:#302a20;color:#f4e0bb;border:1px solid #d8b576;border-radius:10px;min-height:44px;padding:9px 12px;text-align:left;max-width:100%}
 .aoTlmProfileAddress{overflow-wrap:anywhere}
+.aoTlmProfileSourceLocation{overflow-wrap:anywhere;color:#c4c9ca;font:12px/1.55 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTlmProfileSourceLocation strong{color:#e4cf9f}
 @media(max-width:560px){.aoTlmChurchProfile{width:100%;max-width:none;max-height:90dvh;padding:12px 13px max(30px,env(safe-area-inset-bottom));border-radius:18px 18px 0 0}.aoTlmProfilePanel{padding:12px}.aoTlmProfileIdentityGrid{gap:7px}.aoTlmProfileDatum{padding:9px 8px}.aoTlmProfileDatum strong{font-size:12px}.aoTlmProfileSchedule{flex-direction:column;gap:4px}.aoTlmProfileSchedule>span{max-width:none}}
 @media(prefers-reduced-motion:reduce){.aoTlmChurchProfile{scroll-behavior:auto}}
 
