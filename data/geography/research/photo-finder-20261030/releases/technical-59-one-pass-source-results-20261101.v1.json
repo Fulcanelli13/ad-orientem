@@ -1,0 +1,1105 @@
+{
+  "schema": "AO_PHOTO_FINDER_TECHNICAL_59_ONE_PASS_V1",
+  "date": "2026-11-01T20:48:54.439785+00:00",
+  "source_ledger": "data/geography/research/photo-finder-20261030/releases/sacred-atlas-530-cover-closure-106-v1.json",
+  "exact_first_choice_attempted": 59,
+  "metadata_batches": 5,
+  "verified_research_only": 5,
+  "held": 54,
+  "outcome_counts": {
+    "ORIGINAL_BYTE_OR_DECODER_HOLD": 25,
+    "VERIFIED_RESEARCH_ONLY": 5,
+    "METADATA_SAFETY_OR_PROVENANCE_HOLD": 27,
+    "EXISTING_EXACT_IDENTITY_HOLD": 2
+  },
+  "outcomes": [
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Notre-Dame-du-Cap Basilica @ Trois-Rivières, Quebec.jpg",
+      "sha1_claim": "d6a5bd22197ce07bc25997ee608417529c7ddd81",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "d6a5bd22197ce07bc25997ee608417529c7ddd81",
+      "live_original_bytes": 3451373,
+      "live_dimensions": [
+        4000,
+        2250
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Inphasis",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:BE:beauraing",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Our Lady of Beauraing 01.jpg",
+      "sha1_claim": "21395ec7d63b8e14506e91f0fe216396be13b8c8",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "live_sha1": "21395ec7d63b8e14506e91f0fe216396be13b8c8",
+      "live_original_bytes": 1446918,
+      "live_dimensions": [
+        4618,
+        3464
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Donarreiskoffer",
+      "asset": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-55b7456b1abee9f5cb9380.webp",
+      "derivative_sha256": "a61b88c4ef548f3455442fef4b22d38a1adda1536fd73bc7e21c1210e91f21fb"
+    },
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Heiloo, Heiligdom Onze Lieve Vrouw ter Nood, Bedevaartkerk, oost.jpg",
+      "sha1_claim": "caa6822542ab4a71d4e6b03d49340b775caf8848",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "caa6822542ab4a71d4e6b03d49340b775caf8848",
+      "live_original_bytes": 5374843,
+      "live_dimensions": [
+        3264,
+        2448
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Onze-Lieve-Vrouwebasiliek en Wachthuis, Maastricht, Netherlands - panoramio (6).jpg",
+      "sha1_claim": "7a9e3803f2eebdfb660b4a0ce0e5dbc4128ca6a1",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "live_sha1": "7a9e3803f2eebdfb660b4a0ce0e5dbc4128ca6a1",
+      "live_original_bytes": 3548499,
+      "live_dimensions": [
+        4896,
+        3264
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-3.0",
+      "live_credit": "Ben Bender",
+      "asset": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-c6b397d1a630045670d713.webp",
+      "derivative_sha256": "63cddba7c9f0b686c9deb8016777137d085e45c99e3bf04f1dacb80417be4e0b"
+    },
+    {
+      "place_id": "place:PT:sameiro-braga",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Our Lady of Sameiro sanctuary in Braga (1).jpg",
+      "sha1_claim": "81a3f891e6c3e409b95005bb6ec5e7b595299176",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "live_sha1": "81a3f891e6c3e409b95005bb6ec5e7b595299176",
+      "live_original_bytes": 11097856,
+      "live_dimensions": [
+        5088,
+        3390
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Tournasol7",
+      "asset": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-697ce65d404bb368eb18d6.webp",
+      "derivative_sha256": "b17b92907ca9397d06bbe226d95d7aee7ce8c7d2aaa5b1c87b9d1815b838aff6"
+    },
+    {
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:St. Alphonsus Church - Baltimore 01.JPG",
+      "sha1_claim": "7603fc467d8c5e077f554019b95f773dfc9684eb",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "live_sha1": "7603fc467d8c5e077f554019b95f773dfc9684eb",
+      "live_original_bytes": 7615483,
+      "live_dimensions": [
+        4608,
+        3456
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Farragutful",
+      "asset": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-5e6739db22ee8f18175c3f.webp",
+      "derivative_sha256": "9c3309686bc01cb51bbbf54b4cb968be1b4ed310ff97d232820b3084080fbbe0"
+    },
+    {
+      "place_id": "place:US:czestochowa-doylestown",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Main Church Out 1.jpg",
+      "sha1_claim": "7bd925f9bd8378d5cd002d6bf87a5f4e31205a0e",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "live_sha1": "7bd925f9bd8378d5cd002d6bf87a5f4e31205a0e",
+      "live_original_bytes": 391218,
+      "live_dimensions": [
+        1200,
+        800
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "The Shrine of Our Lady of Czestochowa",
+      "asset": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-4b69bfce3d06bfd28f6c34.webp",
+      "derivative_sha256": "eb830b7ec4a6cf20073dbbf44132dc8c5e73fdf0c1d3b17cdd794d56d14f52a6"
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Sanctuaire marial de Pellevoisin, aile historique de 1897.jpg",
+      "sha1_claim": "b2e1f1d12c1b1a386390dca56d7942214fa47f76",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "b2e1f1d12c1b1a386390dca56d7942214fa47f76",
+      "live_original_bytes": 6996409,
+      "live_dimensions": [
+        3456,
+        5184
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Esves-37240",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Chapelle Carmel - Lisieux (FR14) - 2021-11-12 - 3.jpg",
+      "sha1_claim": "591ac8bf741632f7f39730f7f38f334afeeab388",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "591ac8bf741632f7f39730f7f38f334afeeab388",
+      "live_original_bytes": 3667015,
+      "live_dimensions": [
+        4032,
+        3024
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Chabe01",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Ars-sur-Formans Basilique Saint-Sixte Extérieur Dome 2.jpg",
+      "sha1_claim": "f9253b90c21ebd84bda107754cf5f710ac642e3f",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "f9253b90c21ebd84bda107754cf5f710ac642e3f",
+      "live_original_bytes": 16111140,
+      "live_dimensions": [
+        4579,
+        3193
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Bari BW 2016-10-19 13-35-11 stitch.jpg",
+      "sha1_claim": "0d0979f53d11fb234c6456fe0c685156a5c6cbe4",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "0d0979f53d11fb234c6456fe0c685156a5c6cbe4",
+      "live_original_bytes": 19762829,
+      "live_dimensions": [
+        7445,
+        6319
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:PL:gietrzwald-basilica",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Sanctuary in Gietrzwałd, 2025, KsP.jpg",
+      "sha1_claim": "3f7a3a70b9b47fa973c0fdd45b8cbaf0d10a0b12",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "3f7a3a70b9b47fa973c0fdd45b8cbaf0d10a0b12",
+      "live_original_bytes": 20626073,
+      "live_dimensions": [
+        7008,
+        4672
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Rome - Italy (November 2025) - 194.jpg",
+      "sha1_claim": "cdc1374c3e9bb28f3e76604db257daea09da501f",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "cdc1374c3e9bb28f3e76604db257daea09da501f",
+      "live_original_bytes": 2888480,
+      "live_dimensions": [
+        4032,
+        3024
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Another Believer",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Basilique Notre Dame Victoires - Paris II (FR75) - 2026-04-11 - 1.jpg",
+      "sha1_claim": "282898af6fd0bb0568970cdd66127d167b1b2703",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "282898af6fd0bb0568970cdd66127d167b1b2703",
+      "live_original_bytes": 5584522,
+      "live_dimensions": [
+        5712,
+        4284
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Chabe01",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Basilique Notre Dame Perpétuel Secours - Paris XI (FR75) - 2024-11-23 - 4.jpg",
+      "sha1_claim": "ed7ecf5cd8ae003fe2ec8300cb99648373cd2ea1",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "ed7ecf5cd8ae003fe2ec8300cb99648373cd2ea1",
+      "live_original_bytes": 3150138,
+      "live_dimensions": [
+        4032,
+        3024
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Chabe01",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+      "sha1_claim": "93ed31e7ed4e4b4fafd7b7c4460a088bf9c15b9e",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "93ed31e7ed4e4b4fafd7b7c4460a088bf9c15b9e",
+      "live_original_bytes": 50457392,
+      "live_dimensions": [
+        13066,
+        6823
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "frozen_disposition": "source_size_format",
+      "file": "File:StPaul.jpg",
+      "sha1_claim": "96d1ab3a7ddc15e0863f3dbbec8a900603e1e04b",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "96d1ab3a7ddc15e0863f3dbbec8a900603e1e04b",
+      "live_original_bytes": 32532870,
+      "live_dimensions": [
+        8272,
+        5456
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Basilica di Santa Maria Maggiore - Roma.jpg",
+      "sha1_claim": "3060be9647c5cbfcb32bc8c4031396f8075f0cb7",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "3060be9647c5cbfcb32bc8c4031396f8075f0cb7",
+      "live_original_bytes": 24221438,
+      "live_dimensions": [
+        6906,
+        5358
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Cathédrale Cologne - Cologne (DEA2) - 2026-09-28 - 28.jpg",
+      "sha1_claim": "cd7c5eabba95aa137227e4894c4d3175733c7c78",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "cd7c5eabba95aa137227e4894c4d3175733c7c78",
+      "live_original_bytes": 3084479,
+      "live_dimensions": [
+        4032,
+        3024
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Chabe01",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Milan Sant'Ambrogio 016 4923.jpg",
+      "sha1_claim": "9b46169c2023407127fe0ceadf975b2b07db01d2",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "9b46169c2023407127fe0ceadf975b2b07db01d2",
+      "live_original_bytes": 23831305,
+      "live_dimensions": [
+        5997,
+        5138
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Assisi - basilica di Santa Chiara - 2026-09-30 22-29-40 001.JPG",
+      "sha1_claim": "971b75c37b45fada17069479412c94355bbf306f",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "971b75c37b45fada17069479412c94355bbf306f",
+      "live_original_bytes": 20573449,
+      "live_dimensions": [
+        6000,
+        4000
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Catania BW 2025-04-25 15-15-28.jpg",
+      "sha1_claim": "715df2aebc20c2cf3ddc46acea9aed6a4fb6be6c",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "715df2aebc20c2cf3ddc46acea9aed6a4fb6be6c",
+      "live_original_bytes": 21009172,
+      "live_dimensions": [
+        5823,
+        3872
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:San Salvador - El Salvador (50899440617).jpg",
+      "sha1_claim": "be51e84320a5c3d92b8b52cbe529a48bb6f79454",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "be51e84320a5c3d92b8b52cbe529a48bb6f79454",
+      "live_original_bytes": 5361173,
+      "live_dimensions": [
+        4896,
+        3672
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-2.0",
+      "live_credit": "Rômulo Gama Ferreira from Vitória-ES",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Abbazia di San Colombano - Bobbio, Piacenza, Italia - 30 Maggio 2020.jpg",
+      "sha1_claim": "75d1726d9eb87b99348921af0b8c848df5e5f258",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "75d1726d9eb87b99348921af0b8c848df5e5f258",
+      "live_original_bytes": 18119308,
+      "live_dimensions": [
+        6807,
+        4862
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Fécamp Abbatiale de la Trinité Fassade 3.jpg",
+      "sha1_claim": "c9e0d2c18b90b4c7c0e0dd23e6dfe4a53324bfd8",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "c9e0d2c18b90b4c7c0e0dd23e6dfe4a53324bfd8",
+      "live_original_bytes": 5034078,
+      "live_dimensions": [
+        4499,
+        2895
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Zairon",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Church of the Transfiguration (Mount Tabor), 2019 (01).jpg",
+      "sha1_claim": "40969749ffa7694e460bc2cfd428d1149ddabb4c",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "40969749ffa7694e460bc2cfd428d1149ddabb4c",
+      "live_original_bytes": 9933760,
+      "live_dimensions": [
+        6014,
+        4014
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Bahnfrend",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:כנסיית הביקור מהאוויר.jpg",
+      "sha1_claim": "327e724e3d511ee147f4784abd9baa3b00f81cec",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "327e724e3d511ee147f4784abd9baa3b00f81cec",
+      "live_original_bytes": 4818483,
+      "live_dimensions": [
+        4000,
+        3000
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "ליעד 747",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Tháp chuông nhà thờ La Vang.JPG",
+      "sha1_claim": "df56c4525f298e79bb4ce48864eba4d20c788581",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "df56c4525f298e79bb4ce48864eba4d20c788581",
+      "live_original_bytes": 3440640,
+      "live_dimensions": [
+        2288,
+        1520
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-3.0",
+      "live_credit": "Hoangvantoanajc",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Fachada principal da Igreja de Santo Estêvão (Santo Milagre).jpg",
+      "sha1_claim": "81e7d94c1b10a57c1a83c46b2066cc164db7eb2c",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "81e7d94c1b10a57c1a83c46b2066cc164db7eb2c",
+      "live_original_bytes": 4564754,
+      "live_dimensions": [
+        3000,
+        4000
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Threeohsix",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Manaoag Church facade in Pangasinan.jpg",
+      "sha1_claim": "989b7430038a1ecd89d5b753a6485a05f0a100a7",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "989b7430038a1ecd89d5b753a6485a05f0a100a7",
+      "live_original_bytes": 596067,
+      "live_dimensions": [
+        1080,
+        1440
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-3.0",
+      "live_credit": "Ramon FVelasquez",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Basílica de Caacupé.jpg",
+      "sha1_claim": "22568147e0e4053cd3b040b1ceb1ec3769c9b324",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "22568147e0e4053cd3b040b1ceb1ec3769c9b324",
+      "live_original_bytes": 4899662,
+      "live_dimensions": [
+        3078,
+        2465
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Garcia.dennis",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:St Peter's Cathedral Basilica Kumasi (4).jpg",
+      "sha1_claim": "59837826884dc9a065e18e2f0fce85c46e0c9bae",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "59837826884dc9a065e18e2f0fce85c46e0c9bae",
+      "live_original_bytes": 6127616,
+      "live_dimensions": [
+        6000,
+        3376
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Noahalorwu",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Pyhän Henrikin katedraali Helsinki 2022-09-18 01.jpg",
+      "sha1_claim": "10e720e0d33ac162d37861ea2f3636e12de0b0f6",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "10e720e0d33ac162d37861ea2f3636e12de0b0f6",
+      "live_original_bytes": 37805021,
+      "live_dimensions": [
+        7466,
+        4982
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:ID:jakarta-cathedral",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Cathedral of Jakarta - exterior (2025) - img 04.jpg",
+      "sha1_claim": "c06d6e38b449779d31970b82f5e3759c224996cb",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "c06d6e38b449779d31970b82f5e3759c224996cb",
+      "live_original_bytes": 2889325,
+      "live_dimensions": [
+        3024,
+        4032
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-4.0",
+      "live_credit": "Chainwit.",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:PH:manila-cathedral-intramuros",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Catedral de la Inmaculada Concepción, Manila, Filipinas, 2023-08-26, DD 21.jpg",
+      "sha1_claim": "c14fcab676706bcd112671a2264e7de6eddd2663",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "c14fcab676706bcd112671a2264e7de6eddd2663",
+      "live_original_bytes": 11340984,
+      "live_dimensions": [
+        6213,
+        5695
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Kuwait City Holy Family Cathedral Exterior Facade.jpg",
+      "sha1_claim": "20d76b312fbd81b8db0cdd8741e4ad24a7561e79",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "20d76b312fbd81b8db0cdd8741e4ad24a7561e79",
+      "live_original_bytes": 4107000,
+      "live_dimensions": [
+        4569,
+        2452
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-4.0",
+      "live_credit": "Zairon",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Cathedral in Willemstad, Curaçao.jpg",
+      "sha1_claim": "e274c283caa80537158ce2e533ab9e7eba954f67",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "e274c283caa80537158ce2e533ab9e7eba954f67",
+      "live_original_bytes": 6995232,
+      "live_dimensions": [
+        4896,
+        3672
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-4.0",
+      "live_credit": "Gerd Fahrenhorst",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:WF:cathedrale-assomption-mata-utu",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:179 Cathédrale de Mata-Utu - side view (36940866791).jpg",
+      "sha1_claim": "881fe70acb5915518214da7eed461ae89039bf32",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "881fe70acb5915518214da7eed461ae89039bf32",
+      "live_original_bytes": 5720242,
+      "live_dimensions": [
+        4896,
+        2752
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-2.0",
+      "live_credit": "Brigitte & Heinz",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:KN:immaculate-conception-cocathedral-basseterre",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Basseterre Co-Cathedral of Immaculate Conception 2.JPG",
+      "sha1_claim": "512aa0f323afd2c9c9e8344315ddf9e43643f8a6",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "512aa0f323afd2c9c9e8344315ddf9e43643f8a6",
+      "live_original_bytes": 3140916,
+      "live_dimensions": [
+        3240,
+        4320
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Gertjan R.",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:CK:st-joseph-cathedral-avarua",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:St. Joseph's Cathedral, Avarua.jpg",
+      "sha1_claim": "a1b132d9cb52287eff1785eaccedc9242c5ccab9",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "a1b132d9cb52287eff1785eaccedc9242c5ccab9",
+      "live_original_bytes": 3097059,
+      "live_dimensions": [
+        3941,
+        2717
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Tom Ackroyd",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
+      "frozen_disposition": "source_size_format",
+      "file": "File:France-003038 - Basilica of Notre-Dame de Fourvière (15939822990).jpg",
+      "sha1_claim": "a7b0ac4dcd85883277d9d327fb4d92b89e148858",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "a7b0ac4dcd85883277d9d327fb4d92b89e148858",
+      "live_original_bytes": 19654696,
+      "live_dimensions": [
+        6071,
+        4106
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Basilika-mariatrost-hoch-10-2021.jpg",
+      "sha1_claim": "10be7c04ff7944aa447181d8fb064508ac6a4bf9",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "10be7c04ff7944aa447181d8fb064508ac6a4bf9",
+      "live_original_bytes": 19632209,
+      "live_dimensions": [
+        4000,
+        6000
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Kevelaer, Germany - panoramio (113).jpg",
+      "sha1_claim": "5a1103f894555e12bf90a71c229c4d2f0c9a5b41",
+      "status": "EXISTING_EXACT_IDENTITY_HOLD",
+      "reason": "Frozen source plan excludes this first choice"
+    },
+    {
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Madonna del Sasso, Orselina, Ticino.jpg",
+      "sha1_claim": "7ffe6ab1270455fe5f596117e0b768887efdea08",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "7ffe6ab1270455fe5f596117e0b768887efdea08",
+      "live_original_bytes": 49847153,
+      "live_dimensions": [
+        10251,
+        7688
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:DO:catedral-primada-santo-domingo",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Dominikanische Republik Santo Domingo Basilica Catedral Menor de Santa Maria 02.jpg",
+      "sha1_claim": "52e7898563838e2893e7771dfb4d756b4bad468d",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "52e7898563838e2893e7771dfb4d756b4bad468d",
+      "live_original_bytes": 20558142,
+      "live_dimensions": [
+        7356,
+        4138
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Igreja da Penha by Diego Baravelli III.jpg",
+      "sha1_claim": "dd35c6a4a1bcbf575cc8eb83eafd34b85ac93055",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "dd35c6a4a1bcbf575cc8eb83eafd34b85ac93055",
+      "live_original_bytes": 27852630,
+      "live_dimensions": [
+        5760,
+        3840
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:PT:santuario-nossa-senhora-nazare",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Nazaré February 2013-8.jpg",
+      "sha1_claim": "283ea781bec35eaaee0b60fa69cba3597a5b63d3",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "283ea781bec35eaaee0b60fa69cba3597a5b63d3",
+      "live_original_bytes": 19085308,
+      "live_dimensions": [
+        7013,
+        4407
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Reims Cathedral 016 8341.jpg",
+      "sha1_claim": "83713a58b52251dd4e7c01527b9396bbc7bd43bb",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "83713a58b52251dd4e7c01527b9396bbc7bd43bb",
+      "live_original_bytes": 36270928,
+      "live_dimensions": [
+        5444,
+        7284
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "frozen_disposition": "source_size_format",
+      "file": "File:20211115.Valencia.-087.1.jpg",
+      "sha1_claim": "4ea34d2ff4ac1356ec4f7fe19f335517bc01ab3b",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "4ea34d2ff4ac1356ec4f7fe19f335517bc01ab3b",
+      "live_original_bytes": 12100653,
+      "live_dimensions": [
+        8000,
+        6000
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:IN:st-andrews-basilica-arthunkal",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Arthunkal Basilica.jpg",
+      "sha1_claim": "eed3bb615d61d1cf73210ecca76c2ef659bc54c6",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "eed3bb615d61d1cf73210ecca76c2ef659bc54c6",
+      "live_original_bytes": 35345315,
+      "live_dimensions": [
+        16320,
+        12240
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:LT:siluvos-svc-mergeles-marijos-gimimo-bazilika",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Siluva Basilika Mariä Geburt 1.JPG",
+      "sha1_claim": "42b305eebf4f7021d85c1ecf2f4311f1a15a1b76",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "42b305eebf4f7021d85c1ecf2f4311f1a15a1b76",
+      "live_original_bytes": 3898898,
+      "live_dimensions": [
+        3167,
+        2685
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "Zairon",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-marienthal",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:Marienthal NotreDame03.JPG",
+      "sha1_claim": "ddabe51b23e3433a7f3e386afc11394d4f88c1c4",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "ddabe51b23e3433a7f3e386afc11394d4f88c1c4",
+      "live_original_bytes": 3474084,
+      "live_dimensions": [
+        3648,
+        2736
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-4.0",
+      "live_credit": "© Ralph Hammann - Wikimedia Commons",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "frozen_disposition": "source_size_format",
+      "file": "File:489A1758Bazylika konkatedralna Wniebowzięcia Najświętszej Maryi Panny w Gdańsku - widziana z Góry Gradowej.jpg",
+      "sha1_claim": "5998588f250cc54992df469d51cae8650c9ff9fe",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "5998588f250cc54992df469d51cae8650c9ff9fe",
+      "live_original_bytes": 22024381,
+      "live_dimensions": [
+        6720,
+        4480
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0042",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Strasbourg Cathedral Exterior - Diliff.jpg",
+      "sha1_claim": "30ba67362115f0641f32686e0941a7130482cdcb",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "30ba67362115f0641f32686e0941a7130482cdcb",
+      "live_original_bytes": 14682203,
+      "live_dimensions": [
+        6574,
+        8402
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Santuario de El Quinche, El Quinche, Ecuador, 2015-07-21, DD 03.JPG",
+      "sha1_claim": "3d6b480719ca5e6aa64c3163b671cfbf45ef0029",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "3d6b480719ca5e6aa64c3163b671cfbf45ef0029",
+      "live_original_bytes": 9871127,
+      "live_dimensions": [
+        7441,
+        4961
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "frozen_disposition": "source_metadata_mismatch",
+      "file": "File:El Sant Crist, Balaguer-2.JPG",
+      "sha1_claim": "e08b56665103276d7e03690a732a198160d7e2df",
+      "status": "ORIGINAL_BYTE_OR_DECODER_HOLD",
+      "live_sha1": "e08b56665103276d7e03690a732a198160d7e2df",
+      "live_original_bytes": 2709394,
+      "live_dimensions": [
+        2560,
+        1920
+      ],
+      "live_mime": "image/jpeg",
+      "live_license": "CC-BY-SA-3.0",
+      "live_credit": "Deosringas",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:KR:p48-sg-0628-210335697",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Myeongdong Cathedral 6.jpg",
+      "sha1_claim": "86b2dfaa0e4aaa8c68bdd57cb51b56035ee91e1c",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "86b2dfaa0e4aaa8c68bdd57cb51b56035ee91e1c",
+      "live_original_bytes": 19459386,
+      "live_dimensions": [
+        6000,
+        4010
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 16MB or invalid size"
+    },
+    {
+      "place_id": "place:AT:p48-sg-0197-239345806",
+      "frozen_disposition": "source_size_format",
+      "file": "File:Salzburger Dom 2023-09-28 02.jpg",
+      "sha1_claim": "c193f76495633bf39a3cb9fd2c29487358461f20",
+      "status": "METADATA_SAFETY_OR_PROVENANCE_HOLD",
+      "live_sha1": "c193f76495633bf39a3cb9fd2c29487358461f20",
+      "live_original_bytes": 19956903,
+      "live_dimensions": [
+        8384,
+        5612
+      ],
+      "live_mime": "image/jpeg",
+      "reason": "ValueError: Original over 32MP safety bound"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "frozen_disposition": "no_persisted_exception",
+      "file": "File:Santuario San Gabriele dell'Addolorata Abruzzo 03.JPG",
+      "sha1_claim": "6a3e8384f7344a5ad7425bd424e366ee2a4454c0",
+      "status": "EXISTING_EXACT_IDENTITY_HOLD",
+      "reason": "Frozen source plan excludes this first choice"
+    }
+  ],
+  "staged": [
+    {
+      "item": {
+        "place_id": "place:BE:beauraing",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-55b7456b1abee9f5cb9380.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Beauraing_01.jpg",
+        "source_sha1": "21395ec7d63b8e14506e91f0fe216396be13b8c8",
+        "derivative_sha256": "a61b88c4ef548f3455442fef4b22d38a1adda1536fd73bc7e21c1210e91f21fb",
+        "credit": "Donarreiskoffer",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 960,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Sanctuaire Notre-Dame de Beauraing",
+        "alt_fr": "Photographie de Sanctuaire Notre-Dame de Beauraing",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-55b7456b1abee9f5cb9380.webp",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"
+    },
+    {
+      "item": {
+        "place_id": "place:NL:maastricht-sterre-der-zee",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-c6b397d1a630045670d713.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Onze-Lieve-Vrouwebasiliek_en_Wachthuis,_Maastricht,_Netherlands_-_panoramio_(6).jpg",
+        "source_sha1": "7a9e3803f2eebdfb660b4a0ce0e5dbc4128ca6a1",
+        "derivative_sha256": "63cddba7c9f0b686c9deb8016777137d085e45c99e3bf04f1dacb80417be4e0b",
+        "credit": "Ben Bender",
+        "license": "CC-BY-SA-3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 853,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Basiliek Onze Lieve Vrouw — Sterre der Zee",
+        "alt_fr": "Photographie de Basiliek Onze Lieve Vrouw — Sterre der Zee",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-c6b397d1a630045670d713.webp",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"
+    },
+    {
+      "item": {
+        "place_id": "place:PT:sameiro-braga",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-697ce65d404bb368eb18d6.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Sameiro_sanctuary_in_Braga_(1).jpg",
+        "source_sha1": "81a3f891e6c3e409b95005bb6ec5e7b595299176",
+        "derivative_sha256": "b17b92907ca9397d06bbe226d95d7aee7ce8c7d2aaa5b1c87b9d1815b838aff6",
+        "credit": "Tournasol7",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 853,
+        "orientation": "landscape",
+        "alt_en": "Photograph of Santuário de Nossa Senhora do Sameiro",
+        "alt_fr": "Photographie de Santuário de Nossa Senhora do Sameiro",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-697ce65d404bb368eb18d6.webp",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"
+    },
+    {
+      "item": {
+        "place_id": "place:US:st-alphonsus-baltimore",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-5e6739db22ee8f18175c3f.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:St._Alphonsus_Church_-_Baltimore_01.JPG",
+        "source_sha1": "7603fc467d8c5e077f554019b95f773dfc9684eb",
+        "derivative_sha256": "9c3309686bc01cb51bbbf54b4cb968be1b4ed310ff97d232820b3084080fbbe0",
+        "credit": "Farragutful",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1280,
+        "height": 960,
+        "orientation": "landscape",
+        "alt_en": "Photograph of National Shrine of Saint Alphonsus Liguori",
+        "alt_fr": "Photographie de National Shrine of Saint Alphonsus Liguori",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-5e6739db22ee8f18175c3f.webp",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"
+    },
+    {
+      "item": {
+        "place_id": "place:US:czestochowa-doylestown",
+        "status": "APPROVED",
+        "asset_path": "assets/approved/place-media/pf-4b69bfce3d06bfd28f6c34.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Main_Church_Out_1.jpg",
+        "source_sha1": "7bd925f9bd8378d5cd002d6bf87a5f4e31205a0e",
+        "derivative_sha256": "eb830b7ec4a6cf20073dbbf44132dc8c5e73fdf0c1d3b17cdd794d56d14f52a6",
+        "credit": "The Shrine of Our Lady of Czestochowa",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_verified": true,
+        "subject_verified": true,
+        "crop_reviewed": true,
+        "width": 1200,
+        "height": 800,
+        "orientation": "landscape",
+        "alt_en": "Photograph of National Shrine of Our Lady of Czestochowa",
+        "alt_fr": "Photographie de National Shrine of Our Lady of Czestochowa",
+        "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+        "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+        "reviewed_at": "2026-10-30",
+        "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
+        "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+      },
+      "rank": 1,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-technical-59/pf-4b69bfce3d06bfd28f6c34.webp",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"
+    }
+  ],
+  "editorial_choices_changed": false,
+  "approved_assets_changed": false,
+  "gallery_changed": false,
+  "size_or_rights_safety_bypassed": false,
+  "new_photos_published": 0
+}
