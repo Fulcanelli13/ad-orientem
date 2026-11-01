@@ -99,4 +99,27 @@ assert.ok(data.additionalRequiemScoreLeads.every(x=>
  x.printedNotesVerified===false&&x.editorialApproval===false&&x.publicReader===false));
 assert.equal(data.additionalRequiemScoreLeads[4].ceremonyRequiresExplicitSelection,true);
 
+// M15 exact score-source reads, not musical notation certification.
+for(const id of [541,298,2118,823]){
+ const lead=data.additionalRequiemScoreLeads.find(x=>x.gregobaseId===id);
+ assert.ok(lead?.gabcLatinDirectlyInspected);
+ assert.equal(lead.gabcDownloadUrl,
+  "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id="+id);
+ assert.equal(lead.printedNotesVerified,false);
+ assert.equal(lead.editorialApproval,false);
+ assert.equal(lead.publicReader,false);
+}
+assert.match(data.additionalRequiemScoreLeads.find(x=>x.gregobaseId===2118)
+ .observedLatin,/sempiternam/);
+assert.match(data.additionalRequiemScoreLeads.find(x=>x.gregobaseId===823)
+ .observedLatin,/Amen/);
+assert.match(data.additionalRequiemScoreLeads.find(x=>x.gregobaseId===298)
+ .repeatScope,/no second Benedictus/);
+assert.equal(data.sequenceSourceLead.gabcLatinDirectlyInspected,true);
+assert.match(data.sequenceSourceLead.firstLineCustosDiscrepancy,/c\+ instead of a\+/);
+assert.equal(data.sequenceSourceLead.completeLatinVerses,
+ "GABC_TEXT_READ_BUT_1962_PARITY_NOT_CERTIFIED");
+assert.equal(data.sequenceSourceLead.editorialApproval,false);
+assert.equal(data.sequenceSourceLead.publicReader,false);
+
 console.log("PASS: three All Souls source formularies, five archive-linked Requiem scores and one separate Dies irae lead; publication closed");
