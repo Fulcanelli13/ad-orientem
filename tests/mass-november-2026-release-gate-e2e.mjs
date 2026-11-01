@@ -336,6 +336,53 @@ try{
                curated:api.root.dataset.r17CuratedReview,
                overlay:(prepared?.session?.resolvedMass?.overlays??[]).includes("REQUIEM"),
              };
+             // The existing fixture tests Ritus XIII functions in isolation.
+             // This tests the actual mounted, selected 1962 m1/m2/m3 reader.
+             // A hidden original cue, copied 1st-Mass plan or merely selected
+             // Requiem checkbox cannot count as ceremonial acceptance.
+             const rows=(api.model?.cards??[]).flatMap(card=>card.paragraphs??[]);
+             const lines=id=>rows.filter(row=>(row.sourceCueIds??[]).includes(id));
+             const visibleText=id=>lines(id).map(row=>
+               String(row.primary??row.latin??"")+" "+String(row.vernacular??"")
+             ).join(" ").trim();
+             const removed=[
+               "AO.SM.C0004","AO.SM.C0040","AO.SM.C0041",
+               "AO.SM.C0080","AO.SM.C0088","AO.SM.C0126",
+               "AO.SM.C0127","AO.SM.C0225",
+               "AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266",
+             ];
+             const retained=[
+               "AO.SM.C0001","AO.SM.C0222","AO.SM.C0223",
+               "AO.SM.C0224","AO.SM.C0259","AO.SM.C0260",
+               "AO.SM.C0261","AO.SM.C0267","AO.SM.C0269",
+               "AO.SM.C0271","AO.SM.C0275",
+             ];
+             const ceremonial={
+               sourcePath:prepared.session.resolvedMass.proper?.data?.sourcePath,
+               planDismissal:prepared.session.plan?.dismissal??null,
+               blessingAllowed:prepared.session.plan?.blessingAllowed??null,
+               normalLastGospel:prepared.session.plan?.normalLastGospel??null,
+               missingRetained:retained.filter(id=>!lines(id).length),
+               erroneouslyRendered:removed.filter(id=>lines(id).length),
+               dismissal:visibleText("AO.SM.C0259"),
+               dismissalResponse:visibleText("AO.SM.C0260"),
+               agnusFinal:visibleText("AO.SM.C0224"),
+               placeat:visibleText("AO.SM.C0261"),
+               lastGospel:visibleText("AO.SM.C0271"),
+             };
+             ceremonial.valid=!(ceremonial.sourcePath!=="Sancti/11-02m"+massNumber||
+                ceremonial.planDismissal!=="REQUIESCANT_IN_PACE"||
+                ceremonial.blessingAllowed!==false||
+                ceremonial.normalLastGospel!==true||
+                ceremonial.missingRetained.length>0||
+                ceremonial.erroneouslyRendered.length>0||
+                !/Requi[eé]scant in pace/i.test(ceremonial.dismissal)||
+                !/Amen/i.test(ceremonial.dismissalResponse)||
+                !/r[eé]quiem sempit[eé]rnam/i.test(ceremonial.agnusFinal)||
+                !/Pl[aá]ceat tibi/i.test(ceremonial.placeat)||
+                !/In princ[ií]pio erat Verbum/i.test(ceremonial.lastGospel)
+             );
+             proof.ceremonial=ceremonial;
              // Inspect the exact approved source rubric and its artwork on
              // the actual cue-bearing card. The Sequence can legitimately
              // have no priest gesture; never invent one for that chant.
@@ -372,6 +419,8 @@ try{
              return proof;
            },language);
            try{
+             if(!real.ceremonial?.valid)throw Error("NOV02_ACTUAL_REQUIEM_CEREMONY_MISMATCH:"+
+               JSON.stringify({massNumber,mode,language,ceremonial:real.ceremonial}));
              if(real.sourcePath!=="Sancti/11-02m"+massNumber||
                 real.actualLanguage!==language||real.requestedMode!==mode||
                 real.sourceCard!=="AO.CARD.006"||
