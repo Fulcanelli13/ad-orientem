@@ -2054,6 +2054,7 @@ function enterAdorationQuiet(){
  stopTimer();ADOR.quiet=true;render();
 }
 function exitAdorationQuiet(){
+ if(ADOR.timerEnd)stopTimer();
  ADOR.quiet=false;
  const resume=adorationQuietReturn;adorationQuietReturn=null;
  render();
@@ -2166,6 +2167,28 @@ function renderAdoration(){
      <small>${esc(L('Includes optional Christ the King procession and prayers','Avec procession et prières facultatives du Christ-Roi'))}</small>
    </button>`:''}
   </main>`;
+ if(ADOR.quiet&&ADOR.mode==='open'){
+  const timerRunning=ADOR.timerEnd>Date.now();
+  const timeLeft=timerRunning?Math.max(0,Math.ceil((ADOR.timerEnd-Date.now())/60000)):0;
+  const percent=timerRunning?Math.max(0,Math.min(100,100*(1-(ADOR.timerEnd-Date.now())/1800000))):0;
+  return `${head(L('Silent Adoration','Adoration silencieuse'),'')}
+  <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen aoAdorationPresenceQuiet"
+    role="dialog" aria-modal="true" aria-labelledby="aoAdorationQuietTitle" data-ao-adoration-folio="v1"
+    data-ao-adoration-mode="open" data-ao-adoration-quiet="true">
+   <div class="aoAdorationPresenceIntro"><small>${esc(L('IN SILENCE','EN SILENCE'))}</small>
+    <h2 id="aoAdorationQuietTitle">${esc(L('Remain before Christ','Demeurez devant le Christ'))}</h2>
+    <p>${esc(L('No steps to complete. Set the phone aside and remain in prayer.','Aucune étape à accomplir. Posez le téléphone et demeurez en prière.'))}</p></div>
+   <div class="aoAdorationPresenceRing" role="img" aria-label="${esc(timerRunning?L('Optional thirty-minute aid: '+timeLeft+' minutes remain','Aide facultative de trente minutes : '+timeLeft+' minutes restantes'):L('Sanctuary lamp; no timer is running','Lampe du sanctuaire ; aucun minuteur en cours'))}" style="--ao-quiet-progress:${percent}%">
+    <div class="aoAdorationPresenceLamp" aria-hidden="true"><i></i></div></div>
+   <p class="aoAdorationPresenceClock" aria-live="off">${esc(timerRunning?L(timeLeft+' of 30 min remaining',timeLeft+' min restantes sur 30'):L('Stay as long as you wish','Demeurez aussi longtemps que vous le souhaitez'))}</p>
+   <div class="aoAdorationPresenceActions">
+    <button type="button" data-p435930-quiet-prayers>${esc(L('Prayers','Prières'))}</button>
+    <button type="button" data-p435930-quiet-time>${esc(timerRunning?L('Stop clock','Arrêter'):L('30 min','30 min'))}</button>
+    <button type="button" data-p435930-quiet-public>${esc(L('Public rite','Rite public'))}</button>
+   </div>
+   <button type="button" class="aoAdorationQuietExit" data-p435930-ador-quiet-exit>${esc(L('Return to prayer','Revenir à la prière'))}</button>
+  </main>`;
+ }
  if(ADOR.quiet)return `${head(L('Silent Adoration','Adoration silencieuse'),L('No prescribed duration','Sans durée imposée'))}
  <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" role="dialog" aria-modal="true" aria-labelledby="aoAdorationQuietTitle" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
  <small>${esc(L('IN SILENCE','EN SILENCE'))}</small>
@@ -4329,6 +4352,19 @@ function onClick(e){
   replacement.querySelector('[data-p435930-four-choice="'+raw+'"]')?.focus?.({preventScroll:true});
   return;
  }
+ if(view==='adoration'&&ADOR.quiet&&b.matches('[data-p435930-quiet-prayers]')){
+  exitAdorationQuiet();
+  queueMicrotask(()=>{const d=mount()?.querySelector('.aoAdorationOptionDisclosure');if(d)d.open=true});
+  return;
+ }
+ if(view==='adoration'&&ADOR.quiet&&b.matches('[data-p435930-quiet-time]')){
+  if(ADOR.timerEnd)stopTimer(),render();else startTimer(30);
+  return;
+ }
+ if(view==='adoration'&&ADOR.quiet&&b.matches('[data-p435930-quiet-public]')){
+  stopTimer();ADOR.quiet=false;adorationQuietReturn=null;
+  setAdorationPresence('exposed');pushView();view='benediction';BEN.step=0;return render();
+ }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
  if(b.dataset.p435930AdorMode){ADOR.quiet=false;ADOR.mode=b.dataset.p435930AdorMode;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;if(ADOR.mode==='night')ADOR.nightStep=0;return render()}
@@ -4533,7 +4569,12 @@ document.addEventListener('keydown',e=>{
  const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return;
  if(view==='adoration'&&ADOR.quiet){
   if(e.key==='Escape'){e.preventDefault();exitAdorationQuiet();return}
-  if(e.key==='Tab'){e.preventDefault();r.querySelector('[data-p435930-ador-quiet-exit]')?.focus?.();return}
+  if(e.key==='Tab'){
+   const buttons=[...r.querySelectorAll('.aoAdorationQuietScreen button:not([disabled])')];
+   if(!buttons.length)return;
+   const i=buttons.indexOf(document.activeElement),delta=e.shiftKey?-1:1;
+   e.preventDefault();buttons[(i+delta+buttons.length)%buttons.length].focus();return;
+  }
  }
  if((view==='firstFriday'||view==='firstSaturday')&&
    (e.key==='ArrowRight'||e.key==='ArrowLeft')&&
