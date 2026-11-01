@@ -26,8 +26,15 @@ const server=http.createServer(async(req,res)=>{
   res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});res.end(content);
  }catch(e){res.writeHead(e.code==="ENOENT"?404:500);res.end(String(e.message))}
 });
-await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
-const origin="http://127.0.0.1:"+server.address().port;
+const liveOrigin=process.env.AO_VISUAL_AUDIT_ORIGIN
+  ?new URL(process.env.AO_VISUAL_AUDIT_ORIGIN):null;
+if(liveOrigin&&(liveOrigin.protocol!=="https:"||
+  liveOrigin.hostname!=="ad-orientem.vercel.app"||liveOrigin.pathname!=="/"))
+  throw Error("Visual production audit target must be the canonical public site");
+if(!liveOrigin)
+  await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
+const origin=liveOrigin?.origin??("http://127.0.0.1:"+server.address().port);
+console.log("Nine-route audit target: "+origin);
 const rows=[];
 let browser;
 const sleep=ms=>new Promise(ok=>setTimeout(ok,ms));
@@ -213,10 +220,11 @@ try {
    console.error(label+" setup: "+String(error.stack||error).slice(0,600));
   }finally{await context.close();}
  }
-}finally{await browser?.close();await new Promise(ok=>server.close(ok));}
+}finally{await browser?.close();if(server.listening)await new Promise(ok=>server.close(ok));}
 
 const summary={
- generatedAt:new Date().toISOString(),matrix:"3 viewport widths x 2 languages x 9 surfaces",
+ generatedAt:new Date().toISOString(),target:origin,
+ matrix:"3 viewport widths x 2 languages x 9 surfaces",
  total:rows.length,captured:rows.filter(x=>x.status==="captured").length,
  missing:rows.filter(x=>x.status!=="captured").length,
  exploreMap:{
@@ -253,6 +261,6 @@ const panels=rows.map(r=>{
 await writeFile(resolve(output,"index.html"),
  '<!doctype html><html lang="en"><meta charset="utf-8"><title>Ad Orientem · UI critical review</title>'+
  '<style>body{background:#0c1118;color:#eee7da;font:14px system-ui;margin:20px}h1{font:32px Georgia}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}article{border:1px solid #46413b;padding:12px;border-radius:8px}article img{width:100%;max-width:430px;display:block}article p{font-size:12px;color:#b7b4ac}</style>'+
- '<h1>Current UI/UX review — nine-route phone matrix</h1><p>Read-only captures of actual GitHub production routes, not mocked designs. Open matrix.json for measurements, route failures and language states. Automated detection is triage, not human visual approval.</p><main>'+panels+'</main></html>');
+ '<h1>Current UI/UX review — nine-route phone matrix</h1><p>Read-only captures of '+htmlEscape(origin)+' running the app, not mocked designs. Open matrix.json for measurements, route failures and language states. Automated detection is triage, not human visual approval.</p><main>'+panels+'</main></html>');
 console.log("Current nine-route UI matrix captured "+summary.captured+"/"+summary.total+" views; "+summary.horizontalOverflow.length+" overflow cases; "+summary.exploreMap.renderedCandidates+"/"+summary.exploreMap.total+" Explore map-render candidates (not handset certified).");
 if(summary.missing)process.exitCode=1;
