@@ -157,7 +157,49 @@ try{
    await expanded.locator("[data-explore-collapse-detail]").click();
    await preview.waitFor({state:"visible"});
    assert.equal(await page.locator(".aoTlmChurchProfile").count(),0,"Back must restore preview");
-   measurements.push({width,language,title,metrics,passed:true});
+
+   // P108 release acceptance: reopen a DIFFERENT already-audited venue by
+   // its exact source ID. No fabricated venue, new image or alternate owner.
+   await preview.locator("[data-find-close-detail]").click();
+   await page.locator(".aoExploreQuickPreview").waitFor({state:"hidden",timeout:12000});
+   await search.fill("Guadalupe");
+   const guadalupe=page.locator('.aoTlmVenueCard[data-explore-item="tlm:r49:AO-AMER-R28-US-23-05"]');
+   await guadalupe.waitFor({state:"visible",timeout:30000});
+   assert.match(await guadalupe.innerText(),/Shrine of Our Lady of Guadalupe/);
+   assert.match(await guadalupe.innerText(),/La Crosse, WI/i,"Verified shrine street locality must outrank garbled R49 label");
+   assert.doesNotMatch(await guadalupe.innerText(),/Louisiana Crosse|Louisiana, LA/);
+   const verified=guadalupe.locator(".aoTlmVenueVisual > img");
+   assert.equal(await verified.count(),1,"P108 must display its pre-approved Place cover, not an institute emblem");
+   assert.match(await verified.getAttribute("src"),/assets\\/approved\\/place-media\\/pf-d2cc2fb4fdbf658d031f42\\.webp$/);
+   await captures("04-guadalupe-card");
+   await guadalupe.click();
+   const gPreview=page.locator(".aoExploreQuickPreview");
+   await gPreview.waitFor({state:"visible",timeout:12000});
+   const gPreviewPhoto=gPreview.locator("img.aoTlmPreviewPhoto");
+   assert.equal(await gPreviewPhoto.count(),1,"P108 preview must use the approved shrine photograph");
+   assert.match(await gPreviewPhoto.getAttribute("src"),/pf-d2cc2fb4fdbf658d031f42\\.webp$/);
+   await page.waitForFunction(()=>{
+    const image=document.querySelector(".aoExploreQuickPreview img.aoTlmPreviewPhoto");
+    return image?.complete&&image.naturalWidth>0;
+   },null,{timeout:15000});
+   await captures("05-guadalupe-preview");
+   await gPreview.locator("[data-explore-expand-detail]").click();
+   const gProfile=page.locator(".aoTlmChurchProfile");
+   await gProfile.waitFor({state:"visible",timeout:12000});
+   assert.equal(await gProfile.locator(".aoTlmProfileHero img").count(),1,
+    "Guadalupe full profile must retain the approved exact Place cover");
+   assert.match(await gProfile.locator(".aoTlmProfileHero img").getAttribute("src"),/pf-d2cc2fb4fdbf658d031f42\\.webp$/);
+   const gBounds=await gProfile.evaluate(el=>({
+    x:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,
+    scrollWidth:el.scrollWidth,clientWidth:el.clientWidth,
+    documentOverflow:document.documentElement.scrollWidth-innerWidth,
+   }));
+   assert.ok(gBounds.x>=-2&&gBounds.right<=width+2,"Guadalupe full profile clipped at "+width+"px: "+JSON.stringify(gBounds));
+   assert.ok(gBounds.scrollWidth<=gBounds.clientWidth+2&&gBounds.documentOverflow<=2,
+    "Guadalupe profile must not horizontally overflow: "+JSON.stringify(gBounds));
+   await captures("06-guadalupe-expanded");
+   assert.deepEqual(errors,[],"No JS errors switching from Cantius to Guadalupe: "+errors.slice(0,3).join(" | "));
+   measurements.push({width,language,title,metrics,guadalupe:{media:"EXISTING_APPROVED",source:"AO-AMER-R28-US-23-05",bounds:gBounds},passed:true});
    console.log("PASS TLM source-backed preview and church profile "+width+"px "+language);
   }catch(error){
    await captures("FAIL-current-state").catch(()=>{});
