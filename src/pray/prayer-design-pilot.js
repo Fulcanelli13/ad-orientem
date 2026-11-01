@@ -113,7 +113,7 @@ export function resolvedPrayerPilotFamilies(L,families){
  for(const [door,ids] of Object.entries(PRAYER_DOOR_ORDER_V1)){
   const family=catalog[door];
   if(!family)continue;
-  result[door]={...family,items:ids.map(id=>candidates.get(id)).filter(Boolean)};
+  result[door]={...family,items:ids.map(id=>family.items?.find(item=>item[1]===id)||candidates.get(id)).filter(Boolean)};
  }
  // Search-only links preserve the original route without duplicating a shelf.
  result.library={...result.library,searchItems:PRAYER_SEARCH_ONLY_ROUTES_V1.map(id=>candidates.get(id)).filter(Boolean)};
