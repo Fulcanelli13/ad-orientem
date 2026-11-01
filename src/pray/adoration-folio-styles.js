@@ -445,6 +445,122 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  font:italic 12px/1.3 Georgia,serif!important;color:#b5a393!important;
 }
 
+
+/* Claude F10 v1 and f1: redesign only the existing, source-owned chapter
+   buttons. The shared dual-axis reader still owns swipe, keyboard, focus,
+   source prayers, return state, and chapter selection. */
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoSequenceTimeline{
+ min-height:78px!important;margin:0 10px 7px!important;padding:0!important;overflow:visible!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStops{
+ display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;
+ width:100%!important;max-width:none!important;gap:0!important;padding:0!important;
+ overflow:visible!important;scroll-snap-type:none!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop{
+ position:relative!important;flex:auto!important;min-width:0!important;
+ width:auto!important;min-height:62px!important;margin:0!important;
+ border:0!important;background:transparent!important;box-shadow:none!important;
+ border-radius:0!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;padding:0 1px!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop.active{
+ border:0!important;background:transparent!important;box-shadow:none!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop::before{
+ content:"";position:absolute;left:50%;top:13px;transform:translateX(-50%);
+ width:10px;height:21px;border-radius:3px 3px 5px 5px;
+ border:1px solid #675341;background:linear-gradient(110deg,#26221f,#3a312b 70%,#221e1a);
+ box-shadow:inset 0 -4px 4px rgba(0,0,0,.4);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop::after{
+ content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%) rotate(45deg);
+ width:6px;height:9px;border-radius:80% 0 65% 40%;
+ background:#544539;filter:none;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop.active::before{
+ background:linear-gradient(90deg,#76251e,#bb3e2a,#70251d);
+ border-color:#b0854d;box-shadow:0 0 12px rgba(197,79,44,.6);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop.active::after{
+ background:linear-gradient(15deg,#eb7c24,#ffd572 65%,#fff2b0);
+ box-shadow:0 0 14px #e78035,0 0 6px #f9ba62;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStopTitle{
+ position:absolute!important;top:40px;left:-12px;right:-12px;
+ display:none!important;white-space:normal;text-align:center;
+ color:#d3b890!important;font:600 9px/1.2 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop.active .aoDevoStopTitle{
+ display:block!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStop:focus-visible{
+ outline:2px solid #e5c588!important;outline-offset:-2px!important;border-radius:8px!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoSequenceTimeline{
+ min-height:169px!important;height:169px!important;overflow:visible!important;
+ margin:0 auto 9px!important;padding:0!important;max-width:380px;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStops{
+ position:relative!important;display:block!important;width:100%!important;
+ height:163px!important;min-height:163px!important;overflow:visible!important;
+ scroll-snap-type:none!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStops::before,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStops::after{
+ content:"";position:absolute;left:50%;top:45px;transform:translateX(-50%);
+ display:block;pointer-events:none;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStops::before{
+ height:82px;width:1px;background:linear-gradient(180deg,transparent,#7d6b51,transparent);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStops::after{
+ top:82px;width:min(76%,240px);height:1px;
+ background:linear-gradient(90deg,transparent,#7d6b51,transparent);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop{
+ position:absolute!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;box-sizing:border-box!important;
+ flex:none!important;min-height:33px!important;height:33px!important;
+ width:38%!important;max-width:155px!important;padding:3px 5px!important;
+ margin:0!important;background:transparent!important;border:0!important;
+ border-radius:8px!important;box-shadow:none!important;text-align:center!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop.active{
+ border:0!important;background:rgba(171,135,74,.12)!important;color:#d9bd84!important;
+ box-shadow:inset 0 0 0 1px rgba(210,175,115,.23)!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:nth-child(1){
+ top:5px;left:50%;transform:translateX(-50%);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:nth-child(2){
+ top:66px;right:1%;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:nth-child(3){
+ top:119px;left:50%;transform:translateX(-50%);
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:nth-child(4){
+ top:66px;left:1%;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:nth-child(5){
+ top:150px;left:50%;transform:translateX(-50%);
+ width:40%!important;min-height:24px!important;height:24px!important;
+ opacity:.78;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStopNumber{
+ display:none!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStopTitle{
+ color:inherit!important;font:600 10px/1.22 var(--ao-font-ui,system-ui,sans-serif)!important;
+ white-space:normal;letter-spacing:.05em;text-transform:uppercase;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:focus-visible{
+ outline:2px solid #cfb17d!important;outline-offset:2px!important;
+}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoStop:nth-child(5) .aoDevoStopTitle{
+ text-transform:none;letter-spacing:0;font-style:italic!important;font-weight:400!important;
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
