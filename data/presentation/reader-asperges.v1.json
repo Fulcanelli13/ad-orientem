@@ -4,7 +4,9 @@
     "authority": "Missale Romanum 1962 Appendix II",
     "witness": "https://www.clerus.org/bibliaclerusonline/de/gmt.htm",
     "scope": "Pinned 1962 Latin rite text; English/French are separate editorial reading translations, never a rubrical or observed-event authority. Faithful participation and actor state come from recovered ASP graph.",
-    "vernacularTranslation": "EDITORIAL_READING_AIDS__LATIN_REMAINS_NORMATIVE"
+    "vernacularTranslation": "EDITORIAL_READING_AIDS__LATIN_REMAINS_NORMATIVE",
+    "paschalResponseRubric": "Original 1961 Solesmes Kyriale p. 3*: in Tempore Paschali add Alleluia to Ostende nobis and its response. Printed rubric, not an extra chant-score approval.",
+    "printed1961Facsimile": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf"
   },
   "formulas": {
     "ORDINARY": {
@@ -43,13 +45,23 @@
       "kind": "VERSICLE",
       "latin": "Osténde nobis, Dómine, misericórdiam tuam.",
       "english": "Show us, O Lord, Thy mercy.",
-      "french": "Seigneur, montrez-nous votre miséricorde."
+      "french": "Seigneur, montrez-nous votre miséricorde.",
+      "paschalAddition": {
+        "latin": "Allelúia.",
+        "english": "Alleluia.",
+        "french": "Alléluia."
+      }
     },
     {
       "kind": "RESPONSE",
       "latin": "Et salutáre tuum da nobis.",
       "english": "And grant us Thy salvation.",
-      "french": "Et donnez-nous votre salut."
+      "french": "Et donnez-nous votre salut.",
+      "paschalAddition": {
+        "latin": "Allelúia.",
+        "english": "Alleluia.",
+        "french": "Alléluia."
+      }
     },
     {
       "kind": "VERSICLE",

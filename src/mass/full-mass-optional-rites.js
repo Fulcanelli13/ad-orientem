@@ -1,3 +1,4 @@
+import {is1962PalmSunday} from "./reader-asperges.js";
 // Explicit, source-guarded *physical* ceremonies around a resolved 1962 Mass.
 // A feast day does not, by itself, mean that a procession or aspersion occurred.
 // The established canonical session engine still owns all text/event graphs.
@@ -39,7 +40,7 @@ export function availableOptionalMassRites(legacy,{form="MISSA_CANTATA_INCENSE",
  return Object.freeze(RITES.map(rite=>{
    const fromSource=source[rite.position].has(rite.id);
    const allowed=permitted&&(
-    rite.id==="ASPERGES"?(sunday(legacy?.date)&&sung):
+    rite.id==="ASPERGES"?(sunday(legacy?.date)&&sung&&!is1962PalmSunday(legacy?.date)):
     rite.id==="REQUIEM_ABSOLUTION"?requiem:
     rite.id==="CORPUS_CHRISTI_PROCESSION"?corpus:
     fromSource
@@ -50,6 +51,9 @@ export function availableOptionalMassRites(legacy,{form="MISSA_CANTATA_INCENSE",
 export function composeOptionalMassRites(legacy,{form,kind,overrides={}}={},hostOptions={}){
  const before=hostOptions.precedingRites??[],after=hostOptions.followingActions??[];
  const precedingRites=new Set(before),followingActions=new Set(after);
+ // Palm Sunday has the blessing/procession of palms instead; an inherited
+ // Sunday-ASPERGES host flag must never create two competing preludes.
+ if(is1962PalmSunday(legacy?.date))precedingRites.delete("ASPERGES");
  const available=availableOptionalMassRites(legacy,{form,kind});
  for(const rite of available){
   const choice=overrides[rite.id];
