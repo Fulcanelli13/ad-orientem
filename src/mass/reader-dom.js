@@ -4564,7 +4564,7 @@ export function createReaderDomAdapter({
         // Give the faithful a simple bilingual prompt; never invent the
         // homily text or a priest's position from the reader clock.
         if(current.paragraphs.length===0 &&
-          current.blocks?.some(block=>block.blockId==="AO.SM.B096")){
+          /^(?:Sermon|Homily)\b/i.test(String(current.sectionTitle??""))){
           const note=doc.createElement("p");
           note.className="ao-reader-homily-note";
           note.dataset.role="homily-pause-note";
@@ -4691,7 +4691,8 @@ export function createReaderDomAdapter({
           // any LIVE cue focus, voice or cue-scoped rubric projection.
           if(exactCueIds.length===2 && (
             (exactCueIds[0]==="AO.SM.C0053" && exactCueIds[1]==="AO.SM.C0054") ||
-            (exactCueIds[0]==="AO.SM.C0089" && exactCueIds[1]==="AO.SM.C0090")
+            (exactCueIds[0]==="AO.SM.C0089" && exactCueIds[1]==="AO.SM.C0090") ||
+            (exactCueIds[0]==="AO.SM.C0141" && exactCueIds[1]==="AO.SM.C0142")
           )) node.dataset.cueId=exactCueIds[0];
           // The Passion death rubric is tied to the final Latin words,
           // rather than to the long Good Friday Passion card as a whole.
