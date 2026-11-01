@@ -93,6 +93,16 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/reader-phone-acceptance.mjs
+      - name: Certify All Saints Sunday Asperges in EN/FR LIVE/MISSAL with Foot-cluster handoff
+        run: node tests/reader-all-saints-asperges-phone.mjs
+      - name: Preserve today's Asperges and response phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: november-1-asperges-phone
+          path: artifacts/all-saints-asperges-phone/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Certify Requiem choir posture source cues in LIVE and Missal on phones
         run: node tests/reader-requiem-choir-posture-phone.mjs
       - run: npm run test:phone-curated65

@@ -14,6 +14,9 @@ assert.deepEqual(resolveAspergesFormula({paschaltide:true,omitGloriaPatri:true})
 assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-10-04",provenance:{seasonalMode:null}}}}),{
   paschaltide:false,omitGloriaPatri:false,source:"DATE_DERIVED_1962_SEASON"
 });
+assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-11-01",provenance:{seasonalMode:null}}}}),{
+  paschaltide:false,omitGloriaPatri:false,source:"DATE_DERIVED_1962_SEASON"
+},"All Saints 2026 Sunday uses Asperges me, not Eastertide Vidi aquam");
 assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-04-12",provenance:{seasonalMode:null}}}}),{
   paschaltide:true,omitGloriaPatri:false,source:"DATE_DERIVED_1962_SEASON"
 });
@@ -30,6 +33,24 @@ let built=buildAspergesPayload({graph,payload});
 assert.equal(built.cards.length,5);
 assert.equal(built.cards[1].title,"Asperges me");
 assert.equal(built.cards[1].paragraphs.length,4);
+assert.ok(built.cards[1].paragraphs.every(row=>
+ row.latin && row.english && row.french && row.sourceRecordId==="ASP-030"),
+ "All ordinary Asperges chant lines require Latin and bilingual reading aid");
+const finalPrayer=built.cards[3].paragraphs;
+assert.equal(finalPrayer.length,9,
+ "Oremus, six versicles/responses, prayer and Amen must be complete");
+assert.deepEqual(finalPrayer.map(row=>row.id),[
+ "ASP-050-01","ASP-050-02","ASP-050-03","ASP-050-04",
+ "ASP-050-05","ASP-050-06","ASP-050-OREMUS",
+ "ASP-050-PRAYER","ASP-050-AMEN"]);
+assert.equal(finalPrayer[6].latin,"℣. Orémus.");
+assert.equal(finalPrayer[8].latin,"℟. Amen.");
+assert.ok(finalPrayer.every(row=>
+ row.sourceRecordId==="ASP-050" && row.english && row.french && row.latin),
+ "Sunday Asperges versicles/Orémus/prayer and Amen must be EN/FR complete");
+assert.ok(finalPrayer.slice(0,6).every((row,i)=>
+ row.latin.startsWith(i%2===0?"℣. ":"℟. ")),
+ "The exact Latin ℣ and ℟ speaker turns must remain visible");
 assert.equal(built.cards[1].ministerOnly.actorScope,"CELEBRANT_MINISTERS");
 assert.equal(built.cards[1].ministerOnly.posture,"KNEEL");
 assert.equal(built.cards[1].posture,"STAND","minister kneeling leaked to faithful posture");
@@ -53,6 +74,9 @@ assert.equal(built.cards[1].paragraphs.some(x=>/Glória Patri/.test(x.latin)),fa
 
 built=buildAspergesPayload({graph,payload,riteContext:{paschaltide:true}});
 assert.equal(built.cards[1].title,"Vidi aquam");
+assert.ok(built.cards[1].paragraphs.every(row=>
+ row.latin && row.english && row.french),
+ "Eastertide alternative must keep its own independent bilingual source rows");
 assert.match(built.cards[1].paragraphs[0].latin,/Vidi aquam/);
 assert.match(built.cards[1].paragraphs[0].latin,/allelúia/);
 assert.equal(built.cards[1].paragraphs.some(x=>/Glória Patri/.test(x.latin)),true);
