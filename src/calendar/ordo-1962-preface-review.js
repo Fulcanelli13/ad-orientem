@@ -215,6 +215,15 @@ function expectedFor(id,date,rank,colour,sourcePath){
     "tempora:pasc5-4":rule("ASCENSIO","490_A","ASCENSION"),
   };
   if(exact[main])return exact[main];
+  // ALL SAINTS 2026: first-class feast outranks the commemorated 23rd Sunday.
+  // The sung-Mass source explicitly instructs Common Preface *even on Sunday*;
+  // RGMR 1960 §494(b) limits Trinity's seasonal use to II-class Sundays.
+  // Independent witness: https://media.churchmusicassociation.org/books/massandvespers.pdf
+  // Apply only to the verified exact 1962 Principal/Proper and 2026 date;
+  // a change to the resolved Preface text still fails closed below.
+  if(id==="sancti:11-01:1:w"&&date==="2026-11-01"&&
+     rank===1&&sourcePath==="Sancti/11-01")
+    return rule("COMMUNIS","498","ALL_SAINTS_2026_COMMON_EVEN_ON_SUNDAY_SOURCE_WITNESS");
   const screenedSanctoral=screenedSanctoral2026Preface(id,date,rank,sourcePath);
   if(screenedSanctoral)return screenedSanctoral;
   // The first full 142-file Sanctoral source screen establishes nine
