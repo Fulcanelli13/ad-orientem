@@ -136,8 +136,10 @@ const fullMap=projectPublishedProvisionalMassSites(
   baseMap,readRegistry("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 assert.equal(fullMap.length,1882,"The map's 1,879 + 3 known visual slots must be accounted for");
 const familyCodes=["BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"];
-const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP","AASJMV",...familyCodes]);
+const logoGroups=new Set(["FSSP","ICKSP","SSPX","IBP","AASJMV","CAPUCHINS_MORGON",...familyCodes]);
 const familyCount=fullMap.filter(venue=>familyCodes.includes(venue.community_id)).length;
+const morgonCount=fullMap.filter(venue=>venue.community_id==="CAPUCHINS_MORGON").length;
+assert.equal(morgonCount,5,"Preserve exact identity for the five Morgon entries");
 assert.equal(familyCount,2,"One source-labelled Benedictine and one Dominican in the existing map");
 const visualCount={emblem:0,named:0,neutral:0};
 for(const venue of fullMap){
@@ -160,6 +162,6 @@ for(const venue of fullMap){
     visualCount.neutral++;
   }
 }
-assert.deepEqual(visualCount,{emblem:1188+familyCount,named:61-familyCount,neutral:633},
+assert.deepEqual(visualCount,{emblem:1188+familyCount+morgonCount,named:61-familyCount-morgonCount,neutral:633},
   "All 1,882 original R49 and approved additions have an honest emblem, source-named monogram or neutral church symbol");
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
