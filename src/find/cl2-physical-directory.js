@@ -912,6 +912,14 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     }));
   const search_text=normal([name,country,description,affiliation,...sourceIds,
     ...linked.flatMap(item=>[item.title,item.subtitle,item.eyebrow,item.search_text])].join(" "));
+  // A frozen R49 locality incorrectly renders the verified La Crosse shrine
+  // as "Louisiana Crosse, LA". Correct display address only when the exact
+  // original venue, CL2 row and the shrine's official source all coincide.
+  const laCrosseAddressCorrection=anchor==="RG-ACCD4654B950"&&
+   sourceIds.length===1&&sourceIds[0]==="AO-AMER-R28-US-23-05"&&
+   T(name)==="Shrine of Our Lady of Guadalupe"&&country==="US"&&
+   T(description)==="5250 Justin Road, La Crosse, WI 54601"&&
+   sourceUrls.includes("https://guadalupeshrine.org/hours-locations/");
   if(selected){
    for(const a of linked)claimed.add(a.item_id);
    absorbedAliasRows+=Math.max(0,linked.length-1);
@@ -930,6 +938,11 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     review_scope:newPin.reviewScope||"PHYSICAL_CHURCH_NOT_ENTRANCE",
    }):selected.geo;
    result.push(Object.freeze({...selected,
+    ...(laCrosseAddressCorrection?{
+     subtitle:"La Crosse, WI · US",
+     address:Object.freeze({formatted:T(description)}),
+     note:T(selected.note)+" Exact shrine address independently verified by its official site; source R49 locality was malformed.",
+    }:{}),
     ...(review||newPin?{
      geo:siteGeo,
      address:Object.freeze({formatted:newPin?.correctedAddress||T(description)}),
