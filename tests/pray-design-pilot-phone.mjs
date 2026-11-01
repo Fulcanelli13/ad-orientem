@@ -99,6 +99,12 @@ try{
     "Group recitation must reuse the existing saved preference, not create a second engine");
    await page.screenshot({path:resolve(output,"angelus-entry-"+width+".png"),animations:"disabled"});
    await page.locator(base+" [data-p435930-pilot-angelus-begin]").click();
+   const horariumGeometry=await page.locator(base+" .aoClaudeHorariumClock").first().evaluate(el=>{
+    const r=el.getBoundingClientRect(),mount=document.querySelector("#aoPray435930 .aoP435930Mount");
+    return {top:r.top,bottom:r.bottom,mountScroll:mount?.scrollTop};
+   });
+   assert.ok(horariumGeometry.top>=48&&horariumGeometry.top<=160&&horariumGeometry.mountScroll<=2,
+    "Claude Horarium opening should not inherit the previous screen's scroll at "+width+"px: "+JSON.stringify(horariumGeometry));
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
    const count=await page.locator(base+" .aoDevoCard").count();
    assert.ok(count===4||count===5,"canonical Angelus / Regina must retain its original 4/5 cards; got "+count);
