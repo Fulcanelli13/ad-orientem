@@ -932,12 +932,12 @@ function renderPrayFamily(){
  // The explicit legacy rollback retains its pre-existing category/card UI.
  if(!PRAYER_PILOT_ENABLED){
   const related=prayRelatedFamilyItems(familyId);
-  return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p></section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
+  return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
  }
  const visible=family.items.filter(item=>item[0]!=='prayer'||DATA.prayers?.[item[1]]);
  const first=visible[0],remaining=visible.slice(1);
  return `${head(family.title,'')}<main class="aoP435930Body aoPrayDoorInterior" data-ao-prayer-shelf="${esc(familyId)}">
-  <header class="aoPrayDoorHeading"><small>${esc(L('PRAYER','PRIÈRE'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header>
+  <header class="aoPrayDoorHeading"><small>${esc(L('PRAYER','PRIÈRE'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p>${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</div>':''}</header>
   ${first?prayDoorShelfEntry(first,true):''}
   <nav class="aoPrayDoorShelfList" aria-label="${esc(family.title)}">${remaining.map(item=>prayDoorShelfEntry(item)).join('')}</nav>
  </main>`;
