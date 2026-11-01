@@ -351,7 +351,7 @@ try{
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
     // the default navigation path unless explicitly requested.
-    const walked=await page.evaluate(()=>{
+    const walked=await page.evaluate((language)=>{
       const api=window.__AO_PHONE_PREVIEW;
       const optionalTitle="Second Confiteor · Optional Local Custom";
       const skipped=[],visited=[],defects=[];
@@ -369,6 +369,12 @@ try{
         const rows=domRows.length;
         if(actual?.sectionId!==card.sectionId)defects.push("wrong card "+card.title);
         if(!rows && card.paragraphs.length)defects.push("blank rendered card "+card.title);
+        if(card.blocks?.some(b=>b.blockId==="AO.SM.B096")){
+          const note=document.querySelector('[data-role="homily-pause-note"]');
+          const expected=language==="fr"?"Écoutez l’homélie.":"Listen to the homily.";
+          if(note?.textContent?.trim()!==expected)
+            defects.push("Sermon pause should offer faithful-facing copy, not an internal position diagnostic");
+        }
         // Every canonical spoken/prayed paragraph must be independently
         // focusable even when one intonation owns two source workbook cues.
         // An untagged row silently disables gestures, responses and voice.
@@ -406,7 +412,7 @@ try{
         }
       }
       return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null};
-    });
+    },lang);
     const expectedVisible=secondConfiteor?65:64;
     assert.equal(walked.visited.length,expectedVisible,
       "The optional local Confiteor must not be shown by default");

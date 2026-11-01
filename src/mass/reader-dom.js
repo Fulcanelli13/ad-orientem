@@ -313,6 +313,11 @@ background:rgba(225,207,145,.07);color:#ecf0e8;font:600 11px/1.3 var(--ao-font-u
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-live-invitation="true"]
   .ao-line-secondary{display:block;margin-top:2px;font-style:italic}
 
+.ao-reader-homily-note{
+  margin:clamp(38px,9vh,100px) auto 0;max-width:28rem;text-align:center;
+  font:italic 400 clamp(1rem,2.2vw,1.28rem)/1.6 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);
+  color:var(--ao-text);opacity:.85;
+}
 .ao-reader-paragraph{
   position:relative;margin:0 0 2px;padding:2px 0;border-radius:6px;
   font:400 clamp(1.18rem,2.45vw,1.68rem)/1.69 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);
@@ -4555,6 +4560,16 @@ export function createReaderDomAdapter({
           ORATION_UNDER_ONE_CONCLUSION:frenchReader?"Oraison à conclusion commune":"Prayer under one conclusion",
         };
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
+        // The sermon is a genuine non-liturgical pause, not a missing prayer.
+        // Give the faithful a simple bilingual prompt; never invent the
+        // homily text or a priest's position from the reader clock.
+        if(/^(?:Sermon|Homily)\b/i.test(String(current.sectionTitle??""))){
+          const note=doc.createElement("p");
+          note.className="ao-reader-homily-note";
+          note.dataset.role="homily-pause-note";
+          note.textContent=frenchReader?"Écoutez l’homélie.":"Listen to the homily.";
+          body.append(note);
+        }
         for(const [paragraphIndex,p] of current.paragraphs.entries()){
           if(mode==="MISSAL"){
             // Source-block headings are distinct from spoken Latin and from
