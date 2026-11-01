@@ -13,11 +13,12 @@
       "photo_license": "CC BY-SA 4.0",
       "photographer": "Aw58",
       "visually_correct": true,
-      "status": "MERGED_MAIN_NATIVE_COMMONS_ORIGINAL_APPROVED_GALLERY",
-      "remaining_gate": "Merged as commit 23e850b297ca99829548fd696a05ad461636c29f. Production Vercel READY/domain alias still must be independently confirmed.",
+      "status": "PUBLISHED_APPROVED_EXACT_OBJECT_GALLERY",
+      "remaining_gate": "None for current exact-image gallery publication; future higher quality artistic alternatives remain separate editorial decisions.",
       "historical_object_context": "Medieval icon; Jasna Góra documents original image before 1400.",
-      "deployed": false,
-      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f"
+      "deployed": true,
+      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+      "production_url": "https://ad-orientem.vercel.app"
     },
     {
       "subject_id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
@@ -28,11 +29,12 @@
       "photo_license": "CC BY-SA 4.0",
       "photographer": "W. Bulach",
       "visually_correct": true,
-      "status": "MERGED_MAIN_NATIVE_COMMONS_ORIGINAL_APPROVED_GALLERY",
-      "remaining_gate": "Merged as commit 23e850b297ca99829548fd696a05ad461636c29f. Production Vercel READY/domain alias still must be independently confirmed.",
+      "status": "PUBLISHED_APPROVED_EXACT_OBJECT_GALLERY",
+      "remaining_gate": "None for current exact-image gallery publication; future higher quality artistic alternatives remain separate editorial decisions.",
       "historical_object_context": "14th-century image of grace; altar garments/devotional setting pictured in 2013.",
-      "deployed": false,
-      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f"
+      "deployed": true,
+      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+      "production_url": "https://ad-orientem.vercel.app"
     },
     {
       "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
@@ -103,10 +105,14 @@
   ],
   "no_new_photo_user_approval_inferred": true,
   "allow_generic_same_place_fallback": false,
-  "published_new_images": 0,
+  "published_new_images": 2,
   "release_pr_merged": true,
   "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
   "native_originals_sha1_and_webp_sha256_ci_passed": true,
   "app_approved_gallery_item_count": 35,
-  "new_approved_marian_gallery_objects": 2
+  "new_approved_marian_gallery_objects": 2,
+  "production_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+  "production_deployment_id": "dpl_F5Spf2qxRmz2heFtpzFRViKVQEGT",
+  "production_state": "READY",
+  "public_alias_confirmed": true
 }
