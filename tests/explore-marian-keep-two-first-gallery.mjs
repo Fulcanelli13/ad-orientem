@@ -35,8 +35,8 @@ for(const pin of pinned.subjects){
  assert(x.rights_verified&&x.subject_verified&&x.crop_reviewed);
  assert(x.caption_en===pin.caption_en&&x.caption_fr===pin.caption_fr);
  assert(x.alt_en===pin.alt_en&&x.alt_fr===pin.alt_fr);
- assert.equal(x.source_url,"https://commons.wikimedia.org/wiki/"+
-   encodeURI(pin.file_title.replaceAll(" ","_")).replaceAll("#","%23"));
+ assert.equal(decodeURIComponent(new URL(x.source_url).pathname.replace(/^\/wiki\//,"")),
+   pin.file_title.replaceAll(" ","_"),"Must use exact Commons title, not a suggested similar file");
  assert.match(x.source_sha1,/^[0-9a-f]{40}$/);
  assert.match(x.derivative_sha256,/^[0-9a-f]{64}$/);
  assert.equal(x.asset_path,pin.asset_path);
