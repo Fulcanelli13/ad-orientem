@@ -67,4 +67,34 @@ const kyrieVIII=ledger.scores.find(x=>x.gregobaseId===1184);
 assert.ok(kyrieVIII.sourceHistoryPriorityChecks.some(x=>x.includes("virga")));
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 assert.doesNotMatch(dom,/data-schola-score-open|offlineKyrialeResearchScore\(/);
+// M24: real printed structural collation of Kyrie XVI, p. 54*.
+// Structural repetition/text checkpoints are NOT melodic/neume approvals.
+const kx=ledger.scores.find(x=>x.gregobaseId===545);
+const witness=kx.phraseCollation;
+assert.equal(witness.auditId,"M24_KYRIE_XVI_FIRST_STRUCTURAL_COLLATION");
+assert.equal(witness.notatedPhraseCount,4);
+assert.equal(witness.phrases.length,4);
+assert.deepEqual(witness.phrases.map(x=>x.repeatPrinted),["iij.","iij.","ij.",null]);
+assert.deepEqual(witness.phrases.map(x=>x.sungOccurrences),[3,3,2,1]);
+assert.equal(witness.phrases.reduce((n,x)=>n+x.sungOccurrences,0),9);
+assert.equal(witness.totalExpectedInvocations,9);
+assert.deepEqual(witness.phrases[0].gabcPitchGroups,witness.phrases[2].gabcPitchGroups);
+assert.notDeepEqual(witness.phrases[2].gabcPitchGroups,witness.phrases[3].gabcPitchGroups);
+const originalKyrie=offlineKyrialeResearchScore("KYRIE","MASS_16").gabc;
+for(const [i,phrase] of witness.phrases.entries()){
+ assert.equal(phrase.number,i+1);
+ assert.ok(originalKyrie.includes(phrase.gabcLine),"A Kyrie XVI GABC phrase changed: "+(i+1));
+ assert.equal(phrase.structuralParity,"MATCH_OBSERVED");
+ assert.equal(phrase.fullPitchSequenceParity,"NOT_CERTIFIED");
+}
+for(const field of ["fullPrintedPitchParity","fullPrintedNeumeParity",
+ "fullRhythmicParity","fullSyllableUnderlayParity"])
+ assert.equal(witness[field],"NOT_CERTIFIED",field+" must remain closed");
+assert.equal(witness.userEditorialApproval,false);
+assert.equal(witness.publicScore,false);
+assert.equal(kx.publicScore,false);
+assert.equal(kx.editorialApproval,false);
+assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
+console.log("PASS M24 Kyrie XVI printed p.54* 4-phrase structure and 3+3+2+1 invocations; 0 pitch/neume approvals");
+
 console.log("PASS M21 exact 10 primary 1961 printed-page images across seven scores; source GABC motif anchors and full score continuations pinned; zero false note certifications/public notation");

@@ -45,7 +45,120 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M24_KYRIE_XVI_FIRST_STRUCTURAL_COLLATION",
+        "printedWitness": "1961 Solesmes Kyriale p.54* (single complete image)",
+        "pdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "originalPrintImageUrl": "https://gregobase.selapa.net/sources/2/931.png",
+        "sourceGabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=545",
+        "gabcVersionContext": [
+          {
+            "date": "2022-11-05",
+            "type": "TEXT_AND_SPACING_EDIT",
+            "changes": "Removed unnecessary accent in Christe and slash space in final Kyrie ornament; verify current source does not restore either."
+          },
+          {
+            "date": "2023-11-25",
+            "type": "ENGRAVING_CONFIGURATION_HISTORY",
+            "changes": "Source history includes separate TeX layout controls for mora placement and clivis alignment; these are NOT a note-by-note printed musical certification."
+          }
+        ],
+        "printedStructureReview": "FOUR_PHRASE_STRUCTURE_AND_REPEAT_RUBRICS_VISUALLY_INSPECTED",
+        "printedToneContourSpotCheck": "FIRST_INICIPITS_AND_CLOSING_MELISMA_VISUALLY_INSPECTED_NOT_ALL_NOTES",
+        "phrases": [
+          {
+            "number": 1,
+            "invocation": "Kyrie eleison",
+            "repeatPrinted": "iij.",
+            "sungOccurrences": 3,
+            "gabcPitchGroups": [
+              "g",
+              "hi",
+              "ii",
+              "g",
+              "h_",
+              "i",
+              "i."
+            ],
+            "gabcLine": "(c4) KY(g)ri(hi)e(ii) *() e(g)lé(h_)i(i)son.(i.) <i>iij.</i>(::)",
+            "printDescription": "First KYRIE line, starred division after Kyrie, seven syllabic neume groups, with marked 3x repetition.",
+            "structuralParity": "MATCH_OBSERVED",
+            "fullPitchSequenceParity": "NOT_CERTIFIED"
+          },
+          {
+            "number": 2,
+            "invocation": "Christe eleison",
+            "repeatPrinted": "iij.",
+            "sungOccurrences": 3,
+            "gabcPitchGroups": [
+              "k",
+              "ij",
+              "h",
+              "h_",
+              "i",
+              "i."
+            ],
+            "gabcLine": "Chri(k)ste(ij) e(h)lé(h_)i(i)son.(i.) <i>iij.</i>(::)",
+            "printDescription": "Christe group after first double bar, six syllabic neume groups and written 3x repetition; initial pitch visibly higher than adjacent groups.",
+            "structuralParity": "MATCH_OBSERVED",
+            "fullPitchSequenceParity": "NOT_CERTIFIED"
+          },
+          {
+            "number": 3,
+            "invocation": "Kyrie eleison",
+            "repeatPrinted": "ij.",
+            "sungOccurrences": 2,
+            "gabcPitchGroups": [
+              "g",
+              "hi",
+              "ii",
+              "g",
+              "h_",
+              "i",
+              "i."
+            ],
+            "gabcLine": "Ký(g)ri(hi)e(ii) e(g)lé(h_)i(i)son.(i.) <i>ij.</i>(::)",
+            "printDescription": "Third notated Kyrie restates the initial contour; printed 2x repetition before final variant.",
+            "structuralParity": "MATCH_OBSERVED",
+            "fullPitchSequenceParity": "NOT_CERTIFIED"
+          },
+          {
+            "number": 4,
+            "invocation": "Kyrie eleison",
+            "repeatPrinted": null,
+            "sungOccurrences": 1,
+            "gabcPitchGroups": [
+              "g",
+              "hi",
+              "ii",
+              "g",
+              "hj",
+              "h",
+              "ighvGFE."
+            ],
+            "gabcLine": "Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)",
+            "printDescription": "Final, unrepeated Kyrie has a distinct closing melisma in the printed staff; the end differs from the first Kyrie ending.",
+            "structuralParity": "MATCH_OBSERVED",
+            "fullPitchSequenceParity": "NOT_CERTIFIED"
+          }
+        ],
+        "totalExpectedInvocations": 9,
+        "notatedPhraseCount": 4,
+        "incidentalPublicationGate": "STRUCTURE_REVIEW_IS_NOT_SCORE_APPROVAL",
+        "unresolved": [
+          "Determine absolute printed pitch at every note across all four phrases and account for clef",
+          "Collate printed neume groups and spacing to GABC source and alternate Exsurge render",
+          "Verify mora, episemata, punctum and final descending melodic ornament from sufficiently detailed original print",
+          "Certify syllabification and every repeat against Solesmes 1961 edition"
+        ],
+        "fullPrintedPitchParity": "NOT_CERTIFIED",
+        "fullPrintedNeumeParity": "NOT_CERTIFIED",
+        "fullRhythmicParity": "NOT_CERTIFIED",
+        "fullSyllableUnderlayParity": "NOT_CERTIFIED",
+        "userEditorialApproval": false,
+        "publicScore": false
+      }
     },
     {
       "gregobaseId": 2982,
