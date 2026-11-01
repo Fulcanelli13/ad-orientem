@@ -1,6 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {
+ PRAYER_RELEASED_IMAGE_ASSETS_V1,PRAYER_ARTWORK_RELEASE_SCHEMA_V1,
+ releaseClearedPrayerArtwork,renderReleasedPrayerArtwork,prayerArtworkSlotForView
+} from '../src/pray/artwork-release-runtime.js';
+import {
+ PRAYER_ARTWORK_SLOT_AUTHORITY,PRAYER_ARTWORK_REQUIRED_HOLDS
+} from '../src/pray/artwork-slot-authority.v1.js';
+import {existsSync} from 'node:fs';
+
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const root = 'data/prayer/artwork-editorial-20261101/';
@@ -177,4 +186,101 @@ test('B04 Coronation scope is applied in every original candidate shard', () => 
   assert.equal(candidates, 1504);
   assert.equal(selectable, 1501);
   assert.equal(excluded, 105);
+});
+
+test('Prayer UI authority contains all 267 corrected selections and preserves every hold', () => {
+ const entries=Object.entries(PRAYER_ARTWORK_SLOT_AUTHORITY);
+ assert.equal(entries.length,267);
+ assert.equal(PRAYER_ARTWORK_REQUIRED_HOLDS.length,14);
+ for(const [id,v] of entries){
+  const row=bySlot.get(id);
+  assert.ok(row,id);
+  assert.equal(v.title,row.currentAssignment.painting?.title??null,id);
+  assert.equal(v.artist,row.currentAssignment.painting?.artist??null,id);
+  assert.equal(v.held,row.currentAssignment.mode==='HOLD_NO_ELIGIBLE_PRIMARY',id);
+  assert.equal(v.door,id.startsWith('DOOR-'),id);
+  assert.equal(v.productionApproved,false,id);
+ }
+});
+
+test('uncleared paintings cannot render on any prayer screen, including held primaries', () => {
+ assert.equal(PRAYER_ARTWORK_RELEASE_SCHEMA_V1,'ao-prayer-artwork-release-gate-v1');
+ assert.equal(Object.keys(PRAYER_RELEASED_IMAGE_ASSETS_V1).length,0);
+ for(const [slot] of Object.entries(PRAYER_ARTWORK_SLOT_AUTHORITY)){
+  assert.equal(releaseClearedPrayerArtwork(slot),null,slot);
+  assert.equal(renderReleasedPrayerArtwork(slot),'',slot);
+ }
+ assert.equal(releaseClearedPrayerArtwork('__proto__'),null);
+ assert.equal(renderReleasedPrayerArtwork('COV-pray.rosary'),'');
+});
+
+test('artwork release proof must include exact work, actual photo rights, SHA-256, frame and responsive crops', () => {
+ const slot='COV-daily.morning';
+ const selection=PRAYER_ARTWORK_SLOT_AUTHORITY[slot];
+ const release={
+  slotId:slot,title:selection.title,artist:selection.artist,
+  path:'assets/pray/released/song-of-the-lark.webp',
+  publicationState:'READY_FOR_PUBLICATION',productionEnabled:true,editorialApproved:true,
+  sourceCredit:'Art Institute of Chicago',sourceCollectionUrl:'https://www.artic.edu/artworks/94841/the-song-of-the-lark',
+  releaseEvidence:{
+   selectedOriginalArtworkId:selection.ids[0],
+   exactOriginalObjectVerified:true,approvedForThisExactPrayerSlot:true,
+   actualFileReuseRightsCleared:true,originalSourceFileArchived:true,
+   sourceOriginalSha256:'a'.repeat(64),releaseImageSha256:'b'.repeat(64),
+   nativeResolutionVerified:true,nativeWidth:1400,nativeHeight:1800,
+   visualQualityHumanPassed:true,physicalFrameAbsent:true,
+   gallerySurroundAbsent:true,noSyntheticFill:true,
+   mobileCropApproved:true,desktopCropApproved:true,appRenderVerified:true
+  }
+ };
+ const manifest={ [slot]:release };
+ assert.equal(releaseClearedPrayerArtwork(slot,{manifest})?.path,release.path);
+ const markup=renderReleasedPrayerArtwork(slot,{manifest,language:'fr'});
+ assert.match(markup,/aoPrayReleasedArtFrame/);
+ assert.match(markup,/Informations sur l’œuvre/);
+ assert.match(markup,/Art Institute of Chicago/);
+ assert.match(markup,/details/);
+ const ensureDenied=(patch,key)=>{
+  const copy=structuredClone(release);
+  if(key==='path')copy.path=patch;
+  else if(key==='editorialApproved')copy.editorialApproved=patch;
+  else copy.releaseEvidence[key]=patch;
+  assert.equal(releaseClearedPrayerArtwork(slot,{manifest:{[slot]:copy}}),null,key);
+ };
+ ensureDenied(false,'actualFileReuseRightsCleared');
+ ensureDenied(false,'mobileCropApproved');
+ ensureDenied(false,'physicalFrameAbsent');
+ ensureDenied(false,'approvedForThisExactPrayerSlot');
+ ensureDenied('assets/../pray/bad.webp','path');
+ ensureDenied('https://remote.example/painting.jpg','path');
+ ensureDenied('invalid','sourceOriginalSha256');
+ ensureDenied(false,'editorialApproved');
+ const held='COV-prayer.communion';
+ const attempt={...release,slotId:held,title:'La Petite Cène',artist:'Philippe de Champaigne'};
+ assert.equal(releaseClearedPrayerArtwork(held,{manifest:{[held]:attempt}}),null);
+});
+
+test('a nonempty public release manifest must have a real repository image file, never a remote candidate link',()=>{
+ for(const [slot,asset] of Object.entries(PRAYER_RELEASED_IMAGE_ASSETS_V1)){
+  assert.ok(PRAYER_ARTWORK_SLOT_AUTHORITY[slot],slot);
+  assert.match(asset.path,/^assets\\/pray\\/released\\//);
+  assert.ok(existsSync(asset.path),'Missing release image file: '+asset.path);
+  assert.ok(releaseClearedPrayerArtwork(slot),slot+' was not release certified');
+ }
+});
+
+test('artwork surfaces follow current prayer/station and leave Rosary bead architecture alone',()=>{
+ assert.equal(prayerArtworkSlotForView({view:'angelus',angelusForm:'regina'}),'COV-pray.angelus_regina');
+ assert.equal(prayerArtworkSlotForView({view:'angelus',angelusForm:'angelus'}),'COV-pray.angelus');
+ assert.equal(prayerArtworkSlotForView({view:'stations',stationIndex:0}),'STG-pray.stations-01');
+ assert.equal(prayerArtworkSlotForView({view:'stations',stationIndex:13}),'STG-pray.stations-14');
+ assert.equal(prayerArtworkSlotForView({view:'stations',stationIndex:14}),null);
+ assert.equal(prayerArtworkSlotForView({view:'penitential',penitentialIndex:0}),'STG-pray.penitential_psalms-01');
+ assert.equal(prayerArtworkSlotForView({view:'sevenWords',sevenWordsIndex:5}),'STG-pray.seven_words-06');
+ assert.equal(prayerArtworkSlotForView({view:'prayerOnly',prayerId:'daily.morning'}),'COV-daily.morning');
+ assert.equal(prayerArtworkSlotForView({view:'rosary'}),null);
+ assert.equal(prayerArtworkSlotForView({view:'home'}),null);
+ const presentation=readFileSync('src/pray/presentation-runtime.js','utf8');
+ assert.match(presentation,/renderReleasedPrayerArtwork\(artSlot/);
+ assert.match(presentation,/import "\.\/artwork-release-styles\.js"/);
 });
