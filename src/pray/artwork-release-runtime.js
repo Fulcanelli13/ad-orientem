@@ -16,6 +16,20 @@ const sha256=value=>typeof value==="string" && /^[a-f0-9]{64}$/i.test(value);
 const localImage=value=>typeof value==="string"
   && /^assets\/pray\/released\/[a-z0-9][a-z0-9/_-]*\.(?:webp|avif|png|jpe?g)$/i.test(value)
   && !value.includes("..");
+const verifiedSourceIdentity=(selection,proof)=>{
+  const ids=(Array.isArray(selection?.ids)?selection.ids:[])
+    .filter(x=>typeof x==="string"&&x.trim().length>0);
+  if(ids.length)return ids.includes(proof?.selectedOriginalArtworkId);
+  // Some historical source-owned artworks (notably the fourteen San Polo
+  // Stations and user-fixed covers) entered the selection ledger without a
+  // repository artwork ID. They may pass only through independently verified
+  // original-work identity plus explicit, exact-slot human sign-off.
+  return proof?.exactArtworkIdentityManuallyReconciled===true
+    && proof?.exactOriginalWorkTitle===selection?.title
+    && proof?.exactOriginalWorkArtist===selection?.artist
+    && typeof proof?.exactOriginalWorkSourceUrl==="string"
+    && /^https:\/\//i.test(proof.exactOriginalWorkSourceUrl);
+};
 const htmlEsc=value=>String(value??"").replace(/[&<>"']/g,x=>({
   "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
 }[x]));
@@ -51,13 +65,12 @@ export function releaseClearedPrayerArtwork(slotId,{
     !Number.isFinite(proof.nativeWidth) ||
     !Number.isFinite(proof.nativeHeight) ||
     proof.nativeWidth<800 || proof.nativeHeight<800 ||
-    !Array.isArray(selection.ids) || !selection.ids.length ||
-    !selection.ids.includes(proof.selectedOriginalArtworkId) ||
+    !verifiedSourceIdentity(selection,proof) ||
     !asset.sourceCredit || !asset.photographerCredit ||
     !asset.licenseName || !asset.licenseUrl ||
     !asset.modificationsDescription ||
     !/^https:\/\//i.test(asset.licenseUrl) ||
-    !asset.sourceCredit || !asset.sourceCollectionUrl ||
+    !asset.sourceCollectionUrl ||
     !/^https:\/\//i.test(asset.sourceCollectionUrl))return null;
   return Object.freeze({slotId,path:asset.path,title:asset.title,
     artist:asset.artist,sourceCredit:asset.sourceCredit,
