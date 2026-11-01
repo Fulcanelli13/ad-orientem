@@ -1,0 +1,77 @@
+name: Sacred Atlas frozen 429 source recovery
+on:
+  push:
+    branches:
+      - research/photo-finder-112-source-hold-reconciliation-20261101
+    paths:
+      - data/geography/research/photo-finder-20261030/.retry-429-source-verification
+permissions:
+  contents: write
+concurrency:
+  group: ao-photo-finder-429-retry-once
+  cancel-in-progress: false
+jobs:
+  exact-eight-source-gate:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/photo-finder-112-source-hold-reconciliation-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Frozen source/rights/selection validation before network
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(cat data/geography/research/photo-finder-20261030/.retry-429-source-verification)" = "ONE_SHOT_EIGHT_ORIGINAL_429_2026-11-01"
+          python tests/photo-finder-112-recovery-ledger.py
+          AO_429_DRY_RUN=1 python tools/directory/retry-photo-finder-429.py
+      - name: Install decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: One exact Commons retry per held selection, 12s source spacing
+        run: python tools/directory/retry-photo-finder-429.py
+      - name: Validate no public release, only original verified research files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,pathlib,hashlib
+          root=pathlib.Path('.')
+          path='data/geography/research/photo-finder-20261030/'
+          report=json.loads((root/(path+'releases/retry-429-source-verification-20261101.v1.json')).read_text())
+          assert report['schema']=='AO_PHOTO_FINDER_429_RETRY_RESEARCH_V1'
+          assert report['attempted']==8
+          assert report['verified_research_only']+report['still_held']==8
+          assert report['verified_visible_in_running_app']==0
+          for x in report['staged']:
+           p=x['research_blob_path'];assert p.startswith(path+'recovered-429/')
+           assert x['publication_status']=='RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN'
+           assert hashlib.sha256((root/p).read_bytes()).hexdigest()==x['item']['derivative_sha256']
+          print('PASS eight frozen source checks, no public release')
+          PY
+          test -z "$(git diff --name-only -- data/geography/approved-place-media.v1.json data/geography/approved-place-gallery.v1.json data/geography/research/photo-finder-20261030/decisions.json)"
+      - name: Store immutable retry report and verified research Git blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Ad Orientem verified source recovery'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/geography/research/photo-finder-20261030/releases/retry-429-source-verification-20261101.v1.json
+          if test -d data/geography/research/photo-finder-20261030/recovered-429; then
+            git add -- data/geography/research/photo-finder-20261030/recovered-429/
+          fi
+          python - <<'PY'
+          import json,subprocess
+          base='data/geography/research/photo-finder-20261030/'
+          r=json.load(open(base+'releases/retry-429-source-verification-20261101.v1.json'))
+          expected={base+'releases/retry-429-source-verification-20261101.v1.json'}
+          expected.update(x['research_blob_path'] for x in r['staged'])
+          staged=set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
+          assert staged==expected,{'missing':list(expected-staged),'unexpected':list(staged-expected)}
+          PY
+          git diff --cached --check
+          git commit -m "research(explore): preserve exact eight frozen source retry results, without publication"
+          git push origin "HEAD:$GITHUB_REF_NAME"
