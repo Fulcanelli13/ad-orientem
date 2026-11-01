@@ -3,49 +3,86 @@
   "source": {
     "authority": "Missale Romanum 1962 Appendix II",
     "witness": "https://www.clerus.org/bibliaclerusonline/de/gmt.htm",
-    "scope": "Latin rite text only; participation/actor states come from recovered ASP graph."
+    "scope": "Pinned 1962 Latin rite text; English/French are separate editorial reading translations, never a rubrical or observed-event authority. Faithful participation and actor state come from recovered ASP graph.",
+    "vernacularTranslation": "EDITORIAL_READING_AIDS__LATIN_REMAINS_NORMATIVE"
   },
   "formulas": {
     "ORDINARY": {
       "antiphon": "Asperges me, Dómine, hyssópo, et mundábor: lavábis me, et super nivem dealbábor.",
       "psalm": "Miserére mei, Deus, secúndum magnam misericórdiam tuam.",
-      "gloria": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen."
+      "gloria": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.",
+      "english": {
+        "antiphon": "Thou shalt sprinkle me, O Lord, with hyssop, and I shall be cleansed; Thou shalt wash me, and I shall be made whiter than snow.",
+        "psalm": "Have mercy on me, O God, according to Thy great mercy.",
+        "gloria": "Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+      },
+      "french": {
+        "antiphon": "Aspergez-moi, Seigneur, avec l’hysope, et je serai purifié ; lavez-moi, et je deviendrai plus blanc que la neige.",
+        "psalm": "Ayez pitié de moi, mon Dieu, selon votre grande miséricorde.",
+        "gloria": "Gloire au Père, et au Fils, et au Saint-Esprit. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il."
+      }
     },
     "PASCHAL": {
       "antiphon": "Vidi aquam egrediéntem de templo, a látere dextro, allelúia: et omnes, ad quos pervénit aqua ista, salvi facti sunt, et dicent: allelúia, allelúia.",
       "psalm": "Confitémini Dómino, quóniam bonus: quóniam in sǽculum misericórdia eius.",
-      "gloria": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen."
+      "gloria": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.",
+      "english": {
+        "antiphon": "I saw water flowing from the right side of the temple, alleluia; and all whom that water reached were saved, and they shall say: alleluia, alleluia.",
+        "psalm": "Give praise to the Lord, for He is good; for His mercy endureth for ever.",
+        "gloria": "Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+      },
+      "french": {
+        "antiphon": "J’ai vu de l’eau sortir du temple, du côté droit, alléluia ; et tous ceux que cette eau atteignit furent sauvés, et ils diront : alléluia, alléluia.",
+        "psalm": "Louez le Seigneur, car il est bon ; car sa miséricorde demeure à jamais.",
+        "gloria": "Gloire au Père, et au Fils, et au Saint-Esprit. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il."
+      }
     }
   },
   "versicles": [
     {
       "kind": "VERSICLE",
-      "latin": "Osténde nobis, Dómine, misericórdiam tuam."
+      "latin": "Osténde nobis, Dómine, misericórdiam tuam.",
+      "english": "Show us, O Lord, Thy mercy.",
+      "french": "Seigneur, montrez-nous votre miséricorde."
     },
     {
       "kind": "RESPONSE",
-      "latin": "Et salutáre tuum da nobis."
+      "latin": "Et salutáre tuum da nobis.",
+      "english": "And grant us Thy salvation.",
+      "french": "Et donnez-nous votre salut."
     },
     {
       "kind": "VERSICLE",
-      "latin": "Dómine, exáudi oratiónem meam."
+      "latin": "Dómine, exáudi oratiónem meam.",
+      "english": "O Lord, hear my prayer.",
+      "french": "Seigneur, exaucez ma prière."
     },
     {
       "kind": "RESPONSE",
-      "latin": "Et clamor meus ad te véniat."
+      "latin": "Et clamor meus ad te véniat.",
+      "english": "And let my cry come unto Thee.",
+      "french": "Et que mon cri parvienne jusqu’à vous."
     },
     {
       "kind": "VERSICLE",
-      "latin": "Dóminus vobíscum."
+      "latin": "Dóminus vobíscum.",
+      "english": "The Lord be with you.",
+      "french": "Le Seigneur soit avec vous."
     },
     {
       "kind": "RESPONSE",
-      "latin": "Et cum spíritu tuo."
+      "latin": "Et cum spíritu tuo.",
+      "english": "And with thy spirit.",
+      "french": "Et avec votre esprit."
     }
   ],
   "prayer": {
     "kind": "TEXT",
     "latin": "Exáudi nos, Dómine, sancte Pater omnípotens, ætérne Deus: et míttere dignéris sanctum Angelum tuum de cælis; qui custódiat, fóveat, prótegat, vísitet atque deféndat omnes habitántes in hoc habitáculo. Per Christum Dóminum nostrum.",
-    "response": "Amen."
+    "response": "Amen.",
+    "english": "Hear us, O holy Lord, Father almighty, everlasting God, and graciously send Thy holy Angel from heaven to guard, cherish, protect, visit and defend all who dwell in this house. Through Christ our Lord.",
+    "french": "Exaucez-nous, Seigneur saint, Père tout-puissant, Dieu éternel, et daignez envoyer du ciel votre saint Ange pour qu’il garde, soutienne, protège, visite et défende tous ceux qui demeurent dans cette maison. Par le Christ Notre-Seigneur.",
+    "responseEnglish": "Amen.",
+    "responseFrench": "Ainsi soit-il."
   }
 }
