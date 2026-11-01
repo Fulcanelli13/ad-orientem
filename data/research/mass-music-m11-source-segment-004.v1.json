@@ -1,0 +1,209 @@
+{
+  "schema": "ao-mass-music-m11-1962-pre-gospel-segment-v1",
+  "segmentBatch": 4,
+  "sourceRepo": "DivinumOfficium/divinum-officium",
+  "ref": "master",
+  "sourceFiles": [
+    {
+      "path": "Tempora/Quadp1-0",
+      "sourceBlobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+      "expectedBlobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "TRACT": 4
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-1185",
+          "originalRole": "al",
+          "donor": "quoniam non in finem oblivio erit pauperis patientia pauperum non peribit in aeternum exsurge domine non praevaleat homo",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 2,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-841",
+          "originalRole": "al",
+          "donor": "adiutor in opportunitatibus in tribulatione sperent in te qui noverunt te quoniam non derelinquis quaerentes te domine",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/05-06",
+      "sourceBlobSha": "8b1e559fa03c0f75e0166fd0dd8dd2d3a733737e",
+      "expectedBlobSha": "8b1e559fa03c0f75e0166fd0dd8dd2d3a733737e",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "ALLELUIA": 2
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-748",
+          "originalRole": "gr",
+          "donor": "iustus germinabit sicut lilium et florebit in aeternum ante dominum alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 4,
+              "role": "ALLELUIA"
+            }
+          ],
+          "classification": "ALLELUIA"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Epi2-0",
+      "sourceBlobSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+      "expectedBlobSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 3
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-348",
+          "originalRole": "gr",
+          "donor": "laudate dominum omnes angeli eius laudate eum omnes virtutes eius alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 4,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Pasc3-0",
+      "sourceBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "expectedBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "ALLELUIA": 2
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-932",
+          "originalRole": "gr",
+          "donor": "redemptionem misit dominus populo suo alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 2,
+              "role": "ALLELUIA"
+            }
+          ],
+          "classification": "ALLELUIA"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Quad1-0",
+      "sourceBlobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "expectedBlobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "TRACT": 13
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-834",
+          "originalRole": "gr",
+          "donor": "angelis suis deus mandavit de te ut custodiant te in omnibus viis tuis",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-834",
+          "originalRole": "gr",
+          "donor": "quoniam angelis suis mandavit de te ut custodiant te in omnibus viis tuis",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 13,
+              "role": "TRACT"
+            }
+          ],
+          "classification": "TRACT"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Quad6-0",
+      "sourceBlobSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+      "expectedBlobSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "TRACT": 14
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-903",
+          "originalRole": "gr",
+          "donor": "ego autem sum vermis et non homo opprobrium hominum et abiectio plebis",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 11,
+              "role": "TRACT"
+            }
+          ],
+          "classification": "TRACT"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Quadp3-0",
+      "sourceBlobSha": "ba4351128591379e04108d4a32d16ccc7ce15bb1",
+      "expectedBlobSha": "ba4351128591379e04108d4a32d16ccc7ce15bb1",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "TRACT": 3
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-850",
+          "originalRole": "gr",
+          "donor": "tu es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    }
+  ],
+  "sourcePolicy": "CHECK_SHA_BEFORE_TRUSTING_ROLE_SEGMENT",
+  "approval": false,
+  "publicReader": false
+}
