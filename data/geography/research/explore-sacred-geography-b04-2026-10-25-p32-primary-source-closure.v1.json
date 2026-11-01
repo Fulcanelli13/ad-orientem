@@ -1,0 +1,282 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B04_V1",
+  "research_date": "2026-10-25",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "canonical_baseline": {
+    "main_places": 414,
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "fd61cd6487f73f6e38778469f80e83519bc0aa2b",
+    "main_shrines_reported_by_p32": 257,
+    "worldwide_queue_historical_rows": 750,
+    "first200_source_excerpt_coverage_p32": 168,
+    "first200_unreviewed_p32": 32,
+    "philippines_checkpoint": "20 verified, 4 provisional, 1 held, 1 Quiapo enrichment; historical checkpoint not independently located or counted"
+  },
+  "reconciled_against": [
+    "data/geography/research/sacred-places-p32-full64-source-triage.v1.json",
+    "data/geography/research/sacred-places-p31-world-9-exact-map.v1.json",
+    "data/geography/research/explore-sacred-geography-b03-2026-10-24-primary-source-dossiers.v1.json"
+  ],
+  "counts": {
+    "records": 11,
+    "new_distinct_p32_candidates_researched": 9,
+    "prior_b03_additive_enrichments": 2,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "method": "Read current main seed registry (414 Place IDs) and P32 remaining_64 dispositions; verified all eleven candidate names absent from current canonical Place records. Research nine distinct P32 candidates with primary Catholic, custodial, civil, bishops' or diocesan evidence; add two targeted B03 enrichments. Source-verification is not physical mapping or publication certification.",
+  "records": [
+    {
+      "candidate_id": "SG-INV-0343",
+      "name": "Shrine of Our Lady of Baruny / Church of Saints Peter and Paul",
+      "country": "BY",
+      "status": "SOURCE_VERIFIED_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "At Baruny in the Diocese of Grodno, the Church of Saints Peter and Paul is associated with the diocesan shrine of Our Lady of Baruny, Consoler of the Afflicted. Vatican News reported pilgrimage celebrations on 10–11 October 2025 marking the coronation of the venerated Marian image. The coronation's original decree and current visitor timetable have not been examined.",
+      "summary_fr": "À Baruny, dans le diocèse de Grodno, l'église Saints-Pierre-et-Paul abrite le sanctuaire diocésain de Notre-Dame de Baruny, Consolatrice des affligés. Vatican News rapporte des célébrations de pèlerinage les 10 et 11 octobre 2025 pour l'anniversaire du couronnement de l'image mariale vénérée. Le décret original et les horaires actuels restent à vérifier.",
+      "source_urls": [
+        "https://www.vaticannews.va/be/kaciol/news/2025-10/tydzen-u-belarusi-vazhnae0.html",
+        "https://gcatholic.org/churches/list/jubilee2025/Grodno"
+      ],
+      "qualifications": "Diocesan shrine and pilgrimage attested; precise church-versus-shrine site identity should be checked before geometry; relics and opening hours unverified.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0344",
+      "name": "Shrine of Our Lady Queen of Our Families / Church of the Annunciation, Trakeli",
+      "country": "BY",
+      "status": "SOURCE_VERIFIED_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "The diocesan Marian shrine at Trakeli is associated with the Catholic Church of the Annunciation and the image of Our Lady Queen of Our Families. Vatican News documented the Grodno clergy's day of recollection here on 15 October 2025, including Eucharistic adoration and Mass. The July Marian pilgrimage is separately described by local heritage sources.",
+      "summary_fr": "Le sanctuaire marial diocésain de Trakeli est associé à l'église catholique de l'Annonciation et à l'image de Notre-Dame, Reine de nos familles. Vatican News y atteste la journée de récollection du clergé de Grodno du 15 octobre 2025, avec adoration eucharistique et messe. Un pèlerinage marial en juillet est décrit par une source patrimoniale locale.",
+      "source_urls": [
+        "https://www.vaticannews.va/be/kaciol/news/2025-10/tydzen-u-belarusi-vazhnae0.html",
+        "https://gcatholic.org/churches/list/jubilee2025/Grodno",
+        "https://my-places.by/en/places/trokeli-kostel"
+      ],
+      "qualifications": "Parish website trokiele.by not accessible; original image history and exact building geometry still unverified; no relic claim.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0738",
+      "name": "Our Lady of the Sacred Heart National Shrine and Church, Randwick",
+      "country": "AU",
+      "status": "SOURCE_VERIFIED_CUSTODIAN",
+      "canonical_place_id": null,
+      "summary_en": "The National Shrine of Our Lady of the Sacred Heart is an active Catholic church in Randwick, Sydney, served by Sacred Heart Parish. The shrine preserves the Marian title promoted by Fr Jules Chevalier, founder of the Missionaries of the Sacred Heart, in 1857. The parish advertises a Thursday novena, daily Masses and Saturday confession times.",
+      "summary_fr": "Le sanctuaire national Notre-Dame-du-Sacré-Cœur est une église catholique en activité à Randwick, Sydney, desservie par la paroisse du Sacré-Cœur. Il conserve le vocable marial promu en 1857 par le père Jules Chevalier, fondateur des Missionnaires du Sacré-Cœur. La paroisse annonce une neuvaine le jeudi, des messes quotidiennes et des confessions le samedi.",
+      "source_urls": [
+        "https://www.sacredheart.org.au/national-shrine",
+        "https://www.sacredheart.org.au/about-us/mass-times",
+        "https://www.sacredheart.org.au/"
+      ],
+      "qualifications": "Church and shrine are a single named parish institution; no second pin for internal shrine chapel; schedule may change; no 1962 Mass inferred.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0529",
+      "name": "Sanctuary of the Virgin of Itacuá, Punta Itacuá, Encarnación",
+      "country": "PY",
+      "status": "SOURCE_VERIFIED_CIVIL_CATHOLIC_EVENT",
+      "canonical_place_id": null,
+      "summary_en": "The Marian sanctuary at Punta Itacuá, Encarnación, comprises a ship-shaped church, a grotto housing a Marian image, and pilgrimage grounds by the Paraná River. The municipality attributes the devotion's growth to Divine Word missionaries who placed an image in the grotto in the early twentieth century. The annual pilgrimage is celebrated on 8 December; reported apparitions to river travellers belong to local tradition, not a verified ecclesiastical finding.",
+      "summary_fr": "Le sanctuaire marial de Punta Itacuá, à Encarnación, comprend une église en forme de navire, une grotte abritant une image de la Vierge et des espaces de pèlerinage au bord du Paraná. La municipalité rattache l'essor de la dévotion aux missionnaires du Verbe Divin, qui installèrent une image dans la grotte au début du XXe siècle. Le pèlerinage annuel a lieu le 8 décembre ; les récits d'apparitions aux navigateurs relèvent de la tradition locale, sans reconnaissance ecclésiastique vérifiée.",
+      "source_urls": [
+        "https://encarnacion.gov.py/santuario-itacua/",
+        "https://visitparaguay.travel/index.php/places/santuario-de-la-virgen-de-itacua-encarnacion",
+        "https://www.abc.com.py/nacionales/2023/11/27/manana-comienza-el-novenario-en-honor-de-la-virgen-de-itacua-en-encarnacion/"
+      ],
+      "qualifications": "Complex contains church, grotto and visitor grounds; exact physical unit and ecclesiastical custodian must be resolved before mapping; no route geometry inferred from named Tupasy Rape.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0602",
+      "name": "National Shrine of Our Lady of Matara",
+      "country": "LK",
+      "status": "SOURCE_VERIFIED_DIOCESAN",
+      "canonical_place_id": null,
+      "summary_en": "The National Shrine of Our Lady of Matara is an active Catholic pilgrimage church of the Diocese of Galle in southern Sri Lanka. The diocese lists its regular Mass schedule and documented the 119th annual shrine feast on 13 September 2026. The reported feast edition establishes an ongoing local celebration, not a universal liturgical feast or permanent visitor-hours guarantee.",
+      "summary_fr": "Le sanctuaire national Notre-Dame de Matara est une église catholique de pèlerinage du diocèse de Galle, dans le sud du Sri Lanka. Le diocèse publie ses horaires habituels de messe et a relaté la 119e fête annuelle du sanctuaire le 13 septembre 2026. Cette célébration locale n'établit ni une fête liturgique universelle ni des horaires de visite permanents.",
+      "source_urls": [
+        "https://gallediocese.org/news/",
+        "https://gallediocese.org/mass-times/",
+        "https://gallediocese.org/parishes/"
+      ],
+      "qualifications": "Strong diocesan identity and 2026 feast; image origin, relics, exact map feature and public visiting hours still need verification.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0616",
+      "name": "Otome Pass martyrdom site and Marian chapel, Tsuwano",
+      "country": "JP",
+      "status": "SOURCE_VERIFIED_DIOCESAN_IDENTITY_SPLIT",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Hiroshima distinguishes Tsuwano Catholic Church, dedicated to St Thérèse of the Child Jesus and consecrated in 1931, from Otome Pass, the separate martyrdom site with a small Marian chapel. Its account recalls 153 Urakami Christians persecuted there in 1868–1873, of whom 37 died, and an annual May pilgrimage festival. These are not interchangeable physical map pins.",
+      "summary_fr": "Le diocèse d'Hiroshima distingue l'église catholique de Tsuwano, dédiée à sainte Thérèse de l'Enfant-Jésus et consacrée en 1931, du col d'Otome, lieu de martyre distinct doté d'une petite chapelle mariale. Il rappelle que 153 chrétiens d'Urakami y subirent des persécutions de 1868 à 1873, dont 37 moururent, et signale un pèlerinage annuel en mai. Ces deux lieux ne doivent pas être confondus sur la carte.",
+      "source_urls": [
+        "https://hiroshima.catholic.jp/church/tsuwano/",
+        "https://hiroshima.catholic.jp/church_information/tsuwano/"
+      ],
+      "qualifications": "Exact chapel and hill feature not independently matched; parish address applies to church only; no canonization or relic claim inferred.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0522",
+      "name": "Sanctuary of Our Lady of Cocharcas, Chincheros, Apurímac",
+      "country": "PE",
+      "status": "SOURCE_VERIFIED_BISHOPS_IDENTITY_SPLIT",
+      "canonical_place_id": null,
+      "summary_en": "The original sanctuary of Our Lady of Cocharcas in the Diocese of Abancay, Chincheros province, commemorates a Marian image brought in 1598 and a colonial church built in phases from 1598 to 1680. The Peruvian bishops report the annual 8 September pilgrimage, restoration in 2008–2019, and the 2023 transfer of the remains of early devotee Sebastián Quimichi to the church. It must not be confused with the separate Cocharcas sanctuary and devotion at Sapallanga, Huancayo.",
+      "summary_fr": "Le sanctuaire originel de Notre-Dame de Cocharcas, dans le diocèse d'Abancay (province de Chincheros), conserve la mémoire d'une image mariale arrivée en 1598 et d'une église coloniale édifiée par étapes entre 1598 et 1680. La Conférence épiscopale péruvienne rapporte le pèlerinage annuel du 8 septembre, la restauration de 2008 à 2019 et le transfert en 2023 des restes du premier dévot Sebastián Quimichi dans l'église. Il ne faut pas le confondre avec le sanctuaire et la dévotion homonymes de Sapallanga, près de Huancayo.",
+      "source_urls": [
+        "https://noticias.iglesia.org.pe/festividad-de-la-virgen-de-cocharcas-multitud-celebro-a-la-reina-de-los-andes-peruanos/",
+        "https://noticias.iglesia.org.pe/el-indio-quimichi-y-la-virgen-de-cocharcas/",
+        "https://noticias.iglesia.org.pe/jubileo-2025-conozca-los-templos-jubilares-de-la-provincia-eclesiastica-del-cusco/",
+        "https://noticias.iglesia.org.pe/fieles-de-la-arquidiocesis-de-huancayo-peregrinaran-hacia-el-santuario-de-la-virgen-de-cocharcas/"
+      ],
+      "qualifications": "Human remains relocation reported by bishops' news, not physically inspected; maintain distinct Apurímac and Sapallanga identities; no map coordinates.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0669",
+      "name": "Our Lady of Tà Pao Marian Pilgrimage Centre, Phan Thiết Diocese",
+      "country": "VN",
+      "status": "SOURCE_VERIFIED_BISHOPS_PROVISIONAL_GEO",
+      "canonical_place_id": null,
+      "summary_en": "The Vietnamese bishops' conference identifies Tà Pao in the Diocese of Phan Thiết as a major Marian pilgrimage centre. It hosted the bishops' September 2024 meeting and appears in a 2026 Catholic discussion of popular Marian devotion and pilgrimage. Its exact sanctuary structures, access arrangements and historical statue installation have not yet been checked against the diocesan custodian.",
+      "summary_fr": "La Conférence épiscopale vietnamienne reconnaît Tà Pao, dans le diocèse de Phan Thiết, comme un grand centre de pèlerinage marial. Il a accueilli la réunion épiscopale de septembre 2024 et figure dans une étude catholique de 2026 sur la piété mariale populaire. Les structures exactes du sanctuaire, les conditions d'accès et l'histoire de la statue restent à vérifier auprès du diocèse.",
+      "source_urls": [
+        "https://hdgmvietnam.com/chi-tiet/hoi-nghi-thuong-nien-hoi-dong-giam-muc-ky-i2024-ngay-iii",
+        "https://hdgmvietnam.com/chi-tiet/dao-duc-binh-dan-cach-thuc-hiep-hanh-trong-viec-song-va-loan-bao-tin-mung-tai-viet-nam"
+      ],
+      "qualifications": "Catholic institutional identity verified; exact statue-hill/chapel/pilgrimage-centre map unit held; visitor schedule and relics unverified.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0468",
+      "name": "National Shrine of Our Lady of Mercy, Santo Cerro, La Vega",
+      "country": "DO",
+      "status": "SOURCE_VERIFIED_CUSTODIAN",
+      "canonical_place_id": null,
+      "summary_en": "The National Shrine of Our Lady of Mercy at Santo Cerro is an operating Catholic pilgrimage church in La Vega. The shrine itself publishes daily visiting hours, Mass times, a rector's welcome and the patronal celebration of 24 September. Its historical page describes traditions concerning Columbus and a cross, but a 2025 historical lecture hosted by the shrine disputes the alleged battle narrative; such traditions must not be presented as established events.",
+      "summary_fr": "Le sanctuaire national Notre-Dame-de-la-Merci du Santo Cerro est une église catholique de pèlerinage en activité à La Vega. Le sanctuaire publie ses heures d'ouverture, ses horaires de messe, le message de son recteur et la fête patronale du 24 septembre. Sa notice historique évoque des traditions concernant Christophe Colomb et une croix, mais une conférence historique accueillie en 2025 conteste le récit d'une prétendue bataille : ces traditions ne doivent pas être présentées comme des faits établis.",
+      "source_urls": [
+        "https://santocerro.org/",
+        "https://santocerro.org/horarios-de-misas/",
+        "https://santocerro.org/bienvenida-del-rector/",
+        "https://santocerro.org/publicaciones/conferencia-sobre-el-milagro-del-santo-cerro-aportes-de-la-historia-y-la-antropologia/",
+        "https://santocerro.org/historia-de-nuestra-senora-de-las-mercedes-y-el-santo-cerro/"
+      ],
+      "qualifications": "Current website reports 06:00–12:00 and 14:00–18:00 daily, subject to change; exact map feature and heritage legend must be independently checked; no relic claim.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0715",
+      "name": "International Sanctuary of Jesus the Saviour and Mother Mary, Elele",
+      "country": "NG",
+      "status": "B03_ADDITIVE_ENRICHMENT_CAMPUS_HOLD",
+      "canonical_place_id": null,
+      "summary_en": "A 2023 Madonna University conference document independently identifies the Elele sanctuary and illustrates its Church of Jesus the Saviour. The Sisters of Jesus the Saviour, whose generalate is at Elele, document their congregation's foundation in 1985 by Fr Emmanuel Edeh. These institutional sources strengthen the sanctuary's physical and community context but do not independently prove a 2016/2018 national or 2020 international shrine decree; multiple church buildings within the complex still require separate identity review.",
+      "summary_fr": "Un document de conférence de l'université Madonna publié en 2023 identifie le sanctuaire d'Elele et illustre son église de Jésus Sauveur. Les Sœurs de Jésus Sauveur, dont la maison générale se trouve à Elele, attestent la fondation de leur congrégation en 1985 par le père Emmanuel Edeh. Ces sources renforcent l'identité matérielle et communautaire du sanctuaire, sans établir à elles seules les décrets de reconnaissance nationale (2016/2018) ou internationale (2020) ; les différentes églises du complexe restent à distinguer.",
+      "source_urls": [
+        "https://www.madonnauniversity.edu.ng/wp-content/uploads/2023/12/Conference-Practical-Information.pdf",
+        "https://sistersofjesusthesaviour.org.ng/about.html",
+        "https://www.worldrosaryday.org/world-rosary-day-2024-international-sanctuary-of-elele-nigeria/"
+      ],
+      "qualifications": "B03 candidate, not a newly researched unmatched lead; official decree dates conflict across secondary sources; no new Place or coordinates.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "name": "Mugera National Marian Shrine Regina Pacis and St Anthony Basilica",
+      "country": "BI",
+      "status": "B03_ADDITIVE_ENRICHMENT_PHYSICAL_SPLIT_HOLD",
+      "canonical_place_id": null,
+      "summary_en": "The Burundian bishops' conference identifies Mugera's national Marian shrine as Notre-Dame de la Paix (Regina Pacis), distinct in dedication from the parish basilica of St Anthony of Padua. Its 2012 report recalls the shrine's golden jubilee and national recognition; a report dated 18 August 2026 documents Assumption pilgrims, Rosary, overnight confession and Mass, and the fiftieth anniversary of the Assumption Square inaugurated in 1976. Whether the shrine, basilica and square share a physical campus or building remains unresolved.",
+      "summary_fr": "La Conférence des évêques du Burundi désigne le sanctuaire marial national de Mugera sous le vocable Notre-Dame-de-la-Paix (Regina Pacis), différent de celui de la basilique paroissiale Saint-Antoine-de-Padoue. Sa notice de 2012 rappelle le jubilé d'or et la reconnaissance nationale du sanctuaire ; un compte rendu du 18 août 2026 relate les pèlerinages de l'Assomption, le rosaire, les confessions nocturnes et la messe, ainsi que le cinquantenaire de la place de l'Assomption inaugurée en 1976. L'identité physique exacte du sanctuaire, de la basilique et de cette place reste à établir.",
+      "source_urls": [
+        "https://eglisecatholique.bi/index.php/fr/component/content/article/cloture-de-l-annee-jubilaire-du-sanctuaire-marial-de-mugera.html?Itemid=&catid=55&layout=blog",
+        "https://eglisecatholique.bi/index.php/fr/vie-de-l-eglise1/evenement/mugera-une-foule-immense-autour-des-pasteurs-pour-celebrer-la-solennite-de-l-assomption-de-la-vierge-marie.html",
+        "https://eglisecatholique.bi/index.php/fr/component/content/article/celebration-du-centenaire-des-premiers-samedis-du-mois-a-mugera.html?Itemid=&catid=52&layout=blog"
+      ],
+      "qualifications": "B03 follow-up, not newly unmatched; the 1976 date refers to Assumption Square, not automatically the shrine's origin; no inferred pin split or GPS.",
+      "coordinates_added": false,
+      "walking_route_added": false,
+      "publication_approved": false
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0343",
+      "task": "Grodno diocesan original parish/Marian image coronation decree and exact church OSM feature"
+    },
+    {
+      "candidate_id": "SG-INV-0344",
+      "task": "Trokiele parish original image history and exact site-feature verification"
+    },
+    {
+      "candidate_id": "SG-INV-0529",
+      "task": "Diocesan custodial confirmation and separate church/grotto mapping at Itacuá"
+    },
+    {
+      "candidate_id": "SG-INV-0616",
+      "task": "Exact Otome Pass chapel feature versus Tsuwano parish; maintain separate pins"
+    },
+    {
+      "candidate_id": "SG-INV-0669",
+      "task": "Phan Thiết diocesan Tà Pao sanctuary campus geometry and visitor hours"
+    },
+    {
+      "candidate_id": "SG-INV-0715",
+      "task": "Locate original national/international shrine decrees; reconcile 2016 vs 2018"
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "task": "Resolve St Anthony basilica versus Regina Pacis shrine and 1976 Assumption Square physical identities"
+    },
+    {
+      "candidate_id": "SG-INV-0704",
+      "task": "Franciscan/Latin vicariate primary cathedral record in Alexandria"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Find Chilaw diocesan primary source for Kattimahana St Anne shrine"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Chaldean Catholic original source for Rabban Hormizd monastery and present visitor restrictions"
+    }
+  ],
+  "guards": [
+    "No publication, merge, deployment or production record changes",
+    "No new canonical IDs; inherited SG-INV IDs only",
+    "No invented coordinates or route geometry",
+    "No miracle/apparition or relic assertion without evidence",
+    "No universal feast claims from local celebrations",
+    "No 1962 Traditional Latin Mass inferred from current parish Mass schedule"
+  ]
+}
