@@ -79,7 +79,7 @@ const auditStatus=new Map([
  [752,"FULL_ANTIPHON_AND_PSALM_AFTER_ORTHOGRAPHY"],
  [371,"FULL_SOURCE_GRADUAL_AND_VERSE_TEXT"],
  [1237,"FULL_SOURCE_ALLELUIA_VERSE_TEXT"],
- [835,"SOURCE_POINTER_UNRESOLVED_AT_PINNED_COMMIT"],
+ [835,"RESOLVED_SELECTED_MASS_LATIN_TEXT_PROOF_ONLY"],
  [345,"FULL_SOURCE_COMMUNION_TEXT_AFTER_ORTHOGRAPHY"]
 ]);
 assert.equal(ledger.evidenceReview.status,
@@ -111,6 +111,13 @@ assert.deepEqual(ledger.properCandidates[4]
 assert.match(ledger.properCandidates[3]
  .pinned1962SourceTextEvidence.caution,/outside Eastertide/,
  "All Saints Offertory seasonal Alleluia must never be assumed from raw GABC");
+assert.equal(ledger.properCandidates[3]
+ .pinned1962SourceTextEvidence.actualRuntimeProof.productionSourceResolution,
+ "READY_WITH_UNSEGMENTED_CONDITIONAL_RUBRIC");
+assert.equal(ledger.evidenceReview.productionOffertoryResult.sourcePath,"Sancti/11-01");
+assert.equal(ledger.evidenceReview.productionOffertoryResult.separateReaderRubricSegmentation,
+ "NOT_YET_SHIPPED");
+assert.equal(ledger.evidenceReview.productionOffertoryResult.editorialScoreApproval,false);
 
 assert.equal(new Set(ledger.properCandidates.map(x=>x.originalArchiveId)).size,5);
 console.log("PASS: All Saints 2026 source-locked five Proper leads and ordinary Asperges; no approved scores or audio");
