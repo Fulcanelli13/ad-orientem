@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { buildAspergesPayload, createAspergesReaderController, resolveAspergesFormula, resolveAspergesRiteContext } from "../src/mass/reader-asperges.js";
+import { buildAspergesPayload, createAspergesReaderController, resolveAspergesFormula, resolveAspergesRiteContext, is1962PalmSunday } from "../src/mass/reader-asperges.js";
+import {availableOptionalMassRites,composeOptionalMassRites} from "../src/mass/full-mass-optional-rites.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const extension=load("../data/mass/special-days-extension.v1.3.json");
@@ -80,6 +81,39 @@ assert.ok(built.cards[1].paragraphs.every(row=>
 assert.match(built.cards[1].paragraphs[0].latin,/Vidi aquam/);
 assert.match(built.cards[1].paragraphs[0].latin,/allelúia/);
 assert.equal(built.cards[1].paragraphs.some(x=>/Glória Patri/.test(x.latin)),true);
+
+const paschalVersicles=built.cards[3].paragraphs;
+for(const i of [0,1]){
+ assert.match(paschalVersicles[i].latin,/Allelúia\\.$/,"Eastertide 1961 source adds Alleluia after first versicle and response");
+ assert.match(paschalVersicles[i].english,/Alleluia\\.$/);
+ assert.match(paschalVersicles[i].french,/Alléluia\\.$/);
+}
+assert.ok(paschalVersicles.slice(2).every(x=>!x.latin.endsWith("Allelúia.")),
+ "Do not invent Paschal Alleluia on unrelated versicles, oration, or Amen");
+built=buildAspergesPayload({graph,payload,riteContext:{paschaltide:false}});
+assert.ok(built.cards[3].paragraphs.slice(0,2).every(x=>!x.latin.endsWith("Allelúia.")),
+ "Ordinary Sunday versicles must not acquire Eastertide Alleluia");
+
+assert.equal(is1962PalmSunday("2026-03-29"),true);
+assert.equal(is1962PalmSunday("2026-03-22"),false);
+assert.equal(is1962PalmSunday("2026-04-05"),false);
+assert.equal(is1962PalmSunday("2026-11-01"),false);
+const sundayEligibility=date=>availableOptionalMassRites({date,canStart:true},
+ {form:"MISSA_CANTATA_SIMPLE",kind:"CALENDAR"}).find(x=>x.id==="ASPERGES").allowed;
+assert.equal(sundayEligibility("2026-03-22"),true,"Passion Sunday retains Asperges, without Gloria Patri");
+assert.equal(sundayEligibility("2026-03-29"),false,"Palm Sunday omits the Sunday aspersion entirely");
+assert.equal(sundayEligibility("2026-04-05"),true,"Easter Sunday uses Vidi aquam");
+assert.equal(sundayEligibility("2026-11-01"),true,"All Saints 2026 retains Sunday Asperges");
+const palm={date:"2026-03-29",canStart:true,insertedRites:["PALM"]};
+const preservedPalm=composeOptionalMassRites(palm,
+ {form:"SOLEMN",kind:"CALENDAR"},
+ {precedingRites:["PALM","ASPERGES"]});
+assert.deepEqual(preservedPalm.precedingRites,["PALM"],
+ "An inherited stale ASPERGES flag must not collide with Palm procession");
+assert.throws(()=>composeOptionalMassRites(palm,
+ {form:"SOLEMN",kind:"CALENDAR",overrides:{ASPERGES:true}},
+ {precedingRites:["PALM"]}),/MASS_RITE_NOT_APPLICABLE_ASPERGES/);
+
 
 const ctrl=createAspergesReaderController({graph,payload});
 let s=ctrl.project();
