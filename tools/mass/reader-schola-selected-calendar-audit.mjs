@@ -92,6 +92,7 @@ try{
            const latin=paragraphs.map(row=>String(row.latin??"")).join("\n");
            return {track:track.track,part:track.part,status:track.status,
              sourceLatinSha256:await digest(latin),
+             sourceLatinOpening:latin.replace(/\s+/g," ").trim().slice(0,160),
              candidateScoreIds:(track.scoreCandidates??[]).map(score=>score.scoreId),
              candidateHashes:(track.scoreCandidates??[]).map(score=>score.sourceGabcSha256),
              allSameRoleMatches:track.allSameRoleMatches??0};
