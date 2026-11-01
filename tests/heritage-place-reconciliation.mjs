@@ -151,6 +151,11 @@ for(const [count,value] of Object.entries({
  directory_place_links:G.directoryPlaceLinks.length,
 })){
  if(count==="canonical_customs"||count==="custom_attestations")continue; // earlier dated baseline accounted for above
+ if(count==="directory_place_links"){
+  assert.equal(value,R.counts[count]+1,
+   "One independently verified Guadalupe venue link extends the frozen heritage snapshot");
+  continue;
+ }
  assert.equal(R.counts[count]+(count==="relic_claims"?5:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
 }
 const noRefs=R.place_crosswalk.filter(p=>!Object.keys(p.record_ids).length).map(p=>p.place_id);
