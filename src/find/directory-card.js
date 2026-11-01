@@ -107,8 +107,7 @@ export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],appro
     const cover=covers[0]??photos[0]??venueCover;
     if(!placeId&&!cover)return item;
     if(!cover)return {...item,place_id:placeId};
-    return {...item,...(placeId?{place_id:placeId}:{}),cover_media:cover,
-      ...(photos.length?{gallery_media:photos}:{})};
+    return {...item,...(placeId?{place_id:placeId,gallery_media:photos}:{}),cover_media:cover};
   });
 }
 const inlineIcon=(role)=>{
