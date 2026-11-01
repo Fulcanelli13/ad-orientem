@@ -99,6 +99,29 @@ const noInventedLogo=renderDirectoryIdentityFallback({
 assert.match(noInventedLogo,/data-visual-kind="named"/);
 assert.doesNotMatch(noInventedLogo,/CMRI_emblem\.(png|svg)/);
 assert.match(renderDirectoryIdentityFallback({community_id:"DIOCESAN",eyebrow:"Diocesan"}),/data-visual-kind="neutral"/);
+// R03: known source-labelled institutes display their correct readable short
+// names when exact crest rights are held. These are text-only monograms, never
+// a copied coat of arms, and never inferred from a generic source label.
+for(const [code,label,mark] of [
+  ["CANONS_ST_JOHN_CANTIUS","Canons of St John Cantius","SJC"],
+  ["SJM","Servi Jesu et Mariae","SJM"],
+  ["CMRI","Congregation of Mary Immaculate Queen","CMRI"],
+  ["FSVF","Fraternity of Saint Vincent Ferrer","FSVF"],
+]){
+  assert.equal(massInstitutionEmblem(code),null,"Uncleared original insignia must not be rendered for "+code);
+  for(const language of ["en","fr"]){
+    for(const variant of ["card","preview","detail"]){
+      const html=renderDirectoryIdentityFallback({community_id:code,eyebrow:label},language,variant);
+      assert.match(html,/data-visual-kind="named"/);
+      assert.ok(html.includes('data-mark-length="'+String(mark.length)+'"'));
+      assert.ok(html.includes('>'+mark+'</span>'),"Correct source-monogram for "+code);
+      assert.doesNotMatch(html,/<img\b/,"Never disguise uncleared original artwork as a permitted logo");
+      assert.ok(html.includes(label),"Original named source must stay visible");
+    }
+  }
+}
+assert.match(renderDirectoryIdentityFallback({community_id:"OTHER",eyebrow:"Canons of St John Cantius"}),/>CJ<\/span>/,
+ "Without exact source ownership, retain generic source-derived initials");
 // A cross-origin emblem failure must replace the large graphic with its actual
 // named institute initials, not leave a broken image or invent a new crest.
 const fsspFallback=renderDirectoryIdentityFallback({community_id:"FSSP",eyebrow:"FSSP"},"en","card");
