@@ -74,7 +74,7 @@ import {rosaryR2PilotEnabled,applyRosaryR2Pilot} from "./rosary-r2-pilot.js";
 import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENINGS, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
-import {chapletF07PilotEnabled,renderMercyF07Crown,mercyF07RoleMarkup} from "./chaplet-f07-pilot.js";
+import {chapletF07PilotEnabled,chapletF07VariantsEnabled,renderMercyF07Crown,mercyF07RoleMarkup} from "./chaplet-f07-pilot.js";
 import {renderF07FiveWounds,renderF07PreciousBlood,renderF07LittleCrown} from "./chaplet-f07-variants.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -113,6 +113,7 @@ const STORE_KEY='ao.pray.v435930';
 const ROOT_ID='aoPray435930';
 const PRAYER_READER_PILOT_ENABLED=readerPilotEnabled(window);
 const CHAPLET_F07_PILOT_ENABLED=chapletF07PilotEnabled(window);
+const CHAPLET_F07_VARIANTS_ENABLED=chapletF07VariantsEnabled(window);
 let PILOT_LORETO_GROUP=false;
 // The pilot changes presentation only. Direct homepage prayer routes remain immediate.
 const PRAYER_PILOT_ENABLED=prayerPilotEnabled(window);
@@ -541,7 +542,7 @@ const CLAUDE_CHOIR_PREF={inline:false,language:null};
 function head(title,sub=''){
  const settings=view==='angelus'&&!(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY)?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
- const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin&&!CHAPLET_F07_PILOT_ENABLED)
+ const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin&&!CHAPLET_F07_VARIANTS_ENABLED)
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
   :'';
  const holyId=view==='library'?LIB?.open:view==='prayerOnly'?prayerId:null;
@@ -3039,7 +3040,7 @@ function renderPreciousBlood(){
   '<button type="button" data-p435930-blood-mystery="'+i+'" '+
    (s.phase===i+1?'aria-current="step"':'')+' aria-label="'+esc(fr?m.fr:m.en)+'" title="'+esc(fr?m.fr:m.en)+'">'+
    '<span aria-hidden="true">'+String(i+1)+'</span>'+
-   (CHAPLET_F07_PILOT_ENABLED?'<strong class="aoF07BloodStepName">'+esc(fr?m.fr:m.en)+'</strong>':'')+
+   (CHAPLET_F07_VARIANTS_ENABLED?'<strong class="aoF07BloodStepName">'+esc(fr?m.fr:m.en)+'</strong>':'')+
    '</button>').join('');
  const nav='<nav class="aoPreciousBloodRail" aria-label="'+esc(L("Seven mysteries","Sept mystères"))+'">'+steps+'</nav>';
  let contents='';
@@ -3061,19 +3062,19 @@ function renderPreciousBlood(){
    :kind==="gloria"?L("Glory Be","Gloire au Père"):L("Historical response","Répons historique");
   const hasEngMeditation=Boolean(mystery.meditationEn);
   const meditation=hasEngMeditation?'<details class="aoPreciousBloodMeditation" '+(s.showMeditation?'open':'')+
-   '><summary>'+esc(CHAPLET_F07_PILOT_ENABLED?L("ⓘ Historical meditation · 1910","ⓘ Méditation historique · 1910"):
+   '><summary>'+esc(CHAPLET_F07_VARIANTS_ENABLED?L("ⓘ Historical meditation · 1910","ⓘ Méditation historique · 1910"):
    L("Read the 1910 meditation (historical English)","Méditation de 1910 (anglais historique)"))+
    '</summary><p lang="en">'+esc(mystery.meditationEn)+'</p></details>':'';
   const prayerNote=kind==='versicle'
    ?'<small class="aoPreciousBloodLang">'+esc(prayer.language==='la'?L("Original Latin","Latin original"):L("Historical English","Anglais historique"))+'</small>':'';
   contents='<header><small>'+esc(L("MYSTERY","MYSTÈRE"))+' '+s.phase+' / 7</small>'+
    '<h2>'+esc(mystery.title)+'</h2><p>'+esc(L("Five Our Fathers for the first six mysteries; three for the seventh.","Cinq Notre Père pour les six premiers mystères ; trois pour le dernier."))+'</p></header>'+
-   (CHAPLET_F07_PILOT_ENABLED?'':meditation)+
+   (CHAPLET_F07_VARIANTS_ENABLED?'':meditation)+
    '<article class="aoPreciousBloodCard" aria-label="'+esc(caption)+'">'+
    '<div class="aoPreciousBloodPrayerHead"><h3>'+esc(caption)+'</h3>'+prayerNote+'</div>'+
    '<p lang="'+prayer.language+'">'+nl(prayer.text)+'</p>'+
-   '</article>'+ (CHAPLET_F07_PILOT_ENABLED?meditation:'')+
-   (CHAPLET_F07_PILOT_ENABLED?'':'<div class="aoPreciousBloodBeads">'+Array.from({length:count+2},(_,i)=>
+   '</article>'+ (CHAPLET_F07_VARIANTS_ENABLED?meditation:'')+
+   (CHAPLET_F07_VARIANTS_ENABLED?'':'<div class="aoPreciousBloodBeads">'+Array.from({length:count+2},(_,i)=>
     '<span class="'+(i===s.bead?'current ':'')+(i===count?'gloria ':i===count+1?'response ':'')+
     '" title="'+esc(i<count?L("Our Father","Notre Père")+" "+(i+1):i===count?L("Glory Be","Gloire au Père"):L("Response","Répons"))+'"></span>').join('')+'</div>');
  }else{
@@ -3095,14 +3096,14 @@ function renderPreciousBlood(){
   '</article>';
  }
  const finish=s.phase===8;
- const previous=CHAPLET_F07_PILOT_ENABLED?
+ const previous=CHAPLET_F07_VARIANTS_ENABLED?
    '<button type="button" class="aoF07BloodPrevious" data-p435930-blood-prev aria-label="'+
      esc(L("Previous prayer","Prière précédente"))+'" '+(s.phase===0?'disabled':'')+'>‹</button>':
    s.phase>0||s.bead>0?'<button type="button" data-p435930-blood-prev>'+
      esc(L("Previous","Précédent"))+'</button>':'';
- const next='<button type="button" class="'+(CHAPLET_F07_PILOT_ENABLED?'aoF07BloodNext':'primary')+'" '+
+ const next='<button type="button" class="'+(CHAPLET_F07_VARIANTS_ENABLED?'aoF07BloodNext':'primary')+'" '+
  (finish?'data-p435930-blood-finish':'data-p435930-blood-next')+'>'+
- esc(finish?L("Finish","Terminer"):CHAPLET_F07_PILOT_ENABLED?L("Next","Suivant"):L("Continue","Continuer"))+'</button>';
+ esc(finish?L("Finish","Terminer"):CHAPLET_F07_VARIANTS_ENABLED?L("Next","Suivant"):L("Continue","Continuer"))+'</button>';
  const dockLabel=s.phase===0?L("Opening","Ouverture"):s.phase===8?L("Conclusion","Conclusion"):
   L("Shedding","Effusion")+" "+s.phase+" / 7";
  const history='<details class="aoPreciousBloodProvenance"><summary>'+esc(L("Historical form & sources","Forme et sources historiques"))+'</summary>'+
@@ -3113,8 +3114,8 @@ function renderPreciousBlood(){
  source.works.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+
  esc("Raccolta · "+x.edition+" · §"+x.entry)+'</a>').join('')+'</details>';
  return head(name,L("Seven sheddings · thirty-three Our Fathers","Sept effusions · trente-trois Notre Père"))+
- '<main class="aoP435930Body aoPreciousBlood" data-ao-precious-blood-reader '+(CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-variant="precious-blood"':'')+'>'+
- (CHAPLET_F07_PILOT_ENABLED?
+ '<main class="aoP435930Body aoPreciousBlood" data-ao-precious-blood-reader '+(CHAPLET_F07_VARIANTS_ENABLED?'data-ao-f07-variant="precious-blood"':'')+'>'+
+ (CHAPLET_F07_VARIANTS_ENABLED?
   '<div class="aoF07BloodOpeningTop">'+renderF07PreciousBlood(s.phase,s.bead,{french:fr})+
    bloodLanguageMenu+'</div>':
   '<div class="aoPreciousBloodTop"><span>'+esc(L("Step","Étape"))+' '+(s.phase+1)+' / 9</span>'+latin+'</div>'+
@@ -3122,12 +3123,12 @@ function renderPreciousBlood(){
   (s.phase+1)+'" aria-label="'+esc(L("Devotion progress","Progression"))+'"><span style="width:'+
   Math.round((s.phase+1)/9*100)+'%"></span></div>')+
  contents+
- (CHAPLET_F07_PILOT_ENABLED?'<details class="aoF07BloodJump"><summary>'+esc(L('Seven sheddings · choose','Sept effusions · choisir'))+'</summary>'+nav+'</details>':'')+
+ (CHAPLET_F07_VARIANTS_ENABLED?'<details class="aoF07BloodJump"><summary>'+esc(L('Seven sheddings · choose','Sept effusions · choisir'))+'</summary>'+nav+'</details>':'')+
  '<footer class="aoPreciousBloodActions">'+previous+
- (CHAPLET_F07_PILOT_ENABLED?'<output class="aoF07BloodDockCount" aria-label="'+esc(L('Chaplet stage','Étape du chapelet'))+'">'+esc(dockLabel)+'</output>':'')+
+ (CHAPLET_F07_VARIANTS_ENABLED?'<output class="aoF07BloodDockCount" aria-label="'+esc(L('Chaplet stage','Étape du chapelet'))+'">'+esc(dockLabel)+'</output>':'')+
  next+'</footer>'+history+'</main>';
 }
-function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Render:CHAPLET_F07_PILOT_ENABLED?renderF07LittleCrown:null})}
+function renderLittleCrown(){return renderLittleCrownB30({index:LITTLE_CROWN.index,latin:LITTLE_CROWN.latin,french:isFr(),head,L,esc,nl,f07Render:CHAPLET_F07_VARIANTS_ENABLED?renderF07LittleCrown:null})}
 function renderFiveWounds(){
  const index=Math.max(0,Math.min(29,FIVE_WOUNDS.index));FIVE_WOUNDS.index=index;
  const langCode=FIVE_WOUNDS.latin?'la':(isFr()?'fr':'en');
@@ -3155,27 +3156,27 @@ function renderFiveWounds(){
  const nature=step.kind==='gloria'
   ?L('Meditate on this wound. Pray the Glory Be.','Méditez cette plaie. Récitez le Gloire au Père.')
   :L('Offer one Hail Mary in honour of Our Lady of Sorrows.','Récitez un Je vous salue Marie en l’honneur de Notre-Dame des Douleurs.');
- const prev=CHAPLET_F07_PILOT_ENABLED?
+ const prev=CHAPLET_F07_VARIANTS_ENABLED?
   '<button class="aoF07WoundPrevious" type="button" data-p435930-five-prev aria-label="'+
     esc(L('Previous prayer','Prière précédente'))+'" '+(index===0?'disabled':'')+'>‹</button>':
   index>0?'<button type="button" data-p435930-five-prev>'+esc(L('Previous','Précédent'))+'</button>':'';
  const finish=step.isLast;
- const next='<button type="button" class="'+(CHAPLET_F07_PILOT_ENABLED?'aoF07WoundNext':'primary')+'" '+
+ const next='<button type="button" class="'+(CHAPLET_F07_VARIANTS_ENABLED?'aoF07WoundNext':'primary')+'" '+
   (finish?'data-p435930-five-finish':'data-p435930-five-next')+'>'+
-  esc(finish?L('Finish','Terminer'):CHAPLET_F07_PILOT_ENABLED?L('Next','Suivant'):L('Next prayer','Prière suivante'))+'</button>';
+  esc(finish?L('Finish','Terminer'):CHAPLET_F07_VARIANTS_ENABLED?L('Next','Suivant'):L('Next prayer','Prière suivante'))+'</button>';
  const langButton='<button type="button" data-p435930-five-latin aria-pressed="'+String(FIVE_WOUNDS.latin)+
   '" aria-label="'+esc(FIVE_WOUNDS.latin?L('Return to vernacular prayer','Revenir à la prière vernaculaire'):L('Pray in Latin','Prier en latin'))+'">'+
   esc(FIVE_WOUNDS.latin?L('EN / FR','EN / FR'):'LATIN')+'</button>';
  return head(L('Chaplet of the Five Wounds','Chapelet des Cinq Plaies'),L('A meditation on the Passion · five wounds','Méditation de la Passion · cinq plaies'))+
- '<main class="aoP435930Body aoFiveWounds" data-ao-five-wounds-reader '+(CHAPLET_F07_PILOT_ENABLED?'data-ao-f07-variant="five-wounds"':'')+'>'+
+ '<main class="aoP435930Body aoFiveWounds" data-ao-five-wounds-reader '+(CHAPLET_F07_VARIANTS_ENABLED?'data-ao-f07-variant="five-wounds"':'')+'>'+
  '<header><p class="aoFiveWoundsEyebrow">'+esc(L('PASSION · TRADITIONAL CHAPLET','PASSION · CHAPELET TRADITIONNEL'))+
  '</p><h2>'+esc(step.wound)+'</h2><p>'+esc(nature)+'</p></header>'+
- (CHAPLET_F07_PILOT_ENABLED?'':'<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>')+
+ (CHAPLET_F07_VARIANTS_ENABLED?'':'<nav class="aoFiveWoundsRail" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+dots+'</nav>')+
  '<div class="aoFiveWoundsProgress" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="'+
   progress.completed+'" aria-label="'+esc(L('Chaplet progress','Progression du chapelet'))+'"><span style="width:'+
   Math.round(progress.completed/30*100)+'%"></span></div>'+
  '<div class="aoFiveWoundsBeads" aria-label="'+esc(L('Five Glory Bes, then a Hail Mary','Cinq Gloria Patri, puis un Ave Maria'))+'">'+beads+'</div>'+
- (CHAPLET_F07_PILOT_ENABLED?
+ (CHAPLET_F07_VARIANTS_ENABLED?
   '<div class="aoF07FiveWoundsTop">'+renderF07FiveWounds(index,{french:isFr()})+
   '<details class="aoF07ReaderLanguage"><summary aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">Aa</summary>'+
   '<div class="aoF07LanguageOptions" role="group" aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">'+
@@ -3183,11 +3184,11 @@ function renderFiveWounds(){
     esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>'+
   '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav>':'')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
- esc(prayerLabel)+'</small>'+(CHAPLET_F07_PILOT_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
+ esc(prayerLabel)+'</small>'+(CHAPLET_F07_VARIANTS_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
 
  '<footer class="aoFiveWoundsActions">'+prev+
-  (CHAPLET_F07_PILOT_ENABLED?'<output class="aoF07WoundDockCount" aria-label="'+esc(L('Chaplet position','Position dans le chapelet'))+'">'+(index+1)+' / 30</output>':'')+
+  (CHAPLET_F07_VARIANTS_ENABLED?'<output class="aoF07WoundDockCount" aria-label="'+esc(L('Chaplet position','Position dans le chapelet'))+'">'+(index+1)+' / 30</output>':'')+
   next+'</footer>'+
  '<details class="aoFiveWoundsSource"><summary>'+esc(L('Historical form & sources','Forme historique et sources'))+
  '</summary><p>'+esc(L('Five groups of five Glory Bes; after each group one Hail Mary in honour of Our Lady of Sorrows. This is a private devotional chaplet, not the Stations of the Cross.',
@@ -3370,7 +3371,7 @@ function installLibraryParagraphFocus(m,id){
  });
 }
 function reconcileF07ApprovedMenus(m){
- if(!CHAPLET_F07_PILOT_ENABLED||!['mercy','fiveWounds','preciousBlood','littleCrown'].includes(view))return;
+ if(!(view==='mercy'?CHAPLET_F07_PILOT_ENABLED:CHAPLET_F07_VARIANTS_ENABLED)||!['mercy','fiveWounds','preciousBlood','littleCrown'].includes(view))return;
  const owner=m.querySelector('.aoMercyReader,.aoFiveWounds,.aoPreciousBlood,.aoLittleCrown');
  if(!owner)return;
  // Move the exact existing source node. Never duplicate prayer or metadata.
@@ -3787,7 +3788,7 @@ function onClick(e){
  }
  // A chaplet-specific extension leaves the historic four-reader language
  // handler above byte-for-byte intact for the established public/pray tests.
- if(CHAPLET_F07_PILOT_ENABLED&&view==='fiveWounds'&&b.hasAttribute('data-p435930-five-language')){
+ if(CHAPLET_F07_VARIANTS_ENABLED&&view==='fiveWounds'&&b.hasAttribute('data-p435930-five-language')){
   const choice=b.dataset.p435930FiveLanguage;
   if(!['en','fr','la'].includes(choice))return;
   if(choice==='la')FIVE_WOUNDS.latin=true;
@@ -3811,7 +3812,7 @@ function onClick(e){
   return;
  }
  if(view==='preciousBlood'){
-   if(CHAPLET_F07_PILOT_ENABLED&&b.hasAttribute('data-p435930-blood-language')){
+   if(CHAPLET_F07_VARIANTS_ENABLED&&b.hasAttribute('data-p435930-blood-language')){
      const code=b.dataset.p435930BloodLanguage;
      if(!['en','fr','la'].includes(code))return;
      if(code==='la')PRECIOUS_BLOOD.latin=true;
@@ -3853,7 +3854,7 @@ function onClick(e){
  if(view==='littleCrown'){
    // F07 c1's Aa menu only changes the original session language or Latin
    // flag. The canonical bead cursor and source prayers are untouched.
-   if(CHAPLET_F07_PILOT_ENABLED&&b.hasAttribute('data-p435930-crown-language')){
+   if(CHAPLET_F07_VARIANTS_ENABLED&&b.hasAttribute('data-p435930-crown-language')){
      const choice=b.dataset.p435930CrownLanguage;
      if(!['en','fr','la'].includes(choice))return;
      if(choice==='la')LITTLE_CROWN.latin=true;
