@@ -476,7 +476,242 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M26_961_COMPLETE_PRINT_AND_SOURCE_STRUCTURE",
+        "printedWitness": "Original Solesmes 1961 Graduale Romanum, pages 29*–30*",
+        "originalFacsimile": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "visualInspection": "ALL_ORIGINAL_PRINTED_PAGES_AND_PRINTED_TEXT_BOUNDARIES_INSPECTED",
+        "completeGabcSectionsCaptured": 18,
+        "segmentationDefinition": "EIGHTEEN_DOUBLE_BAR_TEXT_CLAUSES",
+        "phraseBoundaryNote": "Original printed 29* ends inside the first Qui tollis peccata mundi, not at a GABC (::) bar. The eleison/miserere segment continues and all final clauses including Amen finish on p.30*.",
+        "sourceGabcNoteGroupsCount": 207,
+        "printedScoreTextualStructure": "ALL_NAMED_CLAUSES_LOCATED_IN_ORIGINAL_PRINT",
+        "printedStaffPitchParity": "NOT_CERTIFIED",
+        "printedNeumeShapeParity": "NOT_CERTIFIED",
+        "printedSyllableUnderlayParity": "NOT_CERTIFIED",
+        "printedRhythmicSignsParity": "NOT_CERTIFIED",
+        "sourceHistoryAndMusicalRiskChecks": [
+          "One GABC full-bar clause crosses a printed page boundary; an assumed 29*/30* double-bar split would be false.",
+          "Full liturgical Gloria text includes the two Qui tollis clauses, Qui sedes, Quoniam and Cum Sancto Spiritu.",
+          "A final two-syllable Amen with extended melisma must be checked note-by-note before score approval."
+        ],
+        "sourceAnchorFragments": [
+          "GLó(h')ri(h)a(f')",
+          "Qui(d') tol(e)lis(f') pec(h)cá(i')ta(h) mun(ij/kj)di,",
+          "Cum(h') San(h)cto(fvED)",
+          "A(gxhvFE'DgvFE)men.(e[ll:1]d..)"
+        ],
+        "musicalSections": [
+          {
+            "ordinal": 1,
+            "clause": "Gloria in excelsis Deo",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "(c3) GLó(h')ri(h)a(f') in(e) ex(d)cél(e')sis(f) De(e.)o.(d.) (::)",
+            "gabcNoteGroupCount": 10,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 2,
+            "clause": "Et in terra pax hominibus bonae voluntatis",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Et(h') in(h) ter(f')ra(e) pax(d') ho(e)mí(f')ni(e)bus(d.) (;) bo(d')nae(e) vo(f')lun(h)tá(i.)tis.(h.) (::)",
+            "gabcNoteGroupCount": 16,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 3,
+            "clause": "Laudamus te",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Lau(k)dá(jvIH)mus(i.) te.(h.) (::)",
+            "gabcNoteGroupCount": 4,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 4,
+            "clause": "Benedicimus te",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Be(k')ne(j)dí(i')ci(h)mus(ij) te.(ih..) (::)",
+            "gabcNoteGroupCount": 6,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 5,
+            "clause": "Adoramus te",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Ad(h')o(h)rá(fvED)mus(ef) te.(d.) (::)",
+            "gabcNoteGroupCount": 5,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 6,
+            "clause": "Glorificamus te",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Glo(d')ri(e)fi(f)cá(h')mus(i) te.(h.) (::)",
+            "gabcNoteGroupCount": 6,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 7,
+            "clause": "Gratias agimus tibi propter magnam gloriam tuam",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Grá(h')ti(i)as(j) á(k')gi(j)mus(ij) ti(i.)bi(h.) (;) pro(h')pter(h) ma(f')gnam(e) gló(d')ri(e)am(f) tu(e.)am.(d.) (::)",
+            "gabcNoteGroupCount": 18,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 8,
+            "clause": "Domine Deus Rex caelestis",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Dó(h')mi(h)ne(f') De(e)us,(d.) Rex(e') cae(f)lé(e.)stis,(d.) (;) De(d)us(ef) Pa(h)ter(ih) o(ij)mní(kj)pot(ih)ens.(h.) (::)",
+            "gabcNoteGroupCount": 18,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 9,
+            "clause": "Domine Fili unigenite Jesu Christe",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Dó(h')mi(h)ne(f') Fi(e)li(d') u(e)ni(f)gé(h')ni(i)te(h.) (,) Je(ij)su(kj) Chri(i.)ste.(h.) (::)",
+            "gabcNoteGroupCount": 15,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 10,
+            "clause": "Domine Deus Agnus Dei Filius Patris",
+            "printedFolio": "29*",
+            "gabcVerbatimSection": "Dó(k')mi(j)ne(i') De(j)us,(ih) A(i')gnus(j) De(i.)i,(h.) (;) Fí(h')li(h)us(fvED) Pa(efe)tris.(d.) (::)",
+            "gabcNoteGroupCount": 15,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 11,
+            "clause": "Qui tollis peccata mundi miserere nobis",
+            "printedFolio": "29*→30*",
+            "gabcVerbatimSection": "Qui(d') tol(e)lis(f') pec(h)cá(i')ta(h) mun(ij/kj)di,(ih..) (;) mi(h')se(h)ré(fvED)re(ef) no(e.)bis.(d.) (::)",
+            "gabcNoteGroupCount": 15,
+            "isPageCrossing": true,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 12,
+            "clause": "Qui tollis peccata mundi suscipe deprecationem nostram",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Qui(k') tol(j)lis(i') pec(h)cá(i')ta(j) mun(i.)di,(h.) (;) sús(h')ci(h)pe(f.) de(e)pre(d')ca(e)ti(f')ó(h)nem(ih) no(ij/kj)stram.(ih..) (::)",
+            "gabcNoteGroupCount": 20,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 13,
+            "clause": "Qui sedes ad dexteram Patris miserere nobis",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Qui(h') se(h)des(f') ad(e) déx(d')te(e)ram(f) Pa(e.)tris,(d.) (;) mi(d')se(e)ré(f')re(h) no(i.)bis.(h.) (::)",
+            "gabcNoteGroupCount": 16,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 14,
+            "clause": "Quoniam tu solus Sanctus",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Quó(k')ni(j)am(i') tu(h) so(i')lus(j) san(i.)ctus.(h.) (::)",
+            "gabcNoteGroupCount": 8,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 15,
+            "clause": "Tu solus Dominus",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Tu(k') so(j)lus(ih) Dó(ij)mi(ih)nus.(h.) (::)",
+            "gabcNoteGroupCount": 6,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 16,
+            "clause": "Tu solus Altissimus Jesu Christe",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Tu(h) so(h')lus(f) Al(e[ll:1]d)tís(ef)si(h)mus,(ih..) (,) Je(ij)su(kj) Chri(i.)ste.(h.) (::)",
+            "gabcNoteGroupCount": 12,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 17,
+            "clause": "Cum Sancto Spiritu in gloria Dei Patris",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Cum(h') San(h)cto(fvED) Spí(ef)ri(e)tu,(d.) (;) in(d') gló(e)ri(f')a(h) De(i')i(h) Pa(ij/kj)tris.(ih..) (::)",
+            "gabcNoteGroupCount": 15,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 18,
+            "clause": "Amen",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "A(gxhvFE'DgvFE)men.(e[ll:1]d..) (::)",
+            "gabcNoteGroupCount": 2,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          }
+        ],
+        "scoreEditorialApproval": false,
+        "publicScore": false,
+        "audioApproved": false,
+        "remainingActions": [
+          "Compare every printed pitch/neume and syllable with the GABC notation (not merely its text or punctuation).",
+          "Log exact printed staff/system and syllable for each discrepancy, with an explicit editorial disposition.",
+          "Check all rhythmic/episema/ictus details against 1961 print before enabling any public score.",
+          "Confirm permitted 1962 selection/use and the community Schola's actual setting independently."
+        ]
+      }
     },
     {
       "gregobaseId": 749,
@@ -520,7 +755,254 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M26_749_COMPLETE_PRINT_AND_SOURCE_STRUCTURE",
+        "printedWitness": "Original Solesmes 1961 Graduale Romanum, pages 64*–65*–66*",
+        "originalFacsimile": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "visualInspection": "ALL_ORIGINAL_PRINTED_PAGES_AND_PRINTED_TEXT_BOUNDARIES_INSPECTED",
+        "completeGabcSectionsCaptured": 19,
+        "segmentationDefinition": "NINETEEN_DOUBLE_BAR_TEXT_CLAUSES",
+        "phraseBoundaryNote": "Original printed p.64* includes end of prior Credo II before the Credo III heading, then first four Credo III clauses. Printed p.65* continues Deum de Deo through Et ascendit; p.66* starts Et iterum venturus through the concluding Amen.",
+        "sourceGabcNoteGroupsCount": 393,
+        "printedScoreTextualStructure": "ALL_NAMED_CLAUSES_LOCATED_IN_ORIGINAL_PRINT",
+        "printedStaffPitchParity": "NOT_CERTIFIED",
+        "printedNeumeShapeParity": "NOT_CERTIFIED",
+        "printedSyllableUnderlayParity": "NOT_CERTIFIED",
+        "printedRhythmicSignsParity": "NOT_CERTIFIED",
+        "sourceHistoryAndMusicalRiskChecks": [
+          "Do not misclassify Credo II at the top of p.64* as the opening of Credo III.",
+          "Et incarnatus est, ex Maria Virgine and Et homo factus est have source-owned syllable underlay requiring exact inspection.",
+          "Et in Spiritum Sanctum includes Filioque; verify the printed melodic phrase and any 1962 liturgical posture independently.",
+          "Final Amen has atypically long ornament with special ll spacing tokens; pitch, mora and staff signs remain unverified."
+        ],
+        "sourceAnchorFragments": [
+          "CRe(h)do(f) in(d) u(gxg)num(f)",
+          "Et(d) ho(f')mo(f) fa(gxg')ctus(g) est.(h.)",
+          "Fi(gxg')li(e)ó(f')que(g)",
+          "A(hvFDee[ll:1]d.0gxkvJHiih//fg/hd/ee[ll:1]d)men.(d.)"
+        ],
+        "musicalSections": [
+          {
+            "ordinal": 1,
+            "clause": "Credo in unum Deum",
+            "printedFolio": "64*",
+            "gabcVerbatimSection": "(c3) CRe(h)do(f) in(d) u(gxg)num(f) De(fvED)um,(d.) (::)",
+            "gabcNoteGroupCount": 8,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 2,
+            "clause": "Patrem omnipotentem factorem caeli et terrae",
+            "printedFolio": "64*",
+            "gabcVerbatimSection": "Pa(gxfg)trem(f') o(h)mni(f')pot(d)én(e)tem,(d.) (;) fa(d)ctó(f')rem(gxg) cae(h')li(h) et(h') ter(i)rae,(h.) (;) vi(h')si(h)bí(i')li(i)um(k) ó(jhi)mni(i)um,(h.) (;) et(h') in(f)vi(d')si(gxg)bí(fde)li(e)um.(d.) (::)",
+            "gabcNoteGroupCount": 33,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 3,
+            "clause": "Et in unum Dominum Jesum Christum",
+            "printedFolio": "64*",
+            "gabcVerbatimSection": "Et(h') in(h) u(f')num(f) Dó(d')mi(d)num(e.) Je(f)sum(gxg') Chri(e)stum,(d.) (,) Fí(f')li(f)um(f') De(gxg)i(e') u(h)ni(h)gé(i')ni(i)tum.(h.) (::)",
+            "gabcNoteGroupCount": 22,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 4,
+            "clause": "Et ex Patre natum ante omnia saecula",
+            "printedFolio": "64*",
+            "gabcVerbatimSection": "Et(f') ex(e) Pa(gxg')tre(g) na(fde)tum(d.) (,) an(f')te(f) ó(h')mni(i)a(h) saé(fde)cu(e)la.(d.) (::)",
+            "gabcNoteGroupCount": 15,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 5,
+            "clause": "Deum de Deo lumen de lumine",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "De(h')um(h) de(h') De(f)o,(d.) (,) lu(d)men(e') de(e) lú(f')mi(e)ne,(d.) (,) De(h)um(h') ve(i)rum(h.) de(k') De(j)o(h') ve(i)ro.(h.) (::)",
+            "gabcNoteGroupCount": 22,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 6,
+            "clause": "Genitum non factum consubstantialem Patri",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "Gé(f')ni(f)tum,(e.) non(gxg) fa(fde)ctum,(d.) (,) con(f)sub(f')stan(h)ti(h')á(i)lem(h') Pa(gxg)tri :(h.) (;) per(i) quem(k') ó(j)mni(h')a(h) fa(i')cta(gxg) sunt.(h.) (::)",
+            "gabcNoteGroupCount": 24,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 7,
+            "clause": "Qui propter nos homines descendit de caelis",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "Qui(h) pro(h)pter(f') nos(f) hó(h')mi(i)nes,(h.) (,) et(d) pro(d')pter(d) no(d)stram(e') sa(f)lú(gxg)tem(h.) (,) de(i)scén(j')dit(k) de(jh) cae(i)lis.(h.) (::)",
+            "gabcNoteGroupCount": 23,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 8,
+            "clause": "Et incarnatus est; Et homo factus est",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "Et(h) in(f')car(f)ná(d')tus(e) est(d.) de(f) Spí(f')ri(e)tu(f) San(hi)cto(h.) (,) ex(i') Ma(k)rí(j')a(h) Vír(i')gi(i)ne :(h.) (;) Et(d) ho(f')mo(f) fa(gxg')ctus(g) est.(h.) (::)",
+            "gabcNoteGroupCount": 27,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 9,
+            "clause": "Crucifixus etiam pro nobis",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "Cru(f)ci(gxeg)fí(fde)xus(d') ét(d)i(e)am(f') pro(gxg) no(hi)bis :(h.) (,) sub(h) Pón(h')ti(h)o(i') Pi(gxg)lá(h)to(f.) (,) pas(h')sus,(f) et(d') se(gxg)púl(fde)tus(e) est.(d.) (::)",
+            "gabcNoteGroupCount": 26,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 10,
+            "clause": "Et resurrexit tertia die",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "Et(h) re(h)sur(h')ré(i)xit(h') tér(h)ti(f')a(gxg) di(h)e,(h.) (,) se(d')cún(e)dum(f') Scri(gxg)ptú(e.)ras.(d.) (::)",
+            "gabcNoteGroupCount": 17,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 11,
+            "clause": "Et ascendit in caelum sedet ad dexteram Patris",
+            "printedFolio": "65*",
+            "gabcVerbatimSection": "Et(d') a(f)scén(hi)dit(j') in(k) cae(jhi)lum :(h.) (;) se(h)det(h') ad(h) déx(f')te(f)ram(gxg) Pa(fde)tris.(d.) (::)",
+            "gabcNoteGroupCount": 16,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 12,
+            "clause": "Et iterum venturus est cum gloria",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Et(h) í(h')te(h)rum(f') ven(f)tú(d')rus(d) est(e') cum(e) gló(f')ri(e)a,(d.) (,) ju(h)di(h')cá(i)re(h') vi(k)vos(j') et(h) mór(i')tu(i)os :(h.) (;) cu(h)jus(h') re(f)gni(d') non(gxg) e(f')rit(f) fi(e.)nis.(d.) (::)",
+            "gabcNoteGroupCount": 33,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 13,
+            "clause": "Et in Spiritum Sanctum Dominum et vivificantem; Filioque",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Et(k') in(k) Spí(i')ri(i)tum(k') San(h)ctum,(h.) Dó(i')mi(i)num,(h.) (,) et(d) vi(f')vi(h)fi(h')cán(i)tem :(h.) (;) qui(h') ex(gxg) Pa(h')tre(f) Fi(gxg')li(e)ó(f')que(g) pro(fd)cé(e)dit.(d.) (::)",
+            "gabcNoteGroupCount": 29,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 14,
+            "clause": "Qui cum Patre et Filio simul adoratur",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Qui(d') cum(f) Pa(h)tre(h') et(f) Fí(gxg')li(f)o(h.) (,) si(i)mul(h') ad(k)o(j')rá(i)tur,(h.) (,) et(d) con(f')glo(f)ri(h')fi(h)cá(i)tur :(h.) (;) qui(h') lo(h)cú(f')tus(f) est(d') per(gxg) Pro(fd)phé(e)tas.(d.) (::)",
+            "gabcNoteGroupCount": 33,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 15,
+            "clause": "Et unam sanctam catholicam et apostolicam Ecclesiam",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Et(h') u(h)nam(h.) san(f)ctam(f.) ca(d)thó(e')li(e)cam(d.) (,) et(h) a(h')po(h)stó(h')li(h)cam(i') Ec(gxg)clé(h')si(h)am.(f.) (::)",
+            "gabcNoteGroupCount": 20,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 16,
+            "clause": "Confiteor unum baptisma",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Con(h)fí(i')te(j)or(k') u(i)num(k) ba(jh)ptí(i)sma(h.) (,) in(f') re(e)mis(f')si(h)ó(gxg')nem(f) pec(e')ca(f)tó(e.)rum.(d.) (::)",
+            "gabcNoteGroupCount": 20,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 17,
+            "clause": "Et expecto resurrectionem mortuorum",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Et(h) ex(h')spé(f)cto(d.) re(h)sur(h')re(h)cti(h')ó(i)nem(h') mor(gxg)tu(f')ó(g)rum.(f.) (::)",
+            "gabcNoteGroupCount": 14,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 18,
+            "clause": "Et vitam venturi saeculi",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "Et(k) vi(ji)tam(h') ven(f)tú(i')ri(h) saé(f')cu(gxg)li.(h.) (::)",
+            "gabcNoteGroupCount": 9,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 19,
+            "clause": "Amen",
+            "printedFolio": "66*",
+            "gabcVerbatimSection": "A(hvFDee[ll:1]d.0gxkvJHiih//fg/hd/ee[ll:1]d)men.(d.) (::)",
+            "gabcNoteGroupCount": 2,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          }
+        ],
+        "scoreEditorialApproval": false,
+        "publicScore": false,
+        "audioApproved": false,
+        "remainingActions": [
+          "Compare every printed pitch/neume and syllable with the GABC notation (not merely its text or punctuation).",
+          "Log exact printed staff/system and syllable for each discrepancy, with an explicit editorial disposition.",
+          "Check all rhythmic/episema/ictus details against 1961 print before enabling any public score.",
+          "Confirm permitted 1962 selection/use and the community Schola's actual setting independently."
+        ]
+      }
     },
     {
       "gregobaseId": 1384,
@@ -561,7 +1043,101 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M26_1384_COMPLETE_PRINT_AND_SOURCE_STRUCTURE",
+        "printedWitness": "Original Solesmes 1961 Graduale Romanum, pages 30*–31*",
+        "originalFacsimile": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "visualInspection": "ALL_ORIGINAL_PRINTED_PAGES_AND_PRINTED_TEXT_BOUNDARIES_INSPECTED",
+        "completeGabcSectionsCaptured": 5,
+        "segmentationDefinition": "FIVE_CLAUSE_COMPOSITE_SINGLE_CHANT",
+        "phraseBoundaryNote": "The complete opening through first Hosanna is on 30*; Benedictus and second Hosanna are printed on 31*. One single GABC score, not separate Benedictus audio or Mass card.",
+        "sourceGabcNoteGroupsCount": 63,
+        "printedScoreTextualStructure": "ALL_NAMED_CLAUSES_LOCATED_IN_ORIGINAL_PRINT",
+        "printedStaffPitchParity": "NOT_CERTIFIED",
+        "printedNeumeShapeParity": "NOT_CERTIFIED",
+        "printedSyllableUnderlayParity": "NOT_CERTIFIED",
+        "printedRhythmicSignsParity": "NOT_CERTIFIED",
+        "sourceHistoryAndMusicalRiskChecks": [
+          "Three differently notated Sanctus invocations are represented in first musical clause.",
+          "First Hosanna and the second Hosanna have differing source-note groups, not a mechanically copied refrain.",
+          "The Benedictus runs directly into the second Hosanna after a short colon bar; verify those brackets without splitting the canonical card.",
+          "Source-history note-sign change affecting the third Sanctus needs detailed printed comparison."
+        ],
+        "sourceAnchorFragments": [
+          "SAn(fg/hf/ggf~)ctus",
+          "San(fe~)ctus",
+          "San(fghjhhvG~F~)ctus",
+          "<nlba>Be(f)ne(hj)dí(jvHG'j)ctus",
+          "Ho(j)sán(ixjkkvJH'i)na(gf)"
+        ],
+        "musicalSections": [
+          {
+            "ordinal": 1,
+            "clause": "Sanctus triple invocation · Dominus Deus Sabaoth",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "(c4) SAn(fg/hf/ggf~)ctus,(f.) *(,) San(fe~)ctus,(dc..) (,) San(fghjhhvG~F~)ctus(gf..) (;) Dó(ixfh/jij)mi(ih)nus(h.) <nlba>De(j)us</nlba>(ixih) Sá(gf/ghffvD'C fghjhhvGF)ba(gf)oth.(f.) (:)",
+            "gabcNoteGroupCount": 18,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 2,
+            "clause": "Pleni sunt caeli et terra gloria tua",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Ple(f)ni(hj) sunt(j.) cae(hgj)li(j.) et(jk~) <nlba>ter(ixkvJI'j)ra</nlba>(ih..) (,) gló(j)ri(ixih)a(gh) tu(hvGF)a.(f.) (:)",
+            "gabcNoteGroupCount": 14,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 3,
+            "clause": "Hosanna in excelsis · first",
+            "printedFolio": "30*",
+            "gabcVerbatimSection": "Ho(f)sán(fe~)na(dc) in(f) ex(gh)cél(h/jhhvG~F~)sis.(gf..) (:)",
+            "gabcNoteGroupCount": 7,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 4,
+            "clause": "Benedictus qui venit in nomine Domini",
+            "printedFolio": "31*",
+            "gabcVerbatimSection": "<nlba>Be(f)ne(hj)dí(jvHG'j)ctus</nlba>(j.) qui(jk) ve(ixkvJI'j)nit(ih..) (,) in(h') nó(h)mi(f')ne(h) Dó(jjk)mi(j)ni.(j.) (:)",
+            "gabcNoteGroupCount": 15,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 5,
+            "clause": "Hosanna in excelsis · second",
+            "printedFolio": "31*",
+            "gabcVerbatimSection": "Ho(j)sán(ixjkkvJH'i)na(gf) (,) in(gh) ex(fe)cél(d_c fghjhhvG~F~)sis.(gf..) (::) (:)",
+            "gabcNoteGroupCount": 9,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          }
+        ],
+        "scoreEditorialApproval": false,
+        "publicScore": false,
+        "audioApproved": false,
+        "remainingActions": [
+          "Compare every printed pitch/neume and syllable with the GABC notation (not merely its text or punctuation).",
+          "Log exact printed staff/system and syllable for each discrepancy, with an explicit editorial disposition.",
+          "Check all rhythmic/episema/ictus details against 1961 print before enabling any public score.",
+          "Confirm permitted 1962 selection/use and the community Schola's actual setting independently."
+        ]
+      }
     },
     {
       "gregobaseId": 2760,
@@ -600,7 +1176,76 @@
       "musicalDiscrepancyStatus": "NOT_YET_FULLY_CHECKED",
       "editorialApproval": false,
       "publicScore": false,
-      "recordingApproved": false
+      "recordingApproved": false,
+      "phraseCollation": {
+        "auditId": "M26_2760_COMPLETE_PRINT_AND_SOURCE_STRUCTURE",
+        "printedWitness": "Original Solesmes 1961 Graduale Romanum, pages 31*",
+        "originalFacsimile": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "visualInspection": "ALL_ORIGINAL_PRINTED_PAGES_AND_PRINTED_TEXT_BOUNDARIES_INSPECTED",
+        "completeGabcSectionsCaptured": 3,
+        "segmentationDefinition": "THREE_DISTINCT_INVOCATIONS",
+        "phraseBoundaryNote": "Entire score and all three contrasting invocations occupy printed p.31*; first and third opening variants agree, second differs.",
+        "sourceGabcNoteGroupsCount": 61,
+        "printedScoreTextualStructure": "ALL_NAMED_CLAUSES_LOCATED_IN_ORIGINAL_PRINT",
+        "printedStaffPitchParity": "NOT_CERTIFIED",
+        "printedNeumeShapeParity": "NOT_CERTIFIED",
+        "printedSyllableUnderlayParity": "NOT_CERTIFIED",
+        "printedRhythmicSignsParity": "NOT_CERTIFIED",
+        "sourceHistoryAndMusicalRiskChecks": [
+          "The first and third Agnus openings reuse the same melodic formula; second invokes a higher figure.",
+          "The two miserere nobis endings match each other in source GABC; the last response is instead dona nobis pacem.",
+          "All three Agnus invocations carry explicit episema/oh markup; do not assert parity from the printed phrase labels."
+        ],
+        "sourceAnchorFragments": [
+          "A(fggf)gnus(gh)",
+          "A(f)gnus(hj)",
+          "do(f)na(gh) no(h)bis(ixgiH'Gh) pa(f_[oh:h]g_[oh:h]f_[oh:h])cem.(f.)"
+        ],
+        "musicalSections": [
+          {
+            "ordinal": 1,
+            "clause": "Agnus Dei · first miserere nobis",
+            "printedFolio": "31*",
+            "gabcVerbatimSection": "(c4) A(fggf)gnus(gh) De(f_[oh:h]g_[oh:h]f_[oh:h])i,(f.) *(,) qui(f) tol(fd~)lis(dc) pec(d')cá(c)ta(df) mun(f_[oh:h]g_[oh:h]f_[oh:h])di :(f.) (;) mi(f)se(gh)ré(h)re(ixgiH'Gh) no(f_[oh:h]g_[oh:h]f_[oh:h])bis.(f.) (::)",
+            "gabcNoteGroupCount": 21,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 2,
+            "clause": "Agnus Dei · second miserere nobis",
+            "printedFolio": "31*",
+            "gabcVerbatimSection": "A(f)gnus(hj) De(jvHG'j)i,(j.) *(,) qui(j) tol(hgh)lis(f') pec(g)cá(f)ta(gh) mun(f_[oh:h]g_[oh:h]f_[oh:h])di :(f.) (;) mi(f)se(gh)ré(h)re(ixgiH'Gh) no(f_[oh:h]g_[oh:h]f_[oh:h])bis.(f.) (::)",
+            "gabcNoteGroupCount": 20,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          },
+          {
+            "ordinal": 3,
+            "clause": "Agnus Dei · final dona nobis pacem",
+            "printedFolio": "31*",
+            "gabcVerbatimSection": "A(fggf)gnus(gh) De(f_[oh:h]g_[oh:h]f_[oh:h])i,(f.) *(,) qui(f) tol(fd~)lis(dc) pec(d')cá(c)ta(df) mun(f_[oh:h]g_[oh:h]f_[oh:h])di :(f.) (;) do(f)na(gh) no(h)bis(ixgiH'Gh) pa(f_[oh:h]g_[oh:h]f_[oh:h])cem.(f.) (::)",
+            "gabcNoteGroupCount": 20,
+            "isPageCrossing": false,
+            "printTextAndSectionIdentity": "PRINTED_TEXT_LOCATED",
+            "noteGroupByGroupPitchMatch": "NOT_CERTIFIED",
+            "noteShapeAndRhythmicParity": "NOT_CERTIFIED"
+          }
+        ],
+        "scoreEditorialApproval": false,
+        "publicScore": false,
+        "audioApproved": false,
+        "remainingActions": [
+          "Compare every printed pitch/neume and syllable with the GABC notation (not merely its text or punctuation).",
+          "Log exact printed staff/system and syllable for each discrepancy, with an explicit editorial disposition.",
+          "Check all rhythmic/episema/ictus details against 1961 print before enabling any public score.",
+          "Confirm permitted 1962 selection/use and the community Schola's actual setting independently."
+        ]
+      }
     }
   ],
   "closedGates": {
