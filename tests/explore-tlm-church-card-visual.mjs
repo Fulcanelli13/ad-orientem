@@ -170,14 +170,14 @@ try{
    assert.doesNotMatch(await guadalupe.innerText(),/Louisiana Crosse|Louisiana, LA/);
    const verified=guadalupe.locator(".aoTlmVenueVisual > img");
    assert.equal(await verified.count(),1,"P108 must display its pre-approved Place cover, not an institute emblem");
-   assert.match(await verified.getAttribute("src"),/assets\\/approved\\/place-media\\/pf-d2cc2fb4fdbf658d031f42\\.webp$/);
+   assert.match(await verified.getAttribute("src"),/assets\/approved\/place-media\/pf-d2cc2fb4fdbf658d031f42\.webp$/);
    await captures("04-guadalupe-card");
    await guadalupe.click();
    const gPreview=page.locator(".aoExploreQuickPreview");
    await gPreview.waitFor({state:"visible",timeout:12000});
    const gPreviewPhoto=gPreview.locator("img.aoTlmPreviewPhoto");
    assert.equal(await gPreviewPhoto.count(),1,"P108 preview must use the approved shrine photograph");
-   assert.match(await gPreviewPhoto.getAttribute("src"),/pf-d2cc2fb4fdbf658d031f42\\.webp$/);
+   assert.match(await gPreviewPhoto.getAttribute("src"),/pf-d2cc2fb4fdbf658d031f42\.webp$/);
    await page.waitForFunction(()=>{
     const image=document.querySelector(".aoExploreQuickPreview img.aoTlmPreviewPhoto");
     return image?.complete&&image.naturalWidth>0;
@@ -188,7 +188,7 @@ try{
    await gProfile.waitFor({state:"visible",timeout:12000});
    assert.equal(await gProfile.locator(".aoTlmProfileHero img").count(),1,
     "Guadalupe full profile must retain the approved exact Place cover");
-   assert.match(await gProfile.locator(".aoTlmProfileHero img").getAttribute("src"),/pf-d2cc2fb4fdbf658d031f42\\.webp$/);
+   assert.match(await gProfile.locator(".aoTlmProfileHero img").getAttribute("src"),/pf-d2cc2fb4fdbf658d031f42\.webp$/);
    const gBounds=await gProfile.evaluate(el=>({
     x:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,
     scrollWidth:el.scrollWidth,clientWidth:el.clientWidth,
