@@ -42,8 +42,12 @@ export function releaseClearedPrayerArtwork(slotId,{
   // Historical selected titles/artist strings are preserved for audit; verified
   // original-painter metadata is mandatory for any future release. An accepted
   // thematic association does not remove exact-slot scope or photo-source holds.
-  const verifiedTitle=selection?.displayTitle??selection?.title;
-  const verifiedArtist=selection?.displayArtist??selection?.artist;
+  // An explicit null is a verified identity/attribution HOLD, not a reason
+  // to fall back to legacy uploader names or conjectured painters.
+  const verifiedTitle=selection&&Object.hasOwn(selection,'displayTitle')
+    ?selection.displayTitle:selection?.title;
+  const verifiedArtist=selection&&Object.hasOwn(selection,'displayArtist')
+    ?selection.displayArtist:selection?.artist;
   if(!selection || selection.held ||
     selection.exactSlotPublicationHold===true ||
     selection.photoSourceHold===true ||
