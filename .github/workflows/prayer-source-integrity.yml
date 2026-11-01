@@ -4,6 +4,12 @@ on:
   pull_request:
     paths:
       - 'src/pray/**'
+      - 'assets/prayer/user-approved/**'
+      - 'assets/stations/san-polo/**'
+      - 'data/prayer/stations/san-polo-tiepolo-oils-1747/**'
+      - 'tests/prayer-approved-sacred-art-asset-integrity-20261031.mjs'
+      - 'tests/prayer-san-polo-license-ready-assets.mjs'
+      - 'tests/prayer-stations-verified-artwork-release.mjs'
       - 'data/pray/**'
       - 'tests/pray-72-original-print-witness-cohorts.mjs'
       - 'tests/pray-original-print-ten-exception-resolution.mjs'
@@ -40,3 +46,5 @@ jobs:
           node-version: '22'
       - name: Check Prayer source integrity across existing ledgers
         run: node tests/pray-source-integrity-crosslane-gate.mjs && node tests/pray-litany-novena-bulk-witness-20261029.mjs && node tests/pray-72-original-print-witness-cohorts.mjs && node tests/pray-original-print-ten-exception-resolution.mjs && node tests/pray-62-bulk-original-pages.mjs && node tests/pray-72-original-print-visual-proof.mjs && node tests/pray-whole-novena-component-audit.mjs && node tests/pray-original-pdf-text-layer-screen.mjs
+      - name: Verify existing user-selected photo assets and all fourteen San Polo oil originals without publication
+        run: node tests/prayer-approved-sacred-art-asset-integrity-20261031.mjs && node tests/prayer-san-polo-license-ready-assets.mjs && node tests/prayer-stations-verified-artwork-release.mjs
