@@ -157,6 +157,48 @@ function readyEnvelope(slot,value,{language="en"}={}){
   });
 }
 
+// All Saints 1962 inherits the Offertory from its Common. The source
+// payload contains both the normal Alleluia ending AND an alternative
+// "after Septuagesima" direction. On 1 November we display the normal
+// ending; the other variant is an instruction, not additional sung words.
+// The raw authenticated Proper is NOT changed. No approval of chant notes,
+// audio, score editions or reader performance is implied.
+export function selected1962AllSaintsOffertoryReading(proper){
+  const original=proper?.offertory;
+  if(String(proper?.sourcePath??"")!=="Sancti/11-01"||
+    !original||typeof original!=="object"||Array.isArray(original))
+    return original;
+  const latinKey=typeof original.lat==="string"?"lat":
+    typeof original.la==="string"?"la":null;
+  if(!latinKey)return original;
+  const latin=original[latinKey],en=String(original.en??""),
+    fr=String(original.fr??"");
+  const latinAlternative=/\n\(sed post Septuagesimam dicitur\)\npace\.\s*$/u;
+  const englishAlternative=/\n\(sed post Septuagesimam dicitur\)\npeace\.\s*$/u;
+  const frenchAlternative=/\n\(Après la Septuagésime, on omet l[’']alléluia\.\)\s*$/u;
+  // Fail closed unless the exact inherited source, main chant, normal
+  // Alleluia ending AND all three source translations are recognizable.
+  // A changed source edition or missing language cannot be truncated.
+  if(!/^Sap 3:1-3\nJust[oó]rum [aá]nim(?:æ|ae)\s/u.test(latin)||
+    !/allel[uú]ja\.\n\(sed post Septuagesimam dicitur\)\npace\.\s*$/u.test(latin)||
+    !latinAlternative.test(latin)||
+    !englishAlternative.test(en)||
+    !frenchAlternative.test(fr))return original;
+  return Object.freeze({
+    ...original,
+    [latinKey]:latin.replace(latinAlternative,"").trimEnd(),
+    en:en.replace(englishAlternative,"").trimEnd(),
+    fr:fr.replace(frenchAlternative,"").trimEnd(),
+    readerSourceVariant:Object.freeze({
+      sourcePath:"Sancti/11-01",
+      status:"NORMAL_1962_ALL_SAINTS_OFFERTORY_READING_ONLY",
+      alternativeKeptInOriginalProper:true,
+      alternativeAppliesOnlyAfterSeptuagesima:true,
+      publishedMelodyApproval:false,
+    }),
+  });
+}
+
 export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}={}){
   if(!proper || typeof proper!=="object") throw new TypeError("Resolved Proper object required");
   proper=correct1962ProperEditorialReferences(proper);
@@ -174,7 +216,7 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     EPISTLE_OR_LESSON:readyEnvelope("EPISTLE_OR_LESSON",proper.epistle,opts),
     GRADUAL:readyEnvelope("GRADUAL",proper.gradual,opts),
     GOSPEL:readyEnvelope("GOSPEL",proper.gospel,opts),
-    OFFERTORY:readyEnvelope("OFFERTORY",proper.offertory,opts),
+    OFFERTORY:readyEnvelope("OFFERTORY",selected1962AllSaintsOffertoryReading(proper),opts),
     SECRET_SET:readyEnvelope("SECRET_SET",proper.secrets?.length?proper.secrets:proper.secret,opts),
     PREFACE:readyEnvelope("PREFACE",proper.preface,opts),
     COMMUNION:readyEnvelope("COMMUNION",proper.communion,opts),

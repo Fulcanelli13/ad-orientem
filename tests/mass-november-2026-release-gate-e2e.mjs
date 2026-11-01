@@ -71,7 +71,11 @@ try{
      return [language,{ready:slots.ready,missing:slots.missing,
        collects:slots.slots?.COLLECT_SET?.data?.paragraphs?.length??0,
        secrets:slots.slots?.SECRET_SET?.data?.paragraphs?.length??0,
-       postcommunions:slots.slots?.POSTCOMMUNION_SET?.data?.paragraphs?.length??0}];
+       postcommunions:slots.slots?.POSTCOMMUNION_SET?.data?.paragraphs?.length??0,
+       selectedOffertoryLatin:(slots.slots?.OFFERTORY?.data?.paragraphs??[])
+         .map(row=>String(row.latin??"")).join(" ").slice(0,380),
+       selectedOffertoryReading:(slots.slots?.OFFERTORY?.data?.paragraphs??[])
+         .map(row=>String(row.vernacular??"")).join(" ").slice(0,430)}];
     }))
    }];
   }));
@@ -205,9 +209,17 @@ try{
  for(const [form,x] of Object.entries(a.forms)){
   check(x.status==="CERTIFIED",`NOV01_${form}_COMMEMORATION_FORM_UNCERTIFIED`);
   check(x.counts.every(n=>n===2),`NOV01_${form}_2_2_2_ORATIONS_MISSING`);
-  for(const [language,v] of Object.entries(x.languages))
+  for(const [language,v] of Object.entries(x.languages)){
    check(v.ready&&v.collects===2&&v.secrets===2&&v.postcommunions===2,
     `NOV01_${form}_${language}_READER_ORATIONS_NOT_READY`);
+   check(/Just[oó]rum\s+[aá]nim(?:æ|ae)/iu.test(v.selectedOffertoryLatin),
+    `NOV01_${form}_${language}_ACTUAL_OFFERTORY_WRONG_OR_EMPTY`);
+   check(/allel[uú]ja\.\s*$/iu.test(v.selectedOffertoryLatin),
+    `NOV01_${form}_${language}_OFFERTORY_NORMAL_ALLELUIA_MISSING`);
+   check(!/Septuagesim|(?:\n|\r)pace\.\s*$/iu.test(
+     v.selectedOffertoryLatin+" "+v.selectedOffertoryReading),
+    `NOV01_${form}_${language}_OFFERTORY_ALTERNATIVE_PRINTED_AS_CHANT`);
+  }
  }
  check(b.status==="ready"&&b.properStatus==="ready","NOV02_CALENDAR_OR_PROPER_NOT_READY");
  check(b.id==="sancti:11-02m1:1:b","NOV02_WRONG_PRINCIPAL");
