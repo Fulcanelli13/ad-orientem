@@ -631,7 +631,7 @@ try{
      "Existing source-affiliation/grouping filters must be accessible");
    const filterGeometry=await page.evaluate(()=>{
      const root=document.querySelector(".aoExploreSurface:has(.aoExploreTlmFilters)");
-     const strip=root?.querySelector(".aoTlmProviderStrip")?.getBoundingClientRect();
+     const strip=root?.querySelector(".aoTlmProviderStrip .aoFindAffiliations")?.getBoundingClientRect();
      const drawer=root?.querySelector(".aoAtlasTlmExtra")?.getBoundingClientRect();
      return {stripRight:strip?.right,drawerLeft:drawer?.left,
        secondaryInStrip:root?.querySelectorAll(".aoTlmProviderStrip .aoTlmMoreInstitutes").length??-1};
