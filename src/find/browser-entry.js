@@ -1,6 +1,6 @@
 import { filterDirectoryRecords } from "./data-service.js";
 import { createScrollTapGuard } from "../app/scroll-tap-guard.js";
-import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49,tlmSiteEvidenceCounts } from "./preliminary-directory-r49.js";
+import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49,tlmSiteEvidenceCounts,tlmCountryCounts } from "./preliminary-directory-r49.js";
 import { loadExploreDataset } from "./explore-data-service.js";
 import {
   EXPLORE_LENSES,
@@ -168,6 +168,7 @@ export function createFindOwner(win=globalThis){
     saintScope:"profiles",
     day:"ANY",
     affiliations:[],
+    countryCodes:[],
     unaCum:"ANY",
     liturgy:"ANY",
     massType:"ANY",
@@ -505,6 +506,7 @@ export function createFindOwner(win=globalThis){
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
       tlmAvailableCommunities:state.lens==="tlm"?[...new Set((preliminary??[]).map(item=>item.community_id).filter(Boolean))]:[],
       tlmSiteEvidenceCounts:state.lens==="tlm"?tlmSiteEvidenceCounts(preliminary??[]):null,
+      tlmCountryCounts:state.lens==="tlm"?tlmCountryCounts(preliminary??[]):null,
       tlmCelebrationEvidenceCounts:state.lens==="tlm"?tlmCelebrationEvidenceCounts(preliminary??[]):null,
       view:state.view,
       filters:state,
@@ -1630,6 +1632,28 @@ export function createFindOwner(win=globalThis){
       const id=aff.dataset.findAffiliation,index=state.affiliations.indexOf(id);
       if(index>=0)state.affiliations.splice(index,1);else state.affiliations.push(id);
       state.selectedId=null;void paint();return;
+    }
+    const country=target?.closest?.("[data-find-tlm-country]");
+    const resetCountry=target?.closest?.("[data-find-tlm-country-reset]");
+    if((country||resetCountry)&&state.lens==="tlm"){
+      const code=country?.dataset.findTlmCountry;
+      if(country&&!/^[A-Z]{2}$/.test(code))return;
+      // Preserve both disclosures when the worldwide map re-renders.
+      const filtersOpen=Boolean(target.closest(".aoAtlasTlmExtra")?.open);
+      const countryOpen=Boolean(target.closest(".aoTlmCountryFacet")?.open);
+      if(resetCountry)state.countryCodes=[];
+      else{
+        const index=state.countryCodes.indexOf(code);
+        if(index>=0)state.countryCodes.splice(index,1);
+        else state.countryCodes.push(code);
+      }
+      state.selectedId=null;
+      void paint().then(()=>{
+        const root=getRoot(win);
+        if(filtersOpen){const x=root?.querySelector?.(".aoAtlasTlmExtra");if(x)x.open=true;}
+        if(countryOpen){const x=root?.querySelector?.(".aoTlmCountryFacet");if(x)x.open=true;}
+      });
+      return;
     }
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
   }

@@ -578,6 +578,26 @@ function tlmInstituteButton(id,aff,lang){
   (emblem?'<img data-tlm-emblem-image src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':"")+
   esc(tlmCommunityLabel(id,lang))+'</button>';
 }
+function tlmCountryFilters(vm){
+  const selected=arr(vm.filters?.countryCodes),counts=vm.tlmCountryCounts??{};
+  const labels=typeof Intl!=="undefined"&&typeof Intl.DisplayNames==="function"
+    ?new Intl.DisplayNames([vm.language==="fr"?"fr":"en"],{type:"region"}):null;
+  const options=Object.entries(counts).sort(([a],[b])=>
+    String(labels?.of(a)||a).localeCompare(String(labels?.of(b)||b),vm.language==="fr"?"fr":"en"));
+  return '<details class="aoTlmCountryFacet"><summary>'+
+    esc(L(vm.language,"Country","Pays"))+
+    (selected.length?' · '+String(selected.length):'')+
+    ' <small>('+options.length+')</small></summary>'+
+    '<div class="aoTlmCountryOptions" role="group" aria-label="'+esc(L(vm.language,"Countries","Pays"))+'">'+
+    (selected.length?'<button type="button" data-find-tlm-country-reset>'+esc(L(vm.language,"Clear countries","Effacer les pays"))+'</button>':'')+
+    options.map(([code,count])=>'<button type="button" data-find-tlm-country="'+esc(code)+'" aria-pressed="'+
+      String(selected.includes(code))+'" class="'+(selected.includes(code)?"active":"")+'">'+
+      esc(labels?.of(code)||code)+' · '+String(count)+'</button>').join("")+
+    '</div><small>'+esc(L(vm.language,
+      "Country is taken from the CL2 physical-site source, not inferred from a map pin. Select several countries to widen the geographic search.",
+      "Le pays provient de la source CL2 du lieu physique et non du repère cartographique. Sélectionnez plusieurs pays pour élargir la recherche."))+
+    '</small></details>';
+}
 function tlmEvidenceFilters(vm){
   const counts=vm.tlmSiteEvidenceCounts??{},selected=vm.filters?.siteEvidence??"ALL";
   const options=[
@@ -628,14 +648,14 @@ function tlmFilters(vm){
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
     html+='</div>';
-    if(vm.view==="map")html+=tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+otherMarkup+'</details>';
+    if(vm.view==="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+otherMarkup+'</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
     html+='</div>';
     if(vm.view!=="map")html+=otherMarkup;
     html+='</div>';
-    if(vm.view!=="map")html+=tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm);
+    if(vm.view!=="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm);
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
@@ -669,6 +689,7 @@ export function buildExploreViewModel({
   unavailableProviders=[],
   tlmAvailableCommunities=[],
   tlmSiteEvidenceCounts=null,
+  tlmCountryCounts=null,
   tlmCelebrationEvidenceCounts=null,
   view="list",
   filters={},
@@ -706,6 +727,7 @@ export function buildExploreViewModel({
     unavailableProviders:arr(unavailableProviders),
     tlmAvailableCommunities:arr(tlmAvailableCommunities),
     tlmSiteEvidenceCounts,
+    tlmCountryCounts,
     tlmCelebrationEvidenceCounts,
     view,
     filters,

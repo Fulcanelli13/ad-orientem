@@ -1203,4 +1203,15 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   .aoHeritageSurface .aoHeritagePreview .aoSacredPlaceSymbolPlate svg{width:57px}
 }
 
+
+/* Source-backed country selection in the existing compact TLM Filters panel. */
+.aoExploreTlmFilters .aoTlmCountryFacet{margin:8px 0;border-top:1px solid rgba(217,197,154,.23);padding:9px 0 5px}
+.aoExploreTlmFilters .aoTlmCountryFacet>summary{cursor:pointer;color:#dfc899;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);min-height:38px;display:flex;align-items:center;gap:8px;list-style:none}
+.aoExploreTlmFilters .aoTlmCountryFacet>summary::-webkit-details-marker{display:none}
+.aoExploreTlmFilters .aoTlmCountryFacet>summary small{color:#aebdc1}
+.aoExploreTlmFilters .aoTlmCountryOptions{display:flex;flex-wrap:wrap;gap:7px;max-height:210px;overflow-y:auto;padding:5px 1px 8px;overscroll-behavior:contain}
+.aoExploreTlmFilters .aoTlmCountryOptions button{min-height:38px;padding:7px 10px;background:#15242c;border:1px solid #d9c59a4a;border-radius:999px;color:#e8dfcf;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoExploreTlmFilters .aoTlmCountryOptions button.active{border-color:#86b596;background:#20392e;color:#d7f2db}
+.aoExploreTlmFilters .aoTlmCountryOptions button:focus-visible{outline:2px solid #d9bb7e;outline-offset:2px}
+.aoExploreTlmFilters .aoTlmCountryFacet>small{display:block;color:#bdc6c9;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 `;

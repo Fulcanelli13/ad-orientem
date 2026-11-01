@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
   projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,
-  tlmSiteEvidence,tlmSiteEvidenceCounts
+  tlmSiteEvidence,tlmSiteEvidenceCounts,tlmCountryCounts
 } from "../src/find/preliminary-directory-r49.js";
 import {projectCL2PhysicalDirectory,CL2_PHYSICAL_SITE_COUNT} from "../src/find/cl2-physical-directory.js";
 
@@ -37,6 +37,23 @@ for(const key of ["ALL","REVIEWED_PIN","SOURCE_PIN","ADDRESS_ONLY"]){
   assert.equal(subset.length,counts[key],key);
   if(key!=="ALL")assert.ok(subset.every(x=>tlmSiteEvidence(x)===key),key);
 }
+const countryCounts=tlmCountryCounts(full);
+assert.equal(Object.values(countryCounts).reduce((n,v)=>n+v,0),full.length,"All CL2 physical sites retain country source codes");
+for(const cc of ["US","FR"]){
+ const subset=filterPreliminaryR49(full,{countryCodes:[cc]});
+ assert.equal(subset.length,countryCounts[cc]);
+ assert.ok(subset.every(item=>item.country_code===cc));
+}
+assert.equal(filterPreliminaryR49(full,{countryCodes:["FR","US"]}).length,countryCounts.FR+countryCounts.US);
+assert.ok(filterPreliminaryR49(full,{countryCodes:["FR"],affiliations:["FSSP"],siteEvidence:"REVIEWED_PIN"})
+ .every(item=>item.country_code==="FR"&&item.community_id==="FSSP"&&tlmSiteEvidence(item)==="REVIEWED_PIN"));
+assert.equal(filterPreliminaryR49([{...full[0],country_code:null,subtitle:"France"}],{countryCodes:["FR"]}).length,0);
+// The new country facet must compose with CL27 source-approved celebration evidence.
+const claims=load("data/directory/cl27-approved-celebration-evidence-20261102.v1.json");
+const {attachPublishedCelebrationEvidence}=await import("../src/find/tlm-celebration-evidence.js");
+const published=attachPublishedCelebrationEvidence(full,claims);
+assert.equal(filterPreliminaryR49(published,{celebrationEvidence:"SOURCE_1962",countryCodes:["US"]}).length,2);
+assert.equal(filterPreliminaryR49(published,{celebrationEvidence:"SOURCE_1962",countryCodes:["FR"]}).length,0);
 const byInstitute=filterPreliminaryR49(full,{affiliations:["FSSP"],siteEvidence:"REVIEWED_PIN"});
 assert.ok(byInstitute.every(x=>x.community_id==="FSSP"&&tlmSiteEvidence(x)==="REVIEWED_PIN"));
 assert.equal(filterPreliminaryR49(full,{siteEvidence:"INVALID"}).length,full.length,
@@ -50,9 +67,13 @@ assert.equal(filterPreliminaryR49([claimant],{siteEvidence:tlmSiteEvidence(full[
 
 const presentation=readFileSync("src/find/explore-presentation.js","utf8");
 const runtime=readFileSync("src/find/browser-entry.js","utf8");
+assert.match(presentation,/function tlmCountryFilters/);
+assert.match(presentation,/data-find-tlm-country/);
 assert.match(presentation,/function tlmEvidenceFilters/);
 assert.match(presentation,/data-find-filter/);
 assert.match(presentation,/No published site-wide Una Cum, missal, canonical-status or celebrant claims/);
+assert.match(runtime,/countryCodes:\[\]/);
+assert.match(runtime,/tlmCountryCounts\(preliminary\?\?\[\]\)/);
 assert.match(runtime,/siteEvidence:"ALL"/);
 assert.match(runtime,/tlmSiteEvidenceCounts\(preliminary\?\?\[\]\)/);
 console.log("PASS CL27 main source-qualified filters: "+counts.ALL+
