@@ -1948,7 +1948,13 @@ export async function mountNativeReaderPreview({
     const spokenRows=(card.paragraphs??[]).map(row=>Object.freeze({
       id:row.id,
       kind:row.kind,
+      // The sung and ritual formula is Latin-first, with a small
+      // vernacular reading aid underneath in either reader mode.
+      // This is a display-language rule, NOT an extra observed cue.
       primary:row.latin,
+      secondary:french?row.french??null:row.english??null,
+      displayLanguage:"LATIN",
+      replaceOnToggle:false,
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     // Three R20 action/transition cards legitimately have no spoken prayer.
