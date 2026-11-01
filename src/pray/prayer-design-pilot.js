@@ -13,87 +13,111 @@ export function prayerPilotEnabled(win){
   try{return new URLSearchParams(win.location.search).get("aoPrayerPilot")!=="0"}
   catch{return true}
 }
-export function prayerPilotAliases(L){
-  return {
-    marian:{
-      title:L("Our Lady","Notre-Dame"),
-      description:L("Marian prayer and consecration, with routes to their existing canonical readers.","Prières mariales et consécration, avec accès aux lecteurs canoniques existants."),
-      assetId:"ao-rich-rosary",
-      items:[
-        ["own","pray.angelus_regina",L("Angelus / Regina Cæli","Angélus / Regina Cæli"),L("Prayer of the hour","Prière de l'heure")],
-        ["own","pray.rosary",L("Holy Rosary","Saint Rosaire"),L("Traditional mysteries and Scripture","Mystères traditionnels et Écriture")],
-        ["own","programme.first_saturday",L("Five First Saturdays","Cinq premiers samedis"),L("Immaculate Heart devotion","Dévotion au Cœur Immaculé")],
-        ["own","pray.montfort_consecration",L("Montfort preparation","Préparation de Montfort"),L("33-day consecration preparation","Préparation de 33 jours")],
-        ["external","pray.novenas",L("Marian novenas","Neuvaines mariales"),L("Choose the source-defined novena","Choisissez la neuvaine sourcée")],
-        ["own","pray.library",L("Marian prayers in the library","Prières mariales dans le livre"),L("Browse canonical prayer texts","Parcourez les textes canoniques")]
-      ]
-    },
-    novenas:{
-      title:L("Novenas & Journeys","Neuvaines & parcours"),
-      description:L("Source-owned daily, weekly and monthly devotional journeys.","Parcours de dévotion quotidiens, hebdomadaires ou mensuels établis par les sources."),
-      assetId:"ao-rich-novenas",
-      items:[
-        ["external","pray.novenas",L("Novenas","Neuvaines"),L("Nine-day programmes","Parcours de neuf jours")],
-        ["own","pray.montfort_consecration",L("Montfort · 33 days","Montfort · 33 jours"),L("Preparation and consecration","Préparation et consécration")],
-        ["own","programme.first_friday",L("Nine First Fridays","Neuf premiers vendredis"),L("Sacred Heart devotion","Dévotion au Sacré-Cœur")],
-        ["own","programme.first_saturday",L("Five First Saturdays","Cinq premiers samedis"),L("Immaculate Heart devotion","Dévotion au Cœur Immaculé")]
-      ]
-    },
-    ourlord:{
-      title:L("Our Lord","Notre-Seigneur"),
-      description:L("The Passion, Sacred Heart and prayers addressed to Our Lord.","La Passion, le Sacré-Cœur et les prières adressées à Notre-Seigneur."),
-      assetId:"ao-rich-stations",
-      items:[
-        ["own","pray.stations",L("Stations of the Cross","Chemin de Croix"),L("Fourteen stations","Quatorze stations")],
-        ["own","pray.seven_words",L("Seven Last Words","Sept dernières Paroles"),L("Gospel and meditation","Évangile et méditation")],
-        ["own","pray.five_wounds",L("Five Wounds","Cinq Plaies"),L("Passionist chaplet","Chapelet passioniste")],
-        ["external","pray.sacred_heart",L("Sacred Heart","Sacré-Cœur"),L("Traditional prayers and reparation","Prières traditionnelles et réparation")],
-        ["own","programme.first_friday",L("Nine First Fridays","Neuf premiers vendredis"),L("Reparatory devotion","Dévotion réparatrice")]
-      ]
-    },
-    saints:{
-      title:L("Saints & Angels","Saints & anges"),
-      description:L("Prayers of intercession and devotions to the saints.","Prières d'intercession et dévotions aux saints."),
-      assetId:"ao-rich-prayer-library",
-      items:[
-        ["own","pray.litany_saints",L("Litany of the Saints","Litanies des saints"),L("Call and response","Invocations et répons")],
-        ["own","pray.st_joseph_seven_sorrows",L("St Joseph · Sorrows and Joys","Saint Joseph · Douleurs et Joies"),L("Seven paired meditations","Sept méditations en paires")],
-        ["external","pray.good_death",L("Good Death prayers","Prières pour une bonne mort"),L("St Joseph and final perseverance","Saint Joseph et persévérance finale")],
-        ["own","pray.for_priests",L("Prayers for priests","Prières pour les prêtres"),L("Intercession and vocations","Intercession et vocations")],
-        ["own","pray.library",L("Prayer Library","Livre de prières"),L("Find individual saints' prayers","Trouvez les prières aux saints")]
-      ]
-    },
-    intentions:{
-      title:L("Life & Intentions","Vie & intentions"),
-      description:L("Prayer for personal circumstances, spiritual preparation and particular needs.","Prière pour les circonstances personnelles, la préparation spirituelle et les besoins particuliers."),
-      assetId:"ao-rich-confession",
-      items:[
-        ["own","pray.occasional_intercessions",L("Occasional intercessions","Intercessions occasionnelles"),L("Family, sickness, peace and other needs","Famille, maladie, paix et autres besoins")],
-        ["own","pray.confession",L("Confession preparation","Préparation à la confession"),L("Examination and pastoral preparation","Examen et préparation")],
-        ["external","pray.good_death",L("Preparation for a Good Death","Préparation à une bonne mort"),L("Traditional prayers","Prières traditionnelles")],
-        ["external","pray.dying_companion",L("Dying Companion","Accompagnement du mourant"),L("Bedside prayer and priestly priority","Prière au chevet et priorité au prêtre")],
-        ["own","pray.library",L("Prayer Library","Livre de prières"),L("Individual prayers by need","Prières particulières selon les besoins")]
-      ]
-    }
-  };
-}
-// Preserve all six canonical families through the nine editorial doors.
-// Route identities and source-owned readers remain unchanged.
-const LEGACY_FAMILY_BRIDGES=Object.freeze({
- intentions:"penance",ourlord:"passion",novenas:"devotions"
+/**
+ * One visible shelf per complete devotion. Existing internal and external route
+ * identities are NOT changed; reader-internal methods and general hymns remain
+ * searchable without becoming duplicate family cards.
+ *
+ * "prayer" items are canonical single-text records from DATA.prayers, not
+ * newly authored prayers or independent devotional reader engines.
+ */
+export const PRAYER_DOOR_ORDER_V1=Object.freeze({
+ daily:["pray.morning_evening","pray.angelus_regina","pray.meal_prayers","pray.nightly_examen"],
+ chaplets:["pray.rosary","pray.divine_mercy","pray.five_wounds","pray.precious_blood","pray.little_crown"],
+ eucharistic:["pray.adoration","pray.benediction","pray.forty_hours","pray.communion_treasury"],
+ marian:["litany_loreto_1962","marian_memorare","marian_hail_holy_queen","sub_tuum","marian_consecration_immaculate_heart"],
+ novenas:["pray.novenas","programme.first_friday","programme.first_saturday","pray.montfort_consecration"],
+ ourlord:["pray.stations","pray.seven_words","pray.tenebrae","pray.sacred_heart","pray.holy_name_litany"],
+ saints:["pray.litany_saints","pray.st_joseph_seven_sorrows","devotion_prayer_st_michael","devotion_litany_st_joseph","devotion_st_anthony_lost_items","foundations_guardian_angel"],
+ intentions:["pray.confession","pray.penitential_psalms","pray.occasional_intercessions","pray.for_priests","pray.good_death","pray.dying_companion"],
+ library:[]
 });
-export function resolvedPrayerPilotFamilies(L,families){
- const aliases=prayerPilotAliases(L);
- for(const [door,canonical] of Object.entries(LEGACY_FAMILY_BRIDGES)){
-  const seen=new Set(aliases[door].items.map(item=>item[1]));
-  const additions=[];
-  for(const item of families?.[canonical]?.items||[]){
-   if(seen.has(item[1]))continue;
-   seen.add(item[1]);additions.push(item);
+export const PRAYER_SEARCH_ONLY_ROUTES_V1=Object.freeze(["pray.rosary_methods","pray.sacred_hymns"]);
+export const PRAYER_PRIMARY_DOOR_V1=Object.freeze(Object.fromEntries(
+ Object.entries(PRAYER_DOOR_ORDER_V1).flatMap(([door,ids])=>ids.map(id=>[id,door]))
+));
+export function prayerPilotAliases(L){
+ return {
+  marian:{
+   title:L("Our Lady","Notre-Dame"),
+   description:L("Traditional Marian litanies, antiphons and prayers.","Litanies, antiennes et prières mariales traditionnelles."),
+   assetId:"ao-rich-rosary",
+   items:[
+    ["prayer","litany_loreto_1962",L("Litany of Loreto","Litanies de Lorette"),L("Traditional invocations and responses","Invocations et répons traditionnels")],
+    ["prayer","marian_memorare",L("Memorare","Souvenez-vous"),L("Prayer for Our Lady's intercession","Prière demandant l'intercession de Notre-Dame")],
+    ["prayer","marian_hail_holy_queen",L("Hail Holy Queen","Salve Regina"),L("Marian antiphon","Antienne mariale")],
+    ["prayer","sub_tuum",L("Sub Tuum Praesidium","Sous l'abri de votre miséricorde"),L("Ancient Marian prayer","Ancienne prière mariale")],
+    ["prayer","marian_consecration_immaculate_heart",L("Consecration to the Immaculate Heart","Consécration au Cœur Immaculé"),L("Traditional consecration prayer","Prière traditionnelle de consécration")]
+   ]
+  },
+  novenas:{
+   title:L("Novenas & Journeys","Neuvaines & parcours"),
+   description:L("Daily and monthly programmes, each with its original prayer sequence.","Programmes quotidiens et mensuels, avec leurs prières propres."),
+   assetId:"ao-rich-novenas",
+   items:[
+    ["external","pray.novenas",L("Novenas","Neuvaines"),L("The canonical nine-day programmes","Programmes canoniques de neuf jours")],
+    ["own","programme.first_friday",L("Nine First Fridays","Neuf premiers vendredis"),L("Sacred Heart reparatory devotion","Dévotion réparatrice au Sacré-Cœur")],
+    ["own","programme.first_saturday",L("Five First Saturdays","Cinq premiers samedis"),L("Immaculate Heart devotion","Dévotion au Cœur Immaculé")],
+    ["own","pray.montfort_consecration",L("Montfort · 33 days","Montfort · 33 jours"),L("Preparation and consecration","Préparation et consécration")]
+   ]
+  },
+  ourlord:{
+   title:L("Our Lord","Notre-Seigneur"),
+   description:L("The Passion, Sacred Heart and Holy Name.","La Passion, le Sacré-Cœur et le Saint Nom."),
+   assetId:"ao-rich-stations",
+   items:[
+    ["own","pray.stations",L("Stations of the Cross","Chemin de Croix"),L("Fourteen Stations","Quatorze stations")],
+    ["own","pray.seven_words",L("Seven Last Words","Sept dernières Paroles"),L("Gospel words and meditation","Paroles évangéliques et méditation")],
+    ["own","pray.tenebrae",L("Office of Tenebrae","Office des Ténèbres"),L("Matins and Lauds of the Sacred Triduum","Matines et Laudes du Triduum")],
+    ["external","pray.sacred_heart",L("Sacred Heart","Sacré-Cœur"),L("Litany, reparation and consecration","Litanies, réparation et consécration")],
+    ["external","pray.holy_name_litany",L("Litany of the Holy Name","Litanies du Saint Nom"),L("Traditional Roman form","Forme romaine traditionnelle")]
+   ]
+  },
+  saints:{
+   title:L("Saints & Angels","Saints & anges"),
+   description:L("Traditional intercession and prayers to the saints and angels.","Intercession et prières aux saints et aux anges."),
+   assetId:"ao-rich-prayer-library",
+   items:[
+    ["own","pray.litany_saints",L("Litany of the Saints","Litanies des saints"),L("Call and response","Invocations et répons")],
+    ["own","pray.st_joseph_seven_sorrows",L("St Joseph · Sorrows and Joys","Saint Joseph · Douleurs et Joies"),L("Seven paired meditations","Sept méditations en paires")],
+    ["prayer","devotion_prayer_st_michael",L("Prayer to St Michael","Prière à saint Michel"),L("Traditional angelic intercession","Intercession angélique traditionnelle")],
+    ["prayer","devotion_litany_st_joseph",L("Litany of Saint Joseph","Litanies de saint Joseph"),L("Traditional litany","Litanies traditionnelles")],
+    ["prayer","devotion_st_anthony_lost_items",L("St Anthony","Saint Antoine"),L("Prayer for lost things","Prière pour les objets perdus")],
+    ["prayer","foundations_guardian_angel",L("Guardian Angel","Ange gardien"),L("Traditional guardian angel prayer","Prière traditionnelle à l'ange gardien")]
+   ]
+  },
+  intentions:{
+   title:L("Life & Intentions","Vie & intentions"),
+   description:L("Confession, penance, intercession and particular needs.","Confession, pénitence, intercession et intentions particulières."),
+   assetId:"ao-rich-confession",
+   items:[
+    ["own","pray.confession",L("Confession","Confession"),L("Examination, contrition and preparation","Examen, contrition et préparation")],
+    ["own","pray.penitential_psalms",L("Seven Penitential Psalms","Sept psaumes pénitentiels"),L("Traditional penitential sequence","Séquence pénitentielle traditionnelle")],
+    ["own","pray.occasional_intercessions",L("Occasional Intercessions","Intercessions occasionnelles"),L("Family, sickness, peace and other needs","Famille, maladie, paix et autres besoins")],
+    ["own","pray.for_priests",L("Prayers for Priests","Prières pour les prêtres"),L("Clergy and vocations","Clergé et vocations")],
+    ["external","pray.good_death",L("Preparation for a Good Death","Préparation à une bonne mort"),L("Final perseverance and traditional prayers","Persévérance finale et prières traditionnelles")],
+    ["external","pray.dying_companion",L("Dying Companion","Accompagnement du mourant"),L("Bedside prayer and priestly priority","Prière au chevet et priorité au prêtre")]
+   ]
   }
-  aliases[door]={...aliases[door],items:[...aliases[door].items,...additions]};
+ };
+}
+export function resolvedPrayerPilotFamilies(L,families){
+ const aliases=prayerPilotAliases(L),catalog={...families,...aliases};
+ const candidates=new Map();
+ // Preserve canonical family routes as discoverable source records, even when
+ // their old family placement is being retired.
+ for(const family of Object.values(catalog)){
+  for(const item of family?.items||[])if(!candidates.has(item[1]))candidates.set(item[1],item);
  }
- return {...families,...aliases};
+ const result={...catalog};
+ for(const [door,ids] of Object.entries(PRAYER_DOOR_ORDER_V1)){
+  const family=catalog[door];
+  if(!family)continue;
+  result[door]={...family,items:ids.map(id=>candidates.get(id)).filter(Boolean)};
+ }
+ // Search-only links preserve the original route without duplicating a shelf.
+ result.library={...result.library,searchItems:PRAYER_SEARCH_ONLY_ROUTES_V1.map(id=>candidates.get(id)).filter(Boolean)};
+ return result;
 }
 const MOSAIC=[
   {id:"chaplets",col:"1/5",row:"1/6",large:true},
