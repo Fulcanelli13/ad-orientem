@@ -320,6 +320,11 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra:has(.aoTlmMoreInstitutes[open]) .aoExploreQuickFilters{
   display:none
 }
+/* An expanded secondary group needs enough visible drawer height to show the
+   first 44px institute button immediately, not only its clipped upper edge. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra[open]:has(.aoTlmMoreInstitutes[open]){
+  min-height:min(300px,calc(100dvh - 150px))
+}
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes>summary{
   min-height:44px;display:flex;align-items:center;padding:8px 4px;cursor:pointer;
   color:#e9d8ba;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)
