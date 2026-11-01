@@ -49,7 +49,7 @@ export function boundedWorldMapOptions(viewport=null){
 // Electric outline/selection palette; actual institute identity is the emblem sprite.
 export const MASS_MAP_GROUP_COLORS=Object.freeze({
   FSSP:"#00E5FF",ICKSP:"#BC65FF",SSPX:"#347CFF",IBP:"#FF9D24",
-  AASJMV:"#21CFB7",
+  AASJMV:"#21CFB7",CAPUCHINS_MORGON:"#D8A86B",
   // Distinct order-family colours; arms remain sourced to the family, not a house.
   BENEDICTINE:"#D4B56A",DOMINICAN:"#A3C8F2",CISTERCIAN:"#67C9A4",
   NORBERTINE:"#F49DCF",PREMONSTRATENSIAN:"#F49DCF",
@@ -68,6 +68,7 @@ const POINT_COLOR=["match",["get","provider_group"],
   "SSPX",MASS_MAP_GROUP_COLORS.SSPX,
   "IBP",MASS_MAP_GROUP_COLORS.IBP,
   "AASJMV",MASS_MAP_GROUP_COLORS.AASJMV,
+  "CAPUCHINS_MORGON",MASS_MAP_GROUP_COLORS.CAPUCHINS_MORGON,
   "BENEDICTINE",MASS_MAP_GROUP_COLORS.BENEDICTINE,
   "DOMINICAN",MASS_MAP_GROUP_COLORS.DOMINICAN,
   "CISTERCIAN",MASS_MAP_GROUP_COLORS.CISTERCIAN,
