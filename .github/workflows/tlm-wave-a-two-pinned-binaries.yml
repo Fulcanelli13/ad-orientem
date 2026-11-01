@@ -1,0 +1,41 @@
+name: TLM Wave A two verified binary covers (one-shot)
+on:
+  pull_request:
+    paths:
+      - .github/workflows/tlm-wave-a-two-pinned-binaries.yml
+      - tools/directory/publish_two_wave_a_binary_sources.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  transfer-two-pinned-originals:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'release/tlm-wave-a-two-photo-byte-publish-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact reviewed image encoder
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+      - name: Verify and stage two pinned originals (no retry, no bulk collection)
+        env:
+          AO_TLM_TWO_SOURCE_TRANSFER: '1'
+        run: python tools/directory/publish_two_wave_a_binary_sources.py
+      - name: Commit only two proven binaries to this review branch
+        env:
+          TARGET_REF: ${{ github.head_ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/approved/directory-media/GB-groombridge-st-pius-v.webp assets/approved/directory-media/GB-brighton-st-mary-magdalen.webp
+          if git diff --cached --quiet; then
+            echo "Verified binary files already present; no new commit"
+          else
+            git commit -m "assets(tlm): stage two exact-original verified church WebPs"
+            git push origin "HEAD:refs/heads/$TARGET_REF"
+          fi
