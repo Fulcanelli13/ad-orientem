@@ -17,7 +17,7 @@ assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.pr
 assert.deepEqual([g.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
 assert.ok(g.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,23]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,24]);
 assert.equal(manifest.new_places,4);
 assert.equal(manifest.confirmed_directory_links_added,4);
 assert.equal(g.geoAreas.length,146);
@@ -66,7 +66,7 @@ for(const [venueId,[placeId,osm,sourceRow]] of expected){
  assert.ok(manifest.published_new.some(x=>x.place_id===placeId&&x.candidate_id==="P97-ROW-"+sourceRow&&x.photo_publication==="NONE"));
 }
 assert.equal(crosswalk.counts.canonical_places,LIVE.places);
-assert.equal(crosswalk.counts.confirmed_links,LIVE.links);
+assert.equal(crosswalk.counts.confirmed_links,23,"Frozen P92 research snapshot predates P106");
 assert.equal(crosswalk.counts.exact_confirmed_photo_joins,9,"two P95, three P102 and four P106 exact photos");
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(manifest.policy.photo_media_unapproved_until_native_rights_derivative_review,true);
