@@ -93,7 +93,14 @@ try{
  assert.equal(layout.length,2,"The complete source has two sung Tantum Ergo stanzas");
  assert.ok(layout.every(x=>x.vernLeft>x.latinLeft&&x.vernWidth>30&&x.latinWidth>30),
   "Claude altar requires Latin and vernacular side by side at 390px: "+JSON.stringify(layout));
- await page.screenshot({path:resolve(captures,"benediction-390-tantum-claude-rail.png"),animations:"disabled"});
+ const visibleRecitation=await page.evaluate(()=>{
+  const root=document.querySelector("#aoPray435930");
+  return [...(root?.querySelectorAll("button")||[])].filter(el=>/^(individual|group|individuel|groupe)$/i.test(el.textContent.trim()))
+   .map(el=>({label:el.textContent.trim(),buttonClass:el.className,outer:el.parentElement?.outerHTML.slice(0,1000),
+    visible:Boolean(el.getClientRects().length&&getComputedStyle(el).display!=="none")}));
+ });
+ console.log("BENEDICTION_CLAUDE_RECITATION_AUDIT="+JSON.stringify(visibleRecitation));
+  await page.screenshot({path:resolve(captures,"benediction-390-tantum-claude-rail.png"),animations:"disabled"});
  await navigateStep(0);
  assert.equal((await snapshot()).card,"exposition");
  await page.screenshot({path:resolve(captures,"benediction-390-exposition.png"),animations:"disabled"});
