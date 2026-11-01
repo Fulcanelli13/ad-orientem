@@ -52,9 +52,9 @@ assert.equal(french.slots.INTROIT.data.paragraphs[0].vernacular,"Introït");
 // Keep the original authenticated Proper as-is and remove this imported
 // heading/false ℣ only in the displayed Proper paragraph.
 const importedCommonPreface=Object.freeze({
-  lat:"Communis\\n℣. Vere dignum et justum est, æquum et salutáre.",
-  en:"Common\\n℣. It is truly meet and just, right and for our salvation.",
-  fr:"Commune\\n℣. Il est vraiment juste et nécessaire, c’est notre devoir.",
+  lat:"Communis\n℣. Vere dignum et justum est, æquum et salutáre.",
+  en:"Common\n℣. It is truly meet and just, right and for our salvation.",
+  fr:"Commune\n℣. Il est vraiment juste et nécessaire, c’est notre devoir.",
 });
 for(const language of ["en","fr"]){
   const template=language==="fr"?frenchProper:proper;
@@ -65,21 +65,21 @@ for(const language of ["en","fr"]){
   assert.equal(paragraph.vernacular,language==="fr"
     ?"Il est vraiment juste et nécessaire, c’est notre devoir."
     :"It is truly meet and just, right and for our salvation.");
-  assert.equal(importedCommonPreface.lat.startsWith("Communis\\n℣."),true,
+  assert.equal(importedCommonPreface.lat.startsWith("Communis\n℣."),true,
     "The original source must remain unchanged");
 }
 for(const heading of ["de Apostolis","Defunctorum"]){
  const result=displayPrefaceProseFromImportedSource(
-   heading+"\\n℣. Vere dignum et justum est.",
-   "Common\\n℣. It is truly meet and just.",{language:"en"});
+   heading+"\n℣. Vere dignum et justum est.",
+   "Common\n℣. It is truly meet and just.",{language:"en"});
  assert.equal(result.stripped,true,"Another source-owned Preface heading should not be spoken");
  assert.equal(result.latin,"Vere dignum et justum est.");
 }
-const genuinePrefaceVerse="℣. Dóminus vobíscum.\\n℟. Et cum spíritu tuo.";
+const genuinePrefaceVerse="℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.";
 assert.equal(displayPrefaceProseFromImportedSource(genuinePrefaceVerse,
   "℣. The Lord be with you.",{language:"en"}).stripped,false,
   "True dialogue must never be removed by Preface prose cleanup");
-assert.equal(displayPrefaceProseFromImportedSource("Communis\\n℣. Vere dignum.",
+assert.equal(displayPrefaceProseFromImportedSource("Communis\n℣. Vere dignum.",
   "Unknown translator text",{language:"en"}).stripped,false,
   "Bilingual source mismatch must remain unedited for audit");
 
