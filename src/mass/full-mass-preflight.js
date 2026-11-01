@@ -233,7 +233,7 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";m1Focus=null;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;riteOverrides={};folioStep="overview";m1Focus=null;}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
