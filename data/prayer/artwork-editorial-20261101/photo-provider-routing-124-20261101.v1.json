@@ -5,8 +5,8 @@
   "zeroProductionAssetsTrue": true,
   "counts": {
     "originalArtworkCandidateGroups": 124,
-    "MISSING_EXACT_IMAGE_SOURCE": 34,
-    "COMMONS_EXACT_FILE_METADATA": 54,
+    "MISSING_EXACT_IMAGE_SOURCE": 20,
+    "COMMONS_EXACT_FILE_METADATA": 68,
     "ARTIC_INSTITUTIONAL_IMAGE": 1,
     "ART_UK_COPYRIGHT_PHOTO_HOLD": 1,
     "CMA_INSTITUTIONAL_OPEN_ACCESS": 14,
@@ -436,15 +436,21 @@
       "slots": [
         "STG-pray.stations-01"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_I_-_Jesus_is_sentenced_to_death_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_I_-_Jesus_is_sentenced_to_death_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 2 giandomenico tiepolo san polo original oils",
@@ -453,15 +459,21 @@
       "slots": [
         "STG-pray.stations-02"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_II_-_Jesus_carries_his_cross_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_II_-_Jesus_carries_his_cross_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 3 giandomenico tiepolo san polo original oils",
@@ -470,15 +482,21 @@
       "slots": [
         "STG-pray.stations-03"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_III_-_Jesus_falls_the_first_time_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_III_-_Jesus_falls_the_first_time_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 4 giandomenico tiepolo san polo original oils",
@@ -487,15 +505,21 @@
       "slots": [
         "STG-pray.stations-04"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 5 giandomenico tiepolo san polo original oils",
@@ -504,15 +528,21 @@
       "slots": [
         "STG-pray.stations-05"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 6 giandomenico tiepolo san polo original oils",
@@ -521,15 +551,21 @@
       "slots": [
         "STG-pray.stations-06"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VI_-_Veronica_wipes_the_face_of_Jesus_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VI_-_Veronica_wipes_the_face_of_Jesus_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 7 giandomenico tiepolo san polo original oils",
@@ -538,15 +574,21 @@
       "slots": [
         "STG-pray.stations-07"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VII_-_Jesus_falls_the_second_time_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VII_-_Jesus_falls_the_second_time_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 8 giandomenico tiepolo san polo original oils",
@@ -555,15 +597,21 @@
       "slots": [
         "STG-pray.stations-08"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VIII_-_Jesus_meets_the_women_of_Jerusalem_who_weep_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VIII_-_Jesus_meets_the_women_of_Jerusalem_who_weep_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 9 giandomenico tiepolo san polo original oils",
@@ -572,15 +620,21 @@
       "slots": [
         "STG-pray.stations-09"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IX_-_Jesus_falls_the_third_time.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IX_-_Jesus_falls_the_third_time.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 10 giandomenico tiepolo san polo original oils",
@@ -589,15 +643,21 @@
       "slots": [
         "STG-pray.stations-10"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_X_-_Jesus_is_stripped_of_his_garments.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_X_-_Jesus_is_stripped_of_his_garments.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 11 giandomenico tiepolo san polo original oils",
@@ -606,15 +666,21 @@
       "slots": [
         "STG-pray.stations-11"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XI_-_Jesus_is_nailed_to_the_cross.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XI_-_Jesus_is_nailed_to_the_cross.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 12 giandomenico tiepolo san polo original oils",
@@ -623,15 +689,21 @@
       "slots": [
         "STG-pray.stations-12"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 13 giandomenico tiepolo san polo original oils",
@@ -640,15 +712,21 @@
       "slots": [
         "STG-pray.stations-13"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XIII_-_Jesus_down_from_the_cross_and_his_body_is_returned_to_his_mother.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XIII_-_Jesus_down_from_the_cross_and_his_body_is_returned_to_his_mother.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "WORK::giandomenico tiepolo::via crucis 14 giandomenico tiepolo san polo original oils",
@@ -657,15 +735,21 @@
       "slots": [
         "STG-pray.stations-14"
       ],
-      "catalogueUrl": null,
+      "catalogueUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XIV_-_Entombment_of_Christ_by_Giandomenico_Tiepolo.jpg",
       "priority": "P1_SIGNATURE_PRAYER",
       "sourceIdentifiers": [],
-      "providerLane": "MISSING_EXACT_IMAGE_SOURCE",
-      "requiredAction": "IDENTIFY_SAME_ORIGINAL_SOURCE",
-      "photographRightsState": "NOT_CHECKED",
+      "providerLane": "COMMONS_EXACT_FILE_METADATA",
+      "requiredAction": "VERIFY_DIDIER_DESCOUENS_PHOTOGRAPHER_LICENSE_AND_ORIGINAL_SHA1_BEFORE_STAGING",
+      "photographRightsState": "PER_FILE_CC_BY_SA_SOURCE_METADATA_RECHECK_NEEDED",
       "fileDownloaded": false,
       "displayPhotoCertified": false,
-      "requiresHumanPhotoReview": true
+      "requiresHumanPhotoReview": true,
+      "sourceDiscovery20261101": {
+        "category": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XIV_-_Entombment_of_Christ_by_Giandomenico_Tiepolo.jpg",
+        "sourceIdentityStatus": "EXACT_SAN_POLO_ORIGINAL_WORK_SCENE",
+        "noImagePublished": true
+      }
     },
     {
       "key": "URL::https://commons.wikimedia.org/wiki/file:juan_patricio_morlete_ruiz_-_the_heart_of_jesus_-_google_art_project.jpg",
@@ -2486,5 +2570,26 @@
       "displayPhotoCertified": false,
       "requiresHumanPhotoReview": true
     }
-  ]
+  ],
+  "newSourceFindings20261101": {
+    "source": "Commons 14-member San Polo original Stations collection",
+    "reassignedFromMissingSource": [
+      "STG-pray.stations-01",
+      "STG-pray.stations-02",
+      "STG-pray.stations-03",
+      "STG-pray.stations-04",
+      "STG-pray.stations-05",
+      "STG-pray.stations-06",
+      "STG-pray.stations-07",
+      "STG-pray.stations-08",
+      "STG-pray.stations-09",
+      "STG-pray.stations-10",
+      "STG-pray.stations-11",
+      "STG-pray.stations-12",
+      "STG-pray.stations-13",
+      "STG-pray.stations-14"
+    ],
+    "rightsStatus": "NOT_CLEARED",
+    "publicationAllowed": false
+  }
 }
