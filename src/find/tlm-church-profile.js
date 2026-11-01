@@ -103,7 +103,9 @@ export function renderTlmChurchProfile(item,language="en"){
   '<div class="aoTlmProfileAffiliation">'+
    (introEmblem?'<img data-tlm-emblem-image src="'+E(introEmblem.image)+'" alt="" loading="lazy" decoding="async">':'')+
    '<div><small>'+E(v.ministries.length?L(language,"Ministry / community","Ministère / communauté"):L(language,"Affiliation · source-reported","Affiliation · selon la source"))+'</small>'+
-   '<strong>'+E(introLabel)+'</strong></div></div>'+
+   '<strong>'+E(introLabel)+'</strong>'+
+   (introEmblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmProfileOrderSymbolNote">'+E(L(language,"Order-level heraldry; not this house’s crest","Armes générales de l’ordre, non celles de cette maison"))+'</small>':'')+
+   '</div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
   '</header></div>';
  // Preserve source-owned summaries only when their schedule content is
@@ -185,6 +187,7 @@ export function renderTlmChurchProfile(item,language="en"){
 export const TLM_CHURCH_PROFILE_STYLE=String.raw`
 .aoTlmChurchProfile{width:min(100%,780px);max-width:780px;max-height:min(92dvh,960px);overflow-y:auto;overscroll-behavior:contain;padding:16px 18px 28px;background:linear-gradient(150deg,#182633,#0b131d 60%);border:1px solid #d0b77a44;border-radius:19px}
 .aoTlmProfileHeading{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.aoTlmProfileOrderSymbolNote{display:block;margin-top:4px;font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#b0bfc4}
 .aoTlmProfileHeading h2{font:600 clamp(23px,4vw,31px)/1.15 var(--ao-font-display,Georgia,serif);margin:5px 0;color:#f4e6cb}
 .aoTlmProfileHeading small{font:650 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#d8bc83;letter-spacing:.12em}
 .aoTlmProfileHeading p{font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#abbcc5;margin:4px 0}

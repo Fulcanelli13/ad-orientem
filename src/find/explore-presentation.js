@@ -515,7 +515,7 @@ function massEmblemCredits(language){
     +MASS_EMBLEM_GROUPS.map(group=>{
       const record=massInstitutionEmblem(group);
       return '<p><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'
-        +esc(record.label)+'</a> · '+esc(record.rights)+' · <a href="'+esc(record.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'
+        +esc(record.label)+'</a> · '+(record.symbolScope==="ORDER_FAMILY"?esc(L(language,"General order symbol, not local house arms · ","Symbole général de l’ordre, pas les armes de cette maison · ")):"")+esc(record.rights)+' · <a href="'+esc(record.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'
         +esc(L(language,"Original image licence","Licence de l’image"))+'</a></p>';
     }).join("")
     +'<p>'+esc(L(language,
@@ -528,7 +528,7 @@ function availableTlmCommunityIds(vm,aff=[]){
   const present=new Set([...arr(vm.tlmAvailableCommunities?.length?vm.tlmAvailableCommunities:vm.items.filter(item=>item?.kind==="TLM_VENUE").map(item=>item.community_id)).map(id=>String(id??"").toUpperCase()),
     ...arr(aff).map(id=>String(id??"").toUpperCase())].filter(Boolean));
   const priority=["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV","CMRI","SSPV","CSPV","RCI","FSVF",
-    "CANONS_ST_JOHN_CANTIUS","SMMD","BENEDICTINE","DOMINICAN","ORATORIAN","NORBERTINE","INDEPENDENT","OTHER","UNKNOWN"];
+    "CANONS_ST_JOHN_CANTIUS","SMMD","BENEDICTINE","DOMINICAN","CISTERCIAN","PREMONSTRATENSIAN","ORATORIAN","NORBERTINE","INDEPENDENT","OTHER","UNKNOWN"];
   const sorted=[...present].sort((a,b)=>{
     const ia=priority.indexOf(a),ib=priority.indexOf(b);
     return (ia<0?priority.length:ia)-(ib<0?priority.length:ib)||a.localeCompare(b);
@@ -546,6 +546,8 @@ function tlmCommunityLabel(id,lang){
   BENEDICTINE:["Benedictines","Bénédictins"],
   BENEDICTINES_BELLAIGUE:["Benedictines of Bellaigue","Bénédictins de Bellaigue"],
   DOMINICAN:["Dominicans","Dominicains"],
+  CISTERCIAN:["Cistercians","Cisterciens"],
+  NORBERTINE:["Norbertines","Norbertins"],
   DOMINICAINES_FANJEAUX:["Dominican Sisters of Fanjeaux","Dominicaines de Fanjeaux"],
   DOMINICANS_AVRILLE:["Dominicans of Avrillé","Dominicains d’Avrillé"],
   ORATORIAN:["Oratorians","Oratoriens"],
