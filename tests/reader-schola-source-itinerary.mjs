@@ -157,6 +157,16 @@ const before=nextScholaMusicEvent(plan,cards[0].sectionId);
 assert.equal(before?.id,"INTROIT");
 assert.equal(before.status,"UPCOMING_IN_MASS_ORDER_NOT_HEARD");
 assert.equal(nextScholaMusicEvent(plan,into.card.id)?.id,"KYRIE");
+// The first priest-intonation card must preview its own immediate choir
+// response. All later cards retain their forward-only forecast semantics.
+for(const id of ["GLORIA","CREDO"]){
+ const event=plan.events.find(e=>e.id===id);
+ const intonation=plan.events.find(e=>e.id===id+"_INTONATION");
+ assert.ok(event&&intonation&&event.cardIndex===intonation.cardIndex,
+   id+" must share the exact 1962 intonation source card");
+ assert.equal(nextScholaMusicEvent(plan,intonation.card.id)?.id,id,
+   id+" intonation must not skip to the Gradual or Offertory");
+}
 const B=plan.events.find(e=>e.id==="COMMUNION");
 assert.equal(B.sourceRef,"AO.SM.B074");
 const print=plan.events.find(e=>e.id==="COMMUNION_PRINTED");
