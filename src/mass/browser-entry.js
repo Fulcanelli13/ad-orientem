@@ -161,14 +161,28 @@ export function readPersistedActiveMass(storage = globalThis.localStorage) {
   }
 }
 
-export function persistedMassIsResumable(record) {
-  return Boolean(
-    record &&
+export function persistedMassIsResumable(record,now=new Date()) {
+  if(!(record &&
     (record.state === "active" || record.state === "suspended") &&
-    record.schema &&
-    record.session?.resolvedMass &&
-    record.readerPreferences
-  );
+    record.schema && record.session?.resolvedMass && record.readerPreferences))
+    return false;
+  // Today's session can be continued after a pause. A previous civil day's
+  // Mass must NOT hijack the next day's Home/Propers, which caused a genuine
+  // liturgical risk. Allow only a short crossing-midnight grace for Masses
+  // actually spanning the civil boundary (e.g. Christmas midnight Mass).
+  const date=String(record.session.resolvedMass.date??"");
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(now?.getTime?.()))
+    return false;
+  const today=[now.getFullYear(),String(now.getMonth()+1).padStart(2,"0"),
+    String(now.getDate()).padStart(2,"0")].join("-");
+  if(date===today)return true;
+  if(date>today)return false;
+  const last=[record.checkpointedAt,record.suspendedAt,
+    record.updatedAt,record.storedAt]
+    .map(value=>Date.parse(String(value??"")))
+    .filter(Number.isFinite).reduce((max,value)=>Math.max(max,value),-Infinity);
+  const age=now.getTime()-last;
+  return age>=0&&age<=3*60*60*1000;
 }
 
 function writePersistedActiveMass(record, storage = globalThis.localStorage) {
@@ -1163,7 +1177,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       .finally(() => { if (button.isConnected) button.disabled = false; });
   }, true);
 
-  async function startMassFromToday(){
+  async function startMassFromToday({allowSelectedDate=false}={}){
     // Entry is deliberately delegated to the same source-verifying R17
     // controller and optional preparation route as the sole host Start action.
     if(!state.installed||!state.controller)
@@ -1171,10 +1185,24 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     if(hasResumableMass())
       return Object.freeze({ok:false,reason:"RESUME_EXISTING_MASS_FIRST"});
     const current=runtimeState();
+    // Home may still hold yesterday's source after local midnight or a
+    // restored Calendar selection. An off-day Mass requires an explicit
+    // confirmation from H7, never a silent "today" handoff.
+    const now=new Date(),civilToday=[now.getFullYear(),
+      String(now.getMonth()+1).padStart(2,"0"),
+      String(now.getDate()).padStart(2,"0")].join("-");
+    if(current?.selectedDate!==civilToday&&allowSelectedDate!==true)
+      return Object.freeze({ok:false,reason:"SELECTED_MASS_DATE_NOT_TODAY",
+        selectedDate:current?.selectedDate??null,today:civilToday});
     if(current?.resolving||current?.resolution?.status!=="ready"||
        current?.resolution?.proper?.status!=="ready"||
        (current?.resolution?.date&&current.resolution.date!==current.selectedDate))
       return Object.freeze({ok:false,reason:"SELECTED_PROPER_NOT_READY"});
+    // Prior versions silently omitted Asperges because their optional
+    // Sunday selector defaulted to "no". Require the observer to attest
+    // yes/no for an eligible Sung/Solemn Sunday, without fabricating a rite.
+    if(state.fullMassPreflight?.status?.()?.aspersionDecisionRequired===true)
+      return Object.freeze({ok:false,reason:"SUNDAY_ASPERSION_DECISION_REQUIRED"});
     const before=currentFolioSelection();
     const depth=experiencePrayerDepth("before",{before:before?.beforeMass??"none"});
     if(depth){

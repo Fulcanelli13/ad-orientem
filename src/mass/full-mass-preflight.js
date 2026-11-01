@@ -233,7 +233,7 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";m1Focus=null;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;riteOverrides={};folioStep="overview";m1Focus=null;}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
@@ -978,7 +978,11 @@ export function mountFullMassPreflight({
           .find(row=>row.id==="ASPERGES");
         return {aspersionAllowed:rite?.allowed===true,
           aspersionSelected:rite?.allowed===true&&
-            (riteOverrides.ASPERGES??rite?.fromSource??false)===true};
+            (riteOverrides.ASPERGES??rite?.fromSource??false)===true,
+          // A Sunday sung ceremony is eligible, not automatically observed.
+          // Require a real yes/no choice before H7 begins the Mass.
+          aspersionDecisionRequired:rite?.allowed===true&&
+            riteOverrides.ASPERGES===undefined&&rite?.fromSource!==true};
       }catch{return {aspersionAllowed:false,aspersionSelected:false}}})(),
       experience:selectedExperience(),step:folioStep,
       m1Preview,m1Focus}),
