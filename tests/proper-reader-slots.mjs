@@ -469,9 +469,9 @@ for(const entry of pluralMartyrCommons){
 }
 
 const allSaintsRaw=Object.freeze({
- lat:"Sap 3:1-3\\nJustórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ: visi sunt óculis insipiéntium mori: illi autem sunt in pace, allelúja.\\n(sed post Septuagesimam dicitur)\\npace.",
- en:"Wis 3:1-3\\nThe souls of the just are in the hand of God, and no torment shall touch them. They seemed, in the view of the foolish, to be dead: but they are in peace, alleluia.\\n(sed post Septuagesimam dicitur)\\npeace.",
- fr:"Sap 3:1-3\\nLes âmes des justes sont dans la main de Dieu, mais ils sont dans la paix. Alléluia.\\n(Après la Septuagésime, on omet l’alléluia.)",
+ lat:"Sap 3:1-3\nJustórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ: visi sunt óculis insipiéntium mori: illi autem sunt in pace, allelúja.\n(sed post Septuagesimam dicitur)\npace.",
+ en:"Wis 3:1-3\nThe souls of the just are in the hand of God, and no torment shall touch them. They seemed, in the view of the foolish, to be dead: but they are in peace, alleluia.\n(sed post Septuagesimam dicitur)\npeace.",
+ fr:"Sap 3:1-3\nLes âmes des justes sont dans la main de Dieu, mais ils sont dans la paix. Alléluia.\n(Après la Septuagésime, on omet l’alléluia.)",
 });
 const allSaints={...proper,sourcePath:"Sancti/11-01",offertory:allSaintsRaw};
 const reading=selected1962AllSaintsOffertoryReading(allSaints);
