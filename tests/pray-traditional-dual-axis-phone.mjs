@@ -6,6 +6,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {SACRED_HYMNS_V381} from "../src/pray/traditional-pray-data.js";
 import {GOLDEN_ARROW_REPARATION_V1} from "../src/pray/icksp-golden-arrow-reparation.v1.js";
+import {confessionRiteCards} from "../src/pray/confession-paths.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const captures=resolve(root,"artifacts/pray-traditional-daily");
@@ -421,8 +422,14 @@ try{
  await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").evaluate(el=>el.click());
  await page.locator("#aoPray435930 [data-p435930-conf-step='2']").evaluate(el=>el.click());
  await page.waitForSelector("#aoPray435930 .aoDevoStop",{timeout:10000});
- assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),3);
- await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(el=>el.click());
+ // The Claude F12 source now contains nine individual preparatory rite cards.
+ const riteCards=confessionRiteCards("regular");
+ const contritionIndex=riteCards.findIndex(card=>card.id==="contrition-penance");
+ assert.equal(riteCards.length,9,"F12 traditional Confession sequence must remain complete");
+ assert.ok(contritionIndex>0,"Source Act of Contrition card must be present");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),riteCards.length);
+ await page.locator("#aoPray435930 .aoDevoStop").nth(contritionIndex).evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"contrition-penance");
  assert.equal(await page.locator("#aoPray435930 [data-ao-conf-contrition-picker] button").count(),2);
  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-contrition='standard']").getAttribute("aria-pressed"),"true");
  await page.locator("#aoPray435930 [data-p435930-conf-contrition='piusx']").evaluate(el=>el.click());
