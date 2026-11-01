@@ -38,3 +38,18 @@ These copyright statements do not waive separate institutional insignia or trade
 - **CANONS_ST_JOHN_CANTIUS**, **CMRI**, **FSVF**, **SMMD**: retain existing precise research identity and copyright restrictions; no guessed family heraldry.
 
 This release expands to **11 exact group codes / 10 distinct image sources**, not 11 independent rights-cleared institute logos. Historical 41-group candidate queue remains immutable.
+
+## R03 — 1 November 2026: exact-institute image rights closed as research holds
+
+**Runtime:** keep the existing **11 published emblem-group mappings / 10 source image files**. This R03 does not publish any of the four held original logos. Where an explicit `community_id` and source-reported `eyebrow` exist, display an **original, plain typographic monogram** in the existing fallback visual:
+
+| Exact source group | Visible text mark | Original logo evidence | Publication disposition |
+| --- | --- | --- | --- |
+| `CANONS_ST_JOHN_CANTIUS` | `SJC` | Official crest `https://www.canons-regular.org/`, Wix PNG `https://static.wixstatic.com/media/dba24e_8159dcc30a1544e4a889a6909d1d702a~mv2_d_2137_1948_s_2.png` | **Hold original emblem:** official source establishes exact identity, not a reuse licence |
+| `SJM` | `SJM` | Official SJM `https://www.sjm-online.org/sjm-logo-transparent/` and its image `https://www.sjm-online.org/wp-content/uploads/2018/04/SJM-Logo-transparent-214x300.gif` | **Hold original emblem:** organisation-hosted artwork; no explicit licence/redistribution grant |
+| `CMRI` | `CMRI` | Institution crest appears in `https://www.cmri.org/pdfs/cmri-traditional-latin-mass-map-usa-2026a.pdf`, earlier third-party vendor copy; Wikimedia Commons uploader `King_Pius` has a copyright-violation notice on `Crest of the Congregation of Mary Immaculate Queen (CMRI).png`: `https://commons.wikimedia.org/wiki/User_talk:King_Pius` | **Hold original emblem:** no licensed owner original; never use Bishop Pivarunas personal arms |
+| `FSVF` | `FSVF` | `https://fr.wikipedia.org/wiki/Fichier:Logo_FSVF.jpg`; original authorship unknown, uploader source unrelated to explicit reuse permission | **Hold original emblem:** Wikipedia explicitly categorises this as `Image non libre de logo` and warns against downstream reuse. Not a Commons free image. Never use general Dominican arms instead |
+
+All four plain-text marks are *source-specific*, are never displayed without a source-reported affiliation label, and do not imply any judgement concerning Mass schedule, institute ownership, ecclesiastical standing or Una Cum.
+
+Follow-ups for future image licensing are confined to existing evidence research. No owner contact, paid permissions or external hosting costs were initiated. Exact institute imagery requires **a credible reusable author licence covering the underlying emblem** or adequate permission before promotion. Preserve the original research master and existing rejection/rights cautions.
