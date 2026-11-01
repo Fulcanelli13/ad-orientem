@@ -23,7 +23,7 @@ assert.equal(lead.reconciliation.address_mismatch,"POSTCODE_CONFLICT_HOLD_VERIFY
 assert.ok(lead.reconciliation.published_address.includes("CH45 2PG"));
 assert.ok(lead.reconciliation.official_address.includes("CH45 9LT"));
 assert.ok(!geo.directoryPlaceLinks.some(x=>x.venue_id==="ICKSP-STG-076"),"STG record not a canonical Place bridge without production ID");
-assert.equal(geo.places.length,529);
+assert.ok(geo.places.length>=529,"Preserve all P107 baseline Places as subsequent exact sites are added");
 assert.ok(geo.directoryPlaceLinks.length>=22,"P107 historical links must not be lost");
 assert.ok(media.items.length>=40,"Preserve original P107 media baseline as subsequent releases grow");
 const keys=Object.fromEntries(r49.columns.map((x,i)=>[x,i]));
