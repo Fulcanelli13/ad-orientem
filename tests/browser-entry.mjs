@@ -130,11 +130,18 @@ const persistedStorage={
   setItem(key,value){if(key===ACTIVE_MASS_STORAGE_KEY)this.value=String(value);},
   removeItem(key){if(key===ACTIVE_MASS_STORAGE_KEY)this.value=null;},
 };
+// Valid resumable records must carry the selected *civil* Mass date.
+// The previous fixture omitted it and therefore masked a release hazard.
+const now=new Date();
+const today=[now.getFullYear(),String(now.getMonth()+1).padStart(2,"0"),
+  String(now.getDate()).padStart(2,"0")].join("-");
 persistedStorage.setItem(ACTIVE_MASS_STORAGE_KEY,JSON.stringify({
   schema:"ao-mass-entry-bootstrap-v1",
-  session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}},
+  session:{resolvedMass:{date:today,form:"MISSA_CANTATA_INCENSE"}},
   readerPreferences:{mode:"LIVE",postureProfile:"TRADITIONAL_WALSH",gestureProfile:"GUIDED_1962",language:"en"},
   state:"active",
+  storedAt:now.toISOString(),
+  updatedAt:now.toISOString(),
   readerPosition:{sectionId:"AO.CARD.003"},
 }));
 const persisted=readPersistedActiveMass(persistedStorage);
@@ -143,6 +150,16 @@ assert.equal(persisted?.readerPreferences?.mode,"LIVE");
 assert.equal(persisted?.readerPosition?.sectionId,"AO.CARD.003");
 assert.equal(persistedMassIsResumable(persisted),true);
 assert.equal(persistedMassIsResumable({...persisted,state:"complete"}),false);
+assert.equal(persistedMassIsResumable({...persisted,
+  session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}}),false,
+  "A saved Mass with no liturgical day must not be resumable");
+assert.equal(persistedMassIsResumable({...persisted,
+  session:{resolvedMass:{date:"2026-10-31",form:"MISSA_CANTATA_INCENSE"}},
+  storedAt:"2026-10-31T10:00:00+04:00",
+  updatedAt:"2026-10-31T10:00:00+04:00"
+},new Date("2026-11-01T09:30:00+04:00")),false,
+  "Yesterday's Mass must not override the current Sunday");
+
 assert.equal(readPersistedActiveMass({getItem:()=>"{bad"}),null);
 assert.equal(clearPersistedActiveMass(persistedStorage),true);
 assert.equal(readPersistedActiveMass(persistedStorage),null,"stale persisted Mass checkpoint was not clearable");
