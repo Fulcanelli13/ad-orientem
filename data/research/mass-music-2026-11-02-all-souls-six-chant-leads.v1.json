@@ -185,5 +185,163 @@
     "Compare each score's notes/neumes with printed Graduale/Liber Usualis 1961 pages",
     "Source-match Requiem Kyrie/Sanctus/Agnus, Preface of the Dead and Requiescant / Amen",
     "Do not publish scores or audio before user's one complete collection review"
+  ],
+  "printed1962SourceWitness": {
+    "title": "Missale Romanum (Benziger, editio iuxta typicam, 1962), All Souls 2 November, printed pp. 722-726",
+    "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+    "inspectedAs": "OCR_TEXT_WITNESS_NOT_MUSICAL_FACSIMILE",
+    "scope": "Three All Souls formularies: distinct Collects, Epistles, Gospels, Secrets, Postcommunions; common Requiem Introit, Gradual, Tract, sequence text, Offertory and Communion",
+    "explicitlyObserved": "The printed Tract contains 'fidelium defunctorum', matching the original 1961 GABC GREGOBASE-338; a 2026 third-party text page omitted defunctorum",
+    "sourceComparisonNotMelodyProof": true,
+    "sourceCaution": "Printed 1962 Missal OCR contains noise and may show editorial differences from the pinned Divinum Officium donor; authoritative selected 1962 app payload should be checked at actual runtime, not silently replaced",
+    "deriveNoPublication": true
+  },
+  "chantTextReview": [
+    {
+      "role": "INTROIT",
+      "id": 766,
+      "reference": "Missale Romanum 1962 pp. 722, 725-726",
+      "checkedParts": [
+        "Requiem aeternam antiphon",
+        "Te decet hymnus verse"
+      ],
+      "status": "PRELIMINARY_TEXT_CORRESPONDENCE",
+      "caveat": "1961 GABC abbreviates repeated antiphon to Requiem; no full repeated performance transcription claimed"
+    },
+    {
+      "role": "GRADUAL",
+      "id": 1261,
+      "reference": "Missale Romanum 1962 pp. 723, 725-726",
+      "checkedParts": [
+        "Requiem aeternam",
+        "In memoria aeterna verse"
+      ],
+      "status": "PRELIMINARY_TEXT_CORRESPONDENCE",
+      "caveat": "Orthographic normalizations; printed pitches/notes not checked"
+    },
+    {
+      "role": "TRACT",
+      "id": 338,
+      "reference": "Missale Romanum 1962 pp. 723, 725-726",
+      "checkedParts": [
+        "Absolve Domine ... fidelium defunctorum",
+        "Et gratia tua",
+        "Et lucis aeternae"
+      ],
+      "status": "PRELIMINARY_TEXT_CORRESPONDENCE",
+      "caveat": "The 1962 printed text retains defunctorum; third-party transcription without it is not authoritative"
+    },
+    {
+      "role": "OFFERTORY",
+      "id": 1199,
+      "reference": "Missale Romanum 1962 pp. 724-726",
+      "checkedParts": [
+        "Domine Jesu Christe body",
+        "Hostias et preces verse",
+        "Quam olim Abrahae repeat"
+      ],
+      "status": "PRELIMINARY_TEXT_CORRESPONDENCE",
+      "caveat": "1961 GABC abbreviates final Quam olim repetition; not evidence of omission"
+    },
+    {
+      "role": "COMMUNION",
+      "id": 241,
+      "reference": "Missale Romanum 1962 pp. 724-726",
+      "checkedParts": [
+        "Lux aeterna antiphon",
+        "Requiem aeternam verse",
+        "Cum sanctis repeat"
+      ],
+      "status": "PRELIMINARY_TEXT_CORRESPONDENCE",
+      "caveat": "No note/neume comparison or performed-verse certification"
+    },
+    {
+      "role": "SEQUENCE",
+      "id": 1198,
+      "reference": "Missale Romanum 1962 pp. 723-724; Graduale 1961 p.96*",
+      "checkedParts": [
+        "Dies irae sequence identity"
+      ],
+      "status": "SOURCE_INDEXED_TEXT_NOT_FULL_GABC_COLLATED",
+      "caveat": "Source page #1198 remarks the 1961 printed first-line custos was erroneous; do not infer note-for-note correspondence or public score approval"
+    }
+  ],
+  "sequenceRubric": {
+    "allThreeOriginalSourceFilesSetSequentia": true,
+    "performance": "CONDITIONAL_NOT_ALWAYS_SUNG",
+    "printedSource": "Missale Romanum 1962 p. 722, All Souls three-Mass rubric",
+    "observedRubric": "When three Masses are celebrated without interruption, sequence is required only at the principal Mass (otherwise at first); in other Masses omission is possible unless sung",
+    "preciseApplication": "SOURCE_RUBRICS_REQUIRE_PER_CELEBRATION_CONTEXT_AND_FORM",
+    "doNotAutomaticallyOmitOrRequire": true,
+    "sourceOnlyNoReaderChange": true
+  },
+  "additionalRequiemScoreLeads": [
+    {
+      "role": "KYRIE_REQUIEM",
+      "title": "Kyrie eleison (in Miss. def.)",
+      "gregobaseId": 541,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=541",
+      "graduale1961Page": "94*",
+      "liberUsualis1961Page": "1807",
+      "evidence": "SOURCE_INDEXED",
+      "printedNotesVerified": false,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "role": "SANCTUS_REQUIEM",
+      "title": "Sanctus XVIII (Requiem section)",
+      "gregobaseId": null,
+      "sourceUrl": "https://gregobase.selapa.net/source.php?id=2",
+      "graduale1961Page": "101*",
+      "evidence": "INDEX_ONLY_ID_NOT_YET_CONFIRMED",
+      "printedNotesVerified": false,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "role": "AGNUS_REQUIEM",
+      "title": "Agnus Dei (in Miss. def.)",
+      "gregobaseId": 2118,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=2118",
+      "graduale1961Page": "101*",
+      "liberUsualis1961Page": "1815",
+      "evidence": "SOURCE_INDEXED",
+      "printedNotesVerified": false,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "role": "DISMISSAL_REQUIEM",
+      "title": "Requiescant (with Amen response)",
+      "gregobaseId": 823,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=823",
+      "graduale1961Page": "102*",
+      "liberUsualis1961Page": "1815",
+      "evidence": "SOURCE_INDEXED_RESPONSE_PARITY_NOT_YET_CHECKED",
+      "printedNotesVerified": false,
+      "editorialApproval": false,
+      "publicReader": false
+    },
+    {
+      "role": "FUNERAL_ABSOLUTION_OPTION",
+      "title": "Libera me Domine de morte",
+      "gregobaseId": null,
+      "sourceUrl": "https://gregobase.selapa.net/source.php?id=2",
+      "graduale1961Page": "102*",
+      "evidence": "INDEX_ONLY_OPTIONAL_RITE_NOT_AUTOMATIC",
+      "ceremonyRequiresExplicitSelection": true,
+      "printedNotesVerified": false,
+      "editorialApproval": false,
+      "publicReader": false
+    }
+  ],
+  "remainingAfterM15": [
+    "Run production selected 1962 Requiem for each Mass and compare the actual full source Proper with printed Missal, respecting variants",
+    "Resolve Sanctus XVIII and optional absolution exact 1961 original IDs and rubric applicability",
+    "Verify complete Latin and score text for Kyrie, Sanctus, Agnus and Requiescant response, and full Dies irae sequence",
+    "Check all Gregorian musical notes against printed 1961 scores, including Dies irae first-line custos and GABC transcription differences",
+    "Check sequence applicability by the actual form/number/order of Masses, never merely by occurrence of Sequentia in donor metadata",
+    "Present one complete score collection for final approval; only afterward authorize existing offline notation viewer"
   ]
 }
