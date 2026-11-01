@@ -94,7 +94,7 @@ assert.deepEqual(data.additionalRequiemScoreLeads.map(x=>x.role),
  ["KYRIE_REQUIEM","SANCTUS_REQUIEM","AGNUS_REQUIEM",
   "DISMISSAL_REQUIEM","FUNERAL_ABSOLUTION_OPTION"]);
 assert.deepEqual(data.additionalRequiemScoreLeads.map(x=>x.gregobaseId),
- [541,null,2118,823,null]);
+ [541,298,2118,823,null]);
 assert.ok(data.additionalRequiemScoreLeads.every(x=>
  x.printedNotesVerified===false&&x.editorialApproval===false&&x.publicReader===false));
 assert.equal(data.additionalRequiemScoreLeads[4].ceremonyRequiresExplicitSelection,true);
