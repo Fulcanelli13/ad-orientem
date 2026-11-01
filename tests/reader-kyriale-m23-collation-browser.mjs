@@ -66,6 +66,43 @@ try{
       svg?.querySelectorAll("*").length>2&&svg.getBoundingClientRect().height>0;
     },sourceId,{timeout:55000});
    }
+   // 54 individual sung source-note groups, across four original printed systems.
+   // Synthetic reviews in this E2E are tests ONLY, not real editorial decisions.
+   await page.locator("#scoreSelect").selectOption("6");
+   await page.locator("#agnusNotePanel").waitFor({state:"visible",timeout:30000});
+   assert.equal(await page.locator("#agnusGroupSelect option").count(),54);
+   assert.match(await page.locator("#agnusGroupTitle").innerText(),/Invocation 1.*staff system 1/);
+   assert.match(await page.locator("#agnusGroupSource").innerText(),/A\(fggf\)/);
+   for(const [index,expected] of [
+    ["13","staff system 1"],["14","staff system 2"],
+    ["18","Invocation 2"],["28","staff system 3"],
+    ["36","Invocation 3"],["42","staff system 4"]
+   ]){
+    await page.locator("#agnusGroupSelect").selectOption(index);
+    assert.ok((await page.locator("#agnusGroupTitle").innerText()).includes(expected),
+     "Original printed system or invocation was misplaced: "+index);
+   }
+   await page.locator("#agnusGroupSelect").selectOption("0");
+   assert.equal(await page.locator("#agnusPitch").inputValue(),"UNREVIEWED");
+   assert.equal(await page.locator("#agnusNeume").inputValue(),"UNREVIEWED");
+   await page.locator("#agnusPitch").selectOption("MATCH");
+   await page.locator("#agnusNeume").selectOption("DIFFERENCE");
+   await page.locator("#agnusUnderlay").selectOption("UNCERTAIN");
+   await page.locator("#agnusGroupComment").fill(
+    "SYNTHETIC TEST ONLY: original staff 1, A(fggf). Not evidence of a real discrepancy.");
+   await page.locator("#agnusGroupSave").click();
+   await page.locator("#agnusNext").click();
+   await page.locator("#agnusPrev").click();
+   assert.equal(await page.locator("#agnusPitch").inputValue(),"MATCH");
+   assert.equal(await page.locator("#agnusNeume").inputValue(),"DIFFERENCE");
+   assert.match(await page.locator("#agnusGroupComment").inputValue(),/SYNTHETIC TEST ONLY/);
+   for(const key of ["pitch","neume","underlay","rhythm"])
+    await page.locator("#"+key).selectOption("MATCH");
+   await page.locator("#save").click();
+   assert.match(await page.locator("#progress").innerText(),/0 of 7/,
+    "Page-level Agnus MATCH must never imply 54 individual groups certified");
+   assert.match(await page.locator("#agnusGroupProgress").innerText(),/0\/54/);
+
    await page.locator("#scoreSelect").selectOption("0");
    await page.waitForFunction(()=>document.querySelector("#engraveStatus")
     ?.textContent?.includes("Offline SVG"),null,{timeout:55000});
@@ -123,6 +160,17 @@ try{
    assert.equal(exported.scores[4].allPageCategoriesMarkedMatching,false);
    assert.equal(exported.scores[4].pages[1].neume,"DIFFERENCE");
    assert.equal(exported.scores[4].pages[1].editorialApproval,undefined);
+   const agnusEvidence=exported.scores.find(s=>s.gregobaseId===2760);
+   assert.equal(agnusEvidence.allPageCategoriesMarkedMatching,false,
+    "All 54 note groups must be independently marked MATCH, not inferred from page fields");
+   assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.pitch,"MATCH");
+   assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.neume,"DIFFERENCE");
+   assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.underlay,"UNCERTAIN");
+   assert.equal(agnusEvidence.pages[0].groupReviews?.[1]?.rhythm,"UNREVIEWED");
+   assert.match(agnusEvidence.pages[0].groupReviews?.[1]?.comment,/SYNTHETIC TEST ONLY/);
+   assert.equal(agnusEvidence.editorialApproval,false);
+   assert.equal(agnusEvidence.publicScore,false);
+
    assert.ok(exported.scores.every(s=>s.publicScore===false&&s.editorialApproval===false));
    await page.screenshot({path:out+"/"+test.width+"-source-collation.png",animations:"disabled"});
    assert.deepEqual(errors,[],"Review navigation/export must have no runtime errors");
