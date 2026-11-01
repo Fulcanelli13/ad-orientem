@@ -116,12 +116,14 @@ assert.ok(FIND_MAP_RUNTIME.style.includes("/styles/dark"));
 assert.equal(massMapProviderGroup("SSPX"),"SSPX");
 assert.equal(massMapProviderGroup("UNRECOGNISED_GROUP"),"OTHER");
 assert.deepEqual(Object.keys(MASS_MAP_GROUP_COLORS).sort(),[
-  "AASJMV","DIOCESAN","FSSP","IBP","ICKSP","OTHER","SSPX",
+  "AASJMV","CAPUCHINS_MORGON","DIOCESAN","FSSP","IBP","ICKSP","OTHER","SSPX",
   "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN",
 ].sort(),"Source-identified order families join the five established institute map categories");
 for(const group of ["BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"]){
   assert.equal(massMapProviderGroup(group),group,"Exact order-family identity must survive map projection");
 }
+assert.equal(massMapProviderGroup("CAPUCHINS_MORGON"),"CAPUCHINS_MORGON",
+  "Exact Morgon label must map to its own emblem rather than generic Franciscan arms");
 assert.equal(massMapProviderGroup("DOMINICANS_AVRILLE"),"OTHER",
   "A distinct traditional Dominican congregation may not inherit generic order heraldry");
 const mapItems=[{
