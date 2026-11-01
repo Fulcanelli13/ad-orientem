@@ -2058,13 +2058,29 @@
           "artist": "Annibale Carracci",
           "title": "The Coronation of the Virgin",
           "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
-          "sourceEditorialStatus": "USER_APPROVED",
+          "sourceEditorialStatus": "USER_APPROVAL_SCOPE_INCORRECTLY_EXPANDED_FROM_PROPOSAL",
           "fit": "HUMAN_EXPLICIT",
           "historicallyApprovedInOriginalLedger": true,
-          "requiresExplicitUserApproval": false,
+          "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
         },
         {
           "sourceIDs": [
@@ -2125,7 +2141,23 @@
           "requiresExplicitUserApproval": true,
           "sourceType": "ORIGINAL_PRAYER_RESEARCH",
           "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
         },
         {
           "sourceIDs": [
@@ -2593,5 +2625,15 @@
     ],
     "sourceLedgerUnmodified": true,
     "productionEnabled": false
+  },
+  "scopeReconciliation20261101": {
+    "rightsUnchanged": true,
+    "publicationAllowed": false,
+    "sourceOriginals": [
+      "REVIEW::cma:143761",
+      "REVIEW::met:435853"
+    ],
+    "authorisedTarget": "STG-pray.rosary-16",
+    "nonTargetCandidateUseRequiresIndependentApproval": true
   }
 }
