@@ -1,10 +1,7 @@
 name: Sacred Art — Flemish museum collection-scale acquisition
+# Imagehub 894-manifest pilot produced no eligible images; avoid 12-minute re-harvests on every PR push.
+# Keep a manual diagnostic hook only until paired LIDO metadata classification is implemented.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - "scripts/art/bulk-flemish-museum-harvest.py"
-      - ".github/workflows/sacred-art-flemish-bulk-acquisition.yml"
   workflow_dispatch:
 permissions:
   contents: read
