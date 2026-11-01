@@ -10,7 +10,7 @@ import {renderDirectoryIdentityFallback,hideUnavailableDirectoryEmblem} from "..
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
-  ["FSSP","IBP","ICKSP","SSPX","AASJMV","CAPUCHINS_MORGON",
+  ["FSSP","IBP","ICKSP","SSPX","AASJMV","CAPUCHINS_MORGON","MILITIA_TEMPLI",
     "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"].sort(),
   "Only source-qualified institute and order-family symbols may render");
 assert.equal(massInstitutionEmblem("diocesan"),null,
@@ -153,6 +153,18 @@ assert.equal(researchQueue.groups.find(x=>x.group_code==="CMRI").rights,"THIRD_P
 for(const code of familyCodes){
   assert.equal(massInstitutionEmblem(code)?.symbolScope,"ORDER_FAMILY");
   assert.equal(researchQueue.groups.find(x=>x.group_code===code)?.type,"ORDER_FAMILY");
+}
+const militia=massInstitutionEmblem("MILITIA_TEMPLI");
+assert.equal(militia?.symbolScope,"INDEPENDENT_INSIGNIA_RENDERING");
+assert.equal(militia.officialIdentitySource,"https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/");
+assert.equal(militia.source,"https://commons.wikimedia.org/wiki/File:Maltese_Cross_variant_red.svg");
+assert.match(militia.rights,/Public-domain geometry/);
+for(const lang of ["en","fr"]){
+  const id=renderDirectoryIdentityFallback({community_id:"MILITIA_TEMPLI",eyebrow:"Militia Templi"},lang,"card");
+  assert.match(id,/data-visual-kind="emblem"/);
+  assert.match(id,lang==="fr"?/Dessin indépendant de la croix/:/Independent cross drawing/);
+  assert.doesNotMatch(id,/Militia_Templi_COA.svg/,
+    "Do not substitute unauthorised blue shield or generic medieval Templar heraldry");
 }
 assert.equal(massInstitutionEmblem("NORBERTINE").image,massInstitutionEmblem("PREMONSTRATENSIAN").image,
   "Norbertine and Premonstratensian share the same order-wide heraldry");
