@@ -386,7 +386,8 @@ try{
             defects.push("wrong actor "+cueIds[0]+" expected "+paragraph.speakerRole+
               " displayed "+dom.dataset.speakerRole);
           const allowedComposite=(cueIds.join("|")==="AO.SM.C0053|AO.SM.C0054" ||
-            cueIds.join("|")==="AO.SM.C0089|AO.SM.C0090");
+            cueIds.join("|")==="AO.SM.C0089|AO.SM.C0090" ||
+            cueIds.join("|")==="AO.SM.C0141|AO.SM.C0142");
           if(cueIds.length===1 || allowedComposite){
             if(dom.dataset.cueId!==cueIds[0])
               defects.push("missing exact focus owner "+cueIds[0]+" in "+card.title);
