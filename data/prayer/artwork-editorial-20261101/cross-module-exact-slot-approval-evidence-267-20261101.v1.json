@@ -19,11 +19,11 @@
     "APPROVAL_SCOPE_CONFLICT": 1,
     "ACCEPTED_AT_PROPOSED_SLOT": 97,
     "NONINDIVIDUAL_CATEGORY_POOL": 5,
-    "INHERITED_REUSE_REQUIRES_SCOPE_TRACE": 72,
+    "INHERITED_REUSE_REQUIRES_SCOPE_TRACE": 71,
     "HISTORIC_KEEP_ORIGINAL_MODULE": 3,
     "DETERMINISTIC_RESTORATION": 5,
     "ACCEPTED_WITH_SCOPE_NOTE": 6,
-    "EXPLICIT_FINAL_COVER_LOCK": 4,
+    "EXPLICIT_FINAL_COVER_LOCK": 5,
     "HELD_PRIMARY": 14
   },
   "byFamily": {
@@ -58,10 +58,11 @@
     "D4 Novenas & Journeys": {
       "NONINDIVIDUAL_CATEGORY_POOL": 1,
       "UNRESOLVED_HISTORIC_PROVENANCE": 3,
-      "INHERITED_REUSE_REQUIRES_SCOPE_TRACE": 7,
+      "INHERITED_REUSE_REQUIRES_SCOPE_TRACE": 6,
       "ACCEPTED_AT_PROPOSED_SLOT": 18,
       "PROVISIONAL": 1,
-      "HELD_PRIMARY": 2
+      "HELD_PRIMARY": 2,
+      "EXPLICIT_FINAL_COVER_LOCK": 1
     },
     "D5 Holy Eucharist": {
       "ACCEPTED_AT_PROPOSED_SLOT": 9,
@@ -7973,7 +7974,7 @@
       "family": "D4 Novenas & Journeys",
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
-      "authorityTier": "INHERITED_REUSE_REQUIRES_SCOPE_TRACE",
+      "authorityTier": "EXPLICIT_FINAL_COVER_LOCK",
       "primaryMode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
       "selectedOriginal": {
         "artist": "Historical photograph of St Thérèse",
@@ -8000,7 +8001,15 @@
       "photoQAComplete": false,
       "editorialInterpretation": "Evidence tier is a machine-generated triage classification, not new approval or rejection. Original written instructions and exact painting identities override automatic inference.",
       "originalExactIDB01ToB05": [],
-      "originalExactIDB06ToB11": []
+      "originalExactIDB06ToB11": [],
+      "finalLockEvidence": {
+        "source": "curatorial-master-267-20261101.v1.json:finalProtectedCovers",
+        "exactSelectedTitle": "Therese_lisieux_portrait.jpg",
+        "historicalUserPhotograph": true,
+        "doNotSubstitute": true,
+        "photoRightsNotVerified": true,
+        "originalPrimaryUnchanged": true
+      }
     },
     {
       "slot": "STG-novena.st_therese-01",
@@ -15530,5 +15539,10 @@
     "historicallyUnresolvedRowsWithWrittenScopeEvidence": 17,
     "interpretation": "Exact artwork-ID matches and original comments are evidence, not automatic scope approval. In particular, the original user-written destination takes precedence over a selected proposal checkbox.",
     "tiersUnchanged": true
+  },
+  "protectedCoverClassificationCorrection20261101": {
+    "slot": "COV-novena.st_therese",
+    "reason": "The pre-existing curatorial master explicitly locks the original user-supplied Therese image; it is not merely inherited reuse.",
+    "originalMasterUnchanged": true
   }
 }
