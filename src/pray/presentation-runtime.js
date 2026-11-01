@@ -914,7 +914,7 @@ function prayDoorShelfEntry(item,featured=false){
  const [owner,route,title,description]=item;
  const source=owner==='prayer'?DATA.prayers?.[route]:null;
  if(owner==='prayer'&&!source)return '';
- const name=source?(isFr()?(source.titleFr||source.title):source.title):title;
+ const name=title; // Editorial shelf label; exact source edition remains in canonical reader.
  const detail=description||'';
  const attr=owner==='prayer'?`data-p435930-door-prayer="${esc(route)}"`
   :owner==='external'?`data-p435930-external="${esc(route)}"`:`data-p435930-own="${esc(route)}"`;
@@ -937,9 +937,10 @@ function renderPrayFamily(){
  const visible=family.items.filter(item=>item[0]!=='prayer'||DATA.prayers?.[item[1]]);
  const first=visible[0],remaining=visible.slice(1);
  return `${head(family.title,'')}<main class="aoP435930Body aoPrayDoorInterior" data-ao-prayer-shelf="${esc(familyId)}">
-  <header class="aoPrayDoorHeading"><small>${esc(L('PRAYER','PRIÈRE'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p>${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</div>':''}</header>
+  <header class="aoPrayDoorHeading"><p>${esc(family.description)}</p></header>
   ${first?prayDoorShelfEntry(first,true):''}
   <nav class="aoPrayDoorShelfList" aria-label="${esc(family.title)}">${remaining.map(item=>prayDoorShelfEntry(item)).join('')}</nav>
+  ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
  </main>`;
 }
 function openFamily(id){
