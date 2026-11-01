@@ -268,7 +268,12 @@ export function installSequentialDevotionalReader({
     if(!beat||!body.contains(beat))return;
     const box=body.getBoundingClientRect(),rect=beat.getBoundingClientRect();
     body.scrollTop+=rect.top-box.top-box.height*.40;
-    userScrolled=true;queue();
+    userScrolled=true;
+    // A source-owned Choir invocation has a response at the fixed foot,
+    // not inline. Make its user-selected answer visible on the same tap.
+    // The scroll focus pass will reconcile the visible invocation afterward.
+    if(beat.classList.contains("aoChoirBeat"))onFocus(beat);
+    queue();
   });
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
   doc.defaultView?.addEventListener("resize",()=>{
