@@ -16,6 +16,33 @@ assert.equal(allSouls?.artist,"Ludovico Carracci");
 assert.match(allSouls?.title??"",/Souls of Purgatory/);
 assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m1"},{selectedDate:"2026-11-01"}),null);
 assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-01"},{selectedDate:"2026-11-03"}),null);
+// No new painting choice: all eight source-visible Class I Calendar previews
+// reuse their exact observed 1962 Proper paths in Home, and nothing else.
+// The two held photographs must not be surfaced merely because approved.
+const datedHomePaths={
+  "2026-03-29":"Tempora/Quad6-0r",
+  "2026-04-02":"Tempora/Quad6-4r",
+  "2026-05-23":"Tempora/Pasc6-6",
+  "2026-05-24":"Tempora/Pasc7-0",
+  "2026-05-27":"Tempora/Pasc7-3",
+  "2026-06-12":"Tempora/Pent02-5",
+  "2026-11-01":"Sancti/11-01",
+  "2026-11-02":"Sancti/11-02m1"
+};
+for(const [date,path] of Object.entries(datedHomePaths)){
+ const selected=c3ApprovedDatedHomeArt({properPath:()=>path},{selectedDate:date});
+ assert.equal(selected?.date,date,"Missing approved Home reuse date: "+date);
+ assert.match(selected.image??"",/^https:\/\/upload\.wikimedia\.org\//,"Home artwork must be the canonical preview");
+ assert.match(selected.imagePublicationStatus,/NOT_OFFLINE_CERTIFIED/,"Must not claim released original");
+ assert.equal(c3ApprovedDatedHomeArt({properPath:()=>path+"-wrong"},{selectedDate:date}),null,
+   "Wrong Proper must never receive approved art: "+date);
+}
+assert.equal(Object.keys(datedHomePaths).length,8);
+for(const [date,path] of [["2026-10-25","Sancti/10-DU"],["2026-11-29","Tempora/Adv1-0"]]){
+ assert.equal(c3ApprovedDatedHomeArt({properPath:()=>path},{selectedDate:date}),null,
+   "Previously held reproduction must not appear on Home: "+date);
+}
+
 assert.ok(HOME_C3_CSS.includes(".aoC3DatedImage"));
 assert.ok(!HOME_C3_CSS.includes(".aoC3DatedCredit"),"C3 art metadata belongs in the existing information control, not an image caption");
 
