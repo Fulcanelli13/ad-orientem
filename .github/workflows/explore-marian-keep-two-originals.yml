@@ -12,7 +12,7 @@ on:
       - '.github/workflows/explore-marian-keep-two-originals.yml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: ao-marian-keep-two-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          persist-credentials: true
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -40,17 +40,16 @@ jobs:
           node tests/explore-marian-keep-two-first-gallery.mjs
           node tests/explore-p77-reviewed-place-photos.mjs
           node tests/explore-approved-gallery-cover-reuse-20261031.mjs
-      - name: Commit only verified local binary + approved gallery metadata on this release branch
-        env:
-          BRANCH: ${{ github.head_ref }}
-        run: |
-          set -euo pipefail
-          git add data/geography/approved-place-gallery.v1.json
-          git add assets/approved/place-gallery/PL-jasna-gora-venerated-black-madonna-icon-2024.webp
-          git add assets/approved/place-gallery/DE-altoetting-venerated-black-madonna-2013.webp
-          if git diff --cached --quiet; then
-            echo "No changed assets or metadata; existing approved images already verified"
-            exit 0
-          fi
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'feat(explore): approved historical KEEP Black Madonna detail photographs [skip ci]'
-          git push origin "HEAD:${BRANCH}"
+      # Source discovery/verification is read-only. Exact verified originals are
+      # staged as review artifacts; publication remains a separate approved PR.
+      - name: Stage verified original photographs for explicit review
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marian-keep-two-reviewed-originals
+          path: |
+            assets/approved/place-gallery/PL-jasna-gora-venerated-black-madonna-icon-2024.webp
+            assets/approved/place-gallery/DE-altoetting-venerated-black-madonna-2013.webp
+            data/geography/approved-place-gallery.v1.json
+          if-no-files-found: warn
+          retention-days: 7
