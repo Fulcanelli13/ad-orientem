@@ -1,10 +1,7 @@
 name: Sacred Art — Flemish FULL catalogue religious painting image acquisition
+# This bulk research intake has completed. Avoid repeat downloads on unrelated PR sync.
+# Run only by explicit manual dispatch for a justified source refresh.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - "scripts/art/acquire-flemish-from-full-catalogue.py"
-      - ".github/workflows/sacred-art-flemish-full-acquisition.yml"
   workflow_dispatch:
 permissions:
   contents: read
