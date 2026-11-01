@@ -1,0 +1,56 @@
+name: Explore — two historical KEEP Marian object photographs
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - 'tools/explore-marian-keep-two-acquire.py'
+      - 'data/geography/research/marian-keep-two-release-source-pins-20261101.v1.json'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'tests/explore-marian-keep-two-first-gallery.mjs'
+      - 'tests/explore-p77-reviewed-place-photos.mjs'
+      - '.github/workflows/explore-marian-keep-two-originals.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-marian-keep-two-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+jobs:
+  acquire-verify-and-stage:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'release/explore-marian-object-keep-two-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow==11.3.0
+      - name: Fetch exactly two named original photos with native SHA1 and rights verification
+        run: python tools/explore-marian-keep-two-acquire.py
+      - name: Test local image bytes, exact Place, source, licence and previous gallery regression
+        run: |
+          node tests/explore-marian-keep-two-first-gallery.mjs
+          node tests/explore-p77-reviewed-place-photos.mjs
+          node tests/explore-approved-gallery-cover-reuse-20261031.mjs
+      - name: Commit only verified local binary + approved gallery metadata on this release branch
+        env:
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          git add data/geography/approved-place-gallery.v1.json
+          git add assets/approved/place-gallery/PL-jasna-gora-venerated-black-madonna-icon-2024.webp
+          git add assets/approved/place-gallery/DE-altoetting-venerated-black-madonna-2013.webp
+          if git diff --cached --quiet; then
+            echo "No changed assets or metadata; existing approved images already verified"
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'feat(explore): approved historical KEEP Black Madonna detail photographs [skip ci]'
+          git push origin "HEAD:${BRANCH}"
