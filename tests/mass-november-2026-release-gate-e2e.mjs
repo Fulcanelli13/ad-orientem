@@ -370,7 +370,7 @@ try{
                placeat:visibleText("AO.SM.C0261"),
                lastGospel:visibleText("AO.SM.C0271"),
              };
-             if(ceremonial.sourcePath!=="Sancti/11-02m"+massNumber||
+             ceremonial.valid=!(ceremonial.sourcePath!=="Sancti/11-02m"+massNumber||
                 ceremonial.planDismissal!=="REQUIESCANT_IN_PACE"||
                 ceremonial.blessingAllowed!==false||
                 ceremonial.normalLastGospel!==true||
@@ -381,8 +381,7 @@ try{
                 !/r[eé]quiem sempit[eé]rnam/i.test(ceremonial.agnusFinal)||
                 !/Pl[aá]ceat tibi/i.test(ceremonial.placeat)||
                 !/In princ[ií]pio erat Verbum/i.test(ceremonial.lastGospel))
-               throw Error("NOV02_ACTUAL_REQUIEM_CEREMONY_MISMATCH:"+
-                 JSON.stringify({massNumber,mode:proof.requestedMode,language,ceremonial}));
+             );
              proof.ceremonial=ceremonial;
              // Inspect the exact approved source rubric and its artwork on
              // the actual cue-bearing card. The Sequence can legitimately
@@ -420,6 +419,8 @@ try{
              return proof;
            },language);
            try{
+             if(!real.ceremonial?.valid)throw Error("NOV02_ACTUAL_REQUIEM_CEREMONY_MISMATCH:"+
+               JSON.stringify({massNumber,mode,language,ceremonial:real.ceremonial}));
              if(real.sourcePath!=="Sancti/11-02m"+massNumber||
                 real.actualLanguage!==language||real.requestedMode!==mode||
                 real.sourceCard!=="AO.CARD.006"||
