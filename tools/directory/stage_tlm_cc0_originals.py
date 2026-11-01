@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Stage source-verified TLM church exteriors. Never publish or approve.
-Run on a networked, review-only runner: python tools/directory/stage_tlm_cc0_originals.py.
+Use the thirteen already-acquired ZIPs: AO_TLM_ARCHIVES_DIR=/path/to/zips python tools/directory/stage_tlm_cc0_originals.py.
 Requires Pillow. No production media, image registry, or source ledger is modified.
 """
 import hashlib
@@ -8,45 +8,14 @@ import os
 import zipfile
 import io
 import json
-import re
 import sys
-import time
-import urllib.error
-import urllib.parse
-import urllib.request
 from pathlib import Path
 from PIL import Image, ImageOps, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "data/directory/research/tlm-wave-a-cc0-commons-preflight-20261101.v1.json"
 OUT = ROOT / "artifacts/tlm-wave-a-cc0-review"
-API = "https://commons.wikimedia.org/w/api.php"
-HEADERS = {"User-Agent": "AdOrientem-TLM-SourceReview/1.0 (research-only; Wikimedia Commons original verification)", "Accept": "application/json"}
-MAX_ORIGINAL_BYTES = 40 * 1024 * 1024
 MAX_IMAGES = 28
-
-def open_url(url, max_bytes=MAX_ORIGINAL_BYTES):
-    if not url.startswith("https://"):
-        raise ValueError("HTTPS source required")
-    last = None
-    for attempt in range(3):
-        try:
-            req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=60) as rsp:
-                if not rsp.url.startswith("https://"):
-                    raise ValueError("insecure source redirect")
-                limit = rsp.headers.get("Content-Length")
-                if limit and int(limit) > max_bytes:
-                    raise ValueError("oversized source media")
-                body = rsp.read(max_bytes + 1)
-                if len(body) > max_bytes:
-                    raise ValueError("oversized downloaded media")
-                return body
-        except (TimeoutError, urllib.error.HTTPError, urllib.error.URLError) as exc:
-            last = exc
-            if attempt < 2:
-                time.sleep(2 * (attempt + 1))
-    raise RuntimeError(f"source retrieval failed: {last}")
 
 def load_rows(part_paths):
     rows = []
@@ -57,39 +26,6 @@ def load_rows(part_paths):
     if len(rows) != 739 or len(by_id) != 739:
         raise ValueError("frozen 739-photo corpus mismatch")
     return by_id
-
-def extract_license(data):
-    md = data.get("extmetadata") or {}
-    return str((md.get("LicenseShortName") or {}).get("value", "")).strip()
-
-def lookup_original(row):
-    title = row["commons_file"]
-    if not title.startswith("File:"):
-        raise ValueError("Commons namespace required")
-    params = urllib.parse.urlencode({
-        "action": "query", "format": "json", "prop": "imageinfo",
-        "iiprop": "url|sha1|size|extmetadata", "titles": title,
-    })
-    doc = json.loads(open_url(API + "?" + params, max_bytes=3_000_000))
-    pages = list(doc["query"]["pages"].values())
-    if len(pages) != 1 or "imageinfo" not in pages[0]:
-        raise ValueError("Commons source page missing image")
-    image = pages[0]["imageinfo"][0]
-    original = image.get("url", "")
-    if urllib.parse.urlparse(original).hostname != "upload.wikimedia.org":
-        raise ValueError("Unexpected Commons media host")
-    claimed_sha1 = row["commons_original_sha1"].lower()
-    current_sha1 = str(image.get("sha1", "")).lower()
-    if not re.fullmatch("[a-f0-9]{40}", claimed_sha1) or current_sha1 != claimed_sha1:
-        raise ValueError("Pinned source SHA-1 mismatch")
-    claimed_license = row["claimed_license"]
-    current_license = extract_license(image)
-    if claimed_license != "CC0" or "cc0" not in current_license.lower():
-        raise ValueError(f"Commons CC0 licence not verified ({current_license})")
-    dims = row["source_native_dimensions"]
-    if [image.get("width"), image.get("height")] != dims:
-        raise ValueError("Current native pixel dimensions differ from pinned record")
-    return image, current_license
 
 def stage(row):
     """Read previously supplied ZIP: source-hash proof, full-frame preview, no network."""
