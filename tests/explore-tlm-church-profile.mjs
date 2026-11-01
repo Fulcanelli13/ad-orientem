@@ -84,11 +84,14 @@ assert.match(mismatched,/data-visual-kind="emblem"/);
  const sourceOnly={...item,source_id:approvedVenueMedia.venue_id,place_id:null,
    title:"Church of Saint Pius V",raw:null,preliminary_group:"SSPX",community_id:"SSPX",
    cover_media:approvedVenueMedia,address:{formatted:"Groombridge, East Sussex, United Kingdom"},
+   source_location_description:"Station Road, Groombridge TN3 9QX, United Kingdom",
    source_links:[{url:"https://example.org/groombridge",title:"Original site listing"}]};
  const venueHtml=renderTlmChurchProfile(sourceOnly,"en");
  assert.match(venueHtml,/src="assets\/approved\/directory-media\/GB-groombridge-st-pius-v.webp"/);
  assert.match(venueHtml,/The Voice of Hassocks/);
  assert.match(venueHtml,/Groombridge, East Sussex, United Kingdom/);
+ assert.match(venueHtml,/Location in original directory/);
+ assert.match(venueHtml,/Station Road, Groombridge TN3 9QX, United Kingdom/);
  assert.match(venueHtml,/Original venue source/);
  assert.match(venueHtml,/data-tlm-source-affiliation/);
  assert.match(venueHtml,/aoTlmProfileEssentials/);
