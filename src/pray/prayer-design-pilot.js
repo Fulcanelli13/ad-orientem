@@ -275,6 +275,7 @@ function installStyles(){
     "#aoPray435930 .aoPrayDoorShelfCopy{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px}",
     "#aoPray435930 .aoPrayDoorShelfCopy b{font:600 17px/1.25 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayDoorShelfCopy small{font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aaa)}",
+    "#aoPray435930 .aoPrayDoorContext{margin-top:18px;padding:13px 0 4px;border-top:1px solid var(--border,#4c4841);opacity:.85}",
     "#aoPray435930 .aoPrayDoorFeatured:focus-visible,#aoPray435930 .aoPrayDoorShelfRow:focus-visible{outline:2px solid var(--liturgical,#c9ae76);outline-offset:2px}",
     "@media(max-width:359px){#aoPray435930 .aoPrayDoorInterior{padding:12px 12px 24px}#aoPray435930 .aoPrayDoorFeatured{gap:9px;padding:11px}#aoPray435930 .aoPrayDoorFeaturedIcon{flex-basis:47px;width:47px}#aoPray435930 .aoPrayDoorFeaturedCopy b{font-size:19px}}",
     "#aoPray435930 .aoPrayPilotAngelusEntry{display:flex;flex-direction:column;min-height:0}",
