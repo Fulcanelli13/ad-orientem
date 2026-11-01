@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {withPublishedMissalParagraphRubrics,publishedMissalRubricsForParagraph} from "../src/mass/reader-missal-rubrics.js";
 import {normalizeReaderMoment,buildReaderShellMarkup} from "../src/mass/reader-dom.js";
+import {missalSourceRubricCopy} from "../src/mass/reader-missal-book-rubrics.js";
 const read=p=>readFileSync(new URL(p,import.meta.url),"utf8");
 const registry=JSON.parse(read("../data/presentation/reader-rubric-events.v1.json"));
 const p=(id,cueId)=>({id,kind:"TEXT",primary:"Source Latin text",sourceCueIds:[cueId]});
@@ -65,4 +66,48 @@ assert.match(dom,/mode==="LIVE"\s*\? p\.publishedMissalRubrics\.filter\(event=>e
  "Printed VIII.6 server bell notes must never become LIVE reader events");
 assert.match(dom,/const alreadyPrintedRubric=\(mode==="MISSAL"\|\|mode==="LIVE"\)/);
 assert.match(dom,/shell\.dataset\.canonInline="false"/);
+// Ecclesia Dei's marginal catechesis is not a LIVE-side rubric. Check the
+// production stylesheet, not just a policy note: source ceremonial brackets
+// become quiet, source-aligned italic text, and 52px icon rails contain no prose.
+const liveSourceRules=[...markup.matchAll(/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]\{[\s\S]*?\n\}/g)];
+const liveSourceRule=liveSourceRules.at(-1)?.[0]??"";
+assert.ok(liveSourceRules.length>=2,"LIVE rubric override must follow the legacy CSS rule");
+assert.match(liveSourceRule,/border-radius:0;background:transparent/,
+  "LIVE source rubrics must not use a grey boxed/card presentation");
+assert.match(liveSourceRule,/font:italic 400/,
+  "LIVE source rubrics need small, unobtrusive Missal-serif type");
+assert.match(markup,/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]::before\{\s*display:none!important/,
+  "LIVE must not prepend a large generic RUBRIC label");
+assert.match(markup,/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-reader-paragraph\[data-kind="RUBRIC"\]\[data-active="false"\]\{\s*opacity:\.38/,
+  "LIVE instruction text must respect paragraph focus");
+assert.match(markup,/\.ao-reader-shell\[data-mode="MISSAL"\]\{--ao-missal-rubric-red:#df7e80\}/,
+  "MISSAL rubrics must remain red, irrespective of the LIVE treatment");
+assert.match(markup,/\.ao-reader-shell\[data-mode="MISSAL"\] \.ao-missal-inline-rubrics\{/,
+  "MISSAL must retain its independent printed full-rubric surface");
+const ministerRule=markup.match(/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-rail-item\[data-channel="sacred-minister"\] \.ao-rail-copy\{[\s\S]*?\n\}/)?.[0]??"";
+assert.match(ministerRule,/display:none!important/,
+  "No tiny, explanatory minister words may occupy an icon-only LIVE rail");
+assert.doesNotMatch(ministerRule,/display:(?:block|-webkit-box)!important/,
+  "An older high-specificity minister rail override reintroduced marginal prose");
+// Two silent Canon Mementos: LIVE prints the short source-owned orientation;
+// MISSAL continues displaying the full certified head/hands/eyes rubrics.
+const sung=JSON.parse(read("../data/presentation/reader-text-sung.v1.json"));
+const fr=JSON.parse(read("../data/presentation/reader-french-ordinary.v1.json"));
+for(const [cue,english,french] of [
+  ["AO.SM.C0155","Silent commemoration of the living","Commémoration silencieuse des vivants"],
+  ["AO.SM.C0193","Silent commemoration of the dead","Commémoration silencieuse des défunts"]
+]){
+  const original=sung.blocks.flatMap(x=>x.units).find(x=>x.cue_id===cue);
+  assert.ok(original?.english.startsWith("[") && original?.english.endsWith("]"));
+  assert.equal(missalSourceRubricCopy({kind:"RUBRIC",primary:original.english},
+    {language:"en"})?.text,english);
+  assert.equal(missalSourceRubricCopy({kind:"RUBRIC",primary:fr.byCue[cue]},
+    {language:"fr"})?.text,french);
+  const full=published(cue,{form:"LOW",language:"en"});
+  assert.ok(full.some(x=>x.displayText.length>100 && x.sourceId==="MR62_RITUS"),
+    "The complete rubrical description must remain published for "+cue);
+}
+assert.match(dom,/const liveBriefMemento=mode==="LIVE"&&p.kind==="RUBRIC"/);
+assert.match(dom,/\["AO.SM.C0155","AO.SM.C0193"\]\.includes\(p.sourceCueIds\[0\]\)/);
+assert.match(dom,/renderReaderText\(primary,conciseSource\?\.text\?\?bookRubric\?\.text\?\?\s*liveBriefCopy\?\.text/);
 console.log("PASS: LIVE 65 removes Guide from reader chrome, publishes only certified source-cue EN/FR priest rubrics, no copied explanations, staged exceptions guarded and canonical text untouched.");
