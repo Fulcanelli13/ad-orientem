@@ -336,6 +336,16 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   display:none
 }
 .aoTlmCelebrationFacets{border-top:1px solid rgba(205,180,132,.22)}
+.aoExploreTlmFilters .aoTlmCl27Facet{min-width:0;margin-top:8px;padding:6px 3px;border-top:1px solid rgba(205,180,132,.22)}
+.aoExploreTlmFilters .aoTlmCl27Facet>summary{min-height:44px;padding:10px 4px;cursor:pointer;color:#d5bd8e;font:650 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoExploreTlmFilters .aoTlmCl27Facet>p,.aoExploreTlmFilters .aoTlmCl27Axis p{color:#b8c2c4;font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif);margin:4px 0 9px}
+.aoExploreTlmFilters .aoTlmCl27Axis{display:grid;gap:6px;border-top:1px solid rgba(205,180,132,.12);padding:10px 0}
+.aoExploreTlmFilters .aoTlmCl27Axis strong{color:#e3d3b5;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoExploreTlmFilters .aoTlmCl27Axis small{color:#91a0a5;font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoExploreTlmFilters .aoTlmCl27Choices{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.aoExploreTlmFilters .aoTlmCl27Choices button{min-height:44px;white-space:normal;text-align:left;background:#10202b;color:#ead9bc;border:1px solid rgba(205,180,132,.24);border-radius:9px;padding:8px 10px;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoExploreTlmFilters .aoTlmCl27Choices button.active{background:#d2b986;border-color:#d2b986;color:#0c1822}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra:has(.aoTlmMoreInstitutes[open]) .aoTlmCl27Facet{display:none}
 /* Secondary communities are in the source-filter disclosure on the map,
    not in the 320px-wide fixed emblem row; list mode retains its original row. */
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes{
