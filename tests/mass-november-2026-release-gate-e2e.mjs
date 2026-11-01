@@ -71,7 +71,11 @@ try{
      return [language,{ready:slots.ready,missing:slots.missing,
        collects:slots.slots?.COLLECT_SET?.data?.paragraphs?.length??0,
        secrets:slots.slots?.SECRET_SET?.data?.paragraphs?.length??0,
-       postcommunions:slots.slots?.POSTCOMMUNION_SET?.data?.paragraphs?.length??0}];
+       postcommunions:slots.slots?.POSTCOMMUNION_SET?.data?.paragraphs?.length??0,
+       // Selected production 1962 Proper text (not archive metadata).
+       offertoryLatin:(slots.slots?.OFFERTORY?.data?.paragraphs??[])
+         .map(row=>String(row.latin??"")).join(" ").slice(0,550),
+       offertorySourcePath:p?.sourcePath??null}];
     }))
    }];
   }));
@@ -208,6 +212,12 @@ try{
   for(const [language,v] of Object.entries(x.languages))
    check(v.ready&&v.collects===2&&v.secrets===2&&v.postcommunions===2,
     `NOV01_${form}_${language}_READER_ORATIONS_NOT_READY`);
+   // Inherited Offertory must be resolved by the actual production Proper.
+   // This certifies only text and selected source; score and tone stay held.
+   check(v.offertorySourcePath==="Sancti/11-01",
+    `NOV01_${form}_${language}_OFFERTORY_WRONG_PROPER_OWNER`);
+   check(/(?:Iu|Ju)st[oó]rum\s+[aá]nim(?:ae|æ|[aá]e)/iu.test(v.offertoryLatin),
+    `NOV01_${form}_${language}_OFFERTORY_SOURCE_INHERITANCE_UNRESOLVED:${String(v.offertoryLatin??"").slice(0,110)}`);
  }
  check(b.status==="ready"&&b.properStatus==="ready","NOV02_CALENDAR_OR_PROPER_NOT_READY");
  check(b.id==="sancti:11-02m1:1:b","NOV02_WRONG_PRINCIPAL");
