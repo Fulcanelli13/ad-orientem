@@ -280,4 +280,62 @@ assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
 assert.equal(ledger.closedGates.approvedForReaderCount,0);
 console.log("PASS M27 12 visually compared original-print melodic motif spot checks across Agnus, Sanctus and Kyrie XVI; full pitch/neume certificates remain 0");
 
+// M28: a true source-token inventory, not a claim that original printed
+// staff pitches and all rhythmic signs were visually certified.
+const a28=ledger.scores.find(x=>x.gregobaseId===2760).noteGroupCollation;
+assert.equal(a28.auditId,"M28_AGNUS_DEI_VIII_COMPLETE_SUNG_GROUP_INVENTORY");
+assert.equal(a28.totalParenthesizedGabcTokens,64);
+assert.equal(a28.nonMusicalGabcTokens,10);
+assert.deepEqual(a28.nonMusicalCategories,{clef:1,division:9});
+assert.equal(a28.sourceGabcTokensExcludingTerminalBars,61);
+assert.equal(a28.sungNoteBearingGroups,54);
+assert.deepEqual(a28.sungGroupsPerInvocation,[18,18,18]);
+assert.equal(a28.noteGroups.length,54);
+assert.equal(a28.printedScoreSystemCount,4);
+assert.deepEqual(a28.originalSystemBreakAfterNoteGroup,{
+ firstInvocation:14,secondInvocation:10,thirdInvocation:6
+});
+const originalAgnus=offlineKyrialeResearchScore("AGNUS_DEI","MASS_08").gabc;
+const originalAgnusLines=originalAgnus.split("%%\n")[1].trim().split("\n");
+assert.equal(originalAgnusLines.length,3);
+const sourceMusical=[];
+for(const [i,line] of originalAgnusLines.entries()){
+ const matched=[...line.matchAll(/([^()]*)\(([^()]*)\)/g)];
+ assert.deepEqual(matched.filter(m=>["c4",",",";","::"].includes(m[2]))
+  .map(m=>m[2]),i===0?["c4",",",";","::"]:[",",";","::"]);
+ const sounding=matched.filter(m=>!["c4",",",";","::"].includes(m[2]));
+ assert.equal(sounding.length,18);
+ sourceMusical.push(...sounding.map((m,j)=>({
+  invocation:i+1,invocationNoteGroup:j+1,syllable:m[1].trim(),gabcOriginalNotes:m[2]
+ })));
+}
+assert.equal(sourceMusical.length,54);
+for(const [i,g] of a28.noteGroups.entries()){
+ assert.equal(g.ordinal,i+1);
+ assert.equal(g.id,"AGNUS8-"+g.invocation+"-"+String(g.invocationNoteGroup).padStart(2,"0"));
+ for(const k of ["invocation","invocationNoteGroup","syllable","gabcOriginalNotes"])
+  assert.equal(g[k],sourceMusical[i][k],"Agnus note group drift "+g.ordinal+" "+k);
+ assert.equal(g.agnusPrintedSystem,
+  g.invocationNoteGroup<=a28.originalSystemBreakAfterNoteGroup[
+   ["firstInvocation","secondInvocation","thirdInvocation"][g.invocation-1]]
+   ?g.invocation:g.invocation+1);
+ assert.equal(g.printedFolio,"31*");
+ assert.equal(g.printedGroupLocated,"PRINTED_SYSTEM_AND_SYLLABLE_LOCATED");
+ for(const key of ["printedPitchParity","printedNeumeParity",
+  "printedSyllableUnderlayParity","printedRhythmicSignParity"])
+  assert.equal(g[key],"NOT_CERTIFIED",g.id+" "+key);
+ assert.equal(g.discrepancy,null);
+}
+assert.deepEqual([1,2,3,4].map(sys=>a28.noteGroups.filter(g=>g.agnusPrintedSystem===sys).length),
+ [14,14,14,12]);
+for(const field of ["verifiedPrintedStaffPitchGroups","verifiedPrintedNeumeGroups",
+ "verifiedPrintedRhythmGroups","verifiedPrintedUnderlayGroups",
+ "numberOfStaffLevelDiscrepanciesEstablished"])
+ assert.equal(a28[field],0);
+assert.equal(a28.allowAutomaticCertification,false);
+assert.equal(a28.editorialApproved,false);
+assert.equal(a28.publicScore,false);
+assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
+console.log("PASS M28 Agnus VIII 54 source note-bearing syllable groups mapped to four 1961 printed staff systems; all pitch/neume/rhythm/underlay verdicts unreviewed");
+
 console.log("PASS M21 exact 10 primary 1961 printed-page images across seven scores; source GABC motif anchors and full score continuations pinned; zero false note certifications/public notation");
