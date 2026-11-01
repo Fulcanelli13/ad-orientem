@@ -16,6 +16,20 @@ function certifiedWeekArt(provider,date){
   if(date==="2026-11-02"&&!/purgatory|souls/.test(norm(a.title)))return null;
   return a;
 }
+// Home must not quietly substitute legacy Proper artwork for the user's
+// exact Class I feast selection. Use only the same Commons preview already
+// displayed by the canonical Calendar, never a new or held reproduction.
+export function c3ApprovedDatedHomeArt(provider,state){
+  const date=state?.selectedDate,path=C3_EXACT_APPROVED_PATHS[date];
+  if(!path||provider?.properPath?.(state)!==path)return null;
+  return APPROVED_CLASS_I_2026.find(row=>row.date===date)??null;
+}
+function eligibleCalendarPreview(row){
+  return Boolean(row?.image&&row.imageTier==="commons-pd-art"&&
+    row.imagePublicationStatus==="REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"&&
+    /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(row.source??"")&&
+    /^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(row.image));
+}
 function info(a,img){
   if(!a||!img?.getAttribute?.("src"))return null;
   return {title:a.title,artist:a.artist,date:a.date??"",rights:a.license??a.rights??"",
@@ -65,9 +79,36 @@ export function hydrateC3Art(root,state,win=globalThis){
   const home=root?.querySelector?.(".homeScreen.aoH7Screens");
   if(!home)return false;
   const p=win.AO_PHASE1_ART,hero=home.querySelector(".aoH7Hero");
-  const mainImg=hero?.querySelector("[data-ao-home-art-slot] img");
+  const slot=hero?.querySelector("[data-ao-home-art-slot]");
   const mainInfo=hero?.querySelector('[data-home-c3-info="mass"]');
-  if(mainInfo)mainInfo.hidden=true;
+  if(mainInfo){mainInfo.hidden=true;mainInfo.__c3Artwork=null;}
+  const selected=c3ApprovedDatedHomeArt(p,state);
+  let datedPreview=null;
+  if(selected&&slot){
+    // The Calendar already publishes these *exact* user-approved Commons
+    // preview URLs; this is re-use, not artwork discovery or rights promotion.
+    // An ineligible image fails closed instead of displaying wrong-feast art.
+    slot.replaceChildren();
+    hero?.classList?.add("aoTodayV2ArtMissing");
+    if(eligibleCalendarPreview(selected)){
+      const doc=win.document,img=doc.createElement("img");
+      img.className="aoC3DatedImage";img.src=selected.image;
+      img.alt=selected.title+" — "+selected.artist;
+      img.referrerPolicy="no-referrer";img.loading="eager";img.decoding="async";
+      const credit=doc.createElement("div");credit.className="aoC3DatedCredit";
+      const name=doc.createElement("span");name.textContent=selected.artist+" · "+selected.title;
+      const link=doc.createElement("a");link.href=selected.source;
+      link.target="_blank";link.rel="noopener noreferrer";link.textContent="Source ↗";
+      credit.append(name,link);slot.append(img,credit);
+      hero?.classList?.remove("aoTodayV2ArtMissing");
+      datedPreview=selected;
+      img.addEventListener("error",()=>{
+        slot.replaceChildren();hero?.classList?.add("aoTodayV2ArtMissing");
+        if(mainInfo){mainInfo.hidden=true;mainInfo.__c3Artwork=null;}
+      },{once:true});
+    }
+  }
+  const mainImg=hero?.querySelector("[data-ao-home-art-slot] img");
   if(mainImg){
     const orientation=()=>{
       const ratio=mainImg.naturalWidth/Math.max(1,mainImg.naturalHeight);
@@ -76,7 +117,13 @@ export function hydrateC3Art(root,state,win=globalThis){
     if(mainImg.complete)orientation();else mainImg.addEventListener("load",orientation,{once:true});
     const row=p?.effectiveRow?.(p?.properPath?.(state));
     const a=row?.status==="GREEN"?p?.effectiveArtwork?.(row.primaryArtId):null;
-    if(mainInfo&&cleanArt(a)){mainInfo.__c3Artwork=info(a,mainImg);mainInfo.hidden=false;}
+    if(mainInfo&&datedPreview){
+      mainInfo.__c3Artwork={title:datedPreview.title,artist:datedPreview.artist,
+        date:"",rights:"Commons public-domain artwork preview (offline image not certified)",
+        source:datedPreview.source,image:datedPreview.image};mainInfo.hidden=false;
+    }else if(mainInfo&&!selected&&cleanArt(a)){
+      mainInfo.__c3Artwork=info(a,mainImg);mainInfo.hidden=false;
+    }
   }
   for(const slot of home.querySelectorAll("[data-home-c3-week-art]")){
     const a=certifiedWeekArt(p,slot.dataset.homeC3WeekArt);
