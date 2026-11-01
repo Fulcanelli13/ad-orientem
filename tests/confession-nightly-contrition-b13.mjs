@@ -20,8 +20,8 @@ const sections=Array.from({length:10},(_,i)=>[String(i+1),["Question 1","Questio
 assert.deepEqual(["regular","returning","general"].map(id=>confessionExaminationCards(id,sections).length),[5,13,14]);
 assert.deepEqual(confessionRiteCards("regular").map(c=>c.id),["at-priest","cross-and-blessing","last-confession","say-sins","closing-accusation","counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"]);
 assert.equal(NIGHTLY_EXAMEN_CARDS.filter(c=>c.id==="resolve").length,1,"One source-owned nightly resolution");
-assert.match(source,/function freshConfessionState\\(\\)\\{return \\{stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard"\\}\\}/);
-assert.doesNotMatch(source,/data-p435930-since|CONF\\.since/,"No Confession free-text/time entry");
+assert.ok(source.includes('function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard"}}'),"No sensitive since-last-Confession field in state");
+assert.ok(!source.includes("data-p435930-since")&&!source.includes("CONF.since"),"No sensitive Confession text input");
 assert.match(source,/function confessionContritionPicker\(kicker\)/);
 assert.match(source,/data-p435930-conf-contrition="piusx"/);
 assert.match(source,/data-p435930-conf-contrition="standard"/);
