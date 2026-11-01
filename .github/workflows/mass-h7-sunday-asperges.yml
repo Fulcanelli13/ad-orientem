@@ -4,6 +4,9 @@ on:
     paths:
       - "src/home/today-h4-change-sheet.js"
       - "src/mass/full-mass-preflight.js"
+      - "src/mass/browser-entry.js"
+      - "src/home/browser-entry.js"
+      - "tests/mass-resume-day-safety.mjs"
       - "tests/mass-h7-sunday-asperges-phone.mjs"
       - ".github/workflows/mass-h7-sunday-asperges.yml"
   workflow_dispatch:
@@ -21,6 +24,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: node tests/reader-asperges.mjs
       - run: node tests/reader-mode-switch.mjs
+      - name: Reject previous-day R17 checkpoints before Today's Mass
+        run: node tests/mass-resume-day-safety.mjs
       - run: npx playwright install --with-deps chromium
       - name: H7 two-step Home to Sunday Asperges to Foot of Altar, EN/FR
         run: node tests/mass-h7-sunday-asperges-phone.mjs
