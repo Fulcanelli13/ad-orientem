@@ -302,7 +302,7 @@ console.log("PASS 41 exact-source 1960 ordinary Preface classifications: Christm
 // the pre-existing independently screened *pinned* witness manifest.
 const originals=witness.cases.filter(x=>x.upstreamRuleTokens.length===0);
 assert.equal(originals.length,131);
-const exceptional=new Set(["06-23","08-29","09-29","11-01","11-18r","12-24"]);
+const exceptional=new Set(["06-23","08-29","09-29","11-18r","12-24"]);
 const groupCount={COMMUNIS:0,PASCHALIS:0,ASCENSIO:0,APOSTOLI:0,HOLD:0};
 for(const w of originals){
   const path=w.canonicalSourcePath;
@@ -319,6 +319,7 @@ for(const w of originals){
   const d=review1962PrefaceForCalendarDay(day);
   let expected;
   if(exceptional.has(k))expected=null;
+  else if(k==="11-01")expected="COMMUNIS";
   else if(k==="05-11r")expected="APOSTOLI";
   else if(date>="2026-04-05"&&date<="2026-05-13")expected="PASCHALIS";
   else if(date>="2026-05-14"&&date<="2026-05-22")expected="ASCENSIO";
@@ -346,7 +347,7 @@ for(const w of originals){
   else assert.equal(review1962PrefaceForCalendarDay(yearChange).status,"UNMAPPED",
     "Held exceptional feasts remain held in future years");
 }
-assert.deepEqual(groupCount,{COMMUNIS:104,PASCHALIS:15,ASCENSIO:5,APOSTOLI:1,HOLD:6});
-console.log("PASS 131 exact original Sanctoral source screen: 104 nonseasonal Common, 15 Easter, five Ascension, one redirected Apostles, six independent-source holds");
+assert.deepEqual(groupCount,{COMMUNIS:105,PASCHALIS:15,ASCENSIO:5,APOSTOLI:1,HOLD:5});
+console.log("PASS 131 exact original Sanctoral source screen: 105 Common including attested All Saints 2026, 15 Easter, five Ascension, one redirected Apostles, five independent-source holds");
 
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
