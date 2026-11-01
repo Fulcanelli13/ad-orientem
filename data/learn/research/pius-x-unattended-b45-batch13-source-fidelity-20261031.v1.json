@@ -1,0 +1,236 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B45_BATCH13_SOURCE_PARITY_V1",
+  "asOf": "2026-10-31",
+  "status": "ADDITIVE_RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "continuity": {
+    "baseline": "2026-10-21 consolidated: 68 contexts examined, 65 improved, 130 answer units, 64 complete packets awaiting human certification, 1 Chanoine original-English hold",
+    "latest": "B42–B44 directly reconciled P711–766; B41's six purported new answers were redundant; this B45 begins at P767 and does not recount earlier work",
+    "branch": "prototype/pius-x-standalone-study-20261021",
+    "scope": "Existing batch13 P767–P816 only; no new canonical IDs"
+  },
+  "draftsRead": [
+    "pius-x-batch13-sacraments-a-20261020.v1.json",
+    "pius-x-batch13-sacraments-b-20261020.v1.json",
+    "pius-x-batch13-sacraments-c-20261020.v1.json",
+    "pius-x-batch13-sacraments-d-20261020.v1.json",
+    "pius-x-batch13-sacraments-e-20261020.v1.json"
+  ],
+  "coverage": {
+    "range": "P767–P816",
+    "existingDistinctFamiliesInspected": 50,
+    "existingBilingualOpeningAndFollowupPairs": 50,
+    "substantiveHistoricalSourceCorrections": 6,
+    "provenanceOnlyRepairs": 5,
+    "otherFamiliesRetainedWithoutRewrite": 39,
+    "newCanonicalFamilies": 0,
+    "certifications": 0
+  },
+  "sourceWitnesses": [
+    {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q767–816",
+      "kind": "1905 Italian online transcription; printed original not collated; documentary catechism not personal verbatim Pius X speech"
+    },
+    {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "§§1459–1460",
+      "kind": "later Catechism doctrinal cross-reference, not historic voice"
+    },
+    {
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+      "loci": "norms 1,4,7",
+      "kind": "1967 later papal discipline; English/French official versions"
+    },
+    {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/ii_who_receives_and_who_administers_this_sacrament.html",
+      "loci": "§§1514–1516",
+      "kind": "later Catechism anointing eligibility cross-reference, not 1905 historical wording"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "SPX-1905-P-772",
+      "kind": "SUBSTANTIVE_SOURCE_DISTINCTION",
+      "originalIssue": "Current opening compresses the original six categories and blurs not knowing the principal mysteries with culpable neglect of religious learning; also reduces lack of signs of sorrow to 'lack of repentance'.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism lists six principal obstacles that a confessor must assess: ignorance of the chief mysteries of faith or neglect of required instruction; grave negligence in examination of conscience or no signs of sorrow; refusal, when able, to restore property or reputation; refusal to forgive enemies; refusal to use necessary means against bad habits; and refusal to leave proximate occasions of sin. These are historical categories for the confessor's discernment, not an app's verdict on an individual.",
+        "fr": "Le Catéchisme de 1905 énumère six principaux obstacles que le confesseur doit apprécier : l'ignorance des principaux mystères de la foi ou la négligence de l'instruction requise ; la grave négligence de l'examen de conscience ou l'absence de signes de repentir ; le refus, lorsqu'on le peut, de restituer les biens ou la réputation ; le refus de pardonner aux ennemis ; le refus d'employer les moyens nécessaires contre les mauvaises habitudes ; et le refus de quitter les occasions prochaines de péché. Ce sont des catégories historiques relevant du discernement du confesseur, non un verdict porté par une application."
+      },
+      "loci": [
+        "PX1905-Q772"
+      ],
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_WITH_EXPLICIT_EDITORIAL_SCOPE",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_PASTORAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-P-781",
+      "kind": "SUBSTANTIVE_HISTORICAL_REASON_OMISSION",
+      "originalIssue": "Current opening includes only the relapse-deterrence reason and omits the source's first reason concerning greater knowledge and ingratitude after Baptism.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism gives two reasons for this distinction: sins committed after Baptism involve greater knowledge and ingratitude for God's gifts, and the obligation of satisfaction serves as a restraint against falling again. This reports the Catechism's historical explanation; it does not determine the culpability of a particular person.",
+        "fr": "Le Catéchisme de 1905 donne deux raisons à cette distinction : les péchés commis après le Baptême impliquent une connaissance et une ingratitude plus grandes envers les bienfaits de Dieu, et l'obligation de satisfaire sert de frein à la rechute. Il s'agit de l'explication historique du Catéchisme, non d'un jugement sur la culpabilité d'une personne particulière."
+      },
+      "loci": [
+        "PX1905-Q781"
+      ],
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_WITH_EDITORIAL_INDIVIDUAL_CULPABILITY_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_VOICE_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-P-794",
+      "kind": "SUBSTANTIVE_HISTORICAL_EFFECT_OMISSION",
+      "originalIssue": "Current fruits-of-confession answer softens the explicit source clause that eternal punishment is changed into temporal punishment, and reduces reopening heaven to 'hope of heaven'.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism names these fruits of a good Confession: forgiveness of sins and God's grace; peace of conscience; the reopening of heaven and the change of eternal punishment into temporal punishment; protection against relapse; and the ability to benefit from indulgences.",
+        "fr": "Le Catéchisme de 1905 nomme ces fruits d'une bonne confession : la rémission des péchés et la grâce de Dieu ; la paix de la conscience ; la réouverture du ciel et la transformation de la peine éternelle en peine temporelle ; une protection contre les rechutes ; et la possibilité de bénéficier des indulgences."
+      },
+      "loci": [
+        "PX1905-Q794"
+      ],
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_NOT_PERSONAL_PAPAL_QUOTE",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_VOICE_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-I-805",
+      "kind": "SUBSTANTIVE_HISTORICAL_CONDITION_PRECISION",
+      "originalIssue": "Current opening omits the source's timing qualifier 'at least at the last work' and its specific reference to freedom from the venial faults whose temporal punishment is sought.",
+      "proposedOpening": {
+        "en": "In the 1905 account, the conditions are: being in the state of grace at least when completing the last prescribed work, and free from the venial faults whose punishment one seeks to remit; performing the works prescribed by the Church; and intending to gain the indulgence. This describes the historical text, not a complete statement of today's conditions for a particular grant.",
+        "fr": "Dans l'exposé de 1905, les conditions sont : être en état de grâce au moins lors de la dernière œuvre prescrite et être purifié des fautes vénielles dont on cherche à remettre la peine ; accomplir les œuvres prescrites par l'Église ; et avoir l'intention de gagner l'indulgence. Il s'agit du texte historique, non de l'ensemble des conditions actuelles d'une concession particulière."
+      },
+      "loci": [
+        "PX1905-Q805"
+      ],
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_WITH_LATER_DISCIPLINE_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_INDULGENCE_DISCIPLINE_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-S-809",
+      "kind": "SUBSTANTIVE_EFFECT_LIST_OMISSION",
+      "originalIssue": "Current opening does not explicitly mention remission of venial sins, and does not preserve the original's separate relief of weakness after forgiveness.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism lists an increase of sanctifying grace; remission of venial sins and also of mortal sins when a repentant sick person can no longer confess; relief from weakness remaining after forgiveness; strength to bear illness, resist temptation and die well; and possible bodily recovery if useful for the soul's salvation.",
+        "fr": "Le Catéchisme de 1905 énumère l'accroissement de la grâce sanctifiante ; la rémission des péchés véniels, et aussi des péchés mortels lorsque le malade repentant ne peut plus se confesser ; le soulagement de la faiblesse qui subsiste après le pardon ; la force de supporter la maladie, de résister aux tentations et de bien mourir ; et une possible guérison corporelle si elle est utile au salut de l'âme."
+      },
+      "loci": [
+        "PX1905-Q809"
+      ],
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_NOT_AUTOMATIC_PATIENT_DIAGNOSIS",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_PASTORAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-S-812",
+      "kind": "SUBSTANTIVE_REQUIRED_DISPOSITION_OMISSION",
+      "originalIssue": "Current opening says 'God's grace' instead of the historical text's explicit 'being in the state of grace'.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism names three principal dispositions for receiving Extreme Unction: being in the state of grace, trusting in the efficacy of the sacrament and divine mercy, and accepting the Lord's will. The text is not a basis for an app to decide whether a sick person may receive the sacrament; that discernment belongs to the priest.",
+        "fr": "Le Catéchisme de 1905 nomme trois dispositions principales pour recevoir l'Extrême-Onction : être en état de grâce, avoir confiance dans la vertu du sacrement et dans la miséricorde divine, et s'abandonner à la volonté du Seigneur. Ce texte ne permet pas à une application de décider si un malade peut recevoir le sacrement ; ce discernement revient au prêtre."
+      },
+      "loci": [
+        "PX1905-Q812",
+        "PX1905-Q809"
+      ],
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_WITH_EDITORIAL_PASTORAL_BOUNDARY",
+      "gate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_SACRAMENTAL_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "provenanceOnly": [
+    {
+      "id": "SPX-1905-P-767",
+      "issue": "The original Q767 prescribes a formula; 'not mandatory in every rite' is an editorial contemporary qualification, not a translation of Q767.",
+      "fix": {
+        "en": "Retain the pastoral clarification, but label it explicitly as editorial, as already required for P766.",
+        "fr": "Conserver la précision pastorale, mais la qualifier explicitement d'éditoriale, comme pour P766."
+      },
+      "loci": [
+        "PX1905-Q767"
+      ],
+      "classification": "EDITORIAL_NOT_HISTORICAL_VERBATIM"
+    },
+    {
+      "id": "SPX-1905-P-783",
+      "issue": "The health-and-duties qualifier is prudent editorial advice, not contained in Q783.",
+      "fix": {
+        "en": "Keep this safeguarding qualification only with editorial attribution, not as words of the 1905 Catechism.",
+        "fr": "Conserver cette précaution uniquement comme commentaire éditorial, non comme texte du Catéchisme de 1905."
+      },
+      "loci": [
+        "PX1905-Q783",
+        "CCC §1460"
+      ],
+      "classification": "EDITORIAL_PASTORAL_INFERENCE"
+    },
+    {
+      "id": "SPX-1905-P-784",
+      "issue": "The follow-up's works-of-mercy definition is directly stated in Q787, not Q784 alone.",
+      "fix": {
+        "en": "Add Q787 to follow-up supports; no answer rewrite.",
+        "fr": "Ajouter Q787 aux références de la relance ; ne pas réécrire la réponse."
+      },
+      "loci": [
+        "PX1905-Q784",
+        "PX1905-Q787"
+      ],
+      "classification": "SOURCE_LOCUS_REPAIR_ONLY"
+    },
+    {
+      "id": "SPX-1905-P-786",
+      "issue": "Health-and-responsibilities guidance in the follow-up is editorial safeguarding, not Q786's broad definition of fasting.",
+      "fix": {
+        "en": "Label the safety qualification as editorial; Q786 supports only the broad mortification category.",
+        "fr": "Présenter la précaution de santé comme éditoriale ; Q786 ne soutient que la catégorie générale de mortification."
+      },
+      "loci": [
+        "PX1905-Q786"
+      ],
+      "classification": "EDITORIAL_PASTORAL_INFERENCE"
+    },
+    {
+      "id": "SPX-1905-I-803",
+      "issue": "Existing draft correctly distinguishes historic days/years from time in Purgatory, but should cite the precise 1967 abolition rather than leaving it as unattributed modern editorial assertion.",
+      "fix": {
+        "en": "Add Paul VI, Indulgentiarum doctrina (1 Jan 1967), norm 4, as a later discipline reference. Do not attribute this reform to the 1905 Catechism.",
+        "fr": "Ajouter Paul VI, Indulgentiarum doctrina (1er janvier 1967), norme 4, comme référence disciplinaire postérieure. Ne pas attribuer cette réforme au Catéchisme de 1905."
+      },
+      "loci": [
+        "PX1905-Q803",
+        "INDULGENTIARUM_DOCTRINA_NORM_4"
+      ],
+      "classification": "LATER_MAGISTERIAL_SOURCE_PROVENANCE",
+      "laterSourceUrl": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html"
+    }
+  ],
+  "retainWithoutRewrite": "All remaining P767–P816 family IDs outside proposals and provenanceOnly: existing English/French drafts broadly source-consistent; no speculative rewording.",
+  "chanoine": {
+    "lastChecked": "B39",
+    "newProposals": 0,
+    "originalEnglishHistoricalWitness": "BLOCKED_NO_RECONSTRUCTION",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ],
+    "persona": "Distinct fictional Chanoine voice; no invented Lefebvre historical quotations"
+  },
+  "nextQueue": [
+    "Human doctrinal/translation review of six substantive B45 proposals against original draft and printed 1905 witness when available",
+    "Human provenance review of five B45 narrow repairs; keep already correct answer bodies",
+    "Continue source-parity P817–836 in existing batch14 drafts, prioritizing material mismatches and period discipline distinctions",
+    "Consolidate B40 P711, B43 P739, B44 P756/P765 and B45 six source-fidelity proposals into a single non-certified human queue; do not double-count B41 redundant proposals",
+    "Chanoine CSE142–143 clinical specialist holds and original English witness remain blocked; skip unless source emerges"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
