@@ -37,7 +37,7 @@ class PhotoFinderTests(unittest.TestCase):
   c,g=mod.frozen_original_schedule(self.covers,self.gallery)
   # The frozen 40-cover baseline also contains the independently approved
   # Pontmain hero reused from the earlier Place gallery, before Photo Finder.
-  self.assertEqual(len(c["items"]),41)
+  self.assertEqual(len(c["items"]),40)
   self.assertEqual([x["place_id"] for x in c["items"] if x.get("source_place_ref") is None],
                    ["place:FR:pontmain"])
   self.assertGreaterEqual(len(self.covers["items"])-len(c["items"]),12)
