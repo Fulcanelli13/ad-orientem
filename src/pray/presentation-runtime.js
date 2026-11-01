@@ -2955,7 +2955,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   // Never infer that a historical painting selection or candidate is a usable image.
   // The Rosary retains its independent mystery-and-bead player and is not intercepted.
   const artSlot=prayerArtworkSlotForView({
-   view,prayerId,libraryId:LIB.open,angelusForm:view==='angelus'?angelusChoice().form:'angelus',
+   view,prayerId,libraryId:LIB.open,familyId,angelusForm:view==='angelus'?angelusChoice().form:'angelus',
    stationIndex:STATIONS.step,penitentialIndex:PEN.step,sevenWordsIndex:SEVEN.step
   });
   const releasedArt=renderReleasedPrayerArtwork(artSlot,{language:lang()});
