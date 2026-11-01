@@ -15,6 +15,7 @@ import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { EXPLORE_MAP_FIRST_V2_STYLE } from "./explore-map-first-v2-style.js";
 import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia,loadDirectoryCardMedia,hideUnavailableDirectoryEmblem } from "./directory-card.js";
 import {TLM_CHURCH_PROFILE_STYLE} from "./tlm-church-profile.js";
+import {tlmCelebrationEvidenceCounts} from "./tlm-celebration-evidence.js";
 import { discoverItemsWithinMapBounds, renderMapcnDiscoverRail } from "./mapcn-discover-rail.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
@@ -161,6 +162,7 @@ export function createFindOwner(win=globalThis){
     view:"map",
     directoryGroup:"ALL",
     siteEvidence:"ALL",
+    celebrationEvidence:"ALL",
     query:"",
     saintCategory:"ALL",
     saintScope:"profiles",
@@ -503,6 +505,7 @@ export function createFindOwner(win=globalThis){
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
       tlmAvailableCommunities:state.lens==="tlm"?[...new Set((preliminary??[]).map(item=>item.community_id).filter(Boolean))]:[],
       tlmSiteEvidenceCounts:state.lens==="tlm"?tlmSiteEvidenceCounts(preliminary??[]):null,
+      tlmCelebrationEvidenceCounts:state.lens==="tlm"?tlmCelebrationEvidenceCounts(preliminary??[]):null,
       view:state.view,
       filters:state,
       saintsRelease:dataset?.saintsRelease??null,

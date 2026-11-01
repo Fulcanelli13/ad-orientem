@@ -1,4 +1,7 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
+import {
+  CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
+} from "./tlm-celebration-evidence.js";
 // Preliminary R49 venue snapshot. Source-affiliation groupings are editorial,
 // never proof of a particular Canon's una-cum commemoration or active timetable.
 export const PRELIMINARY_R49_URL=new URL("../../data/directory/preliminary-map-r49.v1.json",import.meta.url).href;
@@ -207,7 +210,12 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   // truncated 1,879-site worldwide result.
   const full=await fetchImpl(CL2_PHYSICAL_SITE_INDEX_URL,{headers:{accept:"application/json"}});
   if(!full?.ok)throw new Error("CL2 worldwide physical-site index unavailable: HTTP "+full?.status);
-  cache=projectCL2PhysicalDirectory(extended,await full.json(),{mapAffiliation:providerGroup});
+  const canonical=projectCL2PhysicalDirectory(extended,await full.json(),{mapAffiliation:providerGroup});
+  // Unlike an optional photograph, a missing publication manifest must fail
+  // closed. Never publish a partial or incorrectly joined liturgical claim.
+  const claims=await fetchImpl(CL27_PUBLIC_CELEBRATION_URL,{headers:{accept:"application/json"}});
+  if(!claims?.ok)throw new Error("CL27 exact-celebration evidence manifest unavailable: HTTP "+claims?.status);
+  cache=attachPublishedCelebrationEvidence(canonical,await claims.json());
   return cache;
 }
 /**
@@ -229,15 +237,19 @@ export function tlmSiteEvidenceCounts(items=[]){
   }
   return Object.freeze(counts);
 }
-export function filterPreliminaryR49(items,{query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL"}={}){
+export function filterPreliminaryR49(items,{
+  query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL",celebrationEvidence="ALL"
+}={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();
   const allowed=["ALL","ROME","SSPX","UNKNOWN"].includes(group)?group:"ROME";
   const aff=new Set((Array.isArray(affiliations)?affiliations:[]).map(x=>tidy(x).toUpperCase()));
   const evidence=["ALL","REVIEWED_PIN","SOURCE_PIN","ADDRESS_ONLY"].includes(siteEvidence)?siteEvidence:"ALL";
+  const liturgy=["ALL","SOURCE_1962","NOT_ESTABLISHED"].includes(celebrationEvidence)?celebrationEvidence:"ALL";
   return Object.freeze((Array.isArray(items)?items:[]).filter(item=>
     (allowed==="ALL"||item.preliminary_group===allowed)&&
     (!aff.size||aff.has(item.community_id))&&
     (evidence==="ALL"||tlmSiteEvidence(item)===evidence)&&
+    (liturgy==="ALL"||tlmCelebrationEvidenceClass(item)===liturgy)&&
     (!q||item.search_text.includes(q))
   ));
 }

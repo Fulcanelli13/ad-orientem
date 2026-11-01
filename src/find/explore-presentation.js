@@ -390,6 +390,12 @@ function compactExploreItemSheet(vm){
   }
   if(isMass&&!eligibleRenderedDirectoryImage(item.cover_media,item))
     html+=renderDirectoryIdentityFallback(item,lang,"preview");
+  if(isMass&&item.celebration_evidence){
+    const claim=item.celebration_evidence;
+    html+='<p class="aoTlmSourceClaim" data-tlm-celebration-evidence="'+esc(claim.source_id)+'">'+
+     esc(lang==="fr"?claim.label_fr:claim.label_en)+' · '+
+     esc(L(lang,"Only the specified Masses; see exceptions and source in details.","Uniquement les messes concernées ; exceptions et source dans la fiche."))+'</p>';
+  }
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Check the source for current Mass times, exact entrance and the status of individual celebrations.",
@@ -588,6 +594,21 @@ function tlmEvidenceFilters(vm){
       "A reviewed site pin is source-supported geography, not a confirmed church entrance or current Mass. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
       "Un repère vérifié par source concerne la géographie, non une entrée confirmée ni une messe actuelle. Aucune conclusion sur « una cum », le missel, le statut canonique ou le célébrant n’est déduite de l’affiliation."))+'</small></section>';
 }
+function tlmCelebrationFilters(vm){
+  const counts=vm.tlmCelebrationEvidenceCounts??{},current=vm.filters?.celebrationEvidence??"ALL";
+  const options=[
+    ["ALL",L(vm.language,"All sites","Tous les lieux")],
+    ["SOURCE_1962",L(vm.language,"Source identifies 1962 Mass","Source attestant une messe de 1962")],
+    ["NOT_ESTABLISHED",L(vm.language,"No approved edition witness yet","Édition non encore attestée")],
+  ];
+  return '<section class="aoTlmEvidenceFacets aoTlmCelebrationFacets" aria-label="'+esc(L(vm.language,"Celebration-level evidence","Sources des célébrations"))+'">'+
+    '<strong>'+esc(L(vm.language,"Missal · exact celebrations","Missel · célébrations précises"))+'</strong>'+
+    '<div class="aoTlmEvidenceOptions">'+options.map(([value,name])=>
+      pill("celebrationEvidence",value,name+" ("+String(counts[value]??0)+")",current)).join("")+'</div>'+
+    '<small>'+esc(L(vm.language,
+      "A first-party schedule explicitly names the 1962 liturgical books for some Masses. This does not classify every celebration in that church. No Una Cum or canonical-status claim is implied.",
+      "Un programme de première main nomme explicitement les livres liturgiques de 1962 pour certaines messes. Cela ne classe pas toutes les célébrations de cette église et ne présume ni « una cum » ni le statut canonique."))+'</small></section>';
+}
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
@@ -607,14 +628,14 @@ function tlmFilters(vm){
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
     html+='</div>';
-    if(vm.view==="map")html+=tlmEvidenceFilters(vm)+otherMarkup+'</details>';
+    if(vm.view==="map")html+=tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+otherMarkup+'</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
     html+='</div>';
     if(vm.view!=="map")html+=otherMarkup;
     html+='</div>';
-    if(vm.view!=="map")html+=tlmEvidenceFilters(vm);
+    if(vm.view!=="map")html+=tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm);
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
@@ -648,6 +669,7 @@ export function buildExploreViewModel({
   unavailableProviders=[],
   tlmAvailableCommunities=[],
   tlmSiteEvidenceCounts=null,
+  tlmCelebrationEvidenceCounts=null,
   view="list",
   filters={},
   saintsRelease=null,
@@ -684,6 +706,7 @@ export function buildExploreViewModel({
     unavailableProviders:arr(unavailableProviders),
     tlmAvailableCommunities:arr(tlmAvailableCommunities),
     tlmSiteEvidenceCounts,
+    tlmCelebrationEvidenceCounts,
     view,
     filters,
     journeyOpen:Boolean(journeyOpen),

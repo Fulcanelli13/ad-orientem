@@ -120,6 +120,18 @@ export function renderTlmChurchProfile(item,language="en"){
  const safeIntro=v.unverified?officialSummary:
    originalSummary&&!originalSummary.startsWith("Provisional venue pin.")?originalSummary:null;
  if(safeIntro)html+='<p class="aoTlmProfileSourceLead">'+E(safeIntro)+'</p>';
+ if(item?.celebration_evidence){
+   const c=item.celebration_evidence,fr=language==="fr";
+   html+='<section class="aoTlmProfilePanel aoTlmCelebrationSource" data-tlm-celebration-evidence="'+E(c.source_id)+'">'+
+    '<h3>'+E(L(language,"Source-documented 1962 celebrations","Célébrations de 1962 attestées par source"))+'</h3>'+
+    '<p><strong>'+E(fr?c.label_fr:c.label_en)+'</strong></p>'+
+    '<p>'+E(fr?c.detail_fr:c.detail_en)+'</p>'+
+    '<p class="aoTlmProfileCaution">'+E(fr?c.exception_fr:c.exception_en)+'</p>'+
+    '<p class="aoTlmProfileCaution">'+E(L(language,
+      "Specific celebrations only; do not infer the Missal used at other Masses, Una Cum, or canonical status. Confirm current programme before travelling.",
+      "Célébrations précises seulement ; aucune conclusion sur le missel des autres messes, « una cum » ou le statut canonique. Vérifiez les horaires actuels avant le déplacement."))+'</p>'+
+    '<div class="aoTlmProfileActions">'+link(c.source_url,L(language,"Original parish programme · checked","Programme paroissial original · consulté"))+'</div></section>';
+ }
  // Provisional source labels are useful for identification, not ecclesial proof.
  if(!v.ministries.length)html+='<p class="aoTlmProfileListedNote" data-tlm-source-affiliation="'+E(item?.community_id)+'">'+
  E(L(language,"Affiliation is source-reported; it does not establish any specific Mass, rite, missal or ecclesial status.",
