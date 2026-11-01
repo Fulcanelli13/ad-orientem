@@ -1,6 +1,6 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
-import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
+import { renderDirectoryVenueCard,eligibleDirectoryImage,eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
 import {renderTlmChurchProfile} from "./tlm-church-profile.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
@@ -376,7 +376,7 @@ function compactExploreItemSheet(vm){
   html+='<header><div><small>'+esc((lang==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
   if(area)html+='<p>'+esc(area)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
-  if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id)){
+  if(isMass&&eligibleRenderedDirectoryImage(item.cover_media,item)){
     const m=item.cover_media;
     const emblem=massInstitutionEmblem(item.community_id);
     html+='<div class="aoTlmPreviewPhotographic">'+
@@ -386,7 +386,7 @@ function compactExploreItemSheet(vm){
       '<details class="aoTlmPreviewPhotoCredit"><summary>'+esc(L(lang,"Photograph & credit","Photographie et crédit"))+'</summary><div>'+
       esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photograph","Photographie originale"))+'</a></div></details>';
   }
-  if(isMass&&!eligibleDirectoryImage(item.cover_media,item.place_id))
+  if(isMass&&!eligibleRenderedDirectoryImage(item.cover_media,item))
     html+=renderDirectoryIdentityFallback(item,lang,"preview");
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
@@ -419,7 +419,7 @@ function detailSheet(vm){
   if(subtitle)html+='<p>'+esc(subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
-  if(item.kind==="TLM_VENUE"&&eligibleDirectoryImage(item.cover_media,item.place_id)){
+  if(item.kind==="TLM_VENUE"&&eligibleRenderedDirectoryImage(item.cover_media,item)){
     const m=item.cover_media;
     const changes=vm.language==="fr"?m.changes_fr:m.changes_en;
     html+='<figure class="aoTlmDetailPhoto"><img loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(vm.language==="fr"?m.alt_fr:m.alt_en)+'"><figcaption>'
@@ -428,7 +428,7 @@ function detailSheet(vm){
       +(changes?'<span class="aoTlmPhotoChanges"> · '+esc(changes)+'</span>':'')
       +'</figcaption></figure>';
   }
-  if(item.kind==="TLM_VENUE"&&!eligibleDirectoryImage(item.cover_media,item.place_id))
+  if(item.kind==="TLM_VENUE"&&!eligibleRenderedDirectoryImage(item.cover_media,item))
     html+=renderDirectoryIdentityFallback(item,vm.language,"detail");
   if(item.kind==="TLM_VENUE")html+=renderDirectoryGallery(item,vm.language);
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
