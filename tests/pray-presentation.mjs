@@ -137,7 +137,10 @@ assert.ok(adorationStage.includes("guideNav(kind,index,steps.length,lastLabel)")
 assert.ok(confessionRender.includes("stageBoundary=CONF.stage===0"),"Confession entry action must depend on selected path");
 assert.ok(confessionRender.includes("cardIndex===cardSequence.length-1"),"Confession section transition must require the final preparation card");
 assert.ok(confessionRender.includes("After Confession · when ready"),"Confession must not assert sacramental absolution");
-assert.ok(confessionRender.includes("devotionalProgressMarkup({index:0,total:stages.length"),"Confession chooser needs an accessible stage progress track");
+assert.ok(confessionRender.includes("guideRail(stages,CONF.stage,'conf')"),"Confession must retain four clickable source-owned stage segments");
+assert.ok(confessionRender.includes('aoP435930ConfProgressLabel'),"Confession must display the current-stage eyebrow");
+assert.ok(!confessionRender.includes("devotionalProgressMarkup({index:0,total:stages.length"),"Confession must not duplicate the Claude four-segment progress strip");
+assert.ok(!confessionRender.includes("data-p435930-since"),"Confession must not collect a free-text time-since-last-Confession field");
 assert.ok(!confessionRender.includes("data-p435930-conf-prev"),"Confession still has a routine previous button");
 for(const id of ["visit","holy","four","ben"]){
  assert.ok(runtime.includes("data-p435930-"+id+"-finish"),"Missing explicit final action for "+id);
