@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {createHash} from "node:crypto";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,renderDirectoryIdentityFallback,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
@@ -168,4 +169,47 @@ for(const venue of fullMap){
 }
 assert.deepEqual(visualCount,{emblem:1188+familyCount+morgonCount+militiaCount,named:61-familyCount-morgonCount-militiaCount,neutral:633},
   "All 1,882 original R49 and approved additions have an honest emblem, source-named monogram or neutral church symbol");
+
+
+// P107 exact Jihlava asset release. Original and derivative are already SHA-
+// pinned and editorially reviewed; the approved file must be byte-identical
+// to the staged original and attached only to the CONFIRMED exact venue.
+const jPlace="place:CZ:st-ignatius-jihlava";
+const approvedMedia=JSON.parse(readFileSync(new URL("../data/geography/approved-place-media.v1.json",import.meta.url),"utf8"));
+const geo=JSON.parse(readFileSync(new URL("../data/geography/seed-registry.v1.json",import.meta.url),"utf8"));
+const p107=JSON.parse(readFileSync(new URL("../data/directory/research/p107-four-webp-stage-audit.v1.json",import.meta.url),"utf8"));
+const finalQa=JSON.parse(readFileSync(new URL("../data/directory/research/p107-jihlava-final-image-editorial-qa.v1.json",import.meta.url),"utf8"));
+const jMedia=approvedMedia.items.filter(x=>x.place_id===jPlace);
+assert.equal(jMedia.length,1,"Jihlava may have only one approved exact cover");
+assert.equal(finalQa.status,"PRIMARY_EDITORIAL_ACCEPTED_RELEASE_IN_SEPARATE_PR");
+assert.equal(finalQa.site,jPlace);
+const jStage=p107.records.find(x=>x.place_id===jPlace);
+assert.ok(jStage?.no_crop&&jStage.native_jpeg_decode);
+assert.equal(jMedia[0].source_url,jStage.source_url);
+assert.equal(jMedia[0].credit,jStage.photographer);
+assert.equal(jMedia[0].source_sha1,jStage.original_sha1_verified);
+assert.equal(jMedia[0].derivative_sha256,jStage.staged_sha256);
+assert.equal(jMedia[0].asset_path,"assets/approved/place-media/CZ-st-ignatius-jihlava.webp");
+assert.equal(eligibleDirectoryImage(jMedia[0],jPlace),true);
+const stagedJ=readFileSync(new URL("../"+jStage.staged_path,import.meta.url));
+const approvedJ=readFileSync(new URL("../"+jMedia[0].asset_path,import.meta.url));
+const digestJ=x=>createHash("sha256").update(x).digest("hex");
+assert.equal(stagedJ.length,154206);
+assert.equal(approvedJ.length,stagedJ.length);
+assert.equal(digestJ(stagedJ),jStage.staged_sha256);
+assert.equal(digestJ(approvedJ),jStage.staged_sha256,"Approved WebP must preserve the staged exact bytes");
+assert.ok(approvedJ.toString("ascii",0,4)==="RIFF"&&approvedJ.toString("ascii",8,12)==="WEBP");
+const jLinks=geo.directoryPlaceLinks.filter(x=>x.place_id===jPlace&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT");
+assert.equal(jLinks.length,1,"Jihlava should have one original exact church-to-venue link");
+const jVenue={kind:"TLM_VENUE",source_id:jLinks[0].venue_id,item_id:"tlm:jihlava-exact",title:"Church of St Ignatius, Jihlava",community_id:"OTHER",eyebrow:"Listed source",source_links:[],sections:[]};
+const [jAttached,jUnlinked]=attachApprovedDirectoryMedia([jVenue,{...jVenue,source_id:"same-church-name-but-different-site",item_id:"tlm:wrong"}],{directoryPlaceLinks:geo.directoryPlaceLinks,approved:approvedMedia.items,gallery:[]});
+assert.equal(jAttached.place_id,jPlace);
+assert.equal(jAttached.cover_media?.asset_path,jMedia[0].asset_path);
+assert.ok(renderDirectoryVenueCard(jAttached,"en").includes('src="'+jMedia[0].asset_path+'"'));
+assert.ok(renderDirectoryVenueCard(jAttached,"fr").includes('src="'+jMedia[0].asset_path+'"'));
+assert.equal(jUnlinked.cover_media,undefined,"No approximate-name fallback may acquire this church photo");
+for(const held of ["place:DE:friedhofskirche-st-michael-altoetting","place:FR:basilique-saint-bernard-fontaine-les-dijon","place:FR:saint-louis-de-gonzague-pau"]){
+ assert.ok(!approvedMedia.items.some(x=>x.place_id===held),"Other P107 alternatives remain unpublished");
+}
+
 console.log("PASS Directory photo-ready card: exact identity, rights, bilingual UI, complete 1882-site fallback coverage");
