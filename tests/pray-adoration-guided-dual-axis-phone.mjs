@@ -112,8 +112,8 @@ try{
  assert.equal(await page.locator(chooser).getAttribute("data-ao-adoration-chooser"),"quiet-v2");
  assert.equal(await page.locator(chooser+" .aoAdorationPrimaryGrid button").count(),2,
    "Visit and untimed silence should be the only primary options");
- assert.equal(await page.locator(chooser+" .aoAdorationMethodsDisclosure").evaluate(el=>el.open),false,
-   "Secondary prayer methods should not crowd the entrance");
+ assert.equal(await page.locator(chooser+" .aoAdorationMethodsDisclosure").evaluate(el=>el.open),true,
+   "Approved Claude c1 exposes the four guided-devotion cards immediately");
  assert.equal(await page.locator(chooser+" .aoP435930BigGrid button").count(),4,
    "Holy Hour, Four Ends, Treasury and Night Adoration must stay accessible");
  assert.equal(await page.locator(chooser+' [data-p435930-ador-mode="night"]').count(),1,
@@ -168,7 +168,7 @@ try{
  }
  await page.setViewportSize({width:390,height:844});
  await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
- await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure > summary").tap();
+ assert.equal(await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure").evaluate(el=>el.open),true);
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='holy']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"holy");assert.equal(v.stops,8);
@@ -185,7 +185,7 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-holy-next],[data-p435930-holy-prev]").count(),0);
 
  await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
- await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure > summary").tap();
+ assert.equal(await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure").evaluate(el=>el.open),true);
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"four");assert.equal(v.stops,5);
