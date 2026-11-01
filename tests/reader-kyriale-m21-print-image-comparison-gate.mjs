@@ -97,4 +97,60 @@ assert.equal(kx.editorialApproval,false);
 assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
 console.log("PASS M24 Kyrie XVI printed p.54* 4-phrase structure and 3+3+2+1 invocations; 0 pitch/neume approvals");
 
+// M25: explicit 1961 print-versus-GABC structure of two page-spanning Kyries.
+// These checks are intentionally limited to original phrase text, repeat signs,
+// page breaks and recorded source-history risks. NO pitch or neume approval.
+for(const [id,setting,spans] of [
+ [2982,"MASS_11",["38*","38*→39*","39*","39*"]],
+ [1184,"MASS_08",["28*","28*→29*","29*","29*"]]
+]){
+ const record=ledger.scores.find(s=>s.gregobaseId===id);
+ assert.ok(record?.phraseCollation,"Missing printed collation "+id);
+ const c=record.phraseCollation;
+ const gabc=offlineKyrialeResearchScore("KYRIE",setting).gabc;
+ assert.equal(c.notatedPhraseCount,4);
+ assert.equal(c.phrases.length,4);
+ assert.deepEqual(c.phrases.map(p=>p.printedPages),spans);
+ assert.deepEqual(c.phrases.map(p=>p.printedRepeat),["iij.","iij.","ij.",null]);
+ assert.deepEqual(c.phrases.map(p=>p.sungOccurrences),[3,3,2,1]);
+ assert.equal(c.phrases.reduce((sum,p)=>sum+p.sungOccurrences,0),9);
+ assert.equal(c.totalExpectedInvocations,9);
+ assert.equal(c.printedPageBreakChecked,true);
+ assert.ok(c.printSourceHistory.length>=2);
+ assert.ok(c.scoreLevelStructuralFindings.length>=3);
+ for(let i=0;i<c.phrases.length;i++){
+  const p=c.phrases[i];
+  assert.equal(p.number,i+1);
+  assert.ok(gabc.includes(p.gabcLine),"Source phrase altered for "+id+" #"+(i+1));
+  assert.equal(p.sourceGabcTokenCount,(p.gabcLine.match(/\([^()]*\)/g)||[]).length);
+  assert.ok(p.sourceGabcTokenCount>=6);
+  assert.equal(p.printedTextAndRepeatStructure,"MATCH_OBSERVED");
+  assert.equal(p.printedPitchHeightByHeight,"NOT_CERTIFIED");
+  assert.equal(p.printedNeumeSignBySign,"NOT_CERTIFIED");
+ }
+ for(const key of ["fullPrintedPitchParity","fullPrintedNeumeParity",
+   "fullRhythmicParity","fullSyllableUnderlayParity"])
+  assert.equal(c[key],"NOT_CERTIFIED");
+ assert.equal(c.userEditorialApproval,false);
+ assert.equal(c.publicScore,false);
+ assert.equal(record.editorialApproval,false);
+ assert.equal(record.publicScore,false);
+ assert.equal(c.discrepancyStatus,"FULL_MUSICAL_COMPARISON_NOT_PERFORMED");
+ assert.deepEqual(c.suspectedSourceDiscrepancies,[]);
+}
+const xiAudit=ledger.scores.find(s=>s.gregobaseId===2982).phraseCollation;
+assert.ok(xiAudit.phrases[0].gabcLine.includes("KY(ixhi)ri(hg)e(hd..)"));
+assert.ok(xiAudit.phrases[2].gabcLine.includes("Ký(ixhi)ri(hg)e(hd..)"));
+assert.ok(xiAudit.phrases[3].gabcLine.includes("Ký(dfd)ri(cd)e(d.gv.fgFD'Cd.)"));
+assert.ok(xiAudit.phrases[3].gabcLine.includes("<clear>*(,)"));
+assert.ok(xiAudit.phrases[3].gabcLine.includes("lé(c')i(d)son.(d.)"));
+const viiiAudit=ledger.scores.find(s=>s.gregobaseId===1184).phraseCollation;
+assert.ok(viiiAudit.phrases[3].gabcLine.includes("<clear>*(,)"));
+assert.ok(viiiAudit.phrases[3].gabcLine.includes("<clear>**(,)"));
+assert.ok(viiiAudit.printSourceHistory.some(x=>x.kind==="PUNCTUM_TO_VIRGA_HOLD"));
+assert.ok(viiiAudit.printSourceHistory.some(x=>x.kind==="LAST_KYRIE_GV_TO_HV_HOLD"));
+assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
+assert.equal(ledger.closedGates.approvedForReaderCount,0);
+console.log("PASS M25 printed Kyrie XI and VIII four source phrases, exact page-break placement, 3+3+2+1 invocation counts, and closed notation release gates");
+
 console.log("PASS M21 exact 10 primary 1961 printed-page images across seven scores; source GABC motif anchors and full score continuations pinned; zero false note certifications/public notation");
