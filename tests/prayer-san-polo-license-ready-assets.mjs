@@ -13,8 +13,10 @@ assert.equal(data.licensing.photographs,"CC BY-SA 4.0");
 assert.equal(data.licensing.zeroCost,true);
 assert.equal(data.licensing.contactRequired,false);
 assert.equal(data.licensing.compatibleWithCurrentAO_StrictPDCC0OnlyPolicy,false);
-assert.equal(data.licensing.scopedExceptionAuthorized,false);
+assert.equal(data.licensing.scopedExceptionAuthorized,true);
 assert.equal(data.runtimeImageCount,0);
+assert.equal(data.licensing.exceptionNotGeneralized,true);
+assert.equal(data.readyForUserScopedLicencePolicyDecision,false);
 assert.match(attribution,/Didier Descouens/);
 assert.match(attribution,/Attribution–ShareAlike 4.0/);
 assert.match(attribution,/Richard Stracke/);
@@ -24,7 +26,7 @@ for(const [i,row] of data.entries.entries()){
  assert.match(row.sourceFilePage,/commons.wikimedia.org\/wiki\/File:/);
  assert.equal(row.sourcePhotographLicense,"CC BY-SA 4.0");
  assert.equal(row.productionEnabled,false);
- assert.equal(row.productionPolicyExceptionAuthorized,false);
+ assert.equal(row.productionPolicyExceptionAuthorized,true);
  assert.equal(row.previouslyApprovedArtworkPreserved,true);
  const local="assets/stations/san-polo/station-"+String(i+1).padStart(2,"0")+".webp";
  assert.equal(row.localPublicAsset,"/"+local);
@@ -38,4 +40,4 @@ for(const [i,row] of data.entries.entries()){
 }
 assert.equal(sha.size,14);
 assert.equal(archive.productionImagesEnabled,0);
-console.log("PASS 14/14 identical verified WebPs in /assets/stations/san-polo; exact source and CC BY-SA metadata; rights exception absent and all live images gated");
+console.log("PASS 14/14 identical verified WebPs; existing scoped CC BY-SA user permission recorded, all unverified live images still gated");
