@@ -645,6 +645,9 @@ try{
    const otherCommunities=sourceFilters.locator(".aoTlmMoreInstitutes");
    await otherCommunities.waitFor({state:"visible"});
    await otherCommunities.locator(":scope > summary").click();
+   await page.waitForFunction(()=>document.querySelector(
+     "#ao-find-modular-root .aoAtlasTlmExtra .aoTlmMoreInstitutes"
+   )?.open===true,null,{timeout:3000});
    assert.ok(await otherCommunities.locator("[data-find-affiliation]").count()>0,
      "Other source-reported institutes must be accessible through the map Filters drawer");
    const firstSecondary=await otherCommunities.locator("[data-find-affiliation]").first().evaluate(el=>{
