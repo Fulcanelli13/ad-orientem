@@ -10,7 +10,8 @@ export const MASS_GABC_BULK_MATCH_SCHEMA="ao-mass-1962-proper-gabc-bulk-candidat
 export const MASS_GABC_SOURCE_ROLES=ROLES;
 const latin=value=>String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
- .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ")\n .replace(/\bcoel/g,"cael"); // text-screening orthography: cœli/coeli/caeli
+ .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ")
+ .replace(/\bcoel/g,"cael"); // text-screening orthography: cœli/coeli/caeli
 const words=value=>latin(value).split(" ").filter(Boolean);
 const validPath=path=>/^(Tempora|Sancti|Commune)\/[A-Za-z0-9_-]+$/.test(path);
 // The 1962 DayResolver supplies readable Missal text, often prefixed by a
