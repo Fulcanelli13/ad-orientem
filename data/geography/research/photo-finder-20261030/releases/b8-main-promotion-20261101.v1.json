@@ -1,0 +1,172 @@
+{
+  "schema": "AO_PHOTO_FINDER_B8_EXISTING_VERIFIED_ORIGINALS_TO_MAIN_V1",
+  "as_of": "2026-11-01",
+  "source_commit": "2d9a2b5a92b7ec435656fed901b908d29d3a49db",
+  "source_branch": "research/photo-finder-release-20261030-b8",
+  "verification_run_id": 41328554837,
+  "source_decision_file": "data/geography/research/photo-finder-20261030/decisions.json",
+  "source_original_report": "data/geography/research/photo-finder-20261030/releases/b8-verification-report.json",
+  "planned": 20,
+  "source_verified": 16,
+  "held": 4,
+  "promoted": 16,
+  "cover_count_before": 152,
+  "cover_count_after": 168,
+  "leave_existing_covers_and_gallery_unchanged": true,
+  "no_new_photo_search": true,
+  "no_new_user_editorial_selection": true,
+  "published": false,
+  "images": [
+    {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "asset_path": "assets/approved/place-media/pf-1469f34f3dce7f8f0910ac.webp",
+      "source_sha1": "dfbb40f01a04c0ffd99335265f8d78c1775fd024",
+      "derivative_sha256": "ca556a7a9282ffb0ccde3843d521fda8e367667d704fc0a8d19773984d2e5593",
+      "license": "CC-BY-SA-3.0",
+      "credit": "image /photo was taken by Wikipedia and Wikimedia Commons user Ludwig Schneider . I would appreciate being notified if you use my work outside Wikimedia. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms. When reusing, please credit me as: Ludwig Schneider / Wikimedia ."
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "asset_path": "assets/approved/place-media/pf-537e75e92469847501c639.webp",
+      "source_sha1": "0850ccbc48e52c953b6a89e06c9a5e04b6e4ecc3",
+      "derivative_sha256": "ac2fe9eee1eef2b3a61457a9438d1aa26f147f413ad1b405ba118023dca16e9d",
+      "license": "CC-BY-SA-2.5",
+      "credit": "JohnHarvey at English Wikipedia"
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "asset_path": "assets/approved/place-media/pf-1c53ceb1de9078a981f323.webp",
+      "source_sha1": "8b1bb3dd61b0ae12eab1e4ec2f55dd8645ffb114",
+      "derivative_sha256": "1d4f9e59dd99f78040c4d89bcb49db576dc3a2fdd24aeceeffa1a78352671780",
+      "license": "CC-BY-3.0",
+      "credit": "DnTrotaMundos ☮"
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "asset_path": "assets/approved/place-media/pf-c90c0a0892e103f0484a50.webp",
+      "source_sha1": "081b70dda2ae5c8463ee243fae3995f18edf06cb",
+      "derivative_sha256": "8769941cf90c6e118b2938f607269f949dccb70028ba9aaa499a2688c6f8b714",
+      "license": "CC-BY-SA-3.0",
+      "credit": "Johann Jaritz"
+    },
+    {
+      "place_id": "place:GB:westminster-cathedral",
+      "asset_path": "assets/approved/place-media/pf-718ed6d79ce70af01a892d.webp",
+      "source_sha1": "88c73e1a1f4c2fca81cccb521b10a034a421dd93",
+      "derivative_sha256": "33ef5ab011a86c73396d2d0e05ea835f740223dc1ac36d70cd1a372a5f518249",
+      "license": "CC-BY-SA-4.0",
+      "credit": "Txllxt TxllxT"
+    },
+    {
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "asset_path": "assets/approved/place-media/pf-a782f862f034f71a417d5c.webp",
+      "source_sha1": "9fe7fdd167ad6ab2853c8752197b83bf21e42b0a",
+      "derivative_sha256": "e2dae87b35b165f1eed010f4b2fceeb2c212428172357ea34230ab42c54adf77",
+      "license": "CC-BY-SA-3.0",
+      "credit": "Tonchino"
+    },
+    {
+      "place_id": "place:IT:duomo-orvieto",
+      "asset_path": "assets/approved/place-media/pf-9469267dca8fa649582c61.webp",
+      "source_sha1": "bbf293e4cea33b2f105b4295dff3993dc29a328e",
+      "derivative_sha256": "ddff9a6c1da5680619f7a0653f56b53ead8a7ed96473ef9c6ed124f31b13dcf8",
+      "license": "CC-BY-SA-3.0",
+      "credit": "trolvag"
+    },
+    {
+      "place_id": "place:NO:st-olav-cathedral-oslo",
+      "asset_path": "assets/approved/place-media/pf-b76faab1265785b10f6861.webp",
+      "source_sha1": "419881a8b76bdbed2b4c9d226eb3c8156e65f4cf",
+      "derivative_sha256": "f4449258a5814af6eccc1cd6e7d5a1bd42d59c222094f14d613cfd8f245c7a43",
+      "license": "CC-BY-SA-3.0",
+      "credit": "Asgeir O. Mortensen"
+    },
+    {
+      "place_id": "place:NO:var-frue-cathedral-tromso",
+      "asset_path": "assets/approved/place-media/pf-6968f1d4bf588965c50254.webp",
+      "source_sha1": "87ed5c61ba1a5cfa95f9e9d8a5cf0d2633fed766",
+      "derivative_sha256": "692afeb67e530c4a6e53e1bc6b267f497a9ab98c5b59e1a4b529df37a5d1e05d",
+      "license": "CC-BY-SA-2.0",
+      "credit": "Harvey Barrison from Massapequa, NY, USA"
+    },
+    {
+      "place_id": "place:EE:saints-peter-paul-cathedral-tallinn",
+      "asset_path": "assets/approved/place-media/pf-930ad8516085792a9473c2.webp",
+      "source_sha1": "ffc15ecb1f7f54de57d72d980815106a5b6cf2c2",
+      "derivative_sha256": "77675b99bfb83270ba451e6370b9da97a051599de7b519e67d2015fb9b863b8c",
+      "license": "CC-BY-SA-4.0",
+      "credit": "Cayambe"
+    },
+    {
+      "place_id": "place:SE:st-eric-cathedral-stockholm",
+      "asset_path": "assets/approved/place-media/pf-f125096254e4cc9af9ed14.webp",
+      "source_sha1": "c2ad6664b0081976ce597cfb0e28230c28b70f0b",
+      "derivative_sha256": "db58b12e9b59502a9a52cf6efac5d06f62ea2006fa9be756c5be6f50c5e809e9",
+      "license": "CC-BY-SA-4.0",
+      "credit": "Gustav Ahlman"
+    },
+    {
+      "place_id": "place:IS:christ-king-cathedral-reykjavik",
+      "asset_path": "assets/approved/place-media/pf-e2fdd0a2d549c385cdf629.webp",
+      "source_sha1": "1c21adbcbf414e8dbacb897df4fd3447cbf6ad7a",
+      "derivative_sha256": "f64fd3e5f21eb65913277269e975d48578c554d6e18ece2ba87e278e90960331",
+      "license": "CC-BY-3.0",
+      "credit": "olekinderhook"
+    },
+    {
+      "place_id": "place:HK:immaculate-conception-cathedral-hong-kong",
+      "asset_path": "assets/approved/place-media/pf-a32a4178936789314b44f5.webp",
+      "source_sha1": "9e0325c2d4f355f78c70f80ff252bede4ca9bd96",
+      "derivative_sha256": "9817e2633250bce26abe9c0f5fe9be578b301d358f3d74329f6c8bff118987ea",
+      "license": "CC-BY-SA-4.0",
+      "credit": "Butmiyuenan 2"
+    },
+    {
+      "place_id": "place:JP:st-mary-cathedral-tokyo",
+      "asset_path": "assets/approved/place-media/pf-8bf7612fe898f15363f43f.webp",
+      "source_sha1": "353fe70994ac33abc2a3e7b5891a5c3ada44a009",
+      "derivative_sha256": "3d3dd2f59c60e66f36e1019531fc3d8badc4be3018a4a01a2426d0c5f4118b75",
+      "license": "CC-BY-SA-3.0",
+      "credit": "Kakidai"
+    },
+    {
+      "place_id": "place:JP:urakami-cathedral-nagasaki",
+      "asset_path": "assets/approved/place-media/pf-1a414c14235bd12e9c2bf9.webp",
+      "source_sha1": "272e22fcd882d561d6137d7ff1240ffcbac8a2a9",
+      "derivative_sha256": "cd4670a129d5092275da420cfb4a0ba2b40fee619c878ec83309e42758bb450b",
+      "license": "CC-BY-2.5",
+      "credit": "663highland"
+    },
+    {
+      "place_id": "place:KE:holy-family-cathedral-basilica-nairobi",
+      "asset_path": "assets/approved/place-media/pf-479d3082a5332b7fec32e7.webp",
+      "source_sha1": "b8b06c4930c73bc611103894615f3086e8576823",
+      "derivative_sha256": "90a64b1eb94e6761ee22571cb6e4953bb3ae0960db173bf7cab2eccabd213b57",
+      "license": "CC-BY-2.0",
+      "credit": "Jorge Láscar from Australia"
+    }
+  ],
+  "held_candidates": [
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "source_file": "File:St Peter's Cathedral Basilica Kumasi (4).jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "source_file": "File:Pyhän Henrikin katedraali Helsinki 2022-09-18 01.jpg",
+      "reason": "ValueError: Unsupported/oversized/undersized original"
+    },
+    {
+      "place_id": "place:JP:oura-cathedral-nagasaki",
+      "source_file": "File:Oura Cathedral 20180623.jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:ID:jakarta-cathedral",
+      "source_file": "File:Cathedral of Jakarta - exterior (2025) - img 04.jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    }
+  ],
+  "policy": "Original Photo Finder user-selected rank-1 source, current licence, source SHA1, original bytes and derived WebP verified by existing guarded workflow. No substitution, automated holding on failure."
+}
