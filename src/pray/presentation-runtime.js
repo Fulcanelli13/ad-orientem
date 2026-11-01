@@ -1249,6 +1249,38 @@ function launchFifteenRosary(){
  if(api.setMysterySet('joyful',{step:0})===true){decorateRosary();return true;}
  ROSARY_FIFTEEN.active=false;return false;
 }
+// Some localized PrayerBook builds mount the original Rosary source shell
+// after openModule returns. Reapply the EXISTING visual decorator once the
+// original shell and canonical bead source are both ready. Never create a
+// second reader, change a bead, or write session state.
+let rosarySourceReadyGuard=null;
+function ensureRosarySourcePresentation(){
+ if(rosarySourceReadyGuard!==null){
+  clearInterval(rosarySourceReadyGuard);rosarySourceReadyGuard=null;
+ }
+ let probes=0;
+ const probe=()=>{
+  const root=rosaryDonorRoot(),shell=root?.querySelector?.('.pbShell');
+  if(!root?.classList?.contains('open')){
+   if(rosarySourceReadyGuard!==null)clearInterval(rosarySourceReadyGuard);
+   rosarySourceReadyGuard=null;return;
+  }
+  if(shell?.dataset?.aoRosaryExactDonor==='v3.4.14'){
+   if(rosarySourceReadyGuard!==null)clearInterval(rosarySourceReadyGuard);
+   rosarySourceReadyGuard=null;return;
+  }
+  const state=window.AO_ROSARY_V381?.state?.(),steps=window.AO_ROSARY_V381?.steps?.();
+  if(shell&&state?.set&&Array.isArray(steps)&&steps.length)
+   decorateRosary();
+  if(++probes>=100){
+   if(rosarySourceReadyGuard!==null)clearInterval(rosarySourceReadyGuard);
+   rosarySourceReadyGuard=null;
+  }
+ };
+ probe();
+ if(rosarySourceReadyGuard===null)
+  rosarySourceReadyGuard=setInterval(probe,150);
+}
 function launchRosaryPlayer(resume=captureResume()){
  const prefs=syncRosaryPrefs({...S.rosary});
  externalResume=resume;rosaryDonorReturnSnapshot=resume;lastRosaryFxMystery='';
@@ -1259,6 +1291,7 @@ function launchRosaryPlayer(resume=captureResume()){
  }
  storeRosaryDonorReturn(resume);
  restoreRosaryLaunchPrefs(prefs);
+ ensureRosarySourcePresentation();
  return true;
 }
 let lastRosaryRitualKey='',lastRosaryFxMystery='';
