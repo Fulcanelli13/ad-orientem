@@ -278,7 +278,16 @@ export function nextScholaMusicEvent(itinerary,cardId){
  const id=String(cardId);
  const currentIndex=itinerary.cardOrder?.indexOf(id)??-1;
  if(currentIndex<0)return null;
- const next=itinerary.events.find(e=>e.cardIndex>currentIndex &&
+ // The priest's Gloria/Credo intonation belongs to the *same* curated
+ // source card as the choir's immediate response. Forecasting only chants
+ // on later cards incorrectly skips the very chant now being intoned.
+ // This is a display forecast, never evidence that the choir has begun.
+ const intoned=itinerary.events.find(e=>e.cardIndex===currentIndex &&
+   e.kind==="CHANT" && e.status==="EXPECTED_NOT_OBSERVED" &&
+   (e.id==="GLORIA"||e.id==="CREDO") &&
+   itinerary.events.some(v=>v.id===e.id+"_INTONATION" &&
+     v.cardIndex===currentIndex && v.kind==="PRIEST_VOICE"));
+ const next=intoned??itinerary.events.find(e=>e.cardIndex>currentIndex &&
    e.kind==="CHANT" && e.status==="EXPECTED_NOT_OBSERVED");
  if(!next)return null;
  return freeze({id:next.id,label:next.label,cardId:next.card.id,
