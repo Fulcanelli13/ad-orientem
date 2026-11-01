@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 """One-shot, fail-closed import of two source-verified TLM exterior photographs.
 
-This is a BINARY TRANSFER, not a new photograph acquisition or global crawl.
-All images already exist in the user's 13 ZIP archives; this script is used
-only when the GitHub connector cannot directly push those local binary bytes.
-
-Offline alternative: pass AO_TLM_ORIGINALS_DIR with RG-*.jpg names; no HTTP.
-The GitHub runner may use the TWO pinned Wikimedia originals with no retry;
-any source failure means NO files are published or committed.
+Offline only: reuse already acquired, exact Commons-original JPEG files from the
+user's 13 previously supplied archives. Requires AO_TLM_ORIGINALS_DIR. No
+new network fetch, no licence assumptions and no automatic publication.
 """
 import hashlib
 import io
 import os
 import sys
-import urllib.request
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -44,25 +39,12 @@ SOURCES = (
 
 def get_source(spec):
     offline = os.environ.get("AO_TLM_ORIGINALS_DIR")
-    if offline:
-        return (Path(offline) / (spec["id"] + ".jpg")).read_bytes()
-    if os.environ.get("AO_TLM_TWO_SOURCE_TRANSFER") != "1":
-        raise RuntimeError("Either supply offline originals or explicitly enable two-source pinned transfer")
-    request = urllib.request.Request(
-        spec["url"],
-        headers={"User-Agent": "AdOrientem-ExactSource-BinaryTransfer/1.0 (two-source-release)",
-                 "Accept": "image/jpeg"},
-    )
-    # No retries: all file retrieval failures including HTTP 429 are HOLDS.
-    with urllib.request.urlopen(request, timeout=35) as response:
-        if not response.url.startswith("https://upload.wikimedia.org/"):
-            raise RuntimeError("unexpected media redirect host")
-        if response.headers.get("Content-Length") and int(response.headers["Content-Length"]) > 4_000_000:
-            raise RuntimeError("original unexpectedly large")
-        data = response.read(4_000_001)
-    if len(data) > 4_000_000:
-        raise RuntimeError("oversized original source")
-    return data
+    if not offline:
+        raise RuntimeError("Provide existing original JPEGs via AO_TLM_ORIGINALS_DIR; no Wikimedia downloads")
+    path = Path(offline) / (spec["id"] + ".jpg")
+    if not path.is_file():
+        raise RuntimeError("Previously acquired original missing: " + str(path))
+    return path.read_bytes()
 
 def convert(spec, binary):
     sha1 = hashlib.sha1(binary).hexdigest()
