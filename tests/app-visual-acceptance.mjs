@@ -1333,40 +1333,61 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-lib-open]").count(),48,"PRAY Library no longer exposes the locked 48-prayer corpus");
   await page.locator("#aoPray435930 [data-p435930-lib-open='sacrament_act_of_contrition']").click();
   await page.waitForSelector("#aoPray435930 .aoP435930Prayer",{timeout:5000});
-  await page.waitForFunction(()=>globalThis.AO_PRAY_COHERENCE_V435930?.audit?.().readerContract==="fluid-v1",null,{timeout:5000});
-  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoLibraryLine[data-ao-devo-active='true']").length===1,null,{timeout:5000});
-  const prayReader=await page.evaluate(()=>{
-    const audit=globalThis.AO_PRAY_COHERENCE_V435930?.audit?.()??{};
-    const flip=document.querySelector("#aoPray435930 .aoP435930Flip");
-    const vern=flip?.querySelector("[data-face-v]");
-    const latin=flip?.querySelector("[data-face-la]");
+  // F01 approved Claude Holy Cards replaced the old flat fluid-v1 reader
+  // for all 32 essential prayers. Assert the actual reversible source-owned
+  // card instead of forcing an obsolete flat Latin/vernacular presentation.
+  const contritionCard="#aoPray435930 .aoP435930LibraryReader [data-ao-essential-card='sacrament_act_of_contrition']";
+  await page.waitForSelector(contritionCard,{state:"visible",timeout:5000});
+  const holyFront=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930");
+    const card=root?.querySelector("[data-ao-essential-card='sacrament_act_of_contrition']");
+    const mount=root?.querySelector(".aoP435930Mount");
     return {
-      ...audit,
-      recitationButtons:document.querySelectorAll("#aoPray435930 [data-p435930-global-recitation]").length,
-      prayerTitle:document.querySelector("#aoPray435930 .aoP435930Head h1")?.textContent?.trim()??"",
-      duplicateHeadings:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoCardHead,.aoP435930LibraryReader .aoDevoCardTitle").length,
-      libraryCards:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoCard").length,
-      titleStops:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoStop").length,
-      latinHidden:latin?.hidden??null,
-      vernHidden:vern?.hidden??null,
-      activeFocus:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoLibraryLine[data-ao-devo-active='true']").length,
-      legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+      view:mount?.dataset?.aoPrayView??null,
+      frontHidden:card?.querySelector(".aoClaudeHolyFront")?.getAttribute("aria-hidden")??null,
+      backHidden:card?.querySelector(".aoClaudeHolyBack")?.getAttribute("aria-hidden")??null,
+      prayerTitle:root?.querySelector(".aoP435930Head h1")?.textContent?.trim()??"",
+      cards:root?.querySelectorAll(".aoP435930LibraryReader .aoDevoCard").length??0,
+      globalRecitation:root?.querySelectorAll("[data-p435930-global-recitation]").length??0,
+      duplicateTimelines:root?.querySelectorAll(".aoP435930LibraryReader .aoDevoSequenceTimeline").length??0,
+      footer:root?.querySelectorAll(".aoClaudeHolyFoot").length??0,
+      corpus:root?.querySelectorAll(".aoP435930EssentialBeat").length??0,
+      hasUnapprovedArt:card?.querySelectorAll(".aoClaudeHolyPlate img").length??0,
+      legacyOpen:document.querySelector("#aoPrayerBookRoot")?.classList.contains("open")??false
     };
   });
-  assert.equal(prayReader.recitationControls,1,"PRAY reader lost its single recitation-mode control");
-  assert.equal(prayReader.recitationButtons,2,"PRAY reader lost Individual/Group recitation choices");
-  assert.equal(prayReader.translationPairs,1,"PRAY library prayer lost its Latin/vernacular pair");
-  assert.equal(prayReader.stackedTranslationPairs,0,"PRAY stacked Latin and vernacular instead of one-language-at-a-time presentation");
-  assert.ok(prayReader.fluidUnits>0,"PRAY reader lost fluid focus units");
-  assert.equal(prayReader.readerContract,"fluid-v1");
-  assert.equal(prayReader.libraryCards,1,"Prayer Library no longer presents a single named prayer card");
-  assert.equal(prayReader.titleStops,0,"A single prayer must not render an empty one-of-one chapter timeline");
-  assert.equal(prayReader.duplicateHeadings,0,"A single prayer must use the existing page H1, not a repeated card title");
-  assert.equal(prayReader.activeFocus,1,"PRAY card reader does not expose exactly one active paragraph");
-  assert.ok(prayReader.prayerTitle.length>0,"PRAY single page H1 title is blank");
-  assert.notEqual(prayReader.latinHidden,prayReader.vernHidden,"PRAY translation pair does not expose exactly one visible language");
-  assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
+  assert.equal(holyFront.view,"library","Prayer Library lost canonical view ownership");
+  assert.equal(holyFront.frontHidden,"false","Approved Holy Card did not open on its front");
+  assert.equal(holyFront.backHidden,"true","Holy Card exposes the back to assistive technology before turning");
+  assert.ok(holyFront.prayerTitle.length>0,"Act of Contrition page heading is blank");
+  assert.equal(holyFront.cards,1,"Act of Contrition duplicated its source card");
+  assert.equal(holyFront.globalRecitation,0,"Private Holy Card has an unrelated Individual/Group control");
+  assert.equal(holyFront.duplicateTimelines,0,"One Holy Card has a redundant one-of-one timeline");
+  assert.equal(holyFront.footer,1,"Claude Holy Card lost its previous/next navigation");
+  assert.ok(holyFront.corpus>0,"Holy Card lost its source-owned original prayer paragraphs");
+  assert.equal(holyFront.hasUnapprovedArt,0,"Placeholder Holy Card acquired unapproved sacred art");
+  assert.equal(holyFront.legacyOpen,false,"Legacy Prayer Book reopened inside Holy Card");
   await shot("03b-pray-library-prayer");
+  await page.locator(contritionCard+" [data-p435930-essential-card-turn]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-ao-essential-card='sacrament_act_of_contrition'] .aoClaudeHolyLace")?.classList.contains("flip")===true,null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 [data-ao-essential-card='sacrament_act_of_contrition'] .aoP435930EssentialBeat[data-ao-devo-active='true']").length===1,null,{timeout:5000});
+  const holyBack=await page.evaluate(()=>{
+    const card=document.querySelector("#aoPray435930 [data-ao-essential-card='sacrament_act_of_contrition']");
+    const paragraphs=[...(card?.querySelectorAll(".aoClaudeHolyBackScroll .aoP435930EssentialBeat")??[])];
+    return {
+      frontHidden:card?.querySelector(".aoClaudeHolyFront")?.getAttribute("aria-hidden"),
+      backHidden:card?.querySelector(".aoClaudeHolyBack")?.getAttribute("aria-hidden"),
+      active:paragraphs.filter(x=>x.dataset.aoDevoActive==="true").length,
+      words:paragraphs.map(x=>x.textContent.trim()).join(" ").length,
+      faceCount:card?.querySelectorAll(".aoClaudeHolyBackScroll").length??0
+    };
+  });
+  assert.equal(holyBack.frontHidden,"true","Turning the Holy Card left the painted front accessible");
+  assert.equal(holyBack.backHidden,"false","Turning the Holy Card hid its prayer text from assistive technology");
+  assert.equal(holyBack.active,1,"The Holy Card lost its one-active-paragraph focus");
+  assert.ok(holyBack.words>40,"The Act of Contrition lacks its substantive canonical text");
+  assert.equal(holyBack.faceCount,1,"The Holy Card duplicated its prayer-text face");
+  await shot("03b2-pray-library-contrition-back");
 
   // Later approved donor surfaces: completed bilingual V4 Novenas plus the v38.1 traditional PRAY modules.
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.novenas",{returnContext:null}));
