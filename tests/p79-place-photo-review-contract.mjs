@@ -37,3 +37,4 @@ console.log("P79 grouped photo-review contracts: pass; 430 candidates / 109 Plac
 
 // Run exactly the prior frozen Photo Finder verification before publishing B7 Git blobs.
 await import("./photo-finder-b7-nine-preserved-covers-release.mjs");
+await import("./photo-finder-b8-fifteen-preserved-covers-release.mjs");

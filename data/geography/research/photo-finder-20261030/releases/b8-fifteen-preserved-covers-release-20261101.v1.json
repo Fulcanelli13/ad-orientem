@@ -1,0 +1,158 @@
+{
+  "schema": "AO_PHOTO_FINDER_B8_EXISTING_BLOBS_20261101_V1",
+  "as_of": "2026-11-01",
+  "purpose": "Publish only previously user-selected source-verified B8 WebPs, except visually held El Cobre overlay; no re-download or editorial substitution",
+  "source_branch": "research/photo-finder-release-20261030-b8",
+  "source_report": "data/geography/research/photo-finder-20261030/releases/b8-verification-report.json",
+  "original_user_decisions": "data/geography/research/photo-finder-20261030/decisions.json",
+  "baseline": {
+    "approved_covers": 152,
+    "approved_gallery_entries": 35,
+    "canonical_places": 530,
+    "registry_version": "1.6.2",
+    "registry_blob_sha": "117b99d054c14ca29053c4b09ad44a1b9cecc854"
+  },
+  "proposed": {
+    "approved_covers": 167,
+    "approved_gallery_entries": 35,
+    "canonical_places": 530,
+    "registry_version": "1.6.3"
+  },
+  "source_verified": 16,
+  "source_exceptions": 4,
+  "visual_hold": {
+    "place_id": "place:CU:el-cobre-caridad-basilica",
+    "reason": "PROMINENT_PHOTOGRAPHER_COPYRIGHT_MARK_IN_IMAGE",
+    "treatment": "DO_NOT_PUBLISH_OR_ALTER_ORIGINAL; KEEP_EXISTING_USER_SELECTION"
+  },
+  "newly_released": [
+    {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "asset_path": "assets/approved/place-media/pf-1469f34f3dce7f8f0910ac.webp",
+      "source_git_blob_sha": "1199bb0649b27ee3cdf21a63510ab2f5117b7b1b",
+      "source_sha1": "dfbb40f01a04c0ffd99335265f8d78c1775fd024",
+      "derivative_sha256": "ca556a7a9282ffb0ccde3843d521fda8e367667d704fc0a8d19773984d2e5593",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "asset_path": "assets/approved/place-media/pf-537e75e92469847501c639.webp",
+      "source_git_blob_sha": "a492bb805733c669887810725bc70fdb40f9425e",
+      "source_sha1": "0850ccbc48e52c953b6a89e06c9a5e04b6e4ecc3",
+      "derivative_sha256": "ac2fe9eee1eef2b3a61457a9438d1aa26f147f413ad1b405ba118023dca16e9d",
+      "license": "CC-BY-SA-2.5"
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "asset_path": "assets/approved/place-media/pf-c90c0a0892e103f0484a50.webp",
+      "source_git_blob_sha": "b81fe8f3763017d1f42f58a7bc95496fb9fd2f3e",
+      "source_sha1": "081b70dda2ae5c8463ee243fae3995f18edf06cb",
+      "derivative_sha256": "8769941cf90c6e118b2938f607269f949dccb70028ba9aaa499a2688c6f8b714",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:GB:westminster-cathedral",
+      "asset_path": "assets/approved/place-media/pf-718ed6d79ce70af01a892d.webp",
+      "source_git_blob_sha": "1808cc515e867f18c35ec0f5982ba5fd6521d3cb",
+      "source_sha1": "88c73e1a1f4c2fca81cccb521b10a034a421dd93",
+      "derivative_sha256": "33ef5ab011a86c73396d2d0e05ea835f740223dc1ac36d70cd1a372a5f518249",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "asset_path": "assets/approved/place-media/pf-a782f862f034f71a417d5c.webp",
+      "source_git_blob_sha": "9210d293d1058a963a1c95478e9fd608a7cc50d9",
+      "source_sha1": "9fe7fdd167ad6ab2853c8752197b83bf21e42b0a",
+      "derivative_sha256": "e2dae87b35b165f1eed010f4b2fceeb2c212428172357ea34230ab42c54adf77",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:duomo-orvieto",
+      "asset_path": "assets/approved/place-media/pf-9469267dca8fa649582c61.webp",
+      "source_git_blob_sha": "6058decc214912b1f271b3e53a73e2517b706b62",
+      "source_sha1": "bbf293e4cea33b2f105b4295dff3993dc29a328e",
+      "derivative_sha256": "ddff9a6c1da5680619f7a0653f56b53ead8a7ed96473ef9c6ed124f31b13dcf8",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:NO:st-olav-cathedral-oslo",
+      "asset_path": "assets/approved/place-media/pf-b76faab1265785b10f6861.webp",
+      "source_git_blob_sha": "cb17cc93633cdf634a49cafb22744775d24e093d",
+      "source_sha1": "419881a8b76bdbed2b4c9d226eb3c8156e65f4cf",
+      "derivative_sha256": "f4449258a5814af6eccc1cd6e7d5a1bd42d59c222094f14d613cfd8f245c7a43",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:NO:var-frue-cathedral-tromso",
+      "asset_path": "assets/approved/place-media/pf-6968f1d4bf588965c50254.webp",
+      "source_git_blob_sha": "f5e1b26bcb67ba172671591fc767797cd141a7ed",
+      "source_sha1": "87ed5c61ba1a5cfa95f9e9d8a5cf0d2633fed766",
+      "derivative_sha256": "692afeb67e530c4a6e53e1bc6b267f497a9ab98c5b59e1a4b529df37a5d1e05d",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:EE:saints-peter-paul-cathedral-tallinn",
+      "asset_path": "assets/approved/place-media/pf-930ad8516085792a9473c2.webp",
+      "source_git_blob_sha": "7b47d918a85e4818c15badf6c19f76c26096576d",
+      "source_sha1": "ffc15ecb1f7f54de57d72d980815106a5b6cf2c2",
+      "derivative_sha256": "77675b99bfb83270ba451e6370b9da97a051599de7b519e67d2015fb9b863b8c",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:SE:st-eric-cathedral-stockholm",
+      "asset_path": "assets/approved/place-media/pf-f125096254e4cc9af9ed14.webp",
+      "source_git_blob_sha": "21f709e20705bbfed6ef9861c631643fe60a194d",
+      "source_sha1": "c2ad6664b0081976ce597cfb0e28230c28b70f0b",
+      "derivative_sha256": "db58b12e9b59502a9a52cf6efac5d06f62ea2006fa9be756c5be6f50c5e809e9",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IS:christ-king-cathedral-reykjavik",
+      "asset_path": "assets/approved/place-media/pf-e2fdd0a2d549c385cdf629.webp",
+      "source_git_blob_sha": "7356d42d990353d43b2fa32789b2b8bbbe784c57",
+      "source_sha1": "1c21adbcbf414e8dbacb897df4fd3447cbf6ad7a",
+      "derivative_sha256": "f64fd3e5f21eb65913277269e975d48578c554d6e18ece2ba87e278e90960331",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:HK:immaculate-conception-cathedral-hong-kong",
+      "asset_path": "assets/approved/place-media/pf-a32a4178936789314b44f5.webp",
+      "source_git_blob_sha": "42d4f155e58cc983566ac4d5c37c91ad0d599fb7",
+      "source_sha1": "9e0325c2d4f355f78c70f80ff252bede4ca9bd96",
+      "derivative_sha256": "9817e2633250bce26abe9c0f5fe9be578b301d358f3d74329f6c8bff118987ea",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:JP:st-mary-cathedral-tokyo",
+      "asset_path": "assets/approved/place-media/pf-8bf7612fe898f15363f43f.webp",
+      "source_git_blob_sha": "2d8abec5c8505b47efd982e8fd58c390ef7f90bf",
+      "source_sha1": "353fe70994ac33abc2a3e7b5891a5c3ada44a009",
+      "derivative_sha256": "3d3dd2f59c60e66f36e1019531fc3d8badc4be3018a4a01a2426d0c5f4118b75",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:JP:urakami-cathedral-nagasaki",
+      "asset_path": "assets/approved/place-media/pf-1a414c14235bd12e9c2bf9.webp",
+      "source_git_blob_sha": "dffc75b80a2f99736d3db6bea24ce074c813c3f2",
+      "source_sha1": "272e22fcd882d561d6137d7ff1240ffcbac8a2a9",
+      "derivative_sha256": "cd4670a129d5092275da420cfb4a0ba2b40fee619c878ec83309e42758bb450b",
+      "license": "CC-BY-2.5"
+    },
+    {
+      "place_id": "place:KE:holy-family-cathedral-basilica-nairobi",
+      "asset_path": "assets/approved/place-media/pf-479d3082a5332b7fec32e7.webp",
+      "source_git_blob_sha": "5e0bc4a174cf4e140f282ffc43a97ad56883e0a4",
+      "source_sha1": "b8b06c4930c73bc611103894615f3086e8576823",
+      "derivative_sha256": "90a64b1eb94e6761ee22571cb6e4953bb3ae0960db173bf7cab2eccabd213b57",
+      "license": "CC-BY-2.0"
+    }
+  ],
+  "policy": {
+    "no_new_downloads": true,
+    "no_new_editorial_choices": true,
+    "no_existing_covers_replaced": true,
+    "no_gallery_changes": true,
+    "all_source_holds_preserved": true,
+    "requires_CI_and_visual_check": true
+  }
+}
