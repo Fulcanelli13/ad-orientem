@@ -162,12 +162,12 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     '<b>'+esc(p.titleFr&&L("EN","FR")==="FR"?p.titleFr:p.title)+'</b>'+
     '<small>'+esc(L("Canonical prayer text","Texte canonique de prière"))+'</small></button>'
   ).join("");
-  return head(L("Pray","Prier"),L("Find a prayer or devotion","Trouvez une prière ou une dévotion"))+
+  return head(L("Pray","Prier"),"")+
     '<main class="aoP435930Body aoPrayPilotHome">'+
-      '<div class="aoPrayPilotTop"><h2>'+esc(L("Enter into prayer","Entrer en prière"))+'</h2>'+
+      '<div class="aoPrayPilotTop"><h2>'+esc(L("Prayer","Prière"))+'</h2>'+
       '<label class="aoPrayPilotSearch">'+assetIcon("ao-ui-search","aoPrayPilotSearchIcon")+
       '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+
-      '<p class="aoPrayPilotIntro">'+esc(L("Choose a door or search the existing prayer library and readers.","Choisissez une porte ou recherchez les prières et les lecteurs existants."))+'</p></div>'+
+      '</div>'+
       '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden>'+
       '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
       [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
