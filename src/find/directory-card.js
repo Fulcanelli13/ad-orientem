@@ -119,7 +119,9 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
     (emblem?'<span class="aoTlmVenueEmblemFrame"><span class="aoTlmVenueEmblemBackstop" aria-hidden="true">'+E(emblem.label)+'</span><img data-tlm-emblem-image src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async"></span>':
       useNamed?'<span class="aoTlmVenueNamedMark" aria-hidden="true">'+E(namedSourceMark(sourceLabel))+'</span>':
         '<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')+
-    '<small>'+E(useNamed?L(language,"Listed as: ","Selon la source : ")+label:label)+'</small></span>';
+    '<small>'+E(useNamed?L(language,"Listed as: ","Selon la source : ")+label:label)+'</small>'+
+    (emblem?.symbolScope==="ORDER_FAMILY"?'<small class="aoTlmOrderSymbolNote">'+E(L(language,"Order-wide symbol · not house arms","Symbole de l’ordre · non celui de la maison"))+'</small>':'')+
+    '</span>';
 }
 
 export function renderDirectoryVenueCard(item,language="en"){
@@ -185,6 +187,8 @@ export function hideUnavailableDirectoryEmblem(event){
 }
 const DIRECTORY_NAMED_IDENTITY_STYLE=String.raw`
 .aoTlmVenueEmblemFrame{position:relative;display:flex;justify-content:center;align-items:center;width:100%;min-height:87px}
+.aoTlmVenueIdentity .aoTlmOrderSymbolNote{font-size:9px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.8}
+.aoTlmVenueIdentity--card .aoTlmOrderSymbolNote{font-size:8px}
 .aoTlmVenueEmblemFrame .aoTlmVenueEmblemBackstop{display:none;max-width:96%;color:#e7d2a6;font:700 23px/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.025em;overflow-wrap:anywhere}
 .aoTlmVenueEmblemFrame[data-emblem-state="unavailable"] img{display:none!important}
 .aoTlmVenueEmblemFrame[data-emblem-state="unavailable"] .aoTlmVenueEmblemBackstop{display:block}
