@@ -84,6 +84,16 @@ try{
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
     await page.locator(base+' [data-p435930-family="'+door+'"]').click();
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
+    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),0,
+      "The fixed app header already identifies the family; never duplicate its heading: "+door);
+    if(door==="marian"){
+      const featured=await page.locator(base+" .aoPrayDoorFeaturedCopy b").textContent();
+      assert.equal(featured.trim(),"Litany of Loreto","Keep the readable editorial title; canonical source edition stays in the reader");
+    }
+    if(["eucharistic","ourlord","intentions"].includes(door))
+      assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorContext").count(),1,
+       "Restore the discreet source glossary context below the shelf, not before its featured prayer");
+
     const rows=await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-own],"+
       base+" [data-ao-prayer-shelf] [data-p435930-external],"+
       base+" [data-ao-prayer-shelf] [data-p435930-door-prayer]").evaluateAll(nodes=>nodes.map(el=>
