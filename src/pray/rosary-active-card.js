@@ -57,7 +57,12 @@ export function installRosaryActiveCard({root,stepIndex,chapters,navigate,set='j
  const artSlot=prayerArtworkRosarySlotForChapter(chapter,{set});
  const releaseHTML=renderReleasedPrayerArtwork(artSlot,{language});
  if(!releaseHTML){previousArtwork?.remove();}
- else if(previousArtwork?.dataset.aoRosaryCertifiedArt!==artSlot){
+ else if(previousArtwork?.dataset.aoRosaryCertifiedArt===artSlot){
+  // The donor can replace its prayer sheet between beads. Preserve the
+  // same artwork and move it to the currently visible sheet if needed.
+  if(previousArtwork.parentElement!==sheet)
+    sheet.insertAdjacentElement('afterbegin',previousArtwork);
+ }else{
   previousArtwork?.remove();
   const layer=sheet.ownerDocument.createElement('div');
   layer.dataset.aoRosaryCertifiedArt=artSlot;
