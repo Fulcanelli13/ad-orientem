@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
 import {divineMercySteps} from "../src/pray/devotional-methods-v1.js";
-import {chapletF07PilotEnabled,renderMercyF07Crown,CHAPLET_F07_PILOT_SCHEMA,mercyF07RoleLines,mercyF07RoleMarkup} from "../src/pray/chaplet-f07-pilot.js";
+import {chapletF07PilotEnabled,chapletF07VariantsEnabled,renderMercyF07Crown,CHAPLET_F07_PILOT_SCHEMA,mercyF07RoleLines,mercyF07RoleMarkup} from "../src/pray/chaplet-f07-pilot.js";
 assert.equal(CHAPLET_F07_PILOT_SCHEMA,"ao-chaplet-f07-crown-v1");
 for(const [search,expected] of [["",false],["?aoChapletF07Pilot=1",true],["?aoChapletF07Pilot=0",false],["?aoPrayerPilot=1",false]])
  assert.equal(chapletF07PilotEnabled({location:{search}}),expected);
+// Three w1/c1 variants are enabled by default in the draft, but retain a one-parameter rollback.
+for(const [search,expected] of [["",true],["?aoChapletF07Pilot=1",true],["?aoChapletF07Pilot=0",false],["?aoPrayerPilot=1",true]])
+ assert.equal(chapletF07VariantsEnabled({location:{search}}),expected);
 for(const closing of [false,true]){
  const steps=divineMercySteps({includeClosing:closing});
  for(const index of [0,4,12,steps.length-1]){
