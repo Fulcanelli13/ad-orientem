@@ -101,7 +101,7 @@ export function renderTlmChurchProfile(item,language="en"){
   '<h2>'+E(item?.title)+'</h2><p class="aoTlmProfileLocation">'+E(item?.subtitle)+'</p>'+
   (venue?.diocese?.name?'<p class="aoTlmProfileDiocese">'+E(venue.diocese.name)+'</p>':'')+
   '<div class="aoTlmProfileAffiliation">'+
-   (introEmblem?'<img src="'+E(introEmblem.image)+'" alt="" loading="lazy" decoding="async">':'')+
+   (introEmblem?'<img data-tlm-emblem-image src="'+E(introEmblem.image)+'" alt="" loading="lazy" decoding="async">':'')+
    '<div><small>'+E(v.ministries.length?L(language,"Ministry / community","Ministère / communauté"):L(language,"Affiliation · source-reported","Affiliation · selon la source"))+'</small>'+
    '<strong>'+E(introLabel)+'</strong></div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
@@ -127,7 +127,7 @@ export function renderTlmChurchProfile(item,language="en"){
  for(const [idx,m] of v.ministries.entries()){
    const emblem=massInstitutionEmblem(m.raw?.community_id);
    html+='<article class="aoTlmProfileMinistry"><div class="aoTlmProfileMinistryHead">'+
-     (emblem?'<img loading="lazy" decoding="async" src="'+E(emblem.image)+'" alt="">':'')+
+     (emblem?'<img data-tlm-emblem-image loading="lazy" decoding="async" src="'+E(emblem.image)+'" alt="">':'')+
      '<div><small>'+E(L(language,"Ministry","Ministère"))+' '+(idx+1)+'</small><h4>'+E(m.community)+'</h4>'+
      (m.relationship?'<span>'+E(human(m.relationship))+'</span>':'')+'</div></div>';
    html+='<div class="aoTlmProfileIdentityGrid">';
