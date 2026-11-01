@@ -3723,7 +3723,12 @@ function onClick(e){
   setRecitationMode(mode);return render();
  }
  if(PRAYER_PILOT_ENABLED&&view==='angelus'&&b.hasAttribute('data-p435930-pilot-angelus-begin')){
-  ANGELUS_PILOT_ENTRY=false;return render();
+  // The hour-first cover starts at its clock, not the previous pilot button's
+  // scroll offset. Short phones otherwise land halfway through the painting.
+  ANGELUS_PILOT_ENTRY=false;render();
+  if(mount())mount().scrollTop=0;
+  queueMicrotask(()=>{if(view==='angelus'&&mount())mount().scrollTop=0});
+  return;
  }
  if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-p435930-pilot-facet')){
   const next=b.getAttribute('aria-pressed')!=='true';
