@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {
  PRAYER_RELEASED_IMAGE_ASSETS_V1,PRAYER_ARTWORK_RELEASE_SCHEMA_V1,
- releaseClearedPrayerArtwork,renderReleasedPrayerArtwork,prayerArtworkSlotForView
+ releaseClearedPrayerArtwork,renderReleasedPrayerArtwork,prayerArtworkSlotForView,prayerArtworkRosarySlotForChapter
 } from '../src/pray/artwork-release-runtime.js';
 import {
  PRAYER_ARTWORK_SLOT_AUTHORITY,PRAYER_ARTWORK_REQUIRED_HOLDS
@@ -283,4 +283,27 @@ test('artwork surfaces follow current prayer/station and leave Rosary bead archi
  const presentation=readFileSync('src/pray/presentation-runtime.js','utf8');
  assert.match(presentation,/renderReleasedPrayerArtwork\(artSlot/);
  assert.match(presentation,/import "\.\/artwork-release-styles\.js"/);
+});
+
+test('Rosary painting stays fixed by mystery group, never by bead; 15 traditional mysteries only',()=>{
+ const cases=[['joyful',2],['sorrowful',7],['glorious',12]];
+ for(const [set,first] of cases){
+  for(let mi=0;mi<5;mi++){
+   const chapter={id:'mystery-'+(mi+1),mi,start:mi*11};
+   const expected='STG-pray.rosary-'+String(first+mi).padStart(2,'0');
+   assert.equal(prayerArtworkRosarySlotForChapter(chapter,{set}),expected);
+   // The chapter artwork identity does not depend on the Hail Mary bead.
+   for(let bead=0;bead<10;bead++)
+    assert.equal(prayerArtworkRosarySlotForChapter({...chapter,bead},{set}),expected);
+  }
+ }
+ assert.equal(prayerArtworkRosarySlotForChapter({id:'opening'},{set:'joyful'}),'STG-pray.rosary-01');
+ assert.equal(prayerArtworkRosarySlotForChapter({id:'conclusion'},{set:'glorious'}),'STG-pray.rosary-17');
+ assert.equal(prayerArtworkRosarySlotForChapter({id:'mystery-1',mi:0},{set:'luminous'}),null);
+ assert.equal(prayerArtworkRosarySlotForChapter({id:'mystery-6',mi:5},{set:'joyful'}),null);
+ const rosary=readFileSync('src/pray/rosary-active-card.js','utf8');
+ assert.match(rosary,/prayerArtworkRosarySlotForChapter/);
+ assert.match(rosary,/renderReleasedPrayerArtwork/);
+ const presentation=readFileSync('src/pray/presentation-runtime.js','utf8');
+ assert.match(presentation,/chapters,set:info.set,language:lang\(\)/);
 });
