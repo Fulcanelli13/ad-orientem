@@ -244,7 +244,7 @@ test('artwork release proof must include exact work, actual photo rights, SHA-25
  assert.match(markup,/Art Institute of Chicago/);
  assert.match(markup,/Public Domain Mark/);
  assert.match(markup,/responsive painting-only crop/);
- assert.match(markup,/Photograph:/);
+ assert.match(markup,/Photographie :/);
 
  assert.match(markup,/details/);
  const ensureDenied=(patch,key)=>{
