@@ -65,6 +65,14 @@ for(const row of ledger.scores){
  assert.equal(inventory.noteBearingSourceTokens,expected,"Source token count changed: "+row.gregobaseId);
  assert.ok(inventory.groups.every((g,i)=>g.ordinal===i+1&&g.printedPitchParity==="NOT_CERTIFIED"));
  assert.equal(inventory.continuationTokens,row.gregobaseId===1184?1:0);
+ assert.equal(inventory.divisionAttachedTokens,row.gregobaseId===749?7:row.gregobaseId===2760?3:0,
+  "A note after punctuation belongs to its preceding source syllable");
+ if(row.gregobaseId===749)
+  assert.ok(inventory.groups.filter(g=>g.sourceTokenType==="SYLLABLE_AFTER_DIVISION")
+   .every(g=>/^(tri|ne|bis|lum|os|tem|tur)$/.test(g.syllable)));
+ if(row.gregobaseId===2760)
+  assert.ok(inventory.groups.filter(g=>g.sourceTokenType==="SYLLABLE_AFTER_DIVISION")
+   .every(g=>g.syllable==="di"));
  if(row.gregobaseId===2760)assert.deepEqual(
   inventory.groups.map(g=>g.gabcOriginalNotes),
   row.noteGroupCollation.noteGroups.map(g=>g.gabcOriginalNotes));
