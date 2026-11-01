@@ -1,4 +1,5 @@
 import {renderNetworkPanel} from "./mapcn-network-presentation.js";
+import {renderSacredPlaceFallback} from "./sacred-place-visual-fallback.js";
 import {renderAtlasCoveragePanel} from "./mapcn-atlas-coverage.js";
 import {renderMapcnDiscoverRail} from "./mapcn-discover-rail.js";
 import {renderTimeMassPanel} from "./mapcn-time-mass-presentation.js";
@@ -62,6 +63,7 @@ export function compactHeritagePlaceSheet(vm){
   html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+(vm.journeyOpen?L(vm.language,"Return to pilgrimage journey","Retour au parcours de pèlerinage"):L(vm.language,"Close place preview","Fermer l’aperçu du lieu"))+'">×</button></div>';
   html+='<h2 class="aoHeritageCardTitle">'+esc(p.name)+'</h2>';
   if(p.media)html+='<figure class="aoHeritagePlaceThumb" data-photo-orientation="'+esc(p.media.orientation)+'"><img loading="eager" fetchpriority="high" decoding="async" src="'+esc(p.media.asset_path)+'" alt="'+esc(vm.language==="fr"?p.media.alt_fr:p.media.alt_en)+'"><figcaption>'+esc(p.media.credit)+' · '+esc(p.media.license)+'</figcaption></figure>';
+  else html+=renderSacredPlaceFallback(p,vm.language,"preview");
   if(synopsis)html+='<p class="aoHeritageSynopsis">'+esc(synopsis)+'</p>';
   else html+='<p class="aoHeritageCardEmpty">'+L(vm.language,"Explore the original records and sources associated with this place.","Consultez les documents et les sources associés à ce lieu.")+'</p>';
   if(arr(p.saints).length)html+='<p class="aoHeritageSaints">'+esc(L(vm.language,"Associated saints","Saints associés"))+' · '+esc(p.saints.slice(0,2).join(" · "))+'</p>';
