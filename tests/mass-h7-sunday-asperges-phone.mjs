@@ -270,6 +270,42 @@ try{
       assert.ok(geometry.width>0,"Settled Requiem card has zero width");
       await page.screenshot({path:dir+"/all-souls-m"+(test.index+1)+"-"+test.width+
         "-"+test.language+"-h7-entry.png",animations:"disabled"});
+      if(test.form!=="LOW"&&!productionOrigin){
+        // The pre-release public-site audit must not expect an unpublished
+        // visual correction. The local source-backed H7 gate does certify it.
+        // The production source-backed Requiem projects the §83c rule.
+        // LIVE must retain this *data* but must not print its internal
+        // '1958 RULE' caption above the actual prayer.
+        await page.waitForFunction(()=>{
+          const note=document.querySelector(
+            '#ao-r17-native-reader-preview [data-role="organ-permission"]');
+          return note?.dataset.organNorm==="ACCOMPANIMENT_ONLY";
+        },null,{timeout:12000});
+        const note=await page.evaluate(()=>{
+          const node=document.querySelector(
+            '#ao-r17-native-reader-preview [data-role="organ-permission"]');
+          return {hidden:node.hidden,status:node.dataset.organNorm,
+            observed:node.dataset.organObserved,text:node.textContent};
+        });
+        assert.equal(note.hidden,true,"LIVE Requiem prayer displays editorial 1958 caption");
+        assert.equal(note.status,"ACCOMPANIMENT_ONLY",
+          "Hiding the LIVE caption removed its underlying 1958 source verdict");
+        assert.equal(note.observed,"UNKNOWN",
+          "Reader may not claim that the organ is actually playing");
+        if(test.form==="SOLEMN"){
+          const root=page.locator("#ao-r17-native-reader-preview");
+          await root.locator("[data-reader-preferences]").click();
+          await root.locator('[data-reader-mode="MISSAL"]').click();
+          await page.waitForFunction(()=>{
+            const shell=document.querySelector(
+              '#ao-r17-native-reader-preview [data-ao-reader-shell]');
+            const note=document.querySelector(
+              '#ao-r17-native-reader-preview [data-role="organ-permission"]');
+            return shell?.dataset.mode==="MISSAL" &&
+              note?.dataset.organNorm==="ACCOMPANIMENT_ONLY"&&!note.hidden;
+          },null,{timeout:12000});
+        }
+      }
       console.log("PASS H7 All Souls "+expected+" → LIVE Requiem "+test.form+"/"+test.language);
     }finally{await ctx.close()}
   }

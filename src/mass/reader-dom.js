@@ -4279,7 +4279,10 @@ export function createReaderDomAdapter({
       const norm=current.organPermission?.notAnObservation===true &&
         current.organPermission?.actuallyPlaying==="UNKNOWN"
         ? current.organPermission : null;
-      organNote.hidden=!norm;
+      // LIVE is prayer focus: retain the source-backed 1958 norm in model/
+      // data for review, but do not print editorial organ-rule metadata
+      // above the Latin prayer. MISSAL can keep the reference annotation.
+      organNote.hidden=!norm||mode!=="MISSAL";
       organNote.textContent=norm?.label??"";
       organNote.dataset.organNorm=norm?.status??"UNRESOLVED";
       organNote.dataset.organObserved="UNKNOWN";
