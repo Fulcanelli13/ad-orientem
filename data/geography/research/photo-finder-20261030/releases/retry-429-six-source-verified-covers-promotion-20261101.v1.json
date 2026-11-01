@@ -1,0 +1,2512 @@
+{
+  "schema": "AO_PHOTO_FINDER_429_SIX_EXACT_VERIFIED_COVERS_PROMOTION_V1",
+  "as_of": "2026-11-01",
+  "base_commit": "94bdb7560ee1dfb8ffa14abbc1553488322f7f2a",
+  "source_research_commit": "8a0fefa8d42019df8777125aa27c21714e7a251b",
+  "source_research_branch": "research/photo-finder-112-source-hold-reconciliation-20261101",
+  "source_verified_report": "data/geography/research/photo-finder-20261030/releases/retry-429-source-verification-20261101.v1.json",
+  "original_user_choices": "data/geography/research/photo-finder-20261030/decisions.json",
+  "previous_covers_count": 301,
+  "new_covers_count": 307,
+  "version_before": "1.6.7",
+  "version_after": "1.6.8",
+  "previous_approved_keep": [
+    {
+      "place_id": "place:AE:st-joseph-cathedral-abu-dhabi",
+      "asset_path": "assets/approved/place-media/pf-d0242ff0d5f45503f55925.webp",
+      "source_sha1": "3d1ce19f51092544af1633632e9d348eae5a5bfe",
+      "derivative_sha256": "5ece52fe5a4ba4876531f026e1842182aaef41be2dfc69f4e4def1e9ab2d6797",
+      "credit": "Clintonrebeiro",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:AG:holy-family-cathedral-st-johns",
+      "asset_path": "assets/approved/place-media/pf-b77afa8da77b3b91584057.webp",
+      "source_sha1": "54098c96d20164cd02ee718b6bc9356e397beddf",
+      "derivative_sha256": "444f2a3bb7ab78c3566cc2b1103158e76d8e503cb6998483f16a231e7fad1194",
+      "credit": "Thank You (23 Millions+) views",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:AR:basilica-nuestra-senora-itati",
+      "asset_path": "assets/approved/place-gallery/p77-067.webp",
+      "source_sha1": "0e46d0a1de749ee923797b111bce4a57b22b12c5",
+      "derivative_sha256": "d4ea9ddf691bc60f27e4ec27d68171b0475d9f0def99bb2718845eac19d57345",
+      "credit": "Fernando",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "asset_path": "assets/approved/place-gallery/p77-028.webp",
+      "source_sha1": "8dd0ad47866d20c43b215f61fc6d8fa53e88be3e",
+      "derivative_sha256": "aeb809658aab4028e5e6c06fc296d3273c762eb911be03d1bbd754180c5794c5",
+      "credit": "Fernando bonsembiante (shifted & cropped by Rabanus Flavus )",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "asset_path": "assets/approved/place-gallery/p77-068.webp",
+      "source_sha1": "a742540eed0d69b236c979ea6a24f388d1e6825f",
+      "derivative_sha256": "fd36fc360744cb54e89e13b5ade1759c93016b345b40448da663fd17e86c396e",
+      "credit": "Loco085",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:AR:catedral-basilica-nuestra-senora-rosario",
+      "asset_path": "assets/approved/place-media/pf-ccfa6f6277e175dc9c64b4.webp",
+      "source_sha1": "95e1dbf0f7833a0100b2e25412c8c4268176494c",
+      "derivative_sha256": "17d7088cf59561808a0ee913e2bdb0648bfe4e44643eef602e00e42c0f7e5563",
+      "credit": "Fulviusbsas",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:AT:maria-taferl-basilica",
+      "asset_path": "assets/approved/place-media/pf-c40ed1f84f1d6490640ae7.webp",
+      "source_sha1": "af6f0f5b6071506f7d3dea36991529d260cd47bc",
+      "derivative_sha256": "1f625b2d059c0856acf1567164b1fc5c8209b99eb6b342ec223e168c5d4028bb",
+      "credit": "C.Stadler/Bwag",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:AT:mariazell-basilica",
+      "asset_path": "assets/approved/place-media/AT-mariazell-basilica.webp",
+      "source_sha1": "0b7751feb4723868963dca88c503560af72c333c",
+      "derivative_sha256": "27068c666d6d9949b5988632af3a3897f743a3459033a3ff946d0436c8407bfe",
+      "credit": "Thomas2006",
+      "license": "PUBLIC_DOMAIN"
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-plain",
+      "asset_path": "assets/approved/place-media/pf-47bdfd11de6bc209f291d7.webp",
+      "source_sha1": "1474074bc31d89ebc0d65fce38e935753f28d7f7",
+      "derivative_sha256": "c6bd558bbf93574f66b4a30b850ad4451cdffab0e13a8b36f7ffe6013d7bc3d5",
+      "credit": "C.Stadler/Bwag",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:AU:p48-sg-0743-155809136",
+      "asset_path": "assets/approved/place-media/pf-149a5316e9499fad0343c1.webp",
+      "source_sha1": "c23d0d0fcdd580827d02f4babf4d70a95876bf93",
+      "derivative_sha256": "0fe6302bb866ab9e7c4459fe9c40b6080a5a97b1a7e20cc8ce72a46aa84fc3b1",
+      "credit": "Donaldytong",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "asset_path": "assets/approved/place-media/pf-a48c24a62063c63603efdb.webp",
+      "source_sha1": "2fcab225b17a72c7c44321fd0111ba9a34cb100f",
+      "derivative_sha256": "c90f45a6ff5d35750d86ffd0ac81759778c20ede4d6f0fae7595f8ee67090285",
+      "credit": "gnuckx",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:BD:holy-rosary-cathedral-chattogram",
+      "asset_path": "assets/approved/place-media/pf-e743d8d38b61e1a8b5ea02.webp",
+      "source_sha1": "41e35cfcda8563e4cc84d26f8e60fb9cb77a60d6",
+      "derivative_sha256": "e0a11a3145c85eb7e9f34917f440f61dbcba33ae353eca67ddbf9d626ffca337",
+      "credit": "Bazaan",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:BE:basiliek-onze-lieve-vrouw-oostakker",
+      "asset_path": "assets/approved/place-media/pf-acd5f551b7963e623741b6.webp",
+      "source_sha1": "499f74052ae5f4a835be3d1b6c0c09da58f6e393",
+      "derivative_sha256": "10535907f1aa2e5819e88a5ab7625a5529d1f118d56930bc4bcb8e187c4bdb79",
+      "credit": "Jacobs, Els",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
+      "asset_path": "assets/approved/place-media/pf-92de9c0a83aff9ef371256.webp",
+      "source_sha1": "b6de7c1a0187dd150687a50dbcd78a7563348b4f",
+      "derivative_sha256": "d3702c03e2d41adf1d009f1aa57183dbda0f05495215282348adf46780503076",
+      "credit": "Michielverbeek",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:BE:basilique-notre-dame-bon-secours-peruwelz",
+      "asset_path": "assets/approved/place-gallery/p77-018.webp",
+      "source_sha1": "4dc6f60e88b81a7a8a285ed9c57dd7e96fb3f2ef",
+      "derivative_sha256": "f7245c6ebe3388135f01c953251762d65d3736fa244aecbc54adbd0d1cba4936",
+      "credit": "Trougnouf",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:BE:p46-sg-0225-30163817",
+      "asset_path": "assets/approved/place-gallery/p77-125.webp",
+      "source_sha1": "f1661fb3d41717bd79cb3be9256dfb50a079b5c9",
+      "derivative_sha256": "89c727578525a2a7750e86159308a5a617dddb1feb24ed64665be42f253c0ccd",
+      "credit": "Markus Koljonen ( Dilaudid )",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:BH:our-lady-arabia-cathedral-awali",
+      "asset_path": "assets/approved/place-media/pf-04ec0c1090ead32b3da717.webp",
+      "source_sha1": "3951cf51c72654fc471901368a4f57e3ea746fd5",
+      "derivative_sha256": "368c1bec2e3f27e15bde30c15258acc1c39db260df08bff2a58f2c5b5b41d591",
+      "credit": "Saji Thomas",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "asset_path": "assets/approved/place-media/pf-64665e31109e269a991623.webp",
+      "source_sha1": "1447efecfc7119d34194c43cd1709b569c0fc061",
+      "derivative_sha256": "efb8043cf81635ae9353a1ef915d019ba37feec03fa97a11d82b9eab4b062adf",
+      "credit": "houaito affo daniel",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:BM:st-theresa-cathedral-hamilton",
+      "asset_path": "assets/approved/place-media/pf-acdb3885b86b3f3483127b.webp",
+      "source_sha1": "df3410daeb83ea13e54e5eb4b022bc4ad6d26c1e",
+      "derivative_sha256": "7f4de1e3caf2ce78e8528e60f6700ff4d3b68c1716e68cac7f9ca6eed5cefde9",
+      "credit": "Concord",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:BR:aparecida-national-shrine",
+      "asset_path": "assets/approved/place-media/BR-aparecida-national-shrine.webp",
+      "source_sha1": "4479e1dc31ad9bffeed00c618a535bc7c5bab3be",
+      "derivative_sha256": "291ca550456b4a6659da22242c211c583deeb3df6ec6fdfa691cd00893ebb770",
+      "credit": "Mike Peel (www.mikepeel.net)",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:BR:nazare-belem",
+      "asset_path": "assets/approved/place-media/pf-a5cf2e2b070dc10c7c363d.webp",
+      "source_sha1": "8e0542a88ccf3d610d913bbabfcda0b020fbd487",
+      "derivative_sha256": "14fd4b5a6315ce490ef55b1e0ce8be60beb7c26383cb892f020c7e698e4bb665",
+      "credit": "Nando1462 - Fernando Santos Cunha Filho",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "asset_path": "assets/approved/place-media/pf-67323e169c2e976a2bc687.webp",
+      "source_sha1": "2d824161d22ef6af6bf39067fb933008b85fb6bf",
+      "derivative_sha256": "e92ed7e53b1b3dfd875b980286f8390c8ee4d996e1ee0fa8cdd3ef4a2bd38cec",
+      "credit": "Mayra Chiachia from Barcelona, Spain",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:CA:basilique-notre-dame-montreal",
+      "asset_path": "assets/approved/place-media/pf-f81e94ea01fd8a8ed6b416.webp",
+      "source_sha1": "5c29a8b44ad0c8e37b55cc0bcc78bce573c296e6",
+      "derivative_sha256": "f98fe64d8aadfc66147645e74cfc0c0946421a22ad0b9c726ca32b00d5becf54",
+      "credit": "Jeangagnon",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "asset_path": "assets/approved/place-media/pf-737ce7a3c9ea347641a716.webp",
+      "source_sha1": "8e7b8d60ba94b0040a7983b417b0ad81ac73d929",
+      "derivative_sha256": "8265a476086557b01b8046712decc0cd98158de90ee74a049ad5eb8d8f64e5ea",
+      "credit": "CesarNS1980",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "asset_path": "assets/approved/place-media/pf-8e65d08a4c9660993dc9fd.webp",
+      "source_sha1": "1676bc32b0a88555d8a52698a4e8954aa0440a39",
+      "derivative_sha256": "da8deb9ded42af6b11e4ff17d32bd9bbef680cf5e87bcad0a9aa21045e3e5fd9",
+      "credit": "Gisling",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "asset_path": "assets/approved/place-media/pf-4692549010a69fd9134dd4.webp",
+      "source_sha1": "e8bc4f21ccc6fe24d6ca193a0bfddcfa510b4107",
+      "derivative_sha256": "cfe7fceacd21eafd255c466bb2d8ed943182c81f664e466ae27fc3fffc8dbfd3",
+      "credit": "Dpalma01",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CA:p48-sg-0424-103862161",
+      "asset_path": "assets/approved/place-media/pf-898fce18887ca3263c33b2.webp",
+      "source_sha1": "12e5422fe9b880dd9629eafe71a8da9960a3913d",
+      "derivative_sha256": "5316fe2296065afd854dc81f04cbe4ee435f8d4ba27741e2373f18af2d6e3f44",
+      "credit": "Pierre-Olivier Fortin",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "asset_path": "assets/approved/place-media/CA-sainte-anne-de-beaupre.webp",
+      "source_sha1": "c6bece9777069c7e101f7ac4f2f8b170dc429b6b",
+      "derivative_sha256": "a4fb80ef41caebc0bc1d204a2c2acdda7b6f6989811b4d021a9c5e3975bdb286",
+      "credit": "Didier Moïse",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "asset_path": "assets/approved/place-media/pf-32589bd0db0c7ad576e837.webp",
+      "source_sha1": "aa2502ba958a35ad1ec51d636be4d062f3ca94bc",
+      "derivative_sha256": "76f156274ded7121e1e5e2df2ef8a548d36d938f4ff02935f0411c6c03db4535",
+      "credit": "Chrispin Murhabazi C",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CH:einsiedeln-monastery",
+      "asset_path": "assets/approved/place-media/pf-adeed9ae965d8dcf866f52.webp",
+      "source_sha1": "2eb7221a7f5ad826809bbae0765390150f895a65",
+      "derivative_sha256": "cc7619dd270525c746a7b3f116c3bf468feac4a5e64f759c712a70c8e22b2a95",
+      "credit": "H.Helmlechner",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
+      "asset_path": "assets/approved/place-gallery/p77-074.webp",
+      "source_sha1": "ac4b57929d8ca82d269cf92b0427661f9516f81d",
+      "derivative_sha256": "939febfd0d4def811a7dd87ed1832bbde79426ae1a264d8f8523b020c2647876",
+      "credit": "Geri340",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CL:templo-votivo-maipu-basilica",
+      "asset_path": "assets/approved/place-media/pf-bec41548d3d1b834f1fb62.webp",
+      "source_sha1": "f8bdab5f3c6070c1300314058b316cd853def2a6",
+      "derivative_sha256": "32e3303b29001f80324f681dbe009628ab0b050b4a70819ce4eeea6ab4fe03af",
+      "credit": "Jorge Barrios Riquelme",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CM:basilique-marie-reine-des-apotres-mvolye",
+      "asset_path": "assets/approved/place-media/pf-df0212cd6b86e2ef0e3e50.webp",
+      "source_sha1": "7ec913b9b46cbd853af49c96cc0a47c235a2b291",
+      "derivative_sha256": "579ce7a8cd930e865f76d87cd256e329a7e67191809faa44207f7ca78ee1db42",
+      "credit": "Steve Mvondo",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CM:notre-dame-des-victoires-cathedral-yaounde",
+      "asset_path": "assets/approved/place-media/pf-da657a70b653bba323e728.webp",
+      "source_sha1": "6783be62116f0512c62e1a9bbc2c508e3f36ebf1",
+      "derivative_sha256": "b6c3c61b44ba69165e0da4741171b76152e452c5b0d30974c35a4e433a0aa943",
+      "credit": "Simbanematick",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CO:basilica-senor-milagros-buga",
+      "asset_path": "assets/approved/place-media/pf-524b001322a7e2a5712279.webp",
+      "source_sha1": "f7f4f6a64794bc109c6be118432af0928719f9a5",
+      "derivative_sha256": "f14e7617b5a18f14fdb153938b60c712329049b05fcfa2c2777d0e81c353307e",
+      "credit": "KANDU",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CO:chiquinquira-basilica",
+      "asset_path": "assets/approved/place-media/pf-167c27bf01fdf26a5ebef3.webp",
+      "source_sha1": "d5b66aa2486abd0dd113a9fc11f670110dd8f583",
+      "derivative_sha256": "583b2631cd7c23a510f6c6bf1a712dc322f4b7bd768be973b799e4f1d7efeb14",
+      "credit": "Docfon",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CO:las-lajas-ipiales",
+      "asset_path": "assets/approved/place-media/CO-las-lajas-ipiales.webp",
+      "source_sha1": "51fb7012ecc740ee270aceafa8cdfe56918c1cfb",
+      "derivative_sha256": "1007917b0b7cf1493ed8057a04e50ba798660586d3634d0ad7c40e6725dd4b4a",
+      "credit": "Fredoco",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CU:santuario-nacional-nuestra-senora-regla",
+      "asset_path": "assets/approved/place-media/pf-e5565a03e8ee4d29c9453d.webp",
+      "source_sha1": "0455b16ec1c02ee27087fadf696681d993caaa59",
+      "derivative_sha256": "3a751179ee51885b6786f144d9be77a511b85bae65e888a116d119f80a108964",
+      "credit": "Ivan2010",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "asset_path": "assets/approved/place-gallery/p77-064.webp",
+      "source_sha1": "47ab0d14cb8bb32b63ee785062af72c1f273ff23",
+      "derivative_sha256": "2245ece452e989cfccbea56e80f60d1dd59507056c1e9fdb79a8e498ae3569a6",
+      "credit": "SchiDD",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:CZ:bazilika-navstiveni-panny-marie-svaty-kopecek",
+      "asset_path": "assets/approved/place-media/pf-52a0f222355d023891c574.webp",
+      "source_sha1": "e81955510f4c8e4a76217efe934e0e59e44e8ec4",
+      "derivative_sha256": "9e804d9c25dea3513424b5c23b333c91c6a4f8518666a94599db97d6a17f4dca",
+      "credit": "Lehotsky",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CZ:bazilika-svateho-vavrince-zdislavy-jablonne",
+      "asset_path": "assets/approved/place-gallery/p77-077.webp",
+      "source_sha1": "f82d4c0a29adf5d9efca9e2d0f64ebe5b0dd343e",
+      "derivative_sha256": "90505b40bd7564c990b429ce5b153ce97a5d1f2cbf05c35d254156b15db19946",
+      "credit": "Art Jarka",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "asset_path": "assets/approved/place-gallery/p77-078.webp",
+      "source_sha1": "2196c560117bb94c8f3fa431c9187e31c02d72f7",
+      "derivative_sha256": "c2b4ddf0c09684e6a500d5d20d7f5f22aa68ac5178f7edd8f51026b2c9f2528b",
+      "credit": "Bjalek Michal",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:CZ:poutni-kostel-svateho-jana-nepomuckeho-zelena-hora",
+      "asset_path": "assets/approved/place-media/pf-18f507cee872dba2538bae.webp",
+      "source_sha1": "9614d481d4672feb62b25949791bc155224743a6",
+      "derivative_sha256": "4ba06ce0132fac03003c0cfb79697e8f22e9b8651ce2b9b68182688b2fe9efc8",
+      "credit": "Aqalexor",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "asset_path": "assets/approved/place-media/CZ-st-ignatius-jihlava.webp",
+      "source_sha1": "a61c6ec7df0680fc9cd37c802ce0e10346694367",
+      "derivative_sha256": "f74819dabb4106db614c5795288e4a356b41bcce3b2ad02a569f035dbbdaba24",
+      "credit": "Gampe",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "asset_path": "assets/approved/place-gallery/p77-060.webp",
+      "source_sha1": "20a54769528121dab9feea8bce3b9d307be93cdb",
+      "derivative_sha256": "16c7c0d37f6ef6863b9b3166641f108ab01582200c118d9f009210bc469c827d",
+      "credit": "Pasztilla aka Attila Terbócs",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:CZ:velehrad-assumption-cyril-methodius-basilica",
+      "asset_path": "assets/approved/place-gallery/p77-051.webp",
+      "source_sha1": "0e54d9086b50f75a8247e080f72b56e4d1f75fa2",
+      "derivative_sha256": "494717a9af6abfdd6194869fdd99517aae68809ee220be262609525fdf84176b",
+      "credit": "Palickap",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "asset_path": "assets/approved/place-media/DE-altoetting-gnadenkapelle.webp",
+      "source_sha1": "bdc4e0f98d6d195af223e23b1caee329d8219c0d",
+      "derivative_sha256": "c5cc29cbad251eed90cf17d4f7e0874652673bf442a880380d6f074d89dc8e74",
+      "credit": "W. Bulach",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:DE:basilika-st-martin-weingarten",
+      "asset_path": "assets/approved/place-media/pf-3fa22040f544c08c4cd7ab.webp",
+      "source_sha1": "abafeee062d7a6fb586d1d2878318b1187f28356",
+      "derivative_sha256": "845cb7d461edeaf1be24f6a78276225944e5f683f19d2dcfa08897a4c313ca09",
+      "credit": "Carsten Steger",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:DE:basilika-vierzehnheiligen",
+      "asset_path": "assets/approved/place-gallery/p77-080.webp",
+      "source_sha1": "44275bbc0622af4b1d2a5c74b50bf2032ed27622",
+      "derivative_sha256": "5e0c1636a8e6fcb4cbf3e140ec914aa6878f66cceef5748215ff16d4d5c09de5",
+      "credit": "Ermell",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:DE:benediktinerabtei-maria-laach",
+      "asset_path": "assets/approved/place-media/pf-39ab42a42d26c56f8a46d6.webp",
+      "source_sha1": "111d7285cca4a1aebf4295b593a574e7527b064a",
+      "derivative_sha256": "593d857308f3fcf7acaf16fa03d5dbbf824d4d8a4e557e7a2aade039e2f88d4e",
+      "credit": "W. Bulach",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "asset_path": "assets/approved/place-media/pf-753e79d18f1d63e3fa9898.webp",
+      "source_sha1": "d9e99fc6b3cc82b4e3085fe4378f0fa55de9d6e9",
+      "derivative_sha256": "30c81e665c44c111125b94b4c2ee58c77691e8aefdbc664da3deb7952a9da0e8",
+      "credit": "RomkeHoekstra",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:DE:mariahilf-amberg",
+      "asset_path": "assets/approved/place-media/pf-fbcd13026a7535414c881e.webp",
+      "source_sha1": "1540904eb4224a6d1c6c00024c40168f487666c9",
+      "derivative_sha256": "8136ecea5a5a032036e58b3d8b01caf003af050a3f4136434238591b7a34687f",
+      "credit": "Floq",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:DE:p43-sg-0166-110413194",
+      "asset_path": "assets/approved/place-gallery/p77-065.webp",
+      "source_sha1": "c8f29275c0c681f00b82b2c7e507d4a406860b55",
+      "derivative_sha256": "29112cadc6224ff88d9a8fc260a948a76eacec88d28f1cc055c84c14d8826908",
+      "credit": "Dguendel",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "asset_path": "assets/approved/place-media/pf-6ef74855a1b09d0e024527.webp",
+      "source_sha1": "e2abf1c7c7ce2ddb8296b2b4b0c6807c75065971",
+      "derivative_sha256": "179d3a1245022720c536cde2a75bef8e3d441bab93568139696a76f7e3fbc84a",
+      "credit": "Frank Vincentz",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:DE:st-leonhard-nussdorf",
+      "asset_path": "assets/approved/place-media/pf-bd1e9c4c2876f441dfaa27.webp",
+      "source_sha1": "079cea12f00fc29b71c4fbcd20e985e8ed081e8d",
+      "derivative_sha256": "13e1886874da050610d2fc1a6969d2745d3463f0505793f63fe819c51ac08450",
+      "credit": "Rufus46",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:DE:trier-sankt-matthias",
+      "asset_path": "assets/approved/place-media/pf-37059494e6dd2a7580fc13.webp",
+      "source_sha1": "d4ab14ebfe8406d49ccda175529c40b16ca5abda",
+      "derivative_sha256": "14c4c68591677eddf27b2ac492135acda68fb69e02e8b5c9530f447f0b34600f",
+      "credit": "Qwertzu111111",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:DE:wigratzbad-maria-vom-sieg",
+      "asset_path": "assets/approved/place-media/pf-bfc889a8628a5596704620.webp",
+      "source_sha1": "1f2d374a116d8ba97dc57190f87745def2e98762",
+      "derivative_sha256": "b27ac8e2a0905c278c171a56ac73830451d8f24b0ad49b7689f6f3c9f610ea1b",
+      "credit": "Michel Decrevel",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:DK:st-ansgar-cathedral-copenhagen",
+      "asset_path": "assets/approved/place-media/pf-4eafcbca329916f805640c.webp",
+      "source_sha1": "1973bf8a968393adf7b8cd0608ba22ae898581b5",
+      "derivative_sha256": "7511b7a67f3276548ab556cb02db0787497fab1b8f1a7613f5c072773198d6eb",
+      "credit": "Jørgen Jespersen",
+      "license": "CC-BY-SA-2.5"
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "asset_path": "assets/approved/place-media/pf-537e75e92469847501c639.webp",
+      "source_sha1": "0850ccbc48e52c953b6a89e06c9a5e04b6e4ecc3",
+      "derivative_sha256": "ac2fe9eee1eef2b3a61457a9438d1aa26f147f413ad1b405ba118023dca16e9d",
+      "credit": "JohnHarvey at English Wikipedia",
+      "license": "CC-BY-SA-2.5"
+    },
+    {
+      "place_id": "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
+      "asset_path": "assets/approved/place-media/pf-b07a9a1f0d0466afbfef50.webp",
+      "source_sha1": "8278b157c75474e44f72c1f64708c97403cdbec9",
+      "derivative_sha256": "694f2e094ecb1f9fcfb763de6b5e8982bc988b9fcd6a0f32799acee46bdf8fb8",
+      "credit": "Jos1950",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "asset_path": "assets/approved/place-media/pf-41c28cf399792c0ebdc5d4.webp",
+      "source_sha1": "ead7b3795153687abb9b4ccd23a081f37a318f52",
+      "derivative_sha256": "c6f71d8a831d4e9317f623a56a7ae1c839e9a7b2f9d55854cbb7a9108d43a4e6",
+      "credit": "Xiaotong Gao",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:DZ:basilique-saint-augustin-annaba",
+      "asset_path": "assets/approved/place-media/pf-ac6cf2eab27758d50d671c.webp",
+      "source_sha1": "ca448ba8b36f15062262351e8faba78f8ec4cad1",
+      "derivative_sha256": "1bafa9f58e1b5a853ca9a12418010c1792bb4b2ab56f3eeea4cdaa2f1b157767",
+      "credit": "alioueche mokhtar",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:EC:basilica-voto-nacional-quito",
+      "asset_path": "assets/approved/place-media/pf-386fa1e395afeac6cbd4e6.webp",
+      "source_sha1": "f2ea73a19acb32847941f649883fbbdf87291407",
+      "derivative_sha256": "ad9a0bcf827c986eed36a80bac1e0b42fc28b83c1e9a8e856a0c0f797c4a1258",
+      "credit": "Quito magnífico (shifted by Rabanus Flavus )",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:EE:saints-peter-paul-cathedral-tallinn",
+      "asset_path": "assets/approved/place-media/pf-930ad8516085792a9473c2.webp",
+      "source_sha1": "ffc15ecb1f7f54de57d72d980815106a5b6cf2c2",
+      "derivative_sha256": "77675b99bfb83270ba451e6370b9da97a051599de7b519e67d2015fb9b863b8c",
+      "credit": "Cayambe",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "asset_path": "assets/approved/place-media/pf-fff616032afe53120b8b05.webp",
+      "source_sha1": "2ff590392125b69d1e2b2408d34c6162d26ba74c",
+      "derivative_sha256": "9270cdaee866a46606cd7b5ee6d5b028b9a7fc7327a200cae7878640ff7d2dee",
+      "credit": "Kateryna Baiduzha",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:basilica-nuestra-senora-arantzazu-onati",
+      "asset_path": "assets/approved/place-media/pf-8ba0ace1067a35b5315e77.webp",
+      "source_sha1": "1c1cd03862d9c76cd54ff2ca6bdbdda727eb1023",
+      "derivative_sha256": "086bc79bb21a2792c7b4cba94b79bcf09cb081714f66cf683ebeb4e67c8e69ce",
+      "credit": "Javi Guerra Hernando",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "asset_path": "assets/approved/place-media/pf-c3b8436341fd7f7a2c32ba.webp",
+      "source_sha1": "0e8621ffc16c759095c232953cc326ca513a2e46",
+      "derivative_sha256": "6dfe614407c1631443b9008754505303e7fee6868caa20b4b618a52dc0469c35",
+      "credit": "Concepcion AMAT ORTA…",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:ES:basilica-nuestra-senora-begona-bilbao",
+      "asset_path": "assets/approved/place-media/pf-ebbd779ec603d438596f65.webp",
+      "source_sha1": "e4b813830d2e8feeb8c0b20419849a4d1d9d9fa4",
+      "derivative_sha256": "15c7459f2a1abc74f6f7e564457ba91abcf9926cb8a2127c86efb6cc5941c860",
+      "credit": "Theklan",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:capella-santa-cova-montserrat",
+      "asset_path": "assets/approved/place-media/pf-e3958752fd2e7e31006c0b.webp",
+      "source_sha1": "8852d001996d337e1419c3ecc096353fcd2a607d",
+      "derivative_sha256": "5ca0a3aa530018f4b6585b6c9fa2ecfe1386563e532615768ec5d97b3cdd997f",
+      "credit": "Bernard Gagnon",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "asset_path": "assets/approved/place-media/pf-0740bf7f2d66b60b6a5451.webp",
+      "source_sha1": "a9ce1c46917694062744603a1332fca1dfac3193",
+      "derivative_sha256": "5ec2beeef3d8c02dd9a0afcd1f98ba9b22ad1bd3f0475851cb38ce0d59ce7690",
+      "credit": "Jl FilpoC",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "asset_path": "assets/approved/place-media/pf-0e0330d7b9c3ed2b1b2760.webp",
+      "source_sha1": "3c1cc2b577306ea3189c89528bbb0f93a0e307bb",
+      "derivative_sha256": "efe06030414b76fe57f314cf7e9171cd67683ebcbebfde471390ea33d694896e",
+      "credit": "Fernando",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:catedral-santa-maria-burgos",
+      "asset_path": "assets/approved/place-media/pf-b78ffc97ae6f6213e8d530.webp",
+      "source_sha1": "4f80d511273684969b2913724d4b42cd7b5dfb4f",
+      "derivative_sha256": "2433a8ac5f9d2a6a46dfb13529bf1944b34cdb4896256ea1f75268769b1cbc8c",
+      "credit": "Rafa Esteve",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "asset_path": "assets/approved/place-media/pf-84614f1da229bbf3fb97c1.webp",
+      "source_sha1": "597d310c2c8f28d67e630b3aea690c0cc665cd8b",
+      "derivative_sha256": "9ca8d0f1d26ce48d951eaec1c11a39bdcc742bf5f2e77794e5fa7b0de8ded676",
+      "credit": "José Luiz",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ES:covadonga-basilica",
+      "asset_path": "assets/approved/place-media/pf-f59a16b486df79d0bde99e.webp",
+      "source_sha1": "ec39515eccc44c8ccedc4b6ee314fcafdefb6326",
+      "derivative_sha256": "be0262c7d7d3d366d731e092457809d7f702a81166da510b85e56174c2168c56",
+      "credit": "Wamba Wambez",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ES:covadonga-santa-cueva",
+      "asset_path": "assets/approved/place-media/pf-4608b64560dda5655caa54.webp",
+      "source_sha1": "23723bfeee8c0ae79ab4e3831cb6db29bd33e46c",
+      "derivative_sha256": "8c1bb843b10dd7bb39fbd0334febf291344e4b996e3c2de397fa8fc43a5e7882",
+      "credit": "Arturo Nikolai",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:ES:ermita-virgen-rocio-almonte",
+      "asset_path": "assets/approved/place-gallery/p77-062.webp",
+      "source_sha1": "1e98c0ed848c6bfad4f926deb6a413bf769b78d8",
+      "derivative_sha256": "5f173696ef4b32c9d4a565225f7f4e8b9b05d47e9ee206b67cc84b8baf54197f",
+      "credit": "Marc Ryckaert",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0118",
+      "asset_path": "assets/approved/place-gallery/p77-090.webp",
+      "source_sha1": "1238042ba95a782cbad13f03095b22b93a15bd57",
+      "derivative_sha256": "ce714fb5c65ae77cfb784f273c6199f676631582fe661798b396e4a13d24df45",
+      "credit": "JnCrlsMG",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0136",
+      "asset_path": "assets/approved/place-media/pf-19d61228298f2593278a2c.webp",
+      "source_sha1": "693a3bd1a26edfb22c129f8a2e0d06f7ef232a47",
+      "derivative_sha256": "9b9a87e13ec09d6e7af6088a110675b643c58db8d33bbd179de983dc3f60abfc",
+      "credit": "Michal Osmenda from Brussels, Belgium",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0138",
+      "asset_path": "assets/approved/place-media/pf-9f6cf25014d6d108d4601b.webp",
+      "source_sha1": "ded8a4e578ec2d49e5f0f9e7ceefbe1f21d60b1c",
+      "derivative_sha256": "c3be7a450afe123c2d1c8d6e32757695b9c07243734e7cb415184697e748de5c",
+      "credit": "PEPE GADEIRAS",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:p44-sg-0115-1051808405",
+      "asset_path": "assets/approved/place-media/pf-4f91f7e88c4b6dafc66c3c.webp",
+      "source_sha1": "fbb76de907a26c631d3c2bd76e0d2c539fb73288",
+      "derivative_sha256": "2387806165dda7b28db68a7986419b8df02a2400c8bf1c0dbd405b3ac3881fdf",
+      "credit": "Jmarchn",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ES:p48-sg-0114-122873003",
+      "asset_path": "assets/approved/place-gallery/p77-092.webp",
+      "source_sha1": "b88f21bb8976359dbc4b151eeffdd6e8e1a4e814",
+      "derivative_sha256": "09ccd91c46fb34251530f5e1fde4fac870fcbc687d70df18a0c50b9ea35cd536",
+      "credit": "Diego Delso",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "asset_path": "assets/approved/place-gallery/p77-057.webp",
+      "source_sha1": "88d7e4bfb134af2ef218724169f54187e95001db",
+      "derivative_sha256": "643bf854f30b8830dbbacbfe13b5d27f78dc6593697269ffe0c63508d4fcde34",
+      "credit": "José Luis Filpo Cabana",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "asset_path": "assets/approved/place-media/pf-e308f37b5d8fb72e34e71c.webp",
+      "source_sha1": "946ce7c1ed7abd6940c2d3d06434b3bab924ec80",
+      "derivative_sha256": "64452449d74c712c7b9bf96f80a5d44beae6694f74f1fafbc7c85c90c7e758c5",
+      "credit": "Arwin Meijer",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "asset_path": "assets/approved/place-media/pf-d552f2029b6b3cb05afbc0.webp",
+      "source_sha1": "9df01e31367be942574086de8f93a68bf864b910",
+      "derivative_sha256": "a7a2ce0bf381debca2e6b2a8e6209fd5033a6c55e7583b672cf4f59eafe6fa79",
+      "credit": "Fernando",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:ES:santo-toribio-liebana",
+      "asset_path": "assets/approved/place-media/pf-c57133f152ec2767b80c12.webp",
+      "source_sha1": "90ce958aca51f2722327ba41723e32d99095b782",
+      "derivative_sha256": "2f81c6c1f509a413c10b44da06302d7abf68076ff344d209706b10dc5bde67d3",
+      "credit": "Dbascones",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FJ:sacred-heart-cathedral-suva",
+      "asset_path": "assets/approved/place-media/pf-d079795de0f8bc2838e9db.webp",
+      "source_sha1": "91a81502f483a65e9ed70c05cf669fa9be0cb385",
+      "derivative_sha256": "65fc5f9060b9a107dbc85a4481b81473c0942a80c516c779b97287675ca5b703",
+      "credit": "User:Matthias Süßen",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+      "asset_path": "assets/approved/place-media/pf-9b64331774ddc6fafe462a.webp",
+      "source_sha1": "7c79307ebce2d5447f16cb9539e5977e4f98d554",
+      "derivative_sha256": "2df4ffeaa5a9669a5ae5365cb5ed3a19c1c5fb4a62cde3a513fba5906b48dec8",
+      "credit": "Selbymay",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-foy-conques",
+      "asset_path": "assets/approved/place-gallery/p77-046.webp",
+      "source_sha1": "4f9c0227fd4712d2b3e84c4f7e05a3e91a85ddd4",
+      "derivative_sha256": "ee76b537c7c985e05e16aeee0fcb90f875302296c9721d91d744de700b12d75c",
+      "credit": "Krzysztof Golik",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "asset_path": "assets/approved/place-media/pf-1cc35c8312739a538fb791.webp",
+      "source_sha1": "f65ee0ec26861e7cc1b1e95fd3687a8d1f2a8de5",
+      "derivative_sha256": "5b6f842ccc555f77de09203afeb7bdbf2116b9ce5fe07ce365d29acf91ca9a6f",
+      "credit": "Gilbertus",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-bon-secours-lablachere",
+      "asset_path": "assets/approved/place-media/pf-e8e14419bec6f007122588.webp",
+      "source_sha1": "05f65bcff58d99e7ff9388ff3b03f9a4a343df39",
+      "derivative_sha256": "9716a0c56f2436d66ff7d560c6c3da5ed63935aebe116076e8a454f480587a69",
+      "credit": "Cristian Lorini",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-garde-marseille",
+      "asset_path": "assets/approved/place-media/pf-4119342b07e14b3c687a74.webp",
+      "source_sha1": "bf468d3638c55a48ca3d413d31db7f14d0c4fc1e",
+      "derivative_sha256": "44ccf15f6eeb67bfbf21422f9c0ac17a0d1a3aca435cd49d090611523ad0cbcd",
+      "credit": "Earth777",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-lepine",
+      "asset_path": "assets/approved/place-media/pf-ed4ea0b7b3fc5edd1d7079.webp",
+      "source_sha1": "140c23df032244b18569f096b01411a902bcd536",
+      "derivative_sha256": "7c7e4eead7f84a3f6c0b7eda9e5389d3cf58d9bfde234b60a4fc2e9452d20b6e",
+      "credit": "Daniel Jolivet",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "asset_path": "assets/approved/place-media/pf-c5d63f6f6639b60cf68ad4.webp",
+      "source_sha1": "3f3569992ab72aa070e97b51eca7460f5c33dd54",
+      "derivative_sha256": "a2d4f907d980d5cbd4a31c604a89348166f9ad1f641a6ce489ff73814014cd0d",
+      "credit": "BastienM",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "asset_path": "assets/approved/place-media/pf-270fc724ddc78525f73972.webp",
+      "source_sha1": "a7a2031749d92058b00d10dc16e34a1518b08c2c",
+      "derivative_sha256": "21a3c13360f8a01a6e3b98c52d48923b273ab02d9013cfd78bbb5acc74de1a17",
+      "credit": "Parsifall",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "asset_path": "assets/approved/place-media/pf-b7ecac312fb72573afe4af.webp",
+      "source_sha1": "7823ae1c1c7dcc133ffb58ae8fda77dce34b7204",
+      "derivative_sha256": "59fd67c0f645692fafe4c5500f73db4d71f6242730dd490bffef863343aed29a",
+      "credit": "Antoine Taveneaux",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "asset_path": "assets/approved/place-media/pf-6af6a1861cfdeb67f82a80.webp",
+      "source_sha1": "da2aebb57b36cdfdc768149697a3f13110c78715",
+      "derivative_sha256": "219b8ba716766617edd2460bf42cc94ac8c3a96b7a84d8366e9a03167214a1b9",
+      "credit": "Rolf Kranz",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "asset_path": "assets/approved/place-media/pf-3ce8bbc7fa47ee86a249d2.webp",
+      "source_sha1": "00036dbbfbecf09061a21138e65f52b3d5b70d8b",
+      "derivative_sha256": "7900d4ae352028bc58363117ea1f7e0d6ae8d420354314fd586e46d2985344f7",
+      "credit": "Pedro from Maia (Porto), Portugal",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "asset_path": "assets/approved/place-media/pf-c56c5e7a921c0c9d992501.webp",
+      "source_sha1": "1165b8f1b77afdc0721deb05722a2cf5e789fe6b",
+      "derivative_sha256": "804df1066e03d926c92d646a1065d49aabb7bc5c5229c27e7cfce9adad03a2b7",
+      "credit": "Bjs",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "asset_path": "assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp",
+      "source_sha1": "fe665aecdf2b7f2e57e1531a134478806387b88a",
+      "derivative_sha256": "0345f7d07bce654ef573e738cdbbb9a0bfe13bc02e0e767058f7ed7ae2d29439",
+      "credit": "Raimond Spekking",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:bermont-greux",
+      "asset_path": "assets/approved/place-media/pf-c71fd264101167acd2187b.webp",
+      "source_sha1": "d4c9e3a8f239c09f4676a47a968cac1c45b1f684",
+      "derivative_sha256": "bec228ebeedf1842776653ad9651794e2307387955b23f8f5cd0b1da3754540c",
+      "credit": "AJOLI",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "asset_path": "assets/approved/place-media/pf-703a1b158e5d29ac8fa2ed.webp",
+      "source_sha1": "513dbe8cf47332807ffee4685423345c68c6358e",
+      "derivative_sha256": "d979460ebe82eaadd36208d9969d4af0611d7d59f19731bfcdd72ac96181ffad",
+      "credit": "SchiDD",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "asset_path": "assets/approved/place-media/pf-21eb6657d34417202b5ba9.webp",
+      "source_sha1": "8261a64a11f074ffdb2964e6fdfc4d4ca326bea6",
+      "derivative_sha256": "7856b8058b2feb3c2c96f065d986ffa26b852a487105af3f47dacf8dcb66d207",
+      "credit": "Christophe.Finot",
+      "license": "CC-BY-SA-2.5"
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "asset_path": "assets/approved/place-media/pf-a2efeaace8d53efc1651d4.webp",
+      "source_sha1": "ba14ab12b69d843c7ff327c95721a0db58865ce5",
+      "derivative_sha256": "0564aabb3cd3da99428a775d0e1787f815d0734afea422aeb7117d2d2f877424",
+      "credit": "Raimond Spekking",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:chapelle-notre-dame-peiniere",
+      "asset_path": "assets/approved/place-media/pf-93c9d22155a89f32fc3902.webp",
+      "source_sha1": "be5bc3c5732baf83129936cfefad6596fbd08c20",
+      "derivative_sha256": "51c6134711d69b89377e9f448ee03794841521f0116b7dd88414735555f04730",
+      "credit": "GO69",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:chapelle-saint-vincent-paris",
+      "asset_path": "assets/approved/place-media/pf-f232b9b7825dae399bfe42.webp",
+      "source_sha1": "fe6369f1a7b54635e8f5c3945432bf1d4476b680",
+      "derivative_sha256": "29eada89c42fa1d116aed3c4216e44ca38923b39fea0a5392f31c5a5f32d6cc7",
+      "credit": "Thank you to indicate this credit line next to the image in case of reuse: Credit: Polymagou - CC BY-SA I'd appreciate if you could send a message on my user talk page if you use this picture out of the Wikimedia project scope .",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "asset_path": "assets/approved/place-media/FR-chartres-notre-dame.webp",
+      "source_sha1": "fc16db8463d9ce0dab774fe3f0c91eaeb38e120c",
+      "derivative_sha256": "93eaa0e31fd851c42ebdce533a3cb3bb77719fb575bebb8ac7d17fff6fc75dbb",
+      "credit": "Zairon",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "asset_path": "assets/approved/place-media/pf-4e38558c1b3cc6b5f31f4c.webp",
+      "source_sha1": "95acdb9df8b50622b83e403d18ef481668f2764f",
+      "derivative_sha256": "ab2e1f0d7a343816bc9af721a118c660dea4536ab526f59d19c8079ad43fa131",
+      "credit": "Véronique PAGNIER",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "asset_path": "assets/approved/place-media/pf-4a39d8e51651b7a45618e3.webp",
+      "source_sha1": "f8916e3c139aef63bd1c5541def6ba9d8acb50dd",
+      "derivative_sha256": "ab4939585ee858d5586c2f5f137c82c3c9a44e9c47d09a4467de4840eed62409",
+      "credit": "Didier Descouens",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:montligeon",
+      "asset_path": "assets/approved/place-media/pf-4605a2752bd542cc6e6e93.webp",
+      "source_sha1": "1efcb5ad281011e94d62372c48dabc12674eef2d",
+      "derivative_sha256": "62b51602ca0254f405af59989be4b1bf1b82b6e96719ed9d3c9262de89392c5e",
+      "credit": "Johan Allard",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "asset_path": "assets/approved/place-media/pf-921b2f53bb110524a7c8d6.webp",
+      "source_sha1": "f42e52fbed148ca813b0cedccb66662969a99d5d",
+      "derivative_sha256": "c04481bfad0c7b320b385a8d6be4274c0f440e01c2cb7e839c2e7be8b8c2852d",
+      "credit": "Gitouche (changes by Rabanus Flavus )",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:notre-dame-du-laus",
+      "asset_path": "assets/approved/place-media/pf-4eaf69f9187b812b35d523.webp",
+      "source_sha1": "5f42fabe6e4ffa91602095a2cfdd133e2d760908",
+      "derivative_sha256": "e0bff9660097072c0f4fdaaa7341df71a7950ab122f5c05df9683f39395b5f94",
+      "credit": "AntonyB",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:notre-dame-paris",
+      "asset_path": "assets/approved/place-media/FR-notre-dame-paris-2026.webp",
+      "source_sha1": "6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5",
+      "derivative_sha256": "ab0476ecbe00aba29127478a5843bef85fb962c0e89619c9598999517e9bb82f",
+      "credit": "Chabe01",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0012",
+      "asset_path": "assets/approved/place-media/pf-bb0e392bffdbba28cd0a07.webp",
+      "source_sha1": "9fd069d5bf3f0b451e4ab4c6c3c4bd9703346ee7",
+      "derivative_sha256": "aba1875ac5f955f05a929deb5c853fe95c043351b974f4f87aa88a0a223b81c9",
+      "credit": "Guillaume Chauvat",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0022",
+      "asset_path": "assets/approved/place-media/pf-6fd3888cf501ef81fe5ffa.webp",
+      "source_sha1": "50b9dd2de426790266969b67638f60c71eb7b732",
+      "derivative_sha256": "9d3a9cbe05c70b47b3f8ac2679b2738112c02a9b63182dee6921dab2cac74477",
+      "credit": "Benjism89",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0032",
+      "asset_path": "assets/approved/place-media/pf-74384dea71fa504b4458f0.webp",
+      "source_sha1": "fb0f89e4ced49eb6dd0d51b1bf8579a0b43ab32c",
+      "derivative_sha256": "e23ac70633a46d9c52cea524140a8517d2dc0cd0ac8f96cc1ea42027041c6a19",
+      "credit": "Mfrays",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0045",
+      "asset_path": "assets/approved/place-media/pf-dbc43f94d7dbf73d65430d.webp",
+      "source_sha1": "fcf2c0855debe68cb41b8af09215bf1255db8d19",
+      "derivative_sha256": "7b9f06133c2a8e1beb6c402b62e4025c20980bb00507244a89ee338b4fafe741",
+      "credit": "Bjs",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:pontmain",
+      "asset_path": "assets/approved/place-media/FR-pontmain-basilica-east.webp",
+      "source_sha1": "aba85096db4047e19ad3453ac4858f0f47b92937",
+      "derivative_sha256": "672b9f9da38f8c91fe7e70d93aabf662396ddaf81582f12445882c09a856fb9f",
+      "credit": "GO69",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "asset_path": "assets/approved/place-media/FR-rue-du-bac.webp",
+      "source_sha1": "65a2ae0770e83e88b97e1a3529abd50136c51f76",
+      "derivative_sha256": "1050a83c2344614986d853d903bbee9ac916c827168028962a5b7c31590aedab",
+      "credit": "Thomon",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "asset_path": "assets/approved/place-media/pf-a782f862f034f71a417d5c.webp",
+      "source_sha1": "9fe7fdd167ad6ab2853c8752197b83bf21e42b0a",
+      "derivative_sha256": "e2dae87b35b165f1eed010f4b2fceeb2c212428172357ea34230ab42c54adf77",
+      "credit": "Tonchino",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "asset_path": "assets/approved/place-media/FR-saint-bruno-bordeaux.webp",
+      "source_sha1": "9c8ec29a46fe8c3d27e32a600600e1bcefa3e8d4",
+      "derivative_sha256": "016dcedbb672a068d38f26cac2e3d420efdabc78c8a6daf5fdc7760332dac7b1",
+      "credit": "Marc Ryckaert (MJJR)",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "asset_path": "assets/approved/place-media/FR-sainte-anne-d-auray.webp",
+      "source_sha1": "77af6b230b5980fb00d5f61892ce232d24aac366",
+      "derivative_sha256": "70d338e613f45959eb6d0d2f8cbe4734213c9a4a7dfe2a1fb241cf82a7280b17",
+      "credit": "Zairon",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "asset_path": "assets/approved/place-media/FR-sanctuaire-notre-dame-de-laghet.webp",
+      "source_sha1": "8770006ccdad4d4e799b720f74a2497dfb3064f3",
+      "derivative_sha256": "73998efa48854f706113dfd7eaa92d0ab514994de20fe5b215850fa12c1203c3",
+      "credit": "Frantz-Samy",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "asset_path": "assets/approved/place-media/FR-sanctuaire-notre-dame-de-lourdes.webp",
+      "source_sha1": "e7a660bcd484fc4dcd0aaff5249439c99c2a6e0c",
+      "derivative_sha256": "19a2606050bc0966f9165d14cb253250f83fa0c89dd4c7d4ea7f84d5f586e27a",
+      "credit": "Carnage 2000",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "asset_path": "assets/approved/place-media/FR-sanctuaire-sacre-coeur-paray.webp",
+      "source_sha1": "dff655a65053313556e7ab4a8a19fb76abd38431",
+      "derivative_sha256": "e87d1126442a13ed79b3d81ffb5b897700476479b79ff76f6700659a2b7fdc74",
+      "credit": "CHABERT Louis",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "asset_path": "assets/approved/place-media/FR-sanctuary-of-our-lady-of-rocamadour.webp",
+      "source_sha1": "8008c70ecd2a50c481e90db01defa0f1e0410e91",
+      "derivative_sha256": "c36e0a312be2cba3246addb7285f5495b5df13b170e193c7e6d7ed90e05ea161",
+      "credit": "Krzysztof Golik",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride",
+      "asset_path": "assets/approved/place-media/pf-422c2d96c1f5ee2e073223.webp",
+      "source_sha1": "4f2c4c81061a7b439e359205cffa1b17eabf6434",
+      "derivative_sha256": "ce2cfe00df17760d94f2b348ae6741f2e89ce78b31a0d6a371f19f978ccb9f5b",
+      "credit": "Llywelyn2000",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "asset_path": "assets/approved/place-media/pf-bef126ec5a81ddd0ab6441.webp",
+      "source_sha1": "108f25ea0b389b168c30f83e1848c78d1881ba0c",
+      "derivative_sha256": "920991f1ae30599c6ae64aecc71584e5f1e59729b97d5e989b69da152858433a",
+      "credit": "Llywelyn2000",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:GB:sacred-heart-caterham",
+      "asset_path": "assets/approved/place-media/GB-sacred-heart-caterham.webp",
+      "source_sha1": "8807b43e2406f93fdbd4bf41962f390a03950de6",
+      "derivative_sha256": "4c46177becf1c0a7b3ab2ab78a4edf5d3e66bf8a71fde221e91a39f4ccdcd891",
+      "credit": "Tag Scientist",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "asset_path": "assets/approved/place-media/GB-st-mary-catholic-brewood.webp",
+      "source_sha1": "f658a27b69d7211cd12b8ec4ce6db38ffe6581c9",
+      "derivative_sha256": "cef2cb9d49741601c42bf5a19234adc5e74d171748e9c0812f40ae50a90bbde1",
+      "credit": "Roger Kidd",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "asset_path": "assets/approved/place-media/GB-walsingham-catholic-shrine.webp",
+      "source_sha1": "0a0dc8b54464f20cdd7e58d8f7e5ae83d9af783f",
+      "derivative_sha256": "6295a342b8cfec5e3074be5e4860b0350454f04ffbb3b136e18debc8ab0df221",
+      "credit": "Len Williams",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "asset_path": "assets/approved/place-media/pf-fba4ae11ebcc9de62da1bb.webp",
+      "source_sha1": "f0d96c9623f0418b680f3763334ac6859b482b69",
+      "derivative_sha256": "1265f9b588635906fc84ff46d724f833cf27c38f295eb57b621da3ead63a3e46",
+      "credit": "Σπάρτακος",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:GB:westminster-cathedral",
+      "asset_path": "assets/approved/place-media/pf-718ed6d79ce70af01a892d.webp",
+      "source_sha1": "88c73e1a1f4c2fca81cccb521b10a034a421dd93",
+      "derivative_sha256": "33ef5ab011a86c73396d2d0e05ea835f740223dc1ac36d70cd1a372a5f518249",
+      "credit": "Txllxt TxllxT",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:GH:saint-joseph-minor-basilica-elmina",
+      "asset_path": "assets/approved/place-media/pf-1eda5ce40122074c2f71e2.webp",
+      "source_sha1": "5a5d9c2a682a27826b8e0ac879a2a8420e0fdd03",
+      "derivative_sha256": "c2137aab2250581327d2d81f5f74c94157c85314a99e5d0e63bce86f10b97d6c",
+      "credit": "Loek Tangel",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:GP:cathedrale-notre-dame-de-guadeloupe-basse-terre",
+      "asset_path": "assets/approved/place-media/pf-29f562010865af3f0dd8cc.webp",
+      "source_sha1": "4d570e14bf85e12fa3d46b9f50116e04cd031e63",
+      "derivative_sha256": "e040238bdf77e793cbb5b62e148f4312cb55c21768c1a7803a4a1adb9912406f",
+      "credit": "Aristoi",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:GY:immaculate-conception-cathedral-brickdam",
+      "asset_path": "assets/approved/place-media/pf-1a52ab90e16fc632919c2b.webp",
+      "source_sha1": "d57e2660c12fff6c8d5114ca74cc6d0e5262b561",
+      "derivative_sha256": "f28af5eec7a0b3434f5e4806d7e96a9a3c77b881fc2bca8841c766d1a2533a9f",
+      "credit": "Wiko adonayo",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:HK:immaculate-conception-cathedral-hong-kong",
+      "asset_path": "assets/approved/place-media/pf-a32a4178936789314b44f5.webp",
+      "source_sha1": "9e0325c2d4f355f78c70f80ff252bede4ca9bd96",
+      "derivative_sha256": "9817e2633250bce26abe9c0f5fe9be578b301d358f3d74329f6c8bff118987ea",
+      "credit": "Butmiyuenan 2",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:HR:bazilika-gospe-sinjske",
+      "asset_path": "assets/approved/place-media/pf-ef720765c2e0f505797f94.webp",
+      "source_sha1": "43a2237db3b0751221df402cb2dd7201c68a6e56",
+      "derivative_sha256": "98457e6466a43da629dfd278036d56aef129cd2ac85056fb9ec07417e8a03922",
+      "credit": "Argo Navis",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:HR:bazilika-gospe-trsatske-rijeka",
+      "asset_path": "assets/approved/place-media/pf-8aba541d56efe28601ae85.webp",
+      "source_sha1": "77cec784fdc6888bc33b57f84e9e8f9f32514700",
+      "derivative_sha256": "debdcc49f551bc6f4e500e2b8c48629553aba22f8f746fb089b80a1667a8d8f6",
+      "credit": "Klaus Eltrop",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "asset_path": "assets/approved/place-media/HR-national-shrine-of-our-lady-of-marija-bistrica.webp",
+      "source_sha1": "46ada4d00e192b5272fe5072923c996cbacc4525",
+      "derivative_sha256": "834e82e79564ad42b3ff3ef847273cf58cce3b43701b0c4f7af16540dcb42296",
+      "credit": "Fraxinus Croat",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "asset_path": "assets/approved/place-media/pf-989d639d77ada0855bcfc2.webp",
+      "source_sha1": "323eb27bfec83547c260ea672abf577eeaa2d39f",
+      "derivative_sha256": "2f49f192405491ec9e632ae61604bcabdbf8e58a29888518466355001894292d",
+      "credit": "Vitek",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:HR:p46-sg-0313-308623424",
+      "asset_path": "assets/approved/place-media/pf-085c00b1112929ea6282b5.webp",
+      "source_sha1": "2b60fde81a5f8806eda6d4af2b751ba1e1af199e",
+      "derivative_sha256": "5082c12dceca77dce5cc4771e9bae03f31cf38beb3413d96e4bff178ad3822f8",
+      "credit": "Ma ▀ ▄ Ga",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
+      "asset_path": "assets/approved/place-media/pf-3019aa7485d4109e5772a6.webp",
+      "source_sha1": "57cca91d2cc1b6529127263a979c8d02c03a80d9",
+      "derivative_sha256": "2d5351e59696742d5d6e7ac4902b4754ba7e63009885c12f9b01554340589557",
+      "credit": "Globetrotter19",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "asset_path": "assets/approved/place-media/pf-144c8dba8bdbda5ed4bafe.webp",
+      "source_sha1": "2ca3d2b88e1538654bd4859c883f7ff2881fb436",
+      "derivative_sha256": "483f2807cdbde61a869d8989df6d448575c5ce2c45f16d55ede57fae36aa4bf0",
+      "credit": "Jorge Láscar from Australia",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:IE:ballintubber-abbey-church",
+      "asset_path": "assets/approved/place-gallery/IE-ballintubber-east-range-2007.webp",
+      "source_sha1": "479edfb7a6516dc2715bdc08bbf94e682b6b1407",
+      "derivative_sha256": "3f49ac1bcf9a87c4a0044e67a466983bbc0192f8de69f8456f5688d420b72975",
+      "credit": "Andreas F. Borchert",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "asset_path": "assets/approved/place-media/IE-croagh-patrick-murrisk-pilgrimage-base.webp",
+      "source_sha1": "9d2eb03a3999e670f8a2832398a03e1f5bb5a2ea",
+      "derivative_sha256": "4a01e5bdcd4fa607e2398de31523ae43065ce18e0fc3466dc772b15f25af9767",
+      "credit": "Eric Jones",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:IE:knock-shrine",
+      "asset_path": "assets/approved/place-media/IE-knock-shrine.webp",
+      "source_sha1": "7381ac5095500b3d27fdc186d2e7ff39ce095eb8",
+      "derivative_sha256": "12e98eaabfb0c07640b2b4e247c39177e63c0390ea3226c9649365e38525f4a8",
+      "credit": "PM Photography and A&D Wejcherts Architects",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IE:lough-derg-station-island",
+      "asset_path": "assets/approved/place-media/IE-lough-derg-station-island.webp",
+      "source_sha1": "cdf36474dab92714b7225f5bfd91ae5988baf2e5",
+      "derivative_sha256": "f553332dc85b3d875438ff8e349ad907a9bf9dfa2160a4ba4e2993a363378f9a",
+      "credit": "Andreas F. Borchert",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "asset_path": "assets/approved/place-media/IE-st-peters-oliver-plunkett-drogheda.webp",
+      "source_sha1": "d9545064d0e648f8ac921853819fa72ca2b02dc4",
+      "derivative_sha256": "0cf1d2d55d5e0111b4c5633f76dbe9ec1e83739d80a145150b43a368419a3242",
+      "credit": "DAVID ILIFF",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "asset_path": "assets/approved/place-media/pf-1aa38214c23200ebba6720.webp",
+      "source_sha1": "8e311b71ffb6e8dfa5e10579eb84ca050afde579",
+      "derivative_sha256": "ea0d0694d650f1760d8b0bd14b86d47b717074a051e28066923d394bdfe3b6b7",
+      "credit": "עמוס גל",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "asset_path": "assets/approved/place-media/pf-af4e1974f8b7050395b6f1.webp",
+      "source_sha1": "8623c82e2f494f0ceb2d53ca192c26fec9a7fe76",
+      "derivative_sha256": "000fb5fb0c183a86f985d39ce052155c7ab5421a15c2f29b2c4dca5fc53a4e60",
+      "credit": "שלמה רודד",
+      "license": "CC-BY-2.5"
+    },
+    {
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "asset_path": "assets/approved/place-media/pf-954fa4e5ff7efd61dce1df.webp",
+      "source_sha1": "04e499460d53a39c1d6a63d0fcc9e2527264c06b",
+      "derivative_sha256": "a38ed8f39de29000c5adba3fc1662210a177ba7990828684c7c96d9447d3c046",
+      "credit": "שלמה רודד",
+      "license": "CC-BY-2.5"
+    },
+    {
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "asset_path": "assets/approved/place-media/pf-3690fd81826a6de0e9da3f.webp",
+      "source_sha1": "327397d31e1775c4b8ff87c0137b3f20e4cd5b91",
+      "derivative_sha256": "34286559b6b54f16880edf491c3610f2ec88c8023d69146883cb584e66470290",
+      "credit": "Lorien22",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "asset_path": "assets/approved/place-media/IN-basilica-bom-jesus-old-goa.webp",
+      "source_sha1": "a3080abcc275a401e57fe2e2a84ec5a4f75ecc62",
+      "derivative_sha256": "cd53e7307b1744ce225c077c318775f7085a97c37568fa3088a4dcfb089def1e",
+      "credit": "DDM STUDIO",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "asset_path": "assets/approved/place-media/IN-basilica-of-our-lady-of-good-health-vailankanni.webp",
+      "source_sha1": "0bd91bc4ab8208b80b5e38a4eaa0f71e24e234c5",
+      "derivative_sha256": "05513a25bbdc3f2c2e85c27089f82648cc4ef6c04b59cb33d1ac183935391640",
+      "credit": "Rejoy2003",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "asset_path": "assets/approved/place-media/pf-b401168ba5e8a44a57c7e0.webp",
+      "source_sha1": "e120d85721f28defdac76611b92941391315940c",
+      "derivative_sha256": "6b96bd458784b501c11f1f565e99b5d485d9b4ca348dd160cce40aeddfbfc238",
+      "credit": "rajaraman sundaram",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:IN:basilica-our-lady-ransom-vallarpadam",
+      "asset_path": "assets/approved/place-media/pf-c361313cae8ced77b18f0c.webp",
+      "source_sha1": "5a80bff9ca9626804e0b1d53cdf22c65b89cd07f",
+      "derivative_sha256": "95ab8762dae23927ec783a7b5b6fda1788a1dd7e90e1aaf84671989a8d331049",
+      "credit": "Geyo John",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IN:santhome-cathedral-basilica-chennai",
+      "asset_path": "assets/approved/place-media/pf-01e44cbb87bb8581ab4c23.webp",
+      "source_sha1": "8baf59020e216c203463b66980282f60e990683e",
+      "derivative_sha256": "9dac8ca8c5fb7a1c31d4b37a02f271cd0bea90054c365b92cfcbeee2172df0a0",
+      "credit": "w:user:PlaneMad",
+      "license": "CC-BY-SA-2.5"
+    },
+    {
+      "place_id": "place:IS:christ-king-cathedral-reykjavik",
+      "asset_path": "assets/approved/place-media/pf-e2fdd0a2d549c385cdf629.webp",
+      "source_sha1": "1c21adbcbf414e8dbacb897df4fd3447cbf6ad7a",
+      "derivative_sha256": "f64fd3e5f21eb65913277269e975d48578c554d6e18ece2ba87e278e90960331",
+      "credit": "olekinderhook",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "asset_path": "assets/approved/place-media/pf-716608af12e9c6c577cbb8.webp",
+      "source_sha1": "2dc530dc55eae592654a755919a27ce125342525",
+      "derivative_sha256": "ab6ca3af870bad4bec7be884b0a74f11a4d26a9ac4fd9d533ac0ba7b8bdc14e6",
+      "credit": "Luca Aless",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:basilica-maria-consolazione-reggio-calabria",
+      "asset_path": "assets/approved/place-media/pf-9afb92b2d232adaea71303.webp",
+      "source_sha1": "3fc7789e3658505bcac5de832f8e0118d52db856",
+      "derivative_sha256": "3375c431b5f29408b2806eb64bca8bcbe8f265efa27fcf1cd1417ca144364457",
+      "credit": "Salvatore Migliari",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "asset_path": "assets/approved/place-media/pf-274cdebd2e19edc89f42cc.webp",
+      "source_sha1": "8b1161a55019de86f96adb15a3169d47062f91fd",
+      "derivative_sha256": "b8a916991e0de8b9aa95d6e43a16d1326a4a71e74df92d4419d7e91b717792fc",
+      "credit": "Maretta Angelini",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-siena",
+      "asset_path": "assets/approved/place-media/pf-665a418d4a41707fec2fe0.webp",
+      "source_sha1": "4bae7e66c5f51582eb755ab9290d403a03d072f0",
+      "derivative_sha256": "f46185b4e37bcecb61f373c4d246aedac5903583790fd2ffc1b1eadb0e16c3a8",
+      "credit": "Berthold Werner",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "asset_path": "assets/approved/place-media/IT-basilica-san-francesco-assisi.webp",
+      "source_sha1": "b825b568262267a9fbdece20266696d91726d8cb",
+      "derivative_sha256": "ba8fea6c678d49f874f1c20491d127d3a51c49689873123d24add94a2ada652b",
+      "credit": "Luca Aless",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "asset_path": "assets/approved/place-media/pf-2e6af0b21a0bc1c108ac46.webp",
+      "source_sha1": "b23f9523b687d55fbc473de781780a333f82644c",
+      "derivative_sha256": "9e6c0da0f6ea2d15da6cd4a2edd95651686d49bba8d95c9ec9f81471e011b11c",
+      "credit": "Kasa Fue",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "asset_path": "assets/approved/place-media/pf-4cc4409f99d76ca01f6861.webp",
+      "source_sha1": "a778b0230bd0202c85b49ae161780f77c4f6484d",
+      "derivative_sha256": "747d7eb71acaffe0cd81258084eb87614ab393e9f67c36d4fb04cc4ed65ddb02",
+      "credit": "G41rn8 (edited by MenkinAlRire )",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-cristina-bolsena",
+      "asset_path": "assets/approved/place-media/pf-e392e47a104a9491da58dc.webp",
+      "source_sha1": "43b8b70aa483f4c9e340a7a019b6334881fcf696",
+      "derivative_sha256": "26ab27df471bc07573439592ad5177f64178efb3e4cdbba30a4accf06c2aae66",
+      "credit": "Sidvics",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-margherita-cortona",
+      "asset_path": "assets/approved/place-media/pf-c7944205de69310317a13a.webp",
+      "source_sha1": "884b12aa54adeaa1b095e7a6b443a9b9733857f0",
+      "derivative_sha256": "f14c02076afadd5d1102b62b7be0f9cda68ffcf38b80c879e202b6dd01c3d787",
+      "credit": "Sailko",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "asset_path": "assets/approved/place-media/pf-cd008a296672b03c36e7d2.webp",
+      "source_sha1": "1e270d986898adec10188b84f052e1a722dd2ad7",
+      "derivative_sha256": "fbb3576276fc3960eb8817aefb22dfe5a77390e3d463e060aebfdf7886767dd1",
+      "credit": "Cherie.greene",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "asset_path": "assets/approved/place-media/pf-0a92bc5a77a7775f3aa800.webp",
+      "source_sha1": "ba545eabda7819deb8dc4c4c03168f8dba3314bf",
+      "derivative_sha256": "f51440f9921f7f205344c2514fb82328f03685f71533ecc60a09d96d88d4a325",
+      "credit": "LigaDue",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:basilica-santuario-madonna-tindari",
+      "asset_path": "assets/approved/place-media/pf-33e345e1c638034169aaa4.webp",
+      "source_sha1": "2ab350a7fbc9e722d150593cfbd188114d41948c",
+      "derivative_sha256": "6fbb65025e2b2c59998f1515be24520530c132f27b1aba0d7e047d281a4a1cf6",
+      "credit": "Bernard Gagnon",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:IT:cattedrale-santa-maria-del-fiore-firenze",
+      "asset_path": "assets/approved/place-media/pf-3bc66e20917db3c0b34def.webp",
+      "source_sha1": "953acd2f1ad9a48fe93469a224f791149a43fce9",
+      "derivative_sha256": "b67a235c5fb6b0ebc94b718f9c421823892c6c3c7f580c056797d3deb997498a",
+      "credit": "Petar Milošević",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "asset_path": "assets/approved/place-media/pf-d9d578e29782af95e6d8ef.webp",
+      "source_sha1": "ef53f61144f0168cfd0b2b8f448b7c65780c2628",
+      "derivative_sha256": "90ececd4a721cf24007720df25cb1d54229e7daef09e8adf1b49ff2f3fbb6d6f",
+      "credit": "Rione Colonna",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:IT:duomo-orvieto",
+      "asset_path": "assets/approved/place-media/pf-9469267dca8fa649582c61.webp",
+      "source_sha1": "bbf293e4cea33b2f105b4295dff3993dc29a328e",
+      "derivative_sha256": "ddff9a6c1da5680619f7a0653f56b53ead8a7ed96473ef9c6ed124f31b13dcf8",
+      "credit": "trolvag",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:duomo-siena",
+      "asset_path": "assets/approved/place-media/pf-65d74fb77efcc963a57f6b.webp",
+      "source_sha1": "cca79254f3d2fb5b9d95b5145620f9e44b62ad31",
+      "derivative_sha256": "b30a0501fd877c091bfc546bdddc2a98fae41215337a18b7b7761e5bf33fbf84",
+      "credit": "Pom' from France, European Union",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:IT:duomo-torino-sindone",
+      "asset_path": "assets/approved/place-media/pf-8655c89afc4ecab785e56a.webp",
+      "source_sha1": "4074e20afafc151ed1c797d2280896c0151dc395",
+      "derivative_sha256": "1e6af5e49ca81327a5662487ff2260743d6297af4b67b9bfefa769c7980c5c35",
+      "credit": "Eccekevin",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:loreto-santa-casa",
+      "asset_path": "assets/approved/place-media/IT-loreto-santa-casa.webp",
+      "source_sha1": "c380e3b0688543c377ea66c189da8669eda0071b",
+      "derivative_sha256": "809c0451322799e3b901707659f8fb3526cb20034601a03003a88af5ccc8b009",
+      "credit": "Terragio67",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "asset_path": "assets/approved/place-media/pf-400c757cfcbe476b396e40.webp",
+      "source_sha1": "e246079b0dc65c1b94fd1e9e040f3eace6d2fec9",
+      "derivative_sha256": "cc1921216851f95d10bd3c22645c4cfc7714f5d50b4d6762455215833e71f3a2",
+      "credit": "Hatzfeld",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "asset_path": "assets/approved/place-media/pf-a0679281d3bf4f45bd2037.webp",
+      "source_sha1": "26cd293d99473848a6b1547b94cfc0215115e0cb",
+      "derivative_sha256": "dfdbdfbea7695e96db83b03759b42c2a2fbaffc8dd8ae37ed9c8e03bccce5b33",
+      "credit": "Acquario51",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:ortona-san-tommaso",
+      "asset_path": "assets/approved/place-media/pf-800f44d026d64c463e1cf8.webp",
+      "source_sha1": "78224c2bf658386ef3573d0a20d78cd872e87ba7",
+      "derivative_sha256": "da4aad3a48a796f57a63b7cbf6530ea6d7b0d64f23a3a97be0ee89582b970b5f",
+      "credit": "Glenda Trubiano",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:p42-sg-inv-0070",
+      "asset_path": "assets/approved/place-media/pf-c09220a2284b233d60fe88.webp",
+      "source_sha1": "5f2eb5b7a531dcdd9f2a5c8d6fe3341bbfe48442",
+      "derivative_sha256": "eb186f1d0852b5e079b9f66d71cde49b87b09a45e9f557f8c3a2e0937b8b89c5",
+      "credit": "Artemisi",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0057-3422378",
+      "asset_path": "assets/approved/place-media/pf-16f517c555378cd0c5adfd.webp",
+      "source_sha1": "ba2a9f7523318676ebd761c96f7229185a4174c8",
+      "derivative_sha256": "f39fee47142f27f413b7bbf5d5e31f3c0c3b672cf46a77a2744e34a78a517b95",
+      "credit": "Louis Gino Borsella",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0075-262801874",
+      "asset_path": "assets/approved/place-media/pf-bd09ab1b480fded3627979.webp",
+      "source_sha1": "be215c9653822cfd95e3048c4c94ae1876b6c205",
+      "derivative_sha256": "cb266987fe86630806f4c0b28558e0b7a7fc530b839e369d490cf7fbb2e69379",
+      "credit": "Aggrucar",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888423",
+      "asset_path": "assets/approved/place-media/pf-54281bcfe532bb386932b2.webp",
+      "source_sha1": "9580586f8c3d6edc130b7fcc1760993b22f609ba",
+      "derivative_sha256": "722bf1ec9635946046f49fb510c7e3a9dd42234a939479ccca3105925cf0a0fa",
+      "credit": "Patafisik",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0094-144658381",
+      "asset_path": "assets/approved/place-media/pf-a7224116415a6bafa96b04.webp",
+      "source_sha1": "144ebcfc5cbc84a944b47a18e8916739ec415c9c",
+      "derivative_sha256": "91445fb09dc4a08c5a019b2756c7a19560e66aa19436e49e77e5d461a7cc1538",
+      "credit": "Diego Baglieri",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "asset_path": "assets/approved/place-media/IT-pompei-rosary-shrine.webp",
+      "source_sha1": "05c7e0d000d78c47df845820e6d9a30fef6a9879",
+      "derivative_sha256": "84ae1afabb7f5c648558f84ecb02c603b6fb0ed37f021ca68cb61c807d69da10",
+      "credit": "Walter E. Diaz",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "asset_path": "assets/approved/place-media/pf-f59e5d6d8a2a3bedd4f6eb.webp",
+      "source_sha1": "eec12c05df968a8c4f4fb5bba919c73f863aea66",
+      "derivative_sha256": "a909308fa9daab65f19d7d51743b52d7c0f8b809981a92698cc63b065a1962e7",
+      "credit": "Belllissimo",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:sacro-monte-di-varallo",
+      "asset_path": "assets/approved/place-media/pf-e98b279daddd952909445a.webp",
+      "source_sha1": "62bd4e452baac4674ea8d60b037e345b6a74ab56",
+      "derivative_sha256": "23cff294c7563cf44be393d7443937fe942eff84f5fa71125b63cb75ade05360",
+      "credit": "Carlo Dell'Orto",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "asset_path": "assets/approved/place-media/pf-6682531d11e46f875d7851.webp",
+      "source_sha1": "e871f179289844287b7ac05ef42eb13dc423de86",
+      "derivative_sha256": "139e0ff1f6933a543e383a2f9f3d18e9a37344418934631d8f2a2d3341fd2267",
+      "credit": "Berthold Werner",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "asset_path": "assets/approved/place-media/pf-7cdadeb34677603c0ab02f.webp",
+      "source_sha1": "2ee0594b0904a4cbec068305ac58ce7d96e13e10",
+      "derivative_sha256": "4558aa3fe8dd3395118d79eb99e1f97c4cdeb03160a880afab75c1178e7206af",
+      "credit": "sonofgroucho",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:IT:san-canziano-padova",
+      "asset_path": "assets/approved/place-media/IT-san-canziano-padova.webp",
+      "source_sha1": "caed676bbb4d2b4c9af45de9d10ee3016966d7c9",
+      "derivative_sha256": "e8451d6e84fb85104d01e9c3d7785c73f36a04f947bc89ba58d2af0e8e2368ed",
+      "credit": "Tournasol7",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "asset_path": "assets/approved/place-media/pf-95d80311d046c1195e8a7d.webp",
+      "source_sha1": "a900ae92060b3d8c6132fbd3c91e40f5433a39b9",
+      "derivative_sha256": "9ef39b04a4684c7a70e2aee88610cb96a99e60dc12cc3abb352109039f27eb46",
+      "credit": "Didier Descouens",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:santa-giustina-padova",
+      "asset_path": "assets/approved/place-media/pf-8e5d160169505131212e67.webp",
+      "source_sha1": "48bc9b4fe1665116ebb994f1ae28bdda00ba0e08",
+      "derivative_sha256": "b72f0d9936da61f6c58ca74b359a1e65a525475237f4e74ab78ae2ece9da91b3",
+      "credit": "Didier Descouens",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:santuario-beata-vergine-neve-foppolo",
+      "asset_path": "assets/approved/place-media/pf-9d94112d68e7f7d3a1c96c.webp",
+      "source_sha1": "e3629ddd438e33774858c8faab16669fa2312848",
+      "derivative_sha256": "fabc721c5fac99d678f691ac97b144f41ae2f1c5732cf7960b1717c12794c1bc",
+      "credit": "Ago76",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:santuario-francescano-la-verna",
+      "asset_path": "assets/approved/place-media/pf-5bfb6dacd2823205c24263.webp",
+      "source_sha1": "00f832631370b5cfae74f22d3d425661b5bf4411",
+      "derivative_sha256": "b4f3ed40fe7719dbea1e0e939cad41376a3790474707d7fbf1e4c114e48af5e6",
+      "credit": "Tulumnes",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:santuario-madonna-della-corona",
+      "asset_path": "assets/approved/place-media/pf-ac9b1ab5900934e45b7c53.webp",
+      "source_sha1": "5f3b6e74891d4ab332ec57fffb32e9fef3f723e0",
+      "derivative_sha256": "86d8dff083825fa4bcba81ab5d5a41bdadde4e716a6f5bf2ba427e601da02a10",
+      "credit": "Llorenzi",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:santuario-madonna-delle-lacrime-siracusa",
+      "asset_path": "assets/approved/place-media/pf-3d647c9c9c18c6b1ffa25a.webp",
+      "source_sha1": "4787d62db56890962e492bab638d258182c398aa",
+      "derivative_sha256": "eaa51af94bebc1bf6060e82dc6c7c91c6112056f1f81d82d6a22b5a70d494970",
+      "credit": "Simone Tinella",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:santuario-madonna-san-luca-bologna",
+      "asset_path": "assets/approved/place-media/pf-960777ed07a795f6082b54.webp",
+      "source_sha1": "61eb0f856ef0632bba4a81050350fade094c6f9b",
+      "derivative_sha256": "b8a2f64c9c6f5d2ff460fea99fe51ddf013ec75ee1cd8dfe9864298c90125c68",
+      "credit": "Mattana",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:IT:santuario-monte-berico-vicenza",
+      "asset_path": "assets/approved/place-media/pf-9c434483769239c913bf13.webp",
+      "source_sha1": "8820d66dd75acb50f926941f00004840eb1c023c",
+      "derivative_sha256": "8a1a631bea340acc9dfc82d60040ab0fb5994264c7bbd6a6f5ccdf21995c1288",
+      "credit": "Fabio Ciminelli",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:santuario-nostra-signora-montallegro-rapallo",
+      "asset_path": "assets/approved/place-media/pf-25cd650952c9f25216e406.webp",
+      "source_sha1": "e3069b5c2b9462caf60f43037946819f0cfb1146",
+      "derivative_sha256": "1b23aac9cbac09b8699c91f84b2816429a2b2762ff9ad757826c65bcc5f226f7",
+      "credit": "Parma1983",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "asset_path": "assets/approved/place-media/pf-4b129f2a5337feabdb286b.webp",
+      "source_sha1": "20e6398a30a267b7d12d483ee499dd6f41a30156",
+      "derivative_sha256": "2009da115f47ccc766c0da73dad3d0e563fff88e6fabbdfbdf582116d6fd7190",
+      "credit": "Ra Boe",
+      "license": "CC-BY-SA-2.5"
+    },
+    {
+      "place_id": "place:JO:memorial-moses-mount-nebo",
+      "asset_path": "assets/approved/place-media/pf-7593d012ae0b5a35e31354.webp",
+      "source_sha1": "e7897e590242e44d7f55c3579fd97682e77a5e2d",
+      "derivative_sha256": "b7d9ad6b0e6490dedd0bc32aac9c944220a864ca3ac02f30c6fa80075a7b6c2b",
+      "credit": "John Romano D'Orazio",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:JP:st-mary-cathedral-tokyo",
+      "asset_path": "assets/approved/place-media/pf-8bf7612fe898f15363f43f.webp",
+      "source_sha1": "353fe70994ac33abc2a3e7b5891a5c3ada44a009",
+      "derivative_sha256": "3d3dd2f59c60e66f36e1019531fc3d8badc4be3018a4a01a2426d0c5f4118b75",
+      "credit": "Kakidai",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:JP:urakami-cathedral-nagasaki",
+      "asset_path": "assets/approved/place-media/pf-1a414c14235bd12e9c2bf9.webp",
+      "source_sha1": "272e22fcd882d561d6137d7ff1240ffcbac8a2a9",
+      "derivative_sha256": "cd4670a129d5092275da420cfb4a0ba2b40fee619c878ec83309e42758bb450b",
+      "credit": "663highland",
+      "license": "CC-BY-2.5"
+    },
+    {
+      "place_id": "place:KE:holy-family-cathedral-basilica-nairobi",
+      "asset_path": "assets/approved/place-media/pf-479d3082a5332b7fec32e7.webp",
+      "source_sha1": "b8b06c4930c73bc611103894615f3086e8576823",
+      "derivative_sha256": "90a64b1eb94e6761ee22571cb6e4953bb3ae0960db173bf7cab2eccabd213b57",
+      "credit": "Jorge Láscar from Australia",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:KZ:our-lady-fatima-cathedral-karaganda",
+      "asset_path": "assets/approved/place-media/pf-c09636a2cb665c57ca1239.webp",
+      "source_sha1": "fca201701ddbe3c0edbd39e62d8e359b2f510a90",
+      "derivative_sha256": "23e3fee153dd414400c07e19ab2c3ae56be2d6217b2650bc1800cc051d991d72",
+      "credit": "Nikolai Bulykin",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "asset_path": "assets/approved/place-media/pf-8cf3f15aef4f161edb524f.webp",
+      "source_sha1": "dc7c19dbb9c698bd984f81783fb4923b3005bc8f",
+      "derivative_sha256": "a2769e559585c7e1c089f6484e5ff95efc9d76fbe8252fd6824215008e2b1b44",
+      "credit": "Edgar El",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "asset_path": "assets/approved/place-media/pf-026b09da2582b5fb6bf2e9.webp",
+      "source_sha1": "c3dd2372e9726175ca0e7b7af0f29a4f3f2a54e9",
+      "derivative_sha256": "b0da02b867f9c6362f514f72d84b099b456c6c6d43678e1679b12484cdb168be",
+      "credit": "lakpuratravels",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:LK:st-lucia-cathedral-colombo",
+      "asset_path": "assets/approved/place-media/pf-a824a51bea48be5e7ffc81.webp",
+      "source_sha1": "c48ef239c6fa92572f2d2abe2a01ed4b44970663",
+      "derivative_sha256": "4bc3abb14db9f3e55c2b52242d20aa80e74809def5e0932e5ebd7f36e962c6cd",
+      "credit": "Bevan",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:LS:our-lady-victories-cathedral-maseru",
+      "asset_path": "assets/approved/place-media/pf-dd9250aee6b4df3c253ff1.webp",
+      "source_sha1": "be5a61f044de48727879cc3825fd66f6b626ec8c",
+      "derivative_sha256": "1b2275b54d4810741315cf1fe800709914d76cd9c2459b131330812639efdb1f",
+      "credit": "Vanbasten 23",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "asset_path": "assets/approved/place-media/pf-85c2ec349e3a53dcf51b8c.webp",
+      "source_sha1": "60c30dcedc7c7ac2219be8839cfc8e65616a40b4",
+      "derivative_sha256": "60930e22b6c209fc173db1cbf7582a4d3138f62c79b3f42b31e03ad566e37a4e",
+      "credit": "Vilensija",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "asset_path": "assets/approved/place-media/pf-8012ce8c22798989899ce5.webp",
+      "source_sha1": "0f053acfb2dbb883763fc0e141feefaaf3cea70e",
+      "derivative_sha256": "40d4f26208a754e416d844d238f649eb0e7770b5df7df5e655842978907ff3ff",
+      "credit": "Gytis Grižas https://www.wikidata.org/wiki/Q16452479",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:LT:zemaiciu-kalvarija-visitation-basilica",
+      "asset_path": "assets/approved/place-media/pf-861d5caa707c5d51f005ca.webp",
+      "source_sha1": "06e363c012bdeed058f0a3e0fb28a17af2bbeb7a",
+      "derivative_sha256": "7b335a6057c6c665ec79bda6424ea2c38d2420e64f9238c769ef43385c2b7c65",
+      "credit": "Žemaitijos kelias",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "asset_path": "assets/approved/place-media/pf-601c08e0f9d175eace97f9.webp",
+      "source_sha1": "ec3a90d1b0430af5641a0e51d69ec8659e5d55b5",
+      "derivative_sha256": "794c8ad0f149c6ff8e95561be7a68eb7719c454c4897e72e1fc719f5ff8f822a",
+      "credit": "Berthold Werner",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "asset_path": "assets/approved/place-media/pf-2d288f2f3f93241e92b3b5.webp",
+      "source_sha1": "d216723dea116e77a2623947c6f99fe722602b23",
+      "derivative_sha256": "9a6334f7d3ae0cef1713f9258faabe81800735613cc1cbdb0a1e161a6c19070b",
+      "credit": "Nawalbennani",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:MG:immaculate-conception-cathedral-andohalo",
+      "asset_path": "assets/approved/place-media/pf-b0bb7057518134097c6bfd.webp",
+      "source_sha1": "014224b5b7a8372dd88f8dbe4e9bf18664528e72",
+      "derivative_sha256": "43bb0d0fdbb6c31d4aa7f74e0e21a60da6445e205ffb44b8d742f1ed648548f6",
+      "credit": "Z thomas",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MM:st-mary-cathedral-yangon",
+      "asset_path": "assets/approved/place-media/pf-301a4f4046223bf1e5a6b5.webp",
+      "source_sha1": "540fb4b39a5dae779b4c9630ea5ec4b240fa7d19",
+      "derivative_sha256": "33864845663318d0524530b9a1ca145635baeae5f29c8975860daaf34ed74299",
+      "credit": "Marcin Konsek",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
+      "asset_path": "assets/approved/place-media/pf-399ce9374053d93e3232d7.webp",
+      "source_sha1": "2b455c7c283d4e87619366ee2b2e0077c4a228d7",
+      "derivative_sha256": "7021554edc707a69cfc50559f1170b4f42e465b14bb20bf81437e86a7d932e7e",
+      "credit": "Davaadorj.sfs",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MQ:cathedrale-saint-louis-fort-de-france",
+      "asset_path": "assets/approved/place-media/pf-b7b1eeae4d5499473b6efe.webp",
+      "source_sha1": "dfd2a419b241a4acaee7f640cba8b0932c59c147",
+      "derivative_sha256": "f406dea599652da1f0db5838ddb78511ecd0e0d0d4106223d4cc49fac7916ba5",
+      "credit": "Pierre PONCHEL",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:MT:basilica-our-lady-mount-carmel-valletta",
+      "asset_path": "assets/approved/place-media/pf-325189ea79a5cf51fe0f19.webp",
+      "source_sha1": "d2d52e35c7f8049113cdcf3a3ea168cfe3f13a78",
+      "derivative_sha256": "242c33785ca556662d08c60dcd47099a876e4b9310169c793af2f7301c4c0811",
+      "credit": "This photo was taken by Anton Zelenov . Please credit this with : Photo : Anton Zelenov in the immediate vicinity of the image. If you use one of my photos, please email me (account needed) or leave me a short message on my discussion page . It would be greatly appreciated. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MT:basilica-st-paul-rabat",
+      "asset_path": "assets/approved/place-media/pf-3395419eeb2841a7a223a2.webp",
+      "source_sha1": "a68e6b7e70c5eb44fab14b52a1cba7645d70ba66",
+      "derivative_sha256": "169026ca428a67f0cbda1ed5e8160514d99a5d92e929e3da88f50c22450268ac",
+      "credit": "VPDigital",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "asset_path": "assets/approved/place-media/pf-7c3efd76c0a9e2e36a03f0.webp",
+      "source_sha1": "ab040ed3ecd0c2be751ffac2f3ce75aece53775e",
+      "derivative_sha256": "936871f6e0dcfed30959790dd8a1f094c6a82f594d14fb9ed6ea353fe291ec97",
+      "credit": "Berthold Werner",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:MT:santwarju-madonna-mellieha",
+      "asset_path": "assets/approved/place-media/pf-dd5def0549dffd3196dbbc.webp",
+      "source_sha1": "7424c9d977f79efac5b32bd69cc558deae4d269c",
+      "derivative_sha256": "12d6415b0dc2d5f8512486299122e4af28ca47b2a21b90726c14d42da4ddc185",
+      "credit": "Marika Caruana",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MU:marie-reine-de-la-paix-port-louis",
+      "asset_path": "assets/approved/place-gallery/MU-marie-reine-de-la-paix-sanctuary-2019.webp",
+      "source_sha1": "244370f72a2c1e2e22e0900a7894c7da425db5e1",
+      "derivative_sha256": "266ae8ca823ef97fbae8f64d464d610deef81e0adf4017bc24d02bb2054f7f72",
+      "credit": "Balou46",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MU:saint-louis-cathedral-port-louis",
+      "asset_path": "assets/approved/place-gallery/MU-port-louis-saint-louis-cathedral-2015.webp",
+      "source_sha1": "05eb7fcfee477bb5f430b5116e71fc554f11d05d",
+      "derivative_sha256": "dac6c5a35082cf48872a58e81fc1ae2c284664b7df42b0295109e2c98f95a796",
+      "credit": "Karsten Ratzke",
+      "license": "CC0-1.0"
+    },
+    {
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "asset_path": "assets/approved/place-media/MX-basilica-guadalupe-mexico-city.webp",
+      "source_sha1": "67949bdd032cb0b943d775524bec161be1165db2",
+      "derivative_sha256": "3e14c05067fbbe411bd96d3422ea2652eaead06033b42ca559408e862d018e92",
+      "credit": "José Luiz (Jbribeiro1)",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:MX:basilica-zapopan",
+      "asset_path": "assets/approved/place-media/pf-e59c759706c3516957f29d.webp",
+      "source_sha1": "c44dc558b0873a78a99d752f63a9de606a5e11f6",
+      "derivative_sha256": "ba5e62a184b7691a69f5e38e6ce5144bf1b73be9d284d52658e39b1006972b8f",
+      "credit": "Iqmann",
+      "license": "CC-BY-2.5"
+    },
+    {
+      "place_id": "place:MX:p48-sg-0432-155296070",
+      "asset_path": "assets/approved/place-media/pf-18e7c5e946777cff0ea989.webp",
+      "source_sha1": "5b3fd03de3f60cadd9a6dca971405e359b0a81ca",
+      "derivative_sha256": "0d5e7033fb6ab39c3fceb7c108036603ac3c8c75843263e82a34ddde98d5f9f6",
+      "credit": "Pablo Fossas",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:NC:cathedrale-saint-joseph-noumea",
+      "asset_path": "assets/approved/place-media/pf-80f5ef3999dcc03b29ad11.webp",
+      "source_sha1": "8a07a1ffcd0a172cfeb8bbfa30b1c118dce29741",
+      "derivative_sha256": "a22ece25bb8d324bf4f73b3b968137bdfbc0ed8d1b20406928d24964e0f715fc",
+      "credit": "Pilettes",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
+      "asset_path": "assets/approved/place-media/pf-34f66bdbc874c37e38c6f5.webp",
+      "source_sha1": "f167eb116598e9a3d651b8ecceb5ef0be6efb720",
+      "derivative_sha256": "cc3bae58c2b21338a04d6531d832a0babbb08258d18ee059b56ee8e2a7f05a00",
+      "credit": "Advance",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:NO:st-olav-cathedral-oslo",
+      "asset_path": "assets/approved/place-media/pf-b76faab1265785b10f6861.webp",
+      "source_sha1": "419881a8b76bdbed2b4c9d226eb3c8156e65f4cf",
+      "derivative_sha256": "f4449258a5814af6eccc1cd6e7d5a1bd42d59c222094f14d613cfd8f245c7a43",
+      "credit": "Asgeir O. Mortensen",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:NO:var-frue-cathedral-tromso",
+      "asset_path": "assets/approved/place-media/pf-6968f1d4bf588965c50254.webp",
+      "source_sha1": "87ed5c61ba1a5cfa95f9e9d8a5cf0d2633fed766",
+      "derivative_sha256": "692afeb67e530c4a6e53e1bc6b267f497a9ab98c5b59e1a4b529df37a5d1e05d",
+      "credit": "Harvey Barrison from Massapequa, NY, USA",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:NZ:st-mary-angels-wellington",
+      "asset_path": "assets/approved/place-media/pf-9339b43d9f12b4c3076e40.webp",
+      "source_sha1": "b6b1ed09dd86ae7c0e6924a1ae71d59c00302b81",
+      "derivative_sha256": "cd8c486a52fa4e3e8821b485b7be7ee45f7460e634624c7f108bb084d786a742",
+      "credit": "Itineris55",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+      "asset_path": "assets/approved/place-media/pf-6bffcb201abe9105cc6310.webp",
+      "source_sha1": "492831f904fbbc6a67518ad163627caef4dc30da",
+      "derivative_sha256": "d0d3c66cd7aa5d82dfd3ba5e85cd3413a36ecbf089551f412d84d86ba96b9517",
+      "credit": "Rainbowasi from Lima, Peru",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "asset_path": "assets/approved/place-media/pf-60858cb33db7352c28de42.webp",
+      "source_sha1": "60f29254f112f0735a620c82403656b6813edc4e",
+      "derivative_sha256": "d3e1422cecc2a48e76d7f4b58d13de80728524386cf14ed2f34aedfae17fd79e",
+      "credit": "Ingo Mehling",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PF:notre-dame-cathedral-papeete",
+      "asset_path": "assets/approved/place-media/pf-27ab30fff241dda16f3564.webp",
+      "source_sha1": "24c719a00edd50b07f48c292bd902e55ff6d17d9",
+      "derivative_sha256": "0c8ead0268b5c7dfc45501517e20de5899dc62f6892aaf08a2478cd534fdf747",
+      "credit": "kajikawa",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:PH:baclaran-national-shrine-perpetual-help",
+      "asset_path": "assets/approved/place-media/pf-3a1284cc872001ef6421ae.webp",
+      "source_sha1": "c01e6a935829809aef0c4615b1865fa4a1518d8d",
+      "derivative_sha256": "1352f6a845a175f585937189bd61a12b2911c8072dc131e2906f3c3a2edfcf05",
+      "credit": "LMP 2001",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PH:basilica-our-lady-penafrancia-naga",
+      "asset_path": "assets/approved/place-media/pf-d6eecff6fd19174844ccdb.webp",
+      "source_sha1": "a6007c2a126f15cf24aaff1a233c2b7c2fdb131b",
+      "derivative_sha256": "14be2ef41b165864f24311e9ecf51c6cd7290acaddde4ed1a912dd447d5762cf",
+      "credit": "Ralff Nestor Nacor",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PH:monasterio-de-tarlac-risen-christ-chapel",
+      "asset_path": "assets/approved/place-media/pf-8e9568836512fc1996623e.webp",
+      "source_sha1": "310dd80d883792b242aa5fd895f5f37bd1f4fb4b",
+      "derivative_sha256": "966b9cc19d6ee36eeb58af902f1d0a09c48a7ff1a892a6b7bd7bd303b0204883",
+      "credit": "Sindre Helvik",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "asset_path": "assets/approved/place-media/pf-ad56ae955966a861da2592.webp",
+      "source_sha1": "10ab80a243bf765974648507340e4f6e77ae56b7",
+      "derivative_sha256": "5c8f20b2afcd34c4c892967a507cc54e76421c42b59c45d20ff16a796ce9a179",
+      "credit": "Ralff Nestor Nacor",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PH:p42-sg-inv-0638",
+      "asset_path": "assets/approved/place-media/pf-524558857f4a5c29e3514b.webp",
+      "source_sha1": "7755b759102310a31df95f250acba74fbf9caa01",
+      "derivative_sha256": "0929658385e7f83fc848e2fb4645c0e6784fa0dcca1e0ef878ffb9470369f9d9",
+      "credit": "LMP 2001",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PH:quiapo-national-shrine-jesus-nazareno",
+      "asset_path": "assets/approved/place-media/pf-392ec15bdc136210daa690.webp",
+      "source_sha1": "d86269bb8fa2c670bcfe6bf65d3e135a2d32bb37",
+      "derivative_sha256": "ba7168deb036841ab55b3972356cdf0d41f5a22187a769a9b8d3d1264bb4b6e4",
+      "credit": "H.abanil",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PH:santo-nino-tondo-minor-basilica",
+      "asset_path": "assets/approved/place-media/pf-77dd18e1b57314244cdcaa.webp",
+      "source_sha1": "2dfa19b562789a604f2eaf8ab991cf7a3781aaed",
+      "derivative_sha256": "476f5efbe98a4b9315e88f4e28ce3e7853d58c3bc68653b8668a5f2a608da8b2",
+      "credit": "Hannachiever07",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PL:bazylika-nawiedzenia-wambierzyce",
+      "asset_path": "assets/approved/place-media/pf-0cafea9f4154474b796bd8.webp",
+      "source_sha1": "940cc0f1455e909ae3c8a5891b448388e89615fe",
+      "derivative_sha256": "5303dd567e1e466fd6aafc88c786b271ff1c0b9c0284e0adce76da5b8e1c0619",
+      "credit": "Jacek Halicki",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PL:bazylika-sw-anny-gora-swietej-anny",
+      "asset_path": "assets/approved/place-media/pf-7dcf9fdb2d436d8a918661.webp",
+      "source_sha1": "6c5a93066fbf0354521789a10dac7ea505b7c8f3",
+      "derivative_sha256": "ca1b6c44e09b235affa9ee108986f16f74271e2d3d0366f5c7d97d401ad0d3d1",
+      "credit": "Fry72",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "asset_path": "assets/approved/place-media/pf-4a2618ec2cf7a3bf91a52c.webp",
+      "source_sha1": "e24a8153b4f6c103ec6e4f2032e836f2f18710f5",
+      "derivative_sha256": "c5e83eb1092711d811018e442cf92e47aa7e983088808a5954f3417d0e346778",
+      "credit": "marek7400",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "asset_path": "assets/approved/place-media/pf-152dfcb632743d29df649c.webp",
+      "source_sha1": "d735bcd11300b1333ea2f22e5692f3634b63eb85",
+      "derivative_sha256": "668847c15016b3ed826bff4927e26cc50a7b012ee9831df954351c3b9e9fde24",
+      "credit": "KH-10101",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PL:jasna-gora",
+      "asset_path": "assets/approved/place-media/PL-jasna-gora.webp",
+      "source_sha1": "cb59b3d3c62ef755ad0c09b42f78c7c2402586d2",
+      "derivative_sha256": "a67389489c168d98e3c778da5df248ae34169a634fb75dbbee302ed2bbe0cff0",
+      "credit": "Aw58",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "asset_path": "assets/approved/place-media/PL-kalwaria-zebrzydowska.webp",
+      "source_sha1": "f51b31eb5e68c6e94d85377f90568bd15d8ac263",
+      "derivative_sha256": "34a5bdba8ef5fb1fcdb91d278d28c8e1b56714be56f3cdffd2c50fcc9db3eea3",
+      "credit": "Ludwig Schneider / Wikimedia",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PL:p42-sg-inv-0211",
+      "asset_path": "assets/approved/place-media/pf-0505a1f466107dcd0b9fa4.webp",
+      "source_sha1": "1e2eef306251683d03bd4848e7ff22328db2ed13",
+      "derivative_sha256": "d138f9c2f1b9fd16b48e686d6a65fa69a71b5491da5321939571291d524f529a",
+      "credit": "Jacek Halicki",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PL:p46-sg-0215-229930104",
+      "asset_path": "assets/approved/place-media/pf-5d468c5f0a9649733e2a7d.webp",
+      "source_sha1": "949fdaf0d60547b3b93b121cdd90fcd14667954e",
+      "derivative_sha256": "e34c64f0e00f02d6d868961acdfe72c49a249794cb7e43f7dbbbe5ba7e58ce8d",
+      "credit": "Fczarnowski",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "asset_path": "assets/approved/place-media/pf-95e07f84b38c73e929c077.webp",
+      "source_sha1": "dfdd56cded734025653980dfdbc5690b57ceb12d",
+      "derivative_sha256": "b4b1bd0ae716a28d087abb080b1e44050a5797efa11c7ac3f62e4375cb7856a0",
+      "credit": "marek7400",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "asset_path": "assets/approved/place-media/pf-1469f34f3dce7f8f0910ac.webp",
+      "source_sha1": "dfbb40f01a04c0ffd99335265f8d78c1775fd024",
+      "derivative_sha256": "ca556a7a9282ffb0ccde3843d521fda8e367667d704fc0a8d19773984d2e5593",
+      "credit": "image /photo was taken by Wikipedia and Wikimedia Commons user Ludwig Schneider . I would appreciate being notified if you use my work outside Wikimedia. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms. When reusing, please credit me as: Ludwig Schneider / Wikimedia .",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "asset_path": "assets/approved/place-media/pf-9ba71c8061938748139b73.webp",
+      "source_sha1": "9dba08f46a427a937cce484f3271764373a8c516",
+      "derivative_sha256": "4c1baab90d969214b8edfc681d34508f01d1cfef8b8dddd6dc3da84c5238e922",
+      "credit": "Jakub Hałun",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PS:basilica-agony-gethsemane",
+      "asset_path": "assets/approved/place-media/pf-907dd9884baf3d61a28dde.webp",
+      "source_sha1": "05af08fbe28050b72c579194da81e0e8694882b5",
+      "derivative_sha256": "2644caaa5d5d02abd17ceb0d03337c8b71513984fe1df7c4672ecea76d515425",
+      "credit": "Ranbar",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PS:chapel-milk-grotto-bethlehem",
+      "asset_path": "assets/approved/place-media/pf-619c5e3a807d1cbc35c712.webp",
+      "source_sha1": "21b40d2f0e622a38addca216ef2f71150c02ccd3",
+      "derivative_sha256": "5f43f247ce8f6898322df3e3a76ac13a1fc9489af27d3188d424b69330698af2",
+      "credit": "نادين",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PS:nativity-bethlehem",
+      "asset_path": "assets/approved/place-media/pf-ab64a5521293783ac2eab9.webp",
+      "source_sha1": "d001c6d97af5fa90ce099c23dacbc560f3dd614f",
+      "derivative_sha256": "2c5b7b45cfda709b2f2ef0476a5718b3b5d2865948403c7499d5a6045bd27fa2",
+      "credit": "Neil Ward",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:PT:basilica-bom-jesus-monte-braga",
+      "asset_path": "assets/approved/place-media/pf-4d879c898a0618a789b546.webp",
+      "source_sha1": "91bd06796372180fb43dfddbb853673179f2ba45",
+      "derivative_sha256": "c116fec72d70b3f432d386bc98200623944bc71be3cbf714db694e675642a4d0",
+      "credit": "Jocelyn Erskine-Kellie from London, UK",
+      "license": "CC-BY-SA-2.0"
+    },
+    {
+      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
+      "asset_path": "assets/approved/place-media/pf-1c59b1ad684468350535d1.webp",
+      "source_sha1": "55f3285865aa2808fbee5327117919c95c65c969",
+      "derivative_sha256": "d6202931a195b4c53464fb279e038356ef8a0995e7fc37fcf060b182d067975b",
+      "credit": "Turismoenportugal",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:PT:fatima-sanctuary",
+      "asset_path": "assets/approved/place-media/PT-fatima-sanctuary.webp",
+      "source_sha1": "94439314533719472bc440dddc898968339bf5e5",
+      "derivative_sha256": "8244ba07017d5c393732588d6dd8cfc054c7f90cb51f57a4fbab0665797b774b",
+      "credit": "Sjacktw2007",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PT:p48-sg-0156-96319696",
+      "asset_path": "assets/approved/place-media/pf-0c05bdf6bf1c085b02af33.webp",
+      "source_sha1": "ceb4a224304552c83fddcf301e7d15545ce7da98",
+      "derivative_sha256": "fddb0ed8c6b78d6e709ca8e38d31f766503dfec5c2e33dcc3a69c8369e832094",
+      "credit": "SchiDD",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:PY:catedral-metropolitana-asuncion",
+      "asset_path": "assets/approved/place-media/pf-db3dad10aa8b2499c40553.webp",
+      "source_sha1": "0ee0997198c27f19faa7dcc4a7effdc5f22b8bd7",
+      "derivative_sha256": "fc920b282d91da160bbb0dc3a2e88c3cafdee6fc2388503c486c0761328c6a99",
+      "credit": "FF MM",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:PY:oratorio-nuestra-senora-asuncion-panteon",
+      "asset_path": "assets/approved/place-media/pf-7075ce0e7915bcbd8c2175.webp",
+      "source_sha1": "e62e514a670c43cbe108b507d9df32a19105f1e2",
+      "derivative_sha256": "285a44b2da63f087b965c7758f0882571c1af9e01e97c3eb5217cb70a71e307f",
+      "credit": "Felipe Antonio",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:QA:our-lady-rosary-church-doha",
+      "asset_path": "assets/approved/place-media/pf-45857b2b3df60758ac98db.webp",
+      "source_sha1": "ad2ff857902fc9f6d8312720e2ae6cd4f9e78874",
+      "derivative_sha256": "383e6d87b098a3a626d7d54f24a420f6fe74e7f67ecaadec8d2cdd813e62351c",
+      "credit": "omar_chatriwala",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:RO:catedrala-sfantul-iosif-bucuresti",
+      "asset_path": "assets/approved/place-media/pf-9f96b6783d55801eeec48c.webp",
+      "source_sha1": "65d197fe566005e8a587993a3b365b8570efee16",
+      "derivative_sha256": "be62368ab09252a2dd9e2e291e59c296e3e08b4b7fc90b3d2c2491be2b26620c",
+      "credit": "Ștefan Jurcă from Munich, Germany",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:RW:cathedrale-basilique-immaculee-conception-kabgayi",
+      "asset_path": "assets/approved/place-media/pf-7964909987445af749ba22.webp",
+      "source_sha1": "3f274c822e452be774b51410c5f4a6577c56a69c",
+      "derivative_sha256": "d74a7a870895c0f8f2e071a6f3e34e8bddde024426d2adf9e329cbbb889b2256",
+      "credit": "Ivan Mucyo",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "asset_path": "assets/approved/place-media/pf-7aa7b11ffac768689d06ba.webp",
+      "source_sha1": "1aebea81ea2df0dfcfe5c6370df473a5ea106005",
+      "derivative_sha256": "30689439e95aeb60b2a31f20729a9ceb77b6e535db6d32ef23220341b238de15",
+      "credit": "Laeliza23",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:SE:st-eric-cathedral-stockholm",
+      "asset_path": "assets/approved/place-media/pf-f125096254e4cc9af9ed14.webp",
+      "source_sha1": "c2ad6664b0081976ce597cfb0e28230c28b70f0b",
+      "derivative_sha256": "db58b12e9b59502a9a52cf6efac5d06f62ea2006fa9be756c5be6f50c5e809e9",
+      "credit": "Gustav Ahlman",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:SI:bazilika-marije-zavetnice-ptujska-gora",
+      "asset_path": "assets/approved/place-media/pf-25855f0f44a474f91190b3.webp",
+      "source_sha1": "c4ae7432eef3e250a27e6b5b777b6d586105f1d8",
+      "derivative_sha256": "5c325d43efc41d836d4420df41a4e5e3821f9d14e4077b509feca466718e0f2c",
+      "credit": "Vid Pogacnik",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "asset_path": "assets/approved/place-media/pf-c90c0a0892e103f0484a50.webp",
+      "source_sha1": "081b70dda2ae5c8463ee243fae3995f18edf06cb",
+      "derivative_sha256": "8769941cf90c6e118b2938f607269f949dccb70028ba9aaa499a2688c6f8b714",
+      "credit": "Johann Jaritz",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:SK:basilika-sedembolestnej-sastin",
+      "asset_path": "assets/approved/place-media/pf-52a7fc912db41b60b49ce8.webp",
+      "source_sha1": "eae412d585ffd5eb686c23dcf09738a5db5985c3",
+      "derivative_sha256": "1627351e9b3fdbbd6cd86b46679322f9145e60d585c34875d4becf275a407881",
+      "credit": "Ľuboš Repta",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:SK:kostol-svateho-vojtecha-gaboltov",
+      "asset_path": "assets/approved/place-media/pf-fcf7c15e52b3a36328f6ce.webp",
+      "source_sha1": "a2a0df64d9c0fb0ccae8b75673c2caccc4d72aa4",
+      "derivative_sha256": "5e67af611b2245d88b1c26f59ad0e628eb48d9852652380c1014f16fb17f0cb3",
+      "credit": "Henryk Bielamowicz",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "asset_path": "assets/approved/place-media/pf-2ac0e49752ee7c7f1faccd.webp",
+      "source_sha1": "efa2e1bbe95c236fd065004738180ec582a7ed60",
+      "derivative_sha256": "5a3ea00cef4af89c733c25e88deced6e0cbb8379c73b4688dbc13ce80ecc5c06",
+      "credit": "Harveypinas",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:TG:sacred-heart-cathedral-lome",
+      "asset_path": "assets/approved/place-media/pf-e5a3d5f1f94b912159b541.webp",
+      "source_sha1": "f13ce2aa6811c9b43d99aee006d79d197f427817",
+      "derivative_sha256": "36ac5cdb1f20bc21cb9cc02b3034e0ef7e00caac6bc1de283d70eae55b763f2d",
+      "credit": "Edison McCullen",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "asset_path": "assets/approved/place-media/pf-de4deb4f0f3a775215e959.webp",
+      "source_sha1": "8cc24e256c4bc95243361f4a8cc0c00c36a6c61c",
+      "derivative_sha256": "d14d58891714fc9b531070a494500353c1d4c4e977af71f01179e610a062cf86",
+      "credit": "WEI, WAN-CHEN（魏琬臻）",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "asset_path": "assets/approved/place-media/pf-efaaa72c2b337e344bb198.webp",
+      "source_sha1": "c180d3e4085e916dc2f9bf34ef35d7fd671ca27d",
+      "derivative_sha256": "f18e1481b3abe3fc5e39c392d2f099852f9adbf2bc322cd6a91cb8ae27342420",
+      "credit": "David Stanley from Nanaimo, Canada",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:UG:munyonyo-martyrs",
+      "asset_path": "assets/approved/place-media/pf-ad8f4146c9f7a54cf63869.webp",
+      "source_sha1": "749d8114e9d79e1f7a3ef738329c1d18e10d591d",
+      "derivative_sha256": "390cc32d4eed144f47ce6f0cbab7cf637d994f692c3a5ff1107f9e2ac3dc96a4",
+      "credit": "Wulman83",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:UG:namugongo-martyrs",
+      "asset_path": "assets/approved/place-media/UG-namugongo-martyrs.webp",
+      "source_sha1": "e7f52b24281c788da372da01a8814f6f189dc1e2",
+      "derivative_sha256": "e1504184429a86e584673cfd64e9acd0b57f6582ba7502b44d346ba5ba2cd9b8",
+      "credit": "Tusk media",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:US:baltimore-basilica-assumption",
+      "asset_path": "assets/approved/place-media/pf-7c439927cff95a3c52f9a9.webp",
+      "source_sha1": "49bc29f9e2cd8f11f3b22c2d33c9cad4bdd1f5d2",
+      "derivative_sha256": "0f957ee55b22b260ab26f2210f4fa23e00d6d6291c1573acfa89488cf416cb57",
+      "credit": "Bobindrums",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "asset_path": "assets/approved/place-media/pf-135ed9f81dd8f053e0e2f5.webp",
+      "source_sha1": "038b4e8bd88b09201cbb58312df5df5427f570c8",
+      "derivative_sha256": "14fdea83c258f7c0787168ef782de6504a4c17a9a4ae143e18118e1a3dcae18e",
+      "credit": "AgnosticPreachersKid",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "asset_path": "assets/approved/place-media/pf-331b76ebf069b626e4ce9b.webp",
+      "source_sha1": "ee05c523d83025447606caa5a52675638597733b",
+      "derivative_sha256": "410542d0b03615c0ed78bf5c0e03fdf79d989e1d89db7fe831e1a883ea04c21d",
+      "credit": "Burkhard Mücke",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "asset_path": "assets/approved/place-media/pf-bed9420e36b6b312f46d99.webp",
+      "source_sha1": "eeab4aebe7b2a9853d5dcff19557c56bd51a45de",
+      "derivative_sha256": "e33756fd0e3aa5e0e6f6fd4322bee7a1e5a4e71553aa9a13a715043dc0f55937",
+      "credit": "Bohao Zhao",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:US:champion-shrine",
+      "asset_path": "assets/approved/place-media/US-champion-shrine.webp",
+      "source_sha1": "3adec6498a8db223459b9d6cf93c95cfba7c3d26",
+      "derivative_sha256": "0514058389433d866e92c918abefd020ea27177a28edb317f838624b95c86373",
+      "credit": "Michael Barera",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "asset_path": "assets/approved/place-media/pf-52b2bcccfc0afff92378ee.webp",
+      "source_sha1": "5723ea20837f83480b04da39c22ca5e639d2abef",
+      "derivative_sha256": "bdd36983b6d3984f7fe27280d1c81ad1110b67c8b18945961acf980233175634",
+      "credit": "John Phelan",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "asset_path": "assets/approved/place-media/pf-d2cc2fb4fdbf658d031f42.webp",
+      "source_sha1": "53a98bc8794a37e05f7a85d99dd406fab56c8e5d",
+      "derivative_sha256": "36d078da2813b14ff11a60c3610872c154b49d413be4c7d8daf95cfab31d6743",
+      "credit": "Pgnielsen79 ( talk )",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
+      "asset_path": "assets/approved/place-media/pf-33e3575ac0715ac78ef67b.webp",
+      "source_sha1": "efb2fb46740af6aaca09ae8383542ed357f0a5fb",
+      "derivative_sha256": "42e47fecd377f65a1b01aa3dcbb04d132b8f3e1b13e070fdb1c2add6f8543e9a",
+      "credit": "Jared",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "asset_path": "assets/approved/place-media/US-holy-family-log-church-cahokia.webp",
+      "source_sha1": "fcf74719c3701b7468560a4f4d31bac7b03bb1ae",
+      "derivative_sha256": "b4fd5ceb74610f7b7cba32392b3c18d31473bfcea5a2669a48a5b1f63cf5232a",
+      "credit": "Kbh3rd",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:US:holy-hill",
+      "asset_path": "assets/approved/place-media/pf-7c901fb8a62c9efc6b5d0a.webp",
+      "source_sha1": "f09e49fd9f65db51b194fdef5f4324ac828f27d9",
+      "derivative_sha256": "d882c2a48a1c241a531d87c03f0a351e3d99d6e774cbee39bfb8950e6518fc55",
+      "credit": "Corey Coyle",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "asset_path": "assets/approved/place-media/US-immaculate-conception-cathedral-lake-charles.webp",
+      "source_sha1": "a5c9f3c950aef4c3541c46629afc560ff23038dc",
+      "derivative_sha256": "5eca4f1db9bca3e951f51325522469b5a6cc2a8c06b7464be3f81ea1877e859f",
+      "credit": "Farragutful",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:US:our-lady-victory-basilica-lackawanna",
+      "asset_path": "assets/approved/place-media/pf-8eed02fe95151ef0dee878.webp",
+      "source_sha1": "958a922a503fd960a9c2008776e9dfaa0d6c1d86",
+      "derivative_sha256": "98cd28da8e74c9228198c557579482c4013bee8274056ba2f537d0b13597a5b4",
+      "credit": "Elizabeth Duggan",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:US:p42-sg-inv-0378",
+      "asset_path": "assets/approved/place-media/pf-f8f389cc8d89abcaf53cef.webp",
+      "source_sha1": "61eb2c51f53647af0d13d18f65528cc2f8133830",
+      "derivative_sha256": "7ebd31b1d6e4ec9dd4b011c7a5d1525755018c86ff7c16d817973d6894972261",
+      "credit": "Carey_Ohio_Shrine_Basilica_Exterior_Front.jpg : Ssbohio derivative work: Rabanus Flavus ( talk )",
+      "license": "CC-BY-3.0"
+    },
+    {
+      "place_id": "place:US:p48-sg-0400-866036994",
+      "asset_path": "assets/approved/place-media/pf-a90ddea88ebf9d2757d72f.webp",
+      "source_sha1": "9b0debb272294c3b4057674e2517a8f0369d3dbd",
+      "derivative_sha256": "648517252ddf3d726a5097834fcb9fdfa9d4e61076d158d3deef1788f7fc9ae3",
+      "credit": "Andrew Jameson",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:US:st-agnes-saint-paul",
+      "asset_path": "assets/approved/place-media/US-st-agnes-saint-paul.webp",
+      "source_sha1": "661b34873db6f23afd5ef25ec08766e647644e4c",
+      "derivative_sha256": "4df12e7c03ccbd79e207a7f92e4a548c481d0cb47957d37a2a5b7fbfafb4f9d3",
+      "credit": "McGhiever",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:US:st-boniface-sioux-city",
+      "asset_path": "assets/approved/place-media/US-st-boniface-sioux-city.webp",
+      "source_sha1": "228b098e9254bfbf2fe93d208f9be4998d909d27",
+      "derivative_sha256": "85c498e5078050d626f0d504b1fd4257ed5b5f720e5b26dd6734bc5604a529c3",
+      "credit": "Ammodramus",
+      "license": "CC0-1.0"
+    },
+    {
+      "place_id": "place:US:st-john-cantius-chicago",
+      "asset_path": "assets/approved/place-media/US-st-john-cantius-chicago.webp",
+      "source_sha1": "400197c1d636d0fdd05df92799393afc1d487d0d",
+      "derivative_sha256": "c15aa55e6e96e360743aa390a5e59a4cd395f1539eb3304411cf599fcf9b6474",
+      "credit": "Sjcantius",
+      "license": "CC0-1.0"
+    },
+    {
+      "place_id": "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
+      "asset_path": "assets/approved/place-media/pf-d8fdb0ea2dbc0e738606fd.webp",
+      "source_sha1": "c9a888b0847544b0baf4182cfbae92df12578b35",
+      "derivative_sha256": "c6a18e767edce10075a27a04e26f4122d01690b29878b1fcddc9720f472e8ff3",
+      "credit": "Fadesga",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:UZ:sacred-heart-cathedral-tashkent",
+      "asset_path": "assets/approved/place-media/pf-1d22b00df1fc332bde2094.webp",
+      "source_sha1": "47181a75173c9c2c4ca39dd646a9a3a2c7daa333",
+      "derivative_sha256": "c9dfcdb2c8f3eeb9501520d096cb2d756083c760f55275d23990c98a0c37042a",
+      "credit": "Журавлев Андрей Анатольевич",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:VC:assumption-cathedral-kingstown",
+      "asset_path": "assets/approved/place-media/pf-d178d70c9f1b046f5374f1.webp",
+      "source_sha1": "ae850f13e7aa03d03212129a125177d497005110",
+      "derivative_sha256": "25d2b60e86c9b4de45e7f686a6c1b09578a62425b54b6ac83de5cf260cf17fe2",
+      "credit": "Stefan Krasowski",
+      "license": "CC-BY-2.0"
+    },
+    {
+      "place_id": "place:VE:basilica-nuestra-senora-chiquinquira-maracaibo",
+      "asset_path": "assets/approved/place-media/pf-e4a8c184c41a140280c774.webp",
+      "source_sha1": "aae29713a4886bef62c66d29df9533d93d4a7df1",
+      "derivative_sha256": "5d9fc60b307d5f05382634752c5b67c824f81fcbb168e299585e192919e94ac8",
+      "credit": "Rjcastillo",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:VI:saints-peter-paul-cathedral-charlotte-amalie",
+      "asset_path": "assets/approved/place-media/pf-2cfdac786797bbd63efcb1.webp",
+      "source_sha1": "147a78bfff3d876f48a2f3b7beeeda8d443562da",
+      "derivative_sha256": "ddf96a15a211a05b7f168d3167876f5a12cc9b1ad3cb268796e12b90d5f78faf",
+      "credit": "Farragutful",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "place_id": "place:VU:sacred-heart-cathedral-port-vila",
+      "asset_path": "assets/approved/place-media/pf-de31ebc436dc0738dcc796.webp",
+      "source_sha1": "213ad3de18feb3e2497100124badc8bcfed68da9",
+      "derivative_sha256": "928d34e7ac1c5231ba1452e8e7633a5547dc40f3f50d3cb7b2736e6d10db369e",
+      "credit": "Gérard Janot",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "place_id": "place:ZW:sacred-heart-cathedral-harare",
+      "asset_path": "assets/approved/place-media/pf-448fca5a16b95e333da2bf.webp",
+      "source_sha1": "080ceeb6f6fbcc71c0593c8f2c5809c9552d7461",
+      "derivative_sha256": "8edf153129d6622ada76fb6288bed356b624bb4f0e41789075dc84fc9ecbcc00",
+      "credit": "Mangwanani",
+      "license": "CC-BY-SA-4.0"
+    }
+  ],
+  "images": [
+    {
+      "place_id": "place:IT:duomo-milano",
+      "asset_path": "assets/approved/place-media/pf-89a1a4f7e35ca9f0c59154.webp",
+      "source_sha1": "64627a8a94b2644d24bfcf21adb4977701bfdcd7",
+      "derivative_sha256": "31078bf51456f3e0ab0400ccfce5ec6a9cf9a825a7d28a721eacc6094c81b9e8",
+      "credit": "Jakub Hałun",
+      "license": "CC-BY-SA-4.0",
+      "source_git_blob_sha": "30fd4d489178298263fb6890e89592e19c642a14",
+      "bytes": 258590,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-429/pf-89a1a4f7e35ca9f0c59154.webp"
+    },
+    {
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "asset_path": "assets/approved/place-media/pf-0d941a321d9479fe1406ae.webp",
+      "source_sha1": "6010f2cb7c10ef48188ee34f25f103fb4c8b0587",
+      "derivative_sha256": "692ca106d5baf2bdc5a8eba6f003bc59c5864bbd3ccbc63845a58751b741a8b6",
+      "credit": "Chabe01",
+      "license": "CC-BY-SA-4.0",
+      "source_git_blob_sha": "6e49b901202ebd3a309c88e83a9a3e5403035173",
+      "bytes": 174622,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-429/pf-0d941a321d9479fe1406ae.webp"
+    },
+    {
+      "place_id": "place:SK:levoca-marianska-hora-basilica",
+      "asset_path": "assets/approved/place-media/pf-f8665f5d1b8b114261ab8e.webp",
+      "source_sha1": "d12492c9abb8bd774e4b8b2289b90ed93af7055a",
+      "derivative_sha256": "f01e03bd6f687ea451a7aae73720045e57a94368926c6f03b0d3f104021abcb7",
+      "credit": "Karelj",
+      "license": "CC-BY-SA-3.0",
+      "source_git_blob_sha": "e3d90e8b59952fc6148ea9f70c99b11840a116e3",
+      "bytes": 219796,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-429/pf-f8665f5d1b8b114261ab8e.webp"
+    },
+    {
+      "place_id": "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
+      "asset_path": "assets/approved/place-media/pf-a8690e8b1539b9f85be381.webp",
+      "source_sha1": "153caec11942d21628fb0d6b2c302976be936f37",
+      "derivative_sha256": "a8da6c0cfee92fff86e9a8118b22467d4a50e784cb6305289faea099a4c51aca",
+      "credit": "Irvin calicut",
+      "license": "CC-BY-SA-3.0",
+      "source_git_blob_sha": "fd2e48ddf2cf10ff1c4b09275023c0a0f0a5683e",
+      "bytes": 184912,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-429/pf-a8690e8b1539b9f85be381.webp"
+    },
+    {
+      "place_id": "place:TH:assumption-cathedral-bangkok",
+      "asset_path": "assets/approved/place-media/pf-749f34c05abad828a9063c.webp",
+      "source_sha1": "e1eac05563277fd37786ea1ad4fcc79831acdbb8",
+      "derivative_sha256": "86ae060d03fc60289e3b6fc6b6c7c282292c2397d8ac855590d84468a9b91936",
+      "credit": "Chainwit.",
+      "license": "CC-BY-SA-4.0",
+      "source_git_blob_sha": "0b26e942aca9f7f46c650573b598cfb485eed1da",
+      "bytes": 211494,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-429/pf-749f34c05abad828a9063c.webp"
+    },
+    {
+      "place_id": "place:GD:immaculate-conception-cathedral-st-georges",
+      "asset_path": "assets/approved/place-media/pf-edfc5a43b68bfae76dc96e.webp",
+      "source_sha1": "9cc603a5167732543ffe336ab83df489643757dd",
+      "derivative_sha256": "207198bf29cedb706083bc1ee72ed574bed1e6f34993ea1ac94af4662101eaca",
+      "credit": "Anneli Salo",
+      "license": "CC-BY-SA-3.0",
+      "source_git_blob_sha": "a00c06305ca6e0649dfc7c434b25b818bc2930fc",
+      "bytes": 145486,
+      "research_blob_path": "data/geography/research/photo-finder-20261030/recovered-429/pf-edfc5a43b68bfae76dc96e.webp"
+    }
+  ],
+  "source_retry_attempted": 8,
+  "source_verified": 6,
+  "source_retained_holds": 2,
+  "held_places": [
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "file": "File:Basílica de Caacupé.jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "file": "File:Kuwait City Holy Family Cathedral Exterior Facade.jpg",
+      "reason": "ValueError: Decoded original differs from Commons metadata"
+    }
+  ],
+  "visual_review": "Six recovered full-frame exact first-choice WebPs inspected; no in-frame photographer watermark observed; no cropping or replacement applied.",
+  "no_new_editorial_votes": true,
+  "no_approved_image_replacements": true,
+  "no_gallery_or_place_registry_changes": true,
+  "no_photo_downloads_during_this_promotion": true,
+  "el_cobre_visual_hold_preserved": true
+}
