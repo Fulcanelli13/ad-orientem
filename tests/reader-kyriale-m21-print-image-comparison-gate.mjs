@@ -153,4 +153,82 @@ assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
 assert.equal(ledger.closedGates.approvedForReaderCount,0);
 console.log("PASS M25 printed Kyrie XI and VIII four source phrases, exact page-break placement, 3+3+2+1 invocation counts, and closed notation release gates");
 
+// M26: full printed-text/section structural review for all remaining four
+// pilot scores. These assertions do not compare individual printed pitches.
+for(const [id,movement,selection,delimiter,n,folios] of [
+ [2760,"AGNUS_DEI","MASS_08","(::)",3,["31*","31*","31*"]],
+ [1384,"SANCTUS_BENEDICTUS","MASS_08","(:)",5,["30*","30*","30*","31*","31*"]],
+ [961,"GLORIA","MASS_08","(::)",18,[
+  ...Array(10).fill("29*"),"29*→30*",...Array(7).fill("30*")]],
+ [749,"CREDO","CREDO_03","(::)",19,[
+  ...Array(4).fill("64*"),...Array(7).fill("65*"),...Array(8).fill("66*")]]
+]){
+ const row=ledger.scores.find(x=>x.gregobaseId===id);
+ assert.ok(row?.phraseCollation,"Missing original printed score collation "+id);
+ const c=row.phraseCollation;
+ assert.equal(c.auditId,"M26_"+id+"_COMPLETE_PRINT_AND_SOURCE_STRUCTURE");
+ assert.equal(c.completeGabcSectionsCaptured,n);
+ assert.equal(c.musicalSections.length,n);
+ assert.equal(c.visualInspection,"ALL_ORIGINAL_PRINTED_PAGES_AND_PRINTED_TEXT_BOUNDARIES_INSPECTED");
+ assert.equal(c.printedScoreTextualStructure,"ALL_NAMED_CLAUSES_LOCATED_IN_ORIGINAL_PRINT");
+ assert.deepEqual(c.musicalSections.map(x=>x.printedFolio),folios);
+ const original=offlineKyrialeResearchScore(movement,selection).gabc;
+ const source=original.split("%%\n")[1].split(delimiter).map(x=>x.trim()).filter(Boolean);
+ assert.equal(source.length,n,"Source GABC section count must match registered original "+id);
+ let groups=0;
+ for(let i=0;i<n;i++){
+  const part=c.musicalSections[i];
+  assert.equal(part.ordinal,i+1);
+  assert.ok(part.clause.length>=3);
+  assert.equal(part.gabcVerbatimSection,source[i]+" "+delimiter,
+   "Source chant notation altered "+id+" segment "+(i+1));
+  const notes=(source[i].match(/\([^()]*\)/g)||[]).length;
+  assert.equal(part.gabcNoteGroupCount,notes);
+  groups+=notes;
+  assert.equal(part.isPageCrossing,part.printedFolio.includes("→"));
+  assert.equal(part.printTextAndSectionIdentity,"PRINTED_TEXT_LOCATED");
+  assert.equal(part.noteGroupByGroupPitchMatch,"NOT_CERTIFIED");
+  assert.equal(part.noteShapeAndRhythmicParity,"NOT_CERTIFIED");
+ }
+ assert.equal(c.sourceGabcNoteGroupsCount,groups);
+ for(const anchor of c.sourceAnchorFragments)
+  assert.ok(original.includes(anchor),"Original GABC lost high-risk note group "+id);
+ assert.ok(c.sourceHistoryAndMusicalRiskChecks.length>=3);
+ for(const key of ["printedStaffPitchParity","printedNeumeShapeParity",
+   "printedSyllableUnderlayParity","printedRhythmicSignsParity"])
+  assert.equal(c[key],"NOT_CERTIFIED",id+" publication hold: "+key);
+ assert.equal(c.scoreEditorialApproval,false);
+ assert.equal(c.publicScore,false);
+ assert.equal(c.audioApproved,false);
+ assert.equal(row.editorialApproval,false);
+ assert.equal(row.publicScore,false);
+}
+const ag=ledger.scores.find(x=>x.gregobaseId===2760).phraseCollation;
+assert.ok(ag.musicalSections[0].gabcVerbatimSection.includes("mi(f)se(gh)ré(h)re"));
+assert.ok(ag.musicalSections[1].gabcVerbatimSection.includes("mi(f)se(gh)ré(h)re"));
+assert.ok(ag.musicalSections[2].gabcVerbatimSection.includes("do(f)na(gh) no(h)bis"));
+assert.ok(ag.musicalSections[0].gabcVerbatimSection.includes("A(fggf)gnus(gh)"));
+assert.ok(ag.musicalSections[1].gabcVerbatimSection.includes("A(f)gnus(hj)"));
+assert.ok(ag.musicalSections[2].gabcVerbatimSection.includes("A(fggf)gnus(gh)"));
+const sc=ledger.scores.find(x=>x.gregobaseId===1384).phraseCollation;
+assert.ok(sc.musicalSections[0].gabcVerbatimSection.includes("San(fghjhhvG~F~)ctus"));
+assert.ok(sc.musicalSections[3].gabcVerbatimSection.includes("<nlba>Be(f)ne(hj)dí(jvHG'j)ctus"));
+assert.ok(sc.musicalSections[2].gabcVerbatimSection.includes("Ho(f)sán(fe~)na(dc)"));
+assert.ok(sc.musicalSections[4].gabcVerbatimSection.includes("Ho(j)sán(ixjkkvJH'i)na(gf)"));
+const gl=ledger.scores.find(x=>x.gregobaseId===961).phraseCollation;
+assert.equal(gl.musicalSections.filter(x=>x.isPageCrossing).length,1);
+assert.equal(gl.musicalSections[10].printedFolio,"29*→30*");
+assert.ok(gl.musicalSections[10].gabcVerbatimSection.startsWith("Qui(d') tol(e)lis"));
+assert.ok(gl.musicalSections[16].gabcVerbatimSection.startsWith("Cum(h') San(h)cto"));
+assert.ok(gl.musicalSections[17].gabcVerbatimSection.startsWith("A(gxhvFE'DgvFE)men."));
+const cr=ledger.scores.find(x=>x.gregobaseId===749).phraseCollation;
+assert.ok(cr.phraseBoundaryNote.includes("Credo II"));
+assert.ok(cr.musicalSections[7].gabcVerbatimSection.includes("Et(d) ho(f')mo(f) fa(gxg')ctus(g) est."));
+assert.ok(cr.musicalSections[12].gabcVerbatimSection.includes("Fi(gxg')li(e)ó(f')que(g)"));
+assert.ok(cr.musicalSections[18].gabcVerbatimSection.includes("A(hvFDee[ll:1]d.0gxkvJHiih"));
+assert.equal(ledger.scores.filter(x=>x.phraseCollation).length,7);
+assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
+assert.equal(ledger.closedGates.approvedForReaderCount,0);
+console.log("PASS M26 all 7 Ordinary pilot scores have source-pinned printed structural records; last four 3+5+18+19 clauses protected, zero pitch/neume certificates");
+
 console.log("PASS M21 exact 10 primary 1961 printed-page images across seven scores; source GABC motif anchors and full score continuations pinned; zero false note certifications/public notation");
