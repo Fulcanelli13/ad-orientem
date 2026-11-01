@@ -53,10 +53,16 @@ export function releaseClearedPrayerArtwork(slotId,{
     proof.nativeWidth<800 || proof.nativeHeight<800 ||
     !Array.isArray(selection.ids) || !selection.ids.length ||
     !selection.ids.includes(proof.selectedOriginalArtworkId) ||
+    !asset.sourceCredit || !asset.photographerCredit ||
+    !asset.licenseName || !asset.licenseUrl ||
+    !asset.modificationsDescription ||
+    !/^https:\/\//i.test(asset.licenseUrl) ||
     !asset.sourceCredit || !asset.sourceCollectionUrl ||
     !/^https:\/\//i.test(asset.sourceCollectionUrl))return null;
   return Object.freeze({slotId,path:asset.path,title:asset.title,
     artist:asset.artist,sourceCredit:asset.sourceCredit,
+    photographerCredit:asset.photographerCredit,licenseName:asset.licenseName,
+    licenseUrl:asset.licenseUrl,modificationsDescription:asset.modificationsDescription,
     sourceCollectionUrl:asset.sourceCollectionUrl});
 }
 export function prayerArtworkSlotForView({
@@ -121,6 +127,10 @@ export function renderReleasedPrayerArtwork(slotId,{
   const image=htmlEsc(art.path);
   const source=htmlEsc(art.sourceCollectionUrl);
   const creditText=htmlEsc(art.sourceCredit);
+  const photoCredit=htmlEsc(art.photographerCredit);
+  const licenseName=htmlEsc(art.licenseName);
+  const licenseUrl=htmlEsc(art.licenseUrl);
+  const changes=htmlEsc(art.modificationsDescription);
   const info=htmlEsc(fr?"Informations sur l’œuvre":"Painting information");
   return '<figure class="aoPrayReleasedArt" data-ao-pray-art-slot="'+htmlEsc(slotId)+
     '" data-ao-pray-art-release="certified">'+
@@ -128,7 +138,10 @@ export function renderReleasedPrayerArtwork(slotId,{
     '" alt="" aria-hidden="true" loading="eager" decoding="async">'+
     '<details class="aoPrayReleasedArtDetails"><summary aria-label="'+info+
     '" title="'+info+'">ⓘ</summary><figcaption><strong>'+credit+
-    '</strong><span>'+creditText+'</span><a href="'+source+
+    '</strong><span>'+creditText+'</span><span>'+
+    htmlEsc(fr?"Photographie : ":"Photograph: ")+photoCredit+'</span><span>'+
+    htmlEsc(fr?"Présentation : ":"Display: ")+changes+'</span><a href="'+licenseUrl+
+    '" target="_blank" rel="noopener noreferrer">'+licenseName+'</a><a href="'+source+
     '" target="_blank" rel="noopener noreferrer">'+
     htmlEsc(fr?"Fiche de l’œuvre":"Artwork record")+'</a></figcaption></details></div></figure>';
 }
