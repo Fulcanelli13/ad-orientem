@@ -3210,9 +3210,11 @@ function renderMercy(){
   return head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Prayer complete','Prière achevée'))+
    '<main class="aoP435930Body aoMercyReader" data-ao-mercy-complete="true">'+
     '<section class="aoMercyCompletion" data-f07-mercy-completion>'+
-     '<h2>'+esc(L('Chaplet completed','Chapelet terminé'))+'</h2>'+
-     '<button type="button" data-p435930-mercy-again>'+esc(L('Pray again','Recommencer'))+'</button>'+
-     '<button type="button" data-p435930-mercy-return>'+esc(L('Return to Prayer','Retour aux prières'))+'</button>'+
+     '<div class="aoF07MercyCompletionCrown" aria-hidden="true">'+renderMercyF07Crown(steps,steps.length-1,{french:isFr()})+'</div>'+
+     '<h2>'+esc(L('Chaplet complete','Chapelet terminé'))+'</h2>'+
+     '<p class="aoF07MercyCompletionQuote">'+esc(L('“Jesus, I trust in You.”','« Jésus, j’ai confiance en vous. »'))+'</p>'+
+     '<button type="button" class="aoF07MercyCompletionReturn" data-p435930-mercy-return>'+esc(L('Return to Prayer','Retour aux prières'))+'</button>'+
+     '<button type="button" class="aoF07MercyCompletionAgain" data-p435930-mercy-again>'+esc(L('Pray again','Recommencer'))+'</button>'+
     '</section></main>';
  }
  const index=Math.max(0,Math.min(MERCY.step,steps.length-1));MERCY.step=index;
