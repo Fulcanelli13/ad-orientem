@@ -1,0 +1,285 @@
+{
+  "schema": "ao-mass-music-m11-residual15-source-priority-v1",
+  "count": 15,
+  "original45EvidencePath": "data/research/mass-music-m11-source-role-corrected45.v1.json",
+  "roles": {
+    "GRADUAL": 11,
+    "ALLELUIA": 2,
+    "OFFERTORY": 1,
+    "COMMUNION": 1
+  },
+  "stillUnresolved": [
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "sourceRole": "gr",
+      "roleConflict": true,
+      "donorLatin": "benedictus es domine deus patrum nostrorum et laudabilis in saecula alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent02-0",
+      "sourceSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+      "sourceRole": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine deus meus in te speravi salvum me fac ex omnibus persequentibus me et libera me alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1167",
+      "sourcePath": "Tempora/Pent12-0",
+      "sourceSha": "83f334b8cfaa68f3db52d659074b1e2a0ffb26f9",
+      "sourceRole": "gr",
+      "roleConflict": true,
+      "donorLatin": "domine deus salutis meae in die clamavi et nocte coram te alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Tempora/Pent20-0",
+      "sourceSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+      "sourceRole": "gr",
+      "roleConflict": true,
+      "donorLatin": "paratum cor meum deus paratum cor meum cantabo et psallam tibi gloria mea alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-63",
+      "sourcePath": "Tempora/Pent20-0",
+      "sourceSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+      "sourceRole": "gr",
+      "roleConflict": true,
+      "donorLatin": "paratum cor meum deus paratum cor meum cantabo et psallam tibi gloria mea alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-635",
+      "sourcePath": "Tempora/Pent17-0",
+      "sourceSha": "305356033d88b59493897818cd2760d13ebd863f",
+      "sourceRole": "gr",
+      "roleConflict": true,
+      "donorLatin": "verbo domini coeli firmati sunt et spiritu oris eius omnis virtus eorum alleluia alleluia",
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-1380",
+      "sourcePath": "Tempora/Pent21-0",
+      "sourceSha": "8804e666d93fec358a44509e0219514c6142719e",
+      "sourceRole": "al",
+      "roleConflict": false,
+      "donorLatin": "in exitu israel de aegypto domus iacob de populo barbaro alleluia",
+      "sourceLines": [
+        {
+          "line": 5,
+          "role": "ALLELUIA"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-348",
+      "sourcePath": "Tempora/Epi2-0",
+      "sourceSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+      "sourceRole": "gr",
+      "roleConflict": false,
+      "donorLatin": "laudate dominum omnes angeli eius laudate eum omnes virtutes eius alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-932",
+      "sourcePath": "Tempora/Pasc3-0",
+      "sourceSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "sourceRole": "al",
+      "roleConflict": true,
+      "donorLatin": "redemptionem misit dominus populo suo alleluia",
+      "sourceLines": [
+        {
+          "line": 2,
+          "role": "ALLELUIA"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-965",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "sourceRole": "gr",
+      "roleConflict": false,
+      "donorLatin": "benedictus es domine deus patrum nostrorum et laudabilis in saecula alleluia",
+      "sourceLines": [
+        {
+          "line": 4,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-697",
+      "sourcePath": "Tempora/Pent02-0",
+      "sourceSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+      "sourceRole": "gr",
+      "roleConflict": false,
+      "donorLatin": "ad dominum cum tribularer clamavi et exaudivit me",
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-834",
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "sourceRole": "gr",
+      "roleConflict": false,
+      "donorLatin": "angelis suis deus mandavit de te ut custodiant te in omnibus viis tuis",
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-850",
+      "sourcePath": "Tempora/Quadp3-0",
+      "sourceSha": "ba4351128591379e04108d4a32d16ccc7ce15bb1",
+      "sourceRole": "gr",
+      "roleConflict": false,
+      "donorLatin": "tu es deus qui facis mirabilia solus notam fecisti in gentibus virtutem tuam",
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "GRADUAL"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-143",
+      "sourcePath": "Tempora/Pent05-0",
+      "sourceSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "sourceRole": "of",
+      "roleConflict": false,
+      "donorLatin": "benedicam dominum qui tribuit mihi intellectum providebam deum in conspectu meo semper quoniam a dextris est mihi ne commovear",
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "OFFERTORY"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    },
+    {
+      "originalScoreId": "GREGOBASE-391",
+      "sourcePath": "Tempora/Pent01-0",
+      "sourceSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "sourceRole": "co",
+      "roleConflict": false,
+      "donorLatin": "benedicimus deum coeli et coram omnibus viventibus confitebimur ei quia fecit nobiscum misericordiam suam",
+      "sourceLines": [
+        {
+          "line": 1,
+          "role": "COMMUNION"
+        }
+      ],
+      "acquisition": "VERIFY_PINNED_1962_MASS_SOURCE_AND_ORIGINAL_1961_SCORE_FOLIO_BEFORE_IMPORT",
+      "notFoundInPrintedBook": false,
+      "rejected": false,
+      "releaseApproved": false
+    }
+  ],
+  "editorialApproval": false,
+  "publicReader": false
+}
