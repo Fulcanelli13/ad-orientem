@@ -187,7 +187,6 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,reci
         '<small>'+esc(L("A pause for prayer","Une pause pour prier"))+'</small>'+
         '<h2>'+(regina?"Regina Cæli":"Angelus")+'</h2>'+
         '<p>'+esc(regina?L("Rejoice, O Queen of Heaven.","Réjouissez-vous, Reine du ciel."):L("The Angel of the Lord declared unto Mary.","L'Ange du Seigneur apporta l'annonce à Marie."))+'</p>'+
-        '<div class="aoPrayPilotEntryMeta">'+esc(regina?L("Eastertide · stand according to local custom","Temps pascal · debout selon la coutume locale"):posture)+'</div>'+
       '</section>'+
       '<div class="aoPrayPilotAngelusActions">'+
         '<div class="aoPrayPilotRecitation" role="group" aria-label="'+esc(L("Recitation","Récitation"))+'">'+
@@ -195,7 +194,6 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,reci
           '<button type="button" data-p435930-pilot-angelus-recitation="group" aria-pressed="'+String(recitation==='group')+'">'+esc(L("With others","Avec d’autres"))+'</button>'+
         '</div>'+
         '<button type="button" class="aoPrayPilotBegin" data-p435930-pilot-angelus-begin>'+esc(L("Begin prayer","Commencer la prière"))+'</button>'+
-        '<p>'+esc(L("The existing named cards, prayer text, language faces and exact gesture cues are preserved.","Les cartes, textes, langues et gestes existants sont conservés."))+'</p>'+
       '</div>'+
     '</main>';
 }
