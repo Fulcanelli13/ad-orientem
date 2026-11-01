@@ -42,7 +42,7 @@ try{
    await page.route(sourceRe,route=>{mockedPrintCount++;return route.fulfill({
     status:200,contentType:"image/png",body:smallPng})});
    await page.goto(url,{waitUntil:"domcontentloaded",timeout:60000});
-   await page.locator("#scoreSelect option").first().waitFor({timeout:35000});
+   await page.waitForFunction(()=>document.querySelector("#scoreSelect")?.options.length===7,null,{timeout:35000});
    assert.equal(await page.locator("#scoreSelect option").count(),7);
    assert.equal(await page.locator("#pageSelect option").count(),1);
    await page.locator("#engraveViewport svg").waitFor({timeout:55000});
@@ -101,7 +101,7 @@ try{
    await page.locator("#scoreSelect").selectOption("0");
    assert.equal(await page.locator("#pitch").inputValue(),"MATCH");
    await page.reload({waitUntil:"domcontentloaded",timeout:60000});
-   await page.locator("#scoreSelect option").first().waitFor({timeout:35000});
+   await page.waitForFunction(()=>document.querySelector("#scoreSelect")?.options.length===7,null,{timeout:35000});
    assert.equal(await page.locator("#pitch").inputValue(),"MATCH",
     "Page-specific review must survive a browser reload");
 
