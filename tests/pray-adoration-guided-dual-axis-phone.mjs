@@ -44,6 +44,14 @@ try{
  assert.deepEqual({mode:v.mode,card:v.card,stops:v.stops,current:v.current,overflow:v.overflow},
   {mode:"visit",card:"visit-0",stops:7,current:1,overflow:"auto"});
  assert.equal(v.nav,null,"Routine Adoration actions must be removed beside the chapter timeline");
+ const lampRail=await page.locator(timeline).evaluate(root=>({
+  layout:getComputedStyle(root.querySelector(".aoDevoStops")).display,
+  count:root.querySelectorAll(".aoDevoStop").length,
+  flame:getComputedStyle(root.querySelector(".aoDevoStop.active"),"::after").content,
+  active:root.querySelectorAll(".aoDevoStop.active").length
+ }));
+ assert.deepEqual(lampRail,{layout:"grid",count:7,flame:'""',active:1},
+  "Claude v1 Visit must show seven focusable lamp stops with one illuminated");
  assert.ok(v.active>=1,"Visit has no illuminated prayer or direction paragraph");
  const reverence=page.locator("body > .aoDevotionalActionCinematic");
  await reverence.waitFor({state:"visible",timeout:4500});
@@ -189,6 +197,18 @@ try{
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"four");assert.equal(v.stops,5);
+ const compass=await page.locator(timeline).evaluate(el=>{
+  const stops=[...el.querySelectorAll(".aoDevoStop")];
+  const coords=stops.map(b=>{const x=b.getBoundingClientRect();return {x:x.left+x.width/2,y:x.top+x.height/2}});
+  return {mode:getComputedStyle(el.querySelector(".aoDevoStops")).display,coords,active:stops.filter(b=>b.classList.contains("active")).length};
+ });
+ assert.equal(compass.mode,"block","Claude f1 cross compass must not fall back to horizontal text tabs");
+ assert.equal(compass.active,1);
+ assert.ok(compass.coords[0].y<compass.coords[1].y&&
+   compass.coords[1].x>compass.coords[3].x&&
+   compass.coords[2].y>compass.coords[1].y,
+   "Four Ends must form north/east/south/west: "+JSON.stringify(compass));
+ await page.screenshot({path:resolve(captures,"four-ends-claude-compass-390.png"),animations:"disabled"});
  assert.match(await page.locator(timeline+" [aria-current='step']").innerText(),/Adoration/i,
   "The canonical Four Ends chapter title must remain in the stage timeline");
  assert.match(await page.locator(sel+" .aoDevoCard .aoP435930GuideNow p").innerText(),/Adore Him/i,
