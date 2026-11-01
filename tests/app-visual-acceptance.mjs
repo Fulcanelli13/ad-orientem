@@ -388,7 +388,7 @@ try{
     return {on:Boolean(el?.classList?.contains("aoCinemaTransitionOn")),title};
   });
   assert.notEqual(genericCalendarTransition.title,"Calendar","Calendar ribbon navigation regressed to the fabricated generic destination cinematic");
-  await page.waitForFunction(()=>document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").length===3,null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view]").length===3,null,{timeout:5000});
   await waitForFxSettled();
   const embeddedCalendar=await page.evaluate(()=>{
     const home=document.querySelector(".homeScreen.aoTodayV2");
@@ -420,9 +420,9 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),0,"Day view should not expose the date-picker input");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),0,"obsolete decorative year wheel leaked into the Day view");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs").count(),1,"Calendar v2 three-surface navigation is missing");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").count(),3,"Calendar top navigation must be Day · Month · Liturgical Year");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").count(),0,"redundant Year Index returned to top-level Calendar navigation");
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarViews").count(),1,"Visible H7 Calendar navigation is missing");
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view]").count(),3,"Visible H7 Calendar navigation must be Day · Month · Liturgical Year");
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view='index']").count(),0,"redundant Year Index returned to visible Calendar navigation");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
   const saintLinkCount=await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count();
   assert.ok(saintLinkCount<=1,"Calendar Day duplicated the principal saint reference");
@@ -468,10 +468,10 @@ try{
   assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width: "+JSON.stringify(inPageCalendar));
   await shot("02-calendar-day");
 
-  const calendarTabs="#ao-calendar-modular-root .aoCalV2Tabs";
-  assert.equal(await page.locator(calendarTabs+" [data-cal-view]").count(),3,
+  const calendarTabs=".homeScreen.aoTodayH4 .aoH4CalendarViews";
+  assert.equal(await page.locator(calendarTabs+" [data-home-calendar-view]").count(),3,
     "H4 embedded Calendar must expose Day, Month and Liturgical Year");
-  await page.locator(calendarTabs+" [data-cal-view='year']").click();
+  await page.locator(calendarTabs+" [data-home-calendar-view='year']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:10000});
   const inlineYear=await page.evaluate(()=>({
     segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
@@ -484,7 +484,7 @@ try{
     seasons:document.querySelectorAll("#ao-calendar-modular-root [data-cal-clock-season]").length,
     obsoleteRings:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Ring").length,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    selected:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']")?.getAttribute("aria-current")??null
+    selected:document.querySelector(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineYear.segments,0,"Home Year must not duplicate Clock as a separate season bar");
   assert.equal(inlineYear.periods,0,"Home Year must not stack eleven duplicate cards");
@@ -500,7 +500,7 @@ try{
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
-  await page.locator(calendarTabs+" [data-cal-view='picker']").click();
+  await page.locator(calendarTabs+" [data-home-calendar-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
   const inlineMonth=await page.evaluate(()=>({
@@ -508,7 +508,7 @@ try{
     markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
     views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    active:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']")?.getAttribute("aria-current")??null
+    active:document.querySelector(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
