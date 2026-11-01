@@ -1,0 +1,128 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B10_V1",
+  "batchId": "AO-ART-2026-10-21-B10",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Resolve the institutional photo-rights policy gap for an already approved Class I Van Dyck selection. Preserve the existing date selection and artwork identity.",
+  "upstream": {
+    "b04": "data/research/sacred-art-b04-2026-10-21-approved-class-i-source-rights-routes.v1.json",
+    "b01": "data/research/sacred-art-b01-2026-10-21-source-identity-and-rights-batch.v1.json",
+    "candidateCatalogue": "data/calendar/sacred-art-candidates.v1.json on platform/885-sacred-art-candidates",
+    "decisionFreeze": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json"
+  },
+  "rules": {
+    "preserveExistingApproval": true,
+    "noPradoOrMirrors": true,
+    "noRatingsChanged": true,
+    "noNewCanonicalArtworkID": true,
+    "noPurchaseOrPermissionsContact": true,
+    "noImageByteRetry": true,
+    "noProductionCertification": true
+  },
+  "record": {
+    "recordId": "B10-01",
+    "priority": "Existing approved Class I selection — Palm Sunday, 2026-03-29",
+    "existingArtworkId": null,
+    "decision": "Preserve existing date-specific approval for Anthony van Dyck's Entry of Christ into Jerusalem; no replacement, new rating, or placement change.",
+    "painting": {
+      "artist": "Anthony van Dyck",
+      "title": "Entry of Christ into Jerusalem",
+      "date": "about 1617",
+      "institution": "Indianapolis Museum of Art at Newfields",
+      "accession": "58.3",
+      "medium": "oil on canvas",
+      "dimensions": "59.5 × 90.25 in (151.1 × 229.2 cm)",
+      "officialObjectUrl": "https://collection.imamuseum.org/artwork/41673/",
+      "GoogleArtsAndCultureUrl": "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ"
+    },
+    "identity": {
+      "status": "Previously verified and reconfirmed",
+      "evidence": "GAC source names title, Van Dyck, ca. 1617, oil on canvas, Newfields, and accession 58.3. This is the same object identified by B04, not a new candidate."
+    },
+    "image": {
+      "preferredExistingRoute": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "existingImageMetadata": "5043 × 3325; 2.84 MB; exact source file aspect ratio matches the canvas at 1.517. B04 reports IMA accession 58.3 in file metadata.",
+      "institutionalOpenAccessRoute": "Newfields' official licensing page states that downloadable public-domain collection image files are available through its Open Access program as high-resolution JPEGs, with no restrictions or conditions and no further permission or paperwork required.",
+      "newfieldsPolicyUrl": "https://discovernewfields.org/licensing-resources",
+      "objectSpecificAvailability": "The legacy IMA object page was not accessible to the web browser in this pass, and the current Newfields collection portal did not expose a searchable result for accession 58.3. Therefore the precise Newfields Open Access download button/file for this object was not confirmed.",
+      "fileAcquired": false,
+      "pixelsIndependentlyChecked": false,
+      "cropQa": "Canvas and B04 source have matching wide ratio; no actual source pixels inspected. Preserve full panorama and avoid center crop."
+    },
+    "rights": {
+      "painting": "Underlying painting is public domain; the GAC record labels its image rights Public Domain.",
+      "existingCommonsPhoto": "B04 verifies image-level PD-Art / Public Domain Mark for a faithful reproduction, but Commons warns protection status can differ by jurisdiction. This remains a jurisdiction-specific image route and is not upgraded to globally unrestricted.",
+      "newfieldsPhotoPolicy": "The museum states it does not claim copyright in the IMA-created artwork image files, and that its downloadable public-domain Open Access files may be used without restriction or conditions. This is strong official source-policy evidence.",
+      "rightsStatus": "Open Access reuse policy verified for eligible Newfields public-domain image files, but eligibility and an exact 58.3 file route were not confirmed. Keep this selection's reproduction rights conditionally open until the object-specific Open Access label is verified. Do not infer that all linked photos are open.",
+      "attributionIfNewfieldsFile": "Courtesy of the Indianapolis Museum of Art at Newfields.",
+      "reusePolicyUrl": "https://discovernewfields.org/licensing-resources",
+      "photoIdentityAndObjectEvidence": "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ"
+    },
+    "decisionState": {
+      "candidateDiscovered": "Previously recorded",
+      "physicalIdentityVerified": true,
+      "sourceRouteFound": true,
+      "sourceAcquired": false,
+      "reproductionRights": "POLICY_VERIFIED; OBJECT_SPECIFIC_OPEN_ACCESS_ELIGIBILITY_PENDING; EXISTING_PD_ART_ROUTE_JURISDICTION_CONDITIONAL",
+      "editorialApproved": "Pre-existing date approval preserved",
+      "productionCertified": false
+    },
+    "status": "APPROVED_WORK_IDENTITY_RECONFIRMED; NEWFIELDS_OPEN_ACCESS_POLICY_AND_ATTRIBUTION_VERIFIED; OBJECT_SPECIFIC_DOWNLOAD_NOT_CONFIRMED; NO_IMAGE_BYTES_OR_CERTIFICATION"
+  },
+  "totals": {
+    "batchTargets": 1,
+    "previouslyApprovedSelectionsReconfirmed": 1,
+    "sourceRoutesReviewed": 2,
+    "institutionalRightsPolicyFindings": 1,
+    "objectSpecificOpenAccessRoutesVerified": 0,
+    "newImageFilesAcquired": 0,
+    "imagePixelsInspected": 0,
+    "ratingsOrApprovalsChanged": 0,
+    "newCanonicalIDs": 0,
+    "productionMastersCertified": 0,
+    "strictCalendarCoverageChanges": 0
+  },
+  "progress": {
+    "baseline": {
+      "calendarCatalogue": 451,
+      "pr887CandidateSnapshot": 281,
+      "approvedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicW64FivePhysicalIDs": 109,
+      "sourceIdentityMasterLeads": 222,
+      "previouslyArchivedMasters": 8,
+      "pendingMasters": 214,
+      "classIDateAssociations": "53/53",
+      "classIStrict": "18/53",
+      "majorClassIIStrict": "13/24",
+      "otherClassIIStrict": "6/52",
+      "certifiedMasters": 0
+    },
+    "afterB10": {
+      "catalogueAndDecisionCounts": "unchanged",
+      "cumulativeB01toB10": {
+        "identityTargetsVerifiedOrReconfirmed": 33,
+        "sourceRoutes": 30,
+        "rightsFindings": 29,
+        "rawImageFilesAcquired": 0,
+        "newCanonicalIDs": 0,
+        "ratingsOrApprovalsChanged": 0,
+        "certifiedMasters": 0
+      },
+      "classIDateAssociations": "53/53 unchanged",
+      "classIStrict": "18/53 unchanged",
+      "majorClassIIStrict": "13/24 unchanged",
+      "otherClassIIStrict": "6/52 unchanged"
+    }
+  },
+  "queue": {
+    "nextPriority": [
+      "Confirm whether Newfields object 58.3 has an exact public-domain Open Access image download. Do not contact the institution; if web endpoint remains inaccessible, retain the B10 conditional status.",
+      "Continue the highest-priority approved Class I source gap that can be resolved by official object metadata and explicit reproduction rights without downloading raw bytes.",
+      "Then continue unfilled major Class II subjects, reconciling each physical object against known candidate and historical decision records before noting candidate status."
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B11 — improve the source metadata for an already approved Class I painting using a machine-readable official image endpoint; preserve all decisions and do not retry blocked file downloads."
+  }
+}

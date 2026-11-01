@@ -1,0 +1,3317 @@
+{
+  "schema": "AO_W60_SANCTORAL_LEGACY_PHYSICAL_ARTWORK_RECONCILIATION_V1",
+  "asOf": "2026-10-15",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "authority": "RESEARCH_CROSSWALK_ONLY_NOT_RUNTIME_OR_ARTISTIC_APPROVAL",
+  "inputs": {
+    "legacy": {
+      "path": "data/research/saints-of-day-legacy-art-recovery-w59-20261015.v1.json",
+      "ref": "research/w59-sanctoral-legacy-art-20261015"
+    },
+    "crosswalk": {
+      "path": "data/research/saints-of-day-legacy-identity-crosswalk-w59-20261015.v1.json",
+      "ref": "research/w59-sanctoral-legacy-art-20261015"
+    },
+    "w49": {
+      "path": "data/calendar/sacred-art-w49-post-w48-ratings-and-gaps-20261014.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "w48": {
+      "path": "data/calendar/sacred-art-w48-user-full-snapshot-20261014.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "w46": {
+      "path": "data/calendar/sacred-art-w46-cross-export-rating-authority-20261014.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "reg": {
+      "path": "data/calendar/sacred-art-candidates.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "w31": {
+      "path": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "ban": {
+      "path": "data/calendar/sacred-art-w49-permanent-original-rejection-blocklist-20261014.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "early": {
+      "path": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "w21": {
+      "path": "data/calendar/sacred-art-major-saint-source-reuse-wave21-20261014.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    },
+    "w24": {
+      "path": "data/calendar/sacred-art-major-saint-source-preview-wave24-20261014.v1.json",
+      "ref": "platform/885-sacred-art-candidates"
+    }
+  },
+  "exclusionsAndSafeguards": {
+    "globalArtistExclusions": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "permanentRejectionScoreRange": [
+      0,
+      2
+    ],
+    "ratingInheritance": "MATCHES ONLY: never auto-assign legacy approval to user rating",
+    "protectedEarlierDecisions": [
+      "W58 Gabriel: Philippe de Champaigne Annunciation already rated five",
+      "W58 Guardian Angels: Pietro da Cortona already accepted",
+      "W58 Anthony Abbot and Philip Neri prior four-star ratings preserved"
+    ],
+    "identityOwnership": "saints/2026-10-15-identity-and-holiness-pilot",
+    "noProductionMutation": true
+  },
+  "matchingPolicy": {
+    "exactEvidence": [
+      "same museum accession encoded in filename or source ID",
+      "same source URL",
+      "same Commons filename where existing preview passes identity QC"
+    ],
+    "provisionalEvidence": [
+      "artist plus matching exact title",
+      "artist plus sufficiently distinctive variant title"
+    ],
+    "caution": "Different original-painting versions by the same artist can have the same conventional title. Provisional evidence MUST be manually verified with institution/accession/photo before merging. Commons category is never physical-artwork identity.",
+    "scores": "W49 current effective scores overrule W48 historical scores; W46/W36 earlier ratings and W49 global blocklist remain authoritative and unmodified.",
+    "sourceScope": "Cross-ledger on W59 historical data versus PR #887 W48/W49, W46, 281 master, W31, W24 and earlier rating files. NOT an exhaustive W55/W56 Breviarium image-level join.",
+    "additionalInstitutionalAdjudications": [
+      "AO012 / W07-014: same Sanssouci Caravaggio, existing 5/5 maintained",
+      "AO109 / W05-027: same Rome Cerasi Chapel Caravaggio, existing 5/5 maintained",
+      "AO073 / nga-96688: same NGA museum accession and existing rating from 2026-10-13 ledger maintained",
+      "AO021 / cma-135659: DIFFERENT Murillo canvases; Prado P002809 must not inherit Cleveland rating",
+      "saint.joseph-cupertino named file: already present as Met 724811, not another physical original"
+    ]
+  },
+  "counts": {
+    "historicCalendarTarget": {
+      "saintBearingDates": 252,
+      "componentIdentities": 311,
+      "authority": "v43.33 runtime-sourced 1960 Sanctoral manifest; not equal to number of unique saints"
+    },
+    "legacyArtRules": 87,
+    "fileBearingRules": 17,
+    "fileDirectives": 18,
+    "validNamedFileDirectives": 17,
+    "categoryOnlyRules": 69,
+    "noImageDirectiveRules": 1,
+    "historicProperOriginals": 49,
+    "historicProperAssignments": 50,
+    "historicProperAssignmentsByFamily": {
+      "Sancti": 15,
+      "Tempora": 35
+    },
+    "legacyProperArtistExcluded": 4,
+    "legacyProperStatus": {
+      "EXCLUDED_BY_CURRENT_USER_ARTIST_POLICY": 4,
+      "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART": 41,
+      "CROSS_CATALOGUE_SAME_PHYSICAL_ORIGINAL_RATING_PRESERVED": 2,
+      "DISTINCT_PRADO_ORIGINAL_NOT_MERGED_WITH_SIMILAR_CMA_MURILLO": 1,
+      "MATCHED_EXACT_OBJECT_OR_FILE_REVIEW_LINK": 1
+    },
+    "exactEvidenceNamedFileDirectives": 1,
+    "probableEvidenceNamedFileDirectives": 0,
+    "w49Selected5Placements": 86,
+    "w49PermanentRejectObjects": 95,
+    "previouslyClaimedSaintFeastMissingArt": 149,
+    "updatedSaintFeastGap": "NOT_MEASURABLE_FROM_RECOVERED_W59_MANIFEST_ALONE",
+    "manualCorroboratedExistingProperOriginals": 2,
+    "sameObjectMuseumAccessionProperOriginals": 1,
+    "verifiedFalsePositiveObjectLinks": 1,
+    "historicProperArtAssignedRows": 49,
+    "historicProperRowsWithoutArtwork": 1
+  },
+  "physicalProperArtworks": [
+    {
+      "legacyArtworkId": "AO001",
+      "title": "The Annunciation",
+      "artist": "Fra Angelico",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:La_Anunciaci%C3%B3n_(Fra_Angelico-Prado).jpg",
+      "commonsFile": "La Anunciación (Fra Angelico-Prado).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3498,
+        2798
+      ],
+      "artistExcluded": true,
+      "status": "EXCLUDED_BY_CURRENT_USER_ARTIST_POLICY",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/03-25",
+          "label": "Annunciation",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO003",
+      "title": "The Nativity",
+      "artist": "Piero della Francesca",
+      "institution": "National Gallery, London",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Piero_della_francesca,_nativit%C3%A0,_1470-75,_01.jpg",
+      "commonsFile": "Piero della francesca, natività, 1470-75, 01.jpg",
+      "recordedLicence": "CC BY 3.0",
+      "legacyPixels": [
+        3344,
+        3512
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/12-25m1",
+          "label": "Christmas — Midnight Mass",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO005",
+      "title": "The Baptism of Christ",
+      "artist": "Piero della Francesca",
+      "institution": "National Gallery, London",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_-_Battesimo_di_Cristo_(National_Gallery,_London).jpg",
+      "commonsFile": "Piero della Francesca - Battesimo di Cristo (National Gallery, London).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        4147,
+        5958
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/01-13",
+          "label": "Baptism of the Lord",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO008",
+      "title": "The Transfiguration",
+      "artist": "Raphael",
+      "institution": "Vatican Museums",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg",
+      "commonsFile": "Transfiguration Raphael.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1067,
+        1608
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Quad2-0",
+          "label": "Second Sunday of Lent",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO010",
+      "title": "The Miracle of the Loaves and Fishes",
+      "artist": "Giovanni Lanfranco",
+      "institution": "National Gallery of Ireland",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "commonsFile": "Giovanni Lanfranco - Miracle of the Bread and Fish - WGA12454.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1285,
+        683
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Quad4-0",
+          "label": "Laetare Sunday",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO012",
+      "title": "The Incredulity of Saint Thomas",
+      "artist": "Caravaggio",
+      "institution": "Sanssouci Picture Gallery",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Caravaggio_incredulity.jpg",
+      "commonsFile": "Caravaggio incredulity.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        42558,
+        31589
+      ],
+      "artistExcluded": false,
+      "status": "CROSS_CATALOGUE_SAME_PHYSICAL_ORIGINAL_RATING_PRESERVED",
+      "confirmedCrossCatalogueEvidence": [
+        {
+          "candidateId": "W07-014",
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "source": "W48_USER_SNAPSHOT",
+          "rating": 5,
+          "ratingState": "CONFIRMED_5",
+          "identityEvidence": "CURATORIAL_SAME_PHYSICAL_ORIGINAL_CORROBORATED_BY_ORIGINAL_LOCATION",
+          "confidence": 58,
+          "url": "https://www.spsg.de/en/press-material-paintings",
+          "sha": null,
+          "previewsMismatch": false,
+          "confirmationSource": "https://www.spsg.de/en/press-material-paintings",
+          "manualVerification": "Same Caravaggio physical canvas at Sanssouci Picture Gallery, as specified by both source records"
+        }
+      ],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc1-0",
+          "label": "Low Sunday",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO015",
+      "title": "Pentecost",
+      "artist": "El Greco",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Pentecost%C3%A9s_(El_Greco,_1597).jpg",
+      "commonsFile": "Pentecostés (El Greco, 1597).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1365,
+        2964
+      ],
+      "artistExcluded": true,
+      "status": "EXCLUDED_BY_CURRENT_USER_ARTIST_POLICY",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc7-0",
+          "label": "Pentecost",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO019",
+      "title": "The Sacred Heart of Jesus",
+      "artist": "Pompeo Batoni",
+      "institution": "Church of the Gesù, Rome",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_of_Jesus,_Gesu_Church,_Rome.jpg",
+      "commonsFile": "Sacred Heart of Jesus, Gesu Church, Rome.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3543,
+        5231
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent02-5",
+          "label": "Sacred Heart",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO021",
+      "title": "The Immaculate Conception of Los Venerables",
+      "artist": "Bartolomé Esteban Murillo",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Murillo_immaculate_conception.jpg",
+      "commonsFile": "Murillo immaculate conception.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2012,
+        2952
+      ],
+      "artistExcluded": false,
+      "status": "DISTINCT_PRADO_ORIGINAL_NOT_MERGED_WITH_SIMILAR_CMA_MURILLO",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/12-08",
+          "label": "Immaculate Conception",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ],
+      "verifiedDifferentOriginals": [
+        {
+          "misleadingCandidateId": "cma-135659",
+          "reason": "Murillo painted multiple Immaculate Conceptions. Cleveland CMA original inventory 1959.189, dated c.1680 and 220.5×127.5 cm unframed, is NOT the Prado original P002809 dated 1660–65 and 274×190 cm",
+          "independentPradoSource": "https://www.museodelprado.es/en/the-collection/art-work/immaculate-conception-los-venerables/76179d81-beaf-4f9e-9a05-ef92340a00d1",
+          "independentClevelandSource": "https://www.clevelandart.org/art/1959.189"
+        }
+      ],
+      "originalMuseumAccession": "Prado P002809"
+    },
+    {
+      "legacyArtworkId": "AO022",
+      "title": "Assumption of the Virgin",
+      "artist": "Titian",
+      "institution": "Santa Maria Gloriosa dei Frari, Venice",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Basilica_di_Santa_Maria_Gloriosa_dei_Frari_-_The_Assumption.JPG",
+      "commonsFile": "Basilica di Santa Maria Gloriosa dei Frari - The Assumption.JPG",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2304,
+        3456
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/08-15",
+          "label": "Assumption of the Blessed Virgin Mary",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO026",
+      "title": "Christ before Pilate",
+      "artist": "Jacopo Tintoretto",
+      "institution": "Scuola Grande di San Rocco, Venice",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Jacopo_tintoretto,_cristo_davanti_a_pilato,_1564-66,_01.jpg",
+      "commonsFile": "Jacopo tintoretto, cristo davanti a pilato, 1564-66, 01.jpg",
+      "recordedLicence": "CC BY 3.0",
+      "legacyPixels": [
+        2304,
+        3208
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/10-DU",
+          "label": "Christ the King",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO034",
+      "title": "Deposition / Anointing Stone",
+      "artist": "Caravaggio",
+      "institution": "Vatican Museums",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ-Caravaggio_(c.1602-3).jpg",
+      "commonsFile": "The Entombment of Christ-Caravaggio (c.1602-3).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        8810,
+        13086
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Quad6-5",
+          "label": "Good Friday",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO067",
+      "title": "The Deliverance of the Souls from Purgatory",
+      "artist": "Peter Paul Rubens",
+      "institution": "Tournai Cathedral",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:N-D_de_Tournai_-_Rubens_JPG1.jpg",
+      "commonsFile": "N-D de Tournai - Rubens JPG1.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2386,
+        3351
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/11-02",
+          "label": "All Souls",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO073",
+      "title": "The Miraculous Draught of Fishes",
+      "artist": "Jacopo Bassano",
+      "institution": "National Gallery of Art, Washington",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Jacopo_Bassano,_The_Miraculous_Draught_of_Fishes,_1545,_NGA_96688.jpg",
+      "commonsFile": "Jacopo Bassano, The Miraculous Draught of Fishes, 1545, NGA 96688.jpg",
+      "recordedLicence": "CC0",
+      "legacyPixels": [
+        4000,
+        2318
+      ],
+      "artistExcluded": false,
+      "status": "MATCHED_EXACT_OBJECT_OR_FILE_REVIEW_LINK",
+      "confirmedCrossCatalogueEvidence": [
+        {
+          "candidateId": "nga-96688",
+          "title": "The Miraculous Draught of Fishes",
+          "artist": "Jacopo Bassano",
+          "source": "CANONICAL_281_REGISTRY",
+          "rating": 4,
+          "ratingState": "EARLIER_USER_RATING_PRESERVED",
+          "identityEvidence": "SAME_MUSEUM_ACCESSION",
+          "confidence": 100,
+          "url": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+          "sha": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+          "previewsMismatch": false
+        }
+      ],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent04-0",
+          "label": "Fourth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO082",
+      "title": "Christ in the Storm on the Sea of Galilee",
+      "artist": "Rembrandt van Rijn",
+      "institution": "Isabella Stewart Gardner Museum",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
+      "commonsFile": "Rembrandt Christ in the Storm on the Lake of Galilee.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3002,
+        3731
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Epi4-0",
+          "label": "Fourth Sunday after Epiphany",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO084",
+      "title": "Christ Cleansing the Temple",
+      "artist": "El Greco",
+      "institution": "National Gallery of Art, Washington",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:El_Greco_(Domenikos_Theotokopoulos),_Christ_Cleansing_the_Temple,_probably_before_1570,_NGA_43723.jpg",
+      "commonsFile": "El Greco (Domenikos Theotokopoulos), Christ Cleansing the Temple, probably before 1570, NGA 43723.jpg",
+      "recordedLicence": "CC0",
+      "legacyPixels": [
+        4000,
+        3109
+      ],
+      "artistExcluded": true,
+      "status": "EXCLUDED_BY_CURRENT_USER_ARTIST_POLICY",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent09-0",
+          "label": "Ninth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO085",
+      "title": "The Tribute Money",
+      "artist": "Titian",
+      "institution": "National Gallery, London",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg",
+      "commonsFile": "Titian - The Tribute Money - Google Art Project.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2766,
+        3000
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent22-0",
+          "label": "Twenty-Second Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO086",
+      "title": "The Three Youths in the Fiery Furnace",
+      "artist": "Jacopo Bassano",
+      "institution": "Museo Civico, Bassano del Grappa",
+      "commonsSource": "https://www.christianiconography.info/Venice%202022/Bassano%20Museum/tresPueriBassano.html",
+      "commonsFile": null,
+      "recordedLicence": null,
+      "legacyPixels": [
+        null,
+        null
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent07-0",
+          "label": "Seventh Sunday after Pentecost",
+          "relationship": "DAY_ART",
+          "legacyStatus": "HOLD"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO087",
+      "title": "Parable of the Unjust Steward",
+      "artist": "attributed to Marinus van Reymerswaele",
+      "institution": "Kunsthistorisches Museum, Vienna",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Parable_of_the_Unjust_Steward_Marinus_van_Reymerswaele.jpg",
+      "commonsFile": "Parable of the Unjust Steward Marinus van Reymerswaele.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3754,
+        3018
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent08-0",
+          "label": "Eighth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO088",
+      "title": "Christ Healing the Deaf-Mute",
+      "artist": "Philippe de Champaigne",
+      "institution": "University of Michigan Museum of Art",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_Christ_Healing_the_Deaf-Mute_-_Google_Art_Project.jpg",
+      "commonsFile": "Philippe de Champaigne - Christ Healing the Deaf-Mute - Google Art Project.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3091,
+        2481
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent11-0",
+          "label": "Eleventh Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO089",
+      "title": "The Gathering of the Manna / The Jews in the Desert",
+      "artist": "Jacopo Tintoretto",
+      "institution": "San Giorgio Maggiore, Venice",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Tintoretto,_raccolta_della_manna,_1594,_03.jpg",
+      "commonsFile": "Tintoretto, raccolta della manna, 1594, 03.jpg",
+      "recordedLicence": "CC BY 3.0",
+      "legacyPixels": [
+        3180,
+        2048
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent13-0",
+          "label": "Thirteenth Sunday after Pentecost",
+          "relationship": "TYPOLOGY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO090",
+      "title": "The Sermon on the Mount",
+      "artist": "Claude Lorrain",
+      "institution": "The Frick Collection",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Lorrain,_Claude_-_The_Sermon_on_the_Mount_(Frick_Collection%3B_c._1656).jpg",
+      "commonsFile": "Lorrain, Claude - The Sermon on the Mount (Frick Collection; c. 1656).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        6774,
+        4402
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent14-0",
+          "label": "Fourteenth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO091",
+      "title": "The Parable of the Unworthy Wedding Guest",
+      "artist": "attributed to Simon Kick",
+      "institution": "Rijksmuseum / loan to Museum Catharijneconvent",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:De_gelijkenis_van_de_onwaardige_bruiloftsgast._Rijksmuseum_SK-A-157.jpeg",
+      "commonsFile": "De gelijkenis van de onwaardige bruiloftsgast. Rijksmuseum SK-A-157.jpeg",
+      "recordedLicence": "CC0 / Public Domain",
+      "legacyPixels": [
+        6018,
+        4306
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent19-0",
+          "label": "Nineteenth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO092",
+      "title": "The Mourning Jews in Exile",
+      "artist": "Eduard Bendemann",
+      "institution": "Wallraf-Richartz-Museum / known variants",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Eduard_Bendemann-_Die_trauernden_Juden_im_Exil_um_1832.jpg",
+      "commonsFile": "Eduard Bendemann- Die trauernden Juden im Exil um 1832.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1706,
+        1130
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent20-0",
+          "label": "Twentieth Sunday after Pentecost",
+          "relationship": "PROPER_THEME",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO093",
+      "title": "The Parable of the Unmerciful Servant",
+      "artist": "Jan van Hemessen",
+      "institution": "University of Michigan Museum of Art",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Jan_van_Hemessen_-_The_Parable_of_the_Unmerciful_Servant.jpg",
+      "commonsFile": "Jan van Hemessen - The Parable of the Unmerciful Servant.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3709,
+        1905
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent21-0",
+          "label": "Twenty-First Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO094",
+      "title": "The Raising of Jairus' Daughter",
+      "artist": "Paolo Veronese",
+      "institution": "Louvre Museum",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Veronese_-_La_R%C3%A9surrection_de_la_fille_de_Ja%C3%AFre,_INV_141_%3B_MR_394.jpg",
+      "commonsFile": "Veronese - La Résurrection de la fille de Jaïre, INV 141 ; MR 394.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1316,
+        1500
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent23-0",
+          "label": "Twenty-Third Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO095",
+      "title": "Triumph of the Eucharist over Idolatry",
+      "artist": "Peter Paul Rubens",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Victory_of_the_Eucharist_over_Paganism_-_modello.jpg",
+      "commonsFile": "Victory of the Eucharist over Paganism - modello.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2953,
+        2126
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent01-4",
+          "label": "Corpus Christi",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO096",
+      "title": "The Crossing of the Red Sea",
+      "artist": "Nicolas Poussin",
+      "institution": "National Gallery of Victoria",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Le_Passage_de_la_mer_Rouge.jpg",
+      "commonsFile": "Nicolas Poussin - Le Passage de la mer Rouge.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2024,
+        1453
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Quad6-6",
+          "label": "Holy Saturday / Easter Vigil",
+          "relationship": "LESSON_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO097",
+      "title": "Adoration of the Magi",
+      "artist": "Peter Paul Rubens",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens,_Prado).jpg",
+      "commonsFile": "La adoración de los Reyes Magos (Rubens, Prado).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3051,
+        2131
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/01-06",
+          "label": "Epiphany",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO098",
+      "title": "Christ Among the Doctors",
+      "artist": "Paolo Veronese",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Disputa_con_los_doctores_(El_Veron%C3%A9s)_grande.jpg",
+      "commonsFile": "Disputa con los doctores (El Veronés) grande.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3051,
+        1667
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Epi1-0",
+          "label": "Holy Family",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO099",
+      "title": "Resurrection of Christ — central panel",
+      "artist": "Peter Paul Rubens",
+      "institution": "Cathedral of Our Lady, Antwerp",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "commonsFile": "Peter Paul Rubens - Resurrection of Christ triptych (central panel).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2144,
+        3000
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc0-0",
+          "label": "Easter Sunday",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO100",
+      "title": "The Good Shepherd",
+      "artist": "Philippe de Champaigne",
+      "institution": "Musée des Ursulines de Mâcon",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Le_Bon_Pasteur_Philippe_de_Champaigne.jpg",
+      "commonsFile": "Le Bon Pasteur Philippe de Champaigne.jpg",
+      "recordedLicence": "CC BY-SA 4.0",
+      "legacyPixels": [
+        2467,
+        2987
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc2-0",
+          "label": "Second Sunday after Easter / Good Shepherd Sunday",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO101",
+      "title": "The Ascension",
+      "artist": "Jacopo Tintoretto",
+      "institution": "Scuola Grande di San Rocco, Venice",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Paintings_by_Tintoretto_in_Scuola_Grande_di_San_Rocco_-_The_Ascension.jpg",
+      "commonsFile": "Paintings by Tintoretto in Scuola Grande di San Rocco - The Ascension.jpg",
+      "recordedLicence": "CC BY-SA 4.0",
+      "legacyPixels": [
+        2088,
+        3444
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc5-4",
+          "label": "Ascension",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO102",
+      "title": "Coronation of the Virgin",
+      "artist": "Diego Velázquez",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg",
+      "commonsFile": "Diego Velázquez - Coronation of the Virgin - Prado.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2292,
+        3051
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/05-31",
+          "label": "Queenship of the Blessed Virgin Mary",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO103",
+      "title": "Entry of Christ into Jerusalem",
+      "artist": "Anthony van Dyck",
+      "institution": "Indianapolis Museum of Art",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "commonsFile": "Entry of Christ into Jerusalem by Anthony van Dyck.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        5043,
+        3325
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Quad6-0",
+          "label": "Palm Sunday",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO104",
+      "title": "The Sermon of Saint John the Baptist",
+      "artist": "Pieter Bruegel the Elder",
+      "institution": "Museum of Fine Arts, Budapest",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Sermon_of_Saint_John_the_Baptist_(1566)_-_Sz%C3%A9pm%C5%B1v%C3%A9szeti_M%C3%BAzeum.jpg",
+      "commonsFile": "Pieter Bruegel the Elder - The Sermon of Saint John the Baptist (1566) - Szépművészeti Múzeum.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        12124,
+        7063
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Adv4-0",
+          "label": "Fourth Sunday of Advent",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO105",
+      "title": "The Holy Trinity",
+      "artist": "El Greco",
+      "institution": "Museo Nacional del Prado",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:La_Trinidad_(El_Greco,_1577-1579).jpg",
+      "commonsFile": "La Trinidad (El Greco, 1577-1579).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1759,
+        3051
+      ],
+      "artistExcluded": true,
+      "status": "EXCLUDED_BY_CURRENT_USER_ARTIST_POLICY",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent01-0",
+          "label": "Trinity Sunday",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO106",
+      "title": "Landscape with the Good Samaritan",
+      "artist": "Rembrandt van Rijn",
+      "institution": "Czartoryski Museum, Kraków",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Landscape_with_the_Good_Samaritan_-_Rembrandt.jpg",
+      "commonsFile": "Landscape with the Good Samaritan - Rembrandt.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        9484,
+        6675
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent12-0",
+          "label": "Twelfth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO107",
+      "title": "The Great Last Judgement",
+      "artist": "Peter Paul Rubens",
+      "institution": "Alte Pinakothek, Munich",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Great_Last_Judgement_(ca._1617).jpg",
+      "commonsFile": "Peter Paul Rubens - The Great Last Judgement (ca. 1617).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3769,
+        5000
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent24-0",
+          "label": "Last Sunday after Pentecost",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO108",
+      "title": "The Exaltation of the Cross",
+      "artist": "Juan de Valdés Leal",
+      "institution": "J. Paul Getty Museum",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Juan_de_Vald%C3%A9s_Leal_-_The_Exaltation_of_the_Cross_-_2006.20_-_J._Paul_Getty_Museum.jpg",
+      "commonsFile": "Juan de Valdés Leal - The Exaltation of the Cross - 2006.20 - J. Paul Getty Museum.jpg",
+      "recordedLicence": "Public Domain / Getty Open Content",
+      "legacyPixels": [
+        4911,
+        2811
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/09-14",
+          "label": "Exaltation of the Holy Cross",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO109",
+      "title": "Crucifixion of Saint Peter",
+      "artist": "Caravaggio",
+      "institution": "Santa Maria del Popolo, Rome",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+      "commonsFile": "Crucifixion of Saint Peter-Caravaggio (c.1600).jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        8180,
+        10537
+      ],
+      "artistExcluded": false,
+      "status": "CROSS_CATALOGUE_SAME_PHYSICAL_ORIGINAL_RATING_PRESERVED",
+      "confirmedCrossCatalogueEvidence": [
+        {
+          "candidateId": "W05-027",
+          "title": "The Crucifixion of Saint Peter",
+          "artist": "Caravaggio",
+          "source": "W48_USER_SNAPSHOT",
+          "rating": 5,
+          "ratingState": "CONFIRMED_5",
+          "identityEvidence": "CURATORIAL_SAME_PHYSICAL_ORIGINAL_CORROBORATED_BY_ORIGINAL_LOCATION",
+          "confidence": 58,
+          "url": "https://turismoroma.it/en/node/18610",
+          "sha": null,
+          "previewsMismatch": false,
+          "confirmationSource": "https://www.turismoroma.it/en/node/18610",
+          "manualVerification": "Same Caravaggio Cerasi Chapel painting in Santa Maria del Popolo, Rome"
+        }
+      ],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc6-0",
+          "label": "Sunday after Ascension",
+          "relationship": "PROPER_THEME",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO110",
+      "title": "The Temptation of Christ",
+      "artist": "Jacopo Tintoretto",
+      "institution": "Scuola Grande di San Rocco, Venice",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Paintings_by_Tintoretto_in_Scuola_Grande_di_San_Rocco_-_Sala_superiore_-_The_Temptation_of_Christ.jpg",
+      "commonsFile": "Paintings by Tintoretto in Scuola Grande di San Rocco - Sala superiore - The Temptation of Christ.jpg",
+      "recordedLicence": "CC BY-SA 4.0",
+      "legacyPixels": [
+        2790,
+        4303
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Quad1-0",
+          "label": "First Sunday of Lent",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO111",
+      "title": "Noli me tangere",
+      "artist": "Titian",
+      "institution": "National Gallery, London",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Noli-me-tangere-titien.jpg",
+      "commonsFile": "Noli-me-tangere-titien.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3520,
+        4225
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pasc3-0",
+          "label": "Third Sunday after Easter",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO112",
+      "title": "Presentation of Jesus in the Temple",
+      "artist": "Romanino (Girolamo Romani)",
+      "institution": "Pinacoteca di Brera",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Romanino,_presentazione_di_ges%C3%B9_al_tempio,_1529,_01.jpg",
+      "commonsFile": "Romanino, presentazione di gesù al tempio, 1529, 01.jpg",
+      "recordedLicence": "CC BY-SA 4.0 / Italian cultural-heritage restriction unresolved",
+      "legacyPixels": [
+        2236,
+        2884
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/02-02",
+          "label": "Presentation of the Lord / Purification of the BVM",
+          "relationship": "DAY_ART",
+          "legacyStatus": "HOLD"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO113",
+      "title": "The Visitation",
+      "artist": "Federico Barocci",
+      "institution": "Chiesa Nuova (Santa Maria in Vallicella), Rome",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Visitation_-_Chiesa_Nuova_-_Rome_2015.jpg",
+      "commonsFile": "Visitation - Chiesa Nuova - Rome 2015.jpg",
+      "recordedLicence": "CC BY-SA 4.0",
+      "legacyPixels": [
+        3376,
+        5136
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/07-02",
+          "label": "Visitation of the Blessed Virgin Mary",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO114",
+      "title": "The Birth of the Virgin",
+      "artist": "Francesco Solimena",
+      "institution": "Metropolitan Museum of Art",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:The_Birth_of_the_Virgin_MET_DT11676.jpg",
+      "commonsFile": "The Birth of the Virgin MET DT11676.jpg",
+      "recordedLicence": "CC0",
+      "legacyPixels": [
+        3077,
+        3713
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/09-08",
+          "label": "Nativity of the Blessed Virgin Mary",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO115",
+      "title": "Madonna dei Palafrenieri",
+      "artist": "Caravaggio",
+      "institution": "Galleria Borghese, Rome",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_La_Madonna_dei_Palafrenieri,_1605,_110.jpg",
+      "commonsFile": "Caravaggio - La Madonna dei Palafrenieri, 1605, 110.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        1876,
+        2582
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/10-11",
+          "label": "Maternity of the Blessed Virgin Mary",
+          "relationship": "DAY_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO116",
+      "title": "Raising the Young Man of Nain",
+      "artist": "Paolo Veronese",
+      "institution": "Kunsthistorisches Museum, Vienna",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Paolo_Caliari,_gen._Veronese,_Kunsthistorisches_Museum_Wien,_Gem%C3%A4ldegalerie_-_Erweckung_des_J%C3%BCnglings_zu_Nain_-_GG_52_-_Kunsthistorisches_Museum.jpg",
+      "commonsFile": "Paolo Caliari, gen. Veronese, Kunsthistorisches Museum Wien, Gemäldegalerie - Erweckung des Jünglings zu Nain - GG 52 - Kunsthistorisches Museum.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        3000,
+        2232
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Tempora/Pent15-0",
+          "label": "Fifteenth Sunday after Pentecost",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    },
+    {
+      "legacyArtworkId": "AO117",
+      "title": "Christ Giving the Keys of Heaven to Saint Peter",
+      "artist": "Peter Paul Rubens",
+      "institution": "Gemäldegalerie, Berlin",
+      "commonsSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(1577-1640)_-_Christ_Giving_the_Keys_of_Heaven_to_Saint_Peter_-_B.116_-_Gem%C3%A4ldegalerie.jpg",
+      "commonsFile": "Peter Paul Rubens (1577-1640) - Christ Giving the Keys of Heaven to Saint Peter - B.116 - Gemäldegalerie.jpg",
+      "recordedLicence": "Public Domain",
+      "legacyPixels": [
+        2300,
+        2634
+      ],
+      "artistExcluded": false,
+      "status": "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART",
+      "confirmedCrossCatalogueEvidence": [],
+      "possibleCrossCatalogueEvidence": [],
+      "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
+      "properAssignments": [
+        {
+          "properPath": "Sancti/02-22",
+          "label": "Chair of Saint Peter at Antioch",
+          "relationship": "GOSPEL_ART",
+          "legacyStatus": "GREEN"
+        }
+      ]
+    }
+  ],
+  "saintArtworkRules": [
+    {
+      "legacyIdentity": "saint.joseph-cupertino",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Joseph of Cupertino"
+      ],
+      "identityMustInclude": [
+        "joseph",
+        "cupertino"
+      ],
+      "identityMustBlock": [
+        "joseph calasanz",
+        "joseph the worker"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:A Miracle of Saint Joseph of Cupertino (1603–1663) MET costanzi.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [
+            {
+              "candidateId": "met-724811",
+              "title": "A Miracle of Saint Joseph of Cupertino",
+              "artist": "Placido Costanzi",
+              "source": "CANONICAL_281_REGISTRY",
+              "rating": null,
+              "ratingState": "CANDIDATE",
+              "identityEvidence": "MUSEUM_TITLE_ARTIST_OBJECT_AND_DATE_CONFIRMATION",
+              "confidence": 95,
+              "url": "https://www.metmuseum.org/art/collection/search/724811",
+              "sha": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
+              "previewsMismatch": false,
+              "confirmationSource": "https://www.metmuseum.org/art/collection/search/724811",
+              "metMuseumAccession": "2016.394",
+              "manualVerification": "Legacy file names Placido Costanzi Met painting, Met catalog directly identifies same miracle depiction, artist/date and open-access painting; reuses existing met-724811 canonical record, not a newly found original"
+            }
+          ],
+          "possibleMatches": [],
+          "state": "REUSE_EXISTING_MET_724811_NOT_NEW_ARTWORK"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.thomas-aquinas",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Thomas Aquinas"
+      ],
+      "identityMustInclude": [
+        "thomas",
+        "aquinas"
+      ],
+      "identityMustBlock": [
+        "thomas apostle",
+        "thomas becket",
+        "thomas villanova"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.camillus-de-lellis",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Camillus de Lellis"
+      ],
+      "identityMustInclude": [
+        "camillus",
+        "lellis"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.peter-apostle",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Peter"
+      ],
+      "identityMustInclude": [
+        "peter"
+      ],
+      "identityMustBlock": [
+        "peter chrysologus",
+        "peter nolasco",
+        "peter of alexandria",
+        "peter celestine"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.paul-apostle",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Paul"
+      ],
+      "identityMustInclude": [
+        "paul"
+      ],
+      "identityMustBlock": [
+        "paul the first hermit",
+        "paul of the cross"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.barbara-nicomedia",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Barbara"
+      ],
+      "identityMustInclude": [
+        "barbara"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.anastasia-sirmium",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Anastasia of Sirmium"
+      ],
+      "identityMustInclude": [
+        "anastasia"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "angel.gabriel",
+      "kind": "angel",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Archangel Gabriel"
+      ],
+      "identityMustInclude": [
+        "gabriel"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "angel.raphael",
+      "kind": "angel",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Archangel Raphael"
+      ],
+      "identityMustInclude": [
+        "raphael"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "angel.michael",
+      "kind": "angel",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Archangel Michael"
+      ],
+      "identityMustInclude": [
+        "michael"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.augustine-canterbury",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Augustine of Canterbury"
+      ],
+      "identityMustInclude": [
+        "augustine",
+        "canterbury"
+      ],
+      "identityMustBlock": [
+        "hippo"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.augustine-hippo",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Augustine of Hippo"
+      ],
+      "identityMustInclude": [
+        "augustine",
+        "hippo"
+      ],
+      "identityMustBlock": [
+        "canterbury"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.ignatius-antioch",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Ignatius of Antioch"
+      ],
+      "identityMustInclude": [
+        "ignatius",
+        "antioch"
+      ],
+      "identityMustBlock": [
+        "loyola"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.ignatius-loyola",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Ignatius of Loyola"
+      ],
+      "identityMustInclude": [
+        "ignatius",
+        "loyola"
+      ],
+      "identityMustBlock": [
+        "antioch"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.boniface-mainz",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Boniface of Mainz"
+      ],
+      "identityMustInclude": [
+        "boniface"
+      ],
+      "identityMustBlock": [
+        "tarsus"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.boniface-tarsus",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Boniface of Tarsus"
+      ],
+      "identityMustInclude": [
+        "boniface",
+        "tarsus"
+      ],
+      "identityMustBlock": [
+        "mainz",
+        "winfrid"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.therese-lisieux",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Thérèse of Lisieux"
+      ],
+      "identityMustInclude": [
+        "therese",
+        "lisieux"
+      ],
+      "identityMustBlock": [
+        "avila"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.teresa-avila",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Teresa of Ávila"
+      ],
+      "identityMustInclude": [
+        "teresa",
+        "avila"
+      ],
+      "identityMustBlock": [
+        "lisieux"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.beheading-john-baptist",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Beheading of John the Baptist"
+      ],
+      "identityMustInclude": [
+        "john",
+        "baptist"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.conversion-paul",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Conversion of Paul the Apostle"
+      ],
+      "identityMustInclude": [
+        "paul"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.stigmata-francis",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Stigmatisation of Saint Francis"
+      ],
+      "identityMustInclude": [
+        "francis",
+        "stigm"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.martin-tours",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Martin of Tours"
+      ],
+      "identityMustInclude": [
+        "martin",
+        "tours"
+      ],
+      "identityMustBlock": [
+        "martin i",
+        "pope martin"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.thomas-becket",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Thomas Becket"
+      ],
+      "identityMustInclude": [
+        "thomas",
+        "becket"
+      ],
+      "identityMustBlock": [
+        "aquinas",
+        "apostle",
+        "villanova"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.thomas-villanova",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Thomas of Villanova"
+      ],
+      "identityMustInclude": [
+        "thomas",
+        "villanova"
+      ],
+      "identityMustBlock": [
+        "aquinas",
+        "apostle",
+        "becket"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.hyacinth-poland",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Hyacinth of Poland"
+      ],
+      "identityMustInclude": [
+        "hyacinth"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.eusebius-vercelli",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Eusebius of Vercelli"
+      ],
+      "identityMustInclude": [
+        "eusebius",
+        "vercelli"
+      ],
+      "identityMustBlock": [
+        "rome",
+        "caesarea",
+        "pope eusebius"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.eusebius-rome",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Eusebius of Rome"
+      ],
+      "identityMustInclude": [
+        "eusebius",
+        "rome"
+      ],
+      "identityMustBlock": [
+        "vercelli",
+        "caesarea",
+        "pope eusebius"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.felix-valois",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Félix de Valois"
+      ],
+      "identityMustInclude": [
+        "felix",
+        "valois"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.agapitus-praeneste",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Agapitus of Palestrina"
+      ],
+      "identityMustInclude": [
+        "agapitus"
+      ],
+      "identityMustBlock": [
+        "sixtus",
+        "felicissimus"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.thomas-apostle",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Thomas"
+      ],
+      "identityMustInclude": [
+        "thomas"
+      ],
+      "identityMustBlock": [
+        "aquinas",
+        "becket",
+        "villanova"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.chair-peter",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Cathedra Petri"
+      ],
+      "identityMustInclude": [
+        "peter"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.nativity-john-baptist",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Birth of John the Baptist"
+      ],
+      "identityMustInclude": [
+        "john",
+        "baptist"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.john-bosco",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Giovanni Bosco"
+      ],
+      "identityMustInclude": [
+        "bosco"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.francis-de-sales",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Francis de Sales"
+      ],
+      "identityMustInclude": [
+        "francis",
+        "sales"
+      ],
+      "identityMustBlock": [
+        "francis assisi",
+        "francis caracciolo",
+        "francis borgia"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.john-chrysostom",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "John Chrysostom",
+        "John Chrysostom in art"
+      ],
+      "identityMustInclude": [
+        "john",
+        "chrysostom"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.paul-the-first-hermit",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Paul of Thebes",
+        "Paintings of Saint Paul of Thebes"
+      ],
+      "identityMustInclude": [
+        "paul",
+        "thebes"
+      ],
+      "identityMustBlock": [
+        "paul apostle"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.anthony",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Saint Anthony the Great",
+        "Saint Anthony the Great in art"
+      ],
+      "identityMustInclude": [
+        "anthony"
+      ],
+      "identityMustBlock": [
+        "padua"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.anthony-of-padua",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Anthony of Padua"
+      ],
+      "identityMustInclude": [
+        "anthony",
+        "padua"
+      ],
+      "identityMustBlock": [
+        "anthony the great"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.agnes",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Agnes of Rome"
+      ],
+      "identityMustInclude": [
+        "agnes"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.barnabas",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Saint Barnabas",
+        "Paintings of Saint Barnabas"
+      ],
+      "identityMustInclude": [
+        "barnabas"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.basil-the-great",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Basil of Caesarea"
+      ],
+      "identityMustInclude": [
+        "basil"
+      ],
+      "identityMustBlock": [
+        "ancyra"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.norbert",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Norbert of Xanten",
+        "Norbert of Xanten in art"
+      ],
+      "identityMustInclude": [
+        "norbert"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.francis-caracciolo",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Francesco Caracciolo"
+      ],
+      "identityMustInclude": [
+        "francis",
+        "caracciolo"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.peter-nolasco",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Peter Nolasco"
+      ],
+      "identityMustInclude": [
+        "peter",
+        "nolasco"
+      ],
+      "identityMustBlock": [
+        "peter apostle"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.raymond-of-penafort",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Raimundo de Peñafort"
+      ],
+      "identityMustInclude": [
+        "raymond"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.erasmus-formia",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Erasmus"
+      ],
+      "identityMustInclude": [
+        "erasmus"
+      ],
+      "identityMustBlock": [
+        "desiderius",
+        "rotterdam"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.euphemia-chalcedon",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Saint Euphemia",
+        "Saint Euphemia in art"
+      ],
+      "identityMustInclude": [
+        "euphemia"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.giles",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Saint Giles",
+        "Saint Giles in art"
+      ],
+      "identityMustInclude": [
+        "giles"
+      ],
+      "identityMustBlock": [
+        "cathedral",
+        "edinburgh"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.juvenal-narni",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Saint Juvenal",
+        "San Giovenale Triptych"
+      ],
+      "identityMustInclude": [
+        "juvenal",
+        "giovenale"
+      ],
+      "identityMustBlock": [
+        "juvenal satirist"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.martin-i-pope",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Martinus I"
+      ],
+      "identityMustInclude": [
+        "martin"
+      ],
+      "identityMustBlock": [
+        "martin of tours",
+        "luther"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.pancras-rome",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saint Pancratius"
+      ],
+      "identityMustInclude": [
+        "pancr",
+        "pankr"
+      ],
+      "identityMustBlock": [
+        "station",
+        "railway",
+        "london"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.peter-chrysologus",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Peter Chrysologus"
+      ],
+      "identityMustInclude": [
+        "peter",
+        "chrysolog"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.symphorian-autun",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Symphorian"
+      ],
+      "identityMustInclude": [
+        "symphor"
+      ],
+      "identityMustBlock": [
+        "abbey",
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.innocent-i-pope",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Innocentius I",
+        "Portraits of Innocentius I"
+      ],
+      "identityMustInclude": [
+        "innocent"
+      ],
+      "identityMustBlock": [
+        "innocent ii",
+        "innocent iii",
+        "innocent iv",
+        "innocent v",
+        "innocent vi",
+        "innocent vii",
+        "innocent viii",
+        "innocent ix",
+        "innocent x",
+        "innocent xi",
+        "innocent xii",
+        "innocent xiii"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.martha-bethany",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Saint Martha",
+        "Paintings of Saint Martha"
+      ],
+      "identityMustInclude": [
+        "martha"
+      ],
+      "identityMustBlock": [
+        "martha washington",
+        "santa marta"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.victor-i-pope",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Victor I"
+      ],
+      "identityMustInclude": [
+        "victor"
+      ],
+      "identityMustBlock": [
+        "victor ii",
+        "victor iii",
+        "victor iv"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.transfiguration-christ",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 3,
+      "categories": [
+        "Transfiguration of Jesus Christ",
+        "Transfiguration of Jesus Christ in art",
+        "Paintings of the transfiguration of Jesus Christ"
+      ],
+      "identityMustInclude": [
+        "transfiguration",
+        "christ"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "saint.felix-ii",
+      "kind": "saint",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "felix"
+      ],
+      "identityMustBlock": [
+        "felix i",
+        "felix iii",
+        "felix iv",
+        "felix valois"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Felix II antipapa.JPG",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": "ANTIPOPE_FILE_IDENTITY_MUST_BE_REJECTED_OR_ADJUDICATED"
+    },
+    {
+      "legacyIdentity": "event.dedication-michael",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "michael"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [
+        {
+          "file": "File:St. Michael, Archangel Met DP891138.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.forty-martyrs-sebaste",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Forty Martyrs of Sebaste in icons",
+        "Forty Martyrs of Sebaste"
+      ],
+      "identityMustInclude": [
+        "forty",
+        "martyrs",
+        "sebaste"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.four-crowned-martyrs",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 3,
+      "categories": [
+        "Martyrdom of the Four Crowned Saints by Jacopo Ligozzi",
+        "Triptych of the Four Crowned Martyrs",
+        "Four Crowned Martyrs"
+      ],
+      "identityMustInclude": [
+        "crowned",
+        "martyrs"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.marcellinus-peter",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Marcellinus and Peter"
+      ],
+      "identityMustInclude": [
+        "marcellinus",
+        "peter"
+      ],
+      "identityMustBlock": [
+        "pope marcellinus"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.cyprian-justina",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Cyprian and Justina",
+        "Cyprian and Justina in icons"
+      ],
+      "identityMustInclude": [
+        "cyprian",
+        "justina"
+      ],
+      "identityMustBlock": [
+        "cyprian of carthage"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.protus-hyacinth",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saints Protus and Hyacinth"
+      ],
+      "identityMustInclude": [
+        "protus",
+        "hyacinth"
+      ],
+      "identityMustBlock": [
+        "hyacinth of poland"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.felix-adauctus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saints Felix and Adauctus"
+      ],
+      "identityMustInclude": [
+        "felix",
+        "adauctus"
+      ],
+      "identityMustBlock": [
+        "felix ii",
+        "felix of valois",
+        "felix of nola"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.vitus-modestus-crescentia",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Vitus, Modestus and Crescentia"
+      ],
+      "identityMustInclude": [
+        "vitus",
+        "modestus",
+        "crescentia"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.sergius-bacchus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Icons of Serge and Bacchus",
+        "Saints Sergius and Bacchus"
+      ],
+      "identityMustInclude": [
+        "sergius",
+        "bacchus"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.maurice-theban-legion",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 3,
+      "categories": [
+        "Martyrdom of Saint Maurice and the Theban Legion by Jacopo Pontormo",
+        "Martyrdom of the Theban Legion by Sebastiano Vini",
+        "Theban Legion"
+      ],
+      "identityMustInclude": [
+        "maurice",
+        "theban"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.domitilla-nereus-achilleus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Domitilla with Nereus and Achilleus (Rubens)"
+      ],
+      "identityMustInclude": [
+        "domitilla",
+        "nereus",
+        "achilleus"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.holy-innocents",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Paintings of the Massacre of the Innocents",
+        "Massacre of the Innocents"
+      ],
+      "identityMustInclude": [
+        "innocents",
+        "massacre"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "event.joseph-worker",
+      "kind": "event",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 3,
+      "categories": [
+        "Paintings of Saint Joseph as Carpenter",
+        "Saint Joseph as carpenter",
+        "Joseph the Carpenter by Georges de La Tour"
+      ],
+      "identityMustInclude": [
+        "joseph",
+        "carpenter",
+        "worker"
+      ],
+      "identityMustBlock": [
+        "joseph cupertino",
+        "joseph calasanz"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.seven-holy-brothers",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "seven",
+        "brothers"
+      ],
+      "identityMustBlock": [
+        "seven sleepers",
+        "maccabees"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:SevenBrothers.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.rufina-secunda",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 2,
+      "categories": [
+        "Martirio delle sante Rufina e Seconda",
+        "Rufina and Secunda"
+      ],
+      "identityMustInclude": [
+        "rufina",
+        "secunda"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [],
+      "state": "CATEGORY_ONLY_NOT_PAINTING_IN_HAND",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.nazarius-celsus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Nazarius and Celsus"
+      ],
+      "identityMustInclude": [
+        "nazarius",
+        "celsus"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:St. Nazarius and St. Celsus Met DP891050.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        },
+        {
+          "file": "File:Nazarius Celsus.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.tiburtius-valerian-maximus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Tiburtius, Valerian and Maximus"
+      ],
+      "identityMustInclude": [
+        "tiburtius",
+        "valerian",
+        "maximus"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Pietro sorri the martyrdom of saints valerian tiburtius and maximus085036).jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.peter-paul-apostles",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Saints Peter and Paul by Masolino"
+      ],
+      "identityMustInclude": [
+        "peter",
+        "paul"
+      ],
+      "identityMustBlock": [
+        "church building",
+        "wildpark"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Masolino - Saints Paul and Peter - Google Art Project.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.lucy-geminianus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "lucy",
+        "geminianus"
+      ],
+      "identityMustBlock": [
+        "lucy of syracuse"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Lucy and Geminianus (Menologion of Basil II).jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.placidus-companions",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "placid",
+        "companions"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Santa Giustina (Padua) - Martyrdom of St. Placidus by Luca Giordano.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.sixtus-ii-felicissimus-agapitus",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "sixtus",
+        "felicissimus",
+        "agapitus"
+      ],
+      "identityMustBlock": [
+        "agapetus ii",
+        "pope agapetus"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:PopesixtusII.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.januarius-companions",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "januarius",
+        "fellows"
+      ],
+      "identityMustBlock": [],
+      "namedFiles": [
+        {
+          "file": "File:The Martyrdom of Saint Januarius and his Fellows (SM 1827).png",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.hippolytus-cassian",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "hippolytus",
+        "cassian"
+      ],
+      "identityMustBlock": [
+        "church building"
+      ],
+      "namedFiles": [
+        {
+          "file": "Pietà",
+          "validSpecificCommonsFileDirective": false,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "INVALID_OR_AMBIGUOUS_FILE_DIRECTIVE"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": "GENERIC_PIETA_NOT_SPECIFIC_FILE"
+    },
+    {
+      "legacyIdentity": "group.cornelius-cyprian-carthage",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "cornelius",
+        "cyprian"
+      ],
+      "identityMustBlock": [
+        "church building",
+        "last supper"
+      ],
+      "namedFiles": [],
+      "state": "NO_ACTIONABLE_IMAGE_DIRECTIVE",
+      "safetyFlag": "NO_SOURCE_FILE_OR_CATEGORY"
+    },
+    {
+      "legacyIdentity": "group.eustace-family",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Martyrdom of Saint Eustace and his family - San Stae (Venice)"
+      ],
+      "identityMustInclude": [
+        "eustace",
+        "family"
+      ],
+      "identityMustBlock": [
+        "vision of saint eustace",
+        "stag"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:EustaceDeathFerdinandi.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.nabor-felix",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Nabor and Felix"
+      ],
+      "identityMustInclude": [
+        "nabor",
+        "felix"
+      ],
+      "identityMustBlock": [
+        "church building",
+        "reliquary"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:OrazioSamacchini-1.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.seven-servite-founders",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 1,
+      "categories": [
+        "Seven founders of the Servite Order"
+      ],
+      "identityMustInclude": [
+        "seven",
+        "founders",
+        "servite"
+      ],
+      "identityMustBlock": [
+        "servite church",
+        "servite monastery",
+        "coat of arms"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Agostino Masucci - The Madonna with the Seven Founders of the Servite Order - 1977.485 - Art Institute of Chicago.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.holy-maccabees",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "maccabee",
+        "martyrs"
+      ],
+      "identityMustBlock": [
+        "maccabean revolt",
+        "judas maccabeus",
+        "tomb"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Bible Etienne Harding 14 191 Martyre des sept frères Maccabées a.jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    },
+    {
+      "legacyIdentity": "group.ursula-companions",
+      "kind": "group",
+      "historicApprovalNotCurrentRating": true,
+      "categoryCount": 0,
+      "categories": [],
+      "identityMustInclude": [
+        "ursula",
+        "companions"
+      ],
+      "identityMustBlock": [
+        "saint ursula alone",
+        "portrait of saint ursula"
+      ],
+      "namedFiles": [
+        {
+          "file": "File:Bologna, fresco of St Ursula and companions, Chiesa della Trinità o del Martyrium (Santo Stefano).jpg",
+          "validSpecificCommonsFileDirective": true,
+          "exactMatches": [],
+          "possibleMatches": [],
+          "state": "EXACT_FILE_NOT_IN_EXAMINED_LEDGER"
+        }
+      ],
+      "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
+      "safetyFlag": null
+    }
+  ],
+  "protectedFeastLeadExamples": [
+    {
+      "identity": "saint.anthony",
+      "reason": "Category-only rule; W58 4-star original(s) protected; do not claim a new painting"
+    },
+    {
+      "identity": "saint.barnabas",
+      "reason": "Category only, no physical candidate"
+    },
+    {
+      "identity": "saint.boniface-mainz",
+      "reason": "Category only, exact Boniface Mainz identity lock"
+    },
+    {
+      "identity": "saint.ignatius-antioch",
+      "reason": "Category only, not Loyola"
+    },
+    {
+      "identity": "saint.john-bosco",
+      "reason": "Category only"
+    },
+    {
+      "identity": "saint.martha-bethany",
+      "reason": "Category only"
+    },
+    {
+      "identity": "angel.gabriel",
+      "reason": "Existing W58 five-star current painting reuse; historical category adds no physical artwork"
+    },
+    {
+      "identity": "group.cornelius-cyprian-carthage",
+      "reason": "No file or category; identity only"
+    }
+  ],
+  "coverageRecalculationBlocker": {
+    "priorReportedMissingSaintFeastEntries": 149,
+    "reason": "W59 contains only historical summary 311 components/252 dates, legacy 87 rule identities, and 27 date overrides. It does NOT serialize an exhaustive 1962 authoritative 149-row feast coverage list nor a crosswalk from 2026 date IDs to current artwork IDs; W57/W58 and 83 Breviarium plates are not available as complete machine-readable source files in examined branches. Also, W59's 50 Proper rows include one legacy NO_ART status, not 50 painting assignments; this old no-art state is not a permanent current rejection.",
+    "minimumRequired": [
+      "authoritative date/feast identity rows for the baseline 149",
+      "current W57/W58 dated approved placement ledger and exact artwork IDs",
+      "W55/W56/Breviarium 83 physical plate inventory with object/source IDs",
+      "sanctoral calendar ownership reconciliation before percentages"
+    ],
+    "safestCurrentClaim": "Number of 149 genuinely still uncovered is INDETERMINATE, not 149 and not 149 minus historical rules. No new certified feast coverage from mere categories or old resolver approval."
+  },
+  "noNewScoringSheetYet": "Unmatched proper records and named-file leads are research candidates only; any may already be covered by W55/W56/Breviarium or user-reviewed images with different source aliases. Do not show another user rating sheet before exhaustive physical matching.",
+  "legacyProperUnassignedRows": [
+    {
+      "properPath": "Tempora/Pent16-0",
+      "label": "Sixteenth Sunday after Pentecost",
+      "status": "NO_ART",
+      "relationship": "DAY_ART",
+      "decisionSource": "PM7/PM8",
+      "note": "Intentional NO_ART: no painting cleared at the required standard; weak prints remain excluded.",
+      "currentUserRating": null,
+      "reviewStatus": "LEGACY_MAPPING_NOT_CURRENT_USER_APPROVAL"
+    }
+  ]
+}

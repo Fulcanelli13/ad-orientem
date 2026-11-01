@@ -1,0 +1,946 @@
+{
+  "schema": "AO_SACRED_ART_P0_CLASS_I_SOURCE_RECOVERY_AND_CLASS_II_11_EDITORIAL_TRIAGE_V1",
+  "asOf": "2026-10-20",
+  "status": "SOURCE_IDENTIFICATION_AND_EDITORIAL_TRIAGE_NOT_PUBLICATION_OR_NEW_ARTWORK_APPROVAL",
+  "inputSources": {
+    "p0DateRegister": "data/research/sacred-art-p0-77-calendar-lock-reconciliation-20261020.v1.json",
+    "currentClassISelections": "data/research/sacred-art-class-i-53-current-date-decisions-overlay-20261020.v1.json",
+    "frozenDecisions": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+    "bulkRegistry": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
+  },
+  "summary": {
+    "classIDatesWithNoPriorObjectURL": 31,
+    "distinctPaintingTitleArtistLabels": 30,
+    "classIExistingExactTitleArtistCandidates": 5,
+    "classIObjectResearchStatusCounts": {
+      "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD": 24,
+      "OBJECT_MATCH_RESEARCHED_OFFICIAL_SOURCE_NOT_REPRODUCTION_CERTIFIED": 5,
+      "SOURCE_LEAD_HOLD_OR_UNCERTAIN": 2
+    },
+    "classIExistingDataWithSourceURLRecovered": 0,
+    "classIReleaseCertified": 0,
+    "majorClassIIReviewed": 11,
+    "majorClassIIGroupCounts": {
+      "CONTEXTUAL_OLD_ART_NEEDS_FEAST_EXACT": 4,
+      "NO_APPROVED_PRIMARY_OLDER": 4,
+      "OLDER_FEAST_EXACT_NEEDS_IDENTITY_JOIN": 3
+    },
+    "majorClassIIReleaseCertified": 0,
+    "priorClassIIDateStrictEditorialMatches": 13
+  },
+  "rules": [
+    "Research object URLs must not overwrite the frozen 53-date selection overlay until one-to-one physical original is evidenced.",
+    "Official object identity is not the same as an open, usable reproduction.",
+    "No Prado image extraction, third-party mirrors, correspondence, rights requests, or paid licences.",
+    "AI-derived visual drafts must remain labelled derivative and require distinct rights and composition-fidelity review.",
+    "The Christ the King Benson/Christie's lot is identity-uncertain, not an authorized object substitution.",
+    "Raphael Vatican original MV.40333 must never be replaced by the Prado copy P000315.",
+    "Historically approved image subject relevance does not automatically create new date primary approvals.",
+    "Release stays false for every record."
+  ],
+  "classISourceRecovery": [
+    {
+      "date": "2026-01-01",
+      "subject": "Octave Day of Christmas",
+      "selectedArtwork": {
+        "title": "The Circumcision",
+        "artist": "Tintoretto and workshop",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-02-22",
+      "subject": "I Sunday of Lent",
+      "selectedArtwork": {
+        "title": "Christ in the Desert",
+        "artist": "Ivan Kramskoi",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 1,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "State Tretyakov Gallery",
+        "artworkTitle": "Christ in the Desert",
+        "sourceUrl": "https://my.tretyakov.ru/app/masterpiece/8448",
+        "inventory": "651",
+        "identity": "OFFICIAL_OBJECT_TITLE_ARTIST_INVENTORY_MATCH",
+        "photo": "NEEDS_INDEPENDENT_RIGHTS_AND_MASTER",
+        "researchNote": "Oil on canvas (1872); Christ's temptation theme. Exact physical original identified.",
+        "priority": 1
+      },
+      "status": "OBJECT_MATCH_RESEARCHED_OFFICIAL_SOURCE_NOT_REPRODUCTION_CERTIFIED",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-01",
+      "subject": "II Sunday of Lent",
+      "selectedArtwork": {
+        "title": "The Transfiguration",
+        "artist": "Raphael",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 1,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "Vatican Museums, Pinacoteca",
+        "artworkTitle": "The Transfiguration",
+        "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html",
+        "inventory": "MV.40333",
+        "identity": "OFFICIAL_OBJECT_TITLE_ARTIST_MATCH",
+        "photo": "NEEDS_INDEPENDENT_RIGHTS_AND_MASTER",
+        "researchNote": "Original Raphael 1516–1520. EXPLICITLY EXCLUDE Prado P000315 (copy) and Prado image sources. Upper Transfiguration coexists with lower healing scene.",
+        "priority": 1
+      },
+      "status": "OBJECT_MATCH_RESEARCHED_OFFICIAL_SOURCE_NOT_REPRODUCTION_CERTIFIED",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-08",
+      "subject": "III Sunday of Lent",
+      "selectedArtwork": {
+        "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+        "artist": "AI-derived after Giacomo Cavedone",
+        "role": "GOSPEL_EPISODE"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": true,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-15",
+      "subject": "IV Sunday of Lent",
+      "selectedArtwork": {
+        "title": "Miracle of Loaves and Fishes",
+        "artist": "Giovanni Lanfranco",
+        "role": "HISTORICAL_APPROVED_ASSOCIATION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [
+        {
+          "id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "approvedInFrozenSet": true,
+          "blockedInFrozenSet": false,
+          "sourceProvider": "NO_EXACT_OPEN_SOURCE",
+          "objectUrl": null,
+          "sourceImageRoute": null,
+          "imageRightsCleared": false,
+          "fullOriginalProof": false
+        }
+      ],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-22",
+      "subject": "Passion Sunday",
+      "selectedArtwork": {
+        "title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+        "artist": "AI-derived after Lucas van Doetechum",
+        "role": "GOSPEL_EPISODE"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": true,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-29",
+      "subject": "Palm Sunday",
+      "selectedArtwork": {
+        "title": "The Entry of Christ into Jerusalem",
+        "artist": "Anthony van Dyck",
+        "role": "LITURGICAL_PROCESSION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-30",
+      "subject": "Feria II of Holy Week",
+      "selectedArtwork": {
+        "title": "The Anointing at Bethany",
+        "artist": "Peter Paul Rubens and Anthony van Dyck",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-03-31",
+      "subject": "Feria III of Holy Week",
+      "selectedArtwork": {
+        "title": "The Taking of Christ",
+        "artist": "Caravaggio",
+        "role": "PASSION_NARRATIVE_EXCERPT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-04-04",
+      "subject": "Holy Saturday",
+      "selectedArtwork": {
+        "title": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+        "artist": "James Tissot; John Martin",
+        "role": "TWO_OF_FOUR_OT_PROPHECIES_USER_SUFFICIENT"
+      },
+      "priority": 1,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-04-05",
+      "subject": "Easter Sunday",
+      "selectedArtwork": {
+        "title": "The Holy Women at the Tomb",
+        "artist": "William-Adolphe Bouguereau",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-04-06",
+      "subject": "Monday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "The Supper at Emmaus",
+        "artist": "Caravaggio",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-04-07",
+      "subject": "Tuesday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Appearance of Christ to His Disciples",
+        "artist": "Anthony van Dyck",
+        "role": "RELATED_RESURRECTION_APPEARANCE_NOT_EXACT_LUKE"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-04-09",
+      "subject": "Thursday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Christ and St Mary Magdalen at the Tomb",
+        "artist": "Rembrandt",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-04-11",
+      "subject": "Saturday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Peter and John Running to the Sepulchre",
+        "artist": "Eugène Burnand",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-05-01",
+      "subject": "St. Joseph the Workman",
+      "selectedArtwork": {
+        "title": "Saint Joseph the Carpenter",
+        "artist": "Georges de La Tour",
+        "role": "FEAST_PERSON_AND_WORK"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-05-25",
+      "subject": "Monday after Pentecost",
+      "selectedArtwork": {
+        "title": "Nicodemus",
+        "artist": "Henry Ossawa Tanner",
+        "role": "RELATED_GOSPEL_CONTEXT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-05-28",
+      "subject": "Thursday after Pentecost",
+      "selectedArtwork": {
+        "title": "The Sending Out of the Twelve Disciples",
+        "artist": "Anonymous North Netherlandish",
+        "role": "GOSPEL_EXACT_OR_PARALLEL_MISSION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-05-30",
+      "subject": "Ember Saturday of Pentecost",
+      "selectedArtwork": {
+        "title": "Jesus Restoring to Health Peter's Wife's Mother",
+        "artist": "John Bridges",
+        "role": "GOSPEL_EPISODE"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-06-12",
+      "subject": "Sacred Heart of Jesus",
+      "selectedArtwork": {
+        "title": "The Lance Thrust",
+        "artist": "Anthony van Dyck",
+        "role": "HISTORICAL_APPROVED_ASSOCIATION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [
+        {
+          "id": "ART-nthony-van-yck-he-ance-hrust",
+          "approvedInFrozenSet": true,
+          "blockedInFrozenSet": false,
+          "sourceProvider": "NO_EXACT_OPEN_SOURCE",
+          "objectUrl": null,
+          "sourceImageRoute": null,
+          "imageRightsCleared": false,
+          "fullOriginalProof": false
+        }
+      ],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-06-24",
+      "subject": "Nativity of St. John the Baptist",
+      "selectedArtwork": {
+        "title": "The Birth of Saint John the Baptist",
+        "artist": "Andrea Sacchi",
+        "role": "GOSPEL_EXACT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-07-01",
+      "subject": "The Precious Blood of Our Lord Jesus Christ",
+      "selectedArtwork": {
+        "title": "The Lance Thrust",
+        "artist": "Anthony van Dyck",
+        "role": "HISTORICAL_APPROVED_ASSOCIATION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [
+        {
+          "id": "ART-nthony-van-yck-he-ance-hrust",
+          "approvedInFrozenSet": true,
+          "blockedInFrozenSet": false,
+          "sourceProvider": "NO_EXACT_OPEN_SOURCE",
+          "objectUrl": null,
+          "sourceImageRoute": null,
+          "imageRightsCleared": false,
+          "fullOriginalProof": false
+        }
+      ],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-08-15",
+      "subject": "Assumption of the Blessed Virgin Mary",
+      "selectedArtwork": {
+        "title": "Assumption of the Virgin",
+        "artist": "Peter Paul Rubens",
+        "role": "HISTORICAL_APPROVED_ASSOCIATION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [
+        {
+          "id": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "approvedInFrozenSet": true,
+          "blockedInFrozenSet": false,
+          "sourceProvider": "NO_EXACT_OPEN_SOURCE",
+          "objectUrl": null,
+          "sourceImageRoute": null,
+          "imageRightsCleared": false,
+          "fullOriginalProof": false
+        }
+      ],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-09-29",
+      "subject": "Dedication of St. Michael the Archangel",
+      "selectedArtwork": {
+        "title": "Archangel Michael Defeating Satan",
+        "artist": "Guido Reni",
+        "role": "HISTORICAL_APPROVED_ASSOCIATION"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [
+        {
+          "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "approvedInFrozenSet": true,
+          "blockedInFrozenSet": false,
+          "sourceProvider": "COMMONS_EXACT_FILE_CANDIDATE",
+          "objectUrl": null,
+          "sourceImageRoute": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "imageRightsCleared": false,
+          "fullOriginalProof": false
+        }
+      ],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-10-25",
+      "subject": "Christ the King",
+      "selectedArtwork": {
+        "title": "Salvator Mundi",
+        "artist": "Ambrosius Benson",
+        "role": "CHRIST_THE_KING_FEAST_ICONOGRAPHY"
+      },
+      "priority": 1,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "Christie's 2019 LOT 4 — UNCONFIRMED SAME ORIGINAL",
+        "artworkTitle": "Salvator Mundi",
+        "sourceUrl": "https://www.christies.com/en/lot/lot-6238407",
+        "inventory": "Old Masters Evening Sale 3 Dec 2019 lot 4 (UNCONFIRMED)",
+        "identity": "HOLD_POSSIBLE_OTHER_ORIGINAL_SAME_TITLE_ARTIST",
+        "photo": "AUCTION_PHOTO_REUSE_HOLD",
+        "researchNote": "Ambrosius Benson Salvator Mundi auction candidate exists. Do not assume user's approved picture is lot 4; multiple versions and potential commercial photo rights. Requires exact visual/physical identity against user-selected painting.",
+        "priority": 1
+      },
+      "status": "SOURCE_LEAD_HOLD_OR_UNCERTAIN",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-11-01",
+      "subject": "All Saints",
+      "selectedArtwork": {
+        "title": "Paradise",
+        "artist": "Carlo Saraceni",
+        "role": "ALL_SAINTS_FEAST_ICONOGRAPHY"
+      },
+      "priority": 1,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "Metropolitan Museum of Art",
+        "artworkTitle": "Paradise",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/437607",
+        "inventory": "1971.93",
+        "identity": "OFFICIAL_OBJECT_TITLE_ARTIST_INVENTORY_MATCH",
+        "photo": "OPEN_ACCESS_RECORD_CANDIDATE_NOT_FETCHED",
+        "researchNote": "Public-domain museum object, c1598 oil on copper; exact painting by Carlo Saraceni. Next: download exact Met Open Access JPEG, SHA, mobile preview and rights check.",
+        "priority": 1
+      },
+      "status": "OBJECT_MATCH_RESEARCHED_OFFICIAL_SOURCE_NOT_REPRODUCTION_CERTIFIED",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-11-02",
+      "subject": "Commemoration of All Souls",
+      "selectedArtwork": {
+        "title": "An Angel Frees the Souls of Purgatory",
+        "artist": "Ludovico Carracci",
+        "role": "ALL_SOULS_FEAST_ICONOGRAPHY"
+      },
+      "priority": 2,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "Pinacoteca Vaticana (reported)",
+        "artworkTitle": "An Angel Frees the Souls of Purgatory",
+        "sourceUrl": "https://www.wga.hu/html_m/c/carracci/lodovico/purgator.html",
+        "supportingPhotoPage": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "inventory": null,
+        "identity": "CREDIBLE_SECONDARY_IDENTITY_NOT_MUSEUM_PRIMARY",
+        "photo": "COMMONS_CANDIDATE_866x1200_OR_LESS_RECHECK",
+        "researchNote": "Web Gallery of Art records Lodovico Carracci oil canvas c1610 Vatican Pinacoteca, Commons reports 866x1200 reproduction, independently verify original and photo on device.",
+        "priority": 2
+      },
+      "status": "SOURCE_LEAD_HOLD_OR_UNCERTAIN",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-11-29",
+      "subject": "I Sunday of Advent",
+      "selectedArtwork": {
+        "title": "The Great Day of His Wrath",
+        "artist": "John Martin",
+        "role": "APOCALYPTIC_GOSPEL_THEME"
+      },
+      "priority": 2,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "Tate Britain",
+        "artworkTitle": "The Great Day of His Wrath",
+        "sourceUrl": "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+        "inventory": "N05613",
+        "identity": "OFFICIAL_OBJECT_TITLE_ARTIST_INVENTORY_MATCH",
+        "photo": "PHOTO_REUSE_RIGHTS_HOLD",
+        "researchNote": "1851–53 oil on canvas; some Tate image reproduction rights are claimed. Use only independently lawful exact reproduction, no paid licences.",
+        "priority": 2
+      },
+      "status": "OBJECT_MATCH_RESEARCHED_OFFICIAL_SOURCE_NOT_REPRODUCTION_CERTIFIED",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-12-06",
+      "subject": "II Sunday of Advent",
+      "selectedArtwork": {
+        "title": "The Family of Christ",
+        "artist": "Michael Willmann",
+        "role": "ROOT_OF_JESSE_EPISTLE_THEME"
+      },
+      "priority": 2,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": {
+        "institution": "National Museum in Wrocław",
+        "artworkTitle": "The Family of Jesus Christ",
+        "sourceUrl": "https://muzeumcyfrowe.mnwr.pl/en/exhibit/the-family-of-jesus-christ",
+        "inventory": null,
+        "identity": "OFFICIAL_OBJECT_TITLE_ARTIST_MATCH",
+        "photo": "PHOTO_REUSE_RIGHTS_HOLD",
+        "researchNote": "Michael Willmann, 1677–79, panel painting, Jesuit Kłodzko provenance. Verify available image source licence and print/crop.",
+        "priority": 2
+      },
+      "status": "OBJECT_MATCH_RESEARCHED_OFFICIAL_SOURCE_NOT_REPRODUCTION_CERTIFIED",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-12-13",
+      "subject": "III Sunday of Advent",
+      "selectedArtwork": {
+        "title": "Saint John the Baptist Interrogated about Christ",
+        "artist": "Bernardo Strozzi",
+        "role": "GOSPEL_SUBJECT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    },
+    {
+      "date": "2026-12-20",
+      "subject": "IV Sunday of Advent",
+      "selectedArtwork": {
+        "title": "La Prédication de saint Jean Baptiste",
+        "artist": "Giovanni Battista Gaulli",
+        "role": "GOSPEL_SUBJECT"
+      },
+      "priority": 3,
+      "currentCatalogueWorkIDCandidates": [],
+      "sourceObjectResearch": null,
+      "status": "NO_CURRENT_VERIFIED_EXACT_OBJECT_LEAD",
+      "separateUserSelectedAIDerivative": false,
+      "sourcePhotoRightsCertified": false,
+      "productionPhotoSelected": false,
+      "previewApproved": false,
+      "productionCertified": false,
+      "requiresIndependentExactPaintingPhotoComparison": true
+    }
+  ],
+  "majorClassIIPending": [
+    {
+      "date": "2026-01-04",
+      "title": "Holy Name of Jesus",
+      "scripture": "Luke 2:21",
+      "oldApprovedArtworkIds": [
+        "cma-150389",
+        "cma-160143",
+        "cma-130392",
+        "cma-370119",
+        "met-437458"
+      ],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "CONTEXTUAL_OLD_ART_NEEDS_FEAST_EXACT",
+      "explanation": "PREVIOUS_ASSOCIATION_ONLY_GENERIC_HOLY_FAMILY_NOT_HOLY_NAME_OR_CIRCUMCISION",
+      "next": "Compare same approved Tintoretto and workshop Circumcision selected for Class I 1 Jan; exact artwork and independent feast association must be validated; do not reassign by title alone.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-01-13",
+      "title": "Commemoration of the Baptism of the Lord",
+      "scripture": "John 1:29–34",
+      "oldApprovedArtworkIds": [],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "NO_APPROVED_PRIMARY_OLDER",
+      "explanation": "NO_USER_APPROVED_FEAST_PRIMARY_IN_OCT17_STRICT_REGISTER",
+      "next": "Inspect user-frozen Baptism options (Tintoretto workshop, Sebastiano Ricci leads); defer any new date primary until explicit evidence.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-08-06",
+      "title": "Transfiguration of Our Lord",
+      "scripture": "Matthew 17:1–9",
+      "oldApprovedArtworkIds": [],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "NO_APPROVED_PRIMARY_OLDER",
+      "explanation": "NO_USER_APPROVED_AUG06_PRIMARY_IN_OCT17_STRICT_REGISTER",
+      "next": "Reconcile the user-selected Raphael Vatican original for 1 March Transfiguration; same Gospel episode, but requires date-specific approval and rights.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-08-10",
+      "title": "St. Lawrence",
+      "scripture": "John 12:24–26",
+      "oldApprovedArtworkIds": [
+        "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+        "nga-106362",
+        "C32:antoniosicurezzacharityofstlaurencejpg"
+      ],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "OLDER_FEAST_EXACT_NEEDS_IDENTITY_JOIN",
+      "explanation": "OLDER_APPROVED_LAWRENCE_SCENE_NOT_JOINED_TO_STRICT_CURATED_DATE",
+      "next": "Confirm NGA artwork nga-106362 and Jean-Baptiste de Champaigne versus actual user-approved physical image and feast iconography; use official-source QA only when verified.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-09-08",
+      "title": "Nativity of the Blessed Virgin Mary",
+      "scripture": "Matthew 1:1–16",
+      "oldApprovedArtworkIds": [
+        "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+        "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent"
+      ],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "CONTEXTUAL_OLD_ART_NEEDS_FEAST_EXACT",
+      "explanation": "RELATED_HOLY_FAMILY_AND_MARY_EDUCATION_ARE_NOT_BIRTH_SCENE",
+      "next": "Find previously user-rated Nativity of Mary original or leave feast-specific artwork open; do not call related Holy Family painting exact Nativity.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-09-14",
+      "title": "Exaltation of the Holy Cross",
+      "scripture": "John 12:31–36",
+      "oldApprovedArtworkIds": [
+        "ART-nthony-van-yck-he-ance-hrust"
+      ],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "CONTEXTUAL_OLD_ART_NEEDS_FEAST_EXACT",
+      "explanation": "VAN_DYCK_LANCE_THRUST_RELATES_CROSS_BUT_NOT_EXALTATION_RITE",
+      "next": "Keep the user-approved Van Dyck devotional image as optional theme only; require explicit Exaltation placement relationship.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-09-15",
+      "title": "Seven Sorrows of the Blessed Virgin Mary",
+      "scripture": "John 19:25–27",
+      "oldApprovedArtworkIds": [
+        "ART-nthony-van-yck-amentation-of-hrist"
+      ],
+      "frozenDateRelations": [
+        {
+          "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+          "role": "DEVOTIONAL_ASSOCIATION",
+          "relationClass": "SECONDARY_CONTEXT_OR_TYPOLOGY_ONLY",
+          "properPassageVerified": false,
+          "photoVerified": false
+        }
+      ],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "OLDER_FEAST_EXACT_NEEDS_IDENTITY_JOIN",
+      "explanation": "APPROVED_VAN_DYCK_LAMENTATION_IS_VALID_SORROWS_FEAST_ICONOGRAPHY_BUT_STRICT_PRIMARY_RELATION_NOT_JOINED",
+      "next": "Resolve frozen Van Dyck Lamentation physical artwork/photo and check exact feast role without claiming it is a literal John 19 scene.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Our Lady of the Rosary",
+      "scripture": "Luke 1:26–38",
+      "oldApprovedArtworkIds": [
+        "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch"
+      ],
+      "frozenDateRelations": [
+        {
+          "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "role": "GOSPEL_ONLY",
+          "relationClass": "SECONDARY_GOSPEL_RELATED_ONLY",
+          "properPassageVerified": false,
+          "photoVerified": false
+        }
+      ],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "CONTEXTUAL_OLD_ART_NEEDS_FEAST_EXACT",
+      "explanation": "APPROVED_RUBENS_CORONATION_IS_MARIAN_CONTEXT_NOT_FULL_ROSARY_FEAST_PRIMARY",
+      "next": "Preserve Rosary-feast subject gap; distinguish approved Annunciation Gospel art and coronation scene from titular Rosary imagery.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-10-28",
+      "title": "Sts. Simon & Jude",
+      "scripture": "John 15:17–25",
+      "oldApprovedArtworkIds": [
+        "prado-rubens-p001655",
+        "ART-usepe-de-ibera-aint-udas-haddeus",
+        "W14-016"
+      ],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "OLDER_FEAST_EXACT_NEEDS_IDENTITY_JOIN",
+      "explanation": "OLDER_APPROVED_APOSTLE_PORTRAITS_NOT_RECONCILED_AS_JOINT_FEAST_PRIMARY",
+      "next": "Resolve Simon and Jude pair or user-approved individual portraits; keep Prado source and mirrors blocked.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-11-09",
+      "title": "Dedication of the Archbasilica of Our Holy Savior",
+      "scripture": "Luke 19:1–10",
+      "oldApprovedArtworkIds": [],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "NO_APPROVED_PRIMARY_OLDER",
+      "explanation": "NO_APPROVED_LATERAN_FEAST_PRIMARY",
+      "next": "Research actual Lateran dedication or church façade/interior scene under no-Permissions, non-Prado policy; do not mislabel Zacchaeus Gospel as Lateran building.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    },
+    {
+      "date": "2026-12-28",
+      "title": "Holy Innocents",
+      "scripture": "Matthew 2:13–18",
+      "oldApprovedArtworkIds": [],
+      "frozenDateRelations": [],
+      "strictApprovedPrimaryCount": 0,
+      "disposition": "NO_APPROVED_PRIMARY_OLDER",
+      "explanation": "NO_APPROVED_HOLY_INNOCENTS_PRIMARY",
+      "next": "Search unrejected 451-corpus Massacre of the Innocents original with exact event match; earlier Navez rating 3 is not locked approval.",
+      "userApprovalStatus": "NO_NEW_PRIMARY_USER_APPROVAL_IN_RETRIEVED_DATE_RECORDS",
+      "artworkPhotosCertified": 0,
+      "doNotAutoPublish": true
+    }
+  ]
+}

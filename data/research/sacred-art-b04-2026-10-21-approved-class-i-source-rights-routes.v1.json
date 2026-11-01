@@ -1,0 +1,188 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B04_V1",
+  "batchId": "AO-ART-2026-10-21-B04",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Source route, original-photo identity and rights research for existing approved Class I paintings. Preserve all ratings, artwork IDs and selections. No image acquisition, publication or production certification.",
+  "upstream": {
+    "b01": "data/research/sacred-art-b01-2026-10-21-source-identity-and-rights-batch.v1.json",
+    "b02": "data/research/sacred-art-b02-2026-10-21-continued-sources-and-class-ii-leads.v1.json",
+    "b03": "data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json",
+    "frozenDecisions": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json"
+  },
+  "policy": {
+    "noPradoOrMirrors": true,
+    "preserveUserDecisions": true,
+    "score0to2": "permanent rejection",
+    "score3": "research only",
+    "score4": "awaiting editorial decision",
+    "score5": "existing aesthetic approval only",
+    "noPermissionRequests": true,
+    "noPurchase": true,
+    "noProductionMutation": true,
+    "noCertification": true
+  },
+  "records": [
+    {
+      "recordId": "B04-01",
+      "priority": "approved Class I selection — 29 March Van Dyck",
+      "existingArtworkId": null,
+      "decision": "Existing date-specific approval preserved; no new ID/approval.",
+      "painting": {
+        "artist": "Anthony van Dyck",
+        "title": "Entry of Christ into Jerusalem",
+        "date": "about 1617",
+        "institution": "Indianapolis Museum of Art at Newfields",
+        "accession": "58.3",
+        "medium": "oil on canvas",
+        "dimensions": "59.5 × 90.25 in (151.1 × 229.2 cm)",
+        "officialObjectUrl": "https://collection.imamuseum.org/artwork/41673/",
+        "GACUrl": "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ"
+      },
+      "relation": "Exact triumphal Entry into Jerusalem.",
+      "image": {
+        "preferredSourceUrl": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+        "originalPixels": "5043 × 3325",
+        "fileSize": "2.84 MB",
+        "ratioCheck": "Image aspect ratio 1.517; canvas ratio 1.517. Dimensions support a whole-canvas, uncropped reproduction, though no pixel-level image inspection was performed.",
+        "sourceMetadata": "Commons file lists Newfields object accession 58.3 and notes 'IMA version'; page records a photographer/source and the original file.",
+        "acquired": false
+      },
+      "rights": {
+        "painting": "GAC metadata identifies work rights Public Domain.",
+        "photograph": "Commons page applies Public Domain Mark / PD-Art to a faithful reproduction of this two-dimensional public-domain painting; it states US public-domain status and warns reuse can vary by jurisdiction.",
+        "reuseStatus": "Strong free-source route; global photo-rights review remains necessary.",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+      },
+      "mobile": "Wide landscape canvas, central procession. Full image is preserved; with a 1.517 canvas ratio and matching source ratio, a centered portrait crop would remove substantial flanking figures. Use contain/letterbox presentation until mobile QA.",
+      "status": "IDENTITY_VERIFIED; IMAGE_ROUTE_AND_US_PD_ART_EVIDENCE_FOUND; RIGHTS_JURISDICTION_PENDING; FILE_NOT_ACQUIRED"
+    },
+    {
+      "recordId": "B04-02",
+      "priority": "approved Class I selection — 15 March Lanfranco",
+      "existingArtworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "decision": "Locked identity/date association preserved; no score or approval changed.",
+      "painting": {
+        "artist": "Giovanni Lanfranco",
+        "title": "The Miracle of the Loaves and Fishes",
+        "date": "1624–1625",
+        "institution": "National Gallery of Ireland",
+        "accession": "NGI.72",
+        "medium": "oil on canvas",
+        "dimensions": "229 × 426 cm",
+        "officialObjectUrl": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes"
+      },
+      "relation": "Exact Gospel miracle. Official record confirms the subject and its Eucharistic programme context.",
+      "image": {
+        "previewOrDownloadRoute": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+        "downloadEndpoint": "https://www.nationalgalleryimages.ie/asset/?download=true&external_id=NGI.72",
+        "buttons": "Official page exposes both License image and Download image links.",
+        "pixels": null,
+        "acquired": false
+      },
+      "rights": {
+        "policy": "NGI states only images marked by the orange CC icon are available under CC BY 4.0 for free use, including commercial use.",
+        "policyUrl": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork",
+        "imageSpecificStatus": "The object page provides download/license links, but the per-image CC badge could not be verified: the National Gallery Images endpoint redirected to a host inaccessible to the research browser. Do not treat the download button alone as rights clearance.",
+        "reuseStatus": "Image route materially improved; image-specific licence still provisional."
+      },
+      "reconciliation": "Supersedes the WGA file as preferred route for acquisition investigation, not as an acquired master. B02 WGA dimensions 1285 × 683 are low; its structured date 1620–23 conflicts with NGI 1624–25. Keep that WGA file quarantined until pixel and date discrepancy are resolved.",
+      "mobile": "Large panoramic painting. Keep full frame; tall mobile card should use letterbox or deliberate navigation, not a center crop.",
+      "status": "IDENTITY_VERIFIED; OFFICIAL_DOWNLOAD_ROUTE_FOUND; IMAGE_SPECIFIC_CC_BADGE_UNVERIFIED; FILE_NOT_ACQUIRED"
+    },
+    {
+      "recordId": "B04-03",
+      "priority": "approved Class I selection — 1 November Saraceni",
+      "existingArtworkId": null,
+      "decision": "Existing approved association preserved; no new artwork ID or approval.",
+      "painting": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "date": "ca. 1598",
+        "institution": "The Metropolitan Museum of Art",
+        "accession": "1971.93",
+        "medium": "oil on copper",
+        "paintedDimensions": "53 × 46.7 cm",
+        "officialObjectUrl": "https://www.metmuseum.org/art/collection/search/437607"
+      },
+      "relation": "Exact existing approved painting/association. The Met notes it is an oil-on-copper devotional composition.",
+      "image": {
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437607/2100377/main-image",
+        "route": "Official Met object-page image and IIIF main-image endpoint",
+        "pixels": null,
+        "acquired": false
+      },
+      "rights": {
+        "status": "EXPLICIT OPEN ACCESS / CC0",
+        "objectPage": "Met labels this image Public Domain and provides Download Image.",
+        "policyEvidence": "Met says Open Access data and public-domain images are available for unrestricted commercial and noncommercial use without permission or fee.",
+        "evidenceUrl": "https://www.metmuseum.org/art/collection/search/437607",
+        "reuseStatus": "Rights route resolved at source level; hash/dimensions/crop still pending."
+      },
+      "mobile": "Near-square copper panel (painted ratio about 1.13); source image pixels not obtained for crop check.",
+      "status": "IDENTITY_VERIFIED; OFFICIAL_IMAGE_ROUTE_AND_CC0_EVIDENCE_FOUND; FILE_NOT_ACQUIRED"
+    },
+    {
+      "recordId": "B04-04",
+      "priority": "approved Class I selection — 1 May La Tour",
+      "existingArtworkId": null,
+      "decision": "Existing approved association preserved; no ID or aesthetic decision changed.",
+      "painting": {
+        "artist": "Georges de La Tour",
+        "title": "Saint Joseph the Carpenter (Saint Joseph charpentier)",
+        "date": "1642–1644",
+        "institution": "Musée du Louvre",
+        "accession": "RF 1948 27",
+        "medium": "oil on canvas",
+        "dimensions": "137 × 102 cm",
+        "officialObjectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817"
+      },
+      "relation": "Exact Saint Joseph subject. Louvre object page confirms title, artist, date and accession and offers 8 object images.",
+      "image": {
+        "preferredCandidateUrl": "https://commons.wikimedia.org/wiki/File:La_Tour.jpg",
+        "pixels": "4360 × 5136",
+        "size": "3.44 MB",
+        "photoIdentity": "Commons file page names Louvre Saint Joseph/RF1948-27 but also has a contradictory Besançon collection field and references multiple prior image sources. Pixel-to-Louvre-source comparison remains outstanding.",
+        "louvreDownload": "Louvre object page provides image downloads, but reuse terms apply.",
+        "acquired": false
+      },
+      "rights": {
+        "commons": "Faithful-reproduction PDM/PD-Art evidence; Commons states public-domain status in the US and warns that reuse may be restricted elsewhere.",
+        "louvreTermsUrl": "https://collections.louvre.fr/en/page/cgu",
+        "louvreReuse": "Louvre terms permit free reuse of medium-format object photographs only for specified non-collective private, museographic, scientific and educational purposes; use outside those listed cases requires payment. No paid licence is pursued.",
+        "reuseStatus": "Commons is the free candidate route but globally provisional; direct Louvre file not eligible for unrestricted app reuse based on terms reviewed."
+      },
+      "mobile": "Portrait composition with one candlelit grouping. Maintain full vertical image; file ratio 0.849. No crop QA.",
+      "status": "IDENTITY_VERIFIED; SOURCE_PHOTO_IDENTITY_AND_GLOBAL_REUSE_PROVISIONAL; FILE_NOT_ACQUIRED"
+    }
+  ],
+  "totals": {
+    "approvedSelectionTargets": 4,
+    "identityReconfirmed": 4,
+    "officialImageRoutesFoundOrConfirmed": 4,
+    "sourceReproductionPixelsVerified": 2,
+    "openOrPublicDomainRightsEvidenceFound": 3,
+    "globalReuseClearance": 1,
+    "photoIdentityDiscrepancyOpen": 1,
+    "perImageLicenceBadgeOpen": 1,
+    "rawImagesAcquired": 0,
+    "ratingsChanged": 0,
+    "approvalsChanged": 0,
+    "certifications": 0
+  },
+  "queue": {
+    "nextPriority": [
+      "Class I approved source routes: Kramskoi 22 Feb; Raphael 1 Mar; resolve NGI CC badge for Lanfranco; jurisdiction review for PD-Art images",
+      "Acquire/verify files only where already-authorized runtime permits; prior sandbox approval rejection is recorded, do not retry same blocked operation",
+      "Continue major Class II gaps after image-route pass"
+    ],
+    "blockers": [
+      "Image acquisition blocked once by sandbox approval policy; pending technical acquisition without repeated attempts",
+      "Lanfranco per-image CC badge inaccessible through web tool after host redirect",
+      "La Tour Commons metadata contains conflicting collection detail and PD-Art reuse is jurisdiction-dependent"
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B05 — verify rights/photo files for approved Class I Raphael and Kramskoi; then continue the remaining high-priority approved selections."
+  },
+  "acquisitionStatus": "Do not retry image-byte acquisition: prior B01–B03 attempt was rejected with 'approval required by policy, but AskForApproval::Granular.sandbox_approval is false'; subsequent node fetch attempts failed. Continue with independent metadata/rights work."
+}

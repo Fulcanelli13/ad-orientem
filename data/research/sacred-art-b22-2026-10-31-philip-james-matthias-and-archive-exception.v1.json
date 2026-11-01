@@ -1,0 +1,311 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B22",
+  "asOf": "2026-10-31",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "reconciliation": {
+    "latestBranchHeadBeforeCommit": "772f112ddf7a0b574073e1e2cdaa3c11c44585ed",
+    "latestPrevious": "data/research/sacred-art-b21-2026-10-30-open-originals-benson-carracci-identity-gates.v1.json",
+    "b03Read": "data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json",
+    "candidateBranch": "platform/885-sacred-art-candidates",
+    "candidatePath": "data/calendar/sacred-art-candidates.v1.json",
+    "candidateCount": 281,
+    "bulkPath": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "bulkCount": 451,
+    "additionalCrosscheck": "rescue/sacred-art-zero-euro-20261024:data/research/sacred-art-catalogue451-after-b25.csv",
+    "dedupe": "Six accession-number leads B22-01..06 absent from 281+451 datasets and B25 catalogue by exact accession. This is not global historical-workbook dedupe. NG6577 already mentioned in B25 and excluded from lead count.",
+    "canonicalIdsCreated": 0
+  },
+  "policy": {
+    "preserveUserSelections": true,
+    "excludedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "excludedMuseum": "Prado",
+    "noPublication": true,
+    "noMerge": true,
+    "noDeploy": true,
+    "noContact": true,
+    "noPurchase": true,
+    "noPaidExtras": true,
+    "productionMasterCertification": false
+  },
+  "records": [
+    {
+      "researchId": "B22-01",
+      "kind": "CLASS_II_EXACT_SAINT_PAINTING_LEAD",
+      "feast": "Ss Philip and James, 11 May (1962 Class II)",
+      "artist": "Anonymous painter, after Sir Anthony van Dyck (NOT an original van Dyck)",
+      "title": "Saint Philip",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1960.6.11.k",
+      "date": "after 1660",
+      "medium": "oil on wood",
+      "dimensionsCm": [
+        12.2,
+        10.6
+      ],
+      "objectUrl": "https://www.nga.gov/artworks/118829-saint-philip",
+      "imageRoute": "https://api.nga.gov/iiif/8d0dd05f-1221-40ca-a3e9-390f7afafe3b/full/full/0/default.jpg",
+      "rights": "NGA object-specific public-domain image, free Open Access download",
+      "rightsPolicy": "https://www.nga.gov/artworks/free-images-and-open-access",
+      "status": "EXACT_SAINT_OPEN_IMAGE_ROUTE; VERY_SMALL_PHYSICAL_PANEL; NOT_PAIRED_FEAST_SCENE; IMAGE_AND_MOBILE_QA_PENDING",
+      "summaryEn": "Separate miniature apostle portrait, one of twelve Timken Collection panels after van Dyck. Correctly identifies Philip, but does not itself depict the joint feast of Philip and James. Museum identifies the anonymous painter and van Dyck only as the model; small dark panel requires native-image, focus and crop inspection before any curatorial proposal.",
+      "summaryFr": "Petit portrait distinct de l'apôtre Philippe, appartenant à une série de douze panneaux de la collection Timken d'après van Dyck. Le musée attribue l'exécution à un peintre anonyme : ce n'est pas un original de van Dyck. Il ne représente pas à lui seul la fête commune de Philippe et Jacques ; contrôle de l'image native, de la netteté et du cadrage requis.",
+      "evidence": [
+        "https://www.nga.gov/artworks/118829-saint-philip"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-02",
+      "kind": "CLASS_II_EXACT_SAINT_PAINTING_LEAD",
+      "feast": "Ss Philip and James, 11 May (1962 Class II)",
+      "artist": "Anonymous painter, after Sir Anthony van Dyck (NOT an original van Dyck)",
+      "title": "Saint James the Less",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1960.6.11.g",
+      "date": "after 1660",
+      "medium": "oil on wood",
+      "dimensionsCm": [
+        12.2,
+        10.6
+      ],
+      "objectUrl": "https://www.nga.gov/artworks/118825-saint-james-less",
+      "imageRoute": "https://api.nga.gov/iiif/8b2a2fb8-69d0-40f4-ac1f-b268fc43c83f/full/full/0/default.jpg",
+      "rights": "NGA object-specific public-domain image, free Open Access download",
+      "rightsPolicy": "https://www.nga.gov/artworks/free-images-and-open-access",
+      "status": "EXACT_SAINT_OPEN_IMAGE_ROUTE; DARK_WEB_PREVIEW; NOT_PAIRED_FEAST_SCENE; NATIVE_QA_PENDING",
+      "summaryEn": "A second, separately accessioned Timken oil-on-wood miniature after van Dyck, identifying James the Less. The NGA web image appears dark and subdued; this is a preview observation, not native pixel or colour QA. The two portraits are complementary separate works, not a single two-saint scene.",
+      "summaryFr": "Second petit panneau à l'huile de la collection Timken, inventorié séparément et réalisé d'après van Dyck, représentant Jacques le Mineur. L'aperçu en ligne semble sombre ; cette observation ne constitue pas un contrôle des pixels ou des couleurs de l'original numérique. Les deux portraits sont complémentaires, mais ne forment pas une scène commune.",
+      "evidence": [
+        "https://www.nga.gov/artworks/118825-saint-james-less"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-03",
+      "kind": "CLASS_II_SUBJECT_TENTATIVE_PAINTING_LEAD",
+      "feast": "St Matthias, 24 February (1962 Class II; leap-year date exceptions to validate)",
+      "artist": "Giovanni Battista Piazzetta",
+      "title": "Bust of a Man (Saint Matthias?)",
+      "institution": "Metropolitan Museum of Art",
+      "accession": "2016.653",
+      "date": "ca. 1715–1720",
+      "medium": "oil on canvas",
+      "dimensionsCm": [
+        44.5,
+        37.5
+      ],
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/695496",
+      "imageRoute": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/695496/1639062/main-image",
+      "rights": "Object page marks image Public Domain; Met Open Access allows unrestricted reuse",
+      "rightsPolicy": "https://www.metmuseum.org/hubs/open-access",
+      "status": "STRONG_BAROQUE_STYLE; SUBJECT_IDENTIFICATION_TENTATIVE; NO_STRICT_FEAST_COVERAGE; NATIVE_QA_PENDING",
+      "summaryEn": "Strong Venetian Baroque bust with axe, but the museum title explicitly includes a question mark and says the sitter may be Matthias. Retain as an identity-held alternative, not a confirmed Matthias painting. The direct Met image endpoint was found; bytes were not acquired or checked.",
+      "summaryFr": "Buste baroque vénitien d'une grande force expressive, avec une hache ; toutefois le titre du musée comporte un point d'interrogation et l'identification à saint Matthias reste hypothétique. À conserver comme possibilité en attente d'identification, non comme couverture certaine de la fête. Le point d'accès à l'image du Met a été repéré sans acquisition ni contrôle du fichier.",
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/695496"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-04",
+      "kind": "CLASS_II_PRINT_ALTERNATIVE",
+      "feast": "Ss Philip and James, 11 May (1962 Class II)",
+      "artist": "Hendrick Goltzius after Maarten de Vos",
+      "title": "St. Philippus",
+      "institution": "Cleveland Museum of Art",
+      "accession": "2019.180.8",
+      "date": "c. 1578",
+      "medium": "engraving",
+      "dimensionsCm": [
+        20.9,
+        28.1
+      ],
+      "objectUrl": "https://www.clevelandart.org/art/2019.180.8",
+      "imageRoute": "Cleveland object-page Download; native image URL not independently resolved",
+      "rights": "Cleveland object page explicitly permits copying, modification and distribution",
+      "rightsPolicy": "https://www.clevelandart.org/open-access",
+      "status": "EXACT_SAINT_WITH_MARTYRDOM_BACKGROUND; OPEN_IMAGE; PRINT_NOT_HERO_PAINTING; NATIVE_QA_PENDING",
+      "summaryEn": "Goltzius's engraving after de Vos identifies Philip at right while a crucifixion-like martyrdom scene occupies the left. Useful as a documented iconographic alternative or devotional illustration, not a substitute for a dark-Baroque oil painting or an image of Christ's Crucifixion.",
+      "summaryFr": "La gravure de Goltzius d'après de Vos montre Philippe à droite et une scène de martyre à gauche. Illustration iconographique documentée, mais non équivalente à une peinture baroque à l'huile ni à la Crucifixion du Christ.",
+      "evidence": [
+        "https://www.clevelandart.org/art/2019.180.8"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-05",
+      "kind": "CLASS_II_PRINT_ALTERNATIVE",
+      "feast": "Ss Philip and James, 11 May (1962 Class II)",
+      "artist": "Jacques Callot",
+      "title": "The Martyrdom of the Apostles: St. James the Less",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1958.438",
+      "date": "c. 1632",
+      "medium": "etching",
+      "objectUrl": "https://www.clevelandart.org/art/1958.438",
+      "imageRoute": "Cleveland object-page Download; native image URL not independently resolved",
+      "rights": "Cleveland object page explicitly permits copying, modification and distribution",
+      "rightsPolicy": "https://www.clevelandart.org/open-access",
+      "status": "EXACT_SAINT_MARTYRDOM_PRINT; OPEN_IMAGE; NOT_PAIRED_FEAST_SCENE; NATIVE_QA_PENDING",
+      "summaryEn": "Callot's vertical etching explicitly depicts the martyrdom of James the Less and is a different physical object from the Timken oil panel. Historical martyrdom iconography should not be labelled as a canonical biblical scene; suitable only as a secondary illustration until visual QA.",
+      "summaryFr": "Cette eau-forte verticale de Callot représente explicitement le martyre de Jacques le Mineur ; elle est matériellement distincte du petit panneau Timken. La tradition iconographique du martyre ne doit pas être présentée comme un épisode biblique canonique. Usage secondaire seulement avant contrôle visuel.",
+      "evidence": [
+        "https://www.clevelandart.org/art/1958.438"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-06",
+      "kind": "CLASS_II_PRINT_ALTERNATIVE",
+      "feast": "St Matthias, 24 February (1962 Class II)",
+      "artist": "Jacques Callot",
+      "title": "The Martyrdom of the Apostles: St. Matthias",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1958.442",
+      "date": "c. 1632",
+      "medium": "etching",
+      "objectUrl": "https://www.clevelandart.org/art/1958.442",
+      "imageRoute": "Cleveland object-page Download; native image URL not independently resolved",
+      "rights": "Cleveland object page explicitly marks Public Domain and permits reuse",
+      "rightsPolicy": "https://www.clevelandart.org/open-access",
+      "status": "EXACT_SAINT_MARTYRDOM_PRINT; OPEN_IMAGE; NOT_A_HERO_PAINTING; NATIVE_QA_PENDING",
+      "summaryEn": "A separately accessioned Callot etching of Matthias's martyrdom. Its iconography is an ecclesiastical tradition, not the Acts 1 election scene. Distinct from the Met's tentatively identified Piazzetta oil painting. Suitable as secondary print illustration only.",
+      "summaryFr": "Eau-forte de Callot, inventoriée séparément, représentant le martyre de Matthias. Il s'agit d'une tradition iconographique, non de l'élection racontée en Actes 1. Œuvre distincte de la peinture de Piazzetta dont l'identification demeure incertaine. Illustration gravée secondaire uniquement.",
+      "evidence": [
+        "https://www.clevelandart.org/art/1958.442"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-07",
+      "kind": "APPROVED_CLASS_I_ARCHIVE_EXCEPTION",
+      "subject": "Previously acquired Murillo Immaculate, Cavallino Adoration, Caracciolo Calling of Matthew",
+      "status": "THREE_EXPIRING_SOURCE_ARTIFACTS_STILL_LIVE_2026_10_31; NOT_COVERED_BY_B26_B27_WAVE_INVENTORY; DURABLE_COPY_UNVERIFIED",
+      "artifacts": [
+        {
+          "artwork": "Murillo Immaculate Conception",
+          "artifactId": 11666577879,
+          "runId": 38044853035,
+          "expiresAt": "2026-11-09T10:32:31Z",
+          "expired": false
+        },
+        {
+          "artwork": "Cavallino Adoration of the Shepherds",
+          "artifactId": 11667353162,
+          "runId": 38044853035,
+          "expiresAt": "2026-11-09T10:33:24Z",
+          "expired": false
+        },
+        {
+          "artwork": "Caracciolo Calling of Saint Matthew",
+          "artifactId": 11664124885,
+          "runId": 38038829532,
+          "expiresAt": "2026-11-09T08:43:46Z",
+          "expired": false
+        }
+      ],
+      "archiveEvidence": {
+        "rescueBranch": "rescue/sacred-art-zero-euro-20261024",
+        "doc": "https://github.com/Fulcanelli13/ad-orientem/blob/rescue/sacred-art-zero-euro-20261024/docs/research/sacred-art-zero-euro-rescue-b27.md",
+        "primaryRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40026183662",
+        "supplementalRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40026198621",
+        "result": "B27 successfully preserved 16 B19–B25 source-wave TAR packages (290 source image files) plus 9 supplemental packages in an unpublished draft release. The three older artifact IDs above do not occur in the B26 16-wave index; do NOT infer they were rescued by B27."
+      },
+      "summaryEn": "New preservation exception: the existing B27 zero-euro draft release is confirmed successful, but its enumerated B26 wave source IDs do not include the three older original-image artifacts due 9 November. GitHub's workflow-artifact listings still show all three unexpired on 31 October. They require an independent hash-matched durable-copy check or rescue by the existing archive owner, not another speculative download or an unapproved public release.",
+      "summaryFr": "Exception de conservation : l'archive gratuite B27, maintenue dans une release non publiée, a bien sauvegardé seize lots B19–B25 et neuf paquets supplémentaires ; toutefois son inventaire B26 ne contient pas les trois anciens artefacts d'originaux arrivant à échéance le 9 novembre. Les listes GitHub les indiquent encore disponibles le 31 octobre. Il faut confirmer une copie durable avec empreinte concordante, ou faire intervenir le flux de sauvegarde existant, sans publication.",
+      "evidence": [
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40026183662",
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40026198621",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/rescue/sacred-art-zero-euro-20261024/data/research/sacred-art-b26-290-source-archive-preservation-index.csv"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B22-08",
+      "kind": "DEDUPE_IDENTITY_GUARD",
+      "subject": "Ribera An Apostle, NG6577, not confirmed Saint Jude/Thomas/Matthias",
+      "status": "EXISTING_B25_GUARD_RECONFIRMED; NO_NEW_ARTWORK_LEAD",
+      "objectUrl": "https://www.nationalgallery.org.uk/paintings/jusepe-de-ribera-an-apostle",
+      "priorRecord": "rescue/sacred-art-zero-euro-20261024:data/research/sacred-art-catalogue451-after-b25.csv",
+      "summaryEn": "National Gallery London identifies NG6577 as 'An Apostle', perhaps Thomas or Matthias, formerly called Jude. The existing B25 source catalogue already explicitly separates NG6577 from Ribera's Prado Saint Jude P001092. This is a previously resolved identity guard, not a newly discovered candidate. No Prado painting is added or proposed.",
+      "summaryFr": "La National Gallery de Londres décrit NG6577 comme « An Apostle », peut-être Thomas ou Matthias, anciennement appelé Jude. Le catalogue B25 distingue déjà cet objet du Saint Jude P001092 de Ribera au Prado. Il s'agit d'un garde-fou d'identité déjà documenté, et non d'un nouveau candidat ; aucune peinture du Prado n'est proposée.",
+      "evidence": [
+        "https://www.nationalgallery.org.uk/paintings/jusepe-de-ribera-an-apostle"
+      ],
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    }
+  ],
+  "totals": {
+    "newDistinctArtworkLeads": 6,
+    "paintings": 3,
+    "prints": 3,
+    "approvedClassIArchiveExceptions": 1,
+    "existingIdentityGuards": 1,
+    "filesAcquired": 0,
+    "newHashes": 0,
+    "nativePixelQa": 0,
+    "mobileCropQa": 0,
+    "newEditorialApprovals": 0,
+    "certifiedProductionMasters": 0
+  },
+  "limitations": [
+    "NGA IIIF download endpoints and Met endpoint identified from official links; no native image files acquired, hashed or colour-profile-checked.",
+    "Museum object-specific open image status does not establish publication readiness or mobile crop suitability.",
+    "The 16+9 B27 preserved packages do not demonstrate preservation of the three older expiring artifacts. Their original files were not downloaded in this pass.",
+    "The Met's Piazzetta identification explicitly remains uncertain; the two NGA panels are after van Dyck, not originals.",
+    "The exact Lateran dedication subject and approved All Souls Carracci Vatican high-definition custodial source remain unresolved."
+  ],
+  "nextQueue": [
+    "P0 before 9 November: verify or rescue older artifact IDs 11664124885, 11666577879, 11667353162 via existing zero-euro archive owner, matching prior recorded SHA256; never publish rights-unreviewed archives.",
+    "Native acquire/hash/ICC/frame and 390px crop check NGA Timken 1960.6.11.g and .k, Met Piazzetta 2016.653, and Cleveland Goltzius/Callot prints only once durable archival gate exists.",
+    "Seek stronger original Baroque paired Saints Philip and James painting; keep the two separate after-van-Dyck miniatures as individual-saint alternatives.",
+    "Resolve All Souls Carracci Vatican inventory and portrait/landscape metadata, and Benson approved-preview/photo rights; do not silently substitute objects.",
+    "Continue B20 NGA/CMA/Rijksmuseum apostle native-image QA and Lateran exact-subject research, without reauditing completed identity records."
+  ]
+}

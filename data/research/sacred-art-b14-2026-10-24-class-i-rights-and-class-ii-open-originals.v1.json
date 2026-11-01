@@ -1,0 +1,311 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B14_V1",
+  "batchId": "AO-ART-2026-10-24-B14",
+  "asOf": "2026-10-24",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive source/physical-original/image-rights investigation continuing B11, with B12 and B13 uncommitted local ledgers explicitly checked. No new canonical artwork IDs, ratings, date selections, production masters or image downloads.",
+  "sourceReconciliation": {
+    "branchHeadBefore": "e507b1d3e224e5b9a5280878d2e2e167e3f47b7e",
+    "committedBatches": "B01-B11; B12/B13 were local uncommitted ledgers read before this pass",
+    "canonicalCandidateBranch": "platform/885-sacred-art-candidates",
+    "checkedExisting": "281-source candidate catalogue; 451-work bulk intake; 2026 Class I/II priority triage; frozen user decision ledger; B03/B06/B11",
+    "constraints": "Prado and mirrors excluded; Fra Angelico and El Greco excluded; preserve user-approved, rejected and research-only scores; no canonical ID invention.",
+    "knownSourceStatuses": "B11 Getty 103QTX and KMSKA Van Dyck panel 297 already open-image routes; B13 Met Rosary image and St Lawrence already acquired in prior workflow archives, not newly acquired here."
+  },
+  "records": [
+    {
+      "recordId": "B14-01",
+      "scope": "CLASS_I_APPROVED_SELECTION_ALTERNATIVE_ONLY",
+      "date": "2026-10-25",
+      "subject": "Christ the King",
+      "existingSelectedArtist": "Ambrosius Benson",
+      "existingSelectedTitle": "Salvator Mundi",
+      "status": "NEW_DISTINCT_OPEN_SOURCE_ALTERNATIVE; APPROVED_BENSON_IDENTITY_STILL_HELD",
+      "physicalObject": {
+        "artist": "Quinten Massijs (Quentin Metsys)",
+        "title": "Christ Salvator Mundi",
+        "date": "1505",
+        "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+        "inventory": "241",
+        "medium": "oil on panel, left wing of diptych with Mary at Prayer (241–242)",
+        "dimensionsCm": [
+          39,
+          29
+        ],
+        "objectUrl": "https://kmska.be/en/masterpiece/christ-salvator-mundi-0"
+      },
+      "image": {
+        "source": "https://vlaamsekunstcollectie.be/collectie/241",
+        "iiifManifest": "https://iiif.kmska.be/iiif/2/252/manifest.json",
+        "licence": "CC0 image displayed by Vlaamse Kunstcollectie; KMSKA free TIF download",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "A documented distinct Salvator Mundi original with a free image route, NOT Ambrosius Benson's user-approved painting. No substitution or date-specific selection is permitted. The existing Benson/Christie's lot identity remains unconfirmed.",
+      "evidence": [
+        "https://kmska.be/en/masterpiece/christ-salvator-mundi-0",
+        "https://vlaamsekunstcollectie.be/collectie/241"
+      ]
+    },
+    {
+      "recordId": "B14-02",
+      "scope": "CLASS_I_APPROVED_SELECTION_IMAGE_ROUTE_RESEARCH",
+      "date": "2026-04-06",
+      "subject": "Easter Monday: Supper at Emmaus",
+      "status": "LONDON_1601_OBJECT_AND_HIGH_RES_COMMONS_ROUTE_VERIFIED; SELECTED_VERSION_UNMATCHED; RIGHTS_CONDITIONAL",
+      "physicalObject": {
+        "artist": "Caravaggio",
+        "title": "The Supper at Emmaus",
+        "date": "1601",
+        "institution": "National Gallery, London",
+        "inventory": "NG172",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          141,
+          196.2
+        ],
+        "objectUrl": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus"
+      },
+      "image": {
+        "source": "https://commons.wikimedia.org/wiki/File:1602-3_Caravaggio,Supper_at_Emmaus_National_Gallery,_London.jpg",
+        "reportedPixels": [
+          5946,
+          4226
+        ],
+        "reportedBytesApprox": 3271557,
+        "commons": "PDM/PD-Art, explicitly US-focused; global jurisdictions conditional",
+        "institutionalLicence": "National Gallery London image documentation: CC BY-NC-ND 4.0, not unrestricted commercial reuse",
+        "institutionalLicenceUrl": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "This is one of two separate Caravaggio originals; B12 established the Brera 1606 version separately. Exact approved image/version remains unproven. Commons file history includes edited colour/brightness versions, so visual/source comparison is required. Do not claim commercial reuse under National Gallery website licence.",
+      "evidence": [
+        "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
+        "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+        "https://commons.wikimedia.org/wiki/File:1602-3_Caravaggio,Supper_at_Emmaus_National_Gallery,_London.jpg"
+      ]
+    },
+    {
+      "recordId": "B14-03",
+      "scope": "MAJOR_CLASS_II_NEW_PHYSICAL_ORIGINAL",
+      "date": "2026-01-13",
+      "subject": "Commemoration of the Baptism of the Lord",
+      "status": "NEW_NGA_CC0_PAINTING_LEAD; FEAST_EXACT_BUT_NOT_VERBATIM_JOHN1_GOSPEL",
+      "physicalObject": {
+        "artist": "Nicolas Poussin",
+        "title": "The Baptism of Christ",
+        "date": "1641/1642",
+        "institution": "National Gallery of Art, Washington",
+        "inventory": "1946.7.14",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          95.5,
+          121
+        ],
+        "objectUrl": "https://www.nga.gov/artworks/32692-baptism-christ"
+      },
+      "image": {
+        "source": "https://www.nga.gov/artworks/32692-baptism-christ",
+        "licence": "Object page explicitly public domain; NGA Open Access unrestricted commercial/noncommercial use",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "NGA curatorial description identifies the baptismal scene specifically with Matthew 3:17 (voice from heaven), whereas the feast proper cited in the queue is John 1:29–34. Exact baptism subject but not a literal depiction of all verses in John 1. Distinct from the five existing Met/Cleveland Baptism candidates; no score assigned.",
+      "evidence": [
+        "https://www.nga.gov/artworks/32692-baptism-christ",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ]
+    },
+    {
+      "recordId": "B14-04",
+      "scope": "MAJOR_CLASS_II_NEW_PHYSICAL_ORIGINAL",
+      "date": "2026-12-28",
+      "subject": "Holy Innocents",
+      "status": "NEW_EXACT_EVENT_RIJKSMUSEUM_PUBLIC_DOMAIN_IMAGE_ROUTE; CONTENT_AND_VISUAL_REVIEW_PENDING",
+      "physicalObject": {
+        "artist": "Cornelis Cornelisz. van Haarlem",
+        "title": "The Massacre of the Innocents",
+        "date": "1590",
+        "institution": "Rijksmuseum, Amsterdam",
+        "inventory": "SK-A-128",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          245,
+          358
+        ],
+        "objectUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Massacre-of-the-Innocents--4de79860d4800b1e1e8f785960c41e86",
+        "persistentObjectUrl": "https://id.rijksmuseum.nl/200109195"
+      },
+      "image": {
+        "source": "Rijksmuseum object page Download image",
+        "licence": "Object-specific Public domain label; Rijksmuseum data policy allows public-domain/CC0 images including commercial use, with exceptions indicated by object",
+        "policy": "https://data.rijksmuseum.nl/policy/introductie",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "Exact Matthew 2:16–18 event. Large landscape oil, extremely graphic and therefore potentially unsuitable for user's sacred aesthetic; no editorial rating or placement. Do not conflate with the 1591 painting by same artist at Mauritshuis (inv.22), which is near-square and a separate original.",
+      "evidence": [
+        "https://www.rijksmuseum.nl/en/collection/object/The-Massacre-of-the-Innocents--4de79860d4800b1e1e8f785960c41e86",
+        "https://data.rijksmuseum.nl/policy/introductie"
+      ]
+    },
+    {
+      "recordId": "B14-05",
+      "scope": "MAJOR_CLASS_II_NEW_DISTINCT_OBJECT_RIGHTS_HOLD",
+      "date": "2026-12-28",
+      "subject": "Holy Innocents",
+      "status": "DISTINCT_EXACT_EVENT_OBJECT_VERIFIED; INSTITUTIONAL_IMAGE_COMMERCIAL_REUSE_HOLD",
+      "physicalObject": {
+        "artist": "Cornelis Cornelisz. van Haarlem",
+        "title": "The Massacre of the Innocents",
+        "date": "1591",
+        "institution": "Mauritshuis, The Hague (long-term loan Frans Hals Museum)",
+        "inventory": "22",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          268,
+          257
+        ],
+        "objectUrl": "https://www.mauritshuis.nl/en/our-collection/artworks/22-the-massacre-of-the-innocents"
+      },
+      "image": {
+        "source": "Mauritshuis object page high-resolution download",
+        "licence": "Institutional image download expressly noncommercial; commercial use directed to institution, no contact made",
+        "policy": "https://www.mauritshuis.nl/en/contact/requesting-visual-material",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "Do not confuse this 1591 near-square 268×257 cm work with Rijksmuseum 1590 landscape SK-A-128 245×358 cm. An independently licensed image may exist but has not been source-verified for unrestricted use. No user rating.",
+      "evidence": [
+        "https://www.mauritshuis.nl/en/our-collection/artworks/22-the-massacre-of-the-innocents",
+        "https://www.mauritshuis.nl/en/contact/requesting-visual-material"
+      ]
+    },
+    {
+      "recordId": "B14-06",
+      "scope": "MAJOR_CLASS_II_EXISTING_OBJECT_IMAGE_ROUTE_IMPROVED",
+      "date": "2026-11-09",
+      "subject": "Dedication of the Lateran Archbasilica",
+      "status": "B03_GAGLIARDI_FRESCO_LICENSED_PHOTO_ROUTE_FOUND; RELATED_ONLY; SHAREALIKE_REVIEW",
+      "physicalObject": {
+        "artist": "Filippo Gagliardi",
+        "title": "Interno di San Giovanni in Laterano",
+        "date": "1651",
+        "institution": "Basilica dei SS. Silvestro e Martino ai Monti, Rome",
+        "inventory": "Italian national catalogue 1200261369",
+        "medium": "fresco, not oil painting",
+        "objectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200261369"
+      },
+      "image": {
+        "source": "https://commons.wikimedia.org/wiki/File:Filippo_gagliardi,_antica_basilica_di_san_giovanni_in_laterano.JPG",
+        "photographer": "Sailko",
+        "reportedPixels": [
+          3648,
+          2736
+        ],
+        "licence": "CC BY-SA 3.0 Unported for uploader's photograph; attribution and share-alike obligations, not CC0",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "New identifiable photo route improves B03 rights unknown. Image shows historical basilica interior, not dedication rite; not strict feast artwork. Need verify exact fresco image and whether derivative display/cropping complies with CC BY-SA before use.",
+      "evidence": [
+        "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200261369",
+        "https://commons.wikimedia.org/wiki/File:Filippo_gagliardi,_antica_basilica_di_san_giovanni_in_laterano.JPG"
+      ]
+    },
+    {
+      "recordId": "B14-07",
+      "scope": "MAJOR_CLASS_II_NEW_RELATED_DOCUMENTARY_ORIGINAL",
+      "date": "2026-11-09",
+      "subject": "Dedication of the Lateran Archbasilica",
+      "status": "NEW_MET_CC0_DOCUMENTARY_PRINT; NOT_EXACT_DEDICATION_OR_OIL_PAINTING",
+      "physicalObject": {
+        "artist": "Giovanni Battista Piranesi",
+        "title": "St. Giovanni in Laterano, Interior, from Vedute di Roma",
+        "date": "ca. 1768",
+        "institution": "Metropolitan Museum of Art",
+        "inventory": "1972.620.2",
+        "medium": "etching",
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/353967"
+      },
+      "image": {
+        "source": "Met object page Download Image",
+        "licence": "Object labelled Public Domain; Met Open Access allows unrestricted commercial/noncommercial use",
+        "policy": "https://www.metmuseum.org/hubs/open-access",
+        "bytesAcquired": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "A source-verified historical view of the actual basilica. Suitable as secondary documentary visual only, not as exact dedication event, not an oil painting and not automatically user approved.",
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/353967"
+      ]
+    },
+    {
+      "recordId": "B14-08",
+      "scope": "MAJOR_CLASS_II_EXISTING_CANDIDATE_DECISION_RECONCILIATION",
+      "date": "2026-06-24",
+      "subject": "Nativity of Saint John the Baptist",
+      "status": "EXISTING_VAN_ORLEY_CC0_MASTER_ALREADY_ARCHIVED; REJECTED_SANO_NOT_TO_BE_REUSED",
+      "physicalObject": {
+        "artist": "Bernard van Orley",
+        "title": "The Birth and Naming of Saint John the Baptist",
+        "institution": "Metropolitan Museum of Art",
+        "inventory": "2001.216.3",
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/438467"
+      },
+      "image": {
+        "source": "Met original, existing archive originals/met-438467.jpg",
+        "previousSha256": "2ed2f5a5294815d7332c713eef824d2f616db12e5636ff5253908d87469832df",
+        "previousPixels": [
+          3867,
+          3390
+        ],
+        "licence": "Met CC0",
+        "newBytesAcquired": false,
+        "newHashVerified": false,
+        "newVisualQa": false
+      },
+      "assessment": "Existing canonical candidate met-438467 already has a previously archived and hashed source image, with editorial status 'previously rated acceptable / editorial hold'; do not claim a new master. Sano di Pietro met-458984, though also archived and CC0, is PERMANENTLY_REJECTED in the 451 intake. The separate approved Andrea Sacchi original remains unverified under non-Prado sources. Do not replace any approved painting.",
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/438467",
+        "https://www.metmuseum.org/art/collection/search/458984"
+      ]
+    }
+  ],
+  "totals": {
+    "researchRecords": 8,
+    "newDistinctPhysicalObjectLeads": 5,
+    "existingPhysicalObjectImageRouteImprovements": 2,
+    "existingCandidateDecisionReconciliations": 1,
+    "newVerifiedOpenOrPublicDomainImageRoutes": 4,
+    "additionalLicensedShareAlikePhotoRoutes": 1,
+    "restrictedInstitutionalPhotoRoutes": 2,
+    "newOriginalImageFilesAcquired": 0,
+    "newLocalHashes": 0,
+    "newPixelInspections": 0,
+    "newMobileCropQa": 0,
+    "canonicalIdsCreated": 0,
+    "userRatingsOrApprovalsChanged": 0,
+    "productionMastersCertified": 0,
+    "strictFeastCoverageChanges": 0
+  },
+  "nextQueue": [
+    "Before 2026-11-09 expiry, preserve the already-acquired Met Rosary, NGA St Lawrence and Met Navez image artifacts in a permitted archive and independently rehash bytes; do not count them as new artwork discoveries.",
+    "Resolve user-selected Caravaggio Emmaus image against London NG172 versus Brera 2296; Commons London source remains jurisdiction conditional.",
+    "Investigate exact Ambrosius Benson Salvator Mundi physical object and non-auction open image source without substituting KMSKA Quinten Massijs.",
+    "Check selected Getty John Martin 103QTX and KMSKA Van Dyck 297 source-image visual identity and crop in authorized image environment; routes already established in B11.",
+    "Class II: review Rijksmuseum SK-A-128 image suitability and exact per-object reuse, and distinguish Mauritshuis 22; retain Navez rating 3 and Sano rejection.",
+    "Continue missing Class II Lateran dedication exact depiction and source-backed Catholic Saint Cyril of Jerusalem portrait; do not re-audit completed B01-B13."
+  ],
+  "publicationGate": "RESEARCH_ONLY; no user approval, no certified production master, no merge or deployment."
+}

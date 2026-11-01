@@ -1,0 +1,232 @@
+{
+  "schema": "AO_SACRED_ART_PRIORITY_SIX_SOURCE_DISPLAY_EVIDENCE_V1",
+  "asOf": "2026-10-20",
+  "context": "Five portrait-oriented candidates plus one separate landscape Saint Lucy narrative, drawn from the 96-image integrated source QA.",
+  "provenance": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39404438719",
+  "conclusions": {
+    "stagedSourcesShaVerified": 6,
+    "officialIndividualObjectRecordsMatched": 6,
+    "openAccessPublishedEvidenceChecked": 6,
+    "releaseCertified": 0
+  },
+  "guardrails": {
+    "noPradoOrThirdPartyPradoMirrors": true,
+    "noContactOrPaidLicence": true,
+    "doNotModifyCuratorArtworkSelectionsOrExistingScores": true,
+    "preserveFullPainting": true,
+    "noPublicationWithoutPhotographicApprovalAndActualHandsetReview": true,
+    "notAnAppRuntimeAssetManifest": true
+  },
+  "notes": [
+    "Image sources are from institution-controlled image endpoints and NGA published_images.csv primary openaccess=1 records.",
+    "Institutional rights declarations are public evidence, not a warranty of rights in every jurisdiction.",
+    "The comparison gallery is a desktop and phone-viewport browser simulation; no actual Ad Orientem runtime route/handset release QA completed.",
+    "The museum accessions and source SHA-256 hashes were checked against the current-run staging evidence; images remain technical-source-only."
+  ],
+  "records": [
+    {
+      "artworkId": "met-712539",
+      "physicalPaintingTitle": "Saint Philip Neri (1515–1595)",
+      "artist": "Carlo Dolci",
+      "institution": "MET_OPEN_ACCESS",
+      "museumAccession": "2016.507",
+      "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/712539",
+      "sourceImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-944-001.jpg",
+      "institutionPolicyUrl": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "publicRightsEvidence": "OFFICIAL_MET_OBJECT_PUBLIC_DOMAIN_AND_OBJECT_OPEN_ACCESS_FLAG",
+      "imageSha256": "667ad6757d2356e03f6e3629c854861eabdde8f91deeec76c3808cabcd9fc75a",
+      "imageDimensions": {
+        "width": 3363,
+        "height": 4000
+      },
+      "technicalBytesShaMatchedCurrentRun": true,
+      "photoTakenFromOfficialMuseumImageSource": true,
+      "visualIdentityAgainstOfficialObjectDescription": "CONSISTENT_WITH_OFFICIAL_OBJECT_AND_COMPOSITION",
+      "editorialAuthority": "CURRENT_APPROVED_WORK",
+      "compositionType": "PORTRAIT",
+      "compositionObservation": "Keep headwear, beard, white collar; do not crop wide banner.",
+      "proposedMobileTreatment": {
+        "portrait": "CONTAIN_NO_CROP",
+        "landscape": "CONTAIN_NO_CROP",
+        "background": "#090d13",
+        "noAutomaticCover": true
+      },
+      "rightsPolicySourceReviewed": true,
+      "selectedReproductionPhotographApprovedByCurator": false,
+      "actualAppHandsetScreenshotTestPassed": false,
+      "photoRightsFormalReleaseSignoff": false,
+      "masterProductionCertified": false,
+      "nextHumanGate": "Review staged photographic reproduction vs selected original, approve use of contain with original aspect ratio, test actual app phone views."
+    },
+    {
+      "artworkId": "met-437423",
+      "physicalPaintingTitle": "The Immaculate Conception",
+      "artist": "Guido Reni",
+      "institution": "MET_OPEN_ACCESS",
+      "museumAccession": "59.32",
+      "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437423",
+      "sourceImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT1138.jpg",
+      "institutionPolicyUrl": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "publicRightsEvidence": "OFFICIAL_MET_OBJECT_PUBLIC_DOMAIN_AND_OBJECT_OPEN_ACCESS_FLAG",
+      "imageSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "imageDimensions": {
+        "width": 2597,
+        "height": 3722
+      },
+      "technicalBytesShaMatchedCurrentRun": true,
+      "photoTakenFromOfficialMuseumImageSource": true,
+      "visualIdentityAgainstOfficialObjectDescription": "CONSISTENT_WITH_OFFICIAL_OBJECT_AND_COMPOSITION",
+      "editorialAuthority": "CURRENT_APPROVED_WORK",
+      "compositionType": "ALTARPIECE_TALL",
+      "compositionObservation": "Full crescent, lower angels and top glory required. Cover crops suppress iconographic elements.",
+      "proposedMobileTreatment": {
+        "portrait": "CONTAIN_NO_CROP",
+        "landscape": "CONTAIN_NO_CROP",
+        "background": "#090d13",
+        "noAutomaticCover": true
+      },
+      "rightsPolicySourceReviewed": true,
+      "selectedReproductionPhotographApprovedByCurator": false,
+      "actualAppHandsetScreenshotTestPassed": false,
+      "photoRightsFormalReleaseSignoff": false,
+      "masterProductionCertified": false,
+      "nextHumanGate": "Review staged photographic reproduction vs selected original, approve use of contain with original aspect ratio, test actual app phone views."
+    },
+    {
+      "artworkId": "cma-148758",
+      "physicalPaintingTitle": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "institution": "CLEVELAND_MUSEUM_CC0",
+      "museumAccession": "1976.2",
+      "museumObjectUrl": "https://clevelandart.org/art/1976.2",
+      "sourceImageUrl": "https://openaccess-cdn.clevelandart.org/1976.2/1976.2_print.jpg",
+      "institutionPolicyUrl": "https://www.clevelandart.org/open-access",
+      "publicRightsEvidence": "CLEVELAND_OBJECT_OPEN_ACCESS_CC0_FLAG",
+      "imageSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "imageDimensions": {
+        "width": 2563,
+        "height": 3400
+      },
+      "technicalBytesShaMatchedCurrentRun": true,
+      "photoTakenFromOfficialMuseumImageSource": true,
+      "visualIdentityAgainstOfficialObjectDescription": "CONSISTENT_WITH_OFFICIAL_OBJECT_AND_COMPOSITION",
+      "editorialAuthority": "CURRENT_APPROVED_WORK",
+      "compositionType": "ALTARPIECE",
+      "compositionObservation": "Full horizontal crossbar, Saint Andrew's hands, onlookers, and lower body required.",
+      "proposedMobileTreatment": {
+        "portrait": "CONTAIN_NO_CROP",
+        "landscape": "CONTAIN_NO_CROP",
+        "background": "#090d13",
+        "noAutomaticCover": true
+      },
+      "rightsPolicySourceReviewed": true,
+      "selectedReproductionPhotographApprovedByCurator": false,
+      "actualAppHandsetScreenshotTestPassed": false,
+      "photoRightsFormalReleaseSignoff": false,
+      "masterProductionCertified": false,
+      "nextHumanGate": "Review staged photographic reproduction vs selected original, approve use of contain with original aspect ratio, test actual app phone views."
+    },
+    {
+      "artworkId": "cma-135659",
+      "physicalPaintingTitle": "The Immaculate Conception",
+      "artist": "Bartolomé Esteban Murillo",
+      "institution": "CLEVELAND_MUSEUM_CC0",
+      "museumAccession": "1959.189",
+      "museumObjectUrl": "https://clevelandart.org/art/1959.189",
+      "sourceImageUrl": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+      "institutionPolicyUrl": "https://www.clevelandart.org/open-access",
+      "publicRightsEvidence": "CLEVELAND_OBJECT_OPEN_ACCESS_CC0_FLAG",
+      "imageSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "imageDimensions": {
+        "width": 1951,
+        "height": 3400
+      },
+      "technicalBytesShaMatchedCurrentRun": true,
+      "photoTakenFromOfficialMuseumImageSource": true,
+      "visualIdentityAgainstOfficialObjectDescription": "CONSISTENT_WITH_OFFICIAL_OBJECT_AND_COMPOSITION",
+      "editorialAuthority": "CURRENT_APPROVED_WORK",
+      "compositionType": "ALTARPIECE_VERY_TALL",
+      "compositionObservation": "Preserve Marian figure and lower angel grouping; prohibit 4:5 cover cropping.",
+      "proposedMobileTreatment": {
+        "portrait": "CONTAIN_NO_CROP",
+        "landscape": "CONTAIN_NO_CROP",
+        "background": "#090d13",
+        "noAutomaticCover": true
+      },
+      "rightsPolicySourceReviewed": true,
+      "selectedReproductionPhotographApprovedByCurator": false,
+      "actualAppHandsetScreenshotTestPassed": false,
+      "photoRightsFormalReleaseSignoff": false,
+      "masterProductionCertified": false,
+      "nextHumanGate": "Review staged photographic reproduction vs selected original, approve use of contain with original aspect ratio, test actual app phone views."
+    },
+    {
+      "artworkId": "nga-12209",
+      "physicalPaintingTitle": "Saint Lucy",
+      "artist": "Francisco de Zurbarán",
+      "institution": "NGA_OPEN_ACCESS",
+      "museumAccession": "1943.7.11",
+      "museumObjectUrl": "https://www.nga.gov/artworks/12209-saint-lucy",
+      "sourceImageUrl": "https://api.nga.gov/iiif/5074f3fc-e181-4c76-9c36-247d7c0978fa/full/full/0/default.jpg",
+      "institutionPolicyUrl": "https://www.nga.gov/terms-and-notices",
+      "publicRightsEvidence": "NGA_OBJECT_FREE_PUBLIC_DOMAIN_AND_PUBLISHED_PRIMARY_IMAGE_OPENACCESS_1",
+      "imageSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+      "imageDimensions": {
+        "width": 3032,
+        "height": 4096
+      },
+      "technicalBytesShaMatchedCurrentRun": true,
+      "photoTakenFromOfficialMuseumImageSource": true,
+      "visualIdentityAgainstOfficialObjectDescription": "CONSISTENT_WITH_OFFICIAL_OBJECT_AND_COMPOSITION",
+      "editorialAuthority": "PRESERVED_HISTORIC_USER_FIVE",
+      "compositionType": "SAINT_PORTRAIT",
+      "compositionObservation": "Preserve floral crown, palm branch, eyes on plate; wide cover removes key attributes.",
+      "proposedMobileTreatment": {
+        "portrait": "CONTAIN_NO_CROP",
+        "landscape": "CONTAIN_NO_CROP",
+        "background": "#090d13",
+        "noAutomaticCover": true
+      },
+      "rightsPolicySourceReviewed": true,
+      "selectedReproductionPhotographApprovedByCurator": false,
+      "actualAppHandsetScreenshotTestPassed": false,
+      "photoRightsFormalReleaseSignoff": false,
+      "masterProductionCertified": false,
+      "nextHumanGate": "Review staged photographic reproduction vs selected original, approve use of contain with original aspect ratio, test actual app phone views."
+    },
+    {
+      "artworkId": "G17-010",
+      "physicalPaintingTitle": "The Martyrdom and Last Communion of Saint Lucy",
+      "artist": "Paolo Veronese",
+      "institution": "NGA_OPEN_ACCESS",
+      "museumAccession": "1984.28.1",
+      "museumObjectUrl": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+      "sourceImageUrl": "https://api.nga.gov/iiif/4632aa5a-a7f9-4807-9cef-76b7ef661d40/full/full/0/default.jpg",
+      "institutionPolicyUrl": "https://www.nga.gov/terms-and-notices",
+      "publicRightsEvidence": "NGA_OBJECT_FREE_PUBLIC_DOMAIN_AND_PUBLISHED_PRIMARY_IMAGE_OPENACCESS_1",
+      "imageSha256": "70107336f45167d61038150006da92fab15b5874e19d4511bd64c8c5180df3bd",
+      "imageDimensions": {
+        "width": 4096,
+        "height": 3304
+      },
+      "technicalBytesShaMatchedCurrentRun": true,
+      "photoTakenFromOfficialMuseumImageSource": true,
+      "visualIdentityAgainstOfficialObjectDescription": "CONSISTENT_WITH_OFFICIAL_OBJECT_AND_COMPOSITION",
+      "editorialAuthority": "PRESERVED_HISTORIC_USER_FIVE",
+      "compositionType": "LANDSCAPE_NARRATIVE",
+      "compositionObservation": "Martyrdom on left and sacramental Communion on right must both remain visible; prohibit portrait cover crop.",
+      "proposedMobileTreatment": {
+        "portrait": "CONTAIN_NO_CROP",
+        "landscape": "CONTAIN_NO_CROP",
+        "background": "#090d13",
+        "noAutomaticCover": true
+      },
+      "rightsPolicySourceReviewed": true,
+      "selectedReproductionPhotographApprovedByCurator": false,
+      "actualAppHandsetScreenshotTestPassed": false,
+      "photoRightsFormalReleaseSignoff": false,
+      "masterProductionCertified": false,
+      "nextHumanGate": "Review staged photographic reproduction vs selected original, approve use of contain with original aspect ratio, test actual app phone views."
+    }
+  ]
+}

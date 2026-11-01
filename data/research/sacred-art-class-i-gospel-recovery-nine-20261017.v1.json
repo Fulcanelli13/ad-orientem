@@ -1,0 +1,161 @@
+{
+  "schema": "AO_CLASS_I_2026_NINE_GOSPEL_RECOVERY_WAVE1",
+  "asOf": "2026-10-17",
+  "scope": {
+    "calendar": "53 observed Class I principal dates in user local crosswalk",
+    "caseCount": 9,
+    "precedence": "1962 date actual proper and appointed gospel first"
+  },
+  "policy": {
+    "curatorFreeze": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+    "rejectedPermanent": true,
+    "fiveStarApproved": true,
+    "noAutomaticAestheticApproval": true,
+    "noProductionImageApproval": true,
+    "noRightsHolderContact": true,
+    "noPaidLicenses": true,
+    "verifyActualImageMasterAndRightsBeforeDeployment": true,
+    "noUnrelatedSeasonalFiller": true
+  },
+  "cases": [
+    {
+      "date": "2026-03-08",
+      "gospel": "Luke 11:14–28",
+      "status": "UNRESOLVED_EXACT",
+      "notes": "Do not substitute Gerasene demoniac or other unrelated exorcisms",
+      "candidates": []
+    },
+    {
+      "date": "2026-03-22",
+      "gospel": "John 8:46–59",
+      "status": "UNRESOLVED_EXACT",
+      "notes": "Do not substitute Christ among the Doctors (Luke 2), adultery (John 8:1–11) or Temple cleansing",
+      "candidates": []
+    },
+    {
+      "date": "2026-03-30",
+      "gospel": "John 12:1–9",
+      "status": "EXACT_SCENE_RESEARCH_CANDIDATE",
+      "notes": "Bethany with Lazarus, Martha and Mary anointing Christ; no new approval",
+      "candidates": [
+        {
+          "title": "Niels Larsen Stevns, Mary Anoints Christ's Feet (1907)",
+          "sourceUrl": "https://kunsten.dk/en/work-of-art/mary-anoints-christs-feet-1780",
+          "relation": "GOSPEL_EXACT",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        },
+        {
+          "title": "Lake Swabian Master, Supper at Bethany (c. 1500)",
+          "sourceUrl": "https://mariamagdalena.staedelmuseum.de/en/chapter/storytelling-einer-heiligen/",
+          "relation": "GOSPEL_EXACT",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "gospel": "Luke 24:36–47",
+      "status": "SUBJECT_MATCH_NON_OIL_HOLD",
+      "notes": "Resurrection appearance to disciples; lacks verified preferred naturalistic oil painting",
+      "candidates": [
+        {
+          "title": "William Blake, Christ Appearing to His Disciples After the Resurrection (c.1795)",
+          "sourceUrl": "https://www.nga.gov/artworks/11497-christ-appearing-his-disciples-after-resurrection",
+          "relation": "SUBJECT_MATCH_MONOTYPE",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        },
+        {
+          "title": "After Sebastien Le Clerc, Christ Appearing to His Disciples",
+          "sourceUrl": "https://www.nga.gov/artworks/59711-christ-appearing-his-disciples",
+          "relation": "SUBJECT_MATCH_ENGRAVING",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "gospel": "Matthew 28:16–20",
+      "status": "UNRESOLVED_EXACT",
+      "notes": "Gleyre is a later dispersal of twelve including Matthias at foot of cross, not eleven on Galilean mountain",
+      "candidates": [
+        {
+          "title": "Charles Gleyre, La Separation des Apotres (1845)",
+          "sourceUrl": "https://www.musee-girodet.fr/la-separation-des-apotres",
+          "relation": "DIFFERENT_EPISODE_NOT_EXACT",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "gospel": "John 3:16–21",
+      "status": "NARRATIVE_CONTEXT_RESEARCH_CANDIDATE",
+      "notes": "Tanner's scene is Christ speaking to Nicodemus: source context of the proper text, not literal every verse",
+      "candidates": [
+        {
+          "title": "Henry Ossawa Tanner, Nicodemus (1899)",
+          "sourceUrl": "https://www.pafa.org/museum/collection/item/nicodemus",
+          "relation": "GOSPEL_CONTEXT",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "gospel": "John 10:1–10",
+      "status": "GOSPEL_ICONOGRAPHY_RESEARCH_CANDIDATE",
+      "notes": "Corrected actual 1962 Pentecost Tuesday Gospel; child Good Shepherd depiction is symbolic, not adult discourse",
+      "candidates": [
+        {
+          "title": "Bartolome Esteban Murillo, The Good Shepherd (c.1660)",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-good-shepherd/28013a12-7a77-4a4f-9b26-85422f4d7afe",
+          "relation": "GOSPEL_SYMBOLISM",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "gospel": "Luke 9:1–6",
+      "status": "MISSION_ICONOGRAPHY_RESEARCH_CANDIDATE",
+      "notes": "Met altarpiece depicts Christ sending apostles to evangelize but does not establish Luke 9 specifically; Gleyre later dispersal is not exact",
+      "candidates": [
+        {
+          "title": "Miguel Alcaniz, Saint Giles with Christ Triumphant over Satan and the Mission of the Apostles (c.1408)",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/435572",
+          "relation": "MISSION_GENERIC",
+          "aestheticApproval": "NOT_GRANTED_BY_THIS_LEDGER",
+          "imageRelease": "HOLD"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "gospel": "Matthew 11:2–10",
+      "status": "UNRESOLVED_EXACT",
+      "notes": "Hafner John in prison is only secondary-reference context; John preaching, beheading or baptism are other passages",
+      "candidates": []
+    }
+  ],
+  "releaseGate": {
+    "newlyClearedImages": 0,
+    "newlyPublished": 0,
+    "requires": [
+      "physical artwork identity",
+      "exact 1962 proper",
+      "Gospel relation",
+      "user approval or pre-existing 5-star identity",
+      "master reproduction and image rights",
+      "attribution",
+      "crop and resolution",
+      "rendering QA"
+    ]
+  }
+}

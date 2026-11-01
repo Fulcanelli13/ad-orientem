@@ -1,0 +1,145 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B09_V1",
+  "batchId": "AO-ART-2026-10-21-B09",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Research the outstanding major Class II Seven Sorrows devotion with an exact museum-held painting identity and official licensed image route. Additive evidence only.",
+  "upstream": {
+    "b08": "data/research/sacred-art-b08-2026-10-21-andrew-martyrdom-open-cma-copy.v1.json",
+    "candidateCatalogue": "data/calendar/sacred-art-candidates.v1.json on platform/885-sacred-art-candidates",
+    "frozenDecisions": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json on W60",
+    "w64Authority": "data/research/sacred-visual-w64-explicit-user-5star-physical-record-authority-20261015.v1.json on W60",
+    "sourcePriority": "data/research/sacred-art-b02-2026-10-21-continued-sources-and-class-ii-leads.v1.json and data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json"
+  },
+  "rules": {
+    "preserveAllExistingRatingsSelectionsAndExclusions": true,
+    "noPradoOrMirrors": true,
+    "noNewCanonicalArtworkID": true,
+    "noApprovalInferenceFromMissingRecords": true,
+    "noRawImageAcquisitionRetry": true,
+    "noProductionCertification": true
+  },
+  "record": {
+    "recordId": "B09-01",
+    "category": "Major Class II devotional subject — Our Lady of Sorrows / Seven Sorrows",
+    "calendarRelation": {
+      "occasion": "Seven Sorrows of the Blessed Virgin Mary",
+      "date": "1962-09-15",
+      "priority": "Major Class II research target",
+      "calendarSource": "Existing 1962 Class II/III occasion records; no coverage reassignment made.",
+      "coverageEffect": "Research source found; strict coverage remains 13/24 major Class II."
+    },
+    "existingArtworkId": null,
+    "dedupe": {
+      "consulted": [
+        "281-entry PR #887 candidate snapshot",
+        "W60 frozen-decision file",
+        "W64 five-star physical-record authority"
+      ],
+      "finding": "No same artist/object-number or title match for Dürer, Alte Pinakothek inventory 709 was found in the searched snapshots. This is not proof that no older external rating exists. No rating, canonical ID, or editorial selection was inferred."
+    },
+    "painting": {
+      "artist": "Albrecht Dürer",
+      "title": "The Virgin Mary as Mother of Sorrows (Maria als Schmerzensmutter)",
+      "date": "1495/98",
+      "institution": "Bayerische Staatsgemäldesammlungen, Alte Pinakothek, Munich",
+      "inventoryNumber": "709",
+      "medium": "painting on pine panel",
+      "dimensions": "110 × 43.6 cm (painted surface)",
+      "officialObjectUrl": "https://www.sammlung.pinakothek.de/en/artwork/Pdxz0KvGw5/albrecht-duerer/maria-als-schmerzensmutter",
+      "identityEvidence": "Official collection record identifies artist, title, date, medium, dimensions, inventory 709, holding collection, and explains that this panel fragment belonged with seven scenes of the Sorrows of the Virgin now in Dresden; the original polyptych was sawn apart in the 16th century."
+    },
+    "subjectRelation": {
+      "assessment": "Exact devotional subject: Mary as Mater Dolorosa, identified by the museum as the central panel of the Seven Sorrows polyptych.",
+      "qualification": "This physical object is the central Mother of Sorrows panel, not the complete seven-scene Dresden group. It is strongly relevant to the devotion but should not be described as a complete seven-sorrows narrative. The associated seven scenes are separate physical works in Dresden."
+    },
+    "image": {
+      "officialObjectImageRoute": "The official collection page exposes a Download link for the museum image.",
+      "imageDownloadUrl": "https://cdn.thenetexperts.info/image/authenticated/s--oJXqcsJY--/q_80/artworks/ALBRECHT-DUERER-1471_MARIA-ALS-SCHMERZENSMUTTER-709_1471357_CC-BY-SA_BSTGS.jpg",
+      "sourceIdentity": "Official page names the image file for Maria als Schmerzensmutter, inventory 709; source route is specific to the identified object.",
+      "originalPixels": null,
+      "sourceAcquired": false,
+      "integrity": "No file bytes, hash, or pixel inspection acquired. The filename's q_80 rendition indicator means do not assume it is the highest-resolution master.",
+      "mobile": "Tall, narrow panel ratio 0.396. Use full image in contain/letterbox layout; do not center-crop. Actual visual crop QA pending image bytes."
+    },
+    "rights": {
+      "painting": "Dürer died in 1528; the painting is public domain.",
+      "reproductionRights": "The official collection page links an image-specific CC BY-SA 4.0 label for inventory 709, and its official Download link resolves to a named image rendition for this object.",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "evidenceUrl": "https://www.sammlung.pinakothek.de/en/artwork/Pdxz0KvGw5/albrecht-duerer/maria-als-schmerzensmutter",
+      "attribution": "Credit Bayerische Staatsgemäldesammlungen / Alte Pinakothek and the artwork/artist; include CC BY-SA 4.0 link and indicate modifications. If a derivative is distributed, ShareAlike terms apply.",
+      "scope": "Official photo reproduction route is explicitly labelled CC BY-SA 4.0, which permits commercial sharing/adaptation subject to attribution and ShareAlike. This is image-specific reproduction evidence, not production approval."
+    },
+    "decisionState": {
+      "candidateDiscovered": true,
+      "physicalIdentityVerified": true,
+      "sourceRouteFound": true,
+      "sourceAcquired": false,
+      "rightsVerified": true,
+      "editorialApproved": false,
+      "rating": "No rating assigned or modified.",
+      "productionCertified": false
+    },
+    "status": "OFFICIAL_OBJECT_IDENTITY_VERIFIED; EXACT_MATER_DOLOROSA_DEVOTION_WITH_POLYPTYCH_QUALIFICATION; OFFICIAL_DOWNLOAD_AND_IMAGE_SPECIFIC_CC_BY_SA_4_0_VERIFIED; PIXEL_SIZE_AND_FILE_QA_PENDING; CANDIDATE_ONLY"
+  },
+  "totals": {
+    "batchTargets": 1,
+    "newPhysicalPaintingIdentitiesVerified": 1,
+    "exactDevotionalSourceRoutesFound": 1,
+    "explicitImageReuseRightsFindings": 1,
+    "originalPixelsVerified": 0,
+    "rawImageFilesAcquired": 0,
+    "sha256Recorded": 0,
+    "imageIntegrityChecks": 0,
+    "mobileCropInspections": 0,
+    "newCanonicalArtworkIDs": 0,
+    "ratingsOrApprovalsChanged": 0,
+    "strictCoverageChanges": 0,
+    "productionMastersCertified": 0
+  },
+  "progress": {
+    "startingBaseline": {
+      "calendarCatalogue": 451,
+      "pr887CandidateCatalogue": 281,
+      "approvedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicW64FivePhysicalRecords": 109,
+      "sourceIdentityMasterLeads": 222,
+      "previouslyArchivedOriginalMasters": 8,
+      "pendingOriginalMasters": 214,
+      "classIDateAssociations": "53/53",
+      "classIStrict": "18/53",
+      "majorClassIIStrict": "13/24",
+      "otherClassIIStrict": "6/52",
+      "certifiedMasters": 0
+    },
+    "afterB09": {
+      "catalogueAndDecisionCounts": "unchanged",
+      "cumulativeB01toB09": {
+        "verifiedOrReconfirmedPhysicalIdentityTargets": 32,
+        "sourceRoutes": 29,
+        "sourceRightsFindings": 28,
+        "rawImageFilesAcquired": 0,
+        "newCanonicalArtworkIDs": 0,
+        "ratingsOrApprovalsChanged": 0,
+        "certifiedMasters": 0
+      },
+      "classIDateAssociations": "53/53 unchanged",
+      "classIStrict": "18/53 unchanged",
+      "majorClassIIStrict": "13/24 unchanged",
+      "otherClassIIStrict": "6/52 unchanged"
+    }
+  },
+  "queue": {
+    "nextPriority": [
+      "Continue with approved Class I source gaps, prioritizing rights-conditional Van Dyck 58.3 and source alternatives for the locked Kramskoi 651 and Raphael Pinacoteca inv.4 selections.",
+      "Continue open major Class II gaps after excluding B02/B03/B07/B08/B09 records: Baptism, Lawrence, Nativity of Mary, Exaltation of the Cross, Rosary, Holy Innocents, Simon and Jude, and St Andrew each already have leads requiring crosswalk, pixel/quality, or historical-decision reconciliation.",
+      "Resolve Class II Lateran dedication exact subject and rights gaps, and outstanding Doctor identities, without counting thematic images as strict coverage.",
+      "Treat the Seven Sorrows painting as candidate only; full historical ratings beyond the consulted snapshots remain an unresolved decision crosswalk."
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B10 — continue the highest-priority approved Class I source/rights gap from W60; if a prior raw-image transfer is still blocked, do not retry it. Save the next research note additively and proceed through the remaining queue."
+  }
+}

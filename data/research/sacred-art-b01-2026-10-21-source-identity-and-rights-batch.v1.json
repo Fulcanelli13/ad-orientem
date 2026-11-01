@@ -1,0 +1,453 @@
+{
+  "schema": "AO_SACRED_ART_B01_SOURCE_IDENTITY_RIGHTS_BATCH_V1",
+  "batchId": "AO-ART-2026-10-21-B01",
+  "asOf": "2026-10-21",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "repository": "Fulcanelli13/ad-orientem",
+  "scope": "bounded research supplement; no canonical catalogue, decision, or production asset mutation",
+  "authority": {
+    "primaryCatalogue": {
+      "branch": "platform/885-sacred-art-candidates",
+      "path": "data/calendar/sacred-art-candidates.v1.json",
+      "entries": 281,
+      "note": "This branch snapshot's catalogue is an older 281-entry candidate registry; it is not the reconciled 451-artwork all-source catalogue."
+    },
+    "sourceIdentityMaster": {
+      "branch": "platform/885-sacred-art-candidates",
+      "path": "data/calendar/sacred-art-source-identity-master-CURRENT-20261013.v1.json",
+      "identities": 222,
+      "acquiredOriginalMasters": 8,
+      "pendingImageMasters": 214
+    },
+    "frozenDecisions": {
+      "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+      "path": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+      "currentApprovals": 107,
+      "locked": 90,
+      "rejected": 68,
+      "historicFivePhysicalRecordIDs": 109
+    },
+    "classIOverlay": "data/research/sacred-art-class-i-53-current-date-decisions-overlay-20261020.v1.json",
+    "p0Register": "data/research/sacred-art-p0-77-calendar-lock-reconciliation-20261020.v1.json",
+    "classIClassIIQueue": "data/research/sacred-art-p0-class-i-31-source-and-class-ii-11-triage-20261020.v1.json",
+    "photographExceptions": "data/research/sacred-art-29-photograph-identity-exceptions-20261021.v1.json"
+  },
+  "decisionRules": {
+    "score0to2": "permanently rejected; not reintroduced",
+    "score3": "research only",
+    "score4": "awaiting editorial decision",
+    "score5": "existing aesthetic approval only; no publication or media rights approval",
+    "missingHistoricRatings": "not permission to supersede a choice",
+    "artistExclusions": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "prado": "excluded, including mirrors and Commons copies",
+    "production": "no artwork selection, asset, or production status changed"
+  },
+  "reconciliation": {
+    "allSourceCatalogueArtworkCount": 451,
+    "cataloguePreviewBranchArtworkCount": 281,
+    "stagedImagesApprox": 96,
+    "productionCertifiedMasters": 0,
+    "classIDateAssociations": "53/53",
+    "majorClassII": {
+      "strictCovered": 13,
+      "total": 24
+    },
+    "otherClassII": {
+      "strictCovered": 6,
+      "total": 52
+    },
+    "p0ClassIStrict": {
+      "covered": 18,
+      "total": 53
+    },
+    "p0MajorClassIIStrict": {
+      "covered": 13,
+      "total": 24
+    },
+    "totalP0": {
+      "strictCovered": 31,
+      "total": 77
+    },
+    "currentDateSpecificSelectionsWithZeroCertifiedPhotos": 53,
+    "evidence": "PR #887 provides research catalogue/source lineage; PR #1231 supplies the later decision and date-coverage overlay. The 281 and 451 counts describe different scopes and are not treated as conflicting totals."
+  },
+  "batchTotals": {
+    "targets": 10,
+    "physicalWorkCandidateLeadsDiscovered": 9,
+    "newCanonicalCatalogueEntries": 0,
+    "originalPaintingIdentitiesVerified": 9,
+    "imageSourceRoutesIdentified": 6,
+    "distinctImageRightsEvidenceVerified": 6,
+    "approvedClassISelectionsWithSourceAndRightsRouteNowReadyForImageCertificationReview": 3,
+    "photoIdentityDiscrepanciesWithCorrectedResearchCandidate": 4,
+    "blockedIdentityTargets": 1,
+    "acquiredImageFiles": 0,
+    "editorialApprovalsChanged": 0,
+    "productionCertifications": 0
+  },
+  "statusDefinitions": {
+    "candidateDiscovered": "a work or image route was located",
+    "identityVerified": "official inventory/title/artist/date evidence identifies the physical painting",
+    "sourceAcquired": "original image file downloaded into controlled research archive with provenance and hash; none in this batch",
+    "rightsVerified": "explicit rights statement for the specific digital reproduction was located; this remains research evidence, not production certification",
+    "editorialApproved": "pre-existing user decision only; this batch creates no approval",
+    "productionCertified": "final file, rights, visual identity, crop, and runtime evidence accepted; none in this batch"
+  },
+  "records": [
+    {
+      "targetId": "B01-01",
+      "priority": "P0 Class I — approved date-specific selection",
+      "date": "2026-02-22",
+      "observedSubject": "I Sunday of Lent; Matthew 4:1–11",
+      "artworkId": null,
+      "catalogCrosswalk": "No exact catalogue work ID was attached in the date overlay; do not invent one.",
+      "painting": {
+        "artist": "Ivan Kramskoi",
+        "title": "Christ in the Desert",
+        "date": "1872",
+        "institution": "State Tretyakov Gallery",
+        "objectId": "651",
+        "objectUrl": "https://my.tretyakov.ru/app/masterpiece/8448"
+      },
+      "subjectRelation": "Related / interpretive rather than an explicit confrontation with Satan; the official museum interpretation centers Christ alone in the desert.",
+      "imageSource": {
+        "url": null,
+        "resolution": null,
+        "status": "no permitted reusable image source verified"
+      },
+      "rights": {
+        "status": "blocked",
+        "evidenceUrl": "https://tretyakov.ru/about/copirith/",
+        "finding": "Tretyakov reproduction terms require a paid agreement for reproduction use; no contact or purchase pursued."
+      },
+      "decision": "date-specific selection preserved; not re-rated or substituted",
+      "next": "find an independently reusable photograph of inventory 651 or leave source blocked"
+    },
+    {
+      "targetId": "B01-02",
+      "priority": "P0 Class I — approved date-specific selection; shared physical work with August 6 major Class II",
+      "dates": [
+        "2026-03-01",
+        "2026-08-06"
+      ],
+      "artworkId": null,
+      "catalogCrosswalk": "No exact catalogue work ID attached in the date overlays; same physical Raphael painting on both dates.",
+      "painting": {
+        "artist": "Raphael",
+        "title": "The Transfiguration",
+        "date": "1516–1520",
+        "institution": "Vatican Museums, Pinacoteca",
+        "objectUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html"
+      },
+      "subjectRelation": "Exact Transfiguration image; lower register also depicts the subsequent healing of the possessed boy, so the painting is a multi-episode composition.",
+      "imageSource": {
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html",
+        "resolution": null,
+        "status": "official object/source page identified; reproduction route not reusable under current free-only constraint"
+      },
+      "rights": {
+        "status": "blocked",
+        "evidenceUrl": "https://www.museivaticani.va/content/museivaticani/en/copyright.html",
+        "finding": "Vatican Museums reserve image/catalogue rights and control commercial reuse; no permission sought."
+      },
+      "decision": "March 1 Class I and August 6 Class II date associations preserved",
+      "next": "find a separately licensed photograph of this exact physical panel"
+    },
+    {
+      "targetId": "B01-03",
+      "priority": "P0 Class I — previously approved association; source identity exception repair",
+      "date": "2026-03-15",
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "catalogCrosswalk": "existing ID retained; source identity exception linked to official National Gallery of Ireland inventory NGI.72",
+      "painting": {
+        "artist": "Giovanni Lanfranco",
+        "title": "The Miracle of the Loaves and Fishes",
+        "date": "1624–1625",
+        "institution": "National Gallery of Ireland",
+        "objectId": "NGI.72",
+        "objectUrl": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes"
+      },
+      "subjectRelation": "Exact Gospel miracle.",
+      "imageSource": {
+        "url": "https://www.wga.hu/html_m/l/lanfranc/loaves.html",
+        "resolution": "1285 × 683",
+        "status": "composition-level fallback located; low resolution and exact reproduction rights not established"
+      },
+      "rights": {
+        "status": "provisional",
+        "evidenceUrl": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork",
+        "finding": "NGI makes selected high-resolution images available under CC BY 4.0 only where that exact image carries the CC label; the exact NGI.72 image's per-item CC label was not verified."
+      },
+      "discrepancy": "the previously linked file was a Tintoretto image, not this Lanfranco painting",
+      "decision": "existing human-locked association preserved; rights not cleared",
+      "next": "verify per-image NGI CC label or locate another explicitly licensed reproduction"
+    },
+    {
+      "targetId": "B01-04",
+      "priority": "P0 Class I — approved Palm Sunday selection",
+      "date": "2026-03-29",
+      "artworkId": null,
+      "catalogCrosswalk": "date-specific selection has no exact catalogue work ID attached; physical object identified as IMA accession 58.3.",
+      "painting": {
+        "artist": "Anthony van Dyck",
+        "title": "Entry of Christ into Jerusalem",
+        "date": "about 1617",
+        "institution": "Indianapolis Museum of Art at Newfields",
+        "objectId": "58.3",
+        "objectUrl": "https://collection.imamuseum.org/artwork/41673/"
+      },
+      "subjectRelation": "Exact Palm Sunday entry/procession.",
+      "imageSource": {
+        "url": "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+        "resolution": null,
+        "status": "image route found; pixel dimensions and image crop not verified"
+      },
+      "rights": {
+        "status": "evidence verified",
+        "evidenceUrl": "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+        "finding": "The exact Google Arts & Culture record names IMA accession 58.3 and explicitly labels Rights: Public Domain."
+      },
+      "decision": "date-specific approval preserved; no new catalogue identity or approval created",
+      "next": "obtain/inspect the full-resolution image and verify crop and source-file provenance"
+    },
+    {
+      "targetId": "B01-05",
+      "priority": "P0 Class I — approved All Saints selection",
+      "date": "2026-11-01",
+      "artworkId": null,
+      "catalogCrosswalk": "date-specific approval has no catalogue work ID attached; linked by exact artist/title to Met object 1971.93.",
+      "painting": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "date": "ca. 1598",
+        "institution": "The Metropolitan Museum of Art",
+        "objectId": "1971.93",
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437607"
+      },
+      "subjectRelation": "Exact feast iconography: the blessed and angelic choirs gathered around the Trinity.",
+      "imageSource": {
+        "url": "https://www.metmuseum.org/art/collection/search/437607",
+        "resolution": null,
+        "status": "Met download/API source route available; specific downloaded file not acquired or pixel-checked"
+      },
+      "rights": {
+        "status": "evidence verified",
+        "evidenceUrl": "https://www.metmuseum.org/art/collection/search/437607",
+        "policyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "finding": "The exact Met object page labels the painting Public Domain; Met Open Access applies CC0 to eligible digital images."
+      },
+      "decision": "date-specific approval preserved",
+      "next": "acquire the Met original into controlled research archive, record hash and dimensions, and inspect mobile crop"
+    },
+    {
+      "targetId": "B01-06",
+      "priority": "P0 Class I — approved St Joseph the Workman selection",
+      "date": "2026-05-01",
+      "artworkId": null,
+      "catalogCrosswalk": "date overlay has no exact catalogue work ID; crosswalk by artist/title to Louvre RF 1948 27.",
+      "painting": {
+        "artist": "Georges de La Tour",
+        "title": "Saint Joseph the Carpenter (Saint Joseph charpentier)",
+        "date": "ca. 1642–1644",
+        "institution": "Musée du Louvre",
+        "objectId": "RF 1948 27",
+        "objectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817"
+      },
+      "subjectRelation": "Exact St Joseph at work with the child Jesus.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:La_Tour.jpg",
+        "resolution": "4360 × 5136",
+        "status": "exact Louvre work and source photo identified on Commons; file not acquired or visually compared at pixel level"
+      },
+      "rights": {
+        "status": "evidence verified",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:La_Tour.jpg",
+        "finding": "Commons file states Public Domain Mark / PD-Art for the photographic reproduction; no museum image-use permission inferred."
+      },
+      "decision": "date-specific approval preserved",
+      "next": "confirm image shows the selected Louvre canvas, inspect uncropped original and mobile crop"
+    },
+    {
+      "targetId": "B01-07",
+      "priority": "Catalogue source-identity exception — source file corrected",
+      "date": null,
+      "artworkId": "ART-ietro-da-ortona-aint-ecilia",
+      "catalogCrosswalk": "existing ID retained; current frozen decision export has no approval/rejection row for this ID, so historical rating state remains unknown and is not changed.",
+      "painting": {
+        "artist": "Pietro da Cortona",
+        "title": "Saint Cecilia",
+        "date": "1620–1625",
+        "institution": "The National Gallery, London",
+        "objectId": "NG5284",
+        "objectUrl": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia"
+      },
+      "subjectRelation": "Exact saint identity.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:Pietro_da_Cortona_Saint_Cecilia_NG5284.jpg",
+        "resolution": "4543 × 6000",
+        "status": "exact-title/NG accession Commons file located; pixel comparison against official source still pending"
+      },
+      "rights": {
+        "status": "evidence verified",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Pietro_da_Cortona_Saint_Cecilia_NG5284.jpg",
+        "finding": "Commons file declares Public Domain Mark and PD-Art. This is image-specific licensing evidence, not production certification."
+      },
+      "discrepancy": "wrong Commons file previously pointed to a different Getty drawing/composition",
+      "decision": "no rating or approval changed",
+      "next": "compare file image against official NG5284 image and crop"
+    },
+    {
+      "targetId": "B01-08",
+      "priority": "Catalogue source-identity exception — source file corrected",
+      "date": null,
+      "artworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "catalogCrosswalk": "existing artwork ID and its approved score 5 retained; official Louvre identity INV 8020 / MR 2040.",
+      "painting": {
+        "artist": "Eustache Le Sueur",
+        "title": "The Preaching of Saint Paul at Ephesus",
+        "date": "1649",
+        "institution": "Musée du Louvre",
+        "objectId": "INV 8020; MR 2040",
+        "objectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010061650"
+      },
+      "subjectRelation": "Exact Acts 19 episode.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_-_The_Preaching_of_St_Paul_at_Ephesus_-_WGA12613.jpg",
+        "resolution": "1000 × 1186",
+        "status": "correct painted composition identified; image is low resolution for zoom and has not been crop-tested"
+      },
+      "rights": {
+        "status": "evidence verified",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_-_The_Preaching_of_St_Paul_at_Ephesus_-_WGA12613.jpg",
+        "finding": "Commons file declares a public-domain faithful-reproduction basis (PD-Art); the file is distinct from the earlier print."
+      },
+      "discrepancy": "previous source was a print, not the approved oil painting",
+      "decision": "score 5 approval retained; wrong print quarantined",
+      "next": "check alternate high-resolution image under independently documented open rights; compare current file with Louvre official images"
+    },
+    {
+      "targetId": "B01-09",
+      "priority": "Catalogue source-identity exception — source file corrected",
+      "date": null,
+      "artworkId": "W02-015",
+      "catalogCrosswalk": "existing ID retained; no rating row in the current reconciled freeze; this absence does not authorize replacing the historical choice. Correct official accession is NG5655, not NG230.",
+      "painting": {
+        "artist": "Francisco de Zurbarán",
+        "title": "Saint Francis in Meditation",
+        "date": "1639",
+        "institution": "The National Gallery, London",
+        "objectId": "NG5655",
+        "objectUrl": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation"
+      },
+      "subjectRelation": "Exact saint portrait/devotional scene.",
+      "imageSource": {
+        "url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+        "resolution": "1237 × 1484",
+        "status": "correct NG5655 photo identified; Commons history records a previous 3554 × 4226 version; current dimensions may be small for large display"
+      },
+      "rights": {
+        "status": "evidence verified",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+        "finding": "Commons file declares Public Domain Mark / PD-Art."
+      },
+      "discrepancy": "file for a different NG230 variant was previously confused with the signed 1639 NG5655 painting",
+      "decision": "rating/approval state untouched",
+      "next": "compare current source against NG5655 and seek an open high-resolution original"
+    },
+    {
+      "targetId": "B01-10",
+      "priority": "Approved permanent hero — blocked source-identity repair",
+      "date": null,
+      "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+      "catalogCrosswalk": "existing human-locked score 5 and preferredImageKey preserved; do not overwrite or release.",
+      "painting": {
+        "artist": "Pietro da Cortona",
+        "title": "The Guardian Angel",
+        "date": null,
+        "institution": null,
+        "objectId": null,
+        "objectUrl": null
+      },
+      "subjectRelation": "Exact title-level subject, but no verifiable physical painting identity found outside excluded Prado imagery.",
+      "imageSource": {
+        "url": null,
+        "resolution": null,
+        "status": "blocked; existing candidate photograph depicts Guardian Angel Cathedral, Las Vegas, not a painting"
+      },
+      "rights": {
+        "status": "not assessed because source is wrong object",
+        "evidenceUrl": null,
+        "finding": "No Prado image, copy, mirror, or derivative pursued."
+      },
+      "discrepancy": "existing preferred image key resolves to a cathedral photograph rather than a historical painting",
+      "decision": "locked score 5 retained; source is quarantined and no replacement chosen",
+      "next": "identify a non-Prado physical painting by Pietro da Cortona matching the locked selection; otherwise keep image source blocked"
+    }
+  ],
+  "coverageMatrixAfter": {
+    "classI": {
+      "dateAssociations": "53/53 unchanged",
+      "strictArtworkAssociations": "18/53 unchanged",
+      "sourceOrIdentityEvidenceAdvanced": 6,
+      "certifiedPhotos": 0
+    },
+    "majorClassII": {
+      "strictCovered": "13/24 unchanged",
+      "noNewDatesCertified": 0,
+      "note": "Raphael Transfiguration object identity also serves the August 6 major Class II subject; photograph rights remain blocked."
+    },
+    "otherClassII": {
+      "strictCovered": "6/52 unchanged",
+      "batchTargets": 0
+    },
+    "catalogueIdentityRepairs": {
+      "discrepanciesCorrected": 4,
+      "blocked": 1,
+      "provisionalRights": 1
+    },
+    "permanentHeroes": {
+      "guardianAngelSourceBlocked": 1
+    }
+  },
+  "remainingPriorityQueue": [
+    {
+      "rank": 1,
+      "group": "Approved Class I",
+      "target": "Recover independently reusable high-resolution image for Kramskoi Christ in the Desert; verify Tretyakov 651 object identity and rights."
+    },
+    {
+      "rank": 2,
+      "group": "Approved Class I / major Class II",
+      "target": "Find an openly reusable exact Raphael Transfiguration image for both March 1 and August 6; preserve one physical painting identity."
+    },
+    {
+      "rank": 3,
+      "group": "Approved Class I",
+      "target": "Verify the exact NGI.72 per-image CC BY label or find alternate licensed Lanfranco image."
+    },
+    {
+      "rank": 4,
+      "group": "Approved Class I",
+      "target": "Acquire and visually verify Met CC0 original for Saraceni Paradise; then IMA/GAC Van Dyck 58.3 and La Tour RF 1948 27."
+    },
+    {
+      "rank": 5,
+      "group": "Approved hero",
+      "target": "Resolve Pietro da Cortona Guardian Angel physical painting without Prado sources."
+    },
+    {
+      "rank": 6,
+      "group": "Other major Class II",
+      "target": "Continue the 11-row P0 Class II triage: Holy Name, Baptism, Lawrence, Nativity of Mary, Exaltation of Cross, Seven Sorrows, Rosary, Simon and Jude, Lateran dedication, Holy Innocents (and Raphael Transfiguration above)."
+    },
+    {
+      "rank": 7,
+      "group": "Other Class II",
+      "target": "Resume remaining 46 other Class II dates, with exact subject and frozen decision crosswalk before source discovery."
+    }
+  ],
+  "nextCheckpoint": "AO-ART-2026-10-21-B02 — source acquisition and visual identity/crop QA for the six reusable source routes, plus rights resolution for Class I Kramskoi/Raphael/Lanfranco; preserve all user decisions; do not certify or publish."
+}

@@ -1,0 +1,412 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B21_V1",
+  "batchId": "AO-ART-2026-10-30-B21",
+  "asOf": "2026-10-30",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive source/physical identity/image-rights research only. No editorial rating, canonical ID, source catalogue, production, asset publication, merge or deployment changes.",
+  "reconciliation": {
+    "previous": "data/research/sacred-art-b20-2026-10-29-apostles-and-sanctoral-open-originals.v1.json",
+    "earlier": "B03–B19 historical ledgers; B03 explicitly inspected",
+    "candidateBranch": "platform/885-sacred-art-candidates",
+    "candidatePath": "data/calendar/sacred-art-candidates.v1.json",
+    "candidateEntries": 281,
+    "bulkPath": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "bulkEntries": 451,
+    "exactAccessionDedupe": "All five new object accession numbers searched in 281+451 datasets: no exact accession matches. Existing Lawrence candidate nga-106362 and bulk ART alias were excluded from new-lead counts. Other historic workbooks/branches not globally deduped.",
+    "noCanonicalIdsAssigned": true
+  },
+  "policy": {
+    "preserveAllUserSelectionsAndRatings": true,
+    "excludePradoImageAcquisition": true,
+    "excludeFraAngelico": true,
+    "excludeElGreco": true,
+    "noPaidExtras": true,
+    "noContactRightsHolders": true,
+    "noMerge": true,
+    "noPublish": true,
+    "noDeploy": true,
+    "noMasterCertification": true
+  },
+  "records": [
+    {
+      "researchId": "B21-01",
+      "kind": "APPROVED_CLASS_I_EXACT_OBJECT_AND_PHOTOGRAPH_HOLD",
+      "priority": "CLASS_I_CHRIST_THE_KING_25_OCT",
+      "subject": "User-approved Ambrosius Benson Salvator Mundi; preserve selection",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "physicalObject": {
+        "medium": "oil on panel",
+        "dimensionsCm": [
+          91.4,
+          86.1
+        ],
+        "source": "Christie's London Old Masters Evening Sale, 3 December 2019, lot 4",
+        "custody": "Fundación Cultural Formación y Humanismo listed as vendor; current physical location not independently established",
+        "objectUrl": "https://www.christies.com/zh/lot/lot-6238407"
+      },
+      "imageRoute": {
+        "url": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+        "pixelsReported": [
+          2987,
+          3200
+        ],
+        "status": "COMMONS_PD_ART_PHOTOGRAPH_OF_2019_AUCTION_OBJECT; NO_INDEPENDENT_ORIGINAL_PHOTO_RIGHTS_CLEARANCE",
+        "frameStatus": "Auction catalogue reports inventory no. 9 on frame; actual source-file frame inclusion requires native inspection"
+      },
+      "evidence": [
+        "https://www.christies.com/zh/lot/lot-6238407",
+        "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+      ],
+      "identityCaution": "Christie's catalogue distinguishes Savior iconography from papal-tiara attributes of God the Father, suggesting deliberately ambiguous identification; preserve approved editorial choice without asserting theological exclusivity. Do not confuse with KMSKA collection 241 or Rubens collection 302, both separate artworks.",
+      "summaryEn": "The approved Benson Salvator Mundi can be linked to the exact 91.4 × 86.1 cm panel catalogued by Christie's in December 2019. A 2,987 × 3,200 Commons image exists, but its auction-photograph rights, frame-free presentation and native quality remain uncertified.",
+      "summaryFr": "Le Salvator Mundi de Benson déjà approuvé correspond au panneau de 91,4 × 86,1 cm catalogué par Christie's en décembre 2019. Une image Commons de 2 987 × 3 200 pixels existe, mais les droits de la photographie de vente, l'absence de cadre et la qualité native restent à vérifier.",
+      "status": "PHYSICAL_AUCTION_OBJECT_IDENTIFIED; PHOTO_RIGHTS_AND_PREVIEW_MATCH_HOLD",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-02",
+      "kind": "APPROVED_CLASS_I_ORIENTATION_AND_IDENTITY_HOLD",
+      "priority": "CLASS_I_ALL_SOULS_02_NOV",
+      "subject": "User-approved Ludovico Carracci An Angel Frees the Souls of Purgatory",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "physicalObject": {
+        "institutionReported": "Pinacoteca Vaticana",
+        "date": "c. 1610",
+        "medium": "oil on canvas",
+        "reportedDimensionsCm": [
+          44,
+          51
+        ],
+        "accession": "Not independently obtained from Vatican custodian",
+        "officialVaticanObjectUrl": null
+      },
+      "imageRoute": {
+        "url": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "pixelsReported": [
+          866,
+          1200
+        ],
+        "origin": "Web Gallery of Art / Commons",
+        "status": "LOW_RESOLUTION_PD_ART_REPRODUCTION; NO_CUSTODIAL_IMAGE_ROUTE"
+      },
+      "evidence": [
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "https://www.wga.hu/html_m/c/carracci/lodovico/purgator.html",
+        "https://beta.wga.hu/artists/carracci-lodovico-rca68553c81de94/an-angel-frees-the-souls-of-purgatory-rabe8f2105f93a5"
+      ],
+      "identityCaution": "Published object dimensions 44 high × 51 wide imply landscape while Commons JPEG 866 wide × 1200 high is portrait. Do not resolve by rotating/cropping/upscaling or certifying. Obtain custodial catalogue/inventory and compare approved preview to original.",
+      "summaryEn": "The existing All Souls selection remains held: the commonly circulated 866 × 1,200 reproduction is portrait-oriented, while independent catalogues report a 44 × 51 cm canvas. The discrepancy requires physical-object and image-orientation reconciliation before any master is certified.",
+      "summaryFr": "L'œuvre déjà retenue pour les fidèles défunts reste en attente : la reproduction courante de 866 × 1 200 pixels est verticale, alors que les catalogues indiquent une toile de 44 × 51 cm. Cette divergence doit être résolue avant toute validation du visuel principal.",
+      "status": "DIMENSION_ORIENTATION_CONFLICT; NO_VATICAN_HIGH_RES_IMAGE; HOLD",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-03",
+      "kind": "EXISTING_CANDIDATE_SOURCE_ALIAS_REPAIR_PROPOSAL",
+      "priority": "SANCTORAL_SAINT_LAWRENCE_10_AUG",
+      "subject": "Jean Baptiste de Champaigne Martyrdom of Saint Lawrence; already in 281-candidate and 451-work sources",
+      "existingSourceId": "nga-106362",
+      "artist": "Jean Baptiste de Champaigne",
+      "title": "The Martyrdom of Saint Lawrence",
+      "physicalObject": {
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1998.68.1",
+        "date": "c. 1660",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          81.7,
+          68.5
+        ],
+        "objectUrl": "https://www.nga.gov/artworks/106362-martyrdom-saint-lawrence"
+      },
+      "imageRoute": {
+        "url": "https://api.nga.gov/iiif/a397a12f-ba08-4586-bf9d-9d8c099fbdf9/full/full/0/default.jpg",
+        "rights": "NGA object-specific public domain image",
+        "policyUrl": "https://www.nga.gov/artworks/free-images-and-open-access"
+      },
+      "evidence": [
+        "https://www.nga.gov/artworks/106362-martyrdom-saint-lawrence",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ],
+      "identityCaution": "The bulk intake also has an ART- alias with old 103596 URL and matching artist/title, but this URL was not independently resolved. Treat as probable same-object alias pending accession crosswalk, not a second artwork. Museum's current attribution is Jean Baptiste de Champaigne, despite historical inscription P DE CHAMPAIGNE and older Philippe attribution.",
+      "summaryEn": "The existing Saint Lawrence candidate is now tied to NGA accession 1998.68.1 and a directly linked public-domain IIIF download. An older catalogue URL and Philippe de Champaigne attribution must be reconciled as possible aliases, not counted as a new painting.",
+      "summaryFr": "Le candidat existant pour saint Laurent est désormais rattaché à l'inventaire NGA 1998.68.1 et à une image IIIF libre de droits. Une ancienne URL et l'attribution historique à Philippe de Champaigne restent à rapprocher sans créer une nouvelle œuvre.",
+      "status": "EXISTING_SOURCE_ENRICHMENT_ONLY; EXACT_IMAGE_ROUTE_IDENTIFIED; NO_ACQUISITION",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-04",
+      "kind": "NEW_DISTINCT_PHYSICAL_ARTWORK_LEAD",
+      "priority": "SANCTORAL_SAINT_SEBASTIAN_20_JAN_RANK_TO_CONFIRM",
+      "subject": "Saint Sebastian succored by angel and possible Saint Irene",
+      "artist": "Tanzio da Varallo",
+      "title": "Saint Sebastian",
+      "physicalObject": {
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1939.1.191",
+        "date": "c. 1620/1630",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          117.3,
+          93.7
+        ],
+        "objectUrl": "https://www.nga.gov/artworks/332-saint-sebastian"
+      },
+      "imageRoute": {
+        "url": "https://api.nga.gov/iiif/5da649ea-4e91-4331-b7b8-d84e32aaabf4/full/full/0/default.jpg",
+        "rights": "NGA object-specific public domain image",
+        "policyUrl": "https://www.nga.gov/artworks/free-images-and-open-access"
+      },
+      "evidence": [
+        "https://www.nga.gov/artworks/332-saint-sebastian",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ],
+      "identityCaution": "NGA records an earlier Rubens attribution changed to Tanzio; woman may be Saint Irene, not definitively. Distinct from existing Rubens and Marco d'Oggiono Sebastian candidates.",
+      "summaryEn": "Tanzio's 1620s Saint Sebastian is a dark Caravaggesque oil painting showing an angel removing an arrow while a woman, possibly Saint Irene, supports the martyr. The NGA identifies the exact original and offers a public-domain image.",
+      "summaryFr": "Le Saint Sébastien de Tanzio, peint vers 1620–1630 dans un clair-obscur caravagesque, montre un ange retirant une flèche tandis qu'une femme, peut-être sainte Irène, soutient le martyr. La NGA identifie l'original et propose une image libre.",
+      "status": "OBJECT_AND_IIIF_URL_VERIFIED; RESEARCH_LEAD_ONLY; NATIVE_QA_PENDING",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-05",
+      "kind": "NEW_DISTINCT_PHYSICAL_ARTWORK_LEAD",
+      "priority": "CONVERSION_OF_SAINT_PAUL_25_JAN_RANK_TO_CONFIRM",
+      "subject": "Conversion of Saint Paul, Acts 9",
+      "artist": "Jacopo Tintoretto",
+      "title": "The Conversion of Saint Paul",
+      "physicalObject": {
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1961.9.43",
+        "date": "c. 1544",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          152.7,
+          236.3
+        ],
+        "objectUrl": "https://www.nga.gov/artworks/46142-conversion-saint-paul"
+      },
+      "imageRoute": {
+        "url": "https://api.nga.gov/iiif/50a2866d-de51-4824-a6b6-6c8643d94335/full/full/0/default.jpg",
+        "rights": "NGA object-specific public domain image",
+        "policyUrl": "https://www.nga.gov/artworks/free-images-and-open-access"
+      },
+      "evidence": [
+        "https://www.nga.gov/artworks/46142-conversion-saint-paul",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ],
+      "identityCaution": "Distinct from previously researched Murillo and Rubens/Diepenbeeck Conversion of Paul. Landscape 152.7 × 236.3 cm, dense horses and figures; portrait phone crop would remove essential narrative. No automatic hero recommendation.",
+      "summaryEn": "Tintoretto's Conversion of Saint Paul, circa 1544, illustrates Acts 9 with a crowded landscape of frightened horses and soldiers. Its NGA original has an open image route, but the horizontal narrative is a serious mobile-crop constraint.",
+      "summaryFr": "La Conversion de saint Paul du Tintoret, vers 1544, illustre les Actes 9 par une scène horizontale peuplée de chevaux et de soldats effrayés. L'image NGA est libre, mais la composition très large pose un problème de cadrage mobile.",
+      "status": "OBJECT_AND_IIIF_URL_VERIFIED; RESEARCH_LEAD_ONLY; CROP_HOLD",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-06",
+      "kind": "NEW_DISTINCT_PHYSICAL_ARTWORK_LEAD",
+      "priority": "SANCTORAL_SAINT_JEROME_30_SEP_RANK_TO_CONFIRM",
+      "subject": "Saint Jerome and angel with trumpet",
+      "artist": "Simon Vouet",
+      "title": "Saint Jerome and the Angel",
+      "physicalObject": {
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1961.9.52",
+        "date": "c. 1622/1625",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          144.8,
+          179.8
+        ],
+        "objectUrl": "https://www.nga.gov/artworks/46151-saint-jerome-and-angel"
+      },
+      "imageRoute": {
+        "url": "https://api.nga.gov/iiif/8cb10467-fce1-444c-8412-168ec845b730/full/full/0/default.jpg",
+        "rights": "NGA object-specific public domain image",
+        "policyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "webPreviewSeen": true,
+        "previewNote": "Web-rendered image appears frame-free with dark background; not native image QA"
+      },
+      "evidence": [
+        "https://www.nga.gov/artworks/46151-saint-jerome-and-angel",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ],
+      "identityCaution": "NGA Barberini inventory analysis explicitly separates a vertical unidentified saint, a square Saint Jerome, and the horizontal Vouet Saint Jerome in its collection. Never merge these three physical works.",
+      "summaryEn": "Vouet's shadowed Saint Jerome and the Angel depicts the Doctor writing as an angel raises a trumpet. NGA accession 1961.9.52 is distinguishable from two similarly described Barberini pictures; its horizontal layout requires mobile review.",
+      "summaryFr": "Le Saint Jérôme et l'ange de Vouet représente le Docteur écrivant dans l'ombre, tandis qu'un ange tient une trompette. L'inventaire NGA 1961.9.52 se distingue de deux autres tableaux Barberini similaires ; son format horizontal demande un contrôle mobile.",
+      "status": "OBJECT_AND_IIIF_URL_VERIFIED; HISTORICAL_PHYSICAL_DEDUPE; NO_NATIVE_QA",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-07",
+      "kind": "NEW_DISTINCT_PHYSICAL_ARTWORK_LEAD_NON_HERO",
+      "priority": "CLASS_II_SAINT_STEPHEN_26_DEC",
+      "subject": "Saint Stephen martyrdom in a historical Roman Missal initial",
+      "artist": "Apollonio de' Bonfratelli",
+      "title": "Historiated Initial (E) Excised from the Colonna Missal: The Martyrdom of Saint Stephen",
+      "physicalObject": {
+        "institution": "Cleveland Museum of Art",
+        "accession": "1985.140",
+        "date": "c. 1532",
+        "medium": "ink, tempera and liquid gold on vellum",
+        "dimensionsCm": [
+          10,
+          10
+        ],
+        "objectUrl": "https://www.clevelandart.org/art/1985.140"
+      },
+      "imageRoute": {
+        "url": "https://www.clevelandart.org/art/1985.140",
+        "rights": "Object page expressly allows copying/modification/distribution",
+        "policyUrl": "https://www.clevelandart.org/open-access",
+        "rawImageUrl": "Not captured"
+      },
+      "evidence": [
+        "https://www.clevelandart.org/art/1985.140",
+        "https://www.clevelandart.org/open-access"
+      ],
+      "identityCaution": "The miniature is within the ornamental letter E, not a full-size oil painting. CMA links it directly to the Offertory Elegerunt Apostoli Stephanum for the December 26 Mass. Strong liturgical documentary image; not a substitute for a dark-Baroque hero.",
+      "summaryEn": "A circa-1532 Roman missal initial depicts Saint Stephen's stoning within the letter E that introduces the Offertory of his December 26 Mass. This exact liturgical connection makes it valuable for a historical missal illustration, not necessarily a hero image.",
+      "summaryFr": "Une initiale enluminée d'un missel romain, vers 1532, représente la lapidation de saint Étienne dans la lettre E ouvrant l'offertoire de sa messe du 26 décembre. Le lien liturgique est exact, mais l'image relève plutôt de l'illustration historique que d'un visuel principal.",
+      "status": "OBJECT_CC0_AND_LITURGICAL_LINK_VERIFIED; NON_HERO_RESEARCH_LEAD",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-08",
+      "kind": "NEW_DISTINCT_PHYSICAL_ARTWORK_LEAD_RELATED_SUBJECT",
+      "priority": "CLASS_II_SAINT_ANNE_26_JUL_RELATED_SUBJECT",
+      "subject": "Saint Anne with Holy Family; related subject not single-saint portrait",
+      "artist": "French Painter (museum attribution)",
+      "title": "Holy Family with Saint Anne",
+      "physicalObject": {
+        "institution": "Metropolitan Museum of Art, New York",
+        "accession": "1976.100.12",
+        "date": "early 17th century",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          68.6,
+          50.8
+        ],
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436344"
+      },
+      "imageRoute": {
+        "url": "https://www.metmuseum.org/art/collection/search/436344",
+        "rights": "Met object marked Public Domain; institution CC0 open access",
+        "policyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "rawImageUrl": "Not independently captured"
+      },
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/436344",
+        "https://www.metmuseum.org/hubs/open-access"
+      ],
+      "identityCaution": "Distinct from B19 Trevisani sketch and other Rubens Anne works; French painter remains unidentified. Exact Saint Anne appears but multi-person Holy Family composition does not constitute exclusive Anne portrait.",
+      "summaryEn": "This early-seventeenth-century French Holy Family with Saint Anne, Met accession 1976.100.12, is a compact portrait-oriented Caravaggesque composition. It is an open-access related-subject alternative for Saint Anne, not a newly approved feast master.",
+      "summaryFr": "Cette Sainte Famille avec sainte Anne, œuvre française du début du XVIIe siècle conservée au Met sous le numéro 1976.100.12, présente un clair-obscur sur un format vertical. C'est une alternative iconographique liée à sainte Anne, non un visuel de fête approuvé.",
+      "status": "OBJECT_AND_CC0_VERIFIED; RELATED_SUBJECT_ONLY; NO_NATIVE_QA",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B21-09",
+      "kind": "EXISTING_ARCHIVE_PRESERVATION_PRIORITY_NO_DUPLICATE_WORKFLOW",
+      "priority": "ZERO_EURO_ARTIFACT_RESCUE_BEFORE_09_NOV",
+      "subject": "Three already acquired research originals in expiring GitHub Actions artifacts",
+      "artifactIds": [
+        11664124885,
+        11666577879,
+        11667353162
+      ],
+      "reportedExpiryUtc": [
+        "2026-11-09T08:43:46Z",
+        "2026-11-09T10:32:31Z",
+        "2026-11-09T10:33:24Z"
+      ],
+      "artworks": [
+        "Caracciolo Calling of Saint Matthew",
+        "Murillo Immaculate Conception Cleveland 1959.189",
+        "Cavallino Adoration of the Shepherds Cleveland 1968.100"
+      ],
+      "evidence": [
+        "https://github.com/Fulcanelli13/ad-orientem/tree/rescue/sacred-art-zero-euro-20261024"
+      ],
+      "identityCaution": "B19 verified artifact status on 28 October; current availability and durable rescue manifest were NOT independently rechecked this pass. The separate rescue branch owns archival preservation. No second rescue workflow created.",
+      "summaryEn": "Three previously acquired source-image archives were reported to expire on 9 November 2026. Verify the existing zero-cost rescue branch has durable, checksum-verified copies; do not confuse historical hashes with a new acquisition.",
+      "summaryFr": "Trois archives d'images sources déjà acquises étaient signalées comme expirant le 9 novembre 2026. Vérifier leur conservation durable et leurs empreintes dans la branche de sauvegarde gratuite existante, sans compter de nouvelle acquisition.",
+      "status": "PRIORITY_HOLD; NOT_NEW_ARTWORK; RESCUE_NOT_VERIFIED_THIS_PASS",
+      "sourceFileAcquiredThisPass": false,
+      "sha256ComputedThisPass": false,
+      "nativePixelQaThisPass": false,
+      "mobileCropQaThisPass": false,
+      "editorialApprovalThisPass": false,
+      "productionMasterCertified": false
+    }
+  ],
+  "totals": {
+    "researchRecords": 9,
+    "newDistinctPhysicalArtworkLeads": 5,
+    "existingSourceEnrichments": 1,
+    "approvedClassIIdentityAndRightsHolds": 2,
+    "archivePriorityRecords": 1,
+    "originalFilesAcquiredThisPass": 0,
+    "newSha256HashesThisPass": 0,
+    "nativePixelQAThisPass": 0,
+    "mobileCropQAThisPass": 0,
+    "newEditorialApprovals": 0,
+    "productionMastersCertified": 0
+  },
+  "limitations": [
+    "Museum object pages and published open-access policies verified. Three NGA direct image URLs captured from official Download links; one NGA web preview rendered. Container image-host DNS failed; no raw binary download or native QA.",
+    "The original Vatican inventory and high-resolution custodial image for Carracci were not located.",
+    "Benson Commons PD-Art classification is not independent proof of Christie’s auction-photograph rights in every jurisdiction.",
+    "Only accession-based deduplication against the two named source datasets, not all historical files."
+  ],
+  "nextQueue": [
+    "Urgent: before 9 November verify existing zero-cost rescue branch durable copies and SHA-256 readback for three expiring Actions artifacts; do not create duplicate rescue work.",
+    "Resolve All Souls Carracci 44×51 cm vs 866×1200 px orientation with Vatican custodial catalogue/inventory; find true native unframed original.",
+    "Confirm Benson 2019 Christie's exact approved preview, source photo authorship/reuse and frame-free native file; do not substitute unrelated KMSKA objects.",
+    "Acquire and hash NGA open images for Tanzio Sebastian 1939.1.191, Tintoretto Conversion 1961.9.43, Vouet Jerome 1961.9.52, and existing Lawrence 1998.68.1; check frame/colour/focus/390px mobile crop.",
+    "Acquire and inspect CMA Saint Stephen missal initial and Met French Holy Family with Anne; keep exact versus related subject distinctions.",
+    "Continue existing B20 Class II apostle open originals (Ribera Bartholomew, Coypel James, ter Brugghen Thomas) and B19 Evangelists without repeating identity research.",
+    "Preserve all user ratings, Prado/Fra Angelico/El Greco exclusions, and no production promotion."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B18_V1",
+  "batchId": "AO-ART-2026-10-27-B18",
+  "asOf": "2026-10-27",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Research-only November Class I photo/source quality continuation of B04 and B11, within the established Sacred Art pipeline.",
+  "upstream": [
+    "data/research/sacred-art-b04-2026-10-21-approved-class-i-source-rights-routes.v1.json",
+    "data/research/sacred-art-b11-2026-10-21-approved-class-i-nine-source-recoveries.v1.json",
+    "src/calendar/approved-class-i-heroes-2026.js"
+  ],
+  "invariants": [
+    "Preserve both user-approved physical artworks and frozen editorial choices; do not substitute or AI-reconstruct.",
+    "No paid image/rights service or metered storage; retain permanent originals rather than expiring Action artifacts.",
+    "Source page metadata is not proof an original file was downloaded or independently rehashed.",
+    "Artwork release requires identity, native bytes, rights, framing, colour, original-detail, checksum and responsive crop inspection."
+  ],
+  "records": [
+    {
+      "recordId": "B18-01",
+      "date": "2026-11-01",
+      "artworkId": "primary:2026-11-01",
+      "artist": "Carlo Saraceni",
+      "title": "Paradise",
+      "institution": "Metropolitan Museum of Art",
+      "accession": "1971.93",
+      "media": "oil on copper",
+      "officialObject": "https://www.metmuseum.org/art/collection/search/437607",
+      "b04SameObject": true,
+      "photo": {
+        "source": "https://commons.wikimedia.org/wiki/File:Paradise_MET_DT1448.jpg",
+        "direct": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Paradise_MET_DT1448.jpg",
+        "width": 3273,
+        "height": 3695,
+        "bytes": 2879956,
+        "upstreamSha1": "93deaea4c939effc7e1668ce52ea7e079c352600",
+        "rights": "Met object-specific Open Access / Commons CC0",
+        "originalSourceVerified": true,
+        "locallyAcquired": false,
+        "locallySHA1Matched": false,
+        "localSha256": null,
+        "productionPhotoStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED",
+        "currentPreviewPx": 960
+      },
+      "next": "Download real full Met-origin source through existing Sacred Art zero-cost acquisition; compare SHA-1, record SHA-256; inspect framing/painted edges, sharpness, colour, uncropped master and phone/desktop focal crops; do not certify from webpage alone.",
+      "status": "SOURCE_AND_RIGHTS_VERIFIED; ORIGINAL_FILE_NOT_ACQUIRED; CROPS_NOT_CERTIFIED"
+    },
+    {
+      "recordId": "B18-02",
+      "date": "2026-11-02",
+      "artworkId": "primary:2026-11-02",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "institutionReported": "Vatican Pinacoteca",
+      "dateReported": "c. 1610",
+      "originalMediumReported": "oil on canvas",
+      "sizeReported": "44 × 51 cm",
+      "physicalObjectAccession": "UNVERIFIED",
+      "photo": {
+        "source": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "direct": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Carracci-Purgatory.jpg",
+        "width": 866,
+        "height": 1200,
+        "bytes": 171356,
+        "upstreamSha1": "8ff089f032e65e7838b766fde691e0e066f5bb16",
+        "reuseEvidence": "Commons PD-Art / Public Domain Mark; photographic rights jurisdiction review required",
+        "originalSourceVerified": true,
+        "locallyAcquired": false,
+        "localSha256": null,
+        "productionPhotoStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED",
+        "currentPreviewPx": 500
+      },
+      "corroboration": {
+        "wgaSource": "https://beta.wga.hu/artists/carracci-lodovico-rca68553c81de94/an-angel-frees-the-souls-of-purgatory-rabe8f2105f93a5",
+        "wgaNativePixels": "866 × 1200, same source quality; not independently larger",
+        "lead": "https://kunstfinder.com/kunstwerk/carracci-lodovico-an-angel-frees-the-souls-of-purgatory-07069/",
+        "leadStatus": "Work listed; original image bytes, image dimensions and reuse rights not verified",
+        "officialHigherDefinitionVaticanPhoto": "NOT_VERIFIED",
+        "commercialPrintSites": "NOT_CLEARLY_LICENSED_INDEPENDENT_HIGH_DEFINITION_SOURCE"
+      },
+      "metadataConflict": "Published 44 cm height and 51 cm width imply landscape aspect (width/height=1.16), while the source reproduction is portrait (width/height=0.722). Do not guess at whether dimensions were transposed, the photograph cropped, or a sketch/altarpiece confused. Official inventory/photo comparison required.",
+      "next": "Search exact Vatican physical original and an independent truly larger authorized faithful photograph, reconcile accession and orientation; no 866x1200 upscale, invented detail, paid source or artwork substitution.",
+      "status": "QUALITY_BLOCKED; MORE_DETAIL_AND_OBJECT_IDENTITY_PROOF_REQUIRED"
+    }
+  ],
+  "transferCheck": {
+    "internetOriginalByteFetch": "BLOCKED_BY_RUNTIME_DNS",
+    "localOriginalsDownloaded": 0,
+    "localSHA256Verifications": 0
+  },
+  "owner": "EXISTING_SACRED_ART_ACQUISITION_PROGRAM",
+  "publication": {
+    "editorialChoicesChanged": false,
+    "appFilesModified": false,
+    "certifiedMasters": 0,
+    "releaseDecision": "RESEARCH_ONLY_NOT_PUBLICATION_READY"
+  }
+}
