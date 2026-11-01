@@ -39,6 +39,8 @@ const p102=read("data/geography/research/directory-p102-three-approved-covers.v1
 const p102ByPlace=new Map(p102.photos.map(x=>[x.place_id,x]));
 const p106=read("data/geography/research/directory-p106-four-approved-covers.v1.json");
 const p106ByPlace=new Map(p106.photos.map(x=>[x.place_id,x]));
+const p107Stage=read("data/directory/research/p107-four-webp-stage-audit.v1.json");
+const p107Final=read("data/directory/research/p107-jihlava-final-image-editorial-qa.v1.json");
 assert.ok(approved.items.length>=31+p95.photos.length+p102.photos.length+p106.photos.length,"Historical shrine, P95/P102/P106 approved covers must remain intact as later covers are released");
 const finder=read("data/geography/research/photo-finder-20261030/decisions.json");
 const finderCredits=readFileSync("data/geography/research/photo-finder-20261030/credits.csv","utf8").split("\n");
@@ -111,6 +113,26 @@ for(const item of approved.items){
     assert.equal(item.source_sha1,c.source_sha1);
     assert.equal(item.derivative_sha256,c.sha256);
     assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id&&x.venue_id===c.venue_id&&x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"));
+  }else if(item.source_place_ref==="AO-P104-309-SITE"){
+    assert.equal(item.place_id,"place:CZ:st-ignatius-jihlava",
+      "P107 final editorial clearance applies to Jihlava alone");
+    assert.equal(p107Final.status,"PRIMARY_EDITORIAL_ACCEPTED_RELEASE_IN_SEPARATE_PR");
+    assert.equal(p107Final.site,item.place_id);
+    assert.equal(p107Final.checks.exact_physical_structure,true);
+    assert.equal(p107Final.checks.full_frame_no_crop,true);
+    assert.equal(p107Final.checks.source_page_author_license_checked,true);
+    const c=p107Stage.records.find(r=>r.place_id===item.place_id);
+    assert.ok(c&&c.no_crop&&c.native_jpeg_decode);
+    assert.equal(item.source_url,c.source_url);
+    assert.equal(item.source_sha1,c.original_sha1_verified);
+    assert.equal(item.derivative_sha256,c.staged_sha256);
+    assert.equal(item.credit,c.photographer);
+    assert.equal(item.license,c.license);
+    assert.equal(item.license_url,c.license_url);
+    assert.ok(geography.directoryPlaceLinks.some(x=>x.place_id===item.place_id
+      &&x.venue_id===p107Final.directory_venue_id&&x.confidence==="CONFIRMED"
+      &&x.relationship==="LOCATED_AT"),
+      "Only the original confirmed Jihlava church may receive the P107 image");
   }else if(item.source_place_ref==="APPROVED_GALLERY_COVER_REUSE_20261031"){
     const approvedGalleryItem=existingGallery.items.find(x=>x.media_id===item.gallery_media_id&&x.place_id===item.place_id);
     assert.ok(approvedGalleryItem);
