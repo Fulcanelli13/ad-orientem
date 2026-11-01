@@ -107,6 +107,19 @@ for(const [code,label,mark] of [
   ["SJM","Servi Jesu et Mariae","SJM"],
   ["CMRI","Congregation of Mary Immaculate Queen","CMRI"],
   ["FSVF","Fraternity of Saint Vincent Ferrer","FSVF"],
+  ["SSPX_SISTERS","Sœurs de la Fraternité Saint Pie X","SFSPX"],
+  ["TRANSFIGURATION","Fraternité de la Transfiguration","FT"],
+  ["DOMINICAINES_FANJEAUX","Dominicaines de Fanjeaux","DEF"],
+  ["DOMINICANS_AVRILLE","Dominicains d'Avrillé","DAV"],
+  ["BENEDICTINES_BELLAIGUE","Bénédictins de Bellaigue","BELL"],
+  ["INSTITUTE_ST_PHILIP_NERI","Institute of Saint Philip Neri","ISPN"],
+  ["IMBC","Istituto Mater Boni Consilii","IMBC"],
+  ["SMMD","Society of the Missionaries of Divine Mercy","SMMD"],
+  ["SSPV","Society of Saint Pius V","SSPV"],
+  ["CSPV","Congregation of Saint Pius V","CSPV"],
+  ["RCI","Roman Catholic Institute","RCI"],
+  ["SOCIEDAD_TRENTO","Sociedad Sacerdotal Trento","SST"],
+  ["MOSTEIRO_SANTA_CRUZ","Mosteiro da Santa Cruz","MSC"],
 ]){
   assert.equal(massInstitutionEmblem(code),null,"Uncleared original insignia must not be rendered for "+code);
   for(const language of ["en","fr"]){
@@ -116,9 +129,22 @@ for(const [code,label,mark] of [
       assert.ok(html.includes('data-mark-length="'+String(mark.length)+'"'));
       assert.ok(html.includes('>'+mark+'</span>'),"Correct source-monogram for "+code);
       assert.doesNotMatch(html,/<img\b/,"Never disguise uncleared original artwork as a permitted logo");
-      assert.ok(html.includes(label),"Original named source must stay visible");
+      assert.ok(html.includes(label.replaceAll("&","&amp;").replaceAll("'","&#039;")),
+        "Original named source must stay visible after safe HTML escaping");
     }
   }
+}
+assert.equal(massInstitutionEmblem("SSPX_SISTERS"),null,
+ "Do not assign the priests' SSPX emblem to their distinct sisters");
+assert.equal(massInstitutionEmblem("TRANSFIGURATION"),null,
+ "Wikipedia's generic Orthodox cross is not an authenticated fraternity emblem");
+for(const {community_id,eyebrow} of [
+  {community_id:"DIOCESAN",eyebrow:"Diocesan"},
+  {community_id:"UNKNOWN",eyebrow:"Unknown"},
+  {community_id:"SSPX_RESISTANCE",eyebrow:"Unclassified"},
+]){
+ const html=renderDirectoryIdentityFallback({community_id,eyebrow},"en","card");
+ assert.doesNotMatch(html,/<img\b/,"Neither an umbrella label nor unknown affiliation can inherit an image");
 }
 assert.match(renderDirectoryIdentityFallback({community_id:"OTHER",eyebrow:"Canons of St John Cantius"}),/>CJ<\/span>/,
  "Without exact source ownership, retain generic source-derived initials");
@@ -143,6 +169,29 @@ assert.equal(hideUnavailableDirectoryEmblem({target:smallImage}),true);
 assert.equal(smallImage.hidden,true);
 assert.equal(hideUnavailableDirectoryEmblem({target:{matches:()=>false}}),false);
 const researchQueue=JSON.parse(readFileSync(new URL("../data/directory/research/tlm-emblem-acquisition-queue-20261030.v1.json",import.meta.url),"utf8"));
+const r06=JSON.parse(readFileSync(new URL("../data/directory/research/tlm-emblem-release-crosswalk-r06.v1.json",import.meta.url),"utf8"));
+assert.equal(r06.schema,"AO_TLM_EMBLEM_RELEASE_CROSSWALK_R06_V1");
+assert.equal(r06.records.length,41);
+assert.equal(r06.summary.image_group_mappings,13);
+assert.equal(r06.summary.distinct_image_urls,12);
+assert.equal(r06.summary.exact_source_text_fallbacks,17);
+assert.equal(r06.summary.no_single_group_emblem_by_design,9);
+assert.deepEqual(r06.records.map(x=>x.group_code).sort(),
+  researchQueue.groups.map(x=>x.group_code).sort(),"No original research group or explicit hold may be dropped");
+for(const row of r06.records){
+  assert.equal(row.image_reuse_final_approved,false,"No user final approval was invented for "+row.group_code);
+  assert.equal(row.no_automatic_affiliation_inference,true);
+  assert.equal(row.no_venue_publication_from_emblem,true);
+  if(row.visual_release==="RESEARCH_LICENSED_EMBLEM_RENDERED"){
+    assert.ok(massInstitutionEmblem(row.group_code),"Published emblem groups must be an exact subset");
+  }else assert.equal(massInstitutionEmblem(row.group_code),null,
+    "Uncleared or merely source-labelled groups must never acquire logos: "+row.group_code);
+}
+for(const code of ["TRANSFIGURATION","DOMINICAINES_FANJEAUX","DOMINICANS_AVRILLE","SSPX_SISTERS",
+                    "BENEDICTINES_BELLAIGUE","CARMELITE","CMRI","FSVF"]){
+  assert.ok(r06.records.find(x=>x.group_code===code).false_match_warning,
+    "Known attribution traps must remain explicitly quarantined");
+}
 assert.equal(researchQueue.schema,"AO_TLM_EMBLEM_ACQUISITION_QUEUE_V1");
 assert.equal(researchQueue.groups.length,41);
 assert.equal(researchQueue.cl2_source_affiliation_audit.distinct_source_labels,138);
