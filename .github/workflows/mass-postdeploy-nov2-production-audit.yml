@@ -1,0 +1,32 @@
+name: Mass post-deployment November 1-2 production audit
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/mass-postdeploy-nov2-production-audit.yml"
+      - "tests/mass-h7-sunday-asperges-phone.mjs"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-production-h7-mass:
+    name: Live H7 on public site — All Saints + All Souls three formularies
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      AO_MASS_TEST_ORIGIN: "https://ad-orientem.vercel.app"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Public-domain EN/FR All Saints Asperges and All Souls exact 1962 LIVE H7
+        run: node tests/mass-h7-sunday-asperges-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mass-postdeploy-nov1-nov2-public-site-phones
+          path: artifacts/mass-h7-sunday-asperges/
+          if-no-files-found: warn
+          retention-days: 7

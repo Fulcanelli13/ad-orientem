@@ -85,6 +85,19 @@ try{
       const choices=page.locator(".aoH4ChoiceDialog[open]");
       await choices.waitFor({state:"visible",timeout:18000});
       await choices.locator('[data-h4-option="form"]').selectOption(option.form);
+      const aspersion=choices.locator('[data-h4-option="aspersion"]');
+      if(option.form!=="LOW"&&await aspersion.isEnabled()){
+        // The Nov 1 P0 entry guard demands an explicit yes/no decision;
+        // the old production smoke silently skipped it and timed out.
+        assert.equal(await page.evaluate(()=>window.AO_R17_BROWSER_ENTRY?.status?.()
+          ?.fullMassPreflight?.aspersionDecisionRequired),true,
+          "Eligible sung Sunday should require a conscious Asperges choice");
+        await aspersion.selectOption("yes");
+        await aspersion.selectOption("no");
+        assert.equal(await page.evaluate(()=>window.AO_R17_BROWSER_ENTRY?.status?.()
+          ?.fullMassPreflight?.aspersionDecisionRequired),false,
+          "Explicitly declining Sunday Asperges did not clear the entry guard");
+      }
       await choices.locator('[data-h4-option="readerMode"]').selectOption("LIVE");
       await choices.locator('[data-h4-option="readerLanguage"]').selectOption(option.language);
       await choices.locator('[data-h4-option="beforeMass"]').selectOption("none");
