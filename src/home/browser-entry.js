@@ -1,6 +1,7 @@
 import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { ensureLearnModule } from "../learn/lazy-module-registry.js";
 import { verifiedH4WeekColour } from "./today-h4-view.js";
+import { selectC3PrayerSlide,showC3ArtInfo,closeC3ArtInfo } from "./c3-gallery.js";
 import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
@@ -93,6 +94,7 @@ export function createHomeOwner(win=globalThis){
   let retiredEnricherObserver=null;
   let inlineCalendarView=null;
   let h7MassDoorOpen=false;
+  let c3PrayerIndex=0,c3PrayerFeature=null;
   let inlineCalendarRestoring=false;
   let requestedDailyHonours=false;
   const weekColourCache=new Map(),weekColourPending=new Map();
@@ -338,6 +340,23 @@ export function createHomeOwner(win=globalThis){
       }
       void openRoute(retry.dataset?.homeShortcutRetry,{trigger:retry});
       return;
+    }
+    const c3Step=target?.closest?.("[data-home-c3-prayer-step]");
+    if(c3Step){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const index=Number(c3Step.dataset.homeC3PrayerStep);
+      if(selectC3PrayerSlide(appRoot,index))c3PrayerIndex=index;
+      return;
+    }
+    const c3Info=target?.closest?.("[data-home-c3-info]");
+    if(c3Info){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      showC3ArtInfo(appRoot,c3Info);return;
+    }
+    const c3Close=target?.closest?.("[data-home-c3-close]");
+    if(c3Close){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      closeC3ArtInfo(appRoot);return;
     }
     const h7Enter=target?.closest?.("[data-home-h7-enter]");
     if(h7Enter){
@@ -679,6 +698,12 @@ export function createHomeOwner(win=globalThis){
     if(!appRoot)return false;
     const rendered=renderHome(appRoot,next,win);
     if(!rendered)return false;
+    const c3Deck=appRoot.querySelector("[data-home-c3-prayer-deck]");
+    if(c3Deck){
+      const key=c3Deck.dataset.c3Feature;
+      if(key!==c3PrayerFeature){c3PrayerFeature=key;c3PrayerIndex=0;}
+      selectC3PrayerSlide(appRoot,c3PrayerIndex);
+    }
     markOwner();
     syncH7MassDoor();
     hydrateH4WeekColours(next);

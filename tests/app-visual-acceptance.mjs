@@ -388,7 +388,7 @@ try{
     return {on:Boolean(el?.classList?.contains("aoCinemaTransitionOn")),title};
   });
   assert.notEqual(genericCalendarTransition.title,"Calendar","Calendar ribbon navigation regressed to the fabricated generic destination cinematic");
-  await page.waitForFunction(()=>document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").length===3,null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view]").length===3,null,{timeout:5000});
   await waitForFxSettled();
   const embeddedCalendar=await page.evaluate(()=>{
     const home=document.querySelector(".homeScreen.aoTodayV2");
@@ -420,9 +420,9 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),0,"Day view should not expose the date-picker input");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),0,"obsolete decorative year wheel leaked into the Day view");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs").count(),1,"Calendar v2 three-surface navigation is missing");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").count(),3,"Calendar top navigation must be Day · Month · Liturgical Year");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").count(),0,"redundant Year Index returned to top-level Calendar navigation");
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarViews").count(),1,"Visible H7 Calendar navigation is missing");
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view]").count(),3,"Visible H7 Calendar navigation must be Day · Month · Liturgical Year");
+  assert.equal(await page.locator(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view='index']").count(),0,"redundant Year Index returned to visible Calendar navigation");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
   const saintLinkCount=await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count();
   assert.ok(saintLinkCount<=1,"Calendar Day duplicated the principal saint reference");
@@ -468,10 +468,10 @@ try{
   assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width: "+JSON.stringify(inPageCalendar));
   await shot("02-calendar-day");
 
-  const calendarTabs="#ao-calendar-modular-root .aoCalV2Tabs";
-  assert.equal(await page.locator(calendarTabs+" [data-cal-view]").count(),3,
+  const calendarTabs=".homeScreen.aoTodayH4 .aoH4CalendarViews";
+  assert.equal(await page.locator(calendarTabs+" [data-home-calendar-view]").count(),3,
     "H4 embedded Calendar must expose Day, Month and Liturgical Year");
-  await page.locator(calendarTabs+" [data-cal-view='year']").click();
+  await page.locator(calendarTabs+" [data-home-calendar-view='year']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:10000});
   const inlineYear=await page.evaluate(()=>({
     segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
@@ -484,7 +484,7 @@ try{
     seasons:document.querySelectorAll("#ao-calendar-modular-root [data-cal-clock-season]").length,
     obsoleteRings:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Ring").length,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    selected:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']")?.getAttribute("aria-current")??null
+    selected:document.querySelector(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineYear.segments,0,"Home Year must not duplicate Clock as a separate season bar");
   assert.equal(inlineYear.periods,0,"Home Year must not stack eleven duplicate cards");
@@ -500,7 +500,7 @@ try{
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
-  await page.locator(calendarTabs+" [data-cal-view='picker']").click();
+  await page.locator(calendarTabs+" [data-home-calendar-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
   const inlineMonth=await page.evaluate(()=>({
@@ -508,7 +508,7 @@ try{
     markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
     views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    active:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']")?.getAttribute("aria-current")??null
+    active:document.querySelector(".homeScreen.aoTodayH4 .aoH4CalendarViews [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
@@ -1675,7 +1675,9 @@ try{
   const settingsParity=await page.evaluate(()=>({
     owner:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsOwner??null,
     presentation:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsPresentationOwner??null,
-    headings:[...document.querySelectorAll("#ao-settings-modular-root .aoSetSection > h2")].map(x=>x.textContent?.trim()??""),
+    book:document.querySelector("#ao-settings-modular-root [data-ao-preferences-book]")?.getAttribute("data-ao-preferences-book")??null,
+    chapterNumbers:[...document.querySelectorAll("#ao-settings-modular-root .aoPrefContents .n")].map(x=>x.textContent?.trim()??""),
+    chapters:[...document.querySelectorAll("#ao-settings-modular-root .aoPrefContents .t")].map(x=>x.firstChild?.textContent?.trim()??""),
     routes:[...document.querySelectorAll("#ao-settings-modular-root [data-settings-route]")].map(x=>x.getAttribute("data-settings-route")),
     sourcesLaunchers:document.querySelectorAll("#ao-settings-modular-root [data-settings-sources]").length,
     historicalVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
@@ -1685,7 +1687,9 @@ try{
   }));
   assert.equal(settingsParity.owner,"AO_SETTINGS_APP_V1");
   assert.equal(settingsParity.presentation,"modular-settings-presentation-v4359.6");
-  assert.deepEqual(settingsParity.headings,["APP & UPDATES","APP","MASS & PRAYER","DATA"],"Settings must expose installed-version controls before general preferences");
+  assert.equal(settingsParity.book,"r1","Claude R1 Preferences book was replaced by the retired Settings landing");
+  assert.deepEqual(settingsParity.chapterNumbers,["I","II","III","IV","V","VI","VII","VIII"],"Settings must present all eight Roman-numbered chapters");
+  assert.deepEqual(settingsParity.chapters,["Reading","Languages","Holy Mass","My churches","Prayer","On this device","Your data","About & sources"],"Settings chapter order changed from approved R1 book");
   for(const route of ["/settings/general","/settings/accessibility","/settings/language-reading","/settings/mass","/settings/local-customs","/settings/prayer","/settings/privacy-data","/settings/about-sources"]){
     assert.ok(settingsParity.routes.includes(route),route+" missing from restored Settings landing");
   }
@@ -1696,21 +1700,36 @@ try{
   assert.equal(settingsParity.embeddedHomeSettings,false,"retired Home Settings surface is visible beneath modular Settings");
   assert.ok(settingsParity.overflow<=1,"Settings has horizontal overflow on 390px phone geometry");
   assert.equal(settingsParity.topLevelSources,0,"Sources resurfaced as a seventh top-level destination");
-  const settingsDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetTitle strong")).fontFamily,
-    bodyFont:getComputedStyle(document.getElementById("ao-settings-modular-root")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetWrap")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetGroup")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
-  }));
-  assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
-  assert.equal(primaryFont(settingsDesign.bodyFont),primaryFont(designBaseline.bodyFont),
-    "Settings and H7 Home diverged from their shared primary body typeface");
-  assert.equal(settingsDesign.gutter,designBaseline.gutter,"Settings phone gutter diverged from the app grid");
-  assert.equal(settingsDesign.cardRadius,designBaseline.cardRadius,"Settings cards diverged from canonical geometry");
-  assert.equal(Math.round(settingsDesign.topControl.w),44,"Settings top control width diverged");
-  assert.equal(Math.round(settingsDesign.topControl.h),44,"Settings top control height diverged");
-  assert.equal(settingsDesign.topControl.r,"999px","Settings top control lost canonical circular geometry");
+  // The approved R1 book intentionally uses distinct reading typography and
+  // a manuscript-style ribbon: do not regress it to H7's rounded Settings cards.
+  const settingsDesign=await page.evaluate(()=>{
+    const root=document.getElementById("ao-settings-modular-root");
+    const top=root.querySelector(".aoSetTop");
+    const close=root.querySelector(".aoSetTop [data-settings-close]");
+    const ribbon=root.querySelector(".aoPrefRibbon");
+    const contents=root.querySelector(".aoPrefContents");
+    const wrap=root.querySelector(".aoSetWrap");
+    const box=close.getBoundingClientRect();
+    return {
+      bodyFont:getComputedStyle(root).fontFamily,
+      displayFont:getComputedStyle(root.querySelector(".aoSetTitle strong")).fontFamily,
+      gutter:getComputedStyle(wrap).paddingLeft,
+      headerRule:getComputedStyle(top).borderBottomStyle,
+      topControl:{w:box.width,h:box.height},
+      ribbonWidth:ribbon?.getBoundingClientRect().width??0,
+      contentsVisible:contents?.getBoundingClientRect().height>0,
+      nativeSelects:root.querySelectorAll("select").length,
+    };
+  });
+  assert.match(settingsDesign.bodyFont,/Sorts Mill Goudy|Iowan Old Style|Georgia/i,"Preferences book lost its approved reading typeface");
+  assert.match(settingsDesign.displayFont,/IM Fell English SC|Georgia/i,"Preferences header lost its approved small-caps typeface");
+  assert.equal(settingsDesign.gutter,"22px","Preferences book reading gutter changed");
+  assert.equal(settingsDesign.headerRule,"double","Preferences book lost its manuscript-style double rule");
+  assert.equal(Math.round(settingsDesign.topControl.w),36,"Preferences book close button no longer fits its source design");
+  assert.ok(settingsDesign.topControl.h>=44&&settingsDesign.topControl.h<=48,"Preferences book close button must retain its accessible touch target");
+  assert.equal(Math.round(settingsDesign.ribbonWidth),13,"Preferences book contents bookmark is missing");
+  assert.equal(settingsDesign.contentsVisible,true,"All eight settings chapters must be visible on the cover");
+  assert.equal(settingsDesign.nativeSelects,0,"Preferences R1 must use explicit word controls instead of native selects");
   await shot("05-settings");
 
   await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
@@ -1718,7 +1737,7 @@ try{
   const settingsAbout=await page.evaluate(()=>({
     sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetSource").length,
     provenanceLabels:(document.querySelector("#ao-settings-modular-root .aoSetSource:last-of-type p")?.textContent?.trim()||"").split(/\s*·\s*/).filter(Boolean),
-    aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSection:last-child .aoSetRow").length,
+    aboutRows:[...document.querySelectorAll("#ao-settings-modular-root .aoSetSection")].find(section=>section.querySelector(":scope > h2")?.textContent?.trim()==="ABOUT")?.querySelectorAll(".aoSetRow").length??0,
     version:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??"",
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
