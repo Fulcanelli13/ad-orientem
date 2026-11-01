@@ -1,0 +1,23 @@
+name: Customs R18 regional 12 review integrity
+on:
+  pull_request:
+    paths:
+      - 'data/customs/reviews/customs-r18-regional12-review-only.v1.json'
+      - 'data/customs/reviews/customs-r18-regional12-evidence-identity-preflight.v1.json'
+      - 'docs/CUSTOMS_R18_REGIONAL_12_ONE_PASS_REVIEW_20261030.md'
+      - 'tests/customs-r18-regional12-review-integrity.mjs'
+      - '.github/workflows/customs-r18-regional12-review.yml'
+      - 'data/customs/customs-atlas-seed.v1.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-identity-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 12 bilingual drafts and publication locks
+        run: node tests/customs-r18-regional12-review-integrity.mjs
