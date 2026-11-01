@@ -19,6 +19,7 @@ function verifiedSection(map,path,section,chain=new Set()){
  if(chain.size>=8)return {status:"INHERITANCE_TOO_DEEP",source:key};
  const source=map.get(path);
  if(!source)return {status:"INHERITED_SOURCE_NOT_IN_PINNED_BATCH",source:key};
+ if(source.status==="SOURCE_UNAVAILABLE")return {status:"INHERITED_SOURCE_UNAVAILABLE_AT_MISSA_PATH",source:key};
  if(source.status!=="SHA_MATCH"&&source.status!=="PINNED_REF_FETCHED")
   return {status:"SOURCE_BLOB_UNVERIFIED",source:key};
  const value=source.sections?.[section];
