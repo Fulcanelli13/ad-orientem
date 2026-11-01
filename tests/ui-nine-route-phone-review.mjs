@@ -26,8 +26,15 @@ const server=http.createServer(async(req,res)=>{
   res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});res.end(content);
  }catch(e){res.writeHead(e.code==="ENOENT"?404:500);res.end(String(e.message))}
 });
-await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
-const origin="http://127.0.0.1:"+server.address().port;
+const liveOrigin=process.env.AO_VISUAL_AUDIT_ORIGIN
+  ?new URL(process.env.AO_VISUAL_AUDIT_ORIGIN):null;
+if(liveOrigin&&(liveOrigin.protocol!=="https:"||
+  liveOrigin.hostname!=="ad-orientem.vercel.app"||liveOrigin.pathname!=="/"))
+  throw Error("Visual production audit target must be the canonical public site");
+if(!liveOrigin)
+  await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
+const origin=liveOrigin?.origin??("http://127.0.0.1:"+server.address().port);
+console.log("Nine-route audit target: "+origin);
 const rows=[];
 let browser;
 const sleep=ms=>new Promise(ok=>setTimeout(ok,ms));
@@ -148,25 +155,31 @@ try {
    await capture("today",".homeScreen");
    await capture("calendar-month",".aoTodayV2CalendarInline #ao-calendar-modular-root",
     async()=>{
-     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
-     await page.waitForFunction(()=>document.querySelector(
-      '.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]'),
-      null,{timeout:20000});
-     // Do not confuse a half-populated month (e.g. 4/42) with the final grid.
-     // Captures still proceed with partial data when transport is unavailable.
-     await page.waitForFunction(()=>/42\s*\/\s*42/.test(
-      document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.textContent||""
-     ),null,{timeout:20000}).catch(()=>{});
+     // H7 owns the visible Home date: the old V2 tabs are retired.
+     await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]')
+       .click({timeout:12000});
+     await page.locator('.aoTodayH4[data-ao-home-calendar-view="picker"] .aoCalV2MonthGrid')
+       .waitFor({state:"visible",timeout:40000});
     });
-   await capture("mass-entry","#ao-mass-flow-v1 .aoMassFlowBackdrop",
+   await capture("mass-entry",".aoH7DoorView:not([hidden])",
     async()=>{
-     // Production's Mass entry is a Home action. Opening the ribbon alone
-     // does not guarantee that the preflight backdrop has been requested.
-     await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
-     await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:15000});
-     await page.locator('.homeScreen [data-home-mass-entry]').click();
-     await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:12000});
+     // Return via the canonical Calendar Back; H7 opens a Mass Door,
+     // not the retired .aoMassFlowBackdrop.
+     await page.locator('.aoH4CalendarBack [data-home-calendar-today]')
+       .click({timeout:12000});
+     await page.locator(".aoH7HomeView [data-home-h7-enter]")
+       .waitFor({state:"visible",timeout:15000});
+     await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+     await page.locator(".aoH7DoorView:not([hidden])")
+       .waitFor({state:"visible",timeout:18000});
     });
+   // H7 Mass Door deliberately hides the global ribbon. Close it before
+   // moving to the next independently owned production surface.
+   if(await page.locator(".aoH7DoorView:not([hidden])").isVisible()){
+     await page.locator(".aoH7DoorView [data-home-h7-back]").click();
+     await page.locator(".aoH7HomeView [data-home-h7-enter]")
+       .waitFor({state:"visible",timeout:12000});
+   }
    await capture("pray-hub","#aoPray435930.open",
     async()=>{await page.locator('[data-ao-app-surface="pray"]').click()});
    await capture("rosary","#aoPrayerBookRoot.open .pbShell",
@@ -213,10 +226,11 @@ try {
    console.error(label+" setup: "+String(error.stack||error).slice(0,600));
   }finally{await context.close();}
  }
-}finally{await browser?.close();await new Promise(ok=>server.close(ok));}
+}finally{await browser?.close();if(server.listening)await new Promise(ok=>server.close(ok));}
 
 const summary={
- generatedAt:new Date().toISOString(),matrix:"3 viewport widths x 2 languages x 9 surfaces",
+ generatedAt:new Date().toISOString(),target:origin,
+ matrix:"3 viewport widths x 2 languages x 9 surfaces",
  total:rows.length,captured:rows.filter(x=>x.status==="captured").length,
  missing:rows.filter(x=>x.status!=="captured").length,
  exploreMap:{
@@ -253,6 +267,6 @@ const panels=rows.map(r=>{
 await writeFile(resolve(output,"index.html"),
  '<!doctype html><html lang="en"><meta charset="utf-8"><title>Ad Orientem · UI critical review</title>'+
  '<style>body{background:#0c1118;color:#eee7da;font:14px system-ui;margin:20px}h1{font:32px Georgia}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}article{border:1px solid #46413b;padding:12px;border-radius:8px}article img{width:100%;max-width:430px;display:block}article p{font-size:12px;color:#b7b4ac}</style>'+
- '<h1>Current UI/UX review — nine-route phone matrix</h1><p>Read-only captures of actual GitHub production routes, not mocked designs. Open matrix.json for measurements, route failures and language states. Automated detection is triage, not human visual approval.</p><main>'+panels+'</main></html>');
+ '<h1>Current UI/UX review — nine-route phone matrix</h1><p>Read-only captures of '+htmlEscape(origin)+' running the app, not mocked designs. Open matrix.json for measurements, route failures and language states. Automated detection is triage, not human visual approval.</p><main>'+panels+'</main></html>');
 console.log("Current nine-route UI matrix captured "+summary.captured+"/"+summary.total+" views; "+summary.horizontalOverflow.length+" overflow cases; "+summary.exploreMap.renderedCandidates+"/"+summary.exploreMap.total+" Explore map-render candidates (not handset certified).");
 if(summary.missing)process.exitCode=1;
