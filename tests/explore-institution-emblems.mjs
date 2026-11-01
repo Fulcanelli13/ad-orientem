@@ -129,7 +129,8 @@ for(const [code,label,mark] of [
       assert.ok(html.includes('data-mark-length="'+String(mark.length)+'"'));
       assert.ok(html.includes('>'+mark+'</span>'),"Correct source-monogram for "+code);
       assert.doesNotMatch(html,/<img\b/,"Never disguise uncleared original artwork as a permitted logo");
-      assert.ok(html.includes(label),"Original named source must stay visible");
+      assert.ok(html.includes(label.replaceAll("&","&amp;").replaceAll("'","&#039;")),
+        "Original named source must stay visible after safe HTML escaping");
     }
   }
 }
