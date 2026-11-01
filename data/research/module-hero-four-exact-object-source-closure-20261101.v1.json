@@ -1,0 +1,205 @@
+{
+  "schema": "AO_MODULE_HERO_FOUR_EXACT_OBJECT_SOURCE_CLOSURE_V1",
+  "researched_on": "2026-11-01",
+  "status": "RESEARCH_ONLY_NO_PUBLICATION",
+  "source_registry": "data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json",
+  "historical_master": "data/research/module-hero-free-image-access-exceptions-20261026.md",
+  "interpretation": "Updates 4 blocked exact-object source searches; does not change 22 frozen editorial painting identities or approve research originals.",
+  "cost_policy": "EUR_0_ONLY",
+  "no_contact_without_authorization": true,
+  "source_url_is_not_reuse_permission": true,
+  "high_resolution_is_not_image_quality_approval": true,
+  "source_work_collision_must_not_change_painting": true,
+  "publication_approvals": 0,
+  "new_publishable_originals": 0,
+  "records": [
+    {
+      "module_id": "angel",
+      "artist": "Pietro da Cortona",
+      "title": "The Guardian Angel",
+      "object": {
+        "year": 1656,
+        "holder": "Galleria Nazionale d'Arte Antica, Rome",
+        "institution_inventory": "inv. 1753 (catalogue witness)",
+        "physical_dimensions_cm": [
+          225,
+          143
+        ],
+        "object_evidence": "https://www.wga.hu/html/c/cortona/4/10gangel.html"
+      },
+      "existing_media": {
+        "file": "Cortona_Guardian_Angel_01.jpg",
+        "width": 694,
+        "height": 1100,
+        "source": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+        "verdict": "REFERENCE_ONLY_LOW_RES"
+      },
+      "new_evidence": [
+        {
+          "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900258209",
+          "verdict": "EXCLUDE_OBJECT_DIFFERENT_SMALLER_REPLICA",
+          "reason": "Arezzo circa 98 x 73.5 cm reduced-size replica; catalogued separately even when attributed to Cortona"
+        },
+        {
+          "url": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/1200199769",
+          "verdict": "EXCLUDE_OBJECT_LATER_COPY",
+          "reason": "Santo Stefano del Cacco copy, dated post-1656 to ante-1726; added two trees"
+        },
+        {
+          "url": "https://artsdot.com/es/art/download/pietro-da-cortona-the-guardian-angel-8Y3FBH-en/",
+          "verdict": "RESEARCH_ONLY_NO_PROVEN_FREE_REUSE",
+          "reason": "Retail/gallery site advertises 3302 x 5071 source but no verified redistribution grant or downloaded original"
+        },
+        {
+          "url": "https://www.bridgemanimages.com/en/cortona/the-guardian-angel-17th-century-painting/painting/asset/7129468",
+          "verdict": "EXCLUDE_FEE_RESTRICTED",
+          "reason": "2428 x 3852 professional reproduction subject to access and Italy clearance restrictions"
+        }
+      ],
+      "blockers": [
+        "EXACT_MASTER_MISSING",
+        "SUITABLE_PIXELS_UNVERIFIED",
+        "REUSE_GRANT_UNVERIFIED",
+        "COPY_COLLISION"
+      ]
+    },
+    {
+      "module_id": "evening",
+      "artist": "Pierre-Édouard Frère",
+      "title": "The Prayer",
+      "object": {
+        "year": 1857,
+        "holder": "Wolverhampton Art Gallery",
+        "institution_inventory": "OP6",
+        "physical_dimensions_cm": [
+          38,
+          30
+        ],
+        "object_evidence": "https://artuk.org/discover/artworks/the-prayer-19241"
+      },
+      "existing_media": {
+        "file": "Pierre Edouard Frère (1819-1886) - The Prayer - OP6 - Wolverhampton Art Gallery.jpg",
+        "width": 898,
+        "height": 1200,
+        "source": "https://commons.wikimedia.org/wiki/Category:Pierre-%C3%89douard_Fr%C3%A8re",
+        "verdict": "REFERENCE_ONLY_COMPRESSED"
+      },
+      "new_evidence": [
+        {
+          "url": "https://shop.artuk.org/the-prayer-19241.html",
+          "verdict": "RESEARCH_ONLY_RIGHTS_NOT_GRANTED",
+          "reason": "Retail prints exist; their sale does not authorize downloading, app redistribution, or offline packaging"
+        },
+        {
+          "url": "https://artuk.org/discover/artworks/the-prayer-19241",
+          "verdict": "REFERENCE_ONLY_RIGHTS_UNRESOLVED",
+          "reason": "Exact 1857 OP6 identification; existing Art UK photographic terms do not establish app permission"
+        }
+      ],
+      "blockers": [
+        "EXACT_MASTER_MISSING",
+        "SOURCE_IMAGE_TOO_SMALL",
+        "REUSE_GRANT_UNVERIFIED"
+      ]
+    },
+    {
+      "module_id": "holy-spirit",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "object": {
+        "year": 1732,
+        "holder": "Musée du Louvre",
+        "institution_inventory": "INV 20303",
+        "physical_dimensions_cm": [
+          465,
+          778
+        ],
+        "object_evidence": "https://collections.louvre.fr/en/ark:/53355/cl010062538"
+      },
+      "existing_media": {
+        "file": "Restout_-_La_Pentecôte_01.jpg",
+        "width": 4037,
+        "height": 2444,
+        "source": "https://commons.wikimedia.org/wiki/Category:La_Pentec%C3%B4te,_Restout_(Louvre_INV20303)",
+        "verdict": "REJECTED_PHOTOGRAPH_GLARE_AND_NOISE"
+      },
+      "new_evidence": [
+        {
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+          "verdict": "RESEARCH_ONLY_REUSE_NOT_GRANTED",
+          "reason": "Louvre official photograph credited © 1992 GrandPalaisRmn / René-Gabriel Ojéda; visible image/download link is not a reuse grant"
+        },
+        {
+          "url": "https://utpictura18.univ-amu.fr/notice/6004-pentecote-restout",
+          "verdict": "EXCLUDE_RESTRICTED_REPRODUCTION",
+          "reason": "Academic HD reproduction credits GrandPalaisRmn/Ojéda and disallows reproduction"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentec%C3%B4te.jpg",
+          "verdict": "REFERENCE_ONLY_UNDERSIZED",
+          "reason": "Separate 1000 x 589 source not adequate full archival master"
+        },
+        {
+          "url": "https://www.bridgemanimages.com/en-US/restout/pentecost-1732-oil-on-canvas/oil-on-canvas/asset/216654",
+          "verdict": "EXCLUDE_PAID_REPRODUCTION",
+          "reason": "Professional 13500 x 8012 file requires paid licence"
+        }
+      ],
+      "blockers": [
+        "CURRENT_PHOTO_VISUALLY_REJECTED",
+        "EXIF_RIGHTS_CONFLICT",
+        "FREE_UNRESTRICTED_MASTER_NOT_FOUND"
+      ]
+    },
+    {
+      "module_id": "salvation",
+      "artist": "Jean-Léon Gérôme",
+      "title": "The Age of Augustus: The Birth of Christ",
+      "object": {
+        "year": 1855,
+        "holder": "Musée de Picardie, Amiens",
+        "institution_inventory": "RF 1983 92 / M.P.D.998.5.1",
+        "physical_dimensions_cm": [
+          620,
+          1015
+        ],
+        "object_evidence": "https://www.musee-orsay.fr/en/artworks/siecle-dauguste-naissance-de-ns-jesus-christ-20568"
+      },
+      "existing_media": {
+        "file": "Le Siècle d'Auguste - naissance de N.S. Jésus-Christ Amiens 01.jpg",
+        "width": 6000,
+        "height": 4000,
+        "source": "https://commons.wikimedia.org/wiki/Category:Century_of_Augustus:_Birth_of_Jesus_Christ_by_Jean-L%C3%A9on_G%C3%A9r%C3%B4me",
+        "verdict": "REJECTED_GALLERY_INSTALLATION_NOT_PAINTING_MASTER"
+      },
+      "new_evidence": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Le_Si%C3%A8cle_d%27Auguste_-_naissance_de_N.S._J%C3%A9sus-Christ_par_G%C3%A9r%C3%B4me.jpg",
+          "verdict": "REFERENCE_ONLY_UNDERSIZED",
+          "reason": "Full completed painting appears in 1600 x 990 file, 172 KB, not a publishable high-quality source"
+        },
+        {
+          "url": "https://pop.culture.gouv.fr/notice/joconde/000PE028914",
+          "verdict": "EXCLUDE_IMAGE_WITHOUT_AUTHORIZATION",
+          "reason": "2026-02-23 heritage record specifically marks image credit RMN/Hervé Lewandowski and reuse subject to authorization"
+        },
+        {
+          "url": "https://www.bridgemanimages.com/en/gerome/century-of-august-birth-of-our-lord-jesus-christ-1855-oil-on-canvas/oil-on-canvas/asset/4610087",
+          "verdict": "EXCLUDE_PAID_REPRODUCTION",
+          "reason": "Professional 7573 x 4654 reproduction requires licence"
+        },
+        {
+          "url": "https://www.musee-orsay.fr/en/artworks/siecle-dauguste-naissance-de-ns-jesus-christ-20568",
+          "verdict": "REFERENCE_ONLY_IDENTITY",
+          "reason": "Official original RF 1983 92, full completed work, not a preparatory study"
+        }
+      ],
+      "blockers": [
+        "ARCHIVED_PHOTO_NOT_AN_ISOLATED_ARTWORK",
+        "PUBLISHABLE_MASTER_NOT_FOUND",
+        "PHOTO_REUSE_UNVERIFIED",
+        "DO_NOT_SUBSTITUTE_PREPARATORY_STUDY"
+      ]
+    }
+  ]
+}
