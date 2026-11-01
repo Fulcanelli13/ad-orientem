@@ -3728,6 +3728,19 @@ export function createReaderDomAdapter({
         onScholaLocalProgrammeChange?.({kind:"profileRename",value:programmeTarget.value});return;
       }
       if(programmeTarget?.matches?.("[data-schola-kyriale-choice]")){
+        // Fail closed immediately when an explicit selection changes. The
+        // persisted local programme may repaint asynchronously, and the
+        // previous edition must not remain visible for a custom or different
+        // setting during that interval.
+        const previousPrint=root.querySelector('[data-schola-original-score="'+
+          programmeTarget.dataset.scholaKyrialeChoice+'"]');
+        if(previousPrint){
+          previousPrint.hidden=true;
+          const previousContent=previousPrint.querySelector("[data-schola-original-content]");
+          const previousToggle=previousPrint.querySelector("[data-schola-original-toggle]");
+          if(previousContent)previousContent.hidden=true;
+          previousToggle?.setAttribute("aria-expanded","false");
+        }
         onScholaLocalProgrammeChange?.({kind:"ordinarySelection",
           eventId:programmeTarget.dataset.scholaKyrialeChoice,value:programmeTarget.value});return;
       }
