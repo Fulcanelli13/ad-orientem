@@ -15,7 +15,7 @@ const sha=buf=>createHash("sha256").update(buf).digest("hex");
 assert.equal(b.schema,"AO_P106_FOUR_EDITORIALLY_CHOSEN_DIRECTORY_COVERS_INPUT_V1");
 assert.equal(audit.schema,"AO_P106_EXACT_FOUR_WEBP_BYTES_AUDIT_V1");
 assert.equal(manifest.schema,"AO_P106_FOUR_APPROVED_DIRECTORY_COVERS_V1");
-assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length],[530,23]);
+assert.deepEqual([geo.places.length,geo.directoryPlaceLinks.length],[530,24],"The independently verified 24th venue link postdates P106; no P106 asset is modified");
 assert.ok(photos.items.length>=40,"P106 historical 40 covers may grow through separately approved releases");
 assert.equal(manifest.counts.existing_approved_media,36);
 assert.equal(manifest.counts.proposed_approved_media,40);
