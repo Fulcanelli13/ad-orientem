@@ -1,0 +1,367 @@
+{
+  "schema": "ao-mass-music-all-saints-20261101-single-review-slice-v1",
+  "source": "Existing M07 1195-score metadata, M07 limited 342 triage, M09 original 506 Latin donor comparisons, M05 seven source-screened chant leads; no new score downloads",
+  "churchCalendar": {
+    "date": "2026-11-01",
+    "feast": "All Saints",
+    "class": "I",
+    "massSourcePath": "Sancti/11-01",
+    "sourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+    "occasion": "1962 Roman Mass; ordinary principal Sunday Asperges is selected only when performed"
+  },
+  "publication": {
+    "researchOnly": true,
+    "sourceAssignmentsApproved": 0,
+    "printed1961MelodicVerifications": 0,
+    "publiclyAvailableScores": 0,
+    "noNewGabcCopied": true,
+    "noNewAudio": true,
+    "sourceArchiveInSeparateUnmergedPR": 1749,
+    "approvalRequired": "ONE_FINAL_USER_COLLECTION_REVIEW"
+  },
+  "properCandidates": [
+    {
+      "order": 1,
+      "role": "INTROIT",
+      "latinIncipit": "Gaudeamus omnes in Domino",
+      "originalArchiveId": "GREGOBASE-752",
+      "sourceId": 752,
+      "archiveIncipit": "Gaudeamus... Sanctorum omnium",
+      "archivePart": "in",
+      "archiveFolioToken": "647",
+      "printedGraduale1961Page": 647,
+      "modeInArchive": "1",
+      "originalGabcSha256": "01771b6ba061d3d4c4f38e8f47f51f8231748042c85d2640b1319b54dde4b7e1",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=752",
+      "sourceFileReference": "Sancti/11-01",
+      "original1962DonorSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+      "sourceTextScreen": {
+        "status": "NOT_IN_BOUNDED_342_CANDIDATE_SCREEN",
+        "note": "1961 role, incipit and folio lead only; no certified match to selected 1962 Proper"
+      },
+      "selectedMass1962": "NOT_VERIFIED",
+      "originalPrintedNeumes": "NOT_COMPARED",
+      "fullVerseParity": "NOT_VERIFIED",
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "scorePublished": false,
+      "recordingApproved": false,
+      "readerAutoAssignment": false,
+      "pinned1962SourceTextEvidence": {
+        "method": "Original archived 1961 GABC Latin-only stream against DivinumOfficium 1962 Latin donor (no musical pitch inference)",
+        "originalSourceRepository": "DivinumOfficium/divinum-officium",
+        "originalSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+        "originalSourcePath": "web/www/missa/Latin/Sancti/11-01.txt",
+        "originalSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+        "originalGabcArchiveBranch": "feature/chant-score-pilot-20261026",
+        "originalGabcArchivePullRequest": 1749,
+        "sourceParts": [
+          "[Introitus] antiphon",
+          "[Introitus] Ps 32:1"
+        ],
+        "status": "FULL_ANTIPHON_AND_PSALM_AFTER_ORTHOGRAPHY",
+        "orthographicVariants": [
+          "sollemnitate/solemnitate"
+        ],
+        "caution": "Gloria Patri and antiphon repeat require source-owned liturgical handling",
+        "musicalParity": "NOT_CHECKED",
+        "scoreNotes": "NOT_CHECKED",
+        "sourceRole": "INTROIT",
+        "published": false
+      }
+    },
+    {
+      "order": 2,
+      "role": "GRADUAL",
+      "latinIncipit": "Timete Dominum",
+      "originalArchiveId": "GREGOBASE-371",
+      "sourceId": 371,
+      "archiveIncipit": "Timete Dominum",
+      "archivePart": "gr",
+      "archiveFolioToken": "648",
+      "printedGraduale1961Page": 648,
+      "modeInArchive": "1",
+      "originalGabcSha256": "512a2ce5d7b545fa33be999d22348756f7c29e846322538bba51cab1762153ac",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=371",
+      "sourceFileReference": "Sancti/11-01",
+      "original1962DonorSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+      "sourceTextScreen": {
+        "status": "PRELIMINARY_342_CANDIDATE_1962_DONOR_TEXT_SCREEN",
+        "sourceSection": "Graduale",
+        "sourcePosition": "POSITION_NOT_VERIFIED",
+        "sourceRisk": "UNADJUDICATED",
+        "comparisonClass": "NORMALIZED_DONOR_LINE_CONTIGUOUS",
+        "initialMatchingWords": 10,
+        "donorWordCount": 10,
+        "donorLineContained": true
+      },
+      "selectedMass1962": "NOT_VERIFIED",
+      "originalPrintedNeumes": "NOT_COMPARED",
+      "fullVerseParity": "NOT_VERIFIED",
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "scorePublished": false,
+      "recordingApproved": false,
+      "readerAutoAssignment": false,
+      "pinned1962SourceTextEvidence": {
+        "method": "Original archived 1961 GABC Latin-only stream against DivinumOfficium 1962 Latin donor (no musical pitch inference)",
+        "originalSourceRepository": "DivinumOfficium/divinum-officium",
+        "originalSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+        "originalSourcePath": "web/www/missa/Latin/Sancti/11-01.txt",
+        "originalSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+        "originalGabcArchiveBranch": "feature/chant-score-pilot-20261026",
+        "originalGabcArchivePullRequest": 1749,
+        "sourceParts": [
+          "[Graduale] Timete",
+          "[Graduale] V. Inquirentes"
+        ],
+        "status": "FULL_SOURCE_GRADUAL_AND_VERSE_TEXT",
+        "orthographicVariants": [],
+        "caution": "Section also embeds Alleluia; do not duplicate the Alleluia event",
+        "musicalParity": "NOT_CHECKED",
+        "scoreNotes": "NOT_CHECKED",
+        "sourceRole": "GRADUAL",
+        "published": false
+      }
+    },
+    {
+      "order": 3,
+      "role": "ALLELUIA",
+      "latinIncipit": "Venite ad me",
+      "originalArchiveId": "GREGOBASE-1237",
+      "sourceId": 1237,
+      "archiveIncipit": "Venite ad me",
+      "archivePart": "al",
+      "archiveFolioToken": "[114]",
+      "printedGraduale1961Page": 648,
+      "modeInArchive": "8",
+      "originalGabcSha256": "ef1b9a62bf4ad8a56665b1c0047897f6b2cbdbaf78d146ae839568a1b11c5696",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1237",
+      "sourceFileReference": "Sancti/11-01",
+      "original1962DonorSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+      "sourceTextScreen": {
+        "status": "PRELIMINARY_342_CANDIDATE_1962_DONOR_TEXT_SCREEN",
+        "sourceSection": "Graduale",
+        "sourcePosition": "LINE_OPENING",
+        "sourceRisk": "UNADJUDICATED",
+        "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+        "initialMatchingWords": 13,
+        "donorWordCount": 14,
+        "donorLineContained": false
+      },
+      "selectedMass1962": "NOT_VERIFIED",
+      "originalPrintedNeumes": "NOT_COMPARED",
+      "fullVerseParity": "NOT_VERIFIED",
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "scorePublished": false,
+      "recordingApproved": false,
+      "readerAutoAssignment": false,
+      "pinned1962SourceTextEvidence": {
+        "method": "Original archived 1961 GABC Latin-only stream against DivinumOfficium 1962 Latin donor (no musical pitch inference)",
+        "originalSourceRepository": "DivinumOfficium/divinum-officium",
+        "originalSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+        "originalSourcePath": "web/www/missa/Latin/Sancti/11-01.txt",
+        "originalSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+        "originalGabcArchiveBranch": "feature/chant-score-pilot-20261026",
+        "originalGabcArchivePullRequest": 1749,
+        "sourceParts": [
+          "[Graduale] Venite ad me"
+        ],
+        "status": "FULL_SOURCE_ALLELUIA_VERSE_TEXT",
+        "orthographicVariants": [],
+        "caution": "Alleluia intonation/reprise must respect actual source cues and printed score",
+        "musicalParity": "NOT_CHECKED",
+        "scoreNotes": "NOT_CHECKED",
+        "sourceRole": "ALLELUIA",
+        "published": false
+      }
+    },
+    {
+      "order": 4,
+      "role": "OFFERTORY",
+      "latinIncipit": "Justorum animae",
+      "originalArchiveId": "GREGOBASE-835",
+      "sourceId": 835,
+      "archiveIncipit": "Justorum animae (Off.)",
+      "archivePart": "of",
+      "archiveFolioToken": "[30]",
+      "printedGraduale1961Page": 649,
+      "modeInArchive": "1",
+      "originalGabcSha256": "87814b941ca9e8058ac654a14ae0e21721d202b46383cb1bdfcb6d3390ac56b3",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=835",
+      "sourceFileReference": "Sancti/11-01",
+      "original1962DonorSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+      "sourceTextScreen": {
+        "status": "NOT_IN_BOUNDED_342_CANDIDATE_SCREEN",
+        "note": "1961 role, incipit and folio lead only; no certified match to selected 1962 Proper"
+      },
+      "selectedMass1962": "NOT_VERIFIED",
+      "originalPrintedNeumes": "NOT_COMPARED",
+      "fullVerseParity": "NOT_VERIFIED",
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "scorePublished": false,
+      "recordingApproved": false,
+      "readerAutoAssignment": false,
+      "pinned1962SourceTextEvidence": {
+        "method": "Original archived 1961 GABC Latin-only stream against DivinumOfficium 1962 Latin donor (no musical pitch inference)",
+        "originalSourceRepository": "DivinumOfficium/divinum-officium",
+        "originalSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+        "originalSourcePath": "web/www/missa/Latin/Sancti/11-01.txt",
+        "originalSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+        "originalGabcArchiveBranch": "feature/chant-score-pilot-20261026",
+        "originalGabcArchivePullRequest": 1749,
+        "sourceParts": [
+          "[Offertorium] @Commune/C3a-1"
+        ],
+        "status": "RESOLVED_SELECTED_MASS_LATIN_TEXT_PROOF_ONLY",
+        "orthographicVariants": [],
+        "caution": "Archive GABC includes terminal Alleluia. No date-only assumption that it is sung outside Eastertide",
+        "musicalParity": "NOT_CHECKED",
+        "scoreNotes": "NOT_CHECKED",
+        "sourceRole": "OFFERTORY",
+        "published": false,
+        "actualRuntimeProof": {
+          "owner": "PRODUCTION_1962_CALENDAR_SELECTED_PROPER",
+          "actualDate": "2026-11-01",
+          "principal": "sancti:11-01:1:w",
+          "sourcePath": "Sancti/11-01",
+          "formScope": [
+            "LOW",
+            "MISSA_CANTATA_SIMPLE",
+            "MISSA_CANTATA_INCENSE",
+            "SOLEMN"
+          ],
+          "languageScope": [
+            "en",
+            "fr"
+          ],
+          "sourceTextExcerpt": "Sap 3:1-3\\nJustórum ánimæ in manu Dei sunt",
+          "printedSourceVariant": "allelúja.\\n(sed post Septuagesimam dicitur)\\npace.",
+          "productionSourceResolution": "READY_WITH_UNSEGMENTED_CONDITIONAL_RUBRIC",
+          "bodyTextMatchTo1961ArchivedGabc": "PREFIX_AND_SUBSTANTIAL_WORDS_ONLY",
+          "scoreToneVerified": false,
+          "selected1962ChantApproved": false,
+          "proofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41273981099",
+          "caution": "The raw pinned DivinumOfficium source file delegates to @Commune/C3a-1 and that file was absent at inspected pinned location; production assembly nevertheless supplies text. The conditional after-Septuagesima phrase is a rubric, not extra sung text for 1 Nov."
+        }
+      }
+    },
+    {
+      "order": 5,
+      "role": "COMMUNION",
+      "latinIncipit": "Beati mundo corde",
+      "originalArchiveId": "GREGOBASE-345",
+      "sourceId": 345,
+      "archiveIncipit": "Beati mundo corde",
+      "archivePart": "co",
+      "archiveFolioToken": "650",
+      "printedGraduale1961Page": 650,
+      "modeInArchive": "1",
+      "originalGabcSha256": "5ffcbcb4ad681625f500613f85f8a0764ebb12d022eccf3fc0db158e843d1942",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=345",
+      "sourceFileReference": "Sancti/11-01",
+      "original1962DonorSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+      "sourceTextScreen": {
+        "status": "PRELIMINARY_342_CANDIDATE_1962_DONOR_TEXT_SCREEN",
+        "sourceSection": "Communio",
+        "sourcePosition": "POSITION_NOT_VERIFIED",
+        "sourceRisk": "UNADJUDICATED",
+        "comparisonClass": "SOURCE_PREFIX_EIGHT_OR_MORE_WORDS",
+        "initialMatchingWords": 23,
+        "donorWordCount": 24,
+        "donorLineContained": false
+      },
+      "selectedMass1962": "NOT_VERIFIED",
+      "originalPrintedNeumes": "NOT_COMPARED",
+      "fullVerseParity": "NOT_VERIFIED",
+      "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+      "scorePublished": false,
+      "recordingApproved": false,
+      "readerAutoAssignment": false,
+      "pinned1962SourceTextEvidence": {
+        "method": "Original archived 1961 GABC Latin-only stream against DivinumOfficium 1962 Latin donor (no musical pitch inference)",
+        "originalSourceRepository": "DivinumOfficium/divinum-officium",
+        "originalSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+        "originalSourcePath": "web/www/missa/Latin/Sancti/11-01.txt",
+        "originalSourceBlobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+        "originalGabcArchiveBranch": "feature/chant-score-pilot-20261026",
+        "originalGabcArchivePullRequest": 1749,
+        "sourceParts": [
+          "[Communio] Beati mundo corde"
+        ],
+        "status": "FULL_SOURCE_COMMUNION_TEXT_AFTER_ORTHOGRAPHY",
+        "orthographicVariants": [
+          "coelorum/caelorum"
+        ],
+        "caution": "Exact printed musical phrase, neumes and possible psalm verses not verified",
+        "musicalParity": "NOT_CHECKED",
+        "scoreNotes": "NOT_CHECKED",
+        "sourceRole": "COMMUNION",
+        "published": false
+      }
+    }
+  ],
+  "actualSundayPrelude": {
+    "rite": "ASPERGES",
+    "selectedNativeFormula": "ORDINARY",
+    "id": "ASPERGES_NORMAL",
+    "sourceId": 497,
+    "latinIncipit": "Asperges me",
+    "printedWitness": "Liber Usualis (Solesmes, 1961), p. 11",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=497",
+    "sourceTextStatus": "GABC_RETRIEVED_PRINTED_SOURCE_LISTED_NOT_FACSIMILE_VERIFIED",
+    "textAndRubricAuthority": "NATIVE_ASPERGES_SOURCE",
+    "editorialApproval": "PENDING_USER_FINAL_COLLECTION_REVIEW",
+    "renderApproved": false,
+    "recordingApproved": false,
+    "sourceScoreStatus": "PENDING_USER_FINAL_COLLECTION_REVIEW"
+  },
+  "nextVerification": [
+    "Check each full Latin chant including repeated verses and Alleluia in the actual selected 1962 Proper",
+    "Compare all 1961 source pitches, neumes and mode to the actual printed Graduale/Liber Usualis facsimile",
+    "Confirm selected Solemn/ferial Ordinary, celebrant dialogues and local Schola choices separately",
+    "Present complete score options and evidence in one final collection review; approve individually",
+    "Only after user approval connect trusted score manifest to existing offline Exsurge and Schola"
+  ],
+  "notPublic": [
+    "No live score or playing from this file",
+    "Not a user's musical approval",
+    "No date-only derivation of melodies",
+    "No alternative/variant dropped from 1195 archive"
+  ],
+  "evidenceReview": {
+    "performed": "2026-11-01",
+    "printedBook": "Graduale Romanum 1961, pp. 647–650",
+    "witnessedSourcePageIndex": "https://gregobase.selapa.net/source.php?id=2",
+    "limitedVisualPages": [
+      "https://gregobase.selapa.net/chant.php?id=752",
+      "https://gregobase.selapa.net/chant.php?id=835"
+    ],
+    "status": "SOURCE_PAGES_IDENTIFIED_BUT_NOTE_BY_NOTE_FACSIMILE_NOT_COLLATED",
+    "normalizedLatinDirectSourceParts": 4,
+    "inheritedOffertorySourcePointer": "@Commune/C3a-1",
+    "inheritedOffertoryOriginalFile": "web/www/missa/Latin/Commune/C3a-1.txt",
+    "inheritedOffertoryOriginalAvailability": "NOT_FOUND_AT_PINNED_COMMIT",
+    "originalLatinSourceFolderInventory": "Latin/Commune contains Coronatio.txt and Propaganda.txt at checked pinned commit",
+    "remaining": [
+      "Resolve original Offertory inheritance against actual app's canonical Proper resolver without guessing",
+      "Source-text orthography comparison is not a musical note comparison",
+      "Original print p647-650 and GABC melody must receive neume-by-neume proof",
+      "Check Offertory appended Alleluia applicability outside Eastertide",
+      "Check Gloria/repetition/verse rubric for full Introits and Alleluias",
+      "User complete-collection approval is required before any notation release"
+    ],
+    "sourceSelectionApproved": false,
+    "scoreNotesVerified": 0,
+    "newPublicScores": 0,
+    "productionOffertoryResult": {
+      "sourcePath": "Sancti/11-01",
+      "date": "2026-11-01",
+      "printedTextStarts": "Justórum ánimæ in manu Dei sunt",
+      "productionTextSourceStatus": "RESOLVED_IN_ACTUAL_SELECTED_1962_PROPER",
+      "raw1970StyleText": false,
+      "explanatorySeasonalBranchInLatin": "(sed post Septuagesimam dicitur) pace.",
+      "separateReaderRubricSegmentation": "NOT_YET_SHIPPED",
+      "editorialScoreApproval": false,
+      "evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41273981099"
+    }
+  }
+}
