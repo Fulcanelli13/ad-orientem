@@ -363,6 +363,22 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  }
 }
 
+
+/* The approved c1 shows a quiet public-rite note, never a second large
+   Benediction destination card. Preserve the contextual return action. */
+#aoPray435930 .aoAdorationChooserAfterword:before{
+ content:"✠";display:inline-block;margin-right:7px;color:#c1a97a;
+ font:14px/1 Georgia,serif;
+}
+#aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink{
+ display:inline-flex!important;align-items:center;min-height:38px!important;
+ margin:3px 0 0!important;padding:6px 0!important;width:auto!important;max-width:100%!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;
+ background:transparent!important;text-align:left;
+ color:var(--muted,#b9aa91)!important;font:italic 11px/1.4 Georgia,serif!important;
+}
+#aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink small{display:none!important}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
