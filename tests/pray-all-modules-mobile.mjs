@@ -182,10 +182,14 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/phone away/i);
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"say-sins");
- await press(conf+" [data-p435930-conf-next]");
- assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"contrition-penance");
+ for(const id of [
+   "cross-and-blessing","last-confession","say-sins","closing-accusation",
+   "counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"
+ ]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id,
+    "The source-owned nine-card traditional Confession rehearsal must keep its exact order");
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  for(const id of ["satisfaction","amendment"]){
@@ -217,13 +221,20 @@ try{
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"at-priest");
  assert.match(await page.locator(conf+" [data-ao-confession-card]").innerText(),/general Confession/);
- await press(conf+" [data-p435930-conf-next]");
- await press(conf+" [data-p435930-conf-next]");
+ for(const id of [
+   "cross-and-blessing","last-confession","say-sins","closing-accusation",
+   "counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"
+ ]){
+   await press(conf+" [data-p435930-conf-next]");
+   assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),id,
+    "General Confession also retains the complete traditional rehearsal");
+ }
  await press(conf+" [data-p435930-conf-next]");
  assert.equal(await page.locator(conf+" [data-ao-confession-card]").getAttribute("data-ao-confession-card"),"thanksgiving");
  assert.equal(await page.locator(conf+" [data-p435930-since]").count(),0,"Time estimate must only appear on preparation card");
  assert.equal(await page.locator(conf+" [data-ao-confession-card] input").count(),0,"Do not record sins");
- assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2);
+ assert.equal(await page.locator(conf+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),4,
+  "Two original doctrinal witnesses and two additional examination citations must remain accessible");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.close());
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
  assert.equal(await page.locator(conf+" [data-p435930-conf-path][aria-pressed='true']").count(),0,

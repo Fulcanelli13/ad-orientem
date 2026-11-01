@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionRiteCards,confessionAfterCards,confessionPath,confessionStepAt} from "../src/pray/confession-paths.js";
+import {readFileSync} from "node:fs";
+import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionRiteCards,confessionAfterCards,confessionPath,confessionStepAt,CONFESSION_TRADITIONAL_GUIDE_STEPS,CONFESSION_TRADITIONAL_PASTORAL_WITNESSES,CONFESSION_EXTENDED_QUESTIONS,CONFESSION_EXTENDED_EXAM_WITNESS,confessionExtendedSections} from "../src/pray/confession-paths.js";
 assert.deepEqual(Object.keys(CONFESSION_PATHS),["regular","returning","general"]);
 assert.equal(confessionPath("general").id,"general");
 assert.equal(confessionPath("unknown"),null);
@@ -21,6 +22,20 @@ assert.equal(quick.length,5);
 assert.deepEqual(quick.map(x=>x.id),["quick-commandments-1","quick-commandments-2","quick-commandments-3","quick-commandments-4","ready"]);
 assert.deepEqual(quick.slice(0,4).map(x=>x.questions.length),[6,4,4,6]);
 assert.deepEqual(quick.slice(0,4).flatMap(x=>x.questions),sourceSections.flatMap(x=>x[1]));
+assert.equal(CONFESSION_EXTENDED_QUESTIONS.length,10,"Exactly ten commandment sections");
+assert.equal(CONFESSION_EXTENDED_EXAM_WITNESS.editorialStatus,"ORIGINAL_EDITORIAL_PASTORAL_QUESTIONS_NOT_HISTORICAL_VERBATIM");
+assert.equal(confessionExtendedSections(sourceSections,{path:"regular"}),sourceSections,"Quick examination must retain original source");
+for(const path of ["returning","general"]){
+ for(const french of [false,true]){
+  const enriched=confessionExtendedSections(sourceSections,{path,french});
+  assert.equal(enriched.length,10);
+  assert.ok(enriched.every((section,i)=>section[1].length===7&&section[1].slice(0,2).join("|")===sourceSections[i][1].join("|")),"Canonical source prompts must remain intact");
+  assert.ok(enriched.every(x=>x[1].every(y=>typeof y==="string"&&y.length>15)),"Every question requires full content");
+  assert.equal(confessionExaminationCards(path,enriched).filter(x=>x.kind==="questions").reduce((n,x)=>n+x.questions.length,0),70,"Extended path must offer 70 unsaved reflection prompts");
+ }
+}
+assert.equal(confessionExtendedSections(sourceSections,{path:"regular",french:true}),sourceSections,"Quick EN/FR unchanged");
+assert.throws(()=>confessionExtendedSections(sourceSections,{path:"unknown"}),/Unknown/);
 const returning=confessionExaminationCards("returning",sourceSections);
 assert.equal(returning.length,13);
 assert.deepEqual(returning.slice(0,2).map(x=>x.id),["return-priest","return-period"]);
@@ -34,14 +49,29 @@ assert.match(general[0].bodyEn,/not collective/i);
 assert.match(general[2].bodyEn,/need not be confessed again/i);
 assert.ok(general.filter(x=>x.kind==="questions").every(x=>x.questions.length===2));
 assert.ok(returning.filter(x=>x.kind==="questions").every(x=>x.questions.length===2));
+const traditionalIds=["at-priest","cross-and-blessing","last-confession","say-sins","closing-accusation","counsel-and-penance","contrition-penance","priest-absolution","leave-confessional"];
+assert.equal(CONFESSION_TRADITIONAL_GUIDE_STEPS.length,8);
+assert.equal(CONFESSION_TRADITIONAL_PASTORAL_WITNESSES.length,2);
+assert.ok(CONFESSION_TRADITIONAL_PASTORAL_WITNESSES.every(x=>x.url.startsWith("https://")));
 for(const path of ["regular","returning","general"]){
  const rite=confessionRiteCards(path);
- assert.deepEqual(rite.map(x=>x.id),["at-priest","say-sins","contrition-penance"]);
+ assert.deepEqual(rite.map(x=>x.id),traditionalIds);
  assert.ok(rite.every(x=>x.kind==="reflection"&&x.bodyEn.length>110&&x.bodyFr.length>110));
- assert.ok(rite.every(x=>["canon","catechism"].includes(x.source)));
- assert.match(rite[0].bodyEn,/phone away/);
- assert.match(rite[1].bodyEn,/kind and number/);
- assert.match(rite[2].bodyEn,/not pronounce or simulate absolution/);
+ assert.ok(rite.every(x=>["canon","catechism","traditionalGuide","romanRitual"].includes(x.source)));
+ assert.ok(rite.every(x=>["penitent","priest","guide"].includes(x.role)));
+ assert.equal(rite.filter(x=>x.role==="priest").length,2);
+ assert.match(rite[0].bodyEn,/phone away/i);
+ assert.match(rite[1].bodyEn,/Sign of the Cross/);
+ assert.match(rite[2].bodyEn,/last good Confession/);
+ assert.match(rite[3].bodyEn,/kind and number/);
+ assert.match(rite[4].bodyEn,/ask for a penance and absolution/);
+ assert.match(rite[5].bodyEn,/cannot choose the penance/);
+ assert.match(rite[6].bodyEn,/Act of Contrition/);
+ assert.match(rite[7].bodyEn,/not the app/);
+ assert.match(rite[7].latin,/Ego te absolvo a peccatis tuis/);
+ assert.match(rite[8].bodyEn,/never evidence that absolution occurred/);
+ assert.equal(rite.filter(x=>Boolean(x.latin)).length,1,"Priest-only Latin excerpt must not spread to penitent script");
+ assert.ok(rite.every(x=>!Object.hasOwn(x,"sinSelections")&&!Object.hasOwn(x,"userAnswers")));
 }
 assert.match(confessionRiteCards("returning")[0].bodyEn,/a long time since/);
 assert.match(confessionRiteCards("general")[0].bodyEn,/general Confession/);
@@ -58,4 +88,12 @@ assert.equal(confessionStepAt(3.8,14),3);
 assert.throws(()=>confessionExaminationCards("general",sourceSections.slice(1)),/ten original/);
 assert.throws(()=>confessionExaminationCards("unknown",sourceSections),/Unknown/);
 assert.throws(()=>confessionStepAt(0,0),/Empty/);
-console.log("Confession quick, returning and optional general guidance contracts passed (5/13/14 examinations plus 3 priest-prep and 3 aftercare cards)");
+const presentation=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
+assert.match(presentation,/data-ao-confession-speaker/,"Rite must label penitent versus priest");
+assert.match(presentation,/data-ao-confession-latin-excerpt="priest-only"/,"Latin formula must be priest-only explanatory content");
+assert.ok(presentation.includes('cards[pos]?.id==="contrition-penance"?confessionContritionPicker'),"Act of Contrition must accompany the correct rehearsal step");
+assert.ok(presentation.includes("cardSequence[cardIndex]?.id===\'contrition-penance\'"),"Historical contrition alternative must not appear after absolution");
+assert.ok(presentation.includes("confessionRiteCards(CONF.path).findIndex(card=>card.id==='contrition-penance')"),"Contrition choice must respond on its actual card");
+assert.ok(presentation.includes("confessionRiteCards(CONF.path)[CONF.riteStep]?.id==='cross-and-blessing'"),"Sign-of-Cross cue must belong to its ritual step");
+assert.doesNotMatch(presentation,/data-p435930-exam="/,"Never collect marked sins");
+console.log("Confession quick, returning and optional general guidance contracts passed (5/13/14 examinations plus 9 pre-confessional role-labelled and 3 aftercare cards)");
