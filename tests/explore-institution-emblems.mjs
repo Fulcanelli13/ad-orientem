@@ -10,8 +10,9 @@ import {renderDirectoryIdentityFallback,hideUnavailableDirectoryEmblem} from "..
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
-  ["FSSP","IBP","ICKSP","SSPX","AASJMV"].sort(),
-  "Only institutions with a sourced emblem may receive one");
+  ["FSSP","IBP","ICKSP","SSPX","AASJMV",
+    "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"].sort(),
+  "Only source-qualified institute and order-family symbols may render");
 assert.equal(massInstitutionEmblem("diocesan"),null,
   "A diocesan venue is not the Holy See and must use a neutral identity");
 assert.equal(massInstitutionImageId("DIOCESAN"),null,
@@ -24,7 +25,7 @@ for(const group of MASS_EMBLEM_GROUPS){
   assert.ok(item.source.startsWith("https://commons.wikimedia.org/wiki/File:"));
   assert.ok(item.image.startsWith("https://"));
   assert.ok(item.rights.length>12);
-  assert.match(item.licenseUrl,/^https:\/\/creativecommons\.org\/(?:licenses\/by-sa\/[34]\.0|publicdomain\/zero\/1\.0)\/$/,group+" needs a usable licence hyperlink");
+  assert.match(item.licenseUrl,/^https:\/\/creativecommons\.org\/(?:licenses\/by-sa\/[34]\.0|publicdomain\/(?:zero|mark)\/1\.0)\/$/,group+" needs a usable licence hyperlink");
   assert.equal(item.reviewBeforeCommercialRelease,true);
   assert.match(MASS_MAP_GROUP_COLORS[group],/^#[0-9a-fA-F]{6}$/);
 }
@@ -36,8 +37,10 @@ const provisionalSites=projectPreliminaryR49(r49);
 const pictured=provisionalSites.filter(item=>massInstitutionEmblem(item.community_id));
 const neutral=provisionalSites.filter(item=>!massInstitutionEmblem(item.community_id));
 assert.equal(provisionalSites.length,1879);
-assert.equal(pictured.length,1188,"Do not lose exact-source institute emblems; sister communities have separate identities");
-assert.equal(neutral.length,691,"Do not fabricate institute logos for other sources or reuse SSPX arms for distinct sister communities");
+const familyCodes=["BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"];
+const familySites=provisionalSites.filter(item=>familyCodes.includes(item.community_id));
+assert.equal(pictured.length,1188+familySites.length,"Source-matched family arms must not affect institute identities");
+assert.equal(neutral.length,691-familySites.length,"Do not invent logos or reuse SSPX insignia for sisters");
 assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX").length,729);
 assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX_SISTERS").length,3,
   "Three source-named sister-community venues must remain separate from SSPX priestly houses");
@@ -67,11 +70,19 @@ for(const [sourceLabel,[code,expected]] of sourceNamedGroups){
  assert.equal(items.filter(x=>x.community_id===code).length,expected,sourceLabel+" group code");
  for(const item of items){
   assert.equal(item.affiliation_scope,"SOURCE_LABEL_ONLY");
-  assert.equal(massInstitutionEmblem(item.community_id),null,"Uncleared heraldry must not be published");
+  const emblem=massInstitutionEmblem(item.community_id);
   const fallback=renderDirectoryIdentityFallback(item,"en","preview");
-  assert.match(fallback,/data-visual-kind="named"/);
-  assert.ok(fallback.includes(sourceLabel),"Preserve the original source's community name");
-  assert.doesNotMatch(fallback,/<img /,"No unrelated heraldic substitute");
+  if(familyCodes.includes(code)){
+    assert.equal(emblem?.symbolScope,"ORDER_FAMILY");
+    assert.match(fallback,/data-visual-kind="emblem"/);
+    assert.match(fallback,/Order-wide symbol/);
+    assert.match(fallback,/data-tlm-emblem-image/);
+  }else{
+    assert.equal(emblem,null,"Uncleared house-specific heraldry must not be published");
+    assert.match(fallback,/data-visual-kind="named"/);
+    assert.ok(fallback.includes(sourceLabel),"Preserve the original source's community name");
+    assert.doesNotMatch(fallback,/<img /,"No unrelated heraldic substitute");
+  }
  }
 }
 const noInventedLogo=renderDirectoryIdentityFallback({
@@ -108,6 +119,16 @@ assert.equal(researchQueue.cl2_source_affiliation_audit.venue_source_rows,2687);
 assert.equal(researchQueue.cl2_source_affiliation_audit.labels.reduce((n,x)=>n+x.venue_source_rows,0),2687);
 assert.equal(researchQueue.groups.filter(x=>x.state==="EXACT_CANDIDATE_IN_DRAFT").length,5);
 assert.equal(researchQueue.groups.find(x=>x.group_code==="CMRI").rights,"THIRD_PARTY_IMAGE_RIGHTS_NOT_CLEARED");
+for(const code of familyCodes){
+  assert.equal(massInstitutionEmblem(code)?.symbolScope,"ORDER_FAMILY");
+  assert.equal(researchQueue.groups.find(x=>x.group_code===code)?.type,"ORDER_FAMILY");
+}
+assert.equal(massInstitutionEmblem("NORBERTINE").image,massInstitutionEmblem("PREMONSTRATENSIAN").image,
+  "Norbertine and Premonstratensian share the same order-wide heraldry");
+for(const code of ["BENEDICTINES_BELLAIGUE","DOMINICANS_AVRILLE","DOMINICAINES_FANJEAUX","FSVF","SSPX_SISTERS"]){
+  assert.equal(massInstitutionEmblem(code),null,"Generic arms must not impersonate "+code);
+  assert.doesNotMatch(renderDirectoryIdentityFallback({community_id:code,eyebrow:code},"en","card"),/data-visual-kind="emblem"/);
+}
 
 const mapped=exploreMapFeatures([
   {item_id:"tlm:r49:diocese",lens:"tlm",community_id:"DIOCESAN",
