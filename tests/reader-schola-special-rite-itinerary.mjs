@@ -69,6 +69,14 @@ for(const rite of registry.rites){
     const projected=projection.current.find(x=>x.id===e.id);
     assert.deepEqual([...projected.sourcePaths],e.sourcePaths);
     assert.equal(projected.sourceOwner,"EXISTING_NATIVE_RITE");
+    assert.equal(projected.musicMaterial.schema,"ao-mass-music-material-gate-v1");
+    assert.equal(projected.musicMaterial.eventId,e.id);
+    assert.equal(projected.musicMaterial.sourceOwner,"EXISTING_NATIVE_RITE");
+    assert.deepEqual([...projected.musicMaterial.sourceRefs],e.sourcePaths);
+    assert.equal(projected.musicMaterial.textEvidence,"SOURCE_REFERENCE_PRESENT");
+    assert.equal(projected.musicMaterial.notation,"NO_APPROVED_RUNTIME_SCORE");
+    assert.equal(projected.musicMaterial.referenceAudio,"NO_APPROVED_RUNTIME_RECORDING");
+    assert.equal(projected.musicMaterial.publication,"NOT_PROMOTED");
     witnessed++;
    }
    checks++;
@@ -87,7 +95,13 @@ const paschal=projectNativeRiteMusicItinerary({
  registry,riteId:"ASPERGES",controller:aspControl,
  sourcePayload:aspPayload,condition:"PASCHAL"});
 assert.deepEqual(ordinary.current.map(x=>x.id),["AO.MUS.ASP.ME"]);
+assert.equal(ordinary.current[0].musicMaterial.condition,"ORDINARY");
+assert.equal(ordinary.current[0].musicMaterial.usableAsScore,false);
+
 assert.deepEqual(paschal.current.map(x=>x.id),["AO.MUS.ASP.VIDI"]);
+assert.equal(paschal.current[0].musicMaterial.condition,"PASCHAL");
+assert.equal(paschal.current[0].musicMaterial.usableAsRecording,false);
+
 assert.equal(projectNativeRiteMusicItinerary({
  registry,riteId:"ASPERGES",controller:aspControl,sourcePayload:aspPayload
 }).current.length,0,"Absent seasonal formula must fail closed");

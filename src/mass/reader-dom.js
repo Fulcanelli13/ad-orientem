@@ -3432,6 +3432,30 @@ export function createReaderDomAdapter({
         (item.localOrdinary.catalogueId?"Kyriale source-indexed: ":"Custom local setting: ")+
         item.localOrdinary.title+" (not heard or observed)";
       button.append(detail);
+      if(item.sungDialogue?.exchanges?.length){
+        // A complete priest/ministers + response source pair has been
+        // mapped, but no Gregorian tone has yet been approved for it.
+        // Show this in the existing MUSIC itinerary, not on the prayer.
+        const sourcePair=doc.createElement("small");
+        sourcePair.dataset.scholaDialogueSource=item.id;
+        const french=String(prepared?.readerPreferences?.language??"en")
+          .toLowerCase().startsWith("fr");
+        const n=item.sungDialogue.exchanges.length;
+        const intonation=["GLORIA","GLORIA_INTONATION","CREDO","CREDO_INTONATION"]
+          .includes(item.id);
+        sourcePair.textContent=(intonation
+          ? (french?"Intonation et schola":"Intonation and Schola")
+          : (french?"Versets et réponses":"Versicles and responses"))+
+          " · "+n+" "+(french?"échange":"source-linked exchange")+
+          (n>1?(french?"s":"s"):"")+" · "+
+          (item.sungDialogue.toneSelection?.status==="RUBRICAL_FAMILY_RESOLVED_SCORE_PENDING"
+           ?(french?"Famille du ton de 1962 : ":"1962 tone family: ")+
+             (item.sungDialogue.toneSelection.toneFamily==="SOLEMN"
+               ?(french?"solennel":"solemn"):(french?"férial":"ferial"))+
+             (french?" · Partition non approuvée":" · Score not approved")
+           :(french?"Tons musicaux à vérifier":"Musical tones awaiting verification"));
+        button.append(sourcePair);
+      }
       if(item.id===current?.scholaEventSelection?.id)
         button.setAttribute("aria-current","true");
       menu.append(button);

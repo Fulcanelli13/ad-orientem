@@ -1,0 +1,211 @@
+{
+  "schema": "ao-mass-music-m03-score-leads-v1",
+  "date": "2026-10-31",
+  "policy": {
+    "corpusRole": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+    "noAutomaticScorePromotion": true,
+    "userEditorialApprovalRequired": true,
+    "needsPrintedFacsimileComparison": true,
+    "noMusicAudioIncluded": true,
+    "sourceTextOwner": "PINNED_1962_SUNG_ORDINARY_OR_NATIVE_RITE",
+    "noPublicRuntimeImports": true
+  },
+  "authority": {
+    "rubrics": "Missale Romanum 1962 General Rubrics §§513–516",
+    "rubricUrl": "https://maternalheart.org/library/1962rubrics.pdf",
+    "catalogue": "1961 Solesmes Liber Usualis",
+    "indexUrl": "https://gregobase.selapa.net/source.php?id=3"
+  },
+  "candidates": [
+    {
+      "id": "PREFACE_SOLEMN",
+      "moment": "PREFACE_DIALOGUE",
+      "classification": "SOLEMN",
+      "title": "Toni Praefationum — Tonus solemnis",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "109"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=4449",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Compare all three versicles and responses with printed 1961 folio."
+    },
+    {
+      "id": "PREFACE_FERIAL",
+      "moment": "PREFACE_DIALOGUE",
+      "classification": "FERIAL",
+      "title": "Toni Praefationum — Tonus ferialis",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "109"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=4450",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Compare all three versicles and responses; requiem and ferial contexts."
+    },
+    {
+      "id": "PREFACE_SOLEMNIOR",
+      "moment": "PREFACE_DIALOGUE",
+      "classification": "SOLEMNIOR_OPTIONAL",
+      "title": "Toni Praefationum — Tonus solemnior",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "110"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=4451",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Ad libitum: never automatically replace solemn tone on a class I feast."
+    },
+    {
+      "id": "ORATIONS_FESTIVE",
+      "moment": "COLLECT",
+      "classification": "SOLEMN",
+      "title": "Dominus vobiscum — tonus festivus",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "98"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=4487",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "This is an oration-tone reference, not the separate Preface greeting tone."
+    },
+    {
+      "id": "GOSPEL_STANDARD",
+      "moment": "GOSPEL",
+      "classification": "GOSPEL_AD_LIB",
+      "title": "Dominus vobiscum — Toni Evangelii",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "106"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=4490",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "The online transcription explicitly lacks a sample Gospel passage; compare complete printed formula."
+    },
+    {
+      "id": "GOSPEL_ALTERNATE",
+      "moment": "GOSPEL",
+      "classification": "GOSPEL_AD_LIB",
+      "title": "Dominus vobiscum — Alter Tonus ad libitum",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "107"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=4491",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "The transcription explicitly lacks complete Gospel sample; maintain as a candidate only."
+    },
+    {
+      "id": "PATERNOSTER_COMMON",
+      "moment": "PATERNOSTER",
+      "classification": "INDEPENDENT_TONE_SOURCE",
+      "title": "Per omnia ... Et ne nos inducas",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "110"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=7282",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Source selection must match the rubrically resolved solemn/ferial family and its response."
+    },
+    {
+      "id": "ASPERGES_NORMAL",
+      "moment": "ASPERGES",
+      "classification": "ORDINARY",
+      "title": "Asperges me",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "11"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=497",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Online transcription also cites 1974 rubrics omitting Gloria Patri; enforce 1961 text and Gloria."
+    },
+    {
+      "id": "ASPERGES_PASCHAL",
+      "moment": "ASPERGES",
+      "classification": "PASCHAL",
+      "title": "Vidi aquam",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "12"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=958",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Online transcription also cites post-1974 omissions; preserve 1961 Gloria and seasonal variant."
+    },
+    {
+      "id": "DISMISSAL_ITE_I",
+      "moment": "DISMISSAL",
+      "classification": "MASS_I",
+      "title": "Ite Ia",
+      "printedWitness": {
+        "work": "Liber Usualis",
+        "publisher": "Solesmes",
+        "year": 1961,
+        "page": "19"
+      },
+      "gregobaseReference": "https://gregobase.selapa.net/chant.php?id=2988",
+      "approval": "PENDING_USER_REVIEW",
+      "scoreEncoding": "NOT_IMPORTED",
+      "facsimileExactMatch": "PENDING",
+      "responseMatch": "PENDING",
+      "licenceAssessment": "PENDING",
+      "sourceCaveat": "Check original complete celebrant/deacon dismissal and its response: online score splits the response into another GABC item."
+    }
+  ]
+}

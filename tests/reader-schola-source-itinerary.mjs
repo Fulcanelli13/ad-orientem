@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 // Retain the existing Schola test command; include session observation gates.
 import "./reader-schola-performance-ledger.mjs";
+import "./reader-mass-sung-dialogue-pairs.mjs";
+import "./reader-mass-1962-tone-family.mjs";
+import "./reader-mass-actual-tone-context.mjs";
 import {readFileSync} from "node:fs";
+import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
  nextScholaMusicEvent} from "../src/mass/reader-schola-event-timeline.js";
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
@@ -49,7 +53,41 @@ assert.equal(MASS_SCHOLA_EVENT_SPECS.length,36);
 const plan=buildScholaMusicItinerary(args);
 assert.equal(plan.supported,true);
 assert.equal(plan.activeClock,"SCHOLA_INDEPENDENT");
+const prefaceMusic=plan.events.find(e=>e.id==="PREFACE_DIALOGUE");
+assert.equal(prefaceMusic.sungDialogue.exchanges.length,3);
+assert.equal(prefaceMusic.sungDialogue.toneSelection.status,"NOT_SOURCE_CERTIFIED");
+assert.equal(plan.events.find(e=>e.id==="DISMISSAL").sungDialogue.exchanges.length,2);
+assert.equal(plan.events.find(e=>e.id==="CANON").sungDialogue,null);
+
 assert.equal(plan.sourceCardCount,cards.length);
+const musicEvents=plan.events.filter(e=>e.kind==="CHANT"||e.kind==="PRIEST_VOICE");
+assert.ok(musicEvents.length>=12,"Missing source-owned sung pieces or dialogue moments");
+for(const event of musicEvents){
+ const material=event.musicMaterial;
+ assert.equal(material.schema,"ao-mass-music-material-gate-v1");
+ assert.equal(material.eventId,event.id);
+ assert.equal(material.textEvidence,"SOURCE_REFERENCE_PRESENT");
+ assert.deepEqual(material.sourceRefs,[event.sourceRef]);
+ assert.equal(material.notation,"NO_APPROVED_RUNTIME_SCORE");
+ assert.equal(material.referenceAudio,"NO_APPROVED_RUNTIME_RECORDING");
+ assert.equal(material.publication,"NOT_PROMOTED");
+ assert.equal(material.editorialPolicy,"USER_APPROVAL_REQUIRED_FOR_NEW_MUSIC");
+ assert.equal(material.musicalPerformance,"NOT_INFERRED");
+ assert.equal(material.usableAsScore,false);
+}
+assert.equal(plan.events.find(e=>e.id==="CANON").musicMaterial,null,
+ "Canon silence must not be offered as a musical score");
+assert.equal(plan.events.find(e=>e.id==="PREFACE_DIALOGUE")
+ .musicMaterial.celebrantResponseTone,"PAIR_NOT_MUSICALLY_VERIFIED");
+assert.equal(plan.events.find(e=>e.id==="DISMISSAL")
+ .musicMaterial.celebrantResponseTone,"PAIR_NOT_MUSICALLY_VERIFIED");
+assert.equal(sourceMusicMaterialGate({eventId:"NO_SOURCE",kind:"CHANT",
+ sourceOwner:"CURATED_1962_MASS",sourceRef:"",sourceReferencePresent:true}).textEvidence,
+ "SOURCE_HOLD","Missing exact source cannot be promoted");
+assert.equal(sourceMusicMaterialGate({eventId:"SILENCE",kind:"QUIET_INTERVAL",
+ sourceOwner:"CURATED_1962_MASS",sourceRef:"AO.CARD.014",
+ sourceReferencePresent:true}),null);
+
 assert.ok(plan.events.length>=27,"Source timeline must cover all major ordinary Mass moments");
 assert.ok(plan.events.every(e=>e.actuallySinging==="UNKNOWN"&&
  e.actuallyPlaying==="UNKNOWN"&&e.independentFromPriestScroll));

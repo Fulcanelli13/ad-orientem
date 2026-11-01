@@ -7,6 +7,7 @@ import { inspect1962PrefaceSelection } from "./1962-preface-decision.js";
 
 import { makeResolvedMass, compileMassPlan } from "./session-engine.js";
 import {required1962ResidualPrefaceOwner} from "./1962-residual-preface-source.js";
+import {deriveActualMassMusicToneContext} from "./reader-mass-actual-tone-context.js";
 
 const LEGACY_EXCEPTIONAL = Object.freeze({
   "good-friday-1962": "GOOD_FRIDAY",
@@ -195,6 +196,12 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       adapter:"V346_RESOLVED_MASS",
       properSource:legacy.properSource??null,
       calendarRank:legacy.calendarRank??null,
+      // Source-exact selected Calendar Mass + Proper only; requested votive,
+      // Requiem and separate special rites never inherit the day's tone.
+      musicToneContext:deriveActualMassMusicToneContext({
+        legacy,calendarResolution:options.calendarResolution??null,
+        selectedProper:proper,overlays,distinctRite
+      }),
       votiveClass:rogationSelection?.selection==="ROGATION_MASS"?2:(legacy.votiveClass??null),
       requiemClass:legacy.requiemClass??null,
       colour:rogationSelection?.selection==="ROGATION_MASS"?"violet":(legacy.colour??null),
