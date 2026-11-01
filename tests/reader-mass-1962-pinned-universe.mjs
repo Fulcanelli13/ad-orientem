@@ -34,7 +34,7 @@ assert.throws(()=>validatePinnedLatinFile({entry,bytes:Buffer.from(latin+"X")}),
 assert.throws(()=>validatePinnedLatinFile({entry:{...entry,sha:"f".repeat(40)},bytes}),
  /PINNED_SOURCE_SHA_DRIFT/);
 const mutated=structuredClone(inventory);
-mutated.sourceFiles[0].sha="0".repeat(40);
+mutated.sourceFiles.find(x=>x.path===prior.sourceFiles[0].path).sha="0".repeat(40);
 assert.throws(()=>validatePinnedSourceInventory(mutated,prior),
  /ORIGINAL_91_WITNESS_CHANGED|PINNED_SOURCE_ENTRY_INVALID/);
 assert.equal(inventory.status,
