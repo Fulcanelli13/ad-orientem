@@ -1,0 +1,51 @@
+{
+  "schema": "AO_CL27_EXACT_CELEBRATION_EVIDENCE_RELEASE_V1",
+  "version": "1.0.0",
+  "reviewed_on": "2026-11-02",
+  "publication": "EXACT_SOURCE_SCOPED_CELEBRATION_BOOK_WITNESSES",
+  "scope_limits": [
+    "Direct first-party programme evidence applies to named celebrations only, never all Masses in the building.",
+    "No public assertion of Una Cum, pontiff named in Canon, canonical status, or celebrant identity.",
+    "A schedule page is not proof of live Mass availability. Verify current exceptions before travel.",
+    "Source-identity join requires exact frozen CL2 physical anchor, R49 source ID, official venue name and publisher URL.",
+    "These records do not promote the 2715 unapproved CL27 research classifications or institute-wide norms."
+  ],
+  "records": [
+    {
+      "cl2_anchor": "RG-BD8A8939CA37",
+      "source_id": "V19:SJC-001",
+      "venue_name": "St. John Cantius Church",
+      "country": "US",
+      "source_url": "https://www.cantius.org/full-liturgy-schedule",
+      "source_kind": "PARISH_FIRST_PARTY",
+      "review_date": "2026-11-02",
+      "subject_scope": "NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE",
+      "liturgical_use": "ROMAN",
+      "missal_edition": "1962",
+      "label_en": "1962 Missal used for specified Masses",
+      "label_fr": "Missel de 1962 pour certaines messes",
+      "detail_en": "The parish programme explicitly identifies 1962 Low and High Masses alongside Masses using the 2002 Missal.",
+      "detail_fr": "Le programme paroissial indique explicitement des messes basses et des grand-messes selon le missel de 1962, parallèlement à des messes selon le missel de 2002.",
+      "exception_en": "First Sundays use the 2002 Missal for the normally listed Sunday 7:30 a.m. and 12:30 p.m. slots; feast-day and seasonal schedules may differ.",
+      "exception_fr": "Les premiers dimanches, le missel de 2002 remplace celui de 1962 aux horaires habituels de 7 h 30 et 12 h 30 ; les fêtes et périodes particulières peuvent modifier les horaires."
+    },
+    {
+      "cl2_anchor": "RG-E701FCC9CE76",
+      "source_id": "V19:SJC-002",
+      "venue_name": "St. Peter Catholic Church",
+      "country": "US",
+      "source_url": "https://www.stpetervolo.org/mass-schedule",
+      "source_kind": "PARISH_FIRST_PARTY",
+      "review_date": "2026-11-02",
+      "subject_scope": "NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE",
+      "liturgical_use": "ROMAN",
+      "missal_edition": "1962",
+      "label_en": "1962 liturgical books for marked Latin Masses",
+      "label_fr": "Livres liturgiques de 1962 pour les messes latines signalées",
+      "detail_en": "The parish schedule explicitly states that its asterisk-marked Latin Masses follow the 1962 liturgical books; other Masses remain separate.",
+      "detail_fr": "Le programme paroissial précise que les messes latines marquées d’un astérisque suivent les livres liturgiques de 1962 ; les autres messes restent distinctes.",
+      "exception_en": "The first-Sunday Latin rows are not asterisked; no 1962 edition is inferred for those slots. Check the current parish schedule.",
+      "exception_fr": "Les messes latines du premier dimanche ne portent pas d’astérisque ; on ne leur attribue donc pas le missel de 1962. Vérifier le programme paroissial à jour."
+    }
+  ]
+}

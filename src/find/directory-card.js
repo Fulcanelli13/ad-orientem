@@ -198,6 +198,8 @@ export function renderDirectoryVenueCard(item,language="en"){
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
     +'<span class="aoTlmVenueSchedule">'+inlineIcon('schedule')+'<span>'+E(schedule)+'</span></span>'
+    +(item.celebration_evidence?'<span class="aoTlmVenueSourceEdition" data-tlm-celebration-evidence="'+E(item.celebration_evidence.source_id)+'">'+
+        E(L(language,"1962 Missal · specific Masses only","Missel de 1962 · certaines messes seulement"))+'</span>':'')
     +(status?'<span class="aoTlmVenueStatus">'+E(status==="SCHEDULE UNVERIFIED"?L(language,"SCHEDULE UNVERIFIED","HORAIRES NON VÉRIFIÉS"):status==="OFFICIAL · TIMES UNCONFIRMED"?L(language,"OFFICIAL · TIMES UNCONFIRMED","OFFICIEL · HORAIRES NON CONFIRMÉS"):status)+'</span>':'')
     +'<span class="aoTlmVenueFoot"><small>'+E(sources?L(language,"Source-backed listing","Fiche sourcée"):L(language,"Source review pending","Sources en cours d’examen"))+'</small><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
     +'</span></button>';

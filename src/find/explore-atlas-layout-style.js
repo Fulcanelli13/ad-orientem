@@ -310,6 +310,10 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   min-height:44px;background:#10202b;color:#ead9bc;border:1px solid rgba(205,180,132,.24);
   border-radius:9px;padding:9px 11px
 }
+.aoTlmVenueSourceEdition,.aoTlmSourceClaim{
+  color:#e9d19c;font:600 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoTlmSourceClaim{padding:8px 10px;background:#1c2d34;border-left:2px solid #c2a56c;border-radius:5px}
 .aoExploreTlmFilters .aoTlmEvidenceFacets{
   display:grid;gap:8px;min-width:0;padding:9px 3px 8px;border-top:1px solid rgba(205,180,132,.22)
 }
@@ -331,6 +335,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra:has(.aoTlmMoreInstitutes[open]) .aoTlmEvidenceFacets{
   display:none
 }
+.aoTlmCelebrationFacets{border-top:1px solid rgba(205,180,132,.22)}
 /* Secondary communities are in the source-filter disclosure on the map,
    not in the 320px-wide fixed emblem row; list mode retains its original row. */
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes{
