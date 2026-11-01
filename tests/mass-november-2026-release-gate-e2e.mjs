@@ -75,6 +75,8 @@ try{
        // Selected production 1962 Proper text (not archive metadata).
        offertoryLatin:(slots.slots?.OFFERTORY?.data?.paragraphs??[])
          .map(row=>String(row.latin??"")).join(" ").slice(0,550),
+       offertoryVernacular:(slots.slots?.OFFERTORY?.data?.paragraphs??[])
+         .map(row=>String(row.vernacular??"")).join(" ").slice(0,550),
        offertorySourcePath:p?.sourcePath??null}];
     }))
    }];
