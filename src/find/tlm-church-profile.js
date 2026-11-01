@@ -110,6 +110,31 @@ export function renderTlmChurchProfile(item,language="en"){
    '</div></div>'+
    '<p class="aoTlmProfileVerification'+(preliminary?' is-provisional':'')+'">'+E(statusText)+'</p>'+
   '</header></div>';
+
+ // At-a-glance liturgical identity is deliberately scoped. A published parish
+ // witness proves an edition for SOME celebrations, never the whole building.
+ // Other ministries and status remain unknown unless individually recorded.
+ const scoped=item?.celebration_evidence;
+ const exact= T(scoped?.subject_scope)==="NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE";
+ const edition=exact&&T(scoped?.missal_edition)==="1962"
+   ?L(language,"1962 · named Masses only","1962 · messes désignées seulement")
+   :one?one.missal:unknown(language);
+ const rite=exact&&T(scoped?.liturgical_use)==="ROMAN"
+   ?L(language,"Roman · named Masses only","Romain · messes désignées seulement")
+   :one?one.rite:unknown(language);
+ html+='<section class="aoTlmProfileEssentials" aria-label="'+E(L(language,
+   "Liturgical identity at a glance","Identité liturgique en bref"))+'">'+
+   detail(L(language,"Missal / books","Missel / livres"),edition,null)+
+   detail(L(language,"Rite","Rite"),rite,null)+
+   detail("Una cum",one?one.unaCum:unknown(language),null)+'</section>';
+ // Give every source-backed CL2 site a useful first action, even if it has
+ // no independently publishable recurring Mass timetable or contact object.
+ const primaryLink=values(contact.schedule_url).find(https)||
+   (exact&&https(scoped.source_url)?scoped.source_url:null)||
+   values(contact.website).find(https)||sourceLinks[0]?.url;
+ if(primaryLink)html+='<div class="aoTlmProfilePrimaryAction">'+
+   link(primaryLink,L(language,"Consult original church / Mass information",
+     "Consulter la source originale de l’église ou des messes"))+'</div>';
  // Preserve source-owned summaries only when their schedule content is
  // publishable. An unverified row can carry a stale timetable in item.summary:
  // suppress it even though ministry.schedules have already been filtered out.
@@ -310,4 +335,13 @@ export const TLM_CHURCH_PROFILE_STYLE=String.raw`
  .aoTlmChurchProfile{padding-inline:11px}
  .aoTlmProfileSpotlight .aoTlmProfileHero img{max-height:185px}
 }
+
+/* Short, readable liturgical summary; assertions retain ministry or celebration scope. */
+.aoTlmProfileEssentials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0 9px}
+.aoTlmProfileEssentials .aoTlmProfileDatum{background:#152932;border-color:#d6b77e40;min-height:62px}
+.aoTlmProfileEssentials .aoTlmProfileDatum strong{font-size:13px;line-height:1.35}
+.aoTlmProfilePrimaryAction{margin:10px 0 14px}
+.aoTlmProfilePrimaryAction a{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:44px;padding:10px 14px;border-radius:11px;border:1px solid #d5bb8159;background:#2c322c;color:#f1d8a5;font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
+.aoTlmProfilePrimaryAction a:focus-visible{outline:2px solid #e8c48b;outline-offset:2px}
+@media(max-width:560px){.aoTlmProfileEssentials{gap:6px;margin:10px 0 8px}.aoTlmProfileEssentials .aoTlmProfileDatum{padding:9px 7px;min-height:59px}.aoTlmProfileEssentials .aoTlmProfileDatum small{font-size:9px}.aoTlmProfileEssentials .aoTlmProfileDatum strong{font-size:11px}}
 `;
