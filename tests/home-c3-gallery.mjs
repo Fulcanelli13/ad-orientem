@@ -17,7 +17,7 @@ assert.match(allSouls?.title??"",/Souls of Purgatory/);
 assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m1"},{selectedDate:"2026-11-01"}),null);
 assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-01"},{selectedDate:"2026-11-03"}),null);
 assert.ok(HOME_C3_CSS.includes(".aoC3DatedImage"));
-assert.ok(HOME_C3_CSS.includes(".aoC3DatedCredit"));
+assert.ok(!HOME_C3_CSS.includes(".aoC3DatedCredit"),"C3 art metadata belongs in the existing information control, not an image caption");
 
 const prayer=c3PrayerMarkup({fr:false,feature:{id:"angelus.evening"},
   attrs:'data-home-cu-dynamic="angelus.evening" data-home-cu-route="pray.angelus_regina"',
