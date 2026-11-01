@@ -46,7 +46,7 @@ try{
    assert.equal(await panel.isVisible(),false,"Unselected local setting must expose no printed source");
    await selector.selectOption("MASS_08");
    await panel.waitFor({state:"visible",timeout:30000});
-   await panel.locator("summary").click();
+   await panel.locator("[data-schola-original-toggle]").click();
    assert.equal(await panel.locator("img").count(),2);
    assert.match(await panel.locator("img").nth(0).getAttribute("src"),/\/905\.png$/);
    assert.match(await panel.locator("img").nth(1).getAttribute("src"),/\/906\.png$/);
@@ -59,18 +59,19 @@ try{
    assert.equal(await panel.locator("img").count(),2);
    await selector.selectOption("CUSTOM");
    assert.equal(await panel.isVisible(),false,"Custom title must have no inherited Kyrie source");
-   assert.equal(await panel.getAttribute("open"),null,"Switching to custom closes old print");
+   assert.equal(await panel.locator("[data-schola-original-content]").isVisible(),false,
+    "Switching to custom closes old print");
    const gloria=page.locator('[data-schola-kyriale-choice="GLORIA"]');
    await gloria.selectOption("MASS_08");
    const gloriaPanel=page.locator('[data-schola-original-score="GLORIA"]');
    await gloriaPanel.waitFor({state:"visible",timeout:20000});
-   await gloriaPanel.locator("summary").click();
+   await gloriaPanel.locator("[data-schola-original-toggle]").click();
    assert.equal(await gloriaPanel.locator("img").count(),2);
    assert.match(await gloriaPanel.locator("img").nth(0).getAttribute("src"),/\/906\.png$/);
    await page.locator('[data-schola-kyriale-choice="CREDO"]').selectOption("CREDO_03");
    const credoPanel=page.locator('[data-schola-original-score="CREDO"]');
    await credoPanel.waitFor({state:"visible",timeout:20000});
-   await credoPanel.locator("summary").click();
+   await credoPanel.locator("[data-schola-original-toggle]").click();
    assert.equal(await credoPanel.locator("img").count(),3);
    assert.match(await credoPanel.locator("img").nth(2).getAttribute("src"),/\/943\.png$/);
    assert.equal(await page.locator("[data-ao-reader-shell]").evaluate(node=>
