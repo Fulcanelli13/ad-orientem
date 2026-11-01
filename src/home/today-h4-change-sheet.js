@@ -9,6 +9,7 @@ const CHOICES=Object.freeze({
   readerLanguage:[["en","English","Anglais"],["fr","French","Français"]],
   beforeMass:[["none","None","Aucune"],["prepare","Brief","Brève"],["full","Full","Complète"]],
   afterMass:[["none","None","Aucune"],["thanksgiving","Brief","Brève"],["full","Full","Complète"]],
+  aspersion:[["no","No","Non"],["yes","Yes","Oui"]],
 });
 // Remembering is an explicit opt-in write to the existing Settings donor.
 // Do not create a Home-owned localStorage key or silently save session edits.
@@ -36,9 +37,11 @@ export function h4ChoicesMarkup(status,{language="en"}={}){
   const fr=language==="fr",say=(en,frText)=>fr?frText:en;
   const experience=status?.experience??{};
   const values={form:status?.chosenForm,readerMode:status?.readerMode,
-    readerLanguage:experience.language,beforeMass:experience.before,afterMass:experience.after};
+    readerLanguage:experience.language,beforeMass:experience.before,afterMass:experience.after,
+    aspersion:status?.aspersionSelected?"yes":"no"};
   const row=(key,title)=>{
-    const disabled=key==="form"&&status?.formChangeAllowed===false;
+    const disabled=key==="form"&&status?.formChangeAllowed===false||
+      key==="aspersion"&&status?.aspersionAllowed!==true;
     return '<label class="aoH4ChoiceRow"><span>'+esc(title)+'</span><select data-h4-option="'+key+'"'+(disabled?' disabled':'')+'>'+
       CHOICES[key].map(([v,en,frText])=>'<option value="'+esc(v)+'"'+(values[key]===v?' selected':'')+'>'+
         esc(fr?frText:en)+'</option>').join("")+'</select></label>';
@@ -51,6 +54,7 @@ export function h4ChoicesMarkup(status,{language="en"}={}){
     '<button type="button" class="aoH4DifferentMass" data-h4-different-mass>'+esc(say(
       "A different Mass is celebrated…","Une autre messe est célébrée…"))+' ›</button>'+
     row("form",say("Ceremony","Forme de célébration"))+
+    row("aspersion",say("Sunday aspersion · Asperges me","Aspersion dominicale · Asperges me"))+
     row("readerMode",say("Follow the Mass","Suivre la messe"))+
     row("readerLanguage",say("Translation language","Langue de traduction"))+
     row("beforeMass",say("Before Mass prayers","Prières avant la messe"))+
@@ -148,6 +152,14 @@ export function openH4ChoicesSheet(win=globalThis,{onOtherMass=()=>{},onDone=()=
     const error=dialog.querySelector("[data-h4-choice-error]");
     if(!ok){if(error){error.hidden=false;error.textContent=language==="fr"?"Ce choix n’a pas été accepté par la préparation de la messe.":"The Mass preflight did not accept this choice.";}return;}
     if(error)error.hidden=true;
+    if(key==="form"){
+      const current=api.status?.()?.fullMassPreflight;
+      const input=dialog.querySelector('[data-h4-option="aspersion"]');
+      if(input){
+        input.disabled=current?.aspersionAllowed!==true;
+        input.value=current?.aspersionSelected?"yes":"no";
+      }
+    }
     const saved=dialog.querySelector("[data-h4-save-status]");
     if(saved)saved.hidden=true;
   });

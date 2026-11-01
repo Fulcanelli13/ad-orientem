@@ -48,8 +48,13 @@ try{
     "The Mass and personal preferences should have separate readable headings");
   assert.equal(await page.locator(".aoMassFolioIdentity.aoTcmCard").count(),1,
     "The existing source-owned Mass identity should consume the shared card");
-  assert.equal(await page.locator("[data-m1-choice].aoTcmRow").count(),6,
-    "All six actual chooser actions must remain touch rows");
+  const visibleM1Choices=await page.locator("[data-m1-rows] [data-m1-choice].aoTcmRow").evaluateAll(
+    nodes=>nodes.map(node=>node.dataset.m1Choice));
+  assert.deepEqual(visibleM1Choices.slice(0,6),["mass","ceremony","reader","language","before","after"],
+    "All six core chooser actions must remain touch rows and in canonical order");
+  assert.ok(visibleM1Choices.length===6||
+    (visibleM1Choices.length===7&&visibleM1Choices[6]==="rites"),
+    "Only an eligible source-owned Rites row may follow the six core choices");
   assert.equal(await page.locator("[data-ao-start-live].aoTcmPrimary").count(),1,
     "The sole host Start Mass action should use the shared primary control");
   const initialTheme=await page.evaluate(()=>{
