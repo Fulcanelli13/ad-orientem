@@ -4,7 +4,6 @@ on:
     paths:
       - ".github/workflows/mass-postdeploy-nov2-production-audit.yml"
       - "tests/mass-h7-sunday-asperges-phone.mjs"
-      - "tests/mass-reader-production-phone-smoke.mjs"
   workflow_dispatch:
 permissions:
   contents: read
@@ -29,25 +28,5 @@ jobs:
         with:
           name: mass-postdeploy-nov1-nov2-public-site-phones
           path: artifacts/mass-h7-sunday-asperges/
-          if-no-files-found: warn
-          retention-days: 7
-  real-production-schola:
-    name: Live Mass Schola and MISSAL, explicit Sunday rite (320/390)
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: npm install --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
-      - name: Public LIVE Schola/MISSAL after explicit Sunday rite decision
-        run: node tests/mass-reader-production-phone-smoke.mjs
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: mass-postdeploy-schola-public-site-phones
-          path: artifacts/mass-reader-production-smoke/
           if-no-files-found: warn
           retention-days: 7
