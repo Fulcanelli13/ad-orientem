@@ -66,12 +66,17 @@ try{
       assert.equal(response?.status(),200,"Public Vercel entry must return HTTP 200");
       await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
         null,{timeout:60000});
-      // The current H7 home owns the Mass door. The obsolete app-surface
-      // selector was retired; exercise the same public entry as the
-      // independently maintained Mass preflight phone acceptance test.
+      // H7 has two source-owned steps: first the visible "Enter the Mass"
+      // hero on Home, then the "Begin Mass" action inside the open door.
+      // Do not bypass the approved H7 door or click a hidden legacy Home CTA.
       await page.waitForFunction(()=>Boolean(globalThis.AO_CELEBRATION_API?.openPreflight),
         null,{timeout:35000});
-      const massNav=page.locator(".homeScreen [data-home-mass-entry]");
+      const h7Entry=page.locator(".aoH7HomeView [data-home-h7-enter]");
+      await h7Entry.waitFor({state:"visible",timeout:35000});
+      await h7Entry.click();
+      const h7Door=page.locator(".aoH7DoorView:not([hidden])");
+      await h7Door.waitFor({state:"visible",timeout:18000});
+      const massNav=h7Door.locator("[data-home-mass-entry]");
       await massNav.waitFor({state:"visible",timeout:35000});
       await massNav.click();
       await page.waitForSelector("[data-ao-start-live]",{state:"visible",timeout:45000});
