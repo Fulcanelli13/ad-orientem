@@ -10,7 +10,7 @@ import {renderDirectoryIdentityFallback,hideUnavailableDirectoryEmblem} from "..
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
-  ["FSSP","IBP","ICKSP","SSPX","AASJMV",
+  ["FSSP","IBP","ICKSP","SSPX","AASJMV","CAPUCHINS_MORGON",
     "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"].sort(),
   "Only source-qualified institute and order-family symbols may render");
 assert.equal(massInstitutionEmblem("diocesan"),null,
@@ -39,8 +39,12 @@ const neutral=provisionalSites.filter(item=>!massInstitutionEmblem(item.communit
 assert.equal(provisionalSites.length,1879);
 const familyCodes=["BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"];
 const familySites=provisionalSites.filter(item=>familyCodes.includes(item.community_id));
-assert.equal(pictured.length,1188+familySites.length,"Source-matched family arms must not affect institute identities");
-assert.equal(neutral.length,691-familySites.length,"Do not invent logos or reuse SSPX insignia for sisters");
+const morgonSites=provisionalSites.filter(item=>item.community_id==="CAPUCHINS_MORGON");
+assert.equal(morgonSites.length,5,"Keep all five explicitly sourced Capuchins of Morgon labels");
+assert.equal(pictured.length,1188+familySites.length+morgonSites.length,
+  "Source-matched family arms and exact Morgon emblem must not change institute identities");
+assert.equal(neutral.length,691-familySites.length-morgonSites.length,
+  "Do not invent logos or reuse SSPX insignia for sisters");
 assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX").length,729);
 assert.equal(provisionalSites.filter(x=>x.community_id==="SSPX_SISTERS").length,3,
   "Three source-named sister-community venues must remain separate from SSPX priestly houses");
@@ -72,7 +76,11 @@ for(const [sourceLabel,[code,expected]] of sourceNamedGroups){
   assert.equal(item.affiliation_scope,"SOURCE_LABEL_ONLY");
   const emblem=massInstitutionEmblem(item.community_id);
   const fallback=renderDirectoryIdentityFallback(item,"en","preview");
-  if(familyCodes.includes(code)){
+  if(code==="CAPUCHINS_MORGON"){
+    assert.equal(emblem?.officialIdentitySource,"https://capucins-morgon.fr/histoire/ordre-capucin");
+    assert.match(fallback,/data-visual-kind="emblem"/);
+    assert.match(fallback,/Capuchins of Morgon/);
+  }else if(familyCodes.includes(code)){
     assert.equal(emblem?.symbolScope,"ORDER_FAMILY");
     assert.match(fallback,/data-visual-kind="emblem"/);
     assert.match(fallback,/Order-wide symbol/);
