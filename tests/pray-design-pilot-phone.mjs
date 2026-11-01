@@ -139,15 +139,18 @@ try{
       const actions=el.querySelector(".aoPrayPilotAngelusActions"),begin=el.querySelector("[data-p435930-pilot-angelus-begin]");
       const alone=el.querySelector("[data-p435930-pilot-angelus-recitation]");
       const hero=el.querySelector(".aoPrayPilotAngelusHero").getBoundingClientRect();
-      const cover=el.getBoundingClientRect(),h2=el.querySelector(".aoPrayPilotAngelusCoverCopy h2").getBoundingClientRect();
+      const cover=el.getBoundingClientRect(),h2=el.querySelector(".aoPrayPilotAngelusCoverCopy h2").getBoundingClientRect(),artSlot=el.querySelector(".aoPrayPilotAngelusArtSlot").getBoundingClientRect();
+      const heroTop=hero.top,artSlotTop=artSlot.top;
       const appHeader=document.querySelector("#aoPray435930 .aoP435930Head")?.getBoundingClientRect();
       const b=begin.getBoundingClientRect(),a=alone.getBoundingClientRect();
-      return {heroHeight:hero.height,coverBottom:cover.bottom,titleTop:h2.top,headerBottom:appHeader?.bottom||0,
+      return {heroHeight:hero.height,heroTop,artSlotTop,coverBottom:cover.bottom,titleTop:h2.top,headerBottom:appHeader?.bottom||0,
         beginTop:b.top,beginBottom:b.bottom,recitationTop:a.top,recitationBottom:a.bottom,
         navTop:document.querySelector("#ao-global-ribbon, .aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect()?.top||(innerHeight-64)};
    });
    assert.ok(firstFold.heroHeight>=Math.max(260,width===320?260:400)&&firstFold.beginBottom<firstFold.recitationTop,
      "The art band must actually expand and Begin remain ABOVE recitation: "+JSON.stringify(firstFold));
+   assert.ok(firstFold.heroTop>=firstFold.headerBottom-2&&firstFold.artSlotTop>=firstFold.headerBottom,
+     "Angelus hero and ART SLOT may never scroll underneath the sticky native header: "+JSON.stringify(firstFold));
    assert.ok(firstFold.titleTop>=firstFold.headerBottom+2,
      "Full Angelus title must not sit under the sticky native header at "+width+": "+JSON.stringify(firstFold));
    assert.ok(firstFold.coverBottom>=firstFold.navTop-22&&firstFold.coverBottom<=firstFold.navTop+35,
@@ -158,6 +161,8 @@ try{
    assert.equal(await group.count(),1,"F04 entry must expose existing Alone/With others recitation");
    await group.click();
    assert.equal(await group.getAttribute("aria-pressed"),"true");
+   const recitationScroll=await page.locator(base+" .aoP435930Mount").evaluate(el=>el.scrollTop);
+   assert.ok(recitationScroll<=2,"Selecting Alone/With others must not scroll the Angelus artwork offscreen: "+recitationScroll);
    assert.equal(await page.evaluate(()=>localStorage.getItem("ao-prayer-recitation-mode")),"group",
     "Group recitation must reuse the existing saved preference, not create a second engine");
    await page.screenshot({path:resolve(output,"angelus-entry-"+width+".png"),animations:"disabled"});
