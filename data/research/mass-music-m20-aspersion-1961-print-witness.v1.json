@@ -1,0 +1,77 @@
+{
+  "schema": "ao-m20-aspersion-1961-printed-context-and-1962-reader-v1",
+  "date": "2026-11-01",
+  "primary": {
+    "title": "Kyriale Solesmes 1961 – Ad Aspersionem Aquae Benedictae",
+    "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "pages": [
+      {
+        "print": "1*",
+        "zeroBasedPdfPage": 2,
+        "content": "Asperges me: antiphon, Ps.50, Gloria Patri (first portion)"
+      },
+      {
+        "print": "2*",
+        "zeroBasedPdfPage": 3,
+        "content": "Asperges conclusion, rubric omit Gloria Patri Passion Sunday; omit aspersion Palm Sunday; Vidi aquam antiphon and Ps.117"
+      },
+      {
+        "print": "3*",
+        "zeroBasedPdfPage": 4,
+        "content": "Vidi aquam Gloria Patri, repeat antiphon, Eastertide Alleluia after first versicle and response; Exaudi nos conclusion"
+      }
+    ]
+  },
+  "scores": [
+    {
+      "name": "Asperges me",
+      "gregobaseId": 497,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=497",
+      "printedStart": "1*",
+      "printedEnd": "2*",
+      "textAndVariantIdentity": "FOUND",
+      "pitchNeumeParity": "NOT_CERTIFIED",
+      "publicNotation": false
+    },
+    {
+      "name": "Vidi aquam",
+      "gregobaseId": 958,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=958",
+      "printedStart": "2*",
+      "printedEnd": "3*",
+      "textAndVariantIdentity": "FOUND",
+      "pitchNeumeParity": "NOT_CERTIFIED",
+      "publicNotation": false
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "PASSION_SUNDAY_GLORIA_PATRI",
+      "status": "ALREADY_IMPLEMENTED",
+      "observed": "Gloria Patri omitted on first Passion Sunday, antiphon repeated directly after Psalm"
+    },
+    {
+      "id": "PALM_SUNDAY_OMIT_ASPERSION",
+      "status": "IMPLEMENTED_M20_SOURCE_GUARD",
+      "observed": "In dominica II Passionis aspersio omittitur"
+    },
+    {
+      "id": "EASTER_TO_PENTECOST_VIDI_AQUAM",
+      "status": "ALREADY_IMPLEMENTED",
+      "observed": "Dominica Paschae usque ad Pentecosten inclusive"
+    },
+    {
+      "id": "PASCHAL_FIRST_VERSICLE_RESPONSE_ALLELUIA",
+      "status": "IMPLEMENTED_M20_SOURCE_PASCHAL_ROW",
+      "observed": "Ostende nobis: Tempore Paschali additur Alleluia; Et salutare tuum: Temp. Pasch. Alleluia"
+    }
+  ],
+  "holds": [
+    "Do not use these CC0 GABCs as accepted scores before printed neume-by-neume approval",
+    "Source-page identification is not evidence the local Schola chose that tune",
+    "The printed Kyriale allows other ad libitum aspersion chants; do not infer the source's first option as universal",
+    "Do not infer an actual ceremony merely because the calendar and Mass form make it eligible"
+  ],
+  "publicScoresAdded": 0,
+  "chantTimelineChanged": false
+}
