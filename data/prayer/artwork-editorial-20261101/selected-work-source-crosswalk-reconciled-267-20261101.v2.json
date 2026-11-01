@@ -631,7 +631,12 @@
       "primaryHeld": false,
       "activePrimaryEligible": true,
       "productionEnabled": false,
-      "approvalInferredFromIdentity": false
+      "approvalInferredFromIdentity": false,
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Francesco Albani",
+        "verifiedTitle": "Preaching of Saint John the Baptist",
+        "attributionNote": "Presentation label normalized from original French/English combined candidate title; painting identity not reverified"
+      }
     },
     {
       "slot": "COV-pray.angelus",
@@ -962,7 +967,12 @@
       "primaryHeld": false,
       "activePrimaryEligible": true,
       "productionEnabled": false,
-      "approvalInferredFromIdentity": false
+      "approvalInferredFromIdentity": false,
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Wouter Crabeth II",
+        "verifiedTitle": "The Incredulity of Saint Thomas",
+        "attributionNote": "Normalized bilingual Dutch source title; original artwork ID preserved"
+      }
     },
     {
       "slot": "STG-pray.angelus_regina-04",
@@ -1083,7 +1093,12 @@
       "primaryHeld": false,
       "activePrimaryEligible": true,
       "productionEnabled": false,
-      "approvalInferredFromIdentity": false
+      "approvalInferredFromIdentity": false,
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Giovanni Battista Salvi da Sassoferrato",
+        "verifiedTitle": "The Virgin in Prayer",
+        "attributionNote": "Removed imported French/English prefixes and quotation marks; original artwork unchanged"
+      }
     },
     {
       "slot": "DOOR-D2",
@@ -2116,6 +2131,11 @@
       "sceneAndScopeAudit": {
         "kind": "USER_ACCEPTED_CONTEXTUAL",
         "why": "Incredulity of Thomas is chiefly associated with Christ's side rather than right-hand wound"
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Wouter Crabeth II",
+        "verifiedTitle": "The Incredulity of Saint Thomas",
+        "attributionNote": "Normalized bilingual Dutch source title; original artwork ID preserved"
       }
     },
     {
@@ -5497,7 +5517,14 @@
       "primaryHeld": false,
       "activePrimaryEligible": true,
       "productionEnabled": false,
-      "approvalInferredFromIdentity": false
+      "approvalInferredFromIdentity": false,
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Guido Reni and studio",
+        "verifiedTitle": "Saint Joseph and the Christ Child",
+        "attributionNote": "Source auction explicitly says 'Guido Reni and Studio', Sotheby's Old Master Paintings, lot 55, June 2010; do not equate with distinct Houston original",
+        "attributionSource": "https://www.lotsearch.net/lot/guido-reni-and-studio-51194214",
+        "photoLicenceApprovedForAdOrientem": false
+      }
     },
     {
       "slot": "COV-pray.litany_saints",
@@ -5565,7 +5592,12 @@
       "primaryHeld": false,
       "activePrimaryEligible": true,
       "productionEnabled": false,
-      "approvalInferredFromIdentity": false
+      "approvalInferredFromIdentity": false,
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Francesco Albani",
+        "verifiedTitle": "Preaching of Saint John the Baptist",
+        "attributionNote": "Presentation label normalized from original French/English combined candidate title; painting identity not reverified"
+      }
     },
     {
       "slot": "STG-pray.litany_saints-03",
@@ -6257,7 +6289,7 @@
     "publicationAllowed": false,
     "photosCleared": 0,
     "attributionSceneAudit20261101": {
-      "attributionSlots": 6,
+      "attributionSlots": 12,
       "sceneScopeSlots": 14,
       "originalCrosswalkMethodsPreserved": true,
       "photographicApprovalGranted": false
