@@ -32,14 +32,21 @@ export function renderMercyF07Crown(steps,index,{french=false}={}){
   const large=step.group==="large-bead";
   return '<circle cx="'+cx+'" cy="'+cy+'" r="'+(large?3.5:2.2)+'" class="aoF07Bead aoF07Bead-'+state+(large?" aoF07Large":"")+'" />';
  }).join("");
- const caption=m.caption,description=m.shortName;
+ const caption=m.caption,step=steps[index],language=french?"fr":"en";
+ const tr=(en,fr)=>french?fr:en;
+ const stage=step.decade?tr("DECADE","DIZAINE")+" "+["I","II","III","IV","V"][step.decade-1]:
+  step.group==="opening"?tr("OPENING","OUVERTURE"):tr("CLOSING","CONCLUSION");
+ const exactPrayer=mercyStepText(step,language)||"";
+ const title=step.decade?(exactPrayer.split(",")[0]||m.shortName):m.shortName;
+ const description=step.group==="small-bead"?step.bead+tr(" of 10"," sur 10"):
+   step.group==="large-bead"?tr("Large bead","Gros grain"):m.caption;
  return '<figure class="aoF07CrownBand" data-ao-f07-crown data-position="'+index+'" data-total="'+steps.length+'" data-decade="'+(m.activeDecade??"")+'" aria-label="'+esc((french?"Position dans le chapelet : ":"Chaplet position: ")+caption)+'">'+
   '<svg class="aoF07CrownDiagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-hidden="true">'+
    '<circle class="aoF07CrownTrack" cx="60" cy="60" r="43"/>'+circles+
    '<path class="aoF07CrownCross" d="M60 50v21M50 60.5h20"/>'+
   '</svg>'+
-  '<figcaption class="aoF07CrownText"><small>'+esc(french?"COURONNE DU CHAPELET":"WHOLE CHAPLET")+'</small>'+
-   '<strong>'+esc(caption)+'</strong><span>'+esc(description)+'</span>'+
+  '<figcaption class="aoF07CrownText"><small>'+esc(stage)+'</small>'+
+   '<strong>'+esc(title)+'</strong><span>'+esc(description)+'</span>'+
   '</figcaption></figure>';
 }
 /** Claude m1 home. Only presentation is new: the 55-bead diagram and source are unchanged. */
@@ -157,6 +164,21 @@ const F07_STYLE=`
  #aoPray435930 .aoF07MercyEntryOutline .aoF07CrownBand{width:80px}
  #aoPray435930 .aoF07MercyEntryOutline ol{gap:5px;font-size:12px}
  #aoPray435930 .aoF07MercyBegin{min-height:46px}
+}
+/* Claude m2: the source cursor owns one unobtrusive bottom navigation dock. */
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoCard{border:0!important;background:transparent!important;box-shadow:none!important}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoDevoCardHead{display:none!important}
+#aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{border:0!important;background:transparent!important}
+#aoPray435930 .aoF07MercyDock{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:54px;position:sticky;bottom:0;z-index:5;padding:5px 12px;background:var(--surface-1,#211d19);border-top:1px solid var(--border,rgba(225,216,206,.15))}
+#aoPray435930 .aoF07MercyDock button{min-height:44px;border-radius:999px;font:500 13px/1 system-ui,sans-serif}
+#aoPray435930 .aoF07MercyDock [data-p435930-mercy-previous]{width:44px;min-width:44px;background:transparent;border:1px solid var(--border,rgba(225,216,206,.24));color:var(--text,#eee);font-size:23px}
+#aoPray435930 .aoF07MercyDock [data-p435930-mercy-next]{min-width:104px;padding:0 16px;background:var(--text,#eee4d8);border:0;color:#211b16}
+#aoPray435930 .aoF07MercyDock button:disabled{opacity:.28}
+#aoPray435930 .aoF07MercyDock output{font:500 12px/1.3 system-ui,sans-serif;color:var(--muted,#bfb5a4);font-variant-numeric:tabular-nums}
+#aoPray435930 .aoF07MercyDock button:focus-visible{outline:2px solid var(--liturgical,#c6ac84);outline-offset:2px}
+@media(max-width:359px) and (max-height:650px){
+ #aoPray435930 .aoF07MercyDock{min-height:48px;padding:2px 8px}
+ #aoPray435930 .aoF07MercyDock button{min-height:42px}
 }
 /* Claude F07 m2: explicit canonical ℣/℟ fragments, legible active text. */
 #aoPray435930 .aoMercyReader[data-ao-f07-chaplet="crown-v1"] .aoMercyLine{opacity:.4;transition:opacity .12s ease}
