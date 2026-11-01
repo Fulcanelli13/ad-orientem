@@ -25,6 +25,24 @@ const CONFESSION_CSS=String.raw`
 #aoPray435930 .aoP435930ConfContritionSourceStatus{font:400 .74rem/1.52 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
 #aoPray435930 .aoP435930ConfContritionSourceStatus a{color:var(--liturgical,#dec791);overflow-wrap:anywhere}
 @media(max-width:360px){#aoPray435930 .aoP435930ConfContritionChoices button{padding:9px 7px}}
+
+/* 30 Oct Claude interim: visual correction of Confession stage strip and path list.
+   Retain source-owned step handlers and source data; follow-up is required
+   to remove the legacy optional time field from the runtime and its test. */
+#aoPray435930 .aoP435930ConfNavShell{margin:3px 0 9px}
+#aoPray435930 .aoP435930ConfNavShell>.aoP435930GuideRail{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;padding:21px 0 0!important;border:0!important;background:transparent!important;overflow:visible!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button{position:relative!important;display:block!important;width:100%!important;min-width:0!important;height:44px!important;min-height:44px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button>span{display:none!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button>b{position:absolute!important;left:0;top:-21px;color:var(--liturgical,#c7ae6d)!important;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.08em!important;text-transform:uppercase!important;opacity:0!important;white-space:nowrap!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button.active>b{opacity:1!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button::after{content:""!important;position:absolute!important;inset:auto 0 20px!important;height:4px!important;border-radius:8px!important;background:var(--border,rgba(220,208,186,.22))!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button.active::after{height:5px!important;background:var(--liturgical,#c7ae6d)!important}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button:focus-visible{outline:2px solid var(--liturgical,#c7ae6d)!important;outline-offset:1px!important;border-radius:8px!important}
+#aoPray435930 .aoP435930ConfPathCards{gap:0!important;margin:2px 0 12px!important;border-top:1px solid var(--border,rgba(255,255,255,.16))}
+#aoPray435930 .aoP435930ConfPathCards button{position:relative;display:grid;gap:2px;min-height:62px;padding:11px 30px 10px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.16));border-radius:0;background:transparent}
+#aoPray435930 .aoP435930ConfPathCards button strong{font:500 17px/1.24 var(--ao-font-display,Georgia,serif)}
+#aoPray435930 .aoP435930ConfPathCards button span{font:400 13px/1.28 var(--ao-font-ui,system-ui,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#aoPray435930 .aoP435930ConfPathCards button::after{content:"›";position:absolute;right:8px;top:50%;transform:translateY(-50%);font:400 23px/1 var(--ao-font-display,Georgia,serif);color:var(--muted,#b8aea0)}
 `;
 export function installConfessionPathStyles(doc=globalThis.document){
  if(!doc?.head)return false;
