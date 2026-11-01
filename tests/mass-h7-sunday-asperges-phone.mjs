@@ -79,11 +79,11 @@ try{
         await nav.click();
         await page.waitForTimeout(100);
       }
-      await page.waitForFunction(()=>window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId===
-        "AO.CARD.001",null,{timeout:20000});
+      await page.waitForFunction(()=>{const c=window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+        return (c?.sourceSectionId??c?.sectionId)==="AO.CARD.001";},null,{timeout:20000});
       const after=await page.evaluate(()=>{
         const c=window.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard();
-        return {id:c.sectionId,firstBlock:c.blocks?.[0]?.blockId,
+        return {id:c.sourceSectionId??c.sectionId,firstBlock:c.blocks?.[0]?.blockId,
           count:window.AO_R17_NATIVE_READER_PREVIEW.model?.totalCards};
       });
       assert.equal(after.firstBlock,"AO.SM.B001");
