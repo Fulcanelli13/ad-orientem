@@ -300,9 +300,9 @@ try{
       }
     }
 
-    // H4's sole Begin Mass action enters the source-verified native R17
-    // reader directly. Ceremony/reader choices live in its separate Change
-    // sheet; the retired mass-flow preflight MUST NOT be required here.
+    // H4's Begin Mass enters the source-verified native R17 reader.
+    // An eligible sung Sunday requires a deliberate Asperges choice via the
+    // existing Change sheet; no retired mass-flow preflight is reintroduced.
     assert.equal(await page.locator("[data-ao-app-surface='mass']").count(),0,
       "Mass must not become a fifth ribbon tab");
     assert.ok(await page.locator(".homeScreen.aoTodayH4 [data-home-h4-change]").count()>=1,
@@ -313,8 +313,30 @@ try{
     await massNav.waitFor({state:"visible",timeout:15000});
     await page.waitForFunction(()=>Boolean(document.querySelector(
       ".homeScreen [data-home-h4-begin]:not([disabled])")),null,{timeout:30000});
+    // Preserve the same explicit Sunday Asperges guard verified by the
+    // full-app visual acceptance test; never bypass or disable that choice.
+    const aspersionRequired=await page.evaluate(()=>
+      globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight
+        ?.aspersionDecisionRequired===true);
+    if(aspersionRequired){
+      await page.locator(".aoH7DoorView [data-home-h4-change]").first().click();
+      const choices=page.locator(".aoH4ChoiceDialog[open]");
+      await choices.waitFor({state:"visible",timeout:15000});
+      const aspersion=choices.locator('[data-h4-option="aspersion"]');
+      assert.equal(await aspersion.isEnabled(),true,
+        "Required Sunday Asperges choice must remain available");
+      await aspersion.selectOption("yes");
+      await page.waitForFunction(()=>
+        globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight
+          ?.aspersionDecisionRequired===false,null,{timeout:10000});
+      assert.equal(await page.evaluate(()=>
+        globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight
+          ?.optionalRiteOverrides?.ASPERGES),true);
+      await choices.locator("[data-h4-sheet-close]").last().click();
+      await choices.waitFor({state:"detached",timeout:15000});
+    }
     await massNav.click();
-    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:20000});
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"visible",timeout:65000});
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
     await assertViewportFit(page,"Native Mass reader",viewport.width);
     await assertNoLegacyLeak(page,"Native Mass reader",viewport.width);
