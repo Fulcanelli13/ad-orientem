@@ -179,6 +179,14 @@ export function mountFullMassPreflight({
     if(key==="form"){
       if(!current.formChangeAllowed||!MASS_FORMS.includes(value))return false;
       selected=value;explicit=true;
+      // The Sunday aspersion may not be carried into a Low Mass.
+      if(value==="LOW")riteOverrides={...riteOverrides,ASPERGES:false};
+    }else if(key==="aspersion"){
+      if(!["yes","no"].includes(value))return false;
+      const rite=availableOptionalMassRites(legacy,{form:current.form,kind:current.kind})
+        .find(row=>row.id==="ASPERGES");
+      if(rite?.allowed!==true)return false;
+      riteOverrides={...riteOverrides,ASPERGES:value==="yes"};
     }else if(key==="readerMode"){
       if(!["LIVE","MISSAL"].includes(value))return false;
       selectedMode=value;explicitMode=true;
@@ -963,7 +971,16 @@ export function mountFullMassPreflight({
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),formChangeAllowed:(()=>{try{return selectionFor(getResolvedMass()).formChangeAllowed}catch{return false}})(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
-      optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep,
+      optionalRiteOverrides:Object.freeze({...riteOverrides}),
+      ...(()=>{try{
+        const legacy=getResolvedMass(),current=selectionFor(legacy);
+        const rite=availableOptionalMassRites(legacy,{form:current.form,kind:current.kind})
+          .find(row=>row.id==="ASPERGES");
+        return {aspersionAllowed:rite?.allowed===true,
+          aspersionSelected:rite?.allowed===true&&
+            (riteOverrides.ASPERGES??rite?.fromSource??false)===true};
+      }catch{return {aspersionAllowed:false,aspersionSelected:false}}})(),
+      experience:selectedExperience(),step:folioStep,
       m1Preview,m1Focus}),
     dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
   });
