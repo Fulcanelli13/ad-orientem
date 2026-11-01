@@ -212,11 +212,11 @@ try{
   for(const [language,v] of Object.entries(x.languages)){
    check(v.ready&&v.collects===2&&v.secrets===2&&v.postcommunions===2,
     `NOV01_${form}_${language}_READER_ORATIONS_NOT_READY`);
-   check(/Just[oó]rum\\s+[aá]nim(?:æ|ae)/iu.test(v.selectedOffertoryLatin),
+   check(/Just[oó]rum\s+[aá]nim(?:æ|ae)/iu.test(v.selectedOffertoryLatin),
     `NOV01_${form}_${language}_ACTUAL_OFFERTORY_WRONG_OR_EMPTY`);
-   check(/allel[uú]ja\\.\\s*$/iu.test(v.selectedOffertoryLatin),
+   check(/allel[uú]ja\.\s*$/iu.test(v.selectedOffertoryLatin),
     `NOV01_${form}_${language}_OFFERTORY_NORMAL_ALLELUIA_MISSING`);
-   check(!/Septuagesim|(?:\\n|\\r)pace\\.\\s*$/iu.test(
+   check(!/Septuagesim|(?:\n|\r)pace\.\s*$/iu.test(
      v.selectedOffertoryLatin+" "+v.selectedOffertoryReading),
     `NOV01_${form}_${language}_OFFERTORY_ALTERNATIVE_PRINTED_AS_CHANT`);
   }
