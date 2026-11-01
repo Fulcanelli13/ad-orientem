@@ -54,7 +54,17 @@ try{
  });
  await page.locator("#single-owner-home-angelus").click();
  try{
-  await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:15000});
+  await page.waitForSelector("#aoPray435930.open .aoP435930AngelusReader",{timeout:15000});
+  // Claude's approved a1 Horarium opens before its existing Folio deck.
+  // A Home shortcut and the Prayer catalogue must use the same real Begin
+  // gesture, not a hidden reader or a parallel prayer implementation.
+  const horariumBegin=page.locator("#aoPray435930.open [data-p435930-angelus-begin]");
+  if(await horariumBegin.count()){
+   assert.equal(await page.locator("#aoPray435930.open [data-ao-horarium-intro]:not([hidden])").count(),1,
+    "Home Angelus lost the approved a1 opening cover");
+   await horariumBegin.click();
+  }
+  await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{state:"visible",timeout:15000});
  }catch(error){
   const diagnostic=await page.evaluate(()=>({
    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route,
@@ -90,7 +100,10 @@ try{
    "angelus","Catalogue Angelus entry escaped its canonical reader owner");
   await begin.click();
  }
- await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:15000});
+ const catalogueHorariumBegin=page.locator("#aoPray435930.open [data-p435930-angelus-begin]");
+ if(await catalogueHorariumBegin.count()&&await catalogueHorariumBegin.isVisible())
+  await catalogueHorariumBegin.click();
+ await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{state:"visible",timeout:15000});
  const fromPrayers=await read();
  assert.deepEqual(fromHome,fromPrayers,"Home and Prayers render different Angelus reader owners/models");
  assert.equal(errors.length,0,"Unexpected browser errors: "+JSON.stringify(errors));
