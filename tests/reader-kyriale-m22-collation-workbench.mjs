@@ -24,6 +24,17 @@ assert.match(html,/mass-music-m21-seven-print-image-parity-worklist\.v1\.json/);
 for(const id of ["printImage","engraveViewport","scoreSelect","pageSelect","pitch","neume","underlay","rhythm","reviewNotes","export"]){
  assert.match(html,new RegExp('id="'+id+'"'),"Missing required research review control: "+id);
 }
+for(const id of ["agnusNotePanel","agnusGroupSelect","agnusPrev","agnusNext",
+ "agnusGroupTitle","agnusGroupDescription","agnusGroupSource","agnusPitch",
+ "agnusNeume","agnusUnderlay","agnusRhythm","agnusGroupComment",
+ "agnusGroupProgress","agnusGroupSave"])
+ assert.match(html,new RegExp('id="'+id+'"'),"Missing per-note Agnus source audit control: "+id);
+assert.match(html,/noteGroupCollation\.noteGroups/);
+assert.match(html,/function saveNoteGroup/);
+assert.match(html,/function completeScore/);
+assert.match(html,/groupReviews/);
+assert.match(html,/printed staff system/);
+assert.equal(ledger.scores.find(x=>x.gregobaseId===2760).noteGroupCollation.noteGroups.length,54);
 assert.match(html,/URL\.createObjectURL/);
 assert.match(html,/localStorage\.setItem/);
 assert.match(html,/sourceUrl/);
