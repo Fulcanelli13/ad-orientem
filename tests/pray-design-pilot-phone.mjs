@@ -95,7 +95,7 @@ try{
       seen.set(id,door);
     }
     const geometry=await page.locator(base+" [data-ao-prayer-shelf]").evaluate(el=>({
-      width:el.scrollWidth,client:el.clientWidth,doc:document.documentElement.scrollWidth-inner:innerWidth
+      width:el.scrollWidth,client:el.clientWidth,doc:document.documentElement.scrollWidth-innerWidth
     }));
     assert.ok(geometry.width-geometry.client<=1&&geometry.doc<=1,"Door interior must not overflow at "+width+": "+door);
     await page.screenshot({path:resolve(output,"shelf-"+door+"-"+width+".png"),animations:"disabled"});
@@ -109,7 +109,7 @@ try{
    // reader, with return to its original shelf rather than a second library list.
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(base+' [data-p435930-family="marian"]').click();
-   await page.locator(base+' [data-p435930-door-prayer="litany_loreto_1962"]').click();
+   await page.locator(base+' [data-p435930-door-prayer="marian_memorare"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
    await page.locator(base+' [data-p435930-lib-back]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Source-prayer Back must return to Our Lady shelf");
