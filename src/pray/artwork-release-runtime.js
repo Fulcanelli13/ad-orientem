@@ -39,13 +39,21 @@ export function releaseClearedPrayerArtwork(slotId,{
 }={}){
   if(typeof slotId!=="string" || !Object.hasOwn(authority,slotId))return null;
   const selection=authority[slotId];
+  // Historical selected titles/artist strings are preserved for audit; verified
+  // original-painter metadata is mandatory for any future release. An accepted
+  // thematic association does not remove exact-slot scope or photo-source holds.
+  const verifiedTitle=selection?.displayTitle??selection?.title;
+  const verifiedArtist=selection?.displayArtist??selection?.artist;
   if(!selection || selection.held ||
-    !selection.title || !selection.artist)return null;
+    selection.exactSlotPublicationHold===true ||
+    selection.photoSourceHold===true ||
+    selection.photoRightsApprovalRequired===true ||
+    !verifiedTitle || !verifiedArtist)return null;
   const asset=Object.hasOwn(manifest,slotId)?manifest[slotId]:null;
   if(!asset || typeof asset!=="object")return null;
   const proof=asset.releaseEvidence;
-  if(asset.slotId!==slotId || asset.title!==selection.title ||
-    asset.artist!==selection.artist || asset.editorialApproved!==true ||
+  if(asset.slotId!==slotId || asset.title!==verifiedTitle ||
+    asset.artist!==verifiedArtist || asset.editorialApproved!==true ||
     asset.publicationState!=="READY_FOR_PUBLICATION" ||
     asset.productionEnabled!==true || !localImage(asset.path) ||
     !proof || (selection.door && proof.categoryDoorExactArtworkApproved!==true) ||
