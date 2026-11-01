@@ -131,4 +131,31 @@ for(let i=0;i<xvi.length;i++){
  assert.equal(row.moraEpisemataAndRhythmicSigns,"NOT_CERTIFIED");
  assert.equal(row.reviewerEditorialApproval,false);
 }
+// M32 original printed witness triangulation; an exact scan reference is
+// evidence of a visual comparison, NOT a full musical certificate.
+const m32=m31.kyrieXviThreeWitnessMusicReview;
+assert.equal(m32.primaryGregorianCandidate,"GREGOBASE-545");
+assert.deepEqual(m32.originalPrintedSources.map(s=>[s.edition,s.printedPage,s.scanUrl]),[
+ ["Graduale Romanum","54*","https://gregobase.selapa.net/sources/2/931.png"],
+ ["The Liber Usualis","59","https://gregobase.selapa.net/sources/3/170.png"],
+ ["Chants of the Church","40","https://gregobase.selapa.net/sources/5/55.png"]
+]);
+assert.equal(m32.observedMusicalMatches.sourceGroupsCorroboratedAtReadableScanLevel,27);
+assert.equal(m32.observedMusicalMatches.phraseCount,4);
+assert.equal(m32.observedMusicalMatches.thirdPhraseContinuesAcrossOriginalSystemBreak,true);
+assert.deepEqual(m32.sourceGabcSignReviewQueue.horizontalEpisemaCandidateGroupOrdinals,[5,11,18]);
+assert.deepEqual(m32.sourceGabcSignReviewQueue.punctumMoraCandidateGroupOrdinals,[7,13,20,27]);
+assert.equal(m32.sourceGabcSignReviewQueue.finalCadenceSourceString,"ighvGFE.");
+assert.equal(m32.fullNoteByNoteAbsolutePitchCertification,false);
+assert.equal(m32.fullNoteByNoteNeumeCertification,false);
+assert.equal(m32.fullRhythmicMarksCertification,false);
+assert.equal(m32.editorialApproval,false);
+assert.equal(m32.publicDigitalGabcApproval,false);
+assert.equal(m32.newChantAudioApproval,false);
+assert.equal(m32.changeOriginalGabc,false);
+assert.equal(m31.scope.threePrintCorroboratedKyrieXviGroups,27);
+assert.equal(m31.scope.certifiedPrintedMusicalGroups,0);
+assert.ok(m31.kyrieXviGroupVisualMap.every(g=>
+ g.m32ThreePrintedWitnesses?.fullIndependentMusicalCertification===false &&
+ g.m32ThreePrintedWitnesses?.visualAlignment==="SAME_NOTATED_STAFF_CONTOUR_VISIBLE_ON_ALL_THREE_PRINTS"));
 console.log("PASS M22 bulk 753 source note-bearing tokens across seven scores, including 54 Agnus groups; isolated 1961 Kyriale editorial workbench: printed 10-page witness + real offline SVG component, four independent notation decisions and JSON export; zero public score promotion");
