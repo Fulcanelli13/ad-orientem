@@ -17,6 +17,7 @@ import "./reader-mass-all-saints-source-review.mjs";
 import "./reader-mass-all-souls-chant-source-review.mjs";
 import "./reader-kyriale-notation-research-gate.mjs";
 import "./reader-kyriale-m19-complete-spans-dismissal-identity.mjs";
+import "./reader-kyriale-m21-print-image-comparison-gate.mjs";
 import {readFileSync} from "node:fs";
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 import {MASS_SCHOLA_EVENT_SPECS,buildScholaMusicItinerary,
