@@ -251,6 +251,23 @@ try{
       assert.equal(first.sourceSection,"AO.CARD.001",
         "2 November should start the normal Requiem entry, not Sunday Asperges");
       assert.deepEqual(errors,[]);
+      // Wait for the opening cinematic to uncover the actual Mass text:
+      // a darkened transition frame is not visual proof of a readable card.
+      await page.waitForFunction(()=>{
+        const curtain=document.querySelector(
+          '#ao-r17-native-reader-preview [data-role="cinematic"]');
+        if(!curtain)return true;
+        const css=getComputedStyle(curtain);
+        return curtain.hidden||curtain.getAttribute("aria-hidden")==="true"||
+          css.display==="none"||css.visibility==="hidden";
+      },null,{timeout:18000});
+      const geometry=await page.evaluate(()=>{
+        const reader=document.querySelector("#ao-r17-native-reader-preview");
+        return {overflow:document.documentElement.scrollWidth>window.innerWidth+1,
+          width:reader?.getBoundingClientRect()?.width??0};
+      });
+      assert.equal(geometry.overflow,false,"Settled Requiem card overflows phone width");
+      assert.ok(geometry.width>0,"Settled Requiem card has zero width");
       await page.screenshot({path:dir+"/all-souls-m"+(test.index+1)+"-"+test.width+
         "-"+test.language+"-h7-entry.png",animations:"disabled"});
       console.log("PASS H7 All Souls "+expected+" → LIVE Requiem "+test.form+"/"+test.language);
