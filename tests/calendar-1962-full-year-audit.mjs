@@ -309,6 +309,7 @@ try{
   assert.equal(uniquePath.size,142,"Source-file screen has duplicate identities");
   const cohorts={
     SANCTORAL_COMMON_FIRST_PASS:[],
+    ALL_SAINTS_2026_ATTESTED_COMMON:[],
     SANCTORAL_COMMON_RULE_AGREEMENT:[],
     SANCTORAL_PASCHAL_RULE_CONFLICT:[],
     SANCTORAL_ASCENSION_RULE_CONFLICT:[],
@@ -365,6 +366,9 @@ try{
     else if(review?.status==="RULE_TEXT_AGREE"&&
       review.basis==="ICRSP_POST_1960_CORPUS_CHRISTI_COMMON")
       group="CORPUS_CHRISTI_POST_1960_COMMON";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="ALL_SAINTS_2026_COMMON_EVEN_ON_SUNDAY_SOURCE_WITNESS")
+      group="ALL_SAINTS_2026_ATTESTED_COMMON";
     else if(review?.status==="RULE_TEXT_AGREE"&&review.basis==="ORIGINAL_SCREENED_NON_SEASONAL_SANCTORAL_COMMON")
       group="SANCTORAL_COMMON_RULE_AGREEMENT";
     else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_SCREENED_PASCHAL_SANCTORAL_NO_PROPER")
@@ -400,7 +404,8 @@ try{
   }
   const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
   assert.deepEqual(sizes,{
-    SANCTORAL_COMMON_FIRST_PASS:6,
+    SANCTORAL_COMMON_FIRST_PASS:5,
+    ALL_SAINTS_2026_ATTESTED_COMMON:1,
     SANCTORAL_COMMON_RULE_AGREEMENT:104,
     SANCTORAL_PASCHAL_RULE_CONFLICT:15,
     SANCTORAL_ASCENSION_RULE_CONFLICT:5,
@@ -424,12 +429,16 @@ try{
   assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
     "The original 194-case worklist must account for every promotion and still-withheld case");
   const sanctoralReviewed=[...cohorts.SANCTORAL_COMMON_FIRST_PASS,
+    ...cohorts.ALL_SAINTS_2026_ATTESTED_COMMON,
     ...cohorts.SANCTORAL_COMMON_RULE_AGREEMENT,
     ...cohorts.SANCTORAL_PASCHAL_RULE_CONFLICT,
     ...cohorts.SANCTORAL_ASCENSION_RULE_CONFLICT,
     ...cohorts.SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT,
     ...cohorts.SANCTORAL_MARIAN_SOURCE_CONFLICT,
     ...cohorts.ORIGINAL_COMMON_SANCTORAL_MATCH];
+  assert.deepEqual(cohorts.ALL_SAINTS_2026_ATTESTED_COMMON.map(x=>[x.date,x.principalId,x.sourcePath]),
+    [["2026-11-01","sancti:11-01:1:w","Sancti/11-01"]],
+    "Only exact Class I All Saints is independently attested to use Common Preface even on Sunday");
   assert.equal(sanctoralReviewed.length,142);
   for(const x of sanctoralReviewed){
     assert.ok(x.independentSourceWitness,"One of the 142 source identities was never screened: "+x.date);
