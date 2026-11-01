@@ -9,6 +9,10 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const dir=resolve(root,"artifacts/mass-h7-sunday-asperges");
+const productionOrigin=process.env.AO_MASS_TEST_ORIGIN
+  ?new URL(process.env.AO_MASS_TEST_ORIGIN):null;
+if(productionOrigin&&productionOrigin.protocol!=="https:")
+  throw Error("Production audit origin must use HTTPS");
 await mkdir(dir,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
   ".mjs":"text/javascript; charset=utf-8",".json":"application/json",
@@ -23,7 +27,10 @@ const server=http.createServer(async(req,res)=>{
     res.end(await readFile(path));
   }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message||e))}
 });
-await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
+if(!productionOrigin)
+  await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
+const pageOrigin=productionOrigin?.origin??("http://127.0.0.1:"+server.address().port);
+console.log("H7 audit origin: "+pageOrigin);
 let browser;
 try{
   browser=await chromium.launch({headless:true});
@@ -41,7 +48,7 @@ try{
       // Simulate the actual 1 November 2026 morning in Mauritius; the
       // release gate must remain deterministic on later CI calendar dates.
       await page.clock.setFixedTime(new Date("2026-11-01T08:30:00+04:00"));
-      await page.goto("http://127.0.0.1:"+server.address().port+
+      await page.goto(pageOrigin+
         "/index.html?aoR17Reader=native&qa=mass-reader-phone",
         {waitUntil:"domcontentloaded",timeout:90000});
       await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate &&
@@ -173,7 +180,7 @@ try{
       // Nov 2 real-day entry must be tested with a Nov 2 local clock,
       // not as an unconfirmed alternative selected on Nov 1.
       await page.clock.setFixedTime(new Date("2026-11-02T08:30:00+04:00"));
-      await page.goto("http://127.0.0.1:"+server.address().port+
+      await page.goto(pageOrigin+
         "/index.html?aoR17Reader=native&qa=mass-reader-phone",
         {waitUntil:"domcontentloaded",timeout:90000});
       await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate &&
@@ -251,5 +258,5 @@ try{
   }
 }finally{
  await browser?.close();
- await new Promise(ok=>server.close(ok));
+ if(server.listening)await new Promise(ok=>server.close(ok));
 }
