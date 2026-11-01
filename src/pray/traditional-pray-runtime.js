@@ -398,7 +398,7 @@ function renderMorningEvening(){
   '<div class="aoDailyAccessNav" data-ao-hours-direct-index>'+
    '<button type="button" data-tp381-daily-mode="'+(guided?'list':'guided')+'">'+
    esc(guided?L("Choose a prayer","Choisir une prière"):L("Pray in order","Prier dans l’ordre"))+
-   '</button></div>'+renderDailyReaderOptions({mode:S.dailyMode,L,esc})
+   '</button></div>'+renderDailyReaderOptions({mode:S.dailyMode,L,esc,omitBrowse:guided})
   :existingNav;
  const full=buildPersonalDailyPlan({daypart:S.daypart,prefs:{...prefs,length:"full",mode:"standard"}});
  const other=personalDailyOptions(S.daypart,prefs.language,prefs.edition).filter(row=>row.kind==="additional");
