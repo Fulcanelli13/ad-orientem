@@ -1480,7 +1480,19 @@ try{
          const layout=page.locator("#aoPray435930 .aoDailyReadingOptions");
          assert.equal(await layout.count(),1,"F05 must preserve secondary Reading layout");
          await layout.locator("summary").click();
-         await page.locator("#aoPray435930 [data-tp381-daily-presentation='list']").click();
+         assert.equal(await layout.evaluate(el=>el.open),true,"F05 secondary Reading layout must open");
+         assert.equal(await layout.locator("[data-tp381-daily-presentation='guided']").count(),1,
+           "F05 lost the source-owned Cards presentation");
+         assert.equal(await layout.locator("[data-tp381-daily-presentation='continuous']").count(),1,
+           "F05 lost the source-owned Continuous presentation");
+         assert.equal(await layout.locator("[data-tp381-daily-presentation='list']").count(),0,
+           "F05 guided view must not duplicate its dedicated Browse action");
+         await layout.locator("summary").click();
+         const browse=page.locator("#aoPray435930 [data-tp381-daily-mode='list']");
+         assert.equal(await browse.count(),1,"F05 must expose one direct Choose a prayer action");
+         assert.match(await browse.innerText(),/Choose a prayer|Choisir une prière/,
+           "F05 dedicated Browse action lost its prayer-first label");
+         await browse.click();
        }else{
          assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,
            "Legacy Morning/Evening must offer a direct named-prayer chooser");
