@@ -1,0 +1,101 @@
+{
+  "schema": "AO_PHOTO_FINDER_B7_EXISTING_BLOBS_20261101_V1",
+  "as_of": "2026-11-01",
+  "purpose": "Promote only previously user-selected and technically verified batch 7 cover bytes from original completed Git branch. No re-download, new editorial decision, or mass-directory identity inference.",
+  "source_branch": "research/photo-finder-release-20261030-b7",
+  "source_branch_commit": "008c21ea13dec2d81193437079759054301241fd",
+  "source_report": "data/geography/research/photo-finder-20261030/releases/b7-verification-report.json",
+  "original_user_decisions": "data/geography/research/photo-finder-20261030/decisions.json",
+  "baseline": {
+    "approved_covers": 143,
+    "approved_gallery_entries": 35,
+    "canonical_places": 530
+  },
+  "proposed": {
+    "approved_covers": 152,
+    "approved_gallery_entries": 35,
+    "canonical_places": 530
+  },
+  "original_verified_in_B7": 10,
+  "original_technical_holds_in_B7": 10,
+  "previously_published_other_photo": {
+    "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+    "asset_path": "assets/approved/place-gallery/p77-057.webp",
+    "source_sha1": "88d7e4bfb134af2ef218724169f54187e95001db",
+    "policy": "PRESERVE_APPROVED_EXISTING_COVER_NO_REPLACEMENT"
+  },
+  "newly_released": [
+    {
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "asset_path": "assets/approved/place-media/pf-41c28cf399792c0ebdc5d4.webp",
+      "source_git_blob_sha": "b781576f69fdfe0afc5566e77cfb299ba21b7d0e",
+      "derivative_sha256": "c6f71d8a831d4e9317f623a56a7ae1c839e9a7b2f9d55854cbb7a9108d43a4e6",
+      "bytes": 113580
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "asset_path": "assets/approved/place-media/pf-135ed9f81dd8f053e0e2f5.webp",
+      "source_git_blob_sha": "0f46b4d2dbd80441671d2cdc657d70a5ca5b0861",
+      "derivative_sha256": "14fdea83c258f7c0787168ef782de6504a4c17a9a4ae143e18118e1a3dcae18e",
+      "bytes": 174060
+    },
+    {
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "asset_path": "assets/approved/place-media/pf-954fa4e5ff7efd61dce1df.webp",
+      "source_git_blob_sha": "275029f1686c6223b9ce491ba286569d261f3e11",
+      "derivative_sha256": "a38ed8f39de29000c5adba3fc1662210a177ba7990828684c7c96d9447d3c046",
+      "bytes": 330526
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "asset_path": "assets/approved/place-media/pf-1aa38214c23200ebba6720.webp",
+      "source_git_blob_sha": "ef6df617c3cd3ac1e0d28c964702519ee710a52f",
+      "derivative_sha256": "ea0d0694d650f1760d8b0bd14b86d47b717074a051e28066923d394bdfe3b6b7",
+      "bytes": 244194
+    },
+    {
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "asset_path": "assets/approved/place-media/pf-af4e1974f8b7050395b6f1.webp",
+      "source_git_blob_sha": "3f59d016aedd924779b7793252022460aa833ee8",
+      "derivative_sha256": "000fb5fb0c183a86f985d39ce052155c7ab5421a15c2f29b2c4dca5fc53a4e60",
+      "bytes": 284230
+    },
+    {
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "asset_path": "assets/approved/place-media/pf-3690fd81826a6de0e9da3f.webp",
+      "source_git_blob_sha": "9d6c57f54a607307d5b4443cbfdca252bba5dc15",
+      "derivative_sha256": "34286559b6b54f16880edf491c3610f2ec88c8023d69146883cb584e66470290",
+      "bytes": 167968
+    },
+    {
+      "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "asset_path": "assets/approved/place-media/pf-2d288f2f3f93241e92b3b5.webp",
+      "source_git_blob_sha": "dbaf2e29412131bbf61d9ae813dd0acce4719959",
+      "derivative_sha256": "9a6334f7d3ae0cef1713f9258faabe81800735613cc1cbdb0a1e161a6c19070b",
+      "bytes": 128548
+    },
+    {
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "asset_path": "assets/approved/place-media/pf-737ce7a3c9ea347641a716.webp",
+      "source_git_blob_sha": "1514ebe8942a2d26f2b7fd721d737e4587ae30fe",
+      "derivative_sha256": "8265a476086557b01b8046712decc0cd98158de90ee74a049ad5eb8d8f64e5ea",
+      "bytes": 255320
+    },
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "asset_path": "assets/approved/place-media/pf-a48c24a62063c63603efdb.webp",
+      "source_git_blob_sha": "04d3398e446971e9f792631fdcd76f460a934b03",
+      "derivative_sha256": "c90f45a6ff5d35750d86ffd0ac81759778c20ede4d6f0fae7595f8ee67090285",
+      "bytes": 236818
+    }
+  ],
+  "policy": {
+    "no_new_downloads": true,
+    "no_new_editorial_choices": true,
+    "no_existing_approval_modified": true,
+    "no_new_place_links": true,
+    "no_original_photos_overwritten": true,
+    "retain_all_holds": true,
+    "requires_CI_and_visual_check": true
+  }
+}
