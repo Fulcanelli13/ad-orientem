@@ -127,6 +127,24 @@ assert.match(angelus,/data-p435930-pilot-angelus-begin/);
 for(const mode of ["individual","group"])assert.match(angelus,new RegExp('data-p435930-pilot-angelus-recitation="'+mode+'"'));
 assert.match(angelus,/aria-pressed="true">Alone/,"Individual is the default presentation");
 assert.match(angelus,/Angelus/);
+
+const early=renderPilotAngelusEntry({head:()=>"",L,esc,form:"angelus",hour:6,moduleIcon:()=>"<i></i>"});
+const midday=renderPilotAngelusEntry({head:()=>"",L,esc,form:"angelus",hour:12,moduleIcon:()=>"<i></i>"});
+const dusk=renderPilotAngelusEntry({head:()=>"",L,esc,form:"angelus",hour:18,moduleIcon:()=>"<i></i>"});
+assert.match(early,/Dawn · 06:00/);
+assert.match(midday,/Midday · 12:00/);
+assert.match(dusk,/Dusk · 18:00/);
+assert.match(angelus,/The bell calls us to remember the Incarnation/);
+assert.match(angelus,/data-ao-art-publication="unassigned"/,"The opening must not imply uncertified artwork is published");
+assert.equal((midday.match(/class="aoPrayPilotBellGroup"/g)||[]).length,4,"Use 3·3·3·9 grouped visual bells");
+assert.equal((midday.match(/class="aoPrayPilotBellDot"/g)||[]).length,18);
+assert.ok(midday.indexOf("aoPrayPilotBellMoments")<midday.indexOf("data-p435930-pilot-angelus-begin"),
+ "Bell moments precede Begin");
+assert.ok(midday.indexOf("data-p435930-pilot-angelus-begin")<midday.indexOf("data-p435930-pilot-angelus-recitation"),
+ "Begin precedes the small Alone/With others control");
+assert.doesNotMatch(angelus,/A pause for prayer|The Angel of the Lord declared unto Mary\./,
+ "Retired generic Angelus cover copy must not replace the approved opening");
+
 assert.match(regina,/Regina Cæli/);
 assert.doesNotMatch(angelus,/The existing named cards|Kneel · ordinary days|aoPrayPilotEntryMeta/,
  "Angelus opening must not show engineering copy or posture before the prayer begins");
