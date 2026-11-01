@@ -139,14 +139,21 @@ try{
       const actions=el.querySelector(".aoPrayPilotAngelusActions"),begin=el.querySelector("[data-p435930-pilot-angelus-begin]");
       const alone=el.querySelector("[data-p435930-pilot-angelus-recitation]");
       const hero=el.querySelector(".aoPrayPilotAngelusHero").getBoundingClientRect();
+      const cover=el.getBoundingClientRect(),h2=el.querySelector(".aoPrayPilotAngelusCoverCopy h2").getBoundingClientRect();
+      const appHeader=document.querySelector("#aoPray435930 .aoP435930Head")?.getBoundingClientRect();
       const b=begin.getBoundingClientRect(),a=alone.getBoundingClientRect();
-      return {heroHeight:hero.height,beginTop:b.top,beginBottom:b.bottom,recitationTop:a.top,
-       navTop:document.querySelector(".aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect()?.top||innerHeight};
+      return {heroHeight:hero.height,coverBottom:cover.bottom,titleTop:h2.top,headerBottom:appHeader?.bottom||0,
+        beginTop:b.top,beginBottom:b.bottom,recitationTop:a.top,recitationBottom:a.bottom,
+        navTop:document.querySelector(".aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect()?.top||innerHeight};
    });
-   assert.ok(firstFold.heroHeight>=180&&firstFold.beginBottom<firstFold.recitationTop,
-     "Approved Angelus cover uses a full-height art band and Begin ABOVE recitation: "+JSON.stringify(firstFold));
-   assert.ok(firstFold.beginBottom<firstFold.navTop,
-     "Begin must remain visible above the fixed app navigation at "+width+": "+JSON.stringify(firstFold));
+   assert.ok(firstFold.heroHeight>=Math.max(260,width===320?260:400)&&firstFold.beginBottom<firstFold.recitationTop,
+     "The art band must actually expand and Begin remain ABOVE recitation: "+JSON.stringify(firstFold));
+   assert.ok(firstFold.titleTop>=firstFold.headerBottom+2,
+     "Full Angelus title must not sit under the sticky native header at "+width+": "+JSON.stringify(firstFold));
+   assert.ok(firstFold.coverBottom>=firstFold.navTop-22&&firstFold.coverBottom<=firstFold.navTop+35,
+     "Angelus cover must fill the available first screen; no large empty lower half at "+width+": "+JSON.stringify(firstFold));
+   assert.ok(firstFold.recitationBottom<=firstFold.navTop-3,
+     "Begin and Alone/With others must BOTH remain visible above navigation at "+width+": "+JSON.stringify(firstFold));
    const group=page.locator(base+' [data-p435930-pilot-angelus-recitation="group"]');
    assert.equal(await group.count(),1,"F04 entry must expose existing Alone/With others recitation");
    await group.click();
