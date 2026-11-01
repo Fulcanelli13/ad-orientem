@@ -1,0 +1,58 @@
+name: Sacred Art — Flemish FULL catalogue religious painting image acquisition
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/art/acquire-flemish-from-full-catalogue.py"
+      - ".github/workflows/sacred-art-flemish-full-acquisition.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acquire-reviewed-eligible-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-class-i-ii-multiwork-rotation-20261031
+          path: calendar-research
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: research/w60-sanctoral-art-physical-dedupe-20261015
+          path: art-research
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Verify rights policy before network acquisition
+        run: python scripts/art/acquire-flemish-from-full-catalogue.py --test
+      - name: Reuse complete 32k Flemish LIDO harvest; do NOT re-fetch 1,300 source pages
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-flemish-26k-source-metadata
+          run-id: 41347958909
+          github-token: ${{ github.token }}
+          path: source-flemish
+      - name: Acquire candidate religious paintings in one bounded batch
+        run: |
+          python scripts/art/acquire-flemish-from-full-catalogue.py \
+            --source source-flemish/all-open-metadata.json \
+            --out artifacts/sacred-art-flemish-works \
+            --max-images 350 \
+            --max-mb 175 \
+            --existing calendar-research/data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json \
+            --existing art-research/data/research/sacred-art-bulk-source-intake-451-20261020.v1.json \
+            --existing calendar-research/data/calendar/sacred-art-2026-classIII-sanctoral-complete-candidate-research-master.v1.json
+      - name: Preserve consolidated research acquisitions, rights holds and contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-flemish-full-catalogue-acquisition
+          path: artifacts/sacred-art-flemish-works/
+          retention-days: 3
+          if-no-files-found: warn
