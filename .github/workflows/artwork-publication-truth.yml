@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - "tests/artwork-publication-truth.mjs"
+      - "tests/artwork-production-class-i-hero-phone.mjs"
       - "src/calendar/approved-class-i-heroes-2026.js"
       - "src/pray/art-slot-map.v1.js"
       - "src/find/institution-emblems.js"
@@ -29,6 +30,26 @@ jobs:
         if: always()
         with:
           name: sacred-art-publication-truth
+          path: artifacts/artwork-publication-truth/
+          if-no-files-found: warn
+          retention-days: 14
+  public-class-i-hero-identity:
+    name: Public Nov 1 and Nov 2 Calendar hero pixels and captions
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Check exact accepted source identity on real public EN/FR phones
+        run: node tests/artwork-production-class-i-hero-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calendar-2026-nov1-nov2-public-hero-identity
           path: artifacts/artwork-publication-truth/
           if-no-files-found: warn
           retention-days: 14
