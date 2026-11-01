@@ -94,6 +94,36 @@ try{
    await page.locator("[data-find-tlm-country-reset]").click();
    await page.waitForFunction(()=>["FR","US"].every(cc=>
     document.querySelector('[data-find-tlm-country="'+cc+'"]')?.getAttribute("aria-pressed")==="false"),null,{timeout:25000});
+   // CL27 public axes: 1962 is a celebration-level programme witness, not
+   // venue-wide status. Exercise advanced filters at 320/390/1440 widths.
+   const cl27=page.locator(".aoTlmCl27Facet");
+   assert.equal(await cl27.count(),1,"One CL27 map disclosure");
+   await cl27.locator("summary").first().click();
+   assert.equal(await page.locator(".aoTlmCl27Axis").count(),12,"All 12 CL27 axes render");
+   assert.equal(await page.locator('[data-find-cl27-axis="una_cum"][data-find-cl27-value="YES"]').count(),0,
+    "Una Cum has no unapproved positive filter");
+   const missal1962=page.locator('[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]');
+   assert.equal(await missal1962.count(),1,"Two approved programme witnesses are filterable");
+   assert.match(await missal1962.innerText(),/\\(2\\)/);
+   await missal1962.click();
+   await page.waitForFunction(()=>document.querySelector(
+    '[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]'
+   )?.getAttribute("aria-pressed")==="true",null,{timeout:25000});
+   assert.equal(await page.locator(".aoAtlasTlmExtra").getAttribute("open"),"",
+    "Advanced filter disclosure persists through CL27 repaint");
+   assert.equal(await page.locator(".aoTlmCl27Facet").getAttribute("open"),"",
+    "CL27 disclosure persists through map repaint");
+   const cl27Bounds=await page.locator(".aoTlmCl27Facet").evaluate(el=>{
+    const r=el.getBoundingClientRect();
+    return {left:r.left,right:r.right,documentOverflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(cl27Bounds.left>=-2&&cl27Bounds.right<=width+2&&cl27Bounds.documentOverflow<=2,
+    "CL27 panel must fit screen: "+JSON.stringify(cl27Bounds));
+   await captures("00-cl27-facets");
+   await page.locator('[data-find-cl27-axis="missal_edition"][data-find-cl27-value="ALL"]').click();
+   await page.waitForFunction(()=>document.querySelector(
+    '[data-find-cl27-axis="missal_edition"][data-find-cl27-value="ALL"]'
+   )?.getAttribute("aria-pressed")==="true",null,{timeout:25000});
    await page.locator(".aoAtlasTlmExtra > summary").click();
    const list=page.locator('[data-find-filter="view"][data-find-filter-value="list"]');
    assert.equal(await list.count(),1,"TLM view must expose a real List control");
