@@ -71,7 +71,10 @@ assert.ok(styles.includes(".aoMercyBeadButton[data-status=active]"));
 assert.ok(styles.includes(".aoDevoSequenceTimeline{display:none!important}"));
 assert.ok(styles.includes(".aoMercyBeadNavigation>.aoDevoProgress"),"Canonical Mercy bar must remain visible when chapter timeline is hidden");
 assert.ok(styles.includes("position:sticky;top:74px"),"Prayer progress must remain at hand during local scrolling");
-assert.doesNotMatch(runtime,/data-p435930-mercy-(?:prev|next)|aoMercyControls/,"Legacy bead arrows duplicate direct beads and prayer scrolling");
+assert.doesNotMatch(runtime,/aoMercyControls/,"Retired legacy bead-arrow container may not return");
+assert.ok(runtime.includes("const mercyDock=CHAPLET_F07_PILOT_ENABLED?"),"Claude m2 footer must remain opt-in and read from the canonical bead cursor");
+assert.ok(runtime.includes("data-p435930-mercy-previous")&&runtime.includes("data-p435930-mercy-next"),
+ "Claude m2 must include source-owned Previous and Next without replacing chapter scrolling");
 assert.ok(runtime.includes("installSequentialDevotionalReader({"),"Source-owned chapter swipes lost");
 assert.ok(runtime.includes("updateMercyBeadNav(m,steps,i"),"Intra-decade prayer cursor must update while text scrolls");
 
