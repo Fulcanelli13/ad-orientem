@@ -35,7 +35,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "APPROVAL_SCOPE_RECHECK",
+  "exactSlotPublicationHold": true,
+  "photoSourceHold": false
  },
  "HERO-04": {
   "kind": "SEASONAL_HOME_HERO",
@@ -103,7 +106,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "PROVISIONAL_CONTEXTUAL_REUSE",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "HERO-10": {
   "kind": "SEASONAL_HOME_HERO",
@@ -125,7 +131,14 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayArtist": "Peter Paul Rubens",
+  "displayTitle": "Christ Triumphant over Death and Sin",
+  "attributionEvidence": "https://collections.musees.strasbourg.eu/en/document/le-christ-triomphant-de-la-mort-et-du-peche/5ee338d6461cda28a3ab1b6f",
+  "photoRightsApprovalRequired": false,
+  "sceneRelationship": "SYMBOLIC_CONTEXTUAL",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "HERO-12": {
   "kind": "SEASONAL_HOME_HERO",
@@ -180,7 +193,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "PROVISIONAL_CONTEXTUAL_REUSE",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "HERO-17": {
   "kind": "SEASONAL_HOME_HERO",
@@ -539,7 +555,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "EXPLICIT_USER_EXTENSION_RECHECK",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "COV-foundations_hail_mary": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
@@ -760,7 +779,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "EXPLICIT_USER_AUTHORIZED_CONTEXTUAL",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": true
  },
  "STG-pray.rosary-05": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -882,7 +904,11 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayArtist": "Charles de La Fosse",
+  "displayTitle": "Assumption of Mary",
+  "attributionEvidence": null,
+  "photoRightsApprovalRequired": false
  },
  "STG-pray.rosary-16": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -891,7 +917,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   "ids": [],
   "held": true,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "PRIMARY_HELD_EXACT_OPTIONS_EXIST",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "STG-pray.rosary-17": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -977,7 +1006,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "USER_ACCEPTED_CONTEXTUAL",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "STG-pray.five_wounds-05": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -988,7 +1020,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "EXPLICIT_USER_AUTHORIZED_CONTEXTUAL",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "COV-pray.precious_blood": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
@@ -1065,7 +1100,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "USER_ACCEPTED_NEARBY_EVENT",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "STG-pray.precious_blood-07": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -1076,7 +1114,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "EXPLICIT_USER_AUTHORIZED_CONTEXTUAL",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "COV-pray.little_crown": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
@@ -1164,7 +1205,11 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayArtist": null,
+  "displayTitle": "Fourth Station of the Cross, Solesmes",
+  "attributionEvidence": null,
+  "photoRightsApprovalRequired": false
  },
  "STG-prayer.seven_sorrows_chaplet-05": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -1307,7 +1352,11 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayArtist": "Charles de La Fosse",
+  "displayTitle": "Assumption of Mary",
+  "attributionEvidence": null,
+  "photoRightsApprovalRequired": false
  },
  "COV-novena.seven_sorrows": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
@@ -2141,7 +2190,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "USER_ACCEPTED_AFTERMATH",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "STG-pray.seven_words-04": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -2183,7 +2235,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "USER_ACCEPTED_AFTERMATH",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "STG-pray.seven_words-08": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -2522,7 +2577,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "sceneRelationship": "USER_ACCEPTED_DIFFERENT_EVENT",
+  "exactSlotPublicationHold": false,
+  "photoSourceHold": false
  },
  "STG-pray.st_joseph_seven_sorrows-07": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -2789,7 +2847,11 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayArtist": "Jacques Blanchard",
+  "displayTitle": "Saint Jérôme écrivant",
+  "attributionEvidence": "https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm",
+  "photoRightsApprovalRequired": true
  },
  "STG-pray.confession-02": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -2871,7 +2933,11 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayArtist": "Jacques Blanchard",
+  "displayTitle": "Saint Jérôme écrivant",
+  "attributionEvidence": "https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm",
+  "photoRightsApprovalRequired": true
  },
  "COV-prayer.hymns": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
