@@ -150,11 +150,15 @@
     "sourceReferenceId": "L07-012",
     "sourceEvidence": "M07_SEQUENCE_SOURCE_INDEX_ONLY_NOT_IN_1195_GRADUALE_ARCHIVE",
     "selected1962MassMatch": "NOT_VERIFIED",
-    "completeLatinVerses": "NOT_VERIFIED",
+    "completeLatinVerses": "GABC_TEXT_READ_BUT_1962_PARITY_NOT_CERTIFIED",
     "printed1961Neumes": "NOT_COMPARED",
     "editorialApproval": false,
     "publicReader": false,
-    "audioPublished": false
+    "audioPublished": false,
+    "gabcDownloadUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1198",
+    "gabcLatinDirectlyInspected": true,
+    "gabcTextEvidence": "Full 1961 Solesmes transcription 19 paired units through Pie Jesu / Amen reviewed; full alignment against printed 1962 Missal not yet machine-certified",
+    "firstLineCustosDiscrepancy": "Original GregoBase source comment reports printed 1961 first-line custos c+ instead of a+; must adjudicate before any facsimile certification"
   },
   "otherMusicBoundaries": {
     "requiemOrdinary": "Kyrie, Sanctus and Agnus Dei require separate Requiem-setting verification; Gloria and Credo excluded by all 3 sources",
@@ -286,7 +290,11 @@
       "evidence": "SOURCE_INDEXED",
       "printedNotesVerified": false,
       "editorialApproval": false,
-      "publicReader": false
+      "publicReader": false,
+      "gabcLatinDirectlyInspected": true,
+      "gabcDownloadUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=541",
+      "observedLatin": "Kyrie eleison / Christe eleison / Kyrie eleison with specified repetitions",
+      "latinParityStatus": "SOURCE_GABC_TEXT_READ_MISSAL_VARIANTS_NOT_CHECKED"
     },
     {
       "role": "SANCTUS_REQUIEM",
@@ -299,7 +307,12 @@
       "editorialApproval": false,
       "publicReader": false,
       "liberUsualis1961Page": "1814",
-      "note": "Identical source #298 also lists Graduale 1961 p.58* for Ordinary XVIII; Requiem edition explicitly listed at p.101*. Distinguish placement from separate new melody."
+      "note": "Identical source #298 also lists Graduale 1961 p.58* for Ordinary XVIII; Requiem edition explicitly listed at p.101*. Distinguish placement from separate new melody.",
+      "gabcLatinDirectlyInspected": true,
+      "gabcDownloadUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=298",
+      "observedLatin": "Sanctus ... Benedictus qui venit ... Hosanna",
+      "latinParityStatus": "SOURCE_GABC_TEXT_READ_MISSAL_VARIANTS_NOT_CHECKED",
+      "repeatScope": "One source entry supplies both Sanctus and Benedictus; no second Benedictus score implied"
     },
     {
       "role": "AGNUS_REQUIEM",
@@ -311,7 +324,11 @@
       "evidence": "SOURCE_INDEXED",
       "printedNotesVerified": false,
       "editorialApproval": false,
-      "publicReader": false
+      "publicReader": false,
+      "gabcLatinDirectlyInspected": true,
+      "gabcDownloadUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=2118",
+      "observedLatin": "First two Agnus responses 'dona eis requiem'; third adds 'sempiternam'",
+      "latinParityStatus": "SOURCE_GABC_TEXT_READ_REQUIEM_WORDS_MATCH"
     },
     {
       "role": "DISMISSAL_REQUIEM",
@@ -323,7 +340,11 @@
       "evidence": "SOURCE_INDEXED_RESPONSE_PARITY_NOT_YET_CHECKED",
       "printedNotesVerified": false,
       "editorialApproval": false,
-      "publicReader": false
+      "publicReader": false,
+      "gabcLatinDirectlyInspected": true,
+      "gabcDownloadUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=823",
+      "observedLatin": "Requiescant in pace / R. Amen",
+      "latinParityStatus": "SOURCE_GABC_RESPONSE_TEXT_READ_MATCHES_REQUIEM_DISMISSAL"
     },
     {
       "role": "FUNERAL_ABSOLUTION_OPTION",
