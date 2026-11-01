@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'src/mass/reader-schola-selected-calendar-audit.js'
+      - 'src/mass/reader-proper-gabc-bulk-join.js'
+      - 'tests/reader-proper-gabc-bulk-join.mjs'
       - 'tools/mass/reader-schola-selected-calendar-audit.mjs'
       - 'tests/reader-schola-selected-calendar-audit.mjs'
       - '.github/workflows/schola-selected-calendar-bulk.yml'
@@ -21,8 +23,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Test source-selection result integrity
-        run: node tests/reader-schola-selected-calendar-audit.mjs
+      - name: Test source-selection result integrity and 1195-score matcher
+        run: |
+          node tests/reader-schola-selected-calendar-audit.mjs
+          node tests/reader-proper-gabc-bulk-join.mjs
       - name: Install browser runner
         run: |
           npm install --no-audit --no-fund
