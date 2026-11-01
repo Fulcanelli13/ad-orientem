@@ -9,9 +9,11 @@ import {
 } from "../src/find/preliminary-directory-r49.js";
 import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {CL2_PHYSICAL_SITE_INDEX_URL} from "../src/find/cl2-physical-directory.js";
+import {CL27_PUBLIC_CELEBRATION_URL} from "../src/find/tlm-celebration-evidence.js";
 const base=JSON.parse(readFileSync(fileURLToPath(PRELIMINARY_R49_URL),"utf8"));
 const release=JSON.parse(readFileSync("data/directory/published-provisional-mass-sites-20261026.v1.json","utf8"));
 const worldwide=JSON.parse(readFileSync("data/directory/generated/cl2-physical-site-index.v1.json","utf8"));
+const publishedWitnesses=JSON.parse(readFileSync(fileURLToPath(CL27_PUBLIC_CELEBRATION_URL),"utf8"));
 const old=projectPreliminaryR49(base);
 assert.equal(old.length,1879);
 assert.equal(release.record_count,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED);
@@ -55,6 +57,7 @@ let calls=[];
 const api=async url=>{
  calls.push(String(url));
  return {ok:true,status:200,json:async()=>String(url)===CL2_PHYSICAL_SITE_INDEX_URL?worldwide:
+   String(url)===CL27_PUBLIC_CELEBRATION_URL?publishedWitnesses:
    String(url).includes("published-provisional")?release:base};
 };
 const live=await loadPreliminaryR49({fetchImpl:api});
@@ -62,7 +65,10 @@ assert.equal(live.length,2582,"Complete CL2 worldwide index must load without dr
 assert.equal(live.filter(x=>x.map_publishable).length,1914);
 assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,668);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
+assert.equal(live.filter(x=>x.celebration_evidence).length,2,
+ "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
 assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   new URL("../data/directory/published-provisional-mass-sites-20261026.v1.json",import.meta.url).href,
-  CL2_PHYSICAL_SITE_INDEX_URL]);
+  CL2_PHYSICAL_SITE_INDEX_URL,
+  CL27_PUBLIC_CELEBRATION_URL]);
 console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 1914 mapped, 668 list-only, zero certified schedules");
