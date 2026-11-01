@@ -60,7 +60,7 @@ def main():
             with Image.open(BytesIO(data)) as im:
                 fmt, w, h = im.format, im.width, im.height
                 assert [w, h] == info["verified_pixel_dimensions"], ("Pixel mismatch", id, w, h)
-                assert fmt in ("JPEG", "PNG"), ("Unexpected original image type", id, fmt)
+                assert fmt in ("JPEG", "PNG", "MPO"), ("Unexpected original image type", id, fmt)
                 im=ImageOps.exif_transpose(im)
                 tile=ImageOps.contain(im.convert("RGB"), (272, 310), Image.Resampling.LANCZOS)
                 overview_tiles.append((id, row["artist"], row["title"], tile.copy()))
