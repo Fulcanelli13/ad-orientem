@@ -68,13 +68,19 @@ for(const r of p104.published_new){
  }
  assert.equal(sources.get(r.source_ids[0]).url,r.source_site_url);
  assert.equal(sources.get(r.source_ids[1]).url,r.source_geo_url);
- assert.equal(media.items.some(x=>x.place_id===r.place_id),laterApproved.has(r.place_id),"Only separately verified P106 may approve post-P104 photos");
+ const released=media.items.find(x=>x.place_id===r.place_id)??null;
  const attached=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:r.venue_id}],{directoryPlaceLinks:geo.directoryPlaceLinks,approved:media.items,gallery:[]});
  if(laterApproved.has(r.place_id)){
    const later=laterApproved.get(r.place_id);
    assert.equal(later.venue_id,r.venue_id);
-   assert.equal(attached[0].cover_media?.derivative_sha256,later.sha256);
- }else assert.equal(attached[0].cover_media,undefined,"No unreviewed P104 photo");
+   assert.equal(released?.derivative_sha256,later.sha256);
+ }else if(released){
+   // Independently released P104 exact-site photos postdate the frozen
+   // P106 manifest; they are not inferred from the old research receipt.
+   assert.equal(released.source_place_ref,"AO-P104-"+r.row+"-SITE");
+   assert.ok(released.rights_verified&&released.subject_verified&&released.crop_reviewed);
+ }
+ assert.equal(attached[0].cover_media?.derivative_sha256,released?.derivative_sha256,"Only separately approved assets may attach, never P104 research previews");
  assert.equal(r.approved_photo,false);
  assert.equal(r.published_photo,false);
  const pair=cross.candidate_pairs.filter(x=>x.place_id===r.place_id&&x.venue_id===r.venue_id);
