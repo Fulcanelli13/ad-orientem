@@ -2125,21 +2125,22 @@ function eucharisticWitnessTreasury(){
 function renderAdoration(){
  if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Enter prayer without a prescribed duration','Entrer en prière sans durée imposée'))}
   <main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v2">
-   <p class="aoAdorationChooserIntroduction">${esc(L('Choose the form suited to where you are.','Choisissez la forme adaptée au lieu où vous vous trouvez.'))}</p>
-   <div class="aoAdorationPrimaryGrid">
-    <button type="button" data-p435930-ador-mode="visit">
+   <div class="aoAdorationPrimaryGrid" aria-label="${esc(L('Choose the form of adoration','Choisir la forme d’adoration'))}">
+    <button type="button" class="aoAdorationModeVisit" data-p435930-ador-mode="visit" data-ao-art-binding="unassigned">
+     <span class="aoAdorationModeIcon" aria-hidden="true">${assetIcon('ao-rich-adoration')}</span><em class="aoAdorationTime">${esc(L('≈ 10–15 min','≈ 10–15 min'))}</em>
      <small>${esc(L('AT THE TABERNACLE','DEVANT LE TABERNACLE'))}</small>
      <b>${esc(L('Visit to the Blessed Sacrament','Visite au Saint-Sacrement'))}</b>
      <span>${esc(L('A simple path for prayer before the reserved Sacrament.','Un chemin simple de prière devant le Saint-Sacrement réservé.'))}</span>
     </button>
-    <button type="button" data-p435930-ador-mode="open">
+    <button type="button" class="aoAdorationModeSilence" data-p435930-ador-mode="open" data-ao-art-binding="unassigned">
+     <span class="aoAdorationModeIcon" aria-hidden="true">${assetIcon('ao-rich-adoration')}</span><em class="aoAdorationTime">${esc(L('No time limit','Sans durée fixe'))}</em>
      <small>${esc(L('IN STILLNESS','DANS LE SILENCE'))}</small>
      <b>${esc(L('Silent Adoration','Adoration silencieuse'))}</b>
      <span>${esc(L('Be still. Prayers and guidance are available only when wanted.','Demeurez en silence. Prières et aide restent facultatives.'))}</span>
     </button>
    </div>
-   <details class="aoAdorationMethodsDisclosure" data-ao-adoration-methods>
-    <summary>${esc(L('Guided forms and Eucharistic prayers','Formes guidées et prières eucharistiques'))}</summary>
+   <details class="aoAdorationMethodsDisclosure" data-ao-adoration-methods open>
+    <summary>${esc(L('GUIDED FORMS & EUCHARISTIC PRAYERS','FORMES GUIDÉES ET PRIÈRES EUCHARISTIQUES'))}</summary>
     <div class="aoP435930BigGrid">
      <button type="button" data-p435930-ador-mode="holy">
       <b>${esc(L('Guided Holy Hour','Heure Sainte guidée'))}</b>
