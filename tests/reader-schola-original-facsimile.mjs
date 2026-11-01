@@ -38,7 +38,9 @@ for(const movement of ["KYRIE","GLORIA","CREDO","SANCTUS_BENEDICTUS","AGNUS_DEI"
 }
 assert.match(dom,/schola1961OriginalFacsimile\(id,selected\)/);
 assert.match(dom,/printPanel\.hidden=!printed/);
-assert.match(dom,/printPanel\.open=false/);
+assert.match(dom,/printContent\.hidden=true/);
+assert.match(dom,/printToggle\.onclick=/);
+assert.doesNotMatch(dom,/<summary>Original 1961 printed notation<\/summary>/);
 assert.match(dom,/img\.src=printed\.originalPageImages\[i\]/);
 assert.match(dom,/img\.loading="lazy"/);
 assert.match(dom,/Unaltered 1961 Solesmes printed source page/);
