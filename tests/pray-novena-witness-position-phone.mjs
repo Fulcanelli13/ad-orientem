@@ -23,6 +23,13 @@ try{
  for(const width of [320,390]){
   const page=await browser.newPage({viewport:{width,height:width===320?700:844},isMobile:true,hasTouch:true,deviceScaleFactor:1});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
+  // Seed the actual French preference before any app bootstrap script runs.
+  // Setting localStorage after DOMContentLoaded races the settings hydrator,
+  // which can write the default English locale over the test fixture.
+  await page.addInitScript(()=>{
+   try{const key="ao2:settings:v1",saved=JSON.parse(localStorage.getItem(key)||"{}");
+    localStorage.setItem(key,JSON.stringify({...saved,language:"fr"}));}catch{}
+  });
   try{
    await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
