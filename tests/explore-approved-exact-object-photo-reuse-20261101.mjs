@@ -33,7 +33,7 @@ assert.ok(resolveApprovedPlaceMedia(cover.items,exactPlace),"Original cover must
 const digest=createHash("sha256").update(readFileSync(new URL("../"+original[0].asset_path,import.meta.url))).digest("hex");
 assert.equal(digest,entry.approved_cover_derivative_sha256,"Local original bytes no longer match approved checksum");
 assert.equal(original[0].source_sha1,entry.approved_cover_source_sha1);
-const good=resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,exactPlace,exactRelic);
+const good=resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,exactPlace,exactRelic,entry.official_subject_source_url);
 assert(good,"Exact approved reused object photo should resolve");
 assert.equal(good.asset_path,original[0].asset_path);
 assert.equal(good.media_reuse_source,"EXACT_APPROVED_PLACE_COVER");
@@ -56,10 +56,10 @@ for(const changes of [
   {...entry,not_approved_for_any_other_relic:false},
   {...entry,caption_en:""}
 ]){
-  const wrong=resolveApprovedObjectPhotoReuse([changes],cover.items,exactPlace,exactRelic);
+  const wrong=resolveApprovedObjectPhotoReuse([changes],cover.items,exactPlace,exactRelic,entry.official_subject_source_url);
   assert.equal(wrong,null,"Refuse altered identity/approval/rights or empty caption");
 }
-assert.equal(resolveApprovedObjectPhotoReuse([...bundle.releases,...bundle.releases],cover.items,exactPlace,exactRelic),null,
+assert.equal(resolveApprovedObjectPhotoReuse([...bundle.releases,...bundle.releases],cover.items,exactPlace,exactRelic,entry.official_subject_source_url),null,
  "Duplicate owner rows must fail shut");
 for(const wrongCover of [
   {...original[0],status:"UNREVIEWED"},
@@ -72,11 +72,13 @@ for(const wrongCover of [
   {...original[0],asset_path:"assets/staged/place-media/unsafe.webp"}
 ]){
  const testCovers=cover.items.map(x=>x.place_id===exactPlace?wrongCover:x);
- assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,testCovers,exactPlace,exactRelic),null,
+ assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,testCovers,exactPlace,exactRelic,entry.official_subject_source_url),null,
    "Do not show object when approved cover evidence changes");
 }
-assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,"place:IE:knock-shrine",exactRelic),null);
-assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,exactPlace,"relic:IE:unrelated"),null);
+assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,exactPlace,exactRelic,"https://example.org/wrong-owner"),null,
+ "Owner source must exactly match the source-verified relic record");
+assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,"place:IE:knock-shrine",exactRelic,entry.official_subject_source_url),null);
+assert.equal(resolveApprovedObjectPhotoReuse(bundle.releases,cover.items,exactPlace,"relic:IE:unrelated",entry.official_subject_source_url),null);
 assert.equal(resolveApprovedPlaceGallery(gallery.items,exactPlace).length,0,
  "Do not silently add a gallery photograph or change its approval registry");
 assert.ok(EXPLORE_DATA_URLS.approvedObjectPhotoReuse.endsWith("/data/geography/approved-object-photo-reuse.v1.json"));
