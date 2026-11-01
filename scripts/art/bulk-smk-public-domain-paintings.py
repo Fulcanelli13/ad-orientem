@@ -97,11 +97,11 @@ def get_artist(item):
 
 def as_row(item,known,dates):
  ident=str(item.get("object_number") or item.get("id") or "")
- title=flatten(item.get("titles_en") or item.get("titles_da") or item.get("title") or "").strip()
+ title=flatten(item.get("titles_en") or item.get("titles_da") or item.get("titles") or item.get("title") or "").strip()
  artist=get_artist(item)
- desc=flatten(item.get("content_description_en") or item.get("content_description_da") or [])
+ desc=flatten(item.get("content_description_en") or item.get("content_description_da") or item.get("content_description") or [])
  desc=desc[:1200]
- labels=flatten(item.get("labels_en") or item.get("labels_da") or [])[:600]
+ labels=flatten(item.get("labels_en") or item.get("labels_da") or item.get("labels") or [])[:600]
  media=flatten(item.get("object_names_en") or item.get("object_names_da") or item.get("object_names") or item.get("object_type") or [])[:250]
  dtext=norm(title+" "+desc+" "+labels)
  tokens=set(dtext.split())
@@ -173,7 +173,7 @@ def selftest():
  assert RELIGIOUS.search("Bebudelse til jomfru Maria")
  assert not RELIGIOUS.search("Still life with apples")
  assert get_artist({"artist_en":["Rubens"]})=="Rubens"
- assert as_row({"object_number":"KMS-123","titles_en":["Saint John"],"artist_en":["Anonymous"],
+ assert as_row({"object_number":"KMS-123","titles":[{"title":"Saint John"}],"artist_en":["Anonymous"],
   "public_domain":True,"image_native":"https://iip.smk.dk/a.jpg"},set(),[])["religiousSubjectDetected"]
  print("PASS SMK API normalization, public domain gates and metadata parsing")
 
@@ -192,7 +192,7 @@ def main():
  known=load_known(args.existing)
  dates=load_dates(args.calendar)
  records,errors=[],[]
- offset=0;batch_size=500
+ offset=0;batch_size=150
  # Filter syntax changed at times; prefer source-authoritative PD/image filter,
  # then classify painting using the returned object type locally.
  # An empty strict response is NOT a successful bulk harvest.
@@ -264,6 +264,7 @@ def main():
  "source":API,"status":"RESEARCH_ONLY_NOT_EDITORIALLY_APPROVED",
  "apiFilter":filter_used or "UNFILTERED_FALLBACK", "apiAttempts":api_attempts,
  "metadataItemsParsed":len(records),"distinctObjectNumbers":len(rows),
+ "recordsWithTitle":sum(bool(x["title"]) for x in rows),
  "religiousSubjectRecords":sum(x["religiousSubjectDetected"] for x in rows),
  "paintingTypeRecords":sum(x["isPaintingByOfficialMedium"] for x in rows),
  "potentialNewReligiousPaintingsAgainstInspectedArchive":len(candidates),
