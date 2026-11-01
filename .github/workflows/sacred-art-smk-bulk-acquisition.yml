@@ -1,0 +1,51 @@
+name: Sacred Art — SMK public-domain paintings bulk acquisition
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/art/bulk-smk-public-domain-paintings.py"
+      - ".github/workflows/sacred-art-smk-bulk-acquisition.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smk-acquire-paintings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-class-i-ii-multiwork-rotation-20261031
+          path: calendar-research
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: research/w60-sanctoral-art-physical-dedupe-20261015
+          path: art-research
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Test source, metadata and title matching without network
+        run: python scripts/art/bulk-smk-public-domain-paintings.py --self-test
+      - name: Bulk acquire only public-domain paintings directly from museum API
+        run: |
+          python scripts/art/bulk-smk-public-domain-paintings.py \
+            --output artifacts/sacred-art-smk-bulk \
+            --max-metadata 12000 \
+            --download-limit 250 \
+            --max-output-mb 100 \
+            --calendar calendar-research/data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json \
+            --existing calendar-research/data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json \
+            --existing art-research/data/research/sacred-art-bulk-source-intake-451-20261020.v1.json \
+            --existing calendar-research/data/calendar/sacred-art-2026-classIII-sanctoral-complete-candidate-research-master.v1.json
+      - name: Archive research photo candidates and single contact sheet deck
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-smk-public-domain-bulk
+          path: artifacts/sacred-art-smk-bulk/
+          if-no-files-found: warn
+          retention-days: 3
