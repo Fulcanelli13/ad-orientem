@@ -1,0 +1,96 @@
+{
+  "schema": "AO_DYK_R33_OUTSIDE_SAMPLE_THREE_OVERLAPS_RESOLVED_V1",
+  "date": "2026-10-31",
+  "status": "REVIEW_ONLY_NO_H7_PUBLICATION",
+  "scope": "Three preexisting high-lexical-overlap source-first candidates outside fixed sample of 50. Keep raw 500 archive and 50 sample unchanged.",
+  "existing_candidate_adjustments": [
+    {
+      "id": "DYK-H04-W-B-153",
+      "action": "REWRITE_SOURCE_SPECIFIC",
+      "old_source_id": "WEI58-27-009",
+      "revised_statement": {
+        "en": "At Croagh Patrick and Lough Derg, Weiser says Irish devotion to Saint Patrick was expressed less through formal services than through demanding acts of fasting, mortification and prayer, understood as an imitation of the saint.",
+        "fr": "À Croagh Patrick et à Lough Derg, Weiser explique que la dévotion irlandaise à saint Patrick s'exprimait moins par des cérémonies que par de rudes pratiques de jeûne, de pénitence et de prière, conçues comme une imitation du saint."
+      },
+      "source": {
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_pages": [
+          321
+        ],
+        "pdf_page_zero_based": [
+          338
+        ],
+        "direct_page_image_checked_this_pass": true
+      },
+      "rationale": "Differentiate particular penitential meaning on original Weiser p321 from private Lough Derg site-description preview. Not a claim every pilgrim observed one uniform practice.",
+      "publication_authorized": false
+    }
+  ],
+  "retirement_and_replacement": [
+    {
+      "retire_id": "DYK-H04-W-B-176",
+      "original_source_id": "WEI58-28-017",
+      "reason": "Source page gives only general Québec shrine significance; redundant with private place preview and not a distinctive discovery.",
+      "replacement": {
+        "id": "DYK-R33-W-P337-ANNE-RAIN",
+        "source_id": "WEI58-DIRECT-P337-ANNE-RAIN",
+        "statement": {
+          "en": "In Italian Catholic folklore, summer rain was sometimes called ‘Saint Anne's gift’; in Germany, July rain was nicknamed ‘Saint Anne's dowry’, reflecting popular devotion to her as a patroness of rain.",
+          "fr": "Dans le folklore catholique italien, on appelait parfois la pluie estivale « don de sainte Anne » ; en Allemagne, la pluie de juillet était surnommée « dot de sainte Anne », signe d'une dévotion populaire qui l'invoquait pour la pluie."
+        },
+        "source": {
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "printed_pages": [
+            337
+          ],
+          "pdf_page_zero_based": [
+            354
+          ],
+          "direct_page_image_checked_this_pass": true
+        },
+        "scope": "Historical popular lore in Italy and Germany, not doctrine or a Roman rubric",
+        "publication_authorized": false,
+        "final_editorial_approval": false
+      }
+    },
+    {
+      "retire_id": "DYK-GI-G319",
+      "original_source_id": "G319",
+      "reason": "Definition-like ciborium-veil statement duplicates the Glossary's explanation and repeats private veil comparisons.",
+      "replacement": {
+        "id": "DYK-R33-W-P096-IRISH-HOLLY-CANDLE",
+        "source_id": "WEI58-DIRECT-P096-IRISH-HOLLY-CANDLE",
+        "statement": {
+          "en": "For Christmas Eve in an Irish household custom described by Weiser, a parent lit a large candle adorned with holly while the family prayed together for loved ones both living and dead.",
+          "fr": "Dans une coutume irlandaise de la veille de Noël rapportée par Weiser, un parent allumait une grande bougie ornée de houx, tandis que la famille priait pour ses proches, vivants et défunts."
+        },
+        "source": {
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "printed_pages": [
+            96
+          ],
+          "pdf_page_zero_based": [
+            113
+          ],
+          "direct_page_image_checked_this_pass": true
+        },
+        "scope": "Historical Irish household practice, not universal or compulsory Roman liturgy",
+        "publication_authorized": false,
+        "final_editorial_approval": false
+      }
+    }
+  ],
+  "invariants": {
+    "original_archival_500_unchanged": true,
+    "fixed_50_sample_unchanged": true,
+    "effective_review_count_after_adjustments": 500,
+    "source_citation_gates_retain": true,
+    "private_612_screener_recheck_needed": true,
+    "publication_authorized": false
+  },
+  "notes": [
+    "Source pages were opened as original PDF screenshots in this turn",
+    "All three overlapping IDs were outside fixed seeded sample",
+    "Avoid reimporting private preview copy into public repository"
+  ]
+}

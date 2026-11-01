@@ -1,0 +1,1080 @@
+{
+  "schema": "AO_DYK_RANDOM_50_REMEDIATION_OVERLAY_V1",
+  "date": "2026-10-31",
+  "status": "REVIEW_CORRECTIONS_SOURCE_CHECKS_ZERO_APPROVAL_OR_PUBLICATION",
+  "baseline": {
+    "population": 500,
+    "original_index_blob_sha": "844faad20dc20453d06f25a194b1073cc26eb8c9",
+    "original_sample_blob_sha": "9af5905a2a70df8388c9f669f5c309d58147d7d3",
+    "seed_uint32": 20261031,
+    "original_drawn_ids": [
+      "DYK-H04-W-A-051",
+      "DYK-H04-W-A-048",
+      "DYK-GI-G074",
+      "DYK-UM01-009",
+      "DYK-G365-CAL-020",
+      "DYK-UM01-022",
+      "DYK-H04-P-017",
+      "DYK-H04-W-B-010",
+      "DYK-G365-W-B-062",
+      "DYK-H04-W-A-109",
+      "DYK-G365-M-DEAD-003",
+      "DYK-H04-W-B-028",
+      "DYK-UM02-015",
+      "DYK-UM01-007",
+      "DYK-G500-W-H-017",
+      "DYK-G365-CAL-037",
+      "DYK-G365-M-BLSS-001",
+      "DYK-H04-W-B-105",
+      "DYK-UM01-014",
+      "DYK-G500-W-H-018",
+      "DYK-G500-W-UNIDX-008",
+      "DYK-G365-M-SJOS-001",
+      "DYK-UM01-030",
+      "DYK-H04-P-061",
+      "DYK-H04-W-B-089",
+      "DYK-GI-G094",
+      "DYK-UM02-008",
+      "DYK-G414-W-B-008",
+      "DYK-M04-CANON-042",
+      "DYK-H04-W-B-044",
+      "DYK-G365-CAL-032",
+      "DYK-G500-W-H-029",
+      "DYK-UM03-042",
+      "DYK-H04-W-A-074",
+      "DYK-UM02-022",
+      "DYK-H04-P-111",
+      "DYK-UM02-030",
+      "DYK-H04-W-B-014",
+      "DYK-G500-W-H-030",
+      "DYK-G461-W-C-008",
+      "DYK-H04-W-B-165",
+      "DYK-M04-CANON-047",
+      "DYK-UM02-024",
+      "DYK-G414-W-B-073",
+      "DYK-G414-W-B-023",
+      "DYK-H04-W-B-035",
+      "DYK-H04-P-119",
+      "DYK-UM02-050",
+      "DYK-G414-W-B-009",
+      "DYK-H04-W-A-078"
+    ]
+  },
+  "retired_from_eligible_review": [
+    {
+      "id": "DYK-GI-G074",
+      "reason": "Previously rejected for Did You Know Home fit in R25/R29; historic raw research retained, never counted as an approved fact.",
+      "replacement_id": "DYK-R50-W-P096-UKR-BREAD-CANDLE"
+    }
+  ],
+  "replacement": {
+    "id": "DYK-R50-W-P096-UKR-BREAD-CANDLE",
+    "replaces_id": "DYK-GI-G074",
+    "source_id": "WEI58-DIRECT-P096-UKR-BREAD-CANDLE",
+    "source_witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "source_title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+    "source": {
+      "printed_pages": [
+        96
+      ],
+      "pdf_page_zero_based": [
+        113
+      ]
+    },
+    "statement": {
+      "en": "In a Ukrainian Christmas custom recorded by Weiser, a church-blessed Christmas candle was set upright in a loaf of bread instead of a candlestick.",
+      "fr": "Dans une coutume ukrainienne de Noël rapportée par Weiser, on fichait une bougie de Noël bénie à l'église dans une miche de pain, plutôt que dans un chandelier."
+    },
+    "scope": "Historical and Ukrainian; this is a particular custom, not a liturgical rubric or a universal Ukrainian practice.",
+    "editorial_note": "Distinct from generic WEI58-08-005 family candle blessing DYK-H04-W-A-047. Direct reading p96 with exact candle-in-bread distinction.",
+    "source_page_image_directly_checked": true,
+    "publication_authorized": false,
+    "french_final_signoff": false,
+    "full_612_semantic_uniqueness_approved": false
+  },
+  "revisions": [
+    {
+      "id": "DYK-H04-W-A-048",
+      "kind": "SOURCE_SPAN_CORRECTION",
+      "revised_statement": null,
+      "source": {
+        "printed_pages": [
+          96,
+          97
+        ],
+        "pdf_page_zero_based": [
+          113,
+          114
+        ]
+      },
+      "note": "Candle type first described p96 and the Trinity symbolism completes p97; statement unchanged."
+    },
+    {
+      "id": "DYK-H04-W-B-165",
+      "kind": "BILINGUAL_SOURCE_PRECISION",
+      "revised_statement": {
+        "en": "For Saint John's feast, Weiser describes Breton fishing crews hoisting a barrel of discarded clothing to the tip of a ship's mainsail yard and setting its contents alight; the men then prayed and sang around the mast.",
+        "fr": "Pour la Saint-Jean, Weiser décrit des équipages de pêche bretons hissant un tonneau de vieux vêtements à l'extrémité de la vergue de grand-voile et y mettant le feu ; les hommes priaient et chantaient ensuite autour du mât."
+      },
+      "source": {
+        "printed_pages": [
+          330
+        ],
+        "pdf_page_zero_based": [
+          347
+        ]
+      },
+      "note": "The burning barrel reached the mainsail yard, not the mast; the men prayed and sang around the mast."
+    },
+    {
+      "id": "DYK-UM02-022",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "For First Friday Sacred Heart devotions, Weiser describes families lighting a vigil light before a statue of the Sacred Heart at home, alongside observances such as Mass and Communion in church.",
+        "fr": "Pour la dévotion des premiers vendredis au Sacré-Cœur, Weiser décrit des familles allumant chez elles une veilleuse devant une statue du Sacré-Cœur, en complément de pratiques à l'église comme la messe et la communion."
+      },
+      "source": {
+        "printed_pages": [
+          29
+        ],
+        "pdf_page_zero_based": [
+          46
+        ]
+      },
+      "note": "Replaces generic linkage with a source-specific home devotional action; don't present as mandatory."
+    },
+    {
+      "id": "DYK-G500-W-H-030",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "Weiser distinguishes the Easter Marian antiphon Regina Coeli laetare from another Catholic Easter hymn, Regina Coeli jubila, which he says first appeared in 1600.",
+        "fr": "Weiser distingue l'antienne mariale pascale Regina Coeli laetare d'un autre cantique pascal catholique, Regina Coeli jubila, apparu selon lui en 1600."
+      },
+      "source": {
+        "printed_pages": [
+          231
+        ],
+        "pdf_page_zero_based": [
+          248
+        ]
+      },
+      "note": "Concrete two-hymn distinction and 1600 historical date; not an equivalence of the texts."
+    },
+    {
+      "id": "DYK-G500-W-H-029",
+      "kind": "BILINGUAL_SOURCE_PRECISION",
+      "revised_statement": {
+        "en": "Weiser attributes O filii et filiae to the Franciscan Jean Tisserand and records its first publication in Paris in 1525; an English translation appeared in a London Catholic manual in 1748.",
+        "fr": "Weiser attribue O filii et filiae au franciscain Jean Tisserand et situe sa première publication à Paris en 1525 ; une traduction anglaise parut dans un manuel catholique à Londres en 1748."
+      },
+      "source": {
+        "printed_pages": [
+          229,
+          230
+        ],
+        "pdf_page_zero_based": [
+          246,
+          247
+        ]
+      },
+      "note": "The specific composition/date is on p229 and English translation crosses to p230, so p230 alone was inadequate."
+    },
+    {
+      "id": "DYK-G414-W-B-008",
+      "kind": "SOURCE_SPAN_CORRECTION",
+      "revised_statement": null,
+      "source": {
+        "printed_pages": [
+          195,
+          196
+        ],
+        "pdf_page_zero_based": [
+          212,
+          213
+        ]
+      },
+      "note": "Royal mandatum and alms on p195; earlier inherited pointer p196 alone was off by one."
+    },
+    {
+      "id": "DYK-H04-W-A-074",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "On Saint Stephen's Day, Swedish 'Staffan riders' once paraded through towns singing songs honouring the 'Saint of Horses,' a custom Weiser distinguishes from blessing horses.",
+        "fr": "Le jour de la Saint-Étienne, les « cavaliers de Staffan » défilaient autrefois dans des villes suédoises en chantant en l'honneur du « saint des chevaux » ; Weiser distingue cet usage de la bénédiction des chevaux."
+      },
+      "source": {
+        "printed_pages": [
+          129
+        ],
+        "pdf_page_zero_based": [
+          146
+        ]
+      },
+      "note": "Replaces an uninformative 'distinct from' with the named local actors and song."
+    },
+    {
+      "id": "DYK-UM02-024",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "According to Weiser, Pope Gelasius I prescribed in 494 that ordinations take place on Ember Saturdays, giving the seasonal fasts a particular connection to preparation for Holy Orders.",
+        "fr": "Selon Weiser, le pape Gélase Ier prescrivit en 494 que les ordinations aient lieu les samedis des Quatre-Temps, reliant ainsi spécialement ces jeûnes saisonniers à la préparation aux ordres sacrés."
+      },
+      "source": {
+        "printed_pages": [
+          32
+        ],
+        "pdf_page_zero_based": [
+          49
+        ]
+      },
+      "note": "Replaces generic harvest purpose with the dated Holy Orders connection; attribution remains to Weiser."
+    },
+    {
+      "id": "DYK-H04-W-B-035",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "Weiser describes an Easter Friday pilgrimage in the Austrian Tyrol whose participants walked ten hours each way to reach a shrine.",
+        "fr": "Weiser décrit dans le Tyrol autrichien un pèlerinage du vendredi de Pâques dont les participants marchaient dix heures à l'aller, puis autant au retour, pour rejoindre un sanctuaire."
+      },
+      "source": {
+        "printed_pages": [
+          225
+        ],
+        "pdf_page_zero_based": [
+          242
+        ]
+      },
+      "note": "The concrete ten-hour journey is recorded at p225; original text was vague."
+    },
+    {
+      "id": "DYK-G461-W-C-008",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "The early Christian Easter Octave was called 'White Week' in the West because newly baptized Christians wore white garments throughout it, changing back to ordinary clothes on the following Sunday.",
+        "fr": "Dans l'Occident chrétien ancien, l'octave de Pâques était appelée « Semaine blanche » parce que les nouveaux baptisés portaient des vêtements blancs toute la semaine, puis reprenaient leur tenue ordinaire le dimanche suivant."
+      },
+      "source": {
+        "printed_pages": [
+          222
+        ],
+        "pdf_page_zero_based": [
+          239
+        ]
+      },
+      "note": "Adds the unusual name, its origin and the return to ordinary clothes; source p222."
+    },
+    {
+      "id": "DYK-G414-W-B-023",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "Weiser attributes the spread of Easter Vigil bonfires to the European mainland partly to Irish missionaries of the sixth and seventh centuries, while recording the blessing of fire in Rome by the late ninth century.",
+        "fr": "Weiser attribue en partie la diffusion des feux de la vigile pascale sur le continent européen aux missionnaires irlandais des VIe et VIIe siècles, et situe l'intégration de la bénédiction du feu dans la liturgie romaine vers la fin du IXe siècle."
+      },
+      "source": {
+        "printed_pages": [
+          216
+        ],
+        "pdf_page_zero_based": [
+          233
+        ]
+      },
+      "note": "Source attribution, not an independently proven Irish origin; replace generic non-claim with the account's specific chronology."
+    },
+    {
+      "id": "DYK-G365-CAL-020",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "For All Souls' Day in Puerto Rico, Weiser describes women carrying both flowers and water to distant graves because water was unavailable at the cemetery; the priest stopped to pray at each grave.",
+        "fr": "Pour la Commémoration des défunts à Porto Rico, Weiser décrit des femmes portant fleurs et eau jusqu'à des tombes éloignées, faute d'eau au cimetière ; le prêtre s'arrêtait pour prier à chaque tombe."
+      },
+      "source": {
+        "printed_pages": [
+          311
+        ],
+        "pdf_page_zero_based": [
+          328
+        ]
+      },
+      "note": "Source-specific distinctive water detail and prayer at graves, historical local scope."
+    },
+    {
+      "id": "DYK-G365-W-B-062",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "In a European Pentecost custom described by Weiser, people climbed hills at dawn to pray, calling it 'catching the Holy Ghost'—a symbolic folk expression, not a literal claim about the Holy Spirit.",
+        "fr": "Dans une coutume européenne de Pentecôte décrite par Weiser, on montait sur les collines à l'aube pour prier, parlant de « saisir le Saint-Esprit » : une expression populaire symbolique, non une affirmation littérale sur l'Esprit Saint."
+      },
+      "source": {
+        "printed_pages": [
+          253
+        ],
+        "pdf_page_zero_based": [
+          270
+        ]
+      },
+      "note": "Precise source's symbolic local name; prevent doctrinal misunderstanding."
+    },
+    {
+      "id": "DYK-H04-W-A-078",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "On Holy Innocents’ Day, some religious communities let novices sit first at meals and meetings, and sometimes even appointed the most recently professed member as superior for a single day.",
+        "fr": "Le jour des Saints Innocents, certaines communautés religieuses laissaient les novices prendre les premières places aux repas et aux réunions ; parfois même, le dernier profès devenait supérieur pour une seule journée."
+      },
+      "source": {
+        "printed_pages": [
+          133
+        ]
+      },
+      "note": "Specific one-day superior detail"
+    },
+    {
+      "id": "DYK-H04-W-B-028",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "After Easter Mass, some Europeans joined an ‘Easter walk’ through the fields behind a decorated crucifix or Easter candle, with prayers and hymns; Weiser links the custom to later Easter parades.",
+        "fr": "Après la messe de Pâques, des Européens faisaient autrefois une « promenade de Pâques » dans les champs derrière un crucifix orné ou le cierge pascal, en priant et chantant ; Weiser relie cet usage aux défilés pascals ultérieurs."
+      },
+      "source": {
+        "printed_pages": [
+          220,
+          221
+        ]
+      },
+      "note": "Concrete action and page span"
+    },
+    {
+      "id": "DYK-H04-W-B-014",
+      "kind": "SOURCE_SPAN_CORRECTION",
+      "revised_statement": null,
+      "source": {
+        "printed_pages": [
+          202,
+          203
+        ]
+      },
+      "note": "Good Friday hooded procession starts p202; p203 continues"
+    },
+    {
+      "id": "DYK-G365-M-BLSS-001",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "In the traditional Saint Blaise blessing, the priest holds two candles crossed beneath each person’s chin while asking God to protect them through the saint’s intercession. This blessing is not a mandatory part of Mass.",
+        "fr": "Dans l'ancienne bénédiction de saint Blaise, le prêtre tient deux cierges en croix sous le menton de chaque fidèle, demandant à Dieu de le protéger par l'intercession du saint. Cette bénédiction n'est pas un élément obligatoire de la messe."
+      },
+      "source": {
+        "source_url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881"
+      },
+      "note": "Specific ritual action, not a Mass obligation"
+    },
+    {
+      "id": "DYK-G365-M-DEAD-003",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "In the Polish custom of wypominki, parishioners submit written names of departed relatives or friends so that the names can be read aloud and remembered in communal prayers, especially during November.",
+        "fr": "Dans la coutume polonaise des wypominki, les paroissiens remettent les noms écrits de proches défunts afin qu'ils soient lus à voix haute et recommandés à la prière commune, surtout en novembre."
+      },
+      "source": {
+        "source_url": "https://parafia-maryi-krolowej.poznan.pl/wypominki/"
+      },
+      "note": "Polish source-specific detail; not generic Nov 2 definition"
+    },
+    {
+      "id": "DYK-G365-M-SJOS-001",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "At Saint Joseph Cathedral in Baton Rouge on 19 March 2026, a Sicilian-style Saint Joseph altar included a meatless communal lunch, and its surplus food was donated to local charities.",
+        "fr": "Le 19 mars 2026, à la cathédrale Saint-Joseph de Baton Rouge, un autel de tradition sicilienne s'accompagnait d'un repas communautaire sans viande ; les surplus alimentaires furent remis à des associations caritatives."
+      },
+      "source": {
+        "source_url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1"
+      },
+      "note": "Concrete diocesan 2026 witness"
+    },
+    {
+      "id": "DYK-H04-P-017",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "At Altavilla's Loreto shrine, Pitrè recorded ex-votos shaped like wax heads, hearts and eyes, alongside painted tablets and pilgrims' long braids of hair.",
+        "fr": "Au sanctuaire de Lorette d'Altavilla, Pitrè a relevé des ex-voto en forme de têtes, de cœurs et d'yeux en cire, à côté de tableaux peints et de longues tresses de cheveux offertes par les pèlerins."
+      },
+      "source": {
+        "printed_pages": [
+          90
+        ],
+        "pdf_page_1based": [
+          152
+        ]
+      },
+      "note": "Particular wax shapes and hair braids attested in prior original OCR, image still uncertified."
+    },
+    {
+      "id": "DYK-H04-P-111",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "revised_statement": {
+        "en": "During Saint Angelo's feast at Licata, Pitrè described a musical oratorio performed in church about the martyrdom of the saint, with poetry and music composed by local artists.",
+        "fr": "Pour la fête de saint Ange à Licata, Pitrè décrivait un oratorio musical joué à l'église sur le martyre du saint, avec des vers et une musique composés par des artistes du lieu."
+      },
+      "source": {
+        "printed_pages": [
+          416
+        ],
+        "pdf_page_1based": [
+          474
+        ]
+      },
+      "note": "Source's unique narrative and local artistic authorship; Italian OCR page checked in prior research, image not new."
+    },
+    {
+      "id": "DYK-G365-CAL-037",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "source": {
+        "source_url": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+        "printed_spread_pages": [
+          132,
+          133
+        ]
+      },
+      "revised_statement": {
+        "en": "An official Polish archive photograph dated 1930 documents women in Bronowice near Kraków decorating a house with chestnut branches for Pentecost, locally called Zielone Świątki (‘Green Holidays’).",
+        "fr": "Une photographie d'archives polonaises datée de 1930 montre des femmes de Bronowice, près de Cracovie, ornant une maison de rameaux de marronnier pour la Pentecôte, appelée localement Zielone Świątki (« fêtes vertes »)."
+      },
+      "note": "National Digital Archives original album English and Polish caption verified on pp132–133; do not ascribe magical properties as Catholic teaching; page image itself not independently re-rendered."
+    },
+    {
+      "id": "DYK-G365-CAL-032",
+      "kind": "BILINGUAL_CURIOSITY_REWRITE",
+      "source": {
+        "source_url": "https://mek.oszk.hu/02100/02115/html/1-713.html",
+        "text_heading": "betlehemezés, betlehemes játék"
+      },
+      "revised_statement": {
+        "en": "In Hungarian Christmas Nativity plays, a comic hard-of-hearing old shepherd could misunderstand an angel's Latin words; the ethnographic lexicon records both live-actor and puppet versions of the plays.",
+        "fr": "Dans des jeux de Noël hongrois, un vieux berger sourd pouvait, de manière comique, mal comprendre les mots latins d'un ange ; le lexique ethnographique décrit aussi bien des versions jouées par des acteurs que par des marionnettes."
+      },
+      "note": "Hungarian ethnographic dictionary section betlehemezés directly checked: 'pásztorok félreértik az angyal latin szavát', and 'élő szereplőkkel és a bábokkal'."
+    }
+  ],
+  "original_folio_direct_checks": [
+    {
+      "id": "DYK-G500-W-H-017",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        172
+      ],
+      "pdf_page_zero_based": [
+        189
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p172: milk-food dispensations and almsgiving; keep historical scope",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G500-W-UNIDX-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        58
+      ],
+      "pdf_page_zero_based": [
+        75
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p58: central-European rough nights Saint Thomas, masks; folklore not approved ritual",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        195,
+        196
+      ],
+      "pdf_page_zero_based": [
+        212,
+        213
+      ],
+      "result": "MATCHED_CORRECTED_LOCATOR",
+      "explanation": "Weiser p195 names medieval kings and meal/alms, p196 continues general tradition",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G500-W-H-029",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        229,
+        230
+      ],
+      "pdf_page_zero_based": [
+        246,
+        247
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p229 first publication and p230 English translation; original pointer p230 alone inadequate",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G500-W-H-030",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        231
+      ],
+      "pdf_page_zero_based": [
+        248
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p231 distinguishes two different Regina Coeli hymn titles and first appearance 1600",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G461-W-C-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        222
+      ],
+      "pdf_page_zero_based": [
+        239
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p222: Easter octave White Week newly baptized in white clothing",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-073",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        258
+      ],
+      "pdf_page_zero_based": [
+        275
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser p258: 1680 Vienna preaching at Trinity column, source claims column dedicated to Trinity",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-023",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        216
+      ],
+      "pdf_page_zero_based": [
+        233
+      ],
+      "result": "MATCHED_SCOPE_LIMIT",
+      "explanation": "Weiser p216 attributes Irish Easter-fire spread to missionaries; historical attribution not independently established",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G414-W-B-009",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        196,
+        197
+      ],
+      "pdf_page_zero_based": [
+        213,
+        214
+      ],
+      "result": "MATCHED",
+      "explanation": "Weiser pp196–197: French bells to Rome folktale, non-doctrinal",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-074",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        129
+      ],
+      "pdf_page_zero_based": [
+        146
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p129: Sweden's Staffan riders and their singing distinct from horse blessings",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-024",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        32
+      ],
+      "pdf_page_zero_based": [
+        49
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p32: Gelasius 494 Ember Saturday ordinands",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-035",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        225
+      ],
+      "pdf_page_zero_based": [
+        242
+      ],
+      "result": "MATCHED_REWRITTEN",
+      "explanation": "Weiser p225: Austrian Tyrol ten hours each way at Easter Friday pilgrimage",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-009",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        188
+      ],
+      "pdf_page_zero_based": [
+        205
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser describes three post-Palm-Sunday days devoted to cleaning, done by Wednesday evening.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-CAL-020",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        311
+      ],
+      "pdf_page_zero_based": [
+        328
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser describes Puerto Rican All Souls cemetery flowers, transported water, priest's prayers.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-W-B-062",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        253
+      ],
+      "pdf_page_zero_based": [
+        270
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser records Pentecost dawn hill-climbing and symbolic name 'catching Holy Ghost'.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-044",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        238
+      ],
+      "pdf_page_zero_based": [
+        255
+      ],
+      "result": "MATCHED_SOURCE_PAGE_DIRECT",
+      "explanation": "Weiser describes moulded Russian paska with relief crosses and Jesus Christ initials.",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-051",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        99
+      ],
+      "pdf_page_zero_based": [
+        116
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Paradise plays and fir tree hung with apples",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-010",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        197
+      ],
+      "pdf_page_zero_based": [
+        214
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Green Thursday green-herb soup and spinach with eggs",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-109",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        184
+      ],
+      "pdf_page_zero_based": [
+        201
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Polish Lent herring and sour fermented rye soup",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-028",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        220,
+        221
+      ],
+      "pdf_page_zero_based": [
+        237,
+        238
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Easter walk with crucifix or Easter candle and prayers",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-007",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        124
+      ],
+      "pdf_page_zero_based": [
+        141
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Northern Slavic szopka puppet theatre",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-105",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        291
+      ],
+      "pdf_page_zero_based": [
+        308
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Portugal Assumption boat and sea blessing",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-014",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        184
+      ],
+      "pdf_page_zero_based": [
+        201
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Pretzels distributed to poor during Lent",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-089",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        269
+      ],
+      "pdf_page_zero_based": [
+        286
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Southern France harvest sheaf tied as a cross",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-008",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        206
+      ],
+      "pdf_page_zero_based": [
+        223
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Crossed Good Friday buns and explicitly folkloric healing belief",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-014",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        202,
+        203
+      ],
+      "pdf_page_zero_based": [
+        219,
+        220
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Good Friday hooded confraternities, two-page source",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-078",
+      "witness": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "printed_pages": [
+        133
+      ],
+      "pdf_page_zero_based": [
+        150
+      ],
+      "result": "MATCHED_DIRECT_SOURCE_SCREENSHOT",
+      "explanation": "Innocents Day young novices and ceremonial one-day superior",
+      "method": "CURRENT_TURN_ORIGINAL_FACSIMILE_SCREENSHOT",
+      "historical_independence_verified": false,
+      "publication_authorized": false
+    }
+  ],
+  "effective_roster_rules": [
+    "Retain all 500 historical raw research records unchanged in the archival composed index",
+    "For review only, exclude G074 and include the new sourced Ukrainian candle-bread fact, preserving 500 eligible review slots and the 49 other original draws",
+    "Apply revision copy and source-page corrections by record ID before any subsequent per-record approval",
+    "This is a repaired sample, not a fresh random 50/500 draw, and must not be represented as 50/50 successfully verified",
+    "Authoritative approval/publication flags and private H7 remain unchanged"
+  ],
+  "summary": {
+    "archival_research_records": 500,
+    "review_eligible_effective_records": 500,
+    "original_sample_unchanged_until_overlay": 50,
+    "post_repair_review_sample": 50,
+    "original_source_page_checks_this_pass": 27,
+    "correction_actions": 23,
+    "retired_glossary_records": 1,
+    "specific_replacement_records": 1,
+    "source_image_corroboration_independent_historiography": false,
+    "legacy_612_semantic_complete": false,
+    "all_50_finally_approved": false,
+    "new_publications": 0,
+    "additional_weak_but_previously_unflagged_discoveries_rewritten": 7,
+    "other_web_source_reviews": 7,
+    "remaining_specific_photo_caption_unchecked": false,
+    "original_pitre_images_uncertified": 4
+  },
+  "other_verified_source_checks": [
+    {
+      "id": "DYK-GI-G094",
+      "result": "DIRECT_1962_RUBRICS_SCREEN_CONFIRMED",
+      "source": "https://maternalheart.org/library/1962rubrics.pdf",
+      "locator": "nn. 80, 83, 87, 89; PDF p15",
+      "notes": "Original 1962 rubric Greater/Lesser Litanies checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-M-BLSS-001",
+      "result": "DIRECT_RITUAL_PRAYERBOOK_SOURCE_CONFIRMED",
+      "source": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+      "locator": "Blessing of candles on Saint Blaise day",
+      "notes": "Historical crossed candle blessing and formula checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-M-SJOS-001",
+      "result": "DIRECT_DIOCESAN_2026_SOURCE_CONFIRMED",
+      "source": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+      "locator": "19 March 2026",
+      "notes": "Cathedral altar, meatless lunch, food donations checked",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-M-DEAD-003",
+      "result": "DIRECT_TWO_PRIMARY_OR_PARISH_SOURCES_CONFIRMED",
+      "source": "https://parafia-maryi-krolowej.poznan.pl/wypominki/",
+      "locator": "Wypominki / 2 November",
+      "notes": "Polish parish supports names read and communal prayers; France bishops support distinct 2 Nov observance",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-CAL-032",
+      "result": "DIRECT_HUNGARIAN_ETHNOGRAPHIC_LEXICON_TEXT_CONFIRMED",
+      "source": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+      "locator": "Betlehemezés",
+      "notes": "Hungarian ethnographic dictionary section betlehemezés directly checked: 'pásztorok félreértik az angyal latin szavát', and 'élő szereplőkkel és a bábokkal'.",
+      "publication_authorized": false,
+      "method": "CURRENT_TURN_ORIGINAL_ETHNOGRAPHIC_ENTRY_TEXT"
+    },
+    {
+      "id": "DYK-G365-CAL-037",
+      "result": "DIRECT_ORIGINAL_NAC_PDF_CAPTION_CHECKED_PHOTO_IMAGE_NOT_RERENDERED",
+      "source": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+      "locator": "1930 near Kraków",
+      "notes": "National Digital Archives original album English and Polish caption verified on pp132–133; do not ascribe magical properties as Catholic teaching; page image itself not independently re-rendered.",
+      "publication_authorized": false,
+      "method": "CURRENT_TURN_ORIGINAL_NAC_ALBUM_BILINGUAL_CAPTION_TEXT"
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "result": "DIRECT_1962_RITUS_SERVANDUS_SCREEN_CONFIRMED",
+      "source": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "method": "CURRENT_TURN_ORIGINAL_RITUS_SERVANDUS_PDF_SCREENSHOT",
+      "locator": "IX.2, printed 16 / PDF zero-index 15",
+      "notes": "Canon after Consecration contains Memento etiam and silent naming of departed, distinct from Memento for the living earlier",
+      "publication_authorized": false
+    }
+  ],
+  "pitre_prior_source_evidence_reconciled": [
+    {
+      "id": "DYK-UM01-022",
+      "source_id": "PIT1900-IT-026",
+      "printed_page": 448,
+      "pdf_page_1based": 506,
+      "method": "CANICATTINI_FAMILY_TABLE_PRIOR_SCAN",
+      "note": "Earlier Pitrè 1900 wave01 canonical action; Italian text anchor of adult man, woman, child; scan checked in inherited research, not now",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-017",
+      "source_id": "PIT1900-W05-OBS-017",
+      "printed_page": 90,
+      "pdf_page_1based": 152,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p90 names wax ex-voto heads, hearts, eyes plus braids of hair. Prior study flags image not individually certified.",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-030",
+      "source_id": "PIT1900-IT-024",
+      "printed_page": 447,
+      "pdf_page_1based": 505,
+      "method": "ORIGINAL_OCR_QUOTED_PRIOR_FACSIMILE_CHECK",
+      "note": "Canicattini St Joseph 19 March and first Sunday September, OCR action and prior original page check.",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-061",
+      "source_id": "PIT1900-W05-OBS-061",
+      "printed_page": 302,
+      "pdf_page_1based": 360,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p302 shows Saint Conrad reliquary urn between rows of lit votive structures and kneeling devotees; drummer is earlier passage not independently checked now.",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-042",
+      "source_id": "PIT1900-NEW-082",
+      "printed_page": 125,
+      "pdf_page_1based": 187,
+      "method": "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW",
+      "note": "Pitrè first edition OCR and earlier original-page contact sheet checked, not independently redone now",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-111",
+      "source_id": "PIT1900-W05-OBS-111",
+      "printed_page": 416,
+      "pdf_page_1based": 474,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p416: in-church musical oratorio on Saint Angelo's martyrdom with local composer and poet",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-030",
+      "source_id": "PIT1900-NEW-026",
+      "printed_page": 36,
+      "pdf_page_1based": 98,
+      "method": "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW",
+      "note": "Pitrè p36 municipal master mason uses bell to signal halts; earlier page image checked",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-119",
+      "source_id": "PIT1900-W05-OBS-119",
+      "printed_page": 424,
+      "pdf_page_1based": 482,
+      "method": "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED",
+      "note": "Pitrè p424 states second Sunday May in 1900 historical account; now date should not be projected to current year",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-050",
+      "source_id": "PIT1900-NEW-110",
+      "printed_page": 135,
+      "pdf_page_1based": 197,
+      "method": "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW",
+      "note": "Pitrè first edition p135 reports banner sent by emigrants in America for St Cyrus procession; original image contact sheet prior-researched",
+      "original_book": "Giuseppe Pitrè, Feste patronali in Sicilia, 1900",
+      "primary_scan": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "original_page_image_newly_checked_this_pass": false,
+      "independent_historical_witness": false,
+      "publication_authorized": false
+    }
+  ]
+}

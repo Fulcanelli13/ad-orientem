@@ -1,0 +1,97 @@
+{
+  "schema": "AO_DYK_R50_SOURCE_AND_612_CROSSBANK_SUMMARY_V1",
+  "date": "2026-10-31",
+  "status": "REVIEW_ONLY_SOME_SOURCE_HOLDS_REMAIN",
+  "private_612_lexical_audit": {
+    "repo": "Fulcanelli13/folio-core",
+    "branch": "research/did-you-know-discovery-r01-20261028",
+    "path": "data/discovery/research/r32-dyk-corrected500-v612-private-lexical-audit.v1.json",
+    "private_review_commit": "fd7c89cbb866cdf0d24f9e127e76fa554260c8bc",
+    "total_private": 612,
+    "eligible_research": 500,
+    "exact_english_collision_count": 0,
+    "exact_french_collision_count": 0,
+    "exact_source_id_collision_count": 0,
+    "above_025_lexical_overlap_count": 0,
+    "above_035_lexical_overlap_count": 0,
+    "selected_random_50_above_025_count": 0,
+    "manual_semantic_approved": false,
+    "private_texts_not_copied_here": true,
+    "corrected_en_fr_after_revisions": 23,
+    "next_recheck_required_after_new_overlay": false,
+    "effective_500_after_three_overlaps": true
+  },
+  "three_non_sample_overlaps": [
+    {
+      "research_id": "DYK-H04-W-B-176",
+      "status": "RESOLVED_BY_R33_EDITED_EFFECTIVE_500",
+      "reason": "Pilgrimage facts about Sainte-Anne-de-Beaupré overlap a private place-specific discovery; distinct angle or replacement needed.",
+      "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
+    },
+    {
+      "research_id": "DYK-H04-W-B-153",
+      "status": "RESOLVED_BY_R33_EDITED_EFFECTIVE_500",
+      "reason": "Lough Derg penitential-pilgrimage claim substantially overlaps private sanctuary discovery; narrow to a distinctive source action or replace.",
+      "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
+    },
+    {
+      "research_id": "DYK-GI-G319",
+      "status": "RESOLVED_BY_R33_EDITED_EFFECTIVE_500",
+      "reason": "Ciborium-veil comparison shares wording about differing veils with private glossary-derived concepts; distinguish the reserved-vessel practice and avoid glossary restatement.",
+      "resolution_overlay": "data/research/did-you-know/dyk-r33-outside-sample-three-overlap-resolution.v1.json"
+    }
+  ],
+  "same50_source_progress": {
+    "original_fixed_seed": 20261031,
+    "drawn": 50,
+    "original_raw_draw_still_preserved": true,
+    "one_glossary_failure_replaced_transparently": true,
+    "revisions": 23,
+    "direct_weiser_folio_checks": 27,
+    "other_external_source_reviews": 7,
+    "original_pitre_folio_images_unavailable_for_fresh_check": true,
+    "remaining_original_pitre_evidence_must_be_accurately_categorized": true,
+    "still_unresolved_specific_1930_national_archives_caption": true,
+    "source_lexical_screen_not_a_semantic_approval": true,
+    "pitre_prior_evidence_records_reconciled": 9,
+    "current_tier_distribution": {
+      "DIRECT_FACSIMILE_PAGE_CHECKED": 31,
+      "CANICATTINI_FAMILY_TABLE_PRIOR_SCAN": 1,
+      "ORIGINAL_OCR_QUOTED_PAGE_IMAGE_NOT_CERTIFIED": 4,
+      "DIRECT_TWO_PRIMARY_OR_PARISH_SOURCES_CONFIRMED": 1,
+      "SOURCE_PAGE_IMAGE_CHECKED_CLAIM_SUPPORTED": 3,
+      "NATIONAL_ARCHIVE_PHOTO_CAPTION_NOT_RECHECKED": 1,
+      "DIRECT_RITUAL_PRAYERBOOK_SOURCE_CONFIRMED": 1,
+      "DIRECT_DIOCESAN_2026_SOURCE_CONFIRMED": 1,
+      "ORIGINAL_OCR_QUOTED_PRIOR_FACSIMILE_CHECK": 1,
+      "DIRECT_1962_RUBRICS_SCREEN_CONFIRMED": 1,
+      "PARTIAL_CATHOLIC_LEXICON_SECONDARY_CONFIRMED": 1,
+      "INHERITED_PRIOR_CONTACT_SHEET_PAGE_IMAGE_REVIEW": 3,
+      "DIRECT_1962_RITUS_SERVANDUS_SCREEN_CONFIRMED": 1
+    },
+    "fixed_50_untouched_by_r33": true,
+    "remaining_specific_1930_national_archives_caption": false,
+    "hungarian_lexicon_actor_puppet_original_source_confirmed": true,
+    "original_pitre_ocr_reconciled_count": 9,
+    "three_crossbank_overlaps_resolved_without_changing_50_draw": true
+  },
+  "release": {
+    "all_500_automatically_editorial_approved": false,
+    "public_h7_published_new_facts": 0,
+    "private_previews_not_published": true
+  },
+  "source_refs": [
+    "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "https://maternalheart.org/library/1962rubrics.pdf",
+    "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+    "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+    "https://parafia-maryi-krolowej.poznan.pl/wypominki/",
+    "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html"
+  ],
+  "research_cohort_sample_acceptance": {
+    "status": "ACCEPTED_FOR_NEXT_RESEARCH_PRODUCTION_NOT_APPROVED_FOR_APP_PUBLICATION",
+    "record": "data/research/did-you-know/dyk-repaired-random50-research-cohort-500-editorial-acceptance.v1.json",
+    "source_screenshot_exceptions": 4,
+    "next_research_501_520_started": true
+  }
+}
