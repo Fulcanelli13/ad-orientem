@@ -49,4 +49,11 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
  padding:0!important;border:0!important;border-radius:0!important;background:transparent!important
 }
 .aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc .aoC3UpcomingCard>.aoC3Info[hidden]{display:none!important}
+
+/* The original source-owned Calendar Class I artwork is also authoritative
+   for today's Home hero. Crop just the image; attribution stays legible. */
+.aoH7Screens .aoH7Hero .aoC3DatedImage{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--ao-c3-x,50%) var(--ao-c3-y,30%);transform:scale(var(--ao-c3-zoom,1.075));transform-origin:center}
+.aoH7Screens .aoH7Hero .aoC3DatedCredit{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;background:linear-gradient(transparent,rgba(5,12,15,.93));color:#eee;font:12px/1.3 Georgia,serif}
+.aoH7Screens .aoH7Hero .aoC3DatedCredit span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aoH7Screens .aoH7Hero .aoC3DatedCredit a{flex:none;color:#eee;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
 `;
