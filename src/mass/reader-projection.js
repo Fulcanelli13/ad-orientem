@@ -11,7 +11,7 @@ const READY_TEXT = new Set(["READY","CACHED"]);
  */
 export function dialogueUndertextWithoutRepeatedRole(primary,vernacular){
   if(vernacular==null)return vernacular;
-  const role=value=>String(value??"").match(/^(\\s*)(℣\\.|℟\\.|V\\.|R\\.)(\\s*)/u);
+  const role=value=>String(value??"").match(/^(\s*)(℣\.|℟\.|V\.|R\.)(\s*)/u);
   const la=role(primary),translation=role(vernacular);
   if(!la||!translation)return vernacular;
   const group=mark=>(mark==="℣."||mark==="V.")?"V":"R";
