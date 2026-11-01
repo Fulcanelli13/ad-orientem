@@ -41,6 +41,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   novenaSot:moduleUrl("../../data/pray/novena-sot.v1.json"),
   approvedPlaceMedia:moduleUrl("../../data/geography/approved-place-media.v1.json"),
   approvedPlaceGallery:moduleUrl("../../data/geography/approved-place-gallery.v1.json"),
+  approvedObjectPhotoReuse:moduleUrl("../../data/geography/approved-object-photo-reuse.v1.json"),
   majorPlaceEditorial:moduleUrl("../../data/geography/major-places-editorial.v1.json"),
   illustratedPlaceGuides:moduleUrl("../../data/shrines/illustrated-place-guides-ireland.v1.json"),
   illustratedFrenchGuides:moduleUrl("../../data/shrines/illustrated-place-guides-france.v1.json"),
@@ -52,7 +53,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 
 export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
   const research=isResearchSaintsChannel(saintsChannel);
-  const [directory,geography,customs,customSources,customGuidance,customGuidanceP1,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relicIndoorPlacement,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,illustratedWorldMarianR1,illustratedGlobalSaintsR1,illustratedGlobalMarianB2,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
+  const [directory,geography,customs,customSources,customGuidance,customGuidanceP1,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relicIndoorPlacement,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,approvedObjectPhotoReuse,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,illustratedWorldMarianR1,illustratedGlobalSaintsR1,illustratedGlobalMarianB2,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -68,6 +69,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     fetchJson(EXPLORE_DATA_URLS.relatedPlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceMedia,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceGallery,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.approvedObjectPhotoReuse,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.majorPlaceEditorial,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedPlaceGuides,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchGuides,{fetchImpl,optional:true}),
@@ -126,6 +128,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     media:Object.freeze({
       approved:approvedPlaceMedia?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?safeArray(approvedPlaceMedia?.items):[],
       gallery:approvedPlaceGallery?.schema==="AO_APPROVED_PLACE_GALLERY_V1"?safeArray(approvedPlaceGallery?.items):[],
+      objectPhotoReuses:approvedObjectPhotoReuse?.schema==="AO_APPROVED_OBJECT_PHOTO_REUSE_V1"?safeArray(approvedObjectPhotoReuse?.releases):[],
     }),
     editorial:Object.freeze({
       featured:majorPlaceEditorial?.schema==="AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1"?safeArray(majorPlaceEditorial?.items):[],
