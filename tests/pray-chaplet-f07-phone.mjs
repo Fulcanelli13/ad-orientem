@@ -28,8 +28,18 @@ try{
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
    const base="#aoPray435930.open ";
+   const entry=page.locator(base+"[data-f07-mercy-entry='m1']");
+   assert.equal(await entry.count(),1,"Claude m1 must precede canonical opening prayers");
+   assert.equal(await entry.locator(".aoF07MercyEntryOutline li").count(),3,
+    "m1 must distinguish Opening, Five decades and Closing");
+   assert.equal(await entry.locator(".aoF07MercyEntryChips span").count(),2,
+    "m1 must display duration and customary prayer time");
+   assert.equal(await page.locator(base+".aoMercyLine").count(),0,
+    "Opening prayer text may not bypass the m1 Begin decision");
+   await page.screenshot({path:resolve(output,"mercy-m1-home-"+width+".png"),animations:"disabled"});
+   await page.locator(base+"[data-p435930-mercy-begin]").click();
    const crown=page.locator(base+"[data-ao-f07-crown]");
-   assert.equal(await crown.count(),1,"Opt-in F07 crown must be present in the actual Divine Mercy reader");
+   assert.equal(await crown.count(),1,"m2 crown must be present after explicit Begin");
    assert.equal(await crown.locator(".aoF07Bead").count(),55);
    assert.equal(await crown.getAttribute("data-total"),"62","The canonical five decades have 62 events by default");
    assert.equal(await page.locator(base+"[data-ao-mercy-bead-navigation]").count(),1,"The existing bead/decade navigator remains the owner");
@@ -104,10 +114,13 @@ try{
    await finalAction.click();
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),1,
     "Finish after the final source event must reveal completion");
+   await page.screenshot({path:resolve(output,"mercy-m3-complete-"+width+".png"),animations:"disabled"});
    await page.locator(base+'[data-p435930-mercy-again]').click();
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
+   assert.equal(await entry.count(),1,"Pray again returns to the distinct m1 home");
+   await page.locator(base+"[data-p435930-mercy-begin]").click();
    assert.equal(await page.locator(base+'[data-ao-f07-crown]').getAttribute('data-position'),'0',
-    "Pray again must restart the same canonical 62-event sequence");
+    "Beginning again must restart the same canonical 62-event sequence");
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}
