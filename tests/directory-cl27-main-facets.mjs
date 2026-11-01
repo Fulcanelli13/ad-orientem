@@ -67,7 +67,11 @@ for(const axis of PUBLIC_CL27_AXES.filter(x=>!["institute_or_community","liturgi
 }
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"1962"}}).length,2);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"UNKNOWN"}}).length,2580);
-assert.equal(filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"ROMAN",missal_edition:"1962",countryCodes:["US"]}}).length,2);
+const combinedCount=filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"ROMAN",missal_edition:"1962",countryCodes:["US"]}}).length;
+assert.equal(combinedCount,2,"Combined Roman/1962/US facet diagnostic: romanOnly="+
+  filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"ROMAN"}}).length+
+  ", paired="+filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"ROMAN",missal_edition:"1962"}}).length+
+  ", countryOnly="+filterPreliminaryR49(published,{countryCodes:["US"],cl27Facets:{missal_edition:"1962"}}).length);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"UNKNOWN",missal_edition:"1962"}}).length,0);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{una_cum:"UNKNOWN",missal_edition:"1962"}}).length,2);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{una_cum:"YES"}}).length,0);
