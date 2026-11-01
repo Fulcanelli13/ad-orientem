@@ -77,16 +77,45 @@ try{
    await memo.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library","search must open the real canonical Library");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-   // Nine editorial doors retain the old canonical items without extra engines.
-    for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
-     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-     await page.locator(base+' [data-p435930-family="'+door+'"]').click();
-     assert.equal(await page.locator(base+' [data-p435930-own="'+route+'"],'+base+' [data-p435930-external="'+route+'"]').count(),1,
-      "R1.1 editorial door "+door+" lost canonical route "+route);
-    }
+   // The nine shelves have ONE primary location per route or source prayer.
+   const seen=new Map();
+   const nine=["daily","chaplets","eucharistic","marian","novenas","ourlord","saints","intentions"];
+   for(const door of nine){
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-    await page.locator(base+' [data-p435930-family="marian"]').click();
-   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Our Lady is a discovery family, not a new reader engine");
+    await page.locator(base+' [data-p435930-family="'+door+'"]').click();
+    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
+    const rows=await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-own],"+
+      base+" [data-ao-prayer-shelf] [data-p435930-external],"+
+      base+" [data-ao-prayer-shelf] [data-p435930-door-prayer]").evaluateAll(nodes=>nodes.map(el=>
+      el.dataset.p435930Own||el.dataset.p435930External||el.dataset.p435930DoorPrayer));
+    assert.ok(rows.length>=2,"Every real door needs at least two distinct source-owned entries: "+door);
+    assert.equal(new Set(rows).size,rows.length,"Within-door duplicates: "+door);
+    for(const id of rows){
+      assert.equal(seen.has(id),false,"Prayer "+id+" appears in both "+seen.get(id)+" and "+door);
+      seen.set(id,door);
+    }
+    const geometry=await page.locator(base+" [data-ao-prayer-shelf]").evaluate(el=>({
+      width:el.scrollWidth,client:el.clientWidth,doc:document.documentElement.scrollWidth-inner:innerWidth
+    }));
+    assert.ok(geometry.width-geometry.client<=1&&geometry.doc<=1,"Door interior must not overflow at "+width+": "+door);
+    await page.screenshot({path:resolve(output,"shelf-"+door+"-"+width+".png"),animations:"disabled"});
+   }
+   for(const [id,door] of [["pray.rosary","chaplets"],["pray.angelus_regina","daily"],
+    ["pray.litany_saints","saints"],["pray.holy_name_litany","ourlord"],
+    ["pray.good_death","intentions"]])assert.equal(seen.get(id),door,"Incorrect single home for "+id);
+   assert.ok(!seen.has("pray.rosary_methods"),"Rosary method settings are inside the Rosary, not a duplicate card");
+   assert.ok(!seen.has("pray.sacred_hymns"),"Hymns remain discoverable without a duplicate door row");
+   // A single source prayer is opened in the original canonical Library
+   // reader, with return to its original shelf rather than a second library list.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(base+' [data-p435930-family="marian"]').click();
+   await page.locator(base+' [data-p435930-door-prayer="litany_loreto_1962"]').click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
+   await page.locator(base+' [data-p435930-lib-back]').click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Source-prayer Back must return to Our Lady shelf");
+   assert.equal(await page.locator(base+' [data-ao-prayer-shelf="marian"]').count(),1);
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(base+' [data-p435930-family="daily"]').click();
    await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),1,
@@ -115,7 +144,7 @@ try{
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),0,
     "direct homepage Angelus entry must skip the cinematic introduction");
    assert.deepEqual(errors,[],"Uncaught pilot JavaScript errors at "+width+": "+errors.join("; "));
-   console.log("PASS "+width+"px: DEFAULT nine-door discovery, canonical search, Marian handoff, Angelus entry and direct bypass");
+   console.log("PASS "+width+"px: nine non-overlapping shelves, Marian source reader, Daily Angelus, search and direct bypass");
   }finally{await page.close()}
  }
  // Explicit rollback restores the existing six-family hub, not a new owner.
