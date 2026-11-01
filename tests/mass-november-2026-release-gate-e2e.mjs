@@ -380,7 +380,7 @@ try{
                 !/Amen/i.test(ceremonial.dismissalResponse)||
                 !/r[eé]quiem sempit[eé]rnam/i.test(ceremonial.agnusFinal)||
                 !/Pl[aá]ceat tibi/i.test(ceremonial.placeat)||
-                !/In princ[ií]pio erat Verbum/i.test(ceremonial.lastGospel))
+                !/In princ[ií]pio erat Verbum/i.test(ceremonial.lastGospel)
              );
              proof.ceremonial=ceremonial;
              // Inspect the exact approved source rubric and its artwork on
