@@ -33,15 +33,39 @@ try{
   ]){
     const ctx=await browser.newContext({viewport:{width:test.width,height:844},
       isMobile:true,hasTouch:true,locale:test.language==="fr"?"fr-FR":"en-GB",
-      deviceScaleFactor:1,serviceWorkers:"block",reducedMotion:"reduce"});
+      deviceScaleFactor:1,serviceWorkers:"block",reducedMotion:"reduce",
+      timezoneId:"Indian/Mauritius"});
     try{
       const page=await ctx.newPage(),errors=[];
       page.on("pageerror",e=>errors.push(e.message));
+      // Simulate the actual 1 November 2026 morning in Mauritius; the
+      // release gate must remain deterministic on later CI calendar dates.
+      await page.clock.setFixedTime(new Date("2026-11-01T08:30:00+04:00"));
       await page.goto("http://127.0.0.1:"+server.address().port+
         "/index.html?aoR17Reader=native&qa=mass-reader-phone",
         {waitUntil:"domcontentloaded",timeout:90000});
       await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate &&
         globalThis.AO_R17_BROWSER_ENTRY?.selectTodayOption),null,{timeout:90000});
+      if(test.language==="en"){
+        // Reproduce the reported failure: Oct 31 remained selected although
+        // the real local day was Nov 1. A single Begin may NOT enter it.
+        assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345
+          .revealDate("2026-10-31",{forceLoader:false,prefetch:false})),true);
+        await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()
+          ?.resolution?.date==="2026-10-31");
+        await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
+        await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+        const oldDoor=page.locator(".aoH7DoorView:not([hidden])");
+        await oldDoor.locator("[data-home-h4-begin]").click();
+        const alert=oldDoor.locator("[data-home-mass-date-warning]");
+        await alert.waitFor({state:"visible"});
+        assert.match(await alert.innerText(),/2026-10-31/);
+        assert.match(await alert.innerText(),/2026-11-01/);
+        assert.equal(await page.evaluate(()=>Boolean(window.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)),false);
+        await alert.locator("[data-home-mass-use-today]").click();
+        await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()
+          ?.resolution?.date==="2026-11-01",null,{timeout:60000});
+      }
       const selected=await page.evaluate(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345
         .revealDate("2026-11-01",{forceLoader:false,prefetch:false}));
       assert.equal(selected,true);
@@ -62,7 +86,13 @@ try{
       const asp=choices.locator('[data-h4-option="aspersion"]');
       assert.equal(await asp.isEnabled(),true,"1962 Sung Sunday Asperges unavailable in H7");
       assert.equal(await asp.inputValue(),"no","Asperges must not be invented from the date");
-      await asp.selectOption("yes");
+      assert.equal(await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()
+        ?.fullMassPreflight?.aspersionDecisionRequired),true);
+      // Closing an untouched selector must not silently omit the Sunday rite.
+      await choices.locator("[data-h4-sheet-close]").last().click();
+      await door.locator("[data-home-h4-begin]").click();
+      await choices.waitFor({state:"visible"});
+      await choices.locator('[data-h4-option="aspersion"]').selectOption("yes");
       await choices.locator('[data-h4-option="beforeMass"]').selectOption("none");
       await choices.locator('[data-h4-option="readerMode"]').selectOption("LIVE");
       await choices.locator('[data-h4-option="readerLanguage"]').selectOption(test.language);
@@ -72,6 +102,19 @@ try{
       await door.locator("[data-home-h4-begin]").click();
       await page.waitForFunction(()=>window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ASP-R01",
         null,{timeout:65000});
+      const expected=await page.evaluate(()=>{
+        const s=globalThis.AO_RUNTIME_V8.store.getState(),
+          m=globalThis.AO_R17_NATIVE_READER_PREVIEW.model;
+        return {date:s.selectedDate,principal:s.resolution?.day?.main?.id,
+          proper:s.resolution?.proper?.data?.sourcePath,
+          gloria:m.cards.filter(c=>/Gloria/i.test(c.title??"")).length,
+          credo:m.cards.filter(c=>/Credo/i.test(c.title??"")).length};
+      });
+      assert.equal(expected.date,"2026-11-01");
+      assert.equal(expected.principal,"sancti:11-01:1:w");
+      assert.equal(expected.proper,"Sancti/11-01");
+      assert.ok(expected.gloria>=3,"All Saints: native LIVE Gloria cards absent: "+JSON.stringify(expected));
+      assert.ok(expected.credo>=4,"All Saints: native LIVE Credo cards absent: "+JSON.stringify(expected));
       await page.screenshot({path:dir+"/"+test.width+"-"+test.language+"-asperges-entry.png",
         animations:"disabled"});
       const nav=page.locator('#ao-r17-native-reader-preview [data-reader-nav="next"]');
