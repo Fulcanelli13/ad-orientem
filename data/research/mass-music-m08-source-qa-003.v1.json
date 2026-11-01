@@ -1,0 +1,3836 @@
+{
+  "schema": "ao-mass-music-m08-gabc-basic-source-qa-v1",
+  "batch": "003",
+  "source": {
+    "branch": "feature/chant-score-pilot-20261026",
+    "archivePath": "data/mass/chant-corpus/gr1961-proper-003.json",
+    "archiveBlobSha": "7d1d3e3ce9583a2faa114082f22d01ef0246129f",
+    "m07ReviewBlobSha": "826fd10d401b2657e2faf2f166f5bbb152ae6703"
+  },
+  "reviewedCount": 200,
+  "byRole": {
+    "of": 28,
+    "in": 45,
+    "al": 47,
+    "co": 43,
+    "tr": 8,
+    "gr": 29
+  },
+  "structuralPassing": 200,
+  "structuralExceptions": [],
+  "sourceCoverage": "ONLY_GABC_STRUCTURE_AND_ARCHIVE_METADATA_NO_FACSIMILE_VALIDATION",
+  "records": [
+    {
+      "id": "GREGOBASE-448",
+      "gabcSha256": "69a64466b5b0b6b0fa88caf6f4642a5d9efdfad4dd5f06cdcf2d02b6401e16aa",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-449",
+      "gabcSha256": "2f8bc6a3465252dad7f85b8e697a9d89963115187cffbd7c0f391d8f1a267a87",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-450",
+      "gabcSha256": "c3e540c8bc54294c0c931cbb546fac1d151c2df6d7b4b09d4312831f9bb21e4d",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-451",
+      "gabcSha256": "b7bdf0469202df3b5331e83f087e7199e201d25d856fc721ed9f38bfdb76c2b0",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-452",
+      "gabcSha256": "0cf411422045131d3616c288a20d9da448241fec8c489b295d9e99d5add59d05",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-453",
+      "gabcSha256": "517e8fc70beac28dd7e38dcedf888dddfcb97c390af8ee7a12af78c9905a7e8a",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-454",
+      "gabcSha256": "01665a7ed2a6aa36c8e9a69f4490ae0bea66a906fd3ae55e1bdcc25c50a5dd69",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-455",
+      "gabcSha256": "44e9438e0418b5c295e154fa9832ef5924e699b7b154f9fdc19fb3a7907bf6f9",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-456",
+      "gabcSha256": "ce4aa331c99b5007ef158dd11cdd283d41d9e3b599be427ccac8c7596ba9e103",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-458",
+      "gabcSha256": "b825b9fdb12d42d35525bc853e8c65aee8d06d979df0bbd5cac59928a673e9d8",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-459",
+      "gabcSha256": "d4a3f5794a7a2eb42cfcd8734454ea7bbfdc1f6aadbf440398cc281edae89bf4",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-460",
+      "gabcSha256": "8c1f29c5f6474d10d8c36b0657ff3ae4a4755f78629114a0bd7e244d5cf910b7",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-461",
+      "gabcSha256": "19b25f19814797d4338982c16dea821b88df7d6fe642d6610292b5a598dc73d7",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-462",
+      "gabcSha256": "841f35d3fc9e10c0ab2be1c6018d91cc7fef6ddd257254506f331fef21d8b39e",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-464",
+      "gabcSha256": "06331b6515a280bbfd4e1e74eaeedeca380758514fbb0d77cde8d417142d3514",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-465",
+      "gabcSha256": "a5578765bda1df71048627df917f1d06525eda2521f6cfba27d698cfe204d147",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-466",
+      "gabcSha256": "d260825b70643f9a7e7f03c50d5e828fd89f3afce36106d5632d7fa78efb3b3c",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-467",
+      "gabcSha256": "8273d7729a811ebda0817adb03592439b21be154e3a1c70c10f0fd93d9ce03b4",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-468",
+      "gabcSha256": "2677f0823f6da9a840d014fe4d3e2ae433af9d7f2c14bd9064c486da1160c839",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-469",
+      "gabcSha256": "056995a9cd785fa82dec8e3be1236bed2d90c8d2cd65c056b31d17417ee3deee",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-470",
+      "gabcSha256": "db338ea75da4724ac93a23f0a1966fa2b17b5ddfc28452b230c84fda628b485c",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-471",
+      "gabcSha256": "ed340fba7951e7b352a79d65c0c3eeaec3c02c091f4b46f660c44fdc388c2633",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-472",
+      "gabcSha256": "0a532c5bb332a7bb9a3ca7c37b34f577c162f3edaba6eac9f8a0e4ec497dc8b9",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-473",
+      "gabcSha256": "215d96242e4293bc94c0fe4c0175a183222e707eaf678c8c61487a5dc93c6379",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-475",
+      "gabcSha256": "18674b0078598c7172e09e46b711e335ef0f14c3b9a833163c84bb0a3406f84d",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-476",
+      "gabcSha256": "5d3573a73922ffa066345dff004d7dd7bcdb547c61cb2c44b880b40c43a21437",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-477",
+      "gabcSha256": "6fc1983d79458e860d411eb93d25ccdbf9f72bf70f62583773abfdacaf4c0d36",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-478",
+      "gabcSha256": "50564a8a4bd0dc71da00569e8313f332e51da038eed92f4db3226ff90e2e84bf",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-479",
+      "gabcSha256": "e3789d709f353ade870ef3d1eeb31b5ab528079c4465c1ba077b0f4af95b898f",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-480",
+      "gabcSha256": "396865b30715a8ef958a144e293c5b778c39a1fd065f5da2d90c384ac4aa4bb3",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-481",
+      "gabcSha256": "ffa0948871583dc6b125a57c6479fdae05d64835dc82480380db7fed3970f4e7",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-482",
+      "gabcSha256": "03b4c1ec714e566af53d21d4d01d1064750e0fcdcbc702955665b6c09cc25896",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-483",
+      "gabcSha256": "f51233d9382d0610e591afc3331d945c6b2d2d084790af2c953deed11d363b3c",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-484",
+      "gabcSha256": "3133275b4abf5f3f7e56bc57fde1c1d2548a8f37896688f91fb3fc825de20152",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-485",
+      "gabcSha256": "46d7da85249cf1f7327bff0e03a95f6b127b4132ba71e7268cfece2616be415a",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-486",
+      "gabcSha256": "09ec006db7f32bdceff86bdd36421b3603906857cd2abe6680b4a5767ba64c23",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-487",
+      "gabcSha256": "a27759a0e1cc6d3f80e65307cb173795382c11cf1af54c108d9ad3e8e4f1c38a",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-488",
+      "gabcSha256": "bb1e1f7e4be393d30829bc4038234df8a291cb9ad517137d01bfe9e8429c9cf9",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-489",
+      "gabcSha256": "5e48e779e11d905641b69e6c6715519cafd55f892d4f8af270c30861a5d4b096",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-490",
+      "gabcSha256": "d29ec2326041ab9420319a9ebc28c10c9b54796d95a504b86e5c4cbb54f4fbdb",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-491",
+      "gabcSha256": "052f97def7c9e2fd233cfd162c78707d8e0e8c732bd672161f32709f89e2459e",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-492",
+      "gabcSha256": "5836c97aa85a93b94b3512d43a82aec2ae1b24b4f4db3423f23f3f09793a1115",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-493",
+      "gabcSha256": "354f8164b3c4d673e2e8cc559f3b3e77f55e834bfe7762f9fdfb7fde3f4931ce",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-494",
+      "gabcSha256": "390b53ac2596a13f56931b8ec60d92ef3069452f2c66b318c9392424d0218bec",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-495",
+      "gabcSha256": "23602a257faa99fcaffa63b7fb99114a29660cb2ecf21cd94d4dfd11b0ecb076",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-496",
+      "gabcSha256": "697b248c5439dfaa7ca7b4b635ddea43e5eae1aad9edf13013d10ba165961a00",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-498",
+      "gabcSha256": "165007e3c2407f368e074b6771467a1c6a5db1de918d3b3ed5755581286c0ba1",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-499",
+      "gabcSha256": "9a024718ffe041f26ae9674bac1606cb93a37001cafd41efb44b4f77a9a0f541",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-500",
+      "gabcSha256": "d1a5e11b875a0ca694587aba256f629c37df58d26b7f427691dead5768f5eff1",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-501",
+      "gabcSha256": "f58f55816c8e334c8955b43a7de4b3222114973061b13b3babb0bbc41f3cf42d",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-502",
+      "gabcSha256": "c6afb1bee012c62a77822711eb65930969c73b9df090f9a7118d64ed0206250c",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-503",
+      "gabcSha256": "132a44c04d0cc96a01fd2217a1ba4f56358e176ebe8953232b3c6643a96296f1",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-505",
+      "gabcSha256": "0cb23b0cab0c250e6cbe7694cd0c70a68d36ef532771dec1bb6f042d8c725a53",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-506",
+      "gabcSha256": "f39a285245ea9555222f7dab955c812d3b3c8eb5ebdccd98bca4709b0eb412a1",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-507",
+      "gabcSha256": "df00a1373346522d02c8c363fd19a69b4bdaae3761fdb717407b499dce4c8e69",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-508",
+      "gabcSha256": "2cad5f9f796c45994b99cb6cd5ad69cfa2a4cbf9d07d10def97e0c7e52097755",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-509",
+      "gabcSha256": "e8f6d342d63c6c17b7aa2d2c860c11d5828730861268398f89542e15c955bc40",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-510",
+      "gabcSha256": "35e16e481029e73f7f2b87ab6e33a5f942105660abbee17de37f9511b24143e9",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-511",
+      "gabcSha256": "01aa2fbb6c3d8b9de184bff60e3b58c8c458894a727a86aded1dc397349364d5",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-512",
+      "gabcSha256": "6a1424c2bfcebf572159964fe05a93998fe0aae94482bfd1dfe6276bb660a8e8",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-514",
+      "gabcSha256": "c20612461eea3b3b15588ef9f4cfc11f204ad9cd79987a27e537b56175656aa6",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-515",
+      "gabcSha256": "9de59c2c541a89e250664404456868acf1272443c4a312304879eca2bb593853",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-516",
+      "gabcSha256": "542bd7135a147bb2a56f076d8ee2eb58051ec975e9f928ca3cd17ca60db77351",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-518",
+      "gabcSha256": "a24e9223cb75aa4c216001184ed88e3ac2905383d2f3aa3db1850c6c68338fd1",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-519",
+      "gabcSha256": "bf20f8c2377677a8ba943ea31782e6e02be5a82b36edf999dd9f997356ee92f5",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-520",
+      "gabcSha256": "93fe8caa657f67b093e6cc2b262cb65fb92c02145cb268657a7b1860ce45e5cd",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-521",
+      "gabcSha256": "5fe04ac4733d616e0b3d05a5e9cdf76a181e05bce00415b84f38bed52dfed898",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-522",
+      "gabcSha256": "33ee955e2216d79d1e3fd1a3549d5e03d7536782381153eb7888ea51b9fc102c",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-523",
+      "gabcSha256": "4fd3fbf4710a82377904c1fad704a588775f64b71ad02c006176f248f4ba4298",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-524",
+      "gabcSha256": "165cfa4cb7774d335d275e775bf2157d6a29358dd84d2b1a44295c39ff0b6134",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-525",
+      "gabcSha256": "6ac3293aa6686bfdac0d432b0922febc184ca865105bc140e78e01dc545fe458",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-526",
+      "gabcSha256": "2146017dc888c7046f6834ede22bab777f38201a9a6066ea9e09eef3cde654b7",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-527",
+      "gabcSha256": "162898f91c1202cda1b7f8f682679e202dcffc5c8c3b963f147300624fd25f6d",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-528",
+      "gabcSha256": "f17e4e6a6176dd3b3e218d16dd9a062ff4933ff26cfc7a64f42fefb84beb8934",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-529",
+      "gabcSha256": "4419cd9e957791e34a8bce0219cf908e7e379374b778e5df5c94a16894989686",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-530",
+      "gabcSha256": "70120cea5e2417b2d55c1b8eae9454d362cabd981594d2643c0543788166513e",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-531",
+      "gabcSha256": "dbd81561aa673175c6852687dc715abba3b2ca87f27cf3578c6402e083787a52",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-533",
+      "gabcSha256": "9400a5d0a6f49235bd94a2904334a11d0e41d090e44b701893612a18423df590",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-534",
+      "gabcSha256": "399091db45463c70506110a4e28b8467bb73ecb030084af160b0570a95fe724a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-535",
+      "gabcSha256": "b1e1cb1f0a6c7af9fbfbed4cfbee7c3cd309435fbefa6cc69dbd854b3f9d438d",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-536",
+      "gabcSha256": "88a6058b92a31a6f632ac92e8ed72b2da05d96e0b1f8013b5b0faa751570df92",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 7,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-538",
+      "gabcSha256": "54da6662f8bb2e9d2a8983e82189b2c01abc12957f2372625583caf0a761a638",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-539",
+      "gabcSha256": "ce9b0712bf4d4b87070cb7a462dfcfe9e53fdee6691899601aec4f5d6839c546",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "DIVERGENT_EARLY_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-540",
+      "gabcSha256": "2abc84223a331e53aa64da1423c0abd75ee9f939e974fb84f5b9b81deccb8b99",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-542",
+      "gabcSha256": "04c6fa63a97cca397c8b93be5011c734a825680334166cfe04f10116f5b2fc2d",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-544",
+      "gabcSha256": "02684d43a325a5f471c8298282be2f2862969c29dc4625e303a1438dc74dae4c",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-546",
+      "gabcSha256": "c7bc1ff760609efadcafb78a58d7271b5a8f9854293071c6381c23de1f372403",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-547",
+      "gabcSha256": "7479d82da79850e9c97d2eef9081b0a703ffa2c7e9e651905f5c6e1e9b3f2b3e",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-548",
+      "gabcSha256": "59bc5dcc1d7df2db6040e7f7cce9c5628bcc75d7fbb23f93e638354dda832b8a",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 4,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-549",
+      "gabcSha256": "b366181fdc198b03c6914a2d309029a1967301c8626bf48fed2c4c534df85cf4",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-550",
+      "gabcSha256": "2b6abed156cd64da2c9aee88bee97f27ed49d19308fc637b76a1346bd98e468d",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-551",
+      "gabcSha256": "1dc172af4b85e1783e081a81327c74e0c5584e28cf012c93a177df05b4204789",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "DIVERGENT_EARLY_TEXT",
+        "donorCount": 4,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-552",
+      "gabcSha256": "a0870acd9a9ea6f64e86e00f64795a41400db2402d970c3e278152206a8e42d8",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-553",
+      "gabcSha256": "c0d642d23e22be4f167874d438abf9e41bac0ccecb84424fc2c035e34bf424c9",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-554",
+      "gabcSha256": "705c90985c6273e847778a6154df560c4b320b85dee5938b39741c361077e21a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-556",
+      "gabcSha256": "d04b3522e531cfdd2f748139ca1b0faa92980ec2f60d23d1ef7d90f50c6d44b7",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-557",
+      "gabcSha256": "623dabd66825b2b615ab4b1b8f4cf6c3d924428c873613c503fb089e7f90ece5",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-558",
+      "gabcSha256": "d88f5b8de7040b3eb3e54d3946bce94a27f3ae62adef79d5e67e26de6d97c839",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-559",
+      "gabcSha256": "2ec6ef1b9c3d049873188a3d285e18676bf7de870e6034c11cf417d40086a176",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-560",
+      "gabcSha256": "9836cba45968ea72120901f0deaf1196b1fb826446088e179e594dd2a0c08d1c",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-561",
+      "gabcSha256": "df43e7439dadbe50a2157d310f8c8ff3b5ae04d896a8297ba2eb072896907a98",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-562",
+      "gabcSha256": "6e2d8a745bbd361b83fcb190fef03ceca91a8302a8336898ddabe35baed8f08f",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-563",
+      "gabcSha256": "a87b707ec14ed436ef5e16df4f608637a26d30dfe2c73fb8507b5bf9910ead64",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-564",
+      "gabcSha256": "c4b5ad64fdb85e41f8bf7bc67462c81e892c0cfca71043818195e58aad5e4312",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-565",
+      "gabcSha256": "de4e4716bbcc5e4e516a0e4610ddb97f1a0aedcdcc07c91d1b2292b119dec735",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-567",
+      "gabcSha256": "51bbe9ab96517ad22ff730eb3896c8beb490e30f59e751f5ae2ecd6a8746b599",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-568",
+      "gabcSha256": "be487cd367f8bedd4f05e0f049b7805c5a559432857f3f1a632f5b222f0e6549",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-569",
+      "gabcSha256": "188d3782dc59b71dcf05199dbe13b88f3755773ab2f87d822fe507688e95a197",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-570",
+      "gabcSha256": "51438e49ce09ea33039861a305f6e6915020e06923e87c294ee19c9829e4363c",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-571",
+      "gabcSha256": "503d5b66d0327013af8be0d1dc0c4357ca10e95955101b7550bfe43009849349",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-572",
+      "gabcSha256": "86a623a46f94d97a9ba7c675582494d653d836c6d2d4f947be2e05d08b0fd8cc",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-573",
+      "gabcSha256": "ab86fcb981e1f6eacdaa1cf926ff8b761fffc1b16f763184eab456f9d9e0b1ee",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-574",
+      "gabcSha256": "39f91b6beb6a766c89c859ff0cd730f81f803beee5100e8a72dedfd0f196979c",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-575",
+      "gabcSha256": "3431c7c44d564c77a3c59462256c1811ec404689251a1de9697815f19009849f",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-576",
+      "gabcSha256": "fa92880e0c23c876b0d987db46bb61c04bac05813a6f0a83a856243e415eb64a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-577",
+      "gabcSha256": "cbe99c3de86f60f7e559f8064ad83e0018c950a31f36fb2d78df89961ae11964",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-579",
+      "gabcSha256": "91d2d751862209d86b4f153b881afd8e5f55e3b2d88654223d4944bcf8ed6d3a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-580",
+      "gabcSha256": "20595d58a447e1ca65b4189b6903eed666a89ded9ef8f69dbaa3c6c70da77b2f",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-581",
+      "gabcSha256": "ee894e7bb65dae50e6848a2577aa103c769f38fb25cfac6735547d92ff3daa1b",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-582",
+      "gabcSha256": "41ad45f6a17df362bdb967e054a46d512d648b697eba2cd5d003a2575581b61b",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-583",
+      "gabcSha256": "a843351fde7efde6139cf456c8a6febc9220e94e26523cee6af1c68e0665fc05",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-584",
+      "gabcSha256": "3994ded3188a870deab4ae0652566ed66eb3484e195fed603d3e8bd5ffd1b1bd",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-585",
+      "gabcSha256": "ff83483525bd8d38556d4dbb980cf2ceeb3262c27fdc65833a91c32d6f3cc98b",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-586",
+      "gabcSha256": "c97030d3f3c220ad37857601443c5a2c4fcaea12110519f67cf87adf5e3933c3",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-588",
+      "gabcSha256": "1a108ad553f4e1ad92cbb1ba0c93fcd810aabfb631483b6fa506d8a1d3187b99",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-589",
+      "gabcSha256": "84fab74ca4790a21a887dbc841bcb8e88677b3638a8ea158878d2a724f376eb0",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-590",
+      "gabcSha256": "f0e58718c90eaa6317b9e8ad4b156fe03544e4107f7a11e2c6d9feb9d6b6f59d",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-591",
+      "gabcSha256": "458b0affcd3983fa6193c5cba7acc9a864175c7065f4786d77b983d4e1ef52ec",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-592",
+      "gabcSha256": "b70ddf62094e1c0b3f6519c34dd2622b77c91bd6d733f89e3eed6c809fb1e814",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-593",
+      "gabcSha256": "8280523913cb5a5bef137443b09ee65c033a597ce21fbeefffe7308b231b6c2e",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-594",
+      "gabcSha256": "0909e790d993b4366ec4da5733180ff9876678f628bed60eca07328f903991e5",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-595",
+      "gabcSha256": "6cb25d24c05620a7b7f65e8fce01b3baf6d0c9d18fc3ba55de8895b98a538303",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 3,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-596",
+      "gabcSha256": "9db4cc14c7350f59b8f51fe7d35472492a267b262f328c27d67b8b384e8a98cf",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-597",
+      "gabcSha256": "4d7183ea0f5e25643fe07f886a06e67be9fceaa77a758f248935c451380c66bd",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-598",
+      "gabcSha256": "7de2d73f96dcb75f2c0ae788fed138e657835f7a59b142ebb081b4cc6ccf8080",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-599",
+      "gabcSha256": "5de53fe7878a3a69b9cd3cc9d7b006cbf0eef2ba489ca7fa530a6e151f061e1d",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-600",
+      "gabcSha256": "358dfa8c6dc169aa2ed1a105ba24dd40dfc2f77deb5a330a4350fe85d0817e57",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-601",
+      "gabcSha256": "e02a4140bda1195886ea81e3f14b25eea00483e7dd2f3c64dadd7825a44e52b7",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-603",
+      "gabcSha256": "1d53a3f8f63d3fa0e708e42fd84a76ede837c3f746d9e3cac18407930d48e6d5",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-604",
+      "gabcSha256": "5155ad510491be66d7cc55907583bad92f0fd6650bc5b6f3b64d82712a19f6f9",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-605",
+      "gabcSha256": "92e94a130a91e14e37dc288e2cdb925edf2fe3488ac0a816a408169a82414834",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-607",
+      "gabcSha256": "81a750e606c651aa3fe3452b46a87af829f5ea58a6540e703dfb3d7519dbef0c",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-608",
+      "gabcSha256": "4eae6800d857a52452fb99fd36d11613ef0b908877dbbb803b6e78585db6c80f",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-609",
+      "gabcSha256": "aa86770bc1e3e66a470f87110f64a595ec0d418cffc5bb334d0077866f520b7f",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-610",
+      "gabcSha256": "d5a47f8dad29623bf449f47f32dcfe6d0c65f30ac936ed6c714a26eec915ecb2",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-611",
+      "gabcSha256": "1c47580698931ec4137fccc368207034f239b7bf890fb8f4c87a66d1238daf74",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-613",
+      "gabcSha256": "c57782ef9d0cfdf734e4bdef0c3ecf14e402195337b5c03ff46408a9b486dd54",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-614",
+      "gabcSha256": "deb6785a3c90bf27cc7506e25d4b84b443b0992d9efff81562d640c97a5a23ce",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-615",
+      "gabcSha256": "5b103848a36d3e6faaee3c3a876932cbcca787e2e51bf4cc7215f8cb57b4efec",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-616",
+      "gabcSha256": "056962848b15d52e55ad7b89dcfdde380b394dc967717cdec6ef4d70e1525520",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-617",
+      "gabcSha256": "0be223039ee4668fcd2502c401ebceb04b357b08081a4aa911ee80032ecbb67a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-618",
+      "gabcSha256": "c99b9e80555705a9be21520fae1b1805b0eae043600630bbc8273fa7191acd24",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-619",
+      "gabcSha256": "e488d2370447d376092027bdf2f4874fd7ed9473ca1397372d5dd8136ceda680",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-621",
+      "gabcSha256": "9d27a52212a779e13384ed84581b50708885ad7577416033ba6f0ee4ee413272",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-622",
+      "gabcSha256": "08f8ba92c831962383523d15806ff8fd8b35e0f0c2aba6c64432f88aea57ec97",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-623",
+      "gabcSha256": "e6f4e8e1c2f9cca9ba1aa238b292e7495e09271fcaa4b26f02c5fb2815ed0822",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-624",
+      "gabcSha256": "55b3f11e82150882ad1c80e78ba8da617221292306d48b4008466e5bded92831",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-625",
+      "gabcSha256": "6f191f188d23203adc4e3c5691c4da621e0d978397c434334459252f891af0a7",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-626",
+      "gabcSha256": "feba832d5a594fdfae66606df1a15e076a81938f2f1e59d09e2f0af18f729f38",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-627",
+      "gabcSha256": "741328a7692282e345d93a43a54c85cdf25685da2b061fb59e1fd419cb1f5733",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-628",
+      "gabcSha256": "404f7160d968d402aabdf2c611c51c9da483ca14e1cf5684f3f0f77b0051a5d4",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-629",
+      "gabcSha256": "44507c087235bc6343f2e90983a6dafd6e8909ed38ef96dead118f6e6e40bcb6",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-630",
+      "gabcSha256": "84c6526db986199253263a087824ab08dde3c4cac0e304278ccf5767dac20d5c",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-631",
+      "gabcSha256": "6a99a3e7f254cbc8e25e4ea2f2e17a5bfa3ab6b8412f33c09de52b9cae45dde7",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-632",
+      "gabcSha256": "31c3c16cbe91b5830663f93ada8a362c3cedc8c0a6d9da55b3b8118aa4283d0c",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-633",
+      "gabcSha256": "40e2abeec7fa4d52535fdca582494e7db21375a6be097bd8e7897fb02306bdf2",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-634",
+      "gabcSha256": "8a4dd307e29234ba2e82f4145f3a0e31af7592cfcbc6b16f14b0fd5db7d90f1a",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-635",
+      "gabcSha256": "97760261550d481730e334e63be965663865c2eeeba65bb9497e224c51558a96",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-636",
+      "gabcSha256": "43adec7db63cc1fb55760e9f7ba4a0010975555d0b5c4ac203fa395abd3c9abc",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-637",
+      "gabcSha256": "e6845b77320c27164b40c3849b11ba4ecfa6ad1dd07b5556f7e2119bc4d4af9d",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-639",
+      "gabcSha256": "e58cdc4c26cd50fbad8b20eee9db8c4d7d80e3cb56d80ba9638642c961d43ff6",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-640",
+      "gabcSha256": "7b9846edfbaca89128f6cc2701aee3e74227ff07022981b81e3992643dda359a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-641",
+      "gabcSha256": "c922378d57cc6d89156cb3f102e504e76a58941f2e33592f68b573e347add95b",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-642",
+      "gabcSha256": "40744955957219da532d0651c98a5ac0a5b20d6c52dba1fae286e4364d5c5ff4",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-643",
+      "gabcSha256": "0888e9c05fffdea4b3eb36678d685f47039a6f31388ede89dad0fcc1f3c31b1f",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-644",
+      "gabcSha256": "7380e35914e8963e5a3d7ae7849ebbbb3c6da2df1506f1f7e1a9118ad983edff",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-645",
+      "gabcSha256": "8f44e62618902aa26e90fe7f40f695b664b2b9c90f2847e93c3a5bb0ebff8316",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-646",
+      "gabcSha256": "4719010c083ee376533660e1d2bcab2a0b69726600731ec1e82e6937cde59b0b",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-647",
+      "gabcSha256": "cdabbde606f6c781f8f91594e3eb23eb3b49e595b18022bf6e5f2468447776de",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-648",
+      "gabcSha256": "480b076a45af4f8298e05347c7dc7bdf4bd0eeca6e8dcc9d377774a6c2e8aa0c",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-650",
+      "gabcSha256": "ed3e70cc5f69360fe864e46a01aecb1ee7c23dd0012ce037084705df53deba44",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-651",
+      "gabcSha256": "7d46c4cd7f96dbb07c683240c43bb1d3a0cea5c1a53af67cb4139abedc24a4b6",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-652",
+      "gabcSha256": "482567086c6b3d4d2d0272d9505f69e3908a45f84cd3e708ba051ecda00b9d3b",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-653",
+      "gabcSha256": "04f8e446e2340577439818159e73387d3c71158a59ae314247306da8256c0793",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-654",
+      "gabcSha256": "b936ae538cdc5b0a5010e44b14807f2ce7bec44da9ac51e1fe760f7ecf6f7494",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-655",
+      "gabcSha256": "74b2eaafd824eb306f6324d025bca935f2988a2c82674a022f18d99b536ae47a",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-656",
+      "gabcSha256": "9a73ca87a1d27789970cd76665c9db92e0474abd976ac77251b2c19a140a7efa",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-657",
+      "gabcSha256": "4920196a8f5836f369c5be0f05a9a7ceae8e794fa8d97597d9b2f1baaaae6aec",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-658",
+      "gabcSha256": "d1a1ea36a2a5b2c6b7f6a748ca7fc12ca6e1e6a1d07747b28917c4e029418b64",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-659",
+      "gabcSha256": "0669c8ba1e6c348aca624e7f974a50a9d461b2e564e2922127dcd8127d550b77",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 2,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-660",
+      "gabcSha256": "53bdb260f45e398d28e40d25510c5886c77aef4437d79f66a8be9c145465d92d",
+      "part": "tr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-661",
+      "gabcSha256": "d0e75c4e50b3ddda9d42b59bcbd3ea9cfcc8c46ddc844fff7fd705964375ef71",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "PARTIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-662",
+      "gabcSha256": "0cabec2df5fc9c541518633e41d004b6abf5011486acd573df3829fbfc3b89fd",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-663",
+      "gabcSha256": "e67826a60748387aa8018e664fbb2b599adc850822441d91454202affc55ae8f",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-664",
+      "gabcSha256": "aee3112357a9bebe3dae188c6a44edccb7e959ee7566e28f1e9ce797eac23154",
+      "part": "al",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-665",
+      "gabcSha256": "f02c9f41422d56eb305c8fd4b115f84d722810ef0f67c6d66e3eba147a918dd2",
+      "part": "gr",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-666",
+      "gabcSha256": "f7f229ecdf02ebcb4606734f4a08a57086bee93153c81ce4fbbe04c0276cb72a",
+      "part": "co",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-667",
+      "gabcSha256": "a4078968b41e9f3456e4c3b1c70decdacb82408ff991308833b18c12c7d3a5ab",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-668",
+      "gabcSha256": "86c4102b450f841864e58f054294ebd3091e45e7b20022e2c6e7f0717fbf1425",
+      "part": "of",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": {
+        "tier": "STRONG_INITIAL_TEXT",
+        "donorCount": 1,
+        "hasPositionRisk": true
+      },
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    },
+    {
+      "id": "GREGOBASE-669",
+      "gabcSha256": "6458dcb1b6d0bf6ea72876a44ff48ca1e76ae062de20243489a35f1d6c5d26f1",
+      "part": "in",
+      "diagnostics": {
+        "gabcPresent": true,
+        "initialClef": true,
+        "doubleBarline": true,
+        "balancedSourceGroups": true,
+        "scoreIdAndHashAligned": true,
+        "sourceUrlAligned": true
+      },
+      "structuralStatus": "BASIC_GABC_STRUCTURE_PRESENT_NOT_MUSICAL_PROOF",
+      "latinLead": null,
+      "selected1962": "NOT_SCORE_VERIFIED",
+      "printed1961NoteCollation": "NOT_DONE",
+      "editorialApproval": false
+    }
+  ]
+}
