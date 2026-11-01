@@ -307,7 +307,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayTitle": "Preaching of Saint John the Baptist",
+  "displayArtist": "Francesco Albani",
+  "photoRightsApprovalRequired": false
  },
  "COV-pray.angelus": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
@@ -464,7 +467,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayTitle": "The Incredulity of Saint Thomas",
+  "displayArtist": "Wouter Crabeth II",
+  "photoRightsApprovalRequired": false
  },
  "STG-pray.angelus_regina-04": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -522,7 +528,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayTitle": "The Virgin in Prayer",
+  "displayArtist": "Giovanni Battista Salvi da Sassoferrato",
+  "photoRightsApprovalRequired": false
  },
  "DOOR-D2": {
   "kind": "CATEGORY_DOOR",
@@ -1009,7 +1018,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   "productionApproved": false,
   "sceneRelationship": "USER_ACCEPTED_CONTEXTUAL",
   "exactSlotPublicationHold": false,
-  "photoSourceHold": false
+  "photoSourceHold": false,
+  "displayTitle": "The Incredulity of Saint Thomas",
+  "displayArtist": "Wouter Crabeth II",
+  "photoRightsApprovalRequired": false
  },
  "STG-pray.five_wounds-05": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
@@ -2602,7 +2614,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayTitle": "Saint Joseph and the Christ Child",
+  "displayArtist": "Guido Reni and studio",
+  "photoRightsApprovalRequired": true
  },
  "COV-pray.litany_saints": {
   "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
@@ -2633,7 +2648,10 @@ export const PRAYER_ARTWORK_SLOT_AUTHORITY=Object.freeze({
   ],
   "held": false,
   "door": false,
-  "productionApproved": false
+  "productionApproved": false,
+  "displayTitle": "Preaching of Saint John the Baptist",
+  "displayArtist": "Francesco Albani",
+  "photoRightsApprovalRequired": false
  },
  "STG-pray.litany_saints-03": {
   "kind": "PRAYER_MYSTERY_OR_STAGE",
