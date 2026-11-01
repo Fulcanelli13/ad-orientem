@@ -1224,4 +1224,109 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 .aoExploreTlmFilters .aoTlmCountryOptions button.active{border-color:#86b596;background:#20392e;color:#d7f2db}
 .aoExploreTlmFilters .aoTlmCountryOptions button:focus-visible{outline:2px solid #d9bb7e;outline-offset:2px}
 .aoExploreTlmFilters .aoTlmCountryFacet>small{display:block;color:#bdc6c9;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+/* Map-first Explore (approved desktop composition): viewport-scoped source
+   results on the left, the same MapLibre canvas behind them, and an actual
+   church profile on the right. This does not run on phones; their existing
+   bottom-preview and map gestures are preserved. */
+@media(min-width:900px){
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmMapRail{
+   position:absolute;left:14px;top:115px;bottom:15px;z-index:11;
+   width:clamp(258px,27vw,358px);min-height:180px;overflow:hidden;
+   border:1px solid rgba(205,180,132,.36);border-radius:15px;
+   background:linear-gradient(160deg,rgba(16,25,34,.98),rgba(10,17,26,.98));
+   box-shadow:0 14px 46px rgba(0,0,0,.56);color:#ece1cd;
+ }
+ /* Existing map reset and source legend live in the exposed map, not
+    underneath the new left directory rail. Keep their 44px hit targets. */
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset{
+   left:calc(clamp(258px,27vw,358px) + 30px);
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend{
+   left:calc(clamp(258px,27vw,358px) + 30px);
+   max-width:min(450px,calc(100% - clamp(258px,27vw,358px) - 60px));
+ }
+ .aoTlmMapRail .aoTlmMapRailDisclosure[open]{
+   height:100%;display:flex;flex-direction:column;min-height:0;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmMapRail:has(.aoTlmMapRailDisclosure:not([open])){
+   bottom:auto;height:auto;min-height:0;
+ }
+ .aoTlmMapRail .aoTlmMapRailToggle{
+   cursor:pointer;flex:none;display:flex;align-items:center;justify-content:space-between;
+   gap:8px;min-height:64px;padding:12px 13px;border-bottom:1px solid #d1b78135;
+   list-style:none;
+ }
+ .aoTlmMapRail .aoTlmMapRailToggle::-webkit-details-marker{display:none}
+ .aoTlmMapRail .aoTlmMapRailToggle span:first-child{min-width:0;display:flex;flex-direction:column;gap:4px}
+ .aoTlmMapRail .aoTlmMapRailToggle small{
+   color:#cfb786;font:650 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;
+ }
+ .aoTlmMapRail .aoTlmMapRailToggle strong{
+   color:#f3e7d2;font:500 20px/1.16 var(--ao-font-display,Georgia,serif);
+ }
+ .aoTlmMapRail .aoTlmMapRailCount{
+   flex:none;min-width:40px;border-radius:999px;padding:5px 8px;
+   background:#23352d;color:#b6d5bd;text-align:center;
+   font:650 12px var(--ao-font-ui,system-ui,sans-serif);font-variant-numeric:tabular-nums;
+ }
+ .aoTlmMapRail .aoTlmMapRailItems{
+   flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+   scrollbar-width:thin;scrollbar-color:#7f735c transparent;
+ }
+ .aoTlmMapRail .aoTlmMapRailItem{
+   width:100%;display:flex;align-items:center;gap:9px;min-height:75px;
+   padding:10px 10px;text-align:left;background:transparent;color:#ebdfcb;
+   border:0;border-bottom:1px solid #c9b37e20;cursor:pointer;
+   font-family:var(--ao-font-ui,system-ui,sans-serif);
+ }
+ .aoTlmMapRail .aoTlmMapRailItem:hover{background:#22302d}
+ .aoTlmMapRail .aoTlmMapRailItem[aria-current=true]{background:#24372e;box-shadow:inset 3px 0 #86b596}
+ .aoTlmMapRail .aoTlmMapRailItem:focus-visible,
+ .aoTlmMapRail .aoTlmMapRailToggle:focus-visible,
+ .aoTlmMapRail .aoTlmMapRailFoot button:focus-visible{outline:2px solid #d9bb7e;outline-offset:-3px}
+ .aoTlmMapRail .aoTlmMapRailVisual{
+   width:52px;height:55px;flex:none;display:grid;place-items:center;
+   border-radius:8px;overflow:hidden;background:#182635;border:1px solid #d3b68035;
+ }
+ .aoTlmMapRail .aoTlmMapRailVisual img{width:100%;height:100%;object-fit:cover}
+ .aoTlmMapRail .aoTlmMapRailVisual[data-visual-kind=emblem] img{object-fit:contain;padding:5px;box-sizing:border-box}
+ .aoTlmMapRail .aoTlmMapRailVisual>span{font:26px/1 Georgia,serif;color:#c8b892}
+ .aoTlmMapRail .aoTlmMapRailCopy{display:flex;flex:1;min-width:0;flex-direction:column;gap:3px}
+ .aoTlmMapRail .aoTlmMapRailCopy strong{font:600 13px/1.3 var(--ao-font-display,Georgia,serif);color:#f6ead5;overflow-wrap:anywhere}
+ .aoTlmMapRail .aoTlmMapRailCopy small{font:11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#c0bcc0;overflow-wrap:anywhere}
+ .aoTlmMapRail .aoTlmMapRailCopy em{font:10px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#a8cbb0;font-style:normal}
+ .aoTlmMapRail .aoTlmMapRailArrow{font-size:22px;color:#a9ab9d}
+ .aoTlmMapRail .aoTlmMapRailEmpty{margin:14px;color:#c0b8aa;font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+ .aoTlmMapRail .aoTlmMapRailFoot{
+   display:flex;flex-direction:column;gap:8px;padding:10px 12px 12px;
+   flex:none;border-top:1px solid #d1b78130;
+ }
+ .aoTlmMapRail .aoTlmMapRailFoot small{font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#b9b4a8}
+ .aoTlmMapRail .aoTlmMapRailFoot button{
+   width:100%;min-height:44px;padding:8px 11px;background:#283329;border:1px solid #d1b78160;
+   border-radius:9px;color:#f0d7a6;text-align:center;cursor:pointer;
+   font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ }
+ /* Screen 5 is a contextual right panel, not a fullscreen modal hiding the
+    interactive map and the left Directory results. The existing profile
+    remains the only owner of classifications and verified media. */
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindSheetBackdrop:has(.aoTlmChurchProfile){
+   pointer-events:none;background:transparent;display:flex;align-items:flex-start;
+   justify-content:flex-end;padding:77px 15px 14px;box-sizing:border-box;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmChurchProfile{
+   pointer-events:auto;width:clamp(340px,32vw,470px);max-width:470px;
+   max-height:calc(100dvh - 93px);height:auto;overflow-x:hidden;overflow-y:auto;
+   margin:0;padding:0 16px 20px;border-radius:15px;
+   box-sizing:border-box;box-shadow:0 22px 62px #000b;
+ }
+ .aoExploreSurface:has(.aoTlmChurchProfile) .aoFindMap .maplibregl-ctrl-top-right{
+   right:clamp(350px,34vw,488px);
+ }
+}
+/* Phones continue using the established map-first bottom sheet: no
+   duplicate floating directory panel or narrower map viewport. */
+@media(max-width:899px){
+ .aoTlmMapRail{display:none!important}
+}
 `;

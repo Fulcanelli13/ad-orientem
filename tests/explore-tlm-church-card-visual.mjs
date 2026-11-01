@@ -125,7 +125,70 @@ try{
     '[data-find-cl27-axis="missal_edition"][data-find-cl27-value="ALL"]'
    )?.getAttribute("aria-pressed")==="true",null,{timeout:25000});
    await page.locator(".aoAtlasTlmExtra > summary").click();
-   const list=page.locator('[data-find-filter="view"][data-find-filter-value="list"]');
+   // Desktop concept A: source-filtered results at left, right church folio,
+   // and the exact SAME live MapLibre canvas throughout selection.
+   const mapRail=page.locator(".aoTlmMapRail");
+   assert.equal(await mapRail.count(),1,"Map-first TLM view must contain a contextual results rail");
+   if(width===1440){
+    await page.waitForFunction(()=>{
+      const n=document.querySelector(".aoTlmMapRailCount");
+      return !!document.querySelector(".aoFindMap .maplibregl-canvas")&&
+       n&&/^[0-9]+$/.test(n.textContent||"")&&Number(n.textContent)>0;
+    },null,{timeout:45000});
+    await mapRail.waitFor({state:"visible"});
+    assert.ok(await mapRail.locator(".aoTlmMapRailItem").count()>0,
+      "Viewport rail should show actual source-owned mapped venues");
+    // Collapsing the desktop rail must release its map area rather than
+    // leave an invisible 75%-height hit target over MapLibre.
+    await mapRail.locator(".aoTlmMapRailToggle").click();
+    const closed=await mapRail.evaluate(el=>({
+      height:el.getBoundingClientRect().height,
+      open:el.querySelector("details")?.open,
+    }));
+    assert.equal(closed.open,false);
+    assert.ok(closed.height<100,"Collapsed rail still blocks map: "+JSON.stringify(closed));
+    await mapRail.locator(".aoTlmMapRailToggle").click();
+    assert.equal(await mapRail.locator("details").getAttribute("open"),"");
+    await page.evaluate(()=>{window.__originalTlmCanvas=document.querySelector(".aoFindMap .maplibregl-canvas");});
+    const mapControls=await page.evaluate(()=>{
+      const r=x=>{const e=document.querySelector(x);if(!e)return null;const b=e.getBoundingClientRect();return {left:b.left,right:b.right,height:b.height};};
+      return {rail:r(".aoTlmMapRail"),reset:r(".aoExploreMapReset"),
+        legend:r(".aoMapLegend"),viewport:innerWidth};
+    });
+    assert.ok(mapControls.reset?.height>=44&&mapControls.reset.left>=mapControls.rail.right+5,
+      "All-mapped map reset must remain accessible beside desktop results: "+JSON.stringify(mapControls));
+    assert.ok(mapControls.legend?.left>=mapControls.rail.right+5,
+      "Map legend must not be buried beneath the contextual results rail: "+JSON.stringify(mapControls));
+    await captures("00-map-first-desktop");
+    await mapRail.locator(".aoTlmMapRailItem").first().click();
+    const railPreview=page.locator(".aoExploreQuickPreview");
+    await railPreview.waitFor({state:"visible",timeout:12000});
+    assert.equal(await page.evaluate(()=>window.__originalTlmCanvas===
+      document.querySelector(".aoFindMap .maplibregl-canvas")),true,
+      "Selecting an in-view church must not remount MapLibre");
+    await railPreview.locator("[data-explore-expand-detail]").click();
+    const sideProfile=page.locator(".aoTlmChurchProfile");
+    await sideProfile.waitFor({state:"visible",timeout:12000});
+    const panels=await sideProfile.evaluate(el=>{
+      const rect=x=>{const r=x.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width};};
+      return {rail:rect(document.querySelector(".aoTlmMapRail")),
+       profile:rect(el),viewport:innerWidth,
+       sameCanvas:window.__originalTlmCanvas===document.querySelector(".aoFindMap .maplibregl-canvas"),
+       overflow:document.documentElement.scrollWidth-innerWidth};
+    });
+    assert.ok(panels.sameCanvas,"Opening the full church profile must retain map camera/canvas");
+    assert.ok(panels.rail.right+12<panels.profile.x,
+      "Two map-first desktop panels must leave a usable gap for MapLibre: "+JSON.stringify(panels));
+    assert.ok(panels.profile.right<=width+1&&panels.overflow<=2,
+      "Contextual desktop panel must not overflow viewport: "+JSON.stringify(panels));
+    await captures("00-map-first-desktop-profile");
+    await sideProfile.locator("[data-explore-collapse-detail]").click();
+    await page.locator(".aoExploreQuickPreview").waitFor({state:"visible"});
+    await page.locator(".aoExploreQuickPreview [data-find-close-detail]").click();
+   }else{
+    assert.equal(await mapRail.isVisible(),false,"320/390 phone map must not inherit the desktop results rail");
+   }
+   const list=page.locator('.aoFindViewTabs [data-find-filter="view"][data-find-filter-value="list"]');
    assert.equal(await list.count(),1,"TLM view must expose a real List control");
    await list.click();
    // The view toggle repaints asynchronously. Never type into a retiring
