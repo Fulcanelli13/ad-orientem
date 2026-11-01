@@ -16,6 +16,8 @@ const board=read("data/geography/research/sacred-geography-coverage-first-r70.v1
 const illustrated=[...read("data/shrines/illustrated-place-guides-ireland.v1.json").guides,...read("data/shrines/illustrated-place-guides-france.v1.json").guides,...read("data/shrines/illustrated-place-guides-france-r67.v1.json").guides];
 const hero=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
+const b7=read("data/geography/research/photo-finder-20261030/releases/b7-nine-preserved-covers-release-20261101.v1.json");
+const b7Verified=new Map(b7.newly_released.map(x=>[x.place_id,x]));
 assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[LIVE.places,257,240,LIVE.sources]);
 assert.equal(newSites.length,6);
 assert.equal(new Set(newSites.map(x=>x.id)).size,6);
@@ -57,7 +59,14 @@ for(const row of newSites){
  assert.equal(candidate.confirmed_place_id,row.id);
  assert.equal(candidate.pin_gate,"EXISTING_CANONICAL_PIN");
  assert.equal(illustrated.some(x=>x.place_id===row.id),false,"Coverage sites are basic, not fabricated deep guides");
- assert.equal(hero.items.some(x=>x.place_id===row.id),false,"Unreviewed hero artwork cannot publish");
+ const released=b7Verified.get(row.id);
+ const approved=hero.items.filter(x=>x.place_id===row.id);
+ if(released){
+  assert.equal(approved.length,1,"R70 Place can gain one independently verified B7 cover");
+  assert.equal(approved[0].asset_path,released.asset_path);
+  assert.equal(approved[0].derivative_sha256,released.derivative_sha256);
+  assert.ok(approved[0].rights_verified&&approved[0].subject_verified&&approved[0].crop_reviewed);
+ }else assert.equal(approved.length,0,"Unreviewed R70 hero cannot publish");
  assert.equal(gallery.items.some(x=>x.place_id===row.id),false,"Unreviewed gallery cannot publish");
  const pilgrimages=seed.pilgrimages.filter(x=>x.destination_shrine_id===sh[0].shrine_id);
  assert.equal(pilgrimages.length,row.country==="CA"||row.country==="ZM"?1:0,"No invented pilgrimage for ordinary parish or cathedral");
@@ -78,7 +87,9 @@ for(const row of newSites){
  const profile=profiles.find(p=>p.place_id===row.id);
  assert.ok(profile);
  assert.ok(profile.sources.some(s=>s.url===row.s1[0]));
- assert.equal(profile.media,null);
+ if(b7Verified.has(row.id)){
+  assert.equal(profile.media?.asset_path,b7Verified.get(row.id).asset_path,"B7 approved R70 Place photo must surface");
+ }else assert.equal(profile.media,null);
  assert.equal(profile.gallery.length,0);
  for(const lang of ["en","fr"]){
   const html=renderExploreToString(buildExploreViewModel({
