@@ -40,6 +40,54 @@ export const MASS_INSTITUTION_EMBLEMS=Object.freeze({
     licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
     reviewBeforeCommercialRelease:true,
   }),
+  // Order-wide historical heraldry: only for a source record explicitly
+  // classified by that ORDER_FAMILY code. It is not a local abbey's arms,
+  // a claim of operator ownership, or an invented institute insignia.
+  BENEDICTINE:Object.freeze({
+    label:"Benedictine Order",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_Arms_of_the_Order_of_Saint_Benedict_(simple).svg",
+    source:"https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_the_Order_of_Saint_Benedict_(simple).svg",
+    rights:"CC0 1.0; Tom-L. General Order of Saint Benedict heraldry, not individual monastery arms.",
+    licenseUrl:"https://creativecommons.org/publicdomain/zero/1.0/",
+    symbolScope:"ORDER_FAMILY",
+    reviewBeforeCommercialRelease:true,
+  }),
+  DOMINICAN:Object.freeze({
+    label:"Dominican Order",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Shield_of_Dominican_Order.svg",
+    source:"https://commons.wikimedia.org/wiki/File:Shield_of_Dominican_Order.svg",
+    rights:"Public domain (PD-self); AnonMoos / Bmflo. General Dominican Order arms, not Avrillé or Fanjeaux arms.",
+    licenseUrl:"https://creativecommons.org/publicdomain/mark/1.0/",
+    symbolScope:"ORDER_FAMILY",
+    reviewBeforeCommercialRelease:true,
+  }),
+  CISTERCIAN:Object.freeze({
+    label:"Cistercian Order",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Cistercian_Order.svg",
+    source:"https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_the_Cistercian_Order.svg",
+    rights:"CC BY-SA 4.0; Tardigradius. General Cistercian Order arms, not individual abbey arms.",
+    licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
+    symbolScope:"ORDER_FAMILY",
+    reviewBeforeCommercialRelease:true,
+  }),
+  NORBERTINE:Object.freeze({
+    label:"Norbertine Order",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/COA_Premonstratensians.svg",
+    source:"https://commons.wikimedia.org/wiki/File:COA_Premonstratensians.svg",
+    rights:"Public domain (PD-self); Flopro / Afernand74 / Perhelion. Premonstratensian/Norbertine order, not individual house arms.",
+    licenseUrl:"https://creativecommons.org/publicdomain/mark/1.0/",
+    symbolScope:"ORDER_FAMILY",
+    reviewBeforeCommercialRelease:true,
+  }),
+  PREMONSTRATENSIAN:Object.freeze({
+    label:"Premonstratensian Order",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/COA_Premonstratensians.svg",
+    source:"https://commons.wikimedia.org/wiki/File:COA_Premonstratensians.svg",
+    rights:"Public domain (PD-self); Flopro / Afernand74 / Perhelion. Same heraldry as Norbertines; not a separate institute.",
+    licenseUrl:"https://creativecommons.org/publicdomain/mark/1.0/",
+    symbolScope:"ORDER_FAMILY",
+    reviewBeforeCommercialRelease:true,
+  }),
 });
 export const MASS_EMBLEM_GROUPS=Object.freeze(Object.keys(MASS_INSTITUTION_EMBLEMS));
 export function massInstitutionEmblem(group){
