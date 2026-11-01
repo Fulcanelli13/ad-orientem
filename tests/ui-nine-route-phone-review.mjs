@@ -155,24 +155,23 @@ try {
    await capture("today",".homeScreen");
    await capture("calendar-month",".aoTodayV2CalendarInline #ao-calendar-modular-root",
     async()=>{
-     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
-     await page.waitForFunction(()=>document.querySelector(
-      '.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]'),
-      null,{timeout:20000});
-     // Do not confuse a half-populated month (e.g. 4/42) with the final grid.
-     // Captures still proceed with partial data when transport is unavailable.
-     await page.waitForFunction(()=>/42\s*\/\s*42/.test(
-      document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.textContent||""
-     ),null,{timeout:20000}).catch(()=>{});
+     // H7 owns the visible Home date: the old V2 tabs are retired.
+     await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]')
+       .click({timeout:12000});
+     await page.locator('.aoTodayH4[data-ao-home-calendar-view="picker"] .aoCalV2MonthGrid')
+       .waitFor({state:"visible",timeout:40000});
     });
-   await capture("mass-entry","#ao-mass-flow-v1 .aoMassFlowBackdrop",
+   await capture("mass-entry",".aoH7DoorView:not([hidden])",
     async()=>{
-     // Production's Mass entry is a Home action. Opening the ribbon alone
-     // does not guarantee that the preflight backdrop has been requested.
-     await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
-     await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:15000});
-     await page.locator('.homeScreen [data-home-mass-entry]').click();
-     await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:12000});
+     // Return via the canonical Calendar Back; H7 opens a Mass Door,
+     // not the retired .aoMassFlowBackdrop.
+     await page.locator('.aoH4CalendarBack [data-home-calendar-today]')
+       .click({timeout:12000});
+     await page.locator(".aoH7HomeView [data-home-h7-enter]")
+       .waitFor({state:"visible",timeout:15000});
+     await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
+     await page.locator(".aoH7DoorView:not([hidden])")
+       .waitFor({state:"visible",timeout:18000});
     });
    await capture("pray-hub","#aoPray435930.open",
     async()=>{await page.locator('[data-ao-app-surface="pray"]').click()});
