@@ -26,6 +26,15 @@ function isoUtcDate(value){
   if(!m)return null;
   return new Date(Date.UTC(Number(m[1]),Number(m[2])-1,Number(m[3])));
 }
+// Printed 1961 Solesmes Kyriale, 2*: "In dominica II Passionis aspersio omittitur".
+// The 1962 Palm Sunday calendar is the Sunday one week before Easter.
+export function is1962PalmSunday(value){
+ const date=isoUtcDate(value);
+ if(!date || date.toISOString().slice(0,10)!==String(value??""))return false;
+ const easter=easterSundayUtc(date.getUTCFullYear());
+ return date.getTime()===addUtcDays(easter,-7).getTime();
+}
+
 export function resolveAspergesRiteContext(prepared={}){
   const resolved=prepared?.session?.resolvedMass??prepared?.resolvedMass??prepared;
   const explicit=String(resolved?.provenance?.seasonalMode??"").trim().toUpperCase().replace(/[ -]+/g,"_");
@@ -83,10 +92,17 @@ export function buildAspergesPayload({graph,payload,riteContext={}}={}){
   const versicleRows=(payload.versicles??[]).map((x,index)=>{
     const kind=String(x.kind??"TEXT").toUpperCase();
     const marker=kind==="VERSICLE"?"℣. ":kind==="RESPONSE"?"℟. ":"";
+    // The printed 1961 Kyriale p. 3* adds Alleluia to both opening
+    // versicle and response in Eastertide. Do not append it elsewhere.
+    const paschalPair=formulaState.paschaltide && index<2;
+    if(paschalPair && (!x.paschalAddition?.latin || !x.paschalAddition?.english ||
+      !x.paschalAddition?.french))throw new Error("ASPERGES_PASCHAL_RESPONSE_ALLELUIA_SOURCE_MISSING");
+    const withSeason=(text,addition)=>clean(text)+(paschalPair?" "+clean(addition):"");
     return freeze({
       id:"ASP-050-"+String(index+1).padStart(2,"0"),
-      kind,latin:marker+clean(x.latin),
-      english:clean(x.english),french:clean(x.french),
+      kind,latin:marker+withSeason(x.latin,x.paschalAddition?.latin),
+      english:withSeason(x.english,x.paschalAddition?.english),
+      french:withSeason(x.french,x.paschalAddition?.french),
       sourceRecordId:"ASP-050",
     });
   });
