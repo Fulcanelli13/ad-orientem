@@ -1,0 +1,75 @@
+name: Sacred Atlas 59 exact technical-source recovery, research only
+on:
+  push:
+    branches:
+      - research/sacred-atlas-technical59-one-pass-20261101
+    paths:
+      - data/geography/research/photo-finder-20261030/.technical-59-once
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-atlas-tech59-once
+  cancel-in-progress: false
+jobs:
+  exact-source-recovery:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/sacred-atlas-technical59-one-pass-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original choices and immutable one-shot marker
+        run: |
+          set -euo pipefail
+          test "$(cat data/geography/research/photo-finder-20261030/.technical-59-once)" = "ONE_SHOT_59_EXACT_TECHNICAL_SOURCE_20261101"
+          python tests/photo-finder-59-technical-source-gate.py
+          AO_59_DRY_RUN=1 python tools/directory/verify-photo-finder-59-technical-once.py
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Check 59 exact Commons files in one bounded source pass
+        run: python tools/directory/verify-photo-finder-59-technical-once.py
+      - name: Verify no publication and exact digest for research blobs
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib,pathlib
+          root=pathlib.Path('.')
+          d='data/geography/research/photo-finder-20261030/'
+          r=json.loads((root/(d+'releases/technical-59-one-pass-source-results-20261101.v1.json')).read_text())
+          assert r['schema']=='AO_PHOTO_FINDER_TECHNICAL_59_ONE_PASS_V1'
+          assert r['exact_first_choice_attempted']==59 and r['verified_research_only']+r['held']==59
+          assert len(r['outcomes'])==59 and len(r['staged'])==r['verified_research_only']
+          assert not r['editorial_choices_changed'] and not r['approved_assets_changed']
+          assert not r['gallery_changed'] and not r['size_or_rights_safety_bypassed']
+          assert r['new_photos_published']==0
+          for x in r['staged']:
+           p=x['research_blob_path']
+           assert p.startswith(d+'recovered-technical-59/')
+           assert x['publication_status']=='RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN'
+           assert hashlib.sha256((root/p).read_bytes()).hexdigest()==x['item']['derivative_sha256']
+          print('PASS 59 outcomes; exact research WebP hashes; no publication')
+          PY
+          test -z "$(git diff --name-only -- data/geography/approved-place-media.v1.json data/geography/approved-place-gallery.v1.json data/geography/research/photo-finder-20261030/decisions.json)"
+      - name: Persist ONLY research outcomes and recovered exact WebPs
+        run: |
+          set -euo pipefail
+          git config user.name 'Ad Orientem source integrity'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/geography/research/photo-finder-20261030/releases/technical-59-one-pass-source-results-20261101.v1.json
+          if test -d data/geography/research/photo-finder-20261030/recovered-technical-59; then
+            git add -- data/geography/research/photo-finder-20261030/recovered-technical-59/
+          fi
+          python - <<'PY'
+          import json,subprocess
+          d='data/geography/research/photo-finder-20261030/'
+          r=json.load(open(d+'releases/technical-59-one-pass-source-results-20261101.v1.json'))
+          names=set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
+          expected={d+'releases/technical-59-one-pass-source-results-20261101.v1.json'}
+          expected.update(x['research_blob_path'] for x in r['staged'])
+          assert names==expected,{'unexpected':sorted(names-expected),'missing':sorted(expected-names)}
+          PY
+          git diff --cached --check
+          git commit -m "research(explore): preserve one-shot 59 original source outcomes, no publication"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

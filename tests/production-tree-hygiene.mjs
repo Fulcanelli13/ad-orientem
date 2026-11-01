@@ -23,6 +23,7 @@ const reviewBranchMutationWorkflows=new Map([
   ["directory-snapshot-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["directory-geocode-promotion.yml",/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i],
   ["photo-finder-release-covers.yml",/branches:\s*\n\s*-\s*["\']research\/photo-finder-release-20261030-b\*["\']/i],
+  ["photo-finder-59-technical-recovery.yml",/branches:\s*\n\s*-\s*research\/sacred-atlas-technical59-one-pass-20261101/i],
   ["directory-icksp-research-geocode.yml",/branches:\s*\n\s*-\s*["']directory\/icksp-quality-\*["']/i],
 ]);
 for(const name of workflows){
@@ -51,6 +52,19 @@ for(const name of workflows){
       assert.match(source,/git add -- docs\/research\/directory\/p79-canonical-place-photo-review\.html/);
       assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
       assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+    }
+    if(name==="photo-finder-59-technical-recovery.yml"){
+      assert.match(source,/github\.repository == 'Fulcanelli13\/ad-orientem'/);
+      assert.match(source,/github\.ref == 'refs\/heads\/research\/sacred-atlas-technical59-one-pass-20261101'/);
+      assert.match(source,/\.technical-59-once/);
+      assert.ok(source.includes("ONE_SHOT_59_EXACT_TECHNICAL_SOURCE_20261101"));
+      assert.ok(source.includes("AO_59_DRY_RUN=1"));
+      assert.ok(source.includes("RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"));
+      assert.ok(source.includes("verify-photo-finder-59-technical-once.py"));
+      assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
+      assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+      assert.doesNotMatch(source,/git\s+add[^\n]*approved-place-media/);
+      assert.equal((source.match(/git\s+push\s+origin/g)||[]).length,1);
     }
     if(name==="directory-icksp-research-geocode.yml"){
       assert.match(source,/branches:[ \t]*\n[ \t]*-[ \t]*["']directory\/icksp-quality-\*["'][ \t]*\n[ \t]*paths:[ \t]*\n[ \t]*-[ \t]*["']data\/directory\/\.icksp-research-geocode-request["']/i,
