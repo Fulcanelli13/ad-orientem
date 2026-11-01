@@ -67,7 +67,8 @@ try{
  await open("pray.confession");
  assert.equal(await page.locator("[data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator("[data-ao-confession-section='0']").count(),1);
- assert.equal(await page.locator("[data-p435930-since]").getAttribute("autocomplete"),"off");
+ assert.equal(await page.locator("[data-p435930-since]").count(),0,"Confession must not collect a time-since-last-Confession text entry");
+ assert.equal(await page.locator(".aoP435930ConfProgressLabel").count(),1,"Confession must show the current-stage eyebrow");
  await page.locator(".aoP435930ConfSources > summary").tap();
  assert.ok(await page.locator(".aoP435930ConfSources a[href*='wikisource.org']").count()>=1);
  assert.equal(await page.locator("[data-ao-confession-section='0'] input[type='checkbox']").count(),0,
