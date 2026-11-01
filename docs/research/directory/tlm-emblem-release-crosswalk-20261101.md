@@ -27,3 +27,14 @@ Do not delete, reset, or reinterpret the 41-group candidate research master.
 - Premonstratensian / Norbertine: https://commons.wikimedia.org/wiki/File:COA_Premonstratensians.svg — PD-self, Flopro / Afernand74 / Perhelion
 
 These copyright statements do not waive separate institutional insignia or trademark restrictions; pre-commercial review is explicitly retained. This change does not approve the previously downloaded 739 church photo candidates.
+
+
+## R02 — 1 November 2026: exact community emblem provenance
+
+- **CAPUCHINS_MORGON**: promoted to runtime **as an exact-community identity**, with source `https://commons.wikimedia.org/wiki/File:Capuchins_of_morgon_logo.png` (Commons labels the image CC BY-SA 4.0; uploaded 29 November 2022). The independent community website `https://capucins-morgon.fr/histoire/ordre-capucin` identifies its own Capuchin custody emblem. The Commons uploader credits the Capuchins' own booklet, rather than claiming to be the original creator: **the licence's chain of authority remains unverified**. Keep `reviewBeforeCommercialRelease: true`, attribute and avoid an endorsement implication.
+- **MILITIA_TEMPLI**: official organisation confirms a **red octagonal cross on white** (`https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/`). Commons candidate `https://commons.wikimedia.org/wiki/File:Militia_Templi_COA.svg` has a freely licensed **blue-shield red Maltese-cross heraldic illustration** made by a separate editor. This is not proof that the picture is the exact official insignia. **Hold**: do not replace with generic medieval Templar or Hospitaller crosses.
+- **SSPV**: `https://commons.wikimedia.org/wiki/File:SSPV_Website_logo.jpg` and `https://commons.wikimedia.org/wiki/File:SSPV_Website_Log.png` both claim CC BY-SA 4.0 by an independent uploader (July 2026) while purporting to reproduce a website logo. Confirm the organisation's exact asset and original creator rights first. **Hold**, never replace with St Pius V's portrait.
+- **SJM**: its named official graphic at `https://www.sjm-online.org/sjm-logo-transparent/` remains **hold** with no licence/reuse grant on the official page.
+- **CANONS_ST_JOHN_CANTIUS**, **CMRI**, **FSVF**, **SMMD**: retain existing precise research identity and copyright restrictions; no guessed family heraldry.
+
+This release expands to **11 exact group codes / 10 distinct image sources**, not 11 independent rights-cleared institute logos. Historical 41-group candidate queue remains immutable.

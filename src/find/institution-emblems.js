@@ -40,6 +40,15 @@ export const MASS_INSTITUTION_EMBLEMS=Object.freeze({
     licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
     reviewBeforeCommercialRelease:true,
   }),
+  CAPUCHINS_MORGON:Object.freeze({
+    label:"Capuchins of Morgon",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Capuchins_of_morgon_logo.png",
+    source:"https://commons.wikimedia.org/wiki/File:Capuchins_of_morgon_logo.png",
+    officialIdentitySource:"https://capucins-morgon.fr/histoire/ordre-capucin",
+    rights:"Commons lists CC BY-SA 4.0; 2022 uploader credits the Capuchins of Morgon booklet as original source. Institution-origin licence authority requires separate review.",
+    licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0/",
+    reviewBeforeCommercialRelease:true,
+  }),
   // Order-wide historical heraldry: only for a source record explicitly
   // classified by that ORDER_FAMILY code. It is not a local abbey's arms,
   // a claim of operator ownership, or an invented institute insignia.
