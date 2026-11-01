@@ -1,7 +1,7 @@
 {
   "schema": "AO_TLM_WAVE_A_CC0_ORIGINAL_SOURCE_PREFLIGHT_V1",
   "date": "2026-11-01",
-  "role": "OFFLINE_REVIEW_PREPARATION_ONLY",
+  "role": "OFFLINE_ARCHIVE_SOURCE_AND_VISUAL_REVIEW_ONLY",
   "source_audit_parts": [
     "data/directory/research/tlm-photo-audit-739-existing-archive-reconcile-part-1-of-3-20261101.v1.json",
     "data/directory/research/tlm-photo-audit-739-existing-archive-reconcile-part-2-of-3-20261101.v1.json",
@@ -58,13 +58,18 @@
     "never_auto_approve_site_identity": true,
     "never_auto_approve_editorial_cover": true,
     "original_sha1_and_mediawiki_current_license_must_match": true,
-    "download_full_originals_not_previous_zip_previews": true,
+    "download_full_originals_not_previous_zip_previews": false,
     "preserve_original_frame_no_cropping": true,
     "stage_artifacts_outside_assets_approved": true,
     "no_changes_to_public_card_renderer": true,
     "no_new_map_pins_or_timings": true,
     "api_source_not_inferred_from_site_name": true,
-    "zero_paid_services": true
+    "zero_paid_services": true,
+    "reuse_exact_originals_only_when_archive_sha1_matches_pinned_commons_original": true,
+    "previews_permitted_for_visual_qa_but_not_original_claim": true,
+    "current_license_metadata_must_be_reverified_before_app_approval": true,
+    "no_retry_against_commons_http_429": true
   },
-  "next_release_gate": "Visual inspection of staged derivatives + operator/site confirmation + approved-media provenance records and final QA before any asset enters app."
+  "next_release_gate": "Existing archive SHA-256 verification; accept exact-original status only when archive SHA-1 matches pinned Commons original; perform source-rights and exact-building checks plus editorial image QA before app approval or binary import.",
+  "source_data_disposition": "13 previously acquired ZIPs in user's ChatGPT Library; no additional Wikimedia requests"
 }
