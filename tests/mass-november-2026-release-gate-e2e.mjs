@@ -209,7 +209,7 @@ try{
  for(const [form,x] of Object.entries(a.forms)){
   check(x.status==="CERTIFIED",`NOV01_${form}_COMMEMORATION_FORM_UNCERTIFIED`);
   check(x.counts.every(n=>n===2),`NOV01_${form}_2_2_2_ORATIONS_MISSING`);
-  for(const [language,v] of Object.entries(x.languages))
+  for(const [language,v] of Object.entries(x.languages)){
    check(v.ready&&v.collects===2&&v.secrets===2&&v.postcommunions===2,
     `NOV01_${form}_${language}_READER_ORATIONS_NOT_READY`);
    // Inherited Offertory must be resolved by the actual production Proper.
@@ -218,6 +218,7 @@ try{
     `NOV01_${form}_${language}_OFFERTORY_WRONG_PROPER_OWNER`);
    check(/(?:Iu|Ju)st[oó]rum\s+[aá]nim(?:ae|æ|[aá]e)/iu.test(v.offertoryLatin),
     `NOV01_${form}_${language}_OFFERTORY_SOURCE_INHERITANCE_UNRESOLVED:${String(v.offertoryLatin??"").slice(0,110)}`);
+  }
  }
  check(b.status==="ready"&&b.properStatus==="ready","NOV02_CALENDAR_OR_PROPER_NOT_READY");
  check(b.id==="sancti:11-02m1:1:b","NOV02_WRONG_PRINCIPAL");
