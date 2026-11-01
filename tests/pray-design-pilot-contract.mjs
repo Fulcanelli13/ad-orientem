@@ -110,6 +110,10 @@ for(const mode of ["individual","group"])assert.match(angelus,new RegExp('data-p
 assert.match(angelus,/aria-pressed="true">Alone/,"Individual is the default presentation");
 assert.match(angelus,/Angelus/);
 assert.match(regina,/Regina Cæli/);
+assert.doesNotMatch(angelus,/The existing named cards|Kneel · ordinary days|aoPrayPilotEntryMeta/,
+ "Angelus opening must not show engineering copy or posture before the prayer begins");
+assert.doesNotMatch(regina,/The existing named cards|Eastertide · stand according to local custom|aoPrayPilotEntryMeta/,
+ "Regina opening must not show engineering copy or stage-posture metadata");
 assert.doesNotMatch(angelus,/data-ao-incarnation/,"the presentation does not invent canonical prayer units");
 
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
