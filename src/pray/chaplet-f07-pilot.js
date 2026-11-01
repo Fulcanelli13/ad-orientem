@@ -147,7 +147,7 @@ const F07_STYLE=`
 #aoPray435930 .aoF07MercyEntryOutline .aoF07CrownDiagram{width:94px;height:94px}
 #aoPray435930 .aoF07MercyEntryOutline .aoF07CrownText{display:none}
 #aoPray435930 .aoF07MercyEntryOutline ol{display:grid;gap:9px;margin:0;padding-left:19px;font:400 14px/1.4 var(--ao-font-liturgical,Georgia,serif);color:var(--text,#eee)}
-#aoPray435930 .aoF07MercyBegin{margin-top:auto;width:100%;min-height:49px;padding:12px 17px;border:0;border-radius:999px;background:var(--text,#eee6dc);color:#241c18;font:600 15px/1.2 system-ui,sans-serif}
+#aoPray435930 .aoF07MercyBegin{margin-top:4px;width:100%;min-height:49px;padding:12px 17px;border:0;border-radius:999px;background:var(--text,#eee6dc);color:#241c18;font:600 15px/1.2 system-ui,sans-serif}
 #aoPray435930 .aoF07MercyBegin:focus-visible{outline:3px solid var(--liturgical,#c6ab82);outline-offset:3px}
 #aoPray435930 .aoF07MercyEntrySource{align-self:center;font:400 11px/1.4 system-ui,sans-serif;color:var(--muted,#beb2a4)}
 #aoPray435930 .aoF07MercyEntrySource a{color:inherit}
