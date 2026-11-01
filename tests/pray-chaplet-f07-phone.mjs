@@ -144,6 +144,16 @@ try{
    await page.locator(base+"[data-p435930-mercy-begin]").click();
    assert.equal(await page.locator(base+'[data-ao-f07-crown]').getAttribute('data-position'),'0',
     "Beginning again must restart the same canonical 62-event sequence");
+   // The separate Claude m3 Return must open the actual Rosary & Chaplets
+   // collection, not the generic Prayer hub or a parallel chaplet router.
+   await page.locator(base+'.aoF07MercyChapterChips [data-p435930-mercy-chapter="59"]').click();
+   await page.locator(base+'.aoMercyLine[data-ao-mercy-step="61"]').click();
+   await page.locator(base+'[data-p435930-mercy-finish]').click();
+   assert.match(await page.locator(base+'[data-p435930-mercy-return]').innerText(),/Rosary|Rosaire/);
+   await page.locator(base+'[data-p435930-mercy-return]').click();
+   assert.equal(await page.locator(base+'.aoP435930Mount').getAttribute('data-ao-pray-view'),'family');
+   assert.equal(await page.locator(base+'[data-p435930-own="pray.divine_mercy"]').count(),1,
+    "m3 Return must expose the canonical Divine Mercy choice in Rosary & Chaplets");
    assert.deepEqual(errors,[],"No uncaught F07 pilot errors");
    console.log("PASS F07 "+width+"px: source 62 events, 55-bead crown, decade jump, full prayer, no overflow");
   }finally{await page.close()}
