@@ -335,9 +335,9 @@ test('Prayer image acquisition queue deduplicates current choices but does not g
  assert.equal(ledger.queue.reduce((n,x)=>n+x.slots.length,0),248);
  assert.equal(ledger.queue.some(x=>x.title==='Madonna del Rosario'&&x.priority==='P0_FINAL_LOCK'),true);
  // Archived originals are research assets, not release-certified photographs.
- assert.equal(ledger.counts.photographSourceFilesArchived,9);
- assert.equal(ledger.counts.distinctArtworkGroupsWithArchivedOriginals,8);
- assert.equal(ledger.queue.reduce((n,x)=>n+(x.photosAcquired||0),0),9);
+ assert.equal(ledger.counts.photographSourceFilesArchived,13);
+ assert.equal(ledger.counts.distinctArtworkGroupsWithArchivedOriginals,12);
+ assert.equal(ledger.queue.reduce((n,x)=>n+(x.photosAcquired||0),0),13);
  for(const x of ledger.queue) {
   if(x.photosAcquired>0) {
     assert.ok((x.archivedSourceFiles||[]).length>=x.photosAcquired,x.key);
