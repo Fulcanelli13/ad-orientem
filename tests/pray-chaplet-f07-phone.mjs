@@ -127,8 +127,16 @@ try{
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0,
     "Simply reaching the final text must not mark the chaplet complete");
    await finalAction.click();
-   assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),1,
+   const completion=page.locator(base+'[data-f07-mercy-completion]');
+   assert.equal(await completion.count(),1,
     "Finish after the final source event must reveal completion");
+   assert.equal(await completion.locator(".aoF07MercyCompletionCrown .aoF07Bead").count(),55,
+    "Claude m3 must retain the source-owned 55-bead completion crown");
+   assert.match(await completion.locator(".aoF07MercyCompletionQuote").innerText(),/trust|confiance/i,
+    "Claude m3 must retain the approved devotional closing line");
+   assert.deepEqual(await completion.locator("button").evaluateAll(nodes=>nodes.map(n=>
+    n.hasAttribute("data-p435930-mercy-return")?"return":n.hasAttribute("data-p435930-mercy-again")?"again":"unknown")),
+    ["return","again"],"m3 must show return as primary, pray again as secondary");
    await page.screenshot({path:resolve(output,"mercy-m3-complete-"+width+".png"),animations:"disabled"});
    await page.locator(base+'[data-p435930-mercy-again]').click();
    assert.equal(await page.locator(base+'[data-f07-mercy-completion]').count(),0);
