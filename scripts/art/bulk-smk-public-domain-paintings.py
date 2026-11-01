@@ -102,7 +102,7 @@ def as_row(item,known,dates):
  desc=flatten(item.get("content_description_en") or item.get("content_description_da") or [])
  desc=desc[:1200]
  labels=flatten(item.get("labels_en") or item.get("labels_da") or [])[:600]
- media=flatten(item.get("object_names_en") or item.get("object_names_da") or [])[:250]
+ media=flatten(item.get("object_names_en") or item.get("object_names_da") or item.get("object_names") or item.get("object_type") or [])[:250]
  dtext=norm(title+" "+desc+" "+labels)
  tokens=set(dtext.split())
  date_matches=[]
@@ -116,6 +116,7 @@ def as_row(item,known,dates):
  return {
   "museum":"SMK National Gallery of Denmark","objectId":ident,"title":title,"artist":artist,
   "medium":media,"dateMatches":date_matches[:12],
+  "isPaintingByOfficialMedium":bool(re.search(r"\b(painting|maleri|oil on|olieverf|olio|peinture|schilderij|tavola|canvas|panel)\b",norm(media))) and not bool(re.search(r"\b(drawing|print|photograph|sculpture|engraving|etching|watercolor|tegn|tryk|grafik)\b",norm(media))),
   "publicDomain":item.get("public_domain") is True,
   "hasImage":bool(image),"imageNative":item.get("image_native"),
   "imageThumbnail":item.get("image_thumbnail"),
@@ -192,28 +193,59 @@ def main():
  dates=load_dates(args.calendar)
  records,errors=[],[]
  offset=0;batch_size=500
- while len(records)<args.max_metadata:
-  query=urllib.parse.urlencode({"keys":"*","filters":"[has_image:true],[object_names:maleri],[public_domain:true]","offset":offset,"rows":batch_size,"lang":"en"})
-  url=API+"?"+query
-  try:data=get_json(url)
+ # Filter syntax changed at times; prefer source-authoritative PD/image filter,
+ # then classify painting using the returned object type locally.
+ # An empty strict response is NOT a successful bulk harvest.
+ filters_to_try=[
+  "[has_image:true],[object_names:maleri],[public_domain:true]",
+  "[has_image:true],[public_domain:true]",
+  "[public_domain:true]",
+  ""
+ ]
+ filter_used=None
+ api_attempts=[]
+ for test_filter in filters_to_try:
+  query={"keys":"*","offset":0,"rows":10,"lang":"en"}
+  if test_filter:query["filters"]=test_filter
+  url=API+"?"+urllib.parse.urlencode(query)
+  try:
+   data=get_json(url)
+   test_batch=data.get("items") or []
+   api_attempts.append({"filters":test_filter or "UNFILTERED","items":len(test_batch),"resultKeys":list(data)[:12]})
+   if test_batch:
+    filter_used=test_filter
+    break
   except Exception as exc:
-   errors.append({"offset":offset,"error":str(exc)[:300]})
-   break
-  batch=data.get("items") or []
-  if not isinstance(batch,list):raise RuntimeError("Unexpected API payload structure")
-  if not batch:break
-  records.extend(batch)
-  offset+=len(batch)
-  if offset%2000==0:print("SMK records",offset,flush=True)
-  if len(batch)<batch_size:break
-  time.sleep(.4)
+   api_attempts.append({"filters":test_filter or "UNFILTERED","error":str(exc)[:230]})
+ if filter_used is None:
+  # Empty string is a valid unfiltered setting, not a failure if it gave items.
+  if not api_attempts or api_attempts[-1].get("items",0)==0:
+   errors.append({"error":"No objects were returned by any SMK API filter","attempts":api_attempts})
+ if filter_used is not None or (api_attempts and api_attempts[-1].get("items",0)>0):
+  while len(records)<args.max_metadata:
+   query={"keys":"*","offset":offset,"rows":batch_size,"lang":"en"}
+   if filter_used:query["filters"]=filter_used
+   url=API+"?"+urllib.parse.urlencode(query)
+   try:data=get_json(url)
+   except Exception as exc:
+    errors.append({"offset":offset,"error":str(exc)[:300]})
+    break
+   batch=data.get("items") or []
+   if not isinstance(batch,list):raise RuntimeError("Unexpected API payload structure")
+   if not batch:break
+   records.extend(batch)
+   offset+=len(batch)
+   if offset%2000==0:print("SMK records",offset,flush=True)
+   if len(batch)<batch_size:break
+   time.sleep(.4)
+ print("SMK API filter diagnostic:",json.dumps(api_attempts),flush=True)
  rows=[as_row(x,known,dates) for x in records[:args.max_metadata]]
  by_object={}
  for row in rows:
   if row["objectId"] and row["objectId"] not in by_object:by_object[row["objectId"]]=row
  rows=list(by_object.values())
  candidates=[(i,x) for i,x in enumerate(rows) if x["publicDomain"] and x["hasImage"] and
-  x["religiousSubjectDetected"] and x["existingArtistTitleMatch"] is False and
+  x["religiousSubjectDetected"] and x["isPaintingByOfficialMedium"] and x["existingArtistTitleMatch"] is False and
   not x["artistPolicyExcluded"] and x["imageNative"]]
  candidates.sort(key=lambda p:(not bool(p[1]["dateMatches"]),-len(p[1]["dateMatches"]),p[1]["title"]))
  selected=candidates[:args.download_limit]
@@ -230,9 +262,10 @@ def main():
  report={
  "schema":"AO_SMK_PUBLIC_DOMAIN_PAINTINGS_BATCH_V1",
  "source":API,"status":"RESEARCH_ONLY_NOT_EDITORIALLY_APPROVED",
- "apiFilter":"has_image:true + object_names:maleri + public_domain:true",
+ "apiFilter":filter_used or "UNFILTERED_FALLBACK", "apiAttempts":api_attempts,
  "metadataItemsParsed":len(records),"distinctObjectNumbers":len(rows),
  "religiousSubjectRecords":sum(x["religiousSubjectDetected"] for x in rows),
+ "paintingTypeRecords":sum(x["isPaintingByOfficialMedium"] for x in rows),
  "potentialNewReligiousPaintingsAgainstInspectedArchive":len(candidates),
  "provisionalCalendarDateMatches":len(set(d["date"] for _,x in candidates for d in x["dateMatches"])),
  "imagesDownloaded":sum(bool(x.get("file")) for x in results),
