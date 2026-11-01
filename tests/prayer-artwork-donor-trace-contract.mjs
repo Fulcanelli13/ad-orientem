@@ -21,6 +21,16 @@ test('all inherited art donor traces are unique, source-led and no-approval',()=
   CURRENT_DONOR_SOURCE_URL_MATCH:1
  });
  assert.equal(Object.values(donor.classCounts).reduce((a,b)=>a+b,0),71);
+ const c=donor.mismatchedDonorConsolidation20261101;
+ assert.equal(c.numberOfPlacements,23);
+ assert.equal(c.distinctOriginalIdentityGroups,12);
+ assert.equal(c.placementsWithIndependentHistoricAcceptedArtworkRecord,22);
+ assert.equal(c.groupsWithIndependentHistoricAcceptedArtworkRecord,11);
+ assert.equal(c.groups.length,12);
+ assert.equal(c.groups.reduce((n,x)=>n+x.affectedSlotIds.length,0),23);
+ assert.equal(c.groupsRequiringIdentityRecovery.length,1);
+ assert.equal(c.groupsRequiringIdentityRecovery[0],'The Crucifixion');
+ assert.ok(c.groups.every(x=>x.exactTargetSlotApprovalNotEstablished===true));
  assert.equal(audit.counts.INHERITED_REUSE_REQUIRES_SCOPE_TRACE,71);
  assert.equal(audit.counts.EXPLICIT_FINAL_COVER_LOCK,5);
  assert.equal(donor.newApprovals,0);
