@@ -28,10 +28,24 @@
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
       "rights_clearance": "PENDING_EXACT_COMMONS_PAGE_RIGHTS_RECHECK",
-      "editorial_approval": "PENDING_VISUAL_REVIEW",
+      "editorial_approval": "PENDING_USER_APPROVAL_OR_DELEGATED_FINAL_PUBLISH_DECISION",
       "published": false,
       "exact_commons_file_page_reviewed": false,
-      "file_page_cc0_verified": false
+      "file_page_cc0_verified": false,
+      "identity_review": {
+        "as_of": "2026-11-01",
+        "state": "EXACT_BUILDING_CORROBORATED",
+        "reference_url": "https://www.diocese.cc/FileSystem/11/Public/Publications/54/1251/pages.pdf",
+        "note": "Diocesan directory lists Our Lady of Ransom, Grange Road, Eastbourne BN21 4EU, matching Commons photo's named building/site. TLM timetable not independently established."
+      },
+      "visual_review": {
+        "image_inspected": true,
+        "assessment": "FULL_EXTERIOR_BUT_BACKLIT; image useful but exposure makes front facade dark",
+        "derived_by_editorial_assessment": true,
+        "explicit_user_approval": false
+      },
+      "publication_recommendation": "EXPOSURE_AND_FILE_RIGHTS_HOLD",
+      "exact_venue_identity_cleared": false
     },
     {
       "site_id": "RG-524E16F096DE",
@@ -52,10 +66,24 @@
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
       "rights_clearance": "PENDING_EXACT_COMMONS_PAGE_RIGHTS_RECHECK",
-      "editorial_approval": "PENDING_VISUAL_REVIEW",
+      "editorial_approval": "PENDING_USER_APPROVAL_OR_DELEGATED_FINAL_PUBLISH_DECISION",
       "published": false,
       "exact_commons_file_page_reviewed": false,
-      "file_page_cc0_verified": false
+      "file_page_cc0_verified": false,
+      "identity_review": {
+        "as_of": "2026-11-01",
+        "state": "EXACT_BUILDING_CORROBORATED",
+        "reference_url": "https://historicengland.org.uk/listing/the-list/list-entry/1391890",
+        "note": "Historic England NHLE 1391890 identifies Our Lady of Consolation and St Francis, Park Lane, West Grinstead; canonical building identity established independently of tentative TLM schedule."
+      },
+      "visual_review": {
+        "image_inspected": true,
+        "assessment": "SIDE_UPWARD_VIEW; partial building and spire with bright sky; lower priority than a full-building exterior",
+        "derived_by_editorial_assessment": true,
+        "explicit_user_approval": false
+      },
+      "publication_recommendation": "COMPOSITION_AND_FILE_RIGHTS_HOLD",
+      "exact_venue_identity_cleared": false
     },
     {
       "site_id": "RG-843570C4C0E0",
@@ -76,7 +104,7 @@
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
       "rights_clearance": "SOURCE_FILE_CC0_CONFIRMED__FULL_PUBLICATION_STILL_HELD",
-      "editorial_approval": "PENDING_VISUAL_REVIEW",
+      "editorial_approval": "PENDING_USER_APPROVAL_OR_DELEGATED_FINAL_PUBLISH_DECISION",
       "published": false,
       "exact_commons_file_page_reviewed": true,
       "file_page_cc0_verified": true,
@@ -84,7 +112,21 @@
         "as_of": "2026-11-01",
         "page": "https://commons.wikimedia.org/wiki/File:Church_of_St_Pius_V%2C_Groombridge.JPG",
         "description": "Specific matching Commons file page states own work and CC0 Universal Public Domain Dedication; review does not confer venue or editorial approval"
-      }
+      },
+      "identity_review": {
+        "as_of": "2026-11-01",
+        "state": "EXACT_BUILDING_CORROBORATED",
+        "reference_url": "https://fsspx.ie/en/chapels-directory",
+        "note": "SSPX lists Church of Saint Pius V, Station Road, Groombridge TN3 9QX; original Commons photo independently identifies the same chapel and street."
+      },
+      "visual_review": {
+        "image_inspected": true,
+        "assessment": "CLEAR_PRIMARY_EXTERIOR; entire brick facade and SSPX sign shown; appropriate cover candidate",
+        "derived_by_editorial_assessment": true,
+        "explicit_user_approval": false
+      },
+      "publication_recommendation": "SOURCE_QUALIFIED__EDITORIAL_AND_BINARY_RELEASE_HELD",
+      "exact_venue_identity_cleared": false
     },
     {
       "site_id": "RG-93691FBCC8E6",
@@ -105,7 +147,7 @@
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
       "rights_clearance": "SOURCE_FILE_CC0_CONFIRMED__FULL_PUBLICATION_STILL_HELD",
-      "editorial_approval": "PENDING_VISUAL_REVIEW",
+      "editorial_approval": "PENDING_USER_APPROVAL_OR_DELEGATED_FINAL_PUBLISH_DECISION",
       "published": false,
       "exact_commons_file_page_reviewed": true,
       "file_page_cc0_verified": true,
@@ -113,7 +155,21 @@
         "as_of": "2026-11-01",
         "page": "https://commons.wikimedia.org/wiki/File:St_Mary_Magdalen's_RC_Church%2C_Upper_North_Street%2C_Brighton_(NHLE_Code_1381058).JPG",
         "description": "Specific matching Commons file page states own work and CC0 Universal Public Domain Dedication; review does not confer venue or editorial approval"
-      }
+      },
+      "identity_review": {
+        "as_of": "2026-11-01",
+        "state": "EXACT_BUILDING_CORROBORATED_HISTORIC",
+        "reference_url": "https://marymagdalen.blogspot.com/2014/05/our-ascension-day-mass.html",
+        "note": "Historic St Mary Magdalen parish site gives 55 Upper North Street, Brighton BN1 3PH; Commons file identifies the same church; historic TLM listing does not prove current timetable."
+      },
+      "visual_review": {
+        "image_inspected": true,
+        "assessment": "CLEAR_PRIMARY_EXTERIOR; facade and spire identifiable; appropriate cover candidate",
+        "derived_by_editorial_assessment": true,
+        "explicit_user_approval": false
+      },
+      "publication_recommendation": "SOURCE_QUALIFIED__EDITORIAL_AND_BINARY_RELEASE_HELD",
+      "exact_venue_identity_cleared": false
     },
     {
       "site_id": "RG-D2DF4E4B9C41",
@@ -134,10 +190,24 @@
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
       "rights_clearance": "PENDING_EXACT_COMMONS_PAGE_RIGHTS_RECHECK",
-      "editorial_approval": "PENDING_VISUAL_REVIEW",
+      "editorial_approval": "PENDING_USER_APPROVAL_OR_DELEGATED_FINAL_PUBLISH_DECISION",
       "published": false,
       "exact_commons_file_page_reviewed": false,
-      "file_page_cc0_verified": false
+      "file_page_cc0_verified": false,
+      "identity_review": {
+        "as_of": "2026-11-01",
+        "state": "EXACT_BUILDING_CORROBORATED",
+        "reference_url": "https://taking-stock.org.uk/building/altrincham-st-vincent-de-paul/",
+        "note": "Catholic Taking Stock identifies St Vincent de Paul church on Bentinck Road, Altrincham, the location depicted in Commons file. Current TLM service not established by this identity match."
+      },
+      "visual_review": {
+        "image_inspected": true,
+        "assessment": "CLEAR_BUILDING_IN_LANDSCAPE; hedges obscure lower facade",
+        "derived_by_editorial_assessment": true,
+        "explicit_user_approval": false
+      },
+      "publication_recommendation": "FILE_RIGHTS_AND_EDITORIAL_HOLD",
+      "exact_venue_identity_cleared": false
     }
   ],
   "excluded_from_publish": [
@@ -147,5 +217,8 @@
   "next_action": "Complete exact-source, exact-building, contemporary Commons licence/attribution, and card presentation visual approval for each of five; then separate source-owned approved-media release PR with validated binary WebP hashes.",
   "file_specific_commons_cc0_reverified_count": 2,
   "rights_validation_remaining_source_pages": 3,
-  "no_publication": true
+  "no_publication": true,
+  "source_identity_corrob_count": 5,
+  "file_specific_cc0_verified_count": 2,
+  "publication_approvals": 0
 }
