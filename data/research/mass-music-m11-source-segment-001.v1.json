@@ -1,0 +1,275 @@
+{
+  "schema": "ao-mass-music-m11-1962-pre-gospel-segment-v1",
+  "segmentBatch": 1,
+  "sourceRepo": "DivinumOfficium/divinum-officium",
+  "ref": "master",
+  "sourceFiles": [
+    {
+      "path": "Sancti/06-24",
+      "sourceBlobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+      "expectedBlobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "ALLELUIA": 1
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-249",
+          "originalRole": "tr",
+          "donor": "misit dominus manum suam et tetigit os meum et dixit mihi",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 2,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-792",
+          "originalRole": "al",
+          "donor": "misit dominus manum suam et tetigit os meum et dixit mihi",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 2,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/08-06",
+      "sourceBlobSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "expectedBlobSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "ALLELUIA": 1
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-63",
+          "originalRole": "tr",
+          "donor": "eructavit cor meum verbum bonum dico ego opera mea regi",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 2,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-1076",
+          "originalRole": "al",
+          "donor": "speciosus forma prae filiis hominum diffusa est gratia in labiis tuis",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/08-10",
+      "sourceBlobSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+      "expectedBlobSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "ALLELUIA": 1
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-63",
+          "originalRole": "tr",
+          "donor": "probasti domine cor meum et visitasti nocte",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/08-22",
+      "sourceBlobSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+      "expectedBlobSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 3
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-63",
+          "originalRole": "tr",
+          "donor": "exsultabit cor meum in salutari tuo cantabo domino qui bona tribuit mihi et psallam nomini domini altissimi",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Sancti/12-26",
+      "sourceBlobSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+      "expectedBlobSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 2,
+        "ALLELUIA": 1
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-1167",
+          "originalRole": "tr",
+          "donor": "adiuva me domine deus meus salvum me fac propter misericordiam tuam",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 3,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-134",
+          "originalRole": "al",
+          "donor": "adiuva me domine deus meus salvum me fac propter misericordiam tuam",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 3,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Pasc2-0",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "expectedBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "ALLELUIA": 2
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-56",
+          "originalRole": "tr",
+          "donor": "ego sum pastor bonus et cognosco oves meas et cognoscunt me meae alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 4,
+              "role": "ALLELUIA"
+            }
+          ],
+          "classification": "ALLELUIA"
+        }
+      ]
+    },
+    {
+      "path": "Tempora/Pent01-0",
+      "sourceBlobSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "expectedBlobSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "sourceShaVerified": true,
+      "roleSegmentCounts": {
+        "GRADUAL": 3,
+        "COMMUNION": 1
+      },
+      "matches": [
+        {
+          "id": "GREGOBASE-1167",
+          "originalRole": "tr",
+          "donor": "benedictus es domine deus patrum nostrorum et laudabilis in saecula alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 4,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-1289",
+          "originalRole": "al",
+          "donor": "benedictus es domine qui intueris abyssos et sedes super cherubim",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-1289",
+          "originalRole": "al",
+          "donor": "benedictus es domine in firmamento caeli et laudabilis in saecula alleluia alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 2,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-965",
+          "originalRole": "gr",
+          "donor": "benedictus es domine deus patrum nostrorum et laudabilis in saecula alleluia",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 4,
+              "role": "GRADUAL"
+            }
+          ],
+          "classification": "GRADUAL"
+        },
+        {
+          "id": "GREGOBASE-391",
+          "originalRole": "co",
+          "donor": "benedicimus deum coeli et coram omnibus viventibus confitebimur ei quia fecit nobiscum misericordiam suam",
+          "sourceTextMatches": 1,
+          "sourceSegments": [
+            {
+              "line": 1,
+              "role": "COMMUNION"
+            }
+          ],
+          "classification": "COMMUNION"
+        }
+      ]
+    }
+  ],
+  "sourcePolicy": "CHECK_SHA_BEFORE_TRUSTING_ROLE_SEGMENT",
+  "approval": false,
+  "publicReader": false
+}
