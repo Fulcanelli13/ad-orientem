@@ -274,7 +274,14 @@
             "rosary_baptism_of_christ_mystery"
           ]
         }
-      ]
+      ],
+      "sceneAndScopeAudit": {
+        "kind": "APPROVAL_SCOPE_RECHECK",
+        "why": "Original B01 verbal instruction grants Visit to Blessed Sacrament scope; selected Epiphany proposal needs independent same-occasion approval",
+        "holdForExactSlotPublication": true,
+        "currentSelectionRetained": true,
+        "productionEnabled": false
+      }
     },
     {
       "slot": "HERO-04",
@@ -570,6 +577,12 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "PROVISIONAL_CONTEXTUAL_REUSE",
+        "why": "Champaigne La Petite Cène reused for Holy Thursday and Corpus Christi; optional variety review",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -656,6 +669,27 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Peter Paul Rubens",
+        "verifiedTitle": "Christ Triumphant over Death and Sin",
+        "museum": "Musée des Beaux-Arts de Strasbourg",
+        "accession": "MBA 235",
+        "attributionNote": "Strasbourg catalogues Rubens; Joconde describes 'd'après Rubens'. Do not collapse the conflicting catalogues.",
+        "verifiedOriginalUrl": "https://collections.musees.strasbourg.eu/en/document/le-christ-triomphant-de-la-mort-et-du-peche/5ee338d6461cda28a3ab1b6f",
+        "historicalUploaderOrPhotographer": "DCHNwam",
+        "photoLicenceVerified": false,
+        "historicalArtistPreserved": "DCHNwam",
+        "historicalTitlePreserved": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+        "originalArtworkIDs": [
+          "REVIEW::commons:163856843"
+        ]
+      },
+      "sceneAndScopeAudit": {
+        "kind": "SYMBOLIC_CONTEXTUAL",
+        "why": "Christ triumphing over death and sin is not a literal Holy Saturday event; retain selected work and distinguish its meaning",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -885,6 +919,12 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "PROVISIONAL_CONTEXTUAL_REUSE",
+        "why": "Champaigne La Petite Cène reused for Holy Thursday and Corpus Christi; optional variety review",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -2972,6 +3012,12 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "EXPLICIT_USER_EXTENSION_RECHECK",
+        "why": "B01 restricts Lanfranco original to grace before/after meals; later B02 explicitly also permits Our Father. Keep both verbatim source-ID decisions, do not globalise.",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -4284,6 +4330,13 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "EXPLICIT_USER_AUTHORIZED_CONTEXTUAL",
+        "why": "User explicitly permits Magi scene for Nativity mystery; selected photograph originates from Prado and is blocked",
+        "photoSourceHold": true,
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -5125,6 +5178,16 @@
         "reason": "RESTORE_RUBENS_EXACT_ORIGINAL_ID_TO_ROSARY_ASSUMPTION_PENDING",
         "mustNotReplaceWithStudioOfRubens": true,
         "publicationAllowed": false
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Charles de La Fosse",
+        "verifiedTitle": "Assumption of Mary",
+        "attributionNote": "Presentation title cleanup only; original identity retained",
+        "historicalArtistPreserved": "Charles de La Fosse",
+        "historicalTitlePreserved": "Assumption of Mary \"",
+        "originalArtworkIDs": [
+          "REVIEW::commons:15973724"
+        ]
       }
     },
     {
@@ -5200,6 +5263,16 @@
           "REVIEW::commons:65493548"
         ],
         "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "PRIMARY_HELD_EXACT_OPTIONS_EXIST",
+        "why": "Hold former Rubens Coronation primary; Lochner and Carracci are already approved options for this exact mystery",
+        "exactSceneAcceptedAlternativeIds": [
+          "REVIEW::cma:143761",
+          "REVIEW::met:435853"
+        ],
+        "currentSelectionRetained": true,
         "productionEnabled": false
       }
     },
@@ -5715,6 +5788,12 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "USER_ACCEPTED_CONTEXTUAL",
+        "why": "Incredulity of Thomas is chiefly associated with Christ's side rather than right-hand wound",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -5753,6 +5832,12 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "EXPLICIT_USER_AUTHORIZED_CONTEXTUAL",
+        "why": "User explicitly approved Caravaggio's side wound association in Five Wounds",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -6204,6 +6289,13 @@
         ],
         "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "USER_ACCEPTED_NEARBY_EVENT",
+        "why": "Preparation for Crucifixion precedes Crucifixion; explicit same-slot accepted exact scene option exists",
+        "exactSceneAcceptedAlternativeId": "CANONICAL::cma-97147",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -6242,6 +6334,12 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "EXPLICIT_USER_AUTHORIZED_CONTEXTUAL",
+        "why": "Caravaggio shows risen Christ's side; user permitted side-piercing associations",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -6686,6 +6784,17 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": null,
+        "verifiedTitle": "Fourth Station of the Cross, Solesmes",
+        "attributionNote": "The Commons filename is not independent painter evidence; Delacroix attribution is unverified",
+        "photoLicenceVerified": false,
+        "historicalArtistPreserved": "Attributed in Commons filename to Delacroix",
+        "historicalTitlePreserved": "Solesmes — Fourth Station of the Way of the Cross",
+        "originalArtworkIDs": [
+          "APPROVED_REVIEW::STG-prayer.seven_sorrows_chaplet-04::04"
+        ]
       }
     },
     {
@@ -7712,6 +7821,16 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Charles de La Fosse",
+        "verifiedTitle": "Assumption of Mary",
+        "attributionNote": "Presentation title cleanup only; original identity retained",
+        "historicalArtistPreserved": "Charles de La Fosse",
+        "historicalTitlePreserved": "Assumption of Mary \"",
+        "originalArtworkIDs": [
+          "REVIEW::commons:15973724"
+        ]
       }
     },
     {
@@ -11895,6 +12014,12 @@
         "candidateIDs": [],
         "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "USER_ACCEPTED_AFTERMATH",
+        "why": "Pietà depicts aftermath, not third utterance from the Cross",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -12078,6 +12203,12 @@
         "candidateIDs": [],
         "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "USER_ACCEPTED_AFTERMATH",
+        "why": "Pietà depicts aftermath, not seventh utterance from the Cross",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -14229,6 +14360,13 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "sceneAndScopeAudit": {
+        "kind": "USER_ACCEPTED_DIFFERENT_EVENT",
+        "why": "Flight into Egypt depicts outbound journey; same-slot accepted Poussin image depicts Return to Nazareth",
+        "exactSceneAcceptedAlternativeId": "CANONICAL::cma-130392",
+        "currentSelectionRetained": true,
+        "productionEnabled": false
       }
     },
     {
@@ -15531,6 +15669,23 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Jacques Blanchard",
+        "verifiedTitle": "Saint Jérôme écrivant",
+        "museum": "Musée de Grenoble",
+        "accession": "MG 4292",
+        "verifiedOriginalUrl": "https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm",
+        "photographer": "Jérôme Villafruela (Jvillafruela)",
+        "photographLicence": "CC BY-SA 4.0",
+        "photographLicenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "photoLicenceApprovedForAdOrientem": false,
+        "photoRestriction": "Current CC BY-SA exception applies only to 14 Tiepolo Stations",
+        "historicalArtistPreserved": "Jvillafruela",
+        "historicalTitlePreserved": "Jacques Blanchard - Saint Jérôme écrivant",
+        "originalArtworkIDs": [
+          "REVIEW::commons:85666930"
+        ]
       }
     },
     {
@@ -15890,6 +16045,21 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "verifiedWorkMetadata": {
+        "verifiedPainter": "Jacques Blanchard",
+        "verifiedTitle": "Saint Jérôme écrivant",
+        "museum": "Musée de Grenoble",
+        "accession": "MG 4292",
+        "verifiedOriginalUrl": "https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm",
+        "photographer": "Jérôme Villafruela (Jvillafruela)",
+        "photographLicence": "CC BY-SA 4.0",
+        "photographLicenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "photoLicenceApprovedForAdOrientem": false,
+        "photoRestriction": "Current CC BY-SA exception applies only to 14 Tiepolo Stations",
+        "historicalArtistPreserved": "Jvillafruela",
+        "historicalTitlePreserved": "Jacques Blanchard - Saint Jérôme écrivant",
+        "originalArtworkIDs": []
       }
     },
     {
@@ -17363,5 +17533,23 @@
       }
     ]
   },
-  "sourceIdentityCrosswalkHistoricalSnapshot": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-267-20261101.v1.json"
+  "sourceIdentityCrosswalkHistoricalSnapshot": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-267-20261101.v1.json",
+  "curatorialAuditAddendum20261101": {
+    "schema": "AO_PRAYER_ART_ATTRIBUTION_AND_SCENE_SCOPE_V1",
+    "source": "docs/research/prayer-artwork-cross-module-subject-fidelity-20261101.md",
+    "verifiedAttributionAndPresentationSlots": 6,
+    "sceneAndScopeAnnotatedSlots": 14,
+    "originalSelectionFieldsPreserved": true,
+    "originalHistoricUserDecisionsUnmodified": true,
+    "additionalExactSlotPublicationHolds": [
+      "HERO-03"
+    ],
+    "photoSourceHolds": [
+      "STG-pray.rosary-04",
+      "STG-pray.confession-01",
+      "COV-prayer.lection"
+    ],
+    "newPaintingApprovals": 0,
+    "liveImageReleaseCount": 0
+  }
 }
