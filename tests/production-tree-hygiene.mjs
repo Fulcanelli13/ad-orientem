@@ -54,17 +54,17 @@ for(const name of workflows){
       assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
     }
     if(name==="photo-finder-429-source-recovery.yml"){
-      assert.match(source,/github\\.repository == 'Fulcanelli13\\/ad-orientem'/);
-      assert.match(source,/github\\.ref == 'refs\\/heads\\/research\\/photo-finder-112-source-hold-reconciliation-20261101'/);
-      assert.match(source,/paths:\\s*\\n\\s*-\\s*data\\/geography\\/research\\/photo-finder-20261030\\/\\.retry-429-source-verification/i);
+      assert.match(source,/github\.repository == 'Fulcanelli13\/ad-orientem'/);
+      assert.match(source,/github\.ref == 'refs\/heads\/research\/photo-finder-112-source-hold-reconciliation-20261101'/);
+      assert.match(source,/paths:\s*\n\s*-\s*data\/geography\/research\/photo-finder-20261030\/\.retry-429-source-verification/i);
       assert.ok(source.includes("ONE_SHOT_EIGHT_ORIGINAL_429_2026-11-01"));
       assert.ok(source.includes("AO_429_DRY_RUN=1"));
       assert.ok(source.includes("retry-photo-finder-429.py"));
       assert.ok(source.includes("RESEARCH_ONLY_NOT_APPROVED_FOR_MAIN"));
-      assert.doesNotMatch(source,/git add -- data\\/geography\\/approved-place-media/);
+      assert.doesNotMatch(source,/git add -- data\/geography\/approved-place-media/);
       assert.doesNotMatch(source,/schedule:|workflow_dispatch:/i);
-      assert.doesNotMatch(source,/git\\s+add\\s+(?:-A|--all|\\.)/i);
-      assert.equal((source.match(/git\\s+push\\s+origin/g)||[]).length,1);
+      assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+      assert.equal((source.match(/git\s+push\s+origin/g)||[]).length,1);
     }
     if(name==="directory-icksp-research-geocode.yml"){
       assert.match(source,/branches:[ \t]*\n[ \t]*-[ \t]*["']directory\/icksp-quality-\*["'][ \t]*\n[ \t]*paths:[ \t]*\n[ \t]*-[ \t]*["']data\/directory\/\.icksp-research-geocode-request["']/i,
