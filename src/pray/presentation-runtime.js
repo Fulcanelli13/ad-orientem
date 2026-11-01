@@ -996,7 +996,7 @@ function renderAngelus(){
  if(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY){
   const c=angelusChoice(),p=angelusExactPosture();
   const posture=c.form==='regina'?L('Stand · Eastertide','Debout · temps pascal'):p.stand?L('Stand · Sunday or after Saturday Vespers','Debout · dimanche ou après les vêpres du samedi'):L('Kneel · ordinary days','À genoux · jours ordinaires');
-  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon,recitation:S.rosary.recitation});
+  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon,recitation:S.rosary.recitation,hour:CLAUDE_ANGELUS_HOUR});
  }
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
