@@ -1492,6 +1492,37 @@ try{
          assert.equal(await browse.count(),1,"F05 must expose one direct Choose a prayer action");
          assert.match(await browse.innerText(),/Choose a prayer|Choisir une prière/,
            "F05 dedicated Browse action lost its prayer-first label");
+         // Actual phone touch geometry, not an artificial DOM click. At 390px
+         // legacy grid CSS put Browse under Reading layout and the fixed H1.
+         for(const width of [320,390]){
+           await page.setViewportSize({width,height:844});
+           const target=await page.evaluate(()=>{
+             const mount=document.querySelector("#aoPray435930 .aoP435930Mount");
+             if(mount)mount.scrollTop=0;
+             const nav=document.querySelector("#aoPray435930 [data-tp381-daily-mode='list']");
+             const book=document.querySelector("#aoPray435930 .aoDailyBookSelector");
+             const layout=document.querySelector("#aoPray435930 .aoDailyReadingOptions");
+             const head=document.querySelector("#aoPray435930 .aoP435930Head");
+             const rect=nav?.getBoundingClientRect(),br=book?.getBoundingClientRect(),
+               lr=layout?.getBoundingClientRect(),hr=head?.getBoundingClientRect();
+             if(!rect)return null;
+             const x=rect.left+rect.width/2,y=rect.top+rect.height/2;
+             const hit=document.elementFromPoint(x,y);
+             return {
+               x,y,width:rect.width,height:rect.height,top:rect.top,
+               bookBottom:br?.bottom??null,layoutBottom:lr?.bottom??null,
+               headerBottom:hr?.bottom??null,
+               directHit:Boolean(hit&&(hit===nav||nav.contains(hit)))
+             };
+           });
+           assert.ok(target?.height>=40&&target.width>100,
+             "F05 "+width+"px direct Browse lost its accessible tap area: "+JSON.stringify(target));
+           assert.ok(target.top>=Math.max(target.bookBottom??0,target.layoutBottom??0,target.headerBottom??0)-2,
+             "F05 "+width+"px Browse overlaps book/layout/header chrome: "+JSON.stringify(target));
+           assert.equal(target.directHit,true,
+             "F05 "+width+"px Browse tap is intercepted: "+JSON.stringify(target));
+         }
+         await page.setViewportSize({width:390,height:844});
          await browse.click();
        }else{
          assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,
