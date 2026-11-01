@@ -263,7 +263,7 @@ test('artwork release proof must include exact work, actual photo rights, SHA-25
 test('a nonempty public release manifest must have a real repository image file, never a remote candidate link',()=>{
  for(const [slot,asset] of Object.entries(PRAYER_RELEASED_IMAGE_ASSETS_V1)){
   assert.ok(PRAYER_ARTWORK_SLOT_AUTHORITY[slot],slot);
-  assert.match(asset.path,/^assets\\/pray\\/released\\//);
+  assert.ok(asset.path.startsWith('assets/pray/released/'),'Not a local Prayer release asset');
   assert.ok(existsSync(asset.path),'Missing release image file: '+asset.path);
   assert.ok(releaseClearedPrayerArtwork(slot),slot+' was not release certified');
  }
