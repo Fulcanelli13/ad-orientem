@@ -14,7 +14,9 @@ const crosswalk=read("data/geography/research/directory-place-photo-screen-p92-2
 assert.equal(manifest.schema,"AO_SACRED_PLACES_P99_FOUR_EXACT_DIRECTORY_CHURCHES_V1");
 assert.deepEqual([manifest.baseline.places,manifest.baseline.sources,manifest.baseline.directory_links],[518,822,11]);
 assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.proposed.directory_links],[522,830,15]);
-assert.deepEqual([g.places.length,sources.sources.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.links]);
+assert.deepEqual([g.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
+assert.equal(g.directoryPlaceLinks.length,LIVE.links+1,
+  "P99 historical 23 links plus one source-confirmed Guadalupe Shrine Wave A join");
 assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,23]);
 assert.equal(manifest.new_places,4);
 assert.equal(manifest.confirmed_directory_links_added,4);
