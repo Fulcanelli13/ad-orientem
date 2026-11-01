@@ -144,7 +144,7 @@ try{
       const b=begin.getBoundingClientRect(),a=alone.getBoundingClientRect();
       return {heroHeight:hero.height,coverBottom:cover.bottom,titleTop:h2.top,headerBottom:appHeader?.bottom||0,
         beginTop:b.top,beginBottom:b.bottom,recitationTop:a.top,recitationBottom:a.bottom,
-        navTop:document.querySelector(".aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect()?.top||innerHeight};
+        navTop:document.querySelector("#ao-global-ribbon, .aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect()?.top||(innerHeight-64)};
    });
    assert.ok(firstFold.heroHeight>=Math.max(260,width===320?260:400)&&firstFold.beginBottom<firstFold.recitationTop,
      "The art band must actually expand and Begin remain ABOVE recitation: "+JSON.stringify(firstFold));
