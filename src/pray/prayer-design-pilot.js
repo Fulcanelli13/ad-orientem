@@ -168,9 +168,11 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
   };
   const routes=new Map();
   Object.values(all).forEach(f=>{
-    (f.items||[]).forEach(item=>{
+    [...(f.items||[]),...(f.searchItems||[])].forEach(item=>{
       const [owner,id,title,description]=item;
-      if(!routes.has(owner+":"+id))routes.set(owner+":"+id,{owner,id,title,description});
+      // Canonical single-text records are already indexed below as DATA.prayers.
+      if(owner==="prayer")return;
+      if(!routes.has(id))routes.set(id,{owner,id,title,description});
     });
   });
   const routeForm=id=>/novena|montfort|first_friday|first_saturday/.test(id)?"novena"
