@@ -95,11 +95,9 @@ export function hydrateC3Art(root,state,win=globalThis){
       img.className="aoC3DatedImage";img.src=selected.image;
       img.alt=selected.title+" — "+selected.artist;
       img.referrerPolicy="no-referrer";img.loading="eager";img.decoding="async";
-      const credit=doc.createElement("div");credit.className="aoC3DatedCredit";
-      const name=doc.createElement("span");name.textContent=selected.artist+" · "+selected.title;
-      const link=doc.createElement("a");link.href=selected.source;
-      link.target="_blank";link.rel="noopener noreferrer";link.textContent="Source ↗";
-      credit.append(name,link);slot.append(img,credit);
+      // C3 keeps the hero free of caption overlays: its existing discreet
+      // artwork-info control reveals title, attribution, source and full image.
+      slot.append(img);
       hero?.classList?.remove("aoTodayV2ArtMissing");
       datedPreview=selected;
       img.addEventListener("error",()=>{
