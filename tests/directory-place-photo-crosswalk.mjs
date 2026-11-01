@@ -65,7 +65,10 @@ assert.equal(wrongChapel?.place_has_approved_photo,true);
 assert.notEqual(wrongChapel?.disposition,"EXISTING_CONFIRMED_LINK");
 for(const row of geo.directoryPlaceLinks){
  const pair=review.candidate_pairs.find(x=>x.venue_id===row.venue_id&&x.place_id===row.place_id);
- if(pair)assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
+ if(!pair)continue;
+ if(row.link_id==="link:directory-place:US:guadalupe-shrine-la-crosse")
+  assert.equal(pair.disposition,"EXACT_BUILDING_EVIDENCE_REQUIRED_HOLD","P92 frozen before source-proven P108 identity closure");
+ else assert.equal(pair.disposition,"EXISTING_CONFIRMED_LINK");
 }
 assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
  venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,live.counts.exact_confirmed_photo_joins);
