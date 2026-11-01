@@ -19,7 +19,8 @@
     "sourceLinksExactPageIdWave06": 1,
     "sourceLinksExactPageIdWave07": 2,
     "nonPDNonCC0PhotoSourcesStrictHoldWave07": 2,
-    "sourceLinksExactPageIdWave08": 2
+    "sourceLinksExactPageIdWave08": 2,
+    "reconciledCandidateCount20261101": 131
   },
   "slots": [
     {
@@ -482,6 +483,18 @@
           "exclusion": "HISTORICALLY_USER_MARKED_NOT_RELEVANT_TO_PRAYER_B01_B05",
           "originalSourcePage": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
           "sourceLedger": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json"
+        },
+        {
+          "id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+          "canonicalOriginalId": "historic:peter paul rubens:saint anthony of padua with the christ child",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "artist": "Peter Paul Rubens",
+          "sourcePage": null,
+          "originalStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "notForReview": true,
+          "reason": "Oct28 rejected Rubens Saint Anthony of Padua with Christ Child for St Anthony devotion; not global artist veto",
+          "decisionAuthority": "EXPLICIT_USER_REJECTION_OR_B02_NOT_RELEVANT",
+          "excludedOn": "2026-11-01"
         }
       ],
       "approvedReuseLinkedEarlier": [],
@@ -573,21 +586,6 @@
         },
         {
           "sourceIDs": [
-            "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
-          ],
-          "artist": "Peter Paul Rubens",
-          "title": "Saint Anthony of Padua with the Christ Child",
-          "sourcePage": null,
-          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
-          "fit": "DIRECT_SUBJECT_CANDIDATE",
-          "historicallyApprovedInOriginalLedger": false,
-          "requiresExplicitUserApproval": true,
-          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
-          "nativeAndRightsQA": "PENDING",
-          "productionEnabled": false
-        },
-        {
-          "sourceIDs": [
             "G17-012"
           ],
           "artist": "Giuseppe Bazzani",
@@ -627,7 +625,8 @@
           "originalSourceEvidence": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG"
         }
       ],
-      "imagePublicationAllowed": false
+      "imagePublicationAllowed": false,
+      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL"
     },
     {
       "slot": "COV-devotion_litany_st_joseph",
@@ -2586,5 +2585,13 @@
       ],
       "imagePublicationAllowed": false
     }
-  ]
+  ],
+  "reconciliation20261101": {
+    "reason": "Exact-work rejected research candidates must not remain selectable",
+    "removedCandidates": [
+      "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+    ],
+    "sourceLedgerUnmodified": true,
+    "productionEnabled": false
+  }
 }
