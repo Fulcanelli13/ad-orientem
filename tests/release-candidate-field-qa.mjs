@@ -53,6 +53,20 @@ const viewports=[
   {width:430,height:900},
 ];
 
+// Missing optional pinned historical source candidates are negative lookup results,
+// not absent app assets. Keep them visible as diagnostics and reject every other 4xx.
+function optionalPinnedSource404(status,type,url){
+  if(status!==404||!["fetch","xhr"].includes(type))return false;
+  let parsed;
+  try{parsed=new URL(url);}catch{return false;}
+  if(parsed.hostname!=="raw.githubusercontent.com")return false;
+  return /^\/(?:mmolenda\/missalemeum\/[a-f0-9]{40}\/backend\/resources\/divinum-officium-local|DivinumOfficium\/divinum-officium\/[a-f0-9]{40})\/web\/www\/(?:missa|horas)\/(?:Latin|English|Francais)\/(?:Tempora|Sancti)\/[^/]+\.txt$/.test(parsed.pathname);
+}
+assert.equal(optionalPinnedSource404(404,"fetch","https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Latin/Tempora/Adv1-2.txt"),true);
+assert.equal(optionalPinnedSource404(404,"image","https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Latin/Tempora/Adv1-2.txt"),false);
+assert.equal(optionalPinnedSource404(404,"fetch","http://127.0.0.1:4192/missing.js"),false);
+assert.equal(optionalPinnedSource404(500,"fetch","https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Latin/Tempora/Adv1-2.txt"),false);
+
 function meaningfulConsoleError(text){
   const value=String(text??"");
   return value &&
@@ -222,10 +236,17 @@ try{
     const pageErrors=[];
     const consoleErrors=[];
     const failedResources=[];
+    const optionalSourceMisses=[];
+    const optionalSourceConsole=[];
 
     page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
     page.on("console",msg=>{
-      if(msg.type()==="error" && meaningfulConsoleError(msg.text()))consoleErrors.push(msg.text());
+      if(msg.type()!=="error"||!meaningfulConsoleError(msg.text()))return;
+      const text=msg.text(),url=msg.location()?.url??"";
+      if(/Failed to load resource: the server responded with a status of 404/.test(text)&&
+        optionalPinnedSource404(404,"fetch",url)){
+        optionalSourceConsole.push({text,url});
+      }else consoleErrors.push({text,url});
     });
     page.on("response",response=>{
       const status=response.status();
@@ -235,7 +256,9 @@ try{
       if(!["script","stylesheet","image","font","document","fetch","xhr"].includes(type))return;
       const url=response.url();
       if(/favicon\.ico(?:\?|$)/i.test(url))return;
-      failedResources.push({status,type,url});
+      if(optionalPinnedSource404(status,type,url)){
+        optionalSourceMisses.push({status,type,url});
+      }else failedResources.push({status,type,url});
     });
 
     await page.goto("http://127.0.0.1:4192/index.html?aoR17Reader=native",{
@@ -331,7 +354,9 @@ try{
     assert.equal(await visible(page,".homeScreen"),true,
       viewport.width+"px Today was not restored after leaving Mass");
 
-    if(consoleErrors.length||failedResources.length)console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,consoleErrors,failedResources},null,2));
+    if(consoleErrors.length||failedResources.length||optionalSourceMisses.length)
+      console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,
+        consoleErrors,failedResources,optionalSourceMisses,optionalSourceConsole},null,2));
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
     assert.deepEqual(consoleErrors,[],viewport.width+"px assembled app emitted console errors");
     assert.deepEqual(failedResources,[],viewport.width+"px assembled app requested missing production resources");
