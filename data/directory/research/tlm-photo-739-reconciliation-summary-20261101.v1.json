@@ -1,0 +1,91 @@
+{
+  "schema": "AO_TLM_ARCHIVE_TO_PUBLISHED_MEDIA_RECONCILIATION_V1",
+  "date": "2026-11-01",
+  "source_master": {
+    "filename": "AO_TLM_Atlas_2582_Photo_Research.json",
+    "sha256": "ccb8ff7999cd6a9009a760db6c4b51495c9e751351ddd389c1b755b94773828a",
+    "index_sha": "5b362bb6f2cc9d7518db1cb10e9f0879d767be6b",
+    "venues": 2582
+  },
+  "source_audit": {
+    "schema": "AO_TLM_PHOTO_QA_CUMULATIVE_V4",
+    "cutoff": "2026-11-01",
+    "photos": 739,
+    "distinct_binary_sha256": 727,
+    "sha256_and_decode_passed": 739,
+    "zip_names": [
+      "AO_TLM_Photos_0011-0143.zip",
+      "AO_TLM_Photos_0144-0351.zip",
+      "AO_TLM_Photos_0352-0559.zip",
+      "AO_TLM_Photos_0560-0766(1).zip",
+      "AO_TLM_Photos_0767-0968.zip",
+      "AO_TLM_Photos_0969-1170.zip",
+      "AO_TLM_Photos_1171-1375.zip",
+      "AO_TLM_Photos_1377-1580(1).zip",
+      "AO_TLM_Photos_1581-1785(1).zip",
+      "AO_TLM_Photos_1786-1987.zip",
+      "AO_TLM_Photos_1988-2193.zip",
+      "AO_TLM_Photos_2194-2397(1).zip",
+      "AO_TLM_Photos_2398-2582(1).zip"
+    ],
+    "zip_sha256": {
+      "AO_TLM_Photos_0011-0143.zip": "44f334fa1b45d477ea3dd20c85dd8a4e1f9a090389c800d59a365bebfebf2241",
+      "AO_TLM_Photos_0144-0351.zip": "853899f8d1277f75bd7c651b9aff63b7954ef6d285f3a1a0107a75d05b395850",
+      "AO_TLM_Photos_0352-0559.zip": "d21d6788935604648b34782f9dfbce717a53fde15f5fc0cfb161d253f653c848",
+      "AO_TLM_Photos_0560-0766(1).zip": "a050a218dc45275c39cb7cf88214b8379732a8fd285a9e84dc97b2623de715f0",
+      "AO_TLM_Photos_0767-0968.zip": "a8557eda6a4673a3acd5179117fa3d207005af676d5d93dde6308eb1eb46965b",
+      "AO_TLM_Photos_0969-1170.zip": "38cb716caf40081d1933c92230d35a30dfdf1a3bed84225bd8419a42df39bd81",
+      "AO_TLM_Photos_1171-1375.zip": "81f8b944f500a2743af93a7d2a5b812a87a799b3e5a54b84203a49c17c8c4d76",
+      "AO_TLM_Photos_1377-1580(1).zip": "0f2d52f726cc2c145cf92be0c41cffb96c07009fe0db04321bfcc85ca03486c0",
+      "AO_TLM_Photos_1581-1785(1).zip": "449095505b2713fd48d811ec88d137623de2a4fdb41d0c8a4ae61904535a74d4",
+      "AO_TLM_Photos_1786-1987.zip": "f3cc16ced56cfad7d31008c202457d976ca7bdc0b45ef987d3d815d7681765a3",
+      "AO_TLM_Photos_1988-2193.zip": "1aa3a22e37fd5cfd7693ce2543c1ab0a6ab48da4108c86ec374b756490fe4c16",
+      "AO_TLM_Photos_2194-2397(1).zip": "9687ff23db9088aa5ba598014b533f158d398940e09efa18c5c266d1384c6830",
+      "AO_TLM_Photos_2398-2582(1).zip": "a7c6a37ac01229b94d6ccd375f9f834bea84e70d3df42a3c3d42a830eb5b7075"
+    },
+    "acquisition_status_counts": {
+      "NO_ELIGIBLE_MATCH": 1792,
+      "RESEARCH_PHOTOS_ZIPPED": 739,
+      "DOWNLOAD_ERROR": 51
+    },
+    "visual_status_counts": {
+      "QUARANTINE_WRONG_VENUE": 191,
+      "HOLD_EXACT_IDENTITY": 85,
+      "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION": 252,
+      "QUARANTINE_NOT_VENUE_PHOTO": 115,
+      "HOLD_DETAIL_OR_INTERIOR": 96
+    },
+    "publication_approvals_from_archive": 0
+  },
+  "verified_repo_registry_sha": {
+    "seed": "abc23e63bd3a3d2bc3d51ad77c109c571437dc24",
+    "approved_place_media": "849fcbb6c99221d4e9480559a7583683b7031e48",
+    "approved_place_gallery": "bb12e877e49bd995fac772b0b39dff64e0788cb8",
+    "cl2_site_index": "5b362bb6f2cc9d7518db1cb10e9f0879d767be6b"
+  },
+  "production_reconciliation": {
+    "canonical_sacred_places": 530,
+    "approved_covers": 143,
+    "approved_gallery_entries": 35,
+    "approved_gallery_places": 31,
+    "confirmed_venue_to_place_links": 23,
+    "confirmed_links_with_existing_cover": 16,
+    "confirmed_links_with_existing_gallery": 0,
+    "confirmed_links_resolvable_in_cl2": 23,
+    "photo_site_ids_not_in_cl2": 1,
+    "photo_sites_with_confirmed_place_link": 12,
+    "photo_sites_with_existing_approved_cover": 10
+  },
+  "artifact_parts": [
+    "data/directory/research/tlm-photo-audit-739-existing-archive-reconcile-part-1-of-3-20261101.v1.json",
+    "data/directory/research/tlm-photo-audit-739-existing-archive-reconcile-part-2-of-3-20261101.v1.json",
+    "data/directory/research/tlm-photo-audit-739-existing-archive-reconcile-part-3-of-3-20261101.v1.json"
+  ],
+  "safety": "All archive photos remain research-only. Use approved existing Place photos when confirmed LOCATED_AT. Never display QUARANTINE statuses. No photos acquired, newly approved or released in this reconciliation.",
+  "next": "Direct integration tasks are exact venue-to-place ID mapping expansion for already reviewed cases and publication-only processing of existing original image approvals (not automatic promotions).",
+  "approvals": {
+    "auto_promoted_photos": 0,
+    "user_votes_modified": 0,
+    "existing_approved_covers_replaced": 0
+  }
+}
