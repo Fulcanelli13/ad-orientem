@@ -918,7 +918,28 @@ try{
   // configuration page, no second launcher, and no ritual-grid width collapse.
   await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
-  await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
+  try{
+    await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
+  }catch(error){
+    // Diagnose the real multi-module handoff without modifying Lab Ora state.
+    const receipt=await page.evaluate(()=>{
+      const prayer=document.querySelector("#aoPray435930");
+      const donor=document.querySelector("#aoPrayerBookRoot");
+      const api=window.AOTraditionalPrayerBook;
+      return {
+        prayOpen:prayer?.classList.contains("open")??null,
+        prayView:prayer?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView??null,
+        donorPresent:Boolean(donor),
+        donorOpen:donor?.classList.contains("open")??null,
+        donorShell:Boolean(donor?.querySelector(".pbShell")),
+        activeRosaryOwner:donor?.dataset?.aoRosaryActiveRoot??null,
+        donorOpenModule:typeof api?.openModule,
+        donorState:window.AO_ROSARY_V381?.state?.()?.step??null,
+        alert:prayer?.querySelector("[role=alert]")?.textContent?.trim()?.slice(0,180)??null
+      };
+    });
+    throw new Error("Rosary canonical handoff failed after Confession: "+JSON.stringify(receipt),{cause:error});
+  }
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const standard=page.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
