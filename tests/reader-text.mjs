@@ -480,5 +480,17 @@ for(const corpus of [low,sung]){
     const privateCanon=all.find(p=>p.sourceCueIds?.includes("AO.SM.C0150"));
     assert.ok(privateCanon&&privateCanon.primary&&privateCanon.alternate,
       "Private Canon must retain its former language policy");
+    // Both canonical fragments of the *one* Preface versicle must appear on
+    // the same display line, not leave "Deo nostro / our God" orphaned.
+    const prefaceDialogues=all.filter(p=>p.sourceCueIds?.includes("AO.SM.C0141")||
+      p.sourceCueIds?.includes("AO.SM.C0142"));
+    assert.equal(prefaceDialogues.length,1,corpus.form+"/"+language+" fragmented Gratias agamus dialogue");
+    const gratitude=prefaceDialogues[0];
+    assert.deepEqual(gratitude.sourceCueIds,["AO.SM.C0141","AO.SM.C0142"]);
+    assert.match([gratitude.primary,gratitude.secondary,gratitude.alternate].join(" "),/Grátias agámus Dómino Deo nostro\./u);
+    assert.match([gratitude.primary,gratitude.secondary,gratitude.alternate].join(" "),
+      language==="fr"?/Seigneur notre Dieu/u:/Lord our God/u);
+    assert.equal(all.filter(p=>p.sourceCueIds?.includes("AO.SM.C0143")).length,1,
+      "The people's Dignum et iustum est response must remain independent");
   }
 }
