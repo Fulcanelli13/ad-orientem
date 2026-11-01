@@ -800,30 +800,36 @@ try{
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-rich-adoration']").count(),1,"Benediction Exposition rail lost its Eucharistic owner");
-  // The seven-card dual-axis reader supersedes the hidden legacy Continue controls.
-  // Test the actual visible timeline; do not bypass the user gesture contract.
+  // Claude F11 replaces the horizontal source timeline with one visible
+  // Roman I–VII margin. The source timeline must remain mounted but hidden
+  // on the ordinary seven-stage rite: never test or click hidden controls.
   const benReader="#aoPray435930 .aoP435930BenedictionReader";
   const benTimeline=benReader+" .aoDevoSequenceTimeline";
-  await page.waitForSelector(benTimeline,{state:"visible",timeout:5000});
+  const benRoman=benReader+" .aoClaudeRiteRail";
+  await page.waitForSelector(benRoman,{state:"visible",timeout:5000});
   assert.equal(await page.locator(benTimeline+" .aoDevoStop").count(),7,
-    "Benediction must expose seven source-owned public-rite cards");
+    "Benediction lost its seven source-owned public-rite cards");
+  assert.equal(await page.locator(benTimeline).isVisible(),false,
+    "Claude F11 must not show duplicate horizontal stage navigation");
+  assert.equal(await page.locator(benRoman+" [data-p435930-ben-step]").count(),7,
+    "Claude F11 must show exactly seven Roman stage controls");
   assert.equal(await page.locator(benReader+" .aoP435930GuideNav").isVisible(),false,
     "Competing legacy Continue controls must remain hidden");
-  await page.locator(benTimeline+" [data-ao-devo-chapter='3']").click();
+  await page.locator(benRoman+" [data-p435930-ben-step='3']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.dataset?.aoBenedictionStep==="3",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-response",null,{timeout:3000});
   const benPrayer=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
     right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
-    activeStage:document.querySelector("#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop[aria-current='step']")?.textContent?.trim()??"",
-    activeCount:document.querySelectorAll("#aoPray435930 .aoP435930BenedictionReader .aoDevoStop[aria-current='step']").length,
+    activeStage:document.querySelector("#aoPray435930 .aoP435930BenedictionReader .aoClaudeRiteRail button[aria-current='step']")?.getAttribute("aria-label")??"",
+    activeCount:document.querySelectorAll("#aoPray435930 .aoP435930BenedictionReader .aoClaudeRiteRail button[aria-current='step']").length,
   }));
   assert.equal(benPrayer.left,"ao-live-response","Benediction versicle/collect lost its congregational response cue");
   assert.equal(benPrayer.right,"ao-live-response","Benediction stage rail no longer follows the response moment");
-  assert.equal(benPrayer.activeCount,1,"Canonical Benediction timeline must expose exactly one current stage");
-  assert.match(benPrayer.activeStage,/Versicle|collect|Verset|oraison/i,
-    "Benediction timeline failed to label its actual versicle and collect stage");
-  await page.locator(benTimeline+" [data-ao-devo-chapter='4']").click();
+  assert.equal(benPrayer.activeCount,1,"Claude Roman stage margin must mark exactly one current stage");
+  assert.match(benPrayer.activeStage,/IV.+(Versicle|collect|Verset|oraison)/i,
+    "Claude Roman margin failed to label the actual versicle and collect stage");
+  await page.locator(benRoman+" [data-p435930-ben-step='4']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.dataset?.aoBenedictionStep==="4",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
