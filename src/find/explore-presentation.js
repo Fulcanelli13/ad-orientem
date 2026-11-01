@@ -515,7 +515,8 @@ function massEmblemCredits(language){
     +MASS_EMBLEM_GROUPS.map(group=>{
       const record=massInstitutionEmblem(group);
       return '<p><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'
-        +esc(record.label)+'</a> · '+(record.symbolScope==="ORDER_FAMILY"?esc(L(language,"General order symbol, not local house arms · ","Symbole général de l’ordre, pas les armes de cette maison · ")):"")+esc(record.rights)+' · <a href="'+esc(record.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'
+        +esc(record.label)+'</a> · '+(record.symbolScope==="ORDER_FAMILY"?esc(L(language,"General order symbol, not local house arms · ","Symbole général de l’ordre, pas les armes de cette maison · ")):
+         record.symbolScope==="INDEPENDENT_INSIGNIA_RENDERING"?esc(L(language,"Independently made cross illustration, not organisation logo · ","Illustration indépendante de la croix, non-logo de l’organisation · ")):"")+esc(record.rights)+' · <a href="'+esc(record.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'
         +esc(L(language,"Original image licence","Licence de l’image"))+'</a></p>';
     }).join("")
     +'<p>'+esc(L(language,
@@ -542,6 +543,7 @@ function tlmCommunityLabel(id,lang){
   CANONS_ST_JOHN_CANTIUS:["Canons of St John Cantius","Chanoines de Saint-Jean-de-Cantius"],
   SSPX_SISTERS:["SSPX Sisters","Sœurs FSSPX"],
   CAPUCHINS_MORGON:["Capuchins of Morgon","Capucins de Morgon"],
+  MILITIA_TEMPLI:["Militia Templi","Militia Templi"],
   CARMELITE:["Carmelites","Carmélites"],
   BENEDICTINE:["Benedictines","Bénédictins"],
   BENEDICTINES_BELLAIGUE:["Benedictines of Bellaigue","Bénédictins de Bellaigue"],

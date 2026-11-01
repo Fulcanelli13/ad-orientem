@@ -10,7 +10,7 @@ import {renderDirectoryIdentityFallback,hideUnavailableDirectoryEmblem} from "..
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 assert.deepEqual([...MASS_EMBLEM_GROUPS].sort(),
-  ["FSSP","IBP","ICKSP","SSPX","AASJMV","CAPUCHINS_MORGON",
+  ["FSSP","IBP","ICKSP","SSPX","AASJMV","CAPUCHINS_MORGON","MILITIA_TEMPLI",
     "BENEDICTINE","DOMINICAN","CISTERCIAN","NORBERTINE","PREMONSTRATENSIAN"].sort(),
   "Only source-qualified institute and order-family symbols may render");
 assert.equal(massInstitutionEmblem("diocesan"),null,
@@ -99,6 +99,29 @@ const noInventedLogo=renderDirectoryIdentityFallback({
 assert.match(noInventedLogo,/data-visual-kind="named"/);
 assert.doesNotMatch(noInventedLogo,/CMRI_emblem\.(png|svg)/);
 assert.match(renderDirectoryIdentityFallback({community_id:"DIOCESAN",eyebrow:"Diocesan"}),/data-visual-kind="neutral"/);
+// R03: known source-labelled institutes display their correct readable short
+// names when exact crest rights are held. These are text-only monograms, never
+// a copied coat of arms, and never inferred from a generic source label.
+for(const [code,label,mark] of [
+  ["CANONS_ST_JOHN_CANTIUS","Canons of St John Cantius","SJC"],
+  ["SJM","Servi Jesu et Mariae","SJM"],
+  ["CMRI","Congregation of Mary Immaculate Queen","CMRI"],
+  ["FSVF","Fraternity of Saint Vincent Ferrer","FSVF"],
+]){
+  assert.equal(massInstitutionEmblem(code),null,"Uncleared original insignia must not be rendered for "+code);
+  for(const language of ["en","fr"]){
+    for(const variant of ["card","preview","detail"]){
+      const html=renderDirectoryIdentityFallback({community_id:code,eyebrow:label},language,variant);
+      assert.match(html,/data-visual-kind="named"/);
+      assert.ok(html.includes('data-mark-length="'+String(mark.length)+'"'));
+      assert.ok(html.includes('>'+mark+'</span>'),"Correct source-monogram for "+code);
+      assert.doesNotMatch(html,/<img\b/,"Never disguise uncleared original artwork as a permitted logo");
+      assert.ok(html.includes(label),"Original named source must stay visible");
+    }
+  }
+}
+assert.match(renderDirectoryIdentityFallback({community_id:"OTHER",eyebrow:"Canons of St John Cantius"}),/>CJ<\/span>/,
+ "Without exact source ownership, retain generic source-derived initials");
 // A cross-origin emblem failure must replace the large graphic with its actual
 // named institute initials, not leave a broken image or invent a new crest.
 const fsspFallback=renderDirectoryIdentityFallback({community_id:"FSSP",eyebrow:"FSSP"},"en","card");
@@ -130,6 +153,18 @@ assert.equal(researchQueue.groups.find(x=>x.group_code==="CMRI").rights,"THIRD_P
 for(const code of familyCodes){
   assert.equal(massInstitutionEmblem(code)?.symbolScope,"ORDER_FAMILY");
   assert.equal(researchQueue.groups.find(x=>x.group_code===code)?.type,"ORDER_FAMILY");
+}
+const militia=massInstitutionEmblem("MILITIA_TEMPLI");
+assert.equal(militia?.symbolScope,"INDEPENDENT_INSIGNIA_RENDERING");
+assert.equal(militia.officialIdentitySource,"https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/");
+assert.equal(militia.source,"https://commons.wikimedia.org/wiki/File:Maltese_Cross_variant_red.svg");
+assert.match(militia.rights,/Public-domain geometry/);
+for(const lang of ["en","fr"]){
+  const id=renderDirectoryIdentityFallback({community_id:"MILITIA_TEMPLI",eyebrow:"Militia Templi"},lang,"card");
+  assert.match(id,/data-visual-kind="emblem"/);
+  assert.match(id,lang==="fr"?/Dessin indépendant de la croix/:/Independent cross drawing/);
+  assert.doesNotMatch(id,/Militia_Templi_COA.svg/,
+    "Do not substitute unauthorised blue shield or generic medieval Templar heraldry");
 }
 assert.equal(massInstitutionEmblem("NORBERTINE").image,massInstitutionEmblem("PREMONSTRATENSIAN").image,
   "Norbertine and Premonstratensian share the same order-wide heraldry");

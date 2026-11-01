@@ -38,3 +38,29 @@ These copyright statements do not waive separate institutional insignia or trade
 - **CANONS_ST_JOHN_CANTIUS**, **CMRI**, **FSVF**, **SMMD**: retain existing precise research identity and copyright restrictions; no guessed family heraldry.
 
 This release expands to **11 exact group codes / 10 distinct image sources**, not 11 independent rights-cleared institute logos. Historical 41-group candidate queue remains immutable.
+
+## R03 — 1 November 2026: exact-institute image rights closed as research holds
+
+**Runtime:** keep the existing **11 published emblem-group mappings / 10 source image files**. This R03 does not publish any of the four held original logos. Where an explicit `community_id` and source-reported `eyebrow` exist, display an **original, plain typographic monogram** in the existing fallback visual:
+
+| Exact source group | Visible text mark | Original logo evidence | Publication disposition |
+| --- | --- | --- | --- |
+| `CANONS_ST_JOHN_CANTIUS` | `SJC` | Official crest `https://www.canons-regular.org/`, Wix PNG `https://static.wixstatic.com/media/dba24e_8159dcc30a1544e4a889a6909d1d702a~mv2_d_2137_1948_s_2.png` | **Hold original emblem:** official source establishes exact identity, not a reuse licence |
+| `SJM` | `SJM` | Official SJM `https://www.sjm-online.org/sjm-logo-transparent/` and its image `https://www.sjm-online.org/wp-content/uploads/2018/04/SJM-Logo-transparent-214x300.gif` | **Hold original emblem:** organisation-hosted artwork; no explicit licence/redistribution grant |
+| `CMRI` | `CMRI` | Institution crest appears in `https://www.cmri.org/pdfs/cmri-traditional-latin-mass-map-usa-2026a.pdf`, earlier third-party vendor copy; Wikimedia Commons uploader `King_Pius` has a copyright-violation notice on `Crest of the Congregation of Mary Immaculate Queen (CMRI).png`: `https://commons.wikimedia.org/wiki/User_talk:King_Pius` | **Hold original emblem:** no licensed owner original; never use Bishop Pivarunas personal arms |
+| `FSVF` | `FSVF` | `https://fr.wikipedia.org/wiki/Fichier:Logo_FSVF.jpg`; original authorship unknown, uploader source unrelated to explicit reuse permission | **Hold original emblem:** Wikipedia explicitly categorises this as `Image non libre de logo` and warns against downstream reuse. Not a Commons free image. Never use general Dominican arms instead |
+
+All four plain-text marks are *source-specific*, are never displayed without a source-reported affiliation label, and do not imply any judgement concerning Mass schedule, institute ownership, ecclesiastical standing or Una Cum.
+
+Follow-ups for future image licensing are confined to existing evidence research. No owner contact, paid permissions or external hosting costs were initiated. Exact institute imagery requires **a credible reusable author licence covering the underlying emblem** or adequate permission before promotion. Preserve the original research master and existing rejection/rights cautions.
+
+
+## R04 — 1 November 2026: a licence-backed graphic, not a logo-file claim
+
+**MILITIA_TEMPLI:** The order's first-party `https://www.ordo-militiae-templi.org/militia/en/habit-and-insignia/` explicitly describes its insignia as a **red octagonal (eight-pointed) cross on white**. An independent Commons geometric vector `https://commons.wikimedia.org/wiki/File:Maltese_Cross_variant_red.svg` was made in 2010 by AnonMoos, explicitly describing its intended replacement of `File:Octangula Crux Militiae Templi.jpg`. Its file page offers public-domain release by its author and simple-geometry public-domain rationale.
+
+Use the vector as **independent illustration of the source-described red cross**, never as a copied official supplied emblem, coat of arms, broad claim of institutional sponsorship, or flag photo. No relation to third-party merchandise, Templar cross pattée symbols, or the separately authored blue-shield `Militia Templi COA.svg`. Retain `symbolScope: INDEPENDENT_INSIGNIA_RENDERING` and `reviewBeforeCommercialRelease: true`. The card/preview/profile disclosure states that the illustration is not the organisation's official supplied logo. Preserve attribution and Commons file link; an independently public-domain graphic does not itself authorize trademark/branding use without review.
+
+**R04 live registry scope:** one additional exact code (`MILITIA_TEMPLI`), making **12 group mappings / 11 distinct original image file URLs**. The 30 October 41-group candidate inventory remains intact. The canonical CL2 ledger contains **two source-labelled Militia Templi rows** with `NAMED_SOURCE_CANDIDATE_NOT_PUBLIC`: adding a graphics definition does NOT publish or upgrade those venues, schedules, ownership or affiliation records. No new location is invented.
+
+**The remaining exact institute images remain held.** SJC's registered crest description was found in a US trademark certificate mirror `https://uspto.report/TM/88331587/ORC20200920091139/1.pdf` (registration 6,170,324, recorded in 2020), but present-day registration status and legal scope require authoritative confirmation; no legal entitlement to use its artwork follows from that record. CMRI, SJM and FSVF still have no first-party reusable file licence. The existence of a right-to-copy geometric cross is not a blanket precedent for other organisational logos.
