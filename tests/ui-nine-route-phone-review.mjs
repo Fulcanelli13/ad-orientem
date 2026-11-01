@@ -173,6 +173,13 @@ try {
      await page.locator(".aoH7DoorView:not([hidden])")
        .waitFor({state:"visible",timeout:18000});
     });
+   // H7 Mass Door deliberately hides the global ribbon. Close it before
+   // moving to the next independently owned production surface.
+   if(await page.locator(".aoH7DoorView:not([hidden])").isVisible()){
+     await page.locator(".aoH7DoorView [data-home-h7-back]").click();
+     await page.locator(".aoH7HomeView [data-home-h7-enter]")
+       .waitFor({state:"visible",timeout:12000});
+   }
    await capture("pray-hub","#aoPray435930.open",
     async()=>{await page.locator('[data-ao-app-surface="pray"]').click()});
    await capture("rosary","#aoPrayerBookRoot.open .pbShell",
