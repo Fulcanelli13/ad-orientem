@@ -1,0 +1,24 @@
+name: Approved 2026 feast artwork — exact Home reuse
+on:
+  pull_request:
+    paths:
+      - "src/home/c3-gallery.js"
+      - "tests/home-c3-gallery.mjs"
+      - ".github/workflows/approved-class-i-home-reuse.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reuse-existing-art-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Exact Class I identity, held-rights and Home reuse tests
+        run: |
+          node tests/calendar-class-i-approved-heroes-2026.mjs
+          node tests/home-c3-gallery.mjs
+          node tests/home-sacred-art-legacy-exclusions.mjs
