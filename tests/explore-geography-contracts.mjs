@@ -373,10 +373,12 @@ assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:DE:kevel
 
 const guadalupeCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:US:guadalupe-la-crosse-tlm");
 assert.ok(guadalupeCandidate,"Guadalupe Shrine TLM identity-resolution candidate missing");
-assert.equal(guadalupeCandidate.status,"IDENTITY_RESOLUTION_REQUIRED");
+assert.equal(guadalupeCandidate.status,"RESOLVED_CONFIRMED_DIRECTORY_VENUE");
 assert.equal(guadalupeCandidate.place_id,"place:US:guadalupe-shrine-la-crosse");
-assert.deepEqual(guadalupeCandidate.generated_provider_scan.exact_or_text_matches,[]);
-assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:US:guadalupe-shrine-la-crosse"),false,"unresolved Guadalupe TLM candidate leaked into canonical Directory→Place links");
+assert.deepEqual(guadalupeCandidate.generated_provider_scan.exact_or_text_matches,[],"Earlier provider-only search must remain historical evidence");
+assert.equal(guadalupeCandidate.resolution.venue_id,"AO-AMER-R28-US-23-05");
+assert.equal(guadalupeCandidate.resolution.cl2_physical_group_id,"RG-ACCD4654B950");
+assert.deepEqual(seed.directoryPlaceLinks.filter(link=>link.place_id==="place:US:guadalupe-shrine-la-crosse").map(link=>link.venue_id),["AO-AMER-R28-US-23-05"],"Only verified La Crosse source venue can attach to the Shrine");
 
 const walsinghamCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:GB:walsingham-lms-tlm");
 assert.ok(walsinghamCandidate,"Walsingham TLM identity-resolution candidate missing");
