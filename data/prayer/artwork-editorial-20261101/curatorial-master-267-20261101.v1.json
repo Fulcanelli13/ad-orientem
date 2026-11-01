@@ -35,7 +35,10 @@
     },
     "primaryResearchIdentityMatchedConservatively": 228,
     "primaryCandidateUniqueTitleUnconfirmed": 2,
-    "primaryResearchIdentityUnmatched": 37
+    "primaryResearchIdentityUnmatched": 37,
+    "reconciledDeterministicPrimaries": 5,
+    "blockedPendingOriginalUserScope": 14,
+    "alternativePairsFlagged20261101": 11
   },
   "policy": {
     "seasonalHomepageRotation": "ONLY_IF_MULTIPLE_APPROVED_WORKS_FOR_SAME_OCCASION",
@@ -180,7 +183,40 @@
             "visit_to_blessed_sacrament",
             "rosary_nativity_mystery"
           ]
+        }
+      ],
+      "previousApprovedArtReuses": [],
+      "original28OctKeeps": [],
+      "approvedPrimaryIdOverlap": [],
+      "writtenUserInstructions": [
+        {
+          "id": "PRAYER::visit--murillo-magi",
+          "comment": "yes fits in visit to the blessed sacrament",
+          "scope": [
+            "visit_to_blessed_sacrament"
+          ]
         },
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+          "comment": "fits in visit to the blessed sacrament and to the nativity in the rosary",
+          "scope": [
+            "visit_to_blessed_sacrament",
+            "rosary_nativity_mystery"
+          ]
+        }
+      ],
+      "alternativesDoNotOverride": true,
+      "noApprovalGranted": true,
+      "productionEnabled": false,
+      "sourceCrosswalk": {
+        "method": "EXACT_URL",
+        "candidateIDs": [
+          "PRAYER::visit--murillo-magi"
+        ],
+        "sourceIdentityVerified": true,
+        "photoRightsAndPixelQAPassed": false
+      },
+      "misroutedHistoricalOptions": [
         {
           "artworkId": "CANONICAL::met-440393",
           "artist": "Jacopo Bassano (Jacopo da Ponte)",
@@ -204,25 +240,7 @@
           ]
         }
       ],
-      "previousApprovedArtReuses": [],
-      "original28OctKeeps": [],
-      "approvedPrimaryIdOverlap": [],
-      "writtenUserInstructions": [
-        {
-          "id": "PRAYER::visit--murillo-magi",
-          "comment": "yes fits in visit to the blessed sacrament",
-          "scope": [
-            "visit_to_blessed_sacrament"
-          ]
-        },
-        {
-          "id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
-          "comment": "fits in visit to the blessed sacrament and to the nativity in the rosary",
-          "scope": [
-            "visit_to_blessed_sacrament",
-            "rosary_nativity_mystery"
-          ]
-        },
+      "misroutedHistoricalInstructions": [
         {
           "id": "CANONICAL::met-440393",
           "comment": "that's an explicit mystery in the rosary",
@@ -237,18 +255,7 @@
             "rosary_baptism_of_christ_mystery"
           ]
         }
-      ],
-      "alternativesDoNotOverride": true,
-      "noApprovalGranted": true,
-      "productionEnabled": false,
-      "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "PRAYER::visit--murillo-magi"
-        ],
-        "sourceIdentityVerified": true,
-        "photoRightsAndPixelQAPassed": false
-      }
+      ]
     },
     {
       "slot": "HERO-04",
@@ -2046,19 +2053,22 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EXPLICIT_USER_SELECTION_RESTORED_SOURCE_PHOTO_PENDING",
       "currentAssignment": {
-        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "mode": "RESTORED_EXPLICIT_USER_SELECTION_PENDING_PHOTO_QA",
         "painting": {
-          "artist": "Ricci, Sebastiano",
-          "title": "The Resurrection",
-          "sourcePage": null
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg"
         },
         "originalArtworkIDs": [
-          "REVIEW::commons:22002144"
+          "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "PRAYER::regina--primary"
         ],
-        "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
-        "productionEnabled": false
+        "editorialStatus": "EXPLICIT_USER_DECISION_RESTORED",
+        "approvedNow": false,
+        "productionEnabled": false,
+        "photoRightsAndPixelQAPassed": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
       "explicitlyAcceptedOptions": [
@@ -2080,12 +2090,34 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_TITLE_ARTIST",
+        "method": "HISTORIC_EXACT_WORK_CATALOG_LINK",
         "candidateIDs": [
-          "REVIEW::commons:22002144"
+          "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "PRAYER::regina--primary"
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "VERBATIM_B01_REASSIGNMENT",
+        "rationale": "B01 verbatim: Regina Caeli alone replaces Angelus cover in Easter; not regular Angelus",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "supersededAssignment": {
+        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "painting": {
+          "artist": "Ricci, Sebastiano",
+          "title": "The Resurrection",
+          "sourcePage": null
+        },
+        "originalArtworkIDs": [
+          "REVIEW::commons:22002144"
+        ],
+        "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+        "productionEnabled": false
       }
     },
     {
@@ -2157,7 +2189,9 @@
           "verbatimInstruction": "explicit mystery in rosary",
           "scope": [
             "rosary_coronation_of_virgin"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
         }
       ],
       "previousApprovedArtReuses": [],
@@ -2530,17 +2564,22 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EXPLICIT_USER_SELECTION_RESTORED_SOURCE_PHOTO_PENDING",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "mode": "RESTORED_EXPLICIT_USER_SELECTION_PENDING_PHOTO_QA",
         "painting": {
-          "artist": "Giovanni Battista Salvi da Sassoferrato",
-          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg"
+          "artist": "Jules Breton",
+          "title": "The Song of the Lark",
+          "sourcePage": "https://www.artic.edu/artworks/94841/the-song-of-the-lark"
         },
-        "sourceRelationship": "THEMATIC",
-        "editorialStatus": "USER_APPROVED",
-        "productionEnabled": false
+        "originalArtworkIDs": [
+          "PRAYER::morning--primary",
+          "HERO::new:jules-breton-song-of-the-lark-artic-94841"
+        ],
+        "editorialStatus": "EXPLICIT_USER_DECISION_RESTORED",
+        "approvedNow": false,
+        "productionEnabled": false,
+        "photoRightsAndPixelQAPassed": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
       "explicitlyAcceptedOptions": [],
@@ -2567,22 +2606,23 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
+        "method": "HISTORIC_EXACT_WORK_CATALOG_LINK",
         "candidateIDs": [
-          "REVIEW::commons:87865020"
+          "PRAYER::morning--primary",
+          "HERO::new:jules-breton-song-of-the-lark-artic-94841"
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
-      }
-    },
-    {
-      "slot": "COV-daily.evening",
-      "family": "D1 Daily Prayer",
-      "label": "Cover",
-      "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
-      "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
-      "currentAssignment": {
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_OCT28_KEEP",
+        "rationale": "Oct28 Morning KEEP morning--primary; original mapped to Art Institute of Chicago 94841",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "supersededAssignment": {
         "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
         "painting": {
           "artist": "Giovanni Battista Salvi da Sassoferrato",
@@ -2592,6 +2632,30 @@
         "sourceRelationship": "THEMATIC",
         "editorialStatus": "USER_APPROVED",
         "productionEnabled": false
+      }
+    },
+    {
+      "slot": "COV-daily.evening",
+      "family": "D1 Daily Prayer",
+      "label": "Cover",
+      "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
+      "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
+      "editorialStatus": "EXPLICIT_USER_SELECTION_RESTORED_SOURCE_PHOTO_PENDING",
+      "currentAssignment": {
+        "mode": "RESTORED_EXPLICIT_USER_SELECTION_PENDING_PHOTO_QA",
+        "painting": {
+          "artist": "Pierre-Édouard Frère",
+          "title": "The Prayer",
+          "sourcePage": "https://artuk.org/discover/artworks/the-prayer-19241"
+        },
+        "originalArtworkIDs": [
+          "PRAYER::evening--primary",
+          "HERO::artuk:op6-prayer-frere"
+        ],
+        "editorialStatus": "EXPLICIT_USER_DECISION_RESTORED",
+        "approvedNow": false,
+        "productionEnabled": false,
+        "photoRightsAndPixelQAPassed": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
       "explicitlyAcceptedOptions": [],
@@ -2620,12 +2684,32 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
+        "method": "HISTORIC_EXACT_WORK_CATALOG_LINK",
         "candidateIDs": [
-          "REVIEW::commons:87865020"
+          "PRAYER::evening--primary",
+          "HERO::artuk:op6-prayer-frere"
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_OCT28_KEEP",
+        "rationale": "Oct28 Evening KEEP evening--primary; other Evening keeps remain eligible in original records",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "supersededAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg"
+        },
+        "sourceRelationship": "THEMATIC",
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -3355,7 +3439,9 @@
           "verbatimInstruction": "rosary it also fits in institution of the eucharist",
           "scope": [
             "rosary_institution_of_eucharist"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "EXCLUDE_LATER_EXPLICIT_VETO"
         }
       ],
       "previousApprovedArtReuses": [],
@@ -3649,7 +3735,9 @@
           "verbatimInstruction": "explicit mystery in rosary",
           "scope": [
             "rosary_coronation_of_virgin"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
         },
         {
           "artworkId": "REVIEW::commons:158010",
@@ -3930,7 +4018,21 @@
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
-      "explicitlyAcceptedOptions": [],
+      "explicitlyAcceptedOptions": [
+        {
+          "artworkId": "CANONICAL::ART-aphael-and-iulio-omano-he-isitation",
+          "artist": "Raphael and Giulio Romano",
+          "title": "The Visitation",
+          "batch": 3,
+          "decision": "USER_ACCEPTED_FOR_THIS_MYSTERY",
+          "verbatimInstruction": "come on dude, that is explicitly a mystery in the rosary",
+          "scope": [
+            "rosary_visitation_mystery"
+          ],
+          "eligibleForThisSlot": true,
+          "productionEnabled": false
+        }
+      ],
       "previousApprovedArtReuses": [],
       "original28OctKeeps": [],
       "approvedPrimaryIdOverlap": [],
@@ -4636,19 +4738,22 @@
       "label": "The Resurrection",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EXPLICIT_USER_SELECTION_RESTORED_SOURCE_PHOTO_PENDING",
       "currentAssignment": {
-        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "mode": "RESTORED_EXPLICIT_USER_SELECTION_PENDING_PHOTO_QA",
         "painting": {
-          "artist": "DCHNwam",
-          "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
-          "sourcePage": null
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg"
         },
         "originalArtworkIDs": [
-          "REVIEW::commons:163856843"
+          "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "PRAYER::regina--primary"
         ],
-        "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
-        "productionEnabled": false
+        "editorialStatus": "EXPLICIT_USER_DECISION_RESTORED",
+        "approvedNow": false,
+        "productionEnabled": false,
+        "photoRightsAndPixelQAPassed": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
       "explicitlyAcceptedOptions": [
@@ -4794,12 +4899,34 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_TITLE_ARTIST",
+        "method": "HISTORIC_EXACT_WORK_CATALOG_LINK",
         "candidateIDs": [
-          "REVIEW::commons:163856843"
+          "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+          "PRAYER::regina--primary"
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "VERBATIM_B01_REASSIGNMENT",
+        "rationale": "B01 verbatim: Rubens Resurrection appears for Glorious Rosary Resurrection mystery",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "supersededAssignment": {
+        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "painting": {
+          "artist": "DCHNwam",
+          "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+          "sourcePage": null
+        },
+        "originalArtworkIDs": [
+          "REVIEW::commons:163856843"
+        ],
+        "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+        "productionEnabled": false
       }
     },
     {
@@ -4960,6 +5087,19 @@
         ],
         "sourceIdentityVerified": true,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "UNFULFILLED_EXPLICIT_MOVE",
+        "rationale": "Oct28 Rubens Assumption ELSEWHERE -> Holy Rosary; exact original identity not verified. Charles de La Fosse primary must not be treated as satisfying this user move",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "editorialHold": {
+        "reason": "RESTORE_RUBENS_EXACT_ORIGINAL_ID_TO_ROSARY_ASSUMPTION_PENDING",
+        "mustNotReplaceWithStudioOfRubens": true,
+        "publicationAllowed": false
       }
     },
     {
@@ -4968,8 +5108,63 @@
       "label": "Coronation of Our Lady",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
+        "productionEnabled": false
+      },
+      "userAlreadyCoveredByPriorApprovalOrInheritance": true,
+      "explicitlyAcceptedOptions": [
+        {
+          "artworkId": "REVIEW::cma:143761",
+          "artist": "Stefan Lochner",
+          "title": "The Virgin Crowned by Angels",
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibleForThisSlot": true,
+          "productionEnabled": false
+        },
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibleForThisSlot": true,
+          "productionEnabled": false
+        }
+      ],
+      "previousApprovedArtReuses": [],
+      "original28OctKeeps": [],
+      "approvedPrimaryIdOverlap": [],
+      "writtenUserInstructions": [],
+      "alternativesDoNotOverride": true,
+      "noApprovalGranted": true,
+      "productionEnabled": false,
+      "sourceCrosswalk": {
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
+        "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "MIXED_OR_UNRESOLVED_USER_DECISIONS",
+        "rationale": "Current Rubens Coronation original may match explicitly rejected Oct28 oil sketch, exact identity unresolved",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
         "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
         "painting": {
           "artist": "Peter Paul Rubens",
@@ -4981,23 +5176,6 @@
         ],
         "editorialStatus": "USER_APPROVED",
         "productionEnabled": false
-      },
-      "userAlreadyCoveredByPriorApprovalOrInheritance": true,
-      "explicitlyAcceptedOptions": [],
-      "previousApprovedArtReuses": [],
-      "original28OctKeeps": [],
-      "approvedPrimaryIdOverlap": [],
-      "writtenUserInstructions": [],
-      "alternativesDoNotOverride": true,
-      "noApprovalGranted": true,
-      "productionEnabled": false,
-      "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "REVIEW::commons:65493548"
-        ],
-        "sourceIdentityVerified": true,
-        "photoRightsAndPixelQAPassed": false
       }
     },
     {
@@ -5006,16 +5184,12 @@
       "label": "Closing prayers (Salve Regina)",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Annibale Carracci",
-          "title": "The Coronation of the Virgin",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
-        },
-        "sourceRelationship": "THEMATIC",
-        "editorialStatus": "USER_APPROVED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -5035,12 +5209,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "REVIEW::met:435853"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation used on closing Salve Regina; independent approval not established",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+        },
+        "sourceRelationship": "THEMATIC",
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -7202,7 +7393,9 @@
           "verbatimInstruction": "rosary it also fits in institution of the eucharist",
           "scope": [
             "rosary_institution_of_eucharist"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "EXCLUDE_LATER_EXPLICIT_VETO"
         },
         {
           "artworkId": "REVIEW::commons:48577448",
@@ -8159,18 +8352,12 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
-        "painting": {
-          "artist": "Stefan Lochner (German, 1400-c. 1452)",
-          "title": "The Virgin Crowned by Angels",
-          "sourcePage": "https://clevelandart.org/art/1968.20"
-        },
-        "originalArtworkIDs": [
-          "REVIEW::cma:143761"
-        ],
-        "editorialStatus": "USER_APPROVED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -8184,7 +8371,9 @@
           "verbatimInstruction": "explicit mystery in rosary",
           "scope": [
             "rosary_coronation_of_virgin"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
         }
       ],
       "previousApprovedArtReuses": [],
@@ -8203,12 +8392,31 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
+        "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Lochner Virgin Crowned by Angels was assigned to Coronation mystery only, not Montfort cover",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "painting": {
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20"
+        },
+        "originalArtworkIDs": [
           "REVIEW::cma:143761"
         ],
-        "sourceIdentityVerified": true,
-        "photoRightsAndPixelQAPassed": false
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -8394,7 +8602,9 @@
           "verbatimInstruction": "explicit mystery in rosary",
           "scope": [
             "rosary_coronation_of_virgin"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
         }
       ],
       "previousApprovedArtReuses": [],
@@ -8482,16 +8692,12 @@
       "label": "Act of consecration",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Annibale Carracci",
-          "title": "The Coronation of the Virgin",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
-        },
-        "sourceRelationship": "THEMATIC",
-        "editorialStatus": "USER_APPROVED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -8511,12 +8717,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "REVIEW::met:435853"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation used on Montfort stage; independent approval not established",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+        },
+        "sourceRelationship": "THEMATIC",
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -9026,7 +9249,9 @@
           "verbatimInstruction": "rosary it also fits in institution of the eucharist",
           "scope": [
             "rosary_institution_of_eucharist"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "EXCLUDE_LATER_EXPLICIT_VETO"
         }
       ],
       "previousApprovedArtReuses": [
@@ -9107,16 +9332,12 @@
       "label": "Card vignette",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Marcantonio Franceschini",
-          "title": "The Last Communion of Saint Mary of Egypt",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/437977"
-        },
-        "sourceRelationship": "SACRAMENTAL_COMMUNION_NOT_CENTURION_DIALOGUE",
-        "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -9136,10 +9357,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "UNMATCHED_PRESERVE_SELECTED",
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
         "candidateIDs": [],
         "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Franceschini Last Communion rejected for Adoration context in Oct28 and not relevant in B02",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Marcantonio Franceschini",
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437977"
+        },
+        "sourceRelationship": "SACRAMENTAL_COMMUNION_NOT_CENTURION_DIALOGUE",
+        "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+        "productionEnabled": false
       }
     },
     {
@@ -10374,16 +10614,12 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Philippe de Champaigne",
-          "title": "La Petite Cène (The Small Last Supper)",
-          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg"
-        },
-        "sourceRelationship": "EXACT_EUCHARISTIC_INSTITUTION_THEMATIC_COMMUNION",
-        "editorialStatus": "USER_PREFERENCE_AND_PRIOR_SCENE_APPROVAL",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -10397,7 +10633,9 @@
           "verbatimInstruction": "rosary it also fits in institution of the eucharist",
           "scope": [
             "rosary_institution_of_eucharist"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "EXCLUDE_LATER_EXPLICIT_VETO"
         }
       ],
       "previousApprovedArtReuses": [
@@ -10431,10 +10669,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "UNMATCHED_PRESERVE_SELECTED",
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
         "candidateIDs": [],
         "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Champaigne La Petite Cene Communion cover conflicts with October rejection / unsupported derived preference; preserve older keeps",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène (The Small Last Supper)",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg"
+        },
+        "sourceRelationship": "EXACT_EUCHARISTIC_INSTITUTION_THEMATIC_COMMUNION",
+        "editorialStatus": "USER_PREFERENCE_AND_PRIOR_SCENE_APPROVAL",
+        "productionEnabled": false
       }
     },
     {
@@ -10468,7 +10725,9 @@
           "verbatimInstruction": "rosary it also fits in institution of the eucharist",
           "scope": [
             "rosary_institution_of_eucharist"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "EXCLUDE_LATER_EXPLICIT_VETO"
         },
         {
           "artworkId": "REVIEW::commons:48577448",
@@ -11952,7 +12211,9 @@
           "verbatimInstruction": "rosary it also fits in institution of the eucharist",
           "scope": [
             "rosary_institution_of_eucharist"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "EXCLUDE_LATER_EXPLICIT_VETO"
         }
       ],
       "previousApprovedArtReuses": [],
@@ -12207,16 +12468,12 @@
       "label": "Card vignette",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Annibale Carracci",
-          "title": "The Coronation of the Virgin",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
-        },
-        "sourceRelationship": "THEMATIC",
-        "editorialStatus": "USER_APPROVED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -12236,12 +12493,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "REVIEW::met:435853"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation used on Marian vignette; independent approval not established",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+        },
+        "sourceRelationship": "THEMATIC",
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -12609,7 +12883,9 @@
           "verbatimInstruction": "explicit mystery in rosary",
           "scope": [
             "rosary_coronation_of_virgin"
-          ]
+          ],
+          "eligibleForThisSlot": false,
+          "editorialDisposition": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
         },
         {
           "artworkId": "REVIEW::met:437175",
@@ -12917,18 +13193,12 @@
       "label": "Queen of Angels … Queen of peace",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
-        "painting": {
-          "artist": "Annibale Carracci",
-          "title": "The Coronation of the Virgin",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
-        },
-        "originalArtworkIDs": [
-          "REVIEW::met:435853"
-        ],
-        "editorialStatus": "USER_APPROVED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -12961,12 +13231,31 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
+        "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation explicitly scoped to Rosary Coronation mystery in B04",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "painting": {
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+        },
+        "originalArtworkIDs": [
           "REVIEW::met:435853"
         ],
-        "sourceIdentityVerified": true,
-        "photoRightsAndPixelQAPassed": false
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -14101,18 +14390,12 @@
       "label": "Our Lady, angels and archangels",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
-        "painting": {
-          "artist": "Annibale Carracci",
-          "title": "The Coronation of the Virgin",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
-        },
-        "originalArtworkIDs": [
-          "REVIEW::met:435853"
-        ],
-        "editorialStatus": "USER_APPROVED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -14163,12 +14446,31 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
+        "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation explicitly scoped to Rosary Coronation mystery in B04",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "painting": {
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+        },
+        "originalArtworkIDs": [
           "REVIEW::met:435853"
         ],
-        "sourceIdentityVerified": true,
-        "photoRightsAndPixelQAPassed": false
+        "editorialStatus": "USER_APPROVED",
+        "productionEnabled": false
       }
     },
     {
@@ -14761,16 +15063,12 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Bartolomé Esteban Murillo",
-          "title": "The Return of the Prodigal Son",
-          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
-        },
-        "sourceRelationship": "THEMATIC",
-        "editorialStatus": "USER_FINAL_LOCKED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -14790,13 +15088,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "HERO::nga:34956",
-          "PRAYER::confession--primary"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Murillo Return of Prodigal Son was rejected for Penitential Psalms in Oct28; Confession cover lock remains untouched",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+        },
+        "sourceRelationship": "THEMATIC",
+        "editorialStatus": "USER_FINAL_LOCKED",
+        "productionEnabled": false
       }
     },
     {
@@ -14843,16 +15157,12 @@
       "label": "Beati quorum",
       "kind": "PRAYER_MYSTERY_OR_STAGE",
       "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
-        "painting": {
-          "artist": "Bartolomé Esteban Murillo",
-          "title": "The Return of the Prodigal Son",
-          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
-        },
-        "sourceRelationship": "THEMATIC",
-        "editorialStatus": "USER_FINAL_LOCKED",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -14872,12 +15182,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "HERO::nga:34956"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Same Murillo work rejected for this prayer family; no substitute authorised",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_EARLIER_APPROVED_REASSIGNMENT",
+        "painting": {
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+        },
+        "sourceRelationship": "THEMATIC",
+        "editorialStatus": "USER_FINAL_LOCKED",
+        "productionEnabled": false
       }
     },
     {
@@ -15294,17 +15621,11 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PROVISIONAL_NEW_REVIEW_NEEDED",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "PROVISIONAL_MATCH_WAIT_FOR_ONE_FUTURE_BULK_REVIEW",
-        "painting": {
-          "artist": "Spanish Painter",
-          "title": "The Mass of Saint Gregory",
-          "sourcePage": "https://www.metmuseum.org/art/collection/search/437722"
-        },
-        "editorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
-        "matchType": "CATHOLIC_PRIESTHOOD_THEME",
-        "sourceRightsGate": "MET_PD_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
         "approvedNow": false,
         "productionEnabled": false
       },
@@ -15318,12 +15639,31 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_URL",
-        "candidateIDs": [
-          "CURATED-COV-pray.for_priests-0"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Spanish Painter Mass of Saint Gregory explicitly not relevant to Prayer in B02",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "PROVISIONAL_MATCH_WAIT_FOR_ONE_FUTURE_BULK_REVIEW",
+        "painting": {
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437722"
+        },
+        "editorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "matchType": "CATHOLIC_PRIESTHOOD_THEME",
+        "sourceRightsGate": "MET_PD_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "approvedNow": false,
+        "productionEnabled": false
       }
     },
     {
@@ -15368,19 +15708,12 @@
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
       "currentAssignment": {
-        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
-        "painting": {
-          "artist": "Philippe de Champaigne",
-          "title": "The Dream of Saint Joseph",
-          "sourcePage": null
-        },
-        "originalArtworkIDs": [
-          "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
-          "PRAYER::joseph--primary"
-        ],
-        "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
         "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
@@ -15402,23 +15735,20 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_TITLE_ARTIST",
-        "candidateIDs": [
-          "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
-          "PRAYER::joseph--primary"
-        ],
-        "sourceIdentityVerified": true,
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
-      }
-    },
-    {
-      "slot": "STG-prayer.good_death-01",
-      "family": "D9 Life & Intentions",
-      "label": "Commendation of the dying",
-      "kind": "PRAYER_MYSTERY_OR_STAGE",
-      "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
-      "currentAssignment": {
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "MIXED_OR_UNRESOLVED_USER_DECISIONS",
+        "rationale": "Champaigne Dream of Saint Joseph Oct28 REJECT Good Death but later B01 says also fits; contradiction requires user decision",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
         "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
         "painting": {
           "artist": "Philippe de Champaigne",
@@ -15431,6 +15761,21 @@
         ],
         "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
         "productionEnabled": false
+      }
+    },
+    {
+      "slot": "STG-prayer.good_death-01",
+      "family": "D9 Life & Intentions",
+      "label": "Commendation of the dying",
+      "kind": "PRAYER_MYSTERY_OR_STAGE",
+      "displayPolicy": "FIXED_UNTIL_MEANINGFUL_NEXT_STAGE_STATION_MYSTERY_OR_DAY",
+      "editorialStatus": "EDITORIAL_HOLD_DO_NOT_USE",
+      "currentAssignment": {
+        "mode": "HOLD_NO_ELIGIBLE_PRIMARY",
+        "painting": null,
+        "editorialStatus": "HOLD_OUTSIDE_USER_APPROVED_SCOPE",
+        "approvedNow": false,
+        "productionEnabled": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
       "explicitlyAcceptedOptions": [],
@@ -15442,13 +15787,32 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "EXACT_TITLE_ARTIST",
-        "candidateIDs": [
+        "method": "HOLD_NOT_AN_ACTIVE_PAINTING",
+        "candidateIDs": [],
+        "sourceIdentityVerified": false,
+        "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "MIXED_OR_UNRESOLVED_USER_DECISIONS",
+        "rationale": "Champaigne Dream of Saint Joseph Oct28 REJECT dying context; Altomonte KEEP but better-photo required",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "heldPreviousAssignment": {
+        "mode": "KEEP_HISTORICALLY_APPROVED_PAINTING_FOR_SLOT",
+        "painting": {
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": null
+        },
+        "originalArtworkIDs": [
           "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
           "PRAYER::joseph--primary"
         ],
-        "sourceIdentityVerified": true,
-        "photoRightsAndPixelQAPassed": false
+        "editorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+        "productionEnabled": false
       }
     },
     {
@@ -15489,19 +15853,25 @@
     },
     {
       "slot": "COV-prayer.hymns",
-      "family": "—",
+      "family": "D9 Life & Intentions",
       "label": "Cover",
       "kind": "FIXED_PRAYER_COVER_OR_VIGNETTE",
       "displayPolicy": "FIXED_SELECTED_COVER_NO_ROTATION",
-      "editorialStatus": "PREVIOUS_USER_APPROVAL_OR_INHERITED_REUSE",
+      "editorialStatus": "EXPLICIT_USER_SELECTION_RESTORED_SOURCE_PHOTO_PENDING",
       "currentAssignment": {
-        "mode": "KEEP_EXACT_OCTOBER_28_REVIEW_ARTWORK_ID",
-        "priorSourceArtworkIds": [
-          "historic:peter paul rubens:assumption of the virgin"
+        "mode": "RESTORED_EXPLICIT_USER_SELECTION_PENDING_PHOTO_QA",
+        "painting": {
+          "artist": "Peter Paul Rubens",
+          "title": "The Assumption of the Virgin",
+          "sourcePage": null
+        },
+        "originalArtworkIDs": [
+          "PRAYER::historic:peter paul rubens:assumption of the virgin"
         ],
-        "originalModule": "hymns",
-        "editorialStatus": "USER_KEEP_2026_10_28",
-        "productionEnabled": false
+        "editorialStatus": "EXPLICIT_USER_DECISION_RESTORED",
+        "approvedNow": false,
+        "productionEnabled": false,
+        "photoRightsAndPixelQAPassed": false
       },
       "userAlreadyCoveredByPriorApprovalOrInheritance": true,
       "explicitlyAcceptedOptions": [],
@@ -15521,10 +15891,29 @@
       "noApprovalGranted": true,
       "productionEnabled": false,
       "sourceCrosswalk": {
-        "method": "UNMATCHED_PRESERVE_SELECTED",
-        "candidateIDs": [],
+        "method": "EXACT_HISTORIC_USER_ARTWORK_ID_SOURCE_PENDING",
+        "candidateIDs": [
+          "PRAYER::historic:peter paul rubens:assumption of the virgin"
+        ],
         "sourceIdentityVerified": false,
         "photoRightsAndPixelQAPassed": false
+      },
+      "editorialCorrection": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_OCT28_KEEP_PENDING_SOURCE",
+        "rationale": "Oct28 Hymns KEEP original Rubens; no exact original/photo URL verified, do not substitute Studio of Rubens",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "supersededAssignment": {
+        "mode": "KEEP_EXACT_OCTOBER_28_REVIEW_ARTWORK_ID",
+        "priorSourceArtworkIds": [
+          "historic:peter paul rubens:assumption of the virgin"
+        ],
+        "originalModule": "hymns",
+        "editorialStatus": "USER_KEEP_2026_10_28",
+        "productionEnabled": false
       }
     }
   ],
@@ -16731,5 +17120,105 @@
     }
   ],
   "publicationAllowed": false,
-  "sourceIdentityCrosswalk": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-267-20261101.v1.json"
+  "sourceIdentityCrosswalk": "data/prayer/artwork-editorial-20261101/selected-work-source-crosswalk-267-20261101.v1.json",
+  "decisionReconciliation20261101": {
+    "asOf": "2026-11-01",
+    "priorPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+    "status": "EDITORIAL_CORRECTION_ONLY_NOT_PUBLISHED",
+    "sourcePolicy": "Explicit original decision > candidate fit. Original user decisions are unmodified in source ledgers.",
+    "deterministicRestores": [
+      "COV-daily.morning",
+      "COV-daily.evening",
+      "COV-prayer.hymns",
+      "COV-pray.angelus_regina",
+      "STG-pray.rosary-12"
+    ],
+    "primaryHolds": [
+      "COV-pray.penitential_psalms",
+      "STG-pray.penitential_psalms-02",
+      "COV-pray.montfort_consecration",
+      "STG-litany_loreto_1962-05",
+      "STG-pray.litany_saints-01",
+      "STG-pray.rosary-17",
+      "STG-pray.montfort_consecration-05",
+      "COV-marian_hail_holy_queen",
+      "COV-adoration_lord_i_am_not_worthy",
+      "COV-prayer.communion",
+      "COV-pray.for_priests",
+      "COV-prayer.good_death",
+      "STG-prayer.good_death-01",
+      "STG-pray.rosary-16"
+    ],
+    "exactWorkPending": [
+      "STG-pray.rosary-15"
+    ],
+    "misroutedSemantics": [
+      {
+        "from": "HERO-03",
+        "to": "ROSARY_BAPTISM_MYSTERY_REQUIRES_PRODUCT_SCOPE_CHECK",
+        "artworkIDs": [
+          "CANONICAL::met-440393",
+          "CANONICAL::cma-127746"
+        ]
+      }
+    ],
+    "alternativeExclusions": [
+      {
+        "slot": "STG-pray.angelus_regina-01",
+        "id": "REVIEW::cma:143761",
+        "why": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
+      },
+      {
+        "slot": "COV-foundations_grace_after_meals",
+        "id": "CANONICAL::met-459131",
+        "why": "EXCLUDE_LATER_EXPLICIT_VETO"
+      },
+      {
+        "slot": "COV-pray.rosary",
+        "id": "REVIEW::cma:143761",
+        "why": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
+      },
+      {
+        "slot": "COV-novena.corpus_christi",
+        "id": "CANONICAL::met-459131",
+        "why": "EXCLUDE_LATER_EXPLICIT_VETO"
+      },
+      {
+        "slot": "COV-pray.montfort_consecration",
+        "id": "REVIEW::cma:143761",
+        "why": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
+      },
+      {
+        "slot": "STG-pray.montfort_consecration-03",
+        "id": "REVIEW::cma:143761",
+        "why": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
+      },
+      {
+        "slot": "COV-adoration_litany_blessed_sacrament",
+        "id": "CANONICAL::met-459131",
+        "why": "EXCLUDE_LATER_EXPLICIT_VETO"
+      },
+      {
+        "slot": "COV-prayer.communion",
+        "id": "CANONICAL::met-459131",
+        "why": "EXCLUDE_LATER_EXPLICIT_VETO"
+      },
+      {
+        "slot": "STG-prayer.communion-01",
+        "id": "CANONICAL::met-459131",
+        "why": "EXCLUDE_LATER_EXPLICIT_VETO"
+      },
+      {
+        "slot": "STG-pray.tenebrae-01",
+        "id": "CANONICAL::met-459131",
+        "why": "EXCLUDE_LATER_EXPLICIT_VETO"
+      },
+      {
+        "slot": "STG-litany_loreto_1962-01",
+        "id": "REVIEW::cma:143761",
+        "why": "HOLD_ONLY_ROSARY_CORONATION_OF_VIRGIN"
+      }
+    ],
+    "notProductionEnabled": true
+  }
 }
