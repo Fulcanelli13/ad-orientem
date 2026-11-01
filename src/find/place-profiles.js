@@ -394,7 +394,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
           /^\d{4}-\d{2}-\d{2}$/.test(photo.photographed_at||"") &&
           photo.caption_en&&photo.caption_fr)??
           resolveApprovedObjectPhotoReuse(dataset?.media?.objectPhotoReuses,dataset?.media?.approved,
-            placeId,entry.id),
+            placeId,entry.id,entry.source_url),
         inside_location:resolveRelicIndoorPlacement(dataset?.sacredPhenomena?.indoorPlacement,entry.id,placeId),
         access_notice_en:raw?.access_notice_en??null,
         access_notice_fr:raw?.access_notice_fr??null,
