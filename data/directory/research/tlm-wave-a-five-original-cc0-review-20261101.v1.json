@@ -27,9 +27,11 @@
       ],
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
-      "rights_clearance": "PENDING_CURRENT_COMMONS_AND_ATTRIBUTION_CHECK",
+      "rights_clearance": "PENDING_EXACT_COMMONS_PAGE_RIGHTS_RECHECK",
       "editorial_approval": "PENDING_VISUAL_REVIEW",
-      "published": false
+      "published": false,
+      "exact_commons_file_page_reviewed": false,
+      "file_page_cc0_verified": false
     },
     {
       "site_id": "RG-524E16F096DE",
@@ -49,9 +51,11 @@
       ],
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
-      "rights_clearance": "PENDING_CURRENT_COMMONS_AND_ATTRIBUTION_CHECK",
+      "rights_clearance": "PENDING_EXACT_COMMONS_PAGE_RIGHTS_RECHECK",
       "editorial_approval": "PENDING_VISUAL_REVIEW",
-      "published": false
+      "published": false,
+      "exact_commons_file_page_reviewed": false,
+      "file_page_cc0_verified": false
     },
     {
       "site_id": "RG-843570C4C0E0",
@@ -71,9 +75,16 @@
       ],
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
-      "rights_clearance": "PENDING_CURRENT_COMMONS_AND_ATTRIBUTION_CHECK",
+      "rights_clearance": "SOURCE_FILE_CC0_CONFIRMED__FULL_PUBLICATION_STILL_HELD",
       "editorial_approval": "PENDING_VISUAL_REVIEW",
-      "published": false
+      "published": false,
+      "exact_commons_file_page_reviewed": true,
+      "file_page_cc0_verified": true,
+      "public_source_check": {
+        "as_of": "2026-11-01",
+        "page": "https://commons.wikimedia.org/wiki/File:Church_of_St_Pius_V%2C_Groombridge.JPG",
+        "description": "Specific matching Commons file page states own work and CC0 Universal Public Domain Dedication; review does not confer venue or editorial approval"
+      }
     },
     {
       "site_id": "RG-93691FBCC8E6",
@@ -93,9 +104,16 @@
       ],
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
-      "rights_clearance": "PENDING_CURRENT_COMMONS_AND_ATTRIBUTION_CHECK",
+      "rights_clearance": "SOURCE_FILE_CC0_CONFIRMED__FULL_PUBLICATION_STILL_HELD",
       "editorial_approval": "PENDING_VISUAL_REVIEW",
-      "published": false
+      "published": false,
+      "exact_commons_file_page_reviewed": true,
+      "file_page_cc0_verified": true,
+      "public_source_check": {
+        "as_of": "2026-11-01",
+        "page": "https://commons.wikimedia.org/wiki/File:St_Mary_Magdalen's_RC_Church%2C_Upper_North_Street%2C_Brighton_(NHLE_Code_1381058).JPG",
+        "description": "Specific matching Commons file page states own work and CC0 Universal Public Domain Dedication; review does not confer venue or editorial approval"
+      }
     },
     {
       "site_id": "RG-D2DF4E4B9C41",
@@ -115,14 +133,19 @@
       ],
       "original_bytes_exact_match": true,
       "site_identity_clearance": "PENDING_INDEPENDENT_SITE_CONFIRMATION",
-      "rights_clearance": "PENDING_CURRENT_COMMONS_AND_ATTRIBUTION_CHECK",
+      "rights_clearance": "PENDING_EXACT_COMMONS_PAGE_RIGHTS_RECHECK",
       "editorial_approval": "PENDING_VISUAL_REVIEW",
-      "published": false
+      "published": false,
+      "exact_commons_file_page_reviewed": false,
+      "file_page_cc0_verified": false
     }
   ],
   "excluded_from_publish": [
     "RG-FF22A9A43D94",
     "RG-BD8A8939CA37"
   ],
-  "next_action": "Complete exact-source, exact-building, contemporary Commons licence/attribution, and card presentation visual approval for each of five; then separate source-owned approved-media release PR with validated binary WebP hashes."
+  "next_action": "Complete exact-source, exact-building, contemporary Commons licence/attribution, and card presentation visual approval for each of five; then separate source-owned approved-media release PR with validated binary WebP hashes.",
+  "file_specific_commons_cc0_reverified_count": 2,
+  "rights_validation_remaining_source_pages": 3,
+  "no_publication": true
 }
