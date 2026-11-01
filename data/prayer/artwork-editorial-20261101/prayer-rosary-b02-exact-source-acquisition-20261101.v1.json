@@ -1,0 +1,118 @@
+{
+  "schema": "ao-prayer-artwork-b02-original-acquisition.v1",
+  "asOf": "2026-11-01",
+  "scope": "Four approved selected original works whose specific high-resolution photos remain unarchived",
+  "selectionMaster": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+  "batch": "B02_ROSARY_MISSING_EXACT_SOURCES",
+  "stageOnly": true,
+  "releaseManifestChangeAllowed": false,
+  "licensePolicy": "Never imply CC0 for copyright-marked photos. Exact response metadata must be validated at acquisition. No metadata success allows publication.",
+  "noSubstitutions": true,
+  "noPradoPhotos": true,
+  "maxFiles": 4,
+  "records": [
+    {
+      "id": "rosary-annunciation-bouts-cma",
+      "slot": "STG-pray.rosary-02",
+      "originalArtworkTitle": "The Annunciation",
+      "artist": "Albert Bouts",
+      "provider": "CMA_CC0",
+      "providerID": "1942.635",
+      "sourcePage": "https://www.clevelandart.org/art/1942.635",
+      "expectedOriginalArtworkIds": [
+        "CANONICAL::cma-122338"
+      ],
+      "expectedAccession": "1942.635",
+      "photoLicenceExpectation": "CC0",
+      "sourceIdentityVerifiedFromMuseum": true,
+      "publicationAllowed": false
+    },
+    {
+      "id": "rosary-presentation-champaigne-cc0",
+      "slot": "STG-pray.rosary-05",
+      "originalArtworkTitle": "Presentation of Jesus at the Temple",
+      "artist": "Philippe de Champaigne",
+      "provider": "COMMONS",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Presentation_of_Jesus_Christ_at_the_Temple_by_Philippe_de_Champaigne_(Brussels).jpg",
+      "expectedOriginalArtworkIds": [
+        "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+      ],
+      "expectedCollection": "Royal Museums of Fine Arts of Belgium",
+      "expectedPhotoLicense": [
+        "CC0",
+        "CC0 1.0"
+      ],
+      "expectedMinDimension": 1400,
+      "sourceIdentityVerifiedFromCatalogue": true,
+      "publicationAllowed": false
+    },
+    {
+      "id": "rosary-finding-hondius-met",
+      "slot": "STG-pray.rosary-06",
+      "originalArtworkTitle": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "provider": "MET_OPEN_ACCESS",
+      "providerID": 436672,
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436672",
+      "expectedOriginalArtworkIds": [
+        "CANONICAL::met-436672"
+      ],
+      "expectedAccession": "1974.368",
+      "photoLicenceExpectation": "Public domain",
+      "sourceIdentityVerifiedFromMuseum": true,
+      "publicationAllowed": false
+    },
+    {
+      "id": "rosary-crucifixion-jordaens-commons",
+      "slot": "STG-pray.rosary-11",
+      "originalArtworkTitle": "Crucifixion",
+      "artist": "Hans Jordaens III",
+      "provider": "COMMONS",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+      "expectedOriginalArtworkIds": [
+        "REVIEW::commons:115166028"
+      ],
+      "expectedPhotoLicense": [
+        "Public domain",
+        "PD-Art"
+      ],
+      "expectedMinDimension": 1400,
+      "sourceIdentityVerifiedFromCommons": true,
+      "publicationAllowed": false
+    }
+  ],
+  "blockedForLater": [
+    {
+      "slot": "STG-pray.rosary-04",
+      "reason": "Approved Rubens original currently has a Prado-origin photograph; must locate a different photograph of the identical original, not substitute a work."
+    },
+    {
+      "slot": "STG-pray.rosary-13",
+      "reason": "Current approved David Teniers Ascension Commons source is only 553×800 and is a Wallace/Art UK photo; require new photo with independently verified rights."
+    },
+    {
+      "slot": "STG-pray.rosary-14",
+      "reason": "Approved Mateo Cerezo Pentecost original Commons file is only 567×479; needs high-res same-original source."
+    },
+    {
+      "slot": "STG-pray.rosary-16",
+      "reason": "Coronation primary is held. Two user-accepted alternatives are available, no automatic selection."
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "reason": "Salve Regina conclusion held; no implicit Coronation reuse."
+    }
+  ],
+  "earlierBatchAlreadyArchived": [
+    "COV-pray.rosary",
+    "STG-pray.rosary-03",
+    "STG-pray.rosary-07",
+    "STG-pray.rosary-08",
+    "STG-pray.rosary-09",
+    "STG-pray.rosary-10",
+    "STG-pray.rosary-12",
+    "STG-pray.rosary-15"
+  ],
+  "editorialSelectionChanges": 0,
+  "productionImagesEnabled": 0
+}

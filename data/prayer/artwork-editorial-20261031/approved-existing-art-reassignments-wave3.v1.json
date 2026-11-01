@@ -1,0 +1,340 @@
+{
+  "schema": "AO_PRAYER_ARTWORK_WAVE3_EXISTING_USER_APPROVED_EUCHARISTIC_REASSIGNMENTS_V1",
+  "date": "2026-10-31",
+  "policy": {
+    "allNewArtResearchRequiresExplicitUserApproval": true,
+    "noNewCandidateApproved": true,
+    "onlyPreviouslyApprovedWorkReused": true,
+    "doNotMislabelContextualImagesAsPreciseRite": true,
+    "previousFinalCoverLocksPreserved": true,
+    "researchPhotographsNotPublished": true,
+    "licenceNativePixelQualityRuntimePhoneChecksPending": true,
+    "costEUR": 0
+  },
+  "input": {
+    "wave2": "data/prayer/artwork-editorial-20261031/approved-existing-art-reassignments-wave2.v1.json",
+    "originalKeeps": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+    "priorPrayerApprovalSource": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json"
+  },
+  "summary": {
+    "priorCovered": 234,
+    "previouslyUncoveredReused": 10,
+    "nowCovered": 244,
+    "remaining": 23,
+    "remainingPrayer": 12,
+    "remainingSeasonal": 11,
+    "contextualButStillNeedingExactSceneEnrichment": 8
+  },
+  "reassignments": [
+    {
+      "targetSlot": "STG-pray.benediction-01",
+      "sourceApprovalId": "adoration--primary",
+      "sourceApprovalContext": "benediction",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.metmuseum.org/art/collection/search/438434",
+      "painting": {
+        "title": "The Virgin Adoring the Host",
+        "artist": "Jean-Auguste-Dominique Ingres"
+      },
+      "relationship": "EXISTING_APPROVAL_SAME_DEVOTION",
+      "contextualNotLiteral": false,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": false
+    },
+    {
+      "targetSlot": "STG-pray.benediction-02",
+      "sourceApprovalId": "CANONICAL::ART-arlo-rivelli-aint-homas-quinas",
+      "sourceApprovalContext": "COV-benediction_tantum_ergo",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "painting": {
+        "title": "Saint Thomas Aquinas",
+        "artist": "Carlo Crivelli"
+      },
+      "relationship": "APPROVED_AUTHOR_PORTRAIT_NOT_DEPICITON_OF_INCENSATION",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "COV-benediction_versicles",
+      "sourceApprovalId": "saints--vaneyck",
+      "sourceApprovalContext": "saints-litany",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+      "painting": {
+        "title": "Adoration of the Mystic Lamb",
+        "artist": "Hubert and Jan van Eyck"
+      },
+      "relationship": "HEAVENLY_ADORATION_NOT_EXACT_VERSE",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "COV-adoration_litany_blessed_sacrament",
+      "sourceApprovalId": "adoration--primary",
+      "sourceApprovalContext": "adoration",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.metmuseum.org/art/collection/search/438434",
+      "painting": {
+        "title": "The Virgin Adoring the Host",
+        "artist": "Jean-Auguste-Dominique Ingres"
+      },
+      "relationship": "SAME_BLESSED_SACRAMENT_SUBJECT",
+      "contextualNotLiteral": false,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": false
+    },
+    {
+      "targetSlot": "COV-adoration_spiritual_communion",
+      "sourceApprovalId": "adoration--primary",
+      "sourceApprovalContext": "adoration",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.metmuseum.org/art/collection/search/438434",
+      "painting": {
+        "title": "The Virgin Adoring the Host",
+        "artist": "Jean-Auguste-Dominique Ingres"
+      },
+      "relationship": "EUCHARISTIC_CONTEMPLATION_NOT_LITERAL_COMMUNION",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "COV-adoration_lord_i_am_not_worthy",
+      "sourceApprovalId": "w2-franceschini",
+      "sourceApprovalContext": "communion",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.metmuseum.org/art/collection/search/437977",
+      "painting": {
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "artist": "Marcantonio Franceschini"
+      },
+      "relationship": "SACRAMENTAL_COMMUNION_NOT_CENTURION_DIALOGUE",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "COV-benediction_adoremus_ps116",
+      "sourceApprovalId": "saints--vaneyck",
+      "sourceApprovalContext": "saints-litany",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+      "painting": {
+        "title": "Adoration of the Mystic Lamb",
+        "artist": "Hubert and Jan van Eyck"
+      },
+      "relationship": "ADORATION_NOT_LITERAL_PSALM_116",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "STG-pray.adoration.night-05",
+      "sourceApprovalId": "adoration--primary",
+      "sourceApprovalContext": "adoration",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.metmuseum.org/art/collection/search/438434",
+      "painting": {
+        "title": "The Virgin Adoring the Host",
+        "artist": "Jean-Auguste-Dominique Ingres"
+      },
+      "relationship": "EUCHARISTIC_CONTEMPLATION_NOT_LITERAL_SPIRITUAL_COMMUNION",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "STG-prayer.communion-02",
+      "sourceApprovalId": "w4-ricci",
+      "sourceApprovalContext": "communion",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
+      "painting": {
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "artist": "Sebastiano Ricci"
+      },
+      "relationship": "COMMUNION_CONTEXT_NOT_AFTER_COMMUNION_SCENE",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    },
+    {
+      "targetSlot": "STG-pray.litany_saints-03",
+      "sourceApprovalId": "saints--saraceni",
+      "sourceApprovalContext": "saints-litany",
+      "sourceApprovalLedger": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceLink": "https://www.metmuseum.org/art/collection/search/437607",
+      "painting": {
+        "title": "Paradise",
+        "artist": "Carlo Saraceni"
+      },
+      "relationship": "HEAVENLY_ASSEMBLY_NOT_INDIVIDUAL_APOSTLE_IDENTIFICATION",
+      "contextualNotLiteral": true,
+      "editorialStatus": "EXISTING_USER_APPROVED_WORK_REUSED_NO_NEW_RESEARCH",
+      "qualityGate": "NATIVE_PHOTO_FRAME_RIGHTS_IDENTITY_PHONE_AND_RUNTIME_BINDING_PENDING",
+      "assetPublicationAllowedByThisRecord": false,
+      "improvementStillNeededForExactScene": true
+    }
+  ],
+  "remaining": [
+    {
+      "slot": "HERO-01",
+      "door": "Pray home",
+      "label": "Advent",
+      "existingCandidates": 8
+    },
+    {
+      "slot": "HERO-05",
+      "door": "Pray home",
+      "label": "Septuagesima",
+      "existingCandidates": 7
+    },
+    {
+      "slot": "HERO-08",
+      "door": "Pray home",
+      "label": "Palm Sunday",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "HERO-09",
+      "door": "Pray home",
+      "label": "Holy Thursday",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-10",
+      "door": "Pray home",
+      "label": "Good Friday",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "HERO-16",
+      "door": "Pray home",
+      "label": "Corpus Christi",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "HERO-17",
+      "door": "Pray home",
+      "label": "Sacred Heart",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "HERO-18",
+      "door": "Pray home",
+      "label": "Time after Pentecost",
+      "existingCandidates": 10
+    },
+    {
+      "slot": "HERO-19",
+      "door": "Pray home",
+      "label": "Assumption",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-21",
+      "door": "Pray home",
+      "label": "All Souls",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "HERO-23",
+      "door": "Pray home",
+      "label": "Immaculate Conception",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "COV-foundations_act_of_hope",
+      "door": "D2 Essential Prayers",
+      "label": "Card vignette",
+      "existingCandidates": 5
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "door": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "existingCandidates": 6
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-02",
+      "door": "D5 Holy Eucharist",
+      "label": "Thanksgiving",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "door": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "existingCandidates": 6
+    },
+    {
+      "slot": "COV-church_prayer_for_pope",
+      "door": "D9 Life & Intentions",
+      "label": "Card vignette",
+      "existingCandidates": 1
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-01",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, ne in furore",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-03",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, ne in furore (II)",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-04",
+      "door": "D9 Life & Intentions",
+      "label": "Miserere",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-05",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, exaudi",
+      "existingCandidates": 2
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-07",
+      "door": "D9 Life & Intentions",
+      "label": "Domine, exaudi (II)",
+      "existingCandidates": 4
+    },
+    {
+      "slot": "STG-pray.confession-03",
+      "door": "D9 Life & Intentions",
+      "label": "In the confessional",
+      "existingCandidates": 3
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "door": "D9 Life & Intentions",
+      "label": "Cover",
+      "existingCandidates": 4
+    }
+  ]
+}

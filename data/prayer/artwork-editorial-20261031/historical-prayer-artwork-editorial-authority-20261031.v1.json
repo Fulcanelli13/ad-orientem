@@ -1,0 +1,152 @@
+{
+  "schema": "AO_PRAYER_ART_HISTORICAL_EDITORIAL_AUTHORITY_V1",
+  "asOf": "2026-10-31",
+  "sourceBranch": "9895751857f0f7a0d1dfb9986e3994b41f065825",
+  "purpose": "Source-first correction of a misleading provisional review: original decision artifacts are imported byte-identically by Git blob SHA, without modifying or promoting user artwork selections.",
+  "originalSourceFiles": [
+    {
+      "path": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+      "sourceBlobSha": "3f58a70d1ed923c1c9b89f6436fcf17fc5f82a2e",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/calendar/prayer-module-original-31-review-catalog-20261028.v1.json",
+      "sourceBlobSha": "d3c49de0b6d811b7c515de26ee8f3dc73ab4f42c",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/calendar/prayer-art-keeps-photo-source-gates-20261028.v1.json",
+      "sourceBlobSha": "3c64169a85357d8a5ac3f9511de58af5a551c89e",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json",
+      "sourceBlobSha": "69168cb4c608485da998e57175b597c81b7b8826",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/approved-unified-b06-b11-from-user-message.v1.json",
+      "sourceBlobSha": "cbb0c41547ce1cd0ea9b86e56334cfa0a598df37",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/prior-explicit-keeps-cross-module-20261031.v1.json",
+      "sourceBlobSha": "7832114581f52ef09c7a3c9baff6d69c2043f1b5",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/approved-artwork-inheritance-overlay-20261031.v1.json",
+      "sourceBlobSha": "a3bda6d61322284c27d41b0b95897be025f26a1d",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/batch-01-user-export.json",
+      "sourceBlobSha": "b3031c32adfaa09499edc06d5f0c6a5086534431",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/batch-02-user-export.json",
+      "sourceBlobSha": "1bfc34f2e442d47da69967ea703679982b7e6358",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/batch-03-user-export.json",
+      "sourceBlobSha": "f1a8fcc73767b7e643c475dd13a3378069fd5075",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/batch-04-user-export.json",
+      "sourceBlobSha": "74ee16a4ae990be70683e4ffe958919ec49aea64",
+      "readOnlyProvenance": true
+    },
+    {
+      "path": "data/prayer/artwork-editorial-20261030/batch-05-user-export.json",
+      "sourceBlobSha": "a2a43556b62ec338d82bdfe3dcda956709cc8725",
+      "readOnlyProvenance": true
+    }
+  ],
+  "original28Oct": {
+    "decisionFile": "data/calendar/prayer-art-reviewed117-user-decisions-20261028.v1.json",
+    "artworkContextFile": "data/calendar/prayer-module-original-31-review-catalog-20261028.v1.json",
+    "recordedPlacements": 117,
+    "keep": 47,
+    "placementReject": 51,
+    "moveElsewhere": 6,
+    "betterPhoto": 13,
+    "recordedDestinationOrComment": 15,
+    "scope": "A rejection of an artwork for one prayer placement does not automatically reject that artwork everywhere. A move instruction is not equivalent to a rejection."
+  },
+  "original30Oct": {
+    "batches01To05File": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json",
+    "reviewed": 250,
+    "acceptedForPrayerPlacement": 114,
+    "notRelevantToReviewedPrayerPlacements": 136,
+    "verbatimInstructionRecords": 28,
+    "userExportFiles": [
+      "data/prayer/artwork-editorial-20261030/batch-01-user-export.json",
+      "data/prayer/artwork-editorial-20261030/batch-02-user-export.json",
+      "data/prayer/artwork-editorial-20261030/batch-03-user-export.json",
+      "data/prayer/artwork-editorial-20261030/batch-04-user-export.json",
+      "data/prayer/artwork-editorial-20261030/batch-05-user-export.json"
+    ],
+    "batches06To11File": "data/prayer/artwork-editorial-20261030/approved-unified-b06-b11-from-user-message.v1.json",
+    "acceptedAsShown": 107,
+    "notDisplayedNotRejected": 191,
+    "policy": "All verbatim instructions limit applicability; accepted candidates are only permitted in the explicit scope they were presented."
+  },
+  "currentResearch": {
+    "candidateCollectionMaster": "data/prayer/artwork-editorial-20261031/all-267-source-linked-artwork-candidate-collection.v1.json",
+    "assignmentOverlay": "data/prayer/artwork-editorial-20261031/provisional-one-choice-per-267-art-position.v1.json",
+    "positions": 267,
+    "approvedOrInheritedLinkPositions": 244,
+    "provisionalOnlyPositions": 23,
+    "candidatePlacementEdges": 1506,
+    "noNewArtworkApprovals": true,
+    "noProductionEnabled": true
+  },
+  "protectedDecisions": [
+    {
+      "slot": "COV-novena.st_therese",
+      "rule": "Keep the user's exact historic portrait Therese_lisieux_portrait.jpg, not the later Céline Martin candidate"
+    },
+    {
+      "slot": "COV-pray.rosary",
+      "rule": "Keep original Lorenzo Lotto Madonna del Rosario final cover lock"
+    },
+    {
+      "slot": "COV-prayer.seven_sorrows_chaplet",
+      "rule": "Keep original Master of the Female Half-Lengths Virgin of the Seven Sorrows final cover lock"
+    },
+    {
+      "subject": "Adoration and Benediction",
+      "rule": "Keep existing explicit Ingres The Virgin Adoring the Host allocations and original frame-removal comment"
+    },
+    {
+      "artwork": "Peter Paul Rubens Resurrection of Christ",
+      "rule": "REGINA CAELI (Easter replacement for Angelus cover) AND ROSARY GLORIOUS RESURRECTION ONLY; not generic prayer reuse"
+    }
+  ],
+  "rotationPolicy": {
+    "prayerCovers": "FIXED_TO_EXPLICITLY_APPROVED_WORK",
+    "prayerStages": "CHANGE_ONLY_BY_SIGNIFICANT_MYSTERY_STATION_SCENE_OR_RITE_STAGE",
+    "rosary": "ONE_STABLE_IMAGE_PER_MYSTERY_THROUGH_DECADE",
+    "seasonalHomepage": "ROTATE_ONLY_AMONG_MULTIPLE_USER_APPROVED_WORKS_FOR_SAME_LITURGICAL_OCCASION",
+    "researchOnlyCategoryDoorPools": [
+      "DOOR-D1",
+      "DOOR-D4",
+      "DOOR-D6",
+      "DOOR-D7",
+      "DOOR-D9"
+    ],
+    "categoryDoorRotationEnabled": false
+  },
+  "safety": {
+    "noEditorialChanges": true,
+    "noRejectedArtResurfaced": true,
+    "originalVerbatimUserNotesPreserved": true,
+    "existingResearchAssignmentsUntouched": true,
+    "originalPhotoRightsGatesUntouched": true,
+    "releaseEnabled": false
+  },
+  "reviewContract": "Do not use the Oct31 derived gallery as an authority for original user decisions. Show original 28Oct and 30Oct reviews with comments and scope first, then propose only the true provisional placements."
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "AO_PRAYER_ART_SUBJECT_SOURCE_VERIFICATION_WAVE03_V1",
+  "date": "2026-10-31",
+  "scope": "Eleven existing candidate placements, three original identity groups; not approvals",
+  "counts": {
+    "sourcePlacementLinksRecovered": 11,
+    "artworkSourceIdentityGroups": 3,
+    "sourceLinksBefore": 1338,
+    "sourceLinksAfter": 1349,
+    "stillWithoutSource": 157,
+    "distinctMissingCandidateIdentities": 59
+  },
+  "newArtApproved": 0,
+  "releaseEnabled": false,
+  "sources": [
+    {
+      "sourceID": "PRAYER::saints--vaneyck",
+      "work": "Adoration of the Mystic Lamb, central panel of Ghent Altarpiece",
+      "link": "https://www.closertovaneyck.org/ghentaltarpiece/",
+      "count": 7,
+      "status": "ORIGINAL_IDENTIFIED_OFFICIAL_SCIENTIFIC_IMAGING_SITE; IMAGE_FILE_REUSE_RIGHTS_UNVERIFIED",
+      "nativePhotoDimensions": null,
+      "acquisition": "NOT_ACQUIRED",
+      "notes": "Site includes restored panel image sets; its scientific images are not automatically licensed for app republishing"
+    },
+    {
+      "sourceID": "PRAYER::w1-kazimirowski",
+      "work": "Divine Mercy, original 1934 Eugeniusz Kazimirowski",
+      "link": "https://commons.wikimedia.org/wiki/File:Divina_Misericordia_(Eugeniusz_Kazimirowski,_1934).jpg",
+      "count": 3,
+      "status": "EXACT_ORIGINAL_AND_COMMONS_FILE_PD_ART_CLAIM; MOBILE_CROP_AND_FILE_RIGHTS_REVIEW_PENDING",
+      "nativePhotoDimensions": [
+        4553,
+        7680
+      ],
+      "acquisition": "NOT_ACQUIRED",
+      "notes": "Use image of original Vilnius 1934 work, not a derivative later icon or low-resolution framed version"
+    },
+    {
+      "sourceID": "HERO-21",
+      "work": "An Angel Frees the Souls of Purgatory, Ludovico Carracci",
+      "link": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "count": 1,
+      "status": "SOURCE_IDENTIFIED_LOW_RESOLUTION_HOLD_AND_ASPECT_MISMATCH",
+      "nativePhotoDimensions": [
+        866,
+        1200
+      ],
+      "acquisition": "NOT_ACQUIRED",
+      "notes": "The 44x51cm painting is landscape but this source is portrait. Never certify the photo or crop without reconciling object metadata and visual"
+    }
+  ]
+}

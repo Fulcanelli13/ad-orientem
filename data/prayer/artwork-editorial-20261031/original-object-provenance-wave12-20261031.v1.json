@@ -1,0 +1,170 @@
+{
+  "schema": "AO_PRAYER_ART_OBJECT_PROVENANCE_WAVE12_V1",
+  "date": "2026-10-31",
+  "purpose": "Four source-first original-object identifications, five repeated placement links, no implicit photo rights or editorial promotion",
+  "counts": {
+    "distinctOriginalIdentitiesResolved": 4,
+    "placementSourceLinksRecovered": 5,
+    "linkedNow": 1465,
+    "stillMissingSourcePage": 41,
+    "distinctRemainingOriginalIdentities": 13,
+    "officialOwnerOrHoldingMuseumDocumentation": 2,
+    "ownerReligiousArchiveDocumentation": 1,
+    "independentMuseumExhibitionPhotograph": 1
+  },
+  "verifiedOriginals": [
+    {
+      "identityKey": "W38-009",
+      "sourcePage": "https://museobelasartescoruna.xunta.gal/es/coleccion/obras/san-antonio-de-padua",
+      "originalAccession": "328 (holding museum); P005244 (Prado deposit)",
+      "institution": "Museo de Belas Artes da Coruña",
+      "sourceType": "HOLDING_MUSEUM_OFFICIAL_OBJECT_CATALOGUE",
+      "photoLicense": "NOT_DETERMINED_MUSEUM_OBJECT_SOURCE_NOT_IMAGE_PERMISSION",
+      "photoHold": "HOLD_PRADO_DEPOSIT_PHOTO_RIGHTS_NATIVE_QUALITY_CROP_UNVERIFIED",
+      "note": "Exact Claudio Coello Saint Anthony with Christ Child, c.1669, canvas 159x90 cm; holding museum and CER catalogue. Prado owns/deposits work but sourcePage is holding museum's research catalogue, NOT prohibited Prado photo.",
+      "userApprovalUnchanged": true,
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "placementCount": 2,
+      "productionEnabled": false,
+      "photoNativeQualityCertified": false,
+      "imageDownloaded": false,
+      "newArtApprovalGranted": false
+    },
+    {
+      "identityKey": "carmel-lisieux-1925-therese-aux-roses",
+      "sourcePage": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+      "originalAccession": "Carmel of Lisieux / original oil 1925 / 86x65 cm",
+      "institution": "Archives du Carmel de Lisieux",
+      "sourceType": "OWNER_ARCHIVAL_ORIGINAL_PAINTING_CATALOGUE",
+      "photoLicense": "CARMEL_ARCHIVE_PHOTO_RIGHTS_NOT_CLEARED",
+      "photoHold": "HOLD_PHOTO_REPRODUCTION_RIGHTS_VISUAL_QA_NATIVE_CROP",
+      "note": "Céline Martin's original Thérèse aux Roses, 1925 oil 86x65; distinguish original painting from engravings, reversed versions, later copies and 1929 miniatures. Archive page may require browser access; indexed owner description verified.",
+      "userApprovalUnchanged": true,
+      "placements": [
+        {
+          "slot": "COV-novena.st_therese",
+          "family": "4"
+        }
+      ],
+      "placementCount": 1,
+      "productionEnabled": false,
+      "photoNativeQualityCertified": false,
+      "imageDownloaded": false,
+      "newArtApprovalGranted": false
+    },
+    {
+      "identityKey": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+      "sourcePage": "https://www.wikidata.org/wiki/Q27700185",
+      "originalAccession": "P1627",
+      "institution": "Museo del Prado (original); independent 2013 photograph at Louvre-Lens",
+      "sourceType": "WIKIDATA_CANONICAL_EXACT_ORIGINAL_ID_NO_PHOTO_PERMISSION",
+      "photoLicense": "WIKIMEDIA_PD_ART_CLAIM_PHOTOGRAPHER_JEAN_POL_GRANDMONT_CREDIT_AND_JURISDICTION_REVIEW",
+      "photoHold": "HOLD_INDEPENDENT_PHOTOGRAPH_COPYRIGHT_JURISDICTION_COLOR_NATIVE_CROP_AND_FRAME",
+      "note": "Canonical Wikidata Q27700185 documents original Rubens Immaculate Conception P1627; independent Grandmont 2013 Louvre-Lens photograph tracked in RESTRICTED RESEARCH LEAD ONLY, not an active source image. No Prado photograph reinstated.",
+      "userApprovalUnchanged": true,
+      "placements": [
+        {
+          "slot": "STG-pray.montfort_consecration-03",
+          "family": "4"
+        }
+      ],
+      "placementCount": 1,
+      "productionEnabled": false,
+      "photoNativeQualityCertified": false,
+      "imageDownloaded": false,
+      "newArtApprovalGranted": false,
+      "independentResearchPhotoLead": {
+        "url": "https://commons.wikimedia.org/wiki/File:0_L%27Immacul%C3%A9e_Conception_-_P.P._Rubens_-_Prado_-_P1627_-_(1).JPG",
+        "photographer": "Jean-Pol GRANDMONT",
+        "context": "2013 Louvre-Lens exhibition",
+        "rights": "HOLD_PERMISSION_JURISDICTION_NATIVE_CROP_NO_RELEASE"
+      }
+    },
+    {
+      "identityKey": "UNKEYED::The Virgin of the Seven Sorrows::Master of the Female Half-Lengths (attributed)",
+      "sourcePage": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+      "originalAccession": "008327-000",
+      "institution": "Museu Nacional d'Art de Catalunya",
+      "sourceType": "OWNING_MUSEUM_OFFICIAL_OBJECT_CATALOGUE",
+      "photoLicense": "ARTWORK_PUBLIC_DOMAIN_MNAC_LABEL_PHOTO_LICENSE_AND_IMAGE_PIXEL_QA_PENDING",
+      "photoHold": "HOLD_MNAC_NATIVE_IMAGE_PHOTO_REUSE_FRAMING_AND_CROP_UNVERIFIED",
+      "note": "Locked final Seven Sorrows cover, master of Half-Lengths attributed, second quarter 16th century, oil on panel 75x56.7cm; original museum identity confirmed inv 008327-000; not Bowers accession 89.22.2 (different painting). Preservation of USER_FINAL_LOCKED is mandatory.",
+      "userApprovalUnchanged": true,
+      "placements": [
+        {
+          "slot": "COV-prayer.seven_sorrows_chaplet",
+          "family": "3"
+        }
+      ],
+      "placementCount": 1,
+      "productionEnabled": false,
+      "photoNativeQualityCertified": false,
+      "imageDownloaded": false,
+      "newArtApprovalGranted": false
+    }
+  ],
+  "unresolvedIdentityAndRightsHolds": [
+    {
+      "identityKey": "UNKEYED::Pentecost::Juan Bautista Maíno",
+      "status": "HOLD_UNKEYED_DISTINCT_ORIGINAL_VERSIONS",
+      "candidates": [
+        {
+          "accession": "P003018",
+          "title": "The Pentecost",
+          "date": "1612-1614",
+          "institution": "Prado"
+        },
+        {
+          "accession": "P003286",
+          "title": "Pentecost",
+          "date": "1615-1620",
+          "institution": "Prado"
+        }
+      ],
+      "reason": "Two separate Maíno Pentecost works in museum catalogue; no saved canonical artwork ID identifies which was originally selected. Do not silently choose either or enable Prado photo."
+    },
+    {
+      "identityKey": "REVIEW::cma:127664",
+      "status": "HOLD_UNRESOLVED_CLEVELAND_OBJECT_ORIGINAL",
+      "reason": "Do not infer attribution from similar title; four user-approved linked candidates need original museum crosswalk."
+    },
+    {
+      "identityKey": "UNKEYED::The Virgin of the Seven Sorrows::Master of the Female Half-Lengths (attributed)",
+      "status": "SOURCE_VERIFIED_BUT_RELEASE_HOLD",
+      "reason": "MNAC artwork inv 008327-000 confirmed. Do not mistake for Bowers Heart of Mary inv 89.22.2 or substitute a commercial licensed Getty/Bridgeman photograph."
+    },
+    {
+      "identityKey": "CANONICAL::ART-itian-hrist-arrying-the-ross",
+      "status": "HOLD_NON_PRADO_PHOTO",
+      "reason": "Vanderbilt Contini-Volterra photographic archive lists Titian Christ Carrying the Cross, circa 1565, identifier SC.MSS.088.TITI.0513, but material is reading-room-only and independent photo license/native access is not demonstrated. Do not count 13 source slots as usable image source on archival metadata alone."
+    },
+    {
+      "identityKey": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "status": "HOLD_ORIGINAL_IDENTITY_UNVERIFIED",
+      "reason": "Multiple St Anthony paintings by Murillo, Tiepolo, Carreño and workshop sources; none established as the saved Rubens original. Do not silently transfer a different painter's object."
+    },
+    {
+      "identityKey": "CANONICAL::ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "status": "HOLD_PROHIBITED_PRADO_PHOTO",
+      "reason": "Vanderbilt photographic catalogue confirms matching panel, but known Commons source is Prado-supplied reproduction quarantined by user policy. Source-photograph rights and independence require verification before counting alternative."
+    }
+  ],
+  "safety": {
+    "zeroNewArtworkApprovals": true,
+    "zeroNativePhotoAssetsAcquired": true,
+    "zeroAppImagePublication": true,
+    "originalHistoricalApprovalsUnchanged": true,
+    "all267PositionsRemainMapped": true,
+    "pradoPhotographQuarantinesUnchanged": true,
+    "finalUserReviewSingleConsolidatedBatch": true
+  }
+}

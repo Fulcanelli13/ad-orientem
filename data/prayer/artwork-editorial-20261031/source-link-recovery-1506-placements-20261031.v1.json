@@ -1,0 +1,3920 @@
+{
+  "schema": "AO_PRAYER_ART_SOURCE_PROVENANCE_REPAIR_1506_V1",
+  "date": "2026-10-31",
+  "scope": "1506 placement-candidate relationships; not unique artworks",
+  "approvalPolicy": "HISTORIC APPROVALS RETAINED; NEW RESEARCH REQUIRES SINGLE LATER USER REVIEW; ZERO PUBLICATION",
+  "stats": {
+    "candidatePlacements": 1506,
+    "initiallyMissingSource": 329,
+    "exactArtworkIDRecovered": 140,
+    "remainingMissingConfirmedSource": 189,
+    "labelOnlyUnverified": 7,
+    "stillNoSourceLead": 182,
+    "unidentifiedArtistPlacements": 45,
+    "artworkPublicationEnabled": 0
+  },
+  "exactSameIDRepaired": [
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Adoration of the Magi",
+      "artist": "Workshop of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:34140055"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Adoration of the Magi",
+      "artist": "Anton Kern",
+      "ids": [
+        "REVIEW::commons:28933083"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Adoration of the Magi",
+      "artist": "Denys Calvaert",
+      "ids": [
+        "REVIEW::commons:115220164"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Adoration of the Magi",
+      "artist": "Jean-Baptiste de Faudran",
+      "ids": [
+        "REVIEW::commons:56890177"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "ids": [
+        "PRAYER::angelus--gentileschi"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "ids": [
+        "CANONICAL::met-436502"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436502",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "ids": [
+        "CANONICAL::cma-127572"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1950.251",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Orazio Gentileschi",
+      "ids": [
+        "PRAYER::angelus--gentileschi"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "ids": [
+        "CANONICAL::met-436502"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436502",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "ids": [
+        "CANONICAL::cma-127572"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1950.251",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-08",
+      "family": "1",
+      "title": "The Risen Christ Appearing to the Virgin",
+      "artist": "Francesco Solimena (Italian, 1657–1747)",
+      "ids": [
+        "REVIEW::cma:146167"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1971.63",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus-09",
+      "family": "1",
+      "title": "The Resurrection of Christ",
+      "artist": "Bartolomé Esteban Murillo",
+      "ids": [
+        "PRAYER::regina--murillo-resurrection"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-01",
+      "family": "1",
+      "title": "The Risen Christ Appearing to the Virgin",
+      "artist": "Francesco Solimena (Italian, 1657–1747)",
+      "ids": [
+        "REVIEW::cma:146167"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1971.63",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "Christ Appears to the Three Marys",
+      "artist": "Laurent de La Hyre",
+      "ids": [
+        "REVIEW::commons:158771859"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "The Risen Christ Appearing to the Virgin",
+      "artist": "Francesco Solimena (Italian, 1657–1747)",
+      "ids": [
+        "REVIEW::cma:146167"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1971.63",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-03",
+      "family": "1",
+      "title": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+      "artist": "Wouter Crabeth II",
+      "ids": [
+        "REVIEW::commons:1755068"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:De_ongelovige_thomas.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-03",
+      "family": "1",
+      "title": "Jesus in Emmaus.",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "ids": [
+        "REVIEW::commons:50072987"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Eckersberg%2C_CW_-_Kristus_i_Emmaus_-_1833.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-03",
+      "family": "1",
+      "title": "The Doubting Thomas",
+      "artist": "Attributed to Abraham Janssens I",
+      "ids": [
+        "REVIEW::commons:36519834"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Abraham_Janssens_-_The_Doubting_Thomas.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-04",
+      "family": "1",
+      "title": "The Resurrection of Christ",
+      "artist": "Bartolomé Esteban Murillo",
+      "ids": [
+        "PRAYER::regina--murillo-resurrection"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.angelus_regina-04",
+      "family": "1",
+      "title": "The Risen Christ Appearing to the Virgin",
+      "artist": "Francesco Solimena (Italian, 1657–1747)",
+      "ids": [
+        "REVIEW::cma:146167"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1971.63",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.rosary",
+      "family": "3",
+      "title": "Madonna del Rosario",
+      "artist": "Lorenzo Lotto",
+      "ids": [
+        null,
+        "HERO::fondazione-zeri:47818"
+      ],
+      "sourcePage": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.rosary",
+      "family": "3",
+      "title": "Saint Dominic de Guzmán",
+      "artist": "Juan de Valdés Leal",
+      "ids": [
+        "REVIEW::commons:21976208"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Vald%C3%A9s_Leal_-_Saint_Dominic_de_Guzm%C3%A1n_-_Google_Art_Project.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.rosary",
+      "family": "3",
+      "title": "Spanish: Santo Domingo de Guzmán",
+      "artist": "Francisco de Zurbarán",
+      "ids": [
+        "REVIEW::commons:149541552"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Zurbar%C3%A1n_-_Santo_Domingo_de_Guzm%C3%A1n%2C_Fundaci%C3%B3n_Casa_de_Alba.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.rosary",
+      "family": "3",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "ids": [
+        "REVIEW::cma:143761"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1968.20",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "ids": [
+        "CANONICAL::met-436502"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436502",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "ids": [
+        "CANONICAL::cma-127572"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1950.251",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Adoration of the Magi",
+      "artist": "Workshop of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:34140055"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Adoration of the Magi",
+      "artist": "Anton Kern",
+      "ids": [
+        "REVIEW::commons:28933083"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Adoration of the Magi",
+      "artist": "Denys Calvaert",
+      "ids": [
+        "REVIEW::commons:115220164"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Adoration of the Magi",
+      "artist": "Jean-Baptiste de Faudran",
+      "ids": [
+        "REVIEW::commons:56890177"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Dutch: De aanbidding van de herders | The Adoration of the Shepherds",
+      "artist": "Matthias Stom",
+      "ids": [
+        "REVIEW::commons:153011"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_%E2%80%94_Adoration_of_the_Shepherds.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "The Nativity or the Adoration of the Angels",
+      "artist": "Gerard Seghers",
+      "ids": [
+        "REVIEW::commons:93153411"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "Christ Appears to the Three Marys",
+      "artist": "Laurent de La Hyre",
+      "ids": [
+        "REVIEW::commons:158771859"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparition_de_J%C3%A9sus_aux_trois_Marie_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5356_%3B_MR_1849.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "The Risen Christ Appearing to the Virgin",
+      "artist": "Francesco Solimena (Italian, 1657–1747)",
+      "ids": [
+        "REVIEW::cma:146167"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1971.63",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+      "artist": "Titian",
+      "ids": [
+        "REVIEW::commons:184527366"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Lamentation of Christ",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:15385030"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Lamentation_of_Christ_-_WGA4436.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Pietà",
+      "artist": "Juan de Valdés Leal",
+      "ids": [
+        "REVIEW::met:437862"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "The bearing of Christ's body to the grave \" \"",
+      "artist": "Dirck van Baburen",
+      "ids": [
+        "REVIEW::commons:638360"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "ids": [
+        "REVIEW::met:437172"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437172",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "The lamentation of Christ",
+      "artist": "Circle of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:147368181"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Circle_of_Peter_Paul_Rubens_-_The_Lamentation_of_Christ_(Alte_Pinakothek).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-04",
+      "family": "3",
+      "title": "Dutch: De ongelovige Thomas. | The incredulity of St Thomas",
+      "artist": "Wouter Crabeth II",
+      "ids": [
+        "REVIEW::commons:1755068"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:De_ongelovige_thomas.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.five_wounds-04",
+      "family": "3",
+      "title": "The Doubting Thomas",
+      "artist": "Attributed to Abraham Janssens I",
+      "ids": [
+        "REVIEW::commons:36519834"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Abraham_Janssens_-_The_Doubting_Thomas.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-02",
+      "family": "3",
+      "title": "Christ in the Garden of Gethsemane",
+      "artist": "Giovanni Battista Tiepolo",
+      "ids": [
+        "REVIEW::commons:44750556"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:1753_Tiepolo_Christus_in_Gethsemane_anagoria.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-02",
+      "family": "3",
+      "title": "Guercino - Christ is praying in the Garden of Gethsemane before his arrest. In the agony of doubt, NMW A 7",
+      "artist": "Guercino",
+      "ids": [
+        "REVIEW::commons:83091432"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Guercino_-_Christ_is_praying_in_the_Garden_of_Gethsemane_before_his_arrest._In_the_agony_of_doubt%2C_NMW_A_7.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-04",
+      "family": "3",
+      "title": "Christ Crowned with Thorns",
+      "artist": "Dirck van Baburen",
+      "ids": [
+        "REVIEW::commons:20637285"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Couronnement_d%27%C3%A9pines.JPG",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-04",
+      "family": "3",
+      "title": "Eustache Le Sueur Ecce Homo",
+      "artist": "Eustache Le Sueur",
+      "ids": [
+        "REVIEW::commons:199348815"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_Ecce_Homo.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-05",
+      "family": "3",
+      "title": "The Way to Calvary",
+      "artist": "Domenichino",
+      "ids": [
+        "REVIEW::commons:75000039"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": "Hans Jordaens III",
+      "ids": [
+        "REVIEW::commons:115166028"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "ids": [
+        "REVIEW::met:437172"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437172",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.rosary_methods",
+      "family": "3",
+      "title": "Italian: Madonna del Rosario con san Domenico",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:158010"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_057.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-01",
+      "family": "3",
+      "title": "Presentation of Jesus Christ at the Temple",
+      "artist": "Nicolas Labbé",
+      "ids": [
+        "REVIEW::commons:41334838"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nicolas_Labb%C3%A9-Pr%C3%A9sentation_au_temple.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-02",
+      "family": "3",
+      "title": "The Flight into Egypt",
+      "artist": "Giovanni Battista Tiepolo",
+      "ids": [
+        "REVIEW::met:438128"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-02",
+      "family": "3",
+      "title": "The Flight into Egypt",
+      "artist": "Sebastiano Ricci",
+      "ids": [
+        "REVIEW::commons:158326"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_026.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-02",
+      "family": "3",
+      "title": "The Rest on the Flight into Egypt",
+      "artist": "Pier Francesco Mola",
+      "ids": [
+        "REVIEW::met:437101"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437101",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-02",
+      "family": "3",
+      "title": "Tiepolo - The Rest on the Flight into Egypt, ca. 1720",
+      "artist": "Giovanni Battista Tiepolo",
+      "ids": [
+        "REVIEW::commons:81858127"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Tiepolo_-_The_Rest_on_the_Flight_into_Egypt%2C_ca._1720.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": "Hans Jordaens III",
+      "ids": [
+        "REVIEW::commons:115166028"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "ids": [
+        "REVIEW::met:437172"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437172",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "French: Le Transport du Christ vers le tombeau | The Entombment of Christ \" \"",
+      "artist": "Titian",
+      "ids": [
+        "REVIEW::commons:184527366"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Transport_du_Christ_vers_le_tombeau_-_Titien_-_Mus%C3%A9e_du_Louvre_Peintures_INV_749_%3B_MR_516.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "Lamentation of Christ",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:15385030"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Lamentation_of_Christ_-_WGA4436.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The bearing of Christ's body to the grave \" \"",
+      "artist": "Dirck van Baburen",
+      "ids": [
+        "REVIEW::commons:638360"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The lamentation of Christ",
+      "artist": "Circle of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:147368181"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Circle_of_Peter_Paul_Rubens_-_The_Lamentation_of_Christ_(Alte_Pinakothek).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "Adoration of the Shepherds",
+      "artist": "Carlo Dolci",
+      "ids": [
+        "CANONICAL::cma-143784"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1968.22",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "Dutch: De aanbidding van de herders | The Adoration of the Shepherds",
+      "artist": "Matthias Stom",
+      "ids": [
+        "REVIEW::commons:153011"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_%E2%80%94_Adoration_of_the_Shepherds.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "French: La Nativité | Nativity \" \"",
+      "artist": "Aertgen van Leyden",
+      "ids": [
+        "REVIEW::commons:146550068"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:La_Nativit%C3%A9_-_Mus%C3%A9e_du_Louvre_Peintures_RF_2502.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "REVIEW::commons:15177097"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_Shepherds-Philippe_de_Champaigne-MBA_Lyon_A52-IMG_0394.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "ids": [
+        "CANONICAL::met-436502"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436502",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "ids": [
+        "CANONICAL::cma-127572"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1950.251",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Nativity or the Adoration of the Angels",
+      "artist": "Gerard Seghers",
+      "ids": [
+        "REVIEW::commons:93153411"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-novena.immaculate_conception",
+      "family": "4",
+      "title": "The Virgin of the Immaculate Conception",
+      "artist": "Francisco de Zurbarán",
+      "ids": [
+        "REVIEW::commons:160399"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "ids": [
+        "CANONICAL::met-436502"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436502",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "ids": [
+        "CANONICAL::cma-127572"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1950.251",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-03",
+      "family": "4",
+      "title": "Madonna and Child",
+      "artist": "Giovanni Bellini",
+      "ids": [
+        "REVIEW::met:435641"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/435641",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-03",
+      "family": "4",
+      "title": "The Coronation of the Virgin",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::met:435853"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-03",
+      "family": "4",
+      "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+      "artist": "Luca Giordano (Italian, 1634–1705)",
+      "ids": [
+        "REVIEW::cma:142293"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1966.125",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-03",
+      "family": "4",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "ids": [
+        "REVIEW::cma:143761"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1968.20",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-programme.first_saturday-01",
+      "family": "4",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "ids": [
+        "CANONICAL::B02-HEART-MARY-MORLETE",
+        "PRAYER::heart-mary--primary"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "5",
+      "title": "Jacopo vignali, san michele arcangelo libera le anime del purgatorio",
+      "artist": "Jacopo Vignali",
+      "ids": [
+        "REVIEW::commons:3098509"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "5",
+      "title": "Saint Michael expelling Lucifer and the Rebellious Angels",
+      "artist": "Workshop of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:30774976"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "5",
+      "title": "Saint Michael the Archangel",
+      "artist": "Ignacio de Ries",
+      "ids": [
+        "CANONICAL::met-437729"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "5",
+      "title": "Saint Michael the Archangel",
+      "artist": "Pieter van Lint",
+      "ids": [
+        "REVIEW::commons:118105360"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "5",
+      "title": "The Archangel Michael \" \"",
+      "artist": "Giuseppe Cesari",
+      "ids": [
+        "REVIEW::commons:118823142"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-mass_devotion_leonine",
+      "family": "5",
+      "title": "The Archangel Michael overthrowing Lucifer",
+      "artist": "Francesco Maffei",
+      "ids": [
+        "REVIEW::commons:131068203"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Archangel_Michael_overthrowing_Lucifer.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
+      "artist": "Francesco Trevisani (Italian, 1656–1746)",
+      "ids": [
+        "REVIEW::cma:147696"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1974.108",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "ids": [
+        "CANONICAL::cma-160143"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1998.10",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family on the Steps",
+      "artist": "Nicolas Poussin (French, 1594–1665)",
+      "ids": [
+        "CANONICAL::cma-150389"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1981.18",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family with Angels",
+      "artist": "Sebastiano Ricci",
+      "ids": [
+        "CANONICAL::met-437458"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "Presentation Sketch for \"The Holy Family with Saints Anne, Joachim, and John the Baptist\" (for Santa Maria in Via Lata, Roma)",
+      "artist": "Francesco Trevisani (Italian, 1656–1746)",
+      "ids": [
+        "REVIEW::cma:147696"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1974.108",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family",
+      "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "ids": [
+        "CANONICAL::cma-160143"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1998.10",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family on the Steps",
+      "artist": "Nicolas Poussin (French, 1594–1665)",
+      "ids": [
+        "CANONICAL::cma-150389"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1981.18",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family with Angels",
+      "artist": "Sebastiano Ricci",
+      "ids": [
+        "CANONICAL::met-437458"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi",
+      "artist": "Workshop of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:34140055"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi",
+      "artist": "Anton Kern",
+      "ids": [
+        "REVIEW::commons:28933083"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi",
+      "artist": "Denys Calvaert",
+      "ids": [
+        "REVIEW::commons:115220164"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi",
+      "artist": "Jean-Baptiste de Faudran",
+      "ids": [
+        "REVIEW::commons:56890177"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi",
+      "artist": "Bartolomé Esteban Murillo",
+      "ids": [
+        "PRAYER::visit--murillo-magi"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.adoration.four_ends-04",
+      "family": "5",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "ids": [
+        "CANONICAL::met-436199"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.stations-02",
+      "family": "6",
+      "title": "The Way to Calvary",
+      "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+      "ids": [
+        "REVIEW::commons:22178536"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.stations-02",
+      "family": "6",
+      "title": "The Way to Calvary",
+      "artist": "Domenichino",
+      "ids": [
+        "REVIEW::commons:75000039"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_-_The_way_to_Calvary%2C_c._1610_(Getty_Center).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "6",
+      "title": "Crucifixion",
+      "artist": "Hans Jordaens III",
+      "ids": [
+        "REVIEW::commons:115166028"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hans_Jordaens_(III)_-_The_Crucifixion.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.stations-14",
+      "family": "6",
+      "title": "The bearing of Christ's body to the grave \" \"",
+      "artist": "Dirck van Baburen",
+      "ids": [
+        "REVIEW::commons:638360"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.seven_words-03",
+      "family": "6",
+      "title": "Pietà",
+      "artist": "Juan de Valdés Leal",
+      "ids": [
+        "REVIEW::met:437862"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.seven_words-07",
+      "family": "6",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.seven_words-07",
+      "family": "6",
+      "title": "Pietà",
+      "artist": "Juan de Valdés Leal",
+      "ids": [
+        "REVIEW::met:437862"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.seven_words-08",
+      "family": "6",
+      "title": "Pietà",
+      "artist": "Juan de Valdés Leal",
+      "ids": [
+        "REVIEW::met:437862"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437862",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.tenebrae",
+      "family": "6",
+      "title": "The Burial of Christ",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "CANONICAL::met-438338"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.tenebrae-03",
+      "family": "6",
+      "title": "The bearing of Christ's body to the grave \" \"",
+      "artist": "Dirck van Baburen",
+      "ids": [
+        "REVIEW::commons:638360"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_by_Dirck_van_Baburen_Centraal_Museum_8233.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.tenebrae-03",
+      "family": "6",
+      "title": "The Entombment of Christ",
+      "artist": "Kamal-ol-molk",
+      "ids": [
+        "REVIEW::commons:78104681"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ_by_Kamal-ol-molk_(after_Titian).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+      "artist": "Giovanni Battista Salvi da Sassoferrato",
+      "ids": [
+        "REVIEW::commons:87865020"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Madonna and Child",
+      "artist": "Giovanni Bellini",
+      "ids": [
+        "REVIEW::met:435641"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/435641",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Madonna and Child with the Infant Saint John the Baptist",
+      "artist": "Michele da Verona (Michele di Zenone)",
+      "ids": [
+        "REVIEW::met:437081"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437081",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "The Coronation of the Virgin",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::met:435853"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "The Virgin Crowned by Angels",
+      "artist": "Stefan Lochner (German, 1400-c. 1452)",
+      "ids": [
+        "REVIEW::cma:143761"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1968.20",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "The Virgin of Consolation",
+      "artist": "William-Adolphe Bouguereau",
+      "ids": [
+        "REVIEW::commons:18589500"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "The Virgin of the Immaculate Conception",
+      "artist": "Francisco de Zurbarán",
+      "ids": [
+        "REVIEW::commons:160399"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Virgin and Child",
+      "artist": "Bartolomé Estebán Murillo",
+      "ids": [
+        "REVIEW::met:437175"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437175",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Virgin and Child",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "REVIEW::met:436261"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436261",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-03",
+      "family": "7",
+      "title": "The Virgin of the Immaculate Conception",
+      "artist": "Francisco de Zurbarán",
+      "ids": [
+        "REVIEW::commons:160399"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "DOOR-D8",
+      "family": "8",
+      "title": "Archangel Michael Defeating Satan",
+      "artist": "Guido Reni",
+      "ids": [
+        "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "DOOR-D8",
+      "family": "8",
+      "title": "Saint Michael the Archangel",
+      "artist": "Ignacio de Ries",
+      "ids": [
+        "CANONICAL::met-437729"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Adoration of the Magi",
+      "artist": "Workshop of Peter Paul Rubens",
+      "ids": [
+        "REVIEW::commons:34140055"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Adoration of the Magi",
+      "artist": "Anton Kern",
+      "ids": [
+        "REVIEW::commons:28933083"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Adoration of the Magi",
+      "artist": "Denys Calvaert",
+      "ids": [
+        "REVIEW::commons:115220164"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Adoration of the Magi",
+      "artist": "Jean-Baptiste de Faudran",
+      "ids": [
+        "REVIEW::commons:56890177"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Dutch: De aanbidding van de herders | The Adoration of the Shepherds",
+      "artist": "Matthias Stom",
+      "ids": [
+        "REVIEW::commons:153011"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_%E2%80%94_Adoration_of_the_Shepherds.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "French: La Nativité | Nativity \" \"",
+      "artist": "Aertgen van Leyden",
+      "ids": [
+        "REVIEW::commons:146550068"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:La_Nativit%C3%A9_-_Mus%C3%A9e_du_Louvre_Peintures_RF_2502.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "REVIEW::commons:15177097"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_Shepherds-Philippe_de_Champaigne-MBA_Lyon_A52-IMG_0394.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "The Nativity or the Adoration of the Angels",
+      "artist": "Gerard Seghers",
+      "ids": [
+        "REVIEW::commons:93153411"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-04",
+      "family": "8",
+      "title": "Presentation of Jesus Christ at the Temple",
+      "artist": "Nicolas Labbé",
+      "ids": [
+        "REVIEW::commons:41334838"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nicolas_Labb%C3%A9-Pr%C3%A9sentation_au_temple.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-05",
+      "family": "8",
+      "title": "The Flight into Egypt",
+      "artist": "Giovanni Battista Tiepolo",
+      "ids": [
+        "REVIEW::met:438128"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-05",
+      "family": "8",
+      "title": "The Flight into Egypt",
+      "artist": "Sebastiano Ricci",
+      "ids": [
+        "REVIEW::commons:158326"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_026.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-05",
+      "family": "8",
+      "title": "Tiepolo - The Rest on the Flight into Egypt, ca. 1720",
+      "artist": "Giovanni Battista Tiepolo",
+      "ids": [
+        "REVIEW::commons:81858127"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Tiepolo_-_The_Rest_on_the_Flight_into_Egypt%2C_ca._1720.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-06",
+      "family": "8",
+      "title": "The Flight into Egypt",
+      "artist": "Giovanni Battista Tiepolo",
+      "ids": [
+        "REVIEW::met:438128"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-08",
+      "family": "8",
+      "title": "Saint Joseph with the Flowering Rod",
+      "artist": "Guercino",
+      "ids": [
+        "REVIEW::commons:77218157"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Joseph_with_the_Flowering_Rod.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-08",
+      "family": "8",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "PRAYER::joseph--primary"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "family": "8",
+      "title": "Archangel Michael Defeating Satan",
+      "artist": "Guido Reni",
+      "ids": [
+        "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "family": "8",
+      "title": "Saint Michael the Archangel",
+      "artist": "Ignacio de Ries",
+      "ids": [
+        "CANONICAL::met-437729"
+      ],
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-pray.confession",
+      "family": "9",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "ids": [
+        null,
+        "HERO::nga:34956",
+        "PRAYER::confession--primary"
+      ],
+      "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "COV-prayer.good_death",
+      "family": "9",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "PRAYER::joseph--primary"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    },
+    {
+      "slot": "STG-prayer.good_death-01",
+      "family": "9",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "PRAYER::joseph--primary"
+      ],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "recovery": "EXACT_SOURCE_ARTWORK_ID"
+    }
+  ],
+  "artistTitleSuggestedOnly": [
+    {
+      "slot": "DOOR-D5",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "ids": [
+        "CANONICAL::met-438434"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "slot": "COV-pray.adoration",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "ids": [
+        "PRAYER::adoration--primary",
+        "CANONICAL::met-438434"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "ids": [
+        "PRAYER::adoration--primary"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "slot": "COV-pray.benediction",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "ids": [
+        "PRAYER::adoration--primary"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "slot": "STG-pray.benediction-01",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "ids": [
+        "PRAYER::adoration--primary"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "slot": "STG-pray.benediction-03",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "ids": [
+        "PRAYER::adoration--primary"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "slot": "COV-pray.forty_hours",
+      "family": "5",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "ids": [
+        "PRAYER::adoration--primary"
+      ],
+      "sourcePage": null,
+      "proposal": "https://www.metmuseum.org/art/collection/search/438434"
+    }
+  ],
+  "remainingWithoutSourceLead": [
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Adoration of the Magi",
+      "artist": "Massimo Stanzione",
+      "ids": [
+        "REVIEW::commons:40907107"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Adoration of the Magi .",
+      "artist": "Jacob Jordaens",
+      "ids": [
+        "REVIEW::commons:52809691"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "Nativity",
+      "artist": "Aertgen van Leyden",
+      "ids": [
+        "REVIEW::commons:51744278"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "The Adoration of the Magi",
+      "artist": "François Lemoyne",
+      "ids": [
+        "REVIEW::commons:74483814"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:31782068"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-02",
+      "family": "home",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Barent Fabritius",
+      "ids": [
+        "REVIEW::commons:23100292"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-08",
+      "family": "home",
+      "title": "The Entry of Christ into Jerusalem",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "CURATED-20261031-HERO-08-1"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-08",
+      "family": "home",
+      "title": "Entry into Jerusalem",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        null
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-11",
+      "family": "home",
+      "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+      "artist": "DCHNwam",
+      "ids": [
+        "REVIEW::commons:163856843"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-11",
+      "family": "home",
+      "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+      "artist": "DCHNwam",
+      "ids": [
+        "REVIEW::commons:163856846"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-11",
+      "family": "home",
+      "title": "Christ's Descent into Hell",
+      "artist": "Hieronymus Bosch",
+      "ids": [
+        "REVIEW::met:435725"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-12",
+      "family": "home",
+      "title": "The Resurrection",
+      "artist": "Ricci, Sebastiano",
+      "ids": [
+        "REVIEW::commons:22002144"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-14",
+      "family": "home",
+      "title": "Pentecost",
+      "artist": "Juan Bautista Maíno",
+      "ids": [
+        null
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "HERO-21",
+      "family": "home",
+      "title": "Angel Frees the Souls",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        null
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-weekday_benedictus",
+      "family": "1",
+      "title": "French: La Prédication de saint Jean Baptiste | Predication of Saint John the Baptist",
+      "artist": "Francesco Albani",
+      "ids": [
+        "REVIEW::commons:15179213"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-weekday_benedictus",
+      "family": "1",
+      "title": "Saint John the Baptist",
+      "artist": "Matteo Rosselli",
+      "ids": [
+        "REVIEW::commons:77991201"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-weekday_benedictus",
+      "family": "1",
+      "title": "Saint John the Baptist Pointing to Christ in a Landscape \" \"",
+      "artist": "Carlo Maratta",
+      "ids": [
+        "REVIEW::commons:105545006"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-weekday_benedictus",
+      "family": "1",
+      "title": "St. John the Baptist Preaching",
+      "artist": "Luca Giordano",
+      "ids": [
+        "REVIEW::commons:38035750"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "Annunciation",
+      "artist": "Giovanni Lanfranco",
+      "ids": [
+        "REVIEW::commons:55389333"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "ids": [
+        "CANONICAL::met-436791"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Francesco Solimena",
+      "ids": [
+        "REVIEW::commons:22145562"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Henry Ossawa Tanner",
+      "ids": [
+        "REVIEW::commons:21885843"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation \" \"",
+      "artist": "Frans Francken the Younger",
+      "ids": [
+        "REVIEW::commons:74171702"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-05",
+      "family": "1",
+      "title": "The Annunciation \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "ids": [
+        "REVIEW::commons:186817730"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "Annunciation",
+      "artist": "Giovanni Lanfranco",
+      "ids": [
+        "REVIEW::commons:55389333"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "ids": [
+        "CANONICAL::met-436791"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Francesco Solimena",
+      "ids": [
+        "REVIEW::commons:22145562"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation",
+      "artist": "Henry Ossawa Tanner",
+      "ids": [
+        "REVIEW::commons:21885843"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation \" \"",
+      "artist": "Frans Francken the Younger",
+      "ids": [
+        "REVIEW::commons:74171702"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus-06",
+      "family": "1",
+      "title": "The Annunciation \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "ids": [
+        "REVIEW::commons:186817730"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-pray.angelus_regina",
+      "family": "1",
+      "title": "The Resurrection",
+      "artist": "Ricci, Sebastiano",
+      "ids": [
+        "REVIEW::commons:22002144"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-01",
+      "family": "1",
+      "title": "Madonna and Child with Saints",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        "REVIEW::met:438776"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "Cristo resucitado abrazado a la Cruz",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:29825644"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "Le christ réssuscité",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:23795699"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "Polish: Święte niewiasty u grobu Chrystusa | Holy Women at Christ' s Tomb \" \"",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:15385045"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "Risen Christ",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:48454996"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "The Angel Is Opening Christ's Tomb",
+      "artist": "Benjamin Gerritsz Cuyp",
+      "ids": [
+        "REVIEW::commons:149912"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.angelus_regina-02",
+      "family": "1",
+      "title": "The Resurrection",
+      "artist": "Ricci, Sebastiano",
+      "ids": [
+        "REVIEW::commons:22002144"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "Annunciation",
+      "artist": "Giovanni Lanfranco",
+      "ids": [
+        "REVIEW::commons:55389333"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "ids": [
+        "CANONICAL::met-436791"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation",
+      "artist": "Francesco Solimena",
+      "ids": [
+        "REVIEW::commons:22145562"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation",
+      "artist": "Henry Ossawa Tanner",
+      "ids": [
+        "REVIEW::commons:21885843"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation \" \"",
+      "artist": "Frans Francken the Younger",
+      "ids": [
+        "REVIEW::commons:74171702"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-02",
+      "family": "3",
+      "title": "The Annunciation \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "ids": [
+        "REVIEW::commons:186817730"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Adoration of the Magi",
+      "artist": "Massimo Stanzione",
+      "ids": [
+        "REVIEW::commons:40907107"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Adoration of the Magi .",
+      "artist": "Jacob Jordaens",
+      "ids": [
+        "REVIEW::commons:52809691"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "French: L'adoration des bergers. | L'adoration des bergers.",
+      "artist": "Attribué à Giovanni Andrea Coppola (en italien) , peintre gallipolitain",
+      "ids": [
+        "REVIEW::commons:27133019"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "French: L'Adoration des mages",
+      "artist": "Nicolas Pinson",
+      "ids": [
+        "REVIEW::commons:56890178"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "Nativity",
+      "artist": "Aertgen van Leyden",
+      "ids": [
+        "REVIEW::commons:51744278"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "The Adoration of the Kings \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "ids": [
+        "REVIEW::commons:34313474"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "The Adoration of the Magi",
+      "artist": "François Lemoyne",
+      "ids": [
+        "REVIEW::commons:74483814"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:31782068"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "family": "3",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Barent Fabritius",
+      "ids": [
+        "REVIEW::commons:23100292"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-11",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-11",
+      "family": "3",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "REVIEW::commons:4965555"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-11",
+      "family": "3",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "REVIEW::commons:45227477"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-11",
+      "family": "3",
+      "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:33831598"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "54a Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16",
+      "artist": "DCHNwam",
+      "ids": [
+        "REVIEW::commons:163856843"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "54d Pierre-Paul Rubens, Le Christ triomphant de la Mort et du Péché, vers 1615-16 (détail)",
+      "artist": "DCHNwam",
+      "ids": [
+        "REVIEW::commons:163856846"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "Cristo resucitado abrazado a la Cruz",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:29825644"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "Le christ réssuscité",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:23795699"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "Polish: Święte niewiasty u grobu Chrystusa | Holy Women at Christ' s Tomb \" \"",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:15385045"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "Risen Christ",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:48454996"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "The Angel Is Opening Christ's Tomb",
+      "artist": "Benjamin Gerritsz Cuyp",
+      "ids": [
+        "REVIEW::commons:149912"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-12",
+      "family": "3",
+      "title": "The Resurrection",
+      "artist": "Ricci, Sebastiano",
+      "ids": [
+        "REVIEW::commons:22002144"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-pray.divine_mercy",
+      "family": "3",
+      "title": "Divine Mercy (the original, 1934)",
+      "artist": "Eugeniusz Kazimirowski",
+      "ids": [
+        "PRAYER::w1-kazimirowski"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.divine_mercy-01",
+      "family": "3",
+      "title": "Divine Mercy (the original, 1934)",
+      "artist": "Eugeniusz Kazimirowski",
+      "ids": [
+        "PRAYER::w1-kazimirowski"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-pray.five_wounds",
+      "family": "3",
+      "title": "The Stigmatization of Saint Francis \" \"",
+      "artist": "Orazio Gentileschi",
+      "ids": [
+        "REVIEW::commons:74405911"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Christ Carried Down to the Tomb",
+      "artist": "Eugène Delacroix",
+      "ids": [
+        "REVIEW::commons:198985941"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "La Pietà",
+      "artist": "Guercino",
+      "ids": [
+        "REVIEW::commons:3110508"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Mourning of Christ (Matthew 27:59–61; Mark 15:46–47; Luke 23:53–56; John 19:38–42) \" \"",
+      "artist": "Abraham Janssens I",
+      "ids": [
+        "REVIEW::commons:98814200"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Pietà",
+      "artist": "Domenichino",
+      "ids": [
+        "REVIEW::commons:35629944"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "The Lamentation",
+      "artist": "Simon de Vos",
+      "ids": [
+        "REVIEW::commons:44220879"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "The lamentation over the dead Christ",
+      "artist": "Alessandro Turchi",
+      "ids": [
+        "REVIEW::commons:45590714"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.five_wounds-05",
+      "family": "3",
+      "title": "Divine Mercy (the original, 1934)",
+      "artist": "Eugeniusz Kazimirowski",
+      "ids": [
+        "PRAYER::w1-kazimirowski"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "REVIEW::commons:4965555"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "REVIEW::commons:45227477"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:33831598"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-prayer.seven_sorrows_chaplet",
+      "family": "3",
+      "title": "The Virgin of the Seven Sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "ids": [
+        null
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "REVIEW::commons:4965555"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "French: Le Calvaire | Christ Crucified with the Virgin, Saint John and Mary Magdalene",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "REVIEW::commons:45227477"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:33831598"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The Lamentation",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        "REVIEW::met:438427"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The Lamentation",
+      "artist": "Domenichino (Domenico Zampieri)",
+      "ids": [
+        "REVIEW::met:439553"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The Lamentation",
+      "artist": "Scipione Pulzone (Il Gaetano)",
+      "ids": [
+        "REVIEW::met:437342"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "Christ Carried Down to the Tomb",
+      "artist": "Eugène Delacroix",
+      "ids": [
+        "REVIEW::commons:198985941"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "La Pietà",
+      "artist": "Guercino",
+      "ids": [
+        "REVIEW::commons:3110508"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "Mourning of Christ (Matthew 27:59–61; Mark 15:46–47; Luke 23:53–56; John 19:38–42) \" \"",
+      "artist": "Abraham Janssens I",
+      "ids": [
+        "REVIEW::commons:98814200"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "Pietà",
+      "artist": "Domenichino",
+      "ids": [
+        "REVIEW::commons:35629944"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The Lamentation",
+      "artist": "Simon de Vos",
+      "ids": [
+        "REVIEW::commons:44220879"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-06",
+      "family": "3",
+      "title": "The lamentation over the dead Christ",
+      "artist": "Alessandro Turchi",
+      "ids": [
+        "REVIEW::commons:45590714"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "French: L'adoration des bergers. | L'adoration des bergers.",
+      "artist": "Attribué à Giovanni Andrea Coppola (en italien) , peintre gallipolitain",
+      "ids": [
+        "REVIEW::commons:27133019"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "French: L'Adoration des mages",
+      "artist": "Nicolas Pinson",
+      "ids": [
+        "REVIEW::commons:56890178"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "Nativity",
+      "artist": "Aertgen van Leyden",
+      "ids": [
+        "REVIEW::commons:51744278"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:31782068"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Barent Fabritius",
+      "ids": [
+        "REVIEW::commons:23100292"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-novena.christmas-01",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "ids": [
+        "CANONICAL::met-436791"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.immaculate_conception",
+      "family": "4",
+      "title": "Alonso Cano (1601-1667) Maria Onbevlekt Ontvangen Sint-Janshospitaal (Brugge) 16-08-2019",
+      "artist": "Alonso Cano",
+      "ids": [
+        "REVIEW::commons:81659665"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.immaculate_conception",
+      "family": "4",
+      "title": "Immaculate conception",
+      "artist": "Carlo Maratta",
+      "ids": [
+        "REVIEW::commons:73497418"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "Annunciation",
+      "artist": "Giovanni Lanfranco",
+      "ids": [
+        "REVIEW::commons:55389333"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "ids": [
+        "CANONICAL::met-436791"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Francesco Solimena",
+      "ids": [
+        "REVIEW::commons:22145562"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation",
+      "artist": "Henry Ossawa Tanner",
+      "ids": [
+        "REVIEW::commons:21885843"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation \" \"",
+      "artist": "Frans Francken the Younger",
+      "ids": [
+        "REVIEW::commons:74171702"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.annunciation",
+      "family": "4",
+      "title": "The Annunciation \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "ids": [
+        "REVIEW::commons:186817730"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_joseph",
+      "family": "4",
+      "title": "Reni - and Studio - St. Joseph and the Christ Child, lot.55",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:124722400"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_therese",
+      "family": "4",
+      "title": "Thérèse aux roses (1925)",
+      "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+      "ids": [
+        "carmel-lisieux-1925-therese-aux-roses"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "family": "4",
+      "title": "Madonna and Child with Saint Anthony of Padua",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "W07-006"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "family": "4",
+      "title": "Saint Anthony of Padua",
+      "artist": "Claudio Coello",
+      "ids": [
+        "W38-009"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "family": "4",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "family": "4",
+      "title": "Saint Anthony of Padua with the Infant Christ",
+      "artist": "Giuseppe Bazzani",
+      "ids": [
+        "G17-012"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-novena.st_anthony_nine_tuesdays",
+      "family": "4",
+      "title": "The Vision of Saint Anthony of Padua",
+      "artist": "Giovanni Battista Pittoni",
+      "ids": [
+        "sdma-48-3-pittoni-anthony"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-03",
+      "family": "4",
+      "title": "Immaculate Conception",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "CANONICAL::ART-eter-aul-ubens-mmaculate-onception"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-03",
+      "family": "4",
+      "title": "Madonna and Child with Saints",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        "REVIEW::met:438776"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-benediction_versicles",
+      "family": "5",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family with Saint Elizabeth, Saint John, and a Dove",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "REVIEW::met:437529"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family with Saint John the Baptist",
+      "artist": "Nicolas Poussin",
+      "ids": [
+        "REVIEW::met:438025"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+      "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+      "ids": [
+        "REVIEW::met:437455"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-01",
+      "family": "5",
+      "title": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "REVIEW::met:437528"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family with Saint Elizabeth, Saint John, and a Dove",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "REVIEW::met:437529"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family with Saint John the Baptist",
+      "artist": "Nicolas Poussin",
+      "ids": [
+        "REVIEW::met:438025"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+      "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+      "ids": [
+        "REVIEW::met:437455"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration.night-04",
+      "family": "5",
+      "title": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "REVIEW::met:437528"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi",
+      "artist": "Massimo Stanzione",
+      "ids": [
+        "REVIEW::commons:40907107"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Magi .",
+      "artist": "Jacob Jordaens",
+      "ids": [
+        "REVIEW::commons:52809691"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "French: L'Adoration des mages",
+      "artist": "Nicolas Pinson",
+      "ids": [
+        "REVIEW::commons:56890178"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "The Adoration of the Kings \" \"",
+      "artist": "Hendrick ter Brugghen",
+      "ids": [
+        "REVIEW::commons:34313474"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-01",
+      "family": "5",
+      "title": "The Adoration of the Magi",
+      "artist": "François Lemoyne",
+      "ids": [
+        "REVIEW::commons:74483814"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.adoration-02",
+      "family": "5",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.benediction-01",
+      "family": "5",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.benediction-04",
+      "family": "5",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-06",
+      "family": "6",
+      "title": "Veil of Veronica",
+      "artist": "Francisco de Zurbarán",
+      "ids": [
+        "REVIEW::commons:78990209"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "6",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "6",
+      "title": "French: La crucifixion",
+      "artist": "Philippe de Champaigne",
+      "ids": [
+        "REVIEW::commons:4965555"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "6",
+      "title": "German: Christus am Kreuz | Crucifixion of Christ \" \"",
+      "artist": "Annibale Carracci",
+      "ids": [
+        "REVIEW::commons:33831598"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "La Pietà",
+      "artist": "Guercino",
+      "ids": [
+        "REVIEW::commons:3110508"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "Pietà",
+      "artist": "Domenichino",
+      "ids": [
+        "REVIEW::commons:35629944"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Simon de Vos",
+      "ids": [
+        "REVIEW::commons:44220879"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        "REVIEW::met:438427"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Domenichino (Domenico Zampieri)",
+      "ids": [
+        "REVIEW::met:439553"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Scipione Pulzone (Il Gaetano)",
+      "ids": [
+        "REVIEW::met:437342"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-13",
+      "family": "6",
+      "title": "The lamentation over the dead Christ",
+      "artist": "Alessandro Turchi",
+      "ids": [
+        "REVIEW::commons:45590714"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-14",
+      "family": "6",
+      "title": "Christ Carried Down to the Tomb",
+      "artist": "Eugène Delacroix",
+      "ids": [
+        "REVIEW::commons:198985941"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.seven_words-08",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        "REVIEW::met:438427"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.seven_words-08",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Domenichino (Domenico Zampieri)",
+      "ids": [
+        "REVIEW::met:439553"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.seven_words-08",
+      "family": "6",
+      "title": "The Lamentation",
+      "artist": "Scipione Pulzone (Il Gaetano)",
+      "ids": [
+        "REVIEW::met:437342"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.tenebrae-03",
+      "family": "6",
+      "title": "Christ Carried Down to the Tomb",
+      "artist": "Eugène Delacroix",
+      "ids": [
+        "REVIEW::commons:198985941"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Madonna and Child",
+      "artist": "Francesco Solimena",
+      "ids": [
+        "REVIEW::commons:23602078"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Madonna and Child with Saints",
+      "artist": "Ludovico Carracci",
+      "ids": [
+        "REVIEW::met:438776"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Madonna and Child with St Louis of Toulouse",
+      "artist": "David Teniers the Younger / After Polidoro da Lanciano",
+      "ids": [
+        "REVIEW::commons:54677503"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "7",
+      "title": "Virgin and Child",
+      "artist": "Bernardino Luini (Italian, c. 1480-c. 1532)",
+      "ids": [
+        "REVIEW::cma:97177"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-litany_loreto_1962-03",
+      "family": "7",
+      "title": "Alonso Cano (1601-1667) Maria Onbevlekt Ontvangen Sint-Janshospitaal (Brugge) 16-08-2019",
+      "artist": "Alonso Cano",
+      "ids": [
+        "REVIEW::commons:81659665"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-litany_loreto_1962-03",
+      "family": "7",
+      "title": "Immaculate conception",
+      "artist": "Carlo Maratta",
+      "ids": [
+        "REVIEW::commons:73497418"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "8",
+      "title": "Madonna and Child with Saint Anthony of Padua",
+      "artist": "Anthony van Dyck",
+      "ids": [
+        "W07-006"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "8",
+      "title": "Saint Anthony of Padua",
+      "artist": "Claudio Coello",
+      "ids": [
+        "W38-009"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "8",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "artist": "Peter Paul Rubens",
+      "ids": [
+        "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "8",
+      "title": "Saint Anthony of Padua with the Infant Christ",
+      "artist": "Giuseppe Bazzani",
+      "ids": [
+        "G17-012"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "8",
+      "title": "The Vision of Saint Anthony of Padua",
+      "artist": "Giovanni Battista Pittoni",
+      "ids": [
+        "sdma-48-3-pittoni-anthony"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Adoration of the Magi",
+      "artist": "Massimo Stanzione",
+      "ids": [
+        "REVIEW::commons:40907107"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Adoration of the Magi .",
+      "artist": "Jacob Jordaens",
+      "ids": [
+        "REVIEW::commons:52809691"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "The Adoration of the Magi",
+      "artist": "François Lemoyne",
+      "ids": [
+        "REVIEW::commons:74483814"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "French: L'adoration des bergers. | L'adoration des bergers.",
+      "artist": "Attribué à Giovanni Andrea Coppola (en italien) , peintre gallipolitain",
+      "ids": [
+        "REVIEW::commons:27133019"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "French: L'Adoration des mages",
+      "artist": "Nicolas Pinson",
+      "ids": [
+        "REVIEW::commons:56890178"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "Nativity",
+      "artist": "Aertgen van Leyden",
+      "ids": [
+        "REVIEW::commons:51744278"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:31782068"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "8",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Barent Fabritius",
+      "ids": [
+        "REVIEW::commons:23100292"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-08",
+      "family": "8",
+      "title": "Reni - and Studio - St. Joseph and the Christ Child, lot.55",
+      "artist": "Guido Reni",
+      "ids": [
+        "REVIEW::commons:124722400"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-pray.litany_saints",
+      "family": "8",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "French: La Prédication de saint Jean Baptiste | Predication of Saint John the Baptist",
+      "artist": "Francesco Albani",
+      "ids": [
+        "REVIEW::commons:15179213"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "John the Baptist",
+      "artist": "Robert Campin (Netherlandish, 1375/79–1444)",
+      "ids": [
+        "REVIEW::cma:142476"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "Saint John the Baptist",
+      "artist": "Matteo Rosselli",
+      "ids": [
+        "REVIEW::commons:77991201"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "Saint John the Baptist Pointing to Christ in a Landscape \" \"",
+      "artist": "Carlo Maratta",
+      "ids": [
+        "REVIEW::commons:105545006"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "Saint John the Baptist Preaching",
+      "artist": "Mattia Preti (Il Cavalier Calabrese)",
+      "ids": [
+        "CANONICAL::met-438824"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "St. John the Baptist Preaching",
+      "artist": "Luca Giordano",
+      "ids": [
+        "REVIEW::commons:38035750"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "8",
+      "title": "The Beheading of Saint John the Baptist",
+      "artist": "Spanish Catalan Painter",
+      "ids": [
+        "CANONICAL::met-437738"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-04",
+      "family": "8",
+      "title": "Martirio di san Lorenzo - Lanfranco",
+      "artist": "Giovanni Lanfranco - Lucca, Museo Nazionale di Villa Guinigi",
+      "ids": [
+        "REVIEW::commons:52502126"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-04",
+      "family": "8",
+      "title": "The Stoning of Saint Stephen",
+      "artist": "Adam Elsheimer",
+      "ids": [
+        "REVIEW::commons:80087092"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.litany_saints-06",
+      "family": "8",
+      "title": "Adoration of the Mystic Lamb",
+      "artist": "Hubert and Jan van Eyck",
+      "ids": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-dead_fidelium_deus",
+      "family": "9",
+      "title": "The Last Judgment",
+      "artist": "Joos van Cleve",
+      "ids": [
+        "CANONICAL::met-436794"
+      ],
+      "sourcePage": null
+    }
+  ],
+  "unknownAttributionItems": [
+    {
+      "slot": "HERO-07",
+      "family": "home",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "HERO-11",
+      "family": "home",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.angelus-09",
+      "family": "1",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-foundations_sign_of_cross",
+      "family": "2",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-foundations_apostles_creed",
+      "family": "2",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.rosary-11",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.rosary-11",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-pray.divine_mercy",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.divine_mercy-01",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-pray.five_wounds",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.five_wounds-01",
+      "family": "3",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.five_wounds-02",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.five_wounds-03",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-pray.precious_blood",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.precious_blood-06",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "COV-prayer.seven_sorrows_chaplet",
+      "family": "3",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-04",
+      "family": "3",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-prayer.seven_sorrows_chaplet-05",
+      "family": "3",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "COV-novena.seven_sorrows",
+      "family": "4",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-04",
+      "family": "4",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-programme.first_saturday-01",
+      "family": "4",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "DOOR-D6",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-pray.stations",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.stations-04",
+      "family": "6",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.stations-10",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.stations-11",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "6",
+      "title": "Crucifixion",
+      "artist": null,
+      "ids": [
+        "REVIEW::cma:127664"
+      ],
+      "sourcePage": null
+    },
+    {
+      "slot": "STG-pray.stations-12",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "COV-pray.seven_words",
+      "family": "6",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.seven_words-01",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.seven_words-02",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.seven_words-03",
+      "family": "6",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.seven_words-03",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.seven_words-04",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.seven_words-05",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.seven_words-07",
+      "family": "6",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "STG-pray.seven_words-07",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.seven_words-08",
+      "family": "6",
+      "title": "Pietà",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-94846"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "slot": "COV-pray.tenebrae",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "slot": "STG-pray.tenebrae-02",
+      "family": "6",
+      "title": "Preparation for the Crucifixion",
+      "artist": null,
+      "ids": [
+        "CANONICAL::cma-97181"
+      ],
+      "sourcePage": "https://clevelandart.org/art/1916.816"
+    }
+  ],
+  "researchGate": "IDENTITY_MATCHED != RIGHTS_CLEARED != NATIVE_PHOTO_QA != USER_NEW_ART_APPROVED != LIVE"
+}

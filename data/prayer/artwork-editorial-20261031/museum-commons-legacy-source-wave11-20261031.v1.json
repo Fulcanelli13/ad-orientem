@@ -1,0 +1,237 @@
+{
+  "schema": "AO_PRAYER_ART_COMMONS_MUSEUM_AND_LEGACY_SOURCE_WAVE11_V1",
+  "asOf": "2026-10-31",
+  "scope": "Museum-source and exact-ID original provenance recovery with separate photographic rights/crop and editorial holds",
+  "counts": {
+    "distinctOriginalIdentitiesResolved": 6,
+    "placementSourceLinksRecovered": 9,
+    "linkedNow": 1460,
+    "stillMissingSourcePage": 46,
+    "distinctRemainingOriginalIdentities": 17,
+    "commonsExactPageIDMatched": 1,
+    "clevelandOriginalMuseumMatches": 2,
+    "saintAnthonyLegacyOriginalMatches": 3,
+    "ccZeroPhotographsDocumented": 1,
+    "productionPhotosEnabled": 0
+  },
+  "verifiedOriginals": [
+    {
+      "identityKey": "REVIEW::commons:23602078",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_Madonna_and_Child_-_Google_Art_Project.jpg",
+      "type": "COMMONS_EXACT_PAGE_ID",
+      "artwork": "Francesco Solimena — Madonna and Child",
+      "accession": "841P1",
+      "museum": "Art Gallery of South Australia",
+      "imagePixels": [
+        2974,
+        3868
+      ],
+      "photoLicense": "WIKIMEDIA_PD_ART_PHOTOGRAPHIC_RIGHTS_JURISDICTION_UNCERTIFIED",
+      "hold": "HOLD_PHOTO_REUSE_JURISDICTION_AND_MOBILE_CROP_UNVERIFIED",
+      "sourceCheck": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AFrancesco_Solimena_-_Madonna_and_Child_-_Google_Art_Project.jpg",
+      "note": "Exact Wikimedia Commons Page ID 23602078 and Google Arts ID kwHEgnaLYm_TZg matched; not interchangeable with auction photograph Commons 74676215.",
+      "placements": [
+        {
+          "slot": "STG-litany_loreto_1962-01",
+          "family": "7"
+        }
+      ],
+      "placementCount": 1,
+      "productionEnabled": false,
+      "newUserArtworkApproved": false,
+      "downloadedImageFiles": false,
+      "photoAndNativeCropCertified": false
+    },
+    {
+      "identityKey": "REVIEW::cma:97177",
+      "sourcePage": "https://www.clevelandart.org/art/1916.812",
+      "type": "CLEVELAND_OFFICIAL_OBJECT_CATALOGUE",
+      "artwork": "Attributed to Bernardino Luini — Virgin and Child",
+      "accession": "1916.812",
+      "museum": "The Cleveland Museum of Art",
+      "imagePixels": null,
+      "photoLicense": "CMA_OPEN_ACCESS_OBJECT_PHOTO_RIGHTS_NOT_INDEPENDENTLY_CROPCHECKED",
+      "hold": "HOLD_NATIVE_IMAGE_RESOLUTION_PAINT_ONLY_FRAME_CROP_UNVERIFIED",
+      "sourceCheck": "https://www.clevelandart.org/art/1916.812",
+      "note": "Museum explicitly catalogues 'attributed to Bernardino Luini', unlike shortened legacy label. Oil on wood, Holden Collection. No image downloaded.",
+      "placements": [
+        {
+          "slot": "STG-litany_loreto_1962-01",
+          "family": "7"
+        }
+      ],
+      "placementCount": 1,
+      "productionEnabled": false,
+      "newUserArtworkApproved": false,
+      "downloadedImageFiles": false,
+      "photoAndNativeCropCertified": false
+    },
+    {
+      "identityKey": "REVIEW::cma:142476",
+      "sourcePage": "https://www.clevelandart.org/art/1966.238",
+      "type": "CLEVELAND_OFFICIAL_OBJECT_CATALOGUE",
+      "artwork": "Robert Campin — John the Baptist",
+      "accession": "1966.238",
+      "museum": "The Cleveland Museum of Art",
+      "imagePixels": null,
+      "photoLicense": "CMA_OPEN_ACCESS_OBJECT_PHOTO_RIGHTS_NOT_INDEPENDENTLY_CROPCHECKED",
+      "hold": "HOLD_NATIVE_IMAGE_RESOLUTION_PAINT_ONLY_FRAME_CROP_UNVERIFIED",
+      "sourceCheck": "https://www.clevelandart.org/art/1966.238",
+      "note": "Official Robert Campin, c.1410, oil on oak; historically cut-down composition; frame/crop QA pending.",
+      "placements": [
+        {
+          "slot": "STG-pray.litany_saints-02",
+          "family": "8"
+        }
+      ],
+      "placementCount": 1,
+      "productionEnabled": false,
+      "newUserArtworkApproved": false,
+      "downloadedImageFiles": false,
+      "photoAndNativeCropCertified": false
+    },
+    {
+      "identityKey": "G17-012",
+      "sourcePage": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+      "type": "NATIONAL_GALLERY_OFFICIAL_CATALOGUE",
+      "artwork": "Giuseppe Bazzani — Saint Anthony of Padua with the Infant Christ",
+      "accession": "NG3663",
+      "museum": "National Gallery London",
+      "imagePixels": null,
+      "photoLicense": "NATIONAL_GALLERY_PHOTOGRAPHIC_REUSE_NOT_CLEARED",
+      "hold": "HOLD_PHOTO_LICENSE_NATIVE_PIXEL_CROP_AND_FRAME_QA",
+      "sourceCheck": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+      "note": "Exact artist/title and catalogue accession NG3663 (probably 1740-50); preserve not-user-approved research status.",
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "placementCount": 2,
+      "productionEnabled": false,
+      "newUserArtworkApproved": false,
+      "downloadedImageFiles": false,
+      "photoAndNativeCropCertified": false
+    },
+    {
+      "identityKey": "sdma-48-3-pittoni-anthony",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+      "type": "COMMONS_CC0_PHOTO_AND_MUSEUM_ACCESSION",
+      "artwork": "Giovanni Battista Pittoni — The Vision of Saint Anthony of Padua",
+      "accession": "48.3",
+      "museum": "San Diego Museum of Art",
+      "imagePixels": [
+        1826,
+        2565
+      ],
+      "photoLicense": "CC0_1.0_PHOTOGRAPHER_WMPEARL_DEDICATED",
+      "hold": "HOLD_NATIVE_PAINT_ONLY_CROP_FRAME_AND_COLOR_QA_NO_PRODUCTION_RELEASE",
+      "sourceCheck": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+      "note": "Photographer Wmpearl explicitly dedicated photograph CC0 1.0; separate image-crop/readability/production release remains closed.",
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "placementCount": 2,
+      "productionEnabled": false,
+      "newUserArtworkApproved": false,
+      "downloadedImageFiles": false,
+      "photoAndNativeCropCertified": false
+    },
+    {
+      "identityKey": "W07-006",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Van_Dyck_-_La_Madonna_col_bambino_e_Sant%E2%80%99Antonio_da_Padova,_1630_-_1632.jpg",
+      "type": "COMMONS_CATALOGUE_BRERA_ACC_701",
+      "artwork": "Anthony van Dyck — Madonna and Child with Saint Anthony of Padua",
+      "accession": "701",
+      "museum": "Pinacoteca di Brera",
+      "imagePixels": [
+        750,
+        901
+      ],
+      "photoLicense": "COMMONS_PD_ART_PHOTO_JURISDICTION_UNCERTIFIED",
+      "hold": "HOLD_LOW_RESOLUTION_750x901_PHOTO_RIGHTS_AND_CROP_QA",
+      "sourceCheck": "https://commons.wikimedia.org/wiki/File:Van_Dyck_-_La_Madonna_col_bambino_e_Sant%E2%80%99Antonio_da_Padova,_1630_-_1632.jpg",
+      "note": "Brera inv.701, RKD 236094, catalogue Van Dyck no.563; historically titled The vision of St Antony; linked image too small for unrestricted production use; preserve research-only status.",
+      "placements": [
+        {
+          "slot": "COV-novena.st_anthony_nine_tuesdays",
+          "family": "4"
+        },
+        {
+          "slot": "COV-devotion_st_anthony_lost_items",
+          "family": "8"
+        }
+      ],
+      "placementCount": 2,
+      "productionEnabled": false,
+      "newUserArtworkApproved": false,
+      "downloadedImageFiles": false,
+      "photoAndNativeCropCertified": false
+    }
+  ],
+  "nearMatchesNotAdopted": [
+    {
+      "identityKey": "REVIEW::commons:80087092",
+      "notUsedFilePageIDs": [
+        8398195,
+        87428182
+      ],
+      "reason": "Elsheimer saved ID not established by nearby St Stephen photos; Bridgeman metadata of 8398195 explicitly says REPRODUCTION PERMISSION REQUIRED."
+    },
+    {
+      "identityKey": "REVIEW::commons:78990209",
+      "notUsedFilePageIDs": [
+        15466907,
+        160343,
+        74425075
+      ],
+      "reason": "Zurbarán Veil of Veronica variants/reproductions do not match queued exact Page ID."
+    },
+    {
+      "identityKey": "REVIEW::commons:55389333",
+      "notUsedFilePageIDs": [
+        15395378,
+        48688783
+      ],
+      "reason": "Giovanni Lanfranco Annunciation files refer to other Commons Page IDs."
+    },
+    {
+      "identityKey": "REVIEW::commons:34313474",
+      "notUsedFilePageIDs": [
+        403676
+      ],
+      "reason": "Rijksmuseum ter Brugghen Adoration Commons file has different original Page ID."
+    },
+    {
+      "identityKey": "REVIEW::commons:23602078",
+      "notUsedFilePageIDs": [
+        74676215
+      ],
+      "reason": "Auction-file Solimena Madonna and Child is a DIFFERENT original photograph and artwork, not source for 23602078."
+    },
+    {
+      "identityKey": "REVIEW::cma:127664",
+      "reason": "Cleveland anonymous Crucifixion object still has unresolved canonical original identity. Do not invent artist/source."
+    }
+  ],
+  "safety": {
+    "productionEnabled": false,
+    "newApprovalGranted": false,
+    "zeroPradoPhotosReintroduced": true,
+    "all267PositionsRemainProvisional": true,
+    "finalUserReviewDeferred": true,
+    "photoQualityAndCropReleaseGateClosed": true
+  }
+}

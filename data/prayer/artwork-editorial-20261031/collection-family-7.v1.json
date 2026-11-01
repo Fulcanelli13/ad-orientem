@@ -1,0 +1,1841 @@
+{
+  "schema": "AO_PRAYER_ART_ALL_CANDIDATES_FAMILY_SHARD_V1",
+  "date": "2026-10-31",
+  "family": "7",
+  "source": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "policy": "ACCUMULATE_ALL_CANDIDATES_NOW; ALL_NEW_RESEARCH_NEEDS_USER_APPROVAL_IN_LATER_BULK_REVIEW",
+  "releasedImages": 0,
+  "stats": {
+    "slots": 12,
+    "originalSourceEdges": 98,
+    "deduplicatedReviewOptions": 88,
+    "excludedDoNotSuggest": 9,
+    "sourceLinksRecoveredByExactID": 10,
+    "sourceLinkSuggestionsUnverified": 0,
+    "sourceLinksVerifiedByMuseumSourceWave02": 1
+  },
+  "slots": [
+    {
+      "slot": "DOOR-D7",
+      "family": "D7 Our Lady",
+      "label": "Our Lady",
+      "originalSourceEdges": 12,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+          "artist": "Peter Paul Rubens",
+          "title": "Immaculate Conception",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 2,
+          "childRouteSources": [
+            "COV-marian_consecration_immaculate_heart",
+            "COV-litany_loreto_1962",
+            "COV-marian_hail_holy_queen"
+          ]
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:11005776"
+          ],
+          "artist": "Diego Velázquez",
+          "title": "Immaculate Conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:20090211_NP_Inmaculada.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:116926387"
+          ],
+          "artist": "Unknown author",
+          "title": "Our Lady of the Immaculate Conception and St. Michael Fighting the Bad Angel - 1700",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_the_Immaculate_Conception_and_St._Michael_Fighting_the_Bad_Angel_-_1700.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:65493548"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The coronation of the Virgin",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435853"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-135659"
+          ],
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://clevelandart.org/art/1959.189",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437423"
+          ],
+          "artist": "Guido Reni",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437423",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:143761"
+          ],
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:160399"
+          ],
+          "artist": "Francisco de Zurbarán",
+          "title": "The Virgin of the Immaculate Conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::rosary--caravaggio"
+          ],
+          "artist": "Caravaggio",
+          "title": "Madonna of the Rosary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150955"
+          ],
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "sourcePage": "https://clevelandart.org/art/1982.36",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142293"
+          ],
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "sourcePage": "https://clevelandart.org/art/1966.125",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Coronation of the Virgin",
+          "artist": "Annibale Carracci"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:65493548"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The coronation of the Virgin",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435853"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMSSP230"
+          ],
+          "artist": "Cornelis Schut",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMSSP230",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:143761"
+          ],
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18589500"
+          ],
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-marian_memorare",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Virgin of Consolation",
+          "artist": "William-Adolphe Bouguereau"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:87865020"
+          ],
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435641"
+          ],
+          "artist": "Giovanni Bellini",
+          "title": "Madonna and Child",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435641",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::rosary--caravaggio"
+          ],
+          "artist": "Caravaggio",
+          "title": "Madonna of the Rosary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150955"
+          ],
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "sourcePage": "https://clevelandart.org/art/1982.36",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142293"
+          ],
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "sourcePage": "https://clevelandart.org/art/1966.125",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18589500"
+          ],
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-weekday_magnificat",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::nga:46172",
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Visitation (1643–48)",
+          "artist": "Philippe de Champaigne"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-aphael-and-iulio-omano-he-isitation"
+          ],
+          "artist": "Raphael and Giulio Romano",
+          "title": "The Visitation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Visitaci%C3%B3n_de_Rafael.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::rosary--caravaggio"
+          ],
+          "artist": "Caravaggio",
+          "title": "Madonna of the Rosary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150955"
+          ],
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "sourcePage": "https://clevelandart.org/art/1982.36",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142293"
+          ],
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "sourcePage": "https://clevelandart.org/art/1966.125",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-marian_consecration_immaculate_heart",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+          "artist": "Peter Paul Rubens",
+          "title": "Immaculate Conception",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::heart-mary--primary",
+            "CANONICAL::B02-HEART-MARY-MORLETE"
+          ],
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Mary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-135659"
+          ],
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://clevelandart.org/art/1959.189",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437423"
+          ],
+          "artist": "Guido Reni",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437423",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:87865020"
+          ],
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-sub_tuum",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Virgin of Consolation",
+          "artist": "William-Adolphe Bouguereau"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18589500"
+          ],
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-litany_loreto_1962",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "originalSourceEdges": 10,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+          "artist": "Peter Paul Rubens",
+          "title": "Immaculate Conception",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::commons:77218157",
+          "artist": "Guercino",
+          "title": "Saint Joseph with the Flowering Rod",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-135659"
+          ],
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://clevelandart.org/art/1959.189",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437423"
+          ],
+          "artist": "Guido Reni",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437423",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:11005776"
+          ],
+          "artist": "Diego Velázquez",
+          "title": "Immaculate Conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:20090211_NP_Inmaculada.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:116926387"
+          ],
+          "artist": "Unknown author",
+          "title": "Our Lady of the Immaculate Conception and St. Michael Fighting the Bad Angel - 1700",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_the_Immaculate_Conception_and_St._Michael_Fighting_the_Bad_Angel_-_1700.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:65493548"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The coronation of the Virgin",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435853"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMSSP230"
+          ],
+          "artist": "Cornelis Schut",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMSSP230",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:143761"
+          ],
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-litany_loreto_1962-01",
+      "family": "D7 Our Lady",
+      "label": "Mother of Christ … Mother of our Creator",
+      "originalSourceEdges": 16,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150955"
+          ],
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "sourcePage": "https://clevelandart.org/art/1982.36",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142293"
+          ],
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "sourcePage": "https://clevelandart.org/art/1966.125",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:87865020"
+          ],
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:87865020"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435641"
+          ],
+          "artist": "Giovanni Bellini",
+          "title": "Madonna and Child",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435641",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:435641"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:23602078"
+          ],
+          "artist": "Francesco Solimena",
+          "title": "Madonna and Child",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Solimena_-_Madonna_and_Child_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "WIKIMEDIA_PD_ART_PHOTOGRAPHIC_RIGHTS_JURISDICTION_UNCERTIFIED",
+          "photoSourceEligibility": "HOLD_PHOTO_REUSE_JURISDICTION_AND_MOBILE_CROP_UNVERIFIED",
+          "verifiedOriginalMuseum": "Art Gallery of South Australia",
+          "verifiedOriginalAccession": "841P1",
+          "originalSourceEvidence": "https://commons.wikimedia.org/w/index.php?action=info&title=File%3AFrancesco_Solimena_-_Madonna_and_Child_-_Google_Art_Project.jpg"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:438776"
+          ],
+          "artist": "Ludovico Carracci",
+          "title": "Madonna and Child with Saints",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438776",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:54677503"
+          ],
+          "artist": "David Teniers the Younger / After Polidoro da Lanciano",
+          "title": "Madonna and Child with St Louis of Toulouse",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_Madonna_and_Child_with_St_Louis_of_Toulouse_292N08715_5WW4T.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PD_ART_PHOTO_REUSE_UNCERTIFIED",
+          "photoSourceEligibility": "HOLD_AFTER_POLIDORO_ATTRIBUTION_AND_PHOTO_CROP_RIGHTS"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437081"
+          ],
+          "artist": "Michele da Verona (Michele di Zenone)",
+          "title": "Madonna and Child with the Infant Saint John the Baptist",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437081",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437081"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:435853"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+          "sourceEditorialStatus": "USER_APPROVAL_SCOPE_INCORRECTLY_EXPANDED_FROM_PROPOSAL",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:435853"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          },
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:143761"
+          ],
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20",
+          "sourceEditorialStatus": "USER_APPROVAL_SCOPE_INCORRECTLY_EXPANDED_FROM_PROPOSAL",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::cma:143761"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          },
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18589500"
+          ],
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:18589500"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:160399"
+          ],
+          "artist": "Francisco de Zurbarán",
+          "title": "The Virgin of the Immaculate Conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:160399"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437175"
+          ],
+          "artist": "Bartolomé Estebán Murillo",
+          "title": "Virgin and Child",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437175",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:437175"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436261"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "Virgin and Child",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436261",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:436261"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:97177"
+          ],
+          "artist": "Bernardino Luini (Italian, c. 1480-c. 1532)",
+          "title": "Virgin and Child",
+          "sourcePage": "https://www.clevelandart.org/art/1916.812",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "CMA_OPEN_ACCESS_OBJECT_PHOTO_RIGHTS_NOT_INDEPENDENTLY_CROPCHECKED",
+          "photoSourceEligibility": "HOLD_NATIVE_IMAGE_RESOLUTION_PAINT_ONLY_FRAME_CROP_UNVERIFIED",
+          "verifiedOriginalMuseum": "The Cleveland Museum of Art",
+          "verifiedOriginalAccession": "1916.812",
+          "originalSourceEvidence": "https://www.clevelandart.org/art/1916.812",
+          "verifiedAttribution": "Attributed to Bernardino Luini"
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::rosary--caravaggio"
+          ],
+          "artist": "Caravaggio",
+          "title": "Madonna of the Rosary",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-litany_loreto_1962-02",
+      "family": "D7 Our Lady",
+      "label": "Virgin most prudent … Virgin most faithful",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437490"
+          ],
+          "artist": "Hans Memling",
+          "title": "The Annunciation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437490",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-122338"
+          ],
+          "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
+          "title": "The Annunciation",
+          "sourcePage": "https://clevelandart.org/art/1942.635",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438724"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:87865020"
+          ],
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-litany_loreto_1962-03",
+      "family": "D7 Our Lady",
+      "label": "Mirror of justice … Morning star",
+      "originalSourceEdges": 13,
+      "excludedFromSuggestions": [
+        {
+          "id": "CANONICAL::ART-eter-aul-ubens-mmaculate-onception",
+          "artist": "Peter Paul Rubens",
+          "title": "Immaculate Conception",
+          "originalStatus": "USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "HERO::new:jules-breton-song-of-the-lark-artic-94841",
+          "artist": "Jules Breton",
+          "title": "The Song of the Lark",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:11005776"
+          ],
+          "artist": "Diego Velázquez",
+          "title": "Immaculate Conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:20090211_NP_Inmaculada.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:116926387"
+          ],
+          "artist": "Unknown author",
+          "title": "Our Lady of the Immaculate Conception and St. Michael Fighting the Bad Angel - 1700",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_the_Immaculate_Conception_and_St._Michael_Fighting_the_Bad_Angel_-_1700.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-135659"
+          ],
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://clevelandart.org/art/1959.189",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437423"
+          ],
+          "artist": "Guido Reni",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437423",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:81659665"
+          ],
+          "artist": "Alonso Cano",
+          "title": "Alonso Cano (1601-1667) Maria Onbevlekt Ontvangen Sint-Janshospitaal (Brugge) 16-08-2019",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Alonso_Cano_(1601-1667)_Maria_Onbevlekt_Ontvangen_Sint-Janshospitaal_(Brugge)_16-08-2019.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PD_ART_PHOTOGRAPH_NEEDS_JURISDICTION_QA",
+          "photoSourceEligibility": "HOLD_PHOTO_RIGHTS_JURISDICTION_NATIVE_CROP_UNVERIFIED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:73497418"
+          ],
+          "artist": "Carlo Maratta",
+          "title": "Immaculate conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Carlo_Maratta_-_Maria_Immaculata%2C_c1685.1688_-_Bildergalerie_Sanssouci%2C_Potsdam.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PD_ART_GOOGLE_ART_PROJECT_PHOTO_REUSE_UNCERTIFIED",
+          "photoSourceEligibility": "HOLD_PHOTO_RIGHTS_JURISDICTION_NATIVE_CROP_AND_FRAME_QA_PENDING"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:160399"
+          ],
+          "artist": "Francisco de Zurbarán",
+          "title": "The Virgin of the Immaculate Conception",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_065.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:160399"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56247851"
+          ],
+          "artist": "Pierre Dulin",
+          "title": "Christ healing the sick on the shore of the Sea of Galilee",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:PeinturesMus%C3%A9eFabre048.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:38398823"
+          ],
+          "artist": "Simon de Vos",
+          "title": "Christ on the sea of Galilee",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_Christ_on_the_sea_of_Galilee.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:163982639"
+          ],
+          "artist": "Laurent de La Hyre",
+          "title": "French: Laban cherchant ses idoles dans les bagages de Jacob | Laban Searching Jacob's Baggage for the Stolen Idols \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Laban_cherchant_ses_idoles_dans_les_bagages_de_Jacob_-_Laurent_de_La_Hyre_-_Mus%C3%A9e_du_Louvre_Peintures_INV_5354_%3B_MR_1848.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:74433871"
+          ],
+          "artist": "Sébastien Bourdon",
+          "title": "Laban Searching the Belongings of Jacob",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastien_Bourdon_-_Laban_Searching_the_Belongings_of_Jacob_-_80.16_-_Museum_of_Fine_Arts.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-litany_loreto_1962-04",
+      "family": "D7 Our Lady",
+      "label": "Health of the sick … Help of Christians",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436199"
+          ],
+          "artist": "Christian Wilhelm Ernst Dietrich",
+          "title": "Christ Healing the Sick",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56247851"
+          ],
+          "artist": "Pierre Dulin",
+          "title": "Christ healing the sick on the shore of the Sea of Galilee",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:PeinturesMus%C3%A9eFabre048.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "HERO::commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+          ],
+          "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+          "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:29827917"
+          ],
+          "artist": "Goya y Lucientes, Francisco",
+          "title": "Saint Isabel of Portugal Healing the Wounds of a Sick Woman",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Goya_y_Lucientes%2C_Francisco_-_Saint_Isabel_of_Portugal_Healing_the_Wounds_of_a_Sick_Woman_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18495123"
+          ],
+          "artist": "Peter Paul Rubens and workshop",
+          "title": "The Virgin Mary and Saint Francis Saving the World from Christ's Anger",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_L%27intersection_de_la_Vierge_et_de_Saint-Fran%C3%A7ois_arr%C3%AAtant_les_foudres_divines.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:18589500"
+          ],
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-litany_loreto_1962-05",
+      "family": "D7 Our Lady",
+      "label": "Queen of Angels … Queen of peace",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [
+        {
+          "id": "PRAYER::saints--saraceni",
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::smk:KMSSP230",
+          "artist": "Cornelis Schut",
+          "title": "The Coronation of the Virgin",
+          "originalStatus": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:435853"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+          "sourceEditorialStatus": "USER_APPROVAL_SCOPE_INCORRECTLY_EXPANDED_FROM_PROPOSAL",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:65493548"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The coronation of the Virgin",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:143761"
+          ],
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::smk:KMS1898"
+          ],
+          "artist": "Franz Rösel von Rosenhof",
+          "title": "Paradise before the Fall of Man",
+          "sourcePage": "https://open.smk.dk/en/artwork/image/KMS1898",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:70986"
+          ],
+          "artist": "Benjamin West",
+          "title": "The Expulsion of Adam and Eve from Paradise",
+          "sourcePage": "https://www.nga.gov/artworks/70986",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    }
+  ],
+  "scopeReconciliation20261101": {
+    "rightsUnchanged": true,
+    "publicationAllowed": false,
+    "sourceOriginals": [
+      "REVIEW::cma:143761",
+      "REVIEW::met:435853"
+    ],
+    "authorisedTarget": "STG-pray.rosary-16",
+    "nonTargetCandidateUseRequiresIndependentApproval": true
+  }
+}

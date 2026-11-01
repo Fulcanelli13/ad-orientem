@@ -1,0 +1,535 @@
+{
+  "schema": "AO_PRAYER_ART_CURATED_23_GAPS_PRIOR_ART_AND_NEW_RESEARCH_V1",
+  "date": "2026-10-31",
+  "workflow": "ACCUMULATE_FIRST; USER_REVIEW_ONCE_COMPLETE",
+  "allResearchNeedsUserApproval": true,
+  "counts": {
+    "slotsCoveredByShortlist": 23,
+    "candidatePlacementEdges": 39,
+    "existingPriorSelectionEdges": 13,
+    "newOrUnreviewedEdges": 26
+  },
+  "proposalsBySlot": {
+    "HERO-01": [
+      {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_FOR_CALENDAR_DATE",
+        "proposedRelation": "ADVENT_I_THEMATIC",
+        "note": "First Sunday Advent 29 Nov; Commons 3136x2023",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-05": [
+      {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "SEPTUAGESIMA_PENITENTIAL_THEME",
+        "note": "Original Confession final; seasonal reuse only",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-08": [
+      {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_FOR_CALENDAR_DATE",
+        "proposedRelation": "PALM_SUNDAY_EXACT",
+        "note": "Historical Palm Sunday March 29 approval; exact original photo/source still unresolved; exact IMA Newfields 58.3 source linked to Commons original 5043x3325; PD-Art Commons; frame-free crop not yet pixel-audited",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false,
+        "nativePixels": {
+          "width": 5043,
+          "height": 3325,
+          "verifiedOnCommonsFilePage": true
+        }
+      }
+    ],
+    "HERO-09": [
+      {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "sourcePage": "https://collections.louvre.fr/ark:/53355/cl010062076",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "EUCHARISTIC_INSTITUTION",
+        "note": "User later preferred Champaigne over disliked Ugolino; Louvre INV1125",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-10": [
+      {
+        "artist": "Sodoma",
+        "title": "The Crucifixion",
+        "sourcePage": "https://www.clevelandart.org/art/1916.786",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "CRUCIFIXION_GOOD_FRIDAY",
+        "note": "Previously approved Rosary Crucifixion painting",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Crucifixion",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437172",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "CRUCIFIXION_GOOD_FRIDAY",
+        "note": "Previously approved Rosary Crucifixion work",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-16": [
+      {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "sourcePage": "https://collections.louvre.fr/ark:/53355/cl010062076",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "CORPUS_CHRISTI_EUCHARISTIC_THEME",
+        "note": "Approved identical work different day",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/438434",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "CORPUS_CHRISTI_ADORATION_THEME",
+        "note": "User kept for Adoration",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-17": [
+      {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_FOR_CALENDAR_DATE",
+        "proposedRelation": "SACRED_HEART_FEAST",
+        "note": "User approved 12 Jun Sacred Heart",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-18": [
+      {
+        "artist": "Christian Wilhelm Ernst Dietrich",
+        "title": "Christ Healing the Sick",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "TIME_AFTER_PENTECOST_THEME_ONLY",
+        "note": "Use as rotating pool, never fabricate exact Sunday Gospel",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-19": [
+      {
+        "artist": "Charles de La Fosse",
+        "title": "Assumption of Mary",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_OF_SAME_WORK_DIFFERENT_CONTEXT",
+        "proposedRelation": "ASSUMPTION_DIRECT_SUBJECT",
+        "note": "Previously accepted for Rosary Assumption",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-21": [
+      {
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_FOR_CALENDAR_DATE",
+        "proposedRelation": "ALL_SOULS_DIRECT_SUBJECT",
+        "note": "All Souls Nov2 selection; Commons 866x1200 photo below preferred hero resolution",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "HERO-23": [
+      {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Immaculate Conception",
+        "sourcePage": "https://www.clevelandart.org/art/1959.189",
+        "existingDecision": "PREVIOUS_USER_APPROVAL_FOR_CALENDAR_DATE",
+        "proposedRelation": "IMMACULATE_CONCEPTION_DIRECT_SUBJECT",
+        "note": "User selected Cleveland for Dec8, CC0 museum file",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": true,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "COV-foundations_act_of_hope": [
+      {
+        "artist": "Simon de Vos",
+        "title": "Christ on the Sea of Galilee",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_Christ_on_the_sea_of_Galilee.jpg",
+        "existingDecision": "UNAPPROVED_OLDER_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "FAITH_TRUST_HOPE_CONTEXT",
+        "note": "Old candidate, not literal prayer formula",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "COV-novena.st_anthony_nine_tuesdays": [
+      {
+        "artist": "Antonio del Castillo y Saavedra",
+        "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "EXACT_SAINT",
+        "note": "3400x4477; native QA and file rights",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Francisco Goya",
+        "title": "Saint Anthony of Padua and the Christ Child",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Saint_Anthony_of_Padua_and_the_Christ_Child%27_by_Francisco_Goya.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "EXACT_SAINT",
+        "note": "2491x3000; attribution QA",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "COV-devotion_st_anthony_lost_items": [
+      {
+        "artist": "Antonio del Castillo y Saavedra",
+        "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "EXACT_SAINT",
+        "note": "Same candidate can be shared with novena",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Francisco Goya",
+        "title": "Saint Anthony of Padua and the Christ Child",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Saint_Anthony_of_Padua_and_the_Christ_Child%27_by_Francisco_Goya.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "EXACT_SAINT",
+        "note": "Same backup for both prayers",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.adoration.four_ends-02": [
+      {
+        "artist": "Giovanni Battista Piazzetta",
+        "title": "The Supper at Emmaus",
+        "sourcePage": "https://www.clevelandart.org/art/1931.245",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "EMMAUS_EUCHARISTIC_THEME_NOT_EXACT_THANKSGIVING",
+        "note": "Cleveland CC0 painting, dark Baroque, c.1720",
+        "rights": "CMA_CC0_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Diego Velázquez",
+        "title": "The Supper at Emmaus",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437871",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "EMMAUS_EUCHARISTIC_THEME_NOT_EXACT_THANKSGIVING",
+        "note": "Met PD 1622–23",
+        "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "COV-church_prayer_for_pope": [
+      {
+        "artist": "Francisco Goya",
+        "title": "Saint Gregory the Great, Pope",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg",
+        "existingDecision": "UNAPPROVED_OLDER_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "PAST_POPE_NOT_CURRENT_POPE",
+        "note": "Existing gallery candidate; purely thematic",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.confession-03": [
+      {
+        "artist": "Giuseppe Molteni",
+        "title": "La Confessione (The Confession)",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "DIRECT_CONFESSION_SCENE",
+        "note": "1838 oil, Commons 1295x1600",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Pietro Longhi",
+        "title": "The Confession",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_confession.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "DIRECT_CONFESSION_SCENE",
+        "note": "c.1750 Uffizi oil, 797x986 lower-resolution source",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "COV-pray.for_priests": [
+      {
+        "artist": "Spanish Painter",
+        "title": "The Mass of Saint Gregory",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437722",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "CATHOLIC_PRIESTHOOD_THEME",
+        "note": "Met PD original 1976.100.24, oil on wood",
+        "rights": "MET_PD_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.penitential_psalms-01": [
+      {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PSALMIST_KING_DAVID",
+        "note": "Rijksmuseum; not depicted specific Psalm",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Jusepe de Ribera",
+        "title": "The Tears of Saint Peter",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Met public domain, oil 1612–13",
+        "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Guercino",
+        "title": "Saint Peter Penitent",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Sotheby's original work; do NOT conflate Scottish NG39 original",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.penitential_psalms-03": [
+      {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PSALMIST_KING_DAVID",
+        "note": "Rijksmuseum; not depicted specific Psalm",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Jusepe de Ribera",
+        "title": "The Tears of Saint Peter",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Met public domain, oil 1612–13",
+        "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Guercino",
+        "title": "Saint Peter Penitent",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Sotheby's original work; do NOT conflate Scottish NG39 original",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.penitential_psalms-04": [
+      {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PSALMIST_KING_DAVID",
+        "note": "Rijksmuseum; not depicted specific Psalm",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Jusepe de Ribera",
+        "title": "The Tears of Saint Peter",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Met public domain, oil 1612–13",
+        "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Guercino",
+        "title": "Saint Peter Penitent",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Sotheby's original work; do NOT conflate Scottish NG39 original",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.penitential_psalms-05": [
+      {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PSALMIST_KING_DAVID",
+        "note": "Rijksmuseum; not depicted specific Psalm",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Jusepe de Ribera",
+        "title": "The Tears of Saint Peter",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Met public domain, oil 1612–13",
+        "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Guercino",
+        "title": "Saint Peter Penitent",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Sotheby's original work; do NOT conflate Scottish NG39 original",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ],
+    "STG-pray.penitential_psalms-07": [
+      {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Koning_David.Aert_de_Gelder.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PSALMIST_KING_DAVID",
+        "note": "Rijksmuseum; not depicted specific Psalm",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Jusepe de Ribera",
+        "title": "The Tears of Saint Peter",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Met public domain, oil 1612–13",
+        "rights": "MET_PUBLIC_DOMAIN_OBJECT_CONFIRMED_NATIVE_CROP_QA_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      },
+      {
+        "artist": "Guercino",
+        "title": "Saint Peter Penitent",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Peter_penitent.jpg",
+        "existingDecision": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+        "proposedRelation": "THEMATIC_PENITENCE_NOT_LITERAL_PSALM",
+        "note": "Sotheby's original work; do NOT conflate Scottish NG39 original",
+        "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING",
+        "artworkAcceptedPreviously": false,
+        "userHasApprovedNewArtwork": false,
+        "productionEnabled": false
+      }
+    ]
+  },
+  "releasePolicy": "NONE_OF_THESE_RELATIONSHIPS_AUTO_ENABLE_ANY_PHOTO_OR_LIVE_READER. INHERIT ONLY REAL HISTORIC APPROVALS; ALL OTHERS AWAIT LATER EXPLICIT USER_APPROVAL.",
+  "sourcePhotoNote": "No bulk native photo download performed in this step; source URLs are pointers, not archived image files."
+}

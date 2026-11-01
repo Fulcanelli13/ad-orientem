@@ -11,6 +11,8 @@ import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import "./artwork-release-styles.js";
+import {prayerArtworkSlotForView,renderReleasedPrayerArtwork} from "./artwork-release-runtime.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
@@ -1475,7 +1477,7 @@ function decorateRosary(){
   const chapters=rosaryNamedChapters(info.steps,{set:info.set,french:isFr(),titles});
   installRosaryActiveCard({
    root:r,stepIndex:info.index,
-   chapters,
+   chapters,set:info.set,language:lang(),
    navigate:start=>{
     const api=window.AO_ROSARY_V381;
     if(typeof api?.setStep==="function"&&api.setStep(start)!==false)
@@ -3040,7 +3042,20 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='littleCrown')html=renderLittleCrown();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='littleCrown')html=renderLittleCrown();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();
+  // Release-gated artwork belongs to the exact current Prayer card/stage.
+  // Never infer that a historical painting selection or candidate is a usable image.
+  // The Rosary retains its independent mystery-and-bead player and is not intercepted.
+  const artSlot=prayerArtworkSlotForView({
+   view,prayerId,libraryId:LIB.open,familyId,angelusForm:view==='angelus'?angelusChoice().form:'angelus',
+   stationIndex:STATIONS.step,penitentialIndex:PEN.step,sevenWordsIndex:SEVEN.step
+  });
+  const releasedArt=renderReleasedPrayerArtwork(artSlot,{language:lang()});
+  if(releasedArt){
+   const headerEnd=html.indexOf('</header>');
+   if(headerEnd>=0)html=html.slice(0,headerEnd+9)+releasedArt+html.slice(headerEnd+9);
+  }
+  m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.

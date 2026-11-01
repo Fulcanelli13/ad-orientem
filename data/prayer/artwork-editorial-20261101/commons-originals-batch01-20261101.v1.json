@@ -1,0 +1,229 @@
+{
+  "schema": "ad-orientem.prayer-artwork-commons-batch01.v1",
+  "date": "2026-11-01",
+  "sourceQueue": "data/prayer/artwork-editorial-20261101/photo-release-acquisition-queue-267-20261101.v1.json",
+  "selectionAuthority": "existing canonical chosen painting only; photographs not yet approved",
+  "stageOnly": true,
+  "releaseManifestChangeAllowed": false,
+  "maxCandidateSources": 12,
+  "records": [
+    {
+      "id": "lotto-complete-01",
+      "slot": "COV-pray.rosary",
+      "originalArtworkTitle": "Madonna del Rosario",
+      "artist": "Lorenzo Lotto",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "expectedLicenseShortName": "CC BY 3.0",
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "EXTERNALLY_VERIFIED_PENDING_RECHECK",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        null,
+        "HERO::fondazione-zeri:47818"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "lotto-detail-11",
+      "slot": "COV-pray.rosary",
+      "originalArtworkTitle": "Madonna del Rosario",
+      "artist": "Lorenzo Lotto",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_11.jpg",
+      "expectedLicenseShortName": "CC BY 3.0",
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "EXTERNALLY_VERIFIED_PENDING_RECHECK",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        null,
+        "HERO::fondazione-zeri:47818"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "rubens-resurrection-central",
+      "slot": "STG-pray.rosary-12",
+      "originalArtworkTitle": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "expectedLicenseShortName": "Public domain",
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "EXTERNALLY_VERIFIED_PENDING_RECHECK",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist",
+        "PRAYER::regina--primary"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "champaigne-presentation",
+      "slot": "STG-pray.rosary-05",
+      "originalArtworkTitle": "Presentation of Jesus at the Temple",
+      "artist": "Philippe de Champaigne",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne-Pr%C3%A9sentation_au_temple.jpg",
+      "expectedLicenseShortName": "CC BY-SA 4.0",
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "EXTERNALLY_VERIFIED_PENDING_RECHECK",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "cerezo-pentecost",
+      "slot": "STG-pray.rosary-14",
+      "originalArtworkTitle": "Pentecost",
+      "artist": "Mateo Cerezo",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "APPROVED_REVIEW::STG-pray.rosary-14::06"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "teniers-agony",
+      "slot": "STG-pray.rosary-07",
+      "originalArtworkTitle": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist": "David Teniers the Elder",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "lafosse-assumption",
+      "slot": "STG-pray.rosary-15",
+      "originalArtworkTitle": "Assumption of Mary",
+      "artist": "Charles de La Fosse",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Charles_de_La_Fosse_-_L%27Assomption_vers_1680.jpg",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "REVIEW::commons:15973724"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "teniers-ascension",
+      "slot": "STG-pray.rosary-13",
+      "originalArtworkTitle": "The Ascension (after Leandro Bassano)",
+      "artist": "David Teniers",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "APPROVED_REVIEW::STG-pray.rosary-13::05"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "champaigne-visitation",
+      "slot": "STG-pray.rosary-03",
+      "originalArtworkTitle": "The Visitation",
+      "artist": "Philippe de Champaigne",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "APPROVED_REVIEW::STG-pray.rosary-03::01"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "domenichino-calvary",
+      "slot": "STG-pray.rosary-10",
+      "originalArtworkTitle": "The Way to Calvary",
+      "artist": "Domenichino (Domenico Zampieri) (Italian, 1581 - 1641)",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Domenichino_(Domenico_Zampieri)_(Italian)_-_The_Way_to_Calvary_-_Google_Art_Project.jpg",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "REVIEW::commons:22178536"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "caravaggio-column",
+      "slot": "STG-pray.rosary-08",
+      "originalArtworkTitle": "Christ at the Column",
+      "artist": "Caravaggio",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Christ_at_the_Column-Caravaggio_(c._1607).jpg",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "REVIEW::commons:15216589"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    },
+    {
+      "id": "baburen-thorns",
+      "slot": "STG-pray.rosary-09",
+      "originalArtworkTitle": "Christ Crowned with Thorns",
+      "artist": "Dirck van Baburen",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Couronnement_d%27%C3%A9pines.JPG",
+      "expectedLicenseShortName": null,
+      "action": "ARCHIVE_EXACT_ORIGINAL_FILE_RESEARCH_ONLY",
+      "licenseCitationStatus": "RUNTIME_COMMONS_LICENSE_GATE",
+      "publicationAllowed": false,
+      "sourceCandidateCrosswalk": [
+        "REVIEW::commons:20637285"
+      ],
+      "sourcePhotoStatus": "NOT_YET_DOWNLOADED",
+      "displayPhotoApproval": false
+    }
+  ],
+  "blockedWithoutSubstitution": [
+    {
+      "slot": "COV-novena.st_therese",
+      "reason": "Exact user-approved photo not available in repository; Commons candidate Therese lisieux portrait.jpg is only 362×498, not production quality",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg"
+    },
+    {
+      "slot": "COV-prayer.seven_sorrows_chaplet",
+      "reason": "MNAC museum object public domain; actual approved photograph/reuse licence/quality not yet established"
+    },
+    {
+      "slot": "STG-pray.rosary-04",
+      "reason": "Canonical candidate photo source explicitly identifies Prado; do not acquire Prado photograph"
+    },
+    {
+      "slot": "STG-pray.rosary-16",
+      "reason": "held Coronation scope/identity"
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "reason": "held Salve Regina closing"
+    }
+  ]
+}

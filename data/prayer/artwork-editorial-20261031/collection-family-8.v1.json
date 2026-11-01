@@ -1,0 +1,2685 @@
+{
+  "schema": "AO_PRAYER_ART_ALL_CANDIDATES_FAMILY_SHARD_V1",
+  "date": "2026-10-31",
+  "family": "8",
+  "source": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "policy": "ACCUMULATE_ALL_CANDIDATES_NOW; ALL_NEW_RESEARCH_NEEDS_USER_APPROVAL_IN_LATER_BULK_REVIEW",
+  "releasedImages": 0,
+  "stats": {
+    "slots": 22,
+    "originalSourceEdges": 148,
+    "deduplicatedReviewOptions": 132,
+    "excludedDoNotSuggest": 13,
+    "sourceLinksRecoveredByExactID": 19,
+    "sourceLinkSuggestionsUnverified": 0,
+    "pradoPhotoSourceQuarantines": 1,
+    "sourceLinksVerifiedByMuseumSourceWave02": 2,
+    "sourceLinksVerifiedBySubjectSourceWave03": 2,
+    "sourceLinksVerifiedByCommonsPageIDWave04": 6,
+    "sourceLinksExactPageIdWave06": 1,
+    "sourceLinksExactPageIdWave07": 2,
+    "nonPDNonCC0PhotoSourcesStrictHoldWave07": 2,
+    "sourceLinksExactPageIdWave08": 2,
+    "reconciledCandidateCount20261101": 131,
+    "sourceRowsPreserved20261101": 132
+  },
+  "slots": [
+    {
+      "slot": "DOOR-D8",
+      "family": "D8 Saints & Angels",
+      "label": "Saints & Angels",
+      "originalSourceEdges": 14,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::nga:70986",
+          "artist": "Benjamin West",
+          "title": "The Expulsion of Adam and Eve from Paradise",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::smk:KMS1898",
+          "artist": "Franz Rösel von Rosenhof",
+          "title": "Paradise before the Fall of Man",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::angel--franceschini"
+          ],
+          "artist": "Marcantonio Franceschini",
+          "title": "The Guardian Angel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::angel--strozzi"
+          ],
+          "artist": "Bernardo Strozzi",
+          "title": "The Guardian Angel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-ietro-da-ortona-he-uardian-ngel"
+          ],
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+          ],
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437729"
+          ],
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437729"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::saints--saraceni"
+          ],
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437607",
+          "sourceEditorialStatus": "EDITORIAL_CONTEXTUAL_REUSE",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::joseph--primary"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437458"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Holy Family with Angels",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437458",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-devotion_prayer_st_michael",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "originalSourceEdges": 7,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+          ],
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:3098509"
+          ],
+          "artist": "Jacopo Vignali",
+          "title": "Jacopo vignali, san michele arcangelo libera le anime del purgatorio",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali%2C_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:30774976"
+          ],
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Michael expelling Lucifer and the Rebellious Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels%2C_1622.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437729"
+          ],
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:118105360"
+          ],
+          "artist": "Pieter van Lint",
+          "title": "Saint Michael the Archangel",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_Saint_Michael_the_Archangel.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:118823142"
+          ],
+          "artist": "Giuseppe Cesari",
+          "title": "The Archangel Michael \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cavaliere_d%27Arpino_-_The_Archangel_Michael_-_2020.53_-_Minneapolis_Institute_of_Art.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:131068203"
+          ],
+          "artist": "Francesco Maffei",
+          "title": "The Archangel Michael overthrowing Lucifer",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Archangel_Michael_overthrowing_Lucifer.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-devotion_memorare_st_joseph",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:66235774",
+          "artist": "Carlo Dolci",
+          "title": "The Child Jesus taking the cross of St Joseph",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::commons:77218157",
+          "artist": "Guercino",
+          "title": "Saint Joseph with the Flowering Rod",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::joseph--primary",
+            "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-devotion_st_anthony_lost_items",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:163857127",
+          "title": "Saint Antoine de Padoue tenant l’Enfant Jésus",
+          "artist": "Il Prete Genovese (painting attribution to verify); photographer DCHNwam",
+          "sourceDecision": "NOT_RELEVANT_TO_PRAYER_ONLY",
+          "exclusion": "HISTORICALLY_USER_MARKED_NOT_RELEVANT_TO_PRAYER_B01_B05",
+          "originalSourcePage": "https://commons.wikimedia.org/wiki/File:79_Il_Prete_Genovese%2C_Saint_Antoine_de_Padoue_tenant_l%27enfant_J%C3%A9sus.jpg",
+          "sourceLedger": "data/prayer/artwork-editorial-20261030/decision-ledger-b01-b05.v1.json"
+        },
+        {
+          "id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+          "canonicalOriginalId": "historic:peter paul rubens:saint anthony of padua with the christ child",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "artist": "Peter Paul Rubens",
+          "sourcePage": null,
+          "originalStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "notForReview": true,
+          "reason": "Oct28 rejected Rubens Saint Anthony of Padua with Christ Child for St Anthony devotion; not global artist veto",
+          "decisionAuthority": "EXPLICIT_USER_REJECTION_OR_B02_NOT_RELEVANT",
+          "excludedOn": "2026-11-01"
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CURATED-COV-devotion_st_anthony_lost_items-1"
+          ],
+          "artist": "Francisco Goya",
+          "title": "Saint Anthony of Padua and the Christ Child",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Saint_Anthony_of_Padua_and_the_Christ_Child%27_by_Francisco_Goya.jpg",
+          "sourceEditorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+          "fit": "EXACT_SAINT",
+          "historicallyApprovedInOriginalLedger": false,
+          "priorApprovedInAnotherContext": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "CURATED_PREVIOUS_SELECTION_OR_NEW_RESEARCH",
+          "curatedCrosswalk": {
+            "status": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+            "fit": "EXACT_SAINT",
+            "evidence": "Same backup for both prayers",
+            "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING"
+          },
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CURATED-COV-devotion_st_anthony_lost_items-0"
+          ],
+          "artist": "Antonio del Castillo y Saavedra",
+          "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+          "sourceEditorialStatus": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+          "fit": "EXACT_SAINT",
+          "historicallyApprovedInOriginalLedger": false,
+          "priorApprovedInAnotherContext": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "CURATED_PREVIOUS_SELECTION_OR_NEW_RESEARCH",
+          "curatedCrosswalk": {
+            "status": "NEW_RESEARCH_AWAIT_FINAL_BULK_USER_REVIEW",
+            "fit": "EXACT_SAINT",
+            "evidence": "Same candidate can be shared with novena",
+            "rights": "IMAGE_NATIVE_AND_RIGHTS_VERIFICATION_PENDING"
+          },
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "W07-006"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "Madonna and Child with Saint Anthony of Padua",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Van_Dyck_-_La_Madonna_col_bambino_e_Sant%E2%80%99Antonio_da_Padova,_1630_-_1632.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PD_ART_PHOTO_JURISDICTION_UNCERTIFIED",
+          "photoSourceEligibility": "HOLD_LOW_RESOLUTION_750x901_PHOTO_RIGHTS_AND_CROP_QA",
+          "verifiedOriginalMuseum": "Pinacoteca di Brera",
+          "verifiedOriginalAccession": "701",
+          "originalSourceEvidence": "https://commons.wikimedia.org/wiki/File:Van_Dyck_-_La_Madonna_col_bambino_e_Sant%E2%80%99Antonio_da_Padova,_1630_-_1632.jpg"
+        },
+        {
+          "sourceIDs": [
+            "W38-009"
+          ],
+          "artist": "Claudio Coello",
+          "title": "Saint Anthony of Padua",
+          "sourcePage": "https://museobelasartescoruna.xunta.gal/es/coleccion/obras/san-antonio-de-padua",
+          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "verifiedOriginalAccession": "328 (holding museum); P005244 (Prado deposit)",
+          "verifiedOriginalMuseum": "Museo de Belas Artes da Coruña",
+          "sourceDocumentationType": "HOLDING_MUSEUM_OFFICIAL_OBJECT_CATALOGUE",
+          "photoSourceLicense": "NOT_DETERMINED_MUSEUM_OBJECT_SOURCE_NOT_IMAGE_PERMISSION",
+          "photoSourceEligibility": "HOLD_PRADO_DEPOSIT_PHOTO_RIGHTS_NATIVE_QUALITY_CROP_UNVERIFIED",
+          "verifiedSourceNote": "Exact Claudio Coello Saint Anthony with Christ Child, c.1669, canvas 159x90 cm; holding museum and CER catalogue. Prado owns/deposits work but sourcePage is holding museum's research catalogue, NOT prohibited Prado photo."
+        },
+        {
+          "sourceIDs": [
+            "G17-012"
+          ],
+          "artist": "Giuseppe Bazzani",
+          "title": "Saint Anthony of Padua with the Infant Christ",
+          "sourcePage": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "NATIONAL_GALLERY_PHOTOGRAPHIC_REUSE_NOT_CLEARED",
+          "photoSourceEligibility": "HOLD_PHOTO_LICENSE_NATIVE_PIXEL_CROP_AND_FRAME_QA",
+          "verifiedOriginalMuseum": "National Gallery London",
+          "verifiedOriginalAccession": "NG3663",
+          "originalSourceEvidence": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ"
+        },
+        {
+          "sourceIDs": [
+            "sdma-48-3-pittoni-anthony"
+          ],
+          "artist": "Giovanni Battista Pittoni",
+          "title": "The Vision of Saint Anthony of Padua",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+          "sourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "CC0_1.0_PHOTOGRAPHER_WMPEARL_DEDICATED",
+          "photoSourceEligibility": "HOLD_NATIVE_PAINT_ONLY_CROP_FRAME_AND_COLOR_QA_NO_PRODUCTION_RELEASE",
+          "verifiedOriginalMuseum": "San Diego Museum of Art",
+          "verifiedOriginalAccession": "48.3",
+          "originalSourceEvidence": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG"
+        },
+        {
+          "sourceIDs": [
+            "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_REJECTED_FOR_THIS_PRAYER_PLACEMENT",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "notForReview": true,
+          "eligibleForReview": false,
+          "eligibleForThisSlot": false,
+          "publication": false,
+          "photoCertification": "NOT_CLEARED",
+          "curatorialDisposition": "EXCLUDED_HISTORIC_SOURCE_PROVENANCE_ONLY",
+          "quarantineReason": "Oct28 rejected Rubens Saint Anthony of Padua with Christ Child for St Anthony devotion; not global artist veto",
+          "decisionAuthority": "EXPLICIT_USER_REJECTION_OR_B02_NOT_RELEVANT",
+          "originalSourceEditorialStatus": "NEW_CANDIDATE_FROM_EXISTING_383_AND_IMPORT_RESEARCH_NOT_USER_APPROVED",
+          "retainedAsSourceEvidenceOnly": true
+        }
+      ],
+      "imagePublicationAllowed": false,
+      "currentEditorialSummary": "EXPLICIT_USER_REJECT_EXCLUDED_FROM_REVIEW_CANDIDATE_POOL",
+      "stats20261101": {
+        "sourceRowsPresent": 7,
+        "selectableReviewRows": 6,
+        "quarantinedOriginals": [
+          "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+        ]
+      }
+    },
+    {
+      "slot": "COV-devotion_litany_st_joseph",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "originalSourceEdges": 8,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::commons:66235774",
+          "artist": "Carlo Dolci",
+          "title": "The Child Jesus taking the cross of St Joseph",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::commons:77218157",
+          "artist": "Guercino",
+          "title": "Saint Joseph with the Flowering Rod",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Dream of Saint Joseph",
+          "artist": "Philippe de Champaigne"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::joseph--primary",
+            "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-devotion_ad_te_beate_ioseph",
+      "family": "D8 Saints & Angels",
+      "label": "Card vignette",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 1,
+          "title": "The Rest on the Flight into Egypt",
+          "artist": "Gerard David"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:436503"
+          ],
+          "artist": "Luca Giordano",
+          "title": "The Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436503",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436101"
+          ],
+          "artist": "Gerard David",
+          "title": "The Rest on the Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436101",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437101"
+          ],
+          "artist": "Pier Francesco Mola",
+          "title": "The Rest on the Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437101",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.st_joseph_seven_sorrows",
+      "family": "D8 Saints & Angels",
+      "label": "Cover",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::joseph--primary",
+            "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-160143"
+          ],
+          "artist": "Gaetano Gandolfi (Italian, 1734–1802)",
+          "title": "The Holy Family",
+          "sourcePage": "https://clevelandart.org/art/1998.10",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150389"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Holy Family on the Steps",
+          "sourcePage": "https://clevelandart.org/art/1981.18",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-01",
+      "family": "D8 Saints & Angels",
+      "label": "Doubt · the angel's message",
+      "originalSourceEdges": 2,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::joseph--primary",
+            "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-02",
+      "family": "D8 Saints & Angels",
+      "label": "Poverty of the birth · the Nativity",
+      "originalSourceEdges": 20,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:436781"
+          ],
+          "artist": "Jan Joest of Kalkar",
+          "title": "The Adoration of the Christ Child",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436781",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:34140055"
+          ],
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:34140055"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:28933083"
+          ],
+          "artist": "Anton Kern",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_Kern_-_Die_Anbetung_der_K%C3%B6nige_(ca.1730).jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:28933083"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:115220164"
+          ],
+          "artist": "Denys Calvaert",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Denys_Calvaert_-_Adoration_of_the_Magi.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:115220164"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56890177"
+          ],
+          "artist": "Jean-Baptiste de Faudran",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Faudran_Jean-Baptiste_-_Adoration_des_mages.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:56890177"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:40907107"
+          ],
+          "artist": "Massimo Stanzione",
+          "title": "Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:'The_Adoration_of_the_Magi'_by_Massimo_Stanzione.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:52809691"
+          ],
+          "artist": "Jacob Jordaens",
+          "title": "Adoration of the Magi .",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jordaens_Adoration_of_the_Magi.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:74483814"
+          ],
+          "artist": "François Lemoyne",
+          "title": "The Adoration of the Magi",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Lemoyne_-_The_Adoration_of_the_Magi_-_BF.1989.4_-_Museum_of_Fine_Arts.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-143644"
+          ],
+          "artist": "Bernardo Cavallino",
+          "title": "Adoration of the Shepherds",
+          "sourcePage": "https://clevelandart.org/art/1968.100",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-143784"
+          ],
+          "artist": "Carlo Dolci",
+          "title": "Adoration of the Shepherds",
+          "sourcePage": "https://clevelandart.org/art/1968.22",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436966"
+          ],
+          "artist": "Andrea Mantegna",
+          "title": "The Adoration of the Shepherds",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436966",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:153011"
+          ],
+          "artist": "Matthias Stom",
+          "title": "Dutch: De aanbidding van de herders | The Adoration of the Shepherds",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_%E2%80%94_Adoration_of_the_Shepherds.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:153011"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:27133019"
+          ],
+          "artist": "Attribué à Giovanni Andrea Coppola (en italien) , peintre gallipolitain",
+          "title": "French: L'adoration des bergers. | L'adoration des bergers.",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Coppola-Adoration_des_bergers.JPG",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "CC BY-SA 3.0",
+          "photoSourceEligibility": "RESEARCH_SOURCE_ONLY_PHOTO_NOT_PD_CC0; NO_USER_EXCEPTION"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:56890178"
+          ],
+          "artist": "Nicolas Pinson",
+          "title": "French: L'Adoration des mages",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pinson_Nicolas_-_Adoration_des_mages.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "CC BY-SA 4.0",
+          "photoSourceEligibility": "RESEARCH_SOURCE_ONLY_PHOTO_NOT_PD_CC0; NO_USER_EXCEPTION"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:146550068"
+          ],
+          "artist": "Aertgen van Leyden",
+          "title": "French: La Nativité | Nativity \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_Nativit%C3%A9_-_Mus%C3%A9e_du_Louvre_Peintures_RF_2502.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:146550068"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:51744278"
+          ],
+          "artist": "Aertgen van Leyden",
+          "title": "Nativity",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Aertgen_van_Leyden_-_De_geboorte_van_Christus.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:31782068"
+          ],
+          "artist": "Guido Reni",
+          "title": "The Adoration of the Shepherds",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Shepherds_by_Guido_Reni.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:15177097"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Adoration of the Shepherds",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_Shepherds-Philippe_de_Champaigne-MBA_Lyon_A52-IMG_0394.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:15177097"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:23100292"
+          ],
+          "artist": "Barent Fabritius",
+          "title": "The Adoration of the Shepherds",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Fabritius_Adoration_of_the_shepherds.JPG",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:93153411"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-03",
+      "family": "D8 Saints & Angels",
+      "label": "Circumcision · the Holy Name",
+      "originalSourceEdges": 9,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-pray.precious_blood-01::01"
+          ],
+          "artist": "Jacopo Tintoretto",
+          "title": "The Circumcision",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tintoretto-Circumcision.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-pray.precious_blood-01::02"
+          ],
+          "artist": "Pieter van Lint",
+          "title": "The Circumcision of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pieter_van_Lint_-_The_Circumcision_of_Christ.Jpeg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-pray.precious_blood-01::05"
+          ],
+          "artist": "Peter Paul Rubens",
+          "title": "The Circumcision of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_circumcision_of_Christ.jpg",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "APPROVED_REVIEW::STG-pray.precious_blood-01::06"
+          ],
+          "artist": "Orazio Gentileschi",
+          "title": "The Circumcision of Christ",
+          "sourcePage": "https://www.meisterdrucke.jp/fine-art-prints/Orazio-Gentileschi/1198610/",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "SCENE_IDENTICAL_USER_APPROVED_REUSE",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "Presentation of Jesus at the Temple",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-150955"
+          ],
+          "artist": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "sourcePage": "https://clevelandart.org/art/1982.36",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:139532"
+          ],
+          "artist": "Franz Anton Maulbertsch (Austrian, 1724–1796)",
+          "title": "Study for \"The Presentation of Christ in the Temple\" (for Saint Ulrich, Vienna)",
+          "sourcePage": "https://clevelandart.org/art/1963.326",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:160384"
+          ],
+          "artist": "Francisco de Zurbarán",
+          "title": "The Circumcision of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_050.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142293"
+          ],
+          "artist": "Luca Giordano (Italian, 1634–1705)",
+          "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+          "sourcePage": "https://clevelandart.org/art/1966.125",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-04",
+      "family": "D8 Saints & Angels",
+      "label": "Simeon's prophecy · salvation of souls",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::smk:KMS1168",
+          "artist": "Frantz Clein",
+          "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+          "originalStatus": "CROSS_PRAYER_REUSE_UNAPPROVED_SOURCE",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "Presentation of Jesus at the Temple",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:139532"
+          ],
+          "artist": "Franz Anton Maulbertsch (Austrian, 1724–1796)",
+          "title": "Study for \"The Presentation of Christ in the Temple\" (for Saint Ulrich, Vienna)",
+          "sourcePage": "https://clevelandart.org/art/1963.326",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:41334838"
+          ],
+          "artist": "Nicolas Labbé",
+          "title": "Presentation of Jesus Christ at the Temple",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Nicolas_Labb%C3%A9-Pr%C3%A9sentation_au_temple.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:41334838"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:160384"
+          ],
+          "artist": "Francisco de Zurbarán",
+          "title": "The Circumcision of Christ",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_050.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-05",
+      "family": "D8 Saints & Angels",
+      "label": "Flight into Egypt · the idols fall",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:436503"
+          ],
+          "artist": "Luca Giordano",
+          "title": "The Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436503",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436101"
+          ],
+          "artist": "Gerard David",
+          "title": "The Rest on the Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436101",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437101"
+          ],
+          "artist": "Pier Francesco Mola",
+          "title": "The Rest on the Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437101",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:438128"
+          ],
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "The Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:438128"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:158326"
+          ],
+          "artist": "Sebastiano Ricci",
+          "title": "The Flight into Egypt",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_026.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:158326"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:81858127"
+          ],
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "Tiepolo - The Rest on the Flight into Egypt, ca. 1720",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tiepolo_-_The_Rest_on_the_Flight_into_Egypt%2C_ca._1720.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:81858127"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-06",
+      "family": "D8 Saints & Angels",
+      "label": "Return from Egypt · life at Nazareth",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:436503"
+          ],
+          "artist": "Luca Giordano",
+          "title": "The Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436503",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436101"
+          ],
+          "artist": "Gerard David",
+          "title": "The Rest on the Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436101",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:437101"
+          ],
+          "artist": "Pier Francesco Mola",
+          "title": "The Rest on the Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437101",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:438128"
+          ],
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "The Flight into Egypt",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438128",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::met:438128"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-07",
+      "family": "D8 Saints & Angels",
+      "label": "Loss of the Child · finding in the Temple",
+      "originalSourceEdges": 5,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::met-436672"
+          ],
+          "artist": "Abraham Hondius",
+          "title": "Christ among the Doctors",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436672",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:98817605"
+          ],
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "title": "Christ among the Doctors \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Cima_da_Conegliano_-_Christ_among_the_Doctors_-_M.Ob.625_MNW_-_National_Museum_in_Warsaw.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:98001263"
+          ],
+          "artist": "Dirck van Baburen",
+          "title": "Christ among the Doctors \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_among_the_Doctors_-_NG.M.00109_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::nga-41661"
+          ],
+          "artist": "Bernard van Orley",
+          "title": "Christ among the Doctors [obverse]",
+          "sourcePage": "https://www.nga.gov/artworks/41661",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::kmska:9roxqg"
+          ],
+          "artist": "Schilder: Meester van Hoogstraeten",
+          "title": "Jezus en de schriftgeleerden",
+          "sourcePage": "http://kmska.be/collection/work/data/9roxqg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.st_joseph_seven_sorrows-08",
+      "family": "D8 Saints & Angels",
+      "label": "Antiphon and collect",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:124722400"
+          ],
+          "artist": "Guido Reni",
+          "title": "Reni - and Studio - St. Joseph and the Christ Child, lot.55",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Reni_-_and_Studio_-_St._Joseph_and_the_Christ_Child%2C_lot.55.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceEligibility": "AUCTION_PHOTOGRAPH_SOURCE_HOLD_RIGHTS_NOT_CLEARED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:77218157"
+          ],
+          "artist": "Guercino",
+          "title": "Saint Joseph with the Flowering Rod",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Joseph_with_the_Flowering_Rod.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "REVIEW::commons:77218157"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+            "PRAYER::joseph--primary"
+          ],
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+              "PRAYER::joseph--primary"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "COV-pray.litany_saints",
+      "family": "D8 Saints & Angels",
+      "label": "Cover",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::nga:70986",
+          "artist": "Benjamin West",
+          "title": "The Expulsion of Adam and Eve from Paradise",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        },
+        {
+          "id": "REVIEW::smk:KMS1898",
+          "artist": "Franz Rösel von Rosenhof",
+          "title": "Paradise before the Fall of Man",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::saints--saraceni"
+          ],
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437607",
+          "sourceEditorialStatus": "EDITORIAL_CONTEXTUAL_REUSE",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "family": "D8 Saints & Angels",
+      "label": "Our Lady, angels and archangels",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::nga:46172",
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::met:435853"
+          ],
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/435853",
+          "sourceEditorialStatus": "USER_APPROVAL_SCOPE_INCORRECTLY_EXPANDED_FROM_PROPOSAL",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::met:435853"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+          ],
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437729"
+          ],
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437729",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "sourceRecovery": {
+            "type": "EXACT_SOURCE_ARTWORK_ID",
+            "ids": [
+              "CANONICAL::met-437729"
+            ],
+            "reviewRequired": false,
+            "photoRightsVerified": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:143761"
+          ],
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "sourcePage": "https://clevelandart.org/art/1968.20",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "DIRECT_SUBJECT_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "approvedForThisExactSlot": false,
+          "eligibleForProduction": false,
+          "photoCertification": "NOT_CLEARED",
+          "reviewInstructionScope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "reviewInstructionVerbatim": "explicit mystery in rosary",
+          "reconciliation20261101": {
+            "exactArtworkIds": [
+              "REVIEW::cma:143761"
+            ],
+            "authority": "B04_VERBATIM_USER_MYSTERY_COMMENT",
+            "originalSourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+            "scope": "NOT_AUTHORIZED_BY_CORONATION_MYSTERY_COMMENT",
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-02",
+      "family": "D8 Saints & Angels",
+      "label": "Patriarchs, prophets, St John the Baptist, St Joseph",
+      "originalSourceEdges": 10,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::nga:131041",
+          "artist": "Cornelis van Poelenburch",
+          "title": "The Prophet Elijah and the Widow of Zarephath",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:15179213"
+          ],
+          "artist": "Francesco Albani",
+          "title": "French: La Prédication de saint Jean Baptiste | Predication of Saint John the Baptist",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Predicatin_of_Saint_John_the_Baptist-Francesco_Albani-MBA_Lyon_A127-IMG_0346.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PD_ART_USER_PHOTOGRAPH_SOURCE_REUSE_UNCERTIFIED",
+          "photoSourceEligibility": "HOLD_USER_PHOTOGRAPH_RIGHTS_JURISDICTION_AND_MOBILE_CROP"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::cma:142476"
+          ],
+          "artist": "Robert Campin (Netherlandish, 1375/79–1444)",
+          "title": "John the Baptist",
+          "sourcePage": "https://www.clevelandart.org/art/1966.238",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "CMA_OPEN_ACCESS_OBJECT_PHOTO_RIGHTS_NOT_INDEPENDENTLY_CROPCHECKED",
+          "photoSourceEligibility": "HOLD_NATIVE_IMAGE_RESOLUTION_PAINT_ONLY_FRAME_CROP_UNVERIFIED",
+          "verifiedOriginalMuseum": "The Cleveland Museum of Art",
+          "verifiedOriginalAccession": "1966.238",
+          "originalSourceEvidence": "https://www.clevelandart.org/art/1966.238"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:77991201"
+          ],
+          "artist": "Matteo Rosselli",
+          "title": "Saint John the Baptist",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Matteo_Rosselli_-_Saint_John_the_Baptist.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:105545006"
+          ],
+          "artist": "Carlo Maratta",
+          "title": "Saint John the Baptist Pointing to Christ in a Landscape \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Carlo_Maratti_-_Saint_John_the_Baptist_Pointing_to_Christ_in_a_Landscape_-_1999.250_-_Fogg_Museum.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-438824"
+          ],
+          "artist": "Mattia Preti (Il Cavalier Calabrese)",
+          "title": "Saint John the Baptist Preaching",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/438824",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:38035750"
+          ],
+          "artist": "Luca Giordano",
+          "title": "St. John the Baptist Preaching",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:'Saint_John_the_Baptist_Preaching'_by_Luca_Giordano%2C_LACMA.JPG",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PUBLIC_DOMAIN_RESEARCH_PHOTO_REUSE_UNCERTIFIED",
+          "photoSourceEligibility": "HOLD_PHOTO_RIGHTS_JURISDICTION_NATIVE_CROP_UNVERIFIED"
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::met-437738"
+          ],
+          "artist": "Spanish Catalan Painter",
+          "title": "The Beheading of Saint John the Baptist",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437738",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-126768"
+          ],
+          "artist": "Battista Dossi (Italian, c. 1490–1548)",
+          "title": "Holy Family with a Shepherd",
+          "sourcePage": "https://clevelandart.org/art/1949.185",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::cma-130392"
+          ],
+          "artist": "Nicolas Poussin (French, 1594–1665)",
+          "title": "The Return of the Holy Family to Nazareth",
+          "sourcePage": "https://clevelandart.org/art/1953.156",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-03",
+      "family": "D8 Saints & Angels",
+      "label": "Apostles and evangelists",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 3,
+          "title": "Paradise",
+          "artist": "Carlo Saraceni"
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:29858165"
+          ],
+          "artist": "Francisco Goya",
+          "title": "Saint Gregory the Great, Pope",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::saints--saraceni"
+          ],
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437607",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:70986"
+          ],
+          "artist": "Benjamin West",
+          "title": "The Expulsion of Adam and Eve from Paradise",
+          "sourcePage": "https://www.nga.gov/artworks/70986",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-04",
+      "family": "D8 Saints & Angels",
+      "label": "Martyrs",
+      "originalSourceEdges": 6,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:81902276"
+          ],
+          "artist": "Simon Vouet",
+          "title": "Martyrdom of Saint Catherine",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Simon_Vouet%2C_Martyre_de_Sainte-Catherine_(avant_restauration).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-uan-de-uanes-artyrdom-of-aint-tephen"
+          ],
+          "artist": "Juan de Juanes",
+          "title": "Martyrdom of Saint Stephen",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "excludedPhotoSource": {
+            "originalURL": "https://commons.wikimedia.org/wiki/File:Martirio%20de%20San%20Esteban%2C%20de%20Juan%20de%20Juanes%20(Museo%20del%20Prado).jpg",
+            "status": "QUARANTINED_PRADO_REPRODUCTION_NOT_RECOMMENDED_FOR_APP",
+            "paintingEditorialStatusPreserved": true,
+            "alternativeNonPradoSourceRequired": true
+          },
+          "photoCertification": "BLOCKED_PRADO_PHOTO"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436039"
+          ],
+          "artist": "Lucas Cranach the Elder",
+          "title": "The Martyrdom of Saint Barbara",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436039",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:436990"
+          ],
+          "artist": "Master of the Acts of Mercy",
+          "title": "The Martyrdom of Saint Lawrence; (reverse) Giving Drink to the Thirsty",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/436990",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:52502126"
+          ],
+          "artist": "Giovanni Lanfranco - Lucca, Museo Nazionale di Villa Guinigi",
+          "title": "Martirio di san Lorenzo - Lanfranco",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Martirio_di_san_Lorenzo_-_Lanfranco.jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "photoSourceLicense": "COMMONS_PD_ART_PHOTOGRAPH_NEEDS_JURISDICTION_QA",
+          "photoSourceEligibility": "HOLD_PHOTO_RIGHTS_JURISDICTION_NATIVE_CROP_UNVERIFIED"
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:80087092"
+          ],
+          "artist": "Adam Elsheimer",
+          "title": "The Stoning of Saint Stephen",
+          "sourcePage": null,
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-05",
+      "family": "D8 Saints & Angels",
+      "label": "Bishops, doctors, priests, monks and hermits",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+          ],
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+          "sourceEditorialStatus": "USER_APPROVED",
+          "fit": "HUMAN_EXPLICIT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:85666930"
+          ],
+          "artist": "Jvillafruela",
+          "title": "Jacques Blanchard - Saint Jérôme écrivant",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacques_Blanchard_-_Saint_J%C3%A9r%C3%B4me_%C3%A9crivant.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false,
+          "verifiedWorkMetadata": {
+            "verifiedPainter": "Jacques Blanchard",
+            "verifiedTitle": "Saint Jérôme écrivant",
+            "accession": "MG 4292",
+            "verifiedOriginalUrl": "https://www.museedegrenoble.fr/oeuvre/2261/1922-saint-jerome-ecrivant.htm",
+            "sourcePhotographer": "Jérôme Villafruela (Jvillafruela)",
+            "photographLicence": "CC BY-SA 4.0",
+            "currentPrayerLicenceExceptionApplies": false,
+            "paintingChoiceUnchanged": true,
+            "publicationAllowed": false
+          }
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:103782584"
+          ],
+          "artist": "Anthony van Dyck",
+          "title": "Saint Francis of Assisi at the foot of the Cross",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Sir_anthony_van_dyck_saint_francis_of_assisi_at_the_foot_of_the_cross114813).jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    },
+    {
+      "slot": "STG-pray.litany_saints-06",
+      "family": "D8 Saints & Angels",
+      "label": "Virgins and widows; all saints",
+      "originalSourceEdges": 3,
+      "excludedFromSuggestions": [
+        {
+          "id": "REVIEW::nga:70986",
+          "artist": "Benjamin West",
+          "title": "The Expulsion of Adam and Eve from Paradise",
+          "originalStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "notForReview": true
+        }
+      ],
+      "approvedReuseLinkedEarlier": [],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "PRAYER::saints--vaneyck"
+          ],
+          "artist": "Hubert and Jan van Eyck",
+          "title": "Adoration of the Mystic Lamb",
+          "sourcePage": "https://www.closertovaneyck.org/ghentaltarpiece/",
+          "sourceEditorialStatus": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "fit": "HUMAN_DIRECTED_CROSS_PRAYER_CONTEXT",
+          "historicallyApprovedInOriginalLedger": true,
+          "requiresExplicitUserApproval": false,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "PRAYER::saints--saraceni"
+          ],
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437607",
+          "sourceEditorialStatus": "EDITORIAL_CONTEXTUAL_REUSE",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    }
+  ],
+  "reconciliation20261101": {
+    "reason": "Exact-work rejected research candidates must not remain selectable",
+    "removedCandidates": [
+      "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild"
+    ],
+    "sourceLedgerUnmodified": true,
+    "productionEnabled": false,
+    "historicalSourceRowsRetained": true,
+    "excludedFromSelectableResearch": true
+  },
+  "scopeReconciliation20261101": {
+    "rightsUnchanged": true,
+    "publicationAllowed": false,
+    "sourceOriginals": [
+      "REVIEW::cma:143761",
+      "REVIEW::met:435853"
+    ],
+    "authorisedTarget": "STG-pray.rosary-16",
+    "nonTargetCandidateUseRequiresIndependentApproval": true
+  }
+}

@@ -3,6 +3,8 @@
  * Never copies prayer text or mutates beads/mysteries/translation state.
  */
 import {rosaryCurrentChapter} from "./rosary-card-chapters.js";
+import {prayerArtworkRosarySlotForChapter,renderReleasedPrayerArtwork} from "./artwork-release-runtime.js";
+import "./artwork-release-styles.js";
 
 const mounted=new WeakMap();
 const visible=node=>{
@@ -32,7 +34,7 @@ function visibleParagraphs(scroll){
  return [...new Set(nodes)].filter(visible);
 }
 
-export function installRosaryActiveCard({root,stepIndex,chapters,navigate}={}){
+export function installRosaryActiveCard({root,stepIndex,chapters,navigate,set='joyful',language='en'}={}){
  const shell=root?.querySelector(".pbShell");
  const prayer= shell?.querySelector(".lab-prayer-sheet");
  const prayerFlip=prayer?.querySelector(".lab-prayer-flip[data-pb-flip]");
@@ -48,6 +50,27 @@ export function installRosaryActiveCard({root,stepIndex,chapters,navigate}={}){
  sheet.dataset.aoDevoCard=chapter.id;
  sheet.dataset.aoRosaryCanonicalStep=String(stepIndex);
  sheet.dataset.aoRosaryDualAxis="v1";
+ // This attachment neither edits the donor prayer/verses nor introduces a
+ // mystery change on individual beads. No image is inserted without a fully
+ // certified local reproduction in the public release manifest.
+ const previousArtwork=shell.querySelector('[data-ao-rosary-certified-art]');
+ const artSlot=prayerArtworkRosarySlotForChapter(chapter,{set});
+ const releaseHTML=renderReleasedPrayerArtwork(artSlot,{language});
+ if(!releaseHTML){previousArtwork?.remove();}
+ else if(previousArtwork?.dataset.aoRosaryCertifiedArt===artSlot){
+  // The donor can replace its prayer sheet between beads. Preserve the
+  // same artwork and move it to the currently visible sheet if needed.
+  if(previousArtwork.parentElement!==sheet)
+    sheet.insertAdjacentElement('afterbegin',previousArtwork);
+ }else{
+  previousArtwork?.remove();
+  const layer=sheet.ownerDocument.createElement('div');
+  layer.dataset.aoRosaryCertifiedArt=artSlot;
+  layer.className="aoRosaryCertifiedArt";
+  layer.innerHTML=releaseHTML;
+  sheet.insertAdjacentElement('afterbegin',layer);
+ }
+
  // Keep the donor's existing H2, prayer-flip, and native Previous/Next controls.
  const title=sheet.querySelector("h2");
  sheet.dataset.aoRosaryCardKind=prayerFlip?"prayer":"contemplation";

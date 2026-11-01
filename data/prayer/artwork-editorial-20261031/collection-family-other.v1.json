@@ -1,0 +1,94 @@
+{
+  "schema": "AO_PRAYER_ART_ALL_CANDIDATES_FAMILY_SHARD_V1",
+  "date": "2026-10-31",
+  "family": "other",
+  "source": "data/prayer/artwork-editorial-20261030/balanced-reuse-20261030-assignments.v2.json",
+  "policy": "ACCUMULATE_ALL_CANDIDATES_NOW; ALL_NEW_RESEARCH_NEEDS_USER_APPROVAL_IN_LATER_BULK_REVIEW",
+  "releasedImages": 0,
+  "stats": {
+    "slots": 1,
+    "originalSourceEdges": 4,
+    "deduplicatedReviewOptions": 4,
+    "excludedDoNotSuggest": 0
+  },
+  "slots": [
+    {
+      "slot": "COV-prayer.hymns",
+      "family": "—",
+      "label": "Cover",
+      "originalSourceEdges": 4,
+      "excludedFromSuggestions": [],
+      "approvedReuseLinkedEarlier": [
+        {
+          "wave": 2,
+          "userKeepIds": [
+            "historic:peter paul rubens:assumption of the virgin"
+          ]
+        }
+      ],
+      "reviewCollection": [
+        {
+          "sourceIDs": [
+            "REVIEW::commons:93153411"
+          ],
+          "artist": "Gerard Seghers",
+          "title": "The Nativity or the Adoration of the Angels",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "CONTEXTUAL_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::nga:46172"
+          ],
+          "artist": "Orazio Gentileschi and Giovanni Lanfranco",
+          "title": "Saint Cecilia and an Angel",
+          "sourcePage": "https://www.nga.gov/artworks/46172",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::met:439120"
+          ],
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/439120",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        },
+        {
+          "sourceIDs": [
+            "REVIEW::commons:48327311"
+          ],
+          "artist": "Adriaen Isenbrandt",
+          "title": "The Mass of Saint Gregory the Great",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Adriaen_Ysenbrandt_-_The_Mass_of_Saint_Gregory_the_Great_-_69.PB.11_-_J._Paul_Getty_Museum.jpg",
+          "sourceEditorialStatus": "NEW_CANDIDATE_NOT_USER_APPROVED",
+          "fit": "WEAK_REUSE_CANDIDATE",
+          "historicallyApprovedInOriginalLedger": false,
+          "requiresExplicitUserApproval": true,
+          "sourceType": "ORIGINAL_PRAYER_RESEARCH",
+          "nativeAndRightsQA": "PENDING",
+          "productionEnabled": false
+        }
+      ],
+      "imagePublicationAllowed": false
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "schema": "AO_PRAYER_ART_HELD_PRIMARY_EXACT_SCOPE_V1",
+  "date": "2026-11-01",
+  "sourceMaster": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+  "purpose": "Inventory existing accepted alternatives with exact slot scope; hold controversial primaries without losing decisions.",
+  "counts": {
+    "unambiguousPreviousSelectionRestorable": 0,
+    "needsNewPrimaryChoice": 14,
+    "exactlyScopedPreapprovedAlternativePairs": 2,
+    "unrestrictedAcceptedAlternativePairs": 3,
+    "ambiguousOrContradictoryAlternativePairs": 4
+  },
+  "rows": [
+    {
+      "slot": "STG-pray.rosary-16",
+      "family": "D3 Rosary & Chaplets",
+      "label": "Coronation of Our Lady",
+      "heldHistoricalPrimary": {
+        "artist": "Peter Paul Rubens",
+        "title": "The coronation of the Virgin",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "MIXED_OR_UNRESOLVED_USER_DECISIONS",
+        "rationale": "Current Rubens Coronation original may match explicitly rejected Oct28 oil sketch, exact identity unresolved",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [
+        {
+          "artworkId": "REVIEW::cma:143761",
+          "artist": "Stefan Lochner",
+          "title": "The Virgin Crowned by Angels",
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "EXPLICIT_APPROVAL_EXACT_CORONATION_MYSTERY",
+          "notAnAutomaticPrimary": true
+        },
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_ROSARY_CORONATION",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "EXPLICIT_APPROVAL_EXACT_CORONATION_MYSTERY",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 2,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "family": "D3 Rosary & Chaplets",
+      "label": "Closing prayers (Salve Regina)",
+      "heldHistoricalPrimary": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation used on closing Salve Regina; independent approval not established",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-pray.montfort_consecration",
+      "family": "D4 Novenas & Journeys",
+      "label": "Cover",
+      "heldHistoricalPrimary": {
+        "artist": "Stefan Lochner (German, 1400-c. 1452)",
+        "title": "The Virgin Crowned by Angels",
+        "sourcePage": "https://clevelandart.org/art/1968.20"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Lochner Virgin Crowned by Angels was assigned to Coronation mystery only, not Montfort cover",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [
+        {
+          "artworkId": "REVIEW::cma:143761",
+          "artist": "Stefan Lochner (German, 1400-c. 1452)",
+          "title": "The Virgin Crowned by Angels",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "BLOCKED_HISTORIC_EXCLUSION",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "family": "D4 Novenas & Journeys",
+      "label": "Act of consecration",
+      "heldHistoricalPrimary": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation used on Montfort stage; independent approval not established",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "family": "D5 Holy Eucharist",
+      "label": "Card vignette",
+      "heldHistoricalPrimary": {
+        "artist": "Marcantonio Franceschini",
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437977"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Franceschini Last Communion rejected for Adoration context in Oct28 and not relevant in B02",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "family": "D5 Holy Eucharist",
+      "label": "Cover",
+      "heldHistoricalPrimary": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène (The Small Last Supper)",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Champaigne La Petite Cene Communion cover conflicts with October rejection / unsupported derived preference; preserve older keeps",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [
+        {
+          "artworkId": "CANONICAL::met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "rosary it also fits in institution of the eucharist",
+          "scope": [
+            "rosary_institution_of_eucharist"
+          ],
+          "eligibility": "BLOCKED_HISTORIC_EXCLUSION",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "family": "D7 Our Lady",
+      "label": "Card vignette",
+      "heldHistoricalPrimary": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation used on Marian vignette; independent approval not established",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "STG-litany_loreto_1962-05",
+      "family": "D7 Our Lady",
+      "label": "Queen of Angels … Queen of peace",
+      "heldHistoricalPrimary": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation explicitly scoped to Rosary Coronation mystery in B04",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "WRITTEN_SCOPE_OUTSIDE_THIS_SLOT",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "family": "D8 Saints & Angels",
+      "label": "Our Lady, angels and archangels",
+      "heldHistoricalPrimary": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/435853"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Annibale Carracci Coronation explicitly scoped to Rosary Coronation mystery in B04",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [
+        {
+          "artworkId": "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": null,
+          "scope": [],
+          "eligibility": "ACCEPTED_FOR_THIS_DISPLAYED_SLOT_NO_NARROWING_NOTE",
+          "notAnAutomaticPrimary": true
+        },
+        {
+          "artworkId": "CANONICAL::met-437729",
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": null,
+          "scope": [],
+          "eligibility": "ACCEPTED_FOR_THIS_DISPLAYED_SLOT_NO_NARROWING_NOTE",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "notEligibleWithoutNewScopeEvidence": [
+        {
+          "artworkId": "REVIEW::met:435853",
+          "artist": "Annibale Carracci",
+          "title": "The Coronation of the Virgin",
+          "decision": "USER_ACCEPTED_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": "explicit mystery in rosary",
+          "scope": [
+            "rosary_coronation_of_virgin"
+          ],
+          "eligibility": "WRITTEN_SCOPE_OUTSIDE_THIS_SLOT",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "alreadyAcceptedAlternativeCount": 2,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-pray.penitential_psalms",
+      "family": "D9 Life & Intentions",
+      "label": "Cover",
+      "heldHistoricalPrimary": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Murillo Return of Prodigal Son was rejected for Penitential Psalms in Oct28; Confession cover lock remains untouched",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-02",
+      "family": "D9 Life & Intentions",
+      "label": "Beati quorum",
+      "heldHistoricalPrimary": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "sourcePage": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Same Murillo work rejected for this prayer family; no substitute authorised",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "family": "D9 Life & Intentions",
+      "label": "Cover",
+      "heldHistoricalPrimary": {
+        "artist": "Spanish Painter",
+        "title": "The Mass of Saint Gregory",
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/437722"
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "EXPLICIT_USER_SCOPE_OR_REJECTION",
+        "rationale": "Spanish Painter Mass of Saint Gregory explicitly not relevant to Prayer in B02",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "COV-prayer.good_death",
+      "family": "D9 Life & Intentions",
+      "label": "Cover",
+      "heldHistoricalPrimary": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "sourcePage": null
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "MIXED_OR_UNRESOLVED_USER_DECISIONS",
+        "rationale": "Champaigne Dream of Saint Joseph Oct28 REJECT Good Death but later B01 says also fits; contradiction requires user decision",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [
+        {
+          "artworkId": "REVIEW::commons:97225770",
+          "artist": "Simon de Vos",
+          "title": "The Death of Saint Francis",
+          "decision": "USER_ACCEPTED_AS_SHOWN_FOR_THIS_PLACEMENT",
+          "verbatimInstruction": null,
+          "scope": [],
+          "eligibility": "ACCEPTED_FOR_THIS_DISPLAYED_SLOT_NO_NARROWING_NOTE",
+          "notAnAutomaticPrimary": true
+        }
+      ],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 1,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    },
+    {
+      "slot": "STG-prayer.good_death-01",
+      "family": "D9 Life & Intentions",
+      "label": "Commendation of the dying",
+      "heldHistoricalPrimary": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "sourcePage": null
+      },
+      "holdReason": {
+        "asOf": "2026-11-01",
+        "classification": "MIXED_OR_UNRESOLVED_USER_DECISIONS",
+        "rationale": "Champaigne Dream of Saint Joseph Oct28 REJECT dying context; Altomonte KEEP but better-photo required",
+        "originalPRHead": "6999294155695ec7d6e52f22dee664436d9283e4",
+        "source": "Claude cross-ledger audit; original Oct28 decisions and B01-B05 user comments",
+        "notPublicationApproval": true
+      },
+      "viablePreviouslyAcceptedAlternatives": [],
+      "notEligibleWithoutNewScopeEvidence": [],
+      "alreadyAcceptedAlternativeCount": 0,
+      "needsManualPrimaryChoice": true,
+      "primaryRestored": false,
+      "productionEnabled": false,
+      "photoCertificationComplete": false,
+      "decisionAuthority": "ORIGINAL_USER_INSTRUCTION_FIRST"
+    }
+  ],
+  "reviewRule": "An accepted alternative is a user-approved candidate, not a decision to replace a historically selected primary. Preserve all fourteen holds until original work/scope or primary-choice evidence is complete.",
+  "releasesAuthorized": 0,
+  "primariesChanged": 0
+}
