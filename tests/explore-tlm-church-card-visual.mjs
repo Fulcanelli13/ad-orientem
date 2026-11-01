@@ -60,6 +60,41 @@ try{
    // buttons on the old Heritage DOM silently skips the view transition.
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",null,{timeout:25000});
    await page.locator('.aoFindBody[data-explore-lens="tlm"]').waitFor({state:"visible",timeout:60000});
+   // Real browser acceptance for the source-owned CL2 country facet.
+   // Map and list share the same filters. Multiple selections must remain
+   // visible after repaint, without hiding the panel or moving map controls.
+   const filters=page.locator(".aoAtlasTlmExtra");
+   assert.equal(await filters.count(),1,"Map needs an accessible advanced filter disclosure");
+   await filters.locator("summary").first().click();
+   const country=filters.locator(".aoTlmCountryFacet");
+   await country.locator("summary").click();
+   const fr=country.locator('[data-find-tlm-country="FR"]');
+   const us=country.locator('[data-find-tlm-country="US"]');
+   assert.equal(await fr.count(),1,"Source country France missing");
+   assert.equal(await us.count(),1,"Source country United States missing");
+   await fr.click();
+   await page.waitForFunction(()=>document.querySelector('[data-find-tlm-country="FR"]')?.getAttribute("aria-pressed")==="true",null,{timeout:25000});
+   assert.equal(await page.locator(".aoAtlasTlmExtra").getAttribute("open"),"",
+    "Advanced filter disclosure should remain open after selecting a country");
+   assert.equal(await page.locator(".aoTlmCountryFacet").getAttribute("open"),"",
+    "Country disclosure should remain open after repaint");
+   await page.locator('[data-find-tlm-country="US"]').click();
+   await page.waitForFunction(()=>["FR","US"].every(cc=>
+    document.querySelector('[data-find-tlm-country="'+cc+'"]')?.getAttribute("aria-pressed")==="true"),null,{timeout:25000});
+   const bounds=await page.locator(".aoTlmCountryFacet").evaluate(el=>{
+    const r=el.getBoundingClientRect(),b=el.querySelector(".aoTlmCountryOptions").getBoundingClientRect();
+    return {left:r.left,right:r.right,optsLeft:b.left,optsRight:b.right,
+      overflow:el.scrollWidth-el.clientWidth,documentOverflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(bounds.left>=-2&&bounds.right<=width+2&&bounds.optsLeft>=-2&&bounds.optsRight<=width+2,
+    "Country panel must fit screen: "+JSON.stringify(bounds));
+   assert.ok(bounds.overflow<=2&&bounds.documentOverflow<=2,
+    "Country panel horizontally overflows: "+JSON.stringify(bounds));
+   await captures("00-country-filters");
+   await page.locator("[data-find-tlm-country-reset]").click();
+   await page.waitForFunction(()=>["FR","US"].every(cc=>
+    document.querySelector('[data-find-tlm-country="'+cc+'"]')?.getAttribute("aria-pressed")==="false"),null,{timeout:25000});
+   await page.locator(".aoAtlasTlmExtra > summary").click();
    const list=page.locator('[data-find-filter="view"][data-find-filter-value="list"]');
    assert.equal(await list.count(),1,"TLM view must expose a real List control");
    await list.click();

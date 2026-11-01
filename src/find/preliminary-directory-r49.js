@@ -105,7 +105,7 @@ export function projectPreliminaryR49(json){
     const label=tidy(affiliation)||"Affiliation unverified";
     return Object.freeze({
       item_id:"tlm:r49:"+id,source_id:id,lens:"tlm",kind:"TLM_VENUE",
-      community_id,preliminary_group:group,affiliation_scope:"SOURCE_LABEL_ONLY",
+      community_id,country_code:country,preliminary_group:group,affiliation_scope:"SOURCE_LABEL_ONLY",
       eyebrow:label,
       status:group==="ROME"?"SOURCE-REPORTED":group==="SSPX"?"SSPX · SEPARATE":"UNCLASSIFIED",
       title:name,
@@ -164,7 +164,7 @@ export function projectPublishedProvisionalMassSites(baseItems,manifest){
       record.independent_mass_url,geo.source_url].filter((u,i,a)=>a.indexOf(u)===i);
     result.push(Object.freeze({
       item_id:"tlm:published-provisional:"+id,source_id:id,lens:"tlm",kind:"TLM_VENUE",
-      community_id:"DIOCESAN",preliminary_group:"ROME",
+      community_id:"DIOCESAN",country_code:cc,preliminary_group:"ROME",
       eyebrow:"Diocesan / source-reported",status:"SOURCE-REPORTED",
       title:name,subtitle:[record.locality,cc].join(" · "),
       summary:"Traditional Latin Mass location supported by church/organizer evidence. The Mass timetable is not independently certified; confirm details with the venue.",
@@ -237,19 +237,32 @@ export function tlmSiteEvidenceCounts(items=[]){
   }
   return Object.freeze(counts);
 }
+/** CL2 source-country facet. Never infer country from the map pin or address.
+ * These counts represent physical sites, not scheduled liturgies.
+ */
+export function tlmCountryCounts(items=[]){
+  const counts={};
+  for(const item of Array.isArray(items)?items:[]){
+    const cc=tidy(item?.country_code).toUpperCase();
+    if(/^[A-Z]{2}$/.test(cc))counts[cc]=(counts[cc]??0)+1;
+  }
+  return Object.freeze(counts);
+}
 export function filterPreliminaryR49(items,{
-  query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL",celebrationEvidence="ALL"
+  query="",directoryGroup="ALL",affiliations=[],siteEvidence="ALL",celebrationEvidence="ALL",countryCodes=[]
 }={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();
   const allowed=["ALL","ROME","SSPX","UNKNOWN"].includes(group)?group:"ROME";
   const aff=new Set((Array.isArray(affiliations)?affiliations:[]).map(x=>tidy(x).toUpperCase()));
   const evidence=["ALL","REVIEWED_PIN","SOURCE_PIN","ADDRESS_ONLY"].includes(siteEvidence)?siteEvidence:"ALL";
   const liturgy=["ALL","SOURCE_1962","NOT_ESTABLISHED"].includes(celebrationEvidence)?celebrationEvidence:"ALL";
+  const countries=new Set((Array.isArray(countryCodes)?countryCodes:[]).map(x=>tidy(x).toUpperCase()).filter(x=>/^[A-Z]{2}$/.test(x)));
   return Object.freeze((Array.isArray(items)?items:[]).filter(item=>
     (allowed==="ALL"||item.preliminary_group===allowed)&&
     (!aff.size||aff.has(item.community_id))&&
     (evidence==="ALL"||tlmSiteEvidence(item)===evidence)&&
     (liturgy==="ALL"||tlmCelebrationEvidenceClass(item)===liturgy)&&
+    (!countries.size||countries.has(tidy(item.country_code).toUpperCase()))&&
     (!q||item.search_text.includes(q))
   ));
 }
