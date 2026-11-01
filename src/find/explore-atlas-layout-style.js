@@ -301,7 +301,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra[open]{
   min-width:min(350px,calc(100vw - 24px));max-width:calc(100vw - 24px);
-  padding:0 8px 10px;
+  max-height:min(65dvh,520px);overflow-y:auto;padding:0 8px 10px;
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoExploreQuickFilters{
   display:flex;flex-wrap:wrap;gap:6px;max-height:35dvh;overflow:auto
@@ -310,18 +310,32 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   min-height:44px;background:#10202b;color:#ead9bc;border:1px solid rgba(205,180,132,.24);
   border-radius:9px;padding:9px 11px
 }
-.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip{
-  padding-right:77px
+/* Secondary communities are in the source-filter disclosure on the map,
+   not in the 320px-wide fixed emblem row; list mode retains its original row. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes{
+  margin-top:8px;border-top:1px solid rgba(205,180,132,.22);padding-top:4px
 }
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes>summary{
+  min-height:44px;display:flex;align-items:center;padding:8px 4px;cursor:pointer;
+  color:#e9d8ba;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes .aoFindAffiliations{
+  display:flex;flex-wrap:wrap;gap:6px;max-height:30dvh;overflow-y:auto;padding:6px 0
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoTlmMoreInstitutes button{
+  min-height:44px
+}
+/* Reserve the real filter drawer's footprint; the emblems themselves scroll
+   inside the remaining strip instead of disappearing beneath the drawer. */
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip{
-  display:flex;align-items:center;gap:6px;min-width:0;padding:0;
-  background:none;border:0;max-width:min(760px,100%);
+  display:flex;align-items:center;gap:6px;min-width:0;width:100%;box-sizing:border-box;
+  padding:0 72px 0 0;background:none;border:0;max-width:100%;
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip>.aoExploreFilterLabel{
   display:none
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations{
-  min-width:0;display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;
+  flex:1 1 auto;min-width:0;display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;
   padding:0;scrollbar-width:none;overscroll-behavior-x:contain
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations button{
