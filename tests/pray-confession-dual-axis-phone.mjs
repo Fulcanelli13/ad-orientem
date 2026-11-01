@@ -33,18 +33,22 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator(timeline).count(),0,"Path chooser is not a prayer card timeline");
  assert.equal(await page.locator(sel+" [data-p435930-conf-next]").isDisabled(),true);
- assert.equal(await page.locator(sel+" [data-p435930-since]").count(),1,
-  "Only the optional time since last Confession belongs in the preparation screen");
- assert.equal(await page.locator(sel+" input").count(),1,"Confession screen collects sensitive sin answers");
+ assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,
+  "No free-text time-since-Confession field may appear on the preparation screen");
+ assert.equal(await page.locator(sel+" input").count(),0,
+  "The private Confession preparation must not collect sensitive free-text answers");
+ assert.match(await page.locator(".aoP435930ConfProgressLabel").innerText(),/1 OF 4 · Prepare/i);
+ assert.equal(await page.locator("#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button").count(),4,
+  "Exactly four source-owned stage segments are required");
 
  const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
  assert.equal(await locale.count(),1,"Confession should share the devotional EN/FR header control");
  assert.equal((await locale.innerText()).trim(),"EN");
- await page.locator(sel+" [data-p435930-since]").fill("three weeks");
  await locale.click();
  assert.equal((await locale.innerText()).trim(),"FR");
- assert.equal(await page.locator(sel+" [data-p435930-since]").inputValue(),"three weeks",
-  "Switching language may not discard the private session-only time estimate");
+ assert.match(await page.locator(".aoP435930ConfProgressLabel").innerText(),/1 SUR 4 · Préparer/i);
+ assert.equal(await page.locator(sel+" input").count(),0,
+  "Changing language must not expose a sensitive text-entry control");
  assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
  await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
  await locale.click();
@@ -100,7 +104,8 @@ try{
  assert.equal((await locale.innerText()).trim(),"EN");
 
  assert.equal(st.nav,null,"Interior Confession cards must not render extra Previous/Next controls");
- assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,"Time estimate must not follow user into examination");
+ assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,"Time-since-Confession input must remain absent");
+ assert.match(await page.locator(".aoP435930ConfProgressLabel").innerText(),/2 OF 4 · Examination/i);
  await page.screenshot({path:resolve(captures,"regular-exam-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:16,target:node,clientX:x,clientY:y});
