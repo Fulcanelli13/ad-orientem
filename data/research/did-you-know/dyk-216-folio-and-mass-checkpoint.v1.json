@@ -1,0 +1,96 @@
+{
+  "schema": "AO_DYK_216_RESEARCH_SOURCE_EXPANSION_CHECKPOINT_V1",
+  "date": "2026-10-30",
+  "scope": "Research drafts only; no signed-off Home release",
+  "counts": {
+    "weiser_reviewed": 143,
+    "pitre_OCR_excerpts": 42,
+    "mass_1962_action_pairs": 31,
+    "new_bilingual_research_drafts": 216,
+    "prior_drafts": 145,
+    "earlier_definition_seeds": 440,
+    "earlier_context_seeds": 200,
+    "cumulative_candidate_record_count": 1001,
+    "approved_new": 0,
+    "published_new": 0,
+    "private_preview_unchanged": 612,
+    "daily_cap_unchanged": 12
+  },
+  "quality": {
+    "new_source_id_unique": true,
+    "duplicate_original_observations_in_prior_145": 0,
+    "weiser_prior_source_page_review": true,
+    "pitre_excerpt_OCR_rematched": true,
+    "pitre_individual_page_images_this_wave": 0,
+    "lexical_overlap_with_612_preview": "No pairs above token Jaccard .45; semantic/editorial review remains pending",
+    "independent_French_proofreading": false,
+    "semantic_independence_not_certified": true,
+    "publication_not_authorized": true
+  },
+  "files": [
+    "data/research/did-you-know/dyk-customs-weiser-folio-expansion-04a.v1.json",
+    "data/research/did-you-know/dyk-customs-weiser-folio-expansion-04b.v1.json",
+    "data/research/did-you-know/dyk-customs-pitre-new-feasts-04c.v1.json",
+    "data/research/did-you-know/dyk-mass-canon-discoveries-04d.v1.json"
+  ],
+  "related_claim_clusters": [
+    {
+      "ids": [
+        "DYK-H04-W-A-032",
+        "DYK-H04-W-A-059"
+      ],
+      "note": "Prayer at the family crib before Christmas presents; likely group"
+    },
+    {
+      "ids": [
+        "DYK-M04-CANON-046",
+        "DYK-M04-CANON-047"
+      ],
+      "note": "Two descriptions of silent commemoration of the dead; merge"
+    },
+    {
+      "ids": [
+        "DYK-M04-CANON-014",
+        "DYK-M04-CANON-015"
+      ],
+      "note": "Contrast two crosses in one action fact"
+    },
+    {
+      "ids": [
+        "DYK-M04-CANON-003",
+        "DYK-M04-CANON-038",
+        "DYK-M04-CANON-056"
+      ],
+      "note": "Different stages, similar three-cross discovery; space across display"
+    },
+    {
+      "ids": [
+        "DYK-M04-CANON-022",
+        "DYK-M04-CANON-032"
+      ],
+      "note": "Silent Host/chalice consecrations; do not overrepresent"
+    },
+    {
+      "ids": [
+        "DYK-H04-P-059",
+        "DYK-H04-P-060",
+        "DYK-H04-P-061",
+        "DYK-H04-P-062"
+      ],
+      "note": "One Saint Conrad procession in Noto; one festival Home selection per cycle"
+    }
+  ],
+  "home_balance": {
+    "historical_customs": "Limit repetitions from one town, author, feast or near-identical action",
+    "mass": "Limit same-gesture repetitions within 12 daily slots",
+    "fact_copy": "Must be concise, interesting, affirmative, historical-regional where applicable",
+    "scope": "No noncurrent 1962 rules inferred from local folklore; no unsourced indulgences"
+  },
+  "publication_gates": {
+    "source_specific_home_destinations": "NOT_VERIFIED_FOR_NEW_216",
+    "semantic_against_612": "PENDING_EDITORIAL",
+    "liturgical_form_exceptions": "PENDING_FINAL_CROSSCHECK",
+    "french_copy": "PENDING_FINAL_PROOFREADING",
+    "production_import_allowed": false
+  }
+}

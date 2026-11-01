@@ -1,0 +1,230 @@
+{
+  "schema": "AO_DYK_R27_PITRE_1900_14_FACSIMILE_PRIORITY_HOLD_V1",
+  "date": "2026-10-30",
+  "source": "dyk-r26-49-pitre-provenance-identity-crosswalk.v1.json",
+  "status": "ORIGINAL_FACSIMILE_REVIEW_REQUIRED_NO_FALSE_CERTIFICATION",
+  "counts": {
+    "PitreShortlist": 49,
+    "upstream_source_page_not_verified": 14,
+    "additional_risk_cases": 5,
+    "original_pages_freshly_read_in_R27": 0,
+    "source_direct_check_increment": 0,
+    "final_approved": 0,
+    "published": 0
+  },
+  "method": "Derived only from original Pitrè source packets and R26 crosswalk; Internet Archive original OCR search/read timed out. Do not promote any Pitrè claims to the direct-page-verified numerator or imply page-image review occurred.",
+  "priority_rule": "First verify fourteen with explicit upstream original_page_image_verified=false, then remaining geographically sensitive and text-interpretation cases; inspect complete facsimile paragraphs before releasing.",
+  "items": [
+    {
+      "id": "DYK-H04-P-015",
+      "original_observation_id": "PIT1900-W05-OBS-015",
+      "printed_page": 89,
+      "archive_scan_page_1_based": 151,
+      "geography": "Our Lady of Loreto — Altavilla",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-017",
+      "original_observation_id": "PIT1900-W05-OBS-017",
+      "printed_page": 90,
+      "archive_scan_page_1_based": 152,
+      "geography": "Our Lady of Loreto — Altavilla",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-025",
+      "original_observation_id": "PIT1900-W05-OBS-025",
+      "printed_page": 102,
+      "archive_scan_page_1_based": 164,
+      "geography": "Holy Crucifix — Monreale",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-029",
+      "original_observation_id": "PIT1900-W05-OBS-029",
+      "printed_page": 105,
+      "archive_scan_page_1_based": 167,
+      "geography": "Holy Crucifix — Monreale",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-037",
+      "original_observation_id": "PIT1900-W05-OBS-037",
+      "printed_page": 114,
+      "archive_scan_page_1_based": 176,
+      "geography": "Holy Crucifix — multiple Palermo-area towns",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-054",
+      "original_observation_id": "PIT1900-W05-OBS-054",
+      "printed_page": 293,
+      "archive_scan_page_1_based": 351,
+      "geography": "St Sebastian — Francofonte",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-061",
+      "original_observation_id": "PIT1900-W05-OBS-061",
+      "printed_page": 302,
+      "archive_scan_page_1_based": 360,
+      "geography": "St Conrad — Noto/Avola",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": [
+        "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-072",
+      "original_observation_id": "PIT1900-W05-OBS-072",
+      "printed_page": 312,
+      "archive_scan_page_1_based": 370,
+      "geography": "St George/St Peter — Modica",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-085",
+      "original_observation_id": "PIT1900-W05-OBS-085",
+      "printed_page": 389,
+      "archive_scan_page_1_based": 447,
+      "geography": "Holy Crucifix — Santa Margherita",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-098",
+      "original_observation_id": "PIT1900-W05-OBS-098",
+      "printed_page": 402,
+      "archive_scan_page_1_based": 460,
+      "geography": "Our Lady delle Mortelle — Villafranca",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": [
+        "DISTINGUISH_CORRECT_VILLAFRANCA_MORTELLE_FROM_CAMP0BELLO_MADONNA_DEL_AIUTO"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-111",
+      "original_observation_id": "PIT1900-W05-OBS-111",
+      "printed_page": 416,
+      "archive_scan_page_1_based": 474,
+      "geography": "St Angelo — Licata/Muxaro",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-122",
+      "original_observation_id": "PIT1900-W05-OBS-122",
+      "printed_page": 430,
+      "archive_scan_page_1_based": 488,
+      "geography": "Our Lady del Monte — Racalmuto",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": []
+    },
+    {
+      "id": "DYK-H04-P-129",
+      "original_observation_id": "PIT1900-W05-OBS-129",
+      "printed_page": 436,
+      "archive_scan_page_1_based": 494,
+      "geography": "Our Lady dell'Udienza — Sambuca/Menfi",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": [
+        "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN"
+      ]
+    },
+    {
+      "id": "DYK-H04-P-152",
+      "original_observation_id": "PIT1900-W05-OBS-152",
+      "printed_page": 485,
+      "archive_scan_page_1_based": 543,
+      "geography": "Our Lady of Miracles — Alcamo/Collesano",
+      "primary_1900_page_image_status": "NOT_RECHECKED_AND_UPSTREAM_FLAG_FALSE",
+      "release_gate": "HOLD",
+      "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+      "additional_risks": [
+        "LOCALITY_SCOPED_BROADLY_RECHECK_NARROW_TOWN"
+      ]
+    }
+  ],
+  "other_risks": [
+    {
+      "id": "DYK-UM01-021",
+      "printed_page": 443,
+      "source_id": "PIT1900-IT-008",
+      "flags": [
+        "MULTI_TOWN_CLAIM_USED_SINGLE_RIBERA_SOURCE"
+      ]
+    },
+    {
+      "id": "DYK-UM02-035",
+      "printed_page": 80,
+      "source_id": "PIT1900-NEW-048",
+      "flags": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+      ]
+    },
+    {
+      "id": "DYK-UM02-045",
+      "printed_page": 126,
+      "source_id": "PIT1900-NEW-084",
+      "flags": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+      ]
+    },
+    {
+      "id": "DYK-UM02-050",
+      "printed_page": 135,
+      "source_id": "PIT1900-NEW-110",
+      "flags": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+      ]
+    },
+    {
+      "id": "DYK-UM03-033",
+      "printed_page": 74,
+      "source_id": "PIT1900-NEW-037",
+      "flags": [
+        "DETAIL_REQUIRES_FULL_ORIGINAL_PARAGRAPH"
+      ]
+    }
+  ],
+  "blocking_requirements": [
+    "Original page image must be opened and read, not OCR anchor alone.",
+    "Italian original must support all places, actors, dates and ceremonial objects.",
+    "French translation must be independently approved.",
+    "Review against all 612 Home previews for semantic novelty.",
+    "Browser destinations must be checked against the eventual published screen."
+  ]
+}

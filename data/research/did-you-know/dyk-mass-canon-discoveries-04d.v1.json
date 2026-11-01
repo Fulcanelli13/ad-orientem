@@ -1,0 +1,1098 @@
+{
+  "schema": "AO_DYK_1962_CANON_MICRO_DISCOVERIES_V1",
+  "date": "2026-10-30",
+  "status": "SOURCE_LINKED_BILINGUAL_RESEARCH_COPY_NOT_RELEASE",
+  "counts": {
+    "records": 31,
+    "approved": 0,
+    "published": 0
+  },
+  "source_checks": "Action IDs cross-matched EN and FR repositories, 1962 Ritus locator and original cue preserved; Canon gesture microaction author is editorial stage, not certified 1962 reader UI.",
+  "facts": [
+    {
+      "id": "DYK-M04-CANON-001",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At the opening of the 1962 Roman Canon, the priest raises his hands and eyes, then bows profoundly before praying.",
+        "fr": "À l'ouverture du Canon romain de 1962, le prêtre élève les mains et les yeux, puis s'incline profondément avant de prier."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.001",
+        "source_cue_id": "AO.SM.C0150",
+        "ritus_locator": "VIII.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He raises his hands, lifts then lowers his eyes, joins his hands and bows profoundly.",
+        "original_french_rubric": "Au début du Te igitur, s'incline profondément, mains jointes appuyées à l'autel, voix secrète.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-002",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At the beginning of Te igitur, the priest kisses the altar before straightening and joining his hands.",
+        "fr": "Au début du Te igitur, le prêtre baise l'autel avant de se redresser et de joindre les mains."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.002",
+        "source_cue_id": "AO.SM.C0151",
+        "ritus_locator": "VIII.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He kisses the altar, straightens, then joins his hands.",
+        "original_french_rubric": "Baise l'autel au centre puis se redresse, les mains jointes devant la poitrine.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-003",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "During Te igitur, the celebrant traces three crosses over the Host and chalice together.",
+        "fr": "Pendant le Te igitur, le célébrant trace trois croix au-dessus de l'hostie et du calice ensemble."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.003",
+        "source_cue_id": "AO.SM.C0152",
+        "ritus_locator": "VIII.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He makes three crosses over the Host and chalice.",
+        "original_french_rubric": "Trace trois signes de croix sur l'hostie et le calice ensemble.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-004",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The Canon remembers the Pope and the local Ordinary, with prescribed rubrical qualifications.",
+        "fr": "Le Canon fait mémoire du pape et de l'ordinaire du lieu, selon les précisions prévues par les rubriques."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.004",
+        "source_cue_id": "AO.SM.C0153",
+        "ritus_locator": "VIII.1–2",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "With hands extended, he commemorates the Pope and local Ordinary according to the prescribed conditions and formulas.",
+        "original_french_rubric": "Poursuit, les mains étendues devant la poitrine; noms du pape et de l'ordinaire selon les rubriques.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-005",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At the Memento of the living, the priest joins and raises his hands while inclining his head.",
+        "fr": "Au Memento des vivants, le prêtre joint et élève les mains tout en inclinant la tête."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.005",
+        "source_cue_id": "AO.SM.C0154",
+        "ritus_locator": "VIII.3",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Memento, he joins and raises his hands with his head slightly bowed.",
+        "original_french_rubric": "Joint et élève les mains vers le visage ou la poitrine, incline légèrement la tête.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-006",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The Memento of the living includes an interval in which the priest commemorates particular people quietly.",
+        "fr": "Le Memento des vivants comprend un moment où le prêtre fait mémoire de personnes particulières en silence."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.006",
+        "source_cue_id": "AO.SM.C0155",
+        "ritus_locator": "VIII.3",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He silently commemorates the living.",
+        "original_french_rubric": "Reste immobile un bref temps et fait mémoire des vivants, mentalement ou en nommant certains à voix secrète.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-008",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The Communicantes of the Roman Canon has proper forms on certain appointed days.",
+        "fr": "Le Communicantes du Canon romain possède des textes propres pour certains jours déterminés."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.008",
+        "source_cue_id": "AO.SM.C0157",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He recites Communicantes with hands extended, using the prescribed proper form on certain days.",
+        "original_french_rubric": "Poursuit le Communicantes debout, mains étendues; certaines fêtes ajoutent un texte propre.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-009",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At the name of Jesus Christ during Communicantes, the priest inclines his head toward the cross.",
+        "fr": "Au nom de Jésus-Christ dans le Communicantes, le prêtre incline la tête vers la croix."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.009",
+        "source_cue_id": "AO.SM.C0158",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At the name of Jesus Christ, he bows his head.",
+        "original_french_rubric": "Incline la tête vers la Croix au nom de Jésus-Christ.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-013",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At benedictam, adscriptam and ratam in Quam oblationem, the priest traces three crosses over both offerings.",
+        "fr": "Aux mots benedictam, adscriptam et ratam du Quam oblationem, le prêtre trace trois croix au-dessus des deux oblats."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.013",
+        "source_cue_id": "AO.SM.C0164",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At benedictam, adscriptam and ratam, he makes three crosses over the Host and chalice.",
+        "original_french_rubric": "Trace trois croix conjointement sur l'hostie et le calice.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-014",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The cross traced at Corpus in Quam oblationem is made over the Host alone.",
+        "fr": "La croix tracée au mot Corpus dans le Quam oblationem est faite au-dessus de l'hostie seule."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.014",
+        "source_cue_id": "AO.SM.C0165",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Corpus, he crosses the Host.",
+        "original_french_rubric": "Trace une croix sur l'hostie seule.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-015",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The cross at Sanguis in Quam oblationem is traced over the chalice alone.",
+        "fr": "La croix au mot Sanguis dans le Quam oblationem est tracée au-dessus du calice seul."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.015",
+        "source_cue_id": "AO.SM.C0166",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Sanguis, he crosses the chalice.",
+        "original_french_rubric": "Trace une croix sur le calice seul.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-018",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "Before the consecration narrative of the Host, the celebrant raises his eyes to heaven and lowers them immediately.",
+        "fr": "Avant le récit de l'institution sur l'hostie, le célébrant lève les yeux au ciel puis les abaisse aussitôt."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.018",
+        "source_cue_id": "AO.SM.C0169",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He looks heavenward, then lowers his eyes.",
+        "original_french_rubric": "Lève les yeux vers le ciel et les abaisse aussitôt.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-021",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The word fregit in the consecration narrative does not mean that the Host is broken at that moment.",
+        "fr": "Le mot fregit dans le récit de l'institution ne signifie pas que l'hostie est rompue à cet instant."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.021",
+        "source_cue_id": "AO.SM.C0172",
+        "ritus_locator": "VIII.4",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He says fregit without breaking the Host.",
+        "original_french_rubric": "Poursuit le récit, tenant l'hostie: le mot fregit n'autorise pas à montrer une fraction physique à cet instant.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-022",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The words of consecration over the Host are pronounced quietly, before the public elevation.",
+        "fr": "Les paroles de la consécration de l'hostie sont prononcées à voix basse, avant l'élévation visible des fidèles."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.022",
+        "source_cue_id": "AO.SM.C0173",
+        "ritus_locator": "VIII.5",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He quietly pronounces the words of consecration.",
+        "original_french_rubric": "Avant-bras/coudes sur l'autel, prononce distinctement et avec révérence les paroles sur l'hostie; ce sont les paroles consacratoires, non l'élévation.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-026",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "After consecrating the Host, the priest ordinarily keeps thumbs and index fingers together until their ablution.",
+        "fr": "Après la consécration de l'hostie, le prêtre garde normalement pouces et index joints jusqu'à leur ablution."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.026",
+        "source_cue_id": "AO.SM.C0174",
+        "ritus_locator": "VIII.5",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He keeps his thumbs and index fingers joined, except to touch a consecrated Host, until the washing of his fingers.",
+        "original_french_rubric": "Après la consécration de l'Hostie, garde pouces et index joints sauf pour toucher/manier une Hostie consacrée, jusqu'à l'ablution.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-028",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At the chalice narrative, the celebrant slightly lifts the chalice before the consecratory words.",
+        "fr": "Au récit de l'institution sur le calice, le célébrant soulève légèrement celui-ci avant les paroles consécratoires."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.028",
+        "source_cue_id": "AO.SM.C0175",
+        "ritus_locator": "VIII.7",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "The chalice is uncovered, by the deacon when required at Solemn Mass; the priest raises it slightly.",
+        "original_french_rubric": "Découvre le calice, l'élève très légèrement puis le repose au début du récit.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-030",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "Before the chalice consecration, the priest traces a cross above the chalice while holding it in his other hand.",
+        "fr": "Avant la consécration du calice, le prêtre trace une croix au-dessus de celui-ci en le tenant de l'autre main."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.030",
+        "source_cue_id": "AO.SM.C0177",
+        "ritus_locator": "VIII.7",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "Holding the chalice in his left hand, he makes a cross over it with his right.",
+        "original_french_rubric": "Trace une croix de la main droite au-dessus du calice qu'il tient de la gauche.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-031",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The priest holds the chalice with both hands as he prepares to pronounce its words of consecration.",
+        "fr": "Le prêtre tient le calice à deux mains en se préparant à prononcer les paroles de sa consécration."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.031",
+        "source_cue_id": "AO.SM.C0178",
+        "ritus_locator": "VIII.7",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He holds the chalice with both hands.",
+        "original_french_rubric": "Tient le calice avec les deux mains, au nœud et au pied, en préparant les paroles consacratoires.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-032",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The words of consecration over the chalice are pronounced quietly while the priest bends over it.",
+        "fr": "Les paroles de consécration du calice sont prononcées à voix basse tandis que le prêtre s'incline au-dessus de lui."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.032",
+        "source_cue_id": "AO.SM.C0179",
+        "ritus_locator": "VIII.7",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "Bending over the chalice, he quietly pronounces the words of the chalice consecration.",
+        "original_french_rubric": "Appuyé sur l'autel, prononce les paroles consacratoires du calice avec attention et continuité.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-036",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "After the consecrations, Unde et memores is resumed quietly with the priest's hands extended.",
+        "fr": "Après les consécrations, le prêtre reprend l'Unde et memores à voix basse, les mains étendues."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.036",
+        "source_cue_id": "AO.SM.C0182",
+        "ritus_locator": "IX.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He resumes Unde et memores quietly, with hands extended.",
+        "original_french_rubric": "Debout, mains étendues devant la poitrine, poursuit le Canon à voix secrète.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-038",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "During Unde et memores, the priest traces three crosses over the consecrated Host and chalice together.",
+        "fr": "Pendant l'Unde et memores, le prêtre trace trois croix sur l'hostie et le calice consacrés ensemble."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.038",
+        "source_cue_id": "AO.SM.C0184",
+        "ritus_locator": "IX.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He makes three crosses over the Host and chalice.",
+        "original_french_rubric": "Trace trois croix sur les deux Espèces consacrées ensemble.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-041",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At Supplices te rogamus, the priest bows profoundly at the altar's center with hands joined.",
+        "fr": "Au Supplices te rogamus, le prêtre s'incline profondément au centre de l'autel, les mains jointes."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.041",
+        "source_cue_id": "AO.SM.C0187",
+        "ritus_locator": "IX.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Supplices te rogamus, he bows at the centre of the altar with hands joined.",
+        "original_french_rubric": "S'incline profondément au centre de l'autel, mains jointes appuyées.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-042",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The Canon includes another altar kiss at ex hac altaris participatione in Supplices te rogamus.",
+        "fr": "Le Canon comporte un autre baiser de l'autel aux mots ex hac altaris participatione du Supplices te rogamus."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.042",
+        "source_cue_id": "AO.SM.C0188",
+        "ritus_locator": "IX.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At ex hac altaris participatione, he kisses the altar.",
+        "original_french_rubric": "Baise l'autel, mains de part et d'autre sur le corporal.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-044",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At omni benedictione in the Canon, the priest makes the Sign of the Cross upon himself.",
+        "fr": "Aux mots omni benedictione du Canon, le prêtre trace le signe de croix sur lui-même."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.044",
+        "source_cue_id": "AO.SM.C0190",
+        "ritus_locator": "IX.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At the cross after omni benedictione, he makes the Sign of the Cross upon himself.",
+        "original_french_rubric": "Se signe du front à la poitrine.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-046",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The Memento of the dead has its own quiet commemoration, separate from the earlier Memento of the living.",
+        "fr": "Le Memento des défunts comporte une commémoration silencieuse distincte du Memento des vivants."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.046",
+        "source_cue_id": "AO.SM.C0192",
+        "ritus_locator": "IX.2",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Memento etiam, he joins and raises his hands, looking towards the Blessed Sacrament.",
+        "original_french_rubric": "Élève les mains jointes devant son visage, les yeux fixés sur le Sacrement.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-047",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "A short silent remembrance of the departed belongs to the Roman Canon's prayers after consecration.",
+        "fr": "Un bref souvenir silencieux des défunts fait partie des prières du Canon romain après la consécration."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.047",
+        "source_cue_id": "AO.SM.C0193",
+        "ritus_locator": "IX.2",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He commemorates the faithful departed in a brief silence.",
+        "original_french_rubric": "Fait mémoire des défunts à sa convenance, comme au Memento des vivants.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-050",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At Nobis quoque peccatoribus, the priest raises his voice slightly and strikes his breast once.",
+        "fr": "Au Nobis quoque peccatoribus, le prêtre élève légèrement la voix et frappe une fois sa poitrine."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.050",
+        "source_cue_id": "AO.SM.C0196",
+        "ritus_locator": "IX.3",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Nobis quoque, he raises his voice and strikes his breast.",
+        "original_french_rubric": "Élève quelque peu la voix à Nobis quoque et frappe une fois sa poitrine de la main droite.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-056",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At Per ipsum, cum ipso and in ipso, the priest traces three crosses with the consecrated Host above the chalice.",
+        "fr": "Aux mots Per ipsum, cum ipso et in ipso, le prêtre trace trois croix avec l'hostie consacrée au-dessus du calice."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.056",
+        "source_cue_id": "AO.SM.C0202",
+        "ritus_locator": "IX.3",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Per ipsum, cum ipso and in ipso, he makes three crosses with the Host over the chalice.",
+        "original_french_rubric": "Avec l'Hostie, trace trois croix d'un bord à l'autre au-dessus du calice.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-057",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "At Patri and Sancti in the final doxology, two crosses with the Host are made between the chalice and the priest's breast.",
+        "fr": "Aux mots Patri et Sancti de la doxologie finale, deux croix sont tracées avec l'hostie entre le calice et la poitrine du prêtre."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.057",
+        "source_cue_id": "AO.SM.C0203",
+        "ritus_locator": "IX.3",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "At Patri and Sancti, he makes two crosses with the Host between the chalice and his breast.",
+        "original_french_rubric": "Trace deux croix avec l'Hostie entre le calice et la poitrine.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-058",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The small elevation at the close of the Canon is different from the greater elevations after each consecration.",
+        "fr": "La petite élévation à la fin du Canon est distincte des grandes élévations qui suivent chacune des consécrations."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.058",
+        "source_cue_id": "AO.SM.C0204",
+        "ritus_locator": "IX.3",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He slightly raises the chalice, holding the Host above.",
+        "original_french_rubric": "Élève légèrement l'Hostie et le calice ensemble; il ne s'agit pas des grandes ostensions.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-M04-CANON-060",
+      "topic": "1962 Roman Canon",
+      "fact": {
+        "en": "The final Per omnia saecula saeculorum of the Canon is said audibly rather than in the earlier low voice.",
+        "fr": "Le Per omnia saecula saeculorum qui conclut le Canon est dit à voix audible et non à voix basse comme auparavant."
+      },
+      "source_family": "1962_ROMAN_CANON_CEREMONIAL",
+      "source": {
+        "owner_en": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+        "owner_fr": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+        "action_id": "AO.CANON.R62.060",
+        "source_cue_id": "AO.SM.C0206",
+        "ritus_locator": "X.1",
+        "source_urls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+        ],
+        "original_english_action": "He says Per omnia saecula saeculorum audibly.",
+        "original_french_rubric": "Au début de la conclusion du Canon, prononce Per omnia saecula saeculorum intelligiblement.",
+        "authority_class": "ROMAN_MISSAL_1962",
+        "original_record_editorial_preview_only": true
+      },
+      "scope": {
+        "form": "1962_ROMAN_MASS",
+        "actor": "PRIEST",
+        "priest_clock_not_reader_scroll": true,
+        "local_congregation_posture_not_inferred": true,
+        "source_verified_for_source_structure_not_copy_published": true
+      },
+      "legacy_612_semantic_dedupe": "PENDING",
+      "editorial_approval": false,
+      "publication_authorized": false
+    }
+  ]
+}

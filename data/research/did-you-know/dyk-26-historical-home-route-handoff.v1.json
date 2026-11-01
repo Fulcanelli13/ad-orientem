@@ -1,0 +1,1007 @@
+{
+  "schema": "AO_DYK_HISTORICAL_EXACT_ROUTE_HANDOFF_R18_V1",
+  "date": "2026-10-30",
+  "status": "RESEARCH_HANDOFF_NOT_IMPORTED_INTO_PRIVATE_HOME_BANK",
+  "description": "26 source-owned nonpublishing candidate payloads matching private Home exact historical-source route shape. Derived from editorial draft files; not a second live registry.",
+  "counts": {
+    "weiser": 18,
+    "pitre": 8,
+    "total": 26,
+    "eligible_for_bank_import": 0,
+    "source_routes_browser_accepted": 0,
+    "published": 0
+  },
+  "private_home_owner": "Fulcanelli13/folio-core research/did-you-know-discovery-r01-20261028",
+  "source_of_truth": [
+    "dyk-weiser-31-edited-priority-facts.v1.json",
+    "dyk-pitre-12-story-editorial-shortlist.v1.json"
+  ],
+  "promotion_gates": "Change from RESEARCH_HANDOFF_NOT_PUBLISHED only after fact, French, uniqueness, source-specific browser destination acceptance, and editorial authorisation. The existing private compiler currently expects 612 preview records; no new 26 imported.",
+  "records": [
+    {
+      "id": "DYK-UM01-001",
+      "category": "customs",
+      "source_id": "WEI58-09-001",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "In Ukrainian Christmas Eve traditions, a grain sheaf called a didukh was brought into the home.",
+        "fr": "Dans les traditions ukrainiennes de la veille de Noël, une gerbe de céréales appelée didukh était introduite dans la maison."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-001",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-09-001"
+          ],
+          "printed_pages": [
+            116
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-001"
+    },
+    {
+      "id": "DYK-UM01-003",
+      "category": "customs",
+      "source_id": "WEI58-05-008",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "In parts of the Alps, a picture of the Virgin Mary passed from home to home over nine evenings before Christmas.",
+        "fr": "Dans certaines régions alpines, une image de la Vierge Marie passait de maison en maison pendant neuf soirées avant Noël."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-003",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-05-008"
+          ],
+          "printed_pages": [
+            57
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-003"
+    },
+    {
+      "id": "DYK-UM01-004",
+      "category": "customs",
+      "source_id": "WEI58-05-010",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "The Advent play Herbergsuchen dramatized Mary and Joseph's search for lodging before Christ's birth.",
+        "fr": "La représentation de l'Avent appelée Herbergsuchen mettait en scène la recherche d'un logement par Marie et Joseph avant la naissance du Christ."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-004",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-05-010"
+          ],
+          "printed_pages": [
+            57
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-004"
+    },
+    {
+      "id": "DYK-UM01-006",
+      "category": "customs",
+      "source_id": "WEI58-08-002",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Some central European families built Nativity scenes with hundreds of figures, large enough to fill a room.",
+        "fr": "Certaines familles d'Europe centrale construisaient des crèches de centaines de personnages, assez vastes pour remplir une pièce."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-006",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-08-002"
+          ],
+          "printed_pages": [
+            95,
+            96
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-006"
+    },
+    {
+      "id": "DYK-UM01-007",
+      "category": "customs",
+      "source_id": "WEI58-10-004",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "The northern Slavic szopka was a puppet theatre that alternated Nativity episodes with other dramatic scenes.",
+        "fr": "La szopka des pays slaves du Nord était un théâtre de marionnettes alternant épisodes de la Nativité et autres scènes."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-007",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-10-004"
+          ],
+          "printed_pages": [
+            124
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-007"
+    },
+    {
+      "id": "DYK-UM01-014",
+      "category": "customs",
+      "source_id": "WEI58-14-023",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Lenten pretzels were sometimes given as alms to poor people in central Europe.",
+        "fr": "En Europe centrale, des bretzels de Carême étaient parfois distribués en aumône aux personnes démunies."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-014",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-14-023"
+          ],
+          "printed_pages": [
+            184
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-014"
+    },
+    {
+      "id": "DYK-UM01-017",
+      "category": "customs",
+      "source_id": "WEI58-16-023",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Some German and Austrian Easter celebrations included an Osterritt, a religious procession on horseback.",
+        "fr": "Certaines fêtes pascales allemandes et autrichiennes comprenaient un Osterritt, procession religieuse à cheval."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-017",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-16-023"
+          ],
+          "printed_pages": [
+            221
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-017"
+    },
+    {
+      "id": "DYK-UM01-019",
+      "category": "customs",
+      "source_id": "WEI58-21-015",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "In some European Corpus Christi processions, children dressed as angels scattered flower petals.",
+        "fr": "Dans certaines processions européennes de la Fête-Dieu, des enfants habillés en anges répandaient des pétales de fleurs."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-019",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-21-015"
+          ],
+          "printed_pages": [
+            265
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-019"
+    },
+    {
+      "id": "DYK-UM01-020",
+      "category": "customs",
+      "source_id": "WEI58-07-012",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "An old German-Austrian custom called Kindelwiegen involved rocking a cradle holding a figure of the Christ Child while singing carols.",
+        "fr": "Une ancienne coutume germano-autrichienne, le Kindelwiegen, consistait à bercer un petit berceau contenant une figure de l'Enfant Jésus au chant des noëls."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM01-020",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-07-012"
+          ],
+          "printed_pages": [
+            92
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM01-020"
+    },
+    {
+      "id": "DYK-UM02-001",
+      "category": "customs",
+      "source_id": "WEI58-14-013",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "English Mothering Sunday visits once brought families to their mother church, sometimes with a simnel cake.",
+        "fr": "En Angleterre, le Mothering Sunday ramenait autrefois les familles à leur église-mère, parfois avec un simnel cake."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM02-001",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-14-013"
+          ],
+          "printed_pages": [
+            178
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM02-001"
+    },
+    {
+      "id": "DYK-UM02-007",
+      "category": "customs",
+      "source_id": "WEI58-08-024",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "In nineteenth-century Boston, children were encouraged to leave Christmas gifts for poor families beside a parish Nativity crib.",
+        "fr": "À Boston, au XIXe siècle, des enfants étaient invités à déposer auprès de la crèche paroissiale des cadeaux de Noël destinés aux familles pauvres."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM02-007",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-08-024"
+          ],
+          "printed_pages": [
+            110
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM02-007"
+    },
+    {
+      "id": "DYK-UM02-014",
+      "category": "customs",
+      "source_id": "WEI58-26-025",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Polish All Souls customs sometimes included leaving an empty place at table and sharing food with the poor.",
+        "fr": "En Pologne, certaines coutumes de la Commémoration des défunts prévoyaient une place vide à table et le partage de nourriture avec les pauvres."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM02-014",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-26-025"
+          ],
+          "printed_pages": [
+            313
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM02-014"
+    },
+    {
+      "id": "DYK-UM03-003",
+      "category": "customs",
+      "source_id": "WEI58-18-013",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Some historical Ascension festivities included pastries baked in the shape of birds.",
+        "fr": "Certaines anciennes fêtes de l'Ascension comprenaient des pâtisseries façonnées en forme d'oiseaux."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-003",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-18-013"
+          ],
+          "printed_pages": [
+            245
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM03-003"
+    },
+    {
+      "id": "DYK-UM03-008",
+      "category": "customs",
+      "source_id": "WEI58-25-018",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "On the feast of the Annunciation, historical Roman charities provided marriage dowries for poor girls.",
+        "fr": "À Rome, des œuvres charitables historiques offraient des dots à des jeunes filles pauvres pour la fête de l'Annonciation."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-008",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-25-018"
+          ],
+          "printed_pages": [
+            303
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM03-008"
+    },
+    {
+      "id": "DYK-UM03-012",
+      "category": "customs",
+      "source_id": "WEI58-26-026",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "In parts of Austria, children received special breads in exchange for prayers for the departed.",
+        "fr": "Dans certaines régions d'Autriche, les enfants recevaient des pains particuliers en échange de prières pour les défunts."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-012",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-26-026"
+          ],
+          "printed_pages": [
+            313
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM03-012"
+    },
+    {
+      "id": "DYK-UM03-021",
+      "category": "customs",
+      "source_id": "WEI58-13-006",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Some medieval communities staged a ceremonial farewell to the Alleluia before Lent.",
+        "fr": "Certaines communautés médiévales célébraient un adieu cérémoniel à l'Alléluia avant le Carême."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-021",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-13-006"
+          ],
+          "printed_pages": [
+            159
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM03-021"
+    },
+    {
+      "id": "DYK-UM03-022",
+      "category": "customs",
+      "source_id": "WEI58-18-006",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "Weiser described roses falling through the roof opening of Rome's Pantheon on the Sunday after Ascension.",
+        "fr": "Weiser décrivait des roses tombant par l'ouverture de la coupole du Panthéon de Rome le dimanche suivant l'Ascension."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-022",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-18-006"
+          ],
+          "printed_pages": [
+            242
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM03-022"
+    },
+    {
+      "id": "DYK-UM03-023",
+      "category": "customs",
+      "source_id": "WEI58-19-014",
+      "source_family": "WEISER_1958",
+      "statement": {
+        "en": "In some medieval churches, a dove figure descended through an opening in the roof during Pentecost celebrations.",
+        "fr": "Dans certaines églises médiévales, une figure de colombe descendait par une ouverture dans le toit lors des fêtes de la Pentecôte."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-UM03-023",
+        "historical_context": {
+          "observation_ids": [
+            "WEI58-19-014"
+          ],
+          "printed_pages": [
+            252
+          ],
+          "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "scope": {
+            "en": "Historical regional or household custom reported by Francis X. Weiser (1958). Not evidence of a universal obligation or current Roman ceremonial instruction.",
+            "fr": "Coutume historique, régionale ou domestique rapportée par Francis X. Weiser (1958). Elle ne prouve ni une obligation universelle ni une instruction cérémonielle romaine actuelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_fact_id": "DYK-UM03-023"
+    },
+    {
+      "id": "DYK-STORY-PITRE-01",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-01",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "Saint Joseph tables in several Sicilian towns set places for guests representing the Holy Family; some households invited people in need.",
+        "fr": "Dans plusieurs villes siciliennes, les tables de saint Joseph accueillaient des convives figurant la Sainte Famille ; certains foyers invitaient des personnes démunies."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-01",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-IT-008",
+            "PIT1900-IT-026",
+            "PIT1900-IT-036"
+          ],
+          "printed_pages": [
+            443,
+            448,
+            450
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-01"
+    },
+    {
+      "id": "DYK-STORY-PITRE-04",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-04",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "Palermo's old Saint Rosalia celebrations combined a monumental triumphal cart with a distinct procession of her relics.",
+        "fr": "Les anciennes fêtes de sainte Rosalie à Palerme comprenaient un char triomphal monumental et une procession distincte de ses reliques."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-04",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-009",
+            "PIT1900-NEW-021",
+            "PIT1900-NEW-005"
+          ],
+          "printed_pages": [
+            13,
+            14,
+            33
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-04"
+    },
+    {
+      "id": "DYK-STORY-PITRE-06",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-06",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "In an old Palermo procession, fishermen carried statues of Saints Cosmas and Damian while children bore small flower-topped water jugs.",
+        "fr": "Lors d'une ancienne procession à Palerme, des pêcheurs portaient les statues des saints Côme et Damien tandis que des enfants tenaient de petites cruches d'eau ornées de fleurs."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-06",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-045",
+            "PIT1900-NEW-048"
+          ],
+          "printed_pages": [
+            79,
+            80
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-06"
+    },
+    {
+      "id": "DYK-STORY-PITRE-08",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-08",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "At Piazza Armerina, a decorated Marian banner passed in an Assumption procession, while a separate cavalcade portrayed Count Roger's entry.",
+        "fr": "À Piazza Armerina, une bannière mariale ornée paraissait dans la procession de l'Assomption, tandis qu'une cavalcade distincte représentait l'entrée du comte Roger."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-08",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-059",
+            "PIT1900-NEW-063",
+            "PIT1900-NEW-062"
+          ],
+          "printed_pages": [
+            558,
+            559
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-08"
+    },
+    {
+      "id": "DYK-STORY-PITRE-09",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-09",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "In Gangi, a historical Holy Spirit feast followed seven Thursday celebrations and involved nine confraternities.",
+        "fr": "À Gangi, une ancienne fête du Saint-Esprit succédait à sept jeudis de célébrations et réunissait neuf confréries."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-09",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-073",
+            "PIT1900-NEW-070"
+          ],
+          "printed_pages": [
+            120,
+            122
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-09"
+    },
+    {
+      "id": "DYK-STORY-PITRE-10",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-10",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "At Gratteri, Saint James's statue visited homes and orchards; grape clusters were tied to its silver staff.",
+        "fr": "À Gratteri, la statue de saint Jacques visitait maisons et vergers ; des grappes de raisin étaient attachées à son bâton d'argent."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-10",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-075",
+            "PIT1900-NEW-078",
+            "PIT1900-NEW-080"
+          ],
+          "printed_pages": [
+            124,
+            125
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-10"
+    },
+    {
+      "id": "DYK-STORY-PITRE-11",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-11",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "At a historical Eucharistic festival in Geraci Siculo, shepherds rode in a cavalcade carrying ribboned displays of animal-shaped cheeses.",
+        "fr": "Lors d'une ancienne fête eucharistique à Geraci Siculo, les bergers défilaient à cheval avec des présentoirs ornés de rubans et de fromages en forme d'animaux."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-11",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-085",
+            "PIT1900-NEW-095"
+          ],
+          "printed_pages": [
+            126,
+            128
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-11"
+    },
+    {
+      "id": "DYK-STORY-PITRE-12",
+      "category": "customs",
+      "source_id": "DYK-STORY-PITRE-12",
+      "source_family": "PITRE_1900",
+      "statement": {
+        "en": "A Saint Cyrus festival in Marineo staged a street drama with townspeople dressed as soldiers, hermits, angels and allegorical virtues and vices.",
+        "fr": "Lors d'une fête de saint Cyr à Marineo, une représentation de rue réunissait des habitants déguisés en soldats, ermites, anges, vertus et vices personnifiés."
+      },
+      "release": "RESEARCH_HANDOFF_NOT_PUBLISHED",
+      "destination": {
+        "type": "route",
+        "id": "home.historical-source",
+        "factId": "DYK-STORY-PITRE-12",
+        "historical_context": {
+          "observation_ids": [
+            "PIT1900-NEW-116",
+            "PIT1900-NEW-119"
+          ],
+          "printed_pages": [
+            136,
+            137
+          ],
+          "source_url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "scope": {
+            "en": "Local Sicilian festival as described by Giuseppe Pitrè (1900). One historical author's account, not a present-day Roman liturgical rule or a universally observed custom.",
+            "fr": "Fête locale sicilienne décrite par Giuseppe Pitrè (1900). Il s'agit du récit historique d'un auteur, et non d'une rubrique actuelle du rite romain ni d'une coutume universelle."
+          }
+        }
+      },
+      "editorial_gate": {
+        "claim_signed_off": false,
+        "native_french_signed_off": false,
+        "semantic_uniqueness_signed_off": false,
+        "exact_browser_route_verified": false,
+        "publication_authorized": false
+      },
+      "research_source_story_id": "DYK-STORY-PITRE-12"
+    }
+  ]
+}

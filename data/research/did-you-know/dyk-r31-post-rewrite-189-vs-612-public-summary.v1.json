@@ -1,0 +1,48 @@
+{
+  "schema": "AO_DYK_R31_POST_SOURCE_REWRITE_189_BY_612_PRIVATE_CROSSBANK_REFRESH_AGGREGATES_V1",
+  "date": "2026-10-30",
+  "state": "FULL_CURRENT_189_LEXICAL_SCREEN_RECOMPUTED_PRIVATE_LEGACY_BAND_NOT_PUBLISHED",
+  "source": {
+    "private_branch": "Fulcanelli13/folio-core@research/did-you-know-discovery-r01-20261028",
+    "private_detailed_ledger": "data/discovery/research/r31-dyk-189-v-612-post-rewrite-lexical-refresh.v1.json",
+    "private_shards": [
+      "src/home/discovery-facts-001.generated.js",
+      "src/home/discovery-facts-002.generated.js",
+      "src/home/discovery-facts-003.generated.js",
+      "src/home/discovery-facts-004.generated.js"
+    ],
+    "source_first_review_pack": "dyk-r21-168-integrated-bilingual-review.v1.json",
+    "rewrite_audit": "dyk-r31-three-distinct-glossary-discovery-source-rewrites.v1.json"
+  },
+  "counts": {
+    "current_source_first_bilingual_shortlist": 189,
+    "separate_private_preview_legacy": 612,
+    "exact_en_collisions": 0,
+    "exact_fr_collisions": 0,
+    "source_id_collisions": 0,
+    "english_token_jaccard_ge_0_30": 0,
+    "english_token_jaccard_ge_0_20": 5,
+    "max_english_token_jaccard": 0.24,
+    "independent_multilingual_semantic_approvals": 0,
+    "glossary_verbatim_explanation_copies_current": 5,
+    "glossary_source_checked_distinct_rewrites": 2,
+    "glossary_secondary_hymn_rewrite": 1,
+    "mothering_sunday_home_duplicate_hold": 1,
+    "provisional_max_nonrepetitive_home_candidates": 183,
+    "direct_source_claims_checked_cumulative": 133,
+    "original_168_direct_source_claims_checked": 112,
+    "remaining_direct_source_claims_to_review": 56,
+    "unverified_pitre_original_source_claims": 49,
+    "pitre_upstream_facsimile_image_holds": 14,
+    "unsupported_weiser_ship_mast": 1,
+    "independently_verified_french_signoffs": 0,
+    "new_live": 0
+  },
+  "policy": [
+    "R30 8 exact glossary copies is a historical snapshot. As of R31 only 5 remain verbatim; 3 have been replaced with distinct bilingual research drafts (2 primary text checks, 1 secondary hymn history).",
+    "This is an English lexical screening with exact EN/FR and source ID comparisons, not a semantic uniqueness approval. Five weak topical neighbours remain in private ledger for further editorial decision.",
+    "No private preview text or IDs are stored in this public aggregate. Source-first research count 1,001 and separate preview count 612 are not additive.",
+    "All present records have publication_authorized=false and remain outside live Home rotation."
+  ],
+  "publication_authorized": false
+}

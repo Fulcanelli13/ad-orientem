@@ -1,0 +1,32 @@
+{
+  "schema": "AO_DYK_R31_PITRE_PRIMARY_WITNESS_ACCESS_RETRY_V1",
+  "date": "2026-10-30",
+  "work": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+  "status": "ORIGINAL_FACSIMILE_IMAGE_REVIEW_INCOMPLETE_NO_SOURCE_COUNT_INCREMENT",
+  "trial_sources": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "observed": "Original 1900 PDF indexed; opening in PDF reader failed at 22,757,530 bytes (reader content-size limit)",
+      "actual_original_page_verified": false
+    },
+    {
+      "url": "https://books.google.com/books/about/Feste_patronali_in_Sicilia_descritte_da.html?id=RvGBAAAAMAAJ",
+      "observed": "1900 Carlo Clausen Michigan-origin Google Books bibliographic full-view edition available; specific target page body could not be fetched through available text/web interface",
+      "actual_original_page_verified": false
+    },
+    {
+      "url": "https://archive.org/download/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "observed": "Direct plain-text OCR download unavailable through web interface and working runtime",
+      "actual_original_page_verified": false
+    }
+  ],
+  "counts": {
+    "original_pitre_cards_remaining": 49,
+    "original_page_image_upstream_unverified": 14,
+    "new_original_page_images_reopened": 0,
+    "source_claims_directly_verified_new": 0,
+    "original_168_remain_after_two_other_primary_text_checks": 56
+  },
+  "preserve": "Keep original printed-page and 1-based scan-page locators from R26/R27; original-page-image flag remains false until actually read. Google Books catalog visibility is not evidence of a specific custom.",
+  "release_authorized": false
+}
