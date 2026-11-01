@@ -54,7 +54,7 @@ for(const x of manifest.entries){
 assert.equal(new Set(selected.map(x=>x.place_id)).size,21);
 assert.equal(selected.filter(x=>x.display_role==="HERO").length,18);
 assert.equal(selected.filter(x=>x.display_role==="GALLERY_ARCHITECTURE").length,3);
-assert.equal(pub.items.length,33);
+assert.ok(pub.items.length>=33,"Keep all 33 baseline approved gallery images when exact-object additions are published");
 assert.ok(!manifest.entries.some(x=>manifest.held_other_visual_and_rights.includes(x.review_number)));
 for(const n of [3,4,5,10,11,12,47,32,76]){
  assert.ok(!manifest.entries.some(x=>x.review_number===n),"Held source entered publication "+n);
