@@ -1,0 +1,32 @@
+name: Explore — first approved exact-object photo reuse
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'data/geography/approved-object-photo-reuse.v1.json'
+      - 'src/find/approved-object-photo-reuse.js'
+      - 'src/find/explore-data-service.js'
+      - 'src/find/place-profiles.js'
+      - 'tests/explore-approved-exact-object-photo-reuse-20261101.mjs'
+      - '.github/workflows/explore-first-approved-object-reuse.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  object-photo-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: One exact relic photo — existing approved cover only
+        run: node tests/explore-approved-exact-object-photo-reuse-20261101.mjs
+      - name: Existing sacred-object rights and owner gates
+        run: node tests/explore-p68-sacred-object-photo-binding.mjs
+      - name: Existing approved site photography remains intact
+        run: node tests/explore-approved-gallery-cover-reuse-20261031.mjs
+      - name: Existing bilingual relic cards
+        run: node tests/explore-p66-editorial-relic-cards.mjs
