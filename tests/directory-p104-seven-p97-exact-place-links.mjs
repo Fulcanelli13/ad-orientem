@@ -30,7 +30,9 @@ assert.deepEqual(p104.baseline,{places:522,sources:830,crosswalk:522,unlinked:25
 assert.deepEqual(p104.proposed,{places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22});
 assert.ok(RELEASES.some(r=>r.id==="P104"),"Historical P104 must remain frozen");
 assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,23]);
-assert.deepEqual([geo.places.length,src.sources.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.links]);
+assert.deepEqual([geo.places.length,src.sources.length],[LIVE.places,LIVE.sources]);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links+1,
+  "P104 frozen exact-site history plus one independently verified Guadalupe Shrine link");
 assertExploreGeographyRegistry(geo);
 assert.equal(p104.published_new.length,7);
 assert.ok(media.items.length>=36+laterPhotoRelease.photos.length,"Historical P104/P106 original approved covers remain, later independent covers may extend the registry");
