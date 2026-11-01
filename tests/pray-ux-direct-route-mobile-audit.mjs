@@ -143,6 +143,14 @@ try{
      title:front?.querySelector("h3")?.textContent||"",artwork:!!front?.querySelector("img")};
    });
    assert.equal(holyFront.flipped,false,"F01 must initially present the approved card front");
+   if(height<=640){
+    const visibility=await holy.locator(".aoClaudeHolyTitle h3").evaluate(el=>{
+     const r=el.getBoundingClientRect();
+     return {top:r.top,bottom:r.bottom,viewport:innerHeight};
+    });
+    assert.ok(visibility.top>=0&&visibility.bottom<=height-64,
+     "Short-phone Holy Card title falls beneath fixed navigation: "+JSON.stringify(visibility));
+   }
    await page.screenshot({path:resolve(dest,"claude-f01-front-"+width+"x"+height+".png"),animations:"disabled"});
    await holy.locator("[data-p435930-essential-card-turn]").evaluate(el=>el.click());
    await page.waitForFunction(()=>Boolean(document.querySelector("#aoPray435930.open .aoClaudeHolyLace.flip")),null,{timeout:9000});
