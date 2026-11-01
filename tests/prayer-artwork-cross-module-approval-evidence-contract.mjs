@@ -54,11 +54,11 @@ test('evidence classifications are complete, disjoint and not falsified as unive
   APPROVAL_SCOPE_CONFLICT:1,
   ACCEPTED_AT_PROPOSED_SLOT:97,
   NONINDIVIDUAL_CATEGORY_POOL:5,
-  INHERITED_REUSE_REQUIRES_SCOPE_TRACE:72,
+  INHERITED_REUSE_REQUIRES_SCOPE_TRACE:71,
   HISTORIC_KEEP_ORIGINAL_MODULE:3,
   DETERMINISTIC_RESTORATION:5,
   ACCEPTED_WITH_SCOPE_NOTE:6,
-  EXPLICIT_FINAL_COVER_LOCK:4,
+  EXPLICIT_FINAL_COVER_LOCK:5,
   HELD_PRIMARY:14
  });
  assert.equal(Object.values(audit.counts).reduce((n,x)=>n+x,0),267);
@@ -76,7 +76,7 @@ test('evidence classifications are complete, disjoint and not falsified as unive
      assert.ok((r.selectedOriginal?.originalArtworkIds||[]).includes(e.artworkId),r.slot);
  }
  assert.equal(audit.counts.INHERITED_REUSE_REQUIRES_SCOPE_TRACE+
-   audit.counts.UNRESOLVED_HISTORIC_PROVENANCE,110);
+   audit.counts.UNRESOLVED_HISTORIC_PROVENANCE,109);
  assert.equal(audit.counts.ACCEPTED_AT_PROPOSED_SLOT+
    audit.counts.ACCEPTED_WITH_SCOPE_NOTE,103);
 });
