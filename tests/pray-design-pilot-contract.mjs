@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
  PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,resolvedPrayerPilotFamilies,
+ PRAYER_DOOR_ORDER_V1,PRAYER_PRIMARY_DOOR_V1,PRAYER_SEARCH_ONLY_ROUTES_V1,
  renderPilotDiscovery,renderPilotAngelusEntry
 } from "../src/pray/prayer-design-pilot.js";
 
@@ -28,11 +29,28 @@ const bridged=resolvedPrayerPilotFamilies(L,{
  passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
  devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"]]}
 });
-for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],["novenas","pray.holy_name_litany"]]){
- assert.ok(bridged[door].items.some(item=>item[1]===route),"Nine-door discovery buried original route "+route);
+const primaryEntries=Object.entries(PRAYER_DOOR_ORDER_V1).flatMap(([door,ids])=>ids.map(id=>({door,id})));
+assert.equal(Object.keys(PRAYER_DOOR_ORDER_V1).length,9,"Keep exactly nine approved doors");
+assert.equal(new Set(primaryEntries.map(x=>x.id)).size,primaryEntries.length,
+ "A devotion or canonical source prayer may appear on only ONE visible shelf");
+assert.ok(primaryEntries.every(x=>PRAYER_PRIMARY_DOOR_V1[x.id]===x.door),"Canonical owner map must agree with ordered shelves");
+assert.deepEqual(PRAYER_SEARCH_ONLY_ROUTES_V1,["pray.rosary_methods","pray.sacred_hymns"]);
+assert.equal(PRAYER_PRIMARY_DOOR_V1["pray.rosary"],"chaplets");
+assert.equal(PRAYER_PRIMARY_DOOR_V1["pray.angelus_regina"],"daily");
+assert.equal(PRAYER_PRIMARY_DOOR_V1["pray.litany_saints"],"saints");
+assert.equal(PRAYER_PRIMARY_DOOR_V1["pray.holy_name_litany"],"ourlord");
+assert.equal(PRAYER_PRIMARY_DOOR_V1["pray.good_death"],"intentions");
+const visible=[...["daily","chaplets","eucharistic","marian","novenas","ourlord","saints","intentions"]]
+ .flatMap(door=>bridged[door].items.map(item=>({door,id:item[1]})));
+assert.equal(new Set(visible.map(x=>x.id)).size,visible.length,"No duplicate devotional shelf rows across nine doors");
+for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","pray.tenebrae"],
+ ["ourlord","pray.holy_name_litany"],["novenas","pray.novenas"],["marian","litany_loreto_1962"],["saints","devotion_prayer_st_michael"]]){
+ assert.ok(bridged[door].items.some(item=>item[1]===route),"Canonical reader or source prayer missing from "+door+": "+route);
 }
-assert.equal(bridged.ourlord.items.filter(item=>item[1]==="pray.stations").length,1);
-assert.equal(bridged.novenas.items.filter(item=>item[1]==="pray.novenas").length,1);
+assert.ok(!bridged.daily.items.some(x=>x[1]==="pray.rosary"),"The Rosary belongs on the Chaplets shelf only");
+assert.ok(!bridged.marian.items.some(x=>x[1]==="pray.angelus_regina"),"Angelus is on Daily Prayer, not a second Marian shelf");
+assert.ok(!bridged.novenas.items.some(x=>x[1]==="pray.holy_name_litany"),"Novenas must not inherit unrelated older devotions");
+assert.equal(bridged.library.direct,"pray.library","Essential Prayers must continue using the canonical Prayer Library");
 const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
@@ -126,6 +144,9 @@ assert.match(runtime,/if\(mount\(\)\)mount\(\)\.scrollTop=0;/,
 assert.match(runtime,/queueMicrotask\(\(\)=>\{if\(view==='angelus'&&mount\(\)\)mount\(\)\.scrollTop=0\}\);/,
  "The delayed focus/render handoff must not scroll away from the opening clock");
 assert.match(runtime,/function angelusExactPosture\(\)/,"the real posture owner remains");
+assert.match(runtime,/data-ao-prayer-shelf/,"Nine-door interiors use the compact unique shelf renderer");
+assert.match(runtime,/data-p435930-door-prayer/,"Single-text prayer cards hand off to the existing canonical Library");
+assert.match(runtime,/if\(navStack\.at\(-1\)==='family'\)/,"Library prayer Back returns to its owning door");
 assert.match(runtime,/installAngelusCardDeck\(/,"the real five\/four-card engine remains");
 assert.match(runtime,/if\(PRAYER_PILOT_ENABLED&&x.matches\('\[data-p435930-pilot-search\]'\)\)/);
 console.log("Prayer presentation pilot source contract: passed");
