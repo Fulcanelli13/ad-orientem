@@ -1,0 +1,48 @@
+name: Sacred Art — Flemish 26k object catalogue bulk discovery
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/art/bulk-flemish-oai-discovery.py"
+      - ".github/workflows/sacred-art-flemish-oai-discovery.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  index-full-oai-lido-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-class-i-ii-multiwork-rotation-20261031
+          path: calendar-research
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: research/w60-sanctoral-art-physical-dedupe-20261015
+          path: art-research
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/art/bulk-flemish-oai-discovery.py --self-test
+      - name: Harvest whole open OAI-PMH museum catalogue and match remaining Class I–III subjects
+        run: |
+          python scripts/art/bulk-flemish-oai-discovery.py \
+            --output artifacts/sacred-art-flemish-oai \
+            --max-pages 2000 \
+            --max-records 40000 \
+            --calendar calendar-research/data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json \
+            --existing calendar-research/data/calendar/sacred-art-2026-all383-four-class-reverse-index.v1.json \
+            --existing art-research/data/research/sacred-art-bulk-source-intake-451-20261020.v1.json \
+            --existing calendar-research/data/calendar/sacred-art-2026-classIII-sanctoral-complete-candidate-research-master.v1.json
+      - name: Save metadata candidate census with original IDs and explicit permission holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-flemish-26k-source-metadata
+          path: artifacts/sacred-art-flemish-oai/
+          retention-days: 1
+          if-no-files-found: warn
