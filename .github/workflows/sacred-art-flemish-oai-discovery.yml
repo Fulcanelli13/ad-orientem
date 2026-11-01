@@ -1,10 +1,7 @@
 name: Sacred Art — Flemish 26k object catalogue bulk discovery
+# Do not re-harvest 26k objects on every research-branch push.
+# Existing jobs continue; future refreshes require explicit manual dispatch.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - "scripts/art/bulk-flemish-oai-discovery.py"
-      - ".github/workflows/sacred-art-flemish-oai-discovery.yml"
   workflow_dispatch:
 permissions:
   contents: read
