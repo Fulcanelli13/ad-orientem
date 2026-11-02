@@ -30,12 +30,12 @@ try{
    const cue1="AO.SM.C0259",cue2="AO.SM.C0260";
    const latin=["℣. Ite, missa est.","℟. Deo grátias."];
    const record=(id,text)=>({
-    schema:INLINE_CHANT_SCHEMA,sourceCueId:id,sourceLatin:text,
+    schema:INLINE_CHANT_SCHEMA,sourceCueId:id,sourceLatin:text,settingId:"ITE_VIII",
     approval:"USER_AND_MUSICAL_SOURCE_REVIEWED",publication:"PUBLIC_APPROVED",
     sourceTextVerified:true,musicalNotationVerified:true,
     scoreId:"TEST-NOT-PUBLISHED",gabcSha256:"a".repeat(64),
     sourceWitness:"TEST-WITNESS-NOT-PUBLISHED",sourceUrl:"https://example.org/only-test",
-    gabc:"(c4)I(f)te(g) mis(h)sa(g) est(f)(::)"
+    gabc:"name: Test line;\n%%\n(c4)I(f)te(g) mis(h)sa(g) est(f)(::)"
    });
    const host=document.createElement("div");
    host.innerHTML='<style>'+INLINE_CHANT_CSS+'</style><section class="ao-reader-shell" data-ao-reader-shell data-mode="LIVE" style="--ao-mass-accent:#c5b0df;--ao-mass-accent-text:#f1ecf8;--ao-muted:#a7a3aa"><div class="ao-card-viewport" style="box-sizing:border-box;margin:auto;width:100%"><article style="padding:0"><div class="ao-prayer-body" style="max-width:100%"></div></article></div></section>';
@@ -63,7 +63,7 @@ try{
     engraverFactory:fac});
    const paragraphs=[{kind:"TEXT",sourceCueIds:[cue1],primary:latin[0]},
     {kind:"RESPONSE",sourceCueIds:[cue2],primary:latin[1]}];
-   const before=controller.render({mode:"LIVE",form:"MISSA_CANTATA_SIMPLE",paragraphs});
+   const before=controller.render({mode:"LIVE",form:"MISSA_CANTATA_SIMPLE",settingId:"ITE_VIII",paragraphs});
    await new Promise(ok=>setTimeout(ok,100));
    const rows=[...host.querySelectorAll(".ao-reader-paragraph")];
    const state=controller.state();
@@ -78,7 +78,7 @@ try{
    controller.handleClick({target:trigger});
    const textAfterToggle=displayed(first)!=="none" && rows[0].dataset.inlineChantView==="text";
    const secondUnchanged=rows[1].dataset.inlineChantView==="notation";
-   controller.render({mode:"LIVE",form:"LOW",paragraphs});
+   controller.render({mode:"LIVE",form:"LOW",settingId:"ITE_VIII",paragraphs});
    const lowPreservesOriginal=body.querySelectorAll(".ao-inline-chant-main").length===0&&
     rows[0].querySelector(".ao-line-primary").textContent===latin[0];
    controller.destroy();
