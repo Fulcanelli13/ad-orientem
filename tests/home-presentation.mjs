@@ -46,10 +46,13 @@ const base={
   },
 };
 
+const today=new Date();
+const dateLocal=[today.getFullYear(),String(today.getMonth()+1).padStart(2,"0"),String(today.getDate()).padStart(2,"0")].join("-");
 const r17ResumeRecord={
   schema:"ao-mass-entry-bootstrap-v1",
   state:"suspended",
-  session:{resolvedMass:{date:"2026-10-07"}},
+  session:{resolvedMass:{date:dateLocal}},
+  updatedAt:today.toISOString(),
   readerPreferences:{mode:"LIVE"},
   readerPosition:{sectionId:"AO.CARD.005",sequence:5},
 };
@@ -63,6 +66,20 @@ const nativeResume=readNativeMassResume(r17Win);
 assert.equal(nativeResume?.source,"R17_NATIVE");
 assert.equal(nativeResume?.stepNumber,5);
 assert.equal(nativeResume?.sectionId,"AO.CARD.005");
+
+
+// Incident 2 November 2026: H7 must never advertise a stale 31 October
+// resume in place of the Third All Souls Mass / any new Mass.
+const oldRecord={...r17ResumeRecord,session:{resolvedMass:{date:"2026-10-31"}},
+  updatedAt:"2026-10-31T17:00:00+04:00"};
+const oldWin={...r17Win,localStorage:{getItem:()=>JSON.stringify(oldRecord)}};
+assert.equal(readNativeMassResume(oldWin),null,
+  "Old 31 October checkpoint falsely offered Resume on 2 November");
+const november=renderApprovedHomeToString(base,oldWin);
+assert.doesNotMatch(november,/data-resume-mass/,
+  "Stale checkpoint must not replace H7 Begin Mass");
+assert.match(november,/data-home-h4-begin/,
+  "H7 must expose Begin Mass with an expired R17 checkpoint");
 
 const vm=buildHomeViewModel(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
 assert.equal(vm.celebration,"Holy Rosary");
@@ -106,7 +123,7 @@ assert.equal((en.match(/class="aoWeekColour"/g)||[]).length,7,"Week rail must sh
 assert.equal((en.match(/class="dayCell[^"]*aoVerifiedDay/g)||[]).length,1,"Only the resolved selected day may claim its colour");
 assert.match(en,/Mass in progress/);
 assert.match(en,/data-ao-resume-owner="R17_NATIVE"/,"Home Resume is not owned by native R17 persistence");
-assert.match(en,/07\/10\/2026 · 5/,"Home Resume lost native checkpoint date/position");
+assert.match(en,/\d{2}\/\d{2}\/\d{4} · 5/,"Home Resume lost native checkpoint date/position");
 assert.match(en,/data-formulary="1"/);
 assert.match(en,/Around the Mass/);
 assert.match(en,/data-resume-mass/,"Active R17 checkpoint must produce one Resume Mass action");
