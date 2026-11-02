@@ -158,6 +158,21 @@ try{
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"angelus");
    await settings.click();
    await expanded(angelus);
+   // Both 320px and 390px: recover whole-recitation Latin from frozen v43.33
+   // without opening/turning each of the existing prayer cards.
+   const latinOpt=ag.locator("[data-p435930-angelus-latin]");
+   await latinOpt.check();
+   assert.equal(await latinOpt.isChecked(),true);
+   const firstFace=page.locator("#aoPray435930.open .aoP435930AngelusSequence .aoDevoCard:not([hidden]) [data-ao-angelus-unit]").first();
+   assert.equal(await firstFace.locator("[data-face-la]").evaluate(x=>x.hidden),false,"Angelus did not display existing Latin");
+   assert.equal(await firstFace.locator("[data-face-v]").evaluate(x=>x.hidden),true,"Angelus vernacular incorrectly remained on top");
+   if(!(await ag.evaluate(x=>x.open)))await settings.click();
+   await expanded(angelus);
+   await latinOpt.uncheck();
+   assert.equal(await firstFace.locator("[data-face-la]").evaluate(x=>x.hidden),true,"Angelus Latin preference is not reversible");
+   assert.equal(await firstFace.locator("[data-face-v]").evaluate(x=>x.hidden),false,"Angelus vernacular was not restored");
+   if(!(await ag.evaluate(x=>x.open)))await settings.click();
+   await expanded(angelus);
    await ag.locator('[data-p435930-seg="group"]').click();
    await expanded(angelus);
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
