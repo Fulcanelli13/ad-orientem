@@ -17,13 +17,17 @@ const visibleLatin=paragraph=>[paragraph?.primary,paragraph?.secondary,paragraph
  * with an exact canonical cue and the ORIGINAL source text still present.
  * Not even an identical chant on an unrelated cue is interchangeable.
  */
-export function selectApprovedInlineScore({cueId,paragraph,form,approvedScores=APPROVED_MASS_INLINE_GABC}={}){
+export function selectApprovedInlineScore({cueId,paragraph,form,settingId="",resolvedMass=null,approvedScores=APPROVED_MASS_INLINE_GABC}={}){
  if(!SUNG.has(String(form??"").toUpperCase())||!CUE.test(String(cueId??""))||
+    String(settingId??"")!=="ITE_VIII"||
+    resolvedMass?.isRequiem===true||resolvedMass?.provenance?.isRequiem===true||
+    ["REQUIEM","MASS_FOR_THE_DEAD"].includes(String(resolvedMass?.actualCelebration?.type??"").toUpperCase())||
     !Array.isArray(approvedScores)||!paragraph||paragraph.kind==="RUBRIC"||
     !Array.isArray(paragraph.sourceCueIds)||
     paragraph.sourceCueIds.length!==1||paragraph.sourceCueIds[0]!==cueId)return null;
  const hits=approvedScores.filter(x=>
    x?.schema===INLINE_CHANT_SCHEMA && x.sourceCueId===cueId &&
+   x.settingId===settingId &&
    x.approval==="USER_AND_MUSICAL_SOURCE_REVIEWED" &&
    x.publication==="PUBLIC_APPROVED" &&
    x.sourceTextVerified===true && x.musicalNotationVerified===true &&
@@ -32,7 +36,7 @@ export function selectApprovedInlineScore({cueId,paragraph,form,approvedScores=A
    typeof x.sourceWitness==="string" && x.sourceWitness.length>5 &&
    /^https:\/\//.test(String(x.sourceUrl??"")) &&
    typeof x.gabc==="string" && x.gabc.length>12 &&
-   /^\s*\([cf][1-4]\)/.test(x.gabc) && x.gabc.includes("(::)") &&
+   /%%\s*\([cf][1-4]\)/.test(x.gabc) && x.gabc.includes("(::)") &&
    typeof x.sourceLatin==="string" && x.sourceLatin.length>3 &&
    visibleLatin(paragraph).some(t=>cleanText(t)===cleanText(x.sourceLatin)));
  return hits.length===1?Object.freeze({...hits[0]}):null;
@@ -199,7 +203,7 @@ export function createInlineChantController({
   }
   return false;
  }
- function render({mode="LIVE",form,paragraphs=[]}={}){
+ function render({mode="LIVE",form,settingId="",resolvedMass=null,paragraphs=[]}={}){
   clear();
   if(!SUNG.has(String(form??"").toUpperCase())||
      !["LIVE","MISSAL"].includes(mode))return 0;
@@ -209,7 +213,7 @@ export function createInlineChantController({
   for(const node of root.querySelectorAll(".ao-reader-paragraph[data-cue-id]")){
    const cueId=node.dataset.cueId;
    const paragraph=byId.get(cueId);
-   const score=selectApprovedInlineScore({cueId,paragraph,form,approvedScores});
+   const score=selectApprovedInlineScore({cueId,paragraph,form,settingId,resolvedMass,approvedScores});
    if(!score)continue;
    const primary=node.querySelector(".ao-line-primary");
    if(!primary)continue;
