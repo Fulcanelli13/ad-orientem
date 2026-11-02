@@ -36,6 +36,8 @@ assert.equal(pick(a,"ITE_I"),null);
 assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{isRequiem:true}}),null);
 assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{provenance:{isRequiem:true}}}),null);
 assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{actualCelebration:{type:"REQUIEM"}}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{actualCelebration:{kind:"MASS_FOR_THE_DEAD"}}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{overlays:["REQUIEM"]}}),null);
 assert.equal(pick(a,"ITE_VIII","SOLEMN",{paragraph:{...paragraph(a),primary:"℣. Benedicamus Domino.",secondary:null}}),null);
 assert.equal(pick(a,"ITE_VIII","SOLEMN",{paragraph:{...paragraph(a),sourceCueIds:[b.sourceCueId]}}),null);
 assert.equal(pick(a,"ITE_VIII","SOLEMN",{paragraph:{...paragraph(a),sourceCueIds:[a.sourceCueId,b.sourceCueId]}}),null);
