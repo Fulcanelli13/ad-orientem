@@ -58,13 +58,18 @@ export const INLINE_CHANT_CSS=String.raw`
 .ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-line-primary{
   grid-column:2;font-size:clamp(1.35rem,3vw,1.8rem)
 }
-.ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="notation"]>.ao-line-primary{
-  display:none!important
+.ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="notation"]>.ao-line-primary,
+.ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="notation"]>.ao-line-secondary{
+ display:none!important
 }
 .ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-line-secondary{
   grid-column:2;display:block;font:italic 400 clamp(.9rem,2.3vw,1.04rem)/1.45
    var(--ao-font-liturgical,Georgia,serif);color:var(--ao-muted)
 }
+.ao-inline-chant-translation{display:none;grid-column:2;grid-row:2;
+ font:italic 400 clamp(.9rem,2.3vw,1.04rem)/1.45 var(--ao-font-liturgical,Georgia,serif);
+ color:var(--ao-muted)}
+.ao-reader-paragraph[data-inline-chant-view="notation"]>.ao-inline-chant-translation{display:block}
 .ao-inline-chant-mark{grid-column:1;grid-row:1;
  color:#d58a80;font:500 23px/1.5 var(--ao-font-liturgical,Georgia,serif)}
 .ao-inline-chant-main{grid-column:2;grid-row:1;display:block;min-width:0}
@@ -83,7 +88,19 @@ export const INLINE_CHANT_CSS=String.raw`
 .ao-reader-paragraph[data-inline-chant-view="text"] .ao-inline-chant-main{grid-row:2}
 .ao-reader-paragraph[data-inline-chant-view="text"]>.ao-line-secondary{grid-row:3}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-status="ready"]{
-  border-top:1px solid rgba(165,61,42,.24);
+ display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:6px;
+ border-top:1px solid rgba(165,61,42,.24);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-line-primary,
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-line-secondary{
+ grid-column:2;grid-row:auto
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-view="notation"]>.ao-line-primary,
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-view="notation"]>.ao-line-secondary{
+ display:none!important
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-view="notation"]>.ao-inline-chant-translation{
+ display:block;grid-column:2;grid-row:2
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-inline-chant-mark{color:#a3271b}
 .ao-reader-shell[data-mode="MISSAL"] .ao-inline-chant-score{color:#33281c}
@@ -136,7 +153,7 @@ export function createInlineChantController({
   ++generation;
   for(const e of entries){
    e.engraver?.destroy();
-   e.marker?.remove();e.wrapper?.remove();
+   e.marker?.remove();e.wrapper?.remove();e.translationNode?.remove();
    if(e.node?.dataset){delete e.node.dataset.inlineChantStatus;delete e.node.dataset.inlineChantView;}
   }
   entries=[];closeZoom();
@@ -221,7 +238,15 @@ export function createInlineChantController({
    node.insertBefore(wrapper,primary.nextSibling);
    node.dataset.inlineChantStatus="loading";
    node.dataset.inlineChantView="text";
-   const entry={node,score,button:open,wrapper,marker,engraver:null};entries.push(entry);
+   const translationNode=doc.createElement("span");
+   translationNode.className="ao-inline-chant-translation";
+   // Show the actual vernacular even if a bilingual donor originally placed
+   // Latin in the secondary column. Never repeat Latin as its translation.
+   const same=cleanText(score.sourceLatin);
+   translationNode.textContent=[paragraph.secondary,paragraph.alternate,paragraph.primary]
+    .find(text=>typeof text==="string"&&text.trim()&&cleanText(text)!==same)??"";
+   node.append(translationNode);
+   const entry={node,score,button:open,wrapper,marker,translationNode,engraver:null};entries.push(entry);
    try{
     const engraver=engraverFactory({viewport:staff,document:doc});
     entry.engraver=engraver;engraver.observe?.();
