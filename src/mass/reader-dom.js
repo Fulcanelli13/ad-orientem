@@ -2,6 +2,7 @@ import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import {createInlineChantController, INLINE_CHANT_CSS} from "./reader-inline-chant.js";
+import {selectedMassInlineSettings} from "./reader-inline-chant-selector.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
 import { R17_ICON_KEYS } from "./reader-icons.js";
@@ -3735,11 +3736,16 @@ export function createReaderDomAdapter({
       if(programmeTarget?.matches?.("[data-schola-dismissal-choice]")){
         const chosen=programmeTarget.value;
         onScholaLocalProgrammeChange?.({kind:"dismissalSelection",value:chosen});
-        if(current?.paragraphs)inlineChant.render({mode,
-          form:prepared?.session?.resolvedMass?.form,
-          settingId:chosen,
-          resolvedMass:prepared?.session?.resolvedMass,
-          paragraphs:current.paragraphs});
+        if(current?.paragraphs){
+          const selectedPlan=typeof scholaLocalProgramme==="function"
+            ?scholaLocalProgramme():scholaLocalProgramme;
+          inlineChant.render({mode,form:prepared?.session?.resolvedMass?.form,
+            selectedSettings:{...selectedMassInlineSettings({
+              localProgramme:selectedPlan,resolvedMass:prepared?.session?.resolvedMass
+            }),DISMISSAL:chosen},
+            resolvedMass:prepared?.session?.resolvedMass,
+            paragraphs:current.paragraphs});
+        }
         return;
       }
       if(programmeTarget?.matches?.("[data-schola-kyriale-choice]")){
@@ -5053,7 +5059,9 @@ export function createReaderDomAdapter({
       const chantProgramme=typeof scholaLocalProgramme==="function"
         ? scholaLocalProgramme():scholaLocalProgramme;
       inlineChant.render({mode,form:prepared?.session?.resolvedMass?.form,
-        settingId:chantProgramme?.dismissalSelection??"",
+        selectedSettings:selectedMassInlineSettings({
+          localProgramme:chantProgramme,resolvedMass:prepared?.session?.resolvedMass
+        }),
         resolvedMass:prepared?.session?.resolvedMass,
         paragraphs:current.paragraphs});
       ensureShortCardCueTravel();
