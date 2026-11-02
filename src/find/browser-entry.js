@@ -164,6 +164,7 @@ export function createFindOwner(win=globalThis){
   let atlasReturnViewport=null;
   const state={
     lens:"heritage",
+    atlasEntry:"discover", // Only controls shell composition, never source-backed categories.
     view:"map",
     directoryGroup:"ALL",
     siteEvidence:"ALL",
@@ -1309,6 +1310,22 @@ export function createFindOwner(win=globalThis){
       retry.setAttribute?.("aria-busy","true");
       void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
       return;
+    }
+    const atlasEntryTab=target?.closest?.("[data-atlas-entry-tab]");
+    if(atlasEntryTab&&state.lens==="heritage"){
+      const entry=atlasEntryTab.dataset.atlasEntryTab;
+      if(entry!=="discover"&&entry!=="sacred")return;
+      event.preventDefault?.();
+      state.atlasEntry=entry;
+      // The approved Sacred Places entrance opens the one existing source-backed
+      // viewport sheet. Discover returns to its low-profile peek.
+      const rail=getRoot(win)?.querySelector?.("[data-mapcn-discover-rail]");
+      if(rail){
+        rail.dataset.discoverExpanded=String(entry==="sacred");
+        rail.querySelector?.("[data-mapcn-discover-toggle]")
+          ?.setAttribute?.("aria-expanded",String(entry==="sacred"));
+      }
+      void paint();return;
     }
     const discoverToggle=target?.closest?.("[data-mapcn-discover-toggle]");
     if(discoverToggle&&state.lens==="heritage"){
