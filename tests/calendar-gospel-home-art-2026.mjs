@@ -21,6 +21,16 @@ for(let i=0;i<snapshot.dates.length;i++){
 }
 const count=predicate=>snapshot.dates.filter(predicate).length;
 assert.equal(count(x=>!!x.gospel.indexCandidateReference),snapshot.counts.indexedGospelLeads);
+assert.equal(snapshot.counts.indexedGospelLeads,95);
+assert.equal(snapshot.counts.tentativeRVariants,6);
+assert.equal(snapshot.counts.segmentedGospelLeads,4);
+const palm=snapshot.dates.find(x=>x.date==="2026-03-29");
+assert.equal(palm.gospel.indexCandidateReference,"Matthew 26:36–75; 27:1–60");
+assert.equal(palm.gospel.indexMatchMethod,"POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED");
+assert.equal(palm.gospel.verifiedAgainstActualSelectedLatin,false);
+const maundy=snapshot.dates.find(x=>x.date==="2026-04-02");
+assert.equal(maundy.gospel.indexCandidateReference,"John 13:1–15");
+assert.equal(maundy.gospel.verifiedCurrentSourcePath,false);
 assert.equal(count(x=>!!x.approvedDatePainting),10);
 assert.equal(count(x=>x.approvedDatePainting?.remotePreviewAvailable),8);
 assert.equal(count(x=>x.approvedDatePainting&&!x.approvedDatePainting.remotePreviewAvailable),2);
