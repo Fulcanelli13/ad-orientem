@@ -33,4 +33,17 @@ assert.ok(runtime.includes("!CHOIR_SOURCE_IDS.includes(holyId)")&&
   "Keep existing specialized Choir and Leonine language controls");
 assert.ok(runtime.includes('const holy=!!holyRecord&&ESSENTIAL_HOLY_CARD_IDS_V1.includes(holyId)'),
   "Keep the approved essential Holy Card language menu");
-console.log("PASS · 47 preserved canonical Latin prayer faces, v43.33 archived donor, existing Aquinas/En ego, reversible ordinary Prayer Library Latin control");
+const traditionalRuntime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
+const traditionalStyles=readFileSync(new URL("../src/pray/traditional-pray-styles.js",import.meta.url),"utf8");
+assert.ok(traditionalRuntime.includes("function existingLatinSwitch(both)"),
+  "Explicit Latin control must be reusable across both historical prayer-card renderers");
+assert.equal(traditionalRuntime.split("${existingLatinSwitch(both)}").length-1,2,
+  "Both canonical and source-owned communion cards must expose actual inherited Latin");
+assert.match(traditionalRuntime,/data-tp381-latin-switch aria-pressed="false"/);
+assert.ok(traditionalRuntime.includes('b.matches("[data-tp381-latin-switch],[data-tp381-flip]")'),
+  "Direct Latin and text-tap gestures must operate the same two source faces");
+assert.ok(traditionalRuntime.includes("la.hidden=!showLatin;v.hidden=showLatin"),
+  "Latin switch must preserve every word of both stored witnesses");
+assert.ok(traditionalStyles.includes("position:absolute;top:10px"),
+  "The additional control must not push the Mass/Communion text down a phone screen");
+console.log("PASS · 47 preserved canonical Latin prayer faces, v43.33 archived donor, existing Aquinas/En ego, reversible ordinary + Communion Prayer Library Latin control");
