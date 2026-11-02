@@ -186,7 +186,19 @@ try{
     await page.locator(".aoExploreQuickPreview").waitFor({state:"visible"});
     await page.locator(".aoExploreQuickPreview [data-find-close-detail]").click();
    }else{
-    assert.equal(await mapRail.isVisible(),false,"320/390 phone map must not inherit the desktop results rail");
+    // Screen 4 intentionally presents the canonical map results as a
+    // photograph-led mobile bottom sheet; it must not become a desktop rail.
+    await mapRail.waitFor({state:"visible",timeout:12000});
+    const sheet=await mapRail.evaluate(el=>{
+     const r=el.getBoundingClientRect();
+     return {left:r.left,right:r.right,bottom:r.bottom,height:r.height,
+      viewportHeight:innerHeight,overflow:document.documentElement.scrollWidth-innerWidth};
+    });
+    assert.ok(sheet.left>=-2&&sheet.right<=width+2&&sheet.bottom<=sheet.viewportHeight+2&&
+     sheet.height>=200&&sheet.height<=sheet.viewportHeight*.55&&sheet.overflow<=2,
+     "Approved mobile results sheet must fit the map viewport: "+JSON.stringify(sheet));
+    assert.ok(await mapRail.locator(".aoTlmMapRailToggle").isVisible(),
+     "Mobile results sheet needs a visible disclosure");
    }
    const list=page.locator('.aoFindViewTabs [data-find-filter="view"][data-find-filter-value="list"]');
    assert.equal(await list.count(),1,"TLM view must expose a real List control");
