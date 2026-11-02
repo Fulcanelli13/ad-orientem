@@ -85,7 +85,8 @@ export async function analyzeSelectedPreGospelSource({
   readSection(sourcePath,"Tractus",fetchSource)]);
  const selected=String(selectedLatin);
  const sourceMatches=s=>s.status==="AUTHENTICATED_SOURCE_SECTION"&&
-    s.lines.some(line=>inSelected(selected,clean(line)));
+    s.lines.filter(line=>words(clean(line)).length>=4).slice(0,1)
+      .some(line=>inSelected(selected,clean(line)));
  const normal=sourceMatches(ordinary);
  const alternate=sourceMatches(paschal);
  if(!normal&&!alternate){
