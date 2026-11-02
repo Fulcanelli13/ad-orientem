@@ -6,6 +6,9 @@ export function installMontfortStyles(doc=globalThis.document){
 #aoPray435930 .aoMontfortB26{max-width:790px;margin:auto;padding:16px clamp(14px,4vw,26px) 42px}
 #aoPray435930 .aoMontfortB26 p{line-height:1.66}
 #aoPray435930 .aoMontfortB26Intro{font:16px/1.6 var(--ao-font-ui,Georgia,serif);color:var(--ao-muted,#c1b69f)}
+#aoPray435930 .aoMontfortB26LatinSwitch{display:inline-grid;place-items:center;min-width:44px;min-height:38px;margin:8px 0 12px;padding:6px 12px;border:1px solid var(--ao-rule,rgba(198,178,139,.4));border-radius:10px;background:transparent;color:var(--ao-gold,#d6be8a);font:600 12px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPray435930 .aoMontfortB26LatinSwitch[aria-pressed="true"]{color:var(--ao-text,#f4eee0)}
+#aoPray435930 .aoMontfortB26LatinSwitch:focus-visible{outline:2px solid var(--ao-gold,#d6be8a);outline-offset:2px}
 #aoPray435930 .aoMontfortB26Progress{height:6px;background:rgba(191,164,121,.19);border-radius:999px;overflow:hidden;margin:16px 0 10px}
 #aoPray435930 .aoMontfortB26Progress span{display:block;height:100%;background:#c1a26c;transition:width .15s ease}
 #aoPray435930 .aoMontfortB26PhaseRail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:13px 0 20px}
