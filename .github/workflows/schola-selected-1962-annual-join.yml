@@ -1,0 +1,35 @@
+name: Schola selected 1962 calendar-year Proper match
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/schola/build-2026-selected-repertoire.mjs'
+      - '.github/workflows/schola-selected-1962-annual-join.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selected-year:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Guard original 1961 GABC archive and source-first match semantics
+        run: node tests/reader-proper-gabc-bulk-join.mjs
+      - name: Capture real production 2026 selected Mass of day, then join GABC archive
+        run: node scripts/schola/build-2026-selected-repertoire.mjs
+      - name: Store complete selected repertoire/exception report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-2026-actual-selected-proper-gabc
+          path: .tmp/schola-1962-selected-annual/
+          if-no-files-found: warn
+          retention-days: 30
