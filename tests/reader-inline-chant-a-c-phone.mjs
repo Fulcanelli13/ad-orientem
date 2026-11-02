@@ -82,8 +82,25 @@ try{
    const lowPreservesOriginal=body.querySelectorAll(".ao-inline-chant-main").length===0&&
     rows[0].querySelector(".ao-line-primary").textContent===latin[0];
    controller.destroy();
+   // Crucial: a mocked SVG is not enough. Verify the *real* source GABC
+   // transcribes through pinned, locally vendored Exsurge at phone width.
+   const {APPROVED_MASS_INLINE_GABC}=await import("/src/mass/reader-inline-chant-approved.js");
+   const sourceController=createInlineChantController({
+     root:host,approvedScores:APPROVED_MASS_INLINE_GABC});
+   const sourceRows=APPROVED_MASS_INLINE_GABC.map(x=>({
+     kind:"TEXT",sourceCueIds:[x.sourceCueId],primary:x.sourceLatin,
+     secondary:x.sourceCueId===cue1?"Go, the Mass is ended.":"Thanks be to God."
+   }));
+   sourceController.render({mode:"LIVE",form:"SOLEMN",settingId:"ITE_VIII",paragraphs:sourceRows});
+   for(let n=0;n<70 && sourceController.state().rendered<2;n++)
+     await new Promise(ok=>setTimeout(ok,100));
+   const realRendered=sourceController.state().rendered;
+   const realSvgCount=body.querySelectorAll(".ao-inline-chant-score svg").length;
+   const actualStaffWidth=body.querySelector(".ao-inline-chant-score svg")?.getBoundingClientRect().width??0;
+   sourceController.destroy();
    return {before,state,widths,gridCols:style.gridTemplateColumns,
-    textInitiallyHidden,textAfterToggle,secondUnchanged,lowPreservesOriginal};
+    textInitiallyHidden,textAfterToggle,secondUnchanged,lowPreservesOriginal,
+    realRendered,realSvgCount,actualStaffWidth};
   });
   assert.equal(result.before,2);
   assert.equal(result.state.rendered,2);
@@ -91,6 +108,9 @@ try{
   assert.equal(result.textAfterToggle,true);
   assert.equal(result.secondUnchanged,true);
   assert.equal(result.lowPreservesOriginal,true);
+  assert.equal(result.realRendered,2,"Real Exsurge must engrave BOTH source cues");
+  assert.equal(result.realSvgCount,2,"SVG from pinned GABC on phone");
+  assert.ok(result.actualStaffWidth>120,"Real full-width score legible on phone");
   assert.ok(result.widths.notation>150,
    "Notation must have room on "+width+"px phone: "+JSON.stringify(result.widths));
   assert.ok(result.widths.row<=width,
