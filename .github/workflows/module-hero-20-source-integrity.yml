@@ -1,0 +1,33 @@
+name: Sacred Art — verify 20 archived originals and 22 frozen hero identities
+on:
+  pull_request:
+    paths:
+      - "assets/staged/module-hero-*/**"
+      - "data/research/module-hero-20-exact-source-archive-20261102.v1.json"
+      - "scripts/art/assert-module-hero-20-archive.py"
+      - ".github/workflows/module-hero-20-source-integrity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-integrity-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Verify all 20 source SHA-256 and frozen user artwork choices
+        run: python scripts/art/assert-module-hero-20-archive.py
+      - name: Preserve source integrity report and one research contact sheet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: approved-module-20-exact-source-integrity
+          path: artifacts/module-hero-20-archive-qa/
+          retention-days: 14
+          if-no-files-found: warn
