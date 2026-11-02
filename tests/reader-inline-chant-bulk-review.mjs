@@ -75,3 +75,43 @@ assert.throws(()=>buildAnnualInlineProperReviewQueue({archive,selectedMasses:[
  {selectedMassId:"same",properSlots,readerParagraphs}
 ]}),/DUPLICATED/);
 console.log("PASS source-anchored bulk Proper review, annual deduplication, no publication");
+
+// Real 1,195-score corpus: protect source ids without auto-publishing music.
+import {readFileSync} from "node:fs";
+import {index1961GradualeGabc} from "../src/mass/reader-proper-gabc-bulk-join.js";
+const file=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
+const fullArchive=index1961GradualeGabc(Array.from({length:6},(_,i)=>
+ file("../data/mass/chant-corpus/gr1961-proper-"+String(i+1).padStart(3,"0")+".json")));
+const actualTexts={
+ INTROIT:"Isa 9:6 ℣. Puer natus est nobis, et filius datus est nobis.",
+ GRADUAL:"Viderunt omnes fines terrae salutare Dei nostri.",
+ ALLELUIA_TRACT_SEQUENCE:"Allelúia, allelúia. Dies sanctificatus illuxit nobis.",
+ OFFERTORY:"Ps 88:12; 88:15 Tui sunt cœli, et tua est terra.",
+ COMMUNION:"Ps 97:3 Viderunt omnes fines terrae salutare Dei nostri."
+};
+const actualSlots={schema:"ao-reader-proper-slots-v1",ready:true,sourcePath,
+ slots:Object.fromEntries(Object.keys(actualTexts).map(k=>[k,{
+ status:"READY",data:{paragraphs:[{
+ id:slotId[k],latin:actualTexts[k],sourcePath,
+ ...(k==="GRADUAL"?{liturgicalGroup:"AO.CHANT.GRADUAL"}:{}),
+ ...(k==="ALLELUIA_TRACT_SEQUENCE"?{liturgicalGroup:"AO.CHANT.ALLELUIA"}:{})
+ }]}}]))};
+const actualReader=Object.keys(actualTexts).map(k=>({
+ id:slotId[k],primary:actualTexts[k],sourcePath,
+ sourceBlockId:"AO.SM.B"+k,sourceCueIds:[]
+}));
+const actual=buildSelectedMassInlineProperReviewBatch({
+ properSlots:actualSlots,archive:fullArchive,readerParagraphs:actualReader});
+for(const [part,id] of [
+ ["PROPER_INTROIT","GREGOBASE-72"],
+ ["PROPER_GRADUAL","GREGOBASE-1163"],
+ ["PROPER_ALLELUIA","GREGOBASE-324"],
+ ["PROPER_OFFERTORY","GREGOBASE-1274"],
+ ["PROPER_COMMUNION","GREGOBASE-1139"]
+]){
+ const entry=actual.tracks.find(t=>t.selectionKey===part);
+ assert.ok(entry?.candidates?.some(x=>x.scoreId===id),
+   part+" did not retain authentic Graduale 1961 candidate "+id);
+ assert.ok(entry.candidates.every(x=>!x.publicScore&&!x.musicalNotationVerified));
+}
+console.log("PASS original 1,195-source Graduale archive -> five Christmas 1962 paragraph review leads");
