@@ -1312,6 +1312,15 @@ export function createFindOwner(win=globalThis){
       void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
       return;
     }
+    const massReturn=target?.closest?.("[data-atlas-mass-return]");
+    if(massReturn&&state.lens==="tlm"&&state.view==="map"){
+      const entry=massReturn.dataset.atlasMassReturn;
+      if(!["discover","sacred"].includes(entry))return;
+      event.preventDefault?.();
+      state.atlasEntry=entry;
+      setFilter("lens","heritage");
+      return;
+    }
     const atlasEntryTab=target?.closest?.("[data-atlas-entry-tab]");
     if(atlasEntryTab&&state.lens==="heritage"){
       const entry=atlasEntryTab.dataset.atlasEntryTab;
