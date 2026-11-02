@@ -6,6 +6,7 @@ export const EXPLORE_PROTOTYPE_PLACE_STYLE = `
   background:#090d12;color:#eee7dc;
 }
 .aoExplorePlaceSheet>header {
+  position:static!important;
   border:0!important;background:transparent!important;
   padding:0 16px 10px!important;margin:0!important;
 }
@@ -61,6 +62,9 @@ export const EXPLORE_PROTOTYPE_PLACE_STYLE = `
 .aoExplorePlaceSheet>.aoExplorePlaceMedia figcaption a{color:#e2c58c}
 .aoExplorePlaceSheet .aoAtlasPlaceSummary{
   margin:0;padding:0 16px 4px;
+}
+.aoExplorePlaceSheet .aoAtlasPlaceAlternative{
+ margin:0 16px 14px;color:#a9b0ad;font:italic 12px/1.4 var(--ao-font-display,Georgia,serif);
 }
 .aoExplorePlaceSheet .aoAtlasPlaceTags{
   display:flex;flex-wrap:wrap;align-items:center;gap:12px;
