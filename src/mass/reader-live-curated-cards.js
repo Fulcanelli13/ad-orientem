@@ -8,9 +8,10 @@ export function visibleMassCardTitle(card){
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
 // Ordinary LIVE has 65 curated source-backed prayer cards (64 visible by
-// default when the optional second Confiteor is omitted). This is the
-// production Ordinary Sung LIVE family; no URL parameter can substitute
-// historical 48-card research presentations.
+// default when the optional second Confiteor is omitted). The same display
+// boundaries apply to certified Low and Sung source corpora; the actual
+// paragraphs, priest voices, and gesture owners remain form-specific.
+// No URL parameter can substitute historical 48-card research presentations.
 // Keep the direct native fixture review activation backward compatible.
 // Pre-Gospel chant subnavigation requires a source-backed follow-up.
 //
@@ -260,7 +261,7 @@ function curated(card){
 export function projectCuratedOrdinaryLiveCards(model){
   if(!model||!Array.isArray(model.cards))throw new TypeError("source-first LIVE model required");
   if(String(model.presentationMode).toUpperCase()!=="LIVE"||
-     String(model.corpusFamily).toUpperCase()!=="SUNG")return model;
+     !["LOW","SUNG"].includes(String(model.corpusFamily).toUpperCase()))return model;
   if(!String(model.structureOwner??"").includes("SOURCE_FIRST"))
     throw new Error("Curated LIVE requires source-first authority");
   // Special-day ownership is not interchangeable with the plain 39 steps.
@@ -333,7 +334,8 @@ export function projectCuratedOrdinaryLiveCards(model){
     // Source-only priest/Proper clock cues have NO prayer paragraph.
     // Retain them as audit metadata, never as an inferred spoken line,
     // movement, or automatic gesture/position/sound trigger.
-    sourceOnlyCueRegister:ORDINARY_SUNG_SOURCE_ONLY_CUES,
+    sourceOnlyCueRegister:String(model.corpusFamily).toUpperCase()==="SUNG"
+      ? ORDINARY_SUNG_SOURCE_ONLY_CUES : null,
     curatedPresentationReview:true,
   });
 }
