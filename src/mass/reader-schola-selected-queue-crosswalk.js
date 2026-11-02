@@ -61,7 +61,8 @@ export function crosswalkSelected2026MassesToPinnedReview({
     reviewQueue?.counts?.publishedScores!==0||
     reviewQueue?.counts?.distinctCandidateScoreIds!==342||
     reviewQueue?.provenance?.calendarMassesSelected!==false||
-    !Array.isArray(annualReport?.rows)||!Array.isArray(reviewQueue?.scoreReviewLeads))
+    !Array.isArray(annualReport?.rows)||!Array.isArray(reviewQueue?.scoreReviewLeads)||
+    reviewQueue.scoreReviewLeads.length!==342)
     fail("ANNUAL_OR_91_SOURCE_SCOPE_INVALID");
  const expected=allYearDates(2026);
  if(annualReport.rows.length!==expected.length||
