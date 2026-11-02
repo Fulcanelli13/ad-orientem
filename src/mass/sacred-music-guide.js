@@ -1,5 +1,6 @@
 // Standalone sacred-music programme reader. Does not mount or change R17 Mass.
 import {SACRED_MUSIC_WORKS,sacredMusicProgramme} from "./sacred-music-works.js";
+import {sungTextForMovement,sungTextCoverage} from "./sacred-music-sung-texts.js";
 const ROLE_LABELS=Object.freeze({
  INTROIT_KYRIE:["Introit + Kyrie","Introït + Kyrie"],INTROIT:["Introit","Introït"],
  KYRIE:["Kyrie","Kyrie"],OFFERTORY:["Offertory","Offertoire"],
@@ -40,19 +41,20 @@ export function mountSacredMusicGuide(root,{workId="faure-requiem-op48",language
  const sourceNote=element(doc,"p","aoMusicSourceNote");
  const workHeading=element(doc,"h2","aoMusicWorkHeading");
  const list=element(doc,"ol","aoMusicMovements");
+ const lyricGuide=element(doc,"p","aoMusicLyricsGuide");
  const sources=element(doc,"div","aoMusicSources");
  const caution=element(doc,"p","aoMusicCaution");
  const footer=element(doc,"footer","aoMusicFooter");
  const back=element(doc,"a",null);back.href="./index.html";
  footer.append(back);
- root.replaceChildren(header,controls,scope,workHeading,sourceNote,list,caution,sources,footer);
+ root.replaceChildren(header,controls,scope,workHeading,lyricGuide,list,sourceNote,caution,sources,footer);
  const syncUrl=()=>{
   try{const url=new URL(doc.location.href);url.searchParams.set("work",selected);url.searchParams.set("mode",form.toLowerCase());url.searchParams.set("lang",lang);doc.defaultView?.history?.replaceState?.(null,"",url.pathname+url.search+url.hash);}catch{}
  };
  const paint=()=>{
   const view=sacredMusicProgramme(selected,{language:lang,mode:form});if(!view)return;
   eyebrow.textContent=t(lang,"AD ORIENTEM · SACRED MUSIC","AD ORIENTEM · MUSIQUE SACRÉE");
-  title.textContent=t(lang,"Sacred music programmes","Programmes de musique sacrée");
+  title.textContent=t(lang,"Follow the sung words","Suivre le texte chanté");
   intro.textContent=t(lang,"Works and movements, distinct from the appointed 1962 liturgy and from what was actually performed.","Œuvres et mouvements, distincts de la liturgie prescrite en 1962 et de l'exécution réellement entendue.");
   workLabelText.textContent=t(lang,"Composition","Composition");picker.value=selected;
   legend.textContent=t(lang,"Guide context","Contexte du guide");
@@ -62,6 +64,10 @@ export function mountSacredMusicGuide(root,{workId="faure-requiem-op48",language
   scope.textContent=view.scope;
   workHeading.textContent=view.work.composer+" — "+view.work.title+" "+view.work.catalogue;
   sourceNote.textContent=view.note;
+  const coverage=sungTextCoverage(selected,view.movements.map(m=>m.id));
+  lyricGuide.textContent=coverage.complete===coverage.total
+    ?t(lang,"Full Latin sung text · translation beneath each line. Tap a movement to follow.","Texte latin intégral · traduction sous chaque ligne. Ouvrez un mouvement.")
+    :t(lang,"Text awaiting source verification for this setting; movement titles are not lyrics.","Texte en attente de vérification pour cette œuvre ; les titres ne sont pas des paroles.");
   list.replaceChildren();
   for(const m of view.movements){
    const li=element(doc,"li","aoMusicMovement");
@@ -71,8 +77,29 @@ export function mountSacredMusicGuide(root,{workId="faure-requiem-op48",language
    const movementTitle=element(doc,"span","aoMusicMovementName",m.title);
    const role=element(doc,"span","aoMusicRole",ROLE_LABELS[m.role]?.[lang==="fr"?1:0]||m.role);
    summary.append(number,movementTitle,role);
+   const text=sungTextForMovement(selected,m.id);
+   if(text){
+    const verses=element(doc,"div","aoMusicVerses");
+    verses.setAttribute("aria-label",t(lang,"Sung Latin with aligned English translation","Latin chanté avec traduction française"));
+    for(const line of text.lines){
+     const pair=element(doc,"div","aoMusicVersePair");
+     const latin=element(doc,"p","aoMusicLatin",line.latin);latin.lang="la";
+     const translation=element(doc,"p","aoMusicTranslation",line[lang]);translation.lang=lang;
+     pair.append(latin,translation);verses.append(pair);
+    }
+    detail.append(summary,verses);
+    detail.open=m.index===1;
+   }else{
+    const notice=element(doc,"p","aoMusicUnverified",
+      t(lang,"Full sung text not yet verified for this setting; no substitute lyrics supplied.",
+        "Texte chanté intégral non encore vérifié pour cette œuvre ; aucune parole de substitution."));
+    detail.append(summary,notice);
+   }
+   const note=element(doc,"details","aoMusicCommentary");
+   const noteTitle=element(doc,"summary",null,t(lang,"Liturgical context (optional)","Contexte liturgique (facultatif)"));
    const explanation=element(doc,"p",null,m.description);
-   detail.append(summary,explanation);li.append(detail);list.append(li);
+   note.append(noteTitle,explanation);detail.append(note);
+   li.append(detail);list.append(li);
   }
   caution.textContent=t(lang,"Metadata and independent editorial explanations only. No audio, score, licence clearance, or claimed local performance. A musical movement never substitutes for a required 1962 prayer or rite.","Métadonnées et explications éditoriales seulement. Ni audio, ni partition, ni autorisation de droits, ni exécution locale certifiée. Aucun mouvement musical ne remplace une prière ou un rite prescrit en 1962.");
   sources.replaceChildren(element(doc,"h3",null,t(lang,"Sources","Sources")));
