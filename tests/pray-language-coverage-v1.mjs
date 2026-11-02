@@ -6,6 +6,7 @@ import {ICKSP_DIVINE_INFANT_KING_NOVENA_V1} from "../src/pray/icksp-divine-infan
 import {ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1} from "../src/pray/icksp-immaculate-conception-novena.v1.js";
 import {NOVENA_HOLY_FACE_1887_B25} from "../src/pray/holy-face-janvier-1887-b25.js";
 import {auditPrayerLanguageCoverageV1,novenaTextSlotsV1} from "../src/pray/prayer-language-coverage.v1.js";
+import {novenaCanonicalFaceV1} from "../src/pray/novena-canonical-faces.v1.js";
 
 const audit=auditPrayerLanguageCoverageV1({
   prayers:PRAY_CANONICAL_DATA_V435930.prayers,
@@ -33,8 +34,36 @@ assert.deepEqual(novenaTextSlotsV1({days:[{text:{en:"Original",fr:"Traduction"}}
   .map(x=>x.languages),[{en:true,fr:true,la:false}]);
 assert.deepEqual(novenaTextSlotsV1({days:[{text:{en:"Original",la:"Latine"}}]})
   .map(x=>x.languages),[{en:true,fr:false,la:true}]);
+// All reusable Novena prayer witnesses must stay legible for both UI locales.
+for(const programme of audit.programmes){
+ for(const ref of programme.canonical){
+  const p=PRAY_CANONICAL_DATA_V435930.prayers[ref.id];
+  assert.ok(p,"Missing canonical novena record: "+ref.id);
+  for(const locale of ["en","fr"]){
+   const face=novenaCanonicalFaceV1(p,locale);
+   assert.ok(face.vernacular||face.latin,programme.id+" / "+ref.id+" is blank for "+locale);
+   assert.ok(!face.vernacular||face.vernacular===p[face.vernacularLanguage],
+    "Source language must identify the actual unmodified canonical witness");
+  }
+ }
+}
+const held=PRAY_CANONICAL_DATA_V435930.prayers.marian_consecration_immaculate_heart;
+const heldFrenchFace=novenaCanonicalFaceV1(held,"fr");
+assert.equal(heldFrenchFace.vernacular,held.en);
+assert.equal(heldFrenchFace.vernacularLanguage,"en");
+assert.equal(heldFrenchFace.fallback,true);
+assert.equal(heldFrenchFace.latin,"");
+assert.deepEqual(novenaCanonicalFaceV1({fr:"Un texte français",la:"Oratio"},"en"),{
+ vernacular:"Un texte français",vernacularLanguage:"fr",latin:"Oratio",fallback:true
+});
+assert.deepEqual(novenaCanonicalFaceV1({la:"Oratio"},"fr"),{
+ vernacular:"",vernacularLanguage:null,latin:"Oratio",fallback:false
+});
 const runtime=readFileSync(new URL("../src/pray/novena-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/data-n1-common-latin aria-pressed/);
+assert.match(runtime,/novenaCanonicalFaceV1\(p,isFr\(\)\?'fr':'en'\)/);
+assert.match(runtime,/data-n1-canonical-fallback/);
+assert.match(runtime,/data-n1-canonical-language/);
 assert.ok(runtime.includes("compact?commonLanguageControl(n)"),"Latin switch belongs to the collapsed day chooser, not above the prayer card");
 assert.ok(!runtime.includes("${modeNav()}${commonLanguageControl(n)}"),"A new banner must not displace the prayer card on a 320px phone");
 assert.match(runtime,/N\.commonLatin\?\x27 hidden\x27/);
