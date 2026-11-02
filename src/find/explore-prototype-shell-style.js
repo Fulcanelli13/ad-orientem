@@ -2,7 +2,7 @@
 // Deliberately presentation-only: retain canonical MapLibre, Place folios,
 // approved photographs, original navigation actions and source-scoped filters.
 // Screen 5 Venue Profile was rejected; no change to that surface.
-export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw\`
+export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
 .aoHeritageSurface.aoExploreSurface {
   --atlas-proto-glass:rgba(7,12,18,.94);
   --atlas-proto-line:#35404b;
@@ -200,4 +200,4 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw\`
 @media(prefers-reduced-motion:reduce){
   .aoHeritageSurface .aoMapcnDiscoverRail{transition:none!important}
 }
-\`;
+`;
