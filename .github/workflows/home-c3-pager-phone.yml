@@ -1,0 +1,25 @@
+name: Home C3 Prayer pager — real mobile click regression
+on:
+  pull_request:
+    paths:
+      - "src/home/browser-entry.js"
+      - "tests/home-c3-pager-phone.mjs"
+      - ".github/workflows/home-c3-pager-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-phone-click:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/home-c3-gallery.mjs
+      - run: node tests/home-c3-pager-phone.mjs
