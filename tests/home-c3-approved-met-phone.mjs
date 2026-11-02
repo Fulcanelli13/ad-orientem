@@ -60,7 +60,9 @@ try{
      return {visible:!slide.hidden&&r.width>0&&r.height>0,objectFit:getComputedStyle(img).objectFit,
              width:img.naturalWidth,height:img.naturalHeight};
    });
-   assert.ok(presented.visible&&presented.objectFit==="contain","Adoration must show complete original painting composition");
+   console.log("ADOration slide diagnostics:",JSON.stringify({width,adorationSlide,presented}));
+   assert.ok(presented.visible,"Adoration carousel slide is still hidden after its pager click");
+   assert.equal(presented.objectFit,"contain","Adoration painting should not be cropped by image style");
    await page.screenshot({path:resolve(dir,"home-met-c3-adoration-"+width+".png"),animations:"disabled",fullPage:true});
    cases.push({width,status:"TECHNICAL_PASS",facts,scriptErrors:errors,sourceImageOrCropUserApproved:false});
    console.log("PASS C3 Home",width,"Adoration decoded; Angelus slides=",angelus.length);
