@@ -84,14 +84,14 @@ function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
  });
  return el;
 }
-function appendixUnit(doc,v,l,language,recitationMode,appendixIndex){
+function appendixUnit(doc,v,l,language,recitationMode,appendixIndex,latinPreferred=false){
  const el=create(doc,"article","aoP435930LitCard aoP435930PrayerUnit aoDevoAppendixUnit");
  el.dataset.aoAngelusUnit="appendix";
  el.dataset.aoAppendixIndex=String(appendixIndex);
  const b=create(doc,"button","");b.type="button";b.dataset.p435930CardFlip="";
  b.setAttribute("aria-label",language==="fr"?"Changer la langue de la prière":"Switch prayer language");
  const vern=create(doc,"span",""),lat=create(doc,"span","");
- vern.dataset.faceV="";lat.dataset.faceLa="";lat.hidden=true;
+ vern.dataset.faceV="";lat.dataset.faceLa="";vern.hidden=latinPreferred;lat.hidden=!latinPreferred;
  vern.append(formattedFace(doc,v,recitationMode,appendixIndex));
  lat.append(formattedFace(doc,l,recitationMode,appendixIndex));
  b.append(vern,lat);el.append(b);
@@ -129,7 +129,7 @@ function visible(el){return Boolean(el&&el.getClientRects().length)}
  * recitation role markup, language flip handlers, or seasonal posture resolver.
  */
 export function installAngelusCardDeck({mount,form="angelus",language="en",
- historicalConclusion=false,appendixText,recitationMode="individual",guided=false,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
+ historicalConclusion=false,appendixText,latinPreferred=false,recitationMode="individual",guided=false,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
  const doc=mount?.ownerDocument,host=mount?.querySelector(".aoP435930AngelusSequence");
  if(!doc||!host)return null;
  if(host.dataset.aoDevotionalDeck==="v1")return host.__aoDevotionalDeck||null;
@@ -180,7 +180,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
     const group=create(doc,"section","aoFolioConclusionPart");
     group.dataset.aoConclusionPart=id;
     group.append(create(doc,"h3","aoFolioConclusionHeading",language==="fr"?titleFr:en));
-    group.append(appendixUnit(doc,parts.v[appendixIndex],parts.l[appendixIndex],language,recitationMode,appendixIndex));
+    group.append(appendixUnit(doc,parts.v[appendixIndex],parts.l[appendixIndex],language,recitationMode,appendixIndex,latinPreferred));
     body.append(group);
    });
   }
