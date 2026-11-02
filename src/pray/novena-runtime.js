@@ -1,4 +1,5 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
+import {novenaCanonicalFaceV1} from "./novena-canonical-faces.v1.js";
 import { ICKSP_THERESE_DEVOTIONS_V1 } from "./icksp-therese-devotions.v1.js";
 import "./st-therese-selected-novena-cover-styles.js";
 import { selectedThereseNovenaCover } from "./st-therese-selected-novena-cover.v1.js";
@@ -166,7 +167,20 @@ function sourceWitness(text,label){
  const toggle=isFr()&&en&&(fr||showEnglish)?`<button type="button" class="aoP435930Secondary" data-n1-show-en>${esc(showEnglish?'Revenir au français':'Voir le témoin anglais')}</button>`:'';
  return `<article class="aoN1SourceText"><small>${esc(witnessLabel)}</small>${novenaParagraphs(value)}${toggle}</article>`;
 }
-function canonicalPrayer(id,count=1){const p=prayerData()[id];if(!p)return `<div class="aoN1FailClosed">${esc(L('Canonical prayer record unavailable in this build.','Prière canonique indisponible dans cette version.'))}</div>`;const v=(isFr()?p.fr:p.en)||'',la=p.la||'',title=isFr()?(p.titleFr||p.title):p.title;return `<article class="aoN1Canon"><div class="aoN1CanonHead"><b>${esc(title||id)}</b><span>${count>1?count+'×':''}</span></div>${la&&v?`<button type="button" data-n1-flip><span data-face-v${N.commonLatin?' hidden':''}>${nl(v)}</span><span data-face-la${N.commonLatin?'':' hidden'}>${nl(la)}</span></button>`:`<div>${nl(v||la)}</div>`}</article>`}
+function canonicalPrayer(id,count=1){
+ const p=prayerData()[id];
+ if(!p)return `<div class="aoN1FailClosed">${esc(L('Canonical prayer record unavailable in this build.','Prière canonique indisponible dans cette version.'))}</div>`;
+ const {vernacular:v,vernacularLanguage:actual,latin:la,fallback}=novenaCanonicalFaceV1(p,isFr()?'fr':'en');
+ const title=isFr()?(p.titleFr||p.title):p.title;
+ // A canonical language preference must not hide an otherwise valid prayer.
+ // State the actual text language; never pass English off as French or invent Latin.
+ const note=fallback?`<p class="aoN1SourceLanguageNotice" data-n1-canonical-fallback lang="${isFr()?'fr':'en'}">${esc(actual==='en'
+  ?L('English text available; no French translation is claimed.','Texte disponible en anglais ; aucune traduction française n’est revendiquée.')
+  :L('French text available; no English translation is claimed.','Texte disponible en français ; aucune traduction anglaise n’est revendiquée.'))}</p>`:'';
+ return `<article class="aoN1Canon" data-n1-canonical-language="${actual||(la?'la':'none')}"><div class="aoN1CanonHead"><b>${esc(title||id)}</b><span>${count>1?count+'×':''}</span></div>${note}${la&&v
+  ?`<button type="button" data-n1-flip><span data-face-v lang="${actual}"${N.commonLatin?' hidden':''}>${nl(v)}</span><span data-face-la lang="la"${N.commonLatin?'':' hidden'}>${nl(la)}</span></button>`
+  :`<div lang="${actual||(la?'la':'en')}">${nl(v||la)}</div>`}</article>`;
+}
 function commonPrayers(n){return (n.commonPrayers||[]).map(x=>canonicalPrayer(x[0],x[1])).join('')}
 function commonLanguageControl(n){
  const refs=[...(n.commonPrayers||[]).map(x=>x[0]),n.closingCanonical,n.loretoCanonical].filter(Boolean);
