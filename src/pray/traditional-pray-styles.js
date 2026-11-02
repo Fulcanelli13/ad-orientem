@@ -17,6 +17,14 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoTP381Reader{white-space:pre-line;padding:12px 0;border:0;border-radius:0;background:transparent;color:var(--text,#f3ead7);font:400 1.02rem/1.7 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
 #aoPray435930 .aoTP381PrayerCard{padding:14px 0;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent}
 #aoPray435930 .aoTP381PrayerCard h3{margin:0 0 8px;font:600 1.04rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif))}
+/* Expose archived Latin beside the card title, without pushing the prayer
+   down the phone viewport or replacing the established text-tap flip. */
+#aoPray435930 .aoTP381PrayerCard{position:relative}
+#aoPray435930 .aoTP381PrayerCard:has(>.aoTP381LatinSwitch)>h3{padding-right:52px;min-height:31px}
+#aoPray435930 .aoTP381PrayerCard>.aoTP381LatinSwitch{position:absolute;top:10px;right:0;display:grid;place-items:center;min-width:44px;min-height:34px;border:1px solid var(--border,rgba(255,255,255,.24));border-radius:9px;background:transparent;color:var(--liturgical,#c7ae6d);font:600 12px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPray435930 .aoTP381PrayerCard>.aoTP381LatinSwitch[aria-pressed="true"]{color:var(--text,#f3ead7)}
+#aoPray435930 .aoTP381PrayerCard>.aoTP381LatinSwitch:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:2px}
+
 #aoPray435930 .aoTP381PrayerCard button[data-tp381-flip]{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:400 1.02rem/1.68 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
 #aoPray435930 .aoTP381Source{margin-top:10px;padding:0;border:0;font:400 max(13px,.8125rem)/1.55 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
 #aoPray435930 .aoTP381Source summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted,rgba(238,233,223,.72));font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
