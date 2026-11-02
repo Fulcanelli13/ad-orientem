@@ -224,6 +224,57 @@ try{
     "Discover must be restored after each P6 mode round trip");
    note.steps.push("P6 forward/back and keyboard Escape return across five surfaces; one MapLibre canvas, exclusive sourced panels, no overflow");
 
+   // P6 source-owned handoff: follow one real published place-specific
+   // custom from Network to its grouped Traditions folio, then back to the
+   // SAME graph focus. This uses the 2026 source registry, not fixture nodes.
+   await root.locator(".aoHeritageMore > summary").click();
+   await root.locator(".aoHeritageSecondary [data-network-toggle]").click();
+   await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
+   await root.locator(".aoNetworkPanel [data-network-kind]").selectOption("custom");
+   // Desktop has a results rail; the mobile MapCN layout deliberately hides it.
+   // Follow the visible Network search interaction at every viewport size.
+   await root.locator(".aoNetworkPanel [data-network-search]").fill("Votive candle");
+   await page.waitForFunction(()=>{
+    const label=document.querySelector("#ao-find-modular-root .aoNetworkCurrent h3");
+    return label?.textContent?.includes("Votive candle at a shrine");
+   },null,{timeout:15000});
+   const publishedLink=root.locator('.aoNetworkPanel [data-network-open-custom="DEV-010"]').first();
+   await publishedLink.waitFor({state:"visible"});
+   await publishedLink.click();
+   const sourceFolio=root.locator('.aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]');
+   await sourceFolio.waitFor({state:"visible",timeout:20000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.status().lens),"traditions");
+   assert.equal(await root.locator(".aoExploreTraditionSheet").count(),1,
+    "Custom handoff must open one canonical published folio, not copies of attestations");
+   assert.ok(await sourceFolio.locator('.aoFindSources a[href^="https://"]').count()>0,
+    "Published custom must retain original source links");
+   assert.ok(await sourceFolio.locator(".aoTraditionEvidence").count()>0,
+    "Published custom must retain its documented site attestations");
+   assert.equal(await root.locator(".aoNetworkPanel").count(),0,
+    "Network must not remain as a duplicate overlay during a customs folio");
+   await capture("p6-published-custom");
+   // The full folio is modal: the global header sits behind its backdrop.
+   // Use its visible Back-to-preview action, then Escape from the preview.
+   await sourceFolio.locator("[data-explore-collapse-detail]").click();
+   await root.locator('[data-explore-preview="tradition:custom:DEV-010"]').waitFor({state:"visible"});
+   await page.keyboard.press("Escape");
+   await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
+   await mapReady("heritage");
+   assert.equal(await root.locator('[data-network-kind]').inputValue(),"custom");
+   assert.equal(await root.locator('.aoNetworkPanel [data-network-focus="custom:DEV-010"]').first().getAttribute("aria-pressed"),"true",
+    "Network must regain the same selected canonical custom after Back");
+   await capture("p6-published-custom-return");
+   // The full-sheet Close control returns to the same source panel as well.
+   await root.locator('.aoNetworkPanel [data-network-open-custom="DEV-010"]').first().click();
+   await sourceFolio.waitFor({state:"visible",timeout:20000});
+   await sourceFolio.locator("button[data-find-close-detail]").click();
+   await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
+   await root.locator('.aoNetworkPanel [data-network-close]').click();
+   await mapReady("heritage");
+   assert.equal(await root.locator(".aoHeritageSurface [data-find-map] canvas.maplibregl-canvas").count(),1,
+    "A text-reader round trip should remount exactly one working MapLibre canvas");
+   note.steps.push("published DEV-010 votive-candle custom → one canonical sourced Traditions folio → visible Back-to-preview, Escape and full-sheet Close return to exact Network focus");
+
    // Continue from this same Explore destination to Mass without hidden menus.
    await root.locator(".aoHeritageMassShortcut").click();
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",

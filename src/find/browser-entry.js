@@ -153,6 +153,9 @@ export function createFindOwner(win=globalThis){
   // Ephemeral ranked results only. Device location is never stored or persisted.
   let nearbyResults=null;
   let networkGraph=null;
+  // One-time navigation origin for a source-owned Network → published custom
+  // folio. Unlike normal lens switching, Back must restore its graph context.
+  let networkCustomReturn=null;
   let journeyPreviousCategories=null;
   const queryByLens=new Map();
   const scrollGuard=createScrollTapGuard(win?.document,{
@@ -755,6 +758,7 @@ export function createFindOwner(win=globalThis){
   }
 
   async function open(options={}){
+    networkCustomReturn=null; // A new external route cannot inherit an old Network Back target.
     // A Calendar handoff can select only an existing, source-backed canonical
     // custom. The route payload alone cannot mint a practice or map pin.
     const customId=options?.lens==="traditions"&&typeof options?.customId==="string"?options.customId:null;
@@ -863,6 +867,7 @@ export function createFindOwner(win=globalThis){
     return true;
   }
   function close(){
+    networkCustomReturn=null;
     ++paintToken;
     atlasScriptureReturn=null;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
@@ -957,6 +962,7 @@ export function createFindOwner(win=globalThis){
   }
 
   function setFilter(key,value){
+    if(key==="lens"&&value!==state.lens)networkCustomReturn=null;
     const previousLens=state.lens;
     if(key==="view")state.view=state.lens==="traditions"?"list":value==="map"?"map":"list";
     else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
@@ -978,6 +984,25 @@ export function createFindOwner(win=globalThis){
     state.displayLimit=24;
     if(state.lens!==previousLens){lastMapView=null;lastMapLens=null;state.bibleAtlas=false;state.bibleIndex=0;}
     void paint();
+  }
+
+  function returnFromNetworkCustom(){
+    if(!networkCustomReturn||state.lens!=="traditions")return false;
+    const previous=networkCustomReturn;
+    networkCustomReturn=null;
+    state.lens="heritage";state.view="map";state.query=previous.query;
+    state.selectedId=null;state.selectedPlaceId=null;
+    state.expandDetail=false;state.expandPlace=false;state.displayLimit=24;
+    state.networkOpen=true;state.networkFocus=previous.focus;
+    state.networkKind=previous.kind;state.networkSearch=previous.search;
+    state.networkLimit=previous.limit;
+    state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
+    state.journeyOpen=false;journeyPreviousCategories=null;
+    // Crossing to the text-only Traditions reader unmounts MapLibre.
+    // Returning creates exactly one fresh map at the previously saved camera.
+    lastMapView=previous.camera;lastMapLens=previous.camera?"heritage":null;
+    nearbyResults=null;
+    void paint();return true;
   }
 
   async function handoff(surface,openExact,label){
@@ -1353,9 +1378,16 @@ export function createFindOwner(win=globalThis){
       const canonicalFolio=publishedCustomFolioId(projection,id);
       if(!canonicalFolio)return;
       // Open the existing canonical Traditions folio; no duplicate custom owner.
+      networkCustomReturn={
+        query:state.query,focus:state.networkFocus,kind:state.networkKind,
+        search:state.networkSearch,limit:state.networkLimit,
+        camera:mapViewport(mapHandle?.map),
+      };
       queryByLens.set("heritage",state.query);
       state.lens="traditions";state.view="list";state.query="";
-      state.networkOpen=false;state.networkFocus="";state.selectedPlaceId=null;
+      state.atlasFamily="ANY";state.atlasArea="ANY";
+      state.atlasPeriod="ANY";state.atlasCalendar="ANY";
+      state.networkOpen=false;state.selectedPlaceId=null;
       // Grouped canonical custom folios use tradition:custom:<custom_id>,
       // never an individual attestation item's source-specific identity.
       state.selectedId=canonicalFolio;state.expandPlace=false;state.expandDetail=true;
@@ -1439,7 +1471,8 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("[data-find-close]")){
       event.preventDefault?.();
       if(state.selectedPlaceId){if(state.expandPlace){state.expandPlace=false;void paint({selectionOnly:true});return;}state.selectedPlaceId=null;void paint({selectionOnly:true});return;}
-      if(state.selectedId){if(state.expandDetail){state.expandDetail=false;void paint({selectionOnly:true});return;}state.selectedId=null;void paint({selectionOnly:true});return;}
+      if(state.selectedId){if(state.expandDetail){state.expandDetail=false;void paint({selectionOnly:true});return;}if(returnFromNetworkCustom())return;state.selectedId=null;void paint({selectionOnly:true});return;}
+      if(returnFromNetworkCustom())return;
       if(state.lens!=="heritage"){setFilter("lens","heritage");return;}
       close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return;
     }
@@ -1447,7 +1480,8 @@ export function createFindOwner(win=globalThis){
     // must reach their own Place, Calendar, novena and source-link actions.
     if(target?.closest?.("button[data-find-close-detail]")||
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-detail]")){
-      event.preventDefault?.();state.selectedId=null;state.expandDetail=false;void paint({selectionOnly:true});return;
+      event.preventDefault?.();if(returnFromNetworkCustom())return;
+      state.selectedId=null;state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("button[data-find-close-place]")||
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-place]")){
@@ -1756,7 +1790,9 @@ export function createFindOwner(win=globalThis){
       if(atlasScriptureReturn){returnToScriptureAtlas();return;}
       state.bibleAtlas=false;state.bibleIndex=0;lastMapView=null;lastMapLens=null;void paint();return;}
     if(state.selectedPlaceId){event.preventDefault?.();if(state.expandPlace)state.expandPlace=false;else state.selectedPlaceId=null;void paint({selectionOnly:true});return;}
-    if(state.selectedId){event.preventDefault?.();if(state.expandDetail)state.expandDetail=false;else state.selectedId=null;void paint({selectionOnly:true});return;}
+    if(state.selectedId){event.preventDefault?.();if(state.expandDetail){state.expandDetail=false;void paint({selectionOnly:true});return;}
+      if(returnFromNetworkCustom())return;
+      state.selectedId=null;void paint({selectionOnly:true});return;}
     const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open],.aoExploreSectionSwitcher[open]");
     if(disclosure){event.preventDefault?.();disclosure.open=false;return;}
     // Escape unwinds an Explore mode without leaving the native map, just as
