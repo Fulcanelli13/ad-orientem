@@ -1,42 +1,15 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {APPROVED_MASS_INLINE_GABC} from "./reader-inline-chant-approved.js";
+import {selectApprovedInlineScore} from "./reader-inline-chant-selector.js";
+export {selectApprovedInlineScore, INLINE_CHANT_SCHEMA} from "./reader-inline-chant-selector.js";
 
 // A + C: night-ink, inline-staff LIVE; traditional red margin marker.
 // Never insert a score as a Schola dock track or a new prayer card.
-export const INLINE_CHANT_SCHEMA="ao-mass-inline-approved-gabc-v1";
+// Score eligibility now lives in the universal source/setting matcher.
+const cleanText=text=>String(text??"").normalize("NFD")
+ .replace(/[\u0300-\u036f]/g,"").replace(/[℣℟]/g,"")
+ .toLowerCase().replace(/[^a-z]+/g," ").trim();
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-const CUE=/^AO\.SM\.C\d{4}$/;
-const HASH=/^[a-f0-9]{64}$/;
-const cleanText=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
- .replace(/[æœ]/gi,c=>c.toLowerCase()==="æ"?"ae":"oe")
- .replace(/[℣℟]/g,"").toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
-const visibleLatin=paragraph=>[paragraph?.primary,paragraph?.secondary,paragraph?.alternate]
- .filter(x=>typeof x==="string"&&x.trim());
-
-/** Tested source boundary: approval must come from the compiled manifest,
- * with an exact canonical cue and the ORIGINAL source text still present.
- * Not even an identical chant on an unrelated cue is interchangeable.
- */
-export function selectApprovedInlineScore({cueId,paragraph,form,approvedScores=APPROVED_MASS_INLINE_GABC}={}){
- if(!SUNG.has(String(form??"").toUpperCase())||!CUE.test(String(cueId??""))||
-    !Array.isArray(approvedScores)||!paragraph||paragraph.kind==="RUBRIC"||
-    !Array.isArray(paragraph.sourceCueIds)||
-    paragraph.sourceCueIds.length!==1||paragraph.sourceCueIds[0]!==cueId)return null;
- const hits=approvedScores.filter(x=>
-   x?.schema===INLINE_CHANT_SCHEMA && x.sourceCueId===cueId &&
-   x.approval==="USER_AND_MUSICAL_SOURCE_REVIEWED" &&
-   x.publication==="PUBLIC_APPROVED" &&
-   x.sourceTextVerified===true && x.musicalNotationVerified===true &&
-   typeof x.scoreId==="string" && x.scoreId.length>3 &&
-   HASH.test(String(x.gabcSha256??"")) &&
-   typeof x.sourceWitness==="string" && x.sourceWitness.length>5 &&
-   /^https:\/\//.test(String(x.sourceUrl??"")) &&
-   typeof x.gabc==="string" && x.gabc.length>12 &&
-   /^\s*\([cf][1-4]\)/.test(x.gabc) && x.gabc.includes("(::)") &&
-   typeof x.sourceLatin==="string" && x.sourceLatin.length>3 &&
-   visibleLatin(paragraph).some(t=>cleanText(t)===cleanText(x.sourceLatin)));
- return hits.length===1?Object.freeze({...hits[0]}):null;
-}
 
 // No parallel floating panel, cream paper, redundant title, or in-card
 // navigation. The letter is *beside* the full-width score, not inside it.
@@ -199,17 +172,33 @@ export function createInlineChantController({
   }
   return false;
  }
- function render({mode="LIVE",form,paragraphs=[]}={}){
+ function render({mode="LIVE",form,settingId="",selectedSettings={},resolvedMass=null,paragraphs=[]}={}){
   clear();
   if(!SUNG.has(String(form??"").toUpperCase())||
      !["LIVE","MISSAL"].includes(mode))return 0;
-  const byId=new Map(paragraphs.filter(p=>p.sourceCueIds?.length===1)
-   .map(p=>[p.sourceCueIds[0],p]));
+  const unique=new Map(),byCue=new Map(),ambiguous=new Set();
+  for(const p of paragraphs){
+   if(p.id!=null){
+    const id=String(p.id);
+    if(unique.has(id))ambiguous.add(id);
+    else unique.set(id,p);
+   }
+   const cues=Array.isArray(p.sourceCueIds)?p.sourceCueIds:[];
+   if(cues.length){
+    const id=String(cues[0]);
+    if(byCue.has(id))ambiguous.add("CUE:"+id);
+    else byCue.set(id,p);
+   }
+  }
   const g=generation;
-  for(const node of root.querySelectorAll(".ao-reader-paragraph[data-cue-id]")){
-   const cueId=node.dataset.cueId;
-   const paragraph=byId.get(cueId);
-   const score=selectApprovedInlineScore({cueId,paragraph,form,approvedScores});
+  for(const node of root.querySelectorAll(".ao-reader-paragraph[data-paragraph-id],.ao-reader-paragraph[data-cue-id]")){
+   const id=node.dataset.paragraphId;
+   const cueId=node.dataset.cueId??null;
+   if(id&&ambiguous.has(id)||cueId&&ambiguous.has("CUE:"+cueId))continue;
+   const paragraph=(id&&unique.get(id))||(cueId&&byCue.get(cueId))||null;
+   const score=selectApprovedInlineScore({
+    cueId,paragraph,form,settingId,selectedSettings,resolvedMass,approvedScores
+   });
    if(!score)continue;
    const primary=node.querySelector(".ao-line-primary");
    if(!primary)continue;

@@ -7,6 +7,7 @@ export const SCHOLA_OPTIONAL_EVENT_IDS=Object.freeze([
  "ENTRANCE_ORGAN_OPTION","OFFERTORY_LOCAL_MOTET","OFFERTORY_ORGAN_OPTION",
  "COMMUNION_LOCAL_MOTET","RECESSIONAL_ORGAN_OPTION"
 ]);
+export const SCHOLA_DISMISSAL_CHOICES=Object.freeze([Object.freeze({id:"ITE_VIII",title:"Ite VIII · De Angelis",sourceId:832})]);
 export const SCHOLA_ORDINARY_SETTING_IDS=Object.freeze([
  "KYRIE","GLORIA","CREDO","SANCTUS_BENEDICTUS","AGNUS_DEI"
 ]);
@@ -53,6 +54,7 @@ function profileOf(value,id){
  return freeze({id,name:clean(v.name)||"Local programme",
   parishLabel:clean(v.parishLabel),choices:choicesOf(v.choices),
   ordinarySettings,ordinarySelections:freeze(ordinarySelections),
+  dismissalSelection:v.dismissalSelection==="ITE_VIII"?"ITE_VIII":"",
   sanctusPerformance:performanceOf(v.sanctusPerformance)});
 }
 function wrap(profiles,activeProfileId){
@@ -65,6 +67,7 @@ function wrap(profiles,activeProfileId){
   parishLabel:active.parishLabel,choices:active.choices,
   ordinarySettings:active.ordinarySettings,
   ordinarySelections:active.ordinarySelections,
+  dismissalSelection:active.dismissalSelection,
   sanctusPerformance:active.sanctusPerformance,
   editorialStatus:"PERSONAL_LOCAL_UNVERIFIED",observedSinging:false});
 }
@@ -120,6 +123,8 @@ function updatedProfile(current,change){
   return {...active,ordinarySelections:{...active.ordinarySelections,[id]:found.id},
    ordinarySettings:{...active.ordinarySettings,[id]:found.title}};
  }
+ if(kind==="dismissalSelection"&&["","ITE_VIII"].includes(change.value))
+  return {...active,dismissalSelection:change.value};
  if(kind==="sanctusPerformance"&&PERFORMANCES.has(change.value))
   return {...active,sanctusPerformance:change.value};
  if(["eventSelected","eventTitle"].includes(kind)&&OPTION_SET.has(id)){
@@ -177,6 +182,7 @@ export function applyScholaLocalProgramme(itinerary,programme){
   localParishLabel:selected.parishLabel,localProfileId:selected.activeProfileId,
   localOrdinarySettings:selected.ordinarySettings,
   localOrdinarySelections:selected.ordinarySelections,
+  localDismissalSelection:selected.dismissalSelection,
   events:freeze(itinerary.events.map(event=>{
    const ordinarySetting=selected.ordinarySettings[event.trackId]||
     selected.ordinarySettings[event.id]||null;
