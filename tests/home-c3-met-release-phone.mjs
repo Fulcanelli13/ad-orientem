@@ -62,7 +62,8 @@ try{
      await page.waitForTimeout(120);
      await panel.screenshot({path:resolve(dir,"prayer-card-"+name+"-"+width+".png"),animations:"disabled"});
    };
-   await page.screenshot({path:resolve(dir,"home-met-c3-"+width+".png"),animations:"disabled",fullPage:true});\n   await captureReviewCard("angelus");
+   await page.screenshot({path:resolve(dir,"home-met-c3-"+width+".png"),animations:"disabled",fullPage:true});
+   await captureReviewCard("angelus");
    const adorationSlide=await page.locator(".homeScreen.aoH7Screens .aoC3PrayerSlide").evaluateAll(
      slides=>slides.findIndex(slide=>!!slide.querySelector('img[src*="adoration-frameless.webp"]')));
    assert.ok(adorationSlide>=0,"Adoration slide missing in Home Prayer carousel");
@@ -75,7 +76,8 @@ try{
    console.log("ADOration slide diagnostics:",JSON.stringify({width,adorationSlide,presented}));
    assert.ok(presented.visible,"Adoration carousel slide is still hidden after its pager click");
    assert.equal(presented.objectFit,"contain","Adoration painting should not be cropped by image style");
-   await page.screenshot({path:resolve(dir,"home-met-c3-adoration-"+width+".png"),animations:"disabled",fullPage:true});\n   await captureReviewCard("adoration");
+   await page.screenshot({path:resolve(dir,"home-met-c3-adoration-"+width+".png"),animations:"disabled",fullPage:true});
+   await captureReviewCard("adoration");
    cases.push({width,status:"TECHNICAL_PASS",facts,scriptErrors:errors,sourceImageOrCropUserApproved:true});
    console.log("PASS C3 Home",width,"Adoration decoded; Angelus slides=",angelus.length);
   }catch(e){
