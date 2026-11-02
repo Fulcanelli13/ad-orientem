@@ -1,0 +1,21 @@
+name: Sacred Art — 60 user decisions preserved
+on:
+  pull_request:
+    paths:
+      - "data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json"
+      - "tests/sacred-art-2026-owner-60-photo-decisions.mjs"
+      - ".github/workflows/sacred-art-owner-60-decisions.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-decisions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/sacred-art-2026-owner-60-photo-decisions.mjs
