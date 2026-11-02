@@ -65,7 +65,7 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
   outline:2px solid #d3b781;outline-offset:2px;
 }
 .aoHeritageSurface .aoHeritageMore{
-  position:fixed!important;top:307px;right:12px;
+  position:fixed!important;top:242px;right:12px;
   left:auto;z-index:17;
 }
 .aoHeritageSurface .aoHeritageMore>summary{
@@ -102,7 +102,7 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
   background:#28363e!important;color:#f1ddbb!important;border-color:#9b865c!important;
 }
 .aoHeritageSurface .aoFindBody .maplibregl-top-right{
-  top:163px;right:12px;
+  top:140px;right:12px;
 }
 .aoHeritageSurface .aoFindBody .maplibregl-ctrl-top-right,
 .aoHeritageSurface .aoFindBody .maplibregl-ctrl-group{
@@ -114,8 +114,9 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
   background:var(--atlas-proto-glass);border:1px solid var(--atlas-proto-line);
   color:#e1d3bb;box-shadow:0 4px 18px #0006;
 }
+.aoHeritageSurface .maplibregl-ctrl-fullscreen{display:none!important}
 .aoHeritageSurface .aoHeritageWorldReset{
-  left:auto!important;right:12px!important;top:368px!important;
+  left:auto!important;right:12px!important;top:295px!important;
   width:44px!important;height:44px!important;min-width:44px!important;max-width:44px!important;
   border-radius:50%!important;background:var(--atlas-proto-glass)!important;
   border:1px solid var(--atlas-proto-line)!important;
@@ -186,8 +187,8 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
   .aoHeritageSurface .aoAtlasPrimaryTabs .aoHeritageMassShortcut{
     font-size:13px;padding:0 10px;
   }
-  .aoHeritageSurface .aoHeritageMore{top:298px}
-  .aoHeritageSurface .aoHeritageWorldReset{top:356px!important}
+  .aoHeritageSurface .aoHeritageMore{top:242px}
+  .aoHeritageSurface .aoHeritageWorldReset{top:295px!important}
   .aoHeritageSurface .aoHeritageNearby{bottom:calc(98px + env(safe-area-inset-bottom))!important}
 }
 @media(min-width:800px){
