@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {SACRED_MUSIC_WORKS,sacredMusicWork,sacredMusicProgramme} from "../src/mass/sacred-music-works.js";
 import {readFile} from "node:fs/promises";
+import {sungTextForMovement,sungTextCoverage} from "../src/mass/sacred-music-sung-texts.js";
 assert.equal(SACRED_MUSIC_WORKS.length,4,"Four curated work families");
 const counts={"faure-requiem-op48":7,"durufle-requiem-op9":9,
   "mozart-requiem-k626":14,"palestrina-missa-pro-defunctis":4};
@@ -34,12 +35,26 @@ assert.equal(faure.movements[2].role,"SANCTUS");
 assert.ok(!faure.movements.some(x=>x.role==="BENEDICTUS"),"No invented Fauré Benedictus");
 const durufle=sacredMusicWork("durufle-requiem-op9");
 assert.match(durufle.rights,/COPYRIGHTED/,"Post-1947 score may not be assumed available");
+const faureCoverage=sungTextCoverage("faure-requiem-op48",faure.movements.map(m=>m.id));
+assert.deepEqual({total:faureCoverage.total,complete:faureCoverage.complete},{total:7,complete:7},"Full Fauré lyrics");
+let totalPairs=0;
+for(const m of faure.movements){
+ const text=sungTextForMovement(faure.id,m.id);
+ assert.ok(text,"No lyrics for "+m.title);
+ for(const line of text.lines){assert.ok(line.latin&&line.en&&line.fr,"Untranslated verse "+m.title);totalPairs++;}
+}
+assert.equal(totalPairs,60,"All Latin-translation pairs must be preserved");
+assert.match(sungTextForMovement(faure.id,faure.movements[5].id).lines.at(-1).latin,/judicare/);
+assert.equal(sungTextForMovement("durufle-requiem-op9","durufle-requiem-op9-1"),null,"No unverified replacement words");
 assert.equal(sacredMusicWork("not-a-work"),null);
 assert.equal(sacredMusicProgramme("not-a-work"),null);
 const html=await readFile(new URL("../sacred-music.html",import.meta.url),"utf8");
 const dom=await readFile(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const build=await readFile(new URL("../tools/build-web-preview.mjs",import.meta.url),"utf8");
 assert.match(html,/src\/mass\/sacred-music-guide\.js/,"Guide must be a working module");
+const guide=await readFile(new URL("../src/mass/sacred-music-guide.js",import.meta.url),"utf8");
+assert.match(guide,/sungTextForMovement/);
+assert.match(guide,/aoMusicVersePair/);
 assert.match(dom,/data-sacred-music-library/,"Live Schola needs a discoverable guide link");
 assert.match(build,/"sacred-music\.html"/,"Ship the standalone guide with production");
 assert.doesNotMatch(html,/<audio|<video|\.mp3|\.ogg/,"No recordings or score files");
