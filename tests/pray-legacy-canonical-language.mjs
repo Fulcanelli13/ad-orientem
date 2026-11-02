@@ -33,6 +33,31 @@ assert.ok(runtime.includes("!CHOIR_SOURCE_IDS.includes(holyId)")&&
   "Keep existing specialized Choir and Leonine language controls");
 assert.ok(runtime.includes('const holy=!!holyRecord&&ESSENTIAL_HOLY_CARD_IDS_V1.includes(holyId)'),
   "Keep the approved essential Holy Card language menu");
+// Real v43.33 archive comparison; no synthesized or remotely retrieved text.
+const donorHtml=readFileSync(new URL("../legacy/v43.33.parts/chunk-007-p00.txt",import.meta.url),"utf8");
+const donorStart=donorHtml.indexOf('const D={"prayers":');
+assert.ok(donorStart>=0,"Frozen Ad Orientem v43.33 canonical donor not found");
+const donorEnd=donorHtml.indexOf("};",donorStart);
+assert.ok(donorEnd>donorStart,"Frozen canonical source closing boundary not found");
+const frozen=JSON.parse(donorHtml.slice(donorStart+"const D=".length,donorEnd+1));
+assert.equal(Object.keys(frozen.prayers).length,48,"Legacy v43.33 source itself must own all 48 prayers");
+assert.deepEqual(Object.keys(frozen.prayers),Object.keys(prayers),
+  "Canonical prayer identity/order cannot drift from archived Ad Orientem");
+const differences=[];
+for(const id of Object.keys(frozen.prayers)){
+ for(const language of ["en","fr","la"]){
+  if(frozen.prayers[id][language]!==prayers[id][language])
+   differences.push({id,language});
+ }
+}
+assert.deepEqual(differences,[{id:"benediction_versicles",language:"fr"}],
+  "Archive-preserved 143/144 trilingual prayer fields must be byte-identical; the known Benediction French edition variant must remain explicit");
+for(const [key,value] of Object.entries(frozen)){
+ if(key!=="prayers")assert.deepEqual(PRAY_CANONICAL_DATA_V435930[key],value,
+  "Archived Rosary/Angelus/Stations/Examen source layer drifted: "+key);
+}
+assert.ok(frozen.angelusAppendix.la.includes("Divinum auxilium"),
+  "Original Latin Angelus appendix belongs to archived donor and canonical corpus");
 const traditionalRuntime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
 const traditionalStyles=readFileSync(new URL("../src/pray/traditional-pray-styles.js",import.meta.url),"utf8");
 assert.ok(traditionalRuntime.includes("function existingLatinSwitch(both)"),
