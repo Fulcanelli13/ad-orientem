@@ -10,7 +10,7 @@ export const INLINE_CHANT_SELECTION_KEYS=Object.freeze([
  "PROPER_COMMUNION","SPECIAL_RITE"
 ]);
 const keys=new Set(INLINE_CHANT_SELECTION_KEYS);
-const cuePattern=/^(?:AO\.SM\.C\d{4}|GF-SOP-\d\d-[KR]|GF-X-52[123])$/;
+// Strictly anchored SOURCE identities, including native Asperges/Palm/Good Friday\n// cues. Publication is still tied to the exact row, text, block and setting.\nconst cuePattern=/^[A-Z][A-Z0-9._-]{4,90}$/;
 const normalized=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/[æœ]/gi,c=>c.toLowerCase()==="æ"?"ae":"oe").replace(/[℣℟]/g,"")
  .toLowerCase().replace(/[^a-z0-9]+/g," ").trim().replace(/\s+/g," ");
