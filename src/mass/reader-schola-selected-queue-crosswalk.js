@@ -92,6 +92,9 @@ export function crosswalkSelected2026MassesToPinnedReview({
    calendar.push(result);bump(result.status);continue;
   }
   if(!sourcePath.test(row.sourcePath)||!row.principalId||
+     row.resolverStatus!=="ready"||
+     !["ready","cached"].includes(String(row.properStatus).toLowerCase())||
+     row.sourceExistsInPinnedLatinTree!==true||
      !Array.isArray(row.tracks))fail("UNTRUSTED_CALENDAR_SELECTED_FORMULARY");
   readySelectedDates++;selectedPaths.add(row.sourcePath);
   const in91=knownPaths.has(row.sourcePath);
