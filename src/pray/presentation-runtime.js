@@ -36,6 +36,7 @@ import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import {prayerDoorArtSlot} from "./art-slot-map.v1.js";
+import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-progress.js";
@@ -959,13 +960,14 @@ function renderPrayFamily(){
  const visible=family.items.filter(item=>item[0]!=='prayer'||DATA.prayers?.[item[1]]);
  const first=visible[0],remaining=visible.slice(1);
  const artSlot=prayerDoorArtSlot(familyId);
+ const releasedDoorPhoto=familyId==="eucharistic"?releasedModulePhotoMarkup("adoration",{className:"aoPrayerEucharisticCover"}):"";
  const facets=[...new Set(visible.map(item=>prayerDoorFacet(item[1])))];
  const facetLabels={all:L('All','Tout'),prayer:L('Prayers','Prières'),litany:L('Litanies','Litanies'),
   consecration:L('Consecration','Consécration'),rosary:L('Rosary','Rosaire'),chaplet:L('Chaplets','Chapelets'),
   angelus:L('Angelus','Angélus'),novena:L('Novenas','Neuvaines'),penance:L('Penance','Pénitence')};
  const filterButtons=['all',...facets].map(type=>'<button type="button" data-p435930-door-filter="'+type+'" aria-pressed="'+(type==='all')+'">'+esc(facetLabels[type]||type)+'</button>').join('');
  return `${head(L("Pray","Prier"),'')}<main class="aoP435930Body aoPrayDoorInterior" data-ao-prayer-shelf="${esc(familyId)}">
-  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)}" data-ao-art-binding="unassigned" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}"><small>${esc(L("ART SLOT","EMPLACEMENT D’ART"))} · ${esc((artSlot?.slotId||"").replace("DOOR-",""))}</small></section><header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header><nav class="aoPrayDoorFilters" aria-label="${esc(L("Filter prayers","Filtrer les prières"))}">${filterButtons}</nav><small class="aoPrayDoorSectionLabel">${esc(L("PRAYERS","PRIÈRES"))}</small>
+  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)}" data-ao-art-binding="${releasedDoorPhoto?"released":"unassigned"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||`<small>${esc(L("ART SLOT","EMPLACEMENT D’ART"))} · ${esc((artSlot?.slotId||"").replace("DOOR-",""))}</small>`}</section><header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header><nav class="aoPrayDoorFilters" aria-label="${esc(L("Filter prayers","Filtrer les prières"))}">${filterButtons}</nav><small class="aoPrayDoorSectionLabel">${esc(L("PRAYERS","PRIÈRES"))}</small>
   ${first?prayDoorShelfEntry(first,true):''}
   <nav class="aoPrayDoorShelfList" aria-label="${esc(family.title)}">${remaining.map(item=>prayDoorShelfEntry(item)).join('')}</nav>
   ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
@@ -1045,13 +1047,14 @@ function renderAngelus(){
  const openingVisible=ANGELUS_CARD_INDEX===0&&!ANGELUS_COVER_DISMISSED;
  const hourTitle=form==='regina'?'Regina Cæli':L('The Angelus',"L’Angélus");
  const hourScene=form==='regina'?L('The Resurrection','La Résurrection'):L('The Annunciation','L’Annonciation');
+ const releasedHourArt=form==='angelus'?releasedModulePhotoMarkup('angelus',{className:'aoPrayerAngelusDirectPhoto'}):'';
  const coverAbove=openingVisible
   ?'<section class="aoClaudeHorariumIntro" data-ao-horarium-intro aria-label="'+esc(L('Hour of prayer','Heure de prière'))+'">'+
    '<p class="aoClaudeHorariumKicker">'+esc(hourDescription)+'</p>'+
    '<h2>'+esc(hourTitle)+'</h2>'+
-   '<div class="aoClaudeHorariumPlate" role="note" aria-label="'+esc(L('Awaiting approved sacred artwork','Œuvre sacrée en attente de validation'))+'">'+
-    '<div class="aoClaudeHorariumPlateArt"><span>'+esc(hourScene)+'</span></div>'+
-    '<small>'+esc(L('Artwork awaiting approval','Œuvre en attente de validation'))+'</small>'+
+   '<div class="aoClaudeHorariumPlate" data-ao-art-publication="'+(releasedHourArt?'released':'unassigned')+'" role="note" aria-label="'+esc(releasedHourArt?L('Approved Annunciation artwork','L’Annonciation · œuvre approuvée'):L('Awaiting approved sacred artwork','Œuvre sacrée en attente de validation'))+'">'+
+    '<div class="aoClaudeHorariumPlateArt">'+(releasedHourArt||'<span>'+esc(hourScene)+'</span>')+'</div>'+
+    (releasedHourArt?'':'<small>'+esc(L('Artwork awaiting approval','Œuvre en attente de validation'))+'</small>')+
    '</div></section>'
   :'';
  const coverBelow=openingVisible
@@ -2138,6 +2141,7 @@ function eucharisticWitnessTreasury(){
 function renderAdoration(){
  if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Enter prayer without a prescribed duration','Entrer en prière sans durée imposée'))}
   <main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v2">
+   ${releasedModulePhotoMarkup("adoration",{className:"aoPrayerAdorationCover"})}
    <div class="aoAdorationPrimaryGrid" aria-label="${esc(L('Choose the form of adoration','Choisir la forme d’adoration'))}">
     <button type="button" class="aoAdorationModeVisit" data-p435930-ador-mode="visit" data-ao-art-binding="unassigned">
      <span class="aoAdorationModeIcon" aria-hidden="true">${assetIcon('ao-rich-adoration')}</span><em class="aoAdorationTime">${esc(L('≈ 10–15 min','≈ 10–15 min'))}</em>

@@ -1,5 +1,6 @@
 // C3 Living Gallery. Canonical Home routes and 1962 Calendar remain authoritative.
 import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.js";
+import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]+/g," ");
 const cleanArt=a=>a&&a.qualityGate==="PASS"&&typeof a.file==="string"&&
@@ -33,7 +34,9 @@ function certifiedWeekArt(provider,date){
 // displayed by the canonical Calendar, never a new or held reproduction.
 export function c3ApprovedDatedHomeArt(provider,state){
   const date=state?.selectedDate,path=C3_EXACT_APPROVED_PATHS[date];
-  if(!path||provider?.properPath?.(state)!==path)return null;
+  const observed=provider?.properPath?.(state);
+  const exact=observed===path||(date==="2026-11-02"&&/^Sancti\/11-02m[23]$/.test(observed??""));
+  if(!path||!exact)return null;
   return APPROVED_CLASS_I_2026.find(row=>row.date===date)??null;
 }
 function eligibleCalendarPreview(row){
@@ -48,16 +51,7 @@ function info(a,img){
     source:a.sourcePage,image:img.currentSrc||img.src};
 }
 // Exact Met originals with user-approved frame-free phone crops (2 November 2026).
-export const C3_APPROVED_MET_PRAYER_ART=Object.freeze({
-  angelus:Object.freeze({title:"The Annunciation",artist:"Philippe de Champaigne",
-    source:"https://www.metmuseum.org/art/collection/search/438724",
-    original:"assets/home/c3-approved-met/angelus-met-438724.jpg",
-    image:"assets/home/c3-approved-met/angelus-frameless.webp"}),
-  adoration:Object.freeze({title:"The Virgin Adoring the Host",artist:"Jean Auguste Dominique Ingres",
-    source:"https://www.metmuseum.org/art/collection/search/438434",
-    original:"assets/home/c3-approved-met/adoration-met-438434.jpg",
-    image:"assets/home/c3-approved-met/adoration-frameless.webp"})
-});
+export const C3_APPROVED_MET_PRAYER_ART=RELEASED_MODULE_PAINTINGS;
 function approvedC3Artwork(page){
   if(page?.id==="adoration"||page?.route==="pray.adoration")return C3_APPROVED_MET_PRAYER_ART.adoration;
   if(String(page?.id??"").startsWith("angelus."))return C3_APPROVED_MET_PRAYER_ART.angelus;
