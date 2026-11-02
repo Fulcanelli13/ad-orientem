@@ -85,7 +85,7 @@ export function selectedMassInlineSettings({localProgramme=null,resolvedMass=nul
  if(source?.status==="SOURCE_CERTIFIED_1962_MUSIC"&&
     source.selections&&typeof source.selections==="object"){
   for(const [key,id] of Object.entries(source.selections)){
-   if(keys.has(key)&&key!=="DISMISSAL"&&typeof id==="string"&&
+   if(keys.has(key)&&typeof id==="string"&&
       /^[A-Z0-9][A-Z0-9_:-]{1,100}$/.test(id))selections[key]=id;
   }
  }
