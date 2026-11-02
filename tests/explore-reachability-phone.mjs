@@ -54,7 +54,8 @@ try{
    const panels=[".aoFindHeader",".aoHeritageTools",".aoHeritageCategories"];
    const box=element=>{const r=element?.getBoundingClientRect();return r?{width:r.width,height:r.height,top:r.top,bottom:r.bottom}:null};
    return {map:box(map),root:box(root),chrome:panels.map(x=>box(root?.querySelector(x))),
-     targets:[...root.querySelectorAll(".aoHeritageMassShortcut,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
+     targets:[...root.querySelectorAll(".aoAtlasPrimaryTabs button,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")]
+       .filter(el=>el.getClientRects().length&&getComputedStyle(el).visibility!=="hidden").map(box),
      overflow:document.documentElement.scrollWidth-innerWidth};
  });
  assert.ok(layout.map?.height>=300,"Explore mobile chrome squeezed the map below 300px");
@@ -108,6 +109,10 @@ try{
  assert.equal(scrollSafety.defaultPrevented,true,'Scroll gesture was not protected from synthesized Back click');
  assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().open),true,'Scroll gesture left Explore');
 
+ // Place categories are presented from the approved Sacred Places entrance,
+ // not on the Discover overview.
+ await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]').tap();
+ await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
  const activeAll=page.locator('#ao-find-modular-root [data-heritage-category="ALL"]');
  assert.equal(await activeAll.getAttribute("aria-pressed"),"true");
  const shrineChip=page.locator('#ao-find-modular-root [data-heritage-category="shrines"]');
