@@ -148,7 +148,6 @@ function existingLatinSwitch(both){
 }
 function traditionalSourceFallbackNotice(face){
  if(!face.fallback)return "";
- const language=face.vernacularLanguage==="en"?"English":"French";
  return '<p class="aoTP381Intro" data-tp381-source-language-fallback lang="'+(isFr()?'fr':'en')+'">'+
   esc(face.vernacularLanguage==="en"
    ?L("English source text shown; no French translation is claimed.","Texte source anglais affiché ; aucune traduction française n’est revendiquée.")
