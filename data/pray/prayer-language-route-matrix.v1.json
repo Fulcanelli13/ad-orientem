@@ -1,0 +1,685 @@
+{
+  "schema": "ao.pray.route-language-matrix.v1",
+  "recordedFromMain": "5d86f0ab4a38b85c72df55c7d59fa933f15be6c5",
+  "purpose": "Nonduplicative 23 legacy + 18 newer Prayer route language audit. Keep source existence distinct from reader visibility and historical certification.",
+  "limits": [
+    "Entry-route ownership and selected control evidence do not prove every variant or paragraph renders a source language.",
+    "Canonical source language presence does not certify an identical historical edition.",
+    "Missing Latin in historical novena proper prayers is not necessarily a lost original.",
+    "No editing or duplication of prayer texts, Rosary beads, or approved prototypes."
+  ],
+  "summary": {
+    "legacyRoutes": 23,
+    "currentDoorRoutes": 39,
+    "uniqueRoutes": 41,
+    "additionalDoorRoutes": 18,
+    "singleCanonicalRoutes": 9,
+    "sourceHeldCanonical": [
+      "marian_consecration_immaculate_heart"
+    ],
+    "moduleStageAuditComplete": false,
+    "coreCanonicalPrayers": 48,
+    "coreCanonicalLatinPresent": 47,
+    "sourceOwnedNovenaProgrammes": 19
+  },
+  "routes": [
+    {
+      "id": "pray.rosary",
+      "legacy23": true,
+      "doors": [
+        "chaplets"
+      ],
+      "sourceFamily": "rosary-bead-engine",
+      "sourceFiles": [
+        "src/pray/rosary-guided-bead-meditations.v1.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SIGNATURE_BEAD_READER__NO_CHANGE_WITHOUT_BEAD_ACCEPTANCE",
+      "nextAction": "CHECK_BEAD_LEVEL_LANGUAGE_PARITY_WITHOUT_LAYOUT_CHANGE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.angelus_regina",
+      "legacy23": true,
+      "doors": [
+        "daily"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/devotional-card-deck.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "LATIN_OPTION_RELEASED__PILOT_AND_GROUP_ENTRY_NEED_COMPLETE_CHECK",
+      "nextAction": "VERIFY_ANGELUS_REGINA_PILOT_AND_NONPILOT_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.confession",
+      "legacy23": true,
+      "doors": [
+        "intentions"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/confession-paths.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.benediction",
+      "legacy23": true,
+      "doors": [
+        "eucharistic"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/benediction-1962.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.adoration",
+      "legacy23": true,
+      "doors": [
+        "eucharistic"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/adoration-four-purpose-options.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.stations",
+      "legacy23": true,
+      "doors": [
+        "ourlord"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/stations-posture-policy.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.library",
+      "legacy23": true,
+      "doors": [],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "FORTY_SEVEN_OF_FORTY_EIGHT_CANONICAL_LATIN_TEXTS__VARIANTS_PENDING",
+      "nextAction": "CHECK_HOLY_CARDS_CHOIR_LORETO_LEONINE_AND_SINGLE_PRAYERS",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "legacy23": true,
+      "doors": [
+        "intentions"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/penitential-psalms-source.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.litany_saints",
+      "legacy23": true,
+      "doors": [
+        "saints"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/litany-source.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.seven_words",
+      "legacy23": true,
+      "doors": [
+        "ourlord"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/seven-words-offline-1889.v1.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.forty_hours",
+      "legacy23": true,
+      "doors": [
+        "eucharistic"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/forty-hours-solemn.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "programme.first_friday",
+      "legacy23": true,
+      "doors": [
+        "novenas"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/first-monthly-direct-prayers-styles.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "programme.first_saturday",
+      "legacy23": true,
+      "doors": [
+        "novenas"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/first-monthly-direct-prayers-styles.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.morning_evening",
+      "legacy23": true,
+      "doors": [
+        "daily"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.meal_prayers",
+      "legacy23": true,
+      "doors": [
+        "daily"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.nightly_examen",
+      "legacy23": true,
+      "doors": [
+        "daily"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.communion_treasury",
+      "legacy23": true,
+      "doors": [
+        "eucharistic"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.novenas",
+      "legacy23": true,
+      "doors": [
+        "novenas"
+      ],
+      "sourceFamily": "novena-programmes",
+      "sourceFiles": [
+        "src/pray/novena-corpus-v4.js",
+        "src/pray/novena-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "CANONICAL_SHARED_LATIN_ONLY__HISTORIC_PROPER_TEXTS_UNCLAIMED",
+      "nextAction": "VALIDATE_NINETEEN_PROGRAMMES_BY_SOURCE_COMPONENT",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.sacred_heart",
+      "legacy23": true,
+      "doors": [
+        "ourlord"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "legacy23": true,
+      "doors": [
+        "ourlord"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "legacy23": true,
+      "doors": [],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.good_death",
+      "legacy23": true,
+      "doors": [
+        "intentions"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.dying_companion",
+      "legacy23": true,
+      "doors": [
+        "intentions"
+      ],
+      "sourceFamily": "traditional-pray",
+      "sourceFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "SHARED_PRAYER_CARD_HAS_DIRECT_LATIN_SWITCH__ITEM_VARIANTS_TO_CHECK",
+      "nextAction": "CENSUS_ALL_TRADITIONAL_STAGES_AND_LANGUAGE_WITNESSES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.divine_mercy",
+      "legacy23": false,
+      "doors": [
+        "chaplets"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/mercy-bead-presentation.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.five_wounds",
+      "legacy23": false,
+      "doors": [
+        "chaplets"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/five-wounds-chaplet.v1.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.precious_blood",
+      "legacy23": false,
+      "doors": [
+        "chaplets"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/precious-blood-chaplet.v1.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.little_crown",
+      "legacy23": false,
+      "doors": [
+        "chaplets"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/little-crown-b30.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "litany_loreto_1962",
+      "legacy23": false,
+      "doors": [
+        "marian"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "marian_memorare",
+      "legacy23": false,
+      "doors": [
+        "marian"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "legacy23": false,
+      "doors": [
+        "marian"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "sub_tuum",
+      "legacy23": false,
+      "doors": [
+        "marian"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "marian_consecration_immaculate_heart",
+      "legacy23": false,
+      "doors": [
+        "marian"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": false,
+        "la": false
+      },
+      "readerLanguageEvidence": "ENGLISH_ONLY_SAME_TEXT_SOURCE__FR_LA_HELD",
+      "nextAction": "IDENTIFY_EXACT_HISTORICAL_SAME_TEXT_WITNESS",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.montfort_consecration",
+      "legacy23": false,
+      "doors": [
+        "novenas"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/montfort-consecration-b26.js",
+        "src/pray/montfort-original-prayers-b27.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "CANONICAL_LATIN_REUSE_RELEASED__HISTORIC_SOURCE_EXCLUDED",
+      "nextAction": "VERIFY_OPTIONAL_SOURCE_COMPONENTS_ACROSS_FOUR_PHASES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.tenebrae",
+      "legacy23": false,
+      "doors": [
+        "ourlord"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/tenebrae-1960.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.st_joseph_seven_sorrows",
+      "legacy23": false,
+      "doors": [
+        "saints"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/st-joseph-seven-sorrows-joys-b24.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "devotion_prayer_st_michael",
+      "legacy23": false,
+      "doors": [
+        "saints"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "devotion_litany_st_joseph",
+      "legacy23": false,
+      "doors": [
+        "saints"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "devotion_st_anthony_lost_items",
+      "legacy23": false,
+      "doors": [
+        "saints"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "legacy23": false,
+      "doors": [
+        "saints"
+      ],
+      "sourceFamily": "canonical-prayer",
+      "sourceFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "canonicalSourceLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "readerLanguageEvidence": "CANONICAL_LATIN_SOURCE__UI_ROUTE_VARIANTS_TO_VERIFY",
+      "nextAction": "VERIFY_CANONICAL_LANGUAGE_CONTROL_ON_EACH_ENTRY_ROUTE",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.occasional_intercessions",
+      "legacy23": false,
+      "doors": [
+        "intentions"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/occasional-intercessions-b20.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    },
+    {
+      "id": "pray.for_priests",
+      "legacy23": false,
+      "doors": [
+        "intentions"
+      ],
+      "sourceFamily": "internal-devotion",
+      "sourceFiles": [
+        "src/pray/priestly-intercessions-b19.js"
+      ],
+      "canonicalSourceLanguages": null,
+      "readerLanguageEvidence": "OWNER_ROUTE_EXISTS__COMPONENT_LANGUAGE_AUDIT_PENDING",
+      "nextAction": "CENSUS_SOURCE_TEXTS_AND_VERIFY_ALL_READER_STAGES",
+      "scope": "SOURCE_OR_OWNER_EVIDENCE_ONLY__NOT_EVERY_VARIANT_BROWSER_TESTED"
+    }
+  ]
+}
