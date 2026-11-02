@@ -79,6 +79,9 @@ export const INLINE_CHANT_CSS=String.raw`
  font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
 .ao-inline-chant-control button:focus-visible{outline:2px solid var(--ao-mass-accent)}
 .ao-reader-paragraph[data-inline-chant-view="text"] .ao-inline-chant-score{display:none}
+.ao-reader-paragraph[data-inline-chant-view="text"]>.ao-line-primary{grid-row:1}
+.ao-reader-paragraph[data-inline-chant-view="text"] .ao-inline-chant-main{grid-row:2}
+.ao-reader-paragraph[data-inline-chant-view="text"]>.ao-line-secondary{grid-row:3}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-status="ready"]{
   border-top:1px solid rgba(165,61,42,.24);
 }
