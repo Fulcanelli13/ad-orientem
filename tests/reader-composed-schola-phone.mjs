@@ -57,6 +57,11 @@ try{
     assert.match(lyric.text,/Kyrie eleison/);
     assert.match(lyric.translation,spec.lang==="fr"?/Seigneur, prenez pitié/:/Lord, have mercy/);
     assert.equal(lyric.classMode,"true");
+    assert.equal(await page.locator(".ao-schola-dock").getAttribute("data-shared"),"false",
+      "Composer's literal lyrics must not be mistaken for duplicate Gregorian central text");
+    assert.equal(await page.locator('[data-role="schola"]').evaluate(el=>getComputedStyle(el).visibility),
+      "visible","Selected composer lyrics must remain visible inside the actual LIVE Schola dock");
+    assert.equal(await page.locator('[data-role="schola-inline-translation"]').isVisible(),true);
     await plan.locator("summary").first().click();
     await page.locator("[data-schola-next]").click();
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.schola?.index===1);
