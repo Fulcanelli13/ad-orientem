@@ -5,6 +5,7 @@ on:
       - "src/home/calendar-gospel-artwork-evidence.js"
       - "data/calendar/research/2026-calendar-gospel-home-artwork-source-crosswalk.v1.json"
       - "tests/calendar-gospel-home-art-2026.mjs"
+      - "tools/calendar/audit-2026-home-calendar-gospel-artwork.mjs"
       - ".github/workflows/home-2026-calendar-gospel-artwork-source.yml"
   workflow_dispatch:
 permissions:
@@ -20,3 +21,27 @@ jobs:
           node-version: "22"
       - name: Calendar 365 identity / Gospel Latin source / artwork editorial rights gates
         run: node tests/calendar-gospel-home-art-2026.mjs
+
+  annual-resolved-mass-gospel-source-audit:
+    runs-on: ubuntu-latest
+    needs: strict-source-joins
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser for actual 1962 DayResolver
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Resolve all 365 2026 days and source-match actual Gospel
+        run: node tools/calendar/audit-2026-home-calendar-gospel-artwork.mjs
+      - name: Preserve per-day source audit for editorial review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2026-calendar-gospel-home-artwork-source-audit
+          path: artifacts/calendar-gospel-home/2026-source-audit.json
+          if-no-files-found: warn
+          retention-days: 14
