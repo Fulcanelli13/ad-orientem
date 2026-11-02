@@ -161,7 +161,11 @@ try{
     "Choosing Regina Cæli must dismiss settings before returning to the prayer");
   assert.equal(await angelusSettings.getAttribute("aria-expanded"),"false",
     "Angelus settings ribbon must reflect the dismissed popover");
-  const angelusFlip=page.locator("#aoPray435930 [data-p435930-card-flip]").first();
+  // Claude Horarium legitimately keeps prayer-card controls hidden behind the opening cover.
+  // Enter the reader before asserting that the language flip is actionable.
+  const reginaBegin=page.locator("#aoPray435930 [data-p435930-angelus-begin]");
+  if(await reginaBegin.isVisible())await reginaBegin.click();
+  const angelusFlip=page.locator("#aoPray435930 [data-p435930-card-flip]:visible").first();
   assert.ok(await angelusFlip.count(),"Regina Caeli lost prayer-language toggle");
   const beforeFlip=await angelusFlip.evaluate(el=>({
     vern:el.querySelector("[data-face-v]")?.hidden??null,
