@@ -35,6 +35,8 @@ assert.deepEqual(novenaTextSlotsV1({days:[{text:{en:"Original",la:"Latine"}}]})
   .map(x=>x.languages),[{en:true,fr:false,la:true}]);
 const runtime=readFileSync(new URL("../src/pray/novena-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/data-n1-common-latin aria-pressed/);
+assert.ok(runtime.includes("compact?commonLanguageControl(n)"),"Latin switch belongs to the collapsed day chooser, not above the prayer card");
+assert.ok(!runtime.includes("${modeNav()}${commonLanguageControl(n)}"),"A new banner must not displace the prayer card on a 320px phone");
 assert.match(runtime,/N\.commonLatin\?\x27 hidden\x27/);
 assert.match(runtime,/only traditional shared prayers|Only traditional shared prayers/);
 assert.match(runtime,/no Latin translation is claimed/);
