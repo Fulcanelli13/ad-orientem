@@ -47,6 +47,22 @@ function info(a,img){
   return {title:a.title,artist:a.artist,date:a.date??"",rights:a.license??a.rights??"",
     source:a.sourcePage,image:img.currentSrc||img.src};
 }
+// Exact Met originals with user-approved frame-free phone crops (2 November 2026).
+export const C3_APPROVED_MET_PRAYER_ART=Object.freeze({
+  angelus:Object.freeze({title:"The Annunciation",artist:"Philippe de Champaigne",
+    source:"https://www.metmuseum.org/art/collection/search/438724",
+    original:"assets/home/c3-approved-met/angelus-met-438724.jpg",
+    image:"assets/home/c3-approved-met/angelus-frameless.webp"}),
+  adoration:Object.freeze({title:"The Virgin Adoring the Host",artist:"Jean Auguste Dominique Ingres",
+    source:"https://www.metmuseum.org/art/collection/search/438434",
+    original:"assets/home/c3-approved-met/adoration-met-438434.jpg",
+    image:"assets/home/c3-approved-met/adoration-frameless.webp"})
+});
+function approvedC3Artwork(page){
+  if(page?.id==="adoration"||page?.route==="pray.adoration")return C3_APPROVED_MET_PRAYER_ART.adoration;
+  if(String(page?.id??"").startsWith("angelus."))return C3_APPROVED_MET_PRAYER_ART.angelus;
+  return null;
+}
 export function c3PrayerMarkup({fr=false,feature=null,attrs="",role="",title="",description="",due=""}={}){
   const first=feature?.id??"prayer.library";
   const alternatives=[
@@ -60,7 +76,8 @@ export function c3PrayerMarkup({fr=false,feature=null,attrs="",role="",title="",
     ...alternatives.filter(item=>item.route!==selectedRoute).slice(0,3).map(item=>({...item,action:'data-home-cu-route="'+item.route+'"'}))];
   return '<div class="aoC3PrayerFrame" data-home-c3-prayer-deck data-c3-feature="'+esc(first)+'">'+
     pages.map((s,i)=>'<article class="aoC3PrayerSlide" data-home-c3-slide="'+i+'"'+(i?' hidden aria-hidden="true"':' aria-hidden="false"')+'>'+
-      '<div class="aoC3PrayerArt" aria-hidden="true" data-c3-prayer-art="'+esc(s.id)+'"></div>'+
+      '<div class="aoC3PrayerArt" aria-hidden="true" data-c3-prayer-art="'+esc(s.id)+'">'+
+        (approvedC3Artwork(s)?'<img class="aoC3ApprovedMetPhoto" src="'+esc(approvedC3Artwork(s).image)+'" alt="" loading="lazy" decoding="async" data-approved-met-art="true">':'')+'</div>'+
       '<button type="button" class="'+(i===0?'aoH4Prayer np ':'')+'aoC3PrayerAction" '+s.action+'>'+
       '<span class="aoC3PrayerRole">'+esc(s.role)+'</span><strong>'+esc(s.title)+'</strong><small>'+esc(s.desc)+'</small>'+
       '<span class="aoC3Arrow" aria-hidden="true">›</span></button>'+
@@ -135,6 +152,18 @@ export function hydrateC3Art(root,state,win=globalThis){
       mainInfo.__c3Artwork=info(a,mainImg);mainInfo.hidden=false;
     }
   }
+  // User-approved, full-scene Met artworks are released only in the Home Prayer carousel.
+  for(const art of home.querySelectorAll("[data-c3-prayer-art]")){
+    const name=art.dataset.c3PrayerArt;
+    const data=approvedC3Artwork({id:name});
+    const photo=art.querySelector("img[data-approved-met-art]");
+    const infoButton=art.parentElement?.querySelector('[data-home-c3-info="prayer"]');
+    if(!photo||!data||!infoButton)continue;
+    infoButton.__c3Artwork={title:data.title,artist:data.artist,date:"",
+      rights:"Met Open Access · public domain (CC0); approved frame-free display crop",
+      source:data.source,image:data.original};
+    infoButton.hidden=false;
+  }
   for(const slot of home.querySelectorAll("[data-home-c3-week-art]")){
     const a=certifiedWeekArt(p,slot.dataset.homeC3WeekArt);
     const button=slot.parentElement?.querySelector('[data-home-c3-info="week"]');
@@ -146,8 +175,6 @@ export function hydrateC3Art(root,state,win=globalThis){
     slot.replaceChildren(img);
     if(button){button.__c3Artwork=info(a,img);button.hidden=false;}
   }
-  // Prayer paintings are not promoted until independently cleared for frame,
-  // reproduction rights and the selected prayer's exact subject.
   return true;
 }
 export function showC3ArtInfo(root,button){

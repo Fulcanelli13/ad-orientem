@@ -1,0 +1,38 @@
+name: Approved Met Angelus and Adoration — release phone verification
+on:
+  pull_request:
+    paths:
+      - "assets/home/c3-approved-met/**"
+      - "src/home/c3-gallery.js"
+      - "src/home/c3-styles.js"
+      - "tests/home-c3-gallery.mjs"
+      - "tests/home-c3-met-release-phone.mjs"
+      - "tests/home-c3-met-release-integrity.mjs"
+      - ".github/workflows/home-c3-met-release-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  approved-met-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/home-c3-met-release-integrity.mjs
+      - run: node tests/home-c3-gallery.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify actual 320px and 390px Home carousel with approved Met photos
+        run: node tests/home-c3-met-release-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: approved-met-two-release-phone-qa
+          path: artifacts/approved-met-two-home-qa/
+          retention-days: 14
+          if-no-files-found: warn

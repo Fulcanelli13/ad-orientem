@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {c3PrayerMarkup,c3UpcomingMarkup,selectC3PrayerSlide,hydrateC3Art,c3ApprovedDatedHomeArt} from "../src/home/c3-gallery.js";
+import {c3PrayerMarkup,c3UpcomingMarkup,selectC3PrayerSlide,hydrateC3Art,c3ApprovedDatedHomeArt,C3_APPROVED_MET_PRAYER_ART} from "../src/home/c3-gallery.js";
 import {HOME_C3_CSS} from "../src/home/c3-styles.js";
 
 // Today must use the exact user-selected Class I painting already present in
@@ -58,6 +58,18 @@ assert.ok(prayer.includes('data-c3-feature="angelus.evening"'));
 assert.ok(!prayer.includes("pray.rosary"),"The single Rosary personal-rule chip must not duplicate in C3");
 assert.ok(prayer.includes('hidden aria-hidden="true"'));
 assert.ok(!prayer.includes("Montfort · 33"),"No fictional progress on Home");
+
+// Two exact previously approved and user-crop-approved Met paintings.
+const metPrayer=c3PrayerMarkup({feature:{id:"angelus.evening"},
+  attrs:'data-home-cu-route="pray.angelus_regina"',title:"Angelus",role:"Prayer"});
+assert.ok(metPrayer.includes("angelus-frameless.webp"));
+assert.ok(metPrayer.includes("adoration-frameless.webp"));
+assert.equal((metPrayer.match(/data-approved-met-art="true"/g)||[]).length,2);
+assert.match(C3_APPROVED_MET_PRAYER_ART.angelus.source,/438724$/);
+assert.match(C3_APPROVED_MET_PRAYER_ART.adoration.source,/438434$/);
+assert.ok(HOME_C3_CSS.includes("object-fit:contain"));
+assert.equal((c3PrayerMarkup({feature:{id:"prayer.library"}}).match(/angelus-frameless.webp/g)||[]).length,0);
+assert.equal((c3PrayerMarkup({feature:{id:"prayer.library"}}).match(/adoration-frameless.webp/g)||[]).length,1);
 
 const french=c3PrayerMarkup({fr:true,attrs:'data-home-cu-route="pray.library"',role:"Prière",title:"Livre de prières",description:"Aujourd’hui"});
 assert.ok(french.includes("Confession"));assert.ok(french.includes("Choisir une prière"));
