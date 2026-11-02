@@ -34,6 +34,18 @@ assert.equal(pick(paragraph,{...model,publication:"RESEARCH_ONLY"}),null);
 assert.equal(pick(paragraph,{...model,riteScope:"REQUIEM"}),null);
 assert.equal(pick(paragraph,model,{form:"LOW"}),null);
 assert.equal(pick(paragraph,model,{approvedScores:[model,model]}),null);
+// A special-rite cue remains a source-owned paragraph rather than a new
+// musical dock or a fabricated AO.SM.C... ordinary cue.
+const special={...model,sourceCueId:"AO.ASP.R02.C010",
+ sourceCueIds:["AO.ASP.R02.C010"],selectionKey:"ASPERSION",
+ settingId:"ASPERGES_ME_ORDINARY",
+ sourceLatin:"Asperges me, Domine."};
+const specialRow={id:"AO.ASP.R02.P1",kind:"TEXT",
+ sourceCueIds:["AO.ASP.R02.C010"],primary:special.sourceLatin};
+assert.equal(pick(specialRow,special,{selectedSettings:{
+ ASPERSION:"ASPERGES_ME_ORDINARY"}})?.sourceCueId,"AO.ASP.R02.C010");
+assert.equal(pick({...specialRow,sourceCueIds:["AO.ASP.R02.C011"]},
+ special,{selectedSettings:{ASPERSION:"ASPERGES_ME_ORDINARY"}}),null);
 const proper={...model,selectionKey:"PROPER_INTROIT",settingId:"PROPER-ALL-SAINTS",
  sourceCueId:null,sourceCueIds:[],sourceParagraphId:"PROPER.INTROIT.SOLEMN",
  sourceBlockId:"AO.PROP.INTROIT",sourceLatin:"Gaudeamus omnes in Domino.",
