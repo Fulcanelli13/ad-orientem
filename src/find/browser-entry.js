@@ -998,7 +998,10 @@ export function createFindOwner(win=globalThis){
     state.networkLimit=previous.limit;
     state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
     state.journeyOpen=false;journeyPreviousCategories=null;
-    lastMapView=null;lastMapLens=null;nearbyResults=null;
+    // Crossing to the text-only Traditions reader unmounts MapLibre.
+    // Returning creates exactly one fresh map at the previously saved camera.
+    lastMapView=previous.camera;lastMapLens=previous.camera?"heritage":null;
+    nearbyResults=null;
     void paint();return true;
   }
 
@@ -1378,6 +1381,7 @@ export function createFindOwner(win=globalThis){
       networkCustomReturn={
         query:state.query,focus:state.networkFocus,kind:state.networkKind,
         search:state.networkSearch,limit:state.networkLimit,
+        camera:mapViewport(mapHandle?.map),
       };
       queryByLens.set("heritage",state.query);
       state.lens="traditions";state.view="list";state.query="";
