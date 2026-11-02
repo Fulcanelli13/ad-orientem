@@ -176,6 +176,12 @@ try{
     return {heroBottom:image?.bottom,titleTop:title?.top,titleBottom:title?.bottom,
       summaryTop:summary?.top};
    });
+   assert.equal(await full.locator(":scope > .aoExploreLead").first().count(),1,
+    "Alternate Place names must remain readable, but appear after the hero and source-backed summary");
+   const altBelow=await full.locator(":scope > .aoExploreLead").first().evaluate(el=>
+     el.getBoundingClientRect().top);
+   assert.ok(altBelow>=hierarchy.summaryTop,
+    "Alternate Place names must never precede the photographic hero");
    assert.ok(hierarchy.heroBottom<=hierarchy.titleTop+8,
     "Approved screen 3 requires the photograph ABOVE the Place title: "+JSON.stringify(hierarchy));
    assert.ok(hierarchy.titleBottom<=hierarchy.summaryTop+8,
