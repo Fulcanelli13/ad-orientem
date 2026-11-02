@@ -62,10 +62,10 @@ try{
     const map=document.querySelector("#ao-find-modular-root .aoHeritageSurface .aoFindMap");
     const r=map?.getBoundingClientRect(),root=document.querySelector("#ao-find-modular-root");
     const search=document.querySelector(".aoHeritageSurface .aoHeritageTools")?.getBoundingClientRect();
-    const categories=document.querySelector(".aoHeritageSurface .aoHeritageCategories")?.getBoundingClientRect();
+    const entrances=document.querySelector(".aoHeritageSurface .aoAtlasPrimaryTabs")?.getBoundingClientRect();
     return {mapWidth:Math.round(r?.width||0),mapHeight:Math.round(r?.height||0),
      mapTop:Math.round(r?.top||0),searchBottom:Math.round(search?.bottom||0),
-     categoriesBottom:Math.round(categories?.bottom||0),
+     entrancesBottom:Math.round(entrances?.bottom||0),
      documentOverflow:Math.round(document.documentElement.scrollWidth-innerWidth),
      canvas:Boolean(map?.querySelector("canvas.maplibregl-canvas")),
      status:map?.dataset?.aoMapState||null,
@@ -74,8 +74,8 @@ try{
    assert.ok(measures.mapWidth>=(mobile?280:600),"Map is too narrow at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.mapHeight>=(mobile?729:810),
      "A immersive map must use nearly all remaining viewport height "+JSON.stringify(measures));
-   assert.ok(measures.mapTop<measures.searchBottom&&measures.mapTop<measures.categoriesBottom,
-     "A search/categories must FLOAT OVER the map, not push it down "+JSON.stringify(measures));
+   assert.ok(measures.mapTop<measures.searchBottom&&measures.mapTop<measures.entrancesBottom,
+     "Approved search and three Atlas entrances must FLOAT OVER the map, not push it down "+JSON.stringify(measures));
    assert.ok(measures.mapHeight>=300,"Map is too short at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.documentOverflow<=1,"Document overflow at "+width+": "+JSON.stringify(measures));
    assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
