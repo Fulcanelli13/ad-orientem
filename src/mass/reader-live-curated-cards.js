@@ -217,7 +217,7 @@ function conditionalPreGospelSpec(card){
   });
 }
 
-function curated(card){
+function curated(card,corpusFamily="SUNG"){
   const spec=GROUPS[sourceId(card)]??conditionalPreGospelSpec(card);
   if(!spec)return [Object.freeze({title:card.title,paragraphs:card.paragraphs,
     blocks:card.blocks,ordinal:1})];
@@ -251,8 +251,12 @@ function curated(card){
     const omittedJudica=sourceId(card)==="AO.CARD.001" && i===0 &&
       (card.blocks??[]).some(b=>b.blockId==="AO.SM.B003" &&
         b.omittedByRite==="RITUS_XIII_1_REQUIEM");
+    // A Low Mass recites Gloria and Credo; it does not intone them.
+    const title=String(corpusFamily).toUpperCase()==="LOW"
+      ? spec.titles[i].replace("The Celebrant's Intonation","Opening")
+      : spec.titles[i];
     return Object.freeze({
-      title:omittedJudica?"At the Foot of the Altar · Introibo":spec.titles[i],
+      title:omittedJudica?"At the Foot of the Altar · Introibo":title,
       paragraphs,blocks,ordinal:i+1,
     });
   });
@@ -273,7 +277,7 @@ export function projectCuratedOrdinaryLiveCards(model){
   for(const sourceCard of model.cards){
     const id=sourceId(sourceCard);
     visited.add(id);
-    const chunks=sourceCard.paragraphs.length?curated(sourceCard):
+    const chunks=sourceCard.paragraphs.length?curated(sourceCard,model.corpusFamily):
       [{title:sourceCard.title,paragraphs:[],blocks:sourceCard.blocks,ordinal:1}];
     if(JSON.stringify(chunks.flatMap(chunk=>chunk.paragraphs.map(p=>p.id)))!==
       JSON.stringify(sourceCard.paragraphs.map(p=>p.id)))
