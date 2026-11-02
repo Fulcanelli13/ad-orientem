@@ -1235,7 +1235,8 @@ try{
       assert.equal(mount.status,"true",form+" fixture failed to mount: "+mount.error);
       const result=await page.evaluate(form=>{
         const api=window.__AO_PHONE_PREVIEW;
-        const base={cards:api.model.totalCards,sourceCards:api.sourceModel.totalCards};
+        const base={cards:api.model.totalCards,sourceCards:api.sourceModel.totalCards,
+          corpusFamily:api.model.corpusFamily,structureOwner:api.model.structureOwner};
         if(form==="LOW"){
           return {...base,scholaAbsent:api.getScholaState()?.structuralAbsence===true,
             observes:api.observePriestCeremonialEvent("MC-OBS-INT-POS",{
@@ -1308,7 +1309,13 @@ try{
         assert.equal(result.scholaUnchanged,true);
         assert.equal(result.reset,null);
       }else{
-        assert.notEqual(result.cards,65,"Low Mass unexpectedly selected the Sung review");
+        assert.equal(result.cards,65,
+          "Low LIVE must use the 65-card layout with its own Low corpus");
+        assert.equal(result.sourceCards,39,
+          "Low canonical source model must remain 39 sections");
+        assert.equal(result.corpusFamily,"LOW",
+          "Low Mass must not inherit Sung text or source ownership");
+        assert.equal(result.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
         assert.equal(result.scholaAbsent,true);
         assert.equal(result.observes,false,
           "Low Mass accepted source-only Sung celebrant event");
