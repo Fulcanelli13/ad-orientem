@@ -51,6 +51,17 @@ try{
    for(const photo of angelus)assert.ok(photo.naturalWidth>1500&&photo.naturalHeight>1500&&/angelus-frameless-candidate\.webp$/.test(photo.src),"Angelus photo missing/invalid");
    assert.ok(facts.documentWidth-facts.viewport<=1,"Home overflows "+width+"px viewport");
    await page.screenshot({path:resolve(dir,"home-met-c3-"+width+".png"),animations:"disabled",fullPage:true});
+   const adorationSlide=await page.locator(".homeScreen.aoH7Screens .aoC3PrayerSlide").evaluateAll(
+     slides=>slides.findIndex(slide=>!!slide.querySelector('img[src*="adoration-frameless-candidate.webp"]')));
+   assert.ok(adorationSlide>=0,"Adoration slide missing in Home Prayer carousel");
+   await page.locator(".homeScreen.aoH7Screens [data-home-c3-prayer-step='"+adorationSlide+"']").click();
+   const presented=await page.locator(".homeScreen.aoH7Screens .aoC3PrayerSlide").nth(adorationSlide).evaluate(slide=>{
+     const img=slide.querySelector("img"),r=img.getBoundingClientRect();
+     return {visible:!slide.hidden&&r.width>0&&r.height>0,objectFit:getComputedStyle(img).objectFit,
+             width:img.naturalWidth,height:img.naturalHeight};
+   });
+   assert.ok(presented.visible&&presented.objectFit==="contain","Adoration must show complete original painting composition");
+   await page.screenshot({path:resolve(dir,"home-met-c3-adoration-"+width+".png"),animations:"disabled",fullPage:true});
    cases.push({width,status:"TECHNICAL_PASS",facts,scriptErrors:errors,sourceImageOrCropUserApproved:false});
    console.log("PASS C3 Home",width,"Adoration decoded; Angelus slides=",angelus.length);
   }catch(e){
