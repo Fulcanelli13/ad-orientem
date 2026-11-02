@@ -1,5 +1,5 @@
 /**
- * Only exact Met photographs released through PR #2277.
+ * Exact source photographs cleared for publication; Met PR #2277 and NGA PR #2293.
  * This asset list is distinct from approved editorial paintings and research archives.
  */
 export const RELEASED_MODULE_PAINTINGS=Object.freeze({
@@ -20,6 +20,15 @@ export const RELEASED_MODULE_PAINTINGS=Object.freeze({
     image:"assets/home/c3-approved-met/adoration-frameless.webp",
     photographRights:"Met Open Access · public domain (CC0)",
     releasePr:2277
+  }),
+  confession:Object.freeze({
+    title:"The Return of the Prodigal Son",
+    artist:"Bartolomé Esteban Murillo",
+    source:"https://www.nga.gov/artworks/34956-return-prodigal-son",
+    original:"assets/prayer/released/confession-murillo-nga-original.jpg",
+    image:"assets/prayer/released/confession-murillo-nga-original.jpg",
+    photographRights:"National Gallery of Art Open Access · public domain (CC0)",
+    releasePr:2293
   })
 });
 export function releasedModulePhoto(id){
