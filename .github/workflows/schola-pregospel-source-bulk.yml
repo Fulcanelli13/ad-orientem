@@ -1,0 +1,45 @@
+name: Schola pinned pre-Gospel source bulk
+
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-schola-pre-gospel-source-boundary.js'
+      - 'tests/reader-schola-pre-gospel-source-boundary.mjs'
+      - 'tools/mass/reader-schola-pre-gospel-source-bulk.mjs'
+      - 'tools/mass/reader-schola-selected-calendar-audit.mjs'
+      - '.github/workflows/schola-pregospel-source-bulk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pre-gospel-1962:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source-boundary regression (Advent, Paschal, Lent, inheritance)
+        run: |
+          node tests/reader-schola-pre-gospel-source-boundary.mjs
+          node tests/reader-proper-gabc-bulk-join.mjs
+          node tests/reader-schola-selected-calendar-audit.mjs
+      - name: Prepare existing browser source resolver
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Classify 2026 pre-Gospel score roles from pinned selected sources
+        run: node tools/mass/reader-schola-pre-gospel-source-bulk.mjs
+      - name: Preserve evidence and exception register
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-pregospel-2026-pinned-source-reconciliation
+          path: |
+            artifacts/mass/schola-1962-pregospel-pinned-source-2026-01-01_2026-12-31.json
+            artifacts/mass/schola-1962-selected-calendar-2026-01-01_2026-12-31.json
+          retention-days: 14
+          if-no-files-found: warn
