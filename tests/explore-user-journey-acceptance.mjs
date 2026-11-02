@@ -204,7 +204,17 @@ try{
       mode+" must expose its source/scope qualification");
      await assertP6Canvas(mode+" "+direction);
      if(direction==="forward")await capture("p6-"+mode);
-     await root.locator(cfg.close).click();
+     if(direction==="reverse"){
+      // The More disclosure is a separate keyboard layer, so Escape closes
+      // it first when necessary; a subsequent Escape closes the active panel.
+      const menu=root.locator(".aoHeritageMore");
+      if(await menu.getAttribute("open")!==null){
+       await page.keyboard.press("Escape");
+       assert.equal(await menu.getAttribute("open"),null,"Escape should close More before the active panel");
+       assert.equal(await root.locator(cfg.panel).count(),1,"Escape from More must retain the active panel");
+      }
+      await page.keyboard.press("Escape");
+     }else await root.locator(cfg.close).click();
      await root.locator(cfg.panel).waitFor({state:"detached",timeout:20000});
      await assertP6Canvas(mode+" return");
     }
@@ -212,7 +222,7 @@ try{
    assert.equal(await root.locator(".aoJourneyPanel,.aoTimeMassPanel,.aoNetworkPanel,.aoAtlasCoveragePanel").count(),0);
    assert.ok(await root.locator("[data-mapcn-discover-rail]").count()>0,
     "Discover must be restored after each P6 mode round trip");
-   note.steps.push("P6 Discover → Time & Mass → Atlas Layers → Connections → Pilgrimages → Discover and reverse; one map canvas, exclusive sourced panels, no overflow");
+   note.steps.push("P6 forward/back and keyboard Escape return across five surfaces; one MapLibre canvas, exclusive sourced panels, no overflow");
 
    // Continue from this same Explore destination to Mass without hidden menus.
    await root.locator(".aoHeritageMassShortcut").click();
