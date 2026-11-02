@@ -168,9 +168,7 @@ function illustratedGuideHtml(profile,language){
 function placeSheet(vm){
   const profile=vm.selectedPlace;if(!profile)return "";
   let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet'+(profile.editorial_feature?' aoExplorePlaceEditorial':'')+'" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
-  html+='<header><div><small>'+(vm.journeyOpen?esc(L(vm.language,"PILGRIMAGE PLACE","LIEU DE PÈLERINAGE"))+' · ':(profile.editorial_feature?esc(L(vm.language,"IN FOCUS","À DÉCOUVRIR"))+' · ':""))+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
-  if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
-  html+='</div><button type="button" data-find-close-place aria-label="'+esc(vm.journeyOpen?L(vm.language,"Return to pilgrimage journey","Retour au parcours de pèlerinage"):L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
+
 
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
@@ -179,6 +177,51 @@ function placeSheet(vm){
     html+='<figcaption>'+esc(profile.media.credit)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a> · <a href="'+esc(profile.media.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(profile.media.license)+'</a> · '+esc(vm.language==="fr"?profile.media.changes_fr:profile.media.changes_en)+'</figcaption></figure>';
   }
   if(!profile.media)html+=renderSacredPlaceFallback(profile,vm.language,"detail");
+  html+='<header><div><small>'+(vm.journeyOpen?esc(L(vm.language,"PILGRIMAGE PLACE","LIEU DE PÈLERINAGE"))+' · ':(profile.editorial_feature?esc(L(vm.language,"IN FOCUS","À DÉCOUVRIR"))+' · ':""))+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
+  if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
+  html+='</div><button type="button" data-find-close-place aria-label="'+esc(vm.journeyOpen?L(vm.language,"Return to pilgrimage journey","Retour au parcours de pèlerinage"):L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  // The approved screen-3 hierarchy uses ONLY canonical Place/Calendar/Saints
+  // evidence. Do not infer apparition recognition or make unreviewed claims.
+  const prototypeTypes=[
+    profile.counts?.shrines?L(vm.language,"Shrine","Sanctuaire"):null,
+    profile.counts?.apparitions?L(vm.language,"Apparition","Apparition"):null,
+    profile.counts?.pilgrimages?L(vm.language,"Pilgrimage","Pèlerinage"):null,
+    profile.counts?.relics?L(vm.language,"Relics","Reliques"):null,
+  ].filter(Boolean);
+  const prototypeSynopsis=sacredPlaceSynopsis(profile,{
+    maxLength:225,language:vm.language,
+    preferredCategory:arr(vm.filters?.heritageCategories).length===1
+      ?vm.filters.heritageCategories[0]:null,
+  });
+  html+='<section class="aoAtlasPlaceSummary" aria-label="'+esc(L(vm.language,"Place overview","Présentation du lieu"))+'">';
+  if(prototypeTypes.length)html+='<div class="aoAtlasPlaceTags">'+prototypeTypes.map(label=>'<span>'+esc(label)+'</span>').join('')+'</div>';
+  if(prototypeSynopsis)html+='<p class="aoAtlasPlaceSynopsis">'+esc(prototypeSynopsis)+'</p>';
+  if(arr(profile.calendar).length||arr(profile.saints).length){
+    html+='<section class="aoAtlasPlaceGlance"><h3>'+esc(L(vm.language,"AT A GLANCE","EN BREF"))+'</h3>';
+    for(const event of arr(profile.calendar).slice(0,2)){
+      html+='<div class="aoAtlasPlaceGlanceRow"><div><strong>'+esc(L(vm.language,"Feast or observance","Fête ou célébration"))+'</strong>'
+        +'<small>'+esc(event.title)+(event.date_label?' · '+esc(event.date_label):'')+'</small></div>'
+        +(event.date?'<button type="button" data-explore-calendar-date="'+esc(event.date)+'">'+esc(L(vm.language,"Calendar ›","Calendrier ›"))+'</button>':'')+'</div>';
+    }
+    for(const name of arr(profile.saints).slice(0,2))
+      html+='<div class="aoAtlasPlaceGlanceRow"><div><strong>'+esc(name)+'</strong><small>'+esc(L(vm.language,"Documented associated saint","Saint associé, attesté"))+'</small></div></div>';
+    html+='</section>';
+  }
+  html+='</section>';
+
+  if(arr(profile.related_places).length){
+    html+='<section class="aoExplorePlaceGroup aoAtlasPlaceConnections" data-explore-related-places><small>'+esc(L(vm.language,"CONNECTIONS","LIENS"))+'</small><div class="aoExplorePlaceRows">';
+    for(const related of profile.related_places){
+      const description=vm.language==="fr"?related.description_fr:related.description_en;
+      html+='<button type="button" class="aoExplorePlaceRow" data-explore-open-place="'+esc(related.place_id)+'">'
+        +'<span><strong>'+esc(related.title)+'</strong>'
+        +(description?'<small>'+esc(description)+'</small>':"")
+        +(related.address_label?'<small>'+esc(related.address_label)+'</small>':"")
+        +'</span></button>';
+    }
+    html+='</div></section>';
+  }
+
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
   // Reciprocal navigation is restricted to independently documented canonical
@@ -262,7 +305,7 @@ function placeSheet(vm){
       html+='</div></article>';
     }
     html+='</section>';
-  }else if(!hasEditorialIntro&&synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  }else if(!hasEditorialIntro&&synopsis&&!prototypeSynopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
   if(hasTreasures)html+=renderPlaceSacredTreasures(profile,vm.language);
   if(hasSiteCustoms)html+=renderPlaceCustoms(profile,vm.language);
   if(hasGallery)html+=placeGalleryHtml(profile,vm.language);
@@ -270,18 +313,7 @@ function placeSheet(vm){
   if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
   if(!chapters.length&&!synopsis&&!hasEditorialIntro&&!hasTreasures)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
 
-  if(arr(profile.related_places).length){
-    html+='<section class="aoExplorePlaceGroup" data-explore-related-places><small>'+esc(L(vm.language,"RELATED PLACES","LIEUX ASSOCIÉS"))+'</small><div class="aoExplorePlaceRows">';
-    for(const related of profile.related_places){
-      const description=vm.language==="fr"?related.description_fr:related.description_en;
-      html+='<button type="button" class="aoExplorePlaceRow" data-explore-open-place="'+esc(related.place_id)+'">'
-        +'<span><strong>'+esc(related.title)+'</strong>'
-        +(description?'<small>'+esc(description)+'</small>':"")
-        +(related.address_label?'<small>'+esc(related.address_label)+'</small>':"")
-        +'</span></button>';
-    }
-    html+='</div></section>';
-  }
+
 
   if(arr(profile.saints).length){
     html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"ASSOCIATED SAINTS","SAINTS ASSOCIÉS"))+'</small><p>'+esc(profile.saints.join(" · "))+'</p></section>';
