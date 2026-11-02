@@ -1,0 +1,385 @@
+{
+  "schema": "ao.pray.multitext-reader-crosswalk.v1",
+  "source": "data/pray/prayer-language-route-matrix.v1.json",
+  "purpose": "Prevent false 41-route = complete stage-language claims; bind 32 multi-text Prayer destinations to actual renderers and text-bearing stage helpers.",
+  "summary": {
+    "multiTextRoutes": 32,
+    "completeTextFaceCertification": false
+  },
+  "invariants": [
+    "No new translations or sacred text copies",
+    "Source presence does not establish equivalence of historical editions",
+    "Rosary signature bead ownership unchanged",
+    "This artifact does not certify every reader face or mobile variant"
+  ],
+  "routes": [
+    {
+      "route": "pray.rosary",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderRosary",
+      "stageHelpers": [
+        "setRosaryPrayerLanguage",
+        "toggleRosaryPrayerLanguage"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.angelus_regina",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderAngelus",
+      "stageHelpers": [
+        "angelusChoice"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.confession",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderConfession",
+      "stageHelpers": [
+        "confessionSingleCard",
+        "confessionContritionPicker"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.benediction",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderBenediction",
+      "stageHelpers": [
+        "benSungPrayer",
+        "benLiturgicalPrayer",
+        "benFeastPrayer"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.adoration",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderAdoration",
+      "stageHelpers": [
+        "adorationFourOptionalMarkup",
+        "guidedStage",
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.stations",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderStations",
+      "stageHelpers": [
+        "stationFlip",
+        "stationResponse"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.library",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderLibrary",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.penitential_psalms",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderPenitential",
+      "stageHelpers": [
+        "loadScriptureInto"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.litany_saints",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderLitany",
+      "stageHelpers": [
+        "ensureLitany",
+        "litanySourceDisclosure"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.seven_words",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderSevenWords",
+      "stageHelpers": [
+        "sourceWitnessParagraphs",
+        "loadScriptureInto"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.forty_hours",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFortyHours",
+      "stageHelpers": [
+        "renderFortySolemn",
+        "fortyStageBody"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "programme.first_friday",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFirstFriday",
+      "stageHelpers": [
+        "firstFridayStage",
+        "firstMonthlyDirectPrayers"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "programme.first_saturday",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFirstSaturday",
+      "stageHelpers": [
+        "firstSaturdayStage",
+        "firstMonthlyDirectPrayers"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.morning_evening",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderMorningEvening",
+      "stageHelpers": [
+        "renderDailyGuided",
+        "prayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.meal_prayers",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderMealPrayers",
+      "stageHelpers": [
+        "sourcedPrayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.nightly_examen",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderNightlyExamen",
+      "stageHelpers": [
+        "prayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.communion_treasury",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderCommunionTreasury",
+      "stageHelpers": [
+        "sourcedPrayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.novenas",
+      "owner": "src/pray/novena-runtime.js",
+      "renderer": "renderDay",
+      "stageHelpers": [
+        "sourceWitness",
+        "commonLanguageControl",
+        "canonicalPrayer"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.sacred_heart",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderSacredHeart",
+      "stageHelpers": [
+        "sourcedPrayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.holy_name_litany",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderHolyName",
+      "stageHelpers": [
+        "existingLatinSwitch"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.sacred_hymns",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderHymns",
+      "stageHelpers": [
+        "sourcedPrayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.good_death",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderGoodDeath",
+      "stageHelpers": [
+        "sourcedPrayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.dying_companion",
+      "owner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderDyingCompanion",
+      "stageHelpers": [
+        "sourcedPrayerCard"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.divine_mercy",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderMercy",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.five_wounds",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFiveWounds",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.precious_blood",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderPreciousBlood",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.little_crown",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderLittleCrown",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.montfort_consecration",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderMontfortB26",
+      "stageHelpers": [
+        "renderMontfortHistoricalB27",
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.tenebrae",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderTenebrae",
+      "stageHelpers": [
+        "renderTenebraeBody"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.st_joseph_seven_sorrows",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderJosephSeven",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.occasional_intercessions",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderOccasionalIntercessions",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    },
+    {
+      "route": "pray.for_priests",
+      "owner": "src/pray/presentation-runtime.js",
+      "renderer": "renderPriestIntercessions",
+      "stageHelpers": [
+        "prayerBlock"
+      ],
+      "audit": "READER_ENTRYPOINT_AND_STAGE_HELPER_EVIDENCE_ONLY",
+      "sourceLanguageWitnesses": "REQUIRES_COMPONENT_BY_COMPONENT_COLLATION",
+      "browser": "PENDING_EN_FR_LA_FACE_AND_320_390_ACCEPTANCE"
+    }
+  ]
+}
