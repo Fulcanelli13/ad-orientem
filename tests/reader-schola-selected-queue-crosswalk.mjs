@@ -29,6 +29,7 @@ const queue={
 };
 const active={
  date:dates[0],principalId:"test-principal",sourcePath:path,
+ sourceExistsInPinnedLatinTree:true,resolverStatus:"ready",properStatus:"ready",
  status:"SOURCE_MATCHED_FOR_REVIEW",tracks:[{
  role:"INTROIT",part:"in",sourceGroup:null,
  status:"UNIQUE_SOURCE_TEXT_CANDIDATE",
