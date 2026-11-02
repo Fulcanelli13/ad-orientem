@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import {SACRED_MUSIC_WORKS,sacredMusicWork,sacredMusicProgramme} from "../src/mass/sacred-music-works.js";
 import {readFile} from "node:fs/promises";
 import {sungTextForMovement,sungTextCoverage} from "../src/mass/sacred-music-sung-texts.js";
+import {SHARED_REQUIEM_TEXT_UNITS,sharedRequiemTextUnit,REQUIEM_TEXT_TRACK_XWALK} from "../src/mass/shared-requiem-text-units.js";
+import {SACRED_MUSIC_TEXT_PLANS} from "../src/mass/sacred-music-sung-texts.js";
 assert.equal(SACRED_MUSIC_WORKS.length,4,"Four curated work families");
 const counts={"faure-requiem-op48":7,"durufle-requiem-op9":9,
   "mozart-requiem-k626":14,"palestrina-missa-pro-defunctis":4};
@@ -44,6 +46,23 @@ for(const m of faure.movements){
  for(const line of text.lines){assert.ok(line.latin&&line.en&&line.fr,"Untranslated verse "+m.title);totalPairs++;}
 }
 assert.equal(totalPairs,60,"All Latin-translation pairs must be preserved");
+assert.equal(Object.keys(SHARED_REQUIEM_TEXT_UNITS).length,48,
+  "60 sung uses share 48 distinct canonical text+translation units");
+const plan=SACRED_MUSIC_TEXT_PLANS[faure.id];
+assert.equal(plan.length,7,"All Fauré movements need source-linked sequences");
+const references=plan.flatMap(m=>m.textIds);
+assert.equal(references.length,60);
+assert.equal(new Set(references).size,48,"Repeated lines must point to the SAME registry unit");
+for(const id of references){
+ const line=sharedRequiemTextUnit(id);
+ assert.ok(line?.latin&&line.en&&line.fr,"Missing shared text "+id);
+}
+assert.equal(REQUIEM_TEXT_TRACK_XWALK.PIE_JESU_SEQUENCE_EXCERPT,null,
+  "Fauré Pie Jesu alone must never stand in for a full sung Dies irae");
+assert.equal(REQUIEM_TEXT_TRACK_XWALK.ABSOLUTION_RESPONSORY,null,
+  "An optional Absolution cannot silently become part of Mass Ordinary");
+assert.equal(REQUIEM_TEXT_TRACK_XWALK.FUNERAL_PROCESSION,null,
+  "In paradisum is not an automatic All Souls Mass Schola cue");
 assert.match(sungTextForMovement(faure.id,faure.movements[5].id).lines.at(-1).latin,/judicare/);
 assert.equal(sungTextForMovement("durufle-requiem-op9","durufle-requiem-op9-1"),null,"No unverified replacement words");
 assert.equal(sacredMusicWork("not-a-work"),null);
