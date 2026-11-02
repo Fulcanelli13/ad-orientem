@@ -59,6 +59,38 @@ assert.equal(expandedReview.presentationModel.totalCards,65,
   "curated LIVE should have 65 cards with one complete Sanctus–Benedictus");
 assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
+ 
+// Low Requiem retains its own 275-cue source and 1962 Low-Mass delivery
+// while sharing the approved 65-family presentation cuts with Sung Mass.
+const lowRequiemPrepared={
+  ...prepared,
+  session:{...prepared.session,
+    resolvedMass:{...resolvedMass,
+      date:"2026-11-02",form:"LOW",
+      actualCelebration:{id:"sancti:11-02m1:1:b",type:"REQUIEM",title:"All Souls"},
+      overlays:["REQUIEM"],
+      proper:{status:"READY",sourcePath:"Sancti/11-02m1",data:{
+        ...proper,sourcePath:"Sancti/11-02m1",sequence:t("Dies irae","Day of wrath")}},
+    },
+    plan:{...prepared.session.plan,overlayGraphs:["REQUIEM"],
+      blessingAllowed:false,dismissal:"REQUIESCANT_IN_PACE"},
+  },
+};
+const lowRequiemLive=buildReaderModeModels({prepared:lowRequiemPrepared,data,mode:"LIVE"});
+assert.equal(lowRequiemLive.sourceModel.corpusFamily,"LOW");
+assert.equal(lowRequiemLive.sourceModel.totalCards,39);
+assert.equal(lowRequiemLive.presentationModel.structureOwner,
+  "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(lowRequiemLive.presentationModel.totalCards,66);
+assert.equal(lowRequiemLive.presentationModel.sourceOnlyCueRegister,null,
+  "Low Mass must never inherit Sung-only source clock cues");
+assert.deepEqual(
+  lowRequiemLive.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  lowRequiemLive.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  "Low Requiem lost/duplicated canonical source paragraphs");
+assert.equal(lowRequiemLive.presentationModel.cards.filter(c=>
+  c.sourceSectionId==="AO.CARD.013").length,1);
+
 
 const cueRegistryNames={
   gestures:"reader-gestures.v1.json",
