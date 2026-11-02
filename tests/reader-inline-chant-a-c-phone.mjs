@@ -31,6 +31,7 @@ try{
    const latin=["℣. Ite, missa est.","℟. Deo grátias."];
    const record=(id,text)=>({
     schema:INLINE_CHANT_SCHEMA,sourceCueId:id,sourceLatin:text,settingId:"ITE_VIII",
+    selectionKey:"DISMISSAL",riteScope:"ORDINARY",
     approval:"USER_AND_MUSICAL_SOURCE_REVIEWED",publication:"PUBLIC_APPROVED",
     sourceTextVerified:true,musicalNotationVerified:true,
     scoreId:"TEST-NOT-PUBLISHED",gabcSha256:"a".repeat(64),
