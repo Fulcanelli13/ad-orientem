@@ -540,6 +540,9 @@ function close({silent=false,preserve=false}={}){
 }
 const CLAUDE_HOLY_PREF={language:null,flipped:false,scrollRatio:0};
 const CLAUDE_CHOIR_PREF={inline:false,language:null};
+// Reuse the Latin already preserved in the original canonical prayer records.
+// This is reader state, not a translation layer or another corpus owner.
+const PRAYER_LIBRARY_LATIN_PREF={active:false};
 function head(title,sub=''){
  const settings=view==='angelus'&&!(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY)?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
@@ -569,8 +572,10 @@ function head(title,sub=''){
   '<div class="aoClaudeChoirMenuTitle">'+esc(L('Language','Langue'))+'</div><div class="aoClaudeChoirMenuChoices">'+
   ['en','fr','la'].filter(l=>!!record[l]).map(l=>'<button type="button" data-p435930-choir-language="'+l+'" lang="'+l+'" aria-pressed="'+String((CLAUDE_CHOIR_PREF.language||lang())===l)+'">'+l.toUpperCase()+'</button>').join('')+'</div>'+
   '<div class="aoClaudeChoirMenuSource">'+sourceLine(record)+'</div></div>':'';
+ const canonicalLatinReader=!!holyRecord?.la&&!holy&&!CHOIR_SOURCE_IDS.includes(holyId)&&holyId!=='mass_devotion_leonine'&&!(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(holyId));
+ const canonicalLatinButton=canonicalLatinReader?'<button type="button" class="aoP435930SessionLanguage" data-p435930-library-latin aria-pressed="'+String(PRAYER_LIBRARY_LATIN_PREF.active)+'" aria-label="'+esc(PRAYER_LIBRARY_LATIN_PREF.active?L('Return to English prayer','Revenir à la prière française'):L('Read the existing Latin prayer','Lire la prière latine existante'))+'" title="'+esc(L('Prayer language','Langue de la prière'))+'">'+(PRAYER_LIBRARY_LATIN_PREF.active?lang().toUpperCase():'LA')+'</button>':'';
  const benAa=view==='benediction'?`<button type="button" class="aoClaudeBenAa" data-p435930-ben-settings aria-controls="aoBenOptions" aria-expanded="${BEN.optionsOpen?'true':'false'}" aria-label="${esc(L('Rite settings and sources','Paramètres et sources du rite'))}">Aa</button>`:'';
- const trailing=settings+benAa+prayerLanguage+holyAa+aa+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
+ const trailing=settings+benAa+prayerLanguage+holyAa+aa+canonicalLatinButton+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>${holyMenu}${menu}`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
@@ -754,6 +759,9 @@ function prayerBlock(id,opts={}){
     '<div data-face-v>'+face(chosen)+'</div>'+
     (availableLatin&&!isLitany?'<div data-face-la hidden>'+face('la')+'</div>':'')+'</div>'+
    (isLitany?claudeChoirFixedBar():originCapsule+sourceLine(p))+'</article>';
+ }
+ if(PRAYER_LIBRARY_LATIN_PREF.active&&!opts.record&&(view==='library'||view==='prayerOnly')&&latin){
+  return `<article class="aoP435930Prayer" data-ao-canonical-latin="true">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div><span>LA</span></div><div class="aoP435930Text" lang="la">${nl(latin)}</div>${originCapsule}${sourceLine(p)}</article>`;
  }
  return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
@@ -3868,6 +3876,21 @@ function onClick(e){
    if(selected!=='individual'&&selected!=='group')return;
    PILOT_LORETO_GROUP=selected==='group';return render();
   }
+ }
+ if(b.hasAttribute('data-p435930-library-latin')&&(view==='library'||view==='prayerOnly')){
+  const id=view==='library'?LIB.open:prayerId;
+  if(!P(id)?.la)return;
+  const current=mount(),outerScroll=current?.scrollTop||0;
+  const innerScroll=current?.querySelector('.aoDevoCardScroll')?.scrollTop||0;
+  PRAYER_LIBRARY_LATIN_PREF.active=!PRAYER_LIBRARY_LATIN_PREF.active;
+  render();
+  queueMicrotask(()=>{
+   const next=mount();if(!next)return;
+   next.scrollTop=outerScroll;
+   const card=next.querySelector('.aoDevoCardScroll');if(card)card.scrollTop=innerScroll;
+   next.querySelector('[data-p435930-library-latin]')?.focus?.({preventScroll:true});
+  });
+  return;
  }
  if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)){
   const current=mount(),outerScroll=current?.scrollTop||0;
