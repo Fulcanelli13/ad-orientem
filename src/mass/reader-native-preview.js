@@ -1726,7 +1726,7 @@ export async function mountNativeReaderPreview({
       .flatMap(paragraph=>paragraph.sourceCueIds??[]));
     const visibleBlockIds=new Set((current?.blocks??[])
       .map(block=>block.blockId));
-    const sameSungCard=Boolean(visibleSchola && visibleTrack && (
+    const sameSungCard=Boolean(visibleSchola && !visibleSchola.composedWorkId && visibleTrack && (
       (visibleTrack.segments??[]).some(segment=>
         segment.cueId && visibleCueIds.has(segment.cueId)) ||
       (visibleTrack.canonicalBlockIds??[]).some(id=>visibleBlockIds.has(id))));
