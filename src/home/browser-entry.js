@@ -393,18 +393,18 @@ export function createHomeOwner(win=globalThis){
     if(c3Step){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       const index=Number(c3Step.dataset.homeC3PrayerStep);
-      if(selectC3PrayerSlide(appRoot,index))c3PrayerIndex=index;
+      if(selectC3PrayerSlide(root(win),index))c3PrayerIndex=index;
       return;
     }
     const c3Info=target?.closest?.("[data-home-c3-info]");
     if(c3Info){
       event.preventDefault?.();event.stopImmediatePropagation?.();
-      showC3ArtInfo(appRoot,c3Info);return;
+      showC3ArtInfo(root(win),c3Info);return;
     }
     const c3Close=target?.closest?.("[data-home-c3-close]");
     if(c3Close){
       event.preventDefault?.();event.stopImmediatePropagation?.();
-      closeC3ArtInfo(appRoot);return;
+      closeC3ArtInfo(root(win));return;
     }
     const useToday=target?.closest?.("[data-home-mass-use-today]");
     if(useToday){

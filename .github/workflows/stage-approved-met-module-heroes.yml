@@ -1,0 +1,49 @@
+name: Approved Met module hero source staging (no app publication)
+on:
+  pull_request:
+    paths:
+      - "scripts/art/stage-approved-met-module-heroes.py"
+      - ".github/workflows/stage-approved-met-module-heroes.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage-approved-museum-photos:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Exact artwork identity / rights gate
+        run: python scripts/art/stage-approved-met-module-heroes.py --test
+      - name: Fetch two original museum JPEGs
+        run: python scripts/art/stage-approved-met-module-heroes.py
+      - name: Validate recovered original and crop-candidate files without write access
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path("assets/staged/sacred-art-met-approved")
+          x=json.loads((p/"source-manifest.json").read_text())
+          assert len(x["rows"])==2 and x["published"]==0
+          for row in x["rows"]:
+              assert Path(row["file"]).exists()
+              assert Path(row["framelessCandidatePath"]).exists()
+              assert not row["humanPhotoAndCropApproved"]
+              assert not row["releasedInApp"]
+          print("PASS two frozen approved source originals staged; nothing app-published")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: met-two-approved-source-review
+          path: assets/staged/sacred-art-met-approved/
+          retention-days: 7
+          if-no-files-found: warn
