@@ -41,8 +41,8 @@ try{
        rotation:n.dataset.aoArtRotation})));
    assert.deepEqual(artSlots.map(x=>x.slot).sort(),
     ["DOOR-D1","DOOR-D2","DOOR-D3","DOOR-D4","DOOR-D5","DOOR-D6","DOOR-D7","DOOR-D8","DOOR-D9"]);
-   assert.ok(artSlots.every(x=>x.binding==="unassigned"&&x.rotation?.startsWith("R-")),
-    "Artwork selection cannot silently bypass source/rights/quality approvals");
+   assert.ok(artSlots.every(x=>x.rotation?.startsWith("R-")&&(x.slot==="DOOR-D5"?x.binding==="released":x.binding==="unassigned")),
+    "Only released Met Eucharistic art may appear; other eight doors stay unassigned");
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
@@ -85,9 +85,9 @@ try{
     await page.locator(base+' [data-p435930-family="'+door+'"]').click();
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
     assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),1,
-      "Each Claude door has one content title below its unassigned artwork band: "+door);
-    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding=unassigned]").count(),1,
-      "Door art must remain a labelled, unassigned slot until exact painting clearance: "+door);
+      "Each Claude door has one content title below its artwork band: "+door);
+    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding="+(door==="eucharistic"?"released":"unassigned")+"]").count(),1,
+      "Only the Eucharistic door uses published Met art; all others remain unassigned: "+door);
     assert.ok(await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-door-filter]").count()>=2,
       "Source-scoped category filters must remain visible: "+door);
     if(door==="marian"){
@@ -143,8 +143,8 @@ try{
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),1,
     "Prayer-entry Angelus should have the approved optional opening");
    const cover=page.locator(base+" .aoPrayPilotAngelusEntry");
-   assert.equal(await cover.locator(".aoPrayPilotAngelusArtSlot").count(),1,
-     "Approved full-height hour entry keeps an unassigned artwork slot rather than invented art");
+   assert.equal(await cover.locator(".aoPrayerAngelusPhoto img").count(),1,
+     "Angelus entry displays the already released Met Annunciation image");
    assert.equal(await cover.locator(".aoPrayPilotBellGroup").count(),4,"Traditional bell sequence groups 3+3+3+9");
    assert.equal(await cover.locator(".aoPrayPilotBellDot").count(),18);
    const firstFold=await cover.evaluate(el=>{
@@ -162,7 +162,7 @@ try{
    assert.ok(firstFold.heroHeight>=Math.max(260,width===320?260:400)&&firstFold.beginBottom<firstFold.recitationTop,
      "The art band must actually expand and Begin remain ABOVE recitation: "+JSON.stringify(firstFold));
    assert.ok(firstFold.heroTop>=firstFold.headerBottom-2&&firstFold.artSlotTop>=firstFold.headerBottom,
-     "Angelus hero and ART SLOT may never scroll underneath the sticky native header: "+JSON.stringify(firstFold));
+     "Angelus hero and actual released artwork may never scroll underneath the sticky native header: "+JSON.stringify(firstFold));
    assert.ok(firstFold.titleTop>=firstFold.headerBottom+2,
      "Full Angelus title must not sit under the sticky native header at "+width+": "+JSON.stringify(firstFold));
    assert.ok(firstFold.coverBottom>=firstFold.navTop-22&&firstFold.coverBottom<=firstFold.navTop+35,
