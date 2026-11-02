@@ -1,0 +1,247 @@
+{
+  "schema": "AO_PRAYER_COMPENDIUM_WITNESS_COLLATION_B02_V1",
+  "date": "2026-11-02",
+  "purpose": "Compare the remaining twelve App prayers linked to Holy See 2005 Compendium English/French/Latin published sections, without changing canonical texts.",
+  "sourceWitnesses": {
+    "en": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+    "fr": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+    "latin": "Printed Latin parallels embedded in both official English and French documents"
+  },
+  "parent": "data/pray/compendium-witness-collation-b01.v1.json",
+  "existingCorpus": "src/pray/canonical-data.js",
+  "policy": {
+    "sourceGroupIsNotProofOfExactLanguageText": true,
+    "keepTraditionVariants": true,
+    "separateAntiphonAndResponse": true,
+    "doNotInsertDoxologyWithoutLiturgicalModeEvidence": true,
+    "neverAutoCorrectPrintedHopeAnomaly": true,
+    "noChangesToRuntimePrayerText": true,
+    "fullyCertified": false
+  },
+  "counts": {
+    "batchComparisons": 12,
+    "priorBatchComparisons": 4,
+    "sourceGroupCovered": 16,
+    "languageComparisons": 36,
+    "fullVerbatimCertified": 0,
+    "otherPrayerCorpusStillAwaitingReview": 32
+  },
+  "items": [
+    {
+      "id": "foundations_apostles_creed",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "TRADITIONAL_VARIANT_NOT_EXACT_WITNESS",
+      "languageFindings": {
+        "en": "The app uses 'is seated'/'from there', while the English Compendium prints 'sits'/'from thence'. Same apostolic articles, different translation choices.",
+        "fr": "The app uses 'Je crois au Saint-Esprit' whereas the printed French Creed has 'Je crois en l’Esprit Saint'; do not treat this as word-for-word collation.",
+        "la": "The same Symbolum Apostolicum is present, with accentuation and punctuation differences; independent character-level collation remains open."
+      },
+      "witnessLines": {
+        "en": "194-220",
+        "fr": "200-201"
+      },
+      "editorialNext": "Lock the approved traditional vernacular Creed witness and determine canonical spelling, not substitute the 2005 phrasing.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "sacrament_act_of_contrition",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "PARTIAL_LANGUAGE_ALIGNMENT_WITH_ADDENDUM",
+      "languageFindings": {
+        "en": "The English penitential formula substantially agrees with the Compendium, including the near occasion of sin; capitalization and punctuation differ.",
+        "fr": "The app follows the printed French act's wording but adds 'Amen' after 'faire pénitence'; that French Amen is not printed before the next act heading.",
+        "la": "The Latin Actus contritionis aligns in substance; accents/ligatures and punctuation differ."
+      },
+      "witnessLines": {
+        "en": "1818-1819",
+        "fr": "1597-1602,1619-1627"
+      },
+      "editorialNext": "Record whether the app's final French Amen is a separately authorized customary conclusion; no silent deletion.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "foundations_act_of_faith",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "FORM_ALIGNED_NOT_VERBATIM_CERTIFIED",
+      "languageFindings": {
+        "en": "The English Act of Faith follows the Compendium text and closing formula in substance.",
+        "fr": "The same short French act, including 'Dans cette foi', appears in the official French appendix.",
+        "la": "The Latin Actus fidei is present in its corresponding edition; diacritic and punctuation differences remain."
+      },
+      "witnessLines": {
+        "en": "1767-1787",
+        "fr": "1581-1586,1602-1608"
+      },
+      "editorialNext": "Normalize only authorized typography; full three-language exact-text proofreading remains open.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "foundations_act_of_hope",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "PRINTED_FRENCH_ANOMALY_NOT_EMENDED",
+      "languageFindings": {
+        "en": "English closing says 'In this hope' as the app does.",
+        "fr": "The Vatican's printed French Acte d’espérance actually ends 'Dans cette foi', and the app retains this unusual printed wording. Do NOT silently change to 'espérance'.",
+        "la": "The Latin source says 'In hac spe', retained by the app; the French and Latin differ at the closing even within the same published edition."
+      },
+      "witnessLines": {
+        "en": "1788-1803",
+        "fr": "1587-1594,1608-1615"
+      },
+      "editorialNext": "Cross-check an earlier printed French catechism edition and retain exact official 2005 variant attribution.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "foundations_act_of_love",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "FORM_ALIGNED_NOT_VERBATIM_CERTIFIED",
+      "languageFindings": {
+        "en": "The app matches the English theological act and its closing in substance.",
+        "fr": "The Compendium French Acte de charité ends after 'pour l’amour de vous', with no extra English-style closing; the app likewise does not append it.",
+        "la": "The printed Latin Actus caritatis contains the closing 'In hac caritate' and Amen, as the app does."
+      },
+      "witnessLines": {
+        "en": "1804-1817",
+        "fr": "1594-1597,1615-1619"
+      },
+      "editorialNext": "Perform literal punctuation/orthography audit for en/fr/la and record the intentional different-length French edition.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "FORM_ALIGNED_NOT_VERBATIM_CERTIFIED",
+      "languageFindings": {
+        "en": "The Compendium prints the same rhyming 'Angel of God' prayer and Amen.",
+        "fr": "French Ange de Dieu substantially matches the printed lines; punctuation is not yet certified.",
+        "la": "Latin Angele Dei corresponds in all petitions; accents and spelling are normalization differences."
+      },
+      "witnessLines": {
+        "en": "1146-1156",
+        "fr": "957-961"
+      },
+      "editorialNext": "Collate original line breaks and typography for all three languages.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "TRADITIONAL_VARIANT_AND_APPENDIX_NOT_EXACT_WITNESS",
+      "languageFindings": {
+        "en": "The app's archaic 'thee/thine' style relates to the UK form, whereas the Compendium also offers a different US vernacular; the app appends an ℣/℟ response after the antiphon.",
+        "fr": "The app is a traditional vouvoiement form ('Vers vous', 'Ô vous') whereas the French Compendium prints tutoiement ('Vers toi', 'Ô toi').",
+        "la": "The core Salve Regina matches the Latin antiphon, but the app appends Ora pro nobis / Ut digni versus absent from the printed Salve antiphon unit."
+      },
+      "witnessLines": {
+        "en": "1190-1228",
+        "fr": "1070-1084,1110-1123"
+      },
+      "editorialNext": "Give the antiphon and appended versicle independent source IDs and historical edition witnesses before publication as a single witness.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "marian_memorare",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "TRADITIONAL_VARIANT_NOT_EXACT_WITNESS",
+      "languageFindings": {
+        "en": "The English Memorare is broadly aligned with the Compendium prayer; punctuation differs.",
+        "fr": "The French text is a substantive traditional variant: the app has 'réclamé votre intercession' versus 'réclamé votre secours', and 'Mère du Verbe incarné' versus 'Mère du Verbe' in the 2005 source.",
+        "la": "Latin Memorare substantially agrees; spelling/accents and punctuation vary."
+      },
+      "witnessLines": {
+        "en": "1669-1694",
+        "fr": "1453-1464"
+      },
+      "editorialNext": "Find a printed pre-1962 French Memorare witness for the app's exact traditional wording; no automatic Compendium overwrite.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "weekday_magnificat",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "MIXED_TRANSLATION_AND_MISSING_DOXOLOGY",
+      "languageFindings": {
+        "en": "The app's English text follows the Compendium USA VERSION (not UK VERSION) and includes its doxology.",
+        "fr": "The app uses related contemporary French Magnificat wording but not the exact Compendium text ('Sa miséricorde' versus 'Son amour', and alternate descendants phrasing); its doxology is absent.",
+        "la": "The app prints the Magnificat canticle but omits the concluding Gloria Patri that the Latin Compendium appends."
+      },
+      "witnessLines": {
+        "en": "1229-1293",
+        "fr": "1084-1150"
+      },
+      "editorialNext": "Split canticle and doxology as source-scoped optional components and collate the French source edition; do not auto-append liturgical elements without mode evidence.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "adoration_anima_christi",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "TRANSLATION_VARIANT_NOT_EXACT_WITNESS",
+      "languageFindings": {
+        "en": "The app uses a prose/literal Anima Christi ('sanctify me'; 'wash me') while the Compendium EN prints a substantially different rhymed translation ('be my sanctification'; 'wash out my stains').",
+        "fr": "The app is close to the Compendium's French rendering, but has 'Dans tes plaies' versus printed 'Dans tes blessures'; punctuation also differs.",
+        "la": "The app follows the traditional Latin Anima Christi; accents, ligatures and minor punctuation are not fully collated."
+      },
+      "witnessLines": {
+        "en": "1644-1668",
+        "fr": "1428-1453"
+      },
+      "editorialNext": "Retain traditional prose English; locate primary printed witnesses for exact English and French variants, without treating the rhymed 2005 text as equivalent.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "weekday_benedictus",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "MIXED_TRANSLATION_AND_MISSING_DOXOLOGY",
+      "languageFindings": {
+        "en": "The app follows the Compendium USA VERSION in substance, including its Gloria Patri conclusion; it does not use the UK VERSION.",
+        "fr": "The app's French canticle is close to the 2005 printed version but omits its different closing doxology ('Gloire au Père ... au Dieu qui est').",
+        "la": "The app's Latin canticle omits the Gloria Patri conclusion printed after the Benedictus by the Compendium."
+      },
+      "witnessLines": {
+        "en": "1307-1395",
+        "fr": "1157-1247"
+      },
+      "editorialNext": "Specify when Gloria Patri is supplied by the Divine Office/liturgy versus included inside a standalone Benedictus reader.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    },
+    {
+      "id": "foundations_eternal_rest",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "reviewState": "PRIMARY_WITNESS_COMPARED_ALL_THREE_LANGUAGE_FORMS",
+      "classification": "FRENCH_EDITION_VARIANT_NOT_EXACT_WITNESS",
+      "languageFindings": {
+        "en": "English Eternal Rest substantially matches the Compendium text.",
+        "fr": "Substantive difference: app asks that 'la lumière éternelle brille sur eux'; French Compendium instead asks that 'brille sur eux la lumière de ta face'.",
+        "la": "Traditional Latin Requiem aeternam and Requiescant in pace substantially match, with accentuation differences."
+      },
+      "witnessLines": {
+        "en": "1157-1161",
+        "fr": "961-963"
+      },
+      "editorialNext": "Find a pinned traditional French Requiem translation supporting 'lumière éternelle'; do not impose the 2005 alternative.",
+      "fullVerbatimCertified": false,
+      "canonicalTextChanged": false
+    }
+  ]
+}
