@@ -22,6 +22,15 @@ assert.equal(createHash("sha256").update(readFileSync(new URL("../"+murillo.imag
  "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
  "Confession released original must be bit-identical to the user-approved eight-photo archive");
 assert.ok(releasedModulePhotoMarkup("confession").includes("confession-murillo-nga-original.jpg"));
+const wave=JSON.parse(source("data/research/module-hero-eight-publication-decision-20261102.v1.json"));
+assert.equal(wave.totalReviewed,8);
+assert.equal(wave.photoApproved,8);
+assert.equal(wave.publicationCleared,1);
+assert.equal(wave.publicationProposed.length,1);
+assert.equal(wave.publicationProposed[0].module,"confession");
+assert.equal(wave.heldPhotographs.length,7);
+assert.ok(wave.heldPhotographs.every(row=>row.photoApproved===true));
+assert.equal(wave.publicationProposed[0].gitBlobSha,"c0904b5d2a6a4bd99b224194217ce45c6a9fe676");
 assert.equal(releasedModulePhoto("sorrows"),null,"Approved painting != clearance of the MNAC photograph");
 assert.equal(releasedModulePhoto("regina"),null,"Approved Rubens artwork != clearance of that Commons photograph");
 assert.equal(releasedModulePhotoMarkup("regina"),"","Do not use Angelus painting for Regina Caeli");
