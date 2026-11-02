@@ -1756,7 +1756,8 @@ export async function mountNativeReaderPreview({
     // wording; this does not claim the two gestures have been observed.
     const canonLiveAction=certifiedLiveCanonActionOverride({
       presentationMode:readerModel?.presentationMode,
-      curatedPresentation:current?.curatedPresentationReview===true &&
+      curatedPresentation:String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
+        current?.curatedPresentationReview===true &&
         readerModel?.sourceModelTotalCards===39,
       cueId:activeCueId,matrixAction:resolvedMatrixAction,
     });
