@@ -253,8 +253,9 @@ try{
    assert.equal(await root.locator(".aoNetworkPanel").count(),0,
     "Network must not remain as a duplicate overlay during a customs folio");
    await capture("p6-published-custom");
-   // Back to preview remains available; the second Back restores Network.
-   await root.locator(".aoFindHeader [data-find-close]").click();
+   // The full folio is modal: the global header sits behind its backdrop.
+   // Use its visible Back-to-preview action, then Escape from the preview.
+   await sourceFolio.locator("[data-explore-collapse-detail]").click();
    await root.locator('[data-explore-preview="tradition:custom:DEV-010"]').waitFor({state:"visible"});
    await page.keyboard.press("Escape");
    await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
@@ -270,7 +271,7 @@ try{
    await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
    await root.locator('.aoNetworkPanel [data-network-close]').click();
    await assertP6Canvas("published custom source and return");
-   note.steps.push("published DEV-010 votive-candle custom → one canonical sourced Traditions folio → two-stage Back and full-sheet Close return to exact Network focus");
+   note.steps.push("published DEV-010 votive-candle custom → one canonical sourced Traditions folio → visible Back-to-preview, Escape and full-sheet Close return to exact Network focus");
 
    // Continue from this same Explore destination to Mass without hidden menus.
    await root.locator(".aoHeritageMassShortcut").click();
