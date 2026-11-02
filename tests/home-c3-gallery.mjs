@@ -70,6 +70,12 @@ const metPrayer=c3PrayerMarkup({feature:{id:"angelus.evening"},
 assert.ok(metPrayer.includes("angelus-frameless.webp"));
 assert.ok(metPrayer.includes("adoration-frameless.webp"));
 assert.equal((metPrayer.match(/data-approved-met-art="true"/g)||[]).length,2);
+assert.ok(metPrayer.includes('confession-murillo-nga-original.jpg'),"Home carousel must show selected Murillo Confession painting");
+assert.equal((metPrayer.match(/data-approved-nga-art="true"/g)||[]).length,1,"Exactly one NGA photograph per Confession slide");
+const confessionHome=c3PrayerMarkup({feature:{id:"confession",route:"pray.confession"},attrs:'data-home-cu-route="pray.confession"',title:"Confession"});
+assert.ok(confessionHome.includes("confession-murillo-nga-original.jpg"));
+assert.equal((confessionHome.match(/data-approved-nga-art="true"/g)||[]).length,1);
+assert.ok(confessionHome.includes('data-home-c3-slide="0"'),"Confession source-owned route stays first when selected");
 assert.match(C3_APPROVED_MET_PRAYER_ART.angelus.source,/438724$/);
 assert.match(C3_APPROVED_MET_PRAYER_ART.adoration.source,/438434$/);
 assert.ok(HOME_C3_CSS.includes("object-fit:contain"));
