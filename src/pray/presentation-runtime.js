@@ -315,6 +315,9 @@ function montfortSaveProgress(){
  try{localStorage.setItem(MONTFORT_STORAGE,JSON.stringify({target:MONTFORT.target,completed:MONTFORT.completed}))}catch{}
 }
 let MONTFORT=montfortLoadProgress();
+// Reader-only preference. The Faber consecration act and unverified historical
+// litanies retain their exact source language; only canonical prayers can flip.
+let MONTFORT_CANONICAL_LATIN=false;
 
 let ROSARY_FIFTEEN={active:false};
 // Only a source-launched exact Rosary object owns this temporary return receipt.
@@ -2330,9 +2333,14 @@ function renderMontfortB26(){
  const pct=Math.round(count*100/33);
  const title=L('Montfort · Consecration to Jesus through Mary','Montfort · Consécration à Jésus par Marie');
  const phaseRail=MONTFORT_B26_PHASES.map((p,i)=>'<button type="button" data-p435930-montfort-phase="'+p.first+'" '+(phase?.id===p.id?'aria-current="step"':'')+'><span>'+esc(i===0?L('12 days','12 jours'):L('Week ','Semaine ')+i)+'</span><br>'+esc(isFr()?p.titleFr:p.titleEn)+'</button>').join('');
+ const canonicalPrayerIds=ending?[]:phase.canonicalIds||[];
+ const hasCanonicalLatin=canonicalPrayerIds.some(id=>!!DATA.prayers?.[id]?.la);
+ const canonicalLanguageControl=hasCanonicalLatin?'<button type="button" class="aoMontfortB26LatinSwitch" data-p435930-montfort-canonical-latin aria-pressed="'+String(MONTFORT_CANONICAL_LATIN)+'" aria-label="'+esc(MONTFORT_CANONICAL_LATIN?L('Return to English canonical prayers','Revenir aux prières canoniques françaises'):L('Read existing Latin canonical prayers','Lire les prières canoniques latines existantes'))+'">'+(MONTFORT_CANONICAL_LATIN?lang().toUpperCase():'LA')+'</button>':'';
  const prayer=(id)=>{
   const p=DATA.prayers?.[id];if(!p)return '<p class="aoMontfortB26Note">'+esc(L('Canonical prayer text unavailable in this edition.','Texte de la prière canonique indisponible.'))+'</p>';
-  return '<div class="aoMontfortB26Action" data-ao-montfort-prayer="'+esc(id)+'"><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3><p class="aoMontfortB26Canonical">'+nl(isFr()?p.fr:p.en)+'</p></div>';
+  const sourceLanguage=MONTFORT_CANONICAL_LATIN&&p.la?'la':p[lang()]?lang():p.en?'en':p.fr?'fr':p.la?'la':null;
+  if(!sourceLanguage)return '<p class="aoMontfortB26Note">'+esc(L('Source text unavailable.','Texte source indisponible.'))+'</p>';
+  return '<div class="aoMontfortB26Action" data-ao-montfort-prayer="'+esc(id)+'"><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3><p class="aoMontfortB26Canonical" lang="'+sourceLanguage+'">'+nl(p[sourceLanguage])+'</p></div>';
  };
  const originalAct=ending?'<p class="aoMontfortB26Note">'+esc(L('Historical English text: F. W. Faber (1863). No certified historical French translation has been substituted. The act is personal; the app does not sign it for you.','Texte historique anglais : F. W. Faber (1863). Aucune traduction française historique non vérifiée ne lui est substituée. Cet acte est personnel ; l’application ne le signe pas à votre place.'))+'</p>'+MONTFORT_B26_CONSECRATION_ACT_EN.map(p=>'<p class="aoMontfortB26Original" lang="en">'+esc(p)+'</p>').join(''):'';
  const hymn=day>=13&&day<=33?'<details class="aoMontfortB26Details" data-ao-montfort-hymn><summary>'+esc(L('Ave Maris Stella · traditional Latin hymn','Ave Maris Stella · hymne latin traditionnel'))+'</summary><div lang="la">'+MONTFORT_B26_AVE_MARIS_LATIN.map(p=>'<p class="aoMontfortB26Original">'+nl(p)+'</p>').join('')+'</div></details>':'';
@@ -2342,7 +2350,8 @@ function renderMontfortB26(){
   :'<p>'+esc(isFr()?phase.dailyDirectionFr:phase.dailyDirectionEn)+'</p>'+
    (day>=13?'<p class="aoMontfortB26Note">'+esc(L('Full English historical litanies are included below. Their original printed pages have not yet been independently collated; no French translation is invented.','Les litanies historiques anglaises intégrales figurent ci-dessous. Les pages imprimées d’origine restent à collationner et aucune traduction française n’est inventée.'))+'</p>':'')+
    (phase.id==='self'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, Litany of Loreto.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, litanies de Lorette.'))+'</p>':phase.id==='mary'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, at least five decades of the Rosary.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, au moins cinq dizaines du Rosaire.'))+'</p>':phase.id==='jesus'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, Litany of the Holy Name of Jesus.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, litanies du Saint Nom de Jésus.'))+'</p>':'')+
-   (phase.canonicalIds||[]).map(prayer).join('')+
+   canonicalLanguageControl+
+   canonicalPrayerIds.map(prayer).join('')+
    (day>=13?montfortB27RequiredForDay(day).map(renderMontfortHistoricalB27).join(''):'')+
    (phase.ownRosary?'<button type="button" class="aoMontfortB26Jump" data-p435930-montfort-rosary>'+esc(L('Open the existing Holy Rosary','Ouvrir le Saint Rosaire existant'))+'</button>':'')+hymn;
  const sourceLinks=[MONTFORT_B26_SOURCE.instructionsWitness,MONTFORT_B26_SOURCE.originalActWitness,MONTFORT_B26_SOURCE.originalScanWitness].map((url,i)=>'<p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+esc(i===0?L('Original 1863 instructions (digital)','Instructions originales de 1863 (numériques)'):i===1?L('Faber 1863 consecration act','Acte de consécration, Faber 1863'):L('Historical book edition and provenance','Édition historique et provenance'))+'</a></p>').join('');
@@ -4011,6 +4020,14 @@ function onClick(e){
  }
 
  if(view==='montfort'){
+  if(b.hasAttribute('data-p435930-montfort-canonical-latin')){
+   if(!montfortPhaseForDay(MONTFORT.day||montfortSchedule(MONTFORT.target)?.dayIndex)?.canonicalIds?.some(id=>!!DATA.prayers?.[id]?.la))return;
+   const current=mount(),scroll=current?.scrollTop||0;
+   MONTFORT_CANONICAL_LATIN=!MONTFORT_CANONICAL_LATIN;
+   render();
+   queueMicrotask(()=>{const next=mount();if(next){next.scrollTop=scroll;next.querySelector('[data-p435930-montfort-canonical-latin]')?.focus?.({preventScroll:true})}});
+   return;
+  }
   const w=montfortSchedule(MONTFORT.target);
   if(b.hasAttribute('data-p435930-montfort-prev')){MONTFORT.day=Math.max(1,(MONTFORT.day||1)-1);return render()}
   if(b.hasAttribute('data-p435930-montfort-next')){MONTFORT.day=Math.min(34,(MONTFORT.day||1)+1);return render()}
