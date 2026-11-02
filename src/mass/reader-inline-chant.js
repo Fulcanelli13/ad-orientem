@@ -41,9 +41,8 @@ export function selectApprovedInlineScore({cueId,paragraph,form,approvedScores=A
 // No parallel floating panel, cream paper, redundant title, or in-card
 // navigation. The letter is *beside* the full-width score, not inside it.
 export const INLINE_CHANT_CSS=String.raw`
-.ao-reader-shell[data-inline-chant="true"][data-mode="LIVE"] .ao-card-viewport{
-  padding-inline:clamp(42px,5vw,60px)
-}
+/* Preserve the existing LIVE side-rail clearance at every viewport width.
+   Full width means the full SAFE prayer column, never beneath gesture rails. */
 .ao-reader-paragraph[data-inline-chant-status="ready"]{
   position:relative;display:grid;grid-template-columns:24px minmax(0,1fr);
   column-gap:6px;row-gap:3px;margin:9px 0 18px;
@@ -117,8 +116,7 @@ export const INLINE_CHANT_CSS=String.raw`
 .ao-inline-score-zoom .ao-inline-score-wide svg :is(path,polygon,polyline,line,text){fill:currentColor}
 .ao-inline-score-zoom .ao-inline-score-wide svg{height:auto}
 @media(max-width:480px){
- .ao-reader-shell[data-inline-chant="true"][data-mode="LIVE"] .ao-card-viewport{
-   padding-inline:clamp(30px,10vw,43px)}
+ /* Phone railway margins stay owned by reader-dom.js (56px on narrow screens). */
  .ao-reader-paragraph[data-inline-chant-status="ready"]{grid-template-columns:20px minmax(0,1fr);column-gap:3px}
  .ao-inline-chant-mark{font-size:20px}
  .ao-inline-chant-control button{min-height:40px}
