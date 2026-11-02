@@ -4,6 +4,7 @@ on:
     paths:
       - "src/home/c3-gallery.js"
       - "src/home/c3-styles.js"
+      - "src/home/browser-entry.js"
       - "assets/staged/sacred-art-met-approved/**"
       - "tests/home-c3-approved-met-phone.mjs"
       - ".github/workflows/home-c3-approved-met-phone.yml"
