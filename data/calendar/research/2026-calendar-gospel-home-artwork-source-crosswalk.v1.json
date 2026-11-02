@@ -7,7 +7,8 @@
     "formerArtSelector": "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json (same research branch)",
     "gospelWitnesses": [
       "data/mass/scripture-reading-witness-register.v1.json",
-      "data/mass/scripture-feast-reading-supplement.v1.json"
+      "data/mass/scripture-feast-reading-supplement.v1.json",
+      "data/mass/scripture-segmented-proper.v1.json"
     ],
     "userApproved": "src/calendar/approved-class-i-heroes-2026.js"
   },
@@ -17,17 +18,20 @@
     "CLASS_I_DATE_APPROVAL_IS_NOT_GOSPEL_IMAGE_RELEVANCE_PROOF",
     "OLD_GREEN_ART_IS_NOT_USER_APPROVED_OR_PUBLISHED",
     "REMOTE_PREVIEW_IS_NOT_OFFLINE_MEDIA_CERTIFICATION",
-    "ACTUAL_HOMEPAGE_RENDER_MUST_BE_CHECKED_SEPARATELY"
+    "ACTUAL_HOMEPAGE_RENDER_MUST_BE_CHECKED_SEPARATELY",
+    "TRAILING_R_REFERENCE_CANDIDATES_NEVER_CERTIFY_PROPER_PATH_OR_LATIN"
   ],
   "counts": {
     "dates": 365,
-    "indexedGospelLeads": 86,
-    "missingIndexedGospelLeads": 279,
+    "indexedGospelLeads": 95,
+    "missingIndexedGospelLeads": 270,
     "approvedDateSelections": 10,
     "approvedRemoteDatePreviews": 8,
     "heldApprovedDates": 2,
     "gospelVerifiedAgainstResolvedProper": 0,
-    "productionHomepageImagesVerified": 0
+    "productionHomepageImagesVerified": 0,
+    "tentativeRVariants": 6,
+    "segmentedGospelLeads": 4
   },
   "dates": [
     {
@@ -44,7 +48,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO121",
@@ -65,7 +71,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -86,7 +94,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -107,7 +117,11 @@
         "indexCandidateReference": "Luke 2:21",
         "indexCandidateSourcePath": "Tempora/Nat2-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO121",
@@ -128,7 +142,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -149,7 +165,11 @@
         "indexCandidateReference": "Matthew 2:1–12",
         "indexCandidateSourcePath": "Sancti/01-06",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO097",
@@ -170,7 +190,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -191,7 +213,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -212,7 +236,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -233,7 +259,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -254,7 +282,11 @@
         "indexCandidateReference": "Luke 2:42–52",
         "indexCandidateSourcePath": "Tempora/Epi1-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO098",
@@ -275,7 +307,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -296,7 +330,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO005",
@@ -317,7 +353,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -338,7 +376,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -359,7 +399,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -380,7 +422,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -401,7 +445,11 @@
         "indexCandidateReference": "John 2:1–11",
         "indexCandidateSourcePath": "Tempora/Epi2-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO007",
@@ -422,7 +470,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -443,7 +493,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -464,7 +516,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -485,7 +539,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -506,7 +562,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -527,7 +585,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -548,7 +608,11 @@
         "indexCandidateReference": "Matthew 8:1–13",
         "indexCandidateSourcePath": "Tempora/Epi3-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO119",
@@ -569,7 +633,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -590,7 +656,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -611,7 +679,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -632,7 +702,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -653,7 +725,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -674,7 +748,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -695,7 +771,11 @@
         "indexCandidateReference": "Matthew 20:1–16",
         "indexCandidateSourcePath": "Tempora/Quadp1-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO141",
@@ -716,7 +796,11 @@
         "indexCandidateReference": "Luke 2:22–32",
         "indexCandidateSourcePath": "Sancti/02-02",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO139",
@@ -737,7 +821,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -758,7 +844,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -779,7 +867,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -800,7 +890,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -821,7 +913,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -842,7 +936,11 @@
         "indexCandidateReference": "Luke 8:4–15",
         "indexCandidateSourcePath": "Tempora/Quadp2-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO126",
@@ -863,7 +961,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -884,7 +984,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -905,7 +1007,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -926,7 +1030,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -947,7 +1053,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -968,7 +1076,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -989,7 +1099,11 @@
         "indexCandidateReference": "Luke 18:31–43",
         "indexCandidateSourcePath": "Tempora/Quadp3-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO127",
@@ -1010,7 +1124,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1031,7 +1147,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1052,7 +1170,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1073,7 +1193,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1094,7 +1216,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1115,7 +1239,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1136,7 +1262,11 @@
         "indexCandidateReference": "Matthew 4:1–11",
         "indexCandidateSourcePath": "Tempora/Quad1-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO110",
@@ -1157,7 +1287,11 @@
         "indexCandidateReference": "Matthew 25:31–46",
         "indexCandidateSourcePath": "Tempora/Quad1-1",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1178,7 +1312,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1199,7 +1335,11 @@
         "indexCandidateReference": "Matthew 12:38–50",
         "indexCandidateSourcePath": "Tempora/Quad1-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1220,7 +1360,11 @@
         "indexCandidateReference": "Matthew 15:21–28",
         "indexCandidateSourcePath": "Tempora/Quad1-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1241,7 +1385,11 @@
         "indexCandidateReference": "John 5:1–15",
         "indexCandidateSourcePath": "Tempora/Quad1-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1262,7 +1410,11 @@
         "indexCandidateReference": "Matthew 17:1–9",
         "indexCandidateSourcePath": "Tempora/Quad1-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1283,7 +1435,11 @@
         "indexCandidateReference": "Matthew 17:1–9",
         "indexCandidateSourcePath": "Tempora/Quad2-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO008",
@@ -1304,7 +1460,11 @@
         "indexCandidateReference": "John 8:21–29",
         "indexCandidateSourcePath": "Tempora/Quad2-1",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1325,7 +1485,11 @@
         "indexCandidateReference": "Matthew 23:1–12",
         "indexCandidateSourcePath": "Tempora/Quad2-2",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1346,7 +1510,11 @@
         "indexCandidateReference": "Matthew 20:17–28",
         "indexCandidateSourcePath": "Tempora/Quad2-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1367,7 +1535,11 @@
         "indexCandidateReference": "Luke 16:19–31",
         "indexCandidateSourcePath": "Tempora/Quad2-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1388,7 +1560,11 @@
         "indexCandidateReference": "Matthew 21:33–46",
         "indexCandidateSourcePath": "Tempora/Quad2-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1409,7 +1585,11 @@
         "indexCandidateReference": "Luke 15:11–32",
         "indexCandidateSourcePath": "Tempora/Quad2-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1430,7 +1610,11 @@
         "indexCandidateReference": "Luke 11:14–28",
         "indexCandidateSourcePath": "Tempora/Quad3-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1451,7 +1635,11 @@
         "indexCandidateReference": "Luke 4:23–30",
         "indexCandidateSourcePath": "Tempora/Quad3-1",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1472,7 +1660,11 @@
         "indexCandidateReference": "Matthew 18:15–22",
         "indexCandidateSourcePath": "Tempora/Quad3-2",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1493,7 +1685,11 @@
         "indexCandidateReference": "Matthew 15:1–20",
         "indexCandidateSourcePath": "Tempora/Quad3-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1514,7 +1710,11 @@
         "indexCandidateReference": "Luke 4:38–44",
         "indexCandidateSourcePath": "Tempora/Quad3-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1535,7 +1735,11 @@
         "indexCandidateReference": "John 4:5–42",
         "indexCandidateSourcePath": "Tempora/Quad3-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1556,7 +1760,11 @@
         "indexCandidateReference": "John 8:1–11",
         "indexCandidateSourcePath": "Tempora/Quad3-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1577,7 +1785,11 @@
         "indexCandidateReference": "John 6:1–15",
         "indexCandidateSourcePath": "Tempora/Quad4-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO010",
@@ -1598,7 +1810,11 @@
         "indexCandidateReference": "John 2:13–25",
         "indexCandidateSourcePath": "Tempora/Quad4-1",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1619,7 +1835,11 @@
         "indexCandidateReference": "John 7:14–31",
         "indexCandidateSourcePath": "Tempora/Quad4-2",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1640,7 +1860,11 @@
         "indexCandidateReference": "John 9:1–38",
         "indexCandidateSourcePath": "Tempora/Quad4-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1661,7 +1885,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO128",
@@ -1682,7 +1908,11 @@
         "indexCandidateReference": "John 11:1–45",
         "indexCandidateSourcePath": "Tempora/Quad4-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1703,7 +1933,11 @@
         "indexCandidateReference": "John 8:12–20",
         "indexCandidateSourcePath": "Tempora/Quad4-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1724,7 +1958,11 @@
         "indexCandidateReference": "John 8:46–59",
         "indexCandidateSourcePath": "Tempora/Quad5-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO146",
@@ -1745,7 +1983,11 @@
         "indexCandidateReference": "John 7:32–39",
         "indexCandidateSourcePath": "Tempora/Quad5-1",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1766,7 +2008,11 @@
         "indexCandidateReference": "John 7:1–13",
         "indexCandidateSourcePath": "Tempora/Quad5-2",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1787,7 +2033,11 @@
         "indexCandidateReference": "Luke 1:26–38",
         "indexCandidateSourcePath": "Sancti/03-25",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO001",
@@ -1808,7 +2058,11 @@
         "indexCandidateReference": "Luke 7:36–50",
         "indexCandidateSourcePath": "Tempora/Quad5-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1829,7 +2083,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1850,7 +2106,11 @@
         "indexCandidateReference": "John 12:10–36",
         "indexCandidateSourcePath": "Tempora/Quad5-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1868,10 +2128,14 @@
       "sourceIdPathCandidate": "Tempora/Quad6-0r",
       "historicArtSelectorMatch": "TRAILING_R_VARIANT_UNCONFIRMED",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "Matthew 26:36–75; 27:1–60",
+        "indexCandidateSourcePath": "Tempora/Quad6-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED",
+        "indexEvidenceSources": [
+          "SEGMENTED_GOSPEL_WITNESS"
+        ]
       },
       "approvedDatePainting": {
         "artworkId": "primary:2026-03-29",
@@ -1900,7 +2164,11 @@
         "indexCandidateReference": "John 12:1–9",
         "indexCandidateSourcePath": "Tempora/Quad6-1",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1918,10 +2186,14 @@
       "sourceIdPathCandidate": "Tempora/Quad6-2",
       "historicArtSelectorMatch": "SOURCE_PATH_NOT_IN_HISTORIC_SELECTOR",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "Mark 14:32–72; 15:1–46",
+        "indexCandidateSourcePath": "Tempora/Quad6-2",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "SEGMENTED_GOSPEL_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1939,10 +2211,14 @@
       "sourceIdPathCandidate": "Tempora/Quad6-3",
       "historicArtSelectorMatch": "SOURCE_PATH_NOT_IN_HISTORIC_SELECTOR",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "Luke 22:39–71; 23:1–53",
+        "indexCandidateSourcePath": "Tempora/Quad6-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "SEGMENTED_GOSPEL_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -1960,10 +2236,14 @@
       "sourceIdPathCandidate": "Tempora/Quad6-4r",
       "historicArtSelectorMatch": "TRAILING_R_VARIANT_UNCONFIRMED",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "John 13:1–15",
+        "indexCandidateSourcePath": "Tempora/Quad6-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": {
         "artworkId": "met-459131",
@@ -1992,7 +2272,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO034",
@@ -2013,7 +2295,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO096",
@@ -2034,7 +2318,11 @@
         "indexCandidateReference": "Mark 16:1–7",
         "indexCandidateSourcePath": "Tempora/Pasc0-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO099",
@@ -2055,7 +2343,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2076,7 +2366,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2097,7 +2389,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2118,7 +2412,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2139,7 +2435,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2160,7 +2458,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2181,7 +2481,11 @@
         "indexCandidateReference": "John 20:19–31",
         "indexCandidateSourcePath": "Tempora/Pasc1-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO012",
@@ -2202,7 +2506,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2223,7 +2529,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2244,7 +2552,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2265,7 +2575,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2286,7 +2598,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2307,7 +2621,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2328,7 +2644,11 @@
         "indexCandidateReference": "John 10:11–16",
         "indexCandidateSourcePath": "Tempora/Pasc2-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO100",
@@ -2349,7 +2669,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2370,7 +2692,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2391,7 +2715,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2412,7 +2738,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2433,7 +2761,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2454,7 +2784,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2472,10 +2804,14 @@
       "sourceIdPathCandidate": "Tempora/Pasc3-0r",
       "historicArtSelectorMatch": "TRAILING_R_VARIANT_UNCONFIRMED",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "John 16:16–22",
+        "indexCandidateSourcePath": "Tempora/Pasc3-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO111",
@@ -2496,7 +2832,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2517,7 +2855,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2538,7 +2878,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2559,7 +2901,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2580,7 +2924,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO134",
@@ -2601,7 +2947,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2622,7 +2970,11 @@
         "indexCandidateReference": "John 16:5–14",
         "indexCandidateSourcePath": "Tempora/Pasc4-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO099",
@@ -2643,7 +2995,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2664,7 +3018,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2685,7 +3041,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2706,7 +3064,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2727,7 +3087,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2748,7 +3110,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2769,7 +3133,11 @@
         "indexCandidateReference": "John 16:23–30",
         "indexCandidateSourcePath": "Tempora/Pasc5-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2790,7 +3158,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2811,7 +3181,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2832,7 +3204,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2853,7 +3227,11 @@
         "indexCandidateReference": "Mark 16:14–20",
         "indexCandidateSourcePath": "Tempora/Pasc5-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO101",
@@ -2874,7 +3252,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2895,7 +3275,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2913,10 +3295,14 @@
       "sourceIdPathCandidate": "Tempora/Pasc6-0",
       "historicArtSelectorMatch": "EXACT_OBSERVED_ID_AS_HISTORIC_PATH",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "John 15:26–27; 16:1–4",
+        "indexCandidateSourcePath": "Tempora/Pasc6-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "SEGMENTED_GOSPEL_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO109",
@@ -2937,7 +3323,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2958,7 +3346,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -2979,7 +3369,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3000,7 +3392,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3021,7 +3415,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3042,7 +3438,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": {
         "artworkId": "primary:2026-05-23",
@@ -3071,7 +3469,11 @@
         "indexCandidateReference": "John 14:23–31",
         "indexCandidateSourcePath": "Tempora/Pasc7-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": {
         "artworkId": "ART-ean-estout-entecost",
@@ -3100,7 +3502,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3121,7 +3525,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3142,7 +3548,11 @@
         "indexCandidateReference": "John 6:44–52",
         "indexCandidateSourcePath": "Tempora/Pasc7-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": {
         "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
@@ -3171,7 +3581,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3192,7 +3604,11 @@
         "indexCandidateReference": "Luke 5:17–26",
         "indexCandidateSourcePath": "Tempora/Pasc7-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3213,7 +3629,11 @@
         "indexCandidateReference": "Luke 4:38–44",
         "indexCandidateSourcePath": "Tempora/Pasc7-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3231,10 +3651,14 @@
       "sourceIdPathCandidate": "Tempora/Pent01-0r",
       "historicArtSelectorMatch": "TRAILING_R_VARIANT_UNCONFIRMED",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "Matthew 28:18–20",
+        "indexCandidateSourcePath": "Tempora/Pent01-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO105",
@@ -3255,7 +3679,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3276,7 +3702,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3297,7 +3725,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3318,7 +3748,11 @@
         "indexCandidateReference": "John 6:56–59",
         "indexCandidateSourcePath": "Tempora/Pent01-4",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO095",
@@ -3339,7 +3773,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3360,7 +3796,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3378,10 +3816,14 @@
       "sourceIdPathCandidate": "Tempora/Pent02-0r",
       "historicArtSelectorMatch": "TRAILING_R_VARIANT_UNCONFIRMED",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "Luke 14:16–24",
+        "indexCandidateSourcePath": "Tempora/Pent02-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3402,7 +3844,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3423,7 +3867,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3444,7 +3890,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3465,7 +3913,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3486,7 +3936,11 @@
         "indexCandidateReference": "John 19:31–37",
         "indexCandidateSourcePath": "Tempora/Pent02-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": {
         "artworkId": "commons-morlete-sacred-heart-1759",
@@ -3515,7 +3969,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3533,10 +3989,14 @@
       "sourceIdPathCandidate": "Tempora/Pent03-0r",
       "historicArtSelectorMatch": "TRAILING_R_VARIANT_UNCONFIRMED",
       "gospel": {
-        "indexCandidateReference": null,
-        "indexCandidateSourcePath": null,
+        "indexCandidateReference": "Luke 15:1–10",
+        "indexCandidateSourcePath": "Tempora/Pent03-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "POSSIBLE_TRAILING_R_ALIAS_UNVERIFIED",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO100",
@@ -3557,7 +4017,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3578,7 +4040,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3599,7 +4063,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3620,7 +4086,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3641,7 +4109,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3662,7 +4132,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3683,7 +4155,11 @@
         "indexCandidateReference": "Luke 5:1–11",
         "indexCandidateSourcePath": "Tempora/Pent04-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO073",
@@ -3704,7 +4180,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3725,7 +4203,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3746,7 +4226,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO131",
@@ -3767,7 +4249,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3788,7 +4272,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3809,7 +4295,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3830,7 +4318,11 @@
         "indexCandidateReference": "Matthew 5:20–24",
         "indexCandidateSourcePath": "Tempora/Pent05-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO151",
@@ -3851,7 +4343,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO129",
@@ -3872,7 +4366,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3893,7 +4389,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO132",
@@ -3914,7 +4412,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO113",
@@ -3935,7 +4435,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3956,7 +4458,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -3977,7 +4481,11 @@
         "indexCandidateReference": "Mark 8:1–9",
         "indexCandidateSourcePath": "Tempora/Pent06-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO010",
@@ -3998,7 +4506,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4019,7 +4529,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4040,7 +4552,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4061,7 +4575,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4082,7 +4598,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4103,7 +4621,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4124,7 +4644,11 @@
         "indexCandidateReference": "Matthew 7:15–21",
         "indexCandidateSourcePath": "Tempora/Pent07-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO140",
@@ -4145,7 +4669,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4166,7 +4692,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4187,7 +4715,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4208,7 +4738,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4229,7 +4761,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4250,7 +4784,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4271,7 +4807,11 @@
         "indexCandidateReference": "Luke 16:1–9",
         "indexCandidateSourcePath": "Tempora/Pent08-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4292,7 +4832,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4313,7 +4855,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4334,7 +4878,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4355,7 +4901,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4376,7 +4924,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4397,7 +4947,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4418,7 +4970,11 @@
         "indexCandidateReference": "Luke 19:41–47",
         "indexCandidateSourcePath": "Tempora/Pent09-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO084",
@@ -4439,7 +4995,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4460,7 +5018,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4481,7 +5041,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4502,7 +5064,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4523,7 +5087,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4544,7 +5110,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4565,7 +5133,11 @@
         "indexCandidateReference": "Luke 18:9–14",
         "indexCandidateSourcePath": "Tempora/Pent10-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO124",
@@ -4586,7 +5158,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4607,7 +5181,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4628,7 +5204,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4649,7 +5227,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO008",
@@ -4670,7 +5250,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4691,7 +5273,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4712,7 +5296,11 @@
         "indexCandidateReference": "Mark 7:31–37",
         "indexCandidateSourcePath": "Tempora/Pent11-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO088",
@@ -4733,7 +5321,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4754,7 +5344,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4775,7 +5367,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4796,7 +5390,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4817,7 +5413,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4838,7 +5436,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO022",
@@ -4859,7 +5459,11 @@
         "indexCandidateReference": "Luke 10:23–37",
         "indexCandidateSourcePath": "Tempora/Pent12-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO106",
@@ -4880,7 +5484,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4901,7 +5507,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4922,7 +5530,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4943,7 +5553,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4964,7 +5576,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -4985,7 +5599,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5006,7 +5622,11 @@
         "indexCandidateReference": "Luke 17:11–19",
         "indexCandidateSourcePath": "Tempora/Pent13-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO089",
@@ -5027,7 +5647,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5048,7 +5670,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5069,7 +5693,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5090,7 +5716,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5111,7 +5739,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5132,7 +5762,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5153,7 +5785,11 @@
         "indexCandidateReference": "Matthew 6:24–33",
         "indexCandidateSourcePath": "Tempora/Pent14-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO090",
@@ -5174,7 +5810,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5195,7 +5833,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5216,7 +5856,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5237,7 +5879,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5258,7 +5902,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5279,7 +5925,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5300,7 +5948,11 @@
         "indexCandidateReference": "Luke 7:11–16",
         "indexCandidateSourcePath": "Tempora/Pent15-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO116",
@@ -5321,7 +5973,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5342,7 +5996,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO114",
@@ -5363,7 +6019,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5384,7 +6042,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5405,7 +6065,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5426,7 +6088,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5447,7 +6111,11 @@
         "indexCandidateReference": "Luke 14:1–11",
         "indexCandidateSourcePath": "Tempora/Pent16-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5468,7 +6136,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO108",
@@ -5489,7 +6159,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5510,7 +6182,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5531,7 +6205,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5552,7 +6228,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5573,7 +6251,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5594,7 +6274,11 @@
         "indexCandidateReference": "Matthew 22:34–46",
         "indexCandidateSourcePath": "Tempora/Pent17-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5615,7 +6299,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5636,7 +6322,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5657,7 +6345,11 @@
         "indexCandidateReference": "Mark 9:16–28",
         "indexCandidateSourcePath": "Tempora/093-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5678,7 +6370,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5699,7 +6393,11 @@
         "indexCandidateReference": "Luke 7:36–50",
         "indexCandidateSourcePath": "Tempora/093-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5720,7 +6418,11 @@
         "indexCandidateReference": "Luke 13:6–17",
         "indexCandidateSourcePath": "Tempora/093-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5741,7 +6443,11 @@
         "indexCandidateReference": "Matthew 9:1–8",
         "indexCandidateSourcePath": "Tempora/Pent18-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO153",
@@ -5762,7 +6468,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5783,7 +6491,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO133",
@@ -5804,7 +6514,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5825,7 +6537,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5846,7 +6560,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5867,7 +6583,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5888,7 +6606,11 @@
         "indexCandidateReference": "Matthew 22:1–14",
         "indexCandidateSourcePath": "Tempora/Pent19-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO091",
@@ -5909,7 +6631,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5930,7 +6654,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5951,7 +6677,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5972,7 +6700,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -5993,7 +6723,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6014,7 +6746,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6035,7 +6769,11 @@
         "indexCandidateReference": "John 4:46–53",
         "indexCandidateSourcePath": "Tempora/Pent20-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6056,7 +6794,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6077,7 +6817,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6098,7 +6840,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6119,7 +6863,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6140,7 +6886,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6161,7 +6909,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6182,7 +6932,11 @@
         "indexCandidateReference": "Matthew 18:23–35",
         "indexCandidateSourcePath": "Tempora/Pent21-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO093",
@@ -6203,7 +6957,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6224,7 +6980,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6245,7 +7003,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6266,7 +7026,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6287,7 +7049,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6308,7 +7072,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6329,7 +7095,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": {
         "artworkId": "primary:2026-10-25",
@@ -6358,7 +7126,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6379,7 +7149,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6400,7 +7172,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6421,7 +7195,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6442,7 +7218,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6463,7 +7241,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6484,7 +7264,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": {
         "artworkId": "primary:2026-11-01",
@@ -6513,7 +7295,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": {
         "artworkId": "primary:2026-11-02",
@@ -6542,7 +7326,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6563,7 +7349,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6584,7 +7372,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6605,7 +7395,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6626,7 +7418,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6647,7 +7441,11 @@
         "indexCandidateReference": "Matthew 13:24–30",
         "indexCandidateSourcePath": "Tempora/Epi5-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO143",
@@ -6668,7 +7466,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6689,7 +7489,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6710,7 +7512,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6731,7 +7535,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6752,7 +7558,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6773,7 +7581,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6794,7 +7604,11 @@
         "indexCandidateReference": "Matthew 13:31–35",
         "indexCandidateSourcePath": "Tempora/Epi6-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO130",
@@ -6815,7 +7629,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6836,7 +7652,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6857,7 +7675,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6878,7 +7698,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6899,7 +7721,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6920,7 +7744,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6941,7 +7767,11 @@
         "indexCandidateReference": "Matthew 24:15–35",
         "indexCandidateSourcePath": "Tempora/Pent24-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO107",
@@ -6962,7 +7792,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -6983,7 +7815,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7004,7 +7838,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7025,7 +7861,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7046,7 +7884,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7067,7 +7907,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7088,7 +7930,11 @@
         "indexCandidateReference": "Luke 21:25–33",
         "indexCandidateSourcePath": "Tempora/Adv1-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": {
         "artworkId": "primary:2026-11-29",
@@ -7117,7 +7963,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7138,7 +7986,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7159,7 +8009,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7180,7 +8032,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7201,7 +8055,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7222,7 +8078,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7243,7 +8101,11 @@
         "indexCandidateReference": "Matthew 11:2–10",
         "indexCandidateSourcePath": "Tempora/Adv2-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO142",
@@ -7264,7 +8126,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7285,7 +8149,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO021",
@@ -7306,7 +8172,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7327,7 +8195,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7348,7 +8218,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7369,7 +8241,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7390,7 +8264,11 @@
         "indexCandidateReference": "John 1:19–28",
         "indexCandidateSourcePath": "Tempora/Adv3-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO118",
@@ -7411,7 +8289,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7432,7 +8312,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7453,7 +8335,11 @@
         "indexCandidateReference": "Luke 1:26–38",
         "indexCandidateSourcePath": "Tempora/Adv3-3",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7474,7 +8360,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7495,7 +8383,11 @@
         "indexCandidateReference": "Luke 1:39–47",
         "indexCandidateSourcePath": "Tempora/Adv3-5",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7516,7 +8408,11 @@
         "indexCandidateReference": "Luke 3:1–6",
         "indexCandidateSourcePath": "Tempora/Adv3-6",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "FEAST_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7537,7 +8433,11 @@
         "indexCandidateReference": "Luke 3:1–6",
         "indexCandidateSourcePath": "Tempora/Adv4-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO104",
@@ -7558,7 +8458,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7579,7 +8481,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7600,7 +8504,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7621,7 +8527,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO138",
@@ -7642,7 +8550,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": "AO003",
@@ -7663,7 +8573,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7684,7 +8596,11 @@
         "indexCandidateReference": "Luke 2:33–40",
         "indexCandidateSourcePath": "Tempora/Nat1-0",
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": "SOURCE_ID_PATH_INDEX_CANDIDATE",
+        "indexEvidenceSources": [
+          "MASS_READING_WITNESS"
+        ]
       },
       "approvedDatePainting": null,
       "historicArtId": "AO120",
@@ -7705,7 +8621,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7726,7 +8644,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7747,7 +8667,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
@@ -7768,7 +8690,9 @@
         "indexCandidateReference": null,
         "indexCandidateSourcePath": null,
         "verifiedAgainstActualSelectedLatin": false,
-        "verifiedCurrentSourcePath": false
+        "verifiedCurrentSourcePath": false,
+        "indexMatchMethod": null,
+        "indexEvidenceSources": []
       },
       "approvedDatePainting": null,
       "historicArtId": null,
