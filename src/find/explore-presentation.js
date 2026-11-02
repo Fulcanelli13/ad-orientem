@@ -305,7 +305,7 @@ function placeSheet(vm){
       html+='</div></article>';
     }
     html+='</section>';
-  }else if(!hasEditorialIntro&&synopsis&&!prototypeSynopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  }else if(!hasEditorialIntro&&synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
   if(hasTreasures)html+=renderPlaceSacredTreasures(profile,vm.language);
   if(hasSiteCustoms)html+=renderPlaceCustoms(profile,vm.language);
   if(hasGallery)html+=placeGalleryHtml(profile,vm.language);
