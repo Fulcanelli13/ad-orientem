@@ -94,7 +94,7 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
 }
 .aoHeritageSurface[data-atlas-entry=discover] .aoHeritageCategories{display:none!important}
 .aoHeritageSurface .aoHeritageCategories button{
-  height:36px!important;min-height:36px!important;border-radius:20px!important;
+  height:44px!important;min-height:44px!important;border-radius:22px!important;
   font:500 12px var(--ao-font-display,Georgia,serif)!important;
   padding:8px 11px!important;background:var(--atlas-proto-glass)!important;
 }
