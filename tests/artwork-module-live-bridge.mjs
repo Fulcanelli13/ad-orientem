@@ -45,6 +45,22 @@ for(const [id,expected] of Object.entries(originals)){
  assert.equal(createHash("sha256").update(readFileSync(new URL("../"+x.image,import.meta.url))).digest("hex"),expected,"Approved original hash drift: "+id);
 }
 for(const id of ["scripture","sorrows","morning"])assert.equal(releasedModulePhoto(id),null,"Unreleased photo remains held: "+id);
+const wave3=JSON.parse(source("data/research/module-hero-wave3-four-photo-release-20261103.v1.json"));
+assert.equal(wave3.counts.newReleaseCandidates,4);
+assert.deepEqual(wave3.releaseCandidates.map(x=>x.module),["joseph","regina","souls","visit"]);
+assert.deepEqual(wave3.heldPhotos.map(x=>x.module),["morning","scripture","sorrows"]);
+for(const record of wave3.releaseCandidates){
+ assert.equal(record.sha256,originals[record.module],"Release ledger source SHA must match actual archive");
+ assert.equal(record.gitBlobSha,{
+  joseph:"6a3760cd019ad1993d78450e2f539bd2c9037c50",
+  regina:"25bd905c5825381f17fe11e90ee8e5c5218ac16d",
+  souls:"ebc10d8720cfc66d14e3561078336591fd502e52",
+  visit:"d21c497238aaa7c25fdd39e47cee07a0cd672702"
+ }[record.module],"Release ledger Git source blob mismatch");
+ assert.equal(record.displayFit,"contain");
+ assert.equal(record.cropMade,false);
+}
+
 const args={head:()=>"",L:(en,fr)=>en,esc:s=>s,posture:"Kneel",moduleIcon:()=>"",recitation:"individual",hour:12};
 const angelus=renderPilotAngelusEntry({...args,form:"angelus"});
 assert.ok(angelus.includes("angelus-frameless.webp"));
