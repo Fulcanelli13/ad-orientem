@@ -1,0 +1,30 @@
+name: Approved Met artwork reuse across Home and Prayer
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/art/released-module-paintings.v1.js"
+      - "src/home/c3-gallery.js"
+      - "src/pray/**"
+      - "tests/artwork-module-live-bridge.mjs"
+      - "tests/home-c3-gallery.mjs"
+  pull_request:
+    paths:
+      - "src/art/released-module-paintings.v1.js"
+      - "src/home/c3-gallery.js"
+      - "src/pray/**"
+      - "tests/artwork-module-live-bridge.mjs"
+      - "tests/home-c3-gallery.mjs"
+jobs:
+  release-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/artwork-module-live-bridge.mjs
+      - run: node tests/home-c3-gallery.mjs
+      - run: node tests/home-c3-met-release-integrity.mjs
