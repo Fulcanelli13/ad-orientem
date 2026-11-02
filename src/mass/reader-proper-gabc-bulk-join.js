@@ -10,9 +10,24 @@ export const MASS_GABC_BULK_MATCH_SCHEMA="ao-mass-1962-proper-gabc-bulk-candidat
 export const MASS_GABC_SOURCE_ROLES=ROLES;
 const latin=value=>String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
- .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
+ .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ")
+ .replace(/\bcoel/g,"cael"); // text-screening orthography: cœli/coeli/caeli
 const words=value=>latin(value).split(" ").filter(Boolean);
 const validPath=path=>/^(Tempora|Sancti|Commune)\/[A-Za-z0-9_-]+$/.test(path);
+// The 1962 DayResolver supplies readable Missal text, often prefixed by a
+// printed Scripture citation ("Ps 88:12; 88:15", "4 Esdr 2:34-35") and
+// an optional ℣. cue. These are bibliographic / typographic marks, not sung
+// opening words. Strip ONLY such anchored prefixes for textual screening;
+// retain the authentic Proper Latin unchanged in reader/source records.
+const LEADING_BIBLE_REFERENCE=/^(?:(?:[1-4]\s+)?[A-Za-z][A-Za-z.]{1,24}\s+){1,3}\d{1,3}\s*[:.,]\s*\d{1,3}(?:[-–]\d{1,3})?(?:\s*(?:;|,|\bet\b)\s*(?:(?:[1-4]\s+)?[A-Za-z][A-Za-z.]{1,24}\s+){0,3}\d{1,3}(?:\s*[:.,]\s*\d{1,3})?(?:[-–]\d{1,3})?)*\.?\s*/u;
+export function source1962ChantOpeningForMatch(value){
+ const lines=String(value??"").split(/\r?\n/).map(s=>s.trim())
+   .filter(Boolean).filter(s=>!/^[$!]/.test(s)&&!/^&Gloria\b/i.test(s));
+ const first=lines.join(" ").trim();
+ const afterReference=first.replace(LEADING_BIBLE_REFERENCE,"")
+   .replace(/^Sedulius\s+(?=[℣℟][.])/iu,""); // printed hymn-author attribution
+ return afterReference.replace(/^(?:[℣℟]\.|[VR]\.)\s*/u,"").trim();
+}
 function gabcLatin(gabc){
  // The archive stores the score BODY, not necessarily a GABC %% header.
  // Notes are inside parentheses, often between syllables of ONE Latin word.
@@ -88,9 +103,10 @@ function matchingPrefix(sourceText,scoreText,part){
 function scan(sourceText,part,index,sourcePath){
  const corpus=index.byRole?.[part]??[];
  if(!corpus.length)return status("ARCHIVE_ROLE_MISSING","SOURCE_ARCHIVE_INCOMPLETE");
- const w=roleTokens(sourceText,part);
+ const sourceOpening=source1962ChantOpeningForMatch(sourceText);
+ const w=roleTokens(sourceOpening,part);
  if(w.length<4)return status("INSUFFICIENT_SOURCE_LATIN","FOUR_SOURCE_WORDS_REQUIRED");
- const rows=corpus.map(rec=>({rec,prefix:matchingPrefix(sourceText,rec.normalizedScoreText,part)}))
+ const rows=corpus.map(rec=>({rec,prefix:matchingPrefix(sourceOpening,rec.normalizedScoreText,part)}))
   .filter(x=>x.prefix>=4)
   .sort((a,b)=>b.prefix-a.prefix||a.rec.gregobaseId-b.rec.gregobaseId);
  if(!rows.length)return status("NO_TEXT_CANDIDATE","NO_FOUR_WORD_OPENING_MATCH_WITHIN_SAME_ROLE");
