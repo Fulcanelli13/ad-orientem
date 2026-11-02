@@ -57,7 +57,7 @@ try{
       await img.decode().catch(()=>{});
       const rect=img.getBoundingClientRect();
       return {src:img.getAttribute("src"),naturalWidth:img.naturalWidth,
-       naturalHeight:img.naturalHeight,width:rect.width,height:rect.height,
+       naturalHeight:img.naturalHeight,width:rect.width,height:rect.height,left:rect.left,right:rect.right,viewport:innerWidth,
        fit:getComputedStyle(img).objectFit};
      });
     };
@@ -66,14 +66,20 @@ try{
      assert.ok(image.naturalWidth>500&&image.naturalHeight>500,"Released photo did not decode: "+JSON.stringify(image));
      assert.ok(image.width>50&&image.height>40,"Released photo is not rendered: "+JSON.stringify(image));
      assert.equal(image.fit,"contain","Approved painting must not crop unexpectedly");
+     assert.ok(image.left>=-1&&image.right<=image.viewport+1,
+      "Painting itself must be fully inside the phone viewport: "+JSON.stringify(image));
     };
-    const overflow=async()=>{
+    const overflow=async({allowVerticalScrollbar=false}={})=>{
      const x=await page.evaluate(()=>({
       document:document.documentElement.scrollWidth-innerWidth,
       mount:(()=>{const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
         return m?m.scrollWidth-m.clientWidth:999})()
      }));
-     assert.ok(x.document<=1&&x.mount<=1,"Phone overflow: "+JSON.stringify(x));
+     // Chromium's narrow Confession reader has a 13px classic vertical
+     // scrollbar: clientWidth excludes it, scrollWidth need not. The image
+     // bounds above and document scrollWidth detect true horizontal overflow.
+     assert.ok(x.document<=1&&x.mount<=(allowVerticalScrollbar?16:1),
+      "Phone overflow: "+JSON.stringify(x));
     };
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
     const hub=await imageState('[data-ao-art-slot-id="DOOR-D5"] .aoPrayPilotReleasedTilePhoto');
@@ -100,7 +106,7 @@ try{
       "Confession's existing preparation and privacy flow must remain intact");
     assert.equal(await page.locator(base+' .aoP435930ConfNavShell').count(),1,
       "The four-stage Confession navigation must remain intact");
-    await overflow();
+    await overflow({allowVerticalScrollbar:true});
     await page.screenshot({path:resolve(output,"confession-"+width+"-"+locale+".png"),animations:"disabled"});
     // Force Angelus only in this browser's QA state; real production continues
     // to choose Angelus/Regina Caeli from the canonical liturgical season.
