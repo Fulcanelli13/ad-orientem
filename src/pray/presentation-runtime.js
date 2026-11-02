@@ -3130,6 +3130,16 @@ function renderPreciousBlood(){
  const common=DATA.prayers;
  const source=PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1;
  const name=L("Chaplet of the Precious Blood","Chapelet du Précieux Sang");
+ // The Aa choice selects the preferred canonical-prayer face; this source
+ // has historical responses in Latin and a 1910 closing prayer in English.
+ // Disclose the mixed source witnesses rather than claiming full FR/LA text.
+ const sourceLanguageNotice=(fr||s.latin)
+  ?'<small class="aoPreciousBloodLang" data-ao-blood-mixed-source-language lang="'+(fr?'fr':'en')+'">'+
+    esc(s.latin
+      ?L('Latin originals where available; the historical concluding prayer remains English.','Latin original lorsqu’il existe ; la prière finale historique reste en anglais.')
+      :L('Historical responses in Latin, shared prayers in French; the 1910 conclusion remains English.','Répons historiques en latin, prières communes en français ; la conclusion de 1910 reste en anglais.'))+
+    '</small>'
+  :'';
  const latin='<button type="button" data-p435930-blood-latin aria-pressed="'+String(s.latin)+'">'+
   esc(s.latin?L("EN / FR","EN / FR"):L("LATIN","LATIN"))+'</button>';
  const bloodLanguageMenu='<details class="aoF07BloodLanguage"><summary aria-label="'+
@@ -3224,7 +3234,7 @@ function renderPreciousBlood(){
   nav+'<div class="aoPreciousBloodProgress" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="'+
   (s.phase+1)+'" aria-label="'+esc(L("Devotion progress","Progression"))+'"><span style="width:'+
   Math.round((s.phase+1)/9*100)+'%"></span></div>')+
- contents+
+ sourceLanguageNotice+contents+
  (CHAPLET_F07_VARIANTS_ENABLED?'<details class="aoF07BloodJump"><summary>'+esc(L('Seven sheddings · choose','Sept effusions · choisir'))+'</summary>'+nav+'</details>':'')+
  '<footer class="aoPreciousBloodActions">'+previous+
  (CHAPLET_F07_VARIANTS_ENABLED?'<output class="aoF07BloodDockCount" aria-label="'+esc(L('Chaplet stage','Étape du chapelet'))+'">'+esc(dockLabel)+'</output>':'')+
