@@ -1,0 +1,123 @@
+{
+  "schema": "AO_MODULE_HERO_WAVE3_PUBLICATION_GATE_V1",
+  "date": "2026-11-03",
+  "scope": "EXACT_FOUR_USER_PHOTO_APPROVALS_RELEASE_CANDIDATES",
+  "pullRequest": 2296,
+  "sourceArchivePr": 2267,
+  "sourceArchive": "data/research/module-hero-20-exact-source-archive-20261102.v1.json",
+  "sourcePhotoApproval": "data/research/module-hero-bulk-eight-photo-qa-20261102.v1.json",
+  "rightsReferences": [
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0790",
+    "https://www.gov.uk/government/publications/copyright-notice-digital-images-photographs-and-the-internet/copyright-notice-digital-images-photographs-and-the-internet"
+  ],
+  "counts": {
+    "approvedModuleHeroes": 22,
+    "previouslyReleased": 3,
+    "newReleaseCandidates": 4,
+    "previouslyApprovedPhotographsInBatch": 8,
+    "photographsHeldAfterThisBatch": 3
+  },
+  "releaseCandidates": [
+    {
+      "module": "joseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "archivePath": "assets/staged/module-hero-masters/joseph.jpg",
+      "productionPath": "assets/prayer/released/joseph-whole-original.jpg",
+      "sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+      "gitBlobSha": "6a3760cd019ad1993d78450e2f539bd2c9037c50",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "placement": "Saint Joseph seven sorrows & joys, first opening",
+      "rights": "WIKIMEDIA_COMMONS_PD_ART",
+      "rightsBasis": "Wikimedia Commons file page declares faithful two-dimensional public-domain painting reproduction and US public-domain status; EU Directive 2019/790 Article 14 also covers faithful reproductions lacking own intellectual creation; claims are jurisdiction-dependent, not CC0",
+      "publicationProposed": true,
+      "photoUserApproved": true,
+      "displayFit": "contain",
+      "cropMade": false,
+      "sourceFileReusedByteForByte": true
+    },
+    {
+      "module": "regina",
+      "title": "Resurrection of Christ (central panel)",
+      "artist": "Peter Paul Rubens",
+      "archivePath": "assets/staged/module-hero-masters/regina.jpg",
+      "productionPath": "assets/prayer/released/regina-whole-original.jpg",
+      "sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+      "gitBlobSha": "25bd905c5825381f17fe11e90ee8e5c5218ac16d",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "placement": "Regina Cæli direct and discovery openings only",
+      "rights": "WIKIMEDIA_COMMONS_PD_ART",
+      "rightsBasis": "Wikimedia Commons file page declares faithful two-dimensional public-domain painting reproduction and US public-domain status; EU Directive 2019/790 Article 14 also covers faithful reproductions lacking own intellectual creation; claims are jurisdiction-dependent, not CC0",
+      "publicationProposed": true,
+      "photoUserApproved": true,
+      "displayFit": "contain",
+      "cropMade": false,
+      "sourceFileReusedByteForByte": true
+    },
+    {
+      "module": "souls",
+      "title": "Madonna and Child with Souls in Purgatory",
+      "artist": "Luca Giordano",
+      "archivePath": "assets/staged/module-hero-masters/souls.jpg",
+      "productionPath": "assets/prayer/released/souls-whole-original.jpg",
+      "sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+      "gitBlobSha": "ebc10d8720cfc66d14e3561078336591fd502e52",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+      "placement": "De profundis and Eternal Rest direct Prayer owners",
+      "rights": "WIKIMEDIA_COMMONS_PD_ART",
+      "rightsBasis": "Wikimedia Commons file page declares faithful two-dimensional public-domain painting reproduction and US public-domain status; EU Directive 2019/790 Article 14 also covers faithful reproductions lacking own intellectual creation; claims are jurisdiction-dependent, not CC0",
+      "publicationProposed": true,
+      "photoUserApproved": true,
+      "displayFit": "contain",
+      "cropMade": false,
+      "sourceFileReusedByteForByte": true
+    },
+    {
+      "module": "visit",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Gerrit van Honthorst",
+      "archivePath": "assets/staged/module-hero-masters/visit.jpg",
+      "productionPath": "assets/prayer/released/visit-whole-original.jpg",
+      "sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+      "gitBlobSha": "d21c497238aaa7c25fdd39e47cee07a0cd672702",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+      "placement": "Visit to the Blessed Sacrament opening only",
+      "rights": "WIKIMEDIA_COMMONS_PD_ART",
+      "rightsBasis": "Wikimedia Commons file page declares faithful two-dimensional public-domain painting reproduction and US public-domain status; EU Directive 2019/790 Article 14 also covers faithful reproductions lacking own intellectual creation; claims are jurisdiction-dependent, not CC0",
+      "publicationProposed": true,
+      "photoUserApproved": true,
+      "displayFit": "contain",
+      "cropMade": false,
+      "sourceFileReusedByteForByte": true
+    }
+  ],
+  "heldPhotos": [
+    {
+      "module": "morning",
+      "reason": "Approved original incorporates an independent colour enhancement from Corel source; exact modified photo and colour-fidelity rights not cleared",
+      "photoApproved": true,
+      "productionEnabled": false
+    },
+    {
+      "module": "scripture",
+      "reason": "Exact Caravaggio faithful scan PD-Art source identified, but the canonical Scripture module entry/placement has not been mapped; avoid exposing unrelated Prayer card or Italian cultural-property restrictions",
+      "photoApproved": false,
+      "productionEnabled": false
+    },
+    {
+      "module": "sorrows",
+      "reason": "MNAC marks the selected artwork as public domain; original Seven Sorrows chaplet cover is protected and exact image-to-slot/crop integration not independently validated",
+      "photoApproved": true,
+      "productionEnabled": false
+    }
+  ],
+  "policy": [
+    "No replacement of selected artworks",
+    "Original image Git blobs reused by identity from 20-source archive, not rescraped",
+    "Never equate PD-Art with CC0",
+    "Keep citation/credits and full uncropped painting",
+    "Preserve exact Gregorian prayer texts, confessional privacy and all other module navigation",
+    "No merge until CI and phone EN/FR real browser pass",
+    "No independent claim that copyright clearance extends to every possible jurisdiction"
+  ]
+}
