@@ -72,7 +72,7 @@ export function c3PrayerMarkup({fr=false,feature=null,attrs="",role="",title="",
   return '<div class="aoC3PrayerFrame" data-home-c3-prayer-deck data-c3-feature="'+esc(first)+'">'+
     pages.map((s,i)=>'<article class="aoC3PrayerSlide" data-home-c3-slide="'+i+'"'+(i?' hidden aria-hidden="true"':' aria-hidden="false"')+'>'+
       '<div class="aoC3PrayerArt" aria-hidden="true" data-c3-prayer-art="'+esc(s.id)+'">'+
-        (approvedC3Artwork(s)?'<img class="aoC3ApprovedMetPhoto" src="'+esc(approvedC3Artwork(s).image)+'" alt="" loading="lazy" decoding="async" data-approved-module-art="true" '+(s.id==="confession"?'data-approved-nga-art="true"':'data-approved-met-art="true"')+'>':'')+'</div>'+
+        (approvedC3Artwork(s)?'<img class="aoC3ApprovedMetPhoto" src="'+esc(approvedC3Artwork(s).image)+'" alt="" loading="lazy" decoding="async" data-approved-module-art="true" '+(approvedC3Artwork(s)===C3_APPROVED_MET_PRAYER_ART.confession?'data-approved-nga-art="true"':'data-approved-met-art="true"')+'>':'')+'</div>'+
       '<button type="button" class="'+(i===0?'aoH4Prayer np ':'')+'aoC3PrayerAction" '+s.action+'>'+
       '<span class="aoC3PrayerRole">'+esc(s.role)+'</span><strong>'+esc(s.title)+'</strong><small>'+esc(s.desc)+'</small>'+
       '<span class="aoC3Arrow" aria-hidden="true">›</span></button>'+
