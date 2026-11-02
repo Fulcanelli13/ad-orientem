@@ -459,11 +459,20 @@ export async function prepareNativeReaderPreview({
   const curatedEligible=reviewCuratedCards===true &&
     plan?.kind==="MASS" &&
     liveCapabilityModel.totalCards===39 &&
-    String(liveCapabilityModel.corpusFamily)==="SUNG" &&
+    ["LOW","SUNG"].includes(String(liveCapabilityModel.corpusFamily).toUpperCase()) &&
     // Eligibility is a property of the prepared Mass, not the initial mode:
     // a session may open in MISSAL and then switch to LIVE.
     compatiblePrelude && compatibleFollowing &&
     (plan?.overlayGraphs??[]).every(id=>["VOTIVE_PROPER","REQUIEM"].includes(id));
+  // A supported Requiem must never fall through to the historical 39/48
+  // presentation when a legitimate Low/Sung LIVE Mass was selected.
+  // Uncertified rite combinations fail explicitly rather than silently
+  // presenting the wrong family of prayer cards.
+  if(reviewCuratedCards===true && plan?.kind==="MASS" &&
+     (plan?.overlayGraphs??[]).includes("REQUIEM") &&
+     String(model.presentationMode).toUpperCase()==="LIVE" &&
+     !curatedEligible)
+    throw new Error("REQUIEM_LIVE_CURATED_CARD_PATH_UNCERTIFIED");
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
   const presentationModel=curatedOrdinary
@@ -474,7 +483,9 @@ export async function prepareNativeReaderPreview({
       ? projectGranularMissalCards(model,{language:prepared?.readerPreferences?.language??"en"})
       : model;
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
-  if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
+  // Only the Sung family may claim Sung-specific priest/event crosswalks.
+  if(curatedEligible && String(model.corpusFamily)==="SUNG")
+    auditOrdinarySungPriestEventAlignment(events);
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
   const cueState=createReaderFormCueStateController({
@@ -1335,7 +1346,9 @@ export async function mountNativeReaderPreview({
   });
   // The live Canon action clock is driven exclusively by an independent
   // observer. This does not modify the decorative cue-focused experience.
-  const canonStageObservation=ready.curatedEligible && ready.data?.rubricEvents
+  const canonStageObservation=ready.curatedEligible &&
+    String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
+    ready.data?.rubricEvents
     ? createLiveCanonStageObservationController({
         registry:ready.data.rubricEvents,
         form:ready.prepared.session.resolvedMass.form,
@@ -1546,7 +1559,9 @@ export async function mountNativeReaderPreview({
   }
 
   function currentObservedCuratedPriestEvent(){
-    if(!ready.curatedEligible || !readerModel?.curatedPresentationReview ||
+    if(!ready.curatedEligible ||
+       String(ready.model?.corpusFamily).toUpperCase()!=="SUNG" ||
+       !readerModel?.curatedPresentationReview ||
        !observedCuratedPriestEvent || !current)return null;
     return projectObservedOrdinaryPriestEvent({
       observedEventId:observedCuratedPriestEvent.eventId,
@@ -1668,7 +1683,8 @@ export async function mountNativeReaderPreview({
       : owned.priestPosition);
     // Only the source-backed curated LIVE family receives the new state
     // projection. A card scroll is never an observed priest movement.
-    const finalCurated65=readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW" &&
+    const finalCurated65=String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
+      readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW" &&
       [65,66,67].includes(readerModel?.totalCards) &&
       readerModel?.presentationMode==="LIVE";
     const curatedLocation=projectCurated65PriestStation({
@@ -3438,7 +3454,9 @@ export async function mountNativeReaderPreview({
       conditions=[],observedActor=null,observedDelivery=null,
       observedPosition=null,observedAction=null,
     }={})=>{
-      if(!ready.curatedEligible || !eventId || !Array.isArray(conditions)){
+      if(!ready.curatedEligible ||
+         String(ready.model?.corpusFamily).toUpperCase()!=="SUNG" ||
+         !eventId || !Array.isArray(conditions)){
         observedCuratedPriestEvent=null;queue();return false;
       }
       observedCuratedPriestEvent={eventId:String(eventId),conditions:[...conditions],
