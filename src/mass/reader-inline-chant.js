@@ -69,7 +69,7 @@ export const INLINE_CHANT_CSS=String.raw`
  color:#d58a80;font:500 23px/1.5 var(--ao-font-liturgical,Georgia,serif)}
 .ao-inline-chant-main{grid-column:2;grid-row:1;display:block;min-width:0}
 .ao-inline-chant-score{display:block;width:100%;min-width:0;min-height:54px;
- color:var(--ao-mass-accent-text,#eee4d8);cursor:zoom-in}
+ color:var(--ao-text,#eee4d8);cursor:zoom-in}
 .ao-inline-chant-score svg{display:block;max-width:100%;height:auto;color:inherit}
 .ao-inline-chant-score svg :is(path,polygon,polyline,line,text){
   fill:currentColor
@@ -94,7 +94,8 @@ export const INLINE_CHANT_CSS=String.raw`
  padding:12px 16px;border-bottom:1px solid #ffffff24;font:500 15px Georgia,serif}
 .ao-inline-score-zoom button{border:0;background:transparent;color:inherit;
  min-width:44px;min-height:44px;font:22px Georgia,serif}
-.ao-inline-score-zoom .ao-inline-score-wide{max-height:73dvh;overflow:auto;padding:15px;
+.ao-inline-score-zoom .ao-inline-score-scroll{max-height:73dvh;overflow:auto}
+.ao-inline-score-zoom .ao-inline-score-wide{width:max(860px,100%);padding:15px;
  color:#eee8dc}
 .ao-inline-score-zoom .ao-inline-score-wide svg :is(path,polygon,polyline,line,text){fill:currentColor}
 .ao-inline-score-zoom .ao-inline-score-wide svg{height:auto}
@@ -105,7 +106,7 @@ export const INLINE_CHANT_CSS=String.raw`
  .ao-inline-chant-mark{font-size:20px}
  .ao-inline-chant-control button{min-height:40px}
  .ao-inline-score-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}
- .ao-inline-score-zoom .ao-inline-score-wide{min-width:0;overflow:auto}
+ .ao-inline-score-zoom .ao-inline-score-wide{width:max(760px,100%)}
 }
 @media(prefers-reduced-motion:reduce){
  .ao-reader-paragraph[data-inline-chant-status="ready"]{transition:none}
@@ -152,7 +153,8 @@ export function createInlineChantController({
   head.append(title,closer);
   const wide=doc.createElement("div");wide.className="ao-inline-score-wide";
   wide.setAttribute("role","img");wide.setAttribute("aria-label",entry.score.sourceLatin);
-  modal.append(head,wide);doc.body.append(modal);
+  const scroll=doc.createElement("div");scroll.className="ao-inline-score-scroll";
+  scroll.append(wide);modal.append(head,scroll);doc.body.append(modal);
   modal.addEventListener("cancel",e=>{e.preventDefault();closeZoom()});
   modal.addEventListener("click",e=>{if(e.target===modal)closeZoom()});
   modal.showModal?.();closer.focus();
