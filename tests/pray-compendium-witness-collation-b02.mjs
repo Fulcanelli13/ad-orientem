@@ -11,7 +11,7 @@ assert.equal(batch.counts.batchComparisons,12);
 assert.equal(batch.counts.priorBatchComparisons,4);
 assert.equal(batch.counts.languageComparisons,36);
 assert.equal(batch.counts.fullVerbatimCertified,0);
-assert.equal(batch.policy.fullVerbatimCertified,false);
+assert.equal(batch.policy.fullyCertified,false);
 const priorReviewed=new Set(prior.items.filter(x=>x.status!=="NOT_REVIEWED_IN_BATCH_01").map(x=>x.id));
 const ids=new Set(batch.items.map(x=>x.id));
 assert.equal(ids.size,12);
