@@ -1,7 +1,7 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {APPROVED_MASS_INLINE_GABC} from "./reader-inline-chant-approved.js";
 import {selectApprovedInlineScore} from "./reader-inline-chant-selector.js";
-export {selectApprovedInlineScore} from "./reader-inline-chant-selector.js";
+export {selectApprovedInlineScore, INLINE_CHANT_SCHEMA} from "./reader-inline-chant-selector.js";
 
 // A + C: night-ink, inline-staff LIVE; traditional red margin marker.
 // Never insert a score as a Schola dock track or a new prayer card.
