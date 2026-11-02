@@ -73,7 +73,7 @@ assert.ok(!angelus.includes("regina-whole-original.jpg"),"Angelus must never use
 const pilot=source("src/pray/prayer-design-pilot.js");
 const runtime=source("src/pray/presentation-runtime.js");
 const home=source("src/home/c3-gallery.js");
-for(const s of ['tile.id==="eucharistic"','aoPrayPilotReleasedTilePhoto','releasedModulePhotoMarkup("angelus"'])
+for(const s of ['tile.id==="eucharistic"','aoPrayPilotReleasedTilePhoto','releasedModulePhotoMarkup(regina?"regina":"angelus"'])
  assert.ok(pilot.includes(s),"Missing Prayer discovery/Angelus integration "+s);
 for(const s of ['familyId==="eucharistic"','releasedModulePhotoMarkup("adoration"','releasedDoorPhoto?', 'aoPrayerAdorationCover'])
  assert.ok(runtime.includes(s),"Missing Prayer shelf/Adoration integration "+s);
