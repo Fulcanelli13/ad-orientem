@@ -1,0 +1,86 @@
+{
+  "schema": "AO_MODULE_HERO_EIGHT_APPROVED_SOURCE_PUBLICATION_BATCH_V1",
+  "asOf": "2026-11-02",
+  "scope": "ONE_EXACT_NGA_PUBLICATION_WITH_SEVEN_EXPLICIT_PHOTOGRAPHIC_HOLDS",
+  "originalArchive": "data/research/module-hero-20-exact-source-archive-20261102.v1.json",
+  "originalArchiveBranch": "research/approved-module-20-source-consolidation-20261102",
+  "userPhotoReview": "data/research/module-hero-bulk-eight-photo-qa-20261102.v1.json",
+  "reviewBranch": "research/approved-module-20-source-consolidation-20261102",
+  "totalReviewed": 8,
+  "photoApproved": 8,
+  "publicationCleared": 1,
+  "publicationProposed": [
+    {
+      "module": "confession",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son",
+      "sourceObject": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "rightsPolicy": "https://www.nga.gov/terms-and-notices",
+      "rights": "NGA_OPEN_ACCESS_CC0_CONFIRMED",
+      "archivedSource": "assets/staged/module-hero-masters/confession.jpg",
+      "gitBlobSha": "c0904b5d2a6a4bd99b224194217ce45c6a9fe676",
+      "originalSHA256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "productionSource": "assets/prayer/released/confession-murillo-nga-original.jpg",
+      "userPhotoApproved": true,
+      "approvedFit": "contain",
+      "sourceBytesUnchanged": true,
+      "surfaces": [
+        "Home C3 Confession prayer carousel",
+        "Prayer Confession preparation intro"
+      ],
+      "releasePr": 2293,
+      "requiredTests": [
+        "original SHA-256 equals archived source",
+        "NGA rights basis verified",
+        "No image crop",
+        "320/390 EN/FR picture decode",
+        "Confession reader route and privacy regressions"
+      ]
+    }
+  ],
+  "heldPhotographs": [
+    {
+      "module": "joseph",
+      "hold": "Commons PD-Art exact-reproduction jurisdiction and image use review",
+      "photoApproved": true
+    },
+    {
+      "module": "regina",
+      "hold": "Commons PD-Art exact-reproduction jurisdiction and image use review",
+      "photoApproved": true
+    },
+    {
+      "module": "scripture",
+      "hold": "Commons PD-Art exact-reproduction jurisdiction and image use review",
+      "photoApproved": true
+    },
+    {
+      "module": "souls",
+      "hold": "Commons PD-Art exact-reproduction jurisdiction and image use review",
+      "photoApproved": true
+    },
+    {
+      "module": "morning",
+      "hold": "Museum original / Commons photo terms and colour-fidelity review",
+      "photoApproved": true
+    },
+    {
+      "module": "visit",
+      "hold": "Commons PD-Art jurisdiction; preserve circular heraldic detail pending evidence",
+      "photoApproved": true
+    },
+    {
+      "module": "sorrows",
+      "hold": "MNAC exact-image reuse terms; original whole seven medallions preserved",
+      "photoApproved": true
+    }
+  ],
+  "policy": [
+    "Eight photo approvals do not imply eight cleared reproductions",
+    "Never override 22 locked painting identities",
+    "Do not publish staged sources without production-entry rights and image QA",
+    "Use one image per exact module, no auto-rotation",
+    "Confession original reused byte-identically; no cropping or enlargement",
+    "This metadata does not authorize publication for the seven held photographs"
+  ]
+}

@@ -24,6 +24,10 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-released-module-p
   "#aoPray435930 .aoPrayerAngelusDirectPhoto img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}",
   "#aoPray435930 .aoPrayerAngelusDirectPhoto figcaption{position:absolute;bottom:0;left:0;right:0;text-align:center;padding:3px 6px;background:rgba(0,0,0,.75);color:#faf1df;font:10px/1.2 Georgia,serif}",
   "#aoPray435930 .aoPrayerAngelusDirectPhoto figcaption a{color:inherit;text-decoration:underline}",
+  "#aoPray435930 .aoPrayerConfessionCover{position:relative;margin:0 0 14px;width:100%;height:min(31svh,246px);min-height:146px;overflow:hidden;background:#101016}",
+  "#aoPray435930 .aoPrayerConfessionCover img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}",
+  "#aoPray435930 .aoPrayerConfessionCover figcaption{position:absolute;bottom:0;left:0;right:0;padding:3px 7px;background:rgba(0,0,0,.75);color:#faf1df;text-align:center;font:10px/1.25 Georgia,serif}",
+  "#aoPray435930 .aoPrayerConfessionCover figcaption a{color:inherit;text-decoration:underline}",
   "@media(max-width:359px){#aoPray435930 .aoPrayerAdorationCover{height:110px;min-height:110px}}"
  ].join("\n");
  document.head.append(node);
