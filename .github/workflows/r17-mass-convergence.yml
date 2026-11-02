@@ -55,6 +55,8 @@ jobs:
         run: node tests/mass-priest-gesture-p4-original.mjs
       - name: Certify sacred-music work metadata, rights and 1962 rite boundaries
         run: node tests/sacred-music-work-programmes.mjs
+      - name: Certify Fauré LIVE Schola composer-text mapping, fallback and EN/FR
+        run: node tests/reader-composed-schola-text.mjs
       - name: Validate source-owned All Souls selection and native module syntax
         run: |
           node --check src/mass/full-mass-preflight.js
