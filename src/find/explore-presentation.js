@@ -801,9 +801,16 @@ export function renderExploreToString(vm){
     journeyPanel:renderPilgrimageJourneyPanel,
   });
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.lens==="saints"?vm.items.length:(vm.counts?.[vm.lens]??vm.items.length));
-  let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
+  let html='<section class="aoFindSurface aoExploreSurface"'+(vm.lens==="tlm"&&vm.view==="map"?' data-atlas-mass="true"':'')+' data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
+  if(vm.lens==="tlm"&&vm.view==="map"){
+    html+='<nav class="aoAtlasMassTabs" aria-label="'+esc(L(vm.language,"Sacred Atlas entrances","Accès à l’Atlas sacré"))+'">'
+      +'<button type="button" data-atlas-mass-return="discover">'+esc(L(vm.language,"Discover","Découvrir"))+'</button>'
+      +'<button type="button" data-atlas-mass-return="sacred">'+esc(L(vm.language,"Sacred places","Lieux sacrés"))+'</button>'
+      +'<button type="button" aria-current="page" class="active">'+esc(L(vm.language,"Latin Mass","Messe latine"))+'</button>'
+      +'</nav>';
+  }
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<nav class="aoExploreSectionNav" aria-label="'+esc(L(vm.language,"Explore navigation","Navigation Explorer"))+'">';
   html+='<span>'+(vm.lens==="tlm"?esc(L(vm.language,"MASS DIRECTORY","ANNUAIRE DES MESSES"))
