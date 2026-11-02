@@ -1044,13 +1044,14 @@ function renderAngelus(){
  const openingVisible=ANGELUS_CARD_INDEX===0&&!ANGELUS_COVER_DISMISSED;
  const hourTitle=form==='regina'?'Regina Cæli':L('The Angelus',"L’Angélus");
  const hourScene=form==='regina'?L('The Resurrection','La Résurrection'):L('The Annunciation','L’Annonciation');
+ const releasedHourArt=form==='angelus'?releasedModulePhotoMarkup('angelus',{className:'aoPrayerAngelusDirectPhoto'}):'';
  const coverAbove=openingVisible
   ?'<section class="aoClaudeHorariumIntro" data-ao-horarium-intro aria-label="'+esc(L('Hour of prayer','Heure de prière'))+'">'+
    '<p class="aoClaudeHorariumKicker">'+esc(hourDescription)+'</p>'+
    '<h2>'+esc(hourTitle)+'</h2>'+
-   '<div class="aoClaudeHorariumPlate" role="note" aria-label="'+esc(L('Awaiting approved sacred artwork','Œuvre sacrée en attente de validation'))+'">'+
-    '<div class="aoClaudeHorariumPlateArt"><span>'+esc(hourScene)+'</span></div>'+
-    '<small>'+esc(L('Artwork awaiting approval','Œuvre en attente de validation'))+'</small>'+
+   '<div class="aoClaudeHorariumPlate" data-ao-art-publication="'+(releasedHourArt?'released':'unassigned')+'" role="note" aria-label="'+esc(releasedHourArt?L('Approved Annunciation artwork','L’Annonciation · œuvre approuvée'):L('Awaiting approved sacred artwork','Œuvre sacrée en attente de validation'))+'">'+
+    '<div class="aoClaudeHorariumPlateArt">'+(releasedHourArt||'<span>'+esc(hourScene)+'</span>')+'</div>'+
+    (releasedHourArt?'':'<small>'+esc(L('Artwork awaiting approval','Œuvre en attente de validation'))+'</small>')+
    '</div></section>'
   :'';
  const coverBelow=openingVisible
