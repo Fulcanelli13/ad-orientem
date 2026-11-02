@@ -151,7 +151,7 @@ try{
       const actions=el.querySelector(".aoPrayPilotAngelusActions"),begin=el.querySelector("[data-p435930-pilot-angelus-begin]");
       const alone=el.querySelector("[data-p435930-pilot-angelus-recitation]");
       const hero=el.querySelector(".aoPrayPilotAngelusHero").getBoundingClientRect();
-      const cover=el.getBoundingClientRect(),h2=el.querySelector(".aoPrayPilotAngelusCoverCopy h2").getBoundingClientRect(),artSlot=el.querySelector(".aoPrayPilotAngelusArtSlot").getBoundingClientRect();
+      const cover=el.getBoundingClientRect(),h2=el.querySelector(".aoPrayPilotAngelusCoverCopy h2").getBoundingClientRect(),artSlot=el.querySelector(".aoPrayerAngelusPhoto").getBoundingClientRect();
       const heroTop=hero.top,artSlotTop=artSlot.top;
       const appHeader=document.querySelector("#aoPray435930 .aoP435930Head")?.getBoundingClientRect();
       const b=begin.getBoundingClientRect(),a=alone.getBoundingClientRect();
