@@ -7,7 +7,7 @@ export {selectApprovedInlineScore, INLINE_CHANT_SCHEMA} from "./reader-inline-ch
 // Never insert a score as a Schola dock track or a new prayer card.
 // Score eligibility now lives in the universal source/setting matcher.
 const cleanText=text=>String(text??"").normalize("NFD")
- .replace(/[\\u0300-\\u036f]/g,"").replace(/[℣℟]/g,"")
+ .replace(/[\u0300-\u036f]/g,"").replace(/[℣℟]/g,"")
  .toLowerCase().replace(/[^a-z]+/g," ").trim();
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 
