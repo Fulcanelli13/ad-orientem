@@ -45,10 +45,10 @@ try{
    assert.equal(facts.slideCount,4,"Do not replace approved C3 Prayer carousel");
    const adoration=facts.rows.find(x=>x.id==="adoration");
    assert.ok(adoration,"The Adoration approved photograph is missing from the actual Home carousel");
-   assert.match(adoration.src,/^assets\/staged\/sacred-art-met-approved\/adoration-frameless-candidate\.webp$/);
+   assert.match(adoration.src,/^assets\/home\/c3-approved-met\/adoration-frameless\.webp$/);
    assert.ok(adoration.naturalWidth>1500&&adoration.naturalHeight>1500,"Adoration candidate failed to decode");
    const angelus=facts.rows.filter(x=>String(x.id||"").startsWith("angelus."));
-   for(const photo of angelus)assert.ok(photo.naturalWidth>1500&&photo.naturalHeight>1500&&/angelus-frameless-candidate\.webp$/.test(photo.src),"Angelus photo missing/invalid");
+   for(const photo of angelus)assert.ok(photo.naturalWidth>1500&&photo.naturalHeight>1500&&/angelus-frameless\.webp$/.test(photo.src),"Angelus photo missing/invalid");
    assert.ok(facts.documentWidth-facts.viewport<=1,"Home overflows "+width+"px viewport");
    // Element-only evidence avoids the global fixed navigation ribbon appearing halfway
    // through Playwright full-page screenshots. It does not modify app CSS or imagery.
