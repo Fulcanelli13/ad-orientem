@@ -2,6 +2,7 @@ import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { persistedMassIsResumable } from "../mass/active-mass-resume-policy.js";
 import { calendarObservanceAlias, verifiedFerialSundayMassName } from "../calendar/observance-title.js";
 import { latinIntroitIncipit, calendarOrdoMassFacts } from "../calendar/ordo-mass-facts.js";
 import { composeMassTextsSheet } from "../mass/mass-texts-sheet.js";
@@ -46,14 +47,7 @@ export function readNativeMassResume(win=globalThis){
     const raw=win?.localStorage?.getItem?.(R17_ACTIVE_MASS_STORAGE_KEY);
     if(!raw)return null;
     const record=JSON.parse(raw);
-    const resumable=Boolean(
-      record &&
-      (record.state==="active"||record.state==="suspended") &&
-      record.schema &&
-      record.session?.resolvedMass &&
-      record.readerPreferences
-    );
-    if(!resumable)return null;
+    if(!persistedMassIsResumable(record,new (win?.Date??Date)()))return null;
     const sequence=Number(record.readerPosition?.sequence);
     return Object.freeze({
       available:true,
