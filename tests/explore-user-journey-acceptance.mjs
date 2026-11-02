@@ -161,6 +161,29 @@ try{
     '.aoExplorePlaceSheet[data-explore-place-owner="place:FR:sanctuaire-notre-dame-de-lourdes"]');
    await full.waitFor({state:"visible",timeout:15000});
    assert.ok((await full.innerText()).includes("Lourdes"));
+   const profileHero=full.locator(".aoExplorePlaceMedia img");
+   await profileHero.waitFor({state:"visible"});
+   assert.equal(await full.locator(".aoAtlasPlaceSummary").count(),1,
+    "Prototype Place profile must include the source-backed editorial overview");
+   assert.ok(await full.locator(".aoAtlasPlaceTags span").count()>=1,
+    "Profile category labels must derive from actual documented relationships");
+   assert.ok((await full.locator(".aoAtlasPlaceSynopsis").innerText()).length>25,
+    "Prototype Place hero must be followed by a substantive Place overview");
+   const hierarchy=await full.evaluate(sheet=>{
+    const image=sheet.querySelector(".aoExplorePlaceMedia")?.getBoundingClientRect();
+    const title=sheet.querySelector(":scope > header")?.getBoundingClientRect();
+    const summary=sheet.querySelector(".aoAtlasPlaceSummary")?.getBoundingClientRect();
+    return {heroBottom:image?.bottom,titleTop:title?.top,titleBottom:title?.bottom,
+      summaryTop:summary?.top};
+   });
+   assert.ok(hierarchy.heroBottom<=hierarchy.titleTop+8,
+    "Approved screen 3 requires the photograph ABOVE the Place title: "+JSON.stringify(hierarchy));
+   assert.ok(hierarchy.titleBottom<=hierarchy.summaryTop+8,
+    "At-a-glance overview must follow the profile title: "+JSON.stringify(hierarchy));
+   if(await full.locator(".aoAtlasPlaceConnections").count()){
+    const connection=await full.locator(".aoAtlasPlaceConnections .aoExplorePlaceRow").first().getAttribute("data-explore-open-place");
+    assert.ok(connection?.startsWith("place:"),"Connections must keep canonical Place IDs");
+   }
    assert.ok(await full.locator('a[href^="https://"]').count()>0,
     "Place editorial reading must retain external primary evidence/source links");
    assert.ok(await full.locator("details.aoPlaceAccordion").count()>0,
