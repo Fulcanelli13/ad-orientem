@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const p="data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json";
+const v=JSON.parse(readFileSync(p,"utf8"));
+assert.equal(v.rows.length,60);
+assert.equal(v.counts.approve,25);
+assert.equal(v.counts.reject,35);
+assert.equal(v.counts.unreviewed,0);
+assert.equal(v.imageReleaseEffect,"NO_AUTOMATIC_APP_PUBLICATION");
+assert.equal(new Set(v.rows.map(x=>x.museumKey)).size,60);
+assert.equal(new Set(v.rows.map(x=>x.exactPreviewSha256)).size,60);
+assert.ok(v.rows.every(x=>["approve","reject"].includes(x.decision)));
+assert.ok(v.rows.every(x=>x.feastAssociationApproved===false && x.appPublicationApproved===false));
+assert.ok(v.rows.every(x=>/^[a-f0-9]{64}$/.test(x.exactPreviewSha256)));
+console.log("PASS 60 immutable user photo decisions (25 approved, 35 rejected); no invented liturgical release");
