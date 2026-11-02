@@ -93,6 +93,15 @@ try{
       "Adoration options must remain intact");
     await overflow();
     await page.screenshot({path:resolve(output,"adoration-"+width+"-"+locale+".png"),animations:"disabled"});
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
+    const confession=await imageState(".aoPrayerConfessionCover img");
+    imageOK(confession,"confession-murillo-nga-original.jpg");
+    assert.equal(await page.locator(base+' .aoP435930ConfPathCards').count(),1,
+      "Confession's existing preparation and privacy flow must remain intact");
+    assert.equal(await page.locator(base+' .aoP435930ConfNavShell').count(),1,
+      "The four-stage Confession navigation must remain intact");
+    await overflow();
+    await page.screenshot({path:resolve(output,"confession-"+width+"-"+locale+".png"),animations:"disabled"});
     // Force Angelus only in this browser's QA state; real production continues
     // to choose Angelus/Regina Caeli from the canonical liturgical season.
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.applySettingsPreferences({angelus:{seasonalForm:"angelus"}}));
@@ -114,7 +123,7 @@ try{
     await overflow();
     await page.screenshot({path:resolve(output,"angelus-discovery-"+width+"-"+locale+".png"),animations:"disabled"});
     assert.deepEqual(errors,[],"Uncaught JS errors: "+errors.join("; "));
-    cases.push({width,locale,status:"PASS",hub,shelf,chooser,directAngelus,angel});
+    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel});
    }finally{await context.close();}
   }
  }
@@ -124,4 +133,4 @@ try{
 }
 await writeFile(resolve(output,"report.json"),JSON.stringify({cases,validated:cases.length},null,2)+"\n");
 assert.equal(cases.length,4);
-console.log("PASS: released images decoded/rendered on 4 Prayer surfaces, 320/390 EN/FR");
+console.log("PASS: exact released images decode on all 5 Prayer surfaces, 320/390 EN/FR");
