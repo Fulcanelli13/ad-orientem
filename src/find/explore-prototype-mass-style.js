@@ -123,7 +123,8 @@ export const EXPLORE_PROTOTYPE_MASS_STYLE = String.raw`
  top:356px!important;bottom:auto!important;right:12px!important;
 }
 .aoExploreSurface[data-atlas-mass=true] .aoPreliminaryDirectoryNotice{
- top:47px;right:0;max-width:min(300px,70vw);
+ position:static!important;top:auto;right:auto;max-width:100%;
+ margin:7px 0 0;padding:0 8px;
 }
 .aoExploreSurface[data-atlas-mass=true] .aoTlmMapRailToggle small{
  font:650 9px/1.3 var(--ao-font-ui,system-ui,sans-serif);
