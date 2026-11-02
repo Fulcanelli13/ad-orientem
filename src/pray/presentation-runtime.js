@@ -1909,15 +1909,23 @@ function renderConfession(){
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
 ];
+function benSourceLanguageNotice(face){
+ if(!face.fallback)return '';
+ return '<p class="aoP435930SourceLanguageNotice" data-ao-ben-source-language-fallback lang="'+lang()+'">'+
+  esc(face.vernacularLanguage==='en'
+   ?L('English source text shown; no French version is attached to this prayer.','Texte source anglais affiché ; aucune version française ne figure dans cette prière.')
+   :L('French source text shown; no English version is attached to this prayer.','Texte source français affiché ; aucune version anglaise ne figure dans cette prière.'))+
+  '</p>';
+}
 function benSungPrayer(id,kicker){
- const p=P(id),latin=p?.la||'',vern=p?.[lang()]||p?.en||'';
+ const p=P(id),face=prayerSourceFacesV1(p,lang()),latin=face.latin,vern=face.vernacular;
  const stanzas=benedictionSungStanzas(id,latin,vern);
  if(!stanzas)return prayerBlock(id,{kicker});
  const line=(la,v,i)=>'<span class="aoRiteChantStanza" data-ao-rite-chant-stanza="'+i+'">'+
   '<span class="aoRiteChantLatin" lang="la">'+nl(la.trim())+'</span>'+
-  (v?'<span class="aoRiteChantVernacular" lang="'+lang()+'">'+nl(v.trim())+'</span>':'')+'</span>';
+  (v?'<span class="aoRiteChantVernacular" lang="'+face.vernacularLanguage+'">'+nl(v.trim())+'</span>':'')+'</span>';
  return '<article class="aoP435930Prayer aoRiteChantPrayer" data-ao-rite-sung="'+esc(id)+'">'+
-  '<div class="aoP435930PrayerHead"><div><small>'+esc(kicker)+'</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+
+  '<div class="aoP435930PrayerHead"><div><small>'+esc(kicker)+'</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+benSourceLanguageNotice(face)+
   '<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Latin only / bilingual chant','Chant latin seul / bilingue'))+'">'+
   '<span data-face-v class="aoP435930SemanticFace" data-ao-pray-semantic="1">'+stanzas.map((t,i)=>line(t.latin,t.vernacular,i)).join('')+'</span>'+
   '<span data-face-la class="aoP435930SemanticFace" data-ao-pray-semantic="1" hidden>'+stanzas.map((t,i)=>line(t.latin,'',i)).join('')+'</span></button>'+
@@ -1926,16 +1934,16 @@ function benSungPrayer(id,kicker){
 function benLiturgicalPrayer(record,kicker){
  const p=record||P('benediction_versicles');
  if(!p)return prayerBlock('benediction_versicles',{kicker});
- const vern=p[lang()]||p.en||'',latin=p.la||'';
+ const face=prayerSourceFacesV1(p,lang()),vern=face.vernacular,latin=face.latin;
  const row=(source,language)=>'<span class="aoP435930SemanticFace" data-ao-pray-semantic="1" lang="'+language+'">'+
   String(source).split('\n').map(line=>line.trim()?'<span class="aoRiteLiturgicalBeat'+
    (/^(?:℟\.|R\.)\s*/.test(line)?' aoRiteLiturgicalResponse':'')+'">'+
    esc(line)+'</span>':'<span class="aoRiteStanzaGap" aria-hidden="true"></span>').join('')+'</span>';
  return '<article class="aoP435930Prayer aoRiteLiturgicalPrayer" data-ao-rite-versicles="true">'+
-  '<div class="aoP435930PrayerHead"><div><small>'+esc(kicker)+'</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+
+  '<div class="aoP435930PrayerHead"><div><small>'+esc(kicker)+'</small><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3></div></div>'+benSourceLanguageNotice(face)+
   (vern&&latin?'<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Switch prayer language','Changer la langue de la prière'))+'">'+
-   '<span data-face-v>'+row(vern,lang())+'</span><span data-face-la hidden>'+row(latin,'la')+'</span></button>':
-   '<div class="aoP435930Text" data-ao-pray-semantic="1">'+row(vern||latin,vern?lang():'la')+'</div>')+
+   '<span data-face-v lang="'+face.vernacularLanguage+'">'+row(vern,face.vernacularLanguage)+'</span><span data-face-la lang="la" hidden>'+row(latin,'la')+'</span></button>':
+   '<div class="aoP435930Text" data-ao-pray-semantic="1">'+row(vern||latin,face.vernacularLanguage||(latin?'la':'en'))+'</div>')+
   sourceLine(p)+'</article>';
 }
 function benStages(){return christKingStages(BEN_STAGES,BEN.celebration,BEN.feastOptions)}
@@ -1945,11 +1953,11 @@ function benFeastSource(title,url){
  return '<p class="aoP435930FeastSource"><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(title)+' ↗</a></p>';
 }
 function benFeastPrayer(record,title,url){
- const vern=record[lang()]||record.en||'',latin=record.la||'',both=Boolean(vern&&latin);
+ const face=prayerSourceFacesV1(record,lang()),vern=face.vernacular,latin=face.latin,both=Boolean(vern&&latin);
  return '<article class="aoP435930Prayer aoP435930FeastPrayer">'+
-  '<div class="aoP435930PrayerHead"><div><h3>'+esc(title)+'</h3></div></div>'+
-  (both?'<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Replace prayer with Latin','Remplacer la prière par le latin'))+'"><span data-face-v>'+nl(vern)+'</span><span data-face-la hidden>'+nl(latin)+'</span></button>':
-   '<div class="aoP435930Text">'+nl(vern||latin)+'</div>')+
+  '<div class="aoP435930PrayerHead"><div><h3>'+esc(title)+'</h3></div></div>'+benSourceLanguageNotice(face)+
+  (both?'<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Replace prayer with Latin','Remplacer la prière par le latin'))+'"><span data-face-v lang="'+face.vernacularLanguage+'">'+nl(vern)+'</span><span data-face-la lang="la" hidden>'+nl(latin)+'</span></button>':
+   '<div class="aoP435930Text" lang="'+(face.vernacularLanguage||(latin?'la':'en'))+'">'+nl(vern||latin)+'</div>')+
   benFeastSource(L('Text and provenance','Texte et provenance'),url)+
   (record.note?'<details class="aoP435930FeastEdition"><summary>'+esc(L('Text version','Version du texte'))+'</summary><p>'+esc(record.note)+'</p></details>':'')+'</article>';
 }
