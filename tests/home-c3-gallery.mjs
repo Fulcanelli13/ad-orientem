@@ -94,6 +94,10 @@ for(const term of ["c3PrayerMarkup(","c3UpcomingMarkup(","data-home-c3-info","da
   assert.ok(h4.includes(term),"C3 markup integration missing "+term);
 for(const term of ["selectC3PrayerSlide(","showC3ArtInfo(","closeC3ArtInfo("])
   assert.ok(browser.includes(term),"C3 click contract missing "+term);
+// Delegated C3 click handlers run outside paint(); using paint-local appRoot
+// raises ReferenceError and prevents moving among Prayer carousel slides.
+for(const call of ["selectC3PrayerSlide(root(win),index)","showC3ArtInfo(root(win),c3Info)","closeC3ArtInfo(root(win))"])
+  assert.ok(browser.includes(call),"Home click handler references an out-of-scope app root: "+call);
 assert.ok(presentation.includes("hydrateC3Art(root,state,win)"));
 assert.ok(HOME_C3_CSS.includes("data-c3-orientation"));
 assert.ok(HOME_C3_CSS.includes("scale(var(--ao-c3-zoom,1.075))"));
