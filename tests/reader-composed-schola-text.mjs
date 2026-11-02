@@ -40,6 +40,29 @@ assert.equal(ctl.project(mock("GRADUAL"),"faure-requiem-op48").schola.latin,"Gre
 assert.equal(ctl.project(mock("ALLELUIA_TRACT_SEQUENCE"),"faure-requiem-op48").schola.latin,
  "Gregorian original","Fauré Pie Jesu cannot replace the complete Dies irae");
 assert.equal(composedScholaRoute("GRADUAL"),null);
+const extra=createComposedScholaTextController({prepared:requiem});
+assert.equal(extra.setManualMovement("PIE_JESU",mock("ALLELUIA_TRACT_SEQUENCE"),"faure-requiem-op48"),true);
+const pie=extra.project(mock("ALLELUIA_TRACT_SEQUENCE"),"faure-requiem-op48");
+assert.equal(pie.schola.total,4,"All actual Pie Jesu sung lines should be available");
+assert.equal(pie.schola.manualMusicReference,true,"Never auto-publish an extra as appointed Mass sequence");
+assert.match(pie.schola.latin,/Pie Jesu/);
+assert.equal(pie.schola.musicStatus,"MANUAL_TEXT_REFERENCE_NOT_OBSERVED");
+const emptyNative=Object.freeze({supported:true,trackId:null,schola:null});
+assert.equal(extra.setManualMovement("LIBERA_ME",emptyNative,"faure-requiem-op48"),true);
+const libera=extra.project(emptyNative,"faure-requiem-op48","en");
+assert.equal(libera.schola.total,15,"Full Libera me including reprise must be available");
+assert.match(libera.schola.latin,/Libera me/);
+const extraStep=extra.next(emptyNative,"faure-requiem-op48");
+assert.equal(extraStep.schola.index,1,"Extra-movement text uses the same Schola advance");
+assert.equal(extra.setManualMovement("IN_PARADISUM",emptyNative,"faure-requiem-op48"),true);
+const paradise=extra.project(emptyNative,"faure-requiem-op48","fr");
+assert.equal(paradise.schola.total,6);
+assert.match(paradise.schola.english,/anges/);
+assert.equal(extra.setManualMovement("UNVERIFIED",emptyNative,"faure-requiem-op48"),false);
+assert.equal(extra.state().manualMovementId,"IN_PARADISUM");
+assert.equal(extra.setManualMovement("",emptyNative,"faure-requiem-op48"),true);
+assert.equal(extra.project(emptyNative,"faure-requiem-op48"),emptyNative,
+ "Returning to Gregorian must not invent a missing source window");
 const off=createComposedScholaTextController({prepared:ordinary});
 assert.equal(off.project(source,"faure-requiem-op48"),source,"Ordinary Mass must never inherit Requiem text");
 const noLow=createComposedScholaTextController({prepared:low});
