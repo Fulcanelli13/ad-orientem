@@ -234,6 +234,15 @@ export const EXPLORE_PROTOTYPE_MASS_STYLE = String.raw`
  }
 }
 @media(min-width:900px){
+ /* Keep map reset and legend in the exposed map column, not underneath the
+    canonical viewport results rail (258–358px, 14px inset). */
+ .aoExploreSurface[data-atlas-mass=true] .aoExploreMapReset{
+  left:calc(clamp(258px,27vw,358px) + 30px)!important;
+ }
+ .aoExploreSurface[data-atlas-mass=true] .aoMapLegend{
+  left:calc(clamp(258px,27vw,358px) + 30px)!important;
+  max-width:min(450px,calc(100% - clamp(258px,27vw,358px) - 60px));
+ }
  .aoExploreSurface[data-atlas-mass=true] .aoTlmMapRail{top:185px!important}
  .aoExploreSurface[data-atlas-mass=true] .aoTlmMapRail .aoAtlasMassPhotoNotice{
   display:none;
