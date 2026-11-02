@@ -2265,6 +2265,13 @@ export async function mountNativeReaderPreview({
     if(kind==="CORPUS_CHRISTI_PROCESSION" && state.posture && !["INHERIT","LOCAL_OR_INHERIT","LOCAL_REVERENT"].includes(state.posture))posture={label:state.posture};
     if(kind==="HOLY_THURSDAY_POST" && state.posture && state.posture!=="LOCAL_OR_INHERIT")posture={label:state.posture};
     if(kind==="GENERIC_PROCESSION" && state.posture && state.posture!=="LOCAL")posture={label:state.posture};
+    // Only an explicit listener-selected Fauré Libera me or In paradisum
+    // may appear alongside an actual Requiem Absolution card. The rite's
+    // authoritative texts, order and source-owned music remain unchanged.
+    const manualId=composedScholaText.state().manualMovementId;
+    const manualRequiem=kind==="REQUIEM_ABSOLUTION" &&
+      ["LIBERA_ME","IN_PARADISUM"].includes(manualId)
+      ?projectComposedSchola().schola:null;
     return Object.freeze({
       state,config,
       moment:Object.freeze({
@@ -2274,7 +2281,8 @@ export async function mountNativeReaderPreview({
         cardUpdate:true,
         paragraphs:Object.freeze(rows),
         progress:String(state.index+1)+" / "+String(state.total)+" · "+config.label,
-        posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,
+        schola:manualRequiem,
         riteMusic:riteMusicAt(kind==="CORPUS_CHRISTI_PROCESSION"?"CORPUS_CHRISTI":kind,
           card.id??card.recordId,
           kind==="REQUIEM_ABSOLUTION" &&
@@ -3122,7 +3130,12 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
+    if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      const ceremonial=followingActionMoment("REQUIEM_ABSOLUTION",ready.requiemAbsolutionController);
+      if(ceremonial)reader.renderMoment({...ceremonial.moment,cardUpdate:false});
+      return;
+    }
+    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
