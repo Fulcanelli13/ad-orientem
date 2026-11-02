@@ -156,6 +156,64 @@ try{
    await capture("05-return-map");
    note.steps.push("Place back navigation returns to same map and preserved Discover");
 
+   // P6 convergence: these are overlays on ONE existing Explore MapLibre
+   // canvas, not independent maps or parallel venue/schedule registries.
+   // Check both directions, EN/FR and actual 320/390/1440 touch/desktop sizes.
+   const p6Surfaces={
+    time:{open:'[data-explore-time-mass-toggle]',panel:'.aoTimeMassPanel',
+     close:'.aoTimeMassPanel [data-explore-time-mass-toggle]',
+     evidence:'.aoTimeMassNotice'},
+    layers:{open:'[data-atlas-mode="heatmap"]',panel:'.aoAtlasCoveragePanel',
+     close:'.aoAtlasCoverageHead [data-atlas-mode="places"]',
+     evidence:'.aoAtlasCoverageCaution'},
+    network:{open:'[data-network-toggle]',panel:'.aoNetworkPanel',
+     close:'.aoNetworkPanel [data-network-close]',
+     evidence:'.aoNetworkExplanation'},
+    journey:{open:'[data-explore-journey-open]',panel:'.aoJourneyPanel',
+     close:'.aoJourneyPanel [data-explore-journey-close]',
+     evidence:'.aoJourneyScope'},
+   };
+   const p6OwnerNames=Object.keys(p6Surfaces);
+   const assertP6Canvas=async mode=>{
+    await mapReady("heritage");
+    const measurement=await page.evaluate(()=>{
+     const root=document.querySelector("#ao-find-modular-root");
+     return {same:globalThis.__AO_VISITOR_MAP_CANVAS===
+        root?.querySelector(".aoHeritageSurface [data-find-map] canvas.maplibregl-canvas"),
+      count:root?.querySelectorAll(".aoHeritageSurface [data-find-map] canvas.maplibregl-canvas").length,
+      overflow:document.documentElement.scrollWidth-innerWidth};
+    });
+    assert.equal(measurement.same,true,mode+" must reuse the same MapLibre canvas");
+    assert.equal(measurement.count,1,mode+" must not create a second map canvas");
+    assert.ok(measurement.overflow<=2,mode+" created horizontal overflow: "+JSON.stringify(measurement));
+   };
+   for(const [direction,modes] of [
+    ["forward",p6OwnerNames],
+    ["reverse",[...p6OwnerNames].reverse()],
+   ]){
+    for(const mode of modes){
+     const cfg=p6Surfaces[mode];
+     await root.locator(".aoHeritageMore > summary").click();
+     await root.locator(".aoHeritageSecondary "+cfg.open).click();
+     await root.locator(cfg.panel).waitFor({state:"attached",timeout:20000});
+     for(const other of p6OwnerNames){
+      assert.equal(await root.locator(p6Surfaces[other].panel).count(),other===mode?1:0,
+       "P6 "+mode+" and "+other+" must have exclusive panel ownership");
+     }
+     assert.equal(await root.locator(cfg.evidence).count(),1,
+      mode+" must expose its source/scope qualification");
+     await assertP6Canvas(mode+" "+direction);
+     if(direction==="forward")await capture("p6-"+mode);
+     await root.locator(cfg.close).click();
+     await root.locator(cfg.panel).waitFor({state:"detached",timeout:20000});
+     await assertP6Canvas(mode+" return");
+    }
+   }
+   assert.equal(await root.locator(".aoJourneyPanel,.aoTimeMassPanel,.aoNetworkPanel,.aoAtlasCoveragePanel").count(),0);
+   assert.ok(await root.locator("[data-mapcn-discover-rail]").count()>0,
+    "Discover must be restored after each P6 mode round trip");
+   note.steps.push("P6 Discover → Time & Mass → Atlas Layers → Connections → Pilgrimages → Discover and reverse; one map canvas, exclusive sourced panels, no overflow");
+
    // Continue from this same Explore destination to Mass without hidden menus.
    await root.locator(".aoHeritageMassShortcut").click();
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",
