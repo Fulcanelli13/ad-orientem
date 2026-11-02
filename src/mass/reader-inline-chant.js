@@ -1,5 +1,6 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {APPROVED_MASS_INLINE_GABC} from "./reader-inline-chant-approved.js";
+import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 
 // A + C: night-ink, inline-staff LIVE; traditional red margin marker.
 // Never insert a score as a Schola dock track or a new prayer card.
@@ -20,8 +21,7 @@ const visibleLatin=paragraph=>[paragraph?.primary,paragraph?.secondary,paragraph
 export function selectApprovedInlineScore({cueId,paragraph,form,settingId="",resolvedMass=null,approvedScores=APPROVED_MASS_INLINE_GABC}={}){
  if(!SUNG.has(String(form??"").toUpperCase())||!CUE.test(String(cueId??""))||
     String(settingId??"")!=="ITE_VIII"||
-    resolvedMass?.isRequiem===true||resolvedMass?.provenance?.isRequiem===true||
-    ["REQUIEM","MASS_FOR_THE_DEAD"].includes(String(resolvedMass?.actualCelebration?.type??"").toUpperCase())||
+    isExplicitRequiemMass({session:{resolvedMass}})||
     !Array.isArray(approvedScores)||!paragraph||paragraph.kind==="RUBRIC"||
     !Array.isArray(paragraph.sourceCueIds)||
     paragraph.sourceCueIds.length!==1||paragraph.sourceCueIds[0]!==cueId)return null;
