@@ -62,6 +62,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import { createComposedScholaTextController } from "./reader-composed-schola-text.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
@@ -1396,6 +1397,9 @@ export async function mountNativeReaderPreview({
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let scholaLocalProgramme=readScholaLocalProgramme(customStorage,customaryPrefs.sanctusPerformance);
+  const composedScholaText=createComposedScholaTextController({prepared});
+  const projectComposedSchola=(native=ready.scholaState.project())=>composedScholaText.project(
+    native,scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en");
   // Selecting a saved parish profile changes a personal Schola setting,
   // never the text, priest cues or liturgical form.
   if(scholaLocalProgramme.sanctusPerformance!==customaryPrefs.sanctusPerformance){
@@ -1698,7 +1702,7 @@ export async function mountNativeReaderPreview({
       : postureResolved.posture;
 
 
-    const scholaProjection=ready.scholaState.project();
+    const scholaProjection=projectComposedSchola();
     // Reading a Consecration card is a liturgical silence restriction,
     // never evidence that the Schola was heard finishing. Preserve its
     // independent underlying position for a possible post-Chalice Benedictus.
@@ -2957,6 +2961,8 @@ export async function mountNativeReaderPreview({
     scholaLocalProgramme:()=>scholaLocalProgramme,
     onScholaLocalProgrammeChange:change=>{
       scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,change,customStorage);
+      if(["profileSelect","profileCreate","profileDelete","composedScholaWork"].includes(change?.kind))
+        composedScholaText.reset();
       if(["profileSelect","profileCreate","profileDelete","sanctusPerformance"].includes(change?.kind)){
         customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,
           {kind:"sanctusPerformance",value:scholaLocalProgramme.sanctusPerformance},customStorage);
@@ -3043,9 +3049,11 @@ export async function mountNativeReaderPreview({
       return true;
     },
     onScholaAdvance:()=>{
-      const value=ready.scholaState.next();
-      queue();
-      return value;
+      const native=ready.scholaState.project();
+      const workId=scholaLocalProgramme.composedScholaWorkId;
+      const value=composedScholaText.next(native,workId,prepared.readerPreferences?.language??"en")
+        ??ready.scholaState.next();
+      queue();return value;
     },
     onScholaRelease:()=>{
       // The printed Benedictus appears before the Canon. The *sung* second
@@ -3077,9 +3085,11 @@ export async function mountNativeReaderPreview({
       queue();return value;
     },
     onScholaPrevious:()=>{
-      const value=ready.scholaState.previous();
-      queue();
-      return value;
+      const native=ready.scholaState.project();
+      const workId=scholaLocalProgramme.composedScholaWorkId;
+      const value=composedScholaText.previous(native,workId,prepared.readerPreferences?.language??"en")
+        ??ready.scholaState.previous();
+      queue();return value;
     },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
@@ -3450,7 +3460,7 @@ export async function mountNativeReaderPreview({
     clearObservedPriestEvent:()=>{observedCuratedPriestEvent=null;queue();return true;},
     getObservedPriestEvent:()=>currentObservedCuratedPriestEvent(),
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
-    getScholaState:()=>ready.scholaState.project(),
+    getScholaState:()=>projectComposedSchola(),
     getSelectedScholaEvent:()=>selectedScholaEvent,
     getScholaPerformance:()=>scholaPerformance.project(applyScholaLocalProgramme(buildScholaMusicItinerary({
       cards:readerModel?.cards.filter(visibleCardAllowed),
@@ -3461,9 +3471,9 @@ export async function mountNativeReaderPreview({
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme)),
     getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),
-    nextSchola:()=>{const value=ready.scholaState.next();queue();return value},
-    previousSchola:()=>{const value=ready.scholaState.previous();queue();return value},
-    finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},
+    nextSchola:()=>{const value=composedScholaText.next(ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en")??ready.scholaState.next();queue();return value},
+    previousSchola:()=>{const value=composedScholaText.previous(ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en")??ready.scholaState.previous();queue();return value},
+    finishSchola:()=>{const value=composedScholaText.finish(ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en")??ready.scholaState.finish();queue();return value},
     selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
     getAspergesState:()=>ready.aspergesController?.project?.()??null,
