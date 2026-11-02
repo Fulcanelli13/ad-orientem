@@ -71,5 +71,17 @@ assert.deepEqual(matrix.summary.sourceHeldCanonical,["marian_consecration_immacu
 assert.ok(matrix.routes.find(r=>r.id==="pray.rosary").readerLanguageEvidence.includes("SIGNATURE_BEAD_READER"));
 assert.ok(matrix.routes.find(r=>r.id==="pray.novenas").readerLanguageEvidence.includes("HISTORIC_PROPER_TEXTS_UNCLAIMED"));
 assert.ok(matrix.routes.find(r=>r.id==="pray.montfort_consecration").readerLanguageEvidence.includes("HISTORIC_SOURCE_EXCLUDED"));
+// The historical private Litany has two distinct original-language witnesses.
+// Its shared in-reader language switch must expose both, and discard the old
+// edition's cached pages when the locale changes. No Latin is certified here.
+const presentation=readFileSync(resolve(root,"src/pray/presentation-runtime.js"),"utf8");
+assert.match(presentation,/\['adoration','benediction','stations','confession','litany'\]\.includes\(view\)/);
+assert.match(presentation,/if\(LIT\.language!==lang\(\)\)/);
+assert.match(presentation,/LIT\.sections=null;LIT\.review=null/);
+const litanySources=readFileSync(resolve(root,"src/pray/litany-source.js"),"utf8");
+assert.match(litanySources,/en:Object\.freeze\(/);
+assert.match(litanySources,/fr:Object\.freeze\(/);
+assert.ok(matrix.routes.find(r=>r.id==="pray.litany_saints").readerLanguageEvidence.includes("EN_FR_WITNESS_SWITCH"));
+
 console.log("PASS · 41 distinct Prayer routes, 23 legacy + 18 additional; 9 source-audited canonical destinations, 48 canonical prayer witnesses, 19 separate Novena programmes");
 console.log(JSON.stringify({routes:matrix.summary.uniqueRoutes,canonical:matrix.summary.coreCanonicalLatinPresent,novena:matrix.summary.sourceOwnedNovenaProgrammes,held:matrix.summary.sourceHeldCanonical}));
