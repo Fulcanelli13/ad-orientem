@@ -334,7 +334,7 @@ try{
     return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,
       height:r.height,viewport:innerWidth};
    });
-   if(width<900)assert.ok(railGeometry.width>=width-4&&railGeometry.bottom<=height+2
+   if(width<900)assert.ok(railGeometry.width>=width-4&&railGeometry.bottom<=(width<800?844:960)+2
       &&railGeometry.height>=220,
       "Mobile Latin Mass needs a full-width bottom card sheet: "+JSON.stringify(railGeometry));
    const mapVenueCards=massRail.locator(".aoTlmMapRailItem");
