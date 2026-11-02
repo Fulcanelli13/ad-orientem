@@ -78,7 +78,7 @@ export function renderAtlasCoveragePanel({coverage,mode="heatmap",language="en",
     heritage:L("Sacred places","Lieux sacrés"),tlm:L("Mass locations","Lieux de messe")};
   let s='<section class="aoAtlasCoveragePanel" data-atlas-coverage-panel data-atlas-mode="'+E(mode)+'" aria-label="'+
     L("Atlas coverage","Couverture de l’atlas")+'">';
-  s+='<header class="aoAtlasCoverageHead"><div><small>MAPCN · ATLAS LAYERS</small><h2>'+
+  s+='<header class="aoAtlasCoverageHead"><div><small>'+L("MAPCN · ATLAS LAYERS","MAPCN · COUCHES DE L’ATLAS")+'</small><h2>'+
     (mode==="heatmap"?L("Documented density","Densité documentée"):L("Country coverage","Couverture par pays"))+
     '</h2></div><button type="button" data-atlas-mode="places" aria-label="'+L("Back to place map","Retour à la carte des lieux")+'">×</button></header>';
   s+='<div class="aoAtlasCoverageScroll"><nav class="aoAtlasCoverageModes" aria-label="'+L("Atlas layers","Couches de l’atlas")+'">';

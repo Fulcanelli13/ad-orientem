@@ -62,6 +62,8 @@ test("P4's bilingual panel retains source, provenance and scope controls",()=>{
  assert.match(en,/does not infer|not no Catholic life|not no Catholic life/i);
  const fr=renderAtlasCoveragePanel({coverage:model,mode:"heatmap",language:"fr"});
  assert.match(fr,/Densité documentée/);
+ assert.match(fr,/MAPCN · COUCHES DE L’ATLAS/);
+ assert.doesNotMatch(fr,/MAPCN · ATLAS LAYERS/);
  assert.match(fr,/population catholique/);
  assert.doesNotMatch(fr,/open-now|NEXT MASS|population estimate/i);
 });

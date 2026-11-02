@@ -19,7 +19,7 @@ export function renderNetworkPanel({graph,language="en",filters={}}={}){
  });
  let html='<section class="aoNetworkPanel" data-network-panel aria-label="'+
    E(L(language,"Documented relationship network","Réseau de relations documentées"))+'">';
- html+='<header class="aoNetworkHeader"><div><small>MAPCN · VERIFIED CONNECTIONS</small>'+
+ html+='<header class="aoNetworkHeader"><div><small>'+L(language,"MAPCN · VERIFIED CONNECTIONS","MAPCN · CONNEXIONS ATTESTÉES")+'</small>'+
    '<h2>'+L(language,"Sacred connections","Liens sacrés")+'</h2></div>'+
    '<button type="button" data-network-close aria-label="'+L(language,"Return to map","Retour à la carte")+'">×</button></header>';
  html+='<div class="aoNetworkColumns"><aside class="aoNetworkRail">'+

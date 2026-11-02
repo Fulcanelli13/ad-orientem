@@ -110,6 +110,8 @@ test("Network view is bilingual, keyboard-accessible, escapes source labels and 
  assert.match(en,/not routes, distances|not geographical/i);
  const fr=renderNetworkPanel({graph,language:"fr",filters:{networkFocus:"place:a"}});
  assert.match(fr,/Liens sacrés/);
+ assert.match(fr,/MAPCN · CONNEXIONS ATTESTÉES/);
+ assert.doesNotMatch(fr,/MAPCN · VERIFIED CONNECTIONS/);
  assert.match(fr,/relations documentées|Relations documentées/);
  assert.ok(!/<script|onerror=/.test(fr));
 });
