@@ -133,7 +133,11 @@ export function createInlineChantController({
  }
  function clear(){
   ++generation;
-  for(const e of entries)e.engraver?.destroy();
+  for(const e of entries){
+   e.engraver?.destroy();
+   e.marker?.remove();e.wrapper?.remove();
+   if(e.node?.dataset){delete e.node.dataset.inlineChantStatus;delete e.node.dataset.inlineChantView;}
+  }
   entries=[];closeZoom();
   const host=shell();if(host)host.dataset.inlineChant="false";
  }
@@ -215,7 +219,7 @@ export function createInlineChantController({
    node.insertBefore(wrapper,primary.nextSibling);
    node.dataset.inlineChantStatus="loading";
    node.dataset.inlineChantView="text";
-   const entry={node,score,button:open,engraver:null};entries.push(entry);
+   const entry={node,score,button:open,wrapper,marker,engraver:null};entries.push(entry);
    try{
     const engraver=engraverFactory({viewport:staff,document:doc});
     entry.engraver=engraver;engraver.observe?.();
