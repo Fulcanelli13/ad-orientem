@@ -231,9 +231,13 @@ try{
    await root.locator(".aoHeritageSecondary [data-network-toggle]").click();
    await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
    await root.locator(".aoNetworkPanel [data-network-kind]").selectOption("custom");
-   const linkedCustom=root.locator('.aoNetworkPanel [data-network-focus="custom:DEV-010"]').first();
-   await linkedCustom.waitFor({state:"attached"});
-   await linkedCustom.click();
+   // Desktop has a results rail; the mobile MapCN layout deliberately hides it.
+   // Follow the visible Network search interaction at every viewport size.
+   await root.locator(".aoNetworkPanel [data-network-search]").fill("Votive candle");
+   await page.waitForFunction(()=>{
+    const label=document.querySelector("#ao-find-modular-root .aoNetworkCurrent h3");
+    return label?.textContent?.includes("Votive candle at a shrine");
+   },null,{timeout:15000});
    const publishedLink=root.locator('.aoNetworkPanel [data-network-open-custom="DEV-010"]').first();
    await publishedLink.waitFor({state:"visible"});
    await publishedLink.click();
