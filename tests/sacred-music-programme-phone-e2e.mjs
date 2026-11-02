@@ -26,18 +26,32 @@ try{
   assert.equal(await page.locator(".aoMusicMovement").count(),7);
   assert.match(await page.locator(".aoMusicScope").innerText(),/not a Mass/i);
   assert.equal(await page.locator("audio,video,iframe").count(),0);
-  assert.ok(await page.locator(".aoMusicMovement").first().locator("summary").isVisible());
-  await page.locator(".aoMusicMovement").nth(3).locator("summary").click();
-  assert.match(await page.locator(".aoMusicMovement").nth(3).innerText(),/not a substitute/i);
+  const intro=page.locator(".aoMusicMovement").first();
+  assert.equal(await intro.locator("details").first().getAttribute("open"),"",
+    "First movement should display actual words immediately");
+  assert.equal(await intro.locator(".aoMusicVersePair").count(),9);
+  assert.match(await intro.locator(".aoMusicLatin").first().innerText(),/Requiem aeternam/);
+  assert.match(await intro.locator(".aoMusicTranslation").first().innerText(),/eternal rest/);
+  await page.locator(".aoMusicMovement").nth(3).locator("summary").first().click();
+  const pie=page.locator(".aoMusicMovement").nth(3);
+  assert.equal(await pie.locator(".aoMusicVersePair").count(),4,
+    "Pie Jesu must present full Latin text, not a commentary summary");
+  assert.match(await pie.locator(".aoMusicLatin").first().innerText(),/Pie Jesu/);
+  assert.match(await pie.locator(".aoMusicTranslation").last().innerText(),/everlasting rest/);
   await page.locator('[data-ao-music-mode="MASS"]').click();
   assert.match(await page.locator(".aoMusicScope").innerText(),/1962/);
   assert.equal(await page.locator(".aoMusicMovement").count(),7,"Mass view must not modify music movements");
   await page.locator(".aoMusicLanguage").click();
   assert.match(await page.locator(".aoMusicScope").innerText(),/1962/);
   assert.match(await page.locator(".aoMusicLanguage").innerText(),/EN/);
+  assert.match(await page.locator(".aoMusicMovement").first().locator(".aoMusicTranslation").first().innerText(),/repos éternel/,
+    "French setting must render a real Latin/French pair");
   await page.locator(".aoMusicField select").selectOption("durufle-requiem-op9");
   assert.equal(await page.locator(".aoMusicMovement").count(),9);
   assert.match(await page.locator(".aoMusicWorkHeading").innerText(),/Duruflé/);
+  assert.equal(await page.locator(".aoMusicVersePair").count(),0,
+    "Unverified later works must not borrow Fauré's Latin text");
+  assert.match(await page.locator(".aoMusicUnverified").first().textContent(),/non encore vérifié/);
   await page.locator(".aoMusicField select").selectOption("mozart-requiem-k626");
   assert.equal(await page.locator(".aoMusicMovement").count(),14);
   await page.locator(".aoMusicField select").selectOption("palestrina-missa-pro-defunctis");
