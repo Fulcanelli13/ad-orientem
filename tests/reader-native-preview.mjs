@@ -181,14 +181,13 @@ assert.equal(requiemWithAbsolution.presentationModel.structureOwner,
   "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.ok(requiemWithAbsolution.requiemAbsolutionController,
   "Requiem absolution following-action was lost");
-const invalidAbsolution=await prepareNativeReaderPreview({
+await assert.rejects(()=>prepareNativeReaderPreview({
   prepared:{...absolutionPrepared,session:{...absolutionPrepared.session,
     plan:{...absolutionPrepared.session.plan,normalLastGospel:true}}},
   reviewCuratedCards:true,presentationData:data,eventData,cueRegistries,guideData,
   requiemAbsolutionData,
-});
-assert.equal(invalidAbsolution.curatedEligible,false,
-  "unsupported Absolution/Last Gospel combination should remain gated");
+}),/REQUIEM_LIVE_CURATED_CARD_PATH_UNCERTIFIED/,
+  "unsupported Requiem configuration must fail visibly, not fall back to old cards");
 
 
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
