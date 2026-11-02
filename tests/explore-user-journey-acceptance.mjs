@@ -92,6 +92,38 @@ try{
       "#ao-find-modular-root .aoHeritageSurface [data-find-map] canvas.maplibregl-canvas");
    });
 
+   // Approved Sacred Atlas shell screens 1 and 2: one immersive map,
+   // three entry tabs, initial peek and an expanded photographic Sacred sheet.
+   const tabs=root.locator(".aoAtlasPrimaryTabs");
+   assert.equal(await tabs.locator("button").count(),3,"Atlas must have three entrances, not extra top-level sections");
+   const sacredTab=tabs.locator('[data-atlas-entry-tab="sacred"]');
+   const discoverTab=tabs.locator('[data-atlas-entry-tab="discover"]');
+   assert.equal(await discoverTab.getAttribute("aria-pressed"),"true");
+   assert.equal(await root.locator(".aoHeritageMore > summary").count(),1,
+    "Secondary P6 modules must remain available through the Layers control");
+   await sacredTab.click();
+   await page.waitForFunction(()=>{
+    const root=document.querySelector("#ao-find-modular-root");
+    return root?.querySelector(".aoHeritageSurface")?.dataset.atlasEntry==="sacred"
+      &&root?.querySelector("[data-mapcn-discover-rail]")?.dataset.discoverExpanded==="true";
+   },null,{timeout:15000});
+   assert.equal(await sacredTab.getAttribute("aria-pressed"),"true");
+   assert.ok(await root.locator(".aoMapcnEditorialCarousel .aoMapcnEditorialCard").count()>0,
+    "Sacred places must reuse the existing approved-photo viewport sheet");
+   await mapReady("heritage");
+   await capture("01b-sacred-prototype-sheet");
+   await discoverTab.click();
+   await page.waitForFunction(()=>{
+    const root=document.querySelector("#ao-find-modular-root");
+    return root?.querySelector(".aoHeritageSurface")?.dataset.atlasEntry==="discover"
+      &&root?.querySelector("[data-mapcn-discover-rail]")?.dataset.discoverExpanded==="false";
+   },null,{timeout:15000});
+   assert.equal(await discoverTab.getAttribute("aria-pressed"),"true");
+   assert.equal(await page.evaluate(()=>globalThis.__AO_VISITOR_MAP_CANVAS===
+    document.querySelector("#ao-find-modular-root .aoHeritageSurface [data-find-map] canvas")),true,
+    "The Atlas entrance switch must never remount the MapLibre canvas");
+   note.steps.push("approved Discover / Sacred / Latin Mass entrances, Sacred photo-sheet and Discover peek on one MapLibre canvas");
+
    // Discover a curated, rights-approved, canonical Place. No network image hotlink.
    const rail=root.locator("[data-mapcn-discover-rail]");
    await rail.waitFor({state:"visible"});
