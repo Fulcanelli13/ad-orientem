@@ -40,7 +40,7 @@ export function selectApprovedInlineScore({cueId,paragraph,form,approvedScores=A
 
 // No parallel floating panel, cream paper, redundant title, or in-card
 // navigation. The letter is *beside* the full-width score, not inside it.
-export const INLINE_CHANT_CSS=String.raw\`
+export const INLINE_CHANT_CSS=String.raw`
 .ao-reader-shell[data-inline-chant="true"][data-mode="LIVE"] .ao-card-viewport{
   padding-inline:clamp(42px,5vw,60px)
 }
@@ -106,7 +106,7 @@ export const INLINE_CHANT_CSS=String.raw\`
 }
 @media(prefers-reduced-motion:reduce){
  .ao-reader-paragraph[data-inline-chant-status="ready"]{transition:none}
-}\`;
+}`;
 
 /**
  * DOM enhancement only. It changes neither the original Latin rows nor
