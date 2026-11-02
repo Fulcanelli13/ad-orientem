@@ -40,6 +40,15 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
     await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
     const base="#aoPray435930.open";
+    // Test the actual in-app Prayer language rather than relying on the
+    // browser locale alone. Keep the global UI language and Mass untouched.
+    if(locale==="fr-FR"){
+     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+     const toggle=page.locator(base+" [data-p435930-session-language]");
+     assert.equal(await toggle.count(),1,"French QA needs the real Prayer language switch");
+     if((await toggle.textContent()).trim()==="EN")await toggle.click();
+     assert.equal((await page.locator(base+" [data-p435930-session-language]").textContent()).trim(),"FR");
+    }
     const imageState=async selector=>{
      const locator=page.locator(base+" "+selector);
      assert.equal(await locator.count(),1,"Exactly one released image expected: "+selector);
