@@ -7,6 +7,7 @@ import {ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1} from "../src/pray/icksp-immaculat
 import {NOVENA_HOLY_FACE_1887_B25} from "../src/pray/holy-face-janvier-1887-b25.js";
 import {auditPrayerLanguageCoverageV1,novenaTextSlotsV1} from "../src/pray/prayer-language-coverage.v1.js";
 import {novenaCanonicalFaceV1} from "../src/pray/novena-canonical-faces.v1.js";
+import {prayerSourceFacesV1} from "../src/pray/prayer-source-faces.v1.js";
 
 const audit=auditPrayerLanguageCoverageV1({
   prayers:PRAY_CANONICAL_DATA_V435930.prayers,
@@ -59,6 +60,26 @@ assert.deepEqual(novenaCanonicalFaceV1({fr:"Un texte français",la:"Oratio"},"en
 assert.deepEqual(novenaCanonicalFaceV1({la:"Oratio"},"fr"),{
  vernacular:"",vernacularLanguage:null,latin:"Oratio",fallback:false
 });
+// The same resolver is used by every ordinary Prayer card, including optional
+// stage prayers. Do not silently switch from requested French to Latin when an
+// English original also exists, and never label an English witness as French.
+assert.deepEqual(prayerSourceFacesV1({en:"English original",la:"Latin original"},"fr"),{
+ vernacular:"English original",vernacularLanguage:"en",latin:"Latin original",fallback:true
+});
+for(const p of Object.values(PRAY_CANONICAL_DATA_V435930.prayers)){
+ for(const locale of ["en","fr"]){
+  const face=prayerSourceFacesV1(p,locale);
+  assert.ok(face.vernacular||face.latin,p.id+" cannot be blank in "+locale);
+  if(face.vernacular)assert.equal(face.vernacular,p[face.vernacularLanguage]);
+  assert.equal(face.latin,p.la||"");
+ }
+}
+const presentation=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
+assert.match(presentation,/function prayerBlock\(id,opts=\{\}\)/);
+assert.match(presentation,/prayerSourceFacesV1\(p,lang\(\)\)/);
+assert.match(presentation,/data-ao-prayer-language-fallback/);
+assert.match(presentation,/data-face-v lang="\$\{resolved\.vernacularLanguage/);
+assert.match(presentation,/data-face-la lang="la" hidden/);
 const runtime=readFileSync(new URL("../src/pray/novena-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/data-n1-common-latin aria-pressed/);
 assert.match(runtime,/novenaCanonicalFaceV1\(p,isFr\(\)\?'fr':'en'\)/);
