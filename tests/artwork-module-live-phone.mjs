@@ -93,14 +93,28 @@ try{
       "Adoration options must remain intact");
     await overflow();
     await page.screenshot({path:resolve(output,"adoration-"+width+"-"+locale+".png"),animations:"disabled"});
+    // Force Angelus only in this browser's QA state; real production continues
+    // to choose Angelus/Regina Caeli from the canonical liturgical season.
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.applySettingsPreferences({angelus:{seasonalForm:"angelus"}}));
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus_regina",{returnContext:null}));
+    const directAngelus=await imageState(".aoPrayerAngelusDirectPhoto img");
+    imageOK(directAngelus,"angelus-frameless.webp");
+    assert.equal(await page.locator(base+' [data-p435930-angelus-begin]').count(),1,
+      "Direct canonical Angelus entry must keep Begin at the bell");
+    await overflow();
+    await page.screenshot({path:resolve(output,"angelus-direct-"+width+"-"+locale+".png"),animations:"disabled"});
+    // Discovery route uses the distinct approved full-height pilot entrance.
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+    await page.locator(base+' [data-p435930-family="daily"]').click();
+    await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
     const angel=await imageState(".aoPrayerAngelusPhoto img");
     imageOK(angel,"angelus-frameless.webp");
-    assert.equal(await page.locator(base+' [data-p435930-pilot-angelus-begin]').count(),1);
+    assert.equal(await page.locator(base+' [data-p435930-pilot-angelus-begin]').count(),1,
+      "Discovery Angelus retains its own Begin transition");
     await overflow();
-    await page.screenshot({path:resolve(output,"angelus-"+width+"-"+locale+".png"),animations:"disabled"});
+    await page.screenshot({path:resolve(output,"angelus-discovery-"+width+"-"+locale+".png"),animations:"disabled"});
     assert.deepEqual(errors,[],"Uncaught JS errors: "+errors.join("; "));
-    cases.push({width,locale,status:"PASS",hub,shelf,chooser,angel});
+    cases.push({width,locale,status:"PASS",hub,shelf,chooser,directAngelus,angel});
    }finally{await context.close();}
   }
  }
