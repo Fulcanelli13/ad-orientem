@@ -55,6 +55,9 @@ const r17ResumeRecord={
 };
 const r17Win={
   AO_DISPLAY_DATE:()=> "07/10/2026",
+  // Historical fixture uses a frozen 7 Oct clock so a true same-day
+  // checkpoint remains resumable under the shared production policy.
+  Date:class extends Date {constructor(...args){super(...(args.length?args:[new Date("2026-10-07T12:00:00+04:00").getTime()]));}},
   localStorage:{
     getItem(key){return key==="ao-r17-active-mass-v1"?JSON.stringify(r17ResumeRecord):null;},
   },
