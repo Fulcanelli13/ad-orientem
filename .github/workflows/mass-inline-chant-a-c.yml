@@ -5,6 +5,8 @@ on:
   pull_request:
     paths:
       - 'src/mass/reader-inline-chant.js'
+      - 'src/mass/reader-inline-chant-selector.js'
+      - 'tests/reader-inline-chant-generic-source.mjs'
       - 'src/mass/reader-inline-chant-approved.js'
       - 'src/mass/reader-dom.js'
       - 'tests/reader-inline-chant-a-c*.mjs'
@@ -25,8 +27,10 @@ jobs:
       - name: Parse source, preserve source-first reader imports
         run: |
           node --check src/mass/reader-inline-chant.js
+          node --check src/mass/reader-inline-chant-selector.js
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
+          node tests/reader-inline-chant-generic-source.mjs
       - name: Prepare source-backed browser validation
         run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
