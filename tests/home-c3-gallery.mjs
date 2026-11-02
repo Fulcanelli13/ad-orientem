@@ -108,6 +108,10 @@ for(const term of ["c3PrayerMarkup(","c3UpcomingMarkup(","data-home-c3-info","da
   assert.ok(h4.includes(term),"C3 markup integration missing "+term);
 for(const term of ["selectC3PrayerSlide(","showC3ArtInfo(","closeC3ArtInfo("])
   assert.ok(browser.includes(term),"C3 click contract missing "+term);
+// The C3 delegated click handler must resolve the actual app root at call
+// time. A paint()-local appRoot is not in this click handler's scope.
+for(const exact of ["selectC3PrayerSlide(root(win),index)","showC3ArtInfo(root(win),c3Info)","closeC3ArtInfo(root(win))"])
+  assert.ok(browser.includes(exact),"C3 click handler uses unavailable root: "+exact);
 assert.ok(presentation.includes("hydrateC3Art(root,state,win)"));
 assert.ok(HOME_C3_CSS.includes("data-c3-orientation"));
 assert.ok(HOME_C3_CSS.includes("scale(var(--ao-c3-zoom,1.075))"));
