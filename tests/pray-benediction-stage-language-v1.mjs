@@ -20,8 +20,8 @@ for(const id of ["benediction_o_salutaris","benediction_tantum_ergo"]){
  for(const vern of ["en","fr"]){
   const rows=benedictionSungStanzas(id,p.la,p[vern]);
   assert.equal(rows?.length,2,id+" "+vern+" must preserve both source stanzas");
-  assert.equal(rows.map(r=>r.latin).join("\n\n"),p.la,id+" Latin stanza text fidelity");
-  assert.equal(rows.map(r=>r.vernacular).join("\n\n"),p[vern],id+" "+vern+" stanza text fidelity");
+  assert.equal(rows.map(r=>r.latin).join(p.la.includes("\n\n")?"\n\n":"\n"),p.la,id+" Latin stanza text fidelity");
+  assert.equal(rows.map(r=>r.vernacular).join(p[vern].includes("\n\n")?"\n\n":"\n"),p[vern],id+" "+vern+" stanza text fidelity");
  }
 }
 // Future EN-only/LA-only records must never masquerade as French.
