@@ -14,6 +14,11 @@ assert.equal(allSaints?.imagePublicationStatus,"REMOTE_COMMONS_PREVIEW_NOT_OFFLI
 const allSouls=c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m1"},{selectedDate:"2026-11-02"});
 assert.equal(allSouls?.artist,"Ludovico Carracci");
 assert.match(allSouls?.title??"",/Souls of Purgatory/);
+for(const mass of [2,3]){
+ const other=c3ApprovedDatedHomeArt({properPath:()=>`Sancti/11-02m${mass}`},{selectedDate:"2026-11-02"});
+ assert.equal(other,allSouls,`All Souls Mass ${mass} must retain the same approved feast image`);
+}
+assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m4"},{selectedDate:"2026-11-02"}),null);
 assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-02m1"},{selectedDate:"2026-11-01"}),null);
 assert.equal(c3ApprovedDatedHomeArt({properPath:()=>"Sancti/11-01"},{selectedDate:"2026-11-03"}),null);
 // No new painting choice: all eight source-visible Class I Calendar previews
