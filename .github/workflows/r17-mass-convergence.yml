@@ -128,6 +128,8 @@ jobs:
         run: node tests/1962-all-souls-dies-irae-english-display.mjs
       - name: Sacred-music programme phone — no Mass session or unlicensed media
         run: node tests/sacred-music-programme-phone-e2e.mjs
+      - name: Requiem LIVE Schola Fauré 320/390 — actual lyrics and translated manual phrases
+        run: node tests/reader-composed-schola-phone.mjs
       - name: Gate 1–2 November 2026 source-owned Mass reader readiness
         run: node tests/mass-november-2026-release-gate-e2e.mjs
       - name: Retain November 1–2 evidence even on a failing release gate
