@@ -25,6 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - run: node tests/pray-design-pilot-contract.mjs
       - run: node tests/artwork-module-live-bridge.mjs
       - run: node tests/home-c3-gallery.mjs
       - run: node tests/home-c3-met-release-integrity.mjs
