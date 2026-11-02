@@ -216,8 +216,8 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,reci
   const strokes=count.map((n,i)=>'<span class="aoPrayPilotBellGroup" aria-hidden="true">'+Array.from({length:n},()=>'<span class="aoPrayPilotBellDot"></span>').join('')+'</span>').join('');
   return head(regina?"Regina Cæli":"Angelus",L("Prayer of the hour","Prière de l'heure"))+
     '<main class="aoP435930Body aoPrayPilotAngelusEntry">'+
-      '<section class="aoPrayPilotAngelusHero" data-ao-art-publication="'+(regina?"unassigned":"released")+'">'+
-        (regina?'<small class="aoPrayPilotAngelusArtSlot">'+esc(L("ART SLOT · REGINA CÆLI","EMPLACEMENT D’ART · REGINA CÆLI"))+'</small>':releasedModulePhotoMarkup("angelus",{className:"aoPrayerAngelusPhoto"}))+
+      '<section class="aoPrayPilotAngelusHero" data-ao-art-publication="released">'+
+        releasedModulePhotoMarkup(regina?"regina":"angelus",{className:"aoPrayerAngelusPhoto"})+
         '<div class="aoPrayPilotAngelusCoverCopy">'+
           '<small class="aoPrayPilotHourEyebrow">'+moduleIcon("pray.angelus_regina")+'<span>'+esc(hourName+" · "+hourTime)+'</span></small>'+
           '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+

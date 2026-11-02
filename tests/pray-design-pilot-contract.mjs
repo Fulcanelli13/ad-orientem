@@ -149,6 +149,9 @@ assert.doesNotMatch(angelus,/A pause for prayer|The Angel of the Lord declared u
  "Retired generic Angelus cover copy must not replace the approved opening");
 
 assert.match(regina,/Regina Cæli/);
+assert.match(regina,/regina-whole-original.jpg/,"Seasonal Regina must have the exact approved Rubens original");
+assert.match(regina,/data-ao-art-publication="released"/);
+assert.doesNotMatch(regina,/angelus-frameless.webp/,"Champaigne's Annunciation must not appear for Regina Caeli");
 assert.doesNotMatch(angelus,/The existing named cards|Kneel · ordinary days|aoPrayPilotEntryMeta/,
  "Angelus opening must not show engineering copy or posture before the prayer begins");
 assert.doesNotMatch(regina,/The existing named cards|Eastertide · stand according to local custom|aoPrayPilotEntryMeta/,

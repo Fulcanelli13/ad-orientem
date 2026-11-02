@@ -128,8 +128,39 @@ try{
       "Discovery Angelus retains its own Begin transition");
     await overflow();
     await page.screenshot({path:resolve(output,"angelus-discovery-"+width+"-"+locale+".png"),animations:"disabled"});
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.st_joseph_seven_sorrows",{returnContext:null}));
+    const joseph=await imageState(".aoPrayerJosephCover img");
+    imageOK(joseph,"joseph-whole-original.jpg");
+    assert.equal(await page.locator(base+' [data-ao-st-joseph-seven-reader]').count(),1,
+      "Saint Joseph original prayer journey remains unchanged");
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"joseph-"+width+"-"+locale+".png"),animations:"disabled"});
+
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.de_profundis",{returnContext:null}));
+    const souls=await imageState(".aoPrayerSoulsCover img");
+    imageOK(souls,"souls-whole-original.jpg");
+    assert.equal(await page.locator(base+' [data-ao-devo-card="dead_de_profundis"]').count(),1,
+      "The original De profundis prayer remains available");
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"souls-"+width+"-"+locale+".png"),animations:"disabled"});
+
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.visit_blessed_sacrament",{returnContext:null}));
+    const visit=await imageState(".aoPrayerVisitCover img");
+    imageOK(visit,"visit-whole-original.jpg");
+    assert.equal(await page.locator(base+' [data-ao-adoration-mode="visit"]').count(),1);
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"visit-"+width+"-"+locale+".png"),animations:"disabled"});
+
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.applySettingsPreferences({angelus:{seasonalForm:"regina_caeli"}}));
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus_regina",{returnContext:null}));
+    const regina=await imageState(".aoPrayerAngelusDirectPhoto img");
+    imageOK(regina,"regina-whole-original.jpg");
+    assert.equal(await page.locator(base+' [data-p435930-angelus-begin]').count(),1,
+      "Regina retains canonical Horarium opening");
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"regina-"+width+"-"+locale+".png"),animations:"disabled"});
     assert.deepEqual(errors,[],"Uncaught JS errors: "+errors.join("; "));
-    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel});
+    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel,joseph,souls,visit,regina});
    }finally{await context.close();}
   }
  }
@@ -139,4 +170,4 @@ try{
 }
 await writeFile(resolve(output,"report.json"),JSON.stringify({cases,validated:cases.length},null,2)+"\n");
 assert.equal(cases.length,4);
-console.log("PASS: exact released images decode on all 5 Prayer surfaces, 320/390 EN/FR");
+console.log("PASS: all seven public-domain module photos decode on actual Prayer surfaces, 320/390 EN/FR");
