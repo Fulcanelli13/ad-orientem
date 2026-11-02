@@ -13,6 +13,13 @@ const source={
  "V. In mánibus portábunt te, ne umquam offéndas ad lápidem pedem tuum.",
  "[Tractus]","Qui hábitat in adiutório Altíssimi, in protectióne Dei cæli commorábitur.",
  "V. Dicet Dómino: Suscéptor meus es tu."].join("\n"),
+ "Tempora/Pasc1-0":["[Graduale]","Allelúja, allelúja.","!Matt 28:7",
+ "In die resurrectiónis meæ, dicit Dóminus, præcédam vos in Galilǽam. Allelúja.",
+ "!Joannes 20:26","Post dies octo, jánuis clausis, stetit Jesus in médio discipulórum suórum, et dixit: Pax vobis. Allelúja."].join("\n"),
+ "Sancti/01-31":["[Graduale]","Spera in Dómino et fac bonitátem in sæcula.","V. Delectáre in Dómino et dabit tibi petitiónes cordis tui. Allelúja, allelúja.",
+ "Pauper et inops laudábunt nomen tuum. Allelúja.",
+ "[GradualeP]","Allelúja, allelúja.","Pauper et inops laudábunt nomen tuum. Allelúja.",
+ "Inebriabúntur ab ubertáte domus tuæ, torrénte voluptátis potábis. Allelúja."].join("\n"),
  "Sancti/11-30":["[Graduale]","@Commune/C5:Graduale"].join("\n"),
  "Commune/C5":["[Graduale]","Nimis honoráti sunt amíci tui Deus, nimis confortátus est principátus eórum.",
  "V. Dinumerábo eos et super arénam multiplicabúntur."].join("\n")
@@ -48,6 +55,19 @@ const pasc=await analyzeSelectedPreGospelSource({sourcePath:"Tempora/Pasc3-0",
  selectedLatin:source["Tempora/Pasc3-0"].replace("[Graduale]",""),fetchSource:read,archive});
 assert.deepEqual(pasc.pieces.map(x=>[x.role,x.candidateScoreIds[0]]),[
  ["al","GREGOBASE-5"],["al","GREGOBASE-6"]]);
+const unmarked=await analyzeSelectedPreGospelSource({sourcePath:"Tempora/Pasc1-0",
+ selectedLatin:source["Tempora/Pasc1-0"].replace("[Graduale]",""),fetchSource:read,archive});
+assert.equal(unmarked.pieces.length,2,
+ "Printed Eastertide source sections can omit V. cue but retain exactly two Alleluias");
+assert.ok(unmarked.pieces.every(x=>x.role==="al"));
+const normalWithAlternative=await analyzeSelectedPreGospelSource({sourcePath:"Sancti/01-31",
+ selectedLatin:"Ps 36:3-5 Spera in Dómino et fac bonitátem in sæcula. "+
+ "V. Delectáre in Dómino et dabit tibi petitiónes cordis tui. Allelúja, allelúja. "+
+ "Pauper et inops laudábunt nomen tuum. Allelúja.",
+ fetchSource:read,archive});
+assert.ok(normalWithAlternative.pieces.some(x=>x.role==="gr"),
+ "Actual selected ordinary Gradual should win when alternative reuses Alleluia verse");
+assert.ok(!normalWithAlternative.holds.some(x=>x.code==="NORMAL_AND_PASCHAL_SOURCE_AMBIGUOUS"));
 const lent=await analyzeSelectedPreGospelSource({sourcePath:"Tempora/Quad1-0",
  selectedLatin:source["Tempora/Quad1-0"].replace(/\[[^\]]+\]/g,""),fetchSource:read,archive});
 assert.deepEqual(lent.pieces.map(x=>[x.role,x.candidateScoreIds[0]]),[
