@@ -701,7 +701,7 @@ function prayerBlock(id,opts={}){
      ? L('Biblical text · original chapter','Texte biblique · chapitre original')
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
- const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`::
+ const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:
   resolved.fallback?`<p class="aoP435930SourceLanguageNotice" data-ao-prayer-language-fallback lang="${lang()}">${esc(resolved.vernacularLanguage==='en'?L('English source text shown; French version is unavailable.','Le texte source anglais est affiché ; aucune version française n’est disponible.'):L('French source text shown; English version is unavailable.','Le texte source français est affiché ; aucune version anglaise n’est disponible.'))}</p>`:'';
  if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!opts.record&&(view==='library'||view==='prayerOnly')){
   // Claude F01: the Holy Card is a reversible devotional object, not a
