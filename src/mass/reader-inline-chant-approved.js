@@ -8,7 +8,9 @@ export const APPROVED_MASS_INLINE_GABC = Object.freeze([
   {
     "schema": "ao-mass-inline-approved-gabc-v1",
     "scoreId": "GREGOBASE-832-LEAD",
+    "selectionKey": "DISMISSAL",
     "settingId": "ITE_VIII",
+    "riteScope": "ORDINARY",
     "sourceCueId": "AO.SM.C0259",
     "sourceLatin": "℣. Ite, missa est.",
     "approval": "USER_AND_MUSICAL_SOURCE_REVIEWED",
@@ -26,7 +28,9 @@ export const APPROVED_MASS_INLINE_GABC = Object.freeze([
   {
     "schema": "ao-mass-inline-approved-gabc-v1",
     "scoreId": "GREGOBASE-832-RESPONSE",
+    "selectionKey": "DISMISSAL",
     "settingId": "ITE_VIII",
+    "riteScope": "ORDINARY",
     "sourceCueId": "AO.SM.C0260",
     "sourceLatin": "℟. Deo grátias.",
     "approval": "USER_AND_MUSICAL_SOURCE_REVIEWED",
