@@ -62,10 +62,10 @@ try{
     const map=document.querySelector("#ao-find-modular-root .aoHeritageSurface .aoFindMap");
     const r=map?.getBoundingClientRect(),root=document.querySelector("#ao-find-modular-root");
     const search=document.querySelector(".aoHeritageSurface .aoHeritageTools")?.getBoundingClientRect();
-    const categories=document.querySelector(".aoHeritageSurface .aoHeritageCategories")?.getBoundingClientRect();
+    const entrances=document.querySelector(".aoHeritageSurface .aoAtlasPrimaryTabs")?.getBoundingClientRect();
     return {mapWidth:Math.round(r?.width||0),mapHeight:Math.round(r?.height||0),
      mapTop:Math.round(r?.top||0),searchBottom:Math.round(search?.bottom||0),
-     categoriesBottom:Math.round(categories?.bottom||0),
+     entrancesBottom:Math.round(entrances?.bottom||0),
      documentOverflow:Math.round(document.documentElement.scrollWidth-innerWidth),
      canvas:Boolean(map?.querySelector("canvas.maplibregl-canvas")),
      status:map?.dataset?.aoMapState||null,
@@ -74,8 +74,8 @@ try{
    assert.ok(measures.mapWidth>=(mobile?280:600),"Map is too narrow at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.mapHeight>=(mobile?729:810),
      "A immersive map must use nearly all remaining viewport height "+JSON.stringify(measures));
-   assert.ok(measures.mapTop<measures.searchBottom&&measures.mapTop<measures.categoriesBottom,
-     "A search/categories must FLOAT OVER the map, not push it down "+JSON.stringify(measures));
+   assert.ok(measures.mapTop<measures.searchBottom&&measures.mapTop<measures.entrancesBottom,
+     "Approved search and three Atlas entrances must FLOAT OVER the map, not push it down "+JSON.stringify(measures));
    assert.ok(measures.mapHeight>=300,"Map is too short at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.documentOverflow<=1,"Document overflow at "+width+": "+JSON.stringify(measures));
    assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
@@ -100,12 +100,14 @@ try{
      "The immersive map must begin with Discover in compact mode");
    assert.ok(await rail.locator("button[data-explore-open-place]").count()>0,
      "MapCN Discover must contain canonical actionable Places");
-   assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/In this area/i,
-     "MapCN Discover should describe the current map viewport");
+   assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/Places of the saints/i,
+     "Approved Discover entry must show the prototype's editorial sheet heading");
+   assert.match(await rail.locator(".aoMapcnDiscoverCount").innerText(),/^\d+$/,
+     "Discover still reports the number of source-backed places in the current viewport");
    const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
      width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
    assert.ok(railGeometry.width>280&&railGeometry.bottom<= (mobile?844:960)+1
-    &&railGeometry.height<=75&&railGeometry.height>=60,
+    &&railGeometry.height<=96&&railGeometry.height>=60,
      "Collapsed Discover must leave the map visible: "+JSON.stringify(railGeometry));
    await page.screenshot({path:resolve(out,"explore-"+width+"-compact-discovery.png"),fullPage:false});
    await rail.locator("[data-mapcn-discover-toggle]").click();
@@ -123,13 +125,8 @@ try{
      "Expanded Discover must remain within the viewport: "+JSON.stringify(openedRail));
    await page.screenshot({path:resolve(out,"explore-"+width+"-expanded-discovery.png"),fullPage:false});
    const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
-   if(mobile){
-     assert.equal(await guide.isVisible(),false,
-       "On phones the browsable list replaces the old passive map hint");
-   }else{
-     await guide.waitFor({state:"visible"});
-     assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i);
-   }
+   assert.equal(await guide.isVisible(),false,
+     "Approved Atlas prototype shows active controls and a bottom sheet, not an obstructing passive map hint");
    const originalCanvas=await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count();
    assert.equal(originalCanvas,1,"One map canvas, shared with canonical Explore");
    await rail.locator("button[data-explore-open-place]").first().click();

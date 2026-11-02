@@ -62,7 +62,12 @@ export function renderMapcnDiscoverRail(vm){
   .slice(0,5);
  const limit=Math.min(180,Math.max(24,Number(vm.filters?.mapcnDiscoverLimit)||36));
  const shown=entries.slice(0,limit),scoped=Boolean(vm.discoverViewport);
- const title=scoped?L(vm.language,"In this area","Dans cette région"):L(vm.language,"Explore places","Explorer les lieux");
+ const title=!vm.filters?.atlasEntry
+   ?(scoped?L(vm.language,"In this area","Dans cette région"):L(vm.language,"Explore places","Explorer les lieux"))
+   :vm.filters.atlasEntry==="discover"
+     ?L(vm.language,"Places of the saints","Lieux des saints")
+     :scoped?L(vm.language,"Sacred places in view","Lieux sacrés dans cette vue")
+       :L(vm.language,"Sacred places","Lieux sacrés");
  let html='<aside class="aoMapcnDiscoverRail" data-mapcn-discover-rail data-discover-expanded="false" aria-label="'+esc(L(vm.language,"Documented sacred places","Lieux sacrés documentés"))+'">';
  html+='<div class="aoMapcnDiscoverHead"><button type="button" class="aoMapcnDiscoverToggle" data-mapcn-discover-toggle aria-expanded="false" aria-controls="ao-mapcn-discover-items">';
  html+='<span class="aoMapcnDiscoverHeading"><small>'+L(vm.language,"DISCOVER · SACRED ATLAS","DÉCOUVRIR · ATLAS SACRÉ")+'</small>';

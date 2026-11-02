@@ -30,6 +30,10 @@ try{
   await page.locator('[data-ao-app-surface="find"]').click();
   await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="heritage"&&
     globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:70000});
+  // Discover keeps the three approved primary entrances. Saints remains
+  // available under source-backed Sacred Places filters.
+  await page.locator('#ao-find-modular-root [data-atlas-entry-tab="sacred"]').click();
+  await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
   const tab=page.locator('#ao-find-modular-root .aoHeritageCategories [data-find-filter="lens"][data-find-filter-value="saints"]');
   assert.equal(await tab.count(),1,"Saints doorway not visible on canonical homepage");
   await tab.click();
