@@ -141,6 +141,10 @@ function prayerTitle(p,id){
   if(!p)return id;
   return isFr()?(p.titleFr||p.title||id):(p.title||id);
 }
+// A concise control exposes the Latin already owned by the original corpus.
+function existingLatinSwitch(both){
+ return both?'<button type="button" class="aoTP381LatinSwitch" data-tp381-latin-switch aria-pressed="false" aria-label="'+esc(L("Show existing Latin prayer","Afficher la prière latine existante"))+'">LA</button>':'';
+}
 function prayerCard(id,{focusParagraphs=false,hoursFamily=false}={}){
  const isHope=id==="foundations_act_of_hope"&&isFr();
  const traditional=isHope&&S.hopeFrenchEdition==="traditional";
@@ -151,7 +155,7 @@ function prayerCard(id,{focusParagraphs=false,hoursFamily=false}={}){
  const showHours=v=>hoursFamily?hoursParagraphs(v,id):focusParagraphs?prayerParagraphs(v):nl(v);
  const choice=isHope?`<nav class="aoTP381Tabs" role="group" data-ao-b01-hope-versions aria-label="Version de l'acte d'espérance"><button type="button" data-tp381-b01-hope="published" aria-pressed="${!traditional}" class="${traditional?"":"active"}">Compendium · 2005</button><button type="button" data-tp381-b01-hope="traditional" aria-pressed="${traditional}" class="${traditional?"active":""}">Traditionnel · français</button></nav>`:"";
  const notice=isHope?`<p class="aoTP381Intro" data-ao-b01-hope-source-status>${esc(traditional?"Cette prière française complète est une version traditionnelle indépendante, non la transcription du Compendium de 2005.":"Cette formulation reproduit le témoin français publié dans le Compendium (2005), y compris « Dans cette foi » ; choisir « Traditionnel » pour une autre version authentiquement attestée.")}</p>`:"";
- return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${showHours(vern)}</span><span data-face-la hidden>${showHours(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
+ return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${showHours(vern)}</span><span data-face-la hidden>${showHours(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
 }
 function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
@@ -539,7 +543,7 @@ function renderMealPrayers(){
 function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false,hoursFamily=false}={}){
   const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
   const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):hoursFamily?hoursParagraphs(v):focusParagraphs?prayerParagraphs(v):nl(v);
-  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${show(vern)}</span><span data-face-la hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader">${show(vern||latin)}</div>`}</article>`;
+  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${show(vern)}</span><span data-face-la hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader">${show(vern||latin)}</div>`}</article>`;
 }
 const HEART_STAGES=Object.freeze(["litany","reparation","golden_arrow","consecration"]);
 function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Pius XI · Reparation","Pie XI · Réparation"):id==="golden_arrow"?L("Golden Arrow","Flèche d’Or"):L("Consecration","Consécration")}
@@ -1038,7 +1042,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1367,8 +1371,23 @@ function handleClick(e){
     }
     return BASE_OPEN(route,{trigger:b,returnContext:{surface:"domain",domain:"pray"}});
   }
-  if(b.matches("[data-tp381-flip]")){
-    const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return;
+  if(b.matches("[data-tp381-latin-switch],[data-tp381-flip]")){
+    // Both the visible LA control and the historical text-tap flip use
+    // the same two pre-existing source faces; do not add any new copies.
+    const card=b.closest(".aoTP381PrayerCard");
+    const flip=b.matches("[data-tp381-flip]")?b:card?.querySelector("[data-tp381-flip]");
+    const v=flip?.querySelector("[data-face-v]"),la=flip?.querySelector("[data-face-la]");
+    if(v&&la){
+      const showLatin=la.hidden;
+      la.hidden=!showLatin;v.hidden=showLatin;
+      const switcher=card?.querySelector("[data-tp381-latin-switch]");
+      if(switcher){
+        switcher.setAttribute("aria-pressed",String(showLatin));
+        switcher.textContent=showLatin?(isFr()?"FR":"EN"):"LA";
+        switcher.setAttribute("aria-label",esc(showLatin?L("Return to English prayer","Revenir à la prière française"):L("Show existing Latin prayer","Afficher la prière latine existante")));
+      }
+    }
+    return;
   }
 }
 function extendRegistry(){
