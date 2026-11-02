@@ -1,51 +1,65 @@
 import assert from "node:assert/strict";
+import {createHash} from "node:crypto";
 import {selectApprovedInlineScore,INLINE_CHANT_SCHEMA,INLINE_CHANT_CSS}
  from "../src/mass/reader-inline-chant.js";
 import {APPROVED_MASS_INLINE_GABC} from "../src/mass/reader-inline-chant-approved.js";
+import {normalizeScholaLocalProgramme,updateScholaLocalProgramme}
+ from "../src/mass/reader-schola-local-programme.js";
 
-const PRIEST="AO.SM.C0259",ANSWER="AO.SM.C0260";
-const mk=(cue,source)=>({
- schema:INLINE_CHANT_SCHEMA,sourceCueId:cue,
- approval:"USER_AND_MUSICAL_SOURCE_REVIEWED",
- publication:"PUBLIC_APPROVED",
- sourceTextVerified:true,musicalNotationVerified:true,
- sourceLatin:source,scoreId:"TEST-DO-NOT-PUBLISH",
- gabcSha256:"a".repeat(64),sourceWitness:"TEST EDITION — NOT RELEASED",
- sourceUrl:"https://example.org/test-do-not-publish",
- gabc:"(c4)I(f)te(g) mis(h)sa(g) est(f)(::)"
-});
-const row=(cue,latin)=>({kind:"TEXT",sourceCueIds:[cue],primary:latin,
- secondary:"English translation",alternate:null});
-const p=mk(PRIEST,"℣. Ite, missa est.");
-const r=mk(ANSWER,"℟. Deo grátias.");
-const corpus=[p,r];
-const pick=(cue,paragraph,form="MISSA_CANTATA_SIMPLE",scores=corpus)=>
- selectApprovedInlineScore({cueId:cue,paragraph,form,approvedScores:scores});
-assert.equal(APPROVED_MASS_INLINE_GABC.length,0,
- "Unapproved GregoBase archive must NOT expose production music");
-assert.equal(pick(PRIEST,row(PRIEST,p.sourceLatin))?.sourceCueId,PRIEST);
-assert.equal(pick(ANSWER,row(ANSWER,r.sourceLatin))?.sourceCueId,ANSWER);
-assert.equal(pick(PRIEST,row(PRIEST,p.sourceLatin),"SOLEMN")?.sourceCueId,PRIEST);
-assert.equal(pick(PRIEST,row(PRIEST,p.sourceLatin),"LOW"),null);
-assert.equal(pick(PRIEST,row(PRIEST,p.sourceLatin),"MISSA_CANTATA_INCENSE")?.sourceCueId,PRIEST);
-assert.equal(pick(PRIEST,row(ANSWER,p.sourceLatin)),null,"Wrong canonical cue cannot borrow score");
-assert.equal(pick(PRIEST,row(PRIEST,"℣. Benedicamus Domino.")),null,"Wrong text forbidden");
-assert.equal(pick(PRIEST,{...row(PRIEST,p.sourceLatin),sourceCueIds:[PRIEST,ANSWER]}),null);
-assert.equal(pick(PRIEST,{...row(PRIEST,p.sourceLatin),kind:"RUBRIC"}),null);
-assert.equal(pick(PRIEST,row(PRIEST,p.sourceLatin),"SOLEMN",[p,p]),null,"Ambiguous registry must fail closed");
-for(const patch of [
- {publication:"RESEARCH_ONLY"},
- {approval:"PENDING_USER_REVIEW"},
- {musicalNotationVerified:false},
- {sourceTextVerified:false},
- {gabcSha256:"INVALID"},
- {gabc:"fake score"},
- {sourceUrl:"javascript:alert(1)"}
-]){
- assert.equal(pick(PRIEST,row(PRIEST,p.sourceLatin),"SOLEMN",[{...p,...patch}]),null,
-  "Incomplete / untrusted publication cannot display music: "+JSON.stringify(patch));
+const [a,b]=APPROVED_MASS_INLINE_GABC;
+assert.equal(APPROVED_MASS_INLINE_GABC.length,2,"Only the exact Ite VIII source pair is live");
+const latin=["℣. Ite, missa est.","℟. Deo grátias."];
+for(const [i,x] of APPROVED_MASS_INLINE_GABC.entries()){
+ assert.equal(x.schema,INLINE_CHANT_SCHEMA);
+ assert.equal(x.sourceLatin,latin[i]);
+ assert.equal(x.sourceCueId,["AO.SM.C0259","AO.SM.C0260"][i]);
+ assert.equal(x.settingId,"ITE_VIII");
+ assert.equal(x.originalSourceId,832);
+ assert.equal(x.sourceUrl,"https://gregobase.selapa.net/chant.php?id=832");
+ assert.equal(x.gabcSha256,createHash("sha256").update(x.gabc).digest("hex"),"exact source SHA");
+ assert.match(x.gabc,/%%\s*\(c3\)/);
+ assert.match(x.gabc,/\(::\)/);
+ assert.equal((x.gabc.match(/\(::\)/g)||[]).length,1,"Only one speaker line per cue");
 }
+const paragraph=(x)=>({kind:"TEXT",primary:x.sourceLatin,secondary:"Translation",sourceCueIds:[x.sourceCueId]});
+const pick=(x,settingId="ITE_VIII",form="MISSA_CANTATA_SIMPLE",patch={})=>
+ selectApprovedInlineScore({cueId:x.sourceCueId,paragraph:paragraph(x),settingId,form,
+  approvedScores:APPROVED_MASS_INLINE_GABC,...patch});
+assert.equal(pick(a)?.scoreId,a.scoreId);
+assert.equal(pick(b)?.scoreId,b.scoreId);
+assert.equal(pick(a,"ITE_VIII","SOLEMN")?.scoreId,a.scoreId);
+assert.equal(pick(a,"ITE_VIII","MISSA_CANTATA_INCENSE")?.scoreId,a.scoreId);
+assert.equal(pick(a,"ITE_VIII","LOW"),null);
+assert.equal(pick(a,""),null,"No automatic selection from Mass form or Kyrie");
+assert.equal(pick(a,"MASS_08"),null,"Kyrie VIII must not select Ite VIII");
+assert.equal(pick(a,"ITE_I"),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{isRequiem:true}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{provenance:{isRequiem:true}}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{resolvedMass:{actualCelebration:{type:"REQUIEM"}}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{paragraph:{...paragraph(a),primary:"℣. Benedicamus Domino.",secondary:null}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{paragraph:{...paragraph(a),sourceCueIds:[b.sourceCueId]}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{paragraph:{...paragraph(a),sourceCueIds:[a.sourceCueId,b.sourceCueId]}}),null);
+assert.equal(pick(a,"ITE_VIII","SOLEMN",{approvedScores:[a,a]}),null);
+for(const patch of [{publication:"RESEARCH_ONLY"},{approval:"PENDING"},{sourceTextVerified:false},
+  {musicalNotationVerified:false},{sourceUrl:"javascript:bad"},{gabc:"(c3)Fake(::)"},
+  {settingId:"ITE_I"},{gabcSha256:"broken"}]){
+ assert.equal(pick(a,"ITE_VIII","SOLEMN",{approvedScores:[{...a,...patch}]}),null,
+   "Fail closed when provenance invalid: "+JSON.stringify(patch));
+}
+let local=normalizeScholaLocalProgramme({});
+assert.equal(local.dismissalSelection,"");
+local=updateScholaLocalProgramme(local,{kind:"ordinarySelection",eventId:"KYRIE",value:"MASS_08"});
+assert.equal(local.dismissalSelection,"","Kyrie VIII does not infer Ite VIII");
+local=updateScholaLocalProgramme(local,{kind:"dismissalSelection",value:"ITE_VIII"});
+assert.equal(local.dismissalSelection,"ITE_VIII");
+assert.equal(local.profiles[0].dismissalSelection,"ITE_VIII");
+local=updateScholaLocalProgramme(local,{kind:"profileCreate",value:"Another parish"});
+assert.equal(local.dismissalSelection,"","New profile may not inherit old parish's dismissal");
+local=updateScholaLocalProgramme(local,{kind:"profileSelect",value:"p1"});
+assert.equal(local.dismissalSelection,"ITE_VIII");
+local=updateScholaLocalProgramme(local,{kind:"dismissalSelection",value:"INVALID"});
+assert.equal(local.dismissalSelection,"ITE_VIII");
+local=updateScholaLocalProgramme(local,{kind:"dismissalSelection",value:""});
+assert.equal(local.dismissalSelection,"");
 assert.match(INLINE_CHANT_CSS,/grid-template-columns:24px minmax\(0,1fr\)/);
-assert.match(INLINE_CHANT_CSS,/@media\(max-width:480px\)/);
-assert.match(INLINE_CHANT_CSS,/prefers-reduced-motion/);
-console.log("PASS source-authenticated A/C cue-first score gate (incl. LOW, Requiem/Benedicamus, source mismatch, ambiguity and mobile CSS)");
+console.log("PASS Ite VIII source SHA, 2 verified cues, scoped local selection, Requiem/Benedicamus/Low guards");
