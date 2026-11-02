@@ -100,12 +100,14 @@ try{
      "The immersive map must begin with Discover in compact mode");
    assert.ok(await rail.locator("button[data-explore-open-place]").count()>0,
      "MapCN Discover must contain canonical actionable Places");
-   assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/In this area/i,
-     "MapCN Discover should describe the current map viewport");
+   assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/Places of the saints/i,
+     "Approved Discover entry must show the prototype's editorial sheet heading");
+   assert.match(await rail.locator(".aoMapcnDiscoverCount").innerText(),/^\\d+$/,
+     "Discover still reports the number of source-backed places in the current viewport");
    const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
      width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
    assert.ok(railGeometry.width>280&&railGeometry.bottom<= (mobile?844:960)+1
-    &&railGeometry.height<=75&&railGeometry.height>=60,
+    &&railGeometry.height<=96&&railGeometry.height>=60,
      "Collapsed Discover must leave the map visible: "+JSON.stringify(railGeometry));
    await page.screenshot({path:resolve(out,"explore-"+width+"-compact-discovery.png"),fullPage:false});
    await rail.locator("[data-mapcn-discover-toggle]").click();
