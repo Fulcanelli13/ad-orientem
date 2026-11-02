@@ -97,7 +97,11 @@ try{
              candidateHashes:(track.scoreCandidates??[]).map(score=>score.sourceGabcSha256),
              allSameRoleMatches:track.allSameRoleMatches??0};
          }));
-         return {date,status:"MATCHED_CANDIDATES",principalId,sourcePath,tracks};
+         return {date,status:"MATCHED_CANDIDATES",principalId,sourcePath,tracks,
+           selectedGradualLatin:String(proper.gradual?.lat??proper.gradual?.la??""),
+           selectedSequenceLatin:String(proper.sequence?.lat??proper.sequence?.la??""),
+           sourceRevisions:proper.sourceRevisions??null,
+           preGospelProofStatus:proper.readerChantSourceProof?.status??null};
        }catch(e){return {date,status:"GABC_MATCHER_HOLD",
          reason:String(e?.message??e).slice(0,180)};}
      }));
