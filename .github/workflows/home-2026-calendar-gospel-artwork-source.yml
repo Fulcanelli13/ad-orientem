@@ -1,0 +1,22 @@
+name: 2026 Calendar Gospel artwork source integrity
+on:
+  pull_request:
+    paths:
+      - "src/home/calendar-gospel-artwork-evidence.js"
+      - "data/calendar/research/2026-calendar-gospel-home-artwork-source-crosswalk.v1.json"
+      - "tests/calendar-gospel-home-art-2026.mjs"
+      - ".github/workflows/home-2026-calendar-gospel-artwork-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  strict-source-joins:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Calendar 365 identity / Gospel Latin source / artwork editorial rights gates
+        run: node tests/calendar-gospel-home-art-2026.mjs
