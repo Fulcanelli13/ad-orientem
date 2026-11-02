@@ -205,6 +205,8 @@ html[data-ao-h7-door-open] .aoH7Screens .aoH7DoorView:not([hidden]){height:100dv
 .aoH7Screens .aoH7Week{margin-top:6px}
 .aoH7Screens .btn[disabled]{opacity:.55}
 @media(max-width:359px){.aoH7Screens .hero{height:470px!important}}
+/* Narrow-phone first fold: keep H7's full-height artwork and shift only its CTA above the fixed ribbon. */
+@media(max-width:359px){.aoH7Screens .aoH7HomeView .hero .tx{bottom:32px!important}}
 
 /* A 46px CSS hit box remains at least 44px after the phone's fractional viewport scaling; negative margins preserve the original 36px visual spacing. */
 .aoH7Screens .aoH7HomeView .hero .date{min-height:46px!important;margin-block:-5px}
