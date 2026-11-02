@@ -84,6 +84,30 @@ try{
       "Fauré must not replace the appointed Gradual");
     assert.match((await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola.owner)),
       /R17_NATIVE/,"Gregorian source owner must survive on nonmapped track");
+    await plan.locator("summary").first().click();
+    const select=plan.locator("[data-schola-manual-movement]");
+    assert.equal(await select.isVisible(),true,"Manual text selection must be offered with Fauré");
+    await select.selectOption("PIE_JESU");
+    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.manualMovementId==="PIE_JESU");
+    let extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
+    assert.equal(extra.total,4);assert.match(extra.latin,/Pie Jesu/);
+    assert.equal(extra.musicStatus,"MANUAL_TEXT_REFERENCE_NOT_OBSERVED");
+    assert.match(await page.locator("[data-role='schola-inline-translation']").innerText(),
+      spec.lang==="fr"?/Jésus/:/Jesus/);
+    await select.selectOption("LIBERA_ME");
+    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.manualMovementId==="LIBERA_ME");
+    extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
+    assert.equal(extra.total,15);assert.match(extra.latin,/Libera me/);
+    await select.selectOption("IN_PARADISUM");
+    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.manualMovementId==="IN_PARADISUM");
+    extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
+    assert.equal(extra.total,6);assert.match(extra.latin,/In paradisum/);
+    await select.selectOption("");
+    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.owner==="R17_NATIVE_SCHOLA");
+    assert.equal(await page.locator(".ao-schola-dock").getAttribute("data-composed"),"false");
+    await plan.locator("summary").first().click();
+    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title),"Gradual",
+      "Manual extra musical references must not move the priest Mass card");
    }else{
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="KYRIE");
     const state=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState());
