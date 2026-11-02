@@ -93,7 +93,7 @@ export const INLINE_CHANT_CSS=String.raw`
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-line-primary,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-line-secondary{
- grid-column:2;grid-row:auto
+ grid-column:2!important;grid-row:auto!important
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-view="notation"]>.ao-line-primary,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-inline-chant-view="notation"]>.ao-line-secondary{
