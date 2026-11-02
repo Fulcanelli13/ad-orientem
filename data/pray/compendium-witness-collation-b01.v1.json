@@ -1,0 +1,169 @@
+{
+  "schema": "AO_PRAYER_COMPENDIUM_WITNESS_COLLATION_B01_V1",
+  "date": "2026-11-02",
+  "purpose": "First independently inspected original-source witness group of the 48 legacy Prayer corpus; editorial evidence, not a runtime text change.",
+  "sourceWitnesses": {
+    "en": {
+      "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "owner": "Holy See",
+      "scope": "Lord's Prayer and Appendix A, including parallel printed Latin"
+    },
+    "fr": {
+      "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "owner": "Holy See",
+      "scope": "Le Notre Père and Appendice A, including parallel printed Latin"
+    }
+  },
+  "sourceCorpus": "src/pray/canonical-data.js",
+  "sourceAudit": "data/pray/prayer-source-presentation-audit.v1.json",
+  "policy": {
+    "noSilentCanonicalRewrite": true,
+    "sourceClaimIsNotVerbatimProof": true,
+    "threeLanguageCertificationRequired": true,
+    "punctuationAndOrthographyDifferencesRequireDeclaredNormalization": true,
+    "traditionalFrenchMustNotBeReplacedByContemporaryCompendium": true,
+    "authoritativeTextCertificationAtThisStage": 0
+  },
+  "counts": {
+    "sourceFamilySize": 16,
+    "independentlyReviewedForms": 4,
+    "stillNotReviewed": 12,
+    "formAlignedNotVerbatim": 3,
+    "alternativeTraditionWitnessRequired": 1,
+    "fullyCertified": 0
+  },
+  "items": [
+    {
+      "id": "foundations_sign_of_cross",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "FORM_ALIGNED_NOT_VERBATIM_CERTIFIED",
+      "languages": {
+        "en": "Wording aligned with English Appendix A; line divisions and punctuation differ.",
+        "fr": "Wording aligned with French Appendix A; presentation punctuation and line divisions differ.",
+        "la": "Same short formula, with comma and accentuation differences."
+      },
+      "witnessSections": [
+        "English Appendix A / Sign of the Cross / lines 1115–1119",
+        "French Appendice A / Signe de la croix / lines 943–945"
+      ],
+      "next": "Confirm editorial normalization policy and archived witness transcript before any FULL_VERBATIM claim."
+    },
+    {
+      "id": "foundations_our_father",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "TRADITIONAL_VARIANT_NOT_EXACT_WITNESS",
+      "languages": {
+        "en": "App uses traditional English with an appended Amen and changed punctuation. Compendium chapter prayer ends before the independent explanatory Amen discussion.",
+        "fr": "Substantive traditional/modern wording differences: formal vous/votre rather than tu/ton; chaque jour rather than de ce jour; nous laissez pas succomber rather than ne nous soumets. Do not overwrite the traditional form.",
+        "la": "The app uses quotidianum while Compendium Latin prints cotidianum; further text normalization is unapproved."
+      },
+      "witnessSections": [
+        "English Lord's Prayer section / lines 1061–1083",
+        "French Le Notre Père / lines 909–910"
+      ],
+      "next": "Find a pinned traditional 1962-compatible French and Latin text witness; preserve current prayer until edition-specific collation."
+    },
+    {
+      "id": "foundations_hail_mary",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "FORM_ALIGNED_NOT_VERBATIM_CERTIFIED",
+      "languages": {
+        "en": "Same prayer in English; punctuation/line breaks differ.",
+        "fr": "Same prayer in French; capitalization, punctuation and line breaks differ.",
+        "la": "Same Latin prayer; accentuation and punctuation differ."
+      },
+      "witnessSections": [
+        "English Appendix A / Hail Mary and Ave Maria / lines 1131–1145",
+        "French Appendice A / Je vous salue Marie and Ave Maria / lines 950–977"
+      ],
+      "next": "Record normalization policy for historical orthography before full-text certification."
+    },
+    {
+      "id": "foundations_glory_be",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "FORM_ALIGNED_NOT_VERBATIM_CERTIFIED",
+      "languages": {
+        "en": "Same doxology in English; capitalization and punctuation differ.",
+        "fr": "Same doxology in French; punctuation and case differ.",
+        "la": "Same Latin doxology; accentuation and punctuation differ."
+      },
+      "witnessSections": [
+        "English Appendix A / Glory be / lines 1120–1130",
+        "French Appendice A / Doxologie and Gloria Patri / lines 945–970"
+      ],
+      "next": "Archive complete original witness and establish edition-specific punctuation normalization."
+    },
+    {
+      "id": "foundations_apostles_creed",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "sacrament_act_of_contrition",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "foundations_act_of_faith",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "foundations_act_of_hope",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "foundations_act_of_love",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "marian_memorare",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "weekday_magnificat",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "adoration_anima_christi",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "weekday_benedictus",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    },
+    {
+      "id": "foundations_eternal_rest",
+      "sourceGroup": "VATICAN_2005_COMPENDIUM",
+      "status": "NOT_REVIEWED_IN_BATCH_01",
+      "next": "Independent en/fr/la source-text collation pending; do not equate source presence with certification."
+    }
+  ]
+}
