@@ -9,6 +9,7 @@ import "./first-monthly-direct-prayers-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY, CONFESSION_TRADITIONAL_PASTORAL_WITNESSES, CONFESSION_EXTENDED_EXAM_WITNESS, confessionExtendedSections } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
+import {prayerSourceFacesV1} from "./prayer-source-faces.v1.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./benediction-mystic-lamb-user-art-styles.js";
@@ -689,7 +690,10 @@ function devotionalGuide(id){
 
 function prayerBlock(id,opts={}){
  const p=opts.record||P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
- const vern=p[lang()]||'',latin=p.la||'',both=!!(latin&&vern),englishOnly=!vern&&!latin&&!!p.en,shown=vern||latin||p.en||'';
+ const resolved=prayerSourceFacesV1(p,lang());
+ const vern=resolved.vernacular,latin=resolved.latin,both=!!(latin&&vern);
+ const englishOnly=resolved.fallback&&resolved.vernacularLanguage==='en'&&!latin;
+ const shown=vern||latin;
  const origin=opts.scriptureContext?prayerScriptureOrigin(id):null;
  const originCapsule=origin?.reference?'<div class="aoP435930ScriptureOrigin" data-ao-prayer-scripture-origin="'+esc(id)+'">'+
    scriptureContextCapsule(origin.reference,{french:isFr()})+
@@ -697,7 +701,8 @@ function prayerBlock(id,opts={}){
      ? L('Biblical text · original chapter','Texte biblique · chapitre original')
      : L('Biblical origin or adaptation · not an entire Bible quotation','Origine ou adaptation biblique · non une citation intégrale'))+
    '</small></div>':'';
- const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`:'';
+ const languageNotice=englishOnly?`<p class="aoP435930SourceLanguageNotice" lang="${isFr()?'fr':'en'}">${esc(L('The verified source is available in English only; no Latin or French translation is claimed.','Seul le texte source anglais est disponible ; aucune traduction latine ou française n’est revendiquée.'))}</p>`::
+  resolved.fallback?`<p class="aoP435930SourceLanguageNotice" data-ao-prayer-language-fallback lang="${lang()}">${esc(resolved.vernacularLanguage==='en'?L('English source text shown; French version is unavailable.','Le texte source anglais est affiché ; aucune version française n’est disponible.'):L('French source text shown; English version is unavailable.','Le texte source français est affiché ; aucune version anglaise n’est disponible.'))}</p>`:'';
  if(ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)&&!opts.record&&(view==='library'||view==='prayerOnly')){
   // Claude F01: the Holy Card is a reversible devotional object, not a
   // flat text document. Text still comes exclusively from canonical-data.
@@ -768,7 +773,7 @@ function prayerBlock(id,opts={}){
  if(PRAYER_LIBRARY_LATIN_PREF.active&&!opts.record&&(view==='library'||view==='prayerOnly')&&latin){
   return `<article class="aoP435930Prayer" data-ao-canonical-latin="true">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div><span>LA</span></div><div class="aoP435930Text" lang="la">${nl(latin)}</div>${originCapsule}${sourceLine(p)}</article>`;
  }
- return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(isFr()?'FR':'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" ${englishOnly?'lang="en"':''}>${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
+ return `<article class="aoP435930Prayer">${languageNotice}<div class="aoP435930PrayerHead"><div><small>${esc(opts.kicker||'')}</small><h3>${esc(isFr()?(p.titleFr||p.title):p.title)}</h3></div>${both?'<span>LA ↔ '+(resolved.vernacularLanguage?.toUpperCase()||'EN')+'</span>':''}</div>${both?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v lang="${resolved.vernacularLanguage||'en'}">${nl(vern)}</span><span data-face-la lang="la" hidden>${nl(latin)}</span></button>`:`<div class="aoP435930Text" lang="${resolved.vernacularLanguage||(latin?'la':'en')}">${nl(shown)}</div>`}${originCapsule}${sourceLine(p)}</article>`;
 }
 function selectedDateKey(){
  const v=core()?.selectedDate;
