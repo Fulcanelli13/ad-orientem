@@ -54,22 +54,24 @@ report.rows[2]={...active,date:dates[2],
   status:"AMBIGUOUS_SOURCE_TEXT_VARIANTS"}))};
 report.rows[3]={...active,date:dates[3],
  tracks:active.tracks.map(x=>({...x,selectedLatin:"Other source text altogether"}))};
+report.rows[4]={...active,date:dates[4],sourceExistsInPinnedLatinTree:false};
 const result=crosswalkSelected2026MassesToPinnedReview({
  annualReport:report,reviewQueue:queue});
 assert.equal(result.schema,SELECTED_2026_INLINE_CROSSWALK_SCHEMA);
 assert.equal(result.counters.calendarDays,365);
-assert.equal(result.counters.readySelectedDates,4);
+assert.equal(result.counters.readySelectedDates,5);
 assert.equal(result.counters.corroboratedCandidateOccurrences,1);
 assert.equal(result.counters.distinctCorroboratedScoreIds,1);
 assert.equal(result.calendar[0].status,"ALL_UNIQUE_TRACKS_CORROBORATED");
 assert.equal(result.calendar[1].status,"SOURCE_REVIEW_HOLD");
 assert.equal(result.calendar[2].tracks[0].status,"SELECTED_SCORE_VARIANTS_AMBIGUOUS");
 assert.equal(result.calendar[3].tracks[0].status,"PINNED_1962_SOURCE_INCIPIT_NOT_CORROBORATED");
+assert.equal(result.calendar[4].status,"CALENDAR_SOURCE_OUTSIDE_PINNED_FULL_TREE");
 assert.equal(result.matchedReviewOccurrences[0].scoreId,"GREGOBASE-72");
 assert.equal(result.matchedReviewOccurrences[0].sourceOwner,path);
 assert.equal(result.matchedReviewOccurrences[0].publicScore,false);
 assert.equal(result.publication.scoresApproved,0);
-assert.equal(result.counters.calendarDayStatuses.CALENDAR_OR_READER_HOLD,361);
+assert.equal(result.counters.calendarDayStatuses.CALENDAR_OR_READER_HOLD,360);
 assert.throws(()=>crosswalkSelected2026MassesToPinnedReview({
  annualReport:{...report,rows:report.rows.slice(1)},reviewQueue:queue}),
  /INCOMPLETE_OR_UNORDERED/);
