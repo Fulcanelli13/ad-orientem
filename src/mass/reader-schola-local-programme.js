@@ -1,4 +1,5 @@
 import {canonicalKyrialeSelection,resolveKyrialeChoice} from "./reader-kyriale-catalogue.js";
+import {COMPOSER_SCHOLA_SETTING_IDS} from "./reader-composed-schola-text.js";
 // Personal parish programmes extend the existing Schola plan without
 // changing the 1962 Proper, Gregorian source texts, event or priest clocks.
 export const SCHOLA_LOCAL_PROGRAMME_STORAGE_KEY="ao-schola-local-programme-v1";
@@ -13,6 +14,7 @@ export const SCHOLA_ORDINARY_SETTING_IDS=Object.freeze([
 const OPTION_SET=new Set(SCHOLA_OPTIONAL_EVENT_IDS);
 const ORDINARY_SET=new Set(SCHOLA_ORDINARY_SETTING_IDS);
 const PERFORMANCES=new Set(["UNSPECIFIED","GREGORIAN","POLYPHONIC"]);
+const COMPOSER_WORKS=new Set(COMPOSER_SCHOLA_SETTING_IDS);
 const freeze=Object.freeze,MAX_PROFILES=10,DEFAULT_ID="p1";
 const clean=value=>String(value??"").trim().replace(/[\u0000-\u001f\u007f]+/g," ").slice(0,80);
 const object=v=>v&&typeof v==="object"&&!Array.isArray(v)?v:{};
@@ -53,7 +55,8 @@ function profileOf(value,id){
  return freeze({id,name:clean(v.name)||"Local programme",
   parishLabel:clean(v.parishLabel),choices:choicesOf(v.choices),
   ordinarySettings,ordinarySelections:freeze(ordinarySelections),
-  sanctusPerformance:performanceOf(v.sanctusPerformance)});
+  sanctusPerformance:performanceOf(v.sanctusPerformance),
+  composedScholaWorkId:COMPOSER_WORKS.has(v.composedScholaWorkId)?v.composedScholaWorkId:""});
 }
 function wrap(profiles,activeProfileId){
  const list=freeze(profiles);
@@ -66,6 +69,7 @@ function wrap(profiles,activeProfileId){
   ordinarySettings:active.ordinarySettings,
   ordinarySelections:active.ordinarySelections,
   sanctusPerformance:active.sanctusPerformance,
+  composedScholaWorkId:active.composedScholaWorkId,
   editorialStatus:"PERSONAL_LOCAL_UNVERIFIED",observedSinging:false});
 }
 export function normalizeScholaLocalProgramme(value){
@@ -120,6 +124,8 @@ function updatedProfile(current,change){
   return {...active,ordinarySelections:{...active.ordinarySelections,[id]:found.id},
    ordinarySettings:{...active.ordinarySettings,[id]:found.title}};
  }
+ if(kind==="composedScholaWork"&&COMPOSER_WORKS.has(change.value))
+  return {...active,composedScholaWorkId:change.value};
  if(kind==="sanctusPerformance"&&PERFORMANCES.has(change.value))
   return {...active,sanctusPerformance:change.value};
  if(["eventSelected","eventTitle"].includes(kind)&&OPTION_SET.has(id)){
