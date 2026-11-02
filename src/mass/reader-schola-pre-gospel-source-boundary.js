@@ -1,7 +1,7 @@
 // Research-only, pinned Latin 1962 Missal source -> named pre-Gospel roles.
 // Never mutates the Calendar Proper, reader paragraphs, or live Schola. No
 // automatic musical or editorial approval; excludes ambiguous seasonal forms.
-import {matchSelected1962ProperToGraduale} from "./reader-proper-gabc-bulk-join.js";
+import {matchSelected1962ProperToGraduale,source1962ChantOpeningForMatch} from "./reader-proper-gabc-bulk-join.js";
 export const SCHOLA_PREGOSPEL_BULK_SCHEMA="ao-schola-pregospel-pinned-selected-source-v1";
 const validPath=p=>/^(Tempora|Sancti|Commune)\/[A-Za-z0-9_-]+$/.test(p);
 const norm=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
@@ -94,8 +94,16 @@ export async function analyzeSelectedPreGospelSource({
      primary:ordinary.status,paschal:paschal.status});
    return base;
  }
- if(normal&&alternate){base.holds.push({code:"NORMAL_AND_PASCHAL_SOURCE_AMBIGUOUS"});return base;}
- const chosen=normal?ordinary:paschal;
+ let useNormal=normal;
+ if(normal&&alternate){
+   const opening=words(source1962ChantOpeningForMatch(selected)).slice(0,4).join(" ");
+   const head=s=>s.lines.find(x=>words(clean(x)).length>=4)??"";
+   const n=words(clean(head(ordinary))).slice(0,4).join(" ")===opening;
+   const p=words(clean(head(paschal))).slice(0,4).join(" ")===opening;
+   if(n===p){base.holds.push({code:"NORMAL_AND_PASCHAL_SOURCE_AMBIGUOUS"});return base;}
+   useNormal=n;
+ }
+ const chosen=useNormal?ordinary:paschal;
  const lines=chosen.lines;
  const pieces=[];
  const add=(role,latin,origin=chosen)=>{
@@ -108,18 +116,20 @@ export async function analyzeSelectedPreGospelSource({
  };
  const markerIndex=lines.findIndex(x=>doubleAlleluia.test(x));
  if(markerIndex===0){
-   // Eastertide: no Gradual; two independent Alleluia verses in the selected section.
-   for(const line of lines.slice(1)){
-     if(!/^[℣VR]\./u.test(line)){base.holds.push({code:"PASCHAL_UNMARKED_VERSE"});continue;}
-     add("al",line);
-   }
+   // Original Paschal Graduale names exactly two Alleluia verses; an
+   // authenticated !Scripture citation can replace an explicit V. cue.
+   const verses=lines.slice(1);
+   if(verses.length===2)for(const line of verses)add("al",line);
+   else base.holds.push({code:"PASCHAL_VERSE_COUNT_UNVERIFIED",count:verses.length});
  }else{
    if(lines.length)add("gr",lines[0]);
    if(markerIndex>0){
      const inline=lines[markerIndex].split(doubleAlleluia)[1]?.trim();
      if(inline&&words(inline).length>=4)add("al",inline);
      else{
-       const after=lines.slice(markerIndex+1).filter(x=>/^[℣VR]\./u.test(x));
+       // One substantive line following a printed double Alleluia
+       // is the verse even when a !source reference replaces V.
+       const after=lines.slice(markerIndex+1);
        if(after.length===1)add("al",after[0]);
        else base.holds.push({code:"MULTIPLE_OR_MISSING_ALLELUIA_VERSES",count:after.length});
      }
