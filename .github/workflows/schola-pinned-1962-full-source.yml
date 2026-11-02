@@ -1,0 +1,42 @@
+name: Schola pinned 1962 full-source sweep
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/research/mass-music-1962-pinned-full-source-universe.v1.json'
+      - 'scripts/schola/**'
+      - 'tests/reader-mass-1962-pinned-universe.mjs'
+      - '.github/workflows/schola-pinned-1962-full-source.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  full-1962-source-universe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Existing 91-file regression and complete inventory parity
+        run: |
+          node tests/reader-mass-1962-gabc-coverage-sweep.mjs
+          node tests/reader-mass-1962-pinned-universe.mjs
+      - name: Cache authenticated immutable Latin source blobs
+        uses: actions/cache@v4
+        with:
+          path: .cache/schola-pinned-1962/
+          key: schola-1962-ad8783641455bae38a8eb5782b34241a7b3ff2ef-v1
+      - name: Bulk audit complete pinned Latin source universe against existing GABC archive
+        run: node scripts/schola/build-1962-full-coverage.mjs
+      - name: Preserve detailed research report even if source authentication fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-1962-full-source-coverage
+          path: .tmp/schola-1962-coverage/
+          if-no-files-found: warn
+          retention-days: 30
