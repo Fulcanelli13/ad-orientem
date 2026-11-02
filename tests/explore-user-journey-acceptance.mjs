@@ -270,7 +270,9 @@ try{
    await sourceFolio.locator("button[data-find-close-detail]").click();
    await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
    await root.locator('.aoNetworkPanel [data-network-close]').click();
-   await assertP6Canvas("published custom source and return");
+   await mapReady("heritage");
+   assert.equal(await root.locator(".aoHeritageSurface [data-find-map] canvas.maplibregl-canvas").count(),1,
+    "A text-reader round trip should remount exactly one working MapLibre canvas");
    note.steps.push("published DEV-010 votive-candle custom → one canonical sourced Traditions folio → visible Back-to-preview, Escape and full-sheet Close return to exact Network focus");
 
    // Continue from this same Explore destination to Mass without hidden menus.
