@@ -16,6 +16,15 @@ const ROUTES=Object.freeze({
  AGNUS_DEI:Object.freeze({movement:4,from:0,to:4}),
  COMMUNION:Object.freeze({movement:4,from:4,to:8})
 });
+// These belong to a musical work, not to a native Mass chant window.
+ // Selecting one is an EXPLICIT manual display action. No source cue starts it.
+export const COMPOSED_MANUAL_MOVEMENTS=Object.freeze([
+ Object.freeze({id:"",label:"Follow Mass Schola (default)",movement:null}),
+ Object.freeze({id:"PIE_JESU",label:"Pie Jesu · manual only",movement:3}),
+ Object.freeze({id:"LIBERA_ME",label:"Libera me · optional Absolution / music programme",movement:5}),
+ Object.freeze({id:"IN_PARADISUM",label:"In paradisum · optional funeral procession / music programme",movement:6}),
+]);
+const EXTRA_BY_ID=new Map(COMPOSED_MANUAL_MOVEMENTS.filter(x=>x.id).map(x=>[x.id,x]));
 export function composedScholaRoute(trackId){return ROUTES[trackId]??null;}
 export function eligibleComposedScholaWork({workId,prepared,native}={}){
  const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
@@ -24,11 +33,28 @@ export function eligibleComposedScholaWork({workId,prepared,native}={}){
    isExplicitRequiemMass(prepared)&&native?.supported===true;
 }
 export function createComposedScholaTextController({prepared,language="en"}={}){
- let trackId=null,workId="",index=0,complete=false;
- const state=()=>Object.freeze({workId,trackId,index,complete});
- function reset(){trackId=null;workId="";index=0;complete=false;return state();}
+ let trackId=null,workId="",index=0,complete=false,manualMovementId="";
+ const state=()=>Object.freeze({workId,trackId,index,complete,manualMovementId});
+ function clearPosition(){trackId=null;workId="";index=0;complete=false;}
+ function reset(){clearPosition();manualMovementId="";return state();}
+ function setManualMovement(id,native,selectedWorkId){
+  if(!eligibleComposedScholaWork({workId:selectedWorkId,prepared,native}))return false;
+  const requested=String(id??"");
+  if(requested && !EXTRA_BY_ID.has(requested))return false;
+  if(manualMovementId!==requested){
+   manualMovementId=requested;clearPosition();
+  }
+  return true;
+ }
  function routeFor(native,selectedWorkId){
   if(!eligibleComposedScholaWork({workId:selectedWorkId,prepared,native}))return null;
+  if(manualMovementId){
+   const extra=EXTRA_BY_ID.get(manualMovementId);
+   const movement=SACRED_MUSIC_TEXT_PLANS[selectedWorkId]?.[extra?.movement];
+   return movement?.textIds?.length
+     ?{track:"COMPOSER_MANUAL_"+manualMovementId,ids:movement.textIds,
+       movementId:movement.movementId,manual:true}:null;
+  }
   const track=native?.trackId??native?.schola?.trackId;
   if(!native?.schola || !ROUTES[track] || native.schola.complete===true)return null;
   const route=ROUTES[track],movement=SACRED_MUSIC_TEXT_PLANS[selectedWorkId]?.[route.movement];
@@ -38,7 +64,7 @@ export function createComposedScholaTextController({prepared,language="en"}={}){
  }
  function project(native,selectedWorkId,locale=language){
   const route=routeFor(native,selectedWorkId);
-  if(!route){reset();return native;}
+  if(!route){clearPosition();return native;}
   if(trackId!==route.track || workId!==selectedWorkId){
    trackId=route.track;workId=selectedWorkId;index=0;complete=false;
   }
@@ -46,16 +72,18 @@ export function createComposedScholaTextController({prepared,language="en"}={}){
   const id=route.ids[Math.min(index,route.ids.length-1)];
   const item=sharedRequiemTextUnit(id);
   if(!item)return native; // Never invent substitute words.
-  const source=native.schola;
+  const source=native.schola??{};
   return Object.freeze({...native,
-   ownership:"COMPOSED_SCHOLA_TEXT_OVER_SOURCE_WINDOW",
+   ownership:route.manual?"COMPOSED_MANUAL_TEXT_REFERENCE":"COMPOSED_SCHOLA_TEXT_OVER_SOURCE_WINDOW",
    schola:Object.freeze({...source,
      latin:item.latin,english:locale==="fr"?item.fr:item.en,
      label:item.latin,trackId:route.track,
      index,total:route.ids.length,complete,
      segmentId:"COMPOSED:"+selectedWorkId+":"+route.movementId+":"+index,
      cueId:null,benedictusHold:false,
-     musicStatus:"SELECTED_LOCAL_SETTING_NOT_OBSERVED",
+     musicStatus:route.manual?"MANUAL_TEXT_REFERENCE_NOT_OBSERVED":"SELECTED_LOCAL_SETTING_NOT_OBSERVED",
+     manualMusicReference:route.manual===true,
+     manualMovementId:route.manual?manualMovementId:null,
      sourceTextId:id,composedWorkId:selectedWorkId,
      composedMovementId:route.movementId,owner:"COMPOSED_TEXT_SHARED_REQUIEM_REGISTRY",
    }),
@@ -81,5 +109,5 @@ export function createComposedScholaTextController({prepared,language="en"}={}){
  }
  return Object.freeze({project,next:(native,id,locale)=>change(native,id,1,locale),
   previous:(native,id,locale)=>change(native,id,-1,locale),
-  finish,reset,state});
+  finish,reset,setManualMovement,state});
 }
