@@ -1,0 +1,142 @@
+{
+  "schema": "AO_SACRED_ART_20261027_SIX_EXACT_LICENSE_SOURCE_IMAGE_GATES_V1",
+  "date": "2026-10-27",
+  "status": "DOCUMENTED_LICENSE_ON_OFFICIAL_FILE_SOURCE; MASTER_QUALITY_AND_VERSION_RECONCILIATION_UNRESOLVED",
+  "entries": [
+    {
+      "placement": "module:angelus",
+      "artist": "Philippe de Champaigne",
+      "work": "The Annunciation",
+      "object_id": "Met 438724 / accession 2004.31",
+      "source_page": "https://www.metmuseum.org/art/collection/search/438724",
+      "current_museum_main_image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438724/796490/main-image",
+      "staged_original": {
+        "branch": "research/module-hero-wave2-20261026",
+        "path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+        "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "reported_dimensions": [
+          3741,
+          3658
+        ],
+        "image_source": "https://images.metmuseum.org/CRDImages/ep/original/DT5656.jpg"
+      },
+      "license": "MET_CC0_OFFICIAL_OA",
+      "source_rights_pass": "YES_DOCUMENTED_OFFICIAL_OPEN_ACCESS",
+      "observed_image_quality": "Page identifies painting with slightly non-square outer dimensions; actual master painted-edge and crop verification not executed. Museum page current main-image version not compared byte-for-byte to staged DT5656.jpg.",
+      "frame_crop_gate": "PENDING_MASTER_PAINTED_EDGES",
+      "app_release": false
+    },
+    {
+      "placement": "module:adoration",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "work": "The Virgin Adoring the Host",
+      "object_id": "Met 438434 / accession 2005.186",
+      "source_page": "https://www.metmuseum.org/art/collection/search/438434",
+      "current_museum_main_image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438434/794561/main-image",
+      "staged_original": {
+        "branch": "research/module-hero-museum-photos-20261026",
+        "path": "assets/staged/module-hero-masters/adoration.jpg",
+        "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+        "reported_dimensions": [
+          3122,
+          3813
+        ],
+        "image_source": "https://images.metmuseum.org/CRDImages/ep/original/DP136074.jpg"
+      },
+      "license": "MET_CC0_OFFICIAL_OA",
+      "source_rights_pass": "YES_DOCUMENTED_OFFICIAL_OPEN_ACCESS",
+      "observed_image_quality": "Official image presents clearly visible grey/beige outer border around painted scene, with apparent inscription/painted lower band that should not be cropped blindly. Requires real master pixels to separate external frame/mount from painted artwork and inscriptions.",
+      "frame_crop_gate": "PHOTO_REQUIRES_AUTHENTIC_FRAME_FREE_PREPARATION_BEFORE_PUBLICATION",
+      "app_release": false
+    },
+    {
+      "placement": "module:confession",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "The Return of the Prodigal Son",
+      "object_id": "National Gallery of Art 34956 / accession 1948.12.1",
+      "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "current_museum_main_image": "https://api.nga.gov/iiif/676fa96e-ad4e-4209-b985-ae0c15f5d902/full/full/0/default.jpg",
+      "staged_original": {
+        "branch": "research/module-hero-museum-photos-20261026",
+        "path": "assets/staged/module-hero-masters/confession.jpg",
+        "sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "reported_dimensions": [
+          4096,
+          3712
+        ],
+        "image_source": "https://api.nga.gov/iiif/676fa96e-ad4e-4209-b985-ae0c15f5d902/full/full/0/default.jpg"
+      },
+      "license": "NGA_PUBLIC_DOMAIN_OPEN_ACCESS",
+      "source_rights_pass": "YES_DOCUMENTED_OBJECT_MEDIA_PUBLIC_DOMAIN",
+      "observed_image_quality": "Downloaded original manifest documents stable SHA and 4096x3712 pixels; artist/picture source is exact NGA accession; source painting-edge verification and close-up QA still outstanding.",
+      "frame_crop_gate": "PENDING_MASTER_PAINTED_EDGES",
+      "app_release": false
+    },
+    {
+      "placement": "date:2026-02-18",
+      "artist": "Georges de La Tour",
+      "work": "The Penitent Magdalen",
+      "object_id": "Met 436839 / accession 1978.517",
+      "source_page": "https://www.metmuseum.org/art/collection/search/436839",
+      "current_museum_main_image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436839/2186892/main-image",
+      "staged_original": null,
+      "license": "MET_CC0_OFFICIAL_OA",
+      "source_rights_pass": "YES_DOCUMENTED_OFFICIAL_OPEN_ACCESS",
+      "observed_image_quality": "Current official museum picture includes significant black backing surrounding rectangular artwork and narrow golden/brown perimeter around canvas. Remove only confirmed non-painted background/mount; no painterly area or surviving border details may be lost.",
+      "frame_crop_gate": "PHOTO_REQUIRES_AUTHENTIC_NO_SURROUND_PREPARATION",
+      "app_release": false
+    },
+    {
+      "placement": "date:2026-11-01",
+      "artist": "Carlo Saraceni",
+      "work": "Paradise",
+      "object_id": "Met 437607 / accession 1971.93",
+      "source_page": "https://www.metmuseum.org/art/collection/search/437607",
+      "current_museum_main_image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437607/2100377/main-image",
+      "staged_original": null,
+      "license": "MET_CC0_OFFICIAL_OA",
+      "source_rights_pass": "YES_DOCUMENTED_OFFICIAL_OPEN_ACCESS",
+      "observed_image_quality": "Met publicly distinguishes physical painted surface (53x46.7 cm) from overall support (54.3x47.9 cm). Full-size image was not inspected; check painted edges and any unpainted copper/support border before derivative.",
+      "frame_crop_gate": "PENDING_MASTER_PAINTED_EDGES",
+      "app_release": false
+    },
+    {
+      "placement": "module:rosary",
+      "artist": "Lorenzo Lotto",
+      "work": "Madonna del Rosario",
+      "object_id": "Cingoli church altarpiece 1539",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "current_museum_main_image": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "staged_original": null,
+      "license": "CC_BY_3_0_UNPORTED_PHOTOGRAPHER_SAILKO",
+      "source_rights_pass": "YES_LICENSE_PUBLISHED_WITH_CREDIT_CONDITIONS",
+      "credit_requirements": {
+        "author": "Sailko",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "disclose_modifications": true
+      },
+      "observed_image_quality": "1772x2652 original #01 published 2017, EXIF ISO 3200. Another same-original CC BY 3.0 photographer image #11 is 2304x3456 but EXIF ISO 6400; higher pixel count is not necessarily superior real detail.",
+      "same_painting_photo_alternative": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_11.jpg",
+      "frame_crop_gate": "PENDING_ORIGINAL_BYTES_NO_PHOTOGRAPH_ASSET_ARCHIVED",
+      "app_release": false
+    }
+  ],
+  "counts": {
+    "approved_placements_reviewed": 6,
+    "official_museum_OA": 5,
+    "author_cc_by3": 1,
+    "master_already_staged_at_known_SHA": 3,
+    "master_not_yet_staged": 3,
+    "specific_external_border_evidence_in_official_web_preview": 2,
+    "passed_final_visual_gate": 0,
+    "app_released": 0
+  },
+  "legal_and_photo_separation": "A valid Met/NG museum open-access policy or Sailko CC BY licence applies to the named designated source image. It does not guarantee that the staged photograph exactly equals current museum main-image or is free of frames, noise, unauthorized later alterations or unverified painted-area loss.",
+  "rules": [
+    "Do not select a different physical painting",
+    "Do not blindly trim outer painted signatures, craquelure, canvas extensions or conservation support",
+    "No fees, contact, licence requests, paid storage, AI re-creation or fabricated permissions",
+    "Track exact source URL, archived SHA-256, rights policy, crop transformation, photographer credit when required, and visual quality before app production"
+  ]
+}

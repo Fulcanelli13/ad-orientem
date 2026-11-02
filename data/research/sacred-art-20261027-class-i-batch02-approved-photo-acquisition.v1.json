@@ -1,0 +1,227 @@
+{
+  "schema": "AO_CLASS_I_BATCH02_APPROVED_PAINTINGS_PHOTO_ACQUISITION_V1",
+  "updated": "2026-10-27",
+  "purpose": "Asset acquisition for three specifically user-approved 2026 feast heroes; no public release",
+  "permissions": {
+    "cost_eur": 0,
+    "publication_authorized": false,
+    "frames_allowed": false,
+    "edits_allowed_without_approval": false,
+    "history_unchanged": true
+  },
+  "global_gates": [
+    "exact original object and photographer/source",
+    "free-use exact-file license",
+    "original JPEG/TIFF byte/download and sha256",
+    "full-resolution four-edge visual inspection: ZERO FRAME",
+    "no mat, museum surroundings, captions, borders or watermarks",
+    "colour fidelity, intact composition, sharpness and no glare",
+    "long-term private zero-cost preservation (no expiring Action-only storage)",
+    "user editorial selection already recorded; release is separately forbidden"
+  ],
+  "records": [
+    {
+      "date": "2026-09-29",
+      "feast": "Saint Michael",
+      "artist": "Guido Reni",
+      "work": "The Archangel Michael Defeating Satan",
+      "source_original_location": "Santa Maria della Concezione dei Cappuccini, Rome",
+      "identity_evidence": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/59868/Reni%20Guido%2C%20San%20Michele%20Arcangelo",
+      "approved": true,
+      "source_candidates": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "pixels": [
+            1657,
+            2441
+          ],
+          "bytes_approx": 501000,
+          "source_quality": "TOO_SMALL_COMPRESSED_FOR_PRISTINE_CONFIDENCE; NOT_ACCEPTED",
+          "rights": "Commons PD-Art",
+          "frame_status": "UNVERIFIED"
+        },
+        {
+          "url": "https://www.bridgemanimages.com/en/reni/archangel-michael-defeating-satan-c-1636-oil-on-canvas/oil-on-canvas/asset/704436",
+          "pixels": [
+            4499,
+            6478
+          ],
+          "rights": "PAID_LICENSE—EXCLUDED_EUR0",
+          "source_quality": "Large but fee-bound; never purchase"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Chiesa_di_Santa_Maria_Immacolata_a_via_Veneto_04.jpg",
+          "pixels": [
+            3864,
+            5152
+          ],
+          "source_quality": "IN_SITU_CAMERA_PHOTO_OF_CHURCH_UNINSPECTED; NOT_CONFIRMED_ARTWORK_ONLY; NO_FRAME_GATE",
+          "rights": "CC BY-SA 4.0 credited Nicholas Gemini; do not treat as CC0 or museum repro",
+          "frame_status": "UNVERIFIED_CAMERA_SCENE",
+          "disposition": "EXCLUDE_FROM_PRISTINE_HERO_PIPELINE_UNLESS_EXACT_PHOTO_PASSES_UNFRAMED_VISUAL_AND_OPTICAL_QA"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Cappouccini,_guido_reni,_san_michele_arcangelo_01.JPG",
+          "pixels": [
+            2112,
+            2816
+          ],
+          "source_quality": "IN_SITU_CAMERA_PHOTO 1/13S ISO1600; focus/noise/glare/frame risk; no unframed signoff",
+          "rights": "CC BY-SA 3.0 attributed Sailko, not CC0",
+          "frame_status": "UNVERIFIED_IN_SITU",
+          "disposition": "EXCLUDE_FROM_PRISTINE_HERO_PIPELINE_UNLESS_VISUAL_FRAME_FREE_AND_IMAGE_QUALITY_CLEARED"
+        }
+      ],
+      "blocker": "Still no confirmed pristine, free, original, artwork-only, four-edge-frame-free photo of Rome painting. In-situ larger camera photos must not be upgraded to hero just for pixel count. Paid licensed photos forbidden; Stockholm copy forbidden.",
+      "acquisition_state": "RESEARCH_PRISTINE_FREE_PHOTO",
+      "photo_approved": false
+    },
+    {
+      "date": "2026-12-08",
+      "feast": "Immaculate Conception",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "The Immaculate Conception",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1959.189",
+      "museum_url": "https://www.clevelandart.org/art/1959.189",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1959.189",
+      "exact_image_url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+      "rights": "Cleveland CC0 confirmed",
+      "approved": true,
+      "acquisition_state": "SOURCE_JPEG_NOW_STORED_IN_GIT_RESEARCH_QUARANTINE; PRIVATE_ARCHIVE_MIGRATION_PENDING",
+      "frame_status": "PRIMARY_SOURCE_NO_AUTOMATED_BORDER_FLAGS; FULL_RES_HUMAN_REVIEW_REQUIRED",
+      "photo_approved": false,
+      "verified_source_exclusion": {
+        "file_url": "https://openaccess-cdn.clevelandart.org/alternate/1959.189/1959.189_alt0_print.jpg",
+        "problem": "Museum alternate 0 image clearly shows ornate physical gold frame, confirmed from image-source visual preview.",
+        "result": "REJECT_PHOTO_SOURCE_PERMANENTLY; ORIGINAL_MURILLO_PAINTING_APPROVAL_UNCHANGED",
+        "scope": "Do not use this URL in galleries, Calendar, heroes, thumbnails, offline caches, selector previews, mosaics or restoration.",
+        "date": "2026-10-28"
+      },
+      "preferred_primary_candidate": {
+        "url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+        "status": "PREFERRED_API_PRIMARY_FILE; FRAME_FREE_AT_FULL_RESOLUTION_NOT_YET_CERTIFIED",
+        "physical_canvas_width_height_cm": [
+          127.5,
+          220.5
+        ],
+        "aspect_check": "Source JPEG width/height must approximate 0.5782 and undergo human 4-edge inspection"
+      },
+      "verified_exact_image": {
+        "source_url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+        "sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+        "bytes": 4691706,
+        "pixels": [
+          1951,
+          3400
+        ],
+        "format": "JPEG",
+        "rights": "CLEVELAND_CC0",
+        "frame_automated_four_edge_flags": [],
+        "source_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+        "canvas_ratio_error": 0.00762,
+        "frame_full_resolution_human_inspection": "PENDING",
+        "permanently_archived_binary": false,
+        "publication_authorized": false,
+        "checksum_report": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json"
+      },
+      "image_20261028_progress": {
+        "acquired_original_full_bytes": true,
+        "verified_sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+        "public_research_quarantine_binary": "data/research/_art_transfer_quarantine_20261028/murillo-immaculate-conception.jpg",
+        "qa_contact": "data/research/_art_transfer_quarantine_20261028/murillo-immaculate-conception__QA_EDGES.jpg",
+        "frame_visual": "PRELIMINARY_NO_VISIBLE_FRAME_IN_9_TILE_QA_SHEET",
+        "quality_review": "NO_OBVIOUS_GLARE_OR_WATERMARK_AT_CONTACT_REVIEW_SCALE",
+        "full_native_pixel_acceptance": false,
+        "private_permanent_archive": false,
+        "ready_to_publish": false,
+        "qa_record": "https://github.com/Fulcanelli13/folio-core/blob/research/sacred-art-private-quarantine-20261028/research/sacred-art/quarantine/manifests/class-i-approved-visual-contact-review.20261028.json"
+      }
+    },
+    {
+      "date": "2026-12-25",
+      "feast": "Christmas Day",
+      "artist": "Bernardo Cavallino",
+      "work": "Adoration of the Shepherds",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1968.100",
+      "museum_url": "https://www.clevelandart.org/art/1968.100",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1968.100",
+      "exact_image_url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+      "rights": "Cleveland CC0 confirmed",
+      "approved": true,
+      "acquisition_state": "SOURCE_JPEG_NOW_STORED_IN_GIT_RESEARCH_QUARANTINE; PRIVATE_ARCHIVE_MIGRATION_PENDING",
+      "frame_status": "PRIMARY_SOURCE_NO_AUTOMATED_BORDER_FLAGS; FULL_RES_HUMAN_REVIEW_REQUIRED",
+      "photo_approved": false,
+      "preferred_primary_candidate": {
+        "url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+        "status": "PRIMARY_IMAGE_MUSEUM_PREVIEW_HAS_NO_VISIBLE_PHYSICAL_FRAME; FULL_RESOLUTION_NOT_YET_CERTIFIED",
+        "physical_canvas_width_height_cm": [
+          148.3,
+          126.8
+        ],
+        "aspect_check": "Source JPEG width/height must approximate 1.1696 and undergo human 4-edge inspection"
+      },
+      "verified_exact_image": {
+        "source_url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+        "sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+        "bytes": 6445697,
+        "pixels": [
+          3400,
+          2905
+        ],
+        "format": "JPEG",
+        "rights": "CLEVELAND_CC0",
+        "frame_automated_four_edge_flags": [],
+        "source_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+        "canvas_ratio_error": 0.00072,
+        "frame_full_resolution_human_inspection": "PENDING",
+        "permanently_archived_binary": false,
+        "publication_authorized": false,
+        "checksum_report": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json"
+      },
+      "image_20261028_progress": {
+        "acquired_original_full_bytes": true,
+        "verified_sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+        "public_research_quarantine_binary": "data/research/_art_transfer_quarantine_20261028/cavallino-adoration-shepherds.jpg",
+        "qa_contact": "data/research/_art_transfer_quarantine_20261028/cavallino-adoration-shepherds__QA_EDGES.jpg",
+        "frame_visual": "PRELIMINARY_NO_VISIBLE_FRAME_IN_9_TILE_QA_SHEET",
+        "quality_review": "HOLD_SPECKLING_OR_SURFACE_WEAR_VISIBLE_AT_PAINTED_EDGES_UNDETERMINED_ORIGIN",
+        "full_native_pixel_acceptance": false,
+        "private_permanent_archive": false,
+        "ready_to_publish": false,
+        "qa_record": "https://github.com/Fulcanelli13/folio-core/blob/research/sacred-art-private-quarantine-20261028/research/sacred-art/quarantine/manifests/class-i-approved-visual-contact-review.20261028.json"
+      }
+    }
+  ],
+  "workflow": "scripts/research/audit_class_i_museum_images.py",
+  "workflow_path": ".github/workflows/sacred-art-original-source-audit.yml",
+  "memo": "Approved historical artworks are not yet approved source-image reproductions. Nationalmuseum Stockholm owns a COPY after Reni and must not be used as substitute; distinct original located in Rome. Avoid paid archive photos.",
+  "last_source_check": "2026-10-27",
+  "audit_notes": [
+    "Additional high-pixel Rome in-situ photographs discovered but image-quality/frame acceptance not demonstrated; not equivalent to pristine museum artwork reproduction.",
+    "Museum catalogue unframed dimensions refer to object measurement and say nothing about whether actual photograph includes a frame.",
+    "Global no-visible-frame policy remains absolute; preserve painting approval and reject unsuitable PHOTO source only."
+  ],
+  "acquisition_safety_note": "Only images.print canonical paths from exact Cleveland API record accepted. NEVER images.alternate_images, automatically chosen search results, framed photographs or museum room snapshots. Global zero frame directive applies even for approved paintings.",
+  "verified_origin_run": {
+    "timestamp": "2026-10-27T20:54:16.189643+00:00",
+    "total_verified": 4,
+    "approved_bytes_verified": 2,
+    "approved_publication_ready": 0,
+    "note": "Reports actual bytes, SHA256, pixel-decoded JPEG and canvas ratio sanity. Four-edge heuristic found no suspicious uniform bands. It cannot prove zero physical frames; human full-resolution inspection and permanent originals remain unmet."
+  },
+  "milestone_20261028": {
+    "achieved": "Exact two Cleveland approved originals are not merely hashes; their unchanged JPEG binaries have now been committed to a non-production public Git research quarantine, with QA corner contact sheets. Visual contact review found no picture frame. No app integration or public Calendar selection changes.",
+    "rejected_framed_sources": [
+      "Murillo Cleveland alt0 physical gold frame still prohibited"
+    ],
+    "limitations": [
+      "Final native 100% pixel inspection not signed",
+      "Cavallino painting shows speckling at artwork edges; quality source review remains open",
+      "Private folio-core holds metadata only, not actual JPEG binaries",
+      "Guido Reni Michael source unresolved"
+    ],
+    "scope": "Research quarantine is public source-controlled storage, not the PRIVATE permanent archive target or released art."
+  }
+}

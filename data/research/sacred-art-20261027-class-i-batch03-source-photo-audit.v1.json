@@ -1,0 +1,571 @@
+{
+  "schema": "AO_CLASS_I_BATCH03_SOURCE_PHOTO_AUDIT_V1",
+  "date": "2026-10-27",
+  "editorial_state": "BATCH03_CHOICES_NOT_SUBMITTED",
+  "source_branch": "research/sacred-art-b56-classi-53-hero-selector-20261024",
+  "policy": {
+    "cost_eur": 0,
+    "release": false,
+    "photo_publication_authorized": false,
+    "prior_batch02_decisions_unchanged": true,
+    "historical_approvals_rejections_unchanged": true,
+    "unchosen_candidates_not_rejected": true,
+    "quality_gates": [
+      "hard fail closed until full-resolution original file has verified zero visible frames",
+      "exact accession/object match",
+      "ABSOLUTE: no visible physical frame, mount, mat, wall or gallery environment in any preview, mosaic or final digital image; full-resolution edge check required",
+      "actual file permission and provenance",
+      "sufficient resolution",
+      "original source color/tonal faithfulness",
+      "no glare, moire, compression smearing, severe damage or intrusive watermark",
+      "sha256/checksum when acquired",
+      "no silent AI alteration"
+    ],
+    "frame_policy": {
+      "severity": "ABSOLUTE_FAIL",
+      "rule": "NO_VISIBLE_FRAMES_OR_MOUNTS: image sources and images shown in any editorial review, gallery, mosaic, module hero, crop, thumbnail, archive/published output must contain artwork ONLY, with no visible physical frame, mount, mat, wall, label, pedestal or gallery environment.",
+      "acceptance": "FAIL_CLOSED: if full-resolution original pixels have not been inspected for a frame, frame_status is UNVERIFIED and the image cannot pass QA, be promoted or presented as a vetted candidate. Images positively showing a frame are disallowed as previews and delivery assets.",
+      "candidate_distinction": "Reject the framed photographic SOURCE only; do not silently reject the depicted historic artwork or erase earlier editorial approval.",
+      "clean_source_priority": "Use pristine museum-origin artwork-only image. A separate clean source must replace framed photographs. Never simply conceal a frame by styling the webpage or treating a thumbnail as proof.",
+      "crop_rule": "Crop only if a documented lossless/non-destructive trim can remove all extraneous borders without cutting painted canvas, signature, painted edge or relevant composition; inspect resulting full-resolution file. Prefer original artwork-only source.",
+      "release_gate": "Require frame_status VERIFIED_NO_FRAME, visual QC, file-rights review, checksum, source accession, editorial approval and manual release permission. For now no candidate is publication-ready."
+    }
+  },
+  "dates": [
+    {
+      "key": "ep",
+      "date": "2026-01-06",
+      "title": "Epiphany",
+      "epistle": "Isaiah 60:1–6",
+      "gospel": "Matthew 2:1–12",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Matthias Stom",
+          "work": "The Adoration of the Magi",
+          "institution": "Nationalmuseum Stockholm NM 1792",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
+          "file_finding": "3650x3747 museum-supplied Commons photograph",
+          "rights_status": "PUBLIC_DOMAIN_FILE_INDICATED",
+          "gospel_fit": "DIRECT_GOSPEL",
+          "next_check": "Inspect original for frame, edge crop, colour, sharpness",
+          "asset_publication_ready": false,
+          "verified_image": {
+            "confirmed_file_page": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
+            "pixel_width": 3650,
+            "pixel_height": 3747,
+            "declared_bytes": 4152360,
+            "permission": "NATIONALMUSEUM_PUBLIC_DOMAIN_PHOTOGRAPH_EXPLICIT",
+            "photo_source": "Erik Cornelius / Nationalmuseum NM 1792",
+            "exact_object": true,
+            "source_checked": "2026-10-27",
+            "visual_original_inspection": "NOT_FULL_PIXEL_INSPECTED",
+            "pass_on_rights": true
+          },
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Adoration_of_the_Magi_%28Matthias_Stom%29_-_Nationalmuseum_-_18796.jpg",
+            "basis": "Original-linked Wikimedia image displayed and visually reviewed at browser preview scale",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only",
+            "source": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg"
+          }
+        },
+        {
+          "code": "B",
+          "artist": "Bartolomé Esteban Murillo",
+          "work": "The Adoration of the Magi",
+          "institution": "Toledo Museum of Art 1975.84",
+          "source_url": "https://emuseum.toledomuseum.org/objects/55299/the-adoration-of-the-magi",
+          "file_finding": "Museum downloadable original, 2000px display option",
+          "rights_status": "EXACT_PHOTO_RIGHTS_UNCHECKED",
+          "gospel_fit": "DIRECT_GOSPEL",
+          "next_check": "Find original higher-quality frame-free file",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        }
+      ]
+    },
+    {
+      "key": "hs",
+      "date": "2026-04-04",
+      "title": "Holy Saturday Easter Vigil",
+      "epistle": "Genesis 1:1–2:2 / Exodus 14:24–15:1 / Isaiah 4:2–6 / Deuteronomy 31:22–30; Colossians 3:1–4",
+      "gospel": "Matthew 28:1–7",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Jacopo da Empoli",
+          "work": "Three Marys at the Tomb",
+          "institution": "Blanton Museum of Art 2002.2824",
+          "source_url": "https://blanton.emuseum.com/objects/16324/three-marys-at-the-tomb",
+          "file_finding": "Museum IIIF offers public-domain object; Commons gallery photograph has a frame",
+          "rights_status": "PUBLIC_DOMAIN_OBJECT",
+          "gospel_fit": "DIRECT_WITH_THREE_WOMEN_TRADITION",
+          "next_check": "Reject framed gallery photo as publication asset; inspect IIIF for clean original",
+          "asset_publication_ready": false,
+          "verified_image": {
+            "permission": "BLANTON_PUBLIC_DOMAIN_OBJECT_IIIF_PENDING_FILE_DOWNLOAD",
+            "source_checked": "2026-10-27",
+            "pass_on_rights": false,
+            "confirmed_museum_url": "https://blanton.emuseum.com/objects/16324/three-marys-at-the-tomb",
+            "quality_note": "Source IIIF image needed: available Commons gallery image may include frame."
+          },
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "excluded_framed_sources": [
+            {
+              "description": "Framed Commons gallery photograph of Three Marys at the Tomb",
+              "reason": "PHYSICAL_FRAME_VISIBLE_AND_PROHIBITED",
+              "source_state": "REJECT_SOURCE_ONLY_NOT_PAINTING"
+            }
+          ]
+        },
+        {
+          "code": "B",
+          "artist": "Johann König",
+          "work": "The Resurrection of Christ",
+          "institution": "Cleveland Museum of Art 2017.192",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
+          "file_finding": "Cleveland-derived CC0 jpeg 2561x3400; separate framed alternate exists",
+          "rights_status": "CC0_EXACT_FILE",
+          "gospel_fit": "RESURRECTION_ICONOGRAPHY_NOT_MATTHEW_LITERAL",
+          "next_check": "Verify file visually does not include frame; verify tonal integrity",
+          "asset_publication_ready": false,
+          "verified_image": {
+            "confirmed_file_page": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
+            "pixel_width": 2561,
+            "pixel_height": 3400,
+            "declared_bytes": 1931937,
+            "permission": "CLEVELAND_MUSEUM_CC0_EXPLICIT",
+            "photo_source": "Howard Agriesti / Cleveland Museum of Art 2017.192",
+            "exact_object": true,
+            "source_checked": "2026-10-27",
+            "visual_original_inspection": "NOT_FULL_PIXEL_INSPECTED",
+            "pass_on_rights": true,
+            "corrected_creation_date": "1622 (museum), Commons record wrongly says 1600"
+          },
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
+          "frame_status": "ORIGINAL_DOWNLOADED_PIXEL_CHECKED_NO_BORDER_FLAGS_MANUAL_VISUAL_PENDING",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "excluded_framed_sources": [
+            {
+              "description": "Separate framed alternate of König Resurrection",
+              "reason": "PHYSICAL_FRAME_VISIBLE_AND_PROHIBITED",
+              "source_state": "REJECT_SOURCE_ONLY_NOT_PAINTING"
+            }
+          ],
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://www.clevelandart.org/art/2017.192",
+            "basis": "Cleveland official artwork image and linked illustrative preview (separate framed alternate prohibited)",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only",
+            "source": "https://www.clevelandart.org/art/2017.192",
+            "further_hires_lead": {
+              "url": "https://commons.wikimedia.org/wiki/Category:Christian_paintings_in_the_Cleveland_Museum_of_Art",
+              "filename": "Johann König - The Resurrection of Christ - 2017.192 - Cleveland Museum of Art.tiff",
+              "width": 11243,
+              "height": 14927,
+              "declared_bytes_approx": 503492690,
+              "warning": "Huge museum TIFF ~480 MiB; do not store in repo or assume image visual clearance based on metadata"
+            }
+          },
+          "verified_museum_original_file_20261027": {
+            "institution": "Cleveland Museum of Art",
+            "accession": "2017.192",
+            "source_url": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+            "file_bytes": 1932047,
+            "width": 2561,
+            "height": 3400,
+            "sha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+            "media_type": "image/jpeg",
+            "exact_file_provenance": "Cleveland OA API accession 2017.192 images.print.url",
+            "rights": "CC0 supplier verified",
+            "scope": "byte-integrity verified; four-edge frame visual inspection not completed"
+          },
+          "museum_original_qa_report": {
+            "run": "2026-10-27T20:54:16.189643+00:00",
+            "sha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+            "bytes": 1932047,
+            "pixels": [
+              2561,
+              3400
+            ],
+            "border_heuristic_flags": [],
+            "frame_human_visual": "PENDING",
+            "permanently_archived": false,
+            "publication": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "ew",
+      "date": "2026-04-08",
+      "title": "Wednesday within Easter Octave",
+      "epistle": "Acts 3:13–15,17–19",
+      "gospel": "John 21:1–14",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Sebastiano Ricci",
+          "work": "The Miraculous Draught of Fishes",
+          "institution": "Detroit Institute of Arts 76.146",
+          "source_url": "https://dia.org/collection/miraculous-draught-fishes/58375",
+          "file_finding": "Official TIFF download advertised; Commons photo 4775x3730",
+          "rights_status": "REUSE_RIGHTS_UNVERIFIED_FOR_TIFF",
+          "gospel_fit": "EXACT_JOHN21",
+          "next_check": "Evaluate TIFF provenance and rights, frame-free/no glare; Commons photograph may be visitor camera",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        },
+        {
+          "code": "B",
+          "artist": "Joachim Beuckelaer",
+          "work": "The Miraculous Draught of Fishes",
+          "institution": "J. Paul Getty Museum 71.PB.59",
+          "source_url": "https://artsandculture.google.com/asset/the-miraculous-draught-of-fishes-0092/VAG7d8jwCQKKUQ",
+          "file_finding": "Getty Open Content; Commons Google Art Project photo 4166x2137",
+          "rights_status": "GETTY_OPEN_CONTENT",
+          "gospel_fit": "EXACT_JOHN21_MULTI_SCENE",
+          "next_check": "Verify full size and graphic fitness: biblical figures are small",
+          "asset_publication_ready": false,
+          "verified_image": {
+            "confirmed_file_page": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg",
+            "pixel_width": 4166,
+            "pixel_height": 2137,
+            "permission": "PD_ART_TAG_CHECK_FILE_PHOTO_IN_SOURCE_JURISDICTION",
+            "photo_source": "Google Art Project / Getty Museum accession 71.PB.59",
+            "exact_object": true,
+            "source_checked": "2026-10-27",
+            "visual_original_inspection": "NOT_FULL_PIXEL_INSPECTED",
+            "pass_on_rights": false,
+            "priority_note": "Museum-origin Google Art Project 4166x2137 preferred; separate 3656x1825 Commons image is own-work photograph not preferred."
+          },
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://sdcason.com/content/images/2021/09/00066501_o.jpg",
+            "basis": "Published preview of Getty Beuckelaer object, not verified identical byte-for-byte with Google Art Project candidate",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only_source_variant_unverified",
+            "source": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "key": "et",
+      "date": "2026-04-09",
+      "title": "Thursday within Easter Octave",
+      "epistle": "Acts 8:26–40",
+      "gospel": "John 20:11–18",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Eustache Le Sueur",
+          "work": "L’Apparition du Christ à la Madeleine (Noli me tangere)",
+          "institution": "Musée de Grenoble",
+          "source_url": "https://www.museedegrenoble.fr/oeuvre/62/1922-l-apparition-du-christ-a-la-madeleine-noli-me-tangere.htm",
+          "file_finding": "Official photo credited Ville de Grenoble / J.-L. Lacroix and labels Domaine public",
+          "rights_status": "PUBLIC_DOMAIN_OBJECT_PHOTO_SCOPE_TO_CHECK",
+          "gospel_fit": "DIRECT_JOHN20",
+          "next_check": "Find sufficiently large clean original; do not assume photographer waiver",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        },
+        {
+          "code": "B",
+          "artist": "Claude Lorrain",
+          "work": "Christ Appears in front of Mary Magdalene (Noli me tangere)",
+          "institution": "Städel 1479",
+          "source_url": "https://sammlung.staedelmuseum.de/en/work/christ-appears-in-front-of-mary-magdalene",
+          "file_finding": "Official record labels Picture Copyright Public Domain",
+          "rights_status": "PUBLIC_DOMAIN_PICTURE",
+          "gospel_fit": "DIRECT_JOHN20_LANDSCAPE",
+          "next_check": "Verify original dimensions, file source and colour; figures small",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        }
+      ]
+    },
+    {
+      "key": "pf",
+      "date": "2026-05-29",
+      "title": "Pentecost Ember Friday",
+      "epistle": "Joel 2:23–24,26–27",
+      "gospel": "Luke 5:17–26",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Netherlandish 16th century",
+          "work": "The Healing of the Paralytic",
+          "institution": "National Gallery of Art 1943.7.7",
+          "source_url": "https://www.nga.gov/artworks/12205-healing-paralytic",
+          "file_finding": "NGA direct media download available public domain",
+          "rights_status": "NGA_OPEN_ACCESS",
+          "gospel_fit": "EXACT_LUKE5_BUT_HEALED_MAN_FOREGROUND",
+          "next_check": "Verify clean photographic image; research another candidate because lone choice",
+          "asset_publication_ready": false,
+          "verified_image": {
+            "confirmed_file_page": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg",
+            "pixel_width": 2222,
+            "pixel_height": 3147,
+            "declared_bytes": 8975810,
+            "permission": "NGA_OPEN_ACCESS_CC0_EXPLICIT",
+            "photo_source": "National Gallery of Art 1943.7.7",
+            "exact_object": true,
+            "source_checked": "2026-10-27",
+            "visual_original_inspection": "NOT_FULL_PIXEL_INSPECTED",
+            "pass_on_rights": true,
+            "scholarly_correction": "NGA narrative depicts paralytic lowered through roof in background; Commons generic Bethesda tag misleading"
+          },
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg",
+          "frame_status": "ORIGINAL_DOWNLOADED_PIXEL_CHECKED_NO_BORDER_FLAGS_MANUAL_VISUAL_PENDING",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg?attachment_filename=the_healing_of_the_paralytic_1943.7.7.jpg",
+            "basis": "NGA museum-image preview visible; framed object dimensions in file metadata do not establish frame appearance",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only",
+            "source": "https://www.nga.gov/artworks/12205-healing-paralytic"
+          },
+          "verified_museum_original_file_20261027": {
+            "institution": "National Gallery of Art",
+            "accession": "1943.7.7",
+            "source_url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg",
+            "file_bytes": 3850458,
+            "width": 2892,
+            "height": 4096,
+            "sha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+            "media_type": "image/jpeg",
+            "exact_file_provenance": "NGA IIIF full-size endpoint attached to original accession",
+            "rights": "NGA Open Access image source",
+            "scope": "byte-integrity verified; four-edge frame visual inspection not completed"
+          },
+          "museum_original_qa_report": {
+            "run": "2026-10-27T20:54:16.189643+00:00",
+            "sha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+            "bytes": 3850458,
+            "pixels": [
+              2892,
+              4096
+            ],
+            "border_heuristic_flags": [],
+            "frame_human_visual": "PENDING",
+            "permanently_archived": false,
+            "publication": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "pb",
+      "date": "2026-07-01",
+      "title": "Most Precious Blood of Our Lord",
+      "epistle": "Hebrews 9:11–15",
+      "gospel": "John 19:30–35",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Anthony van Dyck",
+          "work": "Le Coup de lance",
+          "institution": "Royal Museum of Fine Arts Antwerp KMSKA",
+          "source_url": "https://www.kmska.be/fr/le-coup-de-lance-de-rubens",
+          "file_finding": "Museum scholarly attribution reassigned to Van Dyck (Rubens workshop)",
+          "rights_status": "PHOTO_RIGHTS_UNVERIFIED",
+          "gospel_fit": "EXACT_LANCE_JOHN19_34",
+          "next_check": "Confirm exact digital photo and quality; maintain attribution qualifier",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        },
+        {
+          "code": "B",
+          "artist": "Philippe de Champaigne",
+          "work": "The Dead Christ on the Cross",
+          "institution": "Toledo Museum of Art 2020.5",
+          "source_url": "https://emuseum.toledomuseum.org/objects/78369/the-dead-christ-on-the-cross",
+          "file_finding": "Toledo museum JPEG downloaded/display option to 2000px",
+          "rights_status": "PHOTO_RIGHTS_UNVERIFIED",
+          "gospel_fit": "JOHN19_30_PRIOR_TO_LANCE",
+          "next_check": "2000px may be insufficient and this is a modello",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        }
+      ]
+    },
+    {
+      "key": "cv",
+      "date": "2026-12-24",
+      "title": "Christmas Vigil",
+      "epistle": "Romans 1:1–6",
+      "gospel": "Matthew 1:18–21",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Georges de La Tour",
+          "work": "Dream of Saint Joseph",
+          "institution": "Musée d’arts de Nantes",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour_024.jpg",
+          "file_finding": "Commons file 2024x2485 from Yorck Project, public domain marked",
+          "rights_status": "PUBLIC_DOMAIN_FILE_INDICATED",
+          "gospel_fit": "JOSEPH_DREAM_AMBIGUOUS_WHICH_EPISODE",
+          "next_check": "Do not claim Matthew 1 exclusivity; visually inspect source quality",
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+        },
+        {
+          "code": "B",
+          "artist": "Philippe de Champaigne",
+          "work": "The Dream of Saint Joseph",
+          "institution": "National Gallery London NG6276",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "file_finding": "Commons 4421x6000 jpg 18.83MB; National Gallery identifies Matthew 1 dream",
+          "rights_status": "COMMONS_PD_ART_FILE",
+          "gospel_fit": "EXACT_MATTHEW1",
+          "next_check": "Check full-size unframed reproduction and reuse jurisdiction",
+          "asset_publication_ready": false,
+          "verified_image": {
+            "confirmed_file_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+            "pixel_width": 4421,
+            "pixel_height": 6000,
+            "declared_bytes": 19749000,
+            "permission": "COMMONS_PD_ART_MARKED_JURISDICTION_CHECK",
+            "photo_source": "Art UK / National Gallery NG6276",
+            "exact_object": true,
+            "source_checked": "2026-10-27",
+            "visual_original_inspection": "NOT_FULL_PIXEL_INSPECTED",
+            "pass_on_rights": false,
+            "source_note": "Not interchangeable with 246x344 legacy thumbnail or arbitrary cropped variant."
+          },
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://www.nationalgallery.org.uk/media/b5ydkoyg/n-6276-00-000027-web-hd.jpg?height=960&rxy=0.22580645161290322%2C0.51030110935023776&v=1dbcca4bf6dab60&width=1280",
+            "basis": "Official museum artwork preview is a centre crop, cannot verify outer four edges of original Commons 4421x6000 file",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW_CROPPED",
+            "confidence_scope": "centre_crop_only",
+            "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph"
+          },
+          "image_provider_rights_concern": {
+            "source": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+            "finding": "National Gallery London current API collection images are CC BY-NC-ND 4.0, incompatible with crop/derivative use as a default workflow; Commons PD-Art reproduction is separate exact file and requires its own jurisdiction/source assessment.",
+            "status": "REVIEW_EXACT_COMMONS_FILE_RIGHTS_DISTINCT_FROM_NG_API",
+            "publishing": false
+          }
+        }
+      ]
+    }
+  ],
+  "excluded_reference": {
+    "work": "Valentin de Boulogne, Dream of Saint Joseph, ca 1624–26",
+    "reason": "Met catalogue regards the second dream, Matthew 2:13, as most likely; not suitable as a literal Christmas Vigil/Matthew 1 image",
+    "source": "https://resources.metmuseum.org/resources/metpublications/pdf/Valentin_de_Boulogne_Beyond_Caravaggio.pdf"
+  },
+  "notes": [
+    "Not a new ballot and not a user decision.",
+    "Object identity, digital file licence and actual photo quality remain separate gates.",
+    "A framed alternate illustration of König is not the exact CC0 image intended for archive.",
+    "Stom: use Nationalmuseum supplied Commons record, not other paintings bearing the same title.",
+    "Beuckelaer: prefer Getty museum image/Google Art Project over a visitor-shot Commons photo.",
+    "USER DIRECTIVE 2026-10-27: NO FUCKING FRAMES. No frames in editorial previews, selected heroes, any crops or delivered/public images. This is an unconditional fail; do not present framed source just because its artwork is relevant.",
+    "2026-10-27: National Gallery London collection API image licence is CC BY-NC-ND: do not assume a museum-origin API image can be altered or cropped; Commons PD-Art exact-file evidence treated separately. Zero frames requirement absolute."
+  ],
+  "audit_20261027_verified_file_round": {
+    "count_exact_source_files_located": 5,
+    "count_rights_explicit_by_supplier": 3,
+    "count_further_pd_art_or_exact_file_review": 2,
+    "count_full_pixel_inspected": 0,
+    "count_downloaded_and_sha256_hashed": 0,
+    "count_publication_ready": 0,
+    "summary": "Exact Commons file pages and recorded dimensions confirmed by source listings, but file download is not available in research environment; frame-free/color/compression cannot be conclusively signed off. No artwork approvals or release. Absolute no-frame gate formalized for every candidate and presentation. No source is signed off for zero visible frame without full-resolution inspection.",
+    "observations": [
+      "Nationalmuseum supplies Stom digital reproduction as public domain.",
+      "Cleveland Museum König exact photo CC0, 1622 creation date; Commons metadata 1600 incorrect.",
+      "NGA Netherlandish healing scene correct Luke 5 despite Commons misleading Bethesda category.",
+      "Google Art Project Getty Beuckelaer file 4166x2137 is preferred lead over 3656x1825 own-work photo.",
+      "Champaigne National Gallery source 4421x6000 Commons PD-Art, geography-specific photo reuse issue not completely cleared.",
+      "Blanton declares public-domain painting, exact clean IIIF file not inspected."
+    ],
+    "source_urls": [
+      "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
+      "https://www.clevelandart.org/art/2017.192",
+      "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
+      "https://www.nga.gov/artworks/12205-healing-paralytic",
+      "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg",
+      "https://commons.wikimedia.org/wiki/Category:Google_Art_Project_works_by_Joachim_Beuckelaer",
+      "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "https://blanton.emuseum.com/objects/16324/three-marys-at-the-tomb"
+    ],
+    "count_frame_verified_zero": 0,
+    "count_assets_blocked_for_missing_frame_proof": 13
+  },
+  "audit_20261027_preview_frame_round": {
+    "count_preview_reviewed": 5,
+    "count_preview_no_frame_visible": 5,
+    "count_full_original_four_edge_file_verified": 0,
+    "count_assets_passed_frame_gate": 0,
+    "count_images_archived_and_hashed": 0,
+    "file_acquisition_blocker": "Direct original-file download from this research runtime unavailable; browser previews are not original-resolution bytes and may be cropped. Need actual originals to meet unconditional frame and pristine quality requirement.",
+    "sources_reviewed": [
+      "Matthias Stom Nationalmuseum Commons original-linked photo",
+      "Johann König Cleveland museum image and distinct CC0 original lead",
+      "Joachim Beuckelaer Getty painting preview not same bytes as Commons source",
+      "Netherlandish Healing of the Paralytic NGA original-linked image",
+      "Philippe de Champaigne National Gallery cropped official preview"
+    ],
+    "special_discovery": "Johann König - The Resurrection of Christ - 2017.192 - Cleveland Museum of Art.tiff: 11,243 x 14,927, ~480MiB on Wikimedia Commons. Better detail source but no storage/pixel inspection conducted.",
+    "rights_vs_frame": "All above remain independently not publication-ready even if exact file rights verified."
+  },
+  "acquisition_run_20261027": {
+    "original_source_byte_audit": "data/research/sacred-art-20261027-class-i-original-byte-report.v1.json",
+    "original_source_run_time_utc": "2026-10-27T18:54:21.961891Z",
+    "original_source_attempts": 5,
+    "original_source_verified": 0,
+    "original_source_blocker": "HTTP 429 Too Many Requests from Wikimedia Commons on all five exact source files; do not retry bulk Commons in a tight loop.",
+    "museum_source_fallback_script": "scripts/research/audit_class_i_museum_images.py",
+    "museum_fallback_targets": [
+      "Cleveland Open Access API 2017.192 (Johann König)",
+      "NGA IIIF 1943.7.7 (Netherlandish Healing of Paralytic)"
+    ],
+    "museum_fallback_run_status": "TWO_MUSEUM_ORIGIN_IMAGE_FILES_BYTE_VERIFIED_RECORDED",
+    "workflow": ".github/workflows/sacred-art-original-source-audit.yml",
+    "commons_sha1_from_structured_records": {
+      "koenig-resurrection": "de5c983c0f4df218573836d0099e495b7084ec27",
+      "beuckelaer-easter-wednesday": "8bf8dfbedd099daf6892b4570964d1b5e07d6df2"
+    },
+    "zero_frame_passes": 0,
+    "photo_releases": 0,
+    "user_decisions_changed": 0,
+    "cost_eur": 0
+  },
+  "audit_20261027_museum_origin_success": {
+    "source_report_path": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json",
+    "source_run_status": "FOUR_MUSEUM_ORIGIN_JPEGS_BYTE_VERIFIED_INCLUDING_TWO_APPROVED_BATCH2_WORKS",
+    "source_count": 4,
+    "byte_verified": 4,
+    "approved_user_selected_works_byte_verified": 2,
+    "publication_ready": 0,
+    "full_res_visual_frame_gate_passed": 0,
+    "no_frame_heuristic_flags": 4,
+    "note": "Image bytes were discarded after verification. SHA256 and pixel/edge diagnostics are archived. No full-res human inspection and no durable binary archive yet; nothing published."
+  }
+}

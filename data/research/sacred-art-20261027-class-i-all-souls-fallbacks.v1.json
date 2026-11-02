@@ -1,0 +1,73 @@
+{
+  "schema": "AO_20261027_CLASS_I_ALL_SOULS_QUICK_ARTWORK_CHOICE_V1",
+  "date": "2026-10-27",
+  "phase": "CLASS_I_PRIORITY_AFTER_22_MODULE_HERO_RECONCILIATION",
+  "user_rules": [
+    "€0, no emails/contact/licenses",
+    "Never discard previously approved art without user's alternative selection",
+    "When selected exact photograph is impractical, show 4–5 well-sourced artwork alternatives with imagery rather than endless licensing search",
+    "Preserve painted area, exclude external photographed frames and avoid AI inventing painting details"
+  ],
+  "celebration": {
+    "date": "2026-11-02",
+    "title": "Commemoration of All Souls",
+    "original_selected": {
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees Souls from Purgatory",
+      "commons": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "current_dimensions": [
+        866,
+        1200
+      ],
+      "issue": "Commons object reports original aspect/physical dimensions inconsistent with image and PD-Art territory uncertainty; existing reference only 866×1200. Keep approved while alternatives examined."
+    }
+  },
+  "alternatives": [
+    {
+      "id": "A0",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees Souls from Purgatory",
+      "type": "retain_original",
+      "source": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "rights": "Commons PD-Art / US rationale; territory and photographic identity hold",
+      "width": 866,
+      "height": 1200,
+      "notes": "Still approved; no automatic substitution."
+    },
+    {
+      "id": "A1",
+      "artist": "Luca Giordano",
+      "title": "Madonna and Child with Souls in Purgatory",
+      "type": "reuse_existing_module_hero",
+      "source": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+      "rights": "Commons PD-Art; file-level territory audit pending",
+      "width": 2393,
+      "height": 3200,
+      "notes": "Already approved for Ad Orientem Holy Souls module; reuse same artwork avoids new painting photography pipeline."
+    },
+    {
+      "id": "A2",
+      "artist": "Workshop of Peter Paul Rubens",
+      "title": "Saint Teresa of Ávila Interceding for Souls in Purgatory",
+      "type": "alternate",
+      "source": "https://www.metmuseum.org/art/collection/search/437542",
+      "image_source": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+      "rights": "Met official OA CC0 exact file",
+      "notes": "High-quality Flemish Baroque oil. Met 17.190.19. Check entire original photograph has no external frame; object image source is explicitly CC0."
+    },
+    {
+      "id": "A3",
+      "artist": "Juan Francisco de Aguilera",
+      "title": "The Virgin of Carmen and the Souls of Purgatory with Saint Joseph and the Prophet Elijah",
+      "type": "alternate",
+      "source": "https://www.metmuseum.org/art/collection/search/747199",
+      "image_source": "https://commons.wikimedia.org/wiki/File:The_Virgin_of_Carmen_and_the_Souls_of_Purgatory_with_St._Joseph_and_the_Prophet_Elijah_MET_DP-15280-003.jpg",
+      "rights": "Met official OA CC0 exact file 3042×4000",
+      "width": 3042,
+      "height": 4000,
+      "notes": "Entire physical artwork includes elaborate 3D tortoiseshell/silver frame; use museum-file version that excludes frame only if exact painted boundary proven, no artificial painting alteration."
+    }
+  ],
+  "next": "Collect user vote on one already-approved original vs three alternatives; then 29 November Advent I Tate photo exception or another unresolved Class I date. Preserve historical approved dates from 2026-10-19 before making new choices.",
+  "publication_status": "NO_CHOICES_CHANGED_NO_ASSETS_SHIPPED"
+}

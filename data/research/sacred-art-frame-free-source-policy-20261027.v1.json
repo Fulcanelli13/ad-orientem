@@ -1,0 +1,43 @@
+{
+  "schema": "AO_SACRED_ART_ABSOLUTE_FRAME_FREE_POLICY_V1",
+  "date": "2026-10-27",
+  "authority": "explicit user directive",
+  "scope": [
+    "Class I sacred art Calendar",
+    "all liturgical feast heroes",
+    "Prayer module heroes",
+    "mosaics and galleries",
+    "editorial image comparison previews",
+    "reproductions and archives",
+    "mobile/desktop thumbnails and delivery"
+  ],
+  "hard_requirement": "ZERO VISIBLE FRAMES. All images must contain only the artwork, never its physical frame, mat, mount, wall, museum label, display hardware, or gallery setting.",
+  "hard_fail": [
+    "visible picture frame, even partly",
+    "mat/mount and ornamental border outside original composition",
+    "gallery wall or room",
+    "reflections or glare caused by shooting through glass",
+    "frame hidden by CSS overlay or presentation-only mask without approved artwork-only source",
+    "unknown edge status represented as approved"
+  ],
+  "workflow": [
+    "Select an artwork independently from approving its image reproduction",
+    "Identify clean unframed high-resolution source from authoritative museum or credible open provider",
+    "Inspect the four edges and whole image at original pixel resolution, not a thumbnail",
+    "Reject and record any framed PHOTO SOURCE without rejecting its underlying artwork or earlier user selection",
+    "Locate an alternate genuinely frame-free source; if none exists, keep image candidate BLOCKED/RESEARCH_MORE",
+    "Use a lossless trim only if it preserves 100 percent of painted surface and is individually inspected; prefer clean original source",
+    "Verify provenance, exact object identity, documented rights, sharpness, tonality, colour, damage, watermark, compression, checksum",
+    "No publication without separate editorial approval and permission"
+  ],
+  "statuses": [
+    "UNVERIFIED_FRAME_STATUS",
+    "REJECTED_FRAMED_PHOTO_SOURCE",
+    "VERIFIED_NO_VISIBLE_FRAME",
+    "BLOCKED_PENDING_CLEAN_SOURCE"
+  ],
+  "cost_eur": 0,
+  "publication_approval": false,
+  "effects_on_prior_artwork_editorial_decisions": "NONE",
+  "notes": "A visually framed image may be retained as an archival evidence link, but must NEVER be displayed as a painting candidate or presented as usable artwork. Existing users' painted border integral to the historic image is not the physical museum frame; preserve the painted composition."
+}
