@@ -224,6 +224,50 @@ try{
     "Discover must be restored after each P6 mode round trip");
    note.steps.push("P6 forward/back and keyboard Escape return across five surfaces; one MapLibre canvas, exclusive sourced panels, no overflow");
 
+   // P6 source-owned handoff: follow one real published place-specific
+   // custom from Network to its grouped Traditions folio, then back to the
+   // SAME graph focus. This uses the 2026 source registry, not fixture nodes.
+   await root.locator(".aoHeritageMore > summary").click();
+   await root.locator(".aoHeritageSecondary [data-network-toggle]").click();
+   await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
+   await root.locator(".aoNetworkPanel [data-network-kind]").selectOption("custom");
+   const linkedCustom=root.locator('.aoNetworkPanel [data-network-focus="custom:DEV-010"]').first();
+   await linkedCustom.waitFor({state:"attached"});
+   await linkedCustom.click();
+   const publishedLink=root.locator('.aoNetworkPanel [data-network-open-custom="DEV-010"]').first();
+   await publishedLink.waitFor({state:"visible"});
+   await publishedLink.click();
+   const sourceFolio=root.locator('.aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]');
+   await sourceFolio.waitFor({state:"visible",timeout:20000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.status().lens),"traditions");
+   assert.equal(await root.locator(".aoExploreTraditionSheet").count(),1,
+    "Custom handoff must open one canonical published folio, not copies of attestations");
+   assert.ok(await sourceFolio.locator('.aoFindSources a[href^="https://"]').count()>0,
+    "Published custom must retain original source links");
+   assert.ok(await sourceFolio.locator(".aoTraditionEvidence").count()>0,
+    "Published custom must retain its documented site attestations");
+   assert.equal(await root.locator(".aoNetworkPanel").count(),0,
+    "Network must not remain as a duplicate overlay during a customs folio");
+   await capture("p6-published-custom");
+   // Back to preview remains available; the second Back restores Network.
+   await root.locator(".aoFindHeader [data-find-close]").click();
+   await root.locator('[data-explore-preview="tradition:custom:DEV-010"]').waitFor({state:"visible"});
+   await page.keyboard.press("Escape");
+   await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
+   await mapReady("heritage");
+   assert.equal(await root.locator('[data-network-kind]').inputValue(),"custom");
+   assert.equal(await root.locator('.aoNetworkPanel [data-network-focus="custom:DEV-010"]').first().getAttribute("aria-pressed"),"true",
+    "Network must regain the same selected canonical custom after Back");
+   await capture("p6-published-custom-return");
+   // The full-sheet Close control returns to the same source panel as well.
+   await root.locator('.aoNetworkPanel [data-network-open-custom="DEV-010"]').first().click();
+   await sourceFolio.waitFor({state:"visible",timeout:20000});
+   await sourceFolio.locator("button[data-find-close-detail]").click();
+   await root.locator(".aoNetworkPanel").waitFor({state:"visible",timeout:20000});
+   await root.locator('.aoNetworkPanel [data-network-close]').click();
+   await assertP6Canvas("published custom source and return");
+   note.steps.push("published DEV-010 votive-candle custom → one canonical sourced Traditions folio → two-stage Back and full-sheet Close return to exact Network focus");
+
    // Continue from this same Explore destination to Mass without hidden menus.
    await root.locator(".aoHeritageMassShortcut").click();
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",
