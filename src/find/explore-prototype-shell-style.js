@@ -178,6 +178,11 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
 }
 @media(max-width:799px){
   .aoHeritageSurface .aoMapcnDiscoverRail{left:0!important;right:0!important;bottom:0!important;width:100%!important}
+  /* Keep map controls above the expanded photographic sheet even at 320×640. */
+  .aoHeritageSurface[data-atlas-entry=sacred] .aoMapcnDiscoverRail,
+  .aoHeritageSurface[data-atlas-entry=sacred] .aoMapcnDiscoverRail[data-discover-expanded=false]{
+    height:min(43dvh,390px)!important;max-height:min(43dvh,390px)!important;
+  }
   .aoHeritageSurface[data-atlas-entry=discover] .aoMapcnDiscoverRail[data-discover-expanded=false]{
     height:80px!important;min-height:80px!important;padding-bottom:env(safe-area-inset-bottom)!important;
     left:0!important;right:0!important;width:100%!important;bottom:0!important;
