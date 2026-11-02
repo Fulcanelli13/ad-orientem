@@ -51,7 +51,7 @@ export const EXPLORE_PROTOTYPE_SHELL_STYLE = String.raw`
 .aoHeritageSurface .aoAtlasPrimaryTabs button,
 .aoHeritageSurface .aoAtlasPrimaryTabs .aoHeritageMassShortcut{
   display:inline-flex;align-items:center;justify-content:center;
-  white-space:nowrap;flex:none;min-height:34px;height:34px;
+  white-space:nowrap;flex:none;min-height:44px;height:44px;
   padding:0 13px;border:1px solid transparent;border-radius:19px;
   color:#d5cabb;background:transparent;
   font:500 14px/1 var(--ao-font-display,Georgia,serif);
