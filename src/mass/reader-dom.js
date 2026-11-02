@@ -1,6 +1,7 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
+import {createInlineChantController, INLINE_CHANT_CSS} from "./reader-inline-chant.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
 import { R17_ICON_KEYS } from "./reader-icons.js";
@@ -2270,7 +2271,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   const mode = normalizePresentationMode(prepared?.readerPreferences?.mode ?? prepared?.session?.resolvedMass?.presentationMode ?? "LIVE");
   const section = esc(prepared?.session?.resolvedMass?.actualCelebration?.title ?? "Mass");
   const liturgicalTheme=resolveMassLiturgicalTheme(prepared);
-  return `<style data-ao-reader-shell-style>${SHELL_STYLE}</style>
+  return `<style data-ao-reader-shell-style>${SHELL_STYLE}${INLINE_CHANT_CSS}</style>
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}" data-liturgical-colour="${liturgicalTheme.key}" data-liturgical-source="${liturgicalTheme.source}" style="${massThemeCssVariables(liturgicalTheme)}">
   <header class="ao-reader-top-ribbon" aria-label="Mass navigation">
     <button class="ao-reader-top-action" type="button" data-reader-home aria-label="Back to Ad Orientem home">${topNavSvg("home")}</button>
@@ -2752,6 +2753,7 @@ export function createReaderDomAdapter({
 } = {}) {
   if(!root || typeof root.querySelector !== "function") throw new TypeError("Reader root element required");
 
+  const inlineChant=createInlineChantController({root});
   let prepared=null;
   let current=null;
   let sourceRailTracker=null;
@@ -3786,6 +3788,7 @@ export function createReaderDomAdapter({
     };
     root.addEventListener?.("change",rootChangeListener);
     rootClickListener=event => {
+      if(inlineChant.handleClick(event))return;
       if(event.target?.closest?.("[data-schola-profile-create]")){
         const field=root.querySelector("[data-schola-profile-new]");
         const name=field?.value?.trim();
@@ -5034,6 +5037,7 @@ export function createReaderDomAdapter({
     // doing so during a cue-only state update would briefly clamp scrollTop
     // and prevent short cards from ever reaching their next invocation.
     if(current.cardUpdate){
+      inlineChant.render({mode,form:prepared?.session?.resolvedMass?.form,paragraphs:current.paragraphs});
       ensureShortCardCueTravel();
       // The fixed-height LIVE stage can settle a frame after renderMoment
       // (rail dimensions, Schola reserve and host shell are projected in
@@ -5101,6 +5105,7 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    inlineChant.destroy();
     unbind();
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
     cancelScholaTicker({clearIdentity:true});
