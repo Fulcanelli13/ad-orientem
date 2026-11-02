@@ -65,8 +65,12 @@ assert.equal(properPick(properRow,{...proper,sourceParagraphId:undefined},
 
 for(const selectionKey of INLINE_CHANT_SELECTION_KEYS.filter(k=>
  !["GLORIA","PROPER_INTROIT"].includes(k))){
- const score={...model,selectionKey,settingId:"SOURCE-REVIEWED-TONE"};
- const result=pick(paragraph,score,{
+ const isProper=selectionKey.startsWith("PROPER_");
+ const score=isProper
+  ?{...proper,selectionKey,settingId:"SOURCE-REVIEWED-TONE"}
+  :{...model,selectionKey,settingId:"SOURCE-REVIEWED-TONE"};
+ const row=isProper?properRow:paragraph;
+ const result=pick(row,score,{
   selectedSettings:{[selectionKey]:"SOURCE-REVIEWED-TONE"}
  });
  assert.equal(result?.selectionKey,selectionKey,
