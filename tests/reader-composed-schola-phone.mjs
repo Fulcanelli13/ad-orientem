@@ -119,4 +119,42 @@ try{
     " / requiem="+spec.requiem);
   }finally{await ctx.close()}
  }
+ // The Requiem Absolution is a separate source-owned rite, not another
+ // Gregorian ordinary track. Explicit Libera me must remain visible
+ // without moving the Absolution card when the listener advances lyrics.
+ const ctx=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+ try{
+  const page=await ctx.newPage();
+  const query=new URLSearchParams({production:"1",following:"requiem",body:"1",
+   burial:"1",date:"2026-11-02",form:"SOLEMN",mode:"LIVE"});
+  await page.goto("http://127.0.0.1:"+server.address().port+
+   "/tests/fixtures/reader-phone-harness.html?"+query,
+   {waitUntil:"domcontentloaded",timeout:55000});
+  await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:30000});
+  const panel=page.locator("[data-schola-local-panel]");
+  await panel.locator("summary").first().click();
+  await panel.locator("[data-schola-music-setting]").selectOption("faure-requiem-op48");
+  await panel.locator("[data-schola-manual-movement]").selectOption("LIBERA_ME");
+  await page.evaluate(()=>{
+   const api=window.__AO_PHONE_PREVIEW;
+   for(const c of [...api.model.cards].reverse()){
+    if(api.showSequence(c.sequence))return;
+   }
+   throw Error("No terminal Requiem Mass card");
+  });
+  await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.specialRite==="REQUIEM_ABSOLUTION",
+    null,{timeout:15000});
+  await page.waitForFunction(()=>document.querySelector(".ao-schola-dock")?.dataset.composed==="true");
+  assert.match(await page.locator('[data-role="schola"]').innerText(),/Libera me/,
+   "Real Requiem Absolution transition lost selected full Fauré text");
+  assert.match(await page.locator('[data-role="schola-inline-translation"]').innerText(),/Deliver me/);
+  assert.equal(await page.locator(".ao-schola-dock").getAttribute("data-special-only"),"false");
+  const before=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getRequiemAbsolutionState().card.id);
+  await page.locator("[data-schola-next]").click();
+  await page.waitForFunction(()=>document.querySelector('[data-role="schola"]')?.textContent.includes("in die illa"));
+  const after=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getRequiemAbsolutionState().card.id);
+  assert.equal(after,before,"Sung Libera me line advance shifted Absolution ceremony card");
+  console.log("PASS LIVE Requiem Absolution 390px · manual Fauré Libera me, translation and rite independence");
+ }finally{await ctx.close()}
 }finally{await browser?.close();if(server.listening)await new Promise(ok=>server.close(ok))}
