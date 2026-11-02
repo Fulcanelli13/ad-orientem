@@ -1759,6 +1759,25 @@ export function createFindOwner(win=globalThis){
     if(state.selectedId){event.preventDefault?.();if(state.expandDetail)state.expandDetail=false;else state.selectedId=null;void paint({selectionOnly:true});return;}
     const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open],.aoExploreSectionSwitcher[open]");
     if(disclosure){event.preventDefault?.();disclosure.open=false;return;}
+    // Escape unwinds an Explore mode without leaving the native map, just as
+    // each panel's explicit Back/Close control does. Selected folios and the
+    // open "More" disclosure take precedence (handled immediately above).
+    if(state.lens==="heritage"){
+      if(state.journeyOpen){
+        event.preventDefault?.();state.journeyOpen=false;
+        state.heritageCategories=journeyPreviousCategories??[...PUBLIC_HERITAGE_CATEGORIES];
+        journeyPreviousCategories=null;void paint();return;
+      }
+      if(state.networkOpen){event.preventDefault?.();state.networkOpen=false;void paint();return;}
+      if(state.timeMassOpen){event.preventDefault?.();state.timeMassOpen=false;void paint();return;}
+      if(state.atlasMode!=="places"){
+        event.preventDefault?.();
+        if(atlasReturnViewport&&mapHandle?.map)
+          mapHandle.map.jumpTo?.({center:atlasReturnViewport.center,zoom:atlasReturnViewport.zoom});
+        atlasReturnViewport=null;state.atlasMode="places";state.atlasCountry=null;
+        void paint();return;
+      }
+    }
     if(state.lens!=="heritage"){event.preventDefault?.();setFilter("lens","heritage");}
   }
 
