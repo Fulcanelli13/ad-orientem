@@ -29,7 +29,8 @@ assert.equal(staged.competingVariantHolds.every(x=>!x.publicScore),true);
 assert.equal(staged.provenance.calendarMassesSelected,false);
 assert.equal(staged.scoreReviewLeads[0].scoreId,"GREGOBASE-475");
 const conflict=structuredClone(batches);
-const bad=conflict[0].items[0];
+const bad=conflict.flatMap(b=>b.items).find(x=>x.id==="GREGOBASE-475");
+assert.ok(bad,"Expected source score absent from archive");
 bad.sha256="0".repeat(64);
 assert.throws(()=>build91InlineReviewQueue(coverage,conflict),
  /ARCHIVED_SCORE_HASH_ROLE_OR_FOLIO_MISMATCH|SOURCE_ARCHIVE/);
