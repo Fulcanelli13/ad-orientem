@@ -3388,7 +3388,9 @@ export function createReaderDomAdapter({
       nextNode.textContent=riteNext?"NEXT · "+riteNext.label:"";
       nextNode.title=riteNext?"Later in the rite; not heard or timed.":"";
     }
-    dock.dataset.specialOnly=String(Boolean(specialActive &&
+    // A deliberately selected Fauré lyric reference stays visible while
+    // the source-owned Requiem Absolution itinerary remains informational.
+    dock.dataset.specialOnly=String(Boolean(specialActive && !composed &&
       (riteCurrent.length||riteNext)));
     if(dock.dataset.specialOnly==="true"){
       if(title)title.textContent=riteCurrent.length?"EXPECTED · RITE MUSIC":"COMING UP";
