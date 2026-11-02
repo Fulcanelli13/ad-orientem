@@ -102,7 +102,7 @@ try{
      "MapCN Discover must contain canonical actionable Places");
    assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/Places of the saints/i,
      "Approved Discover entry must show the prototype's editorial sheet heading");
-   assert.match(await rail.locator(".aoMapcnDiscoverCount").innerText(),/^\\d+$/,
+   assert.match(await rail.locator(".aoMapcnDiscoverCount").innerText(),/^\d+$/,
      "Discover still reports the number of source-backed places in the current viewport");
    const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
      width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
