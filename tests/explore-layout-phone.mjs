@@ -78,7 +78,17 @@ try{
     assert.ok(initial.map?.height>=200,width+"px map too short: "+JSON.stringify(initial));
     assert.ok(initial.world?.height>=44&&initial.world.width>=44,width+"px world control too small");
     assert.ok(initial.world.bottom<initial.map.bottom,width+"px world button outside map");
-    assert.ok(initial.chips.every(h=>h>=44),width+"px category chip too small");
+    // The approved Discover screen has only three entrance tabs.
+    // Source-backed category chips belong to the Sacred Places entrance.
+    const tab=page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]');
+    await tab.tap();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
+    const sacredChips=await page.locator('.aoHeritageCategories button').evaluateAll(nodes=>
+      nodes.map(b=>b.getBoundingClientRect().height));
+    assert.ok(sacredChips.length>=4&&sacredChips.every(h=>h>=44),
+      width+"px Sacred Places category chip too small");
+    await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="discover"]').tap();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="discover");
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
@@ -167,6 +177,8 @@ try{
     await page.waitForFunction(()=>!document.querySelector('.aoHeritageCardLayer')&&
       document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true"&&
       document.querySelector('.aoHeritageSurface [data-find-query]')?.value==="",null,{timeout:15000});
+    await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]').tap();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
     await page.locator('[data-heritage-category="relics"]').tap();
     await page.waitForFunction(()=>document.querySelector('[data-heritage-category="relics"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
     await page.locator('.aoHeritageWorldReset').tap();
