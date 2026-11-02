@@ -2959,7 +2959,14 @@ export async function mountNativeReaderPreview({
       }):null;
     },
     scholaLocalProgramme:()=>scholaLocalProgramme,
+    scholaManualMovement:()=>composedScholaText.state().manualMovementId,
     onScholaLocalProgrammeChange:change=>{
+      if(change?.kind==="composedManualMovement"){
+        const selected=composedScholaText.setManualMovement(change.value,
+          ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId);
+        if(selected)queue();
+        return;
+      }
       scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,change,customStorage);
       if(["profileSelect","profileCreate","profileDelete","composedScholaWork"].includes(change?.kind))
         composedScholaText.reset();
@@ -3033,6 +3040,8 @@ export async function mountNativeReaderPreview({
       if(event.kind==="LOCAL_OPTION" && event.localPlan?.selected!==true)return false;
       // Explicit manual music selection, not priest-card movement or proof
       // that the choir is currently performing this event.
+      composedScholaText.setManualMovement("",ready.scholaState.project(),
+        scholaLocalProgramme.composedScholaWorkId);
       scholaPinnedByCatchup=true;
       if(event.kind==="CHANT"){
         selectedScholaEvent=null;
