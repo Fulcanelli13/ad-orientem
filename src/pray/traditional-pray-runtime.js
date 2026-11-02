@@ -1,4 +1,5 @@
 import "./traditional-pray-styles.js";
+import {prayerSourceFacesV1} from "./prayer-source-faces.v1.js";
 import {choirLitanyLineParts} from "./choir-source-beats.js";
 import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
 import "./choir-family-styles.js";
@@ -145,17 +146,26 @@ function prayerTitle(p,id){
 function existingLatinSwitch(both){
  return both?'<button type="button" class="aoTP381LatinSwitch" data-tp381-latin-switch aria-pressed="false" aria-label="'+esc(L("Show existing Latin prayer","Afficher la prière latine existante"))+'">LA</button>':'';
 }
+function traditionalSourceFallbackNotice(face){
+ if(!face.fallback)return "";
+ return '<p class="aoTP381Intro" data-tp381-source-language-fallback lang="'+(isFr()?'fr':'en')+'">'+
+  esc(face.vernacularLanguage==="en"
+   ?L("English source text shown; no French translation is claimed.","Texte source anglais affiché ; aucune traduction française n’est revendiquée.")
+   :L("French source text shown; no English translation is claimed.","Texte source français affiché ; aucune traduction anglaise n’est revendiquée."))+
+  '</p>';
+}
 function prayerCard(id,{focusParagraphs=false,hoursFamily=false}={}){
  const isHope=id==="foundations_act_of_hope"&&isFr();
  const traditional=isHope&&S.hopeFrenchEdition==="traditional";
  const p=traditional?B01_FRENCH_HOPE_TRADITION:data().prayers?.[id];
  if(!p)return `<div class="aoTP381Fail">${esc(L("This canonical prayer is unavailable in the current corpus.","Cette prière canonique n’est pas disponible dans le corpus actuel."))}</div>`;
- const vern=isFr()?(p.fr||p.en||p.la):(p.en||p.fr||p.la),latin=p.la||"",both=!!(vern&&latin);
+ const face=prayerSourceFacesV1(p,isFr()?"fr":"en");
+ const vern=face.vernacular,latin=face.latin,both=!!(vern&&latin);
  const prov=p.provenance||{};
  const showHours=v=>hoursFamily?hoursParagraphs(v,id):focusParagraphs?prayerParagraphs(v):nl(v);
  const choice=isHope?`<nav class="aoTP381Tabs" role="group" data-ao-b01-hope-versions aria-label="Version de l'acte d'espérance"><button type="button" data-tp381-b01-hope="published" aria-pressed="${!traditional}" class="${traditional?"":"active"}">Compendium · 2005</button><button type="button" data-tp381-b01-hope="traditional" aria-pressed="${traditional}" class="${traditional?"active":""}">Traditionnel · français</button></nav>`:"";
  const notice=isHope?`<p class="aoTP381Intro" data-ao-b01-hope-source-status>${esc(traditional?"Cette prière française complète est une version traditionnelle indépendante, non la transcription du Compendium de 2005.":"Cette formulation reproduit le témoin français publié dans le Compendium (2005), y compris « Dans cette foi » ; choisir « Traditionnel » pour une autre version authentiquement attestée.")}</p>`:"";
- return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${showHours(vern)}</span><span data-face-la hidden>${showHours(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
+ return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${traditionalSourceFallbackNotice(face)}${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v lang="${face.vernacularLanguage}">${showHours(vern)}</span><span data-face-la lang="la" hidden>${showHours(latin)}</span></button>`:`<div class="aoTP381Reader" lang="${face.vernacularLanguage||(latin?'la':'en')}">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
 }
 function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
@@ -541,9 +551,10 @@ function renderMealPrayers(){
  return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${card}${context}</main>`;
 }
 function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false,hoursFamily=false}={}){
-  const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
+  const face=prayerSourceFacesV1(item,isFr()?"fr":"en");
+  const vern=face.vernacular,latin=face.latin,both=!!(vern&&latin);
   const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):hoursFamily?hoursParagraphs(v):focusParagraphs?prayerParagraphs(v):nl(v);
-  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${show(vern)}</span><span data-face-la hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader">${show(vern||latin)}</div>`}</article>`;
+  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${traditionalSourceFallbackNotice(face)}${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v lang="${face.vernacularLanguage}">${show(vern)}</span><span data-face-la lang="la" hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader" lang="${face.vernacularLanguage||(latin?'la':'en')}">${show(vern||latin)}</div>`}</article>`;
 }
 const HEART_STAGES=Object.freeze(["litany","reparation","golden_arrow","consecration"]);
 function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Pius XI · Reparation","Pie XI · Réparation"):id==="golden_arrow"?L("Golden Arrow","Flèche d’Or"):L("Consecration","Consécration")}
