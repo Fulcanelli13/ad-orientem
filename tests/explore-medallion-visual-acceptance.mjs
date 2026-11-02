@@ -125,13 +125,8 @@ try{
      "Expanded Discover must remain within the viewport: "+JSON.stringify(openedRail));
    await page.screenshot({path:resolve(out,"explore-"+width+"-expanded-discovery.png"),fullPage:false});
    const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
-   if(mobile){
-     assert.equal(await guide.isVisible(),false,
-       "On phones the browsable list replaces the old passive map hint");
-   }else{
-     await guide.waitFor({state:"visible"});
-     assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i);
-   }
+   assert.equal(await guide.isVisible(),false,
+     "Approved Atlas prototype shows active controls and a bottom sheet, not an obstructing passive map hint");
    const originalCanvas=await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count();
    assert.equal(originalCanvas,1,"One map canvas, shared with canonical Explore");
    await rail.locator("button[data-explore-open-place]").first().click();
