@@ -32,7 +32,7 @@ for(const row of batch.items){
   assert.ok(corpus.prayers[row.id][lang]?.length>20,"Canonical language missing: "+row.id+" "+lang);
   assert.ok(row.languageFindings[lang]?.length>30,"No documented witness finding: "+row.id+" "+lang);
  }
- for(const witness of ["en","fr"])assert.match(row.witnessLines[witness],/^\\d+(?:-\\d+)?(?:,\\d+(?:-\\d+)?)?$/);
+ for(const witness of ["en","fr"])assert.match(row.witnessLines[witness],/^\d+(?:-\d+)?(?:,\d+(?:-\d+)?)?$/);
  assert.ok(row.editorialNext.length>30);
 }
 const byId=Object.fromEntries(batch.items.map(x=>[x.id,x]));
