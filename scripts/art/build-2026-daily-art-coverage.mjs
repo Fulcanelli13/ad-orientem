@@ -238,7 +238,7 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
  const stats={
   sourceRecords:sources.records.length,operationalArtworkGroups:gallery.works.length,
   acceptedOriginalReviewDecisions:gallery.counts?.acceptedOrConditionalOriginalReviewCards??856,
-  2026Dates:matchedDays.length,
+  year2026Dates:matchedDays.length,
   sourceResolvedGospels:matchedDays.filter(x=>x.gospel.status==="ACTUAL_SELECTED_PROPER_GOSPEL_VERIFIED").length,
   runtimeGospelUnresolved:matchedDays.filter(x=>x.gospel.status==="RUNTIME_GOSPEL_UNAVAILABLE").length,
   protectedDateArtDates:matchedDays.filter(x=>x.protectedDateArtwork).length,
