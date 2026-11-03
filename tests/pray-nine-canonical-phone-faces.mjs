@@ -6,6 +6,9 @@ import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
+import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "../src/pray/essential-holy-card-parts.js";
+import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats} from "../src/pray/choir-source-beats.js";
+import {claudeChoirSourceUnits,claudeChoirFootFor} from "../src/pray/claude-choir-fixed-foot.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/pray-canonical-phone-faces");
@@ -72,59 +75,119 @@ try{
     await page.locator('#aoPray435930.open [data-p435930-lib-open="'+id+'"]').click({timeout:15000});
     const reader=page.locator("#aoPray435930.open .aoP435930LibraryReader");
     await reader.locator(".aoP435930Prayer").waitFor({timeout:15000});
-    const flip=reader.locator(".aoP435930Prayer [data-p435930-flip]");
-    const before=await reader.evaluate(el=>{
-     const card=el.querySelector(".aoP435930Prayer");
-     const b=card?.querySelector("[data-p435930-flip]");
-     const vern=b?.querySelector("[data-face-v]"),lat=b?.querySelector("[data-face-la]");
-     const single=card?.querySelector(".aoP435930Text");
-     return {view:el.closest(".aoP435930Mount")?.dataset.aoPrayView,
-      id:el.querySelector("[data-ao-devo-card]")?.dataset.aoDevoCard,
-      hasFlip:!!b,vern:vern?.textContent||null,vernLang:vern?.lang||null,
-      vernHidden:vern?.hidden??null,latin:lat?.textContent||null,
-      latinLang:lat?.lang||null,latinHidden:lat?.hidden??null,
-      singleText:single?.textContent||null,singleLang:single?.lang||null,
-      docOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
-      readerOverflow:Math.max(0,el.scrollWidth-el.clientWidth)};
-    });
-    assert.equal(before.view,"library",id+" left source-owned Library");
-    assert.equal(before.id,id,"Wrong original canonical card");
-    assert.ok(before.docOverflow<=2&&before.readerOverflow<=2,
-     id+"/"+width+"/"+ui+" mobile overflow: "+JSON.stringify(before));
-    const bilingual=languages.la;
-    assert.equal(before.hasFlip,bilingual,id+" Latin switch availability contradicts source");
-    if(bilingual){
-     assert.equal(before.vernLang,vernacularLanguage,id+" fake vernacular language attribute");
-     assert.equal(before.latinLang,"la",id+" fake Latin language attribute");
-     assert.equal(before.vernHidden,false,id+" first view should be vernacular");
-     assert.equal(before.latinHidden,true,id+" Latin should start behind switch");
-     assert.equal(plain(before.vern),expectedV,id+" original "+vernacularLanguage+" prayer text altered");
-     assert.equal(plain(before.latin),plain(original.la),id+" original Latin prayer text altered");
-     await flip.click();
-     const turned=await reader.locator(".aoP435930Prayer").evaluate(el=>{
-      const b=el.querySelector("[data-p435930-flip]");
-      return {vernHidden:b.querySelector("[data-face-v]").hidden,
-       latinHidden:b.querySelector("[data-face-la]").hidden,
-       text:b.querySelector("[data-face-la]").textContent};
-     });
-     assert.equal(turned.vernHidden,true,id+" did not replace vernacular with Latin");
-     assert.equal(turned.latinHidden,false,id+" did not display Latin");
-     assert.equal(plain(turned.text),plain(original.la),id+" Latin flip changed original words");
-     await flip.click();
-     assert.equal(await flip.locator("[data-face-v]").evaluate(el=>el.hidden),false,
-      id+" did not return to original vernacular prayer");
+    // These are THREE distinct approved reader families: Holy Cards (F01),
+    // Choir F02 texts, and Choir F03 litanies. No generic switch is imposed.
+    const holy=ESSENTIAL_HOLY_CARD_IDS_V1.includes(id);
+    const choir=CHOIR_SOURCE_IDS.includes(id);
+    const litany=choir&&choirKind(id)==="litany";
+    assert.equal(holy||choir,true,id+" has an unreconciled canonical reader owner");
+    const owner=holy?"holy-card":litany?"choir-litany":"choir-text";
+    const geometry=await reader.evaluate(el=>({
+     document:Math.max(0,document.documentElement.scrollWidth-innerWidth),
+     reader:Math.max(0,el.scrollWidth-el.clientWidth),
+     view:el.closest(".aoP435930Mount")?.dataset.aoPrayView
+    }));
+    assert.equal(geometry.view,"library",id+" left the canonical source owner");
+    assert.ok(geometry.document<=2&&geometry.reader<=2,
+     id+"/"+width+"/"+ui+" mobile clipping "+JSON.stringify(geometry));
+
+    const checkHoly=async language=>{
+     // The Aa language menu is part of the APPROVED physical Holy Card, and
+     // the back is a sequence of source-owned paragraph segments.
+     await page.locator("#aoPray435930.open [data-p435930-essential-aa]").click();
+     await page.locator('#aoPray435930.open [data-p435930-essential-language="'+language+'"]').click();
+     const card=reader.locator('.aoClaudeHolyCard[data-ao-essential-card="'+id+'"]');
+     await card.waitFor({state:"attached",timeout:9000});
+     const backside=card.locator(".aoClaudeHolyBack");
+     if(await backside.getAttribute("aria-hidden")==="true")
+      await card.locator("[data-p435930-essential-card-turn]").click();
+     assert.equal(await backside.getAttribute("aria-hidden"),"false",id+" back prayer not opened");
+     const actual=await backside.locator('.aoP435930EssentialBeat[lang="'+language+'"]').evaluateAll(nodes=>nodes.map(n=>n.textContent.trim()));
+     const expected=essentialHolyCardParts(id,language,original[language])?.map(x=>x.text.trim())||[];
+     assert.ok(expected.length>0,id+" empty printed source segments "+language);
+     assert.deepEqual(actual.map(plain),expected.map(plain),
+      id+" altered Holy Card source segments in "+language);
+     return actual.length;
+    };
+    const checkChoirText=async language=>{
+     const face=language==="la"?"[data-face-la]":"[data-face-v]";
+     const holder=reader.locator('.aoChoirPrayer[data-ao-choir-prayer="'+id+'"] '+face);
+     await holder.waitFor({state:"attached",timeout:9000});
+     assert.equal(await holder.evaluate(el=>el.hidden),false,id+" selected choir face hidden");
+     assert.equal(await holder.locator(".aoChoirFace").getAttribute("lang"),language,
+      id+" choir text mislabels original language");
+     const actual=await holder.locator(".aoChoirBeat").evaluateAll(nodes=>nodes.map(n=>n.textContent.trim()));
+     const expected=(choirSourceBeats(id,language,original[language])||[])
+      .filter(b=>b.kind!=="space").map(b=>b.raw.trim());
+     assert.ok(expected.length>0,id+" original Choir beat model is empty");
+     assert.deepEqual(actual.map(plain),expected.map(plain),
+      id+" original Choir beat text changed in "+language);
+     return actual.length;
+    };
+    const checkLitany=async language=>{
+     const aa=page.locator("#aoPray435930.open [data-p435930-choir-aa]");
+     await aa.click();
+     await page.locator('#aoPray435930.open [data-p435930-choir-language="'+language+'"]').click();
+     const face=reader.locator('.aoClaudeChoirPrayer .aoChoirFace[lang="'+language+'"]');
+     await face.waitFor({state:"attached",timeout:9000});
+     const observed=await face.locator(".aoClaudeChoirBeat").evaluateAll(nodes=>nodes.map(n=>({
+      invocation:n.childNodes[0]?.textContent||n.textContent,
+      response:n.dataset.aoChoirAnswer||"",
+      sourceIndex:n.dataset.aoChoirSourceIndex
+     })));
+     const expected=(claudeChoirSourceUnits(original[language])||[])
+      .map((u,i)=>({...u,i})).filter(u=>u.kind!=="gap");
+     assert.ok(expected.length>0,id+" source litany units absent");
+     assert.equal(observed.length,expected.length,id+" dropped an original litany invocation");
+     for(let i=0;i<expected.length;i++){
+      assert.equal(plain(observed[i].invocation),plain(expected[i].invocation),
+       id+" invocation "+i+" altered in "+language);
+      assert.equal(plain(observed[i].response),plain(claudeChoirFootFor(expected[i])),
+       id+" response "+i+" altered in "+language);
+      assert.equal(observed[i].sourceIndex,String(expected[i].i),
+       id+" original source row order changed");
+     }
+     return observed.length;
+    };
+
+    let vernUnits=0,latinUnits=0;
+    if(holy){
+     vernUnits=await checkHoly(vernacularLanguage);
+     if(languages.la){
+      latinUnits=await checkHoly("la");
+      assert.equal(await page.locator("#aoPray435930.open [data-p435930-essential-language='fr']").count()>0,
+       languages.fr,id+" wrongly exposes or hides the original French source");
+      await checkHoly(vernacularLanguage);
+     }else{
+      await page.locator("#aoPray435930.open [data-p435930-essential-aa]").click();
+      for(const unavailable of ["fr","la","both"])
+       assert.equal(await page.locator('#aoPray435930.open [data-p435930-essential-language="'+unavailable+'"]').count(),0,
+        id+" manufactured "+unavailable+" for an English-only prayer");
+     }
+    }else if(litany){
+     vernUnits=await checkLitany(vernacularLanguage);
+     latinUnits=await checkLitany("la");
+     await checkLitany(vernacularLanguage);
     }else{
-     assert.equal(before.vern,null,id+" invented a second language face");
-     assert.equal(before.latin,null,id+" invented Latin source text");
-     assert.equal(before.singleLang,vernacularLanguage,id+" English-only hold incorrectly labelled "+ui);
-     assert.equal(plain(before.singleText),expectedV,id+" lost the held original English text");
-     assert.equal(languages.fr,false,id+" unexpected missing French in canonical route");
+     vernUnits=await checkChoirText(vernacularLanguage);
+     const flip=reader.locator('[data-ao-choir-prayer="'+id+'"] [data-p435930-choir-flip]');
+     assert.equal(await flip.count(),1,id+" lost its source-owned Choir Latin flip");
+     await flip.click();
+     latinUnits=await checkChoirText("la");
+     await flip.click();
+     await checkChoirText(vernacularLanguage);
     }
+    assert.ok(vernUnits>0,id+" has no original vernacular text");
+    if(languages.la)assert.ok(latinUnits>0,id+" has no original Latin text");
+    if(!languages.fr)assert.equal(vernacularLanguage,"en",
+     id+" rendered an unattested French translation");
+
     await reader.locator("[data-p435930-lib-back]").click();
     assert.equal(await reader.count(),0,id+" did not leave the original canonical card");
-    report.variants.push({id,width,ui,sourceLanguage:vernacularLanguage,
-     originalLatin:languages.la,sourceMatched:true,flipRoundTrip:languages.la,
-     englishOnlyHold:!languages.fr,documentOverflow:before.docOverflow});
+    report.variants.push({id,width,ui,reader:owner,sourceLanguage:vernacularLanguage,
+     originalLatin:languages.la,vernacularSegments:vernUnits,latinSegments:latinUnits,
+     sourceMatched:true,flipRoundTrip:languages.la,englishOnlyHold:!languages.fr,
+     documentOverflow:geometry.document});
     console.log("CANONICAL_FACE "+width+"px "+ui+" "+id+" "+vernacularLanguage+
      (languages.la?" + Latin flip":" source-held English only"));
    }
