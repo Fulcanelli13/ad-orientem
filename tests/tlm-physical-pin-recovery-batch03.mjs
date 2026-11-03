@@ -63,7 +63,7 @@ const readingHold=all.find(x=>x.physical_group_id==="RG-BF0D731A3654");
 assert.ok(readingHold&&!readingHold.map_publishable,
  "Do not geocode unresolved Reading church footprint from locality");
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:167,SOURCE_PIN:1806,ADDRESS_ONLY:609});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,609);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,167);
-console.log("PASS TLM pin recovery batch 3: 10 sites across GB FR IT US, 1973 map markers, 609 still card-only, no invented Mass or photograph");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:182,SOURCE_PIN:1806,ADDRESS_ONLY:594});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,594);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,182);
+console.log("PASS TLM pin recovery batch 3: 10 sites across GB FR IT US, 1988 map markers, 594 still card-only, no invented Mass or photograph");
