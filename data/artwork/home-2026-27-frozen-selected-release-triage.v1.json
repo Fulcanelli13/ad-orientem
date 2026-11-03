@@ -6,10 +6,10 @@
     "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED": 13,
     "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED": 4,
     "REMOTE_EXACT_WORK_PREVIEW_RECOVERED_NOT_OFFLINE_CERTIFIED": 3,
-    "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED": 2,
+    "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED": 3,
+    "RESEARCH_ONLY_DERIVATIVE_FILE_FOUND_DATE_NOT_APPROVED": 1,
     "DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD": 1,
     "MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO": 1,
-    "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED": 2,
     "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED": 1,
     "ownerDateApprovedAt20261021": 5,
     "ownerDateRejectedAt20261021": 1,
@@ -23,7 +23,8 @@
     "No exact painting is silently replaced to bypass a licence or source hold.",
     "2026-10-21 Class I Yes/No date review snapshot has five yes, one no, and 21 pending; this is historical, not proof no later decision exists.",
     "New 2026-11-03 source photographs on 3 selected dates are remote-source previews with no native master or approved crop; work identity must match frozen date editorial assignment.",
-    "Two original saved approved-draft PNGs are now recovered with exact byte-level hashes but NOT yet bundled into GitHub or released as date artworks. They remain in the 20 unpublished dates."
+    "Two original saved approved-draft PNGs are now recovered with exact byte-level hashes but NOT yet bundled into GitHub or released as date artworks. They remain in the 20 unpublished dates.",
+    "Three exact original AI-derived images recovered from the approved artwork bank (Mar 8, Apr 8, May 29). The Mar 22 image is a research-only candidate with NO user approval; it must not be published."
   ],
   "rows": [
     {
@@ -90,12 +91,16 @@
         "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
         "sourceObjectUrl": null
       },
-      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "decision": "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
       "offlineCertified": false,
       "sourceOwnerDateDecision20261021": "pending",
-      "sourcePhotoAccepted20261021": "not_recorded"
+      "sourcePhotoAccepted20261021": "not_recorded",
+      "exactSourceManifest": "data/artwork/home-2026-recovered-approved-ai-originals.v1.json",
+      "originalRetrievedLocally": true,
+      "publicationReleased": false,
+      "sourceApprovalScope": "USER_APPROVED_FOR_MARCH_8_NOT_PRODUCTION_CROP_CERTIFIED"
     },
     {
       "date": "2026-03-15",
@@ -124,12 +129,16 @@
         "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
         "sourceObjectUrl": null
       },
-      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "decision": "RESEARCH_ONLY_DERIVATIVE_FILE_FOUND_DATE_NOT_APPROVED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
       "offlineCertified": false,
       "sourceOwnerDateDecision20261021": "pending",
-      "sourcePhotoAccepted20261021": "not_recorded"
+      "sourcePhotoAccepted20261021": "not_recorded",
+      "visualCandidate": "Christ Retreats from the Angry Crowd.png",
+      "approvedForDate": false,
+      "publicationReleased": false,
+      "provenanceNote": "Explicit 2026-10-19 leave-research-more, not a user-approved March 22 image"
     },
     {
       "date": "2026-03-30",
