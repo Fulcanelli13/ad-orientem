@@ -125,11 +125,12 @@ try{
     for(let index=0;index<expectedStages.length;index++){
      await dismissAction();
      await page.locator(timeline+' [data-ao-devo-chapter="'+index+'"]').click({timeout:15000});
-     await page.waitForFunction(({mode,index})=>{
+     const expectedCardId=mode==="night"?NIGHT_HOME_B29_STAGES[index].id:mode+"-"+index;
+     await page.waitForFunction(({mode,index,expectedCardId})=>{
       const r=document.querySelector("#aoPray435930.open .aoP435930AdorationReader");
       return r?.dataset.aoAdorationMode===mode&&+r.dataset.aoAdorationStep===index&&
-       r.querySelector(".aoDevoCard")?.dataset.aoDevoCard===mode+"-"+index;
-     },{mode,index},{timeout:10000});
+       r.querySelector(".aoDevoCard")?.dataset.aoDevoCard===expectedCardId;
+     },{mode,index,expectedCardId},{timeout:10000});
      await dismissAction();
      const observed=await page.locator(sel).evaluate(el=>{
       const card=el.querySelector(".aoDevoCard"),scroll=card?.querySelector(".aoDevoCardScroll");
