@@ -26,7 +26,7 @@ assert.equal(reuse.proposals.length,104);
 assert.equal(gallery.works.length,989);
 assert.equal(source.records.length,3205);
 assert.equal(cues.year,2026);
-assert.equal(cues.cues.length,19);
+assert.equal(cues.cues.length,22);
 const groups=new Map(gallery.works.map(w=>[w.workGroupId,w]));
 const operationalIds=new Set(source.records.filter(s=>
   s.isOperationalCandidate&& !["REJECT","PLACEMENT_REJECT"].includes(s.originalUserDecision)
@@ -35,7 +35,7 @@ const cueMap=new Map();
 for(const cue of cues.cues){
   assert.match(cue.date,/^2026-\d{2}-\d{2}$/);
   assert.ok(!cueMap.has(cue.date),"Duplicate date cue: "+cue.date);
-  assert.ok(cue.workGroupIds.length>0);
+  assert.ok(cue.workGroupIds.length>0||cue.historicDonorDate);
   assert.equal(new Set(cue.workGroupIds).size,cue.workGroupIds.length);
   cueMap.set(cue.date,cue);
 }
@@ -67,7 +67,10 @@ for(const day of outstanding){
     assert.ok([
       "EXACT_NAMED_SAINT_TITLE","EXACT_NAMED_FEAST_TITLE",
       "EXACT_GOSPEL_STORY_TITLE","FEAST_PATRON_ICONOGRAPHY",
-      "GOSPEL_CONTEXT_ICONOGRAPHY","SEASONAL_REUSE_CONTEXT"
+      "GOSPEL_CONTEXT_ICONOGRAPHY","SEASONAL_REUSE_CONTEXT",
+      "PREVIOUS_DATED_SAME_VERIFIED_GOSPEL",
+      "HISTORIC_GOSPEL_SUBJECT_NO_DONOR_PERICOPE",
+      "OLDER_GOSPEL_STUDY_SAME_VERIFIED_GOSPEL"
     ].includes(cue.matchKind));
     matchedKinds[cue.matchKind]=(matchedKinds[cue.matchKind]??0)+1;
     for(const groupId of cue.workGroupIds){
@@ -95,6 +98,48 @@ for(const day of outstanding){
         productionPublished:false
       });
     }
+    if(cue.historicDonorDate){
+      const donor=audit.dates.find(d=>d.date===cue.historicDonorDate);
+      assert.ok(donor,"Missing pinned historical date "+cue.historicDonorDate);
+      const originals=donor.candidates.filter(x=>
+        x.evidenceKind===cue.historicEvidenceKind&&
+        x.title===cue.historicArtworkTitle);
+      assert.ok(originals.length>0,
+        "Unreconciled pre-existing title on "+cue.historicDonorDate+
+        ": "+cue.historicArtworkTitle);
+      if(donor.gospel.status==="ACTUAL_SELECTED_PROPER_GOSPEL_VERIFIED"){
+        assert.equal(donor.gospel.reference,day.gospel.reference,
+          "Historical Gospel-pericope donor mismatch: "+day.date);
+      }else{
+        assert.equal(cue.matchKind,"HISTORIC_GOSPEL_SUBJECT_NO_DONOR_PERICOPE",
+          "Unverified donor Gospel may only be used as thematic subject evidence");
+      }
+      const old=originals.map(item=>{
+        assert.doesNotMatch(item.artist??"",/fra angelico|el greco/i);
+        assert.doesNotMatch(item.originalSource??"",/museodelprado\.es/i);
+        return {
+          workGroupId:null,canonicalArtworkId:item.artworkId??null,
+          artworkTitle:item.title,artist:item.artist??null,
+          selectedSourceUrl:item.originalSource??null,
+          preferredSourceRecordId:item.sourceRecordId??null,
+          originalUserReviewStates:[],
+          historicalEvidenceKind:item.evidenceKind,
+          historicalApprovalClaim:item.approval??"PREEXISTING_RESEARCH_ONLY",
+          originalResearchDonorDate:donor.date,
+          actualDonorGospel:donor.gospel.reference??null,
+          rightsQueue:"PREEXISTING_SOURCE_PHOTO_IDENTITY_RECONCILIATION_REQUIRED",
+          rightsCategory:"NOT_VERIFIED_FOR_SELECTED_BYTES",
+          matchKind:cue.matchKind,
+          sceneDepictionVerified:false,
+          physicalObjectIdentityDedupCertified:false,
+          originalPhotoRightsCertified:false,
+          originalPhotoQualityCertified:false,
+          dateEditorialApprovalCertified:false,
+          productionPublished:false
+        };
+      });
+      candidates.unshift(...old);
+    }
   }
   output.push({
     date:day.date,liturgicalClass:day.rank,observedTitle:day.observedTitle,
@@ -112,14 +157,14 @@ for(const day of outstanding){
   });
 }
 const newDays=output.filter(d=>d.candidates.length>0).length;
-assert.equal(newDays,19);
+assert.equal(newDays,22);
 const report={
   schema:"AO_2026_48_EXISTING_GALLERY_EXCEPTION_RECONCILIATION_V1",
   year:2026,
   generatedAt:new Date().toISOString(),
   inputs:["365 existing-gallery verified-Gospel audit","104 seasonal/Marian reuse proposals",
     "989 operational artwork groups","3205 original source decisions",
-    "19 hand-reviewed existing-gallery subject cues"],
+    "22 existing-gallery and older-pinned-source subject cues"],
   constraints:{
     newAcquisition:false,manualDateEditorialApprovalRequired:true,
     physicalDedupRequired:true,exactImageRightsAndBytesRequired:true,
