@@ -7,6 +7,7 @@ on:
       - "src/pray/novena-styles.js"
       - "src/pray/devotional-sequence-adapter.js"
       - "tests/pray-novena-witness-position-phone.mjs"
+      - "tests/pray-novena-dual-axis-mobile.mjs"
       - "tests/pray-novena-witness-contract.mjs"
       - "tests/pray-novena-stage-progress-contract.mjs"
       - "tests/pray-novena-reading-comfort-contract.mjs"
@@ -19,6 +20,7 @@ on:
       - "src/pray/novena-styles.js"
       - "src/pray/devotional-sequence-adapter.js"
       - "tests/pray-novena-witness-position-phone.mjs"
+      - "tests/pray-novena-dual-axis-mobile.mjs"
       - "tests/pray-novena-witness-contract.mjs"
       - "tests/pray-novena-stage-progress-contract.mjs"
       - "tests/pray-novena-reading-comfort-contract.mjs"
@@ -45,6 +47,8 @@ jobs:
         run: node tests/pray-novena-reading-comfort-contract.mjs
       - name: 320px and 390px Novena witness, guided-stage and thumb-reading acceptance
         run: node tests/pray-novena-witness-position-phone.mjs
+      - name: Approved Novena covers and unchanged dual-axis reader 320/390/430px
+        run: node tests/pray-novena-dual-axis-mobile.mjs
       - name: Attach temporary Novena mobile review captures
         if: always()
         uses: actions/upload-artifact@v4
