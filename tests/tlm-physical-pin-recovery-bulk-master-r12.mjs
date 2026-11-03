@@ -1,0 +1,426 @@
+// TLM Atlas bulk master R12 — 32 site identities adjudicated from the controlled geo manifest.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
+import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
+import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
+const baseline=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+const all=projectCL2PhysicalDirectory(baseline,index);
+const source=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
+const section=source.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\\n});")[0]??"";
+const registry=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\\s*:\\s*Object\\.freeze\\(\\{/g)].map(m=>m[1]);
+assert.equal(new Set(registry).size,registry.length,"Unique reviewed site marker keys");
+const sites=[
+  [
+    "RG-36BC05EBA266",
+    "AO-B34-L-GB-0D4522F88A2D",
+    50.72209,
+    -3.50822,
+    "osm:way:83210301",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W83210301",
+    "https://www.plymouth-diocese.org.uk/church/exeter-blessed-sacrament/"
+  ],
+  [
+    "RG-1527B6F93EF9",
+    "AO-B34-L-GB-8593454E2D3F",
+    52.12043,
+    -0.44995,
+    "osm:node:10394418",
+    "GB",
+    "REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+    "https://mapcarta.com/N10394418",
+    "https://christthekingbedford.com/contact-us/"
+  ],
+  [
+    "RG-A164E7D0C229",
+    "AO-B34-L-GB-949D1186DE89",
+    52.13603,
+    -0.47364,
+    "osm:way:46491193",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W46491193",
+    "https://www.stjosephsbedford.org/a-brief-history-of-your-churches/"
+  ],
+  [
+    "RG-5CA9C9CEE119",
+    "AO-B34-L-GB-C2AF862539E0",
+    52.67679,
+    -1.82486,
+    "osm:way:298267808",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W298267808",
+    "https://gb.britishlistedbuildings.co.uk/101298433-church-of-holy-cross-and-attached-presbytery-and-school-lichfield/maps"
+  ],
+  [
+    "RG-FB8F0348E454",
+    "AO-B34-L-GB-5A9DB2259039",
+    51.96179,
+    -1.14526,
+    "osm:way:197835149",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W197835149",
+    "https://www.birminghamdiocese.org.uk/holy-trinity-hethe"
+  ],
+  [
+    "RG-ABBC659D0388",
+    "AO-B34-L-GB-FDC98808D553",
+    51.92858,
+    -1.72174,
+    "osm:way:637157133",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W637157133",
+    "https://www.stow-bourtoncatholic.net/"
+  ],
+  [
+    "RG-65E3B77E0F84",
+    "AO-B34-L-GB-1B3A4665CA8E",
+    51.35458,
+    -2.94141,
+    "osm:way:95994804",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W95994804",
+    "https://www.corpuschristiweston.org/olol"
+  ],
+  [
+    "RG-70B31984AB26",
+    "AO-B34-L-GB-CBFEABD75555",
+    52.7482,
+    0.4021,
+    "historicengland:1481880",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://gb.britishlistedbuildings.co.uk/101481880-our-lady-of-the-annunciation-and-attached-presbytery-kings-lynn-kings-lynn-and-west-norfolk-st-margarets-with-st-nicholas-ward/maps",
+    "https://www.cpkl.org/contact"
+  ],
+  [
+    "RG-A443CB0118A7",
+    "AO-B34-L-GB-BE8BDA55B1D3",
+    52.0247,
+    0.23813,
+    "osm:way:630770570",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W630770570",
+    "https://www.dioceseofbrentwood.net/parish/saffron-walden/church/our-lady-of-compassion-saffron-walden/"
+  ],
+  [
+    "RG-DDB9022B5C28",
+    "AO-B34-L-GB-82562583F671",
+    51.36918,
+    -0.16497,
+    "osm:way:148619016",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W148619016",
+    "https://holycrosscarshalton.co.uk/"
+  ],
+  [
+    "RG-D7C8B7693CEC",
+    "AO-B34-L-GB-DA44176FA42F",
+    54.6395,
+    -3.543,
+    "historicengland:1257412",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://gb.britishlistedbuildings.co.uk/101257412-the-church-of-our-lady-and-st-michael-attached-steps-walls-gates-and-gatepiers-workington/maps",
+    "https://casework.jcnas.org.uk/case/64743"
+  ],
+  [
+    "RG-605CC195A1EF",
+    "AO-B34-L-GB-D03817F48CAA",
+    51.49219,
+    -0.26112,
+    "osm:way:840980021",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W840980021",
+    "https://gb.britishlistedbuildings.co.uk/101096073-our-lady-of-grace-and-st-edward-roman-catholic-church-turnham-green-ward/maps"
+  ],
+  [
+    "RG-B10417F7A69D",
+    "AO-B34-L-GB-89ABBD85057C",
+    51.77404,
+    -0.99397,
+    "osm:node:1591394617",
+    "GB",
+    "REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+    "https://mapcarta.com/N1591394617",
+    "https://taking-stock.org.uk/building/long-crendon-our-lady-of-light/"
+  ],
+  [
+    "RG-5B65864A842D",
+    "AO-B34-L-GB-5B089A6D5EE8",
+    51.71597,
+    0.47555,
+    "osm:way:264465868",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W264465868",
+    "https://www.chelmsfordcatholic.co.uk/our-parish/holy-name-church"
+  ],
+  [
+    "RG-A504818C84DC",
+    "AO-B34-L-GB-CDF21516456F",
+    51.4679,
+    -0.9669,
+    "independent:pilgrimmap-reading-our-lady-anne",
+    "GB",
+    "REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+    "https://www.pilgrimmap.com/site/our-lady-and-st-annes-church-6ee1840d",
+    "https://www.ourladyandstanne.org.uk/key-contacts/google-maps-link/"
+  ],
+  [
+    "RG-61400C082CBD",
+    "AO-B34-L-GB-FBEA1CBECB3C",
+    51.5585,
+    -1.77817,
+    "independent:aroundus-swindon-holy-rood",
+    "GB",
+    "REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+    "https://aroundus.com/p/12960039-holy-rood-church-swindon",
+    "https://romancatholic.co.uk/churches/holy-rood-catholic-church-swindon-swindon/"
+  ],
+  [
+    "RG-50BE1A7B5F18",
+    "AO-B50-SSPV-US-869D6AA28FC",
+    46.58577,
+    -112.02583,
+    "usgs:gnis:1789126",
+    "US",
+    "HELENA_GNIS_CHURCH_POINT_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+    "https://topoquest.com/map/usgs-24k/montana/helena/20019",
+    "https://www.ihm-church.org/mass-locations/holy-cross-church.html"
+  ],
+  [
+    "RG-850C2D798754",
+    "AO-B35-L-GB-5F111783D2EF",
+    52.454,
+    1.559,
+    "historicengland:1478482",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://britishlistedbuildings.co.uk/101478482-minster-church-of-st-benet-beccles-beccles/maps",
+    "https://www.rcdea.org.uk/location/st-benets-minster/"
+  ],
+  [
+    "RG-C05F3E7A44B5",
+    "AO-B35-L-GB-41614AF30B7B",
+    51.55078,
+    -0.15726,
+    "osm:way:85719750",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W85719750",
+    "https://parish.rcdow.org.uk/haverstockhill/contact/"
+  ],
+  [
+    "RG-D72F3B6A541B",
+    "AO-B35-L-GB-3C79E34199C6",
+    50.84141,
+    0.47796,
+    "osm:way:247436295",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W247436295",
+    "https://stmmbexhill.co.uk/contact/"
+  ],
+  [
+    "RG-6504A98F8FAF",
+    "AO-B34-L-GB-3731B7872282",
+    53.4351,
+    -3.0469,
+    "historicengland:1390763",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://gb.britishlistedbuildings.co.uk/101390763-church-of-ss-peter-paul-and-st-philomena-new-brighton-ward",
+    "https://icksp.org.uk/newbrighton/"
+  ],
+  [
+    "RG-8EC1B37099D3",
+    "AO-B35-L-GB-F2E7F260D293",
+    51.45707,
+    -0.96526,
+    "osm:way:96173957",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W96173957",
+    "https://www.ordinariate.org.uk/missions/reading"
+  ],
+  [
+    "RG-EDDCE2AFDCD8",
+    "AO-B35-L-GB-8D4B021D7EA9",
+    52.05578,
+    1.15878,
+    "osm:way:208354177",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W208354177",
+    "https://www.stpancraschurch.org.uk/contact/"
+  ],
+  [
+    "RG-32D229813C82",
+    "AO-B35-L-GB-A20516497105",
+    51.40773,
+    0.0723,
+    "osm:way:222985761",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W222985761",
+    "https://www.stmarys-chislehurst.com/"
+  ],
+  [
+    "RG-9CAFC11FEA38",
+    "AO-B35-L-GB-438182C27E63",
+    54.9693,
+    -2.1048,
+    "historicengland:1042558",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://britishlistedbuildings.co.uk/101042558-church-of-st-mary-roman-catholic-hexham",
+    "https://diocesehn.org.uk/church/st-mary-3/"
+  ],
+  [
+    "RG-A06A5AF5AD53",
+    "AO-B35-L-GB-284515AA03A0",
+    52.67225,
+    -0.73035,
+    "independent:rutland-churches-oakham-joseph",
+    "GB",
+    "REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+    "https://rhcpt.co.uk/rutland-church-list/plain/",
+    "https://www.stjosephs-oakham.org/index.php/contact-us"
+  ],
+  [
+    "RG-3794BDA9486C",
+    "AO-B34-L-GB-39D703767B72",
+    53.45369,
+    -2.73206,
+    "osm:way:205713344",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W205713344",
+    "https://www.liverpoolcatholic.org.uk/places/holy-cross-st-helen-church-st-helens-st-helens"
+  ],
+  [
+    "RG-ADC79B60F843",
+    "AO-B35-L-GB-787F6903790F",
+    51.3798,
+    -2.3555,
+    "historicengland:1394998",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://gb.britishlistedbuildings.co.uk/101394998-roman-catholic-church-of-st-john-ward",
+    "https://www.bath.ac.uk/corporate-information/st-john-the-evangelist/"
+  ],
+  [
+    "RG-85474DBA750C",
+    "AO-B35-L-GB-2E9A85D254C2",
+    50.8003,
+    -1.0943,
+    "historicengland:1104269",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://britishlistedbuildings.co.uk/101104269-cathedral-church-of-st-john-the-evangelist-charles-dickens-ward/maps",
+    "https://gazetteer.org.uk/place/St_John%27s_Cathedral,_Hampshire_321240"
+  ],
+  [
+    "RG-3923AED1F35D",
+    "AO-B35-L-GB-85E5727F6F41",
+    50.73758,
+    -1.80583,
+    "osm:way:236082777",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W236082777",
+    "https://www.avonstour.co.uk/parishes/stm-iford/"
+  ],
+  [
+    "RG-8CE89C6BF2BC",
+    "AO-B35-L-GB-AEED1FE227F3",
+    52.07462,
+    1.13053,
+    "osm:way:359820601",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://mapcarta.com/W359820601",
+    "https://marymagdalens.org/contact"
+  ],
+  [
+    "RG-C590DDBF457B",
+    "AO-B35-L-GB-E397B08D83B5",
+    50.7267,
+    -1.1624,
+    "historicengland:1216915",
+    "GB",
+    "REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+    "https://gb.britishlistedbuildings.co.uk/101216915-roman-catholic-church-of-the-sorrowful-and-immaculate-heart-of-mary-church-of-st-mary-with-presbytery-and-later-additions-including-the-convent-school-chapel-wing-and-linking-corridor-ryde/maps",
+    "https://www.iowrcchurch.org.uk/communities.htm"
+  ]
+];
+assert.equal(sites.length,32);
+assert.equal(new Set(sites.map(x=>x[0])).size,32);
+assert.equal(sites.filter(x=>x[5]==="GB").length,31);
+assert.equal(sites.filter(x=>x[5]==="US").length,1);
+const sourceRefs=new Set();
+for(const [anchor,sourceId,lat,lng,ref,country,scope,geoEvidence,identityEvidence] of sites){
+ const frozen=index.records.find(x=>x[0]===anchor);
+ assert.ok(frozen?.[1].includes(sourceId),"Frozen CL2 source identity: "+anchor);
+ assert.equal(frozen[3],country);
+ assert.ok(!baseline.some(x=>frozen[1].includes(x.source_id)),"No already-mapped source duplication: "+anchor);
+ assert.ok(!sourceRefs.has(ref),"Distinct source feature per church: "+ref);
+ sourceRefs.add(ref);
+ const venue=all.find(x=>x.physical_group_id===anchor);
+ assert.ok(venue&&venue.source_id===sourceId&&venue.source_ids.includes(sourceId));
+ assert.equal(venue.title,frozen[2]);
+ assert.equal(venue.country_code,country);
+ assert.equal(venue.map_publishable,true);
+ assert.equal(venue.map_state,"PROVISIONAL");
+ assert.equal(venue.geo.lat,lat);
+ assert.equal(venue.geo.lng,lng);
+ assert.equal(venue.geo.source_ref,ref);
+ assert.equal(venue.geo.precision,"site");
+ assert.equal(venue.geo.approximate,true);
+ assert.equal(venue.geo.review_scope,scope);
+ assert.ok(venue.geo.source_url.startsWith("https://"));
+ assert.ok(venue.source_links.some(x=>x.url===venue.geo.source_url));
+ assert.ok(venue.source_links.some(x=>x.url===geoEvidence));
+ assert.ok(venue.source_links.some(x=>x.url===identityEvidence));
+ assert.ok(venue.source_links.some(x=>frozen[6].includes(x.url)),"Original source URL kept");
+ assert.equal(venue.status,"RESEARCH-LISTED · MASS UNVERIFIED");
+ assert.equal(venue.celebration_evidence,undefined);
+ assert.equal(venue.sections.length,0);
+ assert.equal(venue.actions.length,0);
+ assert.ok(!venue.cover_media,"No image rights implied");
+ for(const language of ["en","fr"]){
+  const card=renderDirectoryVenueCard(venue,language);
+  const profile=renderTlmChurchProfile(venue,language);
+  assert.ok(card.includes('data-explore-item="'+venue.item_id+'"'));
+  assert.ok(profile.includes('data-tlm-church-profile="'+sourceId+'"'));
+  assert.ok(profile.includes("aoTlmProfileSources"));
+  assert.doesNotMatch(profile,/data-tlm-celebration-evidence=/);
+ }
+}
+const church=all.find(x=>x.physical_group_id==="RG-85474DBA750C");
+const distinctPortsmouthSite=all.find(x=>x.physical_group_id==="RG-56B7040002F7");
+assert.ok(church?.geo&&distinctPortsmouthSite?.geo);
+assert.notEqual(church.physical_group_id,distinctPortsmouthSite.physical_group_id,"Portsmouth cathedral is not St Agatha");
+for(const anchor of ["RG-72909EA31C02","RG-B70-6CCD0C36B97D","RG-50082C65DA56","RG-8DE39E8E9415"]){
+ const held=all.find(x=>x.physical_group_id===anchor);
+ assert.ok(held&&!held.map_publishable,"Exact-building/address holds must remain list-only: "+anchor);
+}
+assert.equal(all.length,2582);
+assert.equal(all.filter(x=>x.map_publishable).length,2088);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:282,SOURCE_PIN:1806,ADDRESS_ONLY:494});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,494);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,282);
+console.log("PASS TLM bulk master R12: 32 identity-locked physical sites, 2088 mapped, 494 list-only; 4 explicit holds; bilingual cards intact");
