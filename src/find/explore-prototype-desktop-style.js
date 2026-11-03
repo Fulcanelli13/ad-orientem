@@ -32,6 +32,11 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
   box-shadow:0 14px 48px rgba(0,0,0,.45)!important;
   display:flex!important;flex-direction:column;min-height:0;
  }
+ /* A deliberate desktop collapse retracts the left folio to its title.
+    Default desktop remains expanded, with independently scrollable results. */
+ .aoHeritageSurface.aoExploreSurface .aoMapcnDiscoverRail[data-discover-expanded="false"]{
+  bottom:auto!important;height:88px!important;max-height:88px!important;
+ }
  .aoHeritageSurface .aoMapcnDiscoverHead {padding:18px 14px 13px}
  .aoHeritageSurface .aoMapcnDiscoverTitle {
   font:500 22px/1.15 var(--ao-font-display,Georgia,serif);
