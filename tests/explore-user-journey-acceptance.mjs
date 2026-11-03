@@ -263,6 +263,36 @@ try{
      }
      assert.equal(await root.locator(cfg.evidence).count(),1,
       mode+" must expose its source/scope qualification");
+     if(mode==="journey"){
+      const panel=root.locator('.aoJourneyPanel[data-atlas-journey="true"]');
+      assert.equal(await panel.count(),1,"Approved screen 6 sheet is missing");
+      assert.ok((await panel.locator(".aoJourneyHeader h2").innerText()).trim(),
+       "Pilgrimage sheet must lead with the actual documented itinerary");
+      assert.ok(await panel.locator(".aoJourneyRoutes button").count()>1,
+       "Route switcher must keep existing documented itineraries");
+      const dims=await panel.evaluate(el=>{
+       const r=el.getBoundingClientRect();
+       return {left:r.left,right:r.right,bottom:r.bottom,height:r.height,
+        width:innerWidth,viewportHeight:innerHeight,
+        overflow:document.documentElement.scrollWidth-innerWidth};
+      });
+      if(width<800)assert.ok(dims.left>=-2&&dims.right<=width+2&&
+       dims.bottom<=dims.viewportHeight+2&&dims.height<=Math.min(330,dims.viewportHeight*.52)+3
+       &&dims.height>=Math.min(300,dims.viewportHeight*.52)-4&&dims.overflow<=2,
+       "Approved mobile journey sheet must leave the map in view: "+JSON.stringify(dims));
+      const focus=panel.locator("[data-explore-journey-stage-focus]");
+      if(await focus.count()){
+       const first=focus.first(),id=await first.getAttribute("data-explore-journey-stage-focus");
+       await first.click();
+       assert.equal(await first.getAttribute("aria-pressed"),"true",
+        "A sourced stage number must focus its mapped site");
+       assert.equal(await panel.locator('[data-journey-named-stage="'+id+'"].aoJourneyStageSelected').count(),1,
+        "Stage focus must be reflected in the active row");
+      }
+      assert.ok(await panel.locator(".aoJourneyNoLine").count()>0,
+       "Never imply route geometry that is not certified");
+      await assertP6Canvas("approved journey screen 6 stage focus");
+     }
      await assertP6Canvas(mode+" "+direction);
      if(direction==="forward")await capture("p6-"+mode);
      if(direction==="reverse"){
