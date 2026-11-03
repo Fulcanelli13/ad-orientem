@@ -106,9 +106,18 @@ try{
      "Discover still reports the number of source-backed places in the current viewport");
    const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
      width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
-   assert.ok(railGeometry.width>280&&railGeometry.bottom<= (mobile?844:960)+1
-    &&railGeometry.height<=96&&railGeometry.height>=60,
-     "Collapsed Discover must leave the map visible: "+JSON.stringify(railGeometry));
+   if(mobile){
+    assert.ok(railGeometry.width>280&&railGeometry.bottom<=844+1
+     &&railGeometry.height<=96&&railGeometry.height>=60,
+     "Collapsed mobile Discover must leave the map visible: "+JSON.stringify(railGeometry));
+   }else{
+    // Approved desktop screen 7 deliberately docks results at full viewport
+    // height even while the Discover disclosure says compact/false.
+    assert.ok(railGeometry.width>=250&&railGeometry.width<=380&&
+     railGeometry.left>=8&&railGeometry.top>=8&&railGeometry.bottom<=961&&
+     railGeometry.height>=700,
+     "Desktop Discover must retain its permanent left result rail: "+JSON.stringify(railGeometry));
+   }
    await page.screenshot({path:resolve(out,"explore-"+width+"-compact-discovery.png"),fullPage:false});
    await rail.locator("[data-mapcn-discover-toggle]").click();
    assert.equal(await rail.getAttribute("data-discover-expanded"),"true");
