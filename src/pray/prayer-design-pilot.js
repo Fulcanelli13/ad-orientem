@@ -1,4 +1,4 @@
-import {prayerDoorArtSlot,resolvePrayerEditorialArtwork} from "./art-slot-map.v1.js";
+import {prayerDoorArtSlot,resolvePrayerEditorialArtwork,prayerEditorialArtworkMarkup,angelusOpeningArtworkSlot} from "./art-slot-map.v1.js";
 import {releasedModulePhoto,releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./released-module-photo-styles.js";
 /**
@@ -208,7 +208,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
     '</main>';
 }
-export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual',hour=12}){
+export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,recitation='individual',hour=12,dateKey=''}){
   const regina=form==="regina";
   const selectedHour=[6,12,18].includes(hour)?hour:12;
   const hourName=selectedHour===6?L("Dawn","Aube"):selectedHour===18?L("Dusk","Soir"):L("Midday","Midi");
@@ -218,7 +218,7 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,reci
   return head(regina?"Regina Cæli":"Angelus",L("Prayer of the hour","Prière de l'heure"))+
     '<main class="aoP435930Body aoPrayPilotAngelusEntry">'+
       '<section class="aoPrayPilotAngelusHero" data-ao-art-publication="released">'+
-        releasedModulePhotoMarkup(regina?"regina":"angelus",{className:"aoPrayerAngelusPhoto"})+
+        prayerEditorialArtworkMarkup(angelusOpeningArtworkSlot(form,selectedHour,dateKey),{className:"aoPrayerAngelusPhoto"})+
         '<div class="aoPrayPilotAngelusCoverCopy">'+
           '<small class="aoPrayPilotHourEyebrow">'+moduleIcon("pray.angelus_regina")+'<span>'+esc(hourName+" · "+hourTime)+'</span></small>'+
           '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+
