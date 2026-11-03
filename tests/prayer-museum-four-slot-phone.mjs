@@ -93,7 +93,6 @@ try{
      await page.screenshot({path:resolve(folder,work.id+"-"+width+"-"+locale+".png"),animations:"disabled"});
      checked.push({id:work.id,slot:work.slot,...im});
     }
-    document;
     await page.evaluate(()=>document.querySelector("#aoPrayerFourMuseumPreview")?.remove());
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
     const sign=page.locator(rootSelector+' [data-p435930-lib-open="foundations_sign_of_cross"]');
