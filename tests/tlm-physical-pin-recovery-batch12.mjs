@@ -1,0 +1,63 @@
+// TLM batch 12 — 12 UK, 2 US provisional sites; identity and evidence-scope locks.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
+import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
+import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
+const baseline=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+const all=projectCL2PhysicalDirectory(baseline,index);
+const text=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
+const section=text.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
+const allKeys=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(m=>m[1]);
+assert.equal(new Set(allKeys).size,allKeys.length,"Duplicate physical group pin");
+const sites=[["RG-85474DBA750C","AO-B35-L-GB-2E9A85D254C2",50.80035,-1.09431,"osm:way:32136389","https://www.openstreetmap.org/way/32136389","PORTSMOUTH_ROMAN_CATHOLIC_ST_JOHN_EVANGELIST_CATHEDRAL_NOT_NEARBY_SCHOOL"],["RG-C05F3E7A44B5","AO-B35-L-GB-41614AF30B7B",51.55078,-0.15726,"osm:way:85719750","https://www.openstreetmap.org/way/85719750","LONDON_ST_DOMINIC_ROSARY_SHRINE_CHURCH_HAVERSTOCK_NOT_STONE_PRIORY_SCHOOL"],["RG-EDDCE2AFDCD8","AO-B35-L-GB-8D4B021D7EA9",52.05578,1.15878,"osm:way:208354177","https://www.openstreetmap.org/way/208354177","IPSWICH_CATHOLIC_ST_PANCRAS_CHURCH_NOT_LEWES_OR_PRIMARY_SCHOOL"],["RG-D72F3B6A541B","AO-B35-L-GB-3C79E34199C6",50.84141,0.47796,"osm:way:247436295","https://www.openstreetmap.org/way/247436295","BEXHILL_ST_MARY_MAGDALENE_CATHOLIC_CHURCH_SEA_ROAD_NOT_PRIMARY_SCHOOL"],["RG-C590DDBF457B","AO-B35-L-GB-E397B08D83B5",50.7267,-1.1624,"independent:historicengland-ryde-st-mary-1216915","https://gb.britishlistedbuildings.co.uk/101216915-roman-catholic-church-of-the-sorrowful-and-immaculate-heart-of-mary-church-of-st-mary-with-presbytery-and-later-additions-including-the-convent-school-chapel-wing-and-linking-corridor-ryde/maps","RYDE_ST_MARY_SORROWFUL_IMMACULATE_HEART_CATHOLIC_GRADE_II_STAR_CHURCH_SITE"],["RG-7B42F1D3D009","AO-B35-L-GB-0E12255B1ADC",53.42229,-2.98106,"osm:way:511920523","https://www.openstreetmap.org/way/511920523","LIVERPOOL_SCOTLAND_ROAD_ST_ANTHONY_OF_EGYPT_PRESENT_CHURCH_NOT_OLD_FRENCH_CHAPEL"],["RG-61400C082CBD","AO-B34-L-GB-FBEA1CBECB3C",51.558336,-1.778221,"independent:outdooractive-swindon-holy-rood-rc-church","https://www.outdooractive.com/en/poi/south-west-england/holy-rood-church/807852784/","SWINDON_MODERN_ROMAN_CATHOLIC_HOLY_ROOD_NOT_MEDIEVAL_ANGLICAN_RUIN_AT_THE_LAWN"],["RG-B70-2945A96ECEDE","AO-RSCH-B70-2945A96ECEDE",47.731471,-117.341344,"independent:roadtrippers-mount-saint-michael-spokane","https://maps.roadtrippers.com/us/spokane-wa/services/mount-saint-michael","SPOKANE_CHURCH_AND_PRIORY_CAMPUS_NAMED_SITE_NOT_INDIVIDUAL_CHURCH_ENTRANCE"],["RG-8D3022768BBE","AO-B50-CMRI-US-E029222CB9E",34.37722,-118.52778,"osm:node:358856980","https://www.openstreetmap.org/node/358856980","SANTA_CLARITA_QUEEN_OF_ANGELS_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-3794BDA9486C","AO-B34-L-GB-39D703767B72",53.45369,-2.73206,"osm:way:205713344","https://www.openstreetmap.org/way/205713344","ST_HELENS_HOLY_CROSS_ST_HELEN_CATHOLIC_GRADE_II_CHURCH_NOT_HOLY_CROSS_SCHOOL"],["RG-6504A98F8FAF","AO-B34-L-GB-3731B7872282",53.4351,-3.0469,"independent:historicengland-dome-of-home-1390763","https://gb.britishlistedbuildings.co.uk/101390763-church-of-ss-peter-paul-and-st-philomena-new-brighton-ward","NEW_BRIGHTON_DOME_OF_HOME_ICKSP_GRADE_II_CATHOLIC_CHURCH_NOT_OTHER_SAINT_PETER"],["RG-C4C55798214B","AO-B34-L-GB-C65B3A265C8E",50.7215,-3.5308,"independent:historicengland-exeter-sacred-heart-1223756","https://historicengland.org.uk/listing/the-list/list-entry/1223756","EXETER_SACRED_HEART_ROMAN_CATHOLIC_LISTED_CHURCH_NOT_ANGLICAN_CATHEDRAL"],["RG-8CE89C6BF2BC","AO-B35-L-GB-AEED1FE227F3",52.07462,1.13053,"osm:way:359820601","https://www.openstreetmap.org/way/359820601","IPSWICH_ST_MARY_MAGDALENE_ROMAN_CATHOLIC_CHURCH_NOT_ST_PANCRAS_IPSWICH"],["RG-850C2D798754","AO-B35-L-GB-5F111783D2EF",52.454,1.559,"independent:historicengland-beccles-st-benets-1478482","https://historicengland.org.uk/listing/the-list/list-entry/1478482","BECCLES_ST_BENETS_ROMAN_CATHOLIC_MINSTER_NOT_ST_BENETS_PRIMARY_SCHOOL"]];
+assert.equal(sites.length,14);
+for(const [anchor,id,lat,lng,ref,url,scope] of sites){
+ const frozen=index.records.find(r=>r[0]===anchor);
+ assert.ok(frozen?.[1].includes(id),"Frozen original source identity required: "+anchor);
+ assert.ok(!baseline.some(r=>frozen[1].includes(r.source_id)),"Source already pinned: "+anchor);
+ const item=all.find(r=>r.physical_group_id===anchor);
+ assert.ok(item&&item.source_id===id&&item.source_ids.includes(id));
+ assert.equal(item.title,frozen[2]);
+ assert.equal(item.country_code,frozen[3]);
+ assert.equal(item.map_publishable,true);
+ assert.equal(item.map_state,"PROVISIONAL");
+ assert.equal(item.geo.lat,lat);
+ assert.equal(item.geo.lng,lng);
+ assert.equal(item.geo.source_ref,ref);
+ assert.equal(item.geo.source_url,url);
+ assert.equal(item.geo.review_scope,scope);
+ assert.equal(item.geo.precision,"site");
+ assert.equal(item.geo.approximate,true);
+ assert.ok(item.source_links.some(x=>x.url===url));
+ assert.ok(item.source_links.some(x=>frozen[6].includes(x.url)));
+ assert.equal(item.status,"RESEARCH-LISTED · MASS UNVERIFIED");
+ assert.equal(item.celebration_evidence,undefined);
+ assert.equal(item.sections.length,0);
+ assert.equal(item.actions.length,0);
+ assert.ok(!item.cover_media);
+ for(const lang of ["en","fr"]){
+  const card=renderDirectoryVenueCard(item,lang);
+  const detail=renderTlmChurchProfile(item,lang);
+  assert.ok(card.includes('data-explore-item="'+item.item_id+'"'));
+  assert.ok(detail.includes('data-tlm-church-profile="'+id+'"'));
+  assert.ok(detail.includes("aoTlmProfileSources"));
+  assert.doesNotMatch(detail,/data-tlm-celebration-evidence=/);
+ }
+}
+const held=all.find(x=>x.physical_group_id==="RG-18E53EDD9E9C");
+assert.ok(held&&!held.map_publishable,"San Jose naming conflict remains held");
+const poi=all.find(x=>x.physical_group_id==="RG-8D3022768BBE");
+assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building outline")));
+const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
+assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
+assert.equal(all.length,2582);
+assert.equal(all.filter(x=>x.map_publishable).length,2070);
+const counts=tlmSiteEvidenceCounts(all);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:264,SOURCE_PIN:1806,ADDRESS_ONLY:512});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,512);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,264);
+console.log("PASS TLM batch 12: fourteen reviewed source-identities, 2070 mapped, 512 unpinned; no invented Mass or image rights");
