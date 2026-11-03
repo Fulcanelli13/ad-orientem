@@ -108,7 +108,7 @@ def verify_candidate(row):
         "license":row["source_license"],"license_url":row["license_url"],
         "rights_verified":True,"subject_verified":True,"crop_reviewed":True,
         "photographed_at":row["date"],"reviewed_at":"2026-11-03",
-        "review_method":"Existing user Round 1 KEEP; original selected Commons source documented in A100/B16 archive; source author's public Commons licence and photograph pixels checked; source SHA1 and archival dHash verified; original sacred object and underlying-work period independently sourced. No substitute image selected.",
+        "review_method":"Existing user Round 1 KEEP; exact original Commons title and SHA1 pinned in B10/A100 archival metadata. Current original SHA1, Commons photo licence, dimensions, exact sacred object and historic artwork date independently checked; original archived 1920px preview bytes were not recovered or visually rehashed. No substitute photograph selected.",
         "underlying_work_source_url":row["underlying_work_source_url"],
         "changes_en":"Whole original photo resized to fit 1,600 pixels and encoded as WebP; no crop, recolouring or compositing.",
         "changes_fr":"Photographie originale réduite à 1 600 pixels au maximum et convertie en WebP ; aucun recadrage, changement de couleurs ni montage.",
