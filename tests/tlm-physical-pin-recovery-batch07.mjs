@@ -157,11 +157,11 @@ for(const [group,sourceId,lat,lng,sourceRef] of sites){
 }
 assert.equal(all.length,2582);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:250,SOURCE_PIN:1806,ADDRESS_ONLY:526});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,526);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,250);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:264,SOURCE_PIN:1806,ADDRESS_ONLY:512});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,512);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,264);
 const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
 const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
 assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
  "Do not reintroduce duplicate research marker for an already mapped Cagliari basilica");
-console.log("PASS TLM pin recovery batch 7: 15 evidence-locked site pins, 2,056 mapped, 526 unpinned, no inferred Mass or image rights");
+console.log("PASS TLM pin recovery batch 7: 15 evidence-locked site pins, 2,070 mapped, 512 unpinned, no inferred Mass or image rights");
