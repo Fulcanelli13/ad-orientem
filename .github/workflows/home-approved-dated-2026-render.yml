@@ -3,6 +3,10 @@ on:
   pull_request:
     paths:
       - "src/home/approved-dated-artwork-2026.js"
+      - "src/home/annual-home-artwork-2026.js"
+      - "src/home/approved-2026-seasonal-reuse.js"
+      - "data/artwork/home-2026-annual-release-census.v1.json"
+      - "tests/home-2026-annual-artwork-coverage.mjs"
       - "src/home/approved-2026-other-date-previews.js"
       - "src/calendar/approved-class-i-heroes-2026.js"
       - "src/home/presentation.js"
@@ -28,6 +32,9 @@ jobs:
       - name: Validate authoritative Home artwork resolver and old galleries
         run: |
           node --check src/home/approved-dated-artwork-2026.js
+          node --check src/home/annual-home-artwork-2026.js
+          node --check src/home/approved-2026-seasonal-reuse.js
+          node tests/home-2026-annual-artwork-coverage.mjs
           node --check src/home/approved-2026-other-date-previews.js
           node --check src/home/c3-gallery.js
           node --check src/home/presentation.js
@@ -39,7 +46,7 @@ jobs:
   actual-home-phone-render:
     needs: exact-date-source-contract
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -47,12 +54,12 @@ jobs:
           node-version: "22"
       - run: npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
       - run: npx playwright install --with-deps chromium
-      - name: Navigate to actual 1962 date and decode approved painting in H7 Home
+      - name: Navigate through 90 actual 1962 dated and seasonal examples in H7 Home
         run: node tests/home-approved-dated-2026-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: approved-2026-date-art-actual-home-phone
+          name: approved-2026-annual-art-actual-home-phone
           path: artifacts/home-approved-dated-2026-browser/
           retention-days: 14
           if-no-files-found: warn
