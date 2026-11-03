@@ -18,9 +18,10 @@ const paths=[
  "artifacts/sacred-art-2026/26-existing-sources-reconciliation.json",
  "data/artwork/research-operational-989.v1.json",
  "data/artwork/research-source-records-3205.v1.json",
- "data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json"
+ "data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json",
+ "data/artwork/2026-prior-date-artwork-evidence.v1.json"
 ];
-const [full,reuse,gaps48,gaps26,gallery,sources,photoReviews]=await Promise.all(paths.map(read));
+const [full,reuse,gaps48,gaps26,gallery,sources,photoReviews,prior]=await Promise.all(paths.map(read));
 assert.equal(full.dates.length,365);
 assert.equal(full.stats.sourceResolvedGospels,355);
 assert.equal(gaps48.totals.provisionalWithArtworkLead,339);
@@ -28,6 +29,7 @@ assert.equal(gaps26.totals.datesWithAnyProvisionalArtLead,362);
 assert.equal(gallery.works.length,989);
 assert.equal(sources.records.length,3205);
 assert.equal(photoReviews.rows.length,60);
+assert.equal(prior.days.length,365);
 assert.deepEqual(photoReviews.counts,{reviewed:60,approve:25,reject:35,unreviewed:0});
 const groups=new Map(gallery.works.map(w=>[w.workGroupId,w]));
 const records=new Map(sources.records.map(w=>[w.recordId,w]));
@@ -35,6 +37,7 @@ const reuseMap=new Map(reuse.proposals.filter(r=>r.selection).map(r=>[r.date,r])
 const gap48Map=new Map(gaps48.outstandingDates.filter(r=>r.candidates.length).map(r=>[r.date,r]));
 const gap26Map=new Map(gaps26.dates.filter(r=>r.candidates.length).map(r=>[r.date,r]));
 const photoMap=new Map(photoReviews.rows.map(x=>[x.museumKey,x]));
+const priorByDate=new Map(prior.days.map(x=>[x.date,x]));
 const approvals=new Map(APPROVED_CLASS_I_2026.map(x=>[x.date,x]));
 assert.equal(approvals.size,10);
 const modulePhotos=Object.entries(RELEASED_MODULE_PAINTINGS);
@@ -58,6 +61,16 @@ const order={
 };
 function candidate(date,c,lane){
  if(c.applicableToSelectedGospel===false)return null;
+ // 365 matcher retained the positional external source ID, but originally
+ // lost title/artist/page because historical batches used different fields.
+ // Restore the ORIGINAL source row, never invent a replacement.
+ let originalResearch=null;
+ const external=/^ALREADY_RESEARCHED_EXTERNAL_SOURCE_LEAD:(2026-\d\d-\d\d):(\d+)$/.exec(c.sourceRecordId??"");
+ if(external){
+  assert.equal(external[1],date);
+  originalResearch=priorByDate.get(date)?.externalExistingResearch?.[Number(external[2])]??null;
+  assert.ok(originalResearch,"Missing frozen original external painting source: "+c.sourceRecordId);
+ }
  const groupId=c.groupId??c.workGroupId??c.selection?.workGroupId??null;
  const w=groups.get(groupId);
  if(groupId)assert.ok(w&&!bad(w),"Missing or excluded artwork group: "+date+" "+groupId);
@@ -65,10 +78,13 @@ function candidate(date,c,lane){
  if(w)assert.ok(original?.isOperationalCandidate &&
    !["REJECT","PLACEMENT_REJECT"].includes(original.originalUserDecision),
    "Preferred artwork record rejected: "+groupId);
- const title=c.title??c.artworkTitle??c.selection?.title??w?.artworkTitle??null;
- const artist=c.artist??c.selection?.artist??w?.artist??null;
+ const title=c.title??c.artworkTitle??c.selection?.title??w?.artworkTitle??
+   originalResearch?.title??originalResearch?.titleAsSource??originalResearch?.titleAsCatalogued??null;
+ const artist=c.artist??c.selection?.artist??w?.artist??
+   originalResearch?.artist??originalResearch?.artistAsSource??originalResearch?.artistAsCatalogued??null;
  const sourceUrl=norm(c.originalSource??c.sourceUrl??c.selectedSourceUrl??
-   c.selection?.sourceUrl??w?.selectedSourceUrl??null)||null;
+   c.selection?.sourceUrl??w?.selectedSourceUrl??
+   originalResearch?.sourceUrl??originalResearch?.sourceObjectUrl??originalResearch?.sourceObjectPage??null)||null;
  const key=(w?.preferredRecordId??groupId??"").replace(/^(REVIEW|CANONICAL)::/,"");
  const photoReview=photoMap.get(key)??null;
  const historicalPradoSource=/museodelprado\.es/i.test(sourceUrl??"");
@@ -99,6 +115,21 @@ function candidate(date,c,lane){
   title,artist,artworkId:c.artworkId??c.canonicalArtworkId??w?.canonicalArtworkId??null,
   workGroupId:groupId,preferredSourceRecordId:w?.preferredRecordId??null,
   researchLane:lane,evidenceKind,sourceUrl,
+  preservedOlderResearch:originalResearch?{
+   originalResearchSourceId:originalResearch.researchSourceId??null,
+   institution:originalResearch.sourceInstitution??null,
+   physicalAccession:originalResearch.sourceObjectAccession??
+    originalResearch.originalObjectId??null,
+   medium:originalResearch.mediumAsSource??originalResearch.mediumAsCatalogued??null,
+   earlierImageDimensions:originalResearch.observedSourcePixels??null,
+   sourceIdentityOrQualityHolds:originalResearch.verificationHolds??
+    originalResearch.sourceRelevanceAndHolds??
+    originalResearch.sourceRelevanceNotes??null,
+   originalFileAcquiredInPriorResearch:Boolean(originalResearch.originalFileDownloaded??
+    originalResearch.originalFileAcquired??originalResearch.sourceOriginalDownloaded),
+   sourceReleaseAllowedInPriorResearch:Boolean(originalResearch.rotationEligible??
+    originalResearch.homeRotationEligible)
+  }:null,
   priorResearchSourceIsPradoHeld:historicalPradoSource,
   preservedUserReviewStates:w?.userReviewStates??[],
   preservedDateApproval:previouslyDateApproved,
@@ -190,6 +221,7 @@ const report={
   dateAndGospel:"verified 365 selected-Proper audit",
   candidateSource:"365 / 104 / 48 / 26 research audit pipeline",
   imageMetadata:"989-group operational research and 3205 original source records",
+  historicResearch:"2026-prior-date-artwork-evidence.v1.json (rejoins prior external source index)",
   humanMuseumPhotoDecisions:"2026-11-02 60 source-object preview decisions",
   releasedModuleImages:"src/art/released-module-paintings.v1.js"
  },
@@ -210,6 +242,8 @@ const report={
     x.gospel.status==="ACTUAL_SELECTED_PROPER_GOSPEL_VERIFIED").length,
   datesWithResearchLead:rows.length,
   totalCandidateSourceRows:sourcesCount,
+  leadingCandidatesWithNamedPainting:rows.filter(x=>Boolean(x.firstPhotoAuditCandidate.title)).length,
+  leadingCandidatesWithSourcePage:rows.filter(x=>Boolean(x.firstPhotoAuditCandidate.sourceUrl)).length,
   leadingCandidatesWithOperationalGroup:groupFirst,
   leadingCandidatesMissingOperationalGroup:59-groupFirst,
   datesWithHistoric60PhotoApprovalAmongCandidates:photoApprovedDayLeads,
