@@ -264,8 +264,10 @@ try{
    assert.equal(await page.locator(timeline).count(),0,"Open silence acquired an unwanted stage rail");
    assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure").count(),3);
    assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure[open]").count(),0);
-   assert.equal(await page.locator(sel+" [data-p435930-timer]").count(),0,
-    "Untimed open Adoration must not expose an active timer");
+   assert.equal(await page.locator(sel+" [data-ao-adoration-timer]").evaluate(el=>el.open),false,
+    "Untimed open Adoration must keep the optional clock disclosure closed");
+   assert.equal(await page.locator(sel+" [data-p435930-timer]:visible").count(),0,
+    "Untimed open Adoration must not expose running or prompted timers");
    await page.locator(sel+" [data-p435930-ador-quiet-enter]").click();
    const quietOpen=page.locator(sel+'.aoAdorationQuietScreen[aria-modal="true"]');
    await quietOpen.waitFor({state:"visible",timeout:10000});
