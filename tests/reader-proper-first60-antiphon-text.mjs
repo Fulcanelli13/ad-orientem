@@ -11,16 +11,32 @@ const audit=auditFirst60CompleteAntiphonText({packet:source});
 assert.deepEqual(audit,original,"Antiphon audit drifted from immutable first-60 source pack");
 assert.equal(audit.schema,FIRST60_TEXT_GATE_SCHEMA);
 assert.equal(audit.counts.audited,60);
-assert.equal(audit.counts.fullAntiphonLexicalEqual,51);
-assert.equal(audit.counts.literalDifferenceHolds,9);
+assert.equal(audit.counts.fullAntiphonLexicalEqual,48);
+assert.equal(audit.counts.literalDifferenceHolds,12);
 assert.equal(audit.counts.byFamily.in.exact,18);
-assert.equal(audit.counts.byFamily.of.exact,16);
-assert.equal(audit.counts.byFamily.co.exact,17);
+assert.equal(audit.counts.byFamily.of.exact,14);
+assert.equal(audit.counts.byFamily.co.exact,16);
 assert.deepEqual(audit.textDifferenceHolds.map(x=>x.scoreId).sort(),[
  "GREGOBASE-42","GREGOBASE-67","GREGOBASE-211",
  "GREGOBASE-339","GREGOBASE-616","GREGOBASE-937",
- "GREGOBASE-1071","GREGOBASE-1127","GREGOBASE-1145"
+ "GREGOBASE-1071","GREGOBASE-1127","GREGOBASE-1145",
+ "GREGOBASE-1319","GREGOBASE-1363","GREGOBASE-230"
 ].sort());
+// The current 2026 selected-source crosswalk contains three additional genuine
+// wording differences. Never silently normalize them into musical approval.
+const newHolds=[
+ ["GREGOBASE-1319","nominis tui in omni","nominis tui domine in omni"],
+ ["GREGOBASE-1363","in terra nomine iob","in terra hus nomine iob"],
+ ["GREGOBASE-230","servasti vinum bonum","servasti bonum vinum"]
+];
+for(const [id,gabc,source] of newHolds){
+ const row=audit.textDifferenceHolds.find(x=>x.scoreId===id);
+ assert.ok(row,"Current selected-source variant must remain on hold: "+id);
+ assert.ok(row.evidence.originalGabcAntiphonNormalized.includes(gabc));
+ assert.ok(row.evidence.selected1962AntiphonNormalized.includes(source));
+ assert.equal(row.publicScore,false);
+ assert.equal(row.userEditorialApproval,false);
+}
 assert.ok(audit.scoreEvidence.every(x=>!x.publicScore&&
  !x.complete1962GabcMusicalUnderlayVerified&&
  !x.original1961PitchAndNeumeFacsimileVerified&&
@@ -45,4 +61,4 @@ const incomplete=structuredClone(source);
 incomplete.candidates.pop();
 assert.throws(()=>auditFirst60CompleteAntiphonText({packet:incomplete}),
  /SOURCE_FIRST_60_EDITORIAL_PACKET_INVALID/);
-console.log("PASS complete antiphon-text parity: 51 exact of 60, 9 source variants held; zero printed-note or public-score approvals");
+console.log("PASS complete antiphon-text parity: 48 exact of 60, 12 source variants held; zero printed-note or public-score approvals");

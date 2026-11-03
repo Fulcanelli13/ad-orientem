@@ -12,22 +12,22 @@ const x=buildFirst60PrintedMusicEvidence({packet,latinAudit});
 assert.deepEqual(x,written,"Printed-music review drifted from exact source and Latin audit");
 assert.equal(x.schema,PROPER_PRINT_GATE_SCHEMA);
 assert.equal(x.counts.scores,60);
-assert.equal(x.counts.fullLatinTextMatches,51);
-assert.equal(x.counts.textVariantHolds,9);
-assert.equal(x.counts.noteGroups,3453);
+assert.equal(x.counts.fullLatinTextMatches,48);
+assert.equal(x.counts.textVariantHolds,12);
+assert.equal(x.counts.noteGroups,3557);
 // A clef identifies the staff and MUST NOT become a sung neume token.
 const fClef=sourceNoteGroupInventory("name: f clef sample;\n%%\n(f3) Mi(f)hi(g) (::)");
 assert.equal(fClef.noteBearingSourceTokens,2);
 assert.equal(fClef.nonMusicalTokens,0);
-assert.equal(x.counts.textMatchedScoreNoteGroups,2976);
-assert.equal(x.counts.pendingFolioImageComparisons,51);
+assert.equal(x.counts.textMatchedScoreNoteGroups,2887);
+assert.equal(x.counts.pendingFolioImageComparisons,48);
 assert.equal(x.counts.sourceImagesIndependentlyCompared,0);
 assert.equal(x.counts.completePrintedMusicVerified,0);
 assert.equal(x.counts.signedEditorialApprovals,0);
 assert.equal(x.counts.newlyPublicScores,0);
 assert.equal(x.firstTwelveForPrintComparison.length,12);
 assert.equal(new Set(x.firstTwelveForPrintComparison).size,12);
-assert.equal(x.allScores.filter(r=>!r.textExact).length,9);
+assert.equal(x.allScores.filter(r=>!r.textExact).length,12);
 assert.ok(x.allScores.every(r=>r.publication==="EDITORIAL_HOLD_NOT_PUBLIC"&&
  !r.completePrintedMusicVerified&&!r.exactReaderCueAndSettingVerified&&
  !r.signedEditorialApproval&&r.noteGroups.length>0&&
@@ -69,8 +69,8 @@ const withVariant={...empty,evidence:{
  [variant.scoreId+"|"+variant.scoreGabcSha256]:
  {publicScore:false,editorialApproval:false,reviewerObservationOnly:true}}};
 assert.throws(()=>buildFirst60PrintedMusicEvidence({
- packet,latinAudit,observations:withVariant}),/NINE_TEXT_VARIANTS_CANNOT_RECEIVE_PRINT_APPROVAL/);
+ packet,latinAudit,observations:withVariant}),/TEXT_VARIANTS_CANNOT_RECEIVE_PRINT_APPROVAL/);
 const unexpected={...empty,evidence:{["GREGOBASE-999|"+("0".repeat(64))]:allScore}};
 assert.throws(()=>buildFirst60PrintedMusicEvidence({
  packet,latinAudit,observations:unexpected}),/PRINT_OBSERVATION_UNKNOWN_OR_TAMPERED_SCORE_ID/);
-console.log("PASS: 51 score original-print evidence packets, 9 variant holds, 3453 GABC note groups, zero unauthorized musical approvals");
+console.log("PASS: 48 text-matched original-print evidence packets, 12 variant holds, 3557 GABC note groups, zero unauthorized musical approvals");

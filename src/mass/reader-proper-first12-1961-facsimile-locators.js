@@ -5,18 +5,18 @@ export const FIRST12_1961_FACSIMILE_SCHEMA=
  "ao-first12-gregorian-solesmes-1961-facsimile-locators-v1";
 const original=Object.freeze([
  // id, chant family, printed folio, authenticated source-page image number.
- [475,"in","392",434],
  [782,"co","362",404],
  [918,"co","59",85],
  [403,"in","57",83],
+ [475,"in","392",434],
  [1147,"of","59",85],
- [182,"of","362",404],
  [265,"of","79",105],
  [464,"co","386",428],
  [95,"co","265",307],
  [1136,"in","336",378],
  [1165,"in","360",402],
- [1271,"in","383",425]
+ [1271,"in","383",425],
+ [182,"of","362",404]
 ]);
 const continuations=new Map([
  // Four scores visibly continue on the next printed folio.
