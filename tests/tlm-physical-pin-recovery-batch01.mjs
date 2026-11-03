@@ -13,6 +13,13 @@ const published=projectPublishedProvisionalMassSites(
   projectPreliminaryR49(load("data/directory/preliminary-map-r49.v1.json")),
   load("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 const all=projectCL2PhysicalDirectory(published,physical);
+const adapterSource=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
+const pinRegistry=adapterSource.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
+const pinKeys=[...pinRegistry.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(x=>x[1]);
+assert.ok(pinKeys.length>=70,"New-site geography source contract unexpectedly disappeared");
+assert.equal(new Set(pinKeys).size,pinKeys.length,
+  "A second adjudication of the same physical site must not silently overwrite the existing pin");
+
 const newlyMapped=[
  ["RG-0A7D6FB130D8","AO-B34-L-GB-5FF0510590CE",51.5311,0.03808,"osm:way:351187849","UPTON_PARK_OUR_LADY_OF_COMPASSION_CATHOLIC_CHURCH_BUILDING_NOT_PRIMARY_SCHOOL"],
  ["RG-09724CA01972","AO-B35-L-GB-9311BCBCBE20",51.403138,-0.356546,"independent:elmbridge-st-barnabas-church","MOLESEY_ST_BARNABAS_1931_CATHOLIC_CHURCH_NOT_NEIGHBORING_HOUSES_OR_OTHER_PARISHES"],
