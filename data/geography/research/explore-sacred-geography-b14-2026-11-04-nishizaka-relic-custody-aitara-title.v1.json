@@ -1,0 +1,73 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B14_V1",
+  "research_date": "2026-11-04",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_place_count_last_fully_parsed": 530,
+    "main_blob_unchanged_since_B13": true,
+    "r70_queue_blob_sha": "89e7def5214b7a937153305651c95dbe92d02cec",
+    "r70_candidates": 750,
+    "historical_philippines_checkpoint": "347 Places; 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment; not current",
+    "new_canonical_ids": 0
+  },
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_sites": 0,
+    "provisional_new_sites": 0,
+    "held_questions": 2,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "records": [
+    {
+      "record_id": "SG-B14-JP-NISHIZAKA-RELIC-CUSTODY",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "PRIMARY_GUIDE_RESOLVES_CHURCH_RELIC_LOCATION_WITH_LIMITS",
+      "site": "Twenty-Six Martyrs Memorial / St Philip Church, Nishizaka, Nagasaki",
+      "summary_en": "A Nagasaki Catholic pilgrimage guide introduced by Jesuit museum director Renzo De Luca SJ states that authenticated bone relics of the three Jesuit martyrs—Saint Paul Miki, Saint James (Jacob) Kisai and Saint John of Goto—are kept in the sacristy of adjacent St Philip Church. The guide says they returned from the Philippines in 1962 after about 350 years. This resolves the location for the three specified relics in the guide's period, without proving their present-day display or public accessibility. The museum and church are distinct spaces within the same memorial complex.",
+      "summary_fr": "Un guide catholique de pèlerinage de Nagasaki, présenté par le directeur jésuite du musée Renzo De Luca, S.J., indique que des reliques osseuses authentifiées des trois martyrs jésuites — saint Paul Miki, saint Jacques Kisai et saint Jean de Gotō — sont conservées dans la sacristie de l'église Saint-Philippe voisine. Selon le guide, elles revinrent des Philippines en 1962 après environ 350 ans. Cette indication précise leur lieu de conservation à l'époque du guide, sans établir leur exposition actuelle ni l'accès public. Musée et église sont deux espaces distincts du complexe.",
+      "source_urls": [
+        "https://www.welcomekyushu.com/pamphlets/document/pamph_nagasaki03.pdf"
+      ],
+      "evidence": "Pilgrimage guide page St Philip Church; foreword by museum director; source is historical rather than real-time custodial inventory",
+      "holds": [
+        "Current reliquary placement and visitor access not confirmed",
+        "Do not infer all museum relics are in church sacristy"
+      ]
+    },
+    {
+      "record_id": "SG-B14-TL-AITARA-NATIONAL-TITLE-AND-2026-PILGRIMAGE",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_ACTIVE_PILGRIMAGE_CANONICAL_TITLE_DOCUMENT_HELD",
+      "site": "Our Lady of Aitara, Soibada, Timor-Leste",
+      "summary_en": "The Salesian Sisters' account of the October 2016 pilgrimage distinguishes the parish church's reinauguration from the pilgrimage to the hill chapel of Our Lady of Aitara. It records Bishop Basílio's statement that a Vatican permission for the national title was not yet obtained at that time, despite widespread use of 'national shrine'. The National University of Timor-Leste documents a fresh pilgrimage on 17 October 2026, reported 19 October. The 2016 statement cannot establish the canonical situation in 2026. Preserve the customary national designation with qualification pending the actual decree; do not conflate parish church, hill chapel and alleged apparition recognition.",
+      "summary_fr": "Le récit des Sœurs salésiennes du pèlerinage d'octobre 2016 distingue la réinauguration de l'église paroissiale du pèlerinage à la chapelle de Notre-Dame d'Aitara sur la colline. Il rapporte que, selon Mgr Basílio, l'autorisation vaticane pour le titre national n'était pas encore obtenue à cette date, malgré l'usage courant de « sanctuaire national ». L'Université nationale du Timor-Leste atteste un nouveau pèlerinage le 17 octobre 2026, relaté le 19 octobre. Le propos de 2016 ne permet pas de conclure sur le statut canonique en 2026. Conserver l'appellation usuelle avec réserve, sans confondre église paroissiale, chapelle de la colline et reconnaissance d'une apparition.",
+      "source_urls": [
+        "https://www.fmatin.org/wpn/peregrinasaun-ba-santuario-nacional-nossa-senhora-de-aitara/",
+        "https://untl.edu.tl/noticias/untl-halo-peregrinasaun-ba-nossa-senhora-aitara-iha-soibada/",
+        "https://tatoli.tl/2019/12/02/paroku-soibada-iha-inisiativa-konserva-nossa-senora-aitara-sai-fatin-orasaun/"
+      ],
+      "holds": [
+        "Original current national-shrine decree not obtained",
+        "Exact hill chapel entrance and 2026 routine Mass times not verified",
+        "Apparition claims are devotional tradition, not approved supernatural finding"
+      ]
+    }
+  ],
+  "next_targets": [
+    "Kattimahana St Anne: diocesan decree and annual pilgrimage",
+    "Nishizaka: current Jesuit custodian reliquary location",
+    "Aitara: current ecclesiastical title decree",
+    "Trà Kiệu: distinct parish/hill entrance evidence",
+    "Cupey: current shrine building completion",
+    "Dili and Tianjin unresolved identity holds"
+  ],
+  "policy": [
+    "No canonical Place mutations",
+    "No fabricated coordinates, routes or hours",
+    "No publishing, merging or deployment",
+    "No expenditure"
+  ]
+}
