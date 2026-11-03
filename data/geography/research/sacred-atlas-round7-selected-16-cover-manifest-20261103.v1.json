@@ -1,0 +1,302 @@
+{
+  "schema": "AO_SACRED_ATLAS_PHASE_B_ROUND7_SELECTED_COVER_RELEASE_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_PLACE_COVERS_ONLY",
+  "baseline": {
+    "canonical_places": 530,
+    "approved_covers": 333,
+    "missing_covers": 197,
+    "approved_gallery": 42,
+    "plan_rounds_completed": 6,
+    "plan_rounds_total": 28
+  },
+  "cohort": "16 existing first-choice user-selected Photo Finder exact sanctuary photos; source and rights verification required",
+  "selection_protection": "Reuses original rank-1 choices in 451 Place editorial decisions; never substitute, promote or re-review held sources; original rights and exact SHA-1 mandatory",
+  "source_pointers": [
+    "data/geography/research/photo-finder-20261030/decisions.json",
+    "data/geography/research/photo-finder-20261030/credits.csv",
+    "data/geography/approved-place-media.v1.json",
+    "data/geography/seed-registry.v1.json"
+  ],
+  "required_checks": [
+    "Exact first-choice Commons file and canonical Place",
+    "Current photo licence, original SHA1, MIME, original bytes and author",
+    "Subject verified as exact sanctuary; no copyrighted artwork substitution",
+    "SHA-256 verified WebP, bilingual place display",
+    "Existing 333 covers unchanged; gallery 42 unchanged; TLM Atlas untouched"
+  ],
+  "rows": [
+    {
+      "sequence": 1,
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "place_name": "Basilica di Santa Croce in Gerusalemme",
+      "reviewed_file": "File:Rome - Italy (November 2025) - 194.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ARome_-_Italy_(November_2025)_-_194.jpg",
+      "expected_original_sha1": "cdc1374c3e9bb28f3e76604db257daea09da501f",
+      "claimed_author": "Another Believer",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        4032,
+        3024
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 2,
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "place_name": "Basilica Sant'Ambrogio, Milan",
+      "reviewed_file": "File:Milan Sant'Ambrogio 016 4923.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AMilan_Sant'Ambrogio_016_4923.jpg",
+      "expected_original_sha1": "9b46169c2023407127fe0ceadf975b2b07db01d2",
+      "claimed_author": "Ludvig14",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        5997,
+        5138
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 3,
+      "place_id": "place:IT:santa-chiara-assisi",
+      "place_name": "Basilica di Santa Chiara, Assisi",
+      "reviewed_file": "File:Assisi - basilica di Santa Chiara - 2026-09-30 22-29-40 001.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AAssisi_-_basilica_di_Santa_Chiara_-_2026-09-30_22-29-40_001.JPG",
+      "expected_original_sha1": "971b75c37b45fada17069479412c94355bbf306f",
+      "claimed_author": "Terragio67",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6000,
+        4000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 4,
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "place_name": "Basilica Cattedrale di Catania",
+      "reviewed_file": "File:Catania BW 2025-04-25 15-15-28.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACatania_BW_2025-04-25_15-15-28.jpg",
+      "expected_original_sha1": "715df2aebc20c2cf3ddc46acea9aed6a4fb6be6c",
+      "claimed_author": "Berthold Werner",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        5823,
+        3872
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 5,
+      "place_id": "place:GR:saint-titus-heraklion",
+      "place_name": "Church of Saint Titus, Heraklion",
+      "reviewed_file": "File:Outside church Hagios Titos Heraklion.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AOutside_church_Hagios_Titos_Heraklion.jpg",
+      "expected_original_sha1": "6cf7de8e6763e2fb94413c9d46d3ac18efd062f6",
+      "claimed_author": "Jebulon",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4590,
+        2850
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 6,
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "place_name": "Church of the Holy Sepulchre — shared Christian sanctuary",
+      "reviewed_file": "File:Church of the Holy Sepulchre (29430612918).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AChurch_of_the_Holy_Sepulchre_(29430612918).jpg",
+      "expected_original_sha1": "e20ff97dee05d2a3259fe26385a9cf0a0c9c2926",
+      "claimed_author": "Gary Todd from Xinzheng, China",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        6000,
+        4000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 7,
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "place_name": "Basilica of the Transfiguration, Mount Tabor",
+      "reviewed_file": "File:Church of the Transfiguration (Mount Tabor), 2019 (01).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AChurch_of_the_Transfiguration_(Mount_Tabor)%2C_2019_(01).jpg",
+      "expected_original_sha1": "40969749ffa7694e460bc2cfd428d1149ddabb4c",
+      "claimed_author": "Bahnfrend",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6014,
+        4014
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 8,
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "place_name": "Basílica de Nuestra Señora de los Ángeles, Cartago",
+      "reviewed_file": "File:Basilica of Our Lady of the Angels, Cartago 01.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasilica_of_Our_Lady_of_the_Angels%2C_Cartago_01.jpg",
+      "expected_original_sha1": "8e8dfb7520dcbbb5cfdfddc3d782ad404529b125",
+      "claimed_author": "Bernard Gagnon",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4031,
+        2687
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 9,
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "place_name": "Basílica Santuario Nuestra Señora de los Milagros de Caacupé",
+      "reviewed_file": "File:Basílica de Caacupé.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABas%C3%ADlica_de_Caacup%C3%A9.jpg",
+      "expected_original_sha1": "22568147e0e4053cd3b040b1ceb1ec3769c9b324",
+      "claimed_author": "Garcia.dennis",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3078,
+        2465
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 10,
+      "place_id": "place:GT:basilica-santo-domingo-rosario-guatemala",
+      "place_name": "Basílica de Nuestra Señora del Rosario — Santo Domingo, Guatemala",
+      "reviewed_file": "File:Santo Domingo Church in Guatemala City, 2024. 11.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASanto_Domingo_Church_in_Guatemala_City%2C_2024._11.jpg",
+      "expected_original_sha1": "4e5ab446bf716cc55eb73dd4d6a3462f71ea9e44",
+      "claimed_author": "Nerdoguate",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        3659,
+        2020
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 11,
+      "place_id": "place:PH:manila-cathedral-intramuros",
+      "place_name": "Manila Cathedral Basilica — Immaculate Conception",
+      "reviewed_file": "File:Catedral de la Inmaculada Concepción, Manila, Filipinas, 2023-08-26, DD 21.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACatedral_de_la_Inmaculada_Concepci%C3%B3n%2C_Manila%2C_Filipinas%2C_2023-08-26%2C_DD_21.jpg",
+      "expected_original_sha1": "c14fcab676706bcd112671a2264e7de6eddd2663",
+      "claimed_author": "Diego Delso",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6213,
+        5695
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 12,
+      "place_id": "place:SC:immaculate-conception-cathedral-victoria",
+      "place_name": "Cathedral of the Immaculate Conception, Victoria",
+      "reviewed_file": "File:Cathedral of the Immaculate Conception, Seychelles 1.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACathedral_of_the_Immaculate_Conception%2C_Seychelles_1.jpg",
+      "expected_original_sha1": "377cd689f32d141c4097b6fc9447d1d746e31bdd",
+      "claimed_author": "Vasilii Martynov",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4000,
+        3000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 13,
+      "place_id": "place:LA:sacred-heart-cathedral-vientiane",
+      "place_name": "Sacred Heart Cathedral, Vientiane",
+      "reviewed_file": "File:Sacred Heart Cathedral, Vientiane 2.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASacred_Heart_Cathedral%2C_Vientiane_2.jpg",
+      "expected_original_sha1": "17b05181f1af20c9ffc77beebad632c7baeaec5a",
+      "claimed_author": "Mx. Granger",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        3072,
+        2942
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 14,
+      "place_id": "place:FR:basilique-notre-dame-marienthal",
+      "place_name": "Basilique Notre-Dame de Marienthal",
+      "reviewed_file": "File:Marienthal NotreDame03.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AMarienthal_NotreDame03.JPG",
+      "expected_original_sha1": "ddabe51b23e3433a7f3e386afc11394d4f88c1c4",
+      "claimed_author": "© Ralph Hammann - Wikimedia Commons",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3648,
+        2736
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 15,
+      "place_id": "place:KR:p48-sg-0628-210335697",
+      "place_name": "Myeongdong Cathedral (Cathedral of the Immaculate Conception)",
+      "reviewed_file": "File:Myeongdong Cathedral 6.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AMyeongdong_Cathedral_6.jpg",
+      "expected_original_sha1": "86b2dfaa0e4aaa8c68bdd57cb51b56035ee91e1c",
+      "claimed_author": "kallerna",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6000,
+        4010
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 16,
+      "place_id": "place:AT:p48-sg-0197-239345806",
+      "place_name": "Salzburger Dom (Cathedral of Saints Rupert and Virgil)",
+      "reviewed_file": "File:Salzburger Dom 2023-09-28 02.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASalzburger_Dom_2023-09-28_02.jpg",
+      "expected_original_sha1": "c193f76495633bf39a3cb9fd2c29487358461f20",
+      "claimed_author": "Leonhard Lenz",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        8384,
+        5612
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary exterior; independently verify photograph licence, identity, original SHA-1 and bytes; no unreviewed substitute",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    }
+  ]
+}
