@@ -5,6 +5,7 @@ import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {resolvePrayerEditorialArtwork,angelusOpeningArtworkSlot,prayerEditorialPublicationSummary} from "../src/pray/art-slot-map.v1.js";
+import {PRAYER_ART_EDITORIAL_SLOTS_V1} from "../src/pray/editorial-artwork-assignments.v1.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/prayer-r5c-bulk-artwork");
@@ -133,5 +134,19 @@ try{
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
 assert.equal(report.records.length,44,"Expected 11 exact-photo observations on each of four phone/locale combinations");
+const verified=new Set(report.records.map(x=>x.slot));
+assert.equal(verified.size,11,"Expected eleven distinct real reader positions in R5C");
+report.inventory=Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).map(id=>{
+ const match=resolvePrayerEditorialArtwork(id);
+ if(match.state!=="PUBLISHED_EXACT_PHOTO")return null;
+ return {slot:id,kind:match.editorial.kind,label:match.editorial.label,
+  artist:match.editorial.selected?.artist,title:match.editorial.selected?.title,
+  originalSource:match.photo.source,localImage:match.photo.image,
+  status:verified.has(id)?"R5C_VERIFIED_320_390_EN_FR":"PHOTO_CLEARED_NOT_TESTED_IN_R5C"};
+}).filter(Boolean);
+assert.equal(report.inventory.length,51,"Cleared-photo inventory count mismatch");
+assert.equal(report.inventory.filter(x=>x.status==="R5C_VERIFIED_320_390_EN_FR").length,11);
+report.statusCounts={r5cVerified:11,otherClearedNotRetestedInR5C:40,
+ approvedEditorialButNotCleared:267-51};
 await writeFile(resolve(out,"report.json"),JSON.stringify(report,null,2)+"\n");
 console.log("PASS: 51 exact-photo-cleared editorial positions retained; 11 real reader bindings × 320/390 × EN/FR = 44 complete phone/source/photo proofs");
