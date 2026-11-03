@@ -95,6 +95,9 @@ const rows=raw.map(original=>{
  const {date,sourcePath,principalId,principalTitle,proper,resolvedDate,
   resolverStatus,properStatus,error}=original;
  const row={date,principalId,principalTitle,sourcePath,
+  // Original resolver-owned flattened Latin: source-first research only.
+  selectedGradualLatin:proper?.gradual?.lat??proper?.gradual?.la??null,
+  selectedSequenceLatin:proper?.sequence?.lat??proper?.sequence?.la??null,
   sourceExistsInPinnedLatinTree:known.has(sourcePath),
   resolverStatus,properStatus,englishReaderReady:false,frenchReaderReady:false,
   status:null,tracks:[],notPublic:true};
