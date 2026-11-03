@@ -149,6 +149,12 @@ try{
     "Sacred places must reuse the existing approved-photo viewport sheet");
    await mapReady("heritage");
    await verifyDesktopAtlas("desktop Sacred Places map");
+   if(width>=900){
+    assert.equal(await root.locator(".aoMapcnEditorialStrip").isVisible(),false,
+     "Desktop Sacred Places must prioritise source-filtered places in the camera, not unrelated worldwide features");
+    assert.ok(await root.locator(".aoMapcnDiscoverEntries .aoMapcnDiscoverItem").count()>0,
+     "Desktop Sacred Places must retain its existing viewport-owned result cards");
+   }
    await capture("01b-sacred-prototype-sheet");
    await discoverTab.click();
    await page.waitForFunction(desktop=>{
