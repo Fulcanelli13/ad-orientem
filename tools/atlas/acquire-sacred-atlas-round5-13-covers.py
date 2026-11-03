@@ -77,6 +77,7 @@ def main():
     approved=[r["item"] for r in report["media_records"]]
     holds=preflight_holds+report["exceptions"]
     assert len(approved)+len(holds)==13
+    print("ROUND5_SOURCE_DIAGNOSTICS",json.dumps({"eligible_attempts":len(tasks),"accepted":len(approved),"preflight_holds":preflight_holds,"source_exceptions":report["exceptions"]},ensure_ascii=False),flush=True)
     assert len(approved)>=1, "No actual newly published covers"
     after=load(COVERS)
     assert len(after["items"])==312+len(approved)
