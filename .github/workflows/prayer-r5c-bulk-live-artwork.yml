@@ -9,6 +9,8 @@ on:
       - 'src/pray/released-module-photo-styles.js'
       - 'src/pray/novena-runtime.js'
       - 'tests/prayer-r5c-bulk-live-artwork-phone.mjs'
+      - 'tests/prayer-r5c-acquisition-queue.mjs'
+      - 'data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json'
       - '.github/workflows/prayer-r5c-bulk-live-artwork.yml'
   push:
     branches: [main]
@@ -19,6 +21,8 @@ on:
       - 'src/pray/released-module-photo-styles.js'
       - 'src/pray/novena-runtime.js'
       - 'tests/prayer-r5c-bulk-live-artwork-phone.mjs'
+      - 'tests/prayer-r5c-acquisition-queue.mjs'
+      - 'data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json'
       - '.github/workflows/prayer-r5c-bulk-live-artwork.yml'
 permissions:
   contents: read
@@ -38,6 +42,7 @@ jobs:
       - name: Preserve editorial, Angelus, St Joseph and Fr Mateo source contracts
         run: |
           node tests/prayer-artwork-267-integration.mjs
+          node tests/prayer-r5c-acquisition-queue.mjs
           node tests/angelus-folio-contract.mjs
           node tests/pray-st-joseph-seven-sorrows-b24.mjs
           node tests/pray-b29-night-home-adoration.mjs
