@@ -3382,11 +3382,13 @@ function renderFiveWounds(){
   '<div class="aoF07LanguageOptions" role="group" aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">'+
   ['en','fr','la'].map(code=>'<button type="button" data-p435930-five-language="'+code+'" aria-pressed="'+String(langCode===code)+'">'+
     esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>'+
-  '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav>':'')+
+  '')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
  esc(prayerLabel)+'</small>'+(CHAPLET_F07_VARIANTS_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
 
+ (CHAPLET_F07_VARIANTS_ENABLED?'<details class="aoF07WoundJump"><summary>'+esc(L('Choose another wound','Choisir une autre plaie'))+'</summary>'+
+  '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav></details>':'')+
  '<footer class="aoFiveWoundsActions">'+prev+
   (CHAPLET_F07_VARIANTS_ENABLED?'<output class="aoF07WoundDockCount" aria-label="'+esc(L('Chaplet position','Position dans le chapelet'))+'">'+(index+1)+' / 30</output>':'')+
   next+'</footer>'+
