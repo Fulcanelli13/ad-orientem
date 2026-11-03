@@ -107,9 +107,13 @@ try{
      '[data-ao-devo-card="'+id+'"]')||document.querySelector("#aoPray435930.open .aoP435930LibraryReader .aoP435930Prayer"),
      id,{timeout:10000});
     const observation=await page.evaluate(id=>{
-     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount"),
+     const surface=document.querySelector("#aoPray435930.open"),
+       mount=surface?.querySelector(".aoP435930Mount"),
        reader=mount?.querySelector(".aoP435930LibraryReader"),
-       all=[...(reader?.querySelectorAll(".aoP435930Source")||[])],
+       // Approved Holy Card / Choir source controls are placed in the
+       // header's real Aa menu, outside the reader body. Inspect the
+       // complete live source-owned Prayer sheet, not just the prayer card.
+       all=[...(surface?.querySelectorAll(".aoP435930Source")||[])],
        notices=all.flatMap(el=>[...el.querySelectorAll("[data-ao-prayer-source-review]")]),
        registry=globalThis.AO_PRAY_V435930?.sources?.[id];
      return {
@@ -119,8 +123,8 @@ try{
        direct:x.dataset.aoPrayerOriginalCorpusUrl,
        text:x.textContent.trim()
       })),
-      editionNotices:reader?.querySelectorAll(".aoP435930SourceEditionVariant").length||0,
-      alternate:reader?.querySelectorAll("[data-ao-prayer-alternate-witness]").length||0,
+      editionNotices:surface?.querySelectorAll(".aoP435930SourceEditionVariant").length||0,
+      alternate:surface?.querySelectorAll("[data-ao-prayer-alternate-witness]").length||0,
       sources:all.flatMap(el=>[...el.querySelectorAll("a.aoP435930SourceLink[href]")].map(a=>a.href)),
       inheritedUnqualifiedVerbatim:all.some(el=>[...el.querySelectorAll("small")].some(s=>s.textContent.trim()==="VERBATIM")),
       registry:registry?{
@@ -161,7 +165,7 @@ try{
     assert.equal(observation.editionNotices,row.collation.uiNotice?observation.sourceDrawers:0,
      id+" material bilingual edition difference was hidden or invented");
     if(row.collation.uiNotice){
-     const notice=await page.locator("#aoPray435930.open .aoP435930LibraryReader .aoP435930SourceEditionVariant").first().innerText();
+     const notice=await page.locator("#aoPray435930.open .aoP435930SourceEditionVariant").first().textContent();
      assert.equal(notice,row.collation.uiNotice[ui],
       id+" historical wording discrepancy does not match approved original inventory");
     }
