@@ -53,7 +53,8 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
   '<div class="aoClaudeHolyDeck"><div class="aoClaudeHolyLace'+(flipped?' flip':'')+
    '" role="button" tabindex="0" data-p435930-essential-card-turn aria-label="'+esc(flipped?'Turn to front of card':'Turn to prayer text')+'">'+
    '<div class="aoClaudeHolyInner">'+
-   '<div class="aoClaudeHolyFace aoClaudeHolyFront" aria-hidden="'+String(flipped)+'"><div class="aoClaudeHolyPlate">'+image+'</div>'+
+   '<div class="aoClaudeHolyFace aoClaudeHolyFront" aria-hidden="'+String(flipped)+'"><div class="aoClaudeHolyPlate"'+
+    (image?' data-ao-editorial-slot="COV-'+esc(id)+'" data-ao-editorial-source="released-exact"':'')+'>'+image+'</div>'+
    '<div class="aoClaudeHolyTitle"><small lang="la">'+esc(latinIncipit)+'</small>'+
     '<h3>'+esc(title||id)+'</h3></div></div>'+
    '<div class="aoClaudeHolyFace aoClaudeHolyBack" aria-hidden="'+String(!flipped)+'"><div class="aoClaudeHolyOrn">✠</div>'+
