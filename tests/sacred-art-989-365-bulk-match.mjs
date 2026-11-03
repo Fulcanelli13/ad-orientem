@@ -4,6 +4,18 @@ const read=relative=>JSON.parse(readFileSync(new URL("../"+relative,import.meta.
 const gallery=read("data/artwork/research-operational-989.v1.json");
 const source=read("data/artwork/research-source-records-3205.v1.json");
 const prior=read("data/artwork/2026-prior-date-artwork-evidence.v1.json");
+const duplicate=read("data/artwork/research-prior-duplicate-decisions.v1.json");
+assert.equal(duplicate.reviewGroups.length,18);
+assert.equal(duplicate.reviewedHumanDecisions.length,4);
+assert.equal(duplicate.counts.automaticExactSourceAliases,12);
+assert.equal(duplicate.counts.identitiesMerged,0);
+const sourceIds=new Set(source.records.map(x=>x.recordId));
+for(const decision of duplicate.reviewedHumanDecisions){
+ assert.ok(sourceIds.has(decision.preferredSourceRecord),
+  "Existing preferred source photo missing from consolidated archive");
+ assert.ok(decision.allRecordsRetained);
+}
+
 const current=read("data/calendar/research/2026-calendar-gospel-home-artwork-source-crosswalk.v1.json");
 const report=read("artifacts/sacred-art-2026/365-existing-gallery-bulk-match.json");
 assert.equal(gallery.works.length,989);
