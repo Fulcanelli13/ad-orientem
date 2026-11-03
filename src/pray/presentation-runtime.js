@@ -1,4 +1,5 @@
 import "./confession-path-styles.js";
+import {renderConfessionContinuousExamination} from "./confession-continuous-examination.js";
 import "./prayer-door-mosaic-execution-styles.js";
 import "./stations-direct-access-styles.js";
 import "./five-wounds-chaplet-styles.js";
@@ -330,7 +331,7 @@ let ROSARY_FIFTEEN={active:false};
 // Only a source-launched exact Rosary object owns this temporary return receipt.
 let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
-function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard"}}
+function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard",reading:"cards"}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS},optionsOpen:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,nightStep:0,timer:null,timerEnd:0,quiet:false};
@@ -1876,6 +1877,9 @@ function confessionExaminationView(ex){
  const note=CONF.path==="regular"
   ?L("Four short groups cover all Ten Commandments. Pause to recall what you need to confess; no answers or sins are recorded.","Quatre groupes brefs couvrent les dix commandements. Prenez le temps de vous souvenir de ce que vous devez confesser ; aucune réponse ni aucun péché n'est enregistré.")
   :L("Read one step at a time. A diligent but reasonable examination is enough; the confessor can help with uncertainty.","Avancez étape par étape. Un examen diligent mais raisonnable suffit ; le confesseur peut vous aider en cas de doute.");
+ if(CONF.reading==='continuous')return `${guideNow(L('Examine your conscience','Examinez votre conscience'),note)}
+ ${renderConfessionContinuousExamination(cards,{french:isFr(),esc})}
+ ${confessionContritionPicker(L("Act of Contrition","Acte de contrition"))}`;
  return `${guideNow(L('Examine your conscience','Examinez votre conscience'),note)}
  ${confessionSingleCard(cards[pos],pos,cards.length,"exam")}
  ${pos===cards.length-1?confessionContritionPicker(L("Act of Contrition","Acte de contrition")):""}`;
@@ -1930,7 +1934,7 @@ function renderConfession(){
   cardSequence=confessionAfterCards();
   cardIndex=confessionStepAt(CONF.afterStep,cardSequence.length);
  }
- if(cardSequence){
+ if(cardSequence&&!(CONF.stage===1&&CONF.reading==='continuous')){
   const card=cardSequence[cardIndex];
   const title=card.kind==='questions'?card.title:isFr()?card.fr:card.en;
   const contritionArtwork=CONF.stage===2&&card.id==='contrition-penance'?
@@ -1949,14 +1953,17 @@ function renderConfession(){
  `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-thanks><summary>${esc(L('Optional thanksgiving prayer','Prière d’action de grâces facultative'))}</summary>
  <p>${esc(L('This is private thanksgiving after an actual Confession, not proof of absolution or a substitute for assigned penance.','Action de grâces personnelle après une confession réelle, non preuve de l’absolution ni substitut à la pénitence imposée.'))}</p>${guidePrayers([{id:'foundations_glory_be',kicker:L('Glory Be','Gloire au Père')}])}</details>`:'';
  const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
- const stageBoundary=CONF.stage===0||(cardSequence&&cardIndex===cardSequence.length-1);
+ const stageBoundary=CONF.stage===0||(CONF.stage===1&&CONF.reading==='continuous')||(cardSequence&&cardIndex===cardSequence.length-1);
  // A step button is warranted at a section boundary, not within an
  // examination/rehearsal card deck. Stage 2 -> After remains an explicit
  // user action; traversing the app must never imply sacramental absolution.
  const navigation=stageBoundary?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):CONF.stage===2?L('After Confession · when ready','Après la confession · lorsque vous êtes prêt'):CONF.stage===0?L('Begin examination','Commencer l’examen'):L('Continue to next section','Passer à la section suivante'))}</button></div>`:'';
+ const readingChoice=CONF.stage===1?'<nav class="aoConfessionReadingModes" role="group" aria-label="'+esc(L('Examination reading layout','Présentation de l’examen'))+'">'+
+  ['cards','continuous'].map(choice=>'<button type="button" data-p435930-conf-reading="'+choice+'" aria-pressed="'+String(CONF.reading===choice)+'">'+
+   esc(choice==='cards'?L('By section','Par section'):L('Read continuously','Lire sans interruption'))+'</button>').join('')+'</nav>':'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
  const stageEyebrow=`<small class="aoP435930ConfProgressLabel">${CONF.stage+1} ${esc(L('OF','SUR'))} ${stages.length} · ${esc(stages[CONF.stage])}</small>`;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -4483,9 +4490,15 @@ function onClick(e){
    CONF.examStep=0;CONF.riteStep=0;CONF.afterStep=0;
    return render();
  }
+ if(b.hasAttribute('data-p435930-conf-reading')&&view==='confession'&&CONF.stage===1){
+   const selected=b.dataset.p435930ConfReading;
+   if(selected!=='cards'&&selected!=='continuous')return;
+   CONF.reading=selected;
+   return render();
+ }
  if(b.matches('[data-p435930-conf-next]')){
    if(!CONF.path)return;
-   if(CONF.stage===1){
+   if(CONF.stage===1&&CONF.reading!=='continuous'){
      const count=confessionExaminationCards(CONF.path,confessionExtendedSections((isFr()?DATA.examFr:DATA.exam)?.sections,{path:CONF.path,french:isFr()})).length;
      if(CONF.examStep<count-1){CONF.examStep++;return render();}
    }

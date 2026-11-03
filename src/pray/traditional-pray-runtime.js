@@ -7,6 +7,7 @@ import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
 import "./choir-family-styles.js";
 import "./horarium-hours-styles.js";
 import {dailyUxPilotEnabled,renderDailyUxContinuous,renderDailyBookPills,renderDailyReaderOptions} from "./daily-ux-pilot.js";
+import "./daily-r3-access-styles.js";
 import "./traditional-pray-direct-b16-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
@@ -410,8 +411,11 @@ function renderMorningEvening(){
  const existingNav=`<nav class="aoDailyAccessNav" aria-label="${esc(L("Prayer navigation","Parcours des prières"))}"><button type="button" data-tp381-daily-mode="${guided?"list":direct?"list":"guided"}">${esc(guided?L("Choose a prayer","Choisir une prière"):direct?L("All prayers","Toutes les prières"):L("Pray in order","Prier dans l’ordre"))}</button></nav>`;
  const prefs=personalDailyPrefs();
  const editionPills=DAILY_UX_PILOT_ENABLED?renderDailyBookPills({edition:prefs.edition,L,esc}):"";
+ const quickRead=guided?'<button type="button" data-tp381-daily-quick="continuous" class="aoDailyContinuousShortcut">'+esc(L("Read continuously","Lire sans interruption"))+'</button>':
+   continuous?'<button type="button" data-tp381-daily-quick="guided" class="aoDailyContinuousShortcut">'+esc(L("Cards","Cartes"))+'</button>':'';
  const nav=DAILY_UX_PILOT_ENABLED&&!direct?
-  '<div class="aoDailyAccessNav" data-ao-hours-direct-index>'+
+  '<div class="aoDailyAccessNav aoDailyDirectChoices" data-ao-hours-direct-index>'+
+   quickRead+
    '<button type="button" data-tp381-daily-mode="'+(guided?'list':'guided')+'">'+
    esc(guided?L("Choose a prayer","Choisir une prière"):L("Pray in order","Prier dans l’ordre"))+
    '</button></div>'+renderDailyReaderOptions({mode:S.dailyMode,L,esc,omitBrowse:guided})
@@ -1059,7 +1063,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-daily-quick],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1093,9 +1097,9 @@ function handleClick(e){
     return;
   }
 
-  if(DAILY_UX_PILOT_ENABLED&&b.hasAttribute("data-tp381-daily-presentation")){
+  if(DAILY_UX_PILOT_ENABLED&&(b.hasAttribute("data-tp381-daily-presentation")||b.hasAttribute("data-tp381-daily-quick"))){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
-    const next=b.dataset.tp381DailyPresentation;
+    const next=b.dataset.tp381DailyPresentation||b.dataset.tp381DailyQuick;
     if(!["guided","continuous","list"].includes(next)||next===S.dailyMode)return;
     if(next==="guided"&&S.dailyMode==="list")S.guidedFromList=true;
     else S.guidedFromList=false;

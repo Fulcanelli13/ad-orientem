@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {renderConfessionContinuousExamination,CONFESSION_CONTINUOUS_SCHEMA} from "../src/pray/confession-continuous-examination.js";
 import {readFileSync} from "node:fs";
 import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,confessionRiteCards,confessionAfterCards,confessionPath,confessionStepAt,CONFESSION_TRADITIONAL_GUIDE_STEPS,CONFESSION_TRADITIONAL_PASTORAL_WITNESSES,CONFESSION_EXTENDED_QUESTIONS,CONFESSION_EXTENDED_EXAM_WITNESS,confessionExtendedSections} from "../src/pray/confession-paths.js";
 assert.deepEqual(Object.keys(CONFESSION_PATHS),["regular","returning","general"]);
@@ -97,3 +98,19 @@ assert.ok(presentation.includes("confessionRiteCards(CONF.path).findIndex(card=>
 assert.ok(presentation.includes("confessionRiteCards(CONF.path)[CONF.riteStep]?.id==='cross-and-blessing'"),"Sign-of-Cross cue must belong to its ritual step");
 assert.doesNotMatch(presentation,/data-p435930-exam="/,"Never collect marked sins");
 console.log("Confession quick, returning and optional general guidance contracts passed (5/13/14 examinations plus 9 pre-confessional role-labelled and 3 aftercare cards)");
+
+assert.equal(CONFESSION_CONTINUOUS_SCHEMA,"ao-confession-continuous-v1");
+const escExam=x=>String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+for(const path of ["regular","returning","general"]){
+ const exam=confessionExaminationCards(path,confessionExtendedSections(sourceSections,{path,french:false}));
+ const html=renderConfessionContinuousExamination(exam,{french:false,esc:escExam});
+ assert.equal((html.match(/data-ao-confession-source-card=/g)||[]).length,exam.length,
+  "Continuous examination must preserve every original section");
+ for(const card of exam){
+  assert.ok(html.includes('data-ao-confession-source-card="'+card.id+'"'));
+  for(const q of card.questions||[])assert.ok(html.includes(escExam(q)),
+   "Source question lost in continuous reading "+card.id);
+ }
+ assert.doesNotMatch(html,/<input|<textarea|contenteditable|localStorage|data-p435930-exam=/i,
+  "Never create stored marks, answer fields or fabricated sacramental actions");
+}
