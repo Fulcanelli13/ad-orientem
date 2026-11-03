@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem · First 60 Proper scores · print verification</title>
+<style>
+:root{color-scheme:dark;--bg:#0e1015;--panel:#191e27;--ink:#f2f0eb;--muted:#b7b9c2;--line:#343b48;--accent:#c5d6ec;--warning:#e1bc87}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.48 system-ui,sans-serif}header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;padding:20px clamp(12px,3vw,34px);border-bottom:1px solid var(--line)}
+h1{font:500 clamp(21px,2.4vw,30px) Georgia,serif;margin:3px 0}h2{font:500 19px Georgia,serif;margin:0 0 8px}
+small,.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.11em;font-size:11px;color:var(--accent)}
+.badge{font-size:12px;border:1px solid #8b6b3b;padding:8px 12px;border-radius:10px;color:var(--warning)}
+main{max-width:1800px;margin:auto;padding:18px clamp(12px,3vw,34px)}
+.toolbar{display:flex;align-items:end;gap:13px;flex-wrap:wrap;margin:4px 0 18px}
+label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+select,input,textarea,button{font:inherit;background:#252c37;color:var(--ink);border:1px solid #596579;border-radius:9px;padding:9px;max-width:100%}
+button{cursor:pointer}button:hover{background:#344255}button:disabled{cursor:not-allowed;opacity:.45}
+#fileInput{width:min(100%,350px)}#scoreSelect{min-width:260px;max-width:100%}
+.panes{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,1fr);gap:14px}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:14px;overflow:hidden;min-width:0}
+.panel .head{padding:13px 16px;border-bottom:1px solid var(--line)}.panel .body{padding:15px}
+#engraveViewport{background:#18222e;color:#e9edf5;border-radius:10px;padding:12px;min-height:250px;overflow-x:auto}
+#engraveViewport svg{filter:invert(1);max-width:100%;height:auto}
+#sourceLatin{white-space:pre-wrap;max-height:270px;overflow:auto;font:14px/1.55 Georgia,serif;padding:12px;border-radius:8px;background:#121720}
+#scoreGabc{max-height:220px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;color:#c4d3e6;font:12px/1.5 ui-monospace,monospace;background:#10151d;padding:12px;border-radius:8px}
+a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12px;font-size:13px}dt{color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.checks select{width:100%}textarea{width:100%;min-height:100px;resize:vertical}
+#groupSelect{width:100%;max-width:450px}#groupDescriptor{display:block;margin:8px 0}
+.actions{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:16px}
+#progress{color:var(--warning);font-size:13px}
+#fileHint{font-size:12px;color:var(--muted);margin:6px 0}
+@media(max-width:900px){.panes{grid-template-columns:1fr}.checks{grid-template-columns:1fr}}
+</style></head>
+<body><header><div><div class="eyebrow">Ad Orientem · internal musical collation</div>
+<h1>First 60 source-backed 1961 Proper scores</h1>
+<small>20 Introits · 20 Offertories · 20 Communions · 2026 selected-Mass source identities</small></div>
+<div class="badge">REVIEW ONLY · 0 PUBLIC APPROVALS</div></header>
+<main>
+<p class="muted">Load <code>2026-selected-proper-first60-print-review.json</code> from the annual Schola workflow artifact. This workbench displays the unchanged archived GABC and original selected 1962 Latin. Compare <strong>all printed notes, syllables, divisions and rhythmic marks</strong> with the original Solesmes folio using the source link. A matching first line does not certify the complete score. Exported observations never approve publication.</p>
+<div class="toolbar">
+<div><label for="fileInput">Load the authenticated editorial pack</label><input type="file" id="fileInput" accept=".json,application/json"><div id="fileHint">No pack loaded</div></div>
+<div><label for="partFilter">Chant family</label><select id="partFilter"><option value="">All three families</option><option value="in">Introit</option><option value="of">Offertory</option><option value="co">Communion</option></select></div>
+<div><label for="scoreSelect">2026 score candidate</label><select id="scoreSelect" disabled></select></div>
+<button id="prev" disabled>Previous</button><button id="next" disabled>Next</button>
+</div>
+<div class="panes">
+<section class="panel"><div class="head"><h2>Original GABC · local Gregorian engraving</h2><small id="scoreIdentity">Choose a source-verified candidate</small></div>
+<div class="body"><div id="engraveViewport" aria-label="Research-only Gregorian score rendering"></div><p id="engraveStatus" class="muted">No score loaded.</p>
+<h2>Unmodified archive transcription</h2><pre id="scoreGabc"></pre></div></section>
+<section class="panel"><div class="head"><h2>1962 selected Proper and original 1961 folio</h2><small id="sourceRole">Exact date, role and source owner</small></div>
+<div class="body"><dl>
+<dt>Score</dt><dd id="sourceId">—</dd><dt>1961 page</dt><dd id="pageRef">—</dd>
+<dt>2026 uses</dt><dd id="dateCount">—</dd>
+<dt>Selected source</dt><dd id="sourcePath">—</dd>
+<dt>Inherited from</dt><dd id="sourceOwner">—</dd>
+<dt>Source check</dt><dd id="sourcePrefix">—</dd>
+</dl><p><a id="scoreSource" target="_blank" rel="noopener noreferrer">Open GregoBase source and printed witnesses</a></p>
+<h2>Exact selected Latin paragraph</h2><div id="sourceLatin">Load editorial pack to begin.</div>
+</div></section>
+</div>
+<section class="panel" style="margin-top:16px"><div class="head"><h2>Independent printed-music review</h2><small>Per-score and per-note-group checks are observations only; exact source ownership still needs LIVE reader anchoring</small></div><div class="body">
+<div class="checks">
+<div><label for="pitch">Absolute pitch / staff position</label><select id="pitch"></select></div>
+<div><label for="neumes">Neume contours, joins, alterations</label><select id="neumes"></select></div>
+<div><label for="underlay">Complete Latin text and syllable underlay</label><select id="underlay"></select></div>
+<div><label for="rhythm">Divisions, repeats, mora, episemata</label><select id="rhythm"></select></div>
+<div><label for="use1962">1962 seasonal / liturgical usage variant</label><select id="use1962"></select></div>
+<div><label for="sourcePrint">Complete printed folio and systems compared</label><select id="sourcePrint"></select></div>
+</div>
+<h2>Individual original GABC note group</h2>
+<div class="toolbar"><div><label for="groupSelect">Source note-bearing group (never guessed printed location)</label><select id="groupSelect"></select></div></div>
+<small id="groupDescriptor"></small>
+<div class="checks">
+<div><label for="gPitch">Group printed pitch</label><select id="gPitch"></select></div>
+<div><label for="gNeumes">Group neume signs</label><select id="gNeumes"></select></div>
+<div><label for="gUnderlay">Group Latin syllable</label><select id="gUnderlay"></select></div>
+<div><label for="gRhythm">Group mora/episema</label><select id="gRhythm"></select></div>
+</div>
+<label for="reviewNotes">Exact discrepancy or uncertain print system and staff position</label>
+<textarea id="reviewNotes" placeholder="Folio, staff/system, source syllable, exact note or symbol. Do not edit the original GABC from this tool."></textarea>
+<div class="actions"><div id="progress">No scored review pack loaded</div><div><button id="save" disabled>Save local evidence</button> <button id="export" disabled>Export review evidence JSON</button></div></div>
+<p class="muted">Every field starts UNREVIEWED. The source note-group inventory does not establish printed-note parity. Local saved reviews can be exported for independent validation. Neither a selection nor an exported review can mark a score PUBLIC_APPROVED or change the live Mass reader.</p>
+</div></section></main>
+<script type="module">
+import {createOfflineChantEngraver} from "../../src/mass/reader-chant-engraver.js";
+import {sourceNoteGroupInventory} from "../../src/mass/reader-kyriale-source-note-groups.js";
+const $=id=>document.getElementById(id);
+const scoreFields=["pitch","neumes","underlay","rhythm","use1962","sourcePrint"];
+const groupFields=["gPitch","gNeumes","gUnderlay","gRhythm"];
+const statuses=[["UNREVIEWED","Unreviewed"],["MATCH","Matches original print"],["DIFFERENCE","Discrepancy"],["UNCERTAIN","Uncertain / hold"]];
+for(const id of [...scoreFields,...groupFields])for(const [key,title] of statuses){
+ const opt=document.createElement("option");opt.value=key;opt.textContent=title;$(id).appendChild(opt);
+}
+let report=null,current=null,groups=[],selectedGroup=0,reviews={};
+const engraver=createOfflineChantEngraver({viewport:$("engraveViewport")});engraver.observe();
+const storeKey="ao-proper-1961-first60-local-review-v1";
+try{reviews=JSON.parse(localStorage.getItem(storeKey)||"{}")}catch{reviews={}}
+const fmt=s=>String(s??"");
+const sourceGabc=c=>"name: "+c.scoreId+";\n%%\n"+c.scoreGabc;
+const verdictOf=c=>reviews[c?.scoreId+"|"+c?.sourceGabcSha256]??{};
+function candidates(){return (report?.candidates??[]).filter(c=>!$("partFilter").value||c.part===$("partFilter").value)}
+function populate(){
+ const rows=candidates();$("scoreSelect").replaceChildren();
+ for(const c of rows){const el=document.createElement("option");
+  el.value=c.scoreId;el.textContent=c.scoreId+" · "+c.part.toUpperCase()+" · "+c.occurrences+" uses";
+  $("scoreSelect").append(el);
+ }
+ $("scoreSelect").disabled=!rows.length;$("prev").disabled=!rows.length;$("next").disabled=!rows.length;
+ $("save").disabled=!rows.length;$("export").disabled=!rows.length;
+ show(rows[0]??null);
+}
+async function show(c){
+ current=c;groups=[];selectedGroup=0;
+ if(!c){$("engraveStatus").textContent="No candidate selected";return}
+ $("sourceId").textContent=c.scoreId+" · "+c.part.toUpperCase();
+ $("pageRef").textContent="Graduale Romanum, Solesmes 1961 · p. "+c.original1961Page;
+ $("dateCount").textContent=c.occurrences+" · "+c.dates.join(", ");
+ $("sourcePath").textContent=c.representative.sourcePath+" · "+c.representative.date;
+ $("sourceOwner").textContent=c.representative.sourceOwner;
+ $("sourcePrefix").textContent=c.screen.matchedOpeningWords+" opening words · "+(c.screen.scoreTextFullyPrefixMatched?"complete GABC text prefix":"GABC full text not certified");
+ $("scoreRole") && ($("scoreRole").textContent=c.selectionKey);
+ $("sourceRole").textContent=c.representative.principalId+" · "+c.selectionKey;
+ $("sourceLatin").textContent=c.representative.sourceLatin;
+ $("scoreIdentity").textContent=c.scoreId+" · original GABC SHA256 "+c.sourceGabcSha256;
+ $("scoreGabc").textContent=c.scoreGabc;
+ $("scoreSource").href=c.sourceUrl;
+ const saved=verdictOf(c);for(const id of scoreFields)$(id).value=saved[id]??"UNREVIEWED";
+ $("reviewNotes").value=saved.notes??"";
+ const gabc=sourceGabc(c);
+ try{
+  groups=sourceNoteGroupInventory(gabc).groups;
+  $("groupSelect").replaceChildren();
+  for(const group of groups){const op=document.createElement("option");
+   op.value=String(group.ordinal);op.textContent=group.ordinal+" · "+group.syllable+" · "+group.sourceTokenType;
+   $("groupSelect").append(op);
+  }
+  showGroup(0);$("engraveStatus").textContent="Rendering verified archive bytes · awaiting print review";
+  await engraver.engrave(gabc);
+  if(current===c)$("engraveStatus").textContent="Original GABC engraved locally · NOT publication approval";
+ }catch(e){$("engraveStatus").textContent="Cannot engrave this source. Hold: "+String(e?.message??e)}
+ updateProgress();
+}
+function showGroup(index){
+ selectedGroup=index;const g=groups[index];if(!g){$("groupDescriptor").textContent="No note groups; score held";return}
+ $("groupSelect").value=String(g.ordinal);
+ $("groupDescriptor").textContent="Source group "+g.ordinal+"/"+groups.length+
+  " · Latin: "+g.syllable+" · original notes: ("+g.gabcOriginalNotes+") · printed staff location NOT certified";
+ const v=verdictOf(current).groups?.[g.ordinal]??{};
+ for(const id of groupFields)$(id).value=v[id]??"UNREVIEWED";
+}
+function captureGroup(){
+ if(!current||!groups.length)return;const id=current.scoreId+"|"+current.sourceGabcSha256;
+ const v=reviews[id]??{};v.groups??={};const ordinal=groups[selectedGroup].ordinal;
+ const row={...(v.groups[ordinal]??{})};for(const f of groupFields)row[f]=$(f).value;
+ v.groups[ordinal]=row;reviews[id]=v;
+}
+function save(){
+ if(!current)return;captureGroup();
+ const id=current.scoreId+"|"+current.sourceGabcSha256,v=reviews[id]??{};
+ for(const f of scoreFields)v[f]=$(f).value;
+ v.notes=$("reviewNotes").value;v.reviewerObservationOnly=true;
+ v.publicScore=false;v.editorialApproval=false;v.updatedAt=new Date().toISOString();
+ reviews[id]=v;try{localStorage.setItem(storeKey,JSON.stringify(reviews))}catch{}
+ updateProgress();
+}
+function updateProgress(){
+ if(!report)return;
+ const overall=report.candidates.filter(c=>{
+  const r=verdictOf(c);
+  return scoreFields.every(f=>r[f]==="MATCH")&&
+   r.groups&&Object.values(r.groups).length>0&&
+   Object.values(r.groups).every(v=>groupFields.every(f=>v[f]==="MATCH"));
+ }).length;
+ const done=groups.filter(g=>groupFields.every(f=>verdictOf(current).groups?.[g.ordinal]?.[f]==="MATCH")).length;
+ $("progress").textContent=overall+"/"+report.candidates.length+" scores fully MATCH-marked in local evidence; current "+done+"/"+groups.length+" source note groups marked; 0 scores approved for public release";
+}
+function exportReport(){
+ save();
+ const output={schema:"ao-proper-first60-independent-print-observations-v1",
+  sourceBatchSchema:report.schema,sourceBatchScoreIds:report.candidates.map(c=>c.scoreId),
+  evidence:reviews,editorialDecision:"PENDING_INDEPENDENT_REVIEW",
+  publication:{publicScores:0,automaticApproval:false,doNotImportIntoLive:true}};
+ const blob=new Blob([JSON.stringify(output,null,2)+"\n"],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;
+ a.download="ao-first60-print-review-observations.json";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+$("fileInput").addEventListener("change",async()=>{
+ const file=$("fileInput").files?.[0];if(!file)return;
+ try{
+  const data=JSON.parse(await file.text());
+  if(data.schema!=="ao-mass-1962-first-60-print-score-collation-v1"||
+    data.batch?.candidates!==60||data.publication?.publicScores!==0||
+    !Array.isArray(data.candidates)||data.candidates.length!==60||
+    new Set(data.candidates.map(x=>x.scoreId)).size!==60||
+    data.candidates.some(x=>x.publication!=="EDITORIAL_HOLD_NOT_PUBLIC"||
+      x.approvedForMassReader!==false||!x.scoreGabc||
+      !/^GREGOBASE-\d+$/.test(x.scoreId)||!/^https:\/\//.test(x.sourceUrl)))
+   throw Error("Unexpected, altered or already-published review manifest");
+  report=data;$("fileHint").textContent=file.name+" · 60 original research scores";
+  populate();
+ }catch(e){$("fileHint").textContent="Blocked: "+String(e?.message??e)}
+});
+$("partFilter").addEventListener("change",populate);
+$("scoreSelect").addEventListener("change",()=>{save();show(candidates().find(c=>c.scoreId===$("scoreSelect").value))});
+$("prev").addEventListener("click",()=>navigate(-1));
+$("next").addEventListener("click",()=>navigate(1));
+function navigate(n){const rows=candidates(),i=rows.indexOf(current);if(i<0)return;
+ save();const next=rows[(i+n+rows.length)%rows.length];$("scoreSelect").value=next.scoreId;show(next);}
+$("groupSelect").addEventListener("change",()=>{captureGroup();showGroup(Math.max(0,groups.findIndex(g=>String(g.ordinal)===$("groupSelect").value)))});
+$("save").addEventListener("click",save);$("export").addEventListener("click",exportReport);
+</script></body></html>
