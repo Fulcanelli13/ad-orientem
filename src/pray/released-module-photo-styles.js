@@ -41,6 +41,16 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-released-module-p
   "#aoPray435930 .aoPrayerHeartJesusCover img,#aoPray435930 .aoPrayerHeartMaryCover img,#aoPray435930 .aoPrayerKingCover img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}",
   "#aoPray435930 .aoPrayerHeartJesusCover figcaption,#aoPray435930 .aoPrayerHeartMaryCover figcaption,#aoPray435930 .aoPrayerKingCover figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.78);color:#faf1df;text-align:center;padding:3px 6px;font:10px/1.2 Georgia,serif}",
   "#aoPray435930 .aoPrayerHeartJesusCover figcaption a,#aoPray435930 .aoPrayerHeartMaryCover figcaption a,#aoPray435930 .aoPrayerKingCover figcaption a{color:inherit;text-decoration:underline}",
+  "#aoPray435930 .aoPrayPilotAngelusHero>.aoEditorialArtworkSlot{position:absolute;inset:0;z-index:0;margin:0;height:100%;overflow:hidden}",
+  "#aoPray435930 .aoClaudeHorariumPlateArt>.aoEditorialArtworkSlot{position:relative;display:block;width:100%;height:100%;margin:0;overflow:hidden}",
+  "#aoPray435930 .aoPrayDoorArtwork>.aoEditorialArtworkSlot{position:relative;display:block;width:100%;height:100%;margin:0;overflow:hidden}",
+  "#aoPray435930 .aoAngelusRitualGrid .aoEditorialArtworkSlot{margin:8px 0 11px;width:100%;max-width:100%;min-width:0}",
+  "#aoPray435930 .aoAngelusRitualGrid .aoPrayerAngelusStagePhoto{margin:0;width:100%;max-width:100%;display:block;background:rgba(0,0,0,.08);border-radius:8px;overflow:hidden}",
+  "#aoPray435930 .aoAngelusRitualGrid .aoPrayerAngelusStagePhoto img{width:100%;height:clamp(86px,18svh,132px);object-fit:contain;object-position:center;display:block}",
+  "#aoPray435930 .aoAngelusRitualGrid .aoPrayerAngelusStagePhoto figcaption{padding:3px 6px;text-align:center;color:var(--muted,#b8b4b0);font:10px/1.3 Georgia,serif}",
+  "#aoPray435930 .aoAngelusRitualGrid .aoPrayerAngelusStagePhoto figcaption a{color:inherit;text-decoration:underline}",
+  "#aoPray435930 .aoClaudeAltarScroll .aoEditorialArtworkSlot .aoPrayerRitualStageArt{height:clamp(94px,18svh,155px)}",
+  "#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode=night] .aoEditorialArtworkSlot .aoPrayerRitualStageArt{height:clamp(94px,18svh,155px)}",
   "@media(max-width:359px){#aoPray435930 .aoPrayerAdorationCover{height:110px;min-height:110px}}"
  ].join("\n");
  document.head.append(node);

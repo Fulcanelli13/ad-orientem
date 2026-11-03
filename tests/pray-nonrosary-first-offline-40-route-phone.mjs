@@ -193,7 +193,18 @@ try{
     assert.ok(state.documentOverflow<=2&&state.contentOverflow<=2,
      id+" clips "+width+"px "+language+" offline: "+JSON.stringify(state));
     assert.equal(state.internalErrors,0,id+" showed internal route failure");
-    if(id==="pray.library")assert.ok(state.libraryCount>=48,id+" lost canonical library offline");
+    if(id==="pray.library"){
+     // The home entry opens the 32-card Essential mosaic, whose navigation
+     // must still expose the complete 48-text Library without network use.
+     if(state.libraryCount<48){
+      assert.equal(await page.locator('#aoPray435930.open [data-ao-pray-essential-landing="true"]').count(),1,
+       "Offline Library is neither its source list nor the approved Essential mosaic");
+      assert.equal(state.libraryCount,32,"All 32 Essential prayers must remain navigable offline");
+      await page.locator('#aoPray435930.open [data-p435930-lib-all]').click();
+     }
+     assert.ok(await page.locator('#aoPray435930.open [data-p435930-lib-open]').count()>=48,
+      "Full 48-text Prayer Library must remain reachable offline");
+    }
     if(id==="pray.confession")assert.equal(state.privateIntentionEditors,0,
      "Offline Confession must not introduce persistent sins/intention fields");
     // A canonical Scripture request is asynchronous; do not confuse the

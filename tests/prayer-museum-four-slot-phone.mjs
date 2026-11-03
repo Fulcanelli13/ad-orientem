@@ -100,8 +100,12 @@ try{
     const sign=page.locator(rootSelector+' [data-p435930-lib-open="foundations_sign_of_cross"]');
     assert.equal(await sign.count(),1,"Real library must expose Sign of the Cross");
     await sign.click();
-    const trueCard=page.locator(rootSelector+' .aoClaudeHolyFront .aoClaudeHolyPlate[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img');
-    assert.equal(await trueCard.count(),1,"Sign of the Cross must show the image inside the actual Holy Card front plate");
+     // F01's active Latin-first reader is the Essential Flow. Its original
+     // Holy Card presentation remains a supported alternative owner.
+     const signSlot='[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img';
+     const trueCard=page.locator(rootSelector+' .aoEssentialFlowArt'+signSlot+','+
+      rootSelector+' .aoClaudeHolyFront .aoClaudeHolyPlate'+signSlot);
+     assert.equal(await trueCard.count(),1,"Sign of the Cross must display the exact original in its active prayer reader");
     assert.ok((await trueCard.getAttribute("src")).endsWith("girardin-trinity-original.jpg"));
     const front=await trueCard.evaluate(async img=>{
      img.loading="eager";await img.decode();
@@ -114,7 +118,7 @@ try{
     assert.equal(front.fit,"contain","The entire painting must be shown without cropping");
     assert.ok(front.top<=(width===320?640:844),"The painting must be visible without scrolling past the card");
     assert.ok(front.horizontalOverflow<=1,"No actual Holy Card overflow");
-    const attribution=page.locator(rootSelector+' .aoClaudeHolyFront .aoClaudeHolyArtCredit a');
+    const attribution=page.locator(rootSelector+' .aoEssentialFlowArt .aoEssentialFlowCredit,'+rootSelector+' .aoClaudeHolyFront .aoClaudeHolyArtCredit a');
     assert.equal(await attribution.count(),1,"The image's original museum attribution must remain visible");
     assert.ok((await attribution.getAttribute("href")).includes("clevelandart.org/art/1960.79"));
     await page.screenshot({path:resolve(folder,"live-sign-of-cross-"+width+"-"+locale+".png"),animations:"disabled"});

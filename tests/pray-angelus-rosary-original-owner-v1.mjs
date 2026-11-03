@@ -29,6 +29,9 @@ const env={S,DATA,esc,nl,lang:()=>locale,isFr:()=>locale==="fr",L:(en,fr)=>local
  angelusChoice:()=>({form,auto:false,authority:{ok:true}}),angelusExactPosture:()=>({stand:false,assetId:""}),
  angelusExactRailMarkup:()=>"",assetIcon:()=>"",selectedWeekday:()=>1,selectedDateKey:()=>"",
  nav:()=>"",head:title=>"<header><h1>"+esc(title)+"</h1></header>",releasedModulePhotoMarkup:()=>"",
+ // This is a source-only eval fixture. Artworks are independently tested by
+ // the exact-photo R5C browser gate; no painting is part of prayer words.
+ prayerEditorialArtworkMarkup:()=>"",angelusOpeningArtworkSlot:()=>"",
  claudeHorariumClock:()=>"",claudeHorariumStrokes:()=>"",angelusGuideSections:()=>[],
  B01_AUGUST_QUEEN_SOURCE:{url:"https://example.org/source"},angelusCommunalParts,
  splitAngelusVersicleResponse,callout:message=>'<p>'+message+'</p>'

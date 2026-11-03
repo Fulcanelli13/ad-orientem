@@ -64,6 +64,14 @@ export function prayerEditorialPublicationSummary(){
   return Object.freeze({total:Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).length,states:Object.freeze(states)});
 }
 
+/** One documented Angelus artwork per prayer hour; a selected 25 March uses its
+ * separate approved Annunciation artwork. No general-day replacement is inferred.
+ */
+export function angelusOpeningArtworkSlot(form,hour=12,dateKey=""){
+ if(form==="regina")return "COV-pray.angelus_regina";
+ if(/^\d{4}-03-25$/.test(String(dateKey||"")))return "STG-pray.angelus-04";
+ return hour===6?"STG-pray.angelus-01":hour===18?"STG-pray.angelus-03":"STG-pray.angelus-02";
+}
 export const PRAY_DOOR_ART_SLOT_SCHEMA_V1="AO_PRAY_DOOR_ART_SLOT_MAP_V1";
 const entry=(slotId,subjectCodes,rotation)=>{
   const editorial=resolvePrayerEditorialArtwork(slotId);
