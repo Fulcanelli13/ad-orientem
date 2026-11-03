@@ -3,6 +3,15 @@ import { massInstitutionEmblem } from "./institution-emblems.js";
 const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const A=v=>Array.isArray(v)?v:[];
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
+const tlmVenueStatusLabel=(status,language)=>{
+  const labels={
+    "RESEARCH-LISTED · MASS UNVERIFIED":["RESEARCH-LISTED · MASS UNVERIFIED","RÉPERTORIÉ · MESSE NON VÉRIFIÉE"],
+    "SCHEDULE UNVERIFIED":["SCHEDULE UNVERIFIED","HORAIRES NON VÉRIFIÉS"],
+    "OFFICIAL · TIMES UNCONFIRMED":["OFFICIAL · TIMES UNCONFIRMED","OFFICIEL · HORAIRES NON CONFIRMÉS"],
+  };
+  const pair=labels[String(status??"")];
+  return pair?L(language,...pair):status;
+};
 const groupLabel=(id,lang)=>{
  const codes={
   CANONS_ST_JOHN_CANTIUS:["Canons of St John Cantius","Chanoines de Saint-Jean-de-Cantius"],
@@ -185,6 +194,8 @@ export function renderDirectoryVenueCard(item,language="en"){
     ?massInstitutionEmblem(item?.community_id):null;
   const sources=A(item?.source_links).filter(s=>https(s?.url)).length;
   const status=String(item?.status??"");
+  const affiliation=item?.eyebrow==="Source affiliation not established"
+    ?L(language,"Source affiliation not established","Affiliation non établie selon la source"):item?.eyebrow;
   const provisional=Boolean(item?.preliminary_group)||item?.map_state==="PROVISIONAL"||
     ["SOURCE-REPORTED","UNCLASSIFIED","SCHEDULE UNVERIFIED","OFFICIAL · TIMES UNCONFIRMED"].includes(status);
   const schedule=L(language,provisional?"Mass times not independently verified":A(item?.sections).length?"Mass details available · check official source":"Mass times not verified",
@@ -194,13 +205,13 @@ export function renderDirectoryVenueCard(item,language="en"){
     +(photo?'<img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">':renderDirectoryIdentityFallback(item,language,"card"))
     +'</span><span class="aoTlmVenueContent"><span class="aoTlmVenueInstitution">'
     +(emblem?'<img data-tlm-emblem-image src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':'')
-    +'<span>'+E(item.eyebrow||groupLabel(item.community_id,language)||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
+    +'<span>'+E(affiliation||groupLabel(item.community_id,language)||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
     +'<span class="aoTlmVenueSchedule">'+inlineIcon('schedule')+'<span>'+E(schedule)+'</span></span>'
     +(item.celebration_evidence?'<span class="aoTlmVenueSourceEdition" data-tlm-celebration-evidence="'+E(item.celebration_evidence.source_id)+'">'+
         E(L(language,"1962 Missal · specific Masses only","Missel de 1962 · certaines messes seulement"))+'</span>':'')
-    +(status?'<span class="aoTlmVenueStatus">'+E(status==="SCHEDULE UNVERIFIED"?L(language,"SCHEDULE UNVERIFIED","HORAIRES NON VÉRIFIÉS"):status==="OFFICIAL · TIMES UNCONFIRMED"?L(language,"OFFICIAL · TIMES UNCONFIRMED","OFFICIEL · HORAIRES NON CONFIRMÉS"):status)+'</span>':'')
+    +(status?'<span class="aoTlmVenueStatus">'+E(tlmVenueStatusLabel(status,language))+'</span>':'')
     +'<span class="aoTlmVenueFoot"><small>'+E(sources?L(language,"Source-backed listing","Fiche sourcée"):L(language,"Source review pending","Sources en cours d’examen"))+'</small><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
     +'</span></button>';
 }
