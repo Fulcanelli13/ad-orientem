@@ -81,7 +81,10 @@ function candidate(date,c,lane){
  const rightsHold=!w||w.queue==="RIGHTS_OR_ALTERNATIVE"||
   /UNRESOLVED|DEFERRED|HOLD/i.test(String(rightsCategory??""));
  const evidenceKind=c.evidenceKind??c.matchKind??c.evidenceBasis??c.selection?.donorEvidenceKind??null;
- const previouslyDateApproved=evidenceKind==="CURRENT_EXPLICIT_DATE_APPROVAL";
+ const originalDateEditorialBasis=c.editorialBasis??c.selection?.editorialBasis??null;
+ const frozenDaySpecificApproval=originalDateEditorialBasis==="NEW_DATE_SPECIFIC_APPROVAL";
+ const previouslyDateApproved=evidenceKind==="CURRENT_EXPLICIT_DATE_APPROVAL"||
+   frozenDaySpecificApproval;
  const blockers=[
   ...(w?[]:["SOURCE_IDENTITY_NOT_JOINED_TO_OPERATIONAL_GALLERY"]),
   ...(rightsHold?["EXACT_IMAGE_REPRODUCTION_RIGHTS_NOT_CERTIFIED"]:[]),
@@ -96,6 +99,10 @@ function candidate(date,c,lane){
   researchLane:lane,evidenceKind,sourceUrl,
   preservedUserReviewStates:w?.userReviewStates??[],
   preservedDateApproval:previouslyDateApproved,
+  historicalDateEditorialBasis:originalDateEditorialBasis,
+  historicalDateSelectionApprovalScope:frozenDaySpecificApproval?
+   "PREVIOUSLY_EXPLICIT_FOR_THIS_DATE_RECONCILE_WITH_CURRENT_PRIMARY":
+   "NO_EXPLICIT_DATE_APPROVAL_IN_THIS_CANDIDATE",
   physicalObjectIdentityIndependentlyCertified:false,
   photo:{
    sourcePage:w?.selectedSourceUrl??sourceUrl,
