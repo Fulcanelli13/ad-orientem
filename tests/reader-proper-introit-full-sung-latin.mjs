@@ -65,6 +65,15 @@ const psResult=selected1962IntroitSungText({
 });
 assert.ok(psResult.segments[1].text.startsWith("Ad te, Dómine"));
 assert.ok(!psResult.segments[1].text.startsWith("Ps. "));
+const psalmVerseWithCue=raw.candidates.find(x=>x.scoreId==="GREGOBASE-1071");
+const psalmWithCue=selected1962IntroitSungText({
+ part:psalmVerseWithCue.part,scoreId:psalmVerseWithCue.scoreId,
+ sourceLatin:psalmVerseWithCue.representative.sourceLatin,
+ originalGabc:psalmVerseWithCue.scoreGabc
+});
+assert.ok(psalmWithCue.segments[1].text.startsWith("Quam dilécta"));
+assert.ok(!psalmWithCue.segments[1].text.startsWith("℣."));
+assert.equal(psalmWithCue.segments.at(-1).role,"INTROIT_ANTIPHON_REPEAT");
 const mihi=raw.candidates.find(x=>x.scoreId==="GREGOBASE-475");
 const full=selected1962IntroitSungText({
  part:mihi.part,scoreId:mihi.scoreId,
