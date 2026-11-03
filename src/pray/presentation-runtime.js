@@ -83,6 +83,7 @@ import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENIN
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
 import {chapletF07PilotEnabled,chapletF07VariantsEnabled,renderMercyF07Crown,renderMercyF07Entry,mercyF07RoleMarkup} from "./chaplet-f07-pilot.js";
 import {renderF07FiveWounds,renderF07PreciousBlood,renderF07LittleCrown} from "./chaplet-f07-variants.js";
+import "./chaplet-r3b-quiet-styles.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
