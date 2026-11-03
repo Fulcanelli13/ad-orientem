@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "src/pray/five-wounds-chaplet-styles.js"
+      - "src/pray/chaplet-r3b-quiet-styles.js"
+      - "src/pray/little-crown-presentation-b30.js"
+      - "tests/pray-chaplet-f07-variants-phone.mjs"
       - "src/pray/presentation-runtime.js"
       - "tests/pray-five-wounds-chaplet-b17.mjs"
       - "tests/pray-chaplets-discovery-phone.mjs"
@@ -12,6 +15,9 @@ on:
     branches: [main]
     paths:
       - "src/pray/five-wounds-chaplet-styles.js"
+      - "src/pray/chaplet-r3b-quiet-styles.js"
+      - "src/pray/little-crown-presentation-b30.js"
+      - "tests/pray-chaplet-f07-variants-phone.mjs"
       - "src/pray/presentation-runtime.js"
       - "tests/pray-five-wounds-chaplet-b17.mjs"
       - "tests/pray-chaplets-discovery-phone.mjs"
@@ -34,6 +40,8 @@ jobs:
         run: node tests/pray-five-wounds-chaplet-b17.mjs
       - name: 320px and 390px chaplets mobile UI acceptance
         run: node tests/pray-chaplets-discovery-phone.mjs
+      - name: Released F07 five-wound, Precious Blood and Little Crown 320/390 phone acceptance
+        run: node tests/pray-chaplet-f07-variants-phone.mjs
       - name: Temporary mobile visual evidence
         if: always()
         uses: actions/upload-artifact@v4
