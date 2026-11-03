@@ -1,0 +1,34 @@
+name: Sacred Atlas photo source/production crosswalk
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-photo-production-crosswalk-20261103.v1.json'
+      - 'tests/explore-sacred-photo-crosswalk.mjs'
+      - 'data/geography/seed-registry.v1.json'
+      - 'data/geography/approved-place-media.v1.json'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - '.github/workflows/explore-sacred-photo-crosswalk.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-photo-production-crosswalk-20261103.v1.json'
+      - 'tests/explore-sacred-photo-crosswalk.mjs'
+      - 'data/geography/seed-registry.v1.json'
+      - 'data/geography/approved-place-media.v1.json'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+permissions:
+  contents: read
+jobs:
+  crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify read-only source subject joins, KEEP decisions and rights gates
+        run: node tests/explore-sacred-photo-crosswalk.mjs
