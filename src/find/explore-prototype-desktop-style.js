@@ -21,7 +21,9 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
  }
  /* The approved left results panel is a vertical document, not a bottom
     sheet stretched to desktop width. It never remounts or owns the map. */
- .aoHeritageSurface .aoMapcnDiscoverRail {
+ .aoHeritageSurface .aoMapcnDiscoverRail,
+ .aoHeritageSurface[data-atlas-entry=sacred] .aoMapcnDiscoverRail,
+ .aoHeritageSurface[data-atlas-entry=sacred] .aoMapcnDiscoverRail[data-discover-expanded=false] {
   position:absolute!important;
   top:14px!important;bottom:14px!important;left:14px!important;right:auto!important;
   width:var(--ao-atlas-left)!important;height:auto!important;max-height:none!important;
