@@ -31,8 +31,8 @@ assert.ok(output.candidates.every(c=>
  c.representative.scoreOpeningWordsMatched>=4&&
  c.scoreGabc.includes("(::)")&&
  /^GREGOBASE-\d+$/.test(c.scoreId)&&
- /^[a-f0-9]{64}$/.test(c.sourceGabcSha256)&&
- createHash("sha256").update(c.scoreGabc,"utf8").digest("hex")===c.sourceGabcSha256&&
+ /^[a-f0-9]{64}$/.test(c.scoreGabcSha256)&&
+ createHash("sha256").update(c.scoreGabc,"utf8").digest("hex")===c.scoreGabcSha256&&
  c.occurrences===c.dates.length&&c.sourcePaths.length>=1&&
  typeof c.representative.sourceLatin==="string"&&
  c.representative.sourceLatin.length>25
