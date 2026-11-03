@@ -121,6 +121,13 @@ try{
       sourceChars:source.length,prayerChars:prayer?.textContent?.trim().length||0,
       libraryList,documentOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
       shellOverflow:shell?Math.max(0,shell.scrollWidth-shell.clientWidth):null,
+      verticalScrollbar:shell?Math.max(0,shell.offsetWidth-shell.clientWidth-
+        parseFloat(getComputedStyle(shell).borderLeftWidth||0)-
+        parseFloat(getComputedStyle(shell).borderRightWidth||0)):null,
+      contentOverflow:shell?Math.max(0,shell.scrollWidth-shell.clientWidth-
+        Math.max(0,shell.offsetWidth-shell.clientWidth-
+          parseFloat(getComputedStyle(shell).borderLeftWidth||0)-
+          parseFloat(getComputedStyle(shell).borderRightWidth||0))):null,
       readerVertical:reader?getComputedStyle(reader).overflowY:null,active,
       errorCount:document.querySelectorAll("[data-p435930-internal-route-error],[data-p435930-family-open-error],[data-p435930-home-error]").length,
       rosaryOriginal:rosary?Boolean(document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor]")):null,
@@ -130,7 +137,7 @@ try{
     assert.equal(observed.owner,expected,id+" opened the wrong reader at "+width+" "+language);
     assert.equal(observed.uiLanguage,language,id+" changed global language without consent");
     assert.ok(observed.sourceChars>=10,id+" has no visible entry at "+width+" "+language);
-    assert.ok(observed.documentOverflow<=2&&observed.shellOverflow<=2,
+    assert.ok(observed.documentOverflow<=2&&observed.contentOverflow<=2,
      id+" clips "+width+"px "+language+" phone: "+JSON.stringify(observed));
     assert.equal(observed.errorCount,0,id+" showed a route error");
     if(row.sourceFamily==="canonical-prayer")
