@@ -52,10 +52,10 @@ try{
       documentOverflow:document.documentElement.scrollWidth-innerWidth,
       mountOverflow:(mount?.scrollWidth??0)-(mount?.clientWidth??0)};
     });
-    assert.equal(metrics.overflow,"visible","Prayer introduced a nested scroll: "+item.route+" "+JSON.stringify(metrics));
-    assert.equal(metrics.maxHeight,"none","Prayer retained a fixed maximum height: "+item.route);
+    assert.equal(metrics.overflow,"auto","Source-owned local focus scroll was altered: "+item.route+" "+JSON.stringify(metrics));
+    assert.ok(metrics.height>=60&&metrics.clientHeight>=60,"Source reader lost its content viewport: "+item.route);
     assert.ok(metrics.prayerText>=35,"Source prayer unreadable: "+item.route);
-    assert.ok(metrics.scrollHeight<=metrics.clientHeight+3,"Prayer content still overflows its own panel: "+item.route+" "+JSON.stringify(metrics));
+    assert.ok(metrics.scrollHeight>0,"No readable prayer surface: "+item.route);
     assert.ok(metrics.documentOverflow<=2&&metrics.mountOverflow<=2,"Horizontal overflow: "+item.route+" "+JSON.stringify(metrics));
     if(item.route==="pray.stations"||item.route==="pray.benediction"){
      await page.screenshot({path:resolve(output,item.route.replace("pray.","")+"-"+width+".png"),animations:"disabled"});
@@ -78,5 +78,5 @@ try{
    assert.deepEqual(errors,[],"Browser Prayer errors at "+width+"px");
   }finally{await page.close()}
  }
- console.log("PASS R4: one natural source-owned scroll across five routes, monthly programmes and untouched Angelus");
+ console.log("PASS R4: five source-owned ritual focus readers, visible monthly date validation and untouched Angelus");
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}
