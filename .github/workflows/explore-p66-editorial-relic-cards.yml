@@ -8,6 +8,7 @@ on:
       - 'src/find/explore-presentation.js'
       - 'src/find/heritage-style.js'
       - 'tests/explore-p66-editorial-relic-cards.mjs'
+      - 'tests/explore-sacred-venerated-image-presentation.mjs'
       - 'tests/explore-place-profiles.mjs'
       - 'tests/explore-r69-multi-place-gallery.mjs'
       - 'data/explore/sacred-phenomena-seed.v1.json'
@@ -20,6 +21,7 @@ on:
       - 'src/find/explore-presentation.js'
       - 'src/find/heritage-style.js'
       - 'tests/explore-p66-editorial-relic-cards.mjs'
+      - 'tests/explore-sacred-venerated-image-presentation.mjs'
 permissions:
   contents: read
 jobs:
@@ -37,5 +39,7 @@ jobs:
         run: |
           node tests/explore-place-profiles.mjs
           node tests/explore-r69-multi-place-gallery.mjs
+      - name: Source-approved sacred image and attribution presentation
+        run: node tests/explore-sacred-venerated-image-presentation.mjs
       - name: Read-only cross-owner release boundaries
         run: node tests/connected-sacred-entities-p64.mjs
