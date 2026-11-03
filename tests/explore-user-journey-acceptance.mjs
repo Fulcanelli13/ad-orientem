@@ -150,6 +150,21 @@ try{
    await mapReady("heritage");
    await verifyDesktopAtlas("desktop Sacred Places map");
    if(width>=900){
+    assert.equal(await root.locator("[data-find-map]").getAttribute("data-ao-heritage-marker-grammar"),"dark-glow",
+     "Heritage MapLibre must use source-category dark marker sprites, not the ivory Mass/Saints programme");
+    const controls=root.locator(".aoFindMap .maplibregl-ctrl-top-right");
+    const location=await controls.evaluate(el=>{
+     const r=el.getBoundingClientRect();
+     return {top:r.top,bottom:r.bottom,width:innerWidth,height:innerHeight};
+    });
+    assert.ok(location.top>location.height*.45&&location.bottom<location.height-100,
+     "Desktop Sacred Places zoom controls belong to the lower-right map region: "+JSON.stringify(location));
+    assert.ok(await root.locator(".aoFindMap .maplibregl-ctrl-zoom-in").count()===1
+      &&await root.locator(".aoFindMap .maplibregl-ctrl-zoom-out").count()===1,
+      "Do not replace or remove native MapLibre zoom controls");
+   }
+
+   if(width>=900){
     assert.equal(await root.locator(".aoMapcnEditorialStrip").isVisible(),false,
      "Desktop Sacred Places must prioritise source-filtered places in the camera, not unrelated worldwide features");
     assert.ok(await root.locator(".aoMapcnDiscoverEntries .aoMapcnDiscoverItem").count()>0,
