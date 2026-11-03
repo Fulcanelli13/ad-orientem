@@ -7,7 +7,8 @@ import { registerMassInstitutionImages, massInstitutionEmblem } from "./institut
 import { installMassMapEmblemOverlays } from "./institution-map-overlay.js";
 import {
   registerExploreCategoryMedallions,exploreCategoryMedallionExpression,
-  EXPLORE_MEDALLION_ID_PREFIX,
+  EXPLORE_MEDALLION_ID_PREFIX,EXPLORE_GLOW_MEDALLION_ID_PREFIX,
+  registerExploreGlowMedallions,
 } from "./explore-map-medallions.js";
 import { MASS_CLUSTER_GROUPS,CLUSTER_PAGE_SIZE,exploreClusterProperties,
   exploreClusterMajorityExpression,clusterPageBounds } from "./cluster-presentation.js";
@@ -441,6 +442,13 @@ export async function mountExploreMap(container,items,{
       clusterProperties:exploreClusterProperties()});
     const clusterBadgeReady=registerExploreClusterBadge(map,win);
     const categoryEmblemsReady=!styleOverride&&registerExploreCategoryMedallions(map,win);
+    // Discover and Sacred Places share one heritage lens/camera. Only that
+    // lens receives dark prototype markers; Saints, TLM institutes and the
+    // Biblical Atlas keep their existing independent visual identities.
+    const heritageMap=!styleOverride&&features.length>0
+      &&features.every(feature=>feature.properties?.lens==="heritage");
+    const glowReady=heritageMap&&categoryEmblemsReady&&registerExploreGlowMedallions(map,win);
+    if(glowReady)container.dataset.aoHeritageMarkerGrammar="dark-glow";
     // The ~50px cluster hit surface and scalable circular bubble are separate.
     map.addLayer({id:prefix+"-cluster-halo",type:"circle",source:sourceId,filter:["has","point_count"],
       paint:{"circle-radius":25,"circle-color":"#10212C",
@@ -461,7 +469,7 @@ export async function mountExploreMap(container,items,{
       map.addLayer({id:prefix+"-cluster-badges",type:"symbol",source:sourceId,
         filter:["has","point_count"],
         layout:{"icon-image":["concat","ao-explore-cluster-badge-",clusterKind],
-          "icon-size":1,"icon-allow-overlap":true,"icon-ignore-placement":true,
+          "icon-size":glowReady?0.80:1,"icon-allow-overlap":true,"icon-ignore-placement":true,
           "text-field":["get","point_count_abbreviated"],
           ...(glyphStack?{"text-font":glyphStack}:{}),
           "text-size":12,"text-anchor":"center",
@@ -481,6 +489,11 @@ export async function mountExploreMap(container,items,{
       "circle-stroke-width":["case",["get","approximate"],1.6,2.2],
       "circle-stroke-color":["case",["==",["get","lens"],"tlm"],POINT_COLOR,
         ["case",["get","approximate"],"#17212d","#f0e7d4"]]
+    }:glowReady?{
+      // The dark icon sprite owns the visible circle; this transparent
+      // geometry preserves the original 44px touch/click target.
+      "circle-radius":22,"circle-color":"#14212d","circle-opacity":0.008,
+      "circle-stroke-width":0,
     }:{
       "circle-radius":22,
       "circle-color":["case",["get","approximate"],"#D4D8D2","#EBE2D1"],
@@ -494,17 +507,17 @@ export async function mountExploreMap(container,items,{
     if(categoryEmblemsReady){
       map.addLayer({id:categoryLayer,type:"symbol",source:sourceId,
         filter:["!",["has","point_count"]],
-        layout:{"icon-image":["concat",EXPLORE_MEDALLION_ID_PREFIX,
+        layout:{"icon-image":["concat",glowReady?EXPLORE_GLOW_MEDALLION_ID_PREFIX:EXPLORE_MEDALLION_ID_PREFIX,
           exploreCategoryMedallionExpression(),
           ["case",["get","approximate"],"-indicative",""]],
-          "icon-size":1,"icon-allow-overlap":true,"icon-ignore-placement":true}});
+          "icon-size":glowReady?0.9:1,"icon-allow-overlap":true,"icon-ignore-placement":true}});
     }
     // Selected place gets an understated halo outside the emblem itself.
     // It never creates a second point or changes the shared Place ID.
     const selectedLayer=prefix+"-selected-point";
     if(!styleOverride)map.addLayer({id:selectedLayer,type:"circle",source:sourceId,
       filter:["all",["!",["has","point_count"]],["==",["get","item_id"],"__none__"]],
-      paint:{"circle-radius":27,"circle-color":"#000000","circle-opacity":0,
+      paint:{"circle-radius":glowReady?21:27,"circle-color":"#000000","circle-opacity":0,
         "circle-stroke-color":"#D6BA82","circle-stroke-width":3,
         "circle-stroke-opacity":0.78}});
     const selectMapPlace=id=>{

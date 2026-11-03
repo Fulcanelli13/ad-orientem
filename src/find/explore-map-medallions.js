@@ -88,3 +88,40 @@ export function registerExploreCategoryMedallions(map,win=globalThis){
     return true;
   }catch{return false;}
 }
+
+// Screen 7 source-category marker treatment. The canonical Place identity and
+// approximation status are unchanged; all other lenses retain ivory sprites.
+export const EXPLORE_GLOW_MEDALLION_ID_PREFIX="ao-explore-glow-";
+const GLOW_INK=Object.freeze({
+  CHURCH:"#bac7d0",SHRINE:"#9bbddd",RELIC:"#d6a3a0",
+  PILGRIMAGE:"#b9d1b1",APPARITION:"#bbb8e4",
+  TRADITION:"#c6b49e",SAINT:"#e0c590",
+});
+export function registerExploreGlowMedallions(map,win=globalThis){
+  if(!map?.addImage||!win?.document?.createElement)return false;
+  const canvas=win.document.createElement("canvas");
+  canvas.width=84;canvas.height=84;
+  const ctx=canvas.getContext?.("2d");
+  if(!ctx)return false;
+  try{
+    for(const kind of EXPLORE_MEDALLION_KINDS){
+      const ink=GLOW_INK[kind]??GLOW_INK.CHURCH;
+      for(const approximate of [false,true]){
+        ctx.clearRect(0,0,84,84);
+        ctx.setLineDash([]);
+        const fill=ctx.createRadialGradient(36,34,2,42,42,35);
+        fill.addColorStop(0,"#2b3946");fill.addColorStop(1,"#111923");
+        ctx.fillStyle=fill;ctx.beginPath();ctx.arc(42,42,33,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle=ink;ctx.lineWidth=3.4;
+        ctx.setLineDash(approximate?[5,6]:[]);
+        ctx.shadowColor=ink;ctx.shadowBlur=11;ctx.stroke();
+        ctx.shadowBlur=0;ctx.setLineDash([]);
+        ctx.strokeStyle=ink;ctx.lineWidth=3.7;ctx.lineCap="round";ctx.lineJoin="round";
+        shape(ctx,kind);
+        const id=EXPLORE_GLOW_MEDALLION_ID_PREFIX+kind+(approximate?"-indicative":"");
+        if(!map.hasImage?.(id))map.addImage(id,ctx.getImageData(0,0,84,84),{pixelRatio:2});
+      }
+    }
+    return true;
+  }catch{return false;}
+}
