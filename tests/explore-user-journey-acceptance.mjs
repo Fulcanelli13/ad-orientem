@@ -148,6 +148,7 @@ try{
    assert.ok(await root.locator(".aoMapcnEditorialCarousel .aoMapcnEditorialCard").count()>0,
     "Sacred places must reuse the existing approved-photo viewport sheet");
    await mapReady("heritage");
+   await verifyDesktopAtlas("desktop Sacred Places map");
    await capture("01b-sacred-prototype-sheet");
    await discoverTab.click();
    await page.waitForFunction(()=>{
