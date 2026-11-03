@@ -88,12 +88,14 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
     assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),1,
       "Each Claude door has one content title below its artwork band: "+door);
-    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding="+(door==="eucharistic"?"released":"unassigned")+"]").count(),1,
-      "Only the Eucharistic door uses published Met art; all others remain unassigned: "+door);
-    assert.ok(await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-door-filter]").count()>=2,
-      "Source-scoped category filters must remain visible: "+door);
+    assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding="+(door==="eucharistic"?"released":"editorial-pending")+"]").count(),1,
+      "Only the Eucharistic door uses published Met art; remaining slots are editorial-pending: "+door);
+    const facetCount=await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-door-filter]").count();
+    if(door==="eucharistic")assert.equal(facetCount,0,
+      "Do not clutter a single-category Eucharistic mosaic with meaningless filters");
+    else assert.ok(facetCount>=2,"Mixed-family filters must remain available: "+door);
     if(door==="marian"){
-      const featured=await page.locator(base+" .aoPrayDoorFeaturedCopy b").textContent();
+      const featured=await page.locator(base+" .aoPrayMosaicCardFeatured .aoPrayMosaicCardCopy b").textContent();
       assert.equal(featured.trim(),"Litany of Loreto","Keep the readable editorial title; canonical source edition stays in the reader");
     }
     if(["eucharistic","ourlord","intentions"].includes(door))
@@ -106,14 +108,18 @@ try{
       el.dataset.p435930Own||el.dataset.p435930External||el.dataset.p435930DoorPrayer));
     assert.ok(rows.length>=2,"Every real door needs at least two distinct source-owned entries: "+door);
     assert.equal(new Set(rows).size,rows.length,"Within-door duplicates: "+door);
-    const activeFacet=page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter]:not([data-p435930-door-filter=all])').first();
-    await activeFacet.click();
-    const chosen=await activeFacet.getAttribute('data-p435930-door-filter');
-    assert.equal(await activeFacet.getAttribute('aria-pressed'),'true',"Category filter must be interactive");
-    const shown=await page.locator(base+' [data-ao-prayer-shelf] [data-ao-pray-door-entry]:visible').evaluateAll(nodes=>nodes.map(n=>n.dataset.aoPrayDoorFacet));
-    assert.ok(shown.length>0&&shown.every(v=>v===chosen),"Filter cannot claim selection while leaving unrelated prayers visible: "+door);
-    await page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter=all]').click();
-    assert.equal(await page.locator(base+' [data-ao-prayer-shelf] [data-ao-pray-door-entry]:visible').count(),rows.length,"All must restore every unique shelf row");
+    assert.equal(await page.locator(base+' [data-ao-prayer-shelf] .aoPrayDoorMosaicCard').count(),rows.length,
+      "Each canonical route must have exactly one mosaic tile: "+door);
+    if(facetCount){
+      const activeFacet=page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter]:not([data-p435930-door-filter=all])').first();
+      await activeFacet.click();
+      const chosen=await activeFacet.getAttribute('data-p435930-door-filter');
+      assert.equal(await activeFacet.getAttribute('aria-pressed'),'true',"Category filter must be interactive");
+      const shown=await page.locator(base+' [data-ao-prayer-shelf] [data-ao-pray-door-entry]:visible').evaluateAll(nodes=>nodes.map(n=>n.dataset.aoPrayDoorFacet));
+      assert.ok(shown.length>0&&shown.every(v=>v===chosen),"Filter cannot leave unrelated prayers visible: "+door);
+      await page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter=all]').click();
+      assert.equal(await page.locator(base+' [data-ao-prayer-shelf] [data-ao-pray-door-entry]:visible').count(),rows.length,"All must restore every unique mosaic tile");
+    }
     for(const id of rows){
       assert.equal(seen.has(id),false,"Prayer "+id+" appears in both "+seen.get(id)+" and "+door);
       seen.set(id,door);
@@ -124,6 +130,18 @@ try{
     assert.ok(geometry.width-geometry.client<=1&&geometry.doc<=1,"Door interior must not overflow at "+width+": "+door);
     await page.screenshot({path:resolve(output,"shelf-"+door+"-"+width+".png"),animations:"disabled"});
    }
+   // The ninth discovery door must reach its own 32-prayer mosaic,
+   // with a separate explicit action to open the full canonical Library.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(base+' [data-p435930-own="pray.library"]').first().click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
+   assert.equal(await page.locator(base+' [data-ao-pray-essential-landing="true"] [data-p435930-lib-open]').count(),32,
+     "Essential Prayers must open its 32 real canonical prayer cards");
+   assert.equal(await page.locator(base+' [data-ao-pray-essential-landing] .aoClaudeHolyFan button').count(),32,
+     "The Essential Prayers landing must be a mosaic, not general library text rows");
+   await page.locator(base+' [data-p435930-lib-all]').click();
+   assert.ok(await page.locator(base+' [data-p435930-lib-open]').count()>=48,
+     "The entire canonical Prayer Library must remain accessible from Essentials");
    for(const [id,door] of [["pray.rosary","chaplets"],["pray.angelus_regina","daily"],
     ["pray.litany_saints","saints"],["pray.holy_name_litany","ourlord"],
     ["pray.good_death","intentions"]])assert.equal(seen.get(id),door,"Incorrect single home for "+id);
