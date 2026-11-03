@@ -1,0 +1,699 @@
+{
+  "schema": "AO_SACRED_ATLAS_B13_FIRST_25_EXACT_FILE_SOURCE_SCREEN_20261031_V1",
+  "as_of": "2026-10-31",
+  "source_branch": "research/sacred-atlas-b09-photo-file-audit-20261031",
+  "scope": "EXACT_OBJECT_FILE_PAGES_SOURCE_LEADS_NOT_ACQUIRED_OR_APPROVED",
+  "stats": {
+    "first_25_targets_scoped": 25,
+    "original_KEEP_protected": 8,
+    "photo_lead_placements": 15,
+    "distinct_source_file_pages": 14,
+    "targets_with_at_least_one_lead": 13,
+    "targets_without_file_lead": 12,
+    "all_147_remaining_unacquired": 147
+  },
+  "method": [
+    "Match to B12 canonical object ID (not broad shrine name).",
+    "Inspect actual Commons file page caption and photo licence declaration; note reported resolution and historic/current distinction.",
+    "Do not infer underlying artwork rights from photographer's CC/CC0. Cultural heritage and modern sculpture/mosaic rights remain separate.",
+    "Status FILE_LEAD is not actual downloaded file, visual sharpness approval or user approval.",
+    "KEEP is the user's original preview decision and is not transferred to a different source photo."
+  ],
+  "geography_false_positives_to_block": [
+    {
+      "file": "File:Capelinha de Nossa Senhora de Fátima.jpg",
+      "why": "Angola, not Fátima Portugal"
+    },
+    {
+      "file": "File:Capela de nossa Senhora de Fatima.jpg",
+      "why": "São Vicente, Madeira, not original Cova da Iria chapel"
+    },
+    {
+      "file": "File:Chapelle vierge-marie.jpg",
+      "why": "Vichy chapel not Paris Rue du Bac"
+    }
+  ],
+  "ambiguous_subject_not_assign": [
+    "Banneux postcard is historical, not evidence of current chapel exterior.",
+    "Padua 'chin and tongue' shows two reliquaries, not separate tongue/jawbone closeups.",
+    "Sainte-Anne-de-Beaupré 1927 statue differs from its 1881 model.",
+    "Knock modern apparition mosaic is distinct from original apparition gable and from Lorenzo Ferri statues."
+  ],
+  "source_leads": [
+    {
+      "queue_number": 1,
+      "subject_id": "subject:round1-review:FR:notre-dame-la-salette-fallavaux:20",
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "subject": "Apparition memorial statuary at La Salette",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Sanctuaire_de_Notre-Dame_de_La_Salette_-_Statue_01.jpg",
+      "file_title": "File:Sanctuaire de Notre-Dame de La Salette - Statue 01.jpg",
+      "commons_reported_pixels": {
+        "width": 2000,
+        "height": 3008
+      },
+      "photograph_license_declared": "CC BY-SA 4.0",
+      "photographer_credit": "Tylwyth Eldar",
+      "subject_matching_state": "EXACT_SHRINE_MEMORIAL_STATUE_FILE_CAPTION",
+      "caution": "Statue of Our Lady at original French La Salette sanctuary, not copy on Réunion; check angle and memorial identity.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 2,
+      "subject_id": "subject:round1-review:BE:banneux:19",
+      "place_id": "place:BE:banneux",
+      "subject": "Chapel of the Virgin of the Poor at Banneux",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Banneux-Notre-Dame._La_Chapelle_de_la_Vierge_des_Pauvres_-_De_Kapel_van_de_Maagd_der_Armen,_GP122244_(2).jpg",
+      "file_title": "File:Banneux-Notre-Dame. La Chapelle de la Vierge des Pauvres - De Kapel van de Maagd der Armen, GP122244 (2).jpg",
+      "commons_reported_pixels": {
+        "width": 3462,
+        "height": 2277
+      },
+      "photograph_license_declared": "PDM (Commons claim)",
+      "photographer_credit": "Unknown historical postcard",
+      "subject_matching_state": "HISTORICAL_ONLY_NOT_CURRENT_HERO",
+      "caution": "Old Banneux chapel postcard, publication date/photographer uncertain. Do not present as present-day building or cleared historical photograph.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 3,
+      "subject_id": "subject:round1-review:IT:loreto-santa-casa:8",
+      "place_id": "place:IT:loreto-santa-casa",
+      "subject": "Madonna inside the Holy House at Loreto",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Loreto.jpg",
+      "file_title": "File:Our Lady of Loreto.jpg",
+      "commons_reported_pixels": {
+        "width": 3216,
+        "height": 2136
+      },
+      "photograph_license_declared": "CC BY-SA 3.0",
+      "photographer_credit": "Flyer20061",
+      "subject_matching_state": "EXACT_SANTA_CASA_INTERIOR_MADONNA",
+      "caution": "Statue inside Loreto Holy House; original predecessor lost to fire, and rights/heritage restrictions still need checking.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 4,
+      "subject_id": "subject:round1-review:FR:chartres-notre-dame:15",
+      "place_id": "place:FR:chartres-notre-dame",
+      "subject": "Notre-Dame du Pilier statue at Chartres Cathedral",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Chartres_Vierge_Pilier_1.jpg",
+      "file_title": "File:Chartres Vierge Pilier 1.jpg",
+      "commons_reported_pixels": {
+        "width": 1200,
+        "height": 1600
+      },
+      "photograph_license_declared": "UNVERIFIED_FILE_PAGE",
+      "photographer_credit": "UNVERIFIED",
+      "subject_matching_state": "EXACT_HISTORIC_STATUE_CATEGORY_LEAD_LOW_DETAIL",
+      "caution": "Category identifies Notre-Dame du Pilier statue. Short edge exactly 1200; seek better hero original.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 5,
+      "subject_id": "subject:round1-review:BR:aparecida-national-shrine:16",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "subject": "Original Our Lady of Aparecida statue in its niche",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Imagem_Aparecida.JPG",
+      "file_title": "File:Imagem Aparecida.JPG",
+      "commons_reported_pixels": {
+        "width": 3264,
+        "height": 2448
+      },
+      "photograph_license_declared": "CC BY-SA 3.0",
+      "photographer_credit": "Juliana Bastos Marques",
+      "subject_matching_state": "EXACT_ORIGINAL_IMAGE_NICHE",
+      "caution": "Commons describes access to original Aparecida image inside basilica; verify photo focus and cropped area.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 6,
+      "subject_id": "subject:focus:padua-st-anthony-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "subject": "Saint Anthony's tongue reliquary",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:La-lingua-di-sant-antonio.jpg",
+      "file_title": "File:La-lingua-di-sant-antonio.jpg",
+      "commons_reported_pixels": {
+        "width": 960,
+        "height": 1280
+      },
+      "photograph_license_declared": "CC BY-SA 4.0",
+      "photographer_credit": "Elmiralaleh",
+      "subject_matching_state": "EXACT_TONGUE_LOW_RES",
+      "caution": "Physically exact tongue relic in Padua but source original 960 short-edge, below hero standard.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 6,
+      "subject_id": "subject:focus:padua-st-anthony-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "subject": "Saint Anthony's tongue reliquary",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Gold_reliquairies_containing_the_chin_and_tongue_of_St._Anthony_of_Padua_in_the_Basilica_of_St._Anthony_of_Padua;_Padua_(1)_(48787797937).jpg",
+      "file_title": "File:Gold reliquairies containing the chin and tongue of St. Anthony of Padua in the Basilica of St. Anthony of Padua; Padua (1) (48787797937).jpg",
+      "commons_reported_pixels": {
+        "width": 2836,
+        "height": 3176
+      },
+      "photograph_license_declared": "CC BY 2.0",
+      "photographer_credit": "Richard Mortel",
+      "subject_matching_state": "TONGUE_AND_CHIN_SHARED_DISPLAY",
+      "caution": "Two different historic relic containers in one photo; do not treat as macro of tongue alone.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 7,
+      "subject_id": "subject:focus:fatima-apparition-statue-plinth",
+      "place_id": "place:PT:fatima-sanctuary",
+      "subject": "Venerated Marian statue in the Chapel of the Apparitions",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:First_Sculpture_of_Our_Lady_of_Fatima.jpg",
+      "file_title": "File:First Sculpture of Our Lady of Fatima.jpg",
+      "commons_reported_pixels": {
+        "width": 2459,
+        "height": 4223
+      },
+      "photograph_license_declared": "CC BY-SA 4.0 (photograph)",
+      "photographer_credit": "Bingar1234",
+      "subject_matching_state": "EXACT_1920_THE_DIM_STATUE_UNDERLYING_RIGHTS_HOLD",
+      "caution": "Commons claims 1920 work PD through donation, but proof of release/Portugal copyright must be independently established; artist died 1971. No publication.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 8,
+      "subject_id": "subject:round1-review:CA:sainte-anne-de-beaupre:17",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "subject": "Venerated statue of Saint Anne in the Basilica",
+      "prior_keep": true,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Sainte-Anne-de-Beaupr%C3%A9_statue_miraculeuse_,_dans_le_transept_nord_de_sainte_Anne.jpg",
+      "file_title": "File:Sainte-Anne-de-Beaupré statue miraculeuse , dans le transept nord de sainte Anne.jpg",
+      "commons_reported_pixels": {
+        "width": 2022,
+        "height": 1862
+      },
+      "photograph_license_declared": "CC BY-SA 4.0 (photograph)",
+      "photographer_credit": "Pierre André Leclercq",
+      "subject_matching_state": "EXACT_CURRENT_1927_POLYCHROME_STATUE",
+      "caution": "Present statue sculpted 1927 by Jules de Fischer, copying 1881 model; not the 1881 original. Underlying sculpture copyright unclear.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 10,
+      "subject_id": "subject:focus:knock-basilica-mosaic",
+      "place_id": "place:IE:knock-shrine",
+      "subject": "Apparition mosaic in Knock Basilica",
+      "prior_keep": false,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Basilica_of_Our_Lady,_Queen_of_Ireland_(Interior)02.jpg",
+      "file_title": "File:Basilica of Our Lady, Queen of Ireland (Interior)02.jpg",
+      "commons_reported_pixels": {
+        "width": 4608,
+        "height": 3456
+      },
+      "photograph_license_declared": "CC0 1.0 (photograph)",
+      "photographer_credit": "FredSeiller",
+      "subject_matching_state": "EXACT_KNOCK_BASILICA_APPARITION_MOSAIC",
+      "caution": "Interior mosaic depicts apparition; modern artwork copyright separate despite CC0 photograph.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 11,
+      "subject_id": "subject:focus:rue-du-bac-marian-chapel",
+      "place_id": "place:FR:rue-du-bac",
+      "subject": "Chapel of the Miraculous Medal, original apparition site",
+      "prior_keep": false,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Chapelle_Notre-Dame_de_la_M%C3%A9daille_Miraculeuse1.JPG",
+      "file_title": "File:Chapelle Notre-Dame de la Médaille Miraculeuse1.JPG",
+      "commons_reported_pixels": {
+        "width": 5184,
+        "height": 3456
+      },
+      "photograph_license_declared": "CC BY-SA 4.0",
+      "photographer_credit": "Ketounette",
+      "subject_matching_state": "EXACT_RUE_DU_BAC_APPARITION_CHAPEL_INTERIOR",
+      "caution": "Interior of actual Rue du Bac chapel, not similarly named Vichy church; composition and artwork rights check.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 12,
+      "subject_id": "subject:focus:lourdes-fabisch-statue",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "subject": "Fabisch statue in the apparition niche (1864)",
+      "prior_keep": false,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes_-_Grotto_of_Lourdes_-_Lourdes_2014_(2).JPG",
+      "file_title": "File:Our Lady of Lourdes - Grotto of Lourdes - Lourdes 2014 (2).JPG",
+      "commons_reported_pixels": {
+        "width": 2048,
+        "height": 3072
+      },
+      "photograph_license_declared": "PHOTOGRAPH_LICENCE_REVIEW_PENDING",
+      "photographer_credit": "UNVERIFIED",
+      "subject_matching_state": "EXACT_FABISCH_1864_NICHE_STATUE",
+      "caution": "Photo in Massabielle Grotto of the original 1864 Fabisch statue; verify crop detail.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 15,
+      "subject_id": "subject:focus:padua-st-anthony-jawbone",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "subject": "St Anthony's jawbone reliquary (1350)",
+      "prior_keep": false,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Gold_reliquairies_containing_the_chin_and_tongue_of_St._Anthony_of_Padua_in_the_Basilica_of_St._Anthony_of_Padua;_Padua_(1)_(48787797937).jpg",
+      "file_title": "File:Gold reliquairies containing the chin and tongue of St. Anthony of Padua in the Basilica of St. Anthony of Padua; Padua (1) (48787797937).jpg",
+      "commons_reported_pixels": {
+        "width": 2836,
+        "height": 3176
+      },
+      "photograph_license_declared": "CC BY 2.0",
+      "photographer_credit": "Richard Mortel",
+      "subject_matching_state": "CHIN_CONTAINER_NOT_EXACT_JAW_BONE",
+      "caution": "Shares image of tongue and chin; cannot silently identify chin reliquary as specific 1350 jawbone without source.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 17,
+      "subject_id": "subject:relic:GB:john-southworth-westminster",
+      "place_id": "place:GB:westminster-cathedral",
+      "subject": "Body of St John Southworth at Westminster Cathedral",
+      "prior_keep": false,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Body_of_Saint_John_Southworth_in_Westminster_Cathedral.jpg",
+      "file_title": "File:Body of Saint John Southworth in Westminster Cathedral.jpg",
+      "commons_reported_pixels": {
+        "width": 4896,
+        "height": 3264
+      },
+      "photograph_license_declared": "CC BY-SA 4.0",
+      "photographer_credit": "Ethan Doyle White",
+      "subject_matching_state": "EXACT_BODY_RELIQUARY",
+      "caution": "Photo title and description identify St John Southworth's bodily shrine in Westminster Cathedral.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    },
+    {
+      "queue_number": 17,
+      "subject_id": "subject:relic:GB:john-southworth-westminster",
+      "place_id": "place:GB:westminster-cathedral",
+      "subject": "Body of St John Southworth at Westminster Cathedral",
+      "prior_keep": false,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Westminster_Cathedral_Saint_John_Southworth_001.jpg",
+      "file_title": "File:Westminster Cathedral Saint John Southworth 001.jpg",
+      "commons_reported_pixels": {
+        "width": 4014,
+        "height": 2722
+      },
+      "photograph_license_declared": "PD-self (Commons claim)",
+      "photographer_credit": "Commons photographer",
+      "subject_matching_state": "ALTERNATE_EXACT_BODY_RELIQUARY",
+      "caution": "Second image of shrine; verify rights and framing before selection.",
+      "original_binary_downloaded": false,
+      "full_resolution_visual_qc_passed": false,
+      "original_work_rights_cleared": false,
+      "editorial_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "first_25": [
+    {
+      "queue_n": 1,
+      "subject_id": "subject:round1-review:FR:notre-dame-la-salette-fallavaux:20",
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "requested_subject": "Apparition memorial statuary at La Salette",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Sanctuaire_de_Notre-Dame_de_La_Salette_-_Statue_01.jpg",
+          "role": "EXACT_SHRINE_MEMORIAL_STATUE_FILE_CAPTION"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 2,
+      "subject_id": "subject:round1-review:BE:banneux:19",
+      "place_id": "place:BE:banneux",
+      "requested_subject": "Chapel of the Virgin of the Poor at Banneux",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Banneux-Notre-Dame._La_Chapelle_de_la_Vierge_des_Pauvres_-_De_Kapel_van_de_Maagd_der_Armen,_GP122244_(2).jpg",
+          "role": "HISTORICAL_ONLY_NOT_CURRENT_HERO"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 3,
+      "subject_id": "subject:round1-review:IT:loreto-santa-casa:8",
+      "place_id": "place:IT:loreto-santa-casa",
+      "requested_subject": "Madonna inside the Holy House at Loreto",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Loreto.jpg",
+          "role": "EXACT_SANTA_CASA_INTERIOR_MADONNA"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 4,
+      "subject_id": "subject:round1-review:FR:chartres-notre-dame:15",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Notre-Dame du Pilier statue at Chartres Cathedral",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Chartres_Vierge_Pilier_1.jpg",
+          "role": "EXACT_HISTORIC_STATUE_CATEGORY_LEAD_LOW_DETAIL"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 5,
+      "subject_id": "subject:round1-review:BR:aparecida-national-shrine:16",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "requested_subject": "Original Our Lady of Aparecida statue in its niche",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Imagem_Aparecida.JPG",
+          "role": "EXACT_ORIGINAL_IMAGE_NICHE"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 6,
+      "subject_id": "subject:focus:padua-st-anthony-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Saint Anthony's tongue reliquary",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:La-lingua-di-sant-antonio.jpg",
+          "role": "EXACT_TONGUE_LOW_RES"
+        },
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Gold_reliquairies_containing_the_chin_and_tongue_of_St._Anthony_of_Padua_in_the_Basilica_of_St._Anthony_of_Padua;_Padua_(1)_(48787797937).jpg",
+          "role": "TONGUE_AND_CHIN_SHARED_DISPLAY"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 7,
+      "subject_id": "subject:focus:fatima-apparition-statue-plinth",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Venerated Marian statue in the Chapel of the Apparitions",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:First_Sculpture_of_Our_Lady_of_Fatima.jpg",
+          "role": "EXACT_1920_THE_DIM_STATUE_UNDERLYING_RIGHTS_HOLD"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 8,
+      "subject_id": "subject:round1-review:CA:sainte-anne-de-beaupre:17",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Venerated statue of Saint Anne in the Basilica",
+      "prior_user_keep_protected": true,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Sainte-Anne-de-Beaupr%C3%A9_statue_miraculeuse_,_dans_le_transept_nord_de_sainte_Anne.jpg",
+          "role": "EXACT_CURRENT_1927_POLYCHROME_STATUE"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 9,
+      "subject_id": "subject:focus:pontmain-apparition-column",
+      "place_id": "place:FR:pontmain",
+      "requested_subject": "Apparition memorial column at Pontmain",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 10,
+      "subject_id": "subject:focus:knock-basilica-mosaic",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Apparition mosaic in Knock Basilica",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Basilica_of_Our_Lady,_Queen_of_Ireland_(Interior)02.jpg",
+          "role": "EXACT_KNOCK_BASILICA_APPARITION_MOSAIC"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 11,
+      "subject_id": "subject:focus:rue-du-bac-marian-chapel",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Chapel of the Miraculous Medal, original apparition site",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Chapelle_Notre-Dame_de_la_M%C3%A9daille_Miraculeuse1.JPG",
+          "role": "EXACT_RUE_DU_BAC_APPARITION_CHAPEL_INTERIOR"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 12,
+      "subject_id": "subject:focus:lourdes-fabisch-statue",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Fabisch statue in the apparition niche (1864)",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes_-_Grotto_of_Lourdes_-_Lourdes_2014_(2).JPG",
+          "role": "EXACT_FABISCH_1864_NICHE_STATUE"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 13,
+      "subject_id": "subject:focus:knock-lorenzo-ferri-marble",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Lorenzo Ferri apparition statuary (1960)",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 14,
+      "subject_id": "subject:focus:nevers-massabielle-replica",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "requested_subject": "Replica of the Lourdes Grotto at Nevers (1884)",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 15,
+      "subject_id": "subject:focus:padua-st-anthony-jawbone",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "St Anthony's jawbone reliquary (1350)",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Gold_reliquairies_containing_the_chin_and_tongue_of_St._Anthony_of_Padua_in_the_Basilica_of_St._Anthony_of_Padua;_Padua_(1)_(48787797937).jpg",
+          "role": "CHIN_CONTAINER_NOT_EXACT_JAW_BONE"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 16,
+      "subject_id": "subject:focus:padua-st-anthony-vocal",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "St Anthony's vocal-apparatus reliquary (1981)",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 17,
+      "subject_id": "subject:relic:GB:john-southworth-westminster",
+      "place_id": "place:GB:westminster-cathedral",
+      "requested_subject": "Body of St John Southworth at Westminster Cathedral",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Body_of_Saint_John_Southworth_in_Westminster_Cathedral.jpg",
+          "role": "EXACT_BODY_RELIQUARY"
+        },
+        {
+          "commons_url": "https://commons.wikimedia.org/wiki/File:Westminster_Cathedral_Saint_John_Southworth_001.jpg",
+          "role": "ALTERNATE_EXACT_BODY_RELIQUARY"
+        }
+      ],
+      "stage": "SOURCE_FILE_LEAD_NOT_ACQUIRED",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 18,
+      "subject_id": "subject:relic:IT:paul-chains",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "requested_subject": "Chains traditionally associated with St Paul's imprisonment",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 19,
+      "subject_id": "subject:relic:IT:francis-first-companions",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "requested_subject": "Early Franciscan companions at Assisi",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 20,
+      "subject_id": "subject:relic:IT:santa-croce-thomas-finger",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Finger bone of St Thomas the Apostle",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 21,
+      "subject_id": "subject:relic:CA:anne-beaupre-finger",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Finger-bone fragment of St Anne",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 22,
+      "subject_id": "subject:relic:CA:anne-beaupre-1892-forearm",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Forearm fragment of St Anne (1892)",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 23,
+      "subject_id": "subject:relic:DE:aachener-dom-four-textiles",
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "requested_subject": "Four sacred textiles of Aachen Cathedral",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 24,
+      "subject_id": "subject:relic:IT:santa-croce-holy-sepulchre",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Fragment associated with the Holy Sepulchre",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    },
+    {
+      "queue_n": 25,
+      "subject_id": "subject:relic:IT:santa-croce-nativity-grotto",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Fragment associated with the Nativity Grotto",
+      "prior_user_keep_protected": false,
+      "new_file_leads": [],
+      "stage": "EXACT_FILE_NOT_FOUND_IN_THIS_PASS",
+      "image_accepted": false
+    }
+  ]
+}

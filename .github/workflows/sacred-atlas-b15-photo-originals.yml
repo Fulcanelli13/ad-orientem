@@ -1,0 +1,57 @@
+name: Sacred Atlas B15 — research-only original Commons image acquisitions
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths:
+      - 'tools/sacred-atlas-b15-github-photo-acquirer.py'
+      - 'tools/sacred-atlas-b14-bulk-photo-retriever.html'
+      - 'data/geography/research/sacred-atlas-b12-147-unacquired-source-priority-queue-20261031.v1.json'
+      - '.github/workflows/sacred-atlas-b15-photo-originals.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-atlas-b15-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate canonical 147 subject IDs and protected approvals
+        run: python tools/sacred-atlas-b15-github-photo-acquirer.py --selftest
+
+  acquire-unapproved-originals:
+    needs: verify-inputs
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        chunk: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve Commons original files with provenance, no production changes
+        run: python tools/sacred-atlas-b15-github-photo-acquirer.py --chunk ${{ matrix.chunk }} --out artifacts/atlas-b15
+      - name: Upload short-lived research ZIPs (not repository assets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-b15-unapproved-originals-${{ matrix.chunk }}
+          path: artifacts/atlas-b15/
+          retention-days: 7
+          if-no-files-found: warn

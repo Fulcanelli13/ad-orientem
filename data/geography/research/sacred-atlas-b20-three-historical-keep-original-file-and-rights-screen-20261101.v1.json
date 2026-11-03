@@ -1,0 +1,110 @@
+{
+  "schema": "AO_SACRED_ATLAS_B20_THREE_HISTORICAL_KEEP_ORIGINAL_FILE_SOURCE_SCREEN_V1",
+  "date": "2026-11-01",
+  "purpose": "Source-specific native-original availability, web-rendered composition and underlying-art provenance review for three still-held historical KEEP choices. This is research only and does not promote or replace any user-approved image.",
+  "scope": {
+    "historical_KEEP_subjects": 3,
+    "approved_for_publication_here": 0,
+    "app_changes": 0,
+    "source_previews_replaced": 0
+  },
+  "method": {
+    "web_source_file_pages": "Opened exact Wikimedia Commons file pages and original-file renders",
+    "native_original_bytes_downloaded_in_this_B20_pass": false,
+    "pixel_level_sharpness_or_sha_reverified_in_B20": false,
+    "rights_review": "Photographer license verified on source page; underlying object historical age independently sourced where available; no jurisdiction-specific final legal clearance",
+    "editorial_review": "Preserve historical KEEP unchanged; do not replace with research alternatives."
+  },
+  "subjects": [
+    {
+      "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "historical_KEEP": true,
+      "selected_commons_file": "File:Saint Bernadette's incorrupt body.jpg",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Saint_Bernadette%27s_incorrupt_body.jpg",
+      "commons_original_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Saint_Bernadette%27s_incorrupt_body.jpg",
+      "photographer": "Jabonsbachek",
+      "photo_license": "CC BY-SA 4.0",
+      "native_original_dimensions_px": [
+        3120,
+        4160
+      ],
+      "visually_verified_subject": "Correct gold-and-glass Saint Bernadette reliquary; flower bouquet across large foreground; face and body occupy limited image area.",
+      "underlying_object_note": "Face and hands have wax coverings created in 1925 by Pierre Imans firm, not the saint's unaltered visible skin.",
+      "underlying_object_evidence": "https://parish.rcdow.org.uk/hillingdon/patronsaint/",
+      "rights_state": "HOLD_MODERN_WAX_COVERING_RIGHTS_ASSESSMENT",
+      "visual_state": "HOLD_FOREGROUND_BOUQUET_AND_SMALL_SUBJECT",
+      "publication_state": "HOLD",
+      "user_choice_state": "KEEP_PRESERVED",
+      "next_action": "Evaluate the existing KEEP image only as accurately captioned environmental gallery view if legal and editorial gates clear; find separately sourced tighter view as unapproved research candidate. Do not auto-crop, substitute or infer release."
+    },
+    {
+      "subject_id": "subject:focus:mariazell-magna-mater-statue",
+      "place_id": "place:AT:mariazell-basilica",
+      "historical_KEEP": true,
+      "selected_commons_file": "File:Gnadenstatue Mariazell.jpg",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Gnadenstatue_Mariazell.jpg",
+      "commons_original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Gnadenstatue_Mariazell.jpg",
+      "photographer": "Launus",
+      "photo_license": "CC BY-SA 4.0",
+      "native_original_dimensions_px": [
+        2448,
+        3264
+      ],
+      "visually_verified_subject": "Correct Mariazell Magna Mater dressed statue inside elaborate silver altar. Statue small relative to total portrait frame; altar and decorations dominate.",
+      "underlying_object_note": "Original medieval statue distinct from removable clothing, metal decorations, jewellery and other adornment; do not assume copyright status of every modern accessory.",
+      "rights_state": "HOLD_DECORATIVE_ELEMENTS_RIGHTS_DETAIL",
+      "visual_state": "HOLD_EXACT_OBJECT_MOBILE_READABILITY",
+      "publication_state": "HOLD",
+      "user_choice_state": "KEEP_PRESERVED",
+      "next_action": "Retain for context-gallery consideration subject to rights/editorial clearance; evaluate separately sourced exact-statue closeup as a candidate, never replace historical KEEP automatically."
+    },
+    {
+      "subject_id": "subject:round1-review:IN:basilica-bom-jesus-old-goa:13",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "historical_KEEP": true,
+      "selected_commons_file": "File:St.francis church bom jesus views (6).JPG",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:St.francis_church_bom_jesus_views_(6).JPG",
+      "commons_original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/St.francis_church_bom_jesus_views_%286%29.JPG",
+      "photographer": "Irvin calicut",
+      "photo_license": "CC BY-SA 3.0",
+      "native_original_dimensions_px": [
+        2816,
+        2112
+      ],
+      "visually_verified_subject": "Correct historic silver casket of St Francis Xavier at Basilica of Bom Jesus, but noisy, dim, and soft with low casket contrast.",
+      "underlying_object_note": "Silversmiths made original casket in 1636–37, subsequently set above late-17th-century Foggini mausoleum; underlying historical art almost certainly past ordinary copyright term. This is evidence of date, not blanket rights clearance.",
+      "underlying_object_evidence": "https://eve.fcsh.unl.pt/en/arts/tomb-saint-francis-xavier",
+      "rights_state": "PHOTOGRAPH_CC_BY_SA_CONFIRMED_HISTORIC_OBJECT_AGE_EVIDENCED",
+      "visual_state": "HOLD_LOW_LIGHT_NOISE_SOFTNESS",
+      "publication_state": "HOLD",
+      "user_choice_state": "KEEP_PRESERVED",
+      "next_action": "Do not publish as premium exact-object media; preserve historical KEEP and check quality against separately sourced candidate.",
+      "unapproved_research_alternative": {
+        "commons_file": "File:Casket of Saint Francis Xavier.jpg",
+        "commons_url": "https://commons.wikimedia.org/wiki/File:Casket_of_Saint_Francis_Xavier.jpg",
+        "commons_original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Casket_of_Saint_Francis_Xavier.jpg",
+        "year_photographed": 1995,
+        "original_dimensions_px": [
+          2374,
+          3552
+        ],
+        "photographer": "Gaius Cornelius",
+        "commons_photo_license_claim": "Creator-dedicated public domain",
+        "composition_note": "Clearer whole-mausoleum context, but small casket, faded/dim photo; not proven a superior close-up.",
+        "editorial_state": "NEW_RESEARCH_ALTERNATIVE_NOT_USER_APPROVED",
+        "may_replace_KEEP": false
+      }
+    }
+  ],
+  "publish_safety": {
+    "auto_publication": false,
+    "user_KEEP_preserved": true,
+    "rejected_files_stay_quarantined": true,
+    "do_not_replace_place_HERO": true,
+    "no_new_images_accepted": true,
+    "requires_final_source_identity_rights_visual_and_editorial_gates": true
+  },
+  "previous_authoritative_file": "data/geography/research/sacred-atlas-b19-five-KEEP-release-holds-20261101.v1.json",
+  "review_scope_note": "B20 provides newer file-page and original-render evidence. It neither changes B19's KEEP decisions nor clears its publication holds."
+}

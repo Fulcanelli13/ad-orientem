@@ -1,0 +1,118 @@
+{
+  "schema": "AO_SACRED_ATLAS_B19_FIVE_HISTORICAL_KEEP_RELEASE_DECISIONS_V1",
+  "date": "2026-11-01",
+  "source": "Original A100/B09 user historical KEEP plus real 2026-11-01 B18 user-submitted JPEG previews; image-specific source and visual review",
+  "scope": "Five recovered historical KEEP subjects; all user selection decisions immutable; release only with actual local reviewed bytes and precise rights.",
+  "subjects": [
+    {
+      "subject_id": "subject:focus:jasna-gora-black-madonna",
+      "place_id": "place:PL:jasna-gora",
+      "historical_KEEP": true,
+      "source_file": "File:Częstochowa, Jasna Góra, kaplica NMP, obraz Czarnej Madonny - 2024.04.01.jpg",
+      "commons_sha1": "a76dc181e77e3669e72881a41dbebe27a4afee34",
+      "photo_license": "CC BY-SA 4.0",
+      "photographer": "Aw58",
+      "visually_correct": true,
+      "status": "PUBLISHED_APPROVED_EXACT_OBJECT_GALLERY",
+      "remaining_gate": "None for current exact-image gallery publication; future higher quality artistic alternatives remain separate editorial decisions.",
+      "historical_object_context": "Medieval icon; Jasna Góra documents original image before 1400.",
+      "deployed": true,
+      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+      "production_url": "https://ad-orientem.vercel.app"
+    },
+    {
+      "subject_id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "historical_KEEP": true,
+      "source_file": "File:00 0373 Black Madonna of Altötting.jpg",
+      "commons_sha1": "1a3134a1285a0bd3abeef5356387ccc5722ead17",
+      "photo_license": "CC BY-SA 4.0",
+      "photographer": "W. Bulach",
+      "visually_correct": true,
+      "status": "PUBLISHED_APPROVED_EXACT_OBJECT_GALLERY",
+      "remaining_gate": "None for current exact-image gallery publication; future higher quality artistic alternatives remain separate editorial decisions.",
+      "historical_object_context": "14th-century image of grace; altar garments/devotional setting pictured in 2013.",
+      "deployed": true,
+      "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+      "production_url": "https://ad-orientem.vercel.app"
+    },
+    {
+      "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "historical_KEEP": true,
+      "source_file": "File:Saint Bernadette's incorrupt body.jpg",
+      "commons_sha1": "7311763e9326f543722c62e050864872bc783de5",
+      "photo_license": "CC BY-SA 4.0",
+      "photographer": "Jabonsbachek",
+      "visually_correct": true,
+      "status": "HOLD_VISUAL_COMPOSITION_AND_UNDERLYING_EFFIGY_RIGHTS",
+      "remaining_gate": "Foreground flowers substantially obstruct casket; wax-covered effigy and image rights need explicit assessment; retain user's existing photo choice as KEEP pending suitable adaptation, not rejection.",
+      "deployed": false
+    },
+    {
+      "subject_id": "subject:focus:mariazell-magna-mater-statue",
+      "place_id": "place:AT:mariazell-basilica",
+      "historical_KEEP": true,
+      "source_file": "File:Gnadenstatue Mariazell.jpg",
+      "commons_sha1": "2d43397542580f7bb3fa448fbd8be7abbe78182f",
+      "photo_license": "CC BY-SA 4.0",
+      "photographer": "Launus",
+      "visually_correct": true,
+      "status": "HOLD_PHOTO_DISTANCE_AND_ADORNMENT_RIGHTS_REVIEW",
+      "remaining_gate": "Medieval statue is visible within a larger, highly reflective altar composition; assess whether it can serve as exact-object image at mobile size, and whether any modern applied adornments matter to rights. Do not overwrite user's KEEP selection.",
+      "deployed": false
+    },
+    {
+      "subject_id": "subject:round1-review:IN:basilica-bom-jesus-old-goa:13",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "historical_KEEP": true,
+      "source_file": "File:St.francis church bom jesus views (6).JPG",
+      "commons_sha1": "d0f0b3edbc10b17eb2f293dc69f20398f62126ef",
+      "photo_license": "CC BY-SA 3.0",
+      "photographer": "Irvin calicut",
+      "visually_correct": true,
+      "status": "HOLD_LOW_CONTRAST_AND_OBSCURED_OBJECT",
+      "remaining_gate": "Dim silver reliquary image: low-light, distant and partially obscured; review full native original or suitable existing high-resolution alternative without replacing historical KEEP.",
+      "deployed": false
+    }
+  ],
+  "separate_two_keep_missing_source_objects": [
+    {
+      "subject_id": "subject:round1-review:IT:loreto-santa-casa:8",
+      "status": "EXACT_USER_KEEP_SOURCE_PHOTO_NOT_RECOVERED"
+    },
+    {
+      "subject_id": "subject:round1-review:BE:banneux:19",
+      "status": "EXACT_USER_KEEP_SOURCE_PHOTO_NOT_RECOVERED"
+    }
+  ],
+  "release_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2203",
+  "research_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2155",
+  "b18_supplied_zip_batches": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "b18_missing_zip_batches": [
+    4,
+    5
+  ],
+  "no_new_photo_user_approval_inferred": true,
+  "allow_generic_same_place_fallback": false,
+  "published_new_images": 2,
+  "release_pr_merged": true,
+  "release_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+  "native_originals_sha1_and_webp_sha256_ci_passed": true,
+  "app_approved_gallery_item_count": 35,
+  "new_approved_marian_gallery_objects": 2,
+  "production_commit": "23e850b297ca99829548fd696a05ad461636c29f",
+  "production_deployment_id": "dpl_F5Spf2qxRmz2heFtpzFRViKVQEGT",
+  "production_state": "READY",
+  "public_alias_confirmed": true
+}
