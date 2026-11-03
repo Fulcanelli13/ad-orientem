@@ -165,6 +165,18 @@ try{
      "Source-owned desktop Place cards must retain canonical Place identities");
     assert.equal(await root.locator(".aoMapcnDesktopPlaceCard .aoMapcnDiscoverGlyph").count(),0,
      "Desktop Sacred Places must use the shared category-symbol fallback rather than a generic cross");
+    const firstSymbol=root.locator(".aoMapcnDesktopPlaceCard .aoSacredPlaceSymbolFallback svg").first();
+    if(await firstSymbol.count()){
+     const bounds=await firstSymbol.evaluate(svg=>{
+      const icon=svg.getBoundingClientRect();
+      const frame=svg.closest(".aoSacredPlaceSymbolFallback").getBoundingClientRect();
+      return {x:icon.x,y:icon.y,bottom:icon.bottom,frameTop:frame.top,frameBottom:frame.bottom,
+       left:icon.left,right:icon.right,frameLeft:frame.left,frameRight:frame.right};
+     });
+     assert.ok(bounds.y>=bounds.frameTop-1&&bounds.bottom<=bounds.frameBottom+1
+       &&bounds.left>=bounds.frameLeft-1&&bounds.right<=bounds.frameRight+1,
+       "Desktop category-symbol icon must fit inside its approved-media fallback slot: "+JSON.stringify(bounds));
+    }
     await railTabs.locator('[data-heritage-category="shrines"]').click();
     await page.waitForFunction(()=>{
      const root=document.querySelector("#ao-find-modular-root");
