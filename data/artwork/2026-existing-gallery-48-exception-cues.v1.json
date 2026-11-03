@@ -1,7 +1,7 @@
 {
   "schema": "AO_2026_EXISTING_GALLERY_48_EXCEPTION_RECOVERY_CUES_V1",
   "year": 2026,
-  "source": "2026-11-03 PR2308 verified-Gospel bulk artifact; 989-group gallery on main",
+  "source": "2026-11-03 PR2308 verified-Gospel audit, 989 groups and prior dated research/study records",
   "policy": [
     "THIS_IS_EXISTING_GALLERY_CANDIDATE_EVIDENCE_NOT_NEW_APPROVAL",
     "DO_NOT_DECLARE_EXACT_GOSPEL_SCENE_FROM_TITLE_ALONE",
@@ -22,6 +22,16 @@
       "reviewNote": "Guido Reni Saint Andrew Corsini portraits; exact object duplication needs review"
     },
     {
+      "date": "2026-02-28",
+      "gospelReference": "Matthew 17:1–9",
+      "matchKind": "PREVIOUS_DATED_SAME_VERIFIED_GOSPEL",
+      "workGroupIds": [],
+      "historicDonorDate": "2026-03-01",
+      "historicEvidenceKind": "PREVIOUS_DATED_ARTWORK_RESEARCH",
+      "historicArtworkTitle": "The Transfiguration",
+      "reviewNote": "Raphael Transfiguration from previously approved II Sunday of Lent on the very next day; exact Matthew 17:1–9, original object/photo must be reconciled"
+    },
+    {
       "date": "2026-04-13",
       "gospelReference": "Luke 14:26–33",
       "matchKind": "EXACT_NAMED_SAINT_TITLE",
@@ -31,13 +41,24 @@
       "reviewNote": "Saint Hermenegild; source title has original spelling error"
     },
     {
+      "date": "2026-04-19",
+      "gospelReference": "John 10:11–16",
+      "matchKind": "HISTORIC_GOSPEL_SUBJECT_NO_DONOR_PERICOPE",
+      "workGroupIds": [],
+      "historicDonorDate": "2026-05-26",
+      "historicEvidenceKind": "PREVIOUS_DATED_ARTWORK_RESEARCH",
+      "historicArtworkTitle": "The Parable of the Good Shepherd",
+      "reviewNote": "Already researched Figge Good Shepherd painting; the donor day's Gospel is unresolved, scene must be visually confirmed against John 10:11–16"
+    },
+    {
       "date": "2026-04-23",
       "gospelReference": "John 10:11–16",
-      "matchKind": "SEASONAL_REUSE_CONTEXT",
-      "workGroupIds": [
-        "CANONICAL::ART-eter-aul-ubens-esurrection-of-hrist"
-      ],
-      "reviewNote": "Eastertide resurrection context only, NOT depiction of the Good Shepherd"
+      "matchKind": "HISTORIC_GOSPEL_SUBJECT_NO_DONOR_PERICOPE",
+      "workGroupIds": [],
+      "reviewNote": "Prefer the already researched Good Shepherd over a generic Easter-season Resurrection; source Gospel at donor is unresolved and photo remains uncertified",
+      "historicDonorDate": "2026-05-26",
+      "historicEvidenceKind": "PREVIOUS_DATED_ARTWORK_RESEARCH",
+      "historicArtworkTitle": "The Parable of the Good Shepherd"
     },
     {
       "date": "2026-04-29",
@@ -47,6 +68,16 @@
         "REVIEW::commons:9734560"
       ],
       "reviewNote": "Saint Peter Martyr of Verona with Nicholas and Benedict"
+    },
+    {
+      "date": "2026-05-04",
+      "gospelReference": "Luke 7:11–16",
+      "matchKind": "OLDER_GOSPEL_STUDY_SAME_VERIFIED_GOSPEL",
+      "workGroupIds": [],
+      "historicDonorDate": "2026-09-06",
+      "historicEvidenceKind": "ALREADY_RESEARCHED_GOSPEL_OR_FEAST_STUDY",
+      "historicArtworkTitle": "Raising of the Son of the Widow of Nain",
+      "reviewNote": "Already catalogued Kotarbiński and Altomonte original painted sources for the exact Luke 7 episode; do not reuse a previously rejected AI rendition"
     },
     {
       "date": "2026-06-06",
@@ -158,7 +189,10 @@
       "workGroupIds": [
         "REVIEW::met:438813"
       ],
-      "reviewNote": "Saint John the Baptist Bearing Witness; exact interrogation scene unverified"
+      "reviewNote": "Preserve Bernardo Strozzi's historical Gaudete selection, same verified Gospel John 1:19–28; existing Met John Bearing Witness candidate remains an alternative",
+      "historicDonorDate": "2026-12-13",
+      "historicEvidenceKind": "PREVIOUS_DATED_ARTWORK_RESEARCH",
+      "historicArtworkTitle": "Saint John the Baptist Interrogated about Christ"
     },
     {
       "date": "2026-12-19",
