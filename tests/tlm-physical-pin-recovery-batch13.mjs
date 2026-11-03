@@ -1,0 +1,63 @@
+// TLM batch 13 — 12 UK, 2 US provisional sites; identity and evidence-scope locks.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
+import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
+import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
+const baseline=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+const all=projectCL2PhysicalDirectory(baseline,index);
+const text=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
+const section=text.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
+const allKeys=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(m=>m[1]);
+assert.equal(new Set(allKeys).size,allKeys.length,"Duplicate physical group pin");
+const sites=[["RG-FB8F0348E454","AO-B34-L-GB-5A9DB2259039",51.96179,-1.14526,"osm:way:197835149","https://www.openstreetmap.org/way/197835149","HETHE_HOLY_TRINITY_ROMAN_CATHOLIC_GRADE_II_CHURCH_NOT_ANGLICAN_ST_EDMUND"],["RG-DA6E082DB84D","AO-B35-L-GB-E0517E640A23",53.2754,-3.2232,"independent:cadw-holywell-st-winefride-parish-490","https://gb.britishlistedbuildings.co.uk/300000490-st-winefrides-roman-catholic-church-holywell/maps","HOLYWELL_ST_WINEFRIDE_PARISH_CHURCH_GRADE_II_NOT_MEDIEVAL_WELL_CHAPEL_OR_PRESBYTERY"],["RG-2895260BCC20","AO-B35-L-GB-FF3861358B0F",52.91389,-1.48213,"osm:way:54615659","https://www.openstreetmap.org/way/54615659","DERBY_ST_JOSEPH_BURTON_ROAD_CATHOLIC_CHURCH_NOT_PRIMARY_SCHOOL_OR_MICKLEOVER"],["RG-51072408D9CF","AO-B35-L-GB-21417F9223AE",51.13163,0.26685,"osm:way:252586680","https://www.openstreetmap.org/way/252586680","TUNBRIDGE_WELLS_ST_AUGUSTINE_CATHOLIC_CHURCH_NOT_ST_AUGUSTINE_HAWKHURST"],["RG-70B31984AB26","AO-B34-L-GB-CBFEABD75555",52.7482,0.4021,"independent:historicengland-kings-lynn-our-lady-annunciation-1481880","https://gb.britishlistedbuildings.co.uk/101481880-our-lady-of-the-annunciation-and-attached-presbytery-kings-lynn-kings-lynn-and-west-norfolk-st-margarets-with-st-nicholas-ward/maps","KINGS_LYNN_OUR_LADY_ANNUNCIATION_GRADE_II_CHURCH_AND_PRESBYTERY_SITE_NOT_NEARBY_SCHOOL"],["RG-65E3B77E0F84","AO-B34-L-GB-1B3A4665CA8E",51.35458,-2.94141,"osm:way:95994804","https://www.openstreetmap.org/way/95994804","WESTON_SUPER_MARE_OUR_LADY_LOURDES_CHURCH_BAYTREE_ROAD_NOT_NEARBY_PARISH_HALL"],["RG-3923AED1F35D","AO-B35-L-GB-85E5727F6F41",50.73758,-1.80583,"osm:way:236082777","https://www.openstreetmap.org/way/236082777","BOURNEMOUTH_IFORD_ST_THOMAS_MORE_CATHOLIC_CHURCH_NOT_ST_THOMAS_MORE_SCHOOL"],["RG-6EA342262B1C","AO-B35-L-GB-666C6C4AD329",52.9401,1.2123,"independent:historicengland-sheringham-st-joseph-1152329","https://gb.britishlistedbuildings.co.uk/101152329-church-of-st-joseph-boundary-wall-and-gate-piers-sheringham","SHERINGHAM_ST_JOSEPH_CATHOLIC_CHURCH_GRADE_II_BUILDING_SITE_NOT_BOUNDARY_GATE_ENTRANCE"]];
+assert.equal(sites.length,8);
+for(const [anchor,id,lat,lng,ref,url,scope] of sites){
+ const frozen=index.records.find(r=>r[0]===anchor);
+ assert.ok(frozen?.[1].includes(id),"Frozen original source identity required: "+anchor);
+ assert.ok(!baseline.some(r=>frozen[1].includes(r.source_id)),"Source already pinned: "+anchor);
+ const item=all.find(r=>r.physical_group_id===anchor);
+ assert.ok(item&&item.source_id===id&&item.source_ids.includes(id));
+ assert.equal(item.title,frozen[2]);
+ assert.equal(item.country_code,frozen[3]);
+ assert.equal(item.map_publishable,true);
+ assert.equal(item.map_state,"PROVISIONAL");
+ assert.equal(item.geo.lat,lat);
+ assert.equal(item.geo.lng,lng);
+ assert.equal(item.geo.source_ref,ref);
+ assert.equal(item.geo.source_url,url);
+ assert.equal(item.geo.review_scope,scope);
+ assert.equal(item.geo.precision,"site");
+ assert.equal(item.geo.approximate,true);
+ assert.ok(item.source_links.some(x=>x.url===url));
+ assert.ok(item.source_links.some(x=>frozen[6].includes(x.url)));
+ assert.equal(item.status,"RESEARCH-LISTED · MASS UNVERIFIED");
+ assert.equal(item.celebration_evidence,undefined);
+ assert.equal(item.sections.length,0);
+ assert.equal(item.actions.length,0);
+ assert.ok(!item.cover_media);
+ for(const lang of ["en","fr"]){
+  const card=renderDirectoryVenueCard(item,lang);
+  const detail=renderTlmChurchProfile(item,lang);
+  assert.ok(card.includes('data-explore-item="'+item.item_id+'"'));
+  assert.ok(detail.includes('data-tlm-church-profile="'+id+'"'));
+  assert.ok(detail.includes("aoTlmProfileSources"));
+  assert.doesNotMatch(detail,/data-tlm-celebration-evidence=/);
+ }
+}
+const held=all.find(x=>x.physical_group_id==="RG-18E53EDD9E9C");
+assert.ok(held&&!held.map_publishable,"San Jose naming conflict remains held");
+const poi=all.find(x=>x.physical_group_id==="RG-8D3022768BBE");
+assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building outline")));
+const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
+assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
+assert.equal(all.length,2582);
+assert.equal(all.filter(x=>x.map_publishable).length,2078);
+const counts=tlmSiteEvidenceCounts(all);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:272,SOURCE_PIN:1806,ADDRESS_ONLY:504});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,504);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,272);
+console.log("PASS TLM batch 12: eight reviewed source-identities, 2078 mapped, 504 unpinned; no invented Mass or image rights");
