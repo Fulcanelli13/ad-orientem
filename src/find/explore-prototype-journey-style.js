@@ -2,7 +2,7 @@
 // stages, and a compact mobile bottom sheet. Presentation only: the canonical
 // route/stage IDs, MapLibre camera, rights gates and no-geometry policy remain.
 // The rejected Venue Profile prototype is deliberately unrelated.
-export const EXPLORE_PROTOTYPE_JOURNEY_STYLE = String.raw\`
+export const EXPLORE_PROTOTYPE_JOURNEY_STYLE = String.raw`
 .aoHeritageSurface .aoJourneyPanel[data-atlas-journey="true"]{
  --ao-journey-ink:#efe8dc;--ao-journey-muted:#bfb7a9;
  --ao-journey-line:#2b3540;--ao-journey-gold:#d9bb7e;
@@ -174,4 +174,4 @@ export const EXPLORE_PROTOTYPE_JOURNEY_STYLE = String.raw\`
 @media(prefers-reduced-motion:reduce){
  .aoHeritageSurface [data-atlas-journey="true"]{transition:none!important}
 }
-\`;
+`;
