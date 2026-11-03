@@ -30,7 +30,7 @@ assert.ok(audit.scoreEvidence.every(x=>!x.publicScore&&
 assert.equal(audit.publication.publicReaderScores,0);
 assert.equal(audit.counts.noteGroupTokenizationHolds,0,
  "All first-60 GABC source groups must be mechanically tokenizable; musical parity remains unreviewed");
-const braced=sourceNoteGroupInventory("name: Proper sample;\\n%%\\n(c4) Al(le){ia} :(f.) (::)");
+const braced=sourceNoteGroupInventory("name: Proper sample;\n%%\n(c4) Al(le){ia} :(f.) (::)");
 assert.equal(braced.divisionAttachedTokens,1);
 assert.equal(braced.groups.at(-1).syllable,"ia");
 const tampered=structuredClone(source);
