@@ -1,0 +1,45 @@
+{
+  "schema": "AO_2026_HOME_LIBRARY_SAVED_APPROVED_AI_ORIGINALS_RECOVERY_V1",
+  "recordedAt": "2026-11-03",
+  "sourceFolder": "Ad Orientem / Visual Reference Bank / Sacred Art — Approved",
+  "sourceCollectionStatus": "USER_SAVED_APPROVED_DRAFT_LIBRARY_FILES",
+  "binaryReleaseStatus": "ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB",
+  "sourceIntegrityPolicy": "Exact file bytes, SHA256 and resolution are preserved; do not substitute a newly AI-generated image or historical engravings for these renderings",
+  "originalFiles": [
+    {
+      "date": "2026-04-08",
+      "principalId": "tempora:Pasc0-3:1:w",
+      "title": "The Second Miraculous Draught of Fishes — AI visual draft after James Tissot",
+      "file": "AO_Easter_Wednesday_John21_Tissot_AI_Visual_Approved_Draft_2026-10-20.png",
+      "sha256": "69eba31523b5fb15c781475e186f02bba193cab15e2d596e17b724cde128e3b2",
+      "sizeBytes": 2484404,
+      "width": 1586,
+      "height": 992,
+      "origin": "2026-10-19 Sacred Art — Approved Library"
+    },
+    {
+      "date": "2026-05-29",
+      "principalId": "tempora:Pasc7-5:1:r",
+      "title": "Christ Healing the Paralytic — AI visual draft after Johannes Wierix",
+      "file": "AO_Pentecost_Ember_Friday_Luke5_Wierix_AI_Visual_Approved_Draft_2026-10-20.png",
+      "sha256": "b116bcac8883b6d4559d1dc54fad7336f4365940d8996cc2eb22c075a20cad5a",
+      "sizeBytes": 2289365,
+      "width": 1402,
+      "height": 1122,
+      "origin": "2026-10-19 Sacred Art — Approved Library"
+    }
+  ],
+  "stillMissingOriginals": [
+    {
+      "date": "2026-03-08",
+      "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+      "issue": "no identifiable saved original file in Library image filename sweep 2026-10-17 to 2026-11-03"
+    },
+    {
+      "date": "2026-03-22",
+      "title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+      "issue": "no identifiable saved original file in Library image filename sweep 2026-10-17 to 2026-11-03"
+    }
+  ],
+  "nextDeploymentRequirement": "Copy the two exact PNG files from the recovered Originals ZIP into repository assets/home/2026-user-approved-ai/ using unchanged bytes; then exact 1962 observed principal, hashes and native crop must be tested. Do NOT claim image is visible in production until this completes."
+}
