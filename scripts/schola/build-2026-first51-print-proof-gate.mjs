@@ -22,7 +22,7 @@ const cards=result.firstTwelveForPrintComparison.map((id,i)=>{
  const x=map.get(id),score=packet.candidates.find(c=>c.scoreId===id);
  return [
  '<section class="score"><div class="eyebrow">'+esc({in:"Introit",of:"Offertory",co:"Communion"}[x.part])+
- ' · '+esc(x.selected2026Date)+' · '+x.selected2026Occurrences+' 2026 selections</div>',
+ ' · '+esc(x.selected1962Date)+' · '+x.selected2026Occurrences+' 2026 selections</div>',
  '<h2>'+(i+1)+'. '+esc(id)+'</h2>',
  '<p>Original <strong>Graduale Romanum (Solesmes 1961), p. '+
  esc(x.printedPage)+'</strong> — '+x.noteGroups.length+' note-bearing source groups.</p>',
