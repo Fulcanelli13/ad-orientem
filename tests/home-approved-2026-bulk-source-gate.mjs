@@ -66,6 +66,16 @@ for(const row of rows){
  const incomplete={...state,resolution:{...state.resolution,proper:{status:"loading"}}};
  assert.equal(approved2026HomeArtwork(incomplete),null);
 }
+for(const mass of [1,2,3]){
+ const art=extraApproved2026HomeArtwork("2026-12-25",
+  "sancti:12-25m"+mass+":1:w","Sancti/12-25m"+mass);
+ assert.equal(art?.title,"Adoration of the Shepherds");
+ assert.equal(art?.artworkId,"cma-143644");
+}
+assert.equal(extraApproved2026HomeArtwork("2026-12-25",
+ "sancti:12-25m4:1:w","Sancti/12-25m4"),null);
+assert.equal(extraApproved2026HomeArtwork("2026-12-25",
+ "sancti:12-25m2:1:w","Sancti/12-25m4"),null);
 const exactObjectExamples={
  "2026-04-01":"1997.167",
  "2026-05-14":"21.84",
