@@ -165,11 +165,16 @@ for(const [group,sourceId,lat,lng,sourceRef,reviewScope,addressNeedle] of sites)
 // Timau's ossuary and modern Cristo Re are different buildings, not one church.
 const timau=sites.filter(x=>x[0]==="RG-035CA16C89AF"||x[0]==="RG-2D593D4D9BB5");
 assert.equal(timau.length,2);assert.notDeepEqual(timau[0].slice(2,4),timau[1].slice(2,4));
-// Rivo San Lorenzo remains explicitly unpinned: a street-centre is not a church coordinate.
+// Batch 10 upgrades Rivo San Lorenzo only after verifying the exact Catholic
+// church footprint, not the street centre formerly rejected.
 const rivo=all.find(x=>x.physical_group_id==="RG-44F34EFE1E3E");
-assert.ok(rivo&&!rivo.map_publishable,"Rivo San Lorenzo must not be promoted from a street marker");
+assert.ok(rivo?.map_publishable&&rivo.map_state==="PROVISIONAL");
+assert.equal(rivo.geo.source_ref,"osm:way:36687834");
+assert.equal(rivo.geo.lat,46.51971);
+assert.equal(rivo.geo.lng,13.01013);
+assert.equal(rivo.status,"RESEARCH-LISTED · MASS UNVERIFIED");
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
-console.log("PASS TLM recovery batch 5: 13 church/monastery site pins, 2025 mapped, 557 list-only, no inferred liturgical or media facts");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:233,SOURCE_PIN:1806,ADDRESS_ONLY:543});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,543);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,233);
+console.log("PASS TLM recovery batch 5: 13 church/monastery site pins, 2039 mapped, 543 list-only, no inferred liturgical or media facts");
