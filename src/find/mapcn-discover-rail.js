@@ -1,4 +1,6 @@
 // MapCN-inspired discovery; every result is an existing, map-publishable canonical Place.
+import { sacredPlaceSynopsis } from "./heritage-presentation.js";
+import { renderSacredPlaceFallback } from "./sacred-place-visual-fallback.js";
 // The visible-region filter is applied to the current MapLibre viewport, never to guessed
 // coordinates or a second independent map/index.
 const list=value=>Array.isArray(value)?value:[];
@@ -35,6 +37,7 @@ export function discoverItemsWithinMapBounds(items,bounds){
  });
 }
 export function renderMapcnDiscoverRail(vm){
+ const desktopSacred=Boolean(vm.desktopDocked&&vm.filters?.atlasEntry==="sacred");
  const byPlace=new Map(list(vm.placeProfiles).filter(p=>p?.place_id)
    .map(p=>[p.place_id,p]));
  const seen=new Set();
@@ -77,6 +80,21 @@ export function renderMapcnDiscoverRail(vm){
  html+='<span class="aoMapcnDiscoverTitle">'+title+'</span></span>';
  html+='<span class="aoMapcnDiscoverCount" aria-label="'+esc(L(vm.language,"Mapped places in this view","Lieux cartographiés dans cette vue"))+'">'+entries.length+'</span>';
  html+='<span class="aoMapcnDiscoverChevron" aria-hidden="true">⌃</span></button></div>';
+ // Desktop's approved category navigation belongs to the results rail.
+ // Reuse the existing map-filter action, do not create a second filter owner.
+ if(desktopSacred){
+  const chosen=list(vm.filters?.heritageCategories);
+  const all=!vm.journeyOpen&&chosen.length>1;
+  html+='<nav class="aoMapcnCategoryTabs" aria-label="'+esc(L(vm.language,"Sacred place categories","Catégories de lieux sacrés"))+'">';
+  if(vm.journeyOpen)html+='<button type="button" data-explore-journey-close>'+esc(L(vm.language,"Journeys ×","Parcours ×"))+'</button>';
+  html+='<button type="button" data-heritage-category="ALL" aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+esc(L(vm.language,"All","Tous"))+'</button>';
+  for(const [key,en,fr] of [["shrines","Shrines","Sanctuaires"],["apparitions","Apparitions","Apparitions"],["relics","Relics","Reliques"],["pilgrimages","Pilgrimages","Pèlerinages"]]){
+   const selected=!vm.journeyOpen&&chosen.length===1&&chosen[0]===key;
+   html+='<button type="button" data-heritage-category="'+key+'" aria-pressed="'+String(selected)+'" class="'+(selected?"active":"")+'">'+esc(L(vm.language,en,fr))+'</button>';
+  }
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints">'+esc(L(vm.language,"Saints","Saints"))+'</button>';
+  html+='</nav>';
+ }
  if(featured.length){
   html+='<section class="aoMapcnEditorialStrip" aria-label="'+L(vm.language,"Featured documented places worldwide","Lieux documentés à découvrir dans le monde")+'">';
   html+='<div class="aoMapcnEditorialHeading"><span>'+L(vm.language,"IN FOCUS · WORLDWIDE","À DÉCOUVRIR · MONDE")+'</span><small>'+L(vm.language,"Curated, source-backed places","Lieux sélectionnés et sourcés")+'</small></div>';
@@ -97,12 +115,20 @@ export function renderMapcnDiscoverRail(vm){
   const title=clean(profile?.name)||clean(item.title);
   const media=profile?.media;
   const photo=clean(media?.asset_path)&&clean(media?.license)&&clean(media?.credit);
-  html+='<div role="listitem"><button type="button" class="aoMapcnDiscoverItem" data-explore-open-place="'+esc(item.place_id)+'" aria-current="'+(active?'true':'false')+'">';
+  html+='<div role="listitem"><button type="button" class="aoMapcnDiscoverItem'+(desktopSacred?' aoMapcnDesktopPlaceCard':'')+'" data-explore-open-place="'+esc(item.place_id)+'" aria-current="'+(active?'true':'false')+'">';
   if(photo)html+='<img loading="lazy" decoding="async" alt="'+esc(vm.language==="fr"?(media.alt_fr||media.alt_en):(media.alt_en||media.alt_fr)||title)+'" src="'+esc(media.asset_path)+'">';
+  else if(desktopSacred)html+=renderSacredPlaceFallback(profile??{place_type:item.place_type},vm.language,"preview");
   else html+='<span class="aoMapcnDiscoverGlyph" aria-hidden="true">✠</span>';
   html+='<span class="aoMapcnDiscoverCopy"><small>'+esc(clean(item.heritage_primary||profile?.place_type||"sacred place").toUpperCase())+'</small>';
   html+='<strong>'+esc(title)+'</strong>';
   html+='<span>'+esc(vicinity(profile,item))+'</span>';
+  // Editorial summaries must be present in the existing source-owned Place;
+  // never synthesize one from the category, institute or map location.
+  if(desktopSacred&&profile){
+   const preferred=list(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
+   const synopsis=sacredPlaceSynopsis(profile,{maxLength:145,language:vm.language,preferredCategory:preferred});
+   if(synopsis)html+='<span class="aoMapcnPlaceSynopsis">'+esc(synopsis)+'</span>';
+  }
   if(item.geo?.approximate||item.geo?.indicative_only||item.geo?.precision==="complex_anchor")
    html+='<em>'+L(vm.language,"Indicative site","Site indicatif")+'</em>';
   html+='</span><span class="aoMapcnDiscoverArrow" aria-hidden="true">↗</span></button></div>';
