@@ -44,8 +44,13 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
  for(const row of sources.records){
   assert.ok(row.recordId&&row.workGroupId&&!recordIds.has(row.recordId));
   recordIds.add(row.recordId);
-  assert.ok(groups.has(row.workGroupId),"Missing group for source record "+row.recordId);
-  groupSourceCount.set(row.workGroupId,(groupSourceCount.get(row.workGroupId)??0)+1);
+  if(row.isOperationalCandidate)assert.ok(groups.has(row.workGroupId),
+   "Accepted operational record lost its group: "+row.recordId);
+  // Research includes rejected and inactive source rows whose groups are
+  // intentionally absent from the 989 operational works. Preserve their
+  // decisions without resurrecting them as publication candidates.
+  if(groups.has(row.workGroupId))
+   groupSourceCount.set(row.workGroupId,(groupSourceCount.get(row.workGroupId)??0)+1);
  }
  assert.equal(recordIds.size,3205);
  for(const group of gallery.works){
