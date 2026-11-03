@@ -1,0 +1,53 @@
+name: Prayer all 19 Novenas source and stage variants
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-novena-all-19-stages-language-phone.mjs"
+      - "src/pray/novena-runtime.js"
+      - "src/pray/novena-corpus-v4.js"
+      - "src/pray/novena-source-witness-face.v1.js"
+      - "src/pray/icksp-divine-infant-king-novena.v1.js"
+      - "src/pray/icksp-immaculate-conception-novena.v1.js"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+      - "data/pray/prayer-release-coverage-evidence.v1.json"
+      - "package.json"
+      - ".github/workflows/pray-novena-all-19-stage-phone.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tests/pray-novena-all-19-stages-language-phone.mjs"
+      - "src/pray/novena-runtime.js"
+      - "src/pray/novena-corpus-v4.js"
+      - "src/pray/novena-source-witness-face.v1.js"
+      - "src/pray/icksp-divine-infant-king-novena.v1.js"
+      - "src/pray/icksp-immaculate-conception-novena.v1.js"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+      - ".github/workflows/pray-novena-all-19-stage-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-novena-all-19-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  novena-all-19-stages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: All 19 Novenas, 171 historical days, 684 guided cards in English and French at 320 and 390
+        run: npm run test:pray-19-novena-stage-phone
+      - name: Preserve all programme stage and source-language evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-novena-all-19-stage-source-matrix
+          path: artifacts/pray-novena-all-programmes/nineteen-novena-all-stages-phone.json
+          if-no-files-found: warn
+          retention-days: 7
