@@ -43,6 +43,16 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+  "RG-2680C1DA8953":Object.freeze({sourceId:"AO-B34-L-GB-D81DD5E3D3A4",name:"Our Lady of Ransom",country:"GB",addressNeedle:"Eastbourne",placeId:null,
+    lat:50.76611,lng:0.27773,precision:"site",sourceRef:"osm:way:487068951",sourceUrl:"https://www.openstreetmap.org/way/487068951",
+    correctedAddress:"Our Lady of Ransom Catholic Church, 2-4 Grange Road, Eastbourne BN21 4EU, United Kingdom",
+    reviewScope:"EASTBOURNE_OUR_LADY_OF_RANSOM_CHURCH_NOT_PRESBYTERY_OR_OTHER_PARISH_CHURCHES",
+    evidence:Object.freeze(["https://mapcarta.com/W487068951","https://historicengland.org.uk/listing/the-list/list-entry/1385905","https://ourladyofransom.org.uk/contacts/"])}),
+  "RG-223CDB93F8BD":Object.freeze({sourceId:"AO-B34-L-GB-2C828CAB9C43",name:"Our Lady Queen of Martyrs and St Ignatius",country:"GB",addressNeedle:"Chideock",placeId:null,
+    lat:50.73777,lng:-2.82292,precision:"site",sourceRef:"osm:way:258582025",sourceUrl:"https://www.openstreetmap.org/way/258582025",
+    correctedAddress:"Our Lady Queen of Martyrs and St Ignatius, North Road, Chideock, Dorset DT6 6LF, United Kingdom",
+    reviewScope:"CHIDEOCK_CATHOLIC_MARTYRS_CHURCH_NOT_ANGLICAN_ST_GILES_OR_CHIDEOCK_MANOR",
+    evidence:Object.freeze(["https://mapcarta.com/W258582025","https://www.plymouth-diocese.org.uk/church/chideock-lady-queen-martyrs-st-ignatius/","https://chideockmartyrschurch.org.uk/about-us/"])}),
   // Final site-geography backlog, batch 1 (2026-11-03).
   // OSM objects identify the physical church only; LMS/FSSP listing status
   // still does not establish a current traditional Mass or its celebrant.
