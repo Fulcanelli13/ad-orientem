@@ -20,10 +20,10 @@ const sourceFace=id=>value=>{
  // The Our Father has two approved ℣/℟ live-reading speaker cues. They
  // are UI semantics, not extra original words: require the complete pair
  // when present and compare every canonical word unchanged.
- if(id!=="foundations_our_father")return t;
+ if(!["foundations_our_father","foundations_glory_be","foundations_hail_mary"].includes(id))return t;
  const nV=(t.match(/℣\./g)||[]).length,nR=(t.match(/℟\./g)||[]).length;
- assert.equal(nV,nR,"Our Father lost one half of its approved speaker cue pair");
- assert.ok(nV<=1,"Our Father duplicated the leader/response cue");
+ assert.equal(nV,nR,id+" lost one half of its approved speaker cue pair");
+ assert.ok(nV<=1,id+" duplicated the leader/response cue");
  return t.replace("℣.","").replace("℟.","");
 };
 const guided={
