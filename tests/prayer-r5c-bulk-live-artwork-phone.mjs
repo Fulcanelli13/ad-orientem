@@ -147,6 +147,6 @@ report.inventory=Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).map(id=>{
 assert.equal(report.inventory.length,51,"Cleared-photo inventory count mismatch");
 assert.equal(report.inventory.filter(x=>x.status==="R5C_VERIFIED_320_390_EN_FR").length,11);
 report.statusCounts={r5cVerified:11,otherClearedNotRetestedInR5C:40,
- approvedEditorialButNotCleared:267-51};
+ editorialPositionsNotPhotoCleared:267-51};
 await writeFile(resolve(out,"report.json"),JSON.stringify(report,null,2)+"\n");
 console.log("PASS: 51 exact-photo-cleared editorial positions retained; 11 real reader bindings × 320/390 × EN/FR = 44 complete phone/source/photo proofs");
