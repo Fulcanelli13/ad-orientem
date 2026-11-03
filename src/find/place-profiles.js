@@ -101,6 +101,14 @@ export function resolveApprovedPlaceGallery(records,placeId){
       label_en:text(record.label_en),label_fr:text(record.label_fr),
       changes_en:text(record.changes_en),changes_fr:text(record.changes_fr),
       subject_relic_id:text(record.subject_relic_id)||null,
+      // A verified sacred image (e.g. a venerated icon or statue) is not a
+      // relic. Preserve its curator-assigned exact subject reference so the
+      // Sacred Atlas can describe it without inventing relic custody.
+      subject_focus_id:record.not_relic_image===true&&
+        text(record.display_role)==="GALLERY_OBJECT"&&
+        /^subject:(?:focus|round1-review):[A-Za-z0-9:_-]+$/.test(text(record.subject_focus_id))
+        ?text(record.subject_focus_id):null,
+      not_relic_image:record.not_relic_image===true,
       depicts_kind:text(record.depicts_kind)||null,
       photographed_at:text(record.photographed_at)||null,
       caption_en:text(record.caption_en),caption_fr:text(record.caption_fr),
