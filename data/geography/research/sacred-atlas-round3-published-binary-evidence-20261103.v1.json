@@ -1,0 +1,61 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND3_TWO_PUBLISHED_IMAGE_BYTES_V1",
+  "reviewed_on": "2026-11-03",
+  "source_manifest": "data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json",
+  "published": 2,
+  "held": 2,
+  "new_approved_assets": [
+    {
+      "round1_number": 11,
+      "media_id": "ao-rocamadour-black-madonna-gaige-2019",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "original_sha1": "d93978f33fdd27fd7629737a1ead44cf48cff898",
+      "archive_download_expected_sha256": "f415f806d7673336412f5b99b3c069c1aef4b95fdbff88c682f086a5504c5486",
+      "commons_api_sha1": "d93978f33fdd27fd7629737a1ead44cf48cff898",
+      "original_dimensions": [
+        3000,
+        4000
+      ],
+      "archive_expected_dhash": null,
+      "actual_original_dhash": "88598c0d8d9f9fcc",
+      "archive_visual_hamming_distance": null,
+      "archive_preview_bytes_verified": false,
+      "derivative_sha256": "0e447ed81b3e29cd0fdeba4142a07d0fb2e3ec38d1f61c692251a83f757b1601",
+      "derivative_dimensions": [
+        1200,
+        1600
+      ],
+      "asset_path": "assets/approved/place-gallery/FR-rocamadour-black-madonna-gaige-2019.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:La_Vierge_de_Rocamadour_-_01.jpg",
+      "photo_author": "Thérèse Gaigé",
+      "licence": "CC-BY-SA-4.0",
+      "rights_citation": "https://inventaire.patrimoines.laregion.fr/dossier/IM46206958"
+    },
+    {
+      "round1_number": 13,
+      "media_id": "ao-goa-st-francis-xavier-silver-casket-irvin-2012",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "original_sha1": "d0f0b3edbc10b17eb2f293dc69f20398f62126ef",
+      "archive_download_expected_sha256": "d3aadf3dace764a198d482d0015fc6573bf74f576972ce714d0f4381274157bc",
+      "commons_api_sha1": "d0f0b3edbc10b17eb2f293dc69f20398f62126ef",
+      "original_dimensions": [
+        2816,
+        2112
+      ],
+      "archive_expected_dhash": null,
+      "actual_original_dhash": "182d264757979f1f",
+      "archive_visual_hamming_distance": null,
+      "archive_preview_bytes_verified": false,
+      "derivative_sha256": "979c9a6092d090adaed9c04da351c8e009c48b6239f3e5a7c3f7109ada5a530c",
+      "derivative_dimensions": [
+        1600,
+        1200
+      ],
+      "asset_path": "assets/approved/place-gallery/IN-goa-francis-xavier-silver-casket-irvin-2012.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:St.francis_church_bom_jesus_views_(6).JPG",
+      "photo_author": "Irvin calicut",
+      "licence": "CC-BY-SA-3.0",
+      "rights_citation": "https://www.goa.gov.in/places/basilica-church-for-churches/"
+    }
+  ]
+}
