@@ -1,0 +1,55 @@
+name: Prayer 41-route entry variants (320/390 EN/FR)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-41-route-entry-variants-phone.mjs"
+      - "data/pray/prayer-language-route-matrix.v1.json"
+      - "data/pray/prayer-release-coverage-evidence.v1.json"
+      - "src/pray/prayer-design-pilot.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/internal-route-owner.js"
+      - "src/pray/traditional-pray-runtime.js"
+      - "src/pray/novena-runtime.js"
+      - "src/pray/rosary-scripture-policy.js"
+      - "package.json"
+      - ".github/workflows/pray-41-route-entry-variants.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tests/pray-41-route-entry-variants-phone.mjs"
+      - "data/pray/prayer-language-route-matrix.v1.json"
+      - "src/pray/prayer-design-pilot.js"
+      - "src/pray/presentation-runtime.js"
+      - ".github/workflows/pray-41-route-entry-variants.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-41-entry-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-owned-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install project dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install headless Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validate route identity, original source ownership and evidence limits
+        run: node tests/pray-route-language-matrix-v1.mjs && node tests/pray-release-coverage-evidence-v1.mjs
+      - name: Exercise 41 real route entries at 320px and 390px in EN and FR
+        run: npm run test:pray-41-entry-phone
+      - name: Preserve per-route browser evidence and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-41-route-entry-matrix
+          path: artifacts/pray-41-route-entry/browser-entry-variants.json
+          if-no-files-found: warn
+          retention-days: 7
