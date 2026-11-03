@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./prayer-artwork-267-integration.mjs";
 import {readFileSync,existsSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {RELEASED_MODULE_PAINTINGS,releasedModulePhoto,releasedModulePhotoMarkup} from "../src/art/released-module-paintings.v1.js";
