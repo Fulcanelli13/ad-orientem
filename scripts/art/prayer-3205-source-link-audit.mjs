@@ -23,6 +23,21 @@ function collectStrings(value,result=new Set(),seen=new WeakSet()){
 }
 const urls3205=collectStrings(gallery3205);
 const urls989=collectStrings(operational989);
+if(!Array.isArray(gallery3205.records)||!Array.isArray(operational989.works))
+ throw Error("Expected frozen records[] and works[]; review source schema rather than infer matches");
+const wantedURLs=new Set(master.assignments.map(a=>a.currentAssignment?.painting?.sourcePage).filter(Boolean));
+function exactUrlIndices(records){
+ const hits=new Map();
+ for(let i=0;i<records.length;i++){
+  for(const str of collectStrings(records[i])){
+   if(!wantedURLs.has(str))continue;
+   hits.set(str,[...(hits.get(str)||[]),i]);
+  }
+ }
+ return hits;
+}
+const recordsByURL=exactUrlIndices(gallery3205.records);
+const worksByURL=exactUrlIndices(operational989.works);
 const byId=new Map(crosswalk.assignments.map(a=>[a.slot,a]));
 const rows=[];
 for(const a of master.assignments){
@@ -35,6 +50,8 @@ for(const a of master.assignments){
   existingEditorialIdentityVerified:a.sourceCrosswalk?.sourceIdentityVerified===true,
   exactSourceUrlStringIn3205:!!sourcePage&&urls3205.has(sourcePage),
   exactSourceUrlStringInOperational989:!!sourcePage&&urls989.has(sourcePage),
+  exactSourceUrlIn3205RecordIndices:sourcePage?(recordsByURL.get(sourcePage)||[]):[],
+  exactSourceUrlInOperational989WorkIndices:sourcePage?(worksByURL.get(sourcePage)||[]):[],
   researchGallery989TitleAndArtistGroups:audit.gallery989.groupIDs,
   publicationRightFromCatalogueMatch:false
  });
@@ -56,7 +73,9 @@ const result={
  ],
  sourceShapes:{
   source3205TopLevelKeys:Object.keys(gallery3205).slice(0,25),
-  operational989TopLevelKeys:Object.keys(operational989).slice(0,25)
+  operational989TopLevelKeys:Object.keys(operational989).slice(0,25),
+  source3205RecordCount:gallery3205.records.length,
+  operational989WorkCount:operational989.works.length
  },
  counts:{
   positions:rows.length,
@@ -64,7 +83,11 @@ const result={
   distinctSelectedSourceURLs:new Set(rows.map(r=>r.sourcePage).filter(Boolean)).size,
   positionsWithExactURLStringIn3205:rows.filter(r=>r.exactSourceUrlStringIn3205).length,
   positionsWithExactURLStringInOperational989:rows.filter(r=>r.exactSourceUrlStringInOperational989).length,
-  positionsWithEitherExactURLString:rows.filter(r=>r.exactSourceUrlStringIn3205||r.exactSourceUrlStringInOperational989).length
+  positionsWithEitherExactURLString:rows.filter(r=>r.exactSourceUrlStringIn3205||r.exactSourceUrlStringInOperational989).length,
+  positionsWithExactSourceRecordURL:rows.filter(r=>r.exactSourceUrlIn3205RecordIndices.length>0).length,
+  positionsWithExactOperationalWorkURL:rows.filter(r=>r.exactSourceUrlInOperational989WorkIndices.length>0).length,
+  distinctMatchedSourceRecordIndices:new Set(rows.flatMap(r=>r.exactSourceUrlIn3205RecordIndices)).size,
+  distinctMatchedOperationalWorkIndices:new Set(rows.flatMap(r=>r.exactSourceUrlInOperational989WorkIndices)).size
  },
  rows
 };
