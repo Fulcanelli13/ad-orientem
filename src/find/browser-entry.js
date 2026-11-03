@@ -429,7 +429,9 @@ export function createFindOwner(win=globalThis){
     const priorTlmCountryOpen=Boolean(node.querySelector?.(".aoTlmCountryFacet")?.open);
     const priorTlmInstitutesOpen=Boolean(node.querySelector?.(".aoTlmMoreInstitutes")?.open);
     const priorDiscoverScroll=node.querySelector?.(".aoMapcnDiscoverEntries")?.scrollTop??0;
-    const priorDiscoverExpanded=node.querySelector?.("[data-mapcn-discover-rail]")?.dataset?.discoverExpanded==="true";
+    const priorDiscoverRail=node.querySelector?.("[data-mapcn-discover-rail]");
+    const priorDiscoverExpanded=priorDiscoverRail
+      ?priorDiscoverRail.dataset?.discoverExpanded==="true":Number(win?.innerWidth||0)>=900;
     const priorTimeMassScroll=node.querySelector?.(".aoTimeMassScroll")?.scrollTop??0;
     const priorNetworkScroll=node.querySelector?.(".aoNetworkResults")?.scrollTop??0;
     const wasNetworkSearch=node.querySelector?.("[data-network-search]")===win?.document?.activeElement;
@@ -1338,13 +1340,14 @@ export function createFindOwner(win=globalThis){
       if(entry!=="discover"&&entry!=="sacred")return;
       event.preventDefault?.();
       state.atlasEntry=entry;
-      // The approved Sacred Places entrance opens the one existing source-backed
-      // viewport sheet. Discover returns to its low-profile peek.
+      // Desktop screen 7 retains its full-height left result rail in both
+      // entrances. On phones Discover peeks and Sacred Places expands.
       const rail=getRoot(win)?.querySelector?.("[data-mapcn-discover-rail]");
       if(rail){
-        rail.dataset.discoverExpanded=String(entry==="sacred");
+        const expanded=entry==="sacred"||Number(win?.innerWidth||0)>=900;
+        rail.dataset.discoverExpanded=String(expanded);
         rail.querySelector?.("[data-mapcn-discover-toggle]")
-          ?.setAttribute?.("aria-expanded",String(entry==="sacred"));
+          ?.setAttribute?.("aria-expanded",String(expanded));
       }
       void paint();return;
     }
