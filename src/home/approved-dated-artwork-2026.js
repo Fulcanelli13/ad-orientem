@@ -8,6 +8,7 @@
 import {approvedClassIHeroForDate} from "../calendar/approved-class-i-heroes-2026.js";
 import {releasedDateGospelHero2026} from "./released-date-gospel-heroes-2026.js";
 import {RELEASED_MODULE_PAINTINGS} from "../art/released-module-paintings.v1.js";
+import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.js";
 
 const CLASS_I_PROPER=Object.freeze({
  "2026-03-29":"Tempora/Quad6-0r",
@@ -150,6 +151,8 @@ export function approved2026HomeArtwork(state,provider=null){
    imageStatus:extra.imageStatus,selectionKind:"PREVIOUSLY_APPROVED_ASH_WEDNESDAY_DATE"
   });
  }
+ const bulk=extraApproved2026HomeArtwork(date,principalId,properPath);
+ if(bulk)return bulk;
  const released=releasedDateGospelHero2026(state,provider??{
   properPath:()=>properPath
  });
