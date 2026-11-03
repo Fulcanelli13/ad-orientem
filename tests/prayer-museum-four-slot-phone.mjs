@@ -50,10 +50,12 @@ try{
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
     const rootSelector="#aoPray435930.open";
     if(locale==="fr-FR"){
+     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
      const toggle=page.locator(rootSelector+" [data-p435930-session-language]");
      assert.equal(await toggle.count(),1);
      if((await toggle.textContent()).trim()==="EN")await toggle.click();
      assert.equal((await page.locator(rootSelector+" [data-p435930-session-language]").textContent()).trim(),"FR");
+     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
     }
     const checked=[];
     for(const work of works){
