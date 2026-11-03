@@ -49,8 +49,11 @@ for (const row of manifest.rows) {
     // may legitimately release that photo, but only with new durable evidence.
     const current=covers.items.find(x=>x.place_id===row.place_id);
     if(current) {
-      const recovery=read("data/geography/research/sacred-atlas-round9-selected-429-retry-evidence-20261103.v1.json");
-      const reverified=recovery.published.find(x=>x.place_id===row.place_id);
+      const recoveryEvidence=[
+        read("data/geography/research/sacred-atlas-round9-selected-429-retry-evidence-20261103.v1.json"),
+        read("data/geography/research/sacred-atlas-round10-http-cc-recovery-evidence-20261104.v1.json")
+      ];
+      const reverified=recoveryEvidence.flatMap(x=>x.published).find(x=>x.place_id===row.place_id);
       assert.ok(reverified,"Previously held source lacks independent later recovery evidence");
       assert.equal(current.source_sha1,row.expected_original_sha1);
       assert.equal(current.source_sha1,reverified.source_sha1);
