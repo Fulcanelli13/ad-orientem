@@ -62,7 +62,7 @@ for(const hold of ["RG-BF0D731A3654","RG-3A09AD57156D"]){
  assert.ok(item&&!item.map_publishable,"Do not geocode unresolved Reading church footprint or Pesquié abbey from locality");
 }
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:142,SOURCE_PIN:1806,ADDRESS_ONLY:634});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,634);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,142);
-console.log("PASS TLM pin recovery batch 3: 10 sites across GB FR IT US, 1948 map markers, 634 still card-only, no invented Mass or photograph");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:155,SOURCE_PIN:1806,ADDRESS_ONLY:621});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,621);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,155);
+console.log("PASS TLM pin recovery batch 3: 10 sites across GB FR IT US, 1961 map markers, 621 still card-only, no invented Mass or photograph");
