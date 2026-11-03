@@ -15,9 +15,14 @@ const KEY=new URL("__ao_bootstrap_state__",BASE).href;
 const READY=new URL("__ao_bootstrap_completed__",BASE).href;
 // Keep a hard byte ceiling, but allow the expanded canonical module graph.
 // Refresh offline bootstrap after content-addressed daily Scripture on-demand pack update.
-// Measured 2026-10-28 bootstrap: 388 files; 2026-10-29 full snapshot test observes 431 files.
-// 512 files preserves a bounded growth allowance and the original 35 MB ceiling.
-const MAX_ITEMS=512,MAX_BYTES=35_000_000;
+// Measured 2026-10-28 bootstrap: 388 files; 2026-10-29: 431 files;
+// 2026-11-03: 514 original runtime + install resources. A 512-item cap
+// blocked both first install and any one-file update once the graph reached
+// 512. 544 retains a firm resource ceiling with 30 spare files for a staged
+// update, while preserving the original unchanged 35 MB hard byte ceiling.
+// Never drop ESM dependencies, icons, the prior valid snapshot, or safety
+// verification just to fit the bound.
+const MAX_ITEMS=544,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
