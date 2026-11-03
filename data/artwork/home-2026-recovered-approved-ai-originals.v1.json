@@ -1,11 +1,24 @@
 {
-  "schema": "AO_2026_HOME_LIBRARY_SAVED_APPROVED_AI_ORIGINALS_RECOVERY_V1",
+  "schema": "AO_2026_HOME_LIBRARY_SAVED_APPROVED_AI_ORIGINALS_RECOVERY_V2",
   "recordedAt": "2026-11-03",
   "sourceFolder": "Ad Orientem / Visual Reference Bank / Sacred Art — Approved",
   "sourceCollectionStatus": "USER_SAVED_APPROVED_DRAFT_LIBRARY_FILES",
-  "binaryReleaseStatus": "ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB",
-  "sourceIntegrityPolicy": "Exact file bytes, SHA256 and resolution are preserved; do not substitute a newly AI-generated image or historical engravings for these renderings",
+  "binaryReleaseStatus": "3_APPROVED_ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB_1_RESEARCH_ONLY_FILE_HELD",
+  "sourceIntegrityPolicy": "Three approved/saved original AI-derived files recovered intact. One research-only file depicts March 22, but that date selection remained pending. Do not substitute it or newly generate images.",
   "originalFiles": [
+    {
+      "date": "2026-03-08",
+      "principalId": "tempora:Quad3-0:1:v",
+      "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+      "file": "Christ Commands the Shadows.png",
+      "sha256": "a7a7a1972f7e7954576cc7580c8f42bfc68b6628be2b51df36de032031db6016",
+      "sizeBytes": 2287238,
+      "width": 1086,
+      "height": 1448,
+      "origin": "2026-10-19 Sacred Art — Approved Library",
+      "selectionEvidence": "EXPLICIT_2026_10_19_USER_APPROVAL_RECORDED_FOR_MARCH_8",
+      "releaseQualityScope": "approved composition; final offline release/crop not certified"
+    },
     {
       "date": "2026-04-08",
       "principalId": "tempora:Pasc0-3:1:w",
@@ -29,17 +42,21 @@
       "origin": "2026-10-19 Sacred Art — Approved Library"
     }
   ],
-  "stillMissingOriginals": [
-    {
-      "date": "2026-03-08",
-      "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
-      "issue": "no identifiable saved original file in Library image filename sweep 2026-10-17 to 2026-11-03"
-    },
+  "stillMissingOriginals": [],
+  "nextDeploymentRequirement": "Copy unchanged original approved PNG bytes into repository assets/home/2026-user-approved-ai/, retaining SHA256 verification and exact date/principal routing. Do not publish the March 22 research-only image without an explicit prior owner approval. No originals are yet in main or deployed.",
+  "researchOnlyUnapprovedCandidates": [
     {
       "date": "2026-03-22",
+      "principalId": "tempora:Quad5-0:1:v",
       "title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
-      "issue": "no identifiable saved original file in Library image filename sweep 2026-10-17 to 2026-11-03"
+      "candidateFile": "Christ Retreats from the Angry Crowd.png",
+      "sha256": "6f25e25484a78737e87cb4ef007e083b8598938d8ed014163404f6194e768c6b",
+      "sizeBytes": 2517813,
+      "width": 1536,
+      "height": 1024,
+      "source": "Library file dated 2026-10-19",
+      "decisionStatus": "HISTORICAL_DATE_PLACEMENT_PENDING_RESEARCH_MORE_NO_USER_APPROVAL",
+      "publicationReleased": false
     }
-  ],
-  "nextDeploymentRequirement": "Copy the two exact PNG files from the recovered Originals ZIP into repository assets/home/2026-user-approved-ai/ using unchanged bytes; then exact 1962 observed principal, hashes and native crop must be tested. Do NOT claim image is visible in production until this completes."
+  ]
 }
