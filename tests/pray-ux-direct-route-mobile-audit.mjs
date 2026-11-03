@@ -202,7 +202,7 @@ try{
     mount:Math.max(0,document.querySelector("#aoPray435930 .aoP435930Mount")?.scrollWidth-
       document.querySelector("#aoPray435930 .aoP435930Mount")?.clientWidth||0)
    }));
-   report.claudeVisual.push({size:width+"x"+height,holyFront,holyBack,choir:choirRect,overflow,errors});
+   report.claudeVisual.push({size:width+"x"+height,essentialLatin:latin,essentialVernacular:vern,choir:choirRect,overflow,errors});
    assert.ok(overflow.document<=1&&overflow.mount<=1,
     "Claude F01/F03 visual phone overflow: "+JSON.stringify(overflow));
    assert.deepEqual(errors,[],"F01/F03 unexpected browser errors");
