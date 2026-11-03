@@ -100,8 +100,8 @@ for(const c of wave4.candidates){
  assert.match(art.photographRights,/PD-Art/);
  assert.equal(c.fit,"contain");
 }
-assert.ok(runtime.includes("FF.step===0?releasedModulePhotoMarkup('heart-jesus'"),"First Friday original art entry missing");
-assert.ok(runtime.includes("FS.step===0?releasedModulePhotoMarkup('heart-mary'"),"First Saturday original art entry missing");
+assert.ok(runtime.includes("if(s===0)return")&&runtime.includes("releasedModulePhotoMarkup('heart-jesus'"),"First Friday original artwork in first stage missing");
+assert.ok(runtime.includes("releasedModulePhotoMarkup('heart-mary'"),"First Saturday original artwork in first stage missing");
 assert.ok(runtime.includes("BEN.celebration==='christKing'&&i===0?releasedModulePhotoMarkup('king'"),"Christ King must be optional and scoped");
 assert.ok(source("src/pray/art-slot-map.v1.js").includes('publicationState:"UNASSIGNED"'),"Do not auto-release other door artwork");
 assert.ok(source("src/pray/stations-verified-artwork-release.v1.js").includes("Object.freeze({})"),"Do not publish staged Stations");
