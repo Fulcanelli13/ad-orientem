@@ -1,0 +1,187 @@
+{
+  "schema": "AO_SACRED_ATLAS_PHASE_B_ROUND9_SELECTED_429_RECOVERY_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_SELECTED_ORIGINAL_SOURCES_ONLY",
+  "baseline": {
+    "canonical_places": 530,
+    "approved_covers": 364,
+    "missing_covers": 166,
+    "approved_gallery": 42,
+    "plan_rounds_completed": 8,
+    "plan_rounds_total": 28
+  },
+  "cohort": "Ten exact previously selected rank-1 sources held solely because Wikimedia returned HTTP 429 during Round 8",
+  "policy": "No alternatives/no replacement; six-second minimum spacing for all Commons metadata and file requests; stop further requests after two additional 429 responses; preserve original SHA1/license/author/image-integrity checks.",
+  "rows": [
+    {
+      "sequence": 1,
+      "place_id": "place:KN:immaculate-conception-cocathedral-basseterre",
+      "place_name": "Immaculate Conception Co-Cathedral, Basseterre",
+      "reviewed_file": "File:Basseterre Co-Cathedral of Immaculate Conception 2.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasseterre_Co-Cathedral_of_Immaculate_Conception_2.JPG",
+      "expected_original_sha1": "512aa0f323afd2c9c9e8344315ddf9e43643f8a6",
+      "claimed_author": "Gertjan R.",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3240,
+        4320
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 2,
+      "place_id": "place:CK:st-joseph-cathedral-avarua",
+      "place_name": "St Joseph's Cathedral, Avarua, Rarotonga",
+      "reviewed_file": "File:St. Joseph's Cathedral, Avarua.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASt._Joseph's_Cathedral%2C_Avarua.jpg",
+      "expected_original_sha1": "a1b132d9cb52287eff1785eaccedc9242c5ccab9",
+      "claimed_author": "Tom Ackroyd",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3941,
+        2717
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 3,
+      "place_id": "place:DO:catedral-primada-santo-domingo",
+      "place_name": "Catedral Primada de América — Santa María de la Encarnación",
+      "reviewed_file": "File:Dominikanische Republik Santo Domingo Basilica Catedral Menor de Santa Maria 02.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ADominikanische_Republik_Santo_Domingo_Basilica_Catedral_Menor_de_Santa_Maria_02.jpg",
+      "expected_original_sha1": "52e7898563838e2893e7771dfb4d756b4bad468d",
+      "claimed_author": "Georg Karl Ell",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        7356,
+        4138
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 4,
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "place_name": "Basílica Santuário de Nossa Senhora da Penha de França, Rio de Janeiro",
+      "reviewed_file": "File:Igreja da Penha by Diego Baravelli III.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AIgreja_da_Penha_by_Diego_Baravelli_III.jpg",
+      "expected_original_sha1": "dd35c6a4a1bcbf575cc8eb83eafd34b85ac93055",
+      "claimed_author": "Diego Baravelli",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        5760,
+        3840
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 5,
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "place_name": "Basílica de la Virgen de los Desamparados",
+      "reviewed_file": "File:20211115.Valencia.-087.1.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A20211115.Valencia.-087.1.jpg",
+      "expected_original_sha1": "4ea34d2ff4ac1356ec4f7fe19f335517bc01ab3b",
+      "claimed_author": "Bybbisch94, Christian Gebhardt",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        8000,
+        6000
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 6,
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "place_name": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
+      "reviewed_file": "File:489A1758Bazylika konkatedralna Wniebowzięcia Najświętszej Maryi Panny w Gdańsku - widziana z Góry Gradowej.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A489A1758Bazylika_konkatedralna_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Gda%C5%84sku_-_widziana_z_G%C3%B3ry_Gradowej.jpg",
+      "expected_original_sha1": "5998588f250cc54992df469d51cae8650c9ff9fe",
+      "claimed_author": "Radosław Dybała",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6720,
+        4480
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 7,
+      "place_id": "place:FR:p42-sg-inv-0042",
+      "place_name": "Cathédrale Notre-Dame de Strasbourg",
+      "reviewed_file": "File:Strasbourg Cathedral Exterior - Diliff.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AStrasbourg_Cathedral_Exterior_-_Diliff.jpg",
+      "expected_original_sha1": "30ba67362115f0641f32686e0941a7130482cdcb",
+      "claimed_author": "Diliff",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        6574,
+        8402
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 8,
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "place_name": "Santuario Nacional de Nuestra Señora de El Quinche",
+      "reviewed_file": "File:Santuario de El Quinche, El Quinche, Ecuador, 2015-07-21, DD 03.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASantuario_de_El_Quinche%2C_El_Quinche%2C_Ecuador%2C_2015-07-21%2C_DD_03.JPG",
+      "expected_original_sha1": "3d6b480719ca5e6aa64c3163b671cfbf45ef0029",
+      "claimed_author": "Diego Delso",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        7441,
+        4961
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 9,
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "place_name": "Basílica del Sant Crist de Balaguer",
+      "reviewed_file": "File:El Sant Crist, Balaguer-2.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AEl_Sant_Crist%2C_Balaguer-2.JPG",
+      "expected_original_sha1": "e08b56665103276d7e03690a732a198160d7e2df",
+      "claimed_author": "Deosringas",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    },
+    {
+      "sequence": 10,
+      "place_id": "place:CH:p46-sg-0272-319525195",
+      "place_name": "Chapelle Notre-Dame des Marches",
+      "reviewed_file": "File:ND des marches face.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AND_des_marches_face.jpg",
+      "expected_original_sha1": "e70f8be17bc02503fe284cd9d34256e6ec86e7ba",
+      "claimed_author": "P.Lechien",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        1936,
+        2592
+      ],
+      "previous_hold": "HTTPError: HTTP Error 429: Your bot is making too many requests. Please reduce your request rate or contact bot-traffic@wikimedia.org (f263c81)",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "RETRY_ORIGINAL_ONCE_WITH_GLOBAL_429_CIRCUIT_BREAKER"
+    }
+  ]
+}
