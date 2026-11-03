@@ -84,11 +84,11 @@ const sites=[
   "osm:way:53271879"
  ],
  [
-  "RG-B65-77C86C7B3EC4",
-  "AO-RSCH-B65-77C86C7B3EC4",
-  39.219658,
-  9.114927,
-  "independent:cagliari-santa-croce-outdooractive"
+  "RG-B69-564B8CBD664A",
+  "AO-RSCH-B69-564B8CBD664A",
+  49.98389,
+  9.14664,
+  "osm:way:97984924"
  ],
  [
   "RG-B96-8D5C0E774FAB",
@@ -160,6 +160,8 @@ const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:182,SOURCE_PIN:1806,ADDRESS_ONLY:594});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,594);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,182);
-const blocked=all.find(x=>x.physical_group_id==="RG-B96-5F2EB31399CF");
-assert.ok(!blocked||!blocked.map_publishable,"Ambiguous Arezzo/Stia San Bernardo remains held");
+const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
+const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
+assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
+ "Do not reintroduce duplicate research marker for an already mapped Cagliari basilica");
 console.log("PASS TLM pin recovery batch 7: 15 evidence-locked site pins, 1,988 mapped, 594 unpinned, no inferred Mass or image rights");
