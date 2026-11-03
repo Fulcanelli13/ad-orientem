@@ -7,6 +7,7 @@ import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
 import "./choir-family-styles.js";
 import "./horarium-hours-styles.js";
 import {dailyUxPilotEnabled,renderDailyUxContinuous,renderDailyBookPills,renderDailyReaderOptions} from "./daily-ux-pilot.js";
+import "./daily-r3-access-styles.js";
 import "./traditional-pray-direct-b16-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
@@ -410,8 +411,11 @@ function renderMorningEvening(){
  const existingNav=`<nav class="aoDailyAccessNav" aria-label="${esc(L("Prayer navigation","Parcours des prières"))}"><button type="button" data-tp381-daily-mode="${guided?"list":direct?"list":"guided"}">${esc(guided?L("Choose a prayer","Choisir une prière"):direct?L("All prayers","Toutes les prières"):L("Pray in order","Prier dans l’ordre"))}</button></nav>`;
  const prefs=personalDailyPrefs();
  const editionPills=DAILY_UX_PILOT_ENABLED?renderDailyBookPills({edition:prefs.edition,L,esc}):"";
+ const quickRead=guided?'<button type="button" data-tp381-daily-presentation="continuous" class="aoDailyContinuousShortcut">'+esc(L("Read continuously","Lire sans interruption"))+'</button>':
+   continuous?'<button type="button" data-tp381-daily-presentation="guided" class="aoDailyContinuousShortcut">'+esc(L("Cards","Cartes"))+'</button>':'';
  const nav=DAILY_UX_PILOT_ENABLED&&!direct?
-  '<div class="aoDailyAccessNav" data-ao-hours-direct-index>'+
+  '<div class="aoDailyAccessNav aoDailyDirectChoices" data-ao-hours-direct-index>'+
+   quickRead+
    '<button type="button" data-tp381-daily-mode="'+(guided?'list':'guided')+'">'+
    esc(guided?L("Choose a prayer","Choisir une prière"):L("Pray in order","Prier dans l’ordre"))+
    '</button></div>'+renderDailyReaderOptions({mode:S.dailyMode,L,esc,omitBrowse:guided})
