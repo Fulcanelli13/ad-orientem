@@ -8,17 +8,19 @@
     "priorImageMapped": 25,
     "newContextualLocalMapped": 105,
     "newFrozenExactSourcePreviews": 4,
-    "totalProposedMapped": 134,
-    "pendingOrHeld": 231,
+    "totalProposedMapped": 137,
+    "pendingOrHeld": 228,
     "explicitDateSelections": 53,
     "rightsHeld": 2,
-    "DATE_SELECTED_IMAGE_UNRELEASED": 23,
+    "DATE_SELECTED_IMAGE_UNRELEASED": 20,
     "NEW_CONTEXTUAL_LOCAL_IMAGE_MAPPED": 105,
     "RESEARCH_LEADS_NO_APPROVED_DATE_IMAGE": 151,
     "FROZEN_EXACT_SOURCE_PREVIEW_MAPPED": 4,
     "NO_APPROVED_DATE_IMAGE": 55,
     "PRIOR_DATE_IMAGE_MAPPED": 25,
-    "DATE_SELECTED_IMAGE_RIGHTS_HELD": 2
+    "DATE_SELECTED_IMAGE_RIGHTS_HELD": 2,
+    "newRecoveredExactSourcePreviews": 3,
+    "RECOVERED_FROZEN_DATE_SOURCE_PREVIEW_MAPPED": 3
   },
   "policy": [
     "Only the 71 Class IV ferias/BVM Saturdays plus 34 Class III Lenten/Advent ferias may receive previously released contextual local artwork without a new exact-date selection",
@@ -26,7 +28,8 @@
     "Other source research, the 25 approved source-photo decisions, and 989 gallery groups are NOT automatically publishable",
     "Explicit 53-date painting choices, two rights holds, historic exclusions and particular 1962 resolved principal remain authoritative",
     "Prior 25 mappings include remote Commons previews and do NOT imply 25 offline masters or passed full-year browser tests",
-    "Four additional exact previously selected Commons photographs are REMOTE-only previews; not native/crop approved and not four new curatorial approvals."
+    "Four additional exact previously selected Commons photographs are REMOTE-only previews; not native/crop approved and not four new curatorial approvals.",
+    "Three additional frozen 2026 Class I paintings receive separately accredited Commons photographic previews (Raphael, Rembrandt, Tanner); not master/crop approval."
   ],
   "exceptions": [
     {
@@ -330,18 +333,6 @@
       "researchSourceRows": 0
     },
     {
-      "date": "2026-03-01",
-      "observance": "II Sunday of Lent",
-      "rank": "I",
-      "principalId": "tempora:Quad2-0:1:v",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "The Transfiguration",
-        "artist": "Raphael"
-      },
-      "researchSourceRows": 1
-    },
-    {
       "date": "2026-03-08",
       "observance": "III Sunday of Lent",
       "rank": "I",
@@ -434,18 +425,6 @@
       "frozenPainting": {
         "title": "The Second Miraculous Draught of Fishes — AI visual draft after James Tissot",
         "artist": "AI-derived after James Tissot"
-      },
-      "researchSourceRows": 0
-    },
-    {
-      "date": "2026-04-09",
-      "observance": "Thursday in the Octave of Easter",
-      "rank": "I",
-      "principalId": "tempora:Pasc0-4:1:w",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "Christ and St Mary Magdalen at the Tomb",
-        "artist": "Rembrandt"
       },
       "researchSourceRows": 0
     },
@@ -696,18 +675,6 @@
       "principalId": "sancti:05-20:3:w",
       "status": "RESEARCH_LEADS_NO_APPROVED_DATE_IMAGE",
       "researchSourceRows": 2
-    },
-    {
-      "date": "2026-05-25",
-      "observance": "Monday after Pentecost",
-      "rank": "I",
-      "principalId": "tempora:Pasc7-1:1:r",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "Nicodemus",
-        "artist": "Henry Ossawa Tanner"
-      },
-      "researchSourceRows": 0
     },
     {
       "date": "2026-05-26",
@@ -2472,7 +2439,7 @@
       "observance": "II Sunday of Lent",
       "rank": "I",
       "principalId": "tempora:Quad2-0:1:v",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "RECOVERED_FROZEN_DATE_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "The Transfiguration",
         "artist": "Raphael"
@@ -2852,7 +2819,7 @@
       "observance": "Thursday in the Octave of Easter",
       "rank": "I",
       "principalId": "tempora:Pasc0-4:1:w",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "RECOVERED_FROZEN_DATE_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "Christ and St Mary Magdalen at the Tomb",
         "artist": "Rembrandt"
@@ -3252,7 +3219,7 @@
       "observance": "Monday after Pentecost",
       "rank": "I",
       "principalId": "tempora:Pasc7-1:1:r",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "RECOVERED_FROZEN_DATE_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "Nicodemus",
         "artist": "Henry Ossawa Tanner"
