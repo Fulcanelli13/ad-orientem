@@ -1,5 +1,5 @@
 /**
- * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296 and #2302.
+ * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296/#2302, CMA/Met Open Access #2340.
  * This asset list is distinct from approved editorial paintings and research archives.
  */
 export const RELEASED_MODULE_PAINTINGS=Object.freeze({
@@ -92,6 +92,42 @@ export const RELEASED_MODULE_PAINTINGS=Object.freeze({
     image:"assets/prayer/released/king-full-original.jpg",
     photographRights:"Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
     releasePr:2302
+  }),
+  bouts:Object.freeze({
+    title:"The Annunciation",
+    artist:"Albert Bouts",
+    source:"https://clevelandart.org/art/1942.635",
+    original:"assets/prayer/released/bouts-annunciation-original.jpg",
+    image:"assets/prayer/released/bouts-annunciation-original.jpg",
+    photographRights:"The Cleveland Museum of Art Open Access · CC0",
+    releasePr:2340
+  }),
+  cavallino:Object.freeze({
+    title:"Adoration of the Shepherds",
+    artist:"Bernardo Cavallino",
+    source:"https://clevelandart.org/art/1968.100",
+    original:"assets/prayer/released/cavallino-shepherds-original.jpg",
+    image:"assets/prayer/released/cavallino-shepherds-original.jpg",
+    photographRights:"The Cleveland Museum of Art Open Access · CC0",
+    releasePr:2340
+  }),
+  girardin:Object.freeze({
+    title:"The Trinity",
+    artist:"Laurent Girardin",
+    source:"https://clevelandart.org/art/1960.79",
+    original:"assets/prayer/released/girardin-trinity-original.jpg",
+    image:"assets/prayer/released/girardin-trinity-original.jpg",
+    photographRights:"The Cleveland Museum of Art Open Access · CC0",
+    releasePr:2340
+  }),
+  hondius:Object.freeze({
+    title:"Christ among the Doctors",
+    artist:"Abraham Hondius",
+    source:"https://www.metmuseum.org/art/collection/search/436672",
+    original:"assets/prayer/released/hondius-doctors-original.jpg",
+    image:"assets/prayer/released/hondius-doctors-original.jpg",
+    photographRights:"The Metropolitan Museum of Art Open Access · public domain (CC0)",
+    releasePr:2340
   })
 });
 export function releasedModulePhoto(id){
