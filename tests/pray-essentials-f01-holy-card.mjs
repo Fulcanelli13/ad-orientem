@@ -112,8 +112,8 @@ test("R2: language settings remain authentic and source-only text is not transla
  const both=renderEssentialFlowReader({id:p.id,p,face:"both",vernacular:"fr",esc});
  assert.match(both,/data-ao-essential-current="both"/);
  assert.match(both,/aoEssentialFlowParallel/);
- const invalid=renderEssentialFlowReader({id:p.id,p,face:"la",vernacular:"fr",esc,artUrl:"https://invalid.example/art.jpg"});
- assert.match(invalid,/aoEssentialFlowArt/,"Explicit approved image URLs can render");
+ const withoutImage=renderEssentialFlowReader({id:p.id,p,face:"la",vernacular:"fr",esc});
+ assert.doesNotMatch(withoutImage,/<img /,"No unassigned painting is substituted");
  const blocked=renderEssentialFlowReader({id:p.id,p,face:"la",vernacular:"fr",esc,artUrl:"javascript:alert(1)"});
  assert.doesNotMatch(blocked,/<img /);
 });
