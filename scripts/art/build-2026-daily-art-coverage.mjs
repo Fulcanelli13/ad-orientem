@@ -23,20 +23,53 @@ const isDay=day=>/^\d{4}-\d{2}-\d{2}$/.test(day);
 const distinct=array=>[...new Set(array)];
 const canonical=(a,b)=>String(a??"").trim()===String(b??"").trim();
 const isGospelRelation=relation=>["GOSPEL_SCENE","GOSPEL_ONLY"].includes(relation.role);
+const lexical=value=>String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+ .toLowerCase().replace(/\bsaints?\b|\bsts?\b/g,"saint")
+ .replace(/[^a-z0-9]+/g," ").replace(/\b(the|of)\b/g," ").replace(/\s+/g," ").trim();
+// Reuse source-known *passage* evidence, not a date/title guess. These phrases
+// only generate title-level research suggestions; each requires art scene QA.
+const GOSPEL_SCENE_TITLE_SCREEN=Object.freeze({
+ "John 2:1–11":["wedding at cana","marriage at cana"],
+ "John 5:1–15":["pool of bethesda"],
+ "John 10:11–16":["good shepherd"],
+ "Luke 5:1–11":["miraculous catch","miraculous draught","draught of fishes"],
+ "Luke 7:11–16":["widow of nain","widows son at nain","raising of the widows son"],
+ "Matthew 17:1–9":["transfiguration"],
+ "Matthew 5:1–12":["sermon on the mount"],
+ "Luke 1:26–31":["annunciation"]
+});
+const barredAdditionalCandidate=work=>
+ /fra angelico|el greco/i.test(work?.artist??"")||
+ /museodelprado\.es/i.test(work?.selectedSourceUrl??"");
+function exactSingleSaintInTitle(observedTitle,paintingTitle){
+ if(!/^(?:st\.\s+|saint\s+)/i.test(observedTitle??"")||
+    /^(?:sts\.|saints\b)/i.test(observedTitle??""))return false;
+ const name=lexical(String(observedTitle).replace(/^(?:st\.|saint)\s+/i,""));
+ const art=lexical(paintingTitle);
+ if(!name||!art)return false;
+ // Prevent a group title or another same-name saint from a superficial hit.
+ const expected=name.replace(/\bfirst\b/g,"").replace(/\s+/g," ").trim();
+ if(name.split(" ").length===1)
+  return art==="saint "+name || art.startsWith("martyrdom saint "+name+" ");
+ return art.includes("saint "+name) ||
+  (expected!==name && art.includes("saint "+expected));
+}
 
 export async function build2026ArtworkCoverage({gospelAudit=null}={}){
- const [gallery,sources,calendar,prior,curated]=await Promise.all([
+ const [gallery,sources,calendar,prior,curated,semantic]=await Promise.all([
   read("data/artwork/research-operational-989.v1.json"),
   read("data/artwork/research-source-records-3205.v1.json"),
   read("data/calendar/research/2026-calendar-gospel-home-artwork-source-crosswalk.v1.json"),
   read("data/artwork/2026-prior-date-artwork-evidence.v1.json"),
-  read("data/calendar/research/2026-existing-curated-date-art-reuse.v1.json")
+  read("data/calendar/research/2026-existing-curated-date-art-reuse.v1.json"),
+  read("data/artwork/research-semantic-candidates-989.v1.json")
  ]);
  assert.equal(gallery.works.length,989);
  assert.equal(sources.records.length,3205);
  assert.equal(calendar.dates.length,365);
  assert.equal(prior.days.length,365);
  assert.equal(curated.relations.length,58);
+ assert.equal(semantic.artworks.length,989);
  assert.equal(APPROVED_CLASS_I_2026.length,10);
  const groups=new Map(gallery.works.map(w=>[w.workGroupId,w]));
  assert.equal(groups.size,989);
@@ -78,6 +111,9 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
   if(rec.recordId?.startsWith("CANONICAL::"))
    index(byArtId,rec.recordId.slice("CANONICAL::".length),rec.workGroupId);
  }
+ const semanticById=new Map(semantic.artworks.map(x=>[x.workGroupId,x]));
+ assert.equal(semanticById.size,989);
+ for(const group of gallery.works)assert.ok(semanticById.has(group.workGroupId));
  const priorByDate=new Map(prior.days.map(d=>[d.date,d]));
  const curatedByDate=new Map();
  for(const row of curated.relations){
@@ -210,6 +246,29 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
      ...resolveExisting(art.artworkId,art.sourceUrl)});
    }
   }
+  // Second pass across ALL 989 existing groups, not a new artwork search.
+  // Provisional lexical screening is not painting-subscene verification.
+  const scenePhrases=gospelVerified?GOSPEL_SCENE_TITLE_SCREEN[gospelReference]??[]:[];
+  let newLexicalCount=0;
+  for(const group of gallery.works){
+   if(barredAdditionalCandidate(group))continue;
+   const artworkTitle=group.artworkTitle??"";
+   const saintTitleMatch=exactSingleSaintInTitle(previous.title,artworkTitle);
+   const sceneTitleMatch=scenePhrases.some(phrase=>
+     lexical(artworkTitle).includes(lexical(phrase)));
+   if(!saintTitleMatch&&!sceneTitleMatch)continue;
+   const evidenceKind=saintTitleMatch?
+     "EXISTING_GALLERY_EXACT_SAINT_TITLE_SCREEN":
+     "VERIFIED_GOSPEL_EXISTING_GALLERY_TITLE_SCREEN";
+   add({evidenceKind,artworkId:group.canonicalArtworkId??null,
+    originalSource:group.selectedSourceUrl??null,
+    editorialBasis:semanticById.get(group.workGroupId)?.artworkLabelStatus??null,
+    approval:"LEXICAL_REVIEW_PROPOSAL_NOT_ARTWORK_SCENE_APPROVAL",
+    gospelReference:sceneTitleMatch?gospelReference:null,
+    sceneDepictionVerified:false, saintNameReviewRequired:true,
+    ...groupInfo(group.workGroupId)});
+   newLexicalCount++;
+  }
   const requiresSeasonal=/SEASONAL_REUSE_NEEDED|MARIAN_SATURDAY_REUSE_NEEDED/.test(
    previous.coverageState??"");
   const relevant=candidates.filter(c=>
@@ -231,6 +290,7 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
    selectionState:state,seasonalOrMarianReuseRequired:requiresSeasonal,
    protectedDateArtwork:approved?.artworkId??null,
    candidateCount:candidates.length,usableResearchCandidateCount:relevant.length,
+   newlyRecoveredGalleryTitleMatches:newLexicalCount,
    candidates});
  }
  assert.equal(matchedDays.length,365);
@@ -252,6 +312,8 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
   candidateDays:matchedDays.filter(x=>x.usableResearchCandidateCount>0).length,
   noSpecificCandidateDates:matchedDays.filter(x=>x.usableResearchCandidateCount===0).length,
   existingOperationalGroupsReferenced:allSourceGroupIds.size,
+  lexicalRecoveredExistingGalleryDates:matchedDays.filter(x=>x.newlyRecoveredGalleryTitleMatches>0).length,
+  lexicalRecoveredNewCandidateRows:matchedDays.reduce((s,x)=>s+x.newlyRecoveredGalleryTitleMatches,0),
   artworkDatesPublishedCertifiedByThisAudit:0,
   actualImageBytesCheckedByThisAudit:0
  };
