@@ -75,8 +75,9 @@ try{
    assert.equal(await page.locator(base+'.aoDailyUxModes [aria-pressed="true"]').count(),1);
    await checkPrayerFold("morning");
    await page.screenshot({path:resolve(captures,"daily-morning-cards-"+width+".png"),animations:"disabled"});
-   await page.locator(base+'.aoDailyReadingOptions summary').click();
-   await page.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
+   const quickRead=page.locator(base+'[data-ao-hours-direct-index] [data-tp381-daily-presentation="continuous"]');
+   assert.equal(await quickRead.count(),1,"Read continuously must be directly visible, not hidden in settings");
+   await quickRead.click();
    let flow=await state();
    assert.equal(flow.mode,"continuous");
    assert.equal(flow.count,sourcePlan.morning.length,"continuous Morning must match the active source-edition plan");
