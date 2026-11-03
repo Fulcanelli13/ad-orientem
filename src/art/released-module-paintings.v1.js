@@ -1,5 +1,5 @@
 /**
- * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296/#2302, CMA/Met Open Access #2340.
+ * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296/#2302, CMA/Met Open Access #2340 and Met #2354.
  * This asset list is distinct from approved editorial paintings and research archives.
  */
 export const RELEASED_MODULE_PAINTINGS=Object.freeze({
@@ -128,6 +128,24 @@ export const RELEASED_MODULE_PAINTINGS=Object.freeze({
     image:"assets/prayer/released/hondius-doctors-original.jpg",
     photographRights:"The Metropolitan Museum of Art Open Access · public domain (CC0)",
     releasePr:2340
+  }),
+  latour:Object.freeze({
+    title:"The Penitent Magdalen",
+    artist:"Georges de La Tour",
+    source:"https://www.metmuseum.org/art/collection/search/436839",
+    original:"assets/prayer/released/latour-penitent-magdalen-met-original.jpg",
+    image:"assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+    photographRights:"The Metropolitan Museum of Art Open Access · public domain (CC0)",
+    releasePr:2354
+  }),
+  "giordano-flight":Object.freeze({
+    title:"The Flight into Egypt",
+    artist:"Luca Giordano",
+    source:"https://www.metmuseum.org/art/collection/search/436503",
+    original:"assets/prayer/released/giordano-flight-egypt-met-original.jpg",
+    image:"assets/prayer/released/giordano-flight-egypt-frameless.jpg",
+    photographRights:"The Metropolitan Museum of Art Open Access · public domain (CC0)",
+    releasePr:2354
   })
 });
 export function releasedModulePhoto(id){
