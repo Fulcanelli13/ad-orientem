@@ -1,0 +1,52 @@
+name: Prayer Met two frameless originals — exact slot and phone gate
+on:
+  pull_request:
+    paths:
+      - "assets/prayer/released/latour-penitent-magdalen-met-original.jpg"
+      - "assets/prayer/released/latour-penitent-magdalen-frameless.jpg"
+      - "assets/prayer/released/giordano-flight-egypt-met-original.jpg"
+      - "assets/prayer/released/giordano-flight-egypt-frameless.jpg"
+      - "src/art/released-module-paintings.v1.js"
+      - "src/pray/presentation-runtime.js"
+      - "data/prayer/artwork-editorial-20261101/**"
+      - "tests/prayer-met-two-*"
+      - ".github/workflows/prayer-met-two-frameless-release-gate.yml"
+  workflow_dispatch:
+jobs:
+  exact-source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/prayer-met-two-frameless-exact-release.mjs
+      - run: node tests/prayer-gallery-267-crosswalk-audit.mjs
+      - run: node tests/artwork-module-live-bridge.mjs
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/prayer-met-two-frameless-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-met-two-8-real-phone
+          path: artifacts/prayer-met-two-eight/
+          retention-days: 14
+          if-no-files-found: warn
