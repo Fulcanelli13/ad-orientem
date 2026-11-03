@@ -264,7 +264,7 @@ function dailyApprovedPrayerCard(row){
   ?`<nav class="aoDailyFormulationChoices" role="group" aria-label="${esc(L("Prayer formulation","Formulation de la prière"))}">${options.map(item=>`<button type="button" data-tp381-approved-daily-form="${esc(row.slotId)}::${esc(item.id)}" aria-pressed="${selectedIds.has(item.id)}">${esc(item.title)}</button>`).join("")}</nav>`
   :"";
  return `${choices}<article class="aoTP381PrayerCard" data-ao-daily-formulation="${esc(row.witnessId)}">
- <h3>${esc(row.title)}</h3><div class="aoTP381Reader">${hoursParagraphs(row.text,row.id)}</div>
+ <h3>${esc(row.title)}</h3><div class="aoTP381Reader" lang="${esc(row.language||"en")}">${hoursParagraphs(row.text,row.id)}</div>
  ${source(row.sourceLabel,row.sourceUrl)}</article>`;
 }
 function dailyApprovedSequenceList(rows){
