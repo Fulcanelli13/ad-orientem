@@ -13,7 +13,8 @@ export const EXPLORE_PROTOTYPE_JOURNEY_STYLE = String.raw`
 }
 .aoHeritageSurface [data-atlas-journey="true"] .aoJourneyGrab{
  flex:none;display:none;align-items:center;justify-content:center;
- width:100%;height:16px;pointer-events:none;
+ width:100%;height:44px;min-height:44px;cursor:pointer;touch-action:none;
+ background:transparent;border:0;color:inherit;padding:0;
 }
 .aoHeritageSurface [data-atlas-journey="true"] .aoJourneyGrab:after{
  content:"";width:38px;height:4px;border-radius:3px;background:#3a4652;
@@ -141,6 +142,9 @@ export const EXPLORE_PROTOTYPE_JOURNEY_STYLE = String.raw`
   padding-bottom:0;z-index:17;
  }
  .aoHeritageSurface [data-atlas-journey="true"] .aoJourneyGrab{display:flex}
+ .aoHeritageSurface .aoJourneyPanel[data-atlas-journey="true"][data-journey-expanded="true"]{
+  height:calc(100dvh - 120px);max-height:calc(100dvh - 120px);
+ }
  .aoHeritageSurface [data-atlas-journey="true"] .aoJourneyHeader{
   padding:0 16px 3px;
  }
