@@ -3382,8 +3382,7 @@ function renderFiveWounds(){
   '<details class="aoF07ReaderLanguage"><summary aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">Aa</summary>'+
   '<div class="aoF07LanguageOptions" role="group" aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">'+
   ['en','fr','la'].map(code=>'<button type="button" data-p435930-five-language="'+code+'" aria-pressed="'+String(langCode===code)+'">'+
-    esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>'+
-  '')+
+    esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>':'')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
  esc(prayerLabel)+'</small>'+(CHAPLET_F07_VARIANTS_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
