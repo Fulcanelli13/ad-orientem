@@ -69,7 +69,7 @@ export function prayerEditorialPublicationSummary(){
  */
 export function angelusOpeningArtworkSlot(form,hour=12,dateKey=""){
  if(form==="regina")return "COV-pray.angelus_regina";
- if(/^\\d{4}-03-25$/.test(String(dateKey||"")))return "STG-pray.angelus-04";
+ if(/^\d{4}-03-25$/.test(String(dateKey||"")))return "STG-pray.angelus-04";
  return hour===6?"STG-pray.angelus-01":hour===18?"STG-pray.angelus-03":"STG-pray.angelus-02";
 }
 export const PRAY_DOOR_ART_SLOT_SCHEMA_V1="AO_PRAY_DOOR_ART_SLOT_MAP_V1";
