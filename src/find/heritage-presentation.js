@@ -198,7 +198,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='</div>';
   if(vm.journeyOpen&&typeof journeyPanel==="function"){
     html+=journeyPanel({language:vm.language,routes:vm.journeys,selectedId:vm.journeySelectedId,
-      selectedStageId:vm.journeySelectedStageId});
+      selectedStageId:vm.journeySelectedStageId,sheetExpanded:vm.journeySheetExpanded});
   }
   if(vm.filters?.highlightCustomId)html+='<p class="aoHeritageScope">'+L(vm.language,"Only documented examples are mapped; this does not imply a custom’s worldwide distribution.","Seuls des exemples attestés sont cartographiés ; cela ne représente pas la diffusion mondiale d’une coutume.")+'</p>';
   html+=(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected&&!vm.expandDetail&&itemPreview?itemPreview(vm):detailSheet(vm)));
