@@ -162,6 +162,8 @@ try{
     assert.ok(await root.locator(".aoFindMap .maplibregl-ctrl-zoom-in").count()===1
       &&await root.locator(".aoFindMap .maplibregl-ctrl-zoom-out").count()===1,
       "Do not replace or remove native MapLibre zoom controls");
+    assert.equal(await root.locator(".aoHeritageMore > summary").isVisible(),true,
+      "Secondary Atlas Layers must stay visible and accessible after relocating native map controls");
    }
 
    if(width>=900){
