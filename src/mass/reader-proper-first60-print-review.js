@@ -68,8 +68,15 @@ export function build2026ProperFirst60ScoreReview({
   if(!source||source.sha256!==occurrence.scoreGabcSha256||
     source.officePart!==occurrence.part||day?.status!=="SOURCE_MATCHED_FOR_REVIEW"||
     day.sourcePath!==occurrence.sourcePath||!day.englishReaderReady||
-    !day.frenchReaderReady||!day.sourceExistsInPinnedLatinTree)
+    !day.sourceExistsInPinnedLatinTree)
     fail("FIRST_60_SELECTED_PROPER_SCORE_IDENTITY_CHANGED");
+  // The annual source matcher is valid on some English-ready days whose
+  // French reader projection is incomplete. Keep those outside the bilingual
+  // publication batch, but do not mistake a translation hold for score drift.
+  if(!day.frenchReaderReady){
+   issues.push({date:day.date,scoreId:source.id,status:"FRENCH_READER_PROPER_HOLD"});
+   continue;
+  }
   const selected=day.tracks?.filter(t=>t.part===occurrence.part&&
     t.role===ROLES[occurrence.part]&&
     t.status==="UNIQUE_SOURCE_TEXT_CANDIDATE"&&
