@@ -37,7 +37,7 @@ export function renderEssentialFlowReader({id,p,face,vernacular="en",esc,artUrl=
  const label=available?(selected==="la"?"Show vernacular prayer":"Show Latin prayer"):"";
  const hint=available?(selected==="la"?"Tap the text to see the translation":"Tap the text for Latin"):"";
  const content=available?
-  '<button class="aoEssentialFlowTextToggle" type="button" data-p435930-essential-flow-toggle aria-label="'+esc(label)+'">'+faceMarkup+'</button>':
+  '<div class="aoEssentialFlowTextToggle" data-p435930-essential-flow-toggle>'+faceMarkup+'</div>':
   '<div class="aoEssentialFlowPlain">'+faceMarkup+'</div>';
  return '<article class="aoP435930Prayer aoEssentialFlow" data-ao-essential-card="'+esc(id)+
   '" data-ao-essential-flow="true" data-ao-essential-current="'+esc(selected)+
@@ -48,5 +48,6 @@ export function renderEssentialFlowReader({id,p,face,vernacular="en",esc,artUrl=
   '<h2>'+esc(title)+'</h2></header>'+
   content+
   (hint?'<p class="aoEssentialFlowHint" data-ao-essential-flow-hint>'+esc(hint)+'</p>':"")+
+  (available?'<button type="button" class="aoEssentialFlowLanguageAction" data-p435930-essential-flow-action>'+esc(label)+'</button>':"")+
   '</article>';
 }
