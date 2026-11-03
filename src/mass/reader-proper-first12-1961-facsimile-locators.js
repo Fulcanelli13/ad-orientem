@@ -18,16 +18,32 @@ const original=Object.freeze([
  [1165,"in","360",402],
  [1271,"in","383",425]
 ]);
-const entries=Object.freeze(original.map(([id,part,folio,imageNumber])=>
- Object.freeze({
+const continuationById=Object.freeze({
+ 475:Object.freeze({folio:"393",imageNumber:435}),
+ 782:Object.freeze({folio:"363",imageNumber:405}),
+ 265:Object.freeze({folio:"80",imageNumber:106}),
+ 1271:Object.freeze({folio:"384",imageNumber:426})
+});
+const scanUrl=n=>"https://gregobase.selapa.net/sources/2/"+n+".png";
+const entries=Object.freeze(original.map(([id,part,folio,imageNumber])=>{
+ const continuation=continuationById[id]??null;
+ if(continuation&&Number(continuation.folio)!==Number(folio)+1)
+  throw Error("ORIGINAL_1961_CONTINUATION_NOT_ADJACENT");
+ return Object.freeze({
   scoreId:"GREGOBASE-"+id,part,folio,
   sourceUrl:"https://gregobase.selapa.net/chant.php?id="+id,
-  scanned1961PageUrl:"https://gregobase.selapa.net/sources/2/"+imageNumber+".png",
+  scanned1961PageUrl:scanUrl(imageNumber),
   imageNumber,
+  originalPrintedFolios:Object.freeze([folio,...(continuation?[continuation.folio]:[])]),
+  scannedPrintedPageUrls:Object.freeze([
+    scanUrl(imageNumber),...(continuation?[scanUrl(continuation.imageNumber)]:[])
+  ]),
+  continuationFolio:continuation?.folio??null,
+  continuationPageUrl:continuation?scanUrl(continuation.imageNumber):null,
   sourceBook:"Graduale Romanum, Solesmes, 1961",
   scoreProof:"PRINT_FACSIMILE_SOURCE_LOCATED_NOT_MUSICALLY_COMPARED",
   publication:"EDITORIAL_HOLD_NOT_PUBLIC"
- })));
+ })}));
 const byId=new Map(entries.map(x=>[x.scoreId,x]));
 export const FIRST12_1961_FACSIMILES=entries;
 export function first12PrintedFacsimileForScore(score){
