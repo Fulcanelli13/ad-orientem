@@ -61,13 +61,21 @@ for(const [group,id,lat,lng,sourceRef,scope,addressNeedle] of sites){
   assert.doesNotMatch(profile,/data-tlm-celebration-evidence=/);
  }
 }
-// Fisher House and Tyburn are deliberate holds: an address or nearby shrine
-// coordinate does not by itself identify the exact mapped worship building.
-for(const hold of ["RG-1406AE6DA1E7","RG-16B82EFF8821"]){
- const item=all.find(x=>x.physical_group_id===hold);
- assert.ok(item&&!item.map_publishable&&item.geo===null,
-  "Uncorroborated chapel/monastery positions must not be auto-promoted: "+hold);
-}
+// Batch 9 independently matched Fisher House to a named chaplaincy building,
+// rather than using Cambridge locality alone. Tyburn is a reviewed convent/shrine
+// campus, NOT an authenticated interior chapel entrance.
+const fisher=all.find(x=>x.physical_group_id==="RG-1406AE6DA1E7");
+assert.ok(fisher?.map_publishable&&fisher.map_state==="PROVISIONAL");
+assert.equal(fisher.geo.source_ref,"osm:way:137152224");
+assert.equal(fisher.geo.lat,52.2046);assert.equal(fisher.geo.lng,0.12022);
+assert.ok(fisher.source_links.some(x=>x.url==="https://fisherhouse.org.uk/contact"));
+assert.equal(fisher.status,"RESEARCH-LISTED · MASS UNVERIFIED");
+const tyburn=all.find(x=>x.physical_group_id==="RG-16B82EFF8821");
+assert.ok(tyburn?.map_publishable&&tyburn.map_state==="PROVISIONAL");
+assert.equal(tyburn.geo.source_ref,"independent:geograph-tyburn-convent");
+assert.equal(tyburn.geo.lat,51.51307);assert.equal(tyburn.geo.lng,-0.16243);
+assert.ok(tyburn.facts.some(x=>x.label==="Map position"&&x.value.includes("religious campus")));
+assert.equal(tyburn.status,"RESEARCH-LISTED · MASS UNVERIFIED");
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
