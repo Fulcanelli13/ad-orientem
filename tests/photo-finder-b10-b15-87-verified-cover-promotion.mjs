@@ -16,7 +16,11 @@ assert.equal(all.length,87);assert.equal(exceptions.length,26);
 assert.deepEqual(r.source_reports.map(x=>[x.batch,x.verified,x.held]),[[10,19,1],[11,14,6],[12,15,2],[13,11,6],[14,12,8],[15,16,3]]);
 assert.ok(photos.items.length>=268,"All 87 new covers and 181 of 182 prior covers must remain; El Cobre alone is visually held");
 assert.equal(new Set(photos.items.map(x=>x.place_id)).size,photos.items.length);
-assert.equal(gallery.items.length,35,"Gallery out of scope");
+// These B10–B15 cover-only releases never altered the gallery, but
+// subsequent independently verified Sacred Atlas releases may add photos.
+assert.ok(gallery.items.length>=35,"Previously approved gallery photos must survive");
+assert.equal(new Set(gallery.items.map(x=>x.media_id)).size,gallery.items.length,
+ "Every independently added gallery photo needs a distinct media identity");
 const version=String(photos.version||"").split(".").map(Number);
 assert.ok(version[0]>1||(version[0]===1&&(version[1]>6||(version[1]===6&&version[2]>=5))),"Approved-media version rollback");
 const byId=new Map(photos.items.map(x=>[x.place_id,x]));

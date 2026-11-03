@@ -1,0 +1,89 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND1_FIRST_FOUR_PUBLICATION_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_ONLY_NO_TLM",
+  "source_archive_evidence": "AO_Sacred_Atlas_100_Research_QA_Archive.zip; AO_Sacred_Atlas_B16_BATCH_01_RESEARCH.zip; user KEEP selections 2026-10-31",
+  "process": "Retrieve exact Wikimedia Commons original file and verify hash/image dimensions. Compare perceptual dHash of original to preserved original archival preview. Resize full frame only, no crop. Publish only entries with release fields. Preserve original subject and site distinction.",
+  "publication_targets": 2,
+  "holds": 2,
+  "rows": [
+    {
+      "round1_number": 1,
+      "place_id": "place:IE:knock-shrine",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apparition_Chapel_with_Stained_Window.jpg",
+      "expected_archive_dhash": "0c0f1737332f2723",
+      "status": "HOLD_UNDERLYING_SCULPTURE_RIGHTS",
+      "reason": "Ferri's 1960 Carrara marble tableau is prominent. Knock Shrine owns this photograph under CC-BY-SA-4.0 but the licence to reproduce Ferri's still-protected sculpture within the photograph is not independently established.",
+      "source_for_depiction": "https://www.knockshrine.ie/plan-your-visit/the-apparition-chapel/"
+    },
+    {
+      "round1_number": 2,
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "subject_focus_id": "subject:focus:lourdes-massabielle-grotto",
+      "media_id": "ao-lourdes-original-massabielle-grotto-sotos-2026",
+      "filename": "FR-lourdes-original-massabielle-grotto-sotos-2026.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Grotte_de_Massabielle_de_Lourdes_(Hautes-Pyr%C3%A9n%C3%A9es)_01.jpg",
+      "commons_title": "File:Grotte de Massabielle de Lourdes (Hautes-Pyrénées) 01.jpg",
+      "source_author": "Sotos",
+      "source_license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "date": "2026-03-09",
+      "expected_archive_dhash": "93e64e1d1519666d",
+      "source_original_dimensions": [
+        3705,
+        2496
+      ],
+      "display_role": "GALLERY_OBJECT",
+      "not_relic_image": true,
+      "depicts_kind": null,
+      "subject_relic_id": null,
+      "label_en": "The original Grotto of Massabielle, Lourdes",
+      "label_fr": "La grotte originale de Massabielle, Lourdes",
+      "alt_en": "Original rocky Grotto of Massabielle at Lourdes, with the Marian niche and worshippers at the site",
+      "alt_fr": "Grotte originale de Massabielle à Lourdes, avec la niche de la Vierge et des pèlerins sur place",
+      "caption_en": "The original 1858 apparition site at Lourdes, photographed on 9 March 2026. The statue in the niche is associated with Joseph-Hugues Fabisch's nineteenth-century work; this is not a replica grotto.",
+      "caption_fr": "Site original des apparitions de 1858 à Lourdes, photographié le 9 mars 2026. La statue de la niche est associée à l'œuvre du XIXe siècle de Joseph-Hugues Fabisch ; il ne s'agit pas d'une reproduction de la grotte.",
+      "underlying_work_source_url": "https://inventaire.patrimoines.laregion.fr/dossier/IM34006973",
+      "rights_review": "Source photo CC-BY-4.0, 2026 photographer Sotos. Nineteenth-century Fabisch statue (1864; sculptor died 1886) out of copyright. No modern sculpture is central."
+    },
+    {
+      "round1_number": 3,
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Bernadette's_incorrupt_body.jpg",
+      "expected_archive_dhash": "1d7d6e6b4b2766f1",
+      "status": "HOLD_UNDERLYING_1925_SHRINE_AND_MASK_RIGHTS",
+      "reason": "Exact glass casket at Saint-Gildard confirmed, and photographer Jabonsbachek licensed photo CC-BY-SA-4.0; independent rights status for the 1925 bronze/glass shrine and wax face/hand masks not yet documented. Do not claim a photograph authenticates bodily incorruption.",
+      "source_for_depiction": "https://sainte-bernadette-soubirous-nevers.com/fr/le-sanctuaire/"
+    },
+    {
+      "round1_number": 4,
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "subject_focus_id": "subject:focus:padua-st-anthony-tongue",
+      "subject_relic_id": "relic:IT:anthony-padua-tongue",
+      "media_id": "ao-padua-st-anthony-tongue-reliquary-elmiralaleh-2022",
+      "filename": "IT-padua-st-anthony-tongue-reliquary-2022.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:La-lingua-di-sant-antonio.jpg",
+      "commons_title": "File:La-lingua-di-sant-antonio.jpg",
+      "source_author": "Elmiralaleh",
+      "source_license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "date": "2022-04-27",
+      "expected_archive_dhash": "55332bea6b6b69cc",
+      "source_original_dimensions": [
+        960,
+        1280
+      ],
+      "display_role": "GALLERY_OBJECT",
+      "not_relic_image": false,
+      "depicts_kind": "RELIQUARY_HOUSING_REPUTED_RELIC",
+      "label_en": "The tongue reliquary of Saint Anthony of Padua",
+      "label_fr": "Le reliquaire de la langue de saint Antoine de Padoue",
+      "alt_en": "Ornate Gothic gold reliquary displayed in the Treasury Chapel at Padua, associated with Saint Anthony's tongue",
+      "alt_fr": "Reliquaire gothique doré exposé dans la chapelle du Trésor à Padoue, associé à la langue de saint Antoine",
+      "caption_en": "The fifteenth-century reliquary for Saint Anthony's tongue, photographed on 27 April 2022. The photograph shows the historic container; authenticity of the relic is attributed to the basilica, not independently certified here.",
+      "caption_fr": "Reliquaire du XVe siècle de la langue de saint Antoine, photographié le 27 avril 2022. La photographie montre la châsse historique ; l'authenticité de la relique est attribuée à la basilique et n'est pas certifiée indépendamment ici.",
+      "underlying_work_source_url": "https://www.basilicadelsanto.it/en/content/chapel-relics-treasury-chapel",
+      "rights_review": "2022 photographer Elmiralaleh CC-BY-SA-4.0; reliquary attributed by basilica to Giuliano da Firenze (1436), out of copyright. Reflections and 960px width acceptable for gallery only."
+    }
+  ]
+}

@@ -13,7 +13,11 @@ assert.ok(registry.items.length>=268,"Later approved releases minus the single E
 assert.equal(new Set(registry.items.map(x=>x.place_id)).size,registry.items.length);
 assert.equal(manifest.previously_approved_keep.length,168);
 assert.equal(manifest.images.length,14);
-assert.equal(gallery.items.length,35,"No gallery entries removed or added by this release");
+// B9 did not publish gallery photographs. It must not impose a permanent
+// 35-photo ceiling on later, separately vetted Sacred Atlas releases.
+assert.ok(gallery.items.length>=35,"Historical approved gallery coverage must not regress");
+assert.equal(new Set(gallery.items.map(x=>x.media_id)).size,gallery.items.length,
+ "Later gallery growth must never introduce duplicate media IDs");
 const byId=new Map(registry.items.map(x=>[x.place_id,x]));
 const fp=it=>({place_id:it.place_id,asset_path:it.asset_path,source_sha1:it.source_sha1,derivative_sha256:it.derivative_sha256,credit:it.credit,license:it.license});
 for(const original of manifest.previously_approved_keep){

@@ -1,0 +1,57 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND1_TWO_PUBLISHED_IMAGE_BYTES_V1",
+  "reviewed_on": "2026-11-03",
+  "source_manifest": "data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json",
+  "published": 2,
+  "held": 2,
+  "new_approved_assets": [
+    {
+      "round1_number": 2,
+      "media_id": "ao-lourdes-original-massabielle-grotto-sotos-2026",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "original_sha1": "fe00aba2d40695ab507ba8db059d215d483d06cb",
+      "commons_api_sha1": "fe00aba2d40695ab507ba8db059d215d483d06cb",
+      "original_dimensions": [
+        3705,
+        2496
+      ],
+      "archive_expected_dhash": "93e64e1d1519666d",
+      "actual_original_dhash": "b3e64e1d1519666d",
+      "archive_visual_hamming_distance": 1,
+      "derivative_sha256": "068e6108d3d861441de31b810d25ab4bf201a968a3dca92fd25d3d5cb39c1265",
+      "derivative_dimensions": [
+        1600,
+        1078
+      ],
+      "asset_path": "assets/approved/place-gallery/FR-lourdes-original-massabielle-grotto-sotos-2026.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Grotte_de_Massabielle_de_Lourdes_(Hautes-Pyr%C3%A9n%C3%A9es)_01.jpg",
+      "photo_author": "Sotos",
+      "licence": "CC-BY-4.0",
+      "rights_citation": "https://inventaire.patrimoines.laregion.fr/dossier/IM34006973"
+    },
+    {
+      "round1_number": 4,
+      "media_id": "ao-padua-st-anthony-tongue-reliquary-elmiralaleh-2022",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "original_sha1": "12694426c6d576756457772d4b85522a28da9317",
+      "commons_api_sha1": "12694426c6d576756457772d4b85522a28da9317",
+      "original_dimensions": [
+        960,
+        1280
+      ],
+      "archive_expected_dhash": "55332bea6b6b69cc",
+      "actual_original_dhash": "55332bea6b6b69cc",
+      "archive_visual_hamming_distance": 0,
+      "derivative_sha256": "885122c544cb7f1f5203cb0b79c57f638ca95804a3a0092a0eb2cf6c4083db24",
+      "derivative_dimensions": [
+        960,
+        1280
+      ],
+      "asset_path": "assets/approved/place-gallery/IT-padua-st-anthony-tongue-reliquary-2022.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:La-lingua-di-sant-antonio.jpg",
+      "photo_author": "Elmiralaleh",
+      "licence": "CC-BY-SA-4.0",
+      "rights_citation": "https://www.basilicadelsanto.it/en/content/chapel-relics-treasury-chapel"
+    }
+  ]
+}

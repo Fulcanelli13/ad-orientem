@@ -13,7 +13,10 @@ assert.equal(existsSync(new URL("../"+hold.visual_hold.asset_path,import.meta.ur
 assert.equal(m.schema,"AO_PHOTO_FINDER_B16_B18_VERIFIED_THIRTY_THREE_COVERS_V1");
 assert.deepEqual(m.source_reports.map(x=>[x.batch,x.verified,x.held]),[[16,14,5],[17,14,4],[18,5,2]]);
 assert.deepEqual([m.prior_approved_keep.length,m.images.length,m.holds.length],[268,33,11]);
-assert.ok(media.items.length>=301);assert.equal(new Set(media.items.map(x=>x.place_id)).size,media.items.length);assert.equal(gallery.items.length,35);
+assert.ok(media.items.length>=301);assert.equal(new Set(media.items.map(x=>x.place_id)).size,media.items.length);// This historic cover-only batch did not alter gallery media; later
+// separately approved sacred images are permitted without changing these covers.
+assert.ok(gallery.items.length>=35,"Historical gallery must not shrink");
+assert.equal(new Set(gallery.items.map(x=>x.media_id)).size,gallery.items.length);
 const version=String(media.version).split(".").map(Number);
 assert.ok(version[0]>1||(version[0]===1&&(version[1]>6||(version[1]===6&&version[2]>=7))),"Version rollback");
 const map=new Map(media.items.map(x=>[x.place_id,x]));
