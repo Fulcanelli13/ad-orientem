@@ -11,6 +11,9 @@ on:
       - "tests/sacred-art-989-365-bulk-match.mjs"
       - "scripts/art/assign-2026-existing-seasonal-marian-reuse.mjs"
       - "tests/sacred-art-existing-seasonal-marian-reuse.mjs"
+      - "data/artwork/2026-existing-gallery-48-exception-cues.v1.json"
+      - "scripts/art/resolve-2026-48-existing-gallery-exceptions.mjs"
+      - "tests/sacred-art-2026-48-existing-gallery-exceptions.mjs"
       - ".github/workflows/sacred-art-989-365-bulk-match.yml"
   workflow_dispatch:
 permissions:
@@ -57,6 +60,8 @@ jobs:
           node tests/sacred-art-989-365-bulk-match.mjs
           node scripts/art/assign-2026-existing-seasonal-marian-reuse.mjs
           node tests/sacred-art-existing-seasonal-marian-reuse.mjs
+          node scripts/art/resolve-2026-48-existing-gallery-exceptions.mjs
+          node tests/sacred-art-2026-48-existing-gallery-exceptions.mjs
       - name: Preserve complete source and verified-Gospel candidate ledgers
         if: always()
         uses: actions/upload-artifact@v4
@@ -65,6 +70,7 @@ jobs:
           path: |
             artifacts/sacred-art-2026/365-existing-gallery-bulk-match.json
             artifacts/sacred-art-2026/104-existing-seasonal-marian-reuse-proposals.json
+            artifacts/sacred-art-2026/48-existing-gallery-exception-reconciliation.json
             artifacts/calendar-gospel-home/2026-source-audit.json
           retention-days: 14
           if-no-files-found: warn
