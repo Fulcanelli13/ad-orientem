@@ -73,7 +73,72 @@ def main():
     # This directory is deliberately local to the one-time Actions worker.
     # Only verified WebP derivatives and canonical registry/evidence will be committed.
     staged=Path("/tmp/ao-sacred-atlas-round5-selected-13-stage")
-    report=release.verify_and_stage(tasks,staged,apply=True)
+    # Only this bounded Sacred Atlas batch uses the more generous original-size
+    # cap and EXIF/MPO decoding. Do not change global Directory source rules.
+    import io, urllib.parse
+    from PIL import Image,ImageOps
+    stage=release.stage
+    stage.MAX_ORIGINAL_BYTES=32_000_000
+    stage.MAX_BATCH_ORIGINAL_BYTES=220_000_000
+    stage.MAX_IMAGE_PIXELS=65_000_000
+    def round5_metadata(entry):
+        params=urllib.parse.urlencode({"action":"query","format":"json","formatversion":"2",
+            "titles":entry["title"],"prop":"imageinfo",
+            "iiprop":"url|size|sha1|mime|extmetadata"})
+        payload=json.loads(stage.fetch(stage.COMMONS+"?"+params,2_000_000))
+        pages=payload.get("query",{}).get("pages",[])
+        if len(pages)!=1 or pages[0].get("title")!=entry["title"] or not pages[0].get("imageinfo"):
+            raise ValueError("Exact pinned Commons file title is unavailable")
+        info=pages[0]["imageinfo"][0]
+        sz=int(info.get("size") or 0);w=int(info.get("width") or 0);h=int(info.get("height") or 0)
+        if (info.get("sha1")!=entry["expected_sha1"] or
+                info.get("mime") not in {"image/jpeg","image/png","image/webp"} or
+                sz<1000 or sz>stage.MAX_ORIGINAL_BYTES or
+                min(w,h)<650 or w*h>stage.MAX_IMAGE_PIXELS):
+            raise ValueError("Source SHA1, MIME, size or dimensions outside pinned safety bounds")
+        meta=info.get("extmetadata") or {}
+        def get(key):
+            return stage.clean((meta.get(key) or {}).get("value"))
+        if entry["expected_license"]=="CC0":
+            short=get("LicenseShortName").upper().replace(" ","")
+            url=get("LicenseUrl")
+            terms=get("UsageTerms").upper()
+            parsed=urllib.parse.urlsplit(url) if url else None
+            url_ok=bool(parsed and parsed.hostname=="creativecommons.org" and
+                parsed.scheme in {"http","https"} and
+                parsed.path.startswith("/publicdomain/zero/1.0"))
+            if not short.startswith("CC0") or not (url_ok or "CC0" in terms):
+                raise ValueError("CC0 dedication not independently affirmed in current Commons file metadata")
+            author=get("Artist")
+            if not author or len(author)>500:
+                raise ValueError("No current CC0 photo author attribution")
+            name="CC0"
+        else:
+            name,author=stage.license_from_metadata(info)
+        if name!=entry["expected_license"]:
+            raise ValueError("Current Commons copyright licence differs from selected source claim")
+        stage.checked_https(info.get("url"),{"upload.wikimedia.org"})
+        return info,name,author
+    def round5_convert_original(original,info,entry):
+        fmt={"image/jpeg":{"JPEG","MPO"},"image/png":{"PNG"},"image/webp":{"WEBP"}}[info["mime"]]
+        with Image.open(io.BytesIO(original)) as source:
+            if source.format not in fmt:
+                raise ValueError("Decoded original format differs from declared Commons MIME")
+            photo=ImageOps.exif_transpose(source)
+            published_size=(int(info["width"]),int(info["height"]))
+            if published_size not in (source.size,photo.size):
+                raise ValueError("Decoded image dimensions do not match current Commons metadata, even after EXIF")
+            photo=photo.convert("RGB")
+        photo.thumbnail((1280,1280),Image.Resampling.LANCZOS)
+        output=io.BytesIO()
+        photo.save(output,format="WEBP",quality=84,method=6)
+        binary=output.getvalue()
+        if len(binary)<3000 or binary[:4]!=b"RIFF" or binary[8:12]!=b"WEBP":
+            raise ValueError("Invalid full-frame WebP derivative")
+        return binary,photo.size,False
+    stage.convert_original=round5_convert_original
+    report=release.verify_and_stage(tasks,staged,apply=True,
+                                   metadata_loader=round5_metadata)
     approved=[r["item"] for r in report["media_records"]]
     holds=preflight_holds+report["exceptions"]
     assert len(approved)+len(holds)==13
