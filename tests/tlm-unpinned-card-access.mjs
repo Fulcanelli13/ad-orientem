@@ -31,11 +31,16 @@ for(const church of unpinned){
   ids.add(church.item_id);
   assert.equal(church.geo,null,"No coordinates may be fabricated to populate MapLibre");
   assert.equal(church.map_state,"ADDRESS_ONLY");
+  assert.ok(church.summary_fr?.includes("répertorié"),"French preview must not fall back to English");
   for(const lang of ["en","fr"]){
     const card=renderDirectoryVenueCard(church,lang);
     assert.ok(card.includes('data-explore-item="'+church.item_id+'"'));
     assert.ok(card.includes("aoTlmVenueVisual")&&card.includes("aoTlmVenueTitle"));
     assert.ok(card.includes("aoTlmVenueSchedule"));
+    if(lang==="fr"){
+      assert.ok(card.includes("RÉPERTORIÉ · MESSE NON VÉRIFIÉE"));
+      assert.ok(!card.includes("RESEARCH-LISTED"));
+    }
     const profile=renderTlmChurchProfile(church,lang);
     assert.ok(profile.includes('data-tlm-church-profile="'+church.source_id+'"'));
     assert.ok(profile.includes("aoTlmProfileEssentials")&&profile.includes("aoTlmProfileSourceSection"));
@@ -65,4 +70,10 @@ const list=renderExploreToString(buildExploreViewModel({
 assert.ok(list.includes('data-explore-item="'+unpinned[0].item_id+'"'));
 assert.ok(list.includes('data-tlm-church-profile="'+unpinned[0].source_id+'"'));
 assert.ok(list.includes("668"));
+const frenchPreview=renderExploreToString(buildExploreViewModel({
+  language:"fr",lens:"tlm",view:"list",items:unpinned,
+  filters:{siteEvidence:"ADDRESS_ONLY"},selectedId:unpinned[0].item_id,
+}));
+assert.ok(frenchPreview.includes("Lieu physique répertorié"),
+  "The French church preview must use its translated source-safety description");
 console.log("PASS TLM unpinned cards: 668/668 bilingual church cards and profiles remain accessible independently of map pins");
