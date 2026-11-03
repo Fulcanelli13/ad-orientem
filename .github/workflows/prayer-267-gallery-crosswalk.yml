@@ -1,0 +1,36 @@
+name: Prayer 267 artwork crosswalk (research only)
+on:
+  pull_request:
+    paths:
+      - "data/prayer/artwork-editorial-20261101/**"
+      - "data/artwork/research-source-records-3205.v1.json"
+      - "data/artwork/research-operational-989.v1.json"
+      - "data/artwork/research-semantic-candidates-989.v1.json"
+      - "src/art/released-module-paintings.v1.js"
+      - "src/pray/art-slot-map.v1.js"
+      - "src/pray/editorial-artwork-assignments.v1.js"
+      - "tests/prayer-gallery-267-crosswalk-audit.mjs"
+      - "scripts/art/prayer-3205-source-link-audit.mjs"
+      - ".github/workflows/prayer-267-gallery-crosswalk.yml"
+  workflow_dispatch:
+jobs:
+  read-only-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/prayer-gallery-267-crosswalk-audit.mjs
+      - run: node scripts/art/prayer-3205-source-link-audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-gallery-267-full-source-crosswalk
+          path: artifacts/prayer-gallery/
+          if-no-files-found: warn
+          retention-days: 14

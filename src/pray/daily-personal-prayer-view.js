@@ -46,7 +46,7 @@ export function personalDailyPurposeSection(group,plan,{esc,L,prayerParagraphs,s
    group.options.map(x=>choice(x.id,x.choiceLabel||dailyFormulationLabel(x.sourceLabel),x.id===chosen,x.sourceLabel)).join("");
  const reading=current?
   '<div class="aoDailyPurposeReading" data-ao-purpose-source="'+esc(current.id)+'"><h5>'+esc(current.title)+'</h5>'+
-  '<div class="aoTP381Reader">'+prayerParagraphs(current.text)+'</div>'+
+  '<div class="aoTP381Reader" lang="'+esc(current.language||plan.language||"en")+'">'+prayerParagraphs(current.text)+'</div>'+
   source(current.sourceLabel,current.sourceUrl)+'</div>':"";
  return '<section class="aoDailyPurposeSection" data-ao-daily-purpose="'+esc(purpose)+'" aria-label="'+esc(heading)+'">'+
   '<h4>'+esc(heading)+'</h4>'+
@@ -66,7 +66,7 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
  const body=row.text?prayerParagraphs(row.text):
  '<p class="aoTP381TextParagraph">'+esc(L("Exact text unavailable in the selected language; nothing substituted.","Texte exact indisponible dans cette langue ; aucune substitution."))+'</p>';
  const twoFaces=Boolean(row.text&&row.latinText&&row.language!=="la"&&row.text!==row.latinText);
- const prayerBody=twoFaces?'<button type="button" data-tp381-flip aria-label="'+esc(L("Switch prayer language","Changer la langue de la prière"))+'"><span data-face-v>'+body+'</span><span data-face-la hidden>'+prayerParagraphs(row.latinText)+'</span></button>':'<div class="aoTP381Reader">'+body+'</div>';
+ const prayerBody=twoFaces?'<button type="button" data-tp381-flip aria-label="'+esc(L("Switch prayer language","Changer la langue de la prière"))+'"><span data-face-v lang="'+esc(row.language)+'">'+body+'</span><span data-face-la lang="la" hidden>'+prayerParagraphs(row.latinText)+'</span></button>':'<div class="aoTP381Reader" lang="'+esc(row.language||plan.language||"en")+'">'+body+'</div>';
  const matches=plan.direct?[]:plan.availableVariants.filter(x=>x.slot===row.sourceId);
  const controls=matches.length?'<div class="aoDailyFormulationPicker" role="group" aria-label="'+esc(L("Prayer formulation","Formulation de la prière"))+'">'+
   '<span class="aoDailyFormulationLabel">'+esc(L("Prayer text","Texte de prière"))+'</span>'+

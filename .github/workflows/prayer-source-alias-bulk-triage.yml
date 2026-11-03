@@ -1,0 +1,31 @@
+name: Prayer 267 source aliases and bulk release queue
+on:
+  pull_request:
+    paths:
+      - "scripts/art/prayer-source-alias-bulk-triage.mjs"
+      - "data/prayer/artwork-editorial-20261101/**"
+      - "data/artwork/research-source-records-3205.v1.json"
+      - "data/artwork/research-operational-989.v1.json"
+      - ".github/workflows/prayer-source-alias-bulk-triage.yml"
+  workflow_dispatch:
+jobs:
+  source-triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/art/prayer-source-alias-bulk-triage.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-267-source-alias-and-release-matrix
+          path: artifacts/prayer-gallery/prayer-source-alias-and-batch-release-triage.v1.json
+          retention-days: 14
+          if-no-files-found: error

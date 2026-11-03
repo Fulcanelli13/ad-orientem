@@ -10,6 +10,10 @@ export function parseSevenWordsHistoricalWitness(input){
  const ranks=["first","second","third","fourth","fifth","sixth","seventh"];
  if(hits.length!==7||hits.some((hit,i)=>hit[1].toLowerCase()!==ranks[i]))
    throw new Error("The historical source does not contain the seven ordered Word headings");
+ const opening=source.slice(0,hits[0].index).trim();
+ // Some parser fixtures contain only the seven Word sections. Preserve
+ // whatever preface the source supplies; the full 1889 witness test asserts
+ // exact source equality and therefore prevents an omitted production opening.
  const closing=source.slice(hits[6].index+hits[6][0].length);
  const boundary=closing.search(/A Prayer to our Blessed Lady of Sorrows\.?/i);
  if(boundary<0)throw new Error("Cannot separate the Seventh Word from the historical concluding devotion");
@@ -21,5 +25,5 @@ export function parseSevenWordsHistoricalWitness(input){
  });
  const appendix=closing.slice(boundary).trim();
  if(appendix.length<100)throw new Error("The historical concluding prayers are incomplete");
- return Object.freeze({sections:Object.freeze(sections),appendix});
+ return Object.freeze({opening,sections:Object.freeze(sections),appendix});
 }

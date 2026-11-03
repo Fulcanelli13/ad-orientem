@@ -454,6 +454,36 @@ const unresolvedDetail=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-
  selection:{type:"feast",date:"2026-11-01"}});
 assert.match(unresolvedDetail,/CALENDAR LANDMARK/,"Unresolved date detail must not claim observed Mass");
 assert.doesNotMatch(unresolvedDetail,/OBSERVED CELEBRATION/,"Unresolved landmark must never claim a confirmed Mass");
+// The upcoming-date rail crosses the 2025–2026 liturgical-year boundary on
+// 3 November, after All Souls, when no current-year major feast remains.
+// The next Advent is a date from the canonical adjacent year, not an
+// asserted observed Mass; it must never become a marker on the old year's dial.
+for(const selectedDate of ["2026-11-03","2026-11-27","2026-11-28"]){
+ const boundary=renderLiturgicalClock({year:rosary,selectedDate,todayDate:selectedDate});
+ assert.match(boundary,/<nav class="aoClockUpcoming"/,
+  "Upcoming dates cannot disappear at the liturgical-year boundary "+selectedDate);
+ assert.match(boundary,/data-cal-clock-open-day="2026-11-29" class="aoClockUpcomingItem"/,
+  "Next Advent date must remain navigable after All Souls "+selectedDate);
+ assert.match(boundary,/First Sunday of Advent/,
+  "Use the canonical adjacent-year feast name, not a guessed Mass title");
+ assert.match(boundary,/Observance pending verification/,
+  "Next Advent is a calendar date, never an unverified 1962 Mass assertion");
+ assert.doesNotMatch(boundary,/data-cal-clock-feast="2026-11-29"/,
+  "Next year's Advent does not belong on the current-year dial");
+ assert.equal((boundary.match(/<nav class="aoClockUpcoming"/g)||[]).length,1,
+  "Only one upcoming-date rail may appear");
+}
+const boundaryFr=renderLiturgicalClock({year:rosary,selectedDate:"2026-11-03",
+ todayDate:"2026-11-03",fr:true});
+assert.match(boundaryFr,/Premier dimanche de l.Avent/,
+ "Adjacent liturgical year's feast label must be bilingual");
+assert.match(boundaryFr,/Observance en attente de vérification/,
+ "French upcoming status must distinguish dates from resolved Masses");
+// The same adjacent-year rule must remain reusable, not hardcoded to 2026.
+const nextBoundaryYear=buildLiturgicalYear("2027-11-20");
+const futureClock=renderLiturgicalClock({year:nextBoundaryYear,
+ selectedDate:"2027-11-20",todayDate:"2027-11-20"});
+assert.match(futureClock,/data-cal-clock-open-day="2027-11-28" class="aoClockUpcomingItem"/);
 const integratedCalendarSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 assert.match(integratedCalendarSource,/clockForYear\(y,selected\)/);
 assert.match(integratedCalendarSource,/renderYearJourney\(/,"Original eleven-period journey preserved");

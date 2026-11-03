@@ -1,0 +1,896 @@
+{
+  "schema": "ao.pray.release-coverage-evidence.v1",
+  "asOf": "2026-11-03",
+  "purpose": "All 32 multi-text Prayer routes now have bounded targeted source/component evidence. This is NOT full all-stage EN/FR/LA browser acceptance or independent original-print certification. The Rosary signature bead owner remains unchanged.",
+  "authoritativeInputs": [
+    "data/pray/prayer-language-route-matrix.v1.json",
+    "data/pray/prayer-multitext-reader-crosswalk.v1.json",
+    "data/pray/prayer-source-certification-inventory.v3.json",
+    "src/pray/canonical-data.js",
+    "src/pray/novena-corpus-v4.js"
+  ],
+  "gates": {
+    "sourceOwner": "Existing 41-route and 32-owner crosswalk tests require every route's source file and reader owner.",
+    "sourceComponent": "TARGETED_SOURCE_COMPONENT_ASSERTED means bounded EN/FR/LA original text/stage assertions, not all live user variants.",
+    "browser": "A route-wide 320/390 EN/FR/LA, stage, back/forward and optional-branch browser certificate is not established by this ledger; many focused phone tests already pass, but they are not blanket route claims.",
+    "print": "Original-print and rights/edition certification is separate. The 48-prayer + 16-novena historical source ledger currently reports zero full original-print certificates.",
+    "safeguards": [
+      "No invented Latin or French",
+      "No replacing historical source wording",
+      "Rosary bead reader and approved layout remain locked",
+      "No swapping private Litanies for the separate 1962 public ceremony",
+      "No claim of 41 fully certified release routes"
+    ]
+  },
+  "counts": {
+    "uniqueRoutes": 41,
+    "legacyRoutes": 23,
+    "doorRoutes": 39,
+    "singleCanonical": 9,
+    "multiText": 32,
+    "targetedComponentEvidence": 32,
+    "sharedOrOwnerEvidenceOnly": 0,
+    "canonicalSourceFaceEvidence": 9,
+    "fullRouteVariantCertificates": 0,
+    "independentOriginalPrintCertificates": 0,
+    "canonicalCore": 48,
+    "canonicalLatin": 47,
+    "novenaProgrammes": 19,
+    "novenaProperDays": 171,
+    "novenaFrenchProperDays": 162,
+    "uniqueSourceHeldCanonical": [
+      "marian_consecration_immaculate_heart"
+    ]
+  },
+  "sequencing": [
+    {
+      "order": 1,
+      "scope": "32 targeted multi-text routes",
+      "task": "Route-wide 320/390 mobile browser acceptance for every real language, branch and mode; preserve 200 Rosary editorial meditations, exact donor player and all source holds",
+      "stopCondition": "Individual route-wide browser certificates with reproducible rendered-text evidence"
+    },
+    {
+      "order": 2,
+      "scope": "9 canonical prayer destinations",
+      "task": "Variant-specific source language / offline / phone proof, including intentional English-only Immaculate Heart",
+      "stopCondition": "All 41 route-specific browser proofs or explicitly held exceptions"
+    },
+    {
+      "order": 3,
+      "scope": "Unresolved historical source editions",
+      "task": "Independent printed-edition collation, source rights and unverified public liturgies only after interface/route acceptance",
+      "stopCondition": "Original print ledger updated with evidenced individual certificates and unresolved holds"
+    },
+    {
+      "order": 4,
+      "scope": "Final full release",
+      "task": "Check 41 routes, 19 Novenas, prayer doors, 65 Mass card safety, liturgical source scopes and no Rosary structure regression",
+      "stopCondition": "Release sign-off separated into complete operational route coverage vs independently attested text editions"
+    }
+  ],
+  "routes": [
+    {
+      "id": "pray.rosary",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/rosary-guided-bead-meditations.v1.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderRosary",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-angelus-rosary-original-owner-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "SIGNATURE_BEAD_READER_LOCKED; bead-level variants require separate explicit acceptance",
+        "200_BILINGUAL_GUIDED_BEAD_MEDITATIONS_ARE_EDITORIAL_NOT_VERBATIM_SCRIPTURE; BILINGUAL_DIRECT_BIBLE_VERSE_COLLATION_HELD"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.angelus_regina",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/devotional-card-deck.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderAngelus",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-angelus-rosary-original-owner-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.confession",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/confession-paths.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderConfession",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.benediction",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/benediction-1962.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderBenediction",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-benediction-stage-language-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.adoration",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/adoration-four-purpose-options.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderAdoration",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.stations",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/stations-posture-policy.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderStations",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/stations-direct-reading-b14.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.library",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderLibrary",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/penitential-psalms-source.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderPenitential",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "SEVEN_PSALM_VERSE_CONCORDANCE_NOT_INDEPENDENTLY_CERTIFIED"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.litany_saints",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/litany-source.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderLitany",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "PRIVATE_EN_1883_AND_FR_1862_ARE_DISTINCT_EDITION_WITNESSES",
+        "PUBLIC_1962_MAJOR_LITANY_UNCOLLATED"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.seven_words",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/seven-words-offline-1889.v1.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderSevenWords",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-multistage-five-route-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "1889_BALTIMORE_PRINT_PAGE_COLLATION_PENDING"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.forty_hours",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/forty-hours-solemn.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFortyHours",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-multistage-five-route-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "COMPLETE_PUBLIC_CLERGY_RITE_TEXTS_NOT_CERTIFIED"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "programme.first_friday",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/first-monthly-direct-prayers-styles.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFirstFriday",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-multistage-five-route-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "programme.first_saturday",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/first-monthly-direct-prayers-styles.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFirstSaturday",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-multistage-five-route-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.morning_evening",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderMorningEvening",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.meal_prayers",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderMealPrayers",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.nightly_examen",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderNightlyExamen",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.communion_treasury",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderCommunionTreasury",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.novenas",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/novena-corpus-v4.js",
+        "src/pray/novena-runtime.js"
+      ],
+      "readerOwner": "src/pray/novena-runtime.js",
+      "renderer": "renderDay",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-historical-intercessions-novena-visible-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "HOLY_FACE_1887_HAS_NINE_ENGLISH_ONLY_DAY_PROPERS",
+        "NOVENA_PRINT_SOURCE_COLLATION_NOT_COMPLETE"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.sacred_heart",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderSacredHeart",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderHolyName",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-final-four-traditional-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderHymns",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-final-four-traditional-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "SOME_SEASONAL_HYMNS_HAVE_ORIGINAL_LATIN_ONLY; NEVER_SYNTHESIZE_FR_OR_EN"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.good_death",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderGoodDeath",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-final-four-traditional-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "ST_JOSEPH_LITANY_1909_AND_2021_EDITIONS_DISTINCT; HISTORICAL_TRANSLATION_COLLATION_PENDING"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.dying_companion",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js"
+      ],
+      "readerOwner": "src/pray/traditional-pray-runtime.js",
+      "renderer": "renderDyingCompanion",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-final-four-traditional-source-to-card-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "PROFICISCERE_ORIGINAL_LATIN_1937; EN_FR_READING_FORMS_ARE_EDITORIAL_AND_1962_PRINT_COLLATION_PENDING"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.divine_mercy",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/mercy-bead-presentation.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderMercy",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.five_wounds",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/five-wounds-chaplet.v1.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderFiveWounds",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.precious_blood",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/precious-blood-chaplet.v1.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderPreciousBlood",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "1910_HISTORICAL_CONCLUSION_ENGLISH_ONLY"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.little_crown",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/little-crown-b30.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderLittleCrown",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-multistage-five-route-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "1940_PRINT_PAGE_PHOTOGRAPHIC_COLLATION_PENDING"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "litany_loreto_1962",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "marian_memorare",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "sub_tuum",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "marian_consecration_immaculate_heart",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": false,
+        "la": false
+      },
+      "editionAndLanguageHolds": [
+        "CANONICAL_ORIGINAL_ENGLISH_ONLY; NO_INVENTED_FR_OR_LA"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "pray.montfort_consecration",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/montfort-consecration-b26.js",
+        "src/pray/montfort-original-prayers-b27.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderMontfortB26",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-b26-montfort-source-faithful-preparation.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "HISTORICAL_MONTFORT_VARIANT_SCOPES_NOT_HARMONISED"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.tenebrae",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/tenebrae-1960.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderTenebrae",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/reader-tenebrae-1960.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "INDEPENDENT_1961_PRINT_BREVIARY_COLLATION_PENDING",
+        "NO_CLAIM_OF_OLDER_ANTICIPATED_FIFTEEN_CANDLE_CEREMONY"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.st_joseph_seven_sorrows",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/st-joseph-seven-sorrows-joys-b24.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderJosephSeven",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "1910_ENGLISH_ONLY_HISTORICAL_SUPPLICATIONS"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "devotion_prayer_st_michael",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "devotion_litany_st_joseph",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "devotion_st_anthony_lost_items",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "kind": "SINGLE_CANONICAL",
+      "ownerFiles": [
+        "src/pray/canonical-data.js"
+      ],
+      "readerOwner": "src/pray/canonical-data.js",
+      "renderer": "canonical-prayer-card",
+      "assertionScope": "CANONICAL_SOURCE_FACE_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-traditional-source-faces-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": {
+        "en": true,
+        "fr": true,
+        "la": true
+      },
+      "editionAndLanguageHolds": [],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "CANONICAL_EDITION_REVIEW_LATER"
+    },
+    {
+      "id": "pray.occasional_intercessions",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/occasional-intercessions-b20.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderOccasionalIntercessions",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-historical-intercessions-novena-visible-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "PERIOD_ENGLISH_ONLY_INTERCESSIONS_NOT_TRANSLATED"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    },
+    {
+      "id": "pray.for_priests",
+      "kind": "MULTI_TEXT",
+      "ownerFiles": [
+        "src/pray/priestly-intercessions-b19.js"
+      ],
+      "readerOwner": "src/pray/presentation-runtime.js",
+      "renderer": "renderPriestIntercessions",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
+      "assertionFiles": [
+        "tests/pray-historical-intercessions-novena-visible-v1.mjs"
+      ],
+      "attestedCanonicalLanguages": null,
+      "editionAndLanguageHolds": [
+        "PERIOD_ENGLISH_AND_LATIN_WITNESSES; NO_UNVERIFIED_FRENCH"
+      ],
+      "allStageBrowserVariantCertificate": false,
+      "independentPrintEditionCertificate": false,
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
+    }
+  ]
+}

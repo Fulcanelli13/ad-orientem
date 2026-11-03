@@ -69,7 +69,9 @@ export function priestlyIntercessionFor(purpose,uiLanguage="en",preferLatin=fals
  if(!PRIESTLY_INTERCESSION_PURPOSES_B19.includes(purpose)||!["en","fr"].includes(uiLanguage))return null;
  const w=PRIESTLY_INTERCESSIONS_B19.find(x=>x.purpose===purpose&&x.liveEligible===true);
  if(!w)return null;
- const selectedLanguage=(preferLatin||uiLanguage==="fr")&&w.la?"la":"en";
+ // In French UI, the attested Latin is the initial witness; toggling
+ // exposes period English, never an unattested French translation.
+ const selectedLanguage=w.la?(uiLanguage==="fr"?(preferLatin?"en":"la"):(preferLatin?"la":"en")):"en";
  const text=selectedLanguage==="la"?w.la:(w.en||w.text);
  if(!text)return null;
  return Object.freeze({

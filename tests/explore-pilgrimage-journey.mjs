@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectPilgrimageItems} from "../src/find/explore-projection.js";
+import {buildExploreViewModel} from "../src/find/explore-presentation.js";
 import {
   buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,
   renderPilgrimageJourneyPanel,journeysForCanonicalPlace,
@@ -114,6 +115,21 @@ assert.equal(journeysForCanonicalPlace(journeys,"").length,0);
 assert.equal(holywell.stageSiteAnchors[0].placeId,"place:GB:holywell-st-winefride-church");
 assert.equal(holywell.stageSiteAnchors[1].placeId,"place:GB:holywell-st-winefride");
 assert.ok(holywell.stageSiteAnchors[1].approximate);
+const activeStageId=holywell.namedStages[0].id;
+const atlasVm=buildExploreViewModel({lens:"heritage",journeyOpen:true,journeys,
+ journeySelectedId:holywell.id,journeySelectedStageId:activeStageId,journeySheetExpanded:true});
+assert.equal(atlasVm.journeySelectedStageId,activeStageId,
+ "Source-backed stage focus must survive canonical Explore view-model projection");
+assert.equal(atlasVm.journeySheetExpanded,true,"Sheet expansion must survive canonical view model");
+const openHtml=renderPilgrimageJourneyPanel({routes:atlasVm.journeys,
+ selectedId:atlasVm.journeySelectedId,selectedStageId:atlasVm.journeySelectedStageId,
+ sheetExpanded:atlasVm.journeySheetExpanded});
+assert.match(openHtml,/data-atlas-journey="true"/,"Screen 6 must use its approved stage sheet");
+assert.match(openHtml,/data-journey-expanded="true"/,"Expanded stage sheet state must render");
+assert.match(openHtml,/data-explore-journey-sheet-toggle aria-expanded="true"/,
+ "The mobile sheet control must expose its actual state");
+assert.match(openHtml,/aoJourneyStageSelected/,"The documented stage must retain selected styling");
+assert.match(openHtml,/aria-pressed="true"/,"The numbered stage must expose focus semantics");
 const holywellHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:holywell.id});
 assert.equal((holywellHtml.match(/data-explore-journey-stage-focus=/g)||[]).length,2);
 assert.equal((holywellHtml.match(/data-explore-journey-stage-place=/g)||[]).length,2,

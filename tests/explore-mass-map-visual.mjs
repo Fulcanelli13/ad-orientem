@@ -162,9 +162,20 @@ try{
     });
     observations.push({...config,...data,mapDiagnostics,errors,screenshot:shot});
     console.log("EXPLORE MASS MAP RENDERING",config.name,JSON.stringify(mapDiagnostics));
-    if(config.locale==="fr-FR")assert.match(
-      await page.locator('#ao-find-modular-root .aoPreliminaryDirectoryNotice > summary').innerText(),
-      /provisoire|vérif|sources/i,config.name+": French map copy was never activated");
+    if(config.locale==="fr-FR"){
+      // The caution is intentionally nested in the evidence filter drawer,
+      // rather than obstructing map buttons in the immersive screen 4 layout.
+      const filterDrawer=page.locator('#ao-find-modular-root .aoAtlasTlmExtra');
+      const caution=filterDrawer.locator('.aoPreliminaryDirectoryNotice');
+      assert.equal(await caution.count(),1,
+        config.name+": provisional-source notice must remain in the filter drawer");
+      await filterDrawer.locator(':scope > summary').click();
+      assert.equal(await caution.isVisible(),true,
+        config.name+": provisional-source notice must be reachable through Filters");
+      assert.match(await caution.locator('summary').innerText(),
+        /provisoire|vérif|sources/i,config.name+": French map copy was never activated");
+      await filterDrawer.locator(':scope > summary').click();
+    }
     assert.equal(data.allDefault,true,config.name+": first visit filtered venues");
     assert.ok(data.visibleAffiliations>=6,config.name+": source-present institute controls missing");
     assert.ok(data.emblemFilterCount>=4,config.name+": four sourced institute emblems absent from filter row");

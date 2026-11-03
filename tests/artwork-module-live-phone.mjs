@@ -137,12 +137,23 @@ try{
     await page.screenshot({path:resolve(output,"joseph-"+width+"-"+locale+".png"),animations:"disabled"});
 
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.de_profundis",{returnContext:null}));
-    const souls=await imageState(".aoPrayerSoulsCover img");
-    imageOK(souls,"souls-whole-original.jpg");
     assert.equal(await page.locator(base+' [data-ao-devo-card="dead_de_profundis"]').count(),1,
       "The original De profundis prayer remains available");
+    assert.equal(await page.locator(base+' .aoPrayerSoulsCover img').count(),0,
+      "Giordano may not replace the explicitly assigned Rubens Saint Teresa painting");
     await overflow({allowVerticalScrollbar:true});
-    await page.screenshot({path:resolve(output,"souls-"+width+"-"+locale+".png"),animations:"disabled"});
+    await page.screenshot({path:resolve(output,"de-profundis-no-wrong-photo-"+width+"-"+locale+".png"),animations:"disabled"});
+
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
+    const hailMaryButton=page.locator(base+' [data-p435930-lib-open="foundations_hail_mary"]');
+    assert.equal(await hailMaryButton.count(),1,"Canonical Hail Mary card must be reachable from the Prayer library");
+    await hailMaryButton.click();
+    const hailMary=await imageState(".aoPrayerEditorialCardCover img");
+    imageOK(hailMary,"angelus-frameless.webp");
+    assert.equal(await page.locator(base+' [data-ao-editorial-slot="COV-foundations_hail_mary"]').count(),1,
+      "Hail Mary artwork must derive from the approved original slot, not generic Prayer cover");
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"hail-mary-approved-slot-"+width+"-"+locale+".png"),animations:"disabled"});
 
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.visit_blessed_sacrament",{returnContext:null}));
     const visit=await imageState(".aoPrayerVisitCover img");
@@ -189,7 +200,7 @@ try{
     await overflow({allowVerticalScrollbar:true});
     await page.screenshot({path:resolve(output,"christ-king-"+width+"-"+locale+".png"),animations:"disabled"});
     assert.deepEqual(errors,[],"Uncaught JS errors: "+errors.join("; "));
-    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel,joseph,souls,visit,regina,sacredHeart,immaculateHeart,christKing});
+    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel,joseph,hailMary,visit,regina,sacredHeart,immaculateHeart,christKing});
    }finally{await context.close();}
   }
  }
@@ -199,4 +210,4 @@ try{
 }
 await writeFile(resolve(output,"report.json"),JSON.stringify({cases,validated:cases.length},null,2)+"\n");
 assert.equal(cases.length,4);
-console.log("PASS: ten released exact source photographs and scoped first-month/Christ King images on 320/390 EN/FR");
+console.log("PASS: ten released exact-source photographs at 320/390 EN/FR, 267 editorial slots protected.");

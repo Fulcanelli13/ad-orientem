@@ -41,8 +41,10 @@ try{
        rotation:n.dataset.aoArtRotation})));
    assert.deepEqual(artSlots.map(x=>x.slot).sort(),
     ["DOOR-D1","DOOR-D2","DOOR-D3","DOOR-D4","DOOR-D5","DOOR-D6","DOOR-D7","DOOR-D8","DOOR-D9"]);
-   assert.ok(artSlots.every(x=>x.rotation?.startsWith("R-")&&(x.slot==="DOOR-D5"?x.binding==="released":x.binding==="unassigned")),
-    "Only released Met Eucharistic art may appear; other eight doors stay unassigned");
+   assert.ok(artSlots.every(x=>x.rotation?.startsWith("R-")&&(x.slot==="DOOR-D5"?x.binding==="released":x.binding==="editorial-pending")),
+    "Only the released Met Eucharistic photograph may appear; other eight editorial slots remain photo-gated");
+   assert.equal(await mosaic.locator('[data-ao-editorial-state]').count(),9,
+    "All nine doors must expose the corrected 267-master editorial state");
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();

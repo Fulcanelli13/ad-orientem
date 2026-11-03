@@ -5,6 +5,26 @@ on:
     paths:
       - 'scripts/schola/build-2026-selected-repertoire.mjs'
       - 'src/mass/reader-schola-selected-queue-crosswalk.js'
+      - 'src/mass/reader-schola-selected-full-source-crosswalk.js'
+      - 'src/mass/reader-schola-selected-pregospel-review.js'
+      - 'scripts/schola/build-2026-selected-pregospel-queue.mjs'
+      - 'tests/reader-schola-selected-pregospel-review.mjs'
+      - 'src/mass/reader-schola-2026-release-worklist.js'
+      - 'scripts/schola/build-2026-score-publication-worklist.mjs'
+      - 'tests/reader-schola-2026-release-worklist.mjs'
+      - 'src/mass/reader-proper-first60-print-review.js'
+      - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
+      - 'tests/reader-proper-first60-print-review.mjs'
+      - 'src/mass/reader-proper-first60-antiphon-text.js'
+      - 'scripts/schola/build-2026-first60-antiphon-text-gate.mjs'
+      - 'tests/reader-proper-first60-antiphon-text.mjs'
+      - 'src/mass/reader-proper-first60-print-proof-gate.js'
+      - 'scripts/schola/build-2026-first51-print-proof-gate.mjs'
+      - 'tests/reader-proper-first60-print-proof-gate.mjs'
+      - 'tests/reader-proper-first60-collation-workbench.mjs'
+      - 'tools/mass/proper-1961-first60-collation.html'
+      - 'tests/reader-schola-selected-full-source-crosswalk.mjs'
+      - 'scripts/schola/build-1962-full-coverage.mjs'
       - 'tests/reader-schola-selected-queue-crosswalk.mjs'
       - 'data/research/mass-music-1962-91-inline-review-queue.v1.json'
       - '.github/workflows/schola-selected-1962-annual-join.yml'
@@ -28,10 +48,39 @@ jobs:
         run: |
           node tests/reader-proper-gabc-bulk-join.mjs
           node tests/reader-schola-selected-queue-crosswalk.mjs
+          node tests/reader-schola-selected-full-source-crosswalk.mjs
+          node tests/reader-schola-selected-pregospel-review.mjs
+          node tests/reader-schola-2026-release-worklist.mjs
+          node tests/reader-schola-pre-gospel-source-boundary.mjs
           node tests/reader-inline-chant-bulk-91-source-queue.mjs
-      - name: Capture real production 2026 selected Mass of day, then join GABC archive
+      - name: Reuse the SHA-authenticated full 1962 Latin source cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/schola-pinned-1962/
+          key: schola-1962-ad8783641455bae38a8eb5782b34241a7b3ff2ef-v1
+      - name: Rebuild and verify 1049 pinned Latin source-to-GABC matches
+        run: node scripts/schola/build-1962-full-coverage.mjs
+      - name: Capture real 2026 selected Mass of day and join all 1049 source witnesses
         run: node scripts/schola/build-2026-selected-repertoire.mjs
-      - name: Store selected repertoire, exact 91-source crosswalk and exceptions
+      - name: Review actual selected pre-Gospel scores against cached immutable Latin sources
+        run: node scripts/schola/build-2026-selected-pregospel-queue.mjs
+      - name: Source-preserving editorial workbench and syntax acceptance
+        run: node tests/reader-proper-first60-collation-workbench.mjs
+      - name: Generate first 60 source-backed Proper print-collation candidates
+        run: node scripts/schola/build-2026-proper-first60-print-review.mjs
+      - name: Verify review-only publication boundary
+        run: node tests/reader-proper-first60-print-review.mjs
+      - name: Compare entire first-60 GABC antiphon text against 1962 selected Latin (no music approval)
+        run: |
+          node scripts/schola/build-2026-first60-antiphon-text-gate.mjs
+          node tests/reader-proper-first60-antiphon-text.mjs
+      - name: Audit printed-score proof and produce first 12 source-folio review priorities
+        run: |
+          node scripts/schola/build-2026-first51-print-proof-gate.mjs
+          node tests/reader-proper-first60-print-proof-gate.mjs
+      - name: Build consolidated 2026 worklist and 24 pre-Gospel print-review leads
+        run: node scripts/schola/build-2026-score-publication-worklist.mjs
+      - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
         with:

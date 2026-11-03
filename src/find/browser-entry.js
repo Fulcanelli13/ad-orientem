@@ -15,6 +15,9 @@ import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { EXPLORE_MAP_FIRST_V2_STYLE } from "./explore-map-first-v2-style.js";
 import { EXPLORE_PROTOTYPE_SHELL_STYLE } from "./explore-prototype-shell-style.js";
 import { EXPLORE_PROTOTYPE_PLACE_STYLE } from "./explore-prototype-place-style.js";
+import { EXPLORE_PROTOTYPE_MASS_STYLE } from "./explore-prototype-mass-style.js";
+import { EXPLORE_PROTOTYPE_JOURNEY_STYLE } from "./explore-prototype-journey-style.js";
+import { EXPLORE_PROTOTYPE_DESKTOP_STYLE } from "./explore-prototype-desktop-style.js";
 import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia,loadDirectoryCardMedia,hideUnavailableDirectoryEmblem } from "./directory-card.js";
 import {TLM_CHURCH_PROFILE_STYLE} from "./tlm-church-profile.js";
 import {publicCL27FacetCounts,validPublicCL27Selection} from "./cl27-public-facets.js";
@@ -132,7 +135,7 @@ function installStyle(win){
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}",
     "\n/* Compact map-first TLM controls: search and List/Map stay visible while scrolling. */\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoExploreSectionNav{margin-bottom:2px;padding:4px 0}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoExploreSectionSwitcher>summary{min-height:38px}\n.aoExploreSurface .aoTlmToolbar{position:sticky;top:76px;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:7px 14px;background:rgba(8,12,18,.97);border-bottom:1px solid #28404e;box-shadow:0 4px 12px #0005}\n.aoTlmToolbar .aoFindSearch{padding:0;min-width:0}\n.aoTlmToolbar .aoFindSearch input{height:46px;min-height:46px;padding:9px 13px;border:1px solid #365467;color:#eef7ff;background:#14202c;border-radius:10px;font:500 15px/1.2 var(--ao-font-ui,system-ui,sans-serif)}\n.aoTlmToolbar .aoFindViewTabs{display:flex;gap:5px;padding:0}\n.aoTlmToolbar .aoFindViewTabs button{min-height:46px;min-width:58px;border-radius:9px}\n.aoTlmToolbar .aoFindViewTabs button.active{background:#143a49;color:#e6faff;border-color:#25d5fc}\n.aoExploreSurface .aoExploreTlmFilters{padding:7px 14px 4px}\n.aoExploreTlmFilters .aoExploreQuickFilters{display:flex;flex-wrap:nowrap;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap;padding:0 0 5px;scrollbar-width:thin}\n.aoExploreTlmFilters .aoExploreQuickFilters button{flex:none;min-height:38px;padding:8px 11px;border-radius:9px}\n.aoExploreTlmFilters .aoExploreQuickFilters button.active{background:#173e4c;color:#edfbff;border-color:#00dffc}\n.aoTlmProviderStrip{display:flex;align-items:center;gap:9px;min-width:0;padding:1px 0 5px}\n.aoTlmProviderStrip .aoExploreFilterLabel{flex:none}\n.aoTlmProviderStrip .aoFindAffiliations{display:flex;align-items:center;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}\n.aoTlmProviderStrip button{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:42px;padding:5px 10px;flex:none;border-radius:9px}\n.aoTlmProviderStrip button img{width:25px;height:25px;object-fit:contain;filter:drop-shadow(0 0 3px #00dbff55)}\n.aoTlmProviderStrip button[data-find-affiliation=SSPX] img{filter:brightness(0) invert(1) drop-shadow(0 0 4px #347cffb3)}\n.aoTlmProviderStrip button.active{background:#173e4c;color:#edfbff;border-color:#00dffc}.aoTlmMoreInstitutes{position:relative;flex:none;min-width:0}\n.aoTlmMoreInstitutes>summary{display:flex;align-items:center;cursor:pointer;white-space:nowrap;min-height:44px;padding:6px 8px;color:#bbd5dc;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}\n.aoTlmMoreInstitutes>summary:focus-visible{outline:2px solid #00dffc;outline-offset:2px}\n.aoTlmMoreInstitutes[open] .aoFindAffiliations{position:absolute;z-index:6;right:0;top:100%;display:flex;flex-wrap:wrap;gap:6px;align-content:start;overflow-x:hidden;overflow-y:auto;width:min(86vw,460px);max-height:min(55dvh,430px);padding:10px;background:#0c1b27;border:1px solid #355769;border-radius:10px;box-shadow:0 14px 34px #000a;white-space:normal}\n.aoTlmMoreInstitutes[open] button{min-height:44px}\n.aoExploreSurface .aoPreliminaryDirectoryNotice{display:block;margin:1px 0 4px;padding:0;color:#a5bed2;background:none;border:0;font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}\n.aoPreliminaryDirectoryNotice>summary{display:list-item;list-style:disclosure-closed inside;min-height:26px;cursor:pointer;color:#9fd7e4;padding:5px 0}\n.aoPreliminaryDirectoryNotice[open]>summary{list-style:disclosure-open inside}\n.aoPreliminaryDirectoryNotice p{margin:2px 0 5px;padding:9px 12px;border:1px solid #314755;background:#111c28;border-radius:8px;color:#b8c9d8;font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindResultMeta{padding-top:5px;padding-bottom:8px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map]{padding:0 9px 7px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map] .aoFindMap{margin:0;width:100%;box-sizing:border-box;height:clamp(430px,74dvh,860px);min-height:0;border:1px solid #304858;border-radius:11px}\n.aoExploreSurface .aoFindExternalSource{display:block;margin:5px 14px 18px;padding:0 10px;border:1px solid #293b48;background:#0d1721;border-radius:10px}\n.aoExploreSurface .aoFindExternalSource summary{display:list-item;cursor:pointer;padding:12px 5px;min-height:24px;color:#a8d5e5;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}\n.aoExploreSurface .aoFindExternalSource>div{margin:8px 0}\n.aoExploreSurface .aoFindExternalSource a{margin:4px 7px 10px 0;display:inline-flex}\n.aoExploreMapReset{position:absolute;z-index:3;top:11px;left:11px;min-height:42px;max-width:190px;padding:8px 12px;display:flex;align-items:center;gap:7px;background:rgba(10,21,32,.95);color:#ebfaff;border:1px solid #39b3d7;border-radius:9px;font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);box-shadow:0 4px 16px #0009;cursor:pointer}\n.aoExploreMapReset:focus-visible{outline:2px solid #00e5ff;outline-offset:3px}\n@media(max-width:600px){\n.aoExploreSurface .aoTlmToolbar{top:69px;padding:6px 9px;gap:6px}\n.aoTlmToolbar .aoFindSearch input{min-height:44px;height:44px;font-size:16px}\n.aoTlmToolbar .aoFindViewTabs button{min-height:44px;min-width:49px;padding:7px 9px}\n.aoExploreSurface .aoExploreTlmFilters{padding:6px 9px 4px}\n.aoTlmProviderStrip{display:block}\n.aoTlmProviderStrip .aoExploreFilterLabel{display:block;padding:0 0 2px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map] .aoFindMap{height:max(410px,63dvh)}\n.aoExploreMapReset{top:9px;left:9px;min-height:44px}\n}",
     "@media(max-width:600px){\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader{grid-template-columns:44px minmax(0,1fr) 44px;gap:8px;padding:9px 10px}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader>span{display:none}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader h1{font-size:clamp(17px,4.5vw,21px);line-height:1.03;margin:2px 0 0;overflow-wrap:normal}\n}\n@media(max-width:355px){\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader small{display:none}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader h1{font-size:18px;line-height:1.06}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader{padding-block:7px;min-height:54px}\n}",
-  ].join("")+HERITAGE_STYLE+SAINTS_SHEET_CSS+EXPLORE_ATLAS_LAYOUT_STYLE+EXPLORE_MAP_FIRST_V2_STYLE+DIRECTORY_CARD_STYLE+TLM_CHURCH_PROFILE_STYLE+EXPLORE_PROTOTYPE_SHELL_STYLE+EXPLORE_PROTOTYPE_PLACE_STYLE;
+  ].join("")+HERITAGE_STYLE+SAINTS_SHEET_CSS+EXPLORE_ATLAS_LAYOUT_STYLE+EXPLORE_MAP_FIRST_V2_STYLE+DIRECTORY_CARD_STYLE+TLM_CHURCH_PROFILE_STYLE+EXPLORE_PROTOTYPE_SHELL_STYLE+EXPLORE_PROTOTYPE_PLACE_STYLE+EXPLORE_PROTOTYPE_MASS_STYLE+EXPLORE_PROTOTYPE_JOURNEY_STYLE+EXPLORE_PROTOTYPE_DESKTOP_STYLE;
   win.document.head?.append?.(style);
 }
 
@@ -183,7 +186,7 @@ export function createFindOwner(win=globalThis){
     massType:"ANY",
     heritageCategories:[...PUBLIC_HERITAGE_CATEGORIES],
     highlightCustomId:null,
-    journeyOpen:false,journeySelectedId:null,
+    journeyOpen:false,journeySelectedId:null,journeySelectedStageId:null,journeySheetExpanded:false,
     expandPlace:false,
     expandDetail:false,
     atlasFamily:"ANY",
@@ -426,7 +429,9 @@ export function createFindOwner(win=globalThis){
     const priorTlmCountryOpen=Boolean(node.querySelector?.(".aoTlmCountryFacet")?.open);
     const priorTlmInstitutesOpen=Boolean(node.querySelector?.(".aoTlmMoreInstitutes")?.open);
     const priorDiscoverScroll=node.querySelector?.(".aoMapcnDiscoverEntries")?.scrollTop??0;
-    const priorDiscoverExpanded=node.querySelector?.("[data-mapcn-discover-rail]")?.dataset?.discoverExpanded==="true";
+    const priorDiscoverRail=node.querySelector?.("[data-mapcn-discover-rail]");
+    const priorDiscoverExpanded=priorDiscoverRail
+      ?priorDiscoverRail.dataset?.discoverExpanded==="true":Number(win?.innerWidth||0)>=900;
     const priorTimeMassScroll=node.querySelector?.(".aoTimeMassScroll")?.scrollTop??0;
     const priorNetworkScroll=node.querySelector?.(".aoNetworkResults")?.scrollTop??0;
     const wasNetworkSearch=node.querySelector?.("[data-network-search]")===win?.document?.activeElement;
@@ -535,6 +540,7 @@ export function createFindOwner(win=globalThis){
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
       language:language(win),
+      desktopDocked:Number(win?.innerWidth||0)>=900,
       items,
       lens:state.lens,
       counts:preliminaryMode?{tlm:preliminary?.length??PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
@@ -566,6 +572,8 @@ export function createFindOwner(win=globalThis){
       journeyOpen:state.lens==="heritage"&&state.journeyOpen,
       journeys,
       journeySelectedId:state.journeySelectedId,
+      journeySelectedStageId:state.journeySelectedStageId,
+      journeySheetExpanded:state.journeySheetExpanded,
       selectedPlaceId:state.selectedPlaceId,
       selectedId:state.selectedId,
       expandPlace:state.expandPlace,
@@ -897,6 +905,7 @@ export function createFindOwner(win=globalThis){
     const stage=active?.namedStages?.find(s=>s.id===stageId);
     const geo=stage?.siteAnchor;
     if(!geo)return false;
+    state.journeySelectedStageId=stageId;
     const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
     const target={center:[geo.lng,geo.lat],
       // Holywell's church and well are both known, but collapse into one
@@ -909,6 +918,9 @@ export function createFindOwner(win=globalThis){
     const root=getRoot(win);
     root?.querySelectorAll?.("[data-explore-journey-stage-focus]").forEach(button=>{
       button.setAttribute("aria-pressed",String(button.dataset.exploreJourneyStageFocus===stageId));
+    });
+    root?.querySelectorAll?.("[data-journey-named-stage]").forEach(row=>{
+      row.classList.toggle("aoJourneyStageSelected",row.dataset.journeyNamedStage===stageId);
     });
     if(fromMap){
       const row=[...(root?.querySelectorAll?.("[data-journey-named-stage]")||[])]
@@ -1313,19 +1325,29 @@ export function createFindOwner(win=globalThis){
       void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
       return;
     }
+    const massReturn=target?.closest?.("[data-atlas-mass-return]");
+    if(massReturn&&state.lens==="tlm"&&state.view==="map"){
+      const entry=massReturn.dataset.atlasMassReturn;
+      if(!["discover","sacred"].includes(entry))return;
+      event.preventDefault?.();
+      state.atlasEntry=entry;
+      setFilter("lens","heritage");
+      return;
+    }
     const atlasEntryTab=target?.closest?.("[data-atlas-entry-tab]");
     if(atlasEntryTab&&state.lens==="heritage"){
       const entry=atlasEntryTab.dataset.atlasEntryTab;
       if(entry!=="discover"&&entry!=="sacred")return;
       event.preventDefault?.();
       state.atlasEntry=entry;
-      // The approved Sacred Places entrance opens the one existing source-backed
-      // viewport sheet. Discover returns to its low-profile peek.
+      // Desktop screen 7 retains its full-height left result rail in both
+      // entrances. On phones Discover peeks and Sacred Places expands.
       const rail=getRoot(win)?.querySelector?.("[data-mapcn-discover-rail]");
       if(rail){
-        rail.dataset.discoverExpanded=String(entry==="sacred");
+        const expanded=entry==="sacred"||Number(win?.innerWidth||0)>=900;
+        rail.dataset.discoverExpanded=String(expanded);
         rail.querySelector?.("[data-mapcn-discover-toggle]")
-          ?.setAttribute?.("aria-expanded",String(entry==="sacred"));
+          ?.setAttribute?.("aria-expanded",String(expanded));
       }
       void paint();return;
     }
@@ -1519,6 +1541,7 @@ export function createFindOwner(win=globalThis){
       if(!state.journeyOpen)journeyPreviousCategories=[...state.heritageCategories];
       state.journeyOpen=true;
       state.journeySelectedId=routeId;
+      state.journeySelectedStageId=null;state.journeySheetExpanded=false;
       state.heritageCategories=["pilgrimages"];
       state.query="";state.selectedPlaceId=null;state.selectedId=null;
       state.expandPlace=false;state.expandDetail=false;nearbyResults=null;
@@ -1548,7 +1571,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       if(!state.journeyOpen){
         journeyPreviousCategories=[...state.heritageCategories];
-        state.journeyOpen=true;state.heritageCategories=["pilgrimages"];
+        state.journeyOpen=true;state.journeySelectedStageId=null;state.journeySheetExpanded=false;state.heritageCategories=["pilgrimages"];
         state.query="";state.selectedPlaceId=null;state.selectedId=null;
         state.expandPlace=false;nearbyResults=null;
       }
@@ -1559,10 +1582,15 @@ export function createFindOwner(win=globalThis){
       state.heritageCategories=journeyPreviousCategories??[...PUBLIC_HERITAGE_CATEGORIES];
       journeyPreviousCategories=null;void paint();return;
     }
+    if(target?.closest?.("[data-explore-journey-sheet-toggle]")&&state.journeyOpen){
+      event.preventDefault?.();state.journeySheetExpanded=!state.journeySheetExpanded;
+      void paint();return;
+    }
     const journeySelect=target?.closest?.("[data-explore-journey-select]");
     if(journeySelect&&state.journeyOpen){
       event.preventDefault?.();
       state.journeySelectedId=journeySelect.dataset.exploreJourneySelect;
+      state.journeySelectedStageId=null;
       focusJourneyDestination();
       void paint();return;
     }
@@ -1778,14 +1806,28 @@ export function createFindOwner(win=globalThis){
 
   // The visible sheet handle is a real interaction: upward swipe expands
   // the record, downward swipe dismisses. Text and map gestures remain native.
-  let sheetTouch=null;
+  let sheetTouch=null,journeyTouch=null;
   function onSheetTouchStart(event){
+    const journeyHandle=event.target?.closest?.("[data-explore-journey-sheet-toggle]");
+    const start=event.touches?.[0];
+    journeyTouch=journeyHandle&&state.journeyOpen&&start
+      ?{x:start.clientX,y:start.clientY}:null;
     const handle=event.target?.closest?.(".aoHeritageCardLayer .aoHeritageSheetHandle");
     const touch=event.touches?.[0];
     sheetTouch=handle&&state.selectedPlaceId&&!state.expandPlace&&touch
       ?{x:touch.clientX,y:touch.clientY}:null;
   }
   function onSheetTouchEnd(event){
+    if(journeyTouch){
+      const from=journeyTouch;journeyTouch=null;
+      const to=event.changedTouches?.[0];
+      if(to){
+        const dy=to.clientY-from.y,dx=to.clientX-from.x;
+        if(Math.abs(dy)>=42&&Math.abs(dx)<=Math.abs(dy)){
+          state.journeySheetExpanded=dy<0;void paint();return;
+        }
+      }
+    }
     if(!sheetTouch)return;
     const started=sheetTouch;sheetTouch=null;
     const end=event.changedTouches?.[0];if(!end)return;

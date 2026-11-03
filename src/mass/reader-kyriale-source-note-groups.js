@@ -2,7 +2,8 @@
 // A parenthesized neume may continue a melisma without creating a new syllable.
 // Neither tokens nor review fields certify notes against printed staff pitches.
 const PITCH=/[a-mA-M]/;
-const CLEF=/^[a-d][1-4]$/;
+// Original square-note GABC clefs are C and F; neither is a sung neume.
+const CLEF=/^[cf][1-4]$/;
 export function sourceNoteGroupInventory(gabc){
  if(typeof gabc!=="string"||!gabc.includes("%%"))throw new Error("Missing source GABC");
  const body=gabc.slice(gabc.indexOf("%%")+2);
@@ -19,7 +20,8 @@ export function sourceNoteGroupInventory(gabc){
   // after the previous neume. This is NOT an additional sung syllable.
   const punctuationAttached=text===":"||text===";";
   const pending=punctuationAttached?
-   (between+match[1]).replace(/<[^>]*>/g,"").match(/([A-Za-zÀ-ž]+)\s*[:;]\s*$/)?.[1]:null;
+   (between+match[1]).replace(/<[^>]*>/g,"").replace(/[{}]/g,"")
+     .match(/([A-Za-zÀ-ž]+)\s*[:;]\s*$/)?.[1]:null;
   if(punctuationAttached&&!pending)
    throw new Error("Printed syllable cannot be resolved before GABC punctuation token");
   const continuation=!punctuationAttached&&!/[A-Za-zÀ-ž]/.test(text);
