@@ -169,7 +169,7 @@ assert.equal(timau.length,2);assert.notDeepEqual(timau[0].slice(2,4),timau[1].sl
 const rivo=all.find(x=>x.physical_group_id==="RG-44F34EFE1E3E");
 assert.ok(rivo&&!rivo.map_publishable,"Rivo San Lorenzo must not be promoted from a street marker");
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:199,SOURCE_PIN:1806,ADDRESS_ONLY:577});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,577);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
-console.log("PASS TLM recovery batch 5: 13 church/monastery site pins, 2005 mapped, 577 list-only, no inferred liturgical or media facts");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
+console.log("PASS TLM recovery batch 5: 13 church/monastery site pins, 2025 mapped, 557 list-only, no inferred liturgical or media facts");
