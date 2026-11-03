@@ -8,6 +8,8 @@ import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {APPROVED_2026_OTHER_DATE_PREVIEWS} from "../src/home/approved-2026-other-date-previews.js";
+import {ANNUAL_HOME_ARTWORK_DAYS_2026} from "../src/home/annual-home-artwork-2026.js";
+import {approved2026SeasonalHomeReuse} from "../src/home/approved-2026-seasonal-reuse.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/home-approved-dated-2026-browser");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -55,7 +57,17 @@ const expandedCases=[
  {date:"2026-05-27",width:320,principal:"tempora:Pasc7-3:1:r",
   artId:"ART-hilippe-de-hampaigne-a-etite-ne",title:"La Petite Cène",remote:true}
 ];
-const fullCases=[...cases,...expandedCases];
+const seasonalCases=Object.values(ANNUAL_HOME_ARTWORK_DAYS_2026)
+ .filter(d=>d.rank==="IV")
+ .map((d,i)=>{
+  const path=d.principalId.startsWith("commune:C10")?"Commune/C10":"Tempora/feria";
+  const r=approved2026SeasonalHomeReuse(d.date,d.principalId,path);
+  assert.ok(r?.image&&r.selectionKind==="SEASONAL_CONTEXT_NOT_GOSPEL_SCENE");
+  return {date:d.date,width:i%2?320:390,principal:d.principalId,
+   artId:r.artworkId,title:r.title,asset:r.image,remote:false};
+ });
+assert.equal(seasonalCases.length,71);
+const fullCases=[...cases,...expandedCases,...seasonalCases];
 let browser;const results=[];
 try{
  browser=await chromium.launch({headless:true});
@@ -121,7 +133,8 @@ try{
  if(browser)await browser.close();
  await new Promise(ok=>server.close(ok));
  await writeFile(resolve(out,"report.json"),JSON.stringify({
-  schema:"AO_2026_HOME_AUTHORITATIVE_DATED_ART_BROWSER_V1",
+  schema:"AO_2026_HOME_AUTHORITATIVE_DATED_AND_SEASONAL_ART_BROWSER_V2",
+  expectedContextualCases:seasonalCases.length,
   cases:results,successful:results.filter(x=>x.passed).length,
   visualCropUserApprovedByThisTest:false
  },null,2)+"\n");
