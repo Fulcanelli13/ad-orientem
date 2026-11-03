@@ -1,0 +1,46 @@
+name: Home · exact 2026 Gospel art reuse
+on:
+  pull_request:
+    paths:
+      - "src/home/released-date-gospel-heroes-2026.js"
+      - "src/home/c3-gallery.js"
+      - "tests/home-released-gospel-art-2026.mjs"
+      - "tests/home-released-gospel-art-2026-phone.mjs"
+      - ".github/workflows/home-released-gospel-2026.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify original asset, observed Mass, Gospel and exclusion guards
+        run: |
+          node tests/home-released-gospel-art-2026.mjs
+          node tests/home-c3-gallery.mjs
+          node tests/home-c3-met-release-integrity.mjs
+  mobile-source-resolved-home:
+    needs: source-and-identity
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect real Home at two selected 1962 dates on mobile
+        run: node tests/home-released-gospel-art-2026-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: released-daily-home-gospel-2026-phone
+          path: artifacts/home-released-gospel-date-qa/
+          retention-days: 14
+          if-no-files-found: warn
