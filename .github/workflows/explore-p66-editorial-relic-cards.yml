@@ -9,6 +9,9 @@ on:
       - 'src/find/heritage-style.js'
       - 'tests/explore-p66-editorial-relic-cards.mjs'
       - 'tests/explore-sacred-venerated-image-presentation.mjs'
+      - 'tests/explore-sacred-atlas-round01-two-published-photos.mjs'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json'
       - 'tests/explore-place-profiles.mjs'
       - 'tests/explore-r69-multi-place-gallery.mjs'
       - 'data/explore/sacred-phenomena-seed.v1.json'
@@ -22,6 +25,9 @@ on:
       - 'src/find/heritage-style.js'
       - 'tests/explore-p66-editorial-relic-cards.mjs'
       - 'tests/explore-sacred-venerated-image-presentation.mjs'
+      - 'tests/explore-sacred-atlas-round01-two-published-photos.mjs'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json'
 permissions:
   contents: read
 jobs:
@@ -41,5 +47,7 @@ jobs:
           node tests/explore-r69-multi-place-gallery.mjs
       - name: Source-approved sacred image and attribution presentation
         run: node tests/explore-sacred-venerated-image-presentation.mjs
+      - name: Sacred Atlas Round 1 requires actual new approved image bytes and bilingual galleries
+        run: node tests/explore-sacred-atlas-round01-two-published-photos.mjs
       - name: Read-only cross-owner release boundaries
         run: node tests/connected-sacred-entities-p64.mjs
