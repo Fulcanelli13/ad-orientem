@@ -1,0 +1,53 @@
+{
+  "schema": "AO_TLM_WAVE_A_ARCHIVED_IMAGE_VERIFICATION_V1",
+  "as_of": "2026-11-01",
+  "source": "User-supplied 13 AO_TLM_Photos ZIPs + AO_TLM_Atlas_Worldwide_Photo_Audit_Package ZIP, independently rechecked in temporary local working environment",
+  "archived_zip_count": 13,
+  "archived_images_total": 739,
+  "all_archived_sha256_matches_frozen_audit": true,
+  "archive_bytes_match_pinned_commons_original_sha1_total": 98,
+  "promising_exterior_total": 252,
+  "promising_exteriors_with_exact_original_bytes": 37,
+  "promising_cc0_claim_total": 30,
+  "promising_cc0_with_exact_original_bytes": 6,
+  "first_offline_review": {
+    "selected_cc0_not_linked_to_approved_place": 29,
+    "wrong_church_exclusions": 1,
+    "cc0_staged_for_visual_review": 28,
+    "sha256_checks_for_all_archive_images": 739
+  },
+  "exact_original_cc0_ids": [
+    "RG-2680C1DA8953",
+    "RG-524E16F096DE",
+    "RG-843570C4C0E0",
+    "RG-93691FBCC8E6",
+    "RG-BD8A8939CA37",
+    "RG-D2DF4E4B9C41"
+  ],
+  "independently_published_cover_ids_to_avoid_duplicate": [
+    "RG-BD8A8939CA37"
+  ],
+  "wrong_site_exclusions": [
+    "RG-FF22A9A43D94"
+  ],
+  "failed_live_source_acquisition": {
+    "provider": "Wikimedia Commons",
+    "runner": "GitHub Actions",
+    "attempted": 28,
+    "source_verification_holds": 28,
+    "http_status": 429,
+    "publication_count": 0,
+    "action": "No retries or alternate download circumvention; switch to user-supplied ZIPs"
+  },
+  "publication": {
+    "new_approved_assets": 0,
+    "rights_cleared": 0,
+    "site_identity_cleared": 0,
+    "new_app_assets": 0,
+    "publications": 0
+  },
+  "review_gate": "Accept original-copy proof only on exact SHA1 match; visual exact-building and live Commons rights still separate. Do not release preview-derived images as original binaries.",
+  "local_review_package_name": "AO_TLM_Wave_A_Offline_Review_20261101.zip",
+  "local_review_package_sha256": "7fc40539cb099abf952ab10c17179b09292a5fdbeb51efeff4d05deb77b1cacb",
+  "notes": "All 739 archive files were verified against prior source ledger hashes; exact-original checks are forensic identity, not independently reverified current licences. No original audit decisions were changed."
+}
