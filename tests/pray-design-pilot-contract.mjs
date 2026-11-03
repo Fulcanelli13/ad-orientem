@@ -93,15 +93,21 @@ for(const [id,slotId] of Object.entries(expectedSlots)){
  assert.equal(slot.rotation,sourceSlot.rotation);
  assert.equal(slot.poolMin,sourceSlot.pool_min);
  assert.equal(slot.poolIdeal,sourceSlot.pool_ideal);
- assert.equal(slot.publicationState,"UNASSIGNED");
+ assert.equal(slot.editorialAssigned,true,"Nine Prayer doors must resolve their established 267-slot editorial master");
+ assert.notEqual(slot.publicationState,"UNASSIGNED","Do not use pre-reconciliation workbook state for production");
  assert.equal(slot.poolMin,4);assert.equal(slot.poolIdeal,12);
  assert.equal(slot.priority,"A");
  assert.ok(slot.subjectCodes.length>=2,"No source-approved subject vocabulary for "+id);
  assert.match(actual,new RegExp('data-ao-art-slot-id="'+slotId+'"'));
 }
-assert.equal((actual.match(/data-ao-art-binding="unassigned"/g)||[]).length,8);
+assert.equal((actual.match(/data-ao-art-binding="editorial-pending"/g)||[]).length,8);
 assert.equal((actual.match(/data-ao-art-binding="released"/g)||[]).length,1);
 assert.ok(actual.includes("adoration-frameless.webp"),"The one released Eucharistic door uses exactly the approved Met photograph");
+assert.equal((actual.match(/data-ao-editorial-state="/g)||[]).length,9,
+ "Every actual Prayer door must carry an authoritative editorial state");
+assert.ok(hasReleasedDoorPainting(prayerDoorArtSlot("eucharistic")),
+ "The exact released Ingres painting is source-checked against the editor-approved D5 slot");
+
 assert.equal(hasReleasedDoorPainting(null),false);
 assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true}),false);
 assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true,

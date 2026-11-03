@@ -1,4 +1,4 @@
-import {prayerDoorArtSlot} from "./art-slot-map.v1.js";
+import {prayerDoorArtSlot,resolvePrayerEditorialArtwork} from "./art-slot-map.v1.js";
 import {releasedModulePhoto,releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./released-module-photo-styles.js";
 /**
@@ -163,8 +163,9 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):family.title;
     const target=family.direct?' data-p435930-own="'+esc(family.direct)+'"':' data-p435930-family="'+esc(tile.id)+'"';
     const slot=prayerDoorArtSlot(tile.id);
-    const released=tile.id==="eucharistic"?releasedModulePhoto("adoration"):null;
-    const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="'+(released?"released":"unassigned")+'"':'';
+    const editorial=slot?resolvePrayerEditorialArtwork(slot.slotId):null;
+    const released=editorial?.photo||null;
+    const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="'+(released?"released":"editorial-pending")+'" data-ao-editorial-state="'+esc(editorial?.state||"UNKNOWN_SLOT")+'"':'';
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+artLink+' aria-label="'+esc(label)+'">'+
       '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+(released?'<img class="aoPrayPilotReleasedTilePhoto" src="/'+esc(released.image)+'" alt="" loading="lazy" decoding="async">':assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true}))+'</span>'+
       '<span class="aoPrayPilotTileCaption">'+esc(label)+'</span></button>';

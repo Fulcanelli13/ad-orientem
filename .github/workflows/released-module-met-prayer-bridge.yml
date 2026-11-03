@@ -7,6 +7,8 @@ on:
       - "src/home/c3-gallery.js"
       - "src/pray/**"
       - "tests/artwork-module-live-bridge.mjs"
+      - "tests/prayer-artwork-267-integration.mjs"
+      - "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json"
       - "tests/artwork-module-live-phone.mjs"
       - "tests/home-c3-gallery.mjs"
   pull_request:
@@ -15,6 +17,8 @@ on:
       - "src/home/c3-gallery.js"
       - "src/pray/**"
       - "tests/artwork-module-live-bridge.mjs"
+      - "tests/prayer-artwork-267-integration.mjs"
+      - "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json"
       - "tests/home-c3-gallery.mjs"
 jobs:
   release-contract:
@@ -28,6 +32,7 @@ jobs:
           node-version: "22"
       - run: node tests/pray-design-pilot-contract.mjs
       - run: node tests/artwork-module-live-bridge.mjs
+      - run: node tests/prayer-artwork-267-integration.mjs
       - run: node tests/home-c3-gallery.mjs
       - run: node tests/home-c3-met-release-integrity.mjs
 
