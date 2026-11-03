@@ -4,6 +4,8 @@ import {novenaSourceWitnessFaceV1} from "./novena-source-witness-face.v1.js";
 import { ICKSP_THERESE_DEVOTIONS_V1 } from "./icksp-therese-devotions.v1.js";
 import "./st-therese-selected-novena-cover-styles.js";
 import { selectedThereseNovenaCover } from "./st-therese-selected-novena-cover.v1.js";
+import {prayerEditorialArtworkMarkup} from "./art-slot-map.v1.js";
+import "./released-module-photo-styles.js";
 import { ICKSP_DIVINE_INFANT_KING_NOVENA_V1, monthlyInfantKingStatus } from "./icksp-divine-infant-king-novena.v1.js";
 import { ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1, annualInstituteImmaculateStatus } from "./icksp-immaculate-conception-novena.v1.js";
 import { NOVENA_HOLY_FACE_1887_B25 } from "./holy-face-janvier-1887-b25.js";
@@ -132,6 +134,7 @@ function renderDetail(n){
  return `${head(txt(n.title),txt(n.family))}
   <main class="aoP435930Body aoN1DetailFolio" data-ao-novena-detail="quiet-v1">
    ${selectedThereseNovenaCover(n.id,isFr())}
+   ${prayerEditorialArtworkMarkup("COV-novena."+n.id,{className:"aoPrayerEditorialCardCover aoNovenaEditorialCover"})}
    <div class="aoN1ContextLine">
     <span>${esc(startKindLabel(n))}</span>
     <b>${esc(txt(n.traditionalStart))}</b>
