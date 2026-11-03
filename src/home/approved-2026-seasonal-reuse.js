@@ -1,4 +1,4 @@
-/* Class IV ferias and BVM Saturdays: reuse already-released local originals.
+/* Class IV ferias/BVM Saturdays and 34 seasonal Class III ferias: reuse released originals.
  * This is editorial CONTEXT artwork (season / devotional theme), not an
  * illustration of the appointed Gospel and not a new feast-specific approval.
  * Only the exact resolved 1962 principal for an enumerated 2026 date qualifies.
@@ -12,7 +12,8 @@ function moduleFor(day){
  const date=day.date;
  if(date<="2026-01-12")return "visit";        // Christmas / Epiphany context
  if(date<="2026-01-31")return "joseph";       // Holy Family context
- if(date<="2026-02-17")return "confession";  // Septuagesima penitential context
+ if(date<="2026-03-28")return "confession";  // Septuagesima / Lent penitential context
+ if(date>="2026-12-01"&&date<="2026-12-15")return "angelus"; // Advent
  if(date>="2026-04-15"&&date<="2026-05-22")return "regina"; // Paschaltide
  if(date>="2026-06-02"&&date<="2026-06-16")return "adoration"; // Eucharistic
  if(date>="2026-11-01"&&date<="2026-11-28")return "souls"; // November souls
@@ -21,7 +22,7 @@ function moduleFor(day){
 }
 export function approved2026SeasonalHomeReuse(date,principalId,properPath){
  const day=annualHomeArtworkDay2026(date,principalId);
- if(!day||day.rank!=="IV"||day.selection||!properPath||
+ if(!day||!day.contextualReuseEligible||day.selection||!properPath||
     !/^(?:Tempora|Sancti|Commune)\//.test(properPath))return null;
  const moduleId=moduleFor(day);
  const photo=RELEASED_MODULE_PAINTINGS[moduleId];
@@ -37,7 +38,8 @@ export function approved2026SeasonalHomeReuse(date,principalId,properPath){
   imageStatus:"PREVIOUSLY_RELEASED_LOCAL_ORIGINAL_AS_CONTEXT",
   selectionKind:"SEASONAL_CONTEXT_NOT_GOSPEL_SCENE",
   liturgicalContext:day.principalId.startsWith("commune:C10")
-    ?"MARIAN_SATURDAY":"FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT",
+    ?"MARIAN_SATURDAY":day.rank==="III"
+    ?"CLASS_III_LENTEN_OR_ADVENT_FERIA":"FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT",
   explicitGospelSceneMatch:false
  });
 }
