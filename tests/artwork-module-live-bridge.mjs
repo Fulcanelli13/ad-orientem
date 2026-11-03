@@ -1,22 +1,24 @@
 import assert from "node:assert/strict";
 import "./prayer-artwork-267-integration.mjs";
 import "./prayer-museum-four-exact-release.mjs";
+import "./prayer-met-two-frameless-exact-release.mjs";
 import {readFileSync,existsSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {RELEASED_MODULE_PAINTINGS,releasedModulePhoto,releasedModulePhotoMarkup} from "../src/art/released-module-paintings.v1.js";
 import {renderPilotAngelusEntry} from "../src/pray/prayer-design-pilot.js";
 const source=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
-assert.deepEqual(Object.keys(RELEASED_MODULE_PAINTINGS),["angelus","adoration","confession","joseph","regina","souls","visit","heart-jesus","heart-mary","king","bouts","cavallino","girardin","hondius"]);
+assert.deepEqual(Object.keys(RELEASED_MODULE_PAINTINGS),["angelus","adoration","confession","joseph","regina","souls","visit","heart-jesus","heart-mary","king","bouts","cavallino","girardin","hondius","latour","giordano-flight"]);
 for(const id of Object.keys(RELEASED_MODULE_PAINTINGS)){
  const a=releasedModulePhoto(id);
  assert.ok(existsSync(new URL("../"+a.image,import.meta.url)), "Released photo missing: "+id);
  assert.ok(existsSync(new URL("../"+a.original,import.meta.url)), "Released original missing: "+id);
  assert.match(a.source,id==="confession"?/^https:\/\/www.nga.gov\/artworks\/34956-return-prodigal-son$/:
-  ["angelus","adoration","hondius"].includes(id)?/^https:\/\/www.metmuseum.org\/art\/collection\/search\//:
+  ["angelus","adoration","hondius","latour","giordano-flight"].includes(id)?/^https:\/\/www.metmuseum.org\/art\/collection\/search\//:
   ["bouts","cavallino","girardin"].includes(id)?/^https:\/\/clevelandart.org\/art\//:/^https:\/\/commons.wikimedia.org\/wiki\/File:/);
  const markup=releasedModulePhotoMarkup(id,{className:"aoTestPhoto"});
  assert.match(markup,/data-ao-released-module-photo/);
- assert.match(markup,["bouts","cavallino","girardin","hondius"].includes(id)?/data-ao-photo-release-pr="2340"/:
+ assert.match(markup,["latour","giordano-flight"].includes(id)?/data-ao-photo-release-pr="2354"/:
+  ["bouts","cavallino","girardin","hondius"].includes(id)?/data-ao-photo-release-pr="2340"/:
   id==="confession"?/data-ao-photo-release-pr="2293"/:
   ["angelus","adoration"].includes(id)?/data-ao-photo-release-pr="2277"/:
   ["joseph","regina","souls","visit"].includes(id)?/data-ao-photo-release-pr="2296"/:/data-ao-photo-release-pr="2302"/);
