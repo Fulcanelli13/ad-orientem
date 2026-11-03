@@ -16,12 +16,15 @@ on:
       - 'tests/explore-sacred-atlas-round05-selected-cover-release.mjs'
       - 'tests/explore-sacred-atlas-round06-selected-cover-release.mjs'
       - 'tests/explore-sacred-atlas-round07-selected-cover-release.mjs'
+      - 'tests/explore-sacred-atlas-round08-bulk-38-cover-release.mjs'
       - 'data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round5-selected-13-cover-manifest-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round6-selected-16-cover-manifest-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round7-selected-16-cover-manifest-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round8-bulk-38-cover-manifest-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round8-bulk-38-cover-evidence-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round7-published-cover-evidence-20261103.v1.json'
       - 'data/geography/approved-place-media.v1.json'
       - 'data/geography/approved-place-gallery.v1.json'
@@ -46,12 +49,15 @@ on:
       - 'tests/explore-sacred-atlas-round05-selected-cover-release.mjs'
       - 'tests/explore-sacred-atlas-round06-selected-cover-release.mjs'
       - 'tests/explore-sacred-atlas-round07-selected-cover-release.mjs'
+      - 'tests/explore-sacred-atlas-round08-bulk-38-cover-release.mjs'
       - 'data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round5-selected-13-cover-manifest-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round6-selected-16-cover-manifest-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round7-selected-16-cover-manifest-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round8-bulk-38-cover-manifest-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round8-bulk-38-cover-evidence-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round7-published-cover-evidence-20261103.v1.json'
       - 'data/geography/approved-place-media.v1.json'
       - 'data/geography/approved-place-gallery.v1.json'
@@ -89,5 +95,7 @@ jobs:
         run: node tests/explore-sacred-atlas-round06-selected-cover-release.mjs
       - name: Sacred Atlas Round 7 verifies all 16 source bytes and EN/FR Place covers
         run: node tests/explore-sacred-atlas-round07-selected-cover-release.mjs
+      - name: Sacred Atlas Round 8 verifies 38 reviewed, 15 original binary covers, 23 held sources, EN/FR exact Place display
+        run: node tests/explore-sacred-atlas-round08-bulk-38-cover-release.mjs
       - name: Read-only cross-owner release boundaries
         run: node tests/connected-sacred-entities-p64.mjs
