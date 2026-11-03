@@ -98,7 +98,7 @@ export function auditFirst60CompleteAntiphonText({packet}={}){
    evidence:{originalGabcAntiphonNormalized:score,
     selected1962AntiphonNormalized:selected,originalScoreNoteBearingTokens:noteGroupCount,
     noteGroupInventoryStatus:groupInventoryStatus,
-    noteGroupInventoryHold,
+    noteGroupInventoryHold:groupInventoryHold,
     ...diff(score,selected)},
    status,fullAntiphonLexicalEquality:exact,
    // Text correspondence does not certify the original printed music or
