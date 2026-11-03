@@ -28,6 +28,9 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 #progress{color:var(--warning);font-size:13px}
 #fileHint{font-size:12px;color:var(--muted);margin:6px 0}
 #originalBookPanel .body{min-height:250px}#scanStage{max-height:610px;overflow:auto;background:#0d121a;border-radius:10px;padding:8px}
+#originalBookContinuation{padding-top:14px}#originalBookContinuation[hidden]{display:none}
+#originalBookContinuation img{display:block;width:100%;max-width:none;height:auto;background:white}
+#originalBookContinuation img[hidden]{display:none}
 #originalBookScan{display:block;height:auto;max-width:none;width:100%;margin:0 auto;background:white}
 #originalBookScan[hidden]{display:none}#scanControls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:10px 0}
 #scanControls input{flex:1;min-width:110px}#scanStatus{font-size:12px;line-height:1.5}#scanSource a{overflow-wrap:anywhere}
@@ -65,6 +68,8 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 <div class="body">
 <p id="scanFolio">Select an original 1961 source</p>
 <div id="scanStage"><img id="originalBookScan" hidden alt="Original Solesmes 1961 scanned printed staff and neumes">
+<div id="originalBookContinuation" hidden><p id="continuationFolio" class="muted">Next printed folio</p>
+<img id="originalBookNextScan" hidden alt="Original 1961 printed continuation page with remaining Gregorian notes"></div>
 <p id="scanStatus" class="muted">The first 12 source-linked facsimiles load when their score is selected.</p></div>
 <div id="scanControls"><label for="scanZoom">Print enlargement</label>
 <input type="range" id="scanZoom" min="100" max="240" value="100" step="20" aria-label="Original scanned-page enlargement">
@@ -119,12 +124,17 @@ const verdictOf=c=>reviews[c?.scoreId+"|"+c?.scoreGabcSha256]??{};
 const scanZoom=()=>Number($("scanZoom").value)||100;
 function updateScanZoom(){
  $("originalBookScan").style.width=scanZoom()+"%";
+ $("originalBookNextScan").style.width=scanZoom()+"%";
  $("scanZoomLabel").textContent=scanZoom()+"%";
 }
 $("scanZoom").addEventListener("input",updateScanZoom);
 function showOriginal1961Scan(c){
- const img=$("originalBookScan"),status=$("scanStatus"),folio=$("scanFolio"),link=$("scanSource");
+ const img=$("originalBookScan"),next=$("originalBookNextScan");
+ const panel=$("originalBookContinuation");
+ const status=$("scanStatus"),folio=$("scanFolio"),link=$("scanSource");
  img.removeAttribute("src");img.hidden=true;img.onload=null;img.onerror=null;
+ next.removeAttribute("src");next.hidden=true;next.onload=null;next.onerror=null;
+ panel.hidden=true;
  link.replaceChildren();updateScanZoom();
  const locator=first12PrintedFacsimileForScore(c);
  if(!locator){
@@ -135,13 +145,26 @@ function showOriginal1961Scan(c){
    link.append(anchor)}
   return;
  }
- folio.textContent="Graduale Romanum 1961 · p. "+locator.folio+" · "+c.scoreId;
+ folio.textContent="Graduale Romanum 1961 · p"+(locator.originalPrintedFolios.length===2?"p. ":" . ")+locator.originalPrintedFolios.join("–")+" · "+c.scoreId;
  status.textContent="Loading original 1961 scan. Source image has not been compared to GABC.";
  const anchor=document.createElement("a");anchor.href=locator.scanned1961PageUrl;anchor.target="_blank";
  anchor.rel="noopener noreferrer";anchor.textContent="Open original 1961 scanned folio in separate tab";
  const secondary=document.createElement("a");secondary.href=locator.sourceUrl;secondary.target="_blank";
  secondary.rel="noopener noreferrer";secondary.textContent="Open GregoBase source entry";
  link.append(anchor,document.createTextNode(" · "),secondary);
+ if(locator.continuationPageUrl){
+  const second=document.createElement("a");second.href=locator.continuationPageUrl;
+  second.target="_blank";second.rel="noopener noreferrer";
+  second.textContent="Open original continuation p. "+locator.continuationFolio;
+  link.append(document.createTextNode(" · "),second);
+  panel.hidden=false;$("continuationFolio").textContent=
+   "Original score continues on printed p. "+locator.continuationFolio;
+  next.onerror=()=>{if(current!==c)return;next.hidden=true;
+   status.textContent="The continuation folio could not load. Complete printed music cannot be reviewed; do not mark music as verified.";};
+  next.onload=()=>{if(current!==c)return;next.hidden=false;
+   status.textContent="Both original 1961 printed folios loaded · independent pitch/neume/underlay comparison NOT recorded.";};
+  next.src=locator.continuationPageUrl;
+ }
  img.onload=()=>{if(current!==c)return;img.hidden=false;
   status.textContent="Original 1961 scanned folio loaded · independent pitch/neume/underlay comparison NOT recorded."};
  img.onerror=()=>{if(current!==c)return;img.hidden=true;
