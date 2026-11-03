@@ -138,7 +138,7 @@ export function build2026ProperFirst60ScoreReview({
     allNeumeShapesVerified:false,
     fullSyllableUnderlayVerified:false,
     divisionAndRhythmMarksVerified:false,
-    1962UsageVariantCertified:false,
+    usage1962VariantCertified:false,
     originalPrintStaffSystemCollationComplete:false,
     exactLiveBlockAndCueOwnershipCertified:false,
     finalUserApproval:false},
