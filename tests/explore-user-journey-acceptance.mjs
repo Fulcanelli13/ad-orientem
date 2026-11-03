@@ -151,22 +151,28 @@ try{
    await verifyDesktopAtlas("desktop Sacred Places map");
    await capture("01b-sacred-prototype-sheet");
    await discoverTab.click();
-   await page.waitForFunction(()=>{
+   await page.waitForFunction(desktop=>{
     const root=document.querySelector("#ao-find-modular-root");
     return root?.querySelector(".aoHeritageSurface")?.dataset.atlasEntry==="discover"
-      &&root?.querySelector("[data-mapcn-discover-rail]")?.dataset.discoverExpanded==="false";
-   },null,{timeout:15000});
+      &&root?.querySelector("[data-mapcn-discover-rail]")?.dataset.discoverExpanded===(desktop?"true":"false");
+   },width>=900,{timeout:15000});
    assert.equal(await discoverTab.getAttribute("aria-pressed"),"true");
    assert.equal(await page.evaluate(()=>globalThis.__AO_VISITOR_MAP_CANVAS===
     document.querySelector("#ao-find-modular-root .aoHeritageSurface [data-find-map] canvas")),true,
     "The Atlas entrance switch must never remount the MapLibre canvas");
-   note.steps.push("approved Discover / Sacred / Latin Mass entrances, Sacred photo-sheet and Discover peek on one MapLibre canvas");
+   note.steps.push("approved Discover / Sacred / Latin Mass entrances, mobile peek and full-height desktop rail on one MapLibre canvas");
 
    // Discover a curated, rights-approved, canonical Place. No network image hotlink.
    const rail=root.locator("[data-mapcn-discover-rail]");
    await rail.waitFor({state:"visible"});
    await verifyDesktopAtlas("desktop initial map");
-   assert.equal(await rail.getAttribute("data-discover-expanded"),"false");
+   assert.equal(await rail.getAttribute("data-discover-expanded"),width>=900?"true":"false");
+   if(width>=900){
+    // A deliberate desktop collapse is reversible; default stays the full
+    // source-backed left rail, unlike the phone Discover peek.
+    await rail.locator("[data-mapcn-discover-toggle]").click();
+    assert.equal(await rail.getAttribute("data-discover-expanded"),"false");
+   }
    await rail.locator("[data-mapcn-discover-toggle]").click();
    assert.equal(await rail.getAttribute("data-discover-expanded"),"true");
    const featured=rail.locator(
