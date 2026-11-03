@@ -2006,6 +2006,7 @@ function renderBenediction(){
  ${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
  return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-rite-owner="benediction" data-ao-benediction-step="${i}" data-ao-benediction-celebration="${esc(BEN.celebration)}" data-ao-benediction-final="${i===stages.length-1}" data-ao-ben-extended="${stages.length>7}">
+  ${BEN.celebration==='christKing'&&i===0?releasedModulePhotoMarkup('king',{className:'aoPrayerKingCover'}):''}
   <div id="aoBenOptions" class="aoRiteOptionRow aoClaudeBenSettings" data-ao-rite-options role="group" aria-label="${esc(L('Rite settings and sources','Paramètres et sources du rite'))}" ${BEN.optionsOpen?'':'hidden'}>${benFeastOptions()}${batch02SourceLinks('benediction-optional-local')}</div>
  <div class="aoClaudeRiteLayout" data-ao-claude-altar="true">
   ${claudeBenedictionRail(stages,i,{esc})}
@@ -2573,6 +2574,7 @@ function firstFridayStage(date,valid){
 function renderFirstFriday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,tracking=!!S.firstFriday.tracking;
  return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Friday stage content','Contenu de l’étape du premier vendredi'))}">
+  ${FF.step===0?releasedModulePhotoMarkup('heart-jesus',{className:'aoPrayerHeartJesusCover'}):''}
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>
   ${firstMonthlyDirectPrayers('friday')}
   ${firstFridayStage(date,valid)}
@@ -2596,6 +2598,7 @@ function firstSaturdayStage(date,valid){
 function renderFirstSaturday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,tracking=!!S.firstSaturday.tracking;
  return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Saturday stage content','Contenu de l’étape du premier samedi'))}">
+  ${FS.step===0?releasedModulePhotoMarkup('heart-mary',{className:'aoPrayerHeartMaryCover'}):''}
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>
   ${firstMonthlyDirectPrayers('saturday')}
   ${firstSaturdayStage(date,valid)}
