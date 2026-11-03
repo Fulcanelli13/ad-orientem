@@ -9,6 +9,8 @@ import {approvedClassIHeroForDate} from "../calendar/approved-class-i-heroes-202
 import {releasedDateGospelHero2026} from "./released-date-gospel-heroes-2026.js";
 import {RELEASED_MODULE_PAINTINGS} from "../art/released-module-paintings.v1.js";
 import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.js";
+import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
+import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
 const CLASS_I_PROPER=Object.freeze({
  "2026-03-29":"Tempora/Quad6-0r",
@@ -153,6 +155,10 @@ export function approved2026HomeArtwork(state,provider=null){
  }
  const bulk=extraApproved2026HomeArtwork(date,principalId,properPath);
  if(bulk)return bulk;
+ // Date-specific locks win. Contextual reuse is restricted to 71 identified
+ // Class IV ferias/BVM Saturdays and can never claim Gospel-scene identity.
+ const seasonal=approved2026SeasonalHomeReuse(date,principalId,properPath);
+ if(seasonal)return seasonal;
  const released=releasedDateGospelHero2026(state,provider??{
   properPath:()=>properPath
  });
@@ -168,7 +174,16 @@ export function approved2026HomeArtwork(state,provider=null){
 export function renderApproved2026HomeArtwork(slot,state,win=globalThis){
  if(!slot||!win?.document?.createElement)return null;
  const chosen=approved2026HomeArtwork(state);
- if(!chosen)return null;
+ if(!chosen){
+  // An approved date selection with an image/rights hold must not silently
+  // fall back to legacy Proper artwork with a different painted identity.
+  const observed=exactResolved(state);
+  if(observed&&annualHomeArtworkDay2026(observed.date,observed.principalId)?.selection){
+   slot.replaceChildren();
+   slot.closest?.(".aoTodayV2Frontispiece")?.classList?.add("aoTodayV2ArtMissing");
+  }
+  return null;
+ }
  const img=win.document.createElement("img");
  img.className="aoC3DatedImage";
  img.src=chosen.image;img.alt=chosen.title+" — "+chosen.artist;
