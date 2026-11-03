@@ -4,6 +4,10 @@ const read=relative=>JSON.parse(readFileSync(new URL("../"+relative,import.meta.
 const gallery=read("data/artwork/research-operational-989.v1.json");
 const source=read("data/artwork/research-source-records-3205.v1.json");
 const prior=read("data/artwork/2026-prior-date-artwork-evidence.v1.json");
+const semantics=read("data/artwork/research-semantic-candidates-989.v1.json");
+assert.equal(semantics.artworks.length,989);
+assert.equal(semantics.counts.tagged,657);
+assert.equal(semantics.counts.untagged,332);
 const duplicate=read("data/artwork/research-prior-duplicate-decisions.v1.json");
 assert.equal(duplicate.reviewGroups.length,18);
 assert.equal(duplicate.reviewedHumanDecisions.length,4);
