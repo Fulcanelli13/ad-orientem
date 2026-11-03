@@ -46,6 +46,11 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
   flex:none;min-height:0;max-height:min(34dvh,290px);overflow:hidden;
   border-bottom:1px solid #2b3540;
  }
+ /* Screen 7 Sacred Places is a viewport directory, not a worldwide feature reel.
+    Keep editorial discovery in Discover and phone sheets unchanged. */
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnEditorialStrip {
+  display:none!important;
+ }
  .aoHeritageSurface .aoMapcnEditorialHeading {padding:9px 12px 6px}
  .aoHeritageSurface .aoMapcnEditorialCarousel {
   display:flex;flex-direction:column;gap:6px;
