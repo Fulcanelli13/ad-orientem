@@ -42,6 +42,7 @@ def main():
     assert len(places["places"])==manifest["baseline"]["canonical_places"]==530
     before_cover_hash=digest(existing["items"])
     before_gallery_hash=digest(gallery)
+    before_gallery_bytes=GALLERY.read_bytes()
     with CREDITS.open(encoding="utf-8-sig",newline="") as stream:
         credits=list(csv.DictReader(stream))
     plan=release.source_status(credits,decisions,places,existing,gallery)
@@ -150,6 +151,13 @@ def main():
     assert len(new_ids)==len(approved)
     prior=[x for x in after["items"] if x["place_id"] not in new_ids]
     assert digest(sorted(prior,key=lambda x:x["place_id"]))==digest(sorted(existing["items"],key=lambda x:x["place_id"])), "Prior covers changed"
+    # The shared importer sorts its gallery JSON even for a cover-only batch.
+    # Require identical gallery records, then restore the exact original bytes:
+    # this release is strictly prohibited from changing gallery data or order.
+    if GALLERY.read_bytes()!=before_gallery_bytes:
+        latest_gallery=load(GALLERY)
+        assert digest(sorted(latest_gallery["items"],key=lambda x:x["media_id"]))==digest(sorted(gallery["items"],key=lambda x:x["media_id"])), "Gallery record actually modified"
+        GALLERY.write_bytes(before_gallery_bytes)
     assert digest(load(GALLERY))==before_gallery_hash,"Gallery modified"
     after["version"]="1.6.10"
     COVERS.write_text(json.dumps(after,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
