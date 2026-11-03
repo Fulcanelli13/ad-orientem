@@ -1,0 +1,251 @@
+{
+  "schema": "AO_SACRED_ATLAS_PHASE_B_ROUND5_SELECTED_COVER_RELEASE_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_PLACE_COVERS_ONLY",
+  "baseline": {
+    "canonical_places": 530,
+    "approved_covers": 312,
+    "missing_covers": 218,
+    "approved_gallery": 42,
+    "plan_rounds_completed": 4,
+    "plan_rounds_total": 28
+  },
+  "cohort": "13 previously user-selected first-choice Photo Finder cover candidates from among 218 uncovered Places",
+  "selection_protection": "Original rank-1 choices in both 451-decision Photo Finder export and canonical Place editorial register; no substitutions and all rights holds explicit",
+  "source_pointers": [
+    "data/geography/research/photo-finder-20261030/decisions.json",
+    "data/geography/research/photo-finder-20261030/credits.csv",
+    "data/geography/approved-place-media.v1.json",
+    "data/geography/seed-registry.v1.json"
+  ],
+  "required_checks": [
+    "Exact first-choice Commons source and canonical physical Place",
+    "Current Commons original SHA1, dimensions, author, current licence and original bytes",
+    "Full-frame locally published WebP with SHA256 and EN/FR alt text",
+    "No existing covers overwritten and no Gallery or TLM data changed",
+    "Failed source/rights candidates retained as recorded holds"
+  ],
+  "rows": [
+    {
+      "sequence": 1,
+      "place_id": "place:CA:notre-dame-du-cap",
+      "place_name": "Sanctuaire Notre-Dame-du-Cap",
+      "reviewed_file": "File:Notre-Dame-du-Cap Basilica @ Trois-Rivières, Quebec.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ANotre-Dame-du-Cap_Basilica_%40_Trois-Rivi%C3%A8res%2C_Quebec.jpg",
+      "expected_original_sha1": "d6a5bd22197ce07bc25997ee608417529c7ddd81",
+      "claimed_author": "Inphasis",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        4000,
+        2250
+      ],
+      "legal_scope": "Canadian Copyright Act 32.2(1)(b)(i) architecture photos",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 2,
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "place_name": "Heiligdom Onze Lieve Vrouw ter Nood",
+      "reviewed_file": "File:Heiloo, Heiligdom Onze Lieve Vrouw ter Nood, Bedevaartkerk, oost.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AHeiloo%2C_Heiligdom_Onze_Lieve_Vrouw_ter_Nood%2C_Bedevaartkerk%2C_oost.jpg",
+      "expected_original_sha1": "caa6822542ab4a71d4e6b03d49340b775caf8848",
+      "claimed_author": "M.arjon",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        3264,
+        2448
+      ],
+      "legal_scope": "Historic exterior, Dutch public panorama plus author photo licence",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 3,
+      "place_id": "place:FR:pellevoisin",
+      "place_name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
+      "reviewed_file": "File:Sanctuaire marial de Pellevoisin, aile historique de 1897.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASanctuaire_marial_de_Pellevoisin%2C_aile_historique_de_1897.jpg",
+      "expected_original_sha1": "b2e1f1d12c1b1a386390dca56d7942214fa47f76",
+      "claimed_author": "Esves-37240",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3456,
+        5184
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 4,
+      "place_id": "place:DE:maria-vesperbild",
+      "place_name": "Wallfahrtskirche Maria Vesperbild",
+      "reviewed_file": "File:MariaVesperbild Kirche (02).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AMariaVesperbild_Kirche_(02).jpg",
+      "expected_original_sha1": "aec2be6e98327f9d0fabe777b8bd1852ebadfc8a",
+      "claimed_author": "Ordercrazy",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4000,
+        3000
+      ],
+      "legal_scope": "German UrhG 59 exterior photographed from public place",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 5,
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "place_name": "Sanctuaire Saint-Joseph du Bessillon",
+      "reviewed_file": "File:Couvent St Joseph du Bessillon.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACouvent_St_Joseph_du_Bessillon.jpg",
+      "expected_original_sha1": "60dde7e1fab72a64352c10aac2fd00d4b3ce263f",
+      "claimed_author": "FERNANDES Gilbert",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4128,
+        3096
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 6,
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "place_name": "Sanctuaire Notre-Dame de Grâces, Cotignac",
+      "reviewed_file": "File:Eglise ND de Graces Cotignac.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AEglise_ND_de_Graces_Cotignac.jpg",
+      "expected_original_sha1": "d3462f76ab9000fa948a2a733be31b7c1c9e5aeb",
+      "claimed_author": "FERNANDES Gilbert",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4128,
+        3096
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 7,
+      "place_id": "place:FR:carmel-lisieux",
+      "place_name": "Chapelle du Carmel de Lisieux",
+      "reviewed_file": "File:Chapelle Carmel - Lisieux (FR14) - 2021-11-12 - 3.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AChapelle_Carmel_-_Lisieux_(FR14)_-_2021-11-12_-_3.jpg",
+      "expected_original_sha1": "591ac8bf741632f7f39730f7f38f334afeeab388",
+      "claimed_author": "Chabe01",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        4032,
+        3024
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 8,
+      "place_id": "place:FR:basilique-ars",
+      "place_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "reviewed_file": "File:Ars-sur-Formans Basilique Saint-Sixte Extérieur Dome 2.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AArs-sur-Formans_Basilique_Saint-Sixte_Ext%C3%A9rieur_Dome_2.jpg",
+      "expected_original_sha1": "f9253b90c21ebd84bda107754cf5f710ac642e3f",
+      "claimed_author": "Zairon",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        4579,
+        3193
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 9,
+      "place_id": "place:PL:gietrzwald-basilica",
+      "place_name": "Sanktuarium Matki Bożej Gietrzwałdzkiej",
+      "reviewed_file": "File:Sanctuary in Gietrzwałd, 2025, KsP.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASanctuary_in_Gietrzwa%C5%82d%2C_2025%2C_KsP.jpg",
+      "expected_original_sha1": "3f7a3a70b9b47fa973c0fdd45b8cbaf0d10a0b12",
+      "claimed_author": "Krzysztof Popławski",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        7008,
+        4672
+      ],
+      "legal_scope": "Historic church exterior and photographer licence",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 10,
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "place_name": "Basilique Notre-Dame des Victoires, Paris",
+      "reviewed_file": "File:Basilique Notre Dame Victoires - Paris II (FR75) - 2026-04-11 - 1.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasilique_Notre_Dame_Victoires_-_Paris_II_(FR75)_-_2026-04-11_-_1.jpg",
+      "expected_original_sha1": "282898af6fd0bb0568970cdd66127d167b1b2703",
+      "claimed_author": "Chabe01",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        5712,
+        4284
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 11,
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "place_name": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+      "reviewed_file": "File:Basilique Notre Dame Perpétuel Secours - Paris XI (FR75) - 2024-11-23 - 4.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasilique_Notre_Dame_Perp%C3%A9tuel_Secours_-_Paris_XI_(FR75)_-_2024-11-23_-_4.jpg",
+      "expected_original_sha1": "ed7ecf5cd8ae003fe2ec8300cb99648373cd2ea1",
+      "claimed_author": "Chabe01",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        4032,
+        3024
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 12,
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "place_name": "Sanctuaire des Grottes de Saint-Antoine, Brive",
+      "reviewed_file": "File:Chapelle des Grottes de Saint-Antoine (Brive-la-Gaillarde).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AChapelle_des_Grottes_de_Saint-Antoine_(Brive-la-Gaillarde).jpg",
+      "expected_original_sha1": "3265c9b5a1aad85e6f482a84ee74d0c2673cfd85",
+      "claimed_author": "FredSeiller",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        3488,
+        2616
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 13,
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "place_name": "Basilique Saint-Louis-Marie-Grignion-de-Montfort",
+      "reviewed_file": "File:Basilique de Saint-Laurent-sur-Sèvre01.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasilique_de_Saint-Laurent-sur-S%C3%A8vre01.jpg",
+      "expected_original_sha1": "c6bb89c674b27851b33ef6689bd4decc6cdcbc16",
+      "claimed_author": "FredSeiller",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4608,
+        3456
+      ],
+      "legal_scope": "Historic church exterior; photographer licence independent of historical architecture",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    }
+  ]
+}
