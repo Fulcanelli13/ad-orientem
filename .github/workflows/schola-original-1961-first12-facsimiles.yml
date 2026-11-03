@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Capture at most ten distinct original CMAA Solesmes 1961 scanned folios
+      - name: Capture 14 original CMAA Solesmes folios, including four musical continuation pages
         run: node scripts/schola/capture-1961-first12-original-facsimiles.mjs
       - name: Verify source image SHA-256, source page and absence of music approvals
         run: node tests/schola-1961-first12-original-facsimile-capture.mjs
