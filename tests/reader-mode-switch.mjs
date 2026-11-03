@@ -7,7 +7,7 @@ import {
 } from "../src/mass/reader-mode-switch.js";
 import { guideForPresentationCard } from "../src/mass/reader-guide.js";
 import { auditOrdinarySungSourceOnlyCues } from "../src/mass/reader-source-only-cues.js";
-import { missalPrayerHeadingsForCard } from "../src/mass/reader-missal-granularity.js";
+import { missalPrayerHeadingsForCard, projectIntroitEntryMissalCards } from "../src/mass/reader-missal-granularity.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -295,6 +295,48 @@ assert.ok(missal.presentationModel.totalCards>missal.sourceModel.totalCards,
   "Missal must expose additional source prayer pages, not reuse only 30 broad sections");
 assert.equal(missal.presentationModel.structureOwner,"CANONICAL_MISSAL_PRAYER_BLOCK_PRESENTATION");
 assert.equal(missal.presentationModel.sourceAuthorityModel,missal.sourceModel);
+
+// The preceding Palm/Ash/Candlemas/Rogations source graph can prescribe
+// Mass entry AT THE INTROIT. LIVE already omits the foot cluster; the
+// traditional MISSAL must not restore it on entry or a later mode switch.
+const beforeIntroitProjection=JSON.stringify(missal.presentationModel.cards);
+for(const locale of ["en","fr"]){
+ const entered=projectIntroitEntryMissalCards(missal.presentationModel,{language:locale});
+ const first=entered.cardBySequence(1);
+ assert.equal(entered.totalCards,missal.presentationModel.totalCards-4,
+   "Four omitted foot pages returned in the prelude-to-Missal stream");
+ assert.equal(entered.structureOwner,"CANONICAL_MISSAL_INTROIT_ENTRY");
+ assert.equal(entered.preMassHandoff,"INTROIT");
+ assert.equal(entered.suppressedOpeningCardCount,4);
+ assert.equal(first.title,locale==="fr"?"Introït":"Introit");
+ assert.equal(first.sourceSectionId,"AO.CARD.001");
+ assert.deepEqual(first.blocks.map(b=>b.blockId),["AO.SM.B014"],
+   "Source B013/preparatory foot rites must not reappear in the Introit page");
+ assert.equal(first.blocks[0].firstParagraphIndex,0);
+ assert.ok(first.paragraphs.length>0 && first.paragraphs.some(p=>
+   /Introitus|Introit/.test(String(p.primary??"")+" "+String(p.secondary??""))),
+   "The actual selected Proper Introit lost its prayer text");
+ assert.equal(entered.previousCard(first.sectionId),null,
+   "Back from the Introit must not open omitted foot prayers");
+ const next=entered.nextCard(first.sectionId);
+ assert.ok(next && (next.sourceSectionId??next.sectionId)==="AO.CARD.002",
+   "Next from Introit must continue to Kyrie");
+ assert.equal(entered.previousCard(next.sectionId),first);
+ assert.equal(entered.sourceAuthorityModel,missal.sourceModel,
+   "Projection must not replace canonical source authority");
+ const visited=entered.cards.flatMap(c=>c.blocks.map(b=>b.blockId));
+ assert.equal(visited.includes("AO.SM.B001"),false);
+ assert.equal(visited.includes("AO.SM.B012"),false);
+ assert.equal(visited.includes("AO.SM.B014"),true);
+ assert.equal(new Set(visited).size,visited.length,
+   "Missal Introit filter produced duplicated block owners");
+ assert.equal(entered.cards.at(-1).sequence,entered.totalCards);
+}
+assert.equal(JSON.stringify(missal.presentationModel.cards),beforeIntroitProjection,
+ "Preceding-rite display must not mutate ordinary MISSAL or source corpus");
+assert.throws(()=>projectIntroitEntryMissalCards(live.presentationModel),
+ /MISSAL_INTROIT_ENTRY_REQUIRES_GRANULAR_BOOK/);
+
 const rawMissalParagraphs=missal.sourceModel.cards.flatMap(c=>c.paragraphs);
 const refinedMissalParagraphs=missal.presentationModel.cards.flatMap(c=>c.paragraphs);
 assert.deepEqual(refinedMissalParagraphs,rawMissalParagraphs,

@@ -250,3 +250,66 @@ export function projectGranularMissalCards(model,{language="en"}={}){
     cardForEvent:undefined,sourceAuthorityModel:model,
   });
 }
+
+/**
+ * For an explicitly source-attested pre-Mass procession/rite whose plan
+ * begins Mass AT THE INTROIT, the book must not restore the four omitted
+ * foot-of-the-altar pages when switching from curated LIVE to MISSAL.
+ *
+ * This filters *presentation* pages only. Original source cards, prayers,
+ * conditional rubrics, red typography and the ordinary Missal remain intact.
+ * Rebase the surviving B014 block after excluding B013, just as the
+ * established curated-LIVE Introit-entry projection does.
+ */
+export function projectIntroitEntryMissalCards(model,{language="en"}={}){
+  if(model?.structureOwner!=="CANONICAL_MISSAL_PRAYER_BLOCK_PRESENTATION"||
+     !Array.isArray(model.cards))
+    throw new Error("MISSAL_INTROIT_ENTRY_REQUIRES_GRANULAR_BOOK");
+  const cards=model.cards;
+  const first=cards.slice(0,5);
+  if(first.length!==5||first.some(card=>card.sourceSectionId!=="AO.CARD.001")||
+     cards[5]?.sourceSectionId==="AO.CARD.001")
+    throw new Error("MISSAL_INTROIT_ENTRY_FOOT_CLUSTER_NOT_VERIFIED");
+  const kept=first[4];
+  const introit=kept.blocks?.find(block=>block.blockId==="AO.SM.B014");
+  if(!introit||introit.firstParagraphIndex==null||!(introit.paragraphCount>0)||
+     kept.blocks?.some(block=>!["AO.SM.B013","AO.SM.B014"].includes(block.blockId)))
+    throw new Error("MISSAL_INTROIT_ENTRY_SOURCE_BLOCK_UNVERIFIED");
+  const start=introit.firstParagraphIndex,end=start+introit.paragraphCount;
+  if(!Number.isInteger(start)||end>kept.paragraphs.length)
+    throw new Error("MISSAL_INTROIT_ENTRY_SOURCE_RANGE_UNVERIFIED");
+  const introitRows=kept.paragraphs.slice(start,end);
+  if(!introitRows.length ||
+     first.slice(0,4).some(card=>(card.paragraphs??[]).some(row=>
+       introitRows.some(other=>other.id===row.id))))
+    throw new Error("MISSAL_INTROIT_ENTRY_INTROIT_DUPLICATION");
+  const locale=String(language??"en").toLowerCase().startsWith("fr")?"fr":"en";
+  const firstPage=Object.freeze({
+    ...kept,title:locale==="fr"?"Introït":"Introit",
+    paragraphs:Object.freeze(introitRows),
+    blocks:Object.freeze([Object.freeze({...introit,firstParagraphIndex:0})]),
+    provenance:Object.freeze({...kept.provenance,
+      massEntry:"INTROIT",openingOmission:"FOOT_CLUSTER_BY_PRECEDING_RITE"}),
+  });
+  const remaining=[firstPage,...cards.slice(5)];
+  const projected=Object.freeze(remaining.map((card,index)=>
+    Object.freeze({...card,sequence:index+1})));
+  const byId=new Map(projected.map(card=>[card.sectionId,card]));
+  if(byId.size!==projected.length)
+    throw new Error("MISSAL_INTROIT_ENTRY_DUPLICATE_PAGE_ID");
+  const bySequence=n=>Number.isInteger(Number(n))?projected[Number(n)-1]??null:null;
+  const neighbor=(id,delta)=>{
+    const card=byId.get(String(id));
+    return card?bySequence(card.sequence+delta):null;
+  };
+  return Object.freeze({
+    ...model,
+    structureOwner:"CANONICAL_MISSAL_INTROIT_ENTRY",
+    cards:projected,totalCards:projected.length,
+    cardBySequence:bySequence,
+    previousCard:id=>neighbor(id,-1),nextCard:id=>neighbor(id,1),
+    preMassHandoff:"INTROIT",
+    suppressedOpeningCardCount:4,
+    suppressedOpeningTitles:Object.freeze(first.slice(0,4).map(card=>card.title)),
+  });
+}
