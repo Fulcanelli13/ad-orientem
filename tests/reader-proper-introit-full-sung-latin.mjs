@@ -57,6 +57,14 @@ assert.equal(abbreviated,20,
  "All 20 archived GABCs use EUOUAE as a melodic ending symbol, not sung words");
 assert.equal(reprise,20,
  "Original GABC abbreviates repeated antiphon; source-selected Latin supplies it");
+const alternatePsCitation=raw.candidates.find(x=>x.scoreId==="GREGOBASE-1235");
+const psResult=selected1962IntroitSungText({
+ part:alternatePsCitation.part,scoreId:alternatePsCitation.scoreId,
+ sourceLatin:alternatePsCitation.representative.sourceLatin,
+ originalGabc:alternatePsCitation.scoreGabc
+});
+assert.ok(psResult.segments[1].text.startsWith("Ad te, Dómine"));
+assert.ok(!psResult.segments[1].text.startsWith("Ps. "));
 const mihi=raw.candidates.find(x=>x.scoreId==="GREGOBASE-475");
 const full=selected1962IntroitSungText({
  part:mihi.part,scoreId:mihi.scoreId,
