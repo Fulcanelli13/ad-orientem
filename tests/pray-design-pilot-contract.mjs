@@ -175,6 +175,31 @@ assert.match(runtime,/queueMicrotask\(\(\)=>\{if\(view==='angelus'&&mount\(\)\)m
  "The delayed focus/render handoff must not scroll away from the opening clock");
 assert.match(runtime,/function angelusExactPosture\(\)/,"the real posture owner remains");
 assert.match(runtime,/data-ao-prayer-shelf/,"Nine-door interiors use the compact unique shelf renderer");
+const mosaicCss=readFileSync(new URL("../src/pray/prayer-door-mosaic-execution-styles.js",import.meta.url),"utf8");
+assert.match(runtime,/data-ao-pray-essential-landing="true"/,
+ "Essential Prayers door must open its own 32-prayer mosaic, not All Library");
+assert.match(runtime,/LIB\.cat=PRAYER_PILOT_ENABLED&&view==='home'\?'essentials':'all'/,
+ "Homepage Essential Prayers route must select the canonical Essentials collection");
+assert.match(runtime,/data-p435930-lib-all/,
+ "The full Prayer Library must remain directly accessible from Essential Prayers");
+assert.match(runtime,/aoPrayDoorShelfList aoPrayDoorMosaic/,
+ "Each non-library family interior must use the single mosaic grid");
+assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0\)\)/,
+ "The full canonical ordered door inventory must render in the grid");
+assert.match(runtime,/data-ao-pray-door-entry data-ao-pray-door-facet/,
+ "Existing filters must retain their canonical card target");
+assert.match(runtime,/prayerEditorialArtworkMarkup\(artSlotId/,
+ "Mosaic artwork must pass through editorial publication checks");
+assert.match(runtime,/releasedPrayerCardArtUrl\(route\)/,
+ "Canonical prayer source photos must use the released inventory");
+assert.doesNotMatch(runtime,/aoPrayDoorShelfRow|aoPrayDoorFeatured/,
+ "Retired text rows and oversized featured list must not return");
+assert.match(mosaicCss,/\.aoPrayDoorMosaicCard\[hidden\]\{display:none!important\}/,
+ "Filtered mosaic tiles must actually disappear from the grid");
+assert.match(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
+ "Essential 32-prayer source case must become a responsive visual mosaic");
+assert.match(mosaicCss,/prefers-reduced-motion:reduce/,
+ "Prayer mosaics must respect reduced motion preferences");
 assert.match(runtime,/data-p435930-door-prayer/,"Single-text prayer cards hand off to the existing canonical Library");
 assert.match(runtime,/if\(navStack\.at\(-1\)==='family'\)/,"Library prayer Back returns to its owning door");
 assert.match(runtime,/installAngelusCardDeck\(/,"the real five\/four-card engine remains");
