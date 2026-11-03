@@ -165,18 +165,21 @@ export function selectedPilgrimageJourney(routes=[],id=null){
   return arr(routes).find(row=>row.id===id)??arr(routes)[0]??null;
 }
 export function renderPilgrimageJourneyPanel({
-  language="en",routes=[],selectedId=null,
+  language="en",routes=[],selectedId=null,selectedStageId=null,sheetExpanded=false,
 }={}){
   const r=arr(routes),selected=selectedPilgrimageJourney(r,selectedId);
-  let html='<aside class="aoJourneyPanel" data-explore-journey-panel aria-label="'+
+  let html='<aside class="aoJourneyPanel" data-atlas-journey="true" data-journey-expanded="'+String(sheetExpanded)+'" data-explore-journey-panel aria-label="'+
     esc(label(language,"Pilgrimage journeys","Parcours de pèlerinage"))+'">';
-  html+='<header class="aoJourneyHeader"><div><small>AD ORIENTEM · '+esc(label(language,"PILGRIMAGE","PÈLERINAGE"))+
-    '</small><h2>'+esc(label(language,"Journeys","Parcours"))+'</h2></div>';
+  html+='<button type="button" class="aoJourneyGrab" data-explore-journey-sheet-toggle aria-expanded="'+String(sheetExpanded)+'" aria-label="'+esc(label(language,
+    sheetExpanded?"Collapse pilgrimage sheet":"Expand pilgrimage sheet",
+    sheetExpanded?"Réduire le panneau du pèlerinage":"Déployer le panneau du pèlerinage"))+'"></button>';
+  html+='<header class="aoJourneyHeader"><div><small>AD ORIENTEM · '+esc(label(language,"PILGRIMAGE JOURNEY","PARCOURS DE PÈLERINAGE"))+
+    '</small><h2>'+esc(selected?.name||label(language,"Journeys","Parcours"))+'</h2></div>';
   html+='<button type="button" data-explore-journey-close aria-label="'+
     esc(label(language,"Return to atlas","Retour à l’atlas"))+'">×</button></header>';
   html+='<p class="aoJourneyScope">'+esc(label(language,
-    r.length+" documented routes · route lines and intermediate waypoints not yet mapped",
-    r.length+" parcours attestés · tracés et étapes intermédiaires non cartographiés"))+'</p>';
+    r.length+" documented routes · no certified route geometry",
+    r.length+" parcours attestés · sans tracé certifié"))+'</p>';
   if(!selected){
     html+='<p class="aoJourneyEmpty">'+esc(label(language,
       "No sourced itineraries are available in this build.",
@@ -215,9 +218,9 @@ export function renderPilgrimageJourneyPanel({
         :stage.role==="PASS_THROUGH"?label(language,"ROUTE PASSES THROUGH","LE PARCOURS PASSE PAR")
         :stage.role.startsWith("DESTINATION")?label(language,"DOCUMENTED DESTINATION / FINAL STAGE","DESTINATION / DERNIÈRE ÉTAPE")
         :label(language,"DOCUMENTED STAGE","ÉTAPE ATTESTÉE");
-      html+='<li data-journey-named-stage="'+esc(stage.id)+'">'+
+      html+='<li data-journey-named-stage="'+esc(stage.id)+'"'+(selectedStageId===stage.id?' class="aoJourneyStageSelected"':'')+'>'+
         (stage.siteAnchor?'<button type="button" class="aoJourneyNode aoJourneyFocusButton" data-explore-journey-stage-focus="'+
-          esc(stage.id)+'" aria-label="'+esc(label(language,"Show mapped site: ","Voir le lieu cartographié : ")+
+          esc(stage.id)+'" aria-pressed="'+String(selectedStageId===stage.id)+'" aria-label="'+esc(label(language,"Show mapped site: ","Voir le lieu cartographié : ")+
           (language==="fr"?stage.nameFr:stage.name))+'">'+esc(String(index+1))+'</button>'
           :'<span class="aoJourneyNode" aria-hidden="true">'+esc(String(index+1))+'</span>')+
         '<div><small>'+esc(heading)+' · '+esc(String(index+1))+
