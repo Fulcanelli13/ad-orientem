@@ -1,0 +1,151 @@
+{
+  "schema": "AO_SACRED_ART_2026_EXISTING_SOURCES_MATCH_BATCH5_V1",
+  "asOf": "2026-10-31",
+  "status": "RESEARCH_IDENTITY_JOINS_ONLY",
+  "sourceRefs": [
+    {
+      "path": "data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json",
+      "ref": "research/sacred-art-class-i-ii-multiwork-rotation-20261031",
+      "sha": "cb18908f33987f15920f78fd360138e3f847bb64"
+    },
+    {
+      "path": "data/calendar/sacred-art-accepted-856-to-canonical-383-20261029.v1.json",
+      "ref": "research/sacred-art-phase1-consolidation-20261029",
+      "sha": "a76ef2eda5366c63fe23ed9b15675ed71c049456"
+    }
+  ],
+  "counts": {
+    "newMatchedClassIIISanctoralDates": 1,
+    "newAcceptedSourceOnlyMatchedDates": 1,
+    "additionalDistinctAcceptedSourceCards": 2,
+    "previousMatchedClassIIISanctoral": 52,
+    "nowMatchedClassIIISanctoral": 53,
+    "previousUnmatchedClassIIISanctoral": 79,
+    "nowUnmatchedClassIIISanctoral": 78,
+    "newFeastArtworkUserApprovals": 0,
+    "productionImageApprovals": 0
+  },
+  "rows": [
+    {
+      "date": "2026-08-12",
+      "principalId": "sancti:08-12:3:w",
+      "feast": "St. Clare",
+      "relation": "EXACT_SAINT_CLARE_OF_ASSISI",
+      "sourceBasis": "ACCEPTED_856",
+      "works": [
+        {
+          "sourceCardId": "walters:18326",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "Saint Claire of Assisi",
+          "sourceArtistAsRecorded": "Benedetto Coda",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "37.1084",
+          "sourceObjectUrl": "https://purl.thewalters.org/art/37.1084",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false,
+          "sourceType": "ACCEPTED_856",
+          "relation": "EXACT_SAINT_CLARE_OF_ASSISI",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        },
+        {
+          "sourceCardId": "rijks:200110753",
+          "sourceSelection": "IMPORT",
+          "sourceTitle": "De heilige Clara",
+          "sourceArtistAsRecorded": "Joseph Désiré Court",
+          "sourceCorrection": null,
+          "sourceObjectAccession": "SK-C-303",
+          "sourceObjectUrl": "https://id.rijksmuseum.nl/200110753",
+          "canonical383Status": "NO_CONFIRMED_IDENTITY",
+          "canonicalArtworkId": null,
+          "exactPhysicalIdentityBeyondSourceAccession": "PENDING",
+          "sourcePhotoSha256Verified": false,
+          "imageRightsForProductionVerified": false,
+          "nativeUnframedImageQA": "PENDING",
+          "mobileHeroCropQA": "PENDING",
+          "editorialApprovalForFeast": false,
+          "homepageRotationApproved": false,
+          "sourceType": "ACCEPTED_856",
+          "relation": "EXACT_SAINT_CLARE_OF_ASSISI",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Two different artists and source accessions; physical originals appear distinct but neither photo, date selection or mobile crop is certified.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    }
+  ],
+  "rejectedFalsePositives": [
+    {
+      "date": "2026-01-20",
+      "feast": "Sts. Fabian & Sebastian",
+      "collision": "Several accepted St Sebastian portraits omit Fabian",
+      "disposition": "PARTIAL_JOINT_FEAST_NOT_COMPLETE"
+    },
+    {
+      "date": "2026-05-15",
+      "feast": "St. John Baptist de la Salle",
+      "collision": "John the Baptist is not de la Salle",
+      "disposition": "DIFFERENT_SAINT"
+    },
+    {
+      "date": "2026-06-25",
+      "feast": "St. William",
+      "collision": "Accepted Vignon and Flemish paintings concern William of Aquitaine rather than William of Vercelli/Montevergine",
+      "disposition": "DIFFERENT_SAINT"
+    },
+    {
+      "date": "2026-07-20",
+      "feast": "St. Jerome Emiliani",
+      "collision": "Jerome of Stridon is not Jerome Emiliani",
+      "disposition": "DIFFERENT_SAINT"
+    },
+    {
+      "date": "2026-09-05",
+      "feast": "St. Lawrence Justinian",
+      "collision": "Generic St Lawrence art does not establish Lawrence Justinian",
+      "disposition": "IDENTITY_NOT_ESTABLISHED"
+    },
+    {
+      "date": "2026-09-10",
+      "feast": "St. Nicholas of Tolentino",
+      "collision": "Generic St Nicholas and existing Nicholas of Myra are not Tolentino",
+      "disposition": "DIFFERENT_SAINT_OR_UNSPECIFIED"
+    },
+    {
+      "date": "2026-10-23",
+      "feast": "St. Anthony Mary Claret",
+      "collision": "Saint Clare/Clara source cards are not Anthony Mary Claret",
+      "disposition": "DIFFERENT_SAINT"
+    },
+    {
+      "date": "2026-11-12",
+      "feast": "St. Martin I",
+      "collision": "Paintings of Martin of Tours are not Pope Martin I",
+      "disposition": "DIFFERENT_SAINT"
+    },
+    {
+      "date": "2026-09-03",
+      "feast": "St. Pius X",
+      "collision": "Existing accepted Pius VI painting is not Pius X",
+      "disposition": "DIFFERENT_POPE"
+    },
+    {
+      "date": "2026-11-18",
+      "feast": "Dedication of Basilicas of Sts Peter & Paul",
+      "collision": "Peter and Paul portrait is not evidence of depiction of basilica dedication",
+      "disposition": "CONTEXTUAL_ONLY_NOT_EXACT_FEAST"
+    }
+  ],
+  "policy": "No new images downloaded, no historic editorial ratings or source cards modified, no photo-rights/crop approval, no date approvals, no deployment, no fees."
+}

@@ -1,0 +1,296 @@
+{
+  "schema": "AO_SACRED_ART_2026_EXISTING_SOURCES_MATCH_BATCH4_V1",
+  "asOf": "2026-10-31",
+  "status": "RESEARCH_IDENTITY_JOINS_ONLY",
+  "sourceDocs": [
+    {
+      "path": "data/calendar/sacred-art-2026-all-classes-365-coverage.v1.json",
+      "ref": "research/sacred-art-class-i-ii-multiwork-rotation-20261031",
+      "sha": "8db706592e3b8d48c3db56808b0be134acf17e43"
+    },
+    {
+      "path": "data/calendar/sacred-art-2026-all383-artwork-reverse-index.v1.json",
+      "ref": "research/sacred-art-class-i-ii-multiwork-rotation-20261031",
+      "sha": "42d6d367107b0d92be6ca3e7332139f52dd5c8cf"
+    },
+    {
+      "path": "data/calendar/sacred-art-accepted-856-to-canonical-383-20261029.v1.json",
+      "ref": "research/sacred-art-phase1-consolidation-20261029",
+      "sha": "a76ef2eda5366c63fe23ed9b15675ed71c049456"
+    },
+    {
+      "path": "data/research/sacred-art-w72-saints-large-comparison-manifest-20261015.v1.json",
+      "ref": "research/w60-sanctoral-art-physical-dedupe-20261015",
+      "sha": "f192d00accb8320975af12359bb0f8cea7b84af2"
+    },
+    {
+      "path": "data/research/saints-of-day-physical-artwork-crosswalk-w60-20261015.v1.json",
+      "ref": "research/w60-sanctoral-art-physical-dedupe-20261015",
+      "sha": "75c472b95f9ccf571f536396dc6bfed952e2abf5"
+    }
+  ],
+  "counts": {
+    "newMatchedClassIIISanctoralDates": 7,
+    "newCanonical383MatchedDates": 3,
+    "newAcceptedSourceOnlyMatchedDates": 3,
+    "newLegacyNamedFileOnlyMatchedDates": 1,
+    "additionalDistinctSourceCardOrCanonicalRelationships": 9,
+    "previousUnmatchedClassIIISanctoral": 86,
+    "nowUnmatchedClassIIISanctoral": 79,
+    "previousClassIIIDatedResearchMatches": 45,
+    "newClassIIIDatedResearchMatches": 52,
+    "newFeastArtworkUserApprovals": 0,
+    "productionImageApprovals": 0
+  },
+  "rows": [
+    {
+      "date": "2026-02-04",
+      "principalId": "sancti:02-04:3:w",
+      "feast": "St. Andrew Corsini",
+      "relation": "EXACT_SAINT_SUBJECT",
+      "sourceBasis": "ACCEPTED_856",
+      "works": [
+        {
+          "sourceType": "ACCEPTED_856",
+          "sourceCardId": "commons:52088798",
+          "artistAsPresented": "Guido Reni",
+          "title": "Guido Reni (1575-1642) - Sint Andreas Corsini (1639) - Bologna Pinacoteca Nazionale - 26-04-2012 9-29-09",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_(1575-1642)_-_Sint_Andreas_Corsini_(1639)_-_Bologna_Pinacoteca_Nazionale_-_26-04-2012_9-29-09.jpg",
+          "sourceArtworkAccession": null,
+          "sourceAcceptedDecision": "IMPORT",
+          "userReviewCorrection": null,
+          "canonical383ArtworkId": null,
+          "relation": "EXACT_SAINT_SUBJECT",
+          "exactPhysicalObjectIdentityBeyondSource": "NEEDS_RECONCILIATION",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        },
+        {
+          "sourceType": "ACCEPTED_856",
+          "sourceCardId": "commons:157990",
+          "artistAsPresented": "Guido Reni",
+          "title": "German: Hl. Andreas Corsini im Gebet",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_039.jpg",
+          "sourceArtworkAccession": null,
+          "sourceAcceptedDecision": "IMPORT",
+          "userReviewCorrection": null,
+          "canonical383ArtworkId": null,
+          "relation": "EXACT_SAINT_SUBJECT",
+          "exactPhysicalObjectIdentityBeyondSource": "NEEDS_RECONCILIATION",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Two accepted photographs may depict one original by Guido Reni, or distinct Reni originals. Verify museum accessions/physical identity; do not rotate as two works until resolved.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    },
+    {
+      "date": "2026-02-12",
+      "principalId": "sancti:02-12:3:w",
+      "feast": "Seven Holy Servite Founders",
+      "relation": "EXACT_ALL_SEVEN_SERVITE_FOUNDERS",
+      "sourceBasis": "W60_NAMED_FILE",
+      "works": [
+        {
+          "sourceType": "W60_LEGACY_NAMED_FILE",
+          "sourceFile": "File:Agostino Masucci - The Madonna with the Seven Founders of the Servite Order - 1977.485 - Art Institute of Chicago.jpg",
+          "title": "The Madonna with the Seven Founders of the Servite Order",
+          "artist": "Agostino Masucci",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agostino_Masucci_-_The_Madonna_with_the_Seven_Founders_of_the_Servite_Order_-_1977.485_-_Art_Institute_of_Chicago.jpg",
+          "sourceObjectId": "AIC 1977.485; museum object 94125",
+          "photoEvidence": "Commons file CC0 1.0, 2020 x 3000; exact accession in file metadata, but native QA/crop not performed",
+          "legacyFileExactMatched": true,
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Previously recorded exact named Commons file in W60 legacy rule, not a new user visual choice.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    },
+    {
+      "date": "2026-06-05",
+      "principalId": "sancti:06-05:3:r",
+      "feast": "St. Boniface",
+      "relation": "EXACT_SAINT_SUBJECT_WITH_USER_IDENTITY_UNCERTAINTY",
+      "sourceBasis": "ACCEPTED_856",
+      "works": [
+        {
+          "sourceType": "ACCEPTED_856",
+          "sourceCardId": "kmska:k2cikv",
+          "artistAsPresented": "Schilder: Albrecht De Vriendt",
+          "title": "Heilige Bonifatius van Mainz",
+          "originalSourceUrl": "http://kmska.be/collection/work/data/k2cikv",
+          "sourceArtworkAccession": "1481",
+          "sourceAcceptedDecision": "IMPORT_WITH_CORRECTIONS",
+          "userReviewCorrection": "not sure who this chap is",
+          "canonical383ArtworkId": null,
+          "relation": "EXACT_SAINT_SUBJECT_WITH_USER_IDENTITY_UNCERTAINTY",
+          "exactPhysicalObjectIdentityBeyondSource": "NEEDS_RECONCILIATION",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "User explicitly said 'not sure who this chap is' in earlier image review. Keep only as subject research until visual identity/approval confirmed.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    },
+    {
+      "date": "2026-07-31",
+      "principalId": "sancti:07-31:3:w",
+      "feast": "St. Ignatius Loyola",
+      "relation": "EXACT_SAINT_SUBJECT",
+      "sourceBasis": "CANONICAL_383_W72_IDENTITY",
+      "works": [
+        {
+          "sourceType": "CANONICAL_383",
+          "artworkId": "W14-004",
+          "artist": "Peter Paul Rubens",
+          "title": "The Miracles of Saint Ignatius of Loyola (oil modello)",
+          "editorialFrozen": "UNREVIEWED",
+          "historicalHumanScoreInW72": 5,
+          "historicalHumanScoreSource": "W49_HISTORICAL_HUMAN",
+          "sourceObjectUrl": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+          "physicalImageSourceRecorded": true,
+          "relation": "EXACT_SAINT_SUBJECT",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        },
+        {
+          "sourceType": "CANONICAL_383",
+          "artworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Ignatius of Loyola",
+          "editorialFrozen": "APPROVED_LOCKED",
+          "historicalHumanScoreInW72": null,
+          "historicalHumanScoreSource": null,
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+          "physicalImageSourceRecorded": true,
+          "relation": "EXACT_SAINT_SUBJECT",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Distinct oil modello and altarpiece original likely; verify physical inventory before treating as two rotation choices. W72 historically rated W14-004 5 while canonical main list says UNREVIEWED: do not mutate either rating.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    },
+    {
+      "date": "2026-10-02",
+      "principalId": "sancti:10-02:3:w",
+      "feast": "Holy Guardian Angels",
+      "relation": "EXACT_GUARDIAN_ANGEL_FEAST_SUBJECT",
+      "sourceBasis": "CANONICAL_383",
+      "works": [
+        {
+          "sourceType": "CANONICAL_383",
+          "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "editorialFrozen": "APPROVED_LOCKED",
+          "historicalHumanScoreInW72": null,
+          "historicalHumanScoreSource": null,
+          "sourceObjectUrl": null,
+          "physicalImageSourceRecorded": true,
+          "relation": "EXACT_GUARDIAN_ANGEL_FEAST_SUBJECT",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "The Guardian Angel depicts one angel, thematically exact to guardian angels in general; do not conflate a particular person with a named historical saint.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    },
+    {
+      "date": "2026-10-24",
+      "principalId": "sancti:10-24:3:w",
+      "feast": "St. Raphael the Archangel",
+      "relation": "EXACT_RAPHAEL_IDENTITY",
+      "sourceBasis": "CANONICAL_383_W72_IDENTITY",
+      "works": [
+        {
+          "sourceType": "CANONICAL_383",
+          "artworkId": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+          "artist": "Attribution not recorded",
+          "title": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+          "editorialFrozen": "UNREVIEWED",
+          "historicalHumanScoreInW72": 5,
+          "historicalHumanScoreSource": "W49_HISTORICAL_HUMAN",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+          "physicalImageSourceRecorded": true,
+          "relation": "EXACT_RAPHAEL_IDENTITY",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Artwork image historically rated 5 in W72 for Raphael, canonical 383 editorial flag UNREVIEWED. Keep these two authorities separate. Pieter Lastman Tobit scene is a distinct contextual exact Raphael depiction, not already 5-star approved for this date.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    },
+    {
+      "date": "2026-11-23",
+      "principalId": "sancti:11-23:3:r",
+      "feast": "St. Clement I",
+      "relation": "EXACT_SAINT_CLEMENT_LEGEND_SCENE",
+      "sourceBasis": "ACCEPTED_856_AND_MUSEUM_IDENTITY",
+      "works": [
+        {
+          "sourceType": "ACCEPTED_856",
+          "sourceCardId": "commons:14607985",
+          "artistAsPresented": "Bernardino Fungai",
+          "title": "French: Saint Clément retrouve sa famille \" \"",
+          "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_Fungai-Saint_Cl%C3%A9ment_retrouvant_sa_famille.jpg",
+          "sourceArtworkAccession": null,
+          "sourceAcceptedDecision": "IMPORT",
+          "userReviewCorrection": null,
+          "canonical383ArtworkId": null,
+          "relation": "EXACT_SAINT_CLEMENT_LEGEND_SCENE",
+          "exactPhysicalObjectIdentityBeyondSource": "NEEDS_RECONCILIATION",
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Bernardino Fungai depicts Clement of Rome reuniting with his family; verified artist/painting 453.b. Visual aesthetic and photo terms need independent approval.",
+      "priorProtectedHeroPreserved": true,
+      "dateSpecificEditorialApprovalNew": false,
+      "sourceImageNativeCertified": false,
+      "liveHomeRotationEnabled": false
+    }
+  ],
+  "exclusions": [
+    {
+      "case": "St Boniface",
+      "reason": "Accepted source reviewer flagged uncertainty about portrait identity",
+      "status": "RESEARCH_ONLY"
+    },
+    {
+      "case": "St Raphael",
+      "reason": "Historical W72 score 5 and canonical 383 status UNREVIEWED must both be preserved, neither silently promoted",
+      "status": "RESEARCH_MATCH_ONLY"
+    },
+    {
+      "case": "St Ignatius",
+      "reason": "Rubens modello and finished Miracle of Ignatius works may be distinct, must verify physical originals before gallery rotation",
+      "status": "IDENTITY_REVIEW_PENDING"
+    },
+    {
+      "case": "St Andrew Corsini",
+      "reason": "Two Guido Reni Commons photos may refer to same physical original",
+      "status": "DEDUP_PENDING"
+    }
+  ],
+  "policy": "No automatic approval, no changes to original gallery ratings, no release, no image acquisition, €0."
+}
