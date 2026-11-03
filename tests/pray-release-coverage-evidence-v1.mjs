@@ -121,5 +121,5 @@ assert.ok(sourceHeld.editionAndLanguageHolds.some(x=>x.includes("ENGLISH_ONLY"))
 assert.equal(ledger.sequencing.length,4);
 assert.ok(ledger.sequencing[0].scope.includes("6 remaining shared/owner-evidence"));
 assert.ok(ledger.gates.safeguards.some(x=>x.includes("Rosary bead reader")));
-console.log("PASS · 41/41 Prayer routes indexed; 32 multi-text = 20 targeted component + 12 shared/owner, 9 canonical source faces; "+counts.days+" Novena day occasions, "+counts.french+" FR proper days; "+held.size+" exceptional route holds, "+exactTestFiles.size+" executable test files mapped; 0 blanket route/browser certifications, 0 original-print certificates");
+console.log("PASS · 41/41 Prayer routes indexed; 32 multi-text = 26 targeted component + 6 shared/owner, 9 canonical source faces; "+counts.days+" Novena day occasions, "+counts.french+" FR proper days; "+held.size+" exceptional route holds, "+exactTestFiles.size+" executable test files mapped; 0 blanket route/browser certifications, 0 original-print certificates");
 console.log("NEXT · source-to-card census for "+ledger.routes.filter(r=>r.nextGate==="SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE").map(r=>r.id).join(", "));
