@@ -1394,6 +1394,12 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      {label:"Source identity",value:"CL2 physical-site master · "+anchor},
      ...(newPin?[{label:"Map position",value:newPin.reviewScope==="MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE"?
        "Reviewed monastery complex · church entrance not independently verified":
+       /_HALL_/.test(newPin.reviewScope)?
+       "Reviewed community hall · Mass use and entrance not independently verified":
+       /_SEMINARY_CAMPUS_/.test(newPin.reviewScope)?
+       "Reviewed seminary campus · internal chapel and entrance not independently verified":
+       /_CONVENT_AND_CHAPEL_HERITAGE_COMPLEX_/.test(newPin.reviewScope)?
+       "Reviewed convent and chapel complex · visitor entrance not independently verified":
        "Reviewed church site · entrance not independently verified"}]:[]),
      {label:"Affiliation",value:affiliationName+" (source label only)"},
      {label:"Mass times",value:"Unverified · no timetable published"},
