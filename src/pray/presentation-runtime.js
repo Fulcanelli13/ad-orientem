@@ -3463,6 +3463,7 @@ function installLibraryParagraphFocus(m,id){
   },{passive:true});
   const lace=card.querySelector('[data-p435930-essential-card-turn]');
   lace?.addEventListener("keydown",event=>{
+   if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
    if(event.key==='Enter'||event.key===' '){
     event.preventDefault();lace.click();
    }
@@ -3874,6 +3875,7 @@ function onClick(e){
   if(detail?.tagName==='DETAILS')detail.open=!detail.open;
   return;
  }
+ if(e.target.closest?.('.aoClaudeHolyArtCredit a'))return;
  const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn]');if(!b)return;
  if(PRAYER_PILOT_ENABLED&&view==='family'&&b.hasAttribute('data-p435930-door-filter')){
   const root=b.closest('[data-ao-prayer-shelf]'),selected=b.dataset.p435930DoorFilter;
