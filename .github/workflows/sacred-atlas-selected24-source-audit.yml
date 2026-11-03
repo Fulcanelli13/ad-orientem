@@ -1,0 +1,31 @@
+name: Sacred Atlas 24 selected-source holds rights and metadata audit
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-selected24-hold-closure-20261104.v1.json'
+      - 'tools/atlas/audit-sacred-atlas-selected24-source-metadata.py'
+      - '.github/workflows/sacred-atlas-selected24-source-audit.yml'
+permissions:
+  contents: read
+jobs:
+  investigate-24-source-holds:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-selected24-hold-closure-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read current Commons exact source, copyright metadata, author and revision
+        run: python tools/atlas/audit-sacred-atlas-selected24-source-metadata.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sacred-atlas-selected24-source-holds-audit
+          path: /tmp/ao-sacred-atlas-selected24-live-source-audit.json
+          if-no-files-found: warn
+          retention-days: 14
