@@ -1,0 +1,44 @@
+name: Stage two Met Prayer originals on release branch only
+on:
+  push:
+    branches:
+      - release/prayer-latour-giordano-eight-20261103
+    paths:
+      - "data/prayer/artwork-editorial-20261101/met-two-frameless-eight-slot-release-20261103.v1.json"
+      - "scripts/art/stage-prayer-met-two-frameless.py"
+      - ".github/workflows/prayer-met-two-frameless-stage.yml"
+jobs:
+  stage-original-and-frameless:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/prayer-latour-giordano-eight-20261103
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned image decoder for zero-padding-only derivative
+        run: python -m pip install --disable-pip-version-check Pillow==12.3.0
+      - name: Verify and stage exact two original source photos
+        run: python scripts/art/stage-prayer-met-two-frameless.py
+      - name: Commit only branch-scoped museum photos and technical image proof
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/prayer/released/latour-penitent-magdalen-met-original.jpg \
+            assets/prayer/released/latour-penitent-magdalen-frameless.jpg \
+            assets/prayer/released/giordano-flight-egypt-met-original.jpg \
+            assets/prayer/released/giordano-flight-egypt-frameless.jpg \
+            data/prayer/artwork-editorial-20261101/met-two-frameless-pixel-proof-20261103.v1.json
+          if git diff --cached --quiet; then
+            echo "Already staged"
+          else
+            git commit -m "art(stage): two exact Met originals and frameless black-padding-only display photos"
+            git push origin HEAD:release/prayer-latour-giordano-eight-20261103
+          fi
