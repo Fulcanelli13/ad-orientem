@@ -103,7 +103,7 @@ try{
    assert.ok(art.loaded,"The user-selected real Home painting did not decode");
    if(!spec.remote)assert.ok(art.naturalWidth>=500&&art.naturalHeight>=500,
     "Locally released artwork did not decode at reasonable source resolution");
-   if(spec.remote)assert.match(art.src,/(commons|upload\.wikimedia)\.org/);
+   if(spec.remote)assert.match(art.src,/(?:commons\.wikimedia|upload\.wikimedia)\.org/);
    else assert.ok(art.src.endsWith(spec.asset),"Wrong original Home image for "+spec.date+": "+art.src);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    assert.ok(overflow<=1,"Mobile overflow "+spec.width+": "+overflow);
