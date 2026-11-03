@@ -131,7 +131,8 @@ try{
    // invented decoration on day two or an extra prayer stage.
    await page.evaluate(async()=>globalThis.AO_MODULES?.open?.("pray.novenas",{returnContext:null}));
    await page.waitForFunction(()=>typeof globalThis.AO_NOVENAS_V3?.open==="function",null,{timeout:20000});
-   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open({novenaId:"christmas",returnContext:null})),"christmas");
+   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open({novenaId:"christmas",returnContext:null})),true,"Christmas Novena did not open");
+   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.state()?.novenaId||globalThis.AO_NOVENAS_V3.state()?.id),"christmas","Christmas Novena changed owner");
    await page.locator(rootSel+" [data-n1-mode='guided']").evaluate(x=>x.click());
    await page.locator(rootSel+" [data-n1-begin]").evaluate(x=>x.click());
    await check("STG-novena.christmas-01",".aoN1Reader",{visible:true});
