@@ -34,21 +34,21 @@ assert.equal(r.primaryLanguage,"en");
 assert.equal(r.vernacularLanguage,"en");
 assert.equal(r.canFlip,true);
 assert.equal(r.fallback,true);
-assert.equal(r.primaryRows,EN);
+assert.deepEqual(r.primaryRows,EN);
 cases++;
 // Latin-only: render a single genuine Latin source, NO empty-language switch.
 r=resolve({latinChapter:LA},"fr",true);
 assert.equal(r.primaryLanguage,"la");
 assert.equal(r.canFlip,false);
 assert.equal(r.fallback,true);
-assert.equal(r.primaryRows,LA);
+assert.deepEqual(r.primaryRows,LA);
 cases++;
 // A single English original in FR UI must remain available without a false switch.
 r=resolve({englishChapter:EN},"fr",true);
 assert.equal(r.primaryLanguage,"en");
 assert.equal(r.canFlip,false);
 assert.equal(r.fallback,true);
-assert.equal(r.primaryRows,EN);
+assert.deepEqual(r.primaryRows,EN);
 cases++;
 r=resolve({frenchChapter:FR},"en",true);
 assert.equal(r.primaryLanguage,"fr");
