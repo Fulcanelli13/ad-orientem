@@ -53,14 +53,23 @@ const classIRows=APPROVED_CLASS_I_2026.map(row=>{
     "Date-specific Calendar identity mapping has drifted");
   assert.equal(approvedClassIHeroForDate(row.date,"unrelated:principal"),null,
     "Approved artwork must not spill into a different feast");
-  assert.equal(row.editorialApproval,"APPROVED_DATE_SPECIFIC_2026-10-19");
+  // October 30 superseded the earlier Ugolino Holy Thursday artwork.
+  // Retain the historic approval for every other Class I date.
+  assert.equal(row.editorialApproval,row.date==="2026-04-02"?
+    "LATER_USER_EXPRESSED_STRONG_PREFERENCE_20261030":
+    "APPROVED_DATE_SPECIFIC_2026-10-19");
+  if(row.date==="2026-04-02"){
+    assert.equal(row.title,"La Petite Cène");
+    assert.equal(row.artist,"Philippe de Champaigne");
+    assert.equal(row.artworkId,"ART-hilippe-de-hampaigne-a-etite-ne");
+  }
   assert.ok(row.artworkId&&row.artist&&row.title);
   if(row.imagePublicationStatus==="HELD_SOURCE_REUSE_RIGHTS")
     assert.equal(row.image,null,"Rights-held Calendar artwork must not publish image bytes");
   return {
     date:row.date,principalId:row.principalId,artworkId:row.artworkId,
     artist:row.artist,title:row.title,
-    editorial:"APPROVED_DATE_SPECIFIC",
+    editorial:row.editorialApproval,
     imageAvailableToCalendar:Boolean(row.image),
     publicationStatus:row.imagePublicationStatus,
     fullyOfflineCertified:false,

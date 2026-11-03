@@ -3,10 +3,14 @@ on:
   pull_request:
     paths:
       - "src/home/approved-dated-artwork-2026.js"
+      - "src/home/approved-2026-other-date-previews.js"
+      - "src/calendar/approved-class-i-heroes-2026.js"
       - "src/home/presentation.js"
       - "src/home/c3-gallery.js"
       - "src/home/released-date-gospel-heroes-2026.js"
       - "tests/home-approved-dated-2026-actual-render.mjs"
+      - "tests/home-approved-2026-bulk-source-gate.mjs"
+      - "tests/calendar-class-i-approved-heroes-2026.mjs"
       - "tests/home-approved-dated-2026-browser.mjs"
       - ".github/workflows/home-approved-dated-2026-render.yml"
   workflow_dispatch:
@@ -24,15 +28,18 @@ jobs:
       - name: Validate authoritative Home artwork resolver and old galleries
         run: |
           node --check src/home/approved-dated-artwork-2026.js
+          node --check src/home/approved-2026-other-date-previews.js
           node --check src/home/c3-gallery.js
           node --check src/home/presentation.js
           node tests/home-approved-dated-2026-actual-render.mjs
+          node tests/home-approved-2026-bulk-source-gate.mjs
+          node tests/calendar-class-i-approved-heroes-2026.mjs
           node tests/home-c3-gallery.mjs
           node tests/home-released-gospel-art-2026.mjs
   actual-home-phone-render:
     needs: exact-date-source-contract
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
