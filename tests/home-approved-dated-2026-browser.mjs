@@ -111,7 +111,7 @@ try{
      naturalHeight:img.naturalHeight,status:img.dataset.aoHomeImageStatus};
    });
    assert.equal(art.id,spec.artId);
-   assert.match(art.title,new RegExp(spec.title));
+   assert.ok(art.title.includes(spec.title),"Wrong painted title for "+spec.date+": "+art.title);
    assert.ok(art.loaded,"The user-selected real Home painting did not decode");
    if(!spec.remote)assert.ok(art.naturalWidth>=500&&art.naturalHeight>=500,
     "Locally released artwork did not decode at reasonable source resolution");
