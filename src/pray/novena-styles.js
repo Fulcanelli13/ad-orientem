@@ -10,6 +10,15 @@ export const NOVENA_N3_CSS=String.raw`
 #aoPray435930 .aoN1Grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 #aoPray435930 .aoN1Card{min-height:132px;text-align:left;padding:15px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:16px;background:var(--surface-1,#151c24);color:inherit;display:flex;flex-direction:column;gap:5px}
 #aoPray435930 .aoN1Card.active{border-color:var(--liturgical,#d8bd7d);background:var(--liturgical-soft,rgba(199,174,109,.08))}
+/* Source-cleared painting previews only. Keep the whole Novena card as one
+   accessible button and show each original painting without cropping. */
+#aoPray435930 .aoN1Card .aoN1MosaicPhoto{
+ display:block;width:100%;height:clamp(84px,19vw,112px);min-width:0;
+ margin:0 0 5px;background:#101016;border-radius:9px;overflow:hidden;
+}
+#aoPray435930 .aoN1Card .aoN1MosaicPhoto img{
+ display:block;width:100%;height:100%;object-fit:contain;object-position:center;
+}
 #aoPray435930 .aoN1Card b{font:600 1.03rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif))}
 #aoPray435930 .aoN1Card span{color:var(--muted,#aeb2b8);font-size:.86rem;line-height:1.35}
 #aoPray435930 .aoN1Card em{margin-top:auto;color:var(--liturgical,#d8bd7d);font-style:normal;font:600 .68rem/1.2 var(--ao-font-display,var(--font-display,system-ui));letter-spacing:.045em;text-transform:uppercase}

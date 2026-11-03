@@ -36,6 +36,26 @@ try{
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
    await page.evaluate(async()=>globalThis.AO_MODULES?.open?.("pray.novenas",{returnContext:null}));
    await page.waitForFunction(()=>typeof globalThis.AO_NOVENAS_V3?.open==="function",null,{timeout:20000});
+   for(const id of ["christmas","sacred_heart","annunciation","immaculate_heart"]){
+    const slot="COV-novena."+id;
+    const image=page.locator('#aoPray435930.open .aoN1Card[data-n1-select="'+id+'"] [data-ao-novena-mosaic-slot="'+slot+'"] img');
+    assert.equal(await image.count(),1,slot+" missing exact-photo mosaic preview");
+    const proof=await image.evaluate(async img=>{
+     img.loading="eager";await img.decode();
+     const card=img.closest("button"),r=img.getBoundingClientRect();
+     return {src:img.getAttribute("src"),naturalWidth:img.naturalWidth,fit:getComputedStyle(img).objectFit,
+      cardNestedLink:!!card?.querySelector("a"),renderedWidth:r.width,
+      horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth)};
+    });
+    assert.ok(proof.src.endsWith(resolvePrayerEditorialArtwork(slot).photo.image),slot+" preview photo mismatch");
+    assert.ok(proof.naturalWidth>300&&proof.renderedWidth>60,slot+" preview did not decode");
+    assert.equal(proof.fit,"contain",slot+" painting was cropped");
+    assert.equal(proof.cardNestedLink,false,slot+" inserted a nested interactive link in card");
+    assert.ok(proof.renderedWidth<=width&&proof.horizontalOverflow<=2,slot+" caused horizontal overflow");
+   }
+   assert.equal(await page.locator('#aoPray435930.open .aoN1Card[data-n1-select="st_therese"] [data-ao-novena-mosaic-slot]').count(),0,
+    "Do not substitute a generic photo in the St Therese protected cover");
+
    const ids=width===390?Object.keys(NOVENA_CORPUS_V4):
      ["christmas","sacred_heart","annunciation","immaculate_heart","immaculate_conception","st_anthony_nine_tuesdays","st_michael"];
    const gesture=async(dx,dy)=>{
