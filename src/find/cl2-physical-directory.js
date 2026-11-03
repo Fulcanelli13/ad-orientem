@@ -964,6 +964,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     eyebrow:affiliationName,status:"RESEARCH-LISTED · MASS UNVERIFIED",
     title:T(name),subtitle:[newPin?.correctedAddress||T(description),country].filter(Boolean).join(" · "),
     summary:"Physical site recorded in the research master. Current traditional Mass use, the minister, liturgical books and timetable have not been independently verified.",
+    summary_fr:"Lieu physique répertorié dans la base de recherche. La célébration actuelle de la messe traditionnelle, son célébrant, les livres liturgiques et les horaires n’ont pas été vérifiés indépendamment.",
     address:{formatted:newPin?.correctedAddress||T(description)||country},
     geo:newPin?Object.freeze({
      lat:newPin.lat,lng:newPin.lng,precision:newPin.precision||"site",approximate:true,

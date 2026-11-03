@@ -335,6 +335,36 @@ try{
    assert.ok(venueMetrics.left>=-2&&venueMetrics.right<=width+2&&venueMetrics.overflow<=2,
      "Approved venue photo/profile must not overflow: "+JSON.stringify(venueMetrics));
    await captures("04-approved-venue-profile");
+
+   // A map pin is not a prerequisite for a publishable church card. Validate
+   // the real map → unpinned Directory → preview → full profile interaction
+   // in each accepted 320/390/1440 language/viewport scenario.
+   await venueExpanded.locator("[data-find-close-detail]").click();
+   await page.locator("#ao-find-modular-root [data-find-query]").fill("");
+   await page.locator('[data-find-filter="view"][data-find-filter-value="map"]').click();
+   const unpinnedLink=page.locator(".aoTlmMapRail [data-tlm-map-open-unmapped]");
+   await unpinnedLink.waitFor({state:"visible",timeout:30000});
+   assert.match(await unpinnedLink.innerText(),/668/,
+     "Map must explicitly expose all filtered address-only church profiles");
+   await unpinnedLink.click();
+   await page.locator('.aoFindBody[data-find-view="list"][data-explore-lens="tlm"]')
+     .waitFor({state:"visible",timeout:30000});
+   assert.equal(Number(await page.locator(".aoFindResultMeta strong").innerText()),668,
+     "Unpinned shortcut must apply the canonical ADDRESS_ONLY filter");
+   const unpinnedCard=page.locator(".aoTlmVenueCard").first();
+   await unpinnedCard.waitFor({state:"visible",timeout:12000});
+   await unpinnedCard.click();
+   const unpinnedPreview=page.locator(".aoExploreQuickPreview");
+   await unpinnedPreview.waitFor({state:"visible",timeout:12000});
+   await unpinnedPreview.locator("[data-explore-expand-detail]").click();
+   const unpinnedProfile=page.locator(".aoTlmChurchProfile");
+   await unpinnedProfile.waitFor({state:"visible",timeout:12000});
+   assert.equal(await unpinnedProfile.locator(".aoTlmProfileEssentials .aoTlmProfileDatum").count(),3);
+   assert.ok(await unpinnedProfile.locator(".aoTlmProfileSourceDisclosure").count(),
+     "Unpinned church must preserve its source and verification section");
+   await captures("05-unpinned-church-profile");
+   assert.deepEqual(errors,[],"Unpinned card navigation produced a browser error");
+
    measurements.push({width,language,title,metrics,passed:true});
    console.log("PASS TLM source-backed preview and church profile "+width+"px "+language);
   }catch(error){

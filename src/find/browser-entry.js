@@ -380,6 +380,7 @@ export function createFindOwner(win=globalThis){
     staged.innerHTML=renderTlmMapResultRail({
       items:nearby,language:language(win),selectedId:state.selectedId,
       center:center?{lat:center.lat,lng:center.lng}:null,
+      addressOnlyCount:lastExploreViewModel.addressOnly,
     });
     const replacement=staged.firstElementChild;
     if(!replacement)return;
@@ -1799,6 +1800,16 @@ export function createFindOwner(win=globalThis){
         if(detailsOpen){const x=root?.querySelector?.(".aoTlmCl27Facet");if(x)x.open=true;}
       });
       return;
+    }
+    // A missing pin must never make a published, source-owned church profile
+    // inaccessible. Open the existing Directory with its address-only facet;
+    // never fabricate coordinates or a second list of venue records.
+    if(state.lens==="tlm"&&target?.closest?.("[data-tlm-map-open-unmapped]")){
+      event.preventDefault?.();
+      state.view="list";state.siteEvidence="ADDRESS_ONLY";
+      state.selectedId=null;state.selectedPlaceId=null;
+      state.expandDetail=false;state.expandPlace=false;state.displayLimit=24;
+      void paint();return;
     }
     if(state.lens==="tlm"&&target?.closest?.("[data-tlm-map-open-directory]")){setFilter("view","list");return;}
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
