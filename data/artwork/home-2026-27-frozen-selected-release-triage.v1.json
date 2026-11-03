@@ -1,0 +1,486 @@
+{
+  "schema": "AO_HOME_2026_27_FROZEN_SELECTED_IMAGE_RELEASE_TRIAGE_V1",
+  "basedOn": "data/artwork/2026-prior-date-artwork-evidence.v1.json",
+  "scope": "The 27 frozen exact-date selected images missing before PR #2351 annual census. Four remote Commons source previews connected; 23 image/original/rights holds remain.",
+  "counts": {
+    "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED": 16,
+    "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED": 4,
+    "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED": 4,
+    "DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD": 1,
+    "MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO": 1,
+    "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED": 1,
+    "ownerDateApprovedAt20261021": 5,
+    "ownerDateRejectedAt20261021": 1,
+    "ownerDatePendingAt20261021": 21
+  },
+  "policy": [
+    "These are pre-existing date artwork selections; no new artwork choice is made.",
+    "Remote Commons preview is not native original, crop/user quality approval, or offline release.",
+    "Selected works from AI-derived artwork must recover exact approved render bytes, not generate a new image or substitute another.",
+    "Easter Vigil has two selected prophecy artworks requiring the appropriate multiple scene slots rather than one fabricated cover.",
+    "No exact painting is silently replaced to bypass a licence or source hold.",
+    "2026-10-21 Class I Yes/No date review snapshot has five yes, one no, and 21 pending; this is historical, not proof no later decision exists."
+  ],
+  "rows": [
+    {
+      "date": "2026-01-01",
+      "observedPrincipalId": "sancti:01-01:1:w",
+      "painting": {
+        "title": "The Circumcision",
+        "artist": "Tintoretto and workshop",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-01-06",
+      "observedPrincipalId": "sancti:01-06:1:w",
+      "painting": {
+        "title": "Adoration of the Magi",
+        "artist": "Peter Paul Rubens",
+        "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "sourceObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17"
+      },
+      "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
+      "sourceResearchCandidates": 6,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
+    },
+    {
+      "date": "2026-03-01",
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "painting": {
+        "title": "The Transfiguration",
+        "artist": "Raphael",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 1,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-03-08",
+      "observedPrincipalId": "tempora:Quad3-0:1:v",
+      "painting": {
+        "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+        "artist": "AI-derived after Giacomo Cavedone",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-03-15",
+      "observedPrincipalId": "tempora:Quad4-0:1:pv",
+      "painting": {
+        "title": "Miracle of Loaves and Fishes",
+        "artist": "Giovanni Lanfranco",
+        "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "sourceObjectUrl": null
+      },
+      "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
+      "sourceResearchCandidates": 1,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
+    },
+    {
+      "date": "2026-03-22",
+      "observedPrincipalId": "tempora:Quad5-0:1:v",
+      "painting": {
+        "title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+        "artist": "AI-derived after Lucas van Doetechum",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-03-30",
+      "observedPrincipalId": "tempora:Quad6-1:1:v",
+      "painting": {
+        "title": "The Anointing at Bethany",
+        "artist": "Peter Paul Rubens and Anthony van Dyck",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-03",
+      "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+      "painting": {
+        "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+        "artist": "Giandomenico Tiepolo",
+        "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "sourceObjectUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/"
+      },
+      "decision": "DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD",
+      "sourceResearchCandidates": 1,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "no",
+      "sourcePhotoAccepted20261021": "yes"
+    },
+    {
+      "date": "2026-04-04",
+      "observedPrincipalId": "tempora:Quad6-6r:1:vw",
+      "painting": {
+        "title": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+        "artist": "James Tissot; John Martin",
+        "artworkId": null,
+        "editorialBasis": "SPECIAL_VIGIL_TWO_OT_ILLUSTRATIONS_ACCEPTED",
+        "sourceObjectUrl": null
+      },
+      "decision": "MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-06",
+      "observedPrincipalId": "tempora:Pasc0-1:1:w",
+      "painting": {
+        "title": "The Supper at Emmaus",
+        "artist": "Caravaggio",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 2,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-07",
+      "observedPrincipalId": "tempora:Pasc0-2:1:w",
+      "painting": {
+        "title": "Appearance of Christ to His Disciples",
+        "artist": "Anthony van Dyck",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-08",
+      "observedPrincipalId": "tempora:Pasc0-3:1:w",
+      "painting": {
+        "title": "The Second Miraculous Draught of Fishes — AI visual draft after James Tissot",
+        "artist": "AI-derived after James Tissot",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": "https://opencollection.brooklynmuseum.org/objects/4616"
+      },
+      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-09",
+      "observedPrincipalId": "tempora:Pasc0-4:1:w",
+      "painting": {
+        "title": "Christ and St Mary Magdalen at the Tomb",
+        "artist": "Rembrandt",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-10",
+      "observedPrincipalId": "tempora:Pasc0-5:1:w",
+      "painting": {
+        "title": "Missione degli Apostoli",
+        "artist": "Tommaso Minardi (with workshop/Fontana association)",
+        "artworkId": null,
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "sourceObjectUrl": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/99995/Minardi%20Tommaso%2C%20Missione%20degli%20apostoli"
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-04-11",
+      "observedPrincipalId": "tempora:Pasc0-6:1:w",
+      "painting": {
+        "title": "Peter and John Running to the Sepulchre",
+        "artist": "Eugène Burnand",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-05-25",
+      "observedPrincipalId": "tempora:Pasc7-1:1:r",
+      "painting": {
+        "title": "Nicodemus",
+        "artist": "Henry Ossawa Tanner",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-05-26",
+      "observedPrincipalId": "tempora:Pasc7-2:1:r",
+      "painting": {
+        "title": "The Parable of the Good Shepherd",
+        "artist": "16th-century Netherlandish; attribution to Pieter Bruegel disputed",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": "https://figgeartmuseum.org/art/collections/item/the-parable-of-the-good-shepherd-250032/922"
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-05-28",
+      "observedPrincipalId": "tempora:Pasc7-4:1:r",
+      "painting": {
+        "title": "The Sending Out of the Twelve Disciples",
+        "artist": "Anonymous North Netherlandish",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-05-29",
+      "observedPrincipalId": "tempora:Pasc7-5:1:r",
+      "painting": {
+        "title": "Christ Healing the Paralytic — AI visual draft after Johannes Wierix",
+        "artist": "AI-derived after Johannes Wierix",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Christus%2Bgeneest%2Been%2Bverlamde%2Bman%2Bdie%2Bdoor%2Bhet%2Bdak%2Bwerd%2Bneergelaten--384b55d5788d431ef93b4787b63ecdd8"
+      },
+      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-05-30",
+      "observedPrincipalId": "tempora:Pasc7-6:1:r",
+      "painting": {
+        "title": "Jesus Restoring to Health Peter's Wife's Mother",
+        "artist": "John Bridges",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-06-24",
+      "observedPrincipalId": "sancti:06-24:1:w",
+      "painting": {
+        "title": "The Birth of Saint John the Baptist",
+        "artist": "Andrea Sacchi",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-07-01",
+      "observedPrincipalId": "sancti:07-01:1:r",
+      "painting": {
+        "title": "The Lance Thrust",
+        "artist": "Anthony van Dyck",
+        "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "sourceObjectUrl": null
+      },
+      "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
+      "sourceResearchCandidates": 1,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
+    },
+    {
+      "date": "2026-08-15",
+      "observedPrincipalId": "sancti:08-15:1:w",
+      "painting": {
+        "title": "Assumption of the Virgin",
+        "artist": "Peter Paul Rubens",
+        "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED",
+      "sourceResearchCandidates": 5,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
+    },
+    {
+      "date": "2026-09-29",
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "painting": {
+        "title": "Saint Michael Defeating Satan",
+        "artist": "Guido Reni",
+        "artworkId": null,
+        "editorialBasis": "USER_DATE_APPROVED_20261027",
+        "sourceObjectUrl": null
+      },
+      "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
+      "sourceResearchCandidates": 1,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
+    },
+    {
+      "date": "2026-12-06",
+      "observedPrincipalId": "tempora:Adv2-0:1:v",
+      "painting": {
+        "title": "The Family of Christ",
+        "artist": "Michael Willmann",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-12-13",
+      "observedPrincipalId": "tempora:Adv3-0:1:pv",
+      "painting": {
+        "title": "Saint John the Baptist Interrogated about Christ",
+        "artist": "Bernardo Strozzi",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    },
+    {
+      "date": "2026-12-20",
+      "observedPrincipalId": "tempora:Adv4-0:1:v",
+      "painting": {
+        "title": "La Prédication de saint Jean Baptiste",
+        "artist": "Giovanni Battista Gaulli",
+        "artworkId": null,
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "sourceObjectUrl": null
+      },
+      "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
+      "sourceResearchCandidates": 0,
+      "noSubstitution": true,
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
+    }
+  ],
+  "sourceOwnerDecisionSnapshot": "data/artwork/home-2026-class-i-27-owner-decisions-20261021.v1.json"
+}
