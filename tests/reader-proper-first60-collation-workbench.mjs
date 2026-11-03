@@ -15,6 +15,15 @@ assert.match(html,/scroll\.scrollTop=.*anchorY/);
 assert.match(html,/sourceNoteGroupInventory/);
 assert.match(html,/fileInput/);
 assert.match(html,/sourceLatin/);
+assert.match(html,/completeSungLyrics/);
+assert.match(html,/selected1962IntroitSungText/);
+assert.match(html,/GABC shorthand/);
+assert.match(html,/Glória Patri/);
+assert.match(html,/full-sequence gate currently covers Introits/);
+assert.match(html,/lyrics\.segments/);
+assert.match(html,/lyrics\.warnings/);
+assert.match(html,/Its individual syllables have NOT yet been musically certified/);
+
 assert.match(html,/sourceGabc/);
 assert.match(html,/sourceOwner/);
 assert.match(html,/sourcePrint/);
