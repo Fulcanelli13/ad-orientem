@@ -1,6 +1,7 @@
 // C3 Living Gallery. Canonical Home routes and 1962 Calendar remain authoritative.
 import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.js";
 import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
+import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]+/g," ");
 const cleanArt=a=>a&&a.qualityGate==="PASS"&&typeof a.file==="string"&&
@@ -107,6 +108,7 @@ export function hydrateC3Art(root,state,win=globalThis){
   const mainInfo=hero?.querySelector('[data-home-c3-info="mass"]');
   if(mainInfo){mainInfo.hidden=true;mainInfo.__c3Artwork=null;}
   const selected=c3ApprovedDatedHomeArt(p,state);
+  const gospelHero=selected?null:releasedDateGospelHero2026(state,p);
   let datedPreview=null;
   if(selected&&slot){
     // The Calendar already publishes these *exact* user-approved Commons
@@ -130,6 +132,25 @@ export function hydrateC3Art(root,state,win=globalThis){
       },{once:true});
     }
   }
+  if(gospelHero&&slot){
+    // Exact 1962 selected Gospel + dated Proper; image already released for
+    // Angelus under the Met CC0 source and the approved frameless display crop.
+    slot.replaceChildren();
+    const img=win.document.createElement("img");
+    img.className="aoC3DatedImage";
+    img.src=gospelHero.image;
+    img.alt=gospelHero.title+" — "+gospelHero.artist;
+    img.loading="eager";img.decoding="async";
+    img.dataset.aoReleasedGospelDate=gospelHero.date;
+    img.dataset.aoReleasedGospelArtwork=gospelHero.artworkId;
+    slot.append(img);
+    hero?.classList?.remove("aoTodayV2ArtMissing");
+    img.addEventListener("error",()=>{
+      slot.replaceChildren();
+      hero?.classList?.add("aoTodayV2ArtMissing");
+      if(mainInfo){mainInfo.hidden=true;mainInfo.__c3Artwork=null;}
+    },{once:true});
+  }
   const mainImg=hero?.querySelector("[data-ao-home-art-slot] img");
   if(mainImg){
     const orientation=()=>{
@@ -143,6 +164,11 @@ export function hydrateC3Art(root,state,win=globalThis){
       mainInfo.__c3Artwork={title:datedPreview.title,artist:datedPreview.artist,
         date:"",rights:"Commons public-domain artwork preview (offline image not certified)",
         source:datedPreview.source,image:datedPreview.image};mainInfo.hidden=false;
+    }else if(mainInfo&&gospelHero){
+      mainInfo.__c3Artwork={title:gospelHero.title,artist:gospelHero.artist,
+        date:"",rights:gospelHero.photographRights,
+        source:gospelHero.source,image:gospelHero.original};
+      mainInfo.hidden=false;
     }else if(mainInfo&&!selected&&cleanArt(a)){
       mainInfo.__c3Artwork=info(a,mainImg);mainInfo.hidden=false;
     }

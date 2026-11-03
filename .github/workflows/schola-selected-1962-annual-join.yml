@@ -9,6 +9,11 @@ on:
       - 'src/mass/reader-schola-selected-pregospel-review.js'
       - 'scripts/schola/build-2026-selected-pregospel-queue.mjs'
       - 'tests/reader-schola-selected-pregospel-review.mjs'
+      - 'src/mass/reader-proper-first60-print-review.js'
+      - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
+      - 'tests/reader-proper-first60-print-review.mjs'
+      - 'tests/reader-proper-first60-collation-workbench.mjs'
+      - 'tools/mass/proper-1961-first60-collation.html'
       - 'tests/reader-schola-selected-full-source-crosswalk.mjs'
       - 'scripts/schola/build-1962-full-coverage.mjs'
       - 'tests/reader-schola-selected-queue-crosswalk.mjs'
@@ -49,6 +54,12 @@ jobs:
         run: node scripts/schola/build-2026-selected-repertoire.mjs
       - name: Review actual selected pre-Gospel scores against cached immutable Latin sources
         run: node scripts/schola/build-2026-selected-pregospel-queue.mjs
+      - name: Source-preserving editorial workbench and syntax acceptance
+        run: node tests/reader-proper-first60-collation-workbench.mjs
+      - name: Generate first 60 source-backed Proper print-collation candidates
+        run: node scripts/schola/build-2026-proper-first60-print-review.mjs
+      - name: Verify review-only publication boundary
+        run: node tests/reader-proper-first60-print-review.mjs
       - name: Store selected repertoire, full source and pre-Gospel review queues
         if: always()
         uses: actions/upload-artifact@v4
