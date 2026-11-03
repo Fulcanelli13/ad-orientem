@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {auditFirst60CompleteAntiphonText,FIRST60_TEXT_GATE_SCHEMA}
  from "../src/mass/reader-proper-first60-antiphon-text.js";
+import {sourceNoteGroupInventory} from "../src/mass/reader-kyriale-source-note-groups.js";
 const root=new URL("../.tmp/schola-1962-selected-annual/",import.meta.url);
 const read=name=>JSON.parse(readFileSync(new URL(name,root),"utf8"));
 const source=read("2026-selected-proper-first60-print-review.json");
@@ -27,8 +28,11 @@ assert.ok(audit.scoreEvidence.every(x=>!x.publicScore&&
  (x.evidence.originalScoreNoteBearingTokens>0||
   x.evidence.noteGroupInventoryStatus==="PROPER_GABC_NOTE_GROUP_TOKENIZATION_HOLD")));
 assert.equal(audit.publication.publicReaderScores,0);
-assert.ok(audit.counts.noteGroupTokenizationHolds>=1,
- "Proper punctuation-to-neume parsing failures must be recorded as holds");
+assert.equal(audit.counts.noteGroupTokenizationHolds,0,
+ "All first-60 GABC source groups must be mechanically tokenizable; musical parity remains unreviewed");
+const braced=sourceNoteGroupInventory("name: Proper sample;\\n%%\\n(c4) Al(le){ia} :(f.) (::)");
+assert.equal(braced.divisionAttachedTokens,1);
+assert.equal(braced.groups.at(-1).syllable,"ia");
 const tampered=structuredClone(source);
 tampered.candidates[0].scoreGabc+="alteration";
 assert.throws(()=>auditFirst60CompleteAntiphonText({packet:tampered}),
