@@ -14,7 +14,7 @@ const data={englishChapter:EN,frenchChapter:FR,latinChapter:LA,reference:{start:
 assert.deepEqual(PENITENTIAL_PSALMS_VULGATE.map(x=>x.trad),[6,31,37,50,101,129,142]);
 assert.deepEqual(PENITENTIAL_PSALMS_VULGATE.map(x=>x.modern),[6,32,38,51,102,130,143]);
 for(const psalm of PENITENTIAL_PSALMS_VULGATE)assert.equal(penitentialPsalmReference(psalm),"Psalms "+psalm.trad+":1");
-assert.equal(PENITENTIAL_PSALMS_TEXT_STATUS.verification.includes("not"),true);
+assert.ok(PENITENTIAL_PSALMS_TEXT_STATUS.verification.includes("independently certified"));
 let cases=0;
 for(const requested of ["en","fr"]){
  for(const full of [false,true]){
@@ -102,7 +102,7 @@ assert.ok(lit.includes("if(LIT.language!==lang())"),"Changing language must inva
 assert.ok(lit.includes("LIT.error")&&lit.includes("data-p435930-lit-retry"),"Invalid historical transcript must fail visibly");
 
 // Tenebrae remains source-owned, local, and fully aligned across all three
-// days and both Hours. The core corpus test checks the actual 252 source steps
+// days and both Hours. The core corpus test checks 126 source steps × 3 language faces
 // (3 days × [32 Matins + 10 Lauds]) in all three languages.
 assert.equal(TENEBRAE_DAY_NAMES.en.length,3);
 assert.equal(TENEBRAE_DAY_NAMES.fr.length,3);
@@ -114,6 +114,6 @@ const ten=runtime.slice(runtime.indexOf("async function ensureTenebrae(){"),runt
 assert.ok(ten.includes("loadTenebraeHour({dayIndex:TEN.day,hour:TEN.hour})"),"Tenebrae must use local source compiler");
 assert.ok(ten.includes("renderTenebraeBody({day:TEN.day,hour:TEN.hour"),"Canonical source must feed existing Office reader");
 const tenPresentation=readFileSync(new URL("../src/pray/tenebrae-presentation.js",import.meta.url),"utf8");
-assert.ok(tenPresentation.includes("face==="latin"?current.latin:current[loc]"),"Switch must preserve original sourced Office faces");
+assert.ok(tenPresentation.includes('face==="latin"?current.latin:current[loc]'),"Switch must preserve original sourced Office faces");
 assert.ok(tenPresentation.includes('lang="'),"Tenebrae text must label its language");
 console.log("PASS · "+cases+" real Scripture face cases and 7 Penitential Psalm references; 1883 EN/1862 FR private Litany source separation; 3-day Tenebrae with six local Office hour models");
