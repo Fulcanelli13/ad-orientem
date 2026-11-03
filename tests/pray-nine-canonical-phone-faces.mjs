@@ -172,6 +172,16 @@ try{
      vernUnits=await checkChoirText(vernacularLanguage);
      const flip=reader.locator('[data-ao-choir-prayer="'+id+'"] [data-p435930-choir-flip]');
      assert.equal(await flip.count(),1,id+" lost its source-owned Choir Latin flip");
+     const visibility=await flip.evaluate(el=>{
+      const chain=[];for(let node=el;node&&chain.length<10;node=node.parentElement){
+       const r=node.getBoundingClientRect(),cs=getComputedStyle(node);
+       chain.push({name:node.tagName+"."+String(node.className||"").slice(0,80),
+        display:cs.display,visibility:cs.visibility,opacity:cs.opacity,
+        width:r.width,height:r.height,hidden:node.hidden,
+        ariaHidden:node.getAttribute("aria-hidden")});
+      }return chain;
+     });
+     assert.ok(await flip.isVisible(),id+" Choir Latin control is not user-visible: "+JSON.stringify(visibility));
      await flip.click();
      latinUnits=await checkChoirText("la");
      await flip.click();
