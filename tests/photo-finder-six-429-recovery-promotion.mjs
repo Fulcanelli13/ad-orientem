@@ -35,8 +35,24 @@ for(const entry of r.images){
 }
 const held=new Set(stage.exceptions.map(x=>x.place_id));
 assert.deepEqual(held,new Set(["place:PY:caacupe-our-lady-miracles","place:KW:holy-family-cocathedral-kuwait-city"]));
-for(const pid of held)assert.ok(!byId.has(pid),"Original mismatch must remain held: "+pid);
+// Preserve the historical failed decode attempts as recorded. A later independently
+// verified source release may supersede an old *technical* hold only when its exact
+// original, licence and derivative bytes are pinned to the new evidence ledger.
+const r7=load("data/geography/research/sacred-atlas-round7-published-cover-evidence-20261103.v1.json");
+assert.ok(r7.current_commons_sha1_and_license_verified&&r7.current_source_original_bytes_verified&&r7.original_user_choices_preserved&&r7.no_unselected_substitutions);
+for(const pid of held){
+ if(pid==="place:PY:caacupe-our-lady-miracles"){
+  const current=byId.get(pid),published=r7.published.find(x=>x.place_id===pid);
+  assert.ok(current&&published,"Historical Caacupé decode hold requires later source-verified publication");
+  assert.equal(current.source_sha1,published.source_sha1);
+  assert.equal(current.derivative_sha256,published.derivative_sha256);
+  assert.equal(current.asset_path,published.asset_path);
+  assert.equal(createHash("sha256").update(readFileSync(new URL("../"+current.asset_path,import.meta.url))).digest("hex"),published.derivative_sha256);
+ }else{
+  assert.ok(!byId.has(pid),"Unresolved original mismatch must remain held: "+pid);
+ }
+}
 assert.ok(!byId.has("place:CU:el-cobre-caridad-basilica"),"El Cobre visual watermark remains held");
 assert.equal(existsSync(new URL("../assets/approved/place-media/pf-1c53ceb1de9078a981f323.webp",import.meta.url)),false);
 assert.ok(r.no_new_editorial_votes&&r.no_approved_image_replacements&&r.no_gallery_or_place_registry_changes&&r.no_photo_downloads_during_this_promotion&&r.el_cobre_visual_hold_preserved);
-console.log("PASS six exact recoveries from eight frozen 429 exceptions; 301 existing protected, two mismatch holds and El Cobre visual hold");
+console.log("PASS six exact recoveries from eight frozen 429 exceptions; 301 existing protected, historical decode attempts retained; Kuwait and El Cobre holds preserved; Caacupé reverified in Round 7");
