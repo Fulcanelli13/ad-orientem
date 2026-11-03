@@ -13,7 +13,10 @@ const incipit=p=>{
  * registry. Art is only inserted if its pre-approved URL is explicitly passed.
  * No generated/unknown plate is substituted for an absent painting.
  */
-export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title}){
+const safeImage=artUrl=>typeof artUrl==="string"&&(
+ /^https:\/\//.test(artUrl)||/^\/assets\/[a-zA-Z0-9/_-]+\.(?:jpe?g|png|webp)$/i.test(artUrl)
+ );
+export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title,artFor=()=>""}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  const cards=ids.filter(id=>prayers?.[id]);
  return '<section class="aoClaudeHolyCase" data-ao-claude-holy-case>'+
@@ -21,7 +24,8 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
   '<div class="aoClaudeHolyFan">'+cards.map((id,i)=>{
     const p=prayers[id];
     return '<button type="button" data-p435930-lib-open="'+esc(id)+'" aria-label="'+esc(p.title||id)+'">'+
-      '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate" aria-hidden="true"></div>'+
+      '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate" aria-hidden="true">'+
+       (safeImage(artFor(id))?'<img src="'+esc(artFor(id))+'" alt="" loading="lazy" decoding="async">':'')+'</div>'+
       '<small lang="la">'+esc(incipit(p)||p.title)+'</small></div></button>';
    }).join('')+'</div></section>';
 }
@@ -43,7 +47,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  }).join("");
  const latinBlock=bilingual?'<div class="aoClaudeHolyLatinText" lang="la">'+latinBeats.map((part,i)=>
   '<p class="aoP435930EssentialBeat" data-ao-essential-index="la-'+i+'">'+esc(part.text.trim())+'</p>').join('')+'</div>':'';
- const image=artUrl&&/^https:\/\//.test(artUrl)?
+ const image=safeImage(artUrl)?
   '<img src="'+esc(artUrl)+'" alt="" loading="lazy" decoding="async">':'';
  return '<article class="aoP435930Prayer aoP435930EssentialCard aoClaudeHolyCard" data-ao-essential-card="'+esc(id)+'" data-ao-claude-holy-card>'+
   '<div class="aoClaudeHolyDeck"><div class="aoClaudeHolyLace'+(flipped?' flip':'')+
