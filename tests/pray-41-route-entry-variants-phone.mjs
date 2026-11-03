@@ -102,7 +102,7 @@ try{
      row.sourceFamily==="traditional-pray"?"traditional-pray":internalPrayerView(id);
     assert.ok(expected,id+" has no known runtime owner");
     await page.waitForFunction(({expected,id})=>{
-     if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell");
+     if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']")&&globalThis.AO_ROSARY_V381?.steps?.()?.length>60;
      const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
      return m?.dataset.aoPrayView===expected &&
       (expected!=="traditional-pray"||m.dataset.aoTraditionalPrayRoute===id);
