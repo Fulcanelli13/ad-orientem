@@ -96,8 +96,8 @@ try{
      "Attribution must use the dark atlas palette: "+JSON.stringify(credits));
    const rail=page.locator("#ao-find-modular-root [data-mapcn-discover-rail]");
    await rail.waitFor({state:"visible"});
-   assert.equal(await rail.getAttribute("data-discover-expanded"),"false",
-     "The immersive map must begin with Discover in compact mode");
+   assert.equal(await rail.getAttribute("data-discover-expanded"),mobile?"false":"true",
+     "Phone Discover starts compact; approved desktop screen 7 starts with a full source-backed left results rail");
    assert.ok(await rail.locator("button[data-explore-open-place]").count()>0,
      "MapCN Discover must contain canonical actionable Places");
    assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/Places of the saints/i,
@@ -111,14 +111,21 @@ try{
      &&railGeometry.height<=96&&railGeometry.height>=60,
      "Collapsed mobile Discover must leave the map visible: "+JSON.stringify(railGeometry));
    }else{
-    // Approved desktop screen 7 deliberately docks results at full viewport
-    // height even while the Discover disclosure says compact/false.
+    // Approved desktop screen 7 docks results at full viewport height by default.
     assert.ok(railGeometry.width>=250&&railGeometry.width<=380&&
      railGeometry.left>=8&&railGeometry.top>=8&&railGeometry.bottom<=961&&
      railGeometry.height>=700,
      "Desktop Discover must retain its permanent left result rail: "+JSON.stringify(railGeometry));
    }
    await page.screenshot({path:resolve(out,"explore-"+width+"-compact-discovery.png"),fullPage:false});
+   if(!mobile){
+    // The desktop header can deliberately retract to expose additional map,
+    // but returns to full left results on the next click.
+    await rail.locator("[data-mapcn-discover-toggle]").click();
+    assert.equal(await rail.getAttribute("data-discover-expanded"),"false");
+    const collapsed=await rail.evaluate(el=>el.getBoundingClientRect().height);
+    assert.ok(collapsed>=60&&collapsed<=100,"Desktop rail must retract only on explicit request: "+collapsed);
+   }
    await rail.locator("[data-mapcn-discover-toggle]").click();
    assert.equal(await rail.getAttribute("data-discover-expanded"),"true");
    assert.equal(await rail.locator("[data-mapcn-discover-toggle]").getAttribute("aria-expanded"),"true");
