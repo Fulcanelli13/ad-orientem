@@ -1,0 +1,59 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND2_TWO_PUBLISHED_IMAGE_BYTES_V1",
+  "reviewed_on": "2026-11-03",
+  "source_manifest": "data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json",
+  "published": 2,
+  "held": 2,
+  "new_approved_assets": [
+    {
+      "round1_number": 7,
+      "media_id": "ao-guadalupe-original-tilma-fonseca-mata-2013",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "original_sha1": "ce9c6183e575184f183cde1281caef8eb686e6b3",
+      "archive_download_expected_sha256": "874c4222130599b6662e16e9b474fe4bbe6d516eebb9efd63dd6902fec539b1d",
+      "commons_api_sha1": "ce9c6183e575184f183cde1281caef8eb686e6b3",
+      "original_dimensions": [
+        1429,
+        1820
+      ],
+      "archive_expected_dhash": "2f7b7b1f8fe3d3c3",
+      "actual_original_dhash": "2f7b7b1f8fe3d3c3",
+      "archive_visual_hamming_distance": 0,
+      "derivative_sha256": "2e0fb3b432255c5e7fab0d2a31a9e19e8c837cbc48c80b4ba8683ba29f6c9ea1",
+      "derivative_dimensions": [
+        1256,
+        1600
+      ],
+      "asset_path": "assets/approved/place-gallery/MX-guadalupe-original-tilma-fonseca-mata-2013.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Tilma_de_San_Juan_Diego_(Nuestra_Se%C3%B1ora_de_Guadalupe).jpg",
+      "photo_author": "Juan Carlos Fonseca Mata",
+      "licence": "CC BY-SA 4.0",
+      "rights_citation": "https://commons.wikimedia.org/wiki/File:Tilma_de_San_Juan_Diego_(Nuestra_Se%C3%B1ora_de_Guadalupe).jpg"
+    },
+    {
+      "round1_number": 10,
+      "media_id": "ao-mariazell-original-magna-mater-launus-2017",
+      "place_id": "place:AT:mariazell-basilica",
+      "original_sha1": "2d43397542580f7bb3fa448fbd8be7abbe78182f",
+      "archive_download_expected_sha256": "f2a7b2409805d6c4147c33c365a386123f0fd65d38800c11e3ffce64b10f9009",
+      "commons_api_sha1": "2d43397542580f7bb3fa448fbd8be7abbe78182f",
+      "original_dimensions": [
+        2448,
+        3264
+      ],
+      "archive_expected_dhash": "cc4d33d6d64f7329",
+      "actual_original_dhash": "cc4d33d6d64f7329",
+      "archive_visual_hamming_distance": 0,
+      "derivative_sha256": "8ec6099afc8b155c378b99b33ebe00fbbb8d4ca4dfc9a9da267097a1ff083ee5",
+      "derivative_dimensions": [
+        1200,
+        1600
+      ],
+      "asset_path": "assets/approved/place-gallery/AT-mariazell-original-magna-mater-launus-2017.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Gnadenstatue_Mariazell.jpg",
+      "photo_author": "Launus",
+      "licence": "CC BY-SA 4.0",
+      "rights_citation": "https://www.basilika-mariazell.at/site/en/basilika"
+    }
+  ]
+}
