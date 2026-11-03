@@ -24,6 +24,19 @@ export const CHOIR_F02_F03_CSS=String.raw`
  border-radius:8px;background:transparent;color:var(--liturgical,#d7bb84);
  font:500 12px/1.25 var(--ao-font-ui,system-ui,sans-serif);
 }
+/* The condensed Library reader hides duplicate prayer headings. Keep the
+   source-owned F02 Latin switch reachable while leaving the redundant title
+   hidden; F03 litany uses its own Aa language menu. */
+#aoPray435930 .aoP435930LibraryReader .aoChoirPrayer:not(.aoClaudeChoirPrayer) .aoP435930PrayerHead{
+ display:flex!important;justify-content:flex-end!important;align-items:center!important;
+ margin:0 0 9px!important;padding:0!important;border:0!important;
+}
+#aoPray435930 .aoP435930LibraryReader .aoChoirPrayer:not(.aoClaudeChoirPrayer) .aoP435930PrayerHead>div{
+ display:none!important;
+}
+#aoPray435930 .aoP435930LibraryReader .aoChoirPrayer:not(.aoClaudeChoirPrayer) .aoChoirLanguage{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+}
 #aoPray435930 .aoChoirLanguage:focus-visible{
  outline:2px solid var(--liturgical,#d7bb84);outline-offset:3px;
 }
