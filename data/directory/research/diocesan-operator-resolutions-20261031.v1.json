@@ -1,0 +1,189 @@
+{
+  "schema": "AO_DIOCESAN_OPERATOR_RESOLUTION_BATCH_V1",
+  "as_of": "2026-10-31",
+  "scope": "Only original diocesan-source-labelled records, not a change to the worldwide venue master",
+  "policy": "Institution/confraternity operator identity is distinct from diocesan jurisdiction; keep all existing pins provisional and all photo rights unresolved. In particular, the name Oratory does NOT imply a religious institute.",
+  "summary": {
+    "reclassified": 9,
+    "newly_operator_excluded": 7,
+    "confirmed_diocesan_ministry_but_pin_held": 2,
+    "remaining_operator_pending": 1,
+    "operator_excluded_total": 22,
+    "remaining_missing_building_pins": 4,
+    "source_marker_unassessed": 434,
+    "photo_approved": 0
+  },
+  "decisions": [
+    {
+      "physical_group_id": "RG-1AB4B0A20509",
+      "name": "Oratory of S.s. Pietro and Caterina",
+      "country": "IT",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "SAVONA_SS_PIETRO_CATERINA_CONFRATERNITY_SITE",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://www.visitsavona.com/en/cosa-vedere/edifici-religiosi/oratory-of-saint-peter-and-saint-catherine",
+        "https://luoghidellacultura.regione.liguria.it/index.php/itinerari/itinerario-oratori-sv"
+      ],
+      "reason": "Savona visitor authority and Liguria regional itinerary identify the present Ss Pietro e Caterina oratory as the confraternity's seat; retain current mapped marker as unassessed.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-4F6045FD2887",
+      "name": "Oratorio dei Bianchi",
+      "country": "IT",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "RAPALLO_BIANCHI_ACTIVE_CONFRATERNITY_SITE",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://fuorigenova.cittametropolitana.genova.it/node/4817",
+        "https://hellorapallo.it/cosa-vedere/oratorio-dei-bianchi/",
+        "https://radioaldebaran.it/torna-sensus-incontro-dedicato-alle-sculture-in-legno-domenica-prossima-a-rapallo/334147"
+      ],
+      "reason": "Geocoded site is Rapallo's Oratorio dei Bianchi, not a similarly named oratory elsewhere; municipal metropolitan source locates it in Vico della Rosa; the confraternity remains active.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-A915EDDAACCB",
+      "name": "Oratorium Heiliger Vierzehn Nothelfer (Oratory of the Fourteen Holy Helpers)",
+      "country": "DE",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "SSPX_14_NOTHELFER_WUERZBURG_CHAPEL_MINISTRY",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://fsspx.de/de/events/ewige-anbetung-wuerzburg-51770",
+        "https://www.latinmassdir.org/venue/oratorium-heiliger-vierzehn-nothelfer-oratory-of-the-fourteen-holy-helpers-wurzburg-germany/"
+      ],
+      "reason": "SSPX's own 24 July 2026 liturgical event explicitly identifies its chapel at Semmelstrasse 12, Wurzburg. The inherited coordinate is not independently checked as the chapel footprint.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-2F2D3B4C5AAD",
+      "name": "The Oratory of Ss. Gregory and Augustine",
+      "country": "US",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "ARCHDIOCESE_ST_LOUIS_PRIESTS_NON_TERRITORIAL_ORATORY",
+      "diocesan_photo_gate": "INHERITED_POINT_UNASSESSED",
+      "independent_sources": [
+        "https://stlouislatinmass.com/about-us/about-us",
+        "https://stlouislatinmass.com/contact-us"
+      ],
+      "reason": "The oratory's official About Us explicitly states it is uniquely administered by priests of the Archdiocese of St Louis. It has met since 2018 at St Luke the Evangelist church, 7230 Dale Ave; its inherited pin still needs exact building verification.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-E538853025E6",
+      "name": "St Clement Oratory",
+      "country": "US",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "BISMARCK_DIOCESE_ST_CLEMENT_HAYMARSH_ORATORY",
+      "diocesan_photo_gate": "INHERITED_POINT_UNASSESSED",
+      "independent_sources": [
+        "https://bismarckdiocese.com/oratory",
+        "https://bismarckdiocese.com/parishfinder",
+        "https://bismarckdiocese.com/news/provisions-for-the-latin-mass"
+      ],
+      "reason": "The Diocese of Bismarck lists St Clement Oratory under its own parish finder, says oversight transferred to the diocese in 2017, and regulates its traditional Mass in the 2021 diocesan decree. It is at Haymarsh (Glen Ullin postal area), not necessarily in Glen Ullin town; inherited point remains unassessed.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-FBA216861DF9",
+      "name": "Chapel of the Order of the Carmelite Sisters",
+      "country": "PL",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "ELK_DISCALCED_CARMELITE_SISTERS_MONASTERY_CHAPEL",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://karmel.elk.pl/o-nas/o-klasztorze.html",
+        "https://karmel.elk.pl/aktualnosci/uroczystosc-poswiecenia-kaplicy-i-zalozenie-klauzury-papieskiej-u-s-karmelitanek-w-witynach-k-elku.html",
+        "https://www.latinmassdir.org/country/pl/?communities=&days=&exclusive=&venue_status=&view=list"
+      ],
+      "reason": "The source label's Ełk Carmelite Sisters chapel matches the Discalced Carmelite nuns' own account of their Wityny monastery chapel, built and dedicated for the community. Do not treat the priest who celebrates Mass there as the chapel operator or claim exact chapel footprint.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-129AD2FB533B",
+      "name": "Chapel in Mother of God, Queen of Poland Parish",
+      "country": "PL",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "WOLOMIN_DIOCESAN_PARISH_CHAPEL_IBP_CELEBRANT_MIXED_NOT_DIOCESAN_ONLY_PHOTO",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://instytutdobregopasterza.pl/wolomin/",
+        "https://mbkpwolomin.pl/index.php/msze",
+        "https://wolomin.org/parafie/"
+      ],
+      "reason": "Wołomin parish church identifies the parish chapel and historical Mass; the Institute of the Good Shepherd explicitly documents its clergy's ministry and the 2026 change of priest. Exclusion applies ONLY to diocesan-only photography; physical chapel ownership remains diocesan, institute ministry separately attributed.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-447C70006F0D",
+      "name": "Oratorio Sant’Antonio Abate",
+      "country": "IT",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "GENOVA_SANT_ANTONIO_ABATE_MARINA_CONFRATERNITY_ORATORY",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/genova/",
+        "https://telenord.it/genova-oratorio-di-vico-sotto-le-murette-la-storia-della-statua-di-san-giacomo-imprigionata-da-40-anni-55829"
+      ],
+      "reason": "The Genoa Sant Antonio Abate alla Marina oratory is in Vico sotto le Murette, not the similarly dedicated Pieve Ligure oratory. Sources explicitly associate active confraternity and TLM celebration.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    },
+    {
+      "physical_group_id": "RG-EA8DB7E608E7",
+      "name": "Venerável Ordem Terceira de Nossa Senhora do Monte Carmelo",
+      "country": "BR",
+      "source_label": "Diocesan",
+      "adjudicated_operator_scope": "CAMPOS_VENERAVEL_TERCEIRA_ORDEM_CARMO_OWN_CHURCH",
+      "diocesan_photo_gate": "OPERATOR_EXCLUDED",
+      "independent_sources": [
+        "https://escudocarmelitano.blogspot.com/2006/04/igreja-do-carmo-campos-rj.html",
+        "https://culturacamposrjigrejas.blogspot.com/",
+        "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+      ],
+      "reason": "The church of Our Lady of Carmel, Rua Treze de Maio 44 in Campos, belongs to the historic Third Order Carmelite confraternity association, not to a diocesan-only church ministry category.",
+      "coordinate_precision": "source_marker_unassessed",
+      "pin_promoted": false,
+      "photo_search_started": false,
+      "photo_approved": false
+    }
+  ],
+  "remaining_operator_review": [
+    {
+      "physical_group_id": "RG-39F55D306310",
+      "name": "Igreja São Francisco",
+      "country": "BR",
+      "open_issue": "Exact target 'Igreja São Francisco' in Itabaiana, Sergipe cannot be uniquely matched to the sourced diocesan Capela São Francisco de Assis at Pov. Gandu II. Locality-only inherited pin must not be converted into that capela without explicit source-id crosswalk. Operator and exact building both remain unresolved.",
+      "source_leads": [
+        "https://arquidiocesedearacaju.org/paroquias/paroquia-imaculada-conceicao-e-sao-lucas-itabaiana-se",
+        "https://www.liriocatolico.com.br/horario_missa/cidade/itabaiana-se/"
+      ],
+      "prohibit_automatic_photo": true
+    }
+  ]
+}

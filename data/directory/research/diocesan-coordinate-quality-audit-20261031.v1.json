@@ -29,9 +29,9 @@
     },
     "photo_gates": {
       "REVIEWED_PHYSICAL_SITE_NO_PHOTO_APPROVAL": 69,
-      "INHERITED_POINT_UNASSESSED": 484,
-      "OPERATOR_REQUIRES_REVIEW": 10,
-      "OPERATOR_EXCLUDED": 15,
+      "INHERITED_POINT_UNASSESSED": 486,
+      "OPERATOR_EXCLUDED": 22,
+      "OPERATOR_REQUIRES_REVIEW": 1,
       "MISSING_COORDINATE": 4,
       "DISTINCT_BUILDING_OR_INTERIOR_PENDING": 2,
       "PUBLISHED_PROVISIONAL_NEEDS_EXACT_SITE_PHOTO_GATE": 3
@@ -919,14 +919,16 @@
       "coordinate_ref": "AO-EUR-PL-010",
       "coordinate_evidence_url": "https://adorientem.church/find/chapel-in-mother-of-god-queen-of-poland-parish-05-200-woomin-0c9dee8b",
       "review_scope": null,
-      "operator_scope": "DIOCESAN_PARISH_CHAPEL_IBP_MINISTRY_OPERATOR_EMBLEM_PENDING",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
+      "operator_scope": "WOLOMIN_DIOCESAN_PARISH_CHAPEL_IBP_CELEBRANT_MIXED_NOT_DIOCESAN_ONLY_PHOTO",
+      "photo_gate": "OPERATOR_EXCLUDED",
       "photo_research_started": false,
       "operator_evidence": [
         "https://instytutdobregopasterza.pl/wolomin/",
-        "https://diecezja.waw.pl/miejscowosc/wolomin/"
+        "https://mbkpwolomin.pl/index.php/msze",
+        "https://wolomin.org/parafie/"
       ],
-      "operator_note": "Chapel belongs to Matki Bożej Królowej Polski diocesan parish, Kurkowa 35; Institute of the Good Shepherd provides traditional-liturgy ministry. Exclude from diocesan-only photo search until emblem/operator policy reviewed; don't conflate parish ownership with celebrant affiliation."
+      "operator_note": "Exact venue is the diocesan Matki Bożej Królowej Polski parish chapel at Kurkowa 35, with liturgy and pastoral ministry by IBP, affirmed by both the Institute's local page and the diocesan parish's Mass schedule. Exclude only from the diocesan-only photo-matching lane because the venue is mixed parish/institute ministry; DO NOT assert IBP owns the chapel or change church affiliation. Preserve institute label only for expressly attested ministry.",
+      "operator_review_scope": "OPERATOR_ONLY_DO_NOT_PROMOTE_COORDINATE_OR_PHOTO_20261031"
     },
     {
       "physical_group_id": "RG-12E1E9D493AB",
@@ -1373,9 +1375,14 @@
       "coordinate_ref": "AO-EUR-IT-057",
       "coordinate_evidence_url": "https://adorientem.church/find/oratory-of-s-s-pietro-and-caterina-17100-savona-sv-7ab2fe4d",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "SAVONA_SS_PIETRO_CATERINA_CONFRATERNITY_SITE",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://www.visitsavona.com/en/cosa-vedere/edifici-religiosi/oratory-of-saint-peter-and-saint-catherine",
+        "https://luoghidellacultura.regione.liguria.it/index.php/itinerari/itinerario-oratori-sv"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-1ACD23422866",
@@ -2373,9 +2380,14 @@
       "coordinate_ref": "AO-AMER-R28-US-39-13",
       "coordinate_evidence_url": "https://adorientem.church/find/the-oratory-of-ss-gregory-and-augustine-richmond-heights-cdfcc7fa",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "ARCHDIOCESE_ST_LOUIS_PRIESTS_NON_TERRITORIAL_ORATORY",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://stlouislatinmass.com/about-us/about-us",
+        "https://stlouislatinmass.com/contact-us"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-2FFE4B7147D4",
@@ -2875,7 +2887,13 @@
       "review_scope": null,
       "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
       "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "photo_research_started": false,
+      "operator_note": "Exact target 'Igreja São Francisco' in Itabaiana, Sergipe cannot be uniquely matched to the sourced diocesan Capela São Francisco de Assis at Pov. Gandu II. Locality-only inherited pin must not be converted into that capela without explicit source-id crosswalk. Operator and exact building both remain unresolved.",
+      "operator_evidence": [
+        "https://arquidiocesedearacaju.org/paroquias/paroquia-imaculada-conceicao-e-sao-lucas-itabaiana-se",
+        "https://www.liriocatolico.com.br/horario_missa/cidade/itabaiana-se/"
+      ],
+      "operator_review_scope": "IDENTITY_AMBIGUOUS_CHURCH_VS_PARISH_CHAPEL_NOT_SAME_SOURCE_DO_NOT_PROMOTE"
     },
     {
       "physical_group_id": "RG-3A79242D8ABF",
@@ -3357,9 +3375,15 @@
       "coordinate_ref": "AO-EUR-IT-054",
       "coordinate_evidence_url": "https://adorientem.church/find/oratorio-santantonio-abate-16128-genova-ge-63a43c8c",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "GENOVA_SANT_ANTONIO_ABATE_MARINA_CONFRATERNITY_ORATORY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "16128 Genova source corresponds to Oratorio di S Antonio Abate alla Marina, Vico sotto le Murette, not the separately named Pieve Ligure oratory. Contemporary local account names active Confraternita di Sant Antonio Abate as its seat and says Gregorian Latin Mass is celebrated there. This is a confraternity venue, not a diocesan-run site for photo matching. Retain unreviewed inherited coordinates.",
+      "operator_evidence": [
+        "https://www.unavoceitalia.org/wordpress/messe/genova/",
+        "https://telenord.it/genova-oratorio-di-vico-sotto-le-murette-la-storia-della-statua-di-san-giacomo-imprigionata-da-40-anni-55829"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_DO_NOT_PROMOTE_COORDINATE_OR_PHOTO_20261031"
     },
     {
       "physical_group_id": "RG-44AA907646EA",
@@ -3977,9 +4001,15 @@
       "coordinate_ref": "AO-EUR-IT-055",
       "coordinate_evidence_url": "https://adorientem.church/find/oratorio-dei-bianchi-11-4bdbb196",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "RAPALLO_BIANCHI_ACTIVE_CONFRATERNITY_SITE",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://fuorigenova.cittametropolitana.genova.it/node/4817",
+        "https://hellorapallo.it/cosa-vedere/oratorio-dei-bianchi/",
+        "https://radioaldebaran.it/torna-sensus-incontro-dedicato-alle-sculture-in-legno-domenica-prossima-a-rapallo/334147"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-4FC2D3700BBF",
@@ -7706,9 +7736,14 @@
       "coordinate_ref": "AO-EUR-DE-080",
       "coordinate_evidence_url": "https://adorientem.church/find/oratorium-heiliger-vierzehn-nothelfer-oratory-of-the-fourteen-holy-helpers-97070-wurzburg-29bd98e2",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "SSPX_14_NOTHELFER_WUERZBURG_CHAPEL_MINISTRY",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://fsspx.de/de/events/ewige-anbetung-wuerzburg-51770",
+        "https://www.latinmassdir.org/venue/oratorium-heiliger-vierzehn-nothelfer-oratory-of-the-fourteen-holy-helpers-wurzburg-germany/"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-A940F448BC92",
@@ -10778,9 +10813,15 @@
       "coordinate_ref": "AO-AMER-R28-US-25-16",
       "coordinate_evidence_url": "https://adorientem.church/find/st-clement-oratory-glen-ullin-7351ffc2",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "BISMARCK_DIOCESE_ST_CLEMENT_HAYMARSH_ORATORY",
+      "photo_gate": "INHERITED_POINT_UNASSESSED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://bismarckdiocese.com/oratory",
+        "https://bismarckdiocese.com/parishfinder",
+        "https://bismarckdiocese.com/news/provisions-for-the-latin-mass"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-E586590BB5C8",
@@ -11063,9 +11104,16 @@
       "coordinate_ref": "AO-WORLD-R35-BR-10-16",
       "coordinate_evidence_url": "https://adorientem.church/find/veneravel-ordem-terceira-de-nossa-senhora-do-monte-carmelo-44-centro-f9d8fb49",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "CAMPOS_VENERAVEL_TERCEIRA_ORDEM_CARMO_OWN_CHURCH",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_note": "Exact church is Igreja de Nossa Senhora do Carmo at Rua Treze de Maio 44, Campos dos Goytacazes, with the Veneravel Ordem Terceira do Carmo as the resident association; the church was built for this confraternity. Exclusion applies to diocesan-only photo lane, not to the church's Catholic identity or license to use photographs. Current inherited pin remains unassessed.",
+      "operator_evidence": [
+        "https://escudocarmelitano.blogspot.com/2006/04/igreja-do-carmo-campos-rj.html",
+        "https://culturacamposrjigrejas.blogspot.com/",
+        "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_DO_NOT_PROMOTE_COORDINATE_OR_PHOTO_20261031"
     },
     {
       "physical_group_id": "RG-EAB29B2CF083",
@@ -11663,9 +11711,15 @@
       "coordinate_ref": "AO-EUR-PL-032",
       "coordinate_evidence_url": "https://adorientem.church/find/chapel-of-the-order-of-the-carmelite-sisters-19-300-deecf526",
       "review_scope": null,
-      "operator_scope": "REVIEW_OWNER_OR_EMBLEM",
-      "photo_gate": "OPERATOR_REQUIRES_REVIEW",
-      "photo_research_started": false
+      "operator_scope": "ELK_DISCALCED_CARMELITE_SISTERS_MONASTERY_CHAPEL",
+      "photo_gate": "OPERATOR_EXCLUDED",
+      "photo_research_started": false,
+      "operator_evidence": [
+        "https://karmel.elk.pl/o-nas/o-klasztorze.html",
+        "https://karmel.elk.pl/aktualnosci/uroczystosc-poswiecenia-kaplicy-i-zalozenie-klauzury-papieskiej-u-s-karmelitanek-w-witynach-k-elku.html",
+        "https://www.latinmassdir.org/country/pl/?communities=&days=&exclusive=&venue_status=&view=list"
+      ],
+      "operator_review_scope": "OPERATOR_ONLY_SITE_MARKER_UNASSESSED_NO_PHOTO_APPROVAL_20261031"
     },
     {
       "physical_group_id": "RG-FC18299DDF0F",
