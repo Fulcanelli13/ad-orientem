@@ -54,6 +54,14 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
 #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate img{
  width:100%;height:100%;object-fit:contain;
 }
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyArtCredit{
+ position:absolute;bottom:0;left:0;right:0;z-index:2;
+ font:10px/1.2 Georgia,serif;text-align:center;
+ padding:4px 5px;background:rgba(0,0,0,.82);color:#f5ede3;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyArtCredit a{
+ color:inherit;text-decoration:underline;text-underline-offset:2px;
+}
 #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyTitle{
  text-align:center;padding:10px 0 2px;
 }

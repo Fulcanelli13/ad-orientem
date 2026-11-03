@@ -689,9 +689,13 @@ function devotionalGuide(id){
  return `<details class="aoP435930GuideInfo" data-ao-devotional-guide="${esc(id)}"><summary>${esc(g.title)}</summary><div><p>${esc(g.intro)}</p><p>${esc(g.practice)}</p>${guideLinks(id)}</div></details>`;
 }
 
-function releasedPrayerCardArtUrl(id){
+function releasedPrayerCardArt(id){
  const art=resolvePrayerEditorialArtwork("COV-"+id);
- return art.state==="PUBLISHED_EXACT_PHOTO"&&art.photo?.image?"/"+art.photo.image:"";
+ return art.state==="PUBLISHED_EXACT_PHOTO"&&art.photo?.image?art.photo:null;
+}
+function releasedPrayerCardArtUrl(id){
+ const photo=releasedPrayerCardArt(id);
+ return photo?.image?"/"+photo.image:"";
 }
 function prayerBlock(id,opts={}){
  const p=opts.record||P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
@@ -714,7 +718,7 @@ function prayerBlock(id,opts={}){
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
   const pref=CLAUDE_HOLY_PREF.language;
   const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(vern|| (p.la?'la':null));
-  return chosen?claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id)}):
+  return chosen?claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){

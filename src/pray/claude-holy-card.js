@@ -29,7 +29,7 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
       '<small lang="la">'+esc(incipit(p)||p.title)+'</small></div></button>';
    }).join('')+'</div></section>';
 }
-export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl=""}={}){
+export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl="",artCredit=null}={}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  if(!p||!id)return "";
  const bilingual=face==="both"&&!!p.la&&!!p[vernacular];
@@ -48,13 +48,16 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  const latinBlock=bilingual?'<div class="aoClaudeHolyLatinText" lang="la">'+latinBeats.map((part,i)=>
   '<p class="aoP435930EssentialBeat" data-ao-essential-index="la-'+i+'">'+esc(part.text.trim())+'</p>').join('')+'</div>':'';
  const image=safeImage(artUrl)?
-  '<img src="'+esc(artUrl)+'" alt="" loading="lazy" decoding="async">':'';
+  '<img src="'+esc(artUrl)+'" alt="'+esc(artCredit?.title?artCredit.title+" — "+(artCredit.artist||""):"")+'" loading="lazy" decoding="async">':'';
+ const credit=image&&artCredit?.source&&/^https:\/\//.test(artCredit.source)?
+  '<span class="aoClaudeHolyArtCredit"><a href="'+esc(artCredit.source)+'" rel="noopener noreferrer" target="_blank">'+
+   esc((artCredit.artist||"")+' · '+(artCredit.title||"Artwork source"))+'</a></span>':'';
  return '<article class="aoP435930Prayer aoP435930EssentialCard aoClaudeHolyCard" data-ao-essential-card="'+esc(id)+'" data-ao-claude-holy-card>'+
   '<div class="aoClaudeHolyDeck"><div class="aoClaudeHolyLace'+(flipped?' flip':'')+
    '" role="button" tabindex="0" data-p435930-essential-card-turn aria-label="'+esc(flipped?'Turn to front of card':'Turn to prayer text')+'">'+
    '<div class="aoClaudeHolyInner">'+
    '<div class="aoClaudeHolyFace aoClaudeHolyFront" aria-hidden="'+String(flipped)+'"><div class="aoClaudeHolyPlate"'+
-    (image?' data-ao-editorial-slot="COV-'+esc(id)+'" data-ao-editorial-source="released-exact"':'')+'>'+image+'</div>'+
+    (image?' data-ao-editorial-slot="COV-'+esc(id)+'" data-ao-editorial-source="released-exact"':'')+'>'+image+credit+'</div>'+
    '<div class="aoClaudeHolyTitle"><small lang="la">'+esc(latinIncipit)+'</small>'+
     '<h3>'+esc(title||id)+'</h3></div></div>'+
    '<div class="aoClaudeHolyFace aoClaudeHolyBack" aria-hidden="'+String(!flipped)+'"><div class="aoClaudeHolyOrn">✠</div>'+

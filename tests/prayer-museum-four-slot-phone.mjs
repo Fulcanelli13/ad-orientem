@@ -114,6 +114,9 @@ try{
     assert.equal(front.fit,"contain","The entire painting must be shown without cropping");
     assert.ok(front.top<=(width===320?640:844),"The painting must be visible without scrolling past the card");
     assert.ok(front.horizontalOverflow<=1,"No actual Holy Card overflow");
+    const attribution=page.locator(rootSelector+' .aoClaudeHolyFront .aoClaudeHolyArtCredit a');
+    assert.equal(await attribution.count(),1,"The image's original museum attribution must remain visible");
+    assert.ok((await attribution.getAttribute("href")).includes("clevelandart.org/art/1960.79"));
     await page.screenshot({path:resolve(folder,"live-sign-of-cross-"+width+"-"+locale+".png"),animations:"disabled"});
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
     await page.locator(rootSelector+' [data-p435930-lib-cat="essentials"]').click();
