@@ -52,8 +52,8 @@ assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,662)
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,114);
 // These records appear to describe one Cagliari basilica and require a
 // physical-identity reconciliation before either gets a new coordinate.
-for(const hold of ["RG-A75D8A0E1C53","RG-B65-77C86C7B3EC4"]){
- const row=all.find(x=>x.physical_group_id===hold);
- assert.ok(row&&!row.map_publishable,"Do not publish competing Santa Croce pins before deduplication");
-}
+const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
+const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
+assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
+  "Do not add a duplicate research pin to the already mapped Cagliari basilica");
 console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 1,920 mapped, 662 list-only, Cagliari duplicate held");
