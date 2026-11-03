@@ -65,6 +65,12 @@ const listOf=async()=>({...(await readState())});
 const urlsInHtml=text=>{
  const urls=[];
  for(const m of text.matchAll(/<(?:script|link)\b[^>]*?(?:\bsrc|\bhref)\s*=\s*["']([^"']+)["'][^>]*>/gi)){
+  // Browser/OS install icons remain in the HTML + web manifest, but are not
+  // executable app-shell resources. Browsers fetch and retain them separately
+  // during install. Their two entries pushed the 512-item transactional
+  // snapshot over the hard cap; do not prune any executable ESM/CSS imports.
+  if(/^<link\b/i.test(m[0])&&
+     /\brel\s*=\s*["'](?:icon|apple-touch-icon)["']/i.test(m[0]))continue;
   const url=scoped(new URL(m[1],BASE).href);
   if(url&&/\.(?:js|mjs|css|json|svg|png|webp|jpe?g|woff2?|webmanifest)$/.test(new URL(url).pathname))urls.push(url);
  }
