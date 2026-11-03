@@ -199,6 +199,33 @@ await Promise.all(Array.from({length:2},async()=>{
   inspections[index]=await probeSource(originalSources[index]);
  }
 }));
+// Check a PREVIOUSLY RELEASED local module image only when the 59-day
+// inventory names that exact original. Date placement remains unapproved.
+for(const inspection of inspections){
+ const owner=data.dates.find(d=>d.firstPhotoAuditCandidate.sourceUrl===inspection.sourcePage &&
+  d.firstPhotoAuditCandidate.photo.sameOriginalAlreadyReleasedInModule?.length);
+ const candidates=owner?.firstPhotoAuditCandidate.photo.sameOriginalAlreadyReleasedInModule??[];
+ if(!candidates.length)continue;
+ const verified=[];
+ for(const module of candidates){
+  const relative=module.existingOriginal;
+  assert.match(relative,/^assets\/prayer\/released\/[a-z0-9-]+\.(?:jpe?g|png)$/i);
+  const file=resolve(root,relative);
+  const b=await readFile(file);
+  assert.ok(b.length>1000&&b.length<=maxBytes);
+  const dims=bytesDimensions(b);
+  assert.ok(dims,"Invalid previously released module image "+relative);
+  verified.push({moduleId:module.moduleId,path:relative,
+   moduleReleasePR:module.releasePR,
+   sha256:createHash("sha256").update(b).digest("hex"),
+   bytes:b.length,nativeWidth:dims.width,nativeHeight:dims.height,
+   nativeFormat:dims.format,
+   technicalFileVerified:true,
+   imageLegalRightsRecertifiedHere:false,
+   placementApprovalInherited:false});
+ }
+ inspection.previouslyReleasedModuleOriginalsVerified=verified;
+}
 const byUrl=new Map(inspections.map(x=>[x.sourcePage,x]));
 const dates=data.dates.map(row=>{
  const candidate=row.firstPhotoAuditCandidate,source=candidate.sourceUrl;
@@ -209,6 +236,7 @@ const dates=data.dates.map(row=>{
   firstCandidateTitle:candidate.title,sourcePage:source??null,
   evidenceStatus:inspection?.state??"HISTORICAL_DATE_SOURCE_PAGE_NOT_LINKED",
   sourceOriginalSHA256VerifiedHere:inspection?.original?.sha256??null,
+  previouslyReleasedLocalOriginalSha256:inspection?.previouslyReleasedModuleOriginalsVerified?.[0]?.sha256??null,
   nativePixelWidthVerifiedHere:inspection?.original?.nativeWidth??null,
   nativePixelHeightVerifiedHere:inspection?.original?.nativeHeight??null,
   imageRightsCertifiedForThisDate:false,
@@ -221,6 +249,7 @@ const report={
  policies:["PREEXISTING_SOURCE_URLS_ONLY","SOURCE_HOST_ALLOWLIST",
   "NO_PRADO_IMAGE_FETCH_OR_PUBLICATION","NO_PUBLISHING_OR_DATE_APPROVAL_TRANSFER",
   "ORIGINAL_BYTES_HASHED_IN_MEMORY_AND_DISCARDED",
+  "EXISTING_RELEASED_LOCAL_ORIGINAL_REHASH_DOES_NOT_TRANSFER_DATE_APPROVAL",
   "LEGAL_REUSE_RIGHTS_STILL_REQUIRE_SELECTED_IMAGE_CERTIFICATION",
   "NATIVE_PIXELS_DO_NOT_CERTIFY_AESTHETIC_CROP",
   "REMOTE_FAILURES_REMAIN_FAILED_NOT_SILENTLY_APPROVED"],
@@ -228,6 +257,8 @@ const report={
   datesWithSourcePage:dates.filter(x=>x.sourcePage).length,
   datesMissingSourcePage:dates.filter(x=>!x.sourcePage).length,
   originalBytesTechnicallyVerified:count("ORIGINAL_BYTES_VERIFIED_TECHNICAL_ONLY"),
+  previouslyReleasedModuleOriginalFilesRehashed:inspections.reduce((n,x)=>
+   n+(x.previouslyReleasedModuleOriginalsVerified?.length??0),0),
   rightsHeldMetadata:count("METADATA_RETURNED_RIGHTS_HELD")+count("MET_METADATA_IMAGE_NOT_OPEN_ACCESS"),
   fetchBlocked:count("SOURCE_OR_IMAGE_FETCH_BLOCKED"),
   officialImageEndpointUnreconciled:count("OFFICIAL_PAGE_PRESENT_IMAGE_ENDPOINT_NOT_RECONCILED"),
