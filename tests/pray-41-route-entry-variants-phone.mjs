@@ -169,7 +169,13 @@ try{
     assert.equal(observed.errorCount,0,id+" showed a route error");
     if(row.sourceFamily==="canonical-prayer")
      assert.ok(observed.prayerChars>=10,id+" canonical source card did not render");
-    if(id==="pray.library")assert.ok(observed.libraryList>=48,"Canonical Prayer Library lost its complete index");
+    if(id==="pray.library"){
+      assert.equal(observed.libraryList,32,"Essential Prayers discovery entry must show the 32-card case");
+      assert.equal(await page.locator('#aoPray435930.open [data-ao-pray-essential-landing]').count(),1);
+      await page.locator('#aoPray435930.open [data-p435930-lib-all]').click();
+      assert.ok(await page.locator('#aoPray435930.open [data-p435930-lib-open]').count()>=48,
+       "The full Prayer Library must remain available via an explicit link");
+    }
     if(id==="pray.rosary")assert.equal(observed.rosaryOriginal,true,"Rosary donor was replaced");
     if(row.sourceFamily==="canonical-prayer"){
      await page.locator("#aoPray435930.open [data-p435930-lib-back]").click();
