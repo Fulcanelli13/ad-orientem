@@ -193,10 +193,8 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
   top:auto!important;bottom:148px!important;
   right:calc(var(--ao-atlas-right-occupied) + 10px)!important;
  }
- .aoHeritageSurface[data-atlas-entry="sacred"] .aoHeritageMore {
-  top:auto!important;bottom:275px!important;
-  right:calc(var(--ao-atlas-right-occupied) + 13px)!important;
- }
+ /* Keep the existing Layers control at its verified top-right position:
+    its header-owned positioning context does not support bottom docking. */
  .aoHeritageSurface[data-atlas-entry="sacred"] .aoHeritageWorldReset {
   top:auto!important;bottom:348px!important;
   left:auto!important;right:calc(var(--ao-atlas-right-occupied) + 13px)!important;
