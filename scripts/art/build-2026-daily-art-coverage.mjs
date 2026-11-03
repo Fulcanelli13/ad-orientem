@@ -40,6 +40,7 @@ const GOSPEL_SCENE_TITLE_SCREEN=Object.freeze({
 });
 const barredAdditionalCandidate=work=>
  /fra angelico|el greco/i.test(work?.artist??"")||
+ /\bprado\b/i.test(work?.artworkTitle??"")||
  /museodelprado\.es/i.test(work?.selectedSourceUrl??"");
 function exactSingleSaintInTitle(observedTitle,paintingTitle){
  if(!/^(?:st\.\s+|saint\s+)/i.test(observedTitle??"")||
@@ -254,8 +255,15 @@ export async function build2026ArtworkCoverage({gospelAudit=null}={}){
    if(barredAdditionalCandidate(group))continue;
    const artworkTitle=group.artworkTitle??"";
    const saintTitleMatch=exactSingleSaintInTitle(previous.title,artworkTitle);
-   const sceneTitleMatch=scenePhrases.some(phrase=>
-     lexical(artworkTitle).includes(lexical(phrase)));
+   const sceneTitleMatch=scenePhrases.some(phrase=>{
+     const title=lexical(artworkTitle);
+     if(!title.includes(lexical(phrase)))return false;
+     // Luke 1 records Gabriel speaking to Mary. A different Annunciation
+     // (to the shepherds, of Mary\u0027s death) is a false Gospel-scene match.
+     if(gospelReference==="Luke 1:26–31"&&
+       /shepherd|death|dormition|joachim|anna\b/.test(title))return false;
+     return true;
+   });
    if(!saintTitleMatch&&!sceneTitleMatch)continue;
    const evidenceKind=saintTitleMatch?
      "EXISTING_GALLERY_EXACT_SAINT_TITLE_SCREEN":
