@@ -6,11 +6,12 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {NOVENA_CORPUS_V4} from "../src/pray/novena-corpus-v4.js";
 import {novenaStageChapters} from "../src/pray/devotional-sequence-adapter.js";
+import {resolvePrayerEditorialArtwork} from "../src/pray/art-slot-map.v1.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const shots=resolve(root,"artifacts/pray-novena-dual-axis");
 await mkdir(shots,{recursive:true});
-const mime={".html":"text/html",".js":"text/javascript",".mjs":"text/javascript",".json":"application/json",".css":"text/css",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".woff2":"font/woff2"};
+const mime={".html":"text/html",".js":"text/javascript",".mjs":"text/javascript",".json":"application/json",".css":"text/css",".svg":"image/svg+xml",".webp":"image/webp",".jpg":"image/jpeg",".png":"image/png",".woff2":"font/woff2"};
 const server=http.createServer(async(req,res)=>{
  try{
   const file=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://localhost").pathname));
@@ -36,7 +37,7 @@ try{
    await page.evaluate(async()=>globalThis.AO_MODULES?.open?.("pray.novenas",{returnContext:null}));
    await page.waitForFunction(()=>typeof globalThis.AO_NOVENAS_V3?.open==="function",null,{timeout:20000});
    const ids=width===390?Object.keys(NOVENA_CORPUS_V4):
-     ["annunciation","immaculate_conception","st_anthony_nine_tuesdays","st_michael"];
+     ["christmas","sacred_heart","annunciation","immaculate_heart","immaculate_conception","st_anthony_nine_tuesdays","st_michael"];
    const gesture=async(dx,dy)=>{
     await page.locator("#aoPray435930.open .aoN1Reader .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
      const t=(x,y)=>new Touch({identifier:28,target:node,clientX:x,clientY:y});
@@ -51,6 +52,33 @@ try{
     assert.equal(await detail.locator(".aoN1DayLeaf[aria-current='step']").count(),1,id+" suggested day is ambiguous");
     assert.equal(await detail.locator(".aoN1AboutDisclosure").evaluate(el=>el.open),false,id+" background should start collapsed");
     assert.equal(await detail.locator(".aoN1Hero").count(),0,id+" oversized introductory panel returned");
+    // Four already-approved, exact-photo-cleared novena covers appear at entry;
+    // unapproved or protected covers must never receive a thematic substitute.
+    if(["christmas","sacred_heart","annunciation","immaculate_heart"].includes(id)){
+      const slot="COV-novena."+id,approved=resolvePrayerEditorialArtwork(slot);
+      assert.equal(approved.state,"PUBLISHED_EXACT_PHOTO",slot+" lacks its source-cleared release");
+      const photo=detail.locator('[data-ao-editorial-slot="'+slot+'"] img');
+      assert.equal(await photo.count(),1,slot+" is not actually bound to the Novena detail");
+      const metrics=await photo.evaluate(async img=>{
+        img.loading="eager";await img.decode();
+        const r=img.getBoundingClientRect();
+        return {src:img.getAttribute("src"),width:img.naturalWidth,height:img.naturalHeight,
+          fit:getComputedStyle(img).objectFit,renderedWidth:r.width,
+          overflow:document.documentElement.scrollWidth-innerWidth};
+      });
+      assert.ok(metrics.src.endsWith(approved.photo.image),slot+" rendered a different photograph");
+      assert.ok(metrics.width>=300&&metrics.height>=300,slot+" photograph did not decode");
+      assert.equal(metrics.fit,"contain",slot+" painting was cropped");
+      assert.ok(metrics.renderedWidth>70&&metrics.renderedWidth<=width+1,slot+" painting width exceeds phone");
+      assert.ok(metrics.overflow<=2,slot+" caused horizontal overflow");
+      if(width===390)await page.screenshot({path:resolve(shots,"approved-"+id+"-"+width+".png"),animations:"disabled"});
+    }
+    if(id==="st_therese"){
+      assert.equal(await detail.locator('[data-ao-user-selected-st-therese-photo="true"]').count(),1,
+        "Final selected St Therese photograph was replaced");
+      assert.equal(await detail.locator('[data-ao-editorial-slot^="COV-novena."]').count(),0,
+        "A generic release must not override St Therese's protected cover");
+    }
     if(id==="st_michael")await page.screenshot({path:resolve(shots,"st_michael-detail-quiet-"+width+".png"),animations:"disabled"});
     await page.locator("#aoPray435930.open [data-n1-mode='guided']").evaluate(el=>el.click());
     await page.locator("#aoPray435930.open [data-n1-begin]").evaluate(el=>el.click());
