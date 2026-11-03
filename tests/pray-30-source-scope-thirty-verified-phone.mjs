@@ -17,18 +17,24 @@ const canon=PRAY_CANONICAL_DATA_V435930.prayers;
 assert.equal(ledger.schema,"ao.pray.source-scope-triage-30.20261103.v1");
 assert.equal(ledger.rows.length,30);
 assert.equal(ledger.summary.unreviewedOriginalPrayers,30);
-assert.equal(ledger.summary.publicSourceScopeAnchorChecks,17);
-assert.equal(ledger.summary.stillWithoutNewComparison,13);
+assert.equal(ledger.summary.publicSourceScopeAnchorChecks,30);
+assert.equal(ledger.summary.stillWithoutNewComparison,0);
 assert.equal(ledger.summary.fullOriginalPrintCertificates,0);
 assert.equal(ledger.summary.originalPrayerBodiesEdited,0);
 assert.equal(ledger.summary.secondTrancheSourceChecks,9);
+assert.equal(ledger.summary.thirdTrancheSourceChecks,13);
+assert.equal(ledger.summary.directPageScopeChecks,27);
+assert.equal(ledger.summary.indexedExcerptOnlyScopeChecks,3);
+assert.equal(ledger.summary.originalTextFullCertification,0);
 assert.equal(ledger.summary.noOriginalLanguageChanges,true);
 const pending=inventory.prayers.filter(x=>x.collation.status==="NOT_REVIEWED");
 assert.deepEqual(ledger.rows.map(x=>x.id),pending.map(x=>x.id),"Audited 30 IDs must match original inventory exactly");
-const checked=ledger.rows.filter(x=>x.verification==="PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED");
+const checked=ledger.rows.filter(x=>["PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED","PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED"].includes(x.verification));
 const held=ledger.rows.filter(x=>x.verification==="NO_NEW_SOURCE_COMPARISON");
-assert.equal(checked.length,17);
-assert.equal(held.length,13);
+assert.equal(checked.length,30);
+assert.equal(held.length,0);
+assert.equal(checked.filter(x=>x.verification==='PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED').length,3);
+assert.equal(checked.filter(x=>x.verification==='PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED').length,27);
 assert.deepEqual(Object.keys(PRAY_SOURCE_SCOPE_NOTICES_20261103).sort(),checked.map(x=>x.id).sort());
 for(const row of ledger.rows){
  const inventoryRow=pending.find(x=>x.id===row.id);
@@ -43,11 +49,14 @@ for(const row of ledger.rows){
  assert.equal(row.independentOriginalPrintedEditionCertified,false);
  assert.equal(row.originalPrayerTextEdited,false);
  const note=praySourceScopeNotice20261103(row.id);
- if(row.verification==="PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED"){
+ if(["PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED","PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED"].includes(row.verification)){
   assert.ok(note, row.id+" scope comparison omitted from reader");
   assert.equal(note.category,row.scopeCategory);
   assert.equal(note.sourceUrl,row.originalSourceUrl);
   assert.equal(note.fullEditionCertified,false);
+  assert.equal(note.scopeEvidenceGrade,row.verification);
+  assert.deepEqual(note.supportingWitness||null,row.supportingWitness||null);
+  if(row.verification==='PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED')assert.ok(row.sourceScope.includes('403')||row.readerDisclosure.en.toLowerCase().includes('indexed'),row.id+' excerpt evidence not qualified');
   if(row.originalSourceUrl===null){
    assert.ok(row.witnessUrl?.startsWith("https://la.wikisource.org/"),row.id+" must name an honest independent secondary transcription");
    assert.ok(prayEditionWitness(row.id)?.url?.startsWith("https://"),row.id+" original Missal comparator has disappeared");
@@ -83,8 +92,8 @@ const server=http.createServer(async(req,res)=>{
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message||e))}
 });
 await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
-const result={schema:"ao.pray.30-source-scope-eight-qualifications-phone.v1",
- originalUnreviewed:30,publicAnchorScopeChecks:17,stillAwaitingSourceComparison:13,
+const result={schema:"ao.pray.30-source-scope-thirty-qualifications-phone.v2",
+ originalUnreviewed:30,publicAnchorScopeChecks:30,stillAwaitingSourceComparison:0,
  fullOriginalPrintCertificates:0,phoneVariants:[],errors:[]};
 let browser;
 try{
@@ -126,6 +135,8 @@ try{
       })),
       auditStatus:audit.map(x=>x.dataset.aoPrayerSourceReview),
       sourceLinks:sourceDrawers.flatMap(x=>[...x.querySelectorAll("a[href]")].map(a=>a.href)),
+      supportingWitnessLinks:[...root?.querySelectorAll('[data-ao-prayer-supporting-witness]')||[]].map(a=>({url:a.href,text:a.textContent.trim()})),
+      legacyTypographyMislabel:sourceDrawers.some(d=>[...d.querySelectorAll('small')].some(el=>el.textContent.trim()==='TYPOGRAPHY_NORMALIZED')),
       drawerOverflow:reader?Math.max(0,reader.scrollWidth-reader.clientWidth):null,
       documentOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
       visibleContentChars:reader?.innerText.length||0};
@@ -136,6 +147,12 @@ try{
     assert.ok(observed.visibleContentChars>=10,row.id+" body lost original prayer");
     assert.ok(observed.sourceLinks.some(x=>x.startsWith("https://")),row.id+" source links lost");
     assert.equal(observed.language,ui);
+    if(row.supportingWitness){
+     assert.equal(observed.supportingWitnessLinks.length,observed.sourceDrawers,row.id+' separate source comparator is missing');
+     assert.ok(observed.supportingWitnessLinks.every(x=>x.url===row.supportingWitness.url&&x.text.includes(row.supportingWitness[ui])),row.id+' wrong historical comparator');
+    }else assert.equal(observed.supportingWitnessLinks.length,0,row.id+' invented historical comparator');
+    if(['adoration_litany_blessed_sacrament','dead_de_profundis'].includes(row.id))
+     assert.equal(observed.legacyTypographyMislabel,false,row.id+' still describes an abridged original as typography only');
     assert.ok(observed.drawerOverflow<=2&&observed.documentOverflow<=2,
      row.id+" source note clips "+width+"px "+ui+": "+JSON.stringify(observed));
     for(const n of observed.scopeNotices){
@@ -149,16 +166,16 @@ try{
      sourceScopeNotes:observed.scopeNotices.length,printEditionCertificate:false});
    }
    assert.deepEqual(errors,[],width+"px "+ui+" uncaught source drawer errors");
-   console.log("PASS source-scoped comparisons "+width+"px "+ui+" · 17/17 canonical cards with bilingual historical edition/source notices");
+   console.log("PASS source-scoped comparisons "+width+"px "+ui+" · 30/30 canonical cards with bilingual historical edition/source notices");
   }catch(e){result.errors.push({width,ui,error:String(e?.stack||e)});throw e;}
   finally{await ctx.close()}
  }
- assert.equal(result.phoneVariants.length,68);
+ assert.equal(result.phoneVariants.length,120);
  assert.deepEqual(new Set(result.phoneVariants.map(x=>x.id)),new Set(checked.map(x=>x.id)));
- console.log("PASS 68/68 source-scope phone variants, 17 direct public source anchors, 13 unreviewed queue entries preserved, 0 full printed-edition certificates");
+ console.log("PASS 120/120 source-scope phone variants, 27 direct-page and 3 index-only witness checks, 0 pending source-scope records, 0 full printed-edition certificates");
 }finally{
  await mkdir(evidence,{recursive:true});
- await writeFile(resolve(evidence,"30-source-scope-seventeen-reviewed-68-phone-variants.json"),JSON.stringify(result,null,2)+"\n");
+ await writeFile(resolve(evidence,"30-source-scope-thirty-reviewed-120-phone-variants.json"),JSON.stringify(result,null,2)+"\n");
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
 }

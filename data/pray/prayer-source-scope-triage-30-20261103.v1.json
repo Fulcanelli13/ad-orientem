@@ -5,15 +5,19 @@
   "scope": "SOURCE_SCOPE_AND_EDITION_RELATIONSHIP_ONLY_NOT_PRINT_VERBATIM_OR_FRENCH_LATIN_CERTIFICATION",
   "summary": {
     "unreviewedOriginalPrayers": 30,
-    "publicSourceScopeAnchorChecks": 17,
-    "stillWithoutNewComparison": 13,
+    "publicSourceScopeAnchorChecks": 30,
+    "stillWithoutNewComparison": 0,
     "fullOriginalPrintCertificates": 0,
     "originalPrayerBodiesEdited": 0,
     "priorTwelveMaterialNoticeCardsUntouched": true,
     "secondTrancheSourceChecks": 9,
-    "noOriginalLanguageChanges": true
+    "noOriginalLanguageChanges": true,
+    "thirdTrancheSourceChecks": 13,
+    "directPageScopeChecks": 27,
+    "indexedExcerptOnlyScopeChecks": 3,
+    "originalTextFullCertification": 0
   },
-  "method": "Public linked-page source-scope anchors checked for 17 canonical entries in two tranches (eight prior + nine on 3 November); 13 entries remain explicitly without new comparison. For records without a URL in the original corpus, the separately qualified Latin Wikisource secondary transcription is linked, never passed off as a certified printed 1962 Missal. No full independent original printed editions or EN/FR/LA body collation claimed.",
+  "method": "All 30 initially NOT_REVIEWED canonical records now have selective online source-SCOPE checks (27 direct page comparisons, 3 USCCB search-index excerpts because direct fetch returned HTTP 403). All 30 remain NOT_REVIEWED for full English/French/Latin text line-by-line historical edition collation and for independent original printed-book facsimile certification. Original language corpus texts, 18 previous anchor reviews, 16 original novenas, and Lab Ora Rosary unchanged. Some donor adaptation labels (VERBATIM or TYPOGRAPHY_NORMALIZED) are explicitly qualified by source-scope notices where materially inaccurate.",
   "rows": [
     {
       "id": "foundations_morning_offering",
@@ -111,18 +115,22 @@
         "la": false
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "ENGLISH_ONLY_FATIMA_SOURCE_WORDING_VARIANT",
+      "sourceAnchor": "Oh Immaculate Heart of Mary",
+      "appAnchor": "O Immaculate Heart of Mary",
+      "sourceScope": "Fatima Center posts the full English consecration and its structure, but begins 'Oh' (app 'O') and later says 'Assist us in imitating You' (app 'Thee'); legacy VERBATIM label is too strong for this digital witness. No FR/LA source bodies present and other Pius XII or Fatima acts must not be substituted.",
+      "readerDisclosure": {
+        "en": "The Fatima Center publishes this English consecration, but its opening uses “Oh” where the app uses “O”, and it later says “You” rather than “Thee”. This is a close English variant, not a certified verbatim copy. No French or Latin original is claimed.",
+        "fr": "Le Fatima Center publie cette consécration anglaise, mais écrit « Oh » au début (contre « O » dans l’application) et « You » plus loin (contre « Thee »). C’est une variante anglaise proche, non une copie certifiée mot à mot. Aucun original français ou latin n’est revendiqué."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "adoration_spiritual_communion",
@@ -135,18 +143,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "FIRST_OF_TWO_PRAYERS_ON_VATICAN_NEWS",
+      "sourceAnchor": "My Jesus, I believe that You are present in the Most Blessed Sacrament",
+      "appAnchor": "My Jesus, I believe that You are present",
+      "sourceScope": "Vatican News posts two distinct Spiritual Communion prayers: the first attributed to St Alphonsus Liguori follows the app's English with case/lineation differences; the second by Cardinal Merry del Val is deliberately not part of the same canonical prayer. This English online witness does not independently certify app Latin/French texts.",
+      "readerDisclosure": {
+        "en": "This card uses the first Spiritual Communion prayer on Vatican News, attributed there to Saint Alphonsus Liguori. The subsequent prayer by Cardinal Merry del Val is a separate text, not an omitted stanza. French and Latin editions have not been independently certified.",
+        "fr": "Cette carte utilise la première communion spirituelle publiée par Vatican News, attribuée à saint Alphonse de Liguori. La prière suivante du cardinal Merry del Val est distincte, non une strophe omise. Les versions française et latine restent sans certification indépendante."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "benediction_o_salutaris",
@@ -213,18 +225,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED",
+      "scopeCategory": "CURRENT_RITUAL_ENGLISH_CAPITALIZATION_VARIANT",
+      "sourceAnchor": "Blessed be his holy Name",
+      "appAnchor": "Blessed be His Holy Name",
+      "sourceScope": "USCCB indexed English page reproduces 14 Divine Praises and cites Holy Communion and Worship of the Eucharistic Mystery outside Mass no. 99. App English invocation list agrees in scope but differs in capitalization. The USCCB page returned 403 in direct reader; comparison is from search-indexed excerpt, not direct fetch or full Latin/French collation.",
+      "readerDisclosure": {
+        "en": "The indexed USCCB Divine Praises page gives the current 14-invocation English form (ritual no. 99). The app retains traditional capitalization. The page was accessible through indexed excerpts, not direct retrieval; this does not certify the app’s French or Latin recensions.",
+        "fr": "Les extraits indexés de l’USCCB donnent les 14 louanges de la forme anglaise actuelle (rituel, no 99). L’application conserve une capitalisation traditionnelle. La page n’a été consultable que par extrait indexé, non directement ; les textes français et latin ne sont pas certifiés."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "adoration_litany_blessed_sacrament",
@@ -237,18 +253,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "ABRIDGED_INVOCATION_SELECTION_NOT_TYPOGRAPHY_ONLY",
+      "sourceAnchor": "Living Bread, that camest down from heaven",
+      "appAnchor": "Living Bread which came down from heaven",
+      "sourceScope": "1911 With God/Litanies Litany of the Blessed Sacrament has more invocations than current app: e.g. Supersubstantial bread, Medicine of immortality and other petitions omitted; app paraphrases several titles and closes with selected versicles/collect. Legacy TYPOGRAPHY_NORMALIZED understates abridgement. Historical 300-day indulgence references on the book must not be treated as current grants.",
+      "readerDisclosure": {
+        "en": "The cited historical Litany has additional invocations absent from this card, including “Supersubstantial bread” and “Medicine of immortality”. This is an abridged, reworded devotional selection—not merely normalized typography or a full verbatim transcription. Historical indulgence notes are not current grants.",
+        "fr": "Les Litanies historiques citées contiennent des invocations absentes de cette carte, notamment « Supersubstantial bread » et « Medicine of immortality ». C’est un choix dévotionnel abrégé et reformulé, non une simple normalisation typographique ni une transcription intégrale. Les indulgences anciennes ne valent pas concession actuelle."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "benediction_versicles",
@@ -319,18 +339,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "LEONINE_HISTORICAL_SEQUENCE_AND_ENGLISH_VARIANTS",
+      "sourceAnchor": "The Priest with the people recites the Mail Mary thrice",
+      "appAnchor": "Hail Mary, full of grace",
+      "sourceScope": "Historic pocket prayer-book prints three Ave Marias, Salve Regina, collect, St Michael invocation and Sacred Heart three times. App preserves the sequence, but wording differs: historic St Michael 'malice and snares' and 'by thy divine power thrust' versus app 'wickedness and snares' and 'by the power of God, cast'. Historic indulgence grants on book not current.",
+      "readerDisclosure": {
+        "en": "The cited book confirms the historic Leonine order after Low Mass, but its Saint Michael prayer says “malice” and “thrust”, while this card says “wickedness” and “cast”. The prayers are a traditional English composite, not a verbatim copy of this edition; old indulgence statements are historical only.",
+        "fr": "Le livre atteste l’ordre historique des prières léonines après la messe basse, mais sa prière à saint Michel dit « malice » et « thrust », contre « wickedness » et « cast » dans cette carte. Il s’agit d’un ensemble anglais traditionnel, non d’une copie mot à mot ; les indulgences anciennes n’ont qu’une portée historique."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "sacrament_come_holy_spirit",
@@ -343,18 +367,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED",
+      "scopeCategory": "USCCB_ENGLISH_COLLECT_TRANSLATION_VARIANT",
+      "sourceAnchor": "who have taught the hearts of the faithful",
+      "appAnchor": "who by the light of the Holy Spirit did instruct",
+      "sourceScope": "USCCB indexed Prayer to the Holy Spirit has opening Come Holy Spirit and collect 'O God, who have taught the hearts of the faithful' whereas app keeps the older 'who by the light of the Holy Spirit did instruct'. Direct USCCB page fetch returned 403: indexed excerpt only. French/Latin and exact old collect edition remain uncertified.",
+      "readerDisclosure": {
+        "en": "The indexed USCCB prayer uses “who have taught the hearts of the faithful”; the app keeps the older English “who ... did instruct”. The linked page was compared through indexed excerpts because direct retrieval was blocked. French and Latin are not independently collated.",
+        "fr": "La prière indexée de l’USCCB emploie « who have taught the hearts of the faithful » ; l’application conserve l’ancienne traduction « who ... did instruct ». La page n’a été comparée que par extrait indexé, son accès direct étant bloqué. Le français et le latin ne sont pas collationnés indépendamment."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "devotion_prayer_st_michael",
@@ -394,18 +422,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "DIOCESAN_ENGLISH_DEVOTIONAL_VARIANT",
+      "sourceAnchor": "my great protector, Saint Joseph",
+      "appAnchor": "my sweet protector St. Joseph",
+      "sourceScope": "Diocese of Sacramento posts a Memorare to St Joseph whose English says 'my great protector, Saint Joseph' and 'spouse of the Blessed Virgin Mary', whereas app says 'my sweet protector St. Joseph' and 'spouse of the Virgin Mary'. This is an established traditional variant, not exact English witness; FR/LA not witnessed.",
+      "readerDisclosure": {
+        "en": "The Diocese of Sacramento’s English Memorare says “my great protector”, while this card says “my sweet protector”. It also names the Blessed Virgin Mary more fully. The link confirms the prayer family, not a verbatim English text or its French and Latin versions.",
+        "fr": "Le Souvenez-vous de saint Joseph publié par le diocèse de Sacramento dit « my great protector », tandis que cette carte donne « my sweet protector ». Le lien confirme la famille de prière, non une copie anglaise mot à mot ni les versions française et latine."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "devotion_consecration_christ_king",
@@ -418,18 +450,27 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "HISTORICAL_LATIN_WITNESS_NOT_3_LANGUAGE_EDITION",
+      "sourceAnchor": "Dómine Iesu Christe, te confíteor Regem universálem",
+      "appAnchor": "O Jesus Christ, I acknowledge Thee as universal King",
+      "sourceScope": "ITheca under Oratio ad Iesum Christum Regem publishes the full accented Latin prayer. ICKSP publishes a Latin and independent English rendering which begins 'O Lord Jesus Christ, I acknowledge Thee King of the Universe', distinct from the app's 'O Jesus Christ ... universal King'. The original iTheca link itself does not certify app English/French; historical 1923 attribution is separate.",
+      "readerDisclosure": {
+        "en": "ITheca provides the traditional Latin act to Christ the King. The Institute of Christ the King separately prints an English form beginning “O Lord Jesus Christ”, rather than this card’s “O Jesus Christ”. These are related witnesses, not a certified identical three-language 1923 edition.",
+        "fr": "ITheca fournit l’acte latin traditionnel au Christ-Roi. L’Institut du Christ-Roi publie une version anglaise commençant par « O Lord Jesus Christ », différente du « O Jesus Christ » de cette carte. Ce sont des témoins apparentés, non une même édition trilingue certifiée."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03",
+      "supportingWitness": {
+        "url": "https://institute-christ-king.org/resources/devotions-prayers/611-devotions-dedication-christ-king",
+        "en": "Institute of Christ the King · English and Latin comparator",
+        "fr": "Institut du Christ-Roi · témoin anglais et latin"
+      }
     },
     {
       "id": "church_prayer_for_pope",
@@ -469,18 +510,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "HISTORIC_RESPONSORY_EXPANDED_ANTIPHON_REPETITIONS",
+      "sourceAnchor": "If, then, thou seekest miracles",
+      "appAnchor": "If, then, thou seekest miracles",
+      "sourceScope": "Preces Latinae publishes Latin and English Si quaeris with an abbreviated repeated antiphon 'Ant: Cedunt mare, vincula...' while app writes out its English/Latin refrain at each repetition and includes the collect; this is a performance expansion, not strictly verbatim source typography. Source notes Julian of Speyer association and rejects unsupported Bonaventure author attribution.",
+      "readerDisclosure": {
+        "en": "The bilingual responsory witness abbreviates repeated antiphons with an ellipsis; this card expands those repeated lines for prayer. The source also distinguishes a possible Julian of Speyer origin from an unproven attribution to Saint Bonaventure. The expansion is not an exact photographic transcription.",
+        "fr": "Le témoin bilingue abrège les antiennes reprises avec des points de suspension ; cette carte développe les reprises pour la prière. La source distingue l’attribution possible à Julien de Spire de celle, non établie, à saint Bonaventure. La reprise développée n’est pas une transcription photographique exacte."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "sacred_heart_short_prayer",
@@ -493,18 +538,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "OFFICIAL_LATIN_REPARATION_NOT_ENGLISH_EDITION",
+      "sourceAnchor": "Iesu dulcissime, cuius effusa in homines caritas",
+      "appAnchor": "Most Sweet Jesus, whose overflowing charity",
+      "sourceScope": "Apostolic Penitentiary 2002 Enchiridion page gives the Latin Actus reparationis Iesu dulcissime and distinct indulgence provision. It does not print a matched official English or French translation, so donor language-quality claims cannot be independent certified equivalence. Source text remains unchanged and no new indulgence grant is asserted.",
+      "readerDisclosure": {
+        "en": "The Apostolic Penitentiary’s Enchiridion prints the Latin Act of Reparation “Iesu dulcissime” and its indulgence provision. This Latin source does not certify the exact English translation beginning “Most Sweet Jesus” or the French version.",
+        "fr": "L’Enchiridion de la Pénitencerie apostolique imprime en latin l’acte de réparation « Iesu dulcissime » et la concession associée. Ce témoin latin ne certifie pas à lui seul la traduction anglaise « Most Sweet Jesus » ni la version française."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "sacred_heart_aspiration_trust",
@@ -517,18 +566,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_INDEXED_EXCERPT_SCOPE_CHECKED",
+      "scopeCategory": "NOVENA_CONTEXT_NOT_VERBATIM_ASPIRATION",
+      "sourceAnchor": "Sacred Heart of Jesus, I place all my trust in you",
+      "appAnchor": "Most Sacred Heart of Jesus, I place all my trust in you",
+      "sourceScope": "Indexed USCCB Sacred Heart novena references an aspiration 'Sacred Heart of Jesus, I place all my trust in you'; app begins 'Most Sacred Heart of Jesus'. Source is the 2026 Novena article (2024 Dilexit Nos and Leo XIV references) rather than original historical prayer edition; direct page fetch returned 403. Never infer primary Latin/French sources from novena prose.",
+      "readerDisclosure": {
+        "en": "The indexed USCCB Sacred Heart novena mentions “Sacred Heart of Jesus, I place all my trust in you”; the card adds “Most”. This modern novena article is a contextual comparator, not the original short aspiration or evidence for its Latin and French forms.",
+        "fr": "La neuvaine du Sacré-Cœur indexée par l’USCCB cite « Sacred Heart of Jesus, I place all my trust in you » ; la carte ajoute « Most ». Cet article récent sert de comparaison, non d’édition originale de la courte invocation ni de preuve des versions latine et française."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "dead_de_profundis",
@@ -541,18 +594,22 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "VULGATE_PSALM_AND_SHORTENED_OFFICE_RESPONSES",
+      "sourceAnchor": "O UT of the depths I have cried to Thee",
+      "appAnchor": "Out of the depths I have cried to thee",
+      "sourceScope": "With God/Evening Prayers includes Psalm 129 plus further versicle/response and collect. App renders the psalm with selected Eternal Rest and May they rest in peace lines, omitting historic O Lord hear my prayer and collect. It is a devotional excerpt/assembly not solely TYPOGRAPHY_NORMALIZED. Historic Clement XII/Pius VI indulgence discussion not current grant.",
+      "readerDisclosure": {
+        "en": "The cited prayer book follows Psalm 129 with further versicles and a collect that this card does not reproduce. The card combines the psalm with a shorter prayer for the dead; it is an adapted devotional assembly, not just typography. Old indulgence remarks are historical.",
+        "fr": "Le livre cité fait suivre le psaume 129 d’autres versets et d’une oraison absents de cette carte. Celle-ci unit le psaume à une prière abrégée pour les défunts ; c’est un assemblage dévotionnel, non une simple adaptation typographique. Les indulgences anciennes sont historiques."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "devotion_litany_st_joseph",
@@ -737,18 +794,27 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "1913_ANTIPHON_INDEX_NOT_COMPLETE_PSALM_PROOF",
+      "sourceAnchor": "Adoremus in Aeternum Sanctissimum Sacramentum",
+      "appAnchor": "Let us adore for ever the Most Holy Sacrament",
+      "sourceScope": "Blessed Sacrament Book landing/title page prints Adoremus antiphon but does not publish the complete app sequence Psalm 116/117 plus Gloria there. St Gregory Hymnal Project Gutenberg HTML supplies the complete Latin refrain, psalm, and Gloria sequence as a secondary 1910s historical comparator; source edition and English/French exact translations still not fully collated.",
+      "readerDisclosure": {
+        "en": "The 1913 Blessed Sacrament Book page attests the “Adoremus in aeternum” antiphon, but not this complete Psalm 116 and doxology arrangement. The historical St Gregory Hymnal is a separate comparator for that sequence, not a certified facsimile of this app’s English and French.",
+        "fr": "La page du Blessed Sacrament Book de 1913 atteste l’antienne « Adoremus in aeternum », mais non l’ensemble du psaume 116 et de la doxologie de cette carte. Le St Gregory Hymnal sert de témoin distinct pour cet ordre, non de fac-similé certifié des traductions anglaise et française."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "lastReviewed": "2026-11-03",
+      "supportingWitness": {
+        "url": "https://www.gutenberg.org/files/23673/23673-h/23673-h.htm",
+        "en": "St Gregory Hymnal · antiphon, Psalm 116 and doxology",
+        "fr": "St Gregory Hymnal · antienne, psaume 116 et doxologie"
+      }
     },
     {
       "id": "litany_loreto_1962",

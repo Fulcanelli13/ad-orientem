@@ -1,4 +1,4 @@
-name: Prayer 30 source-scope triage and seventeen bilingual comparisons
+name: Prayer 30 source-scope triage and thirty bilingual comparisons
 on:
   pull_request:
     branches: [main]
@@ -6,7 +6,7 @@ on:
       - data/pray/prayer-source-scope-triage-30-20261103.v1.json
       - src/pray/source-scope-notices-20261103.js
       - src/pray/presentation-runtime.js
-      - tests/pray-30-source-scope-seventeen-verified-phone.mjs
+      - tests/pray-30-source-scope-thirty-verified-phone.mjs
       - package.json
       - .github/workflows/pray-30-source-scope-phone.yml
   push:
@@ -15,7 +15,7 @@ on:
       - data/pray/prayer-source-scope-triage-30-20261103.v1.json
       - src/pray/source-scope-notices-20261103.js
       - src/pray/presentation-runtime.js
-      - tests/pray-30-source-scope-seventeen-verified-phone.mjs
+      - tests/pray-30-source-scope-thirty-verified-phone.mjs
       - .github/workflows/pray-30-source-scope-phone.yml
   workflow_dispatch:
 permissions:
@@ -31,12 +31,12 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Check 30 historical source claims and 17 notices in EN/FR at 320/390
+      - name: Check 30 historical source claims and 30 notices in EN/FR at 320/390
         run: npm run test:pray-30-source-scope
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: prayer-30-source-scope-triage
-          path: artifacts/pray-30-source-scope/30-source-scope-seventeen-reviewed-68-phone-variants.json
+          path: artifacts/pray-30-source-scope/30-source-scope-thirty-reviewed-120-phone-variants.json
           if-no-files-found: warn
           retention-days: 7
