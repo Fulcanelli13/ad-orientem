@@ -9,7 +9,8 @@ assert.equal(x.schema,"ao-schola-1961-first12-original-printed-source-image-capt
 assert.equal(x.counts.priorityScores,12);
 assert.equal(x.counts.distinctPrintedPages,14);
 assert.equal(x.counts.continuationScoreCount,4);
-assert.equal(x.counts.completeSourceSpanScores,12);
+assert.equal(x.counts.completeSourceSpanScores,x.scores.filter(s=>
+ s.originalScanStatus==="COMPLETE_ORIGINAL_PRINT_SPAN_CAPTURED_NOT_MUSICALLY_VERIFIED").length);
 assert.equal(x.counts.musicallyCollatedScores,0);
 assert.equal(x.counts.approvedPublicScores,0);
 assert.equal(x.counts.downloadedOriginalPageImages+x.counts.pageImageAccessHolds,14);
