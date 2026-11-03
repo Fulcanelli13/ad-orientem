@@ -57,11 +57,15 @@ for(const [group,sourceId,lat,lng,ref,addressNeedle,reviewScope] of newSites){
     "No Mass or Missal facts can be inferred from precise building coordinates");
  }
 }
-// Reading St William of York remains held until exact church geometry is corroborated.
-// Pesquié is now separately admitted by the source-backed batch-5 contract.
-const readingHold=all.find(x=>x.physical_group_id==="RG-BF0D731A3654");
-assert.ok(readingHold&&!readingHold.map_publishable,
- "Do not geocode unresolved Reading church footprint from locality");
+// Batch 8 has independently corroborated St William of York's actual church way;
+// earlier locality-only evidence must never have been sufficient on its own.
+const readingSite=all.find(x=>x.physical_group_id==="RG-BF0D731A3654");
+assert.ok(readingSite?.map_publishable&&readingSite.map_state==="PROVISIONAL");
+assert.equal(readingSite.geo.source_ref,"osm:way:87312317");
+assert.equal(readingSite.geo.lat,51.44606);
+assert.equal(readingSite.geo.lng,-0.94651);
+assert.ok(readingSite.source_links.some(x=>x.url==="https://mapcarta.com/W87312317"));
+assert.equal(readingSite.status,"RESEARCH-LISTED · MASS UNVERIFIED");
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:199,SOURCE_PIN:1806,ADDRESS_ONLY:577});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,577);
