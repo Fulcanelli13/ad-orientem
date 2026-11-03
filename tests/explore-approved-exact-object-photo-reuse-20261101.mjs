@@ -112,7 +112,8 @@ for(const text of [bodyEn,bodyFr]){
  assert.ok(text.includes(original[0].license_url));
 }
 assert.ok(bodyEn.includes("not a close-up or authentication"));
-assert.ok(bodyFr.includes("non d'un gros plan ni d'une authentification"));
+assert.ok(bodyFr.includes("non d&#039;un gros plan ni d&#039;une authentification"),
+ "The bilingual disclaimer must survive HTML-safe apostrophe escaping");
 const unrelated=profiles.find(x=>x.place_id==="place:IE:knock-shrine");
 assert(unrelated&&!unrelated.sacred_treasures.some(x=>x.image?.media_id===entry.media_id),
  "Do not leak exact object photograph to different Place");

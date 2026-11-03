@@ -122,14 +122,25 @@ function placeGalleryHtml(profile,language){
  const treasureIds=new Set(arr(profile?.sacred_treasures).map(item=>item.id).filter(Boolean));
  const hasExactObjectImage=gallery.some(image=>
    image.subject_relic_id&&treasureIds.has(image.subject_relic_id));
+ // Gallery records of a venerated image can be labelled as sacred subjects
+ // without implying that the object is a relic. Source verification is
+ // already enforced before a record reaches this view.
+ const hasVeneratedImage=gallery.some(image=>
+   image.subject_focus_id&&image.not_relic_image&&image.display_role==="GALLERY_OBJECT");
  let html='<section class="aoExploreGuideGallery" data-explore-place-chapter="gallery" aria-label="'+esc(L(language,"Photographs of this pilgrimage place","Photographies de ce lieu de pèlerinage"))+'">'
     +'<h4>'+esc(hasExactObjectImage
      ?L(language,"The place and its sacred treasures in photographs","Le lieu et ses trésors sacrés en images")
-     :L(language,"The place in photographs","Le lieu en images"))+'</h4><div class="aoExploreGalleryGrid">';
+     :hasVeneratedImage
+      ?L(language,"The place and its venerated images in photographs","Le lieu et ses images vénérées en photographies")
+      :L(language,"The place in photographs","Le lieu en images"))+'</h4><div class="aoExploreGalleryGrid">';
  for(const image of gallery){
-  html+='<figure class="aoExploreGalleryImage" data-gallery-image="'+esc(image.media_id)+'">'
+  const isExactVeneratedImage=Boolean(image.subject_focus_id&&image.not_relic_image&&image.display_role==="GALLERY_OBJECT");
+  html+='<figure class="aoExploreGalleryImage" data-gallery-image="'+esc(image.media_id)+'"'
+    +(isExactVeneratedImage?' data-sacred-subject-photo="'+esc(image.subject_focus_id)+'"':"")+'>'
     +'<img loading="lazy" decoding="async" src="'+esc(image.asset_path)+'" alt="'+esc(loc(image,"alt"))+'">'
-    +'<figcaption><strong>'+esc(loc(image,"label"))+'</strong><span>'+esc(image.credit)+' · '+esc(image.license)+'</span>'
+    +'<figcaption><strong>'+esc(loc(image,"label"))+'</strong>'
+    +(isExactVeneratedImage&&loc(image,"caption")?'<p>'+esc(loc(image,"caption"))+'</p>':"")
+    +'<span>'+esc(image.credit)+' · '+esc(image.license)+'</span>'
     +'<span class="aoExploreGalleryCredits">'+cite(image.source_url,L(language,"Photo source","Source de la photographie"))
     +cite(image.license_url,L(language,"Licence","Licence"))+'</span>'
     +'<small>'+esc(loc(image,"changes"))+'</small></figcaption></figure>';
@@ -273,6 +284,12 @@ function placeSheet(vm){
   const publicTreasureIds=new Set(arr(profile.sacred_treasures).map(x=>x.id));
   const residualRelicRecords=arr(profile.relics).filter(item=>!publicTreasureIds.has(item.source_id));
   const hasGallery=arr(profile.gallery).length>0;
+  // Only in the Sacred Atlas, surface already-approved image-specific
+  // photography before the long narrative, without shifting Place covers,
+  // ordinary galleries or any TLM directory profile.
+  const hasVeneratedImageGallery=vm.lens==="heritage"&&
+    arr(profile.gallery).some(image=>image.subject_focus_id&&
+      image.not_relic_image&&image.display_role==="GALLERY_OBJECT");
   const hasNovenas=arr(profile.novenas).length>0;
   const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
@@ -294,6 +311,7 @@ function placeSheet(vm){
   // A valid, source-owned opening introduces the verified sacred treasures
   // before the long reader. No relic, image, or recognition is inferred.
   if(sourcedOpening&&hasTreasures)html+=renderPlaceSacredTreasures(profile,vm.language);
+  if(hasVeneratedImageGallery)html+=placeGalleryHtml(profile,vm.language);
   // Avoid repeating the same historical introduction already supplied by the
   // published guide; preserve the other separately sourced chapters.
   const visibleChapters=hasEditorialIntro&&!restricted?chapters.filter(x=>x.kind!=="ORIGIN"):chapters;
@@ -321,7 +339,7 @@ function placeSheet(vm){
   // story-first order; the sacred-treasure section is never duplicated.
   if(hasTreasures&&!sourcedOpening)html+=renderPlaceSacredTreasures(profile,vm.language);
   if(hasSiteCustoms)html+=renderPlaceCustoms(profile,vm.language);
-  if(hasGallery)html+=placeGalleryHtml(profile,vm.language);
+  if(hasGallery&&!hasVeneratedImageGallery)html+=placeGalleryHtml(profile,vm.language);
   if(hasGuide)html+=illustratedGuideHtml(profile,vm.language);
   if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
   if(!chapters.length&&!synopsis&&!hasEditorialIntro&&!hasTreasures)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
