@@ -26,7 +26,7 @@ const sourceRows=[
   workGroupId:"CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
   photoSha1:"b8b257f4ed74ff83fc4a577005ffc8c5c65e90ab",
   file:"Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
-  rightsTier:"COMMONS_PD_ART",editorialBasis:"NEW_DATE_SPECIFIC_APPROVAL"
+  rightsTier:"COMMONS_PD_ART",editorialBasis:"OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED"
  },
  {
   date:"2026-07-01",principalId:"sancti:07-01:1:r",properPath:"Sancti/07-01",
@@ -35,7 +35,7 @@ const sourceRows=[
   workGroupId:"CANONICAL::ART-nthony-van-yck-he-ance-hrust",
   photoSha1:"2d7bdd1c7dc4583634f1c00dc99d5d38088be3fc",
   file:"Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
-  rightsTier:"COMMONS_CC0_SOURCE",editorialBasis:"NEW_DATE_SPECIFIC_APPROVAL"
+  rightsTier:"COMMONS_CC0_SOURCE",editorialBasis:"OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED"
  },
  {
   date:"2026-09-29",principalId:"sancti:09-29:1:w",properPath:"Sancti/09-29",
@@ -44,7 +44,7 @@ const sourceRows=[
   workGroupId:"CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan",
   photoSha1:"dfcaee8ee34422c3863332a58154466d9ac7c54a",
   file:"GuidoReni_MichaelDefeatsSatan.jpg",
-  rightsTier:"COMMONS_PD_ART",editorialBasis:"NEW_DATE_SPECIFIC_APPROVAL"
+  rightsTier:"COMMONS_PD_ART",editorialBasis:"USER_DATE_APPROVED_20261027"
  }
 ];
 export const FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS=Object.freeze(Object.fromEntries(
