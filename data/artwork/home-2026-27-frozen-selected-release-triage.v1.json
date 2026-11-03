@@ -6,16 +6,20 @@
     "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED": 16,
     "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED": 4,
     "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED": 4,
-    "ATTRIBUTION_SHAREALIKE_RIGHTS_NOT_CLEARED": 1,
+    "DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD": 1,
     "MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO": 1,
-    "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED": 1
+    "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED": 1,
+    "ownerDateApprovedAt20261021": 5,
+    "ownerDateRejectedAt20261021": 1,
+    "ownerDatePendingAt20261021": 21
   },
   "policy": [
     "These are pre-existing date artwork selections; no new artwork choice is made.",
     "Remote Commons preview is not native original, crop/user quality approval, or offline release.",
     "Selected works from AI-derived artwork must recover exact approved render bytes, not generate a new image or substitute another.",
     "Easter Vigil has two selected prophecy artworks requiring the appropriate multiple scene slots rather than one fabricated cover.",
-    "No exact painting is silently replaced to bypass a licence or source hold."
+    "No exact painting is silently replaced to bypass a licence or source hold.",
+    "2026-10-21 Class I Yes/No date review snapshot has five yes, one no, and 21 pending; this is historical, not proof no later decision exists."
   ],
   "rows": [
     {
@@ -31,7 +35,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-01-06",
@@ -46,7 +52,9 @@
       "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
       "sourceResearchCandidates": 6,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
     },
     {
       "date": "2026-03-01",
@@ -61,7 +69,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 1,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-03-08",
@@ -76,7 +86,9 @@
       "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-03-15",
@@ -91,7 +103,9 @@
       "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
       "sourceResearchCandidates": 1,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
     },
     {
       "date": "2026-03-22",
@@ -106,7 +120,9 @@
       "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-03-30",
@@ -121,7 +137,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-03",
@@ -133,10 +151,12 @@
         "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
         "sourceObjectUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/"
       },
-      "decision": "ATTRIBUTION_SHAREALIKE_RIGHTS_NOT_CLEARED",
+      "decision": "DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD",
       "sourceResearchCandidates": 1,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "no",
+      "sourcePhotoAccepted20261021": "yes"
     },
     {
       "date": "2026-04-04",
@@ -151,7 +171,9 @@
       "decision": "MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-06",
@@ -166,7 +188,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 2,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-07",
@@ -181,7 +205,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-08",
@@ -196,7 +222,9 @@
       "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-09",
@@ -211,7 +239,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-10",
@@ -226,7 +256,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-04-11",
@@ -241,7 +273,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-05-25",
@@ -256,7 +290,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-05-26",
@@ -271,7 +307,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-05-28",
@@ -286,7 +324,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-05-29",
@@ -301,7 +341,9 @@
       "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-05-30",
@@ -316,7 +358,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-06-24",
@@ -331,7 +375,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-07-01",
@@ -346,7 +392,9 @@
       "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
       "sourceResearchCandidates": 1,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
     },
     {
       "date": "2026-08-15",
@@ -361,7 +409,9 @@
       "decision": "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED",
       "sourceResearchCandidates": 5,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
     },
     {
       "date": "2026-09-29",
@@ -376,7 +426,9 @@
       "decision": "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED",
       "sourceResearchCandidates": 1,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "yes",
+      "sourcePhotoAccepted20261021": "yes"
     },
     {
       "date": "2026-12-06",
@@ -391,7 +443,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-12-13",
@@ -406,7 +460,9 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     },
     {
       "date": "2026-12-20",
@@ -421,7 +477,10 @@
       "decision": "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
-      "offlineCertified": false
+      "offlineCertified": false,
+      "sourceOwnerDateDecision20261021": "pending",
+      "sourcePhotoAccepted20261021": "not_recorded"
     }
-  ]
+  ],
+  "sourceOwnerDecisionSnapshot": "data/artwork/home-2026-class-i-27-owner-decisions-20261021.v1.json"
 }
