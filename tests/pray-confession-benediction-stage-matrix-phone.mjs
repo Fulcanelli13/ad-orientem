@@ -120,6 +120,15 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null})),true);
    const checkBenediction=async(ids,kind)=>{
     for(let index=0;index<ids.length;index++){
+     // The Solemn Blessing is an intentional, viewport-fixed rite cinematic.
+     // A person must acknowledge its real Continue action before changing
+     // cards; never bypass the overlay with synthetic DOM taps.
+     const cinematic=page.locator(".aoDevotionalActionCinematic[role='dialog']");
+     if(await cinematic.count()>0){
+      const action=cinematic.locator(".aoDevotionalActionContinue");
+      await action.click({timeout:12000});
+      await cinematic.waitFor({state:"detached",timeout:12000});
+     }
      const extended=ids.length>7;
      const selector=extended
       ?benTimeline+" [data-ao-devo-chapter='"+index+"']"
