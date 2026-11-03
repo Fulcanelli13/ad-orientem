@@ -125,3 +125,35 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
   }
 });
 export function prayCollationNotice(id){return PRAY_COLLATION_NOTICES_V1[String(id||"")]||null;}
+
+/**
+ * Canonical core audit status, extracted from
+ * data/pray/prayer-source-certification-inventory.v3.json (3 Nov 2026).
+ * These are evidence levels, NOT original-edition text certifications.
+ * The authoritative inventory remains the source of truth; CI verifies
+ * this deliberately tiny browser-safe projection against all 48 records.
+ */
+export const PRAY_CANONICAL_ANCHOR_REVIEWED_V1=Object.freeze([
+ "foundations_sign_of_cross","foundations_our_father","foundations_hail_mary",
+ "foundations_glory_be","foundations_apostles_creed","sacrament_act_of_contrition",
+ "foundations_act_of_faith","foundations_act_of_hope","foundations_act_of_love",
+ "foundations_guardian_angel","foundations_grace_before_meals",
+ "foundations_grace_after_meals","marian_hail_holy_queen","marian_memorare",
+ "weekday_magnificat","adoration_anima_christi","weekday_benedictus",
+ "foundations_eternal_rest"
+]);
+export const PRAY_CANONICAL_NO_DIRECT_CORPUS_URL_V1=Object.freeze([
+ "mass_confiteor","adoration_lord_i_am_not_worthy"
+]);
+const ANCHOR_SET=new Set(PRAY_CANONICAL_ANCHOR_REVIEWED_V1);
+const NO_URL_SET=new Set(PRAY_CANONICAL_NO_DIRECT_CORPUS_URL_V1);
+export function prayCanonicalSourceReviewV1(id){
+ const key=String(id||"");
+ if(!key)return null;
+ return Object.freeze({
+  status:ANCHOR_SET.has(key)?"ANCHOR_REVIEWED_NOT_FULL_VERBATIM":"NOT_REVIEWED",
+  independentPrintCertified:false,
+  originalCorpusDirectSourceUrlPresent:!NO_URL_SET.has(key),
+  editionOrLocaleDiscrepancyRecorded:!!PRAY_COLLATION_NOTICES_V1[key]
+ });
+}
