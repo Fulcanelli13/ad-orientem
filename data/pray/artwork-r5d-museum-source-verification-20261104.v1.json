@@ -7,7 +7,10 @@
     "groupsReviewed": 2,
     "eligibleNonRosarySlots": 15,
     "groupsReadyForPublication": 0,
-    "publicationClearedSlots": 0
+    "publicationClearedSlots": 0,
+    "exactSourceImageEndpointsIdentified": 1,
+    "originalPhotosAcquired": 0,
+    "newlyPublicationClearedSlots": 0
   },
   "records": [
     {
@@ -34,7 +37,13 @@
       "exactFileIntegrityChecked": false,
       "framingAndResponsiveQA": false,
       "publicationAuthorized": false,
-      "notes": "Museum page contains mixed attribution in page content; primary object header reads 'follower of Sodoma'; keep attribution conservative until catalog reconciliation."
+      "notes": "Museum page contains mixed attribution in page content; primary object header reads 'follower of Sodoma'; keep attribution conservative until catalog reconciliation.",
+      "imageSourceRetrieval": {
+        "status": "BLOCKED",
+        "apiRecordEndpoint": "https://openaccess-api.clevelandart.org/api/artworks/1916.786",
+        "reason": "Direct image/API retrieval unavailable in this session; no original file downloaded or integrity tested",
+        "incorrectRelatedImageExcluded": "https://piction.clevelandart.org/cma/ump.di?e=AF4DFCFDE9FEC3C85E890B2E8BAF32BD2FA71D1D935B7BA4ABA06FECFAAB1E95&f=1951.334_o5.jpg&s=24247294&se=116628280&v=4"
+      }
     },
     {
       "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
@@ -57,7 +66,12 @@
       "exactFileIntegrityChecked": false,
       "framingAndResponsiveQA": false,
       "publicationAuthorized": false,
-      "notes": "Retain workshop attribution in visible credits and source provenance."
+      "notes": "Retain workshop attribution in visible credits and source provenance.",
+      "imageSourceRetrieval": {
+        "status": "ENDPOINT_IDENTIFIED_FILE_NOT_ACQUIRED",
+        "exactMuseumImageEndpoint": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437542/2006481/main-image",
+        "reason": "Museum page exact-object image URL verified, but binary download failed in session; original dimensions, hash and released-file QA unavailable"
+      }
     }
   ],
   "nextRequiredActions": [
