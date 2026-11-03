@@ -1,0 +1,4038 @@
+{
+  "schema": "AO_SACRED_ATLAS_SITE_COVER_RECOVERY_125_V1",
+  "as_of": "2026-10-31",
+  "source_batches": [
+    "data/geography/research/sacred-atlas-site-covers-batch-001.results.json",
+    "data/geography/research/sacred-atlas-site-covers-batch-002.results.json",
+    "data/geography/research/sacred-atlas-site-covers-batch-003.results.json",
+    "data/geography/research/sacred-atlas-site-covers-batch-004.results.json",
+    "data/geography/research/sacred-atlas-site-covers-batch-005.results.json"
+  ],
+  "counts": {
+    "SOURCE_LOOKUP_FAILED_OR_CHANGED": 6,
+    "NO_USABLE_EXACT_SOURCE_FOUND": 118,
+    "CORRECT_CITY_SOURCE_STILL_UNRESOLVED": 1
+  },
+  "all_targets": 125,
+  "scope": "Research-only recovery queue for 410 Place cover baseline; do not infer source rights or site identity from search",
+  "items": [
+    {
+      "ordinal": 1,
+      "place_id": "place:JP:st-mary-cathedral-tokyo",
+      "site_name": "St Mary's Catholic Cathedral — Tokyo",
+      "city": "Tokyo",
+      "country_code": "JP",
+      "coordinates": {
+        "lat": 35.71428,
+        "lng": 139.72657,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:St. Mary's Cathedral Tokyo 2012.JPG",
+      "status": "SOURCE_LOOKUP_FAILED_OR_CHANGED",
+      "reason": "Error: HTTP 429",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 2,
+      "place_id": "place:NO:st-olav-cathedral-oslo",
+      "site_name": "St Olav Catholic Cathedral — Oslo",
+      "city": "Oslo",
+      "country_code": "NO",
+      "coordinates": {
+        "lat": 59.91844,
+        "lng": 10.74416,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:StOlavsOsloFeb2009.jpg",
+      "status": "SOURCE_LOOKUP_FAILED_OR_CHANGED",
+      "reason": "Error: HTTP 429",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 3,
+      "place_id": "place:AU:p48-sg-0743-155809136",
+      "site_name": "St Patrick's Cathedral, Melbourne",
+      "city": "East Melbourne, Victoria",
+      "country_code": "AU",
+      "coordinates": {
+        "lat": -37.81016,
+        "lng": 144.97632,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:St Patrick's Cathedral (Gothic Revival Style).jpg",
+      "status": "SOURCE_LOOKUP_FAILED_OR_CHANGED",
+      "reason": "Error: HTTP 429",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 4,
+      "place_id": "place:VA:saint-peter-vatican",
+      "site_name": "St Peter's Basilica — Vatican",
+      "city": "Vatican City",
+      "country_code": "VA",
+      "coordinates": {
+        "lat": 41.90216,
+        "lng": 12.45371,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+      "status": "SOURCE_LOOKUP_FAILED_OR_CHANGED",
+      "reason": "Error: HTTP 429",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 5,
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "site_name": "St Peter's Cathedral Basilica, Kumasi",
+      "city": "Kumasi",
+      "country_code": "GH",
+      "coordinates": {
+        "lat": 6.69536,
+        "lng": -1.61775,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:St Peter's Cathedral Basilica Kumasi (4).jpg",
+      "status": "SOURCE_LOOKUP_FAILED_OR_CHANGED",
+      "reason": "Error: HTTP 429",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 6,
+      "place_id": "place:HR:p46-sg-0313-308623424",
+      "site_name": "Svetište Gospe od Utočišta u Aljmašu",
+      "city": "Aljmaš, Osijek-Baranja",
+      "country_code": "HR",
+      "coordinates": {
+        "lat": 45.53016,
+        "lng": 18.94989,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Svetiste Aljmas 01.jpg",
+      "status": "SOURCE_LOOKUP_FAILED_OR_CHANGED",
+      "reason": "Error: HTTP 429",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 7,
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "site_name": "Aachener Dom — Four Sacred Textiles",
+      "city": "Aachen",
+      "country_code": "DE",
+      "coordinates": {
+        "lat": 50.7747469,
+        "lng": 6.08392,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 8,
+      "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "site_name": "Archdiocese of Lusaka Marian Shrine",
+      "city": "Lusaka",
+      "country_code": "ZM",
+      "coordinates": {
+        "lat": -15.3713,
+        "lng": 28.40766,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "003",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 9,
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "site_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
+      "city": "Higüey",
+      "country_code": "DO",
+      "coordinates": {
+        "lat": 18.61551,
+        "lng": -68.71687,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:BasilicaAtHiguey 1000W.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:BasilicaAtHiguey 1000W.jpg",
+          "license": "CC BY-SA 2.5",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+          "resolution": [
+            1000,
+            664
+          ],
+          "source_sha1": "0850ccbc48e52c953b6a89e06c9a5e04b6e4ecc3",
+          "author": "JohnHarvey at English Wikipedia",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 10,
+      "place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+      "site_name": "Basílica de la Inmaculada Concepción de María, El Viejo",
+      "city": "El Viejo",
+      "country_code": "NI",
+      "coordinates": {
+        "lat": 12.66222,
+        "lng": -87.16669,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Almanaque de la Conferencia de Señoras San Vicente de Paul - 1895.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            868,
+            1168
+          ],
+          "source_sha1": "6cda28dff98f071bce053e97bdb9a9d6efb3129b",
+          "author": "Iglesia del Socorro",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:La Ilustración española y americana 1880 B.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1679,
+            2452
+          ],
+          "source_sha1": "dd98519deafb97cbcb57cfe5c7bb7faaaee1004c",
+          "author": "Editors",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Almanaque de las portenas 1898.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1780,
+            2872
+          ],
+          "source_sha1": "2c39d55391df647509d67cbd3e0926db654c76f5",
+          "author": "M. Castilla Portugal",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:BaANH49564 Almanaque Sud-Americano (1890).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            662,
+            1043
+          ],
+          "source_sha1": "3942a93b0b7399fed1b42946e597dc78fabd1501",
+          "author": "ANH logo This file, part of the Collection of the Academia Nacional de la Historia de la República Argentina, was provided to Wikimedia Commons thanks to an agreement between the Academia Nacional de la Historia and Wikimedia Argentina .",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Books from the Library of Congress (IA sermonpredicadop00alam).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            747,
+            1162
+          ],
+          "source_sha1": "0492f50f58b2c96e593af141daedfb7ffef934a8",
+          "author": "Alamán, Gil Oratorians in Mexico",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Elementos de historia universal (IA elementosdehisto00nuev).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            954,
+            1654
+          ],
+          "source_sha1": "63f1621eed253f39fc1dbb50bf08b77125127dea",
+          "author": "https://archive.org/details/elementosdehisto00nuev https://archive.org/download/elementosdehisto00nuev/elementosdehisto00nuev.pdf",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 11,
+      "place_id": "place:ES:basilica-nuestra-senora-arantzazu-onati",
+      "site_name": "Basílica de Nuestra Señora de Arantzazu, Oñati",
+      "city": "Oñati",
+      "country_code": "ES",
+      "coordinates": {
+        "lat": 42.97907,
+        "lng": -2.39847,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Santuario de Arantzazu (Guipúzcoa)-1.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Santuario de Arantzazu (Guipúzcoa)-1.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1024,
+            681
+          ],
+          "source_sha1": "1c1cd03862d9c76cd54ff2ca6bdbdda727eb1023",
+          "author": "Javi Guerra Hernando",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 12,
+      "place_id": "place:HN:suyapa-basilica",
+      "site_name": "Basílica de Nuestra Señora de Suyapa",
+      "city": "Tegucigalpa",
+      "country_code": "HN",
+      "coordinates": {
+        "lat": 14.08041,
+        "lng": -87.15727,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 13,
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "site_name": "Basílica del Santo Cristo Crucificado de Esquipulas",
+      "city": "Esquipulas",
+      "country_code": "GT",
+      "coordinates": {
+        "lat": 14.56175,
+        "lng": -89.35078,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Esquipulas basilica.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Esquipulas basilica.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2496,
+            1872
+          ],
+          "source_sha1": "c4094f1e1546ccaaed3c628b203d7098320d3ebf",
+          "author": "Sapfan at English Wikipedia",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 14,
+      "place_id": "place:EC:basilica-voto-nacional-quito",
+      "site_name": "Basílica del Voto Nacional — Quito",
+      "city": "Quito",
+      "country_code": "EC",
+      "coordinates": {
+        "lat": -0.21472,
+        "lng": -78.50735,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Basilica del voto nacional.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Basilica del voto nacional.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1075,
+            871
+          ],
+          "source_sha1": "f2ea73a19acb32847941f649883fbbdf87291407",
+          "author": "Quito magnífico (shifted by Rabanus Flavus )",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 15,
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "site_name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "city": "Atalaya, Veraguas",
+      "country_code": "PA",
+      "coordinates": {
+        "lat": 8.04326,
+        "lng": -80.92447,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 16,
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "site_name": "Basílica Nuestra Señora de la Monserrate",
+      "city": "Hormigueros",
+      "country_code": "PR",
+      "coordinates": {
+        "lat": 18.1407181,
+        "lng": -67.1271593,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:BasilicaMenor-HormiguerosPR-02.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:BasilicaMenor-HormiguerosPR-02.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1075,
+            806
+          ],
+          "source_sha1": "2218b13687b15da93062d794e48ccf8255ac74ef",
+          "author": "Jcarrillovii",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 17,
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "site_name": "Basilica of Our Lady of Deliverance, Popenguine",
+      "city": null,
+      "country_code": "SN",
+      "coordinates": {
+        "lat": 14.55468,
+        "lng": -17.11152,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:PopenguineChurch.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:PopenguineChurch.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            3072,
+            2304
+          ],
+          "source_sha1": "eefb0268c1f830280c2ade435cf5ae0c213e9c81",
+          "author": "Ji-Elle",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 18,
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "site_name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "city": null,
+      "country_code": "CI",
+      "coordinates": {
+        "lat": 6.81129,
+        "lng": -5.29698,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 19,
+      "place_id": "place:TO:st-anthony-padua-basilica-nukualofa",
+      "site_name": "Basilica of St Anthony of Padua, Nukuʻalofa",
+      "city": "Nukuʻalofa",
+      "country_code": "TO",
+      "coordinates": {
+        "lat": -21.13683,
+        "lng": -175.20186,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 20,
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "site_name": "Basilica of the Annunciation, Nazareth",
+      "city": null,
+      "country_code": "IL",
+      "coordinates": {
+        "lat": 32.70209,
+        "lng": 35.29779,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Nazaret Verkuendigungsbasilika BW 16.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Nazaret Verkuendigungsbasilika BW 16.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2455,
+            3680
+          ],
+          "source_sha1": "7acd5c7e849f41a4e4a6ddaf4d99bca5cf794f06",
+          "author": "Berthold Werner",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 21,
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "site_name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+      "city": null,
+      "country_code": "US",
+      "coordinates": {
+        "lat": 43.20036,
+        "lng": -79.0034,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 22,
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "site_name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
+      "city": "Santa Maria degli Angeli, Assisi",
+      "country_code": "IT",
+      "coordinates": {
+        "lat": 43.05825,
+        "lng": 12.58035,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Bazylika Santa Maria degli Angeli Asyż.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Bazylika Santa Maria degli Angeli Asyż.jpg",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "resolution": [
+            1181,
+            949
+          ],
+          "source_sha1": "55b8fdf8190b9f114179aa150034266a8d39d038",
+          "author": null,
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 23,
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "site_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "city": "Pagani",
+      "country_code": "IT",
+      "coordinates": {
+        "lat": 40.7423,
+        "lng": 14.6107,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Pagani-basi.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Pagani-basi.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2048,
+            1536
+          ],
+          "source_sha1": "b79a67d5fb5f745338d016e8102263ffbab105c6",
+          "author": "Bocachete",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 24,
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "site_name": "Basilica Shrine of Our Lady of the Miraculous Medal",
+      "city": "Philadelphia",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 40.04227,
+        "lng": -75.16732,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Veronica; (IA veronica00unse).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            650,
+            941
+          ],
+          "source_sha1": "817dd52dbb909d5b07e4ce16ad8414c406f21ff9",
+          "author": "Internet Archive identifier : veronica00unse https://archive.org/download/veronica00unse/veronica00unse.pdf",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The cross in tradition, history and art (IA crossintradition00seym 0).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1266,
+            1891
+          ],
+          "source_sha1": "f856bce91b367747c454b5b5c922caa92b4559c7",
+          "author": "Seymour, William Wood",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The cross in tradition, history, and art (IA cu31924029325473).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            858,
+            1327
+          ],
+          "source_sha1": "ff27a3a2e0c54272984bff4d1a3e5ac07f652e18",
+          "author": "Seymour, William Wood",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Diary of Jane Baldwin Smith, 1867 - with letters of Eva Smith (and) genealogy. (IA diaryofjanebaldw00smit).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1385,
+            2218
+          ],
+          "source_sha1": "d7cf2f815c8f07f261f58d3d6d7f1ad1d556a034",
+          "author": "Smith, Jane Baldwin.",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 25,
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "site_name": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
+      "city": "Fontaine-lès-Dijon",
+      "country_code": "FR",
+      "coordinates": {
+        "lat": 47.345814,
+        "lng": 5.015873,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Fontaine Bernardo.jpg",
+          "license": "CC BY-SA 1.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/1.0",
+          "resolution": [
+            800,
+            600
+          ],
+          "source_sha1": "d8b8dde74d562ec16d5820b3fd31f8f2572ff027",
+          "author": "Henri JACHET",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Girault - Manuel de l'étranger à Dijon, 1824.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            871,
+            1566
+          ],
+          "source_sha1": "cced27e8ba4c877d7f8d67e99cc4bd1a572e37f0",
+          "author": "Girault, Claude-Xavier",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Manuel de l'étranger à Dijon, ou Essais historiques et biographiques sur la capitale de la Bourgogne et sur cette ancienne province... par C.X. Girault,... (IA bub gal ark 12148 bpt6k65255163).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            216,
+            389
+          ],
+          "source_sha1": "ad15b420d3013c73424e5b119a82d053ab8b1205",
+          "author": "Girault, Claude-Xavier",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Société de l'histoire de Paris et de l'Ile de France - Table décennale - I.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2392,
+            3754
+          ],
+          "source_sha1": "8ed0c07a2ff9618ae3ba7c5d35412a68d3a3eef3",
+          "author": "Société de l'histoire de Paris et de l'Ile de France",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Catalogue Sommaire des Musées de la Ville de Lyon, 1887.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1796,
+            2863
+          ],
+          "source_sha1": "fc3721849ded603412298b4928bdf4b88098ef43",
+          "author": "Mougin-Rusand printer ; Adrien Allmer drawings",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Les arts au Moyen Age - en ce qui concerne principalement le palais romain de Paris l'Hôtel de Cluny, issu de ses ruines et les objets d'art de la collection classée dans cet hôtel (IA lesartsaumoyenag00duso).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1116,
+            1797
+          ],
+          "source_sha1": "37d4862c58dfeec50317121ff3216c862c3820d4",
+          "author": "Du Sommerard, Alexandre, 1779-1842",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 26,
+      "place_id": "place:SI:bazilika-marije-zavetnice-ptujska-gora",
+      "site_name": "Bazilika Marije Zavetnice s plaščem — Ptujska Gora",
+      "city": "Ptujska Gora",
+      "country_code": "SI",
+      "coordinates": {
+        "lat": 46.3546,
+        "lng": 15.76147,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Bazilika Marije Zavetnice s plaščem.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Bazilika Marije Zavetnice s plaščem.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1024,
+            690
+          ],
+          "source_sha1": "c4ae7432eef3e250a27e6b5b777b6d586105f1d8",
+          "author": "Vid Pogacnik",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 27,
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "site_name": "Bazilika Nanebevzetí Panny Marie, Svatý Hostýn",
+      "city": "Svatý Hostýn",
+      "country_code": "CZ",
+      "coordinates": {
+        "lat": 49.37673,
+        "lng": 17.70032,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Church of the Assumption of the Virgin Mary in Hostýn (2).jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Church of the Assumption of the Virgin Mary in Hostýn (2).jpg",
+          "license": "CC BY 3.0 pl",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/pl/deed.en",
+          "resolution": [
+            4000,
+            3000
+          ],
+          "source_sha1": "6b354b5e53cecb91d650927c432950ec0e970d0c",
+          "author": "Radosław Botev",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 28,
+      "place_id": "place:SK:bazilika-narodenia-panny-marie-marianka",
+      "site_name": "Bazilika Narodenia Panny Márie, Marianka",
+      "city": "Marianka",
+      "country_code": "SK",
+      "coordinates": {
+        "lat": 48.24807,
+        "lng": 17.06481,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Basilica, Marianka WMP 20 Slovakia.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1111,
+            1481
+          ],
+          "source_sha1": "b8ef94afad4e449955867cf3030f3f0476e59aeb",
+          "author": "Ing. Mgr. Jozef Kotulič",
+          "meta_eligible": true
+        },
+        {
+          "title": "File:Basilica, Marianka WMP 20 Slovakia 1.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1858,
+            1394
+          ],
+          "source_sha1": "dd5435e202bc76790c9d2d22fb80ca12cf5ddf20",
+          "author": "Ing. Mgr. Jozef Kotulič",
+          "meta_eligible": true
+        },
+        {
+          "title": "File:Basilica, Marianka WMP 20 Slovakia 3.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1004,
+            1333
+          ],
+          "source_sha1": "2f149e1462ecb2c06e64f10a13ae9becbf904765",
+          "author": "Ing. Mgr. Jozef Kotulič",
+          "meta_eligible": true
+        },
+        {
+          "title": "File:Basilica, Marianka WMP 20 Slovakia 6.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1212,
+            1613
+          ],
+          "source_sha1": "c518d302525f325e1b1d1adb538cd5b3b64da105",
+          "author": "Ing. Mgr. Jozef Kotulič",
+          "meta_eligible": true
+        },
+        {
+          "title": "File:Basilica, Marianka WMP 20 Slovakia 7.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1959,
+            1471
+          ],
+          "source_sha1": "675f8f9b5a52892d63b6f6e5d2b5e2813ac71e35",
+          "author": "Ing. Mgr. Jozef Kotulič",
+          "meta_eligible": true
+        },
+        {
+          "title": "File:Basilica, Marianka WMP 20 Slovakia 2.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            632,
+            474
+          ],
+          "source_sha1": "d437f318ad9ea62d47f2566b169d017d3bc1a541",
+          "author": "Ing. Mgr. Jozef Kotulič",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 29,
+      "place_id": "place:SV:capilla-divina-providencia-san-salvador",
+      "site_name": "Capilla de la Divina Providencia, Hospital Divina Providencia",
+      "city": "San Salvador",
+      "country_code": "SV",
+      "coordinates": {
+        "lat": 13.71114,
+        "lng": -89.2237,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:La imprenta en México (1539-1821) - Tomo 5.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1510,
+            2252
+          ],
+          "source_sha1": "92f91dc9742f20be1cf2ed53c81f51a9cb3027a2",
+          "author": "José Toribio Medina",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 30,
+      "place_id": "place:SZ:our-lady-assumption-cathedral-manzini",
+      "site_name": "Cathedral of Our Lady of the Assumption, Manzini",
+      "city": "Manzini",
+      "country_code": "SZ",
+      "coordinates": {
+        "lat": -26.5005625,
+        "lng": 31.3775625,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 31,
+      "place_id": "place:BD:holy-rosary-cathedral-chattogram",
+      "site_name": "Cathedral of Our Lady of the Holy Rosary, Chattogram",
+      "city": "Chattogram",
+      "country_code": "BD",
+      "coordinates": {
+        "lat": 22.33241,
+        "lng": 91.8394,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Patharghatta Catholic Church Chittagong.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Patharghatta Catholic Church Chittagong.JPG",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "resolution": [
+            800,
+            1000
+          ],
+          "source_sha1": "41e35cfcda8563e4cc84d26f8e60fb9cb77a60d6",
+          "author": "Bazaan",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 32,
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "site_name": "Cathedral of the Assumption of the Virgin Mary — Tbilisi",
+      "city": "Tbilisi",
+      "country_code": "GE",
+      "coordinates": {
+        "lat": 41.69279,
+        "lng": 44.80357,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Tbilisi Catholical church St. Maria.png",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Tbilisi Catholical church St. Maria.png",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2748,
+            3664
+          ],
+          "source_sha1": "67ec216ecccd51d9a34b31c6ba888485fb109d9e",
+          "author": "Temuri",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 33,
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "site_name": "Centre Père Laval",
+      "city": "Port-Louis",
+      "country_code": "MU",
+      "coordinates": {
+        "lat": -20.1478,
+        "lng": 57.52957,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Jean-Marie-Joseph Ingres Père, peintre et sculpteur, 1754-1814 (IA jeanmariejosephi00ingr).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1320,
+            1606
+          ],
+          "source_sha1": "cb7b069c38d2a78593ba5d3999278b0fe5e74051",
+          "author": "Ingres, Jean-Marie-Joseph, 1755-1814 Forestié, Édouard, 1847-1911",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Emblesmes royales a Louis le Grand (IA gri 33125011075104).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            870,
+            1500
+          ],
+          "source_sha1": "80c532108023fa819bdbba62a4d6596bdcbcf7c7",
+          "author": "Martinet, sieur Barbin, Claude, approximately 1628-1698",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Démonstration en faveur du pouvoir temporel du pape (microforme) - faite par l'Université Laval et les citoyens de Québec, salle de promotions de l'Université Laval, 28 avril 1889 (IA cihm 03961).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1170,
+            1368
+          ],
+          "source_sha1": "1b9ba76a13b575d3f75595573b1e1ae5699b4299",
+          "author": "Internet Archive identifier : cihm_03961 https://archive.org/download/cihm_03961/cihm_03961.pdf IA contributor: Canadiana.org IA digitizing sponsor: University of Ottawa",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Samuel Champlain (microforme) - fondateur de Québec et père de la Nouvelle-France, histoire de sa vie et de ses voyages (IA cihm 06260).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1147,
+            1368
+          ],
+          "source_sha1": "984ca2ef2d930ab0491adea482a2fff2e87aff0f",
+          "author": "Dionne, N.-E., (Narcisse Eutrope), 1848-1917",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Esquisse de la vie et des travaux apostoliques de Sa Grandeur Mgr. Fr. Xavier de Laval-Montmorency premier Évêque de Québec, suivie de l'Éloge funèbre du prélat (IA esquissedelaviee00bois 0).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            725,
+            1235
+          ],
+          "source_sha1": "722ce1483eec0dee0065e97e304bccfd93b7a7c3",
+          "author": "Bois, Louis-Edouard, 1813-1889 La Colombière, Joseph Séré de, 1651?-1723",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Monumens de l'histoire de France, en estampes et dessins .. (IA gri 33125014411199).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2472,
+            3662
+          ],
+          "source_sha1": "f5de95be3381a2af40971a7c2af5775ee3bb8c23",
+          "author": "Soulavie, Jean-Louis, 1752-1813, collector Audran, Benoît, 1661-1721, engraver Audran, Jean, 1667-1756, engraver Bartolozzi, Francesco, 1727-1815, etcher Bosse, Abraham, 1602-1676, engraver Callot, Jacques, 1592-1635, etcher Chéreau, François, 1680-1729, engraver Della Bella, Stefano, 1610-1664, etcher Gautier Dagoty, 1717-1785, etcher Gueuvin, 19th century, bookbinder Hollar, Wenceslaus, 1607-1677, etcher Hooghe, Romeyn de, 1645-1708, etcher La Fage, Raymond, 1656-1684, engraver Lepautre, Pierre, 1660-1744, engraver Mellan, Claude, 1598-1688, engraver Morret, Jean-Baptiste, etcher Picart, Bernard, 1673-1733, etcher Thomassin, S. (Simon), 1652?-1732, engraver",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 34,
+      "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "site_name": "Centro de Espiritualidad y Santuario San Martín de Porres, Jicamarca",
+      "city": "Jicamarca, San Antonio de Huarochirí",
+      "country_code": "PE",
+      "coordinates": {
+        "lat": -11.9004375,
+        "lng": -76.9439375,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 35,
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "site_name": "Christ the King Catholic Church, Nuuk",
+      "city": "Nuuk",
+      "country_code": "GL",
+      "coordinates": {
+        "lat": 64.17942,
+        "lng": -51.73179,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:New-Dark Evangelist 1874-11-26- Vol 45 Iss 48 (IA sim evangelist-and-religious-review 1874-11-26 45 48).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2485,
+            3458
+          ],
+          "source_sha1": "2af51505acb7ef00da4711a16214eba5bf1188c6",
+          "author": "Internet Archive identifier : sim_evangelist-and-religious-review_1874-11-26_45_48 https://archive.org/download/sim_evangelist-and-religious-review_1874-11-26_45_48/sim_evangelist-and-religious-review_1874-11-26_45_48.pdf IA contributor: Internet Archive IA digitizing sponsor: Kahle/Austin Foundation",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 36,
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "site_name": "Church of Saint Peter, Jaffa",
+      "city": null,
+      "country_code": "IL",
+      "coordinates": {
+        "lat": 32.05475,
+        "lng": 34.75206,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Jaffa BW 3.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Jaffa BW 3.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            3524,
+            2350
+          ],
+          "source_sha1": "464041e6cdeb37ae3ef3a2a2c1f213976b9b1488",
+          "author": "Berthold Werner",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 37,
+      "place_id": "place:MY:st-jude-church-rawang",
+      "site_name": "Church of St. Jude, Rawang",
+      "city": "Rawang",
+      "country_code": "MY",
+      "coordinates": {
+        "lat": 3.3170625,
+        "lng": 101.5771875,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 38,
+      "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "site_name": "Church of the Nativity of the Blessed Virgin Mary, Hougang",
+      "city": "Singapore",
+      "country_code": "SG",
+      "coordinates": {
+        "lat": 1.37348,
+        "lng": 103.89847,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Church of the Nativity of the Blessed Virgin Mary, Hougang, October 2025.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            250,
+            141
+          ],
+          "source_sha1": "64a152ab362a3545b1d0aa163a7dca822fe30cb6",
+          "author": "GoAheadFan95",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 39,
+      "place_id": "place:EG:zeitoun-coptic-saint-mary",
+      "site_name": "Church of the Virgin Mary, Zeitoun (Coptic Orthodox)",
+      "city": "Zeitoun, Cairo",
+      "country_code": "EG",
+      "coordinates": {
+        "lat": 30.10467,
+        "lng": 31.31544,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 40,
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "site_name": "Divine Mercy Sanctuary, Vilnius",
+      "city": null,
+      "country_code": "LT",
+      "coordinates": {
+        "lat": 54.68148,
+        "lng": 25.28554,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Divine Mercy Sanctuary in Vilnius1.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Divine Mercy Sanctuary in Vilnius1.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2304,
+            3072
+          ],
+          "source_sha1": "7861c64413a500df15555935fce2c017baa6a7f3",
+          "author": "Alma Pater",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 41,
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "site_name": "Dulce Nombre de Maria Cathedral-Basilica, Hagåtña",
+      "city": "Hagåtña",
+      "country_code": "GU",
+      "coordinates": {
+        "lat": 13.47418,
+        "lng": 144.75232,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Dulce Nombre de Maria Cathedral Basilica.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Dulce Nombre de Maria Cathedral Basilica.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2048,
+            1536
+          ],
+          "source_sha1": "ddb57a34d088f6eed4c4caac144b245f7ee2c479",
+          "author": "Abasaa",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 42,
+      "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "site_name": "Église Notre-Dame de Lourdes, Casablanca",
+      "city": "Casablanca",
+      "country_code": "MA",
+      "coordinates": {
+        "lat": 33.5827,
+        "lng": -7.61574,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Eberhardt - Pages d’Islam, 1920.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            3148,
+            4658
+          ],
+          "source_sha1": "59f81ba9c02e030a3e42c80d52076c7a55e5be80",
+          "author": "Isabelle Eberhardt (1877-1904)",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Carton de Wiart - Mes vacances au Congo, 1923.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1674,
+            2419
+          ],
+          "source_sha1": "5fa13421150bf08274177010f3d6a65aab0067c0",
+          "author": "Henry Carton de Wiart",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Ossendowski - Sous le fouet du Simoun.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1447,
+            2241
+          ],
+          "source_sha1": "3e6c3713fd5c0284dd836b5972c3f354e4811030",
+          "author": "Ferdynand Antoni Ossendowski",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Bulletin religieux de l’archidiocèse de Rouen, année 7, numéro 38, 19 septembre 1908.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            8533,
+            12725
+          ],
+          "source_sha1": "4f3ccf01b21d76bf179c53e086b3a783e43e06fd",
+          "author": "Église catholique, Diocèse de Rouen",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:L'Illustration 1907, 65e année, no 3374 (SBC147866).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1566,
+            2172
+          ],
+          "source_sha1": "f082ab094d6c0c6dd9f26bef1ea0fd4c991eb5a1",
+          "author": "L'Illustration",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 43,
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "site_name": "Église Saint-Hilaire-le-Grand, Poitiers",
+      "city": "Poitiers",
+      "country_code": "FR",
+      "coordinates": {
+        "lat": 46.5773,
+        "lng": 0.33275,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Saint Hilaire Poitiers 2.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Saint Hilaire Poitiers 2.jpg",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "resolution": [
+            2048,
+            1191
+          ],
+          "source_sha1": "1e01f20b67a1e071bbf51e65e5dfa0c5412cf936",
+          "author": null,
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 44,
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "site_name": "Église Saint-Louis-de-Gonzague de Pau",
+      "city": "Pau",
+      "country_code": "FR",
+      "coordinates": {
+        "lat": 43.29596,
+        "lng": -0.36541,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Pau, église St Louis de Gonzague bâtie sous Louis XV - btv1b53201979f.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            8622,
+            6259
+          ],
+          "source_sha1": "d014f93657680264df686c4e3852889df519e006",
+          "author": "Agence Rol",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Pau - Eglise Saint-Louis - btv1b10562014s.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1308,
+            832
+          ],
+          "source_sha1": "1214ca9079446e618b7c942256f7400f8be3346f",
+          "author": "Bibliothèque nationale de France",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Pau - L'Eglise Saint-Louis - btv1b10565780k.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1118,
+            736
+          ],
+          "source_sha1": "b586914fa84e243de1cd6fd440eaf426f602eeaa",
+          "author": "Bibliothèque nationale de France",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Pau - L'Eglise Saint-Louis - btv1b105620174.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1266,
+            824
+          ],
+          "source_sha1": "73f4974548ec1ea8d6796a0d88f768078104c348",
+          "author": "Bibliothèque nationale de France",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Pau - Eglise Saint-Louis - btv1b10562018k.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1314,
+            854
+          ],
+          "source_sha1": "0acb6ebf2e5297320e9ba72924eae28ced0f90af",
+          "author": "Bibliothèque nationale de France",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Pau - Eglise Saint-Louis - btv1b10562016p.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1306,
+            838
+          ],
+          "source_sha1": "1c8679711e31106b4b5620f9251aa7bed8befb5f",
+          "author": "Bibliothèque nationale de France",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 45,
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "site_name": "Ermita de Guadalupe, Matagalpa",
+      "city": "Matagalpa",
+      "country_code": "NI",
+      "coordinates": {
+        "lat": 12.93104,
+        "lng": -85.91297,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 46,
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "site_name": "Friedhofskirche St. Michael, Altötting",
+      "city": "Altötting",
+      "country_code": "DE",
+      "coordinates": {
+        "lat": 48.2282,
+        "lng": 12.67853,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 47,
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "site_name": "Haemi Martyrs International Shrine — Main Church",
+      "city": "Haemi, Seosan",
+      "country_code": "KR",
+      "coordinates": {
+        "lat": 36.7126432,
+        "lng": 126.5379024,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 48,
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "site_name": "Hāto Mere / St Mary's Pukekaraka",
+      "city": "Ōtaki",
+      "country_code": "NZ",
+      "coordinates": {
+        "lat": -40.74667,
+        "lng": 175.14219,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 49,
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "site_name": "Heiligdom Onze Lieve Vrouw ter Nood",
+      "city": "Heiloo",
+      "country_code": "NL",
+      "coordinates": {
+        "lat": 52.58308,
+        "lng": 4.68954,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": "File:Heiloo, Heiligdom Onze Lieve Vrouw ter Nood, Bedevaartkerk, oost.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Heiloo, Heiligdom Onze Lieve Vrouw ter Nood, Bedevaartkerk, oost.jpg",
+          "license": "CC BY-SA 3.0 nl",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+          "resolution": [
+            3264,
+            2448
+          ],
+          "source_sha1": "caa6822542ab4a71d4e6b03d49340b775caf8848",
+          "author": "M.arjon",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 50,
+      "place_id": "place:SB:holy-cross-cathedral-honiara",
+      "site_name": "Holy Cross Cathedral, Honiara",
+      "city": "Honiara",
+      "country_code": "SB",
+      "coordinates": {
+        "lat": -9.43624,
+        "lng": 159.96342,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Service of Remembrance at Holy Cross Cathedral, Honiara (52270812716).jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Service of Remembrance at Holy Cross Cathedral, Honiara (52270812716).jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            6000,
+            4000
+          ],
+          "source_sha1": "39820e59da0fc25801217dd4eec521c31ca023cb",
+          "author": "U.S. Embassy Australia",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 51,
+      "place_id": "place:PG:holy-cross-procathedral-vanimo",
+      "site_name": "Holy Cross Pro-Cathedral, Vanimo",
+      "city": "Vanimo",
+      "country_code": "PG",
+      "coordinates": {
+        "lat": -2.6830625,
+        "lng": 141.3031875,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 52,
+      "place_id": "place:AS:holy-family-cathedral-tafuna",
+      "site_name": "Holy Family Cathedral, Tafuna",
+      "city": "Tafuna",
+      "country_code": "AS",
+      "coordinates": {
+        "lat": -14.3309375,
+        "lng": -170.7343125,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Oceania laea location map.svg",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "resolution": [
+            1181,
+            1013
+          ],
+          "source_sha1": "6873912eb4e786fbc3f2d1e98aa037fd470dbae1",
+          "author": "Uwe Dedering",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 53,
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "site_name": "Holy Trinity Cathedral, Kingston",
+      "city": "Kingston",
+      "country_code": "JM",
+      "coordinates": {
+        "lat": 17.97535,
+        "lng": -76.7842,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:EB1911 - Volume 20.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2291,
+            3251
+          ],
+          "source_sha1": "341c70355cc9d2d6e3e6a2f29eecf654e477f3c0",
+          "author": "Various authors : see the Wikisource pages for the contibutors of each article.",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:EB1911 - Volume 04.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1984,
+            2038
+          ],
+          "source_sha1": "7fcefd9adf3b2ed14f7201e4a965bce8c8261a5f",
+          "author": "Various authors : see the Wikisource pages for the contibutors of each article.",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The gentleman's magazine. Volume 95 (Being the Eighteenth of a New Series. Part the Second.), July - December 1825 (IA s2492id1330054).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1275,
+            2162
+          ],
+          "source_sha1": "284265cf12ae645f9d1dcbbaa7c1a8427bd685a7",
+          "author": "The gentleman's magazine.",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The life of General U.S. Grant, his early life, military achievements, and history of his civil administration, his sickness and death, together with his tour around the world .. (IA lifeofgeneralusg00palma).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            685,
+            1154
+          ],
+          "source_sha1": "f6628c0d24bb1147232c0d5a5e41a42656fd0184",
+          "author": "Palmer, L. T. (Loomis T.), ed",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The standard guide, Florida; (IA standardguideflo02fost).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            939,
+            1337
+          ],
+          "source_sha1": "3e7c868b587c7c0efaccc3c798a31fec2b58eece",
+          "author": "Foster Reynolds Co",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The Canadian almanac and repository of useful knowledge for the year 1860, being leap year (microform) - containing full and authentic commercial, statistical, astronomical, departmental (IA cihm 32381).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1193,
+            1429
+          ],
+          "source_sha1": "3024afe6aa7861540facf92c055a055a23868cf5",
+          "author": "Internet Archive identifier : cihm_32381 https://archive.org/download/cihm_32381/cihm_32381.pdf IA contributor: Canadiana.org IA digitizing sponsor: University of Alberta Libraries",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 54,
+      "place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "site_name": "Ilot de la sainte vierge, Ampefy",
+      "city": "Ampefy",
+      "country_code": "MG",
+      "coordinates": {
+        "lat": -19.07121,
+        "lng": 46.76717,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 55,
+      "place_id": "place:WS:immaculate-conception-cathedral-mulivai-apia",
+      "site_name": "Immaculate Conception Cathedral (Mulivai Cathedral), Apia",
+      "city": "Apia",
+      "country_code": "WS",
+      "coordinates": {
+        "lat": -13.83219,
+        "lng": -171.76645,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 56,
+      "place_id": "place:SK:kaplnka-zjavenia-litmanova-zvir",
+      "site_name": "Kaplnka zjavenia, hora Zvir, Litmanová",
+      "city": "Litmanová",
+      "country_code": "SK",
+      "coordinates": {
+        "lat": 49.39218,
+        "lng": 20.63349,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 57,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "site_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
+      "city": "Jihlava",
+      "country_code": "CZ",
+      "coordinates": {
+        "lat": 49.39669,
+        "lng": 15.591157,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 58,
+      "place_id": "place:AU:marian-valley",
+      "site_name": "Marian Valley — Shrine of Our Lady Help of Christians",
+      "city": "Witheren via Canungra",
+      "country_code": "AU",
+      "coordinates": {
+        "lat": -28.0821666667,
+        "lng": 153.1945833333,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 59,
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "site_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+      "city": "Máriapócs",
+      "country_code": "HU",
+      "coordinates": {
+        "lat": 47.8782,
+        "lng": 22.02413,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Görög katolikus templom (8299. számú műemlék) 4.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Görög katolikus templom (8299. számú műemlék) 4.jpg",
+          "license": "CC BY-SA 2.5 hu",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.5/hu/deed.en",
+          "resolution": [
+            1600,
+            1200
+          ],
+          "source_sha1": "3019c9b2038552a261ec12609d716bc3bd463433",
+          "author": "Zurgiz",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 60,
+      "place_id": "place:FO:mariukirkjan-torshavn",
+      "site_name": "Mariukirkjan — St Mary's Catholic Church, Tórshavn",
+      "city": "Tórshavn",
+      "country_code": "FO",
+      "coordinates": {
+        "lat": 62.01438,
+        "lng": -6.77978,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 61,
+      "place_id": "place:MW:maula-cathedral-lilongwe",
+      "site_name": "Maula Cathedral of Our Lady Queen of Africa, Lilongwe",
+      "city": "Lilongwe",
+      "country_code": "MW",
+      "coordinates": {
+        "lat": -13.9796875,
+        "lng": 33.7624375,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 62,
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "site_name": "Memorial of Saint Peter — Capernaum",
+      "city": "Capernaum",
+      "country_code": "IL",
+      "coordinates": {
+        "lat": 32.880999,
+        "lng": 35.575371,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [
+        {
+          "title": "File:Historical Works of Venerable Bede vol. 2.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2451,
+            4044
+          ],
+          "source_sha1": "c8fe91f48de2cd308172d26bf0ec3e05618af0d9",
+          "author": "Venerable Bede; J. A. Giles (translator)",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Travels of an Irish gentleman in search of a religion- with notes and illustrations (IA travelsofirishge00moor 0).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            666,
+            1125
+          ],
+          "source_sha1": "eb968f7557ec11ab171402bc31b2a7d21c0f7ce4",
+          "author": "Moore, Thomas, 1779-1852",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Companions of the sorrowful way (IA companionsofsorr00wats).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            595,
+            1014
+          ],
+          "source_sha1": "fb01bd0c48442475877997bc0795f79105673a5c",
+          "author": "Watson, John, 1850-1907",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:A dictionary of miracles - imitative, realistic, and dogmatic ... (IA b24873263).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            818,
+            1281
+          ],
+          "source_sha1": "4ad044d3fd5fb8c6947c5e436b7324abd96c0a66",
+          "author": "Brewer, Ebenezer Cobham, 1810-1897. n 50044304",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Sunday morning talks prepared for Bible class no. 20 of the Presbyterian congregation of Sewickley, Pennsylvania (IA sundaymorningtal01chri).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            720,
+            1160
+          ],
+          "source_sha1": "6ca64e9a3750e06c4276c8a5adf3df77d94ad13d",
+          "author": "Christy, George Harvey, 1837-1909. [from old catalog]",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The library of the Palestine Pilgrims' Text Society (IA cu31924028534216).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            833,
+            1295
+          ],
+          "source_sha1": "ad629b631bd41ffe3f56e8c43da347640e05cca1",
+          "author": "Palestine Pilgrims' Text Society (London, England) White, Andrew Dickson, 1832-1918. fmo",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 63,
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "site_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
+      "city": "Bukit Mertajam",
+      "country_code": "MY",
+      "coordinates": {
+        "lat": 5.440325,
+        "lng": 100.387715,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 64,
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "site_name": "Monastery of Saint Maron — Annaya",
+      "city": "Annaya",
+      "country_code": "LB",
+      "coordinates": {
+        "lat": 34.12091,
+        "lng": 35.7533,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 65,
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "site_name": "National Basilica of Our Lady of Lanka, Tewatta",
+      "city": null,
+      "country_code": "LK",
+      "coordinates": {
+        "lat": 7.0326,
+        "lng": 79.93443,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 66,
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "site_name": "National Catholic Shrine of St Peter Chanel",
+      "city": "Russell",
+      "country_code": "NZ",
+      "coordinates": {
+        "lat": -35.262172,
+        "lng": 174.123766,
+        "precision": "locality"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 67,
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "site_name": "National Shrine Grotto of Our Lady of Lourdes",
+      "city": "Emmitsburg",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 39.68249,
+        "lng": -77.35659,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Journey Through Hallowed Ground Byway - National Shrine of Our Lady of Lourdes - NARA - 7719786.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            680,
+            1024
+          ],
+          "source_sha1": "5674c42bbcad88419ce3a69dbc3d086d7b95270d",
+          "author": "Unknown author Unknown author or not provided",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 68,
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "site_name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+      "city": null,
+      "country_code": "PL",
+      "coordinates": {
+        "lat": 49.28498,
+        "lng": 19.92297,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 69,
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "site_name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "city": null,
+      "country_code": "PH",
+      "coordinates": {
+        "lat": 14.56129,
+        "lng": 121.04555,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 70,
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "site_name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "city": "Allentown",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 40.613235,
+        "lng": -75.461138,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 71,
+      "place_id": "place:US:la-salette-attleboro",
+      "site_name": "National Shrine of Our Lady of La Salette",
+      "city": "Attleboro",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 41.93032,
+        "lng": -71.26284,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 72,
+      "place_id": "place:US:auriesville-martyrs",
+      "site_name": "National Shrine of Our Lady of Martyrs",
+      "city": "Fultonville",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 42.9254,
+        "lng": -74.302,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 73,
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "site_name": "National Shrine of Our Lady of Matara",
+      "city": "Matara",
+      "country_code": "LK",
+      "coordinates": {
+        "lat": 5.94329,
+        "lng": 80.55191,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 74,
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "site_name": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+      "city": "Enugu",
+      "country_code": "NG",
+      "coordinates": {
+        "lat": 6.61967,
+        "lng": 7.55923828,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 75,
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "site_name": "National Shrine of Saint Joseph, Mandaue",
+      "city": null,
+      "country_code": "PH",
+      "coordinates": {
+        "lat": 10.32742,
+        "lng": 123.94216,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 76,
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "site_name": "National Shrine of St. John Neumann",
+      "city": "Philadelphia",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 39.9698,
+        "lng": -75.1447,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:American Church History Series Volume 9.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            802,
+            1208
+          ],
+          "source_sha1": "fb8a194b22fd27e8f740e8044452237ebf52f94d",
+          "author": "Thomas O'Gorman",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Catalog of Copyright Entries 1935 Engravings Prints Etc. Fine Arts New Series Vol 30 Pt 4 (IA catalogofcopyrig304libr).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            816,
+            1372
+          ],
+          "source_sha1": "9385069fb061ba7c311ce6fd2bfcf4dea3d0cf58",
+          "author": "U.S. Govt. Print. Off.",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Catalog of Copyright Entries, 1922 Works of Art, Photos, Prints For the Year 1922 New Series Vol 17 Part 4 (IA catalogofcopyrig174libr).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            808,
+            1316
+          ],
+          "source_sha1": "fc0d70801592c25c738de5c3db4dbf5bbf92ef0f",
+          "author": "U.S. Govt. Print. Off.",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:A history of the Roman Catholic church in the United States (IA historyofromanca00ogor).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            804,
+            1210
+          ],
+          "source_sha1": "9c5ae4540d3099a9954094c82fd07b373fa04d32",
+          "author": "O'Gorman, Thomas, bp., 1843-1921",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:A study of Shakspere's stage (IA cu31924013165885).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            885,
+            1354
+          ],
+          "source_sha1": "c6f8096832b9c767c1f37496818181cb9406d886",
+          "author": "Paul, Harry Gilbert, 1874-",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:A History Of The Roman Catholic Church In The United States (IA historyoftheroma009973mbp).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            691,
+            1045
+          ],
+          "source_sha1": "713c8c6c8c4547e68286a2186c842154c24a7672",
+          "author": "Thomas O'Gorman",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 77,
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "site_name": "Nne Enyemaka Shrine, Umuaka",
+      "city": "Umuaka",
+      "country_code": "NG",
+      "coordinates": {
+        "lat": 5.6769512,
+        "lng": 7.0243016,
+        "precision": "street"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 78,
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "site_name": "Our Lady of Fatima Catholic Church, Karachi",
+      "city": "Karachi",
+      "country_code": "PK",
+      "coordinates": {
+        "lat": 24.86672,
+        "lng": 67.02199,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 79,
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "site_name": "Our Lady of Fatima Church and Shrine, Laventille",
+      "city": "Laventille",
+      "country_code": "TT",
+      "coordinates": {
+        "lat": 10.6556583,
+        "lng": -61.4949787,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 80,
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "site_name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+      "city": "Belmopan",
+      "country_code": "BZ",
+      "coordinates": {
+        "lat": 17.24867,
+        "lng": -88.7635,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 81,
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "site_name": "Our Lady of Mount Carmel Cathedral, Saipan",
+      "city": "Chalan Kanoa",
+      "country_code": "MP",
+      "coordinates": {
+        "lat": 15.15117,
+        "lng": 145.70248,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Saipan Mount Carmel Cathedral.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "002",
+      "previous_file_candidates": [
+        {
+          "title": "File:Saipan Mount Carmel Cathedral.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2048,
+            1536
+          ],
+          "source_sha1": "dd509b1cf05cd2498859540b32e97513f8ffe25c",
+          "author": "Abasaa",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 82,
+      "place_id": "place:QA:our-lady-rosary-church-doha",
+      "site_name": "Our Lady of the Rosary Catholic Church — Doha",
+      "city": "Doha",
+      "country_code": "QA",
+      "coordinates": {
+        "lat": 25.21267,
+        "lng": 51.52192,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Church of Our Lady of the Rosary, Doha, Qatar.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Church of Our Lady of the Rosary, Doha, Qatar.jpg",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "resolution": [
+            1024,
+            768
+          ],
+          "source_sha1": "ad2ff857902fc9f6d8312720e2ae6cd4f9e78874",
+          "author": "omar_chatriwala",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 83,
+      "place_id": "place:GB:p42-sg-inv-0249",
+      "site_name": "Our Lady of the Taper Catholic Shrine Church",
+      "city": "Cardigan",
+      "country_code": "GB",
+      "coordinates": {
+        "lat": 52.08732,
+        "lng": -4.65272,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 84,
+      "place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "site_name": "Our Lady of Zarvanytsia Cathedral and Basilica",
+      "city": "Zarvanytsia, Ternopil",
+      "country_code": "UA",
+      "coordinates": {
+        "lat": 49.22831,
+        "lng": 25.35171,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 85,
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "site_name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "city": "Fortaleza",
+      "country_code": "BR",
+      "coordinates": {
+        "lat": -3.752494,
+        "lng": -38.526609,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Lins um olhar sobre a cidade, História no Museu da Pessoa (40176).pdf",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            1239,
+            1754
+          ],
+          "source_sha1": "024b22ff01922468f13d040e6a2022a50014d5a6",
+          "author": "Jose Oscar Beozzo/Museu da Pessoa",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 86,
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "site_name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "city": "San Pedro de Montes de Oca",
+      "country_code": "CR",
+      "coordinates": {
+        "lat": 9.93288,
+        "lng": -84.04176,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [
+        {
+          "title": "File:Tradiciones de Buenos Aires - Pastor Servando Obligado (4ª serie 1898).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            708,
+            1072
+          ],
+          "source_sha1": "9edba870dd9e991589520d0afdc4bd4652762b72",
+          "author": "Pastor S. Obligado",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 87,
+      "place_id": "place:IT:scala-santa-rome",
+      "site_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "city": "Rome",
+      "country_code": "IT",
+      "coordinates": {
+        "lat": 41.887315,
+        "lng": 12.506719,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Istoria dell' antichissimo Oratorio o Cappella di San Lorenzo nel Patriarchìo Lateranense, comunemente appellato Sancta Sanctorum (IA gri 33125008477321).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1137,
+            1500
+          ],
+          "source_sha1": "74d32f49f6cf9646614d14d8e77415be9a56c781",
+          "author": "Marangoni, Giovanni, 1673-1753 Guiducci, Angelo, fl. 1748-1779 Lancisi, Annibale Polverelli, Pietro Mazzoni, Francesco, active 1738-1759 Puccinelli, Ottavio Stamperia di San Michele",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Piadosisima devocion de la Escala Santa de Roma, - que se venera en el Convento de San Antonio de la ciudad de Queretaro, de religiosos Menores Descalzos de la mas estrecha (IA piadosisimadevoc00sore).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            695,
+            975
+          ],
+          "source_sha1": "1c9753522ecb2101e59e9a9fa335e76bb4906603",
+          "author": "Soresino, Joseph María",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 88,
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "site_name": "Propsteikirche Basilika St. Clemens, Hannover",
+      "city": "Hannover",
+      "country_code": "DE",
+      "coordinates": {
+        "lat": 52.373,
+        "lng": 9.72681,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 89,
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "site_name": "Real Basílica Colegiata de San Isidoro, León",
+      "city": "León",
+      "country_code": "ES",
+      "coordinates": {
+        "lat": 42.60083,
+        "lng": -5.57084,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:20060626-León San Isidoro.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:20060626-León San Isidoro.jpg",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "resolution": [
+            2592,
+            1944
+          ],
+          "source_sha1": "47f2f1b361f17219fb24c5e8d9a7f55c30e99fd5",
+          "author": null,
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 90,
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "site_name": "Sacred Heart Cathedral, Freetown",
+      "city": "Freetown",
+      "country_code": "SL",
+      "coordinates": {
+        "lat": 8.48949,
+        "lng": -13.2332,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:The Evangelist 1858-09-23- Vol 29 Iss 38 (IA sim evangelist-and-religious-review 1858-09-23 29 38).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2558,
+            3350
+          ],
+          "source_sha1": "e4f76967394cba33aa88580edf23f4199374193b",
+          "author": "Internet Archive identifier : sim_evangelist-and-religious-review_1858-09-23_29_38 https://archive.org/download/sim_evangelist-and-religious-review_1858-09-23_29_38/sim_evangelist-and-religious-review_1858-09-23_29_38.pdf IA contributor: Internet Archive IA digitizing sponsor: Kahle/Austin Foundation",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The Musical times and singing-class circular (IA musicaltimessing5119unse).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            716,
+            1177
+          ],
+          "source_sha1": "9b06305b85bf87a40abfcabaa5c975e4fff231cb",
+          "author": "Internet Archive identifier : musicaltimessing5119unse https://archive.org/download/musicaltimessing5119unse/musicaltimessing5119unse.pdf IA contributor: Boston Public Library",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 91,
+      "place_id": "place:KI:sacred-heart-cathedral-teaoraereke",
+      "site_name": "Sacred Heart Cathedral, Teaoraereke",
+      "city": "South Tarawa",
+      "country_code": "KI",
+      "coordinates": {
+        "lat": 1.33259,
+        "lng": 173.00722,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 92,
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "site_name": "Sacred Heart Shrine, Hales Corners",
+      "city": "Hales Corners",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 42.9111875,
+        "lng": -88.0439375,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Heart poems (IA heartpoems00sigs).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            883,
+            1420
+          ],
+          "source_sha1": "ff7821af20d34cad77d313ee80a50c6611f4d5c4",
+          "author": "Sigsbee, A. Elizabeth",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The heart of peace (IA heartofpeace00hous).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            716,
+            1118
+          ],
+          "source_sha1": "817c8d47bec55b85d051cd692b843100d7e9ac06",
+          "author": "Housman, Laurence, 1865-1959",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The heart of peace, and other poems (IA heartofpeaceothe00hous).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            718,
+            1127
+          ],
+          "source_sha1": "44c1d3ea6f42f810d0f01a69da9611bc37ce727e",
+          "author": "Housman, Laurence, 1865-1959",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The heart of peace (IA cu31924013485663).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            666,
+            1091
+          ],
+          "source_sha1": "c5f443571c2ffdcbf1441630b8cad9a7109801b0",
+          "author": "Housman, Laurence, 1865-1959",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Nathan Hale, a poem, delivered before the Alumni Association of Columbia College, October 27, 1858 (IA nathanhalepoemde00macm).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            785,
+            1302
+          ],
+          "source_sha1": "1040f87352cd54a0366523aad10cbeb98c71335c",
+          "author": "MacMullen, John, 1818-1896",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Nathan Hale, a poem, delivered before the Alumni association of Columbia college (IA nathanhalepoemde01macm).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            810,
+            1331
+          ],
+          "source_sha1": "564239da231d76229d3fabb378af7cf2d213a6dc",
+          "author": "MacMullen, John, 1818-1896. [from old catalog]",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 93,
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "site_name": "Saint Anne's National Shrine, Talawila",
+      "city": null,
+      "country_code": "LK",
+      "coordinates": {
+        "lat": 8.11282,
+        "lng": 79.7036,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 94,
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "site_name": "Saints Peter and Paul Catholic Church, Ruwi",
+      "city": "Muscat (Ruwi)",
+      "country_code": "OM",
+      "coordinates": {
+        "lat": 23.60649,
+        "lng": 58.53592,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 95,
+      "place_id": "place:BE:banneux",
+      "site_name": "Sanctuaire de la Vierge des Pauvres — Banneux",
+      "city": "Banneux",
+      "country_code": "BE",
+      "coordinates": {
+        "lat": 50.5387294,
+        "lng": 5.7465878,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 96,
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "site_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "city": "Nevers",
+      "country_code": "FR",
+      "coordinates": {
+        "lat": 46.99235,
+        "lng": 3.15202,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 97,
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "site_name": "Sanctuaire Sainte-Julienne de Cornillon",
+      "city": "Liège",
+      "country_code": "BE",
+      "coordinates": {
+        "lat": 50.635,
+        "lng": 5.59256,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Catalogue de l'Exposition de l'art ancien au pays de Liège (1881).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1275,
+            1650
+          ],
+          "source_sha1": "7701db5b77f5a9561af3d05d5aebdece8e7aadba",
+          "author": "Organizing Committee of the Exhibition of Ancient Art in the Liège Region",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 98,
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "site_name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "city": null,
+      "country_code": "CL",
+      "coordinates": {
+        "lat": -20.33657,
+        "lng": -69.65634,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 99,
+      "place_id": "place:PL:divine-mercy-plock",
+      "site_name": "Sanktuarium Bożego Miłosierdzia, Płock",
+      "city": "Płock",
+      "country_code": "PL",
+      "coordinates": {
+        "lat": 52.541389,
+        "lng": 19.69,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Sanktuarium Miłosierdzia Bożego w Płocku.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Sanktuarium Miłosierdzia Bożego w Płocku.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2269,
+            2103
+          ],
+          "source_sha1": "e5ee8662f0e83e74054ce12bc769935512e215aa",
+          "author": "This photo was taken by Przemysław Jahr Autorem zdjęcia jest Przemysław Jahr Wykorzystując zdjęcie proszę podać jako autora: Przemysław Jahr / Wikimedia Commons",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 100,
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "site_name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "city": "Namaacha",
+      "country_code": "MZ",
+      "coordinates": {
+        "lat": -25.988282,
+        "lng": 32.014878,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 101,
+      "place_id": "place:NI:cuapa-national-shrine",
+      "site_name": "Santuario de Nuestra Señora de Cuapa",
+      "city": "San Francisco de Cuapa",
+      "country_code": "NI",
+      "coordinates": {
+        "lat": 12.25104,
+        "lng": -85.37841,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 102,
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "site_name": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "city": "Guadalupe",
+      "country_code": "MX",
+      "coordinates": {
+        "lat": 22.74656,
+        "lng": -102.51787,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Defensa del pueblo, Dios, patria, libertad, La. 1887. Vol. 4, No. 338. Octubre. 0002008378.ocr.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1308,
+            1808
+          ],
+          "source_sha1": "e5ee73fe905a67b2d9a2ec82a0d5c79c7a2204cb",
+          "author": "Abraham P. de la Garza and others",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Defensa del pueblo, Dios, patria, libertad, La. 1889. Vol. 6, No. 402. Enero. 0002008386ocr.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1289,
+            1791
+          ],
+          "source_sha1": "6f1c3cc13801ecf70a90d40532841b88dc2281e2",
+          "author": "Abraham P. de la Garza and others",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 103,
+      "place_id": "place:PE:santuario-candelaria-chapi-polobaya",
+      "site_name": "Santuario de Nuestra Señora de la Candelaria de Chapi",
+      "city": "Polobaya",
+      "country_code": "PE",
+      "coordinates": {
+        "lat": -16.71925,
+        "lng": -71.31496,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 104,
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "site_name": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
+      "city": "Lanciano",
+      "country_code": "IT",
+      "coordinates": {
+        "lat": 42.23045,
+        "lng": 14.39031,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:San Francesco, Lanciano 5.JPG",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:San Francesco, Lanciano 5.JPG",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1498,
+            1997
+          ],
+          "source_sha1": "a8d496935e0107ec6101f7024746c8262dd02d2c",
+          "author": "Zitumassin",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 105,
+      "place_id": "place:IT:madonna-neve-rocchetta-bergamo",
+      "site_name": "Santuario della Madonna della Neve in Rocchetta, Bergamo",
+      "city": "Bergamo",
+      "country_code": "IT",
+      "coordinates": {
+        "lat": 45.69707,
+        "lng": 9.676543,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Bergamo o sia notizie patrie .. (IA bergamoosianotiz1845cava).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            489,
+            816
+          ],
+          "source_sha1": "7c9675c7b9cffbc3d5bcc09a158fbe6945ebdb35",
+          "author": "Cavagna Sangiuliani di Gualdana, Antonio, conte, 1843-1913, former owner. IU-R",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Bergamo o sia notizie patrie .. (IA bergamoosianotiz1856cava).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            552,
+            847
+          ],
+          "source_sha1": "6ff1f8937429ef91807ee634af5a2325a4cf2113",
+          "author": "Cavagna Sangiuliani di Gualdana, Antonio, conte, 1843-1913, former owner. IU-R",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Bergamo o sia notizie patrie .. (IA bergamoosianotiz1872cava).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            527,
+            841
+          ],
+          "source_sha1": "c75f2aa564c0cf1111f5417b0af1e870b7360679",
+          "author": "Cavagna Sangiuliani di Gualdana, Antonio, conte, 1843-1913, former owner. IU-R",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Bergamo o sia notizie patrie .. (IA bergamoosianotiz6365cava).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            512,
+            818
+          ],
+          "source_sha1": "361a2042e9206778dca2213631432271f7e88d00",
+          "author": "Cavagna Sangiuliani di Gualdana, Antonio, conte, 1843-1913, former owner. IU-R",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Bergamo o sia notizie patrie .. (IA bergamoosianotiz6971cava).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            533,
+            800
+          ],
+          "source_sha1": "8f507975dc7d137e4528ecf89d391f6f4e0a6184",
+          "author": "Cavagna Sangiuliani di Gualdana, Antonio, conte, 1843-1913, former owner. IU-R",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Bergamo o sia notizie patrie .. (IA bergamoosianotiz7880cava).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            531,
+            804
+          ],
+          "source_sha1": "102688e89a9cccbe3f9f541cfc6851e8fbfb7351",
+          "author": "Cavagna Sangiuliani di Gualdana, Antonio, conte, 1843-1913, former owner. IU-R",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 106,
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "site_name": "Santuario di San Paolo della Croce, Ovada",
+      "city": "Ovada",
+      "country_code": "IT",
+      "coordinates": {
+        "lat": 44.63312,
+        "lng": 8.63989,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Orazione panegirica in lode di S. Paolo della Croce, fondatore dell'Istituto dei CC. RR. della Passione di G. C. - recitata dal p. Alessandro M. Baravelli (IA orazionepanegiri00bara).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            743,
+            1160
+          ],
+          "source_sha1": "526e70d17fb643dd67976740c83c2492d329c5a7",
+          "author": "Baravelli, Alessandro Maria, 1827-1905",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Elenco degli edifizi monumentali in Italia (IA elencodegliedifi00ital).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1135,
+            1606
+          ],
+          "source_sha1": "2ca5429f81aebcd20aec3d969f11bf21f25479e2",
+          "author": "Italy. Ministero della pubblica istruzione",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 107,
+      "place_id": "place:VE:finca-betania",
+      "site_name": "Santuario Finca Betania",
+      "city": "Cúa",
+      "country_code": "VE",
+      "coordinates": {
+        "lat": 10.0751,
+        "lng": -66.92714,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 108,
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "site_name": "Santuario María del Rosario de San Nicolás",
+      "city": "San Nicolás de los Arroyos",
+      "country_code": "AR",
+      "coordinates": {
+        "lat": -33.3218,
+        "lng": -60.22499,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Versos o pasatiempos rimados - Juan B. Arengo (falta 385 a 388).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            797,
+            1239
+          ],
+          "source_sha1": "45cfea70e6dbcbf1a3cbe0fcb1df01172cc0f5e7",
+          "author": "Juan B. Arengo",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Historia de Nuestra Señora de Lujan (Tomo 2).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            629,
+            920
+          ],
+          "source_sha1": "e6f5e1c0de9c306186b7f349b81a13eaa4c387d4",
+          "author": "Anonymous Unknown author",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Historia de la lengua y literatura castellana - Tomo XIV.djvu",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2284,
+            3782
+          ],
+          "source_sha1": "5ad145042c810ae0d1de06451e363ec5dcf39341",
+          "author": "Julio Cejador y Frauca",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Historia de Nuestra Señora de Lujan (T. 2).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            945,
+            1522
+          ],
+          "source_sha1": "1fe72f2e160c197bc72b513410f683651df0ea32",
+          "author": "Anonymous Unknown author",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Defensa del pueblo, Dios, patria, libertad, La. 1887. Vol. 4, No. 307. Marzo. 0002008354.ocr.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1316,
+            1831
+          ],
+          "source_sha1": "df8d587bd17fc795298e534fa3e1a295dc441efa",
+          "author": "Abraham P. de la Garza and others",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 109,
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "site_name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "city": "Montevideo",
+      "country_code": "UY",
+      "coordinates": {
+        "lat": -34.825556,
+        "lng": -56.181667,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 110,
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "site_name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "city": "Alta Gracia",
+      "country_code": "AR",
+      "coordinates": {
+        "lat": -31.648889,
+        "lng": -64.457222,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:La Gruta.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            400,
+            267
+          ],
+          "source_sha1": "6edc5566d5d98bdb09056230dc5f4a7058e6ef81",
+          "author": "Página web",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Ciudades y paisajes (IA ciudadesypaisaje00anzo).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            743,
+            1133
+          ],
+          "source_sha1": "6382473346ea08610b3cbbf9bf9e90e3d64cede0",
+          "author": "Anzola, Juvenal",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Por Francia y por Suiza - bdh0000254704.pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            1410,
+            1095
+          ],
+          "source_sha1": "fa32542429c57680d459ff01e9475309747cff7c",
+          "author": "Santander, Federico (1883-1936)",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 111,
+      "place_id": "place:AR:santuario-san-cayetano-liniers",
+      "site_name": "Santuario San Cayetano, Liniers",
+      "city": "Buenos Aires",
+      "country_code": "AR",
+      "coordinates": {
+        "lat": -34.63785,
+        "lng": -58.52827,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 112,
+      "place_id": "place:JP:our-lady-akita-convent",
+      "site_name": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "city": "Akita",
+      "country_code": "JP",
+      "coordinates": {
+        "lat": 39.75932,
+        "lng": 140.14953,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 113,
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "site_name": "Shrine of Our Lady of Lebanon, Harissa",
+      "city": null,
+      "country_code": "LB",
+      "coordinates": {
+        "lat": 33.98194,
+        "lng": 35.65167,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 114,
+      "place_id": "place:AU:penrose-park",
+      "site_name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "city": "Sutton Forest",
+      "country_code": "AU",
+      "coordinates": {
+        "lat": -34.6272222222,
+        "lng": 150.1958333333,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:The works of the British poets; including the most esteemed translations from Greek and Roman authors (IA worksofbritishpo22park).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            412,
+            766
+          ],
+          "source_sha1": "65d92dce4253f143bfa796475bc6f6be90a4b505",
+          "author": "Park, Thomas, 1759-1834",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 115,
+      "place_id": "place:IE:solas-bhride-kildare",
+      "site_name": "Solas Bhríde Centre and Hermitages",
+      "city": "Kildare Town",
+      "country_code": "IE",
+      "coordinates": {
+        "lat": 53.14821,
+        "lng": -6.90623,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "005",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 116,
+      "place_id": "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "site_name": "St Joseph's Cathedral, Dar es Salaam",
+      "city": "Dar es Salaam",
+      "country_code": "TZ",
+      "coordinates": {
+        "lat": -6.8193,
+        "lng": 39.28799,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:St Joseph's Catholic Cathedral (34895613805).jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:St Joseph's Catholic Cathedral (34895613805).jpg",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "resolution": [
+            1024,
+            768
+          ],
+          "source_sha1": "c180d3e4085e916dc2f9bf34ef35d7fd671ca27d",
+          "author": "David Stanley from Nanaimo, Canada",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 117,
+      "place_id": "place:NO:st-olav-cathedral-trondheim",
+      "site_name": "St Olav Catholic Cathedral — Trondheim",
+      "city": "Trondheim",
+      "country_code": "NO",
+      "coordinates": {
+        "lat": 63.4253507,
+        "lng": 10.39237977,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Nidarosdomen og Trondheim.jpg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "resolution": [
+            7041,
+            4694
+          ],
+          "source_sha1": "9db7e304a3df57d9928b737e55eeda321259ed7e",
+          "author": "Berntpb",
+          "meta_eligible": true
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 118,
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "site_name": "St Patrick's Roman Catholic Cathedral, Bridgetown",
+      "city": "Bridgetown",
+      "country_code": "BB",
+      "coordinates": {
+        "lat": 13.09184,
+        "lng": -59.60897,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 119,
+      "place_id": "place:US:st-anne-fiskdale",
+      "site_name": "St. Anne Shrine",
+      "city": "Fiskdale",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 42.118183333333334,
+        "lng": -72.11361666666667,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 120,
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "site_name": "St. Mary of the Assumption Parish and Shrine",
+      "city": "Oswego",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 43.456437,
+        "lng": -76.5181515,
+        "precision": "address"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:A treatise on the law of carriers of goods and passengers, by land and water (IA cu31924018926810).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            700,
+            1247
+          ],
+          "source_sha1": "1929e0236c8485cf15c3d71592571fc605d0ddf4",
+          "author": "Angell, Joseph Kinnicut, 1794-1857 Lathrop, John, 1835-1910",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:The American and Foreign Christian Union (IA americanforeignc21amer).pdf",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            770,
+            1247
+          ],
+          "source_sha1": "df9ae2176b33e1d69f16cb74b293307081d5b4e2",
+          "author": "American and Foreign Christian Union",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 121,
+      "place_id": "place:US:seton-emmitsburg",
+      "site_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "city": "Emmitsburg",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 39.69895,
+        "lng": -77.32636,
+        "precision": "site"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 122,
+      "place_id": "place:US:lourdes-litchfield",
+      "site_name": "The Shrine of Lourdes in Litchfield",
+      "city": "Litchfield",
+      "country_code": "US",
+      "coordinates": {
+        "lat": 41.7524,
+        "lng": -73.1779,
+        "precision": "complex_anchor"
+      },
+      "prior_selected_file": null,
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "NO_PRIOR_FILE",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "original_batch": "004",
+      "previous_file_candidates": [
+        {
+          "title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012630790.tif",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            2983,
+            4061
+          ],
+          "source_sha1": "03d48593d9e7cc030c53dc9a21f0ae7e27b2a4da",
+          "author": "Carol M. Highsmith",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631517.tif",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            4096,
+            5400
+          ],
+          "source_sha1": "07f7fd4f2fe2dd4a8122497748cfa99eba069935",
+          "author": "Carol M. Highsmith",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631519.tif",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            6144,
+            4096
+          ],
+          "source_sha1": "dcfd0b39afba7734542ca80b9562602016261bb1",
+          "author": "Carol M. Highsmith",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631527.tif",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            6144,
+            4096
+          ],
+          "source_sha1": "8a8e639302169033e33683b30b7d26144e9ce818",
+          "author": "Carol M. Highsmith",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631531.tif",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            4096,
+            6144
+          ],
+          "source_sha1": "f6b1e407ea1b23f8d66ad2dc129dc68507ee418e",
+          "author": "Carol M. Highsmith",
+          "meta_eligible": false
+        },
+        {
+          "title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631539.tif",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            5744,
+            3824
+          ],
+          "source_sha1": "60b56b6b7875632a07caa24a970d6268ac8a9a01",
+          "author": "Carol M. Highsmith",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 123,
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "site_name": "Wallfahrtsbasilika Maria Schnee, Maria Luggau",
+      "city": "Maria Luggau",
+      "country_code": "AT",
+      "coordinates": {
+        "lat": 46.70538,
+        "lng": 12.73572,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+          "license": "CC BY-SA 3.0 at",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+          "resolution": [
+            4928,
+            3280
+          ],
+          "source_sha1": "ca025cb7c0d5815ccb25b5f5570e8a57331103d7",
+          "author": "Johann Jaritz",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 124,
+      "place_id": "place:DE:wieskirche",
+      "site_name": "Wallfahrtskirche zum Gegeißelten Heiland auf der Wies",
+      "city": "Steingaden",
+      "country_code": "DE",
+      "coordinates": {
+        "lat": 47.68058,
+        "lng": 10.90054,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:Wieskirche boenisch okt 2003.jpg",
+      "status": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "VERIFY_AND_ACQUIRE_SELECTED_COMMONS_COVER",
+      "original_batch": "003",
+      "previous_file_candidates": [
+        {
+          "title": "File:Wieskirche boenisch okt 2003.jpg",
+          "license": "CC BY-SA 2.0 de",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+          "resolution": [
+            2240,
+            1680
+          ],
+          "source_sha1": "273e203687e313b5dad2403b9772a93a968f6932",
+          "author": "Bönisch",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    },
+    {
+      "ordinal": 125,
+      "place_id": "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "site_name": "Cathédrale Notre-Dame du Congo, Kinshasa",
+      "city": "Kinshasa",
+      "country_code": "CD",
+      "coordinates": {
+        "lat": -4.32384,
+        "lng": 15.29463,
+        "precision": "site"
+      },
+      "prior_selected_file": "File:La cathédrale Notre-Dame de la paix de Bukavu.jpg",
+      "status": "CORRECT_CITY_SOURCE_STILL_UNRESOLVED",
+      "reason": "PRESELECTED_OR_SEARCHED_FILE_NOT_SOURCE_ELIGIBLE",
+      "action": "HOLD_WRONG_CITY_RESEARCH_CORRECT_SITE",
+      "original_batch": "001",
+      "previous_file_candidates": [
+        {
+          "title": "File:Kasa-Vubu, Iléo Government, and parliamentary deputies at a Catholic ceremony.jpg",
+          "license": "Public domain",
+          "license_url": null,
+          "resolution": [
+            449,
+            255
+          ],
+          "source_sha1": "5345f4b07d6a164a19bb60246e443fb9dd5dca80",
+          "author": "unknown, Actualités Africaines",
+          "meta_eligible": false
+        }
+      ],
+      "acquisition_state": "RESEARCH_ONLY_NEEDS_EXACT_SITE_AND_RIGHTS_GATES"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "schema": "AO_SACRED_ATLAS_SITE_COVER_BATCH_001_V1",
+  "date": "2026-10-31",
+  "batch_id": "005",
+  "source_audit_path": "data/geography/research/sacred-atlas-site-cover-gaps-20261031.v1.json",
+  "total": 10,
+  "scope": "RESEARCH_AND_ACQUISITION_NOT_PRODUCTION_APPROVAL",
+  "selection_rule": "Preserve existing Commons selection first, reuse verified gallery photo, verify exact-site image before publication, no budget.",
+  "sites": [
+    {
+      "batch_sequence": 1,
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "site_name": "Memorial of Saint Peter — Capernaum",
+      "aliases": [
+        "Church of Saint Peter, Capernaum"
+      ],
+      "site_type": "pilgrimage_destination",
+      "country_code": "IL",
+      "city": "Capernaum",
+      "coordinates": {
+        "lat": 32.880999,
+        "lng": 35.575371,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 2,
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "site_name": "Monastery of Saint Maron — Annaya",
+      "aliases": [
+        "Monastère Saint-Maron d’Annaya"
+      ],
+      "site_type": "monastery",
+      "country_code": "LB",
+      "city": "Annaya",
+      "coordinates": {
+        "lat": 34.12091,
+        "lng": 35.7533,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 3,
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "site_name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "aliases": [
+        "National Shrine of Our Lady of Guadalupe, Allentown",
+        "Immaculate Conception BVM Church, Allentown"
+      ],
+      "site_type": "church",
+      "country_code": "US",
+      "city": "Allentown",
+      "coordinates": {
+        "lat": 40.613235,
+        "lng": -75.461138,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 4,
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "site_name": "Our Lady of Fatima Catholic Church, Karachi",
+      "aliases": [
+        "Our Lady of Fatima Parish, Karachi",
+        "Fatima Shrine Church, Karachi (map label)"
+      ],
+      "site_type": "church",
+      "country_code": "PK",
+      "city": "Karachi",
+      "coordinates": {
+        "lat": 24.86672,
+        "lng": 67.02199,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 5,
+      "place_id": "place:GB:p42-sg-inv-0249",
+      "site_name": "Our Lady of the Taper Catholic Shrine Church",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "GB",
+      "city": "Cardigan",
+      "coordinates": {
+        "lat": 52.08732,
+        "lng": -4.65272,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 6,
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "site_name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "aliases": [
+        "Iglesia Nuestra Señora de Lourdes, San Pedro de Montes de Oca",
+        "Shrine of Our Lady of Lourdes, San José (research name; parish only)"
+      ],
+      "site_type": "church",
+      "country_code": "CR",
+      "city": "San Pedro de Montes de Oca",
+      "coordinates": {
+        "lat": 9.93288,
+        "lng": -84.04176,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 7,
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "site_name": "Saints Peter and Paul Catholic Church, Ruwi",
+      "aliases": [
+        "Sts. Peter and Paul Church, Muscat"
+      ],
+      "site_type": "church",
+      "country_code": "OM",
+      "city": "Muscat (Ruwi)",
+      "coordinates": {
+        "lat": 23.60649,
+        "lng": 58.53592,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 8,
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "site_name": "San Francisco de Asís Mission Church — Ranchos de Taos",
+      "aliases": [
+        "San Francisco de Asis Catholic Parish",
+        "Ranchos de Taos Church"
+      ],
+      "site_type": "church",
+      "country_code": "US",
+      "city": "Ranchos de Taos",
+      "coordinates": {
+        "lat": 36.35845,
+        "lng": -105.60844,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 9,
+      "place_id": "place:JP:our-lady-akita-convent",
+      "site_name": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "aliases": [],
+      "site_type": "chapel",
+      "country_code": "JP",
+      "city": "Akita",
+      "coordinates": {
+        "lat": 39.75932,
+        "lng": 140.14953,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 10,
+      "place_id": "place:IE:solas-bhride-kildare",
+      "site_name": "Solas Bhríde Centre and Hermitages",
+      "aliases": [
+        "Solas Bhríde — Saint Brigid pilgrimage centre",
+        "St Brigid's pilgrimage centre, Kildare"
+      ],
+      "site_type": "pilgrimage_destination",
+      "country_code": "IE",
+      "city": "Kildare Town",
+      "coordinates": {
+        "lat": 53.14821,
+        "lng": -6.90623,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    }
+  ]
+}

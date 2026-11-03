@@ -1,0 +1,2278 @@
+{
+  "schema": "AO_SACRED_ATLAS_SITE_COVER_BATCH_001_V1",
+  "date": "2026-10-31",
+  "batch_id": "004",
+  "source_audit_path": "data/geography/research/sacred-atlas-site-cover-gaps-20261031.v1.json",
+  "total": 100,
+  "scope": "RESEARCH_AND_ACQUISITION_NOT_PRODUCTION_APPROVAL",
+  "selection_rule": "Preserve existing Commons selection first, reuse verified gallery photo, verify exact-site image before publication, no budget.",
+  "sites": [
+    {
+      "batch_sequence": 1,
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "site_name": "Basílica de Nuestra Señora de Ocotlán",
+      "aliases": [
+        "Basilica of Our Lady of Ocotlán"
+      ],
+      "site_type": "basilica",
+      "country_code": "MX",
+      "city": "Tlaxcala de Xicohténcatl",
+      "coordinates": {
+        "lat": 19.31792,
+        "lng": -98.22796,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 2,
+      "place_id": "place:HN:suyapa-basilica",
+      "site_name": "Basílica de Nuestra Señora de Suyapa",
+      "aliases": [
+        "Basilica of Suyapa",
+        "Basílica de Suyapa",
+        "Basilique Notre-Dame de Suyapa"
+      ],
+      "site_type": "basilica",
+      "country_code": "HN",
+      "city": "Tegucigalpa",
+      "coordinates": {
+        "lat": 14.08041,
+        "lng": -87.15727,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 3,
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "site_name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "PA",
+      "city": "Atalaya, Veraguas",
+      "coordinates": {
+        "lat": 8.04326,
+        "lng": -80.92447,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 4,
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "site_name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "CI",
+      "city": null,
+      "coordinates": {
+        "lat": 6.81129,
+        "lng": -5.29698,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 5,
+      "place_id": "place:IN:mount-mary-basilica-bandra",
+      "site_name": "Basilica of Our Lady of the Mount — Bandra",
+      "aliases": [
+        "Mount Mary Basilica"
+      ],
+      "site_type": "basilica",
+      "country_code": "IN",
+      "city": "Mumbai",
+      "coordinates": {
+        "lat": 19.04657,
+        "lng": 72.82264,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 6,
+      "place_id": "place:TO:st-anthony-padua-basilica-nukualofa",
+      "site_name": "Basilica of St Anthony of Padua, Nukuʻalofa",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "TO",
+      "city": "Nukuʻalofa",
+      "coordinates": {
+        "lat": -21.13683,
+        "lng": -175.20186,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 7,
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "site_name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+      "aliases": [
+        "National Shrine of Our Lady of Fatima, Lewiston"
+      ],
+      "site_type": "basilica",
+      "country_code": "US",
+      "city": null,
+      "coordinates": {
+        "lat": 43.20036,
+        "lng": -79.0034,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 8,
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "site_name": "Basilica San Pietro in Ciel d'Oro, Pavia",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "IT",
+      "city": "Pavia",
+      "coordinates": {
+        "lat": 45.191278,
+        "lng": 9.154944,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 9,
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "site_name": "Basilica Shrine of Our Lady of the Miraculous Medal",
+      "aliases": [
+        "Miraculous Medal Shrine",
+        "The Basilica Shrine of Our Lady of the Miraculous Medal"
+      ],
+      "site_type": "basilica",
+      "country_code": "US",
+      "city": "Philadelphia",
+      "coordinates": {
+        "lat": 40.04227,
+        "lng": -75.16732,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 10,
+      "place_id": "place:FR:basilique-saint-denis",
+      "site_name": "Basilique cathédrale de Saint-Denis",
+      "aliases": [
+        "Basilica Cathedral of Saint-Denis"
+      ],
+      "site_type": "cathedral",
+      "country_code": "FR",
+      "city": "Saint-Denis",
+      "coordinates": {
+        "lat": 48.935556,
+        "lng": 2.359722,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 11,
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "site_name": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
+      "aliases": [
+        "Basilique de la Maison natale Saint-Bernard",
+        "Couvent et Basilique Saint-Bernard"
+      ],
+      "site_type": "basilica",
+      "country_code": "FR",
+      "city": "Fontaine-lès-Dijon",
+      "coordinates": {
+        "lat": 47.345814,
+        "lng": 5.015873,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 12,
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "site_name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "aliases": [
+        "Vézelay Basilica"
+      ],
+      "site_type": "basilica",
+      "country_code": "FR",
+      "city": "Vézelay",
+      "coordinates": {
+        "lat": 47.46633,
+        "lng": 3.74852,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 13,
+      "place_id": "place:SK:bazilika-narodenia-panny-marie-marianka",
+      "site_name": "Bazilika Narodenia Panny Márie, Marianka",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "SK",
+      "city": "Marianka",
+      "coordinates": {
+        "lat": 48.24807,
+        "lng": 17.06481,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 14,
+      "place_id": "place:PL:lichen-marian-basilica",
+      "site_name": "Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "aliases": [
+        "Basilica of Our Lady of Licheń",
+        "Basilica of Our Lady of Sorrows, Queen of Poland"
+      ],
+      "site_type": "basilica",
+      "country_code": "PL",
+      "city": "Licheń Stary",
+      "coordinates": {
+        "lat": 52.32321,
+        "lng": 18.35794,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 15,
+      "place_id": "place:SZ:our-lady-assumption-cathedral-manzini",
+      "site_name": "Cathedral of Our Lady of the Assumption, Manzini",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "SZ",
+      "city": "Manzini",
+      "coordinates": {
+        "lat": -26.5005625,
+        "lng": 31.3775625,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 16,
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "site_name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "IT",
+      "city": "Vercelli",
+      "coordinates": {
+        "lat": 45.33003,
+        "lng": 8.42225,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 17,
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "site_name": "Centre Père Laval",
+      "aliases": [
+        "Caveau du Bienheureux Père Laval",
+        "Père Laval Shrine, Sainte-Croix"
+      ],
+      "site_type": "shrine",
+      "country_code": "MU",
+      "city": "Port-Louis",
+      "coordinates": {
+        "lat": -20.1478,
+        "lng": 57.52957,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 18,
+      "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "site_name": "Centro de Espiritualidad y Santuario San Martín de Porres, Jicamarca",
+      "aliases": [
+        "Santuario San Martín de Porres, Jicamarca",
+        "Shrine of St Martin of Porres, Jicamarca"
+      ],
+      "site_type": "shrine",
+      "country_code": "PE",
+      "city": "Jicamarca, San Antonio de Huarochirí",
+      "coordinates": {
+        "lat": -11.9004375,
+        "lng": -76.9439375,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 19,
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "site_name": "Hāto Mere / St Mary's Pukekaraka",
+      "aliases": [
+        "St Mary's Pukekaraka",
+        "Pukekaraka, Ōtaki"
+      ],
+      "site_type": "shrine",
+      "country_code": "NZ",
+      "city": "Ōtaki",
+      "coordinates": {
+        "lat": -40.74667,
+        "lng": 175.14219,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 20,
+      "place_id": "place:PG:holy-cross-procathedral-vanimo",
+      "site_name": "Holy Cross Pro-Cathedral, Vanimo",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "PG",
+      "city": "Vanimo",
+      "coordinates": {
+        "lat": -2.6830625,
+        "lng": 141.3031875,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 21,
+      "place_id": "place:AS:holy-family-cathedral-tafuna",
+      "site_name": "Holy Family Cathedral, Tafuna",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "AS",
+      "city": "Tafuna",
+      "coordinates": {
+        "lat": -14.3309375,
+        "lng": -170.7343125,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 22,
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "site_name": "Holy Trinity Cathedral, Kingston",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "JM",
+      "city": "Kingston",
+      "coordinates": {
+        "lat": 17.97535,
+        "lng": -76.7842,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 23,
+      "place_id": "place:WS:immaculate-conception-cathedral-mulivai-apia",
+      "site_name": "Immaculate Conception Cathedral (Mulivai Cathedral), Apia",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "WS",
+      "city": "Apia",
+      "coordinates": {
+        "lat": -13.83219,
+        "lng": -171.76645,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 24,
+      "place_id": "place:KR:jeoldusan-martyrs-shrine-seoul",
+      "site_name": "Jeoldusan Korean Martyrs' Shrine — Seoul",
+      "aliases": [
+        "Jeoldu-san Martyrs Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "KR",
+      "city": "Seoul",
+      "coordinates": {
+        "lat": 37.54446,
+        "lng": 126.91237,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 25,
+      "place_id": "place:AU:marian-valley",
+      "site_name": "Marian Valley — Shrine of Our Lady Help of Christians",
+      "aliases": [
+        "Marian Valley",
+        "Shrine of Our Lady Help of Christians"
+      ],
+      "site_type": "shrine",
+      "country_code": "AU",
+      "city": "Witheren via Canungra",
+      "coordinates": {
+        "lat": -28.0821666667,
+        "lng": 153.1945833333,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 26,
+      "place_id": "place:MW:maula-cathedral-lilongwe",
+      "site_name": "Maula Cathedral of Our Lady Queen of Africa, Lilongwe",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "MW",
+      "city": "Lilongwe",
+      "coordinates": {
+        "lat": -13.9796875,
+        "lng": 33.7624375,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 27,
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "site_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
+      "aliases": [
+        "St Anne's Shrine, Bukit Mertajam",
+        "Minor Basilica of St Anne",
+        "Basilique mineure Sainte-Anne de Bukit Mertajam"
+      ],
+      "site_type": "basilica",
+      "country_code": "MY",
+      "city": "Bukit Mertajam",
+      "coordinates": {
+        "lat": 5.440325,
+        "lng": 100.387715,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 28,
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "site_name": "National Basilica of Our Lady of Lanka, Tewatta",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "LK",
+      "city": null,
+      "coordinates": {
+        "lat": 7.0326,
+        "lng": 79.93443,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 29,
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "site_name": "National Catholic Shrine of St Peter Chanel",
+      "aliases": [
+        "St Peter Chanel Shrine, Russell"
+      ],
+      "site_type": "shrine",
+      "country_code": "NZ",
+      "city": "Russell",
+      "coordinates": {
+        "lat": -35.262172,
+        "lng": 174.123766,
+        "precision": "locality"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 30,
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "site_name": "National Shrine Grotto of Our Lady of Lourdes",
+      "aliases": [
+        "National Shrine Grotto",
+        "Our Lady of Lourdes Grotto, Emmitsburg"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Emmitsburg",
+      "coordinates": {
+        "lat": 39.68249,
+        "lng": -77.35659,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 31,
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "site_name": "National Shrine of Our Lady of Fatima, Valenzuela",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "PH",
+      "city": null,
+      "coordinates": {
+        "lat": 14.68258,
+        "lng": 120.9806,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 32,
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "site_name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+      "aliases": [
+        "Sanctuary of Our Lady of Fatima, Zakopane"
+      ],
+      "site_type": "shrine",
+      "country_code": "PL",
+      "city": null,
+      "coordinates": {
+        "lat": 49.28498,
+        "lng": 19.92297,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 33,
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "site_name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "PH",
+      "city": null,
+      "coordinates": {
+        "lat": 14.56129,
+        "lng": 121.04555,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 34,
+      "place_id": "place:US:la-salette-attleboro",
+      "site_name": "National Shrine of Our Lady of La Salette",
+      "aliases": [
+        "La Salette Shrine Attleboro",
+        "Our Lady of La Salette Attleboro"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Attleboro",
+      "coordinates": {
+        "lat": 41.93032,
+        "lng": -71.26284,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 35,
+      "place_id": "place:US:auriesville-martyrs",
+      "site_name": "National Shrine of Our Lady of Martyrs",
+      "aliases": [
+        "Our Lady of Martyrs Shrine",
+        "Auriesville Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Fultonville",
+      "coordinates": {
+        "lat": 42.9254,
+        "lng": -74.302,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 36,
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "site_name": "National Shrine of Our Lady of Matara",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "LK",
+      "city": "Matara",
+      "coordinates": {
+        "lat": 5.94329,
+        "lng": 80.55191,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 37,
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "site_name": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+      "aliases": [
+        "National Marian Shrine, Ugwogo Nike"
+      ],
+      "site_type": "shrine",
+      "country_code": "NG",
+      "city": "Enugu",
+      "coordinates": {
+        "lat": 6.61967,
+        "lng": 7.55923828,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 38,
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "site_name": "National Shrine of Saint Joseph, Mandaue",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "PH",
+      "city": null,
+      "coordinates": {
+        "lat": 10.32742,
+        "lng": 123.94216,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 39,
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "site_name": "National Shrine of St. John Neumann",
+      "aliases": [
+        "National Shrine of Saint John Neumann",
+        "St. John Neumann Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Philadelphia",
+      "coordinates": {
+        "lat": 39.9698,
+        "lng": -75.1447,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 40,
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "site_name": "Nne Enyemaka Shrine, Umuaka",
+      "aliases": [
+        "Our Lady of Perpetual Help Shrine, Umuaka",
+        "Nne Enyemaka Ebebe Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "NG",
+      "city": "Umuaka",
+      "coordinates": {
+        "lat": 5.6769512,
+        "lng": 7.0243016,
+        "precision": "street"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 41,
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "site_name": "Our Lady of Fatima Church and Shrine, Laventille",
+      "aliases": [
+        "National Marian Shrine of Our Lady of Laventille",
+        "Sanctuaire Notre-Dame de Laventille"
+      ],
+      "site_type": "shrine",
+      "country_code": "TT",
+      "city": "Laventille",
+      "coordinates": {
+        "lat": 10.6556583,
+        "lng": -61.4949787,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 42,
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "site_name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+      "aliases": [
+        "Concatedral de Nuestra Señora de Guadalupe, Belmopán",
+        "Our Lady of Guadalupe Roman Catholic Church, Belmopan"
+      ],
+      "site_type": "cathedral",
+      "country_code": "BZ",
+      "city": "Belmopan",
+      "coordinates": {
+        "lat": 17.24867,
+        "lng": -88.7635,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 43,
+      "place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "site_name": "Our Lady of Zarvanytsia Cathedral and Basilica",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "UA",
+      "city": "Zarvanytsia, Ternopil",
+      "coordinates": {
+        "lat": 49.22831,
+        "lng": 25.35171,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 44,
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "site_name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "aliases": [
+        "Sanctuary of Our Lady of Fátima, Fortaleza",
+        "Igreja Nossa Senhora de Fátima"
+      ],
+      "site_type": "shrine",
+      "country_code": "BR",
+      "city": "Fortaleza",
+      "coordinates": {
+        "lat": -3.752494,
+        "lng": -38.526609,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 45,
+      "place_id": "place:IT:scala-santa-rome",
+      "site_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "Rome",
+      "coordinates": {
+        "lat": 41.887315,
+        "lng": 12.506719,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 46,
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "site_name": "Propsteikirche Basilika St. Clemens, Hannover",
+      "aliases": [
+        "Basilika St. Clemens",
+        "St. Clement's Basilica, Hanover"
+      ],
+      "site_type": "basilica",
+      "country_code": "DE",
+      "city": "Hannover",
+      "coordinates": {
+        "lat": 52.373,
+        "lng": 9.72681,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 47,
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "site_name": "Sacred Heart Cathedral, Freetown",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "SL",
+      "city": "Freetown",
+      "coordinates": {
+        "lat": 8.48949,
+        "lng": -13.2332,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 48,
+      "place_id": "place:KI:sacred-heart-cathedral-teaoraereke",
+      "site_name": "Sacred Heart Cathedral, Teaoraereke",
+      "aliases": [],
+      "site_type": "cathedral",
+      "country_code": "KI",
+      "city": "South Tarawa",
+      "coordinates": {
+        "lat": 1.33259,
+        "lng": 173.00722,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 49,
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "site_name": "Sacred Heart Shrine, Hales Corners",
+      "aliases": [
+        "Monastery and Shrine of the Sacred Heart",
+        "Sacred Heart Shrine — Hales Corners"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Hales Corners",
+      "coordinates": {
+        "lat": 42.9111875,
+        "lng": -88.0439375,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 50,
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "site_name": "Saint Anne's National Shrine, Talawila",
+      "aliases": [
+        "National Shrine of Saint Anne, Talawila"
+      ],
+      "site_type": "shrine",
+      "country_code": "LK",
+      "city": null,
+      "coordinates": {
+        "lat": 8.11282,
+        "lng": 79.7036,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 51,
+      "place_id": "place:BE:banneux",
+      "site_name": "Sanctuaire de la Vierge des Pauvres — Banneux",
+      "aliases": [
+        "Banneux Notre-Dame",
+        "Sanctuary of the Virgin of the Poor"
+      ],
+      "site_type": "shrine",
+      "country_code": "BE",
+      "city": "Banneux",
+      "coordinates": {
+        "lat": 50.5387294,
+        "lng": 5.7465878,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 52,
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "site_name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+      "aliases": [
+        "Our Lady of Lourdes Sanctuary, Rigaud",
+        "Sanctuaire Notre-Dame-de-Lourdes (Québec)"
+      ],
+      "site_type": "shrine",
+      "country_code": "CA",
+      "city": "Rigaud",
+      "coordinates": {
+        "lat": 45.46996,
+        "lng": -74.31088,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 53,
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "site_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "FR",
+      "city": "Nevers",
+      "coordinates": {
+        "lat": 46.99235,
+        "lng": 3.15202,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 54,
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "site_name": "Sanctuaire Sainte-Julienne de Cornillon",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "BE",
+      "city": "Liège",
+      "coordinates": {
+        "lat": 50.635,
+        "lng": 5.59256,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 55,
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "site_name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "aliases": [
+        "Sanctuary of Our Lady of La Tirana"
+      ],
+      "site_type": "shrine",
+      "country_code": "CL",
+      "city": null,
+      "coordinates": {
+        "lat": -20.33657,
+        "lng": -69.65634,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 56,
+      "place_id": "place:BR:santuario-basilica-divino-pai-eterno-trindade",
+      "site_name": "Santuário Basílica do Divino Pai Eterno",
+      "aliases": [],
+      "site_type": "basilica",
+      "country_code": "BR",
+      "city": "Trindade, Goiás",
+      "coordinates": {
+        "lat": -16.6607094,
+        "lng": -49.4853965,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 57,
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "site_name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "aliases": [
+        "Sanctuary of Our Lady of Fátima, Namaacha",
+        "Santuário de Fátima, Namaacha"
+      ],
+      "site_type": "shrine",
+      "country_code": "MZ",
+      "city": "Namaacha",
+      "coordinates": {
+        "lat": -25.988282,
+        "lng": 32.014878,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 58,
+      "place_id": "place:NI:cuapa-national-shrine",
+      "site_name": "Santuario de Nuestra Señora de Cuapa",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "NI",
+      "city": "San Francisco de Cuapa",
+      "coordinates": {
+        "lat": 12.25104,
+        "lng": -85.37841,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 59,
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "site_name": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "aliases": [
+        "Santuario de Guadalupe, Guadalupe, Zacatecas",
+        "Templo de Nuestra Señora de Guadalupe, Zacatecas"
+      ],
+      "site_type": "shrine",
+      "country_code": "MX",
+      "city": "Guadalupe",
+      "coordinates": {
+        "lat": 22.74656,
+        "lng": -102.51787,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 60,
+      "place_id": "place:PE:santuario-candelaria-chapi-polobaya",
+      "site_name": "Santuario de Nuestra Señora de la Candelaria de Chapi",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "PE",
+      "city": "Polobaya",
+      "coordinates": {
+        "lat": -16.71925,
+        "lng": -71.31496,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 61,
+      "place_id": "place:IT:madonna-neve-rocchetta-bergamo",
+      "site_name": "Santuario della Madonna della Neve in Rocchetta, Bergamo",
+      "aliases": [
+        "Chiesa della Beata Vergine della Neve, Bergamo",
+        "Chiesa della Madonna della Neve in Rocchetta"
+      ],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "Bergamo",
+      "coordinates": {
+        "lat": 45.69707,
+        "lng": 9.676543,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 62,
+      "place_id": "place:IT:san-michele-gargano",
+      "site_name": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "Monte Sant'Angelo",
+      "coordinates": {
+        "lat": 41.707778,
+        "lng": 15.954722,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 63,
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "site_name": "Santuario di San Paolo della Croce, Ovada",
+      "aliases": [
+        "Santuario San Paolo della Croce",
+        "Sanctuary of Saint Paul of the Cross, Ovada"
+      ],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "Ovada",
+      "coordinates": {
+        "lat": 44.63312,
+        "lng": 8.63989,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 64,
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "site_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "IT",
+      "city": "San Giovanni Rotondo",
+      "coordinates": {
+        "lat": 41.70703,
+        "lng": 15.70312,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 65,
+      "place_id": "place:VE:finca-betania",
+      "site_name": "Santuario Finca Betania",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "VE",
+      "city": "Cúa",
+      "coordinates": {
+        "lat": 10.0751,
+        "lng": -66.92714,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 66,
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "site_name": "Santuario María del Rosario de San Nicolás",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "AR",
+      "city": "San Nicolás de los Arroyos",
+      "coordinates": {
+        "lat": -33.3218,
+        "lng": -60.22499,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 67,
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "site_name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "aliases": [
+        "Santuario Nacional de la Gruta de Lourdes",
+        "Shrine of Our Lady of Lourdes, Montevideo"
+      ],
+      "site_type": "shrine",
+      "country_code": "UY",
+      "city": "Montevideo",
+      "coordinates": {
+        "lat": -34.825556,
+        "lng": -56.181667,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 68,
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "site_name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "aliases": [
+        "Gruta de Lourdes, Alta Gracia",
+        "Sanctuary of Our Lady of Lourdes, Alta Gracia"
+      ],
+      "site_type": "shrine",
+      "country_code": "AR",
+      "city": "Alta Gracia",
+      "coordinates": {
+        "lat": -31.648889,
+        "lng": -64.457222,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 69,
+      "place_id": "place:AR:santuario-san-cayetano-liniers",
+      "site_name": "Santuario San Cayetano, Liniers",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "AR",
+      "city": "Buenos Aires",
+      "coordinates": {
+        "lat": -34.63785,
+        "lng": -58.52827,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 70,
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "site_name": "Shrine of Our Lady of Lebanon, Harissa",
+      "aliases": [],
+      "site_type": "shrine",
+      "country_code": "LB",
+      "city": null,
+      "coordinates": {
+        "lat": 33.98194,
+        "lng": 35.65167,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 71,
+      "place_id": "place:AU:penrose-park",
+      "site_name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "aliases": [
+        "Penrose Park",
+        "Our Lady of Mercy Penrose Park"
+      ],
+      "site_type": "shrine",
+      "country_code": "AU",
+      "city": "Sutton Forest",
+      "coordinates": {
+        "lat": -34.6272222222,
+        "lng": 150.1958333333,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 72,
+      "place_id": "place:NO:st-olav-cathedral-trondheim",
+      "site_name": "St Olav Catholic Cathedral — Trondheim",
+      "aliases": [
+        "St. Olav domkirke Trondheim"
+      ],
+      "site_type": "cathedral",
+      "country_code": "NO",
+      "city": "Trondheim",
+      "coordinates": {
+        "lat": 63.4253507,
+        "lng": 10.39237977,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 73,
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "site_name": "St Patrick's Roman Catholic Cathedral, Bridgetown",
+      "aliases": [
+        "St Patrick's Cathedral, Barbados"
+      ],
+      "site_type": "cathedral",
+      "country_code": "BB",
+      "city": "Bridgetown",
+      "coordinates": {
+        "lat": 13.09184,
+        "lng": -59.60897,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 74,
+      "place_id": "place:IN:st-thomas-mount-shrine-chennai",
+      "site_name": "St Thomas Mount National Shrine Basilica — Chennai",
+      "aliases": [
+        "St Thomas Mount Hill Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "IN",
+      "city": "Chennai",
+      "coordinates": {
+        "lat": 13.00511,
+        "lng": 80.19354,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 75,
+      "place_id": "place:US:st-anne-fiskdale",
+      "site_name": "St. Anne Shrine",
+      "aliases": [
+        "St. Anne–St. Patrick Parish and Shrine",
+        "Saint Anne Shrine Fiskdale"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Fiskdale",
+      "coordinates": {
+        "lat": 42.118183333333334,
+        "lng": -72.11361666666667,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 76,
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "site_name": "St. Mary of the Assumption Parish and Shrine",
+      "aliases": [
+        "St. Mary's Shrine Oswego",
+        "St. Mary of the Assumption Oswego"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Oswego",
+      "coordinates": {
+        "lat": 43.456437,
+        "lng": -76.5181515,
+        "precision": "address"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 77,
+      "place_id": "place:CZ:svata-hora-pribram",
+      "site_name": "Svatá Hora",
+      "aliases": [
+        "Holy Mountain Příbram",
+        "Basilica of the Assumption at Svatá Hora"
+      ],
+      "site_type": "basilica",
+      "country_code": "CZ",
+      "city": "Příbram II",
+      "coordinates": {
+        "lat": 49.68555,
+        "lng": 14.01752,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 78,
+      "place_id": "place:US:seton-emmitsburg",
+      "site_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "aliases": [
+        "National Shrine of Saint Elizabeth Ann Seton",
+        "Seton Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Emmitsburg",
+      "coordinates": {
+        "lat": 39.69895,
+        "lng": -77.32636,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 79,
+      "place_id": "place:US:lourdes-litchfield",
+      "site_name": "The Shrine of Lourdes in Litchfield",
+      "aliases": [
+        "Lourdes in Litchfield",
+        "Litchfield Lourdes Shrine"
+      ],
+      "site_type": "shrine",
+      "country_code": "US",
+      "city": "Litchfield",
+      "coordinates": {
+        "lat": 41.7524,
+        "lng": -73.1779,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 80,
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "site_name": "Wallfahrtskirche St. Salvator Bettbrunn",
+      "aliases": [
+        "St. Salvator Bettbrunn",
+        "Salvatorkirche Bettbrunn"
+      ],
+      "site_type": "shrine",
+      "country_code": "DE",
+      "city": "Kösching-Bettbrunn",
+      "coordinates": {
+        "lat": 48.8729166667,
+        "lng": 11.5555194444,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 81,
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "site_name": "Abbaye de Saint-Maurice d'Agaune",
+      "aliases": [],
+      "site_type": "monastery",
+      "country_code": "CH",
+      "city": "Saint-Maurice",
+      "coordinates": {
+        "lat": 46.219444,
+        "lng": 7.003333,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 82,
+      "place_id": "place:DE:p43-sg-0166-110413193",
+      "site_name": "Alte Wallfahrtskirche Werl",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "DE",
+      "city": "Werl",
+      "coordinates": {
+        "lat": 51.5534353,
+        "lng": 7.9150114,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 83,
+      "place_id": "place:SV:capilla-divina-providencia-san-salvador",
+      "site_name": "Capilla de la Divina Providencia, Hospital Divina Providencia",
+      "aliases": [],
+      "site_type": "chapel",
+      "country_code": "SV",
+      "city": "San Salvador",
+      "coordinates": {
+        "lat": 13.71114,
+        "lng": -89.2237,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 84,
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "site_name": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+      "aliases": [
+        "Chiesa Nuova — Sainte-Marie-in-Vallicella, Rome"
+      ],
+      "site_type": "church",
+      "country_code": "IT",
+      "city": "Roma",
+      "coordinates": {
+        "lat": 41.89848,
+        "lng": 12.4692,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 85,
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "site_name": "Christ the King Catholic Church, Nuuk",
+      "aliases": [
+        "Krist Konge Kirke"
+      ],
+      "site_type": "church",
+      "country_code": "GL",
+      "city": "Nuuk",
+      "coordinates": {
+        "lat": 64.17942,
+        "lng": -51.73179,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 86,
+      "place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "site_name": "Church of Our Lady of Lourdes, Singapore",
+      "aliases": [
+        "Church of Our Lady of Lourdes, Ophir Road"
+      ],
+      "site_type": "church",
+      "country_code": "SG",
+      "city": "Singapore",
+      "coordinates": {
+        "lat": 1.30317,
+        "lng": 103.8559,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 87,
+      "place_id": "place:MY:st-jude-church-rawang",
+      "site_name": "Church of St. Jude, Rawang",
+      "aliases": [
+        "Gereja St Jude Rawang",
+        "St Jude Catholic Church Rawang"
+      ],
+      "site_type": "church",
+      "country_code": "MY",
+      "city": "Rawang",
+      "coordinates": {
+        "lat": 3.3170625,
+        "lng": 101.5771875,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 88,
+      "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "site_name": "Church of the Nativity of the Blessed Virgin Mary, Hougang",
+      "aliases": [
+        "Nativity Church, Hougang"
+      ],
+      "site_type": "church",
+      "country_code": "SG",
+      "city": "Singapore",
+      "coordinates": {
+        "lat": 1.37348,
+        "lng": 103.89847,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 89,
+      "place_id": "place:EG:zeitoun-coptic-saint-mary",
+      "site_name": "Church of the Virgin Mary, Zeitoun (Coptic Orthodox)",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "EG",
+      "city": "Zeitoun, Cairo",
+      "coordinates": {
+        "lat": 30.10467,
+        "lng": 31.31544,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 90,
+      "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "site_name": "Église Notre-Dame de Lourdes, Casablanca",
+      "aliases": [
+        "Notre-Dame de Lourdes Church, Casablanca"
+      ],
+      "site_type": "church",
+      "country_code": "MA",
+      "city": "Casablanca",
+      "coordinates": {
+        "lat": 33.5827,
+        "lng": -7.61574,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 91,
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "site_name": "Église Saint-Louis-de-Gonzague de Pau",
+      "aliases": [
+        "Chapelle Saint-Louis-de-Gonzague",
+        "Église Saint-Louis de Gonzague"
+      ],
+      "site_type": "church",
+      "country_code": "FR",
+      "city": "Pau",
+      "coordinates": {
+        "lat": 43.29596,
+        "lng": -0.36541,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 92,
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "site_name": "Ermita de Guadalupe, Matagalpa",
+      "aliases": [
+        "Guadalupe Hermitage, Matagalpa"
+      ],
+      "site_type": "chapel",
+      "country_code": "NI",
+      "city": "Matagalpa",
+      "coordinates": {
+        "lat": 12.93104,
+        "lng": -85.91297,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 93,
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "site_name": "Friedhofskirche St. Michael, Altötting",
+      "aliases": [
+        "St. Michael's Cemetery Church",
+        "Friedhofskirche Sankt Michael"
+      ],
+      "site_type": "church",
+      "country_code": "DE",
+      "city": "Altötting",
+      "coordinates": {
+        "lat": 48.2282,
+        "lng": 12.67853,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 94,
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "site_name": "Haemi Martyrs International Shrine — Main Church",
+      "aliases": [],
+      "site_type": "church",
+      "country_code": "KR",
+      "city": "Haemi, Seosan",
+      "coordinates": {
+        "lat": 36.7126432,
+        "lng": 126.5379024,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 95,
+      "place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "site_name": "Ilot de la sainte vierge, Ampefy",
+      "aliases": [
+        "Îlot de la Vierge",
+        "Îlot de la Sainte Vierge — Lake Itasy",
+        "Église de l'Îlot de la Vierge"
+      ],
+      "site_type": "church",
+      "country_code": "MG",
+      "city": "Ampefy",
+      "coordinates": {
+        "lat": -19.07121,
+        "lng": 46.76717,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 96,
+      "place_id": "place:SK:kaplnka-zjavenia-litmanova-zvir",
+      "site_name": "Kaplnka zjavenia, hora Zvir, Litmanová",
+      "aliases": [],
+      "site_type": "chapel",
+      "country_code": "SK",
+      "city": "Litmanová",
+      "coordinates": {
+        "lat": 49.39218,
+        "lng": 20.63349,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 97,
+      "place_id": "place:DE:kevelaer-kerzenkapelle",
+      "site_name": "Kerzenkapelle Kevelaer",
+      "aliases": [
+        "Candle Chapel, Kevelaer"
+      ],
+      "site_type": "chapel",
+      "country_code": "DE",
+      "city": "Kevelaer",
+      "coordinates": {
+        "lat": 51.58389,
+        "lng": 6.24377,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 98,
+      "place_id": "place:CH:kloster-mariastein",
+      "site_name": "Kloster Mariastein",
+      "aliases": [
+        "Mariastein Monastery",
+        "Gnadenkapelle Mariastein"
+      ],
+      "site_type": "monastery",
+      "country_code": "CH",
+      "city": "Mariastein",
+      "coordinates": {
+        "lat": 47.47608,
+        "lng": 7.49227,
+        "precision": "complex_anchor"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 99,
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "site_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
+      "aliases": [
+        "Kostel sv. Ignáce z Loyoly",
+        "Jesuit Church of St Ignatius of Loyola"
+      ],
+      "site_type": "church",
+      "country_code": "CZ",
+      "city": "Jihlava",
+      "coordinates": {
+        "lat": 49.39669,
+        "lng": 15.591157,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NO_DECISION",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    },
+    {
+      "batch_sequence": 100,
+      "place_id": "place:FO:mariukirkjan-torshavn",
+      "site_name": "Mariukirkjan — St Mary's Catholic Church, Tórshavn",
+      "aliases": [
+        "St Mary's Catholic Church, Faroe Islands"
+      ],
+      "site_type": "church",
+      "country_code": "FO",
+      "city": "Tórshavn",
+      "coordinates": {
+        "lat": 62.01438,
+        "lng": -6.77978,
+        "precision": "site"
+      },
+      "source_registry_photo_decision": "NONE_SELECTED",
+      "prior_selected_commons_file": null,
+      "gallery_source_count": 0,
+      "usable_gallery_assets": [],
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "identity_warnings": [],
+      "candidate_override": null
+    }
+  ]
+}

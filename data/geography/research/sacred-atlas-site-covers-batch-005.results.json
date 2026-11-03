@@ -1,0 +1,606 @@
+{
+  "schema": "AO_SACRED_ATLAS_SITE_COVER_COMMONS_BATCH_RESULTS_V1",
+  "as_of": "2026-10-31T04:55:50.345Z",
+  "input": "data/geography/research/sacred-atlas-site-covers-batch-005.v1.json",
+  "summary": {
+    "locations": 10,
+    "reuse_approved_gallery": 0,
+    "source_file_candidates": 15,
+    "locations_with_compatible_photo_metadata": 1,
+    "pinned_current_source_sha_changed": 0,
+    "wrong_city_hold": 0,
+    "errors": 0,
+    "original_image_bytes_acquired": 0,
+    "app_cover_published": 0
+  },
+  "records": [
+    {
+      "ordinal": 1,
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "site_name": "Memorial of Saint Peter — Capernaum",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "IL",
+      "city": "Capernaum",
+      "coords": {
+        "lat": 32.880999,
+        "lng": 35.575371,
+        "precision": "complex_anchor"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Memorial of Saint Peter — Capernaum Capernaum IL"
+        }
+      ],
+      "candidates": [
+        {
+          "commons_title": "File:Historical Works of Venerable Bede vol. 2.djvu",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Historical_Works_of_Venerable_Bede_vol._2.djvu",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Historical_Works_of_Venerable_Bede_vol._2.djvu?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 2451,
+          "original_height": 4044,
+          "source_sha1": "c8fe91f48de2cd308172d26bf0ec3e05618af0d9",
+          "photographer": "Venerable Bede; J. A. Giles (translator)",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "image/vnd.djvu",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:Travels of an Irish gentleman in search of a religion- with notes and illustrations (IA travelsofirishge00moor 0).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Travels_of_an_Irish_gentleman_in_search_of_a_religion-_with_notes_and_illustrations_(IA_travelsofirishge00moor_0).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Travels_of_an_Irish_gentleman_in_search_of_a_religion-_with_notes_and_illustrations_%28IA_travelsofirishge00moor_0%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 666,
+          "original_height": 1125,
+          "source_sha1": "eb968f7557ec11ab171402bc31b2a7d21c0f7ce4",
+          "photographer": "Moore, Thomas, 1779-1852",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": false,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:Companions of the sorrowful way (IA companionsofsorr00wats).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Companions_of_the_sorrowful_way_(IA_companionsofsorr00wats).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Companions_of_the_sorrowful_way_%28IA_companionsofsorr00wats%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 595,
+          "original_height": 1014,
+          "source_sha1": "fb01bd0c48442475877997bc0795f79105673a5c",
+          "photographer": "Watson, John, 1850-1907",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": false,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:A dictionary of miracles - imitative, realistic, and dogmatic ... (IA b24873263).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:A_dictionary_of_miracles_-_imitative%2C_realistic%2C_and_dogmatic_..._(IA_b24873263).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/A_dictionary_of_miracles_-_imitative%2C_realistic%2C_and_dogmatic_..._%28IA_b24873263%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 818,
+          "original_height": 1281,
+          "source_sha1": "4ad044d3fd5fb8c6947c5e436b7324abd96c0a66",
+          "photographer": "Brewer, Ebenezer Cobham, 1810-1897. n 50044304",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:Sunday morning talks prepared for Bible class no. 20 of the Presbyterian congregation of Sewickley, Pennsylvania (IA sundaymorningtal01chri).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Sunday_morning_talks_prepared_for_Bible_class_no._20_of_the_Presbyterian_congregation_of_Sewickley%2C_Pennsylvania_(IA_sundaymorningtal01chri).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Sunday_morning_talks_prepared_for_Bible_class_no._20_of_the_Presbyterian_congregation_of_Sewickley%2C_Pennsylvania_%28IA_sundaymorningtal01chri%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 720,
+          "original_height": 1160,
+          "source_sha1": "6ca64e9a3750e06c4276c8a5adf3df77d94ad13d",
+          "photographer": "Christy, George Harvey, 1837-1909. [from old catalog]",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": false,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:The library of the Palestine Pilgrims' Text Society (IA cu31924028534216).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:The_library_of_the_Palestine_Pilgrims'_Text_Society_(IA_cu31924028534216).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/The_library_of_the_Palestine_Pilgrims%27_Text_Society_%28IA_cu31924028534216%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 833,
+          "original_height": 1295,
+          "source_sha1": "ad629b631bd41ffe3f56e8c43da347640e05cca1",
+          "photographer": "Palestine Pilgrims' Text Society (London, England) White, Andrew Dickson, 1832-1918. fmo",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:The centurions of the Gospel- with discourses on \"The choice of a profession,\" \"Our responsibility for our fellow men,\" and the \"Piety and patriotism of praying for our rulers.\" (IA centurionsofgosp00scot).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:The_centurions_of_the_Gospel-_with_discourses_on_%22The_choice_of_a_profession%2C%22_%22Our_responsibility_for_our_fellow_men%2C%22_and_the_%22Piety_and_patriotism_of_praying_for_our_rulers.%22_(IA_centurionsofgosp00scot).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/The_centurions_of_the_Gospel-_with_discourses_on_%22The_choice_of_a_profession%2C%22_%22Our_responsibility_for_our_fellow_men%2C%22_and_the_%22Piety_and_patriotism_of_praying_for_our_rulers.%22_%28IA_centurionsofgosp00scot%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 716,
+          "original_height": 1125,
+          "source_sha1": "34387a33c649407ef77c45326b03fc3fc4661c1e",
+          "photographer": "Scott, W. A. (William Anderson), 1813-1885",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": false,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        }
+      ],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 2,
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "site_name": "Monastery of Saint Maron — Annaya",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "LB",
+      "city": "Annaya",
+      "coords": {
+        "lat": 34.12091,
+        "lng": 35.7533,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Monastery of Saint Maron — Annaya Annaya LB"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 3,
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "site_name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "US",
+      "city": "Allentown",
+      "coords": {
+        "lat": 40.613235,
+        "lng": -75.461138,
+        "precision": "complex_anchor"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "National Shrine of Our Lady of Guadalupe, Mother of the Americas Allentown US"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 4,
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "site_name": "Our Lady of Fatima Catholic Church, Karachi",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "PK",
+      "city": "Karachi",
+      "coords": {
+        "lat": 24.86672,
+        "lng": 67.02199,
+        "precision": "complex_anchor"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Our Lady of Fatima Catholic Church, Karachi Karachi PK"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 5,
+      "place_id": "place:GB:p42-sg-inv-0249",
+      "site_name": "Our Lady of the Taper Catholic Shrine Church",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "GB",
+      "city": "Cardigan",
+      "coords": {
+        "lat": 52.08732,
+        "lng": -4.65272,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Our Lady of the Taper Catholic Shrine Church Cardigan GB"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 6,
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "site_name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "CR",
+      "city": "San Pedro de Montes de Oca",
+      "coords": {
+        "lat": 9.93288,
+        "lng": -84.04176,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Parroquia Nuestra Señora de Lourdes, Montes de Oca San Pedro de Montes de Oca CR"
+        }
+      ],
+      "candidates": [
+        {
+          "commons_title": "File:Tradiciones de Buenos Aires - Pastor Servando Obligado (4ª serie 1898).pdf",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Tradiciones_de_Buenos_Aires_-_Pastor_Servando_Obligado_(4%C2%AA_serie_1898).pdf",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Tradiciones_de_Buenos_Aires_-_Pastor_Servando_Obligado_%284%C2%AA_serie_1898%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 708,
+          "original_height": 1072,
+          "source_sha1": "9edba870dd9e991589520d0afdc4bd4652762b72",
+          "photographer": "Pastor S. Obligado",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": false,
+          "mime": "application/pdf",
+          "text_match_score": 0,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        }
+      ],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 7,
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "site_name": "Saints Peter and Paul Catholic Church, Ruwi",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "OM",
+      "city": "Muscat (Ruwi)",
+      "coords": {
+        "lat": 23.60649,
+        "lng": 58.53592,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Saints Peter and Paul Catholic Church, Ruwi Muscat (Ruwi) OM"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 8,
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "site_name": "San Francisco de Asís Mission Church — Ranchos de Taos",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "US",
+      "city": "Ranchos de Taos",
+      "coords": {
+        "lat": 36.35845,
+        "lng": -105.60844,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "San Francisco de Asís Mission Church — Ranchos de Taos Ranchos de Taos US"
+        }
+      ],
+      "candidates": [
+        {
+          "commons_title": "File:San Francisco de Asís Mission Church, Ranchos de Taos, NM.jpg",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_As%C3%ADs_Mission_Church%2C_Ranchos_de_Taos%2C_NM.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/San_Francisco_de_As%C3%ADs_Mission_Church%2C_Ranchos_de_Taos%2C_NM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 3564,
+          "original_height": 5407,
+          "source_sha1": "74069a80e3cd919d606ea90fb035027380c7728f",
+          "photographer": "Danny Pilkenton",
+          "claimed_license": "CC BY-SA 4.0",
+          "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "photo_license_candidate": true,
+          "requires_public_domain_proof": false,
+          "resolution_candidate": true,
+          "mime": "image/jpeg",
+          "text_match_score": 1,
+          "metadata_preflight_passed": true,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:San Francisco de Asis Church, Ranchos de Taos, NM.jpg",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Asis_Church%2C_Ranchos_de_Taos%2C_NM.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/San_Francisco_de_Asis_Church%2C_Ranchos_de_Taos%2C_NM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 936,
+          "original_height": 679,
+          "source_sha1": "a3f6014a62af0c83ab80b03c6354e2ef9c0511cc",
+          "photographer": "Rick Haltermann",
+          "claimed_license": "CC BY-SA 4.0",
+          "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "photo_license_candidate": true,
+          "requires_public_domain_proof": false,
+          "resolution_candidate": false,
+          "mime": "image/jpeg",
+          "text_match_score": 0.8,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:Mission Church of Ranchos de Taos, Ranchos de Taos (Taos County, New Mexico).jpg",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos_(Taos_County%2C_New_Mexico).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos_%28Taos_County%2C_New_Mexico%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 412,
+          "original_height": 549,
+          "source_sha1": "868bc012d02ab79b6b58eec74358f3f5b3a2122f",
+          "photographer": "Walter Smalling, Jr.",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": false,
+          "mime": "image/jpeg",
+          "text_match_score": 0.6,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:FRONT - Mission Church of Ranchos de Taos, Ranchos de Taos, Taos County, NM HABS NM,28-RANTA,1-12.tif",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:FRONT_-_Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-12.tif",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/FRONT_-_Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-12.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 3646,
+          "original_height": 5000,
+          "source_sha1": "842405e9310ce71e168db33b949b7ce9e5b60c1d",
+          "photographer": "Related names: Franciscan Fathers Smalling, Walter, photographer Jandoli, Liz, transmitter",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "image/tiff",
+          "text_match_score": 0.6,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:FRONT - Mission Church of Ranchos de Taos, Ranchos de Taos, Taos County, NM HABS NM,28-RANTA,1-14 (CT).tif",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:FRONT_-_Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-14_(CT).tif",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/FRONT_-_Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-14_%28CT%29.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 3610,
+          "original_height": 4927,
+          "source_sha1": "33ffa1138340edc449b91d7d568a7825c7b303ac",
+          "photographer": "Smalling, Walter Jr., creator",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "image/tiff",
+          "text_match_score": 0.6,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:SOUTH FACADE - Mission Church of Ranchos de Taos, Ranchos de Taos, Taos County, NM HABS NM,28-RANTA,1-15 (CT).tif",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:SOUTH_FACADE_-_Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-15_(CT).tif",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/SOUTH_FACADE_-_Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-15_%28CT%29.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 3562,
+          "original_height": 4955,
+          "source_sha1": "213f377c3bc545d2d1a831e553119bb58b1c8f16",
+          "photographer": "Smalling, Walter Jr., creator",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "image/tiff",
+          "text_match_score": 0.6,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        },
+        {
+          "commons_title": "File:Mission Church of Ranchos de Taos, Ranchos de Taos, Taos County, NM HABS NM,28-RANTA,1- (sheet 7 of 32).tif",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-_(sheet_7_of_32).tif",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mission_Church_of_Ranchos_de_Taos%2C_Ranchos_de_Taos%2C_Taos_County%2C_NM_HABS_NM%2C28-RANTA%2C1-_%28sheet_7_of_32%29.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "original_width": 9322,
+          "original_height": 7584,
+          "source_sha1": "74746b107a98f81a812de5588d422cddd6a57058",
+          "photographer": "Related names: Franciscan Fathers Smalling, Walter, photographer Jandoli, Liz, transmitter",
+          "claimed_license": "Public domain",
+          "claimed_license_url": null,
+          "photo_license_candidate": false,
+          "requires_public_domain_proof": true,
+          "resolution_candidate": true,
+          "mime": "image/tiff",
+          "text_match_score": 0.6,
+          "metadata_preflight_passed": false,
+          "exact_physical_site_visually_verified": false,
+          "original_bytes_sha1_verified": false,
+          "underlying_artwork_rights_verified": false,
+          "image_quality_verified": false,
+          "publishable": false,
+          "published": false
+        }
+      ],
+      "previous_gallery_asset": null,
+      "state": "COMMONS_LICENSED_PHOTO_CANDIDATE_NEEDS_IMAGE_AND_SITE_QA",
+      "error": null
+    },
+    {
+      "ordinal": 9,
+      "place_id": "place:JP:our-lady-akita-convent",
+      "site_name": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "JP",
+      "city": "Akita",
+      "coords": {
+        "lat": 39.75932,
+        "lng": 140.14953,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Seitai Hoshikai — Our Lady of Akita Chapel Akita JP"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    },
+    {
+      "ordinal": 10,
+      "place_id": "place:IE:solas-bhride-kildare",
+      "site_name": "Solas Bhríde Centre and Hermitages",
+      "action": "SOURCE_NEW_SITE_EXTERIOR",
+      "country_code": "IE",
+      "city": "Kildare Town",
+      "coords": {
+        "lat": 53.14821,
+        "lng": -6.90623,
+        "precision": "site"
+      },
+      "previous_selection": null,
+      "candidate_searches": [
+        {
+          "kind": "PLACE_AND_CITY_SEARCH",
+          "query": "Solas Bhríde Centre and Hermitages Kildare Town IE"
+        }
+      ],
+      "candidates": [],
+      "previous_gallery_asset": null,
+      "state": "NO_USABLE_EXACT_SOURCE_FOUND",
+      "error": null
+    }
+  ]
+}
