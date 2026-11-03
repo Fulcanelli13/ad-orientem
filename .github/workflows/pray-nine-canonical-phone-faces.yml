@@ -1,0 +1,47 @@
+name: Prayer nine canonical source faces (320/390 EN/FR)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-nine-canonical-phone-faces.mjs"
+      - "src/pray/canonical-data.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/prayer-source-faces.v1.js"
+      - "data/pray/prayer-release-coverage-evidence.v1.json"
+      - "package.json"
+      - ".github/workflows/pray-nine-canonical-phone-faces.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tests/pray-nine-canonical-phone-faces.mjs"
+      - "src/pray/canonical-data.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/prayer-source-faces.v1.js"
+      - ".github/workflows/pray-nine-canonical-phone-faces.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: canonical-phone-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  canonical-source-face:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Browser-check exact nine source faces without invented Latin or French
+        run: npm run test:pray-canonical-phone-faces
+      - name: Preserve source-face evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-prayer-source-faces
+          path: artifacts/pray-canonical-phone-faces/source-face-variants.json
+          if-no-files-found: warn
+          retention-days: 7
