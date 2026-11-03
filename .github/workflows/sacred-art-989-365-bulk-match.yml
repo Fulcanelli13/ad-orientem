@@ -22,6 +22,8 @@ on:
       - "data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json"
       - "scripts/art/build-2026-jan-feb-photo-readiness.mjs"
       - "tests/sacred-art-2026-jan-feb-photo-readiness.mjs"
+      - "scripts/art/probe-2026-jan-feb-original-photo-bytes.mjs"
+      - "tests/sacred-art-2026-jan-feb-original-probe.mjs"
       - ".github/workflows/sacred-art-989-365-bulk-match.yml"
   workflow_dispatch:
 permissions:
@@ -87,5 +89,38 @@ jobs:
             artifacts/sacred-art-2026/jan-feb-59-photo-readiness.json
             artifacts/sacred-art-2026/jan-feb-59-photo-readiness.md
             artifacts/calendar-gospel-home/2026-source-audit.json
+          retention-days: 14
+          if-no-files-found: warn
+
+  jan-feb-original-photo-bytes-probe:
+    needs: verified-gospel-bulk-match
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retrieve source-scoped 59-day matrix from verified Gospel job
+        uses: actions/download-artifact@v4
+        with:
+          name: 2026-365-day-artwork-verified-gospel-bulk-match
+          path: artifacts
+      - name: Validate 28-page source scope before any network access
+        run: |
+          node scripts/art/probe-2026-jan-feb-original-photo-bytes.mjs --offline
+          node tests/sacred-art-2026-jan-feb-original-probe.mjs
+      - name: Inspect historical Commons and Met original photo bytes
+        run: |
+          node scripts/art/probe-2026-jan-feb-original-photo-bytes.mjs
+          node tests/sacred-art-2026-jan-feb-original-probe.mjs
+      - name: Archive source-level SHA-256, native pixels and held rights
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2026-jan-feb-28-original-photo-technical-probe
+          path: |
+            artifacts/sacred-art-2026/jan-feb-28-original-source-byte-probe.json
+            artifacts/sacred-art-2026/jan-feb-28-original-source-byte-probe.md
           retention-days: 14
           if-no-files-found: warn
