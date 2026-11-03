@@ -1,0 +1,193 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND6_PRODUCTION_COVERS_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_COVERS_NO_TLM",
+  "manifest": "data/geography/research/sacred-atlas-round6-selected-16-cover-manifest-20261103.v1.json",
+  "before": {
+    "covers": 324,
+    "missing": 206,
+    "gallery": 42,
+    "prior_cover_metadata_sha256": "634b2d5f872ef8355bb900327fa34813a911e802eb27c749f3e87687facbe6e2",
+    "gallery_metadata_sha256": "098e4a8e18ebb6b2c519863a52c9d13202bdb5f1ac9785774e2126b1c9a9f9d1"
+  },
+  "after": {
+    "covers": 333,
+    "missing": 197,
+    "gallery": 42
+  },
+  "reviewed": 16,
+  "published_count": 9,
+  "held_count": 7,
+  "published": [
+    {
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "asset_path": "assets/approved/place-media/pf-7c48176f2398d4891bb5ce.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Cologne_-_Cologne_(DEA2)_-_2026-09-28_-_28.jpg",
+      "source_sha1": "cd7c5eabba95aa137227e4894c4d3175733c7c78",
+      "derivative_sha256": "c667eece1208d83a49b1df7e126f3d2b07ef7c3aedf6282c718f1eaa0dffe050",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Chabe01",
+      "dimensions": [
+        1280,
+        960
+      ]
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "asset_path": "assets/approved/place-media/pf-8b423579695d8e8f144e34.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:F%C3%A9camp_Abbatiale_de_la_Trinit%C3%A9_Fassade_3.jpg",
+      "source_sha1": "c9e0d2c18b90b4c7c0e0dd23e6dfe4a53324bfd8",
+      "derivative_sha256": "0041a8d00f76ff41bb3b2d85a0bb8e9790f863f8339ba6298b820e369e98cfd3",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Zairon",
+      "dimensions": [
+        1280,
+        824
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
+      "asset_path": "assets/approved/place-media/pf-ee8e5ac63c889f36dec549.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:France-003038_-_Basilica_of_Notre-Dame_de_Fourvi%C3%A8re_(15939822990).jpg",
+      "source_sha1": "a7b0ac4dcd85883277d9d327fb4d92b89e148858",
+      "derivative_sha256": "4da21c49bc31b9d0703213f5d0496be2c778f623c4c2cbd72af1321aff70de47",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "credit": "Dennis G. Jarvis",
+      "dimensions": [
+        1280,
+        866
+      ]
+    },
+    {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "asset_path": "assets/approved/place-media/pf-d8ff38616b6a664436f5b8.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fachada_principal_da_Igreja_de_Santo_Est%C3%AAv%C3%A3o_(Santo_Milagre).jpg",
+      "source_sha1": "81e7d94c1b10a57c1a83c46b2066cc164db7eb2c",
+      "derivative_sha256": "7a320150aff3f046a619752bdbc3e8fff9ad4456b02e6a2550d5f2f91d1d24a3",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Threeohsix",
+      "dimensions": [
+        960,
+        1280
+      ]
+    },
+    {
+      "place_id": "place:PT:santuario-nossa-senhora-nazare",
+      "asset_path": "assets/approved/place-media/pf-ef29b51db9c357902a71b3.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nazar%C3%A9_February_2013-8.jpg",
+      "source_sha1": "283ea781bec35eaaee0b60fa69cba3597a5b63d3",
+      "derivative_sha256": "4ef09d7b919287f730a2c957fb75f830ff220c74b2abe78e635fa9bf2b856063",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Alvesgaspar",
+      "dimensions": [
+        1280,
+        804
+      ]
+    },
+    {
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "asset_path": "assets/approved/place-media/pf-e947a9bae5f8b8a5beddd6.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Basilika-mariatrost-hoch-10-2021.jpg",
+      "source_sha1": "10be7c04ff7944aa447181d8fb064508ac6a4bf9",
+      "derivative_sha256": "42ad1606d06c0e7a5d4b5a6f6889249ce4b0c63cab9953e4e057d75da95de2e8",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Strohmi93",
+      "dimensions": [
+        853,
+        1280
+      ]
+    },
+    {
+      "place_id": "place:LT:trakai-visitation-basilica",
+      "asset_path": "assets/approved/place-media/pf-f82d15ef2a2ad592e6e81d.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Basilica_Visitation_Blessed_Virgin_Mary_Trakai_B.jpg",
+      "source_sha1": "0f1a7662a4da36200464123b0d925992b7dd2fc8",
+      "derivative_sha256": "2a04ebd3758a853417f1037be2aec61b8f20d3e2eea2171db96701f5b0e8af5c",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Mojmir Churavy",
+      "dimensions": [
+        960,
+        1280
+      ]
+    },
+    {
+      "place_id": "place:LT:siluvos-svc-mergeles-marijos-gimimo-bazilika",
+      "asset_path": "assets/approved/place-media/pf-0766d70784ccad05457bb6.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Siluva_Basilika_Mari%C3%A4_Geburt_1.JPG",
+      "source_sha1": "42b305eebf4f7021d85c1ecf2f4311f1a15a1b76",
+      "derivative_sha256": "900d5ff2312be7f2a13383a938eab6e61e8ee4ec8c6d1efbde36d72d92cfab39",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Zairon",
+      "dimensions": [
+        1280,
+        1085
+      ]
+    },
+    {
+      "place_id": "place:JP:oura-cathedral-nagasaki",
+      "asset_path": "assets/approved/place-media/pf-b28444d939c05bb717a537.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oura_Cathedral_20180623.jpg",
+      "source_sha1": "ec14d7c37596113fb00a2fa55352584e93250aaa",
+      "derivative_sha256": "c753cc2ac32094db44629ea9818387e2ae0099947d525c442076acc706ca742c",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Houjyou-Minori",
+      "dimensions": [
+        961,
+        1280
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "file": "File:Kevelaer, Germany - panoramio (113).jpg",
+      "reason": "SAME_SOURCE_SELECTED_FOR_OTHER_PLACE"
+    },
+    {
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "file": "File:Dom und Liebfrauen Trier.jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:DE:bamberger-dom",
+      "file": "File:Bamberg Dom.jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:DE:wieskirche",
+      "file": "File:Wieskirche boenisch okt 2003.jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "file": "File:Reims Cathedral 016 8341.jpg",
+      "reason": "ValueError: Source SHA1, MIME, size or dimensions outside pinned safety bounds"
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "file": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+      "reason": "ValueError: Unsupported or unverifiable licence"
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "file": "File:Pyhän Henrikin katedraali Helsinki 2022-09-18 01.jpg",
+      "reason": "ValueError: Source SHA1, MIME, size or dimensions outside pinned safety bounds"
+    }
+  ],
+  "current_commons_sha1_and_license_verified": true,
+  "current_source_original_bytes_verified": true,
+  "original_user_choices_preserved": true,
+  "no_unselected_substitutions": true,
+  "existing_covers_unchanged": true,
+  "gallery_unchanged": true,
+  "no_tlm_changes": true
+}
