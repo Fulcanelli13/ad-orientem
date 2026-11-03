@@ -43,7 +43,7 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
- // Batch 10: fourteen independently verified physical buildings and one named site POI; no Mass or media assertions.
+ // Batch 10: thirteen named building sites and one church POI; no Mass or media assertions.
  "RG-A9FC85F5AFE7":Object.freeze({sourceId:"AO-B33-L-CH-6924B16C8BE6",name:"Dreikönigskapelle",country:"CH",addressNeedle:"Parkstrasse 31A, 5400 Baden",placeId:null,
   lat:47.48098,lng:8.31259,precision:"site",sourceRef:"osm:way:154937681",sourceUrl:"https://www.openstreetmap.org/way/154937681",
   correctedAddress:"Dreikönigskapelle in den Bädern, Parkstrasse, 5400 Baden, Switzerland",reviewScope:"BADEN_DREIKOENIGSKAPELLE_BUILDING_PARKSTRASSE_HOUSE_NUMBER_DISPUTED",
@@ -1530,7 +1530,9 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     map_publishable:Boolean(newPin),
     map_state:newPin?"PROVISIONAL":"ADDRESS_ONLY",facts:Object.freeze([
      {label:"Source identity",value:"CL2 physical-site master · "+anchor},
-     ...(newPin?[{label:"Map position",value:/(?:_ABBEY_SITE_|_CONVENT_SHRINE_CAMPUS_|_CHURCH_AND_PRIORY_CAMPUS_)/.test(newPin.reviewScope)?
+     ...(newPin?[{label:"Map position",value:/_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
+       "Reviewed named church point · building outline and entrance unverified":
+       /(?:_ABBEY_SITE_|_CONVENT_SHRINE_CAMPUS_|_CHURCH_AND_PRIORY_CAMPUS_)/.test(newPin.reviewScope)?
        "Reviewed religious campus · internal chapel and visitor entrance not independently verified":
        newPin.reviewScope==="MONASTERY_COMPLEX_NOT_CHURCH_ENTRANCE"?
        "Reviewed monastery complex · church entrance not independently verified":
