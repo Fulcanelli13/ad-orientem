@@ -35,7 +35,7 @@ def main():
     manifest=load(MANIFEST)
     assert manifest["schema"]=="AO_SACRED_ATLAS_PHASE_B_ROUND6_SELECTED_COVER_RELEASE_V1"
     rows=manifest["rows"]
-    assert len(rows)==16 and len({r["place_id"] for r in rows})==13
+    assert len(rows)==16 and len({r["place_id"] for r in rows})==16
     existing=load(COVERS);gallery=load(GALLERY);places=load(PLACES);decisions=load(DECISIONS)
     assert len(existing["items"])==manifest["baseline"]["approved_covers"]==324
     assert len(gallery["items"])==manifest["baseline"]["approved_gallery"]==42
