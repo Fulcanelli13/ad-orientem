@@ -12,6 +12,26 @@ assert.equal(FIRST12_1961_FACSIMILES.length,12);
 assert.equal(new Set(FIRST12_1961_FACSIMILES.map(x=>x.scoreId)).size,12);
 assert.deepEqual(FIRST12_1961_FACSIMILES.map(x=>x.scoreId),proof.firstTwelveForPrintComparison,
  "The pinned original facsimiles must match the top twelve selected-calendar worklist");
+const printSpans=new Map([
+ ["GREGOBASE-475",["392","393"]],["GREGOBASE-782",["362","363"]],
+ ["GREGOBASE-265",["79","80"]],["GREGOBASE-1271",["383","384"]]
+]);
+assert.equal(FIRST12_1961_FACSIMILES.filter(x=>x.scannedFolios.length===2).length,4);
+assert.equal(new Set(FIRST12_1961_FACSIMILES.flatMap(x=>
+ x.scannedFolios.map(y=>y.url))).size,14);
+for(const entry of FIRST12_1961_FACSIMILES){
+ const pages=entry.scannedFolios;
+ assert.ok(Object.isFrozen(pages));
+ assert.deepEqual(pages.map(x=>x.folio),printSpans.get(entry.scoreId)??[entry.folio]);
+ assert.equal(entry.printedFolioSpan,pages.map(x=>x.folio).join("–"));
+ assert.equal(entry.completeSourceSpanLocated,true);
+ assert.equal(entry.sourceSpanMusicallyCompared,false);
+ assert.equal(entry.scanned1961PageUrl,pages[0].url);
+ for(let i=0;i<pages.length;i++){
+  assert.match(pages[i].url,/^https:\/\/gregobase\.selapa\.net\/sources\/2\/\d+\.png$/);
+  assert.equal(pages[i].imageNumber,entry.imageNumber+i);
+ }
+}
 const packById=new Map(pack.candidates.map(x=>[x.scoreId,x]));
 for(const candidate of FIRST12_1961_FACSIMILES){
  const original=packById.get(candidate.scoreId);
@@ -50,6 +70,10 @@ for(const selector of ["originalBookPanel","originalBookScan","scanStatus","scan
 }
 assert.ok(html.includes("img.onerror")&&html.includes("do not mark music as verified"),
  "A failed remote source image must never be mistaken for printed-music proof");
+assert.ok(html.includes("continuationBookScan")&&
+ html.includes("printedContinuation")&&html.includes("locator.scannedFolios")&&
+ html.includes("Complete printed-score review is blocked"),
+ "Two-page scores MUST visibly show the next original page and block truncated comparisons");
 assert.ok(html.includes("independent pitch/neume/underlay comparison NOT recorded"),
  "Loading the source picture is NOT independent musical verification");
 assert.ok(html.includes("data")||html.includes("document"),
