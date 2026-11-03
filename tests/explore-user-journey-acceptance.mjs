@@ -154,6 +154,33 @@ try{
      "Desktop Sacred Places must prioritise source-filtered places in the camera, not unrelated worldwide features");
     assert.ok(await root.locator(".aoMapcnDiscoverEntries .aoMapcnDiscoverItem").count()>0,
      "Desktop Sacred Places must retain its existing viewport-owned result cards");
+    const railTabs=root.locator(".aoMapcnCategoryTabs");
+    assert.equal(await railTabs.locator("button[data-heritage-category]").count(),5,
+     "Desktop Sacred Places must expose existing map subject filters inside the results rail");
+    assert.equal(await root.locator(".aoHeritageCategories").isVisible(),false,
+     "Desktop category controls cannot duplicate the left-rail controls over the map");
+    assert.ok(await railTabs.locator('button[data-find-filter="lens"][data-find-filter-value="saints"]').count()===1,
+     "The relocated controls must preserve Map of Saints access");
+    assert.ok(await root.locator(".aoMapcnDesktopPlaceCard").count()>0,
+     "Source-owned desktop Place cards must retain canonical Place identities");
+    assert.equal(await root.locator(".aoMapcnDesktopPlaceCard .aoMapcnDiscoverGlyph").count(),0,
+     "Desktop Sacred Places must use the shared category-symbol fallback rather than a generic cross");
+    await railTabs.locator('[data-heritage-category="shrines"]').click();
+    await page.waitForFunction(()=>{
+     const root=document.querySelector("#ao-find-modular-root");
+     return root?.querySelector('.aoMapcnCategoryTabs [data-heritage-category="shrines"]')?.getAttribute("aria-pressed")==="true";
+    },null,{timeout:15000});
+    await mapReady("heritage");
+    assert.ok(await root.locator('.aoMapcnCategoryTabs [data-heritage-category="shrines"].active').count()===1,
+     "Rail subject filter must be operated by the existing app state");
+    await root.locator('.aoMapcnCategoryTabs [data-heritage-category="ALL"]').click();
+    await page.waitForFunction(()=>{
+     const root=document.querySelector("#ao-find-modular-root");
+     return root?.querySelector('.aoMapcnCategoryTabs [data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true";
+    },null,{timeout:15000});
+    await mapReady("heritage");
+    await verifyDesktopAtlas("desktop Sacred Places restored subject filter");
+
    }
    await capture("01b-sacred-prototype-sheet");
    await discoverTab.click();
