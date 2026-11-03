@@ -9,8 +9,9 @@ export function prayerScriptureStageFacesV1(data,requested="en",full=false){
  const reference=data?.reference;
  const sourceRows=Object.fromEntries(Object.entries(fields).map(([language,field])=>{
   const input=Array.isArray(data?.[field])?data[field]:[];
-  const filtered=full||!reference?input:input.filter(v=>Number(v.verse)>=Number(reference.start)&&Number(v.verse)<=Number(reference.end));
-  return [language,filtered.filter(v=>typeof (v?.text??v?.value)==="string"&&String(v.text??v.value).trim())];
+  const bounded=!full&&Number.isFinite(Number(reference?.start))&&Number.isFinite(Number(reference?.end));
+  const filtered=bounded?input.filter(v=>Number(v.verse)>=Number(reference.start)&&Number(v.verse)<=Number(reference.end)):input;
+  return [language,filtered.filter(v=>typeof (v?.text||v?.value)==="string"&&String(v.text||v.value).trim())];
  }));
  const available=language=>sourceRows[language].length>0;
  const vernacularLanguage=available(locale)?locale:available(locale==="fr"?"en":"fr")?(locale==="fr"?"en":"fr"):null;
