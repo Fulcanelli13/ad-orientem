@@ -1,4 +1,6 @@
-// Approved Class I date selections from the 19 October 2026 frozen decisions.
+// Class I date selections: nine retained 19 October 2026 decisions plus the
+// superseding 30 October user preference for Holy Thursday. Original Ugolino
+// decision remains in Git history and the frozen original source register.
 // This is the ten-date programme, NOT the unrelated 383-art gallery.
 // Image-source state is independent of editorial approval.
 export const APPROVED_CLASS_I_2026 = Object.freeze([
@@ -18,14 +20,14 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
   {
     "date": "2026-04-02",
     "principalId": "tempora:Quad6-4r:1:w",
-    "title": "The Last Supper",
-    "artist": "Ugolino da Siena",
-    "artworkId": "met-459131",
-    "source": "https://commons.wikimedia.org/wiki/File:1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg/960px-1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg",
-    "imageTier": "commons-pd-art",
-    "note": "",
-    "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
+    "title": "La Petite Cène",
+    "artist": "Philippe de Champaigne",
+    "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+    "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg/960px-Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg",
+    "imageTier": "commons-pd-self",
+    "note": "Louvre INV 1125; later explicitly expressed preferred painting supersedes the 19 October Ugolino slot. Exact same image already the accepted 27 May Eucharistic selection. Remote photo preview, not an approved offline crop.",
+    "editorialApproval": "LATER_USER_EXPRESSED_STRONG_PREFERENCE_20261030",
     "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
