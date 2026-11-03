@@ -20,7 +20,9 @@ for(const score of introits){
  assert.equal(x.segments[0].role,"INTROIT_ANTIPHON");
  assert.equal(x.segments[1].role,"PSALM_VERSE");
  assert.equal(x.segments.at(-1).role,"INTROIT_ANTIPHON_REPEAT");
- assert.equal(x.segments[0].text,x.segments.at(-1).text);
+ // Preserve source punctuation; some original selected sections omit a final period on first use.
+ assert.equal(x.segments[0].text.replace(/[.,;:!?]+$/,""),
+  x.segments.at(-1).text.replace(/[.,;:!?]+$/,""));
  assert.equal(x.sungLatin.split("\n\n").length,x.segments.length);
  assert.equal(x.publication,"TEXT_REFERENCE_ONLY_MUSIC_REVIEW_HOLD");
  assert.equal(x.musicalUnderlayVerified,false);
