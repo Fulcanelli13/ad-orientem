@@ -191,10 +191,14 @@ async function probeSource(record){
  }
 }
 const originalSources=[...sourcePages.values()];
-const inspections=[];
-for(const r of originalSources){
- inspections.push(await probeSource(r));
-}
+const inspections=new Array(originalSources.length);
+let next=0;
+await Promise.all(Array.from({length:2},async()=>{
+ while(next<originalSources.length){
+  const index=next++;
+  inspections[index]=await probeSource(originalSources[index]);
+ }
+}));
 const byUrl=new Map(inspections.map(x=>[x.sourcePage,x]));
 const dates=data.dates.map(row=>{
  const candidate=row.firstPhotoAuditCandidate,source=candidate.sourceUrl;
