@@ -13,7 +13,7 @@ assert.match(html,/sourceLatin/);
 assert.match(html,/sourceGabc/);
 assert.match(html,/sourceOwner/);
 assert.match(html,/sourcePrint/);
-assert.match(html,/all note/i);
+assert.match(html,/all printed notes/i);
 assert.match(html,/publication/i);
 assert.match(html,/scoreGabc/);
 assert.match(html,/editorialApproval=false/);
