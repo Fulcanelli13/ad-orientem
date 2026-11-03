@@ -21,6 +21,8 @@ import "./stations-verified-artwork-styles.js";
 import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
 import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
+import {renderEssentialFlowReader} from "./essential-flow-reader.js";
+import "./essential-flow-reader-styles.js";
 import "./claude-holy-card-styles.js";
 import "./essential-holy-card-styles.js";
 import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats,choirLitanyLineParts} from "./choir-source-beats.js";
@@ -562,7 +564,7 @@ function head(title,sub=''){
  const holyRecord=holyId?P(holyId):null;
  const holy=!!holyRecord&&ESSENTIAL_HOLY_CARD_IDS_V1.includes(holyId);
  const holyAa=holy?'<button type="button" class="aoClaudeHolyAa" data-p435930-essential-aa aria-controls="aoClaudeHolyAaMenu" aria-expanded="false" aria-label="'+esc(L('Reading options','Options de lecture'))+'">Aa</button>':'';
- const holyLang=CLAUDE_HOLY_PREF.language|| (holyRecord?.[lang()]?lang():'en');
+ const holyLang=CLAUDE_HOLY_PREF.language||(holyRecord?.la?'la':holyRecord?.[lang()]?lang():'en');
  const holyMenu=holy?'<div class="aoClaudeHolyAaMenu" id="aoClaudeHolyAaMenu" data-ao-claude-holy-menu hidden role="group" aria-label="'+esc(L('Reading options','Options de lecture'))+'">'+
   '<small>'+esc(L('Prayer language','Langue de la prière'))+'</small><div class="aoClaudeHolyLanguageChoices">'+
   ['en','fr','la','both'].filter(key=>key==='both'?!!holyRecord.la&&!!(holyRecord.en||holyRecord.fr):!!holyRecord[key]).map(key=>
@@ -748,8 +750,8 @@ function prayerBlock(id,opts={}){
   // flat text document. Text still comes exclusively from canonical-data.
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
   const pref=CLAUDE_HOLY_PREF.language;
-  const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(vern|| (p.la?'la':null));
-  return chosen?claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):
+  const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(p.la?'la':vern);
+  return chosen?(PRAYER_PILOT_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){
@@ -3938,7 +3940,7 @@ function onClick(e){
   return;
  }
  if(e.target.closest?.('.aoClaudeHolyArtCredit a'))return;
- const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn]');if(!b)return;
+ const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn],[data-p435930-essential-flow-toggle]');if(!b)return;
  if(PRAYER_PILOT_ENABLED&&view==='family'&&b.hasAttribute('data-p435930-door-filter')){
   const root=b.closest('[data-ao-prayer-shelf]'),selected=b.dataset.p435930DoorFilter;
   if(!root)return;
@@ -4272,6 +4274,25 @@ function onClick(e){
  if(b.dataset.p435930External){
   e.preventDefault?.();
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
+  return;
+ }
+ if(b.hasAttribute('data-p435930-essential-flow-toggle')||b.hasAttribute('data-p435930-essential-flow-action')){
+  const card=b.closest('[data-ao-essential-flow]');
+  if(!card)return;
+  const current=card.dataset.aoEssentialCurrent;
+  const next=current==='la'?'vern':'la';
+  const mountNode=mount();
+  const beforeMax=Math.max(0,(mountNode?.scrollHeight||0)-(mountNode?.clientHeight||0));
+  const ratio=beforeMax>0?(mountNode.scrollTop/beforeMax):0;
+  card.querySelectorAll('[data-ao-essential-flow-face]').forEach(node=>{
+   node.hidden=node.dataset.aoEssentialFlowFace!==next;
+  });
+  card.dataset.aoEssentialCurrent=next;
+  const action=card.querySelector('[data-p435930-essential-flow-action]');
+  if(action)action.textContent=next==='la'?L('Show the translation','Voir la traduction'):L('Show Latin','Voir le latin');
+  const hint=card.querySelector('[data-ao-essential-flow-hint]');
+  if(hint)hint.textContent=next==='la'?L('Tap the text to see the translation','Touchez le texte pour voir la traduction'):L('Tap the text for Latin','Touchez le texte pour voir le latin');
+  if(mountNode){const afterMax=Math.max(0,mountNode.scrollHeight-mountNode.clientHeight);mountNode.scrollTop=ratio*afterMax;}
   return;
  }
  if(b.matches('[data-p435930-essential-aa]')){

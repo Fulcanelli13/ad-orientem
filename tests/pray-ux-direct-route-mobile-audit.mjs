@@ -135,32 +135,33 @@ try{
    };
    await openLibrary();
    await page.locator('#aoPray435930.open [data-p435930-lib-open="foundations_our_father"]').evaluate(el=>el.click());
-   const holy=page.locator("#aoPray435930.open .aoClaudeHolyCard");
+   const holy=page.locator("#aoPray435930.open .aoEssentialFlow");
    await holy.waitFor({state:"visible",timeout:12000});
-   const holyFront=await holy.evaluate(el=>{
-    const r=el.getBoundingClientRect(),front=el.querySelector(".aoClaudeHolyFront");
-    return {width:r.width,flipped:el.querySelector(".aoClaudeHolyLace")?.classList.contains("flip"),
-     title:front?.querySelector("h3")?.textContent||"",artwork:!!front?.querySelector("img")};
+   const latin=await holy.evaluate(el=>{
+    const r=el.getBoundingClientRect(),face=el.querySelector('[data-ao-essential-flow-face="la"]');
+    return {width:r.width,current:el.dataset.aoEssentialCurrent,
+      visible:!!face&&!face.hidden,paragraphs:face?.querySelectorAll(".aoEssentialFlowBeat").length||0,
+      height:r.height,viewport:innerHeight};
    });
-   assert.equal(holyFront.flipped,false,"F01 must initially present the approved card front");
-   if(height<=640){
-    const visibility=await holy.locator(".aoClaudeHolyTitle h3").evaluate(el=>{
-     const r=el.getBoundingClientRect();
-     return {top:r.top,bottom:r.bottom,viewport:innerHeight};
-    });
-    assert.ok(visibility.top>=0&&visibility.bottom<=height-64,
-     "Short-phone Holy Card title falls beneath fixed navigation: "+JSON.stringify(visibility));
-   }
-   await page.screenshot({path:resolve(dest,"claude-f01-front-"+width+"x"+height+".png"),animations:"disabled"});
-   await holy.locator("[data-p435930-essential-card-turn]").evaluate(el=>el.click());
-   await page.waitForFunction(()=>Boolean(document.querySelector("#aoPray435930.open .aoClaudeHolyLace.flip")),null,{timeout:9000});
-   const holyBack=await holy.evaluate(el=>{
-    const b=el.querySelector(".aoClaudeHolyBack");
-    return {paragraphs:b?.querySelectorAll(".aoP435930EssentialBeat").length||0,
-     scrollHeight:b?.querySelector(".aoClaudeHolyBackScroll")?.scrollHeight||0};
+   assert.equal(latin.current,"la","R2 must initially present source Latin");
+   assert.equal(latin.visible,true,"The canonical Latin text must be readable immediately");
+   assert.equal(latin.paragraphs,6,"The original Lord's Prayer has six independently sourced clauses");
+   assert.ok(latin.width>width*.64&&latin.width<=width+2,
+    "Natural reader must fit the viewport: "+JSON.stringify(latin));
+   await page.screenshot({path:resolve(dest,"essential-flow-latin-"+width+"x"+height+".png"),animations:"disabled"});
+   await holy.locator("[data-p435930-essential-flow-toggle]").click();
+   await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoEssentialFlow")?.dataset.aoEssentialCurrent==="vern",null,{timeout:9000});
+   const vern=await holy.evaluate(el=>{
+    const face=el.querySelector('[data-ao-essential-flow-face="vern"]');
+    return {visible:!!face&&!face.hidden,lang:face?.getAttribute("lang"),
+      paragraphs:face?.querySelectorAll(".aoEssentialFlowBeat").length||0};
    });
-   assert.equal(holyBack.paragraphs,6,"F01 Lord's Prayer must preserve six source-owned clauses");
-   await page.screenshot({path:resolve(dest,"claude-f01-back-"+width+"x"+height+".png"),animations:"disabled"});
+   assert.equal(vern.visible,true,"Tap must display authentic vernacular without a flip");
+   assert.equal(vern.paragraphs,6,"The Lord's Prayer vernacular must preserve six clauses");
+   await page.screenshot({path:resolve(dest,"essential-flow-vernacular-"+width+"x"+height+".png"),animations:"disabled"});
+   await holy.locator("[data-p435930-essential-flow-toggle]").click();
+   assert.equal(await holy.getAttribute("data-ao-essential-current"),"la",
+    "Language tap must return immediately to Latin");
    await openLibrary();
    await page.locator('#aoPray435930.open [data-p435930-lib-open="adoration_litany_blessed_sacrament"]').evaluate(el=>el.click());
    const choir=page.locator("#aoPray435930.open .aoClaudeChoirPrayer");
@@ -201,7 +202,7 @@ try{
     mount:Math.max(0,document.querySelector("#aoPray435930 .aoP435930Mount")?.scrollWidth-
       document.querySelector("#aoPray435930 .aoP435930Mount")?.clientWidth||0)
    }));
-   report.claudeVisual.push({size:width+"x"+height,holyFront,holyBack,choir:choirRect,overflow,errors});
+   report.claudeVisual.push({size:width+"x"+height,essentialLatin:latin,essentialVernacular:vern,choir:choirRect,overflow,errors});
    assert.ok(overflow.document<=1&&overflow.mount<=1,
     "Claude F01/F03 visual phone overflow: "+JSON.stringify(overflow));
    assert.deepEqual(errors,[],"F01/F03 unexpected browser errors");

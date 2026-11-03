@@ -92,21 +92,23 @@ try{
      id+"/"+width+"/"+ui+" mobile clipping "+JSON.stringify(geometry));
 
     const checkHoly=async language=>{
-     // The Aa language menu is part of the APPROVED physical Holy Card, and
-     // the back is a sequence of source-owned paragraph segments.
+     // R2 uses the source-owned continuous Latin/vernacular reader; its
+     // legacy reversible Holy Card remains separately covered by F01 tests.
+     const sheet=reader.locator('.aoEssentialFlow[data-ao-essential-card="'+id+'"]');
+     await sheet.waitFor({state:"attached",timeout:9000});
      await page.locator("#aoPray435930.open [data-p435930-essential-aa]").click();
      await page.locator('#aoPray435930.open [data-p435930-essential-language="'+language+'"]').click();
-     const card=reader.locator('.aoClaudeHolyCard[data-ao-essential-card="'+id+'"]');
-     await card.waitFor({state:"attached",timeout:9000});
-     const backside=card.locator(".aoClaudeHolyBack");
-     if(await backside.getAttribute("aria-hidden")==="true")
-      await card.locator("[data-p435930-essential-card-turn]").click();
-     assert.equal(await backside.getAttribute("aria-hidden"),"false",id+" back prayer not opened");
-     const actual=await backside.locator('.aoP435930EssentialBeat[lang="'+language+'"]').evaluateAll(nodes=>nodes.map(n=>n.textContent.trim()));
+     await sheet.waitFor({state:"attached",timeout:9000});
+     const target=language==="la"?"la":"vern";
+     const face=sheet.locator('[data-ao-essential-flow-face="'+target+'"]');
+     assert.equal(await face.evaluate(el=>el.hidden),false,id+" selected text is hidden: "+language);
+     assert.equal(await face.getAttribute("lang"),language,
+      id+" did not identify its attested source language");
+     const actual=await face.locator(".aoEssentialFlowBeat").evaluateAll(nodes=>nodes.map(n=>n.textContent.trim()));
      const expected=essentialHolyCardParts(id,language,original[language])?.map(x=>x.text.trim())||[];
-     assert.ok(expected.length>0,id+" empty printed source segments "+language);
+     assert.ok(expected.length>0,id+" source segments unavailable "+language);
      assert.deepEqual(actual.map(plain),expected.map(plain),
-      id+" altered Holy Card source segments in "+language);
+      id+" changed the canonical prayer text in "+language);
      return actual.length;
     };
     const checkChoirText=async language=>{
@@ -158,11 +160,22 @@ try{
       assert.equal(await page.locator("#aoPray435930.open [data-p435930-essential-language='fr']").count()>0,
        languages.fr,id+" wrongly exposes or hides the original French source");
       await checkHoly(vernacularLanguage);
+      const sheet=reader.locator('.aoEssentialFlow[data-ao-essential-card="'+id+'"]');
+      const switcher=sheet.locator('[data-p435930-essential-flow-toggle]');
+      assert.equal(await switcher.count(),1,"Latin-backed prayer must offer tap-to-vernacular");
+      await switcher.click();
+      assert.equal(await sheet.getAttribute("data-ao-essential-current"),"la",
+       "Tapping vernacular prayer must return to Latin");
+      await switcher.click();
+      assert.equal(await sheet.getAttribute("data-ao-essential-current"),"vern",
+       "Tapping Latin prayer must return to the verified vernacular");
      }else{
       await page.locator("#aoPray435930.open [data-p435930-essential-aa]").click();
       for(const unavailable of ["fr","la","both"])
        assert.equal(await page.locator('#aoPray435930.open [data-p435930-essential-language="'+unavailable+'"]').count(),0,
         id+" manufactured "+unavailable+" for an English-only prayer");
+      assert.equal(await reader.locator("[data-p435930-essential-flow-toggle]").count(),0,
+       "Never offer a Latin toggle for an English-only original");
      }
     }else if(litany){
      vernUnits=await checkLitany(vernacularLanguage);
