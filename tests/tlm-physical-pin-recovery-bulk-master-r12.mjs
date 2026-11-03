@@ -10,8 +10,8 @@ const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical
 const baseline=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 const all=projectCL2PhysicalDirectory(baseline,index);
 const source=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
-const section=source.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\\n});")[0]??"";
-const registry=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\\s*:\\s*Object\\.freeze\\(\\{/g)].map(m=>m[1]);
+const section=source.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
+const registry=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(m=>m[1]);
 assert.equal(new Set(registry).size,registry.length,"Unique reviewed site marker keys");
 const sites=[
   [
