@@ -240,7 +240,22 @@ try{
  // it from the Mercy route so a retained overlapping devotional sheet cannot
  // make the second chooser physically hidden.
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ try{
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ }catch(e){
+  console.error("OFFLINE_RECONNECT_SHELL_DIAGNOSTIC="+JSON.stringify(await page.evaluate(async()=>({
+   href:location.href,readyState:document.readyState,
+   shell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+   offline:globalThis.AO_OFFLINE_APP_V1?.status??null,
+   prayer:globalThis.AO_PRAY_APP_V1?.status?.()??null,
+   root:!!document.querySelector(".homeScreen"),
+   serviceWorker:navigator.serviceWorker.controller?.scriptURL??null,
+   cacheNames:await caches.keys(),
+   text:document.body?.innerText?.slice(0,220)
+  }))));
+  console.error("OFFLINE_RECONNECT_PAGE_ERRORS="+JSON.stringify(errs));
+  throw e;
+ }
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
  // A staged update must never navigate away or move a bead without user consent.
