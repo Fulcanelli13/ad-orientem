@@ -159,8 +159,37 @@ try{
       "Regina retains canonical Horarium opening");
     await overflow({allowVerticalScrollbar:true});
     await page.screenshot({path:resolve(output,"regina-"+width+"-"+locale+".png"),animations:"disabled"});
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("programme.first_friday",{returnContext:null}));
+    const sacredHeart=await imageState(".aoPrayerHeartJesusCover img");
+    imageOK(sacredHeart,"heart-jesus-full-original.jpg");
+    assert.equal(await page.locator(base+' .aoP435930Date').count(),1,
+     "Existing First Friday calendar and reparatory stages must remain intact");
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"sacred-heart-"+width+"-"+locale+".png"),animations:"disabled"});
+
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("programme.first_saturday",{returnContext:null}));
+    const immaculateHeart=await imageState(".aoPrayerHeartMaryCover img");
+    imageOK(immaculateHeart,"heart-mary-full-original.jpg");
+    assert.equal(await page.locator(base+' .aoP435930Date').count(),1,
+     "Existing First Saturday Rosary and meditation structure must remain intact");
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"immaculate-heart-"+width+"-"+locale+".png"),animations:"disabled"});
+
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
+    assert.equal(await page.locator(base+' .aoPrayerKingCover img').count(),0,
+     "Never impose Christ the King artwork on ordinary Benediction");
+    await page.locator(base+' [data-p435930-ben-feast]').evaluate(el=>{
+     el.checked=true;el.dispatchEvent(new Event("change",{bubbles:true}));
+    });
+    assert.equal(await page.locator(base+' [data-ao-benediction-celebration="christKing"]').count(),1,
+     "The existing optional Christ the King mode must remain in control");
+    const christKing=await imageState(".aoPrayerKingCover img");
+    imageOK(christKing,"king-full-original.jpg");
+    assert.equal(await page.locator(base+' [data-ao-rite-owner="benediction"]').count(),1);
+    await overflow({allowVerticalScrollbar:true});
+    await page.screenshot({path:resolve(output,"christ-king-"+width+"-"+locale+".png"),animations:"disabled"});
     assert.deepEqual(errors,[],"Uncaught JS errors: "+errors.join("; "));
-    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel,joseph,souls,visit,regina});
+    cases.push({width,locale,status:"PASS",hub,shelf,chooser,confession,directAngelus,angel,joseph,souls,visit,regina,sacredHeart,immaculateHeart,christKing});
    }finally{await context.close();}
   }
  }
@@ -170,4 +199,4 @@ try{
 }
 await writeFile(resolve(output,"report.json"),JSON.stringify({cases,validated:cases.length},null,2)+"\n");
 assert.equal(cases.length,4);
-console.log("PASS: all seven public-domain module photos decode on actual Prayer surfaces, 320/390 EN/FR");
+console.log("PASS: ten released exact source photographs and scoped first-month/Christ King images on 320/390 EN/FR");
