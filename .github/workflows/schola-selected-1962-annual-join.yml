@@ -15,6 +15,9 @@ on:
       - 'src/mass/reader-proper-first60-print-review.js'
       - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
       - 'tests/reader-proper-first60-print-review.mjs'
+      - 'src/mass/reader-proper-first60-antiphon-text.js'
+      - 'scripts/schola/build-2026-first60-antiphon-text-gate.mjs'
+      - 'tests/reader-proper-first60-antiphon-text.mjs'
       - 'tests/reader-proper-first60-collation-workbench.mjs'
       - 'tools/mass/proper-1961-first60-collation.html'
       - 'tests/reader-schola-selected-full-source-crosswalk.mjs'
@@ -64,6 +67,10 @@ jobs:
         run: node scripts/schola/build-2026-proper-first60-print-review.mjs
       - name: Verify review-only publication boundary
         run: node tests/reader-proper-first60-print-review.mjs
+      - name: Compare entire first-60 GABC antiphon text against 1962 selected Latin (no music approval)
+        run: |
+          node scripts/schola/build-2026-first60-antiphon-text-gate.mjs
+          node tests/reader-proper-first60-antiphon-text.mjs
       - name: Build consolidated 2026 worklist and 24 pre-Gospel print-review leads
         run: node scripts/schola/build-2026-score-publication-worklist.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
