@@ -1,0 +1,327 @@
+{
+  "schema": "AO_2026_LEGACY_CLASSIII_EIGHT_EXISTING_SOURCE_DATE_EVIDENCE_V1",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/sacred-art-class-i-ii-multiwork-rotation-20261031",
+    "path": "data/calendar/sacred-art-2026-classIII-sanctoral-complete-candidate-research-master.v1.json",
+    "blobSha": "12c27f97a490280ed3823215056cd84e876f06d0"
+  },
+  "derivedAt": "2026-11-03",
+  "policy": [
+    "FROZEN_PREEXISTING_SOURCE_ONLY_NO_NEW_RESEARCH",
+    "HISTORICAL_EDITORIAL_STATE_PRESERVED",
+    "PARTIAL_COMPOSITE_MATCH_IS_NOT_COMPLETE_FEAST_PAINTING",
+    "PAINTING_NOT_PRINT_OR_SCULPTURE",
+    "NO_NEW_IMAGE_RELEASE_OR_ACQUISITION",
+    "DO_NOT_USE_SEVILLE_RUFINA_FOR_ROMAN_RUFINA",
+    "DO_NOT_RESTORE_REJECTED_CANDIDATES"
+  ],
+  "rows": [
+    {
+      "date": "2026-02-12",
+      "principalId": "sancti:02-12:3:w",
+      "title": "Seven Holy Servite Founders",
+      "scope": "EXACT_NAMED_FEAST",
+      "originalMatchingState": "IDENTIFIED_EXACT_SUBJECT_RESEARCH",
+      "originalSourceCandidates": [
+        {
+          "sourceFamily": "legacyNamedFile",
+          "sourceId": "File:Agostino Masucci - The Madonna with the Seven Founders of the Servite Order - 1977.485 - Art Institute of Chicago.jpg",
+          "artist": "Agostino Masucci",
+          "title": "The Madonna with the Seven Founders of the Servite Order",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Agostino_Masucci_-_The_Madonna_with_the_Seven_Founders_of_the_Servite_Order_-_1977.485_-_Art_Institute_of_Chicago.jpg",
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": null,
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "originalPartialOrExcluded": [],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-04-22",
+      "principalId": "sancti:04-22:3:r",
+      "title": "Sts. Soter & Caius",
+      "scope": "PARTIAL_COMPOSITE_FEAST",
+      "originalMatchingState": "COMPOSITE_FEAST_WHOLE_PAINTING_GAP",
+      "originalSourceCandidates": [],
+      "originalPartialOrExcluded": [
+        {
+          "sourceFamily": "partial",
+          "sourceId": "CALCOGRAFICA-S-FN14487-CAJO-SOTERO",
+          "artist": "Giuseppe Sforza Perini after Luigi Agricola",
+          "title": "Saints Caius and Soter, Popes and Martyrs",
+          "sourceObjectUrl": "https://www.calcografica.it/stampe/inventario.php?id=S-FN14487",
+          "originalPaintingMedium": "eighteenth-century etching on paper",
+          "historicalCuratorState": null,
+          "identityGate": "BOTH_FEAST_SAINTS_BUT_NOT_PAINTED_ORIGINAL",
+          "rightsOrQualityNotes": "Historically exact combined iconography, but etching is a PRINT, not a painting; do not close strict painted source coverage.",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "INSR-SOTER-SISTINE-CYCLE",
+          "artist": "Sandro Botticelli and workshop",
+          "title": "Pope Soter in Sistine Chapel Papal Cycle",
+          "sourceObjectUrl": "https://fototeca.insr.it/scheda-soggetto-fotografico/62b9e644b001da29fb55a485/",
+          "originalPaintingMedium": "fresco, c. 1481",
+          "historicalCuratorState": null,
+          "identityGate": "SOTER_ONLY_OF_TWO",
+          "rightsOrQualityNotes": "Independent painting of one pope but not Caius. Original art could be style-exception; photographic copyright hold.",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-05-12",
+      "principalId": "sancti:05-12:3:r",
+      "title": "Sts. Nereus, Achilleus, Domitilla, & Pancras",
+      "scope": "PARTIAL_COMPOSITE_FEAST",
+      "originalMatchingState": "COMPOSITE_FEAST_WHOLE_PAINTING_GAP",
+      "originalSourceCandidates": [],
+      "originalPartialOrExcluded": [
+        {
+          "sourceFamily": "partial",
+          "sourceId": "MILAN-OSSONA-PANCRAS-1660",
+          "artist": "Giovan Battista da Ossona / Giovan Battista Ferrario (attribution under research)",
+          "title": "Martyrdom of Saint Pancras",
+          "sourceObjectUrl": "https://www.lombardiabeniculturali.it/fotografie/schede/IMM-3a230-0001891/",
+          "originalPaintingMedium": "oil painting, c. 1660 (historical attribution revised)",
+          "historicalCuratorState": null,
+          "identityGate": "PANCRAS_ONLY_OF_FOUR_BUT_COMPLEMENTS_THREE_SAINT_POMARANCIO",
+          "rightsOrQualityNotes": "Historic silver-gelatin photo belongs to separate archival record; institutional photo rights unknown. Recent scholarship questions Giovan Battista Ossona name. Does not depict Nereus, Achilleus and Domitilla in same original.",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "ZERI-12651-PANCRAS-BAPTISM",
+          "artist": "Bicci di Lorenzo",
+          "title": "Baptism of Saint Pancras",
+          "sourceObjectUrl": "https://catalogo.fondazionezeri.unibo.it/entry/work/12651/Bicci%20di%20Lorenzo%2C%20Battesimo%20di%20san%20Pancrazio",
+          "originalPaintingMedium": "tempera painting on panel, fifteenth century",
+          "historicalCuratorState": null,
+          "identityGate": "PANCRAS_ONLY_OF_FOUR",
+          "rightsOrQualityNotes": "Alternate independent depiction at Museo Bandini, photo quality and rights unverified; does not complete four-member painting.",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "POMARANCIO-DOMITILLA-NEREUS-ACHILLEUS",
+          "artist": "Cristoforo Roncalli (Pomarancio)",
+          "title": "Saint Domitilla with Nereus and Achilleus",
+          "sourceObjectUrl": "https://www.wga.hu/html/p/pomaranc/domitill.html",
+          "originalPaintingMedium": "oil on canvas, 1598–99",
+          "historicalCuratorState": null,
+          "identityGate": null,
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-06-05",
+      "principalId": "sancti:06-05:3:r",
+      "title": "St. Boniface",
+      "scope": "EXACT_NAMED_FEAST",
+      "originalMatchingState": "IDENTIFIED_EXACT_SUBJECT_RESEARCH",
+      "originalSourceCandidates": [
+        {
+          "sourceFamily": "accepted856",
+          "sourceId": "kmska:k2cikv",
+          "artist": "Schilder: Albrecht De Vriendt",
+          "title": "Heilige Bonifatius van Mainz",
+          "sourceObjectUrl": "http://kmska.be/collection/work/data/k2cikv",
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": "EXACT_SAINT_SUBJECT_WITH_USER_IDENTITY_UNCERTAINTY",
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "originalPartialOrExcluded": [],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-07-10",
+      "principalId": "sancti:07-10:3:r",
+      "title": "Seven Holy Brothers and Sts. Rufina & Secunda",
+      "scope": "PARTIAL_COMPOSITE_FEAST",
+      "originalMatchingState": "COMPOSITE_FEAST_WHOLE_PAINTING_GAP",
+      "originalSourceCandidates": [],
+      "originalPartialOrExcluded": [
+        {
+          "sourceFamily": "partial",
+          "sourceId": "BRERA-0300158485-RUFINA-SECUNDA",
+          "artist": "Giovanni Battista Crespi (Cerano), Pier Francesco Mazzucchelli (Morazzone), Giulio Cesare Procaccini",
+          "title": "The Martyrdom of Saints Rufina and Secunda (Quadro delle tre mani)",
+          "sourceObjectUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/il-martirio-delle-sante-rufina-e-seconda-quadro-delle-tre-mani/",
+          "originalPaintingMedium": "oil on canvas, 1620–1624, 192×192 cm",
+          "historicalCuratorState": null,
+          "identityGate": "ROMAN_RUFINA_AND_SECUNDA_ONLY_SEVEN_BROTHERS_ABSENT",
+          "rightsOrQualityNotes": "Important: EXACT Roman Rufina and Secunda, NOT different Seville Justa and Rufina. The seven brothers are not included; historical SevenBrothers.jpg still identity-unverified. Photo rights and original crop pending.",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "",
+          "artist": null,
+          "title": "File:SevenBrothers.jpg",
+          "sourceObjectUrl": null,
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": "SEVEN_BROTHERS_GROUP_ONLY_RUFINA_SECUNDA_NOT_PRESENT",
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "commons:29858581",
+          "artist": "Antonio María Esquivel",
+          "title": "Saint Justa and Saint Rufina",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Antonio_M%C2%AA_Esquivel_-_Saint_Justa_and_Saint_Rufina_-_Google_Art_Project.jpg",
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": null,
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-07-28",
+      "principalId": "sancti:07-28:3:r",
+      "title": "Sts. Nazarius & Celsus, St. Victor I & St. Innocent I",
+      "scope": "PARTIAL_COMPOSITE_FEAST",
+      "originalMatchingState": "COMPOSITE_FEAST_WHOLE_PAINTING_GAP",
+      "originalSourceCandidates": [],
+      "originalPartialOrExcluded": [
+        {
+          "sourceFamily": "partial",
+          "sourceId": "ZERI-22049-VICTOR-I-ALTARPIECE",
+          "artist": "Nicola Filotesio (Cola dell'Amatrice)",
+          "title": "Madonna and Child with Pope Saint Victor I, Eustace, Andrew, and Cristanziano",
+          "sourceObjectUrl": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/22049/Filotesio%20Nicola%20%28Cola%20dell%27Amatrice%29%2C%20Madonna%20con%20Bambino%20in%20trono%2C%20san%20Vittore%20I%20papa%2C%20sant%27Eustachio%2C%20sant%27Andrea%20e%20san%20Cristanziano",
+          "originalPaintingMedium": "painted panel, 1514",
+          "historicalCuratorState": null,
+          "identityGate": "POPE_VICTOR_I_ONLY_NAZARIUS_CELSUS_PARTIAL_FROM_BATCH6_AND_INNOCENT_I_ABSENT",
+          "rightsOrQualityNotes": "Exact Pope Victor I not St Victor of Milan. Diocesan Museum Ascoli Piceno; still no Innocent I or complete combined feast painting. Art/photo rights unverified.",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "",
+          "artist": null,
+          "title": "File:St. Nazarius and St. Celsus Met DP891050.jpg",
+          "sourceObjectUrl": null,
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": "NAZARIUS_CELSUS_ONLY_OF_FOUR_SAINTS",
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        },
+        {
+          "sourceFamily": "partial",
+          "sourceId": "",
+          "artist": null,
+          "title": "File:Nazarius Celsus.jpg",
+          "sourceObjectUrl": null,
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": "NAZARIUS_CELSUS_ONLY_OF_FOUR_SAINTS",
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-08-07",
+      "principalId": "sancti:08-07:3:w",
+      "title": "St. Cajetan",
+      "scope": "EXACT_NAMED_FEAST",
+      "originalMatchingState": "IDENTIFIED_EXACT_SUBJECT_RESEARCH",
+      "originalSourceCandidates": [
+        {
+          "sourceFamily": "breviarium83",
+          "sourceId": "plate-tiepolo-cajetan",
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "Saint Cajetan's Vision of the Holy Family",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:(Venice)_Saint_Cajetan%27s_Vision_of_the_Holy_Family_by_Giambattista_Tiepolo_-_Gallerie_Accademia.jpg",
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": null,
+          "rightsOrQualityNotes": "LARGE_IMAGE_METADATA_ONLY_UNTIL_FREE_STORAGE_AND_REUSE",
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "originalPartialOrExcluded": [],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    },
+    {
+      "date": "2026-11-23",
+      "principalId": "sancti:11-23:3:r",
+      "title": "St. Clement I",
+      "scope": "EXACT_NAMED_FEAST",
+      "originalMatchingState": "IDENTIFIED_EXACT_SUBJECT_RESEARCH",
+      "originalSourceCandidates": [
+        {
+          "sourceFamily": "accepted856",
+          "sourceId": "commons:14607985",
+          "artist": "Bernardino Fungai",
+          "title": "French: Saint Clément retrouve sa famille \" \"",
+          "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_Fungai-Saint_Cl%C3%A9ment_retrouvant_sa_famille.jpg",
+          "originalPaintingMedium": null,
+          "historicalCuratorState": null,
+          "identityGate": "EXACT_SAINT_CLEMENT_LEGEND_SCENE",
+          "rightsOrQualityNotes": null,
+          "dateSpecificNewArtApproval": false,
+          "photoReleaseCertified": false,
+          "rotationActivationAllowed": false
+        }
+      ],
+      "originalPartialOrExcluded": [],
+      "newUserDateArtworkApproval": false,
+      "productionImageRelease": false
+    }
+  ]
+}
