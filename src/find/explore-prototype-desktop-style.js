@@ -125,7 +125,8 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
  }
  .aoHeritageSurface .aoMapcnDesktopPlaceCard > .aoSacredPlaceSymbolFallback
  .aoSacredPlaceSymbolPlate {
-  width:100%;height:100%;display:grid;place-items:center;
+  width:100%!important;height:100%!important;min-height:0!important;
+  box-sizing:border-box;display:grid;place-items:center;
  }
  .aoHeritageSurface .aoMapcnDesktopPlaceCard > .aoSacredPlaceSymbolFallback svg {
   width:60px;height:60px;
