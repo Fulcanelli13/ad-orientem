@@ -15,6 +15,17 @@ const ledger=JSON.parse(readFileSync(resolve(root,"data/pray/prayer-release-cove
 assert.equal(ledger.routes.find(x=>x.id==="pray.adoration")?.kind,"MULTI_TEXT");
 assert.equal(ledger.counts.fullRouteVariantCertificates,0,"All-41-route certification not authorized");
 const sources=DATA.prayers,plain=x=>String(x??"").normalize("NFC").replace(/\s/g,"");
+const sourceFace=id=>value=>{
+ const t=plain(value);
+ // The Our Father has two approved ℣/℟ live-reading speaker cues. They
+ // are UI semantics, not extra original words: require the complete pair
+ // when present and compare every canonical word unchanged.
+ if(id!=="foundations_our_father")return t;
+ const nV=(t.match(/℣\./g)||[]).length,nR=(t.match(/℟\./g)||[]).length;
+ assert.equal(nV,nR,"Our Father lost one half of its approved speaker cue pair");
+ assert.ok(nV<=1,"Our Father duplicated the leader/response cue");
+ return t.replace("℣.","").replace("℟.","");
+};
 const guided={
  visit:[
   ["foundations_sign_of_cross"],
@@ -162,10 +173,10 @@ try{
       for(let n=0;n<expectedIds.length;n++){
        const id=expectedIds[n],prayer=sources[id],actual=rendered[n];
        assert.equal(actual.language,ui,mode+"/"+index+"/"+id+" falsely labels the source language");
-       assert.equal(plain(actual.vernText),plain(prayer[ui]),
+       assert.equal(sourceFace(id)(actual.vernText),plain(prayer[ui]),
         mode+"/"+index+"/"+id+" canonical "+ui+" prayer altered");
        assert.equal(actual.latinLanguage,"la",mode+"/"+index+"/"+id+" lost attested Latin face");
-       assert.equal(plain(actual.latinText),plain(prayer.la),
+       assert.equal(sourceFace(id)(actual.latinText),plain(prayer.la),
         mode+"/"+index+"/"+id+" canonical Latin prayer altered");
        assert.equal(actual.latinHidden,true,mode+"/"+index+"/"+id+" starts on the wrong language face");
        report.counts.canonicalPrayerFaceComparisons++;
