@@ -57,10 +57,11 @@ for(const [group,sourceId,lat,lng,ref,addressNeedle,reviewScope] of newSites){
     "No Mass or Missal facts can be inferred from precise building coordinates");
  }
 }
-for(const hold of ["RG-BF0D731A3654","RG-3A09AD57156D"]){
- const item=all.find(x=>x.physical_group_id===hold);
- assert.ok(item&&!item.map_publishable,"Do not geocode unresolved Reading church footprint or Pesquié abbey from locality");
-}
+// Reading St William of York remains held until exact church geometry is corroborated.
+// Pesquié is now separately admitted by the source-backed batch-5 contract.
+const readingHold=all.find(x=>x.physical_group_id==="RG-BF0D731A3654");
+assert.ok(readingHold&&!readingHold.map_publishable,
+ "Do not geocode unresolved Reading church footprint from locality");
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:155,SOURCE_PIN:1806,ADDRESS_ONLY:621});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,621);
