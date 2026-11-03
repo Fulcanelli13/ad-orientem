@@ -43,7 +43,11 @@ for(const d of report.dates){
   assert.ok(c.blockers.includes("ACTUAL_HOME_DATE_DISPLAY_NOT_BROWSER_CERTIFIED"));
   assert.notEqual(c.photo.photoOwnerDecision?.decision,"reject");
   assert.doesNotMatch(c.artist??"",/fra angelico|el greco/i);
-  assert.doesNotMatch(c.sourceUrl??"",/museodelprado\.es/i);
+  if(/museodelprado\.es/i.test(c.sourceUrl??"")){
+   assert.equal(c.priorResearchSourceIsPradoHeld,true);
+   assert.ok(c.blockers.includes("HISTORICAL_PRADO_PHOTO_SOURCE_HELD_DO_NOT_PUBLISH"));
+   assert.equal(c.certifiedForThisHomepageDate,false);
+  }
   if(c.photo.photoOwnerDecision){
    assert.equal(c.photo.photoOwnerDecision.originalFileReleaseQACompleted,false);
    assert.equal(c.photo.photoOwnerDecision.feastAssociationApproved,false);
