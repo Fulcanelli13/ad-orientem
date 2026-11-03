@@ -19,12 +19,13 @@ assert.equal(triage.rows.length,27);
 assert.equal(triage.counts.REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED,4);
 assert.equal(triage.counts.EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED,13);
 assert.equal(triage.counts.REMOTE_EXACT_WORK_PREVIEW_RECOVERED_NOT_OFFLINE_CERTIFIED,3);
-assert.equal(triage.counts.APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED,2);
-assert.equal(triage.counts.EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED,2);
+assert.equal(triage.counts.EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED,3);
+assert.equal(triage.counts.RESEARCH_ONLY_DERIVATIVE_FILE_FOUND_DATE_NOT_APPROVED,1);
 const savedOriginals=read("data/artwork/home-2026-recovered-approved-ai-originals.v1.json");
-assert.equal(savedOriginals.originalFiles.length,2);
-assert.equal(savedOriginals.stillMissingOriginals.length,2);
-assert.equal(savedOriginals.binaryReleaseStatus,"ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB");
+assert.equal(savedOriginals.originalFiles.length,3);
+assert.equal(savedOriginals.stillMissingOriginals.length,0);
+assert.equal(savedOriginals.researchOnlyUnapprovedCandidates.length,1);
+assert.equal(savedOriginals.binaryReleaseStatus,"3_APPROVED_ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB_1_RESEARCH_ONLY_FILE_HELD");
 for(const row of savedOriginals.originalFiles){
  assert.match(row.sha256,/^[0-9a-f]{64}$/);
  assert.ok(row.width>=1024&&row.height>=768&&row.sizeBytes>1000000);
@@ -34,8 +35,10 @@ for(const row of savedOriginals.originalFiles){
  assert.equal(frozen.publicationReleased,false);
  assert.equal(census.days.find(x=>x.date===row.date)?.status,"DATE_SELECTED_IMAGE_UNRELEASED");
 }
-for(const row of savedOriginals.stillMissingOriginals){
- assert.equal(triage.rows.find(x=>x.date===row.date)?.decision,"APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED");
+for(const row of savedOriginals.researchOnlyUnapprovedCandidates){
+ assert.equal(row.publicationReleased,false);
+ assert.equal(triage.rows.find(x=>x.date===row.date)?.decision,"RESEARCH_ONLY_DERIVATIVE_FILE_FOUND_DATE_NOT_APPROVED");
+ assert.equal(census.days.find(x=>x.date===row.date)?.status,"DATE_SELECTED_IMAGE_UNRELEASED");
 }
 assert.equal(triage.counts.MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO,1);
 assert.equal(triage.counts.DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD,1);
