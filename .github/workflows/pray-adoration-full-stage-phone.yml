@@ -1,0 +1,47 @@
+name: Prayer Adoration guided stages phone
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-adoration-full-stage-phone.mjs"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/night-home-adoration-b29.js"
+      - "src/pray/adoration-four-purpose-options.js"
+      - "data/pray/prayer-release-coverage-evidence.v1.json"
+      - "package.json"
+      - ".github/workflows/pray-adoration-full-stage-phone.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tests/pray-adoration-full-stage-phone.mjs"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/night-home-adoration-b29.js"
+      - "src/pray/adoration-four-purpose-options.js"
+      - ".github/workflows/pray-adoration-full-stage-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-adoration-stages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  adoration-guided-stages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exercise original Adoration methods across complete guided stages and language faces
+        run: npm run test:pray-adoration-all-stages
+      - name: Preserve per-stage browser source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-adoration-stage-matrix
+          path: artifacts/pray-adoration-full-stage/complete-adoration-phone-evidence.json
+          if-no-files-found: warn
+          retention-days: 7

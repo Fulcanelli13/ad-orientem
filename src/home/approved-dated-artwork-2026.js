@@ -7,6 +7,8 @@
  */
 import {approvedClassIHeroForDate} from "../calendar/approved-class-i-heroes-2026.js";
 import {releasedDateGospelHero2026} from "./released-date-gospel-heroes-2026.js";
+import {RELEASED_MODULE_PAINTINGS} from "../art/released-module-paintings.v1.js";
+import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.js";
 
 const CLASS_I_PROPER=Object.freeze({
  "2026-03-29":"Tempora/Quad6-0r",
@@ -39,6 +41,56 @@ const ASH_WEDNESDAY=Object.freeze({
  editorialBasis:"NEW_DATE_SPECIFIC_APPROVAL_2026-10-20",
  imageStatus:"REMOTE_CC0_SOURCE_PREVIEW_NOT_OFFLINE_CERTIFIED"
 });
+/**
+ * Previously selected 2026 dates, existing PHOTO RELEASES. No research lead
+ * is promoted to an approved image here.
+ * The Saint Joseph dates carry prior association (not explicit reconfirmation).
+ */
+export const EXISTING_RELEASED_2026_DATE_PHOTOS=Object.freeze({
+ "2026-03-19":Object.freeze({
+  principalId:"sancti:03-19:1:w",properPath:"Sancti/03-19",
+  moduleId:"joseph",artworkId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+  title:"The Dream of Saint Joseph",artist:"Philippe de Champaigne",
+  editorialBasis:"OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+  expectedReleasePr:2296
+ }),
+ "2026-06-04":Object.freeze({
+  principalId:"tempora:Pent01-4:1:w",properPath:"Tempora/Pent01-4",
+  moduleId:"adoration",artworkId:"met-438434",
+  title:"The Virgin Adoring the Host",artist:"Jean Auguste Dominique Ingres",
+  editorialBasis:"EXPLICIT_PRIMARY_SELECTED",expectedReleasePr:2277
+ }),
+ "2026-12-24":Object.freeze({
+  principalId:"sancti:12-24:1:v",properPath:"Sancti/12-24",
+  moduleId:"joseph",artworkId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+  title:"The Dream of Saint Joseph",artist:"Philippe de Champaigne",
+  editorialBasis:"OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+  expectedReleasePr:2296
+ })
+});
+const LOCAL_CLASS_I_REUSE=Object.freeze({
+ "2026-06-12":Object.freeze({
+  moduleId:"heart-jesus",artworkId:"commons-morlete-sacred-heart-1759",
+  title:"The Heart of Jesus",artist:"Juan Patricio Morlete Ruiz",
+  expectedReleasePr:2302
+ })
+});
+function localModulePreview(date,principalId,properPath,rule,kind){
+ if(!rule)return null;
+ const photo=RELEASED_MODULE_PAINTINGS[rule.moduleId];
+ if(!photo||photo.releasePr!==rule.expectedReleasePr||
+    photo.title!==rule.title||photo.artist!==rule.artist||
+    !/^assets\/(?:home|prayer)\/.+\.(?:jpg|jpeg|webp|png)$/.test(photo.image??"")||
+    !/^https:\/\//.test(photo.source??"")||
+    !/public.domain|PD-Art|CC0/i.test(photo.photographRights??""))return null;
+ return Object.freeze({
+  date,principalId,properPath,artworkId:rule.artworkId,
+  title:photo.title,artist:photo.artist,source:photo.source,
+  image:"/"+photo.image,infoImage:"/"+photo.original,
+  rights:photo.photographRights,imageStatus:"PREVIOUSLY_RELEASED_LOCAL_ORIGINAL",
+  selectionKind:kind,releasePr:photo.releasePr
+ });
+}
 export const EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS=Object.freeze({
  "2026-02-18":ASH_WEDNESDAY
 });
@@ -62,6 +114,14 @@ export function approved2026HomeArtwork(state,provider=null){
  if(locked){
   const expected=CLASS_I_PROPER[date];
   if(!expected||!classIPathAccepts(date,expected,properPath))return null;
+  // For the approved Sacred Heart date, use its exact local released photo
+  // instead of the remote Wikimedia thumbnail. All other held dates stay held.
+  const local=LOCAL_CLASS_I_REUSE[date];
+  if(local&&locked.artworkId===local.artworkId&&
+     locked.title===local.title&&locked.artist===local.artist&&
+     locked.source===RELEASED_MODULE_PAINTINGS[local.moduleId]?.source)
+    return localModulePreview(date,principalId,properPath,local,
+     "PREVIOUSLY_APPROVED_CLASS_I_LOCAL_ORIGINAL");
   // Source rights holds are protected even when the PAINTING was approved.
   if(locked.imagePublicationStatus!=="REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"||
      !/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(locked.image??"")||
@@ -75,6 +135,12 @@ export function approved2026HomeArtwork(state,provider=null){
    selectionKind:"PREVIOUSLY_APPROVED_CLASS_I_DATE"
   });
  }
+ const localRule=EXISTING_RELEASED_2026_DATE_PHOTOS[date];
+ if(localRule){
+  if(localRule.principalId!==principalId||localRule.properPath!==properPath)return null;
+  return localModulePreview(date,principalId,properPath,localRule,
+   "PREVIOUSLY_SELECTED_DATE_REUSES_RELEASED_MODULE_ORIGINAL");
+ }
  const extra=EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS[date];
  if(extra){
   if(extra.principalId!==principalId||extra.properPath!==properPath)return null;
@@ -85,6 +151,8 @@ export function approved2026HomeArtwork(state,provider=null){
    imageStatus:extra.imageStatus,selectionKind:"PREVIOUSLY_APPROVED_ASH_WEDNESDAY_DATE"
   });
  }
+ const bulk=extraApproved2026HomeArtwork(date,principalId,properPath);
+ if(bulk)return bulk;
  const released=releasedDateGospelHero2026(state,provider??{
   properPath:()=>properPath
  });

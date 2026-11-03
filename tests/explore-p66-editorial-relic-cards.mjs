@@ -92,6 +92,57 @@ for(const id of candidateRelicImages){
 }
 const notre=profile("place:FR:notre-dame-paris");
 const notreHtml=render(notre.place_id);
+const fixtureIntro={
+  ownership:"EXISTING_PUBLISHED_ILLUSTRATED_GUIDE",
+  source_url:"https://example.org/intro-fixture",
+  title:{en:"Source-owned sanctuary introduction",fr:"Introduction sourcée du sanctuaire"},
+  introduction:{en:"A documented introduction in this test fixture.",fr:"Une introduction sourcée dans cette fixture de test."},
+};
+const editorialFixture={...notre,editorial_intro:fixtureIntro,
+  story_chapters:[{kind:"PILGRIMAGE",body_en:"Extended source-bound history",
+    body_fr:"Histoire développée sourcée",sources:[]}]};
+const renderFixture=(place,language="en")=>renderExploreToString(buildExploreViewModel({
+  language,lens:"heritage",view:"map",items:projection.byLens.shrines,
+  filters:{heritageCategories:[]},selectedPlaceId:place.place_id,
+  placeProfiles:[place],expandPlace:true,
+}));
+const introHtml=renderFixture(editorialFixture);
+const startIntro=introHtml.indexOf("Source-owned sanctuary introduction");
+const startTreasures=introHtml.indexOf('data-explore-place-chapter="treasures"');
+const startHistory=introHtml.indexOf('class="aoExplorePlaceOpening aoExploreSourcedStory"');
+assert.ok(startIntro>=0&&startTreasures>startIntro&&startHistory>startTreasures,
+  "Documented sacred treasures belong after the sourced opening and before long historical sections");
+assert.equal(introHtml.split('data-explore-place-chapter="treasures"').length-1,1,
+  "Sacred treasures must appear only once");
+const noIntroHtml=renderFixture({...editorialFixture,editorial_intro:{...fixtureIntro,source_url:""}});
+assert.ok(noIntroHtml.indexOf('data-explore-place-chapter="treasures"')>
+  noIntroHtml.indexOf('class="aoExplorePlaceOpening aoExploreSourcedStory"'),
+  "A missing published introduction must preserve story-first ordering");
+assert.equal(noIntroHtml.split('data-explore-place-chapter="treasures"').length-1,1);
+assert.ok(!introHtml.includes("TLM AT THIS EXACT PLACE"),"Empty TLM linkage must not imply an exact ministry");
+const withTlm=renderFixture({...editorialFixture,tlm:[{
+  item_id:"test:tlm:exact",lens:"tlm",title:"Exact-place linked ministry"
+}]});
+assert.ok(withTlm.includes("TLM AT THIS EXACT PLACE"),
+  "A real exact-Place TLM association must retain the full original section");
+const linkedRelicId=notre.sacred_treasures[0].id;
+const imageFixture={media_id:"fixture-relic",subject_relic_id:linkedRelicId,
+  asset_path:"/assets/fixture.jpg",source_url:"https://example.org/photo",
+  license_url:"https://creativecommons.org/licenses/by-sa/4.0/",
+  credit:"Fixture",license:"CC BY-SA 4.0",alt_en:"Object",alt_fr:"Objet",
+  label_en:"Exact object",label_fr:"Objet exact"};
+const objectGallery=renderFixture({...editorialFixture,gallery:[imageFixture]});
+assert.ok(objectGallery.includes("The place and its sacred treasures in photographs"),
+  "A gallery can name sacred treasures only when photo subject matches canonical relic ID");
+const unrelatedGallery=renderFixture({...editorialFixture,gallery:[{
+  ...imageFixture,subject_relic_id:"relic:NONMATCHING"
+}]});
+assert.ok(unrelatedGallery.includes("The place in photographs"),
+  "An unrelated photographed subject must retain the generic heading");
+const frenchGallery=renderFixture({...editorialFixture,gallery:[imageFixture]},"fr");
+assert.ok(frenchGallery.includes("Le lieu et ses trésors sacrés en images"));
+assert.ok(!frenchGallery.includes("MESSE TRADITIONNELLE EN CE LIEU EXACT"));
+
 assert.equal(notre.sacred_treasures.length,3);
 for(const id of ["relic:FR:crown-of-thorns-paris","relic:FR:cross-paris","relic:FR:holy-nail-paris"]){
  assert.ok(notre.sacred_treasures.some(x=>x.id===id));

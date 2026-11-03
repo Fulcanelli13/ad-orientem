@@ -1,0 +1,28 @@
+name: Sacred Atlas Round 1 subject-link closure
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-round1-source-links-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-photo-production-crosswalk-20261103.v1.json'
+      - 'tests/explore-sacred-round1-source-links.mjs'
+      - '.github/workflows/explore-sacred-round1-source-links.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-round1-source-links-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-photo-production-crosswalk-20261103.v1.json'
+      - 'tests/explore-sacred-round1-source-links.mjs'
+permissions:
+  contents: read
+jobs:
+  source-subject-adjudication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify 12 user-kept subject links and nonpublication boundaries
+        run: node tests/explore-sacred-round1-source-links.mjs

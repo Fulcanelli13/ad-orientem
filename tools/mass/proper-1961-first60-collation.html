@@ -28,18 +28,31 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 #progress{color:var(--warning);font-size:13px}
 #fileHint{font-size:12px;color:var(--muted);margin:6px 0}
 #originalBookPanel .body{min-height:250px}#scanStage{max-height:610px;overflow:auto;background:#0d121a;border-radius:10px;padding:8px}
-#originalBookScan{display:block;height:auto;max-width:none;width:100%;margin:0 auto;background:white}
-#originalBookScan[hidden]{display:none}#scanControls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:10px 0}
+#originalBookScan,#continuationBookScan{display:block;height:auto;max-width:none;width:100%;margin:0 auto;background:white}
+#originalBookScan[hidden],#continuationBookScan[hidden],#printedContinuation[hidden]{display:none}
+#printedContinuation h3{margin:16px 0 8px;font:500 16px Georgia,serif}#scanControls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:10px 0}
 #scanControls input{flex:1;min-width:110px}#scanStatus{font-size:12px;line-height:1.5}#scanSource a{overflow-wrap:anywhere}
 #scanFolio{font:500 16px Georgia,serif;color:#e8dfce;margin:5px 0 10px}
-@media(max-width:900px){.panes{grid-template-columns:1fr}.checks{grid-template-columns:1fr}}
+/* Printed source is the authoritative displayed score, not an unreviewed Exsurge redraw. */
+.panes{grid-template-columns:minmax(0,1.6fr) minmax(310px,1fr);align-items:start}
+#originalBookPanel{grid-column:1;grid-row:1}
+#sourceLatinPanel{grid-column:2;grid-row:1}
+#gabcDiagnosticPanel{grid-column:1/-1;grid-row:2}
+#engraveViewport{display:none!important}
+#scanStage{max-height:560px;background:#f4f1ec;padding:10px}
+#engraveStatus{border-left:3px solid #bd756b;padding-left:10px}
+@media(max-width:900px){.panes{grid-template-columns:1fr}
+ #originalBookPanel{grid-column:1;grid-row:1}
+ #sourceLatinPanel{grid-column:1;grid-row:2}
+ #gabcDiagnosticPanel{grid-column:1;grid-row:3}
+ .checks{grid-template-columns:1fr}}
 </style></head>
 <body><header><div><div class="eyebrow">Ad Orientem · internal musical collation</div>
 <h1>First 60 source-backed 1961 Proper scores</h1>
 <small>20 Introits · 20 Offertories · 20 Communions · 2026 selected-Mass source identities</small></div>
 <div class="badge">REVIEW ONLY · 0 PUBLIC APPROVALS</div></header>
 <main>
-<p class="muted">Load <code>2026-selected-proper-first60-print-review.json</code> from the annual Schola workflow artifact. This workbench displays the unchanged archived GABC and original selected 1962 Latin. Compare <strong>all printed notes, syllables, divisions and rhythmic marks</strong> with the original Solesmes folio using the source link. A matching first line does not certify the complete score. Exported observations never approve publication.</p>
+<p class="muted">Load <code>2026-selected-proper-first60-print-review.json</code> from the annual Schola workflow artifact. This workbench displays the original printed 1961 notation prominently, with the unaltered GABC available as technical evidence and the selected 1962 Latin alongside it. The experimental GABC SVG is disabled until a fidelity audit passes. Compare <strong>all printed notes, syllables, divisions and rhythmic marks</strong> with the original Solesmes folio using the source link. A matching first line does not certify the complete score. Exported observations never approve publication.</p>
 <div class="toolbar">
 <div><label for="fileInput">Load the authenticated editorial pack</label><input type="file" id="fileInput" accept=".json,application/json"><div id="fileHint">No pack loaded</div></div>
 <div><label for="partFilter">Chant family</label><select id="partFilter"><option value="">All three families</option><option value="in">Introit</option><option value="of">Offertory</option><option value="co">Communion</option></select></div>
@@ -47,10 +60,11 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 <button id="prev" disabled>Previous</button><button id="next" disabled>Next</button>
 </div>
 <div class="panes">
-<section class="panel"><div class="head"><h2>Original GABC · local Gregorian engraving</h2><small id="scoreIdentity">Choose a source-verified candidate</small></div>
-<div class="body"><div id="engraveViewport" aria-label="Research-only Gregorian score rendering"></div><p id="engraveStatus" class="muted">No score loaded.</p>
+<section class="panel" id="gabcDiagnosticPanel"><div class="head"><h2>Archived GABC · technical evidence, not the printed score</h2><small id="scoreIdentity">Choose a source-verified candidate</small></div>
+<div class="body"><div id="engraveViewport" hidden aria-hidden="true"></div>
+<p id="engraveStatus" class="muted">Experimental SVG engraving is disabled: its proportions and musical typography have not passed visual-source comparison. Use the original printed 1961 staff.</p>
 <h2>Unmodified archive transcription</h2><pre id="scoreGabc"></pre></div></section>
-<section class="panel"><div class="head"><h2>1962 selected Proper and original 1961 folio</h2><small id="sourceRole">Exact date, role and source owner</small></div>
+<section class="panel" id="sourceLatinPanel"><div class="head"><h2>Selected 1962 Latin and source identity</h2><small id="sourceRole">Exact date, role and source owner</small></div>
 <div class="body"><dl>
 <dt>Score</dt><dd id="sourceId">—</dd><dt>1961 page</dt><dd id="pageRef">—</dd>
 <dt>2026 uses</dt><dd id="dateCount">—</dd>
@@ -60,11 +74,14 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 </dl><p><a id="scoreSource" target="_blank" rel="noopener noreferrer">Open GregoBase source and printed witnesses</a></p>
 <h2>Exact selected Latin paragraph</h2><div id="sourceLatin">Load editorial pack to begin.</div>
 </div></section>
-<section class="panel" id="originalBookPanel"><div class="head"><h2>1961 original printed folio · side-by-side</h2>
-<small>Direct scan of Solesmes page, NOT a regenerated GABC score</small></div>
+<section class="panel" id="originalBookPanel"><div class="head"><h2>Authentic Gregorian notation · original 1961 print</h2>
+<small>Original Solesmes square-note engraving. Scroll to compare all source staves.</small></div>
 <div class="body">
 <p id="scanFolio">Select an original 1961 source</p>
 <div id="scanStage"><img id="originalBookScan" hidden alt="Original Solesmes 1961 scanned printed staff and neumes">
+<div id="printedContinuation" hidden><h3 id="continuationHeading">Printed continuation</h3>
+<img id="continuationBookScan" hidden alt="Next printed folio of the same 1961 Gregorian score">
+<p class="muted">This second printed folio is required to check the complete chant, not a separate setting.</p></div>
 <p id="scanStatus" class="muted">The first 12 source-linked facsimiles load when their score is selected.</p></div>
 <div id="scanControls"><label for="scanZoom">Print enlargement</label>
 <input type="range" id="scanZoom" min="100" max="240" value="100" step="20" aria-label="Original scanned-page enlargement">
@@ -99,7 +116,6 @@ All musical and publication decisions remain unverified.</p>
 <p class="muted">Every field starts UNREVIEWED. The source note-group inventory does not establish printed-note parity. Local saved reviews can be exported for independent validation. Neither a selection nor an exported review can mark a score PUBLIC_APPROVED or change the live Mass reader.</p>
 </div></section></main>
 <script type="module">
-import {createOfflineChantEngraver} from "../../src/mass/reader-chant-engraver.js";
 import {sourceNoteGroupInventory} from "../../src/mass/reader-kyriale-source-note-groups.js";
 import {first12PrintedFacsimileForScore} from "../../src/mass/reader-proper-first12-1961-facsimile-locators.js";
 const $=id=>document.getElementById(id);
@@ -110,7 +126,6 @@ for(const id of [...scoreFields,...groupFields])for(const [key,title] of statuse
  const opt=document.createElement("option");opt.value=key;opt.textContent=title;$(id).appendChild(opt);
 }
 let report=null,current=null,groups=[],selectedGroup=0,reviews={};
-const engraver=createOfflineChantEngraver({viewport:$("engraveViewport")});engraver.observe();
 const storeKey="ao-proper-1961-first60-local-review-v1";
 try{reviews=JSON.parse(localStorage.getItem(storeKey)||"{}")}catch{reviews={}}
 const fmt=s=>String(s??"");
@@ -119,34 +134,76 @@ const verdictOf=c=>reviews[c?.scoreId+"|"+c?.scoreGabcSha256]??{};
 const scanZoom=()=>Number($("scanZoom").value)||100;
 function updateScanZoom(){
  $("originalBookScan").style.width=scanZoom()+"%";
+ $("continuationBookScan").style.width=scanZoom()+"%";
  $("scanZoomLabel").textContent=scanZoom()+"%";
 }
 $("scanZoom").addEventListener("input",updateScanZoom);
 function showOriginal1961Scan(c){
- const img=$("originalBookScan"),status=$("scanStatus"),folio=$("scanFolio"),link=$("scanSource");
- img.removeAttribute("src");img.hidden=true;img.onload=null;img.onerror=null;
- link.replaceChildren();updateScanZoom();
+ const img=$("originalBookScan"),second=$("continuationBookScan");
+ const panel=$("printedContinuation"),status=$("scanStatus");
+ const folio=$("scanFolio"),link=$("scanSource");
+ for(const el of [img,second]){
+  el.removeAttribute("src");el.hidden=true;el.onload=null;el.onerror=null;
+ }
+ panel.hidden=true;link.replaceChildren();updateScanZoom();
  const locator=first12PrintedFacsimileForScore(c);
  if(!locator){
   folio.textContent=c?"GR 1961, p. "+c.original1961Page:"No chant loaded";
-  status.textContent="A direct original-book image is not pinned for this score. Open its GregoBase page for the scanned witnesses.";
-  if(c){const anchor=document.createElement("a");anchor.href=c.sourceUrl;anchor.target="_blank";
-   anchor.rel="noopener noreferrer";anchor.textContent="Open original source and printed witness";
-   link.append(anchor)}
+  status.textContent="The original printed image is not pinned for this score. Follow the original source link.";
+  if(c){
+   const a=document.createElement("a");a.href=c.sourceUrl;a.target="_blank";
+   a.rel="noopener noreferrer";a.textContent="Original score source";
+   link.append(a);
+  }
   return;
  }
- folio.textContent="Graduale Romanum 1961 · p. "+locator.folio+" · "+c.scoreId;
- status.textContent="Loading original 1961 scan. Source image has not been compared to GABC.";
- const anchor=document.createElement("a");anchor.href=locator.scanned1961PageUrl;anchor.target="_blank";
- anchor.rel="noopener noreferrer";anchor.textContent="Open original 1961 scanned folio in separate tab";
- const secondary=document.createElement("a");secondary.href=locator.sourceUrl;secondary.target="_blank";
- secondary.rel="noopener noreferrer";secondary.textContent="Open GregoBase source entry";
- link.append(anchor,document.createTextNode(" · "),secondary);
+ const folios=locator.scannedFolios;
+ const multi=folios.length===2;
+ folio.textContent="Graduale Romanum 1961 · "+(multi?"pp. ":"p. ")+
+  locator.printedFolioSpan+" · "+c.scoreId;
+ status.textContent="Loading "+folios.length+" original printed folio"+
+  (multi?"s":"")+"; musical correspondence is NOT yet verified.";
+ for(const [index,page] of folios.entries()){
+  const a=document.createElement("a");a.href=page.url;a.target="_blank";
+  a.rel="noopener noreferrer";a.textContent="Open original 1961 p. "+page.folio;
+  if(index)link.append(document.createTextNode(" · "));
+  link.append(a);
+ }
+ const a=document.createElement("a");a.href=locator.sourceUrl;a.target="_blank";
+ a.rel="noopener noreferrer";a.textContent="GregoBase source entry";
+ link.append(document.createTextNode(" · "),a);
+ if(multi){
+  panel.hidden=false;
+  $("continuationHeading").textContent="Continuation · original p. "+folios[1].folio;
+  second.onload=()=>{if(current!==c)return;second.hidden=false;
+   status.textContent=img.hidden?
+    "Continuation image loaded but the starting page is unavailable. Whole-score comparison remains blocked.":
+    "Both original printed folios loaded. Pitch, neume, rhythm and underlay comparison NOT recorded."};
+  second.onerror=()=>{if(current!==c)return;second.hidden=true;
+   status.textContent="Original continuation scan could not load. Complete printed-score review is blocked; use the source links."};
+  second.src=folios[1].url;
+ }
  img.onload=()=>{if(current!==c)return;img.hidden=false;
-  status.textContent="Original 1961 scanned folio loaded · independent pitch/neume/underlay comparison NOT recorded."};
+  // Focus the selected piece rather than unrelated preceding chants on the
+  // same unaltered printed folio. Other material stays scrollable above.
+  const anchorY=({
+   "GREGOBASE-475":395,"GREGOBASE-782":585,"GREGOBASE-918":445,
+   "GREGOBASE-403":270,"GREGOBASE-1147":85,"GREGOBASE-182":245,
+   "GREGOBASE-265":585,"GREGOBASE-464":235,"GREGOBASE-95":385,
+   "GREGOBASE-1136":385,"GREGOBASE-1165":165,"GREGOBASE-1271":560
+  })[c.scoreId]??0;
+  const scroll=$("#scanStage");
+  requestAnimationFrame(()=>{if(current===c&&img.naturalHeight>0){
+   scroll.scrollTop=Math.max(0,Math.round(anchorY/img.naturalHeight*
+    img.getBoundingClientRect().height)-24);
+  }});
+  status.textContent=multi?
+   (second.hidden?"Starting page loaded; continuation page required before whole-score review.":
+    "Both printed folios loaded. Musical verification NOT recorded."):
+   "Original printed folio loaded; independent pitch/neume/underlay comparison NOT recorded."};
  img.onerror=()=>{if(current!==c)return;img.hidden=true;
-  status.textContent="Original scanned-page image could not load. Open either linked original source above; do not mark music as verified."};
- img.src=locator.scanned1961PageUrl;
+  status.textContent="Original scanned-page image could not load. Open the linked original sources; do not mark music as verified."};
+ img.src=folios[0].url;
 }
 function candidates(){return (report?.candidates??[]).filter(c=>!$("partFilter").value||c.part===$("partFilter").value)}
 function populate(){
@@ -185,10 +242,8 @@ async function show(c){
    op.value=String(group.ordinal);op.textContent=group.ordinal+" · "+group.syllable+" · "+group.sourceTokenType;
    $("groupSelect").append(op);
   }
-  showGroup(0);$("engraveStatus").textContent="Rendering verified archive bytes · awaiting print review";
-  await engraver.engrave(gabc);
-  if(current===c)$("engraveStatus").textContent="Original GABC engraved locally · NOT publication approval";
- }catch(e){$("engraveStatus").textContent="Cannot engrave this source. Hold: "+String(e?.message??e)}
+  showGroup(0);$("engraveStatus").textContent="Automated GABC SVG disabled: view the authentic 1961 printed notation first; use raw GABC only for technical note-group comparison.";
+ }catch(e){$("engraveStatus").textContent="Source GABC group inventory error (score held): "+String(e?.message??e)}
  updateProgress();
 }
 function showGroup(index){

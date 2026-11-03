@@ -325,7 +325,11 @@
     "test:dyk-growth-500": "node tests/dyk-500-growth-310-contract.mjs",
     "test:pray-route-language-matrix": "node tests/pray-route-language-matrix-v1.mjs",
     "test:pray-41-entry-phone": "node tests/pray-41-route-entry-variants-phone.mjs",
-    "test:pray-canonical-phone-faces": "node tests/pray-nine-canonical-phone-faces.mjs"
+    "test:pray-canonical-phone-faces": "node tests/pray-nine-canonical-phone-faces.mjs",
+    "test:pray-stage-matrix-phone": "node tests/pray-confession-benediction-stage-matrix-phone.mjs",
+    "test:pray-adoration-all-stages": "node tests/pray-adoration-full-stage-phone.mjs",
+    "test:pray-19-novena-stage-phone": "node tests/pray-novena-all-19-stages-language-phone.mjs",
+    "test:pray-offline-nonrosary-40": "node tests/pray-nonrosary-first-offline-40-route-phone.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

@@ -597,6 +597,12 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  box-shadow:0 0 11px rgba(248,177,67,.72);
 }
 
+/* The last active lamp caption used right:-12px, extending outside the
+   320px reader. Keep its approved caption inside the seventh lamp's edge. */
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStops>.aoDevoStop:last-child .aoDevoStopTitle{
+ right:0!important;overflow-wrap:anywhere!important;
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;

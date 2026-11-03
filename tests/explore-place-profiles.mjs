@@ -672,7 +672,8 @@ const html=renderExploreToString(vm);
 assert.ok(html.includes('data-explore-place-owner="'+lourdes.place_id+'"'));
 assert.match(html,/ASSOCIATED SAINTS/);
 assert.match(html,/11\/02\/2027/);
-assert.match(html,/No TLM venue is currently linked to this exact Place/);
+assert.doesNotMatch(html,/TLM AT THIS EXACT PLACE|No TLM venue is currently linked to this exact Place/,
+  "No unsourced exact-Place TLM link or empty disclaimer should be shown");
 assert.match(html,/data-explore-place-item=/);
 assert.match(html,/data-explore-place-lens="pilgrimages"/);
 assert.match(html,/This page aggregates records by canonical Place ID/);
