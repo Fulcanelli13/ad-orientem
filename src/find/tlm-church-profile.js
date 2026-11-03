@@ -228,7 +228,10 @@ export function renderTlmChurchProfile(item,language="en"){
  if(item?.place_id)html+='<button type="button" data-explore-open-place="'+E(item.place_id)+'">'+E(L(language,"Explore this exact Place · history, relics, prayers","Explorer ce lieu exact · histoire, reliques, prières"))+'</button>';
  html+='</section><section class="aoTlmProfileSourceSection"><details class="aoTlmProfileSourceDisclosure"><summary>'+
   E(L(language,"Sources & verification","Sources et vérification"))+' <span aria-hidden="true">⌄</span></summary><div class="aoTlmProfileSourceContent">';
- if(sourceLinks.length)html+='<div class="aoTlmProfileSources">'+sourceLinks.map(s=>link(s.url,s.title||s.issuer||L(language,"Source","Source"))).join("")+'</div>';
+ if(sourceLinks.length)html+='<div class="aoTlmProfileSources">'+sourceLinks.map(s=>link(s.url,
+   s.title==="Original listing"?L(language,"Original listing","Répertoire d’origine"):
+   s.title==="Additional research source"?L(language,"Additional research source","Source de recherche complémentaire"):
+   s.title||s.issuer||L(language,"Source","Source"))).join("")+'</div>';
  else html+='<p>'+E(L(language,"Source link not yet verified","Lien source non vérifié"))+'</p>';
  html+='<p class="aoTlmProfileCaution">'+E(L(language,"An institute's declared policy and a particular celebration's practice are distinct. Unknown fields remain unknown.",
     "La politique déclarée d’un institut et la pratique d’une célébration particulière sont distinctes. Les champs inconnus demeurent inconnus."))+'</p></div></details>';
