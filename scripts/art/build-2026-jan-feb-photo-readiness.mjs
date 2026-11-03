@@ -71,6 +71,7 @@ function candidate(date,c,lane){
    c.selection?.sourceUrl??w?.selectedSourceUrl??null)||null;
  const key=(w?.preferredRecordId??groupId??"").replace(/^(REVIEW|CANONICAL)::/,"");
  const photoReview=photoMap.get(key)??null;
+ const historicalPradoSource=/museodelprado\.es/i.test(sourceUrl??"");
  // A rejected original object/photo cannot enter a new candidate queue.
  if(photoReview?.decision==="reject")throw Error("Photo rejection restored: "+date+" "+key);
  const modules=modulePhotos.filter(([,m])=>sourceUrl&&norm(m.source)===sourceUrl)
@@ -88,6 +89,7 @@ function candidate(date,c,lane){
  const blockers=[
   ...(w?[]:["SOURCE_IDENTITY_NOT_JOINED_TO_OPERATIONAL_GALLERY"]),
   ...(rightsHold?["EXACT_IMAGE_REPRODUCTION_RIGHTS_NOT_CERTIFIED"]:[]),
+  ...(historicalPradoSource?["HISTORICAL_PRADO_PHOTO_SOURCE_HELD_DO_NOT_PUBLISH"]:[]),
   "SELECTED_ORIGINAL_IMAGE_BYTES_NOT_CHECKED",
   "IMAGE_NATIVE_PIXELS_AND_FRAMELESS_CROP_NOT_VERIFIED",
   ...(previouslyDateApproved?[]:["DATE_ARTWORK_ASSOCIATION_NOT_NEWLY_APPROVED"]),
@@ -97,6 +99,7 @@ function candidate(date,c,lane){
   title,artist,artworkId:c.artworkId??c.canonicalArtworkId??w?.canonicalArtworkId??null,
   workGroupId:groupId,preferredSourceRecordId:w?.preferredRecordId??null,
   researchLane:lane,evidenceKind,sourceUrl,
+  priorResearchSourceIsPradoHeld:historicalPradoSource,
   preservedUserReviewStates:w?.userReviewStates??[],
   preservedDateApproval:previouslyDateApproved,
   historicalDateEditorialBasis:originalDateEditorialBasis,
