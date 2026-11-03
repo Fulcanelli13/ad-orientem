@@ -4111,7 +4111,7 @@ function onClick(e){
   if(b.hasAttribute('data-p435930-montfort-prev')){MONTFORT.day=Math.max(1,(MONTFORT.day||1)-1);return render()}
   if(b.hasAttribute('data-p435930-montfort-next')){MONTFORT.day=Math.min(34,(MONTFORT.day||1)+1);return render()}
   if(b.hasAttribute('data-p435930-montfort-today')){MONTFORT.day=w?.dayIndex||1;return render()}
-  if(b.hasAttribute('data-p435930-montfort-phase')){const day=Number(b.dataset.p435930MontfortPhase);if(MONTFORT_B26_PHASES.some(p=>p.first===day)){MONTFORT.day=day;return render()};return}
+  if(b.hasAttribute('data-p435930-montfort-phase')){const day=Number(b.dataset.p435930MontfortPhase);if(MONTFORT_B26_PHASES.some(p=>p.first===day)){MONTFORT.day=day;render();queueMicrotask(()=>{const m=mount();if(m)m.scrollTop=0});return};return}
   if(b.hasAttribute('data-p435930-montfort-rosary'))return open('pray.rosary',{returnContext:null});
  }
  if(view==='josephSeven'){
