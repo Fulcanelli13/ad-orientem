@@ -58,7 +58,7 @@ const expandedCases=[
   artId:"ART-hilippe-de-hampaigne-a-etite-ne",title:"La Petite Cène",remote:true}
 ];
 const seasonalCases=Object.values(ANNUAL_HOME_ARTWORK_DAYS_2026)
- .filter(d=>d.rank==="IV")
+ .filter(d=>d.contextualReuseEligible)
  .map((d,i)=>{
   const path=d.principalId.startsWith("commune:C10")?"Commune/C10":"Tempora/feria";
   const r=approved2026SeasonalHomeReuse(d.date,d.principalId,path);
@@ -66,7 +66,7 @@ const seasonalCases=Object.values(ANNUAL_HOME_ARTWORK_DAYS_2026)
   return {date:d.date,width:i%2?320:390,principal:d.principalId,
    artId:r.artworkId,title:r.title,asset:r.image,remote:false};
  });
-assert.equal(seasonalCases.length,71);
+assert.equal(seasonalCases.length,105);
 const fullCases=[...cases,...expandedCases,...seasonalCases];
 let browser;const results=[];
 try{
