@@ -19,6 +19,9 @@ on:
       - "data/artwork/2026-26-historical-sermon-on-mount-reuse.v1.json"
       - "scripts/art/resolve-2026-26-existing-source-exceptions.mjs"
       - "tests/sacred-art-2026-26-existing-source-exceptions.mjs"
+      - "data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json"
+      - "scripts/art/build-2026-jan-feb-photo-readiness.mjs"
+      - "tests/sacred-art-2026-jan-feb-photo-readiness.mjs"
       - ".github/workflows/sacred-art-989-365-bulk-match.yml"
   workflow_dispatch:
 permissions:
@@ -69,6 +72,8 @@ jobs:
           node tests/sacred-art-2026-48-existing-gallery-exceptions.mjs
           node scripts/art/resolve-2026-26-existing-source-exceptions.mjs
           node tests/sacred-art-2026-26-existing-source-exceptions.mjs
+          node scripts/art/build-2026-jan-feb-photo-readiness.mjs
+          node tests/sacred-art-2026-jan-feb-photo-readiness.mjs
       - name: Preserve complete source and verified-Gospel candidate ledgers
         if: always()
         uses: actions/upload-artifact@v4
@@ -79,6 +84,8 @@ jobs:
             artifacts/sacred-art-2026/104-existing-seasonal-marian-reuse-proposals.json
             artifacts/sacred-art-2026/48-existing-gallery-exception-reconciliation.json
             artifacts/sacred-art-2026/26-existing-sources-reconciliation.json
+            artifacts/sacred-art-2026/jan-feb-59-photo-readiness.json
+            artifacts/sacred-art-2026/jan-feb-59-photo-readiness.md
             artifacts/calendar-gospel-home/2026-source-audit.json
           retention-days: 14
           if-no-files-found: warn
