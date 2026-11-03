@@ -34,8 +34,13 @@ try{
   // available under source-backed Sacred Places filters.
   await page.locator('#ao-find-modular-root [data-atlas-entry-tab="sacred"]').click();
   await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
-  const tab=page.locator('#ao-find-modular-root .aoHeritageCategories [data-find-filter="lens"][data-find-filter-value="saints"]');
-  assert.equal(await tab.count(),1,"Saints doorway not visible on canonical homepage");
+  // The accepted desktop Atlas places the same Saints action inside the
+  // source-backed left rail; mobile retains the existing map ribbon.
+  const tab=page.locator(size.width>=900
+    ? '#ao-find-modular-root .aoMapcnCategoryTabs [data-find-filter="lens"][data-find-filter-value="saints"]'
+    : '#ao-find-modular-root .aoHeritageCategories [data-find-filter="lens"][data-find-filter-value="saints"]');
+  assert.equal(await tab.count(),1,"Saints doorway missing from the approved viewport-specific navigation");
+  assert.equal(await tab.isVisible(),true,"Saints doorway must remain visibly accessible");
   await tab.click();
   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="6"&&
     !!document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="saints"]'),null,{timeout:25000});
