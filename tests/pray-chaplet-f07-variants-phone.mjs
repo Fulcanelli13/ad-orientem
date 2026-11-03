@@ -52,6 +52,14 @@ try{
      assert.ok(await header.isVisible(),"Home shortcut must stay visible");
      assert.equal(await page.locator(prefix+" .aoP435930Head .aoP435930SessionLanguage:visible").count(),0,
       "No duplicate EN/FR header control in the w1 default reader");
+     const jump=page.locator(prefix+".aoF07WoundJump");
+     assert.equal(await jump.count(),1,"The five-wound jump remains available as secondary navigation");
+     assert.equal(await jump.evaluate(el=>el.open),false,"Secondary chapter navigation must start collapsed");
+     const first=await jump.evaluate(el=>{
+      const prayer=el.closest("main")?.querySelector(".aoFiveWoundsPrayer");
+      return !!prayer&&Boolean(prayer.compareDocumentPosition(el)&Node.DOCUMENT_POSITION_FOLLOWING);
+     });
+     assert.equal(first,true,"Original prayer text must precede optional wound navigation");
     }
     assert.equal(await page.locator(prefix+c.legacyNav).count(),c.kind==="precious-blood"?7:c.kind==="five-wounds"?5:15);
     if(c.kind==="little-crown"){
@@ -71,6 +79,8 @@ try{
      assert.equal(await band.locator('.aoF07LittleCrownCentre[aria-valuenow="1"]').count(),1);
      assert.equal(await page.locator(prefix+".aoF07LittleCrownLanguage > summary").count(),1,
       "Quiet Aa menu replaces LATIN pill in the pilot");
+     assert.doesNotMatch(await page.locator(prefix+".aoLittleCrownPrayerTop small").innerText(),/1\s*\/\s*15/,
+      "The F07 circle owns the fifteen-bead tally; the prayer card should not repeat it");
     }
     const text=page.locator(prefix+c.prayer).first();
     assert.ok((await text.innerText()).trim().length>=18,c.route+" canonical prayer text absent");
@@ -102,6 +112,15 @@ try{
     await page.locator(prefix+c.previous).click();
     if(c.kind==="precious-blood")assert.equal(await band.getAttribute("data-f07-phase"),"0");
     else assert.equal(await band.getAttribute("data-f07-position"),"0");
+    if(c.kind==="five-wounds"){
+     const jump=page.locator(prefix+".aoF07WoundJump");
+     await jump.locator("summary").click();
+     assert.equal(await jump.evaluate(el=>el.open),true);
+     assert.equal(await jump.locator("[data-p435930-five-wound]").count(),5);
+     await jump.locator('[data-p435930-five-wound="4"]').click();
+     assert.equal(await band.getAttribute("data-f07-position"),"24",
+      "Choosing a different wound must use the original canonical step cursor");
+    }
     await page.screenshot({path:resolve(captures,c.kind+"-"+width+"-return.png"),animations:"disabled"});
     assert.deepEqual(errors,[],c.route+" uncaught mobile error(s)");
     console.log("PASS F07 "+width+" "+c.kind+": canonical "+c.dots+" positions, first prayer, controls, next/previous and rollback-safe navigation");

@@ -83,6 +83,7 @@ import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENIN
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
 import {chapletF07PilotEnabled,chapletF07VariantsEnabled,renderMercyF07Crown,renderMercyF07Entry,mercyF07RoleMarkup} from "./chaplet-f07-pilot.js";
 import {renderF07FiveWounds,renderF07PreciousBlood,renderF07LittleCrown} from "./chaplet-f07-variants.js";
+import "./chaplet-r3b-quiet-styles.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
@@ -3381,12 +3382,13 @@ function renderFiveWounds(){
   '<details class="aoF07ReaderLanguage"><summary aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">Aa</summary>'+
   '<div class="aoF07LanguageOptions" role="group" aria-label="'+esc(L('Prayer language','Langue de la prière'))+'">'+
   ['en','fr','la'].map(code=>'<button type="button" data-p435930-five-language="'+code+'" aria-pressed="'+String(langCode===code)+'">'+
-    esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>'+
-  '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav>':'')+
+    esc(code==='en'?'English':code==='fr'?'Français':'Latin')+'</button>').join('')+'</div></details></div>':'')+
  '<article class="aoFiveWoundsPrayer" tabindex="0"><div class="aoFiveWoundsPrayerTop"><small>'+
  esc(prayerLabel)+'</small>'+(CHAPLET_F07_VARIANTS_ENABLED?'':langButton)+'</div><p class="aoFiveWoundsPrayerText" lang="'+
  esc(langCode)+'">'+nl(step.text)+'</p></article>'+
 
+ (CHAPLET_F07_VARIANTS_ENABLED?'<details class="aoF07WoundJump"><summary>'+esc(L('Choose another wound','Choisir une autre plaie'))+'</summary>'+
+  '<nav class="aoF07WoundChips" aria-label="'+esc(L('The five wounds','Les cinq plaies'))+'">'+woundChips+'</nav></details>':'')+
  '<footer class="aoFiveWoundsActions">'+prev+
   (CHAPLET_F07_VARIANTS_ENABLED?'<output class="aoF07WoundDockCount" aria-label="'+esc(L('Chaplet position','Position dans le chapelet'))+'">'+(index+1)+' / 30</output>':'')+
   next+'</footer>'+

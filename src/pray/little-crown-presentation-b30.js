@@ -58,7 +58,7 @@ export function renderLittleCrownB30({index=0,latin=false,french=false,head,L,es
   (f07Active?f07Band:beadNavigator)+
 
   '<article class="aoLittleCrownPrayer" tabindex="0"><div class="aoLittleCrownPrayerTop"><small>'+
-  esc((position+1)+' / 15 · '+(step.group==="holy-family"?L("Our Father","Notre Père"):L("Hail Mary","Je vous salue Marie")))+
+  esc((f07Active?"":(position+1)+" / 15 · ")+(step.group==="holy-family"?L("Our Father","Notre Père"):L("Hail Mary","Je vous salue Marie")))+
   '</small>'+(f07Active?f07LanguageMenu:latinToggle)+'</div><p class="aoLittleCrownAspiration" lang="'+esc(langCode)+'">'+esc(step.aspiration)+
   '</p><p class="aoLittleCrownPrayerText" lang="'+esc(langCode)+'">'+nl(step.prayerText)+'</p></article>'+
   '<footer class="aoLittleCrownActions">'+prev+
