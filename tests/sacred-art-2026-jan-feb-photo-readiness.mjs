@@ -54,8 +54,8 @@ for(const d of report.dates){
   }
  }
 }
-assert.equal(report.totals.firstChoiceWithOperationalArtworkGroup+
- report.totals.firstChoiceSourceNotIn989,59);
+assert.equal(report.totals.leadingCandidatesWithOperationalGroup+
+ report.totals.leadingCandidatesMissingOperationalGroup,59);
 assert.equal(Object.values(report.totals.byResearchLane).reduce((a,b)=>a+b,0),59);
 const jan1=report.dates[0];
 assert.equal(jan1.date,"2026-01-01");
