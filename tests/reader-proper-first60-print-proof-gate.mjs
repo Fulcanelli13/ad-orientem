@@ -70,7 +70,7 @@ const withVariant={...empty,evidence:{
  {publicScore:false,editorialApproval:false,reviewerObservationOnly:true}}};
 assert.throws(()=>buildFirst60PrintedMusicEvidence({
  packet,latinAudit,observations:withVariant}),/NINE_TEXT_VARIANTS_CANNOT_RECEIVE_PRINT_APPROVAL/);
-const unexpected={...empty,evidence:{"GREGOBASE-999|"+("0".repeat(64)):allScore}};
+const unexpected={...empty,evidence:{["GREGOBASE-999|"+("0".repeat(64))]:allScore}};
 assert.throws(()=>buildFirst60PrintedMusicEvidence({
  packet,latinAudit,observations:unexpected}),/PRINT_OBSERVATION_UNKNOWN_OR_TAMPERED_SCORE_ID/);
 console.log("PASS: 51 score original-print evidence packets, 9 variant holds, 3453 GABC note groups, zero unauthorized musical approvals");
