@@ -124,6 +124,9 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  height:96px;border:1px solid var(--liturgical-border,#3a3228);
  background:var(--background,#0f0d0b);
 }
+#aoPray435930 .aoClaudeHolyCasePlate img{
+ width:100%;height:100%;object-fit:contain;object-position:center;display:block;
+}
 #aoPray435930 .aoClaudeHolyFan small{
  display:block;font:400 13px/1.2 var(--ao-font-display,Georgia,serif);
  color:var(--hc-ink);margin-top:6px;overflow-wrap:break-word;
