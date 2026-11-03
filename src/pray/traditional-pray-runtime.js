@@ -444,8 +444,8 @@ function renderHymns(){
     ave_maris_stella:["Pierre Corneille · Office de la sainte Vierge · historical French witness",TRADITIONAL_PRAY_SOURCES_V381.aveMarisFrench],
   };
   const frSource=frenchSources[key];
-  const text=lang==="la"?`<div class="aoTP381Reader">${hymnLineMarkup(h.la)}</div>`:
-    `<button type="button" data-tp381-flip aria-label="${esc(L("Switch hymn language","Changer la langue de l’hymne"))}"><span data-face-v>${hymnLineMarkup(h[lang])}</span><span data-face-la hidden>${hymnLineMarkup(h.la)}</span></button>`;
+  const text=lang==="la"?`<div class="aoTP381Reader" lang="la">${hymnLineMarkup(h.la)}</div>`:
+    `<button type="button" data-tp381-flip aria-label="${esc(L("Switch hymn language","Changer la langue de l’hymne"))}"><span data-face-v lang="${lang}">${hymnLineMarkup(h[lang])}</span><span data-face-la lang="la" hidden>${hymnLineMarkup(h.la)}</span></button>`;
   const provenance=seasonal
     ?`<p class="aoTP381Intro">${esc(L("Historical Latin original · Office placement: ","Original latin historique · Office : ")+h.office+" · "+h.season)}. ${esc(L("Modern ICRSP French translations are not copied. Historical English and French witnesses have separate edition credits; comparative editions are labelled.","Les traductions françaises modernes de l’ICRSP ne sont pas reproduites. Les témoins historiques portent leurs sources et les versions comparatives sont signalées."))}</p>`
     :"";
@@ -510,7 +510,7 @@ function renderHolyName(){
   const guided=aligned&&S.litanyMode==="guided",step=Math.max(0,Math.min(6,Number(S.litanyStep)||0));
   const current=guided?(isFr()?frParts[step]:enParts[step]):vern,currentLatin=guided?laParts[step]:latin;
   const title=guided?L(...HOLY_NAME_SECTION_LABELS[step]):L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr);
-  const text=`<article class="aoTP381PrayerCard"><h3>${esc(title)}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${litanyVerseMarkup(current)}</span><span data-face-la hidden>${litanyVerseMarkup(currentLatin)}</span></button></article>`;
+  const text=`<article class="aoTP381PrayerCard"><h3>${esc(title)}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v lang="${isFr()?"fr":"en"}">${litanyVerseMarkup(current)}</span><span data-face-la lang="la" hidden>${litanyVerseMarkup(currentLatin)}</span></button></article>`;
   const card=guided?`<section class="aoDevoCard" data-ao-devo-card="holy-name-${step+1}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${text}</div></section>`:text;
   const mode=aligned?`<div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Litany view","Présentation des litanies"))}"><button type="button" data-tp381-litany-mode="full" aria-pressed="${!guided}">${esc(L("Full text","Texte intégral"))}</button><button type="button" data-tp381-litany-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button></div>`:"";
   const guidance=`<details class="aoTP381SecondaryOptions" data-ao-holy-name-options><summary>${esc(L("Reading options and guide","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique, avec témoins latin et français. Touchez la prière pour remplacer le français par le latin."))}</p>${mode}${traditionalContextGuide("holyName")}</div></details>`;
