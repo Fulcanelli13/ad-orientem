@@ -77,6 +77,12 @@ if(report.stats.sourceResolvedGospels===355){
  assert.ok(cana.candidates.some(x=>x.evidenceKind==="VERIFIED_GOSPEL_EXISTING_GALLERY_TITLE_SCREEN"),
  "Cana wedding painting exists in historical gallery and must be Gospel screened");
 }
+const lourdes=report.dates.find(d=>d.date==="2026-02-11");
+for(const candidate of lourdes.candidates.filter(c=>
+ c.evidenceKind==="VERIFIED_GOSPEL_EXISTING_GALLERY_TITLE_SCREEN")){
+ assert.doesNotMatch(candidate.title??"",/shepherd|death|prado/i,
+  "Luke 1 Annunciation to Mary must not match other annunciation scenes or Prado");
+}
 const marian=report.dates.find(d=>d.date==="2026-01-03");
 assert.equal(marian.seasonalOrMarianReuseRequired,true);
 assert.ok(report.dates.every(d=>!d.candidates.some(c=>c.approval==="AUTOMATICALLY_APPROVED")));
