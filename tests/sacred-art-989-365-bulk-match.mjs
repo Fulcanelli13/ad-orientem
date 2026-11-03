@@ -69,6 +69,14 @@ const christKing=report.dates.find(d=>d.date==="2026-10-25");
 assert.ok(christKing.protectedDateArtwork);
 const december=report.dates.find(d=>d.date==="2026-12-16");
 assert.equal(december.gospel.reference===null || typeof december.gospel.reference==="string",true);
+const agatha=report.dates.find(d=>d.date==="2026-02-05");
+assert.ok(agatha.candidates.some(x=>x.evidenceKind==="EXISTING_GALLERY_EXACT_SAINT_TITLE_SCREEN"),
+ "Existing Saint Agatha painting must be recovered without a new search");
+if(report.stats.sourceResolvedGospels===355){
+ const cana=report.dates.find(d=>d.date==="2026-01-18");
+ assert.ok(cana.candidates.some(x=>x.evidenceKind==="VERIFIED_GOSPEL_EXISTING_GALLERY_TITLE_SCREEN"),
+ "Cana wedding painting exists in historical gallery and must be Gospel screened");
+}
 const marian=report.dates.find(d=>d.date==="2026-01-03");
 assert.equal(marian.seasonalOrMarianReuseRequired,true);
 assert.ok(report.dates.every(d=>!d.candidates.some(c=>c.approval==="AUTOMATICALLY_APPROVED")));
