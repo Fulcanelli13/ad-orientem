@@ -134,7 +134,7 @@ try{
       document.querySelector("#aoPray435930.open .aoP435930Mount");
      const main=shell?.querySelector("main.aoP435930Body")||shell;
      const source=main?.innerText?.trim()||"";
-     const prayer=main?.querySelector(".aoP435930Prayer .aoP435930Text,.aoP435930Prayer .aoP435930Flip");
+     const prayer=main?.querySelector(".aoP435930Prayer .aoEssentialFlowTextToggle,.aoP435930Prayer .aoEssentialFlowPlain,.aoP435930Prayer .aoP435930Text,.aoP435930Prayer .aoP435930Flip");
      const libraryList=main?.querySelectorAll("[data-p435930-lib-open]").length||0;
      const reader=main?.querySelector(".aoDevoCardScroll,.aoRosaryPrayerScroll");
      const active=main?.querySelectorAll('.aoDevoParagraph[data-ao-devo-active="true"]').length||0;
