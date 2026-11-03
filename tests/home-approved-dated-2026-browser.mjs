@@ -28,8 +28,21 @@ const origin="http://127.0.0.1:"+server.address().port+"/index.html";
 const cases=[
  {date:"2026-02-18",width:390,principal:"tempora:Quadp3-3:1:v",
   artId:"met-436839",title:"The Penitent Magdalen",remote:true},
+ {date:"2026-03-19",width:390,principal:"sancti:03-19:1:w",
+  artId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",title:"The Dream of Saint Joseph",
+  asset:"/assets/prayer/released/joseph-whole-original.jpg"},
  {date:"2026-03-25",width:320,principal:"sancti:03-25:1:w",
-  artId:"met-438724",title:"The Annunciation",remote:false}
+  artId:"met-438724",title:"The Annunciation",
+  asset:"/assets/home/c3-approved-met/angelus-frameless.webp"},
+ {date:"2026-06-04",width:320,principal:"tempora:Pent01-4:1:w",
+  artId:"met-438434",title:"The Virgin Adoring the Host",
+  asset:"/assets/home/c3-approved-met/adoration-frameless.webp"},
+ {date:"2026-06-12",width:390,principal:"tempora:Pent02-5:1:w",
+  artId:"commons-morlete-sacred-heart-1759",title:"The Heart of Jesus",
+  asset:"/assets/prayer/released/heart-jesus-full-original.jpg"},
+ {date:"2026-12-24",width:320,principal:"sancti:12-24:1:v",
+  artId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",title:"The Dream of Saint Joseph",
+  asset:"/assets/prayer/released/joseph-whole-original.jpg"}
 ];
 let browser;const results=[];
 try{
@@ -76,8 +89,10 @@ try{
    assert.equal(art.id,spec.artId);
    assert.match(art.title,new RegExp(spec.title));
    assert.ok(art.loaded,"The user-selected real Home painting did not decode");
+   if(!spec.remote)assert.ok(art.naturalWidth>=500&&art.naturalHeight>=500,
+    "Locally released artwork did not decode at reasonable source resolution");
    if(spec.remote)assert.match(art.src,/commons\.wikimedia\.org/);
-   else assert.match(art.src,/\/assets\/home\/c3-approved-met\/angelus-frameless\.webp$/);
+   else assert.ok(art.src.endsWith(spec.asset),"Wrong original Home image for "+spec.date+": "+art.src);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    assert.ok(overflow<=1,"Mobile overflow "+spec.width+": "+overflow);
    await page.screenshot({path:resolve(out,"home-"+spec.date+"-"+spec.width+".png"),
