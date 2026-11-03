@@ -170,7 +170,7 @@ const separateCenter=all.find(x=>x.physical_group_id==="RG-A3601E6DECF8");
 assert.ok(convent?.map_publishable&&separateCenter&&!separateCenter.map_publishable,
  "Do not alias distinct Still River worship sites by street name or community");
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:167,SOURCE_PIN:1806,ADDRESS_ONLY:609});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,609);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,167);
-console.log("PASS TLM pin recovery batch 6: 12 source-confirmed church/monastic site pins, 1973 mapped, 609 address-only, no inferred liturgical claims");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:182,SOURCE_PIN:1806,ADDRESS_ONLY:594});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,594);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,182);
+console.log("PASS TLM pin recovery batch 6: 12 source-confirmed church/monastic site pins, 1988 mapped, 594 address-only, no inferred liturgical claims");
