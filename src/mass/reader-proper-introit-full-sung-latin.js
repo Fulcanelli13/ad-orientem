@@ -25,14 +25,16 @@ export function selected1962IntroitSungText({part,scoreId,sourceLatin,originalGa
  const lines=textLines(sourceLatin);
  if(lines.length<4||lines.length>8)fail("INTROIT_SELECTED_SOURCE_LINES_INCOMPLETE");
  const antiphonLines=lines.map((s,i)=>({s,i})).filter(x=>/^[℣℟]\s*\./u.test(x.s));
- if(antiphonLines.length!==2||antiphonLines[0].i>=antiphonLines[1].i)
+ // Some selected 1962 sources prefix the *Psalm verse* with ℣. as well.
+ // The antiphon is the FIRST and LAST ℣ text, verified lexically below.
+ if(antiphonLines.length<2||antiphonLines[0].i>=antiphonLines.at(-1).i)
   fail("INTROIT_ANTIPHON_REPETITION_NOT_RESOLVED");
- const a=stripCue(antiphonLines[0].s),repeat=stripCue(antiphonLines[1].s);
+ const a=stripCue(antiphonLines[0].s),repeat=stripCue(antiphonLines.at(-1).s);
  if(normalized(a)!==normalized(repeat))
   fail("INTROIT_SELECTED_1962_ANTIPHON_REPEAT_DIFFERS");
  const gloria=lines.map((s,i)=>({s,i})).filter(x=>/^Gl[oó]ria\s+Patri\b/i.test(x.s));
  if(gloria.length>1)fail("INTROIT_AMBIGUOUS_GLORIA_SOURCE");
- const lastVerseIndex=gloria.length?gloria[0].i:antiphonLines[1].i;
+ const lastVerseIndex=gloria.length?gloria[0].i:antiphonLines.at(-1).i;
  const psalm=selectedVerse(lines,[antiphonLines[0].i,lastVerseIndex]);
  const nodes=[
   {role:"INTROIT_ANTIPHON",label:"Introit · antiphon",text:a},
