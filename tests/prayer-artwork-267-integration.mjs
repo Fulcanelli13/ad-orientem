@@ -3,8 +3,7 @@ import {readFileSync} from "node:fs";
 import {
  PRAYER_ART_EDITORIAL_SLOTS_V1,PRAYER_ART_EDITORIAL_PROVENANCE_V1,prayerEditorialSlot
 } from "../src/pray/editorial-artwork-assignments.v1.js";
-import {resolvePrayerEditorialArtwork,prayerEditorialArtworkMarkup,prayerEditorialPublicationSummary} from "../src/pray/editorial-artwork-resolver.v1.js";
-import {PRAY_DOOR_ART_SLOTS_V1,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
+import {resolvePrayerEditorialArtwork,prayerEditorialArtworkMarkup,prayerEditorialPublicationSummary,PRAY_DOOR_ART_SLOTS_V1,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
 import {RELEASED_MODULE_PAINTINGS} from "../src/art/released-module-paintings.v1.js";
 
 const source=p=>readFileSync(new URL("../"+p,import.meta.url),"utf8");

@@ -36,8 +36,7 @@ import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,sy
 import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
-import {prayerDoorArtSlot} from "./art-slot-map.v1.js";
-import {prayerEditorialArtworkMarkup} from "./editorial-artwork-resolver.v1.js";
+import {prayerDoorArtSlot,prayerEditorialArtworkMarkup} from "./art-slot-map.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";

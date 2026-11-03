@@ -1,5 +1,4 @@
-import {prayerDoorArtSlot} from "./art-slot-map.v1.js";
-import {resolvePrayerEditorialArtwork} from "./editorial-artwork-resolver.v1.js";
+import {prayerDoorArtSlot,resolvePrayerEditorialArtwork} from "./art-slot-map.v1.js";
 import {releasedModulePhoto,releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./released-module-photo-styles.js";
 /**
