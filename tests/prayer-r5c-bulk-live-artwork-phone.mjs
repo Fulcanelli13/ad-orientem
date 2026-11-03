@@ -82,9 +82,17 @@ try{
    await go("pray.angelus");
    await page.locator(rootSel+" .aoP435930AngelusReader").waitFor({timeout:12000});
    assert.equal(await page.locator(rootSel+" .aoP435930PrayerUnit").count(),8,"Original Angelus units changed");
+   // The source-owned Angelus picks dawn, noon or dusk from the local clock.
+   // Validate its actual selected image BEFORE observing or moving the
+   // prayer-card rail: progression intentionally dismisses the entry cover.
+   const hourArt=page.locator(rootSel+' .aoClaudeHorariumPlate [data-ao-editorial-slot]');
+   await hourArt.waitFor({state:"attached",timeout:12000});
+   const hourSlot=await hourArt.getAttribute("data-ao-editorial-slot");
+   assert.ok(["STG-pray.angelus-01","STG-pray.angelus-02","STG-pray.angelus-03"].includes(hourSlot),
+    "Angelus hour cover is not one of the three exact approved paintings: "+hourSlot);
+   await check(hourSlot,".aoClaudeHorariumPlate",{visible:true});
    for(const slot of ["STG-pray.angelus-05","STG-pray.angelus-06","STG-pray.angelus-07"])
     await check(slot,".aoP435930AngelusSequence");
-   await check("STG-pray.angelus-02",".aoClaudeHorariumPlate",{visible:true});
 
    // Benediction public rite is not a devotional slide show. Its Exposition
    // photo belongs inside its original source text surface, before the words.
