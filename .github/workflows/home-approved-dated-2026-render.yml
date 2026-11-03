@@ -1,0 +1,51 @@
+name: Home · actual approved 2026 date artwork render
+on:
+  pull_request:
+    paths:
+      - "src/home/approved-dated-artwork-2026.js"
+      - "src/home/presentation.js"
+      - "src/home/c3-gallery.js"
+      - "src/home/released-date-gospel-heroes-2026.js"
+      - "tests/home-approved-dated-2026-actual-render.mjs"
+      - "tests/home-approved-dated-2026-browser.mjs"
+      - ".github/workflows/home-approved-dated-2026-render.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-date-source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate authoritative Home artwork resolver and old galleries
+        run: |
+          node --check src/home/approved-dated-artwork-2026.js
+          node --check src/home/c3-gallery.js
+          node --check src/home/presentation.js
+          node tests/home-approved-dated-2026-actual-render.mjs
+          node tests/home-c3-gallery.mjs
+          node tests/home-released-gospel-art-2026.mjs
+  actual-home-phone-render:
+    needs: exact-date-source-contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+      - run: npx playwright install --with-deps chromium
+      - name: Navigate to actual 1962 date and decode approved painting in H7 Home
+        run: node tests/home-approved-dated-2026-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: approved-2026-date-art-actual-home-phone
+          path: artifacts/home-approved-dated-2026-browser/
+          retention-days: 14
+          if-no-files-found: warn
