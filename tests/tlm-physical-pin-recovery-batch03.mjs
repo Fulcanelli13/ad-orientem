@@ -69,5 +69,5 @@ assert.equal(readingSite.status,"RESEARCH-LISTED · MASS UNVERIFIED");
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
 console.log("PASS TLM pin recovery batch 3: 10 sites across GB FR IT US, 2025 map markers, 557 still card-only, no invented Mass or photograph");
