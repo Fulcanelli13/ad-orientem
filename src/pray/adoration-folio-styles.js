@@ -597,16 +597,10 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  box-shadow:0 0 11px rgba(248,177,67,.72);
 }
 
-/* The final guided-method action is ONE button, not the legacy two-column
-   Previous/Next grid. Avoid intrinsic min-content overflow on 320px phones. */
-#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoP435930FinalExit{
- display:flex!important;flex-direction:column!important;align-items:stretch!important;
- box-sizing:border-box!important;width:100%!important;max-width:100%!important;
- min-width:0!important;grid-template-columns:minmax(0,1fr)!important;
-}
-#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoP435930FinalExit>.aoP435930Primary{
- box-sizing:border-box!important;flex:1 1 auto!important;width:100%!important;
- max-width:100%!important;min-width:0!important;overflow-wrap:anywhere!important;
+/* The last active lamp caption used right:-12px, extending outside the
+   320px reader. Keep its approved caption inside the seventh lamp's edge. */
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoStops>.aoDevoStop:last-child .aoDevoStopTitle{
+ right:0!important;overflow-wrap:anywhere!important;
 }
 
 `;
