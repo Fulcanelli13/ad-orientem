@@ -7,13 +7,15 @@
     "dates": 365,
     "priorImageMapped": 25,
     "newContextualLocalMapped": 105,
-    "totalProposedMapped": 130,
-    "pendingOrHeld": 235,
+    "newFrozenExactSourcePreviews": 4,
+    "totalProposedMapped": 134,
+    "pendingOrHeld": 231,
     "explicitDateSelections": 53,
     "rightsHeld": 2,
-    "DATE_SELECTED_IMAGE_UNRELEASED": 27,
+    "DATE_SELECTED_IMAGE_UNRELEASED": 23,
     "NEW_CONTEXTUAL_LOCAL_IMAGE_MAPPED": 105,
     "RESEARCH_LEADS_NO_APPROVED_DATE_IMAGE": 151,
+    "FROZEN_EXACT_SOURCE_PREVIEW_MAPPED": 4,
     "NO_APPROVED_DATE_IMAGE": 55,
     "PRIOR_DATE_IMAGE_MAPPED": 25,
     "DATE_SELECTED_IMAGE_RIGHTS_HELD": 2
@@ -23,7 +25,8 @@
     "Context art is NOT claimed as Gospel scene or date-approved feast painting",
     "Other source research, the 25 approved source-photo decisions, and 989 gallery groups are NOT automatically publishable",
     "Explicit 53-date painting choices, two rights holds, historic exclusions and particular 1962 resolved principal remain authoritative",
-    "Prior 25 mappings include remote Commons previews and do NOT imply 25 offline masters or passed full-year browser tests"
+    "Prior 25 mappings include remote Commons previews and do NOT imply 25 offline masters or passed full-year browser tests",
+    "Four additional exact previously selected Commons photographs are REMOTE-only previews; not native/crop approved and not four new curatorial approvals."
   ],
   "exceptions": [
     {
@@ -45,18 +48,6 @@
       "principalId": "tempora:Nat2-0:2:w",
       "status": "RESEARCH_LEADS_NO_APPROVED_DATE_IMAGE",
       "researchSourceRows": 2
-    },
-    {
-      "date": "2026-01-06",
-      "observance": "Epiphany of the Lord",
-      "rank": "I",
-      "principalId": "sancti:01-06:1:w",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "Adoration of the Magi",
-        "artist": "Peter Paul Rubens"
-      },
-      "researchSourceRows": 6
     },
     {
       "date": "2026-01-11",
@@ -361,18 +352,6 @@
         "artist": "AI-derived after Giacomo Cavedone"
       },
       "researchSourceRows": 0
-    },
-    {
-      "date": "2026-03-15",
-      "observance": "IV Sunday of Lent",
-      "rank": "I",
-      "principalId": "tempora:Quad4-0:1:pv",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "Miracle of Loaves and Fishes",
-        "artist": "Giovanni Lanfranco"
-      },
-      "researchSourceRows": 1
     },
     {
       "date": "2026-03-22",
@@ -935,18 +914,6 @@
       "researchSourceRows": 0
     },
     {
-      "date": "2026-07-01",
-      "observance": "The Precious Blood of Our Lord Jesus Christ",
-      "rank": "I",
-      "principalId": "sancti:07-01:1:r",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "The Lance Thrust",
-        "artist": "Anthony van Dyck"
-      },
-      "researchSourceRows": 1
-    },
-    {
       "date": "2026-07-02",
       "observance": "Visitation of the Blessed Virgin Mary",
       "rank": "II",
@@ -1477,18 +1444,6 @@
       "principalId": "sancti:09-28:3:r",
       "status": "RESEARCH_LEADS_NO_APPROVED_DATE_IMAGE",
       "researchSourceRows": 2
-    },
-    {
-      "date": "2026-09-29",
-      "observance": "Dedication of St. Michael the Archangel",
-      "rank": "I",
-      "principalId": "sancti:09-29:1:w",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
-      "frozenPainting": {
-        "title": "Saint Michael Defeating Satan",
-        "artist": "Guido Reni"
-      },
-      "researchSourceRows": 1
     },
     {
       "date": "2026-09-30",
@@ -2073,7 +2028,7 @@
       "observance": "Epiphany of the Lord",
       "rank": "I",
       "principalId": "sancti:01-06:1:w",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "FROZEN_EXACT_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "Adoration of the Magi",
         "artist": "Peter Paul Rubens"
@@ -2637,7 +2592,7 @@
       "observance": "IV Sunday of Lent",
       "rank": "I",
       "principalId": "tempora:Quad4-0:1:pv",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "FROZEN_EXACT_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "Miracle of Loaves and Fishes",
         "artist": "Giovanni Lanfranco"
@@ -3637,7 +3592,7 @@
       "observance": "The Precious Blood of Our Lord Jesus Christ",
       "rank": "I",
       "principalId": "sancti:07-01:1:r",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "FROZEN_EXACT_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "The Lance Thrust",
         "artist": "Anthony van Dyck"
@@ -4365,7 +4320,7 @@
       "observance": "Dedication of St. Michael the Archangel",
       "rank": "I",
       "principalId": "sancti:09-29:1:w",
-      "status": "DATE_SELECTED_IMAGE_UNRELEASED",
+      "status": "FROZEN_EXACT_SOURCE_PREVIEW_MAPPED",
       "frozenPainting": {
         "title": "Saint Michael Defeating Satan",
         "artist": "Guido Reni"
