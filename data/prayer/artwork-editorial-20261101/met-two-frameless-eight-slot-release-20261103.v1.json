@@ -1,0 +1,84 @@
+{
+  "schema": "AO_PRAYER_MUSEUM_TWO_FRAMED_PHOTO_RELEASE_STAGE_V1",
+  "asOf": "2026-11-03",
+  "governance": "DRAFT_NOT_YET_PRODUCTION",
+  "sourceBatchPr": 2332,
+  "sourceAcquisitionHash": "verified byte-identical official Met JPEG originals",
+  "policy": [
+    "No editorial changes to 267 canonical slots.",
+    "Trim only proven uniform black museum-image outer padding; never crop a single painted pixel.",
+    "Retain the institutionally supplied original bytes with SHA-256 independently of the derivative.",
+    "Exact source URL and slot identity join; protected, held, disputed Sodoma/Rubens works remain unavailable.",
+    "Pillow 12.3.0 derivative JPEG quality90 subsampling0 optimizeTrue; verify pixel QA on mobile and attribution.",
+    "No production release before required CI and real-browser acceptance."
+  ],
+  "expectedSlotCount": 8,
+  "works": [
+    {
+      "artId": "latour",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "source": "https://www.metmuseum.org/art/collection/search/436839",
+      "objectId": 436839,
+      "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
+      "original": "assets/prayer/released/latour-penitent-magdalen-met-original.jpg",
+      "image": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+      "sha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "bytes": 3255733,
+      "width": 2947,
+      "height": 4000,
+      "bbox": [
+        166,
+        158,
+        2754,
+        3826
+      ],
+      "slots": [
+        "COV-daily.nightly_examen",
+        "COV-sacrament_act_of_contrition",
+        "STG-pray.montfort_consecration-01",
+        "STG-pray.montfort_consecration-02",
+        "STG-pray.confession-02"
+      ],
+      "rights": "Met Open Access · public domain (CC0)"
+    },
+    {
+      "artId": "giordano-flight",
+      "title": "The Flight into Egypt",
+      "artist": "Luca Giordano",
+      "source": "https://www.metmuseum.org/art/collection/search/436503",
+      "objectId": 436503,
+      "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-24117-001.jpg",
+      "original": "assets/prayer/released/giordano-flight-egypt-met-original.jpg",
+      "image": "assets/prayer/released/giordano-flight-egypt-frameless.jpg",
+      "sha256": "0be369159ddbe81cb92d7f230de8d67baf5dc174bdf471bc3ffe9c33edc2bc51",
+      "bytes": 4852436,
+      "width": 3188,
+      "height": 4000,
+      "bbox": [
+        22,
+        54,
+        3138,
+        3948
+      ],
+      "slots": [
+        "STG-prayer.seven_sorrows_chaplet-02",
+        "STG-pray.st_joseph_seven_sorrows-05",
+        "STG-pray.st_joseph_seven_sorrows-06"
+      ],
+      "rights": "Met Open Access · public domain (CC0)"
+    }
+  ],
+  "stillHeld": [
+    {
+      "metObject": 437542,
+      "slots": 6,
+      "reason": "WORKSHOP_OF_RUBENS_NOT_RUBENS"
+    },
+    {
+      "cmaObject": "1916.786",
+      "slots": 9,
+      "reason": "FOLLOWER_OF_SODOMA_NOT_SODOMA"
+    }
+  ]
+}
