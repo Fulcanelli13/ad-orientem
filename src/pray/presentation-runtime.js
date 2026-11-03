@@ -1914,8 +1914,11 @@ function renderConfession(){
  if(cardSequence){
   const card=cardSequence[cardIndex];
   const title=card.kind==='questions'?card.title:isFr()?card.fr:card.en;
+  const contritionArtwork=CONF.stage===2&&card.id==='contrition-penance'?
+   prayerEditorialArtworkMarkup('STG-pray.confession-02',{className:'aoPrayerEditorialCardCover'}):'';
   body=`<section class="aoDevoCard" data-ao-devo-card="${esc(card.id)}">
     <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${cardIndex+1} / ${cardSequence.length}</small><h2 class="aoDevoCardTitle">${esc(title)}</h2></header>
+    ${contritionArtwork}
     <div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${body}</div>
   </section>`;
  }
@@ -2380,6 +2383,10 @@ function renderMontfortB26(){
  const count=MONTFORT.completed.filter(n=>n>=1&&n<=33).length;
  const pct=Math.round(count*100/33);
  const title=L('Montfort · Consecration to Jesus through Mary','Montfort · Consécration à Jésus par Marie');
+ // The two existing approved phase paintings are editorial stages, not 33 invented daily images.
+ const montfortStage=phase?.id==='spirit_world'?'STG-pray.montfort_consecration-01':
+  phase?.id==='self'?'STG-pray.montfort_consecration-02':null;
+ const montfortStageArt=montfortStage?prayerEditorialArtworkMarkup(montfortStage,{className:'aoPrayerEditorialCardCover'}):'';
  const phaseRail=MONTFORT_B26_PHASES.map((p,i)=>'<button type="button" data-p435930-montfort-phase="'+p.first+'" '+(phase?.id===p.id?'aria-current="step"':'')+'><span>'+esc(i===0?L('12 days','12 jours'):L('Week ','Semaine ')+i)+'</span><br>'+esc(isFr()?p.titleFr:p.titleEn)+'</button>').join('');
  const canonicalPrayerIds=ending?[]:phase.canonicalIds||[];
  const hasCanonicalLatin=canonicalPrayerIds.some(id=>!!DATA.prayers?.[id]?.la);
@@ -2405,6 +2412,7 @@ function renderMontfortB26(){
  const sourceLinks=[MONTFORT_B26_SOURCE.instructionsWitness,MONTFORT_B26_SOURCE.originalActWitness,MONTFORT_B26_SOURCE.originalScanWitness].map((url,i)=>'<p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+esc(i===0?L('Original 1863 instructions (digital)','Instructions originales de 1863 (numériques)'):i===1?L('Faber 1863 consecration act','Acte de consécration, Faber 1863'):L('Historical book edition and provenance','Édition historique et provenance'))+'</a></p>').join('');
  return head(title,L('12 days + three weeks · original source-directed programme','12 jours + trois semaines · programme conforme à la source'))+
   '<main class="aoP435930Body aoMontfortB26" data-ao-montfort-b26-reader>'+
+  montfortStageArt+
   '<p class="aoMontfortB26Intro">'+esc(L('33 days of preparation, followed by the act on the chosen consecration day. Montfort gives four phases, not 33 distinct authored daily meditations.','33 jours de préparation, suivis de l’acte à la date choisie. Montfort décrit quatre périodes, non 33 méditations quotidiennes de sa composition.'))+'</p>'+
   '<div class="aoMontfortB26Picker"><label for="ao-montfort-b26-date">'+esc(L('Consecration date','Date de consécration'))+'</label><input id="ao-montfort-b26-date" type="date" value="'+esc(MONTFORT.target)+'" data-p435930-montfort-target aria-label="'+esc(L('Choose consecration date','Choisir la date de consécration'))+'"/></div>'+
   '<p class="aoMontfortB26Note">'+esc(L('Preparation: ','Préparation : ')+w.start+L(' to ',' au ')+w.lastPreparationDay+L(' · Consecration: ',' · Consécration : ')+w.target)+'. '+esc(todayNote)+'</p>'+
@@ -2426,6 +2434,8 @@ function renderJosephSeven(){
  const title=L('Seven Sorrows and Joys of St Joseph','Sept douleurs et sept joies de saint Joseph');
  const progress=Math.round((JOSEPH_SEVEN.step+1)*100/JOSEPH_SEVEN_STEP_COUNT_B24);
  const josephCover=JOSEPH_SEVEN.step===0?releasedModulePhotoMarkup('joseph',{className:'aoPrayerJosephCover'}):'';
+ const josephStageArt=JOSEPH_SEVEN.step===4||JOSEPH_SEVEN.step===5?
+  prayerEditorialArtworkMarkup('STG-pray.st_joseph_seven_sorrows-'+String(JOSEPH_SEVEN.step+1).padStart(2,'0'),{className:'aoPrayerEditorialCardCover'}):'';
  const rail=Array.from({length:JOSEPH_SEVEN_STEP_COUNT_B24},(_,i)=>'<button type="button" data-p435930-joseph-step="'+i+'" aria-label="'+esc(i===7?L('Closing prayer','Prière finale'):L('Prayer','Prière')+' '+(i+1))+'" '+(i===JOSEPH_SEVEN.step?'aria-current="step"':'')+'>'+esc(i===7?L('End','Fin'):String(i+1))+'</button>').join('');
  const notice=L('The seven historical supplications are available in English only. The Our Father, Hail Mary and Glory Be reuse Ad Orientem’s existing translations.','Les sept prières historiques sont présentées en anglais, sans traduction française vérifiée. Le Notre Père, le Je vous salue Marie et le Gloire au Père réutilisent les traductions déjà présentes.');
  const sourceLink=JOSEPH_SEVEN_SORROWS_SOURCE_B24.sourceLinks.map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(i===0?L('1910 digital text','Texte numérique de 1910'):i===1?L('1910 original scan (not yet collated)','Fac-similé de 1910 (non collationné)'):L('1857 distinct edition','Édition distincte de 1857'))+'</a>').join('');
@@ -2440,7 +2450,7 @@ function renderJosephSeven(){
   josephCover+
   '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+progress+'" aria-label="'+esc(L('Prayer progress','Progression de la prière'))+'"><span style="width:'+progress+'%"></span></div>'+
   '<div class="aoJosephSevenRail" role="group" aria-label="'+esc(L('Choose one of seven sorrows and the conclusion','Choisir une des sept douleurs ou la conclusion'))+'">'+rail+'</div>'+
-  '<article class="aoJosephSevenCard"><p class="aoJosephSevenNotice">'+esc(notice)+'</p>'+body+'</article>'+
+  '<article class="aoJosephSevenCard">'+josephStageArt+'<p class="aoJosephSevenNotice">'+esc(notice)+'</p>'+body+'</article>'+
   '<div class="aoJosephSevenNav"><button type="button" data-p435930-joseph-prev '+(JOSEPH_SEVEN.step===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
   (ending?'<button type="button" data-p435930-joseph-finish>'+esc(L('Finish','Terminer'))+'</button>':'<button type="button" data-p435930-joseph-next>'+esc(JOSEPH_SEVEN.step===6?L('Concluding prayer','Prière finale'):L('Next','Suivant'))+'</button>')+'</div>'+
   '<details class="aoJosephSevenSource"><summary>'+esc(L('Source and textual limitations','Source et limites textuelles'))+'</summary><p>'+esc(L('The Raccolta (1910), no. 300, pp. 274–275; historical English digital transcription. A photographed edition has been located, but direct word-for-word collation of the printed pages remains outstanding. The separately numbered no. 301 is a St Joseph novena, not this devotion. Historical indulgence grants are not represented as current.','Raccolta (1910), n° 300, pp. 274–275, transcription anglaise historique. Le fac-similé a été localisé, sans collation mot à mot des pages imprimées. Le n° 301 est une neuvaine distincte ; aucune indulgence ancienne n’est présentée comme actuelle.'))+'</p>'+sourceLink+'</details></main>';
@@ -4105,7 +4115,7 @@ function onClick(e){
   if(b.hasAttribute('data-p435930-montfort-prev')){MONTFORT.day=Math.max(1,(MONTFORT.day||1)-1);return render()}
   if(b.hasAttribute('data-p435930-montfort-next')){MONTFORT.day=Math.min(34,(MONTFORT.day||1)+1);return render()}
   if(b.hasAttribute('data-p435930-montfort-today')){MONTFORT.day=w?.dayIndex||1;return render()}
-  if(b.hasAttribute('data-p435930-montfort-phase')){const day=Number(b.dataset.p435930MontfortPhase);if(MONTFORT_B26_PHASES.some(p=>p.first===day)){MONTFORT.day=day;return render()};return}
+  if(b.hasAttribute('data-p435930-montfort-phase')){const day=Number(b.dataset.p435930MontfortPhase);if(MONTFORT_B26_PHASES.some(p=>p.first===day)){MONTFORT.day=day;render();queueMicrotask(()=>{const m=mount();if(m)m.scrollTop=0});return};return}
   if(b.hasAttribute('data-p435930-montfort-rosary'))return open('pray.rosary',{returnContext:null});
  }
  if(view==='josephSeven'){

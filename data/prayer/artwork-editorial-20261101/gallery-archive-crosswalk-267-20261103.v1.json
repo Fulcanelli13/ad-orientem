@@ -24,7 +24,7 @@
     },
     "productionReleased": {
       "path": "src/art/released-module-paintings.v1.js",
-      "blobSha": "beb55060d796e40f76201f94d05944d5028feabf"
+      "blobSha": "7fc22517075a0223ad9b21c2e0a9701919e1e94b"
     },
     "excludedFromThisPass": [
       "data/artwork/research-source-records-3205.v1.json — 1.96 MB source file exceeds connected file reader limit; requires repository-local CI audit",
@@ -43,9 +43,9 @@
     "positions": 267,
     "states": {
       "PROVISIONAL_NOT_PUBLISHED": 22,
-      "APPROVED_EXACT_PHOTO_PENDING": 146,
+      "APPROVED_EXACT_PHOTO_PENDING": 138,
       "SCOPE_HOLD": 1,
-      "PUBLISHED_EXACT_PHOTO": 43,
+      "PUBLISHED_EXACT_PHOTO": 51,
       "INHERITED_POOL_NO_FIXED_PAINTING": 5,
       "PROTECTED_EXISTING_COVER": 5,
       "SOURCE_IDENTITY_UNVERIFIED": 31,
@@ -58,7 +58,7 @@
     "archive20ExactURLPositions": 32,
     "archive20TitleArtistOnlyPositions": 16,
     "archivedSourcePresentInUnpublishedPositions": 19,
-    "pendingDistinctWorkSourceKeys": 75,
+    "pendingDistinctWorkSourceKeys": 73,
     "pendingArchivedWorkCandidates": 7
   },
   "pendingDistinctWorksByPotentialReuse": [
@@ -126,28 +126,6 @@
       "archivedSourceAvailable": false,
       "archiveModules": [],
       "gallery989GroupIDs": [],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Georges de La Tour",
-        "title": "The Penitent Magdalen",
-        "sourcePage": "https://www.metmuseum.org/art/collection/search/436839"
-      },
-      "positionCount": 5,
-      "slots": [
-        "COV-daily.nightly_examen",
-        "COV-sacrament_act_of_contrition",
-        "STG-pray.montfort_consecration-01",
-        "STG-pray.montfort_consecration-02",
-        "STG-pray.confession-02"
-      ],
-      "archivedSourceAvailable": false,
-      "archiveModules": [],
-      "gallery989GroupIDs": [
-        "CANONICAL::met-436839",
-        "PRAYER::confession--latour-magdalen"
-      ],
       "publicationPermission": false
     },
     {
@@ -267,25 +245,6 @@
       "gallery989GroupIDs": [
         "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
         "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Luca Giordano",
-        "title": "The Flight into Egypt",
-        "sourcePage": "https://www.metmuseum.org/art/collection/search/436503"
-      },
-      "positionCount": 3,
-      "slots": [
-        "STG-prayer.seven_sorrows_chaplet-02",
-        "STG-pray.st_joseph_seven_sorrows-05",
-        "STG-pray.st_joseph_seven_sorrows-06"
-      ],
-      "archivedSourceAvailable": false,
-      "archiveModules": [],
-      "gallery989GroupIDs": [
-        "REVIEW::met:436503"
       ],
       "publicationPermission": false
     },
@@ -3507,8 +3466,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "latour",
+          "path": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -3879,8 +3842,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "latour",
+          "path": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -6144,8 +6111,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "giordano-flight",
+          "path": "assets/prayer/released/giordano-flight-egypt-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -7458,8 +7429,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "latour",
+          "path": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -7502,8 +7477,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "latour",
+          "path": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -11981,8 +11960,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "giordano-flight",
+          "path": "assets/prayer/released/giordano-flight-egypt-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -12024,8 +12007,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "giordano-flight",
+          "path": "assets/prayer/released/giordano-flight-egypt-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -13126,8 +13113,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "latour",
+          "path": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+          "releasePr": 2354
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -13463,10 +13454,10 @@
   ],
   "releaseManifestSnapshot": {
     "source": "src/art/released-module-paintings.v1.js",
-    "sha": "beb55060d796e40f76201f94d05944d5028feabf",
-    "expectedReleasePr": 2340,
-    "exactReleasedPhotographs": 14,
-    "slotTransitions": 15,
-    "note": "Draft release branch snapshot for PR2340; not published to production or approved for merge until complete acceptance."
+    "sha": "7fc22517075a0223ad9b21c2e0a9701919e1e94b",
+    "expectedReleasePr": 2354,
+    "exactReleasedPhotographs": 16,
+    "slotTransitions": 8,
+    "note": "PR2354 draft snapshot, subject to CI/visual acceptance"
   }
 }
