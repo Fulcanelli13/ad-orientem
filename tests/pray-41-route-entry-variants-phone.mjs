@@ -97,6 +97,13 @@ try{
       await target.click({timeout:15000});
      }
     }
+    // Opening the Rosary first enters the original PrayerBook landing.
+    // The canonical exact-donor bead player mounts after its real Today tap.
+    if(id==="pray.rosary"){
+     const today=page.locator("#aoPrayerBookRoot.open [data-lab-rosary-today]");
+     await today.waitFor({state:"visible",timeout:12000});
+     await today.click();
+    }
     const expected=id==="pray.rosary"?"rosary":row.sourceFamily==="canonical-prayer"?
      "library":row.sourceFamily==="novena-programmes"?"novenas":
      row.sourceFamily==="traditional-pray"?"traditional-pray":internalPrayerView(id);
