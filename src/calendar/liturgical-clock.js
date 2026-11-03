@@ -256,6 +256,22 @@ export function renderLiturgicalClock({
  const byDate=new Map(feasts.filter(f=>f.date>activeDate).map(f=>[f.date,f]));
  if(observedNext)byDate.set(observedNext.date,observedNext);
  if(explicit)byDate.set(explicit.date,explicit);
+ // Near the end of a liturgical year, the current year's final class-I/II
+ // feasts may already have passed. Keep the Upcoming navigation connected to
+ // the NEXT Advent using the canonical adjacent-year celebration registry.
+ // This is a date landmark, not a claim that the next year's Proper is resolved.
+ // It must not enter the present year's dial or acquire observed status.
+ if(byDate.size<4){
+  const nextYearStart=addDaysIso(year.end,1);
+  const firstNext=buildMajorCelebrations(nextYearStart)
+   .find(candidate=>candidate.date>=nextYearStart);
+  if(firstNext&&firstNext.date>activeDate&&!byDate.has(firstNext.date)){
+   byDate.set(firstNext.date,{
+    date:firstNext.date,title:fr?firstNext.fr:firstNext.en,
+    observed:false,tier:"landmark"
+   });
+  }
+ }
  const upcoming=[...byDate.values()].sort((a,b)=>a.date.localeCompare(b.date)).slice(0,4);
  const cards=upcoming.map(c=>'<button type="button" data-cal-clock-open-day="'+E(c.date)+'" class="aoClockUpcomingItem">'
   +'<small>'+E(shortDate(c.date,fr))+'</small><span>'+E(c.title)+'</span>'

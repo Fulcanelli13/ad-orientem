@@ -87,6 +87,43 @@ try{
    await capture("01-entry-map");
    note.steps.push("entry map ready, one MapLibre canvas, Mass shortcut visible");
    const root=page.locator("#ao-find-modular-root");
+   // Approved desktop screen 7 is the actual 3-pane layout. Its left rail,
+   // MapLibre canvas and selected Place must be usable simultaneously.
+   const verifyDesktopAtlas=async(phase,profileSelector=null)=>{
+    if(width<900)return;
+    const g=await page.evaluate(selector=>{
+     const surface=document.querySelector("#ao-find-modular-root .aoHeritageSurface");
+     const rect=s=>s?.getBoundingClientRect?.();
+     const rail=rect(surface?.querySelector("[data-mapcn-discover-rail]"));
+     const search=rect(surface?.querySelector(".aoHeritageTools"));
+     const profile=selector?rect(surface?.querySelector(selector)):null;
+     const map=surface?.querySelector(".aoFindBody [data-find-map]");
+     const canvas=map?.querySelector("canvas.maplibregl-canvas");
+     const mapLeft=rail?.right||0,mapRight=profile?.left||innerWidth;
+     const x=(mapLeft+mapRight)/2,y=Math.round(innerHeight*.6);
+     const hit=document.elementFromPoint(x,y);
+     return {
+      rail:rail&&{left:rail.left,right:rail.right,top:rail.top,bottom:rail.bottom,width:rail.width},
+      search:search&&{left:search.left,right:search.right},
+      profile:profile&&{left:profile.left,right:profile.right,top:profile.top,bottom:profile.bottom,width:profile.width},
+      viewport:{width:innerWidth,height:innerHeight},mapCenter:{x,y},
+      blocked:Boolean(hit?.closest(".aoMapcnDiscoverRail,.aoHeritageCardLayer,.aoFindSheetBackdrop")),
+      sameCanvas:canvas===globalThis.__AO_VISITOR_MAP_CANVAS,
+      scrollOverflow:document.documentElement.scrollWidth-innerWidth,
+     };
+    },profileSelector);
+    assert.ok(g.rail&&g.rail.left>=8&&g.rail.top>=8&&g.rail.bottom<=g.viewport.height-8&&
+     g.rail.width>=250&&g.rail.width<=380,
+     phase+" must keep one source-backed left rail: "+JSON.stringify(g));
+    assert.ok(g.search&&g.search.left>=g.rail.right+8,
+     phase+" search must sit above map, not directory rail: "+JSON.stringify(g));
+    if(profileSelector)assert.ok(g.profile&&g.profile.left>=g.rail.right+75&&
+      g.profile.right<=g.viewport.width-8&&g.profile.top>=8&&
+      g.profile.bottom<=g.viewport.height-8&&g.profile.width>=290,
+      phase+" profile must dock on the right: "+JSON.stringify(g));
+    assert.ok(g.sameCanvas&&!g.blocked&&g.scrollOverflow<=2,
+     phase+" must leave the original map interactive: "+JSON.stringify(g));
+   };
    await page.evaluate(()=>{
     globalThis.__AO_VISITOR_MAP_CANVAS=document.querySelector(
       "#ao-find-modular-root .aoHeritageSurface [data-find-map] canvas.maplibregl-canvas");
@@ -111,23 +148,31 @@ try{
    assert.ok(await root.locator(".aoMapcnEditorialCarousel .aoMapcnEditorialCard").count()>0,
     "Sacred places must reuse the existing approved-photo viewport sheet");
    await mapReady("heritage");
+   await verifyDesktopAtlas("desktop Sacred Places map");
    await capture("01b-sacred-prototype-sheet");
    await discoverTab.click();
-   await page.waitForFunction(()=>{
+   await page.waitForFunction(desktop=>{
     const root=document.querySelector("#ao-find-modular-root");
     return root?.querySelector(".aoHeritageSurface")?.dataset.atlasEntry==="discover"
-      &&root?.querySelector("[data-mapcn-discover-rail]")?.dataset.discoverExpanded==="false";
-   },null,{timeout:15000});
+      &&root?.querySelector("[data-mapcn-discover-rail]")?.dataset.discoverExpanded===(desktop?"true":"false");
+   },width>=900,{timeout:15000});
    assert.equal(await discoverTab.getAttribute("aria-pressed"),"true");
    assert.equal(await page.evaluate(()=>globalThis.__AO_VISITOR_MAP_CANVAS===
     document.querySelector("#ao-find-modular-root .aoHeritageSurface [data-find-map] canvas")),true,
     "The Atlas entrance switch must never remount the MapLibre canvas");
-   note.steps.push("approved Discover / Sacred / Latin Mass entrances, Sacred photo-sheet and Discover peek on one MapLibre canvas");
+   note.steps.push("approved Discover / Sacred / Latin Mass entrances, mobile peek and full-height desktop rail on one MapLibre canvas");
 
    // Discover a curated, rights-approved, canonical Place. No network image hotlink.
    const rail=root.locator("[data-mapcn-discover-rail]");
    await rail.waitFor({state:"visible"});
-   assert.equal(await rail.getAttribute("data-discover-expanded"),"false");
+   await verifyDesktopAtlas("desktop initial map");
+   assert.equal(await rail.getAttribute("data-discover-expanded"),width>=900?"true":"false");
+   if(width>=900){
+    // A deliberate desktop collapse is reversible; default stays the full
+    // source-backed left rail, unlike the phone Discover peek.
+    await rail.locator("[data-mapcn-discover-toggle]").click();
+    assert.equal(await rail.getAttribute("data-discover-expanded"),"false");
+   }
    await rail.locator("[data-mapcn-discover-toggle]").click();
    assert.equal(await rail.getAttribute("data-discover-expanded"),"true");
    const featured=rail.locator(
@@ -145,6 +190,7 @@ try{
    const place=root.locator(
     '.aoHeritagePreview[data-explore-place-owner="place:FR:sanctuaire-notre-dame-de-lourdes"]');
    await place.waitFor({state:"visible",timeout:20000});
+   await verifyDesktopAtlas("desktop selected Place preview",".aoHeritagePreview");
    assert.equal((await page.evaluate(()=>globalThis.AO_FIND_APP_V1.status().selectedPlaceId)),
     "place:FR:sanctuaire-notre-dame-de-lourdes");
    assert.equal(await place.locator(".aoHeritageCardTitle").count(),1);
@@ -160,6 +206,9 @@ try{
    const full=root.locator(
     '.aoExplorePlaceSheet[data-explore-place-owner="place:FR:sanctuaire-notre-dame-de-lourdes"]');
    await full.waitFor({state:"visible",timeout:15000});
+   await verifyDesktopAtlas("desktop complete Place folio",".aoExplorePlaceSheet");
+   if(width>=900)assert.equal(await full.getAttribute("aria-modal"),"false",
+    "Desktop screen 7 keeps the interactive map behind a nonmodal right Place folio");
    assert.ok((await full.innerText()).includes("Lourdes"));
    const profileHero=full.locator(".aoExplorePlaceMedia img");
    await profileHero.waitFor({state:"visible"});

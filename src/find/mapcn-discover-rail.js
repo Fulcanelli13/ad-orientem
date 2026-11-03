@@ -68,8 +68,11 @@ export function renderMapcnDiscoverRail(vm){
      ?L(vm.language,"Places of the saints","Lieux des saints")
      :scoped?L(vm.language,"Sacred places in view","Lieux sacrés dans cette vue")
        :L(vm.language,"Sacred places","Lieux sacrés");
- let html='<aside class="aoMapcnDiscoverRail" data-mapcn-discover-rail data-discover-expanded="false" aria-label="'+esc(L(vm.language,"Documented sacred places","Lieux sacrés documentés"))+'">';
- html+='<div class="aoMapcnDiscoverHead"><button type="button" class="aoMapcnDiscoverToggle" data-mapcn-discover-toggle aria-expanded="false" aria-controls="ao-mapcn-discover-items">';
+ // Desktop screen 7 opens the persistent results rail by default; phones
+ // retain the approved low-profile Discover peek and its disclosure control.
+ const initiallyExpanded=Boolean(vm.desktopDocked);
+ let html='<aside class="aoMapcnDiscoverRail" data-mapcn-discover-rail data-discover-expanded="'+String(initiallyExpanded)+'" aria-label="'+esc(L(vm.language,"Documented sacred places","Lieux sacrés documentés"))+'">';
+ html+='<div class="aoMapcnDiscoverHead"><button type="button" class="aoMapcnDiscoverToggle" data-mapcn-discover-toggle aria-expanded="'+String(initiallyExpanded)+'" aria-controls="ao-mapcn-discover-items">';
  html+='<span class="aoMapcnDiscoverHeading"><small>'+L(vm.language,"DISCOVER · SACRED ATLAS","DÉCOUVRIR · ATLAS SACRÉ")+'</small>';
  html+='<span class="aoMapcnDiscoverTitle">'+title+'</span></span>';
  html+='<span class="aoMapcnDiscoverCount" aria-label="'+esc(L(vm.language,"Mapped places in this view","Lieux cartographiés dans cette vue"))+'">'+entries.length+'</span>';

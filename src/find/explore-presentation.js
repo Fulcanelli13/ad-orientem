@@ -167,7 +167,7 @@ function illustratedGuideHtml(profile,language){
 
 function placeSheet(vm){
   const profile=vm.selectedPlace;if(!profile)return "";
-  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet'+(profile.editorial_feature?' aoExplorePlaceEditorial':'')+'" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
+  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet'+(profile.editorial_feature?' aoExplorePlaceEditorial':'')+'" role="dialog" aria-modal="'+String(!vm.desktopDocked)+'" data-explore-place-owner="'+esc(profile.place_id)+'">';
 
 
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
@@ -753,6 +753,7 @@ function tlmFilters(vm){
 
 export function buildExploreViewModel({
   language="en",
+  desktopDocked=false,
   items=[],
   lens="tlm",
   counts={},
@@ -794,6 +795,7 @@ export function buildExploreViewModel({
   const addressOnly=list.filter(item=>!item?.map_publishable&&item?.address).length;
   return Object.freeze({
     language,
+    desktopDocked:Boolean(desktopDocked),
     items:list,
     lens,
     counts,
