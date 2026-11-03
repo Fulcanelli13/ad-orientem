@@ -131,7 +131,13 @@ try{
       readerVertical:reader?getComputedStyle(reader).overflowY:null,active,
       errorCount:document.querySelectorAll("[data-p435930-internal-route-error],[data-p435930-family-open-error],[data-p435930-home-error]").length,
       rosaryOriginal:rosary?Boolean(document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor]")):null,
-      uiLanguage:document.documentElement.lang};
+      uiLanguage:document.documentElement.lang,
+      overflowNodes:shell&&shell.scrollWidth-shell.clientWidth>2?[...shell.querySelectorAll("*")]
+        .map(el=>{const r=el.getBoundingClientRect(),p=shell.getBoundingClientRect();
+          return {node:el.tagName.toLowerCase()+"."+String(el.className||"").slice(0,85),
+            right:Math.round(r.right-p.left),width:Math.round(r.width),ownOverflow:el.scrollWidth-el.clientWidth};})
+        .filter(el=>el.right>shell.clientWidth+2||el.ownOverflow>2)
+        .sort((a,b)=>b.right-a.right).slice(0,12):[]};
     },{expected,id});
     report.cases.push({width,language,door:door||"search-or-library",...observed});
     assert.equal(observed.owner,expected,id+" opened the wrong reader at "+width+" "+language);
