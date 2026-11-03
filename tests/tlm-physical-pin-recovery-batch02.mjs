@@ -69,7 +69,7 @@ for(const hold of ["RG-1406AE6DA1E7","RG-16B82EFF8821"]){
   "Uncorroborated chapel/monastery positions must not be auto-promoted: "+hold);
 }
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:120,SOURCE_PIN:1806,ADDRESS_ONLY:656});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,656);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,120);
-console.log("PASS TLM site recovery batch 2: 6 exact identity-locked GB pins, 1926 mapped, 656 address-only, no inferred liturgy or media");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:130,SOURCE_PIN:1806,ADDRESS_ONLY:646});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,646);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,130);
+console.log("PASS TLM site recovery batch 2: 6 exact identity-locked GB pins, 1936 mapped, 646 address-only, no inferred liturgy or media");
