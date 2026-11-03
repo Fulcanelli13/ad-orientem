@@ -1,0 +1,63 @@
+name: Sacred Art · 989-group gallery × 365-day existing-source match
+on:
+  pull_request:
+    paths:
+      - "data/artwork/research-operational-989.v1.json"
+      - "data/artwork/research-source-records-3205.v1.json"
+      - "data/artwork/2026-prior-date-artwork-evidence.v1.json"
+      - "scripts/art/build-2026-daily-art-coverage.mjs"
+      - "tests/sacred-art-989-365-bulk-match.mjs"
+      - ".github/workflows/sacred-art-989-365-bulk-match.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  existing-gallery-source-match:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build 365-day research candidate ledger from the entire existing gallery
+        run: node scripts/art/build-2026-daily-art-coverage.mjs
+      - name: Verify frozen decisions, source IDs and all-day coverage
+        run: node tests/sacred-art-989-365-bulk-match.mjs
+      - name: Archive source-only bulk match
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2026-365-day-artwork-existing-gallery-source-match
+          path: artifacts/sacred-art-2026/365-existing-gallery-bulk-match.json
+          retention-days: 14
+          if-no-files-found: warn
+  verified-gospel-bulk-match:
+    needs: existing-gallery-source-match
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Chromium for the canonical 1962 DayResolver
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Resolve 365 selected Mass Gospels with actual source and Latin gate
+        run: node tools/calendar/audit-2026-home-calendar-gospel-artwork.mjs
+      - name: Crossmatch verified Gospels with the entire existing artwork gallery
+        run: |
+          node scripts/art/build-2026-daily-art-coverage.mjs --gospel-audit artifacts/calendar-gospel-home/2026-source-audit.json
+          node tests/sacred-art-989-365-bulk-match.mjs
+      - name: Preserve complete source and verified-Gospel candidate ledgers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2026-365-day-artwork-verified-gospel-bulk-match
+          path: |
+            artifacts/sacred-art-2026/365-existing-gallery-bulk-match.json
+            artifacts/calendar-gospel-home/2026-source-audit.json
+          retention-days: 14
+          if-no-files-found: warn
