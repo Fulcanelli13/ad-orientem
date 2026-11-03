@@ -6,7 +6,12 @@ const html=readFileSync(new URL("../tools/mass/proper-1961-first60-collation.htm
 assert.match(html,/<html lang="en"/);
 assert.match(html,/First 60 source-backed 1961 Proper scores/);
 assert.match(html,/20 Introits · 20 Offertories · 20 Communions/);
-assert.match(html,/createOfflineChantEngraver/);
+assert.doesNotMatch(html,/createOfflineChantEngraver|engraver\.engrave/);
+assert.match(html,/#engraveViewport\{display:none!important\}/);
+assert.match(html,/Experimental SVG engraving is disabled/);
+assert.match(html,/authentic 1961 printed notation/);
+assert.match(html,/#originalBookPanel\{grid-column:1;grid-row:1\}/);
+assert.match(html,/scroll\.scrollTop=.*anchorY/);
 assert.match(html,/sourceNoteGroupInventory/);
 assert.match(html,/fileInput/);
 assert.match(html,/sourceLatin/);
@@ -26,4 +31,4 @@ assert.ok(script?.length>3000);
 const result=spawnSync(process.execPath,["--check","--input-type=module"],
  {input:script,encoding:"utf8"});
 assert.equal(result.status,0,result.stderr);
-console.log("PASS first-60 original-GABC offline workbench: source, staff-group collation, complete-group review progress and JSON export; zero public-score actions");
+console.log("PASS first-60 original 1961 folio is primary, synthetic Exsurge preview disabled, GABC source-only staff group diagnostics and JSON review export retained; zero public-score actions");
