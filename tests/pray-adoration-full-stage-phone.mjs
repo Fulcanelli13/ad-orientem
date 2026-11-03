@@ -235,6 +235,21 @@ try{
        return el?.dataset.aoAdorationMode===mode&&+el.dataset.aoAdorationStep===index&&
         el.dataset.aoAdorationQuiet!=="true";
       },{mode,index},{timeout:10000});
+      // Quiet exit restores the focus runway in a microtask and then a
+      // requestAnimationFrame; test the settled paint, not an intermediate
+      // scroll produced during DOM remount and focus reconciliation.
+      await page.waitForFunction(({before})=>{
+       const el=document.querySelector("#aoPray435930.open .aoP435930AdorationReader .aoDevoCardScroll");
+       return el&&Math.abs(el.scrollTop-before)<=3;
+      },{before},{timeout:3000,polling:"raf"}).catch(async error=>{
+       const observed=await page.locator(sel+" .aoDevoCardScroll").evaluate(el=>({
+        top:el.scrollTop,max:el.scrollHeight-el.clientHeight,
+        current:document.activeElement?.outerHTML?.slice(0,350),
+        runway:el.dataset.aoFocusRunway,mode:el.closest("[data-ao-adoration-mode]")?.dataset.aoAdorationMode
+       }));
+       throw new Error(mode+"/"+index+" quiet return failed after settled paint: saved="+before+
+        " observed="+JSON.stringify(observed)+" "+String(error));
+      });
       const resumed=await page.locator(sel+" .aoDevoCardScroll").evaluate(el=>el.scrollTop);
       assert.ok(Math.abs(resumed-before)<=3,mode+"/"+index+" lost position on quiet return "+before+" => "+resumed);
       report.quietReturns.push({width,ui,mode,atStage:index,restoredScroll:true});
