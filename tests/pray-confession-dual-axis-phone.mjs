@@ -62,6 +62,23 @@ try{
  await page.waitForFunction(()=>Boolean(document.querySelector(
    "#aoPray435930.open .aoP435930ConfessionReader .aoDevoCardScroll .aoDevoParagraph[data-ao-devo-active='true']"
  )),null,{timeout:12000});
+ const continuous=page.locator(sel+" [data-p435930-conf-reading='continuous']");
+ assert.equal(await continuous.count(),1,"The source-owned examination must allow book-style reading");
+ await continuous.click();
+ const all=page.locator(sel+" [data-ao-confession-continuous='true']");
+ assert.equal(await all.count(),1,"Continuous examination must display one natural reading flow");
+ assert.equal(await all.locator("[data-ao-confession-source-card]").count(),5,
+  "Regular Confession must keep all five source-defined examination sections");
+ assert.equal(await all.locator("input,textarea,[contenteditable=true]").count(),0,
+  "Continuous examination must not solicit or store sins");
+ assert.ok((await all.locator(".aoConfessionContinuousQuestions li").count())>=20,
+  "All original regular examination prompts must remain present");
+ assert.equal(await page.locator(sel+" .aoDevoCard").count(),0,
+  "Continuous reading must not also render the constrained single card");
+ await page.screenshot({path:resolve(captures,"confession-390-examination-continuous.png"),animations:"disabled"});
+ await page.locator(sel+" [data-p435930-conf-reading='cards']").click();
+ assert.equal(await page.locator(sel+" .aoDevoCard").count(),1,
+  "The established source-owned card method must remain available");
  const state=()=>page.evaluate(()=>{
   const shell=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
   const card=shell?.querySelector(".aoDevoCard"),scroll=card?.querySelector(".aoDevoCardScroll");
