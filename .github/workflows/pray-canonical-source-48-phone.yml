@@ -1,0 +1,42 @@
+name: Prayer canonical source review mobile
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - src/pray/source-collation-notices.v1.js
+      - src/pray/presentation-runtime.js
+      - tests/pray-canonical-48-source-certification-phone.mjs
+      - data/pray/prayer-source-certification-inventory.v3.json
+      - package.json
+      - .github/workflows/pray-canonical-source-48-phone.yml
+  push:
+    branches: [main]
+    paths:
+      - src/pray/source-collation-notices.v1.js
+      - src/pray/presentation-runtime.js
+      - tests/pray-canonical-48-source-certification-phone.mjs
+      - data/pray/prayer-source-certification-inventory.v3.json
+      - .github/workflows/pray-canonical-source-48-phone.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canonical-source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify canonical source notices in English and French on mobile
+        run: npm run test:pray-48-source-disclosures
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-48-source-disclosure-evidence
+          path: artifacts/pray-canonical-48-source-review/48-source-disclosure-variants.json
+          if-no-files-found: warn
+          retention-days: 7
