@@ -22,8 +22,9 @@ export function tlmMapRailItems(items,center,{limit=12}={}){
     T(a.title).localeCompare(T(b.title))||
     T(a.item_id).localeCompare(T(b.item_id))).slice(0,Math.max(1,Math.min(24,Number(limit)||12))));
 }
-export function renderTlmMapResultRail({items=[],language="en",selectedId=null,center=null,loading=false}={}){
+export function renderTlmMapResultRail({items=[],language="en",selectedId=null,center=null,loading=false,addressOnlyCount=0}={}){
  const list=A(items);
+ const unpinned=Math.max(0,Math.floor(Number(addressOnlyCount)||0));
  const selected=tlmMapRailItems(list,center);
  const title=L(language,"Churches in this view","Églises dans cette vue");
  let html='<aside class="aoTlmMapRail" data-tlm-map-rail aria-label="'+E(L(language,
@@ -55,6 +56,10 @@ export function renderTlmMapResultRail({items=[],language="en",selectedId=null,c
    "Showing the closest "+selected.length+" of "+list.length+" mapped matches. Unmapped venues remain in List.",
    "Affichage des "+selected.length+" lieux les plus proches parmi "+list.length+" résultats cartographiés. Les lieux sans repère restent dans la liste."))+
    '</small><button type="button" data-tlm-map-open-directory>'+
-   E(L(language,"Open full directory","Ouvrir l’annuaire complet"))+'</button></footer></details></aside>';
+   E(L(language,"Open full directory","Ouvrir l’annuaire complet"))+'</button>'+
+   (unpinned?'<button type="button" data-tlm-map-open-unmapped>'+
+     E(L(language,"Browse "+unpinned+" unpinned church profiles",
+       "Consulter "+unpinned+" fiches d’églises sans repère"))+'</button>':"")+
+   '</footer></details></aside>';
  return html;
 }
