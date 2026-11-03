@@ -291,6 +291,19 @@ try{
       }
       assert.ok(await panel.locator(".aoJourneyNoLine").count()>0,
        "Never imply route geometry that is not certified");
+      if(width<800){
+       const handle=panel.locator("[data-explore-journey-sheet-toggle]");
+       assert.equal(await handle.getAttribute("aria-expanded"),"false",
+        "The pilgrimage sheet starts in map-first stage-card mode");
+       await handle.click();
+       await page.waitForFunction(()=>document.querySelector(".aoJourneyPanel")?.dataset.journeyExpanded==="true");
+       const expanded=await panel.evaluate(el=>el.getBoundingClientRect().height);
+       assert.ok(expanded>dims.height+45&&expanded<=dims.viewportHeight-118,
+        "Sheet expansion must expose stage details without leaving the map: "+expanded);
+       await assertP6Canvas("expanded pilgrimage sheet");
+       await panel.locator("[data-explore-journey-sheet-toggle]").click();
+       await page.waitForFunction(()=>document.querySelector(".aoJourneyPanel")?.dataset.journeyExpanded==="false");
+      }
       await assertP6Canvas("approved journey screen 6 stage focus");
      }
      await assertP6Canvas(mode+" "+direction);
