@@ -24,7 +24,7 @@
     },
     "productionReleased": {
       "path": "src/art/released-module-paintings.v1.js",
-      "blobSha": "643ab632845477a81a54d59656400689df83dc97"
+      "blobSha": "beb55060d796e40f76201f94d05944d5028feabf"
     },
     "excludedFromThisPass": [
       "data/artwork/research-source-records-3205.v1.json — 1.96 MB source file exceeds connected file reader limit; requires repository-local CI audit",
@@ -43,10 +43,10 @@
     "positions": 267,
     "states": {
       "PROVISIONAL_NOT_PUBLISHED": 22,
-      "APPROVED_EXACT_PHOTO_PENDING": 161,
+      "APPROVED_EXACT_PHOTO_PENDING": 146,
       "SCOPE_HOLD": 1,
+      "PUBLISHED_EXACT_PHOTO": 43,
       "INHERITED_POOL_NO_FIXED_PAINTING": 5,
-      "PUBLISHED_EXACT_PHOTO": 28,
       "PROTECTED_EXISTING_COVER": 5,
       "SOURCE_IDENTITY_UNVERIFIED": 31,
       "EDITORIAL_HOLD": 14
@@ -58,7 +58,7 @@
     "archive20ExactURLPositions": 32,
     "archive20TitleArtistOnlyPositions": 16,
     "archivedSourcePresentInUnpublishedPositions": 19,
-    "pendingDistinctWorkSourceKeys": 79,
+    "pendingDistinctWorkSourceKeys": 75,
     "pendingArchivedWorkCandidates": 7
   },
   "pendingDistinctWorksByPotentialReuse": [
@@ -106,27 +106,6 @@
       "archiveModules": [],
       "gallery989GroupIDs": [
         "CANONICAL::met-437542"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Bernardo Cavallino",
-        "title": "Adoration of the Shepherds",
-        "sourcePage": "https://clevelandart.org/art/1968.100"
-      },
-      "positionCount": 5,
-      "slots": [
-        "STG-pray.angelus-07",
-        "COV-pray.little_crown",
-        "STG-pray.little_crown-01",
-        "COV-novena.christmas",
-        "STG-novena.christmas-01"
-      ],
-      "archivedSourceAvailable": false,
-      "archiveModules": [],
-      "gallery989GroupIDs": [
-        "CANONICAL::cma-143644"
       ],
       "publicationPermission": false
     },
@@ -233,26 +212,6 @@
     },
     {
       "painting": {
-        "artist": "Albert Bouts (Netherlandish, 1451/55–1549)",
-        "title": "The Annunciation",
-        "sourcePage": "https://clevelandart.org/art/1942.635"
-      },
-      "positionCount": 4,
-      "slots": [
-        "STG-pray.angelus-04",
-        "STG-pray.angelus-05",
-        "STG-pray.angelus-06",
-        "STG-pray.rosary-02"
-      ],
-      "archivedSourceAvailable": false,
-      "archiveModules": [],
-      "gallery989GroupIDs": [
-        "CANONICAL::cma-122338"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
         "artist": "Hubert and Jan van Eyck",
         "title": "Adoration of the Mystic Lamb",
         "sourcePage": null
@@ -288,25 +247,6 @@
       ],
       "gallery989GroupIDs": [
         "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Abraham Hondius",
-        "title": "Christ among the Doctors",
-        "sourcePage": "https://www.metmuseum.org/art/collection/search/436672"
-      },
-      "positionCount": 3,
-      "slots": [
-        "STG-pray.rosary-06",
-        "STG-prayer.seven_sorrows_chaplet-03",
-        "STG-pray.st_joseph_seven_sorrows-07"
-      ],
-      "archivedSourceAvailable": false,
-      "archiveModules": [],
-      "gallery989GroupIDs": [
-        "CANONICAL::met-436672"
       ],
       "publicationPermission": false
     },
@@ -404,25 +344,6 @@
       "archiveModules": [],
       "gallery989GroupIDs": [
         "REVIEW::commons:93153411"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Laurent Girardin",
-        "title": "The Trinity",
-        "sourcePage": "https://clevelandart.org/art/1960.79"
-      },
-      "positionCount": 3,
-      "slots": [
-        "HERO-15",
-        "COV-foundations_sign_of_cross",
-        "COV-foundations_glory_be"
-      ],
-      "archivedSourceAvailable": false,
-      "archiveModules": [],
-      "gallery989GroupIDs": [
-        "CANONICAL::cma-136507"
       ],
       "publicationPermission": false
     },
@@ -2133,8 +2054,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "girardin",
+          "path": "assets/prayer/released/girardin-trinity-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -2927,8 +2852,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "bouts",
+          "path": "assets/prayer/released/bouts-annunciation-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -2970,8 +2899,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "bouts",
+          "path": "assets/prayer/released/bouts-annunciation-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -3013,8 +2946,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "bouts",
+          "path": "assets/prayer/released/bouts-annunciation-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -3056,8 +2993,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "cavallino",
+          "path": "assets/prayer/released/cavallino-shepherds-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -3696,8 +3637,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "girardin",
+          "path": "assets/prayer/released/girardin-trinity-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -3843,8 +3788,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "girardin",
+          "path": "assets/prayer/released/girardin-trinity-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -4596,8 +4545,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "bouts",
+          "path": "assets/prayer/released/bouts-annunciation-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -4766,8 +4719,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "hondius",
+          "path": "assets/prayer/released/hondius-doctors-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -5966,8 +5923,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "cavallino",
+          "path": "assets/prayer/released/cavallino-shepherds-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -6009,8 +5970,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "cavallino",
+          "path": "assets/prayer/released/cavallino-shepherds-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -6222,8 +6187,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "hondius",
+          "path": "assets/prayer/released/hondius-doctors-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -6553,8 +6522,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "cavallino",
+          "path": "assets/prayer/released/cavallino-shepherds-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -6596,8 +6569,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "cavallino",
+          "path": "assets/prayer/released/cavallino-shepherds-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -12090,8 +12067,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "hondius",
+          "path": "assets/prayer/released/hondius-doctors-original.jpg",
+          "releasePr": 2340
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -13482,10 +13463,10 @@
   ],
   "releaseManifestSnapshot": {
     "source": "src/art/released-module-paintings.v1.js",
-    "sha": "643ab632845477a81a54d59656400689df83dc97",
-    "expectedReleasePr": 2302,
-    "exactReleasedPhotographs": 10,
-    "slotTransitions": 12,
-    "note": "Runtime snapshot projection for PR2302. Actual app render and QA remain separate checks."
+    "sha": "beb55060d796e40f76201f94d05944d5028feabf",
+    "expectedReleasePr": 2340,
+    "exactReleasedPhotographs": 14,
+    "slotTransitions": 15,
+    "note": "Draft release branch snapshot for PR2340; not published to production or approved for merge until complete acceptance."
   }
 }

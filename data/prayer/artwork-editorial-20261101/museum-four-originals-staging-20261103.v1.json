@@ -1,0 +1,104 @@
+{
+  "schema": "AO_PRAYER_FOUR_MUSEUM_ORIGINALS_STAGE_V1",
+  "date": "2026-11-03",
+  "researchPR": 2332,
+  "workSourceCount": 4,
+  "coveredCanonicalSlots": 15,
+  "selectionProcess": "Previously chosen in canonical 267-position master; no new assignment",
+  "stage": "REVIEW_BRANCH_ONLY_NOT_USER_PHOTO_PUBLICATION_APPROVAL",
+  "publicReleaseAllowed": false,
+  "shaSource": "2026-11-03 institutional-source acquisition artifact 13211939258",
+  "notes": [
+    "Do not alter existing editorial painting selection or protected covers.",
+    "All museum object bytes must match exact SHA-256 from source-acquisition run.",
+    "CMA photographs are CC0 under museum Open Access; Met photograph is marked public domain by object API.",
+    "Phone QA at 320px/390px EN/FR and final photo approval precede merge.",
+    "Art preview must preserve whole photographed surface with object-fit contain.",
+    "No production release occurs automatically as a consequence of staging."
+  ],
+  "works": [
+    {
+      "id": "bouts",
+      "artist": "Albert Bouts",
+      "title": "The Annunciation",
+      "museum": "CMA",
+      "museumId": "1942.635",
+      "sourcePage": "https://clevelandart.org/art/1942.635",
+      "directOriginal": "https://openaccess-cdn.clevelandart.org/1942.635/1942.635_print.jpg",
+      "sha256": "aa6178b97052ec2dff5ad2f9da58269a23cabfd311983fce7c1f9d2b66b4075a",
+      "bytes": 7475699,
+      "width": 2815,
+      "height": 3400,
+      "slots": [
+        "STG-pray.angelus-04",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06",
+        "STG-pray.rosary-02"
+      ],
+      "image": "assets/prayer/released/bouts-annunciation-original.jpg",
+      "rights": "CMA_OPEN_ACCESS_CC0"
+    },
+    {
+      "id": "cavallino",
+      "artist": "Bernardo Cavallino",
+      "title": "Adoration of the Shepherds",
+      "museum": "CMA",
+      "museumId": "1968.100",
+      "sourcePage": "https://clevelandart.org/art/1968.100",
+      "directOriginal": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+      "sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+      "bytes": 6445697,
+      "width": 3400,
+      "height": 2905,
+      "slots": [
+        "STG-pray.angelus-07",
+        "COV-pray.little_crown",
+        "STG-pray.little_crown-01",
+        "COV-novena.christmas",
+        "STG-novena.christmas-01"
+      ],
+      "image": "assets/prayer/released/cavallino-shepherds-original.jpg",
+      "rights": "CMA_OPEN_ACCESS_CC0"
+    },
+    {
+      "id": "girardin",
+      "artist": "Laurent Girardin",
+      "title": "The Trinity",
+      "museum": "CMA",
+      "museumId": "1960.79",
+      "sourcePage": "https://clevelandart.org/art/1960.79",
+      "directOriginal": "https://openaccess-cdn.clevelandart.org/1960.79/1960.79_print.jpg",
+      "sha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+      "bytes": 8508548,
+      "width": 2830,
+      "height": 3400,
+      "slots": [
+        "HERO-15",
+        "COV-foundations_sign_of_cross",
+        "COV-foundations_glory_be"
+      ],
+      "image": "assets/prayer/released/girardin-trinity-original.jpg",
+      "rights": "CMA_OPEN_ACCESS_CC0"
+    },
+    {
+      "id": "hondius",
+      "artist": "Abraham Hondius",
+      "title": "Christ among the Doctors",
+      "museum": "MET",
+      "museumId": "436672",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436672",
+      "directOriginal": "https://images.metmuseum.org/CRDImages/ep/original/DP147792.jpg",
+      "sha256": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+      "bytes": 2015792,
+      "width": 3895,
+      "height": 2998,
+      "slots": [
+        "STG-pray.rosary-06",
+        "STG-prayer.seven_sorrows_chaplet-03",
+        "STG-pray.st_joseph_seven_sorrows-07"
+      ],
+      "image": "assets/prayer/released/hondius-doctors-original.jpg",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN"
+    }
+  ]
+}

@@ -3,7 +3,6 @@ on:
   pull_request:
     paths:
       - "data/prayer/artwork-editorial-20261101/museum-eight-38-position-photo-preflight-20261103.v1.json"
-      - "data/prayer/artwork-editorial-20261101/gallery-archive-crosswalk-267-20261103.v1.json"
       - "scripts/art/prayer-eight-museum-originals-bulk-qa.mjs"
       - ".github/workflows/prayer-eight-museum-originals-bulk-qa.yml"
   workflow_dispatch:

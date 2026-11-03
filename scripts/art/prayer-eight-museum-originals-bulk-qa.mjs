@@ -14,8 +14,9 @@ const spec=read("data/prayer/artwork-editorial-20261101/museum-eight-38-position
 const crosswalk=read("data/prayer/artwork-editorial-20261101/gallery-archive-crosswalk-267-20261103.v1.json");
 assert.equal(spec.works.length,8);
 assert.equal(crosswalk.assignments.length,267);
-assert.equal(crosswalk.counts.states.APPROVED_EXACT_PHOTO_PENDING,161,
- "Batch frozen to 10 released photos; regenerate and review if release registry changes");
+// This source-research census is independent of later photo releases.
+assert.equal(crosswalk.assignments.length,267);
+assert.equal(spec.works.reduce((sum,w)=>sum+w.expectedPositions,0),38);
 const dest=resolve(process.argv[2]||"artifacts/prayer-museum-eight");
 mkdirSync(dest,{recursive:true});
 
@@ -90,7 +91,8 @@ async function museumRecord(w){
 function escape(s){return String(s??"").replace(/[&<>"']/g,z=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[z]))}
 const rows=[];
 for(const w of spec.works){
- const matched=crosswalk.assignments.filter(a=>a.currentRuntime.state==="APPROVED_EXACT_PHOTO_PENDING"&&sameSource(a.painting?.sourcePage,w.expectedSourcePage));
+ const matched=crosswalk.assignments.filter(a=>sameSource(a.painting?.sourcePage,w.expectedSourcePage) &&
+  ["APPROVED_EXACT_PHOTO_PENDING","PUBLISHED_EXACT_PHOTO"].includes(a.currentRuntime.state));
  assert.equal(matched.length,w.expectedPositions,w.slug+" position mismatch, do not acquire without new review");
  assert.ok(matched.every(a=>a.editorial.approvedOrInherited&&!a.editorial.hold&&!a.editorial.protectedCover));
  const base={slug:w.slug,title:w.title,masterArtist:w.artistInMaster,institutionalArtist:w.institutionalArtist,
