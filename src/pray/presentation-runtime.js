@@ -40,7 +40,7 @@ import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,sy
 import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
-import {prayerDoorArtSlot,prayerEditorialArtworkMarkup,resolvePrayerEditorialArtwork} from "./art-slot-map.v1.js";
+import {prayerDoorArtSlot,prayerEditorialArtworkMarkup,resolvePrayerEditorialArtwork,angelusOpeningArtworkSlot} from "./art-slot-map.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
@@ -1083,7 +1083,7 @@ function renderAngelus(){
  if(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY){
   const c=angelusChoice(),p=angelusExactPosture();
   const posture=c.form==='regina'?L('Stand · Eastertide','Debout · temps pascal'):p.stand?L('Stand · Sunday or after Saturday Vespers','Debout · dimanche ou après les vêpres du samedi'):L('Kneel · ordinary days','À genoux · jours ordinaires');
-  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon,recitation:S.rosary.recitation,hour:CLAUDE_ANGELUS_HOUR});
+  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon,recitation:S.rosary.recitation,hour:CLAUDE_ANGELUS_HOUR,dateKey:selectedDateKey()});
  }
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
@@ -1104,7 +1104,7 @@ function renderAngelus(){
  const openingVisible=ANGELUS_CARD_INDEX===0&&!ANGELUS_COVER_DISMISSED;
  const hourTitle=form==='regina'?'Regina Cæli':L('The Angelus',"L’Angélus");
  const hourScene=form==='regina'?L('The Resurrection','La Résurrection'):L('The Annunciation','L’Annonciation');
- const releasedHourArt=releasedModulePhotoMarkup(form==='regina'?'regina':'angelus',{className:'aoPrayerAngelusDirectPhoto'});
+ const releasedHourArt=prayerEditorialArtworkMarkup(angelusOpeningArtworkSlot(form,CLAUDE_ANGELUS_HOUR,selectedDateKey()),{className:'aoPrayerAngelusDirectPhoto'});
  const coverAbove=openingVisible
   ?'<section class="aoClaudeHorariumIntro" data-ao-horarium-intro aria-label="'+esc(L('Hour of prayer','Heure de prière'))+'">'+
    '<p class="aoClaudeHorariumKicker">'+esc(hourDescription)+'</p>'+
