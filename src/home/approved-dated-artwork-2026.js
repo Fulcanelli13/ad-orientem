@@ -9,6 +9,7 @@ import {approvedClassIHeroForDate} from "../calendar/approved-class-i-heroes-202
 import {releasedDateGospelHero2026} from "./released-date-gospel-heroes-2026.js";
 import {RELEASED_MODULE_PAINTINGS} from "../art/released-module-paintings.v1.js";
 import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.js";
+import {frozenSelected2026HomeArtwork} from "./approved-2026-frozen-selected-previews.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
@@ -155,8 +156,10 @@ export function approved2026HomeArtwork(state,provider=null){
  }
  const bulk=extraApproved2026HomeArtwork(date,principalId,properPath);
  if(bulk)return bulk;
- // Date-specific locks win. Contextual reuse is restricted to 71 identified
- // Class IV ferias/BVM Saturdays and can never claim Gospel-scene identity.
+ const frozen=frozenSelected2026HomeArtwork(date,principalId,properPath);
+ if(frozen)return frozen;
+ // Date-specific locks win. Contextual reuse is restricted to 105 identified
+ // Class IV and Lenten/Advent Class III ferias and Marian Saturdays.
  const seasonal=approved2026SeasonalHomeReuse(date,principalId,properPath);
  if(seasonal)return seasonal;
  const released=releasedDateGospelHero2026(state,provider??{
