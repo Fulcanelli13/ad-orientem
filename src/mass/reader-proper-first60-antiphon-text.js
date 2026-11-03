@@ -73,8 +73,19 @@ export function auditFirst60CompleteAntiphonText({packet}={}){
    throw Error("REVIEW_ANTIPHON_LEXICAL_EXTRACTION_INCOMPLETE");
   const status=compare(score,selected);
   const exact=status==="EXACT_ANTIPHON_LEXICAL_TEXT";
-  const inv=sourceNoteGroupInventory("name: "+c.scoreId+";\n%%\n"+c.scoreGabc);
-  if(!inv.noteBearingSourceTokens)throw Error("REVIEW_SOURCE_NOTE_GROUPS_EMPTY");
+  // The existing Kyriale note-group parser is not a proof of Proper
+  // punctuation-to-neume boundaries. A failure is a separate explicit
+  // musical-segmentation HOLD, never a Latin-lexical failure or approval.
+  let groupInventoryStatus="GROUPS_IDENTIFIED_FOR_PRINT_COMPARISON_NOT_CERTIFIED";
+  let noteGroupCount=null,groupInventoryHold=null;
+  try{
+   const inv=sourceNoteGroupInventory("name: "+c.scoreId+";\\n%%\\n"+c.scoreGabc);
+   if(!inv.noteBearingSourceTokens)throw Error("ZERO_NOTE_GROUPS");
+   noteGroupCount=inv.noteBearingSourceTokens;
+  }catch(e){
+   groupInventoryStatus="PROPER_GABC_NOTE_GROUP_TOKENIZATION_HOLD";
+   groupInventoryHold=String(e?.message??e).slice(0,200);
+  }
   family[c.part][exact?"exact":"hold"]++;
   counts[status]=(counts[status]??0)+1;
   return Object.freeze({
@@ -85,7 +96,9 @@ export function auditFirst60CompleteAntiphonText({packet}={}){
    original1962Owner:c.representative.sourceOwner,
    sourceParagraphId:c.representative.sourceParagraphId,
    evidence:{originalGabcAntiphonNormalized:score,
-    selected1962AntiphonNormalized:selected,originalScoreNoteBearingTokens:inv.noteBearingSourceTokens,
+    selected1962AntiphonNormalized:selected,originalScoreNoteBearingTokens:noteGroupCount,
+    noteGroupInventoryStatus:groupInventoryStatus,
+    noteGroupInventoryHold,
     ...diff(score,selected)},
    status,fullAntiphonLexicalEquality:exact,
    // Text correspondence does not certify the original printed music or
@@ -103,6 +116,7 @@ export function auditFirst60CompleteAntiphonText({packet}={}){
   status:"ANTIPHON_TEXT_PARITY_RESEARCH_ONLY_NOT_PRINT_NOTATION_APPROVAL",
   counts:{audited:60,fullAntiphonLexicalEqual:scores.filter(x=>x.fullAntiphonLexicalEquality).length,
    literalDifferenceHolds:scores.filter(x=>!x.fullAntiphonLexicalEquality).length,
+   noteGroupTokenizationHolds:scores.filter(x=>x.evidence.noteGroupInventoryHold!=null).length,
    byStatus:counts,byFamily:family,newPublicScores:0,
    automaticallyVerifiedPrintedNeumes:0},
   scoreEvidence:scores,
