@@ -33,14 +33,26 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 #printedContinuation h3{margin:16px 0 8px;font:500 16px Georgia,serif}#scanControls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:10px 0}
 #scanControls input{flex:1;min-width:110px}#scanStatus{font-size:12px;line-height:1.5}#scanSource a{overflow-wrap:anywhere}
 #scanFolio{font:500 16px Georgia,serif;color:#e8dfce;margin:5px 0 10px}
-@media(max-width:900px){.panes{grid-template-columns:1fr}.checks{grid-template-columns:1fr}}
+/* Printed source is the authoritative displayed score, not an unreviewed Exsurge redraw. */
+.panes{grid-template-columns:minmax(0,1.6fr) minmax(310px,1fr);align-items:start}
+#originalBookPanel{grid-column:1;grid-row:1}
+#sourceLatinPanel{grid-column:2;grid-row:1}
+#gabcDiagnosticPanel{grid-column:1/-1;grid-row:2}
+#engraveViewport{display:none!important}
+#scanStage{max-height:560px;background:#f4f1ec;padding:10px}
+#engraveStatus{border-left:3px solid #bd756b;padding-left:10px}
+@media(max-width:900px){.panes{grid-template-columns:1fr}
+ #originalBookPanel{grid-column:1;grid-row:1}
+ #sourceLatinPanel{grid-column:1;grid-row:2}
+ #gabcDiagnosticPanel{grid-column:1;grid-row:3}
+ .checks{grid-template-columns:1fr}}
 </style></head>
 <body><header><div><div class="eyebrow">Ad Orientem · internal musical collation</div>
 <h1>First 60 source-backed 1961 Proper scores</h1>
 <small>20 Introits · 20 Offertories · 20 Communions · 2026 selected-Mass source identities</small></div>
 <div class="badge">REVIEW ONLY · 0 PUBLIC APPROVALS</div></header>
 <main>
-<p class="muted">Load <code>2026-selected-proper-first60-print-review.json</code> from the annual Schola workflow artifact. This workbench displays the unchanged archived GABC and original selected 1962 Latin. Compare <strong>all printed notes, syllables, divisions and rhythmic marks</strong> with the original Solesmes folio using the source link. A matching first line does not certify the complete score. Exported observations never approve publication.</p>
+<p class="muted">Load <code>2026-selected-proper-first60-print-review.json</code> from the annual Schola workflow artifact. This workbench displays the original printed 1961 notation prominently, with the unaltered GABC available as technical evidence and the selected 1962 Latin alongside it. The experimental GABC SVG is disabled until a fidelity audit passes. Compare <strong>all printed notes, syllables, divisions and rhythmic marks</strong> with the original Solesmes folio using the source link. A matching first line does not certify the complete score. Exported observations never approve publication.</p>
 <div class="toolbar">
 <div><label for="fileInput">Load the authenticated editorial pack</label><input type="file" id="fileInput" accept=".json,application/json"><div id="fileHint">No pack loaded</div></div>
 <div><label for="partFilter">Chant family</label><select id="partFilter"><option value="">All three families</option><option value="in">Introit</option><option value="of">Offertory</option><option value="co">Communion</option></select></div>
@@ -48,10 +60,11 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 <button id="prev" disabled>Previous</button><button id="next" disabled>Next</button>
 </div>
 <div class="panes">
-<section class="panel"><div class="head"><h2>Original GABC · local Gregorian engraving</h2><small id="scoreIdentity">Choose a source-verified candidate</small></div>
-<div class="body"><div id="engraveViewport" aria-label="Research-only Gregorian score rendering"></div><p id="engraveStatus" class="muted">No score loaded.</p>
+<section class="panel" id="gabcDiagnosticPanel"><div class="head"><h2>Archived GABC · technical evidence, not the printed score</h2><small id="scoreIdentity">Choose a source-verified candidate</small></div>
+<div class="body"><div id="engraveViewport" hidden aria-hidden="true"></div>
+<p id="engraveStatus" class="muted">Experimental SVG engraving is disabled: its proportions and musical typography have not passed visual-source comparison. Use the original printed 1961 staff.</p>
 <h2>Unmodified archive transcription</h2><pre id="scoreGabc"></pre></div></section>
-<section class="panel"><div class="head"><h2>1962 selected Proper and original 1961 folio</h2><small id="sourceRole">Exact date, role and source owner</small></div>
+<section class="panel" id="sourceLatinPanel"><div class="head"><h2>Selected 1962 Latin and source identity</h2><small id="sourceRole">Exact date, role and source owner</small></div>
 <div class="body"><dl>
 <dt>Score</dt><dd id="sourceId">—</dd><dt>1961 page</dt><dd id="pageRef">—</dd>
 <dt>2026 uses</dt><dd id="dateCount">—</dd>
@@ -61,8 +74,8 @@ a{color:#b9d6f4}dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12
 </dl><p><a id="scoreSource" target="_blank" rel="noopener noreferrer">Open GregoBase source and printed witnesses</a></p>
 <h2>Exact selected Latin paragraph</h2><div id="sourceLatin">Load editorial pack to begin.</div>
 </div></section>
-<section class="panel" id="originalBookPanel"><div class="head"><h2>1961 original printed folio · side-by-side</h2>
-<small>Direct scan of Solesmes page, NOT a regenerated GABC score</small></div>
+<section class="panel" id="originalBookPanel"><div class="head"><h2>Authentic Gregorian notation · original 1961 print</h2>
+<small>Original Solesmes square-note engraving. Scroll to compare all source staves.</small></div>
 <div class="body">
 <p id="scanFolio">Select an original 1961 source</p>
 <div id="scanStage"><img id="originalBookScan" hidden alt="Original Solesmes 1961 scanned printed staff and neumes">
@@ -103,7 +116,6 @@ All musical and publication decisions remain unverified.</p>
 <p class="muted">Every field starts UNREVIEWED. The source note-group inventory does not establish printed-note parity. Local saved reviews can be exported for independent validation. Neither a selection nor an exported review can mark a score PUBLIC_APPROVED or change the live Mass reader.</p>
 </div></section></main>
 <script type="module">
-import {createOfflineChantEngraver} from "../../src/mass/reader-chant-engraver.js";
 import {sourceNoteGroupInventory} from "../../src/mass/reader-kyriale-source-note-groups.js";
 import {first12PrintedFacsimileForScore} from "../../src/mass/reader-proper-first12-1961-facsimile-locators.js";
 const $=id=>document.getElementById(id);
@@ -114,7 +126,6 @@ for(const id of [...scoreFields,...groupFields])for(const [key,title] of statuse
  const opt=document.createElement("option");opt.value=key;opt.textContent=title;$(id).appendChild(opt);
 }
 let report=null,current=null,groups=[],selectedGroup=0,reviews={};
-const engraver=createOfflineChantEngraver({viewport:$("engraveViewport")});engraver.observe();
 const storeKey="ao-proper-1961-first60-local-review-v1";
 try{reviews=JSON.parse(localStorage.getItem(storeKey)||"{}")}catch{reviews={}}
 const fmt=s=>String(s??"");
@@ -173,6 +184,19 @@ function showOriginal1961Scan(c){
   second.src=folios[1].url;
  }
  img.onload=()=>{if(current!==c)return;img.hidden=false;
+  // Focus the selected piece rather than unrelated preceding chants on the
+  // same unaltered printed folio. Other material stays scrollable above.
+  const anchorY=({
+   "GREGOBASE-475":395,"GREGOBASE-782":585,"GREGOBASE-918":445,
+   "GREGOBASE-403":270,"GREGOBASE-1147":85,"GREGOBASE-182":245,
+   "GREGOBASE-265":585,"GREGOBASE-464":235,"GREGOBASE-95":385,
+   "GREGOBASE-1136":385,"GREGOBASE-1165":165,"GREGOBASE-1271":560
+  })[c.scoreId]??0;
+  const scroll=$("#scanStage");
+  requestAnimationFrame(()=>{if(current===c&&img.naturalHeight>0){
+   scroll.scrollTop=Math.max(0,Math.round(anchorY/img.naturalHeight*
+    img.getBoundingClientRect().height)-24);
+  }});
   status.textContent=multi?
    (second.hidden?"Starting page loaded; continuation page required before whole-score review.":
     "Both printed folios loaded. Musical verification NOT recorded."):
@@ -218,10 +242,8 @@ async function show(c){
    op.value=String(group.ordinal);op.textContent=group.ordinal+" · "+group.syllable+" · "+group.sourceTokenType;
    $("groupSelect").append(op);
   }
-  showGroup(0);$("engraveStatus").textContent="Rendering verified archive bytes · awaiting print review";
-  await engraver.engrave(gabc);
-  if(current===c)$("engraveStatus").textContent="Original GABC engraved locally · NOT publication approval";
- }catch(e){$("engraveStatus").textContent="Cannot engrave this source. Hold: "+String(e?.message??e)}
+  showGroup(0);$("engraveStatus").textContent="Automated GABC SVG disabled: view the authentic 1961 printed notation first; use raw GABC only for technical note-group comparison.";
+ }catch(e){$("engraveStatus").textContent="Source GABC group inventory error (score held): "+String(e?.message??e)}
  updateProgress();
 }
 function showGroup(index){
