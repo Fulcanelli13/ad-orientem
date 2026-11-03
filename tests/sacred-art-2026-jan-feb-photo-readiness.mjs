@@ -57,6 +57,18 @@ const jan1=report.dates[0];
 assert.equal(jan1.date,"2026-01-01");
 assert.match(jan1.firstPhotoAuditCandidate.title,/Circumcision/i);
 assert.equal(jan1.firstPhotoAuditCandidate.certifiedForThisHomepageDate,false);
+assert.equal(jan1.firstPhotoAuditCandidate.historicalDateEditorialBasis,"NEW_DATE_SPECIFIC_APPROVAL");
+assert.equal(jan1.firstPhotoAuditCandidate.preservedDateApproval,true);
+const ash=report.dates.find(x=>x.date==="2026-02-18");
+assert.equal(ash.firstPhotoAuditCandidate.historicalDateEditorialBasis,"NEW_DATE_SPECIFIC_APPROVAL");
+assert.equal(ash.firstPhotoAuditCandidate.preservedDateApproval,true);
+const lent1=report.dates.find(x=>x.date==="2026-02-22");
+assert.equal(lent1.firstPhotoAuditCandidate.historicalDateEditorialBasis,"NEW_DATE_SPECIFIC_APPROVAL");
+assert.equal(lent1.firstPhotoAuditCandidate.preservedDateApproval,true);
+const epiphany=report.dates.find(x=>x.date==="2026-01-06");
+assert.equal(epiphany.firstPhotoAuditCandidate.historicalDateEditorialBasis,
+ "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED");
+assert.equal(epiphany.firstPhotoAuditCandidate.preservedDateApproval,false);
 assert.ok(report.dates.find(x=>x.date==="2026-02-12"));
 assert.ok(report.dates.find(x=>x.date==="2026-02-28"));
 console.log("PASS: January–February 59-day artwork/photo matrix, original user photo decisions protected, no fake publication");
