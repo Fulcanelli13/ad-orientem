@@ -1,0 +1,41 @@
+name: Stage four selected Prayer museum originals on release branch
+on:
+  push:
+    branches:
+      - release/prayer-four-museum-originals-20261103
+    paths:
+      - "data/prayer/artwork-editorial-20261101/museum-four-originals-staging-20261103.v1.json"
+      - "scripts/art/stage-prayer-four-museum-originals.mjs"
+      - ".github/workflows/prayer-four-museum-branch-staging.yml"
+jobs:
+  stage-authenticated-museum-originals:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/prayer-four-museum-originals-20261103
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify exact museum bytes and stage on release branch only
+        run: node scripts/art/stage-prayer-four-museum-originals.mjs
+      - name: Commit staged photographs, not production
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/prayer/released/bouts-annunciation-original.jpg \
+            assets/prayer/released/cavallino-shepherds-original.jpg \
+            assets/prayer/released/girardin-trinity-original.jpg \
+            assets/prayer/released/hondius-doctors-original.jpg
+          if git diff --cached --quiet; then
+            echo "Exact originals already staged"
+          else
+            git commit -m "art(stage): four institutional originals, 15 selected Prayer placements"
+            git push origin HEAD:release/prayer-four-museum-originals-20261103
+          fi
