@@ -30,7 +30,7 @@ const CONFESSION_CSS=String.raw`
    The source-owned steps remain intact and no free-text question is collected. */
 #aoPray435930 .aoP435930ConfNavShell{margin:3px 0 9px}
 #aoPray435930 .aoP435930ConfProgressLabel{display:block;color:var(--liturgical,#c7ae6d);font:600 11px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}
-#aoPray435930 .aoP435930ConfNavShell>.aoP435930GuideRail{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;padding:0!important;border:0!important;background:transparent!important;overflow:visible!important}
+#aoPray435930 .aoP435930ConfNavShell>.aoP435930GuideRail{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;padding:0!important;border:0!important;background:transparent!important;overflow:visible!important;margin-inline:0!important;width:100%!important;min-width:0!important}
 #aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button{position:relative!important;display:block!important;width:100%!important;min-width:0!important;height:44px!important;min-height:44px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important}
 #aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button>span{display:none!important}
 #aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail button>b{position:absolute!important;left:0;top:-21px;color:var(--liturgical,#c7ae6d)!important;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.08em!important;text-transform:uppercase!important;opacity:0!important;white-space:nowrap!important}

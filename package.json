@@ -323,7 +323,8 @@
     "test:dyk-priority24": "node tests/dyk-r34-priority24-editorial-readiness.mjs",
     "test:dyk-released-feed": "node tests/dyk-h7-released-feed-contract.mjs",
     "test:dyk-growth-500": "node tests/dyk-500-growth-310-contract.mjs",
-    "test:pray-route-language-matrix": "node tests/pray-route-language-matrix-v1.mjs"
+    "test:pray-route-language-matrix": "node tests/pray-route-language-matrix-v1.mjs",
+    "test:pray-41-entry-phone": "node tests/pray-41-route-entry-variants-phone.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
