@@ -211,8 +211,13 @@ try{
       // a hidden overlay and no forced duration, stage score, or completion.
       const scroll=page.locator(sel+" .aoDevoCardScroll");
       await scroll.evaluate(el=>{el.scrollTop=40});
+      // Playwright's real click first scrolls the link into view. The
+      // authentic user-position contract is the scroll AT THE TAP, not
+      // an earlier programmatic position before button discovery.
+      const pause=page.locator(sel+" [data-p435930-ador-quiet-enter]");
+      await pause.scrollIntoViewIfNeeded();
       const before=await scroll.evaluate(el=>el.scrollTop);
-      await page.locator(sel+" [data-p435930-ador-quiet-enter]").click();
+      await pause.click();
       const quiet=page.locator(sel+'.aoAdorationQuietScreen[data-ao-adoration-quiet="true"]');
       await quiet.waitFor({state:"visible",timeout:10000});
       const details=await quiet.evaluate(el=>{
