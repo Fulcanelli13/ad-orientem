@@ -187,5 +187,5 @@ assert.equal(all.filter(x=>x.map_publishable).length,2025);
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
 console.log("PASS TLM site recovery batch 8: 17 precise sites, 2025 mapped, 557 list-only, source and bilingual profiles preserved");
