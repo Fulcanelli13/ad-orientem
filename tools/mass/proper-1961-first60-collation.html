@@ -165,9 +165,11 @@ function updateProgress(){
  if(!report)return;
  const overall=report.candidates.filter(c=>{
   const r=verdictOf(c);
-  return scoreFields.every(f=>r[f]==="MATCH")&&
-   r.groups&&Object.values(r.groups).length>0&&
-   Object.values(r.groups).every(v=>groupFields.every(f=>v[f]==="MATCH"));
+  if(!scoreFields.every(f=>r[f]==="MATCH")||!r.groups)return false;
+  try{
+   const inventory=sourceNoteGroupInventory(sourceGabc(c));
+   return inventory.groups.every(g=>groupFields.every(f=>r.groups[g.ordinal]?.[f]==="MATCH"));
+  }catch{return false}
  }).length;
  const done=groups.filter(g=>groupFields.every(f=>verdictOf(current).groups?.[g.ordinal]?.[f]==="MATCH")).length;
  $("progress").textContent=overall+"/"+report.candidates.length+" scores fully MATCH-marked in local evidence; current "+done+"/"+groups.length+" source note groups marked; 0 scores approved for public release";
