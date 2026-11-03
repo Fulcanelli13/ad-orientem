@@ -83,7 +83,7 @@ assert.ok(full.every(i=>!i.celebration_evidence));
 const english=renderExploreToString(buildExploreViewModel({
  items:two,lens:"tlm",view:"list",filters:{directoryGroup:"ALL",celebrationEvidence:"SOURCE_1962",
  siteEvidence:"ALL",affiliations:[]},tlmCelebrationEvidenceCounts:tlmCelebrationEvidenceCounts(released),
- tlmSiteEvidenceCounts:{ALL:2582,REVIEWED_PIN:250,SOURCE_PIN:1806,ADDRESS_ONLY:526}
+ tlmSiteEvidenceCounts:{ALL:2582,REVIEWED_PIN:264,SOURCE_PIN:1806,ADDRESS_ONLY:512}
 }));
 assert.match(english,/Source identifies 1962 Mass/);
 assert.match(english,/No approved edition witness yet/);
