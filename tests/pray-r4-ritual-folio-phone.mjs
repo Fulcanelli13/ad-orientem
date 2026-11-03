@@ -73,8 +73,11 @@ try{
    // Office and Angelus continue to use their existing source-owned presentation,
    // without new stage controls or fabricated historical prayer texts.
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus_regina",{returnContext:null})),true);
-   await page.locator(prefix+"[data-ao-ritual-reader=angelus]").waitFor({state:"visible",timeout:12000});
-   assert.equal(await page.locator(prefix+" .aoP435930PrayerUnit").count()>0,true);
+   const angelusEntry=page.locator(prefix+"[data-p435930-pilot-angelus-begin]");
+   if(await angelusEntry.count())await angelusEntry.click();
+   await page.locator(prefix+"[data-ao-ritual-reader=angelus]").waitFor({state:"attached",timeout:12000});
+   assert.equal(await page.locator(prefix+" .aoP435930PrayerUnit").count()>0,true,
+    "The original Angelus/Regina Caeli verses and Hail Mary cards must still be present");
    assert.deepEqual(errors,[],"Browser Prayer errors at "+width+"px");
   }finally{await page.close()}
  }
