@@ -82,16 +82,16 @@ assert.ok(!angelus.includes("regina-whole-original.jpg"),"Angelus must never use
 const pilot=source("src/pray/prayer-design-pilot.js");
 const runtime=source("src/pray/presentation-runtime.js");
 const home=source("src/home/c3-gallery.js");
-for(const s of ['resolvePrayerEditorialArtwork(slot.slotId)','aoPrayPilotReleasedTilePhoto','releasedModulePhotoMarkup(regina?"regina":"angelus"'])
+for(const s of ['resolvePrayerEditorialArtwork(slot.slotId)','aoPrayPilotReleasedTilePhoto','prayerEditorialArtworkMarkup(angelusOpeningArtworkSlot(form,selectedHour,dateKey)'])
  assert.ok(pilot.includes(s),"Missing Prayer discovery/Angelus integration "+s);
-for(const s of ['familyId==="eucharistic"','releasedModulePhotoMarkup("adoration"','releasedDoorPhoto?', 'aoPrayerAdorationCover'])
+for(const s of ['artSlot?prayerEditorialArtworkMarkup(artSlot.slotId','releasedModulePhotoMarkup("adoration"','releasedDoorPhoto?', 'aoPrayerAdorationCover'])
  assert.ok(runtime.includes(s),"Missing Prayer shelf/Adoration integration "+s);
 assert.ok(home.includes("C3_APPROVED_MET_PRAYER_ART=RELEASED_MODULE_PAINTINGS"),"Home must share released registry");
 assert.ok(home.includes('page?.route==="pray.confession"'),"Home must show only original NGA scene for the Confession route");
 assert.ok(runtime.includes('releasedModulePhotoMarkup("confession"'),"Canonical Confession reader missing original image");
 assert.ok(runtime.includes("globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true"),"Existing research-only QA path must remain separate");
-for(const id of ["joseph","visit"])
- assert.ok(runtime.includes("releasedModulePhotoMarkup('"+id+"'"),"Reader did not bind user-approved "+id+" original");
+assert.ok(runtime.includes("prayerEditorialArtworkMarkup('COV-pray.st_joseph_seven_sorrows'"),"St Joseph must use its exact editorial-approved original");
+assert.ok(runtime.includes("releasedModulePhotoMarkup('visit'"),"Visit reader missing approved original");
 const wave4=JSON.parse(source("data/research/module-hero-wave4-companion-hearts-king-20261103.v1.json"));
 assert.deepEqual(wave4.candidates.map(x=>x.module),["heart-jesus","heart-mary","king"]);
 const originals4={
@@ -109,8 +109,8 @@ for(const c of wave4.candidates){
  assert.match(art.photographRights,/PD-Art/);
  assert.equal(c.fit,"contain");
 }
-assert.ok(runtime.includes("if(s===0)return")&&runtime.includes("releasedModulePhotoMarkup('heart-jesus'"),"First Friday original artwork in first stage missing");
-assert.ok(runtime.includes("releasedModulePhotoMarkup('heart-mary'"),"First Saturday original artwork in first stage missing");
+assert.ok(runtime.includes("if(s===0)return")&&runtime.includes("prayerEditorialArtworkMarkup('COV-programme.first_friday'"),"First Friday approved original artwork in first stage missing");
+assert.ok(runtime.includes("prayerEditorialArtworkMarkup('COV-programme.first_saturday'"),"First Saturday approved original artwork in first stage missing");
 assert.ok(runtime.includes("BEN.celebration==='christKing'&&i===0?releasedModulePhotoMarkup('king'"),"Christ King must be optional and scoped");
 assert.ok(runtime.includes("prayerEditorialArtworkMarkup('COV-'+id"),"Individual prayer cards must use exact-slot editorial art");
 assert.ok(!runtime.includes("const soulsCover="),"Do not override the Rubens De profundis selection with Giordano");
