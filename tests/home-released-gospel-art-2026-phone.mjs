@@ -40,19 +40,32 @@ try{
   page.setDefaultTimeout(60000);
   const result={...spec,pass:false};
   try{
-   const response=await page.goto(origin,{waitUntil:"domcontentloaded",timeout:90000});
+   const response=await page.goto(origin+"?aoTodayH4=1",{waitUntil:"domcontentloaded",timeout:90000});
    assert.equal(response?.status(),200);
    await page.waitForFunction(()=>typeof window.AO_RUNTIME_V8?.resolver?.resolveDay==="function"
       && !!window.AO_RUNTIME_V8?.store?.dispatch,null,{timeout:90000});
-   const resolved=await page.evaluate(async date=>{
-     const rt=window.AO_RUNTIME_V8;
-     const day=await rt.resolver.resolveDay(date);
-     rt.store.dispatch({type:"set-date",date});
-     rt.store.dispatch({type:"resolve-complete",resolution:day});
-     rt.controller?.home?.paint?.();
+   // Select through the actual embedded Calendar; direct store dispatch
+   // bypasses the Home presentation owner and does not rehydrate C3 art.
+   await page.locator(".aoH7HomeView .date[data-home-calendar-view='picker']")
+     .waitFor({state:"visible",timeout:45000});
+   await page.locator(".aoH7HomeView .date[data-home-calendar-view='picker']").click();
+   const dayButton=page.locator(".aoH4CalendarViews [data-home-calendar-view='day']");
+   await dayButton.waitFor({state:"visible",timeout:18000});
+   await dayButton.click();
+   await page.waitForFunction(()=>window.AO_CALENDAR_APP_V1?.status?.().view==="day",
+     null,{timeout:18000});
+   const selected=await page.evaluate(date=>window.AO_CALENDAR_APP_V1.select(date),spec.date);
+   assert.equal(selected,true,"Canonical Calendar refused selected date");
+   await page.locator("[data-home-calendar-today]").click();
+   await page.waitForFunction(date=>{
+     const state=window.AO_RUNTIME_V8?.store?.getState?.();
+     return state?.selectedDate===date&&!state.resolving&&state.resolution?.day?.main;
+   },spec.date,{timeout:45000});
+   const resolved=await page.evaluate(()=>{
+     const state=window.AO_RUNTIME_V8.store.getState(),day=state.resolution;
      return {id:day?.day?.main?.id,path:day?.proper?.sourcePath,
        gospel:day?.proper?.data?.gospel?.reference??null};
-   },spec.date);
+   });
    assert.equal(resolved.id,spec.principal);
    const img=page.locator('[data-ao-home-art-slot] img[data-ao-released-gospel-date="'+spec.date+'"]');
    await img.waitFor({state:"visible",timeout:60000});
