@@ -7,6 +7,7 @@ import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {APPROVED_2026_OTHER_DATE_PREVIEWS} from "../src/home/approved-2026-other-date-previews.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/home-approved-dated-2026-browser");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -44,10 +45,21 @@ const cases=[
   artId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",title:"The Dream of Saint Joseph",
   asset:"/assets/prayer/released/joseph-whole-original.jpg"}
 ];
+const expandedCases=[
+ ...Object.values(APPROVED_2026_OTHER_DATE_PREVIEWS).map((r,i)=>({
+  date:r.date,width:i%2?320:390,principal:r.principalId,
+  artId:r.artworkId,title:r.title,remote:true
+ })),
+ {date:"2026-04-02",width:390,principal:"tempora:Quad6-4r:1:w",
+  artId:"ART-hilippe-de-hampaigne-a-etite-ne",title:"La Petite Cène",remote:true},
+ {date:"2026-05-27",width:320,principal:"tempora:Pasc7-3:1:r",
+  artId:"ART-hilippe-de-hampaigne-a-etite-ne",title:"La Petite Cène",remote:true}
+];
+const fullCases=[...cases,...expandedCases];
 let browser;const results=[];
 try{
  browser=await chromium.launch({headless:true});
- for(const spec of cases){
+ for(const spec of fullCases){
   const context=await browser.newContext({viewport:{width:spec.width,height:844},
    isMobile:true,hasTouch:true,timezoneId:"Indian/Mauritius",
    serviceWorkers:"block",reducedMotion:"reduce"});
@@ -91,7 +103,7 @@ try{
    assert.ok(art.loaded,"The user-selected real Home painting did not decode");
    if(!spec.remote)assert.ok(art.naturalWidth>=500&&art.naturalHeight>=500,
     "Locally released artwork did not decode at reasonable source resolution");
-   if(spec.remote)assert.match(art.src,/commons\.wikimedia\.org/);
+   if(spec.remote)assert.match(art.src,/(commons|upload\.wikimedia)\.org/);
    else assert.ok(art.src.endsWith(spec.asset),"Wrong original Home image for "+spec.date+": "+art.src);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    assert.ok(overflow<=1,"Mobile overflow "+spec.width+": "+overflow);
@@ -114,5 +126,5 @@ try{
   visualCropUserApprovedByThisTest:false
  },null,2)+"\n");
 }
-assert.ok(results.length===cases.length&&results.every(x=>x.passed),
+assert.ok(results.length===fullCases.length&&results.every(x=>x.passed),
  "Source-owned Home image browser proof failed; inspect screenshots and report.");
