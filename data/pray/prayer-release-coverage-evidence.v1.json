@@ -1,7 +1,7 @@
 {
   "schema": "ao.pray.release-coverage-evidence.v1",
   "asOf": "2026-11-03",
-  "purpose": "Single release-governance index. Reuses existing tests and registries; distinguishes source presence, targeted component assertions, full route browser acceptance and historical print-edition certification. Does NOT certify 41/41 finished prayers.",
+  "purpose": "Central source-to-card and release evidence. Twenty-six of 32 multi-text readers now have bounded targeted component assertions, six still have shared/owner-only evidence. Do not confuse component evidence with full route/browser or historical source certification.",
   "authoritativeInputs": [
     "data/pray/prayer-language-route-matrix.v1.json",
     "data/pray/prayer-multitext-reader-crosswalk.v1.json",
@@ -28,8 +28,8 @@
     "doorRoutes": 39,
     "singleCanonical": 9,
     "multiText": 32,
-    "targetedComponentEvidence": 20,
-    "sharedOrOwnerEvidenceOnly": 12,
+    "targetedComponentEvidence": 26,
+    "sharedOrOwnerEvidenceOnly": 6,
     "canonicalSourceFaceEvidence": 9,
     "fullRouteVariantCertificates": 0,
     "independentOriginalPrintCertificates": 0,
@@ -45,13 +45,13 @@
   "sequencing": [
     {
       "order": 1,
-      "scope": "12 shared/owner-evidence multi-text routes",
-      "task": "Source-to-card census and explicit EN/FR/LA variant/phone acceptance, preserving existing prototypes and signature Rosary",
+      "scope": "6 remaining shared/owner-evidence multi-text routes",
+      "task": "Source-to-card census for Rosary, Angelus/Regina, Holy Name, Hymns, Good Death and Dying Companion, followed by route-specific EN/FR/LA mobile variants; signature Rosary stays structurally locked",
       "stopCondition": "Each route has a targeted source-to-stage assertion and a route-specific browser case"
     },
     {
       "order": 2,
-      "scope": "20 targeted multi-text routes",
+      "scope": "26 targeted multi-text routes",
       "task": "Close remaining sub-stages, 320/390 phone, toggles and historical fallback exceptions without repeating source tests that already passed",
       "stopCondition": "Route-wide variant matrices explicitly marked complete"
     },
@@ -187,15 +187,15 @@
       ],
       "readerOwner": "src/pray/presentation-runtime.js",
       "renderer": "renderLibrary",
-      "assertionScope": "SHARED_OR_OWNER_EVIDENCE_ONLY",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
       "assertionFiles": [
-        "tests/pray-traditional-source-faces-v1.mjs"
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
       ],
       "attestedCanonicalLanguages": null,
       "editionAndLanguageHolds": [],
       "allStageBrowserVariantCertificate": false,
       "independentPrintEditionCertificate": false,
-      "nextGate": "SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE"
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
     },
     {
       "id": "pray.penitential_psalms",
@@ -323,16 +323,15 @@
       ],
       "readerOwner": "src/pray/traditional-pray-runtime.js",
       "renderer": "renderMorningEvening",
-      "assertionScope": "SHARED_OR_OWNER_EVIDENCE_ONLY",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
       "assertionFiles": [
-        "tests/pray-guided-cards.mjs",
-        "tests/pray-traditional-source-faces-v1.mjs"
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
       ],
       "attestedCanonicalLanguages": null,
       "editionAndLanguageHolds": [],
       "allStageBrowserVariantCertificate": false,
       "independentPrintEditionCertificate": false,
-      "nextGate": "SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE"
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
     },
     {
       "id": "pray.meal_prayers",
@@ -343,15 +342,15 @@
       ],
       "readerOwner": "src/pray/traditional-pray-runtime.js",
       "renderer": "renderMealPrayers",
-      "assertionScope": "SHARED_OR_OWNER_EVIDENCE_ONLY",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
       "assertionFiles": [
-        "tests/pray-traditional-source-faces-v1.mjs"
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
       ],
       "attestedCanonicalLanguages": null,
       "editionAndLanguageHolds": [],
       "allStageBrowserVariantCertificate": false,
       "independentPrintEditionCertificate": false,
-      "nextGate": "SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE"
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
     },
     {
       "id": "pray.nightly_examen",
@@ -362,16 +361,15 @@
       ],
       "readerOwner": "src/pray/traditional-pray-runtime.js",
       "renderer": "renderNightlyExamen",
-      "assertionScope": "SHARED_OR_OWNER_EVIDENCE_ONLY",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
       "assertionFiles": [
-        "tests/pray-guided-cards.mjs",
-        "tests/pray-traditional-source-faces-v1.mjs"
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
       ],
       "attestedCanonicalLanguages": null,
       "editionAndLanguageHolds": [],
       "allStageBrowserVariantCertificate": false,
       "independentPrintEditionCertificate": false,
-      "nextGate": "SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE"
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
     },
     {
       "id": "pray.communion_treasury",
@@ -382,15 +380,15 @@
       ],
       "readerOwner": "src/pray/traditional-pray-runtime.js",
       "renderer": "renderCommunionTreasury",
-      "assertionScope": "SHARED_OR_OWNER_EVIDENCE_ONLY",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
       "assertionFiles": [
-        "tests/pray-traditional-source-faces-v1.mjs"
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
       ],
       "attestedCanonicalLanguages": null,
       "editionAndLanguageHolds": [],
       "allStageBrowserVariantCertificate": false,
       "independentPrintEditionCertificate": false,
-      "nextGate": "SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE"
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
     },
     {
       "id": "pray.novenas",
@@ -423,15 +421,15 @@
       ],
       "readerOwner": "src/pray/traditional-pray-runtime.js",
       "renderer": "renderSacredHeart",
-      "assertionScope": "SHARED_OR_OWNER_EVIDENCE_ONLY",
+      "assertionScope": "TARGETED_SOURCE_COMPONENT_ASSERTED",
       "assertionFiles": [
-        "tests/pray-traditional-source-faces-v1.mjs"
+        "tests/pray-traditional-six-source-to-card-v1.mjs"
       ],
       "attestedCanonicalLanguages": null,
       "editionAndLanguageHolds": [],
       "allStageBrowserVariantCertificate": false,
       "independentPrintEditionCertificate": false,
-      "nextGate": "SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE"
+      "nextGate": "FULL_ROUTE_VARIANT_BROWSER_ACCEPTANCE"
     },
     {
       "id": "pray.holy_name_litany",
