@@ -1,0 +1,62 @@
+name: Schola Fauré native LIVE acceptance
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-composed-schola-text.js"
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-native-preview.js"
+      - "src/mass/reader-schola-local-programme.js"
+      - "src/mass/sacred-music-*.js"
+      - "src/mass/shared-requiem-text-units.js"
+      - "sacred-music.html"
+      - "tests/reader-composed-schola-*.mjs"
+      - "tests/sacred-music-*.mjs"
+      - ".github/workflows/schola-faure-native-acceptance.yml"
+  push:
+    branches:
+      - feature/schola-faure-native-current-main-replay-20261103
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  selected-source-and-text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax of the shared source, native controller and guide
+        run: |
+          node --check src/mass/reader-composed-schola-text.js
+          node --check src/mass/reader-schola-local-programme.js
+          node --check src/mass/reader-native-preview.js
+          node --check src/mass/reader-dom.js
+          node --check src/mass/sacred-music-guide.js
+          node --check src/mass/sacred-music-sung-texts.js
+          node --check src/mass/sacred-music-works.js
+          node --check src/mass/shared-requiem-text-units.js
+      - name: Original-work metadata, copyright limits and trilingual shared text registry
+        run: node tests/sacred-music-work-programmes.mjs
+      - name: Gregorian default, full seven movements and protected 1962 source clock
+        run: node tests/reader-composed-schola-text.mjs
+
+  native-phone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: 320px and 390px LIVE Schola Fauré bilingual positions and priest-clock invariants
+        run: node tests/reader-composed-schola-phone.mjs
+      - name: 320px and 390px seven-movement programme and EN/FR source contexts
+        run: node tests/sacred-music-programme-phone-e2e.mjs
