@@ -1,6 +1,6 @@
 // Bounded primary-source acquisition, no score publication or music approval.
 // Preserve the original PNG bytes from the 1961 Solesmes/CMAA source host.
-// At most ten distinct printed folios for twelve previously approved-for-review
+// Fourteen distinct printed folios for twelve previously approved-for-review
 // candidates. A remote failure remains a hold, not a fabricated facsimile.
 import {createHash} from "node:crypto";
 import {mkdir,writeFile} from "node:fs/promises";
@@ -12,17 +12,35 @@ import {FIRST12_1961_FACSIMILES} from
 const root=resolve(fileURLToPath(new URL("../..",import.meta.url)));
 const output=join(root,".tmp","schola-1961-first12-original-facsimiles");
 await mkdir(output,{recursive:true});
-const unique=new Map();
+const continuations=new Map([
+ ["GREGOBASE-475","393"],["GREGOBASE-782","363"],
+ ["GREGOBASE-265","80"],["GREGOBASE-1271","384"]
+]);
+const unique=new Map(),pageSpanById=new Map();
+function addPage(page,imageNumber){
+ const url="https://gregobase.selapa.net/sources/2/"+imageNumber+".png";
+ const previous=unique.get(url);
+ if(previous&&previous.page!==page)throw Error("SAME_PRINT_SCAN_DIFFERENT_BOOK_FOLIOS");
+ unique.set(url,{page,url,imageNumber});
+ return url;
+}
 for(const score of FIRST12_1961_FACSIMILES){
  if(!/^https:\/\/gregobase\.selapa\.net\/sources\/2\/\d+\.png$/.test(score.scanned1961PageUrl))
   throw Error("FACSIMILE_ORIGINAL_SOURCE_URL_NOT_PINNED");
- const key=score.scanned1961PageUrl;
- const previous=unique.get(key);
- if(previous&&previous.page!==score.folio)throw Error("SAME_PRINT_SCAN_DIFFERENT_BOOK_FOLIOS");
- unique.set(key,{page:score.folio,url:key,imageNumber:score.imageNumber});
+ const first=addPage(score.folio,score.imageNumber);
+ if(first!==score.scanned1961PageUrl)throw Error("FIRST12_SOURCE_IMAGE_URL_DRIFT");
+ const next=continuations.get(score.scoreId);
+ const span=[{page:score.folio,imageUrl:first}];
+ if(next){
+  if(Number(next)!==Number(score.folio)+1)
+   throw Error("PRINTED_CONTINUATION_MUST_BE_ADJACENT");
+  span.push({page:next,imageUrl:addPage(next,score.imageNumber+1)});
+ }
+ pageSpanById.set(score.scoreId,span);
 }
-if(FIRST12_1961_FACSIMILES.length!==12||unique.size!==10)
- throw Error("FACSIMILE_FIRST12_TEN_DISTINCT_1961_PAGES_REQUIRED");
+if(FIRST12_1961_FACSIMILES.length!==12||unique.size!==14||
+   [...pageSpanById.values()].filter(x=>x.length===2).length!==4)
+ throw Error("FACSIMILE_FIRST12_FOURTEEN_PRINTED_PAGES_REQUIRED");
 const results=[];
 for(const entry of unique.values()){
  const filename="graduale-romanum-1961-original-p"+entry.page+"-source2-"+entry.imageNumber+".png";
@@ -54,12 +72,19 @@ for(const entry of unique.values()){
 }
 const byImage=new Map(results.map(r=>[r.sourceUrl,r]));
 const scores=FIRST12_1961_FACSIMILES.map(s=>{
- const image=byImage.get(s.scanned1961PageUrl);
+ const span=pageSpanById.get(s.scoreId);
+ const images=span.map(x=>byImage.get(x.imageUrl));
+ const capturedSpan=images.every(x=>x?.pngSha256!=null);
  return {
   scoreId:s.scoreId,part:s.part,original1961Page:s.folio,
+  originalPrintedFolios:span.map(x=>x.page),
+  originalPrintedPageImageUrls:span.map(x=>x.imageUrl),
+  capturedOriginalPageHashes:images.map(x=>x?.pngSha256??null),
   gregobaseSourceUrl:s.sourceUrl,original1961ScanUrl:s.scanned1961PageUrl,
-  capturedOriginalImageSha256:image?.pngSha256??null,
-  originalScanStatus:image?.status??"NOT_CAPTURED",
+  capturedOriginalImageSha256:images[0]?.pngSha256??null,
+  originalScanStatus:capturedSpan?
+   "COMPLETE_ORIGINAL_PRINT_SPAN_CAPTURED_NOT_MUSICALLY_VERIFIED":
+   "PRINTED_SOURCE_SPAN_INCOMPLETE_REVIEW_HOLD",
   sourceTextIdentityMustBeRetained:true,
   pitchVerified:false,neumesVerified:false,underlayVerified:false,
   printedRhythmicMarksVerified:false,publicScore:false
@@ -71,8 +96,10 @@ const manifest={
  status:"IMMUTABLE_SOURCE_IMAGE_EVIDENCE_ONLY_NOT_MUSIC_CERTIFICATE",
  edition:"Graduale Romanum, Solesmes, 1961",
  sourceArchive:"CMAA scanned folios served by GregoBase source ID 2",
- counts:{priorityScores:12,distinctPrintedPages:10,downloadedOriginalPageImages:captured,
-  pageImageAccessHolds:10-captured,musicallyCollatedScores:0,approvedPublicScores:0},
+ counts:{priorityScores:12,distinctPrintedPages:14,continuationScoreCount:4,
+  downloadedOriginalPageImages:captured,pageImageAccessHolds:14-captured,
+  completeSourceSpanScores:scores.filter(x=>x.originalScanStatus.startsWith("COMPLETE_")).length,
+  musicallyCollatedScores:0,approvedPublicScores:0},
  pages:results,scores,
  publication:{originalGabcUnchanged:true,selected1962LatinUnchanged:true,
   independentPrintedComparisonStillRequired:true,
