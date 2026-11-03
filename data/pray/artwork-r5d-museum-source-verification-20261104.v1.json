@@ -1,0 +1,70 @@
+{
+  "schema": "AO_PRAYER_R5D_MUSEUM_SOURCE_VERIFICATION_V1",
+  "verifiedOn": "2026-11-04",
+  "sourceQueue": "data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json",
+  "scope": "Museum object identity, source rights and attribution only; not photography acquisition, production authorization or reader QA",
+  "summary": {
+    "groupsReviewed": 2,
+    "eligibleNonRosarySlots": 15,
+    "groupsReadyForPublication": 0,
+    "publicationClearedSlots": 0
+  },
+  "records": [
+    {
+      "sourcePage": "https://www.clevelandart.org/art/1916.786",
+      "objectId": "1916.786",
+      "title": "The Crucifixion",
+      "catalogAttribution": "follower of Sodoma",
+      "queueAttribution": "Sodoma (Italian, 1477–1549)",
+      "attributionCorrectionRequired": true,
+      "museumRightsClaim": "Museum object page explicitly permits copying, modification and distribution under its Open Access Initiative",
+      "sourceRightsVerified": true,
+      "slots": [
+        "COV-pray.seven_words",
+        "COV-pray.stations",
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "originalPhotoCaptured": false,
+      "exactFileIntegrityChecked": false,
+      "framingAndResponsiveQA": false,
+      "publicationAuthorized": false,
+      "notes": "Museum page contains mixed attribution in page content; primary object header reads 'follower of Sodoma'; keep attribution conservative until catalog reconciliation."
+    },
+    {
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "objectNumber": "17.190.19",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "catalogAttribution": "Workshop of Peter Paul Rubens",
+      "queueAttribution": "Peter Paul Rubens",
+      "attributionCorrectionRequired": true,
+      "museumRightsClaim": "Public Domain object record with Download Image link; Met Open Access permits unrestricted commercial and noncommercial use",
+      "sourceRightsVerified": true,
+      "slots": [
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "COV-foundations_eternal_rest",
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "originalPhotoCaptured": false,
+      "exactFileIntegrityChecked": false,
+      "framingAndResponsiveQA": false,
+      "publicationAuthorized": false,
+      "notes": "Retain workshop attribution in visible credits and source provenance."
+    }
+  ],
+  "nextRequiredActions": [
+    "Retrieve and pin exact museum original URLs and image files",
+    "Record actual file rights and license terms at time of acquisition",
+    "Check pixel dimensions, decode, integrity and responsive contain-fit",
+    "Update credits to accurately reflect institution catalog",
+    "Publish only after individual placement QA; preserve Rosary and held placements"
+  ]
+}
