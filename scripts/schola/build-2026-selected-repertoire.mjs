@@ -12,6 +12,8 @@ import {index1961GradualeGabc,matchSelected1962ProperToGraduale}
  from "../../src/mass/reader-proper-gabc-bulk-join.js";
 import {crosswalkSelected2026MassesToPinnedReview}
  from "../../src/mass/reader-schola-selected-queue-crosswalk.js";
+import {crosswalkSelected2026ToFullPinnedSource}
+ from "../../src/mass/reader-schola-selected-full-source-crosswalk.js";
 
 const root=resolve(fileURLToPath(new URL("../..",import.meta.url)));
 const load=async path=>JSON.parse(await readFile(resolve(root,path),"utf8"));
@@ -148,11 +150,23 @@ const report={schema:"ao-schola-selected-mass-2026-proper-gabc-candidate-coverag
 const crosswalk=crosswalkSelected2026MassesToPinnedReview({
  annualReport:report,reviewQueue:pinnedReviewQueue
 });
+const fullSourceAudit=await load(".tmp/schola-1962-coverage/full-source-coverage.json");
+const allSourceCrosswalk=crosswalkSelected2026ToFullPinnedSource({
+ annualReport:report,fullSourceAudit,prior91Crosswalk:crosswalk
+});
 const dest=resolve(root,".tmp","schola-1962-selected-annual");
 await mkdir(dest,{recursive:true});
 await writeFile(resolve(dest,"2026-selected-gabc-coverage.json"),JSON.stringify(report,null,2)+"\n");
 await writeFile(resolve(dest,"2026-selected-pinned91-inline-crosswalk.json"),
  JSON.stringify(crosswalk,null,2)+"\n");
+await writeFile(resolve(dest,"2026-selected-full1049-inline-crosswalk.json"),
+ JSON.stringify(allSourceCrosswalk,null,2)+"\n");
+await writeFile(resolve(dest,"2026-selected-full1049-summary.json"),
+ JSON.stringify({schema:allSourceCrosswalk.schema,
+  counters:allSourceCrosswalk.counters,
+  missingSourcePaths:allSourceCrosswalk.absentFromPinnedLatinTree,
+  prior91Overlap:allSourceCrosswalk.comparisonWithPrior91,
+  publication:allSourceCrosswalk.publication},null,2)+"\n");
 await writeFile(resolve(dest,"2026-selected-gabc-summary.json"),JSON.stringify({
  schema:report.schema,year:2026,counters:report.counters,publication:report.status,
  claims:{localParishChantsSelected:false,notationApproved:false,recordingsApproved:false,
@@ -160,4 +174,6 @@ await writeFile(resolve(dest,"2026-selected-gabc-summary.json"),JSON.stringify({
 },null,2)+"\n");
 console.log("ACTUAL_2026_SELECTED_SUMMARY "+JSON.stringify(report.counters));
 console.log("SELECTED_VS_PINNED_91_INLINE_SUMMARY "+JSON.stringify(crosswalk.counters));
+console.log("SELECTED_VS_FULL_1049_SOURCE_INLINE_SUMMARY "+JSON.stringify(allSourceCrosswalk.counters));
+console.log("PINNED_91_SOURCE_OVERLAP "+JSON.stringify(allSourceCrosswalk.comparisonWithPrior91));
 if(rows.length!==365||raw.some(x=>x.error))process.exitCode=2;

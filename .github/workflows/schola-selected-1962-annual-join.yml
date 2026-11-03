@@ -5,6 +5,9 @@ on:
     paths:
       - 'scripts/schola/build-2026-selected-repertoire.mjs'
       - 'src/mass/reader-schola-selected-queue-crosswalk.js'
+      - 'src/mass/reader-schola-selected-full-source-crosswalk.js'
+      - 'tests/reader-schola-selected-full-source-crosswalk.mjs'
+      - 'scripts/schola/build-1962-full-coverage.mjs'
       - 'tests/reader-schola-selected-queue-crosswalk.mjs'
       - 'data/research/mass-music-1962-91-inline-review-queue.v1.json'
       - '.github/workflows/schola-selected-1962-annual-join.yml'
@@ -28,8 +31,16 @@ jobs:
         run: |
           node tests/reader-proper-gabc-bulk-join.mjs
           node tests/reader-schola-selected-queue-crosswalk.mjs
+          node tests/reader-schola-selected-full-source-crosswalk.mjs
           node tests/reader-inline-chant-bulk-91-source-queue.mjs
-      - name: Capture real production 2026 selected Mass of day, then join GABC archive
+      - name: Reuse the SHA-authenticated full 1962 Latin source cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/schola-pinned-1962/
+          key: schola-1962-ad8783641455bae38a8eb5782b34241a7b3ff2ef-v1
+      - name: Rebuild and verify 1049 pinned Latin source-to-GABC matches
+        run: node scripts/schola/build-1962-full-coverage.mjs
+      - name: Capture real 2026 selected Mass of day and join all 1049 source witnesses
         run: node scripts/schola/build-2026-selected-repertoire.mjs
       - name: Store selected repertoire, exact 91-source crosswalk and exceptions
         if: always()
