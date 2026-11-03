@@ -145,7 +145,7 @@ function showOriginal1961Scan(c){
    link.append(anchor)}
   return;
  }
- folio.textContent="Graduale Romanum 1961 · p"+(locator.originalPrintedFolios.length===2?"p. ":" . ")+locator.originalPrintedFolios.join("–")+" · "+c.scoreId;
+ folio.textContent="Graduale Romanum 1961 · "+(locator.originalPrintedFolios.length===2?"pp. ":"p. ")+locator.originalPrintedFolios.join("–")+" · "+c.scoreId;
  status.textContent="Loading original 1961 scan. Source image has not been compared to GABC.";
  const anchor=document.createElement("a");anchor.href=locator.scanned1961PageUrl;anchor.target="_blank";
  anchor.rel="noopener noreferrer";anchor.textContent="Open original 1961 scanned folio in separate tab";
