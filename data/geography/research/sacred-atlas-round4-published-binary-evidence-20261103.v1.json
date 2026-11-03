@@ -1,0 +1,35 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND4_ONE_PUBLISHED_IMAGE_BYTES_V1",
+  "reviewed_on": "2026-11-03",
+  "source_manifest": "data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json",
+  "published": 1,
+  "held": 3,
+  "new_approved_assets": [
+    {
+      "round1_number": 15,
+      "media_id": "ao-chartres-notre-dame-du-pilier-go69-2020",
+      "place_id": "place:FR:chartres-notre-dame",
+      "original_sha1": "c856e2b3f75e5c8d4e1a972db0b549ffe54f6c14",
+      "archive_download_expected_sha256": null,
+      "commons_api_sha1": "c856e2b3f75e5c8d4e1a972db0b549ffe54f6c14",
+      "original_dimensions": [
+        1120,
+        1680
+      ],
+      "archive_expected_dhash": null,
+      "actual_original_dhash": "274faa6b4d9fba9a",
+      "archive_visual_hamming_distance": null,
+      "archive_preview_bytes_verified": false,
+      "derivative_sha256": "e325e0605a9572975361d2ed121c8d06baf317d5bc4d647dac850d9a15cc7d54",
+      "derivative_dimensions": [
+        1067,
+        1600
+      ],
+      "asset_path": "assets/approved/place-gallery/FR-chartres-notre-dame-du-pilier-go69-2020.webp",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Chartres_(28)_Cath%C3%A9drale_Notre-Dame_-_Statue_de_N.D._du_Pilier_-_04.jpg",
+      "photo_author": "GO69",
+      "licence": "CC-BY-SA-4.0",
+      "rights_citation": "https://pop.culture.gouv.fr/notice/memoire/AP22NU00104"
+    }
+  ]
+}
