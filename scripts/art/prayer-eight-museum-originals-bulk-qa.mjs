@@ -92,7 +92,7 @@ function escape(s){return String(s??"").replace(/[&<>"']/g,z=>({"&":"&amp;","<":
 const rows=[];
 for(const w of spec.works){
  const matched=crosswalk.assignments.filter(a=>sameSource(a.painting?.sourcePage,w.expectedSourcePage) &&
-  a.editorial?.approvedOrInherited===true && !a.editorial?.hold && !a.editorial?.protectedCover);
+  ["APPROVED_EXACT_PHOTO_PENDING","PUBLISHED_EXACT_PHOTO"].includes(a.currentRuntime.state));
  assert.equal(matched.length,w.expectedPositions,w.slug+" position mismatch, do not acquire without new review");
  assert.ok(matched.every(a=>a.editorial.approvedOrInherited&&!a.editorial.hold&&!a.editorial.protectedCover));
  const base={slug:w.slug,title:w.title,masterArtist:w.artistInMaster,institutionalArtist:w.institutionalArtist,
