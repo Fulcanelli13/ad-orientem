@@ -1,5 +1,5 @@
 // MapCN-inspired discovery; every result is an existing, map-publishable canonical Place.
-import { sacredPlaceSynopsis } from "./heritage-presentation.js";
+import { sacredPlaceSynopsis } from "./place-source-synopsis.js";
 import { renderSacredPlaceFallback } from "./sacred-place-visual-fallback.js";
 // The visible-region filter is applied to the current MapLibre viewport, never to guessed
 // coordinates or a second independent map/index.
