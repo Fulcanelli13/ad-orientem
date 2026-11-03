@@ -5,7 +5,8 @@
 export const INTROIT_SUNG_TEXT_SCHEMA="ao-1962-source-selected-introit-full-sung-latin-v1";
 const textLines=s=>String(s??"").split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
 const stripCue=s=>s.replace(/^\s*[℣℟]\s*\.\s*/u,"").trim();
-const reference=s=>/^(?:Ps(?:alm)?|Psalmus|[1-4]\s+[A-Za-z]+|[A-Za-z]+)\s+\d+\s*[:.,;]/i.test(s);
+// Psalm citations occur as both "Ps 138:1" and "Ps. 24:1-2" in pinned 1962 source.
+const reference=s=>/^(?:Ps\.?|Psalmus|[1-4]\s+[A-Za-z]+|[A-Za-z]+)\.?\s+\d+\s*[:.,;]/i.test(s);
 const normalized=s=>String(s??"").normalize("NFD")
  .replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
