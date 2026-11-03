@@ -75,7 +75,7 @@ try{
    assert.equal(await page.locator(base+'.aoDailyUxModes [aria-pressed="true"]').count(),1);
    await checkPrayerFold("morning");
    await page.screenshot({path:resolve(captures,"daily-morning-cards-"+width+".png"),animations:"disabled"});
-   const quickRead=page.locator(base+'[data-ao-hours-direct-index] [data-tp381-daily-presentation="continuous"]');
+   const quickRead=page.locator(base+'[data-ao-hours-direct-index] [data-tp381-daily-quick="continuous"]');
    assert.equal(await quickRead.count(),1,"Read continuously must be directly visible, not hidden in settings");
    await quickRead.click();
    let flow=await state();
