@@ -6,9 +6,10 @@
     "EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED": 13,
     "REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED": 4,
     "REMOTE_EXACT_WORK_PREVIEW_RECOVERED_NOT_OFFLINE_CERTIFIED": 3,
-    "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED": 4,
+    "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED": 2,
     "DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD": 1,
     "MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO": 1,
+    "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED": 2,
     "EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED": 1,
     "ownerDateApprovedAt20261021": 5,
     "ownerDateRejectedAt20261021": 1,
@@ -21,7 +22,8 @@
     "Easter Vigil has two selected prophecy artworks requiring the appropriate multiple scene slots rather than one fabricated cover.",
     "No exact painting is silently replaced to bypass a licence or source hold.",
     "2026-10-21 Class I Yes/No date review snapshot has five yes, one no, and 21 pending; this is historical, not proof no later decision exists.",
-    "New 2026-11-03 source photographs on 3 selected dates are remote-source previews with no native master or approved crop; work identity must match frozen date editorial assignment."
+    "New 2026-11-03 source photographs on 3 selected dates are remote-source previews with no native master or approved crop; work identity must match frozen date editorial assignment.",
+    "Two original saved approved-draft PNGs are now recovered with exact byte-level hashes but NOT yet bundled into GitHub or released as date artworks. They remain in the 20 unpublished dates."
   ],
   "rows": [
     {
@@ -224,12 +226,16 @@
         "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
         "sourceObjectUrl": "https://opencollection.brooklynmuseum.org/objects/4616"
       },
-      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "decision": "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
       "offlineCertified": false,
       "sourceOwnerDateDecision20261021": "pending",
-      "sourcePhotoAccepted20261021": "not_recorded"
+      "sourcePhotoAccepted20261021": "not_recorded",
+      "exactSourceManifest": "data/artwork/home-2026-recovered-approved-ai-originals.v1.json",
+      "originalRetrievedLocally": true,
+      "publicationReleased": false,
+      "sourceApprovalScope": "SAVED_AS_APPROVED_DRAFT_NOT_PRODUCTION_CROP_APPROVAL"
     },
     {
       "date": "2026-04-09",
@@ -349,12 +355,16 @@
         "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
         "sourceObjectUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Christus%2Bgeneest%2Been%2Bverlamde%2Bman%2Bdie%2Bdoor%2Bhet%2Bdak%2Bwerd%2Bneergelaten--384b55d5788d431ef93b4787b63ecdd8"
       },
-      "decision": "APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED",
+      "decision": "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED",
       "sourceResearchCandidates": 0,
       "noSubstitution": true,
       "offlineCertified": false,
       "sourceOwnerDateDecision20261021": "pending",
-      "sourcePhotoAccepted20261021": "not_recorded"
+      "sourcePhotoAccepted20261021": "not_recorded",
+      "exactSourceManifest": "data/artwork/home-2026-recovered-approved-ai-originals.v1.json",
+      "originalRetrievedLocally": true,
+      "publicationReleased": false,
+      "sourceApprovalScope": "SAVED_AS_APPROVED_DRAFT_NOT_PRODUCTION_CROP_APPROVAL"
     },
     {
       "date": "2026-05-30",
