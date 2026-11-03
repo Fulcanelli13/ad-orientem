@@ -352,7 +352,7 @@ let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,con
 let PEN={step:0,token:0};
 let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private'};
-let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0,scriptureOnly:false};
+let SEVEN={step:0,sections:null,opening:'',appendix:'',loading:false,error:'',srcToken:0,scriptToken:0,scriptureOnly:false};
 let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false};
 // An explicitly selected public Stations method owns its local recitation/depth.
@@ -3010,11 +3010,11 @@ async function ensureSevenWords(){
   const txt=sevenWordsLocalWitnessText(); // packaged with the app: no Wikisource runtime dependency
   if(token!==SEVEN.srcToken)return;
   const witnessed=parseSevenWordsHistoricalWitness(txt);
-  SEVEN.sections=witnessed.sections;SEVEN.appendix=witnessed.appendix;
+  SEVEN.sections=witnessed.sections;SEVEN.opening=witnessed.opening;SEVEN.appendix=witnessed.appendix;
   SEVEN.loading=false;render();
  }catch(error){
   if(token!==SEVEN.srcToken)return;
-  SEVEN.sections=null;SEVEN.appendix='';
+  SEVEN.sections=null;SEVEN.opening='';SEVEN.appendix='';
   SEVEN.loading=false;SEVEN.error=String(error?.message||error);render();
  }
 }
@@ -3023,6 +3023,10 @@ function renderSevenWords(){
  const i=Math.max(0,Math.min(6,SEVEN.step)),label=(isFr()?WORD_LABELS.fr:WORD_LABELS.en)[i],ref=WORD_REFS[i];
  setTimeout(()=>{++SEVEN.scriptToken;loadScriptureInto('[data-p435930-word-scripture]','gospel',ref,false,()=>SEVEN.scriptToken)},0);
  const hist=SEVEN.scriptureOnly?'':(SEVEN.sections?.[i]?.text||'');
+ // The Baltimore Manual's opening precedes its seven Word meditations.
+ // Show it once, as original EN text, only within the historical prayer face.
+ const historicalOpening=!SEVEN.scriptureOnly&&i===0&&SEVEN.opening
+  ?`<section class="aoP435930SevenOpening" data-ao-seven-words-original-opening lang="en"><small>${esc(L('HISTORICAL OPENING · 1889','OUVERTURE HISTORIQUE · 1889 (ANGLAIS)'))}</small><div class="aoP435930Text" lang="en">${sourceWitnessParagraphs(SEVEN.opening)}</div></section>`:'';
  const appendix=!SEVEN.scriptureOnly&&i===6&&SEVEN.appendix?`<details class="aoP435930Source aoP435930SevenClosing"><summary>${esc(L('Historical concluding prayers (English)','Prières finales historiques (anglais)'))}</summary><div class="aoP435930Text" lang="en">${nl(SEVEN.appendix)}</div></details>`:'';
  const scripture=`<section class="aoP435930WordHero"><small>${esc(ref)}</small>
   ${scriptureContextCapsule(ref,{french:isFr()})}
@@ -3030,7 +3034,7 @@ function renderSevenWords(){
  const witness=SEVEN.scriptureOnly?'':SEVEN.error
   ?callout(esc(L('The meditation could not be loaded. The Gospel Word remains available; no replacement text is generated.','La méditation n’a pas pu être chargée. La Parole évangélique reste disponible ; aucun texte de remplacement n’est généré.')),'warn')
   :SEVEN.loading&&!SEVEN.sections?`<p class="aoP435930Loading">${esc(L('Loading meditation…','Chargement de la méditation…'))}</p>`
-  :hist?`<section class="aoP435930HistoricalFocus"><small>${esc(L('MEDITATION','MÉDITATION'))}</small><div class="aoP435930Text" lang="en">${sourceWitnessParagraphs(hist)}</div>${isFr()?`<p class="aoP435930SourceNote">${esc(L('The source meditation is preserved in English because no vetted French witness is attached to this module.','La méditation source est conservée en anglais, faute de témoin français vérifié rattaché à ce module.'))}</p>`:''}</section>`:'';
+  :hist?`<section class="aoP435930HistoricalFocus">${historicalOpening}<small>${esc(L('MEDITATION','MÉDITATION'))}</small><div class="aoP435930Text" lang="en">${sourceWitnessParagraphs(hist)}</div>${isFr()?`<p class="aoP435930SourceNote">${esc(L('The source meditation is preserved in English because no vetted French witness is attached to this module.','La méditation source est conservée en anglais, faute de témoin français vérifié rattaché à ce module.'))}</p>`:''}</section>`:'';
  const body=`${guideNow(L('Word '+(i+1),'Parole '+(i+1)),L('Read the Gospel words first. Stay with Christ’s words before moving into the historical meditation.','Lisez d’abord les paroles de l’Évangile. Demeurez avec les paroles du Christ avant de passer à la méditation historique.'))}
  ${scripture}<div class="aoP435930Seg" role="group" aria-label="${esc(L('Contemplation method','Méthode de contemplation'))}"><button type="button" data-p435930-word-method="scripture" aria-pressed="${SEVEN.scriptureOnly}">${esc(L('Scripture and silence','Écriture et silence'))}</button><button type="button" data-p435930-word-method="historical" aria-pressed="${!SEVEN.scriptureOnly}">${esc(L('Historical meditation','Méditation historique'))}</button></div>${witness}
  ${guideCue(L('SILENCE','SILENCE'),L('When the meditation has ended, stop reading. Remain with this Word before advancing to the next.','Lorsque la méditation est terminée, cessez de lire. Demeurez avec cette Parole avant de passer à la suivante.'))}`;
@@ -3040,7 +3044,8 @@ function renderSevenWords(){
  ${card}
  ${i===6?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-word-done>${esc(L('Finish devotion','Terminer la dévotion'))}</button></div>`:''}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Historical meditation guide','Guide de la méditation historique'))}</summary>${devotionalGuide('sevenWords')}</details>
- <details class="aoP435930Source"><summary>${esc(L('Historic French Seven Words · separate source (research)','Sept Paroles historiques françaises · source distincte (recherche)'))}</summary><p>${esc(L('Berthaumier’s 1854 French translation of a distinct St Bonaventure-attributed seven-word method is documented, but has not yet been independently collated against all printed pages; it is not a translation of the Baltimore text.','La traduction française de Berthaumier (1854) d’une méthode distincte des sept Paroles, attribuée à saint Bonaventure, est identifiée mais non encore collationnée sur toutes les pages imprimées. Il ne s’agit pas de la traduction du texte de Baltimore.'))}</p><a href="https://fr.wikisource.org/wiki/Livre:%C5%92uvres_spirituelles_de_S._Bonaventure,_tome_1,_1854.djvu" target="_blank" rel="noopener noreferrer">${esc(L('1854 original scanned edition','Édition originale numérisée de 1854'))}</a></details>\n ${devotionalSource('Baltimore Manual · The Devotion of the Seven Words upon the Cross',L('English 1889 Baltimore Manual text preserved from Wikisource; the transcription anomalies “you shalt” and “burn tli the desire” have two documented editorial corrections, supported by a separate historical witness. Independent print-page collation remains pending. Gospel quotations are separate; the Marian conclusion is an appendix, not an eighth Word.','Texte anglais du Manuel de Baltimore de 1889 conservé d’après Wikisource ; deux anomalies (« you shalt » et « burn tli the desire ») ont été corrigées éditorialement d’après un autre témoin historique. La collation sur l’édition imprimée reste à faire. Les citations évangéliques sont distinctes ; la conclusion mariale est une annexe, non une huitième Parole.'),'sevenWords')}${appendix}</main>`;
+ <details class="aoP435930Source"><summary>${esc(L('Historic French Seven Words · separate source (research)','Sept Paroles historiques françaises · source distincte (recherche)'))}</summary><p>${esc(L('Berthaumier’s 1854 French translation of a distinct St Bonaventure-attributed seven-word method is documented, but has not yet been independently collated against all printed pages; it is not a translation of the Baltimore text.','La traduction française de Berthaumier (1854) d’une méthode distincte des sept Paroles, attribuée à saint Bonaventure, est identifiée mais non encore collationnée sur toutes les pages imprimées. Il ne s’agit pas de la traduction du texte de Baltimore.'))}</p><a href="https://fr.wikisource.org/wiki/Livre:%C5%92uvres_spirituelles_de_S._Bonaventure,_tome_1,_1854.djvu" target="_blank" rel="noopener noreferrer">${esc(L('1854 original scanned edition','Édition originale numérisée de 1854'))}</a></details>
+ ${devotionalSource('Baltimore Manual · The Devotion of the Seven Words upon the Cross',L('English 1889 Baltimore Manual text preserved from Wikisource; the transcription anomalies “you shalt” and “burn tli the desire” have two documented editorial corrections, supported by a separate historical witness. Independent print-page collation remains pending. Gospel quotations are separate; the Marian conclusion is an appendix, not an eighth Word.','Texte anglais du Manuel de Baltimore de 1889 conservé d’après Wikisource ; deux anomalies (« you shalt » et « burn tli the desire ») ont été corrigées éditorialement d’après un autre témoin historique. La collation sur l’édition imprimée reste à faire. Les citations évangéliques sont distinctes ; la conclusion mariale est une annexe, non une huitième Parole.'),'sevenWords')}${appendix}</main>`;
 }
 const FORTY_STAGES=[['Arrive','Arriver'],['Adore','Adorer'],['Prayer aids','Aides de prière'],['Public devotion','Dévotion publique'],['Benediction','Bénédiction'],['Leave','Partir']];
 function fortyStageBody(){
