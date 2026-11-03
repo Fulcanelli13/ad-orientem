@@ -2302,7 +2302,7 @@ function renderPriestIntercessions(){
  '<article class="aoPriestsPrayerCard"><div class="aoPriestsPrayerHead"><h2>'+esc(p.title)+'</h2>'+
  (purpose!=='priests'
  ?'<button type="button" data-p435930-priests-latin aria-pressed="'+String(PRIESTS.latin)+'">'+
- esc(PRIESTS.latin?L("EN / FR","EN / FR"):L("LATIN","LATIN"))+'</button>':'')+
+ esc(p.language==='la'?L('ENGLISH','ANGLAIS'):L('LATIN','LATIN'))+'</button>':'')+
  '</div>'+original+'<p class="aoPriestsText" lang="'+p.language+'">'+nl(p.text)+'</p></article>'+
  '<details class="aoPriestsSource"><summary>'+esc(L("Historical sources and attribution","Sources historiques et attribution"))+
  '</summary><p>'+esc(p.sourceNote)+'</p><p>'+esc(L("The printed page image has not yet been certified. No old indulgence grants are represented as current.",

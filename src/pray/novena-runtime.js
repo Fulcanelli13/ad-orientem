@@ -1,5 +1,6 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
 import {novenaCanonicalFaceV1} from "./novena-canonical-faces.v1.js";
+import {novenaSourceWitnessFaceV1} from "./novena-source-witness-face.v1.js";
 import { ICKSP_THERESE_DEVOTIONS_V1 } from "./icksp-therese-devotions.v1.js";
 import "./st-therese-selected-novena-cover-styles.js";
 import { selectedThereseNovenaCover } from "./st-therese-selected-novena-cover.v1.js";
@@ -147,25 +148,31 @@ function renderDetail(n){
   </main>`;
 }
 function sourceWitness(text,label){
- if(!text)return'';
- const bilingual=typeof text==='object'&&text!==null;
- const en=bilingual?String(text.en||''):String(text||'');
- const fr=bilingual?String(text.fr||''):'';
+ if(!text)return '';
+ const face=novenaSourceWitnessFaceV1(text,isFr()?'fr':'en',N.showEnglish);
+ if(!face.language)return '<div class="aoN1FailClosed" data-n1-source-unavailable>'+esc(L('This historical source text is unavailable.','Ce texte historique n’est pas disponible.'))+'</div>';
  const n=N.id?ALL_NOVENAS[N.id]:null;
- if(isFr()&&!N.showEnglish&&!fr)return `<div class="aoN1FailClosed"><b>${esc('Le texte français de cette prière n’est pas disponible.')}</b><br><button type="button" class="aoP435930Secondary" data-n1-show-en>${esc('Afficher le témoin anglais')}</button></div>`;
- const showEnglish=isFr()&&N.showEnglish;
- const value=showEnglish?en:(isFr()?fr:en);
  let witnessLabel=label;
- if(isFr()){
-   if(showEnglish)witnessLabel='TÉMOIN SOURCE ANGLAIS';
-   else if(String(n?.frenchTextStatus||'').includes('SOURCE_LOCKED'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
+ if(face.language==='la')witnessLabel=L('ORIGINAL LATIN SOURCE','TÉMOIN SOURCE LATIN');
+ else if(isFr()&&face.language==='en')witnessLabel='TÉMOIN SOURCE ANGLAIS';
+ else if(!isFr()&&face.language==='fr')witnessLabel='FRENCH SOURCE WITNESS';
+ else if(isFr()){
+   if(String(n?.frenchTextStatus||'').includes('SOURCE_LOCKED'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
    else if(String(n?.frenchTextStatus||'').includes('TRADITIONAL_FRENCH_WITNESS'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
    else witnessLabel='TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE';
  }
- // A source-only English witness must retain a reversible way back to the
- // explicit French-unavailable state, rather than trapping readers in English.
- const toggle=isFr()&&en&&(fr||showEnglish)?`<button type="button" class="aoP435930Secondary" data-n1-show-en>${esc(showEnglish?'Revenir au français':'Voir le témoin anglais')}</button>`:'';
- return `<article class="aoN1SourceText"><small>${esc(witnessLabel)}</small>${novenaParagraphs(value)}${toggle}</article>`;
+ const notice=face.requestedUnavailable
+  ?'<p class="aoN1SourceLanguageNotice" data-n1-proper-source-fallback lang="'+(isFr()?'fr':'en')+'">'+
+   esc(face.language==='en'
+    ?L('Original English witness shown; no verified French translation is claimed.','Texte source anglais affiché ; aucune traduction française vérifiée n’est revendiquée.')
+    :face.language==='fr'
+    ?L('French source witness shown; no English version is attached to this prayer.','Témoin français affiché ; aucune version anglaise n’est attachée à cette prière.')
+    :L('Original Latin witness shown; no verified vernacular text is attached.','Texte source latin affiché ; aucune version vernaculaire vérifiée n’est attachée.'))+'</p>'
+  :'';
+ const toggle=face.canToggleEnglish?'<button type="button" class="aoP435930Secondary" data-n1-show-en>'+
+  esc(N.showEnglish?'Revenir au français':'Voir le témoin anglais')+'</button>':'';
+ return '<article class="aoN1SourceText" data-n1-source-language="'+face.language+'" lang="'+face.language+'"><small>'+esc(witnessLabel)+'</small>'+
+  notice+novenaParagraphs(face.text)+toggle+'</article>';
 }
 function canonicalPrayer(id,count=1){
  const p=prayerData()[id];
@@ -416,7 +423,7 @@ if(MOD&&!MOD.__aoNovenasV3){
  };
  window.AO_MODULES=wrapper;window.AO_MODULE_REGISTRY_V36=wrapper;
 }
-const qa=()=>({version:VERSION,corpusCount:Object.keys(CORPUS).length,allNineDays:Object.values(CORPUS).every(n=>n.days.length===9),forms:[...new Set(Object.values(CORPUS).map(n=>n.form))],patterns:[...new Set(Object.values(CORPUS).map(n=>novenaPattern(n)))],noCompletionTracking:true,noIntentStorage:true,supplementalCount:Object.keys(ADDITIONAL_NOVENAS).length,frenchHistoricalPrayerPolicy:'FAIL_CLOSED_EXPLICIT_EN_WITNESS_OPTION',calendarHooks:Object.fromEntries(Object.values(CORPUS).map(n=>[n.id,n.calendar.precision])),canonicalReuse:{ourFather:true,hailMary:true,gloryBe:true,loreto1962:true},pass:Object.keys(CORPUS).length===16&&Object.values(CORPUS).every(n=>n.days.length===9)});
+const qa=()=>({version:VERSION,corpusCount:Object.keys(CORPUS).length,allNineDays:Object.values(CORPUS).every(n=>n.days.length===9),forms:[...new Set(Object.values(CORPUS).map(n=>n.form))],patterns:[...new Set(Object.values(CORPUS).map(n=>novenaPattern(n)))],noCompletionTracking:true,noIntentStorage:true,supplementalCount:Object.keys(ADDITIONAL_NOVENAS).length,frenchHistoricalPrayerPolicy:'IMMEDIATE_AUTHENTIC_SOURCE_WITNESS_WITH_LANGUAGE_LABEL',calendarHooks:Object.fromEntries(Object.values(CORPUS).map(n=>[n.id,n.calendar.precision])),canonicalReuse:{ourFather:true,hailMary:true,gloryBe:true,loreto1962:true},pass:Object.keys(CORPUS).length===16&&Object.values(CORPUS).every(n=>n.days.length===9)});
 const NOVENA_API=Object.freeze({version:VERSION,open,close:BASE_CLOSE,captureAppBackHandoff,restoreAppBackHandoff,state:()=>({...N}),corpus:CORPUS,supplemental:ADDITIONAL_NOVENAS,calendarStatus:id=>ALL_NOVENAS[id]?calStatus(ALL_NOVENAS[id]):null,qa});
 window.AO_NOVENAS_V3=NOVENA_API;
 window.AO_NOVENAS_V2=NOVENA_API;
