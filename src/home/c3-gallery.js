@@ -2,6 +2,7 @@
 import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.js";
 import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
 import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
+import {approved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]+/g," ");
 const cleanArt=a=>a&&a.qualityGate==="PASS"&&typeof a.file==="string"&&
@@ -107,8 +108,12 @@ export function hydrateC3Art(root,state,win=globalThis){
   const slot=hero?.querySelector("[data-ao-home-art-slot]");
   const mainInfo=hero?.querySelector('[data-home-c3-info="mass"]');
   if(mainInfo){mainInfo.hidden=true;mainInfo.__c3Artwork=null;}
-  const selected=c3ApprovedDatedHomeArt(p,state);
-  const gospelHero=selected?null:releasedDateGospelHero2026(state,p);
+  // If the production Home renderer has already mounted an authoritative
+  // dated painting, C3 must never re-select a competing Proper donor.
+  const mounted=slot?.querySelector("img[data-ao-home-authoritative-date]");
+  const authoritative=mounted?approved2026HomeArtwork(state,p):null;
+  const selected=mounted?null:c3ApprovedDatedHomeArt(p,state);
+  const gospelHero=mounted?null:(selected?null:releasedDateGospelHero2026(state,p));
   let datedPreview=null;
   if(selected&&slot){
     // The Calendar already publishes these *exact* user-approved Commons
@@ -160,7 +165,14 @@ export function hydrateC3Art(root,state,win=globalThis){
     if(mainImg.complete)orientation();else mainImg.addEventListener("load",orientation,{once:true});
     const row=p?.effectiveRow?.(p?.properPath?.(state));
     const a=row?.status==="GREEN"?p?.effectiveArtwork?.(row.primaryArtId):null;
-    if(mainInfo&&datedPreview){
+    if(mainInfo&&authoritative){
+      mainInfo.__c3Artwork={
+        title:authoritative.title,artist:authoritative.artist,
+        date:"",rights:authoritative.rights,
+        source:authoritative.source,image:authoritative.infoImage
+      };
+      mainInfo.hidden=false;
+    }else if(mainInfo&&datedPreview){
       mainInfo.__c3Artwork={title:datedPreview.title,artist:datedPreview.artist,
         date:"",rights:"Commons public-domain artwork preview (offline image not certified)",
         source:datedPreview.source,image:datedPreview.image};mainInfo.hidden=false;
