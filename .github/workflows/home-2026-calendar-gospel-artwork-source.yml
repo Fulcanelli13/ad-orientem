@@ -5,6 +5,9 @@ on:
       - "src/home/calendar-gospel-artwork-evidence.js"
       - "data/calendar/research/2026-calendar-gospel-home-artwork-source-crosswalk.v1.json"
       - "tests/calendar-gospel-home-art-2026.mjs"
+      - "tests/calendar-gospel-curated-art-match.mjs"
+      - "src/home/calendar-gospel-curated-art-matcher.js"
+      - "data/calendar/research/2026-existing-curated-date-art-reuse.v1.json"
       - "tools/calendar/audit-2026-home-calendar-gospel-artwork.mjs"
       - ".github/workflows/home-2026-calendar-gospel-artwork-source.yml"
   workflow_dispatch:
@@ -20,7 +23,9 @@ jobs:
         with:
           node-version: "22"
       - name: Calendar 365 identity / Gospel Latin source / artwork editorial rights gates
-        run: node tests/calendar-gospel-home-art-2026.mjs
+        run: |
+          node tests/calendar-gospel-home-art-2026.mjs
+          node tests/calendar-gospel-curated-art-match.mjs
 
   annual-resolved-mass-gospel-source-audit:
     runs-on: ubuntu-latest
