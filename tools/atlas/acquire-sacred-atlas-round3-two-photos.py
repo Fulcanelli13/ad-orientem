@@ -72,7 +72,7 @@ def verify_candidate(row):
     if api_sha and api_sha not in (digest,to_b36(int(digest,16))):
         raise RuntimeError(f"Commons original file SHA-1 mismatch: {row['commons_title']}")
     with Image.open(io.BytesIO(raw)) as img:
-        if img.format!="JPEG": raise RuntimeError("Unexpected original image format; reviewed JPEG required")
+        if img.format not in ('JPEG','MPO'): raise RuntimeError('Unexpected original format '+str(img.format)+' for '+row['commons_title'])
         # Some Commons originals, notably Mariazell, store landscape pixel
         # arrays with EXIF rotation; the archive preview and Wikimedia's
         # published dimensions describe the visibly upright photograph.
