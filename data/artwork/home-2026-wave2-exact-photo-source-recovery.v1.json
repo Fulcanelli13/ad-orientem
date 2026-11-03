@@ -5,9 +5,10 @@
   "summary": {
     "publishedRemotePreviewCandidates": 3,
     "heldPhotographLeads": 4,
-    "unlocatedDerivativeFiles": 4,
+    "unlocatedDerivativeFiles": 2,
     "multiSceneVigil": 1,
-    "totalTracked": 12
+    "totalTracked": 12,
+    "recoveredDerivativeOriginalsNotYetReleased": 2
   },
   "rightsPolicy": [
     "Source-work public domain and source photograph licence are separate",
@@ -15,7 +16,8 @@
     "Remote preview is not offline-local source approval nor crop approval",
     "Exact 1962 principal and Proper plus frozen work identity are required",
     "Later individual user approval or rejection takes precedence over historical review spreadsheets",
-    "No contacting owners, no paid licenses, no substitution of user-rejected or wrong-feast paintings"
+    "No contacting owners, no paid licenses, no substitution of user-rejected or wrong-feast paintings",
+    "The 2 recovered source originals are saved AI-derived user-approved drafts, not historical oil paintings by Tissot/Wierix and not certified final mobile crops."
   ],
   "cases": [
     {
@@ -106,14 +108,14 @@
     {
       "date": "2026-04-08",
       "work": "AI-derived Tissot second draught",
-      "status": "EXACT_USER_ACCEPTED_DERIVATIVE_FILE_UNLOCATED",
-      "remaining": "recover exact approved generated file"
+      "status": "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED",
+      "remaining": "Source original recovered in private Library; physical image binary not in production repo. Preserve exact original bytes; source/crop quality gates and release remain."
     },
     {
       "date": "2026-05-29",
       "work": "AI-derived Wierix paralytic",
-      "status": "EXACT_USER_ACCEPTED_DERIVATIVE_FILE_UNLOCATED",
-      "remaining": "recover exact approved generated file"
+      "status": "EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED",
+      "remaining": "Source original recovered in private Library; physical image binary not in production repo. Preserve exact original bytes; source/crop quality gates and release remain."
     },
     {
       "date": "2026-04-04",
@@ -121,5 +123,6 @@
       "status": "MULTI_SCENE_VIGIL_HOLD",
       "remaining": "separate prophecy images; no single composite date hero without editorial rule"
     }
-  ]
+  ],
+  "recoveredOriginalsManifest": "data/artwork/home-2026-recovered-approved-ai-originals.v1.json"
 }
