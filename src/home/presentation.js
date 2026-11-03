@@ -11,6 +11,7 @@ import { TODAY_V2_CSS } from "./today-v2-styles.js";
 import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
 import { h4Enabled, h4HomeView } from "./today-h4-view.js";
 import { hydrateC3Art } from "./c3-gallery.js";
+import {renderApproved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
 import { hydrateHomeDidYouKnow } from "./did-you-know-glossary.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
@@ -234,6 +235,10 @@ export function renderHome(root,state,win=globalThis){
     if(art)slot.innerHTML=art;
     // Legacy art is not curatorial approval; remove known rejected painter/ID selections.
     removeExcludedLegacyHomeArtwork(slot);
+    // Production override — the curated painting for this exact observed
+    // 1962 date is authoritative, never donor art selected by Proper alone.
+    // Supports both H7 and the legacy Home presentation with one source owner.
+    renderApproved2026HomeArtwork(slot,state,win);
     // Donor fallback labels are not approved sacred paintings; retain the
     // devotional typographic hero but do not reserve an empty image column.
     const hasArt=Boolean(slot.querySelector("img[src],picture source[srcset],video[poster],canvas"));
