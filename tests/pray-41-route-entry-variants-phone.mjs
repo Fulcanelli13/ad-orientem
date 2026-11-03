@@ -108,12 +108,26 @@ try{
      "library":row.sourceFamily==="novena-programmes"?"novenas":
      row.sourceFamily==="traditional-pray"?"traditional-pray":internalPrayerView(id);
     assert.ok(expected,id+" has no known runtime owner");
+    console.log("PRAY_ENTRY_CHECK "+width+"px "+language+" "+id+" -> "+expected);
     await page.waitForFunction(({expected,id})=>{
      if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']")&&globalThis.AO_ROSARY_V381?.steps?.()?.length>60;
      const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
      return m?.dataset.aoPrayView===expected &&
       (expected!=="traditional-pray"||m.dataset.aoTraditionalPrayRoute===id);
-    },{expected,id},{timeout:18000});
+    },{expected,id},{timeout:18000}).catch(async error=>{
+     const detail=await page.evaluate(()=>{
+      const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+      const r=document.querySelector("#aoPrayerBookRoot.open .pbShell");
+      return {view:m?.dataset.aoPrayView,traditionalRoute:m?.dataset.aoTraditionalPrayRoute,
+       text:(m?.innerText||"").slice(0,300),rosaryVisible:!!r,
+       rosarySteps:globalThis.AO_ROSARY_V381?.steps?.()?.length,
+       mounted:!!document.querySelector("#aoPray435930.open"),
+       routeError:document.querySelector("[data-p435930-internal-route-error],[data-p435930-family-open-error]")?.textContent||null,
+       currentLang:document.documentElement.lang};
+     });
+     throw new Error("PRAY_ENTRY_TIMEOUT "+width+"px "+language+" route="+id+
+      " expected="+expected+" observed="+JSON.stringify(detail)+" "+String(error));
+    });
     const observed=await page.evaluate(({expected,id})=>{
      const rosary=expected==="rosary",shell=rosary?
       document.querySelector("#aoPrayerBookRoot.open .pbShell"):
