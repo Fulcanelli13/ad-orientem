@@ -973,6 +973,7 @@ export function renderExploreToString(vm){
     // replaced by exactly those mapped CL2 results after map load/movement.
     if(vm.lens==="tlm")html+=renderTlmMapResultRail({
       language:vm.language,items:[],selectedId:vm.selected?.item_id,loading:true,
+      addressOnlyCount:vm.addressOnly,
     });
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
