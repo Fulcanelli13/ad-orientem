@@ -185,7 +185,7 @@ export function createFindOwner(win=globalThis){
     massType:"ANY",
     heritageCategories:[...PUBLIC_HERITAGE_CATEGORIES],
     highlightCustomId:null,
-    journeyOpen:false,journeySelectedId:null,journeySelectedStageId:null,
+    journeyOpen:false,journeySelectedId:null,journeySelectedStageId:null,journeySheetExpanded:false,
     expandPlace:false,
     expandDetail:false,
     atlasFamily:"ANY",
@@ -569,6 +569,7 @@ export function createFindOwner(win=globalThis){
       journeys,
       journeySelectedId:state.journeySelectedId,
       journeySelectedStageId:state.journeySelectedStageId,
+      journeySheetExpanded:state.journeySheetExpanded,
       selectedPlaceId:state.selectedPlaceId,
       selectedId:state.selectedId,
       expandPlace:state.expandPlace,
@@ -1535,7 +1536,7 @@ export function createFindOwner(win=globalThis){
       if(!state.journeyOpen)journeyPreviousCategories=[...state.heritageCategories];
       state.journeyOpen=true;
       state.journeySelectedId=routeId;
-      state.journeySelectedStageId=null;
+      state.journeySelectedStageId=null;state.journeySheetExpanded=false;
       state.heritageCategories=["pilgrimages"];
       state.query="";state.selectedPlaceId=null;state.selectedId=null;
       state.expandPlace=false;state.expandDetail=false;nearbyResults=null;
@@ -1565,7 +1566,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       if(!state.journeyOpen){
         journeyPreviousCategories=[...state.heritageCategories];
-        state.journeyOpen=true;state.journeySelectedStageId=null;state.heritageCategories=["pilgrimages"];
+        state.journeyOpen=true;state.journeySelectedStageId=null;state.journeySheetExpanded=false;state.heritageCategories=["pilgrimages"];
         state.query="";state.selectedPlaceId=null;state.selectedId=null;
         state.expandPlace=false;nearbyResults=null;
       }
@@ -1575,6 +1576,10 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.journeyOpen=false;
       state.heritageCategories=journeyPreviousCategories??[...PUBLIC_HERITAGE_CATEGORIES];
       journeyPreviousCategories=null;void paint();return;
+    }
+    if(target?.closest?.("[data-explore-journey-sheet-toggle]")&&state.journeyOpen){
+      event.preventDefault?.();state.journeySheetExpanded=!state.journeySheetExpanded;
+      void paint();return;
     }
     const journeySelect=target?.closest?.("[data-explore-journey-select]");
     if(journeySelect&&state.journeyOpen){
@@ -1796,14 +1801,28 @@ export function createFindOwner(win=globalThis){
 
   // The visible sheet handle is a real interaction: upward swipe expands
   // the record, downward swipe dismisses. Text and map gestures remain native.
-  let sheetTouch=null;
+  let sheetTouch=null,journeyTouch=null;
   function onSheetTouchStart(event){
+    const journeyHandle=event.target?.closest?.("[data-explore-journey-sheet-toggle]");
+    const start=event.touches?.[0];
+    journeyTouch=journeyHandle&&state.journeyOpen&&start
+      ?{x:start.clientX,y:start.clientY}:null;
     const handle=event.target?.closest?.(".aoHeritageCardLayer .aoHeritageSheetHandle");
     const touch=event.touches?.[0];
     sheetTouch=handle&&state.selectedPlaceId&&!state.expandPlace&&touch
       ?{x:touch.clientX,y:touch.clientY}:null;
   }
   function onSheetTouchEnd(event){
+    if(journeyTouch){
+      const from=journeyTouch;journeyTouch=null;
+      const to=event.changedTouches?.[0];
+      if(to){
+        const dy=to.clientY-from.y,dx=to.clientX-from.x;
+        if(Math.abs(dy)>=42&&Math.abs(dx)<=Math.abs(dy)){
+          state.journeySheetExpanded=dy<0;void paint();return;
+        }
+      }
+    }
     if(!sheetTouch)return;
     const started=sheetTouch;sheetTouch=null;
     const end=event.changedTouches?.[0];if(!end)return;
