@@ -165,12 +165,14 @@ export function selectedPilgrimageJourney(routes=[],id=null){
   return arr(routes).find(row=>row.id===id)??arr(routes)[0]??null;
 }
 export function renderPilgrimageJourneyPanel({
-  language="en",routes=[],selectedId=null,selectedStageId=null,
+  language="en",routes=[],selectedId=null,selectedStageId=null,sheetExpanded=false,
 }={}){
   const r=arr(routes),selected=selectedPilgrimageJourney(r,selectedId);
-  let html='<aside class="aoJourneyPanel" data-atlas-journey="true" data-explore-journey-panel aria-label="'+
+  let html='<aside class="aoJourneyPanel" data-atlas-journey="true" data-journey-expanded="'+String(sheetExpanded)+'" data-explore-journey-panel aria-label="'+
     esc(label(language,"Pilgrimage journeys","Parcours de pèlerinage"))+'">';
-  html+='<div class="aoJourneyGrab" aria-hidden="true"></div>';
+  html+='<button type="button" class="aoJourneyGrab" data-explore-journey-sheet-toggle aria-expanded="'+String(sheetExpanded)+'" aria-label="'+esc(label(language,
+    sheetExpanded?"Collapse pilgrimage sheet":"Expand pilgrimage sheet",
+    sheetExpanded?"Réduire le panneau du pèlerinage":"Déployer le panneau du pèlerinage"))+'"></button>';
   html+='<header class="aoJourneyHeader"><div><small>AD ORIENTEM · '+esc(label(language,"PILGRIMAGE JOURNEY","PARCOURS DE PÈLERINAGE"))+
     '</small><h2>'+esc(selected?.name||label(language,"Journeys","Parcours"))+'</h2></div>';
   html+='<button type="button" data-explore-journey-close aria-label="'+
