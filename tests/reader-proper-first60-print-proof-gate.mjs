@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildFirst60PrintedMusicEvidence,PROPER_PRINT_GATE_SCHEMA}
  from "../src/mass/reader-proper-first60-print-proof-gate.js";
+import {sourceNoteGroupInventory} from "../src/mass/reader-kyriale-source-note-groups.js";
 const dir=new URL("../.tmp/schola-1962-selected-annual/",import.meta.url);
 const load=file=>JSON.parse(readFileSync(new URL(file,dir),"utf8"));
 const packet=load("2026-selected-proper-first60-print-review.json");
@@ -14,6 +15,10 @@ assert.equal(x.counts.scores,60);
 assert.equal(x.counts.fullLatinTextMatches,51);
 assert.equal(x.counts.textVariantHolds,9);
 assert.equal(x.counts.noteGroups,3453);
+// A clef identifies the staff and MUST NOT become a sung neume token.
+const fClef=sourceNoteGroupInventory("name: f clef sample;\n%%\n(f3) Mi(f)hi(g) (::)");
+assert.equal(fClef.noteBearingSourceTokens,2);
+assert.equal(fClef.nonMusicalTokens,0);
 assert.equal(x.counts.textMatchedScoreNoteGroups,2976);
 assert.equal(x.counts.pendingFolioImageComparisons,51);
 assert.equal(x.counts.sourceImagesIndependentlyCompared,0);
