@@ -19,7 +19,24 @@ assert.equal(triage.rows.length,27);
 assert.equal(triage.counts.REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED,4);
 assert.equal(triage.counts.EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED,13);
 assert.equal(triage.counts.REMOTE_EXACT_WORK_PREVIEW_RECOVERED_NOT_OFFLINE_CERTIFIED,3);
-assert.equal(triage.counts.APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED,4);
+assert.equal(triage.counts.APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED,2);
+assert.equal(triage.counts.EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED,2);
+const savedOriginals=read("data/artwork/home-2026-recovered-approved-ai-originals.v1.json");
+assert.equal(savedOriginals.originalFiles.length,2);
+assert.equal(savedOriginals.stillMissingOriginals.length,2);
+assert.equal(savedOriginals.binaryReleaseStatus,"ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB");
+for(const row of savedOriginals.originalFiles){
+ assert.match(row.sha256,/^[0-9a-f]{64}$/);
+ assert.ok(row.width>=1024&&row.height>=768&&row.sizeBytes>1000000);
+ const frozen=triage.rows.find(r=>r.date===row.date);
+ assert.ok(frozen&&frozen.observedPrincipalId===row.principalId);
+ assert.equal(frozen.decision,"EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED");
+ assert.equal(frozen.publicationReleased,false);
+ assert.equal(census.days.find(x=>x.date===row.date)?.status,"DATE_SELECTED_IMAGE_UNRELEASED");
+}
+for(const row of savedOriginals.stillMissingOriginals){
+ assert.equal(triage.rows.find(x=>x.date===row.date)?.decision,"APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED");
+}
 assert.equal(triage.counts.MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO,1);
 assert.equal(triage.counts.DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD,1);
 assert.equal(owner.rows.length,27);
