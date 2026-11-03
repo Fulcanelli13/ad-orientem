@@ -46,7 +46,7 @@ export function renderTlmMapResultRail({items=[],language="en",selectedId=null,c
     (photo?'<img loading="lazy" decoding="async" src="'+E(item.cover_media.asset_path)+'" alt="'+E(language==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'">':
      emblem?'<img data-tlm-emblem-image loading="lazy" decoding="async" src="'+E(emblem.image)+'" alt="">':
      '<span aria-hidden="true">✠</span>')+'</span>';
-  html+='<span class="aoTlmMapRailCopy"><strong>'+E(item.title)+'</strong><small>'+E(item.subtitle||"")+'</small>'+
+  html+='<span class="aoTlmMapRailCopy">'+(!photo?'<small class="aoAtlasMassPhotoNotice">'+E(L(language,"No approved photograph","Aucune photographie approuvée"))+'</small>':'')+'<strong>'+E(item.title)+'</strong><small>'+E(item.subtitle||"")+'</small>'+
     (item.celebration_evidence?'<em>'+E(L(language,"1962 documented · named Masses only","1962 attesté · messes désignées seulement"))+'</em>':
      '<em>'+E(L(language,"Mass details · check source","Messes · vérifier à la source"))+'</em>')+
     '</span><span class="aoTlmMapRailArrow" aria-hidden="true">›</span></button></div>';

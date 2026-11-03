@@ -343,6 +343,40 @@ try{
    const switchMap=root.locator('[data-find-filter="view"][data-find-filter-value="map"]');
    if(await switchMap.count())await switchMap.click();
    await mapReady("tlm");
+   // Approved Sacred Atlas screen 4: this is the SAME map, with three
+   // entrances, one source-scoped CL27 drawer and viewport-bound results.
+   const massTabs=root.locator(".aoAtlasMassTabs");
+   await massTabs.waitFor({state:"visible",timeout:15000});
+   assert.equal(await massTabs.locator("button").count(),3,
+    "Mass mode must retain exactly three prototype Atlas entrances");
+   assert.equal(await massTabs.locator('button[aria-current="page"]').count(),1);
+   assert.equal(await root.locator('.aoExploreSurface[data-atlas-mass="true"]').count(),1,
+    "Mass map must reuse the approved immersive Atlas shell");
+   const drawer=root.locator(".aoAtlasTlmExtra");
+   assert.equal(await drawer.count(),1,"Mass map must expose the existing evidence filter drawer");
+   assert.ok(await drawer.locator(".aoTlmCl27Facet [data-cl27-axis]").count()>=10,
+    "All 12 CL27 evidence axes must remain in the filter drawer");
+   const massRail=root.locator("[data-tlm-map-rail]");
+   await massRail.waitFor({state:"visible",timeout:12000});
+   const railGeometry=await massRail.evaluate(el=>{
+    const r=el.getBoundingClientRect();
+    return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,
+      height:r.height,viewport:innerWidth};
+   });
+   if(width<900)assert.ok(railGeometry.width>=width-4&&railGeometry.bottom<=(width<800?844:960)+2
+      &&railGeometry.height>=220,
+      "Mobile Latin Mass needs a full-width bottom card sheet: "+JSON.stringify(railGeometry));
+   const mapVenueCards=massRail.locator(".aoTlmMapRailItem");
+   if(await mapVenueCards.count()){
+    assert.equal(await mapVenueCards.first().getAttribute("data-explore-lens"),null,
+      "Viewport venue card must use the canonical owner, not a second record");
+    assert.ok(await mapVenueCards.first().getAttribute("data-explore-item"),
+      "Venue cards must retain exact Directory item identities");
+    const first=mapVenueCards.first();
+    assert.equal(await first.locator(".aoTlmMapRailVisual").count(),1,
+      "Venue card must render an approved photo, sourced institute emblem, or neutral fallback");
+   }
+   await capture("07b-latin-mass-prototype");
    assert.ok(await root.locator(".aoTlmProviderStrip").count()>0,
     "Mass explorer must retain identity/affiliation discovery");
    assert.ok(await root.locator(".aoAtlasTlmExtra summary").count()>0,

@@ -711,6 +711,11 @@ function tlmFilters(vm){
       esc(L(vm.language,"Other communities","Autres communautés"))+' ('+other.length+')</summary>'+
       '<div class="aoFindAffiliations">'+
       other.map(id=>tlmInstituteButton(id,aff,vm.language)).join("")+'</div></details>':"";
+    const notice='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
+      "Provisional pins · Check the original source before travelling",
+      "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
+      "Affiliation comes from source listings. A particular Mass’s una-cum status, current celebration, precise entrance and timetable have not been verified. Links are supplied to the original source; an institute’s emblem is not a verification badge.",
+      "L’appartenance est issue des répertoires sources. Le caractère una cum d’une messe, sa célébration actuelle, son entrée exacte et ses horaires n’ont pas été vérifiés. L’emblème d’un institut ne constitue pas un contrôle de ces informations."))+'</p></details>';
     let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
     if(vm.view==="map")html+='<details class="aoAtlasTlmExtra"><summary>'+esc(L(vm.language,"Filters","Filtres"))+'</summary>';
     html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
@@ -719,7 +724,7 @@ function tlmFilters(vm){
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
     html+='</div>';
-    if(vm.view==="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+tlmCl27Filters(vm)+otherMarkup+'</details>';
+    if(vm.view==="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+tlmCl27Filters(vm)+otherMarkup+notice+'</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of first)html+=tlmInstituteButton(id,aff,vm.language);
@@ -727,11 +732,7 @@ function tlmFilters(vm){
     if(vm.view!=="map")html+=otherMarkup;
     html+='</div>';
     if(vm.view!=="map")html+=tlmCountryFilters(vm)+tlmEvidenceFilters(vm)+tlmCelebrationFilters(vm)+tlmCl27Filters(vm);
-    html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
-      "Provisional pins · Check the original source before travelling",
-      "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
-      "Affiliation comes from source listings. A particular Mass’s una-cum status, current celebration, precise entrance and timetable have not been verified. Links are supplied to the original source; an institute’s emblem is not a verification badge.",
-      "L’appartenance est issue des répertoires sources. Le caractère una cum d’une messe, sa célébration actuelle, son entrée exacte et ses horaires n’ont pas été vérifiés. L’emblème d’un institut ne constitue pas un contrôle de ces informations."))+'</p></details>';
+    if(vm.view!=="map")html+=notice;
     return html+'</section>';
   }
   let html='<div class="aoFindFilters aoExploreTlmFilters">';
@@ -833,9 +834,16 @@ export function renderExploreToString(vm){
     journeyPanel:renderPilgrimageJourneyPanel,
   });
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.lens==="saints"?vm.items.length:(vm.counts?.[vm.lens]??vm.items.length));
-  let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
+  let html='<section class="aoFindSurface aoExploreSurface"'+(vm.lens==="tlm"&&vm.view==="map"?' data-atlas-mass="true"':'')+' data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
+  if(vm.lens==="tlm"&&vm.view==="map"){
+    html+='<nav class="aoAtlasMassTabs" aria-label="'+esc(L(vm.language,"Sacred Atlas entrances","Accès à l’Atlas sacré"))+'">'
+      +'<button type="button" data-atlas-mass-return="discover">'+esc(L(vm.language,"Discover","Découvrir"))+'</button>'
+      +'<button type="button" data-atlas-mass-return="sacred">'+esc(L(vm.language,"Sacred places","Lieux sacrés"))+'</button>'
+      +'<button type="button" aria-current="page" class="active">'+esc(L(vm.language,"Latin Mass","Messe latine"))+'</button>'
+      +'</nav>';
+  }
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<nav class="aoExploreSectionNav" aria-label="'+esc(L(vm.language,"Explore navigation","Navigation Explorer"))+'">';
   html+='<span>'+(vm.lens==="tlm"?esc(L(vm.language,"MASS DIRECTORY","ANNUAIRE DES MESSES"))
