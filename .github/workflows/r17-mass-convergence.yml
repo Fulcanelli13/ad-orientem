@@ -53,6 +53,10 @@ jobs:
         run: node tests/mass-six-user-approved-gesture-icons.mjs
       - name: Verify Leclerc 1661 CC0 historical original bits, rights, and strictly research-only 1962 gesture use
         run: node tests/mass-priest-gesture-p4-original.mjs
+      - name: Certify sacred-music work metadata, rights and 1962 rite boundaries
+        run: node tests/sacred-music-work-programmes.mjs
+      - name: Certify Fauré LIVE Schola composer-text mapping, fallback and EN/FR
+        run: node tests/reader-composed-schola-text.mjs
       - name: Validate source-owned All Souls selection and native module syntax
         run: |
           node --check src/mass/full-mass-preflight.js
@@ -122,6 +126,10 @@ jobs:
       - run: node tests/reader-phone-production-card-default.mjs
       - name: Guard source-preserving English Dies irae translation against unscoped omission note
         run: node tests/1962-all-souls-dies-irae-english-display.mjs
+      - name: Sacred-music programme phone — no Mass session or unlicensed media
+        run: node tests/sacred-music-programme-phone-e2e.mjs
+      - name: Requiem LIVE Schola Fauré 320/390 — actual lyrics and translated manual phrases
+        run: node tests/reader-composed-schola-phone.mjs
       - name: Gate 1–2 November 2026 source-owned Mass reader readiness
         run: node tests/mass-november-2026-release-gate-e2e.mjs
       - name: Retain November 1–2 evidence even on a failing release gate

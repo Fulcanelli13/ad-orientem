@@ -5,7 +5,7 @@ import {fileURLToPath} from "node:url";
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const output=resolve(root,"dist/web-preview");
 const folders=["assets","data","src"];
-const rootFiles=["index.html","sw.js","mass-bg.png","Ad-Orientem-v43.19.webmanifest"];
+const rootFiles=["index.html","sacred-music.html","sw.js","mass-bg.png","Ad-Orientem-v43.19.webmanifest"];
 const generated=/^ao-(?:boot|inline|packed)-[\w.-]+\.(?:css|js)$/;
 const disallowed=/^(?:\.|docs|tests|tools|research|legacy|review|reviews|node_modules)(?:\/|$)/;
 // An older boot may remain under version control as a pinned source-contract witness.
