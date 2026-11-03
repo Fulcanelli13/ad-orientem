@@ -513,7 +513,7 @@ function open(id,opts={}){
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
   else if(id==='pray.library'){
     // Direct Library entry resets selected prayer. In-Library Back retains its own state.
-    view='library';LIB.open=null;LIB.language=null;PILOT_LORETO_GROUP=false;
+    view='library';LIB.open=null;LIB.language=null;LIB.cat='all';LIB.q='';PILOT_LORETO_GROUP=false;
   }
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
@@ -1009,7 +1009,7 @@ function renderPrayFamily(){
  const visible=family.items.filter(item=>item[0]!=='prayer'||DATA.prayers?.[item[1]]);
  // Canonical ordered entries remain unique; all share one illustrated mosaic.
  const artSlot=prayerDoorArtSlot(familyId);
- const releasedDoorPhoto=artSlot?prayerEditorialArtworkMarkup(artSlot.slotId,{className:"aoPrayerFamilyCover"}):"";
+ const releasedDoorPhoto=familyId==="eucharistic"?releasedModulePhotoMarkup("adoration",{className:"aoPrayerEucharisticCover"}):"";
  const facets=[...new Set(visible.map(item=>prayerDoorFacet(item[1])))];
  const facetLabels={all:L('All','Tout'),prayer:L('Prayers','Prières'),litany:L('Litanies','Litanies'),
   consecration:L('Consecration','Consécration'),rosary:L('Rosary','Rosaire'),chaplet:L('Chaplets','Chapelets'),
@@ -3833,7 +3833,13 @@ function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;
 function routeOwn(id){
  const next=internalPrayerView(id);
  if(!next)return false;
+ const entryView=view;
  view=next;
+ if(next==='library'){
+  // A fresh Library door must not reopen the previous source prayer.
+  LIB.open=null;LIB.language=null;PILOT_LORETO_GROUP=false;LIB.q='';
+  LIB.cat=PRAYER_PILOT_ENABLED&&entryView==='home'?'essentials':'all';
+ }
  if(next==='stations'){STATIONS.step=0;lastStationsFxStep=null}
  if(next==='tenebrae'){TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.loading=false;TEN.epoch++}
  if(next==='angelus'){ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
@@ -4592,7 +4598,6 @@ function onClick(e){
   const id=b.dataset.p435930Own;
   if(PRAYER_PILOT_ENABLED&&(view==='home'||view==='family')&&(id==='pray.angelus_regina'||id==='pray.angelus'))ANGELUS_PILOT_ENTRY=true;
   if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}
-  if(id==='pray.library'){LIB.cat=PRAYER_PILOT_ENABLED&&view==='home'?'essentials':'all';LIB.q='';}
   // Validation must precede pushView: unknown targets must never become Angelus.
   if(!internalPrayerView(id))return showInternalPrayerRouteError(b,id);
   clearInternalPrayerRouteErrors();
