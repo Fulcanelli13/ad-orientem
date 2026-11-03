@@ -185,6 +185,27 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
  .aoHeritageSurface .aoFindBody .maplibregl-ctrl-top-right {
   top:135px!important;right:calc(var(--ao-atlas-right-occupied) + 9px)!important;
  }
+ /* Approved desktop map-controls stack: keep controls at the map edge
+    below the primary tabs and above Nearby, even with the right folio open.
+    Native MapLibre zoom, fullscreen and attribution retain their owners. */
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoFindBody .maplibregl-top-right,
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoFindBody .maplibregl-ctrl-top-right {
+  top:auto!important;bottom:148px!important;
+  right:calc(var(--ao-atlas-right-occupied) + 10px)!important;
+ }
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoHeritageMore {
+  top:auto!important;bottom:275px!important;
+  right:calc(var(--ao-atlas-right-occupied) + 13px)!important;
+ }
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoHeritageWorldReset {
+  top:auto!important;bottom:348px!important;
+  left:auto!important;right:calc(var(--ao-atlas-right-occupied) + 13px)!important;
+ }
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoFindMap
+ :is(.maplibregl-ctrl-zoom-in,.maplibregl-ctrl-zoom-out,.maplibregl-ctrl-fullscreen) {
+  min-width:44px;min-height:44px;
+ }
+
  .aoHeritageSurface .aoHeritageWorldReset {
   position:absolute;left:var(--ao-atlas-map-left)!important;
   top:215px!important;right:auto!important;bottom:auto!important;
