@@ -783,6 +783,8 @@ export function buildExploreViewModel({
   journeyOpen=false,
   journeys=[],
   journeySelectedId=null,
+  journeySelectedStageId=null,
+  journeySheetExpanded=false,
 }={}){
   const list=arr(items);
   const selected=list.find(item=>item?.item_id===selectedId)??selectedOverride??null;
@@ -808,6 +810,8 @@ export function buildExploreViewModel({
     journeyOpen:Boolean(journeyOpen),
     journeys:Object.freeze(arr(journeys)),
     journeySelectedId,
+    journeySelectedStageId,
+    journeySheetExpanded:Boolean(journeySheetExpanded),
     saintsRelease,
     selected,
     selectedPlace,
