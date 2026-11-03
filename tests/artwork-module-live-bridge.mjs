@@ -4,7 +4,7 @@ import {createHash} from "node:crypto";
 import {RELEASED_MODULE_PAINTINGS,releasedModulePhoto,releasedModulePhotoMarkup} from "../src/art/released-module-paintings.v1.js";
 import {renderPilotAngelusEntry} from "../src/pray/prayer-design-pilot.js";
 const source=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
-assert.deepEqual(Object.keys(RELEASED_MODULE_PAINTINGS),["angelus","adoration","confession","joseph","regina","souls","visit"]);
+assert.deepEqual(Object.keys(RELEASED_MODULE_PAINTINGS),["angelus","adoration","confession","joseph","regina","souls","visit","heart-jesus","heart-mary","king"]);
 for(const id of Object.keys(RELEASED_MODULE_PAINTINGS)){
  const a=releasedModulePhoto(id);
  assert.ok(existsSync(new URL("../"+a.image,import.meta.url)), "Released photo missing: "+id);
@@ -12,7 +12,7 @@ for(const id of Object.keys(RELEASED_MODULE_PAINTINGS)){
  assert.match(a.source,id==="confession"?/^https:\/\/www.nga.gov\/artworks\/34956-return-prodigal-son$/:["angelus","adoration"].includes(id)?/^https:\/\/www.metmuseum.org\/art\/collection\/search\//:/^https:\/\/commons.wikimedia.org\/wiki\/File:/);
  const markup=releasedModulePhotoMarkup(id,{className:"aoTestPhoto"});
  assert.match(markup,/data-ao-released-module-photo/);
- assert.match(markup,id==="confession"?/data-ao-photo-release-pr="2293"/:["angelus","adoration"].includes(id)?/data-ao-photo-release-pr="2277"/:/data-ao-photo-release-pr="2296"/);
+ assert.match(markup,id==="confession"?/data-ao-photo-release-pr="2293"/:["angelus","adoration"].includes(id)?/data-ao-photo-release-pr="2277"/:["joseph","regina","souls","visit"].includes(id)?/data-ao-photo-release-pr="2296"/:/data-ao-photo-release-pr="2302"/);
  assert.ok(markup.includes(a.image));
 }
 const murillo=RELEASED_MODULE_PAINTINGS.confession;
@@ -83,6 +83,26 @@ assert.ok(runtime.includes('releasedModulePhotoMarkup("confession"'),"Canonical 
 assert.ok(runtime.includes("globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true"),"Existing research-only QA path must remain separate");
 for(const id of ["joseph","souls","visit"])
  assert.ok(runtime.includes("releasedModulePhotoMarkup('"+id+"'"),"Reader did not bind user-approved "+id+" original");
+const wave4=JSON.parse(source("data/research/module-hero-wave4-companion-hearts-king-20261103.v1.json"));
+assert.deepEqual(wave4.candidates.map(x=>x.module),["heart-jesus","heart-mary","king"]);
+const originals4={
+ "heart-jesus":"06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+ "heart-mary":"82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+ king:"2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5"
+};
+for(const c of wave4.candidates){
+ const art=releasedModulePhoto(c.module);
+ assert.equal(art.original,art.image,"Wave4 must not crop or substitute original: "+c.module);
+ assert.equal(c.sha256,originals4[c.module]);
+ assert.equal(c.image,art.image);
+ assert.equal(createHash("sha256").update(readFileSync(new URL("../"+art.image,import.meta.url))).digest("hex"),c.sha256,
+  "Wave4 original SHA-256 changed: "+c.module);
+ assert.match(art.photographRights,/PD-Art/);
+ assert.equal(c.fit,"contain");
+}
+assert.ok(runtime.includes("FF.step===0?releasedModulePhotoMarkup('heart-jesus'"),"First Friday original art entry missing");
+assert.ok(runtime.includes("FS.step===0?releasedModulePhotoMarkup('heart-mary'"),"First Saturday original art entry missing");
+assert.ok(runtime.includes("BEN.celebration==='christKing'&&i===0?releasedModulePhotoMarkup('king'"),"Christ King must be optional and scoped");
 assert.ok(source("src/pray/art-slot-map.v1.js").includes('publicationState:"UNASSIGNED"'),"Do not auto-release other door artwork");
 assert.ok(source("src/pray/stations-verified-artwork-release.v1.js").includes("Object.freeze({})"),"Do not publish staged Stations");
-console.log("Released art bridge PASS: two Met, one NGA and four original PD-Art paintings; SHA-256, routes and all holds guarded.");
+console.log("Released art bridge PASS: 10 module originals; wave4 PD-Art SHA-256, seasonal and optional Prayer routes verified.");
