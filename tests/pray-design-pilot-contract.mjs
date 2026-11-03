@@ -186,10 +186,11 @@ assert.match(runtime,/data-p435930-lib-all/,
  "The full Prayer Library must remain directly accessible from Essential Prayers");
 assert.match(runtime,/aoPrayDoorShelfList aoPrayDoorMosaic/,
  "Each non-library family interior must use the single mosaic grid");
-assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0\)\)/,
+assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0,family\.assetId\)\)/,
  "The full canonical ordered door inventory must render in the grid");
 assert.match(runtime,/data-ao-pray-door-entry data-ao-pray-door-facet/,
  "Existing filters must retain their canonical card target");
+assert.match(runtime,/assetIcon\(familyAssetId/,"Every unassigned artwork tile must retain a real family icon");
 assert.match(runtime,/prayerEditorialArtworkMarkup\(artSlotId/,
  "Mosaic artwork must pass through editorial publication checks");
 assert.match(runtime,/releasedPrayerCardArtUrl\(route\)/,
