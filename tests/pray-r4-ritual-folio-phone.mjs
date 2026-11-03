@@ -25,7 +25,7 @@ const cases=[
  {route:"pray.seven_words",selector:'[data-ao-devotional-owner="sevenWords"] .aoDevoCardScroll'},
  {route:"pray.benediction",selector:'[data-ao-rite-owner="benediction"] .aoClaudeAltarScroll'},
  {route:"pray.forty_hours",choose:'[data-p435930-forty-mode="visitor"]',selector:'[data-ao-rite-owner="forty-hours-visitor"] .aoDevoCardScroll'},
- {route:"pray.visit_blessed_sacrament",choose:'[data-p435930-ador-mode="visit"]',selector:'[data-ao-adoration-folio="v1"] .aoDevoCardScroll'}
+ {route:"pray.visit_blessed_sacrament",selector:'[data-ao-adoration-folio="v1"] .aoDevoCardScroll'}
 ];
 try{
  browser=await chromium.launch({headless:true});
