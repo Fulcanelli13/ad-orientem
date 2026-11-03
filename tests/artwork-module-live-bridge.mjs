@@ -1,19 +1,25 @@
 import assert from "node:assert/strict";
 import "./prayer-artwork-267-integration.mjs";
+import "./prayer-museum-four-exact-release.mjs";
 import {readFileSync,existsSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {RELEASED_MODULE_PAINTINGS,releasedModulePhoto,releasedModulePhotoMarkup} from "../src/art/released-module-paintings.v1.js";
 import {renderPilotAngelusEntry} from "../src/pray/prayer-design-pilot.js";
 const source=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
-assert.deepEqual(Object.keys(RELEASED_MODULE_PAINTINGS),["angelus","adoration","confession","joseph","regina","souls","visit","heart-jesus","heart-mary","king"]);
+assert.deepEqual(Object.keys(RELEASED_MODULE_PAINTINGS),["angelus","adoration","confession","joseph","regina","souls","visit","heart-jesus","heart-mary","king","bouts","cavallino","girardin","hondius"]);
 for(const id of Object.keys(RELEASED_MODULE_PAINTINGS)){
  const a=releasedModulePhoto(id);
  assert.ok(existsSync(new URL("../"+a.image,import.meta.url)), "Released photo missing: "+id);
  assert.ok(existsSync(new URL("../"+a.original,import.meta.url)), "Released original missing: "+id);
- assert.match(a.source,id==="confession"?/^https:\/\/www.nga.gov\/artworks\/34956-return-prodigal-son$/:["angelus","adoration"].includes(id)?/^https:\/\/www.metmuseum.org\/art\/collection\/search\//:/^https:\/\/commons.wikimedia.org\/wiki\/File:/);
+ assert.match(a.source,id==="confession"?/^https:\/\/www.nga.gov\/artworks\/34956-return-prodigal-son$/:
+  ["angelus","adoration","hondius"].includes(id)?/^https:\/\/www.metmuseum.org\/art\/collection\/search\//:
+  ["bouts","cavallino","girardin"].includes(id)?/^https:\/\/clevelandart.org\/art\//:/^https:\/\/commons.wikimedia.org\/wiki\/File:/);
  const markup=releasedModulePhotoMarkup(id,{className:"aoTestPhoto"});
  assert.match(markup,/data-ao-released-module-photo/);
- assert.match(markup,id==="confession"?/data-ao-photo-release-pr="2293"/:["angelus","adoration"].includes(id)?/data-ao-photo-release-pr="2277"/:["joseph","regina","souls","visit"].includes(id)?/data-ao-photo-release-pr="2296"/:/data-ao-photo-release-pr="2302"/);
+ assert.match(markup,["bouts","cavallino","girardin","hondius"].includes(id)?/data-ao-photo-release-pr="2340"/:
+  id==="confession"?/data-ao-photo-release-pr="2293"/:
+  ["angelus","adoration"].includes(id)?/data-ao-photo-release-pr="2277"/:
+  ["joseph","regina","souls","visit"].includes(id)?/data-ao-photo-release-pr="2296"/:/data-ao-photo-release-pr="2302"/);
  assert.ok(markup.includes(a.image));
 }
 const murillo=RELEASED_MODULE_PAINTINGS.confession;
@@ -108,4 +114,4 @@ assert.ok(runtime.includes("prayerEditorialArtworkMarkup('COV-'+id"),"Individual
 assert.ok(!runtime.includes("const soulsCover="),"Do not override the Rubens De profundis selection with Giordano");
 assert.ok(source("src/pray/art-slot-map.v1.js").includes("publicationState:editorial.state"),"Nine doors must use reconciled editorial states");
 assert.ok(source("src/pray/stations-verified-artwork-release.v1.js").includes("Object.freeze({})"),"Do not publish staged Stations");
-console.log("Released art bridge PASS: 10 original published photos, exact scoped wave4 and 267 fail-closed editorial slots.");
+console.log("Released art bridge PASS: 14 exact-source museum and devotional photographs, 43 eligible slot matches, held and protected assets remain fail-closed.");
