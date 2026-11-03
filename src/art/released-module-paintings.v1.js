@@ -1,5 +1,5 @@
 /**
- * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296.
+ * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296 and #2302.
  * This asset list is distinct from approved editorial paintings and research archives.
  */
 export const RELEASED_MODULE_PAINTINGS=Object.freeze({
@@ -65,6 +65,33 @@ export const RELEASED_MODULE_PAINTINGS=Object.freeze({
     image:"assets/prayer/released/visit-whole-original.jpg",
     photographRights:"Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
     releasePr:2296
+  }),
+  "heart-jesus":Object.freeze({
+    title:"The Heart of Jesus",
+    artist:"Juan Patricio Morlete Ruiz",
+    source:"https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+    original:"assets/prayer/released/heart-jesus-full-original.jpg",
+    image:"assets/prayer/released/heart-jesus-full-original.jpg",
+    photographRights:"Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+    releasePr:2302
+  }),
+  "heart-mary":Object.freeze({
+    title:"The Heart of Mary",
+    artist:"Juan Patricio Morlete Ruiz",
+    source:"https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+    original:"assets/prayer/released/heart-mary-full-original.jpg",
+    image:"assets/prayer/released/heart-mary-full-original.jpg",
+    photographRights:"Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+    releasePr:2302
+  }),
+  "king":Object.freeze({
+    title:"Salvator Mundi",
+    artist:"Ambrosius Benson",
+    source:"https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+    original:"assets/prayer/released/king-full-original.jpg",
+    image:"assets/prayer/released/king-full-original.jpg",
+    photographRights:"Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+    releasePr:2302
   })
 });
 export function releasedModulePhoto(id){

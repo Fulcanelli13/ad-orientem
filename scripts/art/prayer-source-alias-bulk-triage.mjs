@@ -152,8 +152,10 @@ const out={
  pendingReleaseWorkQueue:queue
 };
 assert.equal(summary.unlinkedLiteralURLPositions+summary.positionExactURL,summary.selectedURLs);
-assert.equal(summary.pendingPositionTotal,173);
-assert.equal(summary.pendingSourceKeys,81);
+assert.equal(summary.pendingPositionTotal,existing.counts.states.APPROVED_EXACT_PHOTO_PENDING,
+ "Source triage must track current released-photo manifest rather than frozen 173-slot baseline");
+assert.equal(summary.pendingSourceKeys,existing.counts.pendingDistinctWorkSourceKeys,
+ "Source triage must track current pending source keys after image releases");
 assert.ok(rows.every(r=>r.imageReleasePermittedByScan===false));
 const dest=process.argv[2]||"artifacts/prayer-gallery/prayer-source-alias-and-batch-release-triage.v1.json";
 mkdirSync(dirname(resolve(dest)),{recursive:true});
