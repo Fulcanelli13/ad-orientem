@@ -169,7 +169,15 @@ const RIGHTS=Object.freeze({
 });
 export function extraApproved2026HomeArtwork(date,principalId,properPath){
  const record=APPROVED_2026_OTHER_DATE_PREVIEWS[date];
- if(!record||record.principalId!==principalId||record.properPath!==properPath)return null;
+ if(!record)return null;
+ // Nativity's three 1962 Mass formularies share this explicit date selection.
+ // Restrict this exception to the three named Christmas Masses, never another
+ // celebration or general Gospel-scene inference.
+ const otherChristmasMass=date==="2026-12-25"&&
+  /^sancti:12-25m[123]:1:w$/.test(principalId??"")&&
+  /^Sancti\/12-25m[123]$/.test(properPath??"");
+ if(!otherChristmasMass&&
+    (record.principalId!==principalId||record.properPath!==properPath))return null;
  const named=record.file.replaceAll(" ","_");
  const encoded=encodeURIComponent(named).replaceAll("'","%27");
  const url="https://upload.wikimedia.org/wikipedia/commons/thumb/"+record.storagePrefix[0]+"/"+record.storagePrefix+"/"+encoded+"/960px-"+encoded;
