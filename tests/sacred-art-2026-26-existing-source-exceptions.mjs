@@ -5,6 +5,7 @@ const report=read("artifacts/sacred-art-2026/26-existing-sources-reconciliation.
 const earlier=read("artifacts/sacred-art-2026/48-existing-gallery-exception-reconciliation.json");
 const legacy=read("data/artwork/2026-26-legacy-classIII-source-recovery.v1.json");
 const ctx=read("data/artwork/2026-26-existing-contextual-reuse-proposals.v1.json");
+const sermon=read("data/artwork/2026-26-historical-sermon-on-mount-reuse.v1.json");
 assert.equal(earlier.totals.provisionalWithArtworkLead,339);
 assert.equal(report.dates.length,26);
 assert.equal(new Set(report.dates.map(x=>x.date)).size,26);
@@ -12,14 +13,16 @@ assert.equal(report.totals.baselineProvisionalDays,339);
 assert.equal(report.totals.newStrictExactFeastPaintingLeads,4);
 assert.equal(report.totals.newCompositeFeastPartialLeads,4);
 assert.equal(report.totals.newContextualGospelLeads,9);
-assert.equal(report.totals.stillWithoutAnyProvisionalLead,9);
-assert.equal(report.totals.datesWithAnyProvisionalArtLead,356);
-assert.equal(report.totals.strictFullFeastOrContextualArtworkCandidates,352);
-assert.equal(report.totals.datesWithNoOrOnlyPartialFeastCoverage,13);
+assert.equal(report.totals.stillWithoutAnyProvisionalLead,3);
+assert.equal(report.totals.datesWithAnyProvisionalArtLead,362);
+assert.equal(report.totals.strictFullFeastOrContextualArtworkCandidates,358);
+assert.equal(report.totals.datesWithNoOrOnlyPartialFeastCoverage,7);
 assert.equal(report.totals.originalPhotoRightsCertified,0);
 assert.equal(report.totals.productionHomeDatesNewlyCertified,0);
 assert.equal(legacy.rows.length,8);
 assert.equal(ctx.entries.length,9);
+assert.equal(sermon.dates.length,6);
+assert.equal(report.totals.newSermonSettingOnlyLeads,6);
 const unmapped=earlier.outstandingDates.filter(d=>d.candidates.length===0);
 assert.deepEqual(report.dates.map(d=>d.date),unmapped.map(d=>d.date));
 for(const day of report.dates){
@@ -67,9 +70,19 @@ for(const date of ["2026-11-22","2026-11-27"]){
  assert.equal(row(date).candidates[0].historicalDonorDate,"2026-11-29");
  assert.equal(row(date).candidates[0].historicalDonorEditorialState,"USER_LOCKED_DATE_ARTWORK");
 }
-for(const date of ["2026-06-28","2026-07-12","2026-07-16","2026-07-17",
- "2026-08-30","2026-09-04","2026-09-23","2026-09-26","2026-11-15"]){
+for(const {date,gospelReference} of sermon.dates){
+ const d=row(date);
+ assert.equal(d.gospel.reference,gospelReference);
+ assert.equal(d.existingResearchScope,"EXACT_GOSPEL_SETTING_NOT_VERSE_SCENE");
+ assert.equal(d.candidates.length,1);
+ assert.equal(d.candidates[0].artist,"Carl Bloch");
+ assert.equal(d.candidates[0].originalNativeWidth,1377);
+ assert.equal(d.candidates[0].originalNativeHeight,1545);
+ assert.equal(d.candidates[0].explicitlyLowNativeResolution,true);
+ assert.equal(d.candidates[0].sceneDepictionVerified,false);
+}
+for(const date of ["2026-09-23","2026-09-26","2026-11-15"]){
  assert.equal(row(date).candidates.length,0,"No invented lead for "+date);
 }
-console.log("PASS: 26 archived-source exceptions; 4 exact, 4 partial, 9 contextual, 9 still unmatched, no publication");
+console.log("PASS: 26 archived-source exceptions; 4 exact, 4 partial, 9 contextual, 6 setting-only, 3 unmatched, no publication");
 console.log(JSON.stringify(report.totals,null,2));
