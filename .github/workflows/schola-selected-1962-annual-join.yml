@@ -18,6 +18,8 @@ on:
       - 'src/mass/reader-proper-first60-antiphon-text.js'
       - 'scripts/schola/build-2026-first60-antiphon-text-gate.mjs'
       - 'tests/reader-proper-first60-antiphon-text.mjs'
+      - 'src/mass/reader-proper-introit-full-sung-latin.js'
+      - 'tests/reader-proper-introit-full-sung-latin.mjs'
       - 'src/mass/reader-proper-first60-print-proof-gate.js'
       - 'scripts/schola/build-2026-first51-print-proof-gate.mjs'
       - 'tests/reader-proper-first60-print-proof-gate.mjs'
@@ -76,6 +78,8 @@ jobs:
         run: |
           node scripts/schola/build-2026-first60-antiphon-text-gate.mjs
           node tests/reader-proper-first60-antiphon-text.mjs
+      - name: Guard complete Introit sung words against GABC shorthand and missing doxologies
+        run: node tests/reader-proper-introit-full-sung-latin.mjs
       - name: Audit printed-score proof and produce first 12 source-folio review priorities
         run: |
           node scripts/schola/build-2026-first51-print-proof-gate.mjs
