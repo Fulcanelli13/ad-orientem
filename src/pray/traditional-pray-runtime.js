@@ -1,4 +1,6 @@
 import "./traditional-pray-styles.js";
+import "./released-module-photo-styles.js";
+import {prayerEditorialArtworkMarkup} from "./art-slot-map.v1.js";
 import {prayerSourceFacesV1} from "./prayer-source-faces.v1.js";
 import {choirLitanyLineParts} from "./choir-source-beats.js";
 import {installChoirContinuousFocus} from "./choir-continuous-focus.js";
@@ -534,9 +536,13 @@ function renderNightlyExamen(){
  const jump=!S.returnToDaily&&step!==steps.length&&item?.id!=="resolve"?
    '<div class="aoExamenContritionShortcut" data-ao-examen-contrition-shortcut><button type="button" data-tp381-examen-contrition-open>'+
    esc(L("Read the closing Act of Contrition","Lire l’acte de contrition final"))+'</button></div>':"";
+ // COV-daily.nightly_examen is the approved standalone entry cover, not an extra devotion step.
+ // Keep the five-source-card sequence and private Evening Prayer handoff unchanged.
+ const nightCover=step===0&&!S.returnToDaily?
+  prayerEditorialArtworkMarkup("COV-daily.nightly_examen",{className:"aoPrayerEditorialCardCover aoNightlyExamenCover"}):"";
  const card=guidedCardFrame({id:item?.id||"examen-finished",title:item?isFr()?item.titleFr:item.titleEn:"",
   step,total:steps.length,body:focus+prayer,onStep:"examen",returnButton:after});
- return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-hours-family="examen" data-ao-hours-owner="nightly"><section class="aoDevoCard" data-ao-devo-card="${esc(item?.id||"examen-finished")}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Examination of conscience","Examen de conscience"))}">${card}</div></section>${jump}<details class="aoTP381SecondaryOptions" data-ao-examen-options><summary>${esc(L("About this examination","À propos de cet examen"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Review the day before God in silence. This brief examen does not replace preparation for sacramental Confession; no answers are collected.","Examinez votre journée devant Dieu, dans le silence. Cet examen bref ne remplace pas la préparation à la Confession sacramentelle ; aucune réponse n’est recueillie."))}</p></div></details><div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
+ return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-hours-family="examen" data-ao-hours-owner="nightly">${nightCover}<section class="aoDevoCard" data-ao-devo-card="${esc(item?.id||"examen-finished")}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Examination of conscience","Examen de conscience"))}">${card}</div></section>${jump}<details class="aoTP381SecondaryOptions" data-ao-examen-options><summary>${esc(L("About this examination","À propos de cet examen"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Review the day before God in silence. This brief examen does not replace preparation for sacramental Confession; no answers are collected.","Examinez votre journée devant Dieu, dans le silence. Cet examen bref ne remplace pas la préparation à la Confession sacramentelle ; aucune réponse n’est recueillie."))}</p></div></details><div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
 }
 function renderMealPrayers(){
  const before=S.mealStep!==1,full=!before&&S.mealForm==="full",catechism=!before&&S.mealForm==="catechism";
