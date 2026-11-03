@@ -139,6 +139,13 @@ try{
        visiblePrayers:scroll?.querySelectorAll(".aoP435930GuidePrayers > .aoP435930Prayer").length||0,
        documentOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
        readerOverflow:Math.max(0,el.scrollWidth-el.clientWidth),
+       readerGutter:Math.max(0,el.offsetWidth-el.clientWidth-
+        parseFloat(getComputedStyle(el).borderLeftWidth||0)-
+        parseFloat(getComputedStyle(el).borderRightWidth||0)),
+       readerContentOverflow:Math.max(0,el.scrollWidth-el.clientWidth-
+        Math.max(0,el.offsetWidth-el.clientWidth-
+         parseFloat(getComputedStyle(el).borderLeftWidth||0)-
+         parseFloat(getComputedStyle(el).borderRightWidth||0))),
        scrollOverflow:scroll?Math.max(0,scroll.scrollWidth-scroll.clientWidth):null,
        scrollAxis:scroll?getComputedStyle(scroll).overflowY:null,
        language:document.documentElement.lang,
@@ -153,8 +160,8 @@ try{
      assert.equal(observed.scrollAxis,"auto",mode+"/"+index+" must scroll vertically");
      assert.equal(observed.quietAction,1,mode+"/"+index+" lost access to stillness");
      assert.equal(observed.error,0,mode+"/"+index+" source route error");
-     assert.ok(observed.documentOverflow<=2&&observed.readerOverflow<=2&&observed.scrollOverflow<=2,
-      mode+"/"+index+"/"+width+"/"+ui+" clipped content: "+JSON.stringify(observed));
+     assert.ok(observed.documentOverflow<=2&&observed.readerContentOverflow<=2&&observed.scrollOverflow<=2,
+      mode+"/"+index+"/"+width+"/"+ui+" clipped content (excluding measured native scrollbar gutter): "+JSON.stringify(observed));
      assert.equal(observed.finish,index===expectedStages.length-1?1:0,
       mode+"/"+index+" changes explicit finish availability");
      const expectedIds=expectedStages[index];
