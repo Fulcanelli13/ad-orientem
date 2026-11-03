@@ -12,6 +12,14 @@ assert.equal(FIRST12_1961_FACSIMILES.length,12);
 assert.equal(new Set(FIRST12_1961_FACSIMILES.map(x=>x.scoreId)).size,12);
 assert.deepEqual(FIRST12_1961_FACSIMILES.map(x=>x.scoreId),proof.firstTwelveForPrintComparison,
  "The pinned original facsimiles must match the top twelve selected-calendar worklist");
+const requiredContinuations=new Map([
+ ["GREGOBASE-475",["392","393",435]],
+ ["GREGOBASE-782",["362","363",405]],
+ ["GREGOBASE-265",["79","80",106]],
+ ["GREGOBASE-1271",["383","384",426]]
+]);
+assert.equal(FIRST12_1961_FACSIMILES.filter(x=>x.continuationFolio).length,4);
+assert.equal(new Set(FIRST12_1961_FACSIMILES.flatMap(x=>x.scannedPrintedPageUrls)).size,14);
 const packById=new Map(pack.candidates.map(x=>[x.scoreId,x]));
 for(const candidate of FIRST12_1961_FACSIMILES){
  const original=packById.get(candidate.scoreId);
@@ -21,6 +29,19 @@ for(const candidate of FIRST12_1961_FACSIMILES){
  assert.equal(candidate.folio,original.original1961Page);
  assert.equal(candidate.sourceUrl,original.sourceUrl);
  assert.equal(candidate.part,original.part);
+ const continuation=requiredContinuations.get(candidate.scoreId);
+ assert.deepEqual(candidate.originalPrintedFolios,
+  continuation?continuation.slice(0,2):[candidate.folio]);
+ assert.equal(candidate.scannedPrintedPageUrls[0],candidate.scanned1961PageUrl);
+ assert.equal(candidate.scannedPrintedPageUrls.length,continuation?2:1);
+ if(continuation){
+  assert.equal(candidate.continuationPageUrl,
+   "https://gregobase.selapa.net/sources/2/"+continuation[2]+".png");
+  assert.equal(candidate.continuationFolio,continuation[1]);
+ }else{
+  assert.equal(candidate.continuationPageUrl,null);
+  assert.equal(candidate.continuationFolio,null);
+ }
  assert.match(candidate.scanned1961PageUrl,
   /^https:\/\/gregobase\.selapa\.net\/sources\/2\/\d+\.png$/);
  assert.equal(candidate.sourceBook,"Graduale Romanum, Solesmes, 1961");
@@ -48,6 +69,12 @@ for(const selector of ["originalBookPanel","originalBookScan","scanStatus","scan
  assert.ok(html.includes(selector)||selector==="PRINT_FACSIMILE_SOURCE_LOCATED_NOT_MUSICALLY_COMPARED",
   "Missing original print-and-GABC comparison UI: "+selector);
 }
+assert.ok(html.includes('originalBookContinuation')&&html.includes('originalBookNextScan')&&
+ html.includes('locator.continuationPageUrl')&&html.includes('locator.originalPrintedFolios'),
+ "Four split-page chants require both printed original folios in the review UI");
+assert.ok(html.includes("continuation folio could not load")&&
+ html.includes("Complete printed music cannot be reviewed"),
+ "An unavailable continuation must block any claim of full score verification");
 assert.ok(html.includes("img.onerror")&&html.includes("do not mark music as verified"),
  "A failed remote source image must never be mistaken for printed-music proof");
 assert.ok(html.includes("independent pitch/neume/underlay comparison NOT recorded"),
