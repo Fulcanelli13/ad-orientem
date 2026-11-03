@@ -43,6 +43,22 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ // Batch 14: five additional UK churches; Kirkby Lonsdale is a named church POI, not a measured footprint.
+ "RG-3C136854C9CA":Object.freeze({sourceId:"AO-B34-L-GB-C73386C30A44",name:"Our Lady of Canvey and English Martyrs",country:"GB",addressNeedle:"Canvey Island, United Kingdom (exact street not established)",placeId:null,
+  lat:51.52029,lng:0.57515,precision:"site",sourceRef:"osm:way:543726099",sourceUrl:"https://www.openstreetmap.org/way/543726099",
+  correctedAddress:"Our Lady of Canvey and the English Martyrs, 224 Long Road, Canvey Island SS8 0JS, UK",reviewScope:"CANVEY_OUR_LADY_ENGLISH_MARTYRS_CATHOLIC_CHURCH_NOT_NEARBY_ST_NICHOLAS",evidence:Object.freeze(["https://mapcarta.com/36466346","https://www.dioceseofbrentwood.net/parish/canvey-island/church/lady-canvey-english-martyrs/"])}),
+ "RG-837D929ACBF3":Object.freeze({sourceId:"AO-B35-L-GB-3CCED06FF02A",name:"St Mary Magdalene",country:"GB",addressNeedle:"Penwortham, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:53.74417,lng:-2.70997,precision:"site",sourceRef:"osm:way:81215551",sourceUrl:"https://www.openstreetmap.org/way/81215551",
+  correctedAddress:"St Mary Magdalen's Catholic Church, Leyland Road, Penwortham, Preston PR1 9QD, UK",reviewScope:"PENWORTHAM_ST_MARY_MAGDALEN_ROMAN_CATHOLIC_CHURCH_NOT_ANGLICAN_ST_MARY",evidence:Object.freeze(["https://mapcarta.com/W81215551","https://www.liverpoolcatholic.org.uk/places/st-mary-magdalen-preston-preston"])}),
+ "RG-84B982821C6E":Object.freeze({sourceId:"AO-B35-L-GB-79E11D6CBBDD",name:"St Colman",country:"GB",addressNeedle:"Portsmouth, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:50.84675,lng:-1.06195,precision:"site",sourceRef:"osm:way:757798621",sourceUrl:"https://www.openstreetmap.org/way/757798621",
+  correctedAddress:"St Colman's Roman Catholic Church, Havant Road, Cosham, Portsmouth PO6 2JJ, UK",reviewScope:"COSHAM_ST_COLMAN_ROMAN_CATHOLIC_CHURCH_NOT_ST_PAUL_PAULSGROVE",evidence:Object.freeze(["https://mapcarta.com/W757798621","https://portsmouthdiocese.org.uk/parish/st-colman-and-st-paul/"])}),
+ "RG-DDB9022B5C28":Object.freeze({sourceId:"AO-B34-L-GB-82562583F671",name:"Holy Cross",country:"GB",addressNeedle:"Carshalton, United Kingdom (exact street not established)",placeId:null,
+  lat:51.36918,lng:-0.16497,precision:"site",sourceRef:"osm:way:148619016",sourceUrl:"https://www.openstreetmap.org/way/148619016",
+  correctedAddress:"Holy Cross Roman Catholic Church, 46 North Street, Carshalton SM5 2JD, UK",reviewScope:"CARSHALTON_HOLY_CROSS_ROMAN_CATHOLIC_NORTH_STREET_CHURCH_NOT_CARSHALTON_ST_MARY",evidence:Object.freeze(["https://mapcarta.com/W148619016","https://holycrosscarshalton.co.uk/?page_id=42"])}),
+ "RG-6EB9BE5CCA6F":Object.freeze({sourceId:"AO-B35-L-GB-6B7D91F54BCB",name:"St Joseph's",country:"GB",addressNeedle:"Kirkby Lonsdale, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:54.20228,lng:-2.59578,precision:"site",sourceRef:"osm:node:1965496329",sourceUrl:"https://www.openstreetmap.org/node/1965496329",
+  correctedAddress:"St Joseph's Catholic Church, Kirkby Lonsdale, Cumbria, UK",reviewScope:"KIRKBY_LONSDALE_ST_JOSEPH_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE",evidence:Object.freeze(["https://mapcarta.com/N1965496329"])}),
  // Batch 13: eight UK Catholic church-building and statutory named-site positions.
  "RG-FB8F0348E454":Object.freeze({sourceId:"AO-B34-L-GB-5A9DB2259039",name:"Holy Trinity",country:"GB",addressNeedle:"Hethe, United Kingdom (exact street not established)",placeId:null,
   lat:51.96179,lng:-1.14526,precision:"site",sourceRef:"osm:way:197835149",sourceUrl:"https://www.openstreetmap.org/way/197835149",
