@@ -95,7 +95,7 @@ import {prayerScriptureStageFacesV1} from "./scripture-stage-faces.v1.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import {sevenWordsLocalWitnessText, SEVEN_WORDS_LOCAL_EN_1889_V1} from "./seven-words-offline-1889.v1.js";
-import { prayCollationNotice } from "./source-collation-notices.v1.js";
+import { prayCollationNotice,prayCanonicalSourceReviewV1 } from "./source-collation-notices.v1.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
 import {benedictionAlleluiaStatus,benedictionVersiclesForDate,BENEDICTION_1962_WITNESS} from "./benediction-1962.js";
@@ -602,6 +602,23 @@ function sourceLine(p){
  const pr=p.provenance||{},edition=prayEditionWitness(p.id),localeWitness=!edition&&isFr()?prayerCompendiumFrenchWitness(p.id):null,url=localeWitness?.url||praySourceURL(p);
  const witness=edition?L(edition.label.en,edition.label.fr):(pr.witness||p.source||L('Source witness not recorded','Témoin textuel non documenté'));
  const transcribed=!edition&&!!PRAY_LITURGICAL_TRANSCRIPTION[p.id]&&!pr.url&&!p.sourceUrl;
+ // Inventory status is distinct from the donor's original sourceQuality and
+ // "VERBATIM" metadata. The 48 legacy source citations are not independently
+ // collated print-edition certificates, even when an anchor was reviewed.
+ const sourceReview=prayCanonicalSourceReviewV1(p.id);
+ const sourceReviewNotice=sourceReview?.status==='ANCHOR_REVIEWED_NOT_FULL_VERBATIM'
+  ?L('Selected formula anchors have been compared with named sources. The complete English, French and Latin texts have not been independently collated against the original printed edition.',
+     'Des formules de référence ont été comparées aux sources citées. Les textes complets en anglais, français et latin n’ont pas été collationnés indépendamment avec l’édition imprimée originale.')
+  :L('The cited source has not yet been independently compared with the complete prayer. A source link or inherited source-quality label does not certify a verbatim edition.',
+     'La source citée n’a pas encore été comparée indépendamment à la prière complète. Un lien ou une ancienne qualification de source ne certifie pas la conformité mot à mot à une édition.');
+ const sourceReviewMarkup='<p class="aoP435930SourceCertification" data-ao-prayer-source-review="'+esc(sourceReview.status)+
+  '" data-ao-prayer-original-corpus-url="'+(sourceReview.originalCorpusDirectSourceUrlPresent?'present':'missing')+'">'+esc(sourceReviewNotice)+'</p>';
+ const missingCorpusUrlNotice=!sourceReview.originalCorpusDirectSourceUrlPresent
+  ?'<p class="aoP435930SourceCertification" data-ao-prayer-alternate-witness>'+
+   esc(L('The original corpus did not record a direct source URL. The separate 1962 Missal witness linked above is comparative; its text has not been independently collated.',
+     'Le corpus initial ne comportait pas de lien direct. Le témoin distinct du Missel de 1962 cité ci-dessus est comparatif ; son texte n’a pas encore été collationné indépendamment.'))+'</p>'
+  :'';
+
  const sourceLink=url
    ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(localeWitness?(localeWitness.isComparative?L('Compare the published French edition','Comparer avec l’édition française publiée'):L('Read the published French text','Consulter le texte français publié')):transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
    :`<small>${esc(L('A direct source link has not yet been verified.','Aucun lien direct vers la source n’est encore vérifié.'))}</small>`;
@@ -617,7 +634,7 @@ function sourceLine(p){
  const langHold=p.id==='marian_consecration_immaculate_heart'
    ?`<p>${esc(L('This consecration is documented in English only; no equivalent French or Latin formula has been certified.','Cette consécration est documentée en anglais seulement ; aucune formule française ou latine équivalente n’a été certifiée.'))}</p>`
    :'';
- return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}${variantNotice}${collationDisclosure}</details>`;
+ return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${sourceReviewMarkup}${missingCorpusUrlNotice}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation&&pr.adaptation!=='VERBATIM'?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}${variantNotice}${collationDisclosure}</details>`;
 }
 const DEVOTIONAL_GUIDE_LINKS=Object.freeze({
  stations:[
@@ -2266,7 +2283,7 @@ function renderAdoration(){
 }
 function familyOf(p){if(['litany_loreto_1962','litany_loreto_current'].includes(p.id))return'litany_loreto';if(['foundations_eternal_rest','dead_eternal_rest_singular'].includes(p.id))return'eternal_rest';return p.id}
 let LIB={q:'',cat:'all',open:null,language:null};
-function normalizedSource(p){const pr=p.provenance||{},ed=prayEditionWitness(p.id);return {id:p.id,family:familyOf(p),work:pr.work||p.title||p.id,witness:ed?.label.en||pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:ed?.witnessType||pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
+function normalizedSource(p){const pr=p.provenance||{},ed=prayEditionWitness(p.id);const review=prayCanonicalSourceReviewV1(p.id);return {id:p.id,collationStatus:review.status,independentPrintCertified:review.independentPrintCertified,originalCorpusDirectSourceUrlPresent:review.originalCorpusDirectSourceUrlPresent,editionOrLocaleDiscrepancyRecorded:review.editionOrLocaleDiscrepancyRecorded,family:familyOf(p),work:pr.work||p.title||p.id,witness:ed?.label.en||pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:ed?.witnessType||pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
 const SOURCE_REGISTRY=Object.freeze(Object.fromEntries(Object.values(DATA.prayers||{}).map(p=>[p.id,Object.freeze(normalizedSource(p))])));
 function libraryOverviewGuide(){
  return `<details class="aoP435930GuideInfo" data-ao-prayer-library-guide="overview"><summary>${esc(L('Guide · find and use a prayer','Guide · trouver et prier un texte'))}</summary>
