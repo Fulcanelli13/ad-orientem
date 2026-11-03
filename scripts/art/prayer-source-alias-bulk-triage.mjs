@@ -103,7 +103,9 @@ const queue=existing.pendingDistinctWorksByPotentialReuse.map(w=>{
    slots.some(x=>x?.highestSourceEvidence==="TITLE_ARTIST_CANDIDATE_REVIEW")?"TITLE_ARTIST_CANDIDATE":
    "SOURCE_NOT_LINKED";
  const workName=norm(w.painting?.title);
- const carriedPR=(workName==="the heart of jesus"||workName==="the heart of mary"||workName==="salvator mundi")?2302:null;
+ const maker=norm(w.painting?.artist);
+ const carriedPR=((workName==="the heart of jesus"||workName==="the heart of mary")&&maker==="juan patricio morlete ruiz" ||
+ (workName==="salvator mundi"&&maker==="ambrosius benson"))?2302:null;
  return {...w,recordLinkLevel:level,existingReleasePR:carriedPR,
   archiveGate:w.archivedSourceAvailable?"ARCHIVED_FILE_PRESENT_NOT_PUBLISHABLE":"SOURCE_FILE_NOT_CONFIRMED",
   nextStep:carriedPR?"RESOLVE_EXISTING_PR2302_NO_DUPLICATE":
