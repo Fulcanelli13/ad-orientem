@@ -40,9 +40,9 @@ export function selected1962IntroitSungText({part,scoreId,sourceLatin,originalGa
  if(gloria.length){
   if(gloria[0].i<=antiphonLines[0].i||gloria[0].i>=antiphonLines[1].i)
    fail("INTROIT_GLORIA_ORDER_INVALID");
-  if(!/\bet\s+F[ií]lio\b/i.test(gloria[0].s)||
-     !/Sp[ií]ritui\s+Sancto/i.test(gloria[0].s)||
-     !normalized(gloria[0].s).includes("saecula saeculorum")||
+  const completeGloria=normalized(gloria[0].s);
+  if(!completeGloria.includes("et filio et spiritui sancto")||
+     !completeGloria.includes("saecula saeculorum")||
      !/\bAmen\.?$/i.test(gloria[0].s))
    fail("INTROIT_SELECTED_GLORIA_NOT_COMPLETE");
   nodes.push({role:"GLORIA_PATRI_FULL",label:"Glória Patri · complete doxology",text:gloria[0].s});
