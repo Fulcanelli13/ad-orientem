@@ -1,0 +1,31 @@
+name: Sacred Atlas PD13 read-only rights and source audit
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-pd13-legal-source-audit-cohort-20261104.v1.json'
+      - 'tools/atlas/audit-sacred-atlas-public-domain-13.py'
+      - '.github/workflows/sacred-atlas-pd13-rights-audit.yml'
+permissions:
+  contents: read
+jobs:
+  audit-original-selected-rights:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-pd13-rights-audit-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read-only Wikimedia PD13 licence metadata and original-source revision audit
+        run: python tools/atlas/audit-sacred-atlas-public-domain-13.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sacred-atlas-pd13-legal-source-evidence
+          path: /tmp/ao-sacred-atlas-pd13-current-source-audit.json
+          if-no-files-found: warn
+          retention-days: 14
