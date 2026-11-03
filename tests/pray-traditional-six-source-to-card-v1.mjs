@@ -70,7 +70,7 @@ const originalLibrary=new Function("env","with(env){"+
 for(const p of Object.values(canonical)){
  for(const lang of ["en","fr"]){
   language=lang;
-  const face=prayerSourceFacesV1(p,lang),html=originalLibrary(p.id);
+  const face=prayerSourceFacesV1(p,lang),html=originalLibrary(p.id,{record:p});
   visible(html,face.vernacular||face.latin,"Library "+p.id+" "+lang);
   if(face.vernacular&&face.latin){
    visible(html,face.latin,"Library Latin "+p.id);
