@@ -96,6 +96,7 @@ import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-wi
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import {sevenWordsLocalWitnessText, SEVEN_WORDS_LOCAL_EN_1889_V1} from "./seven-words-offline-1889.v1.js";
 import { prayCollationNotice,prayCanonicalSourceReviewV1 } from "./source-collation-notices.v1.js";
+import { praySourceScopeNotice20261103 } from "./source-scope-notices-20261103.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
 import {benedictionAlleluiaStatus,benedictionVersiclesForDate,BENEDICTION_1962_WITNESS} from "./benediction-1962.js";
@@ -629,12 +630,15 @@ function sourceLine(p){
  const collation=prayCollationNotice(p.id);
  const collationLinks=collation?.relatedWitnesses?.filter(x=>x.url!==url&&x.url!==edition?.secondaryUrl).map(x=>`<p><a class="aoP435930SourceLink" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></p>`).join('')||'';
  const collationDisclosure=collation?`<p class="aoP435930SourceEditionVariant">${esc(L(collation.notice.en,collation.notice.fr))}</p>${collationLinks}`:'';
+ const scopedComparison=praySourceScopeNotice20261103(p.id);
+ const scopeDisclosure=scopedComparison?'<p class="aoP435930SourceEditionScope" data-ao-prayer-source-scope="'+esc(scopedComparison.category)+'">'+
+  esc(L(scopedComparison.notice.en,scopedComparison.notice.fr))+'</p>':'';
  const textualVariant=PRAYER_WITNESSED_VARIANTS[p.id];
  const variantNotice=textualVariant?`<p class="aoP435930SourceWitnessNote">${esc(L(textualVariant.noteEn,textualVariant.noteFr))} <a href="${esc(textualVariant.url)}" target="_blank" rel="noopener noreferrer">${esc(L('Original French witness','Témoin français original'))} ↗</a></p>`:'';
  const langHold=p.id==='marian_consecration_immaculate_heart'
    ?`<p>${esc(L('This consecration is documented in English only; no equivalent French or Latin formula has been certified.','Cette consécration est documentée en anglais seulement ; aucune formule française ou latine équivalente n’a été certifiée.'))}</p>`
    :'';
- return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${sourceReviewMarkup}${missingCorpusUrlNotice}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation&&pr.adaptation!=='VERBATIM'?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}${variantNotice}${collationDisclosure}</details>`;
+ return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${sourceReviewMarkup}${missingCorpusUrlNotice}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation&&pr.adaptation!=='VERBATIM'?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}${variantNotice}${collationDisclosure}${scopeDisclosure}</details>`;
 }
 const DEVOTIONAL_GUIDE_LINKS=Object.freeze({
  stations:[
