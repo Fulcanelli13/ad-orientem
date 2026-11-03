@@ -1,0 +1,49 @@
+name: Prayer non-Rosary first offline 40 routes
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-nonrosary-first-offline-40-route-phone.mjs"
+      - "src/app/offline-boot.js"
+      - "src/pray/browser-entry.js"
+      - "src/pray/prayer-design-pilot.js"
+      - "sw.js"
+      - "data/pray/prayer-language-route-matrix.v1.json"
+      - "package.json"
+      - ".github/workflows/pray-nonrosary-first-offline-40-route.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tests/pray-nonrosary-first-offline-40-route-phone.mjs"
+      - "src/app/offline-boot.js"
+      - "src/pray/browser-entry.js"
+      - "src/pray/prayer-design-pilot.js"
+      - "sw.js"
+      - ".github/workflows/pray-nonrosary-first-offline-40-route.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-nonrosary-offline-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  nonrosary-offline-first-use:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify non-Rosary Prayer owner routes on cold offline PWA document
+        run: npm run test:pray-offline-nonrosary-40
+      - name: Preserve actual first-offline route/worker evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-nonrosary-first-offline-route-evidence
+          path: artifacts/pray-first-use-offline-nonrosary/first-use-offline-nonrosary-40-route.json
+          if-no-files-found: warn
+          retention-days: 7
