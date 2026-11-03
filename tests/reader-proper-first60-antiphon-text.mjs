@@ -24,8 +24,11 @@ assert.ok(audit.scoreEvidence.every(x=>!x.publicScore&&
  !x.complete1962GabcMusicalUnderlayVerified&&
  !x.original1961PitchAndNeumeFacsimileVerified&&
  !x.exactReaderBlockAndCueCertified&&
- x.evidence.originalScoreNoteBearingTokens>0));
+ (x.evidence.originalScoreNoteBearingTokens>0||
+  x.evidence.noteGroupInventoryStatus==="PROPER_GABC_NOTE_GROUP_TOKENIZATION_HOLD")));
 assert.equal(audit.publication.publicReaderScores,0);
+assert.ok(audit.counts.noteGroupTokenizationHolds>=1,
+ "Proper punctuation-to-neume parsing failures must be recorded as holds");
 const tampered=structuredClone(source);
 tampered.candidates[0].scoreGabc+="alteration";
 assert.throws(()=>auditFirst60CompleteAntiphonText({packet:tampered}),
