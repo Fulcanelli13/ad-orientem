@@ -72,15 +72,19 @@ def verify_candidate(row):
     if api_sha and api_sha not in (digest,to_b36(int(digest,16))):
         raise RuntimeError(f"Commons original file SHA-1 mismatch: {row['commons_title']}")
     with Image.open(io.BytesIO(raw)) as img:
-        original_dims=[img.width,img.height]
-        if original_dims!=row["source_original_dimensions"]:
-            raise RuntimeError(f"Commons original dimensions changed {row['commons_title']}: {original_dims}")
         if img.format!="JPEG": raise RuntimeError("Unexpected original image format; reviewed JPEG required")
-        got_dhash=archive_dhash(img)
+        # Some Commons originals, notably Mariazell, store landscape pixel
+        # arrays with EXIF rotation; the archive preview and Wikimedia's
+        # published dimensions describe the visibly upright photograph.
+        upright=ImageOps.exif_transpose(img)
+        original_dims=[upright.width,upright.height]
+        if original_dims!=row["source_original_dimensions"]:
+            raise RuntimeError(f"Commons displayed original dimensions changed {row['commons_title']}: {original_dims}")
+        got_dhash=archive_dhash(upright)
         bitdiff=(int(got_dhash,16)^int(row["expected_archive_dhash"],16)).bit_count()
         if bitdiff>8:
-            raise RuntimeError(f"Photo differs from preserved A100/B16 user-approved source {row['commons_title']}: dHash difference {bitdiff}")
-        image=ImageOps.exif_transpose(img).convert("RGB")
+            raise RuntimeError(f"Photo differs from preserved A100 user-approved source {row['commons_title']}: dHash difference {bitdiff}")
+        image=upright.convert("RGB")
     image.thumbnail((1600,1600),Image.Resampling.LANCZOS)
     if min(image.size)<500: raise RuntimeError("Derived photograph too small for approved gallery")
     target=ROOT/"assets/approved/place-gallery"/row["filename"]
