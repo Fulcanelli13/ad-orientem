@@ -17,6 +17,10 @@ const dates=[];
 for(let ms=Date.UTC(2026,0,1);ms<Date.UTC(2027,0,1);ms+=86400000)
   dates.push(new Date(ms).toISOString().slice(0,10));
 assert.equal(dates.length,365);
+const curatedFile=JSON.parse(await readFile(resolve(root,
+  "data/calendar/research/2026-existing-curated-date-art-reuse.v1.json"),"utf8"));
+assert.equal(curatedFile.relations.length,58);
+const curatedRelations=curatedFile.relations;
 
 const server=http.createServer(async(req,res)=>{
   try{
@@ -46,21 +50,25 @@ try {
   const rows=[];
   for(let i=0;i<dates.length;i+=8){
     const subset=dates.slice(i,i+8);
-    const batch=await page.evaluate(async dayList=>{
+    const batch=await page.evaluate(async ({dayList,curatedRelations})=>{
       const provider=globalThis.AO_PHASE1_ART??null;
       const resolver=globalThis.AO_RUNTIME_V8.resolver;
       const {homeCalendarGospelArtworkEvidence}=await import(
         "/src/home/calendar-gospel-artwork-evidence.js");
+      const {assessDailyCuratedArt}=await import(
+        "/src/home/calendar-gospel-curated-art-matcher.js");
       return Promise.all(dayList.map(async date=>{
         try{
           const resolution=await resolver.resolveDay(date);
-          return homeCalendarGospelArtworkEvidence({date,resolution,artProvider:provider});
+          const evidence=homeCalendarGospelArtworkEvidence({date,resolution,artProvider:provider});
+          const curated=assessDailyCuratedArt(evidence,curatedRelations);
+          return {...evidence,curated};
         }catch(error){
           return {date,status:"DAY_UNRESOLVED",gospel:{status:"NOT_VERIFIED",reference:null},
             homepageArtworkState:"NOT_CERTIFIED",error:String(error?.message??error)};
         }
       }));
-    },subset);
+    },{dayList:subset,curatedRelations});
     rows.push(...batch);
     if((i+8)%80===0||i+8>=dates.length)
       console.log("Inspected "+rows.length+"/365 observed day sources");
@@ -78,7 +86,8 @@ try {
       "EXACT_USER_DATE_PAINTING_MUST_MATCH_OBSERVED_PRINCIPAL",
       "RIGHTS_HELD_IMAGES_ARE_NOT_PUBLISHED",
       "CALENDAR_ART_AND_GOSPEL_SCENE_ARE_DISTINCT_RELEVANCE_CLAIMS",
-      "NO_RENDER_OR_IMAGE_BYTE_VERIFICATION_FROM_THIS_AUDIT"
+      "NO_RENDER_OR_IMAGE_BYTE_VERIFICATION_FROM_THIS_AUDIT",
+      "CURATED_RELATIONS_ARE_SCREENED_NOT_PUBLISHED"
     ],
     totals:{
       dates:rows.length,
@@ -89,11 +98,19 @@ try {
         "APPROVED_DATE_PREVIEW_NOT_OFFLINE_CERTIFIED"),
       datePaintingSourceHolds:count(r=>r.homepageArtworkState,"APPROVED_ART_SOURCE_HELD"),
       legacyProperCandidates:rows.filter(r=>r.legacyCandidate).length,
+      priorCuratedDateRelations:rows.reduce((sum,r)=>sum+(r.curated?.candidates?.length??0),0),
+      daysWithCuratedProposals:rows.filter(r=>(r.curated?.candidates?.length??0)>0).length,
+      principalMatchedCuratedProposals:rows.reduce((sum,r)=>sum+(r.curated?.totals?.observedPrincipalMatches??0),0),
+      passageScreenedCuratedGospelProposals:rows.reduce((sum,r)=>sum+(r.curated?.totals?.gospelPassageScreened??0),0),
+      mismatchedCuratedGospelProposals:rows.reduce((sum,r)=>sum+(r.curated?.totals?.gospelPassageDisagreements??0),0),
+      gospelUnresolvedCuratedProposals:rows.reduce((sum,r)=>sum+(r.curated?.totals?.gospelSourceUnresolved??0),0),
       legacyCandidatesBlockedByUserPolicy:rows.filter(r=>
         r.legacyCandidate?.status==="EXCLUDED_BY_USER_ART_POLICY").length,
       actualImagesRenderedCertified:0,
       independentlyGospelMatchedPaintings:0
     },
+    unverifiedGospelDates:rows.filter(r=>r.gospel?.status!=="VERIFIED_FROM_SELECTED_PROPER")
+      .map(r=>({date:r.date,principalId:r.principalId,name:r.name,properPath:r.properPath})),
     dates:rows
   };
   await mkdir(resolve(root,"artifacts/calendar-gospel-home"),{recursive:true});
