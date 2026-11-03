@@ -159,7 +159,7 @@ assert.equal(all.length,2582);
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
 const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
 const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
 assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
