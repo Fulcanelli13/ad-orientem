@@ -51,7 +51,8 @@ try{
      img.loading="eager";await img.decode();
      const r=img.getBoundingClientRect();
      return {src:img.getAttribute("src"),naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
-       width:r.width,height:r.height,left:r.left,right:r.right,fit:getComputedStyle(img).objectFit,
+       width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom,
+       fit:getComputedStyle(img).objectFit,
        horizontalOverflow:document.documentElement.scrollWidth-innerWidth};
     });
     assert.ok(info.src.endsWith(filename),tag+" incorrect painting "+JSON.stringify(info));
@@ -59,6 +60,8 @@ try{
     assert.equal(info.fit,"contain",tag+" must preserve complete painting");
     assert.ok(info.width>90&&info.height>40&&info.left>=-1&&info.right<=width+1,tag+" must fit mobile");
     assert.ok(info.horizontalOverflow<=1,tag+" horizontal overflow "+info.horizontalOverflow);
+    if(tag.startsWith("montfort-"))assert.ok(info.top>=0&&info.bottom<=
+     (width===320?640:844)-52,"Montfort stage painting must appear in the first viewport: "+JSON.stringify(info));
     await page.screenshot({path:resolve(output,tag+"-"+width+"-"+locale+".png"),animations:"disabled"});
     return {tag,slot,...info};
    };
