@@ -25,9 +25,11 @@ assert.equal(evidence.published.length,evidence.published_count);
 assert.equal(evidence.holds.length,evidence.held_count);
 assert.ok(evidence.published_count>=1,"Round 6 requires a real newly published image");
 assert.equal(evidence.before.covers,324);
-assert.equal(covers.items.length,324+evidence.published_count);
-assert.equal(evidence.after.covers,covers.items.length);
-assert.equal(evidence.after.missing,530-covers.items.length);
+assert.ok(covers.items.length>=324+evidence.published_count,
+  "Later additive cover rounds must not invalidate the source-verified Round 6 cohort");
+assert.equal(evidence.after.covers,324+evidence.published_count,
+  "Round 6 release evidence is a frozen production snapshot");
+assert.equal(evidence.after.missing,530-evidence.after.covers);
 assert.equal(gallery.items.length,42,"Place gallery content cannot be changed in the cover programme");
 assert.equal(new Set(covers.items.map(x=>x.place_id)).size,covers.items.length);
 assert.ok(evidence.existing_covers_unchanged && evidence.gallery_unchanged && evidence.no_tlm_changes);
