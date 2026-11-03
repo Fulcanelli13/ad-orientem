@@ -171,5 +171,5 @@ assert.ok(rivo&&!rivo.map_publishable,"Rivo San Lorenzo must not be promoted fro
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
 console.log("PASS TLM recovery batch 5: 13 church/monastery site pins, 2025 mapped, 557 list-only, no inferred liturgical or media facts");
