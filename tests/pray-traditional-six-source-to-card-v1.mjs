@@ -8,6 +8,7 @@ import {GOLDEN_ARROW_REPARATION_V1} from "../src/pray/icksp-golden-arrow-reparat
 import {NIGHTLY_EXAMEN_CARDS,guidedDailyCards,clampPrayerCardStep} from "../src/pray/guided-daily-cards.js";
 import {defaultPersonalDailyPrefs,buildPersonalDailyPlan} from "../src/pray/daily-personal-rule.js";
 import {personalDailyPrayerCard} from "../src/pray/daily-personal-prayer-view.js";
+import {prayerEditorialArtworkMarkup} from "../src/pray/art-slot-map.v1.js";
 
 const code=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
 const lib=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
@@ -29,7 +30,7 @@ const S={hopeFrenchEdition:"published",mealStep:0,mealForm:"short",examenStep:0,
  examenContrition:"standard",returnToDaily:false,sacredHeart:"litany",
  communion:"before",communionStep:0};
 const env={
- S,esc,nl,prayerSourceFacesV1,
+ S,esc,nl,prayerSourceFacesV1,prayerEditorialArtworkMarkup,
  isFr:()=>language==="fr",L:(en,fr)=>language==="fr"?(fr||en):en,
  data:()=>({prayers:canonical}),
  prayerTitle:(p,id)=>language==="fr"?(p.titleFr||p.title||id):(p.title||id),
@@ -120,6 +121,8 @@ for(const lang of ["en","fr"]){
  for(let i=0;i<NIGHTLY_EXAMEN_CARDS.length;i++){
   S.examenStep=i;S.returnToDaily=false;S.examenContrition="standard";
   const html=r.renderNightlyExamen();
+  assert.equal(html.includes('data-ao-editorial-slot="COV-daily.nightly_examen"'),i===0,
+   "La Tour cover belongs only to standalone Nightly Examen entry "+lang+"/"+i);
   visible(html,NIGHTLY_EXAMEN_CARDS[i][lang==="fr"?"bodyFr":"bodyEn"],"Examen "+lang+"/"+i);
   if(i===4){
    visible(html,canonical.sacrament_act_of_contrition[lang],"Canonical Act of Contrition");
