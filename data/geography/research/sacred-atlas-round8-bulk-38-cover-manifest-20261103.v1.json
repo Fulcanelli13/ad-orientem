@@ -1,0 +1,676 @@
+{
+  "schema": "AO_SACRED_ATLAS_PHASE_B_ROUND8_BULK_COVER_RELEASE_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_PLACE_COVERS_ONLY",
+  "baseline": {
+    "canonical_places": 530,
+    "approved_covers": 349,
+    "missing_covers": 181,
+    "approved_gallery": 42,
+    "plan_rounds_completed": 7,
+    "plan_rounds_total": 28
+  },
+  "cohort": "38 original user-selected Photo Finder first-choice exact-site sources in 20+18 source-verification partitions",
+  "selection_protection": "No new editorial decisions. Excludes previous source/visual holds, non-standard rights, and originals over 65 MP (St Peter, Arthunkal, Madonna del Sasso Orselina), requiring a separate bounded safe derivative workflow. SHA1 and licence/current bytes mandatory.",
+  "source_pointers": [
+    "data/geography/research/photo-finder-20261030/decisions.json",
+    "data/geography/research/photo-finder-20261030/credits.csv",
+    "data/geography/approved-place-media.v1.json",
+    "data/geography/seed-registry.v1.json"
+  ],
+  "required_checks": [
+    "Exactly original rank-1 user-selected Commons file for each canonical Place",
+    "Original SHA-1, MIME, dimensions, current author and exact photo licence",
+    "Download full original bytes within 32 MB per source; decode under 65 MP; do not infer protected subject rights",
+    "Full-frame WebP with SHA-256 and exact bilingual Place display",
+    "Protect 349 existing covers, preserve 42 gallery images byte-for-byte and do not touch TLM Atlas"
+  ],
+  "rows": [
+    {
+      "sequence": 1,
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "place_name": "Basilica di San Nicola, Bari",
+      "reviewed_file": "File:Bari BW 2016-10-19 13-35-11 stitch.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABari_BW_2016-10-19_13-35-11_stitch.jpg",
+      "expected_original_sha1": "0d0979f53d11fb234c6456fe0c685156a5c6cbe4",
+      "claimed_author": "Berthold Werner",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        7445,
+        6319
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 2,
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "place_name": "Basilica Papale di San Paolo fuori le Mura",
+      "reviewed_file": "File:StPaul.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AStPaul.jpg",
+      "expected_original_sha1": "96d1ab3a7ddc15e0863f3dbbec8a900603e1e04b",
+      "claimed_author": "StPaul.jpg",
+      "claimed_license": "CC BY 4.0",
+      "expected_dimensions": [
+        8272,
+        5456
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 3,
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "place_name": "Basilica Papale di Santa Maria Maggiore",
+      "reviewed_file": "File:Basilica di Santa Maria Maggiore - Roma.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasilica_di_Santa_Maria_Maggiore_-_Roma.jpg",
+      "expected_original_sha1": "3060be9647c5cbfcb32bc8c4031396f8075f0cb7",
+      "claimed_author": "NikonZ7II",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6906,
+        5358
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 4,
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "place_name": "Basilique de la Visitation, Annecy",
+      "reviewed_file": "File:Basilique de la Visitation - 207.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasilique_de_la_Visitation_-_207.jpg",
+      "expected_original_sha1": "9d63b8d058630f877940d263b051262a2a86628e",
+      "claimed_author": "Another one of my pictures: This photograph was taken by Medium69 (William Crochot) and released under the license stated below. You are free to use it for any ",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        2259,
+        3388
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 5,
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "place_name": "Basilica Sant'Agostino in Campo Marzio, Rome",
+      "reviewed_file": "File:Sant'Agostino, Rome.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASant'Agostino%2C_Rome.jpg",
+      "expected_original_sha1": "8d591833484392dff5921a09762c93cb81117797",
+      "claimed_author": "Wilfredor",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        5030,
+        4715
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 6,
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "place_name": "Catedral Metropolitana de San Salvador",
+      "reviewed_file": "File:San Salvador - El Salvador (50899440617).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASan_Salvador_-_El_Salvador_(50899440617).jpg",
+      "expected_original_sha1": "be51e84320a5c3d92b8b52cbe529a48bb6f79454",
+      "claimed_author": "Rômulo Gama Ferreira from Vitória-ES",
+      "claimed_license": "CC BY 2.0",
+      "expected_dimensions": [
+        4896,
+        3672
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 7,
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "place_name": "Abbazia di San Colombano, Bobbio",
+      "reviewed_file": "File:Abbazia di San Colombano - Bobbio, Piacenza, Italia - 30 Maggio 2020.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AAbbazia_di_San_Colombano_-_Bobbio%2C_Piacenza%2C_Italia_-_30_Maggio_2020.jpg",
+      "expected_original_sha1": "75d1726d9eb87b99348921af0b8c848df5e5f258",
+      "claimed_author": "Giorgio Galeotti",
+      "claimed_license": "CC BY 4.0",
+      "expected_dimensions": [
+        6807,
+        4862
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 8,
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "place_name": "Église Saint-Hilaire-le-Grand, Poitiers",
+      "reviewed_file": "File:Saint Hilaire Poitiers 2.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASaint_Hilaire_Poitiers_2.jpg",
+      "expected_original_sha1": "1e01f20b67a1e071bbf51e65e5dfa0c5412cf936",
+      "claimed_author": "Unknown author",
+      "claimed_license": "CC BY 3.0",
+      "expected_dimensions": [
+        2048,
+        1191
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 9,
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "place_name": "Padre Pio Shrine, Santo Tomas, Batangas",
+      "reviewed_file": "File:4719Padre Pio National Shrine 42.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A4719Padre_Pio_National_Shrine_42.jpg",
+      "expected_original_sha1": "1cf1eba6687325a21bdafc28e837146aca657546",
+      "claimed_author": "Judgefloro",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4608,
+        3456
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 10,
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "place_name": "Church of the Visitation, Ein Karem",
+      "reviewed_file": "File:כנסיית הביקור מהאוויר.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A%D7%9B%D7%A0%D7%A1%D7%99%D7%99%D7%AA_%D7%94%D7%91%D7%99%D7%A7%D7%95%D7%A8_%D7%9E%D7%94%D7%90%D7%95%D7%95%D7%99%D7%A8.jpg",
+      "expected_original_sha1": "327e724e3d511ee147f4784abd9baa3b00f81cec",
+      "claimed_author": "ליעד 747",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        4000,
+        3000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 11,
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "place_name": "National Marian Shrine of Our Lady of La Vang",
+      "reviewed_file": "File:Tháp chuông nhà thờ La Vang.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ATh%C3%A1p_chu%C3%B4ng_nh%C3%A0_th%E1%BB%9D_La_Vang.JPG",
+      "expected_original_sha1": "df56c4525f298e79bb4ce48864eba4d20c788581",
+      "claimed_author": "Hoangvantoanajc",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2288,
+        1520
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 12,
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "place_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+      "reviewed_file": "File:Görög katolikus templom (8299. számú műemlék) 4.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AG%C3%B6r%C3%B6g_katolikus_templom_(8299._sz%C3%A1m%C3%BA_m%C5%B1eml%C3%A9k)_4.jpg",
+      "expected_original_sha1": "3019c9b2038552a261ec12609d716bc3bd463433",
+      "claimed_author": "Zurgiz",
+      "claimed_license": "CC BY-SA 2.5",
+      "expected_dimensions": [
+        1600,
+        1200
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 13,
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "place_name": "Basilica of Our Lady Help of Christians — Sheshan",
+      "reviewed_file": "File:Shanghai - Basilique de She Shan - 33.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AShanghai_-_Basilique_de_She_Shan_-_33.jpg",
+      "expected_original_sha1": "1c70b5085f5401507bf69e60f797696f166f823c",
+      "claimed_author": "This illustration was made by Peter Potrowl. Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu w",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        1824,
+        1368
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 14,
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "place_name": "Minor Basilica of Our Lady of the Rosary of Manaoag",
+      "reviewed_file": "File:Manaoag Church facade in Pangasinan.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AManaoag_Church_facade_in_Pangasinan.jpg",
+      "expected_original_sha1": "989b7430038a1ecd89d5b753a6485a05f0a100a7",
+      "claimed_author": "Ramon FVelasquez",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        1080,
+        1440
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 15,
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "place_name": "St Peter's Cathedral Basilica, Kumasi",
+      "reviewed_file": "File:St Peter's Cathedral Basilica Kumasi (4).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASt_Peter's_Cathedral_Basilica_Kumasi_(4).jpg",
+      "expected_original_sha1": "59837826884dc9a065e18e2f0fce85c46e0c9bae",
+      "claimed_author": "Noahalorwu",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6000,
+        3376
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 16,
+      "place_id": "place:ID:jakarta-cathedral",
+      "place_name": "Jakarta Catholic Cathedral — Our Lady of the Assumption",
+      "reviewed_file": "File:Cathedral of Jakarta - exterior (2025) - img 04.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACathedral_of_Jakarta_-_exterior_(2025)_-_img_04.jpg",
+      "expected_original_sha1": "c06d6e38b449779d31970b82f5e3759c224996cb",
+      "claimed_author": "Chainwit.",
+      "claimed_license": "CC BY 4.0",
+      "expected_dimensions": [
+        3024,
+        4032
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 17,
+      "place_id": "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "place_name": "Queen of the Most Holy Rosary Cathedral, Pietermaai",
+      "reviewed_file": "File:Cathedral in Willemstad, Curaçao.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACathedral_in_Willemstad%2C_Cura%C3%A7ao.jpg",
+      "expected_original_sha1": "e274c283caa80537158ce2e533ab9e7eba954f67",
+      "claimed_author": "Gerd Fahrenhorst",
+      "claimed_license": "CC BY 4.0",
+      "expected_dimensions": [
+        4896,
+        3672
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 18,
+      "place_id": "place:MH:cathedral-assumption-majuro",
+      "place_name": "Cathedral of Our Lady of the Assumption, Majuro",
+      "reviewed_file": "File:Cathedral of the Assumption, Majuro.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ACathedral_of_the_Assumption%2C_Majuro.jpg",
+      "expected_original_sha1": "0438cb172bfe8bee84f5560467608468b7d253d3",
+      "claimed_author": "Prefecture Apostolic of Marshall Islands",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        2048,
+        1152
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 19,
+      "place_id": "place:WF:cathedrale-assomption-mata-utu",
+      "place_name": "Cathédrale Notre-Dame-de-l’Assomption, Mata-Utu",
+      "reviewed_file": "File:179 Cathédrale de Mata-Utu - side view (36940866791).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A179_Cath%C3%A9drale_de_Mata-Utu_-_side_view_(36940866791).jpg",
+      "expected_original_sha1": "881fe70acb5915518214da7eed461ae89039bf32",
+      "claimed_author": "Brigitte & Heinz",
+      "claimed_license": "CC BY-SA 2.0",
+      "expected_dimensions": [
+        4896,
+        2752
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 20,
+      "place_id": "place:NP:assumption-cathedral-lalitpur",
+      "place_name": "Cathedral of the Assumption of the Blessed Virgin Mary, Lalitpur",
+      "reviewed_file": "File:Assumption Church, Kathmandu, Nepal - June 2024.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AAssumption_Church%2C_Kathmandu%2C_Nepal_-_June_2024.jpg",
+      "expected_original_sha1": "7d3e62c7f08b1277a49abb730d7964ff6e9404d3",
+      "claimed_author": "Fivestones",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        4032,
+        3024
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 21,
+      "place_id": "place:KN:immaculate-conception-cocathedral-basseterre",
+      "place_name": "Immaculate Conception Co-Cathedral, Basseterre",
+      "reviewed_file": "File:Basseterre Co-Cathedral of Immaculate Conception 2.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABasseterre_Co-Cathedral_of_Immaculate_Conception_2.JPG",
+      "expected_original_sha1": "512aa0f323afd2c9c9e8344315ddf9e43643f8a6",
+      "claimed_author": "Gertjan R.",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3240,
+        4320
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 22,
+      "place_id": "place:CK:st-joseph-cathedral-avarua",
+      "place_name": "St Joseph's Cathedral, Avarua, Rarotonga",
+      "reviewed_file": "File:St. Joseph's Cathedral, Avarua.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASt._Joseph's_Cathedral%2C_Avarua.jpg",
+      "expected_original_sha1": "a1b132d9cb52287eff1785eaccedc9242c5ccab9",
+      "claimed_author": "Tom Ackroyd",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        3941,
+        2717
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 23,
+      "place_id": "place:MX:catedral-basilica-san-juan-los-lagos",
+      "place_name": "Catedral Basílica de Nuestra Señora de San Juan de los Lagos",
+      "reviewed_file": "File:Basílica de San Juan de los Lagos.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABas%C3%ADlica_de_San_Juan_de_los_Lagos.jpg",
+      "expected_original_sha1": "1b4a31304e1d00a19c4ce1c5df706151736839ff",
+      "claimed_author": "pedro sanchez",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2104,
+        2728
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 24,
+      "place_id": "place:DO:catedral-primada-santo-domingo",
+      "place_name": "Catedral Primada de América — Santa María de la Encarnación",
+      "reviewed_file": "File:Dominikanische Republik Santo Domingo Basilica Catedral Menor de Santa Maria 02.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ADominikanische_Republik_Santo_Domingo_Basilica_Catedral_Menor_de_Santa_Maria_02.jpg",
+      "expected_original_sha1": "52e7898563838e2893e7771dfb4d756b4bad468d",
+      "claimed_author": "Georg Karl Ell",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        7356,
+        4138
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 25,
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "place_name": "Basílica Santuário de Nossa Senhora da Penha de França, Rio de Janeiro",
+      "reviewed_file": "File:Igreja da Penha by Diego Baravelli III.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AIgreja_da_Penha_by_Diego_Baravelli_III.jpg",
+      "expected_original_sha1": "dd35c6a4a1bcbf575cc8eb83eafd34b85ac93055",
+      "claimed_author": "Diego Baravelli",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        5760,
+        3840
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 26,
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "place_name": "Basílica de la Virgen de los Desamparados",
+      "reviewed_file": "File:20211115.Valencia.-087.1.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A20211115.Valencia.-087.1.jpg",
+      "expected_original_sha1": "4ea34d2ff4ac1356ec4f7fe19f335517bc01ab3b",
+      "claimed_author": "Bybbisch94, Christian Gebhardt",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        8000,
+        6000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 27,
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "place_name": "Bazilika Nanebevzetí Panny Marie, Svatý Hostýn",
+      "reviewed_file": "File:Church of the Assumption of the Virgin Mary in Hostýn (2).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AChurch_of_the_Assumption_of_the_Virgin_Mary_in_Host%C3%BDn_(2).jpg",
+      "expected_original_sha1": "6b354b5e53cecb91d650927c432950ec0e970d0c",
+      "claimed_author": "Radosław Botev",
+      "claimed_license": "CC BY 3.0",
+      "expected_dimensions": [
+        4000,
+        3000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 28,
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "place_name": "Real Basílica Colegiata de San Isidoro, León",
+      "reviewed_file": "File:20060626-León San Isidoro.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A20060626-Le%C3%B3n_San_Isidoro.jpg",
+      "expected_original_sha1": "47f2f1b361f17219fb24c5e8d9a7f55c30e99fd5",
+      "claimed_author": "Unknown author",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2592,
+        1944
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 29,
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "place_name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
+      "reviewed_file": "File:Bazylika Santa Maria degli Angeli Asyż.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ABazylika_Santa_Maria_degli_Angeli_Asy%C5%BC.jpg",
+      "expected_original_sha1": "55b8fdf8190b9f114179aa150034266a8d39d038",
+      "claimed_author": "Unknown author",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        1181,
+        949
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 30,
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "place_name": "Basilique Notre-Dame de Buglose",
+      "reviewed_file": "File:Saint-Vincent-de-Paul - Basilique Notre-Dame de Buglose - 25.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASaint-Vincent-de-Paul_-_Basilique_Notre-Dame_de_Buglose_-_25.jpg",
+      "expected_original_sha1": "5d8a852d75e9aa0e0e2190c1329e34bdc95e8b35",
+      "claimed_author": "This illustration was made by Peter Potrowl. Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu w",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        1824,
+        1368
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 31,
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "place_name": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
+      "reviewed_file": "File:Poland Trzebnica - sanctuary of Hedwig.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3APoland_Trzebnica_-_sanctuary_of_Hedwig.jpg",
+      "expected_original_sha1": "02bd292df52e6d4b791ddab33a6a4795b7b3aeca",
+      "claimed_author": "Own work",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2762,
+        2000
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 32,
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "place_name": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
+      "reviewed_file": "File:489A1758Bazylika konkatedralna Wniebowzięcia Najświętszej Maryi Panny w Gdańsku - widziana z Góry Gradowej.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3A489A1758Bazylika_konkatedralna_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Gda%C5%84sku_-_widziana_z_G%C3%B3ry_Gradowej.jpg",
+      "expected_original_sha1": "5998588f250cc54992df469d51cae8650c9ff9fe",
+      "claimed_author": "Radosław Dybała",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        6720,
+        4480
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 33,
+      "place_id": "place:FR:p42-sg-inv-0042",
+      "place_name": "Cathédrale Notre-Dame de Strasbourg",
+      "reviewed_file": "File:Strasbourg Cathedral Exterior - Diliff.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AStrasbourg_Cathedral_Exterior_-_Diliff.jpg",
+      "expected_original_sha1": "30ba67362115f0641f32686e0941a7130482cdcb",
+      "claimed_author": "Diliff",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        6574,
+        8402
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 34,
+      "place_id": "place:DE:p42-sg-inv-0181",
+      "place_name": "Basilika Mariä Himmelfahrt des Klosters Ettal",
+      "reviewed_file": "File:Abbazia di Ettal - Baviera.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AAbbazia_di_Ettal_-_Baviera.jpg",
+      "expected_original_sha1": "fca5152fc5f7aede50b9c0fa130db07b2e9dec7a",
+      "claimed_author": "Andrea Griffini at Italian Wikipedia",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2048,
+        1536
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 35,
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "place_name": "Antico Santuario di San Gabriele dell'Addolorata",
+      "reviewed_file": "File:Santuario San Gabriele dell'Addolorata Abruzzo 03.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASantuario_San_Gabriele_dell'Addolorata_Abruzzo_03.JPG",
+      "expected_original_sha1": "6a3e8384f7344a5ad7425bd424e366ee2a4454c0",
+      "claimed_author": "freegiampi",
+      "claimed_license": "CC BY-SA 2.5",
+      "expected_dimensions": [
+        1600,
+        1200
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 36,
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "place_name": "Santuario Nacional de Nuestra Señora de El Quinche",
+      "reviewed_file": "File:Santuario de El Quinche, El Quinche, Ecuador, 2015-07-21, DD 03.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3ASantuario_de_El_Quinche%2C_El_Quinche%2C_Ecuador%2C_2015-07-21%2C_DD_03.JPG",
+      "expected_original_sha1": "3d6b480719ca5e6aa64c3163b671cfbf45ef0029",
+      "claimed_author": "Diego Delso",
+      "claimed_license": "CC BY-SA 4.0",
+      "expected_dimensions": [
+        7441,
+        4961
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 37,
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "place_name": "Basílica del Sant Crist de Balaguer",
+      "reviewed_file": "File:El Sant Crist, Balaguer-2.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AEl_Sant_Crist%2C_Balaguer-2.JPG",
+      "expected_original_sha1": "e08b56665103276d7e03690a732a198160d7e2df",
+      "claimed_author": "Deosringas",
+      "claimed_license": "CC BY-SA 3.0",
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    },
+    {
+      "sequence": 38,
+      "place_id": "place:CH:p46-sg-0272-319525195",
+      "place_name": "Chapelle Notre-Dame des Marches",
+      "reviewed_file": "File:ND des marches face.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AND_des_marches_face.jpg",
+      "expected_original_sha1": "e70f8be17bc02503fe284cd9d34256e6ec86e7ba",
+      "claimed_author": "P.Lechien",
+      "claimed_license": "CC0",
+      "expected_dimensions": [
+        1936,
+        2592
+      ],
+      "legal_scope": "Previously selected exact-site historic sanctuary architecture; confirm current original photo license/author and site identity, exclude recent protected artwork and watermarked sources",
+      "user_selection": "PHOTO_FINDER_2026-10-30_FIRST_IMAGE_KEEP",
+      "disposition": "ACQUIRE_IF_ORIGINAL_AND_RIGHTS_GATES_PASS"
+    }
+  ]
+}
