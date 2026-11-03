@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
+import {existsSync,readFileSync} from "node:fs";
 import {APPROVED_CLASS_I_2026} from "../src/calendar/approved-class-i-heroes-2026.js";
 import {
  approved2026HomeArtwork,renderApproved2026HomeArtwork,
- EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS
+ EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS,EXISTING_RELEASED_2026_DATE_PHOTOS
 } from "../src/home/approved-dated-artwork-2026.js";
 import {RELEASED_2026_GOSPEL_HERO_DATES} from "../src/home/released-date-gospel-heroes-2026.js";
 
@@ -35,10 +36,14 @@ for(const [date,path] of Object.entries(paths)){
  assert.equal(art.title,record.title);
  assert.equal(art.artist,record.artist);
  assert.equal(art.artworkId,record.artworkId);
- assert.equal(art.image,record.image);
+ if(date==="2026-06-12"){
+  assert.equal(art.image,"/assets/prayer/released/heart-jesus-full-original.jpg");
+  assert.equal(art.selectionKind,"PREVIOUSLY_APPROVED_CLASS_I_LOCAL_ORIGINAL");
+  assert.equal(art.imageStatus,"PREVIOUSLY_RELEASED_LOCAL_ORIGINAL");
+ }else assert.equal(art.image,record.image);
  assert.equal(art.source,record.source);
- assert.equal(art.selectionKind,"PREVIOUSLY_APPROVED_CLASS_I_DATE");
- assert.ok(art.imageStatus.includes("NOT_OFFLINE_CERTIFIED"));
+ if(date!=="2026-06-12")assert.equal(art.selectionKind,"PREVIOUSLY_APPROVED_CLASS_I_DATE");
+ if(date!=="2026-06-12")assert.ok(art.imageStatus.includes("NOT_OFFLINE_CERTIFIED"));
  assert.equal(approved2026HomeArtwork(build(date,"wrong-principal",path)),null);
  assert.equal(approved2026HomeArtwork(build(date,record.principalId,path+"-wrong")),null);
  state.resolution.date="2026-01-01";
@@ -104,4 +109,47 @@ img.events.error();
 assert.equal(slot.children.length,0,"Broken remote image must fall back to text-only");
 assert.ok(hero.classList.added.includes("aoTodayV2ArtMissing"));
 assert.equal(renderApproved2026HomeArtwork(slot,build("2026-02-19","none","none"),win),null);
+
+const previous=JSON.parse(readFileSync(new URL("../data/artwork/2026-prior-date-artwork-evidence.v1.json",import.meta.url),"utf8"));
+assert.equal(Object.keys(EXISTING_RELEASED_2026_DATE_PHOTOS).length,3);
+const actualFiles={
+ "2026-03-19":"assets/prayer/released/joseph-whole-original.jpg",
+ "2026-06-04":"assets/home/c3-approved-met/adoration-frameless.webp",
+ "2026-12-24":"assets/prayer/released/joseph-whole-original.jpg"
+};
+for(const [date,rule] of Object.entries(EXISTING_RELEASED_2026_DATE_PHOTOS)){
+ const editorial=previous.days.find(x=>x.date===date)?.selection;
+ assert.ok(editorial,"Missing frozen 2026 editorial selection "+date);
+ assert.equal(editorial.title,rule.title);
+ assert.equal(editorial.artist,rule.artist);
+ assert.equal(editorial.artworkId,rule.artworkId);
+ assert.equal(editorial.editorialBasis,rule.editorialBasis);
+ const state=build(date,rule.principalId,rule.properPath);
+ const art=approved2026HomeArtwork(state);
+ assert.ok(art,"Existing released painting not shown on selected date "+date);
+ assert.equal(art.title,editorial.title);
+ assert.equal(art.artist,editorial.artist);
+ assert.equal(art.artworkId,editorial.artworkId);
+ assert.equal(art.selectionKind,"PREVIOUSLY_SELECTED_DATE_REUSES_RELEASED_MODULE_ORIGINAL");
+ assert.equal(art.image,"/"+actualFiles[date]);
+ assert.equal(art.imageStatus,"PREVIOUSLY_RELEASED_LOCAL_ORIGINAL");
+ assert.ok(existsSync(new URL("../"+actualFiles[date],import.meta.url)),"Local image missing "+date);
+ assert.equal(approved2026HomeArtwork(build(date,"wrong-principal",rule.properPath)),null);
+ assert.equal(approved2026HomeArtwork(build(date,rule.principalId,rule.properPath+"-wrong")),null);
+ state.resolution.proper.status="loading";
+ assert.equal(approved2026HomeArtwork(state),null);
+}
+const june12=APPROVED_CLASS_I_2026.find(x=>x.date==="2026-06-12");
+assert.ok(june12);
+assert.equal(june12.imagePublicationStatus,"REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED",
+ "Calendar registry remains a source-scoped, separate image preview");
+const june12Actual=approved2026HomeArtwork(build("2026-06-12",june12.principalId,"Tempora/Pent02-5"));
+assert.equal(june12Actual.image,"/assets/prayer/released/heart-jesus-full-original.jpg");
+assert.equal(june12Actual.artworkId,june12.artworkId);
+assert.equal(june12Actual.releasePr,2302);
+assert.ok(existsSync(new URL("../assets/prayer/released/heart-jesus-full-original.jpg",import.meta.url)));
+const heldKing=APPROVED_CLASS_I_2026.find(x=>x.date==="2026-10-25");
+assert.equal(approved2026HomeArtwork(build(heldKing.date,heldKing.principalId,"Sancti/10-DU")),null,
+ "Photo released in another Prayer module must not silently bypass the King date rights hold");
+
 console.log("PASS actual Home resolver: eight Class I previews + Ash Wednesday + two previously released Gospel dates; source/principal/Proper safeguards");
