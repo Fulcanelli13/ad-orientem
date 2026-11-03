@@ -24,7 +24,7 @@
     },
     "productionReleased": {
       "path": "src/art/released-module-paintings.v1.js",
-      "blobSha": "252e21d6414ce5bebf27e368280ba0524048c1d7"
+      "blobSha": "643ab632845477a81a54d59656400689df83dc97"
     },
     "excludedFromThisPass": [
       "data/artwork/research-source-records-3205.v1.json — 1.96 MB source file exceeds connected file reader limit; requires repository-local CI audit",
@@ -43,10 +43,10 @@
     "positions": 267,
     "states": {
       "PROVISIONAL_NOT_PUBLISHED": 22,
-      "APPROVED_EXACT_PHOTO_PENDING": 173,
+      "APPROVED_EXACT_PHOTO_PENDING": 161,
       "SCOPE_HOLD": 1,
       "INHERITED_POOL_NO_FIXED_PAINTING": 5,
-      "PUBLISHED_EXACT_PHOTO": 16,
+      "PUBLISHED_EXACT_PHOTO": 28,
       "PROTECTED_EXISTING_COVER": 5,
       "SOURCE_IDENTITY_UNVERIFIED": 31,
       "EDITORIAL_HOLD": 14
@@ -57,9 +57,9 @@
     "gallery989UniqueMatchedGroupIDs": 99,
     "archive20ExactURLPositions": 32,
     "archive20TitleArtistOnlyPositions": 16,
-    "archivedSourcePresentInUnpublishedPositions": 31,
-    "pendingDistinctWorkSourceKeys": 81,
-    "pendingArchivedWorkCandidates": 9
+    "archivedSourcePresentInUnpublishedPositions": 19,
+    "pendingDistinctWorkSourceKeys": 79,
+    "pendingArchivedWorkCandidates": 7
   },
   "pendingDistinctWorksByPotentialReuse": [
     {
@@ -84,34 +84,6 @@
       "archiveModules": [],
       "gallery989GroupIDs": [
         "CANONICAL::cma-97147"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Juan Patricio Morlete Ruiz",
-        "title": "The Heart of Jesus",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
-      },
-      "positionCount": 9,
-      "slots": [
-        "COV-foundations_morning_offering",
-        "COV-foundations_act_of_love",
-        "COV-novena.sacred_heart",
-        "COV-programme.first_friday",
-        "STG-programme.first_friday-01",
-        "STG-pray.adoration.night-03",
-        "COV-sacred_heart_short_prayer",
-        "COV-sacred_heart_aspiration_trust",
-        "COV-prayer.sacred_heart"
-      ],
-      "archivedSourceAvailable": true,
-      "archiveModules": [
-        "heart-jesus"
-      ],
-      "gallery989GroupIDs": [
-        "CANONICAL::commons-morlete-sacred-heart-1759",
-        "PRAYER::heart-jesus--primary"
       ],
       "publicationPermission": false
     },
@@ -374,28 +346,6 @@
       "archiveModules": [],
       "gallery989GroupIDs": [
         "REVIEW::met:436503"
-      ],
-      "publicationPermission": false
-    },
-    {
-      "painting": {
-        "artist": "Juan Patricio Morlete Ruiz",
-        "title": "The Heart of Mary",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg"
-      },
-      "positionCount": 3,
-      "slots": [
-        "COV-novena.immaculate_heart",
-        "COV-programme.first_saturday",
-        "COV-marian_consecration_immaculate_heart"
-      ],
-      "archivedSourceAvailable": true,
-      "archiveModules": [
-        "heart-mary"
-      ],
-      "gallery989GroupIDs": [
-        "CANONICAL::B02-HEART-MARY-MORLETE",
-        "PRAYER::heart-mary--primary"
       ],
       "publicationPermission": false
     },
@@ -2632,8 +2582,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -4107,8 +4061,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -6725,8 +6683,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -7281,8 +7243,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-mary",
+          "path": "assets/prayer/released/heart-mary-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -7725,8 +7691,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -7783,8 +7753,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -7841,8 +7815,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-mary",
+          "path": "assets/prayer/released/heart-mary-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -8600,8 +8578,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -9639,8 +9621,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -9697,8 +9683,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -10895,8 +10885,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-jesus",
+          "path": "assets/prayer/released/heart-jesus-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -11105,8 +11099,12 @@
         ]
       },
       "currentRuntime": {
-        "state": "APPROVED_EXACT_PHOTO_PENDING",
-        "renderedPhoto": null
+        "state": "PUBLISHED_EXACT_PHOTO",
+        "renderedPhoto": {
+          "artId": "heart-mary",
+          "path": "assets/prayer/released/heart-mary-full-original.jpg",
+          "releasePr": 2302
+        }
       },
       "gallery989": {
         "matchMethod": "EXACT_NORMALIZED_TITLE_AND_ARTIST_RESEARCH_ONLY",
@@ -13481,5 +13479,13 @@
       },
       "publicationEnabledByAudit": false
     }
-  ]
+  ],
+  "releaseManifestSnapshot": {
+    "source": "src/art/released-module-paintings.v1.js",
+    "sha": "643ab632845477a81a54d59656400689df83dc97",
+    "expectedReleasePr": 2302,
+    "exactReleasedPhotographs": 10,
+    "slotTransitions": 12,
+    "note": "Runtime snapshot projection for PR2302. Actual app render and QA remain separate checks."
+  }
 }
