@@ -25,7 +25,7 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
     "source": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Champaigne_Petite_C%C3%A8ne_Louvre.jpg/960px-Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
-    "imageTier": "commons-pd-self",
+    "imageTier": "commons-pd-art",
     "note": "Louvre INV 1125; later expressed preference supersedes the 19 October Ugolino selection. Frameless 1112×591 Commons PD-Art photo replaces the former 2816×2112 framed gallery photograph; photo is only a remote preview, not an offline certified hero.",
     "editorialApproval": "LATER_USER_EXPRESSED_STRONG_PREFERENCE_20261030",
     "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
@@ -64,7 +64,7 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
     "source": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Champaigne_Petite_C%C3%A8ne_Louvre.jpg/960px-Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
-    "imageTier": "commons-pd-self",
+    "imageTier": "commons-pd-art",
     "note": "Louvre INV 1125; Eucharistic theme, not a literal depiction of the Wednesday Gospel. Frameless 1112×591 Commons PD-Art photo replaces gold-framed gallery photograph; remote preview awaiting higher-resolution master",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
     "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
