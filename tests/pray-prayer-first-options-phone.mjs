@@ -64,7 +64,6 @@ try{
       prayerText:now?.innerText?.slice(0,200),
       cardTitle:card?.querySelector(".aoDevoCardTitle")?.textContent?.trim(),
       cardScroll:reader?getComputedStyle(reader).overflowY:null,
-      cardFits:reader?reader.scrollHeight<=reader.clientHeight+3:false,
       legacyNav:r?.querySelectorAll("[data-p435930-station-next],[data-p435930-station-prev]").length,
        progress:r?.closest("#aoPray435930")?.querySelector(".aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress")?.getAttribute("aria-valuenow"),
       source:r?.querySelectorAll(".aoP435930Source a[href^='https://']").length||0,
@@ -74,8 +73,8 @@ try{
     "Stations should begin with direct reading depth, collapsed secondary options and the original prayer: "+JSON.stringify(stDetails));
    assert.equal(stDetails.count,1);
    assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&
-     stDetails.cardTitle?.length>5&&stDetails.cardScroll==="visible"&&stDetails.cardFits&&stDetails.legacyNav===0&&stDetails.progress==="1",
-    "Station named card, original prayer and progress must remain available without nested scrolling");
+     stDetails.cardTitle?.length>5&&stDetails.cardScroll==="auto"&&stDetails.legacyNav===0&&stDetails.progress==="1",
+    "Station named card, local scroll, prayer and positional progress unavailable");
    assert.equal(await page.locator("#aoPray435930.open .aoP435930Stations [data-ao-recitation-control]").count(),0,
      "Global coherence is duplicating the canonical Stations recitation choice");
    await checkDoc("Stations opening");
