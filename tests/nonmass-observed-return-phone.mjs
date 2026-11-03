@@ -73,7 +73,7 @@ try{
     "Guided card layout must remain available in reading options");
   assert.equal(await page.locator('#aoPray435930.open .aoDailyReadingOptions [data-tp381-daily-presentation="continuous"]').count(),1,
     "The historical secondary Continuous layout option remains accessible");
-  assert.equal(await page.locator('#aoPray435930.open .aoDailyDirectChoices [data-tp381-daily-presentation="continuous"]').count(),1,
+  assert.equal(await page.locator('#aoPray435930.open .aoDailyDirectChoices [data-tp381-daily-quick="continuous"]').count(),1,
     "The new continuous shortcut is available without opening settings");
   await page.locator("#aoPray435930.open [data-tp381-back]").click();
   await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.getActive?.()==="home"&&
