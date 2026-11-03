@@ -100,11 +100,28 @@ try{
     const sign=page.locator(rootSelector+' [data-p435930-lib-open="foundations_sign_of_cross"]');
     assert.equal(await sign.count(),1,"Real library must expose Sign of the Cross");
     await sign.click();
-    const trueCard=page.locator(rootSelector+' [data-ao-editorial-slot="COV-foundations_sign_of_cross"] img');
-    assert.equal(await trueCard.count(),1,"Sign of the Cross must carry the exact source image in the real route");
+    const trueCard=page.locator(rootSelector+' .aoClaudeHolyFront .aoClaudeHolyPlate[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img');
+    assert.equal(await trueCard.count(),1,"Sign of the Cross must show the image inside the actual Holy Card front plate");
     assert.ok((await trueCard.getAttribute("src")).endsWith("girardin-trinity-original.jpg"));
-    await trueCard.evaluate(async e=>{e.loading="eager";await e.decode();});
+    const front=await trueCard.evaluate(async img=>{
+     img.loading="eager";await img.decode();
+     const r=img.getBoundingClientRect();
+     return {width:r.width,height:r.height,top:r.top,bottom:r.bottom,viewport:innerWidth,
+       naturalWidth:img.naturalWidth,fit:getComputedStyle(img).objectFit,
+       horizontalOverflow:document.documentElement.scrollWidth-innerWidth};
+    });
+    assert.ok(front.naturalWidth>=2800&&front.width>90&&front.height>120,"Actual Holy Card photograph decode");
+    assert.equal(front.fit,"contain","The entire painting must be shown without cropping");
+    assert.ok(front.top<=(width===320?640:844),"The painting must be visible without scrolling past the card");
+    assert.ok(front.horizontalOverflow<=1,"No actual Holy Card overflow");
     await page.screenshot({path:resolve(folder,"live-sign-of-cross-"+width+"-"+locale+".png"),animations:"disabled"});
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
+    await page.locator(rootSelector+' [data-p435930-lib-cat="essentials"]').click();
+    const fanImage=page.locator(rootSelector+' [data-ao-claude-holy-case] [data-p435930-lib-open="foundations_sign_of_cross"] .aoClaudeHolyCasePlate img');
+    assert.equal(await fanImage.count(),1,"The Essential Prayers case must reuse the same approved painting");
+    assert.ok((await fanImage.getAttribute("src")).endsWith("girardin-trinity-original.jpg"));
+    await fanImage.evaluate(async e=>{e.loading="eager";await e.decode();});
+    await page.screenshot({path:resolve(folder,"live-essential-case-"+width+"-"+locale+".png"),animations:"disabled"});
     assert.deepEqual(errors,[],"Unexpected page errors: "+errors.join("; "));
     cases.push({width,locale,images:checked,actualPrayerRoute:"COV-foundations_sign_of_cross",result:"PASS"});
    }finally{await context.close();}
