@@ -10,6 +10,8 @@ import {chromium} from "@playwright/test";
 import {properToReaderSlots} from "../../src/mass/proper-reader-slots.js";
 import {index1961GradualeGabc,matchSelected1962ProperToGraduale}
  from "../../src/mass/reader-proper-gabc-bulk-join.js";
+import {crosswalkSelected2026MassesToPinnedReview}
+ from "../../src/mass/reader-schola-selected-queue-crosswalk.js";
 
 const root=resolve(fileURLToPath(new URL("../..",import.meta.url)));
 const load=async path=>JSON.parse(await readFile(resolve(root,path),"utf8"));
@@ -17,6 +19,20 @@ const archive=index1961GradualeGabc(await Promise.all(Array.from({length:6},(_,i
  load("data/mass/chant-corpus/gr1961-proper-"+String(i+1).padStart(3,"0")+".json"))));
 const universe=await load("data/research/mass-music-1962-pinned-full-source-universe.v1.json");
 const known=new Set(universe.sourceFiles.map(x=>x.path));
+const pinnedReviewQueue=await load("data/research/mass-music-1962-91-inline-review-queue.v1.json");
+
+// A matched Gregorian score may be attached only to the original selected
+// source paragraph; for compound pre-Gospel slots, resolve its specific role.
+function selectedChantSourceRow(slots,match){
+ const raw=slots?.slots?.[match.track]?.data?.paragraphs;
+ if(!Array.isArray(raw))return null;
+ const filtered=match.track==="GRADUAL"
+  ?raw.filter(p=>p.liturgicalGroup==="AO.CHANT.GRADUAL")
+  :match.track==="ALLELUIA_TRACT_SEQUENCE"
+   ?raw.filter(p=>p.liturgicalGroup==="AO.CHANT."+match.sourceGroup)
+   :raw;
+ return filtered.length===1&&typeof filtered[0]?.latin==="string"?filtered[0]:null;
+}
 const dates=[];
 for(let t=Date.UTC(2026,0,1);t<Date.UTC(2027,0,1);t+=86400000)
  dates.push(new Date(t).toISOString().slice(0,10));
@@ -104,6 +120,8 @@ const rows=raw.map(original=>{
  row.tracks=match.tracks.map(x=>({
   role:x.track,part:x.part??null,sourceGroup:x.sourceGroup??null,
   status:x.status,reason:x.reason??null,
+  selectedParagraphId:selectedChantSourceRow(en,x)?.id??null,
+  selectedLatin:selectedChantSourceRow(en,x)?.latin??null,
   candidates:(x.scoreCandidates??[]).map(c=>({
    scoreId:c.scoreId,sourceGabcSha256:c.sourceGabcSha256,
    printed1961Page:c.printed1961Page,matchingOpeningWords:c.matchingOpeningWords,
@@ -127,13 +145,19 @@ const report={schema:"ao-schola-selected-mass-2026-proper-gabc-candidate-coverag
  provenance:{sourceRepo:universe.sourceRepository,sourceRef:universe.sourceRef,
   note:"Pinned Latin tree is a separate historical cross-check; exact selected Latin comes from production 1962 Proper, not historical source-file assumptions"},
  rows};
+const crosswalk=crosswalkSelected2026MassesToPinnedReview({
+ annualReport:report,reviewQueue:pinnedReviewQueue
+});
 const dest=resolve(root,".tmp","schola-1962-selected-annual");
 await mkdir(dest,{recursive:true});
 await writeFile(resolve(dest,"2026-selected-gabc-coverage.json"),JSON.stringify(report,null,2)+"\n");
+await writeFile(resolve(dest,"2026-selected-pinned91-inline-crosswalk.json"),
+ JSON.stringify(crosswalk,null,2)+"\n");
 await writeFile(resolve(dest,"2026-selected-gabc-summary.json"),JSON.stringify({
  schema:report.schema,year:2026,counters:report.counters,publication:report.status,
  claims:{localParishChantsSelected:false,notationApproved:false,recordingsApproved:false,
   specialRitesIndependentlyCertified:false}
 },null,2)+"\n");
 console.log("ACTUAL_2026_SELECTED_SUMMARY "+JSON.stringify(report.counters));
+console.log("SELECTED_VS_PINNED_91_INLINE_SUMMARY "+JSON.stringify(crosswalk.counters));
 if(rows.length!==365||raw.some(x=>x.error))process.exitCode=2;
