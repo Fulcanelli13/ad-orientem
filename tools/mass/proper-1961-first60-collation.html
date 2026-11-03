@@ -95,7 +95,7 @@ const storeKey="ao-proper-1961-first60-local-review-v1";
 try{reviews=JSON.parse(localStorage.getItem(storeKey)||"{}")}catch{reviews={}}
 const fmt=s=>String(s??"");
 const sourceGabc=c=>"name: "+c.scoreId+";\n%%\n"+c.scoreGabc;
-const verdictOf=c=>reviews[c?.scoreId+"|"+c?.sourceGabcSha256]??{};
+const verdictOf=c=>reviews[c?.scoreId+"|"+c?.scoreGabcSha256]??{};
 function candidates(){return (report?.candidates??[]).filter(c=>!$("partFilter").value||c.part===$("partFilter").value)}
 function populate(){
  const rows=candidates();$("scoreSelect").replaceChildren();
@@ -119,7 +119,7 @@ async function show(c){
  $("scoreRole") && ($("scoreRole").textContent=c.selectionKey);
  $("sourceRole").textContent=c.representative.principalId+" · "+c.selectionKey;
  $("sourceLatin").textContent=c.representative.sourceLatin;
- $("scoreIdentity").textContent=c.scoreId+" · original GABC SHA256 "+c.sourceGabcSha256;
+ $("scoreIdentity").textContent=c.scoreId+" · original GABC SHA256 "+c.scoreGabcSha256;
  $("scoreGabc").textContent=c.scoreGabc;
  $("scoreSource").href=c.sourceUrl;
  const saved=verdictOf(c);for(const id of scoreFields)$(id).value=saved[id]??"UNREVIEWED";
@@ -147,14 +147,14 @@ function showGroup(index){
  for(const id of groupFields)$(id).value=v[id]??"UNREVIEWED";
 }
 function captureGroup(){
- if(!current||!groups.length)return;const id=current.scoreId+"|"+current.sourceGabcSha256;
+ if(!current||!groups.length)return;const id=current.scoreId+"|"+current.scoreGabcSha256;
  const v=reviews[id]??{};v.groups??={};const ordinal=groups[selectedGroup].ordinal;
  const row={...(v.groups[ordinal]??{})};for(const f of groupFields)row[f]=$(f).value;
  v.groups[ordinal]=row;reviews[id]=v;
 }
 function save(){
  if(!current)return;captureGroup();
- const id=current.scoreId+"|"+current.sourceGabcSha256,v=reviews[id]??{};
+ const id=current.scoreId+"|"+current.scoreGabcSha256,v=reviews[id]??{};
  for(const f of scoreFields)v[f]=$(f).value;
  v.notes=$("reviewNotes").value;v.reviewerObservationOnly=true;
  v.publicScore=false;v.editorialApproval=false;v.updatedAt=new Date().toISOString();
