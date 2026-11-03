@@ -106,7 +106,9 @@ try{
    await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.examenStep===0);
    const nightArt=await imageCheck(night,"COV-daily.nightly_examen","nightly-examen-cover","latour-penitent-magdalen-frameless.jpg");
    assert.ok(await page.locator(night+" .aoDevoCardScroll").count(),"Original nightly source card must remain");
-   await page.locator(night+' [data-tp381-examen-step="1"]').click();
+   // The universal reader exposes chapter navigation in its visible timeline;
+// its legacy Next button is intentionally hidden by the focus adapter.
+   await page.locator(night+' .aoDevoSequenceTimeline [data-ao-devo-chapter="1"]').click();
    await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.examenStep===1);
    assert.equal(await page.locator(night+' [data-ao-editorial-slot="COV-daily.nightly_examen"]').count(),0,
     "The cover belongs to entry, not an added sixth nightly stage");
