@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {NOVENA_HOLY_FACE_1887_B25 as n,HOLY_FACE_SOURCE_GATES_B25 as gate} from "../src/pray/holy-face-janvier-1887-b25.js";
-import {NOVENA_CORPUS_V4,NOVENA_CORPUS_V4_IDS} from "../src/pray/novena-corpus-v4.js";\nimport {novenaSourceWitnessFaceV1} from "../src/pray/novena-source-witness-face.v1.js";
+import {NOVENA_CORPUS_V4,NOVENA_CORPUS_V4_IDS} from "../src/pray/novena-corpus-v4.js";
+import {novenaSourceWitnessFaceV1} from "../src/pray/novena-source-witness-face.v1.js";
 import {novenaStatusFor,novenaWindowFor} from "../src/calendar/intelligence.js";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const original=read("../data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json");
@@ -50,7 +51,8 @@ for(let i=0;i<9;i++){
  assert.match(text.en,/Amen\.$/);
  assert.doesNotMatch(text.en,/2022|League of St Martin|Canada54|St\. Martin's League/i);
 }
-assert.deepEqual(n.days.map(d=>d.originalSourceDay),[1,2,3,4,5,6,7,8,9]);\nfor(const d of n.days){const face=novenaSourceWitnessFaceV1(d.text,"fr");assert.equal(face.language,"en");assert.equal(face.text,d.text.en);assert.equal(face.requestedUnavailable,true);}
+assert.deepEqual(n.days.map(d=>d.originalSourceDay),[1,2,3,4,5,6,7,8,9]);
+for(const d of n.days){const face=novenaSourceWitnessFaceV1(d.text,"fr");assert.equal(face.language,"en");assert.equal(face.text,d.text.en);assert.equal(face.requestedUnavailable,true);}
 assert.equal(n.calendar.type,"EASTER_OFFSET");
 assert.equal(n.calendar.startOffset,-56);
 assert.equal(n.calendar.endOffset,-48);
@@ -72,7 +74,9 @@ for(const token of [
  'data-n1-holy-face-1887-supplement',
  'data-n1-supplement="holy_face_1887"',
  "function sourceWitness(text,label)",
- "novenaSourceWitnessFaceV1(text,isFr()?\'fr\':\'en\',N.showEnglish)",\n "data-n1-proper-source-fallback",\n "data-n1-source-language",
+ "novenaSourceWitnessFaceV1(text,isFr()?'fr':'en',N.showEnglish)",
+ "data-n1-proper-source-fallback",
+ "data-n1-source-language",
  "data-n1-show-en",
  "p==='SOURCE_REPEAT_ONLY'",
  "novenaStatusFor(n,key,{fr:isFr()})"
