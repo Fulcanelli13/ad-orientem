@@ -71,5 +71,5 @@ for(const hold of ["RG-1406AE6DA1E7","RG-16B82EFF8821"]){
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
 console.log("PASS TLM site recovery batch 2: 6 exact identity-locked GB pins, 2025 mapped, 557 address-only, no inferred liturgy or media");
