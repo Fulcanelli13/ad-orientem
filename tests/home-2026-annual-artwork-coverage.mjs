@@ -21,6 +21,7 @@ assert.equal(prior.days.length,365);
 assert.equal(new Set(all.map(x=>x.date)).size,365);
 assert.equal(all.filter(x=>x.selection).length,53);
 assert.equal(all.filter(x=>x.rank==="IV").length,71);
+assert.equal(all.filter(x=>x.contextualReuseEligible).length,105);
 assert.deepEqual(Object.fromEntries(["I","II","III","IV"].map(k=>[k,all.filter(x=>x.rank===k).length])),
  {I:53,II:76,III:165,IV:71});
 for(let i=0;i<365;i++){
@@ -29,6 +30,7 @@ for(let i=0;i<365;i++){
  assert.equal(one.principalId,src.principalId);
  assert.equal(one.rank,src.rank);
  assert.equal(one.candidateSourceCount,src.catalogue.length+src.externalExistingResearch.length+src.study.length);
+ assert.equal(one.contextualReuseEligible,src.rank==="IV"||src.coverageState==="TEMPORAL_SEASONAL_REUSE_NEEDED");
  assert.equal(one.selection?.title??null,src.selection?.title??null);
  assert.equal(one.selection?.artist??null,src.selection?.artist??null);
  assert.equal(one.selection?.artworkId??null,src.selection?.artworkId??null);
@@ -79,7 +81,7 @@ for(const [date,r] of Object.entries(RELEASED_2026_GOSPEL_HERO_DATES)){
 }
 assert.equal(published.size,25,"Original live date-mapping baseline moved");
 const seasonal=[];
-for(const day of all.filter(x=>x.rank==="IV")){
+for(const day of all.filter(x=>x.contextualReuseEligible)){
  const path=day.principalId.startsWith("commune:C10")?"Commune/C10":"Tempora/feria";
  const state=build(day.date,day.principalId,path);
  const reuse=approved2026SeasonalHomeReuse(day.date,day.principalId,path);
@@ -100,11 +102,12 @@ for(const day of all.filter(x=>x.rank==="IV")){
   "SEASONAL_LOCAL_PHOTO_MAPPED_NOT_GOSPEL_EXACT");
  seasonal.push(actual);
 }
-assert.equal(seasonal.length,71);
+assert.equal(seasonal.length,105);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,12);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
+assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,96);
+assert.equal(published.size+seasonal.length,130);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
 assert.equal(dateSelectedPending.length,29);
 for(const d of dateSelectedPending){
@@ -113,5 +116,5 @@ for(const d of dateSelectedPending){
 }
 const wrong=build("2026-01-03","sancti:wrong","Commune/C10");
 assert.equal(approved2026HomeArtwork(wrong),null);
-console.log("PASS annual artwork 365/365 indexed: 25 previously mapped, 71 seasonal local originals, 269 image-mapping exceptions");
-console.log("PASS 53 preserved dated selections, 12 Marian Saturdays, 59 other Class IV ferias, 2 protected rights holds");
+console.log("PASS annual artwork 365/365 indexed: 25 previously mapped, 105 seasonal local originals, 235 image-mapping exceptions");
+console.log("PASS 53 preserved dated selections, 12 Marian Saturdays, 59 other Class IV ferias, 34 Class III seasonal ferias, 2 protected rights holds");
