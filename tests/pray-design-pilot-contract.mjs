@@ -178,8 +178,10 @@ assert.match(runtime,/data-ao-prayer-shelf/,"Nine-door interiors use the compact
 const mosaicCss=readFileSync(new URL("../src/pray/prayer-door-mosaic-execution-styles.js",import.meta.url),"utf8");
 assert.match(runtime,/data-ao-pray-essential-landing="true"/,
  "Essential Prayers door must open its own 32-prayer mosaic, not All Library");
-assert.match(runtime,/LIB\.cat=PRAYER_PILOT_ENABLED&&view==='home'\?'essentials':'all'/,
+assert.match(runtime,/LIB\.cat=PRAYER_PILOT_ENABLED&&entryView==='home'\?'essentials':'all'/,
  "Homepage Essential Prayers route must select the canonical Essentials collection");
+assert.match(runtime,/LIB\.open=null;LIB\.language=null;PILOT_LORETO_GROUP=false;LIB\.q='';/,
+ "Opening the Essentials door must never return to the previously read prayer");
 assert.match(runtime,/data-p435930-lib-all/,
  "The full Prayer Library must remain directly accessible from Essential Prayers");
 assert.match(runtime,/aoPrayDoorShelfList aoPrayDoorMosaic/,
