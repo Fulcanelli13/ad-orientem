@@ -1,0 +1,30 @@
+name: Prayer R5D museum image acquisition evidence
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-acquire-museum-photos.py
+      - .github/workflows/prayer-r5d-museum-evidence.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire-for-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Acquire museum images and verify identity, rights and dimensions
+        run: python scripts/prayer-r5d-acquire-museum-photos.py
+      - name: Upload evidence for manual visual review (never publish)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-museum-evidence
+          path: r5d-museum-evidence/
+          if-no-files-found: warn
+          retention-days: 7
