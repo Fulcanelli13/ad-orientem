@@ -1,0 +1,35 @@
+name: Schola original 1961 first12 page-image evidence
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/schola/capture-1961-first12-original-facsimiles.mjs'
+      - 'tests/schola-1961-first12-original-facsimile-capture.mjs'
+      - 'src/mass/reader-proper-first12-1961-facsimile-locators.js'
+      - '.github/workflows/schola-original-1961-first12-facsimiles.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  captured-source-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capture at most ten distinct original CMAA Solesmes 1961 scanned folios
+        run: node scripts/schola/capture-1961-first12-original-facsimiles.mjs
+      - name: Verify source image SHA-256, source page and absence of music approvals
+        run: node tests/schola-1961-first12-original-facsimile-capture.mjs
+      - name: Preserve original PNGs and explicit source access holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-original-1961-first12-printed-facsimiles
+          path: .tmp/schola-1961-first12-original-facsimiles/
+          if-no-files-found: error
+          retention-days: 30
