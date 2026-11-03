@@ -96,7 +96,7 @@ try{
    assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"evening horizontal overflow "+JSON.stringify(flow));
    await page.screenshot({path:resolve(captures,"daily-evening-continuous-"+width+".png"),animations:"disabled"});
    await page.locator(base+'.aoDailyReadingOptions summary').click();
-   await page.locator(base+'[data-tp381-daily-presentation="guided"]').click();
+   await page.locator(base+'.aoDailyReadingOptions [data-tp381-daily-presentation="guided"]').click();
    assert.equal((await state()).kind,"daily","switching back restores canonical dual-axis cards");
    assert.equal(await page.locator(base+'.aoDailyUxStage').count(),0);
    assert.equal(await page.locator(base+'.aoQuietHorizon').count(),1,"existing horizon presentation must remain");
