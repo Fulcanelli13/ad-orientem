@@ -14,10 +14,12 @@ on:
       - 'tests/explore-sacred-atlas-round03-two-published-photos.mjs'
       - 'tests/explore-sacred-atlas-round04-one-published-photo.mjs'
       - 'tests/explore-sacred-atlas-round05-selected-cover-release.mjs'
+      - 'tests/explore-sacred-atlas-round06-selected-cover-release.mjs'
       - 'data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round5-selected-13-cover-manifest-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round6-selected-16-cover-manifest-20261103.v1.json'
       - 'data/geography/approved-place-media.v1.json'
       - 'data/geography/approved-place-gallery.v1.json'
       - 'data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json'
@@ -39,10 +41,12 @@ on:
       - 'tests/explore-sacred-atlas-round03-two-published-photos.mjs'
       - 'tests/explore-sacred-atlas-round04-one-published-photo.mjs'
       - 'tests/explore-sacred-atlas-round05-selected-cover-release.mjs'
+      - 'tests/explore-sacred-atlas-round06-selected-cover-release.mjs'
       - 'data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round5-selected-13-cover-manifest-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round6-selected-16-cover-manifest-20261103.v1.json'
       - 'data/geography/approved-place-media.v1.json'
       - 'data/geography/approved-place-gallery.v1.json'
       - 'data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json'
@@ -75,5 +79,7 @@ jobs:
         run: node tests/explore-sacred-atlas-round04-one-published-photo.mjs
       - name: Sacred Atlas Phase B Round 5 requires verified new Place cover bytes and exact bilingual Place cards
         run: node tests/explore-sacred-atlas-round05-selected-cover-release.mjs
+      - name: Sacred Atlas Round 6 requires 16 original selected covers, source bytes and exact bilingual Place display
+        run: node tests/explore-sacred-atlas-round06-selected-cover-release.mjs
       - name: Read-only cross-owner release boundaries
         run: node tests/connected-sacred-entities-p64.mjs

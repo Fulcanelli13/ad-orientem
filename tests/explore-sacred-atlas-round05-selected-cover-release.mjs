@@ -25,9 +25,12 @@ assert.equal(evidence.published.length,evidence.published_count);
 assert.equal(evidence.holds.length,evidence.held_count);
 assert.ok(evidence.published_count>=1,"Round 5 requires a real newly published image");
 assert.equal(evidence.before.covers,312);
-assert.equal(covers.items.length,312+evidence.published_count);
-assert.equal(evidence.after.covers,covers.items.length);
-assert.equal(evidence.after.missing,530-covers.items.length);
+assert.ok(covers.items.length>=312+evidence.published_count,
+  "Later approved Place-cover cohorts must not invalidate the frozen Round 5 media release");
+assert.equal(evidence.after.covers,312+evidence.published_count,
+  "The Round 5 release evidence must remain an immutable historical snapshot");
+assert.equal(evidence.after.missing,530-evidence.after.covers,
+  "Historical Round 5 uncovered-count evidence must not drift with later releases");
 assert.equal(gallery.items.length,42,"Place gallery content cannot be changed in the cover programme");
 assert.equal(new Set(covers.items.map(x=>x.place_id)).size,covers.items.length);
 assert.ok(evidence.existing_covers_unchanged && evidence.gallery_unchanged && evidence.no_tlm_changes);
