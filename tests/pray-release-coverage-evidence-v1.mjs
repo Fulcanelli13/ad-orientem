@@ -108,7 +108,7 @@ assert.equal(canonical,ledger.counts.singleCanonical);
 assert.equal(tested,ledger.counts.targetedComponentEvidence);
 assert.equal(shared,ledger.counts.sharedOrOwnerEvidenceOnly);
 assert.equal(canonical,ledger.counts.canonicalSourceFaceEvidence);
-assert.equal(canonical,9);assert.equal(tested,26);assert.equal(shared,6);
+assert.equal(canonical,9);assert.equal(tested,32);assert.equal(shared,0);
 assert.equal(ledger.counts.multiText,32);
 assert.equal(ledger.counts.fullRouteVariantCertificates,0);
 assert.equal(ledger.counts.independentOriginalPrintCertificates,0);
@@ -119,7 +119,7 @@ assert.ok(sourceHeld.editionAndLanguageHolds.some(x=>x.includes("ENGLISH_ONLY"))
 // Release sequence enforces the historical-source phase rather than silently
 // substituting paraphrases or repeating already completed component audits.
 assert.equal(ledger.sequencing.length,4);
-assert.ok(ledger.sequencing[0].scope.includes("6 remaining shared/owner-evidence"));
+assert.ok(ledger.sequencing[0].scope.includes("32 targeted multi-text routes"));
 assert.ok(ledger.gates.safeguards.some(x=>x.includes("Rosary bead reader")));
-console.log("PASS · 41/41 Prayer routes indexed; 32 multi-text = 26 targeted component + 6 shared/owner, 9 canonical source faces; "+counts.days+" Novena day occasions, "+counts.french+" FR proper days; "+held.size+" exceptional route holds, "+exactTestFiles.size+" executable test files mapped; 0 blanket route/browser certifications, 0 original-print certificates");
+console.log("PASS · 41/41 Prayer routes indexed; 32 multi-text = 32 targeted component + 0 shared/owner, 9 canonical source faces; "+counts.days+" Novena day occasions, "+counts.french+" FR proper days; "+held.size+" exceptional route holds, "+exactTestFiles.size+" executable test files mapped; 0 blanket route/browser certifications, 0 original-print certificates");
 console.log("NEXT · source-to-card census for "+ledger.routes.filter(r=>r.nextGate==="SOURCE_TO_CARD_CENSUS_AND_VARIANT_BROWSER_ACCEPTANCE").map(r=>r.id).join(", "));
