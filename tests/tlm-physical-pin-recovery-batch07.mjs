@@ -17,7 +17,7 @@ const sourceItems=projectPublishedProvisionalMassSites(
 const all=projectCL2PhysicalDirectory(sourceItems,cl2);
 const code=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
 const section=code.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
-const keys=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\\s*:\\s*Object\\.freeze\\(\\{/g)].map(m=>m[1]);
+const keys=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(m=>m[1]);
 assert.equal(new Set(keys).size,keys.length,"Duplicate physical-site keys");
 const sites=[
  [
