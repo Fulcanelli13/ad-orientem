@@ -1,0 +1,48 @@
+name: Prayer Confession and Benediction all-stage phone matrix
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-confession-benediction-stage-matrix-phone.mjs"
+      - "src/pray/confession-paths.js"
+      - "src/pray/benediction-1962.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/confession-path-styles.js"
+      - "data/pray/prayer-release-coverage-evidence.v1.json"
+      - "package.json"
+      - ".github/workflows/pray-confession-benediction-stage-matrix.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tests/pray-confession-benediction-stage-matrix-phone.mjs"
+      - "src/pray/confession-paths.js"
+      - "src/pray/benediction-1962.js"
+      - "src/pray/presentation-runtime.js"
+      - ".github/workflows/pray-confession-benediction-stage-matrix.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-stage-matrix-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  confession-benediction-stages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exercise all Confession and Benediction stages at 320/390 EN/FR
+        run: npm run test:pray-stage-matrix-phone
+      - name: Preserve stage-by-stage source and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-confession-benediction-stage-matrix
+          path: artifacts/pray-stage-matrix/confession-benediction-stage-matrix.json
+          if-no-files-found: warn
+          retention-days: 7
