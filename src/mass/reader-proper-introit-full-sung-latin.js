@@ -41,7 +41,7 @@ export function selected1962IntroitSungText({part,scoreId,sourceLatin,originalGa
   {role:"PSALM_VERSE",label:"Psalm verse",text:psalm}
  ];
  if(gloria.length){
-  if(gloria[0].i<=antiphonLines[0].i||gloria[0].i>=antiphonLines[1].i)
+  if(gloria[0].i<=antiphonLines[0].i||gloria[0].i>=antiphonLines.at(-1).i)
    fail("INTROIT_GLORIA_ORDER_INVALID");
   const completeGloria=normalized(gloria[0].s);
   if(!completeGloria.includes("et filio et spiritui sancto")||
