@@ -538,6 +538,7 @@ export function createFindOwner(win=globalThis){
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
       language:language(win),
+      desktopDocked:Number(win?.innerWidth||0)>=900,
       items,
       lens:state.lens,
       counts:preliminaryMode?{tlm:preliminary?.length??PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
