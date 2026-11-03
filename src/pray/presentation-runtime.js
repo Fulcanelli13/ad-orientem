@@ -91,6 +91,7 @@ import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotion
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
+import {prayerScriptureStageFacesV1} from "./scripture-stage-faces.v1.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import {sevenWordsLocalWitnessText, SEVEN_WORDS_LOCAL_EN_1889_V1} from "./seven-words-offline-1889.v1.js";
@@ -2734,14 +2735,15 @@ function devotionalSource(title,detail='',witnessId=''){
  const hold=!record?`<p><small>${esc(L('A direct original-text link has not been independently verified.','Aucun lien direct vers le texte original n’a été vérifié de manière indépendante.'))}</small></p>`:'';
  return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(title)}</b></p>${detail?`<p>${esc(detail)}</p>`:''}${links}${hold}</details>`
 }
-function scriptureRows(d,language='vernacular',full=false){
- const rows=language==='la'?(d?.latinChapter||[]):isFr()?(d?.frenchChapter||[]):(d?.englishChapter||[]);if(full)return rows;
- const r=d?.reference;if(!r)return rows;return rows.filter(v=>+v.verse>=+r.start&&+v.verse<=+r.end)
-}
 function scriptureVerseHtml(rows){return rows.length?rows.map(v=>`<span class="aoP435930ScriptureVerse"><sup>${esc(v.verse)}</sup>${esc(v.text||v.value||'')}</span>`).join(' '):`<span>${esc(L('Text unavailable.','Texte indisponible.'))}</span>`}
 function scriptureFlip(d,full=false){
- const la=scriptureVerseHtml(scriptureRows(d,'la',full)),ve=scriptureVerseHtml(scriptureRows(d,'vernacular',full));
- return `<button type="button" class="aoP435930ScriptureFlip" data-p435930-card-flip aria-label="${esc(L('Switch Scripture language','Changer la langue de l’Écriture'))}"><span data-face-v>${ve}</span><span data-face-la hidden>${la}</span><i>LA ↔ ${isFr()?'FR':'EN'}</i></button>`
+ const witness=prayerScriptureStageFacesV1(d,lang(),full);
+ if(witness.unavailable)return '';
+ const primary=scriptureVerseHtml(witness.primaryRows);
+ const sourceLabel=witness.fallback?`<small class="aoP435930SourceNote" data-ao-scripture-witness-fallback lang="${isFr()?'fr':'en'}">${esc(witness.primaryLanguage==='en'?L('Original English Scripture witness shown; selected translation unavailable.','Témoin biblique anglais affiché ; traduction sélectionnée indisponible.'):witness.primaryLanguage==='fr'?L('French Scripture witness shown; selected translation unavailable.','Témoin biblique français affiché ; traduction sélectionnée indisponible.'):L('Latin Scripture witness shown; selected translation unavailable.','Témoin biblique latin affiché ; traduction sélectionnée indisponible.'))}</small>`:'';
+ if(!witness.canFlip)return `<div class="aoP435930ScriptureSingle" lang="${witness.primaryLanguage}" data-ao-scripture-single-face="${witness.primaryLanguage}">${primary}</div>${sourceLabel}`;
+ const la=scriptureVerseHtml(witness.latinRows),ve=scriptureVerseHtml(witness.vernacularRows);
+ return `<button type="button" class="aoP435930ScriptureFlip" data-p435930-card-flip aria-label="${esc(L('Switch Scripture language','Changer la langue de l’Écriture'))}"><span data-face-v lang="${witness.vernacularLanguage}">${ve}</span><span data-face-la lang="la" hidden>${la}</span><i>LA ↔ ${witness.vernacularLanguage.toUpperCase()}</i></button>${sourceLabel}`
 }
 async function loadScriptureInto(selector,kind,ref,full,guard){
  const token=guard();
@@ -2762,7 +2764,7 @@ async function loadScriptureInto(selector,kind,ref,full,guard){
   if(!box)return;
   // The service may resolve a valid reference shell without text. Never
   // treat an empty bilingual response as a successfully loaded Psalm/Gospel.
-  if(!scriptureRows(d,'vernacular',full).length&&!scriptureRows(d,'la',full).length)
+  if(prayerScriptureStageFacesV1(d,lang(),full).unavailable)
    throw new Error('No original Scripture verses in resolved source');
   box.innerHTML=scriptureFlip(d,full);
   box.dataset.aoScriptureContent='ready';
