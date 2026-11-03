@@ -111,6 +111,7 @@ import {EUCHARISTIC_WITNESS_IDS,getEucharisticWitness,EUCHARISTIC_SOURCE} from "
 import {instituteOptionalFor} from "./icksp-batch02-optional.js";
 import {SACRED_HEART_DEVOTIONS_V382} from "./traditional-pray-data.js";
 import {ADORATION_FOUR_OPTIONAL_SOURCE_IDS,ADORATION_FOUR_SOURCE_LABELS,adorationFourOptionFor,normalizedAdorationFourChoices} from "./adoration-four-purpose-options.js";
+import "./ritual-folio-scroll-styles.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -2649,7 +2650,7 @@ function firstFridayStage(date,valid){
 }
 function renderFirstFriday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,tracking=!!S.firstFriday.tracking;
- return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Friday stage content','Contenu de l’étape du premier vendredi'))}">
+ return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" data-ao-programme-owner="first-friday" tabindex="0" aria-label="${esc(L('First Friday stage content','Contenu de l’étape du premier vendredi'))}">
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>
   ${firstMonthlyDirectPrayers('friday')}
   ${firstFridayStage(date,valid)}
@@ -2672,7 +2673,7 @@ function firstSaturdayStage(date,valid){
 }
 function renderFirstSaturday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,tracking=!!S.firstSaturday.tracking;
- return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Saturday stage content','Contenu de l’étape du premier samedi'))}">
+ return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" data-ao-programme-owner="first-saturday" tabindex="0" aria-label="${esc(L('First Saturday stage content','Contenu de l’étape du premier samedi'))}">
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>
   ${firstMonthlyDirectPrayers('saturday')}
   ${firstSaturdayStage(date,valid)}
