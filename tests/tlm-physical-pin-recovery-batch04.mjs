@@ -76,5 +76,5 @@ assert.ok(wisques.geo.review_scope.includes("NOT_NOTRE_DAME_WOMENS_ABBEY"));
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:219,SOURCE_PIN:1806,ADDRESS_ONLY:557});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,557);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,199);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,219);
 console.log("PASS TLM batch 4: 12 independently matched physical worship sites in AT BE CH FR PL US, 2025 mapped, 557 unpinned, no inferred Mass or media");
