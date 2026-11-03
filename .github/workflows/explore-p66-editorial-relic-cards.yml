@@ -12,8 +12,10 @@ on:
       - 'tests/explore-sacred-atlas-round01-two-published-photos.mjs'
       - 'tests/explore-sacred-atlas-round02-two-published-photos.mjs'
       - 'tests/explore-sacred-atlas-round03-two-published-photos.mjs'
+      - 'tests/explore-sacred-atlas-round04-one-published-photo.mjs'
       - 'data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json'
       - 'data/geography/approved-place-gallery.v1.json'
       - 'data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json'
       - 'tests/explore-place-profiles.mjs'
@@ -32,8 +34,10 @@ on:
       - 'tests/explore-sacred-atlas-round01-two-published-photos.mjs'
       - 'tests/explore-sacred-atlas-round02-two-published-photos.mjs'
       - 'tests/explore-sacred-atlas-round03-two-published-photos.mjs'
+      - 'tests/explore-sacred-atlas-round04-one-published-photo.mjs'
       - 'data/geography/research/sacred-atlas-round2-four-photo-decision-20261103.v1.json'
       - 'data/geography/research/sacred-atlas-round3-four-photo-decision-20261103.v1.json'
+      - 'data/geography/research/sacred-atlas-round4-four-photo-decision-20261103.v1.json'
       - 'data/geography/approved-place-gallery.v1.json'
       - 'data/geography/research/sacred-atlas-round1-four-photo-release-20261103.v1.json'
 permissions:
@@ -61,5 +65,7 @@ jobs:
         run: node tests/explore-sacred-atlas-round02-two-published-photos.mjs
       - name: Sacred Atlas Round 3 requires pinned Rocamadour and Goa WebPs in correct EN/FR Place galleries
         run: node tests/explore-sacred-atlas-round03-two-published-photos.mjs
+      - name: Sacred Atlas Round 4 requires exact Chartres original, 3 rights holds and bilingual Place gallery
+        run: node tests/explore-sacred-atlas-round04-one-published-photo.mjs
       - name: Read-only cross-owner release boundaries
         run: node tests/connected-sacred-entities-p64.mjs

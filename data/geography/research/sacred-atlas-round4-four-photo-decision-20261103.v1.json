@@ -1,0 +1,82 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND4_FOUR_CANDIDATE_RELEASE_V1",
+  "date": "2026-11-03",
+  "scope": "SACRED_ATLAS_ONLY_NO_TLM",
+  "source_archive_evidence": "AO_Sacred_Atlas_Object_Research_247_B10_SAFE.json (records 15–18), 2026-10-31; prior user KEEP decisions preserved",
+  "process": "Four original KEEP files reviewed; publish only sources whose original photo and depicted underlying artwork are cleared. Verify Commons original SHA-1, dimensions, photographer licence and exact object; full-frame WebP; no substituted artwork. Do not represent non-recovered previous preview pixels as byte-verified. HOLD preserves KEEP, and Place cover count must remain unchanged.",
+  "publication_targets": 1,
+  "holds": 3,
+  "rows": [
+    {
+      "round1_number": 15,
+      "place_id": "place:FR:chartres-notre-dame",
+      "subject_focus_id": "subject:round1-review:FR:chartres-notre-dame:15",
+      "user_vote": "KEEP",
+      "media_id": "ao-chartres-notre-dame-du-pilier-go69-2020",
+      "filename": "FR-chartres-notre-dame-du-pilier-go69-2020.webp",
+      "commons_title": "File:Chartres (28) Cathédrale Notre-Dame - Statue de N.D. du Pilier - 04.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chartres_(28)_Cath%C3%A9drale_Notre-Dame_-_Statue_de_N.D._du_Pilier_-_04.jpg",
+      "source_author": "GO69",
+      "source_license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "date": "2020-07-06",
+      "expected_source_original_sha1": "c856e2b3f75e5c8d4e1a972db0b549ffe54f6c14",
+      "expected_archive_download_sha256": null,
+      "source_original_dimensions": [
+        1120,
+        1680
+      ],
+      "display_role": "GALLERY_OBJECT",
+      "not_relic_image": true,
+      "subject_relic_id": null,
+      "depicts_kind": null,
+      "underlying_work_source_url": "https://pop.culture.gouv.fr/notice/memoire/AP22NU00104",
+      "label_en": "Notre-Dame du Pilier, Chartres Cathedral",
+      "label_fr": "Notre-Dame du Pilier, cathédrale de Chartres",
+      "alt_en": "Historic polychrome statue of the seated Virgin and Child in the Chapel of Notre-Dame du Pilier at Chartres Cathedral",
+      "alt_fr": "Statue ancienne polychrome de la Vierge à l’Enfant assise dans la chapelle Notre-Dame du Pilier de la cathédrale de Chartres",
+      "caption_en": "The venerated statue of Our Lady of the Pillar at Chartres Cathedral, traditionally dated 1508, photographed by GO69 in 2020. This is the historic wooden statue, not the Virgin's veil relic or a modern copy.",
+      "caption_fr": "La statue vénérée de Notre-Dame du Pilier dans la cathédrale de Chartres, datée traditionnellement de 1508, photographiée par GO69 en 2020. Il s’agit de la statue ancienne en bois, non du Voile de la Vierge ni d’une copie moderne.",
+      "rights_review": "Selected GO69 original is CC BY-SA 4.0; Ministry of Culture records date the underlying devotional sculpture to 1508. Use Commons photographer file, not MPP/RMN photography."
+    },
+    {
+      "round1_number": 16,
+      "place_id": "place:BR:aparecida-national-shrine",
+      "subject_focus_id": "subject:round1-review:BR:aparecida-national-shrine:16",
+      "user_vote": "KEEP",
+      "commons_title": "File:Our Lady of Aparecida - Basilica of Aparecida - Aparecida 2014 (3).jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Aparecida_-_Basilica_of_Aparecida_-_Aparecida_2014_(3).jpg",
+      "source_author": "José Luiz Bernardes Ribeiro (Jbribeiro1)",
+      "source_license": "CC-BY-SA-4.0 (photo)",
+      "status": "HOLD_MODERN_CLAUDIO_PASTRO_NICHE_ARTWORK_RIGHTS",
+      "reason": "Original user-shown Commons filename is now identified and the photograph's own CC BY-SA 4.0 licence is verified. But the original 1717 Marian figure is displayed within the modern niche designed by Cláudio Pastro (1948–2016), whose separate artwork reproduction rights have not been established for republication. The similarly named photograph in the Old Basilica is explicitly a replica: never substitute it or claim that the statue is a relic.",
+      "underlying_work_source_url": "https://www.a12.com/santuario/claudio-pastro"
+    },
+    {
+      "round1_number": 17,
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "subject_focus_id": "subject:round1-review:CA:sainte-anne-de-beaupre:17",
+      "user_vote": "KEEP",
+      "commons_title": "File:Sainte-Anne-de-Beaupré statue miraculeuse de sainte Anne.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sainte-Anne-de-Beaupr%C3%A9_statue_miraculeuse_de_sainte_Anne.jpg",
+      "source_author": "Pierre André Leclercq",
+      "source_license": "CC-BY-SA-4.0 (photo)",
+      "status": "HOLD_1927_JULES_DE_VISCHER_SCULPTURE_RIGHTS",
+      "reason": "The selected Commons image is licensed and depicts the venerated statue, but the present figure is not the 1881 workshop original: it is a 1927 polychrome sculpture by Jules de Vischer after the Zens model. Sculptor's death date/public-domain eligibility not independently confirmed, so underlying-work rights are not cleared. Existing Basilica cover remains unchanged.",
+      "underlying_work_source_url": "https://commons.wikimedia.org/wiki/File:Sainte-Anne-de-Beaupr%C3%A9_statue_miraculeuse_,_dans_le_transept_nord_de_sainte_Anne.jpg"
+    },
+    {
+      "round1_number": 18,
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "subject_focus_id": "subject:round1-review:FR:sanctuaire-sacre-coeur-paray:18",
+      "user_vote": "KEEP",
+      "commons_title": "File:Chapelle Apparitions Paray Monial 1.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chapelle_Apparitions_Paray_Monial_1.jpg",
+      "source_author": "Chabe01",
+      "source_license": "CC-BY-SA-4.0 (photo)",
+      "status": "HOLD_1966_CHAPEL_MURAL_COPYRIGHT",
+      "reason": "The selected photo correctly depicts the Chapelle des Apparitions / Visitation, not the Sacred Heart Basilica. Photographer licence is CC BY-SA 4.0, but the prominent mural depicting Christ and Saint Margaret Mary was completed in 1966; separate artist and reproduction clearance has not been established. Do not replace the user's chosen interior with a new façade image.",
+      "underlying_work_source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+    }
+  ]
+}
