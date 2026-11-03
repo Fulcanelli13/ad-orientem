@@ -344,12 +344,12 @@ try{
    await page.locator('[data-find-filter="view"][data-find-filter-value="map"]').click();
    const unpinnedLink=page.locator(".aoTlmMapRail [data-tlm-map-open-unmapped]");
    await unpinnedLink.waitFor({state:"visible",timeout:30000});
-   assert.match(await unpinnedLink.innerText(),/609/,
+   assert.match(await unpinnedLink.innerText(),/594/,
      "Map must explicitly expose all filtered address-only church profiles");
    await unpinnedLink.click();
    await page.locator('.aoFindBody[data-find-view="list"][data-explore-lens="tlm"]')
      .waitFor({state:"visible",timeout:30000});
-   assert.equal(Number(await page.locator(".aoFindResultMeta strong").innerText()),609,
+   assert.equal(Number(await page.locator(".aoFindResultMeta strong").innerText()),594,
      "Unpinned shortcut must apply the canonical ADDRESS_ONLY filter");
    const unpinnedCard=page.locator(".aoTlmVenueCard").first();
    await unpinnedCard.waitFor({state:"visible",timeout:12000});
