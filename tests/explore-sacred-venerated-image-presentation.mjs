@@ -6,6 +6,7 @@ import {projectExploreDataset} from "../src/find/explore-projection.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const geo=read("data/geography/seed-registry.v1.json");
 const shr=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const source=read("data/shrines/source-registry.v1.json");
@@ -68,8 +69,8 @@ for(const [placeId,mediaId,subjectId] of approved){
   assert.ok(html.includes('data-sacred-subject-photo="'+subjectId+'"'));
   assert.ok(html.includes('data-gallery-image="'+mediaId+'"'));
   assert.ok(html.includes(record.asset_path));
-  assert.ok(html.includes(record["alt_"+language]));
-  assert.ok(html.includes(record["caption_"+language]));
+  assert.ok(html.includes(esc(record["alt_"+language])));
+  assert.ok(html.includes(esc(record["caption_"+language])));
   assert.ok(html.includes(record.credit));
   assert.ok(html.includes(record.source_url));
   assert.ok(html.includes(record.license_url));
