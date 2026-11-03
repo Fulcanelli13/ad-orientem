@@ -130,5 +130,5 @@ assert.ok(!sourceRenderer.includes("if(isFr()&&!N.showEnglish&&!fr)"),"Source-on
 const presentation=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 const priest= presentation.slice(presentation.indexOf("function renderPriestIntercessions(){"),presentation.indexOf("function renderMontfortHistoricalB27(id){"));
 assert.ok(priest.includes("p.language==='la'?L('ENGLISH','ANGLAIS')"),"Priests language button must show its actual destination");
-assert.ok(priest.includes('lang="'+ " +p.language+ " +'"'));
+assert.ok(priest.includes("lang=\"\'+p.language+\'\""),"Priest source witness language must come from the resolved historical text");
 console.log("PASS · "+dayOccasions+" Novena day occasions, "+sourceWitnesses+" source slots, "+frenchWitnesses+" actual French witnesses, "+visibleFrenchFallbacks+" source-labelled gaps; three priestly and six occasional intentions preserve exact originals");
