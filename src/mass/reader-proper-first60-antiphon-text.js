@@ -79,7 +79,7 @@ export function auditFirst60CompleteAntiphonText({packet}={}){
   let groupInventoryStatus="GROUPS_IDENTIFIED_FOR_PRINT_COMPARISON_NOT_CERTIFIED";
   let noteGroupCount=null,groupInventoryHold=null;
   try{
-   const inv=sourceNoteGroupInventory("name: "+c.scoreId+";\\n%%\\n"+c.scoreGabc);
+   const inv=sourceNoteGroupInventory("name: "+c.scoreId+";\n%%\n"+c.scoreGabc);
    if(!inv.noteBearingSourceTokens)throw Error("ZERO_NOTE_GROUPS");
    noteGroupCount=inv.noteBearingSourceTokens;
   }catch(e){
