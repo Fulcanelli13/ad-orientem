@@ -980,19 +980,23 @@ function prayDoorShelfEntry(item,featured=false){
  const [owner,route,title,description]=item;
  const source=owner==='prayer'?DATA.prayers?.[route]:null;
  if(owner==='prayer'&&!source)return '';
- const name=title; // Editorial shelf label; exact source edition remains in canonical reader.
- const detail=description||'';
  const facet=prayerDoorFacet(route);
  const languageTags=source?['en','fr','la'].filter(k=>typeof source[k]==='string'&&source[k].trim()).map(k=>'<small>'+k.toUpperCase()+'</small>').join(''):'';
- const attr=owner==='prayer'?`data-p435930-door-prayer="${esc(route)}"`
-  :owner==='external'?`data-p435930-external="${esc(route)}"`:`data-p435930-own="${esc(route)}"`;
- if(featured)return `<button type="button" class="aoPrayDoorFeatured" data-ao-pray-door-entry data-ao-pray-door-facet="${esc(facet)}" ${attr}>
-  <span class="aoPrayDoorFeaturedIcon" aria-hidden="true">${moduleIcon(route)}</span>
-  <span class="aoPrayDoorFeaturedCopy"><small>${esc(L('BEGIN HERE','COMMENCER ICI'))}</small><b>${esc(name)}</b><span>${esc(detail)}</span></span>
-  <i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
- return `<button type="button" class="aoPrayDoorShelfRow" data-ao-pray-door-entry data-ao-pray-door-facet="${esc(facet)}" ${attr}>
-  <span class="aoPrayDoorShelfCopy"><b>${esc(name)}</b><small>${esc(detail)}</small>${languageTags?`<span class="aoPrayDoorLanguages">${languageTags}</span>`:""}</span>
-  <i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
+ const attr=owner==='prayer'?'data-p435930-door-prayer="'+esc(route)+'"':
+  owner==='external'?'data-p435930-external="'+esc(route)+'"':'data-p435930-own="'+esc(route)+'"';
+ // Publication remains gated by the 267-slot editorial registry and released photo inventory.
+ const artSlotId='COV-'+route;
+ const editorial=resolvePrayerEditorialArtwork(artSlotId);
+ const approvedArt=prayerEditorialArtworkMarkup(artSlotId,{className:'aoPrayMosaicReleasedPhoto'});
+ const releasedCardUrl=owner==='prayer'?releasedPrayerCardArtUrl(route):'';
+ const image=approvedArt||(releasedCardUrl?'<img src="'+esc(releasedCardUrl)+'" alt="" loading="lazy" decoding="async">':'');
+ const artBody=image||'<span class="aoPrayMosaicCardFallback" aria-hidden="true">'+moduleIcon(route)+'</span>';
+ return '<button type="button" class="aoPrayDoorMosaicCard'+(featured?' aoPrayMosaicCardFeatured':'')+
+  '" data-ao-pray-door-entry data-ao-pray-door-facet="'+esc(facet)+'" '+attr+'>'+
+  '<span class="aoPrayMosaicCardArt" data-ao-art-binding="'+(image?'released':'editorial-pending')+
+  '" data-ao-editorial-state="'+esc(editorial.state)+'">'+artBody+'</span>'+
+  '<span class="aoPrayMosaicCardCopy"><b>'+esc(title)+'</b><small>'+esc(description||'')+'</small>'+
+  (languageTags?'<span class="aoPrayDoorLanguages">'+languageTags+'</span>':'')+'</span></button>';
 }
 function renderPrayFamily(){
  const family=PRAYER_PILOT_ENABLED?resolvedPrayerPilotFamilies(L,prayFamilies())[familyId]:prayFamilies()[familyId];
@@ -1003,18 +1007,20 @@ function renderPrayFamily(){
   return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
  }
  const visible=family.items.filter(item=>item[0]!=='prayer'||DATA.prayers?.[item[1]]);
- const first=visible[0],remaining=visible.slice(1);
+ // Canonical ordered entries remain unique; all share one illustrated mosaic.
  const artSlot=prayerDoorArtSlot(familyId);
- const releasedDoorPhoto=familyId==="eucharistic"?releasedModulePhotoMarkup("adoration",{className:"aoPrayerEucharisticCover"}):"";
+ const releasedDoorPhoto=artSlot?prayerEditorialArtworkMarkup(artSlot.slotId,{className:"aoPrayerFamilyCover"}):"";
  const facets=[...new Set(visible.map(item=>prayerDoorFacet(item[1])))];
  const facetLabels={all:L('All','Tout'),prayer:L('Prayers','Prières'),litany:L('Litanies','Litanies'),
   consecration:L('Consecration','Consécration'),rosary:L('Rosary','Rosaire'),chaplet:L('Chaplets','Chapelets'),
   angelus:L('Angelus','Angélus'),novena:L('Novenas','Neuvaines'),penance:L('Penance','Pénitence')};
  const filterButtons=['all',...facets].map(type=>'<button type="button" data-p435930-door-filter="'+type+'" aria-pressed="'+(type==='all')+'">'+esc(facetLabels[type]||type)+'</button>').join('');
- return `${head(L("Pray","Prier"),'')}<main class="aoP435930Body aoPrayDoorInterior" data-ao-prayer-shelf="${esc(familyId)}">
-  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)}" data-ao-art-binding="${releasedDoorPhoto?"released":"unassigned"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||`<small>${esc(L("ART SLOT","EMPLACEMENT D’ART"))} · ${esc((artSlot?.slotId||"").replace("DOOR-",""))}</small>`}</section><header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header><nav class="aoPrayDoorFilters" aria-label="${esc(L("Filter prayers","Filtrer les prières"))}">${filterButtons}</nav><small class="aoPrayDoorSectionLabel">${esc(L("PRAYERS","PRIÈRES"))}</small>
-  ${first?prayDoorShelfEntry(first,true):''}
-  <nav class="aoPrayDoorShelfList" aria-label="${esc(family.title)}">${remaining.map(item=>prayDoorShelfEntry(item)).join('')}</nav>
+ const filters=facets.length>1?'<nav class="aoPrayDoorFilters" aria-label="'+esc(L("Filter prayers","Filtrer les prières"))+'">'+filterButtons+'</nav>':'';
+ return `${head(L("Pray","Prier"),'')}<main class="aoP435930Body aoPrayDoorInterior aoPrayDoorMosaicInterior" data-ao-prayer-shelf="${esc(familyId)}">
+  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+moduleIcon(family.assetId)+'</span>'}</section>
+  <header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header>
+  ${filters}
+  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(family.title)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0)).join('')}</nav>
   ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
  </main>`;
 }
