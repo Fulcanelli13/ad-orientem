@@ -44,7 +44,20 @@ for (const row of manifest.rows) {
   assert.equal(decisions[row.place_id].files[0],row.reviewed_file,"User's rank-1 selected file was silently changed");
   assert.equal(geo.places.find(x=>x.place_id===row.place_id).photo_editorial.cover_commons_file,row.reviewed_file);
   assert.ok(published.has(row.place_id)!==held.has(row.place_id),"Each reviewed item is either published or held");
-  if(held.has(row.place_id))assert.ok(!covers.items.some(x=>x.place_id===row.place_id),"Held cover was incorrectly published");
+  if(held.has(row.place_id)) {
+    // A Round 8 hold was correct at the time. Later exact-source verification
+    // may legitimately release that photo, but only with new durable evidence.
+    const current=covers.items.find(x=>x.place_id===row.place_id);
+    if(current) {
+      const recovery=read("data/geography/research/sacred-atlas-round9-selected-429-retry-evidence-20261103.v1.json");
+      const reverified=recovery.published.find(x=>x.place_id===row.place_id);
+      assert.ok(reverified,"Previously held source lacks independent later recovery evidence");
+      assert.equal(current.source_sha1,row.expected_original_sha1);
+      assert.equal(current.source_sha1,reverified.source_sha1);
+      assert.equal(current.derivative_sha256,reverified.derivative_sha256);
+      assert.ok(current.rights_verified&&current.subject_verified);
+    }
+  }
 }
 const dataset={
  directory:{records:[],communities:[]},
