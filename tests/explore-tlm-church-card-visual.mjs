@@ -109,6 +109,12 @@ try{
    await page.waitForFunction(()=>document.querySelector(
     '[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]'
    )?.getAttribute("aria-pressed")==="true",null,{timeout:25000});
+   // Map repaint and filter-disclosure restoration are asynchronous.
+   // Wait for both restored states; do not treat a transient closed details
+   // node as a permanent CL27 UX regression.
+   await page.waitForFunction(()=>
+    document.querySelector(".aoAtlasTlmExtra")?.open===true&&
+    document.querySelector(".aoTlmCl27Facet")?.open===true,null,{timeout:10000});
    assert.equal(await page.locator(".aoAtlasTlmExtra").getAttribute("open"),"",
     "Advanced filter disclosure persists through CL27 repaint");
    assert.equal(await page.locator(".aoTlmCl27Facet").getAttribute("open"),"",
