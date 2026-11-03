@@ -4590,9 +4590,9 @@ function onClick(e){
  }
  if(b.dataset.p435930Own){
   const id=b.dataset.p435930Own;
-  if(id==='pray.library'){LIB.cat=PRAYER_PILOT_ENABLED&&view==='home'?'essentials':'all';LIB.q='';}
   if(PRAYER_PILOT_ENABLED&&(view==='home'||view==='family')&&(id==='pray.angelus_regina'||id==='pray.angelus'))ANGELUS_PILOT_ENTRY=true;
   if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}
+  if(id==='pray.library'){LIB.cat=PRAYER_PILOT_ENABLED&&view==='home'?'essentials':'all';LIB.q='';}
   // Validation must precede pushView: unknown targets must never become Angelus.
   if(!internalPrayerView(id))return showInternalPrayerRouteError(b,id);
   clearInternalPrayerRouteErrors();
