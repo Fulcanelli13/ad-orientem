@@ -10,6 +10,14 @@ assert.equal(report.sources.length,28);
 assert.equal(report.dates.length,59);
 assert.equal(report.counts.datesPublicationAuthorized,0);
 assert.equal(report.counts.photosManualCropApprovedInThisPass,0);
+assert.equal(report.counts.previouslyReleasedModuleOriginalFilesRehashed,1);
+const feb25=report.dates.find(x=>x.date==="2026-02-25");
+assert.match(feb25.previouslyReleasedLocalOriginalSha256,/^[0-9a-f]{64}$/);
+assert.equal(feb25.publicationAuthorized,false);
+const rubens=report.sources.find(s=>s.originalDateReferences.includes("2026-02-25"));
+assert.ok(rubens?.previouslyReleasedModuleOriginalsVerified?.some(x=>
+ x.moduleId==="regina"&&x.moduleReleasePR===2296&&
+ x.technicalFileVerified&&x.placementApprovalInherited===false));
 assert.equal(new Set(report.sources.map(s=>s.sourcePage)).size,28);
 assert.deepEqual(report.dates.map(d=>d.date),source.dates.map(d=>d.date));
 const sourceByUrl=new Map(report.sources.map(x=>[x.sourcePage,x]));
