@@ -82,7 +82,8 @@ for(const p of Object.values(canonical)){
  }
 }
 assert.equal(Object.keys(canonical).length,48);
-assert.equal(canonical.marian_consecration_immaculate_heart.fr,undefined);
+assert.ok(!canonical.marian_consecration_immaculate_heart.fr?.trim());
+assert.ok(!canonical.marian_consecration_immaculate_heart.la?.trim());
 // Actual source selection and card output across the two daily Prayer routines,
 // three source languages and 1905/1913 manual edition choices.
 for(const daypart of ["morning","evening"]){
