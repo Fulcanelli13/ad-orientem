@@ -2,7 +2,8 @@
 // A parenthesized neume may continue a melisma without creating a new syllable.
 // Neither tokens nor review fields certify notes against printed staff pitches.
 const PITCH=/[a-mA-M]/;
-const CLEF=/^[a-d][1-4]$/;
+// Original square-note GABC clefs are C and F; neither is a sung neume.
+const CLEF=/^[cf][1-4]$/;
 export function sourceNoteGroupInventory(gabc){
  if(typeof gabc!=="string"||!gabc.includes("%%"))throw new Error("Missing source GABC");
  const body=gabc.slice(gabc.indexOf("%%")+2);
