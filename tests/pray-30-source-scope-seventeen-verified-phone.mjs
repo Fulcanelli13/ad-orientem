@@ -17,16 +17,18 @@ const canon=PRAY_CANONICAL_DATA_V435930.prayers;
 assert.equal(ledger.schema,"ao.pray.source-scope-triage-30.20261103.v1");
 assert.equal(ledger.rows.length,30);
 assert.equal(ledger.summary.unreviewedOriginalPrayers,30);
-assert.equal(ledger.summary.publicSourceScopeAnchorChecks,8);
-assert.equal(ledger.summary.stillWithoutNewComparison,22);
+assert.equal(ledger.summary.publicSourceScopeAnchorChecks,17);
+assert.equal(ledger.summary.stillWithoutNewComparison,13);
 assert.equal(ledger.summary.fullOriginalPrintCertificates,0);
 assert.equal(ledger.summary.originalPrayerBodiesEdited,0);
+assert.equal(ledger.summary.secondTrancheSourceChecks,9);
+assert.equal(ledger.summary.noOriginalLanguageChanges,true);
 const pending=inventory.prayers.filter(x=>x.collation.status==="NOT_REVIEWED");
 assert.deepEqual(ledger.rows.map(x=>x.id),pending.map(x=>x.id),"Audited 30 IDs must match original inventory exactly");
 const checked=ledger.rows.filter(x=>x.verification==="PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED");
 const held=ledger.rows.filter(x=>x.verification==="NO_NEW_SOURCE_COMPARISON");
-assert.equal(checked.length,8);
-assert.equal(held.length,22);
+assert.equal(checked.length,17);
+assert.equal(held.length,13);
 assert.deepEqual(Object.keys(PRAY_SOURCE_SCOPE_NOTICES_20261103).sort(),checked.map(x=>x.id).sort());
 for(const row of ledger.rows){
  const inventoryRow=pending.find(x=>x.id===row.id);
@@ -46,6 +48,10 @@ for(const row of ledger.rows){
   assert.equal(note.category,row.scopeCategory);
   assert.equal(note.sourceUrl,row.originalSourceUrl);
   assert.equal(note.fullEditionCertified,false);
+  if(row.originalSourceUrl===null){
+   assert.ok(row.witnessUrl?.startsWith("https://la.wikisource.org/"),row.id+" must name an honest independent secondary transcription");
+   assert.ok(prayEditionWitness(row.id)?.url?.startsWith("https://"),row.id+" original Missal comparator has disappeared");
+  }
   assert.deepEqual(note.notice,row.readerDisclosure);
   assert.ok(row.sourceScope.length>70);
   assert.ok(row.sourceAnchor?.length>8);
@@ -78,7 +84,7 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
 const result={schema:"ao.pray.30-source-scope-eight-qualifications-phone.v1",
- originalUnreviewed:30,publicAnchorScopeChecks:8,stillAwaitingSourceComparison:22,
+ originalUnreviewed:30,publicAnchorScopeChecks:17,stillAwaitingSourceComparison:13,
  fullOriginalPrintCertificates:0,phoneVariants:[],errors:[]};
 let browser;
 try{
@@ -143,16 +149,16 @@ try{
      sourceScopeNotes:observed.scopeNotices.length,printEditionCertificate:false});
    }
    assert.deepEqual(errors,[],width+"px "+ui+" uncaught source drawer errors");
-   console.log("PASS source-scoped comparisons "+width+"px "+ui+" · 8/8 canonical cards with bilingual historical edition/source notices");
+   console.log("PASS source-scoped comparisons "+width+"px "+ui+" · 17/17 canonical cards with bilingual historical edition/source notices");
   }catch(e){result.errors.push({width,ui,error:String(e?.stack||e)});throw e;}
   finally{await ctx.close()}
  }
- assert.equal(result.phoneVariants.length,32);
+ assert.equal(result.phoneVariants.length,68);
  assert.deepEqual(new Set(result.phoneVariants.map(x=>x.id)),new Set(checked.map(x=>x.id)));
- console.log("PASS 32/32 source-scope phone variants, 8 direct public source anchors, 22 unreviewed queue entries preserved, 0 full printed-edition certificates");
+ console.log("PASS 68/68 source-scope phone variants, 17 direct public source anchors, 13 unreviewed queue entries preserved, 0 full printed-edition certificates");
 }finally{
  await mkdir(evidence,{recursive:true});
- await writeFile(resolve(evidence,"30-source-scope-eight-reviewed-32-phone-variants.json"),JSON.stringify(result,null,2)+"\n");
+ await writeFile(resolve(evidence,"30-source-scope-seventeen-reviewed-68-phone-variants.json"),JSON.stringify(result,null,2)+"\n");
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
 }

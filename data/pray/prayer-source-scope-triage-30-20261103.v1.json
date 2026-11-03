@@ -5,13 +5,15 @@
   "scope": "SOURCE_SCOPE_AND_EDITION_RELATIONSHIP_ONLY_NOT_PRINT_VERBATIM_OR_FRENCH_LATIN_CERTIFICATION",
   "summary": {
     "unreviewedOriginalPrayers": 30,
-    "publicSourceScopeAnchorChecks": 8,
-    "stillWithoutNewComparison": 22,
+    "publicSourceScopeAnchorChecks": 17,
+    "stillWithoutNewComparison": 13,
     "fullOriginalPrintCertificates": 0,
     "originalPrayerBodiesEdited": 0,
-    "priorTwelveMaterialNoticeCardsUntouched": true
+    "priorTwelveMaterialNoticeCardsUntouched": true,
+    "secondTrancheSourceChecks": 9,
+    "noOriginalLanguageChanges": true
   },
-  "method": "Public linked page anchors inspected for eight high-priority records (USCCB, Holy See, Vatican News, historical With God Wikisource). The other 22 remain a registered queue, not asserted verified. Anchored source identity or selective wording differences do not establish full EN/FR/LA text certification. The separate original 18 partially reviewed prayers and original 16 Novena review records remain unchanged.",
+  "method": "Public linked-page source-scope anchors checked for 17 canonical entries in two tranches (eight prior + nine on 3 November); 13 entries remain explicitly without new comparison. For records without a URL in the original corpus, the separately qualified Latin Wikisource secondary transcription is linked, never passed off as a certified printed 1962 Missal. No full independent original printed editions or EN/FR/LA body collation claimed.",
   "rows": [
     {
       "id": "foundations_morning_offering",
@@ -51,18 +53,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P1",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "SCRIPTURE_ACCLAMATION_NOT_PRINTED_DEVOTIONAL_EDITION",
+      "sourceAnchor": "My Lord and my God!",
+      "appAnchor": "My Lord and my God!",
+      "sourceScope": "John 20:28 (Thomas's confession) is directly present in the cited USCCB chapter. The standalone app acclamation is a devotional use of that single verse, not an edition-specific three-language prayer-book transcription. USCCB English does not authenticate independent historic Latin/French prayer texts.",
+      "readerDisclosure": {
+        "en": "The cited John 20:28 contains Thomas’s acclamation. Its use here as a short prayer is devotional; this modern English Bible page is not a certificate of the app’s historical French or Latin wording.",
+        "fr": "Le lien vers Jn 20,28 donne l’acclamation de Thomas. Son emploi ici comme courte prière est dévotionnel ; cette page biblique anglaise moderne ne certifie pas les versions historiques française ou latine."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://bible.usccb.org/bible/john/20",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "mass_confiteor",
@@ -75,18 +82,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "1962_MINISTER_CONFITEOR_NOT_PRIEST_FORM",
+      "sourceAnchor": "et tibi, pater",
+      "appAnchor": "and to you Father",
+      "sourceScope": "The 1962 Latin online transcription separates the minister's et vobis fratres from the faithful/minister reply et tibi pater. The app uses et tibi pater and is not the priest's et vobis fratres version. The linked original-print 1962 Missal facsimile is not independently collated; online Latin is secondary transcription.",
+      "readerDisclosure": {
+        "en": "This Confiteor has “et tibi, pater” (“to you, Father”), the minister/faithful form at the altar, not the priest’s “et vobis, fratres”. The linked 1962 online text is a secondary transcription; the original Missal edition is not independently collated.",
+        "fr": "Ce Confiteor emploie « et tibi, pater » (« à vous, mon Père »), forme du ministre ou des fidèles, et non « et vobis, fratres » du célébrant. La transcription en ligne de 1962 est secondaire ; le Missel imprimé n’a pas été collationné indépendamment."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://la.wikisource.org/wiki/Confiteor_(1962)",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "marian_consecration_immaculate_heart",
@@ -249,18 +261,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P2",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "BENEDICTION_VERSICLE_ENGLISH_TRANSLATION_VARIANT",
+      "sourceAnchor": "Replenished with all sweetness and delight",
+      "appAnchor": "Having within it all sweetness",
+      "sourceScope": "With God prints V Thou hast given them bread from heaven / R Replenished with all sweetness and delight. App has You have given them Bread from Heaven / Having within it all sweetness, a valid but different English translation. Collect likewise contemporary syntax; no exact print-English or original FR/Latin collation.",
+      "readerDisclosure": {
+        "en": "The historical Benediction book prints “Replenished with all sweetness and delight”; this card says “Having within it all sweetness”. The response and collect use different English wording, not a verbatim transcription of that edition.",
+        "fr": "Le recueil historique de bénédiction donne « Replenished with all sweetness and delight », tandis que cette carte porte « Having within it all sweetness ». Le répons et l’oraison utilisent une autre traduction anglaise, non la transcription littérale de cette édition."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "adoration_lord_i_am_not_worthy",
@@ -273,18 +290,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "1962_COMMUNION_FORMULA_RITUAL_SCOPE",
+      "sourceAnchor": "Domine, non sum dignus",
+      "appAnchor": "Lord, I am not worthy",
+      "sourceScope": "1962 online Latin Ordinary prints Domine non sum dignus for the priest and again for the response associated with Communion of the faithful (each ter). The standalone canonical Prayer Library card is the formula, not an instruction to attribute priest's repetitions or liturgical role to the lay reader. Secondary online transcription only.",
+      "readerDisclosure": {
+        "en": "The 1962 Mass text prints “Domine, non sum dignus” both in the priest’s Communion and before Communion of the faithful. This card gives the prayer, not the priest’s ritual action or repetitions; the complete printed Missal remains uncollated.",
+        "fr": "Le texte de la messe de 1962 donne « Domine, non sum dignus » pour la communion du prêtre et avant celle des fidèles. Cette carte présente la prière, sans attribuer au lecteur les gestes ou répétitions du célébrant ; le Missel imprimé reste à collationner."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "mass_devotion_leonine",
@@ -543,18 +565,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "ST_JOSEPH_CURRENT_2021_ENGLISH_APPROVAL_ONLY",
+      "sourceAnchor": "Guardian of the Redeemer",
+      "appAnchor": "Guardian of the Redeemer",
+      "sourceScope": "The USCCB expressly says its English translation incorporating seven 2021 invocations and specified alternate intro/conclusion was adapted and approved by Committee on Divine Worship. App English includes invocation set. This does not make the French translation conference-approved or establish independent printed 1909 litany collation; separate historically earlier and current forms.",
+      "readerDisclosure": {
+        "en": "This is the expanded Saint Joseph litany with seven invocations added in 2021. The USCCB approves its published English translation, not automatically this app’s French or Latin wording; it is not the unexpanded 1909 edition.",
+        "fr": "Il s’agit des litanies de saint Joseph augmentées de sept invocations en 2021. L’USCCB approuve sa traduction anglaise publiée, sans certifier d’office les textes français ou latin de l’application ; ce n’est pas la forme de 1909 non augmentée."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://www.usccb.org/prayers/litany-saint-joseph",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "devotion_ad_te_beate_ioseph",
@@ -567,18 +594,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "LEO_XIII_ENGLISH_ENCYCLICAL_APPENDIX_VS_LATIN_PAGE",
+      "sourceAnchor": "To thee, O blessed Joseph",
+      "appAnchor": "To thee, O blessed Joseph",
+      "sourceScope": "Official English Quamquam pluries page appends a Prayer to Saint Joseph with the inherited app English incipit and full structural sequence; some spelling/typography differs (off-spring vs offspring). Latin encyclical page says the prayer was circulated with the letter, but does not print its Latin body on that page; it cannot prove this app's complete Latin and French texts.",
+      "readerDisclosure": {
+        "en": "Leo XIII’s English encyclical page includes this Saint Joseph prayer as an appendix; the Latin encyclical page refers to the attached prayer but does not print its text there. The Latin and French versions require separate witness collation.",
+        "fr": "La page anglaise de l’encyclique de Léon XIII comprend cette prière à saint Joseph en annexe ; la page latine renvoie à la prière jointe sans en reproduire le texte. Les versions latine et française exigent des témoins à collationner séparément."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "traditional_veni_sancte_sequence",
@@ -591,18 +623,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "1857_RACCOLTA_HISTORIC_TRANSLATION_AND_INDULGENCE_SCOPE",
+      "sourceAnchor": "Holy Spirit! Lord of light!",
+      "appAnchor": "Holy Spirit! Lord of light!",
+      "sourceScope": "Historical Raccolta explicitly contains the Veni Sancte Spiritus Latin sequence and the English Caswall hymn with the app's exact English opening; English lines and punctuation vary editorially; transcription also has OCR artifacts in Latin. The historical indulgence grants on that page must not be presented as current or presently applicable. No independent full printed or French translation collation.",
+      "readerDisclosure": {
+        "en": "The 1857 Raccolta witnesses the English Pentecost sequence beginning “Holy Spirit! Lord of light!”. Its historical indulgence provisions are not evidence of a current grant. The scanned edition and French translation still require independent collation.",
+        "fr": "La Raccolta de 1857 atteste la séquence anglaise commençant par « Holy Spirit! Lord of light! ». Les indulgences historiques de cette page ne constituent pas une concession actuelle. La collation de l’imprimé et du français reste à effectuer."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "dead_fidelium_deus",
@@ -615,18 +652,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "FAITHFUL_DEPARTED_ENGLISH_COLLECT_EDITION_VARIANT",
+      "sourceAnchor": "give to the souls of thy servants departed",
+      "appAnchor": "grant to the souls of thy servants departed",
+      "sourceScope": "Historical Catholic Prayer Book transcribes 'give to the souls' and fuller Trinitarian conclusion 'with God the Father, in the unity of the Holy Ghost'. The app English has 'grant to the souls' and shorter conclusion. It is a distinct English rendering, not verbatim from that 19th-century witness; Latin and French remain uncollated.",
+      "readerDisclosure": {
+        "en": "The cited historical Prayer Book prints “give to the souls” and a longer Trinitarian conclusion. The app says “grant to the souls” and uses a shorter ending. These are distinct English witnesses, not an exact reproduction of the cited edition.",
+        "fr": "Le livre ancien cité donne « give to the souls » et une conclusion trinitaire plus longue. L’application emploie « grant to the souls » et une finale abrégée. Il s’agit de textes anglais distincts, non d’une reproduction exacte de l’édition citée."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "dead_eternal_rest_singular",
@@ -639,18 +681,23 @@
         "la": true
       },
       "sourceInventoryStatus": "NOT_REVIEWED",
-      "priority": "P1",
-      "verification": "NO_NEW_SOURCE_COMPARISON",
-      "scopeCategory": "PENDING_EXACT_EDITION_AND_LANGUAGE_COLLATION",
-      "sourceAnchor": null,
-      "appAnchor": null,
-      "sourceScope": "Source URL and original canonical language presence recovered from existing corpus only. No new direct source comparison in this audit.",
-      "readerDisclosure": null,
+      "priority": "P0",
+      "verification": "PUBLIC_SOURCE_SCOPE_ANCHOR_CHECKED",
+      "scopeCategory": "CTS_SINGULAR_FORM_EDITORIAL_PRONOUN_EXPANSION",
+      "sourceAnchor": "Eternal rest grant unto him (her)",
+      "appAnchor": "Eternal rest grant unto him or her",
+      "sourceScope": "Catholic Truth Society prints the singular formula with alternatives 'him (her)' and response indicators. App expands as 'him or her' and omits the dialogical rubric; should not be called verbatim exact CTS English. French singular neutral phrasing and Latin separate source not certified.",
+      "readerDisclosure": {
+        "en": "The Catholic Truth Society gives alternatives “him (her)” with response markings. This card expands them to “him or her” and omits the response cues. Its English is an accessible devotional rendering, not an exact transcription of that page.",
+        "fr": "La Catholic Truth Society imprime « him (her) » avec les marques de réponse. Cette carte développe en « him or her » et omet les indications dialoguées. C’est une formulation dévotionnelle pratique, non une transcription exacte de cette page."
+      },
       "fullEnglishLineByLineCertified": false,
       "fullFrenchLineByLineCertified": false,
       "fullLatinLineByLineCertified": false,
       "independentOriginalPrintedEditionCertified": false,
-      "originalPrayerTextEdited": false
+      "originalPrayerTextEdited": false,
+      "witnessUrl": "https://www.ctsbooks.org/prayers-for-the-dead/",
+      "lastReviewed": "2026-11-03"
     },
     {
       "id": "sub_tuum",
