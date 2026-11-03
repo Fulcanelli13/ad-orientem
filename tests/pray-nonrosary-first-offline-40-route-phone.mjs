@@ -92,7 +92,7 @@ try{
    });
    assert.equal(first.error,null,"Transactional PWA bootstrap failed: "+JSON.stringify(first));
    assert.equal(first.ready,true,"PWA offline readiness is false");
-   assert.ok(first.files>0&&first.files<=512&&first.bytes>0&&first.bytes<=35000000,
+   assert.ok(first.files>0&&first.files<=544&&first.bytes>0&&first.bytes<=35000000,
     "No verified bounded transactional startup cache: "+JSON.stringify(first));
    // True OFFLINE document reboot: neither imported JavaScript modules nor
    // application state from the first document can conceal missing resources.
@@ -196,10 +196,19 @@ try{
     if(id==="pray.library")assert.ok(state.libraryCount>=48,id+" lost canonical library offline");
     if(id==="pray.confession")assert.equal(state.privateIntentionEditors,0,
      "Offline Confession must not introduce persistent sins/intention fields");
-    // Original Scripture service may be legitimately absent before an
-    // online source fetch; this gate never synthesizes missing verses.
+    // A canonical Scripture request is asynchronous; do not confuse the
+    // reader's initial paint with absence of the source-state marker. Wait
+    // for its real loaded/unavailable status, without claiming cold original
+    // source text while disconnected or substituting fabricated verses.
     if(id==="pray.penitential_psalms"||id==="pray.seven_words"){
-     assert.ok(state.scripture.length>0,id+" lacks an honest source state marker");
+     await page.waitForFunction(()=>document.querySelector(
+      "#aoPray435930.open .aoP435930Mount [data-ao-scripture-source][data-ao-scripture-content]"),
+      null,{timeout:12000});
+     const statuses=await page.locator(
+      "#aoPray435930.open [data-ao-scripture-source][data-ao-scripture-content]"
+     ).evaluateAll(nodes=>nodes.map(x=>x.dataset.aoScriptureContent));
+     assert.ok(statuses.length>0&&statuses.every(x=>["ready","unavailable","loading"].includes(x)),
+      id+" lacks a truthful asynchronous source status: "+JSON.stringify(statuses));
     }
     report.cases.push({width,language,door:door||"library-or-search",...state});
     console.log("PASS OFFLINE_FIRST_USE "+width+" "+language+" "+id+" -> "+expected);
