@@ -3918,7 +3918,7 @@ function onClick(e){
   return;
  }
  if(e.target.closest?.('.aoClaudeHolyArtCredit a'))return;
- const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn]');if(!b)return;
+ const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn],[data-p435930-essential-flow-toggle]');if(!b)return;
  if(PRAYER_PILOT_ENABLED&&view==='family'&&b.hasAttribute('data-p435930-door-filter')){
   const root=b.closest('[data-ao-prayer-shelf]'),selected=b.dataset.p435930DoorFilter;
   if(!root)return;
@@ -4254,7 +4254,7 @@ function onClick(e){
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
   return;
  }
- if(b.hasAttribute('data-p435930-essential-flow-toggle')){
+ if(b.hasAttribute('data-p435930-essential-flow-toggle')||b.hasAttribute('data-p435930-essential-flow-action')){
   const card=b.closest('[data-ao-essential-flow]');
   if(!card)return;
   const current=card.dataset.aoEssentialCurrent;
@@ -4266,8 +4266,8 @@ function onClick(e){
    node.hidden=node.dataset.aoEssentialFlowFace!==next;
   });
   card.dataset.aoEssentialCurrent=next;
-  const ver=card.dataset.aoEssentialVernacular;
-  b.setAttribute('aria-label',next==='la'?(isFr()?'Voir la traduction':'Show vernacular prayer'):(isFr()?'Voir le latin':'Show Latin prayer'));
+  const action=card.querySelector('[data-p435930-essential-flow-action]');
+  if(action)action.textContent=next==='la'?L('Show the translation','Voir la traduction'):L('Show Latin','Voir le latin');
   const hint=card.querySelector('[data-ao-essential-flow-hint]');
   if(hint)hint.textContent=next==='la'?L('Tap the text to see the translation','Touchez le texte pour voir la traduction'):L('Tap the text for Latin','Touchez le texte pour voir le latin');
   if(mountNode){const afterMax=Math.max(0,mountNode.scrollHeight-mountNode.clientHeight);mountNode.scrollTop=ratio*afterMax;}
