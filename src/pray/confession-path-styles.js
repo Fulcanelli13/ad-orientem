@@ -43,6 +43,57 @@ const CONFESSION_CSS=String.raw`
 #aoPray435930 .aoP435930ConfPathCards button strong{font:500 17px/1.24 var(--ao-font-display,Georgia,serif)}
 #aoPray435930 .aoP435930ConfPathCards button span{font:400 13px/1.28 var(--ao-font-ui,system-ui,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #aoPray435930 .aoP435930ConfPathCards button::after{content:"›";position:absolute;right:8px;top:50%;transform:translateY(-50%);font:400 23px/1 var(--ao-font-display,Georgia,serif);color:var(--muted,#b8aea0)}
+
+/* Prayer R3: keep source descriptions visible and make the optional complete
+   examination readable without collecting answers or changing card mode. */
+#aoPray435930 .aoP435930ConfPathCards button span{
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ line-height:1.5!important;max-width:100%;
+}
+#aoPray435930 .aoConfessionReadingModes{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;
+ margin:9px 0 15px;max-width:640px;min-width:0;
+}
+#aoPray435930 .aoConfessionReadingModes button{
+ border:1px solid var(--liturgical-border,rgba(199,174,109,.28));
+ border-radius:11px;min-width:0;min-height:44px;padding:10px 8px;
+ color:var(--text,#f3ead7);background:transparent;
+ font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+ cursor:pointer;overflow-wrap:anywhere;
+}
+#aoPray435930 .aoConfessionReadingModes button[aria-pressed="true"]{
+ border-color:var(--liturgical,#c7ae6d);
+ background:var(--liturgical-soft,rgba(199,174,109,.10));
+}
+#aoPray435930 .aoConfessionReadingModes button:focus-visible{
+ outline:2px solid var(--liturgical,#c7ae6d);outline-offset:2px;
+}
+#aoPray435930 .aoConfessionContinuous{
+ display:block;max-width:690px;margin:5px auto 18px;
+ padding:0 0 16px;overflow:visible;
+}
+#aoPray435930 .aoConfessionContinuousSection{
+ display:block;padding:18px clamp(4px,3vw,14px) 20px;margin:0;
+ border-bottom:1px solid var(--border,rgba(255,255,255,.14));
+}
+#aoPray435930 .aoConfessionContinuousSection:last-child{border-bottom:0}
+#aoPray435930 .aoConfessionContinuousSection h2{
+ font:500 clamp(20px,4.5vw,25px)/1.34 var(--ao-font-display,Georgia,serif);
+ color:var(--text,#f3ead7);margin:0 0 14px;
+}
+#aoPray435930 .aoConfessionContinuousSection p,
+#aoPray435930 .aoConfessionContinuousQuestions{
+ font:400 clamp(17px,4vw,21px)/1.62 var(--ao-font-liturgical,Georgia,serif);
+ color:var(--text,#f3ead7);margin:0;
+}
+#aoPray435930 .aoConfessionContinuousQuestions{padding-left:1.3em;display:grid;gap:12px}
+#aoPray435930 .aoConfessionContinuousQuestions li{padding-left:3px;opacity:1!important}
+#aoPray435930 .aoConfessionContinuousSection p{max-width:68ch}
+@media(max-width:360px){
+ #aoPray435930 .aoConfessionReadingModes{gap:5px}
+ #aoPray435930 .aoConfessionReadingModes button{padding:9px 5px}
+ #aoPray435930 .aoConfessionContinuousSection{padding-inline:0}
+}
 `;
 export function installConfessionPathStyles(doc=globalThis.document){
  if(!doc?.head)return false;
