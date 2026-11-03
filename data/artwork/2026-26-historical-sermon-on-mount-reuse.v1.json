@@ -1,0 +1,93 @@
+{
+  "schema": "AO_2026_EXISTING_CARL_BLOCH_SERMON_SIX_DATES_V1",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/sacred-art-phase1-consolidation-20261029",
+    "path": "data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json",
+    "blobSha": "43865e5464f38c5615e6ec1ef0eb180017edd4d0"
+  },
+  "artwork": {
+    "breviarum_plate_id": "plate-bloch-sermon",
+    "title": "The Sermon on the Mount",
+    "artist_as_credited": "Carl Bloch",
+    "date_label": "1877",
+    "gallery_section": "The Life of Christ",
+    "breviarum_gallery_url": "https://breviarium.ink/art/#plate-bloch-sermon",
+    "source_file_path_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bloch-SermonOnTheMount.jpg",
+    "commons_filename": "Bloch-SermonOnTheMount.jpg",
+    "original_source_discovery": "BREVIARIUM_GALLERY_TO_COMMONS_FILEPATH",
+    "notes_from_gallery": [],
+    "aesthetic_triage": "CONTEXTUAL_PAINTING_CANDIDATE",
+    "preliminary_reason": "CONTEXTUAL_ARTIST_OR_SUITABLE_ICONOGRAPHY_NOT_AUTO_APPROVED",
+    "next_action": "SCREEN_SUBJECT_VISUAL_AND_PRIOR_EDITORIAL_OWNER",
+    "user_editorial_approval_for_this_work": false,
+    "hard_artist_exclusion": false,
+    "possible_global_rejected_identity_collisions": [],
+    "possible_existing_281_candidate_collisions": [],
+    "possible_22_prayer_hero_collisions": [],
+    "same_artist_and_title_not_sufficient_for_physical_object_dedup": true,
+    "not_an_automatic_replacement_for_any_selected_hero": true,
+    "pristine_photo_certified": false,
+    "production_allowed": false,
+    "rights_verified_for_exact_photo": false,
+    "commons_current_imageinfo": {
+      "file_page": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg",
+      "sha1": "b4c59d84ba5d1867b38a931acc42b1652639aa61",
+      "native_width_px": 1377,
+      "native_height_px": 1545,
+      "byte_size": 580376,
+      "mime": "image/jpeg",
+      "license_short_name": "Public domain",
+      "copyrighted": "False",
+      "artist_metadata": "Carl Bloch",
+      "credit_metadata": "https://freechristimages.com/bible-stories/sermon-on-the-mount.html and Carl Bloch , p. 313, ISBN 9788798746591",
+      "commons_current_file_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Bloch-SermonOnTheMount.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
+    "source_metadata_rights_hold": false,
+    "source_photo_pixel_quality_review": "NOT_CHECKED",
+    "low_native_resolution_candidate": true,
+    "bulk_photo_firstwave": {
+      "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+      "not_rejected": true
+    }
+  },
+  "dates": [
+    {
+      "date": "2026-06-28",
+      "gospelReference": "Matthew 5:20–24"
+    },
+    {
+      "date": "2026-07-12",
+      "gospelReference": "Matthew 7:15–21"
+    },
+    {
+      "date": "2026-07-16",
+      "gospelReference": "Matthew 7:15–21"
+    },
+    {
+      "date": "2026-07-17",
+      "gospelReference": "Matthew 7:15–21"
+    },
+    {
+      "date": "2026-08-30",
+      "gospelReference": "Matthew 6:24–33"
+    },
+    {
+      "date": "2026-09-04",
+      "gospelReference": "Matthew 6:24–33"
+    }
+  ],
+  "declaredRelationship": "WHOLE_SERMON_SETTING_ONLY_NOT_EXACT_VERSE_OR_SPOKEN_CONTENT",
+  "publicationHolds": [
+    "SOURCE_ONLY_NO_IMAGE_BYTES_CERTIFIED",
+    "PRIOR_RECORD_MARKED_LOW_NATIVE_RESOLUTION_1377x1545",
+    "NO_USER_EDITORIAL_APPROVAL_FOR_THESE_DATES",
+    "REPRODUCTION_RIGHTS_NOT_CERTIFIED_FOR_SELECTED_BYTES"
+  ],
+  "excludedAlternative": {
+    "artist": "Fra Angelico",
+    "plateId": "plate-angelico-sermon",
+    "reason": "PERMANENT_USER_ARTIST_EXCLUSION"
+  }
+}
