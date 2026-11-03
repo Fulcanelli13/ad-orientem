@@ -83,6 +83,70 @@ export const EXPLORE_PROTOTYPE_DESKTOP_STYLE = String.raw`
   display:block;min-height:0;overflow-y:auto;overscroll-behavior:contain;
   scrollbar-width:thin;scrollbar-color:#73695b transparent;
  }
+ /* Screen 7: put the existing canonical subject controls inside the left
+    Sacred Places rail. Discover, phone sheets and the TLM drawer are excluded. */
+ .aoHeritageSurface[data-atlas-entry="sacred"]:has(.aoMapcnCategoryTabs) .aoHeritageCategories {
+  display:none!important;
+ }
+ .aoHeritageSurface .aoMapcnCategoryTabs {
+  display:flex;gap:10px;align-items:center;flex:none;
+  padding:12px 13px 10px;overflow-x:auto;overscroll-behavior-x:contain;
+  scrollbar-width:thin;border-bottom:1px solid var(--ao-atlas-desktop-border);
+ }
+ .aoHeritageSurface .aoMapcnCategoryTabs button {
+  flex:none;min-height:32px;padding:5px 1px 7px;border:0;
+  border-bottom:1px solid transparent;background:transparent;
+  color:#b2a89d;font:500 13px/1.2 var(--ao-font-display,Georgia,serif);
+ }
+ .aoHeritageSurface .aoMapcnCategoryTabs button:is(.active,[aria-pressed="true"]) {
+  color:#f2e3c4;border-bottom-color:#c9af75;
+ }
+ .aoHeritageSurface .aoMapcnCategoryTabs button:focus-visible {
+  outline:2px solid #e1c083;outline-offset:2px;
+ }
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverEntries {
+  padding:8px 10px 12px!important;
+ }
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverEntries > [role="listitem"] {
+  margin-bottom:10px;
+ }
+ .aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDesktopPlaceCard {
+  align-items:flex-start;width:100%;height:auto;min-height:104px;gap:10px;
+  border:1px solid #35414c;border-radius:12px;background:#121820;
+  padding:10px!important;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard[aria-current="true"] {
+  border-color:#c7ae77;background:#222727;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard > img,
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard > .aoSacredPlaceSymbolFallback {
+  width:74px!important;height:76px!important;flex:0 0 74px!important;
+  border-radius:9px;object-fit:cover;margin:0;overflow:hidden;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard > .aoSacredPlaceSymbolFallback
+ .aoSacredPlaceSymbolPlate {
+  width:100%;height:100%;display:grid;place-items:center;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard > .aoSacredPlaceSymbolFallback svg {
+  width:60px;height:60px;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard > .aoSacredPlaceSymbolFallback figcaption {
+  display:none;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard .aoMapcnDiscoverCopy {
+  min-width:0;display:flex;flex:1;flex-direction:column;gap:4px;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard .aoMapcnDiscoverCopy > strong {
+  font-size:17px;line-height:1.15;
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard .aoMapcnPlaceSynopsis {
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
+  overflow:hidden;color:#d8cfc2;font:400 13px/1.35 var(--ao-font-body,Georgia,serif);
+ }
+ .aoHeritageSurface .aoMapcnDesktopPlaceCard .aoMapcnDiscoverArrow {
+  margin-left:0;
+ }
+
  .aoHeritageSurface .aoMapcnDiscoverItem {
   min-height:75px;gap:9px;padding:10px 12px;
  }
