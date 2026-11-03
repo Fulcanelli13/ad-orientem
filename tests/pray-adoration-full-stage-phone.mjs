@@ -152,7 +152,14 @@ try{
        quietAction:scroll?.querySelectorAll("[data-p435930-ador-quiet-enter]").length||0,
        finish:el.querySelectorAll("[data-p435930-"+el.dataset.aoAdorationMode+"-finish]").length,
        timerControls:el.querySelectorAll("[data-p435930-timer]").length,
-       error:el.querySelectorAll("[data-p435930-internal-route-error]").length};
+       error:el.querySelectorAll("[data-p435930-internal-route-error]").length,
+       overflowNodes:el.scrollWidth>el.clientWidth+2?[...el.querySelectorAll("*")]
+        .map(node=>{const n=node.getBoundingClientRect(),r=el.getBoundingClientRect();
+         return {node:node.tagName.toLowerCase()+"."+String(node.className||"").slice(0,64),
+          right:Math.round(n.right-r.left),ownOverflow:node.scrollWidth-node.clientWidth,
+          width:Math.round(n.width)};})
+        .filter(n=>n.right>el.clientWidth+2||n.ownOverflow>2)
+        .sort((a,b)=>b.right-a.right).slice(0,8):[]};
      });
      assert.equal(observed.language,ui,mode+"/"+index+" lost UI language");
      assert.ok(observed.sourceText>=20,mode+"/"+index+" lost complete guiding text");
