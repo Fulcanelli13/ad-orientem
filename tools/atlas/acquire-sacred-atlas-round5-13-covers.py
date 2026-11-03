@@ -86,7 +86,7 @@ def main():
     assert digest(sorted(prior,key=lambda x:x["place_id"]))==digest(sorted(existing["items"],key=lambda x:x["place_id"])), "Prior covers changed"
     assert digest(load(GALLERY))==before_gallery_hash,"Gallery modified"
     after["version"]="1.6.10"
-    COVERS.write_text(json.dumps(after,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    COVERS.write_text(json.dumps(after,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     published=[{"place_id":x["place_id"],"asset_path":x["asset_path"],
       "source_url":x["source_url"],"source_sha1":x["source_sha1"],
       "derivative_sha256":x["derivative_sha256"],"license":x["license"],
@@ -107,7 +107,7 @@ def main():
       "existing_covers_unchanged":True,
       "gallery_unchanged":True,
       "no_tlm_changes":True
-    },ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("SACRED_ATLAS_ROUND5",json.dumps({"published":len(approved),"held":len(holds),"covers_after":len(after["items"]),"holds":holds},ensure_ascii=False),flush=True)
 
 if __name__=="__main__":
