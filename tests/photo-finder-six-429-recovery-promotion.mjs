@@ -13,7 +13,10 @@ assert.ok(approved.items.length>=307);
 assert.equal(new Set(approved.items.map(x=>x.place_id)).size,approved.items.length);
 const version=String(approved.version).split(".").map(Number);
 assert.ok(version[0]>1||(version[0]===1&&(version[1]>6||(version[1]===6&&version[2]>=8))),"Approved media version may not roll back");
-assert.equal(gallery.items.length,35,"Gallery remains out of scope");
+// This cover-recovery release added no gallery assets; it does not cap
+// the size of subsequent individually approved Place galleries.
+assert.ok(gallery.items.length>=35,"Previously approved Place gallery must remain intact");
+assert.equal(new Set(gallery.items.map(x=>x.media_id)).size,gallery.items.length);
 const byId=new Map(approved.items.map(x=>[x.place_id,x]));
 for(const before of r.previous_approved_keep){const now=byId.get(before.place_id);assert.ok(now,"Prior approved Place removed: "+before.place_id);assert.deepEqual(fp(now),before,"Prior selected image, author or rights replaced: "+before.place_id)}
 const original=new Map(stage.staged.map(x=>[x.item.place_id,x]));
