@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import {renderEssentialFlowReader,ESSENTIAL_FLOW_READER_SCHEMA} from "../src/pray/essential-flow-reader.js";
+
 import {test} from "node:test";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts}
@@ -72,4 +74,46 @@ test("F01 exceptions: true V/R retained and source-only English not translated",
  }
  const only=PRAY_CANONICAL_DATA_V435930.prayers.marian_consecration_immaculate_heart;
  assert.ok(only.en&&!only.fr&&!only.la);
+});
+
+test("R2: 32 source-owned prayers open Latin first, with real vernacular on demand",()=>{
+ assert.equal(ESSENTIAL_FLOW_READER_SCHEMA,"ao-essential-flow-reader-v1");
+ const esc=x=>String(x??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+ let latin=0,sourceOnly=0;
+ for(const id of ESSENTIAL_HOLY_CARD_IDS_V1){
+  const p=PRAY_CANONICAL_DATA_V435930.prayers[id];
+  const h=renderEssentialFlowReader({id,p,face:p.la?"la":"en",vernacular:p.fr?"fr":"en",esc});
+  assert.match(h,/data-ao-essential-flow="true"/,id);
+  assert.match(h,/aoEssentialFlowBeat/,id);
+  assert.doesNotMatch(h,/aoClaudeHolyLace|data-p435930-essential-card-turn/,id);
+  assert.ok(h.includes(esc((p.la||p.fr||p.en).trim().slice(0,10))),"Canonical prayer text lost: "+id);
+  if(p.la){
+   latin++;
+   assert.match(h,/data-ao-essential-current="la"/,id);
+   assert.match(h,/data-ao-essential-flow-face="la"/,id);
+   assert.match(h,/data-ao-essential-flow-face="vern"[^>]*hidden/,id);
+   assert.match(h,/data-p435930-essential-flow-toggle/,id);
+  }else{
+   sourceOnly++;
+   assert.match(h,/data-ao-essential-current="vern"/,id);
+   assert.doesNotMatch(h,/data-ao-essential-flow-face="la"/,id);
+   assert.doesNotMatch(h,/data-p435930-essential-flow-toggle/,id);
+  }
+ }
+ assert.equal(latin,31);
+ assert.equal(sourceOnly,1);
+});
+test("R2: language settings remain authentic and source-only text is not translated",()=>{
+ const p=PRAY_CANONICAL_DATA_V435930.prayers.foundations_hail_mary;
+ const esc=x=>String(x??"").replace(/&/g,"&amp;").replace(/</g,"&lt;");
+ const fr=renderEssentialFlowReader({id:p.id,p,face:"fr",vernacular:"fr",esc});
+ assert.match(fr,/data-ao-essential-current="vern"/);
+ assert.match(fr,/lang="fr"/);
+ const both=renderEssentialFlowReader({id:p.id,p,face:"both",vernacular:"fr",esc});
+ assert.match(both,/data-ao-essential-current="both"/);
+ assert.match(both,/aoEssentialFlowParallel/);
+ const invalid=renderEssentialFlowReader({id:p.id,p,face:"la",vernacular:"fr",esc,artUrl:"https://invalid.example/art.jpg"});
+ assert.match(invalid,/aoEssentialFlowArt/,"Explicit approved image URLs can render");
+ const blocked=renderEssentialFlowReader({id:p.id,p,face:"la",vernacular:"fr",esc,artUrl:"javascript:alert(1)"});
+ assert.doesNotMatch(blocked,/<img /);
 });
