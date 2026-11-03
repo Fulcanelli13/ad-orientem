@@ -160,6 +160,20 @@ try{
         .filter(el=>el.right>shell.clientWidth+2||el.ownOverflow>2)
         .sort((a,b)=>b.right-a.right).slice(0,12):[]};
     },{expected,id});
+    // The original Rosary player can remount asynchronously after its Today handoff.
+    // Reconfirm the same exact donor in one atomic browser observation rather than
+    // treating a transitional empty frame as replacement. This never accepts a
+    // substitute player: the canonical donor marker and bead API are both required.
+    if(id==="pray.rosary"&&!observed.rosaryOriginal){
+      const donorProof=await page.waitForFunction(()=>{
+        const root=document.querySelector("#aoPrayerBookRoot.open");
+        const donor=root?.querySelector('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]');
+        const steps=globalThis.AO_ROSARY_V381?.steps?.();
+        return donor&&Array.isArray(steps)&&steps.length>60
+          ?{original:true,steps:steps.length}:false;
+      },null,{timeout:12000});
+      observed.rosaryOriginal=(await donorProof.jsonValue())?.original===true;
+    }
     report.cases.push({width,language,door:door||"search-or-library",...observed});
     assert.equal(observed.owner,expected,id+" opened the wrong reader at "+width+" "+language);
     assert.equal(observed.uiLanguage,language,id+" changed global language without consent");
