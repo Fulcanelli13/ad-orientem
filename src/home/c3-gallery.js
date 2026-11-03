@@ -169,7 +169,8 @@ export function hydrateC3Art(root,state,win=globalThis){
       mainInfo.__c3Artwork={
         title:authoritative.title,artist:authoritative.artist,
         date:"",rights:authoritative.rights,
-        source:authoritative.source,image:authoritative.infoImage
+        source:authoritative.source,image:authoritative.infoImage,
+        licenceUrl:authoritative.licenceUrl??null
       };
       mainInfo.hidden=false;
     }else if(mainInfo&&datedPreview){
@@ -214,7 +215,17 @@ export function showC3ArtInfo(root,button){
   const a=button?.__c3Artwork,dlg=root?.querySelector?.("[data-home-c3-art-dialog]");
   if(!a||!dlg?.showModal)return false;
   dlg.querySelector("[data-c3-art-title]").textContent=a.title;
-  dlg.querySelector("[data-c3-art-meta]").textContent=[a.artist,a.date,a.rights].filter(Boolean).join(" · ");
+  const meta=dlg.querySelector("[data-c3-art-meta]");
+  meta.textContent=[a.artist,a.date,a.rights].filter(Boolean).join(" · ");
+  // CC BY photos require an explicit, clickable licence link in addition to
+  // the pre-existing source file link. Do not turn arbitrary research strings
+  // into links: only Creative Commons URL schemes carried by the owner record.
+  if(/^https:\/\/creativecommons\.org\/licenses\/by(?:-sa)?\/[34]\.0\/?$/.test(a.licenceUrl??"")){
+    const link=dlg.ownerDocument.createElement("a");
+    link.href=a.licenceUrl;link.textContent="Photo licence";
+    link.target="_blank";link.rel="noopener noreferrer";
+    meta.append(" · ",link);
+  }
   const image=dlg.querySelector("[data-c3-art-image]");image.src=a.image;image.alt=a.artist+" — "+a.title;
   dlg.querySelector("[data-c3-art-source]").href=a.source;
   if(!dlg.open)dlg.showModal();
