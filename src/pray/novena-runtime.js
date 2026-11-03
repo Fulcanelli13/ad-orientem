@@ -1,4 +1,5 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
+import {novenaCanonicalFaceV1} from "./novena-canonical-faces.v1.js";
 import { ICKSP_THERESE_DEVOTIONS_V1 } from "./icksp-therese-devotions.v1.js";
 import "./st-therese-selected-novena-cover-styles.js";
 import { selectedThereseNovenaCover } from "./st-therese-selected-novena-cover.v1.js";
@@ -34,7 +35,7 @@ if(!PR?.open||!PR?.close)return;
 const BASE_OPEN=PR.open.bind(PR),BASE_CLOSE=PR.close.bind(PR);
 const STORE_MODE='ao:novenas:n1:mode';
 let OPEN_OPTS={},OPEN_RECEIPT=null,detailFromOverview=false;
-let N={screen:'overview',id:null,day:1,mode:(()=>{try{return localStorage.getItem(STORE_MODE)==='simple'?'simple':'guided'}catch{return'guided'}})(),stage:0,showEnglish:false};
+let N={screen:'overview',id:null,day:1,mode:(()=>{try{return localStorage.getItem(STORE_MODE)==='simple'?'simple':'guided'}catch{return'guided'}})(),stage:0,showEnglish:false,commonLatin:false};
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const n1UiIcon=id=>{
  const url=resolveCanonicalAssetUrl(id);
@@ -117,9 +118,10 @@ function novenaDayFolio(n,active,{compact=false}={}){
  }).join('');
  return `${compact?'<details class="aoN1DayDisclosure"><summary>':'<section class="aoN1DayFolio">'}
   <span class="aoN1DayFolioLabel">${esc(L('Nine days of prayer','Neuf jours de prière'))}</span>
-  <span class="aoN1DayFolioActive">${esc(L('Day ','Jour ')+active+L(' of 9',' sur 9'))}</span>
+  <span class="aoN1DayFolioActive">${esc(L('Day ','Jour ')+active+L(' of 9',' sur 9')+(N.commonLatin&&[...(n.commonPrayers||[]).map(x=>x[0]),n.closingCanonical,n.loretoCanonical].some(id=>!!prayerData()[id]?.la)?' · LA':''))}</span>
   ${compact?'</summary>':''}
   <div class="aoN1DayGrid" role="group" aria-label="${esc(L('Choose a novena day','Choisir un jour de neuvaine'))}">${days}</div>
+  ${compact?commonLanguageControl(n):''}
   ${compact?'</details>':'</section>'}`;
 }
 function renderDetail(n){
@@ -165,8 +167,30 @@ function sourceWitness(text,label){
  const toggle=isFr()&&en&&(fr||showEnglish)?`<button type="button" class="aoP435930Secondary" data-n1-show-en>${esc(showEnglish?'Revenir au français':'Voir le témoin anglais')}</button>`:'';
  return `<article class="aoN1SourceText"><small>${esc(witnessLabel)}</small>${novenaParagraphs(value)}${toggle}</article>`;
 }
-function canonicalPrayer(id,count=1){const p=prayerData()[id];if(!p)return `<div class="aoN1FailClosed">${esc(L('Canonical prayer record unavailable in this build.','Prière canonique indisponible dans cette version.'))}</div>`;const v=(isFr()?p.fr:p.en)||'',la=p.la||'',title=isFr()?(p.titleFr||p.title):p.title;return `<article class="aoN1Canon"><div class="aoN1CanonHead"><b>${esc(title||id)}</b><span>${count>1?count+'×':''}</span></div>${la&&v?`<button type="button" data-n1-flip><span data-face-v>${nl(v)}</span><span data-face-la hidden>${nl(la)}</span></button>`:`<div>${nl(v||la)}</div>`}</article>`}
+function canonicalPrayer(id,count=1){
+ const p=prayerData()[id];
+ if(!p)return `<div class="aoN1FailClosed">${esc(L('Canonical prayer record unavailable in this build.','Prière canonique indisponible dans cette version.'))}</div>`;
+ const {vernacular:v,vernacularLanguage:actual,latin:la,fallback}=novenaCanonicalFaceV1(p,isFr()?'fr':'en');
+ const title=isFr()?(p.titleFr||p.title):p.title;
+ // A canonical language preference must not hide an otherwise valid prayer.
+ // State the actual text language; never pass English off as French or invent Latin.
+ const note=fallback?`<p class="aoN1SourceLanguageNotice" data-n1-canonical-fallback lang="${isFr()?'fr':'en'}">${esc(actual==='en'
+  ?L('English text available; no French translation is claimed.','Texte disponible en anglais ; aucune traduction française n’est revendiquée.')
+  :L('French text available; no English translation is claimed.','Texte disponible en français ; aucune traduction anglaise n’est revendiquée.'))}</p>`:'';
+ return `<article class="aoN1Canon" data-n1-canonical-language="${actual||(la?'la':'none')}"><div class="aoN1CanonHead"><b>${esc(title||id)}</b><span>${count>1?count+'×':''}</span></div>${note}${la&&v
+  ?`<button type="button" data-n1-flip><span data-face-v lang="${actual}"${N.commonLatin?' hidden':''}>${nl(v)}</span><span data-face-la lang="la"${N.commonLatin?'':' hidden'}>${nl(la)}</span></button>`
+  :`<div lang="${actual||(la?'la':'en')}">${nl(v||la)}</div>`}</article>`;
+}
 function commonPrayers(n){return (n.commonPrayers||[]).map(x=>canonicalPrayer(x[0],x[1])).join('')}
+function commonLanguageControl(n){
+ const refs=[...(n.commonPrayers||[]).map(x=>x[0]),n.closingCanonical,n.loretoCanonical].filter(Boolean);
+ if(!refs.some(id=>!!prayerData()[id]?.la))return '';
+ // This changes only canonical common prayers, not historical novena texts.
+ return '<div class="aoN1Info aoN1CommonLanguage" data-n1-common-language>'+
+  '<button type="button" class="aoP435930Secondary" data-n1-common-latin aria-pressed="'+String(N.commonLatin)+'">'+
+  esc(N.commonLatin?L('Shared prayers: LATIN · switch to vernacular','Prières communes : LATIN · revenir en langue vernaculaire'):L('Shared prayers: switch to LATIN','Prières communes : passer en LATIN'))+'</button>'+
+  '<p><small>'+esc(L('Only traditional shared prayers have a Latin face. The historical novena prayer retains its documented English/French wording; no Latin translation is claimed.','Seules les prières communes possèdent une version latine. La prière historique de la neuvaine conserve sa version anglaise/française documentée ; aucune traduction latine n’est revendiquée.'))+'</small></p></div>';
+}
 function daySource(n,d){return n.form==='REPEAT_FORM'?n.repeatText:d.text}
 function novenaPattern(n){return n.pattern||(n.id==='immaculate_conception'?'OPENING_DAY_COMMON_CLOSE':'STANDARD')}
 function novenaHasCommonStage(n){
@@ -370,13 +394,13 @@ function back(){
  });
 }
 function goHome(){if(returnToScripture())return true;BASE_CLOSE();const p=window.AO_APP_SHELL_V1?.navigate?.('home');if(p&&typeof p.catch==='function')p.catch(()=>window.AO_NAV_V362?.openHome?.());else if(!p)window.AO_NAV_V362?.openHome?.();return true}
-function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)return;if(!b.matches('[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-icksp-therese],[data-n1-therese-weekly],[data-n1-therese-back],[data-n1-supplement],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-mode],[data-n1-show-en],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-icksp-therese],[data-n1-therese-weekly]')){N.screen='weekly';return render()};if(b.matches('[data-n1-therese-back]')){N.screen='overview';N.id=null;return render()}if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=ALL_NOVENAS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Supplement){
+function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)return;if(!b.matches('[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-icksp-therese],[data-n1-therese-weekly],[data-n1-therese-back],[data-n1-supplement],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-mode],[data-n1-show-en],[data-n1-common-latin],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-icksp-therese],[data-n1-therese-weekly]')){N.screen='weekly';return render()};if(b.matches('[data-n1-therese-back]')){N.screen='overview';N.id=null;return render()}if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=ALL_NOVENAS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Supplement){
   const id=b.dataset.n1Supplement;if(!ADDITIONAL_NOVENAS[id])return;
   detailFromOverview=N.screen==='overview';N.id=id;N.screen='detail';
   const state=calStatus(ALL_NOVENAS[id]);N.day=state.kind==='active'?state.day:1;
   N.stage=0;N.showEnglish=false;return render()
  }
- if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(ALL_NOVENAS[N.id]).kind==='active'?calStatus(ALL_NOVENAS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-show-en]')){const anchor=witnessAnchor(b);N.showEnglish=!N.showEnglish;return render({witnessFocus:anchor})}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=ALL_NOVENAS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
+ if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(ALL_NOVENAS[N.id]).kind==='active'?calStatus(ALL_NOVENAS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-common-latin]')){N.commonLatin=!N.commonLatin;const scroll=mount()?.querySelector('.aoDevoCardScroll')?.scrollTop||0;render();queueMicrotask(()=>{const card=mount()?.querySelector('.aoDevoCardScroll');if(card)card.scrollTop=scroll});return}if(b.matches('[data-n1-show-en]')){const anchor=witnessAnchor(b);N.showEnglish=!N.showEnglish;return render({witnessFocus:anchor})}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=ALL_NOVENAS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
 document.addEventListener('click',onClick,true);
 const oldOpen=PR.open.bind(PR);PR.open=function(id,opts={}){if(id==='pray.novenas'||id==='novenas'||id==='novena')return open(opts);return oldOpen(id,opts)};
 const MOD=window.AO_MODULES;

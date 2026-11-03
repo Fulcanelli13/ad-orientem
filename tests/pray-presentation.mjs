@@ -611,10 +611,11 @@ for(const id of [
 
 // Shared PRAY folio phase 2: Stations and Confession retain their separate
 // ritual/penitential owners while inheriting the tested session locale control.
-assert.match(runtime,/const prayerLanguage=\['adoration','benediction','stations','confession'\]\.includes\(view\)/);
+assert.match(runtime,/const prayerLanguage=\['adoration','benediction','stations','confession','litany'\]\.includes\(view\)/);
+assert.match(runtime,/if\(LIT\.language!==lang\(\)\)/,"Litany must invalidate previous historical edition on language change");
 assert.match(runtime,/data-p435930-session-language/);
 assert.match(runtime,/praySessionLanguage=isFr\(\)\?'en':'fr'/);
-assert.match(runtime,/if\(b\.hasAttribute\('data-p435930-session-language'\)&&\['adoration','benediction','stations','confession'\]\.includes\(view\)\)/);
+assert.match(runtime,/if\(b\.hasAttribute\('data-p435930-session-language'\)&&\['adoration','benediction','stations','confession','litany'\]\.includes\(view\)\)/);
 const fourFolioCSS=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
 assert.match(fourFolioCSS,/PRAY shared parity phase 2/);
 assert.match(fourFolioCSS,/data-ao-pray-view="stations"/);

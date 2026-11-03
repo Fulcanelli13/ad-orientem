@@ -99,7 +99,9 @@ for(const [id,slotId] of Object.entries(expectedSlots)){
  assert.ok(slot.subjectCodes.length>=2,"No source-approved subject vocabulary for "+id);
  assert.match(actual,new RegExp('data-ao-art-slot-id="'+slotId+'"'));
 }
-assert.equal((actual.match(/data-ao-art-binding="unassigned"/g)||[]).length,9);
+assert.equal((actual.match(/data-ao-art-binding="unassigned"/g)||[]).length,8);
+assert.equal((actual.match(/data-ao-art-binding="released"/g)||[]).length,1);
+assert.ok(actual.includes("adoration-frameless.webp"),"The one released Eucharistic door uses exactly the approved Met photograph");
 assert.equal(hasReleasedDoorPainting(null),false);
 assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true}),false);
 assert.equal(hasReleasedDoorPainting({publicationState:"READY_FOR_PUBLICATION",editorialApproved:true,
@@ -135,7 +137,8 @@ assert.match(early,/Dawn · 06:00/);
 assert.match(midday,/Midday · 12:00/);
 assert.match(dusk,/Dusk · 18:00/);
 assert.match(angelus,/The bell calls us to remember the Incarnation/);
-assert.match(angelus,/data-ao-art-publication="unassigned"/,"The opening must not imply uncertified artwork is published");
+assert.match(angelus,/data-ao-art-publication="released"/,"The Angelus opening now uses the exact released Met photograph");
+assert.match(angelus,/angelus-frameless.webp/);
 assert.equal((midday.match(/class="aoPrayPilotBellGroup"/g)||[]).length,4,"Use 3·3·3·9 grouped visual bells");
 assert.equal((midday.match(/class="aoPrayPilotBellDot"/g)||[]).length,18);
 assert.ok(midday.indexOf("aoPrayPilotBellMoments")<midday.indexOf("data-p435930-pilot-angelus-begin"),
@@ -146,6 +149,9 @@ assert.doesNotMatch(angelus,/A pause for prayer|The Angel of the Lord declared u
  "Retired generic Angelus cover copy must not replace the approved opening");
 
 assert.match(regina,/Regina Cæli/);
+assert.match(regina,/regina-whole-original.jpg/,"Seasonal Regina must have the exact approved Rubens original");
+assert.match(regina,/data-ao-art-publication="released"/);
+assert.doesNotMatch(regina,/angelus-frameless.webp/,"Champaigne's Annunciation must not appear for Regina Caeli");
 assert.doesNotMatch(angelus,/The existing named cards|Kneel · ordinary days|aoPrayPilotEntryMeta/,
  "Angelus opening must not show engineering copy or posture before the prayer begins");
 assert.doesNotMatch(regina,/The existing named cards|Eastertide · stand according to local custom|aoPrayPilotEntryMeta/,

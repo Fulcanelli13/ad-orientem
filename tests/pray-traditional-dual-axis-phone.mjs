@@ -601,6 +601,20 @@ try{
   assert.equal(stage.active,1);
   assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>30,"Empty canonical preparation text "+beforeIds[i]);
  }
+ // Existing v38.3 Latin must be visibly accessible without retranslation.
+ await page.locator("#aoPray435930 .aoDevoStop").nth(5).evaluate(el=>el.click());
+ const switchLatin=page.locator("#aoPray435930 .aoTP381PrayerCard [data-tp381-latin-switch]");
+ assert.equal(await switchLatin.count(),1,"Aquinas preparation lost its existing Latin control");
+ assert.equal(await switchLatin.innerText(),"LA");
+ await switchLatin.evaluate(el=>el.click());
+ assert.equal(await switchLatin.getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator("#aoPray435930 .aoTP381PrayerCard [data-face-la]").isVisible(),true);
+ assert.equal(await page.locator("#aoPray435930 .aoTP381PrayerCard [data-face-v]").isVisible(),false);
+ assert.equal(await switchLatin.innerText(),"FR");
+ await switchLatin.evaluate(el=>el.click());
+ assert.equal(await switchLatin.getAttribute("aria-pressed"),"false");
+ assert.equal(await page.locator("#aoPray435930 .aoTP381PrayerCard [data-face-la]").isVisible(),false);
+ assert.equal(await page.locator("#aoPray435930 .aoTP381PrayerCard [data-face-v]").isVisible(),true);
  // B09: one-tap source choices, with distinct Acts kept distinct.
  await page.locator("#aoPray435930 [data-tp381-communion-purpose='disposition']").evaluate(el=>el.click());
  assert.equal((await snapshot()).id,"communion-before-foundations_act_of_faith");

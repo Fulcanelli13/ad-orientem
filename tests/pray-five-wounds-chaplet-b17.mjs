@@ -67,7 +67,7 @@ assert.ok(runtime.includes("FIVE_WOUNDS.index=Math.max(0,FIVE_WOUNDS.index-1)"))
 assert.ok(runtime.includes("FIVE_WOUNDS.index=Math.min(29,FIVE_WOUNDS.index+1)"));
 assert.ok(runtime.includes("if(b.hasAttribute('data-p435930-five-finish')&&FIVE_WOUNDS.index===29)"));
 assert.ok(runtime.includes("FIVE_WOUNDS.latin=!FIVE_WOUNDS.latin"));
-assert.ok(runtime.includes("const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin&&!CHAPLET_F07_VARIANTS_ENABLED)"),
+assert.ok(runtime.includes("const prayerLanguage=['adoration','benediction','stations','confession','litany'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin&&!CHAPLET_F07_VARIANTS_ENABLED)"),
  "Default Five Wounds uses the approved F07 Aa language owner, with legacy EN/FR only under explicit rollback");
 assert.ok(runtime.includes("const CHAPLET_F07_VARIANTS_ENABLED=chapletF07VariantsEnabled(window);"),
  "F07 w1 default must be controlled by the source-owned rollback adapter");

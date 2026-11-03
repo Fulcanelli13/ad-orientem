@@ -1,0 +1,55 @@
+name: Approved Met artwork reuse across Home and Prayer
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/art/released-module-paintings.v1.js"
+      - "src/home/c3-gallery.js"
+      - "src/pray/**"
+      - "tests/artwork-module-live-bridge.mjs"
+      - "tests/artwork-module-live-phone.mjs"
+      - "tests/home-c3-gallery.mjs"
+  pull_request:
+    paths:
+      - "src/art/released-module-paintings.v1.js"
+      - "src/home/c3-gallery.js"
+      - "src/pray/**"
+      - "tests/artwork-module-live-bridge.mjs"
+      - "tests/home-c3-gallery.mjs"
+jobs:
+  release-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/pray-design-pilot-contract.mjs
+      - run: node tests/artwork-module-live-bridge.mjs
+      - run: node tests/home-c3-gallery.mjs
+      - run: node tests/home-c3-met-release-integrity.mjs
+
+  phone-visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/artwork-module-live-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: approved-met-prayer-live-phone-qa
+          path: artifacts/approved-met-prayer-reuse/
+          retention-days: 14
+          if-no-files-found: warn

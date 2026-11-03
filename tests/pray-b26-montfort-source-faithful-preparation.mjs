@@ -89,4 +89,23 @@ assert.ok(!ui.includes("const MONTFORT_33_DAILY_PRAYERS"),"No invented 33 author
 assert.match(style,/min-height:48px/);
 assert.match(style,/prefers-reduced-motion/);
 assert.match(ui,/Full English historical litanies are included below/);
+// Reading canonical Latin is an option, not a new Montfort recension.
+assert.ok(ui.includes("let MONTFORT_CANONICAL_LATIN=false;"),
+  "The original daily reader must default to the vernacular");
+assert.ok(ui.includes("data-p435930-montfort-canonical-latin aria-pressed="),
+  "A direct Latin switch must be available on eligible canonical daily cards");
+assert.ok(ui.includes("canonicalPrayerIds.map(prayer).join('')"),
+  "Keep one canonical record per selected daily prayer, without duplicate texts");
+assert.ok(ui.includes("MONTFORT_CANONICAL_LATIN&&p.la?'la'"),
+  "Read Latin from the existing canonical record only");
+assert.ok(ui.includes("nl(p[sourceLanguage])"),
+  "No independently re-authored Montfort Latin text may be substituted");
+assert.ok(ui.includes("MONTFORT_B26_CONSECRATION_ACT_EN.map"),
+  "Faber's separate English-only consecration act must remain intact");
+assert.ok(ui.includes("montfortB27RequiredForDay(day).map(renderMontfortHistoricalB27)"),
+  "The three historical B27 prayers must retain their distinct, source-bound reader");
+assert.ok(style.includes(".aoMontfortB26LatinSwitch"),
+  "The control must fit the existing mobile Montfort card");
+assert.equal(MONTFORT_B26_PHASES.every(p=>p.canonicalIds.every(id=>PRAY_CANONICAL_DATA_V435930.prayers[id]?.la)),true,
+  "Every referenced canonical Montfort prayer already has original Latin in the archive");
 console.log("PASS B26 Montfort: 12+7+7+7, Faber 1863 original act, canonical 48, fixed and leap dates, no invented daily readings or translations");

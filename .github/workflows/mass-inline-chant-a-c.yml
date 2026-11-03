@@ -1,0 +1,47 @@
+name: Mass inline Gregorian notation A/C acceptance
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'src/mass/reader-inline-chant.js'
+      - 'src/mass/reader-inline-chant-selector.js'
+      - 'src/mass/reader-inline-chant-bulk-review.js'
+      - 'tests/reader-inline-chant-generic-source.mjs'
+      - 'tests/reader-inline-chant-bulk-review.mjs'
+      - 'tests/reader-inline-chant-bulk-91-source-queue.mjs'
+      - 'scripts/schola/build-91-inline-review-queue.mjs'
+      - 'data/research/mass-music-1962-91-inline-review-queue.v1.json'
+      - 'src/mass/reader-inline-chant-approved.js'
+      - 'src/mass/reader-dom.js'
+      - 'tests/reader-inline-chant-a-c*.mjs'
+      - '.github/workflows/mass-inline-chant-a-c.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  inline-chant:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Parse source, preserve source-first reader imports
+        run: |
+          node --check src/mass/reader-inline-chant.js
+          node --check src/mass/reader-inline-chant-selector.js
+          node --check src/mass/reader-inline-chant-bulk-review.js
+          node --check src/mass/reader-dom.js
+          node tests/reader-inline-chant-a-c.mjs
+          node tests/reader-inline-chant-generic-source.mjs
+          node tests/reader-proper-gabc-bulk-join.mjs
+          node tests/reader-inline-chant-bulk-review.mjs
+          node tests/reader-inline-chant-bulk-91-source-queue.mjs
+      - name: Prepare source-backed browser validation
+        run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify 390 and 320 px visible score, independent text toggle and Low Mass fallback
+        run: node tests/reader-inline-chant-a-c-phone.mjs

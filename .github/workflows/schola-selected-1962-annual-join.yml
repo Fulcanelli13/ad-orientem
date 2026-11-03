@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - 'scripts/schola/build-2026-selected-repertoire.mjs'
+      - 'src/mass/reader-schola-selected-queue-crosswalk.js'
+      - 'tests/reader-schola-selected-queue-crosswalk.mjs'
+      - 'data/research/mass-music-1962-91-inline-review-queue.v1.json'
       - '.github/workflows/schola-selected-1962-annual-join.yml'
   workflow_dispatch:
 
@@ -22,10 +25,13 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Guard original 1961 GABC archive and source-first match semantics
-        run: node tests/reader-proper-gabc-bulk-join.mjs
+        run: |
+          node tests/reader-proper-gabc-bulk-join.mjs
+          node tests/reader-schola-selected-queue-crosswalk.mjs
+          node tests/reader-inline-chant-bulk-91-source-queue.mjs
       - name: Capture real production 2026 selected Mass of day, then join GABC archive
         run: node scripts/schola/build-2026-selected-repertoire.mjs
-      - name: Store complete selected repertoire/exception report
+      - name: Store selected repertoire, exact 91-source crosswalk and exceptions
         if: always()
         uses: actions/upload-artifact@v4
         with:

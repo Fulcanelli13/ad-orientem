@@ -1,5 +1,6 @@
 // C3 Living Gallery. Canonical Home routes and 1962 Calendar remain authoritative.
 import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.js";
+import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]+/g," ");
 const cleanArt=a=>a&&a.qualityGate==="PASS"&&typeof a.file==="string"&&
@@ -33,7 +34,9 @@ function certifiedWeekArt(provider,date){
 // displayed by the canonical Calendar, never a new or held reproduction.
 export function c3ApprovedDatedHomeArt(provider,state){
   const date=state?.selectedDate,path=C3_EXACT_APPROVED_PATHS[date];
-  if(!path||provider?.properPath?.(state)!==path)return null;
+  const observed=provider?.properPath?.(state);
+  const exact=observed===path||(date==="2026-11-02"&&/^Sancti\/11-02m[23]$/.test(observed??""));
+  if(!path||!exact)return null;
   return APPROVED_CLASS_I_2026.find(row=>row.date===date)??null;
 }
 function eligibleCalendarPreview(row){
@@ -48,18 +51,10 @@ function info(a,img){
     source:a.sourcePage,image:img.currentSrc||img.src};
 }
 // Exact Met originals with user-approved frame-free phone crops (2 November 2026).
-export const C3_APPROVED_MET_PRAYER_ART=Object.freeze({
-  angelus:Object.freeze({title:"The Annunciation",artist:"Philippe de Champaigne",
-    source:"https://www.metmuseum.org/art/collection/search/438724",
-    original:"assets/home/c3-approved-met/angelus-met-438724.jpg",
-    image:"assets/home/c3-approved-met/angelus-frameless.webp"}),
-  adoration:Object.freeze({title:"The Virgin Adoring the Host",artist:"Jean Auguste Dominique Ingres",
-    source:"https://www.metmuseum.org/art/collection/search/438434",
-    original:"assets/home/c3-approved-met/adoration-met-438434.jpg",
-    image:"assets/home/c3-approved-met/adoration-frameless.webp"})
-});
+export const C3_APPROVED_MET_PRAYER_ART=RELEASED_MODULE_PAINTINGS;
 function approvedC3Artwork(page){
   if(page?.id==="adoration"||page?.route==="pray.adoration")return C3_APPROVED_MET_PRAYER_ART.adoration;
+  if(page?.id==="confession"||page?.route==="pray.confession")return C3_APPROVED_MET_PRAYER_ART.confession;
   if(String(page?.id??"").startsWith("angelus."))return C3_APPROVED_MET_PRAYER_ART.angelus;
   return null;
 }
@@ -77,7 +72,7 @@ export function c3PrayerMarkup({fr=false,feature=null,attrs="",role="",title="",
   return '<div class="aoC3PrayerFrame" data-home-c3-prayer-deck data-c3-feature="'+esc(first)+'">'+
     pages.map((s,i)=>'<article class="aoC3PrayerSlide" data-home-c3-slide="'+i+'"'+(i?' hidden aria-hidden="true"':' aria-hidden="false"')+'>'+
       '<div class="aoC3PrayerArt" aria-hidden="true" data-c3-prayer-art="'+esc(s.id)+'">'+
-        (approvedC3Artwork(s)?'<img class="aoC3ApprovedMetPhoto" src="'+esc(approvedC3Artwork(s).image)+'" alt="" loading="lazy" decoding="async" data-approved-met-art="true">':'')+'</div>'+
+        (approvedC3Artwork(s)?'<img class="aoC3ApprovedMetPhoto" src="'+esc(approvedC3Artwork(s).image)+'" alt="" loading="lazy" decoding="async" data-approved-module-art="true" '+(approvedC3Artwork(s)===C3_APPROVED_MET_PRAYER_ART.confession?'data-approved-nga-art="true"':'data-approved-met-art="true"')+'>':'')+'</div>'+
       '<button type="button" class="'+(i===0?'aoH4Prayer np ':'')+'aoC3PrayerAction" '+s.action+'>'+
       '<span class="aoC3PrayerRole">'+esc(s.role)+'</span><strong>'+esc(s.title)+'</strong><small>'+esc(s.desc)+'</small>'+
       '<span class="aoC3Arrow" aria-hidden="true">›</span></button>'+
@@ -152,15 +147,15 @@ export function hydrateC3Art(root,state,win=globalThis){
       mainInfo.__c3Artwork=info(a,mainImg);mainInfo.hidden=false;
     }
   }
-  // User-approved, full-scene Met artworks are released only in the Home Prayer carousel.
+  // Only released, exact-route artwork appears in the Home Prayer carousel.
   for(const art of home.querySelectorAll("[data-c3-prayer-art]")){
     const name=art.dataset.c3PrayerArt;
     const data=approvedC3Artwork({id:name});
-    const photo=art.querySelector("img[data-approved-met-art]");
+    const photo=art.querySelector("img[data-approved-module-art]");
     const infoButton=art.parentElement?.querySelector('[data-home-c3-info="prayer"]');
     if(!photo||!data||!infoButton)continue;
     infoButton.__c3Artwork={title:data.title,artist:data.artist,date:"",
-      rights:"Met Open Access · public domain (CC0); approved frame-free display crop",
+      rights:data.photographRights+"; "+(name==="confession"?"full source displayed with contain fit":"approved frame-free display crop"),
       source:data.source,image:data.original};
     infoButton.hidden=false;
   }

@@ -56,8 +56,8 @@ for(const [childId,parentId,query] of cases){
  const fr=renderExploreToString(buildExploreViewModel({language:"fr",items:hits,lens:"shrines",counts:projection.counts,view:"list",selectedPlaceId:parentId,placeProfiles:profiles,expandPlace:true}));
  assert.ok(en.includes('data-explore-open-place="'+childId+'"'));
  assert.ok(fr.includes('data-explore-open-place="'+childId+'"'));
- assert.match(en,/RELATED PLACES/);
- assert.match(fr,/LIEUX ASSOCIÉS/);
+ assert.match(en,/CONNECTIONS/);
+ assert.match(fr,/LIENS/);
  assert.ok(!en.includes('data-explore-place-owner="'+childId+'"'),"the primary profile remains the selected owner until tapped");
 }
 console.log("PASS Explore related-place search, bidirectional links, EN/FR and independently sourced chapel/church coordinates");

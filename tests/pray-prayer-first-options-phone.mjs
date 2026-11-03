@@ -158,6 +158,21 @@ try{
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"angelus");
    await settings.click();
    await expanded(angelus);
+   // Both 320px and 390px: recover whole-recitation Latin from frozen v43.33
+   // without opening/turning each of the existing prayer cards.
+   const latinOpt=ag.locator("[data-p435930-angelus-latin]");
+   await latinOpt.check();
+   assert.equal(await latinOpt.isChecked(),true);
+   const firstFace=page.locator("#aoPray435930.open .aoP435930AngelusSequence .aoDevoCard:not([hidden]) [data-ao-angelus-unit]").first();
+   assert.equal(await firstFace.locator("[data-face-la]").evaluate(x=>x.hidden),false,"Angelus did not display existing Latin");
+   assert.equal(await firstFace.locator("[data-face-v]").evaluate(x=>x.hidden),true,"Angelus vernacular incorrectly remained on top");
+   if(!(await ag.evaluate(x=>x.open)))await settings.click();
+   await expanded(angelus);
+   await latinOpt.uncheck();
+   assert.equal(await firstFace.locator("[data-face-la]").evaluate(x=>x.hidden),true,"Angelus Latin preference is not reversible");
+   assert.equal(await firstFace.locator("[data-face-v]").evaluate(x=>x.hidden),false,"Angelus vernacular was not restored");
+   if(!(await ag.evaluate(x=>x.open)))await settings.click();
+   await expanded(angelus);
    await ag.locator('[data-p435930-seg="group"]').click();
    await expanded(angelus);
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
@@ -230,6 +245,29 @@ try{
      "Chaplet navigation must stay touchable and in the phone viewport: "+JSON.stringify(beadGeometry));
    await page.screenshot({path:resolve(shots,"mercy-second-"+width+".png"),animations:"disabled"});
    await checkDoc("Divine Mercy");
+   // The four source-directed Montfort phases reuse canonical language
+   // records only on days 1–19. Historical litanies/Faber remain untouched.
+   await open("pray.montfort_consecration");
+   await page.locator("#aoPray435930.open [data-p435930-montfort-phase='1']").evaluate(el=>el.click());
+   const canon="#aoPray435930.open [data-ao-montfort-prayer='sacrament_come_holy_spirit'] .aoMontfortB26Canonical";
+   const sw=page.locator("#aoPray435930.open [data-p435930-montfort-canonical-latin]");
+   assert.equal(await sw.count(),1,"Montfort canonical prayer lost its direct Latin switch");
+   const vernacular=await page.locator(canon).innerText();
+   assert.ok(vernacular.length>20,"Montfort canonical vernacular text empty");
+   await sw.evaluate(el=>el.click());
+   assert.equal(await sw.getAttribute("aria-pressed"),"true");
+   assert.equal(await page.locator(canon).getAttribute("lang"),"la");
+   const latin=await page.locator(canon).innerText();
+   const originalLatin=await page.evaluate(()=>globalThis.AO_PRAY_CANONICAL_DATA_V435930.prayers.sacrament_come_holy_spirit.la);
+   assert.equal(latin.trim(),originalLatin.trim(),"Montfort must display EXACT canonical Latin, not a new version");
+   await sw.evaluate(el=>el.click());
+   assert.equal(await sw.getAttribute("aria-pressed"),"false");
+   assert.equal(await page.locator(canon).innerText(),vernacular,"Montfort vernacular must be restored verbatim");
+   await page.locator("#aoPray435930.open [data-p435930-montfort-phase='27']").evaluate(el=>el.click());
+   assert.equal(await page.locator("#aoPray435930.open [data-p435930-montfort-canonical-latin]").count(),0,
+     "Historical Montfort litanies cannot be mislabelled as canonical Latin");
+   await page.screenshot({path:resolve(shots,"montfort-source-language-"+width+".png"),animations:"disabled"});
+   await checkDoc("Montfort canonical Latin");
    assert.deepEqual(errors,[],"Uncaught errors in devotional readers: "+errors.join("; "));
    console.log("PASS "+width+"px Stations/Angelus/Divine Mercy prayer-first controls, source links, state and navigation");
   }finally{await page.close()}

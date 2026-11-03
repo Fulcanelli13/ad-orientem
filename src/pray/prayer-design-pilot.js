@@ -1,4 +1,6 @@
 import {prayerDoorArtSlot} from "./art-slot-map.v1.js";
+import {releasedModulePhoto,releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
+import "./released-module-photo-styles.js";
 /**
  * Prayer discovery + Angelus presentation (default; explicitly reversible).
  *
@@ -161,9 +163,10 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):family.title;
     const target=family.direct?' data-p435930-own="'+esc(family.direct)+'"':' data-p435930-family="'+esc(tile.id)+'"';
     const slot=prayerDoorArtSlot(tile.id);
-    const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="unassigned"':'';
+    const released=tile.id==="eucharistic"?releasedModulePhoto("adoration"):null;
+    const artLink=slot?' data-ao-art-slot-id="'+esc(slot.slotId)+'" data-ao-art-rotation="'+esc(slot.rotation)+'" data-ao-art-binding="'+(released?"released":"unassigned")+'"':'';
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+'" style="grid-column:'+tile.col+';grid-row:'+tile.row+'"'+target+artLink+' aria-label="'+esc(label)+'">'+
-      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true})+'</span>'+
+      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+(released?'<img class="aoPrayPilotReleasedTilePhoto" src="/'+esc(released.image)+'" alt="" loading="lazy" decoding="async">':assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true}))+'</span>'+
       '<span class="aoPrayPilotTileCaption">'+esc(label)+'</span></button>';
   };
   const routes=new Map();
@@ -213,8 +216,8 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon,reci
   const strokes=count.map((n,i)=>'<span class="aoPrayPilotBellGroup" aria-hidden="true">'+Array.from({length:n},()=>'<span class="aoPrayPilotBellDot"></span>').join('')+'</span>').join('');
   return head(regina?"Regina Cæli":"Angelus",L("Prayer of the hour","Prière de l'heure"))+
     '<main class="aoP435930Body aoPrayPilotAngelusEntry">'+
-      '<section class="aoPrayPilotAngelusHero" data-ao-art-publication="unassigned">'+
-        '<small class="aoPrayPilotAngelusArtSlot">'+esc(L("ART SLOT · ANGELUS","EMPLACEMENT D’ART · ANGÉLUS"))+'</small>'+
+      '<section class="aoPrayPilotAngelusHero" data-ao-art-publication="released">'+
+        releasedModulePhotoMarkup(regina?"regina":"angelus",{className:"aoPrayerAngelusPhoto"})+
         '<div class="aoPrayPilotAngelusCoverCopy">'+
           '<small class="aoPrayPilotHourEyebrow">'+moduleIcon("pray.angelus_regina")+'<span>'+esc(hourName+" · "+hourTime)+'</span></small>'+
           '<h2>'+esc(regina?"Regina Cæli":L("The Angelus","L’Angélus"))+'</h2>'+
