@@ -1,0 +1,52 @@
+name: Prayer four museum originals — exact release and phone QA
+on:
+  pull_request:
+    paths:
+      - "assets/prayer/released/bouts-annunciation-original.jpg"
+      - "assets/prayer/released/cavallino-shepherds-original.jpg"
+      - "assets/prayer/released/girardin-trinity-original.jpg"
+      - "assets/prayer/released/hondius-doctors-original.jpg"
+      - "src/art/released-module-paintings.v1.js"
+      - "src/pray/art-slot-map.v1.js"
+      - "data/prayer/artwork-editorial-20261101/**"
+      - "tests/prayer-museum-four-*"
+      - ".github/workflows/prayer-four-museum-release-gate.yml"
+  workflow_dispatch:
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/prayer-museum-four-exact-release.mjs
+      - run: node tests/prayer-gallery-267-crosswalk-audit.mjs
+      - run: node tests/artwork-module-live-bridge.mjs
+  phone-visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/prayer-museum-four-slot-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-four-museum-real-phone-qa
+          path: artifacts/prayer-museum-four-release/
+          retention-days: 14
+          if-no-files-found: warn
