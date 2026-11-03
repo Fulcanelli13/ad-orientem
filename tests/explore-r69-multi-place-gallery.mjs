@@ -25,9 +25,14 @@ const originalOwners=[
  "place:FR:basilique-sainte-therese-lisieux","place:FR:chartres-notre-dame",
  "place:FR:pontmain","place:FR:rue-du-bac"
 ];
-const originals=registry.items.filter(x=>originalOwners.includes(x.place_id));
+const frozenR69MediaIds=new Set([
+  "pontmain-east-facade-2016","pontmain-main-nave-2011",
+  "lisieux-basilica-interior-2021","chartres-cathedral-labyrinth-2017",
+  "chartres-north-rose-2011","rue-du-bac-vincent-statue-2016"
+]);
+const originals=registry.items.filter(x=>frozenR69MediaIds.has(x.media_id));
 const p73=read("data/geography/research/p73-curated-place-gallery-bundle.v1.json");
-const later=registry.items.filter(x=>!originalOwners.includes(x.place_id));
+const later=registry.items.filter(x=>!frozenR69MediaIds.has(x.media_id));
 assert.equal(originals.length,6);
 // The P73 six must remain intact; they do not place a ceiling on subsequent
 // independently verified P77 and later gallery cohorts.
