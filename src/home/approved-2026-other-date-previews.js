@@ -71,8 +71,8 @@ export const APPROVED_2026_OTHER_DATE_PREVIEWS=Object.freeze({
     "title": "The Incredulity of Saint Thomas",
     "artworkId": "W07-014",
     "workIdIsDateSelectionOnly": false,
-    "file": "The Incredulity of Saint Thomas by Caravaggio.jpg",
-    "storagePrefix": "16",
+    "file": "The Incredulity of Saint Thomas-Caravaggio (1601-2).jpg",
+    "storagePrefix": "e5",
     "rightsTier": "COMMONS_PD_ART",
     "collectionIdentity": "Sanssouci Picture Gallery, GK I 5438",
     "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED"
