@@ -29,7 +29,7 @@ test("Holy Thursday uses later Louvre INV 1125 selection; same photo as May 27",
  assert.equal(holy.source,ember.source);
  assert.equal(holy.image,ember.image);
  assert.equal(holy.imageTier,"commons-pd-art");
- assert.ok(holy.note.includes("gold"));
+ assert.match(holy.note,/[Ff]rameless/);
  assert.match(holy.source,/File:Champaigne_Petite_C/);
  assert.match(holy.image,/960px-Champaigne_Petite_C/);
  assert.doesNotMatch(holy.image,/Ugolino|459131/);
