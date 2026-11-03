@@ -32,6 +32,10 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-released-module-p
   "#aoPray435930 .aoPrayerJosephCover img,#aoPray435930 .aoPrayerSoulsCover img,#aoPray435930 .aoPrayerVisitCover img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}",
   "#aoPray435930 .aoPrayerJosephCover figcaption,#aoPray435930 .aoPrayerSoulsCover figcaption,#aoPray435930 .aoPrayerVisitCover figcaption{position:absolute;bottom:0;left:0;right:0;padding:3px 6px;background:rgba(0,0,0,.79);color:#faf1df;text-align:center;font:10px/1.2 Georgia,serif}",
   "#aoPray435930 .aoPrayerJosephCover figcaption a,#aoPray435930 .aoPrayerSoulsCover figcaption a,#aoPray435930 .aoPrayerVisitCover figcaption a{color:inherit;text-decoration:underline}",
+  "#aoPray435930 .aoPrayerHeartJesusCover,#aoPray435930 .aoPrayerHeartMaryCover,#aoPray435930 .aoPrayerKingCover{display:block;position:relative;margin:0 0 14px;width:100%;max-width:100%;height:clamp(148px,29svh,256px);overflow:hidden;background:#101016}",
+  "#aoPray435930 .aoPrayerHeartJesusCover img,#aoPray435930 .aoPrayerHeartMaryCover img,#aoPray435930 .aoPrayerKingCover img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}",
+  "#aoPray435930 .aoPrayerHeartJesusCover figcaption,#aoPray435930 .aoPrayerHeartMaryCover figcaption,#aoPray435930 .aoPrayerKingCover figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.78);color:#faf1df;text-align:center;padding:3px 6px;font:10px/1.2 Georgia,serif}",
+  "#aoPray435930 .aoPrayerHeartJesusCover figcaption a,#aoPray435930 .aoPrayerHeartMaryCover figcaption a,#aoPray435930 .aoPrayerKingCover figcaption a{color:inherit;text-decoration:underline}",
   "@media(max-width:359px){#aoPray435930 .aoPrayerAdorationCover{height:110px;min-height:110px}}"
  ].join("\n");
  document.head.append(node);
