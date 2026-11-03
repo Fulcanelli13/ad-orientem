@@ -43,6 +43,16 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+  "RG-0A7D6FB130D8":Object.freeze({sourceId:"AO-B34-L-GB-5FF0510590CE",name:"Our Lady of Compassion",country:"GB",addressNeedle:"London",placeId:null,
+    lat:51.5311,lng:0.03808,precision:"site",sourceRef:"osm:way:351187849",sourceUrl:"https://www.openstreetmap.org/way/351187849",
+    correctedAddress:"Our Lady of Compassion Catholic Church, Green Street, Upton Park, London E13 9AX, United Kingdom",
+    reviewScope:"UPTON_PARK_OUR_LADY_OF_COMPASSION_CATHOLIC_CHURCH_BUILDING_NOT_PRIMARY_SCHOOL",
+    evidence:Object.freeze(["https://mapcarta.com/W351187849","https://www.dioceseofbrentwood.net/parish/upton-park/church/our-lady-of-compassion/","https://uptonparkparish.org/"])}),
+  "RG-09724CA01972":Object.freeze({sourceId:"AO-B35-L-GB-9311BCBCBE20",name:"St Barnabas",country:"GB",addressNeedle:"Molesey",placeId:null,
+    lat:51.403138,lng:-0.356546,precision:"site",sourceRef:"independent:elmbridge-st-barnabas-church",sourceUrl:"https://en.wikipedia.org/wiki/List_of_places_of_worship_in_Elmbridge",
+    correctedAddress:"St Barnabas Roman Catholic Church, 28 Vine Road, East Molesey, Surrey KT8 9LF, United Kingdom",
+    reviewScope:"MOLESEY_ST_BARNABAS_1931_CATHOLIC_CHURCH_NOT_NEIGHBORING_HOUSES_OR_OTHER_PARISHES",
+    evidence:Object.freeze(["https://taking-stock.org.uk/building/molesey-st-barnabas/","https://www.stbarnabasmolesey.org/","https://gcatholic.org/churches/british-isles/92182"])}),
   "RG-2680C1DA8953":Object.freeze({sourceId:"AO-B34-L-GB-D81DD5E3D3A4",name:"Our Lady of Ransom",country:"GB",addressNeedle:"Eastbourne",placeId:null,
     lat:50.76611,lng:0.27773,precision:"site",sourceRef:"osm:way:487068951",sourceUrl:"https://www.openstreetmap.org/way/487068951",
     correctedAddress:"Our Lady of Ransom Catholic Church, 2-4 Grange Road, Eastbourne BN21 4EU, United Kingdom",
@@ -56,16 +66,6 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
   // Final site-geography backlog, batch 1 (2026-11-03).
   // OSM objects identify the physical church only; LMS/FSSP listing status
   // still does not establish a current traditional Mass or its celebrant.
-  "RG-01F176BB1074":Object.freeze({sourceId:"AO-B35-L-GB-91CDCC69A421",name:"Westminster Cathedral",country:"GB",addressNeedle:"London",placeId:null,
-    lat:51.49582,lng:-0.13952,precision:"site",sourceRef:"osm:way:10810446",sourceUrl:"https://www.openstreetmap.org/way/10810446",
-    correctedAddress:"Westminster Cathedral, Victoria Street, London, United Kingdom",
-    reviewScope:"WESTMINSTER_CATHEDRAL_CHURCH_BUILDING_NOT_CLERGY_HOUSE_OR_CATHEDRAL_HALL",
-    evidence:Object.freeze(["https://mapcarta.com/36313110","https://westminstercathedral.org.uk/the-cathedral/plan-your-visit/"])}),
-  "RG-02AEBA830666":Object.freeze({sourceId:"AO-B34-L-GB-D2A6AB6CE828",name:"Downside Abbey",country:"GB",addressNeedle:"Radstock",placeId:null,
-    lat:51.2557,lng:-2.49561,precision:"site",sourceRef:"osm:way:208920439",sourceUrl:"https://www.openstreetmap.org/way/208920439",
-    correctedAddress:"Abbey Church of St Gregory the Great, Downside Abbey, Stratton-on-the-Fosse, Somerset, United Kingdom",
-    reviewScope:"DOWNSIDE_ABBEY_CHURCH_NOT_DOWNSIDE_SCHOOL_OR_NEARBY_ANGLICAN_CHURCH",
-    evidence:Object.freeze(["https://mapcarta.com/36304310","https://historicengland.org.uk/listing/the-list/list-entry/1058633","https://www.downsideabbey.co.uk/contact/"])}),
   "RG-3315DA94EE1D":Object.freeze({sourceId:"AO-B34-L-GB-29141826F311",name:"Our Lady of the Assumption & English Martyrs",country:"GB",addressNeedle:"Cambridge",placeId:null,
     lat:52.19876,lng:0.12739,precision:"site",sourceRef:"osm:way:33167535",sourceUrl:"https://www.openstreetmap.org/way/33167535",
     correctedAddress:"Our Lady and the English Martyrs, Hills Road and Lensfield Road, Cambridge CB2 1JR, United Kingdom",
@@ -81,11 +81,6 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
     correctedAddress:"Herz Jesu Kirche, Schwamendingenstrasse 55, 8050 Zürich-Oerlikon, Switzerland",
     reviewScope:"ZURICH_OERLIKON_HERZ_JESU_CHURCH_NOT_ADJACENT_CHAPEL_OR_CEMETERY",
     evidence:Object.freeze(["https://mapcarta.com/de/W60796258","https://herz-jesu.ch/","https://www.personalpfarrei.ch/Pfarrei/messorte.php"])}),
-  "RG-00D589BAB16C":Object.freeze({sourceId:"ao-fssp-church-of-st-mary-538-broadway-providence-ri-02909-usa",name:"Church of St Mary",country:"US",addressNeedle:"538 Broadway",placeId:null,
-    lat:41.81761,lng:-71.4367,precision:"site",sourceRef:"osm:way:314290719",sourceUrl:"https://www.openstreetmap.org/way/314290719",
-    correctedAddress:"St Mary's on Broadway, 538 Broadway, Providence, RI 02909, USA",
-    reviewScope:"PROVIDENCE_ST_MARY_BROADWAY_CHURCH_BUILDING_NOT_ADJACENT_SCHOOL_OR_PARKING",
-    evidence:Object.freeze(["https://mapcarta.com/W314290719","https://stmarypvdri.org/contact/","https://fssp.com/apostolate/fssp-providence/"])}),
   "RG-028C2D07EF1C":Object.freeze({sourceId:"AO-AMER-R28-US-30-19",name:"St Mary",country:"US",addressNeedle:"Hagerstown",placeId:null,
     lat:39.6446277,lng:-77.7249439,precision:"site",sourceRef:"osm:way:956997178",sourceUrl:"https://www.openstreetmap.org/way/956997178",correctedAddress:"St Mary Catholic Church, 224 West Washington Street, Hagerstown, MD 21740, USA",
     reviewScope:"HAGERSTOWN_SAINT_MARY_CHURCH_BUILDING_NOT_PARISH_OFFICE",evidence:Object.freeze(["https://saintmarysonline.org/contact/","https://archbaltcopy.diocesanweb.org/parishes/all-parishes/st-mary-hagerstown/"])}),
