@@ -38,8 +38,8 @@ for(const id of proof.firstTwelveForPrintComparison){
 
 // One newly prioritized source: Exaltabo te, original 1961 printed folio 90,
 // witnessed in the archived GregoBase source-page image 116.
-assert.equal(FIRST12_1961_FACSIMILES.at(-1).scoreId,"GREGOBASE-648");
-assert.equal(FIRST12_1961_FACSIMILES.at(-1).scanned1961PageUrl,
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES.at(-1).scoreId,"GREGOBASE-648");
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES.at(-1).scanned1961PageUrl,
  "https://gregobase.selapa.net/sources/2/116.png");
 const printSpans=new Map([
  ["GREGOBASE-475",["392","393"]],["GREGOBASE-782",["362","363"]],
