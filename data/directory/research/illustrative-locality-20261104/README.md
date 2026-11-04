@@ -9,21 +9,23 @@ The user-facing TLM Atlas is primarily a **church discovery and source-informati
 - Worldwide directory: **2,582** existing records (2,579 CL2 physical sites plus 3 separately published additions), unchanged.
 - Initial mapped baseline on `main`: **2,147**.
 - Frozen unpinned research records: **435**, each separately assessed in `review.v1.json`.
-- Excel-approved **illustrative locality** additions: **160**. The canonical 2,582-profile Location Master retains eight existing approved precise-site candidates (not downgraded to town centroids) and one Sheffield St Joseph identity hold. Poprad and Cagliari Santa Croce remain on their previous holds.
-- Identity / alias / historical / closure / Excel identity holds: **10**.
+- Excel-approved **illustrative locality** additions: **158**. The canonical 2,582-profile Location Master retains eight existing approved precise-site candidates (not downgraded to town centroids) and one Sheffield St Joseph identity hold. Poprad and Cagliari Santa Croce remain on their previous holds.
+- Identity / alias / historical / closure / Excel identity holds: **12**.
 - Ambiguous gazetteer matches: **8**.
 - Excel-approved precise-site markers excluded from the locality overlay: **8** (to be handled in a separate exact-site import).
 - No sufficiently reliable locality match: **249**.
-- Potential mapped count after all 160 additions are safely released: **2,307 / 2,582** (89.4%), leaving **275** unpinned.
+- Potential mapped count after all 158 additions are safely released: **2,305 / 2,582** (89.3%), leaving **277** unpinned.
 - **No new active Mass, Mass time, canon, Una Cum, canonical status, Missal edition or priest assertions.**
 
-All 160 admitted positions are **centres of named populated places**. They are neither church footprints, chapel entrances, church street addresses nor validated GPS destinations.
+All 158 admitted positions are **centres of named populated places**. They are neither church footprints, chapel entrances, church street addresses nor validated GPS destinations.
 
 ## Data provenance
 
 The locality gazetteer is `joelacus/world-cities/world_cities_15000_(including_all_states_and_counties).csv`, pinned to commit `e9afd6a75709df79ce9c3d1332eac2c4b5937477` and Git blob `95a1e4245fc0ef338785fd9da5369f812dfb16ba`. The derived locations are from **GeoNames, CC BY 4.0**. Attribution is retained: *GeoNames contributors · CC BY 4.0 · locality only, not the church*. Full source: https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv
 
 The review joins the frozen CL2 country, exact source identifier, exact church title and source location description. The 2026-11-04 Google Sheets Location Master approval is recorded under each canonical CL2 ID on **All Venues** (candidate coordinates, precision, source, reviewer decision, and caution). Earlier precise-site approvals and explicit identity holds were preserved unchanged. US matches additionally require a state match. Distinct same-named towns are not auto-selected; the incomplete smaller-village cohort is left unpinned rather than guessed.
+
+Historical CL2 batch 8–11 Kłodzko chapel and batch 12–17 San Jose chapel source-identity holds supersede their earlier illustrative candidate approvals. Both records now read `Needs more evidence` in the canonical Excel `All Venues` and `Unpinned Queue` tabs; the GeoNames town coordinates remain research-only and never enter the public projection.
 
 ## Safety, existing functionality and maintenance
 
@@ -42,6 +44,6 @@ node tests/tlm-illustrative-locality-pins.mjs
 node tests/cl2-worldwide-directory-acceptance.mjs
 ```
 
-The targeted workflow runs on changed TLM files; existing Directory, main, Explore browser and release gates remain required. The 160 localities are **Excel-approved for illustrative discovery only, but remain candidates in a draft PR**, not published production pins until all relevant checks and release review pass.
+The targeted workflow runs on changed TLM files; existing Directory, main, Explore browser and release gates remain required. The 158 localities are **Excel-approved for illustrative discovery only, but remain candidates in a draft PR**, not published production pins until all relevant checks and release review pass.
 
 This code is a **controlled change of the precision contract**; no alteration to CL2 site counts, canonical IDs, approved UI, Schola, Sacred Atlas or unrelated PR workstreams.
