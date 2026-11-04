@@ -1,0 +1,249 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND21_ALL26_COMMONS_SEARCH_EVIDENCE_AND_EXCLUSION_V1",
+  "audit_date": "2026-11-04",
+  "scope": "UNVERIFIED_SOURCE_SCREEN_NO_PUBLICATION",
+  "provenance": {
+    "pr": 2421,
+    "actions_run_id": 41816227649,
+    "actions_job_id": 126527545849,
+    "raw_artifact_id": 13315285872,
+    "raw_zip_filename": "AO_Sacred_Atlas_Round21_26_Commons_Source_Search.zip",
+    "script": "tools/atlas/recover-sacred-atlas-26-commons-search.py",
+    "source_api": "Commons generator=search, File namespace only",
+    "requests_completed": 52,
+    "rate_limit_429": false
+  },
+  "counts": {
+    "target_places": 26,
+    "search_hit_places": 17,
+    "places_without_search_hits": 9,
+    "raw_file_search_hits": 190,
+    "unique_raster_images": 31,
+    "minimum_format_dimension_pass": 29,
+    "photographs_independently_identified_as_correct_target_building": 0,
+    "new_covers_eligible_from_automatic_search": 0,
+    "previously_known_manual_Akita_subject_file": 1,
+    "editorial_approved": 0,
+    "published": 0
+  },
+  "site_screens": [
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "raw_hits": 12,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "raw_hits": 22,
+      "raster_images": 8,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Original church St Mary not depicted; one image is the former St Stephen the King RC Church, a different Oswego building; others NARA census/maps/graphics.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-anne-fiskdale",
+      "raw_hits": 12,
+      "raster_images": 11,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "All raster results show cemetery chapels in Hungary/Poland or unrelated sculpture, not St Anne Shrine in Fiskdale, Massachusetts.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "raw_hits": 3,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "raw_hits": 1,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Generic Commons full-text result is a public-domain Mexican history PDF; independent direct source record for real Akita statue is stored separately.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "raw_hits": 12,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "raw_hits": 12,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "raw_hits": 13,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "raw_hits": 6,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "raw_hits": 19,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "raw_hits": 24,
+      "raster_images": 12,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Raster results depict Holy Trinity churches in Niš, Riga, Ethiopia, Yangon, Kazakhstan, Russia and other countries; none is Kingston, Jamaica.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MW:maula-cathedral-lilongwe",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AS:holy-family-cathedral-tafuna",
+      "raw_hits": 12,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PG:holy-cross-procathedral-vanimo",
+      "raw_hits": 2,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "raw_hits": 6,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MY:st-jude-church-rawang",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "raw_hits": 0,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "raw_hits": 24,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search includes Sacred Heart books and unrelated Hales people; actual shrine is statue/fountain, not an ecclesiastical building.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "raw_hits": 1,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "raw_hits": 9,
+      "raster_images": 0,
+      "disposition": "NO_VERIFIED_EXACT_SITE_BUILDING_COVER_FROM_BROAD_COMMONS_SEARCH",
+      "exclusion_note": "Search results contain books, generic terms, records, or no matching file. No exact target building photograph established.",
+      "publication_authorized": false
+    }
+  ],
+  "independent_Akita_subject_lead": "data/geography/research/sacred-atlas-round21-akita-hales-subject-and-rights-20261104.v1.json",
+  "next_method": "Do not repeat this low-yield broad full-text search for the same target IDs. Prioritize open-licensed direct source photos with exact site, building and rights evidence, and obtain explicit selection of already verified 25-photo batch.",
+  "rules": [
+    "A 1024×768 format pass is not building identity, photo clearance, or suitability.",
+    "Search result counts include 159 non-raster files and 31 unrelated rasters; do not present 190 as usable image leads.",
+    "Exclude images of former St Stephen in Oswego instead of St Mary; Hungarian cemetery chapels instead of Fiskdale; and foreign Holy Trinity Cathedrals instead of Kingston.",
+    "Keep original 26-ID frozen cohort even though Akita's separate source record is now linked to the review.",
+    "Do not contact copyright owners or incur fees.",
+    "No canonical Place, approved gallery or live cover media altered."
+  ]
+}
