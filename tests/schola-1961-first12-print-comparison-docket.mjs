@@ -45,7 +45,7 @@ for(const score of docket.scores){
   assert.equal(page.printedPitchNeumeRhythmTranscribed,false);
  }
  for(const key of ["printedPitches","printedNeumes","printedRhythmicSigns",
-   "printedSyllabicUnderlay","1962SelectedProperUsage"])
+   "printedSyllabicUnderlay","selected1962ProperUsage"])
   assert.match(score.checks[key],/^PENDING_/);
  assert.equal(score.checks.editorialDecision,"NOT_APPROVED");
  assert.equal(score.approvedForNativeReader,false);
