@@ -944,7 +944,8 @@ function myCustomsDoor(){
 }
 function renderPrayHome(){
  const families=prayFamilies();
- if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon});
+ if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,
+  novenaCorpus:window.AO_NOVENAS_V3?.corpus,novenaSupplemental:window.AO_NOVENAS_V3?.supplemental});
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
  const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
@@ -3950,6 +3951,44 @@ function showInternalPrayerRouteError(button,id){
  return false;
 }
 function openPrayerOnly(id){prayerReturnView=view;prayerId=id;view='prayerOnly';render()}
+const PRAYER_SEARCH_FACETS=new Set(['prayer','litany','chaplet','novena','la']);
+function snapshotPraySearch(){
+ const root=mount(),input=root?.querySelector('[data-p435930-pilot-search]');
+ if(view!=='home'||!input?.value?.trim())return null;
+ return {query:input.value.slice(0,256),facets:[...root.querySelectorAll('[data-p435930-pilot-facet][aria-pressed="true"]')]
+  .map(x=>x.dataset.p435930PilotFacet).filter(id=>PRAYER_SEARCH_FACETS.has(id))};
+}
+function restorePraySearch(snapshot){
+ if(!PRAYER_PILOT_ENABLED||view!=='home'||typeof snapshot?.query!=='string')return false;
+ const root=mount(),input=root?.querySelector('[data-p435930-pilot-search]');
+ if(!input)return false;
+ const facets=new Set(Array.isArray(snapshot.facets)?snapshot.facets.filter(id=>PRAYER_SEARCH_FACETS.has(id)):[]);
+ root.querySelectorAll('[data-p435930-pilot-facet]').forEach(b=>
+  b.setAttribute('aria-pressed',String(facets.has(b.dataset.p435930PilotFacet))));
+ input.value=snapshot.query.slice(0,256);
+ filterPilotDiscovery(root,input.value);
+ input.focus({preventScroll:true});
+ return true;
+}
+async function openNovenaFromSearch(button,id){
+ const api=window.AO_NOVENAS_V3;
+ if(!api||(!Object.hasOwn(api.corpus||{},id)&&!Object.hasOwn(api.supplemental||{},id)))return false;
+ const returnSearch=snapshotPraySearch();
+ if(!returnSearch||button?.getAttribute('aria-busy')==='true')return false;
+ button.setAttribute('aria-busy','true');
+ let result=null;
+ try{result=await window.AO_MODULES?.open?.('pray.novenas',{novenaId:id,returnSearch,returnContext:PRAY_CTX});}
+ catch(error){console.error('Pray Novena search navigation failed',id,error)}
+ finally{button.removeAttribute('aria-busy')}
+ if(result===true||result?.ok===true)return true;
+ if(view==='home'&&button.isConnected){
+  const error=document.createElement('span');
+  error.dataset.aoPraySearchError=id;error.setAttribute('role','alert');
+  error.textContent=L('This novena could not be opened.','Impossible d’ouvrir cette neuvaine.');
+  button.insertAdjacentElement('afterend',error);
+ }
+ return false;
+}
 let externalFamilyEpoch=0;
 function clearExternalFamilyError(){
  document.querySelectorAll?.('[data-p435930-family-open-error]')?.forEach?.(node=>node.remove?.());
@@ -4058,6 +4097,11 @@ function onClick(e){
   b.setAttribute('aria-pressed',String(next));
   const input=mount()?.querySelector('[data-p435930-pilot-search]');
   filterPilotDiscovery(mount(),input?.value||'');
+  return;
+ }
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-p435930-pilot-novena')){
+  e.preventDefault?.();
+  void openNovenaFromSearch(b,b.dataset.p435930PilotNovena);
   return;
  }
  if(PRAYER_PILOT_ENABLED&&view==='home'&&b.dataset.p435930PilotPrayer){
@@ -4953,7 +4997,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={restoreHandoff,captureAppBackHandoff,captureRosaryAppBackHandoff,suspendRosaryAppBackHandoff,restoreRosaryAppBackHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={restoreSearch:restorePraySearch,restoreHandoff,captureAppBackHandoff,captureRosaryAppBackHandoff,suspendRosaryAppBackHandoff,restoreRosaryAppBackHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
