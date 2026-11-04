@@ -21,17 +21,18 @@
     "Google Maps search destination must be built from sourced name/address, never GeoNames centroid",
     "Do not copy provisional locality geometry into exact-site photo-location audit",
     "Any diocesan source-city conflict or locally disputed host must remain unpinned even if city can be geocoded",
-    "Excel All Venues approved site-precision proposals supersede locality centroids; Excel Needs more evidence identity holds remain unpinned"
+    "Excel All Venues approved site-precision proposals supersede locality centroids; Excel Needs more evidence identity holds remain unpinned",
+    "Existing CL2 batch08–17 identity/naming holds override generic locality acceptance even when gazetteer joins match towns: Kłodzko RG-B66-ACD5E3A16E10, San Jose RG-18E53EDD9E9C"
   ],
   "counts": {
     "current_published_map_pins": 2147,
     "existing_unmapped": 435,
-    "eligible": 160,
-    "identity_holds": 10,
+    "eligible": 158,
+    "identity_holds": 12,
     "ambiguous": 8,
     "no_safe_match": 249,
-    "possible_map_pins_if_all_eligible_published": 2307,
-    "remaining_after_eligible": 275,
+    "possible_map_pins_if_all_eligible_published": 2305,
+    "remaining_after_eligible": 277,
     "excel_exact_preferred": 8
   },
   "records": [
@@ -642,21 +643,16 @@
       "original_site_sources": [
         "https://sspx.org/en/list-sspx-chapels"
       ],
-      "lat": 37.33939,
-      "lng": -121.89496,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "San Jose",
-      "matched_admin1": "California",
-      "coordinate_source_ref": "geonames-locality:US:san-jose:california",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
-      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
-      "excel_review_date": "2026-11-04"
+      "status": "HOLD_EXISTING_CL2_IDENTITY_CONFLICT",
+      "rejected_illustrative_fallback": {
+        "lat": 37.33939,
+        "lng": -121.89496,
+        "locality": "San Jose",
+        "coordinate_source_ref": "geonames-locality:US:san-jose:california"
+      },
+      "identity_hold": "PREEXISTING_SAN_JOSE_NAMING_IDENTITY_CONFLICT_BATCH12_17",
+      "excel_reviewer_decision": "Needs more evidence",
+      "hold_reason": "Historical CL2 source-identity hold supersedes earlier locality approval; do not infer church from town centroid."
     },
     {
       "cl2_anchor": "RG-1A1E54C59588",
@@ -5039,21 +5035,16 @@
       "original_site_sources": [
         "https://tradycja-swidnica.org.pl/index.php/porzadek-celebracji"
       ],
-      "lat": 50.43488,
-      "lng": 16.66145,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Kłodzko",
-      "matched_admin1": "Lower Silesian Voivodeship",
-      "coordinate_source_ref": "geonames-locality:PL:klodzko:lower-silesian-voivodeship",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
-      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
-      "excel_review_date": "2026-11-04"
+      "status": "HOLD_EXISTING_CL2_IDENTITY_CONFLICT",
+      "rejected_illustrative_fallback": {
+        "lat": 50.43488,
+        "lng": 16.66145,
+        "locality": "Kłodzko",
+        "coordinate_source_ref": "geonames-locality:PL:klodzko:lower-silesian-voivodeship"
+      },
+      "identity_hold": "PREEXISTING_KLODZKO_CHAPEL_IDENTITY_OR_ALIAS_HOLD_BATCH08_11",
+      "excel_reviewer_decision": "Needs more evidence",
+      "hold_reason": "Historical CL2 source-identity hold supersedes earlier locality approval; do not infer church from town centroid."
     },
     {
       "cl2_anchor": "RG-B68-0B50D8945A40",
