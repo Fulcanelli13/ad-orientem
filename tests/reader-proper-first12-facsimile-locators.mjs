@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {FIRST12_1961_FACSIMILES,FIRST12_1961_FACSIMILE_SCHEMA,
+import {FIRST12_1961_FACSIMILES,SUPPLEMENTAL_1961_FACSIMILES,
+ VERIFIED_1961_FACSIMILES,FIRST12_1961_FACSIMILE_SCHEMA,
  first12PrintedFacsimileForScore}
  from "../src/mass/reader-proper-first12-1961-facsimile-locators.js";
 const root=new URL("../.tmp/schola-1962-selected-annual/",import.meta.url);
@@ -10,8 +11,36 @@ const pack=read("2026-selected-proper-first60-print-review.json");
 assert.equal(FIRST12_1961_FACSIMILE_SCHEMA,"ao-first12-gregorian-solesmes-1961-facsimile-locators-v1");
 assert.equal(FIRST12_1961_FACSIMILES.length,12);
 assert.equal(new Set(FIRST12_1961_FACSIMILES.map(x=>x.scoreId)).size,12);
-assert.deepEqual(FIRST12_1961_FACSIMILES.map(x=>x.scoreId),proof.firstTwelveForPrintComparison,
- "The pinned original facsimiles must match the top twelve selected-calendar worklist");
+// The 12 independently located original scans are a stable source cohort.
+// The selected 2026 calendar priority can change when previously failed
+// DayResolver Proper fetches become available. All 12 current priorities
+// must have an independently located page, but need not have the same order
+// as the historical acquisition batch.
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES.length,1);
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES[0].scoreId,"GREGOBASE-648");
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES[0].folio,"90");
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES[0].imageNumber,116);
+assert.equal(VERIFIED_1961_FACSIMILES.length,13);
+assert.equal(new Set(VERIFIED_1961_FACSIMILES.map(x=>x.scoreId)).size,13);
+assert.equal(new Set(VERIFIED_1961_FACSIMILES.flatMap(x=>
+ x.scannedFolios.map(y=>y.url))).size,15);
+assert.equal(proof.firstTwelveForPrintComparison.length,12);
+const currentPack=new Map(pack.candidates.map(x=>[x.scoreId,x]));
+for(const id of proof.firstTwelveForPrintComparison){
+ const original=currentPack.get(id);
+ assert.ok(original,"Current priority lacks source-backed score "+id);
+ const scan=first12PrintedFacsimileForScore(original);
+ assert.ok(scan,"New top-12 score has no independently confirmed printed page: "+id);
+ assert.equal(scan.sourceSpanMusicallyCompared,false);
+ assert.equal(proof.allScores.find(x=>x.scoreId===id)?.textExact,true,
+  "No variant held score may enter the current print priority");
+}
+
+// One newly prioritized source: Exaltabo te, original 1961 printed folio 90,
+// witnessed in the archived GregoBase source-page image 116.
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES.at(-1).scoreId,"GREGOBASE-648");
+assert.equal(SUPPLEMENTAL_1961_FACSIMILES.at(-1).scanned1961PageUrl,
+ "https://gregobase.selapa.net/sources/2/116.png");
 const printSpans=new Map([
  ["GREGOBASE-475",["392","393"]],["GREGOBASE-782",["362","363"]],
  ["GREGOBASE-265",["79","80"]],["GREGOBASE-1271",["383","384"]]
@@ -59,7 +88,7 @@ for(const candidate of FIRST12_1961_FACSIMILES){
   /1961_PRINTED_FACSIMILE_SOURCE_OR_READER_APPROVAL_DRIFT/);
 }
 assert.equal(first12PrintedFacsimileForScore(pack.candidates.find(x=>
- !FIRST12_1961_FACSIMILES.some(y=>y.scoreId===x.scoreId))),null);
+ !VERIFIED_1961_FACSIMILES.some(y=>y.scoreId===x.scoreId))),null);
 const html=readFileSync(new URL("../tools/mass/proper-1961-first60-collation.html",
  import.meta.url),"utf8");
 for(const selector of ["originalBookPanel","originalBookScan","scanStatus","scanZoom",
@@ -80,4 +109,4 @@ assert.ok(html.includes("data")||html.includes("document"),
  "The actual score comparison UI must remain script-driven");
 assert.equal(proof.counts.completePrintedMusicVerified,0);
 assert.equal(proof.counts.newlyPublicScores,0);
-console.log("PASS: 12 first-calendar printed original-folio locators matched to 1961 edition, unchanged GABC/roles, safe image fallback, zero source music approvals");
+console.log("PASS: 12 original + 1 supplemental printed 1961 source locators; current 12 priorities fully scanned, 15 independent folios, 0 musical approvals");

@@ -68,7 +68,12 @@ try{
   const batch=dates.slice(offset,offset+12);
   const response=await page.evaluate(async ids=>{
    const r=globalThis.AO_RUNTIME_V8?.resolver;
-   return Promise.all(ids.map(async date=>{
+   // Production DayResolver shares source-fetch/cache state. Parallel
+   // resolveDay calls race source transport and produce intermittent
+   // Proper.status='failed' for genuinely available 1962 formularies.
+   // Serialise each date so a temporary source load cannot silently remove
+   // chants from the editorial first-60 ranking.
+   const resolveOne=async date=>{
     try{
      const outcome=await r.resolveDay(date);
      const main=outcome?.day?.main??null;
@@ -79,7 +84,10 @@ try{
       sourcePath:proper?.sourcePath??outcome?.proper?.sourcePath??null,
       proper:proper??null};
     }catch(e){return {date,error:String(e?.message??e)}}
-   }));
+   };
+   const settled=[];
+   for(const date of ids)settled.push(await resolveOne(date));
+   return settled;
   },batch);
   raw.push(...response);
   if((offset+batch.length)%60===0||offset+batch.length===365)

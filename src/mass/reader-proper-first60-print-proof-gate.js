@@ -18,8 +18,12 @@ function expected60(packet,audit){
     packet.batch?.candidates!==60||packet.publication?.publicScores!==0||
     !Array.isArray(packet.candidates)||packet.candidates.length!==60||
     audit?.schema!=="ao-1962-gregorian-first60-complete-antiphon-text-audit-v1"||
-    audit.counts?.audited!==60||audit.counts.fullAntiphonLexicalEqual!==51||
-    audit.counts.literalDifferenceHolds!==9||
+    audit.counts?.audited!==60||
+    !Number.isInteger(audit.counts.fullAntiphonLexicalEqual)||
+    !Number.isInteger(audit.counts.literalDifferenceHolds)||
+    audit.counts.fullAntiphonLexicalEqual+audit.counts.literalDifferenceHolds!==60||
+    Object.keys(audit.counts.byFamily??{}).length!==3||
+    Object.values(audit.counts.byFamily).some(x=>x.exact+x.hold!==20)||
     audit.counts.noteGroupTokenizationHolds!==0||
     audit.publication?.publicReaderScores!==0||
     !Array.isArray(audit.scoreEvidence)||audit.scoreEvidence.length!==60)
@@ -140,7 +144,7 @@ export function buildFirst60PrintedMusicEvidence({packet,latinAudit,observations
  const scored=rows.map(row=>{
   const observation=observations?.evidence?.[row.scoreId+"|"+row.scoreGabcSha256];
   const status=verdict(row,observation);
-  if(!row.textExact&&observation)reject("NINE_TEXT_VARIANTS_CANNOT_RECEIVE_PRINT_APPROVAL");
+  if(!row.textExact&&observation)reject("TEXT_VARIANTS_CANNOT_RECEIVE_PRINT_APPROVAL");
   return Object.freeze({...row,observation:status});
  });
  const count=x=>scored.filter(x).length;
@@ -154,7 +158,7 @@ export function buildFirst60PrintedMusicEvidence({packet,latinAudit,observations
   schema:PROPER_PRINT_GATE_SCHEMA,status:"PRINT_MUSICAL_EVIDENCE_COLLECTION_NO_PUBLICATION",
   counts:{scores:60,fullLatinTextMatches:textExact,textVariantHolds:held,
    noteGroups:allGroups,textMatchedScoreNoteGroups:exactGroups,
-   pendingFolioImageComparisons:51,
+   pendingFolioImageComparisons:textExact,
    sourceImagesIndependentlyCompared:0,completePrintedMusicVerified:0,
    signedEditorialApprovals:0,newlyPublicScores:0},
   firstTwelveForPrintComparison:candidates.slice(0,12).map(x=>x.scoreId),
