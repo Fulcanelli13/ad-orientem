@@ -1,0 +1,47 @@
+name: Flemish masterpiece source quality — research only
+on:
+  push:
+    branches:
+      - research/artwork-original-pixels-20261104
+    paths:
+      - tools/artwork/flanders_four_pixel_preflight.py
+      - tests/test_flanders_four_pixel_preflight.py
+      - data/artwork/research/flanders-four-museum-photo-comparison.v1.json
+      - .github/workflows/flanders-masterpiece-source-preflight.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-image-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - run: python -m unittest discover -s tests -p test_flanders_four_pixel_preflight.py -v
+      - name: Fetch bounded original files into research QA artifacts
+        run: |
+          python tools/artwork/flanders_four_pixel_preflight.py \
+            --manifest data/artwork/research/flanders-four-museum-photo-comparison.v1.json \
+            --output artifacts/flanders-four-masterpiece-qa
+      - name: Assert publication and cropping disabled
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('artifacts/flanders-four-masterpiece-qa/report.json'))
+          assert r['publication'] is False and r['rights_verified_by_download'] is False and r['cropping'] is False
+          assert len(r['sources']) == 6
+          assert all(not x['publication'] for x in r['sources'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flanders-four-masterpiece-photo-qa
+          path: artifacts/flanders-four-masterpiece-qa/
+          if-no-files-found: warn
+          retention-days: 7
