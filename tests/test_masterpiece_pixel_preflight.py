@@ -34,6 +34,28 @@ class ArtworkOriginalQATest(unittest.TestCase):
                 self.assertEqual(im.size, (900,700))
             self.assertEqual(len(r["edge_tiles"]), 4)
 
+    def test_exact_direct_original_matches_approved_file(self):
+        page = "https://commons.wikimedia.org/wiki/File:Ecce_Homo,_PDUT1439.jpg"
+        r = qa.exact_original_info(qa.commons_title(page))
+        self.assertEqual(r["url"], "https://upload.wikimedia.org/wikipedia/commons/3/38/Ecce_Homo,_PDUT1439.jpg")
+        self.assertEqual(r["size"], 0)
+
+    def test_encoded_file_colon_is_supported(self):
+        page = "https://commons.wikimedia.org/wiki/File%3AAnnibale_Carracci_Adorazione_dei_Pastori_Orleans.png"
+        r = qa.exact_original_info(qa.commons_title(page))
+        self.assertIn("/5/5a/Annibale_Carracci_Adorazione_dei_Pastori_Orleans.png", r["url"])
+
+    def test_direct_recovery_fails_closed(self):
+        manifest = {"candidates": [{"approved_record_index": 264, "title": "Test",
+                                    "artist": "Test", "commons_file":
+                                    "https://commons.wikimedia.org/wiki/File:Ecce_Homo,_PDUT1439.jpg"}]}
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(qa, "get_bytes", side_effect=ValueError("HTTP 429")):
+                report = qa.process(manifest, pathlib.Path(folder), 1, direct_recovery=True)
+            self.assertEqual(report["items"][0]["status"], "HELD")
+            self.assertEqual(report["items"][0]["source_mode"], "DIRECT_APPROVED_TITLE_NO_LICENSE_METADATA")
+            self.assertFalse(report["rights_cleared_by_qa"])
+
     def test_unavailable_original_is_held(self):
         manifest = {"candidates": [{"approved_record_index": 1, "title": "Test",
                                     "artist": "Known", "commons_file":
