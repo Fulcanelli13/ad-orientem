@@ -41,7 +41,7 @@ import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,sy
 import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
-import {revealPrayerMosaicTile,clearPrayerMosaicReveal} from "./prayer-mosaic-reveal.js";
+import {revealPrayerMosaicTile,clearPrayerMosaicReveal,restorePrayerMosaicReveal} from "./prayer-mosaic-reveal.js";
 import {prayerDoorArtSlot,prayerEditorialArtworkMarkup,resolvePrayerEditorialArtwork,angelusOpeningArtworkSlot} from "./art-slot-map.v1.js";
 import {plannedPrayerArtworkSlot} from "./planned-photo-slots.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
@@ -470,7 +470,7 @@ function open(id,opts={}){
   if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn();
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
   navStack=[];familyId=null;
-  if(id==='pray.hub')view='home';
+  if(id==='pray.hub'){clearPrayerMosaicReveal();view='home';}
   else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
   else if(id==='pray.rosary'){
     const source=opts.sourceObject;
@@ -3669,6 +3669,9 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     onClick(event);
    },true);
   }
+  // An asynchronous source-owned render must not erase an already revealed
+  // gallery item between its first and second physical activations.
+  restorePrayerMosaicReveal(m);
  }
  if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
