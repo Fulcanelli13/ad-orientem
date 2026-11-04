@@ -73,7 +73,7 @@ for(const [id,loc] of pins){
  assert.ok(!action.url.includes("/maps/dir/"));
 }
 const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
-assert.equal(withheld.length,277);
+assert.equal(withheld.length,268);
 for(const r of withheld){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor]);
  const item=items.get(r.cl2_anchor);
@@ -93,11 +93,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2305);
-assert.equal(world.filter(x=>!x.map_publishable).length,277);
+assert.equal(world.filter(x=>x.map_publishable).length,2314);
+assert.equal(world.filter(x=>!x.map_publishable).length,268);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 Excel-approved provisional, 277 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 Excel-approved provisional, 268 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
