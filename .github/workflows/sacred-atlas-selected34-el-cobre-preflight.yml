@@ -1,0 +1,47 @@
+name: Sacred Atlas 34 selected photos — El Cobre original research preflight
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-selected34-existing-photo-recovery-20261104.v1.json'
+      - 'tools/atlas/verify-sacred-atlas-el-cobre-original-preflight.py'
+      - 'tests/sacred-atlas-selected34-el-cobre-preflight-contract.mjs'
+      - '.github/workflows/sacred-atlas-selected34-el-cobre-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-byte-check-no-publishing:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-selected34-el-cobre-byte-preflight-20261104') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate all 34 original user-selected photo holds
+        run: node tests/sacred-atlas-selected34-el-cobre-preflight-contract.mjs
+      - name: Check Python syntax without contacting Commons
+        run: python -m py_compile tools/atlas/verify-sacred-atlas-el-cobre-original-preflight.py
+      - name: Install image decoder for bounded source verification
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: One selected Commons original SHA1 / rights / binary preflight — never publish
+        run: python tools/atlas/verify-sacred-atlas-el-cobre-original-preflight.py
+      - name: Save temporary original-byte verification report and review preview only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-el-cobre-source-byte-preflight
+          path: |
+            /tmp/ao-atlas-el-cobre-byte-preflight-report.json
+            /tmp/ao-atlas-el-cobre-review-preview.webp
+          if-no-files-found: warn
+          retention-days: 14
