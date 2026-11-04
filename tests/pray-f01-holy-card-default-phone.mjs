@@ -33,6 +33,24 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
    const base="#aoPray435930.open";
+   // The approved F01 landing is a three-column, slightly rotated lace fan,
+   // not the later generic two/four-column product-card catalogue.
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null})),true);
+   const f01Door=page.locator(base+' [data-p435930-own="pray.library"]');
+   await f01Door.click();
+   await f01Door.click();
+   const fan=page.locator(base+" [data-ao-pray-essential-landing] .aoClaudeHolyFan");
+   await fan.waitFor({state:"visible",timeout:12000});
+   assert.equal(await fan.locator("button").count(),32);
+   const caseGeometry=await fan.evaluate(el=>({
+    columns:getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length,
+    firstRotation:getComputedStyle(el.querySelector("button")).transform,
+    overflow:Math.max(0,el.scrollWidth-el.clientWidth)
+   }));
+   assert.equal(caseGeometry.columns,3,"Approved F01 collection must use its literal three-column lace fan");
+   assert.notEqual(caseGeometry.firstRotation,"none","Claude fan-card tilt was lost to a generic-grid override");
+   assert.ok(caseGeometry.overflow<=2,"F01 fan overflows "+width+"px: "+JSON.stringify(caseGeometry));
+   await page.screenshot({path:resolve(output,"collection-"+width+".png"),animations:"disabled"});
    for(const [index,id] of ESSENTIAL_HOLY_CARD_IDS_V1.entries()){
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
     const option=page.locator(base+' [data-p435930-lib-open="'+id+'"]');
