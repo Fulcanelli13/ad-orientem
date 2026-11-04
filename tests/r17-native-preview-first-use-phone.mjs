@@ -48,8 +48,14 @@ try{
    },null,{timeout:90000});
    const initial=requests.length,initialScripts=requests.filter(r=>r.kind==="script").length;
    const nativePath="/src/mass/reader-native-preview.js";
+   const stagePaths=["/src/mass/reader-special-stage.js","/src/mass/reader-special-stage-styles.js"];
+   const assertStageDeferred=point=>{
+     for(const path of stagePaths)assert.equal(requests.filter(r=>r.path===path).length,0,
+       "Ceremonial stage must not load at "+point+": "+path);
+   };
    assert.equal(requests.filter(r=>r.path===nativePath).length,0,
      "Native R17 renderer should not load during Home startup");
+   assertStageDeferred("Home startup");
    assert.equal(Boolean(await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)),false,
      "Opening Home must not mount LIVE");
    await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
@@ -57,6 +63,7 @@ try{
    await door.locator("[data-home-h4-begin]").waitFor({state:"visible",timeout:15000});
    assert.equal(requests.filter(r=>r.path===nativePath).length,0,
      "H7 Mass door must not eagerly load native LIVE");
+   assertStageDeferred("H7 Mass door");
    await page.screenshot({path:resolve(out,"before-start-"+width+".png"),animations:"disabled"});
    const startAt=await page.evaluate(()=>performance.now());
    await door.locator("[data-home-h4-begin]").click();
@@ -73,6 +80,11 @@ try{
    assert.ok(result.cards>=60,"Native 65-family production reader did not mount: "+JSON.stringify(result));
    assert.ok(requests.filter(r=>r.path===nativePath).length>=1,
      "First Start must dynamically retrieve the original source-owned R17 renderer");
+   for(const path of stagePaths)assert.ok(requests.some(r=>r.path===path),
+     "First Start must load the source-owned ceremonial stage: "+path);
+   assert.ok(Boolean(await page.evaluate(()=>
+     document.getElementById("ao-reader-ceremony-stage-styles"))),
+     "The deferred ceremonial stage stylesheet was not installed");
    assert.deepEqual(errors,[],"Phone errors after R17 load: "+JSON.stringify(errors.slice(0,4)));
    const firstUseReadyMs=Math.round((await page.evaluate(()=>performance.now()))-startAt);
    const after=requests.length;
