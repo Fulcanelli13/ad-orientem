@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import {resolvePrayerEditorialArtwork} from "../src/pray/art-slot-map.v1.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/visual-acceptance");
@@ -1362,6 +1363,27 @@ try{
   // card instead of forcing an obsolete flat Latin/vernacular presentation.
   const contritionCard="#aoPray435930 .aoP435930LibraryReader [data-ao-essential-card='sacrament_act_of_contrition']";
   await page.waitForSelector(contritionCard,{state:"visible",timeout:5000});
+  // The merged PR #2354 exact Met release supersedes the Nov 1 research-only
+  // export. Do not misclassify its approved Holy Card image as unauthorized.
+  const cardSlot="COV-sacrament_act_of_contrition";
+  const releasedCardArt=resolvePrayerEditorialArtwork(cardSlot);
+  const metRelease=JSON.parse(await readFile(new URL(
+    "../data/prayer/artwork-editorial-20261101/met-two-frameless-eight-slot-release-20261103.v1.json",
+    import.meta.url),"utf8"));
+  const latourWork=metRelease.works.find(x=>x.artId==="latour");
+  assert.ok(latourWork?.slots.includes(cardSlot),
+    "Act of Contrition not among PR #2354 exact Met release slots");
+  assert.equal(releasedCardArt.state,"PUBLISHED_EXACT_PHOTO");
+  assert.equal(releasedCardArt.artId,"latour");
+  assert.equal(releasedCardArt.photo?.releasePr,2354);
+  assert.equal(releasedCardArt.photo?.source,latourWork.source);
+  assert.equal(releasedCardArt.photo?.image,latourWork.image);
+  assert.match(releasedCardArt.photo?.photographRights||"",
+    /Metropolitan Museum.*(?:CC0|public domain)/);
+  await page.waitForFunction(()=>{
+    const img=document.querySelector("#aoPray435930 .aoP435930LibraryReader [data-ao-essential-card='sacrament_act_of_contrition'] .aoClaudeHolyPlate img");
+    return img?.complete===true&&img.naturalWidth>0;
+  },null,{timeout:15000});
   const holyFront=await page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930");
     const card=root?.querySelector("[data-ao-essential-card='sacrament_act_of_contrition']");
@@ -1376,7 +1398,13 @@ try{
       duplicateTimelines:root?.querySelectorAll(".aoP435930LibraryReader .aoDevoSequenceTimeline").length??0,
       footer:root?.querySelectorAll(".aoClaudeHolyFoot").length??0,
       corpus:root?.querySelectorAll(".aoP435930EssentialBeat").length??0,
-      hasUnapprovedArt:card?.querySelectorAll(".aoClaudeHolyPlate img").length??0,
+      artCount:card?.querySelectorAll(".aoClaudeHolyPlate img").length??0,
+      artSlot:card?.querySelector(".aoClaudeHolyPlate")?.dataset?.aoEditorialSlot??null,
+      artSource:card?.querySelector(".aoClaudeHolyPlate")?.dataset?.aoEditorialSource??null,
+      artSrc:card?.querySelector(".aoClaudeHolyPlate img")?.getAttribute("src")??null,
+      artAlt:card?.querySelector(".aoClaudeHolyPlate img")?.getAttribute("alt")??null,
+      artCreditHref:card?.querySelector(".aoClaudeHolyArtCredit a")?.getAttribute("href")??null,
+      artNaturalWidth:card?.querySelector(".aoClaudeHolyPlate img")?.naturalWidth??0,
       legacyOpen:document.querySelector("#aoPrayerBookRoot")?.classList.contains("open")??false
     };
   });
@@ -1389,7 +1417,14 @@ try{
   assert.equal(holyFront.duplicateTimelines,0,"One Holy Card has a redundant one-of-one timeline");
   assert.equal(holyFront.footer,1,"Claude Holy Card lost its previous/next navigation");
   assert.ok(holyFront.corpus>0,"Holy Card lost its source-owned original prayer paragraphs");
-  assert.equal(holyFront.hasUnapprovedArt,0,"Placeholder Holy Card acquired unapproved sacred art");
+  assert.equal(holyFront.artCount,1,"Approved PR #2354 Holy Card must display exactly one released photograph");
+  assert.equal(holyFront.artSlot,cardSlot,"Holy Card lost its exact approved artwork slot");
+  assert.equal(holyFront.artSource,"released-exact","Holy Card lost its release provenance");
+  assert.equal(holyFront.artSrc,"/"+releasedCardArt.photo.image,"Wrong Met source derivative on Holy Card");
+  assert.equal(holyFront.artCreditHref,latourWork.source,"Holy Card has incorrect Met attribution link");
+  assert.equal(holyFront.artAlt,latourWork.title+" — "+latourWork.artist,
+    "Holy Card alt text differs from the released artist and work");
+  assert.ok(holyFront.artNaturalWidth>0,"Released Holy Card source photograph did not decode");
   assert.equal(holyFront.legacyOpen,false,"Legacy Prayer Book reopened inside Holy Card");
   await shot("03b-pray-library-prayer");
   await page.locator(contritionCard+" [data-p435930-essential-card-turn]").click();
