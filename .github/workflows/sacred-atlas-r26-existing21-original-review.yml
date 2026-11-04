@@ -1,0 +1,30 @@
+name: Sacred Atlas R26 — all 66 undecided Places: 21 cover-review and 43 lead-only (read only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-round26-existing21-cover-triage-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-r26-21place-photo-editorial-action-board-20261104.md'
+      - 'tests/sacred-atlas-r26-existing21-original-cover-triage-contract.mjs'
+      - 'data/geography/research/sacred-atlas-r26-43remaining-source-lead-triage-20261104.v1.json'
+      - 'tests/sacred-atlas-r26-remaining43-lead-triage-contract.mjs'
+      - '.github/workflows/sacred-atlas-r26-existing21-original-review.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-and-pending-editorial-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard 21 uncovered Places, 61 original cover options and zero approvals
+        run: |
+          node tests/sacred-atlas-r26-existing21-original-cover-triage-contract.mjs
+          node tests/sacred-atlas-r26-remaining43-lead-triage-contract.mjs
