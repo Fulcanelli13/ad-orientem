@@ -1,0 +1,30 @@
+name: TLM illustrative locality map precision gate
+
+on:
+  pull_request:
+    paths:
+      - 'data/directory/research/illustrative-locality-20261104/**'
+      - 'src/find/cl2-illustrative-locality-pins.js'
+      - 'src/find/cl2-physical-directory.js'
+      - 'src/find/tlm-church-profile.js'
+      - 'tests/tlm-illustrative-locality-pins.mjs'
+      - 'tests/cl2-worldwide-directory-acceptance.mjs'
+      - '.github/workflows/directory-tlm-illustrative-localities.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  precision-and-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify locality markers and no centroid navigation
+        run: node tests/tlm-illustrative-locality-pins.mjs
+      - name: Preserve worldwide CL2 physical-site identity and count
+        run: node tests/cl2-worldwide-directory-acceptance.mjs
