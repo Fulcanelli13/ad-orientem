@@ -1,9 +1,9 @@
 import {essentialHolyCardParts} from "./essential-holy-card-parts.js";
 
 /**
- * Essential Prayer reading sheet. The original Claude Holy Card remains
- * available as the explicit legacy presentation; this is the Latin-first
- * continuous reading alternative. All words come from canonical prayer data.
+ * Essential Prayer continuous reading alternative. The approved original
+ * Claude reversible Holy Card is the default F01 presentation; this separate
+ * reader is opt-in and uses the exact same canonical prayer data.
  */
 export const ESSENTIAL_FLOW_READER_SCHEMA="ao-essential-flow-reader-v1";
 /** An explicitly selected reading alternative; never replace the approved F01 card by default. */
