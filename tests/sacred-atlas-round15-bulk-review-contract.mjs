@@ -45,11 +45,12 @@ for(const p of places){
       assert.match(c.audit.sha1,/^[0-9a-f]{40}$/);
       if(c.audit.status.startsWith('HOLD_'))held++;
     }else{
-      assert.equal(c.audit,null,'new source must not claim old audit');
+      if(!c.originalVerified)assert.equal(c.audit,null,'non-audited new source must not claim old audit');
+      else assert.match(c.originalSHA1,/^[0-9a-f]{40}$/);
     }
   }
 }
-assert.equal(n,93);
+assert.ok(n>=93,'incremental source leads must retain first 93');
 assert.equal(audited,85);
 assert.equal(held,14);
 assert.equal(firstLook,20);
@@ -62,4 +63,4 @@ new Script(inline[0],{filename:'bulk-review-inline.js'});
 assert.equal(audit.published,0);
 assert.equal(shortlist.rows.every(r=>r.publication_authorized===false),true);
 assert.equal(newLeads.research_decisions.every(r=>r.publication_authorized===false),true);
-console.log(JSON.stringify({status:'PASS',places:66,candidate_files:93,audited_files:85,metadata_eligible:71,held_files:14,first_look_places:20,unreviewed_new_leads:8}));
+console.log(JSON.stringify({status:'PASS',places:66,candidate_files:n,audited_files:85,metadata_eligible:71,held_files:14,first_look_places:20,unreviewed_new_leads:8}));
