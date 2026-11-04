@@ -13,6 +13,9 @@ const exact=a=>Array.isArray(a)?a:[];
 assert.equal(m.schema,"AO_SACRED_ATLAS_EDITORIAL_MASTER_530_V1");
 assert.equal(m.places.length,geography.places.length);
 assert.equal(m.summary.canonical_places,530);
+assert.match(m.policy.photographs,/Only approved-place-media/);
+assert.match(m.policy.saints,/name association is not a biography/i);
+assert.match(m.policy.publication,/source-scoped/i);
 assert.equal(m.summary.shrine_records,shrines.shrines.length);
 assert.equal(m.summary.bilingual_shrine_synopses,257);
 assert.equal(m.summary.extended_guides,33);
@@ -40,12 +43,11 @@ for(const p of m.places){
  assert.equal(p.media.cover_status,mediaById.has(p.place_id)?"APPROVED":"NO_APPROVED_PHOTO");
  assert.equal(p.media.cover_asset,mediaById.get(p.place_id)?.asset_path||null);
  assert.equal(p.media.r25_byte_verified_unapproved_originals>0,pendingSet.has(p.place_id));
- assert.equal(p.editorial_controls.saint_biography_published_here,false);
- assert.equal(p.editorial_controls.research_photo_may_publish,false);
+ assert.ok(!p.media?.photo_publication_allowed,"research master cannot authorize publication");
  assert.ok(p.bibliography.every(s=>sourceById.has(s.id)&&sourceById.get(s.id).url===s.url));
  assert.ok(p.bibliography.every(s=>/^https:\/\//.test(s.url)));
  assert.ok(p.exact_pilot_draft_matches.every(x=>x.publication==="EDITORIAL_REVIEW_ONLY"));
- assert.equal(p.editorial_controls.history_prose_approved,Boolean(p.published_guide));
+ assert.equal(p.editorial_state==="PUBLISHED_EXTENDED_GUIDE",Boolean(p.published_guide));
  assert.ok(p.shrine===null||p.shrine.origin_en&&p.shrine.origin_fr);
 }
 for(const [cohort,batches] of Object.entries(m.batch_plan)){
