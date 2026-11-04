@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+// Round 17 original SHA1 and non-publication reconciliation.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const base="data/geography/";
+const read=f=>JSON.parse(readFileSync(base+f,"utf8"));
+const records=read("research/sacred-atlas-round17-ten-original-integrity-20261104.v1.json");
+const first=read("research/sacred-atlas-round16-ten-visual-cover-candidates-20261104.v1.json");
+const approved=read("approved-place-media.v1.json");
+const html=readFileSync(base+"research/sacred-atlas-undecided66-bulk-photo-review-20261104.html","utf8");
+const match=html.match(/const places=(.*?); const auditStatuses=/s);
+assert.ok(match);
+const page=JSON.parse(match[1]);
+assert.equal(records.summary.original_binary_integrity_pass,10);
+assert.equal(records.summary.original_sha1_changes,0);
+assert.equal(records.summary.user_approved,0);
+assert.equal(records.summary.published,0);
+assert.equal(records.rows.length,10);
+assert.equal(first.rows.length,10);
+assert.equal(approved.items.length,379);
+const used=new Set(approved.items.map(i=>i.source_sha1).filter(Boolean));
+const seen=new Set();
+for(const r of records.rows){
+  assert.equal(r.original_bytes_verified,true);
+  assert.equal(r.digest_and_size_match,true);
+  assert.equal(r.original_sha1_from_current_commons,r.actual_original_sha1_downloaded);
+  assert.match(r.actual_original_sha1_downloaded,/^[0-9a-f]{40}$/);
+  assert.ok(r.actual_original_size_bytes>=100000 && r.actual_original_size_bytes<32000000);
+  assert.equal(r.user_selected_cover,false);
+  assert.equal(r.full_resolution_scene_adjudicated,false);
+  assert.equal(r.rights_fully_cleared,false);
+  assert.equal(r.published,false);
+  assert.ok(!used.has(r.actual_original_sha1_downloaded),"duplicate with approved cover");
+  assert.ok(!seen.has(r.actual_original_sha1_downloaded),"duplicate SHA in ten candidates");
+  seen.add(r.actual_original_sha1_downloaded);
+  const prior=first.rows.find(x=>x.place_id===r.place_id);
+  assert.equal(prior?.source_title,r.source_title);
+  if(prior.expected_source_sha1)assert.equal(prior.expected_source_sha1,r.actual_original_sha1_downloaded);
+  const p=page.find(x=>x.id===r.place_id);
+  const f=p?.candidates.find(x=>x.title===r.source_title);
+  assert.ok(f,"proof refers to missing editor source");
+  assert.equal(f.originalVerified,true);
+  assert.equal(f.originalSHA1,r.actual_original_sha1_downloaded);
+  assert.equal(f.originalSize,r.actual_original_size_bytes);
+  assert.equal(p.top10Candidate,r.source_title);
+}
+assert.equal(page.filter(x=>x.candidates.some(y=>y.originalVerified)).length,10);
+console.log(JSON.stringify({status:"PASS",originals_verified:10,sha1_collisions:0,previously_approved_covers:379,published_new:0}));
