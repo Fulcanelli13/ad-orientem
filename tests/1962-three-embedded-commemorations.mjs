@@ -104,9 +104,19 @@ for(const [date,path,placeholder] of cases){
   d.principalRank===2:d.principalRank===3);
  assert.equal(d.readerEN.ready,false);
  assert.equal(d.readerFR.ready,false);
- for(const lang of ["la","en","fr"])
+ // The Holy Innocents' original Latin Mass has a same-section
+ // commemoration inheritance through St Stephen; the English/French direct
+ // 12-28 files omit those keys. Do not invent them. Require three-language
+ // Christmas Mass source witness before considering recovery.
+ const originalLanguages=date==="2026-12-28"?["la"]:["la","en","fr"];
+ for(const lang of originalLanguages)
   assert.equal(d.sectionWitnesses[path][lang]["Commemoratio Oratio"].rows>0,true,
    date+" original embedded commemoration absent: "+lang);
+ if(date==="2026-12-28"){
+  for(const lang of ["en","fr"])
+   assert.equal(d.sectionWitnesses["Sancti/12-25m3"][lang].Oratio.rows>0,true,
+    "Pinned Christmas original Collect absent: "+lang);
+ }
 }
 assert.equal(report.publication.scoreApprovals,0);
 console.log("PASS pinned three-date original embedded commemorations located; 3-language witnesses; all 3 reader holds retained, no publication");
