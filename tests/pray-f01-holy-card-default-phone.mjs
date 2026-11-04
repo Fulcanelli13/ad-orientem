@@ -38,9 +38,7 @@ try{
     const option=page.locator(base+' [data-p435930-lib-open="'+id+'"]');
     assert.equal(await option.count(),1,"Canonical Essential Prayer absent from library: "+id);
     await option.click({timeout:12000});
-    const card=page.locator(base+' [data-ao-claude-holy-card] [data-ao-essential-card="'+id+'"]');
-    // The article is itself the Holy Card element; do not rely on an inner surrogate.
-    const holy=page.locator(base+'.open:not([hidden]) .aoClaudeHolyCard[data-ao-essential-card="'+id+'"]');
+    // The article itself is the original Holy Card, not a substitute inner reader.
     const present=page.locator(base+' .aoClaudeHolyCard[data-ao-essential-card="'+id+'"]');
     await present.waitFor({state:"attached",timeout:12000});
     assert.equal(await present.count(),1,"Original Claude reversible card must own "+id);
@@ -64,7 +62,10 @@ try{
      assert.equal(await present.locator(".aoClaudeHolyBackScroll .aoP435930EssentialBeat[lang=en]").count()>0,true);
      assert.equal(await present.locator(".aoClaudeHolyBack").getAttribute("aria-hidden"),"false",
       "Changing language must not reset the reading side of the Holy Card");
-     await turn.click();
+     await page.screenshot({path:resolve(output,id+"-prayer-"+width+".png"),animations:"disabled"});
+     // Keyboard activation targets the reversible card itself rather than
+     // a prayer paragraph, which intentionally captures its own clicks.
+     await turn.press("Enter");
      assert.equal(await present.locator(".aoClaudeHolyFront").getAttribute("aria-hidden"),"false",
       "Card must flip back without losing the original source owner");
      await page.screenshot({path:resolve(output,id+"-"+width+".png"),animations:"disabled"});
