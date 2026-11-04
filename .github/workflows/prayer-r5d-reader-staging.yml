@@ -5,6 +5,8 @@ on:
       - data/pray/research/r5d-21-work-canonical-source-ledger.v1.json
       - tests/fixtures/prayer-r5d-reader-preview.v1.js
       - tests/prayer-r5d-first-release-crosswalk.mjs
+      - tests/prayer-r5d-destination-routing-policy.mjs
+      - data/pray/research/r5d-first-cohort-53-destinations.v1.json
       - tests/prayer-r5d-research-reader-mount-phone.mjs
       - .github/workflows/prayer-r5d-reader-staging.yml
       - assets/prayer/research/r5d-commons-originals/**
@@ -23,7 +25,9 @@ jobs:
         with:
           node-version: '22'
       - name: Fail closed on hash, identity, publication or Rosary change
-        run: node tests/prayer-r5d-first-release-crosswalk.mjs
+        run: |
+          node tests/prayer-r5d-first-release-crosswalk.mjs
+          node tests/prayer-r5d-destination-routing-policy.mjs
       - name: Upload research stage evidence
         uses: actions/upload-artifact@v4
         if: always()
