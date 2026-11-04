@@ -33,6 +33,12 @@ class LyonSourceDiscoveryTest(unittest.TestCase):
             self.assertTrue(m["must_verify_visual_identity"])
         self.assertFalse(result["publication"])
 
+    def test_same_artist_different_subject_not_accepted(self):
+        markup = '<img alt="Nicolas Poussin La Mort de Chione" src="/sites/mba/files/content/medias/images/poussin_chione_presse.jpg">'
+        result = d.collect(markup)
+        poussin = next(x for x in result["targets"] if x["approved_record_index"] == 373)
+        self.assertEqual(poussin["matches"], [])
+
     def test_no_false_publication_when_no_match(self):
         result = d.collect('<img src="/sites/mba/files/other.jpg" alt="Nature morte">')
         self.assertTrue(all(not t["matches"] for t in result["targets"]))
