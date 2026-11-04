@@ -43,7 +43,8 @@
     "Do not increase the static image decoder pixel/size thresholds without a separate demonstrated safe path.",
     "Never set rights_verified, subject_verified, crop_reviewed, or APPROVED from source metadata alone.",
     "GitHub Actions and GitHub Pages only; no Vercel; no paid licences or contacting rights owners.",
-    "All six over-limit originals exceed the 32 MB original-file cap; Vatican, Madonna del Sasso and Arthunkal also exceed 65 MP. Do not silently use smaller Commons thumbnails as byte-verified equivalents to the selected original."
+    "All six over-limit originals exceed the 32 MB original-file cap; Vatican, Madonna del Sasso and Arthunkal also exceed 65 MP. Do not silently use smaller Commons thumbnails as byte-verified equivalents to the selected original.",
+    "Visual source page review identified visible lower-right El Cobre 'dani2010 copyright' signature: no unmodified full-frame cover release despite Commons licence and original-byte checks."
   ],
   "first_two_source_rights_screen": {
     "cuba": {
@@ -56,8 +57,9 @@
       "source_description_revision": 1197765293,
       "panorama_jurisdiction": "Cuba",
       "panorama_source": "https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Cuba",
-      "finding": "Photographer attribution and licence shown on Commons; Cuba panorama provision reported as permitting reproduction of public-place art. Independently confirm applicability and current original; no publication decision.",
-      "stage": "SOURCE_BYTE_PREFLIGHT_ELIGIBLE_NO_RELEASE"
+      "finding": "Commons source and photo rights evidence are sound, but visible lower-right 'dani2010 copyright ©' watermark/signature prevents pristine full-frame use. Original-byte preflight is still research only. Do not publish or crop without a separate editorial decision.",
+      "stage": "WATERMARK_VISUAL_HOLD_NO_RELEASE",
+      "source_visual_review": "https://commons.wikimedia.org/wiki/File:De_extremo_a_extremo,_Santuario_Nacional_de_la_Virgen_del_Cobre_-_panoramio.jpg"
     },
     "kuwait": {
       "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
@@ -89,7 +91,8 @@
     "report_path": "/tmp/ao-atlas-el-cobre-byte-preflight-report.json",
     "preview_path": "/tmp/ao-atlas-el-cobre-review-preview.webp",
     "publication_authorized": false,
-    "note": "Original-byte verification and single full-frame review preview only; never write to assets/approved or modify app registries."
+    "note": "Source-byte integrity only; photo visibly includes prominent lower-right copyright watermark/signature. Requires independent crop/alternative editorial decision; no publication authorization.",
+    "known_visual_hold": "WATERMARK_LOWER_RIGHT_EDITORIAL_CROP_OR_ALT_DECISION"
   },
   "rows": [
     {
@@ -294,6 +297,16 @@
       "current_metadata_review": {
         "original_size_bytes": 2529014,
         "source_description_revision": 1197765293
+      },
+      "current_visual_review": {
+        "scope": "VISIBLE_FULL_PHOTOGRAPH_WEB_PREVIEW_NOT_SOURCE_BYTE_INTEGRITY",
+        "evidence_url": "https://commons.wikimedia.org/wiki/File:De_extremo_a_extremo,_Santuario_Nacional_de_la_Virgen_del_Cobre_-_panoramio.jpg",
+        "watermark": "PROMINENT_LOWER_RIGHT_DANI2010_COPYRIGHT_SIGNATURE",
+        "image_is_not_pristine_full_frame": true,
+        "original_rank_one_remains_selected": true,
+        "release_hold": "EDITORIAL_WATERMARK_UNAPPROVED_CROP_REQUIRED",
+        "no_unapproved_crop_or_alt": true,
+        "publication_authorized": false
       }
     },
     {
