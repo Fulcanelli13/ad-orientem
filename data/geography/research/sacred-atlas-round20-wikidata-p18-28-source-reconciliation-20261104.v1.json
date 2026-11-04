@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND20_WIKIDATA_P18_EXHAUSTIVE_28_PLACE_AUDIT_V1",
+  "completed_at": "2026-11-04T10:30:00Z",
+  "provenance": {
+    "run_id": 41814372878,
+    "artifact_id": 13314087441,
+    "artifact_filename": "sacred-atlas-round20-p18.json",
+    "script": "tools/atlas/recover-sacred-atlas-28-wikidata-p18.py",
+    "query_limit": "up to 2 canonical label/alias queries per site, 5 candidate entities each",
+    "wikidata_requests": 47
+  },
+  "counts": {
+    "frozen_places_checked": 28,
+    "no_wikidata_label_match": 25,
+    "wikidata_entity_matches": 3,
+    "p18_file_links": 2,
+    "new_correct_cover_leads": 0,
+    "wrong_site_p18_files": 1,
+    "known_low_res_p18_duplicates": 1,
+    "entity_without_p18": 1,
+    "rate_limit_429_hits": 0,
+    "editorial_approved": 0,
+    "published": 0
+  },
+  "missing_entity_match_place_ids": [
+    "place:NZ:st-peter-chanel-russell",
+    "place:NG:ugwogo-nike-national-marian-shrine",
+    "place:NG:nne-enyemaka-umuaka",
+    "place:US:st-mary-assumption-oswego",
+    "place:BE:sanctuaire-sainte-julienne-cornillon",
+    "place:JP:our-lady-akita-convent",
+    "place:IE:solas-bhride-kildare",
+    "place:ZM:archdiocese-lusaka-marian-shrine",
+    "place:MZ:namaacha-fatima-sanctuary",
+    "place:TT:laventille-our-lady-fatima-shrine",
+    "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+    "place:CR:montes-oca-our-lady-lourdes-parish",
+    "place:GL:christ-the-king-catholic-church-nuuk",
+    "place:BB:st-patrick-catholic-cathedral-bridgetown",
+    "place:JM:holy-trinity-cathedral-kingston",
+    "place:MW:maula-cathedral-lilongwe",
+    "place:AS:holy-family-cathedral-tafuna",
+    "place:PG:holy-cross-procathedral-vanimo",
+    "place:IT:santuario-san-paolo-della-croce-ovada",
+    "place:MY:st-jude-church-rawang",
+    "place:PE:santuario-san-martin-de-porres-jicamarca",
+    "place:US:sacred-heart-shrine-hales-corners",
+    "place:NI:ermita-guadalupe-matagalpa",
+    "place:LK:national-shrine-our-lady-matara",
+    "place:PA:basilica-menor-jesus-nazareno-atalaya"
+  ],
+  "matched_entities": [
+    {
+      "place_id": "place:US:st-anne-fiskdale",
+      "qid": "Q18750372",
+      "source_title": "File:Exterior of the National Shrine of Saint Anne (Hagonoy, Bulacan) 06.jpg",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_National_Shrine_of_Saint_Anne_(Hagonoy,_Bulacan)_06.jpg",
+      "distance_m": 13546666.6,
+      "status": "EXCLUDED_WRONG_CONTINENT_PHILIPPINES_NOT_FISKDALE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "qid": "Q24254309",
+      "source_title": null,
+      "distance_m": null,
+      "status": "ENTITY_HAS_NO_P18",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "qid": "Q24046104",
+      "source_title": "File:Sacred Heart Cathedral, Freetown, Sierra Leone - Mapillary (gPahUHmYFk3EUBsmvbUKNw).jpg",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_Cathedral,_Freetown,_Sierra_Leone_-_Mapillary_(gPahUHmYFk3EUBsmvbUKNw).jpg",
+      "distance_m": 10.1,
+      "status": "EXACT_SITE_ALREADY_INDEXED_ORIGINAL_816x684_TOO_SMALL",
+      "publication_authorized": false
+    }
+  ],
+  "critical_research_outcome": "Wikidata P18 labels failed to recover any new eligible site cover. Keep exact-source research for remaining Places; avoid proposing unrelated image based only on broad saint name.",
+  "governance": [
+    "A Wikidata P18 image is not an open-media licence and does not independently verify a photo's depicted Place.",
+    "Wrong-country result Q18750372 is excluded by >13,500 km geographic mismatch; should never appear as a Fiskdale suggestion.",
+    "Exact Freetown Q24046104 photo remains a resolution hold and cannot satisfy a 1024x768 cover.",
+    "Results are fully documented; do not re-run same discovery unless canonical site data or available sources materially change.",
+    "No production media, gallery asset, cover choice or canonical Place location was modified."
+  ]
+}
