@@ -27,7 +27,7 @@ for(const needle of [
  "if sha!=row[\"expected_original_sha1\"]","hashlib.sha1(original).hexdigest()!=sha",
  "row[\"photographer\"].casefold() not in credit.casefold()",
  "if license_canon not in accepted","row[\"expected_original_dimensions\"]",
- "if not row[\"publication_authorized\"]"
+ "assert not row[\"publication_authorized\"]"
 ])assert.ok(script.includes(needle),"Missing source-first gate: "+needle);
 assert.ok(!script.includes("COVERS.write_text(")&&!script.includes("GALLERY.write_text("));
 assert.ok(!script.includes("assets/approved/place-media/"));
