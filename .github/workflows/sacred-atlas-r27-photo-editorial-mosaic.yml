@@ -1,0 +1,25 @@
+name: Sacred Atlas R27 offline 61-original photo review
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-r27-one-bulk-61-cover-editorial-mosaic-20261104.html'
+      - 'tests/sacred-atlas-r27-64-photo-editorial-mosaic-contract.mjs'
+      - '.github/workflows/sacred-atlas-r27-photo-editorial-mosaic.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  proof-and-editorial-role-fence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify all 64 source files, 61 valid cover roles, 19 suggestions and zero automatic selections
+        run: node tests/sacred-atlas-r27-64-photo-editorial-mosaic-contract.mjs
