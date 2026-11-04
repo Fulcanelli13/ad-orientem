@@ -42,6 +42,17 @@ try{
    const fan=page.locator(base+" [data-ao-pray-essential-landing] .aoClaudeHolyFan");
    await fan.waitFor({state:"visible",timeout:12000});
    assert.equal(await fan.locator("button").count(),32);
+   const collectionPlates=await fan.locator(".aoClaudeHolyCasePlate").evaluateAll(plates=>plates.map(el=>({
+     image:!!el.querySelector("img"),
+     words:!!el.querySelector(".aoClaudeHolyTypePlate b"),
+     background:getComputedStyle(el).backgroundColor
+   })));
+   assert.equal(collectionPlates.length,32);
+   assert.ok(collectionPlates.every(p=>p.image||p.words),
+     "Unreleased paintings must show a canonical typographic plate, never an empty black frame");
+   assert.ok(collectionPlates.some(p=>!p.image&&p.words),
+     "The review's approved-art hold must be visibly readable");
+
    const caseGeometry=await fan.evaluate(el=>({
     columns:getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length,
     firstRotation:getComputedStyle(el.querySelector("button")).transform,
@@ -65,6 +76,21 @@ try{
     assert.equal(await present.locator(".aoClaudeHolyFront").count(),1,id+" is missing artwork face");
     assert.equal(await present.locator(".aoClaudeHolyBack").count(),1,id+" is missing prayer face");
     assert.equal(await present.locator("[data-p435930-essential-card-turn]").count(),1,id+" has no flip control");
+    const flipAction=present.locator("[data-p435930-essential-flip-face]");
+    assert.equal(await flipAction.count(),1,id+" needs an explicit Flip button");
+    assert.ok(await flipAction.isVisible(),id+" Flip button is invisible");
+    const plate=present.locator(".aoClaudeHolyPlate");
+    assert.ok(await plate.locator("img").count()>0||await plate.locator(".aoClaudeHolyTypePlate").count()===1,
+      id+" must render an actual approved painting or a readable typography-only front");
+    if(index===0){
+      await flipAction.click();
+      assert.equal(await present.locator(".aoClaudeHolyBack").getAttribute("aria-hidden"),"false",
+        "Explicit flip action must show the source prayer");
+      await flipAction.click();
+      assert.equal(await present.locator(".aoClaudeHolyFront").getAttribute("aria-hidden"),"false",
+        "Flip action must return to artwork or typographic front");
+    }
+
     assert.ok(await present.locator(".aoP435930EssentialBeat").count()>0,id+" has no attested prayer paragraphs");
     if(index===0||id==="foundations_hail_mary"){
      const turn=present.locator("[data-p435930-essential-card-turn]");
