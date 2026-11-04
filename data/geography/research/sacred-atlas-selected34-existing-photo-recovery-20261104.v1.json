@@ -31,7 +31,10 @@
     "original_selected_no_reselection": 34,
     "source_metadata_pass_not_publication_approval": 2,
     "original_bytes_verified_this_batch": 0,
-    "new_media_approved": 0
+    "new_media_approved": 0,
+    "oversize_exceeds_32mb_source": 6,
+    "oversize_also_exceeds_65mp_pixel_cap": 3,
+    "recommended_oversize_treatment": "PRESERVE_SOURCE_HOLD_NO_GLOBAL_LIMIT_INCREASE"
   },
   "policy": [
     "Original rank-1 Photo Finder selected image is the editorial choice; don't replace by a new image, crop or alias.",
@@ -39,7 +42,8 @@
     "Rate-limited Commons responses are access holds, not editorial rejection; never bypass or rotate endpoints after HTTP 429.",
     "Do not increase the static image decoder pixel/size thresholds without a separate demonstrated safe path.",
     "Never set rights_verified, subject_verified, crop_reviewed, or APPROVED from source metadata alone.",
-    "GitHub Actions and GitHub Pages only; no Vercel; no paid licences or contacting rights owners."
+    "GitHub Actions and GitHub Pages only; no Vercel; no paid licences or contacting rights owners.",
+    "All six over-limit originals exceed the 32 MB original-file cap; Vatican, Madonna del Sasso and Arthunkal also exceed 65 MP. Do not silently use smaller Commons thumbnails as byte-verified equivalents to the selected original."
   ],
   "first_two_source_rights_screen": {
     "cuba": {
@@ -104,7 +108,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
       "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
       "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 5374843,
+        "source_description_revision": 1217887441
+      }
     },
     {
       "place_id": "place:VA:saint-peter-vatican",
@@ -122,7 +130,14 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
       "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 50457392,
+        "source_description_revision": 1223014421,
+        "original_pixels": 89149318,
+        "over_32mb_source": true,
+        "over_65mp_decoder": true
+      }
     },
     {
       "place_id": "place:IT:saint-paul-outside-walls-rome",
@@ -140,7 +155,14 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by/4.0",
       "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
       "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 32532870,
+        "source_description_revision": 1131279712,
+        "original_pixels": 45132032,
+        "over_32mb_source": true,
+        "over_65mp_decoder": false
+      }
     },
     {
       "place_id": "place:FR:basilique-visitation-annecy",
@@ -158,7 +180,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "current_audit_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 3562683,
+        "source_description_revision": 1118405193
+      }
     },
     {
       "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
@@ -176,7 +202,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by/3.0",
       "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 645762,
+        "source_description_revision": 1143573043
+      }
     },
     {
       "place_id": "place:HU:mariapocs-greek-catholic-basilica",
@@ -194,7 +224,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.5/hu/deed.en",
       "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
       "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 736554,
+        "source_description_revision": 1287765003
+      }
     },
     {
       "place_id": "place:CN:sheshan-our-lady-help-christians",
@@ -212,7 +246,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
       "current_audit_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 594481,
+        "source_description_revision": 1212536733
+      }
     },
     {
       "place_id": "place:GT:esquipulas-black-christ-basilica",
@@ -230,7 +268,11 @@
       "claimed_license_url": "",
       "current_audit_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
       "route": "HOLD_UNDERLYING_ARTWORK_OR_SOURCE_LEGAL_BASIS",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 2403391,
+        "source_description_revision": 1263995007
+      }
     },
     {
       "place_id": "place:CU:el-cobre-caridad-basilica",
@@ -248,7 +290,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by/3.0",
       "current_audit_status": "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW",
       "route": "ORIGINAL_BYTE_RIGHTS_SUBJECT_PREFLIGHT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 2529014,
+        "source_description_revision": 1197765293
+      }
     },
     {
       "place_id": "place:FI:st-henry-cathedral-helsinki",
@@ -266,7 +312,14 @@
       "claimed_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
       "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 37805021,
+        "source_description_revision": 1292866715,
+        "original_pixels": 37195612,
+        "over_32mb_source": true,
+        "over_65mp_decoder": false
+      }
     },
     {
       "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
@@ -284,7 +337,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by/4.0",
       "current_audit_status": "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW",
       "route": "ORIGINAL_BYTE_RIGHTS_SUBJECT_PREFLIGHT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 4107000,
+        "source_description_revision": 957377894
+      }
     },
     {
       "place_id": "place:SB:holy-cross-cathedral-honiara",
@@ -302,7 +359,11 @@
       "claimed_license_url": "",
       "current_audit_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
       "route": "HOLD_UNDERLYING_ARTWORK_OR_SOURCE_LEGAL_BASIS",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 4205349,
+        "source_description_revision": 1183264315
+      }
     },
     {
       "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
@@ -320,7 +381,14 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
       "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 49847153,
+        "source_description_revision": 1275113194,
+        "original_pixels": 78809688,
+        "over_32mb_source": true,
+        "over_65mp_decoder": true
+      }
     },
     {
       "place_id": "place:DE:marienbasilika-kevelaer",
@@ -338,7 +406,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
       "current_audit_status": "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY",
       "route": "REVIEW_EXACT_BUILDING_AND_DUPLICATE_SITE",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 820315,
+        "source_description_revision": 889563335
+      }
     },
     {
       "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
@@ -356,7 +428,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
       "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
       "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 11755745,
+        "source_description_revision": 1190961558
+      }
     },
     {
       "place_id": "place:DE:wieskirche",
@@ -374,7 +450,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
       "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
       "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 581058,
+        "source_description_revision": 1266834031
+      }
     },
     {
       "place_id": "place:FR:cathedrale-notre-dame-reims",
@@ -392,7 +472,14 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
       "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 36270928,
+        "source_description_revision": 1153955804,
+        "original_pixels": 39654096,
+        "over_32mb_source": true,
+        "over_65mp_decoder": false
+      }
     },
     {
       "place_id": "place:IN:st-andrews-basilica-arthunkal",
@@ -410,7 +497,14 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
       "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 35345315,
+        "source_description_revision": 1066342891,
+        "original_pixels": 199756800,
+        "over_32mb_source": true,
+        "over_65mp_decoder": true
+      }
     },
     {
       "place_id": "place:CZ:bazilika-svaty-hostyn",
@@ -428,7 +522,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by/3.0/pl/deed.en",
       "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
       "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 1269928,
+        "source_description_revision": 1032707138
+      }
     },
     {
       "place_id": "place:ES:basilica-san-isidoro-leon",
@@ -446,7 +544,11 @@
       "claimed_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
       "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 529619,
+        "source_description_revision": 1056197632
+      }
     },
     {
       "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
@@ -464,7 +566,11 @@
       "claimed_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
       "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 766039,
+        "source_description_revision": 941287476
+      }
     },
     {
       "place_id": "place:FR:basilique-notre-dame-buglose",
@@ -482,7 +588,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "current_audit_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 370466,
+        "source_description_revision": 1167671135
+      }
     },
     {
       "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
@@ -500,7 +610,11 @@
       "claimed_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
       "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
       "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 2778652,
+        "source_description_revision": 1202053775
+      }
     },
     {
       "place_id": "place:IT:p43-sg-0091-11888425",
@@ -518,7 +632,11 @@
       "claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.5",
       "current_audit_status": "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY",
       "route": "REVIEW_EXACT_BUILDING_AND_DUPLICATE_SITE",
-      "publication_allowed": false
+      "publication_allowed": false,
+      "current_metadata_review": {
+        "original_size_bytes": 742948,
+        "source_description_revision": 1247702159
+      }
     },
     {
       "place_id": "place:IT:sant-alfonso-pagani",
