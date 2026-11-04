@@ -34,10 +34,33 @@ try{
   const page=await context.newPage();
   const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
   const requestList=[];page.on("request",req=>requestList.push({url:req.url(),kind:req.resourceType()}));
+  // Observe actual Chromium transfer sizes and long tasks instead of
+  // mistaking Resource Timing's unavailable transferSize for a zero payload.
+  const networkResponses=new Map(),wireTransfers=[];
+  await page.addInitScript(()=>{
+    globalThis.__AO_H7_LONG_TASKS=[];
+    try{
+      const observer=new PerformanceObserver(list=>{
+        for(const entry of list.getEntries())
+          globalThis.__AO_H7_LONG_TASKS.push({start:entry.startTime,duration:entry.duration});
+      });
+      observer.observe({type:"longtask",buffered:true});
+    }catch{}
+  });
   try{
    await page.clock.setFixedTime(new Date("2026-11-04T12:00:00+04:00"));
    const cdp=await context.newCDPSession(page);
    await cdp.send("Emulation.setCPUThrottlingRate",{rate:4});
+   await cdp.send("Network.enable");
+   cdp.on("Network.responseReceived",event=>networkResponses.set(event.requestId,{
+     url:event.response.url,type:event.type,mimeType:event.response.mimeType,
+     status:event.response.status}));
+   cdp.on("Network.loadingFinished",event=>{
+     const response=networkResponses.get(event.requestId);
+     if(!response)return;
+     wireTransfers.push({...response,bytes:event.encodedDataLength||0});
+     networkResponses.delete(event.requestId);
+   });
    await page.goto(base+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
    const homeReady=()=>{const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
     const splash=document.querySelector("#ao-cinema-boot");
@@ -52,6 +75,17 @@ try{
       .find(x=>x.name==="first-contentful-paint")?.startTime??0)}));
    cold.requestCount=requestList.length;
    cold.scriptRequests=requestList.filter(x=>x.kind==="script"||/\.m?js(\?|$)/.test(x.url)).length;
+   const criticalTasks=await page.evaluate(()=>(globalThis.__AO_H7_LONG_TASKS||[])
+     .filter(x=>x.start<performance.now()));
+   cold.longTaskMs=Math.round(criticalTasks.reduce((a,x)=>a+x.duration,0));
+   cold.longTaskCount=criticalTasks.length;
+   cold.transferredBytes=wireTransfers.reduce((a,x)=>a+x.bytes,0);
+   cold.scriptTransferredBytes=wireTransfers
+     .filter(x=>x.type==="Script"||/\.(?:m?js)(?:\?|$)/.test(x.url))
+     .reduce((a,x)=>a+x.bytes,0);
+   cold.largestTransfers=[...wireTransfers].sort((a,b)=>b.bytes-a.bytes).slice(0,12)
+     .map(x=>({path:(()=>{try{return new URL(x.url).pathname}catch{return x.url}})(),
+       type:x.type,bytes:x.bytes}));
    // The original donor injects a title-sized "LITURGICAL DAY" kicker.
    // H7 replaces it with the wordmark/calendar/date hierarchy: it cannot
    // overlap the brand in either 320 or 390 px.
