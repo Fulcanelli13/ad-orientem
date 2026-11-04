@@ -26,7 +26,11 @@ const PRAYER_CATEGORY_P0_POLISH_CSS=String.raw`
  display:none!important;
 }
 #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover[data-ao-art-binding="editorial-pending"]{
+ height:174px;min-height:174px;max-height:174px;
  background:linear-gradient(138deg,#282c33,#14181f 66%,#0c1016);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover[data-ao-art-binding="editorial-pending"] .aoPrayDoorHeading{
+ bottom:14px;
 }
 #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters{
  margin-bottom:10px;
