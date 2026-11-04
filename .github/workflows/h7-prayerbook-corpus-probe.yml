@@ -1,0 +1,35 @@
+name: H7 PrayerBook corpus lazy-parser research
+on:
+  push:
+    branches:
+      - research/h7-prayerbook-corpus-probe-20261104
+    paths:
+      - tools/perf/probe-prayerbook-data-lazy.mjs
+      - .github/workflows/h7-prayerbook-corpus-probe.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: h7-prayer-corpus-probe-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare original and lazy Prayer/Rosary at 390 and 320 px
+        run: node tools/perf/probe-prayerbook-data-lazy.mjs
+      - name: Retain candidate benchmark and exact content parity
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h7-prayer-corpus-lazy-probe
+          path: artifacts/h7-prayer-corpus-probe/
+          if-no-files-found: warn
+          retention-days: 14
