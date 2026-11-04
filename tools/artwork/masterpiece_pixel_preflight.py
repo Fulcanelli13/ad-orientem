@@ -106,6 +106,15 @@ def process(manifest, out, limit):
             remaining -= len(raw)
             r["downloaded_source"] = url
             r.update(make_previews(raw, out, str(item["approved_record_index"])))
+            if item["approved_record_index"] in (174, 192):
+                staged = out / "staged-originals"
+                staged.mkdir(exist_ok=True)
+                ext = ".jpeg" if item["approved_record_index"] == 174 else ".jpg"
+                original_name = str(item["approved_record_index"]) + "-exact-original" + ext
+                (staged / original_name).write_bytes(raw)
+                r["staged_original_path"] = "staged-originals/" + original_name
+                r["staged_original_sha256"] = r["source_sha256"]
+                r["staged_original_publication"] = False
             r["status"] = "PIXELS_EXTRACTED_FOR_MANUAL_REVIEW"
         except Exception as exc:
             r["hold_reason"] = str(exc)[:240]
