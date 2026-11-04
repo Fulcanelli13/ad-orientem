@@ -6,7 +6,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
 import {CL2_PHYSICAL_SITE_COUNT,CL2_EXPECTED_R49_GROUPS} from "../src/find/cl2-physical-directory.js";
-// Of 735 original list-only sites, 231 now have reviewed pins; 504 remain list-only.
+// Of 735 original list-only sites, 236 now have reviewed pins; 499 remain list-only.
 const WORLDWIDE_DIRECTORY_TOTAL=CL2_PHYSICAL_SITE_COUNT+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
 const REVIEWED_NEW_SITE_PINS=209;
 const MAPPED_MASS_PINS_TOTAL=CL2_EXPECTED_R49_GROUPS+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED+REVIEWED_NEW_SITE_PINS;
@@ -98,7 +98,7 @@ try{
     await page.waitForFunction(expected=>document.querySelector(
       '#ao-find-modular-root .aoFindResultMeta')?.textContent?.includes(String(expected)),
       ADDRESS_ONLY_SITES_TOTAL,{timeout:10000});
-    assert.equal(MAPPED_MASS_PINS_TOTAL,2078,
+    assert.equal(MAPPED_MASS_PINS_TOTAL,2083,
       "Only source-backed positioned sites and three approved additions receive map pins");
     // Give the external free map engine a bounded opportunity to render.
     await Promise.race([
@@ -209,7 +209,7 @@ try{
     assert.equal(mapDiagnostics.badgeImage,true,
       config.name+": Cluster sprite is missing");
     assert.ok((mapDiagnostics.badges??0)>0,
-      config.name+": No clusters are visible despite 2,078 source-backed map locations; "+JSON.stringify(mapDiagnostics));
+      config.name+": No clusters are visible despite 2,083 source-backed map locations; "+JSON.stringify(mapDiagnostics));
     assert.equal(mapDiagnostics.compactCountOnly,true,
       config.name+": Map markers must show only a compact count, never affiliation text boxes");
     assert.equal(errors.length,0,config.name+": browser runtime errors: "+errors.join("; "));
