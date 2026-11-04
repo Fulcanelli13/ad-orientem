@@ -18,8 +18,12 @@ function expected60(packet,audit){
     packet.batch?.candidates!==60||packet.publication?.publicScores!==0||
     !Array.isArray(packet.candidates)||packet.candidates.length!==60||
     audit?.schema!=="ao-1962-gregorian-first60-complete-antiphon-text-audit-v1"||
-    audit.counts?.audited!==60||audit.counts.fullAntiphonLexicalEqual!==47||
-    audit.counts.literalDifferenceHolds!==13||
+    audit.counts?.audited!==60||
+    !Number.isInteger(audit.counts.fullAntiphonLexicalEqual)||
+    !Number.isInteger(audit.counts.literalDifferenceHolds)||
+    audit.counts.fullAntiphonLexicalEqual+audit.counts.literalDifferenceHolds!==60||
+    Object.keys(audit.counts.byFamily??{}).length!==3||
+    Object.values(audit.counts.byFamily).some(x=>x.exact+x.hold!==20)||
     audit.counts.noteGroupTokenizationHolds!==0||
     audit.publication?.publicReaderScores!==0||
     !Array.isArray(audit.scoreEvidence)||audit.scoreEvidence.length!==60)

@@ -11,6 +11,7 @@ const original=Object.freeze([
  [1147,"of","59",85],
  [265,"of","79",105],
  [464,"co","386",428],
+ [95,"co","265",307],
  [1136,"in","336",378],
  [1165,"in","360",402],
  [1271,"in","383",425],
@@ -47,7 +48,15 @@ const entries=Object.freeze(original.map(([id,part,folio,imageNumber])=>{
   publication:"EDITORIAL_HOLD_NOT_PUBLIC"
  });}));
 const byId=new Map(entries.map(x=>[x.scoreId,x]));
-export const FIRST12_1961_FACSIMILES=entries;
+// The initial twelve verified original-book references remain a stable,
+// independently audited source bank even when transient calendar loading
+// changes the current top-twelve publication-review priorities.
+export const FIRST12_1961_FACSIMILES=Object.freeze(entries.slice(0,12));
+// Exaltabo te is also independently confirmed in the 1961 printed book,
+// folio 90, original source image 116; retain it for whichever 2026
+// calendar-selected worklist requires it. Neither source is a music approval.
+export const SUPPLEMENTAL_1961_FACSIMILES=Object.freeze(entries.slice(12));
+export const VERIFIED_1961_FACSIMILES=entries;
 export function first12PrintedFacsimileForScore(score){
  if(!score||!/^GREGOBASE-\d+$/.test(score.scoreId))return null;
  const match=byId.get(score.scoreId);
