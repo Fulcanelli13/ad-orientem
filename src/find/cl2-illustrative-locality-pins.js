@@ -1874,26 +1874,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "Anápolis",
     "adminRegion": "Goiás"
   },
-  "RG-B65-77C86C7B3EC4": {
-    "sourceId": "AO-RSCH-B65-77C86C7B3EC4",
-    "name": "Basilica Magistrale di Santa Croce",
-    "country": "IT",
-    "addressNeedle": "Basilica Magistrale di Santa Croce, Via Corte d'Appello 44, Cagliari",
-    "placeId": null,
-    "lat": 39.23054,
-    "lng": 9.11917,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:IT:cagliari:sardinia",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://www.parrocchiasantacroce.com/liturgia-vetus-ordo/"
-    ],
-    "localityName": "Cagliari",
-    "adminRegion": "Sardinia"
-  },
   "RG-B65-A368B83F6B58": {
     "sourceId": "AO-RSCH-B65-A368B83F6B58",
     "name": "Capela de Nossa Senhora do Rosário dos Homens Pretos e São Benedito",
