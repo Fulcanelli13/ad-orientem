@@ -43,6 +43,19 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ // Batch 15: four independently identified British Catholic church locations.
+ "RG-0B11C840F55E":Object.freeze({sourceId:"AO-B34-L-GB-52D1803A1F95",name:"Our Lady of Lourdes and St Cecilia",country:"GB",addressNeedle:"Blandford Forum, United Kingdom (exact street not established)",placeId:null,
+  lat:50.860164,lng:-2.166303,precision:"site",sourceRef:"independent:commons-blandford-lourdes-cecilia-object-coordinate",sourceUrl:"https://commons.wikimedia.org/wiki/Category:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Blandford_Forum",
+  correctedAddress:"Our Lady of Lourdes and St Cecilia, Whitecliff Mill Street, Blandford Forum DT11 7BN, UK",reviewScope:"BLANDFORD_LADY_LOURDES_ST_CECILIA_WIKIMEDIA_NAMED_CHURCH_SITE_NOT_SURVEYED_ENTRANCE",evidence:Object.freeze(["https://www.plymouth-diocese.org.uk/church/blandford-forum-lady-lourdes-st-cecilia/","https://taking-stock.org.uk/building/blandford-forum-our-lady-of-lourdes-and-st-cecilia/"])}),
+ "RG-1527B6F93EF9":Object.freeze({sourceId:"AO-B34-L-GB-8593454E2D3F",name:"Christ the King",country:"GB",addressNeedle:"Bedford, United Kingdom (exact street not established)",placeId:null,
+  lat:52.12043,lng:-0.44995,precision:"site",sourceRef:"osm:node:10394418",sourceUrl:"https://www.openstreetmap.org/node/10394418",
+  correctedAddress:"Christ the King Catholic Church, Harrowden Road, Bedford MK42 0SP, UK",reviewScope:"BEDFORD_CHRIST_THE_KING_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE",evidence:Object.freeze(["https://mapcarta.com/N10394418","https://christthekingbedford.com/find-us/"])}),
+ "RG-36BC05EBA266":Object.freeze({sourceId:"AO-B34-L-GB-0D4522F88A2D",name:"Blessed Sacrament",country:"GB",addressNeedle:"Exeter, United Kingdom (exact street not established)",placeId:null,
+  lat:50.72209,lng:-3.50822,precision:"site",sourceRef:"osm:way:83210301",sourceUrl:"https://www.openstreetmap.org/way/83210301",
+  correctedAddress:"Church of the Blessed Sacrament, 29 Fore Street, Heavitree, Exeter EX1 2QJ, UK",reviewScope:"EXETER_HEAVITREE_BLESSED_SACRAMENT_CATHOLIC_CHURCH_NOT_EXETER_SACRED_HEART",evidence:Object.freeze(["https://mapcarta.com/W83210301","https://www.plymouth-diocese.org.uk/church/exeter-blessed-sacrament/"])}),
+ "RG-3CAFB3FC1EDC":Object.freeze({sourceId:"AO-B35-L-GB-4A373754F9DE",name:"St Brendan",country:"GB",addressNeedle:"Corby, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:52.49048,lng:-0.72415,precision:"site",sourceRef:"osm:way:503975654",sourceUrl:"https://www.openstreetmap.org/way/503975654",
+  correctedAddress:"St Brendan's Catholic Church, 151 Beanfield Avenue, Corby NN18 0AZ, UK",reviewScope:"CORBY_ST_BRENDAN_CATHOLIC_BUILDING_BEANFIELD_AVENUE_NOT_ST_PATRICK",evidence:Object.freeze(["https://mapcarta.com/W503975654","https://www.stbrendanscorby.org.uk/contact"])}),
  // Batch 14: five additional UK churches; Kirkby Lonsdale is a named church POI, not a measured footprint.
  "RG-3C136854C9CA":Object.freeze({sourceId:"AO-B34-L-GB-C73386C30A44",name:"Our Lady of Canvey and English Martyrs",country:"GB",addressNeedle:"Canvey Island, United Kingdom (exact street not established)",placeId:null,
   lat:51.52029,lng:0.57515,precision:"site",sourceRef:"osm:way:543726099",sourceUrl:"https://www.openstreetmap.org/way/543726099",
