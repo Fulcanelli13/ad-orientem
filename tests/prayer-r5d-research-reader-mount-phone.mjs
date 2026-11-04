@@ -49,12 +49,12 @@ try{
    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true
      &&typeof globalThis.AO_APP_SHELL_V1?.navigate==='function',
      null,{timeout:45000});
-   if(language==='fr'){
-    assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate('settings')))?.ok,true);
-    await page.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
-    await page.locator('#ao-settings-modular-root [data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
-    await page.waitForFunction(()=>document.documentElement.lang==='fr',null,{timeout:12000});
-   }
+   // Match the already released Prayer browser acceptance: initialise language
+   // in Settings for every configuration before entering the Prayer route.
+   assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate('settings')))?.ok,true);
+   await page.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
+   await page.locator('#ao-settings-modular-root [data-pref-path="general.uiLanguage"][data-pref-value="'+language+'"]').click();
+   await page.waitForFunction(lang=>document.documentElement.lang===lang,language,{timeout:12000});
    assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate('pray')))?.ok,true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==='function',null,{timeout:30000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open('pray.library',{returnContext:null})),true);
