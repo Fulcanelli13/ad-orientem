@@ -512,6 +512,10 @@ export async function recoverReaderProperOmissions(proper,{
   const owners=sourceOrationOwners(data,path);
   const sourceEnglishRecoveries=[];
   for(const [plural,single,section] of orationGroups){
+    // A conditional Roman Collect for St Monica must NEVER fall through to
+    // generic [Oratio]. If the exact non-Cistercian witness was unverified,
+    // leave an empty source row held rather than recover a competing rite.
+    if(plural==="collects"&&path==="Sancti/05-04"&&!monica)continue;
     const rows=Array.isArray(next[plural])&&next[plural].length
       ? [...next[plural]] : next[single] ? [next[single]] : [];
     if(rows.length!==owners.length||owners.some(owner=>!owner))continue;
