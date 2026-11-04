@@ -77,6 +77,11 @@ try{
   "Continuous reading must not also render the constrained single card");
  await page.screenshot({path:resolve(captures,"confession-390-examination-continuous.png"),animations:"disabled"});
  await page.locator(sel+" [data-p435930-conf-reading='cards']").click();
+ // Switching from continuous reading remounts the original source card.
+ // Wait for its focus observer, not merely for the card element to exist.
+ await page.waitForFunction(()=>Boolean(document.querySelector(
+  "#aoPray435930.open .aoP435930ConfessionReader .aoDevoCardScroll .aoDevoParagraph[data-ao-devo-active='true']"
+ )),null,{timeout:12000});
  assert.equal(await page.locator(sel+" .aoDevoCard").count(),1,
   "The established source-owned card method must remain available");
  const state=()=>page.evaluate(()=>{
