@@ -10,6 +10,8 @@ on:
       - 'data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json'
       - 'data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json'
       - 'data/geography/research/sacred-atlas-saints-branch-recovery-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-batch-a-12-source-verified-bilingual-guide-drafts-20261104.v1.json'
+      - 'tests/sacred-atlas-guide-drafts-batch-a-contract.mjs'
       - 'data/saints/holiness-first-editorial-pilot-20261015.v1.json'
       - 'data/shrines/**'
       - 'data/explore/sacred-phenomena-seed.v1.json'
@@ -37,4 +39,4 @@ jobs:
         with:
           node-version: '22'
       - name: Check master can be regenerated exactly from canonical owners
-        run: node tests/sacred-atlas-editorial-master-530-contract.mjs
+        run: node tests/sacred-atlas-editorial-master-530-contract.mjs && node tests/sacred-atlas-guide-drafts-batch-a-contract.mjs
