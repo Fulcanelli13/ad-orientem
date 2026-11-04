@@ -138,15 +138,14 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<h2>'+esc(vm.observedTitle)+'</h2><p class="ver">'+esc(humanDate)+'</p>'+
   (marksMarkup?'<div class="mks">'+marksMarkup+'</div>':"")+commemorationMarkup+'<div class="aoH7DoorSelections"><span>'+esc(selectedChoices)+'</span><button type="button" data-home-h4-change>'+esc(say("Adjust","Modifier"))+'</button></div></div><div class="dr"></div>'+
   (subtitle?'<p class="why">'+esc(subtitle)+'</p>':"")+
-  '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
+  '<details class="aoH7DoorDetails"><summary>'+esc(say("Mass details & texts","Détails et textes de la messe"))+'</summary><div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="INTROIT"><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
   '<span class="rb">'+esc(say("The Proper","Le Propre"))+'</span>'+
   properSections.map(x=>'<button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="'+esc(x.id)+'"><span>'+esc(x.label)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
   (formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+
   ''+
-  '</div><div class="endsp"></div></div><div class="foot">'+mainAction.replace('class="aoH4Primary"','class="aoH4Primary btn"')+
+  '</div></details><div class="endsp"></div></div><div class="foot">'+mainAction.replace('class="aoH4Primary"','class="aoH4Primary btn"')+
   unresolved+'<div class="mini"><button type="button" data-action="prepare">'+esc(say("Prepare","Se préparer"))+'</button>'+
-  '<button type="button" data-action="thanks">'+esc(say("Give thanks","Action de grâces"))+'</button>'+
-  '<button type="button" data-home-h4-change>'+esc(say("Change","Modifier"))+'</button></div></div></div></main>';
+  '<button type="button" data-action="thanks">'+esc(say("Give thanks","Action de grâces"))+'</button></div></div></div></main>';
 
 }
