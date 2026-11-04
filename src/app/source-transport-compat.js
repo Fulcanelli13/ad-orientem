@@ -2,6 +2,11 @@ export const DIVINUM_OFFICIUM_PIN="126a07f91ede04664108abb6fb20ace3f4de14b9";
 
 const RAW_DO="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/";
 const PINNED_DO=RAW_DO+DIVINUM_OFFICIUM_PIN+"/";
+// P0 #2404: verified English temporal formularies existed in the pinned
+// Divinum Officium revision, but the old Missalemeum mirror intermittently
+// answered HTTP 501. Route only those source-owner-equivalent English
+// temporal .txt paths to the authenticated fixed revision, never to HEAD.
+const MISSALEMEUM_EN_TEMPORA=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/English\/(Tempora\/[A-Za-z0-9_.-]+\.txt)$/i;
 const MISSALEMEUM_FR=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/Francais\/(.+)$/i;
 const DO_MISSA_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/web\/www\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
 const DO_OBSOLETE_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/obsolete\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
@@ -30,7 +35,9 @@ function canonicalLanguage(value){
 
 export function rewriteResolvedSourceUrl(input){
   const raw=String(input??"");
-  let match=raw.match(MISSALEMEUM_FR);
+  let match=raw.match(MISSALEMEUM_EN_TEMPORA);
+  if(match)return PINNED_DO+"web/www/missa/English/"+match[1];
+  match=raw.match(MISSALEMEUM_FR);
   if(match){
     const relative=match[1];
     const root=/^Commune\//i.test(relative)?"horas":"missa";

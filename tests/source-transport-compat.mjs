@@ -186,4 +186,42 @@ assert.equal((await terminalWin.fetch(ordinary)).status,503);
 assert.equal(terminalCalls,3,"Transport must stop after the bounded retry budget");
 assert.equal(terminal.sourceRetryStatus().unrecovered,1);
 
+
+// Verified against DivinumOfficium/divinum-officium@126a07f9 original English
+// Mass files: 12 historical 2026 Proper failures all returned HTTP 501
+// from the older Missalemeum mirror, never a real missing Latin source.
+const missing501Paths=[
+ "Quad1-0","Quad2-0","Quad2-3","Quad2-4","Quad3-0",
+ "Quad4-0","Quad4-1","Quad4-2","Quad4-6",
+ "Pasc2-0","Pasc5-4","Pasc7-2"
+];
+for(const name of missing501Paths){
+ const mirror="https://raw.githubusercontent.com/mmolenda/missalemeum/"+
+ "f43359b7a79a5a299158651eedf75cdaf0e43c94/"+
+ "backend/resources/divinum-officium-local/web/www/missa/English/Tempora/"+
+ name+".txt";
+ const pinned="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
+ DIVINUM_OFFICIUM_PIN+"/web/www/missa/English/Tempora/"+name+".txt";
+ assert.equal(rewriteResolvedSourceUrl(mirror),pinned,
+  "P0 1962 English Proper mirror still routes to intermittent HTTP 501: "+name);
+ assert.equal(isPinned1962MissalTextUrl(pinned),true);
+}
+const legacyOtherEnglish="https://raw.githubusercontent.com/mmolenda/missalemeum/"+
+ "f43359b7a79a5a299158651eedf75cdaf0e43c94/"+
+ "backend/resources/divinum-officium-local/web/www/missa/English/Sancti/06-24.txt";
+assert.equal(rewriteResolvedSourceUrl(legacyOtherEnglish),legacyOtherEnglish,
+ "English source rewrite must not expand beyond verified temporal formularies");
+let verifiedPinnedHit="";
+const pinnedWin={fetch:async url=>{
+ verifiedPinnedHit=String(url);
+ return new MockResponse("[Introitus]\\nPinned canonical English Mass source",{status:200});
+},Response:MockResponse};
+installSourceTransportCompat(pinnedWin);
+const repath="https://raw.githubusercontent.com/mmolenda/missalemeum/"+
+ "f43359b7a79a5a299158651eedf75cdaf0e43c94/"+
+ "backend/resources/divinum-officium-local/web/www/missa/English/Tempora/Quad1-0.txt";
+assert.equal((await pinnedWin.fetch(repath)).status,200);
+assert.ok(verifiedPinnedHit.startsWith("https://raw.githubusercontent.com/DivinumOfficium/"));
+assert.ok(verifiedPinnedHit.includes("/web/www/missa/English/Tempora/Quad1-0.txt"));
+
 console.log("PASS source transport compatibility: canonical rewrites plus pinned known-absent candidates fail locally without noisy network probes.");
