@@ -160,7 +160,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
   const all=resolvedPrayerPilotFamilies(L,families);
   const makeTile=tile=>{
     const family=all[tile.id];
-    const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):family.title;
+    const label=tile.id==="library"?L("Essential Prayers","Prières essentielles"):tile.id==="eucharistic"?L("Holy Eucharist","Sainte Eucharistie"):family.title;
     const target=family.direct?' data-p435930-own="'+esc(family.direct)+'"':' data-p435930-family="'+esc(tile.id)+'"';
     const slot=prayerDoorArtSlot(tile.id);
     const editorial=slot?resolvePrayerEditorialArtwork(slot.slotId):null;
@@ -169,7 +169,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+
       '" data-ao-pray-pilot-tile="'+esc(tile.id)+'" aria-expanded="false"'+target+artLink+
       ' aria-label="'+esc(label+' · '+L('Select to reveal, select again to open','Sélectionnez pour découvrir, puis à nouveau pour ouvrir'))+'">'+
-      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+(released?'<img class="aoPrayPilotReleasedTilePhoto" src="/'+esc(released.image)+'" alt="" loading="eager" decoding="async">':assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true}))+'</span>'+
+      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+(released?'<img class="aoPrayPilotReleasedTilePhoto" src="/'+esc(released.image)+'" alt="" loading="eager" fetchpriority="high" decoding="async">':assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true}))+'</span>'+
       '<span class="aoPrayPilotTileCaption"><strong>'+esc(label)+'</strong><small>'+esc(family.description||'')+'</small></span>'+
       '<span class="aoPrayPilotTileArrow" aria-hidden="true">›</span></button>';
   };
@@ -427,7 +427,7 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotMosaic{column-fill:balance;column-gap:3px}",
     "#aoPray435930 .aoP435930Mount .aoP435930Body.aoPrayPilotHome{padding-bottom:max(112px,env(safe-area-inset-bottom))!important}",
     "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head .aoP435930Back{outline:none!important;box-shadow:0 2px 10px rgba(0,0,0,.32)!important;border:1px solid rgba(235,218,187,.36)}",
-    "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head .aoP435930Back:focus-visible{outline:2px solid #e2c68e!important;outline-offset:2px}",
+    "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head .aoP435930Back:focus-visible{outline:none!important;border:2px solid #e2c68e!important}",
     "@media(min-width:800px){#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending]{height:220px!important;min-height:220px!important}}",
     "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile,#aoPray435930 .aoPrayPilotTile::after,#aoPray435930 .aoPrayPilotTileCaption,#aoPray435930 .aoPrayPilotReleasedTilePhoto{transition:none!important}}"
   ].join("\n");
