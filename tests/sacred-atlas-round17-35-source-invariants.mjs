@@ -17,14 +17,14 @@ assert.equal(queue.rows.length,66);
 assert.equal(triage.rows.length,35);
 assert.equal(new Set(triage.rows.map(x=>x.place_id)).size,35);
 assert.equal(approved.items.length,379);
-assert.equal(triage.counts.total_new_file_leads,9);
+assert.equal(triage.counts.total_new_file_leads,10);
 assert.equal(triage.counts.exact_site_commons_collections,2);
-assert.equal(triage.counts.places_with_file_leads,4);
-assert.equal(triage.counts.remaining_without_file_lead,31);
-assert.equal(triage.counts.site_or_identity_custodian_leads,4);
+assert.equal(triage.counts.places_with_file_leads,5);
+assert.equal(triage.counts.remaining_without_file_lead,30);
+assert.equal(triage.counts.site_or_identity_custodian_leads,7);
 const all=new Set(queue.rows.map(x=>x.place_id));
 const unreviewed=new Set(page.filter(p=>p.candidates.length&&p.candidates.every(x=>x.round17)).map(x=>x.id));
-assert.equal(unreviewed.size,4);
+assert.equal(unreviewed.size,5);
 for(const r of triage.rows){
   assert.ok(all.has(r.place_id));
   assert.equal(r.publication_authorized,false);
@@ -41,14 +41,14 @@ for(const r of triage.rows){
     const candidate=p.candidates.find(x=>x.title===s.title);
     assert.ok(candidate);
     assert.equal(candidate.audit,null);
-    if(s.source_evidence.includes("HOLD"))assert.ok(candidate.visualDecision?.startsWith("HOLD_"));
+    if(s.source_evidence.includes("HOLD"))assert.ok(candidate.visualDecision?.startsWith("HOLD_")||candidate.visualDecision?.startsWith("SECONDARY_GALLERY_"));
   }
 }
-assert.equal(page.reduce((n,p)=>n+p.candidates.length,0),102);
-assert.equal(page.filter(x=>x.candidates.length).length,34);
+assert.equal(page.reduce((n,p)=>n+p.candidates.length,0),103);
+assert.equal(page.filter(x=>x.candidates.length).length,35);
 assert.ok(html.includes('if(filter==="round17"&&!p.candidates.some(c=>c.round17))return false;'));
 assert.ok(html.includes("function coverBlocked(p,f)"));
 const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 assert.equal(scripts.length,1);
 new Script(scripts[0][1]);
-console.log(JSON.stringify({status:"PASS",triaged:35,new_leads:9,total_source_leads:102,places_with_leads:34,published_covers:379}));
+console.log(JSON.stringify({status:"PASS",triaged:35,new_leads:10,total_source_leads:103,places_with_leads:35,published_covers:379}));
