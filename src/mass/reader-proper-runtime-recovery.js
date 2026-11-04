@@ -310,13 +310,21 @@ async function recoverExact1962MonicaRomanCollect(data,principalId,hostResolver,
     ["lat","la","en","fr"].some(k=>String(rows[0]?.[k]??"").trim()))
     return null;
  const value={};
- for(const [language,key] of [["la","lat"],["en","en"],["fr","fr"]]){
-  const parsed=await hostResolver.resolveSource("Sancti/05-04",language,diagnostic);
-  if((parsed?.map?.get?.("Oratio")??[]).length!==0)return null;
-  const source=cleanLines(parsedLines(parsed,[MONICA_ROMAN_SECTION]),language);
-  if(!sourceTextComplete(source)||!sourceNorm(source).startsWith(MONICA_PREFIX[language]))
-   return null;
-  value[key]=source;
+ try{
+  for(const [language,key] of [["la","lat"],["en","en"],["fr","fr"]]){
+   const parsed=await hostResolver.resolveSource("Sancti/05-04",language,diagnostic);
+   if((parsed?.map?.get?.("Oratio")??[]).length!==0)return null;
+   const source=cleanLines(parsedLines(parsed,[MONICA_ROMAN_SECTION]),language);
+   if(!sourceTextComplete(source)||!sourceNorm(source).startsWith(MONICA_PREFIX[language]))
+    return null;
+   value[key]=source;
+  }
+ }catch(error){
+  // Same fail-closed transport behaviour as existing Preface recovery:
+  // keep the empty Collect held, never abort a Mass session on source I/O.
+  diagnostic?.warnings?.push?.("MONICA_ROMAN_COLLECT_SOURCE_UNAVAILABLE:"+
+   String(error?.message??error));
+  return null;
  }
  return Object.freeze({...rows[0],...value,
   sourcePath:"Sancti/05-04:"+MONICA_ROMAN_SECTION});
