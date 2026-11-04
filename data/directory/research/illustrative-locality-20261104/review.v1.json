@@ -1,7 +1,7 @@
 {
   "schema": "AO_CL2_ILLUSTRATIVE_LOCALITY_REVIEW_V1",
   "review_date": "2026-11-04",
-  "scope": "PROVISIONAL_DISCOVERY_MARKERS_NO_GPS_DESTINATIONS",
+  "scope": "EXCEL_APPROVED_LOCALITY_MARKERS_NO_GPS_DESTINATIONS_PRECISE_OVERRIDES_HELD",
   "source_revision": {
     "cl2_schema": "AO_CL2_PHYSICAL_SITE_RUNTIME_INDEX_V1",
     "cl2_file": "data/directory/generated/cl2-physical-site-index.v1.json",
@@ -20,17 +20,19 @@
     "Locality coordinates are illustrative: no entrance accuracy, active Mass, route/drive distance or liturgical-book claims",
     "Google Maps search destination must be built from sourced name/address, never GeoNames centroid",
     "Do not copy provisional locality geometry into exact-site photo-location audit",
-    "Any diocesan source-city conflict or locally disputed host must remain unpinned even if city can be geocoded"
+    "Any diocesan source-city conflict or locally disputed host must remain unpinned even if city can be geocoded",
+    "Excel All Venues approved site-precision proposals supersede locality centroids; Excel Needs more evidence identity holds remain unpinned"
   ],
   "counts": {
     "current_published_map_pins": 2147,
     "existing_unmapped": 435,
-    "eligible": 169,
-    "identity_holds": 9,
+    "eligible": 160,
+    "identity_holds": 10,
     "ambiguous": 8,
     "no_safe_match": 249,
-    "possible_map_pins_if_all_eligible_published": 2316,
-    "remaining_after_eligible": 266
+    "possible_map_pins_if_all_eligible_published": 2307,
+    "remaining_after_eligible": 275,
+    "excel_exact_preferred": 8
   },
   "records": [
     {
@@ -96,7 +98,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-074C6B78AC34",
@@ -122,7 +126,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-08B30B0916B1",
@@ -149,7 +155,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-08C3E25BC5BE",
@@ -174,7 +182,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-08F8D2302C73",
@@ -199,7 +209,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-0A4B8547401B",
@@ -250,7 +262,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-0BFDF89D4DD9",
@@ -275,7 +289,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-0CC24258A666",
@@ -339,7 +355,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-0DCEDA190517",
@@ -430,7 +448,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-1254A7E1AEF8",
@@ -455,7 +475,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-1319CD21788A",
@@ -493,7 +515,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-1580E7395EAB",
@@ -577,7 +601,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-17D799846C9B",
@@ -628,7 +654,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-1A1E54C59588",
@@ -680,7 +708,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-1B5011BDF030",
@@ -731,7 +761,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-1F10692BD068",
@@ -782,7 +814,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-235A0066ACC0",
@@ -927,7 +961,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-2BD1C415BE57",
@@ -1003,7 +1039,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-2D82BBD7C929",
@@ -1054,7 +1092,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-30B0A27771C9",
@@ -1080,7 +1120,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-336DA833D350",
@@ -1184,7 +1226,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-3A379AB21C1B",
@@ -1209,7 +1253,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-3AE3236A0B5E",
@@ -1299,7 +1345,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-3EA3DDBC8289",
@@ -1337,7 +1385,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-3FB2F55DB78A",
@@ -1375,7 +1425,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-40600E776D20",
@@ -1400,7 +1452,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4083C528A503",
@@ -1425,7 +1479,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-40C164A0B0B7",
@@ -1491,7 +1547,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4285190BD8AE",
@@ -1530,7 +1588,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-44F315BAD4C8",
@@ -1581,7 +1641,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4956AD7B8EBA",
@@ -1619,7 +1681,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4A843C3E55D2",
@@ -1644,7 +1708,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4B07A09FA041",
@@ -1669,7 +1735,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4B7EF06E3138",
@@ -1694,7 +1762,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4B889805778B",
@@ -1719,7 +1789,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4C6C1AAE87DC",
@@ -1744,7 +1816,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4D32CE07E424",
@@ -1795,7 +1869,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-4ECE8DDAA3A6",
@@ -1834,19 +1910,14 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 53.38297,
-      "lng": -1.4659,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Sheffield",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:sheffield:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_IDENTITY_AMBIGUITY",
+      "rejected_illustrative_fallback": {
+        "lat": 53.38297,
+        "lng": -1.4659,
+        "locality": "Sheffield",
+        "coordinate_source_ref": "geonames-locality:GB:sheffield:england"
+      },
+      "hold_reason": "Excel reviewer hold for multiple Sheffield St Joseph churches; no locality pin until frozen source-to-site identity resolved."
     },
     {
       "cl2_anchor": "RG-50BE1A7B5F18",
@@ -1859,19 +1930,21 @@
       "original_site_sources": [
         "https://stpiusvchapel.org/mass-locations/"
       ],
-      "lat": 46.59271,
-      "lng": -112.03611,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Helena",
-      "matched_admin1": "Montana",
-      "coordinate_source_ref": "geonames-locality:US:helena:montana",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 46.59271,
+        "lng": -112.03611,
+        "locality": "Helena",
+        "coordinate_source_ref": "geonames-locality:US:helena:montana"
+      },
+      "excel_preferred_geometry": {
+        "lat": 46.58577,
+        "lng": -112.02583,
+        "precision": "USGS GNIS named church point — NOT footprint",
+        "evidence_url": "https://topoquest.com/map/usgs-24k/montana/helena/20019",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-51F3D5B6D522",
@@ -1909,7 +1982,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-5276B75A8193",
@@ -1961,7 +2036,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-54B038392C95",
@@ -2012,7 +2089,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-562C27FA24C2",
@@ -2050,7 +2129,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-57FFD16F4417",
@@ -2101,7 +2182,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-5926C75531A7",
@@ -2153,7 +2236,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-596D96A755DA",
@@ -2205,7 +2290,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-5AB7415F2FB5",
@@ -2244,7 +2331,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-5B65864A842D",
@@ -2257,19 +2346,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 51.73575,
-      "lng": 0.46958,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Chelmsford",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:chelmsford:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 51.73575,
+        "lng": 0.46958,
+        "locality": "Chelmsford",
+        "coordinate_source_ref": "geonames-locality:GB:chelmsford:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 51.71597,
+        "lng": 0.47555,
+        "precision": "OSM Catholic church footprint",
+        "evidence_url": "https://mapcarta.com/W264465868",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-5C053FB98B93",
@@ -2310,7 +2401,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-5D6B44712E33",
@@ -2348,7 +2441,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-5E751D3AAEFA",
@@ -2432,7 +2527,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-60259573951F",
@@ -2459,19 +2556,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 51.50853,
-      "lng": -0.12574,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "London",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:london:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 51.50853,
+        "lng": -0.12574,
+        "locality": "London",
+        "coordinate_source_ref": "geonames-locality:GB:london:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 51.49219,
+        "lng": -0.26112,
+        "precision": "OSM Catholic church footprint",
+        "evidence_url": "https://mapcarta.com/W840980021",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-614BDF2D5803",
@@ -2564,7 +2663,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-619E1BC7AC15",
@@ -2589,7 +2690,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-61CD2A736B43",
@@ -2629,7 +2732,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-620472168680",
@@ -2654,7 +2759,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-62D34706633B",
@@ -2692,7 +2799,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-64607C31CF5E",
@@ -2859,7 +2968,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-72909EA31C02",
@@ -2923,7 +3034,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-75D2C57BD28F",
@@ -2948,7 +3061,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-773770316682",
@@ -2986,7 +3101,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-78CCEFA5CDF6",
@@ -3011,7 +3128,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-78DDA8D68BD8",
@@ -3062,7 +3181,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-7A7B048E1F59",
@@ -3195,7 +3316,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-7F9BB8497D93",
@@ -3311,7 +3434,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-8449E92DD79D",
@@ -3389,7 +3514,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-894773141380",
@@ -3414,7 +3541,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-89FC8B37E01B",
@@ -3439,7 +3568,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-8B11F19B4020",
@@ -3464,7 +3595,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-8B96A3BC8CD8",
@@ -3503,19 +3636,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 51.45625,
-      "lng": -0.97113,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Reading",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:reading:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 51.45625,
+        "lng": -0.97113,
+        "locality": "Reading",
+        "coordinate_source_ref": "geonames-locality:GB:reading:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 51.45707,
+        "lng": -0.96526,
+        "precision": "OSM Catholic church footprint",
+        "evidence_url": "https://mapcarta.com/W96173957",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-8FB53F871DAD",
@@ -3579,7 +3714,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-955AAFA89A16",
@@ -3604,7 +3741,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-95F40930EB8F",
@@ -3642,7 +3781,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-965DA280BA11",
@@ -3693,7 +3834,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-980814B93FC6",
@@ -3745,7 +3888,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-9C24DFA88F76",
@@ -3839,19 +3984,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 52.13459,
-      "lng": -0.46632,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Bedford",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:bedford:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 52.13459,
+        "lng": -0.46632,
+        "locality": "Bedford",
+        "coordinate_source_ref": "geonames-locality:GB:bedford:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 52.13603,
+        "lng": -0.47364,
+        "precision": "OSM Roman Catholic church footprint",
+        "evidence_url": "https://mapcarta.com/W46491193",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-A241FA73E6F2",
@@ -3942,7 +4089,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-A3F3B8748046",
@@ -3967,7 +4116,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-A3F94D9DDAE3",
@@ -3993,19 +4144,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 51.45625,
-      "lng": -0.97113,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Reading",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:reading:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 51.45625,
+        "lng": -0.97113,
+        "locality": "Reading",
+        "coordinate_source_ref": "geonames-locality:GB:reading:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 51.4679,
+        "lng": -0.9669,
+        "precision": "Independent church site point",
+        "evidence_url": "https://www.pilgrimmap.com/site/our-lady-and-st-annes-church-6ee1840d",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-A518A3811A75",
@@ -4030,7 +4183,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-A55BCBFECA78",
@@ -4081,7 +4236,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-A6CA3D63A3E3",
@@ -4106,7 +4263,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-A74DC06D4545",
@@ -4197,7 +4356,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-ACFBDCA23B00",
@@ -4222,7 +4383,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-AD78D7511BAD",
@@ -4247,7 +4410,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-AEC4A3F1434A",
@@ -4272,7 +4437,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-AEF4C7362F26",
@@ -4324,7 +4491,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B0F32F6743EC",
@@ -4349,7 +4518,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B10417F7A69D",
@@ -4362,19 +4533,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 51.81665,
-      "lng": -0.81458,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Aylesbury",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:aylesbury:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 51.81665,
+        "lng": -0.81458,
+        "locality": "Aylesbury",
+        "coordinate_source_ref": "geonames-locality:GB:aylesbury:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 51.77404,
+        "lng": -0.99397,
+        "precision": "Named OSM Catholic church point",
+        "evidence_url": "https://mapcarta.com/N1591394617",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-B3540B7BF5B4",
@@ -4399,7 +4572,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B39F2AC82E47",
@@ -4424,7 +4599,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B3B772AE50F8",
@@ -4475,7 +4652,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B610D55233B1",
@@ -4592,7 +4771,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B65-66C068E4A1B4",
@@ -4698,7 +4879,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B65-AC330F6E2481",
@@ -4736,7 +4919,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B65-C2B40FDE3FB1",
@@ -4813,7 +4998,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B65-F6927D0C98CA",
@@ -4864,7 +5051,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B68-0B50D8945A40",
@@ -4971,7 +5160,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B70-52446C235FD6",
@@ -4996,7 +5187,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B70-6CCD0C36B97D",
@@ -5073,7 +5266,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B70-B2D329C9B619",
@@ -5098,7 +5293,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B70-BE6F542707F1",
@@ -5136,7 +5333,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B70-D40D3AF23E72",
@@ -5174,7 +5373,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B70-F460CEAB232D",
@@ -5199,7 +5400,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B72-7441A9AFEE69",
@@ -5239,7 +5442,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B72-AA0F32A61E7D",
@@ -5265,7 +5470,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B72-BD22249C1E0A",
@@ -5334,7 +5541,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B72-ECA381127BD9",
@@ -5360,7 +5569,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B72-FA193CC91864",
@@ -5386,7 +5597,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B72-FB8664166420",
@@ -5492,7 +5705,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B77-D197359100A5",
@@ -5600,7 +5815,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B7AB371DDFF3",
@@ -5652,7 +5869,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B88-B1EB74BB63BD",
@@ -5678,7 +5897,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B88-D6480F7F32B7",
@@ -5704,7 +5925,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B88-E491FACD85B9",
@@ -5730,7 +5953,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B88-F691777F8D8D",
@@ -5756,7 +5981,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B8FBD3EBD6FA",
@@ -5781,7 +6008,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B96-5F2EB31399CF",
@@ -5806,7 +6035,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-B9EBEF12071A",
@@ -5831,7 +6062,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-BAC7B010D8CC",
@@ -5882,7 +6115,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-BBD7BD44E860",
@@ -5920,7 +6155,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-BC13FB78E5E1",
@@ -5945,7 +6182,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-BC32268B22D0",
@@ -5996,7 +6235,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-C19C55301A0B",
@@ -6034,7 +6275,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-C2F1E09958E7",
@@ -6128,7 +6371,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-C51DCE8B1899",
@@ -6179,7 +6424,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-C79C76333DD7",
@@ -6230,7 +6477,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-C90FE9578C43",
@@ -6255,7 +6504,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-CA653F687A86",
@@ -6281,7 +6532,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-CA7EB07D0EB5",
@@ -6346,7 +6599,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-CB60A65B531A",
@@ -6371,7 +6626,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-CC4EE5699ABD",
@@ -6436,7 +6693,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-CDC1570817BE",
@@ -6513,7 +6772,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D1CB87236E32",
@@ -6579,7 +6840,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D2E6E688297A",
@@ -6617,7 +6880,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D444BB1B8A14",
@@ -6670,7 +6935,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D56617E74BC9",
@@ -6695,7 +6962,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D66E78390819",
@@ -6720,7 +6989,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D67ACE6157EF",
@@ -6785,7 +7056,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D7C8B7693CEC",
@@ -6798,19 +7071,21 @@
       "original_site_sources": [
         "https://lms.org.uk/list-of-churches"
       ],
-      "lat": 54.6425,
-      "lng": -3.54413,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Workington",
-      "matched_admin1": "England",
-      "coordinate_source_ref": "geonames-locality:GB:workington:england",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED",
+      "rejected_illustrative_fallback": {
+        "lat": 54.6425,
+        "lng": -3.54413,
+        "locality": "Workington",
+        "coordinate_source_ref": "geonames-locality:GB:workington:england"
+      },
+      "excel_preferred_geometry": {
+        "lat": 54.6395,
+        "lng": -3.543,
+        "precision": "Listed Catholic church site point",
+        "evidence_url": "https://gb.britishlistedbuildings.co.uk/101257412-the-church-of-our-lady-and-st-michael-attached-steps-walls-gates-and-gatepiers-workington/maps",
+        "reviewer_decision": "Approved"
+      },
+      "hold_reason": "Existing Excel-reviewed precise-site coordinates supersede this locality centroid; import approved exact site separately."
     },
     {
       "cl2_anchor": "RG-D82168F24F57",
@@ -6835,7 +7110,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D8598963F6F1",
@@ -6873,7 +7150,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-D9B7A8761D76",
@@ -6899,7 +7178,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-DA9500BB2D62",
@@ -6924,7 +7205,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-DA9B6A59546D",
@@ -6975,7 +7258,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-DE0B05E3ABB2",
@@ -7000,7 +7285,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-DE1921DBC29F",
@@ -7026,7 +7313,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-DE8F28D8A0EC",
@@ -7064,7 +7353,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-E1BD51FF18DC",
@@ -7091,7 +7382,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-E305C7F59794",
@@ -7142,7 +7435,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-E5915DE991A8",
@@ -7220,7 +7515,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-E8AB816F595F",
@@ -7300,7 +7597,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-ED9CB5D405C6",
@@ -7325,7 +7624,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-EDE0EDF7F648",
@@ -7350,7 +7651,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-EE16A827B1C2",
@@ -7388,7 +7691,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-EED177E54521",
@@ -7426,7 +7731,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-EF1C8E84C3FE",
@@ -7464,7 +7771,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F090B36C1C6C",
@@ -7491,7 +7800,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F0D86E846BFF",
@@ -7568,7 +7879,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F1D5D7FD6172",
@@ -7606,7 +7919,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F21B355729C8",
@@ -7671,7 +7986,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F326512E2E62",
@@ -7696,7 +8013,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F36A816F8669",
@@ -7747,7 +8066,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F49E67B5D564",
@@ -7772,7 +8093,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F51B9FB0F349",
@@ -7823,7 +8146,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-F97E7F17F909",
@@ -7861,7 +8186,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-FA273EA55477",
@@ -7886,7 +8213,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-FAF5035C6D80",
@@ -7911,7 +8240,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-FAFE0132EA87",
@@ -7936,7 +8267,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04"
     },
     {
       "cl2_anchor": "RG-FB0A5B188CE0",
