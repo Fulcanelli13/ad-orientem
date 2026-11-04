@@ -9,14 +9,14 @@ The user-facing TLM Atlas is primarily a **church discovery and source-informati
 - Worldwide directory: **2,582** existing records (2,579 CL2 physical sites plus 3 separately published additions), unchanged.
 - Initial mapped baseline on `main`: **2,147**.
 - Frozen unpinned research records: **435**, each separately assessed in `review.v1.json`.
-- Eligible **illustrative locality** additions: **170** (following reclassification of the Poprad church due to a source-city conflict).
-- Explicit source-site / alias / historical / closure holds: **8**.
+- Eligible **illustrative locality** additions: **169** (Poprad retained on source-city conflict hold; Cagliari Santa Croce held as a possible duplicate of an already-mapped basilica).
+- Explicit source-site / alias / historical / closure holds: **9**.
 - Ambiguous gazetteer matches: **8**.
 - No sufficiently reliable locality match: **249**.
-- Potential mapped count after all 170 additions are safely released: **2,317 / 2,582** (89.7%), leaving **265** unpinned.
+- Potential mapped count after all 169 additions are safely released: **2,316 / 2,582** (89.7%), leaving **266** unpinned.
 - **No new active Mass, Mass time, canon, Una Cum, canonical status, Missal edition or priest assertions.**
 
-All 170 positions are **centres of named populated places**. They are neither church footprints, chapel entrances, church street addresses nor validated GPS destinations.
+All 169 positions are **centres of named populated places**. They are neither church footprints, chapel entrances, church street addresses nor validated GPS destinations.
 
 ## Data provenance
 
@@ -41,6 +41,6 @@ node tests/tlm-illustrative-locality-pins.mjs
 node tests/cl2-worldwide-directory-acceptance.mjs
 ```
 
-The targeted workflow runs on changed TLM files; existing Directory, main, Explore browser and release gates remain required. The 170 locations are **candidates in a PR**, not published production pins until all relevant checks and release review pass.
+The targeted workflow runs on changed TLM files; existing Directory, main, Explore browser and release gates remain required. The 169 locations are **candidates in a PR**, not published production pins until all relevant checks and release review pass.
 
 This code is a **controlled change of the precision contract**; no alteration to CL2 site counts, canonical IDs, approved UI, Schola, Sacred Atlas or unrelated PR workstreams.
