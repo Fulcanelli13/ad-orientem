@@ -42,7 +42,15 @@ assert.doesNotMatch(pray,/type="date" data-p435930-fs-confession/);
 assert.match(novenas,/function fmt\(d\)\{return formatDisplayDate\(d\)\}/);
 
 for(const [name,source] of [["home",home],["calendar",calendar],["learn",learn],["pray",pray],["novenas",novenas]]){
-  assert.doesNotMatch(source,/day:['"](?:numeric|2-digit)['"],month:['"]long['"],year:['"]numeric['"]/,`${name} reintroduced a prose-style full date instead of DD/MM/YYYY`);
+  const fullProse=/day:['"](?:numeric|2-digit)['"],month:['"]long['"],year:['"]numeric['"]/g;
+  if(name==="calendar"){
+    // Calendar's approved Day heading is human-readable. Inputs, calendar
+    // exports and storage retain their separate canonical date formats.
+    assert.equal([...source.matchAll(fullProse)].length,1,
+      "Only the Calendar Day heading may use a full prose display date");
+    assert.match(source,/const humanDay=id=>dateOf\(id\)\.toLocaleDateString/);
+    assert.match(source,/value="\$\{esc\(displayDate\(selected\)\)\}"/);
+  }else assert.doesNotMatch(source,fullProse,
+    `${name} reintroduced a prose-style full date outside the approved Day heading`);
 }
-
-console.log("Canonical user-visible date format DD/MM/YYYY: OK");
+console.log("Canonical DD/MM/YYYY inputs and approved prose Day heading: OK");
