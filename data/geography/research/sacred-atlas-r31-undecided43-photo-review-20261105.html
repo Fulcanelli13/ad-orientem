@@ -173,7 +173,7 @@ document.getElementById("import").onchange=async e=>{
 };
 document.getElementById("export").onclick=()=>{
  const rows=places.filter(p=>choices[p.place_id]||listRej(p).length||notes[p.place_id]).map(p=>({place_id:p.place_id,...(choices[p.place_id]||{state:"REVIEW_IN_PROGRESS",publication_authorized:false}),rejected_files:listRej(p),note:notes[p.place_id]||"",source_original_bytes_verified:false,photo_rights_verified:false,exact_site_verified:false,mobile_crop_approved:false}));
- const out={schema:"AO_SACRED_ATLAS_R31_UNDECIDED43_USER_EDITORIAL_EXPORT_V1",source_schema:bundle.schema,exported_at:new Date().toISOString(),editorial_choices:places.filter(p=>p.review_candidates>0&&decided(p)).length,total_cover_candidate_places:5,publication_authorized:false,decisions:rows};
+ const out={schema:"AO_SACRED_ATLAS_R31_UNDECIDED43_USER_EDITORIAL_EXPORT_V1",source_schema:bundle.schema,exported_at:new Date().toISOString(),editorial_choices:places.filter(p=>p.review_candidates>0&&decided(p)).length,total_cover_candidate_places:7,publication_authorized:false,decisions:rows};
  const blob=new Blob([JSON.stringify(out,null,2)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="AO_Sacred_Atlas_R31_43_Place_Photo_Choices.json";a.click();URL.revokeObjectURL(u);
 };
 try{const saved=JSON.parse(localStorage.getItem(storageKey)||"null");
