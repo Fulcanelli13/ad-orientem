@@ -86,6 +86,9 @@ try{
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
+     // The deferred R17 renderer remains in the certified bootstrap.
+     // Dynamic first-use import MUST NOT silently become online-only.
+     "src/mass/reader-native-preview.js",
      "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);

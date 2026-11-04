@@ -28,6 +28,10 @@ const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
  // the committed bootstrap. Other routes retain normal on-demand caching.
 const OFFLINE_CRITICAL_LAZY_OWNER=new URL("src/pray/browser-entry.js",BASE).href;
+ // R17's source-owned native card renderer is deferred until Start/Resume,
+ // but the *complete approved first-use reader* must remain installable
+ // offline. Its original static imports are traversed by staticDeps().
+const OFFLINE_CRITICAL_LAZY_R17=new URL("src/mass/reader-native-preview.js",BASE).href;
 // The first-use Angelus cinematic is a local, approved work, not a network image.
 const OFFLINE_CRITICAL_ANGELUS_ART=new URL("assets/pray/angelus/tanner-annunciation-1898.webp",BASE).href;
 
@@ -129,7 +133,7 @@ async function stageSnapshot(){
   // A resource is charged against the hard item limit only once, even if
   // both the HTML and an ESM/CSS import refer to it. Keep queue identity
   // distinct from actual certified resources (which are still hashed).
-  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART])];
+  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,OFFLINE_CRITICAL_LAZY_R17])];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
