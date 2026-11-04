@@ -96,9 +96,9 @@ assert.equal(coverImages,61);
 assert.equal(otherImages,3);
 assert.equal(firstLooks,19);
 assert.equal(multiLooks,6);
-assert.equal(qaPages,9);
-assert.equal(m.summary.independent_single_candidate_source_pages_rechecked,9);
-assert.equal(m.summary.single_candidate_source_pages_not_rechecked,4);
+assert.equal(qaPages,12);
+assert.equal(m.summary.independent_single_candidate_source_pages_rechecked,12);
+assert.equal(m.summary.single_candidate_source_pages_not_rechecked,1);
 assert.equal(m.summary.approved_by_this_triage,0);
 assert.equal(m.summary.published_by_this_triage,0);
 assert.equal(m.summary.no_new_photographs_downloaded,0);
@@ -115,4 +115,4 @@ assert.ok(m.rows.find(x=>x.place_id==="place:DE:aachener-dom-four-textiles")
  .independent_source_page_qa.status.includes("TEXTILES_NOT_DEPICTED"));
 assert.ok(m.rows.find(x=>x.place_id==="place:US:la-salette-attleboro")
  .independent_source_page_qa.status.includes("SEASONAL_NIGHT_SCENE"));
-console.log("R26 SACRED ATLAS RESEARCH-ONLY PASS: 13 singleton + 8 multi candidate sites; 61 exact cover originals, 3 context exclusions, 9 source pages rechecked, 0 covers approved or published.");
+console.log("R26 SACRED ATLAS RESEARCH-ONLY PASS: 13 singleton + 8 multi candidate sites; 61 exact cover originals, 3 context exclusions, 12 source pages rechecked, 0 covers approved or published.");
