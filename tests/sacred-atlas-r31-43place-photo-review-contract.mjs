@@ -25,7 +25,9 @@ const candidatePlaceCounts={
 "place:SK:kaplnka-zjavenia-litmanova-zvir":3,
 "place:MY:st-anne-bukit-mertajam":3,
 "place:MG:ilot-de-la-vierge-ampefy":3,
-"place:PE:santuario-candelaria-chapi-polobaya":1
+"place:PE:santuario-candelaria-chapi-polobaya":1,
+"place:LK:national-basilica-of-our-lady-of-lanka-tewatta":1,
+"place:PK:karachi-our-lady-fatima-parish":1
 };
 for(const row of q.places){
  const previous=oldById.get(row.place_id);
@@ -64,17 +66,26 @@ for(const row of q.places){
    assert.ok(!gate.has(item.role),"Statue is not exact canonical church building");
  }
 }
-assert.equal(images,25);
-assert.equal(eligible,15);
-assert.equal(context,10);
-assert.equal(candidates,5);
-assert.equal(contextOnly,5);
-assert.equal(unpictured,33);
-assert.equal(newSources,8);
-assert.equal(q.counts.review_candidates,15);
-assert.equal(q.counts.context_technical_holds,10);
-assert.equal(q.counts.sites_without_any_photo,33);
+assert.equal(images,35);
+assert.equal(eligible,17);
+assert.equal(context,18);
+assert.equal(candidates,7);
+assert.equal(contextOnly,9);
+assert.equal(unpictured,27);
+assert.equal(newSources,18);
+assert.equal(q.counts.review_candidates,17);
+assert.equal(q.counts.context_technical_holds,18);
+assert.equal(q.counts.sites_without_any_photo,27);
 assert.equal(q.counts.negative_evidence_specific_sites,4);
+assert.equal(q.counts.r32_new_file_description_leads,10);
+assert.equal(q.counts.r32_additional_cover_review_candidates,2);
+assert.equal(q.counts.r32_context_only_sources,8);
+for(const id of ["place:JP:our-lady-akita-convent","place:SV:capilla-divina-providencia-san-salvador","place:PA:basilica-menor-jesus-nazareno-atalaya","place:SL:sacred-heart-cathedral-freetown"]){
+ const site=q.places.find(x=>x.place_id===id);
+ assert.ok(site&&site.photo_sources.length>0);
+ assert.ok(site.photo_sources.every(x=>x.role!=="COVER_REVIEW_CANDIDATE"),"Context or copyright-unverified photo must never be approved");
+}
+
 for(const id of ["place:SL:sacred-heart-cathedral-freetown","place:AS:holy-family-cathedral-tafuna","place:BZ:belmopan-our-lady-guadalupe-co-cathedral","place:BB:st-patrick-catholic-cathedral-bridgetown"]){
  assert.ok(q.places.find(x=>x.place_id===id)?.negative_source_evidence?.length>60);
 }
@@ -87,7 +98,7 @@ assert.deepEqual(embedded.places,q.places,"HTML must embed exactly source-locked
 const client=html.match(/<script>([\s\S]*?)<\/script><\/body><\/html>/)?.[1];
 assert.ok(client);
 new vm.Script(client,{filename:"R31-43-Place-Photo-Review.js"});
-assert.ok(html.includes("15 cover candidates"));
+assert.ok(html.includes("17 cover candidates"));
 assert.ok(html.includes('id="gallery"'));
 assert.ok(html.includes('id="export"')&&html.includes('id="import"'));
 assert.ok(client.includes('const eligible=x=>x.role==="COVER_REVIEW_CANDIDATE"'));
@@ -101,4 +112,4 @@ assert.ok(client.includes("2200-(Date.now()-lastStart)"));
 assert.ok(client.includes("if(failures>=3){paused=true"));
 assert.ok(!client.includes("XMLHttpRequest")&&!client.includes("fetch("));
 assert.ok(!html.includes('"publication_authorized":true'));
-console.log("R31 PASS: 43 Places, 15 selectable original-photo SUBJECT leads, 10 ineligible context/technical images, 33 unsourced, 0 byte approvals, auto-paged thumbnails and one fail-closed JSON export.");
+console.log("R31+R32 PASS: 43 Places, 17 provisional photo SUBJ leads, 18 context/technical holds, 27 unsourced, zero source-byte approvals, existing UI export format preserved.");
