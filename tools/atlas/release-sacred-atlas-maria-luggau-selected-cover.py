@@ -193,7 +193,8 @@ def main():
     COVERS.write_text(json.dumps(after,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     EVIDENCE.write_text(json.dumps(evidence,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     assert read(GALLERY)==gallery
-    assert read(COVERS)["items"][:-1] or True
+    assert [x for x in read(COVERS)["items"] if x["place_id"]!=pid]==before["items"], "Prior approved Place cover records changed"
+    assert read(COVERS)["items"]==after["items"], "New original cover record not stable after write"
     print("MARIA_LUGGAU_SELECTED_COVER_VERIFIED",json.dumps({
       "place_id":pid,"original_sha1":m["pinned_original_sha1"],
       "derivative_sha256":record["derivative_sha256"],
