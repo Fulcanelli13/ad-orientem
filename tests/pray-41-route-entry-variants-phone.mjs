@@ -84,10 +84,26 @@ try{
      await hub();
      if(id==="pray.library"){
       await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
+      await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
      }else{
       assert.ok(door,id+" has no nine-door parent");
-      await page.locator('#aoPray435930.open [data-p435930-family="'+door+'"]').first().click();
-      await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').waitFor({timeout:12000});
+      const doorTile=page.locator('#aoPray435930.open [data-ao-pray-pilot-tile][data-p435930-family="'+door+'"]').first();
+      await doorTile.click();
+      const afterReveal=await doorTile.getAttribute("aria-expanded");
+      assert.equal(afterReveal,"true",id+" first real tap must reveal its original category tile");
+      await doorTile.click();
+      const shelfSelector='#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]';
+      try{await page.locator(shelfSelector).waitFor({timeout:12000});}
+      catch(error){
+       const state=await page.evaluate(door=>{
+        const root=document.querySelector("#aoPray435930.open"),m=root?.querySelector(".aoP435930Mount");
+        const tile=root?.querySelector('[data-ao-pray-pilot-tile="'+door+'"]');
+        return {view:m?.dataset.aoPrayView||null,tileExpanded:tile?.getAttribute("aria-expanded")||null,
+         familyShelf:[...root?.querySelectorAll("[data-ao-prayer-shelf]")||[]].map(x=>x.dataset.aoPrayerShelf),
+         activeFocus:document.activeElement?.outerHTML?.slice(0,250)||null};
+       },door);
+       throw new Error(id+" second physical activation did not open "+door+": "+JSON.stringify(state)+" / "+error.message);
+      }
       const attr=row.sourceFamily==="canonical-prayer"?"data-p435930-door-prayer":
        "data-p435930-own";
       const own='#aoPray435930.open [data-ao-prayer-shelf="'+door+'"] ['+attr+'="'+id+'"]';
@@ -192,7 +208,20 @@ try{
     }
     if(id==="pray.rosary")assert.equal(observed.rosaryOriginal,true,"Rosary donor was replaced");
     if(row.sourceFamily==="canonical-prayer"){
-     await page.locator("#aoPray435930.open [data-p435930-lib-back]").click();
+     // F01 has one visible native Back in the running head; other canonical
+     // prayers retain the contextual inline Back. Never click hidden chrome.
+     const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
+     const holyCard=await page.locator("#aoPray435930.open .aoClaudeHolyCard").count()>0;
+     if(holyCard){
+      assert.equal(await inlineBack.isVisible(),false,
+       "F01 must not display the duplicate inline Back beside native Back");
+      const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+      assert.ok(await nativeBack.isVisible(),"F01 must keep one usable native Back");
+      await nativeBack.click();
+     }else{
+      assert.ok(await inlineBack.isVisible(),"Canonical non-F01 Back must remain usable");
+      await inlineBack.click();
+     }
      assert.equal(await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').count(),1,
       "Canonical prayer Back did not return to "+door);
     }

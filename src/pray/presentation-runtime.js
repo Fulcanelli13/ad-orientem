@@ -1,6 +1,7 @@
 import "./confession-path-styles.js";
 import {renderConfessionContinuousExamination} from "./confession-continuous-examination.js";
 import "./prayer-door-mosaic-execution-styles.js";
+import "./prayer-category-prototype-styles.js";
 import "./stations-direct-access-styles.js";
 import "./five-wounds-chaplet-styles.js";
 import "./little-crown-styles-b30.js";
@@ -22,7 +23,7 @@ import "./stations-verified-artwork-styles.js";
 import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
 import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
-import {renderEssentialFlowReader} from "./essential-flow-reader.js";
+import {renderEssentialFlowReader,essentialFlowReaderEnabled} from "./essential-flow-reader.js";
 import "./essential-flow-reader-styles.js";
 import "./claude-holy-card-styles.js";
 import "./essential-holy-card-styles.js";
@@ -40,6 +41,7 @@ import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,sy
 import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
+import {revealPrayerMosaicTile,clearPrayerMosaicReveal,restorePrayerMosaicReveal} from "./prayer-mosaic-reveal.js";
 import {prayerDoorArtSlot,prayerEditorialArtworkMarkup,resolvePrayerEditorialArtwork,angelusOpeningArtworkSlot} from "./art-slot-map.v1.js";
 import {plannedPrayerArtworkSlot} from "./planned-photo-slots.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
@@ -129,6 +131,7 @@ const CHAPLET_F07_VARIANTS_ENABLED=chapletF07VariantsEnabled(window);
 let PILOT_LORETO_GROUP=false;
 // The pilot changes presentation only. Direct homepage prayer routes remain immediate.
 const PRAYER_PILOT_ENABLED=prayerPilotEnabled(window);
+const ESSENTIAL_FLOW_ALTERNATIVE_ENABLED=essentialFlowReaderEnabled(window);
 let ANGELUS_PILOT_ENTRY=false;
 const actionCinematics=createDevotionalActionCinematic(window);
 const DATA=window.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{},categories:{}};
@@ -467,7 +470,7 @@ function open(id,opts={}){
   if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn();
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
   navStack=[];familyId=null;
-  if(id==='pray.hub')view='home';
+  if(id==='pray.hub'){clearPrayerMosaicReveal();view='home';}
   else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
   else if(id==='pray.rosary'){
     const source=opts.sourceObject;
@@ -755,7 +758,9 @@ function prayerBlock(id,opts={}){
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
   const pref=CLAUDE_HOLY_PREF.language;
   const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(p.la?'la':vern);
-  return chosen?(PRAYER_PILOT_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
+  // F01 approval authority: Claude's original reversible Holy Card, not the
+   // newer R2 continuous flow. Flow is retained by explicit opt-in only.
+   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,flipLabel:L('Turn card','Retourner la carte'),artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){
@@ -982,7 +987,7 @@ function prayerDoorFacet(route){
   :/angelus/.test(id)?'angelus':/novena|friday|saturday/.test(id)?'novena'
   :/confession|penitential/.test(id)?'penance':'prayer';
 }
-function prayDoorShelfEntry(item,featured=false,familyAssetId=''){
+function prayDoorShelfEntry(item,featured=false,familyAssetId='',index=0){
  const [owner,route,title,description]=item;
  const source=owner==='prayer'?DATA.prayers?.[route]:null;
  if(owner==='prayer'&&!source)return '';
@@ -1000,10 +1005,12 @@ function prayDoorShelfEntry(item,featured=false,familyAssetId=''){
  const artBody=image||'<span class="aoPrayMosaicCardFallback" aria-hidden="true">'+fallbackIcon+'</span>';
  return '<button type="button" class="aoPrayDoorMosaicCard'+(featured?' aoPrayMosaicCardFeatured':'')+
   '" data-ao-pray-door-entry data-ao-pray-door-facet="'+esc(facet)+'" '+attr+'>'+
+  '<span class="aoPrayDoorRowNumber" aria-hidden="true">'+String(index+1).padStart(2,'0')+'</span>'+ 
   '<span class="aoPrayMosaicCardArt" data-ao-art-binding="'+(image?'released':'editorial-pending')+
   '" data-ao-editorial-state="'+esc(editorial.state)+'">'+artBody+'</span>'+
   '<span class="aoPrayMosaicCardCopy"><b>'+esc(title)+'</b><small>'+esc(description||'')+'</small>'+
-  (languageTags?'<span class="aoPrayDoorLanguages">'+languageTags+'</span>':'')+'</span></button>';
+  (languageTags?'<span class="aoPrayDoorLanguages">'+languageTags+'</span>':'')+'</span>'+
+  '<span class="aoPrayDoorRowArrow" aria-hidden="true">›</span></button>';
 }
 function renderPrayFamily(){
  const family=PRAYER_PILOT_ENABLED?resolvedPrayerPilotFamilies(L,prayFamilies())[familyId]:prayFamilies()[familyId];
@@ -1022,13 +1029,15 @@ function renderPrayFamily(){
   consecration:L('Consecration','Consécration'),rosary:L('Rosary','Rosaire'),chaplet:L('Chaplets','Chapelets'),
   angelus:L('Angelus','Angélus'),novena:L('Novenas','Neuvaines'),penance:L('Penance','Pénitence')};
  const filterButtons=['all',...facets].map(type=>'<button type="button" data-p435930-door-filter="'+type+'" aria-pressed="'+(type==='all')+'">'+esc(facetLabels[type]||type)+'</button>').join('');
- const filters=facets.length>1?'<nav class="aoPrayDoorFilters" aria-label="'+esc(L("Filter prayers","Filtrer les prières"))+'">'+filterButtons+'</nav>':'';
+ const filters=facets.length>1&&visible.length>=8?'<nav class="aoPrayDoorFilters" aria-label="'+esc(L("Filter prayers","Filtrer les prières"))+'">'+filterButtons+'</nav>':'';
+ const familyDisplayTitle=familyId==='eucharistic'?L('Holy Eucharist','Sainte Eucharistie'):family.title;
  return `${head(L("Pray","Prier"),'')}<main class="aoP435930Body aoPrayDoorInterior aoPrayDoorMosaicInterior" data-ao-prayer-shelf="${esc(familyId)}">
-  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+assetIcon(family.assetId,'aoPrayDoorCoverIcon',{preferEmbedded:true})+'</span>'}</section>
-  <header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header>
+  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+assetIcon(family.assetId,'aoPrayDoorCoverIcon',{preferEmbedded:true})+'</span>'}
+    <header class="aoPrayDoorHeading"><small class="aoPrayDoorEyebrow">${esc(L("PRAYER COLLECTION","PRIÈRES"))}</small><h2>${esc(familyDisplayTitle)}</h2></header></section>
+  <p class="aoPrayDoorDescription">${esc(family.description)}</p>
   ${filters}
-  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(family.title)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId)).join('')}</nav>
-  ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
+  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(familyDisplayTitle)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId,i)).join('')}</nav>
+  ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext"><details><summary>'+esc(L('Liturgical reference','Repère liturgique'))+'</summary>'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</details></aside>':''}
  </main>`;
 }
 function openFamily(id){
@@ -3526,6 +3535,21 @@ function refreshRosaryChoiceFocus(attribute,value){
   node?.focus?.({preventScroll:true});
  });
 }
+function toggleClaudeHolyCard(lace){
+ if(!lace)return false;
+ const card=lace.closest('[data-ao-claude-holy-card]');
+ if(!card)return false;
+ CLAUDE_HOLY_PREF.flipped=!lace.classList.contains('flip');
+ lace.classList.toggle('flip',CLAUDE_HOLY_PREF.flipped);
+ // Both faces remain mounted for the approved 500ms Y-flip; expose only
+ // the visible prayer or artwork face to assistive technology.
+ card.querySelector('.aoClaudeHolyFront')?.setAttribute('aria-hidden',String(CLAUDE_HOLY_PREF.flipped));
+ card.querySelector('.aoClaudeHolyBack')?.setAttribute('aria-hidden',String(!CLAUDE_HOLY_PREF.flipped));
+ lace.setAttribute('aria-label',CLAUDE_HOLY_PREF.flipped?L('Turn to front of card','Retourner la carte'):L('Turn to prayer text','Voir la prière'));
+ const hint=card.querySelector('.aoClaudeHolyHint');
+ if(hint)hint.textContent=CLAUDE_HOLY_PREF.flipped?L('Tap to turn back · swipe for the next card','Touchez pour retourner · balayez pour la suivante'):L('Tap to turn the card over','Touchez pour retourner la carte');
+ return true;
+}
 function installLibraryParagraphFocus(m,id){
  const card=m.querySelector(".aoP435930LibraryReader .aoDevoCard");
  if(!card||!id)return;
@@ -3548,6 +3572,8 @@ function installLibraryParagraphFocus(m,id){
    CLAUDE_HOLY_PREF.scrollRatio=backside.scrollTop/Math.max(1,backside.scrollHeight-backside.clientHeight);
   },{passive:true});
   const lace=card.querySelector('[data-p435930-essential-card-turn]');
+  // The source artwork credit is a real link; card turns use the existing
+  // delegated click handler only for non-link front-face targets.
   lace?.addEventListener("keydown",event=>{
    if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
    if(event.key==='Enter'||event.key===' '){
@@ -3632,7 +3658,23 @@ function reconcileF07ApprovedMenus(m){
  header.classList.add('aoPrayerBookHead');
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='littleCrown')html=renderLittleCrown();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
- ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;reconcileF07ApprovedMenus(m);if(moved)queueMicrotask(()=>{m.scrollTop=0});
+ ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;reconcileF07ApprovedMenus(m);
+ // The painting mosaic has one physical two-stage activation owner. Bind it
+ // at the tile capture boundary so an expanded caption or nested artwork
+ // cannot consume the second tap before the existing Prayer route dispatcher.
+ // The original onClick still selects the exact canonical family/route.
+ if(PRAYER_PILOT_ENABLED&&view==='home'){
+  for(const tile of m.querySelectorAll('[data-ao-pray-pilot-tile]')){
+   tile.addEventListener('click',event=>{
+    event.stopPropagation();
+    onClick(event);
+   },true);
+  }
+  // An asynchronous source-owned render must not erase an already revealed
+  // gallery item between its first and second physical activations.
+  restorePrayerMosaicReveal(m);
+ }
+ if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
  if(view==='adoration'&&ADOR.quiet){
@@ -3968,7 +4010,24 @@ function onClick(e){
   return;
  }
  if(e.target.closest?.('.aoClaudeHolyArtCredit a'))return;
+ // Clicks outside a selected mosaic painting dismiss its category reveal.
+ // No route or canonical reader state is touched by the dismissal.
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&!e.target.closest?.('[data-ao-pray-pilot-tile]')){
+  clearPrayerMosaicReveal(mount());
+ }
  const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn],[data-p435930-essential-flow-toggle]');if(!b)return;
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-ao-pray-pilot-tile')){
+  // The first activation previews a category. The second must navigate
+  // deterministically before other generic prayer-button handlers can claim it.
+  if(revealPrayerMosaicTile(b)){e.preventDefault();return;}
+  if(b.dataset.p435930Family){
+   const id=b.dataset.p435930Family;
+   const entry=resolvedPrayerPilotFamilies(L,prayFamilies())[id];
+   if(!entry||entry.direct)return;
+   familyId=id;view='family';navStack=[];render();return;
+  }
+  // Direct-owned doors (Essential Prayers) retain the canonical owner below.
+ }
  if(PRAYER_PILOT_ENABLED&&view==='family'&&b.hasAttribute('data-p435930-door-filter')){
   const root=b.closest('[data-ao-prayer-shelf]'),selected=b.dataset.p435930DoorFilter;
   if(!root)return;
@@ -4339,18 +4398,15 @@ function onClick(e){
   CLAUDE_HOLY_PREF.scrollRatio=scroll?scroll.scrollTop/Math.max(1,scroll.scrollHeight-scroll.clientHeight):0;
   return render();
  }
+ if(b.hasAttribute('data-p435930-essential-flip-face')){
+  const lace=b.closest('[data-ao-claude-holy-card]')?.querySelector('[data-p435930-essential-card-turn]');
+  if(lace)toggleClaudeHolyCard(lace);
+  return;
+ }
  if(b.hasAttribute('data-p435930-essential-card-turn')){
-  const card=b.closest('[data-ao-claude-holy-card]');
-  if(e.target.closest?.('.aoP435930EssentialBeat'))return;
-  CLAUDE_HOLY_PREF.flipped=!b.classList.contains('flip');
-  b.classList.toggle('flip',CLAUDE_HOLY_PREF.flipped);
-  // The two card faces remain mounted for the 500ms Y-flip. Only the face
-  // currently visible may be read by assistive technology.
-  card?.querySelector('.aoClaudeHolyFront')?.setAttribute('aria-hidden',String(CLAUDE_HOLY_PREF.flipped));
-  card?.querySelector('.aoClaudeHolyBack')?.setAttribute('aria-hidden',String(!CLAUDE_HOLY_PREF.flipped));
-  b.setAttribute('aria-label',CLAUDE_HOLY_PREF.flipped?L('Turn to front of card','Retourner la carte'):L('Turn to prayer text','Voir la prière'));
-  const hint=card?.querySelector('.aoClaudeHolyHint');
-  if(hint)hint.textContent=CLAUDE_HOLY_PREF.flipped?L('Tap to turn back · swipe for the next card','Touchez pour retourner · balayez pour la suivante'):L('Tap to turn the card over','Touchez pour retourner la carte');
+  // Fallback for card activation before its focus-hook capture listener mounts.
+  if(b.classList.contains('flip')&&e.target.closest?.('.aoP435930EssentialBeat'))return;
+  toggleClaudeHolyCard(b);
   return;
  }
  if(b.hasAttribute('data-p435930-essential-prev')||b.hasAttribute('data-p435930-essential-next')){
@@ -4830,6 +4886,9 @@ document.addEventListener('keydown',e=>{
   horizontalStep(e.key==='ArrowRight'?1:-1);
   queueMicrotask(()=>r.querySelector('.aoP435930Stations .aoDevoCardScroll')?.focus?.({preventScroll:true}));
   return;
+ }
+ if(e.key==='Escape'&&PRAYER_PILOT_ENABLED&&view==='home'&&clearPrayerMosaicReveal(r)){
+  e.preventDefault();return;
  }
  if(e.key==='Escape'){e.preventDefault();close();return}
  if(e.key==='Tab'){const f=focusables();if(!f.length){e.preventDefault();return}const first=f[0],last=f[f.length-1],a=document.activeElement;if(e.shiftKey&&(a===first||!r.contains(a))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(a===last||!r.contains(a))){e.preventDefault();first.focus()}}

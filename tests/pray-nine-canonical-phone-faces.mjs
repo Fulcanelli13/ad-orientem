@@ -56,7 +56,7 @@ try{
   const page=await ctx.newPage(),errors=[];
   page.on("pageerror",e=>errors.push(e.message));
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoEssentialFlow=1",
     {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&
     typeof globalThis.AO_APP_SHELL_V1?.navigate==="function",null,{timeout:45000});

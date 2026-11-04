@@ -1,4 +1,5 @@
 import {PRAY_DOOR_ART_SLOTS_V1,prayerDoorArtSlot,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
+import {revealPrayerMosaicTile,clearPrayerMosaicReveal,restorePrayerMosaicReveal} from "../src/pray/prayer-mosaic-reveal.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
@@ -56,6 +57,55 @@ const actual=renderPilotDiscovery({
  families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
 });
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+assert.equal((actual.match(/data-ao-pray-pilot-tile="/g)||[]).length,9,"Every door must have a disclosure identity");
+assert.equal((actual.match(/aria-expanded="false"/g)||[]).length,9,"Mosaic doors start unrevealed");
+assert.match(actual,/Select to reveal, select again to open/,"Reader navigation needs the approved two-step affordance");
+// Isolated interaction contract: never invoke navigation on the first activation,
+// never disclose two paintings simultaneously, and let the second activation
+// fall through to existing source-owned route handling.
+const tiles=[];
+const mosaic={
+ querySelectorAll(selector){
+  return selector.includes('[aria-expanded="true"]')
+   ?tiles.filter(t=>t.getAttribute('aria-expanded')==='true'):tiles;
+ }
+};
+const fakeTile=id=>{
+ const attrs=new Map([['aria-expanded','false']]);
+ return {
+  dataset:{aoPrayPilotTile:id},
+  matches:s=>s==='[data-ao-pray-pilot-tile]',
+  closest:s=>s==='[data-ao-pray-pilot-mosaic]'?mosaic:null,
+  getAttribute:name=>attrs.get(name),
+  setAttribute:(name,value)=>attrs.set(name,String(value))
+ };
+};
+tiles.push(fakeTile('daily'),fakeTile('eucharistic'));
+assert.equal(revealPrayerMosaicTile(tiles[0]),true,"First activation is reveal only");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[1]),true,"Another painting replaces the current reveal");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'false');
+assert.equal(tiles[1].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[1]),false,"Second activation delegates to canonical owner");
+assert.equal(tiles[1].getAttribute('aria-expanded'),'false');
+assert.equal(revealPrayerMosaicTile(tiles[0]),true);
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+const oldTile=tiles[0];
+// A source-owned render can replace the entire DOM between genuine taps.
+// Restoration must preserve the disclosure, and the next tap must navigate,
+// not demand a third physical activation.
+tiles.splice(0,tiles.length,fakeTile('daily'),fakeTile('eucharistic'));
+assert.notEqual(tiles[0],oldTile);
+assert.equal(restorePrayerMosaicReveal(mosaic),true);
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[0]),false,
+ "Second tap on remounted selected tile must delegate to canonical route");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'false');
+assert.equal(revealPrayerMosaicTile(tiles[1]),true);
+assert.equal(clearPrayerMosaicReveal(mosaic),true);
+assert.equal(clearPrayerMosaicReveal(mosaic),false);
+assert.equal(restorePrayerMosaicReveal(mosaic),false,
+ "Fresh hub or outside dismissal must not auto-select previous artwork");
 assert.match(actual,/>Prayer<\/h2>/,"R1.1 approved quiet Prayer heading must be shown");
 assert.doesNotMatch(actual,/Enter into prayer|Choose a door or search|Find a prayer or devotion/,
  "Rejected instructional heading, helper copy and redundant subtitle must stay absent");
@@ -186,8 +236,8 @@ assert.match(runtime,/data-p435930-lib-all/,
  "The full Prayer Library must remain directly accessible from Essential Prayers");
 assert.match(runtime,/aoPrayDoorShelfList aoPrayDoorMosaic/,
  "Each non-library family interior must use the single mosaic grid");
-assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0,family\.assetId\)\)/,
- "The full canonical ordered door inventory must render in the grid");
+assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0,family\.assetId,i\)\)/,
+ "The full canonical ordered door inventory must render with stable study-list ordinals");
 assert.match(runtime,/data-ao-pray-door-entry data-ao-pray-door-facet/,
  "Existing filters must retain their canonical card target");
 assert.match(runtime,/assetIcon\(familyAssetId/,"Every unassigned artwork tile must retain a real family icon");
@@ -199,8 +249,12 @@ assert.doesNotMatch(runtime,/aoPrayDoorShelfRow|aoPrayDoorFeatured/,
  "Retired text rows and oversized featured list must not return");
 assert.match(mosaicCss,/\.aoPrayDoorMosaicCard\[hidden\]\{display:none!important\}/,
  "Filtered mosaic tiles must actually disappear from the grid");
-assert.match(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
- "Essential 32-prayer source case must become a responsive visual mosaic");
+const f01Css=readFileSync(new URL("../src/pray/claude-holy-card-styles.js",import.meta.url),"utf8");
+assert.match(f01Css,/\.aoClaudeHolyFan\{/,"F01 uses the approved case-of-cards owner");
+assert.match(f01Css,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,
+ "The original three-column Claude Holy Card fan must remain canonical");
+assert.doesNotMatch(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
+ "New generic Prayer mosaics must not overwrite the approved F01 fan geometry");
 assert.match(mosaicCss,/prefers-reduced-motion:reduce/,
  "Prayer mosaics must respect reduced motion preferences");
 assert.match(runtime,/data-p435930-door-prayer/,"Single-text prayer cards hand off to the existing canonical Library");

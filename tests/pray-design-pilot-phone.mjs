@@ -45,6 +45,36 @@ try{
     "Only the released Met Eucharistic photograph may appear; other eight editorial slots remain photo-gated");
    assert.equal(await mosaic.locator('[data-ao-editorial-state]').count(),9,
     "All nine doors must expose the corrected 267-master editorial state");
+   const pendingTiles=await mosaic.locator('[data-ao-art-binding="editorial-pending"]').evaluateAll(nodes=>nodes.map(node=>({
+     symbol:getComputedStyle(node.querySelector('.aoPrayPilotTileSymbol')).display,
+     title:node.querySelector('.aoPrayPilotTileCaption strong')?.textContent?.trim(),
+     caption:getComputedStyle(node.querySelector('.aoPrayPilotTileCaption')).visibility,
+     height:node.getBoundingClientRect().height
+   })));
+   assert.equal(pendingTiles.length,8,"Eight unreleased categories must stay publication-gated");
+   assert.ok(pendingTiles.every(t=>t.symbol==="none"&&t.caption==="visible"&&!!t.title&&t.height>=170),
+     "Pending doors need legible typographic fallback, not eight repetitive native-icons or blank tiles: "+JSON.stringify(pendingTiles));
+
+   const releasedDoor=await mosaic.locator('[data-ao-art-binding="released"]').evaluate(el=>{
+     const caption=el.querySelector('.aoPrayPilotTileCaption');
+     const styles=getComputedStyle(caption);
+     return {title:caption?.querySelector('strong')?.textContent?.trim(),
+       visible:styles.visibility,opacity:Number(styles.opacity),
+       fetchMode:el.querySelector('img')?.getAttribute('loading')};
+   });
+   assert.ok(releasedDoor.title&&releasedDoor.visible==="visible"&&releasedDoor.opacity>=.99,
+     "The sole licensed photo door needs a visible title, even before decoding its image: "+JSON.stringify(releasedDoor));
+   assert.equal(releasedDoor.fetchMode,"eager","The one released discovery image should not wait for lazy loading");
+   assert.equal(releasedDoor.title,"Holy Eucharist",
+     "The gallery door must use exactly the same title as its Eucharistic category");
+   await page.waitForFunction(()=>{
+     const img=document.querySelector('#aoPray435930.open .aoPrayPilotTile[data-ao-art-binding="released"] img');
+     return !!img&&img.complete&&img.naturalWidth>0;
+   },null,{timeout:20000});
+   assert.equal(await mosaic.locator('[data-ao-art-binding="released"] img').getAttribute("fetchpriority"),"high",
+     "The one exact approved photo should be eagerly prioritised");
+
+
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
@@ -54,8 +84,28 @@ try{
     return {width:box.width,display:getComputedStyle(node).display,
       home:node.closest(".aoPrayPilotHome")?.getBoundingClientRect().width,tiles};
    });
-   assert.ok(mosaicGeometry.width>=width*.78&&mosaicGeometry.tiles.every(x=>x.width>=width*.19&&x.height>=74),
-    "R1.1 mosaic must fill six-column phone grid, not collapse to a thin strip: "+JSON.stringify(mosaicGeometry));
+   assert.equal(mosaicGeometry.display,'block',"The approved gallery uses native masonry columns, not a conventional CSS card grid");
+   assert.ok(mosaicGeometry.width>=width*.96&&mosaicGeometry.tiles.every(x=>x.width>=width*.4&&x.height>=149),
+    "Approved study mosaic must occupy the width as a two-column, edge-to-edge gallery: "+JSON.stringify(mosaicGeometry));
+   assert.ok(mosaicGeometry.tiles.some(x=>x.height>220),"Masonry gallery must retain taller portrait panels");
+   // The approved painting mosaic starts at the top of the Prayer sheet,
+   // with Back, settings and functional search floating above the artwork.
+   const immersive=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const gallery=root.querySelector("[data-ao-pray-pilot-mosaic]").getBoundingClientRect();
+    const header=root.querySelector(".aoP435930Head").getBoundingClientRect();
+    const search=root.querySelector(".aoPrayPilotSearch").getBoundingClientRect();
+    return {galleryTop:gallery.top,headerTop:header.top,headerHeight:header.height,
+     headerPosition:getComputedStyle(root.querySelector(".aoP435930Head")).position,
+     searchWidth:search.width,searchTop:search.top,
+     backVisible:!!root.querySelector(".aoP435930Head button")?.getClientRects().length};
+   });
+   assert.equal(immersive.headerPosition,"absolute",
+    "Prayer tools must overlay the art mosaic: "+JSON.stringify(immersive));
+   assert.ok(immersive.galleryTop<=immersive.headerTop+12,
+    "The gallery must begin behind the floating Prayer tools: "+JSON.stringify(immersive));
+   assert.ok(immersive.searchWidth<=50&&immersive.backVisible,
+    "Search and Back must remain compact accessible controls: "+JSON.stringify(immersive));
    await page.screenshot({path:resolve(output,"discovery-"+width+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
@@ -63,7 +113,23 @@ try{
       content:mount?Math.max(0,mount.scrollWidth-mount.clientWidth):999};
    });
    assert.ok(overflow.document<=1&&overflow.content<=1,"Discovery must not overflow: "+JSON.stringify(overflow));
+   // The ninth door must not be unreachable underneath the fixed bottom tab bar.
+   const finalDoor=await page.evaluate(()=>{
+     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+     mount.scrollTop=mount.scrollHeight;
+     const tile=document.querySelector('#aoPray435930.open [data-ao-pray-pilot-tile="saints"]');
+     const bar=document.querySelector("#ao-global-ribbon, .aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']");
+     const bottom=tile.getBoundingClientRect().bottom;
+     return {bottom,navTop:bar?.getBoundingClientRect().top??innerHeight-64,scroll:mount.scrollTop};
+   });
+   assert.ok(finalDoor.bottom<=finalDoor.navTop+1,
+     "Saints & Angels must be fully reachable above navigation after scrolling: "+JSON.stringify(finalDoor));
+   await page.locator(base+" .aoP435930Mount").evaluate(el=>{el.scrollTop=0});
+
    const search=page.locator(base+" [data-p435930-pilot-search]");
+   await page.locator(base+" .aoPrayPilotSearch").click();
+   assert.ok((await page.locator(base+" .aoPrayPilotSearch").boundingBox()).width>110,
+    "Tapping the floating search must reveal a usable source-index input");
    await search.fill("Memorare");
    assert.equal(await mosaic.isVisible(),false,"search should replace mosaic temporarily");
    const memo=page.locator(base+" [data-p435930-pilot-prayer]").filter({hasText:"Memorare"}).first();
@@ -84,16 +150,21 @@ try{
    const nine=["daily","chaplets","eucharistic","marian","novenas","ourlord","saints","intentions"];
    for(const door of nine){
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-    await page.locator(base+' [data-p435930-family="'+door+'"]').click();
+    const galleryDoor=page.locator(base+' [data-p435930-family="'+door+'"]');
+    await galleryDoor.click();
+    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"home","First tap only reveals the study category");
+    assert.equal(await galleryDoor.getAttribute("aria-expanded"),"true");
+    await galleryDoor.click();
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
     assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),1,
       "Each Claude door has one content title below its artwork band: "+door);
     assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding="+(door==="eucharistic"?"released":"editorial-pending")+"]").count(),1,
       "Only the Eucharistic door uses published Met art; remaining slots are editorial-pending: "+door);
     const facetCount=await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-door-filter]").count();
-    if(door==="eucharistic")assert.equal(facetCount,0,
-      "Do not clutter a single-category Eucharistic mosaic with meaningless filters");
-    else assert.ok(facetCount>=2,"Mixed-family filters must remain available: "+door);
+    // Every canonical shelf currently has fewer than eight rows; source-owned
+    // prayer search remains available from discovery, not redundant chips.
+    assert.equal(facetCount,0,
+      "Short category interiors should expose direct numbered entries without redundant filter chips: "+door);
     if(door==="marian"){
       const featured=await page.locator(base+" .aoPrayMosaicCardFeatured .aoPrayMosaicCardCopy b").textContent();
       assert.equal(featured.trim(),"Litany of Loreto","Keep the readable editorial title; canonical source edition stays in the reader");
@@ -109,7 +180,71 @@ try{
     assert.ok(rows.length>=2,"Every real door needs at least two distinct source-owned entries: "+door);
     assert.equal(new Set(rows).size,rows.length,"Within-door duplicates: "+door);
     assert.equal(await page.locator(base+' [data-ao-prayer-shelf] .aoPrayDoorMosaicCard').count(),rows.length,
-      "Each canonical route must have exactly one mosaic tile: "+door);
+      "Each canonical route must have exactly one study-list row: "+door);
+    const studyList=await page.locator(base+' [data-ao-prayer-shelf]').evaluate(root=>{
+      const list=root.querySelector('.aoPrayDoorShelfList');
+      const first=root.querySelector('.aoPrayDoorMosaicCard');
+      const n=first?.querySelector('.aoPrayDoorRowNumber')?.textContent?.trim();
+      const arrow=first?.querySelector('.aoPrayDoorRowArrow')?.textContent?.trim();
+      const heading=root.querySelector('.aoPrayDoorHeading h2');
+      const cover=root.querySelector('.aoPrayDoorCover');
+      const titleWithinArt=!!cover?.contains(heading);
+      const chrome=document.querySelector("#aoPray435930.open .aoP435930Head");
+      const description=first?.querySelector(".aoPrayMosaicCardCopy>small");
+      const language=first?.querySelector(".aoPrayDoorLanguages");
+      const artThumbs=[...root.querySelectorAll(".aoPrayDoorMosaicCard .aoPrayMosaicCardArt")];
+      const visibleArtThumbs=artThumbs.filter(node=>getComputedStyle(node).display!=="none");
+      return {listDisplay:list&&getComputedStyle(list).display,titleWithinArt,
+        artThumbCount:artThumbs.length,visibleArtThumbCount:visibleArtThumbs.length,
+        rowDirection:first&&getComputedStyle(first).flexDirection,
+        number:n,arrow,coverHeight:cover?.getBoundingClientRect().height,
+        titleTop:heading?.getBoundingClientRect().top,coverBottom:cover?.getBoundingClientRect().bottom,
+        coverTop:cover?.getBoundingClientRect().top,headerTop:chrome?.getBoundingClientRect().top,
+        headerPosition:chrome&&getComputedStyle(chrome).position,
+        headingBackground:heading?.parentElement?getComputedStyle(heading.parentElement).backgroundColor:null,
+        descriptionDisplay:description&&getComputedStyle(description).display,
+        languageDisplay:language&&getComputedStyle(language).display};
+    });
+    assert.equal(studyList.listDisplay,'block',"Prototype category must be a linear list, not another card grid: "+door);
+    assert.equal(studyList.rowDirection,'row',"Category entries should be horizontally aligned text rows: "+door);
+    assert.equal(studyList.number,'01',"Restored ordinal should begin at 01: "+door);
+    assert.equal(studyList.arrow,'›',"Rows retain direct-access affordance: "+door);
+    if(door==="eucharistic")
+      assert.ok(studyList.coverHeight>=210&&studyList.coverHeight<=226,
+        "Real approved Ingres art retains the original cover geometry: "+JSON.stringify(studyList));
+    else
+      assert.ok(studyList.coverHeight>=170&&studyList.coverHeight<=182,
+        "Unreleased cover uses deliberate compact typography without an empty 225px photo field: "+JSON.stringify(studyList));
+    assert.equal(studyList.titleWithinArt,true,"Approved study title belongs inside the artwork header: "+door);
+    assert.ok(studyList.titleTop<studyList.coverBottom,"Category heading should overlay artwork, not become an external heading: "+door);
+    assert.equal(studyList.headerPosition,"absolute","Category header must float over the cover: "+door);
+    assert.ok(studyList.coverTop<=studyList.headerTop+12,"Cover begins beneath floating controls: "+door);
+    assert.equal(studyList.headingBackground,"rgba(0, 0, 0, 0)",
+      "Title must not sit in an opaque rectangle: "+door);
+    assert.equal(studyList.descriptionDisplay,"none",
+      "Study-style ordinal list must keep prayer titles legible: "+door);
+    if(door==="eucharistic"){
+      const sourceCredit=await page.locator(base+" .aoPrayDoorCover .aoReleasedModulePhoto figcaption").evaluate(el=>({
+        position:getComputedStyle(el).position,
+        opacity:getComputedStyle(el).opacity,
+        color:getComputedStyle(el).color,
+        background:getComputedStyle(el).backgroundColor,
+        link:el.querySelector("a")?.getAttribute("href"),
+        visible:!!el.getClientRects().length
+      }));
+      assert.equal(sourceCredit.position,"absolute",
+        "Exact released cover attribution must not overlap the bottom artwork title");
+      assert.equal(sourceCredit.visible,true,"Artist/source credit remains readable and visible");
+      assert.ok(sourceCredit.link?.startsWith("https://"),
+        "Only the true released artwork source may appear as the cover-credit link");
+      assert.ok(sourceCredit.background!=="rgba(0, 0, 0, 0)"&&sourceCredit.background!=="transparent",
+        "Cover provenance needs its own contrast background: "+JSON.stringify(sourceCredit));
+    }
+    assert.equal(studyList.artThumbCount,rows.length,"Keep exact artwork bindings in the route DOM: "+door);
+    assert.equal(studyList.visibleArtThumbCount,0,
+      "Text-only category rows must not leak clipped painting attributions next to arrows: "+door);
+    if(studyList.languageDisplay!==null)assert.equal(studyList.languageDisplay,"none",
+      "Language options remain in each canonical reader, not cramped shelf rows: "+door);
     if(facetCount){
       const activeFacet=page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter]:not([data-p435930-door-filter=all])').first();
       await activeFacet.click();
@@ -133,7 +268,10 @@ try{
    // The ninth discovery door must reach its own 32-prayer mosaic,
    // with a separate explicit action to open the full canonical Library.
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-   await page.locator(base+' [data-p435930-own="pray.library"]').first().click();
+   const libraryDoor=page.locator(base+' [data-p435930-own="pray.library"]').first();
+   await libraryDoor.click();
+   assert.equal(await libraryDoor.getAttribute("aria-expanded"),"true");
+   await libraryDoor.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
    assert.equal(await page.locator(base+' [data-ao-pray-essential-landing="true"] [data-p435930-lib-open]').count(),32,
      "Essential Prayers must open its 32 real canonical prayer cards");
@@ -151,12 +289,20 @@ try{
    // reader, with return to its original shelf rather than a second library list.
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(base+' [data-p435930-family="marian"]').click();
+   await page.locator(base+' [data-p435930-family="marian"]').click();
    await page.locator(base+' [data-p435930-door-prayer="marian_memorare"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
-   await page.locator(base+' [data-p435930-lib-back]').click();
+   // The Holy Card removes the duplicated inline Back; use its one visible
+   // native Back and still assert return to the original Marian shelf.
+   assert.equal(await page.locator(base+' [data-p435930-lib-back]').isVisible(),false,
+     "F01 Holy Card must not show two Back controls");
+   const nativeBack=page.locator(base+' [data-p435930-back]');
+   assert.ok(await nativeBack.isVisible(),"The Prayer running-head Back must remain visible");
+   await nativeBack.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Source-prayer Back must return to Our Lady shelf");
    assert.equal(await page.locator(base+' [data-ao-prayer-shelf="marian"]').count(),1);
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(base+' [data-p435930-family="daily"]').click();
    await page.locator(base+' [data-p435930-family="daily"]').click();
    await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");

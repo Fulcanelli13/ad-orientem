@@ -19,17 +19,29 @@ const safeImage=artUrl=>typeof artUrl==="string"&&(
 export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title,artFor=()=>""}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  const cards=ids.filter(id=>prayers?.[id]);
+ // A repeated approved image stays available in its individual prayer reader,
+ // but the compact collection displays it once instead of duplicating covers.
+ const usedImages=new Set();
  return '<section class="aoClaudeHolyCase" data-ao-claude-holy-case>'+
   '<div class="aoClaudeHolyCaseHead"><h2>'+esc(title||"Essential Prayers")+'</h2></div>'+
   '<div class="aoClaudeHolyFan">'+cards.map((id,i)=>{
-    const p=prayers[id];
-    return '<button type="button" data-p435930-lib-open="'+esc(id)+'" aria-label="'+esc(p.title||id)+'">'+
-      '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate" aria-hidden="true">'+
-       (safeImage(artFor(id))?'<img src="'+esc(artFor(id))+'" alt="" loading="lazy" decoding="async">':'')+'</div>'+
-      '<small lang="la">'+esc(incipit(p)||p.title)+'</small></div></button>';
+    const p=prayers[id],source=artFor(id);
+    const published=safeImage(source)&&!usedImages.has(source);
+    if(published)usedImages.add(source);
+    const canonicalTitle=p.title||id,firstWords=incipit(p)||canonicalTitle;
+    // The collection is captured immediately on route entry. An approved
+    // image may still be decoding, especially below the initial viewport;
+    // always preserve a readable source-derived face underneath the photo.
+    const typePlate='<span class="aoClaudeHolyTypePlate" aria-hidden="true"><b>'+esc(canonicalTitle)+'</b>'+
+      '<i lang="la">'+esc(firstWords)+'</i></span>';
+    const plate=published?typePlate+'<img src="'+esc(source)+'" alt="" loading="'+(i<12?'eager':'lazy')+'" decoding="async">':typePlate;
+    return '<button type="button" data-p435930-lib-open="'+esc(id)+'" aria-label="'+esc(canonicalTitle)+'">'+
+      '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate'+(published?'':' aoClaudeHolyCasePlateText')+'" aria-hidden="true">'+
+       plate+'</div>'+
+      '<small lang="la">'+esc(firstWords)+'</small></div></button>';
    }).join('')+'</div></section>';
 }
-export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl="",artCredit=null}={}){
+export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl="",artCredit=null,flipLabel="Turn card"}={}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  if(!p||!id)return "";
  const bilingual=face==="both"&&!!p.la&&!!p[vernacular];
@@ -56,15 +68,16 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
   '<div class="aoClaudeHolyDeck"><div class="aoClaudeHolyLace'+(flipped?' flip':'')+
    '" role="button" tabindex="0" data-p435930-essential-card-turn aria-label="'+esc(flipped?'Turn to front of card':'Turn to prayer text')+'">'+
    '<div class="aoClaudeHolyInner">'+
-   '<div class="aoClaudeHolyFace aoClaudeHolyFront" aria-hidden="'+String(flipped)+'"><div class="aoClaudeHolyPlate"'+
-    (image?' data-ao-editorial-slot="COV-'+esc(id)+'" data-ao-editorial-source="released-exact"':'')+'>'+image+credit+'</div>'+
+   '<div class="aoClaudeHolyFace aoClaudeHolyFront" aria-hidden="'+String(flipped)+'"><div class="aoClaudeHolyPlate'+(image?'':' aoClaudeHolyPlateText')+'"'+
+    (image?' data-ao-editorial-slot="COV-'+esc(id)+'" data-ao-editorial-source="released-exact"':'')+'>'+(image+credit||'<span class="aoClaudeHolyTypePlate"><b>'+esc(title||id)+'</b><i lang="la">'+esc(latinIncipit||title||id)+'</i></span>')+'</div>'+
    '<div class="aoClaudeHolyTitle"><small lang="la">'+esc(latinIncipit)+'</small>'+
     '<h3>'+esc(title||id)+'</h3></div></div>'+
    '<div class="aoClaudeHolyFace aoClaudeHolyBack" aria-hidden="'+String(!flipped)+'"><div class="aoClaudeHolyOrn">✠</div>'+
     '<h4 lang="la">'+esc(latinIncipit)+'</h4>'+
     '<div class="aoClaudeHolyBackScroll aoP435930Text" data-ao-pray-semantic="1" role="region" aria-label="'+esc(title||id)+'">'+latinBlock+paragraphs+'</div>'+
     '<div class="aoClaudeHolyOrn aoClaudeHolyClosing">❦</div></div>'+
-   '</div></div><div class="aoClaudeHolyHint">'+esc(flipped?'Tap to turn back · swipe for the next card':'Tap to turn the card over')+'</div></div>'+
+   '</div></div><button type="button" class="aoClaudeHolyFlipButton" data-p435930-essential-flip-face aria-label="'+esc(flipLabel)+'">'+esc(flipLabel)+' ↻</button>'+
+   '<div class="aoClaudeHolyHint">'+esc(flipped?'Tap to turn back · swipe for the next card':'Tap to turn the card over')+'</div></div>'+
    '</article>';
 }
 /** The source model never writes a focus level into a text string. A genuine
