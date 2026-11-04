@@ -1,0 +1,2685 @@
+{
+  "schema": "AO_TLM_ATLAS_GEONAMES1000_BULK_LOCALITY_ROUND2_V1",
+  "created_on": "2026-11-04",
+  "source_commit": "e9afd6a75709df79ce9c3d1332eac2c4b5937477",
+  "source_blob_sha": "daa8709ef1be76d80e3fa0287436068acf4c6139",
+  "source_license": "GeoNames CC BY 4.0",
+  "counts": {
+    "baseline_unpinned_on_main": 277,
+    "previous_no_safe_match": 249,
+    "pending_precise_site_pr2446": 9,
+    "new_illustrative_candidates": 94,
+    "possible_mapped_after_pr2446_and_round2": 2408,
+    "possible_unpinned_after_pr2446_and_round2": 174,
+    "excel_approved_localities": 94,
+    "app_imported_localities": 0
+  },
+  "policy": "All 94 require independent Excel review and approval under frozen CL2 site ID; locality markers are not building GPS, exact doors or current Mass proof. Do not use centroids in navigation. Exclude identity/duplicate holds; do not alter source IDs, address, CL27 facets or EN/FR profiles. Excel All Venues and Unpinned Queue approvals were verified for all 94 coordinates/source values. Železná Ruda alias candidates RG-278C58AD5CAD and RG-3D31819B8E6B are explicitly Needs more evidence and excluded.",
+  "duplicate_hold_candidates": [
+    {
+      "ids": [
+        "RG-278C58AD5CAD",
+        "RG-3D31819B8E6B"
+      ],
+      "reason": "POTENTIAL_SAME_PHYSICAL_CHURCH_ZELEZNA_RUDA_WORSHIP_SITE_ALIAS_HOLD_PENDING_IDENTITY_RECONCILIATION"
+    }
+  ],
+  "records": [
+    {
+      "cl2_anchor": "RG-02F7101BEBA4",
+      "source_ids": [
+        "AO-B33-L-CZ-839A8EC1C061"
+      ],
+      "country": "CZ",
+      "site_name": "Kostel sv. Václava",
+      "frozen_location": "Kostelní 1288/4, 370 04 České Budějovice",
+      "original_site_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "matched_city": "České Budějovice",
+      "matched_admin1": "Southwest",
+      "matched_county": "Jihočeský kraj",
+      "lat": 48.97447,
+      "lng": 14.47434,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CZ:ceske-budejovice:southwest",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-0A4B8547401B",
+      "source_ids": [
+        "AO-B54-MX-4871D5A3164F"
+      ],
+      "country": "MX",
+      "site_name": "Templo Inmaculado Corazón de María — Hermosillo",
+      "frozen_location": "General Piña y Huepac 241, Hermosillo Sonora, Mexico",
+      "original_site_sources": [
+        "https://obispoenmisiones.com/sociedad-sacerdotal-trento/directorio-oficial-de-las-iglesias-de-s-s-t/"
+      ],
+      "matched_city": "Hermosillo",
+      "matched_admin1": "Sonora",
+      "matched_county": "Hermosillo",
+      "lat": 29.08874,
+      "lng": -110.96677,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:MX:hermosillo:sonora",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-0B6389E60DF2",
+      "source_ids": [
+        "AO-B56-FR-E57BCE69E326"
+      ],
+      "country": "FR",
+      "site_name": "Chapelle Notre-Dame des Dons — Treillières",
+      "frozen_location": "19 rue des Dons, 44119 Treillières, France",
+      "original_site_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "matched_city": "Treillières",
+      "matched_admin1": "Pays de la Loire",
+      "matched_county": "Loire-Atlantique",
+      "lat": 47.33117,
+      "lng": -1.62684,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:treillieres:pays-de-la-loire",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-17D799846C9B",
+      "source_ids": [
+        "AO-B34-L-PH-6166AADE286D"
+      ],
+      "country": "PH",
+      "site_name": "Chapel of the Sacred Heart",
+      "frozen_location": "N Valencia, Concordia, Guimaras",
+      "original_site_sources": [
+        "https://fsspx.asia/en/list-sspx-chapels-1"
+      ],
+      "matched_city": "Concordia",
+      "matched_admin1": "Guimaras",
+      "matched_county": "Nueva Valencia",
+      "lat": 10.50767,
+      "lng": 122.5496,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:concordia:guimaras",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-1A1E54C59588",
+      "source_ids": [
+        "AO-B42-FSSP-CO-048",
+        "AO-B42-FSSP-CO-9C06F6BA95FF"
+      ],
+      "country": "CO",
+      "site_name": "Capilla Ntra. Sra. de Fátima",
+      "frozen_location": "Casa San Martín de Porres - vda La María - 253040 Anolaima Cundinamarca - Colombia",
+      "original_site_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Anolaima",
+      "matched_admin1": "",
+      "matched_county": "",
+      "lat": 4.76333,
+      "lng": -74.46472,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CO:anolaima:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-1A777E5CB53F",
+      "source_ids": [
+        "AO-B54-MX-A68DE73709F0"
+      ],
+      "country": "MX",
+      "site_name": "Capilla del Convento de San José — Guadalajara",
+      "frozen_location": "Francia 1266, Colonia Moderna, Guadalajara Jalisco 44190, Mexico",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "matched_city": "Guadalajara",
+      "matched_admin1": "Jalisco",
+      "matched_county": "Guadalajara",
+      "lat": 20.67738,
+      "lng": -103.34749,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:MX:guadalajara:jalisco",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-1B5011BDF030",
+      "source_ids": [
+        "AO-B55-PH-CF54C89C3030"
+      ],
+      "country": "PH",
+      "site_name": "Saints Peter & Paul Parish — Hinunangan",
+      "frozen_location": "Hinunangan, Southern Leyte, Philippines",
+      "original_site_sources": [
+        "https://www.latinmassdir.org/venue/parokya-ni-san-pedro-ug-paul-saints-peter-paul-parish-hinunangan-philippines/"
+      ],
+      "matched_city": "Hinunangan",
+      "matched_admin1": "Southern Leyte",
+      "matched_county": "",
+      "lat": 10.39408,
+      "lng": 125.19768,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:hinunangan:southern-leyte",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-1F10692BD068",
+      "source_ids": [
+        "AO-B42-FSSP-PL-277"
+      ],
+      "country": "PL",
+      "site_name": "Kaplica Szpitala Powiatowego",
+      "frozen_location": "ul. Słowackiego 2 - PL 62-300 Września - Polska",
+      "original_site_sources": [
+        "https://fssp.pl/miejsca-celebracji/"
+      ],
+      "matched_city": "Września",
+      "matched_admin1": "Greater Poland Voivodeship",
+      "matched_county": "Września County",
+      "lat": 52.32512,
+      "lng": 17.56519,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PL:wrzesnia:greater-poland-voivodeship",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-20558E63E7F3",
+      "source_ids": [
+        "AO-B40-LOC-BR-AE0381D79D1F"
+      ],
+      "country": "BR",
+      "site_name": "Igreja de Nossa Senhora do Rosário",
+      "frozen_location": "Rua Padre Prudêncio 337, Campina, Belém PA 66019-080",
+      "original_site_sources": [
+        "https://www.instituteofthegoodshepherd.org/locations-around-the-world"
+      ],
+      "matched_city": "Belém",
+      "matched_admin1": "Pará",
+      "matched_county": "",
+      "lat": -1.45583,
+      "lng": -48.50444,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:belem:para",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-25281DDB2E01",
+      "source_ids": [
+        "AO-B55-PH-5C3CF997D68D"
+      ],
+      "country": "PH",
+      "site_name": "Saint Michael the Archangel Parish — Hindang",
+      "frozen_location": "Hindang, Leyte, Philippines",
+      "original_site_sources": [
+        "https://www.latinmassdir.org/venue/saint-michael-the-archangel-parish-leyte-philippines/"
+      ],
+      "matched_city": "Hindang",
+      "matched_admin1": "Leyte",
+      "matched_county": "",
+      "lat": 10.43417,
+      "lng": 124.72917,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:hindang:leyte",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-2698703271DB",
+      "source_ids": [
+        "AO-B33-L-CZ-3E3EF12418EF",
+        "AO-B42-FSSP-CZ-044"
+      ],
+      "country": "CZ",
+      "site_name": "Kostel sv. Jakuba",
+      "frozen_location": "Velká Dominikánská, Litoměřice 1-Město",
+      "original_site_sources": [
+        "https://www.unavoce.cz/mse",
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Litoměřice",
+      "matched_admin1": "Northwest",
+      "matched_county": "Ústecký kraj",
+      "lat": 50.53348,
+      "lng": 14.1318,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CZ:litomerice:northwest",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-2BDD7FFB71D5",
+      "source_ids": [
+        "AO-B33-L-CZ-488449F3B92C"
+      ],
+      "country": "CZ",
+      "site_name": "Kostel svatého Jana Křtitele",
+      "frozen_location": "Husova, Hradec Králové – Třebeš",
+      "original_site_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "matched_city": "Hradec Králové",
+      "matched_admin1": "Northeast",
+      "matched_county": "Královéhradecký kraj",
+      "lat": 50.20923,
+      "lng": 15.83277,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CZ:hradec-kralove:northeast",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-2D82BBD7C929",
+      "source_ids": [
+        "AO-B34-L-PH-BC7757783EBE"
+      ],
+      "country": "PH",
+      "site_name": "Our Lady of Sorrows Mission",
+      "frozen_location": "Ceniza Heights, Surigao City, Surigao del Norte",
+      "original_site_sources": [
+        "https://fsspx.asia/en/list-sspx-chapels-1"
+      ],
+      "matched_city": "Surigao",
+      "matched_admin1": "Surigao del Norte",
+      "matched_county": "",
+      "lat": 9.789,
+      "lng": 125.495,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:surigao:surigao-del-norte",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-4956AD7B8EBA",
+      "source_ids": [
+        "AO-B37-L-IT-48B76D4B2E08"
+      ],
+      "country": "IT",
+      "site_name": "Priorato San Carlo",
+      "frozen_location": "Via Mazzini 19, 10090 Montalenghe",
+      "original_site_sources": [
+        "https://fsspx.it/it/cappelle-e-oratori"
+      ],
+      "matched_city": "Montalenghe",
+      "matched_admin1": "Piemont",
+      "matched_county": "Torino",
+      "lat": 45.33666,
+      "lng": 7.83794,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:IT:montalenghe:piemont",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-4ECE8DDAA3A6",
+      "source_ids": [
+        "AO-B42-FSSP-CA-032"
+      ],
+      "country": "CA",
+      "site_name": "St. Anthony Church",
+      "frozen_location": "5340 4th St. SW. - Calgary AB T2V 0Z5 - Canada",
+      "original_site_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Calgary",
+      "matched_admin1": "Alberta",
+      "matched_county": "",
+      "lat": 51.05011,
+      "lng": -114.08529,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CA:calgary:alberta",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-54B038392C95",
+      "source_ids": [
+        "AO-B44-SSPX-CA-DF59D1EC177B"
+      ],
+      "country": "CA",
+      "site_name": "Centre Saint-Joseph",
+      "frozen_location": "1395 rue Notre-Dame, Saint-Césaire",
+      "original_site_sources": [
+        "https://sspx.ca/en/list-sspx-chapels-4"
+      ],
+      "matched_city": "Saint-Césaire",
+      "matched_admin1": "Québec",
+      "matched_county": "Rouville",
+      "lat": 45.40948,
+      "lng": -73.00104,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CA:saint-cesaire:quebec",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-57FFD16F4417",
+      "source_ids": [
+        "AO-B54-PH-09DD8AD7E4FD"
+      ],
+      "country": "PH",
+      "site_name": "Chapel of the Most Holy Trinity — Las Piñas",
+      "frozen_location": "34 Macopa Street, Agro Homes 1, Moonwalk Village, Las Piñas City 1747, Philippines",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "matched_city": "Las Piñas",
+      "matched_admin1": "",
+      "matched_county": "Las Piñas",
+      "lat": 14.45056,
+      "lng": 120.98278,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:las-pinas:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-5A9ACB374C07",
+      "source_ids": [
+        "AO-B54-AR-436A472BEF09"
+      ],
+      "country": "AR",
+      "site_name": "Capilla Dulce Nombre de María — Córdoba",
+      "frozen_location": "Monza 299, Barrio Las Flores, Córdoba Capital, Argentina",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "matched_city": "Córdoba",
+      "matched_admin1": "Córdoba",
+      "matched_county": "Pedanía Capital",
+      "lat": -31.40648,
+      "lng": -64.18853,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AR:cordoba:cordoba",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-5AB7415F2FB5",
+      "source_ids": [
+        "AO-B33-L-CZ-453907C1A1F9"
+      ],
+      "country": "CZ",
+      "site_name": "Kostel svatého Jošta",
+      "frozen_location": "Těšínská, Frýdek-Místek 1",
+      "original_site_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "matched_city": "Frýdek-Místek",
+      "matched_admin1": "Moravia-Silesia",
+      "matched_county": "Moravskoslezský kraj",
+      "lat": 49.68333,
+      "lng": 18.35,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CZ:frydek-mistek:moravia-silesia",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-5D6B44712E33",
+      "source_ids": [
+        "AO-B54-MX-C42393D0D64E"
+      ],
+      "country": "MX",
+      "site_name": "Capilla San Miguel — Zapopan",
+      "frozen_location": "Callejón del Arco, Zapopan Jalisco, Mexico",
+      "original_site_sources": [
+        "https://obispoenmisiones.com/sociedad-sacerdotal-trento/directorio-oficial-de-las-iglesias-de-s-s-t/"
+      ],
+      "matched_city": "Zapopan",
+      "matched_admin1": "Jalisco",
+      "matched_county": "Zapopan",
+      "lat": 20.72111,
+      "lng": -103.38742,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:MX:zapopan:jalisco",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-5EB7EF358855",
+      "source_ids": [
+        "AO-B40-LOC-BR-C249B11F9471"
+      ],
+      "country": "BR",
+      "site_name": "Capela Nossa Senhora das Graças",
+      "frozen_location": "Avenida Borges Leal 1497, Santa Clara, Santarém PA 68040-080",
+      "original_site_sources": [
+        "https://www.instituteofthegoodshepherd.org/locations-around-the-world"
+      ],
+      "matched_city": "Santarém",
+      "matched_admin1": "Pará",
+      "matched_county": "",
+      "lat": -2.44306,
+      "lng": -54.70833,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:santarem:para",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-6770405F7CE6",
+      "source_ids": [
+        "AO-B34-L-GB-0393E8491CA8"
+      ],
+      "country": "GB",
+      "site_name": "Saint David's Catholic Church",
+      "frozen_location": "East Cowes, United Kingdom (exact street not established)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "East Cowes",
+      "matched_admin1": "England",
+      "matched_county": "Isle of Wight",
+      "lat": 50.75774,
+      "lng": -1.28815,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:east-cowes:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-6E8BF574FB60",
+      "source_ids": [
+        "AO-B33-L-CZ-942D63F25A75"
+      ],
+      "country": "CZ",
+      "site_name": "Kostel sv. Petra a Pavla",
+      "frozen_location": "Řeznovice, Ivančice",
+      "original_site_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "matched_city": "Ivančice",
+      "matched_admin1": "Southeast",
+      "matched_county": "Jihomoravský kraj",
+      "lat": 49.10144,
+      "lng": 16.37752,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CZ:ivancice:southeast",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-7A7EC20244FC",
+      "source_ids": [
+        "AO-B54-MX-FC3FE685AE5F"
+      ],
+      "country": "MX",
+      "site_name": "Templo Tridentinas de Guadalupe",
+      "frozen_location": "Calle San Blas 19-A, Fraccionamiento Campestre Murúa, Tijuana BC 22450, Mexico",
+      "original_site_sources": [
+        "https://ecumenicasdeguadalupe.org/portfolio/",
+        "https://iglesiatijuana.org/web/comunidades-femeninas/"
+      ],
+      "matched_city": "Tijuana",
+      "matched_admin1": "Baja California",
+      "matched_county": "Municipio de Tijuana",
+      "lat": 32.5027,
+      "lng": -117.00371,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:MX:tijuana:baja-california",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-7E157B8C3C3F",
+      "source_ids": [
+        "AO-B54-MX-D2F441759BCA"
+      ],
+      "country": "MX",
+      "site_name": "Chapel of the Precious Blood — Tijuana",
+      "frozen_location": "Cerro Prieto 19801, corner Calle Rumorosa, Cerro Colorado, Tijuana BC, Mexico",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "matched_city": "Tijuana",
+      "matched_admin1": "Baja California",
+      "matched_county": "Municipio de Tijuana",
+      "lat": 32.5027,
+      "lng": -117.00371,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:MX:tijuana:baja-california",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-7E356C6E097F",
+      "source_ids": [
+        "AO-B42-FSSP-FR-0B5D0D3907AB",
+        "AO-B42-FSSP-FR-196"
+      ],
+      "country": "FR",
+      "site_name": "Chapelle de l’Institution de l’Espérance",
+      "frozen_location": "Bourdevaire - F-85110 Sainte-Cécile - France",
+      "original_site_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Sainte-Cécile",
+      "matched_admin1": "Pays de la Loire",
+      "matched_county": "Vendée",
+      "lat": 46.74339,
+      "lng": -1.11421,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:sainte-cecile:pays-de-la-loire",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-81DD9673DE52",
+      "source_ids": [
+        "AO-B50-IMBC-IT-9B8BFF62311"
+      ],
+      "country": "IT",
+      "site_name": "Casa San Pio X Oratorio Maria Ausiliatrice",
+      "frozen_location": "Via Sarzana 86, San Martino dei Mulini Italy",
+      "original_site_sources": [
+        "https://www.sodalitium.eu/contacts/"
+      ],
+      "matched_city": "San Martino dei Mulini",
+      "matched_admin1": "Emilia-Romagna",
+      "matched_county": "Rimini",
+      "lat": 44.03182,
+      "lng": 12.46396,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:IT:san-martino-dei-mulini:emilia-romagna",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-984671402A04",
+      "source_ids": [
+        "AO-B50-IMBC-HU-419A971F7DE"
+      ],
+      "country": "HU",
+      "site_name": "IMBC Budakeszi Mass Chapel",
+      "frozen_location": "Kossuth Lajos u 14, 2092 Budakeszi Hungary",
+      "original_site_sources": [
+        "https://www.sodalitium.eu/saintes-messes/"
+      ],
+      "matched_city": "Budakeszi",
+      "matched_admin1": "",
+      "matched_county": "Pest",
+      "lat": 47.51083,
+      "lng": 18.92717,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:HU:budakeszi:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-A14AC4D8AA3E",
+      "source_ids": [
+        "AO-B35-L-GB-A86F4F44F02F"
+      ],
+      "country": "GB",
+      "site_name": "St Therese of Lisieux",
+      "frozen_location": "Port Talbot, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Port Talbot",
+      "matched_admin1": "Wales",
+      "matched_county": "Neath Port Talbot",
+      "lat": 51.59241,
+      "lng": -3.78019,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:port-talbot:wales",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-A55BCBFECA78",
+      "source_ids": [
+        "AO-B36-L-GB-B9EBFD19D918"
+      ],
+      "country": "GB",
+      "site_name": "Drift Golf Club Function Room",
+      "frozen_location": "The Drift, East Horsley KT24 5HD",
+      "original_site_sources": [
+        "https://www.catholicmass.co.uk/masses/september-october-november-mass-update/"
+      ],
+      "matched_city": "East Horsley",
+      "matched_admin1": "England",
+      "matched_county": "Surrey",
+      "lat": 51.27358,
+      "lng": -0.43207,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:east-horsley:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B65-2066B7D9F26F",
+      "source_ids": [
+        "AO-RSCH-B65-2066B7D9F26F"
+      ],
+      "country": "BR",
+      "site_name": "Capela São Judas Tadeu",
+      "frozen_location": "Rua Dona Justina Freire de Souza, Maria Auxiliadora, Petrolina - PE 56306-415",
+      "original_site_sources": [
+        "https://www.oratoriosantoantonio.org/"
+      ],
+      "matched_city": "Petrolina",
+      "matched_admin1": "Pernambuco",
+      "matched_county": "Região Administrativa Integrada de Desenvolvimento do Polo Petrolina e Juazeiro",
+      "lat": -9.39861,
+      "lng": -40.50083,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:petrolina:pernambuco",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B65-30B684680BED",
+      "source_ids": [
+        "AO-RSCH-B65-30B684680BED"
+      ],
+      "country": "PL",
+      "site_name": "Kaplica Matki Bożej Królowej Polski",
+      "frozen_location": "ul. Kurkowa 35, 05-200 Wołomin",
+      "original_site_sources": [
+        "https://instytutdobregopasterza.pl/wolomin/"
+      ],
+      "matched_city": "Wołomin",
+      "matched_admin1": "Masovian Voivodeship",
+      "matched_county": "Wołomin County",
+      "lat": 52.34006,
+      "lng": 21.24207,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PL:wolomin:masovian-voivodeship",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B65-596F949E3A13",
+      "source_ids": [
+        "AO-RSCH-B65-596F949E3A13"
+      ],
+      "country": "BR",
+      "site_name": "Capela Menino Jesus de Praga",
+      "frozen_location": "Rua Padre Rodolfo, 28, Vila Ema, São José dos Campos - SP",
+      "original_site_sources": [
+        "https://diocese-sjc.org.br/vidapastoral/missa-na-forma-extraordinaria-do-rito-romano/"
+      ],
+      "matched_city": "São José dos Campos",
+      "matched_admin1": "São Paulo",
+      "matched_county": "Região Metropolitana do Vale do Paraíba e Litoral Norte",
+      "lat": -23.17944,
+      "lng": -45.88694,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:sao-jose-dos-campos:sao-paulo",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B65-F6927D0C98CA",
+      "source_ids": [
+        "AO-RSCH-B65-F6927D0C98CA"
+      ],
+      "country": "PL",
+      "site_name": "Kaplica Adoracji Najświętszego Serca Pana Jezusa",
+      "frozen_location": "Local organizer identifies separate Sacred Heart chapel next to parish church in Kostrzyn; irregular; site pin needed.",
+      "original_site_sources": [
+        "https://mszatrydencka-lubuskie.pl/terminy-i-miejsca-celebracji"
+      ],
+      "matched_city": "Kostrzyn",
+      "matched_admin1": "Greater Poland Voivodeship",
+      "matched_county": "Poznań County",
+      "lat": 52.39847,
+      "lng": 17.22811,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PL:kostrzyn:greater-poland-voivodeship",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B68-0B50D8945A40",
+      "source_ids": [
+        "AO-RSCH-B68-0B50D8945A40"
+      ],
+      "country": "CH",
+      "site_name": "St.-Ida-Kapelle",
+      "frozen_location": "Luzernstrasse, 6102 Malters, Switzerland",
+      "original_site_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/introibo.htm?kategorie_id=3",
+        "https://kath-msb.ch/pastoralraum/unsere-kirchen-und-kapellen/st-ida-kapelle-malter/"
+      ],
+      "matched_city": "Malters",
+      "matched_admin1": "Lucerne",
+      "matched_county": "",
+      "lat": 47.03628,
+      "lng": 8.18193,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CH:malters:lucerne",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B68-826AAF4303C1",
+      "source_ids": [
+        "AO-RSCH-B68-826AAF4303C1"
+      ],
+      "country": "AT",
+      "site_name": "Nikolokirche",
+      "frozen_location": "Taxlberg 192, 4641 Steinhaus bei Wels, Austria",
+      "original_site_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_2.htm",
+        "https://gocath.org/de/event/heilige-messe-im-ueberlieferten-ritus-steinhaus-bei-wels"
+      ],
+      "matched_city": "Steinhaus",
+      "matched_admin1": "Upper Austria",
+      "matched_county": "Bezirk Wels-Land",
+      "lat": 48.11614,
+      "lng": 14.0189,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AT:steinhaus:upper-austria",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B68-EE783D2BCC84",
+      "source_ids": [
+        "AO-RSCH-B68-EE783D2BCC84"
+      ],
+      "country": "FR",
+      "site_name": "Community of Our Lady of Glastonbury — monastery chapel",
+      "frozen_location": "College International, 96 rue du Calvaire, 85250 Chavagnes-en-Paillers, France",
+      "original_site_sources": [
+        "https://www.glastonburymonastery.co.uk/holy-mass",
+        "https://www.glastonburymonastery.co.uk/about-us"
+      ],
+      "matched_city": "Chavagnes-en-Paillers",
+      "matched_admin1": "Pays de la Loire",
+      "matched_county": "Vendée",
+      "lat": 46.8925,
+      "lng": -1.25193,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:chavagnes-en-paillers:pays-de-la-loire",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B69-69EC196F249A",
+      "source_ids": [
+        "AO-RSCH-B69-69EC196F249A"
+      ],
+      "country": "PL",
+      "site_name": "Kaplica Miłosierdzia Bożego",
+      "frozen_location": "ul. Robotnicza 69, 82-300 Elbląg, Poland",
+      "original_site_sources": [
+        "https://elblag.redemptor.pl/parafia/nabozenstwa/",
+        "https://elblag.redemptor.pl/ogloszenia/"
+      ],
+      "matched_city": "Elbląg",
+      "matched_admin1": "Warmian-Masurian Voivodeship",
+      "matched_county": "",
+      "lat": 54.1522,
+      "lng": 19.40884,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PL:elblag:warmian-masurian-voivodeship",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B70-D40D3AF23E72",
+      "source_ids": [
+        "AO-RSCH-B70-D40D3AF23E72"
+      ],
+      "country": "FR",
+      "site_name": "Our Lady Mary Queen Chapel",
+      "frozen_location": "95-97 Rue du Docteur Basset, 79100 Sainte-Verge",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "matched_city": "Sainte-Verge",
+      "matched_admin1": "New Aquitaine",
+      "matched_county": "Deux-Sèvres",
+      "lat": 47.00755,
+      "lng": -0.21093,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:sainte-verge:new-aquitaine",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B72-C3125D4F28D8",
+      "source_ids": [
+        "AO-RSCH-B72-C3125D4F28D8"
+      ],
+      "country": "DE",
+      "site_name": "Chapelle de la Maison du Sacré-Cœur",
+      "frozen_location": "Maison du Sacré-Cœur, Feuerwehrheimstrasse 40, 83457 Bayerisch Gmain, Germany",
+      "original_site_sources": [
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf#page=37"
+      ],
+      "matched_city": "Bayerisch Gmain",
+      "matched_admin1": "Bavaria",
+      "matched_county": "Landkreis Berchtesgadener Land",
+      "lat": 47.71667,
+      "lng": 12.9,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:DE:bayerisch-gmain:bavaria",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B77-7097C32DF9A0",
+      "source_ids": [
+        "SSPX-B77:SSPX-LPL2-CAUSSADE"
+      ],
+      "country": "FR",
+      "site_name": "Prieuré Saint-François-Xavier",
+      "frozen_location": "634, route du Treilhou 82300 Caussade",
+      "original_site_sources": [
+        "https://laportelatine.org/lieux/caussade"
+      ],
+      "matched_city": "Caussade",
+      "matched_admin1": "Occitania",
+      "matched_county": "Tarn-et-Garonne",
+      "lat": 44.16125,
+      "lng": 1.53691,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:caussade:occitania",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B77-B5A236527B66",
+      "source_ids": [
+        "SSPX-B77:SSPX-CH-CH-MENZINGEN-MAISON-GENERALE-PUBLIC-CHAPEL"
+      ],
+      "country": "CH",
+      "site_name": "Maison générale — public chapel",
+      "frozen_location": "Schloss Schwandegg, 6313 Menzingen",
+      "original_site_sources": [
+        "https://fsspx.ch/de/menzingen-priorat-mariae-verkuendigung-31990",
+        "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+      ],
+      "matched_city": "Menzingen",
+      "matched_admin1": "Zug",
+      "matched_county": "",
+      "lat": 47.17764,
+      "lng": 8.59215,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CH:menzingen:zug",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B77-D8786FB804EA",
+      "source_ids": [
+        "SSPX-B77:SSPX-CH-CH-RIDDES-SEMINAIRE-D-ECONE-EGLISE-DU-C-UR-IMMACULE"
+      ],
+      "country": "CH",
+      "site_name": "Séminaire d'Écône — Église du Cœur Immaculé",
+      "frozen_location": "Chemin du Séminaire 5, 1908 Riddes",
+      "original_site_sources": [
+        "https://map.fsspx.org/en/places/seminaire-international-saint-pie-x",
+        "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+      ],
+      "matched_city": "Riddes",
+      "matched_admin1": "Wallis",
+      "matched_county": "Martigny",
+      "lat": 46.17276,
+      "lng": 7.2236,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CH:riddes:wallis",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B77-F01A0F43F58F",
+      "source_ids": [
+        "SSPX-B77:SSPX-OCT26-BR-BR-NITEROI-CAPELA-NOSSA-SENHORA-DA-CONCEICAO"
+      ],
+      "country": "BR",
+      "site_name": "Capela Nossa Senhora da Conceição",
+      "frozen_location": "Estrada Matapaca 333, Pendotiba, 24320-520 Niterói, RJ, Brasil",
+      "original_site_sources": [
+        "https://map.fsspx.org/de/districts/brazil",
+        "https://fsspx.com.br/pt/capelas"
+      ],
+      "matched_city": "Niterói",
+      "matched_admin1": "Rio de Janeiro",
+      "matched_county": "Região Metropolitana do Rio de Janeiro",
+      "lat": -22.88333,
+      "lng": -43.10361,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:niteroi:rio-de-janeiro",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B7C821F326B5",
+      "source_ids": [
+        "AO-B50-SSPV-US-BDE0EE3769E"
+      ],
+      "country": "US",
+      "site_name": "St Anne Church",
+      "frozen_location": "2445 County Rd E, White Bear Lake MN",
+      "original_site_sources": [
+        "https://stpiusvchapel.org/mass-locations/"
+      ],
+      "matched_city": "White Bear Lake",
+      "matched_admin1": "Minnesota",
+      "matched_county": "Ramsey County",
+      "lat": 45.08469,
+      "lng": -93.00994,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:white-bear-lake:minnesota",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-BC32268B22D0",
+      "source_ids": [
+        "AO-B35-L-GB-0DB06F140C0C"
+      ],
+      "country": "GB",
+      "site_name": "St Dominic's",
+      "frozen_location": "Downham Market, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Downham Market",
+      "matched_admin1": "England",
+      "matched_county": "Norfolk",
+      "lat": 52.60714,
+      "lng": 0.38375,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:downham-market:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-C3863AC8112C",
+      "source_ids": [
+        "AO-B37-L-AT-E65A75A9517B",
+        "AO-B42-FSSP-AT-270"
+      ],
+      "country": "AT",
+      "site_name": "Klein-Theresien-Karmel",
+      "frozen_location": "Treietstr. 18, 6830 Rankweil",
+      "original_site_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/messorte.php",
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Rankweil",
+      "matched_admin1": "Vorarlberg",
+      "matched_county": "Bezirk Feldkirch",
+      "lat": 47.27108,
+      "lng": 9.64308,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AT:rankweil:vorarlberg",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-C79C76333DD7",
+      "source_ids": [
+        "AO-B35-L-GB-599B20B44D90"
+      ],
+      "country": "GB",
+      "site_name": "St Thomas of Canterbury",
+      "frozen_location": "Kirk Sandall, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Kirk Sandall",
+      "matched_admin1": "England",
+      "matched_county": "",
+      "lat": 53.56211,
+      "lng": -1.06876,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:kirk-sandall:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-CC61CB8FB5D5",
+      "source_ids": [
+        "AO-B40-LOC-FR-554B2E27A579"
+      ],
+      "country": "FR",
+      "site_name": "Maison Saint-Louis-Marie-Grignion-de-Montfort",
+      "frozen_location": "Chantemerle, 17250 Pont-l'Abbé-d'Arnoult",
+      "original_site_sources": [
+        "https://icrspfrance.fr/?org=12"
+      ],
+      "matched_city": "Pont-l'Abbé-d'Arnoult",
+      "matched_admin1": "New Aquitaine",
+      "matched_county": "Charente-Maritime",
+      "lat": 45.82845,
+      "lng": -0.87493,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:pont-l-abbe-d-arnoult:new-aquitaine",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-D2940D734023",
+      "source_ids": [
+        "AO-B50-IMBC-IT-B36C9B1EAEE"
+      ],
+      "country": "IT",
+      "site_name": "Saints Peter and Paul Church",
+      "frozen_location": "Localita Carbignano 36, Verrua Savoia Italy",
+      "original_site_sources": [
+        "https://www.sodalitium.eu/saintes-messes/"
+      ],
+      "matched_city": "Verrua Savoia",
+      "matched_admin1": "Piemont",
+      "matched_county": "Torino",
+      "lat": 45.15675,
+      "lng": 8.09223,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:IT:verrua-savoia:piemont",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-D29A29A57128",
+      "source_ids": [
+        "AO-B42-FSSP-CZ-043"
+      ],
+      "country": "CZ",
+      "site_name": "Kostel sv. Františka z Assisi",
+      "frozen_location": "CZ-40752 Varnsdorf - Česká republika",
+      "original_site_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Varnsdorf",
+      "matched_admin1": "Northwest",
+      "matched_county": "Ústecký kraj",
+      "lat": 50.91154,
+      "lng": 14.61824,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:CZ:varnsdorf:northwest",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-D2E6E688297A",
+      "source_ids": [
+        "AO-B35-L-GB-2875D3CB6427"
+      ],
+      "country": "GB",
+      "site_name": "St Mary's",
+      "frozen_location": "Barnard Castle, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Barnard Castle",
+      "matched_admin1": "England",
+      "matched_county": "County Durham",
+      "lat": 54.5415,
+      "lng": -1.919,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:barnard-castle:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-DA9B6A59546D",
+      "source_ids": [
+        "AO-B51-FR-A8E5872A377D"
+      ],
+      "country": "FR",
+      "site_name": "Monastère Mater Dei — Chanoinesses de la Mère de Dieu",
+      "frozen_location": "6 rue du Monastère, 11700 Azille",
+      "original_site_sources": [
+        "https://soeursdazille.com/informations-pratiques/coordonnees-et-acces/"
+      ],
+      "matched_city": "Azille",
+      "matched_admin1": "Occitania",
+      "matched_county": "Aude",
+      "lat": 43.27843,
+      "lng": 2.65935,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:azille:occitania",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-E635DCAABF64",
+      "source_ids": [
+        "AO-B41-LOC-BR-034B0B170F31"
+      ],
+      "country": "BR",
+      "site_name": "Capela nova do IBP-SP (Rua Toriba)",
+      "frozen_location": "Rua Toriba 303, São Paulo SP",
+      "original_site_sources": [
+        "https://ibp-sp.org/"
+      ],
+      "matched_city": "São Paulo",
+      "matched_admin1": "São Paulo",
+      "matched_county": "Região Metropolitana de São Paulo",
+      "lat": -23.5475,
+      "lng": -46.63611,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:sao-paulo:sao-paulo",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-EB0314FFE518",
+      "source_ids": [
+        "AO-B42-FSSP-PT-280",
+        "AO-B42-FSSP-PT-E271FA2656C5"
+      ],
+      "country": "PT",
+      "site_name": "Chapelle de la Casa Anjo de Portugal",
+      "frozen_location": "Rua do Imaculado Coração de Maria n.24 - Cova da Iria - 2495-441 Fátima - Portugal",
+      "original_site_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "matched_city": "Fátima",
+      "matched_admin1": "",
+      "matched_county": "Santarém",
+      "lat": 39.62071,
+      "lng": -8.65237,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PT:fatima:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-EF1C8E84C3FE",
+      "source_ids": [
+        "AO-B50-CMRI-US-E7B69541391"
+      ],
+      "country": "US",
+      "site_name": "Sacred Heart of Jesus Church",
+      "frozen_location": "1245 AR 5, Mountain View AR 72560",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "matched_city": "Mountain View",
+      "matched_admin1": "Arkansas",
+      "matched_county": "Stone County",
+      "lat": 35.86841,
+      "lng": -92.11765,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:mountain-view:arkansas",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-F3B93383C57E",
+      "source_ids": [
+        "AO-B42-FSSP-AT-265"
+      ],
+      "country": "AT",
+      "site_name": "Kapelle der Familie Messner",
+      "frozen_location": "Köppach - A-4904 Atzbach-Köppach - Österreich",
+      "original_site_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/niederlassungen/linz/messzeiten-termine.php"
+      ],
+      "matched_city": "Atzbach",
+      "matched_admin1": "Upper Austria",
+      "matched_county": "Bezirk Vöcklabruck",
+      "lat": 48.08364,
+      "lng": 13.70347,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AT:atzbach:upper-austria",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-F97E7F17F909",
+      "source_ids": [
+        "AO-B40-LOC-FR-39EB189DC3ED"
+      ],
+      "country": "FR",
+      "site_name": "Chapelle Saint-Sulpice",
+      "frozen_location": "2 route de Mortefontaine, 60950 Ver-sur-Launette",
+      "original_site_sources": [
+        "https://icrspfrance.fr/?org=20"
+      ],
+      "matched_city": "Ver-sur-Launette",
+      "matched_admin1": "Hauts-de-France",
+      "matched_county": "Oise",
+      "lat": 49.10495,
+      "lng": 2.68409,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:FR:ver-sur-launette:hauts-de-france",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-FB0A5B188CE0",
+      "source_ids": [
+        "AO-B54-BR-6D9908B4F43E"
+      ],
+      "country": "BR",
+      "site_name": "Capela Nossa Senhora de Lourdes — Volta Redonda",
+      "frozen_location": "Rodovia RJ-153 km 7, Bairro Santa Rita do Zarur, Volta Redonda RJ, Brazil",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "matched_city": "Volta Redonda",
+      "matched_admin1": "Rio de Janeiro",
+      "matched_county": "",
+      "lat": -22.52306,
+      "lng": -44.10417,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:volta-redonda:rio-de-janeiro",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-FF5811A67353",
+      "source_ids": [
+        "AO-B50-CMRI-US-E0F24E79380"
+      ],
+      "country": "US",
+      "site_name": "St Jude Mission at Southeast Community Training Center",
+      "frozen_location": "195 US-84, Daleville AL 36322",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "matched_city": "Daleville",
+      "matched_admin1": "Alabama",
+      "matched_county": "Dale County",
+      "lat": 31.31017,
+      "lng": -85.71299,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:daleville:alabama",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-0CD38937025B",
+      "source_ids": [
+        "AO-B43-ICKSP-IT-AAA796FEA14D"
+      ],
+      "country": "IT",
+      "site_name": "Casa alpina San Giovanni Bosco",
+      "frozen_location": "Acceglio, Provincia di Cuneo, Italy (street not established)",
+      "original_site_sources": [
+        "https://www.icrss.it/"
+      ],
+      "matched_city": "Acceglio",
+      "matched_admin1": "Piemont",
+      "matched_county": "Cuneo",
+      "lat": 44.47463,
+      "lng": 6.99092,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:IT:acceglio:piemont",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-05EE735A738A",
+      "source_ids": [
+        "AO-B55-JP-BF429B557750"
+      ],
+      "country": "JP",
+      "site_name": "Church of St. Francis Xavier — Kanda",
+      "frozen_location": "1-1-12 Nishikanda, Chiyoda-ku, Tokyo 101-0065, Japan",
+      "original_site_sources": [
+        "https://uvj.jp/en/mass-schedule/",
+        "https://catholickandachurch.org/en/"
+      ],
+      "matched_city": "Tokyo",
+      "matched_admin1": "",
+      "matched_county": "",
+      "lat": 35.6895,
+      "lng": 139.69171,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:JP:tokyo:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-0CC24258A666",
+      "source_ids": [
+        "AO-B55-PH-B4C41CF62DF6"
+      ],
+      "country": "PH",
+      "site_name": "Our Lady of Sorrows Chapel — Teresian Daughters of Mary",
+      "frozen_location": "General Douglas MacArthur Highway, Talomo, Davao City, Philippines",
+      "original_site_sources": [
+        "https://www.latinmassdir.org/venue/our-lady-of-sorrows-chapel-teresian-daughters-of-mary-davao-city-philippines/"
+      ],
+      "matched_city": "Davao",
+      "matched_admin1": "",
+      "matched_county": "",
+      "lat": 7.07306,
+      "lng": 125.61278,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:davao:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-0F2F22ACED57",
+      "source_ids": [
+        "AO-B55-PH-C65A7384B8CD"
+      ],
+      "country": "PH",
+      "site_name": "Immaculate Conception Church — Baybay City",
+      "frozen_location": "Baybay City, Leyte, Philippines",
+      "original_site_sources": [
+        "https://www.latinmassdir.org/venue/immaculate-conception-church-baybay-city-philippines/"
+      ],
+      "matched_city": "Baybay",
+      "matched_admin1": "Leyte",
+      "matched_county": "",
+      "lat": 10.6785,
+      "lng": 124.8006,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PH:baybay:leyte",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-2BD1C415BE57",
+      "source_ids": [
+        "AO-B34-L-JP-FE0003C6F7E5"
+      ],
+      "country": "JP",
+      "site_name": "St Francis Xavier Chapel",
+      "frozen_location": "2-chome-3 Iwatsukacho, Nakamura Ward (3rd floor), Nagoya 453-0862",
+      "original_site_sources": [
+        "https://fsspx.asia/en/list-sspx-chapels-1"
+      ],
+      "matched_city": "Nagoya",
+      "matched_admin1": "",
+      "matched_county": "",
+      "lat": 35.18147,
+      "lng": 136.90641,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:JP:nagoya:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-35679FDD1861",
+      "source_ids": [
+        "AO-B55-JP-D4961A8B9DB2"
+      ],
+      "country": "JP",
+      "site_name": "Church of St. Joseph — Tsukiji",
+      "frozen_location": "5-26 Akashi-cho, Chuo-ku, Tokyo 104-0044, Japan",
+      "original_site_sources": [
+        "https://uvj.jp/en/mass-schedule/",
+        "https://tokyo.catholic.jp/archdiocese/parishes/tokyo/tsukiji/"
+      ],
+      "matched_city": "Tokyo",
+      "matched_admin1": "",
+      "matched_county": "",
+      "lat": 35.6895,
+      "lng": 139.69171,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:JP:tokyo:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-3B1C6C5A2417",
+      "source_ids": [
+        "AO-B34-L-GB-40B4AEFB57C0"
+      ],
+      "country": "GB",
+      "site_name": "Our Lady's",
+      "frozen_location": "Marnhull, United Kingdom (exact street not established)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Marnhull",
+      "matched_admin1": "England",
+      "matched_county": "Dorset",
+      "lat": 50.97045,
+      "lng": -2.31327,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:marnhull:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-44F315BAD4C8",
+      "source_ids": [
+        "AO-B34-L-GB-A89D08505B0E"
+      ],
+      "country": "GB",
+      "site_name": "SS Joseph, Patrick & Cuthbert",
+      "frozen_location": "Coxhoe, United Kingdom (exact street not established)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Coxhoe",
+      "matched_admin1": "England",
+      "matched_county": "County Durham",
+      "lat": 54.71475,
+      "lng": -1.50356,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:coxhoe:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-61886F9DAFE0",
+      "source_ids": [
+        "AO-B34-L-GB-E62FA57312F5"
+      ],
+      "country": "GB",
+      "site_name": "Sacred Heart & English Martyrs",
+      "frozen_location": "Thornley, United Kingdom (exact street not established)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Thornley",
+      "matched_admin1": "England",
+      "matched_county": "County Durham",
+      "lat": 54.75,
+      "lng": -1.43333,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:thornley:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-64607C31CF5E",
+      "source_ids": [
+        "AO-B33-L-AT-F37BA2CEA785"
+      ],
+      "country": "AT",
+      "site_name": "Fatimakapelle",
+      "frozen_location": "Schardenberg, Austria (exact chapel address to verify)",
+      "original_site_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/messorte.php"
+      ],
+      "matched_city": "Schardenberg",
+      "matched_admin1": "Upper Austria",
+      "matched_county": "Bezirk Schärding",
+      "lat": 48.52058,
+      "lng": 13.49791,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AT:schardenberg:upper-austria",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-731B8CE6C3AB",
+      "source_ids": [
+        "AO-B35-L-GB-45F7877808F3"
+      ],
+      "country": "GB",
+      "site_name": "St Mary Immaculate",
+      "frozen_location": "Whittingham, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Whittingham",
+      "matched_admin1": "England",
+      "matched_county": "Northumberland",
+      "lat": 55.40115,
+      "lng": -1.8934,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:whittingham:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-78DDA8D68BD8",
+      "source_ids": [
+        "AO-B35-L-GB-D00B6E6EBFC8"
+      ],
+      "country": "GB",
+      "site_name": "St Michael's",
+      "frozen_location": "Bembridge, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Bembridge",
+      "matched_admin1": "England",
+      "matched_county": "Isle of Wight",
+      "lat": 50.68634,
+      "lng": -1.08275,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:bembridge:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-95F40930EB8F",
+      "source_ids": [
+        "AO-B35-L-GB-02737641C3A4"
+      ],
+      "country": "GB",
+      "site_name": "St Thomas Becket",
+      "frozen_location": "Tarporley, United Kingdom (exact worship address NOT confirmed)",
+      "original_site_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "matched_city": "Tarporley",
+      "matched_admin1": "England",
+      "matched_county": "Cheshire West and Chester",
+      "lat": 53.15918,
+      "lng": -2.66867,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:tarporley:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-851C08B3BAD5",
+      "source_ids": [
+        "AO-B39-LOC-IT-47E28AB72E25"
+      ],
+      "country": "IT",
+      "site_name": "Chiesa del Monastero di Santa Chiara",
+      "frozen_location": "Alassio, Italy (secondary directory locality only; no street verified)",
+      "original_site_sources": [
+        "https://www.latinmassdir.org/country/it/?view=list"
+      ],
+      "matched_city": "Alassio",
+      "matched_admin1": "Liguria",
+      "matched_county": "Savona",
+      "lat": 44.00393,
+      "lng": 8.16713,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:IT:alassio:liguria",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B3B772AE50F8",
+      "source_ids": [
+        "AO-B38-LOC-BE-D55407F1E64"
+      ],
+      "country": "BE",
+      "site_name": "Kapel Heilig Aanschijn",
+      "frozen_location": "Bierbeek, Belgium (secondary directory locality only; no street verified)",
+      "original_site_sources": [
+        "https://www.latinmassdir.org/country/be/?view=list"
+      ],
+      "matched_city": "Bierbeek",
+      "matched_admin1": "Flemish Brabant",
+      "matched_county": "Leuven",
+      "lat": 50.82876,
+      "lng": 4.75949,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BE:bierbeek:flemish-brabant",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-7D925FE4E858",
+      "source_ids": [
+        "AO-B53-IE-8B38327D0F5D"
+      ],
+      "country": "IE",
+      "site_name": "St Joseph's Hermitage — Carmelite nuns of the Holy Face",
+      "frozen_location": "Inchincurka, Dunmanway, County Cork, Ireland",
+      "original_site_sources": [
+        "https://carmelitesholyface.com/our-life",
+        "https://carmelitesholyface.com/contact"
+      ],
+      "matched_city": "Dunmanway",
+      "matched_admin1": "",
+      "matched_county": "County Cork",
+      "lat": 51.71667,
+      "lng": -9.11667,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:IE:dunmanway:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-799E8D613B47",
+      "source_ids": [
+        "AO-B56-AU-A88E9ED4E6D4"
+      ],
+      "country": "AU",
+      "site_name": "Mary Help of Christians Mission — Darra Motel",
+      "frozen_location": "Darra Motel & Conference Centre, 2704 Ipswich Rd, Darra, QLD 4076, Australia",
+      "original_site_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "matched_city": "Darra",
+      "matched_admin1": "Queensland",
+      "matched_county": "",
+      "lat": -27.56693,
+      "lng": 152.95395,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AU:darra:queensland",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-86B5F7B9C7DF",
+      "source_ids": [
+        "AO-B36-L-GB-739AAA1AC0A1",
+        "AO-B42-FSSP-GB-214"
+      ],
+      "country": "GB",
+      "site_name": "St Cuthbert’s House Chapel",
+      "frozen_location": "6 Belford Park, Edinburgh EH4 3DP",
+      "original_site_sources": [
+        "https://fsspscotland.org/"
+      ],
+      "matched_city": "Edinburgh",
+      "matched_admin1": "Scotland",
+      "matched_county": "",
+      "lat": 55.95206,
+      "lng": -3.19648,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:edinburgh:scotland",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-8B96A3BC8CD8",
+      "source_ids": [
+        "AO-B56-AU-23008FA7DA48"
+      ],
+      "country": "AU",
+      "site_name": "Mary Help of Christians Chapel — Kallista",
+      "frozen_location": "92-96 Monbulk Road, Kallista, VIC 3791, Australia",
+      "original_site_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "matched_city": "Kallista",
+      "matched_admin1": "Victoria",
+      "matched_county": "",
+      "lat": -37.89815,
+      "lng": 145.38226,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:AU:kallista:victoria",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-7C5CE27E1C0B",
+      "source_ids": [
+        "AO-B56-US-A804F0ACD805"
+      ],
+      "country": "US",
+      "site_name": "St Anne Oratory — Lawton",
+      "frozen_location": "33013 County Road 358, Lawton, MI 49065, USA",
+      "original_site_sources": [
+        "https://www.canons-regular.org/newsdesk",
+        "https://www.canons-regular.org/post/st-anne-s-chapel-summer-masses-2024"
+      ],
+      "matched_city": "Lawton",
+      "matched_admin1": "Michigan",
+      "matched_county": "Van Buren County",
+      "lat": 42.16726,
+      "lng": -85.84695,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:lawton:michigan",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-04695D93877A",
+      "source_ids": [
+        "AO-B50-CMRI-US-205F1BFEB0A"
+      ],
+      "country": "US",
+      "site_name": "St Joseph Parish",
+      "frozen_location": "59350 Carnation Rd, Olathe CO 81425",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "matched_city": "Olathe",
+      "matched_admin1": "Colorado",
+      "matched_county": "Montrose County",
+      "lat": 38.60499,
+      "lng": -107.98229,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:olathe:colorado",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-17E2DEA09D59",
+      "source_ids": [
+        "AO-B50-SSPV-US-B4DE27B4071"
+      ],
+      "country": "US",
+      "site_name": "Visitation Chapel",
+      "frozen_location": "1614 W Southern Ave, South Williamsport PA 17702",
+      "original_site_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "matched_city": "South Williamsport",
+      "matched_admin1": "Pennsylvania",
+      "matched_county": "Lycoming County",
+      "lat": 41.23202,
+      "lng": -76.99913,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:south-williamsport:pennsylvania",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-235A0066ACC0",
+      "source_ids": [
+        "AO-B50-CMRI-US-CA8AEA8FE44"
+      ],
+      "country": "US",
+      "site_name": "St Philomena Catholic Church",
+      "frozen_location": "508 Monroe Nunley Rd, Hazel Green AL 35750",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "matched_city": "Hazel Green",
+      "matched_admin1": "Alabama",
+      "matched_county": "Madison County",
+      "lat": 34.93231,
+      "lng": -86.57194,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:hazel-green:alabama",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-336DA833D350",
+      "source_ids": [
+        "AO-B50-SSPV-US-7D3D2D5F316"
+      ],
+      "country": "US",
+      "site_name": "Our Lady of Sorrows Chapel",
+      "frozen_location": "130 Kingsley Ave, Orange Park FL 32073",
+      "original_site_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "matched_city": "Orange Park",
+      "matched_admin1": "Florida",
+      "matched_county": "Clay County",
+      "lat": 30.16607,
+      "lng": -81.70648,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:orange-park:florida",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-62D34706633B",
+      "source_ids": [
+        "AO-B50-CMRI-US-F096FC4C80B"
+      ],
+      "country": "US",
+      "site_name": "St Theresa Church",
+      "frozen_location": "35 Church St, Oakland ME 04963",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "matched_city": "Oakland",
+      "matched_admin1": "Maine",
+      "matched_county": "Kennebec County",
+      "lat": 44.54034,
+      "lng": -69.72199,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:oakland:maine",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-60259573951F",
+      "source_ids": [
+        "AO-B53-US-5BE329481FE6"
+      ],
+      "country": "US",
+      "site_name": "Daughters of Mary priory chapel — Winnsboro",
+      "frozen_location": "1155 N FM 2869, Winnsboro, TX 75494, USA",
+      "original_site_sources": [
+        "https://motherofisraelshope.org/category/our-community/",
+        "https://motherofisraelshope.org/"
+      ],
+      "matched_city": "Winnsboro",
+      "matched_admin1": "Texas",
+      "matched_county": "Wood County",
+      "lat": 32.95734,
+      "lng": -95.29022,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:winnsboro:texas",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-913F8A4286C3",
+      "source_ids": [
+        "AO-B56-US-90A35E0D40C8"
+      ],
+      "country": "US",
+      "site_name": "Our Lady Queen of Martyrs Church — Fraser",
+      "frozen_location": "16414 E 14 Mile Rd, Fraser, MI 48026, USA",
+      "original_site_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "matched_city": "Fraser",
+      "matched_admin1": "Michigan",
+      "matched_county": "Macomb County",
+      "lat": 42.5392,
+      "lng": -82.94937,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:fraser:michigan",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-8449E92DD79D",
+      "source_ids": [
+        "AO-B50-CMRI-US-EDE7DAA7479"
+      ],
+      "country": "US",
+      "site_name": "Our Lady of Sorrows Church",
+      "frozen_location": "378 Spring St, Orange CT 06477",
+      "original_site_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "matched_city": "Orange",
+      "matched_admin1": "Connecticut",
+      "matched_county": "New Haven County",
+      "lat": 41.27843,
+      "lng": -73.02566,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:orange:connecticut",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-8CA8C480CEA9",
+      "source_ids": [
+        "AO-B45-SSPX-US-7BFBB59B9626"
+      ],
+      "country": "US",
+      "site_name": "Society of Saint Pius X Regina Coeli House",
+      "frozen_location": "11485 N Farley Road, Platte City MO 64079",
+      "original_site_sources": [
+        "https://sspx.org/en/list-sspx-chapels"
+      ],
+      "matched_city": "Platte City",
+      "matched_admin1": "Missouri",
+      "matched_county": "Platte County",
+      "lat": 39.37028,
+      "lng": -94.78246,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:platte-city:missouri",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-3EA3DDBC8289",
+      "source_ids": [
+        "AO-B50-SSPV-US-4E381227AD7"
+      ],
+      "country": "US",
+      "site_name": "St Hilary Church",
+      "frozen_location": "3823 Second St, Brooklyn MD 21225",
+      "original_site_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "matched_city": "Brooklyn",
+      "matched_admin1": "Maryland",
+      "matched_county": "Baltimore city",
+      "lat": 39.23039,
+      "lng": -76.60219,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:brooklyn:maryland",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-80DE7663B64F",
+      "source_ids": [
+        "AO-B56-US-6F04D3E36F61"
+      ],
+      "country": "US",
+      "site_name": "Queen of All Saints Mission — George Ranch",
+      "frozen_location": "10215 FM 762 Rd, Richmond, TX 77469, USA",
+      "original_site_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "matched_city": "Richmond",
+      "matched_admin1": "Texas",
+      "matched_county": "Fort Bend County",
+      "lat": 29.58218,
+      "lng": -95.76078,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:US:richmond:texas",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-B65-66C068E4A1B4",
+      "source_ids": [
+        "AO-RSCH-B65-66C068E4A1B4"
+      ],
+      "country": "BR",
+      "site_name": "Capela São Francisco",
+      "frozen_location": "Rua Jorge Abraão 163, Jardim Califórnia, Jacareí - SP",
+      "original_site_sources": [
+        "https://diocese-sjc.org.br/vidapastoral/missa-na-forma-extraordinaria-do-rito-romano/"
+      ],
+      "matched_city": "Jacareí",
+      "matched_admin1": "São Paulo",
+      "matched_county": "Região Metropolitana do Vale do Paraíba e Litoral Norte",
+      "lat": -23.30528,
+      "lng": -45.96583,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:BR:jacarei:sao-paulo",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-8FB53F871DAD",
+      "source_ids": [
+        "AO-B39-LOC-PT-9056382B4C53"
+      ],
+      "country": "PT",
+      "site_name": "Capela Nossa Senhora das Graças",
+      "frozen_location": "Rua Padre Dr. António Carneiro de Azevedo 79, 4425-704 Pedrouços",
+      "original_site_sources": [
+        "https://fsspx.es/pt/capelas-em-portugal-43239"
+      ],
+      "matched_city": "Pedrouços",
+      "matched_admin1": "",
+      "matched_county": "Porto",
+      "lat": 41.1888,
+      "lng": -8.58624,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:PT:pedroucos:",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    },
+    {
+      "cl2_anchor": "RG-5E751D3AAEFA",
+      "source_ids": [
+        "AO-B36-L-GB-1BF2C870A5FF"
+      ],
+      "country": "GB",
+      "site_name": "Ford Park Cemetery Chapel",
+      "frozen_location": "Ford Park Road, Plymouth PL4 6NT",
+      "original_site_sources": [
+        "https://www.ukmasses.com/plymouth-mass"
+      ],
+      "matched_city": "Plymouth",
+      "matched_admin1": "England",
+      "matched_county": "",
+      "lat": 50.37153,
+      "lng": -4.14305,
+      "precision": "locality",
+      "approximate": true,
+      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
+      "coordinate_source_ref": "geonames1000:GB:plymouth:england",
+      "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
+      "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
+      "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
+    }
+  ],
+  "excel_master_url": "https://docs.google.com/spreadsheets/d/1qLQDsYfddY4K9DdPuC0tbrxI7Poe_DgKCzkpYwVCpFg/edit",
+  "excel_reconciliation_date": "2026-11-04"
+}
