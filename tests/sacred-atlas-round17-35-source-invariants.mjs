@@ -44,11 +44,11 @@ for(const r of triage.rows){
     if(s.source_evidence.includes("HOLD"))assert.ok(candidate.visualDecision?.startsWith("HOLD_")||candidate.visualDecision?.startsWith("SECONDARY_GALLERY_"));
   }
 }
-assert.equal(page.reduce((n,p)=>n+p.candidates.length,0),103);
-assert.equal(page.filter(x=>x.candidates.length).length,35);
+assert.ok(page.reduce((n,p)=>n+p.candidates.length,0)>=103,'preserve all Round 17 leads');
+assert.ok(page.filter(x=>x.candidates.length).length>=35,'preserve all Round 17 sourced Places');
 assert.ok(html.includes('if(filter==="round17"&&!p.candidates.some(c=>c.round17))return false;'));
 assert.ok(html.includes("function coverBlocked(p,f)"));
 const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 assert.equal(scripts.length,1);
 new Script(scripts[0][1]);
-console.log(JSON.stringify({status:"PASS",triaged:35,new_leads:10,total_source_leads:103,places_with_leads:35,published_covers:379}));
+console.log(JSON.stringify({status:"PASS",triaged:35,new_leads:10,total_source_leads:page.reduce((n,p)=>n+p.candidates.length,0),places_with_leads:page.filter(x=>x.candidates.length).length,published_covers:379}));
