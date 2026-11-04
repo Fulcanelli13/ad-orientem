@@ -9,8 +9,10 @@
     "groupsReadyForPublication": 0,
     "publicationClearedSlots": 0,
     "exactSourceImageEndpointsIdentified": 1,
-    "originalPhotosAcquired": 0,
-    "newlyPublicationClearedSlots": 0
+    "originalPhotosAcquired": 2,
+    "newlyPublicationClearedSlots": 0,
+    "groupsWithAcquiredPhotos": 2,
+    "acquiredEligibleSlotCount": 15
   },
   "records": [
     {
@@ -33,16 +35,20 @@
         "STG-pray.seven_words-05",
         "STG-pray.tenebrae-02"
       ],
-      "originalPhotoCaptured": false,
-      "exactFileIntegrityChecked": false,
+      "originalPhotoCaptured": true,
+      "exactFileIntegrityChecked": true,
       "framingAndResponsiveQA": false,
       "publicationAuthorized": false,
       "notes": "Museum page contains mixed attribution in page content; primary object header reads 'follower of Sodoma'; keep attribution conservative until catalog reconciliation.",
       "imageSourceRetrieval": {
-        "status": "BLOCKED",
-        "apiRecordEndpoint": "https://openaccess-api.clevelandart.org/api/artworks/1916.786",
-        "reason": "Direct image/API retrieval unavailable in this session; no original file downloaded or integrity tested",
-        "incorrectRelatedImageExcluded": "https://piction.clevelandart.org/cma/ump.di?e=AF4DFCFDE9FEC3C85E890B2E8BAF32BD2FA71D1D935B7BA4ABA06FECFAAB1E95&f=1951.334_o5.jpg&s=24247294&se=116628280&v=4"
+        "status": "ACQUIRED",
+        "imageUrl": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_print.jpg",
+        "width": 2673,
+        "height": 3400,
+        "bytes": 8293229,
+        "sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+        "format": "JPEG",
+        "artifactId": 13299855755
       }
     },
     {
@@ -62,23 +68,36 @@
         "STG-novena.holy_souls-01",
         "STG-pray.penitential_psalms-06"
       ],
-      "originalPhotoCaptured": false,
-      "exactFileIntegrityChecked": false,
+      "originalPhotoCaptured": true,
+      "exactFileIntegrityChecked": true,
       "framingAndResponsiveQA": false,
       "publicationAuthorized": false,
-      "notes": "Retain workshop attribution in visible credits and source provenance.",
+      "notes": "Public Met object page identifies Workshop of Peter Paul Rubens. Met API artistDisplayName is Peter Paul Rubens without qualifier; prefer curatorial object page for published credit. Exact primary image acquired and decoded.",
       "imageSourceRetrieval": {
-        "status": "ENDPOINT_IDENTIFIED_FILE_NOT_ACQUIRED",
-        "exactMuseumImageEndpoint": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437542/2006481/main-image",
-        "reason": "Museum page exact-object image URL verified, but binary download failed in session; original dimensions, hash and released-file QA unavailable"
+        "status": "ACQUIRED",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-013.jpg",
+        "width": 3094,
+        "height": 4000,
+        "bytes": 4103505,
+        "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+        "format": "JPEG",
+        "artifactId": 13299855755
       }
     }
   ],
   "nextRequiredActions": [
-    "Retrieve and pin exact museum original URLs and image files",
-    "Record actual file rights and license terms at time of acquisition",
-    "Check pixel dimensions, decode, integrity and responsive contain-fit",
-    "Update credits to accurately reflect institution catalog",
-    "Publish only after individual placement QA; preserve Rosary and held placements"
-  ]
+    "Preserve image files as durable versioned assets before the seven-day artifact expires",
+    "Check human-visible composition and publication suitability for both images",
+    "Correct source-owned credits to museum object-page attribution, including follower of Sodoma and Workshop of Rubens",
+    "Integrate 15 eligible non-Rosary slots using original full-frame contain-fit; test bilingual phone readers",
+    "Release separately after all gates pass; do not change the protected Rosary"
+  ],
+  "acquisitionRun": {
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41781799456",
+    "conclusion": "success",
+    "artifactId": 13299855755,
+    "artifactName": "prayer-r5d-museum-evidence",
+    "artifactRetentionDays": 7,
+    "sha": "4b6b2958cc59147f5a1f1001a3d89786a8a0dc81"
+  }
 }
