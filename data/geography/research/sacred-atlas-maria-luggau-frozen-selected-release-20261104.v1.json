@@ -1,0 +1,58 @@
+{
+  "schema": "AO_SACRED_ATLAS_SELECTED_MARIA_LUGGAU_SAFE_RELEASE_V1",
+  "date": "2026-11-04",
+  "scope": "ONE_ALREADY_USER_SELECTED_CANONICAL_PLACE_COVER",
+  "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+  "place_name": "Wallfahrtsbasilika Maria Schnee, Maria Luggau",
+  "selected_file": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+  "selected_rank": 1,
+  "source_page": "https://commons.wikimedia.org/wiki/File:Lesachtal_Maria_Luggau_Servitenkloster_NW-Ansicht_16072014_804.jpg",
+  "pinned_original_sha1": "ca025cb7c0d5815ccb25b5f5570e8a57331103d7",
+  "pinned_original_bytes": 11755745,
+  "pinned_dimensions": [
+    4928,
+    3280
+  ],
+  "pinned_source_description_rev_id": 1190961558,
+  "photographer": "Johann Jaritz",
+  "photo_license": "CC-BY-SA-3.0-AT",
+  "photo_license_url": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+  "license_legal_text": "https://creativecommons.org/licenses/by-sa/3.0/at/legalcode",
+  "license_version": "Austria 3.0 BY-SA",
+  "fop_evidence": "https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Austria",
+  "selected_from": "data/geography/research/photo-finder-20261030/decisions.json",
+  "photo_metadata_source": "data/geography/research/sacred-atlas-selected24-hold-closure-20261104.v1.json",
+  "source_audit": "data/geography/research/sacred-atlas-selected24-current-source-findings-20261104.v1.json",
+  "cover_site_note": "Original Commons caption names both the Servite monastery and pilgrimage church of Maria Schnee in Maria Luggau; entire building complex is within same canonical place.",
+  "review_source": "https://commons.wikimedia.org/wiki/File:Lesachtal_Maria_Luggau_Servitenkloster_NW-Ansicht_16072014_804.jpg",
+  "before": {
+    "canonical_places": 530,
+    "approved_cover_items": 379,
+    "approved_gallery_items": 42
+  },
+  "limits": {
+    "max_original_bytes": 20000000,
+    "max_image_pixels": 32000000,
+    "max_webp_px": 1280
+  },
+  "flags": {
+    "already_user_chosen": true,
+    "no_alternate_sources": true,
+    "no_crop": true,
+    "no_recolor": true,
+    "require_exact_source_sha1": true,
+    "require_source_revision": true,
+    "require_current_legal_url": true,
+    "require_exact_creator": true,
+    "require_original_bytes": true,
+    "require_source_subject_caption": true,
+    "allow_http429_retry": false,
+    "allow_overwrite": false,
+    "allow_other_place_assets": false,
+    "no_vercel": true,
+    "publish_after_main_merge_only": true
+  },
+  "workflow_publication": "STAGE_ONLY_ON_PR_BRANCH_UNTIL_CHECKS_AND_MERGE",
+  "release_status": "PENDING_ONE_SOURCE_ACTUAL_BINARY_VERIFICATION",
+  "release_authorized_from_metadata_alone": false
+}
