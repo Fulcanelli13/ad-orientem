@@ -168,8 +168,9 @@ for(const t of [...ordinary.map(x=>({...x,kind:"ORDINARY"})),...special.map(x=>(
   assert.equal(row.readerDisposition,"ACTUAL_EXISTING_READER_RECOVERY_AND_ADAPTER");
   assert.equal(row.readerSourcePath,t.sourcePath,t.date+" recovery changed selected Mass");
   for(const lang of ["en","fr"]){
-   const expectedRawReady=t.date==="2026-03-06"||
-     (t.date==="2026-10-08"&&lang==="fr");
+   // October 8 French becomes READY only after native Reader recovery.
+   // The raw proper for that date is incomplete in both vernaculars.
+   const expectedRawReady=t.date==="2026-03-06";
    assert.equal(row.raw[lang].ready,expectedRawReady,
     t.date+":"+lang+" unexpected raw Schola source projection status");
    assert.ok(row.raw[lang].missing.every(s=>
