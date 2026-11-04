@@ -201,7 +201,12 @@ try{
     assert.equal(studyList.rowDirection,'row',"Category entries should be horizontally aligned text rows: "+door);
     assert.equal(studyList.number,'01',"Restored ordinal should begin at 01: "+door);
     assert.equal(studyList.arrow,'›',"Rows retain direct-access affordance: "+door);
-    assert.ok(studyList.coverHeight>=210&&studyList.coverHeight<=226,"Category artwork header must be source-study height: "+JSON.stringify(studyList));
+    if(door==="eucharistic")
+      assert.ok(studyList.coverHeight>=210&&studyList.coverHeight<=226,
+        "Real approved Ingres art retains the original cover geometry: "+JSON.stringify(studyList));
+    else
+      assert.ok(studyList.coverHeight>=170&&studyList.coverHeight<=182,
+        "Unreleased cover uses deliberate compact typography without an empty 225px photo field: "+JSON.stringify(studyList));
     assert.equal(studyList.titleWithinArt,true,"Approved study title belongs inside the artwork header: "+door);
     assert.ok(studyList.titleTop<studyList.coverBottom,"Category heading should overlay artwork, not become an external heading: "+door);
     assert.equal(studyList.headerPosition,"absolute","Category header must float over the cover: "+door);
