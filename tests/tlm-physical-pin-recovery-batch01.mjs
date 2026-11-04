@@ -22,7 +22,7 @@ assert.equal(new Set(pinKeys).size,pinKeys.length,
   "A second adjudication of the same physical site must not silently overwrite the existing pin");
 
 const newlyMapped=[
- ["RG-0A7D6FB130D8","AO-B34-L-GB-5FF0510590CE",51.5311,0.03808,"osm:way:351187849","UPTON_PARK_OUR_LADY_OF_COMPASSION_CATHOLIC_CHURCH_BUILDING_NOT_PRIMARY_SCHOOL"],
+ ["RG-0A7D6FB130D8","AO-B34-L-GB-5FF0510590CE",51.5311,0.03808,"osm:way:351087849","UPTON_PARK_OUR_LADY_OF_COMPASSION_CATHOLIC_CHURCH_BUILDING_NOT_PRIMARY_SCHOOL"],
  ["RG-09724CA01972","AO-B35-L-GB-9311BCBCBE20",51.403138,-0.356546,"independent:elmbridge-st-barnabas-church","MOLESEY_ST_BARNABAS_1931_CATHOLIC_CHURCH_NOT_NEIGHBORING_HOUSES_OR_OTHER_PARISHES"],
  ["RG-2680C1DA8953","AO-B34-L-GB-D81DD5E3D3A4",50.76611,0.27773,"osm:way:487068951","EASTBOURNE_OUR_LADY_OF_RANSOM_CHURCH_NOT_PRESBYTERY_OR_OTHER_PARISH_CHURCHES"],
  ["RG-223CDB93F8BD","AO-B34-L-GB-2C828CAB9C43",50.73777,-2.82292,"osm:way:258582025","CHIDEOCK_CATHOLIC_MARTYRS_CHURCH_NOT_ANGLICAN_ST_GILES_OR_CHIDEOCK_MANOR"],
@@ -55,13 +55,13 @@ for(const [group,id,lat,lng,ref,scope] of [...newlyMapped,...refinements]){
    "Physical coordinates cannot create a claim about any Mass or its Missal");
 }
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:511,SOURCE_PIN:1806,ADDRESS_ONLY:265});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,265);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,511);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:510,SOURCE_PIN:1806,ADDRESS_ONLY:266});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,266);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,510);
 // These records appear to describe one Cagliari basilica and require a
 // physical-identity reconciliation before either gets a new coordinate.
 const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
 const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
 assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
   "Do not add a duplicate research pin to the already mapped Cagliari basilica");
-console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 2,317 mapped (including 170 explicitly illustrative locality markers), 265 list-only, Cagliari duplicate held");
+console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 2,316 mapped (including 169 explicitly illustrative locality markers), 266 list-only, Cagliari duplicate held");
