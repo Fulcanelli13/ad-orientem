@@ -5,6 +5,7 @@ on:
     paths:
       - 'tests/1962-five-oration-source-owner-reader-audit.mjs'
       - 'tests/1962-st-monica-conditional-collect.mjs'
+      - 'tests/1962-bridget-martyrs-pinned-english-source.mjs'
       - 'src/mass/reader-proper-runtime-recovery.js'
       - '.github/workflows/mass-1962-five-oration-source-owner.yml'
   workflow_dispatch:
@@ -26,7 +27,9 @@ jobs:
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Verify St Monica Roman conditional Collect source and negative cases
-        run: node tests/1962-st-monica-conditional-collect.mjs
+        run: |
+          node tests/1962-st-monica-conditional-collect.mjs
+          node tests/1962-bridget-martyrs-pinned-english-source.mjs
       - name: Inspect exact five selected owners and native source resolution
         run: node tests/1962-five-oration-source-owner-reader-audit.mjs
       - name: Save complete source witness matrix even when a hold persists
