@@ -1,7 +1,7 @@
 {
   "schema": "AO_SACRED_ATLAS_ROUND11_SOURCE_ACCESS_HOLDS_V1",
   "date": "2026-11-04",
-  "status": "RESEARCH_ONLY_NO_ASSET_PUBLISHED",
+  "status": "HISTORICAL_SNAPSHOT_SUPERSEDED_BY_LATER_ROUND11_SOURCE_EVIDENCE",
   "round11_failed_runs": [
     41730915909,
     41781878645
@@ -70,5 +70,11 @@
       "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
       "publication_allowed": false
     }
-  ]
+  ],
+  "snapshot_status": "FIRST_TWO_FAILED_RUNS_ONLY",
+  "current_release_source": "data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json",
+  "later_source_verified_recovery": [
+    "place:PL:divine-mercy-plock"
+  ],
+  "note": "This preserves earlier HTTP 429 attempts. It is not the current cover count; the later independently source-verified evidence publishes Płock while ten remain held."
 }
