@@ -122,7 +122,7 @@ for(const file of runtimeSourceFiles){
   // The references are not fetches made by the production reader.
   const boundedQASource=path==="assets/staged"&&
    relativeFile==="src/pray/prayer-cover-photo-qa.v1.js"&&
-   (source.match(/stagedAsset:"\\/assets\\/staged\\//g)||[]).length===2&&
+   (source.split('stagedAsset:"/assets/staged/').length-1)===2&&
    (source.match(/publicationAuthorized:false/g)||[]).length===2&&
    source.includes('if(!qaOnly||!record||record.publicationAuthorized!==false)return "";');
   if(!boundedQASource)runtimeReferences.push(relativeFile+": "+path);
