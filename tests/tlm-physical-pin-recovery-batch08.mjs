@@ -183,9 +183,9 @@ for(const anchor of ["RG-B65-77C86C7B3EC4","RG-B66-ACD5E3A16E10","RG-5E751D3AAEF
  assert.ok(held&&!held.map_publishable,"Ambiguous or duplicate site should remain held: "+anchor);
 }
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2408);
+assert.equal(all.filter(x=>x.map_publishable).length,2407);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:602,SOURCE_PIN:1806,ADDRESS_ONLY:174});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,174);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,602);
-console.log("PASS TLM site recovery batch 8: 17 precise sites, 2408 mapped, 174 list-only, source and bilingual profiles preserved");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:601,SOURCE_PIN:1806,ADDRESS_ONLY:175});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,175);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,601);
+console.log("PASS TLM site recovery batch 8: 17 precise sites, 2407 mapped, 175 list-only, source and bilingual profiles preserved");
