@@ -1,5 +1,6 @@
 // Carry the nine Excel-approved site admissions through the existing Directory gate.
 import "./tlm-physical-pin-recovery-reconciled-nine.mjs";
+import "./tlm-illustrative-locality-r2-94.mjs";
 // TLM batch 17 — 30 GB provisional GCatholic-linked church sites; identity and evidence-scope locks.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
