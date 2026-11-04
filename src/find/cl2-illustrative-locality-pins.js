@@ -248,26 +248,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "Chiavari",
     "adminRegion": "Liguria"
   },
-  "RG-18E53EDD9E9C": {
-    "sourceId": "AO-B45-SSPX-US-98A6ADD77DBE",
-    "name": "Saint Thomas More Chapel",
-    "country": "US",
-    "addressNeedle": "1565 S White Road, San Jose CA 95127",
-    "placeId": null,
-    "lat": 37.33939,
-    "lng": -121.89496,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:US:san-jose:california",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://sspx.org/en/list-sspx-chapels"
-    ],
-    "localityName": "San Jose",
-    "adminRegion": "California"
-  },
   "RG-1B0A5CFE5CE2": {
     "sourceId": "AO-B34-L-GB-B74DEEBC582B",
     "name": "English Martyrs",
@@ -1773,26 +1753,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     ],
     "localityName": "Florianópolis",
     "adminRegion": "Santa Catarina"
-  },
-  "RG-B66-ACD5E3A16E10": {
-    "sourceId": "AO-RSCH-B66-ACD5E3A16E10",
-    "name": "Kaplica pw. św. Marii Magdaleny",
-    "country": "PL",
-    "addressNeedle": "ul. Łukasińskiego 32, Kłodzko, Poland",
-    "placeId": null,
-    "lat": 50.43488,
-    "lng": 16.66145,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:PL:klodzko:lower-silesian-voivodeship",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://tradycja-swidnica.org.pl/index.php/porzadek-celebracji"
-    ],
-    "localityName": "Kłodzko",
-    "adminRegion": "Lower Silesian Voivodeship"
   },
   "RG-B70-2D2262CD1B21": {
     "sourceId": "AO-RSCH-B70-2D2262CD1B21",
