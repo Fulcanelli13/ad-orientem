@@ -214,7 +214,8 @@ export function renderTlmChurchProfile(item,language="en"){
    html+='<p class="aoTlmProfileSourceLocation"><strong>'+E(L(language,
      "Location in original directory","Localisation selon l’annuaire d’origine"))+': </strong>'+
      E(sourceLocation)+'</p>';
- if(item?.geo?.approximate||item?.geo?.indicative_only)html+='<p class="aoTlmProfileCaution">'+E(L(language,"Map pin is indicative; the entrance is not verified.","Repère cartographique indicatif ; entrée non vérifiée."))+'</p>';
+ if(T(item?.geo?.precision)==="locality")html+='<p class="aoTlmProfileCaution">'+E(L(language,"Illustrative town marker ONLY — not the church GPS location. Open the documented name/address in your navigation app.","Repère indicatif de la commune UNIQUEMENT — ce n’est pas la position GPS de l’église. Utilisez le nom et l’adresse documentés dans votre GPS."))+'</p>';
+ else if(item?.geo?.approximate||item?.geo?.indicative_only)html+='<p class="aoTlmProfileCaution">'+E(L(language,"Map pin is indicative; the entrance is not verified.","Repère cartographique indicatif ; entrée non vérifiée."))+'</p>';
  const urls=[...values(contact.website),...values(contact.schedule_url),...values(contact.bulletin_url)];
  const links=[...new Set(urls.filter(https))];
  // CL2 directory records do not own a native contact object; never hide their
@@ -222,6 +223,8 @@ export function renderTlmChurchProfile(item,language="en"){
  if(!links.length&&sourceLinks.length)links.push(sourceLinks[0].url);
  if(links.length)html+='<div class="aoTlmProfileActions">'+links.slice(0,5).map((u,i)=>link(u,i===0?L(language,urls.length?"Church / institute website":"Original venue source",urls.length?"Site de l’église / institut":"Source originale du lieu"):L(language,"Schedule / bulletin source","Source horaires / bulletin"))).join("")+'</div>';
  const dirs=A(item?.actions).filter(a=>a?.label==="Directions"&&https(a?.url));
+ const addressSearch=A(item?.actions).find(a=>a?.label==="Search location"&&https(a?.url));
+ if(addressSearch)html+='<div class="aoTlmProfileActions">'+link(addressSearch.url,L(language,"Find church by name/address on Google Maps","Rechercher l’église par nom/adresse sur Google Maps"))+'</div>';
  if(dirs.length)html+='<div class="aoTlmProfileActions">'+link(dirs[0].url,L(language,"Directions on Google Maps","Itinéraire sur Google Maps"))+'</div>';
  if(values(contact.phone).length)html+=detail(L(language,"Telephone","Téléphone"),values(contact.phone).join(" · "),null);
  if(values(contact.email).length)html+=detail("Email",values(contact.email).join(" · "),null);

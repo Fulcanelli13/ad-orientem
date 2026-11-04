@@ -1,6 +1,7 @@
 // Derived read-model adapter for the single CL2 physical-site master.
 // Exactly one Explore record per effective physical site; source aliases are
 // preserved for search and provenance, never published as duplicate churches.
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS} from "./cl2-illustrative-locality-pins.js";
 export const CL2_PHYSICAL_SITE_INDEX_URL=new URL("../../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url).href;
 export const CL2_PHYSICAL_SITE_COUNT=2579;
 export const CL2_EXPECTED_R49_GROUPS=1844;
@@ -1790,7 +1791,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
   const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
-  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??null;
+  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??null;
   const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
   if(review&&(!selected||!sourceIds.includes(review.sourceId)||
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
@@ -1804,7 +1805,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:gcatholic:church:\d+:plus:[23456789CFGHJMPQRVWX]{8}\+[23456789CFGHJMPQRVWX]{2}|osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:[a-z0-9-]+|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:gcatholic:church:\d+:plus:[23456789CFGHJMPQRVWX]{8}\+[23456789CFGHJMPQRVWX]{2}|osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|geonames-locality:[A-Z]{2}:[a-z0-9-]+:[a-z0-9-]+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:[a-z0-9-]+|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
@@ -1878,7 +1879,9 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     map_publishable:Boolean(newPin),
     map_state:newPin?"PROVISIONAL":"ADDRESS_ONLY",facts:Object.freeze([
      {label:"Source identity",value:"CL2 physical-site master · "+anchor},
-     ...(newPin?[{label:"Map position",value:/_GNIS_CHURCH_POINT_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
+     ...(newPin?[{label:"Map position",value:newPin.precision==="locality"?
+        "Illustrative locality marker · church position and entrance NOT verified":
+        /_GNIS_CHURCH_POINT_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
        "Reviewed named church point · building outline, postal number and entrance unverified":
        /_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
        "Reviewed named church point · building outline and entrance unverified":
@@ -1895,10 +1898,15 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
        "Reviewed church site · entrance not independently verified"}]:[]),
      {label:"Affiliation",value:affiliationName+" (source label only)"},
      {label:"Mass times",value:"Unverified · no timetable published"},
-    ]),sections:Object.freeze([]),actions:Object.freeze([]),
+    ]),sections:Object.freeze([]),actions:Object.freeze(newPin?.precision==="locality"?[
+      Object.freeze({label:"Search location",url:"https://www.google.com/maps/search/?api=1&query="+
+        encodeURIComponent([T(name),T(description).replace(/\s*\([^)]*\)/g,"").trim(),country].filter(Boolean).join(", "))})
+     ]:[]),
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
-     (newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":"")+
+     (newPin?.precision==="locality"?
+       " This is an illustrative town/locality position ONLY, not a church GPS point. Search by documented church name and address in your navigation app; do NOT route to this pin. Current Mass use remains unverified.":
+       newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":"")+
      (newPin?.correctedAddress?(anchor==="RG-16C25083C6C7"?" The research-master address is a mailing address; church location follows the independently verified church street address.":" The incomplete research-master address is supplemented by independently corroborated building-location evidence."):""),
     search_text,
    }));
