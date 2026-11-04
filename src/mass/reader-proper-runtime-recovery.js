@@ -283,6 +283,45 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     originalProperSourcePath:String(data.sourcePath??"")});
 }
 
+// 4 May, St Monica: the original 1962 Roman source's Collect is explicitly
+// "[Oratio] (nisi rubrica cisterciensis)". Its bare [Oratio] has no text.
+// The host's older flattening returns one EMPTY Collect, although the exact
+// conditional Roman prayer is pinned in la/en/fr. Do not generalise this to
+// Cistercian rubrics, other saints, or any unrelated conditional heading.
+const MONICA_ROMAN_SECTION="Oratio (nisi rubrica cisterciensis)";
+const MONICA_ROMAN_ID="sancti:05-04:3:w";
+const MONICA_PREFIX=Object.freeze({
+ la:"deus maerentium consolator",
+ en:"o god the consoler of those who mourn",
+ fr:"o dieu consolateur des affliges"
+});
+const sourceNorm=value=>String(value??"").normalize("NFD")
+ .replace(/[\u0300-\u036f]/g,"").replace(/[æǽ]/g,"ae").replace(/[œ]/g,"oe")
+ .toLowerCase().replace(/\s+/g," ").trim();
+async function recoverExact1962MonicaRomanCollect(data,principalId,hostResolver,diagnostic){
+ if(String(data?.sourcePath)!=="Sancti/05-04"||
+    String(principalId)!==MONICA_ROMAN_ID||
+    (data.principalCelebrationId&&data.principalCelebrationId!==MONICA_ROMAN_ID)||
+    (data.calendarCommemorations??[]).length!==0||
+    (data.appliedCommemorations??[]).length!==0)return null;
+ const rows=Array.isArray(data.collects)&&data.collects.length?
+    data.collects:data.collect?[data.collect]:[];
+ if(rows.length!==1||rows[0]?.oneConclusion||
+    ["lat","la","en","fr"].some(k=>String(rows[0]?.[k]??"").trim()))
+    return null;
+ const value={};
+ for(const [language,key] of [["la","lat"],["en","en"],["fr","fr"]]){
+  const parsed=await hostResolver.resolveSource("Sancti/05-04",language,diagnostic);
+  if((parsed?.map?.get?.("Oratio")??[]).length!==0)return null;
+  const source=cleanLines(parsedLines(parsed,[MONICA_ROMAN_SECTION]),language);
+  if(!sourceTextComplete(source)||!sourceNorm(source).startsWith(MONICA_PREFIX[language]))
+   return null;
+  value[key]=source;
+ }
+ return Object.freeze({...rows[0],...value,
+  sourcePath:"Sancti/05-04:"+MONICA_ROMAN_SECTION});
+}
+
 function sourceOrationOwners(data,path){
   const commemorations=(data.calendarCommemorations??[])
     .filter(comm=>comm&&!comm.inseparable);
@@ -380,6 +419,22 @@ export async function recoverReaderProperOmissions(proper,{
      !needsApostolicSource&&!recoveredChants)return proper;
 
   const next={...data};
+  // Restore ONLY the exact source-identified 1962 non-Cistercian Collect;
+  // the single empty host row must not make an existing named Mass disappear.
+  const monica=await recoverExact1962MonicaRomanCollect(
+    data,principalCelebrationId??data.principalCelebrationId??data.mainId,
+    hostResolver,diagnostic);
+  if(monica){
+    next.collects=Object.freeze([monica]);
+    next.collect=monica;
+    next.sourceEditorialCorrections=Object.freeze([
+      ...(data.sourceEditorialCorrections??[]),
+      Object.freeze({id:"1962_ST_MONICA_ROMAN_CONDITIONAL_COLLECT",
+       sourcePath:"Sancti/05-04",section:MONICA_ROMAN_SECTION,
+       languageWitnesses:Object.freeze(["la","en","fr"]),
+       originalSourcePreserved:true,addedTranslation:false})
+    ]);
+  }
   if(recoveredChants)next.readerChantSourceProof=recoveredChants;
   if(recoveredPreface)next.preface=recoveredPreface;
   if(needs.epistle){
