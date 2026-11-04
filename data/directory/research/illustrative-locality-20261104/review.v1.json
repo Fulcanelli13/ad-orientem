@@ -25,12 +25,12 @@
   "counts": {
     "current_published_map_pins": 2147,
     "existing_unmapped": 435,
-    "eligible": 170,
-    "identity_holds": 8,
+    "eligible": 169,
+    "identity_holds": 9,
     "ambiguous": 8,
     "no_safe_match": 249,
-    "possible_map_pins_if_all_eligible_published": 2317,
-    "remaining_after_eligible": 265
+    "possible_map_pins_if_all_eligible_published": 2316,
+    "remaining_after_eligible": 266
   },
   "records": [
     {
@@ -4631,19 +4631,10 @@
       "original_site_sources": [
         "https://www.parrocchiasantacroce.com/liturgia-vetus-ordo/"
       ],
-      "lat": 39.23054,
-      "lng": 9.11917,
-      "precision": "locality",
-      "approximate": true,
-      "matched_city": "Cagliari",
-      "matched_admin1": "Sardinia",
-      "coordinate_source_ref": "geonames-locality:IT:cagliari:sardinia",
-      "coordinate_source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "attribution": "GeoNames contributors · CC BY 4.0, via joelacus/world-cities",
-      "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
-      "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
-      "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "identity_hold": "SOURCE_REVIEWED_POTENTIAL_SAME_PHYSICAL_CAGLIARI_BASILICA_ALREADY_MAPPED",
+      "same_site_candidate": "RG-A75D8A0E1C53",
+      "research_note": "Do not mint second Cagliari Santa Croce physical pin from named locality while identity reconciliation remains open; original source row and profile remain in List."
     },
     {
       "cl2_anchor": "RG-B65-84A7E1C30EF2",
