@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'tests/schola-2026-eight-date-real-reader-reconciliation.mjs'
+      - 'tests/1962-perpetua-felicity-english-named-source-regression.mjs'
       - '.github/workflows/schola-2026-eight-date-real-reader.yml'
       - 'src/mass/proper-reader-slots.js'
       - 'src/mass/reader-proper-runtime-recovery.js'
@@ -25,6 +26,10 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Verify pinned March 6 source-name correction and fail-closed negative cases
+        run: |
+          node tests/1962-perpetua-felicity-english-named-source-regression.mjs
+          node tests/proper-reader-slots.mjs
       - name: Capture eight exact reader sources and identify current failures
         run: node tests/schola-2026-eight-date-real-reader-reconciliation.mjs
       - name: Re-run existing Perpetua/Felicity source-owner browser regression (#1788)
