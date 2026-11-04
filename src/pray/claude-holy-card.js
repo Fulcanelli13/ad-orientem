@@ -29,9 +29,12 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
     const published=safeImage(source)&&!usedImages.has(source);
     if(published)usedImages.add(source);
     const canonicalTitle=p.title||id,firstWords=incipit(p)||canonicalTitle;
-    const plate=published?'<img src="'+esc(source)+'" alt="" loading="lazy" decoding="async">':
-      '<span class="aoClaudeHolyTypePlate"><b>'+esc(canonicalTitle)+'</b>'+
+    // The collection is captured immediately on route entry. An approved
+    // image may still be decoding, especially below the initial viewport;
+    // always preserve a readable source-derived face underneath the photo.
+    const typePlate='<span class="aoClaudeHolyTypePlate" aria-hidden="true"><b>'+esc(canonicalTitle)+'</b>'+
       '<i lang="la">'+esc(firstWords)+'</i></span>';
+    const plate=published?typePlate+'<img src="'+esc(source)+'" alt="" loading="'+(i<12?'eager':'lazy')+'" decoding="async">':typePlate;
     return '<button type="button" data-p435930-lib-open="'+esc(id)+'" aria-label="'+esc(canonicalTitle)+'">'+
       '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate'+(published?'':' aoClaudeHolyCasePlateText')+'" aria-hidden="true">'+
        plate+'</div>'+
