@@ -43,7 +43,10 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
- // Batch 16: thirty verified church identities; independent GCatholic full plus-code cell centres (not entrances).
+ "RG-9CAFC11FEA38":Object.freeze({sourceId:"AO-B35-L-GB-438182C27E63",name:"St Mary's",country:"GB",addressNeedle:"Hexham, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:54.9693,lng:-2.1048,precision:"site",sourceRef:"independent:historicengland-1042558-st-marys-hexham",sourceUrl:"https://historicengland.org.uk/listing/the-list/list-entry/1042558",
+  correctedAddress:"St Mary's Roman Catholic Church, Hencotes, Hexham NE46 2EB (listed church site, not entrance)",reviewScope:"HEXHAM_ST_MARY_ROMAN_CATHOLIC_GRADE_II_STAR_HENCOTES_LISTED_SITE_NOT_SURVEYED_ENTRANCE",evidence:Object.freeze(["https://historicengland.org.uk/listing/the-list/list-entry/1042558","https://diocesehn.org.uk/church/st-mary-3/"])}),
+ // Batch 16: thirty verified church identities: twenty-nine GCatholic plus-code cell centres and one Historic England listed church site (not entrances).
  "RG-0DD77D15AE00":Object.freeze({sourceId:"AO-B34-L-GB-337D601A8166",name:"Our Lady of the Rosary",country:"GB",addressNeedle:"Buckley, United Kingdom (exact street not established)",placeId:null,
   lat:53.165938,lng:-3.070438,precision:"site",sourceRef:"gcatholic:church:92685:plus:9C5R5W8H+9R",sourceUrl:"https://gcatholic.org/churches/british-isles/92685",
   correctedAddress:"Our Lady of the Rosary Catholic church site; Buckley (GCatholic cell-centre estimate, not surveyed entrance)",reviewScope:"GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE",evidence:Object.freeze(["https://gcatholic.org/churches/british-isles/92685","https://www.rcdwxm.org.uk/buckley"])}),
@@ -131,9 +134,6 @@ const REVIEWED_NEW_SITE_PINS=Object.freeze({
  "RG-FF22A9A43D94":Object.freeze({sourceId:"AO-B35-L-GB-B1CFBF880323",name:"St Theresa of Lisieux",country:"GB",addressNeedle:"Stansted Mountfitchet, United Kingdom (exact worship address NOT confirmed)",placeId:null,
   lat:51.910563,lng:0.199813,precision:"site",sourceRef:"gcatholic:church:61759:plus:9F32W56X+6W",sourceUrl:"https://gcatholic.org/churches/british-isles/61759",
   correctedAddress:"St Theresa of Lisieux Catholic church site; Stansted Mountfitchet (GCatholic cell-centre estimate, not surveyed entrance)",reviewScope:"GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE",evidence:Object.freeze(["https://gcatholic.org/churches/british-isles/61759"])}),
- "RG-C94D7E3D48FD":Object.freeze({sourceId:"AO-EUR-GB-013",name:"Catholic of St Teresa of the Child Jesus",country:"GB",addressNeedle:"Rochford (locality only; street not established — source unverified)",placeId:null,
-  lat:51.587937,lng:0.699062,precision:"site",sourceRef:"gcatholic:church:93193:plus:9F32HMQX+5J",sourceUrl:"https://gcatholic.org/churches/british-isles/93193",
-  correctedAddress:"Catholic of St Teresa of the Child Jesus Catholic church site; Rochford (locality only; street not established — source unverified) (GCatholic cell-centre estimate, not surveyed entrance)",reviewScope:"GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE",evidence:Object.freeze(["https://gcatholic.org/churches/british-isles/93193"])}),
  // Batch 15: four independently identified British Catholic church locations.
  "RG-0B11C840F55E":Object.freeze({sourceId:"AO-B34-L-GB-52D1803A1F95",name:"Our Lady of Lourdes and St Cecilia",country:"GB",addressNeedle:"Blandford Forum, United Kingdom (exact street not established)",placeId:null,
   lat:50.860164,lng:-2.166303,precision:"site",sourceRef:"independent:commons-blandford-lourdes-cecilia-object-coordinate",sourceUrl:"https://commons.wikimedia.org/wiki/Category:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Blandford_Forum",
