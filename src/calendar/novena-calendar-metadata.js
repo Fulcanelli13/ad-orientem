@@ -1,4 +1,4 @@
-/* Generated projection of the canonical Novena Corpus V4, source commit 787e94c18842f5e659b48664f640fbfd2756343c.
+/* Generated projection of the canonical Novena Corpus V4, source src/pray/novena-corpus-v4.js.
  * Calendar/Coming Up require dates, names and source-status metadata, not the
  * 16 full devotional texts and French body modules. Do not use this for prayer
  * rendering. Regenerate with tools/perf/generate-novena-calendar-metadata.mjs
