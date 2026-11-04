@@ -260,7 +260,7 @@ export const NOVENA_TARGET_REGISTRY_V1=F(Object.fromEntries(
     playable:true,
     calendar:n.calendar,
     traditionalStart:n.traditionalStart,
-    sourceStatus:n.source?.status??"SOURCE_LOCKED",
+    sourceStatus:n.sourceStatus??"SOURCE_LOCKED",
     frenchTextStatus:n.frenchTextStatus??"MISSING_FRENCH_BODY"
   })])
 ));
