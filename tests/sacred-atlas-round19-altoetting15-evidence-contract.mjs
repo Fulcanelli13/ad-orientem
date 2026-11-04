@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+// Round 19: exact source-count, SHA1 evidence, and review UI invariants.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {Script} from "node:vm";
+const root="data/geography/research/";
+const load=x=>JSON.parse(readFileSync(root+x,"utf8"));
+const evidence=load("sacred-atlas-round19-altoetting15-originals-verified-20261104.v1.json");
+const source=load("sacred-atlas-round18-30-geotagged-curated-triage-20261104.v1.json");
+const approved=load("../approved-place-media.v1.json");
+const html=readFileSync(root+"sacred-atlas-round19-altoetting15-contact-review-20261104.html","utf8");
+const match=html.match(/const files=(.*?);\s*let choice=/s);
+assert.ok(match,"Contact sheet source data not found");
+const files=JSON.parse(match[1]);
+assert.equal(files.length,15);
+assert.equal(evidence.rows.length,15);
+assert.equal(evidence.counts.original_sha1_verifications,15);
+assert.equal(evidence.counts.licence_metadata_pass,15);
+assert.equal(evidence.counts.user_cover_choices,0);
+assert.equal(evidence.counts.published,0);
+assert.equal(source.exact_site_category.files.length,15);
+assert.equal(approved.items.length,379);
+const approvedShas=new Set(approved.items.map(x=>x.source_sha1).filter(Boolean));
+const seen=new Set();
+for(const row of evidence.rows){
+  assert.equal(row.original_bytes_verified,true);
+  assert.equal(row.source_metadata_licence_pass,true);
+  assert.equal(row.source_sha1_previous,row.sha1_verified_original_bytes);
+  assert.equal(row.source_sha1_live,row.sha1_verified_original_bytes);
+  assert.equal(row.license,"CC BY-SA 4.0");
+  assert.equal(row.author,"Ricardalovesmonuments");
+  assert.match(row.sha1_verified_original_bytes,/^[0-9a-f]{40}$/);
+  assert.equal(row.rights_cleared_for_publication,false);
+  assert.equal(row.user_primary_cover_selected,false);
+  assert.equal(row.published,false);
+  assert.ok(!approvedShas.has(row.sha1_verified_original_bytes));
+  assert.ok(!seen.has(row.sha1_verified_original_bytes));
+  seen.add(row.sha1_verified_original_bytes);
+  let f=files.find(x=>x.title===row.source_title);
+  assert.ok(f);
+  assert.equal(f.sha,row.sha1_verified_original_bytes);
+  assert.deepEqual([f.width,f.height],row.original_dimensions);
+}
+assert.equal(new Set(files.map(x=>x.title)).size,15);
+assert.ok(html.includes("SELECT"));
+assert.ok(html.includes("NONE_SUITABLE"));
+assert.ok(html.includes("HOLD"));
+assert.ok(html.includes("editorial preferences only"));
+const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+assert.equal(scripts.length,1);
+new Script(scripts[0][1],{filename:"altoetting15-contact-review.js"});
+console.log(JSON.stringify({result:"PASS",files:15,sha1_verified:15,CC_BY_SA_4:15,source_author:"Ricardalovesmonuments",collisions_with_approved_covers:0,approved_published:379}));
