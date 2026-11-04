@@ -55,7 +55,11 @@ try{
    await page.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
    await page.locator('#ao-settings-modular-root [data-pref-path="general.uiLanguage"][data-pref-value="'+language+'"]').click();
    await page.waitForFunction(lang=>document.documentElement.lang===lang,language,{timeout:12000});
-   assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate('pray')))?.ok,true);
+   // QA-only source montages use the real Prayer owner, not a shell route
+   // transition. The shell may decline a redundant navigation to Pray.
+   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==='function',null,{timeout:30000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true,
+     'Could not open the real Prayer owner');
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==='function',null,{timeout:30000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open('pray.library',{returnContext:null})),true);
    const rootSelector='#aoPray435930.open';
