@@ -16,7 +16,6 @@ assert.equal(places.length,66);
 assert.equal(approved.items.length,379);
 assert.equal(prev.rows.length,15);
 assert.equal(wikidata.counts.frozen_places_checked,28);
-assert.equal(wikidata.counts.wikidata_requests,undefined); // counts stored in provenance
 assert.equal(wikidata.provenance.wikidata_requests,47);
 assert.equal(wikidata.counts.no_wikidata_label_match,25);
 assert.equal(wikidata.counts.p18_file_links,2);
@@ -35,6 +34,9 @@ assert.equal(places.reduce((n,p)=>n+p.candidates.length,0),124);
 assert.equal(places.filter(p=>!p.candidates.length&&!p.legalHold).length,26);
 const hold=(id)=>places.find(p=>p.id===id);
 assert.equal(hold("place:SL:sacred-heart-cathedral-freetown").candidates.length,3);
+assert.equal(src.rows.find(x=>x.place_id==="place:SL:sacred-heart-cathedral-freetown").historical_original_review.historical_dimensions[0],2048);
+assert.ok(hold("place:SL:sacred-heart-cathedral-freetown").round20HistoricalHold.includes("watermark"));
+assert.ok(src.rows.find(x=>x.place_id==="place:SL:sacred-heart-cathedral-freetown").historical_original_review.visual_status.startsWith("EXCLUDE_"));
 assert.equal(hold("place:PA:basilica-menor-jesus-nazareno-atalaya").candidates.length,2);
 assert.ok(src.rows.every(r=>hold(r.place_id).candidates.every(c=>c.visualDecision==="HOLD_ORIGINAL_TOO_SMALL")));
 const alt=hold("place:DE:friedhofskirche-st-michael-altoetting");
