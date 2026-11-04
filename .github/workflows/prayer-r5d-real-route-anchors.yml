@@ -1,0 +1,55 @@
+name: Prayer R5D 15 real-reader artwork owner anchors
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - src/pray/planned-photo-slots.v1.js
+      - src/pray/presentation-runtime.js
+      - tests/prayer-r5d-route-15-slot-contract.mjs
+      - tests/prayer-r5d-real-route-anchors-phone.mjs
+      - .github/workflows/prayer-r5d-real-route-anchors.yml
+  push:
+    branches: [main]
+    paths:
+      - src/pray/planned-photo-slots.v1.js
+      - src/pray/presentation-runtime.js
+      - tests/prayer-r5d-route-15-slot-contract.mjs
+      - tests/prayer-r5d-real-route-anchors-phone.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  editorial-and-nonpublication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard 15 original-source placements, 267 editorial slots and Rosary isolation
+        run: |
+          node tests/prayer-r5d-route-15-slot-contract.mjs
+          node tests/prayer-artwork-267-integration.mjs
+          node tests/pray-production-cover-photo-qa-import.mjs
+  real-prayer-phone:
+    needs: editorial-and-nonpublication
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Check actual Prayer stage-owner anchors, 320/390 EN/FR
+        run: node tests/prayer-r5d-real-route-anchors-phone.mjs
+      - name: Preserve stage-owner report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-real-route-stage-anchors
+          path: artifacts/prayer-r5d-real-route-anchors/
+          if-no-files-found: warn
+          retention-days: 10
