@@ -1,18 +1,18 @@
 {
   "schema": "AO_TLM_ATLAS_ILLUSTRATIVE_LOCALITY_R2_APPROVED_V1",
   "date": "2026-11-04",
-  "scope": "PREVIOUSLY_EXCEL_APPROVED_GEONAMES_TOWN_CENTROIDS_NOT_CHURCH_GPS",
+  "scope": "PREVIOUSLY_EXCEL_APPROVED_GEONAMES_TOWN_CENTROIDS_NOT_CHURCH_GPS; 1 historic identity conflict excluded",
   "source": "GeoNames contributors, CC BY 4.0",
   "source_link": "https://github.com/joelacus/world-cities",
   "excel_spreadsheet_id": "1qLQDsYfddY4K9DdPuC0tbrxI7Poe_DgKCzkpYwVCpFg",
-  "reviewed": 94,
+  "reviewed": 93,
   "release_status": "DRAFT_PENDING_CI_GITHUB_PAGES",
   "expected_after_merge": {
     "all": 2582,
-    "mapped": 2408,
-    "address_only": 174,
+    "mapped": 2407,
+    "address_only": 175,
     "source_pins": 1806,
-    "reviewed_pins": 602
+    "reviewed_pins": 601
   },
   "records": [
     {
@@ -506,21 +506,6 @@
       "source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
       "all_venues_row": 919,
       "unpinned_queue_row": 466,
-      "review_decision": "Approved",
-      "precision": "locality",
-      "site_gps_verified": false
-    },
-    {
-      "cl2_anchor": "RG-5E751D3AAEFA",
-      "source_id": "AO-B36-L-GB-1BF2C870A5FF",
-      "country": "GB",
-      "locality": "Plymouth",
-      "lat": 50.37153,
-      "lng": -4.14305,
-      "source_ref": "geonames-locality:GB:plymouth:r2-rg-5e751d3aaefa",
-      "source_url": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
-      "all_venues_row": 928,
-      "unpinned_queue_row": 12,
       "review_decision": "Approved",
       "precision": "locality",
       "site_gps_verified": false
@@ -1424,6 +1409,12 @@
       "review_decision": "Approved",
       "precision": "locality",
       "site_gps_verified": false
+    }
+  ],
+  "excluded_identity_holds": [
+    {
+      "cl2_anchor": "RG-5E751D3AAEFA",
+      "reason": "Historical CL2 batch08–11 identity/duplicate hold overrides R2 geographical approval; Excel decision updated to Needs more evidence."
     }
   ]
 }
