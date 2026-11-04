@@ -1,0 +1,196 @@
+{
+  "schema": "AO_SACRED_ATLAS_SELECTED24_EXACT_SOURCE_FINDINGS_V1",
+  "date": "2026-11-04",
+  "scope": "RESEARCH_ONLY_NOT_PUBLICATION",
+  "source_audit_workflow_run": 41731565492,
+  "source_audit_job": 126249970377,
+  "source_artifact_id": 13277156888,
+  "source_manifest": "data/geography/research/sacred-atlas-selected24-hold-closure-20261104.v1.json",
+  "source_audit_type": "Wikimedia Commons exact-title source revision, original SHA1, dimensions, original size, current licensing, artist attribution",
+  "reviewed": 24,
+  "published": 0,
+  "status_counts": {
+    "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST": 5,
+    "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER": 6,
+    "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW": 3,
+    "HOLD_ATTRIBUTION_MISSING_OR_GENERIC": 4,
+    "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS": 2,
+    "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW": 2,
+    "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY": 2
+  },
+  "release_candidates": [
+    "place:CU:el-cobre-caridad-basilica",
+    "place:KW:holy-family-cocathedral-kuwait-city"
+  ],
+  "release_rule": "Separate original-byte, live-rights and exact Place identity source verification required; this report does not approve publication",
+  "rows": [
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "source_revision_id": 1217887441,
+      "current_size_bytes": 5374843,
+      "verification_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "source_revision_id": 1223014421,
+      "current_size_bytes": 50457392,
+      "verification_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "source_revision_id": 1131279712,
+      "current_size_bytes": 32532870,
+      "verification_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "source_revision_id": 1118405193,
+      "current_size_bytes": 3562683,
+      "verification_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "source_revision_id": 1143573043,
+      "current_size_bytes": 645762,
+      "verification_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "source_revision_id": 1287765003,
+      "current_size_bytes": 736554,
+      "verification_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "source_revision_id": 1212536733,
+      "current_size_bytes": 594481,
+      "verification_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "source_revision_id": 1263995007,
+      "current_size_bytes": 2403391,
+      "verification_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "source_revision_id": 1197765293,
+      "current_size_bytes": 2529014,
+      "verification_status": "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "source_revision_id": 1292866715,
+      "current_size_bytes": 37805021,
+      "verification_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "source_revision_id": 957377894,
+      "current_size_bytes": 4107000,
+      "verification_status": "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:SB:holy-cross-cathedral-honiara",
+      "source_revision_id": 1183264315,
+      "current_size_bytes": 4205349,
+      "verification_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "source_revision_id": 1275113194,
+      "current_size_bytes": 49847153,
+      "verification_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "source_revision_id": 889563335,
+      "current_size_bytes": 820315,
+      "verification_status": "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "source_revision_id": 1190961558,
+      "current_size_bytes": 11755745,
+      "verification_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:DE:wieskirche",
+      "source_revision_id": 1266834031,
+      "current_size_bytes": 581058,
+      "verification_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "source_revision_id": 1153955804,
+      "current_size_bytes": 36270928,
+      "verification_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:IN:st-andrews-basilica-arthunkal",
+      "source_revision_id": 1066342891,
+      "current_size_bytes": 35345315,
+      "verification_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "source_revision_id": 1032707138,
+      "current_size_bytes": 1269928,
+      "verification_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "source_revision_id": 1056197632,
+      "current_size_bytes": 529619,
+      "verification_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "source_revision_id": 941287476,
+      "current_size_bytes": 766039,
+      "verification_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "source_revision_id": 1167671135,
+      "current_size_bytes": 370466,
+      "verification_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "source_revision_id": 1202053775,
+      "current_size_bytes": 2778652,
+      "verification_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "publishing_allowed": false
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "source_revision_id": 1247702159,
+      "current_size_bytes": 742948,
+      "verification_status": "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY",
+      "publishing_allowed": false
+    }
+  ]
+}
