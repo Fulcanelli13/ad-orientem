@@ -95,8 +95,24 @@ for(const entry of ledger.shrines){
     approvedPhoto.credit==="Chabe01"&&
     approvedPhoto.license==="CC-BY-SA-4.0"&&
     approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed;
+  const pd11Evidence=json("data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json");
+  const pd11Source=json("data/geography/research/sacred-atlas-round11-pd-self-selected-cover-manifest-20261104.v1.json");
+  const pd11Proof=pd11Evidence.published.find(p=>p.place_id===entry.place_id);
+  const pd11Selected=pd11Source.rows.find(p=>p.place_id===entry.place_id);
+  const independentlyVerifiedPDSelf=Boolean(
+    approvedPhoto?.source_place_ref==="PHOTO_FINDER_2026-10-30_PD_SELF_R1"&&
+    pd11Proof&&pd11Selected&&pd11Evidence.current_exact_sha1_original_bytes_pd_self_and_revision_verified_for_published&&
+    pd11Proof.rights_template==="PD-self"&&
+    pd11Proof.source_sha1===approvedPhoto.source_sha1&&
+    pd11Proof.derivative_sha256===approvedPhoto.derivative_sha256&&
+    pd11Selected.original_sha1===approvedPhoto.source_sha1&&
+    pd11Selected.expected_revision_id===pd11Proof.source_revision_id&&
+    approvedPhoto.license==="PUBLIC_DOMAIN"&&
+    approvedPhoto.license_url==="https://creativecommons.org/publicdomain/mark/1.0/"&&
+    approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed
+  );
   assert.ok(approvedPhoto?.review_method?.includes("Photo Finder editorial selection")||
-    originalGalleryPhoto||independentlyPinnedNotreDame,
+    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf,
     entry.shrine_id+" newly approved hero requires source-matched editorial or approved-gallery evidence");
  }
 }
