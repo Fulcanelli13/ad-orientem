@@ -40,6 +40,7 @@ import {claudeHorariumHourFromClock,claudeHorariumClock,claudeHorariumStrokes,sy
 import {leonineSourceSections} from "./horarium-leonine-source-blocks.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
 import {prayerPilotEnabled,resolvedPrayerPilotFamilies,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
+import {revealPrayerMosaicTile,clearPrayerMosaicReveal} from "./prayer-mosaic-reveal.js";
 import {prayerDoorArtSlot,prayerEditorialArtworkMarkup,resolvePrayerEditorialArtwork,angelusOpeningArtworkSlot} from "./art-slot-map.v1.js";
 import {plannedPrayerArtworkSlot} from "./planned-photo-slots.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
@@ -3968,7 +3969,16 @@ function onClick(e){
   return;
  }
  if(e.target.closest?.('.aoClaudeHolyArtCredit a'))return;
+ // Clicks outside a selected mosaic painting dismiss its category reveal.
+ // No route or canonical reader state is touched by the dismissal.
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&!e.target.closest?.('[data-ao-pray-pilot-tile]')){
+  clearPrayerMosaicReveal(mount());
+ }
  const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn],[data-p435930-essential-flow-toggle]');if(!b)return;
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-ao-pray-pilot-tile')){
+  // Second activation falls through to the existing family/direct-route owner.
+  if(revealPrayerMosaicTile(b)){e.preventDefault();return;}
+ }
  if(PRAYER_PILOT_ENABLED&&view==='family'&&b.hasAttribute('data-p435930-door-filter')){
   const root=b.closest('[data-ao-prayer-shelf]'),selected=b.dataset.p435930DoorFilter;
   if(!root)return;
@@ -4830,6 +4840,9 @@ document.addEventListener('keydown',e=>{
   horizontalStep(e.key==='ArrowRight'?1:-1);
   queueMicrotask(()=>r.querySelector('.aoP435930Stations .aoDevoCardScroll')?.focus?.({preventScroll:true}));
   return;
+ }
+ if(e.key==='Escape'&&PRAYER_PILOT_ENABLED&&view==='home'&&clearPrayerMosaicReveal(r)){
+  e.preventDefault();return;
  }
  if(e.key==='Escape'){e.preventDefault();close();return}
  if(e.key==='Tab'){const f=focusables();if(!f.length){e.preventDefault();return}const first=f[0],last=f[f.length-1],a=document.activeElement;if(e.shiftKey&&(a===first||!r.contains(a))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(a===last||!r.contains(a))){e.preventDefault();first.focus()}}
