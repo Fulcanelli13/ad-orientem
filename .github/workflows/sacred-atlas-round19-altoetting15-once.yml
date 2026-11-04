@@ -1,0 +1,36 @@
+name: Sacred Atlas Round 19 — one-time Altötting 15 source integrity
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - 'tools/atlas/audit-sacred-atlas-altoetting15-originals.py'
+      - '.github/workflows/sacred-atlas-round19-altoetting15-once.yml'
+permissions:
+  contents: read
+jobs:
+  validate-original-sources:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-round19-altoetting15-rights-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Self-test bounded original SHA1 source verifier
+        run: |
+          python tools/atlas/audit-sacred-atlas-altoetting15-originals.py --self-test
+          python tools/atlas/audit-sacred-atlas-altoetting15-originals.py --dry-run
+      - name: Verify Altötting originals once with Commons rate limit respect
+        run: python tools/atlas/audit-sacred-atlas-altoetting15-originals.py
+      - name: Store short-lived original integrity evidence (no image binaries)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round19-altoetting15-original-evidence
+          path: /tmp/ao-sacred-atlas-round19-altoetting15-original-evidence.json
+          retention-days: 14
+          if-no-files-found: warn
