@@ -17,6 +17,21 @@ const server=http.createServer(async(req,res)=>{
   res.writeHead(200,{"content-type":mime[extname(file)]??"application/octet-stream","cache-control":"no-store"});res.end(bytes);
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message??e))}
 });
+// The native controller and the visible dock update on different ticks.
+// Every composer assertion must compare the exact rendered Latin and
+// EN/FR words against the settled source-owned projection.
+async function awaitComposedDock(page,manualId=null){
+ await page.waitForFunction(expected=>{
+  const schola=window.__AO_PHONE_PREVIEW.getScholaState()?.schola;
+  const dock=document.querySelector(".ao-schola-dock");
+  if(!schola||schola.composedWorkId!=="faure-requiem-op48"||
+    dock?.dataset.composed!=="true")return false;
+  if(expected && schola.manualMovementId!==expected)return false;
+  const latin=dock.querySelector('[data-role="schola"]')?.textContent?.trim();
+  const translation=dock.querySelector('[data-role="schola-inline-translation"]')?.textContent?.trim();
+  return latin===schola.latin && translation===schola.english;
+ },manualId,{timeout:15000});
+}
 let browser;
 try{
  await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
@@ -46,20 +61,7 @@ try{
    await plan.locator("[data-schola-music-setting]").selectOption("faure-requiem-op48");
    if(spec.requiem){
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.composedWorkId==="faure-requiem-op48");
-    // LIVE UI rendering is scheduled after the controller projection. Do not
-    // compare composer lyrics while the previous Gregorian line is still in
-    // the DOM; require BOTH Latin and translated words to be painted.
-    await page.waitForFunction(()=>{
-      const schola=window.__AO_PHONE_PREVIEW.getScholaState()?.schola;
-      const dock=document.querySelector(".ao-schola-dock");
-      const displayedLatin=dock?.querySelector('[data-role="schola"]')?.textContent?.trim();
-      const displayedTranslation=dock?.querySelector(
-        '[data-role="schola-inline-translation"]')?.textContent?.trim();
-      return schola?.composedWorkId==="faure-requiem-op48" &&
-        dock?.dataset.composed==="true" &&
-        displayedLatin===schola.latin &&
-        displayedTranslation===schola.english;
-    },null,{timeout:15000});
+    await awaitComposedDock(page);
     const lyric=await page.evaluate(()=>({
       schola:window.__AO_PHONE_PREVIEW.getScholaState().schola,
       text:document.querySelector('[data-role="schola"]')?.textContent,
@@ -118,6 +120,7 @@ try{
     assert.equal(await select.isVisible(),true,"Manual text selection must be offered with Fauré");
     await select.selectOption("PIE_JESU");
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.manualMovementId==="PIE_JESU");
+    await awaitComposedDock(page,"PIE_JESU");
     let extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
     assert.equal(extra.total,4);assert.match(extra.latin,/Pie Jesu/);
     assert.equal(extra.musicStatus,"MANUAL_TEXT_REFERENCE_NOT_OBSERVED");
@@ -125,10 +128,12 @@ try{
       spec.lang==="fr"?/Jésus/:/Jesus/);
     await select.selectOption("LIBERA_ME");
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.manualMovementId==="LIBERA_ME");
+    await awaitComposedDock(page,"LIBERA_ME");
     extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
     assert.equal(extra.total,15);assert.match(extra.latin,/Libera me/);
     await select.selectOption("IN_PARADISUM");
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.manualMovementId==="IN_PARADISUM");
+    await awaitComposedDock(page,"IN_PARADISUM");
     extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
     assert.equal(extra.total,6);assert.match(extra.latin,/In paradisum/);
     await select.selectOption("");
