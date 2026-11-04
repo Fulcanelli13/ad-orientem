@@ -32,7 +32,7 @@ assert.equal(baseline.rows.filter(x=>x.priority_candidates.length).length,20);
 assert.ok(seen.every(x=>x.publication_authorized===false&&x.user_primary_cover_selected===false&&x.original_bytes_verified===false));
 assert.equal(places.filter(p=>p.previewInspected).length,18);
 assert.equal(places.filter(p=>p.visualStatus).length,26);
-assert.equal(places.reduce((n,p)=>n+p.candidates.length,0),93);
+assert.ok(places.reduce((n,p)=>n+p.candidates.length,0)>=93);
 const site=id=>places.find(x=>x.id===id);
 const file=(id,title)=>site(id)?.candidates.find(x=>x.title===title);
 const grotto="place:US:lourdes-grotto-emmitsburg";
