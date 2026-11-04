@@ -97,8 +97,11 @@ assert.equal(audit.counts.noteGroupTokenizationHolds,0,
 // 17 real 2026 formularies intermittently report Proper.status='failed'.
 const annualBuilder=readFileSync(new URL(
  "../scripts/schola/build-2026-selected-repertoire.mjs",import.meta.url),"utf8");
-assert.match(annualBuilder,/for\\(const date of ids\\)settled\\.push\\(await resolveOne\\(date\\)\\)/);
-assert.doesNotMatch(annualBuilder,/Promise\\.all\\(ids\\.map\\(async date/);
+assert.ok(annualBuilder.includes(
+ "for(const date of ids)settled.push(await resolveOne(date))"),
+ "Production annual DayResolver must capture source dates sequentially");
+assert.ok(!annualBuilder.includes("Promise.all(ids.map(async date"),
+ "Concurrent Mass source resolution may not return");
 const braced=sourceNoteGroupInventory("name: Proper sample;\n%%\n(c4) Al(le){ia} :(f.) (::)");
 assert.equal(braced.divisionAttachedTokens,1);
 assert.equal(braced.groups.at(-1).syllable,"ia");
