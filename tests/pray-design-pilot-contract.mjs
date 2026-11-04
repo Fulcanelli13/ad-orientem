@@ -233,8 +233,12 @@ assert.doesNotMatch(runtime,/aoPrayDoorShelfRow|aoPrayDoorFeatured/,
  "Retired text rows and oversized featured list must not return");
 assert.match(mosaicCss,/\.aoPrayDoorMosaicCard\[hidden\]\{display:none!important\}/,
  "Filtered mosaic tiles must actually disappear from the grid");
-assert.match(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
- "Essential 32-prayer source case must become a responsive visual mosaic");
+const f01Css=readFileSync(new URL("../src/pray/claude-holy-card-styles.js",import.meta.url),"utf8");
+assert.match(f01Css,/\.aoClaudeHolyFan\{/,"F01 uses the approved case-of-cards owner");
+assert.match(f01Css,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,
+ "The original three-column Claude Holy Card fan must remain canonical");
+assert.doesNotMatch(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
+ "New generic Prayer mosaics must not overwrite the approved F01 fan geometry");
 assert.match(mosaicCss,/prefers-reduced-motion:reduce/,
  "Prayer mosaics must respect reduced motion preferences");
 assert.match(runtime,/data-p435930-door-prayer/,"Single-text prayer cards hand off to the existing canonical Library");
