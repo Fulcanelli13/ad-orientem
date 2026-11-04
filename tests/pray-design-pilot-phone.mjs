@@ -93,6 +93,19 @@ try{
       content:mount?Math.max(0,mount.scrollWidth-mount.clientWidth):999};
    });
    assert.ok(overflow.document<=1&&overflow.content<=1,"Discovery must not overflow: "+JSON.stringify(overflow));
+   // The ninth door must not be unreachable underneath the fixed bottom tab bar.
+   const finalDoor=await page.evaluate(()=>{
+     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+     mount.scrollTop=mount.scrollHeight;
+     const tile=document.querySelector('#aoPray435930.open [data-ao-pray-pilot-tile="saints"]');
+     const bar=document.querySelector("#ao-global-ribbon, .aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']");
+     const bottom=tile.getBoundingClientRect().bottom;
+     return {bottom,navTop:bar?.getBoundingClientRect().top??innerHeight-64,scroll:mount.scrollTop};
+   });
+   assert.ok(finalDoor.bottom<=finalDoor.navTop+1,
+     "Saints & Angels must be fully reachable above navigation after scrolling: "+JSON.stringify(finalDoor));
+   await page.locator(base+" .aoP435930Mount").evaluate(el=>{el.scrollTop=0});
+
    const search=page.locator(base+" [data-p435930-pilot-search]");
    await page.locator(base+" .aoPrayPilotSearch").click();
    assert.ok((await page.locator(base+" .aoPrayPilotSearch").boundingBox()).width>110,
