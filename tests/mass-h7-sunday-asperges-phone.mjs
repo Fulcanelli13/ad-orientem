@@ -29,7 +29,11 @@ const server=http.createServer(async(req,res)=>{
 });
 if(!productionOrigin)
   await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
-const pageOrigin=productionOrigin?.origin??("http://127.0.0.1:"+server.address().port);
+// Preserve the full GitHub Pages project prefix (/ad-orientem/).
+// URL.origin alone points at the domain root and incorrectly requests /index.html.
+const pageOrigin=productionOrigin
+  ?productionOrigin.href.replace(/\/$/,"")
+  :("http://127.0.0.1:"+server.address().port);
 console.log("H7 audit origin: "+pageOrigin);
 let browser;
 try{
