@@ -63,6 +63,12 @@ export function reconcileSchola2026Completion({annual,full,pre,work,first60}={})
    classification:special?"SPECIAL_RITE_NOT_ORDINARY_MASS":
     "ORDINARY_MASS_ORATION_READER_PROJECTION_HOLD",
    missingEnglish:missingEN,missingFrench:missingFR,
+   originalReaderReasons:{
+    en:r.englishMissingEvidence??[],
+    fr:r.frenchMissingEvidence??[],
+    sourceOrationGroupCounts:r.orationInputGroupCounts??null,
+    commemorationDecision:r.commemorationDecision??null
+   },
    properSourceReady:true,chantScoresDeclaredMissing:false,
    action:special?"CHECK_NATIVE_SPECIAL_RITE_NOT_ORDINARY_PROPER":
     "INSPECT_EXISTING_COMMEMORATION_ORATION_SOURCE_AND_LANGUAGE_PROJECTION",
