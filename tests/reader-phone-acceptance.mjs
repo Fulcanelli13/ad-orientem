@@ -318,6 +318,15 @@ try{
     assert.fail("Host elevation cue-focus mismatch after quiescence: "+
       JSON.stringify(focusEvidence));
   }
+  // The cue tracker commits focus synchronously, then paints its native
+  // event projection at the next animation frame. A same-tick read can
+  // legitimately see focus C0174 with the previous C0173 event snapshot.
+  // Require the event and bell to CONVERGE to the exact original sources.
+  await page.waitForFunction(()=>{
+    const event=window.__AO_PHONE_PREVIEW.getNativeEventState();
+    return event?.nativeCueId==="AO.SM.C0174"&&
+      event?.bell?.label==="ELEVATION BELL";
+  },null,{timeout:5000});
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
