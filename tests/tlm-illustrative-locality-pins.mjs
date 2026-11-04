@@ -17,6 +17,12 @@ assert.equal(audit.scope,"EXCEL_APPROVED_LOCALITY_MARKERS_NO_GPS_DESTINATIONS_PR
 assert.equal(audit.records.length,435);
 assert.equal(audit.counts.eligible,160);
 assert.equal(audit.counts.identity_holds,10);
+assert.equal(audit.counts.excel_exact_preferred,8);
+assert.equal(audit.counts.remaining_after_eligible,275);
+const excelPreciseHolds=audit.records.filter(r=>r.status==="HOLD_EXCEL_APPROVED_PRECISE_SITE_PREFERRED");
+assert.equal(excelPreciseHolds.length,8);
+assert.ok(excelPreciseHolds.every(r=>r.excel_preferred_geometry?.evidence_url?.startsWith("https://")));
+assert.equal(audit.records.filter(r=>r.status==="HOLD_EXCEL_IDENTITY_AMBIGUITY").length,1);
 assert.equal(audit.counts.ambiguous,8);
 assert.equal(audit.counts.no_safe_match,249);
 assert.equal(audit.counts.current_published_map_pins,2147);
@@ -27,6 +33,7 @@ const origins=new Map(index.records.map(r=>[r[0],r]));
 const items=new Map(world.map(item=>[item.physical_group_id,item]));
 const approvals=audit.records.filter(r=>r.status==="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
 assert.equal(approvals.length,160);
+assert.ok(approvals.every(r=>r.excel_review_scope==="APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS"));
 assert.deepEqual(new Set(approvals.map(r=>r.cl2_anchor)),new Set(pins.map(([id])=>id)));
 for(const [id,loc] of pins){
  const original=origins.get(id),found=items.get(id);
@@ -72,6 +79,12 @@ for(const r of withheld){
  const item=items.get(r.cl2_anchor);
  assert.ok(item&&!item.map_publishable&&!item.geo,"Held records must not gain a pin");
 }
+for(const anchor of [
+ "RG-50082C65DA56", // Sheffield St Joseph identity unresolved in Excel
+ "RG-50BE1A7B5F18","RG-5B65864A842D","RG-605CC195A1EF",
+ "RG-8EC1B37099D3","RG-A164E7D0C229","RG-A504818C84DC",
+ "RG-B10417F7A69D","RG-D7C8B7693CEC",
+])assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor],"Excel-held exact-site/identity candidate must never be downgraded to locality: "+anchor);
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-615FF6835AAE"],"Poprad city identity conflict must remain held");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
