@@ -60,7 +60,21 @@
           "publication_authorized": false
         }
       ],
-      "publication_authorized": false
+      "publication_authorized": false,
+      "historical_original_review": {
+        "source_title": "File:Sacred Heart Cathedral, Freetown, Sierra Leone - Mapillary (gPahUHmYFk3EUBsmvbUKNw).jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_Cathedral,_Freetown,_Sierra_Leone_-_Mapillary_(gPahUHmYFk3EUBsmvbUKNw).jpg",
+        "historical_original_url": "https://upload.wikimedia.org/wikipedia/commons/archive/1/1c/20201110140339%21Sacred_Heart_Cathedral%2C_Freetown%2C_Sierra_Leone_-_Mapillary_%28gPahUHmYFk3EUBsmvbUKNw%29.jpg",
+        "historical_dimensions": [
+          2048,
+          1152
+        ],
+        "historical_file_dated": "2020-11-10T14:02:00Z",
+        "visual_status": "EXCLUDE_HISTORICAL_UNCROPPED_STREET_SCENE_WITH_CATHEDRAL_PERIPHERAL",
+        "observation": "Historical un-cropped Commons image shows mostly Freetown street traffic and buildings; cathedral occupies upper right and Mapillary watermark remains in lower left. Do not use as church cover.",
+        "rights_status": "CC BY-SA 4.0 attribution claim; source unchanged but cover rejected for visual quality",
+        "publication_authorized": false
+      }
     },
     {
       "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
@@ -120,5 +134,8 @@
     "Do not upscale low-resolution sources to satisfy cover constraints.",
     "Keep exact Place IDs; original approved covers unaffected.",
     "No changes to released site registry or editorial decisions."
+  ],
+  "governance": [
+    "The higher-resolution 2048x1152 historical Freetown Mapillary image was visually inspected and rejected as street-dominated and watermarked, not a cover alternative."
   ]
 }
