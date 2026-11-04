@@ -216,9 +216,12 @@ export function reconcile1962PerpetuaFelicityNonVirginCommon(proper){
       for(const lang of ["lat","en","fr"]){
         if(bad[lang]){
           const re=REMOVE[lang];
-          const count=[...old[lang].matchAll(re)].length;
+          // Important: operate on the exact, source-named candidate.
+          // Reapplying category deletion to old.en would restore donor
+          // "N. and N." after authentic Perpetua/Felicitas expansion.
+          const count=[...proven[lang].matchAll(re)].length;
           if(count!==1){valid=false;break;}
-          replacement[lang]=old[lang].replace(re,"");
+          replacement[lang]=proven[lang].replace(re,"");
           if(BAD[lang].test(ascii(replacement[lang]))){valid=false;break;}
         }
       }
