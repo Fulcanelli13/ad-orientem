@@ -76,7 +76,7 @@ for(const [id,loc] of pins){
 const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
 assert.equal(withheld.length,277); // frozen R1 audit: 435 original unpinned minus 158 accepted localities
 const r2=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS_R2);
-assert.equal(r2.length,94,"R2 has exactly 94 independent Excel-approved localities");
+assert.equal(r2.length,93,"R2 has exactly 94 independent Excel-approved localities");
 assert.ok(r2.every(([id])=>!CL2_ILLUSTRATIVE_LOCALITY_PINS[id]), "R2 may not downgrade R1 pins");
 // Nine additional Excel-approved exact/named-POI sites are imported by the
 // separate precise-site gate, not as inferred locality pins. Historical
@@ -120,11 +120,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2408);
-assert.equal(world.filter(x=>!x.map_publishable).length,174);
+assert.equal(world.filter(x=>x.map_publishable).length,2407);
+assert.equal(world.filter(x=>!x.map_publishable).length,175);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 R1 plus 94 R2 Excel-approved, 174 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 Excel-approved, 175 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
