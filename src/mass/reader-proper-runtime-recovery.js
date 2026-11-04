@@ -113,6 +113,15 @@ function sourceTextComplete(value){
 const VERIFIED_FRENCH_ORATION_EQUIVALENTS=Object.freeze({
   "Sancti/10-08c":"Sancti/10-07cc",
 });
+// The original Missale Meum 10-08c Latin Collect, Secret and Postcommunion
+// have FULL normalized equality with the original Divinum Officium pinned
+// 10-07cc Latin sections (not merely matching titles or incipits).
+// Thus source-owned 10-08c may recover only its missing English from the
+// same pinned 10-07cc English witness, after full Latin equality at runtime.
+// 10-07cc original English blob at DO@ad878364: 57fcefcc9a74bb04713a68a94d599ccc95b6a567.
+const VERIFIED_ENGLISH_ORATION_EQUIVALENTS=Object.freeze({
+  "Sancti/10-08c":"Sancti/10-07cc",
+});
 
 
 const VERIFIED_PREFACE_OWNERS=Object.freeze({
@@ -501,6 +510,7 @@ export async function recoverReaderProperOmissions(proper,{
   // by each non-inseparable Calendar commemoration. Never infer a missing
   // commemoration from the preceding prayer or accept a guessed translation.
   const owners=sourceOrationOwners(data,path);
+  const sourceEnglishRecoveries=[];
   for(const [plural,single,section] of orationGroups){
     const rows=Array.isArray(next[plural])&&next[plural].length
       ? [...next[plural]] : next[single] ? [next[single]] : [];
@@ -525,6 +535,27 @@ export async function recoverReaderProperOmissions(proper,{
           sourced={...sourced,fr:alternative.fr};
         }
       }
+      // The named 8 October martyrs' English donor was dropped by the
+      // historical host flattening. Authenticate the exact full Latin of
+      // BOTH 10-08c and the pinned 10-07cc witness before restoring EN.
+      // No other owner, unknown source, or partial incipit can qualify.
+      const englishAlias=VERIFIED_ENGLISH_ORATION_EQUIVALENTS[owners[index]];
+      let recoveredExactEnglish=false;
+      if(!sourceTextComplete(sourced.en)&&englishAlias){
+        try{
+          const alternative=await recoverText(hostResolver,englishAlias,[section],diagnostic);
+          if(sourceTextComplete(alternative.lat)&&
+             cleanLatinIdentity(sourced.lat)===cleanLatinIdentity(alternative.lat)&&
+             agreesWithLatin(current?.lat??current?.la,alternative.lat)&&
+             sourceTextComplete(alternative.en)){
+            sourced={...sourced,en:alternative.en};
+            recoveredExactEnglish=true;
+          }
+        }catch(error){
+          diagnostic?.warnings?.push?.("MARTYRS_10_08C_ENGLISH_SOURCE_UNAVAILABLE:"+
+            String(error?.message??error));
+        }
+      }
       const candidate={...current};
       for(const lang of ["lat","en","fr"]){
         if(!String(candidate[lang]??"").trim()){
@@ -536,12 +567,26 @@ export async function recoverReaderProperOmissions(proper,{
       if(["lat","en","fr"].some(lang=>String(candidate[lang]??"")!==String(current?.[lang]??""))){
         rows[index]=Object.freeze(candidate);
         changed=true;
+        if(recoveredExactEnglish&&candidate.en===sourced.en)
+          sourceEnglishRecoveries.push(Object.freeze({
+            id:"1962_10_08C_MARTYRS_PINNED_ENGLISH_ORATIONS",
+            sourcePath:"Sancti/10-08c",verifiedAlias:englishAlias,
+            sourceSection:section,orationIndex:index,
+            originalSourcePreserved:true,addedTranslation:false,
+            fullLatinParityChecked:true,
+            witness:"DivinumOfficium/divinum-officium@ad8783641455bae38a8eb5782b34241a7b3ff2ef/web/www/missa/English/Sancti/10-07cc.txt"
+          }));
       }
     }
     if(changed){
       next[plural]=Object.freeze(rows);
       next[single]=rows[0];
     }
+  }
+  if(sourceEnglishRecoveries.length){
+    next.sourceEditorialCorrections=Object.freeze([
+      ...(next.sourceEditorialCorrections??[]),...sourceEnglishRecoveries
+    ]);
   }
   return rewrap(envelope,Object.freeze(next));
 }
