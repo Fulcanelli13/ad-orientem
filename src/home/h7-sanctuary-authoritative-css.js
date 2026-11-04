@@ -256,6 +256,10 @@ html[data-ao-appearance-choice-v1="light"] .aoH7Screens{
 .aoH7Screens.lc-none{--lc:#3A4652}
 .aoH7Screens .dateRail.aoH4Week .aoWeekColour[data-verified-colour]{width:16px!important;height:3px!important;background:var(--ao-h4-day-colour)!important;opacity:1!important}
 /* The approved H7 door keeps Start Mass pinned; the compact selections are one-tap adjustable. */
+.aoH7Screens .aoH7DoorDetails{margin:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.aoH7Screens .aoH7DoorDetails>summary{display:flex;align-items:center;min-height:52px;cursor:pointer;font:600 15px/1.4 var(--sans);color:var(--ink)}
+.aoH7Screens .aoH7DoorDetails>summary:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.aoH7Screens .aoH7DoorDetails .dsec{padding-top:8px}
 .aoH7Screens .aoH7DoorSelections{display:flex;gap:8px;align-items:center;justify-content:space-between;min-height:44px;margin:10px 0 0;color:var(--mu);font:500 13px/1.4 var(--sans)}
 .aoH7Screens .aoH7DoorSelections span{min-width:0;flex:1;overflow-wrap:break-word}
 .aoH7Screens .aoH7DoorSelections button{min-height:44px;min-width:64px;border:0;background:transparent;color:var(--sage);font:600 14px/1.2 var(--sans);text-decoration:underline;text-underline-offset:3px}
