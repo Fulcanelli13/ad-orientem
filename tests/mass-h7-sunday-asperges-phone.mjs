@@ -11,8 +11,11 @@ const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const dir=resolve(root,"artifacts/mass-h7-sunday-asperges");
 const productionOrigin=process.env.AO_MASS_TEST_ORIGIN
   ?new URL(process.env.AO_MASS_TEST_ORIGIN):null;
-if(productionOrigin&&productionOrigin.protocol!=="https:")
-  throw Error("Production audit origin must use HTTPS");
+if(productionOrigin&&(
+  productionOrigin.protocol!=="https:"||
+  productionOrigin.hostname!=="fulcanelli13.github.io"||
+  productionOrigin.pathname!=="/ad-orientem/"))
+  throw Error("Production audit must use the canonical GitHub Pages project URL");
 await mkdir(dir,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
   ".mjs":"text/javascript; charset=utf-8",".json":"application/json",
@@ -29,7 +32,7 @@ const server=http.createServer(async(req,res)=>{
 });
 if(!productionOrigin)
   await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
-const pageOrigin=productionOrigin?.origin??("http://127.0.0.1:"+server.address().port);
+const pageOrigin=productionOrigin?.href.replace(/\\/$/,"")??("http://127.0.0.1:"+server.address().port);
 console.log("H7 audit origin: "+pageOrigin);
 let browser;
 try{
