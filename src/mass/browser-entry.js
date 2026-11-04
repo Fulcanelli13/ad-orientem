@@ -13,8 +13,7 @@ import { mountObservedLocalOrationsPreflight } from "./observed-local-orations-p
 import { projectObservedLocalOrations } from "./1962-observed-local-orations.js";
 import "./observed-mass-styles.js";
 import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
-import { mountSpecialMassStage } from "./reader-special-stage.js";
-import "./reader-special-stage-styles.js";
+// Source-owned ceremonial stage is a first-use native reader presentation, not Home boot.
 import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
 import "./observed-local-orations-styles.js";
@@ -718,7 +717,13 @@ export async function mountR17Preview({
 async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   persistPrepared(prepared, { state: "active", resumeRecord });
   const readerUiMode="NATIVE";
-  const previewState=await mountR17Preview({doc:document,prepared});
+  // Load optional ceremony chrome in parallel with the native reader rather
+  // than on Home/Calendar startup. Both must be ready before exposing LIVE.
+  const [previewState,stageModule]=await Promise.all([
+    mountR17Preview({doc:document,prepared}),
+    import("./reader-special-stage.js"),
+    import("./reader-special-stage-styles.js"),
+  ]);
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
@@ -730,7 +735,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderScriptureBridge(previewState.preview,prepared);
   installReaderSpecialMassContext(previewState.preview,prepared);
   globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
-  globalThis.AO_R17_SPECIAL_STAGE=mountSpecialMassStage({
+  globalThis.AO_R17_SPECIAL_STAGE=stageModule.mountSpecialMassStage({
     preview:previewState.preview,prepared,doc:document,
   });
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
