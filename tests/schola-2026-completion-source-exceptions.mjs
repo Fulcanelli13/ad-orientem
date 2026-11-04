@@ -64,7 +64,12 @@ for(const row of checked.ordinaryAndSpecialReaderHolds){
 assert.equal(checked.publication.scorePromotionPermitted,false);
 assert.equal(checked.publication.publicScoreChanges,0);
 const tamper=structuredClone(source);
-tamper.full.absentFromPinnedLatinTree[0].dates=["2026-01-01"];
+const gap=tamper.full.absentFromPinnedLatinTree[0];
+const unrelated=tamper.annual.rows.find(x=>
+ x.status==="SOURCE_MATCHED_FOR_REVIEW"&&x.sourcePath!==gap.sourcePath&&
+ !gap.dates.includes(x.date));
+assert.ok(unrelated,"A selected day outside the missing source must exist");
+gap.dates[0]=unrelated.date;
 assert.throws(()=>reconcileSchola2026Completion(tamper),
  /SCHOLA_CLOSEOUT_MISSING_PATH_NOT_REAL_SELECTED_DAY/);
 const falsePublish=structuredClone(source);
