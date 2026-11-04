@@ -10,9 +10,11 @@
     "pending_precise_site_pr2446": 9,
     "new_illustrative_candidates": 94,
     "possible_mapped_after_pr2446_and_round2": 2408,
-    "possible_unpinned_after_pr2446_and_round2": 174
+    "possible_unpinned_after_pr2446_and_round2": 174,
+    "excel_approved_localities": 94,
+    "app_imported_localities": 0
   },
-  "policy": "All 94 require independent Excel review and approval under frozen CL2 site ID; locality markers are not building GPS, exact doors or current Mass proof. Do not use centroids in navigation. Exclude identity/duplicate holds; do not alter source IDs, address, CL27 facets or EN/FR profiles.",
+  "policy": "All 94 require independent Excel review and approval under frozen CL2 site ID; locality markers are not building GPS, exact doors or current Mass proof. Do not use centroids in navigation. Exclude identity/duplicate holds; do not alter source IDs, address, CL27 facets or EN/FR profiles. Excel All Venues and Unpinned Queue approvals were verified for all 94 coordinates/source values. Železná Ruda alias candidates RG-278C58AD5CAD and RG-3D31819B8E6B are explicitly Needs more evidence and excluded.",
   "duplicate_hold_candidates": [
     {
       "ids": [
@@ -46,7 +48,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-0A4B8547401B",
@@ -71,7 +76,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-0B6389E60DF2",
@@ -96,7 +104,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-17D799846C9B",
@@ -121,7 +132,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-1A1E54C59588",
@@ -147,7 +161,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-1A777E5CB53F",
@@ -172,7 +189,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-1B5011BDF030",
@@ -197,7 +217,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-1F10692BD068",
@@ -222,7 +245,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-20558E63E7F3",
@@ -247,7 +273,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-25281DDB2E01",
@@ -272,7 +301,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-2698703271DB",
@@ -299,7 +331,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-2BDD7FFB71D5",
@@ -324,7 +359,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-2D82BBD7C929",
@@ -349,7 +387,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-4956AD7B8EBA",
@@ -374,7 +415,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-4ECE8DDAA3A6",
@@ -399,7 +443,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-54B038392C95",
@@ -424,7 +471,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-57FFD16F4417",
@@ -449,7 +499,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-5A9ACB374C07",
@@ -474,7 +527,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-5AB7415F2FB5",
@@ -499,7 +555,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-5D6B44712E33",
@@ -524,7 +583,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-5EB7EF358855",
@@ -549,7 +611,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-6770405F7CE6",
@@ -574,7 +639,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-6E8BF574FB60",
@@ -599,7 +667,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-7A7EC20244FC",
@@ -625,7 +696,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-7E157B8C3C3F",
@@ -650,7 +724,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-7E356C6E097F",
@@ -676,7 +753,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-81DD9673DE52",
@@ -701,7 +781,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-984671402A04",
@@ -726,7 +809,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-A14AC4D8AA3E",
@@ -751,7 +837,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-A55BCBFECA78",
@@ -776,7 +865,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B65-2066B7D9F26F",
@@ -801,7 +893,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B65-30B684680BED",
@@ -826,7 +921,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B65-596F949E3A13",
@@ -851,7 +949,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B65-F6927D0C98CA",
@@ -876,7 +977,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B68-0B50D8945A40",
@@ -902,7 +1006,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B68-826AAF4303C1",
@@ -928,7 +1035,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B68-EE783D2BCC84",
@@ -954,7 +1064,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B69-69EC196F249A",
@@ -980,7 +1093,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B70-D40D3AF23E72",
@@ -1005,7 +1121,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B72-C3125D4F28D8",
@@ -1031,7 +1150,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B77-7097C32DF9A0",
@@ -1056,7 +1178,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B77-B5A236527B66",
@@ -1082,7 +1207,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B77-D8786FB804EA",
@@ -1108,7 +1236,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B77-F01A0F43F58F",
@@ -1134,7 +1265,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B7C821F326B5",
@@ -1159,7 +1293,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-BC32268B22D0",
@@ -1184,7 +1321,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-C3863AC8112C",
@@ -1211,7 +1351,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-C79C76333DD7",
@@ -1236,7 +1379,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-CC61CB8FB5D5",
@@ -1261,7 +1407,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-D2940D734023",
@@ -1286,7 +1435,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-D29A29A57128",
@@ -1311,7 +1463,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-D2E6E688297A",
@@ -1336,7 +1491,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-DA9B6A59546D",
@@ -1361,7 +1519,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-E635DCAABF64",
@@ -1386,7 +1547,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-EB0314FFE518",
@@ -1412,7 +1576,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-EF1C8E84C3FE",
@@ -1437,7 +1604,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-F3B93383C57E",
@@ -1462,7 +1632,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-F97E7F17F909",
@@ -1487,7 +1660,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-FB0A5B188CE0",
@@ -1512,7 +1688,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-FF5811A67353",
@@ -1537,7 +1716,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-0CD38937025B",
@@ -1562,7 +1744,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-05EE735A738A",
@@ -1588,7 +1773,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-0CC24258A666",
@@ -1613,7 +1801,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-0F2F22ACED57",
@@ -1638,7 +1829,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-2BD1C415BE57",
@@ -1663,7 +1857,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-35679FDD1861",
@@ -1689,7 +1886,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-3B1C6C5A2417",
@@ -1714,7 +1914,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-44F315BAD4C8",
@@ -1739,7 +1942,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-61886F9DAFE0",
@@ -1764,7 +1970,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-64607C31CF5E",
@@ -1789,7 +1998,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-731B8CE6C3AB",
@@ -1814,7 +2026,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-78DDA8D68BD8",
@@ -1839,7 +2054,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-95F40930EB8F",
@@ -1864,7 +2082,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-851C08B3BAD5",
@@ -1889,7 +2110,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B3B772AE50F8",
@@ -1914,7 +2138,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-7D925FE4E858",
@@ -1940,7 +2167,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-799E8D613B47",
@@ -1965,7 +2195,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-86B5F7B9C7DF",
@@ -1991,7 +2224,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-8B96A3BC8CD8",
@@ -2016,7 +2252,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-7C5CE27E1C0B",
@@ -2042,7 +2281,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-04695D93877A",
@@ -2067,7 +2309,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-17E2DEA09D59",
@@ -2092,7 +2337,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-235A0066ACC0",
@@ -2117,7 +2365,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-336DA833D350",
@@ -2142,7 +2393,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-62D34706633B",
@@ -2167,7 +2421,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-60259573951F",
@@ -2193,7 +2450,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-913F8A4286C3",
@@ -2218,7 +2478,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-8449E92DD79D",
@@ -2243,7 +2506,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-8CA8C480CEA9",
@@ -2268,7 +2534,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-3EA3DDBC8289",
@@ -2293,7 +2562,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-80DE7663B64F",
@@ -2318,7 +2590,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-B65-66C068E4A1B4",
@@ -2343,7 +2618,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-8FB53F871DAD",
@@ -2368,7 +2646,10 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     },
     {
       "cl2_anchor": "RG-5E751D3AAEFA",
@@ -2393,7 +2674,12 @@
       "attribution": "GeoNames contributors · CC BY 4.0 via joelacus/world-cities",
       "travel_policy": "SEARCH_ORIGINAL_NAME_AND_ADDRESS_NOT_CENTROID_GPS",
       "scope": "ILLUSTRATIVE_LOCALITY_CENTRE_NOT_CHURCH_OR_ENTRANCE",
-      "status": "CANDIDATE_PENDING_EXCEL_GEO_REVIEW"
+      "status": "APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE",
+      "excel_review_scope": "APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS",
+      "excel_review_date": "2026-11-04",
+      "excel_import_stage": "PENDING_PR_CI_AND_GITHUB_PAGES_POSTDEPLOY"
     }
-  ]
+  ],
+  "excel_master_url": "https://docs.google.com/spreadsheets/d/1qLQDsYfddY4K9DdPuC0tbrxI7Poe_DgKCzkpYwVCpFg/edit",
+  "excel_reconciliation_date": "2026-11-04"
 }
