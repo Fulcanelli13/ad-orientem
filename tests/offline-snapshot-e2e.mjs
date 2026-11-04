@@ -87,6 +87,8 @@ try{
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
      "src/mass/reader-native-preview.js",
+     "src/mass/reader-special-stage.js",
+     "src/mass/reader-special-stage-styles.js",
      "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
@@ -113,11 +115,19 @@ try{
        const url=new URL("src/mass/reader-native-preview.js",
          new URL("./",location.href)).href;
        const mod=await import(url);
+       // Include the independently deferred ceremony chrome and styles in
+       // the first-use offline import acceptance, not only CacheStorage.
+       const stage=await import(new URL("src/mass/reader-special-stage.js",
+         new URL("./",location.href)).href);
+       await import(new URL("src/mass/reader-special-stage-styles.js",
+         new URL("./",location.href)).href);
        return {mountType:typeof mod.mountNativeReaderPreview,
+         stageMountType:typeof stage.mountSpecialMassStage,
+         stageStyles:Boolean(document.getElementById("ao-reader-ceremony-stage-styles")),
          controlled:Boolean(navigator.serviceWorker.controller)};
      }catch(error){return {error:String(error?.message||error)};}
    });
-   assert.deepEqual(r17Offline,{mountType:"function",controlled:true},
+   assert.deepEqual(r17Offline,{mountType:"function",stageMountType:"function",stageStyles:true,controlled:true},
      "Deferred native R17 renderer cannot load from a new offline tab: "+JSON.stringify(r17Offline));
    console.log("PASS deferred R17 reader module and static descendants load on first offline tab");
  }finally{await r17OfflineTab.close();}
