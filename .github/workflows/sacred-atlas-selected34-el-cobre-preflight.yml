@@ -1,0 +1,57 @@
+name: Sacred Atlas 34 selected source holds — offline rights and identity QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-selected34-existing-photo-recovery-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-ported5-original-licence-legal-code-review-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-selected34-11-source-page-attribution-pd-identity-review-20261104.v1.json'
+      - 'tools/atlas/verify-sacred-atlas-el-cobre-original-preflight.py'
+      - 'tools/atlas/verify-sacred-atlas-ported-five-originals.py'
+      - 'tests/sacred-atlas-selected34-el-cobre-preflight-contract.mjs'
+      - 'tests/sacred-atlas-ported-five-legalcode-contract.mjs'
+      - 'tests/sacred-atlas-ported-five-original-byte-contract.mjs'
+      - 'tests/sacred-atlas-selected34-11-source-page-contract.mjs'
+      - '.github/workflows/sacred-atlas-selected34-el-cobre-preflight.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  existing-source-evidence-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all 34 original user selections, five region-specific CC codes and eleven original-source identity findings
+        run: |
+          node tests/sacred-atlas-selected34-el-cobre-preflight-contract.mjs
+          node tests/sacred-atlas-ported-five-legalcode-contract.mjs
+          node tests/sacred-atlas-ported-five-original-byte-contract.mjs
+          node tests/sacred-atlas-selected34-11-source-page-contract.mjs
+      - name: Validate source-verification programs without calling Commons
+        run: python -m py_compile tools/atlas/verify-sacred-atlas-el-cobre-original-preflight.py tools/atlas/verify-sacred-atlas-ported-five-originals.py
+      - name: Confirm no original is erroneously recorded as approved by this research PR
+        run: |
+          node --input-type=module - <<'JS'
+          import assert from "node:assert/strict";
+          import {readFileSync} from "node:fs";
+          const read=p=>JSON.parse(readFileSync(p,"utf8"));
+          const a=read("data/geography/research/sacred-atlas-selected34-existing-photo-recovery-20261104.v1.json");
+          const c=read("data/geography/approved-place-media.v1.json");
+          assert.equal(c.items.length,379);
+          assert.equal(a.rows.length,34);
+          assert.equal(a.counts.new_media_approved,0);
+          assert.ok(a.rows.every(x=>x.publication_allowed===false));
+          const covers=new Set(c.items.map(x=>x.place_id));
+          assert.ok(a.rows.every(x=>!covers.has(x.place_id)));
+          console.log("34 source holds documented; source downloads paused after Wikimedia HTTP 429; no new photo approvals.");
+          JS
