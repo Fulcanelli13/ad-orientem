@@ -1,0 +1,51 @@
+name: Prayer production owner missing import recovery
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - src/pray/prayer-cover-photo-qa.v1.js
+      - tests/fixtures/prayer-cover-photo-qa.v1.js
+      - tests/pray-production-cover-photo-qa-import.mjs
+      - .github/workflows/pray-cover-import-recovery.yml
+  push:
+    branches: [main]
+    paths:
+      - src/pray/prayer-cover-photo-qa.v1.js
+      - tests/fixtures/prayer-cover-photo-qa.v1.js
+      - tests/pray-production-cover-photo-qa-import.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  module-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recover Prayer import closure, assert nonpublication
+        run: node tests/pray-production-cover-photo-qa-import.mjs
+      - name: Preserve existing 267-slot editorial and released catalogue contract
+        run: node tests/prayer-artwork-267-integration.mjs
+  real-prayer-browser:
+    needs: module-integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Open real Prayer and verify Confession QA at 320/390
+        run: node tests/pray-selected-confession-cover-phone-qa.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-cover-import-recovery-phone
+          path: artifacts/prayer-selected-cover-phone-qa/
+          if-no-files-found: warn
+          retention-days: 7
