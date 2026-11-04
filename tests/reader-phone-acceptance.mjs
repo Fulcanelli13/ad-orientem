@@ -286,7 +286,38 @@ try{
     // the regular focus listener without modifying native source state.
     card.dispatchEvent(new Event("scroll"));
   });
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:5000});
+  // Keep the exact elevation assertion. When it fails, capture a
+  // side-by-side browser/selector witness rather than guessing at a
+  // kinetic-scroll race or weakening the ceremonial event gate.
+  const elevationFocused=await page.waitForFunction(
+    ()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",
+    null,{timeout:5000}).then(()=>true,()=>false);
+  if(!elevationFocused){
+    const focusEvidence=await page.evaluate(async()=>{
+      const card=document.querySelector(".ao-prayer-card");
+      const {pickActiveCue,cueItemsFromScrollContainer}=await import(
+        "/src/mass/reader-cue-focus.js");
+      const items=cueItemsFromScrollContainer(card);
+      const scrollTop=card.scrollTop,clientHeight=card.clientHeight,
+        scrollHeight=card.scrollHeight;
+      const maxScroll=Math.max(0,scrollHeight-clientHeight);
+      const expected=pickActiveCue({scrollTop,clientHeight,scrollHeight,items});
+      const nearBottom=pickActiveCue({
+        scrollTop:maxScroll,clientHeight,scrollHeight,items});
+      return {
+        actual:window.__AO_PHONE_PREVIEW.getActiveCue(),
+        native:window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId??null,
+        predicted:expected,nearBottom,scrollTop,maxScroll,
+        clientHeight,scrollHeight,
+        cueIds:items.map(x=>x.cueId),
+        cueIntervals:items.filter(x=>["AO.SM.C0173","AO.SM.C0174"].includes(x.cueId)),
+        section:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
+        mode:document.querySelector("[data-ao-reader-shell]")?.dataset.mode??null,
+      };
+    });
+    assert.fail("Host elevation cue-focus mismatch after quiescence: "+
+      JSON.stringify(focusEvidence));
+  }
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
