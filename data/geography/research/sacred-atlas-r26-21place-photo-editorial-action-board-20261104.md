@@ -2,7 +2,7 @@
 
 **4 November 2026 · Research-only · No new photographs downloaded · No new publication.**
 
-**Production remains 379 of 530 approved covers (71.5%) and 42 approved gallery images.** This review resolves the next **21 uncovered Places with 61 previously byte-verified candidate cover photographs** into a single editorial decision batch. Two additional uncovered Places have only 3 context/gallery images and must not be counted as cover-ready.
+**Production remains 379 of 530 approved covers (71.5%) and 42 approved gallery images.** This review resolves the entire **66-Place undecided queue**: 21 uncovered Places with 61 byte-verified candidate covers, 2 context/gallery-only cases, and the other 43 Places classified by existing source evidence. Two additional uncovered Places have only 3 context/gallery images and must not be counted as cover-ready.
 
 **Open the existing [23-Place / 64-source image reviewer](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/research/sacred-atlas-round25-23place-64-original-editorial-review-20261104.html)** to review all candidate images together. Its import/export controls preserve the existing canonical 66-Place decision schema. Do not import the R26 research ledger as if it were user choices; it contains suggestions only.
 
@@ -64,3 +64,87 @@ Keep these files out of cover approval. Other image roles are not interchangeabl
 
 - Previous backlog: 151 uncovered Places, of which **34 have frozen previous selections** (handled separately in PR #2448), **51 were expressly marked none selected**, and **66 were undecided**.
 - Of the undecided 66, this 23-Place original-evidence cohort provides **21 cover comparison queues** and **2 context/gallery-only exclusions**. Remaining 43 lack a previously byte-verified original and retain source-research leads.
+
+## Remaining 43 Places — every existing lead retained
+
+These records have **no original image bytes previously verified**. Their categories are evidence/next-action tiers, **not new photographs**, and no web images were downloaded. [Machine ledger with 43 exact Place records](./sacred-atlas-r26-43remaining-source-lead-triage-20261104.v1.json).
+
+### 5 Places with already recorded exact-file leads
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:AR:santuario-san-cayetano-liniers` — Santuario San Cayetano, Liniers | [File:Archivo General de la Nación Argentina sin fecha Buenos Aires, barrio de Liniers, Iglesia de San Cayetano.jpg](https://commons.wikimedia.org/wiki/File:Archivo_General_de_la_Naci%C3%B3n_Argentina_sin_fecha_Buenos_Aires%2C_barrio_de_Liniers%2C_Iglesia_de_San_Cayetano.jpg) | check site identity current author licence and original binary for exact file leads |
+| `place:EG:zeitoun-coptic-saint-mary` — Church of the Virgin Mary, Zeitoun (Coptic Orthodox) | [File:Virgin Mary Church at Zeitoun.jpg](https://commons.wikimedia.org/wiki/File:Virgin_Mary_Church_at_Zeitoun.jpg) | check site identity current author licence and original binary for exact file leads |
+| `place:LK:saint-anne-s-national-shrine-talawila` — Saint Anne's National Shrine, Talawila | [File:St. Anne of Thalawila , Sri Lanka.jpg](https://commons.wikimedia.org/wiki/File:St._Anne_of_Thalawila_,_Sri_Lanka.jpg) | check site identity current author licence and original binary for exact file leads |
+| `place:PH:national-shrine-of-our-lady-of-guadalupe-makati` — National Shrine of Our Lady of Guadalupe, Makati | [File:National Shrine of Our Lady of Guadalupe, Mar 2026 - 1.jpg](https://commons.wikimedia.org/wiki/File:National_Shrine_of_Our_Lady_of_Guadalupe%2C_Mar_2026_-_1.jpg); [File:2576National Shrine of Our Lady of Guadalupe 06.jpg](https://commons.wikimedia.org/wiki/File:2576National_Shrine_of_Our_Lady_of_Guadalupe_06.jpg) | check site identity current author licence and original binary for exact file leads |
+| `place:SK:kaplnka-zjavenia-litmanova-zvir` — Kaplnka zjavenia, hora Zvir, Litmanová | [File:Litmanová, hora Zvir 26 Slovakia 59.jpg](https://commons.wikimedia.org/wiki/File:Litmanov%C3%A1%2C_hora_Zvir_26_Slovakia_59.jpg); [File:Litmanová, hora Zvir 26 Slovakia 61.jpg](https://commons.wikimedia.org/wiki/File:Litmanov%C3%A1%2C_hora_Zvir_26_Slovakia_61.jpg) | check site identity current author licence and original binary for exact file leads |
+
+### 1 category with historic format holds
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:US:lourdes-litchfield` — The Shrine of Lourdes in Litchfield | 5 unverified category-file lead(s) | preview exact category files and find compatible licenced photograph without bypassing source limits |
+
+### 2 Places with previously recorded undersized originals
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:MU:pere-laval-sainte-croix` — Centre Père Laval | hold original too small | research higher res same exact physical site while preserving legacy low res record |
+| `place:MY:st-anne-bukit-mertajam` — Minor Basilica of Saint Anne, Bukit Mertajam | hold original too small | research higher res same exact physical site while preserving legacy low res record |
+
+### 7 Places with direct official/custodian leads
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:AU:marian-valley` — Marian Valley — Shrine of Our Lady Help of Christians | [Official/custodian source](https://paulinefathers.org.au/monasteries/marian-valley/) | use official site for subject identity and seek independent open license source no permission request |
+| `place:IE:solas-bhride-kildare` — Solas Bhríde Centre and Hermitages | [Official/custodian source](https://solasbhride.ie/development/) | use official site for subject identity and seek independent open license source no permission request |
+| `place:NI:ermita-guadalupe-matagalpa` — Ermita de Guadalupe, Matagalpa | [Official/custodian source](https://www.mapanicaragua.com/en/municipio-de-matagalpa/) | use official site for subject identity and seek independent open license source no permission request |
+| `place:NZ:st-peter-chanel-russell` — National Catholic Shrine of St Peter Chanel | [Official/custodian source](https://www.maristmessenger.co.nz/2014/05/31/shrine-st-peter-chanel-russell/) | use official site for subject identity and seek independent open license source no permission request |
+| `place:PA:basilica-menor-jesus-nazareno-atalaya` — Basílica Menor Jesús Nazareno de Atalaya | [Official/custodian source](https://www.nazarenodeatalaya.com/jesusnazareno) | use official site for subject identity and seek independent open license source no permission request |
+| `place:TT:laventille-our-lady-fatima-shrine` — Our Lady of Fatima Church and Shrine, Laventille | [Official/custodian source](https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/) | use official site for subject identity and seek independent open license source no permission request |
+| `place:US:st-anne-fiskdale` — St. Anne Shrine | [Official/custodian source](https://www.stannestpatrickparish.com/st-annes-shrine) | use official site for subject identity and seek independent open license source no permission request |
+
+### 1 architectural copyright hold
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:TO:st-anthony-padua-basilica-nukualofa` — Basilica of St Anthony of Padua, Nukuʻalofa | No vetted file lead | hold architectural cover until jurisdiction and rights identified |
+
+### 10 Places with unrelated or unverified nearby imagery
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:BB:st-patrick-catholic-cathedral-bridgetown` — St Patrick's Roman Catholic Cathedral, Bridgetown | 3 nearby hits; NEARBY_PORT_VESSELS_TOWN_VIEWS | discard nearby unrelated geotagged photos and require exact site source |
+| `place:BE:sanctuaire-sainte-julienne-cornillon` — Sanctuaire Sainte-Julienne de Cornillon | 11 nearby hits; NEARBY_CHARTREUSE_FORT_TUNNELS | discard nearby unrelated geotagged photos and require exact site source |
+| `place:BZ:belmopan-our-lady-guadalupe-co-cathedral` — Our Lady of Guadalupe Co-Cathedral, Belmopan | 7 nearby hits; NEARBY_DRAINS_PARK_NURSERY | discard nearby unrelated geotagged photos and require exact site source |
+| `place:GL:christ-the-king-catholic-church-nuuk` — Christ the King Catholic Church, Nuuk | 20 nearby hits; MAPILLARY_STREET_FRAMES_UNINSPECTED | discard nearby unrelated geotagged photos and require exact site source |
+| `place:IT:santuario-san-paolo-della-croce-ovada` — Santuario di San Paolo della Croce, Ovada | 1 nearby hits; NEARBY_UNRELATED_PERTINI_PORTRAIT | discard nearby unrelated geotagged photos and require exact site source |
+| `place:JP:our-lady-akita-convent` — Seitai Hoshikai — Our Lady of Akita Chapel | 1 nearby hits; NEARBY_NEIGHBORHOOD_NOT_CHAPEL | discard nearby unrelated geotagged photos and require exact site source |
+| `place:LK:national-shrine-our-lady-matara` — National Shrine of Our Lady of Matara | 11 nearby hits; NEARBY_STREETS_MOSQUE_TOWERS | discard nearby unrelated geotagged photos and require exact site source |
+| `place:MY:st-jude-church-rawang` — Church of St. Jude, Rawang | 20 nearby hits; NEARBY_TRANSIT_ROADS_TREES | discard nearby unrelated geotagged photos and require exact site source |
+| `place:OM:saints-peter-paul-catholic-church-ruwi` — Saints Peter and Paul Catholic Church, Ruwi | 4 nearby hits; NEARBY_PAKISTAN_SCHOOL_NOT_CHURCH | discard nearby unrelated geotagged photos and require exact site source |
+| `place:US:st-mary-assumption-oswego` — St. Mary of the Assumption Parish and Shrine | 5 nearby hits; NEARBY_UNRELATED_HOUSES_SQUARE | discard nearby unrelated geotagged photos and require exact site source |
+
+### 17 Places still lacking a reliable exact source file
+
+| Place | Previously known evidence | Next action |
+|---|---|---|
+| `place:AS:holy-family-cathedral-tafuna` — Holy Family Cathedral, Tafuna | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:CR:montes-oca-our-lady-lourdes-parish` — Parroquia Nuestra Señora de Lourdes, Montes de Oca | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:JM:holy-trinity-cathedral-kingston` — Holy Trinity Cathedral, Kingston | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:LK:national-basilica-of-our-lady-of-lanka-tewatta` — National Basilica of Our Lady of Lanka, Tewatta | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:MG:ilot-de-la-vierge-ampefy` — Ilot de la sainte vierge, Ampefy | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:MW:maula-cathedral-lilongwe` — Maula Cathedral of Our Lady Queen of Africa, Lilongwe | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:MZ:namaacha-fatima-sanctuary` — Santuário de Nossa Senhora de Fátima da Namaacha | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:NG:nne-enyemaka-umuaka` — Nne Enyemaka Shrine, Umuaka | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:NG:ugwogo-nike-national-marian-shrine` — National Shrine of Our Mother of Perpetual Help, Ugwogo Nike | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:PE:santuario-candelaria-chapi-polobaya` — Santuario de Nuestra Señora de la Candelaria de Chapi | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:PE:santuario-san-martin-de-porres-jicamarca` — Centro de Espiritualidad y Santuario San Martín de Porres, Jicamarca | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:PG:holy-cross-procathedral-vanimo` — Holy Cross Pro-Cathedral, Vanimo | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:PK:karachi-our-lady-fatima-parish` — Our Lady of Fatima Catholic Church, Karachi | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:SL:sacred-heart-cathedral-freetown` — Sacred Heart Cathedral, Freetown | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:SV:capilla-divina-providencia-san-salvador` — Capilla de la Divina Providencia, Hospital Divina Providencia | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:US:sacred-heart-shrine-hales-corners` — Sacred Heart Shrine, Hales Corners | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+| `place:ZM:archdiocese-lusaka-marian-shrine` — Archdiocese of Lusaka Marian Shrine | No vetted file lead | new exact site source discovery only if prior official and commons searches exhausted |
+
+**Important:** The two undersized records cannot be published by artificially enlarging them. Tonga's Basilica remains under architectural freedom-of-panorama hold. Geotagged street views and nearby landmark photographs are explicitly **not proof of the named church**. The 43 are open research leads; these records are not user selections or release authorizations.
