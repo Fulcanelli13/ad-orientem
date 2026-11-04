@@ -406,6 +406,20 @@ function installStyles(){
     "@media(min-width:800px){#aoPray435930 .aoPrayPilotMosaic{columns:3;column-gap:3px}#aoPray435930 .aoPrayPilotTile{margin-bottom:3px}}",
     "@media(min-width:1250px){#aoPray435930 .aoPrayPilotMosaic{columns:4}}",
     "@media(max-width:359px){#aoPray435930 .aoPrayPilotTile{min-height:150px}#aoPray435930 .aoPrayPilotTileCaption{font-size:19px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:23px}}",
+    "/* Review correction: pending door art is a quiet typographic surface, not one of nine repetitive stand-in icons. The only published photo stays D5. */",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending]{height:178px!important;min-height:178px!important;aspect-ratio:auto!important;background:linear-gradient(148deg,#252c33,#15191f 68%,#0a0e13);border-bottom:1px solid rgba(221,197,151,.18)}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending] .aoPrayPilotTileSymbol{display:none!important}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending]::before{content:'';position:absolute;top:19px;left:16px;right:16px;border-top:1px solid rgba(221,197,151,.26);pointer-events:none}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending] .aoPrayPilotTileCaption{top:50%;bottom:auto;padding:13px 17px!important;transform:translateY(-50%);font:400 clamp(21px,5.5vw,29px)/1.1 Georgia,serif;opacity:1;visibility:visible}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending][aria-expanded=true] .aoPrayPilotTileCaption{transform:translateY(-50%)}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending] .aoPrayPilotTileCaption strong{text-shadow:none}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending] .aoPrayPilotTileCaption small{font-size:12px;line-height:1.35}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=released]{height:260px;min-height:260px;aspect-ratio:auto!important}",
+    "#aoPray435930 .aoPrayPilotMosaic{column-fill:balance;column-gap:3px}",
+    "#aoPray435930 .aoP435930Mount .aoP435930Body.aoPrayPilotHome{padding-bottom:max(112px,env(safe-area-inset-bottom))!important}",
+    "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head .aoP435930Back{outline:none!important;box-shadow:0 2px 10px rgba(0,0,0,.32)!important;border:1px solid rgba(235,218,187,.36)}",
+    "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head .aoP435930Back:focus-visible{outline:2px solid #e2c68e!important;outline-offset:2px}",
+    "@media(min-width:800px){#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=editorial-pending]{height:220px!important;min-height:220px!important}}",
     "@media(prefers-reduced-motion:reduce){#aoPray435930 .aoPrayPilotTile,#aoPray435930 .aoPrayPilotTile::after,#aoPray435930 .aoPrayPilotTileCaption,#aoPray435930 .aoPrayPilotReleasedTilePhoto{transition:none!important}}"
   ].join("\n");
   const style=document.createElement("style");style.id="ao-prayer-design-pilot-css";style.textContent=css;document.head.appendChild(style);
