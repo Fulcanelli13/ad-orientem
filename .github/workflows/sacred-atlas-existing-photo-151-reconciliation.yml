@@ -1,0 +1,25 @@
+name: Sacred Atlas existing-first 151 photo reconciliation (research only)
+
+# Audit original editorial decisions and unpublished source leads. No photo acquisition or release.
+on:
+  pull_request:
+    paths:
+      - 'data/geography/research/sacred-atlas-existing-first-151-photo-reconciliation-20261104.v1.json'
+      - 'tests/sacred-atlas-existing-first-photo-151-contract.mjs'
+      - '.github/workflows/sacred-atlas-existing-photo-151-reconciliation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-locked-photo-151:
+    name: 151 photo gap decisions / 64 original evidence / zero publication
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/sacred-atlas-existing-first-photo-151-contract.mjs
