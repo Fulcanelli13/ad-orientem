@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - scripts/prayer-r5d-acquire-museum-photos.py
+      - tests/prayer-r5d-research-staging.mjs
       - .github/workflows/prayer-r5d-museum-evidence.yml
   workflow_dispatch:
 permissions:
@@ -20,6 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verify preserved originals and 15-slot research-only contract
+        run: node tests/prayer-r5d-research-staging.mjs
       - name: Install image decoder
         run: python -m pip install 'Pillow>=10,<13'
       - name: Acquire museum images and verify identity, rights and dimensions
