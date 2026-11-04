@@ -13,11 +13,27 @@ const PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS=String.raw`
  background:transparent!important;
 }
 `;
+const PRAYER_CATEGORY_SOURCE_CREDIT_CSS=String.raw`
+/* A cover retains its real source link. Never leave artist attribution
+ * as near-black text inside the bottom title gradient. */
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto{position:relative}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto figcaption{
+ position:absolute;top:66px;right:9px;bottom:auto;left:auto;z-index:4;
+ box-sizing:border-box;max-width:116px;margin:0;padding:5px 7px;
+ color:#eee5d8!important;background:rgba(10,13,18,.84)!important;
+ border:1px solid rgba(238,225,204,.3);border-radius:5px;
+ text-align:right;font:400 9px/1.35 system-ui,sans-serif!important;
+ overflow-wrap:anywhere;white-space:normal;opacity:1!important;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto figcaption a{
+ color:#f5deb5!important;text-decoration:underline
+}
+`;
 export function installPrayerCategoryPrototypeStyles(doc=globalThis.document){
  if(!doc?.head||doc.getElementById("ao-prayer-category-prototype-css"))return false;
  const node=doc.createElement("style");
  node.id="ao-prayer-category-prototype-css";
- node.textContent=PRAYER_CATEGORY_PROTOTYPE_CSS+PRAYER_CATEGORY_REFINEMENT_CSS+PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS;
+ node.textContent=PRAYER_CATEGORY_PROTOTYPE_CSS+PRAYER_CATEGORY_REFINEMENT_CSS+PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS+PRAYER_CATEGORY_SOURCE_CREDIT_CSS;
  doc.head.append(node);
  return true;
 }
