@@ -1,0 +1,494 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND18_ALL30_GEOTAGGED_DISCOVERY_EDITORIAL_TRIAGE_V1",
+  "date": "2026-11-04",
+  "evidence": {
+    "github_actions_run_id": 41808908851,
+    "github_actions_artifact_id": 13310764163,
+    "original_json_name": "ao-sacred-atlas-round18-geotagged-30-discovery.json",
+    "script": "tools/atlas/recover-sacred-atlas-30-nearby-commons.py",
+    "method": "Commons generator=geosearch 500 m, max 20 nearby files per Place, 8s pacing, stop on first 429",
+    "raw_result_retention_days": 14
+  },
+  "counts": {
+    "queried": 30,
+    "nearby_results": 146,
+    "geotagged_places_with_results": 15,
+    "places_with_no_geotagged_files": 11,
+    "search_service_busy": 4,
+    "raw_image_format_dimension_pass": 129,
+    "exact_site_named_photos": 15,
+    "exact_site_places": 1,
+    "site_context_gallery_only_files": 1,
+    "other_nearby_records_not_substantiated_as_place_photos": 130,
+    "photo_approvals": 0,
+    "published": 0
+  },
+  "screening": "Filename and Commons St Michael Altötting category screen; no individual full photo composition or licence verification. Other 130 proximity results are excluded from site-cover suggestion until compelling exact-site evidence.",
+  "exact_site_category": {
+    "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+    "url": "https://commons.wikimedia.org/wiki/Category:St._Michael_(Alt%C3%B6tting)",
+    "site": "Friedhofskirche St Michael, Altötting",
+    "files": [
+      {
+        "source_title": "File:Friedhofskirche Altötting 1.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_1.jpg",
+        "current_sha1_claim": "a43bb886fca0b9bea5400e3792ba6c95ad8e4949",
+        "original_dimensions": [
+          4032,
+          3024
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 2.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_2.jpg",
+        "current_sha1_claim": "3d9efbc3569d078ce64e75aa75fb531d436e1a48",
+        "original_dimensions": [
+          3024,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 3.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_3.jpg",
+        "current_sha1_claim": "6f3a282301e489b0383ac7b42dc9c97defd34ac5",
+        "original_dimensions": [
+          3024,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 5.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_5.jpg",
+        "current_sha1_claim": "2a2440623b0062b3eb4c2974947fb9c1767fcef9",
+        "original_dimensions": [
+          3024,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 6.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_6.jpg",
+        "current_sha1_claim": "8956963c670326eb31f8b7761860bab10fc180ae",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 7.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_7.jpg",
+        "current_sha1_claim": "95a8024c9212e36f253e60073fff3478afa32050",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 8.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_8.jpg",
+        "current_sha1_claim": "d9c5f2e1c55b34b96c68718047e5098deab9d249",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 9.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_9.jpg",
+        "current_sha1_claim": "673c964f0763ef7023924fe08b09b0d007da2c89",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 10.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_10.jpg",
+        "current_sha1_claim": "e2b4fea0f902ca32de927b18f825c379b75f884b",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 11.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_11.jpg",
+        "current_sha1_claim": "c900be718bfd916eaee03416e24fc0a6f8843762",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 12.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_12.jpg",
+        "current_sha1_claim": "48110c24fb87a15c73d53528a104e16ce2e04dbc",
+        "original_dimensions": [
+          4032,
+          3024
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 13.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_13.jpg",
+        "current_sha1_claim": "eee6ec07c3196d2df59759bdcd19364befa55a0b",
+        "original_dimensions": [
+          3024,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 14.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_14.jpg",
+        "current_sha1_claim": "6697aa3a9e98c315ec51df03f16fe2dafeb89693",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 15.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_15.jpg",
+        "current_sha1_claim": "66e88c49ad5f9220b796ae51ffc68f64b50118e1",
+        "original_dimensions": [
+          2268,
+          4032
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      },
+      {
+        "source_title": "File:Friedhofskirche Altötting 16.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_16.jpg",
+        "current_sha1_claim": "2950c29a57538bb91cfdf42b1c949a3135d98481",
+        "original_dimensions": [
+          4032,
+          3024
+        ],
+        "rights_verified": false,
+        "exact_facade_visually_verified": false,
+        "original_bytes_verified": false,
+        "user_selected": false,
+        "publication_authorized": false,
+        "source_match_evidence": "Exact site title and category membership; cover-specific content not visually adjudicated"
+      }
+    ]
+  },
+  "secondary_gallery_only": [
+    {
+      "place_id": "place:AU:marian-valley",
+      "source_title": "File:MarianValleyPlaqueUkrainian.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MarianValleyPlaqueUkrainian.jpg",
+      "current_sha1_claim": "04b56e4a553921d5485ffb74b055ecbed1f8676f",
+      "original_dimensions": [
+        3456,
+        4608
+      ],
+      "status": "SITE_CONTEXT_PLAQUE_NO_CHURCH_COVER",
+      "original_bytes_verified": false,
+      "license_verified": false,
+      "user_approved": false,
+      "published": false
+    }
+  ],
+  "all_30_sites": [
+    {
+      "place_id": "place:AU:marian-valley",
+      "nearby_file_count": 1,
+      "source_screen": "GALLERY_SITE_PLAQUE_ONLY",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "nearby_file_count": 20,
+      "source_screen": "NEARBY_OTHER_BUILDINGS_RUSSELL_MUSEUM",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "nearby_file_count": 5,
+      "source_screen": "NEARBY_UNRELATED_HOUSES_SQUARE",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-anne-fiskdale",
+      "nearby_file_count": 2,
+      "source_screen": "NEARBY_UNRELATED_BUILDINGS",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "nearby_file_count": 11,
+      "source_screen": "NEARBY_CHARTREUSE_FORT_TUNNELS",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "nearby_file_count": 1,
+      "source_screen": "NEARBY_NEIGHBORHOOD_NOT_CHAPEL",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "nearby_file_count": 20,
+      "source_screen": "NEARBY_IRISH_NATIONAL_STUD_GARDENS",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "nearby_file_count": 7,
+      "source_screen": "NEARBY_DRAINS_PARK_NURSERY",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "nearby_file_count": 20,
+      "source_screen": "MAPILLARY_STREET_FRAMES_UNINSPECTED",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "nearby_file_count": 4,
+      "source_screen": "NEARBY_PAKISTAN_SCHOOL_NOT_CHURCH",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "nearby_file_count": 3,
+      "source_screen": "NEARBY_PORT_VESSELS_TOWN_VIEWS",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "nearby_file_count": 0,
+      "source_screen": "COMMONS_CIRRUSSEARCH_BUSY",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MW:maula-cathedral-lilongwe",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AS:holy-family-cathedral-tafuna",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PG:holy-cross-procathedral-vanimo",
+      "nearby_file_count": 0,
+      "source_screen": "COMMONS_CIRRUSSEARCH_BUSY",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "nearby_file_count": 1,
+      "source_screen": "NEARBY_UNRELATED_PERTINI_PORTRAIT",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MY:st-jude-church-rawang",
+      "nearby_file_count": 20,
+      "source_screen": "NEARBY_TRANSIT_ROADS_TREES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "nearby_file_count": 0,
+      "source_screen": "COMMONS_CIRRUSSEARCH_BUSY",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "nearby_file_count": 0,
+      "source_screen": "COMMONS_CIRRUSSEARCH_BUSY",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "nearby_file_count": 11,
+      "source_screen": "NEARBY_STREETS_MOSQUE_TOWERS",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "nearby_file_count": 0,
+      "source_screen": "NO_GEOTAGGED_IMAGES",
+      "source_match_confirmed": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "nearby_file_count": 20,
+      "source_screen": "FIFTEEN_EXACT_SITE_PLUS_FIVE_NEARBY_UNRELATED",
+      "source_match_confirmed": true,
+      "publication_authorized": false
+    }
+  ],
+  "holds": [
+    "Commons CirrusSearch too busy was not retried, and is not a negative image discovery result.",
+    "130 named nearby results should not enter the Place cover reviewer without building-specific confirmation.",
+    "Original file SHA1 is current Commons metadata claim only; bytes not acquired in Round 18.",
+    "No recorded editorial selection, photographer licence clearance, derivative WebP or production cover update."
+  ]
+}
