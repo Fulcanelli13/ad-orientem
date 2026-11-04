@@ -60,4 +60,4 @@ const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:311,SOURCE_PIN:1806,ADDRESS_ONLY:465});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,465);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,311);
-console.log("PASS TLM batch 12: thirty reviewed source-identities, 2117 mapped, 465 unpinned; no invented Mass or image rights");
+console.log("PASS TLM batch 16: thirty reviewed source-identities, 2117 mapped, 465 unpinned; no invented Mass or image rights");
