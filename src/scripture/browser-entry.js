@@ -1,4 +1,4 @@
-import { mountScriptureLibrary } from "./library.js";
+// The full Bible reader and its dependency graph load only on first Scripture entry.
 import { installScriptureStyles, installScriptureContextStyles } from "./styles.js";
 import { loadScriptureBook } from "./pack-loader.js";
 import {loadScriptureWitness,hasScriptureWitness} from "./witness-loader.js";
@@ -10,6 +10,17 @@ export function installScriptureBrowserOwner(win=globalThis){
  const doc=win.document;
  installScriptureContextStyles(doc);
  let reader=null,previousFocus=null,previousOverflow=null,onCloseReturn=null,journey=null;
+ let scriptureLibraryMount=null,scriptureLibraryLoad=null,pendingOpen=null,scriptureLoadNotice=null;
+ const ensureScriptureLibrary=()=>{
+   if(scriptureLibraryMount)return Promise.resolve(scriptureLibraryMount);
+   if(!scriptureLibraryLoad)scriptureLibraryLoad=import("./library.js").then(module=>{
+     if(typeof module.mountScriptureLibrary!=="function")throw Error("Scripture reader unavailable");
+     scriptureLibraryMount=module.mountScriptureLibrary;
+     return scriptureLibraryMount;
+   }).catch(error=>{scriptureLibraryLoad=null;throw error});
+   return scriptureLibraryLoad;
+ };
+ const endScriptureLoad=()=>{scriptureLoadNotice?.end?.();scriptureLoadNotice=null;};
  const loaded=new Map();
  const inflight=new Set();
  function overlay(){
@@ -25,8 +36,10 @@ export function installScriptureBrowserOwner(win=globalThis){
    return root;
  }
  function close(){
-   if(!reader||journey)return false;
-   reader.destroy();reader=null;
+   if((!reader&&!pendingOpen)||journey)return false;
+   pendingOpen=null;
+   endScriptureLoad();
+   reader?.destroy?.();reader=null;
    const node=overlay();if(node)node.hidden=true;
    if(doc.body && previousOverflow!==null)doc.body.style.overflow=previousOverflow;
    previousOverflow=null;
@@ -198,14 +211,14 @@ export function installScriptureBrowserOwner(win=globalThis){
    }
    return false;
  }
- function open({passage=null,language=null,context=null,initialDepth="selected",onCloseReturn:restoreOnClose=null}={}){
-   const node=overlay();if(!node||journey)return false;
-   installScriptureStyles(doc);
-   if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
-   onCloseReturn=typeof restoreOnClose==="function"?restoreOnClose:null;
+ // Keep the public Scripture API synchronous. The first call accepts a
+ // valid open request immediately; only the expensive reader mount is deferred.
+ // Subsequent opens run synchronously once the original module is cached.
+ function mountOpen(node,options,mount){
    reader?.destroy?.();
+   const {passage,language,context,initialDepth}=options;
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
-   reader=mountScriptureLibrary(node,{
+   reader=mount(node,{
      passage,context,initialDepth,language:current==="fr"?"fr":"en",storage:win.localStorage,
      records:[...loaded.values()].flat(),
      onClose:close,
@@ -234,6 +247,44 @@ export function installScriptureBrowserOwner(win=globalThis){
    node.hidden=false;
    if(doc.body)doc.body.style.overflow="hidden";
    node.querySelector?.("[data-scripture-close]")?.focus?.();
+   return true;
+ }
+ function open({passage=null,language=null,context=null,initialDepth="selected",onCloseReturn:restoreOnClose=null}={}){
+   const node=overlay();if(!node||journey)return false;
+   installScriptureStyles(doc);
+   if(!reader&&!pendingOpen){
+     previousFocus=doc.activeElement;
+     previousOverflow=doc.body?.style?.overflow??"";
+   }
+   onCloseReturn=typeof restoreOnClose==="function"?restoreOnClose:null;
+   const options={passage,language,context,initialDepth};
+   if(scriptureLibraryMount){
+     pendingOpen=null;endScriptureLoad();
+     return mountOpen(node,options,scriptureLibraryMount);
+   }
+   const request={node,options};
+   pendingOpen=request;
+   if(!scriptureLoadNotice)scriptureLoadNotice=win?.AO_LOADING_DIRECTOR_V1?.begin?.("scripture")??null;
+   void ensureScriptureLibrary().then(mount=>{
+     if(pendingOpen!==request||journey)return;
+     pendingOpen=null;endScriptureLoad();
+     mountOpen(node,options,mount);
+   }).catch(error=>{
+     if(pendingOpen!==request)return;
+     endScriptureLoad();
+     win?.console?.error?.("Scripture first-use reader unavailable",error);
+     const notice=doc.createElement("p"),cancel=doc.createElement("button");
+     notice.setAttribute("role","alert");
+     notice.textContent=(win.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr")
+       ?"Impossible d’ouvrir la Bible. Réessayez."
+       :"Scripture reader could not load. Please retry.";
+     cancel.type="button";cancel.textContent="×";
+     cancel.setAttribute("aria-label","Close Scripture loading error");
+     cancel.addEventListener("click",close);
+     node.replaceChildren(notice,cancel);node.hidden=false;
+     if(doc.body)doc.body.style.overflow="hidden";
+     cancel.focus?.();
+   });
    return true;
  }
  function openContext(reference,{language=null,depth="selected",onCloseReturn=null}={}){
@@ -285,7 +336,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    e.preventDefault?.();e.stopPropagation?.();open();
  };
  const key=e=>{
-   if(!reader||journey)return;
+   if((!reader&&!pendingOpen)||journey)return;
    if(e.key==="Escape"){e.preventDefault?.();e.stopPropagation?.();close();return;}
    if(e.key!=="Tab")return;
    const node=overlay();
@@ -299,7 +350,7 @@ export function installScriptureBrowserOwner(win=globalThis){
  doc?.addEventListener?.("click",click,true);
  doc?.addEventListener?.("keydown",key);
  const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,openSegments,close,
-   status:()=>Object.freeze({installed:true,open:Boolean(reader&&!journey),suspended:Boolean(journey),reader:reader?.status?.()??null})});
+   status:()=>Object.freeze({installed:true,open:Boolean(reader&&!journey),loading:Boolean(pendingOpen&&!reader),suspended:Boolean(journey),reader:reader?.status?.()??null})});
  win.AO_SCRIPTURE_APP_V1=api;
  win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,openSegments,parse:parseScriptureContext});
  return api;
