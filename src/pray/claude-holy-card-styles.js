@@ -222,6 +222,65 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyInner{transition:none}
  #aoPray435930 .aoClaudeHolyCard .aoP435930EssentialBeat{transition:none}
 }
+
+/* 4 Nov visual repair: a source-owned typographic vellum plate when no
+ * exact photograph has publication clearance; never show an empty black box. */
+#aoPray435930 .aoClaudeHolyCasePlate.aoClaudeHolyCasePlateText,
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate.aoClaudeHolyPlateText{
+ background:linear-gradient(158deg,#eee4cf,#c8b797);
+ border:1px solid #948264;
+ color:#32291e;
+ padding:9px;
+}
+#aoPray435930 .aoClaudeHolyTypePlate{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:6px;width:100%;height:100%;min-width:0;overflow:hidden;
+ color:#32291e;text-align:center;
+}
+#aoPray435930 .aoClaudeHolyTypePlate b{
+ font:400 clamp(11px,3vw,19px)/1.14 var(--ao-font-liturgical,Georgia,serif);
+ overflow-wrap:anywhere;max-width:100%;
+}
+#aoPray435930 .aoClaudeHolyTypePlate i{
+ font:italic 11px/1.22 var(--ao-font-liturgical,Georgia,serif);
+ max-width:100%;color:#5e4934;overflow-wrap:anywhere;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate .aoClaudeHolyTypePlate b{font-size:clamp(21px,5vw,30px)}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate .aoClaudeHolyTypePlate i{font-size:15px}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+ height:min(480px,calc(100dvh - 290px));min-height:220px;
+ padding:5px;
+ background:radial-gradient(circle at 5px 5px,rgba(185,164,132,.38) .9px,transparent 1.35px) 0 0/11px 11px;
+}
+#aoPray435930 .aoClaudeHolyFan button{
+ background:radial-gradient(circle at 3px 3px,rgba(185,164,132,.34) .7px,transparent 1.15px) 0 0/9px 9px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyInitial{
+ display:inline;float:none;font:inherit;font-size:1.18em;
+ letter-spacing:0;margin:0;padding:0;line-height:inherit;vertical-align:baseline;
+}
+/* The original reversible card also needs a real, obvious action. */
+#aoPray435930 .aoClaudeHolyFlipButton{
+ display:block;min-height:40px;min-width:124px;margin:8px auto 0;
+ padding:6px 15px;border:1px solid var(--liturgical-border,#75664f);
+ border-radius:2px;background:transparent;color:var(--text,#ede4d3);
+ font:400 15px/1.3 var(--ao-font-display,Georgia,serif);
+}
+#aoPray435930 .aoClaudeHolyFlipButton:focus-visible{
+ outline:2px solid var(--liturgical,#bfa576);outline-offset:2px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyArtCredit{
+ bottom:0;line-height:1.25;max-height:48px;overflow:auto;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyBackScroll{
+ padding-bottom:16px;scroll-padding-bottom:16px;
+}
+@media(max-height:640px){
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+  height:max(220px,calc(100dvh - 290px));min-height:220px;
+ }
+}
+
 `;
 export function installClaudeHolyCardStyles(doc=globalThis.document){
  if(!doc?.head)return false;
