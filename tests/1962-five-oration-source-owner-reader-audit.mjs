@@ -161,14 +161,30 @@ for(const [date,sourcePath] of targets){
  assert.ok(["ready","cached"].includes(String(item.properStatus).toLowerCase()));
  assert.ok(item.sourceSections.some(x=>x.path===sourcePath),
   date+": selected original source was not examined");
- const monica=date==="2026-05-04";
- assert.equal(item.recoveredEN.ready,monica,
+ const monica=date==="2026-05-04",bridget=date==="2026-10-08";
+ assert.equal(item.recoveredEN.ready,monica||bridget,
   date+": unexpected change in source-owned English orations");
  assert.equal(item.recoveredFR.ready,monica||date==="2026-10-08",
   date+": unexpected change in source-owned French orations");
  assert.ok(item.recoveredEN.missing.every(s=>
   ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(s)),
   date+": missing non-oration section");
+ if(bridget){
+  assert.deepEqual(item.rawEN.missing,["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]);
+  const proof=item.recoveredEN.sourceCorrections.filter(x=>
+   x.id==="1962_10_08C_MARTYRS_PINNED_ENGLISH_ORATIONS");
+  assert.deepEqual(proof.map(x=>x.slot??x.sourceSection).sort(),
+   ["Oratio","Postcommunio","Secreta"].sort(),
+   "All three Oct 8 English orations must be fully source-verified");
+  assert.equal(item.recoveredEN.orations.Oratio.count,2);
+  assert.equal(item.recoveredEN.orations.Secreta.count,2);
+  assert.equal(item.recoveredEN.orations.Postcommunio.count,2);
+  const declared=item.calendarCommemorations[0];
+  assert.equal(declared?.prayerSourcePath,"Sancti/10-08c",
+   "Wrong martyrs source owner inherited by Bridget");
+  assert.ok(item.sourceSections.some(x=>x.path==="Sancti/10-08c"),
+   "Source-qualified original martyrs owner was never resolved");
+ }
  if(monica){
   assert.deepEqual(item.rawEN.missing,["COLLECT_SET"],
    "The former raw St Monica Collect gap disappeared unexpectedly");
