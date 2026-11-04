@@ -1,0 +1,94 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND11_PD_SELF_SOURCE_EVIDENCE_V1",
+  "date": "2026-11-04",
+  "scope": "SACRED_ATLAS_ONLY",
+  "reviewed": 11,
+  "before": {
+    "covers": 378,
+    "missing": 152,
+    "gallery": 42,
+    "prior_covers_sha256": "474173bc8b7710e15dab4defd1616d6e7059bedaf25d9ddf5da4d41c2593cae8",
+    "gallery_sha256": "098e4a8e18ebb6b2c519863a52c9d13202bdb5f1ac9785774e2126b1c9a9f9d1"
+  },
+  "after": {
+    "covers": 379,
+    "missing": 151,
+    "gallery": 42
+  },
+  "published_count": 1,
+  "held_count": 10,
+  "published": [
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "asset_path": "assets/approved/place-media/pf-13ee93f050b1cfe5c930ac.webp",
+      "source_sha1": "e5ee8662f0e83e74054ce12bc769935512e215aa",
+      "source_revision_id": 1200798471,
+      "rights_template": "PD-self",
+      "current_artist": "This photo was taken by Przemysław Jahr Autorem zdjęcia jest Przemysław Jahr Wykorzystując zdjęcie proszę podać jako autora: Przemysław Jahr / Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ASanktuarium_Mi%C5%82osierdzia_Bo%C5%BCego_w_P%C5%82ocku.jpg",
+      "license": "PUBLIC_DOMAIN",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "derivative_sha256": "a8158bedef1ccd16471e4566789375d53a3594c171986618e5a812614c2b112e",
+      "derivative_size": [
+        1280,
+        1186
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "file": "File:Pagani-basi.jpg",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "file": "File:Divine Mercy Sanctuary in Vilnius1.jpg",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "file": "File:PopenguineChurch.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "file": "File:Jaffa BW 3.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "file": "File:Nazaret Verkuendigungsbasilika BW 16.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "file": "File:San Francesco, Lanciano 5.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "file": "File:Tbilisi Catholical church St. Maria.png",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "file": "File:Dulce Nombre de Maria Cathedral Basilica.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "file": "File:Saipan Mount Carmel Cathedral.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    },
+    {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "file": "File:BasilicaMenor-HormiguerosPR-02.JPG",
+      "reason": "RuntimeError: PAUSED_AFTER_TWO_HTTP_429_NO_BYPASS"
+    }
+  ],
+  "previous_editorial_choices_unchanged": true,
+  "current_exact_sha1_original_bytes_pd_self_and_revision_verified_for_published": true,
+  "gallery_unchanged": true,
+  "tlm_unchanged": true
+}

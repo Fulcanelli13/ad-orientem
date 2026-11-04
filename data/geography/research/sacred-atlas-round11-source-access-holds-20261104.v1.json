@@ -1,0 +1,80 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND11_SOURCE_ACCESS_HOLDS_V1",
+  "date": "2026-11-04",
+  "status": "HISTORICAL_SNAPSHOT_SUPERSEDED_BY_LATER_ROUND11_SOURCE_EVIDENCE",
+  "round11_failed_runs": [
+    41730915909,
+    41781878645
+  ],
+  "last_attempt": "2026-11-04T05:52:55Z",
+  "cause": "First two exact Commons imageinfo/revision API queries returned HTTP 429. Importer stopped making requests after its rate-limit threshold; last nine were NOT individually checked and are not licence or identity rejections.",
+  "reviewed_in_prior_read_only_audit": 11,
+  "publication_count": 0,
+  "production_covers_unaffected": 378,
+  "pending_source_access": 11,
+  "rights_decisions": "PD-self was found in prior read-only audit; original download, byte digest and release cannot be asserted from this run.",
+  "retry_policy": "Do not bypass HTTP 429; require legitimate permitted source access, exact current PD-self revision and original bytes before publishing.",
+  "rows": [
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "access_status": "HTTP_429_TOO_MANY_REQUESTS",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "access_status": "HTTP_429_TOO_MANY_REQUESTS",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "access_status": "NOT_ATTEMPTED_PAUSED_AFTER_TWO_HTTP_429",
+      "publication_allowed": false
+    }
+  ],
+  "snapshot_status": "FIRST_TWO_FAILED_RUNS_ONLY",
+  "current_release_source": "data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json",
+  "later_source_verified_recovery": [
+    "place:PL:divine-mercy-plock"
+  ],
+  "note": "This preserves earlier HTTP 429 attempts. It is not the current cover count; the later independently source-verified evidence publishes Płock while ten remain held."
+}
