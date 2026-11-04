@@ -43,6 +43,8 @@ try{
   const page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push('pageerror: '+String(e.message)));
   page.on('console',message=>{if(message.type()==='error')errors.push('console: '+message.text());});
+  page.on('response',res=>{if(res.status()>=400)errors.push('HTTP '+res.status()+': '+res.url());});
+  page.on('requestfailed',req=>errors.push('FAILED '+req.url()+': '+(req.failure()?.errorText||'')));
   const results=[];
   try{
    await page.goto('http://127.0.0.1:'+port+'/index.html?aoPrayerPilot=1',
