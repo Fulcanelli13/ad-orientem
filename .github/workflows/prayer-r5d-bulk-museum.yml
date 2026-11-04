@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - scripts/prayer-r5d-bulk-museum-acquire.py
+      - tests/prayer-r5d-bulk-museum-crosswalk.mjs
       - .github/workflows/prayer-r5d-bulk-museum.yml
       - data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json
   workflow_dispatch:
@@ -22,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verify 14 works and 22 allowed placements
+        run: node tests/prayer-r5d-bulk-museum-crosswalk.mjs
       - name: Install Pillow
         run: python -m pip install 'Pillow>=10,<13'
       - name: Capture exact object evidence and photographs
