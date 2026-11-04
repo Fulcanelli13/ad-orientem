@@ -1,0 +1,24 @@
+name: Sacred Atlas R31 — 43-place bulk photo source review (research only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-r31-undecided43-bulk-image-review-20261105.v1.json'
+      - 'data/geography/research/sacred-atlas-r31-undecided43-photo-review-20261105.html'
+      - 'tests/sacred-atlas-r31-43place-photo-review-contract.mjs'
+      - '.github/workflows/sacred-atlas-r31-43place-photo-review.yml'
+permissions:
+  contents: read
+jobs:
+  preserve-source-identity-and-cover-role:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact 43-site reconciliation, 15 cover options, 10 exclusion photos and offline interface syntax
+        run: node tests/sacred-atlas-r31-43place-photo-review-contract.mjs
