@@ -77,10 +77,19 @@ try{
    const action=day.locator("[data-cal-mass]");
    await action.waitFor({state:"visible",timeout:30000});
    await page.screenshot({path:resolve(out,"calendar-day-"+width+".png"),animations:"disabled"});
+   // Calendar -> H7 door is a state switch, not a full Home remount.
+   // Tag the existing H7 node to detect an accidental expensive re-render.
+   await page.evaluate(()=>{
+     const screen=document.querySelector(".homeScreen.aoTodayH4.aoH7Screens");
+     if(screen)screen.dataset.aoH7DoorNodeProbe="retained";
+   });
    const tDoor=await now();await action.click();
    const door=page.locator(".aoH7DoorView:not([hidden])");
    await door.locator("[data-home-h4-begin]").waitFor({state:"visible",timeout:30000});
    const calendarToDoorMs=Math.round((await now())-tDoor);
+   assert.equal(await page.locator(".homeScreen.aoTodayH4.aoH7Screens")
+     .getAttribute("data-ao-h7-door-node-probe"),"retained",
+     "Calendar to Mass door unnecessarily remounted the entire Home view");
    assert.equal(await page.locator('html[data-ao-m1-mass-root="true"]').count(),0,
      "Calendar Day bypassed H7 and opened old M1 preflight");
    assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),date);
