@@ -147,7 +147,7 @@ def main():
             "original_sha256":hashlib.sha256(original).hexdigest(),
             "preview_path":str(preview_path),"preview_sha256":hashlib.sha256(data).hexdigest(),
             "preview_dimensions":list(corrected.size),
-            "manual_holds":["SUBJECT_AND_PHONE_CROP","UNDERLYING_ARCHITECTURAL_RIGHTS_CONFIRMATION","EDITORIAL_PUBLICATION_APPROVAL"]})
+            "manual_holds":["SOURCE_WATERMARK_DANI2010_LOWER_RIGHT_CROP_OR_ALT_EDITORIAL_HOLD","SUBJECT_AND_PHONE_CROP","UNDERLYING_ARCHITECTURAL_RIGHTS_CONFIRMATION","EDITORIAL_PUBLICATION_APPROVAL"]})
     except urllib.error.HTTPError as err:
         # Respect Commons 429: one attempt only, no proxy/endpoint/identity rotation.
         report.update({"status":"HOLD_HTTP_"+str(err.code),"error":str(err)[:180],
