@@ -41,10 +41,11 @@ try{
    locale:language==='fr'?'fr-FR':'en-GB',isMobile:true,hasTouch:true,
    deviceScaleFactor:1,serviceWorkers:'block',reducedMotion:'reduce'});
   const page=await context.newPage(),errors=[];
-  page.on('pageerror',e=>errors.push(String(e.message)));
+  page.on('pageerror',e=>errors.push('pageerror: '+String(e.message)));
+  page.on('console',message=>{if(message.type()==='error')errors.push('console: '+message.text());});
   const results=[];
   try{
-   await page.goto('http://127.0.0.1:'+port+'/index.html',
+   await page.goto('http://127.0.0.1:'+port+'/index.html?aoPrayerPilot=1',
      {waitUntil:'domcontentloaded',timeout:90000});
    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true
      &&typeof globalThis.AO_APP_SHELL_V1?.navigate==='function',
@@ -58,8 +59,14 @@ try{
    // QA-only source montages use the real Prayer owner, not a shell route
    // transition. The shell may decline a redundant navigation to Pray.
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==='function',null,{timeout:30000});
-   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true,
-     'Could not open the real Prayer owner');
+   const owner=await page.evaluate(async()=>{
+     const result=await globalThis.AO_PRAY_APP_V1.open();
+     return {result,rootClass:document.querySelector('#aoPray435930')?.className||null,
+       readerStatus:globalThis.AO_PRAY_APP_V1.status?.()||null,
+       donorInstalled:typeof globalThis.AO_PRAY_V435930?.open==='function'};
+   });
+   assert.equal(owner.result,true,
+     'Could not open real Prayer owner: '+JSON.stringify({owner,errors}));
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==='function',null,{timeout:30000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open('pray.library',{returnContext:null})),true);
    const rootSelector='#aoPray435930.open';
