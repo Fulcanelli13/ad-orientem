@@ -32,7 +32,7 @@ const server=http.createServer(async(req,res)=>{
 });
 if(!productionOrigin)
   await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
-const pageOrigin=productionOrigin?.href.replace(/\\/$/,"")??("http://127.0.0.1:"+server.address().port);
+const pageOrigin=productionOrigin?.href.replace(/\/$/,"")??("http://127.0.0.1:"+server.address().port);
 console.log("H7 audit origin: "+pageOrigin);
 let browser;
 try{
