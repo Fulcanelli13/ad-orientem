@@ -28,6 +28,14 @@ export function resolveApprovedPlaceMedia(records,placeId){
   const record=arr(records).find(row=>row?.place_id===placeId&&row?.status==="APPROVED");
   if(!record)return null;
   const path=text(record.asset_path);
+  // One source-scoped country-ported CC exception. Never accept arbitrary
+  // regional URLs or change the licence validation for other Places.
+  const exactMariaLuggauCC=record.place_id==="place:AT:wallfahrtsbasilika-maria-schnee-luggau"&&
+    record.source_sha1==="ca025cb7c0d5815ccb25b5f5570e8a57331103d7"&&
+    record.source_url==="https://commons.wikimedia.org/wiki/File:Lesachtal_Maria_Luggau_Servitenkloster_NW-Ansicht_16072014_804.jpg"&&
+    record.license==="CC-BY-SA-3.0-AT"&&
+    record.license_url==="https://creativecommons.org/licenses/by-sa/3.0/at/deed.en"&&
+    record.credit==="Johann Jaritz";
   // Research and staging directories are *never* valid public image paths.
   // All files must be copied into the separately curated approved asset tree.
   const width=Number(record.width),height=Number(record.height);
@@ -42,7 +50,7 @@ export function resolveApprovedPlaceMedia(records,placeId){
     /^[a-f0-9]{64}$/.test(text(record.derivative_sha256));
   if(!(approvedCoverPath||reviewedGalleryCoverPath)||
      !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
-     !approvedLicenses[record.license]?.test(text(record.license_url))||
+     !(approvedLicenses[record.license]?.test(text(record.license_url))||exactMariaLuggauCC)||
      !/^https:\/\/[^\s]+$/.test(text(record.source_url))||
      !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr)||
      !text(record.changes_en)||!text(record.changes_fr)||
