@@ -208,7 +208,20 @@ try{
     }
     if(id==="pray.rosary")assert.equal(observed.rosaryOriginal,true,"Rosary donor was replaced");
     if(row.sourceFamily==="canonical-prayer"){
-     await page.locator("#aoPray435930.open [data-p435930-lib-back]").click();
+     // F01 has one visible native Back in the running head; other canonical
+     // prayers retain the contextual inline Back. Never click hidden chrome.
+     const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
+     const holyCard=await page.locator("#aoPray435930.open .aoClaudeHolyCard").count()>0;
+     if(holyCard){
+      assert.equal(await inlineBack.isVisible(),false,
+       "F01 must not display the duplicate inline Back beside native Back");
+      const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+      assert.ok(await nativeBack.isVisible(),"F01 must keep one usable native Back");
+      await nativeBack.click();
+     }else{
+      assert.ok(await inlineBack.isVisible(),"Canonical non-F01 Back must remain usable");
+      await inlineBack.click();
+     }
      assert.equal(await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').count(),1,
       "Canonical prayer Back did not return to "+door);
     }
