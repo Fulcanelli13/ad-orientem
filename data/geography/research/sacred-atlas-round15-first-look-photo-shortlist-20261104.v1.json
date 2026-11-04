@@ -1,0 +1,1177 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND15_EDITORIAL_FIRST_LOOK_SHORTLIST_V1",
+  "date": "2026-11-04",
+  "basis": "Paced Commons 85-source verified metadata; editorial first-look ordering uses source descriptions and resolution, NOT image inspection.",
+  "source_full_audit": "data/geography/research/sacred-atlas-round14-85-full-source-metadata-20261104.v1.json",
+  "counts": {
+    "audited_places": 24,
+    "places_with_metadata_eligible": 21,
+    "places_without_metadata_eligible": 3,
+    "places_with_first_look": 20,
+    "first_look_candidates": 46,
+    "hard_holds": 4,
+    "conditional_holds": 4
+  },
+  "exact_site_review_notes": [
+    "Filename and Commons category are not independent proof of physical building correspondence.",
+    "Some sites have correct-place photos but wrong hero subjects, especially Haemi memorial grounds, La Tirana icon and Emmitsburg grotto features.",
+    "The source audit records current source SHA1, but no original image bytes have yet been downloaded or inspected.",
+    "A shortlist is neither an image approval nor a rights clearance."
+  ],
+  "rows": [
+    {
+      "place_id": "place:AU:penrose-park",
+      "status": "VISUAL_IDENTITY_REVIEW_REQUIRED",
+      "blocker": "Verify building and framing on original before approval.",
+      "metadata_eligible_count": 2,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Shrine of Our Lady of Mercy Church.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Shrine_of_Our_Lady_of_Mercy_Church.jpg",
+          "source_sha1": "8367d762e2a9efe784906b578e496581c3fe2388",
+          "current_source_dimensions": [
+            4608,
+            3066
+          ],
+          "source_size_bytes": 4293091,
+          "author": "Codefisher",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "status": "VISUAL_IDENTITY_REVIEW_REQUIRED",
+      "blocker": "Establish exact subject/landscape; spring image is a gallery candidate, not a chapel cover.",
+      "metadata_eligible_count": 2,
+      "held_count": 1,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:20140202 banneux07.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:20140202_banneux07.JPG",
+          "source_sha1": "bacc80be857c1689ae1fca8d46346647b67a8532",
+          "current_source_dimensions": [
+            3872,
+            2592
+          ],
+          "source_size_bytes": 4785304,
+          "author": "Jean Housen",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:Banneux-Notre-Dame. La Chapelle de la Vierge des Pauvres - De Kapel van de Maagd der Armen, GP122244.jpg",
+          "status": "HOLD_ATTRIBUTION"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "status": "NO_METADATA_ELIGIBLE_FILES",
+      "blocker": null,
+      "metadata_eligible_count": 0,
+      "held_count": 1,
+      "priority_candidates": [],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:Sainte-Croix (Mauritius).jpg",
+          "status": "HOLD_ORIGINAL_TOO_SMALL"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "status": "VISUAL_IDENTITY_REVIEW_REQUIRED",
+      "blocker": "Confirm TreeChurchOtaki depicts the exact St Mary's/Hāto Mere building, not only a nearby tree.",
+      "metadata_eligible_count": 1,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:TreeChurchOtaki.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:TreeChurchOtaki.jpg",
+          "source_sha1": "7201f5429578af62bc83f998e09a1344ea86590b",
+          "current_source_dimensions": [
+            4000,
+            3000
+          ],
+          "source_size_bytes": 6492872,
+          "author": "L Maule",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 2,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Bettbrunn St Salvator von O.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bettbrunn_St_Salvator_von_O.jpg",
+          "source_sha1": "3db0527ad91762278fc216ea2645bac93d98caf3",
+          "current_source_dimensions": [
+            2973,
+            1906
+          ],
+          "source_size_bytes": 2155366,
+          "author": "Heinrich Stürzl",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:St. Salvator - Bettbrunn 039.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:St._Salvator_-_Bettbrunn_039.jpg",
+          "source_sha1": "f602bd631bdb6864d3282ac7f1b0cef115030008",
+          "current_source_dimensions": [
+            6000,
+            4000
+          ],
+          "source_size_bytes": 6553600,
+          "author": "DALIBRI",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 1,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Seton shrine basilica Emmitsburg MD1.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Seton_shrine_basilica_Emmitsburg_MD1.jpg",
+          "source_sha1": "e31963c204e0ba5b02e7adfec023e8675b19ffbf",
+          "current_source_dimensions": [
+            5034,
+            3612
+          ],
+          "source_size_bytes": 10896894,
+          "author": "Acroterion",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Basilica of the National Shrine of St. Elizabeth Ann Seton 02.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_National_Shrine_of_St._Elizabeth_Ann_Seton_02.jpg",
+          "source_sha1": "de5361ef9c6fd73aa1f88fc64098ade561b5bc72",
+          "current_source_dimensions": [
+            4608,
+            3456
+          ],
+          "source_size_bytes": 3878968,
+          "author": "Farragutful",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Basilica of the National Shrine of St. Elizabeth Ann Seton 03.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_National_Shrine_of_St._Elizabeth_Ann_Seton_03.jpg",
+          "source_sha1": "0eed454168842745e65d1ed8cea25ed01e8373b1",
+          "current_source_dimensions": [
+            4608,
+            3456
+          ],
+          "source_size_bytes": 3502067,
+          "author": "Farragutful",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:Seton shrine and basilica Emmitsburg MD1.jpg",
+          "status": "HOLD_ORIGINAL_SAFETY_LIMIT"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:la-salette-attleboro",
+      "status": "VISUAL_IDENTITY_REVIEW_REQUIRED",
+      "blocker": "Nighttime Christmas-light scene. Decide if appropriate for year-round hero.",
+      "metadata_eligible_count": 1,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:La Salette Shrine, Attleboro, Massachusetts.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:La_Salette_Shrine%2C_Attleboro%2C_Massachusetts.jpg",
+          "source_sha1": "d6c3d7b90a68559bac6ff19b78f65dd6d1af54de",
+          "current_source_dimensions": [
+            3000,
+            2000
+          ],
+          "source_size_bytes": 2856408,
+          "author": "Kenneth C. Zirkel",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "status": "EXACT_SUBJECT_OR_LEGAL_HOLD",
+      "blocker": "European Commission image-specific licence review; generic metadata eligibility is insufficient.",
+      "metadata_eligible_count": 1,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Aachen Cathedral (02).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Aachen_Cathedral_(02).jpg",
+          "source_sha1": "e83fc6e4eaa56330f8fee879237407f44e6a82ba",
+          "current_source_dimensions": [
+            2661,
+            4000
+          ],
+          "source_size_bytes": 3760626,
+          "author": "European Union",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Basílica de Nuestra Señora de Ocotlán, Tlaxcala, fachada principal.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_de_Ocotl%C3%A1n%2C_Tlaxcala%2C_fachada_principal.jpg",
+          "source_sha1": "b4f12a670c15e4dae95bac849460a4dbe421228f",
+          "current_source_dimensions": [
+            2592,
+            1944
+          ],
+          "source_size_bytes": 1489840,
+          "author": "Proyecto.sae",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Basílica de Ocotlán Tlaxcala.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Ocotl%C3%A1n_Tlaxcala.jpg",
+          "source_sha1": "7c902c3e19c932e8b7d37f90c177ec0440977762",
+          "current_source_dimensions": [
+            5293,
+            4737
+          ],
+          "source_size_bytes": 6908647,
+          "author": "VIC2702",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Fachada blanca ocotlán.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Fachada_blanca_ocotl%C3%A1n.JPG",
+          "source_sha1": "a320cbaa832a81063e2ab1bae706c59ce30e0371",
+          "current_source_dimensions": [
+            5472,
+            3648
+          ],
+          "source_size_bytes": 4878706,
+          "author": "Lsalgador82",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 2,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:San Francisco de Asis Mission Church.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Asis_Mission_Church.JPG",
+          "source_sha1": "d562a1a66e2bcd66d3ec53cf6e11f9c38fd5e48f",
+          "current_source_dimensions": [
+            3179,
+            2110
+          ],
+          "source_size_bytes": 2216574,
+          "author": "Liveon001 © Travis K. Witt",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:San Francisco de Asís Mission Church, Ranchos de Taos, NM.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_As%C3%ADs_Mission_Church%2C_Ranchos_de_Taos%2C_NM.jpg",
+          "source_sha1": "74069a80e3cd919d606ea90fb035027380c7728f",
+          "current_source_dimensions": [
+            3564,
+            5407
+          ],
+          "source_size_bytes": 4991709,
+          "author": "Danny Pilkenton",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "status": "NO_METADATA_ELIGIBLE_FILES",
+      "blocker": null,
+      "metadata_eligible_count": 0,
+      "held_count": 1,
+      "priority_candidates": [],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:St Anne Bukit Mertajam.jpg",
+          "status": "HOLD_ORIGINAL_TOO_SMALL"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "status": "EXACT_SUBJECT_OR_LEGAL_HOLD",
+      "blocker": "Numbered photographic series contains several different shrine features; inspect contact-sheet before choosing the grotto itself.",
+      "metadata_eligible_count": 8,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 22.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_22.JPG",
+          "source_sha1": "4a3527fccb0237557e1a07de13ca3be4c37f9176",
+          "current_source_dimensions": [
+            4608,
+            3456
+          ],
+          "source_size_bytes": 6508867,
+          "author": "Bohemian Baltimore",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 71.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_71.JPG",
+          "source_sha1": "e73e973a68a49759eb10e50048346bddbcee4ba0",
+          "current_source_dimensions": [
+            3456,
+            4608
+          ],
+          "source_size_bytes": 5135564,
+          "author": "Bohemian Baltimore",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 99.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_99.JPG",
+          "source_sha1": "844f5fb1ad049a5453dc16510ef77945858cffcd",
+          "current_source_dimensions": [
+            4608,
+            3456
+          ],
+          "source_size_bytes": 6911249,
+          "author": "Bohemian Baltimore",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "status": "NO_METADATA_ELIGIBLE_FILES",
+      "blocker": null,
+      "metadata_eligible_count": 0,
+      "held_count": 5,
+      "priority_candidates": [],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012630738.tif",
+          "status": "HOLD_UNSUPPORTED_IMAGE_TYPE"
+        },
+        {
+          "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012630790.tif",
+          "status": "HOLD_UNSUPPORTED_IMAGE_TYPE"
+        },
+        {
+          "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631517.tif",
+          "status": "HOLD_UNSUPPORTED_IMAGE_TYPE"
+        },
+        {
+          "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631525.tif",
+          "status": "HOLD_UNSUPPORTED_IMAGE_TYPE"
+        },
+        {
+          "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631551.tif",
+          "status": "HOLD_UNSUPPORTED_IMAGE_TYPE"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:The National Shrine of St. Joseph, Mandaue, Cebu, Jan 2024.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:The_National_Shrine_of_St._Joseph%2C_Mandaue%2C_Cebu%2C_Jan_2024.jpg",
+          "source_sha1": "26216b5898aaeea361917b282c2ffdb1d8938306",
+          "current_source_dimensions": [
+            3935,
+            3066
+          ],
+          "source_size_bytes": 7357652,
+          "author": "Ralff Nestor Nacor",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:National Shrine of St Joseph 2022 01 001.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_of_St_Joseph_2022_01_001.jpg",
+          "source_sha1": "f5952c15796896335493612f3ef61f6ea27c8751",
+          "current_source_dimensions": [
+            4624,
+            3468
+          ],
+          "source_size_bytes": 4661066,
+          "author": "Martin Michlmayr",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:National Shrine of St Joseph 2022 01 002.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_of_St_Joseph_2022_01_002.jpg",
+          "source_sha1": "22154cb64b6c70a5b225c6ac18e544b0210fcf7d",
+          "current_source_dimensions": [
+            3468,
+            4624
+          ],
+          "source_size_bytes": 5218673,
+          "author": "Martin Michlmayr",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 3,
+      "held_count": 2,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Cattedrale di Sant'Eusebio P1160098.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant'Eusebio_P1160098.JPG",
+          "source_sha1": "1e8136251bb5358a20aeff94d34ba37aabda9dd8",
+          "current_source_dimensions": [
+            2816,
+            2112
+          ],
+          "source_size_bytes": 2076995,
+          "author": "Patafisik",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Cattedrale di Sant'Eusebio.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant'Eusebio.jpg",
+          "source_sha1": "ea9fff0b9adc32576c89877e3de5b3654365c96f",
+          "current_source_dimensions": [
+            2718,
+            1942
+          ],
+          "source_size_bytes": 2410398,
+          "author": "Mark B. Schlemmer",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:DuomoVercelli.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:DuomoVercelli.jpg",
+          "source_sha1": "cce58d27f163b5b4f2f02eb92ef285a1fb270634",
+          "current_source_dimensions": [
+            2045,
+            1358
+          ],
+          "source_size_bytes": 985662,
+          "author": "Goldmund100",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:3504 - Duomo (Vercelli) - Foto Giovanni Dall'Orto, 20 May 2011.jpg",
+          "status": "HOLD_LICENCE_NOT_CLEAR"
+        },
+        {
+          "source_title": "File:3560 - Duomo (Vercelli) - Foto Giovanni Dall'Orto, 20 May 2011.JPG",
+          "status": "HOLD_LICENCE_NOT_CLEAR"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Bazylika w Licheniu.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_w_Licheniu.jpg",
+          "source_sha1": "8b0763b7f61a150002a67fb922ee73313ff866f4",
+          "current_source_dimensions": [
+            4896,
+            3672
+          ],
+          "source_size_bytes": 6685696,
+          "author": "Bialo-zielony",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Bazylika Licheńska.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_Liche%C5%84ska.jpg",
+          "source_sha1": "ec6a2574a949c5c4a50e69eec1f35cbf2e371d09",
+          "current_source_dimensions": [
+            3120,
+            4160
+          ],
+          "source_size_bytes": 2097375,
+          "author": "TuktukKucek123",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:2012, 09, 06 Licheń- Sanktuarium Matki Bożej Licheńskiej. Bazylika widok z drogi - panoramio.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:2012%2C_09%2C_06_Liche%C5%84-_Sanktuarium_Matki_Bo%C5%BCej_Liche%C5%84skiej._Bazylika_widok_z_drogi_-_panoramio.jpg",
+          "source_sha1": "d25dba3b0a6e05c9130604ab78f8fb3eae7416d2",
+          "current_source_dimensions": [
+            4000,
+            2476
+          ],
+          "source_size_bytes": 6691286,
+          "author": "Kazimierz Mendlik",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 4,
+      "held_count": 1,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Fontaine-lès-Dijon (21) Basilique Saint-Bernard - Extérieur - 01.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_(21)_Basilique_Saint-Bernard_-_Ext%C3%A9rieur_-_01.jpg",
+          "source_sha1": "50495340a7948103ca9e98417420ecb69b1b3276",
+          "current_source_dimensions": [
+            2100,
+            1400
+          ],
+          "source_size_bytes": 650716,
+          "author": "GO69",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Fontaine-lès-Dijon F21 basilique IMF0579.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_F21_basilique_IMF0579.jpg",
+          "source_sha1": "ef3bc7801bed7968cfe5fa647d1ece3bf07188fe",
+          "current_source_dimensions": [
+            5184,
+            3456
+          ],
+          "source_size_bytes": 7413516,
+          "author": "Michel FOUCHER",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Fontaine-lès-Dijon (21) Couvent et Basilique Saint-Bernard - Extérieur - 01.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_(21)_Couvent_et_Basilique_Saint-Bernard_-_Ext%C3%A9rieur_-_01.jpg",
+          "source_sha1": "29711bf4d85fc6912600ec93ae9f92c724f2733e",
+          "current_source_dimensions": [
+            2100,
+            1400
+          ],
+          "source_size_bytes": 1275841,
+          "author": "GO69",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:Eglise Saint Bernard.jpg",
+          "status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Basilika St. Clemens in Hannover.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Basilika_St._Clemens_in_Hannover.jpg",
+          "source_sha1": "fe0a6223ade25863bce9df55dbf91ddaae2e809a",
+          "current_source_dimensions": [
+            3264,
+            3137
+          ],
+          "source_size_bytes": 2868417,
+          "author": "Christian A. Schröder ( ChristianSchd ) - zugeschnitten und Überkorrektur der Winkel reduziert von Rabanus Flavus",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Basilica St Clemens Clemensstrasse Calenberger Neustadt Hannover Germany 02.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_St_Clemens_Clemensstrasse_Calenberger_Neustadt_Hannover_Germany_02.jpg",
+          "source_sha1": "905abcea4ecfd7e99a909f693a7e38eb51a86522",
+          "current_source_dimensions": [
+            5392,
+            3595
+          ],
+          "source_size_bytes": 14549263,
+          "author": "Christian A. Schröder ( ChristianSchd )",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:20230321 Basilika Sankt Clemens Hannover 02.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:20230321_Basilika_Sankt_Clemens_Hannover_02.jpg",
+          "source_sha1": "9aa62ac7012eed901069287ea2c75fe94d732a1a",
+          "current_source_dimensions": [
+            5232,
+            3493
+          ],
+          "source_size_bytes": 9885303,
+          "author": "Flocci Nivis",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "status": "EXACT_SUBJECT_OR_LEGAL_HOLD",
+      "blocker": "Category mixes memorial grounds and main church. Confirm the photographed building before a main-church cover is proposed.",
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Korea Haemi Martyrdom Holy Ground 02 (14214705641).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_02_(14214705641).jpg",
+          "source_sha1": "4bb160a87827df08afa9712fd2ba919d9d172844",
+          "current_source_dimensions": [
+            4888,
+            2984
+          ],
+          "source_size_bytes": 8417608,
+          "author": "Korea.net / Korean Culture and Information Service (Jeon Han)",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Korea Haemi Martyrdom Holy Ground 03 (14218007385).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_03_(14218007385).jpg",
+          "source_sha1": "12fce24b20e6edb782e94537e08a55332e262cc4",
+          "current_source_dimensions": [
+            4656,
+            2952
+          ],
+          "source_size_bytes": 7342412,
+          "author": "Korea.net / Korean Culture and Information Service (Jeon Han)",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Korea Haemi Martyrdom Holy Ground 01 (14031335149).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_01_(14031335149).jpg",
+          "source_sha1": "55998713e819c1aafd4ccfdd7e52039fe71641f7",
+          "current_source_dimensions": [
+            5023,
+            2669
+          ],
+          "source_size_bytes": 6123522,
+          "author": "Korea.net / Korean Culture and Information Service (Jeon Han)",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 1,
+      "held_count": 2,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Eglise Saint-Louis de Gonzague.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Eglise_Saint-Louis_de_Gonzague.jpg",
+          "source_sha1": "776ecbb14c11770a8dd0c8a3cf7702ad644f4f98",
+          "current_source_dimensions": [
+            3024,
+            4032
+          ],
+          "source_size_bytes": 6036418,
+          "author": "Will6475",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [
+        {
+          "source_title": "File:Pauchapellestlouisdegonzague.jpg",
+          "status": "HOLD_NONSTANDARD_OR_PORTED_CC_LEGAL_CODE"
+        },
+        {
+          "source_title": "File:Pau, église St Louis de Gonzague bâtie sous Louis XV - btv1b53201979f.jpg",
+          "status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS"
+        }
+      ],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Gruta de Lourdes, Montevideo 07.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_07.jpg",
+          "source_sha1": "7e9cca69029aba119a4ced44cb07e7c12e1b5027",
+          "current_source_dimensions": [
+            2048,
+            1536
+          ],
+          "source_size_bytes": 1338584,
+          "author": "Fadesga",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Gruta de Lourdes, Montevideo 01.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_01.jpg",
+          "source_sha1": "9d7dff4cde176464b78d5a3348455fbe5a23f1f0",
+          "current_source_dimensions": [
+            1536,
+            2048
+          ],
+          "source_size_bytes": 879065,
+          "author": "Fadesga",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Gruta de Lourdes, Montevideo 02.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_02.jpg",
+          "source_sha1": "e7586780659b3fe8e853c531e9eba6dbf57703d1",
+          "current_source_dimensions": [
+            1536,
+            2048
+          ],
+          "source_size_bytes": 1482501,
+          "author": "Fadesga",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 3,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Igreja de Fátima em Fortaleza.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_em_Fortaleza.JPG",
+          "source_sha1": "74dd57d62b88145f4cf35bd6b1f701f7b0691e5b",
+          "current_source_dimensions": [
+            2592,
+            1944
+          ],
+          "source_size_bytes": 2053389,
+          "author": "Porto Neto",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Igreja de Fátima - panoramio.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_-_panoramio.jpg",
+          "source_sha1": "c498b3597f86c00e9bae1e59151d6740e7561bd7",
+          "current_source_dimensions": [
+            2304,
+            3072
+          ],
+          "source_size_bytes": 1311299,
+          "author": "Claudio Oliveira Lim…",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Na manhã de 13 de maio de 2008 - panoramio.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Na_manh%C3%A3_de_13_de_maio_de_2008_-_panoramio.jpg",
+          "source_sha1": "4fb645231115c0fb144faa314788d97ff6de33d3",
+          "current_source_dimensions": [
+            3072,
+            2304
+          ],
+          "source_size_bytes": 1242464,
+          "author": "Claudio Oliveira Lim…",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "status": "COVER_VISUAL_REVIEW_REQUIRED",
+      "blocker": null,
+      "metadata_eligible_count": 5,
+      "held_count": 0,
+      "priority_candidates": [
+        {
+          "rank": 1,
+          "source_title": "File:Templo y Convento de Guadalupe.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Templo_y_Convento_de_Guadalupe.jpg",
+          "source_sha1": "f42ae38ccedd5de8f3bb9b8b00c0145cff90c0cb",
+          "current_source_dimensions": [
+            3861,
+            2574
+          ],
+          "source_size_bytes": 4848255,
+          "author": "GUSTAVO VON",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "EDITORIAL_FIRST_LOOK_NOT_APPROVED",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 2,
+          "source_title": "File:Templo de Guadalupe Zacatecas.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Templo_de_Guadalupe_Zacatecas.jpg",
+          "source_sha1": "041b3b1d4becff0cbe1ea9f58d08b743ad5be8b6",
+          "current_source_dimensions": [
+            4919,
+            3674
+          ],
+          "source_size_bytes": 11024415,
+          "author": "GUSTAVO VON",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        },
+        {
+          "rank": 3,
+          "source_title": "File:Templo de Guadalupe, Zacatecas.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Templo_de_Guadalupe%2C_Zacatecas.jpg",
+          "source_sha1": "45061ccfe74560b4cd4260fa69ef0f6c45cae094",
+          "current_source_dimensions": [
+            2450,
+            3676
+          ],
+          "source_size_bytes": 11032571,
+          "author": "GUSTAVO VON",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "notes": "ALTERNATIVE_FOR_SIDE_BY_SIDE_VISUAL_REVIEW",
+          "photograph_visually_verified": false,
+          "approved": false
+        }
+      ],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "status": "EXACT_SUBJECT_OR_LEGAL_HOLD",
+      "blocker": "Candidate depicts a devotional image at sanctuary rather than site exterior; gallery review only.",
+      "metadata_eligible_count": 1,
+      "held_count": 0,
+      "priority_candidates": [],
+      "excluded_alternative_notes": [],
+      "user_approval": false,
+      "original_bytes_verified": false,
+      "publication_authorized": false
+    }
+  ]
+}
