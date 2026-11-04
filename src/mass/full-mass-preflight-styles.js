@@ -210,6 +210,10 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoMassFolioSeason{color:var(--ao-tcm-mute)!important}",
   "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoMassFolioGuide{background:transparent!important;color:var(--ao-tcm-ink)!important;padding:12px 4px 18px}",
   "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoMassFolioGuideTop>strong{color:var(--ao-tcm-ink)!important}",
+
+  "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoM1AdjustSheet{margin:10px 0;border:1px solid var(--ao-tcm-line);border-radius:var(--ao-tcm-card-radius);overflow:hidden}",
+  "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoM1AdjustSheet>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;padding:10px 14px;color:var(--ao-tcm-ink);font:600 15px/1.25 var(--ao-font-ui,system-ui,sans-serif)}",
+  "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoM1AdjustSheet>summary:focus-visible{outline:2px solid var(--ao-tcm-sage);outline-offset:-2px}",
   "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoM1Choices{background:var(--ao-tcm-surface)!important;border:1px solid var(--ao-tcm-line)!important;border-radius:var(--ao-tcm-card-radius)!important;overflow:hidden}",
   "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoM1ChoiceHeading{margin:0;padding:12px 15px 9px;background:var(--ao-tcm-raised);color:var(--ao-tcm-mute);font:700 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase}",
   "html[data-ao-m1-mass-root='true'] #ao-mass-flow-v1 .aoM1ChoiceHeading[data-m1-group='preferences']{border-top:1px solid var(--ao-tcm-line)}",
