@@ -44,7 +44,8 @@
     "Never set rights_verified, subject_verified, crop_reviewed, or APPROVED from source metadata alone.",
     "GitHub Actions and GitHub Pages only; no Vercel; no paid licences or contacting rights owners.",
     "All six over-limit originals exceed the 32 MB original-file cap; Vatican, Madonna del Sasso and Arthunkal also exceed 65 MP. Do not silently use smaller Commons thumbnails as byte-verified equivalents to the selected original.",
-    "Visual source page review identified visible lower-right El Cobre 'dani2010 copyright' signature: no unmodified full-frame cover release despite Commons licence and original-byte checks."
+    "Visual source page review identified visible lower-right El Cobre 'dani2010 copyright' signature: no unmodified full-frame cover release despite Commons licence and original-byte checks.",
+    "Maria Luggau selected original Commons metadata was reachable, but the 2026-11-04 original download in PR #2451 returned HTTP 429. Keep it unpublished; do not rerun or substitute to bypass rate limiting."
   ],
   "first_two_source_rights_screen": {
     "cuba": {
@@ -445,6 +446,18 @@
       "current_metadata_review": {
         "original_size_bytes": 11755745,
         "source_description_revision": 1190961558
+      },
+      "newer_release_preflight": {
+        "git_hub_actions_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41881856162",
+        "attempt_date": "2026-11-04",
+        "exact_common_metadata_source_checked": true,
+        "original_download_status": "HTTP_429_TOO_MANY_REQUESTS",
+        "original_binary_verified_in_this_release_attempt": false,
+        "planned_cover_not_published": true,
+        "automatic_retry_permitted": false,
+        "no_approved_media_change": true,
+        "release_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2451",
+        "next_action": "RETAIN_ORIGINAL_SELECTED_FILE_ON_HOLD_UNTIL_RATE_LIMIT_CLEARS_AND_INDEPENDENT_BYTE_VERIFICATION_IS_POSSIBLE"
       }
     },
     {
