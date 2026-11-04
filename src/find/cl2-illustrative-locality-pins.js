@@ -1,4 +1,4 @@
-// Generated from the review-only CL2 locality approval ledger (2026-11-04).
+// Generated from the Excel-reconciled CL2 approved-locality ledger (2026-11-04).
 // City gazetteer positions are ILLUSTRATIVE, never a church door or GPS destination.
 // Every record preserves the frozen source ID, church title, country and
 // original description. No Mass, rite, status or Una Cum classification implied.
@@ -751,46 +751,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "Rochester",
     "adminRegion": "New York"
   },
-  "RG-50082C65DA56": {
-    "sourceId": "AO-B35-L-GB-C41EF40E1279",
-    "name": "St Joseph's",
-    "country": "GB",
-    "addressNeedle": "Sheffield, United Kingdom (exact worship address NOT confirmed)",
-    "placeId": null,
-    "lat": 53.38297,
-    "lng": -1.4659,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:sheffield:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Sheffield",
-    "adminRegion": "England"
-  },
-  "RG-50BE1A7B5F18": {
-    "sourceId": "AO-B50-SSPV-US-869D6AA28FC",
-    "name": "Holy Cross Church",
-    "country": "US",
-    "addressNeedle": "449 Hoback St, Helena MT 59624",
-    "placeId": null,
-    "lat": 46.59271,
-    "lng": -112.03611,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:US:helena:montana",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://stpiusvchapel.org/mass-locations/"
-    ],
-    "localityName": "Helena",
-    "adminRegion": "Montana"
-  },
   "RG-51FF8910E2EA": {
     "sourceId": "AO-B50-CMRI-US-BF159083A8B",
     "name": "Our Lady of Mount Carmel Church",
@@ -952,26 +912,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "Valencia",
     "adminRegion": "Valencian Community"
   },
-  "RG-5B65864A842D": {
-    "sourceId": "AO-B34-L-GB-5B089A6D5EE8",
-    "name": "Holy Name",
-    "country": "GB",
-    "addressNeedle": "Chelmsford, United Kingdom (exact street not established)",
-    "placeId": null,
-    "lat": 51.73575,
-    "lng": 0.46958,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:chelmsford:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Chelmsford",
-    "adminRegion": "England"
-  },
   "RG-5C085A238111": {
     "sourceId": "AO-B33-L-PL-E28F3AA43E92",
     "name": "Misja FSSPX, al. Wolności 5",
@@ -1032,26 +972,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     ],
     "localityName": "Budapest",
     "adminRegion": null
-  },
-  "RG-605CC195A1EF": {
-    "sourceId": "AO-B34-L-GB-D03817F48CAA",
-    "name": "Our Lady of Grace & St Edward",
-    "country": "GB",
-    "addressNeedle": "London, United Kingdom (exact street not established)",
-    "placeId": null,
-    "lat": 51.50853,
-    "lng": -0.12574,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:london:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "London",
-    "adminRegion": "England"
   },
   "RG-61965FB003D0": {
     "sourceId": "AO-B52-FR-FC8E5CE17249",
@@ -1394,26 +1314,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "Liège",
     "adminRegion": "Liège"
   },
-  "RG-8EC1B37099D3": {
-    "sourceId": "AO-B35-L-GB-F2E7F260D293",
-    "name": "St James",
-    "country": "GB",
-    "addressNeedle": "Reading, United Kingdom (exact worship address NOT confirmed)",
-    "placeId": null,
-    "lat": 51.45625,
-    "lng": -0.97113,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:reading:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Reading",
-    "adminRegion": "England"
-  },
   "RG-94501E6FE69F": {
     "sourceId": "AO-B51-US-610370EF12B1",
     "name": "Monastery of St Anne — Benedictines of Mary",
@@ -1514,26 +1414,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "Ossett",
     "adminRegion": "England"
   },
-  "RG-A164E7D0C229": {
-    "sourceId": "AO-B34-L-GB-949D1186DE89",
-    "name": "Holy Child and St Joseph",
-    "country": "GB",
-    "addressNeedle": "Bedford, United Kingdom (exact street not established)",
-    "placeId": null,
-    "lat": 52.13459,
-    "lng": -0.46632,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:bedford:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Bedford",
-    "adminRegion": "England"
-  },
   "RG-A3E9444039BB": {
     "sourceId": "AO-B44-SSPX-ZW-729436BDC473",
     "name": "Saint Joseph's chapel",
@@ -1572,26 +1452,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
       "https://lms.org.uk/list-of-churches"
     ],
     "localityName": "Manchester",
-    "adminRegion": "England"
-  },
-  "RG-A504818C84DC": {
-    "sourceId": "AO-B34-L-GB-CDF21516456F",
-    "name": "Our Lady & St Anne",
-    "country": "GB",
-    "addressNeedle": "Reading, United Kingdom (exact street not established)",
-    "placeId": null,
-    "lat": 51.45625,
-    "lng": -0.97113,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:reading:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Reading",
     "adminRegion": "England"
   },
   "RG-A518A3811A75": {
@@ -1773,26 +1633,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     ],
     "localityName": "Albano Laziale",
     "adminRegion": "Lazio"
-  },
-  "RG-B10417F7A69D": {
-    "sourceId": "AO-B34-L-GB-89ABBD85057C",
-    "name": "Our Lady of Light",
-    "country": "GB",
-    "addressNeedle": "Aylesbury, United Kingdom (exact street not established)",
-    "placeId": null,
-    "lat": 51.81665,
-    "lng": -0.81458,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:aylesbury:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Aylesbury",
-    "adminRegion": "England"
   },
   "RG-B3540B7BF5B4": {
     "sourceId": "AO-B56-US-694E7A0349FC",
@@ -2806,26 +2646,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
       "https://lms.org.uk/list-of-churches"
     ],
     "localityName": "Kidderminster",
-    "adminRegion": "England"
-  },
-  "RG-D7C8B7693CEC": {
-    "sourceId": "AO-B34-L-GB-DA44176FA42F",
-    "name": "Our Lady & St Michael's",
-    "country": "GB",
-    "addressNeedle": "Workington, United Kingdom (exact street not established)",
-    "placeId": null,
-    "lat": 54.6425,
-    "lng": -3.54413,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:workington:england",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://lms.org.uk/list-of-churches"
-    ],
-    "localityName": "Workington",
     "adminRegion": "England"
   },
   "RG-D82168F24F57": {
