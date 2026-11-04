@@ -48,10 +48,21 @@ try{
      background:getComputedStyle(el).backgroundColor
    })));
    assert.equal(collectionPlates.length,32);
-   assert.ok(collectionPlates.every(p=>p.image||p.words),
-     "Unreleased paintings must show a canonical typographic plate, never an empty black frame");
+   assert.ok(collectionPlates.every(p=>p.words),
+     "Every F01 gallery slot must retain a readable canonical typographic plate, including pending image decode");
    assert.ok(collectionPlates.some(p=>!p.image&&p.words),
      "The review's approved-art hold must be visibly readable");
+   const imagePlateFallback=await fan.locator(".aoClaudeHolyCasePlate:has(img)").evaluateAll(nodes=>
+     nodes.map(el=>({
+       title:el.querySelector(".aoClaudeHolyTypePlate b")?.textContent?.trim(),
+       image:el.querySelector("img")?.getAttribute("src"),
+       fallback:getComputedStyle(el.querySelector(".aoClaudeHolyTypePlate")).position,
+       visible:getComputedStyle(el.querySelector(".aoClaudeHolyTypePlate")).display
+     })));
+   assert.ok(imagePlateFallback.length>0,"At least one released F01 artwork is available");
+   assert.ok(imagePlateFallback.every(x=>x.title&&x.image?.startsWith("/")&&x.fallback==="absolute"&&x.visible==="flex"),
+     "Published collection photos must expose a nonblack canonical title while decoding: "+JSON.stringify(imagePlateFallback));
+
 
    const caseGeometry=await fan.evaluate(el=>({
     columns:getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length,
