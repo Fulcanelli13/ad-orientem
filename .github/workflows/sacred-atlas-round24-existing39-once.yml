@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Enforce exact-source cohort and research-only policy
+        run: node tests/sacred-atlas-round24-existing39-source-contract.mjs
       - name: Validate exact 39-source queue and fail-closed mock verifier
         run: |
           python tools/atlas/audit-sacred-atlas-r24-existing39.py --dry-run
