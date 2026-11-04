@@ -6,6 +6,8 @@ on:
       - 'data/geography/research/sacred-atlas-r31-undecided43-bulk-image-review-20261105.v1.json'
       - 'data/geography/research/sacred-atlas-r31-undecided43-photo-review-20261105.html'
       - 'tests/sacred-atlas-r31-43place-photo-review-contract.mjs'
+      - 'data/geography/research/sacred-atlas-r32-33place-source-closure-20261105.v1.json'
+      - 'tests/sacred-atlas-r32-33place-source-closure-contract.mjs'
       - '.github/workflows/sacred-atlas-r31-43place-photo-review.yml'
 permissions:
   contents: read
@@ -21,4 +23,6 @@ jobs:
         with:
           node-version: '22'
       - name: Verify exact 43-site reconciliation, 15 cover options, 10 exclusion photos and offline interface syntax
-        run: node tests/sacred-atlas-r31-43place-photo-review-contract.mjs
+        run: |
+          node tests/sacred-atlas-r31-43place-photo-review-contract.mjs
+          node tests/sacred-atlas-r32-33place-source-closure-contract.mjs
