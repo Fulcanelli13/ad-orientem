@@ -272,6 +272,7 @@ function monthIndexEntries(monthId,view){
    share the Calendar overview without being represented as the same authority. */
 function monthHybridOverview(monthId,selected){
   const principal=monthIndexEntries(monthId,"major");
+  const seasonalCustoms=calendarCustomSeasonalMonthEntries(monthId,{fr:fr()});
   const majorStatus=monthIndexResolutionState(monthId,"major");
   const majorCards=principal.map((item,i)=>
     `<button type="button" class="aoCalHybridMajor${i<2?" featured":""}" data-cal-month-index-date="${esc(item.date)}" style="--month-accent:${esc(item.accent)}">
@@ -287,7 +288,7 @@ function monthHybridOverview(monthId,selected){
     </section>
     <section class="aoCalHybridSection aoCalHybridPracticesSection">
       <div class="aoCalHybridHeading"><h3>${esc(L("Customs of the season","Coutumes de la saison"))}</h3>
-        <button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("Browse customs","Voir les coutumes"))} →</button></div>
+        <button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("Browse customs","Voir les coutumes"))} ${seasonalCustoms.length?`(${seasonalCustoms.length})`:""} →</button></div>
     </section>
   </div>`;
 }
@@ -931,7 +932,7 @@ function daySurface(selected,r){
     ${dayNavigator(selected)}
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
       <h2>${esc(titleOf(r))}</h2>
-      ${approvedClassIHeroMarkup(selected,r?.day?.main?.id,fr())}
+      ${approvedClassIHeroMarkup(selected, r?.day?.main?.id, fr())}
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}</div>
       ${cm.length?`<p class="aoCalCommemorationLine"><strong>${esc(L("Commemoration","Commémoraison"))}:</strong> ${esc(cm.join("; "))}</p>`:""}
       ${properReady?`<button class="aoCalV2Primary aoCalDayMassAction" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
