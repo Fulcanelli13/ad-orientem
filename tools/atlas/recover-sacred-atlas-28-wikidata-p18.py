@@ -17,7 +17,11 @@ UA="AdOrientemSacredAtlasWikidataResearch/2026-11-04 (https://github.com/Fulcane
 def cases():
     s=json.loads(SEED.read_text());h=HTML.read_text()
     p=json.loads(re.search(r"const places=(.*?); const auditStatuses=",h,re.S).group(1))
-    missing=[x for x in p if not x["candidates"] and not x.get("legalHold")]
+    # Frozen 30-place recovery cohort minus Altötting and Marian Valley, which
+    # already have suitable/subject-specific source pools. Keep low-res holds.
+    frozen=json.loads((ROOT/"data/geography/research/sacred-atlas-round18-30-geotagged-curated-triage-20261104.v1.json").read_text())
+    target={x["place_id"] for x in frozen["all_30_sites"]}-{ "place:DE:friedhofskirche-st-michael-altoetting", "place:AU:marian-valley" }
+    missing=[x for x in p if x["id"] in target]
     ids={x["place_id"]:x for x in s["places"]}
     result=[]
     for x in missing:
@@ -26,7 +30,7 @@ def cases():
         g=o.get("geo") or {}
         result.append({"place_id":x["id"],"place_name":x["name"],
            "terms":names,"coord":{"lat":g.get("lat"),"lng":g.get("lng")}})
-    if len(result)!=28:raise ValueError("Expected exactly 28 untouched Place IDs")
+    if len(result)!=28 or set(x["place_id"] for x in result)!=target:raise ValueError("Expected exactly the frozen 28 Place IDs")
     return result
 def fetch(p):
     u=API+"?"+urlencode({"format":"json","formatversion":"2",**p})
