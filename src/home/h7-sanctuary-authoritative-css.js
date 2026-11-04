@@ -183,7 +183,8 @@ body.w320 .grid button{height:48px}
 .aoH7Screens .hero .aoTodayV2ArtSource{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto!important}
 .aoH7Screens .hero .aoTodayV2ArtSource img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
 .aoH7Screens .hero .aoTodayV2ArtSource:after{display:none}
-.aoH7Screens .hero.aoTodayV2ArtMissing .aoTodayV2ArtSource{background:radial-gradient(120% 90% at 55% 35%,#6e5236,#33261a 55%,#100c08)}
+.aoH7Screens .hero.aoTodayV2ArtMissing .aoTodayV2Art{display:none!important}
+.aoH7Screens .hero.aoTodayV2ArtMissing{background:var(--bg,#121a22)!important}
 .aoH7Screens .aoH7DoorArt{position:absolute;inset:0;background:#1b140e;background-size:cover;background-position:center 30%}
 .aoH7Screens .aoH7DoorArt img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
 .aoH7Screens [hidden]{display:none!important}
