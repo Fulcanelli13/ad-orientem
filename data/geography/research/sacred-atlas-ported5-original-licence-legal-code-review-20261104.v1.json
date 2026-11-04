@@ -11,14 +11,17 @@
     "legal_texts_identified": 5,
     "current_source_metadata_needs_recheck": 5,
     "originals_byte_verified_by_this_work": 0,
-    "new_published_covers": 0
+    "new_published_covers": 0,
+    "site_specific_visual_source_reviews": 3,
+    "visual_source_review_is_not_approval": true
   },
   "policy": [
     "Ported regional CC licences are not the same as the unported CC version; retain each jurisdiction and exact version.",
     "Hungarian 2.5 legal code is the localized .hu endpoint, not a generic /legalcode 404.",
     "Commons photo release still requires exact current licence and SHA1, adequate attribution, original bytes, exact Place subject and any underlying architecture/relic rights.",
     "Do not add broad code paths accepting arbitrary country-specific URLs or disable source safety limits.",
-    "No new editorial selection, asset publishing, Vercel usage, paid licences or contact."
+    "No new editorial selection, asset publishing, Vercel usage, paid licences or contact.",
+    "Source visual review flags Heiloo as the pilgrimage church within the sanctuary complex and Wieskirche as a scaffolding-era view; preserve owner first choice but do not silently approve unsuitable composition."
   ],
   "rows": [
     {
@@ -42,7 +45,17 @@
       "needs_underlying_architecture_check": true,
       "needs_CC_attribution_and_sharealike_conditions_if_applicable": true,
       "allow_global_license_whitelist_update": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "existing_source_scene_review": {
+        "evidence": "https://commons.wikimedia.org/wiki/File:Heiloo,_Heiligdom_Onze_Lieve_Vrouw_ter_Nood,_Bedevaartkerk,_oost.jpg",
+        "seen": "Site-specific pilgrimage church within the Heiloo sanctuary complex, dark shaded facade image.",
+        "checks": [
+          "Ensure canonical Place covers broader shrine complex, not specifically Genadekapel",
+          "Mobile crop/shadowed building legibility"
+        ],
+        "state": "VISUAL_CONTEXT_NEEDS_PRE_PUBLICATION_QA",
+        "approved_as_cover_this_round": false
+      }
     },
     {
       "place_id": "place:HU:mariapocs-greek-catholic-basilica",
@@ -88,7 +101,16 @@
       "needs_underlying_architecture_check": true,
       "needs_CC_attribution_and_sharealike_conditions_if_applicable": true,
       "allow_global_license_whitelist_update": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "existing_source_scene_review": {
+        "evidence": "https://commons.wikimedia.org/wiki/File:Lesachtal_Maria_Luggau_Servitenkloster_NW-Ansicht_16072014_804.jpg",
+        "seen": "Source description expressly identifies the Servite monastery and pilgrimage church of Maria Schnee in Maria Luggau.",
+        "checks": [
+          "Source original 11MB was not fetched in the web preview; full-size visual QA after SHA1 verification"
+        ],
+        "state": "SOURCE_DESCRIPTION_EXACT_COMPLEX_NEEDS_FULL_RES_QA",
+        "approved_as_cover_this_round": false
+      }
     },
     {
       "place_id": "place:DE:wieskirche",
@@ -111,7 +133,17 @@
       "needs_underlying_architecture_check": true,
       "needs_CC_attribution_and_sharealike_conditions_if_applicable": true,
       "allow_global_license_whitelist_update": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "existing_source_scene_review": {
+        "evidence": "https://commons.wikimedia.org/wiki/File:Wieskirche_boenisch_okt_2003.jpg",
+        "seen": "Exact Wieskirche exterior identified; image shows scaffold/maintenance works on facade in the original 2003 scene.",
+        "checks": [
+          "Assess whether prior selected historic facade scene remains acceptable primary cover",
+          "Mobile crop; retain historical context unless owner requests an alternate"
+        ],
+        "state": "VISUAL_SCENE_QUALITY_REVIEW",
+        "approved_as_cover_this_round": false
+      }
     },
     {
       "place_id": "place:CZ:bazilika-svaty-hostyn",
