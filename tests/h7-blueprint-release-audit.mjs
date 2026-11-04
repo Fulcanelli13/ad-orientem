@@ -77,6 +77,10 @@ try{
       document.querySelector(".aoH7HomeView:not([hidden]) [data-home-h7-enter]")&&!splashVisible);
    };
    await page.waitForFunction(homeReady,null,{timeout:90000});
+   // Home DOM can settle one frame before finishBoot() records its outcome.
+   // Await the actual cinematic completion instead of sampling a race.
+   await page.waitForFunction(()=>Boolean(document.documentElement.dataset.aoCinemaBootReason),
+     null,{timeout:15000});
    const fontBoot=await page.evaluate(()=>({
      reason:document.documentElement.dataset.aoCinemaBootReason,
      fontStatus:document.fonts?.status??null
