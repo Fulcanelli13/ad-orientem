@@ -53,8 +53,8 @@ jobs:
         run: npm run test:pray-canonical-phone-faces
       - name: Approved F01 default Holy Card, 32 prayer sources, real 320/390 phone flip and explicit continuous alternative
         run: node tests/pray-claude-holy-card-source-contract.mjs && node tests/pray-essentials-f01-holy-card.mjs && node tests/pray-f01-holy-card-default-phone.mjs
-      - name: Approved R1/R2 320/390 mosaic and category visual fidelity, functional floating search
-        run: node tests/pray-design-pilot-phone.mjs
+      - name: Approved R1/R2 source contract and 320/390 mosaic visual fidelity, functional floating search
+        run: node tests/pray-design-pilot-contract.mjs && node tests/pray-design-pilot-phone.mjs
       - name: Preserve source-face evidence
         if: always()
         uses: actions/upload-artifact@v4
