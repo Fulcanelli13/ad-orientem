@@ -1,0 +1,84 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B51_OVERLAP_SOURCE_RECONCILIATION_V1",
+  "asOf": "2026-11-05",
+  "status": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": "B50 verified, original 21 Oct consolidated packet retained; checked batch50 parts A and B; no duplication of B43–B50",
+  "counts": {
+    "distinctFamiliesReviewed": 4,
+    "newSubstantiveBilingualSourcePrecisionProposal": 1,
+    "retainedOrCrossReferenced": 3,
+    "humanCertified": 0
+  },
+  "records": [
+    {
+      "id": "SPX-EXP-016",
+      "decision": "RETAIN_DISTINCT_QUESTION_WITH_SOURCE_PRECISION",
+      "relation": "SPX-EXP-033 thematic overlap, not independent new doctrine",
+      "en": "Pascendi criticises historical reconstruction when an a priori philosophical exclusion of divine intervention governs which Gospel evidence may count. The encyclical traces the method from agnosticism to a division between the Christ of history and the Christ of faith; this is not a blanket condemnation of examining historical evidence.",
+      "fr": "Pascendi critique une reconstruction historique lorsque l'exclusion philosophique préalable de l'intervention divine détermine les témoignages évangéliques recevables. L'encyclique relie cette méthode à l'agnosticisme et à la séparation entre le Christ de l'histoire et le Christ de la foi ; elle ne condamne pas en bloc l'examen des témoignages historiques.",
+      "loci": {
+        "en": "Pascendi §§9,29–33",
+        "fr": "Pascendi: passages sur les trois règles de la critique historique et le Christ de l'histoire; numbering to be aligned manually"
+      },
+      "status": "READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-033",
+      "decision": "RETAIN_AS_APPLICATION_OF_016_NO_SECOND_CORRECTION",
+      "relation": "SPX-EXP-016 source shared, user intent differs (when criticism conflicts vs what concerns)",
+      "en": "Retain original bilingual answer; cross-reference EXP-016's explanation of the a priori exclusion of supernatural evidence. Do not count a second substantive improvement.",
+      "fr": "Conserver la réponse bilingue existante ; renvoyer à EXP-016 pour l'explication de l'exclusion a priori du surnaturel. Ne pas compter une seconde amélioration substantielle.",
+      "loci": {
+        "en": "Pascendi §§9,29–33",
+        "fr": "French passage matching pending"
+      },
+      "status": "READY_FOR_HUMAN_DEDUPLICATION_DECISION_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-019",
+      "decision": "RETAIN_WITH_SPECIFIC_HISTORICAL_LEGAL_SCOPE",
+      "relation": "SPX-EXP-023 shares §§44–56 but addresses operational precautions",
+      "en": "Pascendi §§44–56 sets out historical measures including Thomistic formation, scrutiny of teachers and publications, and episcopal reports. These instructions should be described as issued in 1907; current legal force must be checked separately.",
+      "fr": "Pascendi, §§44–56 dans la version anglaise, prévoit notamment la formation thomiste, la surveillance des enseignants et des publications, ainsi que des rapports épiscopaux. Ces mesures doivent être présentées comme des prescriptions de 1907 ; leur vigueur juridique actuelle doit être vérifiée séparément.",
+      "loci": {
+        "en": "Pascendi §§44–56, especially 45, 50–56",
+        "fr": "French remedies section, parallel passages; numerical parity not assumed"
+      },
+      "status": "READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-023",
+      "decision": "RETAIN_DISTINCT_PASTORAL_RESPONSIBILITY_INTENT",
+      "relation": "SPX-EXP-019 overlapping source but different intent",
+      "en": "Retain existing distinction: oversight of teaching and publications is assigned to bishops and competent superiors, not delegated indiscriminately to private readers. This does not establish wrongdoing by any named person.",
+      "fr": "Conserver la distinction existante : la vigilance sur l'enseignement et les publications incombe aux évêques et aux supérieurs compétents, non indistinctement à tout lecteur privé. Le texte n'établit aucune faute d'une personne nommée.",
+      "loci": {
+        "en": "Pascendi §§44–56",
+        "fr": "French remedies section; paragraph crosswalk pending"
+      },
+      "status": "READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "sourceUrls": [
+    "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+    "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+  ],
+  "classification": "All EN/FR passages are newly drafted editorial paraphrases, not verbatim papal speech. The English/French paragraph numbering must not be equated automatically.",
+  "chanoine": {
+    "originalEnglish": "BLOCKED_UNAVAILABLE_NO_RECONSTRUCTION",
+    "existingB39": "PRESERVED",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ]
+  },
+  "nextQueue": [
+    "Human deduplication decision on 016/033 and 019/023 while preserving IDs",
+    "Verify French section locators for B50 026/028 and this B51",
+    "Consolidate B43–B51 certification queue excluding B41 duplicate proposals",
+    "Locate Chanoine original English witness only from authentic source; otherwise skip"
+  ],
+  "publication": false,
+  "merge": false,
+  "deploy": false
+}
