@@ -63,6 +63,15 @@ try{
       "visible","Selected composer lyrics must remain visible inside the actual LIVE Schola dock");
     assert.equal(await page.locator('[data-role="schola-inline-translation"]').isVisible(),true);
     await plan.locator("summary").first().click();
+    // showSequence schedules a source-cue projection. Capture the settled
+    // Kyrie priest cue BEFORE advancing any manual Schola phrase, otherwise
+    // a pending initial projection (null -> source cue) looks like choir
+    // navigation changed the priest clock.
+    await page.waitForFunction(()=>
+      window.__AO_PHONE_PREVIEW.getCurrentCard()?.title==="Kyrie" &&
+      Boolean(window.__AO_PHONE_PREVIEW.getActiveCue()),null,{timeout:15000});
+    const cueBeforeManualPhrase=await page.evaluate(()=>
+      window.__AO_PHONE_PREVIEW.getActiveCue());
     await page.locator("[data-schola-next]").click();
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.schola?.index===1);
     const after=await page.evaluate(()=>({
@@ -71,7 +80,7 @@ try{
       line:window.__AO_PHONE_PREVIEW.getScholaState().schola.latin
     }));
     assert.equal(after.section,before.section,"Manual choir phrase step changed priest card");
-    assert.equal(after.cue,before.cue,"Manual choir phrase step changed priest cue");
+    assert.equal(after.cue,cueBeforeManualPhrase,"Manual choir phrase step changed settled priest cue");
     assert.match(after.line,/Christe eleison/);
     await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
