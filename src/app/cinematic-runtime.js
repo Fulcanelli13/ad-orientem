@@ -136,6 +136,8 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
   }
   function finishBoot(reason="ready"){
     if(bootFinished) return false; bootFinished=true; win.clearTimeout?.(bootWatchdog);
+    // Persistent diagnostic survives removal of the cinematic curtain.
+    if(d.documentElement?.dataset)d.documentElement.dataset.aoCinemaBootReason=reason;
     win.AO_LOADING_DIRECTOR_V1?.endBoot?.();
     const el=d.getElementById(BOOT_ID); if(!el) return false;
     const s=state(),status=q("[data-ao-cinema-boot-status]",el),title=s?.resolution?.proper?.data?.name||s?.resolution?.day?.main?.title||"";
