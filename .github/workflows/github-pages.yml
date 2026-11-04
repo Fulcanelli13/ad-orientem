@@ -1,0 +1,95 @@
+name: Publish Ad Orientem — GitHub Pages only
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "sacred-music.html"
+      - "sw.js"
+      - "Ad-Orientem-v43.19.webmanifest"
+      - "ao-*.js"
+      - "ao-*.css"
+      - "mass-bg.png"
+      - "src/**"
+      - "data/**"
+      - "assets/**"
+      - "tools/build-web-preview.mjs"
+      - ".github/workflows/github-pages.yml"
+  workflow_dispatch:
+
+# Publishing must use the release-only static output, never the repository root.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ad-orientem-github-pages-production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Build, validate, and publish the static site
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout reviewed main
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Build the release-only static directory
+        run: node tools/build-web-preview.mjs
+
+      - name: Validate publication surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          touch dist/web-preview/.nojekyll
+          node --input-type=module <<'NODE'
+          import {access, readdir, stat} from 'node:fs/promises';
+          import {join} from 'node:path';
+          const root='dist/web-preview';
+          for (const relative of [
+            'index.html', 'sw.js', 'Ad-Orientem-v43.19.webmanifest',
+            'src/app/offline-boot.js', '.nojekyll'
+          ]) await access(join(root,relative));
+          for (const forbidden of ['.github','docs','tests','tools','research',
+            'README.md','vercel.json','package.json','assets/staged',
+            'data/geography/research']) {
+            try {await access(join(root,forbidden));throw Error('Non-runtime file published: '+forbidden)}
+            catch(error) {if(error?.code!=='ENOENT') throw error}
+          }
+          async function totalBytes(dir) {
+            let total=0;
+            for(const entry of await readdir(dir,{withFileTypes:true})) {
+              const path=join(dir,entry.name);
+              total+=entry.isDirectory()?await totalBytes(path):(await stat(path)).size;
+            }
+            return total;
+          }
+          const size=await totalBytes(root);
+          console.log('GitHub Pages release bytes:',size);
+          if(size>1_000_000_000) throw Error('GitHub Pages release exceeds 1 GB safety budget');
+          NODE
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload only the curated release
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/web-preview
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
