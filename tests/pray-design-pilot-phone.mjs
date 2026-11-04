@@ -174,6 +174,23 @@ try{
       "Title must not sit in an opaque rectangle: "+door);
     assert.equal(studyList.descriptionDisplay,"none",
       "Study-style ordinal list must keep prayer titles legible: "+door);
+    if(door==="eucharistic"){
+      const sourceCredit=await page.locator(base+" .aoPrayDoorCover .aoReleasedModulePhoto figcaption").evaluate(el=>({
+        position:getComputedStyle(el).position,
+        opacity:getComputedStyle(el).opacity,
+        color:getComputedStyle(el).color,
+        background:getComputedStyle(el).backgroundColor,
+        link:el.querySelector("a")?.getAttribute("href"),
+        visible:!!el.getClientRects().length
+      }));
+      assert.equal(sourceCredit.position,"absolute",
+        "Exact released cover attribution must not overlap the bottom artwork title");
+      assert.equal(sourceCredit.visible,true,"Artist/source credit remains readable and visible");
+      assert.ok(sourceCredit.link?.startsWith("https://"),
+        "Only the true released artwork source may appear as the cover-credit link");
+      assert.ok(!/rgba\\(0, 0, 0, 0\\)|transparent/.test(sourceCredit.background),
+        "Cover provenance needs its own contrast background: "+JSON.stringify(sourceCredit));
+    }
     assert.equal(studyList.artThumbCount,rows.length,"Keep exact artwork bindings in the route DOM: "+door);
     assert.equal(studyList.visibleArtThumbCount,0,
       "Text-only category rows must not leak clipped painting attributions next to arrows: "+door);
