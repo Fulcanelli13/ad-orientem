@@ -11,12 +11,12 @@ const original=Object.freeze([
  [1147,"of","59",85],
  [265,"of","79",105],
  [464,"co","386",428],
- [95,"co","265",307],
  [1136,"in","336",378],
  [1165,"in","360",402],
  [1271,"in","383",425],
  [475,"in","392",434],
- [182,"of","362",404]
+ [182,"of","362",404],
+ [648,"of","90",116]
 ]);
 const continuations=new Map([
  // Four scores visibly continue on the next printed folio.

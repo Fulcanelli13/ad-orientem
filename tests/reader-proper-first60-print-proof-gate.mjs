@@ -12,22 +12,22 @@ const x=buildFirst60PrintedMusicEvidence({packet,latinAudit});
 assert.deepEqual(x,written,"Printed-music review drifted from exact source and Latin audit");
 assert.equal(x.schema,PROPER_PRINT_GATE_SCHEMA);
 assert.equal(x.counts.scores,60);
-assert.equal(x.counts.fullLatinTextMatches,48);
-assert.equal(x.counts.textVariantHolds,12);
-assert.equal(x.counts.noteGroups,3599);
+assert.equal(x.counts.fullLatinTextMatches,47);
+assert.equal(x.counts.textVariantHolds,13);
+assert.equal(x.counts.noteGroups,3629);
 // A clef identifies the staff and MUST NOT become a sung neume token.
 const fClef=sourceNoteGroupInventory("name: f clef sample;\n%%\n(f3) Mi(f)hi(g) (::)");
 assert.equal(fClef.noteBearingSourceTokens,2);
 assert.equal(fClef.nonMusicalTokens,0);
-assert.equal(x.counts.textMatchedScoreNoteGroups,2929);
-assert.equal(x.counts.pendingFolioImageComparisons,48);
+assert.equal(x.counts.textMatchedScoreNoteGroups,2910);
+assert.equal(x.counts.pendingFolioImageComparisons,47);
 assert.equal(x.counts.sourceImagesIndependentlyCompared,0);
 assert.equal(x.counts.completePrintedMusicVerified,0);
 assert.equal(x.counts.signedEditorialApprovals,0);
 assert.equal(x.counts.newlyPublicScores,0);
 assert.equal(x.firstTwelveForPrintComparison.length,12);
 assert.equal(new Set(x.firstTwelveForPrintComparison).size,12);
-assert.equal(x.allScores.filter(r=>!r.textExact).length,12);
+assert.equal(x.allScores.filter(r=>!r.textExact).length,13);
 assert.ok(x.allScores.every(r=>r.publication==="EDITORIAL_HOLD_NOT_PUBLIC"&&
  !r.completePrintedMusicVerified&&!r.exactReaderCueAndSettingVerified&&
  !r.signedEditorialApproval&&r.noteGroups.length>0&&
@@ -73,4 +73,4 @@ assert.throws(()=>buildFirst60PrintedMusicEvidence({
 const unexpected={...empty,evidence:{["GREGOBASE-999|"+("0".repeat(64))]:allScore}};
 assert.throws(()=>buildFirst60PrintedMusicEvidence({
  packet,latinAudit,observations:unexpected}),/PRINT_OBSERVATION_UNKNOWN_OR_TAMPERED_SCORE_ID/);
-console.log("PASS: 48 text-matched original-print evidence packets, 12 variant holds, 3599 GABC note groups, zero unauthorized musical approvals");
+console.log("PASS: 47 text-matched original-print evidence packets, 13 variant holds, 3629 GABC note groups, zero unauthorized musical approvals");
