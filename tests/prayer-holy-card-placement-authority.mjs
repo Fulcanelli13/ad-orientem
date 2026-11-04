@@ -3,7 +3,7 @@ import {readFileSync} from "node:fs";
 import {resolvePrayerEditorialArtwork,prayerEditorialArtworkMarkup,
  PRAYER_UNRELEASED_HOLY_CARD_SLOTS_V1}
  from "../src/pray/art-slot-map.v1.js";
-import {claudeHolyCard} from "../src/pray/claude-holy-card.js";
+import {claudeHolyCard,claudeHolyCardCase} from "../src/pray/claude-holy-card.js";
 const master=JSON.parse(readFileSync(new URL(
  "../data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
  import.meta.url),"utf8"));
@@ -35,6 +35,16 @@ const html=claudeHolyCard({id:"sacrament_act_of_contrition",
 assert.match(html,/data-ao-essential-card="sacrament_act_of_contrition"/);
 assert.doesNotMatch(html,/<img\b/i,
  "The placeholder Holy Card may not inherit a licensed photo from an unapproved placement");
+const fan=claudeHolyCardCase({
+ ids:["sacrament_act_of_contrition"],
+ prayers:{sacrament_act_of_contrition:{title:"Act of Contrition",
+ la:"Deus meus, ex toto corde poenitet me."}},
+ esc:x=>String(x).replaceAll("&","&amp;"),
+ artFor:id=>resolvePrayerEditorialArtwork("COV-"+id).photo?.image||""
+});
+assert.match(fan,/data-p435930-lib-open="sacrament_act_of_contrition"/);
+assert.doesNotMatch(fan,/<img\b/i,
+ "The essential-prayer card fan may not inherit the unapproved art either");
 assert.equal(resolvePrayerEditorialArtwork("DOOR-D5").state,"PUBLISHED_EXACT_PHOTO",
  "A valid independent user-approved Door artwork must remain published");
 console.log("PASS Holy Card cover-specific approval hold; original La Tour Confession stage and approved Door art preserved");
