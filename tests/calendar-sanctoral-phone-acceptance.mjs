@@ -43,7 +43,7 @@ try{
    await page.waitForFunction(()=>Boolean(window.AO_RUNTIME_V8?.resolver?.resolveDay) &&
      Boolean(window.AO_APP_SHELL_V1?.status?.().visibleOwner),null,{timeout:45000});
    // H7 opens canonical Calendar via its top bar; Day is an embedded lens.
-   const calOpen=page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]');
+   const calOpen=page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]');
    await calOpen.waitFor({state:"visible",timeout:20000});
    await calOpen.click();
    const dayTab=page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]');
@@ -118,7 +118,7 @@ try{
    assert.ok(homeMetrics.overflow<=1,"H7 Home horizontal overflow");
    assert.equal(requests.filter(x=>x.status===200).length,1,"Calendar source should be loaded once");
    await page.screenshot({path:resolve(output,"h7-home-after-newman-"+width+".png"),fullPage:false,animations:"disabled"});
-   await page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]').click();
    await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
    await host.waitFor({state:"visible",timeout:40000});
    const historic=await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2025-10-09"));
