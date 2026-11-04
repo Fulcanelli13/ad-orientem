@@ -23,7 +23,7 @@ import "./stations-verified-artwork-styles.js";
 import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
 import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
-import {renderEssentialFlowReader} from "./essential-flow-reader.js";
+import {renderEssentialFlowReader,essentialFlowReaderEnabled} from "./essential-flow-reader.js";
 import "./essential-flow-reader-styles.js";
 import "./claude-holy-card-styles.js";
 import "./essential-holy-card-styles.js";
@@ -131,6 +131,7 @@ const CHAPLET_F07_VARIANTS_ENABLED=chapletF07VariantsEnabled(window);
 let PILOT_LORETO_GROUP=false;
 // The pilot changes presentation only. Direct homepage prayer routes remain immediate.
 const PRAYER_PILOT_ENABLED=prayerPilotEnabled(window);
+const ESSENTIAL_FLOW_ALTERNATIVE_ENABLED=essentialFlowReaderEnabled(window);
 let ANGELUS_PILOT_ENTRY=false;
 const actionCinematics=createDevotionalActionCinematic(window);
 const DATA=window.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{},categories:{}};
@@ -757,7 +758,9 @@ function prayerBlock(id,opts={}){
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
   const pref=CLAUDE_HOLY_PREF.language;
   const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(p.la?'la':vern);
-  return chosen?(PRAYER_PILOT_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
+  // F01 approval authority: Claude's original reversible Holy Card, not the
+   // newer R2 continuous flow. Flow is retained by explicit opt-in only.
+   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){
