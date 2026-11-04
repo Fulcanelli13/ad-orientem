@@ -467,8 +467,9 @@ assert.equal(galway.geo.precision,"source_marker_unassessed");
 assert.equal(galway.geo.review_scope,"PHYSICAL_CHURCH_NOT_ENTRANCE");
 assert.equal(galway.map_state,"PROVISIONAL");
 assert.ok(galway.source_links.some(x=>x.url==="https://galway.icksp.ie/"));
-const newUs=newSites.find(x=>x.title==="St Philomena Catholic Church"&&x.subtitle.includes("US"));
-assert.ok(newUs,"Unlocated research-listed CMRI-directory chapel must remain searchable");
+const newUs=world.find(x=>x.title==="St Philomena Catholic Church"&&x.subtitle.includes("US"));
+assert.ok(newUs,"Source-listed CMRI chapel must remain searchable after its independently approved R2 town marker");
+assert.equal(newUs.geo?.precision,"locality","GeoNames locality must not be presented as chapel building GPS");
 assert.ok(filterPreliminaryR49(world,{query:"St Philomena Catholic Church"}).some(x=>x.item_id===newUs.item_id));
 assert.ok(/MASS UNVERIFIED/.test(renderDirectoryVenueCard(newUs)));
 assert.equal(filterPreliminaryR49(world,{}).length,2582,
@@ -483,4 +484,4 @@ assert.match(html,/174/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 174 list-only, 158 illustrative locality markers plus existing reviewed site markers, 3 separate published additions");
+console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 174 list-only, 158 R1 + 94 R2 illustrative locality markers plus existing reviewed site markers, 3 separate published additions");
