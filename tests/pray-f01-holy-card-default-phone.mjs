@@ -79,11 +79,21 @@ try{
          flip:lace.classList.contains("flip"),back:lace.querySelector(".aoClaudeHolyBack")?.getAttribute("aria-hidden")});
        },true);
      });
-     await turn.click({timeout:12000});
+     // At 320px the credited artwork link may occupy the geometric centre
+     // of the short card. That link must remain navigable, not trigger a flip.
+     const attribution=present.locator(".aoClaudeHolyArtCredit a");
+     if(await attribution.count()){
+      assert.match(await attribution.getAttribute("href"),/^https:\/\//,
+       "Approved painting credit must retain its original external source");
+      assert.equal(await attribution.getAttribute("target"),"_blank");
+     }
+     await turn.click({position:{x:24,y:24},timeout:12000});
      const tapEvidence=await turn.evaluate(el=>({
       flip:el.classList.contains("flip"),back:el.querySelector(".aoClaudeHolyBack")?.getAttribute("aria-hidden"),
       trace:window.__f01TapTrace||[],root:el.closest("#aoPray435930")?.className
      }));
+     assert.equal(tapEvidence.trace.some(e=>e.target==="A"),false,
+      "The card-turn interaction must not steal the approved artwork credit link");
      assert.equal(tapEvidence.back,"false",
       "First tap must show source prayer on original card, evidence: "+JSON.stringify(tapEvidence));
      assert.equal(await present.locator(".aoClaudeHolyFront").getAttribute("aria-hidden"),"true");
