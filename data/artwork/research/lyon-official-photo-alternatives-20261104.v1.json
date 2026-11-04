@@ -1,0 +1,57 @@
+{
+  "schema": "AO_LYON_OFFICIAL_ALTERNATE_REPRODUCTIONS_V1",
+  "as_of": "2026-11-04",
+  "source_page": "https://www.mba-lyon.fr/fr/article/peintures-visuels-pour-la-presse",
+  "source_words": "Reproduction libre de droit",
+  "credit": "Image © Lyon MBA - Photo Alain Basset",
+  "context": "Official museum's press images; Ad Orientem app/gallery scope requires separate careful licence review.",
+  "publicationApproved": false,
+  "rightsStatus": "PRESS_PAGE_RIGHTS_SCOPE_NOT_YET_CLEARED_FOR_APP",
+  "candidates": [
+    {
+      "approvedRecordIndex": 372,
+      "artist": "Pietro Perugino",
+      "title": "L'Ascension du Christ",
+      "existingCommonsPixels": [
+        698,
+        930
+      ],
+      "reason": "existing 698x930 photo not a premium gallery master",
+      "museumArtwork": "https://collections.louvre.fr/ark:/53355/cl010058889",
+      "sourceFileDownloaded": false,
+      "exactNewPixelsVerified": false
+    },
+    {
+      "approvedRecordIndex": 373,
+      "artist": "Nicolas Poussin",
+      "title": "La Fuite en Égypte",
+      "existingCommonsPixels": [
+        1492,
+        1088
+      ],
+      "reason": "existing source is small and has an edge mark requiring inspection",
+      "museumArtwork": "https://www.mba-lyon.fr/fr/fiche-oeuvre/la-fuite-en-egypte",
+      "sourceFileDownloaded": false,
+      "exactNewPixelsVerified": false
+    },
+    {
+      "approvedRecordIndex": 376,
+      "artist": "Peter Paul Rubens",
+      "title": "L'Adoration des Mages",
+      "existingCommonsPixels": [
+        4500,
+        3417
+      ],
+      "reason": "official museum image offers independent colour/source comparator for existing Commons master",
+      "museumArtwork": null,
+      "sourceFileDownloaded": false,
+      "exactNewPixelsVerified": false
+    }
+  ],
+  "rules": [
+    "Do not infer commercial app permission from a press-media page automatically",
+    "Prefer museum-authored source photo when equal or better after exact pixel comparison",
+    "Do not overwrite approved artwork or existing live calendar/prayer photo",
+    "Do not publish absent rights + identity + quality + final assignment clearance"
+  ]
+}
