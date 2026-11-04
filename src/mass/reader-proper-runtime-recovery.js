@@ -306,7 +306,7 @@ const MONICA_PREFIX=Object.freeze({
 });
 const sourceNorm=value=>String(value??"").normalize("NFD")
  .replace(/[\u0300-\u036f]/g,"").replace(/[æǽ]/g,"ae").replace(/[œ]/g,"oe")
- .toLowerCase().replace(/\s+/g," ").trim();
+ .toLowerCase().replace(/[^a-z0-9]+/g," ").trim().replace(/\s+/g," ");
 async function recoverExact1962MonicaRomanCollect(data,principalId,hostResolver,diagnostic){
  if(String(data?.sourcePath)!=="Sancti/05-04"||
     String(principalId)!==MONICA_ROMAN_ID||
