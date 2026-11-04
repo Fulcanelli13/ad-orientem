@@ -267,8 +267,12 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!scriptureLoadNotice)scriptureLoadNotice=win?.AO_LOADING_DIRECTOR_V1?.begin?.("scripture")??null;
    void ensureScriptureLibrary().then(mount=>{
      if(pendingOpen!==request||journey)return;
-     pendingOpen=null;endScriptureLoad();
+     // Keep the active request until mounting succeeds. Otherwise a
+     // synchronous reader-mount exception would be mistaken for a cancelled
+     // import and silently swallow the first-use failure.
+     endScriptureLoad();
      mountOpen(node,options,mount);
+     pendingOpen=null;
    }).catch(error=>{
      if(pendingOpen!==request)return;
      endScriptureLoad();
