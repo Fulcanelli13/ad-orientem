@@ -1,0 +1,22 @@
+name: Prayer R5D offline Commons remainder audit
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-commons-followon-queue.mjs
+      - .github/workflows/prayer-r5d-commons-followon.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build remaining 20-source editorial source queue without Commons requests
+        run: node scripts/prayer-r5d-commons-followon-queue.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-followon-source-queue
+          path: data/pray/research/r5d-commons-followon-review-queue.v1.json
+          retention-days: 14
