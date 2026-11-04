@@ -84,8 +84,10 @@ try{
      await hub();
      if(id==="pray.library"){
       await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
+      await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
      }else{
       assert.ok(door,id+" has no nine-door parent");
+      await page.locator('#aoPray435930.open [data-p435930-family="'+door+'"]').first().click();
       await page.locator('#aoPray435930.open [data-p435930-family="'+door+'"]').first().click();
       await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').waitFor({timeout:12000});
       const attr=row.sourceFamily==="canonical-prayer"?"data-p435930-door-prayer":
