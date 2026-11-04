@@ -167,7 +167,7 @@ const PINNED_ENGLISH_NAME_WITNESS=
  "DivinumOfficium/divinum-officium@ad8783641455bae38a8eb5782b34241a7b3ff2ef/web/www/missa/English/Sancti/03-06.txt";
 const UNFILLED_ENGLISH_PAIR=/\bN\.\s+and\s+N\.(?=\W|$)/giu;
 const PINNED_NAMED_C7B_ENGLISH_DONOR=
- /\b(?:triumphs of|festival of)\s+thy holy Virgins and Martyrs\s+N\.\s+and\s+N\.(?=\W|$)/iu;
+ /\b(?:triumphs of|festival of)\s+thy holy Virgins and Martyrs\s+N\.\s+and\s+N\.\s*:/iu;
 
 function restorePinnedPerpetuaEnglishNames(old){
  const candidates=[...old.en.matchAll(UNFILLED_ENGLISH_PAIR)];
