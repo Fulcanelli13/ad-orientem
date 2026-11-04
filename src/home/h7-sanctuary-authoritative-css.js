@@ -260,6 +260,11 @@ html[data-ao-appearance-choice-v1="light"] .aoH7Screens{
 .aoH7Screens .aoH7DoorDetails>summary{display:flex;align-items:center;min-height:52px;cursor:pointer;font:600 15px/1.4 var(--sans);color:var(--ink)}
 .aoH7Screens .aoH7DoorDetails>summary:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
 .aoH7Screens .aoH7DoorDetails .dsec{padding-top:8px}
+.aoH7Screens .aoH7DoorTopMeta{position:absolute;top:10px;left:60px;right:10px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:2px;color:#fff;font:500 13px/1.3 var(--sans);text-align:right}
+.aoH7Screens .aoH7DoorTopMeta small{font:400 12px/1.3 var(--sans);color:#eee}
+.aoH7Screens .aoH7DoorTopMeta button{display:flex;align-items:center;min-height:44px;border:0;padding:4px 8px;background:rgba(0,0,0,.4);color:#fff;border-radius:8px}
+.aoH7Screens .aoH7DoorView .foot .mini{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.aoH7Screens .aoH7DoorView .foot .mini button{min-width:0}
 .aoH7Screens .aoH7DoorSelections{display:flex;gap:8px;align-items:center;justify-content:space-between;min-height:44px;margin:10px 0 0;color:var(--mu);font:500 13px/1.4 var(--sans)}
 .aoH7Screens .aoH7DoorSelections span{min-width:0;flex:1;overflow-wrap:break-word}
 .aoH7Screens .aoH7DoorSelections button{min-height:44px;min-width:64px;border:0;background:transparent;color:var(--sage);font:600 14px/1.2 var(--sans);text-decoration:underline;text-underline-offset:3px}

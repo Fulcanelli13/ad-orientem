@@ -430,6 +430,13 @@ export function createHomeOwner(win=globalThis){
       win?.document?.querySelector?.(".aoH7HomeView [data-home-h7-enter]")?.focus?.({preventScroll:true});
       return;
     }
+    const h7Details=target?.closest?.("[data-home-h7-details]");
+    if(h7Details){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const detail=win?.document?.querySelector?.(".aoH7DoorView:not([hidden]) .aoH7DoorDetails");
+      if(detail){detail.open=true;detail.scrollIntoView?.({block:"start",behavior:"auto"});}
+      return;
+    }
     const resumeMass=target?.closest?.("[data-resume-mass]");
     if(resumeMass){
       event.preventDefault?.();

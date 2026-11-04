@@ -66,17 +66,28 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const introit=vm.massIntroit?'<p class="aoH4Introit" lang="la">'+esc(vm.massIntroit)+'</p>':"";
   const formName=({
     LOW:say("Low Mass","Messe basse"),
-    MISSA_CANTATA_SIMPLE:say("Sung · no incense","Chantée · sans encens"),
-    MISSA_CANTATA_INCENSE:say("Sung · incense","Chantée · avec encens"),
+    MISSA_CANTATA_SIMPLE:say("Missa Cantata · no incense","Messe chantée · sans encens"),
+    MISSA_CANTATA_INCENSE:say("Missa Cantata · incense","Messe chantée · avec encens"),
     SOLEMN:say("Solemn Mass","Messe solennelle"),
   })[choices?.chosenForm]??null;
-  const selectedChoices=[formName,choices?.readerMode==="MISSAL"?say("Missal","Missel"):
-    choices?.readerMode==="LIVE"?"LIVE":null].filter(Boolean).join(" · ")||
-    say("Choose Mass options","Choisir les options de messe");
+  const kindName=({
+    CALENDAR:say("Mass of the day","Messe du jour"),
+    VOTIVE:say("Votive Mass","Messe votive"),
+    REQUIEM:say("Requiem","Messe de Requiem"),
+    NUPTIAL:say("Nuptial Mass","Messe nuptiale"),
+    SPECIAL_FORMULARY:say("Special formulary","Formulaire particulier"),
+    GOOD_FRIDAY:say("Good Friday liturgy","Office du Vendredi saint"),
+    EASTER_VIGIL:say("Easter Vigil","Vigile pascale"),
+  })[choices?.kind]||say("Mass of the day","Messe du jour");
+  const readerLabel=choices?.readerMode==="MISSAL"?say("Read the Missal","Lire le missel"):
+    choices?.readerMode==="LIVE"?say("Follow live","Suivre en direct"):null;
+  const readerLanguage=choices?.experience?.language;
+  const languageLabel=readerLanguage==="fr"?"Français":readerLanguage==="en"?"English":null;
+  const selectedChoices=[kindName,formName,readerLabel,languageLabel].filter(Boolean).join(" · ");
   const resumeLabel=resume?[resume.date?dateLabel(resume.date,fr):"",resume.stepNumber?say("Card ","Carte ")+resume.stepNumber:""].filter(Boolean).join(" · "):"";
   const mainAction=resume?
     '<button type="button" class="aoH4Primary" data-resume-mass data-ao-resume-owner="R17_NATIVE"><span><strong>'+esc(say("Resume Mass","Reprendre la messe"))+'</strong><small>'+esc(resumeLabel)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>':
-    '<button type="button" class="aoH4Primary" data-home-mass-entry data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Start Mass","Commencer la messe"):say("Start selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(selectedChoices)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
+    '<button type="button" class="aoH4Primary" data-home-mass-entry data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Start Mass","Commencer la messe"):say("Start selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(say("Use current selections","Choix actuels"))+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
   const unresolved=!resume&&!ready?'<div class="aoH4Status" role="status">'+esc(vm.loading?say("Resolving the selected Mass…","Résolution de la messe choisie…"):say("Mass texts are not yet available. Begin is unavailable.","Les textes de la messe ne sont pas encore disponibles. Le démarrage est indisponible."))+'</div>':"";
   const feature=model.enricherVisible?model.feature:null;
   const attrs=feature?.kind==="dynamic"?
@@ -93,6 +104,8 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const custom=spotlight?.article?'<button type="button" class="aoH4Custom" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(spotlight.contextDate)+'"><span class="aoH4Eyebrow">'+esc(say("Tradition","Coutume"))+'</span><strong>'+esc(spotlight.article.title[fr?"fr":"en"])+'</strong><small>'+esc(dateLabel(spotlight.contextDate,fr))+'</small></button>':"";
   const gospelSub=model.gospelReference||say("Available when the Proper resolves","Disponible après résolution du Propre");
   const humanDate=vm.dateTitle+" "+vm.dateIso.slice(0,4);
+  const seasonLabel=fr?model.period?.fr:model.period?.en;
+  const doorLiturgicalLine=[vm.rank,vm.colour,seasonLabel].filter(Boolean).join(" · ");
   const worshipperTitle=vm.loading?"":vm.observedTitle;
   const introitLabel=String(vm.massIntroit||"").replace(/[,;:\s]+$/u,"").trim();
   const readBlock='<div class="aoTodayV2Below" data-ao-home-enricher-owner="'+HOME_ENRICHERS_VERSION+'"><section class="aoTodayV2ReadReflect">'+
@@ -134,19 +147,24 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
 
   '<dialog class="aoC3ArtDialog" data-home-c3-art-dialog aria-label="'+esc(say("Painting information","Informations sur le tableau"))+'"><img data-c3-art-image alt=""><h2 data-c3-art-title></h2><p data-c3-art-meta></p><a data-c3-art-source href="#" target="_blank" rel="noopener noreferrer">'+esc(say("Source","Source"))+' ↗</a><div><button type="button" data-home-c3-close>'+esc(say("Close","Fermer"))+'</button></div></dialog>'+
   '<div class="aoH7DoorView" hidden><div class="band" style="height:150px"><div class="aoH7DoorArt art6"></div>'+
-  '<button type="button" class="ib back" data-home-h7-back aria-label="'+esc(say("Back","Retour"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></div>'+
-  '<div class="body door"><div class="dhead"><span class="rb">'+esc([vm.rank,vm.colour].filter(Boolean).join(" · "))+'</span><span class="cr">✠</span>'+
-  '<h2>'+esc(vm.observedTitle)+'</h2><p class="ver">'+esc(humanDate)+'</p>'+
+  '<button type="button" class="ib back" data-home-h7-back aria-label="'+esc(say("Back","Retour"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>'+
+  '<div class="aoH7DoorTopMeta"><span>'+esc(kindName)+'</span><small>'+esc(humanDate)+'</small>'+
+  '<button type="button" data-home-calendar data-home-calendar-view="day" aria-label="'+esc(say("Open Calendar","Ouvrir le calendrier"))+'">'+esc(say("Calendar","Calendrier"))+'</button></div></div>'+
+  '<div class="body door"><div class="dhead"><span class="rb">'+esc(doorLiturgicalLine)+'</span><span class="cr">✠</span>'+
+  '<h2>'+esc(worshipperTitle)+'</h2>'+
   (marksMarkup?'<div class="mks">'+marksMarkup+'</div>':"")+commemorationMarkup+'<div class="aoH7DoorSelections"><span>'+esc(selectedChoices)+'</span><button type="button" data-home-h4-change>'+esc(say("Adjust","Modifier"))+'</button></div></div><div class="dr"></div>'+
+  '<details class="aoH7DoorDetails"><summary>'+esc(say("Mass details & texts","Détails et textes de la messe"))+'</summary>'+
   (subtitle?'<p class="why">'+esc(subtitle)+'</p>':"")+
-  '<details class="aoH7DoorDetails"><summary>'+esc(say("Mass details & texts","Détails et textes de la messe"))+'</summary><div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
+  '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="INTROIT"><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
   '<span class="rb">'+esc(say("The Proper","Le Propre"))+'</span>'+
   properSections.map(x=>'<button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="'+esc(x.id)+'"><span>'+esc(x.label)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
   (formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+
   ''+
   '</div></details><div class="endsp"></div></div><div class="foot">'+mainAction.replace('class="aoH4Primary"','class="aoH4Primary btn"')+
-  unresolved+'<div class="mini"><button type="button" data-action="prepare">'+esc(say("Prepare","Se préparer"))+'</button>'+
+  unresolved+'<div class="mini"><button type="button" data-home-h4-readings>'+esc(say("Mass texts","Textes de la messe"))+'</button>'+
+  '<button type="button" data-home-h7-details>'+esc(say("Mass details","Détails de la messe"))+'</button>'+
+  '<button type="button" data-action="prepare">'+esc(say("Prepare","Se préparer"))+'</button>'+
   '<button type="button" data-action="thanks">'+esc(say("Give thanks","Action de grâces"))+'</button></div></div></div></main>';
 
 }
