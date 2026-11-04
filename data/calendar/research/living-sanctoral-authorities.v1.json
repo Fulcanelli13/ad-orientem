@@ -1,0 +1,164 @@
+{
+  "schema": "AO_P2_JURISDICTION_AND_AUTHORITY_REGISTRY_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "authorityRules": [
+    {
+      "code": "GENERAL_ROMAN_VATICAN_DECREE",
+      "class": "HOLY_SEE_JURIDICAL_ACT",
+      "claimsModernUniversal": true,
+      "claims1962Universal": false
+    },
+    {
+      "code": "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT",
+      "class": "PAPAL_PUBLIC_STATEMENT",
+      "claimsModernUniversal": "SUBJECT_TO_EVIDENCE",
+      "claims1962Universal": false
+    },
+    {
+      "code": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "class": "OFFICIAL_DATE_WITNESS_NOT_JURIDICAL_INSCRIPTION",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "UNRESOLVED"
+    },
+    {
+      "code": "RELIGIOUS_INSTITUTE_PROPER",
+      "class": "INSTITUTE_PARTICULAR_CALENDAR_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "SUORE_FRANCESCANE_ELISABETTINE"
+    },
+    {
+      "code": "CARMEL_LITURGICAL_DATE_WITNESS",
+      "class": "CARMEL_PARTICULAR_CALENDAR_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "CARMEL"
+    },
+    {
+      "code": "PAPAL_BEATIFICATION_LETTER",
+      "class": "PAPAL_LIMITED_PERMISSION_IN_PLACES_AND_UNDER_LAW",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "PERMITTED_PLACES_UNDER_CANON_LAW"
+    },
+    {
+      "code": "USCCB_2026_CALENDAR_WITNESS",
+      "class": "US_EPISCOPAL_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "UNITED_STATES"
+    },
+    {
+      "code": "USCCB_HISTORIC_CALENDAR_WITNESS",
+      "class": "US_EPISCOPAL_HISTORIC_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "UNITED_STATES"
+    },
+    {
+      "code": "TRADITIONAL_1962_PRODUCTION_RESOLVER_IDENTITY_AUDIT",
+      "class": "ARCHIVED_1962_FEAST_DATE_IDENTITY_WITNESS_NOT_ORIGINAL_LEGAL_PUBLICATION",
+      "jurisdiction": "HISTORICAL_1962_ROMAN_SOURCE",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "HOLY_SEE_DICASTERY_GROUP_MEMORIAL",
+      "class": "HOLY_SEE_PROFILE_GROUP_DATE_NO_JURIDICAL_DECREE",
+      "jurisdiction": "UNRESOLVED",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "KRAKOW_PARISH_PATRONAL_FEAST_WITNESS",
+      "class": "KRAKOW_PARISH_CELEBRATION_NOT_UNIVERSAL_CALENDAR",
+      "jurisdiction": "PARISH_SAINT_JADWIGA_KRAKOW",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "WROCLAW_FRANCISCAN_PARISH_LITURGICAL_CALENDAR_WITNESS",
+      "class": "LOCAL_POLISH_LITURGICAL_CELEBRATION",
+      "jurisdiction": "FRANCISCAN_PARISH_WROCLAW_POLAND",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "DOMINICAN_ORDER_LOCAL_PARISH_FEAST_WITNESS",
+      "class": "ORDER_REPORTED_LOCAL_DOMINICAN_FEAST",
+      "jurisdiction": "SAINT_PATRICK_DOMINICAN_PARISH_COLUMBUS_US",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "LASALLIAN_INSTITUTE_LITURGICAL_FEAST",
+      "class": "INSTITUTE_FEAST_WITH_REFERENCE_TO_APPROVED_LITURGICAL_TEXT",
+      "jurisdiction": "BROTHERS_OF_THE_CHRISTIAN_SCHOOLS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "WREXHAM_DIOCESAN_HISTORICAL_FEAST_WITNESS",
+      "class": "DIOCESAN_HISTORICAL_REFERENCE_NOT_CURRENT_NATIONAL_CALENDAR",
+      "jurisdiction": "HISTORICAL_ENGLAND_WALES_WREXHAM_REFERENCE",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "USCCB_2026_NATIONAL_PROPER_CALENDAR",
+      "class": "BISHOPS_CONFERENCE_MODERN_NATIONAL_PROPER",
+      "jurisdiction": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "nationalRankCertified": true,
+      "specificJuridicalEffectiveFrom": null,
+      "sourceEdition": "USCCB_2026_CALENDAR",
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "CCCB_2025_APPROVED_NATIONAL_PROPER_CALENDAR",
+      "class": "BISHOPS_CONFERENCE_MODERN_NATIONAL_PROPER",
+      "jurisdiction": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "nationalRankCertified": true,
+      "specificJuridicalEffectiveFrom": null,
+      "sourceEdition": "CCCB_2016_DECREE_2025_UPDATED",
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "CBCEW_ENGLAND_MODERN_NATIONAL_PROPER",
+      "class": "BISHOPS_CONFERENCE_MODERN_NATIONAL_PROPER",
+      "jurisdiction": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "nationalRankCertified": true,
+      "specificJuridicalEffectiveFrom": null,
+      "sourceEdition": "CBCEW_CURRENT_NATIONAL_PROPER_2026_NEWMAN_RECONCILED",
+      "requiresP0Adjudication": true
+    },
+    {
+      "code": "CBCEW_WALES_MODERN_NATIONAL_PROPER",
+      "class": "BISHOPS_CONFERENCE_MODERN_NATIONAL_PROPER",
+      "jurisdiction": "DIOCESES_OF_WALES_MODERN_ROMAN",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "nationalRankCertified": true,
+      "specificJuridicalEffectiveFrom": null,
+      "sourceEdition": "CBCEW_CURRENT_NATIONAL_PROPER_2026_NEWMAN_RECONCILED",
+      "requiresP0Adjudication": true
+    }
+  ],
+  "noRuntimeImport": true,
+  "selectionAndRubricsOwner": "P1",
+  "traditionalCalendarResolverOwner": "P0"
+}

@@ -1,0 +1,629 @@
+{
+  "schema": "AO_P2_BULK_REVIEW_QUEUE_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "counts": {
+    "undatedPersonSubjects": 0,
+    "unminedIndexedYears": 0,
+    "unresolvedConflictFamilies": 7,
+    "historical1962InternalIdentityWitnesses": 31,
+    "sourceDatedButPublicationGated": 4
+  },
+  "unknownPersonSubjects": [],
+  "conflictingClaims": [
+    {
+      "subjectIds": [
+        "saint.louis-martin",
+        "saint.zelie-guerin"
+      ],
+      "status": "MULTIPLE_DATE_CLAIMS_DISTINCT_AUTHORITY",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-martin-e-maria-azelia-guerin.html",
+      "dicasteryVerbatim": "Memoria Liturgica: 29 luglio e 28 agosto",
+      "particularUrl": "https://www.lecarmel.org/saint-du-jour/saints-louis-et-zelie-martin",
+      "particularMonthDay": "07-12",
+      "action": "Preserve joint Carmel 12 July as particular witness; do not convert 29 July or 28 August into additional feast records without subject-specific liturgical evidence. These dates match individual death days but death date alone is not admissible evidence."
+    },
+    {
+      "subjectIds": [
+        "saint.francisco-marto",
+        "saint.jacinta-marto"
+      ],
+      "status": "PAPAL_PARTICULAR_FEAST_VS_PROFILE_DOUBLE_DATE",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+      "dicasteryVerbatim": "Memoria Liturgica: 4 aprile e 20 febbraio",
+      "papalParticularMonthDay": "02-20",
+      "action": "Papal beatification letter explicitly permits a joint feast on 20 February in places under law, beginning 2000; preserve distinct 4 April reference unassigned pending liturgical document, and do not label saints before 2017 canonization."
+    },
+    {
+      "subjectIds": [
+        "saint.ludovico-da-casoria"
+      ],
+      "status": "EXPLICIT_DIFFERENT_INSTITUTE_DATE",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-da-casoria.html",
+      "generalAttested": "03-30",
+      "specificProper": "06-17",
+      "jurisdiction": "Congregazione delle Suore Francescane Elisabettine",
+      "action": "Keep separate scoped edges, neither a 1962 authorization."
+    },
+    {
+      "subjectIds": [
+        "saint.jozef-sebastian-pelczar"
+      ],
+      "status": "HISTORIC_BEATIFIED_MEMORIAL_VS_CURRENT_PROFILE_FIELD",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josef-sebastian-pelczar.html",
+      "sourceProfile": "Memoria Liturgica: 28 marzo",
+      "sourceBiography": "La memoria liturgica del Beato cade il 19 gennaio (refers to pre-canonization beatified period)",
+      "action": "Preserve 28 March current date and flag historical 19 January beatified observance for adjudication; not two simultaneous modern universal feasts."
+    },
+    {
+      "subjectIds": [
+        "saint.zygmunt-gorazdowski"
+      ],
+      "status": "BEATIFIED_HISTORICAL_DATE_VS_CURRENT_PROFILE_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/zygmunt-gorazdowski.html",
+      "sourceProfile": "Memoria Liturgica: 1 gennaio",
+      "sourceBiography": "The biography reports John Paul II established a memorial on 26 June during the 26 June 2001 beatification at Lviv",
+      "action": "Preserve 1 January as current Dicastery profile date, retain 26 June as separate older particular/beatified historical claim pending original liturgical decree; do not label two modern universal Roman feasts."
+    },
+    {
+      "subjectIds": [
+        "saint.kinga-poland"
+      ],
+      "status": "OFFICIAL_PROFILE_POSSIBLY_CONFLATES_SAINT_IDENTITY",
+      "profileUrl": "https://www.causesanti.va/it/santi-e-beati/cunegonda-kinga.html",
+      "profileHeader": "Cunegonda (Kinga) canonized 1999; Memoria Liturgica: 3 marzo",
+      "inconsistentText": "Describes a saint married to 'sant’Enrico imperatore', a different historical biography; Kinga of Poland was married to Bolesław V the Chaste.",
+      "action": "HOLD all date import for saint.kinga-poland until a second independent episcopal, Holy See liturgical or documented particular-calendar witness authenticates the correct feast day. Do not count 3 March as reliable date evidence."
+    },
+    {
+      "subjectIds": [
+        "saint.lorenzo-ruiz",
+        "saint.domingo-ibanez-de-erquicia",
+        "saint.james-kyushei-tomonaga",
+        "canon-group.japan-martyrs-16-1987"
+      ],
+      "status": "CONFLICTING_DICASTERY_GROUP_PROFILE_02_06_VERSUS_USCCB_09_28",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/martiri-in-giappone.html",
+      "dicasteryHeader": "Memoria Liturgica: 6 febbraio",
+      "usccbUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+      "usccbDate": "09-28",
+      "action": "Do not import 6 February to canonical Lorenzo Ruiz group or its individual members until identity-specific liturgical authority verifies this group date; preserve 28 September as USCCB-only and independent members' identity link."
+    }
+  ],
+  "jurisdictionUnresolvedSubjects": [
+    "saint.agnes-bohemia",
+    "saint.agostina-livia-pietrantoni",
+    "saint.agostino-roscelli",
+    "saint.agostino-zhao-rong",
+    "saint.albert-chmielowski",
+    "saint.albert-great",
+    "saint.alberto-hurtado",
+    "saint.alfonso-maria-fusco",
+    "saint.alfonso-rodriguez-paraguay",
+    "saint.alonso-de-orozco",
+    "saint.alphonsa-immaculate-conception",
+    "saint.alphonsus-liguori",
+    "saint.amato-ronconi",
+    "saint.ambrose-milan",
+    "saint.andre-bessette",
+    "saint.andrew-dung-lac",
+    "saint.andrew-kim-taegon",
+    "saint.angela-da-foligno",
+    "saint.angela-de-la-cruz",
+    "saint.angelo-da-acri",
+    "saint.anna-schaeffer",
+    "saint.annibale-maria-di-francia",
+    "saint.anselm-canterbury",
+    "saint.anthony-padua",
+    "saint.antonio-de-santanna-galvao",
+    "saint.antonio-maria-pucci",
+    "saint.antonio-tlaxcala",
+    "saint.arcangelo-tadini",
+    "saint.arnold-janssen",
+    "saint.artemide-zatti",
+    "saint.athanasius",
+    "saint.augustine-hippo",
+    "saint.bartolo-longo",
+    "saint.bartolomeo-dei-martiri",
+    "saint.basil-great",
+    "saint.battista-camilla-da-varano",
+    "saint.beatrice-de-silva",
+    "saint.bede-venerable",
+    "saint.benedetta-cambiagio-frassinello",
+    "saint.benedetto-menni",
+    "saint.benilde-romancon",
+    "saint.bernard-clairvaux",
+    "saint.bernardo-da-corleone",
+    "saint.bernardo-tolomei",
+    "saint.bonaventure",
+    "saint.bonifacia-rodriguez-de-castro",
+    "saint.callisto-caravario",
+    "saint.candida-maria-de-jesus",
+    "saint.carlo-acutis",
+    "saint.carmen-rendiles-martinez",
+    "saint.carmen-salles-y-barangueras",
+    "saint.caterina-volpicelli",
+    "saint.catherine-siena",
+    "saint.cesar-de-bus",
+    "saint.charbel-makhlouf",
+    "saint.charles-de-foucauld",
+    "saint.charles-lwanga",
+    "saint.charles-of-mount-argus",
+    "saint.claude-la-colombiere",
+    "saint.claudine-thevenet",
+    "saint.clelia-barbieri",
+    "saint.crispin-viterbo",
+    "saint.cristobal-magallanes",
+    "saint.cristobal-tlaxcala",
+    "saint.cyril-alexandria",
+    "saint.cyril-jerusalem",
+    "saint.damien-de-veuster",
+    "saint.daniele-comboni",
+    "saint.deodat-da-ruticinio",
+    "saint.domingo-ibanez-de-erquicia",
+    "saint.dulce-lopes-pontes",
+    "saint.egidio-maria-san-giuseppe",
+    "saint.elena-guerra",
+    "saint.elisabeth-of-trinity",
+    "saint.elizabeth-ann-seton",
+    "saint.enrique-de-osso",
+    "saint.ephrem",
+    "saint.eufrasia-eluvathingal",
+    "saint.eugene-de-mazenod",
+    "saint.eustochia-calafato",
+    "saint.ezequiel-moreno",
+    "saint.faustino-miguez",
+    "saint.felice-da-nicosia",
+    "saint.filippo-smaldone",
+    "saint.francesco-antonio-fasani",
+    "saint.francesco-maria-camporosso",
+    "saint.francesco-spinelli",
+    "saint.francis-sales",
+    "saint.francisco-coll-y-guitart",
+    "saint.francois-de-montmorency-laval",
+    "saint.gaetano-catanoso",
+    "saint.gaetano-errico",
+    "saint.gaspare-bertoni",
+    "saint.geltrude-comensoli",
+    "saint.genoveva-torres-morales",
+    "saint.george-preca",
+    "saint.gianna-beretta-molla",
+    "saint.giovanni-antonio-farina",
+    "saint.giovanni-battista-piamarta",
+    "saint.giovanni-battista-scalabrini",
+    "saint.giovanni-calabria",
+    "saint.giulia-salzano",
+    "saint.giuseppe-allamano",
+    "saint.giuseppe-marello",
+    "saint.giuseppe-maria-tomasi",
+    "saint.giuseppe-moscati",
+    "saint.giuseppe-vaz",
+    "saint.giuseppina-bakhita",
+    "saint.giuseppina-vannini",
+    "saint.giustino-de-jacobis",
+    "saint.giustino-maria-russolillo",
+    "saint.gregory-great",
+    "saint.gregory-nazianzen",
+    "saint.guido-maria-conforti",
+    "saint.hilary-poitiers",
+    "saint.ignazio-da-santhia",
+    "saint.ignazio-maloyan",
+    "saint.inocencio-de-la-inmaculada",
+    "saint.isidore-seville",
+    "saint.jacques-berthieu",
+    "saint.jadwiga-queen-poland",
+    "saint.james-kyushei-tomonaga",
+    "saint.jan-sarkander",
+    "saint.jean-gabriel-perboyre",
+    "saint.jeanne-delanoue",
+    "saint.jeanne-emilie-de-villeneuve",
+    "saint.jeanne-jugan",
+    "saint.jerome",
+    "saint.john-chrysostom",
+    "saint.john-cross",
+    "saint.john-damascene",
+    "saint.john-duckla",
+    "saint.john-neumann-philadelphia",
+    "saint.john-ogilvie",
+    "saint.jose-de-anchieta",
+    "saint.jose-gabriel-del-rosario-brochero",
+    "saint.jose-gregorio-hernandez-cisneros",
+    "saint.jose-manyanet-y-vives",
+    "saint.jose-maria-de-yermo-y-parres",
+    "saint.jose-maria-rubio-y-peralta",
+    "saint.jose-sanchez-del-rio",
+    "saint.josef-freinademetz",
+    "saint.josemaria-escriva-de-balaguer",
+    "saint.jozef-bilczewski",
+    "saint.jozef-sebastian-pelczar",
+    "saint.juan-bautista-concepcion",
+    "saint.juan-del-castillo",
+    "saint.juan-diego-cuauhtlatoatzin",
+    "saint.juan-grande-roman",
+    "saint.juan-macias",
+    "saint.juan-tlaxcala",
+    "saint.julie-billiart",
+    "saint.junipero-serra",
+    "saint.kateri-tekakwitha",
+    "saint.katharine-drexel",
+    "saint.kinga-poland",
+    "saint.kuriakose-elias-chavara",
+    "saint.laura-montoya-upergui",
+    "saint.lawrence-brindisi",
+    "saint.lazzaro-devasahayam-pillai",
+    "saint.leo-great",
+    "saint.leonardo-murialdo",
+    "saint.leonie-francoise-de-sales-aviat",
+    "saint.leopold-mandic",
+    "saint.lodovico-pavoni",
+    "saint.lorenzo-ruiz",
+    "saint.luigi-guanella",
+    "saint.luigi-maria-palazzolo",
+    "saint.luigi-orione",
+    "saint.luigi-scrosoppi",
+    "saint.luigi-versiglia",
+    "saint.magdalene-of-canossa",
+    "saint.manuel-gonzalez-garcia",
+    "saint.marcellin-champagnat",
+    "saint.margherita-citta-di-castello",
+    "saint.marguerite-bays",
+    "saint.marguerite-bourgeoys",
+    "saint.marguerite-dyouville",
+    "saint.maria-antonia-de-san-jose",
+    "saint.maria-bernarda-butler",
+    "saint.maria-bertilla-boscardin",
+    "saint.maria-caterina-kasper",
+    "saint.maria-crescentia-hoss",
+    "saint.maria-cristina-brando",
+    "saint.maria-de-jesus-sacramentado-venegas",
+    "saint.maria-de-mattias",
+    "saint.maria-di-gesu-santocanale",
+    "saint.maria-domenica-mantovani",
+    "saint.maria-elisabeth-hesselblad",
+    "saint.maria-francesca-rubatto",
+    "saint.maria-guadalupe-garcia-zavala",
+    "saint.maria-josefa-sancho-de-guerra",
+    "saint.maria-maravillas-de-jesus",
+    "saint.maria-rosa-molas-vallve",
+    "saint.maria-salvat-y-romero",
+    "saint.maria-soledad-torres-acosta",
+    "saint.maria-teresa-chiramel-mankidiyan",
+    "saint.maria-troncatti",
+    "saint.mariam-baouardy",
+    "saint.marianne-cope",
+    "saint.marie-alphonsine-danil-ghattas",
+    "saint.marie-eugenie-milleret",
+    "saint.marie-leonie-paradis",
+    "saint.marie-of-incarnation-guyart",
+    "saint.marie-rivier",
+    "saint.marko-krizevcanin",
+    "saint.martin-de-porres",
+    "saint.mary-of-the-cross-mackillop",
+    "saint.matthias-kalemba",
+    "saint.maximilian-kolbe",
+    "saint.meinhard-latvia",
+    "saint.melchior-grodziecki",
+    "saint.miguel-febres-cordero",
+    "saint.mutien-marie-wiaux",
+    "saint.narcisa-de-jesus-martillo-moran",
+    "saint.nazaria-ignazia-march-mesa",
+    "saint.nicola-da-longobardi",
+    "saint.nikola-tavelic",
+    "saint.nimatullah-kassab-al-hardini",
+    "saint.nuno-alvares-pereira",
+    "saint.nunzio-sulprizio",
+    "saint.oscar-arnulfo-romero",
+    "saint.paola-elisabetta-cerioli",
+    "saint.paola-frassinetti",
+    "saint.paolina-cuore-gesu-agonizzante",
+    "saint.paul-chong-hasang",
+    "saint.paula-montal-fornes",
+    "saint.pedro-calungsod",
+    "saint.pedro-de-san-jose-betancur",
+    "saint.pedro-poveda-castroverde",
+    "saint.peter-canisius",
+    "saint.peter-chrysologus",
+    "saint.peter-damian",
+    "saint.peter-to-rot",
+    "saint.pier-giorgio-frassati",
+    "saint.pierre-favre",
+    "saint.pierre-julien-eymard",
+    "saint.pietro-da-narbona",
+    "saint.rafael-arnaiz-baron",
+    "saint.rafael-guizar-valencia",
+    "saint.rafaela-porras-ayllon",
+    "saint.rafqa-ar-rayes",
+    "saint.raphael-kalinowski",
+    "saint.riccardo-pampuri",
+    "saint.robert-bellarmine",
+    "saint.roque-gonzalez",
+    "saint.rosa-venerini",
+    "saint.rose-philippine-duchesne",
+    "saint.salomone-leclercq",
+    "saint.simon-de-rojas",
+    "saint.simon-of-lipnica",
+    "saint.stanislaw-kazimierczyk",
+    "saint.stanislaw-of-jesus-mary",
+    "saint.stefan-pongracz",
+    "saint.stefano-da-cuneo",
+    "saint.teresa-benedicta-cross-stein",
+    "saint.teresa-couderc",
+    "saint.teresa-eustochio-verzeri",
+    "saint.teresa-jornet-ibars",
+    "saint.teresa-los-andes",
+    "saint.theodore-guerin",
+    "saint.thomas-aquinas",
+    "saint.titus-brandsma",
+    "saint.tommaso-da-cori",
+    "saint.umile-da-bisignano",
+    "saint.urszula-ledochowska",
+    "saint.vicenta-maria-lopez-vicuna",
+    "saint.vincent-pallotti",
+    "saint.vincenza-maria-poloni",
+    "saint.vincenzo-grossi",
+    "saint.vincenzo-romano",
+    "saint.virginia-centurione-bracelli",
+    "saint.zdislava-lemberk",
+    "saint.zygmunt-gorazdowski",
+    "saint.zygmunt-szczesny-felinski"
+  ],
+  "yearCollectionsToMine": [],
+  "furtherSourceFamilies": [
+    "Holy See decree corpus for universal standing",
+    "National/diocesan and institutes proper calendar promulgations",
+    "Traditional pro aliquibus locis witnesses",
+    "Historical Doctor declaration acts"
+  ],
+  "profileExceptions": [
+    {
+      "subjectId": "saint.kinga-poland",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/cunegonda-kinga.html",
+      "status": "IDENTITY_CONTEXT_MISMATCH_NO_DATE_EDGE",
+      "reportedMonthDay": "03-03",
+      "requiredAction": "HOLD all date import for saint.kinga-poland until a second independent episcopal, Holy See liturgical or documented particular-calendar witness authenticates the correct feast day. Do not count 3 March as reliable date evidence.",
+      "resolution": "ALTERNATIVE_DATE_FOUND_WITH_LIMITED_LOCAL_OR_HISTORICAL_SCOPE; ORIGINAL_PROFILE_EXCEPTION_STILL_RECORDED"
+    },
+    {
+      "subjectId": "canon-group.forty-martyrs-england-wales",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/40-martiri-di-inghilterra-e-galles.html",
+      "sourceClaim": "Memoria Liturgica: Senza data (Celebrazioni singole)",
+      "status": "NO_SINGLE_GROUP_DATE_IN_DICASTERY_PROFILE",
+      "action": "Seek documented applicable particular calendar; do not invent 25 October from the canonisation event.",
+      "resolution": "ALTERNATIVE_DATE_FOUND_WITH_LIMITED_LOCAL_OR_HISTORICAL_SCOPE; ORIGINAL_PROFILE_EXCEPTION_STILL_RECORDED"
+    },
+    {
+      "subjectId": "canon-group.japan-martyrs-16-1987",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/martiri-in-giappone.html",
+      "status": "CONFLICTING_DICASTERY_GROUP_PROFILE_02_06_VERSUS_USCCB_09_28",
+      "reportedMonthDay": "02-06",
+      "requiredAction": "Do not import 6 February to canonical Lorenzo Ruiz group or its individual members until identity-specific liturgical authority verifies this group date; preserve 28 September as USCCB-only and independent members' identity link."
+    },
+    {
+      "subjectId": "saint.jadwiga-queen-poland",
+      "status": "DICASTERY_CANONIZATION_PROFILE_CONTEXT_CONFLATES_HEDWIG_OF_SILESIA",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/edwige.html",
+      "reportedMonthDay": "10-16",
+      "reason": "Document says 1997 canonization Queen Jadwiga but reports historical Duke Henry and St Hedwig of Silesia biography; do not attach 16 October to Queen Jadwiga",
+      "requiredAction": "Independently corroborate queen's date in Polish ecclesiastical calendar or papal source; retain existing papal-canonization identity adjudication.",
+      "resolution": "ALTERNATIVE_DATE_FOUND_WITH_LIMITED_LOCAL_OR_HISTORICAL_SCOPE; ORIGINAL_PROFILE_EXCEPTION_STILL_RECORDED"
+    },
+    {
+      "subjectId": "saint.margherita-citta-di-castello",
+      "status": "NO_MEMORIA_FIELD_IN_DICASTERY_PROFILE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/margherita-di-citta-di-castello.html",
+      "reportedMonthDay": null,
+      "requiredAction": "Look for Dominican/diocesan proper calendar publication; do not infer a date from death or equipollent canonization.",
+      "resolution": "ALTERNATIVE_DATE_FOUND_WITH_LIMITED_LOCAL_OR_HISTORICAL_SCOPE; ORIGINAL_PROFILE_EXCEPTION_STILL_RECORDED"
+    }
+  ],
+  "residualScopeAdjudication": [
+    {
+      "subjectId": "saint.jadwiga-queen-poland",
+      "status": "DATE_ATTESTED_WITH_LIMITED_JURISDICTION_NO_GLOBAL_EFFECTIVE_PROMULGATION",
+      "nextAction": "Obtain authoritative calendar and effective dates before P0 may publish globally."
+    },
+    {
+      "subjectId": "saint.kinga-poland",
+      "status": "DATE_ATTESTED_WITH_LIMITED_JURISDICTION_NO_GLOBAL_EFFECTIVE_PROMULGATION",
+      "nextAction": "Obtain authoritative calendar and effective dates before P0 may publish globally."
+    },
+    {
+      "subjectId": "saint.margherita-citta-di-castello",
+      "status": "DATE_ATTESTED_WITH_LIMITED_JURISDICTION_NO_GLOBAL_EFFECTIVE_PROMULGATION",
+      "nextAction": "Obtain authoritative calendar and effective dates before P0 may publish globally."
+    },
+    {
+      "subjectId": "canon-group.forty-martyrs-england-wales",
+      "status": "DATE_ATTESTED_WITH_LIMITED_JURISDICTION_NO_GLOBAL_EFFECTIVE_PROMULGATION",
+      "nextAction": "Obtain authoritative calendar and effective dates before P0 may publish globally."
+    }
+  ],
+  "historical1962InternalEvidenceOnly": [
+    {
+      "subjectId": "saint.gregory-great",
+      "monthDay": "03-12",
+      "sourceId": "sancti:03-12:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.ambrose-milan",
+      "monthDay": "12-07",
+      "sourceId": "sancti:12-07:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.augustine-hippo",
+      "monthDay": "08-28",
+      "sourceId": "sancti:08-28:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.jerome",
+      "monthDay": "09-30",
+      "sourceId": "sancti:09-30:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.thomas-aquinas",
+      "monthDay": "03-07",
+      "sourceId": "sancti:03-07:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.john-chrysostom",
+      "monthDay": "01-27",
+      "sourceId": "sancti:01-27:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.basil-great",
+      "monthDay": "06-14",
+      "sourceId": "sancti:06-14:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.gregory-nazianzen",
+      "monthDay": "05-09",
+      "sourceId": "sancti:05-09:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.athanasius",
+      "monthDay": "05-02",
+      "sourceId": "sancti:05-02:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.bonaventure",
+      "monthDay": "07-14",
+      "sourceId": "sancti:07-14:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.anselm-canterbury",
+      "monthDay": "04-21",
+      "sourceId": "sancti:04-21:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.isidore-seville",
+      "monthDay": "04-04",
+      "sourceId": "sancti:04-04:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.peter-chrysologus",
+      "monthDay": "12-04",
+      "sourceId": "sancti:12-04:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.leo-great",
+      "monthDay": "04-11",
+      "sourceId": "sancti:04-11:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.peter-damian",
+      "monthDay": "02-23",
+      "sourceId": "sancti:02-23r:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.bernard-clairvaux",
+      "monthDay": "08-20",
+      "sourceId": "sancti:08-20:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.hilary-poitiers",
+      "monthDay": "01-14",
+      "sourceId": "sancti:01-14:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.alphonsus-liguori",
+      "monthDay": "08-02",
+      "sourceId": "sancti:08-02:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.francis-sales",
+      "monthDay": "01-29",
+      "sourceId": "sancti:01-29:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.cyril-alexandria",
+      "monthDay": "02-09",
+      "sourceId": "sancti:02-09:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.cyril-jerusalem",
+      "monthDay": "03-18",
+      "sourceId": "sancti:03-18:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.john-damascene",
+      "monthDay": "03-27",
+      "sourceId": "sancti:03-27:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.bede-venerable",
+      "monthDay": "05-27",
+      "sourceId": "sancti:05-27:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.ephrem",
+      "monthDay": "06-18",
+      "sourceId": "sancti:06-18:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.peter-canisius",
+      "monthDay": "04-27",
+      "sourceId": "sancti:04-27:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.john-cross",
+      "monthDay": "11-24",
+      "sourceId": "sancti:11-24:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.robert-bellarmine",
+      "monthDay": "05-13",
+      "sourceId": "sancti:05-13:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.albert-great",
+      "monthDay": "11-15",
+      "sourceId": "sancti:11-15:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.anthony-padua",
+      "monthDay": "06-13",
+      "sourceId": "sancti:06-13:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.lawrence-brindisi",
+      "monthDay": "07-21",
+      "sourceId": "sancti:07-21r:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    },
+    {
+      "subjectId": "saint.catherine-siena",
+      "monthDay": "04-30",
+      "sourceId": "sancti:04-30:3:w",
+      "status": "RESOLVER_IDENTITY_AUDIT_NOT_ORIGINAL_MISSAL_CERTIFICATION"
+    }
+  ]
+}
