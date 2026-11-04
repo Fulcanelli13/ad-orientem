@@ -251,22 +251,10 @@ try{
     const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
     el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.39);
   });
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:3000});
-  const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
-  assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
-  assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
-  // Regression: the section explanation must follow scroll-to-cue updates.
-  // Static card navigation itself has no attested LIVE cue and must not
-  // preempt the precise ceremonial rubric or the existing action rails.
-  await page.waitForFunction(()=>{
-    const shell=document.querySelector("[data-ao-reader-shell]");
-    const explanation=document.querySelector('[data-role="objective-context"]');
-    return shell?.dataset.objectiveContext==="true" &&
-      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
-  },null,{timeout:5000});
-  // CDP touchend can leave kinetic scrolling active after the first C0174
-  // focus event. Wait for physical scroll quiescence, then anchor the exact
-  // elevation cue before checking its native state and painted rail.
+  // CDP touchend can leave kinetic scrolling active and override an
+  // immediate programmatic scroll. Stabilize first, then require exactly
+  // C0174, its native event and bell. This preserves the original strict
+  // assertion, but eliminates the initial 3-second kinetic-scroll race.
   await page.evaluate(async()=>{
     const card=document.querySelector(".ao-prayer-card");
     if(!card)throw Error("PHONE_PRAYER_CARD_MISSING");
@@ -298,6 +286,19 @@ try{
     // the regular focus listener without modifying native source state.
     card.dispatchEvent(new Event("scroll"));
   });
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:5000});
+  const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
+  assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
+  assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
+  // Regression: the section explanation must follow scroll-to-cue updates.
+  // Static card navigation itself has no attested LIVE cue and must not
+  // preempt the precise ceremonial rubric or the existing action rails.
+  await page.waitForFunction(()=>{
+    const shell=document.querySelector("[data-ao-reader-shell]");
+    const explanation=document.querySelector('[data-role="objective-context"]');
+    return shell?.dataset.objectiveContext==="true" &&
+      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
+  },null,{timeout:5000});
   // B052 covers both C0173 (consecration words) and C0174 (elevation).
   // Require the *same exact source cue* and rendered rail state together.
   const elevationPainted=await page.waitForFunction(()=>{
