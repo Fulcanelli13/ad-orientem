@@ -1,0 +1,30 @@
+name: Prayer R5D first release 21-work editorial acceptance gate
+on:
+  pull_request:
+    paths:
+      - tests/prayer-r5d-first-release-crosswalk.mjs
+      - .github/workflows/prayer-r5d-first-release-gate.yml
+      - assets/prayer/research/r5d-commons-recovered-originals/**
+      - assets/prayer/research/r5d-commons-originals/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-nonpublishing-cohort:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 21 preserved source images, 53 approvals and original Rosary isolation
+        run: node tests/prayer-r5d-first-release-crosswalk.mjs
+      - name: Preserve QA staging manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-first-release-21-works-53-slots
+          path: r5d-first-release-qa/
+          retention-days: 14
+          if-no-files-found: warn
