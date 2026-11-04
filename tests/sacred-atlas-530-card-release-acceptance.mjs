@@ -106,7 +106,7 @@ for(const raw of geo.places){
   assert.ok(preview.includes('data-explore-expand-place'),"no Discover affordance "+raw.place_id);
   if(photographed){
    assert.ok(preview.includes(p.media.asset_path),"published local cover absent "+raw.place_id);
-   assert.ok(preview.includes(p.media.credit),"photographer credit absent "+raw.place_id);
+   assert.ok(preview.includes(p.media.credit.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;")),"photographer credit absent "+raw.place_id);
    assert.ok(!preview.includes("aoSacredPlaceSymbolFallback"),"photo and placeholder mixed "+raw.place_id);
   }else{
    assert.ok(preview.includes('data-visual-kind="category-symbol"'),"uncovered Place lacks illustrated fallback "+raw.place_id);
