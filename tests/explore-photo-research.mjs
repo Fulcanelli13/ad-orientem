@@ -65,13 +65,20 @@ for(const item of approved.items){
   }else{
     assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
   }
-  assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
+  const exactMariaLuggauCC=item.place_id==="place:AT:wallfahrtsbasilika-maria-schnee-luggau"&&
+    item.source_sha1==="ca025cb7c0d5815ccb25b5f5570e8a57331103d7"&&
+    item.source_url==="https://commons.wikimedia.org/wiki/File:Lesachtal_Maria_Luggau_Servitenkloster_NW-Ansicht_16072014_804.jpg"&&
+    item.license==="CC-BY-SA-3.0-AT"&&
+    item.license_url==="https://creativecommons.org/licenses/by-sa/3.0/at/deed.en"&&
+    item.credit==="Johann Jaritz";
+  assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license)||exactMariaLuggauCC,
     "Only independently confirmed freely reusable site photos may be published");
-  assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
+  if(!exactMariaLuggauCC)assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
     ? "https://creativecommons.org/publicdomain/mark/1.0/"
     : item.license==="CC0-1.0"
       ? "https://creativecommons.org/publicdomain/zero/1.0/"
       : "https://creativecommons.org/licenses/"+(item.license.startsWith("CC-BY-SA-")?"by-sa/":"by/")+item.license.split("-").at(-1)+"/");
+  if(exactMariaLuggauCC)assert.equal(item.license_url,"https://creativecommons.org/licenses/by-sa/3.0/at/deed.en");
   if(legacyIds.has(item.place_id)){
     assert.equal(item.license,"CC-BY-SA-4.0","Original cohort licence must never be loosened");
   }
