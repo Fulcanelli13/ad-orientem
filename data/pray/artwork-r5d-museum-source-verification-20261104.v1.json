@@ -1,0 +1,103 @@
+{
+  "schema": "AO_PRAYER_R5D_MUSEUM_SOURCE_VERIFICATION_V1",
+  "verifiedOn": "2026-11-04",
+  "sourceQueue": "data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json",
+  "scope": "Museum object identity, source rights and attribution only; not photography acquisition, production authorization or reader QA",
+  "summary": {
+    "groupsReviewed": 2,
+    "eligibleNonRosarySlots": 15,
+    "groupsReadyForPublication": 0,
+    "publicationClearedSlots": 0,
+    "exactSourceImageEndpointsIdentified": 1,
+    "originalPhotosAcquired": 2,
+    "newlyPublicationClearedSlots": 0,
+    "groupsWithAcquiredPhotos": 2,
+    "acquiredEligibleSlotCount": 15
+  },
+  "records": [
+    {
+      "sourcePage": "https://www.clevelandart.org/art/1916.786",
+      "objectId": "1916.786",
+      "title": "The Crucifixion",
+      "catalogAttribution": "follower of Sodoma",
+      "queueAttribution": "Sodoma (Italian, 1477–1549)",
+      "attributionCorrectionRequired": true,
+      "museumRightsClaim": "Museum object page explicitly permits copying, modification and distribution under its Open Access Initiative",
+      "sourceRightsVerified": true,
+      "slots": [
+        "COV-pray.seven_words",
+        "COV-pray.stations",
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "originalPhotoCaptured": true,
+      "exactFileIntegrityChecked": true,
+      "framingAndResponsiveQA": false,
+      "publicationAuthorized": false,
+      "notes": "Museum page contains mixed attribution in page content; primary object header reads 'follower of Sodoma'; keep attribution conservative until catalog reconciliation.",
+      "imageSourceRetrieval": {
+        "status": "ACQUIRED",
+        "imageUrl": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_print.jpg",
+        "width": 2673,
+        "height": 3400,
+        "bytes": 8293229,
+        "sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+        "format": "JPEG",
+        "artifactId": 13299855755
+      }
+    },
+    {
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "objectNumber": "17.190.19",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "catalogAttribution": "Workshop of Peter Paul Rubens",
+      "queueAttribution": "Peter Paul Rubens",
+      "attributionCorrectionRequired": true,
+      "museumRightsClaim": "Public Domain object record with Download Image link; Met Open Access permits unrestricted commercial and noncommercial use",
+      "sourceRightsVerified": true,
+      "slots": [
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "COV-foundations_eternal_rest",
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "originalPhotoCaptured": true,
+      "exactFileIntegrityChecked": true,
+      "framingAndResponsiveQA": false,
+      "publicationAuthorized": false,
+      "notes": "Public Met object page identifies Workshop of Peter Paul Rubens. Met API artistDisplayName is Peter Paul Rubens without qualifier; prefer curatorial object page for published credit. Exact primary image acquired and decoded.",
+      "imageSourceRetrieval": {
+        "status": "ACQUIRED",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-013.jpg",
+        "width": 3094,
+        "height": 4000,
+        "bytes": 4103505,
+        "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+        "format": "JPEG",
+        "artifactId": 13299855755
+      }
+    }
+  ],
+  "nextRequiredActions": [
+    "Preserve image files as durable versioned assets before the seven-day artifact expires",
+    "Check human-visible composition and publication suitability for both images",
+    "Correct source-owned credits to museum object-page attribution, including follower of Sodoma and Workshop of Rubens",
+    "Integrate 15 eligible non-Rosary slots using original full-frame contain-fit; test bilingual phone readers",
+    "Release separately after all gates pass; do not change the protected Rosary"
+  ],
+  "acquisitionRun": {
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41781799456",
+    "conclusion": "success",
+    "artifactId": 13299855755,
+    "artifactName": "prayer-r5d-museum-evidence",
+    "artifactRetentionDays": 7,
+    "sha": "4b6b2958cc59147f5a1f1001a3d89786a8a0dc81"
+  }
+}

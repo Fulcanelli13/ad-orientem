@@ -1,0 +1,30 @@
+name: Prayer R5D reversible matte crop preview
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-matte-crop-previews.py
+      - data/pray/research/r5d-first-cohort-visual-triage.v1.json
+      - .github/workflows/prayer-r5d-matte-preview.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Validate 16 originals and generate 7 reversible crop comparisons
+        run: python scripts/prayer-r5d-matte-crop-previews.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-r5d-16-work-matte-review
+          path: r5d-matte-preview/
+          if-no-files-found: warn
+          retention-days: 14

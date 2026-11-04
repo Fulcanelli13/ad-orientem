@@ -1,0 +1,85 @@
+name: Prayer R5D Commons 20-work research acquisition
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-commons-bulk-acquire.py
+      - .github/workflows/prayer-r5d-commons-bulk.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: r5d-commons-source-review
+  cancel-in-progress: false
+jobs:
+  acquire-and-preserve:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/prayer-r5d-museum-clearance-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-r5d-museum-clearance-20261104
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Audit first ten Commons source images
+        run: python scripts/prayer-r5d-commons-bulk-acquire.py a
+      - name: Audit second ten Commons source images
+        run: python scripts/prayer-r5d-commons-bulk-acquire.py b
+      - name: Preserve successful photographs, and per-object holds, on research branch only
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,shutil
+          from pathlib import Path
+          dest=Path('assets/prayer/research/r5d-commons-originals')
+          dest.mkdir(parents=True,exist_ok=True)
+          combined=[]
+          for b in ('a','b'):
+              src=Path('r5d-commons-'+b)
+              p=src/'evidence.json'
+              if not p.exists():
+                  combined.append({'batch':b,'status':'NO_EVIDENCE'})
+                  continue
+              data=json.loads(p.read_text())
+              assert data['publication_authorized'] is False
+              for row in data['records']:
+                  if row['status']=='ACQUIRED_FOR_QA':
+                      original=src/row['research_image_file']
+                      raw=original.read_bytes()
+                      assert len(raw)==row['bytes']
+                      assert hashlib.sha256(raw).hexdigest()==row['sha256']
+                      target=dest/original.name
+                      shutil.copyfile(original,target)
+                  assert row['publication_authorized'] is False
+                  combined.append(row)
+          result={'schema':'AO_PRAYER_R5D_COMMONS_RESEARCH_ARCHIVE_V1',
+                  'examined':len(combined),
+                  'acquired':sum(r.get('status')=='ACQUIRED_FOR_QA' for r in combined),
+                  'holds':sum(r.get('status')=='HOLD' for r in combined),
+                  'publication_authorized':False,'records':combined}
+          (dest/'manifest.json').write_text(json.dumps(result,indent=2)+'\n')
+          print('Commons research preserved:',result['acquired'],'photos,',result['holds'],'holds; zero published.')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/prayer/research/r5d-commons-originals/
+          if ! git diff --cached --quiet; then
+            git commit -m "research(prayer): preserve Commons QA acquisitions and source holds"
+            git push origin HEAD:research/prayer-r5d-museum-clearance-20261104
+          fi
+      - name: Upload research results, including holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-commons-20-review
+          path: |
+            r5d-commons-a/
+            r5d-commons-b/
+          retention-days: 14
+          if-no-files-found: warn
