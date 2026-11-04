@@ -1,0 +1,158 @@
+{
+  "schema": "AO_CL27_COLLISION_SOURCE_DECISIONS_V1",
+  "reviewed_at": "2026-11-04",
+  "publication": "RESEARCH_ONLY_NO_MERGED_EVENTS",
+  "input": "data/directory/research/cl27-current-firstparty-20261104/collision-screen-106.v1.json",
+  "baseline": {
+    "groups": 106,
+    "rows": 234
+  },
+  "summary": {
+    "source_reviewed_collision_groups": 7,
+    "source_alias_groups": 5,
+    "distinct_monthweek_groups": 2,
+    "remaining_without_source_disposition": 99,
+    "production_events_generated": 0
+  },
+  "records": [
+    {
+      "site_day_time_key": "RG-00E777838530|friday|19:00",
+      "cl2_anchor": "RG-00E777838530",
+      "original_historical_rows": [
+        2240,
+        2243
+      ],
+      "source_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-odz-kaplica-sw-piusa-v",
+        "SSPXMAP:OPE-002306"
+      ],
+      "source_recheck_url": "https://www.piusx.org.pl/kaplice/lodz",
+      "decision": "SOURCE_ALIAS_SAME_SCHEDULE_SLOT",
+      "source_conclusion": "Polish district Łódź page names one first-Friday 19:00 Mass at this chapel. Two historical source IDs are aliases for one slot.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    },
+    {
+      "site_day_time_key": "RG-00E777838530|saturday|18:00",
+      "cl2_anchor": "RG-00E777838530",
+      "original_historical_rows": [
+        2241,
+        2244,
+        4617
+      ],
+      "source_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-odz-kaplica-sw-piusa-v",
+        "SSPXMAP:OPE-002306",
+        "AO-B40-SSPX-PL-ODZ"
+      ],
+      "source_recheck_url": "https://www.piusx.org.pl/kaplice/lodz",
+      "decision": "SOURCE_ALIAS_SAME_SCHEDULE_SLOT",
+      "source_conclusion": "Polish district Łódź page names one usual Saturday 18:00 Mass. Three historical source aliases are not three Masses.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    },
+    {
+      "site_day_time_key": "RG-00E777838530|sunday|09:00",
+      "cl2_anchor": "RG-00E777838530",
+      "original_historical_rows": [
+        335,
+        710,
+        4614
+      ],
+      "source_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-odz-kaplica-sw-piusa-v",
+        "SSPXMAP:OPE-002306",
+        "AO-B40-SSPX-PL-ODZ"
+      ],
+      "source_recheck_url": "https://www.piusx.org.pl/kaplice/lodz",
+      "decision": "SOURCE_ALIAS_SAME_SCHEDULE_SLOT",
+      "source_conclusion": "Polish district Łódź page names one Sunday 09:00 Sung Mass. Three historical source IDs are duplicate statements.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    },
+    {
+      "site_day_time_key": "RG-00E777838530|sunday|12:00",
+      "cl2_anchor": "RG-00E777838530",
+      "original_historical_rows": [
+        2239,
+        2242,
+        4615
+      ],
+      "source_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-odz-kaplica-sw-piusa-v",
+        "SSPXMAP:OPE-002306",
+        "AO-B40-SSPX-PL-ODZ"
+      ],
+      "source_recheck_url": "https://www.piusx.org.pl/kaplice/lodz",
+      "decision": "SOURCE_ALIAS_SAME_SCHEDULE_SLOT",
+      "source_conclusion": "Polish district Łódź page names one Sunday 12:00 Low Mass. Three historical source IDs are duplicate statements.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    },
+    {
+      "site_day_time_key": "RG-16E60E0BD048|sunday|08:30",
+      "cl2_anchor": "RG-16E60E0BD048",
+      "original_historical_rows": [
+        759,
+        2314
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002359"
+      ],
+      "source_recheck_url": "https://fsspx.mx/es/capillas-2",
+      "decision": "DISTINCT_MONTHWEEK_RECURRENCES_NOT_DUPLICATES",
+      "source_conclusion": "Official Mexico district explicitly lists 08:30 on first and third Sunday. Weekday/clock alone conflates different calendar dates; retain both recurrence qualifiers.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    },
+    {
+      "site_day_time_key": "RG-16E60E0BD048|sunday|11:30",
+      "cl2_anchor": "RG-16E60E0BD048",
+      "original_historical_rows": [
+        2313,
+        2315
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002359"
+      ],
+      "source_recheck_url": "https://fsspx.mx/es/capillas-2",
+      "decision": "DISTINCT_MONTHWEEK_RECURRENCES_NOT_DUPLICATES",
+      "source_conclusion": "Official Mexico district explicitly lists 11:30 on first and third Sunday. These are not duplicated on the same date.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    },
+    {
+      "site_day_time_key": "RG-A89FD40AA2B5|sunday|13:00",
+      "cl2_anchor": "RG-A89FD40AA2B5",
+      "original_historical_rows": [
+        336,
+        703,
+        4641
+      ],
+      "source_ids": [
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-s-upsk-kaplica-sw-ignacego-loyoli",
+        "SSPXMAP:OPE-002729",
+        "AO-B40-SSPX-PL-S_UPSK"
+      ],
+      "source_recheck_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "decision": "SOURCE_ALIAS_SAME_SCHEDULE_SLOT",
+      "source_conclusion": "The current Polish district page lists one Sunday 13:00 Sung Mass at Słupsk, separate from 12:30 confessions. Three historical source IDs describe one Mass.",
+      "editorial_confidence": "SOURCE_PATTERN_CONFIRMED_NOT_DATE_SPECIFIC_EVENT",
+      "historical_ids_retained": true,
+      "event_merged_or_published": false,
+      "next_gate": "Check actual calendar date, community/ministry, Mass type and change exceptions before generating a single approved canonical event."
+    }
+  ]
+}
