@@ -266,5 +266,7 @@ html[data-ao-appearance-choice-v1="light"] .aoH7Screens{
 .aoH7Screens .aoH7HomeView .aoTodayV2ReadReflect{margin:0 var(--g);padding:0}
 .aoH7Screens .aoH7HomeView .aoTodayV2ReadReflect .aoH4Read{margin:0}
 .aoH7Screens .aoH7HomeView .aoTodayV2ReadReflect .aoH4SectionHead{margin-top:18px}
+.aoH7Screens .aoH7HomeView .aoH7TitlePending{min-height:1.15em}
+.aoH7Screens .aoH7HomeView .aoH7TitlePending:before{content:"";display:block;width:min(68%,270px);height:30px;border-radius:5px;background:color-mix(in srgb,var(--ink) 18%,transparent)}
 
 `;

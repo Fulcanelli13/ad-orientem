@@ -1141,7 +1141,9 @@ function monthLayoutTabs(){
     `<button type="button" data-cal-month-layout="${id}" aria-pressed="${calendarMonthLayout===id?"true":"false"}" class="${calendarMonthLayout===id?"active":""}">${esc(label)}</button>`).join("")}</nav>`;
 }
 function monthPresentationMarkup(calendarGrid,monthId,selected){
-  return `<div data-cal-month-presentation="grid" ${calendarMonthLayout==="grid"?"":"hidden"}>${calendarGrid}</div>
+  const legend=[[L("Green","Vert"),"#62a473"],[L("White","Blanc"),"#e9e0c9"],[L("Red","Rouge"),"#d0574a"],[L("Violet","Violet"),"#9a7bc4"],[L("Black","Noir"),"#8c8c8c"],[L("Rose","Rose"),"#d99aae"]];
+  const legendMarkup=`<div class="aoCalMonthColourLegend" aria-label="${esc(L("Liturgical colour legend","Légende des couleurs liturgiques"))}">${legend.map(([name,colour])=>`<span><i aria-hidden="true" style="background:${colour}"></i>${esc(name)}</span>`).join("")}</div>`;
+  return `<div data-cal-month-presentation="grid" ${calendarMonthLayout==="grid"?"":"hidden"}>${calendarGrid}${legendMarkup}</div>
     <div data-cal-month-presentation="ordo" ${calendarMonthLayout==="ordo"?"":"hidden"}>${monthOrdoList(monthId)}</div>
     ${monthHybridOverview(monthId,selected)}`;
 }
@@ -1161,11 +1163,11 @@ function pickerSurface(selected){
     }).join("")}</div>`;
   const projection=monthPresentationMarkup(calendarGrid,pickerMonthId,selected);
   return `<section class="aoCalV2Picker">
-    <div class="aoCalV2YearHeading"><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
+    <div class="aoCalV2YearHeading"><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2>
+    <details class="aoCalCompactFilters"><summary aria-label="${esc(L("Filter calendar","Filtrer le calendrier"))}">${esc(L("Filter","Filtrer"))}</summary>
+      ${monthIndexTabs()}${monthLayoutTabs()}</details></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1" aria-label="${esc(L("Previous month","Mois précédent"))}">${assetIcon("ao-ui-previous")}<span class="aoCalMonthNavLong">${esc(L("Previous month","Mois précédent"))}</span><span class="aoCalMonthNavShort">${esc(L("Previous","Précédent"))}</span></button><button type="button" data-cal-month-shift="1" aria-label="${esc(L("Next month","Mois suivant"))}"><span class="aoCalMonthNavLong">${esc(L("Next month","Mois suivant"))}</span><span class="aoCalMonthNavShort">${esc(L("Next","Suivant"))}</span>${assetIcon("ao-ui-next")}</button></div>
-    <details class="aoCalCompactFilters"><summary>${esc(L("Filter · view","Filtres · vue"))}</summary>
-      ${monthIndexTabs()}${monthLayoutTabs()}</details>
-    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?"":attempted?L("Some dates unavailable","Certaines dates indisponibles"):L("Loading dates…","Chargement des dates…"))}</span></div>
+    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?"":attempted?L("Some dates unavailable","Certaines dates indisponibles"):"")}</span></div>
     ${retryable?`<button type="button" class="aoCalV2Retry" data-cal-month-retry>${esc(L(`Retry ${retryable} unavailable day(s)`,`Réessayer pour ${retryable} jour(s) indisponible(s)`))}</button>`:""}
     ${projection}
     <details class="aoCalV2MonthTools"><summary>${esc(L("More options","Autres options"))}</summary><div class="aoCalV2MonthExport"><button type="button" class="aoCalV2TextLink" data-cal-export-ics="${esc(pickerMonthId)}" ${exportReady?"":'disabled aria-disabled="true"'} title="${esc(L("Download resolved general Roman calendar as an all-day .ics file; no Mass schedules or local feasts.","Télécharger le calendrier romain général résolu au format .ics, sans horaires de messe ni propres locaux."))}">${esc(L("Export this month · .ics","Exporter ce mois · .ics"))}</button><small>${esc(exportReady?L("Liturgical observances only · no Mass times","Célébrations uniquement · sans horaires de messe"):L("Available when every day is resolved","Disponible lorsque tous les jours sont résolus"))}</small><p data-cal-export-error role="status" aria-live="polite"></p></div>
@@ -1190,7 +1192,13 @@ function calendarAuditCss(){
 #ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-outside-row][hidden]{display:none!important}
 #ao-calendar-modular-root .aoCalV2Picker .aoCalMonthName{display:none!important}
 #ao-calendar-modular-root .aoCalV2Picker [data-cal-pick-date]{min-height:48px!important;padding:6px 4px!important}
-#ao-calendar-modular-root .aoCalCompactFilters{margin:5px 0 9px;border-top:1px solid rgba(220,204,180,.2);border-bottom:1px solid rgba(220,204,180,.2)}
+#ao-calendar-modular-root .aoCalV2Picker .aoCalV2YearHeading{display:flex!important;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#ao-calendar-modular-root .aoCalV2Picker .aoCalV2YearHeading h2{flex:1 1 auto;min-width:0}
+#ao-calendar-modular-root .aoCalCompactFilters{flex:0 0 auto;min-width:80px;margin:0;border:1px solid rgba(220,204,180,.26);border-radius:8px}
+#ao-calendar-modular-root .aoCalCompactFilters[open]{flex:1 0 100%}
+#ao-calendar-modular-root .aoCalMonthColourLegend{display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center;margin:10px 0 0;font:400 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#aaa)}
+#ao-calendar-modular-root .aoCalMonthColourLegend span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+#ao-calendar-modular-root .aoCalMonthColourLegend i{width:7px;height:7px;display:inline-block;border-radius:50%}
 #ao-calendar-modular-root .aoCalCompactFilters>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;padding:9px 5px;color:inherit;font-size:14px}
 #ao-calendar-modular-root .aoCalCompactFilters>.aoCalMonthTabs{margin:8px 0!important}
 #ao-calendar-modular-root .aoCalV2Picker [data-cal-month-status]{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

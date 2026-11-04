@@ -93,6 +93,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const custom=spotlight?.article?'<button type="button" class="aoH4Custom" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(spotlight.contextDate)+'"><span class="aoH4Eyebrow">'+esc(say("Tradition","Coutume"))+'</span><strong>'+esc(spotlight.article.title[fr?"fr":"en"])+'</strong><small>'+esc(dateLabel(spotlight.contextDate,fr))+'</small></button>':"";
   const gospelSub=model.gospelReference||say("Available when the Proper resolves","Disponible après résolution du Propre");
   const humanDate=vm.dateTitle+" "+vm.dateIso.slice(0,4);
+  const worshipperTitle=vm.loading?"":vm.observedTitle;
   const introitLabel=String(vm.massIntroit||"").replace(/[,;:\s]+$/u,"").trim();
   const readBlock='<div class="aoTodayV2Below" data-ao-home-enricher-owner="'+HOME_ENRICHERS_VERSION+'"><section class="aoTodayV2ReadReflect">'+
     '<div class="aoH4SectionHead"><h2>'+esc(say("Read","Lire"))+'</h2></div><div class="aoH4Read">'+
@@ -101,7 +102,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
 
   return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'\n'+H7_SANCTUARY_CSS+'\n'+HOME_C3_CSS+'</style>'+
   '<main class="homeScreen aoTodayV2 aoTodayH4 aoH7Screens lc-'+esc(litColour)+'" data-home-language="'+vm.language+'" data-ao-home-presentation-owner="modular-home-presentation-v1">'+
-  '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Home","Retour à l’accueil"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong><button type="button" class="aoH4CalendarHelp" data-home-calendar-glossary aria-label="'+esc(say("Terms and definitions","Termes et définitions"))+'">?</button></div>'+
+  '<div class="aoH4CalendarBack"><button type="button" data-home-calendar-today aria-label="'+esc(say("Back to Home","Retour à l’accueil"))+'">←</button><strong>'+esc(say("Calendar","Calendrier"))+'</strong><button type="button" class="aoH4CalendarHelp" data-home-calendar-glossary aria-label="'+esc(say("About the calendar","À propos du calendrier"))+'">?</button></div>'+
   '<nav class="aoH4CalendarViews" aria-label="'+esc(say("Calendar views","Vues du calendrier"))+'">'+
   '<button type="button" data-home-calendar data-home-calendar-view="day">'+esc(say("Day","Jour"))+'</button>'+
   '<button type="button" data-home-calendar data-home-calendar-view="picker">'+esc(say("Month","Mois"))+'</button>'+
@@ -113,11 +114,11 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<section class="celebrationBlock aoTodayV2Frontispiece hero aoH7Hero">'+
   '<div class="aoTodayV2Art"><div class="aoTodayV2ArtSource art" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="'+esc(say("No approved artwork","Aucune œuvre approuvée"))+'"></div></div></div>'+
   '<div class="sh"></div><button class="aoC3Info aoC3MassInfo" type="button" data-home-c3-info="mass" hidden aria-label="'+esc(say("About this painting","À propos de ce tableau"))+'"><span>i</span></button><div class="top"><span class="wm">AD ORIENTEM</span>'+
-  '<button class="ib" type="button" data-home-calendar data-home-calendar-view="day" aria-label="'+esc(say("Calendar","Calendrier"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>'+
+  '<button class="ib" type="button" data-home-calendar data-home-calendar-view="day" data-home-calendar-civil-today aria-label="'+esc(say("Calendar","Calendrier"))+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>'+
   '<button class="ib" type="button" data-home-settings aria-label="'+esc(say("Settings","Réglages"))+'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M9.5 2.8h5l.7 2.3 2 .8 2.2-1.2 3.1 3.1-1.2 2.2.8 2 .1 2.5-2.2.7-.8 2 1.2 2.2-3.1 3.1-2.2-1.2-2 .8-.7 2.3h-5l-.7-2.3-2-.8-2.2 1.2-3.1-3.1 1.2-2.2-.8-2-.1-2.5 2.2-.7.8-2-1.2-2.2 3.1-3.1 2.2 1.2 2-.8z" transform="translate(0 -1.2) scale(.95)"/></svg></button></div>'+
-  '<div class="aoTodayV2HeroActions tx"><button class="date" type="button" data-home-calendar data-home-calendar-view="picker" data-home-calendar-date="'+esc(vm.dateIso)+'"><span class="eb">'+esc(vm.isToday?say("Today","Aujourd’hui"):say("Selected","Jour choisi"))+'</span><b>'+esc(humanDate)+'</b><span aria-hidden="true">⌄</span></button>'+
+  '<div class="aoTodayV2HeroActions tx"><button class="date" type="button" data-home-calendar data-home-calendar-view="picker" data-home-calendar-date="'+esc(vm.dateIso)+'" aria-label="'+esc(say("Choose date: ","Choisir la date : ")+humanDate)+'"><span class="eb">'+esc(vm.isToday?say("Today","Aujourd’hui"):say("Selected","Jour choisi"))+'</span><b>'+esc(humanDate)+'</b><span aria-hidden="true">⌄</span></button>'+
   '<span class="rb">'+esc([vm.rank,vm.colour].filter(Boolean).join(" · "))+'</span>'+
-  '<h1>'+esc(vm.observedTitle)+'</h1>'+properIdentity.replace('class="aoH4Formulary"','class="aoH4Formulary ml"')+
+  '<h1'+(vm.loading?' class="aoH7TitlePending" aria-label="'+esc(say("Loading today’s feast","Chargement de la fête du jour"))+'"':'')+'>'+esc(worshipperTitle)+'</h1>'+properIdentity.replace('class="aoH4Formulary"','class="aoH4Formulary ml"')+
   (marksMarkup?'<div class="mks">'+marksMarkup+'</div>':"")+
   '<section class="aoTodayV2Mass"><button type="button" class="btn glass aoH7Enter" data-home-h7-enter>'+
   '<span><b>'+esc(say("Enter the Mass","Entrer dans la messe"))+'</b><small lang="la">'+esc(introitLabel||say("Mass of the day","Messe du jour"))+'</small></span>'+

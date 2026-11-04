@@ -621,7 +621,9 @@ export function createHomeOwner(win=globalThis){
     if(calendar){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       const view=calendar.dataset?.homeCalendarView||"picker";
-      const date=calendar.dataset?.homeCalendarDate||null;
+      const date=calendar.hasAttribute?.("data-home-calendar-civil-today")
+        ?civilToday():(calendar.dataset?.homeCalendarDate||null);
+      if(h7MassDoorOpen){h7MassDoorOpen=false;syncH7MassDoor();}
       void openHomeCalendar(view,date).then(ok=>{
         if(!ok)showRouteError("calendar",calendar);
       });
