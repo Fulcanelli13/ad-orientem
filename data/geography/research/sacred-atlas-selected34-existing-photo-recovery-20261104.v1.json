@@ -1,0 +1,714 @@
+{
+  "schema": "AO_SACRED_ATLAS_SELECTED_34_EXISTING_IMAGE_RECOVERY_V1",
+  "date": "2026-11-04",
+  "scope": "RESEARCH_ONLY_NO_PHOTO_APPROVAL",
+  "baseline": {
+    "canonical_places": 530,
+    "published_covers": 379,
+    "selected_but_unpublished": 34,
+    "selected_source_holds": 24,
+    "selected_pd_self_source_access_holds": 10
+  },
+  "source_files": {
+    "selected24": "data/geography/research/sacred-atlas-selected24-hold-closure-20261104.v1.json",
+    "findings": "data/geography/research/sacred-atlas-selected24-current-source-findings-20261104.v1.json",
+    "pd11": "data/geography/research/sacred-atlas-round11-pd-self-selected-cover-manifest-20261104.v1.json",
+    "pdout": "data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json",
+    "decisions": "data/geography/research/photo-finder-20261030/decisions.json",
+    "photo": "data/geography/approved-place-media.v1.json"
+  },
+  "counts": {
+    "selected24_by_latest_audit": {
+      "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST": 5,
+      "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER": 6,
+      "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW": 3,
+      "HOLD_ATTRIBUTION_MISSING_OR_GENERIC": 4,
+      "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS": 2,
+      "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW": 2,
+      "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY": 2
+    },
+    "pd_self_unrecovered": 10,
+    "original_selected_no_reselection": 34,
+    "source_metadata_pass_not_publication_approval": 2,
+    "original_bytes_verified_this_batch": 0,
+    "new_media_approved": 0
+  },
+  "policy": [
+    "Original rank-1 Photo Finder selected image is the editorial choice; don't replace by a new image, crop or alias.",
+    "Source metadata eligibility does not settle derivative architectural or third-party rights.",
+    "Rate-limited Commons responses are access holds, not editorial rejection; never bypass or rotate endpoints after HTTP 429.",
+    "Do not increase the static image decoder pixel/size thresholds without a separate demonstrated safe path.",
+    "Never set rights_verified, subject_verified, crop_reviewed, or APPROVED from source metadata alone.",
+    "GitHub Actions and GitHub Pages only; no Vercel; no paid licences or contacting rights owners."
+  ],
+  "first_two_source_rights_screen": {
+    "cuba": {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "original_selected_title": "File:De extremo a extremo, Santuario Nacional de la Virgen del Cobre - panoramio.jpg",
+      "photo_license": "CC BY 3.0",
+      "photo_author": "DnTrotaMundos ☮",
+      "photographer_source": "https://commons.wikimedia.org/wiki/File:De_extremo_a_extremo,_Santuario_Nacional_de_la_Virgen_del_Cobre_-_panoramio.jpg",
+      "original_claimed_sha1": "8b1bb3dd61b0ae12eab1e4ec2f55dd8645ffb114",
+      "source_description_revision": 1197765293,
+      "panorama_jurisdiction": "Cuba",
+      "panorama_source": "https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Cuba",
+      "finding": "Photographer attribution and licence shown on Commons; Cuba panorama provision reported as permitting reproduction of public-place art. Independently confirm applicability and current original; no publication decision.",
+      "stage": "SOURCE_BYTE_PREFLIGHT_ELIGIBLE_NO_RELEASE"
+    },
+    "kuwait": {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "original_selected_title": "File:Kuwait City Holy Family Cathedral Exterior Facade.jpg",
+      "photo_license": "CC BY 4.0",
+      "photo_author": "Zairon",
+      "photographer_source": "https://commons.wikimedia.org/wiki/File:Kuwait_City_Holy_Family_Cathedral_Exterior_Facade.jpg",
+      "original_claimed_sha1": "20d76b312fbd81b8db0cdd8741e4ad24a7561e79",
+      "panorama_jurisdiction": "Kuwait",
+      "panorama_source": "https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Kuwait",
+      "finding": "Photographer's licence does not automatically clear copyright in depicted architecture; Kuwait reported to have no general freedom of panorama. Underlying rights must be evaluated independently.",
+      "stage": "ARCHITECTURAL_UNDERLYING_RIGHTS_HOLD_NO_RELEASE"
+    }
+  },
+  "next_executable_preflight": {
+    "place_id": "place:CU:el-cobre-caridad-basilica",
+    "source_title": "File:De extremo a extremo, Santuario Nacional de la Virgen del Cobre - panoramio.jpg",
+    "source_sha1": "8b1bb3dd61b0ae12eab1e4ec2f55dd8645ffb114",
+    "source_revision_id": 1197765293,
+    "source_dimensions": [
+      4544,
+      2545
+    ],
+    "source_byte_max": 32000000,
+    "decoder_max_pixels": 65000000,
+    "expected_photo_license": "CC BY 3.0",
+    "expected_source_licence_url": "https://creativecommons.org/licenses/by/3.0",
+    "expected_author": "DnTrotaMundos ☮",
+    "report_path": "/tmp/ao-atlas-el-cobre-byte-preflight-report.json",
+    "preview_path": "/tmp/ao-atlas-el-cobre-review-preview.webp",
+    "publication_authorized": false,
+    "note": "Original-byte verification and single full-frame review preview only; never write to assets/approved or modify app registries."
+  },
+  "rows": [
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "place_name": "Heiligdom Onze Lieve Vrouw ter Nood",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Heiloo, Heiligdom Onze Lieve Vrouw ter Nood, Bedevaartkerk, oost.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AHeiloo%2C_Heiligdom_Onze_Lieve_Vrouw_ter_Nood%2C_Bedevaartkerk%2C_oost.jpg",
+      "source_sha1": "caa6822542ab4a71d4e6b03d49340b775caf8848",
+      "expected_dimensions": [
+        3264,
+        2448
+      ],
+      "claimed_photographer": "M.arjon",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+      "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "place_name": "St Peter's Basilica — Vatican",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABasilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+      "source_sha1": "93ed31e7ed4e4b4fafd7b7c4460a088bf9c15b9e",
+      "expected_dimensions": [
+        13066,
+        6823
+      ],
+      "claimed_photographer": "Alvesgaspar",
+      "claimed_license": "CC BY-SA 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "place_name": "Basilica Papale di San Paolo fuori le Mura",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:StPaul.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AStPaul.jpg",
+      "source_sha1": "96d1ab3a7ddc15e0863f3dbbec8a900603e1e04b",
+      "expected_dimensions": [
+        8272,
+        5456
+      ],
+      "claimed_photographer": "StPaul.jpg",
+      "claimed_license": "CC BY 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "place_name": "Basilique de la Visitation, Annecy",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Basilique de la Visitation - 207.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABasilique_de_la_Visitation_-_207.jpg",
+      "source_sha1": "9d63b8d058630f877940d263b051262a2a86628e",
+      "expected_dimensions": [
+        2259,
+        3388
+      ],
+      "claimed_photographer": "Another one of my pictures: This photograph was taken by Medium69 (William Crochot) and released under the license stated below. You are free to use it for any ",
+      "claimed_license": "CC BY-SA 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "current_audit_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "place_name": "Église Saint-Hilaire-le-Grand, Poitiers",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Saint Hilaire Poitiers 2.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ASaint_Hilaire_Poitiers_2.jpg",
+      "source_sha1": "1e01f20b67a1e071bbf51e65e5dfa0c5412cf936",
+      "expected_dimensions": [
+        2048,
+        1191
+      ],
+      "claimed_photographer": "Unknown author",
+      "claimed_license": "CC BY 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "place_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Görög katolikus templom (8299. számú műemlék) 4.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AG%C3%B6r%C3%B6g_katolikus_templom_(8299._sz%C3%A1m%C3%BA_m%C5%B1eml%C3%A9k)_4.jpg",
+      "source_sha1": "3019c9b2038552a261ec12609d716bc3bd463433",
+      "expected_dimensions": [
+        1600,
+        1200
+      ],
+      "claimed_photographer": "Zurgiz",
+      "claimed_license": "CC BY-SA 2.5",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.5/hu/deed.en",
+      "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "place_name": "Basilica of Our Lady Help of Christians — Sheshan",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Shanghai - Basilique de She Shan - 33.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AShanghai_-_Basilique_de_She_Shan_-_33.jpg",
+      "source_sha1": "1c70b5085f5401507bf69e60f797696f166f823c",
+      "expected_dimensions": [
+        1824,
+        1368
+      ],
+      "claimed_photographer": "This illustration was made by Peter Potrowl. Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu w",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "current_audit_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "place_name": "Basílica del Santo Cristo Crucificado de Esquipulas",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Esquipulas basilica.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AEsquipulas_basilica.JPG",
+      "source_sha1": "c4094f1e1546ccaaed3c628b203d7098320d3ebf",
+      "expected_dimensions": [
+        2496,
+        1872
+      ],
+      "claimed_photographer": "Sapfan at English Wikipedia",
+      "claimed_license": "Public domain",
+      "claimed_license_url": "",
+      "current_audit_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
+      "route": "HOLD_UNDERLYING_ARTWORK_OR_SOURCE_LEGAL_BASIS",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "place_name": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:De extremo a extremo, Santuario Nacional de la Virgen del Cobre - panoramio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ADe_extremo_a_extremo%2C_Santuario_Nacional_de_la_Virgen_del_Cobre_-_panoramio.jpg",
+      "source_sha1": "8b1bb3dd61b0ae12eab1e4ec2f55dd8645ffb114",
+      "expected_dimensions": [
+        4544,
+        2545
+      ],
+      "claimed_photographer": "DnTrotaMundos ☮",
+      "claimed_license": "CC BY 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "current_audit_status": "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW",
+      "route": "ORIGINAL_BYTE_RIGHTS_SUBJECT_PREFLIGHT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "place_name": "St Henry Catholic Cathedral — Helsinki",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Pyhän Henrikin katedraali Helsinki 2022-09-18 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3APyh%C3%A4n_Henrikin_katedraali_Helsinki_2022-09-18_01.jpg",
+      "source_sha1": "10e720e0d33ac162d37861ea2f3636e12de0b0f6",
+      "expected_dimensions": [
+        7466,
+        4982
+      ],
+      "claimed_photographer": "Leonhard Lenz",
+      "claimed_license": "CC0",
+      "claimed_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "place_name": "Holy Family Catholic Co-Cathedral, Kuwait City",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Kuwait City Holy Family Cathedral Exterior Facade.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AKuwait_City_Holy_Family_Cathedral_Exterior_Facade.jpg",
+      "source_sha1": "20d76b312fbd81b8db0cdd8741e4ad24a7561e79",
+      "expected_dimensions": [
+        4569,
+        2452
+      ],
+      "claimed_photographer": "Zairon",
+      "claimed_license": "CC BY 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "current_audit_status": "METADATA_CHECK_PASS_REQUIRES_RELEASE_RIGHTS_REVIEW",
+      "route": "ORIGINAL_BYTE_RIGHTS_SUBJECT_PREFLIGHT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:SB:holy-cross-cathedral-honiara",
+      "place_name": "Holy Cross Cathedral, Honiara",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Service of Remembrance at Holy Cross Cathedral, Honiara (52270812716).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AService_of_Remembrance_at_Holy_Cross_Cathedral%2C_Honiara_(52270812716).jpg",
+      "source_sha1": "39820e59da0fc25801217dd4eec521c31ca023cb",
+      "expected_dimensions": [
+        6000,
+        4000
+      ],
+      "claimed_photographer": "U.S. Embassy Australia",
+      "claimed_license": "Public domain",
+      "claimed_license_url": "",
+      "current_audit_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
+      "route": "HOLD_UNDERLYING_ARTWORK_OR_SOURCE_LEGAL_BASIS",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "place_name": "Santuario della Madonna del Sasso, Orselina",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Madonna del Sasso, Orselina, Ticino.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AMadonna_del_Sasso%2C_Orselina%2C_Ticino.jpg",
+      "source_sha1": "7ffe6ab1270455fe5f596117e0b768887efdea08",
+      "expected_dimensions": [
+        10251,
+        7688
+      ],
+      "claimed_photographer": "Christian David",
+      "claimed_license": "CC BY-SA 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "place_name": "Marienbasilika Kevelaer",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Kevelaer, Germany - panoramio (113).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AKevelaer%2C_Germany_-_panoramio_(113).jpg",
+      "source_sha1": "5a1103f894555e12bf90a71c229c4d2f0c9a5b41",
+      "expected_dimensions": [
+        2048,
+        1155
+      ],
+      "claimed_photographer": "Ben Bender",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "current_audit_status": "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY",
+      "route": "REVIEW_EXACT_BUILDING_AND_DUPLICATE_SITE",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "place_name": "Wallfahrtsbasilika Maria Schnee, Maria Luggau",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ALesachtal_Maria_Luggau_Servitenkloster_NW-Ansicht_16072014_804.jpg",
+      "source_sha1": "ca025cb7c0d5815ccb25b5f5570e8a57331103d7",
+      "expected_dimensions": [
+        4928,
+        3280
+      ],
+      "claimed_photographer": "Johann Jaritz",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+      "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:DE:wieskirche",
+      "place_name": "Wallfahrtskirche zum Gegeißelten Heiland auf der Wies",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Wieskirche boenisch okt 2003.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AWieskirche_boenisch_okt_2003.jpg",
+      "source_sha1": "273e203687e313b5dad2403b9772a93a968f6932",
+      "expected_dimensions": [
+        2240,
+        1680
+      ],
+      "claimed_photographer": "Bönisch",
+      "claimed_license": "CC BY-SA 2.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+      "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "place_name": "Cathédrale Notre-Dame de Reims",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Reims Cathedral 016 8341.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AReims_Cathedral_016_8341.jpg",
+      "source_sha1": "83713a58b52251dd4e7c01527b9396bbc7bd43bb",
+      "expected_dimensions": [
+        5444,
+        7284
+      ],
+      "claimed_photographer": "Ludvig14",
+      "claimed_license": "CC BY-SA 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IN:st-andrews-basilica-arthunkal",
+      "place_name": "St Andrew's Basilica, Arthunkal",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Arthunkal Basilica.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AArthunkal_Basilica.jpg",
+      "source_sha1": "eed3bb615d61d1cf73210ecca76c2ef659bc54c6",
+      "expected_dimensions": [
+        16320,
+        12240
+      ],
+      "claimed_photographer": "Vis M",
+      "claimed_license": "CC BY-SA 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "current_audit_status": "HOLD_ORIGINAL_TOO_LARGE_FOR_APPROVED_DECODER",
+      "route": "ORIGINAL_TOO_LARGE_DO_NOT_BYPASS_LIMIT",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "place_name": "Bazilika Nanebevzetí Panny Marie, Svatý Hostýn",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Church of the Assumption of the Virgin Mary in Hostýn (2).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AChurch_of_the_Assumption_of_the_Virgin_Mary_in_Host%C3%BDn_(2).jpg",
+      "source_sha1": "6b354b5e53cecb91d650927c432950ec0e970d0c",
+      "expected_dimensions": [
+        4000,
+        3000
+      ],
+      "claimed_photographer": "Radosław Botev",
+      "claimed_license": "CC BY 3.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by/3.0/pl/deed.en",
+      "current_audit_status": "PORTED_CC_REQUIRES_EXACT_LEGAL_CODE_AND_APP_WHITELIST",
+      "route": "VERIFY_EXACT_CC_LEGAL_CODE_NO_GENERIC_WHITELIST",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "place_name": "Real Basílica Colegiata de San Isidoro, León",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:20060626-León San Isidoro.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3A20060626-Le%C3%B3n_San_Isidoro.jpg",
+      "source_sha1": "47f2f1b361f17219fb24c5e8d9a7f55c30e99fd5",
+      "expected_dimensions": [
+        2592,
+        1944
+      ],
+      "claimed_photographer": "Unknown author",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "place_name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Bazylika Santa Maria degli Angeli Asyż.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABazylika_Santa_Maria_degli_Angeli_Asy%C5%BC.jpg",
+      "source_sha1": "55b8fdf8190b9f114179aa150034266a8d39d038",
+      "expected_dimensions": [
+        1181,
+        949
+      ],
+      "claimed_photographer": "Unknown author",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "place_name": "Basilique Notre-Dame de Buglose",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Saint-Vincent-de-Paul - Basilique Notre-Dame de Buglose - 25.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ASaint-Vincent-de-Paul_-_Basilique_Notre-Dame_de_Buglose_-_25.jpg",
+      "source_sha1": "5d8a852d75e9aa0e0e2190c1329e34bdc95e8b35",
+      "expected_dimensions": [
+        1824,
+        1368
+      ],
+      "claimed_photographer": "This illustration was made by Peter Potrowl. Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu w",
+      "claimed_license": "CC BY-SA 4.0",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "current_audit_status": "ATTRIBUTION_EVIDENCE_REQUIRES_EDITORIAL_REVIEW",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "place_name": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Poland Trzebnica - sanctuary of Hedwig.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3APoland_Trzebnica_-_sanctuary_of_Hedwig.jpg",
+      "source_sha1": "02bd292df52e6d4b791ddab33a6a4795b7b3aeca",
+      "expected_dimensions": [
+        2762,
+        2000
+      ],
+      "claimed_photographer": "Own work",
+      "claimed_license": "CC BY-SA 3.0",
+      "claimed_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "current_audit_status": "HOLD_ATTRIBUTION_MISSING_OR_GENERIC",
+      "route": "SOURCE_AUTHOR_IDENTITY_VERIFICATION",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "place_name": "Antico Santuario di San Gabriele dell'Addolorata",
+      "source_type": "EXISTING_SELECTED_CC_OR_OTHER",
+      "original_selected_title": "File:Santuario San Gabriele dell'Addolorata Abruzzo 03.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ASantuario_San_Gabriele_dell'Addolorata_Abruzzo_03.JPG",
+      "source_sha1": "6a3e8384f7344a5ad7425bd424e366ee2a4454c0",
+      "expected_dimensions": [
+        1600,
+        1200
+      ],
+      "claimed_photographer": "freegiampi",
+      "claimed_license": "CC BY-SA 2.5",
+      "claimed_license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "current_audit_status": "HOLD_DUPLICATE_PLACE_SOURCE_IDENTITY",
+      "route": "REVIEW_EXACT_BUILDING_AND_DUPLICATE_SITE",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "place_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Pagani-basi.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3APagani-basi.jpg",
+      "source_sha1": "b79a67d5fb5f745338d016e8102263ffbab105c6",
+      "expected_dimensions": [
+        2048,
+        1536
+      ],
+      "expected_original_bytes": 342574,
+      "source_description_revision": 1119525521,
+      "claimed_photographer": "Bocachete",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "place_name": "Divine Mercy Sanctuary, Vilnius",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Divine Mercy Sanctuary in Vilnius1.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ADivine_Mercy_Sanctuary_in_Vilnius1.jpg",
+      "source_sha1": "7861c64413a500df15555935fce2c017baa6a7f3",
+      "expected_dimensions": [
+        2304,
+        3072
+      ],
+      "expected_original_bytes": 2980876,
+      "source_description_revision": 1207035733,
+      "claimed_photographer": "Alma Pater",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "place_name": "Basilica of Our Lady of Deliverance, Popenguine",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:PopenguineChurch.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3APopenguineChurch.JPG",
+      "source_sha1": "eefb0268c1f830280c2ade435cf5ae0c213e9c81",
+      "expected_dimensions": [
+        3072,
+        2304
+      ],
+      "expected_original_bytes": 1177805,
+      "source_description_revision": 1270386303,
+      "claimed_photographer": "Ji-Elle",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "place_name": "Church of Saint Peter, Jaffa",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Jaffa BW 3.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AJaffa_BW_3.JPG",
+      "source_sha1": "464041e6cdeb37ae3ef3a2a2c1f213976b9b1488",
+      "expected_dimensions": [
+        3524,
+        2350
+      ],
+      "expected_original_bytes": 3329663,
+      "source_description_revision": 1249185781,
+      "claimed_photographer": "Berthold Werner",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "place_name": "Basilica of the Annunciation, Nazareth",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Nazaret Verkuendigungsbasilika BW 16.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ANazaret_Verkuendigungsbasilika_BW_16.JPG",
+      "source_sha1": "7acd5c7e849f41a4e4a6ddaf4d99bca5cf794f06",
+      "expected_dimensions": [
+        2455,
+        3680
+      ],
+      "expected_original_bytes": 3731800,
+      "source_description_revision": 1157709918,
+      "claimed_photographer": "Berthold Werner",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "place_name": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:San Francesco, Lanciano 5.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ASan_Francesco%2C_Lanciano_5.JPG",
+      "source_sha1": "a8d496935e0107ec6101f7024746c8262dd02d2c",
+      "expected_dimensions": [
+        1498,
+        1997
+      ],
+      "expected_original_bytes": 1236058,
+      "source_description_revision": 1114799246,
+      "claimed_photographer": "Zitumassin",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "place_name": "Cathedral of the Assumption of the Virgin Mary — Tbilisi",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Tbilisi Catholical church St. Maria.png",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ATbilisi_Catholical_church_St._Maria.png",
+      "source_sha1": "67ec216ecccd51d9a34b31c6ba888485fb109d9e",
+      "expected_dimensions": [
+        2748,
+        3664
+      ],
+      "expected_original_bytes": 13592834,
+      "source_description_revision": 1076379713,
+      "claimed_photographer": "Temuri",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "place_name": "Dulce Nombre de Maria Cathedral-Basilica, Hagåtña",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Dulce Nombre de Maria Cathedral Basilica.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ADulce_Nombre_de_Maria_Cathedral_Basilica.JPG",
+      "source_sha1": "ddb57a34d088f6eed4c4caac144b245f7ee2c479",
+      "expected_dimensions": [
+        2048,
+        1536
+      ],
+      "expected_original_bytes": 1475728,
+      "source_description_revision": 1214810067,
+      "claimed_photographer": "Abasaa",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "place_name": "Our Lady of Mount Carmel Cathedral, Saipan",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:Saipan Mount Carmel Cathedral.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ASaipan_Mount_Carmel_Cathedral.JPG",
+      "source_sha1": "dd509b1cf05cd2498859540b32e97513f8ffe25c",
+      "expected_dimensions": [
+        2048,
+        1536
+      ],
+      "expected_original_bytes": 1423450,
+      "source_description_revision": 1143621439,
+      "claimed_photographer": "Abasaa",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    },
+    {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "place_name": "Basílica Nuestra Señora de la Monserrate",
+      "source_type": "EXISTING_SELECTED_PD_SELF",
+      "original_selected_title": "File:BasilicaMenor-HormiguerosPR-02.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABasilicaMenor-HormiguerosPR-02.JPG",
+      "source_sha1": "2218b13687b15da93062d794e48ccf8255ac74ef",
+      "expected_dimensions": [
+        1075,
+        806
+      ],
+      "expected_original_bytes": 351936,
+      "source_description_revision": 1249386441,
+      "claimed_photographer": "Jcarrillovii",
+      "claimed_license": "PD-self",
+      "current_audit_status": "UNRECOVERED_COMMONS_HTTP_429_OR_UNATTEMPTED",
+      "route": "ONE_SHOT_RATE_LIMIT_RESPECTFUL_SOURCE_RECOVERY_ONLY",
+      "publication_allowed": false
+    }
+  ]
+}
