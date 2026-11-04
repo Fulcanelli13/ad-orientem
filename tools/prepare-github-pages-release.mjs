@@ -75,6 +75,7 @@ if(bytes>1_000_000_000)fail("site exceeds GitHub Pages 1GB limit: "+bytes+" byte
 if(files<100)fail("unexpectedly small site output, refusing partial release: "+files+" files");
 console.log(JSON.stringify({
  host:"GitHub Pages",root:"dist/web-preview",files,bytes,
+ releaseSha:checkoutSha,workflowRunId:proof.workflow_run_id,verifiedCriticalAssets:paths.length,
  pagesMaxBytes:1_000_000_000,
  safeForProjectSubpath:true,
  noindexPreserved:true,
