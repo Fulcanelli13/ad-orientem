@@ -3,6 +3,8 @@
 import {readFile,writeFile,readdir,stat,lstat} from "node:fs/promises";
 import {resolve,join,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
+import {execFileSync} from "node:child_process";
+import {createReleaseProof,criticalReleasePaths,releaseCommitSha,releaseSha256,RELEASE_PROOF_FILENAME} from "./github-pages-release-proof.mjs";
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const output=resolve(root,"dist/web-preview");
@@ -33,6 +35,26 @@ await writeFile(join(output,"404.html"),html);
 await writeFile(join(output,".nojekyll"),"");
 const robotsTxt=await readFile(join(output,"robots.txt"),"utf8");
 if(!/Disallow:\s*\//.test(robotsTxt))fail("robots.txt lost crawler exclusion");
+
+// Bind the *curated* upload to the exact checkout and workflow run.
+// A later smoke test reads this file from public Pages (not GitHub source)
+// and verifies hashes of the critical published bytes.
+const checkoutSha=releaseCommitSha(execFileSync("git",["rev-parse","HEAD"],{cwd:root,encoding:"utf8"}).trim());
+if(process.env.GITHUB_SHA&&releaseCommitSha(process.env.GITHUB_SHA)!==checkoutSha){
+ fail("GitHub Actions SHA differs from the checked-out source commit");
+}
+const paths=criticalReleasePaths(html);
+const criticalSha256={};
+for(const path of paths){
+ criticalSha256[path]=releaseSha256(await readFile(join(output,path)));
+}
+const proof=createReleaseProof({
+ sha:checkoutSha,
+ runId:process.env.GITHUB_RUN_ID||null,
+ indexHtml:html,
+ assetSha256:criticalSha256,
+});
+await writeFile(join(output,RELEASE_PROOF_FILENAME),JSON.stringify(proof,null,2)+"\n");
 
 // GitHub Pages has a 1GB published-site ceiling. Abort before uploading an
 // oversized artifact rather than silently stripping required application data.
