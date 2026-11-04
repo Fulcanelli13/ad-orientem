@@ -42,9 +42,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
       - name: Install pinned test dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm install --no-audit --no-fund
       - name: Install Chromium for Playwright
         run: npx playwright install --with-deps chromium
       - name: Decode all 21 source photos in real Prayer DOM, two phone widths, two languages
