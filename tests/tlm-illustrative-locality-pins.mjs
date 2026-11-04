@@ -1,4 +1,4 @@
-// 170 illustrative CL2 locality positions: no GPS-coordinate navigation,
+// 169 illustrative CL2 locality positions: no GPS-coordinate navigation,
 // no venue identity merges and no current Mass or ecclesial status inferred.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
@@ -15,18 +15,18 @@ const world=projectCL2PhysicalDirectory(pub,index);
 assert.equal(audit.schema,"AO_CL2_ILLUSTRATIVE_LOCALITY_REVIEW_V1");
 assert.equal(audit.scope,"PROVISIONAL_DISCOVERY_MARKERS_NO_GPS_DESTINATIONS");
 assert.equal(audit.records.length,435);
-assert.equal(audit.counts.eligible,170);
-assert.equal(audit.counts.identity_holds,8);
+assert.equal(audit.counts.eligible,169);
+assert.equal(audit.counts.identity_holds,9);
 assert.equal(audit.counts.ambiguous,8);
 assert.equal(audit.counts.no_safe_match,249);
 assert.equal(audit.counts.current_published_map_pins,2147);
 const pins=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS);
-assert.equal(pins.length,170);
-assert.equal(new Set(pins.map(([id])=>id)).size,170);
+assert.equal(pins.length,169);
+assert.equal(new Set(pins.map(([id])=>id)).size,169);
 const origins=new Map(index.records.map(r=>[r[0],r]));
 const items=new Map(world.map(item=>[item.physical_group_id,item]));
 const approvals=audit.records.filter(r=>r.status==="ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE");
-assert.equal(approvals.length,170);
+assert.equal(approvals.length,169);
 assert.deepEqual(new Set(approvals.map(r=>r.cl2_anchor)),new Set(pins.map(([id])=>id)));
 for(const [id,loc] of pins){
  const original=origins.get(id),found=items.get(id);
@@ -66,7 +66,7 @@ for(const [id,loc] of pins){
  assert.ok(!action.url.includes("/maps/dir/"));
 }
 const withheld=audit.records.filter(r=>r.status!=="ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE");
-assert.equal(withheld.length,265);
+assert.equal(withheld.length,266);
 for(const r of withheld){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor]);
  const item=items.get(r.cl2_anchor);
@@ -75,12 +75,13 @@ for(const r of withheld){
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-615FF6835AAE"],"Poprad city identity conflict must remain held");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
+assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2317);
-assert.equal(world.filter(x=>!x.map_publishable).length,265);
+assert.equal(world.filter(x=>x.map_publishable).length,2316);
+assert.equal(world.filter(x=>!x.map_publishable).length,266);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 170 provisional, 265 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 169 provisional, 266 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
