@@ -1,0 +1,33 @@
+name: Sacred Atlas Round 20 — source holds and review offline gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-round20-*.json'
+      - 'data/geography/research/sacred-atlas-undecided66-bulk-photo-review-20261104.html'
+      - 'tools/atlas/recover-sacred-atlas-28-wikidata-p18.py'
+      - 'tests/sacred-atlas-round20-source-and-review-contract.mjs'
+      - '.github/workflows/sacred-atlas-round20-offline.yml'
+permissions:
+  contents: read
+jobs:
+  source-hold-and-script-validation:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.event.pull_request.head.ref, 'research/sacred-atlas-round20-') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate candidate holds and 66-Place review script
+        run: node tests/sacred-atlas-round20-source-and-review-contract.mjs
+      - name: Validate Wikidata research offline without network
+        run: |
+          python tools/atlas/recover-sacred-atlas-28-wikidata-p18.py --self-test
+          python tools/atlas/recover-sacred-atlas-28-wikidata-p18.py --dry-run
