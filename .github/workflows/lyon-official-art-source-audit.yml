@@ -1,0 +1,39 @@
+name: Lyon official masterpiece photos - research only
+on:
+  push:
+    branches: [research/artwork-original-pixels-20261104]
+    paths:
+      - tools/artwork/lyon_official_source_discovery.py
+      - tests/test_lyon_official_source_discovery.py
+      - .github/workflows/lyon-official-art-source-audit.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check beautifulsoup4==4.13.4
+      - run: python -m unittest discover -s tests -p test_lyon_official_source_discovery.py -v
+      - run: python tools/artwork/lyon_official_source_discovery.py --output artifacts/artwork-lyon-official-source-audit/report.json
+      - run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('artifacts/artwork-lyon-official-source-audit/report.json'))
+          assert r['publication'] is False and r['automatically_approved'] is False
+          assert len(r['targets'])==3
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lyon-official-source-audit
+          path: artifacts/artwork-lyon-official-source-audit/
+          if-no-files-found: warn
+          retention-days: 7
