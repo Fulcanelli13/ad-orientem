@@ -1,0 +1,62 @@
+{
+  "schema": "AO_LYON_372_376_SOURCE_AND_DERIVATIVE_QA_20261104_V1",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41811516633",
+  "sourceArtifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41811516633/artifacts/13313155249",
+  "publicationApproved": false,
+  "existingGalleryModified": false,
+  "prayerCalendarChanges": false,
+  "photoUse": "Museum press page labels these files 'Reproduction libre de droit'; independent app/gallery scope review remains open",
+  "photographerCredit": "Image © Lyon MBA - Photo Alain Basset",
+  "rightsPage": "https://www.mba-lyon.fr/fr/article/peintures-visuels-pour-la-presse",
+  "records": [
+    {
+      "record_id": 372,
+      "artist": "Pietro Perugino",
+      "work": "The Ascension of Christ",
+      "officialURL": "https://www.mba-lyon.fr/sites/mba/files/content/medias/images/2020-07/perugin_ascension_du_christ_presse.jpg",
+      "originalPixels": [
+        2600,
+        4499
+      ],
+      "original_sha256": "bb9ae258ef86b12a755bd06152c6fbabb5ee785f001d693921c539b8cd2a2b24",
+      "sourcePrevious": [
+        698,
+        930
+      ],
+      "qualityDecision": "PREFER_OFFICIAL_LYON_SOURCE_PROVISIONAL",
+      "composition": "Separate upper God-the-Father lunette + main Ascension panel in one museum image, divided by white photographic background",
+      "publicationCropStatus": "NO_FINAL_CROP_SELECTION",
+      "derivativeFamily": "full composite: 3200/1600/720 long edge; review-only lower panel and lunette crops",
+      "icc": "sRGB conversion",
+      "sourcePhotoRetained": true
+    },
+    {
+      "record_id": 376,
+      "artist": "Peter Paul Rubens",
+      "work": "Adoration of the Magi",
+      "officialURL": "https://www.mba-lyon.fr/sites/mba/files/content/medias/images/2020-07/rubens_ladoration_des_mages.jpg",
+      "originalPixels": [
+        2500,
+        1892
+      ],
+      "original_sha256": "0ea4a613ac47e2ee610e377b807a0e0a9b48789dc9c949838898ef69515e7faf",
+      "previousCommons": [
+        4500,
+        3417
+      ],
+      "qualityDecision": "OFFICIAL_MUSEUM_COLOR_COMPARATOR_NOT_AUTOMATIC_BEST_SOURCE",
+      "composition": "Entire painting; no colour-calibration chart",
+      "publicationCropStatus": "NO_CROP",
+      "derivativeFamily": "whole canvas: full/medium/card",
+      "icc": "sRGB conversion",
+      "sourcePhotoRetained": true
+    }
+  ],
+  "falseMatchProtection": "Nicolas Poussin 'Death of Chione' on the Lyon press page is NOT 'Flight into Egypt' (approved record 373); the source scanner now rejects this false positive.",
+  "sourceSelectionPolicy": [
+    "Exact institutional photo only, no inferred licence for app",
+    "No interpolation or upscaling",
+    "No publication without individual source and QA gates",
+    "Do not overwrite an existing protected prayer/calendar photo"
+  ]
+}
