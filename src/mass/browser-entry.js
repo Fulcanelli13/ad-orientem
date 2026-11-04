@@ -19,7 +19,7 @@ import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
 import "./observed-local-orations-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
-import { mountNativeReaderPreview } from "./reader-native-preview.js";
+// Heavy native R17 card renderer loads only at Start/Resume, not cold Home.
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { R17_REVIEWED_POSTURE_ASSETS } from "./reader-reviewed-posture-assets.js";
@@ -687,7 +687,7 @@ export function suspendPersistedMass({
 export async function mountR17Preview({
   doc,
   prepared,
-  nativeMount=mountNativeReaderPreview,
+  nativeMount=null,
   iconAssets=resolveHostIconAssets(),
 }={}) {
   const assets=iconAssets;
@@ -695,11 +695,15 @@ export async function mountR17Preview({
   if(!iconAudit.complete){
     throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
   }
+  // Keep injected nativeMount for source/rubric tests. Otherwise load
+  // the original, unmodified native reader only upon actual Start/Resume.
+  const readerMount=nativeMount??(await import("./reader-native-preview.js")).mountNativeReaderPreview;
+  if(typeof readerMount!=="function")throw new Error("R17_NATIVE_MOUNT_UNAVAILABLE");
   // Production is the source-curated 65-family Ordinary Sung LIVE reader
   // (64 ordinarily visible without the optional second Confiteor).
   // URL parameters and persisted legacy modes may not select 48-card
   // research presentations. Special rites retain source-backed ownership.
-  const preview=await Promise.resolve(nativeMount({
+  const preview=await Promise.resolve(readerMount({
     doc,
     prepared,
     iconResolver:createHostIconResolver({assets}),

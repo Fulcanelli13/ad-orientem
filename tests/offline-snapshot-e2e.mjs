@@ -86,6 +86,7 @@ try{
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
+     "src/mass/reader-native-preview.js",
      "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
@@ -101,6 +102,26 @@ try{
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
+ // Exercise a genuinely disconnected, unvisited tab: the deferred R17
+ // native module and *its static descendants* must load from the completed
+ // versioned snapshot, not just appear as metadata in CacheStorage.
+ const r17OfflineTab=await context.newPage();
+ try{
+   await r17OfflineTab.goto(origin,{waitUntil:"domcontentloaded",timeout:90000});
+   const r17Offline=await r17OfflineTab.evaluate(async()=>{
+     try{
+       const url=new URL("src/mass/reader-native-preview.js",
+         new URL("./",location.href)).href;
+       const mod=await import(url);
+       return {mountType:typeof mod.mountNativeReaderPreview,
+         controlled:Boolean(navigator.serviceWorker.controller)};
+     }catch(error){return {error:String(error?.message||error)};}
+   });
+   assert.deepEqual(r17Offline,{mountType:"function",controlled:true},
+     "Deferred native R17 renderer cannot load from a new offline tab: "+JSON.stringify(r17Offline));
+   console.log("PASS deferred R17 reader module and static descendants load on first offline tab");
+ }finally{await r17OfflineTab.close();}
+
  // The Rosary is a core devotional pilot journey: it must open on a first
  // offline launch after a completed bootstrap, even before it was opened online.
  // This exercises the actual first-use dynamic Prayer module graph, not just Home.
