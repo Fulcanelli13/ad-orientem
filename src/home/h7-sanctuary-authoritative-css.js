@@ -274,4 +274,8 @@ html[data-ao-appearance-choice-v1="light"] .aoH7Screens{
 .aoH7Screens .aoH7HomeView .aoH7TitlePending{min-height:1.15em}
 .aoH7Screens .aoH7HomeView .aoH7TitlePending:before{content:"";display:block;width:min(68%,270px);height:30px;border-radius:5px;background:color-mix(in srgb,var(--ink) 18%,transparent)}
 
+/* Retire the donor-added kicker on H7: it otherwise overlays the approved
+   wordmark at 320/390 px. The original non-H7 Home retains this label. */
+.homeScreen.aoTodayH4.aoH7Screens .aoH7Hero > .aoLiturgicalDayKicker{display:none!important}
+
 `;

@@ -52,6 +52,14 @@ try{
       .find(x=>x.name==="first-contentful-paint")?.startTime??0)}));
    cold.requestCount=requestList.length;
    cold.scriptRequests=requestList.filter(x=>x.kind==="script"||/\.m?js(\?|$)/.test(x.url)).length;
+   // The original donor injects a title-sized "LITURGICAL DAY" kicker.
+   // H7 replaces it with the wordmark/calendar/date hierarchy: it cannot
+   // overlap the brand in either 320 or 390 px.
+   const legacyKicker=page.locator(".aoH7HomeView .aoH7Hero > .aoLiturgicalDayKicker");
+   if(await legacyKicker.count()){
+     assert.equal(await legacyKicker.evaluate(el=>getComputedStyle(el).display),"none",
+       "Legacy liturgical-day kicker overlaps the approved H7 wordmark");
+   }
    await page.screenshot({path:resolve(out,"home-"+width+".png"),animations:"disabled"});
    const now=()=>page.evaluate(()=>performance.now());
    const tCal=await now();
