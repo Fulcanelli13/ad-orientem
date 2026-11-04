@@ -37,6 +37,13 @@ try{
   // Observe actual Chromium transfer sizes and long tasks instead of
   // mistaking Resource Timing's unavailable transferSize for a zero payload.
   const networkResponses=new Map(),wireTransfers=[];
+  // A slow font provider must not hold the whole source-ready app behind
+  // the cinematic curtain. Exercise the boot contract on the narrow phone.
+  if(width===320)await page.addInitScript(()=>{
+    Object.defineProperty(document.fonts,"status",{
+      configurable:true,get:()=>"loading"
+    });
+  });
   await page.addInitScript(()=>{
     globalThis.__AO_H7_LONG_TASKS=[];
     try{
@@ -70,6 +77,14 @@ try{
       document.querySelector(".aoH7HomeView:not([hidden]) [data-home-h7-enter]")&&!splashVisible);
    };
    await page.waitForFunction(homeReady,null,{timeout:90000});
+   const fontBoot=await page.evaluate(()=>({
+     reason:document.documentElement.dataset.aoCinemaBootReason,
+     fontStatus:document.fonts?.status??null
+   }));
+   assert.equal(fontBoot.reason,"home-stable",
+     "Home must finish from resolved content, not the eight-second boot watchdog");
+   if(width===320)assert.equal(fontBoot.fontStatus,"loading",
+     "Font-stall boot regression did not simulate a persistent remote-font delay");
    const cold=await page.evaluate(()=>({settledMs:Math.round(performance.now()),
     firstContentfulPaintMs:Math.round(performance.getEntriesByType("paint")
       .find(x=>x.name==="first-contentful-paint")?.startTime??0)}));
@@ -141,7 +156,7 @@ try{
    const warm={settledMs:Math.round(await now()),requestCount:requestList.length};
    assert.deepEqual(errors,[],"Uncaught browser errors");
    samples.push({width,profile:"headless Chromium 4x CPU, loopback static server",
-    cold,calendarOpenMs,calendarToDoorMs,feast,warm,
+    cold,fontBoot,calendarOpenMs,calendarToDoorMs,feast,warm,
     targets:{coldSettledMs:1500,startupRequestsBelow:30,calendarToDoorMsBelow:300},
     meets:{cold:cold.settledMs<=1500,requests:cold.requestCount<30,door:calendarToDoorMs<300}});
    console.log("H7_BLUEPRINT_AUDIT "+JSON.stringify(samples.at(-1)));
