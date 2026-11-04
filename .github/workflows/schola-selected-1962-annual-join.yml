@@ -12,6 +12,8 @@ on:
       - 'src/mass/reader-schola-2026-release-worklist.js'
       - 'scripts/schola/build-2026-score-publication-worklist.mjs'
       - 'tests/reader-schola-2026-release-worklist.mjs'
+      - 'scripts/schola/reconcile-2026-completion-exceptions.mjs'
+      - 'tests/schola-2026-completion-source-exceptions.mjs'
       - 'src/mass/reader-proper-first60-print-review.js'
       - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
       - 'tests/reader-proper-first60-print-review.mjs'
@@ -92,6 +94,10 @@ jobs:
         run: node tests/schola-2026-pinned-review-queue-lock.mjs
       - name: Build consolidated 2026 worklist and 24 pre-Gospel print-review leads
         run: node scripts/schola/build-2026-score-publication-worklist.mjs
+      - name: Reconcile closeout exceptions from existing annual evidence, with no acquisition or publication
+        run: |
+          node scripts/schola/reconcile-2026-completion-exceptions.mjs
+          node tests/schola-2026-completion-source-exceptions.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
