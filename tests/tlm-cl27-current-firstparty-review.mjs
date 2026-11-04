@@ -87,3 +87,34 @@ for(const id of ["AU-EAST-GREENMOUNT","AU-BUDERIM"]){
     "VARIABLE_TIME_NOT_FIXED_RECURRENCE");
 }
 console.log("PASS CL27 historical source review: 296 frozen rows / 120 source pages / 143 site anchors; 34 reviewed without public promotion");
+
+
+// A community/source role is not an individual Mass's rite, communion profile,
+// celebrant, legal building title, or timeless canonical standing.
+const roleReview=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/classification-role-review.v1.json",
+  import.meta.url),"utf8"));
+assert.equal(roleReview.schema,"AO_CL27_SOURCE_ROLE_REVIEW_V1");
+assert.equal(roleReview.publication,"RESEARCH_ONLY_NO_CLASSIFICATION_PROMOTION");
+assert.equal(roleReview.records.length,13);
+const observedAnchors=new Set();
+const permitted=new Set(["ICKSP","FSSP","CARMELITE","ORATORIAN","SSPX","UNKNOWN"]);
+for(const r of roleReview.records){
+  const match=d.reviewed_cases.find(c=>c.id===r.case_id);
+  assert.ok(match&&match.anchor===r.cl2_anchor);
+  assert.equal(match.current_source,r.source_url);
+  assert.equal(match.source_kind,r.source_kind);
+  assert.ok(permitted.has(r.source_reported_community));
+  assert.equal(r.subject,"SOURCE_NAMED_RELATIONSHIP_NOT_ALL_CELEBRATIONS");
+  assert.equal(r.publication,"HOLD_CLASSIFICATION_SOURCE_SCOPED_RESEARCH");
+  for(const field of ["una_cum","pope_named_in_canon","recognises_current_pontiff",
+                     "ecclesial_position","canonical_status","exact_celebrant",
+                     "missal_edition","rubrical_basis","venue_legal_owner"]){
+    assert.ok(r.unknown_until_independently_documented.includes(field));
+    assert.ok(!Object.hasOwn(r,field),"No unsupported public classification: "+field);
+  }
+  observedAnchors.add(r.cl2_anchor);
+}
+assert.equal(observedAnchors.size,12);
+assert.equal(roleReview.records.filter(r=>r.case_id==="US-DALLAS-CARMEL").length,2);
+console.log("PASS CL27 source roles: 13 scoped relationship observations / 12 sites; 0 published canonical or Una Cum claims");
