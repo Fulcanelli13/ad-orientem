@@ -1,0 +1,35 @@
+name: Mass 1962 remaining three original commemoration section witnesses
+
+on:
+  pull_request:
+    paths:
+      - 'tests/1962-three-embedded-commemorations.mjs'
+      - '.github/workflows/mass-1962-three-commemorations.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  three-source-witnesses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing browser test dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Audit original March and Christmas 1962 commemoration sections without altering Mass
+        run: node tests/1962-three-embedded-commemorations.mjs
+      - name: Save exact source-section and calendar-identity witnesses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-three-commemoration-original-section-witnesses
+          path: artifacts/mass/1962-three-embedded-commemoration-witnesses.json
+          if-no-files-found: warn
+          retention-days: 21
