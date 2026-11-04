@@ -143,6 +143,29 @@ for(const item of approved.items){
     assert.equal(item.source_sha1,"6524c0f5eaf0f0ddaae7d669a8cdf7d1123cf3c5");
     assert.equal(item.asset_path,"assets/approved/place-media/FR-notre-dame-paris-2026.webp");
     assert.equal(item.license,"CC-BY-SA-4.0");
+  }else if(item.source_place_ref==="PHOTO_FINDER_2026-10-30_PD_SELF_R1"){
+    // A previously selected Commons PD-self photo may be published only after
+    // separate source-revision, original-byte and derivative proof. Never
+    // treat the historic "Public domain" export label as authorization.
+    const manifest=read("data/geography/research/sacred-atlas-round11-pd-self-selected-cover-manifest-20261104.v1.json");
+    const evidence=read("data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json");
+    const source=manifest.rows.find(x=>x.place_id===item.place_id);
+    const proof=evidence.published.find(x=>x.place_id===item.place_id);
+    assert.ok(source&&proof&&evidence.current_exact_sha1_original_bytes_pd_self_and_revision_verified_for_published,
+      "PD-self source requires independent current-rights and original-byte evidence");
+    assert.equal(source.commons_file,finder.decisions[item.place_id]?.files?.[0]);
+    assert.equal(source.original_sha1,item.source_sha1);
+    assert.equal(source.expected_revision_id,proof.source_revision_id);
+    assert.equal(item.source_sha1,proof.source_sha1);
+    assert.equal(item.derivative_sha256,proof.derivative_sha256);
+    assert.equal(item.asset_path,proof.asset_path);
+    assert.equal(proof.rights_template,"PD-self");
+    assert.equal(item.license,"PUBLIC_DOMAIN");
+    assert.equal(item.license_url,"https://creativecommons.org/publicdomain/mark/1.0/");
+    assert.equal(item.credit,proof.current_artist);
+    assert.ok(item.review_method.includes("original source bytes"),
+      "Exact-source PD-self and original-file audit must be recorded");
+    assert.match(item.asset_path,/^assets\/approved\/place-media\/pf-[a-f0-9]{22}\.webp$/);
   }else if(item.source_place_ref==="PHOTO_FINDER_2026-10-30_R1"){
     assert.match(item.asset_path,/^assets\/approved\/place-media\/pf-[a-f0-9]{22}\.webp$/);
     const decision=finder.decisions[item.place_id];
