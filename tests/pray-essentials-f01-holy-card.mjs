@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {renderEssentialFlowReader,ESSENTIAL_FLOW_READER_SCHEMA} from "../src/pray/essential-flow-reader.js";
+import {renderEssentialFlowReader,ESSENTIAL_FLOW_READER_SCHEMA,essentialFlowReaderEnabled} from "../src/pray/essential-flow-reader.js";
 
 import {test} from "node:test";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
@@ -12,6 +12,15 @@ const five=Object.freeze({
  foundations_hail_mary:3,
  foundations_glory_be:2,
  foundations_apostles_creed:9
+});
+
+test("Continuous reader requires explicit opt-in; original F01 remains default",()=>{
+ assert.equal(essentialFlowReaderEnabled({location:{search:""}}),false);
+ assert.equal(essentialFlowReaderEnabled({location:{search:"?aoPrayerPilot=1"}}),false);
+ assert.equal(essentialFlowReaderEnabled({location:{search:"?aoEssentialFlow=0"}}),false);
+ assert.equal(essentialFlowReaderEnabled({location:{search:"?aoEssentialFlow=1"}}),true);
+ assert.equal(essentialFlowReaderEnabled({location:{search:"?aoEssentialFlow=1&aoPrayerPilot=0"}}),true);
+ assert.equal(essentialFlowReaderEnabled({location:{search:"?aoEssentialFlow=unexpected"}}),false);
 });
 
 test("F01 entire 32-text corpus: exact EN/FR/LA faces, no fabricated translations",()=>{
