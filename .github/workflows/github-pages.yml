@@ -35,6 +35,7 @@ on:
       - 'tools/github-pages-release-proof.mjs'
       - 'tests/github-pages-release-proof.test.mjs'
       - 'tools/build-web-preview.mjs'
+      - 'tests/prayer-stations-curated-release-hold.mjs'
       - 'vercel.json'
   workflow_dispatch:
 
@@ -69,6 +70,8 @@ jobs:
         run: node tools/build-web-preview.mjs
       - name: Validate base path, noindex, release safety and 1GB Pages cap
         run: node tools/prepare-github-pages-release.mjs
+      - name: Verify fourteen archived Stations photographs cannot leak into Pages
+        run: node tests/prayer-stations-curated-release-hold.mjs
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v5

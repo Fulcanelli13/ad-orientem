@@ -1,16 +1,11 @@
-name: Vercel deployment storage budget
+name: Archived — Vercel deployment storage audit
 
+# Vercel publication was retired on 4 November 2026.
+# This file remains for archival/manual source analysis only.
+# Production release acceptance now runs via github-pages.yml and the
+# curated GitHub Pages build, including the San Polo artwork leakage gate.
+# Never automatically run Vercel-specific budget/deploy workflows on a PR.
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - "tools/build-web-preview.mjs"
-      - "tests/scripture-catena-corpus.mjs"
-      - "src/scripture/catena-inline.js"
-      - "tools/vercel-build-eligibility.mjs"
-      - "tests/vercel-build-eligibility.mjs"
-      - "tests/vercel-deployment-storage.mjs"
-      - ".github/workflows/vercel-deployment-storage.yml"
   workflow_dispatch:
 
 permissions:

@@ -12,11 +12,17 @@ const disallowed=/^(?:\.|docs|tests|tools|research|legacy|review|reviews|node_mo
 // Only root boot scripts actually linked by the active HTML belong in the release.
 const entryHtml=await readFile(join(root,"index.html"),"utf8");
 const activeEntrypointAssets=new Set([...entryHtml.matchAll(/(?:src|href)=["']\.\/([^"'?#]+)["']/g)].map(x=>x[1]));
-// Deploy only release assets. These source-owned review/audit records stay in GitHub.
-// No source files are deleted; only copies inside dist/web-preview are omitted.
+// Deploy only cleared release assets. These source-owned review/audit records
+// remain intact in GitHub; only their copies in dist/web-preview are omitted.
+// The fourteen San Polo photographs are intentionally present in the repository
+// for QA, but are NOT published: reader bindings remain empty and exact-photo
+// native pixel + 320/390 EN/FR acceptance are still outstanding (issue #2121).
+// A future approval needs a separate PR that explicitly changes these holds.
 const excludedResearchPaths=[
  "assets/staged",
+ "assets/stations/san-polo",
  "data/geography/research",
+ "data/prayer/stations/san-polo-tiepolo-oils-1747",
 ];
 // Historical sprite bundles are retained in GitHub only. The active HTML
 // uses standalone assets/generated-symbols/* per-icon geometry instead.

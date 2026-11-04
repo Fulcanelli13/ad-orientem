@@ -92,4 +92,20 @@ const hiddenResp=await fetch(hidden,{redirect:"follow",signal:AbortSignal.timeou
 if(hiddenResp.ok)throw Error("Research file was publicly exposed by Pages: "+hidden.href);
 ok("Research files not publicly exposed");
 
+// Unreleased San Polo source photography is intentionally held in Git only.
+// A hidden reader binding is not enough if the static builder leaks raw files.
+for(const relative of [
+ "assets/stations/san-polo/station-01.webp",
+ "assets/stations/san-polo/station-14.webp",
+ "data/prayer/stations/san-polo-tiepolo-oils-1747/manifest.v1.json",
+]){
+ const withheld=new URL(relative,base);
+ withheld.searchParams.set("ao_release_verify",expectedRunId||expectedSha.slice(0,12));
+ const response=await fetch(withheld,{
+  redirect:"follow",signal:AbortSignal.timeout(15000),cache:"no-store",headers:{"cache-control":"no-cache"}
+ });
+ if(response.ok)throw Error("Unreleased San Polo photograph or research archive exposed by Pages: "+withheld.href);
+}
+ok("Unreleased San Polo Stations assets and research archive absent from live Pages");
+
 console.log("GITHUB_PAGES_POSTDEPLOY_PASS "+JSON.stringify(result));
