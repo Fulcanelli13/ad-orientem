@@ -1,0 +1,70 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND21_CORRECT_SUBJECT_AND_UNDERLYING_RIGHTS_V1",
+  "date": "2026-11-04",
+  "scope": "PRIMARY_PLACE_IDENTITY_AND_SOURCE_ONLY_NOT_APPROVAL",
+  "rows": [
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "canonical_site": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "correct_primary_subject": "The Japanese Eucharistic Servants chapel and/or the original wooden statue of Our Lady of Akita kept at this exact convent",
+      "source_type": "EXACT_DEVOTIONAL_SUBJECT_NOT_ARCHITECTURAL_EXTERIOR",
+      "source": {
+        "title": "File:Virgin Mary of Akita Japan.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Virgin_Mary_of_Akita_Japan.jpg",
+        "dimensions": [
+          4000,
+          5498
+        ],
+        "mime": "image/jpeg",
+        "photographer": "SICDAMNOME",
+        "photographer_license": "CC BY-SA 4.0",
+        "photographer_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "creation_date": "2015-11-02",
+        "original_sha1_verified": false,
+        "original_bytes_verified": false,
+        "rights_fully_cleared": false,
+        "underlying_object": "Modern wooden statue of Our Lady of Akita",
+        "underlying_artwork_rights": "UNVERIFIED_SCULPTURAL_COPYRIGHT_AND_SITE_REPRODUCTION_RIGHTS",
+        "visual_scene": "Close-up of devotional Marian statue before wooden cross; not a chapel interior or exterior",
+        "publication_authorized": false
+      },
+      "identity_source": "https://en.wikipedia.org/wiki/Our_Lady_of_Akita",
+      "site_identity_corroboration": "Commons category Our Lady of Akita and Soegawa, Akita, plus Catholic description of statue at Seitai Hoshikai",
+      "disposition": "HOLD_UNDERLYING_SCULPTURE_RIGHTS_FOR_GALLERY_OR_COVER",
+      "explicit_exclusions": [
+        "All Taman Doa Our Lady of Akita prayer garden pictures from Indonesia are of a different site and cannot be used for this Japanese Place."
+      ],
+      "editorial_approved": false
+    },
+    {
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "canonical_site": "Sacred Heart Shrine, Hales Corners",
+      "correct_primary_subject": "Outdoor marble statue of the Sacred Heart standing on a globe above a circular fountain with surrounding gardens",
+      "source_type": "CUSTODIAN_IDENTITY_DESCRIPTION_ONLY_NO_OPEN_PHOTOGRAPH",
+      "source": {
+        "title": null,
+        "url": "https://www.archmil.org/shrines",
+        "photographer": null,
+        "photographer_license": null,
+        "rights_fully_cleared": false,
+        "source_photo_found": false,
+        "publication_authorized": false
+      },
+      "site_identity_corroboration": "Archdiocese of Milwaukee official shrine description, 7335 S. Highway 100, Hales Corners. Dedicated 1989.",
+      "disposition": "SEARCH_OPEN_LICENSED_PHOTO_OF_STATUE_AND_FOUNTAIN_NOT_CHURCH_BUILDING",
+      "rights_note": "Even a freely licensed photographer image may need underlying sculpture rights and derivative/crop review; do not invent freedom-of-panorama clearance.",
+      "editorial_approved": false
+    }
+  ],
+  "governance": [
+    "A site profile may use a correctly identified devotional object as subject only when its depiction/licence is suitable and editorially approved; it is not a substitute church exterior.",
+    "Do not use another country’s or another parish’s devotional image due identical saint title.",
+    "No edits to canonical Place identity, coordinates, approved media registry, or existing publications."
+  ],
+  "counts": {
+    "site_scope_corrections": 2,
+    "new_distinct_source_files": 1,
+    "approved_covers": 0,
+    "published": 0
+  }
+}
