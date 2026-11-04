@@ -79,6 +79,19 @@ try{
     const flipAction=present.locator("[data-p435930-essential-flip-face]");
     assert.equal(await flipAction.count(),1,id+" needs an explicit Flip button");
     assert.ok(await flipAction.isVisible(),id+" Flip button is invisible");
+
+    if(index===0||id==="foundations_hail_mary"){
+      const geometry=await flipAction.evaluate(el=>{
+       const action=el.getBoundingClientRect();
+       const clip=el.closest(".aoDevoCardScroll")?.getBoundingClientRect();
+       const nav=document.querySelector("#ao-global-ribbon, .aoAppBottomNav, .aoShellTabBar, nav[aria-label='Main navigation']")?.getBoundingClientRect();
+       return {top:action.top,bottom:action.bottom,clipTop:clip?.top,clipBottom:clip?.bottom,navTop:nav?.top??innerHeight-64};
+      });
+      assert.ok(geometry.bottom<=Math.min(geometry.clipBottom??Infinity,geometry.navTop)+1 &&
+        geometry.top>=(geometry.clipTop??0)-1,
+        "Turn card button must fit within visible reader viewport, not hide below clipping: "+JSON.stringify(geometry));
+    }
+
     const plate=present.locator(".aoClaudeHolyPlate");
     assert.ok(await plate.locator("img").count()>0||await plate.locator(".aoClaudeHolyTypePlate").count()===1,
       id+" must render an actual approved painting or a readable typography-only front");
