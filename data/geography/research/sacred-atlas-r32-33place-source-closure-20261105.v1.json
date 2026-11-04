@@ -1,0 +1,248 @@
+{
+  "schema": "AO_SACRED_ATLAS_R32_REMAINING33_SOURCE_PAGE_RECOVERY_V1",
+  "date": "2026-11-05",
+  "source": "data/geography/research/sacred-atlas-r31-undecided43-bulk-image-review-20261105.v1.json",
+  "original33_ids": [
+    "place:AS:holy-family-cathedral-tafuna",
+    "place:AU:marian-valley",
+    "place:BB:st-patrick-catholic-cathedral-bridgetown",
+    "place:BE:sanctuaire-sainte-julienne-cornillon",
+    "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+    "place:CR:montes-oca-our-lady-lourdes-parish",
+    "place:GL:christ-the-king-catholic-church-nuuk",
+    "place:IE:solas-bhride-kildare",
+    "place:IT:santuario-san-paolo-della-croce-ovada",
+    "place:JM:holy-trinity-cathedral-kingston",
+    "place:JP:our-lady-akita-convent",
+    "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+    "place:LK:national-shrine-our-lady-matara",
+    "place:MW:maula-cathedral-lilongwe",
+    "place:MY:st-jude-church-rawang",
+    "place:MZ:namaacha-fatima-sanctuary",
+    "place:NG:nne-enyemaka-umuaka",
+    "place:NG:ugwogo-nike-national-marian-shrine",
+    "place:NI:ermita-guadalupe-matagalpa",
+    "place:NZ:st-peter-chanel-russell",
+    "place:OM:saints-peter-paul-catholic-church-ruwi",
+    "place:PA:basilica-menor-jesus-nazareno-atalaya",
+    "place:PE:santuario-san-martin-de-porres-jicamarca",
+    "place:PG:holy-cross-procathedral-vanimo",
+    "place:PK:karachi-our-lady-fatima-parish",
+    "place:SL:sacred-heart-cathedral-freetown",
+    "place:SV:capilla-divina-providencia-san-salvador",
+    "place:TO:st-anthony-padua-basilica-nukualofa",
+    "place:TT:laventille-our-lady-fatima-shrine",
+    "place:US:sacred-heart-shrine-hales-corners",
+    "place:US:st-anne-fiskdale",
+    "place:US:st-mary-assumption-oswego",
+    "place:ZM:archdiocese-lusaka-marian-shrine"
+  ],
+  "new_file_records": [
+    {
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "source_file": "File:Tewatte Basilica - Sri Lanka.jpg",
+      "review_role": "COVER_REVIEW_CANDIDATE",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Tewatte_Basilica_-_Sri_Lanka.jpg",
+      "size": [
+        900,
+        600
+      ],
+      "page_author_claim": "Michael Shehan Obeysekera",
+      "page_license_claim": "CC BY 2.0",
+      "risk": "LOW_RES_900x600_EXPLICIT_ACCEPTANCE_REQUIRED",
+      "source_description": "Exact Basilica in Commons same-site category; original Flickr licence reviewed by FlickreviewR in 2015; 900×600 is below preferred hero quality, no upscaling or auto-approval.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "source_file": "File:Our Lady of Fatima Church, Karachi - panoramio.jpg",
+      "review_role": "COVER_REVIEW_CANDIDATE",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Fatima_Church%2C_Karachi_-_panoramio.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "page_author_claim": "Joshua",
+      "page_license_claim": "CC BY-SA 3.0",
+      "risk": "SMALL_IMAGE_1024x768_MANUAL_QUALITY_REVIEW",
+      "source_description": "Exact church category and Panoramio photo title with nearby Preedy Quarters geotag; Commons Panoramio upload bot confirmed original CC BY-SA 3.0; photo frame needs exact church-subject confirmation.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "source_file": "File:Our Lady of Fatima Church Karachi.jpg",
+      "review_role": "HOLD_UNDERSIZED",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Fatima_Church_Karachi.jpg",
+      "size": [
+        600,
+        429
+      ],
+      "page_author_claim": null,
+      "page_license_claim": null,
+      "risk": "SMALL_FACADE_UNDER_MINIMUM",
+      "source_description": "Commons exact church category lists 600×429 façade original, too small for hero; included as context only.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "source_file": "File:Our Lady of Fatima Church Karachi Interior.jpg",
+      "review_role": "HOLD_UNDERSIZED",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Fatima_Church_Karachi_Interior.jpg",
+      "size": [
+        600,
+        429
+      ],
+      "page_author_claim": "GlennRyall",
+      "page_license_claim": "CC BY 3.0",
+      "risk": "SMALL_INTERIOR_UNDER_MINIMUM",
+      "source_description": "Commons author GlennRyall, own work, original 600×429 CC BY 3.0; context only.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "source_file": "File:Virgin Mary of Akita Japan.jpg",
+      "review_role": "GALLERY_REVIEW_PENDING_SCULPTURE_RIGHTS",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Virgin_Mary_of_Akita_Japan.jpg",
+      "size": [
+        4000,
+        5498
+      ],
+      "page_author_claim": "SICDAMNOME",
+      "page_license_claim": "CC BY-SA 4.0",
+      "risk": "MODERN_SCULPTURE_UNDERLYING_RIGHTS",
+      "source_description": "Commons photo CC BY-SA 4.0 shows Our Lady of Akita wooden statue; canonical Place is the chapel, not sculpture alone; separate artist/underlying statue rights and exact installation must be cleared before gallery use.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SV:capilla-divina-providencia-san-salvador",
+      "source_file": "File:Capilla Divina Providencia Lugar donde sue asesinado Monseñor Romero.jpg",
+      "review_role": "HOLD_WATERMARKED_INTERIOR",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Capilla_Divina_Providencia_Lugar_donde_sue_asesinado_Monse%C3%B1or_Romero.jpg",
+      "size": [
+        3264,
+        4928
+      ],
+      "page_author_claim": "Jasongalvez",
+      "page_license_claim": "CC BY-SA 3.0",
+      "risk": "WATERMARKED_SOURCE_NO_COVER_PROMOTION",
+      "source_description": "Commons photo expressly depicts chapel interior where St Óscar Romero was assassinated, under CC BY-SA 3.0; also in Commons watermarked-images category. No watermark removal; research only.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "source_file": "File:Jesusnazareno.jpg",
+      "review_role": "HOLD_UNDERSIZED_OBJECT",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Jesusnazareno.jpg",
+      "size": [
+        320,
+        240
+      ],
+      "page_author_claim": "Suarex",
+      "page_license_claim": null,
+      "risk": "TINY_IMAGE_OF_VENERATED_OBJECT",
+      "source_description": "Commons original 320×240 photo of Jesús Nazareno, not basilica architecture, unsuitable for cover and object rights unreviewed.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "source_file": "File:Peregrinosatalaya.jpg",
+      "review_role": "HOLD_UNDERSIZED_PILGRIMS",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Peregrinosatalaya.jpg",
+      "size": [
+        280,
+        382
+      ],
+      "page_author_claim": "Suarex",
+      "page_license_claim": null,
+      "risk": "TINY_PILGRIMS_CONTEXT_NOT_CHURCH",
+      "source_description": "Commons original 280×382 photo of pilgrims at Atalaya, not the basilica. Context only.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "source_file": "File:Sacred-heart-cathedral.jpg",
+      "review_role": "HOLD_UNVERIFIED_THIRD_PARTY_CC0",
+      "size": [
+        800,
+        400
+      ],
+      "page_author_claim": null,
+      "page_license_claim": "CLAIMED_CC0_UNSUPPORTED",
+      "risk": "Commons source cites a third-party tourism photo with unknown photographer, so uploader's CC0 declaration does not establish authority to license. Never promote.",
+      "source_description": "https://commons.wikimedia.org/wiki/File:Sacred-heart-cathedral.jpg",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "source_file": "File:Sacred Heart Cathedral, Freetown, Sierra Leone - Mapillary (gPahUHmYFk3EUBsmvbUKNw).jpg",
+      "review_role": "HOLD_SMALL_MAPILLARY_AUTHOR_REVIEW",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_Cathedral%2C_Freetown%2C_Sierra_Leone_-_Mapillary_%28gPahUHmYFk3EUBsmvbUKNw%29.jpg",
+      "size": [
+        816,
+        684
+      ],
+      "page_author_claim": null,
+      "page_license_claim": "CC BY-SA 4.0",
+      "risk": "LOW_RES_AND_AUTHOR_CREDIT_HOLD",
+      "source_description": "Exact Freetown cathedral category; Mapillary photo small at 816×684; verify individual photographer and site framing/quality before any possible non-cover use.",
+      "original_source_bytes_retrieved": false,
+      "source_revision_sha1_verified": false,
+      "owner_photo_selected": false,
+      "publication_authorized": false
+    }
+  ],
+  "counts": {
+    "original_unsourced_sites": 33,
+    "new_cover_choice_sites": 2,
+    "new_context_only_sites": 4,
+    "remaining_without_any_image": 27,
+    "new_cover_candidates": 2,
+    "new_context_images": 8,
+    "new_sources_total": 10,
+    "downloaded_original_files": 0,
+    "published_images": 0
+  },
+  "exceptions": [
+    "Holy Family Cathedral at Tafuna exact Commons category is empty; Holy Family Cathedral Anchorage is wrong site.",
+    "Our Lady of Guadalupe Co-Cathedral at Belmopan exact Commons category empty; Belize City cathedral is different.",
+    "St Patrick cathedral Bridgetown Commons category empty; similarly named other-country cathedrals are not proof.",
+    "Christ the King Catholic church Nuuk Commons category empty as checked 2026-11-05.",
+    "St Anthony Nuku'alofa category is empty with an explicit copyright/freedom-of-panorama notice.",
+    "Ovada Oratorio della Santissima Annunziata differs from Santuario San Paolo della Croce even though its street is Via San Paolo della Croce.",
+    "The high-res Capilla Divina Providencia vista de frente is in Tlalpan Mexico, not San Salvador; never substitute.",
+    "Atalaya images from Commons are 320×240 object and 280×382 pilgrim context, not basilica photo.",
+    "Freetown CC0 claim uses unknown-author third-party tourism photo and cannot establish rights."
+  ],
+  "fences": [
+    "Site names, source page claims, and photo CC licences do not establish exact original binary hash or third-party image rights.",
+    "R31 owner-review choices are local and remain valid; R32 simply adds new candidate roles in the same reviewer.",
+    "No publication approval; GitHub Actions+Pages only."
+  ]
+}
