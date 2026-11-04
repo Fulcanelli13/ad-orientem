@@ -26,11 +26,27 @@ const PINNED_IDENTITIES=Object.freeze({
   })
 });
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+// The original 267-slot editorial master explicitly identifies this exact
+// Holy Card vignette as an inherited *thematic* re-use from the Confession
+// stage, not a production-approved placement:
+//  - COV-sacrament_act_of_contrition: noApprovalGranted=true;
+//  - currentAssignment.productionEnabled=false;
+//  - sourceCrosswalk.photoRightsAndPixelQAPassed=false.
+// La Tour's released photo is legitimate for STG-pray.confession-02; its
+// publication in that different context cannot auto-approve this new card.
+// Keep the Hold scoped to the exact placement until an explicit later
+// source-scoped cover release supersedes the November 1 master.
+export const PRAYER_UNRELEASED_HOLY_CARD_SLOTS_V1=Object.freeze([
+ "COV-sacrament_act_of_contrition"
+]);
+const UNRELEASED_HOLY_CARD_SET=new Set(PRAYER_UNRELEASED_HOLY_CARD_SLOTS_V1);
 const nonPublishing=(slot,state)=>Object.freeze({slotId:slot?.slot||null,state,editorial:slot||null,artId:null,photo:null});
 export {PRAYER_ART_EDITORIAL_PROVENANCE_V1};
 export function resolvePrayerEditorialArtwork(slotId){
   const slot=prayerEditorialSlot(slotId);
   if(!slot)return nonPublishing(null,"UNKNOWN_SLOT");
+  if(UNRELEASED_HOLY_CARD_SET.has(slotId))
+    return nonPublishing(slot,"CARD_SPECIFIC_REUSE_NOT_PUBLICATION_APPROVED");
   if(slot.hold)return nonPublishing(slot,slot.explicitScopeHold?"SCOPE_HOLD":"EDITORIAL_HOLD");
   if(slot.protectedCover)return nonPublishing(slot,"PROTECTED_EXISTING_COVER");
   if(!slot.approvedOrInherited || slot.editorialStatus==="PROVISIONAL_NEW_REVIEW_NEEDED")

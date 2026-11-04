@@ -1,0 +1,26 @@
+name: Prayer Holy Card editorial placement authority
+
+on:
+  pull_request:
+    paths:
+      - 'src/pray/art-slot-map.v1.js'
+      - 'tests/prayer-holy-card-placement-authority.mjs'
+      - 'data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json'
+      - '.github/workflows/prayer-holy-card-placement-authority.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-approval-and-photo-placement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact source master and no unauthorized Act of Contrition art
+        run: |
+          node --check src/pray/art-slot-map.v1.js
+          node tests/prayer-holy-card-placement-authority.mjs
