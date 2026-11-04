@@ -1,0 +1,474 @@
+{
+  "schema": "AO_SACRED_ATLAS_R23_11PLACE_RELEASE_PREFLIGHT_V1",
+  "date": "2026-11-04",
+  "source_manifest_path": "data/geography/research/sacred-atlas-round22-11place-verified-sources-20261104.json",
+  "source_manifest_blob_sha": "4053924ca25b9a7dd2b86cfd94e7d2514b40301e",
+  "baseline_published": 379,
+  "baseline_total": 530,
+  "summary": {
+    "places": 11,
+    "byte_verified_originals": 25,
+    "editorially_selected": 0,
+    "publication_authorized": 0
+  },
+  "policy": "Source descriptions corroborate image subjects but are not independent visual crop or intellectual-property clearance. No new photo has entered the released gallery. All approval, depiction rights, derivative and cropping gates remain mandatory.",
+  "places": [
+    {
+      "place_id": "place:AU:penrose-park",
+      "name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Shrine of Our Lady of Mercy Church.jpg"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Shrine of Our Lady of Mercy Church.jpg",
+          "author": "Codefisher",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Shrine_of_Our_Lady_of_Mercy_Church.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons description names the shrine church at Penrose Park; visible exterior reference found.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Shrine_of_Our_Lady_of_Mercy_Church.jpg",
+      "next_gate": "Confirm mobile crop and architectural-subject rights in Australia before derivative release.",
+      "preference": "REVIEW_ONE_SOURCE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "name": "Sanctuaire de la Vierge des Pauvres — Banneux",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:20140202 banneux07.JPG"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:20140202 banneux07.JPG",
+          "author": "Jean Housen",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20140202_banneux07.JPG",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons file describes a view of the Banneux sanctuary, but composition is not yet independently approved as a representative cover.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:20140202_banneux07.JPG",
+      "next_gate": "Check actual scene against the desired shrine entrance/chapel subject; assess CC BY-SA 3.0 crop treatment.",
+      "preference": "REVIEW_ONE_SOURCE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "name": "Wallfahrtskirche St. Salvator Bettbrunn",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Bettbrunn St Salvator von O.jpg"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Bettbrunn St Salvator von O.jpg",
+          "author": "Heinrich Stürzl",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bettbrunn_St_Salvator_von_O.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons identifies St Salvator in Bettbrunn, photographed from the east; original size and author are independently corroborated.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Bettbrunn_St_Salvator_von_O.jpg",
+      "next_gate": "Confirm architectural framing and mobile crop, retain CC BY-SA 4.0 attribution.",
+      "preference": "REVIEW_ONE_SOURCE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Seton shrine basilica Emmitsburg MD1.jpg"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Seton shrine basilica Emmitsburg MD1.jpg",
+          "author": "Acroterion",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Seton_shrine_basilica_Emmitsburg_MD1.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "2014 photo is exact shrine basilica and original-verified; an additional higher-resolution 2022 Commons Quality Image from the same photographer has been located.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Seton_shrine_basilica_Emmitsburg_MD1.jpg",
+      "comparison_lead": {
+        "url": "https://commons.wikimedia.org/wiki/File:Seton_shrine_and_basilica_Emmitsburg_MD1.jpg",
+        "width": 7842,
+        "height": 5416,
+        "author": "Acroterion",
+        "license": "CC BY-SA 4.0",
+        "binary_status": "NOT_YET_VERIFIED"
+      },
+      "next_gate": "Compare 2014 and 2022 compositions visually and verify new original bytes if preferred.",
+      "preference": "COMPARE_HIGHER_RES_ALTERNATIVE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "name": "San Francisco de Asís Mission Church — Ranchos de Taos",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:San Francisco de Asis Mission Church.JPG"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:San Francisco de Asis Mission Church.JPG",
+          "author": "Liveon001 © Travis K. Witt",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Asis_Mission_Church.JPG",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons describes the exterior of the San Francisco de Asis mission church at Ranchos de Taos.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Asis_Mission_Church.JPG",
+      "next_gate": "Confirm the image framing fits the architectural hero and preserve attribution under CC BY-SA 3.0.",
+      "preference": "REVIEW_ONE_SOURCE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Cattedrale di Sant'Eusebio P1160098.JPG"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Cattedrale di Sant'Eusebio P1160098.JPG",
+          "author": "Patafisik",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant'Eusebio_P1160098.JPG",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons names Sant'Eusebio Cathedral in Vercelli and gives photographed building coordinates.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant%27Eusebio_P1160098.JPG",
+      "next_gate": "Confirm source frame contains the intended cathedral subject and crop does not lose recognisable features.",
+      "preference": "REVIEW_ONE_SOURCE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "name": "Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Bazylika w Licheniu.jpg"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Bazylika w Licheniu.jpg",
+          "author": "Bialo-zielony",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bazylika_w_Licheniu.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons identifies the Sanctuary of Our Lady of Lichen; category confirms the actual basilica, source CC BY-SA 3.0.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Bazylika_w_Licheniu.jpg",
+      "next_gate": "Inspect framing and Polish treatment of modern architectural works for derivative distribution.",
+      "preference": "MODERN_ARCHITECTURE_RIGHTS_REVIEW",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Igreja de Fátima em Fortaleza.JPG"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Igreja de Fátima em Fortaleza.JPG",
+          "author": "Porto Neto",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_em_Fortaleza.JPG",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons file describes the Catholic church of Nossa Senhora de Fatima in Fortaleza, Brazil.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_em_Fortaleza.JPG",
+      "next_gate": "Independently check main facade and subject clarity in the proposed cover crop.",
+      "preference": "REVIEW_ONE_SOURCE",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "name": "National Shrine Grotto of Our Lady of Lourdes",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:National Shrine Grotto of Our Lady of Lourdes 99.JPG"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:National Shrine Grotto of Our Lady of Lourdes 99.JPG",
+          "author": "Bohemian Baltimore",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_99.JPG",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons describes the National Shrine Grotto of Our Lady of Lourdes at Mount St Mary's; metadata corroborates exact-site identification, not composition.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_99.JPG",
+      "next_gate": "Verify actual grotto scene and any depicted modern sculpture rights, then review portrait crop.",
+      "preference": "FOREGROUND_RIGHTS_REVIEW",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "name": "Monastery of Saint Maron — Annaya",
+      "source_verified_photos": 1,
+      "candidate_files": [
+        "File:Pan Annaya Church And Monastry.jpg"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Pan Annaya Church And Monastry.jpg",
+          "author": "paul saad",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "Commons author describes a panorama of the Church and Monastery of Saint Charbel in Annaya; 4000×2250 source corroborated.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg",
+      "next_gate": "Check Lebanese architectural-subject rights and wide-panorama phone crop before publication.",
+      "preference": "PANORAMA_AND_RIGHTS_REVIEW",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    },
+    {
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "name": "Friedhofskirche St. Michael, Altötting",
+      "source_verified_photos": 15,
+      "candidate_files": [
+        "File:Friedhofskirche Altötting 16.jpg",
+        "File:Friedhofskirche Altötting 1.jpg",
+        "File:Friedhofskirche Altötting 2.jpg",
+        "File:Friedhofskirche Altötting 3.jpg",
+        "File:Friedhofskirche Altötting 5.jpg",
+        "File:Friedhofskirche Altötting 6.jpg",
+        "File:Friedhofskirche Altötting 7.jpg",
+        "File:Friedhofskirche Altötting 8.jpg",
+        "File:Friedhofskirche Altötting 9.jpg",
+        "File:Friedhofskirche Altötting 10.jpg",
+        "File:Friedhofskirche Altötting 11.jpg",
+        "File:Friedhofskirche Altötting 12.jpg",
+        "File:Friedhofskirche Altötting 13.jpg",
+        "File:Friedhofskirche Altötting 14.jpg",
+        "File:Friedhofskirche Altötting 15.jpg"
+      ],
+      "source_credit_requirements": [
+        {
+          "file": "File:Friedhofskirche Altötting 16.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_16.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 1.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_1.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 2.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_2.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 3.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_3.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 5.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_5.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 6.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_6.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 7.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_7.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 8.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_8.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 9.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_9.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 10.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_10.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 11.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_11.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 12.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_12.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 13.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_13.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 14.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_14.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        },
+        {
+          "file": "File:Friedhofskirche Altötting 15.jpg",
+          "author": "Ricardalovesmonuments",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Friedhofskirche_Alt%C3%B6tting_15.jpg",
+          "license_link_required": true,
+          "modification_notice_required_for_cropped_derivative": true
+        }
+      ],
+      "source_assessment": "The exact St Michael Altötting Commons category lists all 15 originals; the local parish independently identifies the cemetery church. #16 remains an unapproved first look, #1 is interior/gallery only.",
+      "source_evidence": "https://commons.wikimedia.org/wiki/Category:St._Michael_(Alt%C3%B6tting)",
+      "additional_identity_source": "https://pfarrverband-altoetting.bistum-passau.de/kirchen/friedhofskirche-sankt-michael-altoetting",
+      "next_gate": "Select among 15 with actual-image comparison; verify building-centred cover and reserve interior #1 for gallery.",
+      "preference": "REVIEW_15_PHOTOS",
+      "site_identity_state": "COMMONS_SOURCE_DESCRIPTION_CORROBORATED",
+      "visual_composition_state": "NOT_OWNER_APPROVED",
+      "foreground_rights_state": "UNRESOLVED",
+      "cropping_state": "NOT_VALIDATED",
+      "publication_state": "HOLD"
+    }
+  ]
+}
