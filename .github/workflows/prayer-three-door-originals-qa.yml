@@ -1,0 +1,39 @@
+name: Prayer gallery — exact three original photos QA
+
+# Read-only Wikimedia acquisition; artifact output is temporary QA evidence.
+# Nothing changes the Prayer publishing registry or the site build.
+on:
+  pull_request:
+    paths:
+      - 'scripts/prayer_three_door_originals_qa.py'
+      - '.github/workflows/prayer-three-door-originals-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-3-exact-photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned preview decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Confirm source verifier parses
+        run: python -m py_compile scripts/prayer_three_door_originals_qa.py
+      - name: Fetch and hash all three immutable Commons originals
+        run: python scripts/prayer_three_door_originals_qa.py
+      - name: Keep short-lived original-hash evidence and review thumbnails, never originals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-three-doors-original-byte-qa
+          path: ${{ runner.temp }}/prayer-three-door-qa/
+          retention-days: 5
+          if-no-files-found: warn
