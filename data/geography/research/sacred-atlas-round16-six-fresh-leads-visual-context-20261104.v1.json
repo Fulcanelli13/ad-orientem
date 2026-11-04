@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND16_SIX_FRESH_LEADS_VISUAL_CONTEXT_SCREEN_V1",
+  "as_of": "2026-11-04",
+  "scope": "READ_ONLY_EDITORIAL_SCENE_SCREEN_NO_APPROVAL",
+  "reviewed_places": 6,
+  "actual_preview_inspected": 4,
+  "source_only": 2,
+  "rows": [
+    {
+      "place_id": "place:PE:santuario-candelaria-chapi-polobaya",
+      "visual_status": "DEPRIORITIZE_EVENT_CROWD",
+      "preview_inspected": true,
+      "lead_file": "File:Santuario de Chapi.JPG",
+      "observation": "Image depicts the Polobaya sanctuary building amid a large pilgrimage crowd in a mountain valley. Site-specific, but event-dependent and the religious building is not the dominant subject; search for an evergreen sanctuary exterior.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "visual_status": "SITE_SCENE_POTENTIAL_COVER",
+      "preview_inspected": true,
+      "lead_file": "File:Pan Annaya Church And Monastry.jpg",
+      "observation": "Actual thumbnail shows the St Charbel Annaya monastery and church complex on a ridge, with scenic landscape. Clear physical-site panorama, although distant in framing; evaluate alternate winter view.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "visual_status": "SUBJECT_CONTEXT_NEEDS_CHECK",
+      "preview_inspected": true,
+      "lead_file": "File:Ilot de la Vierge.jpg",
+      "observation": "Source preview shows a small roofed shrine or monument beneath an open sky, but does not independently demonstrate the small island and exact Marian object. Require second evidence confirming the pictured landmark.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "visual_status": "HOLD_LOW_RESOLUTION",
+      "preview_inspected": true,
+      "lead_file": "File:Tewatte Basilica - Sri Lanka.jpg",
+      "observation": "File preview shows a basilica entry/large rose-window feature, but the 900×600 original is below minimum cover dimensions; no upscaling substitute permitted.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "visual_status": "PREVIEW_NOT_VISUALLY_INSPECTED",
+      "preview_inspected": false,
+      "lead_file": "File:Our Lady of Fatima Church, Karachi - panoramio.jpg",
+      "observation": "Current Commons source has an original size of 1024×768, borderline for mobile cover. Subject composition not visually established, no approval.",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SV:capilla-divina-providencia-san-salvador",
+      "visual_status": "HOLD_WATERMARK_INTERIOR",
+      "preview_inspected": false,
+      "lead_file": "File:Capilla Divina Providencia Lugar donde sue asesinado Monseñor Romero.jpg",
+      "observation": "Source page identifies interior of Romero's assassination chapel and flags digital watermarking; photo preview retrieval failed. Do not promote as shrine exterior cover.",
+      "publication_authorized": false
+    }
+  ],
+  "notes": [
+    "All lead licences and original SHA1 bytes remain unverified for this six-place cohort.",
+    "Source-page rights metadata is not a publication clearance.",
+    "The user has not selected primary covers for these sites.",
+    "Do not publish, upscale, remove watermarks, or treat an exterior as an image of a specific relic."
+  ]
+}

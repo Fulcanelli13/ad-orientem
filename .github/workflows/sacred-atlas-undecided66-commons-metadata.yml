@@ -7,13 +7,18 @@ on:
       - 'data/geography/research/sacred-atlas-undecided66-*.html'
       - 'tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py'
       - 'tests/sacred-atlas-round15-bulk-review-contract.mjs'
+      - 'tests/sacred-atlas-round16-visual-scene-contract.mjs'
+      - 'data/geography/research/sacred-atlas-round16-20-place-visual-screen-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-round16-six-fresh-leads-visual-context-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-round16-ten-visual-cover-candidates-20261104.v1.json'
+      - 'tests/sacred-atlas-round16-top10-cover-cohort-contract.mjs'
       - '.github/workflows/sacred-atlas-undecided66-commons-metadata.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   read-only-85-source-audit:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-undecided66-bulk-review-20261104') }}
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.event.pull_request.head.ref, 'research/sacred-atlas-')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -29,6 +34,10 @@ jobs:
           python tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py --dry-run
       - name: Validate 66-place editorial review and inline browser script offline
         run: node tests/sacred-atlas-round15-bulk-review-contract.mjs
+      - name: Verify 20-place photo scene decisions and first-look replacements offline
+        run: node tests/sacred-atlas-round16-visual-scene-contract.mjs
+      - name: Verify source-locked ten-cover cohort remains unpublished
+        run: node tests/sacred-atlas-round16-top10-cover-cohort-contract.mjs
       - name: Metadata-only paced Commons audit, stop after first HTTP 429
         if: github.event_name == 'workflow_dispatch'
         run: python tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py
