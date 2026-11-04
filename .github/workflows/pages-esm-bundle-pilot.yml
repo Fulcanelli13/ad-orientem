@@ -1,0 +1,41 @@
+name: Platform #560 — ESM bundle experiment (no deployment)
+on:
+  pull_request:
+    paths:
+      - "tools/prepare-esm-bundle-pilot.mjs"
+      - "tests/pages-esm-bundle-pilot-phone.mjs"
+      - ".github/workflows/pages-esm-bundle-pilot.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Create original allowlisted static Pages output
+        run: node tools/build-web-preview.mjs
+      - name: Bundle one existing ESM entry into the COPIED preview only
+        run: npx --yes esbuild@0.25.12 src/mass/browser-entry.js --bundle --platform=browser --format=esm --target=es2022 --minify --outfile=dist/web-preview/ao-r17-entry.bundle.experimental.js --log-level=warning
+      - name: Preserve baseline HTML and patch the experiment's copy
+        run: node tools/prepare-esm-bundle-pilot.mjs
+      - name: Pages scope, exclusions and release-size preflight
+        run: node tools/prepare-github-pages-release.mjs
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Measure 320/390px baseline and bundled launch, Calendar and Mass door
+        run: node tests/pages-esm-bundle-pilot-phone.mjs
+      - name: Retain comparison and visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-esm-bundle-pilot
+          path: artifacts/pages-esm-bundle-pilot/
+          retention-days: 14
+          if-no-files-found: warn
