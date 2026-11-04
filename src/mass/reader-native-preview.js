@@ -62,6 +62,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import { createComposedScholaTextController } from "./reader-composed-schola-text.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
@@ -1396,6 +1397,9 @@ export async function mountNativeReaderPreview({
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let scholaLocalProgramme=readScholaLocalProgramme(customStorage,customaryPrefs.sanctusPerformance);
+  const composedScholaText=createComposedScholaTextController({prepared});
+  const projectComposedSchola=(native=ready.scholaState.project())=>composedScholaText.project(
+    native,scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en");
   // Selecting a saved parish profile changes a personal Schola setting,
   // never the text, priest cues or liturgical form.
   if(scholaLocalProgramme.sanctusPerformance!==customaryPrefs.sanctusPerformance){
@@ -1698,7 +1702,7 @@ export async function mountNativeReaderPreview({
       : postureResolved.posture;
 
 
-    const scholaProjection=ready.scholaState.project();
+    const scholaProjection=projectComposedSchola();
     // Reading a Consecration card is a liturgical silence restriction,
     // never evidence that the Schola was heard finishing. Preserve its
     // independent underlying position for a possible post-Chalice Benedictus.
@@ -1722,7 +1726,7 @@ export async function mountNativeReaderPreview({
       .flatMap(paragraph=>paragraph.sourceCueIds??[]));
     const visibleBlockIds=new Set((current?.blocks??[])
       .map(block=>block.blockId));
-    const sameSungCard=Boolean(visibleSchola && visibleTrack && (
+    const sameSungCard=Boolean(visibleSchola && !visibleSchola.composedWorkId && visibleTrack && (
       (visibleTrack.segments??[]).some(segment=>
         segment.cueId && visibleCueIds.has(segment.cueId)) ||
       (visibleTrack.canonicalBlockIds??[]).some(id=>visibleBlockIds.has(id))));
@@ -2261,6 +2265,13 @@ export async function mountNativeReaderPreview({
     if(kind==="CORPUS_CHRISTI_PROCESSION" && state.posture && !["INHERIT","LOCAL_OR_INHERIT","LOCAL_REVERENT"].includes(state.posture))posture={label:state.posture};
     if(kind==="HOLY_THURSDAY_POST" && state.posture && state.posture!=="LOCAL_OR_INHERIT")posture={label:state.posture};
     if(kind==="GENERIC_PROCESSION" && state.posture && state.posture!=="LOCAL")posture={label:state.posture};
+    // Only an explicit listener-selected Fauré Libera me or In paradisum
+    // may appear alongside an actual Requiem Absolution card. The rite's
+    // authoritative texts, order and source-owned music remain unchanged.
+    const manualId=composedScholaText.state().manualMovementId;
+    const manualRequiem=kind==="REQUIEM_ABSOLUTION" &&
+      ["LIBERA_ME","IN_PARADISUM"].includes(manualId)
+      ?projectComposedSchola().schola:null;
     return Object.freeze({
       state,config,
       moment:Object.freeze({
@@ -2270,7 +2281,8 @@ export async function mountNativeReaderPreview({
         cardUpdate:true,
         paragraphs:Object.freeze(rows),
         progress:String(state.index+1)+" / "+String(state.total)+" · "+config.label,
-        posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,
+        schola:manualRequiem,
         riteMusic:riteMusicAt(kind==="CORPUS_CHRISTI_PROCESSION"?"CORPUS_CHRISTI":kind,
           card.id??card.recordId,
           kind==="REQUIEM_ABSOLUTION" &&
@@ -2955,8 +2967,17 @@ export async function mountNativeReaderPreview({
       }):null;
     },
     scholaLocalProgramme:()=>scholaLocalProgramme,
+    scholaManualMovement:()=>composedScholaText.state().manualMovementId,
     onScholaLocalProgrammeChange:change=>{
+      if(change?.kind==="composedManualMovement"){
+        const selected=composedScholaText.setManualMovement(change.value,
+          ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId);
+        if(selected)queue();
+        return;
+      }
       scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,change,customStorage);
+      if(["profileSelect","profileCreate","profileDelete","composedScholaWork"].includes(change?.kind))
+        composedScholaText.reset();
       if(["profileSelect","profileCreate","profileDelete","sanctusPerformance"].includes(change?.kind)){
         customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,
           {kind:"sanctusPerformance",value:scholaLocalProgramme.sanctusPerformance},customStorage);
@@ -3027,6 +3048,8 @@ export async function mountNativeReaderPreview({
       if(event.kind==="LOCAL_OPTION" && event.localPlan?.selected!==true)return false;
       // Explicit manual music selection, not priest-card movement or proof
       // that the choir is currently performing this event.
+      composedScholaText.setManualMovement("",ready.scholaState.project(),
+        scholaLocalProgramme.composedScholaWorkId);
       scholaPinnedByCatchup=true;
       if(event.kind==="CHANT"){
         selectedScholaEvent=null;
@@ -3043,9 +3066,11 @@ export async function mountNativeReaderPreview({
       return true;
     },
     onScholaAdvance:()=>{
-      const value=ready.scholaState.next();
-      queue();
-      return value;
+      const native=ready.scholaState.project();
+      const workId=scholaLocalProgramme.composedScholaWorkId;
+      const value=composedScholaText.next(native,workId,prepared.readerPreferences?.language??"en")
+        ??ready.scholaState.next();
+      queue();return value;
     },
     onScholaRelease:()=>{
       // The printed Benedictus appears before the Canon. The *sung* second
@@ -3077,9 +3102,11 @@ export async function mountNativeReaderPreview({
       queue();return value;
     },
     onScholaPrevious:()=>{
-      const value=ready.scholaState.previous();
-      queue();
-      return value;
+      const native=ready.scholaState.project();
+      const workId=scholaLocalProgramme.composedScholaWorkId;
+      const value=composedScholaText.previous(native,workId,prepared.readerPreferences?.language??"en")
+        ??ready.scholaState.previous();
+      queue();return value;
     },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
@@ -3103,7 +3130,12 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
+    if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      const ceremonial=followingActionMoment("REQUIEM_ABSOLUTION",ready.requiemAbsolutionController);
+      if(ceremonial)reader.renderMoment({...ceremonial.moment,cardUpdate:false});
+      return;
+    }
+    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -3450,7 +3482,7 @@ export async function mountNativeReaderPreview({
     clearObservedPriestEvent:()=>{observedCuratedPriestEvent=null;queue();return true;},
     getObservedPriestEvent:()=>currentObservedCuratedPriestEvent(),
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
-    getScholaState:()=>ready.scholaState.project(),
+    getScholaState:()=>projectComposedSchola(),
     getSelectedScholaEvent:()=>selectedScholaEvent,
     getScholaPerformance:()=>scholaPerformance.project(applyScholaLocalProgramme(buildScholaMusicItinerary({
       cards:readerModel?.cards.filter(visibleCardAllowed),
@@ -3461,9 +3493,9 @@ export async function mountNativeReaderPreview({
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme)),
     getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),
-    nextSchola:()=>{const value=ready.scholaState.next();queue();return value},
-    previousSchola:()=>{const value=ready.scholaState.previous();queue();return value},
-    finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},
+    nextSchola:()=>{const value=composedScholaText.next(ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en")??ready.scholaState.next();queue();return value},
+    previousSchola:()=>{const value=composedScholaText.previous(ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en")??ready.scholaState.previous();queue();return value},
+    finishSchola:()=>{const value=composedScholaText.finish(ready.scholaState.project(),scholaLocalProgramme.composedScholaWorkId,prepared.readerPreferences?.language??"en")??ready.scholaState.finish();queue();return value},
     selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
     getAspergesState:()=>ready.aspergesController?.project?.()??null,

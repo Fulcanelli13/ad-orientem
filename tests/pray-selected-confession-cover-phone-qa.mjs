@@ -4,7 +4,7 @@ import {readFileSync,createReadStream,mkdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {extname,resolve,sep} from 'node:path';
 import {chromium} from '@playwright/test';
-import {PRAYER_SELECTED_COVER_PHOTO_QA,renderPrayerSelectedCoverQA} from '../src/pray/prayer-cover-photo-qa.v1.js';
+import {PRAYER_SELECTED_COVER_PHOTO_QA,renderPrayerSelectedCoverQA} from './fixtures/prayer-cover-photo-qa.v1.js';
 
 const originals=Object.entries(PRAYER_SELECTED_COVER_PHOTO_QA);
 assert.equal(originals.length,2);
