@@ -169,7 +169,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     return '<button type="button" class="aoPrayPilotTile'+(tile.large?' aoPrayPilotLarge':'')+
       '" data-ao-pray-pilot-tile="'+esc(tile.id)+'" aria-expanded="false"'+target+artLink+
       ' aria-label="'+esc(label+' · '+L('Select to reveal, select again to open','Sélectionnez pour découvrir, puis à nouveau pour ouvrir'))+'">'+
-      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+(released?'<img class="aoPrayPilotReleasedTilePhoto" src="/'+esc(released.image)+'" alt="" loading="lazy" decoding="async">':assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true}))+'</span>'+
+      '<span class="aoPrayPilotTileSymbol" aria-hidden="true">'+(released?'<img class="aoPrayPilotReleasedTilePhoto" src="/'+esc(released.image)+'" alt="" loading="eager" decoding="async">':assetIcon(family.assetId,"aoPrayPilotNativeIcon",{preferEmbedded:true}))+'</span>'+
       '<span class="aoPrayPilotTileCaption"><strong>'+esc(label)+'</strong><small>'+esc(family.description||'')+'</small></span>'+
       '<span class="aoPrayPilotTileArrow" aria-hidden="true">›</span></button>';
   };
@@ -406,6 +406,10 @@ function installStyles(){
     "@media(min-width:800px){#aoPray435930 .aoPrayPilotMosaic{columns:3;column-gap:3px}#aoPray435930 .aoPrayPilotTile{margin-bottom:3px}}",
     "@media(min-width:1250px){#aoPray435930 .aoPrayPilotMosaic{columns:4}}",
     "@media(max-width:359px){#aoPray435930 .aoPrayPilotTile{min-height:150px}#aoPray435930 .aoPrayPilotTileCaption{font-size:19px}#aoPray435930 .aoPrayPilotLarge .aoPrayPilotTileCaption{font-size:23px}}",
+    "/* Never let the sole published photo door disappear while its decoded image is loading. Reveal still discloses the secondary summary, and second activation still opens the original route. */",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=released] .aoPrayPilotTileCaption{opacity:1!important;visibility:visible!important;transform:none!important;background:linear-gradient(0deg,rgba(3,6,9,.84),transparent)}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=released]:not([aria-expanded=true]) .aoPrayPilotTileCaption small{display:none}",
+    "#aoPray435930 .aoPrayPilotTile[data-ao-art-binding=released] .aoPrayPilotTileCaption strong{text-shadow:0 2px 9px rgba(0,0,0,.95)}",
     "/* Explicit recitation alternatives remain buttons with source-owned aria-pressed state; display them as ruled text rather than a segmented capsule. */",
     "#aoPray435930 .aoPrayPilotAngelusEntry .aoPrayPilotRecitation{display:flex;gap:18px;justify-content:center;margin:9px auto 0;padding:3px 0;background:transparent;border:0;border-radius:0;width:auto}",
     "#aoPray435930 .aoPrayPilotAngelusEntry .aoPrayPilotRecitation button{min-height:40px;min-width:86px;padding:6px 4px;border:0;border-bottom:1px solid rgba(238,224,197,.28);border-radius:0;background:transparent;color:#d9c9b4;box-shadow:none}",
