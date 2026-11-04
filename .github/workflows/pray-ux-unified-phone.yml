@@ -16,6 +16,7 @@ on:
       - "tests/pray-reader-design-pilot-phone.mjs"
       - "src/pray/prayer-design-pilot.js"
       - "tests/pray-design-pilot-phone.mjs"
+      - "tests/pray-novena-search-phone.mjs"
       - "tests/pray-f01-holy-card-default-phone.mjs"
       - "src/pray/essential-flow-reader.js"
       - "src/pray/claude-holy-card.js"
@@ -54,6 +55,8 @@ jobs:
         run: node tests/pray-chaplet-f07-phone.mjs
       - name: Pilot Discovery and Angelus mobile visual acceptance
         run: node tests/pray-design-pilot-phone.mjs
+      - name: Direct bilingual Novena search 320/390px canonical day and Back acceptance
+        run: node tests/pray-novena-search-phone.mjs
       - name: R4 continuous liturgical and programme folio 320/390px acceptance
         run: node tests/pray-r4-ritual-folio-phone.mjs
       - name: Temporary route matrix and representative visual captures
@@ -64,6 +67,7 @@ jobs:
           path: |
             artifacts/pray-ux-unified/
             artifacts/prayer-design-pilot/
+            artifacts/pray-novena-search/
             artifacts/prayer-reader-design-pilot/
             artifacts/pray-f01-holy-card-default/
             artifacts/pray-chaplet-f07/
