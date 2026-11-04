@@ -1,4 +1,4 @@
-// CL2 R2: 94 reviewed municipality marker points, never precise church GPS or current Mass.
+// CL2 R2: 93 reviewed municipality marker points, never precise church GPS or current Mass.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R2} from "../src/find/cl2-illustrative-locality-pins-r2.js";
@@ -14,8 +14,8 @@ const base=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data
 const all=projectCL2PhysicalDirectory(base,index),byId=new Map(all.map(x=>[x.physical_group_id,x]));
 const frozen=new Map(index.records.map(x=>[x[0],x]));
 assert.equal(manifest.schema,"AO_TLM_ATLAS_ILLUSTRATIVE_LOCALITY_R2_APPROVED_V1");
-assert.equal(manifest.reviewed,94);
-assert.equal(manifest.records.length,94);
+assert.equal(manifest.reviewed,93);
+assert.equal(manifest.records.length,93);
 assert.deepEqual(new Set(Object.keys(registry)),new Set(manifest.records.map(r=>r.cl2_anchor)));
 assert.equal(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS).length,158);
 for(const row of manifest.records){
@@ -55,7 +55,7 @@ for(const row of manifest.records){
 for(const id of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C","RG-615FF6835AAE","RG-2C84B50B3667"]){
  assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"Identity or closed site hold must stay unpinned: "+id);
 }
-assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2408);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:602,SOURCE_PIN:1806,ADDRESS_ONLY:174});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,174);
-console.log("PASS TLM R2: 94 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2408 mapped, 174 unpinned, no GPS routing");
+assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2407);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:601,SOURCE_PIN:1806,ADDRESS_ONLY:175});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,175);
+console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2407 mapped, 175 unpinned, no GPS routing");
