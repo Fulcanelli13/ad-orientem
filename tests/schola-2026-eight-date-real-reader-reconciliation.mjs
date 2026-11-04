@@ -102,6 +102,33 @@ try{
     item.readerSourcePath=reader?.sourcePath??null;
     item.readerDisposition="ACTUAL_EXISTING_READER_RECOVERY_AND_ADAPTER";
     item.reader={en:projection(reader,"en"),fr:projection(reader,"fr")};
+    // Source diagnostics for the named C7b commemoration. Read-only:
+    // reveal which exact original three-language predicate is not satisfied.
+    if(date==="2026-03-06"){
+     const inspect=p=>{
+      const details={selectedSource:p?.sourcePath,
+       calendarCommemorations:p?.calendarCommemorations?.map(x=>({
+        path:x.path,prayerSourcePath:x.prayerSourcePath,inseparable:x.inseparable
+       })),
+       appliedCommemorations:p?.appliedCommemorations?.map(x=>({
+        path:x.path,prayerSourcePath:x.prayerSourcePath,inseparable:x.inseparable
+       })),
+       commemorationFormDecision:p?.commemorationFormDecision??null,
+       selectedOrations:{}};
+      for(const [slot,plural,single] of [
+       ["COLLECT_SET","collects","collect"],["SECRET_SET","secrets","secret"]]){
+       const rows=Array.isArray(p?.[plural])&&p[plural].length?
+        p[plural]:p?.[single]?[p[single]]:[];
+       details.selectedOrations[slot]=rows.map((row,index)=>({
+        index,sourcePath:row?.sourcePath??null,
+        latin:String(row?.lat??row?.la??""),
+        english:String(row?.en??""),french:String(row?.fr??"")
+       }));
+      }
+      return details;
+     };
+     item.martyrsSourceTrace={raw:inspect(proper),recovered:inspect(recovered),reader:inspect(reader)};
+    }
     item.readerReadyBothLanguages=Boolean(item.reader.en.ready&&item.reader.fr.ready);
     item.userFacingFailureEstablished=item.readerReadyBothLanguages?false:
      "READER_PROJECTION_STILL_HELD_CHECK_NATIVE_CARD_CONTEXT";
