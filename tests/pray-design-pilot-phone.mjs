@@ -65,6 +65,14 @@ try{
    assert.ok(releasedDoor.title&&releasedDoor.visible==="visible"&&releasedDoor.opacity>=.99,
      "The sole licensed photo door needs a visible title, even before decoding its image: "+JSON.stringify(releasedDoor));
    assert.equal(releasedDoor.fetchMode,"eager","The one released discovery image should not wait for lazy loading");
+   assert.equal(releasedDoor.title,"Holy Eucharist",
+     "The gallery door must use exactly the same title as its Eucharistic category");
+   await page.waitForFunction(()=>{
+     const img=document.querySelector('#aoPray435930.open .aoPrayPilotTile[data-ao-art-binding="released"] img');
+     return !!img&&img.complete&&img.naturalWidth>0;
+   },null,{timeout:20000});
+   assert.equal(await mosaic.locator('[data-ao-art-binding="released"] img').getAttribute("fetchpriority"),"high",
+     "The one exact approved photo should be eagerly prioritised");
 
 
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
