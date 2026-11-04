@@ -6,6 +6,8 @@ on:
       - 'data/geography/research/sacred-atlas-r29-selected19-final-rights-checklist-20261104.v1.json'
       - 'tools/atlas/stage-sacred-atlas-r29-owner-selected-originals.py'
       - 'tests/sacred-atlas-r29-exact-offline-release-contract.mjs'
+      - 'data/geography/research/sacred-atlas-r28-owner-approved19-release-qa-20261104.v1.json'
+      - 'tests/sacred-atlas-r30-all19-commons-source-page-contract.mjs'
       - '.github/workflows/sacred-atlas-r29-exact-offline-readiness.yml'
 permissions:
   contents: read
@@ -24,7 +26,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Guard original file SHA1s and no prefilled publication approvals
-        run: node tests/sacred-atlas-r29-exact-offline-release-contract.mjs
+        run: |
+          node tests/sacred-atlas-r29-exact-offline-release-contract.mjs
+          node tests/sacred-atlas-r30-all19-commons-source-page-contract.mjs
       - name: Check import tool syntax and run purely offline readiness plan
         run: |
           python -m py_compile tools/atlas/stage-sacred-atlas-r29-owner-selected-originals.py
