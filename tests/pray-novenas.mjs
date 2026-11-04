@@ -149,6 +149,10 @@ assert.match(runtime,/if\(N\.screen===\'detail\'&&dayAboutOpen\)/,"About-this-no
 assert.match(runtime,/if\(b\.dataset\.n1Select\).*?N\.screen='day'/,"Selecting a canonical novena must open its real day reader without a separate setup screen");
 assert.match(runtime,/if\(b\.dataset\.n1Supplement\)[\s\S]*?N\.screen='day'/,"Supplemental nine-day prayers must use the same direct reader route");
 assert.match(runtime,/data-n1-about/,"The original historical detail and source context must remain available from the reader");
+assert.match(runtime,/N\.screen=opts\?\.returnSearch/,"Search-origin Novenas must open to the real prayer day");
+assert.match(runtime,/function returnToPraySearch\(\)/,"Novena Back must recover the source-owned search origin");
+assert.match(runtime,/restoreSearch\?\.\(returnSearch\)/,"Novena Back must restore query and facets rather than open another directory");
+assert.match(runtime,/returnSearch:OPEN_OPTS\?\.returnSearch/,"Native app Back must preserve direct Novena search context");
 assert.match(runtime,/detailFromOverview,dayAboutOpen/,"App Back receipt must preserve whether the reader opened the context page");
 assert.match(runtime,/if\(N\.screen===\'detail\'&&detailFromOverview\)/,"Visited Novena overview must remain a valid Back destination");
 assert.match(runtime,/returnToObservedModuleOrigin\(window,OPEN_RECEIPT/,"Direct Novena detail must Back to its real origin, not an invented overview");
