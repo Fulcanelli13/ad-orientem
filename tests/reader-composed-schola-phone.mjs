@@ -96,13 +96,19 @@ try{
     assert.equal(after.section,before.section,"Manual choir phrase step changed priest card");
     assert.equal(after.cue,cueBeforeManualPhrase,"Manual choir phrase step changed settled priest cue");
     assert.match(after.line,/Christe eleison/);
-    await page.evaluate(()=>{
+    // In the production 65-card reader the Gradual and Tract are a single
+    // source-owned pre-Gospel card; a separately titled "Gradual" exists only
+    // in the optional sourceChants split-navigation test fixture.
+    const preGospelTitle=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      const card=api.model.cards.find(c=>c.title==="Gradual");
-      if(!card)throw Error("Gradual card missing");
+      const card=api.model.cards.find(c=>c.sourceSectionId==="AO.CARD.006");
+      if(!card)throw Error("Canonical pre-Gospel source section missing");
       api.showSequence(card.sequence);
+      return card.title;
     });
-    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="GRADUAL");
+    await page.waitForFunction(()=>["GRADUAL","ALLELUIA_TRACT_SEQUENCE"]
+      .includes(window.__AO_PHONE_PREVIEW.getScholaState()?.trackId),
+      null,{timeout:15000});
     assert.ok(!await page.locator(".ao-schola-dock").getAttribute("data-composed").then(x=>x==="true"),
       "Fauré must not replace the appointed Gradual");
     assert.match((await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola.owner)),
@@ -129,7 +135,7 @@ try{
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.owner==="R17_NATIVE_SCHOLA");
     assert.equal(await page.locator(".ao-schola-dock").getAttribute("data-composed"),"false");
     await plan.locator("summary").first().click();
-    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title),"Gradual",
+    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title),preGospelTitle,
       "Manual extra musical references must not move the priest Mass card");
    }else{
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="KYRIE");
