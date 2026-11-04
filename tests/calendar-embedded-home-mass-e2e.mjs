@@ -75,7 +75,7 @@ try{
       token:getComputedStyle(root).getPropertyValue("--ao-tcm-card-radius").trim(),
       selected:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,
       date:root.dataset.aoCalendarPaintDate,view:root.dataset.aoCalendarView,
-      sources:hero.querySelectorAll(".aoCalV2Documentation .aoCalDaySources").length,
+      sources:root.querySelectorAll(".aoCalV2DayFold .aoCalDaySources").length,
       reader:!!globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected};
   });
   assert.equal(dayTheme.token,"18px","Embedded Day did not inherit the shared design kit");
@@ -102,7 +102,7 @@ try{
       [".aoCalModTop h1",".aoCalModTop"],
       [".aoCalV2NextMajor strong",".aoCalV2NextMajor"],
       [".aoCalPracticeCard h4",".aoCalPracticeCard"],
-      [".aoCalDaySources summary",".aoCalV2Hero"],
+      [".aoCalV2DayFold > summary",".aoCalV2DayFold"],
       [".aoCalV2Context .aoCalV2TextLink",".aoCalV2Context"]
     ];
     return samples.map(([textSelector,surfaceSelector])=>{

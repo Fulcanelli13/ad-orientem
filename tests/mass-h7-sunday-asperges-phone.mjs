@@ -198,6 +198,10 @@ try{
       if(test.index!==0){
         // Use the actual visible button; never mutate resolver internals
         // or substitute a fictitious Proper in this entry acceptance.
+        const detail=door.locator(".aoH7DoorDetails");
+        assert.equal(await detail.getAttribute("open"),null,
+          "H7 should keep detailed Other-Mass choices collapsed until requested");
+        await detail.locator(":scope > summary").click();
         const choice=door.locator('[data-formulary="'+test.index+'"]');
         await choice.waitFor({state:"visible",timeout:18000});
         await choice.click();
