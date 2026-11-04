@@ -56,21 +56,25 @@ try{
    "Test must use a source-owned actual 1962 Mass, not a guessed feast");
  assert.ok(selected.linkSlots.includes("GOSPEL"),JSON.stringify(selected));
  const visual=await page.locator("#ao-calendar-modular-root .aoCalV2Hero").evaluate(hero=>{
+   const day=hero.closest("#ao-calendar-modular-root");
    const reading=hero.querySelector(".aoCalDayScripture"),
      mass=hero.querySelector("[data-cal-mass]"),
-     source=hero.querySelector(".aoCalDaySources");
+     // The technical source fold follows the hero; it is not nested inside it.
+     source=day?.querySelector(".aoCalDaySources");
    const before=(a,b)=>Boolean(a&&b&&(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING));
    return {label:reading?.getAttribute("aria-label"),
      scriptureButtons:reading?.querySelectorAll("[data-cal-scripture-slot]").length,
      slots:[...reading?.querySelectorAll("[data-cal-scripture-slot]")||[]].map(n=>n.dataset.calScriptureSlot),
      readingBeforeMass:before(reading,mass),
      massBeforeSources:before(mass,source),
+     sourcePresent:Boolean(source),
      sourceCollapsed:source?.open===false,
-     printCollapsed:hero.querySelector(".aoCalV2PrintOptions")?.open!==true};
+     printCollapsed:day?.querySelector(".aoCalV2PrintOptions")?.open!==true};
  });
  assert.equal(visual.label,"Appointed readings");
  assert.deepEqual(visual.slots,["EPISTLE_OR_LESSON","GOSPEL"]);
  assert.equal(visual.scriptureButtons,2);
+ assert.equal(visual.sourcePresent,true,"Technical Calendar sources must be present");
  assert.ok(visual.readingBeforeMass&&visual.massBeforeSources,
    "The Scripture links must follow principal observance and precede technical sources");
  assert.equal(visual.sourceCollapsed,true);
