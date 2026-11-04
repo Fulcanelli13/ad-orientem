@@ -122,8 +122,9 @@ const modalFr=h4ChoicesMarkup({chosenForm:"LOW",formChangeAllowed:false,readerMo
 assert.match(modalFr,/Une autre messe est célébrée/);
 assert.match(modalFr,/data-h4-option="form" disabled/,"Good Friday must block illicit form change");
 
-assert.doesNotMatch(html,/data-home-h4-readings/,
+assert.doesNotMatch(html,/data-home-h4-reading-slot=/,
   "H7 must not invent unverified Proper rows when no approved readings are supplied");
+assert.match(html,/data-home-h4-readings/,"Secondary Mass texts entry must stay accessible");
 assert.match(html,/data-home-cu-route="pray.angelus_regina"/);
 assert.match(html,/Next · 18:00/);
 assert.match(html,/MY RULE/);

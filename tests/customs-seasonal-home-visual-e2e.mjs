@@ -122,6 +122,7 @@ try{
     // Day-context article is the route destination. The separate, collapsed
     // all-year catalogue also contains the same canonical ID by design.
     const canonicalCustom=page.locator(".homeScreen #ao-calendar-modular-root .aoCalPracticeContext .aoCalCustomArticle[data-cal-custom-id='"+item.id+"']");
+    await page.locator(".homeScreen #ao-calendar-modular-root .aoCalV2DayFold").filter({has:canonicalCustom}).locator(":scope > summary").click();
     await canonicalCustom.waitFor({state:"visible",timeout:45000});
     assert.equal(await canonicalCustom.count(),1,
       "Calendar must show the exact published Customs article from H4");

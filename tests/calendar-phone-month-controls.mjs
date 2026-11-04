@@ -31,6 +31,7 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error.message||error)));
   try{
+   await page.clock.setFixedTime(new Date("2026-10-26T10:00:00+04:00"));
    await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
      {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,

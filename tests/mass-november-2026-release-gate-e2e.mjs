@@ -256,6 +256,9 @@ try{
      },null,{timeout:60000});
      await page.evaluate(()=>globalThis.AO_CELEBRATION_API?.openPreflight?.());
      await page.waitForSelector("[data-ao-full-mass-preflight]",{timeout:30000});
+     const adjust=page.locator("[data-folio-adjust]");
+     if(await adjust.count()&&await adjust.getAttribute("open")===null)
+       await adjust.locator(":scope > summary").click();
      out.host=await page.evaluate(()=>{
        const mass=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
        const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
@@ -649,6 +652,9 @@ try{
      throw Error("NOV02_HOME_PREFLIGHT_ADVANCED_CONTROLS_NOT_COLLAPSED");
    // The source controls are under the current Mass chooser. They must
    // be visible before asserting or editing the Ritus XIV circumstance.
+   const adjust=page.locator("[data-folio-adjust]");
+   if(await adjust.count()&&await adjust.getAttribute("open")===null)
+     await adjust.locator(":scope > summary").click();
    const massChoice=page.locator('[data-m1-choice="mass"]');
    if(await massChoice.isVisible())await massChoice.click();
    else await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();

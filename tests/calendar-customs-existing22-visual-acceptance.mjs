@@ -55,13 +55,14 @@ try{
     });
     assert.equal(opened,true,"Calendar must open through its actual owner");
     const cal=page.locator("#ao-calendar-modular-root");
-    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"visible",timeout:60000});
+    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:60000});
     // Calendar's asynchronous 1962-day paints replace the complete article DOM.
     // Open the native disclosure nodes synchronously rather than letting a
     // Playwright stability wait target a detached old <summary>.
     await page.evaluate(()=>{
       const root=document.querySelector("#ao-calendar-modular-root");
-      root?.querySelector(".aoCalCustomCatalogue")?.setAttribute("open","");
+      root?.querySelector(".aoCalCustomCatalogue")?.closest(".aoCalV2DayFold")?.setAttribute("open","");
+       root?.querySelector(".aoCalCustomCatalogue")?.setAttribute("open","");
       root?.querySelector('[data-cal-custom-id="ADVT-001"]')?.setAttribute("open","");
     });
     const parent=cal.locator('[data-cal-custom-id="ADVT-001"]');

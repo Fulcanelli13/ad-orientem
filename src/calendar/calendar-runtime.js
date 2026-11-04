@@ -1203,7 +1203,7 @@ function calendarAuditCss(){
 #ao-calendar-modular-root .aoCalCompactFilters>.aoCalMonthTabs{margin:8px 0!important}
 #ao-calendar-modular-root .aoCalV2Picker [data-cal-month-status]{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 #ao-calendar-modular-root .aoCalV2DayFold{margin:10px 0;border-top:1px solid rgba(220,204,180,.2)}
-#ao-calendar-modular-root .aoCalV2DayFold>summary{cursor:pointer;min-height:52px;display:flex;align-items:center;padding:11px 8px;font-size:16px;color:inherit}
+#ao-calendar-modular-root .aoCalV2DayFold>summary{cursor:pointer;min-height:52px;display:flex;align-items:center;padding:11px 8px;font-size:16px;color:var(--ao-text-primary,#161c23)!important}
 #ao-calendar-modular-root .aoCalV2DayFold>summary:focus-visible,
 #ao-calendar-modular-root .aoCalCompactFilters>summary:focus-visible{outline:2px solid #decaa0;outline-offset:3px}
 #ao-calendar-modular-root .aoCalV2DayFold[open]{padding-bottom:15px}

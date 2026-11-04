@@ -60,6 +60,7 @@ try{
      return state?.selectedDate==="2026-10-09" && state?.resolution?.day?.main &&
        Boolean(holder?.querySelector('.aoCalSecondarySaintCard h4'));
    },null,{timeout:55000});
+   await page.locator(".aoCalV2DayFold").filter({has:page.locator(".aoCalSecondarySaintCard")}).locator(":scope > summary").click();
    const metrics=await page.evaluate(()=>{
      const c=document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root");
      const el=c?.querySelector(".aoCalSecondarySaintCard");
