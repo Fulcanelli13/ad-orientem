@@ -87,9 +87,17 @@ try{
  // Navigate through the actual Prayer catalogue, not a second direct reader.
  const back=await page.evaluate(async()=>globalThis.AO_APP_SHELL_V1.navigate("pray"));
  assert.equal(back?.ok,true,"Prayer catalogue did not open");
- await page.waitForSelector("#aoPray435930.open [data-p435930-family='daily']",{timeout:15000});
- await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
- await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
+ // The approved nine-door catalogue uses first tap to reveal and second
+ // to open a category; hidden search results are not actionable shortcuts.
+ const dailyTile=page.locator("#aoPray435930.open [data-ao-pray-pilot-tile='daily'][data-p435930-family='daily']");
+ await dailyTile.waitFor({state:"visible",timeout:15000});
+ await dailyTile.click();
+ assert.equal(await dailyTile.getAttribute("aria-expanded"),"true",
+  "A real first tap must reveal Daily Prayer");
+ await dailyTile.click();
+ const dailyShelf=page.locator("#aoPray435930.open [data-ao-prayer-shelf='daily']");
+ await dailyShelf.waitFor({state:"visible",timeout:15000});
+ await dailyShelf.locator("[data-p435930-own='pray.angelus_regina']").click();
  // The default nine-door Prayer discovery may offer an explicit Angelus
  // recitation entry. Unlike the direct Home shortcut, that catalogue path
  // requires the user's real "Begin prayer" action before opening the SAME
