@@ -1,5 +1,6 @@
 import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
+import {recover1962NativityOctaveCommemoration} from "./1962-nativity-octave-source.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
 import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,matches1962May11ApostlesSelection} from "./1962-seasonal-sanctoral-preface-source.js";
@@ -428,12 +429,15 @@ export async function recoverReaderProperOmissions(proper,{
     ["postcommunions","postcommunion","Postcommunio"],
   ];
   const missingOrations=orationGroups.some(([plural,single])=>incompleteOrations(data,plural,single));
+  const needsChristmasOctave=["2026-12-26","2026-12-28"].includes(String(calendarDate))&&
+    ["Sancti/12-26","Sancti/12-28"].includes(path)&&
+    data.calendarCommemorations?.length===1;
   const peterPaulOwner=path==="Sancti/06-30"&&
     /^sancti:06-30:3:/i.test(String(principalCelebrationId??data.principalCelebrationId??data.mainId??""));
   const needsApostolicSource=peterPaulOwner&&
     data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
   if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&
-     !needsApostolicSource&&!recoveredChants)return proper;
+     !needsApostolicSource&&!recoveredChants&&!needsChristmasOctave)return proper;
 
   const next={...data};
   // Restore ONLY the exact source-identified 1962 non-Cistercian Collect;
@@ -451,6 +455,26 @@ export async function recoverReaderProperOmissions(proper,{
        languageWitnesses:Object.freeze(["la","en","fr"]),
        originalSourcePreserved:true,addedTranslation:false})
     ]);
+  }
+  // Recover the Christmas octave's authentic, privileged Collect/Secret/
+  // Postcommunion under the 1960 rubrics. Both days have canonical
+  // [Commemoratio] text in the original principal Mass and a [Rule] ignore
+  // placeholder source, which must NOT be read as a prayer donor. The
+  // separately sourced module validates all three original LAT/EN/FR
+  // Christmas bodies and removes St Stephen's competing Oratio1 from the
+  // commemoration position without changing his principal Collect.
+  if(needsChristmasOctave){
+    try{
+      const octave=await recover1962NativityOctaveCommemoration({
+       data,principalId:principalCelebrationId??data.principalCelebrationId??data.mainId,
+       calendarDate,hostResolver,diagnostic
+      });
+      if(octave)Object.assign(next,octave);
+      else diagnostic?.warnings?.push?.("CHRISTMAS_OCTAVE_ORATIONS_SOURCE_HOLD");
+    }catch(error){
+      diagnostic?.warnings?.push?.("CHRISTMAS_OCTAVE_ORATIONS_SOURCE_UNAVAILABLE:"+
+       String(error?.message??error));
+    }
   }
   if(recoveredChants)next.readerChantSourceProof=recoveredChants;
   if(recoveredPreface)next.preface=recoveredPreface;

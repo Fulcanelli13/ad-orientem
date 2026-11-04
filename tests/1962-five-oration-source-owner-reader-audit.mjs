@@ -162,10 +162,23 @@ for(const [date,sourcePath] of targets){
  assert.ok(item.sourceSections.some(x=>x.path===sourcePath),
   date+": selected original source was not examined");
  const monica=date==="2026-05-04",bridget=date==="2026-10-08";
- assert.equal(item.recoveredEN.ready,monica||bridget,
+ const nativity=["2026-12-26","2026-12-28"].includes(date);
+ assert.equal(item.recoveredEN.ready,monica||bridget||nativity,
   date+": unexpected change in source-owned English orations");
- assert.equal(item.recoveredFR.ready,monica||date==="2026-10-08",
+ assert.equal(item.recoveredFR.ready,monica||bridget||nativity,
   date+": unexpected change in source-owned French orations");
+ if(nativity){
+  for(const lang of ["recoveredEN","recoveredFR"]){
+   for(const key of ["Oratio","Secreta","Postcommunio"]){
+    assert.equal(item[lang].orations[key].count,2,
+     date+":"+lang+":"+key+" Christmas octave commemoration not restored");
+    assert.equal(item[lang].orations[key].rows[1].sourcePath,
+     "Sancti/12-25m3","Christmas source donor identity drift");
+   }
+   assert.equal(item[lang].sourceCorrections.filter(x=>
+    x.id==="1962_CHRISTMAS_OCTAVE_PRIVILEGED_ORATION").length,3);
+  }
+ }
  assert.ok(item.recoveredEN.missing.every(s=>
   ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(s)),
   date+": missing non-oration section");
