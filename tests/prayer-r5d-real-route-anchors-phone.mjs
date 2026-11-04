@@ -73,12 +73,20 @@ try{
    };
    await open("pray.five_wounds");
    for(const [group,id] of [[1,"02"],[2,"03"]]){
-     await page.locator('#aoPray435930.open [data-p435930-five-wound="'+group+'"]').first().click();
+     const choice=page.locator('#aoPray435930.open [data-p435930-five-wound="'+group+'"]').first();
+     if(!await choice.isVisible()){
+       await page.locator('#aoPray435930.open .aoF07WoundJump > summary').click();
+     }
+     await choice.click();
      await verify("STG-pray.five_wounds-"+id,"five-wounds-group","pray.five_wounds");
    }
    await open("pray.precious_blood");
    for(const [step,id] of [[1,"02"],[3,"04"]]){
-     await page.locator('#aoPray435930.open [data-p435930-blood-mystery="'+step+'"]').first().click();
+     const choice=page.locator('#aoPray435930.open [data-p435930-blood-mystery="'+step+'"]').first();
+     if(!await choice.isVisible()){
+       await page.locator('#aoPray435930.open .aoF07BloodJump > summary').click();
+     }
+     await choice.click();
      await verify("STG-pray.precious_blood-"+id,"precious-blood-mystery","pray.precious_blood");
    }
    await open("pray.st_joseph_seven_sorrows");
