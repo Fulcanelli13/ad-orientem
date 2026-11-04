@@ -175,7 +175,7 @@ const data={};for(const [key,path] of Object.entries(paths))data[key]=JSON.parse
 const ledger=compute(data);
 const location=resolve(root,"data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
 if(process.argv.includes("--write")){
- writeFileSync(location,JSON.stringify(ledger,null,2)+"\\n");
+ writeFileSync(location,JSON.stringify(ledger,null,2)+"\n");
  console.log("Written "+location);
 }else if(process.argv.includes("--check")){
  const committed=JSON.parse(readFileSync(location,"utf8"));
