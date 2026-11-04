@@ -171,7 +171,8 @@ def main():
                 "derivative_size":[final.width,final.height]})
         except Exception as error:
             held.append({"place_id":pid,"file":title,"reason":type(error).__name__+": "+str(error)[:240]})
-        print("ROUND11_PD_SELF",json.dumps({"place_id":pid,"status":"PUBLISHED" if new and new[-1]["place_id"]==pid else "HELD"},ensure_ascii=False),flush=True)
+        reason=next((h["reason"] for h in held if h["place_id"]==pid),None)
+        print("ROUND11_PD_SELF",json.dumps({"place_id":pid,"status":"PUBLISHED" if reason is None else "HELD","reason":reason},ensure_ascii=False),flush=True)
     assert len(published)+len(held)==11
     assert len({x["place_id"] for x in new})==len(new)
     manifest_original_items=list(before["items"])
