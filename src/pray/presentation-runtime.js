@@ -3967,7 +3967,9 @@ function restorePraySearch(snapshot){
   b.setAttribute('aria-pressed',String(facets.has(b.dataset.p435930PilotFacet))));
  input.value=snapshot.query.slice(0,256);
  filterPilotDiscovery(root,input.value);
- input.focus({preventScroll:true});
+ // The enclosing Prayer shell schedules its own first-control focus on open.
+ // Reclaim the search field afterwards without jumping the phone scroll.
+ queueMicrotask(()=>{if(input.isConnected)input.focus({preventScroll:true})});
  return true;
 }
 async function openNovenaFromSearch(button,id){
