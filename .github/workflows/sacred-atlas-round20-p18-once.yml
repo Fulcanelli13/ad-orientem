@@ -1,0 +1,36 @@
+name: Sacred Atlas Round 20 — Wikidata P18 28-site discovery once
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - 'tools/atlas/recover-sacred-atlas-28-wikidata-p18.py'
+      - '.github/workflows/sacred-atlas-round20-p18-once.yml'
+permissions:
+  contents: read
+jobs:
+  wikidata-28-site-source-search:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-round20-wikidata-p18-discovery-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen source queue and no-approval code
+        run: |
+          python tools/atlas/recover-sacred-atlas-28-wikidata-p18.py --self-test
+          python tools/atlas/recover-sacred-atlas-28-wikidata-p18.py --dry-run
+      - name: One-time Wikidata P18 and coordinate metadata research
+        run: python tools/atlas/recover-sacred-atlas-28-wikidata-p18.py
+      - name: Save short-lived unapproved source research
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round20-28-wikidata-p18-candidates
+          path: /tmp/sacred-atlas-round20-p18.json
+          if-no-files-found: warn
+          retention-days: 14
