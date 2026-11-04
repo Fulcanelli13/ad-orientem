@@ -8,6 +8,11 @@ on:
       - src/calendar/novena-calendar-metadata.js
       - src/calendar/intelligence.js
       - src/calendar/devotional-registry.js
+      - src/calendar/calendar-runtime.js
+      - src/mass/full-mass-preflight.js
+      - tests/app-shell-journey-e2e.mjs
+      - tests/calendar-reciprocal-scripture-phone.mjs
+      - tests/m1-default-mass-resume-phone-e2e.mjs
       - tests/calendar-novena-metadata-parity.mjs
       - tools/perf/generate-novena-calendar-metadata.mjs
   workflow_dispatch:
@@ -39,6 +44,8 @@ jobs:
           node tests/calendar-reciprocal-scripture-phone.mjs
       - name: Navigation return and R17 HOME guard
         run: node tests/app-shell-journey-e2e.mjs
+      - name: M1 source-gated Start and native R17 Resume
+        run: node tests/m1-default-mass-resume-phone-e2e.mjs
       - name: Transactional offline boot snapshot acceptance
         run: node tests/offline-snapshot-e2e.mjs
       - name: Retain H7 performance counters and screenshots

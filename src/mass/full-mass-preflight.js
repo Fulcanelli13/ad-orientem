@@ -700,7 +700,22 @@ export function mountFullMassPreflight({
     if(m1Preview){
       // The host still owns its action buttons and click listeners.
       // Only their visible labels follow the Mass-language selection.
-      const startAction=folio.querySelector("[data-folio-host-actions] [data-ao-start-live]");
+      // The historical sequence bridge replaces an unready Start caption
+      // with a source-status reason and removes its action marker. Its later
+      // selector can then lose the original button permanently, even after
+      // the canonical Proper is resolved. Recover *that same host button*
+      // only after the bridge's own rubric/Proper gate reports ready.
+      const startHost=folio.querySelector("[data-folio-host-actions]");
+      let startAction=startHost?.querySelector("[data-ao-start-live]");
+      const legacyBridge=doc.defaultView?.AO_SEQUENCE_BRIDGE_V23;
+      if(!startAction&&legacyBridge?.getAssemblyStatus?.()?.ok===true){
+        const candidates=[...startHost?.querySelectorAll(".aoFlowActions .primary")??[]];
+        if(candidates.length===1){
+          candidates[0].dataset.aoStartLive="";
+          legacyBridge.decorate?.();
+          startAction=startHost.querySelector("[data-ao-start-live]");
+        }
+      }
       if(startAction){
         startAction.textContent=l("Start Mass →","Commencer la messe →");
         startAction.classList.add("aoTcmPrimary");
