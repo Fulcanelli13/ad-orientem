@@ -296,6 +296,39 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
 #aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head button{
  flex:0 0 auto;min-width:40px;min-height:40px;
 }
+
+/* Second screenshot-led refinement: keep the explicit Turn Card action *in*
+ * the visible reader, and credit artwork beneath the actual plate. */
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyDeck{
+ position:relative;gap:4px;padding:4px 0 2px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+ height:min(390px,calc(100dvh - 385px));min-height:220px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyFlipButton{
+ position:relative;z-index:4;min-height:40px;margin:2px auto 0;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyHint{
+ position:absolute;width:1px;height:1px;overflow:hidden;
+ margin:0;padding:0;clip-path:inset(50%);white-space:nowrap;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate:not(.aoClaudeHolyPlateText){
+ flex-direction:column;align-items:stretch;justify-content:center;gap:0;
+ background:#1b2025;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate:not(.aoClaudeHolyPlateText) img{
+ flex:1 1 auto;width:100%;min-height:0;max-height:100%;
+ object-fit:contain;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyArtCredit{
+ position:static!important;flex:0 0 auto;display:block;z-index:auto;
+ max-height:38px;margin:0!important;padding:3px 4px!important;
+ background:#14191e;color:#e9d9c5;
+ font-size:10px;text-align:center;overflow-wrap:anywhere;
+}
+@media(max-height:640px){
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{height:220px;min-height:220px}
+}
 `;
 export function installClaudeHolyCardStyles(doc=globalThis.document){
  if(!doc?.head)return false;
