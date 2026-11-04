@@ -1,67 +1,92 @@
 #!/usr/bin/env node
-/** Validate the FIRST R5D publication cohort without authorising publication.
- * 21 preserved exact museum/Commons source files -> 53 non-Rosary Prayer placements.
- * This must run before any production registry mutation.
+/** R5D canonical first-cohort QA: hash 21 source files; join 53 exact editorial slots.
+ * No license, visual or publication approval is inferred from this technical pass.
  */
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {readFileSync, mkdirSync, writeFileSync} from 'node:fs';
+import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 import {prayerEditorialSlot} from '../src/pray/editorial-artwork-assignments.v1.js';
+import {resolvePrayerEditorialArtwork,prayerEditorialPublicationSummary} from '../src/pray/art-slot-map.v1.js';
 import {RELEASED_MODULE_PAINTINGS} from '../src/art/released-module-paintings.v1.js';
+import {R5D_RESEARCH_PHOTOS,R5D_RESEARCH_TOTALS,renderR5dResearchPhoto,resolveR5dResearchPhoto}
+  from './fixtures/prayer-r5d-reader-preview.v1.js';
 
-const load = path => JSON.parse(readFileSync(path,'utf8'));
-const base='assets/prayer/research/';
-const first=load('data/pray/artwork-r5d-museum-source-verification-20261104.v1.json').records;
-const bulk=load(base+'r5d-bulk-museum-originals/manifest.json').artworks;
-const commons=load(base+'r5d-commons-originals/manifest.json').records.filter(r=>r.status==='ACQUIRED_FOR_QA');
-const rescued=load(base+'r5d-commons-recovered-originals/manifest.json').records;
-const works=[
- ...first.map(r=>({title:r.title,source:r.sourcePage,slots:r.slots,
-  sha:r.imageSourceRetrieval.sha256,bytes:r.imageSourceRetrieval.bytes,
-  file:base+'r5d-museum-originals/'+(r.sourcePage.includes('cleveland')?'cleveland-1916.786.jpg':'met-437542.jpg')})),
- ...bulk.map(r=>({title:r.curatorial_title,source:r.source_page,slots:r.approved_slots,
-  sha:r.sha256,bytes:r.bytes,file:base+'r5d-bulk-museum-originals/'+r.museum+'-'+r.object_id+'.'+
-  (r.format==='TIFF'?'tif':r.format==='PNG'?'png':'jpg')})),
- ...commons.map(r=>({title:r.master_title,source:r.source_page,slots:r.approved_slots,
-  sha:r.sha256,bytes:r.bytes,file:base+'r5d-commons-originals/'+r.research_image_file})),
- ...rescued.map(r=>({title:r.master_title,source:r.source_page,slots:r.approved_slots,
-  sha:r.sha256,bytes:r.bytes,file:base+'r5d-commons-recovered-originals/'+r.research_image_file}))
-];
-assert.equal(works.length,21,'Expected exactly 21 preserved photographs');
-const canonical=s=>{const u=new URL(s);return u.hostname.replace(/^www\./,'')+decodeURIComponent(u.pathname).replace(/\/$/,'')};
-let slots=new Set();
-for(const work of works){
- const data=readFileSync(work.file);
- assert.equal(data.byteLength,work.bytes,'Size mismatch '+work.file);
- assert.equal(createHash('sha256').update(data).digest('hex'),work.sha,'Hash mismatch '+work.file);
- assert.ok(work.slots.length,'Missing approved editorial placements: '+work.title);
- for(const id of work.slots){
-   assert.ok(!slots.has(id),'Duplicate artwork stage '+id);slots.add(id);
-   assert.ok(!id.includes('rosary-'),'Signature Rosary is explicitly deferred: '+id);
-   const editorial=prayerEditorialSlot(id);
-   assert.ok(editorial,'Missing editorial slot '+id);
-   assert.equal(editorial.approvedOrInherited,true,'Editorial approval not established for '+id);
-   assert.equal(editorial.hold,false,'Editorial hold applies to '+id);
-   assert.equal(editorial.protectedCover,false,'Protected cover may not change: '+id);
-   assert.equal(editorial.sourceIdentityVerified,true,'Unverified source identity: '+id);
-   assert.equal(canonical(editorial.selected.sourcePage),canonical(work.source),'Wrong artwork mapped for '+id);
+const ledger=JSON.parse(readFileSync('data/pray/research/r5d-21-work-canonical-source-ledger.v1.json','utf8'));
+assert.equal(ledger.schema,'AO_PRAYER_R5D_21_WORK_CANONICAL_RESEARCH_LEDGER_V1');
+assert.equal(ledger.publicationAuthorized,false);
+assert.equal(ledger.manualVisualReviewApproved,false);
+assert.equal(ledger.readerAcceptancePassed,false);
+assert.equal(ledger.works.length,21);
+assert.deepEqual(R5D_RESEARCH_TOTALS,{works:21,slots:53,published:0});
+assert.equal(R5D_RESEARCH_PHOTOS.length,ledger.works.length);
+const normalize=s=>{const u=new URL(s);return u.hostname.replace(/^www\./,'')+decodeURIComponent(u.pathname).replace(/\/$/,'')};
+const released=Object.values(RELEASED_MODULE_PAINTINGS);
+const seenSources=new Set(),seenSlots=new Set(),category={};
+for(let i=0;i<ledger.works.length;i++){
+ const w=ledger.works[i],q=R5D_RESEARCH_PHOTOS[i];
+ assert.equal(w.publicationAuthorized,false);
+ assert.equal(w.visualQA,'PENDING');
+ assert.equal(w.readerBrowserQA,'PENDING');
+ assert.deepEqual(q.slots,w.slots,'QA preview must be canonical-ledger derived');
+ assert.equal(q.sha256,w.sha256);
+ assert.equal(q.imagePath,w.imagePath);
+ assert.equal(q.sourcePage,w.sourcePage);
+ assert.ok(w.rightsEvidence,'Missing museum/Commons rights evidence (not approval)');
+ assert.ok(!seenSources.has(normalize(w.sourcePage)),'Duplicate canonical source');
+ seenSources.add(normalize(w.sourcePage));
+ assert.ok(!released.some(a=>normalize(a.source)===normalize(w.sourcePage)),'Research source already published');
+ const raw=readFileSync(w.imagePath);
+ assert.equal(raw.length,w.bytes,'Original byte count changed: '+w.imagePath);
+ assert.equal(createHash('sha256').update(raw).digest('hex'),w.sha256,
+   'Original image checksum mismatch: '+w.imagePath);
+ for(const id of w.slots){
+  assert.ok(!seenSlots.has(id),'Slot assigned to two paintings: '+id);
+  seenSlots.add(id);
+  assert.ok(!/rosary-/i.test(id),'Signature Rosary is deferred: '+id);
+  category[id.split('-')[0]]=(category[id.split('-')[0]]||0)+1;
+  const slot=prayerEditorialSlot(id);
+  assert.ok(slot,'Missing canonical editorial selection: '+id);
+  assert.equal(slot.approvedOrInherited,true,id);
+  assert.equal(slot.hold,false,id);
+  assert.equal(slot.protectedCover,false,id);
+  assert.equal(slot.sourceIdentityVerified,true,id);
+  assert.equal(normalize(slot.selected.sourcePage),normalize(w.sourcePage),id);
+  const publicState=resolvePrayerEditorialArtwork(id);
+  assert.equal(publicState.state,'APPROVED_EXACT_PHOTO_PENDING',
+    'Publication leak or editorial drift: '+id+' '+publicState.state);
+  assert.equal(renderR5dResearchPhoto(id),'','Default QA markup must render nothing');
+  assert.equal(resolveR5dResearchPhoto(id),null,'Default QA resolver must fail closed');
+  assert.equal(renderR5dResearchPhoto(id,{qaOnly:false}),'','False flag must not show art');
+  const staging=resolveR5dResearchPhoto(id,{qaOnly:true});
+  assert.equal(staging.publicationAuthorized,false);
+  assert.equal(staging.photo.sha256,w.sha256);
+  const markup=renderR5dResearchPhoto(id,{qaOnly:true,className:'aoPrayerEditorialCardCover'});
+  assert.ok(markup.includes('data-ao-editorial-slot="'+id+'"'));
+  assert.ok(markup.includes('data-ao-published="false"'));
+  assert.ok(markup.includes('data-ao-research-only="true"'));
+  assert.ok(markup.includes('src="/'+w.imagePath+'"'));
+  assert.ok(markup.includes('Publication')||markup.includes('publication NOT approved'));
  }
 }
-assert.equal(slots.size,53,'Expected 53 distinct non-Rosary slots');
-const released=Object.values(RELEASED_MODULE_PAINTINGS);
-for(const work of works)
- assert.ok(!released.some(a=>canonical(a.source)===canonical(work.source)),
-  'Unexpectedly live source in released photo catalogue: '+work.title);
-const report={
- schema:'AO_PRAYER_R5D_21_WORK_53_SLOT_STAGING_V1',
- works:works.length,nonRosarySlots:slots.size,hashIntegrityPassed:true,
- editorialCrosswalkPassed:true,publicationAuthorized:false,
- visualInspection:'PENDING_FINAL_MANUAL_APPROVAL',
- responsiveReaderQA:'NOT_RUN',
- releaseRegistryMutated:false,
- candidates:works.map(({title,source,file,slots,sha,bytes})=>({title,source,file,slots,sha256:sha,bytes,
-   visualReview:'REVIEW_REQUIRED',published:false}))
-};
+assert.equal(seenSlots.size,53);
+assert.deepEqual(prayerEditorialPublicationSummary().states.PUBLISHED_EXACT_PHOTO,51,
+ 'Prior live artwork baseline changed; re-review before release');
+assert.equal(renderR5dResearchPhoto('COV-pray.rosary',{qaOnly:true}),'',
+ 'Original signature Rosary must remain entirely untouched');
+assert.equal(resolveR5dResearchPhoto('DOES_NOT_EXIST',{qaOnly:true}),null);
+const production=readFileSync('src/pray/presentation-runtime.js','utf8');
+const resolver=readFileSync('src/pray/art-slot-map.v1.js','utf8');
+assert.ok(!production.includes('prayer-r5d-reader-preview'));
+assert.ok(!resolver.includes('prayer-r5d-reader-preview'));
+const result={schema:'AO_PRAYER_R5D_FIRST_COHORT_READER_PREVIEW_GATE_V2',
+ researchedWorks:21,uniqueApprovedSlots:53,slotKinds:category,
+ exactImageIntegrity:true,editorialMapping:true,
+ baselineReleasedSlots:51,publicationAuthorized:false,
+ previewIsolatedFromProduction:true,
+ actualRouteReaderBrowserQA:'PENDING',humanVisualApproval:'PENDING',
+ records:ledger.works.map(w=>({title:w.title,sourcePage:w.sourcePage,sha256:w.sha256,
+  imagePath:w.imagePath,slots:w.slots,publicationAuthorized:false}))};
 mkdirSync('r5d-first-release-qa',{recursive:true});
-writeFileSync('r5d-first-release-qa/staging-manifest.json',JSON.stringify(report,null,2)+'\n');
-console.log('21 original hashes and 53 approved slots verified; 0 released, Rosary unchanged.');
+writeFileSync('r5d-first-release-qa/staging-manifest.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({pass:true,works:21,slots:53,slotKinds:category,
+  releaseRegistryChanged:false,previousReleasedSlotBaseline:51}));
