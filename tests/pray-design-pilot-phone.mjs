@@ -148,7 +148,10 @@ try{
       const chrome=document.querySelector("#aoPray435930.open .aoP435930Head");
       const description=first?.querySelector(".aoPrayMosaicCardCopy>small");
       const language=first?.querySelector(".aoPrayDoorLanguages");
+      const artThumbs=[...root.querySelectorAll(".aoPrayDoorMosaicCard .aoPrayMosaicCardArt")];
+      const visibleArtThumbs=artThumbs.filter(node=>getComputedStyle(node).display!=="none");
       return {listDisplay:list&&getComputedStyle(list).display,titleWithinArt,
+        artThumbCount:artThumbs.length,visibleArtThumbCount:visibleArtThumbs.length,
         rowDirection:first&&getComputedStyle(first).flexDirection,
         number:n,arrow,coverHeight:cover?.getBoundingClientRect().height,
         titleTop:heading?.getBoundingClientRect().top,coverBottom:cover?.getBoundingClientRect().bottom,
@@ -171,6 +174,9 @@ try{
       "Title must not sit in an opaque rectangle: "+door);
     assert.equal(studyList.descriptionDisplay,"none",
       "Study-style ordinal list must keep prayer titles legible: "+door);
+    assert.equal(studyList.artThumbCount,rows.length,"Keep exact artwork bindings in the route DOM: "+door);
+    assert.equal(studyList.visibleArtThumbCount,0,
+      "Text-only category rows must not leak clipped painting attributions next to arrows: "+door);
     if(studyList.languageDisplay!==null)assert.equal(studyList.languageDisplay,"none",
       "Language options remain in each canonical reader, not cramped shelf rows: "+door);
     if(facetCount){
