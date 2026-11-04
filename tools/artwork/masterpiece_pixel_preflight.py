@@ -18,18 +18,27 @@ def commons_title(url):
     return "File:" + title
 
 def get_bytes(url, cap):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=30) as reply:
-        dest = urllib.parse.urlsplit(reply.geturl())
-        if dest.scheme != "https" or dest.hostname not in ("commons.wikimedia.org", "upload.wikimedia.org"):
-            raise ValueError("redirected outside Wikimedia")
-        announced = int(reply.headers.get("Content-Length", 0))
-        if announced > cap:
-            raise ValueError("declared file size exceeds limit")
-        payload = reply.read(cap + 1)
-        if len(payload) > cap:
-            raise ValueError("download exceeds byte limit")
-        return payload
+    """Bounded download with delayed retry only for temporary Wikimedia throttling."""
+    for attempt in range(4):
+        if attempt:
+            time.sleep((2, 5, 12)[attempt - 1])
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "image/*"})
+        try:
+            with urllib.request.urlopen(req, timeout=55) as reply:
+                dest = urllib.parse.urlsplit(reply.geturl())
+                if dest.scheme != "https" or dest.hostname not in ("commons.wikimedia.org", "upload.wikimedia.org"):
+                    raise ValueError("redirected outside Wikimedia")
+                announced = int(reply.headers.get("Content-Length", 0))
+                if announced > cap:
+                    raise ValueError("declared file size exceeds limit")
+                payload = reply.read(cap + 1)
+                if len(payload) > cap:
+                    raise ValueError("download exceeds byte limit")
+                return payload
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 502, 503, 504) or attempt == 3:
+                raise ValueError(f"HTTP {e.code}") from e
+    raise ValueError("download exhausted retries")
 
 def fetch_info(title):
     endpoint = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
