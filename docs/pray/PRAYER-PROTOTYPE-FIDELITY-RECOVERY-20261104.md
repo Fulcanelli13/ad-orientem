@@ -25,7 +25,7 @@
 | --- | --- | --- | --- |
 | Landing/discovery | Existing nine-door pilot uses small icon-led grid; older study uses full-bleed responsive painting gallery and first-tap reveal | R1 in draft PR #2426: dark masonry, source-gated photos, nine doors, second-activation routing | **PENDING** real 320/390/desktop screenshots |
 | Category interiors | Previous two-column conventional cards, faceted filters and source-gated cover | **R2 IMPLEMENTED ON DRAFT**: study-style artwork header, overlaid title, numbered linear prayer rows and existing functional filters; preserves exact images and canonical route identities | **PENDING** live 320/390/desktop comparison |
-| Essential Prayers F01 | 32-card case, Latin-first flow and tap-to-translate exist; legacy Holy Card remains rollback | **OPEN** compare visual case/reading text and controls against Claude source | PENDING |
+| Essential Prayers F01 | Original Claude Holy Card source and three-column lace fan survived but the default route selected the newer continuous reader | **R3 IMPLEMENTED ON DRAFT**: original reversible Holy Card as default for all 32, artwork-first face, Latin incipit, source prayer reverse and Aa language selection; continuous flow retained only with `?aoEssentialFlow=1`, with no new art or texts | **PENDING** complete 320/390 real-browser test and source-to-golden screenshot sign-off |
 | Choir / litanies | Specialised invocations and role/response rails exist; Loreto display pilot is opt-in | **OPEN** assess each approved family prototype before changing defaults | PENDING |
 | Chaplets F07 | Five Wounds / Precious Blood / Little Crown source-owner readers active; Mercy F07 pilot opt-in | **OPEN** finish m1/m2/m3 phone visual comparisons and approved spacing/footer | PENDING |
 | Confession F12 | Three paths, examinations, nine rite guidance cards, privacy preserved | **OPEN** compare every 320/390 screen with correction pack, no simulated sacramental outcomes | PENDING |
@@ -40,6 +40,9 @@
 - [x] Source-code introduction of two-step reveal + visual gallery, without new image publication or prayer data changes.
 - [x] Source contract and 320/390 primary mobile test updated for intentional interaction difference.
 - [x] R2 source-level category interiors restored without redirecting canonical prayers, changing artwork licenses or removing filters.
+- [x] R3 F01 default restored to original Claude Holy Card with 3-column tilted lace fan and 500ms Y-flip; the later continuous reader is now explicit opt-in.
+- [x] F01 source contract, 32-card mobile checks, original 3-column gallery geometry checks, and explicit flow regression test staged.
+- [ ] Real screenshots of F01 collection/front/reverse compared directly to Claude 30 October golden screenshots at 320 and 390px.
 - [x] Route/offline/artwork phone tests updated to exercise the intentional two-step landing navigation; released painting uses contain to prevent unauthorized crops.
 - [ ] Source checks and full PR CI green; repair **real** regressions rather than loosening independent tests.
 - [ ] Real 320, 390 and desktop comparison at matching viewport, text language and artwork states.
