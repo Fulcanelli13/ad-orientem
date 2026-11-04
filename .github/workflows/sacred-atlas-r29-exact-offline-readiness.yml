@@ -55,6 +55,12 @@ jobs:
               if gate['special_issue']:
                   assert not mod.policy_ready(row,gate)
                   gate['special_issue_accepted']=True
+              if row['place_id']=='place:DE:bettbrunn-st-salvator':
+                  assert not mod.policy_ready(row,gate)
+                  gate['near_image_attribution_verified']=True
+              if row['place_id']=='place:DE:basilika-st-clemens-hannover':
+                  assert not mod.policy_ready(row,gate)
+                  gate['original_photographer_and_editor_credit_verified']=True
               assert mod.policy_ready(row,gate)
               gate['original_sha1']='0'*40
               assert not mod.policy_ready(row,gate)
