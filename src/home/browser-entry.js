@@ -408,6 +408,20 @@ export function createHomeOwner(win=globalThis){
     return true;
   }
 
+  // Calendar Day's Mass action must land at the same approved H7 door as
+  // Home's Enter the Mass. Keep R17 as the sole owner of choices and LIVE.
+  function openCalendarMassDoor(){
+    const s=state(win);
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4.aoH7Screens");
+    if(s?.route!=="home"||!inlineCalendarView||!screen||
+       !screen.querySelector("[data-home-calendar-inline] #ao-calendar-modular-root"))return false;
+    showHomeToday();
+    h7MassDoorOpen=true;
+    if(!syncH7MassDoor()){h7MassDoorOpen=false;return false;}
+    win?.document?.querySelector?.(".aoH7DoorView:not([hidden]) [data-home-h7-back]")
+      ?.focus?.({preventScroll:true});
+    return true;
+  }
   function onEnricherClick(event){
     const target=event?.target;
     const retry=target?.closest?.("[data-home-shortcut-retry]");
@@ -914,7 +928,7 @@ export function createHomeOwner(win=globalThis){
   bindEnricherClicks();
   ensureRetiredEnricherWatch();
   attachPresentation();
-  return Object.freeze({version:VERSION,open,paint,status,dispose});
+  return Object.freeze({version:VERSION,open,paint,status,openCalendarMassDoor,dispose});
 }
 
 export function installHomeBrowserOwner(win=globalThis){

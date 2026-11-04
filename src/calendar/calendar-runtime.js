@@ -1902,7 +1902,17 @@ function bind(r){
     }void Promise.resolve(globalThis.AO_MODULES?.open?.(route,{returnContext:{surface:"calendar",view:"day",date:state()?.selectedDate||null}})).catch(error=>console.error("Calendar practice route failed",error));return}
     const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
     const printButton=event.target.closest?.("[data-cal-print-proper]");if(printButton){event.preventDefault();openPrintableProper();return}
-    const mass=event.target.closest?.("[data-cal-mass]");if(mass){event.preventDefault();void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar Mass entry failed",error));return}
+    const mass=event.target.closest?.("[data-cal-mass]");if(mass){
+      event.preventDefault();
+      // The in-Home Calendar must open the H7 Mass door, not bypass it by
+      // navigating directly to the legacy full preflight. Standalone Calendar
+      // keeps its existing shell fallback.
+      if(mass.closest(".aoTodayV2CalendarInline")&&
+         globalThis.AO_HOME_APP_V1?.openCalendarMassDoor?.()===true)return;
+      void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass"))
+        .catch(error=>console.error("Calendar Mass entry failed",error));
+      return;
+    }
     const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();if(selectedScriptureReturn){returnToSelectedScripture();return;}close();return}
     const day=event.target.closest?.("[data-cal-date]");if(day){event.preventDefault();void select(day.dataset.calDate);return}
     const shift=event.target.closest?.("[data-cal-shift]");if(shift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(shift.dataset.calShift||0)));return}
