@@ -24,11 +24,13 @@ on:
       - 'data/research/mass-special-rite-music-events-20261019.v1.json'
       - 'tools/build-web-preview.mjs'
       - 'tools/prepare-github-pages-release.mjs'
+      - 'tools/check-github-pages-live.mjs'
       - '.github/workflows/github-pages.yml'
   pull_request:
     paths:
       - '.github/workflows/github-pages.yml'
       - 'tools/prepare-github-pages-release.mjs'
+      - 'tools/check-github-pages-live.mjs'
       - 'tools/build-web-preview.mjs'
       - 'vercel.json'
   workflow_dispatch:
@@ -54,6 +56,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate public postdeploy smoke code
+        run: node --check tools/check-github-pages-live.mjs
       - name: Build allowlisted static release
         run: node tools/build-web-preview.mjs
       - name: Validate base path, noindex, release safety and 1GB Pages cap
@@ -80,3 +84,13 @@ jobs:
       - name: Publish site
         id: pages
         uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify live GitHub Pages publication
+        env:
+          GITHUB_PAGES_URL: ${{ steps.pages.outputs.page_url }}
+        run: node tools/check-github-pages-live.mjs
