@@ -201,10 +201,11 @@ export function hydrateC3Art(root,state,win=globalThis){
     const a=certifiedWeekArt(p,slot.dataset.homeC3WeekArt);
     const button=slot.parentElement?.querySelector('[data-home-c3-info="week"]');
     if(button)button.hidden=true;
-    if(!a)continue;
+    if(!a){slot.hidden=true;slot.parentElement?.classList.add("aoC3UpcomingTextOnly");continue;}
+    slot.hidden=false;slot.parentElement?.classList.remove("aoC3UpcomingTextOnly");
     const img=win.document.createElement("img");img.src=artUrl(a.file,800);img.loading="lazy";
     img.alt=a.artist+" — "+a.title;img.referrerPolicy="no-referrer";
-    img.addEventListener("error",()=>{slot.replaceChildren();if(button)button.hidden=true},{once:true});
+    img.addEventListener("error",()=>{slot.replaceChildren();slot.hidden=true;slot.parentElement?.classList.add("aoC3UpcomingTextOnly");if(button)button.hidden=true},{once:true});
     slot.replaceChildren(img);
     if(button){button.__c3Artwork=info(a,img);button.hidden=false;}
   }
