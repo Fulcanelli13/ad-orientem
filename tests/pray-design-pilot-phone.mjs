@@ -188,7 +188,7 @@ try{
       assert.equal(sourceCredit.visible,true,"Artist/source credit remains readable and visible");
       assert.ok(sourceCredit.link?.startsWith("https://"),
         "Only the true released artwork source may appear as the cover-credit link");
-      assert.ok(!/rgba\\(0, 0, 0, 0\\)|transparent/.test(sourceCredit.background),
+      assert.ok(sourceCredit.background!=="rgba(0, 0, 0, 0)"&&sourceCredit.background!=="transparent",
         "Cover provenance needs its own contrast background: "+JSON.stringify(sourceCredit));
     }
     assert.equal(studyList.artThumbCount,rows.length,"Keep exact artwork bindings in the route DOM: "+door);
