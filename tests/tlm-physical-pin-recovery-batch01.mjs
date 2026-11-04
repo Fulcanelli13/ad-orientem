@@ -55,8 +55,8 @@ for(const [group,id,lat,lng,ref,scope] of [...newlyMapped,...refinements]){
    "Physical coordinates cannot create a claim about any Mass or its Missal");
 }
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:510,SOURCE_PIN:1806,ADDRESS_ONLY:266});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,266);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:510,SOURCE_PIN:1806,ADDRESS_ONLY:275});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,275);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,510);
 // These records appear to describe one Cagliari basilica and require a
 // physical-identity reconciliation before either gets a new coordinate.
@@ -64,4 +64,4 @@ const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
 const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
 assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
   "Do not add a duplicate research pin to the already mapped Cagliari basilica");
-console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 2,316 mapped (including 169 explicitly illustrative locality markers), 266 list-only, Cagliari duplicate held");
+console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 2,307 mapped (including 160 Excel-approved illustrative locality markers), 275 list-only, Cagliari duplicate held");
