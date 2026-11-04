@@ -52,6 +52,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: canonical-prayer-source-faces
-          path: |\n            artifacts/pray-canonical-phone-faces/source-face-variants.json\n            artifacts/pray-f01-holy-card-default/
+          path: |
+            artifacts/pray-canonical-phone-faces/source-face-variants.json
+            artifacts/pray-f01-holy-card-default/
           if-no-files-found: warn
           retention-days: 7
