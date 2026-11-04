@@ -75,3 +75,28 @@ Cumulative **70/296** original unverified claims have a new source-review decisi
 This is algorithmic risk triage **not** human event adjudication. In particular **14 differing-frequency cases must never be automatically merged** based on a matching weekday and clock. All 106 remain pending the final current-source, calendar-date, ministry and ministry-level liturgical identity verification gates, and **0** merged event IDs have been minted.
 
 Run the existing targeted CI check: `node tests/tlm-cl27-current-firstparty-review.mjs`.
+
+## Wave 3 — 69 additional historical rows (139/296 cumulative)
+
+`source-review-wave3.v1.json` contains **69 original frozen row IDs**, **16 source groupings**, and **19 physical CL2 anchors**, all held from public event promotion. Source checks included the official Belgium, Canada and Nigeria district sites, the Mauritius ICRSP programme, French district church pages and the Capuchin community's own page.
+
+**Material corrections and limits:**
+- **Toronto/Etobicoke:** the official operator bulletin for 1–8 Nov 2026 lists Sunday Masses at **08:00 and 10:00**, not the historical 10:30 or 17:00 Sunday claims; a 19:00 regular Friday and uniform 08:00 Saturday also do not match that week's documented pattern. There are feast and First-Saturday exceptions. https://ontario.sspx.ca/en/schedule-mass-and-announcements-etobicoke-48847
+- **Antwerp:** Benelux district's chapel page corroborates Sunday 07:30/10:00 and weekday pattern but explicitly points to the current **November 2026** monthly schedule for exceptions. Chapel and priory addresses are recorded as **Hemelstraat 21 / 23** on different official pages; preserve building scope. https://fsspx.be/nl/kapel-v/h-allerheiligste-sacrament-41502
+- **Mauritius:** all five historical Mass-source rows still have **missing frozen venue source IDs**, even where the ICRSP apostolate page confirms a pattern. Tuesday–Thursday 08:30 does not itself identify Sainte-Thérèse as the exact worship venue. The last-Sunday Hôpital Jeetoo Mass and Sunday Collège Saint-Joseph 09:45 must retain their venue-specific identity. https://icrspmaurice.org/index.php/horaires-de-lapostolat/
+- **Nigeria/Lagos St Pius X:** district confirms Saturday 18:00 and Sunday 07:00/09:00, plus distinct first-Friday 18:00 and first-Saturday 09:00; do not confuse those monthly exceptional slots with weekly recurrence. https://fsspx.africa/en/list-sspx-chapels-2
+- **Capuchin houses:** Cour-Cheverny/Pontchardon Capuchin first-party programme confirms Sunday 07:00/10:00 and daily 07:00, while late 16:45 services are occasional. Fleurance/Aurenque district listing contains first-Friday/first-Saturday/feast exceptions. These are **Capucins de Morgon** sites, not SSPX-owned buildings merely because an SSPX directory references them. https://capucins-morgon.fr/community?community=3 ; https://laportelatine.org/lieux/aurenque
+- **French named-site exception checks:** Brest, Toulouse, Saint-Aptone (Angoulême), Saint-Joseph (Chemillé), Notre-Dame-des-Anges (Assais), Tours Saint-Grégoire, Périgueux Notre-Dame-de-Toutes-Grâces, Limoges Saint-Martial and Saint-Malo source patterns remain traceable to their individually named district venue pages, but are not dated-event approvals. Reims Notre-Dame de France must override its normal Sunday **10:00 with 11:15** at Pentecost, Christ the King and in July/August. https://laportelatine.org/lieux/valdevesle/reims
+
+`classification-role-review-wave3.v1.json` documents **19** source-scoped ministry, hosted-community and apostolate associations. Combined with earlier waves the project now has **50** role observations (13 + 18 + 19); these are not necessarily 50 distinct ministry assertions. No claims about canonical status, `una cum`, Pope named in Canon, exact Missal, person-level celebrant or legal title are promoted.
+
+## Source-adjudicated collision groups — seven of 106
+
+`collision-source-decisions-7.v1.json` resolves the **source-claim identity question** for:
+- Four Łódź slots (Friday 19:00 first Friday; Saturday 18:00; Sunday 09:00 Sung and 12:00 Low): source aliases pointing to the same published chapel time, not multiple separate Masses. https://www.piusx.org.pl/kaplice/lodz
+- One Słupsk slot (Sunday 13:00 Sung): three historical aliases point to one listed Mass; 12:30 is confessions, not Mass. https://www.piusx.org.pl/kaplice/zestawienie
+- Two Querétaro slots (08:30 and 11:30 Sundays): first and third Sunday recurrences are **distinct dates**, not duplicate event records simply because they share clock time. https://fsspx.mx/es/capillas-2
+
+Seven groups have evidence-based source-claim dispositions; **99** await this level of review. The separate publication/event generation gate is still **closed** for all seven, and all frozen historical rows remain. A collision-source disposition is not automatically an approved current event.
+
+The complete **296** historical-source review programme now stands **139 reviewed / 157 pending**. This is source review, not live-event verification completion. Run the existing `node tests/tlm-cl27-current-firstparty-review.mjs` guard to confirm row census, 106 historical collision preservation, seven source adjudications, 50 role observations, and **zero** unsupported app promotions.
