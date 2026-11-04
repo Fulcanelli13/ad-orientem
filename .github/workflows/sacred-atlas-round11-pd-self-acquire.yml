@@ -25,6 +25,14 @@ jobs:
         run: python -m pip install Pillow==11.3.0
       - name: Audit eleven first-rank Commons PD-self originals with exact revision and SHA1
         run: python 'tools/atlas/acquire-sacred-atlas-round11-pd-self-originals.py'
+      - name: Preserve all eleven source verification outcomes even on 429
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round11-source-evidence
+          path: data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Commit only source-verified approved Place binaries and evidence
         run: |
           if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard assets/approved/place-media/ data/geography/research/sacred-atlas-round11-pd-self-source-evidence-20261104.v1.json)" ]; then
