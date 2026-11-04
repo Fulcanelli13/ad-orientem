@@ -49,6 +49,31 @@ try{
    await page.clock.setFixedTime(new Date("2026-11-04T12:00:00+04:00"));
    const cdp=await context.newCDPSession(page);
    await cdp.send("Emulation.setCPUThrottlingRate",{rate:4});
+   // Earlier Resource Timing entries were empty despite 300 script requests.
+   // Capture bytes from actual completed Chromium Network responses.
+   const pending=new Map(),completed=[];
+   cdp.on("Network.requestWillBeSent",ev=>{
+     pending.set(ev.requestId,{url:ev.request.url,start:ev.timestamp,
+       kind:"Other",mime:"",cached:false,serviceWorker:false});
+   });
+   cdp.on("Network.responseReceived",ev=>{
+     const row=pending.get(ev.requestId);
+     if(!row)return;
+     row.kind=ev.type||"Other";row.mime=ev.response?.mimeType||"";
+     row.cached=Boolean(ev.response?.fromDiskCache||ev.response?.fromPrefetchCache);
+     row.serviceWorker=Boolean(ev.response?.fromServiceWorker);
+   });
+   cdp.on("Network.requestServedFromCache",ev=>{
+     const row=pending.get(ev.requestId);if(row)row.cached=true;
+   });
+   cdp.on("Network.loadingFinished",ev=>{
+     const row=pending.get(ev.requestId);
+     if(row)completed.push({...row,bytes:Math.max(0,ev.encodedDataLength||0),
+       durationMs:Math.max(0,Math.round((ev.timestamp-row.start)*1000))});
+     pending.delete(ev.requestId);
+   });
+   cdp.on("Network.loadingFailed",ev=>pending.delete(ev.requestId));
+   await cdp.send("Network.enable");
    const file=mode==="baseline"?"index-baseline-pilot.html":"index.html";
    await page.goto(base+"/"+file+"?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
    const homeReady=()=>{
@@ -60,61 +85,54 @@ try{
       getComputedStyle(splash).visibility==="hidden"||splash.getAttribute("aria-hidden")==="true");
    };
    await page.waitForFunction(homeReady,null,{timeout:90000});
-   const resourceBreakdown=()=>page.evaluate(()=>{
-    const resources=performance.getEntriesByType("resource");
-    const navigation=performance.getEntriesByType("navigation")[0];
-    const all=navigation?[navigation,...resources]:resources;
-    const totals=all.reduce((sum,r)=>({
-      transfer:sum.transfer+Math.max(0,r.transferSize||0),
-      encoded:sum.encoded+Math.max(0,r.encodedBodySize||0),
-      decoded:sum.decoded+Math.max(0,r.decodedBodySize||0)
-    }),{transfer:0,encoded:0,decoded:0});
-    const byInitiator={};
-    for(const r of resources){
-      const key=r.initiatorType||"unknown";
-      const slot=byInitiator[key]??={requests:0,transfer:0,decoded:0};
-      slot.requests++;
-      slot.transfer+=Math.max(0,r.transferSize||0);
-      slot.decoded+=Math.max(0,r.decodedBodySize||0);
-    }
-    const topDecoded=resources.map(r=>({
-      path:new URL(r.name).pathname,
-      kind:r.initiatorType,
-      decoded:r.decodedBodySize||0,
-      transfer:r.transferSize||0,
-      start:Math.round(r.startTime),
-      duration:Math.round(r.duration)
-    })).sort((a,b)=>b.decoded-a.decoded).slice(0,18);
-    const tasks=globalThis.__aoPilotLongTasks||[];
-    return {resourceEntries:resources.length,totals,byInitiator,topDecoded,
-      navigation:{
-        domContentLoadedMs:Math.round(navigation?.domContentLoadedEventEnd||0),
-        responseEndMs:Math.round(navigation?.responseEnd||0),
-        transferSize:navigation?.transferSize||0
-      },
-      longTasks:{count:tasks.length,totalMs:tasks.reduce((s,t)=>s+t.duration,0),
-        top:tasks.slice().sort((a,b)=>b.duration-a.duration).slice(0,10)},
-      serviceWorkerControlled:Boolean(navigator.serviceWorker?.controller)
-    };
-   });
+   const resourceBreakdown=async()=>{
+     // Capture response completion through Home ready +130ms, without moving
+     // the independently recorded Home-ready timestamp.
+     await page.waitForTimeout(130);
+     const rows=completed.slice();
+     const totals={wireBytes:rows.reduce((s,r)=>s+r.bytes,0),
+       completed:rows.length,inFlight:pending.size,
+       cachedResponses:rows.filter(r=>r.cached).length,
+       serviceWorkerResponses:rows.filter(r=>r.serviceWorker).length};
+     const byType={};
+     for(const r of rows){
+       const slot=byType[r.kind]??={requests:0,wireBytes:0};
+       slot.requests++;slot.wireBytes+=r.bytes;
+     }
+     const topTransferred=rows.slice().sort((a,b)=>b.bytes-a.bytes).slice(0,18)
+       .map(r=>({path:new URL(r.url).pathname,kind:r.kind,mime:r.mime,
+         bytes:r.bytes,durationMs:r.durationMs,cached:r.cached}));
+     const browser=await page.evaluate(()=>{
+       const tasks=globalThis.__aoPilotLongTasks||[];
+       return {longTasks:{count:tasks.length,totalMs:tasks.reduce((s,t)=>s+t.duration,0),
+         top:tasks.slice().sort((a,b)=>b.duration-a.duration).slice(0,10)},
+         serviceWorkerControlled:Boolean(navigator.serviceWorker?.controller),
+         resourceTimingCount:performance.getEntriesByType("resource").length};
+     });
+     return {source:"Chromium CDP Network.loadingFinished encodedDataLength",
+       totals,byType,topTransferred,...browser};
+   };
+   const coldReadyAt=Math.round(await page.evaluate(()=>performance.now()));
+   const coldReadyRequests=requests.length;
+   const coldReadyJs=requests.filter(x=>x.kind==="script"||/\\.m?js(?:\\?|$)/.test(x.url)).length;
    const coldResources=await resourceBreakdown();
-   const counts={requests:requests.length,
-    js:requests.filter(x=>x.kind==="script"||/\.m?js(?:\?|$)/.test(x.url)).length,
-    durationMs:Math.round(await page.evaluate(()=>performance.now()))};
+   const counts={requests:coldReadyRequests,js:coldReadyJs,durationMs:coldReadyAt};
    console.log("PAGES_ESM_STARTUP "+JSON.stringify({width,mode,...counts,errors,
-     bytes:coldResources.totals,top:coldResources.topDecoded.slice(0,4),
+     network:coldResources.totals,top:coldResources.topTransferred.slice(0,4),
      longTasks:coldResources.longTasks}));
    // Warm reload uses the same origin/browser cache, immediately after Home.
    // This is not an emulated mobile network or a real installed PWA.
-   requests.length=0;
+   requests.length=0;completed.length=0;pending.clear();
    await page.reload({waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(homeReady,null,{timeout:90000});
+   const warmReadyAt=Math.round(await page.evaluate(()=>performance.now()));
+   const warmReadyRequests=requests.length;
+   const warmReadyJs=requests.filter(x=>x.kind==="script"||/\\.m?js(?:\\?|$)/.test(x.url)).length;
    const warmResources=await resourceBreakdown();
-   const warm={requests:requests.length,
-     js:requests.filter(x=>x.kind==="script"||/\.m?js(?:\?|$)/.test(x.url)).length,
-     durationMs:Math.round(await page.evaluate(()=>performance.now())),
-     bytes:warmResources.totals,
-     serviceWorkerControlled:warmResources.serviceWorkerControlled};
+   const warm={requests:warmReadyRequests,js:warmReadyJs,
+     durationMs:warmReadyAt,network:warmResources.totals,
+     serviceWorkerControlled:warmResources.serviceWorkerControlled,
+     longTasks:warmResources.longTasks};
    console.log("PAGES_ESM_WARM "+JSON.stringify({width,mode,...warm}));
    if(mode==="bundled"){
     assert.equal(errors.length,0,"Bundled ESM console errors: "+errors.join("; "));
@@ -146,5 +164,5 @@ try{
    "Bundling did not substantially reduce JS requests on "+width+": "+JSON.stringify({normal,bundled}));
  }
  await writeFile(resolve(output,"baseline-vs-bundle.json"),
-  JSON.stringify({method:"Chromium, 4x CPU, localhost, isolated browser profiles; raw byte counts from Resource Timing, network may use cache and entries can omit cross-origin byte totals",samples},null,2)+"\n");
+  JSON.stringify({method:"Chromium, 4x CPU, localhost, isolated browser profiles; bytes from CDP completed responses through Home-ready plus 130ms, not field network data",samples},null,2)+"\n");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
