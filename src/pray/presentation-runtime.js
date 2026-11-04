@@ -3534,6 +3534,21 @@ function refreshRosaryChoiceFocus(attribute,value){
   node?.focus?.({preventScroll:true});
  });
 }
+function toggleClaudeHolyCard(lace){
+ if(!lace)return false;
+ const card=lace.closest('[data-ao-claude-holy-card]');
+ if(!card)return false;
+ CLAUDE_HOLY_PREF.flipped=!lace.classList.contains('flip');
+ lace.classList.toggle('flip',CLAUDE_HOLY_PREF.flipped);
+ // Both faces remain mounted for the approved 500ms Y-flip; expose only
+ // the visible prayer or artwork face to assistive technology.
+ card.querySelector('.aoClaudeHolyFront')?.setAttribute('aria-hidden',String(CLAUDE_HOLY_PREF.flipped));
+ card.querySelector('.aoClaudeHolyBack')?.setAttribute('aria-hidden',String(!CLAUDE_HOLY_PREF.flipped));
+ lace.setAttribute('aria-label',CLAUDE_HOLY_PREF.flipped?L('Turn to front of card','Retourner la carte'):L('Turn to prayer text','Voir la prière'));
+ const hint=card.querySelector('.aoClaudeHolyHint');
+ if(hint)hint.textContent=CLAUDE_HOLY_PREF.flipped?L('Tap to turn back · swipe for the next card','Touchez pour retourner · balayez pour la suivante'):L('Tap to turn the card over','Touchez pour retourner la carte');
+ return true;
+}
 function installLibraryParagraphFocus(m,id){
  const card=m.querySelector(".aoP435930LibraryReader .aoDevoCard");
  if(!card||!id)return;
@@ -3556,6 +3571,15 @@ function installLibraryParagraphFocus(m,id){
    CLAUDE_HOLY_PREF.scrollRatio=backside.scrollTop/Math.max(1,backside.scrollHeight-backside.clientHeight);
   },{passive:true});
   const lace=card.querySelector('[data-p435930-essential-card-turn]');
+  // The card captures taps before its scrollable reverse face. Mobile
+  // Chromium can otherwise hit-test a 3D-hidden prayer paragraph, whose
+  // own click handler consumes the first tap meant to flip the card.
+  lace?.addEventListener("click",event=>{
+   if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
+   if(lace.classList.contains('flip')&&event.target.closest?.('.aoP435930EssentialBeat'))return;
+   event.preventDefault();event.stopPropagation();
+   toggleClaudeHolyCard(lace);
+  },true);
   lace?.addEventListener("keydown",event=>{
    if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
    if(event.key==='Enter'||event.key===' '){
@@ -4365,17 +4389,9 @@ function onClick(e){
   return render();
  }
  if(b.hasAttribute('data-p435930-essential-card-turn')){
-  const card=b.closest('[data-ao-claude-holy-card]');
-  if(e.target.closest?.('.aoP435930EssentialBeat'))return;
-  CLAUDE_HOLY_PREF.flipped=!b.classList.contains('flip');
-  b.classList.toggle('flip',CLAUDE_HOLY_PREF.flipped);
-  // The two card faces remain mounted for the 500ms Y-flip. Only the face
-  // currently visible may be read by assistive technology.
-  card?.querySelector('.aoClaudeHolyFront')?.setAttribute('aria-hidden',String(CLAUDE_HOLY_PREF.flipped));
-  card?.querySelector('.aoClaudeHolyBack')?.setAttribute('aria-hidden',String(!CLAUDE_HOLY_PREF.flipped));
-  b.setAttribute('aria-label',CLAUDE_HOLY_PREF.flipped?L('Turn to front of card','Retourner la carte'):L('Turn to prayer text','Voir la prière'));
-  const hint=card?.querySelector('.aoClaudeHolyHint');
-  if(hint)hint.textContent=CLAUDE_HOLY_PREF.flipped?L('Tap to turn back · swipe for the next card','Touchez pour retourner · balayez pour la suivante'):L('Tap to turn the card over','Touchez pour retourner la carte');
+  // Fallback for card activation before its focus-hook capture listener mounts.
+  if(b.classList.contains('flip')&&e.target.closest?.('.aoP435930EssentialBeat'))return;
+  toggleClaudeHolyCard(b);
   return;
  }
  if(b.hasAttribute('data-p435930-essential-prev')||b.hasAttribute('data-p435930-essential-next')){
