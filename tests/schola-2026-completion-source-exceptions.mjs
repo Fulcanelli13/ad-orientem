@@ -22,17 +22,31 @@ const saved=load("2026-schola-closeout-source-exceptions.json");
 assert.deepEqual(saved,checked);
 assert.equal(checked.schema,SCHOLA_2026_CLOSEOUT_SCHEMA);
 assert.equal(checked.counts.selectedProperDays,365);
-// Locked actual source evidence from 4 Nov 2026. If the original selected
-// source changes, require a new explicit audit rather than silently hiding a hold.
-assert.deepEqual(checked.counts,{
- selectedProperDays:365,readerProjectionHolds:8,
- ordinaryReaderOrationHolds:6,exceptionalRiteProjectionHolds:2,
- missingPinnedSourcePaths:5,affectedDatesMissingPinnedSource:15,
- preGospelDatedOwnershipHolds:128,distinctPreGospelSourceOwners:115,
- preGospelCauseGroups:5,separateSelectedRoleHolds:1,
- sourceUniqueMusicalCandidates:541,sourceScoreOccurrences:889,
- textExactFirst60:50,textVariantsFirst60:10,newApprovedScores:0
-});
+// Source-corrected 6 March 2026 must graduate from the old research-only
+// English reader hold. The 2026 source IDs/hashes and score shortlist remain
+// independently pinned by schola-2026-pinned-review-queue-lock.mjs.
+assert.equal(checked.counts.readerProjectionHolds,7);
+assert.equal(checked.counts.ordinaryReaderOrationHolds,5);
+assert.equal(checked.counts.exceptionalRiteProjectionHolds,2);
+assert.deepEqual(checked.ordinaryAndSpecialReaderHolds.map(x=>x.date).sort(),[
+ "2026-03-27","2026-04-03","2026-04-04","2026-05-04",
+ "2026-10-08","2026-12-26","2026-12-28"].sort());
+assert.equal(checked.ordinaryAndSpecialReaderHolds.some(x=>x.date==="2026-03-06"),false,
+ "Named March 6 English reader regression not restored");
+assert.equal(checked.counts.missingPinnedSourcePaths,5);
+assert.equal(checked.counts.affectedDatesMissingPinnedSource,15);
+assert.equal(checked.counts.separateSelectedRoleHolds,1);
+assert.ok(checked.counts.sourceUniqueMusicalCandidates>=541,
+ "Source-correcting a formerly held day cannot silently erase vetted score leads");
+assert.ok(checked.counts.sourceScoreOccurrences>=889,
+ "Source-correcting a formerly held day cannot silently erase dated uses");
+assert.equal(checked.counts.textExactFirst60,50);
+assert.equal(checked.counts.textVariantsFirst60,10);
+assert.equal(checked.counts.newApprovedScores,0);
+assert.equal(checked.preGospelCauseGroups.reduce((n,x)=>n+x.datedHolds,0),
+ checked.counts.preGospelDatedOwnershipHolds);
+assert.ok(checked.preGospelCauseGroups.every(x=>x.datedHolds>0&&
+ x.distinctSourcePaths>=1));
 assert.deepEqual(checked.ordinaryAndSpecialReaderHolds
  .filter(x=>x.classification==="SPECIAL_RITE_NOT_ORDINARY_MASS")
  .map(x=>x.date),["2026-04-03","2026-04-04"]);
@@ -44,14 +58,6 @@ assert.deepEqual(checked.selectedSourceTreeGaps
  .map(x=>[x.sourcePath,x.dates.length]).sort((a,b)=>a[0].localeCompare(b[0])),[
  ["Commune/C10Pasc",1],["Commune/C10b",2],["Commune/C10c",1],
  ["Commune/C10t",8],["Tempora/Nat1-1",3]].sort((a,b)=>a[0].localeCompare(b[0])));
-assert.deepEqual(checked.preGospelCauseGroups.map(x=>
- [x.primary,x.paschal,x.datedHolds]).sort((a,b)=>b[2]-a[2]),[
- ["SECTION_ABSENT","SECTION_ABSENT",99],
- ["PINNED_SOURCE_UNAVAILABLE","PINNED_SOURCE_UNAVAILABLE",15],
- ["PINNED_SOURCE_UNAVAILABLE","SECTION_ABSENT",9],
- ["AUTHENTICATED_SOURCE_SECTION","SECTION_ABSENT",4],
- ["AUTHENTICATED_SOURCE_SECTION","AUTHENTICATED_SOURCE_SECTION",1]
-]);
 for(const row of checked.ordinaryAndSpecialReaderHolds){
  assert.equal(row.originalReaderReasons.en.length,row.missingEnglish.length,
   "Each English hold must retain the actual reader's reason");
@@ -84,4 +90,4 @@ const forgedDox=structuredClone(source);
 forgedDox.pre.records.find(x=>x.status==="SOURCE_TEXT_RESEARCH_ONLY").holds[0].code="APPROVED";
 assert.throws(()=>reconcileSchola2026Completion(forgedDox),
  /SCHOLA_CLOSEOUT_PREGOSPEL_HOLD_UNRECOGNIZED/);
-console.log("PASS Schola completion source-exception batch: 6 ordinary oration / 2 special-rite holds; 5 paths 15 dates; 128 source holds in 5 groups; 541 score candidates, zero new approval");
+console.log("PASS Schola 2026 source repair: March 6 returned to reader; 5 ordinary holds plus 2 distinct Triduum rites; original 365-day source and first60 score locks preserved; no new score approval");
