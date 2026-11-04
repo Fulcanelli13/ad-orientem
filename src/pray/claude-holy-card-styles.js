@@ -329,6 +329,23 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
 @media(max-height:640px){
  #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{height:220px;min-height:220px}
 }
+
+/* Even a published art image can be unloaded during the first gallery
+ * frame. Render its approved source-derived typesetting beneath it, not black. */
+#aoPray435930 .aoClaudeHolyCasePlate:has(img){
+ position:relative;overflow:hidden;isolation:isolate;
+ background:linear-gradient(158deg,#eee4cf,#c8b797);
+ color:#32291e;
+}
+#aoPray435930 .aoClaudeHolyCasePlate:has(img)>.aoClaudeHolyTypePlate{
+ position:absolute;inset:0;z-index:0;
+ padding:9px;box-sizing:border-box;
+}
+#aoPray435930 .aoClaudeHolyCasePlate:has(img)>img{
+ position:absolute;inset:0;z-index:1;
+ width:100%;height:100%;max-width:100%;
+ object-fit:contain;object-position:center;background:transparent;
+}
 `;
 export function installClaudeHolyCardStyles(doc=globalThis.document){
  if(!doc?.head)return false;
