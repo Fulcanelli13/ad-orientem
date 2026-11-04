@@ -17,8 +17,29 @@ const frozen=Object.values(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS);
 assert.equal(frozen.length,4);
 assert.equal(triage.rows.length,27);
 assert.equal(triage.counts.REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED,4);
-assert.equal(triage.counts.EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED,16);
-assert.equal(triage.counts.APPROVED_DERIVED_IMAGE_FINAL_FILE_UNLOCATED,4);
+assert.equal(triage.counts.EXACT_APPROVED_OBJECT_PHOTO_NOT_RELEASE_CLEARED,13);
+assert.equal(triage.counts.REMOTE_EXACT_WORK_PREVIEW_RECOVERED_NOT_OFFLINE_CERTIFIED,3);
+assert.equal(triage.counts.EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED,3);
+assert.equal(triage.counts.RESEARCH_ONLY_DERIVATIVE_FILE_FOUND_DATE_NOT_APPROVED,1);
+const savedOriginals=read("data/artwork/home-2026-recovered-approved-ai-originals.v1.json");
+assert.equal(savedOriginals.originalFiles.length,3);
+assert.equal(savedOriginals.stillMissingOriginals.length,0);
+assert.equal(savedOriginals.researchOnlyUnapprovedCandidates.length,1);
+assert.equal(savedOriginals.binaryReleaseStatus,"3_APPROVED_ORIGINALS_IN_LIBRARY_NOT_BUNDLED_IN_GITHUB_1_RESEARCH_ONLY_FILE_HELD");
+for(const row of savedOriginals.originalFiles){
+ assert.match(row.sha256,/^[0-9a-f]{64}$/);
+ assert.ok(row.width>=1024&&row.height>=768&&row.sizeBytes>1000000);
+ const frozen=triage.rows.find(r=>r.date===row.date);
+ assert.ok(frozen&&frozen.observedPrincipalId===row.principalId);
+ assert.equal(frozen.decision,"EXACT_APPROVED_DERIVATIVE_ORIGINAL_RECOVERED_IN_LIBRARY_NOT_BUNDLED");
+ assert.equal(frozen.publicationReleased,false);
+ assert.equal(census.days.find(x=>x.date===row.date)?.status,"DATE_SELECTED_IMAGE_UNRELEASED");
+}
+for(const row of savedOriginals.researchOnlyUnapprovedCandidates){
+ assert.equal(row.publicationReleased,false);
+ assert.equal(triage.rows.find(x=>x.date===row.date)?.decision,"RESEARCH_ONLY_DERIVATIVE_FILE_FOUND_DATE_NOT_APPROVED");
+ assert.equal(census.days.find(x=>x.date===row.date)?.status,"DATE_SELECTED_IMAGE_UNRELEASED");
+}
 assert.equal(triage.counts.MULTI_SCENE_VIGIL_NOT_SINGLE_HERO_PHOTO,1);
 assert.equal(triage.counts.DATE_REJECTED_AND_ATTRIBUTION_SHAREALIKE_HELD,1);
 assert.equal(owner.rows.length,27);
@@ -30,10 +51,10 @@ assert.equal(owner.rows.find(r=>r.date==="2026-08-15")?.decisionAt20261021,"yes"
 assert.equal(triage.counts.EXACT_SOURCE_IDENTITY_AND_RIGHTS_UNRESOLVED,1);
 assert.equal(census.days.length,365);
 assert.equal(Object.keys(ANNUAL_HOME_ARTWORK_DAYS_2026).length,365);
-assert.equal(census.counts.totalProposedMapped,134);
-assert.equal(census.counts.pendingOrHeld,231);
+assert.equal(census.counts.totalProposedMapped,137);
+assert.equal(census.counts.pendingOrHeld,228);
 assert.equal(census.counts.FROZEN_EXACT_SOURCE_PREVIEW_MAPPED,4);
-assert.equal(census.counts.DATE_SELECTED_IMAGE_UNRELEASED,23);
+assert.equal(census.counts.DATE_SELECTED_IMAGE_UNRELEASED,20);
 assert.equal(new Set(triage.rows.map(r=>r.date)).size,27);
 
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
@@ -82,12 +103,14 @@ for(const r of frozen){
 }
 for(const r of triage.rows.filter(x=>x.decision!=="REMOTE_PREVIEW_MAPPED_NOT_OFFLINE_CERTIFIED")){
  assert.equal(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS[r.date],undefined);
- assert.equal(census.days.find(x=>x.date===r.date)?.status,"DATE_SELECTED_IMAGE_UNRELEASED");
+ assert.equal(census.days.find(x=>x.date===r.date)?.status,
+  r.decision==="REMOTE_EXACT_WORK_PREVIEW_RECOVERED_NOT_OFFLINE_CERTIFIED"
+  ?"RECOVERED_FROZEN_DATE_SOURCE_PREVIEW_MAPPED":"DATE_SELECTED_IMAGE_UNRELEASED");
 }
 for(const date of ["2026-10-25","2026-11-29"]){
  assert.equal(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS[date],undefined,
   "Protected held work must not be bypassed");
  assert.equal(census.days.find(x=>x.date===date)?.status,"DATE_SELECTED_IMAGE_RIGHTS_HELD");
 }
-console.log("PASS frozen 27: four selected same-work Commons previews and 23 explicit holds");
-console.log("PASS annual census 134/365 mapped, 231 outstanding, protected date rights holds");
+console.log("PASS frozen 27: four selected same-work Commons previews, three new photo previews, 20 explicit holds");
+console.log("PASS annual census 137/365 mapped, 228 outstanding, protected date rights holds");

@@ -11,6 +11,7 @@ import {APPROVED_2026_OTHER_DATE_PREVIEWS} from "../src/home/approved-2026-other
 import {ANNUAL_HOME_ARTWORK_DAYS_2026} from "../src/home/annual-home-artwork-2026.js";
 import {approved2026SeasonalHomeReuse} from "../src/home/approved-2026-seasonal-reuse.js";
 import {FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS} from "../src/home/approved-2026-frozen-selected-previews.js";
+import {SELECTED_2026_RECOVERED_SOURCE_PREVIEWS} from "../src/home/approved-2026-recovered-photo-previews.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/home-approved-dated-2026-browser");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -73,8 +74,13 @@ const frozenCases=Object.values(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS).map((r
  artId:r.artworkId,title:r.title,remote:true
 }));
 assert.equal(frozenCases.length,4);
-const fullCases=[...cases,...expandedCases,...seasonalCases,...frozenCases];
-assert.equal(fullCases.length,128);
+const recoveryCases=Object.values(SELECTED_2026_RECOVERED_SOURCE_PREVIEWS)
+ .map((r,i)=>({date:r.date,width:i%2?320:390,
+ principal:r.principalId,artId:r.artworkId,title:r.title,
+ remote:true,photoLicenceUrl:r.imageLicence==="CC BY 4.0"?r.licenceUrl:null}));
+assert.equal(recoveryCases.length,3);
+const fullCases=[...cases,...expandedCases,...seasonalCases,...frozenCases,...recoveryCases];
+assert.equal(fullCases.length,131);
 let browser;const results=[];
 try{
  browser=await chromium.launch({headless:true});
