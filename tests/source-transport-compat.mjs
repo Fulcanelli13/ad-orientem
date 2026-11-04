@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { DIVINUM_OFFICIUM_PIN, rewriteResolvedSourceUrl, isKnownAbsentResolvedSourceUrl, isLegacyFrenchWikisourceParserUrl, installSourceTransportCompat } from "../src/app/source-transport-compat.js";
+import { DIVINUM_OFFICIUM_PIN, rewriteResolvedSourceUrl, isKnownAbsentResolvedSourceUrl, isLegacyFrenchWikisourceParserUrl, isPinned1962MissalTextUrl, installSourceTransportCompat } from "../src/app/source-transport-compat.js";
 
 const missalemeumBase="https://raw.githubusercontent.com/mmolenda/missalemeum/f43359b7a79a5a299158651eedf75cdaf0e43c94/backend/resources/divinum-officium-local/web/www/missa/Francais/";
 assert.equal(
@@ -54,6 +54,8 @@ assert.equal(isKnownAbsentResolvedSourceUrl(ordinary),false,"valid Proper source
 let nativeCalls=0;
 class MockResponse{
   constructor(body,{status=200,statusText="",headers={}}={}){this.body=body;this.status=status;this.statusText=statusText;this.headers=headers;this.ok=status>=200&&status<300}
+  clone(){return new MockResponse(this.body,{status:this.status,statusText:this.statusText,headers:this.headers})}
+  async text(){return this.body}
 }
 const fakeWin={
   fetch:async()=>{nativeCalls++;return new MockResponse("ok",{status:200})},
@@ -110,5 +112,78 @@ for(const unaffected of [
 const nativeAfter=await fakeWin.fetch("https://fr.wikisource.org/wiki/Source");
 assert.equal(nativeAfter.status,200);
 assert.equal(nativeCalls,3,"Original historical source links must remain accessible");
+
+
+// P0 / #2404: the OLD 12-second MemoryTextFetcher has no transient retries.
+// This wrapper must retry only pinned immutable Mass texts, coalesce genuine
+// concurrent GETs and NOT poison the cache on 404 or terminal failures.
+assert.equal(isPinned1962MissalTextUrl(ordinary),true);
+assert.equal(isPinned1962MissalTextUrl(coronatio),true);
+assert.equal(isPinned1962MissalTextUrl(
+ "https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/main/web/www/missa/Latin/Sancti/10-07.txt"),false);
+assert.equal(isPinned1962MissalTextUrl(
+ "https://raw.githubusercontent.com/other/repo/"+DIVINUM_OFFICIUM_PIN+"/web/www/missa/Latin/Sancti/10-07.txt"),false);
+assert.equal(isPinned1962MissalTextUrl(
+ "https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+DIVINUM_OFFICIUM_PIN+"/web/www/missa/Latin/Sancti/10-07.json"),false);
+let requests=0;
+const failures=[429,503,200];
+const recovering={
+ fetch:async()=>{
+  requests++;
+  const status=failures.shift()??200;
+  return new MockResponse("authenticated pinned Latin",{status});
+ },
+ Response:MockResponse,
+ setTimeout:f=>{f();return 1},
+};
+const retry=installSourceTransportCompat(recovering);
+const [first,second]=await Promise.all([
+ recovering.fetch(ordinary),recovering.fetch(ordinary)
+]);
+assert.equal(first.status,200);
+assert.equal(second.status,200);
+assert.equal(await first.text(),"authenticated pinned Latin");
+assert.notStrictEqual(first,second,"Concurrent consumers must receive independent Response bodies");
+assert.equal(requests,3,"429 and 503 must be retried, not treated as missing Proper texts");
+assert.equal(retry.sourceRetryStatus().retries,2);
+assert.equal(retry.sourceRetryStatus().coalesced,1);
+assert.equal(retry.sourceRetryStatus().activePinnedRequests,0);
+const notFound=installSourceTransportCompat({
+ fetch:async()=>new MockResponse("",{status:404}),Response:MockResponse
+});
+assert.equal(notFound.installed,true);
+let honest404Calls=0;
+const missingWin={fetch:async()=>{honest404Calls++;return new MockResponse("",{status:404})},
+ Response:MockResponse};
+const missingCompat=installSourceTransportCompat(missingWin);
+assert.equal((await missingWin.fetch(ordinary)).status,404);
+assert.equal(honest404Calls,1,"A real pinned 404 cannot be recovered by invented text or retries");
+assert.equal(missingCompat.sourceRetryStatus().retries,0);
+const recoveredAfterThrow={calls:0,fetch:async function(){
+ this.calls++;
+ if(this.calls===1)throw Error("temporary fetch refusal");
+ return new MockResponse("source returned",{status:200});
+},Response:MockResponse,setTimeout:f=>{f();return 1}};
+const rejectCompat=installSourceTransportCompat(recoveredAfterThrow);
+assert.equal((await recoveredAfterThrow.fetch(ordinary)).status,200);
+assert.equal(recoveredAfterThrow.calls,2);
+assert.equal(rejectCompat.sourceRetryStatus().retries,1);
+let unrelatedCalls=0;
+const unrelatedWin={
+ fetch:async()=>{unrelatedCalls++;return new MockResponse("not Mass",{status:503})},
+ Response:MockResponse,
+};
+installSourceTransportCompat(unrelatedWin);
+assert.equal((await unrelatedWin.fetch("https://example.org/other-file.txt")).status,503);
+assert.equal(unrelatedCalls,1,"Unrelated URLs must not undergo Mass source recovery");
+let terminalCalls=0;
+const terminalWin={
+ fetch:async()=>{terminalCalls++;return new MockResponse("",{status:503})},
+ Response:MockResponse,setTimeout:f=>{f();return 1},
+};
+const terminal=installSourceTransportCompat(terminalWin);
+assert.equal((await terminalWin.fetch(ordinary)).status,503);
+assert.equal(terminalCalls,3,"Transport must stop after the bounded retry budget");
+assert.equal(terminal.sourceRetryStatus().unrecovered,1);
 
 console.log("PASS source transport compatibility: canonical rewrites plus pinned known-absent candidates fail locally without noisy network probes.");

@@ -7,6 +7,10 @@ import {readFile,writeFile,mkdir} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {createHash} from "node:crypto";
+import {auditSchola2026ProperRepeatability,
+ SCHOLA_2026_REPRODUCIBILITY_DATES}
+ from "../../src/mass/reader-schola-2026-proper-repeatability.js";
 import {properToReaderSlots} from "../../src/mass/proper-reader-slots.js";
 import {index1961GradualeGabc,matchSelected1962ProperToGraduale}
  from "../../src/mass/reader-proper-gabc-bulk-join.js";
@@ -55,7 +59,7 @@ const server=http.createServer(async(req,res)=>{
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message??e))}
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
-let browser,raw=[];
+let browser,raw=[],secondWitness=[];
 try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({serviceWorkers:"block"});
@@ -82,7 +86,9 @@ try{
       resolverStatus:outcome?.status??null,properStatus:outcome?.proper?.status??null,
       principalId:main?.id??null,principalTitle:main?.title??main?.name??null,
       sourcePath:proper?.sourcePath??outcome?.proper?.sourcePath??null,
-      proper:proper??null};
+      proper:proper??null,
+      diagnosticErrors:(outcome?.diagnostic?.errors??[]).slice(0,8),
+      diagnosticRequestedFiles:outcome?.diagnostic?.requestedFiles?.length??0};
     }catch(e){return {date,error:String(e?.message??e)}}
    };
    const settled=[];
@@ -93,11 +99,68 @@ try{
   if((offset+batch.length)%60===0||offset+batch.length===365)
    console.log("Actual 2026 Mass-of-day resolved: "+(offset+batch.length)+"/365");
  }
+ // P0 independent witness: the original 17 calendar dates that alternated
+ // between failed and ready now MUST resolve from a fresh browser/context,
+ // not the original MemoryTextFetcher cache. Do not silently improve the
+ // first60 shortlist by throwing away missing/failed source days.
+ const repeatContext=await browser.newContext({serviceWorkers:"block"});
+ try{
+  const another=await repeatContext.newPage();
+  another.setDefaultTimeout(90000);
+  await another.goto("http://127.0.0.1:"+server.address().port+"/index.html",
+   {waitUntil:"domcontentloaded",timeout:90000});
+  await another.waitForFunction(()=>
+   typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",
+   null,{timeout:90000});
+  secondWitness=await another.evaluate(async dates=>{
+   const resolver=globalThis.AO_RUNTIME_V8.resolver,rows=[];
+   for(const date of dates){
+    try{
+     const o=await resolver.resolveDay(date);
+     rows.push({date,resolvedDate:o?.date??null,
+      resolverStatus:o?.status??null,properStatus:o?.proper?.status??null,
+      principalId:o?.day?.main?.id??null,
+      sourcePath:o?.proper?.data?.sourcePath??o?.proper?.sourcePath??null,
+      proper:o?.proper?.data??null,
+      diagnosticErrors:(o?.diagnostic?.errors??[]).slice(0,8),
+      diagnosticRequestedFiles:o?.diagnostic?.requestedFiles?.length??0});
+    }catch(e){rows.push({date,error:String(e?.message??e)})}
+   }
+   return rows;
+  },SCHOLA_2026_REPRODUCIBILITY_DATES);
+ }finally{await repeatContext.close()}
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(ok));
 }
 
+// A given sha256 identifies the EXACT selected-Mass Proper as resolved by
+// the unmodified production runtime. No text/score is inferred or replaced.
+const selectedProperSha256=row=>row?.proper
+ ?createHash("sha256").update(JSON.stringify(row.proper),"utf8").digest("hex"):null;
+const reduceForProof=row=>({
+ date:row.date,resolverStatus:row.resolverStatus??null,
+ properStatus:row.properStatus??null,principalId:row.principalId??null,
+ sourcePath:row.sourcePath??null,
+ selectedProperSha256:selectedProperSha256(row),
+ errors:[...(row.diagnosticErrors??[]),...(row.error?[row.error]:[])].slice(0,8)
+});
+const byDate=new Map(raw.map(x=>[x.date,x]));
+const witness1=SCHOLA_2026_REPRODUCIBILITY_DATES.map(date=>reduceForProof(byDate.get(date)));
+const witness2=secondWitness.map(reduceForProof);
+const reproducibility=auditSchola2026ProperRepeatability({first:witness1,second:witness2});
+const identityManifest={
+ schema:"ao-schola-2026-selected-calendar-proper-identity-manifest-v1",
+ selectedYear:2026,sourceAuthority:"AO_RUNTIME_V8.resolver.resolveDay",
+ sourceCorpus:"PINNED_1962_SOURCE_NO_INFERRED_PROPER",
+ status:"RESEARCH_SOURCE_IDENTITY_ONLY_NOT_MUSICAL_PUBLICATION",
+ counters:{civilDays:365,ready:raw.filter(x=>
+  x.resolverStatus==="ready"&&["ready","cached"].includes(String(x.properStatus).toLowerCase())).length,
+  blocked:raw.filter(x=>x.resolverStatus!=="ready"||
+   !["ready","cached"].includes(String(x.properStatus).toLowerCase())).length,
+  musicalApprovals:0,publicScores:0},
+ calendar:raw.map(reduceForProof)
+};
 const tally={},datesWithSelectedSource=new Set(),uniquePaths=new Set();
 const rows=raw.map(original=>{
  const {date,sourcePath,principalId,principalTitle,proper,resolvedDate,
@@ -167,6 +230,13 @@ const allSourceCrosswalk=crosswalkSelected2026ToFullPinnedSource({
 });
 const dest=resolve(root,".tmp","schola-1962-selected-annual");
 await mkdir(dest,{recursive:true});
+await writeFile(resolve(dest,"2026-proper-source-identity-manifest.json"),
+ JSON.stringify(identityManifest,null,2)+"\n");
+await writeFile(resolve(dest,"2026-proper-17date-independent-repeatability.json"),
+ JSON.stringify(reproducibility,null,2)+"\n");
+console.log("SCHOLA_2026_SOURCE_REPEATABILITY "+
+ JSON.stringify(reproducibility.summary));
+if(!reproducibility.summary.stable)process.exitCode=2;
 await writeFile(resolve(dest,"2026-selected-gabc-coverage.json"),JSON.stringify(report,null,2)+"\n");
 await writeFile(resolve(dest,"2026-selected-pinned91-inline-crosswalk.json"),
  JSON.stringify(crosswalk,null,2)+"\n");
