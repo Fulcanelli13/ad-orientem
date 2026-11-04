@@ -591,7 +591,7 @@ function head(title,sub=''){
   ['en','fr','la'].filter(l=>!!record[l]).map(l=>'<button type="button" data-p435930-choir-language="'+l+'" lang="'+l+'" aria-pressed="'+String((CLAUDE_CHOIR_PREF.language||lang())===l)+'">'+l.toUpperCase()+'</button>').join('')+'</div>'+
   '<div class="aoClaudeChoirMenuSource">'+sourceLine(record)+'</div></div>':'';
  const canonicalLatinReader=!!holyRecord?.la&&!holy&&!CHOIR_SOURCE_IDS.includes(holyId)&&holyId!=='mass_devotion_leonine'&&!(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(holyId));
- const canonicalLatinButton=canonicalLatinReader?'<button type="button" class="aoP435930SessionLanguage" data-p435930-library-latin aria-pressed="'+String(PRAYER_LIBRARY_LATIN_PREF.active)+'" aria-label="'+esc(PRAYER_LIBRARY_LATIN_PREF.active?L('Return to English prayer','Revenir à la prière française'):L('Read the existing Latin prayer','Lire la prière latine existante'))+'" title="'+esc(L('Prayer language','Langue de la prière'))+'">'+(PRAYER_LIBRARY_LATIN_PREF.active?lang().toUpperCase():'LA')+'</button>':'';
+ const canonicalLatinButton=canonicalLatinReader?'<button type="button" class="aoP435930SessionLanguage" data-p435930-library-latin aria-pressed="'+String(PRAYER_LIBRARY_LATIN_PREF.active)+'" aria-label="'+esc(PRAYER_LIBRARY_LATIN_PREF.active?L('Return to English prayer','Revenir à la prière française'):L('Read the prayer in Latin','Lire la prière en latin'))+'" title="'+esc(L('Prayer language','Langue de la prière'))+'">'+(PRAYER_LIBRARY_LATIN_PREF.active?lang().toUpperCase():'LA')+'</button>':'';
  const benAa=view==='benediction'?`<button type="button" class="aoClaudeBenAa" data-p435930-ben-settings aria-controls="aoBenOptions" aria-expanded="${BEN.optionsOpen?'true':'false'}" aria-label="${esc(L('Rite settings and sources','Paramètres et sources du rite'))}">Aa</button>`:'';
  const trailing=settings+benAa+prayerLanguage+holyAa+aa+canonicalLatinButton+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>${holyMenu}${menu}`;
@@ -895,7 +895,7 @@ function prayFamilies(){
    description:L('Prayer centred on the Passion of Our Lord.','Prière centrée sur la Passion de Notre-Seigneur.'),
    assetId:'ao-rich-stations',
    items:Object.freeze([
-    ['own','pray.stations',L('Stations of the Cross','Chemin de Croix'),L('Fourteen Stations with the existing guided or simple companion.','Quatorze stations avec le compagnon guidé ou simple existant.')],
+    ['own','pray.stations',L('Stations of the Cross','Chemin de Croix'),L('Fourteen Stations, with prayer and meditation.','Quatorze stations, avec prières et méditations.')],
     ['own','pray.seven_words',L('Seven Words of Our Lord','Sept Paroles de Notre-Seigneur'),L('Gospel word · traditional meditation · silence.','Parole évangélique · méditation traditionnelle · silence.')],
    ['own','pray.tenebrae',L('Office of Tenebrae','Office des Ténèbres'),L('Three sacred days · Matins and Lauds · simple or guided.','Trois jours saints · Matines et Laudes · simple ou guidé.')]
    ])
@@ -905,7 +905,7 @@ function prayFamilies(){
    description:L('Traditional devotions, reparatory practices and prayers for particular needs.','Dévotions traditionnelles, pratiques réparatrices et prières pour des besoins particuliers.'),
    assetId:'ao-rich-novenas',
    items:Object.freeze([
-    ['external','pray.novenas',L('Novenas','Neuvaines'),L('Sixteen source-backed novenas with calendar context.','Seize neuvaines sourcées avec contexte calendaire.')],
+    ['external','pray.novenas',L('Novenas','Neuvaines'),L('Nine days of prayer guided by the liturgical calendar.','Neuf jours de prière au rythme du calendrier liturgique.')],
     ['own','programme.first_friday',L('Nine First Fridays','Neuf premiers vendredis'),L('The Sacred Heart reparatory devotion.','La dévotion réparatrice au Sacré-Cœur.')],
     ['own','programme.first_saturday',L('Five First Saturdays','Cinq premiers samedis'),L('The Immaculate Heart reparatory devotion.','La dévotion réparatrice au Cœur Immaculé.')],
     ['external','pray.sacred_heart',L('Sacred Heart of Jesus','Sacré-Cœur de Jésus'),L('Litany · reparation · consecration.','Litanies · réparation · consécration.')],
@@ -2456,7 +2456,7 @@ function renderMontfortB26(){
    canonicalLanguageControl+
    canonicalPrayerIds.map(prayer).join('')+
    (day>=13?montfortB27RequiredForDay(day).map(renderMontfortHistoricalB27).join(''):'')+
-   (phase.ownRosary?'<button type="button" class="aoMontfortB26Jump" data-p435930-montfort-rosary>'+esc(L('Open the existing Holy Rosary','Ouvrir le Saint Rosaire existant'))+'</button>':'')+hymn;
+   (phase.ownRosary?'<button type="button" class="aoMontfortB26Jump" data-p435930-montfort-rosary>'+esc(L('Open the Holy Rosary','Ouvrir le Saint Rosaire'))+'</button>':'')+hymn;
  const sourceLinks=[MONTFORT_B26_SOURCE.instructionsWitness,MONTFORT_B26_SOURCE.originalActWitness,MONTFORT_B26_SOURCE.originalScanWitness].map((url,i)=>'<p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+esc(i===0?L('Original 1863 instructions (digital)','Instructions originales de 1863 (numériques)'):i===1?L('Faber 1863 consecration act','Acte de consécration, Faber 1863'):L('Historical book edition and provenance','Édition historique et provenance'))+'</a></p>').join('');
  return head(title,L('12 days + three weeks · original source-directed programme','12 jours + trois semaines · programme conforme à la source'))+
   '<main class="aoP435930Body aoMontfortB26" data-ao-montfort-b26-reader>'+
@@ -2644,7 +2644,7 @@ function firstMonthlyDirectPrayers(kind){
     '</strong><small>'+esc(L("Sacred Heart · canonical prayer text","Sacré-Cœur · texte canonique"))+'</small></button>'
   :'<button type="button" data-p435930-fs-direct-rosary><strong>'+
     esc(L("Pray five decades","Prier cinq dizaines"))+
-    '</strong><small>'+esc(L("Open the existing Rosary","Ouvrir le Rosaire existant"))+'</small></button>'+
+    '</strong><small>'+esc(L("Open the Holy Rosary","Ouvrir le Saint Rosaire"))+'</small></button>'+
    '<button type="button" data-p435930-fs-direct-meditate><strong>'+
     esc(L("Meditate for 15 minutes","Méditer pendant 15 minutes"))+
     '</strong><small>'+esc(L("Separate Rosary mystery meditation","Méditation distincte des mystères"))+'</small></button>';
