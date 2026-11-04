@@ -3571,34 +3571,8 @@ function installLibraryParagraphFocus(m,id){
    CLAUDE_HOLY_PREF.scrollRatio=backside.scrollTop/Math.max(1,backside.scrollHeight-backside.clientHeight);
   },{passive:true});
   const lace=card.querySelector('[data-p435930-essential-card-turn]');
-  // A mobile 3D compositor may direct the subsequent click at an invisible
-  // back-face paragraph (where the source focus handler stops propagation).
-  // Commit the intentional front-face tap at pointerup, before click handlers
-  // can consume it; do not interfere with vertical reading or card swipes.
-  let startPointer=null,ignorePairedClick=false;
-  lace?.addEventListener("pointerdown",event=>{
-   ignorePairedClick=false;
-   startPointer=lace.classList.contains('flip')?null:
-    {id:event.pointerId,x:event.clientX,y:event.clientY};
-  },true);
-  lace?.addEventListener("pointercancel",()=>{startPointer=null},true);
-  lace?.addEventListener("pointerup",event=>{
-   const start=startPointer;startPointer=null;
-   if(!start||start.id!==event.pointerId||lace.classList.contains('flip'))return;
-   if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
-   const dx=Math.abs(event.clientX-start.x),dy=Math.abs(event.clientY-start.y);
-   if(dx>14||dy>14)return; // scroll and swipe belong to existing reader owner
-   ignorePairedClick=toggleClaudeHolyCard(lace);
-  },true);
-  lace?.addEventListener("click",event=>{
-   if(ignorePairedClick){
-    ignorePairedClick=false;event.preventDefault();event.stopPropagation();return;
-   }
-   if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
-   if(lace.classList.contains('flip')&&event.target.closest?.('.aoP435930EssentialBeat'))return;
-   event.preventDefault();event.stopPropagation();
-   toggleClaudeHolyCard(lace); // keyboard and programmatic activation
-  },true);
+  // The source artwork credit is a real link; card turns use the existing
+  // delegated click handler only for non-link front-face targets.
   lace?.addEventListener("keydown",event=>{
    if(event.target.closest?.('.aoClaudeHolyArtCredit a'))return;
    if(event.key==='Enter'||event.key===' '){
