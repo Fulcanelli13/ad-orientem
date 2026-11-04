@@ -1,0 +1,90 @@
+{
+  "schema": "AO_FLANDERS_FOUR_MUSEUM_SOURCE_COMPARISON_V1",
+  "date": "2026-11-04",
+  "scope": "research_exact_approved_objects_only",
+  "publication": false,
+  "rightsClearedByThisManifest": false,
+  "policy": [
+    "Four approved physical paintings only; alternatives do not create new artwork approvals",
+    "Preserve 575 original decisions and all protected prayer/calendar placements",
+    "Download to transient QA artifacts; no gallery publishing",
+    "Do not assume highest pixel count has best colour fidelity",
+    "Never replace original source or silently crop paintings"
+  ],
+  "works": [
+    {
+      "approvedRecordIndex": 248,
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Francis Receiving the Stigmata",
+      "museum": "Museum of Fine Arts Ghent",
+      "accession": "S-9",
+      "museumSource": "https://www.mskgent.be/en/collection/s-9",
+      "rightsEvidence": "Official museum labels painting image Public Domain",
+      "sources": [
+        {
+          "kind": "IIIF3_MANIFEST",
+          "url": "https://imagehub.mskgent.be/iiif/3/6361/manifest.json",
+          "label": "Official MSK IIIF source"
+        },
+        {
+          "kind": "COMMONS_FILE",
+          "url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Francis_of_Assisi_Receiving_the_Stigmata_-_S-9_-_Museum_of_Fine_Arts_Ghent_(MSK).jpg",
+          "label": "Approved-record Commons photograph"
+        }
+      ]
+    },
+    {
+      "approvedRecordIndex": 264,
+      "artist": "Titian",
+      "title": "Jacopo Pesaro Presented to Saint Peter",
+      "museum": "KMSKA Antwerp",
+      "accession": "",
+      "museumSource": "https://www.kmska.be",
+      "rightsEvidence": "Exact photograph licence and museum-source identity require independent check",
+      "sources": [
+        {
+          "kind": "COMMONS_FILE",
+          "url": "https://commons.wikimedia.org/wiki/File:Jacopo_Pesaro_presented_to_St._Peter_by_Pope_Alexander_VI_-_Tizian.jpg",
+          "label": "Alternative 6645 × 5186 pixel Commons reproduction"
+        }
+      ]
+    },
+    {
+      "approvedRecordIndex": 266,
+      "artist": "Michaelina Wautier",
+      "title": "Two Girls as Saint Agnes and Saint Dorothy",
+      "museum": "KMSKA Antwerp",
+      "accession": "599",
+      "museumSource": "https://artinflanders.be/en/artwork/saints-agnes-rome-and-dorothea-caesarea",
+      "rightsEvidence": "Art in Flanders marks image public domain; Flemish Art Collection describes CC0",
+      "sources": [
+        {
+          "kind": "COMMONS_FILE",
+          "url": "https://commons.wikimedia.org/wiki/File:Twee_meisjes_als_de_heiligen_Agnes_en_Dorothea_Michaelina_Wautier_KMSKA_599.jpg",
+          "label": "Alternative 4500 × 3419 JPEG instead of 204MB multipage TIFF"
+        }
+      ]
+    },
+    {
+      "approvedRecordIndex": 268,
+      "artist": "Hugo van der Goes",
+      "title": "Death of the Virgin",
+      "museum": "Groeningemuseum Bruges",
+      "accession": "0000.GRO0204.I",
+      "museumSource": "https://vlaamsekunstcollectie.be/en/news/hugo-van-der-goes-death-of-the-virgin-museabrugge",
+      "rightsEvidence": "Flemish Art Collection explicitly identifies this photograph CC0, photo Hugo Maertens",
+      "sources": [
+        {
+          "kind": "COMMONS_FILE",
+          "url": "https://commons.wikimedia.org/wiki/File:Hugo_van_der_Goes_-_Death_of_the_Virgin_(c._1475-1482).jpg",
+          "label": "7819 × 9438 approved-record image"
+        },
+        {
+          "kind": "COMMONS_FILE",
+          "url": "https://commons.wikimedia.org/wiki/File:Hugo_van_der_Goes_010.jpg",
+          "label": "5050 × 6203 alternate image"
+        }
+      ]
+    }
+  ]
+}
