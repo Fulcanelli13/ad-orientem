@@ -49,3 +49,29 @@ These are **research candidates**, not independently published classifications. 
 Production already exposes the 12 CL27 axes in `src/find/cl27-public-facets.js`. The next step is source-by-source admission through this existing presentation and canonical CL2 identity join, not a second taxonomy.
 
 Both manifests are covered by `node tests/tlm-cl27-current-firstparty-review.mjs`.
+
+## Wave 2 — 36 additional historical rows (70/296 cumulative)
+
+`source-review-wave2.v1.json` adds **36 distinct October historical row keys** across **18 CL2 site anchors**, from three currently accessible first-party sources, two new to this review programme:
+- [SSPX Mexico district](https://fsspx.mx/es/capillas-2) (19 historical rows): León's weekday Monday and Thursday exceptions; Guadalajara chapel/priorato distinction and duplicate 19:00 records; several first/third/fourth-Sunday-relative Friday/Saturday occurrences that cannot be expanded to weekly events; one San Ignacio Cerro Gordo versus San Antonio María Claret historical venue-label mismatch.
+- [SSPX Australia/New Zealand district](https://sspx.au/en/list-sspx-chapels-0) (eight *additional* historical rows, after four already in Wave 1): Irymple and Singleton offer **alternative Sunday clocks**, with bulletin confirmation; four separate source labels in Singleton represent two alternating options at one physical site; Napier third-Sunday and Nelson occasional first-Sunday remain conditional.
+- [Regina Caeli parish](https://reginacaeliparish.org/mass-and-confession-times), crosschecked against the [Houston archdiocesan parish finder](https://archgh.org/parishfinder) (nine rows): Sunday and selected weekday clock patterns corroborated, but parish warns private weekday Masses may be cancelled on short notice. First-party page embeds much schedule information dynamically; source classification is diocesan corroboration plus parish caution, not a guaranteed event.
+
+Cumulative **70/296** original unverified claims have a new source-review decision. **226** remain without this review. **0** recurring Masses approved and **0** canonical or Una Cum claims published. The separate `classification-role-review-wave2.v1.json` contributes **18** source-reported organisational associations (13 Mexico, four ANZ, one Houston), bringing this programme to **31 role observations** across 30 sites, all research-only.
+
+## Historical collision screen — all 106 groups triaged, none silently merged
+
+`collision-screen-106.v1.json` preserves **106 original same-anchor/day/clock collision groups (234 historical rows)** with all original row IDs, source URLs, frequencies and Mass-type wording.
+
+| Risk class | Groups |
+| --- | ---: |
+| Same slot across different historical source IDs | 75 |
+| Different source Mass-type or rite label wording | 10 |
+| Distinct source URLs / locale mirrors | 6 |
+| Different month-week/frequency/recurrence qualifiers | 14 |
+| Same-source repeated historical rows | 1 |
+| **Total** | **106** |
+
+This is algorithmic risk triage **not** human event adjudication. In particular **14 differing-frequency cases must never be automatically merged** based on a matching weekday and clock. All 106 remain pending the final current-source, calendar-date, ministry and ministry-level liturgical identity verification gates, and **0** merged event IDs have been minted.
+
+Run the existing targeted CI check: `node tests/tlm-cl27-current-firstparty-review.mjs`.
