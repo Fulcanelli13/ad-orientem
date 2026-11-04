@@ -1,0 +1,82 @@
+name: Ad Orientem — GitHub Pages release
+
+# Publish from GitHub only. No Vercel CLI or deployment hook.
+# Runtime-change filter avoids costly rebuilds for research-only updates.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'sacred-music.html'
+      - 'sw.js'
+      - '*.css'
+      - '*.js'
+      - '*.png'
+      - '*.webmanifest'
+      - 'assets/**'
+      - '!assets/staged/**'
+      - 'src/**'
+      - 'data/**'
+      - '!data/geography/research/**'
+      - '!data/directory/research/**'
+      - 'data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json'
+      - '!data/research/**'
+      - 'data/research/mass-special-rite-music-events-20261019.v1.json'
+      - 'tools/build-web-preview.mjs'
+      - 'tools/prepare-github-pages-release.mjs'
+      - '.github/workflows/github-pages.yml'
+  pull_request:
+    paths:
+      - '.github/workflows/github-pages.yml'
+      - 'tools/prepare-github-pages-release.mjs'
+      - 'tools/build-web-preview.mjs'
+      - 'vercel.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ad-orientem-github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build static GitHub Pages site
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build allowlisted static release
+        run: node tools/build-web-preview.mjs
+      - name: Validate base path, noindex, release safety and 1GB Pages cap
+        run: node tools/prepare-github-pages-release.mjs
+      - name: Configure GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+      - name: Upload GitHub Pages release
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/web-preview
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - name: Publish site
+        id: pages
+        uses: actions/deploy-pages@v4
