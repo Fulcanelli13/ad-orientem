@@ -12,6 +12,7 @@ const paths={
   "approved_covers": "data/geography/approved-place-media.v1.json",
   "approved_gallery": "data/geography/approved-place-gallery.v1.json",
   "saints_pilot": "data/saints/holiness-first-editorial-pilot-20261015.v1.json",
+  "saints_recovered": "data/geography/research/sacred-atlas-saints-branch-recovery-20261104.v1.json",
   "r25_originals": "data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json",
   "guide_ireland": "data/shrines/illustrated-place-guides-ireland.v1.json",
   "guide_france": "data/shrines/illustrated-place-guides-france.v1.json",
@@ -135,6 +136,8 @@ const compute=function compute(data){
   named_saint_associations:saintLabels.length,
   exactly_matched_six_person_pilot:saintLabels.filter(x=>x.pilot_person_id).length,
   pilot_biographies_review_only:a(data.saints_pilot.people).filter(x=>x.publication==="EDITORIAL_REVIEW_ONLY").length,
+  additional_branch_bilingual_biography_drafts:a(data.saints_recovered.biography_drafts).length,
+  total_known_bilingual_draft_biographies:a(data.saints_pilot.people).length+a(data.saints_recovered.biography_drafts).length,
   approved_saint_portraits_in_pilot:0,
   approved_covers:covers.size,places_without_photo:rows.filter(x=>x.media.cover_status!=="APPROVED").length,
   unphotographed_registered_shrines:rows.filter(x=>x.shrine&&x.media.cover_status!=="APPROVED").length,
@@ -157,6 +160,7 @@ const compute=function compute(data){
    built_output:"Research master is under data/geography/research and excluded from GitHub Pages static release"
   },
   summary:sum,
+  additional_saints_research_branch:{branch:data.saints_recovered.source_branch,source_records:data.saints_recovered.counts,manifest_file:paths.saints_recovered},
   batch_plan:{
    shrine_guide_expansion:packages.shrine_guide_expansion,
    related_topic_place_history:packages.related_topic_place_history,
