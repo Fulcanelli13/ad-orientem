@@ -74,10 +74,24 @@ for(const [id,loc] of pins){
 }
 const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
 assert.equal(withheld.length,268);
+// Nine additional Excel-approved exact/named-POI sites are imported by the
+// separate precise-site gate, not as inferred locality pins. Historical
+// identity holds and every other R1 withheld record remain unpinned.
+const laterPreciseSiteIds=new Set([
+ "RG-A164E7D0C229","RG-ABBC659D0388","RG-D7C8B7693CEC",
+ "RG-605CC195A1EF","RG-B10417F7A69D","RG-5B65864A842D",
+ "RG-A504818C84DC","RG-50BE1A7B5F18","RG-8EC1B37099D3",
+]);
+assert.equal(laterPreciseSiteIds.size,9);
 for(const r of withheld){
- assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor]);
+ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor],"Exact-site and held profiles cannot be assigned a locality fallback");
  const item=items.get(r.cl2_anchor);
- assert.ok(item&&!item.map_publishable&&!item.geo,"Held records must not gain a pin");
+ if(laterPreciseSiteIds.has(r.cl2_anchor)){
+  assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
+  assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
+ }else{
+  assert.ok(item&&!item.map_publishable&&!item.geo,"Historical alias/identity and unreviewed site must remain held: "+r.cl2_anchor);
+ }
 }
 for(const anchor of [
  "RG-50082C65DA56", // Sheffield St Joseph identity unresolved in Excel
