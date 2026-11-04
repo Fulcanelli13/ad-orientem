@@ -1,0 +1,36 @@
+name: Sacred Atlas Round 18 — one-time 30-Place Commons nearby-photo research
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - 'tools/atlas/recover-sacred-atlas-30-nearby-commons.py'
+      - '.github/workflows/sacred-atlas-round18-geosearch.yml'
+permissions:
+  contents: read
+jobs:
+  research-30-canonical-places-nearby-commons:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-round18-geosearch-photo-review-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen 30-place coordinate mapping and request bounds offline
+        run: |
+          python tools/atlas/recover-sacred-atlas-30-nearby-commons.py --self-test
+          python tools/atlas/recover-sacred-atlas-30-nearby-commons.py --dry-run
+      - name: Read Commons geotagged files within 500 m, no image downloads
+        run: python tools/atlas/recover-sacred-atlas-30-nearby-commons.py
+      - name: Preserve result for manual source-site review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round18-thirty-geotagged-nearby-file-leads
+          path: /tmp/ao-sacred-atlas-round18-geotagged-30-discovery.json
+          if-no-files-found: warn
+          retention-days: 14
