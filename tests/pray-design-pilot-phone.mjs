@@ -114,7 +114,25 @@ try{
     assert.ok(rows.length>=2,"Every real door needs at least two distinct source-owned entries: "+door);
     assert.equal(new Set(rows).size,rows.length,"Within-door duplicates: "+door);
     assert.equal(await page.locator(base+' [data-ao-prayer-shelf] .aoPrayDoorMosaicCard').count(),rows.length,
-      "Each canonical route must have exactly one mosaic tile: "+door);
+      "Each canonical route must have exactly one study-list row: "+door);
+    const studyList=await page.locator(base+' [data-ao-prayer-shelf]').evaluate(root=>{
+      const list=root.querySelector('.aoPrayDoorShelfList');
+      const first=root.querySelector('.aoPrayDoorMosaicCard');
+      const n=first?.querySelector('.aoPrayDoorRowNumber')?.textContent?.trim();
+      const arrow=first?.querySelector('.aoPrayDoorRowArrow')?.textContent?.trim();
+      const heading=root.querySelector('.aoPrayDoorHeading h2');
+      const cover=root.querySelector('.aoPrayDoorCover');
+      return {listDisplay:list&&getComputedStyle(list).display,
+        rowDirection:first&&getComputedStyle(first).flexDirection,
+        number:n,arrow,coverHeight:cover?.getBoundingClientRect().height,
+        titleTop:heading?.getBoundingClientRect().top,coverBottom:cover?.getBoundingClientRect().bottom};
+    });
+    assert.equal(studyList.listDisplay,'block',"Prototype category must be a linear list, not another card grid: "+door);
+    assert.equal(studyList.rowDirection,'row',"Category entries should be horizontally aligned text rows: "+door);
+    assert.equal(studyList.number,'01',"Restored ordinal should begin at 01: "+door);
+    assert.equal(studyList.arrow,'›',"Rows retain direct-access affordance: "+door);
+    assert.ok(studyList.coverHeight>=210&&studyList.coverHeight<=226,"Category artwork header must be source-study height: "+JSON.stringify(studyList));
+    assert.ok(studyList.titleTop<studyList.coverBottom,"Category heading should overlap artwork header: "+door);
     if(facetCount){
       const activeFacet=page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter]:not([data-p435930-door-filter=all])').first();
       await activeFacet.click();
