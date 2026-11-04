@@ -1,0 +1,24 @@
+name: Prayer R5D 13 source-less work recovery audit
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-audit-missing-sources.mjs
+      - .github/workflows/prayer-r5d-source-recovery.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cross-reference 13 unresolved works against released source catalogue
+        run: node scripts/prayer-r5d-audit-missing-sources.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-r5d-source-recovery-13
+          path: r5d-source-recovery/report.json
+          retention-days: 14
+          if-no-files-found: warn
