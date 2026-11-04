@@ -54,8 +54,9 @@ try{
     return {width:box.width,display:getComputedStyle(node).display,
       home:node.closest(".aoPrayPilotHome")?.getBoundingClientRect().width,tiles};
    });
-   assert.ok(mosaicGeometry.width>=width*.78&&mosaicGeometry.tiles.every(x=>x.width>=width*.19&&x.height>=74),
-    "R1.1 mosaic must fill six-column phone grid, not collapse to a thin strip: "+JSON.stringify(mosaicGeometry));
+   assert.ok(mosaicGeometry.width>=width*.96&&mosaicGeometry.tiles.every(x=>x.width>=width*.4&&x.height>=146),
+    "Approved study mosaic must occupy the width as a two-column, edge-to-edge gallery: "+JSON.stringify(mosaicGeometry));
+   assert.ok(mosaicGeometry.tiles.some(x=>x.height>290),"Masonry gallery must retain taller portrait panels");
    await page.screenshot({path:resolve(output,"discovery-"+width+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
@@ -84,7 +85,11 @@ try{
    const nine=["daily","chaplets","eucharistic","marian","novenas","ourlord","saints","intentions"];
    for(const door of nine){
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-    await page.locator(base+' [data-p435930-family="'+door+'"]').click();
+    const galleryDoor=page.locator(base+' [data-p435930-family="'+door+'"]');
+    await galleryDoor.click();
+    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"home","First tap only reveals the study category");
+    assert.equal(await galleryDoor.getAttribute("aria-expanded"),"true");
+    await galleryDoor.click();
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family");
     assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorHeading h2").count(),1,
       "Each Claude door has one content title below its artwork band: "+door);
@@ -133,7 +138,10 @@ try{
    // The ninth discovery door must reach its own 32-prayer mosaic,
    // with a separate explicit action to open the full canonical Library.
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
-   await page.locator(base+' [data-p435930-own="pray.library"]').first().click();
+   const libraryDoor=page.locator(base+' [data-p435930-own="pray.library"]').first();
+   await libraryDoor.click();
+   assert.equal(await libraryDoor.getAttribute("aria-expanded"),"true");
+   await libraryDoor.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
    assert.equal(await page.locator(base+' [data-ao-pray-essential-landing="true"] [data-p435930-lib-open]').count(),32,
      "Essential Prayers must open its 32 real canonical prayer cards");
@@ -151,12 +159,14 @@ try{
    // reader, with return to its original shelf rather than a second library list.
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(base+' [data-p435930-family="marian"]').click();
+   await page.locator(base+' [data-p435930-family="marian"]').click();
    await page.locator(base+' [data-p435930-door-prayer="marian_memorare"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
    await page.locator(base+' [data-p435930-lib-back]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Source-prayer Back must return to Our Lady shelf");
    assert.equal(await page.locator(base+' [data-ao-prayer-shelf="marian"]').count(),1);
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(base+' [data-p435930-family="daily"]').click();
    await page.locator(base+' [data-p435930-family="daily"]').click();
    await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
