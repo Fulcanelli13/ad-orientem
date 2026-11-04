@@ -7,10 +7,7 @@ const root=process.cwd();
 const output=join(root,"dist","web-preview");
 const excluded=[
  "assets/staged",
- // Exact San Polo originals are a Git-only QA archive until final image sign-off.
- "assets/stations/san-polo",
  "data/geography/research",
- "data/prayer/stations/san-polo-tiepolo-oils-1747",
 ];
 const historicalSpritePath="assets/generated-sprites";
 const offlineOnlyCatenaPaths=["matthew","mark","luke","john"].map(name=>"data/scripture/catena/"+name+".json");
@@ -113,19 +110,9 @@ for(const name of readdirSync(root)){
 }
 const runtimeReferences=[];
 for(const file of runtimeSourceFiles){
- const source=readFileSync(file,"utf8"),relativeFile=relative(root,file);
+ const source=readFileSync(file,"utf8");
  for(const path of excluded){
-  if(!source.includes(path+"/"))continue;
-  // The old Prayer image QA helper intentionally names exactly TWO staged
-  // photos in a test-only source record. It cannot render unless a caller
-  // explicitly opts into qaOnly=true, and both records remain unpublished.
-  // The references are not fetches made by the production reader.
-  const boundedQASource=path==="assets/staged"&&
-   relativeFile==="src/pray/prayer-cover-photo-qa.v1.js"&&
-   (source.split('stagedAsset:"/assets/staged/').length-1)===2&&
-   (source.match(/publicationAuthorized:false/g)||[]).length===2&&
-   source.includes('if(!qaOnly||!record||record.publicationAuthorized!==false)return "";');
-  if(!boundedQASource)runtimeReferences.push(relativeFile+": "+path);
+  if(source.includes(path+"/"))runtimeReferences.push(relative(root,file)+": "+path);
  }
 }
 assert.deepEqual(runtimeReferences,[],"Runtime files reference excluded deployment paths");
