@@ -163,7 +163,7 @@ def main():
       "changes_en":"Full-frame scaled WebP from original; EXIF orientation normalized, no crop or recolouring.",
       "changes_fr":"Image complète redimensionnée en WebP, orientation EXIF corrigée, sans recadrage ni retouche.",
       "reviewed_at":"2026-11-04",
-      "review_method":"Original Photo Finder 2026-10-30 rank-one editorial choice; exact Commons source revision, Austrian CC BY-SA 3.0 ported licence, site caption, named photographer and SHA1 original bytes checked.",
+      "review_method":"Photo Finder editorial selection, 2026-10-30; exact Commons source revision, Austrian CC BY-SA 3.0 ported licence, site caption, named photographer and SHA1 original bytes checked.",
       "source_place_ref":"PHOTO_FINDER_2026-10-30_R1"
     }
     after={**before,"version":"1.6.17","items":sorted(before["items"]+[record],key=lambda x:x["place_id"])}
