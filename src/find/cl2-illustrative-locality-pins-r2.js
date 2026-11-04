@@ -1,4 +1,4 @@
-// Ad Orientem CL2 2026-11-04 R2. 94 already Excel-approved illustrative GeoNames municipality points.
+// Ad Orientem CL2 2026-11-04 R2. 93 conflict-reconciled Excel-approved illustrative GeoNames municipality points.
 // Source dataset GeoNames contributors CC BY 4.0. Church building and entrance are NEVER inferred.
 // Location Master is the primary reviewer record. Do not promote pending, held or ambiguous sites.
 export const CL2_ILLUSTRATIVE_LOCALITY_PINS_R2=Object.freeze({
@@ -664,26 +664,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS_R2=Object.freeze({
     ],
     "localityName": "Zapopan",
     "adminRegion": "Jalisco"
-  },
-  "RG-5E751D3AAEFA": {
-    "sourceId": "AO-B36-L-GB-1BF2C870A5FF",
-    "name": "Ford Park Cemetery Chapel",
-    "country": "GB",
-    "addressNeedle": "Ford Park Road, Plymouth PL4 6NT",
-    "placeId": null,
-    "lat": 50.37153,
-    "lng": -4.14305,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:GB:plymouth:r2-rg-5e751d3aaefa",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · illustrative locality only, never church GPS",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_%28including_all_states_and_counties%29.csv",
-      "https://www.ukmasses.com/plymouth-mass"
-    ],
-    "localityName": "Plymouth",
-    "adminRegion": "England"
   },
   "RG-5EB7EF358855": {
     "sourceId": "AO-B40-LOC-BR-C249B11F9471",
