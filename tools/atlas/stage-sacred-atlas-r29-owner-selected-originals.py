@@ -56,6 +56,11 @@ def policy_ready(row,gate):
     if gate.get("publication_authorized") is not True:return False
     if gate.get("special_issue") and gate.get("special_issue_accepted") is not True:
         return False
+    # Exact author credit placement and derivative authorship requirements.
+    if row["place_id"]=="place:DE:bettbrunn-st-salvator" and gate.get("near_image_attribution_verified") is not True:
+        return False
+    if row["place_id"]=="place:DE:basilika-st-clemens-hannover" and gate.get("original_photographer_and_editor_credit_verified") is not True:
+        return False
     for field in ("reviewer","reviewed_at","evidence_url","rights_evidence_notes","source_revision_id","license_current_url"):
         if not str(gate.get(field) or "").strip():return False
     if not gate["evidence_url"].startswith("https://"):return False

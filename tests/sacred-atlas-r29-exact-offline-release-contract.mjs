@@ -22,7 +22,9 @@ const spec={
  "place:MX:guadalupe-zacatecas-historic-sanctuary":"LOW_RESOLUTION_1032x776",
  "place:LB:monastery-saint-maron-annaya":"WIDE_PANORAMA_CROP",
  "place:KR:haemi-martyrs-shrine-main-church":"MAIN_CHURCH_SUBJECT_IDENTITY",
- "place:US:la-salette-attleboro":"SEASONAL_NIGHT_SCENE"
+ "place:US:la-salette-attleboro":"SEASONAL_NIGHT_SCENE",
+ "place:DE:bettbrunn-st-salvator":"AUTHOR_CREDIT_AND_COMMONS_LICENSE_LINK_NEAR_IMAGE",
+ "place:DE:basilika-st-clemens-hannover":"ORIGINAL_PHOTOGRAPHER_AND_EDITING_CREDIT"
 };
 const required=[
  "current_source_license_verified","named_photo_author_verified",
@@ -36,6 +38,8 @@ for(const row of gates.rows){
  assert.equal(row.original_title,original.exact_original_file);
  assert.equal(row.special_issue,spec[row.place_id]||null);
  assert.equal(row.special_issue_accepted,false);
+ if(row.place_id==="place:DE:bettbrunn-st-salvator")assert.equal(row.near_image_attribution_verified,false);
+ if(row.place_id==="place:DE:basilika-st-clemens-hannover")assert.equal(row.original_photographer_and_editor_credit_verified,false);
  assert.equal(row.publication_authorized,false);
  assert.equal(row.evidence_url,null);
  assert.equal(row.source_revision_id,null);

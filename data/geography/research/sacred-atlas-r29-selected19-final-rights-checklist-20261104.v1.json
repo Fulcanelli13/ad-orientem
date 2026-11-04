@@ -233,9 +233,11 @@
       "exact_named_place_subject_verified": false,
       "full_frame_mobile_crop_approved": false,
       "public_release_approved": false,
-      "special_issue": null,
+      "special_issue": "AUTHOR_CREDIT_AND_COMMONS_LICENSE_LINK_NEAR_IMAGE",
       "special_issue_accepted": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "near_image_attribution_verified": false,
+      "special_issue_evidence_note": "Photographer Heinrich Stürzl requests credit '© Heinrich Stürzl, Wikimedia Commons, CC BY-SA 4.0' with source and licence links in close relation to image; no contact or specimen copy is required."
     },
     {
       "place_id": "place:MX:ocotlan-basilica-tlaxcala",
@@ -359,9 +361,11 @@
       "exact_named_place_subject_verified": false,
       "full_frame_mobile_crop_approved": false,
       "public_release_approved": false,
-      "special_issue": null,
+      "special_issue": "ORIGINAL_PHOTOGRAPHER_AND_EDITING_CREDIT",
       "special_issue_accepted": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "original_photographer_and_editor_credit_verified": false,
+      "special_issue_evidence_note": "Commons source is a derivative; original photographer Christian A. Schröder (ChristianSchd), modified/cropped by Rabanus Flavus, both contributors must be credited, and change attribution preserved."
     },
     {
       "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
@@ -410,6 +414,8 @@
     "No prefilled publication approvals. All seven checks false until independently verified.",
     "Four source-specific risks require explicit special-issue acceptance.",
     "No substitution, upscaling, unsupported crop or Wikimedia rate-limit bypass.",
-    "The offline importer processes only already legitimately obtained exact original bytes; this checklist alone publishes nothing."
-  ]
+    "The offline importer processes only already legitimately obtained exact original bytes; this checklist alone publishes nothing.",
+    "Bettbrunn and Hannover additionally require explicit review of correct visible image attribution, including source/CC licence links and original-photographer/editor dual credits. Both remain blocked by default."
+  ],
+  "updated_on": "2026-11-05"
 }
