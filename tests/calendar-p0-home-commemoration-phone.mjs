@@ -51,32 +51,42 @@ try{
       document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.dataset.aoCalendarPaintDate===d &&
       Boolean(document.querySelector(".aoTodayV2CalendarInline .aoCalV2Hero")),date,{timeout:60000});
     await page.waitForFunction(()=>Boolean(document.querySelector(
-      ".aoTodayV2CalendarInline .aoCalV2Commemorations p span")),null,{timeout:35000});
-    const fromCalendar=await cal.locator(".aoCalV2Commemorations p span").allTextContents();
+      ".aoTodayV2CalendarInline .aoCalCommemorationLine")),null,{timeout:35000});
+    // The approved Day surface now presents one source-owned line rather than
+    // the old expanded commemorations panel. Split its labels only for parity
+    // with the legacy Home projection; do not substitute an inferred feast.
+    const fromCalendar=(await cal.locator(".aoCalCommemorationLine").innerText())
+      .replace(/^Commemoration:\s*/i,"").split(/\s*;\s*/).map(s=>s.trim()).filter(Boolean);
     const dayHierarchy=await cal.locator(".aoCalV2Hero").evaluate(hero=>{
-      const title=hero.querySelector("h2"),commem=hero.querySelector(".aoCalV2Commemorations"),
+      const day=hero.parentElement,title=hero.querySelector("h2"),
+        commem=hero.querySelector(".aoCalCommemorationLine"),
         reading=hero.querySelector(".aoCalDayScripture"),
         mass=hero.querySelector("[data-cal-mass]"),
-        documentation=hero.querySelector(".aoCalV2Documentation"),
-        source=hero.querySelector(".aoCalDaySources");
+        details=day?.querySelector(".aoCalV2DayFold"),
+        source=details?.querySelector(".aoCalDaySources"),
+        print=details?.querySelector(".aoCalV2PrintOptions");
       const precedes=(a,b)=>Boolean(a&&b&&(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING));
-      return {commemorations:hero.querySelectorAll(".aoCalV2Commemorations").length,
-        documentations:hero.querySelectorAll(".aoCalV2Documentation").length,
+      return {commemorations:hero.querySelectorAll(".aoCalCommemorationLine").length,
+        detailsCount:day?.querySelectorAll(":scope > .aoCalV2DayFold").length??0,
         titleBeforeCommem:precedes(title,commem),
-        commemBeforeReadings:!reading||precedes(commem,reading),
-        readingsBeforeMass:!reading||!mass||precedes(reading,mass),
-        massBeforeSources:!mass||precedes(mass,source),
-        sourcesInsideDocumentation:Boolean(documentation?.contains(source)),
-        printVisibleWithoutDisclosure:Boolean(hero.querySelector('.aoCalV2PrintOptions:not([open]) [data-cal-print-proper]')?.getClientRects().length),
+        commemBeforeMass:!mass||precedes(commem,mass),
+        massBeforeReadings:!mass||!reading||precedes(mass,reading),
+        detailsAfterHero:precedes(hero,details),
+        sourcesInsideDetails:Boolean(details?.contains(source)),
+        firstDetailsClosed:details?.open===false,
+        printVisibleWithoutDisclosure:Boolean(print?.querySelector("[data-cal-print-proper]")?.getClientRects().length),
         width:hero.getBoundingClientRect().width
       };
     });
     assert.equal(dayHierarchy.commemorations,1,"Calendar Day cannot repeat historical commemorations");
-    assert.equal(dayHierarchy.documentations,1);
-    assert.ok(dayHierarchy.titleBeforeCommem&&dayHierarchy.commemBeforeReadings&&
-      dayHierarchy.readingsBeforeMass&&dayHierarchy.massBeforeSources,
-      "Calendar Day information sequence regressed: "+JSON.stringify(dayHierarchy));
-    assert.equal(dayHierarchy.sourcesInsideDocumentation,true);
+    assert.equal(dayHierarchy.detailsCount,4,"Source, liturgical time, customs and week disclosures must remain mounted");
+    assert.ok(dayHierarchy.titleBeforeCommem&&dayHierarchy.commemBeforeMass&&
+      dayHierarchy.massBeforeReadings&&dayHierarchy.detailsAfterHero,
+      "Approved Mass-first Calendar Day hierarchy regressed: "+JSON.stringify(dayHierarchy));
+    assert.equal(dayHierarchy.sourcesInsideDetails,true,
+      "1962 source evidence must remain accessible inside the details disclosure");
+    assert.equal(dayHierarchy.firstDetailsClosed,true,
+      "Source and rubrical audit must start folded, not obscure Mass");
     assert.equal(dayHierarchy.printVisibleWithoutDisclosure,false);
     assert.ok(dayHierarchy.width<=width+1,"Calendar hero wider than phone "+width+": "+dayHierarchy.width);
     assert.ok(fromCalendar.length>0,"No 1962 commemoration on "+date);
