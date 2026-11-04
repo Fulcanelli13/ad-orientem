@@ -1,5 +1,5 @@
 import {PRAY_DOOR_ART_SLOTS_V1,prayerDoorArtSlot,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
-import {revealPrayerMosaicTile,clearPrayerMosaicReveal} from "../src/pray/prayer-mosaic-reveal.js";
+import {revealPrayerMosaicTile,clearPrayerMosaicReveal,restorePrayerMosaicReveal} from "../src/pray/prayer-mosaic-reveal.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
@@ -70,16 +70,17 @@ const mosaic={
    ?tiles.filter(t=>t.getAttribute('aria-expanded')==='true'):tiles;
  }
 };
-const fakeTile=()=>{
+const fakeTile=id=>{
  const attrs=new Map([['aria-expanded','false']]);
  return {
+  dataset:{aoPrayPilotTile:id},
   matches:s=>s==='[data-ao-pray-pilot-tile]',
   closest:s=>s==='[data-ao-pray-pilot-mosaic]'?mosaic:null,
   getAttribute:name=>attrs.get(name),
   setAttribute:(name,value)=>attrs.set(name,String(value))
  };
 };
-tiles.push(fakeTile(),fakeTile());
+tiles.push(fakeTile('daily'),fakeTile('eucharistic'));
 assert.equal(revealPrayerMosaicTile(tiles[0]),true,"First activation is reveal only");
 assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
 assert.equal(revealPrayerMosaicTile(tiles[1]),true,"Another painting replaces the current reveal");
@@ -88,8 +89,23 @@ assert.equal(tiles[1].getAttribute('aria-expanded'),'true');
 assert.equal(revealPrayerMosaicTile(tiles[1]),false,"Second activation delegates to canonical owner");
 assert.equal(tiles[1].getAttribute('aria-expanded'),'false');
 assert.equal(revealPrayerMosaicTile(tiles[0]),true);
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+const oldTile=tiles[0];
+// A source-owned render can replace the entire DOM between genuine taps.
+// Restoration must preserve the disclosure, and the next tap must navigate,
+// not demand a third physical activation.
+tiles.splice(0,tiles.length,fakeTile('daily'),fakeTile('eucharistic'));
+assert.notEqual(tiles[0],oldTile);
+assert.equal(restorePrayerMosaicReveal(mosaic),true);
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[0]),false,
+ "Second tap on remounted selected tile must delegate to canonical route");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'false');
+assert.equal(revealPrayerMosaicTile(tiles[1]),true);
 assert.equal(clearPrayerMosaicReveal(mosaic),true);
 assert.equal(clearPrayerMosaicReveal(mosaic),false);
+assert.equal(restorePrayerMosaicReveal(mosaic),false,
+ "Fresh hub or outside dismissal must not auto-select previous artwork");
 assert.match(actual,/>Prayer<\/h2>/,"R1.1 approved quiet Prayer heading must be shown");
 assert.doesNotMatch(actual,/Enter into prayer|Choose a door or search|Find a prayer or devotion/,
  "Rejected instructional heading, helper copy and redundant subtitle must stay absent");
