@@ -9,6 +9,8 @@ on:
       - 'data/geography/research/sacred-atlas-ported5-original-licence-legal-code-review-20261104.v1.json'
       - 'tests/sacred-atlas-ported-five-legalcode-contract.mjs'
       - 'tests/sacred-atlas-ported-five-original-byte-contract.mjs'
+      - 'data/geography/research/sacred-atlas-selected34-11-source-page-attribution-pd-identity-review-20261104.v1.json'
+      - 'tests/sacred-atlas-selected34-11-source-page-contract.mjs'
       - 'tools/atlas/verify-sacred-atlas-ported-five-originals.py'
       - '.github/workflows/sacred-atlas-selected34-el-cobre-preflight.yml'
   workflow_dispatch:
@@ -32,7 +34,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate all 34 original user-selected photo holds
-        run: node tests/sacred-atlas-selected34-el-cobre-preflight-contract.mjs && node tests/sacred-atlas-ported-five-legalcode-contract.mjs && node tests/sacred-atlas-ported-five-original-byte-contract.mjs
+        run: node tests/sacred-atlas-selected34-el-cobre-preflight-contract.mjs && node tests/sacred-atlas-ported-five-legalcode-contract.mjs && node tests/sacred-atlas-ported-five-original-byte-contract.mjs && node tests/sacred-atlas-selected34-11-source-page-contract.mjs
       - name: Check Python syntax without contacting Commons
         run: python -m py_compile tools/atlas/verify-sacred-atlas-el-cobre-original-preflight.py tools/atlas/verify-sacred-atlas-ported-five-originals.py
       - name: Install image decoder for bounded source verification
