@@ -1,4 +1,4 @@
-// 158 Excel-approved illustrative CL2 locality positions: no GPS-coordinate navigation,
+// 252 Excel-approved illustrative CL2 locality positions across two source-pinned rounds: no GPS-coordinate navigation,
 // no venue identity merges and no current Mass or ecclesial status inferred.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
@@ -8,6 +8,7 @@ import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const audit=read("data/directory/research/illustrative-locality-20261104/review.v1.json");
+const round2=read("data/directory/research/illustrative-locality-20261104/geonames1000-round2-review.v1.json");
 const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
 const base=projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json"));
 const pub=projectPublishedProvisionalMassSites(base,read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
@@ -27,14 +28,26 @@ assert.equal(audit.counts.ambiguous,8);
 assert.equal(audit.counts.no_safe_match,249);
 assert.equal(audit.counts.current_published_map_pins,2147);
 const pins=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS);
-assert.equal(pins.length,158);
-assert.equal(new Set(pins.map(([id])=>id)).size,158);
+assert.equal(pins.length,252);
+assert.equal(new Set(pins.map(([id])=>id)).size,252);
 const origins=new Map(index.records.map(r=>[r[0],r]));
 const items=new Map(world.map(item=>[item.physical_group_id,item]));
 const approvals=audit.records.filter(r=>r.status==="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
 assert.equal(approvals.length,158);
 assert.ok(approvals.every(r=>r.excel_review_scope==="APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS"));
-assert.deepEqual(new Set(approvals.map(r=>r.cl2_anchor)),new Set(pins.map(([id])=>id)));
+assert.equal(round2.schema,"AO_TLM_ATLAS_GEONAMES1000_BULK_LOCALITY_ROUND2_V1");
+assert.equal(round2.records.length,94);
+assert.equal(round2.counts.excel_approved_localities,94);
+assert.ok(round2.records.every(r=>r.status==="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE"&&r.excel_review_scope==="APPROVED_LOCALITY_ONLY_NOT_CHURCH_GPS"));
+const round2Ids=new Set(round2.records.map(r=>r.cl2_anchor));
+assert.equal(round2Ids.size,94);
+assert.deepEqual(new Set([...approvals.map(r=>r.cl2_anchor),...round2Ids]),new Set(pins.map(([id])=>id)));
+for(const r of round2.records){
+ const loc=CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor];
+ assert.ok(loc&&loc.localityName===r.matched_city&&loc.lat===r.lat&&loc.lng===r.lng&&loc.sourceUrl===r.coordinate_source_url);
+ assert.ok(loc.sourceUrl.includes("world_cities_%28including_all_states_and_counties%29.csv"));
+ assert.ok(!loc.sourceUrl.includes("world_cities_15000"));
+}
 for(const [id,loc] of pins){
  const original=origins.get(id),found=items.get(id);
  assert.ok(original&&found,"Candidate must remain on the frozen physical-site master");
@@ -73,7 +86,7 @@ for(const [id,loc] of pins){
  assert.ok(!action.url.includes("/maps/dir/"));
 }
 const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
-assert.equal(withheld.length,268);
+assert.equal(withheld.length,277); // Immutable R1 decision ledger; later site and R2 admissions are separate
 // Nine additional Excel-approved exact/named-POI sites are imported by the
 // separate precise-site gate, not as inferred locality pins. Historical
 // identity holds and every other R1 withheld record remain unpinned.
@@ -84,12 +97,16 @@ const laterPreciseSiteIds=new Set([
 ]);
 assert.equal(laterPreciseSiteIds.size,9);
 for(const r of withheld){
- assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor],"Exact-site and held profiles cannot be assigned a locality fallback");
  const item=items.get(r.cl2_anchor);
- if(laterPreciseSiteIds.has(r.cl2_anchor)){
+ if(round2Ids.has(r.cl2_anchor)){
+  assert.ok(item?.map_publishable&&item.geo?.precision==="locality","R2 source-matched municipality must remain clearly illustrative: "+r.cl2_anchor);
+  assert.equal(item.geo.approximate,true);
+ }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
+  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor],"Precise-site must never be replaced by centroid");
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
   assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
  }else{
+  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor],"Held identity may not get a fallback centroid");
   assert.ok(item&&!item.map_publishable&&!item.geo,"Historical alias/identity and unreviewed site must remain held: "+r.cl2_anchor);
  }
 }
@@ -107,11 +124,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2314);
-assert.equal(world.filter(x=>!x.map_publishable).length,268);
+assert.equal(world.filter(x=>x.map_publishable).length,2408);
+assert.equal(world.filter(x=>!x.map_publishable).length,174);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 Excel-approved provisional, 268 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 252 Excel-approved provisional (158 + 94), 174 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
