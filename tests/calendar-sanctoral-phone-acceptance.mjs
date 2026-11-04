@@ -24,6 +24,18 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
 const base="http://127.0.0.1:"+server.address().port;
+// Exact historical rubric sources remain behind the approved Day details
+// fold. Exercise both native disclosures rather than clicking hidden DOM.
+async function openVisibleDaySources(page){
+ const parent=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2DayFold:has(.aoCalDaySources)");
+ await parent.waitFor({state:"attached",timeout:30000});
+ if(await parent.getAttribute("open")===null)
+   await parent.locator(":scope > summary").click();
+ const sources=page.locator(".aoTodayV2CalendarInline .aoCalDaySources");
+ await sources.waitFor({state:"visible",timeout:15000});
+ if(await sources.getAttribute("open")===null)
+   await sources.locator(":scope > summary").click();
+}
 let browser;
 const reports=[];
 try{
@@ -133,7 +145,7 @@ try{
      assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-11-01")),true);
      const exact=page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-rubric-claim="ALL_SAINTS_OCCURRENT_SUNDAY"]');
      await exact.waitFor({state:"attached",timeout:55000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await exact.waitFor({state:"visible",timeout:12000});
      assert.match(await exact.innerText(),/RG 108\(a\).*RG 111\(a\)/);
      const witness=exact.locator("a");
@@ -150,7 +162,7 @@ try{
      assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-04-05")),true);
      const transfer=page.locator('.aoTodayV2CalendarInline [data-cal-transfer-claim="ANNUNCIATION_2027"]');
      await transfer.waitFor({state:"attached",timeout:55000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await transfer.waitFor({state:"visible",timeout:12000});
      assert.match(await transfer.innerText(),/RG 96\(a\)/);
      assert.equal(await transfer.locator('time[datetime="2027-03-25"]').count(),1);
@@ -171,7 +183,7 @@ try{
      const claim=page.locator('.aoTodayV2CalendarInline [data-cal-observed-commemoration="ASSUMPTION_SUNDAY_2027"]');
      await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-08-15",null,{timeout:55000});
      await claim.waitFor({state:"attached",timeout:55000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await claim.waitFor({state:"visible",timeout:12000});
      assert.match(await claim.innerText(),/RG 108\(a\).*RG 111\(a\)/);
      assert.match(await claim.locator("a").getAttribute("href"),
@@ -190,7 +202,7 @@ try{
        null,{timeout:55000});
      const peterPaul=page.locator('.aoTodayV2CalendarInline [data-cal-apostles-inseparable="PETER_PAUL_INSEPARABLE_2027"]');
      await peterPaul.waitFor({state:"attached",timeout:30000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await peterPaul.waitFor({state:"visible",timeout:12000});
      assert.match(await peterPaul.innerText(),/RG 110/);
      assert.match(await peterPaul.innerText(),/one conclusion/i);
@@ -210,7 +222,7 @@ try{
        null,{timeout:55000});
      const omission=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="FRANCIS_ASSISI_2026_SUNDAY_OMISSION"]');
      await omission.waitFor({state:"attached",timeout:30000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await omission.waitFor({state:"visible",timeout:12000});
      assert.match(await omission.innerText(),/RG 111\(b\)/);
      assert.match(await omission.innerText(),/St Francis of Assisi/);

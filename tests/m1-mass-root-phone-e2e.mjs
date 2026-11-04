@@ -153,6 +153,11 @@ try{
   assert.equal(after.root,false,"Mass root style must clean up");
   assert.notEqual(after.modal,"main","Mass role must restore after leaving");
   await page.locator('.homeScreen [data-home-mass-entry]').click();
+  // Re-entry resets only the overview; its source-owned Adjust section
+  // must be opened again before testing the underlying Mass choices.
+  await adjust.waitFor({state:"visible",timeout:15000});
+  assert.equal(await adjust.getAttribute("open"),null,"Re-entry must restore a collapsed Adjust section");
+  await adjust.locator(":scope > summary").click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-choice="mass"]',{state:"visible",timeout:15000});
   assert.equal(await page.locator('[data-ao-full-mass-preflight]').count(),1,
     "Re-entering Mass must not create a second preflight");
