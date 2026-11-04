@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify main Prayer startup import recovered
+        run: node tests/pray-production-cover-photo-qa-import.mjs
       - name: Fail closed on hash, identity, publication or Rosary change
         run: |
           node tests/prayer-r5d-first-release-crosswalk.mjs
