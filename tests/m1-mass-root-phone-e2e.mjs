@@ -27,6 +27,9 @@ try{
   await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:20000});
   await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] #ao-mass-flow-v1 [data-ao-m1-root]',{timeout:18000});
+  const adjust=page.locator("#ao-mass-flow-v1 [data-folio-adjust]");
+  assert.equal(await adjust.count(),1,"Native M1 Adjust sheet must remain available");
+  await adjust.locator(":scope > summary").click();
   await page.waitForSelector("[data-m1-rows] [data-m1-choice='mass']",{state:"visible",timeout:15000});
   const v=await page.evaluate(()=>{
     const back=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");

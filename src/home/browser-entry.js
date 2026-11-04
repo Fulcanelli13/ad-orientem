@@ -93,6 +93,7 @@ export function createHomeOwner(win=globalThis){
   let enricherClicksBound=false;
   let retiredEnricherObserver=null;
   let inlineCalendarView=null;
+  let inlineCalendarViewObserver=null;
   let h7MassDoorOpen=false;
   let c3PrayerIndex=0,c3PrayerFeature=null;
   let inlineCalendarRestoring=false;
@@ -337,7 +338,36 @@ export function createHomeOwner(win=globalThis){
     }
     return true;
   }
+  // The Calendar owns its Day/Month/Year state. Keep the approved outer
+  // H7 tab in sync when a date or year link changes the embedded view.
+  function stopEmbeddedCalendarViewSync(){
+    inlineCalendarViewObserver?.disconnect?.();
+    inlineCalendarViewObserver=null;
+  }
+  function syncEmbeddedCalendarView(){
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+    const calendar=screen?.querySelector?.("[data-home-calendar-inline] #ao-calendar-modular-root");
+    const view=calendar?.dataset?.aoCalendarView;
+    if(!screen||!["day","picker","year"].includes(view))return false;
+    inlineCalendarView=view;
+    screen.dataset.aoHomeCalendarView=view;
+    for(const button of screen.querySelectorAll(".aoH4CalendarViews [data-home-calendar-view]")){
+      if(button.dataset.homeCalendarView===view)button.setAttribute("aria-current","page");
+      else button.removeAttribute("aria-current");
+    }
+    return true;
+  }
+  function observeEmbeddedCalendarView(slot){
+    stopEmbeddedCalendarViewSync();
+    const calendar=slot?.querySelector?.("#ao-calendar-modular-root");
+    if(calendar&&typeof win?.MutationObserver==="function"){
+      inlineCalendarViewObserver=new win.MutationObserver(syncEmbeddedCalendarView);
+      inlineCalendarViewObserver.observe(calendar,{attributes:true,attributeFilter:["data-ao-calendar-view"]});
+    }
+    syncEmbeddedCalendarView();
+  }
   function showHomeToday(){
+    stopEmbeddedCalendarViewSync();
     inlineCalendarView=null;
     h7MassDoorOpen=false;
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
@@ -374,6 +404,7 @@ export function createHomeOwner(win=globalThis){
     }});
     if(opened!==true){showHomeToday();return false}
     if(date&&/^\d{4}-\d{2}-\d{2}$/.test(date))await api.select?.(date,{closeAfter:false});
+    observeEmbeddedCalendarView(slot);
     return true;
   }
 
@@ -815,7 +846,7 @@ export function createHomeOwner(win=globalThis){
     }
     unsubscribe=store.subscribe(next=>{
       if(next?.route==="home")paint(next);
-      else{h7MassDoorOpen=false;win?.document?.documentElement?.removeAttribute?.("data-ao-h7-door-open");closeH4ChoicesSheet(win);}
+      else{stopEmbeddedCalendarViewSync();h7MassDoorOpen=false;win?.document?.documentElement?.removeAttribute?.("data-ao-h7-door-open");closeH4ChoicesSheet(win);}
     });
     paint(store.getState());
     return true;
@@ -836,6 +867,7 @@ export function createHomeOwner(win=globalThis){
         return true;
       }
     }
+    stopEmbeddedCalendarViewSync();
     inlineCalendarView=null;
     h7MassDoorOpen=false;
     closeTransientSurfaces(win);
@@ -865,6 +897,7 @@ export function createHomeOwner(win=globalThis){
   }
 
   function dispose(){
+    stopEmbeddedCalendarViewSync();
     closeH4ChoicesSheet(win);
     try{unsubscribe?.();}catch{}
     unsubscribe=null;

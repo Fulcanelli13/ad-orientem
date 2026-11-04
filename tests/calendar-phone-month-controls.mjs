@@ -329,8 +329,12 @@ try{
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day",
        "Reopening an already-resolved date should display Day synchronously");
+     await cal.locator('.aoCalV2DayFold:has(.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]) > summary').click();
      await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]')
        .waitFor({state:"visible",timeout:15000});
+     await page.waitForFunction(()=>document.querySelector('.aoH4CalendarViews [data-home-calendar-view="day"]')?.getAttribute("aria-current")==="page",null,{timeout:5000});
+     assert.equal(await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').getAttribute("aria-current"),null,
+       "H7 Month tab must relinquish selection when Calendar enters Day");
      const returned=await page.evaluate(()=>{
        const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
        return [s?.selectedDate,s?.resolution?.date];

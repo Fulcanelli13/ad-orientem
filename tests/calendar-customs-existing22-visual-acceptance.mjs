@@ -92,9 +92,11 @@ try{
      const el=document.querySelector("#ao-calendar-modular-root");
      return {width:innerWidth,documentScroll:document.documentElement.scrollWidth,
       articleScroll:el?.scrollWidth,articleClient:el?.clientWidth,
-      canonicalArticles:el?.querySelectorAll("[data-cal-custom-id]").length};
+      canonicalArticles:el?.querySelectorAll(".aoCalCustomCatalogue [data-cal-custom-id]").length,
+      contextualDuplicates:el?.querySelectorAll(".aoCalPracticeContext [data-cal-custom-id]").length};
     });
     assert.equal(dimensions.canonicalArticles,36,"35 original published articles plus single PENT-001 proposal");
+    assert.ok(dimensions.contextualDuplicates>=0,"Day-specific contextual recommendations are separate from the canonical catalogue");
     assert.ok(dimensions.articleScroll<=dimensions.articleClient+2,
       "Calendar horizontal overflow at "+width+": "+JSON.stringify(dimensions));
     assert.ok(errors.length===0,"Browser errors: "+errors.join(" | "));

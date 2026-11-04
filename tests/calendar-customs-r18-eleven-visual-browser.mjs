@@ -66,7 +66,7 @@ try{
    await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:45000});
-   await cal.locator(".aoCalV2DayFold").filter({has:cal.locator(".aoCalCustomCatalogue")}).locator(":scope > summary").click();
+   await cal.locator(".aoCalV2DayFold:has(.aoCalCustomCatalogue) > summary").click();
     await cal.locator(".aoCalCustomCatalogue > summary").click();
    const reviewer=cal.locator('[data-cal-r18-eleven-editorial-preview]');
    await reviewer.waitFor({state:"visible",timeout:10000});

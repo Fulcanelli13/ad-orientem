@@ -309,6 +309,7 @@ try{
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
    const placeAction=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root "+
      '[data-cal-secondary-place="place:IT:santuario-san-pio-rotondo"]');
+   await page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2DayFold:has([data-cal-secondary-place]) > summary").click();
    await placeAction.waitFor({state:"visible",timeout:55000});
    assert.equal(await placeAction.getAttribute("data-cal-secondary-saint"),"saint.pio-pietrelcina");
    assert.ok((await placeAction.boundingBox())?.height>=44,"Physical Place action below 44px target");
