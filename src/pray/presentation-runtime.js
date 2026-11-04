@@ -760,7 +760,7 @@ function prayerBlock(id,opts={}){
   const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(p.la?'la':vern);
   // F01 approval authority: Claude's original reversible Holy Card, not the
    // newer R2 continuous flow. Flow is retained by explicit opt-in only.
-   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
+   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,flipLabel:L('Turn card','Retourner la carte'),artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){
@@ -1029,14 +1029,15 @@ function renderPrayFamily(){
   consecration:L('Consecration','Consécration'),rosary:L('Rosary','Rosaire'),chaplet:L('Chaplets','Chapelets'),
   angelus:L('Angelus','Angélus'),novena:L('Novenas','Neuvaines'),penance:L('Penance','Pénitence')};
  const filterButtons=['all',...facets].map(type=>'<button type="button" data-p435930-door-filter="'+type+'" aria-pressed="'+(type==='all')+'">'+esc(facetLabels[type]||type)+'</button>').join('');
- const filters=facets.length>1?'<nav class="aoPrayDoorFilters" aria-label="'+esc(L("Filter prayers","Filtrer les prières"))+'">'+filterButtons+'</nav>':'';
+ const filters=facets.length>1&&visible.length>=8?'<nav class="aoPrayDoorFilters" aria-label="'+esc(L("Filter prayers","Filtrer les prières"))+'">'+filterButtons+'</nav>':'';
+ const familyDisplayTitle=familyId==='eucharistic'?L('Holy Eucharist','Sainte Eucharistie'):family.title;
  return `${head(L("Pray","Prier"),'')}<main class="aoP435930Body aoPrayDoorInterior aoPrayDoorMosaicInterior" data-ao-prayer-shelf="${esc(familyId)}">
   <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+assetIcon(family.assetId,'aoPrayDoorCoverIcon',{preferEmbedded:true})+'</span>'}
-    <header class="aoPrayDoorHeading"><small class="aoPrayDoorEyebrow">${esc(L("PRAYER COLLECTION","PRIÈRES"))}</small><h2>${esc(family.title)}</h2></header></section>
+    <header class="aoPrayDoorHeading"><small class="aoPrayDoorEyebrow">${esc(L("PRAYER COLLECTION","PRIÈRES"))}</small><h2>${esc(familyDisplayTitle)}</h2></header></section>
   <p class="aoPrayDoorDescription">${esc(family.description)}</p>
   ${filters}
-  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(family.title)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId,i)).join('')}</nav>
-  ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
+  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(familyDisplayTitle)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId,i)).join('')}</nav>
+  ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext"><details><summary>'+esc(L('Liturgical reference','Repère liturgique'))+'</summary>'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</details></aside>':''}
  </main>`;
 }
 function openFamily(id){
@@ -4396,6 +4397,11 @@ function onClick(e){
   const scroll=mount()?.querySelector('.aoClaudeHolyBackScroll');
   CLAUDE_HOLY_PREF.scrollRatio=scroll?scroll.scrollTop/Math.max(1,scroll.scrollHeight-scroll.clientHeight):0;
   return render();
+ }
+ if(b.hasAttribute('data-p435930-essential-flip-face')){
+  const lace=b.closest('[data-ao-claude-holy-card]')?.querySelector('[data-p435930-essential-card-turn]');
+  if(lace)toggleClaudeHolyCard(lace);
+  return;
  }
  if(b.hasAttribute('data-p435930-essential-card-turn')){
   // Fallback for card activation before its focus-hook capture listener mounts.
