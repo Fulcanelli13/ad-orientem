@@ -1,0 +1,43 @@
+name: Sacred Atlas Round 17 — 35-source triage and ten-original integrity
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-round17-all35-source-triage-20261104.v1.json'
+      - 'tools/atlas/audit-sacred-atlas-ten-original-integrity.py'
+      - 'tests/sacred-atlas-round17-35-source-invariants.mjs'
+      - '.github/workflows/sacred-atlas-round17-original-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  one-time-ten-originals-research:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-round17-bulk-source-recovery-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate all 35 source triage records and review browser script
+        run: node tests/sacred-atlas-round17-35-source-invariants.mjs
+      - name: Self-test source checksum, host and safety gates
+        run: |
+          python tools/atlas/audit-sacred-atlas-ten-original-integrity.py --self-test
+          python tools/atlas/audit-sacred-atlas-ten-original-integrity.py --dry-run
+      - name: Download only ten original source files with at least 10s pacing; stop at 429
+        run: python tools/atlas/audit-sacred-atlas-ten-original-integrity.py
+      - name: Save short-lived integrity metadata, never original image binaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round17-ten-original-byte-integrity
+          path: /tmp/ao-sacred-atlas-ten-original-byte-audit.json
+          retention-days: 14
+          if-no-files-found: warn
