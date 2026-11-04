@@ -10,6 +10,17 @@ const ROLES=Object.freeze({in:"INTROIT",of:"OFFERTORY",co:"COMMUNION"});
 const keyFor=Object.freeze({in:"PROPER_INTROIT",of:"PROPER_OFFERTORY",
  co:"PROPER_COMMUNION"});
 const targetPerRole=20;
+// The original first-60 score/editor queue was locked BEFORE 6 March's
+// named Perpetua/Felicity prayer-source correction. The corrected ferial
+// Mass now supplies extra authentic 1961 GABC candidates. Keep them in the
+// full-year score worklist, but do not silently replace a locked first-60
+// review candidate (GREGOBASE-812) with GREGOBASE-993 because an unrelated
+// Prayer Reader source bug was fixed. This defers only the exact 2026
+// principal/owner to the later full-year editorial queue.
+const DEFER_POSTLOCK_READER_READY_DAY=Object.freeze({
+ date:"2026-03-06",principalId:"tempora:Quad2-5:3:v",
+ sourcePath:"Tempora/Quad2-5"
+});
 const SHA64=/^[a-f0-9]{64}$/;
 const validPath=/^(?:Tempora|Sancti|Commune)\/[A-Za-z0-9_-]+$/;
 const fail=code=>{throw Error(code)};
@@ -55,7 +66,7 @@ export function build2026ProperFirst60ScoreReview({
   }
  }
  if(sourceScores.size!==1195)fail("FIRST_60_SOURCE_ARCHIVE_INCOMPLETE");
- const grouped=new Map(),issues=[];
+ const grouped=new Map(),issues=[],deferredNewlyReaderReady=[];
  for(const occurrence of fullSourceCrosswalk.matchedReviewOccurrences){
   if(!Object.hasOwn(ROLES,occurrence.part))continue;
   if(occurrence.status!=="UNIQUE_1962_SOURCE_AND_SCORE_HASH_REVIEW_ONLY"||
@@ -70,6 +81,23 @@ export function build2026ProperFirst60ScoreReview({
     day.sourcePath!==occurrence.sourcePath||!day.englishReaderReady||
     !day.sourceExistsInPinnedLatinTree)
     fail("FIRST_60_SELECTED_PROPER_SCORE_IDENTITY_CHANGED");
+  // The original review 60 are frozen by score and source-owner SHA.
+  // March 6 became reader-ready AFTER that lock. Its authentic chant leads
+  // remain in the full annual worklist and may be editorially reviewed later,
+  // but no unreviewed candidate can displace a pinned first-60 identity.
+  if(occurrence.date===DEFER_POSTLOCK_READER_READY_DAY.date){
+   if(day.principalId!==DEFER_POSTLOCK_READER_READY_DAY.principalId||
+      occurrence.sourcePath!==DEFER_POSTLOCK_READER_READY_DAY.sourcePath||
+      occurrence.principalId!==DEFER_POSTLOCK_READER_READY_DAY.principalId)
+    fail("FIRST_60_DEFERRED_DAY_SOURCE_IDENTITY_DRIFT");
+   deferredNewlyReaderReady.push(Object.freeze({
+    date:occurrence.date,principalId:occurrence.principalId,
+    sourcePath:occurrence.sourcePath,part:occurrence.part,
+    scoreId:source.id,scoreGabcSha256:source.sha256,
+    publication:"LATER_EDITORIAL_WORKLIST_NOT_PUBLIC"
+   }));
+   continue;
+  }
   // The annual source matcher is valid on some English-ready days whose
   // French reader projection is incomplete. Keep those outside the bilingual
   // publication batch, but do not mistake a translation hold for score drift.
@@ -176,6 +204,10 @@ export function build2026ProperFirst60ScoreReview({
    sourceReviewPool:{in:byPart.in.length,of:byPart.of.length,
     co:byPart.co.length},unmatchedOpeningExceptions:issues.length},
   candidateSourceOpeningIssues:issues,
+  // Explicitly record the real newly ready source leads. Other annual
+  // worklists still include them; ONLY the historically locked first60
+  // ranking excludes their late arrival. No musical approval is implied.
+  postLockNewlyReadySourceLeads:Object.freeze(deferredNewlyReaderReady),
   candidates,
   publication:{publicScores:0,autoPromotion:false,
    automaticMusicApproval:false,localScholaSelectionInferred:false,
