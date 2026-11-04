@@ -69,9 +69,23 @@ try{
     if(index===0||id==="foundations_hail_mary"){
      const turn=present.locator("[data-p435930-essential-card-turn]");
      assert.equal(await present.locator(".aoClaudeHolyFront").getAttribute("aria-hidden"),"false");
+     await page.evaluate(()=>{
+      window.__f01TapTrace=[];
+      for(const name of ["pointerdown","pointerup","click"])
+       document.addEventListener(name,event=>{
+        const lace=event.target.closest?.("[data-p435930-essential-card-turn]");
+        if(!lace)return;
+        window.__f01TapTrace.push({event:name,target:event.target.className?.baseVal||event.target.className||event.target.tagName,
+         flip:lace.classList.contains("flip"),back:lace.querySelector(".aoClaudeHolyBack")?.getAttribute("aria-hidden")});
+       },true);
+     });
      await turn.click({timeout:12000});
-     assert.equal(await present.locator(".aoClaudeHolyBack").getAttribute("aria-hidden"),"false",
-      "Tap must show source prayer on original card");
+     const tapEvidence=await turn.evaluate(el=>({
+      flip:el.classList.contains("flip"),back:el.querySelector(".aoClaudeHolyBack")?.getAttribute("aria-hidden"),
+      trace:window.__f01TapTrace||[],root:el.closest("#aoPray435930")?.className
+     }));
+     assert.equal(tapEvidence.back,"false",
+      "First tap must show source prayer on original card, evidence: "+JSON.stringify(tapEvidence));
      assert.equal(await present.locator(".aoClaudeHolyFront").getAttribute("aria-hidden"),"true");
      await page.locator(base+" [data-p435930-essential-aa]").click();
      const language=page.locator(base+' [data-p435930-essential-language="en"]');
