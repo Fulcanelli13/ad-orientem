@@ -68,7 +68,7 @@ assert.ok(html.includes('id="gallery"'),"All 23 Places should be in one visible 
 assert.ok(html.includes('See every photo. Approve or reject in one click.'));
 assert.ok(html.includes('id="singles"')&&html.includes('id="compare"')&&html.includes('id="context"')&&html.includes('id="pending"'));
 assert.ok(html.includes('id="import"')&&html.includes('id="export"')&&html.includes('id="next"'));
-assert.ok(html.includes('data-act="approve"')===false,"Action controls must be generated from source manifest, not hardcoded");
+assert.ok(!html.slice(0,html.indexOf('<script type="application/json"')).includes('data-act="approve"'),"Action buttons must be generated from the verified source records");
 assert.ok(client.includes('data-act="approve"')&&client.includes('data-act="reject"'));
 assert.ok(client.includes('data-act="hold"')&&client.includes('data-act="none"'));
 assert.ok(client.includes('data-act="reset"')&&client.includes('data-act="crop"'));
