@@ -2038,7 +2038,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      {label:"Mass times",value:"Unverified · no timetable published"},
     ]),sections:Object.freeze([]),actions:Object.freeze(newPin?.precision==="locality"?[
       Object.freeze({label:"Search location",url:"https://www.google.com/maps/search/?api=1&query="+
-        encodeURIComponent([T(name),T(description).replace(/\s*\([^)]*\)/g,"").trim(),country].filter(Boolean).join(", "))})
+        encodeURIComponent([T(name),T(description).replace(/\s*\([^)]*\)/g,"").trim(),country].filter(Boolean).join(", ")).replace(/\x27/g,"%27")})
      ]:[]),
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
