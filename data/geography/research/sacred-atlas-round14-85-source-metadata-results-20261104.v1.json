@@ -1,0 +1,728 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND14_READONLY_85_FILE_AUDIT_DECISIONS_V1",
+  "audited_at_utc": "2026-11-04T07:03:34Z",
+  "origin": {
+    "workflow_run_id": 41789481501,
+    "workflow_job_id": 126439245153,
+    "artifact_id": 13302612313,
+    "head_commit_audited": "b177b064f4d0c1f1a92742852d2a470934001add",
+    "full_fields_in_artifact": [
+      "current_sha1",
+      "current_width",
+      "current_height",
+      "current_size_bytes",
+      "mime",
+      "author",
+      "license_short_name",
+      "license_url"
+    ],
+    "audit_artifact_retention_days": 14
+  },
+  "counts": {
+    "reviewed": 85,
+    "metadata_eligible": 71,
+    "held": 14,
+    "source_places": 24,
+    "metadata_eligible_places": 21,
+    "publication_approved": 0,
+    "by_status": {
+      "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL": 71,
+      "HOLD_ORIGINAL_TOO_SMALL": 2,
+      "HOLD_ATTRIBUTION": 1,
+      "HOLD_UNSUPPORTED_IMAGE_TYPE": 5,
+      "HOLD_LICENCE_NOT_CLEAR": 2,
+      "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS": 2,
+      "HOLD_NONSTANDARD_OR_PORTED_CC_LEGAL_CODE": 1,
+      "HOLD_ORIGINAL_SAFETY_LIMIT": 1
+    }
+  },
+  "notes": [
+    "All 85 per-file statuses transcribed from the completed GitHub Actions source metadata audit. The exact per-file Commons metadata values live in the referenced run artifact, not in this summary; re-run the reproducible audit script after artifact expiry.",
+    "'METADATA_ELIGIBLE' is NOT rights clearance or subject verification; source photo subject, physical building, current file, creator, underlying work permissions, composition and original bytes require separate verification.",
+    "No images are acquired, no Place cover registered or approved, no gallery or TLM changes.",
+    "Aachen file remains subject to the previous explicit external European Commission licence review even if its generic Commons metadata is eligible.",
+    "The Banneux historic postcard is not a present-day shrine depiction, regardless of the attribution audit result."
+  ],
+  "rows": [
+    {
+      "place_id": "place:AU:penrose-park",
+      "source_title": "File:Shrine of Our Lady of Mercy Church.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Shrine_of_Our_Lady_of_Mercy_Church.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "source_title": "File:Altar of the Church at the Shrine of Our Lady of Mercy at Penrose Park.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Altar_of_the_Church_at_the_Shrine_of_Our_Lady_of_Mercy_at_Penrose_Park.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "source_title": "File:20140202 banneux07.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:20140202_banneux07.JPG",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "source_title": "File:Banneux Source00138.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Banneux_Source00138.JPG",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "source_title": "File:Sainte-Croix (Mauritius).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Sainte-Croix_(Mauritius).jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "HOLD_ORIGINAL_TOO_SMALL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "source_title": "File:Banneux-Notre-Dame. La Chapelle de la Vierge des Pauvres - De Kapel van de Maagd der Armen, GP122244.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Banneux-Notre-Dame._La_Chapelle_de_la_Vierge_des_Pauvres_-_De_Kapel_van_de_Maagd_der_Armen%2C_GP122244.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "HOLD_ATTRIBUTION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "source_title": "File:TreeChurchOtaki.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:TreeChurchOtaki.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "source_title": "File:Bettbrunn St Salvator von O.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bettbrunn_St_Salvator_von_O.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "source_title": "File:Seton shrine basilica Emmitsburg MD1.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Seton_shrine_basilica_Emmitsburg_MD1.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:la-salette-attleboro",
+      "source_title": "File:La Salette Shrine, Attleboro, Massachusetts.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:La_Salette_Shrine%2C_Attleboro%2C_Massachusetts.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "source_title": "File:Aachen Cathedral (02).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Aachen_Cathedral_(02).jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "source_title": "File:Seton Shrine stone house Emmitsburg MD1.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Seton_Shrine_stone_house_Emmitsburg_MD1.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "source_title": "File:St. Salvator - Bettbrunn 039.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:St._Salvator_-_Bettbrunn_039.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "source_title": "File:Basílica de Ocotlán Tlaxcala.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Ocotl%C3%A1n_Tlaxcala.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "source_title": "File:Basílica-de-Ocotlán-Tlaxcala.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica-de-Ocotl%C3%A1n-Tlaxcala.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "source_title": "File:San Francisco de Asis Mission Church.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Asis_Mission_Church.JPG",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "source_title": "File:San Francisco de Asís Mission Church, Ranchos de Taos, NM.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_As%C3%ADs_Mission_Church%2C_Ranchos_de_Taos%2C_NM.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "source_title": "File:St Anne Bukit Mertajam.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:St_Anne_Bukit_Mertajam.jpg",
+      "provenance": "PRIOR",
+      "metadata_status": "HOLD_ORIGINAL_TOO_SMALL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 22.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_22.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 71.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_71.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 99.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_99.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 102.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_102.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 129.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_129.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 133.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_133.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 187.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_187.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "source_title": "File:National Shrine Grotto of Our Lady of Lourdes 189.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_189.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012630738.tif",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes'_Shrine%2C_Litchfield%2C_Connecticut_LCCN2012630738.tif",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_UNSUPPORTED_IMAGE_TYPE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012630790.tif",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes'_Shrine%2C_Litchfield%2C_Connecticut_LCCN2012630790.tif",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_UNSUPPORTED_IMAGE_TYPE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631517.tif",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes'_Shrine%2C_Litchfield%2C_Connecticut_LCCN2012631517.tif",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_UNSUPPORTED_IMAGE_TYPE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631525.tif",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes'_Shrine%2C_Litchfield%2C_Connecticut_LCCN2012631525.tif",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_UNSUPPORTED_IMAGE_TYPE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "source_title": "File:Our Lady of Lourdes' Shrine, Litchfield, Connecticut LCCN2012631551.tif",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lourdes'_Shrine%2C_Litchfield%2C_Connecticut_LCCN2012631551.tif",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_UNSUPPORTED_IMAGE_TYPE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "source_title": "File:Mandaue Saint Joseph National Shrine 2026-07-11.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mandaue_Saint_Joseph_National_Shrine_2026-07-11.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "source_title": "File:National Shrine of St Joseph 2022 01 001.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_of_St_Joseph_2022_01_001.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "source_title": "File:National Shrine of St Joseph 2022 01 002.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_of_St_Joseph_2022_01_002.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "source_title": "File:The National Shrine of St. Joseph, Mandaue, Cebu, Jan 2024.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_National_Shrine_of_St._Joseph%2C_Mandaue%2C_Cebu%2C_Jan_2024.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "source_title": "File:Porta Sancta, Mandaue, Cebu, Jan 2024.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Porta_Sancta%2C_Mandaue%2C_Cebu%2C_Jan_2024.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "source_title": "File:3504 - Duomo (Vercelli) - Foto Giovanni Dall'Orto, 20 May 2011.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:3504_-_Duomo_(Vercelli)_-_Foto_Giovanni_Dall'Orto%2C_20_May_2011.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_LICENCE_NOT_CLEAR",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "source_title": "File:3560 - Duomo (Vercelli) - Foto Giovanni Dall'Orto, 20 May 2011.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:3560_-_Duomo_(Vercelli)_-_Foto_Giovanni_Dall'Orto%2C_20_May_2011.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_LICENCE_NOT_CLEAR",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "source_title": "File:Cattedrale di Sant'Eusebio P1160098.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant'Eusebio_P1160098.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "source_title": "File:Cattedrale di Sant'Eusebio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant'Eusebio.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "source_title": "File:DuomoVercelli.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:DuomoVercelli.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "source_title": "File:Bazylika Licheńska.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_Liche%C5%84ska.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "source_title": "File:Bazylika w Licheniu.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_w_Licheniu.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "source_title": "File:Bazylika Licheńska - widok od strony wschodniej.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_Liche%C5%84ska_-_widok_od_strony_wschodniej.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "source_title": "File:2012, 09, 06 Licheń- Sanktuarium Matki Bożej Licheńskiej. Bazylika widok z drogi - panoramio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2012%2C_09%2C_06_Liche%C5%84-_Sanktuarium_Matki_Bo%C5%BCej_Liche%C5%84skiej._Bazylika_widok_z_drogi_-_panoramio.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "source_title": "File:Bazylika Licheńska od strony fontanny z figurami Aniołów.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_Liche%C5%84ska_od_strony_fontanny_z_figurami_Anio%C5%82%C3%B3w.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "source_title": "File:Eglise Saint Bernard.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Eglise_Saint_Bernard.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "source_title": "File:Fontaine-lès-Dijon (21) Basilique Saint-Bernard - Extérieur - 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_(21)_Basilique_Saint-Bernard_-_Ext%C3%A9rieur_-_01.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "source_title": "File:Fontaine-lès-Dijon (21) Basilique Saint-Bernard - Extérieur - 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_(21)_Basilique_Saint-Bernard_-_Ext%C3%A9rieur_-_02.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "source_title": "File:Fontaine-lès-Dijon (21) Couvent et Basilique Saint-Bernard - Extérieur - 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_(21)_Couvent_et_Basilique_Saint-Bernard_-_Ext%C3%A9rieur_-_01.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "source_title": "File:Fontaine-lès-Dijon F21 basilique IMF0579.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fontaine-l%C3%A8s-Dijon_F21_basilique_IMF0579.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "source_title": "File:Basilika St. Clemens in Hannover.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Basilika_St._Clemens_in_Hannover.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "source_title": "File:Hannover, die Basilika St. Clemens.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hannover%2C_die_Basilika_St._Clemens.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "source_title": "File:20230321 Basilika Sankt Clemens Hannover 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:20230321_Basilika_Sankt_Clemens_Hannover_02.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "source_title": "File:Basilica St Clemens Clemensstrasse Calenberger Neustadt Hannover Germany 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_St_Clemens_Clemensstrasse_Calenberger_Neustadt_Hannover_Germany_02.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "source_title": "File:St Clemens basilica Hanover Germany.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:St_Clemens_basilica_Hanover_Germany.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "source_title": "File:Korea Haemi Martyrdom Holy Ground 01 (14031335149).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_01_(14031335149).jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "source_title": "File:Korea Haemi Martyrdom Holy Ground 02 (14214705641).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_02_(14214705641).jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "source_title": "File:Korea Haemi Martyrdom Holy Ground 03 (14218007385).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_03_(14218007385).jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "source_title": "File:Korea Haemi Martyrdom Holy Ground 04 (14031334599).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Korea_Haemi_Martyrdom_Holy_Ground_04_(14031334599).jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "source_title": "File:해미순교성지.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%ED%95%B4%EB%AF%B8%EC%88%9C%EA%B5%90%EC%84%B1%EC%A7%80.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "source_title": "File:Eglise Saint-Louis de Gonzague.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Eglise_Saint-Louis_de_Gonzague.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "source_title": "File:Pauchapellestlouisdegonzague.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pauchapellestlouisdegonzague.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_NONSTANDARD_OR_PORTED_CC_LEGAL_CODE",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "source_title": "File:Pau, église St Louis de Gonzague bâtie sous Louis XV - btv1b53201979f.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pau%2C_%C3%A9glise_St_Louis_de_Gonzague_b%C3%A2tie_sous_Louis_XV_-_btv1b53201979f.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_PUBLIC_DOMAIN_LEGAL_BASIS",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "source_title": "File:Gruta de Lourdes, Montevideo 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_01.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "source_title": "File:Gruta de Lourdes, Montevideo 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_02.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "source_title": "File:Gruta de Lourdes, Montevideo 04.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_04.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "source_title": "File:Gruta de Lourdes, Montevideo 07.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_07.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "source_title": "File:Gruta de Lourdes, Montevideo 09.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gruta_de_Lourdes%2C_Montevideo_09.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "source_title": "File:Igreja de Fátima - panoramio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_-_panoramio.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "source_title": "File:Igreja de Fátima em Fortaleza.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_em_Fortaleza.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "source_title": "File:Na manhã de 13 de maio de 2008 - panoramio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Na_manh%C3%A3_de_13_de_maio_de_2008_-_panoramio.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "source_title": "File:Templo de Guadalupe Zacatecas.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Templo_de_Guadalupe_Zacatecas.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "source_title": "File:Templo de Guadalupe, Zacatecas.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Templo_de_Guadalupe%2C_Zacatecas.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "source_title": "File:Santuario Nuestra Señora de Guadalupe,Guadalupe,Estado de Zacatecas,México.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Santuario_Nuestra_Se%C3%B1ora_de_Guadalupe%2CGuadalupe%2CEstado_de_Zacatecas%2CM%C3%A9xico.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "source_title": "File:Templo y Convento de Guadalupe.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Templo_y_Convento_de_Guadalupe.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "source_title": "File:Fachada Templo y Antiguo Convento de Guadalupe.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fachada_Templo_y_Antiguo_Convento_de_Guadalupe.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "source_title": "File:Basílica de Nuestra Señora de Ocotlán, Tlaxcala, fachada principal.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_de_Ocotl%C3%A1n%2C_Tlaxcala%2C_fachada_principal.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "source_title": "File:Fachada blanca ocotlán.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fachada_blanca_ocotl%C3%A1n.JPG",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "source_title": "File:Panoramica de la Basílica de Ocotlán.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Panoramica_de_la_Bas%C3%ADlica_de_Ocotl%C3%A1n.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "source_title": "File:Basilica of the National Shrine of St. Elizabeth Ann Seton 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_National_Shrine_of_St._Elizabeth_Ann_Seton_01.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "source_title": "File:Basilica of the National Shrine of St. Elizabeth Ann Seton 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_National_Shrine_of_St._Elizabeth_Ann_Seton_02.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "source_title": "File:Basilica of the National Shrine of St. Elizabeth Ann Seton 03.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_National_Shrine_of_St._Elizabeth_Ann_Seton_03.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "source_title": "File:Seton shrine and basilica Emmitsburg MD1.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Seton_shrine_and_basilica_Emmitsburg_MD1.jpg",
+      "provenance": "CATEGORY",
+      "metadata_status": "HOLD_ORIGINAL_SAFETY_LIMIT",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "source_title": "File:Imagen religiosa de la Virgen del Carmen en el Santuario de La Tirana, Región de Tarapacá, Chile.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Imagen_religiosa_de_la_Virgen_del_Carmen_en_el_Santuario_de_La_Tirana,_Regi%C3%B3n_de_Tarapac%C3%A1,_Chile.jpg",
+      "provenance": "DIRECT",
+      "metadata_status": "METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL",
+      "publication_authorized": false
+    }
+  ]
+}
