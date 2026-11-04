@@ -8,6 +8,7 @@ on:
       - 'tests/sacred-atlas-round17-35-source-invariants.mjs'
       - 'tests/sacred-atlas-round17-original-integrity-contract.mjs'
       - 'data/geography/research/sacred-atlas-round17-ten-original-integrity-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-round17-ten-bilingual-cover-staging-20261104.v1.json'
       - 'tools/atlas/audit-sacred-atlas-ten-original-integrity.py'
       - '.github/workflows/sacred-atlas-round17-offline.yml'
 permissions:
