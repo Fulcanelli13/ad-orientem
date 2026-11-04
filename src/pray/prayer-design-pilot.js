@@ -354,7 +354,7 @@ function installStyles(){
     "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome){width:min(100%,1280px);height:100dvh;max-height:100dvh;border:0;border-radius:0;background:#080b10;color:#e7e1d6}",
     "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head{background:rgba(8,11,16,.96);color:#e7e1d6;border-color:rgba(255,255,255,.13)}",
     "#aoPray435930 .aoP435930Sheet:has(.aoPrayPilotHome) .aoP435930Head button{background:rgba(8,11,16,.7);color:#e7e1d6;border-color:rgba(255,255,255,.18)}",
-    "#aoPray435930 .aoP435930Body.aoPrayPilotHome{background:#080b10;color:#e7e1d6;width:100%;max-width:100%;padding:0 0 36px;box-sizing:border-box}",
+    "#aoPray435930 .aoP435930Mount .aoP435930Body.aoPrayPilotHome{background:#080b10;color:#e7e1d6;width:100%;max-width:100%;padding:0 0 36px!important;padding-inline:0!important;margin-inline:0!important;box-sizing:border-box}",
     "#aoPray435930 .aoPrayPilotTop{padding:10px 16px;display:flex;align-items:center;gap:16px;justify-content:space-between}",
     "#aoPray435930 .aoPrayPilotTop h2{margin:0;font:400 18px/1.25 Georgia,serif;color:#e7e1d6}",
     "#aoPray435930 .aoPrayPilotSearch{max-width:min(58vw,330px);width:100%;min-height:42px;border-radius:999px;background:rgba(20,25,33,.92);border-color:rgba(255,255,255,.18);color:#e7e1d6}",
