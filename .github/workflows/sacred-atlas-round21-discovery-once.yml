@@ -1,0 +1,33 @@
+name: Sacred Atlas Round 21 — one-time Commons search of 26 Places
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  search-26:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-round21-commons-search26-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify queue and metadata policy without network
+        run: |
+          python tools/atlas/recover-sacred-atlas-26-commons-search.py --self-test
+          python tools/atlas/recover-sacred-atlas-26-commons-search.py --dry-run
+      - name: Run bounded Commons search once
+        run: python tools/atlas/recover-sacred-atlas-26-commons-search.py
+      - name: Save source-lead audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round21-26-commons-results
+          path: /tmp/ao-sacred-atlas-round21-commons-search26.json
+          retention-days: 14
+          if-no-files-found: warn
