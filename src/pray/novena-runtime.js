@@ -357,7 +357,8 @@ function captureAppBackHandoff(){
  if(!r?.classList?.contains("open")||m?.dataset?.aoPrayView!=="novenas")return null;
  return Object.freeze({
   screen:N.screen,id:N.id,day:N.day,mode:N.mode,stage:N.stage,
-  showEnglish:N.showEnglish,detailFromOverview,dayAboutOpen
+  showEnglish:N.showEnglish,detailFromOverview,dayAboutOpen,
+  returnSearch:OPEN_OPTS?.returnSearch||null
  });
 }
 function restoreAppBackHandoff(receipt){
@@ -372,7 +373,9 @@ function restoreAppBackHandoff(receipt){
  if(!Number.isInteger(stage)||stage<0||stage>=count)return false;
  const opened=BASE_OPEN("pray.hub",{returnContext:null});
  if(opened!==true&&opened?.ok!==true)return false;
- OPEN_OPTS={};OPEN_RECEIPT=null;
+ OPEN_OPTS=receipt.returnSearch&&typeof receipt.returnSearch.query==='string'
+  ?{returnSearch:receipt.returnSearch,returnContext:null}:{};
+ OPEN_RECEIPT=null;
  N={...N,screen,id,day,stage,
   mode:receipt.mode==="simple"?"simple":"guided",
   showEnglish:receipt.showEnglish===true};
@@ -386,7 +389,7 @@ function open(opts={}){
  detailFromOverview=false;dayAboutOpen=false;
  const requested=String(opts?.novenaId||'');
  if(requested&&ALL_NOVENAS[requested]){
-  N.id=requested;N.screen='detail';
+  N.id=requested;N.screen=opts?.returnSearch&&typeof opts.returnSearch.query==='string'?'day':'detail';
   const status=calStatus(ALL_NOVENAS[requested]);
   N.day=status.kind==='active'?status.day:1;
  }else{
@@ -402,11 +405,22 @@ function returnToScripture(){
  Promise.resolve().then(restore).catch(error=>console.error("Novena Scripture return failed",error));
  return true;
 }
+function returnToPraySearch(){
+ const returnSearch=OPEN_OPTS?.returnSearch;
+ if(!returnSearch||typeof returnSearch.query!=='string')return false;
+ const returnContext=OPEN_OPTS.returnContext;
+ OPEN_OPTS={};OPEN_RECEIPT=null;dayAboutOpen=false;
+ const opened=BASE_OPEN('pray.hub',{returnContext});
+ if(opened!==true&&opened?.ok!==true)return false;
+ return window.AO_PRAY_V435930?.restoreSearch?.(returnSearch)===true;
+}
 function back(){
  if(N.screen==='weekly'){N.screen='overview';N.id=null;return render()}
+ if(N.screen==='day'&&OPEN_OPTS?.returnSearch)return returnToPraySearch();
  if(N.screen==='day'){N.screen=detailFromOverview?'overview':'detail';if(N.screen==='overview'){N.id=null;detailFromOverview=false}N.stage=0;N.showEnglish=false;return render()}
  // If the reader opened the background information, Back returns to the same prayer day.
  if(N.screen==='detail'&&dayAboutOpen){dayAboutOpen=false;N.screen='day';return render()}
+ if(N.screen==='detail'&&OPEN_OPTS?.returnSearch)return returnToPraySearch();
  // A direct Calendar/Today deep link has not visited the Novena overview.
  if(N.screen==='detail'&&detailFromOverview){
   N.screen='overview';N.id=null;detailFromOverview=false;return render()
