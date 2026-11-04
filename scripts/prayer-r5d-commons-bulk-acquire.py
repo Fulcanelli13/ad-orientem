@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Commons source-file acquisition for 20 approved works; NEVER publication clearance."""
-import hashlib,html,json,re,sys
+import hashlib,html,json,re,sys,time
+from urllib.error import HTTPError
 from pathlib import Path
 from urllib.parse import urlencode,unquote,urlparse
 from urllib.request import Request,urlopen
@@ -18,9 +19,19 @@ OUT=ROOT/f'r5d-commons-{batch}';OUT.mkdir(exist_ok=True)
 HEADERS={'User-Agent':'AdOrientemSourceAudit/1.0 (source verification, not public release)','Accept':'application/json,image/*'}
 def get(url,limit=36*1024*1024):
     parsed=urlparse(url)
-    if parsed.scheme!='https' or parsed.hostname not in ('commons.wikimedia.org','upload.wikimedia.org'):
+    if parsed.scheme!='https' or parsed.hostname not in ('commons.wikimedia.org','upload.wikimedia.org','thumb.wikimedia.org'):
         raise ValueError('Unapproved Commons host: '+url)
-    with urlopen(Request(url,headers=HEADERS),timeout=65) as r:
+    # Respect Wikimedia throttling. One bounded retry honoring Retry-After, no rapid retries.
+    try:
+        stream=urlopen(Request(url,headers=HEADERS),timeout=65)
+    except HTTPError as e:
+        if e.code!=429: raise
+        try: delay=min(45,max(10,int(e.headers.get('Retry-After','15'))))
+        except ValueError: delay=15
+        print(f"Wikimedia 429: waiting {delay}s once before retry",file=sys.stderr)
+        time.sleep(delay)
+        stream=urlopen(Request(url,headers=HEADERS),timeout=65)
+    with stream as r:
         final=urlparse(r.geturl())
         if final.scheme!='https' or final.hostname not in ('commons.wikimedia.org','upload.wikimedia.org'):
             raise ValueError('Unapproved redirect: '+r.geturl())
@@ -32,6 +43,7 @@ results=[]
 for g in items:
     page=g['sourcePage']
     title='File:'+unquote(page.split('/wiki/File:',1)[1]).replace('_',' ')
+    if results: time.sleep(2.5)  # Wikimedia considerate pacing between files
     row={'source_page':page,'master_artist':g['artist'],'master_title':g['title'],
          'approved_slots':[s for s in g['slots'] if s not in g.get('rosaryDeferred',[])],
          'rosary_deferred':g.get('rosaryDeferred',[]),'publication_authorized':False,
