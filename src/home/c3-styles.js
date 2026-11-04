@@ -27,6 +27,8 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
 .aoH7Screens .aoH4Upcoming.wkc .aoC3UpcomingCard{position:relative;flex:0 0 152px;scroll-snap-align:start;overflow:hidden;border:1px solid var(--ln);border-radius:12px;background:var(--sf)}
 .aoH7Screens .aoH4Upcoming.wkc .aoC3UpcomingArt{height:106px;overflow:hidden;background:linear-gradient(145deg,#343f36,#161e1b 70%)}
 .aoH7Screens .aoC3UpcomingArt img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transform:scale(1.075)}
+.aoH7Screens .aoC3UpcomingTextOnly .aoC3UpcomingArt{display:none!important}
+.aoH7Screens .aoC3UpcomingCard .aoC3UpcomingArt[hidden]{display:none!important}
 .aoH7Screens .aoH4Upcoming.wkc .aoC3UpcomingCard .aoTodayV2Event{width:100%!important;min-height:103px!important;flex:none!important;border:0!important;border-radius:0!important;padding:9px 11px!important;position:relative}
 .aoH7Screens .aoC3UpcomingCard .aoTodayV2Event strong{margin:6px 0 0!important;max-height:3.6em;overflow:hidden}
 .aoH7Screens .aoC3UpcomingCard .aoTodayV2Event small{margin-top:5px!important}
