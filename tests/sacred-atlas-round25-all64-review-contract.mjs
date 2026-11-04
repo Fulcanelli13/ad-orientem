@@ -62,9 +62,12 @@ for(const p of round24) {
   assert.equal(image.license,c.audit.license);
   assert.equal(image.width,c.audit.width);
   assert.equal(image.height,c.audit.height);
-  assert.equal(image.role==='GALLERY_REVIEW_PENDING_RIGHTS',p.place_id==='place:CL:sanctuary-of-our-lady-of-la-tirana-chile');
+  if(p.place_id==='place:CL:sanctuary-of-our-lady-of-la-tirana-chile') assert.equal(image.role,'GALLERY_REVIEW_PENDING_RIGHTS');
+  else if(p.place_id==='place:NZ:pukekaraka-otaki') assert.equal(image.role,'GALLERY_REVIEW_PENDING_EXACT_SUBJECT');
+  else assert.equal(image.role,'COVER_CANDIDATE');
  }
 }
+assert.equal(manifest.places.find(x=>x.place_id==='place:NZ:pukekaraka-otaki').images.find(x=>x.file==='File:TreeChurchOtaki.jpg').role,'GALLERY_REVIEW_PENDING_EXACT_SUBJECT');
 assert.equal(manifest.places.find(x=>x.place_id==='place:DE:friedhofskirche-st-michael-altoetting').images.find(x=>x.file==='File:Friedhofskirche Altötting 1.jpg').role,'GALLERY_ONLY');
 for(const x of images) {assert.match(x.sha1,/^[a-f0-9]{40}$/);assert.equal(x.byte_verified,true);assert.ok(x.author&&x.license&&x.url);}
 const marker='<script type="application/json" id="review-data">';
