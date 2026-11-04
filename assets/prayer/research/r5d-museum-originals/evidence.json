@@ -1,0 +1,38 @@
+{
+  "schema": "AO_PRAYER_R5D_ACQUISITION_EVIDENCE_V1",
+  "records": [
+    {
+      "museum": "cleveland",
+      "object_id": "1916.786",
+      "source_url": "https://www.clevelandart.org/art/1916.786",
+      "catalog_artist": "[{'id': 2246, 'description': 'Sodoma (Italian, 1477\u20131549)', 'extent': None, 'qualifier': 'follower of', 'role': 'artist', 'biography': None, 'name_in_original_language': None, 'birth_year': '1477', 'death_year': '1549', 'use_in_caption': True, 'include_extent': False, 'weight': 1}]",
+      "license": "CC0",
+      "image_url": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_print.jpg",
+      "original_file_format": "JPEG",
+      "file": "r5d-museum-evidence/cleveland-1916.786.jpg",
+      "sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "width": 2673,
+      "height": 3400,
+      "bytes": 8293229,
+      "image_decoded": true,
+      "publication_authorized": false
+    },
+    {
+      "museum": "met",
+      "object_id": "437542",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437542",
+      "catalog_artist": "Peter Paul Rubens",
+      "license": "Public Domain",
+      "image_url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-013.jpg",
+      "original_file_format": "JPEG",
+      "file": "r5d-museum-evidence/met-437542.jpg",
+      "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "width": 3094,
+      "height": 4000,
+      "bytes": 4103505,
+      "image_decoded": true,
+      "publication_authorized": false
+    }
+  ],
+  "requires_human_visual_review": true
+}
