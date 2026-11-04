@@ -1,5 +1,6 @@
 import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
+import {recover1962NativityOctaveCommemoration} from "./1962-nativity-octave-source.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
 import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,matches1962May11ApostlesSelection} from "./1962-seasonal-sanctoral-preface-source.js";
@@ -111,6 +112,15 @@ function sourceTextComplete(value){
 // https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-07cc.txt
 // https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Francais/Sancti/10-07cc.txt
 const VERIFIED_FRENCH_ORATION_EQUIVALENTS=Object.freeze({
+  "Sancti/10-08c":"Sancti/10-07cc",
+});
+// The original Missale Meum 10-08c Latin Collect, Secret and Postcommunion
+// have FULL normalized equality with the original Divinum Officium pinned
+// 10-07cc Latin sections (not merely matching titles or incipits).
+// Thus source-owned 10-08c may recover only its missing English from the
+// same pinned 10-07cc English witness, after full Latin equality at runtime.
+// 10-07cc original English blob at DO@ad878364: 57fcefcc9a74bb04713a68a94d599ccc95b6a567.
+const VERIFIED_ENGLISH_ORATION_EQUIVALENTS=Object.freeze({
   "Sancti/10-08c":"Sancti/10-07cc",
 });
 
@@ -283,6 +293,53 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     originalProperSourcePath:String(data.sourcePath??"")});
 }
 
+// 4 May, St Monica: the original 1962 Roman source's Collect is explicitly
+// "[Oratio] (nisi rubrica cisterciensis)". Its bare [Oratio] has no text.
+// The host's older flattening returns one EMPTY Collect, although the exact
+// conditional Roman prayer is pinned in la/en/fr. Do not generalise this to
+// Cistercian rubrics, other saints, or any unrelated conditional heading.
+const MONICA_ROMAN_SECTION="Oratio (nisi rubrica cisterciensis)";
+const MONICA_ROMAN_ID="sancti:05-04:3:w";
+const MONICA_PREFIX=Object.freeze({
+ la:"deus maerentium consolator",
+ en:"o god the consoler of those who mourn",
+ fr:"o dieu consolateur des affliges"
+});
+const sourceNorm=value=>String(value??"").normalize("NFD")
+ .replace(/[\u0300-\u036f]/g,"").replace(/[æǽ]/g,"ae").replace(/[œ]/g,"oe")
+ .toLowerCase().replace(/[^a-z0-9]+/g," ").trim().replace(/\s+/g," ");
+async function recoverExact1962MonicaRomanCollect(data,principalId,hostResolver,diagnostic){
+ if(String(data?.sourcePath)!=="Sancti/05-04"||
+    String(principalId)!==MONICA_ROMAN_ID||
+    (data.principalCelebrationId&&data.principalCelebrationId!==MONICA_ROMAN_ID)||
+    (data.calendarCommemorations??[]).length!==0||
+    (data.appliedCommemorations??[]).length!==0)return null;
+ const rows=Array.isArray(data.collects)&&data.collects.length?
+    data.collects:data.collect?[data.collect]:[];
+ if(rows.length!==1||rows[0]?.oneConclusion||
+    ["lat","la","en","fr"].some(k=>String(rows[0]?.[k]??"").trim()))
+    return null;
+ const value={};
+ try{
+  for(const [language,key] of [["la","lat"],["en","en"],["fr","fr"]]){
+   const parsed=await hostResolver.resolveSource("Sancti/05-04",language,diagnostic);
+   if((parsed?.map?.get?.("Oratio")??[]).length!==0)return null;
+   const source=cleanLines(parsedLines(parsed,[MONICA_ROMAN_SECTION]),language);
+   if(!sourceTextComplete(source)||!sourceNorm(source).startsWith(MONICA_PREFIX[language]))
+    return null;
+   value[key]=source;
+  }
+ }catch(error){
+  // Same fail-closed transport behaviour as existing Preface recovery:
+  // keep the empty Collect held, never abort a Mass session on source I/O.
+  diagnostic?.warnings?.push?.("MONICA_ROMAN_COLLECT_SOURCE_UNAVAILABLE:"+
+   String(error?.message??error));
+  return null;
+ }
+ return Object.freeze({...rows[0],...value,
+  sourcePath:"Sancti/05-04:"+MONICA_ROMAN_SECTION});
+}
+
 function sourceOrationOwners(data,path){
   const commemorations=(data.calendarCommemorations??[])
     .filter(comm=>comm&&!comm.inseparable);
@@ -372,14 +429,53 @@ export async function recoverReaderProperOmissions(proper,{
     ["postcommunions","postcommunion","Postcommunio"],
   ];
   const missingOrations=orationGroups.some(([plural,single])=>incompleteOrations(data,plural,single));
+  const needsChristmasOctave=["2026-12-26","2026-12-28"].includes(String(calendarDate))&&
+    ["Sancti/12-26","Sancti/12-28"].includes(path)&&
+    data.calendarCommemorations?.length===1;
   const peterPaulOwner=path==="Sancti/06-30"&&
     /^sancti:06-30:3:/i.test(String(principalCelebrationId??data.principalCelebrationId??data.mainId??""));
   const needsApostolicSource=peterPaulOwner&&
     data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
   if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&
-     !needsApostolicSource&&!recoveredChants)return proper;
+     !needsApostolicSource&&!recoveredChants&&!needsChristmasOctave)return proper;
 
   const next={...data};
+  // Restore ONLY the exact source-identified 1962 non-Cistercian Collect;
+  // the single empty host row must not make an existing named Mass disappear.
+  const monica=await recoverExact1962MonicaRomanCollect(
+    data,principalCelebrationId??data.principalCelebrationId??data.mainId,
+    hostResolver,diagnostic);
+  if(monica){
+    next.collects=Object.freeze([monica]);
+    next.collect=monica;
+    next.sourceEditorialCorrections=Object.freeze([
+      ...(data.sourceEditorialCorrections??[]),
+      Object.freeze({id:"1962_ST_MONICA_ROMAN_CONDITIONAL_COLLECT",
+       sourcePath:"Sancti/05-04",section:MONICA_ROMAN_SECTION,
+       languageWitnesses:Object.freeze(["la","en","fr"]),
+       originalSourcePreserved:true,addedTranslation:false})
+    ]);
+  }
+  // Recover the Christmas octave's authentic, privileged Collect/Secret/
+  // Postcommunion under the 1960 rubrics. Both days have canonical
+  // [Commemoratio] text in the original principal Mass and a [Rule] ignore
+  // placeholder source, which must NOT be read as a prayer donor. The
+  // separately sourced module validates all three original LAT/EN/FR
+  // Christmas bodies and removes St Stephen's competing Oratio1 from the
+  // commemoration position without changing his principal Collect.
+  if(needsChristmasOctave){
+    try{
+      const octave=await recover1962NativityOctaveCommemoration({
+       data,principalId:principalCelebrationId??data.principalCelebrationId??data.mainId,
+       calendarDate,hostResolver,diagnostic
+      });
+      if(octave)Object.assign(next,octave);
+      else diagnostic?.warnings?.push?.("CHRISTMAS_OCTAVE_ORATIONS_SOURCE_HOLD");
+    }catch(error){
+      diagnostic?.warnings?.push?.("CHRISTMAS_OCTAVE_ORATIONS_SOURCE_UNAVAILABLE:"+
+       String(error?.message??error));
+    }
+  }
   if(recoveredChants)next.readerChantSourceProof=recoveredChants;
   if(recoveredPreface)next.preface=recoveredPreface;
   if(needs.epistle){
@@ -438,7 +534,12 @@ export async function recoverReaderProperOmissions(proper,{
   // by each non-inseparable Calendar commemoration. Never infer a missing
   // commemoration from the preceding prayer or accept a guessed translation.
   const owners=sourceOrationOwners(data,path);
+  const sourceEnglishRecoveries=[];
   for(const [plural,single,section] of orationGroups){
+    // A conditional Roman Collect for St Monica must NEVER fall through to
+    // generic [Oratio]. If the exact non-Cistercian witness was unverified,
+    // leave an empty source row held rather than recover a competing rite.
+    if(plural==="collects"&&path==="Sancti/05-04"&&!monica)continue;
     const rows=Array.isArray(next[plural])&&next[plural].length
       ? [...next[plural]] : next[single] ? [next[single]] : [];
     if(rows.length!==owners.length||owners.some(owner=>!owner))continue;
@@ -462,6 +563,27 @@ export async function recoverReaderProperOmissions(proper,{
           sourced={...sourced,fr:alternative.fr};
         }
       }
+      // The named 8 October martyrs' English donor was dropped by the
+      // historical host flattening. Authenticate the exact full Latin of
+      // BOTH 10-08c and the pinned 10-07cc witness before restoring EN.
+      // No other owner, unknown source, or partial incipit can qualify.
+      const englishAlias=VERIFIED_ENGLISH_ORATION_EQUIVALENTS[owners[index]];
+      let recoveredExactEnglish=false;
+      if(!sourceTextComplete(sourced.en)&&englishAlias){
+        try{
+          const alternative=await recoverText(hostResolver,englishAlias,[section],diagnostic);
+          if(sourceTextComplete(alternative.lat)&&
+             cleanLatinIdentity(sourced.lat)===cleanLatinIdentity(alternative.lat)&&
+             agreesWithLatin(current?.lat??current?.la,alternative.lat)&&
+             sourceTextComplete(alternative.en)){
+            sourced={...sourced,en:alternative.en};
+            recoveredExactEnglish=true;
+          }
+        }catch(error){
+          diagnostic?.warnings?.push?.("MARTYRS_10_08C_ENGLISH_SOURCE_UNAVAILABLE:"+
+            String(error?.message??error));
+        }
+      }
       const candidate={...current};
       for(const lang of ["lat","en","fr"]){
         if(!String(candidate[lang]??"").trim()){
@@ -473,12 +595,26 @@ export async function recoverReaderProperOmissions(proper,{
       if(["lat","en","fr"].some(lang=>String(candidate[lang]??"")!==String(current?.[lang]??""))){
         rows[index]=Object.freeze(candidate);
         changed=true;
+        if(recoveredExactEnglish&&candidate.en===sourced.en)
+          sourceEnglishRecoveries.push(Object.freeze({
+            id:"1962_10_08C_MARTYRS_PINNED_ENGLISH_ORATIONS",
+            sourcePath:"Sancti/10-08c",verifiedAlias:englishAlias,
+            sourceSection:section,orationIndex:index,
+            originalSourcePreserved:true,addedTranslation:false,
+            fullLatinParityChecked:true,
+            witness:"DivinumOfficium/divinum-officium@ad8783641455bae38a8eb5782b34241a7b3ff2ef/web/www/missa/English/Sancti/10-07cc.txt"
+          }));
       }
     }
     if(changed){
       next[plural]=Object.freeze(rows);
       next[single]=rows[0];
     }
+  }
+  if(sourceEnglishRecoveries.length){
+    next.sourceEditorialCorrections=Object.freeze([
+      ...(next.sourceEditorialCorrections??[]),...sourceEnglishRecoveries
+    ]);
   }
   return rewrap(envelope,Object.freeze(next));
 }

@@ -1,0 +1,40 @@
+name: Sacred Atlas 530 editorial master (research only)
+
+# Source-owned audit. Never publishes a Place, saint biography, artwork or Vercel deployment.
+on:
+  pull_request:
+    paths:
+      - 'data/geography/seed-registry.v1.json'
+      - 'data/geography/approved-place-media.v1.json'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json'
+      - 'data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-saints-branch-recovery-20261104.v1.json'
+      - 'data/saints/holiness-first-editorial-pilot-20261015.v1.json'
+      - 'data/shrines/**'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - 'data/customs/customs-atlas-seed.v1.json'
+      - 'tools/geography/audit-sacred-atlas-editorial.mjs'
+      - 'tests/sacred-atlas-editorial-master-530-contract.mjs'
+      - '.github/workflows/sacred-atlas-editorial-master.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-atlas-editorial-master-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  source-reconciliation:
+    name: exact-site-editorial-530-source-reconciliation
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check master can be regenerated exactly from canonical owners
+        run: node tests/sacred-atlas-editorial-master-530-contract.mjs

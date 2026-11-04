@@ -1,0 +1,42 @@
+name: Mass 1962 five remaining oration owner source audit
+
+on:
+  pull_request:
+    paths:
+      - 'tests/1962-five-oration-source-owner-reader-audit.mjs'
+      - 'tests/1962-st-monica-conditional-collect.mjs'
+      - 'tests/1962-bridget-martyrs-pinned-english-source.mjs'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - '.github/workflows/mass-1962-five-oration-source-owner.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  five-date-actual-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Use existing browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Verify St Monica Roman conditional Collect source and negative cases
+        run: |
+          node tests/1962-st-monica-conditional-collect.mjs
+          node tests/1962-bridget-martyrs-pinned-english-source.mjs
+      - name: Inspect exact five selected owners and native source resolution
+        run: node tests/1962-five-oration-source-owner-reader-audit.mjs
+      - name: Save complete source witness matrix even when a hold persists
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-five-oration-source-owner-witnesses
+          path: artifacts/mass/1962-five-oration-source-owner-audit.json
+          if-no-files-found: warn
+          retention-days: 14

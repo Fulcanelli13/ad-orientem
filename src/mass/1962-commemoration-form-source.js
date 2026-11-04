@@ -118,19 +118,41 @@ export function select1962CommemorationsForMassForm({
     [1,2].includes(Number(main.rank))&&Number(only.rank)===3&&
     /^tempora:Adv[1-4]-[1-6]:3:/i.test(commId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/i.test(String(only.path??""));
-  const scope=privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
+  // RG 109(c): days in the Octave of Christmas are privileged
+  // commemorations in ALL Mass forms, even though the host's synthetic
+  // 12-26c/12-28c placeholder carries an incorrect IV-class source rank
+  // and no separate oration text. Trust only the *verified* original
+  // threefold source witness inside the St Stephen/Holy Innocents Proper.
+  const nativityOctaveDate=String(calendarResolution.date)==="2026-12-26"?
+    "Sancti/12-26":"Sancti/12-28";
+  const nativityOctaveOwner=
+    ["2026-12-26","2026-12-28"].includes(String(calendarResolution.date))&&
+    !sunday&&Number(main.rank)===2&&Number(only.rank)===4&&
+    String(main.path)===nativityOctaveDate&&
+    String(only.path)===nativityOctaveDate+"c"&&
+    namedSource.prayerSourcePath===nativityOctaveDate+"c"&&
+    data.verifiedNativityOctaveCommemoration?.status==="SOURCE_VERIFIED"&&
+    data.verifiedNativityOctaveCommemoration?.calendarDate===calendarResolution.date&&
+    data.verifiedNativityOctaveCommemoration?.principalId===mainId&&
+    data.verifiedNativityOctaveCommemoration?.originalChristmasSource==="Sancti/12-25m3"&&
+    data.verifiedNativityOctaveCommemoration?.privilege==="RG_108_AND_109_C"&&
+    data.verifiedNativityOctaveCommemoration?.orationCount===2;
+  const scope=nativityOctaveOwner?"PRIVILEGED_CHRISTMAS_OCTAVE_II_CLASS_MASS":
+    privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
-  const include=privilegedSunday||privilegedAdvent||normalizedForm==="LOW";
+  const include=nativityOctaveOwner||privilegedSunday||privilegedAdvent||normalizedForm==="LOW";
   const applied=include?comms:[],omitted=include?[]:comms;
   const decision=Object.freeze({
     status:"CERTIFIED",source:"1962_PROPER_RESOLVER",form:normalizedForm,
     calendarCount:1,appliedCount:applied.length,
     scope,
-    authorities:Object.freeze(["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
+    authorities:Object.freeze(nativityOctaveOwner?
+      ["1960_GENERAL_RUBRICS_108_109_C_111","1960_MISSAL_RUBRICS_433_434"]:
+      ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
   const selected=Object.freeze({...data,

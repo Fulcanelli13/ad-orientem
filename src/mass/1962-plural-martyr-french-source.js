@@ -155,6 +155,33 @@ const NAMED=Object.freeze({
  en:/\bperpetua\s+and\s+felicit(?:as|y)\b/iu,
  fr:/\bperpetue\s+et\s+felicite\b/iu,
 });
+// The exact original English Sancti/03-06 [Name] is "Perpetua and
+// Felicitas". A current host flattening path leaves the C6b donor's
+// "N. and N." placeholders in the two named C7b commemorative prayers,
+// while Latin and French already have named Perpetua/Felicity. This is
+// not authorization to fill ANY generic Common placeholders. The paired
+// source identity, donor phrase, Latin and French named witnesses, and
+// exact one-placeholder occurrence must all agree first.
+const PINNED_ENGLISH_NAMES="Perpetua and Felicitas";
+const PINNED_ENGLISH_NAME_WITNESS=
+ "DivinumOfficium/divinum-officium@ad8783641455bae38a8eb5782b34241a7b3ff2ef/web/www/missa/English/Sancti/03-06.txt";
+const UNFILLED_ENGLISH_PAIR=/\bN\.\s+and\s+N\.(?=\W|$)/giu;
+const PINNED_NAMED_C7B_ENGLISH_DONOR=
+ /\b(?:triumphs of|festival of)\s+thy holy Virgins and Martyrs\s+N\.\s+and\s+N\.\s*:/iu;
+
+function restorePinnedPerpetuaEnglishNames(old){
+ const candidates=[...old.en.matchAll(UNFILLED_ENGLISH_PAIR)];
+ if(candidates.length!==1||
+    !PINNED_NAMED_C7B_ENGLISH_DONOR.test(old.en)||
+    !NAMED.lat.test(ascii(old.lat))||!NAMED.fr.test(ascii(old.fr))||
+    !BAD.lat.test(ascii(old.lat))||!BAD.fr.test(ascii(old.fr))||
+    !BAD.en.test(ascii(old.en))||
+    NAMED.en.test(ascii(old.en)))return null;
+ const named=old.en.replace(UNFILLED_ENGLISH_PAIR,PINNED_ENGLISH_NAMES);
+ return NAMED.en.test(ascii(named))&&!UNFILLED_ENGLISH_PAIR.test(named)
+   ?named:null;
+}
+
 
 export function reconcile1962PerpetuaFelicityNonVirginCommon(proper){
   if(!proper||typeof proper!=="object")return proper;
@@ -169,26 +196,32 @@ export function reconcile1962PerpetuaFelicityNonVirginCommon(proper){
       if(exactOrationRowOwner(proper,rows,index)!==PERPETUA_FELICITY)continue;
       const old={lat:String(row?.lat??row?.la??""),
         en:String(row?.en??""),fr:String(row?.fr??"")};
-      // Require complete, distinct, named source prayers; don't infer a
-      // correction from a calendar date or a coincidental Marian phrase.
-      if(Object.values(old).some(text=>text.trim().length<80) ||
-        !WORD_MARTYRS.lat.test(ascii(old.lat)) ||
-        !NAMED.lat.test(ascii(old.lat)) ||
+      const exactNamedEnglish=restorePinnedPerpetuaEnglishNames(old);
+      const proven={...old,en:exactNamedEnglish??old.en};
+      // Require complete, independently named source prayers in all three
+      // languages. The English donor exception above is strictly source-
+      // pinned and may never bypass missing Latin/French or ambiguous names.
+      if(Object.values(proven).some(text=>text.trim().length<80) ||
+        !WORD_MARTYRS.lat.test(ascii(proven.lat)) ||
+        !NAMED.lat.test(ascii(proven.lat)) ||
         !Object.entries(WORD_MARTYRS).every(([lang,rx])=>
-          rx.test(ascii(old[lang]))) ||
-        !Object.entries(NAMED).every(([lang,rx])=>rx.test(ascii(old[lang]))))
+          rx.test(ascii(proven[lang]))) ||
+        !Object.entries(NAMED).every(([lang,rx])=>rx.test(ascii(proven[lang]))))
         continue;
-      const bad=Object.fromEntries(Object.keys(old).map(lang=>
-        [lang,BAD[lang].test(ascii(old[lang]))]));
+      const bad=Object.fromEntries(Object.keys(proven).map(lang=>
+        [lang,BAD[lang].test(ascii(proven[lang]))]));
       if(!Object.values(bad).some(Boolean))continue;
-      const replacement={...old};
+      const replacement={...proven};
       let valid=true;
       for(const lang of ["lat","en","fr"]){
         if(bad[lang]){
           const re=REMOVE[lang];
-          const count=[...old[lang].matchAll(re)].length;
+          // Important: operate on the exact, source-named candidate.
+          // Reapplying category deletion to old.en would restore donor
+          // "N. and N." after authentic Perpetua/Felicitas expansion.
+          const count=[...proven[lang].matchAll(re)].length;
           if(count!==1){valid=false;break;}
-          replacement[lang]=old[lang].replace(re,"");
+          replacement[lang]=proven[lang].replace(re,"");
           if(BAD[lang].test(ascii(replacement[lang]))){valid=false;break;}
         }
       }
@@ -197,7 +230,11 @@ export function reconcile1962PerpetuaFelicityNonVirginCommon(proper){
       nextRows[index]=Object.freeze({...row,...replacement});
       proof.push(Object.freeze({id:CORRECTION_ID,sourcePath:PERPETUA_FELICITY,
         slot,orationIndex:index,fields:Object.freeze(
-          Object.keys(bad).filter(x=>bad[x])),originalSourcePreserved:true,
+          Object.keys(bad).filter(x=>bad[x])),
+        ...(exactNamedEnglish?{englishNameRestoration:Object.freeze({
+          original:"N. and N.",corrected:PINNED_ENGLISH_NAMES,
+          sourceWitness:PINNED_ENGLISH_NAME_WITNESS})}:{}),
+        originalSourcePreserved:true,
         witness:"DivinumOfficium/divinum-officium@126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Commune/C7b.txt"}));
     }
     if(nextRows){

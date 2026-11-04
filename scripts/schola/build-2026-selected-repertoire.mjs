@@ -188,6 +188,27 @@ const rows=raw.map(original=>{
  catch(e){return hold("FR_READER_PROJECTION_EXCEPTION",String(e?.message??e))}
  row.englishReaderReady=en.ready;row.frenchReaderReady=fr.ready;
  row.englishMissing=en.missing;row.frenchMissing=fr.missing;
+ // Preserve diagnostics only; no change to the all-orations-ready Mass gate.
+ if(!en.ready||!fr.ready){
+  const evidence=projection=>projection.missing.map(slot=>({
+   slot,projectionStatus:projection.slots?.[slot]?.status??"UNKNOWN",
+   reason:projection.slots?.[slot]?.reason??"SOURCE_VALUE_OR_TRANSLATION_INCOMPLETE",
+   hasSourceConflict:Boolean(projection.slots?.[slot]?.sourceConflict)
+  }));
+  row.englishMissingEvidence=evidence(en);
+  row.frenchMissingEvidence=evidence(fr);
+  row.orationInputGroupCounts={
+   COLLECT_SET:proper.collects?.length||(proper.collect?1:0),
+   SECRET_SET:proper.secrets?.length||(proper.secret?1:0),
+   POSTCOMMUNION_SET:proper.postcommunions?.length||(proper.postcommunion?1:0)
+  };
+  row.commemorationDecision={
+   status:proper.commemorationFormDecision?.status??null,
+   reason:proper.commemorationFormDecision?.reason??null,
+   appliedCount:proper.commemorationFormDecision?.appliedCount??null,
+   prayerGroupCount:proper.commemorationFormDecision?.prayerGroupCount??null
+  };
+ }
  if(!en.ready)return hold("EN_READER_HOLD","Source Proper incomplete in existing English Reader");
  const match=matchSelected1962ProperToGraduale({properSlots:en,archive});
  if(match.status!=="SOURCE_FIRST_CANDIDATES_ONLY_NOT_SCORES")

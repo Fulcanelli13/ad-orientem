@@ -1,0 +1,35 @@
+name: Sacred Atlas Round 24 — one-time 39 original file verification
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify-existing39:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-round24-existing39-original-audit-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce exact-source cohort and research-only policy
+        run: node tests/sacred-atlas-round24-existing39-source-contract.mjs
+      - name: Validate exact 39-source queue and fail-closed mock verifier
+        run: |
+          python tools/atlas/audit-sacred-atlas-r24-existing39.py --dry-run
+          python tools/atlas/audit-sacred-atlas-r24-existing39.py --self-test
+      - name: Audit source revisions and hash original bytes once
+        run: python tools/atlas/audit-sacred-atlas-r24-existing39.py
+      - name: Archive result ledger without storing image binaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-round24-existing39-original-evidence
+          path: /tmp/ao-sacred-atlas-round24-existing39-original-audit.json
+          retention-days: 14
+          if-no-files-found: warn
