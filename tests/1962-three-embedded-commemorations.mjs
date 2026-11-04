@@ -115,13 +115,22 @@ for(const [date,path,placeholder] of cases){
  assert.ok(["Sancti/12-26","Sancti/12-28"].includes(path)?
   d.principalRank===2:d.principalRank===3);
  if(date==="2026-03-27"){
-  // The source Gregorian calendar only declares Seven Sorrows, while the
-  // 1962 universal Ordo independently admits John Damascene as a second
-  // ordinary commemoration in the Low Mass. Not ready until both are
-  // formally source-owned and joined under one conclusion.
-  assert.equal(d.readerEN.ready,false);
-  assert.equal(d.readerFR.ready,false);
+  // Two original source-owned commemoration prayers are now combined
+  // under the ONE conclusion mandated by 1960 Missal §437. The old
+  // Gregorian Calendar remains unchanged with its single placeholder;
+  // the additional named John Damascene owner is a Mass-only supplement.
+  assert.equal(d.commemorations.length,1);
+  for(const lang of ["readerEN","readerFR"]){
+   assert.equal(d[lang].ready,true,date+":"+lang+" universal Low Mass should be READY");
+   assert.deepEqual(d[lang].orationCounts,
+    {collects:2,secrets:2,postcommunions:2});
+  }
   assert.equal(d.recoveredNativityProof,null);
+  assert.ok(d.sourceCorrections.some(x=>
+    x.id==="1962_PASSION_FRIDAY_DUAL_SOURCE_WITNESSES"));
+  for(const k of ["collects","secrets","postcommunions"])
+   assert.match(String(d.recoveredOrations[k][1]?.sourcePath??""),
+    /Tempora\/Quad5-5Feria:Commemoratio\+Sancti\/03-27/);
  }else{
   for(const lang of ["readerEN","readerFR"]){
    assert.equal(d[lang].ready,true,date+":"+lang+" Christmas octave unresolved");
