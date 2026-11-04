@@ -128,6 +128,7 @@ All musical and publication decisions remain unverified.</p>
 import {sourceNoteGroupInventory} from "../../src/mass/reader-kyriale-source-note-groups.js";
 import {selected1962IntroitSungText} from "../../src/mass/reader-proper-introit-full-sung-latin.js";
 import {first12PrintedFacsimileForScore} from "../../src/mass/reader-proper-first12-1961-facsimile-locators.js";
+import {first12PrintedStaffFocus} from "../../src/mass/reader-proper-first12-1961-staff-focus.js";
 const $=id=>document.getElementById(id);
 const scoreFields=["pitch","neumes","underlay","rhythm","use1962","sourcePrint"];
 const groupFields=["gPitch","gNeumes","gUnderlay","gRhythm"];
@@ -230,12 +231,15 @@ function showOriginal1961Scan(c){
  img.onload=()=>{if(current!==c)return;img.hidden=false;
   // Focus the selected piece rather than unrelated preceding chants on the
   // same unaltered printed folio. Other material stays scrollable above.
-  const anchorY=({
-   "GREGOBASE-475":395,"GREGOBASE-782":585,"GREGOBASE-918":445,
-   "GREGOBASE-403":270,"GREGOBASE-1147":85,"GREGOBASE-182":245,
-   "GREGOBASE-265":585,"GREGOBASE-464":235,"GREGOBASE-95":385,
-   "GREGOBASE-1136":385,"GREGOBASE-1165":165,"GREGOBASE-1271":560
-  })[c.scoreId]??0;
+  const focus=first12PrintedStaffFocus(c.scoreId);
+  const anchorY=focus?.firstStaffBoundingBox.yMin??0;
+  // Source-image geometry must match the manually located original staff.
+  // An image mutation is a source-integrity hold, not an invitation to guess.
+  if(focus&&(img.naturalWidth!==focus.originalImageWidth||
+    img.naturalHeight!==focus.originalImageHeight)){
+   status.textContent="Original 1961 scan geometry changed: source and musical review on hold.";
+   return;
+  }
   const scroll=$("#scanStage");
   requestAnimationFrame(()=>{if(current===c&&img.naturalHeight>0){
    scroll.scrollTop=Math.max(0,Math.round(anchorY/img.naturalHeight*
@@ -245,6 +249,8 @@ function showOriginal1961Scan(c){
    (second.hidden?"Starting page loaded; continuation page required before whole-score review.":
     "Both printed folios loaded. Musical verification NOT recorded."):
    "Original printed folio loaded; independent pitch/neume/underlay comparison NOT recorded."};
+  if(focus)status.textContent+=" First-staff source locus: original p. "+
+   focus.originalFolio+"; complete musical correspondence remains uncertified.";
  img.onerror=()=>{if(current!==c)return;img.hidden=true;
   status.textContent="Original scanned-page image could not load. Open the linked original sources; do not mark music as verified."};
  img.src=folios[0].url;
