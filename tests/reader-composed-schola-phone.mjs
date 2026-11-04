@@ -46,6 +46,20 @@ try{
    await plan.locator("[data-schola-music-setting]").selectOption("faure-requiem-op48");
    if(spec.requiem){
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.composedWorkId==="faure-requiem-op48");
+    // LIVE UI rendering is scheduled after the controller projection. Do not
+    // compare composer lyrics while the previous Gregorian line is still in
+    // the DOM; require BOTH Latin and translated words to be painted.
+    await page.waitForFunction(()=>{
+      const schola=window.__AO_PHONE_PREVIEW.getScholaState()?.schola;
+      const dock=document.querySelector(".ao-schola-dock");
+      const displayedLatin=dock?.querySelector('[data-role="schola"]')?.textContent?.trim();
+      const displayedTranslation=dock?.querySelector(
+        '[data-role="schola-inline-translation"]')?.textContent?.trim();
+      return schola?.composedWorkId==="faure-requiem-op48" &&
+        dock?.dataset.composed==="true" &&
+        displayedLatin===schola.latin &&
+        displayedTranslation===schola.english;
+    },null,{timeout:15000});
     const lyric=await page.evaluate(()=>({
       schola:window.__AO_PHONE_PREVIEW.getScholaState().schola,
       text:document.querySelector('[data-role="schola"]')?.textContent,
