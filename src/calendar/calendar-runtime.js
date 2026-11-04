@@ -935,8 +935,8 @@ function daySurface(selected,r){
       ${approvedClassIHeroMarkup(selected, r?.day?.main?.id, fr())}
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}</div>
       ${cm.length?`<p class="aoCalCommemorationLine"><strong>${esc(L("Commemoration","Commémoraison"))}:</strong> ${esc(cm.join("; "))}</p>`:""}
-      ${properReady?`<button class="aoCalV2Primary aoCalDayMassAction" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
       ${calendarScriptureControls(selected,r)}
+      ${properReady?`<button class="aoCalV2Primary aoCalDayMassAction" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
     </section>
     <details class="aoCalV2DayFold"><summary>${esc(L("Saint, Mass details & sources","Saint, détails de la messe et sources"))}</summary>
       ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
