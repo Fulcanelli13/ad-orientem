@@ -39,3 +39,13 @@ Work through the remaining **262 historical rows via the same 120-page source gr
 Use the **single existing worldwide timetable and CL27 classification pipelines**; do not merge draft #1775 wholesale, create a parallel Mass master, publish new liturgical claims from an institute label, or change `src/find` here.
 
 Validation: `node tests/tlm-cl27-current-firstparty-review.mjs`.
+
+## Classification evidence lane — source-scoped, not published
+
+`classification-role-review.v1.json` records **13 distinct role observations across the same 12 physical-site anchors**: apostolate associations, self-described Oratory communities, district-listed chapels, national associations acting only as information sources, and the **separate Carmelite monastery host and FSSP/Mater Dei Mass-provider roles**.
+
+These are **research candidates**, not independently published classifications. In every record, Una Cum, the Pope named in the Canon, ecclesial position, dated canonical standing, individual celebrant, exact Missal and rubrical book, and legal ownership remain explicitly UNKNOWN. An institutional label, a sung/high Mass name, or a liturgical language does not establish any of them. Do not bulk-promote all 2,715 historical CL27 assertions.
+
+Production already exposes the 12 CL27 axes in `src/find/cl27-public-facets.js`. The next step is source-by-source admission through this existing presentation and canonical CL2 identity join, not a second taxonomy.
+
+Both manifests are covered by `node tests/tlm-cl27-current-firstparty-review.mjs`.
