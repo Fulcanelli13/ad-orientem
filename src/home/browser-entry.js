@@ -415,7 +415,16 @@ export function createHomeOwner(win=globalThis){
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4.aoH7Screens");
     if(s?.route!=="home"||!inlineCalendarView||!screen||
        !screen.querySelector("[data-home-calendar-inline] #ao-calendar-modular-root"))return false;
-    showHomeToday();
+    // The door is already mounted beside the inline Calendar. Do not
+    // repaint all of Home just to reveal it: that discards the existing
+    // H7 DOM and makes the Calendar -> Mass transition needlessly expensive.
+    // Silently detach only Calendar's own embedded surface and subscriptions.
+    stopEmbeddedCalendarViewSync();
+    inlineCalendarView=null;
+    try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home",silent:true});}catch{}
+    delete screen.dataset.aoHomeCalendarView;
+    const slot=screen.querySelector("[data-home-calendar-inline]");
+    if(slot)slot.hidden=true;
     h7MassDoorOpen=true;
     if(!syncH7MassDoor()){h7MassDoorOpen=false;return false;}
     win?.document?.querySelector?.(".aoH7DoorView:not([hidden]) [data-home-h7-back]")
