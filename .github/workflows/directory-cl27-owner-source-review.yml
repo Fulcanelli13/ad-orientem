@@ -1,0 +1,24 @@
+name: CL27 owner-source reconciliation research guard
+
+on:
+  pull_request:
+    paths:
+      - 'data/directory/research/cl27-current-firstparty-20261104/**'
+      - 'tests/tlm-cl27-current-firstparty-review.mjs'
+      - '.github/workflows/directory-cl27-owner-source-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert historical ID census and zero-publication boundary
+        run: node tests/tlm-cl27-current-firstparty-review.mjs
