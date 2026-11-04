@@ -137,7 +137,7 @@ assert.match(html,/<\/section><section class="aoH4DiscoveryStandalone"[^>]*><but
   "Did You Know remains the closing discovery section after Coming up");
 assert.ok(html.indexOf('class="aoTodayV2CalendarGlance"')<html.indexOf('class="aoH4DiscoveryStandalone"'),
   "Coming up must precede Discovery");
-assert.ok(html.indexOf('class="aoTodayV2Below"')<html.indexOf('class="aoTodayV2PrayerThroughDay"'),
+assert.ok(html.indexOf('class="aoTodayV2Below"')<html.indexOf('class="aoTodayV2PrayerThroughDay sec"'),
   "Gospel reading must immediately follow the week strip, ahead of Pray");
 assert.ok(html.indexOf('class="aoTodayV2Below"')<html.indexOf('class="aoH4DiscoveryStandalone"'),
   "Read must precede the final Did You Know section");
