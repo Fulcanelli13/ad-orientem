@@ -25,6 +25,8 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Re-run existing Perpetua/Felicity source-owner browser regression (#1788)
+        run: node tests/1962-plural-martyrs-live-owner-audit.mjs
       - name: Resolve eight selected 1962 dates and compare Schola raw versus actual Reader recovery
         run: node tests/schola-2026-eight-date-real-reader-reconciliation.mjs
       - name: Preserve source-owned disposition (no public music approvals)
@@ -32,6 +34,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: schola-2026-eight-date-actual-reader
-          path: artifacts/mass/schola-2026-eight-date-real-reader-reconciliation.json
+          path: |
+            artifacts/mass/schola-2026-eight-date-real-reader-reconciliation.json
+            artifacts/mass/1962-plural-martyrs-live-owner-audit.json
           if-no-files-found: warn
           retention-days: 14
