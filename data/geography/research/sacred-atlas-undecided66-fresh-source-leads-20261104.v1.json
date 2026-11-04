@@ -1,0 +1,91 @@
+{
+  "schema": "AO_SACRED_ATLAS_UNDECIDED66_FRESH_SOURCE_DISCOVERY_V1",
+  "date": "2026-11-04",
+  "scope": "RESEARCH_ONLY_NO_PUBLICATION",
+  "method": "Direct indexed Commons file-page searches and source descriptions (no Commons API original-byte acquisition)",
+  "places_with_fresh_leads": 3,
+  "source_leads": 6,
+  "lead_status": "UNVERIFIED_CANDIDATE_NOT_USER_SELECTED",
+  "rights_and_original_bytes_verified": false,
+  "publication_authorized": false,
+  "leads": [
+    {
+      "place_id": "place:AU:penrose-park",
+      "title": "File:Shrine of Our Lady of Mercy Church.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Shrine_of_Our_Lady_of_Mercy_Church.jpg",
+      "author": "Codefisher",
+      "claimed_license": "CC BY-SA 4.0",
+      "dimensions": [
+        4608,
+        3066
+      ],
+      "subject_note": "File description explicitly identifies Shrine of Our Lady of Mercy Church at Penrose Park",
+      "review": "EXACT_SITE_CANDIDATE_NEEDS_VISUAL_AND_BINARY_VERIFY"
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "title": "File:Altar of the Church at the Shrine of Our Lady of Mercy at Penrose Park.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Altar_of_the_Church_at_the_Shrine_of_Our_Lady_of_Mercy_at_Penrose_Park.jpg",
+      "author": "Codefisher",
+      "claimed_license": "CC BY-SA 4.0 (check live licence section)",
+      "dimensions": [
+        4608,
+        3072
+      ],
+      "subject_note": "Interior altar; possible secondary gallery rather than cover",
+      "review": "SECONDARY_GALLERY_CANDIDATE"
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "title": "File:20140202 banneux07.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:20140202_banneux07.JPG",
+      "author": "Jean Housen",
+      "claimed_license": "CC BY-SA 3.0 Unported",
+      "dimensions": [
+        3872,
+        2592
+      ],
+      "subject_note": "Author describes view of Banneux sanctuary",
+      "review": "EXACT_SITE_CANDIDATE_NEEDS_VISUAL_AND_BINARY_VERIFY"
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "title": "File:Banneux Source00138.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Banneux_Source00138.JPG",
+      "author": "CapitaineCook",
+      "claimed_license": "Multiple open licences, verify exact grant",
+      "dimensions": [
+        4000,
+        3000
+      ],
+      "subject_note": "Banneux spring; possible exact-subject gallery asset, not automatically cover",
+      "review": "SECONDARY_GALLERY_CANDIDATE"
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "title": "File:Sainte-Croix (Mauritius).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sainte-Croix_(Mauritius).jpg",
+      "author": null,
+      "claimed_license": null,
+      "dimensions": [
+        743,
+        989
+      ],
+      "subject_note": "Indexed within Jacques-Désiré Laval Commons category, but actual Centre Père Laval matching not demonstrated",
+      "review": "HOLD_EXACT_SITE_AND_LOW_RESOLUTION"
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "title": "File:Banneux-Notre-Dame. La Chapelle de la Vierge des Pauvres - De Kapel van de Maagd der Armen, GP122244.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Banneux-Notre-Dame._La_Chapelle_de_la_Vierge_des_Pauvres_-_De_Kapel_van_de_Maagd_der_Armen%2C_GP122244.jpg",
+      "author": null,
+      "claimed_license": "Public-domain claim; verify historic photograph and reproduction legal basis",
+      "dimensions": [
+        3462,
+        2277
+      ],
+      "subject_note": "Historical postcard, unsuitable as current-site default unless selected specifically",
+      "review": "HOLD_HISTORICAL_POSTCARD"
+    }
+  ]
+}
