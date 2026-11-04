@@ -119,7 +119,21 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
   const actualColour=text(proper?.color)||text(proper?.colour)||
     text(legacy?.massColor)||(kind==="CALENDAR"&&!differs?calendar.colour:null);
   const period=buildLiturgicalYear(date).currentPeriod;
-  const commemorations=namedCommemorations(validResolution(calendarState,date),fr);
+  const sourcedCommemorations=namedCommemorations(validResolution(calendarState,date),fr);
+  // The authenticated universal Roman Passion Friday source restores
+  // a second ordinary commemoration omitted by the upstream display-day
+  // token list. Show it ONLY when the exact Mass-form source decision
+  // actually certifies the second original, never by titles or date alone.
+  const passionFriday=sourceSelection?.status==="CERTIFIED"&&
+    proper?.verifiedPassionFridayCommemorations?.status==="SOURCE_VERIFIED"&&
+    proper?.commemorationFormDecision?.scope===
+      "PASSION_FRIDAY_TWO_SOURCE_ORDINARY_COMMEMORATIONS_2026"&&
+    date==="2026-03-27"&&calendar.principalId==="tempora:Quad5-5Feria:3:v";
+  const commemorations=passionFriday?
+    Object.freeze([...sourcedCommemorations,
+      fr?"Saint Jean Damascène, confesseur et docteur de l’Église":
+        "St John Damascene, Confessor and Doctor of the Church"]):
+    sourcedCommemorations;
   // Source calendar and Mass owner use distinct display-title conventions.
   // A wording difference alone must never suppress an actual commemoration.
   const selectedOwner=text(legacy?.actualCelebration?.id)||
