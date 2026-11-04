@@ -1,0 +1,33 @@
+name: Sacred Atlas Round 17 — offline source and reviewer regression
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-round17-all35-source-triage-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-undecided66-bulk-photo-review-20261104.html'
+      - 'tests/sacred-atlas-round17-35-source-invariants.mjs'
+      - 'tools/atlas/audit-sacred-atlas-ten-original-integrity.py'
+      - '.github/workflows/sacred-atlas-round17-offline.yml'
+permissions:
+  contents: read
+jobs:
+  validate-round17-records-offline:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.event.pull_request.head.ref, 'research/sacred-atlas-round17-') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source ledger and live review-page JavaScript
+        run: node tests/sacred-atlas-round17-35-source-invariants.mjs
+      - name: Verify integrity-audit code without network access
+        run: |
+          python tools/atlas/audit-sacred-atlas-ten-original-integrity.py --self-test
+          python tools/atlas/audit-sacred-atlas-ten-original-integrity.py --dry-run
