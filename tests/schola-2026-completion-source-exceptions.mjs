@@ -52,6 +52,15 @@ assert.deepEqual(checked.preGospelCauseGroups.map(x=>
  ["AUTHENTICATED_SOURCE_SECTION","SECTION_ABSENT",4],
  ["AUTHENTICATED_SOURCE_SECTION","AUTHENTICATED_SOURCE_SECTION",1]
 ]);
+for(const row of checked.ordinaryAndSpecialReaderHolds){
+ assert.equal(row.originalReaderReasons.en.length,row.missingEnglish.length,
+  "Each English hold must retain the actual reader's reason");
+ assert.equal(row.originalReaderReasons.fr.length,row.missingFrench.length,
+  "Each French hold must retain the actual reader's reason");
+ assert.ok(row.originalReaderReasons.en.every(x=>x.slot&&x.projectionStatus&&x.reason));
+ assert.ok(row.originalReaderReasons.sourceOrationGroupCounts&&
+  Number.isInteger(row.originalReaderReasons.sourceOrationGroupCounts.COLLECT_SET));
+}
 assert.equal(checked.publication.scorePromotionPermitted,false);
 assert.equal(checked.publication.publicScoreChanges,0);
 const tamper=structuredClone(source);
