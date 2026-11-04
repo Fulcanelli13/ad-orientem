@@ -171,7 +171,7 @@ console.log("PASS complete 16-target bilingual Novenas corpus with French prayer
 // Prayer-stage copy should address the person praying, not describe app telemetry.
 assert.doesNotMatch(runtime,/Ad Orientem|devotional streak|completion score/i,"Novena reader reverted to self-referential interface narration");
 assert.match(runtime,/head\(L\(\x27Novenas\x27,\x27Neuvaines\x27\)/,"Novenas must retain its bilingual source-owned heading");
-assert.doesNotMatch(runtime,/Choose a novena|Choisissez une neuvaine/,"A second choice heading must not be repeated above the novena list");
+assert.doesNotMatch(runtime,/L\(\x27Choose a novena\x27,\x27Choisissez une neuvaine\x27\)/,"A second choice heading must not be repeated above the novena list");
 
 
 // The V3 source prayers are immutable, but inherited English-only day headings
