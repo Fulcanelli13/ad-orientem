@@ -6,6 +6,7 @@ on:
       - 'data/geography/research/sacred-atlas-undecided66-*.json'
       - 'data/geography/research/sacred-atlas-undecided66-*.html'
       - 'tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py'
+      - 'tests/sacred-atlas-round15-bulk-review-contract.mjs'
       - '.github/workflows/sacred-atlas-undecided66-commons-metadata.yml'
   workflow_dispatch:
 permissions:
@@ -26,7 +27,10 @@ jobs:
         run: |
           python tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py --self-test
           python tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py --dry-run
+      - name: Validate 66-place editorial review and inline browser script offline
+        run: node tests/sacred-atlas-round15-bulk-review-contract.mjs
       - name: Metadata-only paced Commons audit, stop after first HTTP 429
+        if: github.event_name == 'workflow_dispatch'
         run: python tools/atlas/audit-sacred-atlas-undecided66-commons-metadata.py
       - name: Preserve read-only audit result as review artifact
         if: always()
