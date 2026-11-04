@@ -105,7 +105,7 @@ def collect(html_text):
             if label_subject: score += 7
             if context_artist: score += 2
             if context_subject: score += 3
-            if score > 0:
+            if (label_subject or context_subject) and (label_artist or context_artist):
                 evaluated.append({**item, "score": score,
                                   "exact_artist_and_subject_in_label": label_artist and label_subject,
                                   "must_verify_visual_identity": True,
@@ -116,7 +116,8 @@ def collect(html_text):
     return {"schema": "AO_LYON_OFFICIAL_PHOTO_SOURCE_DISCOVERY_V1",
             "source_page": PAGE, "automatically_approved": False, "publication": False,
             "cropping": False, "rights_scope": "PRESS_PAGE_NOT_BLANKET_APP_PERMISSION",
-            "media_candidates_seen": len(items), "targets": out}
+            "media_candidates_seen": len(items),
+            "source_files_seen": sorted({v["url"] for v in items}), "targets": out}
 
 def main():
     parser = argparse.ArgumentParser()
