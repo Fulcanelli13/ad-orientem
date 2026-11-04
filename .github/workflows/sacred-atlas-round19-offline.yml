@@ -7,6 +7,8 @@ on:
       - 'data/geography/research/sacred-atlas-round19-*.html'
       - 'tools/atlas/audit-sacred-atlas-altoetting15-originals.py'
       - 'tests/sacred-atlas-round19-altoetting15-evidence-contract.mjs'
+      - 'tests/sacred-atlas-round18-geosearch-review-contract.mjs'
+      - 'data/geography/research/sacred-atlas-undecided66-bulk-photo-review-20261104.html'
       - '.github/workflows/sacred-atlas-round19-offline.yml'
 permissions:
   contents: read
@@ -27,6 +29,8 @@ jobs:
           python-version: '3.12'
       - name: Confirm original bytes digest and photo review source identities
         run: node tests/sacred-atlas-round19-altoetting15-evidence-contract.mjs
+      - name: Recheck 66-place reviewer and Round 18 source discovery after proof updates
+        run: node tests/sacred-atlas-round18-geosearch-review-contract.mjs
       - name: Verify bounded Commons original audit code without network
         run: |
           python tools/atlas/audit-sacred-atlas-altoetting15-originals.py --self-test
