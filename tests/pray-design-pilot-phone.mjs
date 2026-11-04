@@ -45,6 +45,16 @@ try{
     "Only the released Met Eucharistic photograph may appear; other eight editorial slots remain photo-gated");
    assert.equal(await mosaic.locator('[data-ao-editorial-state]').count(),9,
     "All nine doors must expose the corrected 267-master editorial state");
+   const pendingTiles=await mosaic.locator('[data-ao-art-binding="editorial-pending"]').evaluateAll(nodes=>nodes.map(node=>({
+     symbol:getComputedStyle(node.querySelector('.aoPrayPilotTileSymbol')).display,
+     title:node.querySelector('.aoPrayPilotTileCaption strong')?.textContent?.trim(),
+     caption:getComputedStyle(node.querySelector('.aoPrayPilotTileCaption')).visibility,
+     height:node.getBoundingClientRect().height
+   })));
+   assert.equal(pendingTiles.length,8,"Eight unreleased categories must stay publication-gated");
+   assert.ok(pendingTiles.every(t=>t.symbol==="none"&&t.caption==="visible"&&!!t.title&&t.height>=170),
+     "Pending doors need legible typographic fallback, not eight repetitive native-icons or blank tiles: "+JSON.stringify(pendingTiles));
+
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
@@ -118,9 +128,10 @@ try{
     assert.equal(await page.locator(base+" [data-ao-prayer-shelf] .aoPrayDoorArtwork[data-ao-art-binding="+(door==="eucharistic"?"released":"editorial-pending")+"]").count(),1,
       "Only the Eucharistic door uses published Met art; remaining slots are editorial-pending: "+door);
     const facetCount=await page.locator(base+" [data-ao-prayer-shelf] [data-p435930-door-filter]").count();
-    if(door==="eucharistic")assert.equal(facetCount,0,
-      "Do not clutter a single-category Eucharistic mosaic with meaningless filters");
-    else assert.ok(facetCount>=2,"Mixed-family filters must remain available: "+door);
+    // Every canonical shelf currently has fewer than eight rows; source-owned
+    // prayer search remains available from discovery, not redundant chips.
+    assert.equal(facetCount,0,
+      "Short category interiors should expose direct numbered entries without redundant filter chips: "+door);
     if(door==="marian"){
       const featured=await page.locator(base+" .aoPrayMosaicCardFeatured .aoPrayMosaicCardCopy b").textContent();
       assert.equal(featured.trim(),"Litany of Loreto","Keep the readable editorial title; canonical source edition stays in the reader");
