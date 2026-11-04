@@ -267,7 +267,13 @@ try{
    await page.locator(base+' [data-p435930-family="marian"]').click();
    await page.locator(base+' [data-p435930-door-prayer="marian_memorare"]').click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
-   await page.locator(base+' [data-p435930-lib-back]').click();
+   // The Holy Card removes the duplicated inline Back; use its one visible
+   // native Back and still assert return to the original Marian shelf.
+   assert.equal(await page.locator(base+' [data-p435930-lib-back]').isVisible(),false,
+     "F01 Holy Card must not show two Back controls");
+   const nativeBack=page.locator(base+' [data-p435930-back]');
+   assert.ok(await nativeBack.isVisible(),"The Prayer running-head Back must remain visible");
+   await nativeBack.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"family","Source-prayer Back must return to Our Lady shelf");
    assert.equal(await page.locator(base+' [data-ao-prayer-shelf="marian"]').count(),1);
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
