@@ -1,0 +1,121 @@
+{
+  "schema": "AO_ICRSP_B41_TWO_ANNECY_VOLUME_VIII_DATE_WITNESS_EXCEPTIONS_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "scope": "Targeted cross-witness review of two distinct Salesian entry date conflicts in B40: direct ICRSP text vs Annecy Volume VIII digital work headings vs independently published master TOC; ecclesiastical Gregorian calendar arithmetic. No original printed facsimile reviewed.",
+  "baseline": "data/source-text/icrsp-france-b40-29-named-salesian-annecy-toc-crosswalk.v1.json",
+  "sourceArticleRowsReconciled": 3,
+  "counts": {
+    "distinctEditionEntries": 2,
+    "hostArticlePanelOccurrences": 3,
+    "sameBodyHashArticleDuplicates": 1,
+    "originalVolumeDigitalHeadingCorroboratedHostDates": 2,
+    "aggregatedIndexDateDiscrepancies": 2,
+    "calendarDateCorroboratesEditedHeading": 1,
+    "calendarDateCorroboratesAggregateIndex": 1,
+    "printedFacsimilesVisuallyCollated": 0,
+    "completeHostOriginalBodyComparisons": 0,
+    "appOwnerApprovals": 0,
+    "rightsCleared": 0
+  },
+  "cases": [
+    {
+      "caseId": "SALES_VOL8_LXXXVIII_1612_CROSS_INDEX_DATE",
+      "annecyVolume": 8,
+      "number": "LXXXVIII",
+      "matchedArticleIds": [
+        "a0220_ancien",
+        "a0029_nouveau"
+      ],
+      "panelBodyHash": "6b3c536edd9dd003029c336ecfa50014ed51d0393b2cad95de0e856666885f18",
+      "siteDate": "1612-04-20",
+      "editedWorkHeadingDate": "1612-04-20",
+      "aggregatedOnlineIndexDate": "1612-04-30",
+      "calendarCheck": {
+        "goodFridayGregorian": "1612-04-20",
+        "easterSundayGregorian": "1612-04-22",
+        "otherIndexDateWeekday": "Monday"
+      },
+      "workKindFromHeading": "SOMMAIRE",
+      "observedHostSuffix": "Plan",
+      "editedWorkTitle": "Sommaire d’un sermon sur la sainte Croix",
+      "editorialConclusion": "HOST_AND_DIGITIZED_VOLUME_ENTRY_AGREE_20_APR_1612__GENERAL_INDEX_30_APR_INCONSISTENT",
+      "reason": "April 20 1612 was Good Friday, consistent with the critical volume note associating this summary with Good Friday adoration; April 30 was Monday. The general index differs from the work heading.",
+      "disposition": "PREFER_DIGITAL_VOLUME_ENTRY_DATE_20_APR_1612_FOR_TENTATIVE_BIBLIOGRAPHY; mark aggregated-index error; do not treat this brief summary as a full sermon",
+      "witnesses": [
+        {
+          "kind": "ICRSP_HOST",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+          "sourceLocator": "Commentaires / named Salesian item 20 avril 1612"
+        },
+        {
+          "kind": "ANNECY_VOL_VIII_DIGITAL_TRANSCRIPTION",
+          "url": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/08-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VIII-Vol.2-Sermons.html",
+          "sourceLocator": "Entry LXXXVIII — heading 20 avril 1612; editor suggests Good Friday ceremony"
+        },
+        {
+          "kind": "AGGREGATED_INDEX_DIGITAL_TRANSCRIPTION",
+          "url": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+          "sourceLocator": "Index LXXXVIII — 30 avril 1612"
+        }
+      ],
+      "witnessTranscriptionOnly": true,
+      "originalPrintedFacsimileReviewed": false,
+      "fullItemCompared": false,
+      "authorshipCertified": false,
+      "translationRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "SALES_VOL8_CXXXVII_1617_LENT_THURSDAY",
+      "annecyVolume": 8,
+      "number": "CXXXVII",
+      "matchedArticleIds": [
+        "a0194_ancien"
+      ],
+      "panelBodyHash": "e841e60fc0de1848bed6457e5ba3713a51da7c19a9f767456627c9b5ac1df68d",
+      "siteDate": "1617-03-03",
+      "editedWorkHeadingDate": "1617-03-03",
+      "aggregatedOnlineIndexDate": "1617-03-02",
+      "calendarCheck": {
+        "lentThirdSundayGregorian": "1617-02-26",
+        "followingThursdayGregorian": "1617-03-02",
+        "editedWorkDateWeekday": "Friday",
+        "indexedDateWeekday": "Thursday",
+        "easterSundayGregorian": "1617-03-26"
+      },
+      "workKindFromHeading": "PLAN",
+      "observedHostSuffix": "Plan",
+      "editedWorkTitle": "Plan d’un sermon pour le jeudi après le troisième Dimanche de Carême",
+      "editorialConclusion": "DIGITAL_VOLUME_HEADING_AND_HOST_SAY_03_MAR_BUT_LITURGICAL_TITLE_AND_INDEX_SUPPORT_02_MAR_1617",
+      "reason": "The title specifies Thursday following the third Sunday of Lent; March 2 1617 was Thursday, March 3 Friday. The aggregate index aligns with liturgical weekday while the digitized entry heading does not.",
+      "disposition": "DATE_REMAINS_EDITORIALLY_DISPUTED; favor 2 March 1617 as calendar-consistent for label with explicit uncertainty until print/facsimile and editorial dating note review",
+      "witnesses": [
+        {
+          "kind": "ICRSP_HOST",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+          "sourceLocator": "Commentaires / named Salesian Plan 3 mars 1617"
+        },
+        {
+          "kind": "ANNECY_VOL_VIII_DIGITAL_TRANSCRIPTION",
+          "url": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/08-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VIII-Vol.2-Sermons.html",
+          "sourceLocator": "Entry CXXXVII heading 3 mars 1617"
+        },
+        {
+          "kind": "AGGREGATED_INDEX_DIGITAL_TRANSCRIPTION",
+          "url": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+          "sourceLocator": "Index CXXXVII — 2 mars 1617"
+        }
+      ],
+      "witnessTranscriptionOnly": true,
+      "originalPrintedFacsimileReviewed": false,
+      "fullItemCompared": false,
+      "authorshipCertified": false,
+      "translationRightsCleared": false,
+      "productionPublicationApproved": false
+    }
+  ],
+  "needs": "Original printed edition image/typographic dating apparatus and authoritative critical notes, especially Thursday March 2 vs text heading Friday March 3; volume-edition webpage is a digital transcription not print certification.",
+  "sourceProseCopied": false,
+  "publicationApproved": false
+}

@@ -1,0 +1,702 @@
+{
+  "schema": "AO_ICRSP_B39_EXISTING_OWNER_SCOPED_PARITY_18_CASES_V1",
+  "asOf": "2026-10-26",
+  "repository": "Fulcanelli13/ad-orientem",
+  "ownerPR": 1666,
+  "sourceCorpus": "data/source-text/icrsp-france-b38-783-all-selected-source-passages-ledger.v1.json",
+  "scope": "18 scoped comparisons of selected ICRSP source claims with actual current main-branch owner implementation/advisory files. This does not certify any source as a missing runtime feature, nor claim a global literal search of all saint records, all printed 1962 formularies, or paragraph-level comparison.",
+  "mainOwnerFileBlobShas": {
+    "data/calendar/traditional-1962-common-formularies.review.v1.json": "5594a1c3a5d49f4d5377383ba2eace53f1c2c5d3",
+    "src/calendar/print-proper.js": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0",
+    "src/learn/mass-explorer-selected-calendar-proper.js": "a95d95fd1b01efc9fdf19a05498209ae534430a0",
+    "src/calendar/observance-title.js": "3b56cbe822f2f89522017e220362d33c26bf5f1a",
+    "data/calendar/traditional-mass-formulary-review.v1.json": "efe59b26f9b21a9269af1cfde691a05addf81422",
+    "data/calendar/particular-traditional-calendar-witnesses.review.v1.json": "766bc5e70bad57c2da09fcdf70d7d208a6ccff7e",
+    "data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json": "f6a3e0d0e027e5a4d17b9cae5549c8b89b0fcf3e",
+    "src/calendar/traditional-day-adjudication.js": "96ad33a26a61122ed868328f951106cdadd60ca6",
+    "src/calendar/living-sanctoral-read-model.js": "34689e71a3354bd59021ebe7ac8de1944cbdd441",
+    "src/calendar/sanctoral-person-reconciliation.js": "fe190aaa15a1806afeee140df8b8d2c8ecd2c621",
+    "src/learn/mass-explorer.js": "4622f555c9353cacc313f3b7096fd86e9808147b",
+    "src/learn/mass-explorer-study-publication.js": "2217cc885932063c3c5ce2746ca8a3a5070f2f63",
+    "data/learn/mass-explorer-approved-studies.v1.json": "fb0f4f8de2b7c9e13d7463c83f73929646a12e38",
+    "src/mass/preflight-study-proper.js": "d9538c73edc8539fdca438e6a4cb958df66976cd"
+  },
+  "counts": {
+    "scopedComparisons": 18,
+    "uniqueICRSPArticleIds": 49,
+    "actualOwnerFilesRead": 14,
+    "newProductionFeaturesApproved": 0,
+    "certifiedMissingProductionClaims": 0,
+    "rightsCleared": 0,
+    "originalPrinted1962FormularyCertifications": 0,
+    "exactSaintOwnerIdMatchesConfirmed": 0,
+    "independentlyVerifiedSourceArticleErrors": 2,
+    "independentlyVerifiedIncorrectFields": 3
+  },
+  "cases": [
+    {
+      "caseId": "COMMUNES_MULTI_VIRGIN_MARTYRS",
+      "sourceArticleIds": [
+        "a0064_nouveau",
+        "a0337_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0064_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien"
+      ],
+      "targetOwnerDomain": "MASS_1962_PROPER_FORMULARY",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/calendar/traditional-1962-common-formularies.review.v1.json",
+          "blobSha": "5594a1c3a5d49f4d5377383ba2eace53f1c2c5d3"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        }
+      ],
+      "sourceClaim": "ICRSP describes the Composite Me exspectaverunt Mass plus Vultum tuum Epistle and proper orations; newer/older articles restate the same instruction.",
+      "existingOwnerEvidence": "Mass Explorer has no independent Common selector and its proper projection depends on already certified selected Calendar Proper. The advisory Common candidate index contains only three candidate classes, not this composite.",
+      "disposition": "TEXT_LEVEL_OWNER_PARITY_NOT_DONE",
+      "requiredNextGate": "Check individual 1962 Latin and bilingual orations, Epistle, source path, legitimate Common selection and printed 1962 source; do not add separate Mass Explorer resolver.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "COMMUNES_MULTIPLE_NONVIRGIN_MARTYRS",
+      "sourceArticleIds": [
+        "a0067_nouveau",
+        "a0342_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0067_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien"
+      ],
+      "targetOwnerDomain": "MASS_1962_PROPER_FORMULARY",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/calendar/traditional-1962-common-formularies.review.v1.json",
+          "blobSha": "5594a1c3a5d49f4d5377383ba2eace53f1c2c5d3"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        }
+      ],
+      "sourceClaim": "Different prayer-substitution instructions for multiple female martyrs versus virgin martyr Common; two hosted versions duplicate description.",
+      "existingOwnerEvidence": "No live alternate Common selector is implemented by selectedCalendarProperProjection; the three-candidate advisory index is not full Common coverage.",
+      "disposition": "TEXT_LEVEL_OWNER_PARITY_NOT_DONE",
+      "requiredNextGate": "Compare actual 1962 collect, secret and postcommunion and class; verify source-specific Proper before Common fallback.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "COMMUNE_CONFESSOR_BISHOP_STATUIT",
+      "sourceArticleIds": [
+        "a0056_nouveau",
+        "a0330_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0056_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0330_ancien"
+      ],
+      "targetOwnerDomain": "MASS_1962_PROPER_FORMULARY",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/calendar/traditional-1962-common-formularies.review.v1.json",
+          "blobSha": "5594a1c3a5d49f4d5377383ba2eace53f1c2c5d3"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        }
+      ],
+      "sourceClaim": "The older and newer Statuit ei bishop-confessor articles share Parsch commentary; same Introit alone is not whole formulary.",
+      "existingOwnerEvidence": "Existing three-candidate advisory Common index does not expose a Confessor Pontiff Statuit entry; this establishes a scoped research-index omission, NOT absence from runtime's source Proper.",
+      "disposition": "RESEARCH_INDEX_MISSING_CANDIDATE_NOT_RUNTIME_GAP",
+      "requiredNextGate": "Owner decides whether a broader read-only Common index is required; independent 1962 text and exact currently selected proper comparison first.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "SATURDAY_BVM_FIVE_SEASONAL_FORMS",
+      "sourceArticleIds": [
+        "a0071_nouveau",
+        "a0072_nouveau",
+        "a0073_nouveau",
+        "a0074_nouveau",
+        "a0075_nouveau"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0071_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0072_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0073_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0074_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0075_nouveau"
+      ],
+      "targetOwnerDomain": "CALENDAR_AND_MASS_PROPER",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/observance-title.js",
+          "blobSha": "3b56cbe822f2f89522017e220362d33c26bf5f1a"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        }
+      ],
+      "sourceClaim": "Five seasonal Saturday Marian pages repeat introductory history while giving different season-scoped Common texts.",
+      "existingOwnerEvidence": "calendarObservanceAlias already recognizes four rank-bearing Saturday-BVM identities C10b/C10c/C10Pasc/C10t and explicitly says the actual Mass formulary remains different from the celebration title.",
+      "disposition": "EXISTING_IDENTITY_HANDLING_TEXT_PARITY_UNCHECKED",
+      "requiredNextGate": "Compare each ICRSP season, actual canonical proper source path, rubrical permission, and exact form-level Latin/French sections; do not invent five new calendar days.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "ST_REMI_GENERAL_VS_FRENCH_PROPER",
+      "sourceArticleIds": [
+        "a0689_ancien",
+        "a0470_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0689_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0470_ancien"
+      ],
+      "targetOwnerDomain": "CALENDAR_PARTICULAR_FORMULARY",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/calendar/traditional-mass-formulary-review.v1.json",
+          "blobSha": "efe59b26f9b21a9269af1cfde691a05addf81422"
+        },
+        {
+          "path": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+          "blobSha": "766bc5e70bad57c2da09fcdf70d7d208a6ccff7e"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        }
+      ],
+      "sourceClaim": "General Roman October 1 entry refers to a Statuit Common commemoration; French local page supplies distinct pre-/1962 proper context.",
+      "existingOwnerEvidence": "Current owner rules require edition-matched pro aliquibus locis before a Common, and particular calendars are not applied universally. Existing sampled particular-witness file is not a complete French diocesan census.",
+      "disposition": "LOCAL_1962_EDITORIAL_VARIANT_NOT_RUNTIME_GAP",
+      "requiredNextGate": "Establish exact approved 1962 French Proper and locality/venue before any link, compare named proper orations versus Roman commemoration.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "SAINT_MODESTA_PARTICULAR_PROPER",
+      "sourceArticleIds": [
+        "a0730_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0730_ancien"
+      ],
+      "targetOwnerDomain": "CALENDAR_PARTICULAR_FORMULARY",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/calendar/traditional-mass-formulary-review.v1.json",
+          "blobSha": "efe59b26f9b21a9269af1cfde691a05addf81422"
+        },
+        {
+          "path": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+          "blobSha": "766bc5e70bad57c2da09fcdf70d7d208a6ccff7e"
+        }
+      ],
+      "sourceClaim": "Saint-Dié's Modesta page names particular prayers with the Vultum tuum Common.",
+      "existingOwnerEvidence": "Particular calendar architecture is advisory, with no direct general-purpose local proper selection in the checked Mass Explorer read-only owner.",
+      "disposition": "LOCAL_PROPER_PENDING_IDENTITY_AND_JURISDICTION",
+      "requiredNextGate": "Confirm canonical person and Saint-Dié calendar scope, correct 1962 edition and approved local proper text before use.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "RESTORED_HOLY_THURSDAY",
+      "sourceArticleIds": [
+        "a0020_nouveau",
+        "a0221_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_ancien"
+      ],
+      "targetOwnerDomain": "MASS_SPECIAL_HOLY_WEEK",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json",
+          "blobSha": "f6a3e0d0e027e5a4d17b9cae5549c8b89b0fcf3e"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        }
+      ],
+      "sourceClaim": "Newer and pre-Pius-XII Holy Thursday articles represent materially different rites.",
+      "existingOwnerEvidence": "The current Holy Week witness is expressly 1962 restored Holy Week and excludes pre-1955 ceremony; it already has original-image witness links and a still-open diplomatic collation gate.",
+      "disposition": "EXISTING_RITE_VERSION_SEPARATION_NO_NEW_MODULE",
+      "requiredNextGate": "Compare unresolved 1962 Mass text/ceremonial details against approved printed witness in current Holy Week owner, not historical pre-reform page.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "RESTORED_PENTECOST_VIGIL",
+      "sourceArticleIds": [
+        "a0165_nouveau"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0165_nouveau"
+      ],
+      "targetOwnerDomain": "CALENDAR_MASS_1962_RITE",
+      "checkedOwnerFiles": [
+        {
+          "path": "data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json",
+          "blobSha": "f6a3e0d0e027e5a4d17b9cae5549c8b89b0fcf3e"
+        },
+        {
+          "path": "src/calendar/observance-title.js",
+          "blobSha": "3b56cbe822f2f89522017e220362d33c26bf5f1a"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        }
+      ],
+      "sourceClaim": "ICRSP contrasts post-1955 Vigil with older 6-prophecy and baptismal-water blessing sequence.",
+      "existingOwnerEvidence": "Calendar title aliases explicitly recognize Vigil of Pentecost. The inspected original-image Holy Week witness covers Palm/Holy Thursday/Good Friday/Easter Vigil, NOT Pentecost, so it cannot certify Pentecost details.",
+      "disposition": "PRIMARY_PENTECOST_1962_RITE_PARITY_REQUIRED",
+      "requiredNextGate": "Identify Pentecost-specific printed 1962 witness and existing selected 1962 Proper before any detail; never restore older blessing/prophecy sequence.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "ST_JOSEPH_SUPPRESSED_OCTAVE",
+      "sourceArticleIds": [
+        "a0100_nouveau",
+        "a0101_nouveau",
+        "a0102_nouveau",
+        "a0103_nouveau",
+        "a0785_ancien",
+        "a0786_ancien",
+        "a0787_ancien",
+        "a0788_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0100_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0101_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0102_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0103_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0785_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0786_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0787_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0788_ancien"
+      ],
+      "targetOwnerDomain": "CALENDAR_HISTORICAL_NOT_RUNTIME",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/traditional-day-adjudication.js",
+          "blobSha": "96ad33a26a61122ed868328f951106cdadd60ca6"
+        },
+        {
+          "path": "src/calendar/observance-title.js",
+          "blobSha": "3b56cbe822f2f89522017e220362d33c26bf5f1a"
+        }
+      ],
+      "sourceClaim": "Same Chrysostom/Bernard Matins lessons appear on old/new pages of the Octave of the Patronage of St Joseph, suppressed in 1955.",
+      "existingOwnerEvidence": "Current Calendar-adjudication bridge is explicit that it cannot change the 1962 resolver or Proper.",
+      "disposition": "HISTORICAL_OCTAVE_NO_PRODUCTION_INSERTION",
+      "requiredNextGate": "Archive as historical Office source only; no new calendar state, reading or 1962 Mass.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "APOSTLES_SUPPRESSED_VIGILS",
+      "sourceArticleIds": [
+        "a0504_ancien",
+        "a0615_ancien",
+        "a1022_ancien",
+        "a0536_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0504_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0615_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a1022_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0536_ancien"
+      ],
+      "targetOwnerDomain": "CALENDAR_HISTORICAL_NOT_RUNTIME",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/traditional-day-adjudication.js",
+          "blobSha": "96ad33a26a61122ed868328f951106cdadd60ca6"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        }
+      ],
+      "sourceClaim": "Older vigil formularies of Simon/Jude, Thomas, James and Matthew survive in ICRSP; Matthew's historic Vigil Gospel references Levi's call.",
+      "existingOwnerEvidence": "Read-only selected-Day Proper requires current 1962 source and date rather than reconstructing vigils from historic commentary.",
+      "disposition": "HISTORICAL_VIGILS_DO_NOT_REINTRODUCE",
+      "requiredNextGate": "Treat as historical examples; determine any retained specific 1962 exceptional vigil from independent calendar before claiming suppression universally.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "CHANTAL_SOURCE_DATE_AND_POPE",
+      "sourceArticleIds": [
+        "a0415_ancien",
+        "a1037_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0415_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a1037_ancien"
+      ],
+      "targetOwnerDomain": "SAINTS_EXISTING_PERSON",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/living-sanctoral-read-model.js",
+          "blobSha": "34689e71a3354bd59021ebe7ac8de1944cbdd441"
+        },
+        {
+          "path": "src/calendar/sanctoral-person-reconciliation.js",
+          "blobSha": "fe190aaa15a1806afeee140df8b8d2c8ecd2c621"
+        }
+      ],
+      "sourceClaim": "ICRSP a0415 lists death in 1643 and 1767 canonisation under Clement XII; Vatican State confirms 1641 and Clement XIII. Distinct a1037 includes Annecy local forms.",
+      "existingOwnerEvidence": "Inspected living sanctoral read-model and saint-person reconciliation only establish shared identity and status gate, not an exact canonical Jane de Chantal record.",
+      "disposition": "CONFIRMED_SOURCE_ERROR_EXACT_SAINT_RECORD_NOT_MATCHED",
+      "requiredNextGate": "Match stable canonical saint ID and check current published biography for false 1643/Clement XII before correcting; keep Annecy local formularies separate.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "CARACCIOLO_SOURCE_FOUNDATION_YEAR",
+      "sourceArticleIds": [
+        "a0510_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0510_ancien"
+      ],
+      "targetOwnerDomain": "SAINTS_EXISTING_PERSON",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/living-sanctoral-read-model.js",
+          "blobSha": "34689e71a3354bd59021ebe7ac8de1944cbdd441"
+        },
+        {
+          "path": "src/calendar/sanctoral-person-reconciliation.js",
+          "blobSha": "fe190aaa15a1806afeee140df8b8d2c8ecd2c621"
+        }
+      ],
+      "sourceClaim": "ICRSP gives foundation 1558; Vatican State dates his birth 1563 and congregation foundation 1588.",
+      "existingOwnerEvidence": "Existing checked identity/reconciliation owners do not identify the exact Francis Caracciolo record.",
+      "disposition": "CONFIRMED_SOURCE_ERROR_EXACT_SAINT_RECORD_NOT_MATCHED",
+      "requiredNextGate": "Reconcile saint ID and inspect approved life entry, only amend if erroneous published year actually present.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "ICRSP_NAVIGATION_HEADING",
+      "sourceArticleIds": [
+        "a0088_nouveau"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_nouveau"
+      ],
+      "targetOwnerDomain": "SOURCE_METADATA_CORRECTION",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/living-sanctoral-read-model.js",
+          "blobSha": "34689e71a3354bd59021ebe7ac8de1944cbdd441"
+        },
+        {
+          "path": "src/calendar/sanctoral-person-reconciliation.js",
+          "blobSha": "fe190aaa15a1806afeee140df8b8d2c8ecd2c621"
+        }
+      ],
+      "sourceClaim": "ICRSP article labelled Navigation actually contains Saints Clet and Marcellinus; do not index Navigation as a saint.",
+      "existingOwnerEvidence": "No source-article title is promoted through the checked canonical saint-person read model; metadata correction is research-side.",
+      "disposition": "EXTERNAL_SOURCE_TITLE_QUALITY_DEFECT",
+      "requiredNextGate": "Preserve article ID, add corrected candidate title and verify Clet/Anaclet identities before any saint link.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "TRANSFERRED_EPIPHANY_SUNDAYS",
+      "sourceArticleIds": [
+        "a0620_ancien",
+        "a0622_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0620_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0622_ancien"
+      ],
+      "targetOwnerDomain": "CALENDAR_NATIVE_1962_FORMULARY",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/calendar/observance-title.js",
+          "blobSha": "3b56cbe822f2f89522017e220362d33c26bf5f1a"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        }
+      ],
+      "sourceClaim": "Transferred third and fifth Sundays after Epiphany use their own prayer/readings with chants from 23rd Sunday after Pentecost.",
+      "existingOwnerEvidence": "calendarObservanceAlias already distinguishes transferred Epiphany weekdays and respects actual source-based Proper; no independent Mass Explorer Proper resolver.",
+      "disposition": "EXISTING_DATE_ALIAS_OWNER_TEXT_PARITY_OPEN",
+      "requiredNextGate": "Compare resolved individual Sunday source IDs and exact readings/collects/chant rows in native 1962 Proper without adding a new resolver.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "EXPLANATORY_STUDIES_PUBLICATION",
+      "sourceArticleIds": [
+        "a0013_nouveau",
+        "a0188_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien"
+      ],
+      "targetOwnerDomain": "MASS_EXPLORER_STUDIES",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/learn/mass-explorer.js",
+          "blobSha": "4622f555c9353cacc313f3b7096fd86e9808147b"
+        },
+        {
+          "path": "src/learn/mass-explorer-study-publication.js",
+          "blobSha": "2217cc885932063c3c5ce2746ca8a3a5070f2f63"
+        },
+        {
+          "path": "data/learn/mass-explorer-approved-studies.v1.json",
+          "blobSha": "fb0f4f8de2b7c9e13d7463c83f73929646a12e38"
+        }
+      ],
+      "sourceClaim": "Guéranger commentary offers historical meditation/typology that might inform separate original editorial studies.",
+      "existingOwnerEvidence": "The present study release manifest explicitly has status NO_APPROVED_STUDIES and zero entries; reader supports only approved original bilingual prose through release gate.",
+      "disposition": "OWNER_SUPPORT_PRESENT_CONTENT_RELEASE_EMPTY",
+      "requiredNextGate": "If content is worthwhile, draft new original prose with specific claims, owner paragraph IDs, source provenance and reviewed rights; no rehosted French text.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "MYSTERIUM_FIDEI_1965",
+      "sourceArticleIds": [
+        "a0126_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0126_ancien"
+      ],
+      "targetOwnerDomain": "FORMATION_THEOLOGY_NOT_PROPER",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        },
+        {
+          "path": "src/learn/mass-explorer.js",
+          "blobSha": "4622f555c9353cacc313f3b7096fd86e9808147b"
+        }
+      ],
+      "sourceClaim": "The source is Paul VI's 1965 encyclical and not a 1962 Mass Proper.",
+      "existingOwnerEvidence": "Selected Proper projection is limited to an already resolved 1962 celebration; cannot use a 1965 encyclical as a liturgical text slot.",
+      "disposition": "DOCUMENT_THEOLOGY_OUTSIDE_MASS_PROPER",
+      "requiredNextGate": "Retain as a separate doctrine/reference candidate only if independently sourced and genuinely needed, with rights review.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "DIVINE_OFFICE_NINE_SOURCES",
+      "sourceArticleIds": [
+        "a0141_ancien",
+        "a0168_ancien",
+        "a0169_ancien",
+        "a0650_ancien",
+        "a0178_ancien",
+        "a0189_ancien",
+        "a0195_ancien",
+        "a0201_ancien",
+        "a0216_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0141_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0168_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0169_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0650_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0178_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0189_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0195_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0201_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0216_ancien"
+      ],
+      "targetOwnerDomain": "RESEARCH_OFFICE_OUT_OF_SCOPE",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/learn/mass-explorer.js",
+          "blobSha": "4622f555c9353cacc313f3b7096fd86e9808147b"
+        },
+        {
+          "path": "src/learn/mass-explorer-study-publication.js",
+          "blobSha": "2217cc885932063c3c5ce2746ca8a3a5070f2f63"
+        }
+      ],
+      "sourceClaim": "Nine Office/Matins/poetry pages include different scriptural sequences, some translated by third parties.",
+      "existingOwnerEvidence": "Mass Explorer currently owns Mass study, not an Office experience; no new module is requested.",
+      "disposition": "OUT_OF_SCOPE_AND_TRANSLATION_RIGHTS_HOLD",
+      "requiredNextGate": "Retain bibliography and careful original author attributions only. Never append Office readings to the 1962 Mass.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "caseId": "REQUIEM_SPECIAL_FORMULARY",
+      "sourceArticleIds": [
+        "a0261_ancien",
+        "a0404_ancien"
+      ],
+      "sourceUrls": [
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0261_ancien",
+        "https://icrspfrance.fr/textes-liturgiques.php?article=a0404_ancien"
+      ],
+      "targetOwnerDomain": "MASS_EXISTING_REQUIEM_SELECTION",
+      "checkedOwnerFiles": [
+        {
+          "path": "src/mass/preflight-study-proper.js",
+          "blobSha": "d9538c73edc8539fdca438e6a4cb958df66976cd"
+        },
+        {
+          "path": "src/learn/mass-explorer-selected-calendar-proper.js",
+          "blobSha": "a95d95fd1b01efc9fdf19a05498209ae534430a0"
+        },
+        {
+          "path": "src/calendar/print-proper.js",
+          "blobSha": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0"
+        }
+      ],
+      "sourceClaim": "Funeral-day Requiem and daily Requiem are different Mass categories; ICRSP treats their purpose/prayers separately.",
+      "existingOwnerEvidence": "Preflight study handoff already recognizes an explicitly selected REQUIEM type, and will not invent a selection from calendar date.",
+      "disposition": "EXISTING_REQUIEM_TYPE_NO_EXACT_TEXT_PARITY",
+      "requiredNextGate": "Confirm the exact variant/formularies already in canonical Mass owner, and the current 1962 source paths before alleging missing Requiem texts.",
+      "originalSourceEditionCollated": false,
+      "canonicalOwnerExactRecordIdConfirmed": false,
+      "full1962FormularyTextParityCertified": false,
+      "reproductionRightsCleared": false,
+      "productionPublicationApproved": false
+    }
+  ],
+  "ownerRoutingPolicy": [
+    "Existing Calendar DayResolver and Mass Proper remain the sole liturgical selection owners.",
+    "Advisory Common candidate list and patristic commentary are not substitutes for printed 1962 Missal text.",
+    "Historic pre-1955 observances and local rites remain non-universal unless edition and jurisdiction validated.",
+    "Source claims may be corrected only inside an existing canonical owner after verified stable identity and explicit editorial review.",
+    "No source-hosted French prose or third-party translations may be reproduced without rights clearance."
+  ],
+  "release": {
+    "status": "RESEARCH_OWNER_COMPARISON_ONLY",
+    "publicationApproved": false,
+    "calendarUpdated": false,
+    "saintsUpdated": false,
+    "massExplorerUpdated": false,
+    "riteReaderUpdated": false,
+    "originalSourceTextCopied": false
+  },
+  "externalIndependentSourceChecks": [
+    {
+      "id": "CHANTAL_YEAR_AND_PONTIFF",
+      "sourceArticleId": "a0415_ancien",
+      "hostSource": "https://icrspfrance.fr/textes-liturgiques.php?article=a0415_ancien",
+      "hostClaims": {
+        "death": "1643-12-13",
+        "canonizer": "Clement XII",
+        "canonizationYear": 1767
+      },
+      "independentAuthority": "https://www.vaticanstate.va/fr/etat-et-gouvernorat/notes-generales/saint-du-jour/2522-sainte-jeanne-francoise-de-chantal.html",
+      "corroborated": {
+        "death": "1641-12-13",
+        "canonizer": "Clement XIII",
+        "canonizationDate": "1767-07-16"
+      },
+      "determination": "SOURCE_HOST_EDITORIAL_ERROR_CONFIRMED__EXISTING_SAINT_RECORD_ID_NOT_FOUND",
+      "applicationUpdated": false
+    },
+    {
+      "id": "CARACCIOLO_FOUNDATION_YEAR",
+      "sourceArticleId": "a0510_ancien",
+      "hostSource": "https://icrspfrance.fr/textes-liturgiques.php?article=a0510_ancien",
+      "hostClaims": {
+        "orderFoundationYear": 1558
+      },
+      "independentAuthority": "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/4249-june-4-saint-francis-caracciolo.html",
+      "corroborated": {
+        "birthYear": 1563,
+        "orderFoundationYear": 1588,
+        "approval": "1588-07-01"
+      },
+      "determination": "SOURCE_HOST_EDITORIAL_ERROR_CONFIRMED__EXISTING_SAINT_RECORD_ID_NOT_FOUND",
+      "applicationUpdated": false
+    }
+  ]
+}

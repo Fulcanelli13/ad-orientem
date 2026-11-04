@@ -1,0 +1,50 @@
+{
+  "schema": "AO_ICRSP_B39_BIBLIOGRAPHIC_AUTHORITY_FOR_PRINT_EDITION_TRIAGE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "method": "Independent institutional bibliographic witnesses identifying works, continuation authors and scholarly collected editions. These confirm edition-level facts, not individual ICRSP hosted paragraph provenance or republication rights.",
+  "works": [
+    {
+      "family": "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK",
+      "hostPanelLabel": "Dom Guéranger, l’Année Liturgique",
+      "confirmedWitness": {
+        "institution": "Abbaye Saint-Pierre de Solesmes / Éditions de Solesmes",
+        "url": "https://www.solesmes.com/node/9021",
+        "fact": "Guéranger published nine volumes between 1841 and 1866 and left L'Année liturgique unfinished at his death in 1875. His written work concludes on the eve of Trinity Sunday; Dom Lucien Fromage completed the Time after Pentecost in further volumes."
+      },
+      "candidatePrintedWitness": "Guéranger's original volumes (1841–1866), and the post-Trinity continuation attributed to Lucien Fromage. Precise edition, volume, page, and normalized paragraph must be checked independently.",
+      "action": "Do not infer Guéranger authorship from website label for all post-Trinity commentary. Partition by original dated volume and paragraph collation before attribution.",
+      "originalPageEditionAndLineCollated": false,
+      "hostedPassageAuthorReattributed": false,
+      "reproductionRightsCleared": false
+    },
+    {
+      "family": "FRANCIS_DE_SALES_HOST_ATTRIBUTION_UNVERIFIED",
+      "hostPanelLabel": "Saint François de Sales, Sermons",
+      "confirmedWitness": {
+        "institution": "Bibliothèque nationale de France, catalogue général",
+        "url": "https://catalogue.bnf.fr/ark:/12148/cb33015558w",
+        "fact": "The Annecy Visitation-edited Œuvres de saint François de Sales is a scholarly collection issued 1892–1964 in 27 volumes; Sermons appear in volumes VII–X, with named scientific editors."
+      },
+      "additionalWitness": {
+        "institution": "La Visitation Sainte-Marie d'Annecy",
+        "url": "https://visitationannecy.org/magasin/oeuvres/",
+        "fact": "The Abbey's present publication identifies sermons as vols VII-X, with separate correspondence and opuscula volumes."
+      },
+      "candidatePrintedWitness": "Annecy collected edition, Volumes VII–X (Sermons): match actual sermon date, text incipit, pages, whether sermon is full autograph/dictation, edited précis or plan.",
+      "action": "Do not equate a dated host panel, an editor's outline or a sermon plan with a complete attested sermon in the saint's words. Modern edition and translation rights remain unreviewed.",
+      "originalPageEditionAndLineCollated": false,
+      "hostedPassageAuthorReattributed": false,
+      "reproductionRightsCleared": false
+    }
+  ],
+  "totals": {
+    "bibliographicWorkFamiliesEvidenced": 2,
+    "hostedIndividualPanelsFullyCollated": 0,
+    "appParagraphParitiesApproved": 0,
+    "sourceRightsApproved": 0,
+    "publicationsApproved": 0
+  },
+  "publicationApproved": false,
+  "sourceProseCopied": false
+}

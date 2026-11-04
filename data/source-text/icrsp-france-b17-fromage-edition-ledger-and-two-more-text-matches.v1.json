@@ -1,0 +1,129 @@
+{
+  "schema": "AO_ICRSP_B17_FROMAGE_TWO_MORE_QUOTATIONS_AND_EDITION_LEDGER_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "prerequisite": "data/source-text/icrsp-france-b16-fromage-six-sunday-passage-crosscheck.v1.json",
+  "scope": "Two additional independently quoted passages from the historical study, six print-edition leads, and explicit source/author/1962 separation. No production publication.",
+  "incrementalCrossHostPassages": [
+    {
+      "articleId": "a0223_nouveau",
+      "sundayAfterPentecost": 5,
+      "anchor": "Former Sunday of the Fishing, whose Gospel was transferred to the preceding Sunday",
+      "primaryHostWebPage": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
+      "textualDelta": "Modern study extracts a shorter clause; ICRSP's sentence additionally describes Greek/Latin practice, no meaningful core-topic conflict demonstrated",
+      "existingProperSourcePath": "Tempora/Pent05-0",
+      "authorEvidence": "CONTINUATION_AUTHOR_BY_SERIES_HISTORY_AND_SECONDARY_QUOTATION_NOT_PHOTOGRAPHED_PRINT",
+      "siteLabel": "Dom Guéranger, l’Année Liturgique",
+      "originalPrintedParagraphRead": false,
+      "releaseApproved": false
+    },
+    {
+      "articleId": "a0241_ancien",
+      "sundayAfterPentecost": 7,
+      "anchor": "Multiplication of seven loaves previously named Seventh Sunday",
+      "primaryHostWebPage": "https://icrspfrance.fr/textes-liturgiques.php?article=a0241_ancien",
+      "textualDelta": "Modern study quotes a selected phrase, not the full paragraph; same historical-gospel-transfer assertion",
+      "existingProperSourcePath": "Tempora/Pent07-0",
+      "authorEvidence": "CONTINUATION_AUTHOR_BY_SERIES_HISTORY_AND_SECONDARY_QUOTATION_NOT_PHOTOGRAPHED_PRINT",
+      "siteLabel": "Dom Guéranger, l’Année Liturgique",
+      "originalPrintedParagraphRead": false,
+      "releaseApproved": false
+    }
+  ],
+  "previouslyCrossHostedArticleIds": [
+    "a0222_nouveau",
+    "a0364_ancien",
+    "a0365_ancien",
+    "a0443_ancien",
+    "a0478_ancien",
+    "a0488_ancien"
+  ],
+  "counts": {
+    "b14FlaggedPostPentecostArticles": 22,
+    "b16TextAnchors": 6,
+    "newTextAnchors": 2,
+    "totalDistinctTextAnchorsInSample": 8,
+    "originalPhotographedTitlePagesInspected": 0,
+    "originalPhotographedFourthSundayParagraphsInspected": 0,
+    "actualNineteenthCenturyFirstPrintingEditionVerified": 0,
+    "productionChanges": 0
+  },
+  "editionWitnesses": [
+    {
+      "year": 1882,
+      "role": "secondary_research_claim",
+      "evidenceUrl": "https://www.seldelaterre.fr/articles/sdt7/le-nouveau-visage-de-la-messe-%28iii%29",
+      "editionStatement": "Historian describes volume as edited in 1882",
+      "catalogueInspection": false,
+      "originalTitlePageInspected": false,
+      "claimGrade": "SECONDARY_DATE_NOT_FIRST_EDITION_CERTIFIED"
+    },
+    {
+      "year": 1883,
+      "role": "contemporary_publication_review",
+      "evidenceUrl": "https://www.liberius.net/articles/Bibliographie_catholique_%28tome_67%29.pdf",
+      "editionStatement": "February 1883 review of second continuation volume; review year is NOT proof of title-page year",
+      "catalogueInspection": false,
+      "originalTitlePageInspected": false,
+      "claimGrade": "HISTORICAL_REVIEW_BIBLIOGRAPHY"
+    },
+    {
+      "year": 1886,
+      "role": "library_catalogued_printing",
+      "evidenceUrl": "https://bibliotheque.seminaire-tournai.be/index.php?lvl=notice_display&id=53979",
+      "editionStatement": "H. Oudin, troisième édition, 584 pages, second volume of continuation",
+      "catalogueInspection": true,
+      "originalTitlePageInspected": false,
+      "claimGrade": "PHYSICAL_HOLDING_CATALOGUE"
+    },
+    {
+      "year": 1902,
+      "role": "library_catalogued_printing",
+      "evidenceUrl": "https://lasource.diocese85.org/pmb/opac_css/index.php?id=4568&lvl=author_see",
+      "editionStatement": "H. Oudin, 582 pages, L’Année liturgique vol 11 / Pentecôte tome II",
+      "catalogueInspection": true,
+      "originalTitlePageInspected": false,
+      "claimGrade": "PHYSICAL_HOLDING_CATALOGUE"
+    },
+    {
+      "year": 1905,
+      "role": "library_catalogued_printing",
+      "evidenceUrl": "https://moulins.bibliossimo.net/index.php?id=27261&lvl=notice_display&seule=1",
+      "editionStatement": "10e édition, VII–639 pages, second volume of continuation",
+      "catalogueInspection": true,
+      "originalTitlePageInspected": false,
+      "claimGrade": "PHYSICAL_HOLDING_CATALOGUE"
+    },
+    {
+      "year": 1911,
+      "role": "digitized_facsimile_locator",
+      "evidenceUrl": "https://archive.org/details/lanneliturgiqu11gu",
+      "secondaryMirror": "https://www.bibliotheque-catholique.com/liturgie/dom-gueranger/l-annee-liturgique-tome-11-le-temps-apres-la-pentecote-tome-2",
+      "editionStatement": "1911 digitization/secondary mirror lists 657 pages; 1911 PDF available but inaccessible for visual inspection in this review",
+      "catalogueInspection": true,
+      "originalTitlePageInspected": false,
+      "claimGrade": "DIGITAL_FACSIMILE_IDENTIFIED_UNINSPECTED"
+    }
+  ],
+  "centuryVariant": {
+    "articleId": "a0222_nouveau",
+    "firstHost": "ICRSP",
+    "firstHostReading": "XVIe siècle",
+    "firstHostUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+    "secondHost": "Sel de la Terre historical study",
+    "secondHostReading": "XVe siècle",
+    "secondHostUrl": "https://www.seldelaterre.fr/articles/sdt7/le-nouveau-visage-de-la-messe-%28iii%29",
+    "disposition": "UNRESOLVED_SOURCE_VARIANT_AWAIT_ORIGINAL_PRINT_IMAGE",
+    "historicalCenturyAssertionPromotable": false
+  },
+  "authorship": "Solesmes and BnF identify Lucien Fromage as author of post-Pentecost continuation; bibliographic library indexes can still show Prosper Gueranger work-family author; no user-facing individual attribution promoted.",
+  "historicalDateResolution": "The 1882 publication reported by modern study and Feb 1883 review are chronologically compatible; neither certifies a first printing or proves which edition's reading is correct.",
+  "provenanceBoundaries": [
+    "Do not count secondary quotations as original-volume page verification.",
+    "Do not infer 1962 Proper changes from narrative about older Sunday Gospel reordering.",
+    "Retain 'Présentation' and other site editorial commentary separately from Fromage text.",
+    "Do not republish hosted French commentary without a rights review.",
+    "Never relabel all 492 hosted Guéranger-work panels as personally authored by Fromage."
+  ],
+  "releaseApproved": false
+}

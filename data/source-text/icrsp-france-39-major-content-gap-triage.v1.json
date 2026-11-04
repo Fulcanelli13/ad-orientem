@@ -1,0 +1,1822 @@
+{
+  "schema": "AO_ICRSP_39_MAJOR_CONTENT_GAP_TRIAGE_V1",
+  "asOf": "2026-10-25",
+  "status": "PRELIMINARY_SOURCE_TO_EXISTING_FEATURE_PARITY_WITH_EXPLICIT_UNRESOLVED_GAPS",
+  "issue": 1665,
+  "sourceOfTruth": "EXISTING_CALENDAR_AND_MASS_OWNERS_NOT_ICRSP",
+  "sources": [
+    "data/source-text/icrsp-france-calendar-39-major-review.v1.json",
+    "data/mass/scripture-feast-reading-supplement.v1.json",
+    "src/calendar/liturgical-year.js",
+    "src/calendar/traditional-year-v384.js",
+    "data/source-text/icrsp-france-temporal-189-dedup-verified.v1.json"
+  ],
+  "verificationPolicy": [
+    "A missing entry in one checked file does NOT prove a missing feature; other canonical registries may own it.",
+    "Only the exact title-to-fixture pairs explicitly reviewed can receive an existing Scripture-source-path flag.",
+    "Original text coverage, approved modern French translation rights and exact 1962 rubric compliance remain unverified.",
+    "Never merge textual duplicates across distinct historical Mass rites.",
+    "Keep links and bibliographic labels, not protected commentary paragraphs."
+  ],
+  "totals": {
+    "majorCalendarCelebrationsReviewed": 39,
+    "existingCalendarDisplayTitlesMatched": 39,
+    "sourcePageCommentaryPanelsReferenced": 164,
+    "existingScriptureFeastSupplementPathMatches": 17,
+    "notMatchedInSampledFeastSupplement": 22,
+    "existingCalendarCustomAnchorsChecked": 2,
+    "sourceRowsWithHistoricalOrDuplicateRisks": 10,
+    "sourceLinksPromotedToCanonical": 0,
+    "genuinelyAbsentAppFeaturesProven": 0,
+    "publicationRightsCleared": 0
+  },
+  "rows": [
+    {
+      "id": "ICRSP-CAL-GAP-001",
+      "sourceArticleId": "a0088_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "sourceIndexLabel": "1ᵉʳ dimanche de l’Avent",
+      "calendarRenderedEnglishTitle": "First Sunday of Advent",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "PRESENT_IN_EXISTING_CALENDAR",
+        "source": "src/calendar/traditional-year-v384.js#v384Events",
+        "eventId": "advent-family-traditions"
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-002",
+      "sourceArticleId": "a0089_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
+      "sourceIndexLabel": "2ᵉ dimanche de l’Avent",
+      "calendarRenderedEnglishTitle": "Second Sunday of Advent",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-003",
+      "sourceArticleId": "a0090_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0090_ancien",
+      "sourceIndexLabel": "3ᵉ dimanche de l’Avent",
+      "calendarRenderedEnglishTitle": "Third Sunday of Advent · Gaudete",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-004",
+      "sourceArticleId": "a0091_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0091_ancien",
+      "sourceIndexLabel": "4ᵉ dimanche de l’Avent",
+      "calendarRenderedEnglishTitle": "Fourth Sunday of Advent",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-005",
+      "sourceArticleId": "a0092_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0092_ancien",
+      "sourceIndexLabel": "Vigile de la Nativité",
+      "calendarRenderedEnglishTitle": "Vigil of the Nativity",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-006",
+      "sourceArticleId": "a0096_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0096_ancien",
+      "sourceIndexLabel": "Nativité du Seigneur (25 décembre)",
+      "calendarRenderedEnglishTitle": "Nativity of Our Lord",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-007",
+      "sourceArticleId": "a0104_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0104_ancien",
+      "sourceIndexLabel": "Octave de la Nativité (1ᵉʳ janvier, Circoncision du Seigneur)",
+      "calendarRenderedEnglishTitle": "Octave of the Nativity · Circumcision of Our Lord",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-008",
+      "sourceArticleId": "a0108_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_ancien",
+      "sourceIndexLabel": "Epiphanie du Seigneur (6 janvier)",
+      "calendarRenderedEnglishTitle": "Epiphany of Our Lord",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Sancti/01-06",
+        "exactFixtureTitle": "Epiphany of the Lord",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-009",
+      "sourceArticleId": "a0146_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "sourceIndexLabel": "Purification de la T. Sainte Vierge (Présentation du Seigneur)",
+      "calendarRenderedEnglishTitle": "Purification of the Blessed Virgin Mary · Candlemas",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Sancti/02-02",
+        "exactFixtureTitle": "Purification of the BVM · Candlemas Mass",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "PRESENT_IN_EXISTING_CALENDAR",
+        "source": "src/calendar/traditional-year-v384.js#v384Events",
+        "eventId": "candlemas"
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 2,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-010",
+      "sourceArticleId": "a0130_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "sourceIndexLabel": "Dimanche de la Septuagésime",
+      "calendarRenderedEnglishTitle": "Septuagesima Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 1,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-011",
+      "sourceArticleId": "a0139_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
+      "sourceIndexLabel": "Mer. des Cendres",
+      "calendarRenderedEnglishTitle": "Ash Wednesday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 3,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-012",
+      "sourceArticleId": "a0155_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
+      "sourceIndexLabel": "1ᵉʳ Dimanche de Carême",
+      "calendarRenderedEnglishTitle": "First Sunday of Lent",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad1-0",
+        "exactFixtureTitle": "First Sunday of Lent",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-013",
+      "sourceArticleId": "a0180_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "sourceIndexLabel": "2ᵉ dimanche de Carême",
+      "calendarRenderedEnglishTitle": "Second Sunday of Lent",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad2-0",
+        "exactFixtureTitle": "Second Sunday of Lent",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-014",
+      "sourceArticleId": "a0188_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
+      "sourceIndexLabel": "3ᵉ dimanche de Carême",
+      "calendarRenderedEnglishTitle": "Third Sunday of Lent",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 3,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-015",
+      "sourceArticleId": "a0199_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
+      "sourceIndexLabel": "4ᵉ Dimanche de Carême",
+      "calendarRenderedEnglishTitle": "Fourth Sunday of Lent · Laetare",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad4-0",
+        "exactFixtureTitle": "Fourth Sunday of Lent (Laetare)",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 3,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-016",
+      "sourceArticleId": "a0721_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0721_ancien",
+      "sourceIndexLabel": "St Joseph, époux de la bienheureuse Vierge Marie, confesseur",
+      "calendarRenderedEnglishTitle": "Saint Joseph, Spouse of the Blessed Virgin Mary",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-017",
+      "sourceArticleId": "a0002_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0002_nouveau",
+      "sourceIndexLabel": "Premier Dimanche de la Passion",
+      "calendarRenderedEnglishTitle": "Passion Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-018",
+      "sourceArticleId": "a0021_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0021_nouveau",
+      "sourceIndexLabel": "Annonciation de la Bse Vierge Marie",
+      "calendarRenderedEnglishTitle": "Annunciation of the Blessed Virgin Mary",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Sancti/03-25",
+        "exactFixtureTitle": "Annunciation of the BVM",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-019",
+      "sourceArticleId": "a0593_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+      "sourceIndexLabel": "Dimanche des Rameaux",
+      "calendarRenderedEnglishTitle": "Palm Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad6-0",
+        "exactFixtureTitle": "Palm Sunday · Mass, not palm blessing",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": [
+          "ICRSP-TEMP-HASH-G04",
+          "ICRSP-TEMP-HASH-G05",
+          "ICRSP-TEMP-HASH-G06"
+        ]
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "reviewPriority": "P0_RUBRICAL_EDITION_CONFLICT",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-020",
+      "sourceArticleId": "a0013_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+      "sourceIndexLabel": "Lun. saint",
+      "calendarRenderedEnglishTitle": "Holy Monday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad6-1",
+        "exactFixtureTitle": "Holy Monday · Mass",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": [
+          "ICRSP-TEMP-HASH-G07",
+          "ICRSP-TEMP-HASH-G08",
+          "ICRSP-TEMP-HASH-G09"
+        ]
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-021",
+      "sourceArticleId": "a0014_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+      "sourceIndexLabel": "Mar. saint",
+      "calendarRenderedEnglishTitle": "Holy Tuesday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad6-2",
+        "exactFixtureTitle": "Holy Tuesday · Mass lesson, Passion held",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": [
+          "ICRSP-TEMP-HASH-G10",
+          "ICRSP-TEMP-HASH-G11",
+          "ICRSP-TEMP-HASH-G12"
+        ]
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-022",
+      "sourceArticleId": "a0015_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+      "sourceIndexLabel": "Mer. saint",
+      "calendarRenderedEnglishTitle": "Holy Wednesday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad6-3",
+        "exactFixtureTitle": "Holy Wednesday · Mass second lesson (first lesson separately source-ordered)",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": [
+          "ICRSP-TEMP-HASH-G13",
+          "ICRSP-TEMP-HASH-G14"
+        ]
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-023",
+      "sourceArticleId": "a0020_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+      "sourceIndexLabel": "Jeu. saint · ap. 1955",
+      "calendarRenderedEnglishTitle": "Holy Thursday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Quad6-4",
+        "exactFixtureTitle": "Holy Thursday · Mass of the Lord's Supper",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 1,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE"
+      ],
+      "reviewPriority": "P0_RUBRICAL_EDITION_CONFLICT",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-024",
+      "sourceArticleId": "a0029_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "sourceIndexLabel": "Ven. saint · ap. 1955",
+      "calendarRenderedEnglishTitle": "Good Friday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE"
+      ],
+      "reviewPriority": "P0_RUBRICAL_EDITION_CONFLICT",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-025",
+      "sourceArticleId": "a0030_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+      "sourceIndexLabel": "Sam. saint · ap. 1955",
+      "calendarRenderedEnglishTitle": "Holy Saturday · Easter Vigil",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 4,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "INTERNAL_INDEX_H2_EDITION_CONFLICT_AND_ALTERNATIVE",
+        "H2_1951_VS_INDEX_1955_DISPUTE"
+      ],
+      "reviewPriority": "P0_RUBRICAL_EDITION_CONFLICT",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-026",
+      "sourceArticleId": "a0031_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+      "sourceIndexLabel": "Dimanche de la Résurrection (Dimanche de Pâques)",
+      "calendarRenderedEnglishTitle": "Easter Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Pasc0-0",
+        "exactFixtureTitle": "Easter Sunday",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-027",
+      "sourceArticleId": "a0038_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0038_nouveau",
+      "sourceIndexLabel": "Dimanche in Albis dans l’Octave de Pâques",
+      "calendarRenderedEnglishTitle": "Low Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-028",
+      "sourceArticleId": "a0111_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+      "sourceIndexLabel": "Ascension du Seigneur",
+      "calendarRenderedEnglishTitle": "Ascension of Our Lord",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Pasc5-4",
+        "exactFixtureTitle": "Ascension",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": [
+          "ICRSP-TEMP-HASH-G15",
+          "ICRSP-TEMP-HASH-G16",
+          "ICRSP-TEMP-HASH-G17"
+        ]
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "MULTIPLE_WITNESSES_EDITION_UNDETERMINED",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-029",
+      "sourceArticleId": "a0167_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0167_nouveau",
+      "sourceIndexLabel": "Dimanche de la Pentecôte",
+      "calendarRenderedEnglishTitle": "Pentecost Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Pasc7-0",
+        "exactFixtureTitle": "Pentecost Sunday",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "SEPARATE_VIGIL_MATERIAL_NOT_SUNDAY_EQUIVALENT"
+      ],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-030",
+      "sourceArticleId": "a0294_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien",
+      "sourceIndexLabel": "Fête de la Trinité",
+      "calendarRenderedEnglishTitle": "Trinity Sunday",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Pent01-0",
+        "exactFixtureTitle": "Trinity Sunday",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-031",
+      "sourceArticleId": "a0297_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "sourceIndexLabel": "Fête-Dieu ou Fête du Très Saint Sacrement",
+      "calendarRenderedEnglishTitle": "Corpus Christi",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Pent01-4",
+        "exactFixtureTitle": "Corpus Christi",
+        "readingSlots": [
+          "EPISTLE_OR_LESSON",
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 2,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-032",
+      "sourceArticleId": "a0220_nouveau",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+      "sourceIndexLabel": "Fête du Sacré-Coeur",
+      "calendarRenderedEnglishTitle": "Sacred Heart of Jesus",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "EXISTING_APPROVED_PATH_PIN_IN_FEAST_SUPPLEMENT",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "sourcePath": "Tempora/Pent02-5",
+        "exactFixtureTitle": "Most Sacred Heart of Jesus",
+        "readingSlots": [
+          "GOSPEL"
+        ],
+        "note": "A listed scripture context is not proof that all Proper texts, interludes, or special rite branches are covered."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": [
+          "ICRSP-TEMP-HASH-G23",
+          "ICRSP-TEMP-HASH-G24",
+          "ICRSP-TEMP-HASH-G25"
+        ]
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-033",
+      "sourceArticleId": "a0309_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0309_ancien",
+      "sourceIndexLabel": "Nativité de Saint Jean-Baptiste",
+      "calendarRenderedEnglishTitle": "Nativity of Saint John the Baptist",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 6,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P1_HIGH_LITURGICAL_COMPLEXITY",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-034",
+      "sourceArticleId": "a0318_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0318_ancien",
+      "sourceIndexLabel": "Sts Pierre et Paul, apôtres",
+      "calendarRenderedEnglishTitle": "Saints Peter and Paul",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 6,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-035",
+      "sourceArticleId": "a0409_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0409_ancien",
+      "sourceIndexLabel": "Assomption de la T. Sᵗᵉ Vierge Marie",
+      "calendarRenderedEnglishTitle": "Assumption of the Blessed Virgin Mary",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 6,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-036",
+      "sourceArticleId": "a0468_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0468_ancien",
+      "sourceIndexLabel": "Dédicace de St Michel, archange",
+      "calendarRenderedEnglishTitle": "Dedication of Saint Michael the Archangel",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 3,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-037",
+      "sourceArticleId": "a0507_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0507_ancien",
+      "sourceIndexLabel": "Dernier Dimanche d’Octobre : le Christ-Roi",
+      "calendarRenderedEnglishTitle": "Christ the King",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 2,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-038",
+      "sourceArticleId": "a0541_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0541_ancien",
+      "sourceIndexLabel": "Fête de Tous les Saints",
+      "calendarRenderedEnglishTitle": "All Saints",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 7,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    },
+    {
+      "id": "ICRSP-CAL-GAP-039",
+      "sourceArticleId": "a0542_ancien",
+      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0542_ancien",
+      "sourceIndexLabel": "Commémoraison de tous les Fidèles défunts",
+      "calendarRenderedEnglishTitle": "Commemoration of All the Faithful Departed",
+      "existingCalendar": {
+        "module": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+        "titlePresent": true,
+        "stableCanonicalObservanceId": null,
+        "identityStatus": "TITLE_WITNESS_CANDIDATE_NOT_APPROVED_1962_MAPPING"
+      },
+      "existingMassScriptureContext": {
+        "status": "NOT_MATCHED_IN_THIS_55_ENTRY_FEAST_SUPPLEMENT_ONLY",
+        "sourceFile": "data/mass/scripture-feast-reading-supplement.v1.json",
+        "note": "Do not infer that the Mass Proper or other Scripture registries lack this feast."
+      },
+      "existingCalendarCustom": {
+        "status": "NOT_AUDITED_FOR_THIS_ROW",
+        "note": "Absence of this field does not imply a missing custom."
+      },
+      "icrspCommentary": {
+        "sourcePanelCount": 5,
+        "status": "EXACT_PANEL_ORDINALS_IN_783_SOURCE_ARTIFACT",
+        "artifactRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+        "originalEditionVerified": false,
+        "rightsCleared": false,
+        "dedupGroupIds": []
+      },
+      "openEvidenceQuestions": [
+        "DO_EXISTING_MASS_EXPLORER_AND_CALENDAR_ALREADY_EXPLAIN_THIS_SOURCE_MATERIAL?",
+        "WHICH_EXACT_PARAGRAPHS_ADD_NEW_VERIFIABLE_VALUE?",
+        "IS_THE_HOSTED_TEXT_AUTHENTIC_IN_ITS ORIGINAL_EDITION_AND_TRANSLATION?",
+        "DO_SOURCE_EDITION_AND_PRIEST_ACTION_SCOPE_MATCH_1962?",
+        "ARE_PUBLICATION_RIGHTS_CLEARED?",
+        "WHAT_IS_THE_CORRECT_EXISTING_CANONICAL_ID?"
+      ],
+      "riskFlags": [],
+      "reviewPriority": "P2_STANDARD_SOURCE_REVIEW",
+      "gapVerdict": "EDITORIAL_PARITY_UNKNOWN_NOT_A_CONFIRMED_MISSING_FEATURE",
+      "promotionState": "REVIEW_ONLY_NO_CONTENT_IMPORTED"
+    }
+  ]
+}

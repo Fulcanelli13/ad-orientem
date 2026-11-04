@@ -1,0 +1,275 @@
+{
+  "schema": "AO_ICRSP_B42_REAL_CALENDAR_18_RUNTIME_REVIEWED_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "purpose": "Permanent compact independent observation of the actual production 1962 Calendar resolver, not published content or full printed-Missal collation.",
+  "evidence": {
+    "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40368440191",
+    "jobId": 121732368652,
+    "headSha": "d3585a8ef755960c61961bf9d486cff295604267",
+    "producedAt": "2026-10-26T17:38:44.495Z",
+    "originalActionsArtifactId": 12672356679,
+    "originalJsonBytes": 41597,
+    "originalJsonSha256": "913c5670e61354005a196ed1964d7367344b83fb12f86b307665e55ca6247b65",
+    "originalArtifactRetentionDays": 7,
+    "canonicalOriginalArtifactNotPublishedHere": true,
+    "method": "Locally served canonical index.html in GitHub ubuntu-latest Playwright Chromium; AO_RUNTIME_V8.resolver.resolveDay; real select/print projection.",
+    "sourcePlan": "data/source-text/icrsp-france-b42-real-calendar-18-proper-probe-plan.v1.json",
+    "sourceTest": "tests/icrsp-b42-real-1962-selected-proper-browser.mjs"
+  },
+  "counts": {
+    "calendarDatesObserved": 18,
+    "resolverReady": 18,
+    "canonicalSelectedSourcePaths": 18,
+    "englishPrintReady": 5,
+    "frenchPrintReady": 5,
+    "bilingualExplorerReady": 5,
+    "printGateBlockedFormSpecificCommemorationUncertified": 9,
+    "printGateBlockedSpecialStructureNativeMissalOnly": 4,
+    "documentedActualCalendarSourceTextDefects": 0,
+    "uncollatedOriginalFullPrintText": 18,
+    "productionFilesModified": 0
+  },
+  "strictAssertions": {
+    "originalRunStatus": "FAILED_TWO_FALSE_POSITIVE_LATIN_PUNCTUATION_MATCHERS",
+    "originalReportedIssueCodes": [
+      "SAINT_MARTIN_FEAST_SPECIFIC_COLLECT_MISSING_OR_REPLACED_BY_GENERIC_COMMON",
+      "REMI_FERIAL_DA_PACEM_INTROIT_MISSING"
+    ],
+    "independentlyRechecked": {
+      "stMartin20261111": {
+        "pass": true,
+        "main": "sancti:11-11:3:w",
+        "sourcePath": "Sancti/11-11",
+        "introitPhrase": "Statuit ei Dominus",
+        "ownCollectPhrase": "Deus qui conspicis",
+        "note": "Source includes Eccli reference and accented Latin, Collect prints Deus, qui cónspicis with a comma; original regex omitted comma."
+      },
+      "stRemigius20261001": {
+        "pass": true,
+        "main": ":feria:4:w",
+        "sourcePath": "Tempora/Pent18-0",
+        "introitPhrase": "Da pacem Domine",
+        "note": "Source prints Da pacem, Dómine with a comma; actual principal is feria and proper is Tempora/Pent18-0."
+      }
+    },
+    "correctionCommit": "badd1a8e4a8c3016845fcbbef970791c251d0a52",
+    "correctedStrictCIRerun": "PENDING_AT_REPORT_CREATION",
+    "signoff": "Direct witness lexical match, not full exact printed 1962 edition/commemoration release permission"
+  },
+  "dateRows": [
+    {
+      "date": "2026-11-11",
+      "mainId": "sancti:11-11:3:w",
+      "sourcePath": "Sancti/11-11",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 45:30 ℣. Státuit ei Dóminus testaméntum pacis, et príncipem fecit eum: ut sit illi sacerd",
+      "latinCollectShort": "Deus, qui cónspicis, quia ex nulla nostra virtúte subsístimus: concéde propítius; ut, intercess",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-10-01",
+      "mainId": ":feria:4:w",
+      "sourcePath": "Tempora/Pent18-0",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 36:18 ℣. Da pacem, Dómine, sustinéntibus te, ut prophétæ tui fidéles inveniántur: exáudi ",
+      "latinCollectShort": "Dírigat corda nostra, quǽsumus, Dómine, tuæ miseratiónis operátio: quia tibi sine te placére no",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-11-04",
+      "mainId": "sancti:11-04:3:w",
+      "sourcePath": "Sancti/11-04",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 45:30 ℣. Státuit ei Dóminus testaméntum pacis, et príncipem fecit eum: ut sit illi sacerd",
+      "latinCollectShort": "Ecclésiam tuam, Dómine, sancti Caróli Confessóris tui atque Pontíficis contínua protectióne cus",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-11-17",
+      "mainId": "sancti:11-17:3:w",
+      "sourcePath": "Sancti/11-17",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 45:30 ℣. Státuit ei Dóminus testaméntum pacis, et príncipem fecit eum: ut sit illi sacerd",
+      "latinCollectShort": "℣. Da, quǽsumus, omnípotens Deus: ut beáti Gregórii Confessóris tui atque Pontíficis veneránda ",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "SPECIAL_STRUCTURE_NATIVE_MISSAL_ONLY"
+    },
+    {
+      "date": "2026-12-06",
+      "mainId": "tempora:Adv2-0:1:v",
+      "sourcePath": "Tempora/Adv2-0",
+      "sourceReady": true,
+      "latinIntroitShort": "Is 30:30 ℣. Pópulus Sion, ecce, Dóminus véniet ad salvándas gentes: et audítam fáciet Dóminus g",
+      "latinCollectShort": "Excita, Dómine, corda nostra ad præparándas Unigéniti tui vias: ut, per ejus advéntum, purificá",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "SPECIAL_STRUCTURE_NATIVE_MISSAL_ONLY"
+    },
+    {
+      "date": "2027-12-06",
+      "mainId": "sancti:12-06:3:w",
+      "sourcePath": "Sancti/12-06",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 45:30 ℣. Státuit ei Dóminus testaméntum pacis, et príncipem fecit eum: ut sit illi sacerd",
+      "latinCollectShort": "Deus, qui beátum Nicoláum Pontíficem innúmeris decorásti miráculis: tríbue, quǽsumus; ut ejus m",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-03-06",
+      "mainId": "tempora:Quad2-5:3:v",
+      "sourcePath": "Tempora/Quad2-5",
+      "sourceReady": true,
+      "latinIntroitShort": "Ps 16:15 ℣. Ego autem cum justítia apparébo in conspéctu tuo: satiábor, dum manifestábitur glór",
+      "latinCollectShort": "Da, quǽsumus, omnípotens Deus: ut, sacro nos purificánte jejúnio, sincéris méntibus ad sancta v",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-07-10",
+      "mainId": "sancti:07-10:3:r",
+      "sourcePath": "Sancti/07-10",
+      "sourceReady": true,
+      "latinIntroitShort": "Ps 112:1; 112:9 ℣. Laudáte, púeri, Dóminum, laudáte nomen Dómini: qui habitáre facit stérilem i",
+      "latinCollectShort": "Præsta, quǽsumus, omnípotens Deus: ut, qui gloriósos Mártyres fortes in sua confessióne cognóvi",
+      "frenchPrintReady": true,
+      "explorerFrenchReady": true,
+      "bilingualPublicationGateCategory": "BILINGUAL_GATE_READY"
+    },
+    {
+      "date": "2026-11-25",
+      "mainId": "sancti:11-25:3:r",
+      "sourcePath": "Sancti/11-25",
+      "sourceReady": true,
+      "latinIntroitShort": "Ps 118:46-47 ℣. Loquébar de testimóniis tuis in conspéctu regum, et non confundébar: et meditáb",
+      "latinCollectShort": "Deus, qui dedísti legem Móysi in summitáte montis Sínai, et in eódem loco per sanctos Angelos t",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "SPECIAL_STRUCTURE_NATIVE_MISSAL_ONLY"
+    },
+    {
+      "date": "2026-11-22",
+      "mainId": "tempora:Pent24-0:2:g",
+      "sourcePath": "Tempora/Pent24-0",
+      "sourceReady": true,
+      "latinIntroitShort": "Jer 29:11; 29:12; 29:14 ℣. Dicit Dóminus: Ego cógito cogitatiónes pacis, et non afflictiónis: i",
+      "latinCollectShort": "Excita, quǽsumus, Dómine, tuórum fidélium voluntátes: ut, divíni óperis fructum propénsius exse",
+      "frenchPrintReady": true,
+      "explorerFrenchReady": true,
+      "bilingualPublicationGateCategory": "BILINGUAL_GATE_READY"
+    },
+    {
+      "date": "2026-10-15",
+      "mainId": "sancti:10-15:3:w",
+      "sourcePath": "Sancti/10-15",
+      "sourceReady": true,
+      "latinIntroitShort": "Ps 44:8 ℣. Dilexísti justítiam, et odísti iniquitátem: proptérea unxit te Deus, Deus tuus, óleo",
+      "latinCollectShort": "Exáudi nos, Deus, salutáris noster: ut sicut de beátæ Terésiæ Vírginis tuæ festivitáte gaudémus",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "SPECIAL_STRUCTURE_NATIVE_MISSAL_ONLY"
+    },
+    {
+      "date": "2026-08-28",
+      "mainId": "sancti:08-28:3:w",
+      "sourcePath": "Sancti/08-28",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 15:5 ℣. In médio Ecclésiæ apéruit os ejus: et implévit eum Dóminus spíritu sapiéntiæ et i",
+      "latinCollectShort": "Adésto supplicatiónibus nostris, omnípotens Deus: et, quibus fidúciam sperándæ pietátis indúlge",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-11-07",
+      "mainId": "commune:C10t:4:w",
+      "sourcePath": "Commune/C10t",
+      "sourceReady": true,
+      "latinIntroitShort": "Sedulius ℣. Salve, sancta parens, eníxa puérpera Regem: qui cælum terrámque regit in sǽcula sæc",
+      "latinCollectShort": "Concéde nos fámulos tuos, quǽsumus, Dómine Deus, perpétua mentis et córporis sanitáte gaudére: ",
+      "frenchPrintReady": true,
+      "explorerFrenchReady": true,
+      "bilingualPublicationGateCategory": "BILINGUAL_GATE_READY"
+    },
+    {
+      "date": "2026-12-05",
+      "mainId": "tempora:Adv1-6:3:v",
+      "sourcePath": "Tempora/Adv1-6",
+      "sourceReady": true,
+      "latinIntroitShort": "",
+      "latinCollectShort": "Intercéssio nos, quǽsumus, Dómine, beáti Sabbas Abbátis comméndet: ut, quod nostris méritis non",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-02-03",
+      "mainId": ":feria:4:w",
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceReady": true,
+      "latinIntroitShort": "Ps 17:5; 17:6; 17:7 ℣. Circumdedérunt me gémitus mortis, dolóres inférni circumdedérunt me: et ",
+      "latinCollectShort": "Preces pópuli tui, quǽsumus, Dómine, cleménter exáudi: ut, qui juste pro peccátis nostris afflí",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-10-07",
+      "mainId": "sancti:10-07:2:w",
+      "sourcePath": "Sancti/10-07",
+      "sourceReady": true,
+      "latinIntroitShort": "℣. Gaudeámus omnes in Dómino, diem festum celebrántes sub honóre beátæ Maríæ Vírginis: de cujus",
+      "latinCollectShort": "Deus, cujus Unigénitus per vitam, mortem et resurrectiónem suam nobis salútis ætérnæ præmia com",
+      "frenchPrintReady": false,
+      "explorerFrenchReady": false,
+      "bilingualPublicationGateCategory": "UNDECIDED_FORM_SPECIFIC_COMMEMORATION"
+    },
+    {
+      "date": "2026-09-27",
+      "mainId": "tempora:Pent18-0:2:g",
+      "sourcePath": "Tempora/Pent18-0",
+      "sourceReady": true,
+      "latinIntroitShort": "Eccli 36:18 ℣. Da pacem, Dómine, sustinéntibus te, ut prophétæ tui fidéles inveniántur: exáudi ",
+      "latinCollectShort": "Dírigat corda nostra, quǽsumus, Dómine, tuæ miseratiónis operátio: quia tibi sine te placére no",
+      "frenchPrintReady": true,
+      "explorerFrenchReady": true,
+      "bilingualPublicationGateCategory": "BILINGUAL_GATE_READY"
+    },
+    {
+      "date": "2026-06-04",
+      "mainId": "tempora:Pent01-4:1:w",
+      "sourcePath": "Tempora/Pent01-4",
+      "sourceReady": true,
+      "latinIntroitShort": "Ps 80:17 ℣. Cibávit eos ex ádipe fruménti, allelúja: et de petra, melle saturávit eos, allelúja",
+      "latinCollectShort": "Deus, qui nobis sub Sacraménto mirábili passiónis tuæ memóriam reliquísti: tríbue, quǽsumus, it",
+      "frenchPrintReady": true,
+      "explorerFrenchReady": true,
+      "bilingualPublicationGateCategory": "BILINGUAL_GATE_READY"
+    }
+  ],
+  "exceptions": [
+    {
+      "date": "2026-12-05",
+      "issue": "Observed sourcePath Tempora/Adv1-6 but blank Latin Introit and Collect beginning Intercessio nos for St Sabbas; selected commemorations are present. Investigate actual source slots and commemoration projection before classifying as source error.",
+      "type": "OWNER_SOURCE_SLOT_REVIEW_NOT_CERTIFIED_DEFECT"
+    },
+    {
+      "issue": "13 blocked dates are not evidence that 13 French or English translations are missing; nine are undecided mass-form commemorations and four require the native Missal rather than the printable ordinary-Proper gate.",
+      "type": "GATE_SEMANTICS"
+    },
+    {
+      "issue": "No 1962 saint-specific Common substitutions, rights clearances, editorial releases, or production Mass/Calendar changes authorized.",
+      "type": "RELEASE_HOLD"
+    }
+  ]
+}

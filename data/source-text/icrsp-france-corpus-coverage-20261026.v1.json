@@ -1,0 +1,112 @@
+{
+  "schema": "AO_ICRSP_CORPUS_PERSISTED_COVERAGE_AUDIT_V1",
+  "date": "2026-10-26",
+  "status": "METADATA_AND_PANEL_LABELS_ONLY_NOT_CONTENT_REVIEW_OR_PUBLICATION",
+  "verifiedSourceRuns": {
+    "index": 40202997017,
+    "commentary": 40204497782
+  },
+  "artifactSha256": {
+    "index": "a557796b0123e8d5ca1df9231b16e78e997f3ab32ea96fc530a5f3ba32e9b60d",
+    "commentary": "a4af35258246951565606aeb70b59a21b2bac72e63031d9e6dffc21fef0ff6b6"
+  },
+  "counts": {
+    "indexedArticles": 855,
+    "commentaryArticles": 783,
+    "commentaryPanels": 2856,
+    "alreadySelectedB20": 160,
+    "alreadyReadAtLeastOneTopicB20": 10,
+    "B20MetadataOnly": 150,
+    "outsideB20Commentary": 623,
+    "noCommentary": 72,
+    "newlyStagedMetadataOnly": 250,
+    "outsideB20NotStaged": 373,
+    "fullAuthorParagraphReviews": 0,
+    "newContentApproved": 0,
+    "appChanges": 0
+  },
+  "bySection": {
+    "temporal": {
+      "indexed": 193,
+      "withCommentary": 189,
+      "panels": 807,
+      "b20TopicRead": 3,
+      "b20MetadataOnly": 27,
+      "unselectedCommentary": 159,
+      "nextMetadataWaveStaged": 60
+    },
+    "sanctoral": {
+      "indexed": 450,
+      "withCommentary": 449,
+      "panels": 1851,
+      "b20TopicRead": 7,
+      "b20MetadataOnly": 108,
+      "unselectedCommentary": 334,
+      "nextMetadataWaveStaged": 140
+    },
+    "commons": {
+      "indexed": 61,
+      "withCommentary": 58,
+      "panels": 68,
+      "b20TopicRead": 0,
+      "b20MetadataOnly": 0,
+      "unselectedCommentary": 58,
+      "nextMetadataWaveStaged": 25
+    },
+    "local_propers": {
+      "indexed": 63,
+      "withCommentary": 60,
+      "panels": 70,
+      "b20TopicRead": 0,
+      "b20MetadataOnly": 12,
+      "unselectedCommentary": 48,
+      "nextMetadataWaveStaged": 18
+    },
+    "votives_requiem": {
+      "indexed": 17,
+      "withCommentary": 12,
+      "panels": 36,
+      "b20TopicRead": 0,
+      "b20MetadataOnly": 0,
+      "unselectedCommentary": 12,
+      "nextMetadataWaveStaged": 4
+    },
+    "ritual": {
+      "indexed": 3,
+      "withCommentary": 3,
+      "panels": 3,
+      "b20TopicRead": 0,
+      "b20MetadataOnly": 3,
+      "unselectedCommentary": 0,
+      "nextMetadataWaveStaged": 0
+    },
+    "office": {
+      "indexed": 16,
+      "withCommentary": 12,
+      "panels": 21,
+      "b20TopicRead": 0,
+      "b20MetadataOnly": 0,
+      "unselectedCommentary": 12,
+      "nextMetadataWaveStaged": 3
+    },
+    "documents": {
+      "indexed": 52,
+      "withCommentary": 0,
+      "panels": 0,
+      "b20TopicRead": 0,
+      "b20MetadataOnly": 0,
+      "unselectedCommentary": 0,
+      "nextMetadataWaveStaged": 0
+    }
+  },
+  "websiteWorkLabels": {
+    "GUERANGER_ANNEE_LITURGIQUE": 492,
+    "SCHUSTER_LIBER_SACRAMENTORUM": 472,
+    "PARSCH_GUIDE_ANNEE_LITURGIQUE": 542,
+    "OTHER_OR_ANONYMOUS": 1299,
+    "BENEDICT_XVI_CATECHESES_CANDIDATE": 43,
+    "PRUDENTIUS_PERISTEPHANON_CANDIDATE": 8
+  },
+  "methods": "Exact article ID+URL and commentary heading join; preexisting B20 selection excluded; rank remaining by panel count and long-panel presence within per-section quotas.",
+  "caution": "Do not call 783 panels content-reviewed, 250 staged metadata paragraphs-read, or historic work labels certified original authors. No source paragraphs imported or approved for republication."
+}

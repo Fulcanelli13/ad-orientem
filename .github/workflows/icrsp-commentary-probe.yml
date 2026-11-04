@@ -1,0 +1,29 @@
+name: ICRSP commentary author boundary probe
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths: ['.github/workflows/icrsp-commentary-probe.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe-six:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe six representative source DOMs without retaining article prose
+        run: |
+          python tools/icrsp/probe_commentary_markup.py --out icrsp-markup-probe.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-author-markup-probe
+          path: icrsp-markup-probe.v1.json
+          retention-days: 14
+          if-no-files-found: error

@@ -1,0 +1,191 @@
+{
+  "schema": "AO_ICRSP_B53_THREE_COMMONS_MULTILINGUAL_WITNESS_AUDIT_V1",
+  "asOf": "2026-10-27",
+  "ownerPR": 1666,
+  "ownerIssue": 894,
+  "sourceBaseline": "data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json",
+  "publicationApproved": false,
+  "actualAppCommonAbsenceProven": false,
+  "changesCalendarOrMass": false,
+  "sourceRightsCleared": false,
+  "scope": "External site availability only for oration BODY, not formula conclusions, 1962 printed body line-by-line collation, authorized Mass selection, full bilingual translations or production runtime. Printed B41 structural evidence distinct from live web versions.",
+  "countingRule": "Nine exact individual oration bodies = three per printed Common family. Do not count common Per Dominum conclusions as evidence that prayer bodies are translated. The ICRSP hosted French translations have NOT been licensed or approved for copying into Ad Orientem.",
+  "cases": [
+    {
+      "family": "CONFESSOR_PONTIFF_STATUIT",
+      "icrspArticleIds": [
+        "a0056_nouveau",
+        "a0330_ancien",
+        "a0470_ancien"
+      ],
+      "icrspFrenchTextWitness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0056_nouveau",
+      "missaleOnlineEnglishTextWitness": "https://missale.online/proprium/en/commune/commune_unius_confessoris_pontificis",
+      "printed1962Pages": [
+        "[19]",
+        "[20]",
+        "[21]"
+      ],
+      "selectedShownForm": "STATUIT_EI",
+      "printedVariantNotProvenOnShownWebPage": "SACERDOTES_TUI_SECOND_MASS",
+      "sourceFamilyChoiceAuthorization": "NOT_REVIEWED",
+      "orations": [
+        {
+          "slot": "COLLECT",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Collecte; Missale Online Collect main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        },
+        {
+          "slot": "SECRET",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Secrète; Missale Online Secret main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        },
+        {
+          "slot": "POSTCOMMUNION",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Postcommunion; Missale Online Postcommunion main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        }
+      ]
+    },
+    {
+      "family": "MULTIPLE_VIRGIN_MARTYRS",
+      "icrspArticleIds": [
+        "a0064_nouveau",
+        "a0337_ancien"
+      ],
+      "icrspFrenchTextWitness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0064_nouveau",
+      "missaleOnlineEnglishTextWitness": "https://missale.online/proprium/en/commune/commune_plurium_virginum_martyrum",
+      "printed1962Pages": [
+        "[30]",
+        "[31]",
+        "[32]",
+        "[33]"
+      ],
+      "selectedShownForm": "ME_EXSPECTAVERUNT_WITH_DE_VIRGINIBUS_EPISTLE",
+      "printedVariantNotProvenOnShownWebPage": "MT13_44_52_PRIMARY_GOSPEL_WHILE_SITE_DISPLAYS_MT19_3_12",
+      "sourceFamilyChoiceAuthorization": "NOT_REVIEWED",
+      "orations": [
+        {
+          "slot": "COLLECT",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Collecte; Missale Online Collect main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        },
+        {
+          "slot": "SECRET",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Secrète; Missale Online Secret main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        },
+        {
+          "slot": "POSTCOMMUNION",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "ENGLISH_BODY_PRESENT_NOT_CERTIFIED",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Postcommunion; Missale Online translated Postcommunion body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        }
+      ]
+    },
+    {
+      "family": "MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
+      "icrspArticleIds": [
+        "a0067_nouveau",
+        "a0342_ancien"
+      ],
+      "icrspFrenchTextWitness": "https://icrspfrance.fr/textes-liturgiques.php?article=a0067_nouveau",
+      "missaleOnlineEnglishTextWitness": "https://missale.online/proprium/en/commune/commune_plurimarum_non_virginum_martyrum",
+      "printed1962Pages": [
+        "[35]",
+        "[36]"
+      ],
+      "selectedShownForm": "ME_EXSPECTAVERUNT_WITH_DISTINCT_PLURAL_ORATIONS",
+      "printedVariantNotProvenOnShownWebPage": null,
+      "sourceFamilyChoiceAuthorization": "NOT_REVIEWED",
+      "sourceTranscriptionQualityWarning": {
+        "slot": "COLLECT",
+        "language": "fr",
+        "witnessVisibleIssue": "VMartyres appears in the French sentence",
+        "action": "HOLD_AND_COMPARE_TO_ORIGINAL_PRINTED_FRENCH_WITNESS",
+        "automaticCorrection": false
+      },
+      "orations": [
+        {
+          "slot": "COLLECT",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Collecte; Missale Online Collect main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        },
+        {
+          "slot": "SECRET",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Secrète; Missale Online Secret main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        },
+        {
+          "slot": "POSTCOMMUNION",
+          "latinOnBothWebWitnesses": "OBSERVED",
+          "englishOnMissaleOnline": "UNTRANSLATED_ON_EN_WEBPAGE",
+          "frenchOnICRSP": "FRENCH_BODY_PRESENT_NOT_LICENSED",
+          "externalSourceEditionAndTranslationRights": "UNCLEARED",
+          "sourcePrecision": "ICRSP Postcommunion; Missale Online Postcommunion main body",
+          "canonicalAdOrientemENFRSourceAndExactFormParity": "NOT_TESTED",
+          "productionReady": false
+        }
+      ]
+    }
+  ],
+  "counted": {
+    "commonFamilies": 3,
+    "independentOrationBodySlots": 9,
+    "latinSecondaryWebBodiesPresent": 9,
+    "frenchICRSPWebBodiesObserved": 9,
+    "englishMissaleOnlineUntranslatedBodies": 8,
+    "englishMissaleOnlineBodyPresentUncertified": 1,
+    "approvedEnglishBodiesForProduction": 0,
+    "approvedFrenchBodiesForProduction": 0,
+    "authorizedAlternateMassOrGospelSelectors": 0,
+    "actualAppMissingOrationBodiesProven": 0,
+    "newlyPublishedTexts": 0
+  },
+  "integrationRules": [
+    "The existing runtime must resolve its own actual principal/expressly selected sourcePath and Mass form before comparing a Common oration.",
+    "An untranslated English body cannot be silently replaced with the Latin text or treated as a bilingual READY state.",
+    "A French translation visibly present on ICRSP is a research witness, NOT a redistribution permission or editorial sign-off.",
+    "The printed 1962 distinct second Mass and Gospel alternatives cannot be eliminated by a single-form web rendering.",
+    "Do not infer missing runtime Commons from the three-candidate advisory research index.",
+    "Do not create another Calendar, a Common-choosing engine, a new Mass card, or a fee-bearing storage dependency."
+  ]
+}

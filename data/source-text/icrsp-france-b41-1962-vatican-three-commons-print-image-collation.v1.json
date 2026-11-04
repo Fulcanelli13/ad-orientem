@@ -1,0 +1,259 @@
+{
+  "schema": "AO_ICRSP_B41_1962_VATICAN_PRINTED_COMMONS_SELECTED_PAGE_VISUAL_COLLATION_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "reason": "B40 reviewed secondary web transcriptions; B41 directly inspects printed, physically photographed Vatican 1962 Missale Romanum, confirming compositional rubrics, separate Mass choices, and Gospel alternatives.",
+  "priorSecondaryWitness": "data/source-text/icrsp-france-b40-three-commons-and-six-saints-snapshot-owner-check.v1.json",
+  "source": {
+    "title": "Missale Romanum — Editio Typica, Vatican 1962",
+    "publisherIdentification": "Vatican original imprint, as scanned by Church Music Association of America and hosted on GregoBase",
+    "index": "https://gregobase.selapa.net/source.php?id=42&images=1",
+    "commonPagesIndex": "https://gregobase.selapa.net/source.php?id=42&images=1&index=33",
+    "sourceIdentificationImages": [
+      "I",
+      "III"
+    ],
+    "yearProof": "Decretum dated 23 June 1962, with typica declaration; directly inspected scanned [III].",
+    "images": {
+      "I": "https://gregobase.selapa.net/sources/42/0.png",
+      "III": "https://gregobase.selapa.net/sources/42/2.png",
+      "[19]": "https://gregobase.selapa.net/sources/42/828.png",
+      "[20]": "https://gregobase.selapa.net/sources/42/829.png",
+      "[21]": "https://gregobase.selapa.net/sources/42/830.png",
+      "[30]": "https://gregobase.selapa.net/sources/42/839.png",
+      "[31]": "https://gregobase.selapa.net/sources/42/840.png",
+      "[32]": "https://gregobase.selapa.net/sources/42/841.png",
+      "[33]": "https://gregobase.selapa.net/sources/42/842.png",
+      "[35]": "https://gregobase.selapa.net/sources/42/844.png",
+      "[36]": "https://gregobase.selapa.net/sources/42/845.png"
+    },
+    "bytesCommittedToGitHub": false,
+    "rightsToRedistributeScansConfirmed": false
+  },
+  "mainOwnerFileBlobShas": {
+    "src/learn/mass-explorer-selected-calendar-proper.js": "a95d95fd1b01efc9fdf19a05498209ae534430a0",
+    "src/calendar/print-proper.js": "5ad5bd31424608d5c5ffb02be2eb5307c65591a0",
+    "data/calendar/traditional-1962-common-formularies.review.v1.json": "5594a1c3a5d49f4d5377383ba2eace53f1c2c5d3",
+    "src/mass/preflight-study-proper.js": "d9538c73edc8539fdca438e6a4cb958df66976cd",
+    "src/calendar/observance-title.js": "3b56cbe822f2f89522017e220362d33c26bf5f1a"
+  },
+  "coverageScope": "Physical image inspection of 11 specified scanned pages (title/decree plus 9 Common pages) limited to relevant structural directions, incipits, alternative readings and some orations. No claim of exhaustive printed line-by-line Latin collation of all Common components or translations.",
+  "inspectedSourceImagePages": [
+    "I",
+    "III",
+    "[19]",
+    "[20]",
+    "[21]",
+    "[30]",
+    "[31]",
+    "[32]",
+    "[33]",
+    "[35]",
+    "[36]"
+  ],
+  "cases": [
+    {
+      "id": "CONFESSOR_PONTIFF_STATUIT",
+      "sourceArticleIds": [
+        "a0056_nouveau",
+        "a0330_ancien",
+        "a0470_ancien"
+      ],
+      "printedSection": "COMMUNE CONFESSORIS PONTIFICIS",
+      "printedPages": [
+        "[19]",
+        "[20]",
+        "[21]"
+      ],
+      "printedRules": [
+        {
+          "kind": "FIRST_MASS",
+          "name": "Statuit ei",
+          "page": "[19]",
+          "proof": "First printed Confessor Pontiff Mass I is headed Pro Confessore Pontifice and begins Statuit ei Dominus."
+        },
+        {
+          "kind": "ALTERNATE_MASS",
+          "name": "Sacerdotes tui",
+          "page": "[20]",
+          "proof": "Separate second Mass II titled Pro Confessore Pontifice Altera Missa begins Sacerdotes tui."
+        },
+        {
+          "kind": "EPistle",
+          "reference": "Eccli. 44:16-27;45:3-20",
+          "page": "[19]",
+          "proof": "First Mass Epistle headed Lectio libri Sapientiae with Ecce sacerdos magnus."
+        },
+        {
+          "kind": "GOSPEL_FIRST",
+          "reference": "Mt.25:14-23",
+          "page": "[19]",
+          "proof": "First Mass presents the parable of talents as Gospel."
+        },
+        {
+          "kind": "GOSPEL_SECOND",
+          "reference": "Mt.24:42-47",
+          "page": "[21]",
+          "proof": "Second Mass contains Beatus ille servus in Matthew 24."
+        },
+        {
+          "kind": "FEAST_SPECIFIC_OVERRIDE",
+          "page": "[21]",
+          "proof": "Printed note recognizes an alternate Epistle and Gospel for feast of St Nicholas and another bishop context; do not silently overwrite Saint-specific assignments."
+        }
+      ],
+      "electronic": "https://missale.online/proprium/en/commune/commune_unius_confessoris_pontificis",
+      "comparisonOutcome": "PRINTED_CONFESSOR_BISHOP_TWO_MASS_FAMILY_VERIFIED__EXACT_CALENDAR_PROPER_UNCHECKED",
+      "warning": "The two printed Mass forms and saint-specific substitutions cannot be conflated. A title alone never authorizes selecting one."
+    },
+    {
+      "id": "MULTIPLE_VIRGIN_MARTYRS",
+      "sourceArticleIds": [
+        "a0064_nouveau",
+        "a0337_ancien"
+      ],
+      "printedSection": "COMMUNE VIRGINUM",
+      "printedPages": [
+        "[30]",
+        "[31]",
+        "[32]",
+        "[33]"
+      ],
+      "printedRules": [
+        {
+          "kind": "BASE_MASS",
+          "name": "Me exspectaverunt",
+          "page": "[30]",
+          "proof": "Page [30] heads Pro Virgine et Martyre, Altera Missa, with Me exspectaverunt; page [31] plural rubric references the immediately preceding Mass (Missa dicitur ut supra)."
+        },
+        {
+          "kind": "EPISTLE_SUBSTITUTION",
+          "reference": "1 Cor.7:25-34",
+          "page": "[33]",
+          "proof": "Plural martyrs rubric on [31] expressly substitutes De virginibus, from Vultum tuum, Commune Virginum IV loco [33], rather than the prior base Epistle."
+        },
+        {
+          "kind": "OWN_COLLECT",
+          "page": "[31]",
+          "incipit": "Da nobis, quaesumus, Domine Deus noster, sanctarum Virginum et Martyrum",
+          "proof": "Plural virgins-and-martyrs Collect begins with exact joint class designation."
+        },
+        {
+          "kind": "OWN_SECRET",
+          "page": "[32]",
+          "incipit": "Intende, quaesumus, Domine, munera altaribus tuis",
+          "proof": "Immediately following plural Virgin martyrs heading, separate Secreta printed at [32]."
+        },
+        {
+          "kind": "OWN_POSTCOMMUNION",
+          "page": "[32]",
+          "incipit": "Praesta nobis, quaesumus, Domine, intercedentibus sanctis Virginibus et Martyribus",
+          "proof": "Postcommunio directly follows at [32]."
+        },
+        {
+          "kind": "BASE_GOSPEL",
+          "reference": "Mt.13:44-52",
+          "page": "[30]",
+          "proof": "Second Mass for virgin and martyr prints Gospel of treasure/pearl/fishing net."
+        },
+        {
+          "kind": "ALTERNATE_GOSPEL",
+          "reference": "Mt.19:3-12",
+          "page": "[31]",
+          "proof": "Printed text expressly introduces Item alterum Evangelium; Missale Online shows this alternate Gospel only, so online page cannot exclude printed alternative."
+        }
+      ],
+      "electronic": "https://missale.online/proprium/en/commune/commune_plurium_virginum_martyrum",
+      "comparisonOutcome": "PRINTED_COMPOSITE_RUBRIC_AND_TWO_GOSPEL_WITNESSES_VERIFIED__SELECTION_RUBRIC_PENDING",
+      "warning": "Vultum tuum is source of the replacement Epistle, not the entire plural-martyrs Mass. Printed base and alternate Gospel survive; do not assume one obligatory Gospel from electronic single selection."
+    },
+    {
+      "id": "MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
+      "sourceArticleIds": [
+        "a0067_nouveau",
+        "a0342_ancien"
+      ],
+      "printedSection": "COMMUNE NON VIRGINUM",
+      "printedPages": [
+        "[35]",
+        "[36]"
+      ],
+      "printedRules": [
+        {
+          "kind": "BASE_MASS",
+          "name": "Me exspectaverunt",
+          "page": "[35]",
+          "proof": "Page [35] has Pro Martyre non Virgine with the Me exspectaverunt Introit."
+        },
+        {
+          "kind": "PLURAL_SUBSTITUTION",
+          "page": "[36]",
+          "proof": "Pro pluribus Martyribus, quae non sint Virgines: dicatur Missa ut supra, cum orationibus ut infra. It substitutes plural prayers only."
+        },
+        {
+          "kind": "OWN_COLLECT",
+          "page": "[36]",
+          "incipit": "Da nobis, quaesumus, Domine Deus noster, sanctarum Martyrum",
+          "proof": "Unlike the Virgin martyr counterpart, this omits Virginum from the Collect category."
+        },
+        {
+          "kind": "OWN_SECRET",
+          "page": "[36]",
+          "incipit": "Intende, quaesumus, Domine, munera altaribus tuis",
+          "proof": "Separate plural non-virgin Martyrs Secreta printed."
+        },
+        {
+          "kind": "OWN_POSTCOMMUNION",
+          "page": "[36]",
+          "incipit": "Praesta nobis, quaesumus, Domine, intercedentibus sanctis Martyribus",
+          "proof": "Separate plural non-virgin Martyrs Postcommunio printed."
+        },
+        {
+          "kind": "BASE_EPISTLE",
+          "reference": "Eccli.51:1-8 et 12",
+          "page": "[35]",
+          "proof": "Single non-virgin martyr Mass whose text is reused contains Confitebor tibi Domine."
+        },
+        {
+          "kind": "BASE_GOSPEL",
+          "reference": "Mt.13:44-52",
+          "page": "[36]",
+          "proof": "Single non-virgin martyr Mass whose text is reused has pearl/treasure Gospel."
+        }
+      ],
+      "electronic": "https://missale.online/proprium/en/commune/commune_plurimarum_non_virginum_martyrum",
+      "comparisonOutcome": "PRINTED_PLURAL_OWN_ORATIONS_VERIFIED__ACTUAL_SELECTED_COMMON_UNCHECKED",
+      "warning": "Both plural martyr classes share Me exspectaverunt but only the Virgins group substitutes the De virginibus Epistle; the non-virgin group substitutes prayers only."
+    }
+  ],
+  "correctionToB40": {
+    "originalB40Gospel": "B40 tracked Matthew 19:3–12 for several Virgin Martyrs as one electronic Gospel, with separate-reading verification pending.",
+    "nowObserved": "The preceding Me exspectaverunt printed Mass has Mt.13:44–52 at [30], with explicit Item alterum Evangelium Mt.19:3–12 at [31]; must preserve selectable/conditional alternative in proper authority rather than hardcoding the sole online visible Gospel.",
+    "status": "PRINTED_ALTERNATIVE_PROVEN__APPLICATION_PARITY_UNTESTED"
+  },
+  "ownerConstraints": [
+    "Original physical 1962 Common pages govern textual structure; ICRSP commentary labels do not.",
+    "Neither printed Common evidence nor electronic Mass pages authorizes liturgical use for an arbitrary calendar day, form or particular saint.",
+    "Mass Explorer has one read-only owner based on a certified Calendar selected Proper; do not install new chooser.",
+    "Do not copy photographed Missal pages to GitHub; keep external URL and page-level provenance; individual translations require rights review.",
+    "No current date's actual resolved Proper sourcePath or full bilingual source components has been run or matched in this research."
+  ],
+  "counts": {
+    "commonFamiliesVisualPass": 3,
+    "printedPagesInspected": 11,
+    "printedMassFormChoiceFamilies": 1,
+    "pluralPrayersVariantsDistinguished": 2,
+    "virginMartyrGospelAlternativesObserved": 2,
+    "completeDiplomaticFullFormulariesCertified": 0,
+    "bilingualTextCertifications": 0,
+    "sourceImageRedistributionRights": 0,
+    "actualAppProperSourcePathsTested": 0,
+    "approvedProductionChanges": 0
+  },
+  "status": "VISUAL_PRINTED_STRUCTURAL_EVIDENCE_ONLY__FULL_TEXT_AND_ACTIVE_PROPER_PARITY_HELD",
+  "canPromoteToCanonicalProper": false,
+  "canReleaseToMassExplorer": false,
+  "sourceTextCopied": false,
+  "publicationApproved": false,
+  "productionFilesModified": false
+}

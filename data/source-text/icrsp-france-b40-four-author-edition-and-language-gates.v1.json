@@ -1,0 +1,131 @@
+{
+  "schema": "AO_ICRSP_B40_FOUR_COMMENTARY_WORKS_EDITION_AND_LANGUAGE_GATE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "scope": "Printed work identification and language/translation lineage. An independently evidenced publication/translator is NOT a collation of any ICRSP hosted panel, historical accuracy certification, or text licence.",
+  "works": [
+    {
+      "family": "GUERANGER_FROMAGE",
+      "hostPanelOccurrencesForBibliographicRouting": 493,
+      "sources": [
+        {
+          "institution": "Abbaye Saint-Pierre de Solesmes",
+          "url": "https://www.abbayedesolesmes.fr/produit/introduction-a-lannee-liturgique/",
+          "evidence": "Nine Guéranger volumes appeared 1841–1866; his unfinished sequence ended before Trinity Sunday; Lucien Fromage completed the Time after Pentecost in six volumes."
+        },
+        {
+          "institution": "Association pour la canonisation de Dom Guéranger",
+          "url": "https://www.domgueranger.org/dom-gueranger-et-lannee-liturgique/",
+          "evidence": "A later 1948 complete edition condensed 15 volumes into 6."
+        }
+      ],
+      "sourceDisambiguation": "Printed 1841–1866 Guéranger volumes versus continuation 1878–1900 by Lucien Fromage, plus later edited/reprinted abridgements.",
+      "scopeHold": "The date of a saint feast or article being after Pentecost is not by itself enough to settle a particular paragraph's authorship; locate corresponding printed volume/page and compare.",
+      "printedPageCrosschecksDone": 0,
+      "originalWorkAttributionCertified": false,
+      "hostRightsCleared": false
+    },
+    {
+      "family": "PIUS_PARSCH",
+      "hostPanelOccurrencesForBibliographicRouting": 544,
+      "sources": [
+        {
+          "institution": "Bibliothèque du Séminaire de Tournai",
+          "url": "https://bibliotheque.seminaire-tournai.be/index.php?lvl=notice_display&id=56936",
+          "evidence": "French Le Guide dans l'année liturgique, vol I cycle de Noël, Salvator 1935, translated from 11th German edition, Marcel Gautier."
+        },
+        {
+          "institution": "Bibliothèque du Séminaire de Tournai",
+          "url": "https://bibliotheque.seminaire-tournai.be/index.php?lvl=notice_display&id=56938",
+          "evidence": "Vol III cycle pascal part two, Salvator 1936, translator Marcel Gautier, from 11th German edition."
+        },
+        {
+          "institution": "Bibliothèque du Séminaire de Tournai",
+          "url": "https://bibliotheque.seminaire-tournai.be/index.php?lvl=notice_display&id=56940",
+          "evidence": "Vol V After Pentecost second part, Salvator 1936, translators Marcel Gautier and René Guillaume."
+        }
+      ],
+      "sourceDisambiguation": "French translation and edition-specific terminology must be separated from the German original and from ICRSP editorial edits.",
+      "scopeHold": "French translation licence and rights remain unknown; an author's death date does not clear the French translation rights.",
+      "printedPageCrosschecksDone": 0,
+      "originalWorkAttributionCertified": false,
+      "hostRightsCleared": false
+    },
+    {
+      "family": "ILDEFONSO_SCHUSTER",
+      "hostPanelOccurrencesForBibliographicRouting": 472,
+      "sources": [
+        {
+          "institution": "WorldCat union catalogue",
+          "url": "https://search.worldcat.org/title/Liber-sacramentorum-%3A-note-storiche-e-liturgiche-sul-messale-romano/oclc/16803193",
+          "evidence": "Italian Liber sacramentorum: note storiche e liturgiche sul messale romano, Torino: Marietti, [1919?]–1928."
+        },
+        {
+          "institution": "Bibliothèque Saint Libère digitization catalogue",
+          "url": "https://www.liberius.net/livre.php?id_livre=785",
+          "evidence": "French version in nine tomes; volume I listed 1925, Vromant et Co."
+        },
+        {
+          "institution": "Bibliothèque Saint Libère digitization catalogue",
+          "url": "https://www.liberius.net/livre.php?id_livre=786",
+          "evidence": "French tome II covers Advent to Septuagesima, edition 1929."
+        },
+        {
+          "institution": "Bibliothèque Saint Libère digitization catalogue",
+          "url": "https://www.liberius.net/livre.php?id_livre=787",
+          "evidence": "French tome III covers Septuagesima to Easter, edition 1929."
+        }
+      ],
+      "sourceDisambiguation": "Italian original and French nine-tome witness are separate edition/translation layers; individual ICRSP extracts may blend or rearrange descriptions.",
+      "scopeHold": "Schuster's commentary on historical Roman stations and earlier liturgical usage is descriptive; never an automatic 1962 rubric.",
+      "printedPageCrosschecksDone": 0,
+      "originalWorkAttributionCertified": false,
+      "hostRightsCleared": false
+    },
+    {
+      "family": "FRANCIS_DE_SALES",
+      "hostPanelOccurrencesForBibliographicRouting": 63,
+      "sources": [
+        {
+          "institution": "BnF Catalogue général",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb33015558w",
+          "evidence": "Annecy Œuvres 27 volumes, 1892–1964, sermons VII–X; early editorial role Henry Benedict Mackey."
+        },
+        {
+          "institution": "Visitation Sainte-Marie d'Annecy",
+          "url": "https://visitationannecy.org/magasin/oeuvres/",
+          "evidence": "Volumes VII–X are Sermons, with separate later volumes for letters and other writings."
+        },
+        {
+          "institution": "Acervo Dom Bosco digital table of contents",
+          "url": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+          "evidence": "Volume VII and VIII distinguish autograph series, plans, fragments and summaries; Volume IX includes Visitandine-recorded sermons."
+        }
+      ],
+      "sourceDisambiguation": "63 newly observed panel occurrences, 29 named headings mapped to candidate table-of-contents entries (27 unique hashes), and 34 generic headings without title-level match.",
+      "scopeHold": "A table-of-contents title is bibliographic matching only; autographs versus Visitandine records must remain distinct, and original printed pages/translation rights need verification.",
+      "printedPageCrosschecksDone": 0,
+      "originalWorkAttributionCertified": false,
+      "hostRightsCleared": false
+    }
+  ],
+  "counts": {
+    "familyTracks": 4,
+    "panelsRoutedByCorrectedLabels": 1572,
+    "namedSalesianIndexCandidates": 29,
+    "crossFamilySubstantivePrintCollationsComplete": 0,
+    "authorWorkPanelsCertified": 0,
+    "rightsApproved": 0,
+    "productionApprovals": 0
+  },
+  "releaseRestrictions": {
+    "noProductionMassCalendarModification": true,
+    "noOfficeModule": true,
+    "doesNotCopyOriginalProse": true,
+    "initialNameOrTOCMatchInsufficientForQuotation": true,
+    "eachFutureClaimNeedsExactExistingOwnerRecordComparison": true
+  },
+  "sourceProseStored": false,
+  "rightsCleared": false,
+  "publicationApproved": false
+}

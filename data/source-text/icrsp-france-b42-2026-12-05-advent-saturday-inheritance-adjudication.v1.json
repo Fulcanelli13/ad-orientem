@@ -1,0 +1,112 @@
+{
+  "schema": "AO_ICRSP_B42_2026_12_05_ADVENT_FERIA_INHERITANCE_ADJUDICATION_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "classification": "CONFIRMED_RESOLVED_PROPER_ASSEMBLY_OUTPUT_GAP_ROOT_CAUSE_PENDING",
+  "observedEvidence": {
+    "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40368440191",
+    "sourceRunCommit": "d3585a8ef755960c61961bf9d486cff295604267",
+    "permanentObservation": "data/source-text/icrsp-france-b42-first-live-18-date-resolver-observations.v1.json",
+    "date": "2026-12-05",
+    "runtimeInterface": "globalThis.AO_RUNTIME_V8.resolver.resolveDay('2026-12-05')",
+    "resolutionStatus": "ready",
+    "observedPrincipalId": "tempora:Adv1-6:3:v",
+    "observedPrincipalTitle": "Sabbato after I Sunday of Advent",
+    "observedSourcePath": "Tempora/Adv1-6",
+    "observedLatinFields": {
+      "introitEmpty": true,
+      "epistleEmpty": true,
+      "gospelEmpty": true,
+      "firstCollectStarts": "Intercéssio nos, quǽsumus, Dómine, beáti Sabbas Abbátis"
+    },
+    "observedSourceCommemoration": {
+      "saint": "St. Sabbas",
+      "path": "Sancti/12-05",
+      "kind": "ORDINARY_SAINT_COMMEMORATION"
+    },
+    "observedPrintStatus": {
+      "englishReady": false,
+      "frenchReady": false,
+      "reason": "Form-specific commemoration rules not yet source-certified"
+    },
+    "note": "The print gate exits at uncertified commemoration BEFORE it inspects missing first-Mass slots; print readiness alone would conceal this independent source assembly problem."
+  },
+  "expectedLiturgicalForm": {
+    "jurisdiction": "GENERAL_ROMAN_1962_ONLY",
+    "observedPrincipal": "Third-class Advent feria, violet",
+    "primaryMassFormulary": "First Sunday of Advent, 2026-11-29, in inherited feria Mass (without treating it as another Sunday celebration)",
+    "baseSourceCandidate": "Tempora/Adv1-0",
+    "observedDayIdentityMustRemain": "Tempora/Adv1-6",
+    "latinMarkers": {
+      "introit": "Ad te levavi animam meam",
+      "firstCollect": "Excita quaesumus Domine potentiam tuam et veni",
+      "epistle": "Romans 13:11-14",
+      "gospel": "Luke 21:25-33"
+    },
+    "commemoratedSaint": "St Sabbas, Abbot",
+    "commemoratedPrayer": "Intercessio nos; must NOT displace the ferial first Collect if commemoration applicable to actual Mass form",
+    "formApplicability": "Source and 1960 rubrics must certify sung, solemn, low and conventual commemoration ordering independently before writing to shared Proper."
+  },
+  "externalWitnesses": [
+    {
+      "url": "https://ordo.fsspx.org/day/2026-12-05?lang=en",
+      "kind": "1962_or_doctorinal_ordo",
+      "supports": [
+        "Advent feria class III principal",
+        "St Sabbas commemoration",
+        "Ad te levavi Introit",
+        "Excita quae sumus Sunday-source Collect"
+      ]
+    },
+    {
+      "url": "https://latinmasspropers.com/mass/1st-sunday-of-advent/",
+      "kind": "secondary_current_1962_mass_propers",
+      "supports": [
+        "2026-12-05 Mass of Advent I",
+        "all base Mass slots",
+        "Romans 13:11-14",
+        "Luke 21:25-33"
+      ]
+    },
+    {
+      "url": "https://repository.stu.edu/ulma/va/3005/1962/11-30-1962.pdf",
+      "kind": "contemporary_1962_newspaper_missal_guide",
+      "supports": [
+        "5 Dec 1962 ferial Mass of previous Sunday",
+        "second prayer of St Sabbas"
+      ],
+      "limitation": "Search-index text only; individual PDF page not visually collated in this research addendum"
+    },
+    {
+      "url": "https://mail.gcatholic.org/calendar/2026/Extraordinary-en",
+      "kind": "independent_1962_calendar",
+      "supports": [
+        "2026-12-05 feria principal",
+        "St Sabbas commemoration"
+      ]
+    }
+  ],
+  "disposition": {
+    "confirmed": "An actually resolved Calendar 'ready' Proper with sourcePath Tempora/Adv1-6 has empty base Mass slots and incorrectly presents a commemoration oration as first Collect.",
+    "notYetProved": [
+      "Whether upstream source has omitted inherited fields or app resolver failed to dereference them",
+      "Full original 1962 Latin/EN/FR every-slot collation",
+      "Whether all other Advent first-week ferias share the issue",
+      "Correct form-specific commemoration projection for each Mass form"
+    ],
+    "owner": "Canonical AO_RUNTIME_V8 DayResolver and its existing Proper source transport/assembly, NOT the ICRSP research database, Mass Explorer, or reader",
+    "fixRequirements": [
+      "Preserve civil-date and source-day identity Tempora/Adv1-6",
+      "Resolve missing inherited base Proper from actual Sunday source after validating source/citation, without representing the day as Sunday",
+      "Keep Advent first Collect before any separately authorized St Sabbas commemoration prayer",
+      "Guard against misleading ready statuses when mandatory base Proper slots are empty",
+      "Continue EN/FR fail-closed text and form-specific commemoration publication gates",
+      "Regression: 2026-11-29, 2026-12-01, 2026-12-05 and analogous first-week ferias across years with original weekday source IDs",
+      "Never auto-insert unapproved Common or local formulary and never copy hosted translations without clearance"
+    ],
+    "productionModified": false,
+    "publicationApproval": false,
+    "printedFullFormulariesCertified": false,
+    "recommendedStatus": "EXISTING_OWNER_FIX_REQUIRED_NO_RESEARCH_BRANCH_PRODUCTION_MUTATION"
+  }
+}

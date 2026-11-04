@@ -1,0 +1,108 @@
+{
+  "schema": "AO_ICRSP_B35_PARALLEL_35_AND_50_EXACT_UNION_NO_DOUBLE_COUNT_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "baseline": "data/source-text/icrsp-france-b34-541-two-workstream-direct-topic-ledger.v1.json",
+  "parallelA": "data/source-text/icrsp-france-b35-35-direct-source-passages.v1.json",
+  "parallelB": "data/source-text/icrsp-france-b35-first50-priority-direct-topic-excerpts.v1.json",
+  "canonicalCurrentLedger": "data/source-text/icrsp-france-b35-591-unique-direct-topic-ledger.v1.json",
+  "definition": "Both workstreams read source-topic excerpts from overlapping source articles. Coverage metric counts unique articleId, not repeated reads/panels/claims.",
+  "counts": {
+    "baselineUnique": 541,
+    "parallelAArticlePasses": 35,
+    "parallelBArticlePasses": 50,
+    "overlapArticleIds": 35,
+    "parallelAExclusive": 0,
+    "parallelBExclusive": 15,
+    "canonicalUnique": 591,
+    "remainingForFirstDirectTopicRead": 192,
+    "sourceCorpus": 783,
+    "publicationApprovals": 0
+  },
+  "overlapArticleIds": [
+    "a0080_nouveau",
+    "a0091_nouveau",
+    "a0124_nouveau",
+    "a0134_nouveau",
+    "a0137_nouveau",
+    "a0160_nouveau",
+    "a0163_nouveau",
+    "a0182_nouveau",
+    "a0187_nouveau",
+    "a0193_nouveau",
+    "a0316_ancien",
+    "a0398_ancien",
+    "a0466_ancien",
+    "a0547_ancien",
+    "a0548_ancien",
+    "a0551_ancien",
+    "a0552_ancien",
+    "a0557_ancien",
+    "a0559_ancien",
+    "a0569_ancien",
+    "a0598_ancien",
+    "a0599_ancien",
+    "a0600_ancien",
+    "a0606_ancien",
+    "a0612_ancien",
+    "a0614_ancien",
+    "a0670_ancien",
+    "a0677_ancien",
+    "a0779_ancien",
+    "a0782_ancien",
+    "a0783_ancien",
+    "a0817_ancien",
+    "a0987_ancien",
+    "a0991_ancien",
+    "a1036_ancien"
+  ],
+  "exclusive50": [
+    "a0816_ancien",
+    "a1031_ancien",
+    "a0161_nouveau",
+    "a0162_nouveau",
+    "a0567_ancien",
+    "a0989_ancien",
+    "a0067_ancien",
+    "a0494_ancien",
+    "a0675_ancien",
+    "a0714_ancien",
+    "a0780_ancien",
+    "a0886_ancien",
+    "a0800_ancien",
+    "a0027_nouveau",
+    "a0123_nouveau"
+  ],
+  "sourceFindingsNotAdditionalArticleReads": [
+    {
+      "articleId": "a0316_ancien",
+      "claim": "Hyginus died a martyr under Marcus Aurelius",
+      "chronology": "Hyginus died around AD 142 while Marcus Aurelius became emperor in AD 161",
+      "externalReferences": [
+        "https://www.vatican.va/content/vatican/en/holy-father.html",
+        "https://www.newadvent.org/cathen/07593a.htm",
+        "https://azioneromana.com/article/igino-papa-santo"
+      ],
+      "disposition": "DEFINITE_CHRONOLOGICAL_ANACHRONISM__HISTORIC_MARTYR_STATUS_UNPROVED"
+    },
+    {
+      "articleId": "a0559_ancien",
+      "claim": "Her husband was King Louis IV of Thuringia",
+      "externalReferences": [
+        "https://www.newadvent.org/cathen/05389a.htm"
+      ],
+      "disposition": "HUSBAND_WAS_LANDGRAVE_NOT_KING"
+    },
+    {
+      "articleId": "a0137_nouveau",
+      "claim": "Pope Urban I and separate catacomb martyr resolved by site",
+      "externalReferences": [
+        "https://www.newadvent.org/cathen/15209a.htm",
+        "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/urban-i-pope-st"
+      ],
+      "disposition": "HISTORIOGRAPHY_CONFLICT__DO_NOT_PREMATURELY_CERTIFY_GRAVE_OR_PERSON"
+    }
+  ],
+  "sourceProseCopied": false,
+  "publicationApproved": false
+}

@@ -1,0 +1,325 @@
+{
+  "schema": "AO_ICRSP_B22_140_COMPLETED_HUMAN_TRIAGE_AND_RELEVANCE_GATES_V1",
+  "asOf": "2026-10-26",
+  "issue": 1665,
+  "ownerPR": 1666,
+  "bulkSource": "data/source-text/icrsp-france-b21-140-automated-commentary-signals.v1.json",
+  "scope": "Source-specific editorial leads and explicit gross misattachment quarantine. NOT production Calendar/Saints/Scripture content.",
+  "count": {
+    "bulkArticleTextScreensVerified": 140,
+    "bulkPanels": 535,
+    "bulkDuplicateShaGroups": 4,
+    "previouslyHumanThematicallyRead": 20,
+    "newHumanSourcePagesRead": 11,
+    "cumulativeHumanReviewedWithin160": 31,
+    "selectedCohortSize": 160,
+    "stillOnlyAutomatedTextScreened": 129,
+    "originalBilingualDraftsForOwnerReview": 9,
+    "publications": 0
+  },
+  "humanReviewRecords": [
+    {
+      "articleId": "a0281_ancien",
+      "sourceTitle": "Vigile de la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0281_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "PRE1955_PENTECOST_VIGIL",
+      "sourceDisposition": "HISTORIC_1962_VERSION_BOUNDARY",
+      "proposedExistingOwner": "CALENDAR_MASS_EXPLORER_HISTORICAL_ONLY",
+      "observedClaim": "Pre-reform Pentecost Vigil used baptismal-water blessing, six prophecies and parallels with Holy Saturday; ICRSP explicitly says Pius XII reform removed the earlier form",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "Before the 1955 reform, the Vigil of Pentecost included six prophetic readings and the blessing of baptismal water, echoing Holy Saturday. Those older ceremonies should not be confused with the order followed in 1962.",
+        "fr": "Avant la réforme de 1955, la vigile de la Pentecôte comportait six prophéties et la bénédiction de l’eau baptismale, en écho au Samedi saint. Il ne faut pas confondre ces anciens rites avec l’ordo suivi en 1962.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Pre-1955 rites cannot be presented as the 1962 sequence; separate pre-reform and 1962 states.",
+      "published": false
+    },
+    {
+      "articleId": "a0170_nouveau",
+      "sourceTitle": "Mer. Q.-T.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0170_nouveau",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "PENTECOST_EMBER_WEDNESDAY",
+      "sourceDisposition": "ROMAN_STATION_LECTION_CONNECTION",
+      "proposedExistingOwner": "CALENDAR_AND_MASS_EXPLORER",
+      "observedClaim": "Summer Ember Wednesday in Pentecost octave: historic station Santa Maria Maggiore; first/second readings and Eucharistic true manna; following Saturday ordination association",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "The Wednesday Ember Day within Pentecost week traditionally has its Roman station at Saint Mary Major. Its readings associate the gift of the Holy Ghost, apostolic witness and Christ as the bread of life; the Ember observance also recalls prayer for ordinands.",
+        "fr": "Le mercredi des Quatre-Temps de la Pentecôte a traditionnellement sa station romaine à Sainte-Marie-Majeure. Ses lectures rapprochent le don du Saint-Esprit, le témoignage apostolique et le Christ, pain de vie ; ces Quatre-Temps sont aussi liés à la prière pour les ordinands.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Cross-check the exact 1962 Proper and station in canonical owner; distinguish historic ordinations from current practice.",
+      "published": false
+    },
+    {
+      "articleId": "a0605_ancien",
+      "sourceTitle": "Immaculée Conception de la Vierge Marie",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0605_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "IMMACULATE_CONCEPTION_HISTORIC_FORMS",
+      "sourceDisposition": "PRE1955_OCTAVE_VIGIL_REMOVAL",
+      "proposedExistingOwner": "CALENDAR_HISTORICAL",
+      "observedClaim": "Earlier Mass adapted from Nativity of the Virgin; post-1854 new office/Missal texts; Vigil and octave removed in 1955",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "The liturgical celebration of the Immaculate Conception developed over several centuries. Earlier texts drew on the Nativity of Mary; a distinct office and Mass followed the proclamation of the dogma, while the former vigil and octave disappeared from the 1962 calendar.",
+        "fr": "La célébration liturgique de l’Immaculée Conception s’est développée au fil des siècles. Les anciens textes reprenaient ceux de la Nativité de Marie ; un office et une messe propres suivirent la proclamation du dogme, tandis que l’ancienne vigile et l’octave ne figurent plus au calendrier de 1962.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Do not re-add suppressed vigil/octave to universal 1962 calendar; exact historical description needs independent corroboration.",
+      "published": false
+    },
+    {
+      "articleId": "a0098_nouveau",
+      "sourceTitle": "Solennité de St Joseph, Patron de l’Église universelle",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0098_nouveau",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "SAINT_JOSEPH_PATRONAGE_PRE1955",
+      "sourceDisposition": "HISTORICAL_SUPPRESSED_FEAST",
+      "proposedExistingOwner": "CALENDAR_HISTORICAL_ONLY",
+      "observedClaim": "1847 universal extension of Patronage feast; 1870 elevation; 1913 Wednesday transfer; 1955 suppression and May 1 Joseph Worker",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "An older feast of Saint Joseph as Patron of the Universal Church developed during the nineteenth century and was later assigned to a Wednesday after Easter. Its movable celebration was removed in 1955, when the feast of Saint Joseph the Worker on 1 May was introduced.",
+        "fr": "Une ancienne fête de saint Joseph, Patron de l’Église universelle, se développa au XIXe siècle et fut ensuite fixée à un mercredi du temps pascal. Cette célébration mobile fut supprimée en 1955, lors de l’institution de la fête de saint Joseph Artisan au 1er mai.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Do not reinstate older movable patronage feast into 1962 universal cycle; source has 1969 polemical opinion separately.",
+      "published": false
+    },
+    {
+      "articleId": "a0195_nouveau",
+      "sourceTitle": "Sts Gervais et Protais, Martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0195_nouveau",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "GERVASIUS_PROTASIUS_AMBROSE_DISCOVERY",
+      "sourceDisposition": "EARLY_ROMAN_CULT_AND_AMBROSE",
+      "proposedExistingOwner": "SAINTS_AND_SACRED_PLACES",
+      "observedClaim": "ICRSP relates Ambrose discovery of Gervasius and Protasius remains at Milan in 386 and early Roman cult in titulus Vestinae (later San Vitale)",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "The cult of Saints Gervasius and Protasius spread from Milan after Saint Ambrose reported the discovery of their relics in 386. Historical Roman references also associate their veneration with the church later known as San Vitale.",
+        "fr": "Le culte des saints Gervais et Protais se répandit depuis Milan après la découverte de leurs reliques rapportée par saint Ambroise en 386. Des témoignages romains anciens relient aussi leur vénération à l’église connue plus tard sous le nom de San Vitale.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Before user-facing biography verify St Ambrose own source, competing archaeological chronology, and exact location IDs.",
+      "published": false
+    },
+    {
+      "articleId": "a0090_ancien",
+      "sourceTitle": "3ᵉ dimanche de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0090_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "GAUDETE_SUNDAY_TRADITIONS",
+      "sourceDisposition": "STATION_AND_VESTMENTS",
+      "proposedExistingOwner": "CALENDAR_HISTORICAL",
+      "observedClaim": "Gaudete name from Introit; rose vestments and liturgical relaxation; station at St Peter Vatican reported in Guéranger",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "Gaudete, the Third Sunday of Advent, takes its name from the opening word of the Introit. Its joyful character is traditionally marked by rose vestments where used, and the Roman station is associated with Saint Peter's Basilica.",
+        "fr": "Gaudete, le troisième dimanche de l’Avent, tire son nom du premier mot de l’introït. Son caractère joyeux s’exprime traditionnellement, là où cet usage est observé, par les ornements roses ; la station romaine est associée à la basilique Saint-Pierre.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Check optionality and source era before describing as binding liturgical instructions; avoid anti-other-confessions polemics.",
+      "published": false
+    },
+    {
+      "articleId": "a0541_ancien",
+      "sourceTitle": "Fête de Tous les Saints",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0541_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "ALL_SAINTS_HISTORICAL_PANTHEON_VIGIL",
+      "sourceDisposition": "PANTHEON_LINK_AND_SUPPRESSED_VIGIL",
+      "proposedExistingOwner": "CALENDAR_AND_SACRED_PLACES",
+      "observedClaim": "Historical dedication of Roman Pantheon to Saint Mary and the Martyrs and later All Saints November 1; former vigil removed in 1955",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "The feast of All Saints has several historical strands, including the dedication of the Roman Pantheon to Saint Mary and the Martyrs. Earlier calendars also included a penitential vigil on 31 October, which was suppressed before the 1962 Missal.",
+        "fr": "La Toussaint possède plusieurs racines historiques, dont la dédicace du Panthéon de Rome à Sainte-Marie-et-aux-Martyrs. Les anciens calendriers prévoyaient également une vigile pénitentielle le 31 octobre, supprimée avant le missel de 1962.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Avoid single-origin claims, date of Roman feast contested; distinguish today's 1962 Mass from pre-1955 vigil and fast.",
+      "published": false
+    },
+    {
+      "articleId": "a0745_ancien",
+      "sourceTitle": "St Léon Iᵉʳ le Grand, pape, confesseur et docteur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0745_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "LEO_THE_GREAT_FEAST_HISTORY",
+      "sourceDisposition": "CONFUSABLE_LEO_I_LEO_II",
+      "proposedExistingOwner": "SAINTS_FEAST_IDENTITY",
+      "observedClaim": "ICRSP Presentation claims 11 April feast for Leo I but older Roman 28 June devotion and subsequent confusion with Leo II",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "The commemoration of Pope Saint Leo the Great has had different dates in earlier liturgical books. These traditions must be distinguished from the separate feast and identity of Pope Saint Leo II.",
+        "fr": "La commémoration de saint Léon le Grand a connu plusieurs dates dans les anciens livres liturgiques. Il faut distinguer cette histoire de la fête et de l’identité distincte du pape saint Léon II.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Historical calendar chronology requires independent verification; keep two pope person IDs separate.",
+      "published": false
+    },
+    {
+      "articleId": "a0563_ancien",
+      "sourceTitle": "Sᵗᵉ Cécile, vierge et martyre",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0563_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "CECILIA_FEAST_DATE_NOT_DEATH_PROOF",
+      "sourceDisposition": "DEDICATION_HYPOTHESIS",
+      "proposedExistingOwner": "SAINTS_BIOGRAPHY",
+      "observedClaim": "ICRSP notes Nov 22 may correspond to dedication of Cecilia basilica rather than demonstrable death anniversary",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": {
+        "en": "The 22 November feast of Saint Cecilia is ancient, but its date may reflect the dedication of her Roman church rather than a documented anniversary of her death.",
+        "fr": "La fête de sainte Cécile, le 22 novembre, est ancienne ; cette date pourrait correspondre à la dédicace de son église romaine plutôt qu’à un anniversaire de décès historiquement établi.",
+        "status": "ORIGINAL_EDITORIAL_TEXT_NOT_PUBLISHED"
+      },
+      "needsVerification": "Treat date meaning as hypothesis; avoid making feast date equal to saint's death date.",
+      "published": false
+    },
+    {
+      "articleId": "a0890_ancien",
+      "sourceTitle": "Saint Paul, évêque",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0890_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "PAUL_VERDUN_WRONG_COMMENTARY",
+      "sourceDisposition": "QUARANTINE_MISATTACHED_PETER_PAUL_TEXT",
+      "proposedExistingOwner": "SAINTS_DATA_QUALITY",
+      "observedClaim": "Feb 8 title and Presentation describe Bishop Paul of Verdun; Guéranger text begins Simon fils de Jean and matches text from June 29 Sts Peter and Paul page; Parsch also explicitly celebrates Peter and Paul",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": null,
+      "needsVerification": "BLOCK panels 2-5 from Saint Paul of Verdun extraction pending paragraph-by-paragraph reassignment; panel 1 separate biographical witness only.",
+      "published": false
+    },
+    {
+      "articleId": "a0715_ancien",
+      "sourceTitle": "St Jean de Dieu, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0715_ancien",
+      "webPageCommentsInspected": true,
+      "sourcePanelLocator": "ICRSP page Commentaires; see subject notes",
+      "topicId": "JOHN_OF_GOD_MIXED_EUCHARISTIC_TREATISE",
+      "sourceDisposition": "QUARANTINE_UNRELATED_CORPUS_SECTIONS",
+      "proposedExistingOwner": "SAINTS_DATA_QUALITY",
+      "observedClaim": "Panels 1-4 discuss St John of God; subsequent numbered essay begins 'LE LUNDI APRÈS LA TRINITÉ' and concerns institution of Corpus Christi and Eucharist",
+      "sourceClaimsFormulation": "SOURCE_SAYS__NOT_INDEPENDENTLY_PROVED",
+      "comparisonToCurrentApp": "Owner files inspected; exact canonical target record ID not yet certified, do not mint an ID",
+      "editorialDraft": null,
+      "needsVerification": "Panels 5-12 must not be attributed to Saint John of God or treated as saint biography; retain distinct topic for Mass Explorer only if independently sourced.",
+      "published": false
+    }
+  ],
+  "misattributionHold": {
+    "sourceArticleId": "a0890_ancien",
+    "properSubject": "Paul, bishop of Verdun",
+    "wrongGuérangerTextIsPartOf": "Saints Peter and Paul (29 June)",
+    "comparisonArticleId": "a0318_ancien",
+    "identicalOpening": "Simon, fils de Jean, m’aimez-vous",
+    "guérangerPanelOrdinal": 2,
+    "secondaryWrongParschPanelOrdinal": 4,
+    "quarantineFromStPaulBiographyPanelOrdinals": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "safeToExtractAsBiographyPanelOrdinals": [],
+    "presentationPanelNeedsIndependentVerification": true,
+    "impact": "Uncontrolled page-level summary would import apostolic/Petrine commentary as biography of Bishop Paul of Verdun."
+  },
+  "sameBodyHashGroups": [
+    {
+      "sourceBodySha256": "6900e2ddc34fad67c3ce25324185cb4d4016d56d6a2ef98d1e289679cf8fea84",
+      "articlePanelOccurrences": [
+        {
+          "id": "a0761_ancien",
+          "title": "Mercredi de la 2ᵉ semaine après l’Oct. de Pâque, Solennité de St Joseph",
+          "panel": 1
+        },
+        {
+          "id": "a0098_nouveau",
+          "title": "Solennité de St Joseph, Patron de l’Église universelle",
+          "panel": 1
+        }
+      ]
+    },
+    {
+      "sourceBodySha256": "95809625697c122802cd4befcd90115b07a0e55699a6a48f32a7706276896c05",
+      "articlePanelOccurrences": [
+        {
+          "id": "a0761_ancien",
+          "title": "Mercredi de la 2ᵉ semaine après l’Oct. de Pâque, Solennité de St Joseph",
+          "panel": 3
+        },
+        {
+          "id": "a0098_nouveau",
+          "title": "Solennité de St Joseph, Patron de l’Église universelle",
+          "panel": 3
+        }
+      ]
+    },
+    {
+      "sourceBodySha256": "25368c302a77ce0a9571fe0bdbb610b46319b196e02296b57f3cfcff214babc7",
+      "articlePanelOccurrences": [
+        {
+          "id": "a0814_ancien",
+          "title": "Mar.",
+          "panel": 2
+        },
+        {
+          "id": "a0818_ancien",
+          "title": "Sam.",
+          "panel": 2
+        }
+      ]
+    },
+    {
+      "sourceBodySha256": "b0e59176cf28806c3f081f4c0096c0097bf2635a2ae1cec8d60c7f726799c639",
+      "articlePanelOccurrences": [
+        {
+          "id": "a0623_ancien",
+          "title": "6ᵉ Dimanche restant après l’Épiphanie",
+          "panel": 2
+        },
+        {
+          "id": "a0623_ancien",
+          "title": "6ᵉ Dimanche restant après l’Épiphanie",
+          "panel": 3
+        }
+      ]
+    }
+  ],
+  "qualityRules": [
+    "All comments on one feast page are NOT automatically about that feast; compare actual passage subject first.",
+    "Work-family author labels, Presentations and editorial additions have separate original source roles.",
+    "No 1955-suppressed ceremony may be presented as the 1962 rite or universal feast.",
+    "Automated keyword hit count measures frequency, not substantive importance; 12-panel St John of God page demonstrates this failure mode.",
+    "Dated polemics and hagiographical embellishments require historical editorial contextualisation.",
+    "Proposed EN/FR paragraphs are new editorial copy and need fact/source-owner/rights review before integration.",
+    "Scripture original-text attribution must remain on independent Scripture Correspondences PR #1553.",
+    "Do not infer a place or saint stable canonical ID from a string label."
+  ],
+  "publicationApproved": false
+}

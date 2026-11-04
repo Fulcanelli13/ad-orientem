@@ -1,0 +1,295 @@
+{
+  "schema": "AO_ICRSP_B25_SCOPED_EXISTING_OWNER_PARITY_NOT_RELEASE_APPROVAL_V1",
+  "asOf": "2026-10-26",
+  "pr": 1666,
+  "scope": "Focused source-topic versus actual existing app-owner files; no universal repository-level absence finding. CheckedFiles lists deliberately limited per-row evidence; host website and existing B24/B25 direct observations provide source claims.",
+  "status": "RESEARCH_ONLY_DO_NOT_PROMOTE",
+  "cases": [
+    {
+      "caseId": "ICRSP-B25-PARITY-01",
+      "articleIds": [
+        "a0172_nouveau"
+      ],
+      "topic": "PENTECOST_EMBER_FRIDAY",
+      "owner": "CALENDAR_CUSTOMS_READ_MODEL",
+      "checkedFiles": [
+        "src/calendar/traditional-year-v384.js"
+      ],
+      "existingEvidence": "v384Dates computes three Pentecost Ember dates; the Calendar's existing event projection already describes Ember observance and explicitly distinguishes it from current binding fasts.",
+      "delta": "Potential source-backed contextual teaching about Spirit and the Twelve Apostles' Roman station; not a new Ember Day or fast.",
+      "classification": "EXISTING_CORE_FEATURE_POTENTIAL_EDITORIAL_ENRICHMENT",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-02",
+      "articleIds": [
+        "a0034_nouveau"
+      ],
+      "topic": "153_FISH_EASTER_WEDNESDAY",
+      "owner": "SCRIPTURE_PARALLELS_AND_CALENDAR",
+      "checkedFiles": [
+        "data/source-text/icrsp-france-b11-51-crossdomain-content-handoff.v1.json"
+      ],
+      "existingEvidence": "The earlier crossdomain comparison identifies a separate Scripture parallels owner and explicitly warns that its targeted string scan is not full-content parity. No check here found a precise existing approved 153-fish interpretation.",
+      "delta": "Candidate John 21 baptismal typology with an unspecified Fathers attribution; original patristic locus and compendium parity needed.",
+      "classification": "SOURCE_THEME_GAP_UNDETERMINED",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-03",
+      "articleIds": [
+        "a0021_nouveau"
+      ],
+      "topic": "ANNUNCIATION_TRANSFER",
+      "owner": "CALENDAR",
+      "checkedFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingEvidence": "buildMajorCelebrations exposes a Calendar list of major celebrations and selected dates; review of this file does not certify complete 1962 precedence for Annunciation transfers.",
+      "delta": "No duplicate Calendar or independent date calculation. Verify against canonical selection/resolution and rubric owner first.",
+      "classification": "RUBRIC_OWNER_PARITY_PENDING",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-04",
+      "articleIds": [
+        "a0305_ancien"
+      ],
+      "topic": "SOVEREIGN_PONTIFF_COMMON_SI_DILIGIS",
+      "owner": "MASS_EXPLORER_STUDY_RELEASE",
+      "checkedFiles": [
+        "data/learn/mass-explorer-approved-studies.v1.json",
+        "src/learn/mass-explorer-study-publication.js",
+        "data/presentation/guide-registry.v1.json"
+      ],
+      "existingEvidence": "Deep-study release manifest has NO_APPROVED_STUDIES and empty entries; 32 Guide records concern ordinary Mass moments, not this named historical Common.",
+      "delta": "A potential source-linked Common-specific study, not a missing Mass or approved quotation. Compare a0046_nouveau B24 and original Parsch printing.",
+      "classification": "NOT_IN_CHECKED_STUDY_RELEASE_ONLY",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-05",
+      "articleIds": [
+        "a0051_nouveau",
+        "a0325_ancien"
+      ],
+      "topic": "MARTYRS_INTRET_PARSCH_REUSED_OPENING",
+      "owner": "MASS_COMMON_EDUCATION",
+      "checkedFiles": [
+        "data/learn/mass-explorer-approved-studies.v1.json"
+      ],
+      "existingEvidence": "Both hosted source pages begin with the same distinctive Parsch explanation of the Intret martyr Mass; the checked Mass Explorer deep-study release contains no published studies.",
+      "delta": "One topical reading candidate; two exact article locators. Full text digest and original printing not yet compared.",
+      "classification": "HOSTED_SOURCE_OPENING_REUSED_DEDUP_CANDIDATE",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-06",
+      "articleIds": [
+        "a0053_nouveau",
+        "a0327_ancien"
+      ],
+      "topic": "MARTYRS_SALUS_AUTEM_PARSCH_REUSED_OPENING",
+      "owner": "MASS_COMMON_EDUCATION",
+      "checkedFiles": [
+        "data/learn/mass-explorer-approved-studies.v1.json"
+      ],
+      "existingEvidence": "Both hosted Salus autem pages have the same Parsch commentary opening on martyrs in white and the Lord's return; approved studies remain empty.",
+      "delta": "One thematic candidate across two source IDs; full printed editions, textual boundaries and liturgical Proper identity remain unchecked.",
+      "classification": "HOSTED_SOURCE_OPENING_REUSED_DEDUP_CANDIDATE",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-07",
+      "articleIds": [
+        "a0190_nouveau",
+        "a0519_ancien"
+      ],
+      "topic": "ST_VIT_VARIANTS",
+      "owner": "SAINTS",
+      "checkedFiles": [
+        "data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json"
+      ],
+      "existingEvidence": "Two queue IDs point to Saint Vit, Modeste and Crescence on June 15; observed hosted introductions duplicate the legend and early cult explanation.",
+      "delta": "One saint-group editorial topic with two source records; verify hagiographic identity and original panel hashes before any canonical merge.",
+      "classification": "HOSTED_SOURCE_OPENING_REUSED_DEDUP_CANDIDATE",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-08",
+      "articleIds": [
+        "a0604_ancien",
+        "a0972_ancien",
+        "a0587_ancien"
+      ],
+      "topic": "ABOLISHED_VIGILS_AND_OCTAVES",
+      "owner": "HISTORICAL_LITURGY_REFERENCE",
+      "checkedFiles": [
+        "src/calendar/liturgical-year.js",
+        "src/calendar/traditional-year-v384.js"
+      ],
+      "existingEvidence": "The ICRSP pages themselves explicitly distinguish the pre-1955 Immaculate Conception vigil, Corpus Christi octave Monday, and Peter-Paul octave from the current 1962 forms.",
+      "delta": "Historical note or source link only; no automatic 1962 feast, vigil, octave, special Mass, date or ritual change.",
+      "classification": "HISTORICAL_ONLY_RELEASE_HOLD",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-09",
+      "articleIds": [
+        "a0119_nouveau",
+        "a0121_nouveau",
+        "a0758_ancien"
+      ],
+      "topic": "SUPPRESSED_1960_FEASTS",
+      "owner": "HISTORICAL_SAINTS_REFERENCE",
+      "checkedFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingEvidence": "The source identifies the St John Latin Gate, St Michael Gargano appearance, and April 28 St Vital celebrations as suppressed in 1960.",
+      "delta": "Historical Saints/Sacred Places reference if wanted. Not valid as new universal 1962 calendar observances.",
+      "classification": "HISTORICAL_ONLY_RELEASE_HOLD",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-10",
+      "articleIds": [
+        "a0248_ancien",
+        "a0213_nouveau"
+      ],
+      "topic": "ST_MANSUY_FEAST_VS_TRANSLATION",
+      "owner": "PARTICULAR_SAINTS_CALENDAR",
+      "checkedFiles": [
+        "data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json"
+      ],
+      "existingEvidence": "September 4 St Mansuy and June 15 translation have distinct article IDs and explicit proper distinctions; both are in the particular-propers review cohort.",
+      "delta": "Preserve distinct liturgical observances under jurisdictional rules. Neither is a new worldwide calendar entry.",
+      "classification": "PARTICULAR_SCOPE_PARITY_PENDING",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-11",
+      "articleIds": [
+        "a0250_ancien",
+        "a0602_ancien"
+      ],
+      "topic": "ST_NICHOLAS_DIOCESAN_VS_UNIVERSAL",
+      "owner": "CALENDAR_SAINTS_AND_CUSTOMS",
+      "checkedFiles": [
+        "src/calendar/traditional-year-v384.js"
+      ],
+      "existingEvidence": "The Calendar already publishes an optional December 6 household St Nicholas custom for Alsace and Lorraine. That custom is not the diocesan Nancy/Toul and Saint-Dié Mass formulary described by ICRSP.",
+      "delta": "Do not duplicate the holiday custom. Evaluate the local Proper in particular calendar under exact 1962 diocesan authority.",
+      "classification": "EXISTING_CUSTOM_DIFFERENT_LITURGICAL_OWNER",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-12",
+      "articleIds": [
+        "a0588_ancien"
+      ],
+      "topic": "PETER_PAUL_VOTIVE_SUGGESTION",
+      "owner": "MASS_EXPLORER_PREFLIGHT",
+      "checkedFiles": [
+        "src/mass/preflight-study-proper.js",
+        "src/learn/mass-explorer-selected-calendar-proper.js"
+      ],
+      "existingEvidence": "The existing preflight module accepts explicitly selected alternate VOTIVE Mass types; it does not infer a votive from the weekday. The existing Calendar projection also refuses an unready alternate Proper.",
+      "delta": "Wednesday preference in hosted commentary can be background, never an automatic votive selection.",
+      "classification": "EXISTING_SELECTION_GATE_PROTECTS_1962",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-13",
+      "articleIds": [
+        "a0399_ancien"
+      ],
+      "topic": "VIANNEY_GUERANGER_CONTINUATION_AUTHORSHIP",
+      "owner": "SAINTS_AND_ORIGINAL_SOURCE_EVIDENCE",
+      "checkedFiles": [
+        "data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json"
+      ],
+      "existingEvidence": "The source itself labels an Année Liturgique supplement in the 1922 edition about Jean-Marie Vianney, canonized in 1925 per its adjoining source presentation; the text layering is not straightforward.",
+      "delta": "Do not attribute the supplement to Dom Prosper Guéranger; collate the original printed edition and chronology before use.",
+      "classification": "AUTHORSHIP_AND_CHRONOLOGY_HOLD",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "caseId": "ICRSP-B25-PARITY-14",
+      "articleIds": [
+        "a0374_ancien"
+      ],
+      "topic": "MAGDALENE_BIBLICAL_IDENTITY",
+      "owner": "SCRIPTURE_SAINTS_HISTORICAL_REFERENCE",
+      "checkedFiles": [
+        "data/source-text/icrsp-france-b11-51-crossdomain-content-handoff.v1.json"
+      ],
+      "existingEvidence": "The ICRSP introduction itself describes varied traditional identifications of Magdalene and the historical development of Mass formularies.",
+      "delta": "No new Gospel identity declaration. Treat combined Mary Magdalene/Mary of Bethany/unnamed sinner portrayal as a historical interpretive tradition, not proven biblical equivalence.",
+      "classification": "INTERPRETIVE_HISTORY_HOLD",
+      "exactCanonicalOwnerIdConfirmed": false,
+      "substantiveOwnerParityCertified": false,
+      "originalEditionCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    }
+  ],
+  "summary": {
+    "scopedComparisons": 14,
+    "uniqueArticleIds": 23,
+    "realNewUserVisibleContentApproved": 0,
+    "globallyCertifiedGaps": 0,
+    "productionChanges": 0
+  }
+}

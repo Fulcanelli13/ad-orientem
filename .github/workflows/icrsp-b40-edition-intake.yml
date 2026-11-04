@@ -1,0 +1,69 @@
+name: ICRSP B40 edition and duplicate-hash integrity
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - '.github/workflows/icrsp-b40-edition-intake.yml'
+      - 'data/source-text/icrsp-france-b40-29-named-salesian-annecy-toc-crosswalk.v1.json'
+      - 'data/source-text/icrsp-france-b40-all223-duplicate-groups-edition-triage.v1.json'
+      - 'data/source-text/icrsp-france-b40-four-author-edition-and-language-gates.v1.json'
+      - 'data/source-text/icrsp-france-b40-three-salesian-opening-text-concordances.v1.json'
+      - 'tests/test_icrsp_b40_223_groups_29_salesian_toc_editions.py'
+      - 'data/source-text/icrsp-france-b41-two-salesian-dating-source-witness-reconciliation.v1.json'
+      - 'tests/test_icrsp_b41_salesian_two_date_witness_conflicts.py'
+      - 'data/source-text/icrsp-france-b42-salesian-print-source-authentication-queue.v1.json'
+      - 'tests/test_icrsp_b42_salesian_print_source_queue.py'
+      - 'data/source-text/icrsp-france-b43-salesian-contextual-date-witnesses.v1.json'
+      - 'tests/test_icrsp_b43_salesian_contextual_date_witnesses.py'
+      - 'data/source-text/icrsp-france-b44-salesian-latin-french-source-layer-concordance.v1.json'
+      - 'tests/test_icrsp_b44_salesian_language_layer_concordance.py'
+      - 'data/source-text/icrsp-france-b45-independent-1897-scan-ocr-salesian-date-reconciliation.v1.json'
+      - 'tests/test_icrsp_b45_independent_scanned_print_ocr.py'
+      - 'data/source-text/icrsp-france-b46-vol8-14-independent-toc-provenance.v1.json'
+      - 'tests/test_icrsp_b46_volume_viii_toc_provenance.py'
+      - 'data/source-text/icrsp-france-b47-annecy-vol7-vol9-eleven-workitem-crosswalk.v1.json'
+      - 'tests/test_icrsp_b47_vol7_vol9_11_workitems.py'
+      - 'data/source-text/icrsp-france-b48-annecy-vii-ix-institutional-opening-date-gates.v1.json'
+      - 'tests/test_icrsp_b48_annecy_vii_ix_institutional_witnesses.py'
+      - 'data/source-text/icrsp-france-b49-vol9-three-whole-work-boundary-three-zone-concordance.v1.json'
+      - 'tests/test_icrsp_b49_salesian_ix_three_zone_work_boundary.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: icrsp-b40-edition-integrity
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Confirm all 223 SHA repeats, Salesian TOC exceptions, edition-rights holds
+        run: python -m unittest discover -s tests -p 'test_icrsp_b40_223_groups_29_salesian_toc_editions.py' -v
+      - name: Independently validate B41 Annecy date and weekday conflicts
+        run: python -m unittest discover -s tests -p 'test_icrsp_b41_salesian_two_date_witness_conflicts.py' -v
+      - name: Check B42 printed-edition witness queue and release holds
+        run: python -m unittest discover -s tests -p 'test_icrsp_b42_salesian_print_source_queue.py' -v
+      - name: Check B43 contextual chronology and editorial uncertainty
+        run: python -m unittest discover -s tests -p 'test_icrsp_b43_salesian_contextual_date_witnesses.py' -v
+      - name: Validate B44 Latin-French transmission work boundaries
+        run: python -m unittest discover -s tests -p 'test_icrsp_b44_salesian_language_layer_concordance.py' -v
+      - name: Verify B45 independent scanned-print OCR discrepancies, page locators and holds
+        run: python -m unittest discover -s tests -p 'test_icrsp_b45_independent_scanned_print_ocr.py' -v
+      - name: Check B46 1897 VIII independent TOC and historical manuscript routing
+        run: python -m unittest discover -s tests -p 'test_icrsp_b46_volume_viii_toc_provenance.py' -v
+      - name: Verify B47 final eleven Annecy VII/IX work boundaries
+        run: python -m unittest discover -s tests -p 'test_icrsp_b47_vol7_vol9_11_workitems.py' -v
+      - name: Verify B48 source page anchors, secondary witnesses and conjectural 1602 dates
+        run: python -m unittest discover -s tests -p 'test_icrsp_b48_annecy_vii_ix_institutional_witnesses.py' -v
+      - name: Verify B49 Salesian volume IX three-zone work boundaries and nonpublication
+        run: python -m unittest discover -s tests -p 'test_icrsp_b49_salesian_ix_three_zone_work_boundary.py' -v

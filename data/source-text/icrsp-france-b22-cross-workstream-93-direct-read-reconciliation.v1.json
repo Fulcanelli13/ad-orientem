@@ -1,0 +1,168 @@
+{
+  "schema": "AO_ICRSP_SOURCE_TOPIC_READ_CROSS_WORKSTREAM_RECONCILIATION_20261026_V1",
+  "asOf": "2026-10-26",
+  "ownerPr": 1666,
+  "sourceReadMeaning": "At least one commentary paragraph, substantive excerpt, or source-linked subject individually examined; NOT every author text on page and NOT app-ready approved explanation.",
+  "cohorts": [
+    {
+      "id": "B10_LENT_PENTECOST",
+      "source": "data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json",
+      "directReadArticleIds": [
+        "a0172_ancien",
+        "a0177_ancien",
+        "a0184_ancien",
+        "a0197_ancien",
+        "a0204_ancien",
+        "a0007_nouveau",
+        "a0221_nouveau",
+        "a0244_ancien",
+        "a0391_ancien",
+        "a0471_ancien",
+        "a0246_ancien"
+      ],
+      "count": 11
+    },
+    {
+      "id": "B11_40_INITIAL_REMAINING",
+      "source": "data/source-text/icrsp-france-b11-40-content-evidence-topics.v1.json",
+      "directReadArticleIds": [
+        "a0174_ancien",
+        "a0173_ancien",
+        "a0175_ancien",
+        "a0176_ancien",
+        "a0181_ancien",
+        "a0183_ancien",
+        "a0185_ancien",
+        "a0186_ancien",
+        "a0187_ancien",
+        "a0191_ancien",
+        "a0192_ancien",
+        "a0193_ancien",
+        "a0194_ancien",
+        "a0198_ancien",
+        "a0202_ancien",
+        "a0203_ancien",
+        "a0205_ancien",
+        "a0206_ancien",
+        "a0207_ancien",
+        "a0004_nouveau",
+        "a0005_nouveau",
+        "a0006_nouveau",
+        "a0009_nouveau",
+        "a0222_nouveau",
+        "a0223_nouveau",
+        "a0231_ancien",
+        "a0241_ancien",
+        "a0242_ancien",
+        "a0243_ancien",
+        "a0364_ancien",
+        "a0365_ancien",
+        "a0430_ancien",
+        "a0431_ancien",
+        "a0442_ancien",
+        "a0443_ancien",
+        "a0478_ancien",
+        "a0486_ancien",
+        "a0487_ancien",
+        "a0488_ancien",
+        "a0245_ancien"
+      ],
+      "count": 40
+    },
+    {
+      "id": "B20_10_SANCTORAL",
+      "source": "data/source-text/icrsp-france-b20-sanctoral-temporal-160-content-selection.v1.json",
+      "directReadArticleIds": [
+        "a0665_ancien",
+        "a0146_ancien",
+        "a0318_ancien",
+        "a0309_ancien",
+        "a0752_ancien",
+        "a0379_ancien",
+        "a0361_ancien",
+        "a0106_nouveau",
+        "a0107_nouveau",
+        "a0108_nouveau"
+      ],
+      "count": 10
+    },
+    {
+      "id": "B21_10_SUBSTANTIVE",
+      "source": "data/source-text/icrsp-france-b21-ten-additional-commentary-claim-leads.v1.json",
+      "directReadArticleIds": [
+        "a0112_ancien",
+        "a0634_ancien",
+        "a0667_ancien",
+        "a0673_ancien",
+        "a0719_ancien",
+        "a0086_nouveau",
+        "a0115_nouveau",
+        "a0126_nouveau",
+        "a0228_ancien",
+        "a0408_ancien"
+      ],
+      "count": 10
+    },
+    {
+      "id": "B22_PARALLEL_11_WITHIN_B20",
+      "source": "data/source-text/icrsp-france-b22-relevance-exceptions-and-existing-owner-editorial-drafts.v1.json",
+      "directReadArticleIds": [
+        "a0281_ancien",
+        "a0170_nouveau",
+        "a0605_ancien",
+        "a0098_nouveau",
+        "a0195_nouveau",
+        "a0090_ancien",
+        "a0541_ancien",
+        "a0745_ancien",
+        "a0563_ancien",
+        "a0890_ancien",
+        "a0715_ancien"
+      ],
+      "count": 11
+    },
+    {
+      "id": "B22_NEW_11_OUTSIDE_B20",
+      "source": "data/source-text/icrsp-france-b22-eleven-direct-commentary-topics.v1.json",
+      "directReadArticleIds": [
+        "a0156_ancien",
+        "a0087_nouveau",
+        "a0619_ancien",
+        "a0114_nouveau",
+        "a0640_ancien",
+        "a0664_ancien",
+        "a0546_ancien",
+        "a0044_nouveau",
+        "a0213_nouveau",
+        "a0923_ancien",
+        "a0596_ancien"
+      ],
+      "count": 11
+    }
+  ],
+  "stats": {
+    "totalIndexed": 855,
+    "eligibleCommentaryArticles": 783,
+    "structuralCommentaryPages": 783,
+    "structuralPanels": 2856,
+    "distinctPageTopicsDirectlyExamined": 93,
+    "eligiblePagesNotYetDirectlyTopicExamined": 690,
+    "B21NewAutomatedBodyScreenedOnly": 140,
+    "parallelB22FurtherDirectReadWithin140": 11,
+    "distinctB20SelectedDirectReadTotal": 31,
+    "B22SelectedOutside160MetaCandidates": 233,
+    "B22SelectedOutside160DirectRead": 11,
+    "B22SelectedOutside160NotYetDirectlyRead": 222,
+    "directlyApprovedNewExplanations": 0,
+    "rightsClearedNewTranslations": 0,
+    "productionChanges": 0
+  },
+  "cautions": [
+    "B21 140 computerized lexical screens are not human source interpretation; subset 11 direct reads counts separately, not as 151 independent pages.",
+    "233 outside-B20 candidate IDs exclude 17 previously read B10/B11 articles; no automation work is counted as completed for that tranche.",
+    "Website 'Guéranger' headings may name series continuations by another author. Original source edition, attribution, translation rights and canonical target remain per-record holds.",
+    "Parallel B22 local source-owner bilingual draft records are editorial proposals only; production publication remains 0.",
+    "Do not extrapolate unique 93 source topics into 93 missing app content records."
+  ],
+  "publicationApproved": false
+}

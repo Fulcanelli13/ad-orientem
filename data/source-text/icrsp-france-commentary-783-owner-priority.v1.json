@@ -1,0 +1,165 @@
+{
+  "schema": "AO_ICRSP_COMMENTARY_SOURCE_OWNER_PRIORITY_HANDOFF_V1",
+  "date": "2026-10-25",
+  "issue": 1665,
+  "branch": "governance/icrsp-source-inventory-1665",
+  "sourceStatus": "855_INDEXED_783_COMMENTARY_HTML_STRUCTURES_INSPECTED",
+  "publicationPolicy": "RESEARCH_ONLY_LINK_METADATA_RIGHTS_UNCLEARED",
+  "workQueues": [
+    {
+      "priority": "P1",
+      "owner": "CALENDAR_AND_MASS_EXPLORER",
+      "sourcePages": 189,
+      "sourceSection": "temporal",
+      "why": "High-value commentary for the existing 1962 Temporal cycle; major 39-celebration source crosswalk already staged",
+      "existingIntegration": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "workAction": "Map source article to existing day/formulary identifier and edition first; distinguish readings, stational churches and explanatory prose; do not rewrite runtime dates.",
+      "gate": "EXACT_SOURCE_EDITION_PASSAGE_RIGHTS_AND_CANONICAL_ID",
+      "publicationApproved": 0
+    },
+    {
+      "priority": "P1",
+      "owner": "SAINTS_AND_EXISTING_CALENDAR",
+      "sourcePages": 449,
+      "sourceSection": "sanctoral",
+      "why": "Largest source category; source-page titles support saints biography and feast context only after identity and historical-edition review",
+      "existingIntegration": "data/calendar/living-sanctoral-read-model.v1.json",
+      "workAction": "Cross-reference canonical saint identity, birth/death and feast scopes before proposing sourced Saints profile improvements.",
+      "gate": "EXACT_SAINT_ID_AUTHOR_EDITION_RIGHTS",
+      "publicationApproved": 0
+    },
+    {
+      "priority": "P2",
+      "owner": "MASS_EXPLORER_AND_REFERENCE",
+      "sourcePages": 58,
+      "sourceSection": "commons",
+      "why": "Commentary on reusable Commons and associated church usages",
+      "existingIntegration": "data/mass/form-registry.v2.json",
+      "workAction": "Crosswalk Common identity and avoid duplicating Proper-specific explanations.",
+      "gate": "MATCH_EXACT_FORMULARY_COMMEMORATION_AND_1962",
+      "publicationApproved": 0
+    },
+    {
+      "priority": "P2",
+      "owner": "CALENDAR_PARTICULAR_PROPER_REVIEW",
+      "sourcePages": 60,
+      "sourceSection": "local_propers",
+      "referenceOnlyPageCount": 63,
+      "why": "Local diocesan/territorial observances are not automatically universal 1962 feasts",
+      "existingIntegration": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+      "workAction": "Match local scope and identity; preserve five collision clusters already staged.",
+      "gate": "JURISDICTION_SOURCE_AND_YEAR_SCOPE",
+      "publicationApproved": 0
+    },
+    {
+      "priority": "P2",
+      "owner": "SOURCE_TEXT_REFERENCE",
+      "sourcePages": 12,
+      "sourceSection": "votives_requiem",
+      "why": "Votive and Requiem explanatory texts plus mixed later historical discussion",
+      "workAction": "Separate Missal formularies, devotional context and post-1962 media material.",
+      "gate": "ORIGINAL_PRINTED_LITURGICAL_AUTHORITY",
+      "publicationApproved": 0
+    },
+    {
+      "priority": "P3",
+      "owner": "CALENDAR_CUSTOMS_AND_OFFICE_HISTORY",
+      "sourcePages": 15,
+      "sourceSections": [
+        "ritual",
+        "office"
+      ],
+      "why": "Ceremonial, blessing and Divine Office context; distinct from Mass cards.",
+      "workAction": "Use source-led calendar custom suggestions, not automatic 1962 celebrant action icons.",
+      "gate": "RITUAL_EDITION_FORM_ACTOR_AND_REGION",
+      "publicationApproved": 0
+    }
+  ],
+  "noncoreNamedLeads": [
+    {
+      "id": "ICRSP-a0833_ancien",
+      "work": "Dom Adrien Nocent, Contempler sa Gloire",
+      "countAcrossCatalog": 7,
+      "candidate": "ADVENT_O_ANTIPHONS",
+      "status": "WEB_LABEL_UNVERIFIED_EDITION_RIGHTS"
+    },
+    {
+      "id": "ICRSP-a0309_ancien",
+      "work": "Dom Flicoteaux, la Noël d’été",
+      "countAcrossCatalog": 6,
+      "candidate": "NATIVITY_ST_JOHN_BAPTIST",
+      "status": "WEB_LABEL_UNVERIFIED_EDITION_RIGHTS"
+    },
+    {
+      "id": "ICRSP-a0987_ancien",
+      "work": "Dom Gaspard Lefebvre, La Croisade Liturgique",
+      "countAcrossCatalog": "4 labels in variant typography plus missal titles separately",
+      "candidate": "MASS_EXPLORER",
+      "status": "WEB_LABEL_UNVERIFIED_EDITION_RIGHTS"
+    },
+    {
+      "id": "ICRSP-a0035_nouveau",
+      "work": "Cardinal Journet, L’apparition à Marie de Magdala",
+      "countAcrossCatalog": 1,
+      "candidate": "EASTER_SCRIPTURE_SPIRITUAL_FORMATION",
+      "status": "WEB_LABEL_UNVERIFIED_EDITION_RIGHTS"
+    },
+    {
+      "id": "ICRSP-a0619_ancien",
+      "work": "Jean Daniélou, Les Quatre-Temps de Septembre et la Fête des Tabernacles",
+      "countAcrossCatalog": 1,
+      "candidate": "EMBER_DAYS_SCRIPTURE_TYPOLOGY",
+      "status": "WEB_LABEL_UNVERIFIED_EDITION_RIGHTS"
+    },
+    {
+      "id": "ICRSP-a0640_ancien",
+      "work": "Martyrdom of St Polycarp, Church of Smyrna",
+      "countAcrossCatalog": 1,
+      "candidate": "SAINTS_AND_PATRISTIC_SOURCE_LEAD",
+      "status": "ORIGINAL_TEXT_WITNESS_AND_TRANSLATION_NOT_YET_VERIFIED"
+    },
+    {
+      "id": "ICRSP-a0409_ancien",
+      "work": "Pius XII, Munificentissimus Deus (1950)",
+      "countAcrossCatalog": 3,
+      "candidate": "ASSUMPTION_CATECHESIS",
+      "status": "VERIFY_OFFICIAL_VATICAN_SOURCE_BEFORE_CITATION"
+    },
+    {
+      "id": "ICRSP-a0990_ancien",
+      "work": "Pius XI, Miserentissimus Redemptor (1928)",
+      "countAcrossCatalog": 1,
+      "candidate": "SACRED_HEART_FORMATION",
+      "status": "VERIFY_OFFICIAL_ENCYCLICAL_SOURCE"
+    },
+    {
+      "id": "ICRSP-a0238_ancien",
+      "work": "2006–2007 media headlines on older Latin Mass",
+      "countAcrossCatalog": 12,
+      "candidate": "HISTORICAL_MEDIA_CONTEXT_LOW_PRIORITY",
+      "status": "NOT_1962_LITURGICAL_AUTHORITY"
+    }
+  ],
+  "reviewPrioritization": {
+    "namedHistoricCorePanels": 1506,
+    "genericPresentationOfficePanels": 1174,
+    "remainingNoncorePanels": 125,
+    "remainingNoncoreSubgroups": {
+      "classicalLiturgy": 30,
+      "papalAndModernPastoral": 13,
+      "historicalPatristic": 5,
+      "contemporaryMedia": 12,
+      "ritualBiographyInternal": 65
+    },
+    "newExactAuthorWorkCertifications": 0,
+    "newRightsApprovals": 0,
+    "producedUserFacingQuotes": 0
+  },
+  "negativeOwnership": [
+    "Do not create a second Calendar or new Mass reader cards",
+    "Do not import pre-1955 ceremonies as if they were universal 1962 practice",
+    "Do not put typology inside Historia Salutis chronological narration",
+    "Do not use site headline as a proof of work's original text or permission to reproduce",
+    "Do not treat post-1962 papal discourse as normative 1962 rubrics"
+  ]
+}

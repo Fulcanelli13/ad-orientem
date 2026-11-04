@@ -1,0 +1,230 @@
+{
+  "schema": "AO_ICRSP_B13_PATRISTIC_SOURCE_LOCATOR_AND_EXISTING_SCRIPTURE_OWNER_HANDOFF_V1",
+  "date": "2026-10-26",
+  "status": "TWO_EARLY_CHRISTIAN_TREATISE_LOCATORS_IN_DEPENDENT_EDITIONS__NO_ORIGINAL_LANGUAGE_CRITICAL_EDITION_APPROVAL",
+  "noProductionChanges": true,
+  "sourceB12": "data/source-text/icrsp-france-b12-atomic-claim-and-lection-boundaries.v1.json",
+  "scriptureCorrespondencesOwner": {
+    "pr": 1553,
+    "branch": "explore/1552-biblical-correspondences-evidence",
+    "observedHeadSha": "3288c4a505092875f10b96faa5b26dfc02d72bb3",
+    "thematicSourceFile": "data/scripture/correspondences/thematic-source-leads.v1.json",
+    "observedFileSha": "b07633cb322a092ce98c5cc54435ced8c9891bad",
+    "thematicSourceLeads": 56,
+    "explicitlyNamedNaamanSusannaElishaElijahTopics": 0,
+    "scopeCaution": "Only the 56 named topical lead titles/records were checked for these names. UBS's 2193 groups, Catholic deuterocanon candidates and existing app prose were NOT comprehensively semantically deduplicated.",
+    "decision": "HAND_OFF_SOURCE_LOCATORS_TO_EXISTING_SCRIPTURE_COMPENDIUM_OWNER__DO_NOT_CREATE_ANOTHER_TYPOLOGY_CORPUS",
+    "mergedIntoOtherBranch": false
+  },
+  "bibliographicTrail": [
+    {
+      "id": "GUE_1903",
+      "author": "Dom Prosper Guéranger",
+      "work": "L'Année liturgique — Le Carême",
+      "edition": "16e édition",
+      "publisher": "H. Oudin",
+      "year": 1903,
+      "bnfCatalogue": "https://catalogue.bnf.fr/ark:/12148/cb32133488h",
+      "editionTitlePageTranscription": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+      "articleDayTextIdentityInThisEditionConfirmed": false,
+      "printedFacsimileRelevantPagesInspected": false,
+      "status": "EDITION_BIBLIOGRAPHY_VERIFIED__NOT_DAY_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "AMBR_MYST",
+      "author": "Ambrose of Milan",
+      "work": "De mysteriis / On the Mysteries",
+      "locus": "III.16–17",
+      "sourceUrl": "https://www.newadvent.org/fathers/3405.htm",
+      "witnessKind": "OLDER_ENGLISH_TRANSLATION_OF_PATRISTIC_WORK_ON_NEW_ADVENT",
+      "observedMeaning": "Explicitly invokes Naaman and Elisha while explaining the grace of baptism; water's effect is not mere natural washing.",
+      "sourcePassageLocated": true,
+      "originalLatinEditionCollated": false,
+      "appTextReproductionApproved": false,
+      "sourceClaimIndependentOfGueranger": "YES__DO_NOT_INFER_GUERANGER_BORROWED_OR_CITED_AMBROSE"
+    },
+    {
+      "id": "HIP_DAN",
+      "author": "Hippolytus of Rome (traditional attribution, textual-critical review pending)",
+      "work": "Commentary on Daniel / In Danielem",
+      "locus": "I.15.5–6; related baptismal/Church imagery I.17.3–6",
+      "modernTranslation": "Thomas C. Schmidt, Hippolytus of Rome: Commentary on Daniel, first edition (2010)",
+      "modernTranslationUrl": "https://www.pergrazia.com/wp-content/uploads/2019/12/0205_hippolytus_commentary-on-daniel_2010.pdf",
+      "pdfIndexPageZeroBased": 24,
+      "modernTranslationPrintedPage": 25,
+      "relatedModernPage": "https://royalarchives.org/hippolytus_of_rome/commentary_on_daniel/chapter_15/",
+      "editionCriticalReference": "G. Nathanael Bonwetsch, Hippolytus Werke 1, GCS 1 (1897), original text not critically collated here",
+      "observedMeaning": "I.15.5 directly maps Susanna to the Church, Jehoiakim to Christ and Babylon to the world.",
+      "sourcePassageLocated": true,
+      "printedModernTranslationPageVisuallyVerified": true,
+      "sourceTransmissionAndAttributionCriticallyVerified": false,
+      "originalGreekOrSlavonicCollated": false,
+      "modernTranslationCopyrightNotice": "©2010 T. C. Schmidt, copyright retained; no reproduction licence presumed",
+      "appTextReproductionApproved": false
+    }
+  ],
+  "rows": [
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-001",
+      "topicCode": "NAAMAN_GOSPEL_PERSON_REFERENCE",
+      "relationshipType": "SCRIPTURE_DIRECT_NAMED_REFERENCE",
+      "claimDistinctiveSubstance": "Luke 4:27 explicitly recalls Naaman",
+      "proofStatus": "DIRECT_GOSPEL_REFERENCE_ALREADY_READING_OWNER",
+      "sourceLocatorId": "NONE_REQUIRED_FOR_BASIC_SCRIPTURE_CROSS_REFERENCE",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-002",
+      "topicCode": "NAAMAN_BAPTISMAL_PREFIGURATION",
+      "relationshipType": "PATRISTIC_INTERPRETATION_LOCATED",
+      "claimDistinctiveSubstance": "Naaman cleansing understood sacramentally",
+      "proofStatus": "SOURCE_LOCATED_NOT_ORIGINAL_LANGUAGE_COLLATED",
+      "sourceLocatorId": "DE_MYSTERIIS_III_16_17",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-003",
+      "topicCode": "SUSANNA_JOHN8_JUSTICE_MERCY",
+      "relationshipType": "ICRSP_GUERANGER_DAY_COMMENTARY",
+      "claimDistinctiveSubstance": "Liturgical reading pair used as a contrast of innocence and mercy",
+      "proofStatus": "SOURCE_LOCATED_NOT_ORIGINAL_AUTHOR_EDITION_COLLATED",
+      "sourceLocatorId": "GUE_LENT3_SAT_LECON_EVANGILE",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-004",
+      "topicCode": "SUSANNA_CHURCH_FIDELITY_HIPPOLYTUS",
+      "relationshipType": "PATRISTIC_INTERPRETATION_LOCATED",
+      "claimDistinctiveSubstance": "Susanna figures the Church; elders allegorised as adversaries in an early Christian persecution setting",
+      "proofStatus": "MODERN_TRANSLATION_WITNESS_VERIFIED_ORIGINAL_GREEK_AND_ATTRIBUTION_PENDING",
+      "sourceLocatorId": "COMM_DAN_I_15_5_6",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-005",
+      "topicCode": "ELISHA_NAIN_LIFE_RESTORED",
+      "relationshipType": "ICRSP_THEMATIC_PAIR_ONLY",
+      "claimDistinctiveSubstance": "Two existing readings on restored life",
+      "proofStatus": "INDEPENDENT_PATRISTIC_ORIGINAL_LOCUS_NOT_CHECKED",
+      "sourceLocatorId": "NONE",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-006",
+      "topicCode": "ELIJAH_LAZARUS_LIFE_RESTORED",
+      "relationshipType": "ICRSP_THEMATIC_PAIR_ONLY",
+      "claimDistinctiveSubstance": "Two existing readings on restored life, separate from Elisha",
+      "proofStatus": "INDEPENDENT_PATRISTIC_ORIGINAL_LOCUS_NOT_CHECKED",
+      "sourceLocatorId": "NONE",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-007",
+      "topicCode": "JOSEPH_TENANTS_PASSION_FIGURE",
+      "relationshipType": "HOLD_PAST_LECTION_BOUNDARY",
+      "claimDistinctiveSubstance": "Joseph sale in Genesis 37:28 is NOT in the Genesis 37:6-22 Lenten lesson",
+      "proofStatus": "HOLD_ORIGINAL_SOURCE_AND_HISTORICAL_RHETORIC",
+      "sourceLocatorId": "NONE",
+      "existingThematicOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "newThematicTopicToCreateWithoutOwnerReview": false,
+      "originalWorkCriticalTextApproved": false,
+      "originalLanguageVerified": false,
+      "appAbsenceProven": false,
+      "licenceCleared": false,
+      "directPublishedTextApproved": false
+    }
+  ],
+  "holds": [
+    {
+      "id": "SUSANNA_ART_IDENTIFICATION",
+      "articleId": "a0198_ancien",
+      "claim": "ICRSP connects Susanna with early Christian catacomb imagery and sarcophagi",
+      "supportingHistoricSecondaryLead": "https://ccel.org/ccel/daubney/additions/additions.viii.xii.html",
+      "disposition": "HOLD_UNTIL_ARCHAEOLOGICAL_SITE_OBJECT_AND_DATE_VERIFIED",
+      "noCataloguedWorkOrImageApproved": true
+    },
+    {
+      "id": "GUE_ORIGINAL_DAY_EDITION",
+      "articleIds": [
+        "a0191_ancien",
+        "a0198_ancien"
+      ],
+      "claim": "The ICRSP website labels passages as Guéranger",
+      "disposition": "1903_16E_BIBLIOGRAPHY_FOUND_BUT_ORIGINAL_PRINTED_DAY_PARAGRAPH_AND_PAGES_NOT_INSPECTED"
+    },
+    {
+      "id": "PERIOD_POLEMIC",
+      "articleIds": [
+        "a0191_ancien",
+        "a0198_ancien"
+      ],
+      "claim": "Nineteenth- and early-third-century rhetoric about Israel/Jews or adversaries",
+      "disposition": "PRESERVE_HISTORICAL_SPEAKER_AND_PERIOD__DO_NOT_AUTOMATICALLY_RECAST_AS_CURRENT_CATHOLIC_TEACHING"
+    },
+    {
+      "id": "JOSEPH_OUTSIDE_MASS_LECTION",
+      "articleIds": [
+        "a0186_ancien"
+      ],
+      "claim": "Genesis 37:28 outside selected lesson Genesis 37:6–22",
+      "disposition": "STRICT_PROPER_BOUNDARY_REMAINS_HOLD"
+    },
+    {
+      "id": "NO_RIGHTS_OVERRIDE",
+      "articleIds": [
+        "a0191_ancien",
+        "a0198_ancien"
+      ],
+      "claim": "Modern French ICRSP hosting and a copyrighted 2010 English translation do not transfer reuse rights",
+      "disposition": "LINK_ONLY_AND_ORIGINAL_EDITORIAL_RESEARCH__NO_WHOLE_TEXT_PUBLICATION"
+    }
+  ],
+  "counts": {
+    "b12AtomicClaimsTracked": 7,
+    "distinctEarlyChristianAuthorWorksLocated": 2,
+    "specificPatristicWorkSectionLociLocated": 2,
+    "printedOriginalFrenchGuerangerDayLociCollated": 0,
+    "originalLatinGreekSlavonicPassagesCriticallyCollated": 0,
+    "independentHistoricArtworkObjectsVerified": 0,
+    "clearedModernCommentaryReproductionRights": 0,
+    "certifiedNewUserVisibleContentGaps": 0,
+    "createdProductionTypologyRecords": 0
+  },
+  "nextGate": "Existing PR #1553 owner must incorporate source-qualified evidence with typed links and original-language/edition policy; verify original 1903 day pages and Hippolytus critical Greek/Slavonic locus, and independently adjudicate archaeological site identities."
+}

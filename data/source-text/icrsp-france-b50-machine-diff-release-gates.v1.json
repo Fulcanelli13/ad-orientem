@@ -1,0 +1,52 @@
+{
+  "schema": "AO_ICRSP_B50_LIVE_MACHINE_COMPARISON_EXECUTION_GATES_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "scope": "Complete bounded-word machine comparison tool for Annecy IX.IV, IX.XVI, IX.XIX, pending live execution. This is not evidence the live comparisons have succeeded.",
+  "workIds": [
+    "IX.IV",
+    "IX.XVI",
+    "IX.XIX"
+  ],
+  "hostArticleIds": [
+    "a0180_ancien",
+    "a0562_ancien",
+    "a0352_ancien"
+  ],
+  "previousThreeZoneEvidence": "data/source-text/icrsp-france-b49-vol9-three-whole-work-boundary-three-zone-concordance.v1.json",
+  "execution": {
+    "script": "scripts/icrsp_b50_salesian_ix_full_diff.py",
+    "tests": "tests/test_icrsp_b50_salesian_ix_full_diff.py",
+    "workflow": ".github/workflows/icrsp-b50-salesian-full-collation.yml",
+    "lastCheckedRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40376841064",
+    "lastCheckedRunStatus": "QUEUED_NO_LIVE_RESULTS",
+    "liveResultRecorded": false,
+    "output": "Nonprose token-level metrics and SHA256 printed to Action logs and Step Summary; full source text never stored in Git"
+  },
+  "validation": [
+    "Unique beginning and ending anchor for each host and edition work",
+    "Work minimum token length and at least four HTML text blocks",
+    "Punctuation-preserving and lexical comparisons both recorded",
+    "Partial or failed extraction is not equivalent to completed collation",
+    "All publication gates remain closed"
+  ],
+  "counts": {
+    "historicalWorkCandidates": 3,
+    "machineCollationSuccessesProved": 0,
+    "originalPagePhotographsChecked": 0,
+    "manualDiffsAdjudicated": 0,
+    "rightsCleared": 0,
+    "appOwnersApproved": 0,
+    "publishedContentChanges": 0
+  },
+  "note": "Workflow job is queued. Distinguish a reproducible script commit from actual execution output, and execute a separate source-level editorial diff review when results exist.",
+  "noSourceTextCopied": true,
+  "publicationApproved": false,
+  "comparisonQualityCorrection": {
+    "asOf": "2026-10-26",
+    "bug": "Difflib SequenceMatcher(autoJunk=True) can mark half of a lengthy repetitive French sermon as changed after one token substitution (artificial 0.5 ratio).",
+    "fix": "Use autojunk=False for ALL word and lexical comparison tokens. More computationally expensive but avoids frequency-based intentional suppression of common vocabulary.",
+    "syntheticRegression": "5,000-word five-token cycle, central single-word substitution: old default ratio 0.5, corrected ratio 0.9998, one replace edit block, no copyrighted source passages used.",
+    "methodStillDoesNotProveOptimalEditDistance": true
+  }
+}

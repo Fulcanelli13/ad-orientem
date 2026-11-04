@@ -1,0 +1,149 @@
+{
+  "schema": "AO_ICRSP_B42_REAL_PRODUCTION_1962_DATE_PROBE_PLAN_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "purpose": "Diagnostic live in-browser production resolver probes. 18 real dates sampled for printed 1962 Common family, class, optional commemoration and bilingual-Proper lineage. Independent hard assertions only for 2026-11-11 St Martin of Tours and 2026-10-01 Remigius commemoration. All other dates are observational until exact printed edition and jurisdiction validated.",
+  "governingPrintedWitness": "data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json",
+  "sourceSelectionOwner": "globalThis.AO_RUNTIME_V8.resolver.resolveDay",
+  "selectionProjectionOwner": "src/learn/mass-explorer-selected-calendar-proper.js",
+  "bilingualPrintGate": "src/calendar/print-proper.js",
+  "oracleCases": [
+    {
+      "date": "2026-11-11",
+      "caseId": "ST_MARTIN_CONFESSOR_PONTIFF",
+      "kind": "POSITIVE_PRINTED_STATUIT",
+      "independentSources": [
+        "https://ordo.fsspx.org/day/2026-11-11?lang=en",
+        "https://missale.online/proprium/en/sancti/s_martini_episcopi_et_confessoris",
+        "https://www.introibo.fr/11-11-St-Martin-eveque-et",
+        "https://extraordinaryform.org/masses/1111StMartinConfessorBishopM20.pdf"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "caseId": "ST_REMIGIUS_COMMEMORATION",
+      "kind": "NEGATIVE_DO_NOT_SUBSTITUTE_MAIN_STATUIT",
+      "independentSources": [
+        "https://www.missalemeum.com/en/widgets/propers/2026-10-01",
+        "https://ordo.fsspx.org/day/2026-10-01?lang=en&mode=liturgical"
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "caseId": "ST_CHARLES_BORROMEO",
+      "kind": "BISHOP_CONFESSOR_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-11-17",
+      "caseId": "ST_GREGORY_THAUMATURGUS",
+      "kind": "BISHOP_CONFESSOR_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-12-06",
+      "caseId": "ST_NICHOLAS_IMPEDED_BY_ADVENT_SUNDAY",
+      "kind": "CALENDAR_PRECEDENCE_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2027-12-06",
+      "caseId": "ST_NICHOLAS_WEEKDAY",
+      "kind": "BISHOP_CONFESSOR_FUTURE_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-03-06",
+      "caseId": "STS_PERPETUA_FELICITY",
+      "kind": "MARTYR_GROUP_LENT_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-07-10",
+      "caseId": "SEVEN_BROTHERS_RUFINA_SECUNDA",
+      "kind": "MULTIPLE_MARTYR_GROUP_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-11-25",
+      "caseId": "ST_CATHERINE_ALEXANDRIA",
+      "kind": "SINGLE_VIRGIN_MARTYR_CONTROL",
+      "independentSources": []
+    },
+    {
+      "date": "2026-11-22",
+      "caseId": "ST_CECILIA_SUNDAY",
+      "kind": "SINGLE_VIRGIN_MARTYR_PRECEDENCE_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-10-15",
+      "caseId": "ST_TERESA_AVILA",
+      "kind": "SINGLE_NON_MARTYR_VIRGIN_CONTROL",
+      "independentSources": []
+    },
+    {
+      "date": "2026-08-28",
+      "caseId": "ST_AUGUSTINE",
+      "kind": "BISHOP_DOCTOR_CONTROL",
+      "independentSources": []
+    },
+    {
+      "date": "2026-11-07",
+      "caseId": "SATURDAY_BVM_AFTER_PENTECOST",
+      "kind": "SEASONAL_BVM_PROPER_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-12-05",
+      "caseId": "SATURDAY_ADVENT",
+      "kind": "SEASONAL_BVM_VS_FERIA_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-02-03",
+      "caseId": "ST_BLAISE",
+      "kind": "COMMEMORATION_CLASS_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-10-07",
+      "caseId": "OUR_LADY_OF_HOLY_ROSARY",
+      "kind": "BILINGUAL_EXPLORER_READY_CONTROL",
+      "independentSources": []
+    },
+    {
+      "date": "2026-09-27",
+      "caseId": "SS_COSMAS_DAMIAN_ON_SUNDAY",
+      "kind": "MARTYR_PRECEDENCE_PROBE",
+      "independentSources": []
+    },
+    {
+      "date": "2026-06-04",
+      "caseId": "ST_FRANCIS_CARACCIOLO",
+      "kind": "HISTORICAL_SAINT_MAIN_PROBE",
+      "independentSources": []
+    }
+  ],
+  "expectedHardAssertions": [
+    {
+      "date": "2026-11-11",
+      "rule": "MAIN_ST_MARTIN_AND_STATUIT_LATIN_INTROIT",
+      "rationale": "FSSPX 2026-11-11 and Missale Online St Martin name the principal saint and first Confessor Pontiff Common. Presence of St Menas commemoration does not independently authorize its insertion in a nonconventual Sung Mass. The feast-specific first Collect is Deus qui conspicis, not the generic Confessor Pontiff Da quaesumus. See dedicated St Martin sources; this must not be silently substituted."
+    },
+    {
+      "date": "2026-10-01",
+      "rule": "ST_REMI_IS_NOT_PRINCIPAL_STATUIT_MASS",
+      "rationale": "Missale Meum 2026-10-01 marks Feria as the principal, with St Remigius only commemorated. The actual 1962 ferial Introit begins Da pacem, Domine as separately confirmed by SSPX liturgical Ordo."
+    }
+  ],
+  "outputPolicy": "Permanent plan committed to repository; browser test reports observed resolved day ID, sourcePath, safe short Latin incipits and selection/bilingual readiness, never full copyrighted source text or live modification. Runtime evidence must be separately reviewed and permanently committed before 7-day artifact expiration.",
+  "releaseGates": {
+    "actualObservedRuntimeReportCaptured": false,
+    "fullPrinted1962TextCollated": false,
+    "signedBilingualTranslations": false,
+    "automaticMassSubstitutionPermitted": false,
+    "publicationApproved": false
+  },
+  "expectedSourcePathProofStatus": "OBSERVATION_PENDING_ACTIONS_EXECUTION"
+}

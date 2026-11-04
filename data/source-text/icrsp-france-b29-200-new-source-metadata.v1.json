@@ -1,0 +1,3560 @@
+{
+  "schema": "AO_ICRSP_B29_FRESH200_UNREVIEWED_NONOVERLAPPING_METADATA_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "sourceCorpus": "data/source-text/icrsp-france-783-verified-commentary-labels.v1.json",
+  "sourcePriorLedger": "data/source-text/icrsp-france-b28-eight-stream-363-unique-topic-ledger.v1.json",
+  "sourceExistingWave": "data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json",
+  "definition": "200 never directly reviewed, never previously queued source article IDs. They are only selected until a source body screen succeeds.",
+  "totals": {
+    "commentaryCorpus": 783,
+    "alreadyDirectTopicReviewed": 363,
+    "oldMetadataWave": 250,
+    "reviewedWithinOldWave": 169,
+    "unreadOldWave": 81,
+    "unstagedAndUnreadPriorToB29": 339,
+    "newPreviouslyUnstagedBatch": 200,
+    "remainingUnstagedAfterThisSelection": 139,
+    "freshSelectedSections": {
+      "temporal": 50,
+      "commons": 30,
+      "local_propers": 22,
+      "votives_requiem": 8,
+      "sanctoral": 84,
+      "office": 6
+    },
+    "directTopicReviewsAdded": 0,
+    "publicationApprovals": 0
+  },
+  "records": [
+    {
+      "articleId": "a0088_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "articleTitle": "1ᵉʳ dimanche de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0813_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0813_ancien",
+      "articleTitle": "Lundi de la 1ʳᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0815_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0815_ancien",
+      "articleTitle": "Mercredi de la 1ʳᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0816_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0816_ancien",
+      "articleTitle": "Jeudi de la 1ʳᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0817_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0817_ancien",
+      "articleTitle": "Vendredi de la 1ʳᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0089_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
+      "articleTitle": "2ᵉ dimanche de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0819_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0819_ancien",
+      "articleTitle": "Lundi de la 2ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0820_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0820_ancien",
+      "articleTitle": "Mardi de la 2ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0822_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0822_ancien",
+      "articleTitle": "Jeudi de la 2ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0823_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0823_ancien",
+      "articleTitle": "Vendredi de la 2ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0824_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0824_ancien",
+      "articleTitle": "Samedi de la 2ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0093_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0093_ancien",
+      "articleTitle": "Mercredi des Quatre-Temps de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0827_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0827_ancien",
+      "articleTitle": "Jeudi de la 3ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0839_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0839_ancien",
+      "articleTitle": "O Emmanuel",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Dom Adrien Nocent, Contempler sa Gloire",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0091_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0091_ancien",
+      "articleTitle": "4ᵉ dimanche de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0829_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0829_ancien",
+      "articleTitle": "Mardi de la 4ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0830_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0830_ancien",
+      "articleTitle": "Mercredi de la 4ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0832_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0832_ancien",
+      "articleTitle": "Vendredi de la 4ᵉ semaine de l’Avent",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0102_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0102_ancien",
+      "articleTitle": "30 décembre (6ᵉ jour dans l’Octave de la Nativité)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0101_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0101_ancien",
+      "articleTitle": "Féries dans l’octave de la Nativité",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0106_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_ancien",
+      "articleTitle": "Féries du Temps de la Nativité (2 au 5 janvier)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0109_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0109_ancien",
+      "articleTitle": "Féries du Temps de l’Epiphanie (du 7 au 12 janvier)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0110_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0110_ancien",
+      "articleTitle": "La Sainte Famille (dimanche après l’Epiphanie)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0116_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0116_ancien",
+      "articleTitle": "2ᵉ dimanche après l’Epiphanie",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0620_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0620_ancien",
+      "articleTitle": "3ᵉ Dimanche restant après l’Épiphanie",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0136_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0136_ancien",
+      "articleTitle": "4ᵉ dimanche après l’Epiphanie",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0622_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0622_ancien",
+      "articleTitle": "5ᵉ Dimanche restant après l’Épiphanie",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0130_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "articleTitle": "Dimanche de la Septuagésime",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0133_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0133_ancien",
+      "articleTitle": "Dimanche de la Sexagésime",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0140_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0140_ancien",
+      "articleTitle": "Jeudi après les Cendres",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0153_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0153_ancien",
+      "articleTitle": "Vendredi après les Cendres",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0154_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0154_ancien",
+      "articleTitle": "Samedi après les Cendres",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0180_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "articleTitle": "2ᵉ dimanche de Carême",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0188_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
+      "articleTitle": "3ᵉ dimanche de Carême",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0199_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
+      "articleTitle": "4ᵉ Dimanche de Carême",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0008_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0008_nouveau",
+      "articleTitle": "Vendredi de la Passion",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0013_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+      "articleTitle": "Lundi Saint",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0035_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+      "articleTitle": "Mardi Saint (avant Pie XII)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0014_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+      "articleTitle": "Mardi Saint",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0036_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
+      "articleTitle": "Mercredi Saint (avant Pie XII)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0221_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_ancien",
+      "articleTitle": "Jeudi Saint (avant Pie XII)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0020_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+      "articleTitle": "Jeudi Saint après 1955",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0220_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+      "articleTitle": "Vendredi Saint (avant Pie XII)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0029_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "articleTitle": "Vendredi Saint après 1955",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0030_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+      "articleTitle": "Samedi Saint après 1951",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0595_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0595_ancien",
+      "articleTitle": "Vigile Pascale",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0031_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+      "articleTitle": "Dimanche de la Résurrection (Dimanche de Pâques)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0156_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0156_nouveau",
+      "articleTitle": "Vendredi dans l’Octave de l’Ascension",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0067_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0067_nouveau",
+      "articleTitle": "Commun de plusieurs Femmes Martyres",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0064_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0064_nouveau",
+      "articleTitle": "Commun de plusieurs Vierges Martyres",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0342_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien",
+      "articleTitle": "Commun des Saintes Femmes I : pour plusieurs Martyres Me exspectavérunt",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0332_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0332_ancien",
+      "articleTitle": "Commun d’un Confesseur non Pontife I : Os iusti",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0059_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0059_nouveau",
+      "articleTitle": "Commun d’un Confesseur non Pontife Iustus ut palma",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0058_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0058_nouveau",
+      "articleTitle": "Commun d’un Confesseur non Pontife Os Iusti",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0331_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0331_ancien",
+      "articleTitle": "Commun d’un Confesseur Pontife II : Sacerdótes tui",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0330_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0330_ancien",
+      "articleTitle": "Commun d’un Confesseur Pontife I : Státuit ei",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0057_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0057_nouveau",
+      "articleTitle": "Commun d’un Confesseur Pontife Sacerdótes tui",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0056_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0056_nouveau",
+      "articleTitle": "Commun d’un Confesseur Pontife Státuit ei",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0066_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0066_nouveau",
+      "articleTitle": "Commun d’une Femme Martyre",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0068_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0068_nouveau",
+      "articleTitle": "Commun d’une Femme non Martyre",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0061_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0061_nouveau",
+      "articleTitle": "Commun d’une Vierge Martyre Loquébar",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0062_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0062_nouveau",
+      "articleTitle": "Commun d’une Vierge Martyre Me exspectavérunt",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0063_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0063_nouveau",
+      "articleTitle": "Commun d’une Vierge non Martyre Dilexísti",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0065_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0065_nouveau",
+      "articleTitle": "Commun d’une Vierge non Martyre Vultum tuum",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0328_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0328_ancien",
+      "articleTitle": "Commun d’un Martyr au Temps Pascal : Protexísti",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0323_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0323_ancien",
+      "articleTitle": "Commun d’un Martyr hors du Temps Pascal III : In virtúte tua",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0322_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0322_ancien",
+      "articleTitle": "Commun d’un Martyr hors du Temps Pascal II : Sacerdótes Dei",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0321_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0321_ancien",
+      "articleTitle": "Commun d’un Martyr hors du Temps Pascal I : Státuit ei",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0324_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0324_ancien",
+      "articleTitle": "Commun d’un Martyr hors du Temps Pascal IV : Lætábitur",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0049_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0049_nouveau",
+      "articleTitle": "Commun d’un Martyr non Pontife hors du Temps Pascal In virtúte tua",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0050_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0050_nouveau",
+      "articleTitle": "Commun d’un Martyr non Pontife hors du Temps Pascal Lætábitur iustus",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0054_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0054_nouveau",
+      "articleTitle": "Commun d’un Martyr pendant le Temps Pascal Protexísti",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0048_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0048_nouveau",
+      "articleTitle": "Commun d’un Martyr Pontife hors du Temps Pascal Sacerdótes Dei",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0047_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0047_nouveau",
+      "articleTitle": "Commun d’un Martyr Pontife hors du Temps Pascal Státuit ei",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0350_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0350_ancien",
+      "articleTitle": "Messes de la Sᵗᵉ Vierge au Samedi V : Après la Trinité",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0071_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0071_nouveau",
+      "articleTitle": "Messes de la Sᵗᵉ Vierge le Samedi I Avent",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0072_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0072_nouveau",
+      "articleTitle": "Messes de la Sᵗᵉ Vierge le Samedi II de la Nativité au 2 février",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0073_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0073_nouveau",
+      "articleTitle": "Messes de la Sᵗᵉ Vierge le Samedi III du 3 février au Mercredi Saint",
+      "section": "commons",
+      "candidateExistingOwner": "EXISTING_MASS_EXPLORER_COMMONS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0369_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0369_ancien",
+      "articleTitle": "Saint Vincent de Paul, confesseur (propre de France)",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0703_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0703_ancien",
+      "articleTitle": "Saint Arbogast, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0737_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0737_ancien",
+      "articleTitle": "Saint Loup, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0256_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0256_ancien",
+      "articleTitle": "Saint Gauzelin, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0653_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0653_ancien",
+      "articleTitle": "Notre-Dame de Benoîte-Vaux",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0687_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0687_ancien",
+      "articleTitle": "Saint Adelphe, abbé",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0652_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0652_ancien",
+      "articleTitle": "Saint Bodon, évêque et confesseur",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0686_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0686_ancien",
+      "articleTitle": "Saint Amé, abbé",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0255_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0255_ancien",
+      "articleTitle": "Saint Epvre, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0683_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0683_ancien",
+      "articleTitle": "Saint Goëry, évêque et confesseur",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0654_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0654_ancien",
+      "articleTitle": "Saint Sanctin (Saintin), évêque et confesseur",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0689_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0689_ancien",
+      "articleTitle": "Saint Rémi, évêque et confesseur",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0694_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0694_ancien",
+      "articleTitle": "Sainte Menne, vierge",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0693_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0693_ancien",
+      "articleTitle": "Sainte Libaire, vierge et martyre",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0736_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0736_ancien",
+      "articleTitle": "Restitution et réconciliation de la Cathédrale de Strasbourg",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0727_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0727_ancien",
+      "articleTitle": "Saint Amon, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0688_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0688_ancien",
+      "articleTitle": "Saint Euchaire, martyr",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0729_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0729_ancien",
+      "articleTitle": "Saint Alchas, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0730_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0730_ancien",
+      "articleTitle": "Sainte Modeste, vierge",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0884_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0884_ancien",
+      "articleTitle": "Saint Airy, évêque",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0885_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0885_ancien",
+      "articleTitle": "Saints Possesseur et Firmin, évêques",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0685_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0685_ancien",
+      "articleTitle": "Saint Romaric, abbé",
+      "section": "local_propers",
+      "candidateExistingOwner": "EXISTING_PARTICULAR_CALENDAR_HOLD",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0261_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0261_ancien",
+      "articleTitle": "Le jour de l’enterrement",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0056_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0056_ancien",
+      "articleTitle": "L’Ordo missæ (par un groupe de théologiens)",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0791_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0791_ancien",
+      "articleTitle": "Messe pour la Propagation de la Foi",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0346_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0346_ancien",
+      "articleTitle": "Messes de la Sᵗᵉ Vierge au Samedi I : Avent",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0404_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0404_ancien",
+      "articleTitle": "Messes quotidiennes des Défunts",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0589_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0589_ancien",
+      "articleTitle": "Messe votive de St Pierre",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0126_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0126_ancien",
+      "articleTitle": "Mysterium Fidei (1965)",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0792_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0792_ancien",
+      "articleTitle": "Translation de saint Nicolas",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0656_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0656_ancien",
+      "articleTitle": "Octave de St Jean (3 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0584_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0584_ancien",
+      "articleTitle": "Sainte Geneviève, vierge (propre de France)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0315_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0315_ancien",
+      "articleTitle": "St Télesphore, pape et martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0658_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0658_ancien",
+      "articleTitle": "2ᵉ jour dans l’Octave de l’Épiphanie (7 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0659_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0659_ancien",
+      "articleTitle": "3ᵉ jour dans l’Octave de l’Épiphanie (8 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0660_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0660_ancien",
+      "articleTitle": "4ᵉ jour dans l’Octave de l’Épiphanie (9 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0257_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0257_ancien",
+      "articleTitle": "Bienheureuse Alix le Clerc, vierge",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0661_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0661_ancien",
+      "articleTitle": "5ᵉ jour dans l’Octave de l’Épiphanie (10 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0662_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0662_ancien",
+      "articleTitle": "6ᵉ jour dans l’Octave de l’Épiphanie (11 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0316_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0316_ancien",
+      "articleTitle": "St Hygin, pape et martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0663_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0663_ancien",
+      "articleTitle": "7ᵉ jour dans l’Octave de l’Épiphanie (12 janvier, avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0630_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0630_ancien",
+      "articleTitle": "Chaire de St Pierre Apôtre à Rome",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0632_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0632_ancien",
+      "articleTitle": "Sts Marius, Marthe, Audifax et Abachus, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0637_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0637_ancien",
+      "articleTitle": "St Raymond de Pegnafort, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0254_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0254_ancien",
+      "articleTitle": "Saint Sigisbert, Roi",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0666_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0666_ancien",
+      "articleTitle": "St André Corsini, évêque et confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0670_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0670_ancien",
+      "articleTitle": "St Romuald, abbé",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0675_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0675_ancien",
+      "articleTitle": "Apparition de la Vierge Immaculée",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0676_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0676_ancien",
+      "articleTitle": "Les Sept Saints Fondateurs de l’ordre des Servites",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0677_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0677_ancien",
+      "articleTitle": "St Valentin, prêtre et martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0678_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0678_ancien",
+      "articleTitle": "Sts Faustin et Jovite, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0889_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0889_ancien",
+      "articleTitle": "Sainte Marie-Bernard Soubirous, vierge",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0699_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0699_ancien",
+      "articleTitle": "Saint Gondelbert, évêque et confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0741_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0741_ancien",
+      "articleTitle": "ou 28/02 St Gabriel de la Vierge des Douleurs, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Vie de St Gabriel",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0714_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0714_ancien",
+      "articleTitle": "St Thomas d’Aquin, confesseur et docteur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0078_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0078_nouveau",
+      "articleTitle": "St Herménégilde, Martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0088_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_nouveau",
+      "articleTitle": "Navigation",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0113_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0113_nouveau",
+      "articleTitle": "Navigation",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0762_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0762_ancien",
+      "articleTitle": "St Joseph, artisan",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Gaspard Lefebvre, la Croisade Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0293_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0293_ancien",
+      "articleTitle": "Saint Augustin Schœffler, Martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0123_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0123_nouveau",
+      "articleTitle": "St Antonin, Evêque et Confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0854_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0854_ancien",
+      "articleTitle": "Saint Gengoult, martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Historique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0127_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0127_nouveau",
+      "articleTitle": "St Robert Bellarmin, Evêque, Confesseur et Docteur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Benoît XVI, Catéchèses, 23 février 2011",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0800_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0800_ancien",
+      "articleTitle": "Sᵗᵉ Pudentienne, vierge",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0733_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0733_ancien",
+      "articleTitle": "Sainte Jeanne d’Arc, vierge",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0812_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0812_ancien",
+      "articleTitle": "La bienheureuse Vierge Marie Reine",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Gaspard Lefebvre, la Croisade Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0811_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0811_ancien",
+      "articleTitle": "Sᵗᵉ Pétronille, vierge",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0303_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0303_ancien",
+      "articleTitle": "Sainte Clotilde, Reine et Veuve",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0510_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0510_ancien",
+      "articleTitle": "St François Carraciolo, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0512_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0512_ancien",
+      "articleTitle": "06/06, St Norbert, évêque et confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0184_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0184_nouveau",
+      "articleTitle": "Sᵗᵉ Marguerite Reine, Veuve",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0514_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0514_ancien",
+      "articleTitle": "Sᵗᵉ Marguerite d’Ecosse, reine et veuve",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0850_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0850_ancien",
+      "articleTitle": "Translation de saint Mansuy, évêque",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Historique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0521_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0521_ancien",
+      "articleTitle": "18/06, St Ephrem le Syrien, diacre, confesseur et docteur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Benoît XVI, catéchèses, 28 novembre 2007",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0192_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_nouveau",
+      "articleTitle": "St Ephrem, Diacre, Confesseur et Docteur de l’Eglise",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Benoît XVI, catéchèses, 28 novembre 2007",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0540_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0540_ancien",
+      "articleTitle": "Notre Dame du Perpétuel Secours",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0352_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien",
+      "articleTitle": "Visitation de la Vierge Marie",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0578_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0578_ancien",
+      "articleTitle": "Commémoraison de tous les Saints Souverains Pontifes",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0359_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0359_ancien",
+      "articleTitle": "St Jean Gualbert, abbé",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1022_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1022_ancien",
+      "articleTitle": "Vigile de St Jacques, apôtre (avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0384_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0384_ancien",
+      "articleTitle": "St Félix, pape, et les Sts Simplice, Faustin et Béatrice, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0389_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0389_ancien",
+      "articleTitle": "St Pierre aux Liens, apôtre",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1023_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1023_ancien",
+      "articleTitle": "Saint Dominique, patriarche des prêcheurs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0398_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0398_ancien",
+      "articleTitle": "St Donat, évêque et martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0400_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0400_ancien",
+      "articleTitle": "Saint Jean-Marie Vianney, confesseur (Propre de France)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0401_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0401_ancien",
+      "articleTitle": "Sts Cyriaque, Large et Smaragde, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0403_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0403_ancien",
+      "articleTitle": "St Laurent, martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "On pourra se reporter aussi aux textes liturgiques et commentaires de la vigile et du jour Octave",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0405_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0405_ancien",
+      "articleTitle": "St Tiburce et Sᵗᵉ Suzanne, vierge, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1031_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1031_ancien",
+      "articleTitle": "Sainte Radegonde, reine, veuve",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0407_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0407_ancien",
+      "articleTitle": "Sts Hippolyte et Cassien, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0684_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0684_ancien",
+      "articleTitle": "St Eusèbe, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0410_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0410_ancien",
+      "articleTitle": "St Joachim, père de la T. Sᵗᵉ Vierge Marie",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1029_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1029_ancien",
+      "articleTitle": "Octave de St Laurent, martyr (avant 1955)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1036_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1036_ancien",
+      "articleTitle": "St Roch, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1033_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1033_ancien",
+      "articleTitle": "4ᵉ jour dans l’Octave de l’Assomption",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 3,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0412_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0412_ancien",
+      "articleTitle": "St Agapit, martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1034_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1034_ancien",
+      "articleTitle": "5ᵉ jour dans l’Octave de l’Assomption",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a1037_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1037_ancien",
+      "articleTitle": "Sainte Jeanne de Chantal, veuve",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 2,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0415_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0415_ancien",
+      "articleTitle": "Sᵗᵉ Jeanne-Françoise Frémiot de Chantal, veuve",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0417_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0417_ancien",
+      "articleTitle": "Sts Timothée, Hippolyte et Symphorien, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0418_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0418_ancien",
+      "articleTitle": "St Philippe Béniti, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0535_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0535_ancien",
+      "articleTitle": "Saint Louis, roi (propre de France)",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0420_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0420_ancien",
+      "articleTitle": "St Louis, roi, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0422_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0422_ancien",
+      "articleTitle": "St Joseph Calasance, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0427_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0427_ancien",
+      "articleTitle": "Sᵗᵉ Rose de Lima, vierge",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0428_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0428_ancien",
+      "articleTitle": "Sts Félix et Adauctus, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0433_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0433_ancien",
+      "articleTitle": "Les 12 Saints Martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0432_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0432_ancien",
+      "articleTitle": "St Gilles, abbé",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0436_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0436_ancien",
+      "articleTitle": "St Etienne, roi, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0438_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0438_ancien",
+      "articleTitle": "St Laurent Justinien, évêque et confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "On pourra se reporter aussi aux textes liturgiques et commentaires de la vigile et du jour Octave",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0439_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0439_ancien",
+      "articleTitle": "Nativité de la Bse Vierge Marie",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0440_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0440_ancien",
+      "articleTitle": "St Adrien, martyr",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0444_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0444_ancien",
+      "articleTitle": "St Nicolas de Tolentino, confesseur",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0445_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0445_ancien",
+      "articleTitle": "Sts Prote et Hyacinthe, martyrs",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0178_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0178_ancien",
+      "articleTitle": "Matines de la 1ʳᵉ semaine de Carême",
+      "section": "office",
+      "candidateExistingOwner": "EXISTING_CALENDAR_SEASONAL_HISTORY_ONLY",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0216_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0216_ancien",
+      "articleTitle": "Matines de la 1ʳᵉ semaine de la Passion",
+      "section": "office",
+      "candidateExistingOwner": "EXISTING_CALENDAR_SEASONAL_HISTORY_ONLY",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0189_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0189_ancien",
+      "articleTitle": "Matines de la 2ᵉ semaine de Carême",
+      "section": "office",
+      "candidateExistingOwner": "EXISTING_CALENDAR_SEASONAL_HISTORY_ONLY",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0195_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0195_ancien",
+      "articleTitle": "Matines de la 3ᵉ semaine de Carême",
+      "section": "office",
+      "candidateExistingOwner": "EXISTING_CALENDAR_SEASONAL_HISTORY_ONLY",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0201_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0201_ancien",
+      "articleTitle": "Matines de la 4ᵉ semaine de Carême",
+      "section": "office",
+      "candidateExistingOwner": "EXISTING_CALENDAR_SEASONAL_HISTORY_ONLY",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0168_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0168_ancien",
+      "articleTitle": "Matines de la semaine de la Septuagésime (leçons et répons)",
+      "section": "office",
+      "candidateExistingOwner": "EXISTING_CALENDAR_SEASONAL_HISTORY_ONLY",
+      "priorCommentaryPanelCount": 1,
+      "commentaryPanelLabels": [
+        "Présentation"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0157_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0157_nouveau",
+      "articleTitle": "Samedi dans l’Octave de l’Ascension",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 4,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0939_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0939_ancien",
+      "articleTitle": "Samedi dans l’Octave de l’Ascension (avant 1955)",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "priorCommentaryPanelCount": 5,
+      "commentaryPanelLabels": [
+        "Présentation",
+        "Dom Guéranger, l’Année Liturgique",
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "Office du jour"
+      ],
+      "sourceProseAlreadyInspectedForThisWave": false,
+      "humanDirectTopicReadingComplete": false,
+      "existingOwnerMatchCertified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    }
+  ],
+  "hostedTextStored": false,
+  "publicationApproved": false
+}

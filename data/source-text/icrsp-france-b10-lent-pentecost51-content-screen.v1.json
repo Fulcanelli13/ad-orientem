@@ -1,0 +1,2089 @@
+{
+  "schema": "AO_ICRSP_B10_TEMPORAL_51_CONTENT_DISCOVERY_V1",
+  "date": "2026-10-25",
+  "issue": 1665,
+  "status": "51_PAGE_METADATA_SCREEN_AND_11_LIVE_THEME_REVIEWS_NOT_ORIGINAL_WORK_CERTIFIED",
+  "dedupScope": "Existing 189 Temporal-content hash registry. No new original work deduplication approved.",
+  "previousCrosswalk": "data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json",
+  "runtimeBaseline": [
+    "32 existing Guide entries",
+    "84 original bilingual Ordinary prayer explanations",
+    "8 source-backed Formation stages",
+    "0 released deep-study manifests and 0 reproduction-clearance manifests"
+  ],
+  "provenance": [
+    "GitHub source HTML panel/author labels from run 40204497782",
+    "11 public ICRSP webpages directly inspected for editorial themes; original book editions remain uncollated"
+  ],
+  "policy": [
+    "The 227 panels are repeated source-page occurrences, not distinct historic literary works.",
+    "All 51 existing exact sourcePath witnesses prove ownership of selected Scripture readings, not original 1962 Mass Proper editorial compliance.",
+    "Every day includes three site-labelled work candidates: Guéranger, Schuster, Parsch. Attribution is a website claim, not an original print edition collation.",
+    "Source topics identified on 11 directly read pages are hypotheses for new value; 40 pages have not had full commentary substance reviewed.",
+    "No complete protected French commentary content stored or republished.",
+    "Historic stational/ordination/Office descriptions are explanatory leads, not instructions for current 1962 ceremonies.",
+    "Do not create second Calendar, Missal reader, card count, day date selector, Mass Proper or source author avatar."
+  ],
+  "totals": {
+    "articles": 51,
+    "lentFeriaAndEmber": 29,
+    "postPentecostSundays": 22,
+    "sourcePanelOccurrences": 227,
+    "namedHistoricWorkPanelOccurrences": 153,
+    "otherAndEditorialPanelOccurrences": 74,
+    "directlyReviewedPageTopics": 11,
+    "sourcePagesOnlyPanelMetadata": 40,
+    "contentGapsCertified": 0,
+    "originalWorkEdtionsCollated": 0,
+    "rightsCleared": 0,
+    "publicationPromotions": 0
+  },
+  "cohorts": {
+    "lent": {
+      "articles": 29,
+      "panels": 128,
+      "directlyRead": 6
+    },
+    "postPentecost": {
+      "articles": 22,
+      "panels": 99,
+      "directlyRead": 5
+    }
+  },
+  "rows": [
+    {
+      "articleId": "a0172_ancien",
+      "indexPosition": 63,
+      "title": "Lun.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0172_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-1",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-1"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-1"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Roman station at San Pietro in Vincoli, Ezekiel's pastoral imagery, Lenten reconciliation",
+        "category": "STATION_AND_SCRIPTURE",
+        "pageSectionLocator": "Guéranger: opening station and Leçon",
+        "nextVerification": "Verify station against separate Roman station source",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0174_ancien",
+      "indexPosition": 64,
+      "title": "Mar.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0174_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-2",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-2"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-2"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0173_ancien",
+      "indexPosition": 65,
+      "title": "Mer. Q.-T.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-3",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-seasonal-ember-source-matrix.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-3"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-3"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-3"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0175_ancien",
+      "indexPosition": 66,
+      "title": "Jeu.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-4",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-4"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-4"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0176_ancien",
+      "indexPosition": 67,
+      "title": "Ven. Q.-T.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-5",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-seasonal-ember-source-matrix.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-5"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-5"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0177_ancien",
+      "indexPosition": 68,
+      "title": "Sam. Q.-T.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0177_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-6",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-seasonal-ember-source-matrix.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad1-6"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Lenten Ember Saturday station at Saint Peter; historical liturgical vigil and ordination practice",
+        "category": "HISTORIC_STATION_ORDINATION",
+        "pageSectionLocator": "Schuster: station at Saint Peter",
+        "nextVerification": "Ancient historical practices not automatically 1962 rites",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0181_ancien",
+      "indexPosition": 70,
+      "title": "Lun.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-1",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-1"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-1"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0183_ancien",
+      "indexPosition": 71,
+      "title": "Mar.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-2",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-2"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-2"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0184_ancien",
+      "indexPosition": 72,
+      "title": "Mer.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0184_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-3",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-3"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-3"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-3"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "St Cecilia station, catechumenal preparation and Passion theme",
+        "category": "STATION_CATECHUMENATE",
+        "pageSectionLocator": "Parsch: Station à Sainte Cécile",
+        "nextVerification": "Corroborate ancient rite and source edition",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0185_ancien",
+      "indexPosition": 73,
+      "title": "Jeu.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-4",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-4"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-4"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0186_ancien",
+      "indexPosition": 74,
+      "title": "Ven.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-5",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-5"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-5"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0187_ancien",
+      "indexPosition": 75,
+      "title": "Sam.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0187_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-6",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-6"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad2-6"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0191_ancien",
+      "indexPosition": 77,
+      "title": "Lun.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-1",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-1"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-1"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0192_ancien",
+      "indexPosition": 78,
+      "title": "Mar.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-2",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-2"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-2"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0193_ancien",
+      "indexPosition": 79,
+      "title": "Mer.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0193_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-3",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-3"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-3"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0194_ancien",
+      "indexPosition": 80,
+      "title": "Jeu.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-4",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-4"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-4"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0197_ancien",
+      "indexPosition": 81,
+      "title": "Ven.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0197_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-5",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-5"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-5"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-5"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "San Lorenzo in Lucina, Samaritan woman, baptismal living-water interpretation",
+        "category": "STATION_SCRIPTURE_TYPOLOGY",
+        "pageSectionLocator": "Guéranger/Parsch: station and Samaritan woman",
+        "nextVerification": "Well-location link in commentary is hypothetical and must remain so",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0198_ancien",
+      "indexPosition": 82,
+      "title": "Sam.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-6",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-6"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-6"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad3-6"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0202_ancien",
+      "indexPosition": 84,
+      "title": "Lun.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-1",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-1"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-1"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0203_ancien",
+      "indexPosition": 85,
+      "title": "Mar.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0203_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-2",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-2"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-2"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0204_ancien",
+      "indexPosition": 86,
+      "title": "Mer.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0204_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-3",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-3"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-3"
+        },
+        {
+          "file": "data/mass/scripture-extended-lesson.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-3"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Fourth-week Wednesday historic aperitio aurium scrutiny and the handing on of Credo, Pater Noster and Gospels",
+        "category": "CATECHUMENATE_HISTORY",
+        "pageSectionLocator": "Schuster/Parsch: Saint Paul and opening of ears",
+        "nextVerification": "Distinguish ancient rites from 1962 ceremonies",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0205_ancien",
+      "indexPosition": 87,
+      "title": "Jeu.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-4",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-4"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-4"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0206_ancien",
+      "indexPosition": 88,
+      "title": "Ven.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-5",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-5"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-5"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0207_ancien",
+      "indexPosition": 89,
+      "title": "Sam.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-6",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-6"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad4-6"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0004_nouveau",
+      "indexPosition": 91,
+      "title": "Lun.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_nouveau",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-1",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-1"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-1"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0005_nouveau",
+      "indexPosition": 92,
+      "title": "Mar.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0005_nouveau",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-2",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-2"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-2"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0006_nouveau",
+      "indexPosition": 93,
+      "title": "Mer.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0006_nouveau",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-3",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-3"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-3"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-3"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0007_nouveau",
+      "indexPosition": 94,
+      "title": "Jeu.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0007_nouveau",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-4",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-4"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-4"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-4"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "St Apollinaris station, St Mary Magdalene's penitence and Babylonian exile imagery",
+        "category": "STATION_PENITENTIAL_SCRIPTURE",
+        "pageSectionLocator": "Guéranger/Parsch: Saint Apollinaire",
+        "nextVerification": "Validate liturgical texts and source era",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0009_nouveau",
+      "indexPosition": 96,
+      "title": "Sam.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_nouveau",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-6",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-6"
+        },
+        {
+          "file": "data/mass/scripture-feast-reading-supplement.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Quad5-6"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0221_nouveau",
+      "indexPosition": 162,
+      "title": "3ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_nouveau",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent03-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent03-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Third Sunday: divine mercy, searching for sinners, lost sheep and ancient Office typology",
+        "category": "GOSPEL_OFFICE_INTERPRETATION",
+        "pageSectionLocator": "Présentation, Guéranger and Parsch: Sunday themes",
+        "nextVerification": "Do not infer 1962 Mass Proper directly from pre-1960 Office lessons",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0222_nouveau",
+      "indexPosition": 168,
+      "title": "4ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent04-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent04-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent04-0"
+        }
+      ],
+      "commentaryPanelInstances": 6,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 3,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0223_nouveau",
+      "indexPosition": 169,
+      "title": "5ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent05-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent05-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent05-0"
+        }
+      ],
+      "commentaryPanelInstances": 6,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 3,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0231_ancien",
+      "indexPosition": 170,
+      "title": "6ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0231_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent06-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent06-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent06-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0241_ancien",
+      "indexPosition": 171,
+      "title": "7ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0241_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent07-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent07-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent07-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0242_ancien",
+      "indexPosition": 172,
+      "title": "8ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0242_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent08-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent08-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent08-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0243_ancien",
+      "indexPosition": 173,
+      "title": "9ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0243_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent09-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent09-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent09-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0244_ancien",
+      "indexPosition": 174,
+      "title": "10ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0244_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent10-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent10-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Tenth Sunday: historical Holy Spirit/Church cycle, epistle context and Pentecost-season teaching",
+        "category": "HISTORIC_LITURGICAL_INTERPRETATION",
+        "pageSectionLocator": "Guéranger: introductory historical context",
+        "nextVerification": "Do not convert controversial historical claims into doctrine",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0364_ancien",
+      "indexPosition": 175,
+      "title": "11ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent11-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent11-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0365_ancien",
+      "indexPosition": 176,
+      "title": "12ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent12-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent12-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent12-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0391_ancien",
+      "indexPosition": 177,
+      "title": "13ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0391_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent13-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent13-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent13-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Thirteenth Sunday: ten lepers and Eucharistic thanksgiving, with Epistle-to-Gospel interpretation",
+        "category": "GOSPEL_MASS_THEOLOGY",
+        "pageSectionLocator": "Guéranger and Parsch: Gospel and Sunday Mass",
+        "nextVerification": "Check authentic work edition and Scripture context ownership",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0430_ancien",
+      "indexPosition": 178,
+      "title": "14ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0430_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent14-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent14-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent14-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0431_ancien",
+      "indexPosition": 179,
+      "title": "15ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0431_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent15-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent15-0"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent15-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0442_ancien",
+      "indexPosition": 180,
+      "title": "16ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0442_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent16-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent16-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent16-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0443_ancien",
+      "indexPosition": 181,
+      "title": "17ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent17-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent17-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent17-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0471_ancien",
+      "indexPosition": 186,
+      "title": "18ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0471_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent18-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent18-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Eighteenth Sunday: medieval Dominica vacat context, September Ember ordinations and epistle ordering",
+        "category": "HISTORICAL_LECTIONARY",
+        "pageSectionLocator": "Guéranger: introductory liturgical history",
+        "nextVerification": "Hypothesis, not fixed 1962 calendar or ordination rule",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0478_ancien",
+      "indexPosition": 187,
+      "title": "19ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0478_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent19-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent19-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0486_ancien",
+      "indexPosition": 188,
+      "title": "20ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0486_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent20-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent20-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0487_ancien",
+      "indexPosition": 189,
+      "title": "21ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0487_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent21-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent21-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0488_ancien",
+      "indexPosition": 190,
+      "title": "22ᵉ Dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0488_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent22-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent22-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent22-0"
+        }
+      ],
+      "commentaryPanelInstances": 4,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 1,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0245_ancien",
+      "indexPosition": 191,
+      "title": "23ᵉ dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent23-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent23-0"
+        },
+        {
+          "file": "data/mass/scripture-temporal-sunday-source-audit.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent23-0"
+        },
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent23-0"
+        },
+        {
+          "file": "data/mass/scripture-segmented-proper.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent23-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": false,
+      "candidate": null,
+      "contentTriage": "PANEL_METADATA_ONLY_NO_SUBSTANTIVE_CLAIM",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    },
+    {
+      "articleId": "a0246_ancien",
+      "indexPosition": 192,
+      "title": "24ᵉ et dernier dimanche après la Pentecôte",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0246_ancien",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent24-0",
+      "existingSourcePathWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "grade": "PATH_EXISTS_NOT_COMPLETE_PROPER_CERTIFIED",
+          "sourcePath": "Tempora/Pent24-0"
+        }
+      ],
+      "commentaryPanelInstances": 5,
+      "namedWebsiteWorkPanelFamilies": [
+        "GUERANGER_ANNEE_LITURGIQUE",
+        "SCHUSTER_LIBER_SACRAMENTORUM",
+        "PARSCH_GUIDE_ANNEE_LITURGIQUE"
+      ],
+      "anonymousOrOtherPanels": 2,
+      "structuralEvidence": "B05/B06_VERIFIED_HTML_COMMENTARY_PANELS_20261025",
+      "currentMassExplorerGenericGuidesAndPrayerStudies": "ALREADY_PRESENT_DO_NOT_DUPLICATE",
+      "currentCalendarDayAndScriptureExplanations": "NOT_FULLY_AUDITED_FOR_DUPLICATE_MEANING",
+      "originalWorkEdition": "PENDING",
+      "rightsToRepublish": "NOT_CLEARED",
+      "sourceBodyReadInBatch": true,
+      "candidate": {
+        "topic": "Last Sunday after Pentecost: unused post-Epiphany Sundays, proper reading and chant-source distinction",
+        "category": "FINAL_SUNDAY_TEMPORAL_HISTORY",
+        "pageSectionLocator": "Présentation and Guéranger: opening temporal explanation",
+        "nextVerification": "Current 1962 Calendar resolver must retain date and chant ownership",
+        "sourceStatus": "LIVE_PAGE_REVIEWED_RESEARCH_TOPIC_NOT_CERTIFIED_HISTORICAL_ORIGINAL"
+      },
+      "contentTriage": "SPECIFIC_SOURCE_TOPIC_IDENTIFIED_NEEDS_CURRENT_CONTENT_PARITY_CHECK",
+      "missingUserFacingFeatureProven": false,
+      "canonicalCalendarOrMassID": null,
+      "userFacingContentPromoted": false
+    }
+  ]
+}

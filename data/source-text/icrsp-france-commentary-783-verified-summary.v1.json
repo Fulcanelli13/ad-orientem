@@ -1,0 +1,88 @@
+{
+  "schema": "AO_ICRSP_COMMENTARY_783_VERIFIED_QUANTITATIVE_AUDIT_V1",
+  "date": "2026-10-25",
+  "issue": 1665,
+  "verifiedActionsRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782",
+  "verifiedActionsArtifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40204497782/artifacts/12603378913",
+  "sourceIndex": "data/source-text/icrsp-france-index-discovery.v1.json",
+  "state": "ARTIFACT_CERTIFIED_SOURCE_PANEL_LABELS_ONLY_NOT_EDITORIAL_PUBLISHED",
+  "totals": {
+    "indexedPages": 855,
+    "commentaryEligiblePages": 783,
+    "commentaryEligiblePagesExamined": 783,
+    "pagesWithStructuredBlocks": 783,
+    "distinctSourcePanels": 2856,
+    "fetchErrors": 0,
+    "namedHistoricLiturgyPanels": 1506,
+    "otherOrAnonymousPanels": 1299,
+    "additionalBenedictXVICatechesisLabels": 43,
+    "additionalPrudentiusPeristephanonLabels": 8,
+    "originalWorkEditionCertifications": 0,
+    "hostedTranslationsLicensed": 0,
+    "canonicalClaimsPromoted": 0
+  },
+  "workLabels": {
+    "GUERANGER_ANNEE_LITURGIQUE": 492,
+    "SCHUSTER_LIBER_SACRAMENTORUM": 472,
+    "PARSCH_GUIDE_ANNEE_LITURGIQUE": 542,
+    "BENEDICT_XVI_CATECHESES_CANDIDATE": 43,
+    "PRUDENTIUS_PERISTEPHANON_CANDIDATE": 8,
+    "OTHER_OR_ANONYMOUS": 1299
+  },
+  "commentaryPageDistribution": {
+    "temporal": 189,
+    "sanctoral": 449,
+    "commons": 58,
+    "local_propers": 60,
+    "votives_requiem": 12,
+    "ritual": 3,
+    "office": 12
+  },
+  "otherPanelsDecomposition": {
+    "genericPresentation": 654,
+    "genericOfficeDuJour": 520,
+    "otherLabels": 125,
+    "otherLabelsTriageHeuristics": {
+      "additionalClassicalLiturgicalCommentary": 30,
+      "papalPrimaryOrModernPastoralDocument": 13,
+      "historicalTheologicalPatristicStudy": 5,
+      "post1962MediaDebate": 12,
+      "ritualExplanationBiographyOrInternalNavigation": 65
+    },
+    "note": "Heuristic categories of the 125 heterogeneous labels are review queues, not confirmed source-work attribution or canonical source identities."
+  },
+  "quality": {
+    "mismatchedPanelSummaryAndBodyTitle": 0,
+    "panelsWithUncorroboratedSummaryBodyTitle": 0,
+    "bodyCharacterCountAtMost120": 152,
+    "shortPanelWarning": "This is a length threshold from source DOM text collection, NOT proof that content is empty.",
+    "sourcePanelDuplicateDefinition": "Each details.pf-cate-cadre counted once; panel content may repeat across pages and is not deduplicated in this pass.",
+    "incompleteSourceRights": "All reproduction/translation rights NOT_CLEARED"
+  },
+  "scopeAndGates": [
+    "Only 783/855 articles have h3 Commentaires; 72 are noncommentary.",
+    "A panel label is not an original-edition title page or proof of authorship accuracy; preserve exact source locator for later verification.",
+    "Do not copy text into Ad Orientem before edition, rights and exact passage provenance; existing source owners retain publication decisions.",
+    "Do not assume 43 Benedict XVI catecheses are useful 1962 rubric sources; classify as modern pastoral history.",
+    "Do not treat Prudentius excerpts as certified Patristic quotation without original language witness.",
+    "Temporal panel text deduplication separately completed for 189 articles: 807 panel occurrences, 705 distinct substantial normalized hashes, 28 duplicate groups; see icrsp-france-temporal-189-dedup-verified.v1.json. Across the full 2,856-panel census, unique original works/passages remain unestablished.",
+    "The website work-family label 'Guéranger, L’Année liturgique' must not be read as personal-authorship certification for the post-Pentecost continuation volumes, historically associated with Dom Lucien Fromage; see 2026-10-26 author correction."
+  ],
+  "authorWorkAttributionCorrection": {
+    "asOf": "2026-10-26",
+    "status": "SERIES_LEVEL_AUTHORSHIP_DISAMBIGUATION_ONLY_NOT_CRITICAL_PRINT_COLLATION",
+    "evidenceFile": "data/source-text/icrsp-france-b14-continued-work-authorship-and-original-loci.v1.json",
+    "websiteGuérangerLAnnéeLiturgiqueWorkLabelOccurrences": 492,
+    "postPentecostSourceArticlesFlagged": 22,
+    "sourcePart": "L'Année liturgique — Le Temps après la Pentecôte",
+    "personalAuthorCandidateForContinuation": "Dom Lucien Fromage",
+    "originalWorkAndGuérangerAuthorDistinction": "Guéranger founded/authored the initial volumes; later post-Pentecost continuation volumes were composed by Fromage. A host label 'Dom Guéranger' can name collected work but not authenticate personal authorship.",
+    "authority": [
+      "https://www.abbayedesolesmes.fr/produit/introduction-a-lannee-liturgique/",
+      "https://catalogue.bnf.fr/ark:/12148/cb318196703"
+    ],
+    "confirmedIndividualPageSpecificPrintedAttributions": 0,
+    "websiteLabelStatisticUnchanged": true,
+    "publicationCorrectionsApplied": 0
+  }
+}

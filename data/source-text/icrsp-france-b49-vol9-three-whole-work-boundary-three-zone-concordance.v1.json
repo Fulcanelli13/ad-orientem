@@ -1,0 +1,263 @@
+{
+  "schema": "AO_ICRSP_B49_VolIX_THREE_FULL_BOUNDARY_THREE_ZONE_TEXTUAL_CONCORDANCE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "method": "Manual side-by-side comparison of three complete historical-work boundary envelopes, with separately inspected opening, middle and ending text on ICRSP and Annecy IX edition transcription. Does NOT certify every intervening word, punctuation, editorial footnote, historical recording manuscript or scanned original print page.",
+  "baseline": [
+    "data/source-text/icrsp-france-b47-annecy-vol7-vol9-eleven-workitem-crosswalk.v1.json",
+    "data/source-text/icrsp-france-b48-annecy-vii-ix-institutional-opening-date-gates.v1.json"
+  ],
+  "sources": [
+    {
+      "role": "VOLUME_IX_ANNECY_DIGITAL_TRANSCRIPTION",
+      "url": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/09-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20IX-Vol.3-Sermons.html",
+      "sourceLayer": "1897_VISITATION_RECORDED_SERMONS_IN_EARLY_MODERN_FRENCH_NOT_AUTHOR_AUTOGRAPH",
+      "commercialAppReuseCleared": false
+    },
+    {
+      "role": "ICRSP_HOST_TRANSFIGURATION",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien"
+    },
+    {
+      "role": "ICRSP_HOST_PRESENTATION",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0562_ancien"
+    },
+    {
+      "role": "ICRSP_HOST_VISITATION",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien"
+    }
+  ],
+  "records": [
+    {
+      "articleId": "a0180_ancien",
+      "editionWorkId": "IX.IV",
+      "workType": "RECORDED_SERMON",
+      "hostContentLineEnvelope": [
+        243,
+        268
+      ],
+      "editionWorkContentLineEnvelope": [
+        281,
+        306
+      ],
+      "orderedAnchorPairs": [
+        {
+          "name": "OPENING",
+          "host": [
+            243,
+            245
+          ],
+          "edition": [
+            281,
+            283
+          ],
+          "motif": "TRANSFIGURATION_JACOBS_LADDER"
+        },
+        {
+          "name": "MIDDLE",
+          "host": [
+            252,
+            258
+          ],
+          "edition": [
+            290,
+            296
+          ],
+          "motif": "PASSION_CALVARY_WITHIN_GLORY"
+        },
+        {
+          "name": "ENDING",
+          "host": [
+            266,
+            268
+          ],
+          "edition": [
+            304,
+            306
+          ],
+          "motif": "ONLY_JESUS_PERFECTION"
+        }
+      ],
+      "nextDistinctHistoricalWorkBeginsAt": {
+        "host": 269,
+        "edition": 307
+      },
+      "otherWorksOnHostArticle": 4,
+      "threeZoneTextualCorrespondence": "CORRESPONDENT_WITH_MINOR_EDITORIAL_MARKUP_PUNCTUATION_POSSIBLE",
+      "originalEarlyModernFrenchViaRecordedSermon": true,
+      "notLatinOriginalTranslatedIntoFrench": true,
+      "fullWordByWordCollationCertified": false,
+      "printPagePhotographInspected": false,
+      "recorderOriginalNotesInspected": false,
+      "hostSiteReproductionRightsCleared": false,
+      "appOwnerParityCertified": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "articleId": "a0562_ancien",
+      "editionWorkId": "IX.XVI",
+      "workType": "VISITATION_RECORDED_SERMON",
+      "hostContentLineEnvelope": [
+        239,
+        311
+      ],
+      "editionWorkContentLineEnvelope": [
+        888,
+        960
+      ],
+      "orderedAnchorPairs": [
+        {
+          "name": "OPENING",
+          "host": [
+            239,
+            241
+          ],
+          "edition": [
+            888,
+            890
+          ],
+          "motif": "MARY_PRESENTATION_SOLOMON_SHEBA"
+        },
+        {
+          "name": "MIDDLE",
+          "host": [
+            279,
+            287
+          ],
+          "edition": [
+            928,
+            936
+          ],
+          "motif": "YOUTH_FERVOUR_PRESENT_MOMENT_RENEWAL_VOWS"
+        },
+        {
+          "name": "ENDING",
+          "host": [
+            309,
+            311
+          ],
+          "edition": [
+            958,
+            960
+          ],
+          "motif": "OFFERING_SELF_PRAISE_MERCY"
+        }
+      ],
+      "nextDistinctHistoricalWorkBeginsAt": {
+        "host": 312,
+        "edition": 961
+      },
+      "otherWorksOnHostArticle": 3,
+      "threeZoneTextualCorrespondence": "CORRESPONDENT_WITH_MINOR_EDITORIAL_MARKUP_PUNCTUATION_POSSIBLE",
+      "originalEarlyModernFrenchViaRecordedSermon": true,
+      "notLatinOriginalTranslatedIntoFrench": true,
+      "fullWordByWordCollationCertified": false,
+      "printPagePhotographInspected": false,
+      "recorderOriginalNotesInspected": false,
+      "hostSiteReproductionRightsCleared": false,
+      "appOwnerParityCertified": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "articleId": "a0352_ancien",
+      "editionWorkId": "IX.XIX",
+      "workType": "VISITATION_RECORDED_SERMON",
+      "hostContentLineEnvelope": [
+        359,
+        425
+      ],
+      "editionWorkContentLineEnvelope": [
+        1078,
+        1155
+      ],
+      "orderedAnchorPairs": [
+        {
+          "name": "OPENING",
+          "host": [
+            359,
+            363
+          ],
+          "edition": [
+            1078,
+            1082
+          ],
+          "motif": "LUKE_1_39_JOURNEY_ELISABETH"
+        },
+        {
+          "name": "MIDDLE",
+          "host": [
+            386,
+            393
+          ],
+          "edition": [
+            1116,
+            1124
+          ],
+          "motif": "MARY_HUMILITY_MAGNIFICAT_HOLOPHERNES"
+        },
+        {
+          "name": "ENDING",
+          "host": [
+            421,
+            425
+          ],
+          "edition": [
+            1151,
+            1155
+          ],
+          "motif": "MAGNIFICAT_CHARITY_HUMILITY"
+        }
+      ],
+      "nextDistinctHistoricalWorkBeginsAt": {
+        "host": 426,
+        "edition": 1156
+      },
+      "otherWorksOnHostArticle": 2,
+      "threeZoneTextualCorrespondence": "CORRESPONDENT_WITH_MINOR_EDITORIAL_MARKUP_PUNCTUATION_POSSIBLE",
+      "originalEarlyModernFrenchViaRecordedSermon": true,
+      "notLatinOriginalTranslatedIntoFrench": true,
+      "fullWordByWordCollationCertified": false,
+      "printPagePhotographInspected": false,
+      "recorderOriginalNotesInspected": false,
+      "hostSiteReproductionRightsCleared": false,
+      "appOwnerParityCertified": false,
+      "productionPublicationApproved": false
+    }
+  ],
+  "qualityRisks": [
+    {
+      "id": "MULTI_WORK_HOST_CONTAINER",
+      "finding": "ICRSP pages contain respectively four, three and two named Salesian pieces. Only this exact dated original item within the page was checked; adjacent works must not be merged."
+    },
+    {
+      "id": "VOLUME_IX_AUTHORITY_LAYER",
+      "finding": "1897 Annecy volume IX is Visitation-recorded sermon series. Its early modern French is edited report of sermon, not the author's inspected handwritten notes. Treat publisher/editors and recorder as distinct from saint's exact verbatim testimony."
+    },
+    {
+      "id": "PRESENTATION_EVIDENCE_LAYER",
+      "finding": "Narrative about Mary's childhood in the Temple and Joachim/Anne belongs to ecclesiastical tradition and sermonic exposition, not a verbatim canonical Gospel incident."
+    },
+    {
+      "id": "COLLATION_NOT_DIFF",
+      "finding": "Three-zone passage-level alignment verifies contents and endings, not every line. Completion requires full machine diff with benign spelling/whitespace normalization, editorial note tracking, omission checks and scan review."
+    },
+    {
+      "id": "LICENSE",
+      "finding": "Digitized website noncommercial terms and underlying edition editorial rights must be independently cleared; research access is not approval for publication."
+    }
+  ],
+  "counts": {
+    "datedOriginalWorkBoundariesVerifiedAgainstBothDigitalSources": 3,
+    "openingMiddleEndingAnchorSetsCompared": 3,
+    "individualAnchorsCompared": 9,
+    "unrelatedAdjacentHostWorksExcluded": 6,
+    "fullWordByWordWorkCollations": 0,
+    "independentPrintPagePhotographsSeen": 0,
+    "publishedContentChanges": 0,
+    "rightsClearances": 0,
+    "appOwnerParityApprovals": 0
+  },
+  "nextGate": "Run exhaustive host-vs-Annecy IX word-by-word collation for the exact bounded three works, manually review all differences against independently scanned pages, then rights and app-content owner parity. Do not conflate book web transcription with printed-page photograph.",
+  "noSourceProseCopied": true,
+  "publicationApproved": false
+}

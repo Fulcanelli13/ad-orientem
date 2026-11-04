@@ -1,0 +1,74 @@
+{
+  "schema": "AO_ICRSP_B29_200_SOURCE_BODY_SCAN_VALIDATION_RECEIPT_V1",
+  "date": "2026-10-26",
+  "ownerPR": 1666,
+  "actionsRunId": 40335540491,
+  "status": "LOCAL_INDEPENDENT_RECONCILIATION_OF_ALL_FIVE_READ_ONLY_ACTIONS_SHARDS",
+  "methods": "Source article bodies scanned transiently by read-only Actions workflow. Five shard ZIP artifacts and exact 200 metadata queue recovered, validated externally with exact URLs, IDs, source title, SHA256 per source panel, 0 approved text, no source prose reproduction. This receipt, not the raw per-panel hash files, is committed to the PR.",
+  "artifactRetention": "GitHub Actions source-plan and 5 shard ZIPs expire 2026-11-25, unless separately preserved. Source hash + metadata provenance is in a separately generated conversation attachment; not yet checked into GitHub as full 200-signal JSON.",
+  "counts": {
+    "planned": 200,
+    "successful": 200,
+    "errors": 0,
+    "commentaryPanelsScanned": 551,
+    "panelCountVsOldMetadataMismatches": 24,
+    "sourceSections": {
+      "temporal": 50,
+      "commons": 30,
+      "local_propers": 22,
+      "votives_requiem": 8,
+      "sanctoral": 84,
+      "office": 6
+    },
+    "topicSignalPanelOccurrences": {
+      "ROMAN_STATION_OR_CHURCH": 146,
+      "SCRIPTURAL_FIGURES_PARALLELS": 158,
+      "PATRISTIC_REFERENCE": 128,
+      "SOURCE_RHETORIC_CONTEXT_REVIEW": 150,
+      "LITURGICAL_CALENDAR_HISTORY": 263,
+      "CUSTOM_PROCESSION_BLESSING": 258,
+      "SAINTS_CULT_AND_HISTORY": 298,
+      "HISTORIC_EDITION_SCOPE": 108,
+      "SACRED_ART_HISTORY": 32
+    },
+    "newHumanTopicReadings": 0,
+    "appPublicationApprovals": 0
+  },
+  "sha256": {
+    "consolidatedSignals": "3f143fb23c3536ed465f1946dcc4faeb2bdae0b7fe763fb1b829f718c9bc8752",
+    "summary": "592ab9eb613c9db9663f74f3af0b3ea9d0c3f096884daf0473fbe37cf6cb715e",
+    "archiveZip": "41e71a3f74e336c8f53b224807ec2c386e482d39b1b7427c524400f6699d5d7d",
+    "canonicalGitHubActionsValidatedSignals": "da81e1b4f74787a6907551f084c84d2c7bb34e27c45ee70f641df4476e1006b0",
+    "canonicalGitHubActionsManifest": "4b1b37f38f287d85ca1a343f40c26284af15b6b4365d29bd9b7d43b960282519",
+    "chatArchiveOfficialValidatedArtifact": "51a2a45b679595ee3471bb077b7148cda1e27211818f1114172890ec7f5a67c1"
+  },
+  "qualityGates": {
+    "everySourceIdUnique": true,
+    "sourceTitleAndUrlMatchFrozenMetadata": true,
+    "panelsHaveBodyHash": true,
+    "noFullSourceProseStored": true,
+    "rightsCleared": false,
+    "originalEditionVerified": false,
+    "canonicalOwnerAppMatchVerified": false,
+    "readyForProduction": false
+  },
+  "doNotConflate": [
+    "This adds 200 AUTOMATED source-body screens, not 200 directly human-reviewed articles; 443 direct topic article IDs remain the B29 baseline.",
+    "Panel topic signals are lexical matches, not certified historical or theological claims.",
+    "Panel metadata mismatch is a review queue, not an automatically corrected index."
+  ],
+  "next": "Persist raw full validated 200-source signals permanently into repository after verifying and importing recovered artifact bytes; keep read-only GitHub Actions due required-main permissions rule.",
+  "actionsRunValidation": "SOURCE_BODY_SCAN_FIVE_OF_FIVE_AND_VALIDATE_AND_ARCHIVE_SCREEN_ALL_PASSED",
+  "officialArtifact": {
+    "artifactId": 12658015628,
+    "filename": "icrsp-b29-200-validated-source-signals",
+    "contains": [
+      "icrsp-france-b29-200-new-source-metadata.v1.json",
+      "icrsp-france-b29-200-automated-commentary-signals.v1.json"
+    ],
+    "retentionExpiresAt": "2027-01-24 (approximately 90 days from 2026-10-26, confirm GitHub artifact metadata)",
+    "verifiedCanonicalSignalSha256": "da81e1b4f74787a6907551f084c84d2c7bb34e27c45ee70f641df4476e1006b0",
+    "verifiedCanonicalManifestSha256": "4b1b37f38f287d85ca1a343f40c26284af15b6b4365d29bd9b7d43b960282519"
+  },
+  "notes": "Canonical GitHub Actions consolidator passes 200/200, 551 panels and 24 metadata drift flags. Independently assembled local JSON has a distinct serialization and summary schema, so its digest differs from canonical GitHub artifact. Use official verified hashes above for exact source data. Raw files are available in chat archive; full dataset still awaits permanent repository import."
+}

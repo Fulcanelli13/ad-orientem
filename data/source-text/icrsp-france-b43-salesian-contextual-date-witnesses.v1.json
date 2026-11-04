@@ -1,0 +1,101 @@
+{
+  "schema": "AO_ICRSP_B43_SALESIAN_TWO_DATES_CONTEXTUAL_TEXT_WITNESSES_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "scope": "Source-context extension to B41/B42: adjacency of Annecy entries CXXXVI/CXXXVII and dating-language sensitivity for LXXXVIII. Published historical edition digitization located; original printed scanned-page images NOT inspected.",
+  "baselineB41": "data/source-text/icrsp-france-b41-two-salesian-dating-source-witness-reconciliation.v1.json",
+  "baselineB42": "data/source-text/icrsp-france-b42-salesian-print-source-authentication-queue.v1.json",
+  "printedVolume": "Annecy Oeuvres de Saint Francois de Sales, tome VIII, Sermons vol. II (1897)",
+  "printCatalogue": {
+    "source": "Bibliothèque nationale de France",
+    "url": "https://catalogue.bnf.fr/ark:/12148/cb33015558w",
+    "gallicaArk": "ark:/12148/bpt6k9736310m",
+    "gallicaDigitalPart": "NUMM-9736310",
+    "actuallyOpenedPrintedPageImage": false
+  },
+  "findings": [
+    {
+      "caseId": "SALES_VOL8_CXXXVII_1617_LENT_THURSDAY",
+      "dateType": "LITURGICAL_DAY_LABEL_SUPPORTED_BY_ADJACENT_TEXT",
+      "transcriptionUrl": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/08-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VIII-Vol.2-Sermons.html",
+      "relatedOriginalEntry": {
+        "volume": 8,
+        "number": "CXXXVI",
+        "kind": "PLAN",
+        "pageMarker": 319,
+        "displayedHeadingDate": "1617-03-01",
+        "displayedDay": "WEDNESDAY",
+        "topic": "Scripture and unwritten apostolic/ecclesiastical Tradition",
+        "notASeparateNewHostArticleDiscovery": true
+      },
+      "subjectOriginalEntry": {
+        "volume": 8,
+        "number": "CXXXVII",
+        "kind": "PLAN",
+        "pageMarker": 324,
+        "displayedHeadingDate": "1617-03-03",
+        "displayedLiturgicalDay": "THURSDAY",
+        "openingContext": "Recalls unfinished discussion from yesterday and continues the same Scripture/Tradition subject",
+        "gospel": "Luke 4:38"
+      },
+      "liturgicalCalendarComputation": {
+        "lentThirdSunday": "1617-02-26",
+        "wednesday": "1617-03-01",
+        "thursday": "1617-03-02",
+        "friday": "1617-03-03"
+      },
+      "competingDateFromGeneralIndex": "1617-03-02",
+      "interpretation": "Adjacent item CXXXVI is internally aligned with Wednesday 1 March; subsequent item CXXXVII says Thursday and explicitly invokes preceding day's unfinished subject. This reinforces 2 March as original intended weekday, beyond index/calendar alone. But transcription still states 3 March and print/critical notes are unverified.",
+      "provisionalLiturgicalDay": "1617-03-02",
+      "editionDisplayDateStillPreserved": "1617-03-03",
+      "dateNotPublishedAsCertified": true,
+      "fullPrintItemCollated": false,
+      "manuscriptDateCompared": false
+    },
+    {
+      "caseId": "SALES_VOL8_LXXXVIII_1612_CROSS_INDEX_DATE",
+      "dateType": "EDITORIAL_CONJECTURE_NOT_AUTOGRAPH_PREACHING_DATE",
+      "pdfTextSearchWitness": "https://www.donboscosanto.eu/francesco_di_sales/08-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VIII-Vol.2-Sermons.pdf",
+      "digitalTranscriptionUrl": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/08-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VIII-Vol.2-Sermons.html",
+      "entry": {
+        "volume": 8,
+        "number": "LXXXVIII",
+        "kind": "SOMMAIRE",
+        "pageMarker": 99,
+        "headingDate": "1612-04-20",
+        "otherIndexDate": "1612-04-30"
+      },
+      "editorialNoteObservedInSearchIndexedPdf": "Editor assigns likely place in Lent 1612 by manuscript order and says the titled summary may relate to Good Friday's adoration of the Cross; the language is qualified, not eyewitness confirmation.",
+      "calendar": {
+        "gregorianGoodFriday": "1612-04-20",
+        "gregorianEaster": "1612-04-22",
+        "indexAlternativeWeekday": "MONDAY"
+      },
+      "interpretation": "Treat 20 April as preferable EDITORIAL heading/calendar association, not a historically certified delivered sermon date. Source is a summary, not an extant full sermon.",
+      "provisionalBibliographicDate": "1612-04-20",
+      "historicalDeliveryDateCertified": false,
+      "editorialPrintedFootnoteVisuallyChecked": false,
+      "fullPrintItemCollated": false
+    }
+  ],
+  "rights": {
+    "hostDigitalMaterialsLicensedForApp": false,
+    "originalEditionAndDigitalTranscriptionSeparateRightsLayers": true
+  },
+  "counts": {
+    "dateConflictItems": 2,
+    "adjacentEditionItemContextChecked": 1,
+    "independentOriginalPageImagesInspected": 0,
+    "autographInspections": 0,
+    "completeOriginalPrintedItemsCollated": 0,
+    "appPublicationApprovals": 0
+  },
+  "restrictions": {
+    "doNotOverwriteEditionDisplayDates": true,
+    "doNotClaimSermonWasDelivered": true,
+    "doNotConflateTwoOriginalEntries": true,
+    "doNotPromoteAppContent": true,
+    "noOriginalProseCopied": true
+  },
+  "nextResearchGate": "Visually inspect printed 1897 volume VIII pp. 99-100 and 324-325 incl. footnotes and heading dates; compare autograph manuscript if accessible; then full source-to-host work-item collation."
+}

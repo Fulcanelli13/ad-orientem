@@ -1,0 +1,2412 @@
+{
+  "schema": "AO_ICRSP_MASS_EXPLORER_CURRENT_CONTENT_PARITY_V1",
+  "date": "2026-10-25",
+  "status": "EXISTING_FEATURE_OWNER_AUDIT_ONLY_NOT_EDITORIAL_PARITY_CERTIFIED",
+  "ownerIssue": 1665,
+  "sourcesChecked": [
+    "data/source-text/icrsp-france-39-major-content-gap-triage.v1.json",
+    "src/learn/mass-explorer.js",
+    "src/learn/mass-explorer-selected-calendar-proper.js",
+    "data/presentation/guide-registry.v1.json",
+    "data/learn/mass-explorer-prayer-readings.v1.json",
+    "data/learn/mass-formation-campion.v1.json",
+    "data/learn/mass-explorer-approved-studies.v1.json",
+    "data/learn/mass-formation-approved-passages.v1.json",
+    "data/learn/research/mass-moment-author-evidence-review-20261016.v1.json",
+    "data/mass/scripture-feast-reading-supplement.v1.json"
+  ],
+  "guardrails": [
+    "A published Guide or ordinary prayer explanation is not feast-specific historic commentary; never equate these genres.",
+    "84 bilingual ordinary prayer readings are already loaded through Mass Explorer's validated code path; do not reimport them from ICRSP commentary.",
+    "The selected Calendar Proper projection is conditional on ready resolution, consistent 1962 source path and bilingual text; this audit does not test any date at runtime.",
+    "The 139 candidate Mass-moment author statements are research-only; 69 carry a workbook PASSAGE VERIFIED research label which is not original edition proof, rights clearance or app publication.",
+    "No approved deep studies or approved source passages in release manifests; this does not prove all intended feast-specific explanations are absent in other modules.",
+    "The current Mass Explorer is not the owner of reader priest cues, movements, postures or 1962 special rites.",
+    "Do not conflate ICRSP reused commentary bodies with same-rite source equivalence or independently original-authored quotations."
+  ],
+  "totals": {
+    "alreadyExistingCalendarTitles": 39,
+    "existingOrdinaryGuideEntries": 32,
+    "existingOrdinaryPrayerExplanations": 84,
+    "existingFormationStages": 8,
+    "existingDeepStudyReleases": 0,
+    "existingApprovedOriginalPassages": 0,
+    "existingResearchSourceCandidates": 139,
+    "researchCandidatesMarkedPassageVerified": 69,
+    "existingSourcePathPinsInSampledFeastSupplement": 17,
+    "sourceInstancesRepresented": 164,
+    "newICRSPContentPromoted": 0,
+    "feastSpecificEditorialAbsencesCertified": 0
+  },
+  "rows": [
+    {
+      "reviewId": "ICRSP-MX-PARITY-001",
+      "calendarTitle": "First Sunday of Advent",
+      "sourceArticleId": "a0088_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-002",
+      "calendarTitle": "Second Sunday of Advent",
+      "sourceArticleId": "a0089_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-003",
+      "calendarTitle": "Third Sunday of Advent · Gaudete",
+      "sourceArticleId": "a0090_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0090_ancien",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-004",
+      "calendarTitle": "Fourth Sunday of Advent",
+      "sourceArticleId": "a0091_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0091_ancien",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-005",
+      "calendarTitle": "Vigil of the Nativity",
+      "sourceArticleId": "a0092_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0092_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-006",
+      "calendarTitle": "Nativity of Our Lord",
+      "sourceArticleId": "a0096_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0096_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-007",
+      "calendarTitle": "Octave of the Nativity · Circumcision of Our Lord",
+      "sourceArticleId": "a0104_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0104_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-008",
+      "calendarTitle": "Epiphany of Our Lord",
+      "sourceArticleId": "a0108_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Sancti/01-06",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-009",
+      "calendarTitle": "Purification of the Blessed Virgin Mary · Candlemas",
+      "sourceArticleId": "a0146_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "sourcePanelInstances": 2,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Sancti/02-02",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-010",
+      "calendarTitle": "Septuagesima Sunday",
+      "sourceArticleId": "a0130_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "sourcePanelInstances": 1,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-011",
+      "calendarTitle": "Ash Wednesday",
+      "sourceArticleId": "a0139_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
+      "sourcePanelInstances": 3,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-012",
+      "calendarTitle": "First Sunday of Lent",
+      "sourceArticleId": "a0155_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad1-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-013",
+      "calendarTitle": "Second Sunday of Lent",
+      "sourceArticleId": "a0180_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad2-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-014",
+      "calendarTitle": "Third Sunday of Lent",
+      "sourceArticleId": "a0188_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
+      "sourcePanelInstances": 3,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-015",
+      "calendarTitle": "Fourth Sunday of Lent · Laetare",
+      "sourceArticleId": "a0199_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
+      "sourcePanelInstances": 3,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad4-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-016",
+      "calendarTitle": "Saint Joseph, Spouse of the Blessed Virgin Mary",
+      "sourceArticleId": "a0721_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0721_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-017",
+      "calendarTitle": "Passion Sunday",
+      "sourceArticleId": "a0002_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0002_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-018",
+      "calendarTitle": "Annunciation of the Blessed Virgin Mary",
+      "sourceArticleId": "a0021_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0021_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Sancti/03-25",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-019",
+      "calendarTitle": "Palm Sunday",
+      "sourceArticleId": "a0593_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad6-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-020",
+      "calendarTitle": "Holy Monday",
+      "sourceArticleId": "a0013_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad6-1",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-021",
+      "calendarTitle": "Holy Tuesday",
+      "sourceArticleId": "a0014_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad6-2",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-022",
+      "calendarTitle": "Holy Wednesday",
+      "sourceArticleId": "a0015_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad6-3",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-023",
+      "calendarTitle": "Holy Thursday",
+      "sourceArticleId": "a0020_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+      "sourcePanelInstances": 1,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Quad6-4",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-024",
+      "calendarTitle": "Good Friday",
+      "sourceArticleId": "a0029_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "HISTORICAL_PRE_1955_ALTERNATIVE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-025",
+      "calendarTitle": "Holy Saturday · Easter Vigil",
+      "sourceArticleId": "a0030_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+      "sourcePanelInstances": 4,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "INTERNAL_INDEX_H2_EDITION_CONFLICT_AND_ALTERNATIVE",
+        "H2_1951_VS_INDEX_1955_DISPUTE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-026",
+      "calendarTitle": "Easter Sunday",
+      "sourceArticleId": "a0031_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Pasc0-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-027",
+      "calendarTitle": "Low Sunday",
+      "sourceArticleId": "a0038_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0038_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-028",
+      "calendarTitle": "Ascension of Our Lord",
+      "sourceArticleId": "a0111_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Pasc5-4",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "MULTIPLE_WITNESSES_EDITION_UNDETERMINED",
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-029",
+      "calendarTitle": "Pentecost Sunday",
+      "sourceArticleId": "a0167_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0167_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Pasc7-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "SEPARATE_VIGIL_MATERIAL_NOT_SUNDAY_EQUIVALENT"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-030",
+      "calendarTitle": "Trinity Sunday",
+      "sourceArticleId": "a0294_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Pent01-0",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-031",
+      "calendarTitle": "Corpus Christi",
+      "sourceArticleId": "a0297_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "sourcePanelInstances": 2,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Pent01-4",
+          "readingSlots": [
+            "EPISTLE_OR_LESSON",
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-032",
+      "calendarTitle": "Sacred Heart of Jesus",
+      "sourceArticleId": "a0220_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "EXACT_EXISTING_SOURCE_PATH_PIN",
+          "sourcePath": "Tempora/Pent02-5",
+          "readingSlots": [
+            "GOSPEL"
+          ],
+          "scope": "SELECTED_SCRIPTURE_CONTEXT_ONLY"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [
+        "CONTENT_HASH_DUPLICATE_WITH_OTHER_SOURCE_PAGE"
+      ],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-033",
+      "calendarTitle": "Nativity of Saint John the Baptist",
+      "sourceArticleId": "a0309_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0309_ancien",
+      "sourcePanelInstances": 6,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-034",
+      "calendarTitle": "Saints Peter and Paul",
+      "sourceArticleId": "a0318_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0318_ancien",
+      "sourcePanelInstances": 6,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-035",
+      "calendarTitle": "Assumption of the Blessed Virgin Mary",
+      "sourceArticleId": "a0409_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0409_ancien",
+      "sourcePanelInstances": 6,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-036",
+      "calendarTitle": "Dedication of Saint Michael the Archangel",
+      "sourceArticleId": "a0468_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0468_ancien",
+      "sourcePanelInstances": 3,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-037",
+      "calendarTitle": "Christ the King",
+      "sourceArticleId": "a0507_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0507_ancien",
+      "sourcePanelInstances": 2,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-038",
+      "calendarTitle": "All Saints",
+      "sourceArticleId": "a0541_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0541_ancien",
+      "sourcePanelInstances": 7,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    },
+    {
+      "reviewId": "ICRSP-MX-PARITY-039",
+      "calendarTitle": "Commemoration of All the Faithful Departed",
+      "sourceArticleId": "a0542_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0542_ancien",
+      "sourcePanelInstances": 5,
+      "existingFeatureEvidence": {
+        "majorCalendarTitle": {
+          "status": "ALREADY_PRESENT",
+          "reference": "src/calendar/liturgical-year.js#buildMajorCelebrations"
+        },
+        "ordinaryGuide": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_GUIDE_NOT_FEAST_SCOPED",
+          "reference": "data/presentation/guide-registry.v1.json"
+        },
+        "bilingualPrayerExplanations": {
+          "status": "ALREADY_PRESENT_GENERIC_ORDINARY_TEACHING_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-explorer-prayer-readings.v1.json"
+        },
+        "eightFormationStages": {
+          "status": "ALREADY_PRESENT_GENERIC_MASS_FORMATION_NOT_FEAST_SCOPED",
+          "reference": "data/learn/mass-formation-campion.v1.json"
+        },
+        "selectedDateProperProjection": {
+          "status": "IMPLEMENTED_WITH_BILINGUAL_AND_SOURCE_PATH_GATES_NOT_PER_DATE_RUN_VERIFIED",
+          "reference": "src/learn/mass-explorer-selected-calendar-proper.js"
+        },
+        "scriptureContextInSampledFeastSupplement": {
+          "status": "NOT_MATCHED_IN_CHECKED_FEAST_SUPPLEMENT",
+          "scope": "DO_NOT_TREAT_AS_MISSING_BIBLE_CONTEXT"
+        },
+        "deepAuthorStudy": {
+          "status": "NO_APPROVED_STUDY_ANYWHERE_IN_RELEASE_MANIFEST",
+          "source": "data/learn/mass-explorer-approved-studies.v1.json"
+        },
+        "sourceExcerpt": {
+          "status": "NO_APPROVED_EXCERPT_IN_FORMATION_PUBLICATION_MANIFEST",
+          "source": "data/learn/mass-formation-approved-passages.v1.json"
+        },
+        "ICRSPTextCurrentlyPackaged": {
+          "status": "NOT_PRESENT_VIA_ANY_CHECKED_MASS_EXPLORER_RELEASE_MANIFEST",
+          "scope": "NOT_A_GLOBAL_REPOSITORY_STRING_SEARCH"
+        }
+      },
+      "editorialDecision": "DO_NOT_DUPLICATE_EXISTING_GUIDE_PRAYER_FORMATION_OR_CANONICAL_PROPER",
+      "potentialValue": "HISTORICAL_FEAST_CONTEXT_OR_AUTHENTIC_SOURCE_LINK_CANDIDATE_NEEDS_EVIDENCE_COMPARISON",
+      "missingFeatureCertified": false,
+      "rightToRepublishSourceText": false,
+      "candidateEditionAuthority": "NOT_CERTIFIED_1962",
+      "historicalVariantFlags": [],
+      "nextCheck": [
+        "COMPARE_ACTUAL_FEAST_PROPER_NOT_JUST_TITLE",
+        "COMPARE_EXISTING_DAY_DESCRIPTION_AND_CUSTOMS",
+        "VERIFY_EXACT_COMMENTARY_CONTENT_ADDING_NEW_INFORMATION",
+        "FIND_ORIGINAL_WORK_PAGE_AND_TRANSLATION_RIGHTS",
+        "LINK_TO_EXISTING_OWNER_ID_WITH_NO_NEW_MASS_READER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,705 @@
+{
+  "schema": "AO_ICRSP_FRENCH_REFERENCE_52_TITLE_TRIAGE_V1",
+  "asOf": "2026-10-25",
+  "basedOn": "855-item index; 55-article end-window fetch succeeded; title classification is not content verification",
+  "status": "TITLES_ONLY_ZERO_CANONICAL_IMPORT",
+  "notes": [
+    "The ICRSP source is a mixed-edition historical library; '1960' and '1962' headings are candidate authorities only until verified with original print.",
+    "Post-1962 documents remain useful for historical and theological formation but must not rewrite the 1962 Missal/calendar.",
+    "Mass Explorer contextual research is separate from the concurrent Ordo Missae 1962 reader audit.",
+    "Do not infer reproduction rights; link and index only."
+  ],
+  "totals": {
+    "allDocuments": 52,
+    "byType": {
+      "POST_1962_NOT_NORMATIVE_FOR_1962": 10,
+      "HISTORICAL_OR_PRE_1962_DOCUMENT": 9,
+      "RUBRICAL_1960_1962_CANDIDATE": 10,
+      "UNRESOLVED_DOCUMENT_REVIEW": 5,
+      "THEOLOGICAL_LITURGICAL_HISTORY_STUDY": 18
+    }
+  },
+  "entries": [
+    {
+      "sourceId": "ICRSP-a0112_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0112_nouveau",
+      "indexTitle": "Calendaria Particularia (1973)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0118_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0118_ancien",
+      "indexTitle": "Commentaire du decret de simplification des rubriques de 1955",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0117_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0117_ancien",
+      "indexTitle": "Décret de simplification des rubriques (1955)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0148_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0148_ancien",
+      "indexTitle": "Decret du 26 juillet 1960",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0262_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0262_ancien",
+      "indexTitle": "Décret général sur la réforme de la Semaine Sainte (1955)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0114_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0114_ancien",
+      "indexTitle": "Divino afflatu (1911)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0247_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0247_ancien",
+      "indexTitle": "Du 23ᵉ au dernier dimanche après la Pentecôte, table des ’Dimanches Mobiles’",
+      "classification": "UNRESOLVED_DOCUMENT_REVIEW",
+      "candidateOwners": [
+        "reference"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0182_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0182_ancien",
+      "indexTitle": "Instruction De calendariis particularibus (1961)",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0263_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0263_ancien",
+      "indexTitle": "Instruction pour l’application du nouvel ordo de la Semaine Sainte (1955)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0229_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0229_ancien",
+      "indexTitle": "Motu Proprio Summorum Pontificum sur la liturgie romaine antérieure à la réforme de 1970.",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0003_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "indexTitle": "Ordo Missae (1962)",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0264_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0264_ancien",
+      "indexTitle": "Ordonnance sur la Semaine Sainte restaurée (1957), texte latin seul",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0065_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0065_ancien",
+      "indexTitle": "Physionomie générale des nouvelles rubriques (1960)",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0068_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0068_ancien",
+      "indexTitle": "Rubricarum instructum",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0149_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0149_ancien",
+      "indexTitle": "Rubriques du Bréviaire (1960)",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0284_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0284_ancien",
+      "indexTitle": "Table des matières du Temporal du missel",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0152_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0152_ancien",
+      "indexTitle": "Tables de préséance, d’occurrence et de concurrence (1960)",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0582_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0582_ancien",
+      "indexTitle": "Tables des oraisons de l’Avent pour mémoire aux fêtes de Saints occurrentes",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0151_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0151_ancien",
+      "indexTitle": "Variationes : Changement dans le Bréviaire et le Missel Romain (1960)",
+      "classification": "RUBRICAL_1960_1962_CANDIDATE",
+      "candidateOwners": [
+        "calendar",
+        "mass",
+        "source_text"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0950_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0950_ancien",
+      "indexTitle": "Dom Guéranger : les dons du Saint-Esprit",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0618_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0618_ancien",
+      "indexTitle": "L’hérésie anti-liturgique",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0009_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_ancien",
+      "indexTitle": "Saint Ambroise - Des Sacrements",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0647_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0647_ancien",
+      "indexTitle": "Commentaire sur le Supplices",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0017_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0017_ancien",
+      "indexTitle": "Histoire de la fête de la Visitation",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0025_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0025_ancien",
+      "indexTitle": "III - L’Antiphonaire",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0024_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0024_ancien",
+      "indexTitle": "II - Les lectures liturgiques",
+      "classification": "UNRESOLVED_DOCUMENT_REVIEW",
+      "candidateOwners": [
+        "reference"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0018_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0018_ancien",
+      "indexTitle": "I - Introduction - Les Sacramentaires",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0026_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0026_ancien",
+      "indexTitle": "IV - Le Missel",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0031_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_ancien",
+      "indexTitle": "IX - Le Rituel",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0066_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0066_ancien",
+      "indexTitle": "La célébration des fêtes des saints selon le nouveau code",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0585_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0585_ancien",
+      "indexTitle": "La hiérarchie des Autels",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0646_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0646_ancien",
+      "indexTitle": "L’ange du Sacrifice",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0057_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0057_ancien",
+      "indexTitle": "La Piété Salésienne et la Liturgie.",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0648_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0648_ancien",
+      "indexTitle": "L’Épiclèse orientale et l’oraison romaine « Supplices te rogamus... jube haec perferri. »",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0055_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0055_ancien",
+      "indexTitle": "Les mystères liturgiques de la prière \"Supplices\"",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0073_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0073_ancien",
+      "indexTitle": "L’offertoire à la lumière des rits apostoliques d’Orient",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0649_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0649_ancien",
+      "indexTitle": "Supra quae et Supplices",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0029_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_ancien",
+      "indexTitle": "VII - Le Pontifical",
+      "classification": "THEOLOGICAL_LITURGICAL_HISTORY_STUDY",
+      "candidateOwners": [
+        "mass_explorer",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0701_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0701_ancien",
+      "indexTitle": "Bulle Quo Primum du Pape saint Pie V",
+      "classification": "UNRESOLVED_DOCUMENT_REVIEW",
+      "candidateOwners": [
+        "reference"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0128_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0128_ancien",
+      "indexTitle": "Commentaire sur l’Instruction Eucharisticum Mysterium",
+      "classification": "UNRESOLVED_DOCUMENT_REVIEW",
+      "candidateOwners": [
+        "reference"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0001_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0001_ancien",
+      "indexTitle": "Discours d’Assise (1956)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0007_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0007_ancien",
+      "indexTitle": "Ecclesia de Eucharistia (2003)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0127_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0127_ancien",
+      "indexTitle": "Eucharisticum Mysterium (1967)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0016_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0016_ancien",
+      "indexTitle": "Liturgicae instaurationes (1970)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0071_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0071_ancien",
+      "indexTitle": "Mane nobiscum Domine [fr] (2004)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0013_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_ancien",
+      "indexTitle": "Mediator Dei (1947)",
+      "classification": "UNRESOLVED_DOCUMENT_REVIEW",
+      "candidateOwners": [
+        "reference"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0132_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0132_ancien",
+      "indexTitle": "Musicae Sacrae Disciplina (1955)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0125_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0125_ancien",
+      "indexTitle": "Pontificalis Romani (1968)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0054_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0054_ancien",
+      "indexTitle": "Présentation Générale du Missel Romain (2000), texte latin - français.",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0004_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_ancien",
+      "indexTitle": "Sacrosanctum Concilium (1963)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0005_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0005_ancien",
+      "indexTitle": "Sacrosanctum Concilium [latin] (1963)",
+      "classification": "POST_1962_NOT_NORMATIVE_FOR_1962",
+      "candidateOwners": [
+        "historical_context",
+        "formation"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0015_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_ancien",
+      "indexTitle": "Tra le sollecitudini (1903)",
+      "classification": "HISTORICAL_OR_PRE_1962_DOCUMENT",
+      "candidateOwners": [
+        "mass_explorer",
+        "liturgical_history"
+      ],
+      "editionCertified": false,
+      "rights": "NOT_CLEARED_INDEX_ONLY",
+      "promotion": "NONE"
+    }
+  ]
+}

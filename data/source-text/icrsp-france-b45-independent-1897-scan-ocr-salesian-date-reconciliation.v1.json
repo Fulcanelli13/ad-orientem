@@ -1,0 +1,156 @@
+{
+  "schema": "AO_ICRSP_B45_1897_PRINT_SCAN_OCR_INDEPENDENT_SALESIAN_DATE_RECONCILIATION_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "status": "INDEPENDENT_1897_PHOTOGRAPHED_EDITION_OCR_CORROBORATED__VISUAL_PRINT_PAGE_PENDING",
+  "relatedRecords": [
+    "data/source-text/icrsp-france-b41-two-salesian-dating-source-witness-reconciliation.v1.json",
+    "data/source-text/icrsp-france-b42-salesian-print-source-authentication-queue.v1.json",
+    "data/source-text/icrsp-france-b43-salesian-contextual-date-witnesses.v1.json",
+    "data/source-text/icrsp-france-b44-salesian-latin-french-source-layer-concordance.v1.json"
+  ],
+  "independentWitness": {
+    "kind": "INTERNET_ARCHIVE_1897_ANNECY_PRINT_SCAN_INDEPENDENT_OCR",
+    "id": "oeuvresdesaintfr08fran",
+    "itemUrl": "https://archive.org/details/oeuvresdesaintfr08fran",
+    "fullOCR": "https://archive.org/stream/oeuvresdesaintfr08fran/oeuvresdesaintfr08fran_djvu.txt",
+    "edition": "Œuvres de saint François de Sales, vol. VIII, Sermons II, Annecy: J. Niérat, 1897",
+    "physicalCopyFrom": "Kelly Library / University of Toronto; scanned 2010-12-14",
+    "printedImagesAccessibleViaResearchInterface": false,
+    "ocrIndependentOfDonBoscoWebTranscription": true,
+    "OCRIsVisualCertification": false,
+    "transcriptionIntegrityCaution": "OCR can misread single numerals, typography, marginalia and footnotes. Two agreeing OCR occurrences plus calendar/adjacency support date but do not replace direct photographed-page inspection."
+  },
+  "witnesses": [
+    {
+      "caseId": "SALES_VOL8_CXXXVII_1617_LENT_THURSDAY",
+      "volume": 8,
+      "entryNumber": "CXXXVII",
+      "kind": "PLAN",
+      "hostIDs": [
+        "a0194_ancien"
+      ],
+      "originalEditedPrintedEditionOCRHeadingDate": "1617-03-02",
+      "originalEditedPrintedEditionOCRContentsDate": "1617-03-02",
+      "donBoscoWebTranscriptionHeadingDate": "1617-03-03",
+      "ICRSPHostHeadingDate": "1617-03-03",
+      "formerAggregateIndexDate": "1617-03-02",
+      "independentOcrLineRanges": {
+        "itemHeading": [
+          18093,
+          18100
+        ],
+        "tableOfContents": [
+          24329,
+          24335
+        ],
+        "previousDayContinuity": [
+          18107,
+          18111
+        ]
+      },
+      "newPrintedTableOfContentsStartingPage": 325,
+      "priorDonBoscoEmbeddedPageCandidate": 324,
+      "originOfPageDifference": "Previous research cited inline page markers adjoining entry boundary; independent printed TOC shows entry at 325; not interchangeable.",
+      "calendarCheck": {
+        "wednesday": "1617-03-01",
+        "thursday": "1617-03-02",
+        "friday": "1617-03-03"
+      },
+      "interpretation": "The scanned book's independently generated OCR reads 2 March twice (body heading and printed TOC), agreeing with Thursday, preceding CXXXVI dated Wednesday 1 March, yesterday's Tradition continuation, and aggregate index. Strong evidence of an error in the separately retyped Don Bosco/ICRSP 3 March heading rather than an error in the 1897 print; photographed line itself remains to be inspected.",
+      "bestSupportedEditionBibliographicDate": "1617-03-02",
+      "disposition": "HIGH_CONFIDENCE_ORIGINAL_PRINT_OCR_2_MAR__VISUAL_PAGE_CERTIFICATION_PENDING",
+      "historicalSermonDeliveredOnDateProved": false,
+      "scannedPagePhotographVisuallyInspected": false,
+      "manuscriptDatingReviewed": false,
+      "fullWorkTextCollated": false,
+      "rightsCleared": false,
+      "productionApproved": false
+    },
+    {
+      "caseId": "SALES_VOL8_LXXXVIII_1612_CROSS_INDEX_DATE",
+      "volume": 8,
+      "entryNumber": "LXXXVIII",
+      "kind": "SOMMAIRE",
+      "hostIDs": [
+        "a0220_ancien",
+        "a0029_nouveau"
+      ],
+      "originalEditedPrintedEditionOCRHeadingDate": "1612-04-20",
+      "originalEditedPrintedEditionOCRContentsDate": "1612-04-20",
+      "donBoscoWebTranscriptionHeadingDate": "1612-04-20",
+      "formerAggregateIndexDate": "1612-04-30",
+      "independentOcrLineRanges": {
+        "itemHeading": [
+          6227,
+          6236
+        ],
+        "footnoteConjecture": [
+          6262,
+          6265
+        ],
+        "tableOfContents": [
+          24123,
+          24129
+        ]
+      },
+      "newPrintedTableOfContentsStartingPage": 100,
+      "priorDonBoscoEmbeddedPageCandidate": 99,
+      "calendarCheck": {
+        "goodFriday": "1612-04-20",
+        "easter": "1612-04-22",
+        "alternativeIndexDay": "MONDAY"
+      },
+      "interpretation": "Printed-edition scan OCR supports 20 April in heading and printed TOC; accompanying original edited footnote explicitly uses conjectural language based on manuscript position and possible Good Friday adoration context. Reject aggregate-index 30 April as inconsistent. Do not assert historical delivery or a fully delivered sermon.",
+      "bestSupportedEditionBibliographicDate": "1612-04-20",
+      "disposition": "HIGH_CONFIDENCE_ORIGINAL_PRINT_OCR_20_APR__DELIVERY_CONJECTURAL_AND_VISUAL_PAGE_PENDING",
+      "historicalSermonDeliveredOnDateProved": false,
+      "scannedPagePhotographVisuallyInspected": false,
+      "manuscriptDatingReviewed": false,
+      "fullWorkTextCollated": false,
+      "rightsCleared": false,
+      "productionApproved": false
+    }
+  ],
+  "editorMethodWitness": {
+    "archiveOcrLineRanges": {
+      "datesMethod": [
+        344,
+        373
+      ],
+      "originalWorkingDraftNature": [
+        374,
+        404
+      ]
+    },
+    "summary": "Editors state they had access to autograph manuscripts for volume VIII and dated most works from author-written dates, while supplying notes for cases needing inference; many works are brief plans or summaries, not delivered full sermons.",
+    "editorialAssertionDoesNotEqualIndependentManuscriptInspection": true
+  },
+  "correctiveDecision": {
+    "B41_B44RemainHistoricalEvidence": true,
+    "doNotSilentlyRewriteOlderEvidence": true,
+    "mayUpdateDerivedBibliographyUponValidation": true,
+    "currentPrintedOcrPreferred1617Date": "1617-03-02",
+    "originalPrintedPageNumberCorrections": {
+      "LXXXVIII": 100,
+      "CXXXVII": 325
+    },
+    "doNotFalselyClaimScanImageInspected": true,
+    "doNotTreatHistoricalDateAsCertaintyOfDelivery": true,
+    "doNotChangeMassReaderOrCalendar": true,
+    "doNotRepublishSourceProse": true
+  },
+  "counts": {
+    "distinctEditionItems": 2,
+    "hostOccurrences": 3,
+    "independentScannedBookOCRHeadingDatesRead": 2,
+    "independentScannedBookOCRContentsDatesRead": 2,
+    "printedScansIdentified": 1,
+    "printPagePhotographsVisuallyInspected": 0,
+    "manuscriptAutographsInspected": 0,
+    "fullWorkVerbatimCollations": 0,
+    "licensingClearances": 0,
+    "productionApprovals": 0
+  },
+  "nextGate": "Visually inspect University of Toronto / Internet Archive photographed printed pp.100 and 325, including LXXXVIII's conjectural note, then sample manuscripts if available; only thereafter mark printed typography certified. Continue exact text-layer work-item collation and rights separately."
+}

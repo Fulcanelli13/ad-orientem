@@ -1,0 +1,129 @@
+{
+  "schema": "AO_ICRSP_B32_5_SELECTED_B29_WEB_SOURCE_PASSAGES_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "priorDirectLedger": "data/source-text/icrsp-france-b31-eleven-stream-444-unique-topic-ledger.v1.json",
+  "definition": "One or more named source webpage passages actually opened and examined per exact source article ID. This is not exhaustive reading of all panels, original printed author editions, translation clearance or owner paragraph parity.",
+  "totals": {
+    "previousDirectArticles": 444,
+    "newDirectArticleIds": 5,
+    "nowDistinctDirect": 449,
+    "remainingWithoutDirectTopics": 334,
+    "appChanges": 0,
+    "approvedNewExplanations": 0
+  },
+  "rows": [
+    {
+      "articleId": "a0093_ancien",
+      "articleTitle": "Mercredi des Quatre-Temps de l’Avent",
+      "section": "temporal",
+      "reviewedHostPanelLabels": [
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "passageLocators": [
+        "Commentaires / Guéranger / Les Quatre-Temps",
+        "Commentaires / Parsch / Les Quatre-Temps de l’Avent"
+      ],
+      "observedTopic": "Ember Days in December: historical seasonal fast, St Leo's sermons and prayer for ordinations, Advent Annunciation and Incarnation connections.",
+      "destination": "EXISTING_CALENDAR_SEASONAL_HISTORY",
+      "boundary": "Historical fasting obligations and ordination practices are not automatically current universal 1962 duties. No Office module.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0093_ancien",
+      "firstArticleSourcePassageDirectlyExamined": true,
+      "allAuthorPanelsCompletelyReviewed": false,
+      "appOwnerParagraphParityComplete": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0180_ancien",
+      "articleTitle": "2ᵉ dimanche de Carême",
+      "section": "temporal",
+      "reviewedHostPanelLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "passageLocators": [
+        "Commentaires / Parsch / Deuxième dimanche de Carême / Transfiguration"
+      ],
+      "observedTopic": "Parsch interprets the Transfiguration with Moses and Elijah as Law and Prophets, relating their witness and Holy Communion to the Mass; station named Santa Maria in Domnica.",
+      "destination": "EXISTING_MASS_EXPLORER_AND_SCRIPTURE_CORRESPONDENCES",
+      "boundary": "Author's theological interpretation is not a 1962 ritual rubric; Scripture correspondences must use their existing owner.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "firstArticleSourcePassageDirectlyExamined": true,
+      "allAuthorPanelsCompletelyReviewed": false,
+      "appOwnerParagraphParityComplete": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0116_ancien",
+      "articleTitle": "2ᵉ dimanche après l’Epiphanie",
+      "section": "temporal",
+      "reviewedHostPanelLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "passageLocators": [
+        "Commentaires / Schuster / Cana Eucharistic sign",
+        "Commentaires / Parsch / Le Roi invite au festin nuptial"
+      ],
+      "observedTopic": "Cana marriage feast interpreted eucharistically by Schuster and Parsch; Parsch presents Christ as Bridegroom, Church as Bride, and Mass as nuptial feast.",
+      "destination": "EXISTING_MASS_EXPLORER_AND_SCRIPTURE_CORRESPONDENCES",
+      "boundary": "Site's Guéranger introductory chronology notes Holy Name Sunday once occupied this day; older arrangements must not replace the 1962 calendar.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0116_ancien",
+      "firstArticleSourcePassageDirectlyExamined": true,
+      "allAuthorPanelsCompletelyReviewed": false,
+      "appOwnerParagraphParityComplete": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0352_ancien",
+      "articleTitle": "Visitation de la Vierge Marie",
+      "section": "sanctoral",
+      "reviewedHostPanelLabels": [
+        "Sermon pour la fête de la Visitation de la Sainte Vierge 2 juillet 1618",
+        "Sermon pour la fête de la Visitation de la Sainte Vierge 2 juillet 1621"
+      ],
+      "passageLocators": [
+        "Commentaires / Saint François de Sales, Sermons / Visitation"
+      ],
+      "observedTopic": "Salesian Visitation material relates Mary's Magnificat and humility, with humility and charity as spiritual dispositions. The site hosts more than one dated discourse in the larger section.",
+      "destination": "EXISTING_SAINTS_AND_CALENDAR_CONTEXT",
+      "boundary": "Author/editor/original edition and completeness of multiple speeches within one host panel remain unverified; 24-panel metadata drift tracked by B30.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien",
+      "firstArticleSourcePassageDirectlyExamined": true,
+      "allAuthorPanelsCompletelyReviewed": false,
+      "appOwnerParagraphParityComplete": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0031_nouveau",
+      "articleTitle": "Dimanche de la Résurrection (Dimanche de Pâques)",
+      "section": "temporal",
+      "reviewedHostPanelLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "passageLocators": [
+        "Commentaires / Schuster / Station à Sainte-Marie-Majeure"
+      ],
+      "observedTopic": "Schuster associates Easter Resurrection with the baptismal regeneration of neophytes and the ancient stational procession to Saint Mary Major; Epistle 1 Corinthians 5:7–8.",
+      "destination": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "boundary": "Historic baptism and stational descriptions must not be represented as universally occurring in a modern 1962 parish. Office content outside scope.",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+      "firstArticleSourcePassageDirectlyExamined": true,
+      "allAuthorPanelsCompletelyReviewed": false,
+      "appOwnerParagraphParityComplete": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    }
+  ],
+  "sourceTextCopied": false,
+  "publicationApproved": false
+}

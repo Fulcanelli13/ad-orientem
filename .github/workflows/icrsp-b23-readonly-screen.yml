@@ -1,0 +1,37 @@
+name: ICRSP B23 read-only distinct source screening
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths:
+      - '.github/workflows/icrsp-b23-readonly-screen.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate source IDs before fetching
+        run: python -m unittest discover -s tests -p 'test_icrsp_b22_233_distinct_source_scan.py' -v
+      - name: Screen original source page bodies without storing prose
+        run: python tools/icrsp/scan_b22_new233.py --manifest data/source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json --shards 5 --shard ${{ matrix.shard }} --delay 3.5 --out icrsp-b23-${{ matrix.shard }}.json
+      - name: Upload research-only signals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b23-${{ matrix.shard }}
+          path: icrsp-b23-${{ matrix.shard }}.json
+          if-no-files-found: warn
+          retention-days: 30

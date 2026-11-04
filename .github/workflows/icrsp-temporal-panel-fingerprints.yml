@@ -1,0 +1,110 @@
+name: ICRSP Temporal commentary deduplication research
+# Rerun after the synthetic citation-quoting fixture correction; read-only by design.
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths: ['.github/workflows/icrsp-temporal-panel-fingerprints.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  fingerprint-source-panels:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - { start: 0, end: 64 }
+          - { start: 64, end: 128 }
+          - { start: 128, end: 193 }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source-only hash transformations
+        run: python -m unittest discover -s tests -p 'test_icrsp_commentary_fingerprints.py' -v
+      - name: Fingerprint source commentary bodies with zero text reproduction
+        run: |
+          python tools/icrsp/fingerprint_commentary_bodies.py \
+            --inventory data/source-text/icrsp-france-index-discovery.v1.json \
+            --start ${{ matrix.start }} \
+            --end ${{ matrix.end }} \
+            --delay 5.0 \
+            --out icrsp-temporal-fingerprint-${{ matrix.start }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-temporal-fingerprint-${{ matrix.start }}
+          path: icrsp-temporal-fingerprint-${{ matrix.start }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  verify-temporal-fingerprints:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: [fingerprint-source-panels]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: icrsp-temporal-fingerprint-*
+          path: /tmp/icrsp
+      - name: Verify source identities and locate duplicate body hashes
+        run: |
+          python - <<'PY'
+          import glob,json
+          from collections import defaultdict
+          from pathlib import Path
+          docs=[json.loads(Path(fn).read_text(encoding='utf8')) for fn in glob.glob('/tmp/icrsp/**/icrsp-temporal-fingerprint-*.json',recursive=True)]
+          assert len(docs)==3, 'Expected three nonoverlapping windows'
+          assert sorted((d['window']['start'],d['window']['endExclusive']) for d in docs)==[(0,64),(64,128),(128,193)]
+          assert all(d['totals']['errors']==0 for d in docs), [d['errors'] for d in docs]
+          rows=sorted([r for d in docs for r in d['records']],key=lambda r:r['indexPosition'])
+          assert len(rows)==189,len(rows)
+          assert len(set(r['articleId'] for r in rows))==189
+          panel_ids={(r['articleId'],b['blockOrdinal']) for r in rows for b in r['blocks']}
+          assert len(panel_ids)==sum(len(r['blocks']) for r in rows)
+          assert all(r['paragraphsStored']==0 for r in rows)
+          assert all(r['sourceSection']=='temporal' and not r['editionCertified'] for r in rows)
+          groups=defaultdict(list)
+          for r in rows:
+              for b in r['blocks']:
+                  if b['bodyCharacterCount']>120:
+                      groups[b['bodyTextSha256']].append({
+                          'articleId':r['articleId'],'blockOrdinal':b['blockOrdinal'],
+                          'candidateWorkFamily':b['candidateWorkFamily'],
+                          'sourceLabel':b['sourceLabel']
+                      })
+          duplicates=[v for v in groups.values() if len(v)>1]
+          report={
+              'schema':'AO_ICRSP_TEMPORAL_COMMENTARY_HASH_DEDUP_V1',
+              'sourceScope':'193 Temporal articles; 189 with verified commentary panels',
+              'status':'RESEARCH_HASH_METADATA_ONLY_NO_SOURCE_BODY_REPRODUCTION',
+              'eligibleArticles':189,
+              'articleFetchFailures':0,
+              'panelCount':sum(len(r['blocks']) for r in rows),
+              'substantialUniqueTextHashes':len(groups),
+              'duplicateGroups':len(duplicates),
+              'duplicatePanelInstances':sum(len(v) for v in duplicates),
+              'duplicateExamples':duplicates[:75],
+              'rightsCleared':0,
+              'editionCertifications':0,
+              'canonicalImports':0,
+              'note':'Hash equality only proves matching normalized page text, not identical original historical work passages; short panels excluded.'
+          }
+          Path('icrsp-temporal-dedup-summary.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          print(json.dumps({k:v for k,v in report.items() if k not in ('duplicateExamples','note')},ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-temporal-dedup-summary
+          path: icrsp-temporal-dedup-summary.json
+          if-no-files-found: error
+          retention-days: 90

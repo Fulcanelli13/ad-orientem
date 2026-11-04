@@ -1,0 +1,140 @@
+{
+  "schema": "AO_ICRSP_B16_FROMAGE_SIX_SUNDAY_CROSS_HOSTED_PASSAGES_V1",
+  "asOf": "2026-10-26",
+  "issue": 1665,
+  "existingResearchOwner": "Fulcanelli13/ad-orientem#1666",
+  "scope": "Research-only six passage anchors in the post-Pentecost Fromage continuation; add evidence to B14 research owner, do not replace primary website work labels or duplicate Mass/Scripture registries.",
+  "sources": {
+    "seriesAuthorship": "https://www.abbayedesolesmes.fr/produit/introduction-a-lannee-liturgique/",
+    "bibliographicSeries": "https://catalogue.bnf.fr/ark:/12148/cb318196703",
+    "historical1883Review": "https://www.liberius.net/articles/Bibliographie_catholique_%28tome_67%29.pdf",
+    "historical1883ReviewLocation": "February 1883, tome LXVII, p. 97; second continuation volume covers fourth Sunday through end of ecclesiastical year",
+    "independentSecondaryStudy": "https://www.seldelaterre.fr/articles/sdt7/le-nouveau-visage-de-la-messe-%28iii%29",
+    "modernStudyRole": "Secondary polemical commentary cited ONLY as a locus/quotation concordance; do not endorse its larger argument or treat as a critical edition",
+    "sourceScanLead": "https://oblaturesm.ca/pdf/pent2.pdf",
+    "scanLeadStatus": "Search-indexed excerpt contains fourth-Sunday opening; original book PDF was not fetched for visual source-page inspection. Do not infer pagination or scanned edition."
+  },
+  "editionCaveats": [
+    "Solesmes identifies Dom Lucien Fromage as continuation author. ICRSP's Guéranger panel label may be customary attribution to the whole work.",
+    "Historical February 1883 review describes an 1883 publication; a modern secondary study mentions 1882. Treat exact edition year as unresolved until imprint image.",
+    "Secondary study's fourth-Sunday quotation has a XV/XVI-century numeral variant compared with ICRSP (ICRSP says XVI). Read an original print image before claiming an exact historic quotation.",
+    "Separate ICRSP Présentation paragraphs are not authenticated as Fromage.",
+    "Older comments on lection changes explain historical usage, not changes to authoritative 1962 readings or rubrics."
+  ],
+  "records": [
+    {
+      "articleId": "a0222_nouveau",
+      "sundayAfterPentecost": 4,
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+      "existingProperSourcePath": "Tempora/Pent04-0",
+      "websiteSectionLabel": "Dom Guéranger, l’Année Liturgique",
+      "textualSubject": "Historical reordering of the Sunday Gospel sequence",
+      "hostedParagraphAnchorDescription": "first paragraph on the Sunday formerly called Misericordia",
+      "independentlyLocatedInSecondaryHistoricalStudy": true,
+      "authorInference": "FROMAGE_CONTINUATION_STRONGLY_SUPPORTED_NOT_ORIGINAL_PAGE_PROVEN",
+      "continuationPrintedDayPageVisualInspection": false,
+      "workEditionDayPageIdentified": false,
+      "publicAttributionApproved": false,
+      "notNormative1962Rubric": true,
+      "secondaryCenturyNumeralVariantNeedsPrintCheck": true
+    },
+    {
+      "articleId": "a0364_ancien",
+      "sundayAfterPentecost": 11,
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien",
+      "existingProperSourcePath": "Tempora/Pent11-0",
+      "websiteSectionLabel": "Dom Guéranger, l’Année Liturgique",
+      "textualSubject": "Earlier Gospel of Pharisee and publican transferred",
+      "hostedParagraphAnchorDescription": "opening reference to Sunday of the deaf and mute",
+      "independentlyLocatedInSecondaryHistoricalStudy": true,
+      "authorInference": "FROMAGE_CONTINUATION_STRONGLY_SUPPORTED_NOT_ORIGINAL_PAGE_PROVEN",
+      "continuationPrintedDayPageVisualInspection": false,
+      "workEditionDayPageIdentified": false,
+      "publicAttributionApproved": false,
+      "notNormative1962Rubric": true,
+      "secondaryCenturyNumeralVariantNeedsPrintCheck": false
+    },
+    {
+      "articleId": "a0365_ancien",
+      "sundayAfterPentecost": 12,
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien",
+      "existingProperSourcePath": "Tempora/Pent12-0",
+      "websiteSectionLabel": "Dom Guéranger, l’Année Liturgique",
+      "textualSubject": "Collect and preceding Sunday's Gospel",
+      "hostedParagraphAnchorDescription": "paragraph connects present collect to prior Sunday's Gospel",
+      "independentlyLocatedInSecondaryHistoricalStudy": true,
+      "authorInference": "FROMAGE_CONTINUATION_STRONGLY_SUPPORTED_NOT_ORIGINAL_PAGE_PROVEN",
+      "continuationPrintedDayPageVisualInspection": false,
+      "workEditionDayPageIdentified": false,
+      "publicAttributionApproved": false,
+      "notNormative1962Rubric": true,
+      "secondaryCenturyNumeralVariantNeedsPrintCheck": false
+    },
+    {
+      "articleId": "a0443_ancien",
+      "sundayAfterPentecost": 17,
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien",
+      "existingProperSourcePath": "Tempora/Pent17-0",
+      "websiteSectionLabel": "Dom Guéranger, l’Année Liturgique",
+      "textualSubject": "Transfer of hydropic guest and wedding-feast Gospel",
+      "hostedParagraphAnchorDescription": "opening reference to Sunday of the love of God",
+      "independentlyLocatedInSecondaryHistoricalStudy": true,
+      "authorInference": "FROMAGE_CONTINUATION_STRONGLY_SUPPORTED_NOT_ORIGINAL_PAGE_PROVEN",
+      "continuationPrintedDayPageVisualInspection": false,
+      "workEditionDayPageIdentified": false,
+      "publicAttributionApproved": false,
+      "notNormative1962Rubric": true,
+      "secondaryCenturyNumeralVariantNeedsPrintCheck": false
+    },
+    {
+      "articleId": "a0478_ancien",
+      "sundayAfterPentecost": 19,
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0478_ancien",
+      "existingProperSourcePath": "Tempora/Pent19-0",
+      "websiteSectionLabel": "Dom Guéranger, l’Année Liturgique",
+      "textualSubject": "Present collect and preceding Sunday's Gospel",
+      "hostedParagraphAnchorDescription": "comment on healing of the paralytic from previous Sunday",
+      "independentlyLocatedInSecondaryHistoricalStudy": true,
+      "authorInference": "FROMAGE_CONTINUATION_STRONGLY_SUPPORTED_NOT_ORIGINAL_PAGE_PROVEN",
+      "continuationPrintedDayPageVisualInspection": false,
+      "workEditionDayPageIdentified": false,
+      "publicAttributionApproved": false,
+      "notNormative1962Rubric": true,
+      "secondaryCenturyNumeralVariantNeedsPrintCheck": false
+    },
+    {
+      "articleId": "a0488_ancien",
+      "sundayAfterPentecost": 22,
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0488_ancien",
+      "existingProperSourcePath": "Tempora/Pent22-0",
+      "websiteSectionLabel": "Dom Guéranger, l’Année Liturgique",
+      "textualSubject": "Earlier and present Sunday Gospel relationship",
+      "hostedParagraphAnchorDescription": "introductory application of prior week's Gospel",
+      "independentlyLocatedInSecondaryHistoricalStudy": true,
+      "authorInference": "FROMAGE_CONTINUATION_STRONGLY_SUPPORTED_NOT_ORIGINAL_PAGE_PROVEN",
+      "continuationPrintedDayPageVisualInspection": false,
+      "workEditionDayPageIdentified": false,
+      "publicAttributionApproved": false,
+      "notNormative1962Rubric": true,
+      "secondaryCenturyNumeralVariantNeedsPrintCheck": false
+    }
+  ],
+  "counts": {
+    "postPentecostSourceArticlesAlreadyFlaggedInB14": 22,
+    "distinctSundayPassagesWithHostAndSecondaryTextualAnchor": 6,
+    "originalContinuationPrintedDayPagesVisuallyInspected": 0,
+    "fullyCriticalOriginalParagraphCollations": 0,
+    "canonicalAuthorChanges": 0,
+    "productionPublicationChanges": 0
+  },
+  "rights": {
+    "hostedFrenchCommentaryRedistributionApproved": false,
+    "modernStudyQuotationReuseApproved": false,
+    "projectReadyToPublish": false
+  },
+  "routing": {
+    "existingCalendarOrMassExplorer": "HISTORICAL_LECTION_CONTEXT_ONLY",
+    "existingScriptureCompendium": "NO_NEW_CLAIM_REGISTRY",
+    "massReaderOrRubrics": "DO_NOT_CHANGE"
+  }
+}

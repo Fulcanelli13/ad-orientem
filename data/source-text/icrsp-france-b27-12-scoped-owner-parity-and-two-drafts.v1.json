@@ -1,0 +1,309 @@
+{
+  "schema": "AO_ICRSP_B27_SCOPED_OWNER_CONTENT_PARITY_AND_ORIGINAL_DRAFTS_V1",
+  "asOf": "2026-10-26",
+  "pr": 1666,
+  "status": "RESEARCH_ONLY_NO_APP_RELEASE",
+  "scope": "Limited file-level owner comparisons and two newly authored draft historical contexts. Absence in a checked file is not a repo-global missing-feature certification.",
+  "comparisons": [
+    {
+      "comparisonId": "ICRSP-B27-OWNER-01",
+      "articleIds": [
+        "a0010_nouveau",
+        "a0593_ancien"
+      ],
+      "topicCode": "PALM_1955_VS_1962",
+      "proposedOwner": "EXISTING_CALENDAR_AND_READER",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js",
+        "src/calendar/traditional-year-v384.js",
+        "data/presentation/guide-registry.v1.json"
+      ],
+      "existingContentEvidence": "Calendar major celebrations include Palm Sunday, the traditional-year module already displays Palm blessing, procession and optional household branch guidance, and the Guide identifies Palm Sunday as an exception to Sunday sprinkling.",
+      "candidateDifference": "The two ICRSP hosted articles reuse Guéranger's historic Palm opening and the site labels one explicitly pre-1955.",
+      "disposition": "ALREADY_OWNED_HISTORICAL_1962_BOUNDARY_ONLY",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-02",
+      "articleIds": [
+        "a0038_nouveau"
+      ],
+      "topicCode": "IN_ALBIS_NEOPHYTE_STATION",
+      "proposedOwner": "EXISTING_CALENDAR_CONTEXT",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingContentEvidence": "Major celebration list already contains the Sunday Low Sunday/Dimanche in albis; the checked file gives the title and date but not the detailed St Pancras/newly baptised source explanation.",
+      "candidateDifference": "A potentially additive sourced day-specific explanation about the baptismal white garments and station at St Pancras.",
+      "disposition": "CANDIDATE_DAY_SPECIFIC_CONTEXT_OWNER_ID_PENDING",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-03",
+      "articleIds": [
+        "a0042_nouveau"
+      ],
+      "topicCode": "EASTER5_ROGATIONS",
+      "proposedOwner": "EXISTING_CALENDAR_CUSTOMS",
+      "checkedExistingFiles": [
+        "src/calendar/traditional-year-v384.js",
+        "src/calendar/customs-read-model.js"
+      ],
+      "existingContentEvidence": "The Calendar's traditional year presents Rogation actions and cautions, while its published Customs read model includes an actual family Rogation prayer walk, distinct from priestly processions.",
+      "candidateDifference": "The Mass commentary's prayer-in-Christ's-name reading may enrich that Sunday, but no new Rogation custom or processional trigger is needed.",
+      "disposition": "CUSTOM_EXISTS_DONT_DUPLICATE",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-04",
+      "articleIds": [
+        "a0111_nouveau",
+        "a0279_ancien"
+      ],
+      "topicCode": "ASCENSION_REUSED_OPENING",
+      "proposedOwner": "EXISTING_CALENDAR_AND_PROPER",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js",
+        "src/learn/mass-explorer-selected-calendar-proper.js"
+      ],
+      "existingContentEvidence": "Calendar already calculates Ascension as Easter plus 39 days, labels Ascensiontide, and the Mass Explorer uses an already resolved and fully gated Proper.",
+      "candidateDifference": "Historical catechetical explanation could link to day, but site pre-1960 octave language cannot change 1962 resolution. Intro paragraphs repeat between sources.",
+      "disposition": "EXISTING_FEAST_WITH_HISTORICAL_CONTEXT_OPTION",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-05",
+      "articleIds": [
+        "a0220_nouveau"
+      ],
+      "topicCode": "SACRED_HEART_PRE1929_PROPER",
+      "proposedOwner": "EXISTING_PROPER_AND_CALENDAR",
+      "checkedExistingFiles": [
+        "src/learn/mass-explorer-selected-calendar-proper.js",
+        "src/mass/preflight-study-proper.js"
+      ],
+      "existingContentEvidence": "Mass Explorer proper projection requires ready existing Calendar resolution and matching English/French Proper sourcePath; it does not independently resolve alternative forms.",
+      "candidateDifference": "Source documents actual 1856 and 1929 liturgical formularies, but an original-source historical comparison is not license to supply pre-1929 Proper.",
+      "disposition": "HISTORIC_FORMULARY_HOLD",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-06",
+      "articleIds": [
+        "a0833_ancien"
+      ],
+      "topicCode": "O_ANTIPHONS_VESPERS",
+      "proposedOwner": "EXISTING_ADVENT_REFERENCE_NOT_OFFICE",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingContentEvidence": "Liturgical-year model includes the Advent season. It is not a Breviary or Vespers reader.",
+      "candidateDifference": "The O antiphons are genuinely Office texts; possible source link in Calendar but no new Office or music module authorized.",
+      "disposition": "OUT_OF_SCOPE_OFFICE_MATERIAL",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-07",
+      "articleIds": [
+        "a0227_nouveau"
+      ],
+      "topicCode": "IRENAEUS_2022_DOCTOR_TITLE",
+      "proposedOwner": "SAINTS_RECORD_EDITORIAL",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingContentEvidence": "The checked major-celebration helper is not a complete saint-title registry; it does not attest the Irenaeus title or feast rank.",
+      "candidateDifference": "The hosted page explicitly mixes 1960 feast placement with 2022 Doctor designation. Need era-specific title and original-saint identity before any display.",
+      "disposition": "ANACHRONISM_NO_1962_TITLE_IMPORT",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-08",
+      "articleIds": [
+        "a0096_nouveau",
+        "a0225_ancien"
+      ],
+      "topicCode": "GERARD_TOUL_LOCAL_DOUBLE",
+      "proposedOwner": "EXISTING_SAINTS_PARTICULAR_CALENDAR",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingContentEvidence": "General major-feast helper cannot certify Nancy–Toul and Saint-Dié proper permissions; no actual local owner ID verified in this comparison.",
+      "candidateDifference": "Two hosted pages repeat a Gérard biography, while one explicitly identifies diocesan jurisdiction.",
+      "disposition": "PARTICULAR_SOURCE_PAIR_NO_UNIVERSAL_IMPORT",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-09",
+      "articleIds": [
+        "a0060_nouveau"
+      ],
+      "topicCode": "ABBOTS_OS_IUSTI_MASS_COMMON",
+      "proposedOwner": "EXISTING_MASS_EXPLORER",
+      "checkedExistingFiles": [
+        "data/learn/mass-explorer-approved-studies.v1.json",
+        "data/presentation/guide-registry.v1.json"
+      ],
+      "existingContentEvidence": "The published Mass Guide has 32 ordinary/adjacent rites entries and approved deep studies manifest contains zero released studies; neither is an approved study of the named Os iusti abbots' Common.",
+      "candidateDifference": "Parsch's historical symbolic explanation may be additive only after exact Common ID, author print location, copyright and source form verification.",
+      "disposition": "MASS_COMMON_SOURCE_LINK_CANDIDATE_NOT_RELEASED",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-10",
+      "articleIds": [
+        "a0204_nouveau",
+        "a1035_ancien"
+      ],
+      "topicCode": "PRE1955_SUPPRESSED_OCTAVES",
+      "proposedOwner": "EXISTING_CALENDAR",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "existingContentEvidence": "Canonical year is 1962-oriented. A historic ICRSP octave page is not independent authority for creating new observances.",
+      "candidateDifference": "The John Baptist octave page explicitly says suppressed in 1955; the Assumption octave is historical. No 1962 new day/mass can be inferred.",
+      "disposition": "HISTORIC_REFERENCE_ONLY",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-11",
+      "articleIds": [
+        "a0409_ancien"
+      ],
+      "topicCode": "ASSUMPTION_1950_TEXT_LAYER",
+      "proposedOwner": "EXISTING_MASS_PROPER",
+      "checkedExistingFiles": [
+        "src/learn/mass-explorer-selected-calendar-proper.js"
+      ],
+      "existingContentEvidence": "Existing view can only show the already-certified selected Mass Proper and source path; it does not accept an arbitrary hosted alternative proper text.",
+      "candidateDifference": "Jounel historical exposition and after-1950 Assumption Mass texts require separate authorship and copyright assessment.",
+      "disposition": "LITURGICAL_SOURCE_LAYER_HOLD",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    },
+    {
+      "comparisonId": "ICRSP-B27-OWNER-12",
+      "articleIds": [
+        "a0238_ancien",
+        "a0239_ancien"
+      ],
+      "topicCode": "MODERN_2007_POLEMICAL_DOCUMENTS",
+      "proposedOwner": "SOURCE_REFERENCE_EXCLUSIONS",
+      "checkedExistingFiles": [
+        "src/learn/mass-explorer-study-publication.js"
+      ],
+      "existingContentEvidence": "Mass Explorer study publication has a human-approved original-study gate; contemporary press controversies are not part of ritual text ownership.",
+      "candidateDifference": "Do not import 2007 journalism or then-current legal terminology as app devotional text or today's canonical permission.",
+      "disposition": "OUT_OF_SCOPE_MODERN_HISTORIC_LEGAL",
+      "canonicalOwnerRecordVerified": false,
+      "criticalOriginalPrintVerified": false,
+      "sourceRightsCleared": false,
+      "approvedForApp": false
+    }
+  ],
+  "editorialDrafts": [
+    {
+      "id": "ICRSP_B27_IN_ALBIS_BAPTISM",
+      "sourceArticleId": "a0038_nouveau",
+      "proposedOwner": "EXISTING_CALENDAR_DAY_CONTEXT",
+      "en": "The Sunday after Easter is called in albis, recalling the white baptismal garments worn by the neophytes during Easter week. In ancient Rome, the laying aside of these garments was associated with the vigil at the Lateran, while the Sunday observance came to be linked with Saint Pancras, the young martyr whose fidelity recalled the promises of baptism. The liturgical readings invite the newly baptised—and all the faithful—to profess belief in the risen Christ, as Saint Thomas does in the Gospel. These historical customs help explain the day; they are not ceremonies to be added to the 1962 Mass.",
+      "fr": "Le dimanche après Pâques est appelé in albis, en souvenir des vêtements blancs portés par les néophytes durant l’octave pascale. Dans la Rome ancienne, leur déposition était liée à la vigile au Latran, tandis que la célébration dominicale fut associée à Saint-Pancrace, jeune martyr dont la fidélité rappelait les promesses du baptême. Les lectures invitent les nouveaux baptisés, comme tous les fidèles, à croire au Christ ressuscité et à professer cette foi avec saint Thomas dans l’Évangile. Ces usages historiques éclairent le sens du jour : ils ne sont pas des cérémonies à ajouter à la Messe de 1962.",
+      "status": "RESEARCH_DRAFT_NOT_APPROVED",
+      "verification": "ICRSP article verified directly. The Holy See's Pontifical Academy Cultorum Martyrum distinguishes the Lateran vigil deposition of white baptismal clothing from the later Sunday Pancras observance and renewal of baptismal promises. Historical scope corrected in both drafts. Exact calendar owner ID, final 1962 Proper comparison, editorial theological sign-off and reproduction-rights status remain unapproved.",
+      "canonicalOwnerRecordId": null,
+      "rightsToUseSourceWording": false,
+      "independentEvidence": [
+        {
+          "source": "https://press.vatican.va/roman_curia/pontifical_academies/cult-martyrum/stazioni/descrizioni/vc_pa_martyrum_20030125_pancrazio_it.html",
+          "finding": "Pontifical Academy Cultorum Martyrum distinguishes white-robe deposition at the Lateran vigil from a later Sunday ceremony at San Pancrazio including baptismal promises; do not collapse the two into one Mass ritual.",
+          "scope": "ROMAN_STATION_AND_HISTORICAL_BAPTISMAL_CUSTOM"
+        },
+        {
+          "source": "https://airmaria.com/Liturgy/htmlmasses/lowsunday.html",
+          "finding": "Traditional Missal-form summary identifies Dominica in Albis as a first-class Sunday with station at St Pancras and Quasi modo as the Introit; this is a secondary witness, not canonical resolver certification.",
+          "scope": "MISSAL_SUMMARY_SECONDARY"
+        },
+        {
+          "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0038_nouveau",
+          "finding": "Original source page contains commentary on Dominica in Albis, neophyte white garments and the St Pancras station, but its hosted translation is not adopted.",
+          "scope": "SOURCE_EDITORIAL_LEAD"
+        }
+      ],
+      "evidenceStage": "VATICAN_LATERAN_VIGIL_VERSUS_PANCRAS_SUNDAY_DIFFERENCE_CROSSCHECKED_NOT_RELEASED"
+    },
+    {
+      "id": "ICRSP_B27_SACRED_HEART_FORMULARY_HISTORY",
+      "sourceArticleId": "a0220_nouveau",
+      "proposedOwner": "EXISTING_CALENDAR_HISTORICAL_CONTEXT",
+      "en": "The Mass of the Sacred Heart has not always used the same formulary. The devotion entered the universal Roman calendar in the nineteenth century, while a substantially revised Mass and Office were introduced under Pius XI in 1929. Earlier commentaries therefore sometimes explain prayers that are not those of the 1962 Missal. For the Mass actually celebrated, the approved Proper of the selected date remains the reference.",
+      "fr": "La fête du Sacré-Cœur n'a pas toujours possédé le même formulaire. Son inscription au calendrier romain universel remonte au XIXᵉ siècle, tandis qu'une Messe et un Office largement remaniés furent introduits sous Pie XI en 1929. Les commentaires anciens expliquent donc parfois des prières différentes de celles du Missel de 1962. Pour la célébration effective, il faut se référer au propre approuvé du jour choisi.",
+      "status": "RESEARCH_DRAFT_NOT_APPROVED",
+      "verification": "Pius XI 1928 document and independent historical study corroborate chronological distinction. Still require 1929 SCR decree or verified print witness, canonical 1962 Proper ID, owner comparison and editorial sign-off; no historic alternate Proper import.",
+      "canonicalOwnerRecordId": null,
+      "rightsToUseSourceWording": false,
+      "independentEvidence": [
+        {
+          "source": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
+          "finding": "Pius XI explicitly orders the feast raised to first class with octave and annual reparation prayer, in his 8 May 1928 encyclical.",
+          "scope": "PRIMARY_PAPAL_1928_REPARATION_AND_RANK"
+        },
+        {
+          "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+          "finding": "ICRSP states an earlier 1856 universal feast formulary was superseded by a second Mass and Office promulgated under Pius XI in 1929; original decree not yet collated.",
+          "scope": "HOSTED_SOURCE_1856_VS_1929"
+        },
+        {
+          "source": "https://www.catholicculture.org/culture/library/view.cfm?recnum=7146",
+          "finding": "Independent liturgical-historical study dates the new Mass/Office to the Sacred Congregation of Rites of 29 January 1929 and earlier universal recognition to 23 August 1856.",
+          "scope": "SECONDARY_LITURGICAL_CHRONOLOGY"
+        }
+      ],
+      "evidenceStage": "1856_1928_1929_CHRONOLOGY_CROSSCHECKED_DEGREE_OF_EVIDENCE_LIMITED_NOT_RELEASED"
+    }
+  ],
+  "counts": {
+    "cases": 12,
+    "distinctArticleIds": 17,
+    "draftsPending": 2,
+    "approvedAppAdditions": 0,
+    "globalGapsCertified": 0
+  },
+  "editionVerificationSummary": {
+    "draftsWithNewIndependentSourceCrosschecks": 2,
+    "canonicalRecordIDsConfirmed": 0,
+    "originalHostedCommentaryReprinted": 0,
+    "publishedCalendarContextArticles": 0
+  }
+}
