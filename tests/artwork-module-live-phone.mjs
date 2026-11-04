@@ -88,6 +88,7 @@ try{
     await overflow();
     await page.screenshot({path:resolve(output,"hub-"+width+"-"+locale+".png"),animations:"disabled"});
     await page.locator(base+' [data-p435930-family="eucharistic"]').click();
+    await page.locator(base+' [data-p435930-family="eucharistic"]').click();
     const shelf=await imageState(".aoPrayerEucharisticCover img");
     imageOK(shelf,"adoration-frameless.webp");
     await overflow();
@@ -120,6 +121,7 @@ try{
     await page.screenshot({path:resolve(output,"angelus-direct-"+width+"-"+locale+".png"),animations:"disabled"});
     // Discovery route uses the distinct approved full-height pilot entrance.
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+    await page.locator(base+' [data-p435930-family="daily"]').click();
     await page.locator(base+' [data-p435930-family="daily"]').click();
     await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
     const angel=await imageState(".aoPrayerAngelusPhoto img");
