@@ -150,7 +150,7 @@ try{
     const hailMaryButton=page.locator(base+' [data-p435930-lib-open="foundations_hail_mary"]');
     assert.equal(await hailMaryButton.count(),1,"Canonical Hail Mary card must be reachable from the Prayer library");
     await hailMaryButton.click();
-    const hailMary=await imageState(".aoEssentialFlowArt img");
+    const hailMary=await imageState(".aoClaudeHolyCard .aoClaudeHolyPlate img");
     imageOK(hailMary,"angelus-frameless.webp");
     assert.equal(await page.locator(base+' [data-ao-editorial-slot="COV-foundations_hail_mary"]').count(),1,
       "Hail Mary artwork must derive from the approved original slot, not generic Prayer cover");
