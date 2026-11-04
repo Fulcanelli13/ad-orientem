@@ -1,0 +1,2679 @@
+{
+  "schema": "AO_CL27_HISTORICAL_ROWS_TO_LIVE_SOURCES_RECONCILIATION_V1",
+  "reviewed_on": "2026-11-04",
+  "publication": "RESEARCH_ONLY_NO_APP_IMPORT",
+  "purpose": "Thin source-page work queue keyed to frozen CL2 historical_row; not a schedule master, new venue registry, liturgical-book manifest or occurrence publisher.",
+  "canonical_source": {
+    "pr": 1775,
+    "branch": "data/cl27-bulk-schedule-collision-queue-20261026",
+    "file": "data/directory/research/cl27-bulk-timetable-audit-20261026/audit.v1.json",
+    "blob_sha": "842b30caad7b6ad08ffed098cc136080fe89eb6d"
+  },
+  "summary": {
+    "historical_source_rows": 296,
+    "source_urls": 120,
+    "anchors": 143,
+    "live_reviewed_source_claims": 34,
+    "reviewed_site_cases": 12,
+    "remaining_unreviewed_rows": 262,
+    "missing_frozen_source_id": 5,
+    "approved_timetables": 0,
+    "approved_classifications": 0,
+    "historical_collision_groups_pending": 106
+  },
+  "publication_gates": [
+    "Exact latest-main CL2 physical site and frozen source-ID joins",
+    "First-party page evidence for actual worship venue and Mass—not just devotional time",
+    "A local dated bulletin or current operator confirmation for conditional and volatile hours",
+    "Reconcile duplicate historical source rows to one real site/day/time occurrence",
+    "Explicit ministry/celebration-specific ritual books, communion and canonical assertions; UNKNOWN otherwise",
+    "Do not infer public chapel access, Mass type, timezone, celebrant or 1962 books from institute labels",
+    "No app import or live timetable publication from this research-only review"
+  ],
+  "source_page_groups": [
+    {
+      "historical_url": "http://www.icrss.it/firenze/",
+      "rows": [
+        217,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036,
+        2037,
+        2038
+      ],
+      "anchors": [
+        "RG-A56E66FCAD96"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "IT"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://adorientem.church/find?country=PH",
+      "rows": [
+        1252,
+        1253
+      ],
+      "anchors": [
+        "RG-110FE4663ACA",
+        "RG-90A7DDBAE26A"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "PH"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/holy-family-church-miaoli-county-96e9e3c7",
+      "rows": [
+        1836
+      ],
+      "anchors": [
+        "RG-560C09E065F5"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "TW"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/immaculate-conception-chapel-quezon-city-bd5b203d",
+      "rows": [
+        1835
+      ],
+      "anchors": [
+        "RG-A885F4D57F3A"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "PH"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/kapel-susteran-gembala-baik-jakarta-timur-kapel-pondok-bambu-skolastikat-sang-tunas-rt-12-rw-2-9d1fbe71",
+      "rows": [
+        1827
+      ],
+      "anchors": [
+        "RG-DA0AFA244DB4"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "ID"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/national-dong-hwa-university-catholic-student-centre-hualien-county-5b1f6a1d",
+      "rows": [
+        1837
+      ],
+      "anchors": [
+        "RG-81634B90E878"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "TW"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/our-lady-of-dolours-mumbai",
+      "rows": [
+        1765
+      ],
+      "anchors": [
+        "RG-56F02DF320E1"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "IN"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/our-lady-of-mount-carmel-church-hsinchu-city-d21b4e76",
+      "rows": [
+        1838
+      ],
+      "anchors": [
+        "RG-5FC9A92238BA"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "TW"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/our-lady-of-songshan-nanjing-e-rd-9c345207",
+      "rows": [
+        1839
+      ],
+      "anchors": [
+        "RG-B0B5E828070F"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "TW"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/our-lady-of-the-rosary-cape-town",
+      "rows": [
+        1256,
+        3402
+      ],
+      "anchors": [
+        "RG-9767FB0FF881"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "ZA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/san-agustin-manila",
+      "rows": [
+        1834,
+        3407,
+        3408
+      ],
+      "anchors": [
+        "RG-07FDD0150233"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "PH"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/st-francis-xavier-tokyo",
+      "rows": [
+        1833
+      ],
+      "anchors": [
+        "RG-F4E124F2F957"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "JP"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/st-joseph-college-chapel-mojolangu-b72b8a49",
+      "rows": [
+        1828
+      ],
+      "anchors": [
+        "RG-A8870D2AC011"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "ID"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/st-joseph-nairobi",
+      "rows": [
+        1769,
+        3403,
+        3404
+      ],
+      "anchors": [
+        "RG-28B6C5B21415"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "KE"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://adorientem.church/find/st-joseph-victoria-street-victoria-st-e57041fa",
+      "rows": [
+        1255
+      ],
+      "anchors": [
+        "RG-F78E459E839F"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "SG"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://birminghamoratory.org.uk/mass-times/",
+      "rows": [
+        1308,
+        2396,
+        2397,
+        2398
+      ],
+      "anchors": [
+        "RG-EC5A4BA48BF9"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "GB"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://dio-bell.solutiosoftware.com/directory/parishes/holy-family-cahokia",
+      "rows": [
+        200
+      ],
+      "anchors": [
+        "RG-9D79E31A64C4"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://fsspx.ar/es/capillas",
+      "rows": [
+        2331
+      ],
+      "anchors": [
+        "RG-953C55879369"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "AR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://fsspx.ch/fr/les-rousses-f-chapelle-notre-dame-lourdes-32449",
+      "rows": [
+        342,
+        3102
+      ],
+      "anchors": [
+        "RG-5D89ECCEB9E1"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "rows": [
+        2293,
+        2295,
+        2298,
+        2299,
+        2302,
+        2303,
+        2304,
+        2305,
+        2307,
+        2308,
+        2309,
+        2310,
+        2311,
+        2312,
+        2316,
+        2317,
+        2320,
+        2321,
+        2322
+      ],
+      "anchors": [
+        "RG-0FCC305AB988",
+        "RG-16E60E0BD048",
+        "RG-28D0D1EC95B8",
+        "RG-304D2E094C98",
+        "RG-31EA97D878CC",
+        "RG-4BC62D32CEDF",
+        "RG-6F4FEAC935EB",
+        "RG-80441763B83D",
+        "RG-8CA4581A961B",
+        "RG-A90C5887A16B",
+        "RG-B82B5D5FB842",
+        "RG-EB863FB4729A",
+        "RG-F39D21E78FE9"
+      ],
+      "queue": [
+        "PROVIDER_200",
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://icrspfrance.fr/?org=27",
+      "rows": [
+        242,
+        243
+      ],
+      "anchors": [
+        "RG-3B136A93C6DB",
+        "RG-AE8A00295845"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+      "rows": [
+        4675,
+        4676,
+        4677,
+        4678,
+        4679
+      ],
+      "anchors": [
+        "RG-62A7875AE5DB",
+        "RG-70986CE922B9",
+        "RG-745790847B7B",
+        "RG-FA5E0BF5C258"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "MU"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://laportelatine.org/lieux/montgardin/le-laus",
+      "rows": [
+        315,
+        1090
+      ],
+      "anchors": [
+        "RG-32D17317FC55"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/batea",
+      "rows": [
+        376
+      ],
+      "anchors": [
+        "RG-B7BE65DF3422"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "ES"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/capela-imaculada-conceicao",
+      "rows": [
+        383,
+        2477,
+        2478,
+        2479
+      ],
+      "anchors": [
+        "RG-CB03C808AE8A"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "BR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/capela-santo-antonio",
+      "rows": [
+        386,
+        2487
+      ],
+      "anchors": [
+        "RG-858025A0E37C"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "BR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/capilla-san-jose-estepona",
+      "rows": [
+        416,
+        2499
+      ],
+      "anchors": [
+        "RG-9B5F40D1BDED"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "ES"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/carmel-du-coeur-immacule-de-marie",
+      "rows": [
+        429,
+        2419
+      ],
+      "anchors": [
+        "RG-4FDBB67357B4"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/carmel-of-the-holy-trinity",
+      "rows": [
+        432,
+        2401
+      ],
+      "anchors": [
+        "RG-F9DE7CC00A01"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/casa-dom-vital",
+      "rows": [
+        434,
+        2511,
+        2512
+      ],
+      "anchors": [
+        "RG-CAE3EAFB8924"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "BR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-de-l-immaculee-conception",
+      "rows": [
+        450,
+        2423,
+        2424,
+        2425
+      ],
+      "anchors": [
+        "RG-9F9858FBD0DA"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-de-l-immaculee-conception-saint-jean-de-la-ruelle",
+      "rows": [
+        448,
+        2526,
+        2527,
+        2528
+      ],
+      "anchors": [
+        "RG-AFA6AF1255DC"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-de-la-charite",
+      "rows": [
+        449
+      ],
+      "anchors": [
+        "RG-27A404C50FB4"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-du-sacre-coeur-chatillon-sur-chalaronne",
+      "rows": [
+        456
+      ],
+      "anchors": [
+        "RG-F3707D0B6CD8"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-de-la-delivrande",
+      "rows": [
+        468,
+        2547,
+        2548
+      ],
+      "anchors": [
+        "RG-84B39A237AAB"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "MQ"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-de-pontmain",
+      "rows": [
+        475
+      ],
+      "anchors": [
+        "RG-A667A2072167"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-du-feretra",
+      "rows": [
+        465,
+        2541,
+        2542,
+        2543
+      ],
+      "anchors": [
+        "RG-AD0845E04720"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-du-mur",
+      "rows": [
+        481
+      ],
+      "anchors": [
+        "RG-98CD7930BBAA"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-antoine-maligny",
+      "rows": [
+        490
+      ],
+      "anchors": [
+        "RG-A9BB7EB19925"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-aptone",
+      "rows": [
+        491,
+        2435,
+        2436,
+        2437
+      ],
+      "anchors": [
+        "RG-73C2E924ECB7"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-bernard",
+      "rows": [
+        493
+      ],
+      "anchors": [
+        "RG-87CE879054F4"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-francois-d-assise",
+      "rows": [
+        504,
+        2591
+      ],
+      "anchors": [
+        "RG-443C0F99AB83"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-hilaire",
+      "rows": [
+        508
+      ],
+      "anchors": [
+        "RG-A72CA22F0FF5"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-joseph",
+      "rows": [
+        514,
+        2598,
+        2599,
+        2600
+      ],
+      "anchors": [
+        "RG-C164F6ECF229"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-joseph-laval",
+      "rows": [
+        515
+      ],
+      "anchors": [
+        "RG-13758BE6CF6C"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-louis-grasse",
+      "rows": [
+        519
+      ],
+      "anchors": [
+        "RG-B9ECF42A99E3"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-martial",
+      "rows": [
+        521,
+        2409,
+        2410
+      ],
+      "anchors": [
+        "RG-E5CC42013A07"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-pierre-et-saint-paul",
+      "rows": [
+        529,
+        2604
+      ],
+      "anchors": [
+        "RG-941798AB9E5D"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-saint-walfroy",
+      "rows": [
+        536,
+        2613
+      ],
+      "anchors": [
+        "RG-B7936A693C8D"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-sainte-anne",
+      "rows": [
+        494,
+        2579,
+        2580
+      ],
+      "anchors": [
+        "RG-1E9599A96067"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-sainte-anne-brest",
+      "rows": [
+        495,
+        2581,
+        2582,
+        2583
+      ],
+      "anchors": [
+        "RG-FEB8AB19B877"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-sainte-anne-saint-malo",
+      "rows": [
+        496,
+        2584
+      ],
+      "anchors": [
+        "RG-A545B4B23152"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-ste-marcelle-et-ste-cecile",
+      "rows": [
+        499
+      ],
+      "anchors": [
+        "RG-7D461F82AA6D"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/church-of-the-canadian-martyrs",
+      "rows": [
+        559,
+        2633
+      ],
+      "anchors": [
+        "RG-6F16A016F04B"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "CA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/church-of-the-holy-face-of-jesus",
+      "rows": [
+        560
+      ],
+      "anchors": [
+        "RG-F61760F13D97"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "CA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/church-of-the-transfiguration",
+      "rows": [
+        562,
+        2634,
+        2635,
+        2636,
+        2637,
+        2638,
+        2639
+      ],
+      "anchors": [
+        "RG-A8239156BA08"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "CA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/convent-of-christ-the-king",
+      "rows": [
+        565
+      ],
+      "anchors": [
+        "RG-1219EF56C316"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/corpus-christi-church-edmonds",
+      "rows": [
+        569,
+        2640,
+        2641
+      ],
+      "anchors": [
+        "RG-AD6F646E897B"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/couvent-saint-antoine",
+      "rows": [
+        573,
+        2439,
+        2440,
+        2441,
+        2442
+      ],
+      "anchors": [
+        "RG-07F5ACF8A517"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/couvent-saint-bonaventure",
+      "rows": [
+        463,
+        2426,
+        2427,
+        2428,
+        2429
+      ],
+      "anchors": [
+        "RG-FF64A425397D"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-notre-dame-de-france",
+      "rows": [
+        588,
+        2651,
+        2652
+      ],
+      "anchors": [
+        "RG-99DAD67FFB08"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-notre-dame-de-toutes-graces",
+      "rows": [
+        590,
+        2653,
+        2654
+      ],
+      "anchors": [
+        "RG-BEFC58267C0F"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-saint-barthelemy",
+      "rows": [
+        591
+      ],
+      "anchors": [
+        "RG-C173C61BB658"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-saint-cyr",
+      "rows": [
+        592,
+        2444
+      ],
+      "anchors": [
+        "RG-B88C49244D2E"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-saint-martin",
+      "rows": [
+        603
+      ],
+      "anchors": [
+        "RG-53002AA1D2C1"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-saint-martin-des-gaules",
+      "rows": [
+        604,
+        2675
+      ],
+      "anchors": [
+        "RG-031C71A9AD7A"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-sainte-jeanne-d-arc",
+      "rows": [
+        595,
+        2655,
+        2656
+      ],
+      "anchors": [
+        "RG-D921C392A56D"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "CA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/eglise-st-gregoire-des-minimes",
+      "rows": [
+        599,
+        2659,
+        2660
+      ],
+      "anchors": [
+        "RG-291B45C8980A"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/fraternite-notre-dame-du-rosaire",
+      "rows": [
+        609
+      ],
+      "anchors": [
+        "RG-DA0B29BCF199"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/holy-name-of-jesus-academy-massena",
+      "rows": [
+        622
+      ],
+      "anchors": [
+        "RG-D9CDE7A6D49D"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/immaculate-conception-church-gilford",
+      "rows": [
+        635
+      ],
+      "anchors": [
+        "RG-3D7CC2D55D0C"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/immaculate-heart-of-mary-chapel",
+      "rows": [
+        636
+      ],
+      "anchors": [
+        "RG-10863F71F4B6"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/immaculate-heart-of-mary-chapel-port-harcourt",
+      "rows": [
+        638
+      ],
+      "anchors": [
+        "RG-208861BCA8D1"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "NG"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/jezus-szentseges-szive-kapolna",
+      "rows": [
+        647,
+        2706,
+        2707
+      ],
+      "anchors": [
+        "RG-A306B10B763B"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "HU"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/kapelle-maria-miterloserin",
+      "rows": [
+        665,
+        2719
+      ],
+      "anchors": [
+        "RG-9DB299EB9AFB"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "AT"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/maison-du-coeur-immacule",
+      "rows": [
+        729,
+        2445
+      ],
+      "anchors": [
+        "RG-B474C34C66EF"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/maison-notre-dame-du-bon-conseil",
+      "rows": [
+        730
+      ],
+      "anchors": [
+        "RG-B860FBBF8E60"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/maison-saint-jean",
+      "rows": [
+        732
+      ],
+      "anchors": [
+        "RG-63F2EBD16FA7"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/minimas-del-perpetuo-socorro-de-maria",
+      "rows": [
+        743,
+        2452
+      ],
+      "anchors": [
+        "RG-6FEB08A4B66F"
+      ],
+      "queue": [
+        "PROVIDER_200",
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/mision-de-la-fraternidad-s-pio-x",
+      "rows": [
+        748
+      ],
+      "anchors": [
+        "RG-F83D02513BA7"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "SV"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/monastere-de-l-immaculee",
+      "rows": [
+        778,
+        2447
+      ],
+      "anchors": [
+        "RG-E8701BB5CFEA"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/monastere-notre-dame-des-fontaines",
+      "rows": [
+        779,
+        2448
+      ],
+      "anchors": [
+        "RG-6688A500756B"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/monastere-saint-joseph",
+      "rows": [
+        783,
+        2415
+      ],
+      "anchors": [
+        "RG-20F5A383CAAF"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/monastere-sainte-claire",
+      "rows": [
+        781
+      ],
+      "anchors": [
+        "RG-0EE8C617FC2E"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/north-american-martyrs-chapel",
+      "rows": [
+        788
+      ],
+      "anchors": [
+        "RG-A6CF8B6A9B59"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/notre-dame-de-la-salette-chapel",
+      "rows": [
+        789
+      ],
+      "anchors": [
+        "RG-552E28BEA64F"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/notre-dame-de-salerans",
+      "rows": [
+        580,
+        2443
+      ],
+      "anchors": [
+        "RG-93E29458AF18"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/notre-dame-des-anges",
+      "rows": [
+        476,
+        2432,
+        2433,
+        2434
+      ],
+      "anchors": [
+        "RG-6D07FF604543"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/oratoire-notre-dame-de-fatima",
+      "rows": [
+        464,
+        2430,
+        2431
+      ],
+      "anchors": [
+        "RG-7D5AA61CAE06"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/oratoire-saint-dominique",
+      "rows": [
+        801,
+        2451
+      ],
+      "anchors": [
+        "RG-B613AF3ED66D"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "FR"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/our-lady-of-fatima-catholic-church",
+      "rows": [
+        822,
+        2405
+      ],
+      "anchors": [
+        "RG-6F08FF27F739"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/our-lady-of-lourdes-chapel",
+      "rows": [
+        839
+      ],
+      "anchors": [
+        "RG-086C9F59E2FF"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/our-lady-of-victory",
+      "rows": [
+        862
+      ],
+      "anchors": [
+        "RG-CDD12C9995CA"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/our-lady-queen-of-peace-church",
+      "rows": [
+        866
+      ],
+      "anchors": [
+        "RG-60EAFFCD684B"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "CA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/prieure-sainte-famille",
+      "rows": [
+        878,
+        2862,
+        2863,
+        2864
+      ],
+      "anchors": [
+        "RG-22BB6F85DA74"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "CA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/priorij-van-het-allerheiligste-sacrament",
+      "rows": [
+        938,
+        3000,
+        3001,
+        3002,
+        3003,
+        3004,
+        3005,
+        3006
+      ],
+      "anchors": [
+        "RG-981DB14E55FC"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "BE"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/queen-of-all-saints-chapel",
+      "rows": [
+        943,
+        3008
+      ],
+      "anchors": [
+        "RG-79A74B2D1B07"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/sacred-heart-chapel",
+      "rows": [
+        951,
+        3009
+      ],
+      "anchors": [
+        "RG-31ABE67F81E8"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "NG"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-dominic-chapel",
+      "rows": [
+        972,
+        2408
+      ],
+      "anchors": [
+        "RG-A7D9126805D5"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-joseph-mission",
+      "rows": [
+        982
+      ],
+      "anchors": [
+        "RG-ADC62D1999CD"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-lawrence-chapel",
+      "rows": [
+        988
+      ],
+      "anchors": [
+        "RG-DAB77948EF11"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-michael-the-archangel-chapel",
+      "rows": [
+        997,
+        2406
+      ],
+      "anchors": [
+        "RG-F5EB70B57E4A"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-peter-chanel-mission",
+      "rows": [
+        1000
+      ],
+      "anchors": [
+        "RG-27CEC8F13531"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-pius-v-chapel-onithsha",
+      "rows": [
+        1004,
+        3040
+      ],
+      "anchors": [
+        "RG-98D6A35C40D4"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "NG"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-pius-x-chapel",
+      "rows": [
+        1006,
+        3041,
+        3042,
+        3043,
+        3044
+      ],
+      "anchors": [
+        "RG-CF057BB7C99B"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "NG"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-stephen-chapel",
+      "rows": [
+        1012
+      ],
+      "anchors": [
+        "RG-8CFB1A73D206"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/saint-therese-chapel-keno",
+      "rows": [
+        1014
+      ],
+      "anchors": [
+        "RG-354A4E662CCE"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://map.fsspx.org/en/places/st-paul-s-mission",
+      "rows": [
+        1060,
+        3074
+      ],
+      "anchors": [
+        "RG-7C07DE0299FF"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "ZA"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://materdeiparish.com/masses-devotions/",
+      "rows": [
+        3639,
+        3640,
+        3641,
+        3642,
+        3643,
+        3644,
+        3645
+      ],
+      "anchors": [
+        "RG-560F9B8666AB"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://reginacaeliparish.org/",
+      "rows": [
+        3596,
+        3598,
+        3599,
+        3602,
+        3603,
+        3606,
+        3607,
+        3610,
+        3611
+      ],
+      "anchors": [
+        "RG-80D5C367F702"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "US"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "rows": [
+        304,
+        550,
+        583,
+        787,
+        820,
+        954,
+        1079,
+        2123,
+        2131,
+        2136,
+        2137,
+        2139
+      ],
+      "anchors": [
+        "RG-02462324291C",
+        "RG-285E0FB5A8F7",
+        "RG-8B0022CFEA1E",
+        "RG-AAD07EFEC8B7",
+        "RG-C1299B842E31",
+        "RG-D1BCCD10CF06"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "AU",
+        "NZ"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://www.icrss.it/napoli/",
+      "rows": [
+        260,
+        2046,
+        2047,
+        2048
+      ],
+      "anchors": [
+        "RG-49407C58A42A"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "IT"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/bialystok/",
+      "rows": [
+        2179,
+        2180
+      ],
+      "anchors": [
+        "RG-440E0B1F1274"
+      ],
+      "queue": [
+        "PROVIDER_71"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/tolentino/",
+      "rows": [
+        1861
+      ],
+      "anchors": [
+        "RG-270DB00DC743"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "IT"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://www.latinmassdir.org/venue/eglise-saint-jean-baptiste-natitingou-benin/",
+      "rows": [
+        1865,
+        3405,
+        3406
+      ],
+      "anchors": [
+        "RG-A87BAC717D44"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "BJ"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://www.latinmassdir.org/venue/ile-iwe-giga-mimo-gregory-saint-gregorys-college-lagos-nigeria/",
+      "rows": [
+        1846
+      ],
+      "anchors": [
+        "RG-32E422CAA192"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "NG"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://www.latinmassdir.org/venue/lycee-des-jeunes-filles-natitingou-benin/",
+      "rows": [
+        1866
+      ],
+      "anchors": [
+        "RG-A583D1D5C7C5"
+      ],
+      "queue": [
+        "SECONDARY_25"
+      ],
+      "countries": [
+        "BJ"
+      ],
+      "source_review_state": "UNREVIEWED"
+    },
+    {
+      "historical_url": "https://www.oxfordoratory.org.uk/mass-times.php",
+      "rows": [
+        2399,
+        2400
+      ],
+      "anchors": [
+        "RG-DA2F4D212252"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "GB"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "rows": [
+        2267,
+        2268
+      ],
+      "anchors": [
+        "RG-A89FD40AA2B5"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    },
+    {
+      "historical_url": "https://www.unavoce.cz/mse",
+      "rows": [
+        2365,
+        2367,
+        2375
+      ],
+      "anchors": [
+        "RG-647B8D5A6339",
+        "RG-7ABECA96F311"
+      ],
+      "queue": [
+        "PROVIDER_200"
+      ],
+      "countries": [
+        "CZ"
+      ],
+      "source_review_state": "PARTIAL_LIVE_CHECK_EXISTS"
+    }
+  ],
+  "reviewed_cases": [
+    {
+      "id": "IT-FIRENZE",
+      "anchor": "RG-A56E66FCAD96",
+      "rows": [
+        217,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036,
+        2037,
+        2038
+      ],
+      "verdict": "PATTERN_CORROBORATED_SOURCE_ONLY",
+      "source_kind": "COMMUNITY_OFFICIAL",
+      "current_source": "https://www.icrss.it/firenze/",
+      "observation": "The institute still publishes Sunday/feast 09:30 Low, 11:00 High, 19:00 Low; Monday 18:30; Tuesday-Friday 07:30 and 18:30; Saturday 07:30 and 11:00.",
+      "classification_scope": "ICRSS is named as apostolate operator; no individual-celebration 1962 edition, canonical standing, or Una Cum inference.",
+      "gate": "Check exceptional week or feast bulletin; exact CL2 source ID and duplicate slot reconciliation before publication."
+    },
+    {
+      "id": "US-DALLAS-CARMEL",
+      "anchor": "RG-560F9B8666AB",
+      "rows": [
+        3639,
+        3640,
+        3641,
+        3642,
+        3643,
+        3644,
+        3645
+      ],
+      "verdict": "PATTERN_CORROBORATED_SOURCE_ONLY",
+      "source_kind": "OFFICIAL_SERVING_PARISH",
+      "current_source": "https://materdeiparish.com/masses-devotions/",
+      "observation": "Mater Dei lists additional TLM at the Carmelite monastery every day at 07:00, including Sunday. This is distinct from Mater Dei parish's own schedule.",
+      "classification_scope": "The Carmelites are the physical community; Mater Dei/FSSP priests are the listed Mass providers. FSSP is not inferred as monastery operator or owner, nor is venue-wide 1962 proof taken from parish-only Mass statement.",
+      "gate": "Confirm monastery public access and priest availability; do not merge Dallas Carmel with Mater Dei parish."
+    },
+    {
+      "id": "GB-BIRMINGHAM",
+      "anchor": "RG-EC5A4BA48BF9",
+      "rows": [
+        1308,
+        2396,
+        2398
+      ],
+      "verdict": "PATTERN_CORROBORATED_SOURCE_ONLY",
+      "source_kind": "PARISH_OFFICIAL",
+      "current_source": "https://birminghamoratory.org.uk/mass-times/",
+      "observation": "The Oratory continues to list Sunday 07:30 Latin, Sunday 10:30 Latin High Mass, and Saturday 09:00 Latin Mass. The page also lists English Masses and weekday Latin times.",
+      "classification_scope": "The Oratory is the community; 'Latin' and 'High Mass' alone do not prove exact Roman Missal edition or Solemn minister configuration.",
+      "gate": "Obtain precise liturgical book witness if a 1962 filter is to be published."
+    },
+    {
+      "id": "IT-NAPOLI-ROSARIELLO",
+      "anchor": "RG-49407C58A42A",
+      "rows": [
+        260,
+        2046,
+        2047,
+        2048
+      ],
+      "verdict": "PATTERN_CORROBORATED_SOURCE_ONLY",
+      "source_kind": "COMMUNITY_OFFICIAL",
+      "current_source": "https://www.icrss.it/napoli/",
+      "observation": "The Rosariello church section still lists Sunday/feasts 11:00 Sung and 19:00 Low, Monday-Friday 18:30 Low and Saturday 11:00 Low.",
+      "classification_scope": "The current page separately names another church, Santa Maria della Sanità a Barra; do not merge their timetables or identify a priest solely by institute.",
+      "gate": "Maintain explicit Rosariello subvenue scope and exclude Ves­pers, Benediction and confession entries from Mass slots."
+    },
+    {
+      "id": "CZ-PRAHA-KARLOV",
+      "anchor": "RG-647B8D5A6339",
+      "rows": [
+        2365,
+        2367
+      ],
+      "verdict": "AGGREGATOR_DUPLICATE_OR_CONFLICT",
+      "source_kind": "NATIONAL_ASSOCIATION",
+      "current_source": "https://www.unavoce.cz/mse",
+      "observation": "The current Una Voce page lists Sunday 17:00 at Kostel Nanebevzetí Panny Marie a sv. Karla Velikého. Two frozen source IDs represent the same physical church and same Sunday slot.",
+      "classification_scope": "Una Voce is an information source; do not infer it owns the church, organises all services, or identifies an individual celebrant.",
+      "gate": "Adjudicate one physical celebration, retaining both immutable historical aliases; source is a national association, not a current dated host bulletin."
+    },
+    {
+      "id": "CZ-VEJPRTY",
+      "anchor": "RG-7ABECA96F311",
+      "rows": [
+        2375
+      ],
+      "verdict": "AGGREGATOR_DUPLICATE_OR_CONFLICT",
+      "source_kind": "NATIONAL_ASSOCIATION",
+      "current_source": "https://www.unavoce.cz/mse",
+      "observation": "The site lists both Friday 17:00 and Friday 17:30 for All Saints, Vejprty, and a date-specific programme with varying hours. The historical single Friday 17:30 cannot be treated as a reliable uniform recurrence.",
+      "classification_scope": "Mass type and exact liturgical book remain unknown at the individual celebration level.",
+      "gate": "Check live parish calendar/ICS and reconcile both Friday entries; do not synthesize two weekly Masses."
+    },
+    {
+      "id": "FR-CONFLANS",
+      "anchor": "RG-3B136A93C6DB",
+      "rows": [
+        243
+      ],
+      "verdict": "PATTERN_CORROBORATED_LOCAL_EXCEPTION",
+      "source_kind": "COMMUNITY_OFFICIAL",
+      "current_source": "https://icrspfrance.fr/?org=27",
+      "observation": "The ICRSP Orléans page lists first Sunday of month 18:00 at Saint-Pierre-ès-Liens, explicitly directing readers to verify on the local apostolate site.",
+      "classification_scope": "ICRSP is the apostolate source, not proof of venue-wide una cum/canonical status.",
+      "gate": "Obtain local date-specific confirmation; keep first-Sunday condition, never weekly."
+    },
+    {
+      "id": "FR-SAINT-MARTIN-ABBAT",
+      "anchor": "RG-AE8A00295845",
+      "rows": [
+        242
+      ],
+      "verdict": "PATTERN_CORROBORATED_LOCAL_EXCEPTION",
+      "source_kind": "COMMUNITY_OFFICIAL",
+      "current_source": "https://icrspfrance.fr/?org=27",
+      "observation": "The ICRSP page lists Sunday/feasts 08:30 at Église Saint-Martin, with explicit instruction to confirm on the local apostolate page.",
+      "classification_scope": "ICRSP source community label is scoped to its apostolate; current celebrant and exact Missal not independently established.",
+      "gate": "Local bulletin check required before date-specific event approval."
+    },
+    {
+      "id": "GB-OXFORD",
+      "anchor": "RG-DA2F4D212252",
+      "rows": [
+        2399
+      ],
+      "verdict": "PATTERN_CORROBORATED_SOURCE_ONLY",
+      "source_kind": "PARISH_OFFICIAL",
+      "current_source": "https://www.oxfordoratory.org.uk/mass-times.php",
+      "observation": "The Oratory currently lists Sunday 11:00 Solemn Mass (Latin), separately from Sunday 08:00 Low Mass (Latin, older form). Weekday 10:00 is expressly suspended for building works.",
+      "classification_scope": "Distinguish the source's Solemn/Latin wording from exact Missal edition, which must be independently evidenced for that slot.",
+      "gate": "Do not apply 08:00 'older form' witness automatically to Sunday 11:00, nor publish suspended weekday 10:00."
+    },
+    {
+      "id": "PL-SLUPSK",
+      "anchor": "RG-A89FD40AA2B5",
+      "rows": [
+        2267,
+        2268
+      ],
+      "verdict": "CORRECT_HISTORICAL_MASS_TIME",
+      "source_kind": "DISTRICT_OFFICIAL",
+      "current_source": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "observation": "The current SSPX Poland chapel listing states Sunday 12:30 confessions, 13:00 Sung Mass, 14:15 catechism (except holiday months). Both historical 12:30 Mass rows mislabel the confession time.",
+      "classification_scope": "SSPX is the operator of this chapel listing. The current source is not a ministry-specific proof of Una Cum or a separate canonical-standing determination.",
+      "gate": "Reject both historical 12:30 Mass occurrences, preserve two source aliases, and admit 13:00 only after exact-source/occurrence duplicate audit."
+    },
+    {
+      "id": "AU-EAST-GREENMOUNT",
+      "anchor": "RG-02462324291C",
+      "rows": [
+        550,
+        2123
+      ],
+      "verdict": "VARIABLE_TIME_NOT_FIXED_RECURRENCE",
+      "source_kind": "DISTRICT_OFFICIAL",
+      "current_source": "https://sspx.au/en/list-sspx-chapels-0",
+      "observation": "The SSPX district lists Sunday 09:00 OR 14:00, and says to call or consult bulletin. These are alternatives, not two guaranteed Masses.",
+      "classification_scope": "Source-reported SSPX site association; no assumption about exact priest, canonical status or Una Cum.",
+      "gate": "Require date-specific bulletin/owner confirmation before making a recurrence public."
+    },
+    {
+      "id": "AU-BUDERIM",
+      "anchor": "RG-285E0FB5A8F7",
+      "rows": [
+        1079,
+        2139
+      ],
+      "verdict": "VARIABLE_TIME_NOT_FIXED_RECURRENCE",
+      "source_kind": "DISTRICT_OFFICIAL",
+      "current_source": "https://sspx.au/en/list-sspx-chapels-0",
+      "observation": "Buderim likewise lists Sunday 09:00 OR 14:00 and asks visitors to telephone. Two historical rows are mutually alternative times.",
+      "classification_scope": "SSPX source association is not venue-wide ritual-book or communion evidence.",
+      "gate": "Require date-specific bulletin/owner confirmation; publish neither as an unconditional weekly Mass."
+    }
+  ],
+  "reviewed_row_refs": [
+    {
+      "historical_row": 217,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Sunday, feast days",
+      "legacy_time": "09:30",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 242,
+      "source_id": "ao-research-icksp-federated-v13-icksp-stg-027-stmartin",
+      "anchor": "RG-AE8A00295845",
+      "legacy_pattern": "Sunday, feast days",
+      "legacy_time": "08:30",
+      "legacy_source_url": "https://icrspfrance.fr/?org=27",
+      "case_id": "FR-SAINT-MARTIN-ABBAT",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 243,
+      "source_id": "ao-research-icksp-federated-v13-icksp-stg-027-conflans",
+      "anchor": "RG-3B136A93C6DB",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "18:00",
+      "legacy_source_url": "https://icrspfrance.fr/?org=27",
+      "case_id": "FR-CONFLANS",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 260,
+      "source_id": "ao-research-icksp-federated-v13-icksp-stg-072-rosariello",
+      "anchor": "RG-49407C58A42A",
+      "legacy_pattern": "Sunday, feast days",
+      "legacy_time": "11:00",
+      "legacy_source_url": "https://www.icrss.it/napoli/",
+      "case_id": "IT-NAPOLI-ROSARIELLO",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 550,
+      "source_id": "SSPXMAP:OPE-002433",
+      "anchor": "RG-02462324291C",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "09:00",
+      "legacy_source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "case_id": "AU-EAST-GREENMOUNT",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 1079,
+      "source_id": "SSPXMAP:OPE-002417",
+      "anchor": "RG-285E0FB5A8F7",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "09:00",
+      "legacy_source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "case_id": "AU-BUDERIM",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 1308,
+      "source_id": "ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+      "anchor": "RG-EC5A4BA48BF9",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "07:30",
+      "legacy_source_url": "https://birminghamoratory.org.uk/mass-times/",
+      "case_id": "GB-BIRMINGHAM",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2032,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Sunday, feast days",
+      "legacy_time": "11:00",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2033,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Sunday, feast days",
+      "legacy_time": "19:00",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2034,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Monday",
+      "legacy_time": "18:30",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2035,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Tuesday, Wednesday, Thursday, Friday",
+      "legacy_time": "07:30",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2036,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Tuesday, Wednesday, Thursday, Friday",
+      "legacy_time": "18:30",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2037,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Saturday",
+      "legacy_time": "07:30",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2038,
+      "source_id": "ao-icksp-chiesa-dei-santi-michele-e-gaetano-piazza-antinori-24",
+      "anchor": "RG-A56E66FCAD96",
+      "legacy_pattern": "Saturday",
+      "legacy_time": "11:00",
+      "legacy_source_url": "http://www.icrss.it/firenze/",
+      "case_id": "IT-FIRENZE",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2046,
+      "source_id": "ao-research-icksp-federated-v13-icksp-stg-072-rosariello",
+      "anchor": "RG-49407C58A42A",
+      "legacy_pattern": "Sunday, feast days",
+      "legacy_time": "19:00",
+      "legacy_source_url": "https://www.icrss.it/napoli/",
+      "case_id": "IT-NAPOLI-ROSARIELLO",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2047,
+      "source_id": "ao-research-icksp-federated-v13-icksp-stg-072-rosariello",
+      "anchor": "RG-49407C58A42A",
+      "legacy_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+      "legacy_time": "18:30",
+      "legacy_source_url": "https://www.icrss.it/napoli/",
+      "case_id": "IT-NAPOLI-ROSARIELLO",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2048,
+      "source_id": "ao-research-icksp-federated-v13-icksp-stg-072-rosariello",
+      "anchor": "RG-49407C58A42A",
+      "legacy_pattern": "Saturday",
+      "legacy_time": "11:00",
+      "legacy_source_url": "https://www.icrss.it/napoli/",
+      "case_id": "IT-NAPOLI-ROSARIELLO",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2123,
+      "source_id": "SSPXMAP:OPE-002433",
+      "anchor": "RG-02462324291C",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "14:00",
+      "legacy_source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "case_id": "AU-EAST-GREENMOUNT",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2139,
+      "source_id": "SSPXMAP:OPE-002417",
+      "anchor": "RG-285E0FB5A8F7",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "14:00",
+      "legacy_source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "case_id": "AU-BUDERIM",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2267,
+      "source_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-s-upsk-kaplica-sw-ignacego-loyoli",
+      "anchor": "RG-A89FD40AA2B5",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "12:30",
+      "legacy_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "case_id": "PL-SLUPSK",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2268,
+      "source_id": "SSPXMAP:OPE-002729",
+      "anchor": "RG-A89FD40AA2B5",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "12:30",
+      "legacy_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "case_id": "PL-SLUPSK",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2365,
+      "source_id": "ao-fssp-kostel-nanebevzeti-panny-marie-a-sv-karla-velikeho-ke-karlovu-453-1-cz-12000-praha-ceska-republika",
+      "anchor": "RG-647B8D5A6339",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "17:00",
+      "legacy_source_url": "https://www.unavoce.cz/mse",
+      "case_id": "CZ-PRAHA-KARLOV",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2367,
+      "source_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-praha-karlov",
+      "anchor": "RG-647B8D5A6339",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "17:00",
+      "legacy_source_url": "https://www.unavoce.cz/mse",
+      "case_id": "CZ-PRAHA-KARLOV",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2375,
+      "source_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-vejprty-all-saints",
+      "anchor": "RG-7ABECA96F311",
+      "legacy_pattern": "Friday",
+      "legacy_time": "17:30",
+      "legacy_source_url": "https://www.unavoce.cz/mse",
+      "case_id": "CZ-VEJPRTY",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2396,
+      "source_id": "ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+      "anchor": "RG-EC5A4BA48BF9",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "10:30",
+      "legacy_source_url": "https://birminghamoratory.org.uk/mass-times/",
+      "case_id": "GB-BIRMINGHAM",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2398,
+      "source_id": "ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+      "anchor": "RG-EC5A4BA48BF9",
+      "legacy_pattern": "Saturday",
+      "legacy_time": "09:00",
+      "legacy_source_url": "https://birminghamoratory.org.uk/mass-times/",
+      "case_id": "GB-BIRMINGHAM",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2399,
+      "source_id": "ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS",
+      "anchor": "RG-DA2F4D212252",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "11:00",
+      "legacy_source_url": "https://www.oxfordoratory.org.uk/mass-times.php",
+      "case_id": "GB-OXFORD",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3639,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Monday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3640,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Tuesday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3641,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Wednesday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3642,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Thursday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3643,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Friday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3644,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Saturday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3645,
+      "source_id": "AO-AMER-R26-US-03-01",
+      "anchor": "RG-560F9B8666AB",
+      "legacy_pattern": "Sunday",
+      "legacy_time": "07:00",
+      "legacy_source_url": "https://materdeiparish.com/masses-devotions/",
+      "case_id": "US-DALLAS-CARMEL",
+      "publication": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    }
+  ]
+}
