@@ -19,17 +19,18 @@
     "Keep original CL2 source IDs, original address, labels and ecclesiastical UNKNOWN",
     "Locality coordinates are illustrative: no entrance accuracy, active Mass, route/drive distance or liturgical-book claims",
     "Google Maps search destination must be built from sourced name/address, never GeoNames centroid",
-    "Do not copy provisional locality geometry into exact-site photo-location audit"
+    "Do not copy provisional locality geometry into exact-site photo-location audit",
+    "Any diocesan source-city conflict or locally disputed host must remain unpinned even if city can be geocoded"
   ],
   "counts": {
     "current_published_map_pins": 2147,
     "existing_unmapped": 435,
-    "eligible": 171,
-    "identity_holds": 7,
+    "eligible": 170,
+    "identity_holds": 8,
     "ambiguous": 8,
     "no_safe_match": 249,
-    "possible_map_pins_if_all_eligible_published": 2318,
-    "remaining_after_eligible": 264
+    "possible_map_pins_if_all_eligible_published": 2317,
+    "remaining_after_eligible": 265
   },
   "records": [
     {
@@ -2508,7 +2509,9 @@
       "scope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_CHURCH_OR_ENTRANCE",
       "travel_policy": "SEARCH_VERIFIED_NAME_AND_ADDRESS_NOT_LOCALITY_COORDINATE",
       "mass_policy": "NO_CURRENT_MASS_OR_RITE_INFERENCE",
-      "status": "ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE"
+      "status": "HOLD_SOURCE_CITY_CONFLICT",
+      "hold_reason": "Original source labels Poprad but diocesan/parish associations conflict; see dated diocesan-coordinate-blockers audit. Do not hide source-site identity conflict with approximate city marker.",
+      "blocker_source": "data/directory/research/diocesan-coordinate-blockers-20261031.v1.json"
     },
     {
       "cl2_anchor": "RG-61886F9DAFE0",
