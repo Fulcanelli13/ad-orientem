@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 
 const base='data/geography/research/';
 const manifest=JSON.parse(readFileSync(base+'sacred-atlas-round25-23place-64-original-review-20261104.json','utf8'));
@@ -31,6 +32,11 @@ assert.equal(round24.reduce((a,p)=>a+p.images.length,0),39);
 assert.equal(manifest.sources.round24_audit.run_id,41823506824);
 assert.equal(manifest.sources.round24_audit.artifact_id,13318214603);
 assert.equal(manifest.sources.round24_audit.original_bytes_verified,39);
+assert.equal(manifest.sources.round24_audit.total_original_bytes,198880443);
+assert.equal(manifest.sources.round24_audit.audit_json_sha256,'a7f862a6050b6efd52d0a0eec29fb38b191be00b6cf9e635c5820053a5b83543');
+const sourceOrder=round24.flatMap(p=>p.images.map(i=>i.file)).join('\n');
+assert.equal(createHash('sha256').update(sourceOrder).digest('hex'),'466a5488301c5a109875075f93d61a1ba0ffd3a58a58641767c4bd1e3cb9c0ca');
+assert.equal(round24.flatMap(p=>p.images).reduce((a,x)=>a+x.bytes,0),198880443);
 for(const p of round22) {
  const old=r22.places.find(x=>x.place_id===p.place_id);
  assert.ok(old);
@@ -51,6 +57,7 @@ for(const p of round24) {
   const c=old.candidates.find(x=>x.title===image.file);
   assert.equal(c?.audit?.status,'METADATA_ELIGIBLE_MANUAL_SUBJECT_RIGHTS_AND_ORIGINAL');
   assert.equal(image.sha1,c.audit.sha1);
+  assert.ok(image.bytes>0&&image.bytes<=24000000,'audited original size persisted');
   assert.equal(image.author,c.audit.author);
   assert.equal(image.license,c.audit.license);
   assert.equal(image.width,c.audit.width);
