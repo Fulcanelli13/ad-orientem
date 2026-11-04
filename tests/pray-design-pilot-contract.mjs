@@ -68,13 +68,13 @@ assert.deepEqual(searchableNovenaIds,indexedNovenas.map(row=>row.id),
  "Prayer search rows must be exact source-owned Novena IDs, not duplicate prayer records");
 assert.match(actual,/data-pilot-form="novena"[^>]*data-p435930-pilot-novena="christmas"/,
  "Search Novenas need the existing Novenas facet and a canonical child action");
-assert.match(actual,new RegExp(NOVENA_CORPUS_V4.christmas.title.fr.replace(/[.*+?^$\\{}()|[\\]\\]/g,"\\assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");")),
+assert.ok(actual.includes(esc(NOVENA_CORPUS_V4.christmas.title.fr)),
  "French titles must remain searchable even in English UI");
 const frenchDiscovery=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L:(_en,fr)=>fr,esc,
  DATA:{prayers:{}},families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
 });
-assert.match(frenchDiscovery,new RegExp(NOVENA_CORPUS_V4.christmas.title.fr.replace(/[.*+?^$\\{}()|[\\]\\]/g,"\\assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");")),
+assert.ok(frenchDiscovery.includes("<b>"+esc(NOVENA_CORPUS_V4.christmas.title.fr)+"</b>"),
  "French Pray search must display the attested canonical French novena title");
 assert.equal([...frenchDiscovery.matchAll(/data-p435930-pilot-novena="/g)].length,16,
  "French search must not create additional Novena identities");
