@@ -10,6 +10,7 @@ const visual=read("sacred-atlas-round16-20-place-visual-screen-20261104.v1.json"
 const master=read("sacred-atlas-undecided66-editorial-review-20261104.v1.json");
 const baseline=read("sacred-atlas-round15-first-look-photo-shortlist-20261104.v1.json");
 const html=readFileSync(root+"sacred-atlas-undecided66-bulk-photo-review-20261104.html","utf8");
+const six=read("sacred-atlas-round16-six-fresh-leads-visual-context-20261104.v1.json");
 const queueMatch=html.match(/const places=(.*?); const auditStatuses=/s);
 assert.ok(queueMatch,"Embedded canonical queue missing");
 const places=JSON.parse(queueMatch[1]);
@@ -29,8 +30,8 @@ assert.equal(counts.LEGAL_RIGHTS_HOLD,1);
 assert.equal(counts.PREVIEW_NOT_VISUALLY_INSPECTED,6);
 assert.equal(baseline.rows.filter(x=>x.priority_candidates.length).length,20);
 assert.ok(seen.every(x=>x.publication_authorized===false&&x.user_primary_cover_selected===false&&x.original_bytes_verified===false));
-assert.equal(places.filter(p=>p.previewInspected).length,14);
-assert.equal(places.filter(p=>p.visualStatus).length,20);
+assert.equal(places.filter(p=>p.previewInspected).length,18);
+assert.equal(places.filter(p=>p.visualStatus).length,26);
 assert.equal(places.reduce((n,p)=>n+p.candidates.length,0),93);
 const site=id=>places.find(x=>x.id===id);
 const file=(id,title)=>site(id)?.candidates.find(x=>x.title===title);
@@ -44,6 +45,14 @@ const haemi="place:KR:haemi-martyrs-shrine-main-church";
 assert.ok(file(haemi,"File:Korea Haemi Martyrdom Holy Ground 02 (14214705641).jpg")?.visualDecision?.startsWith("EXCLUDE_"));
 assert.ok(file(haemi,"File:Korea Haemi Martyrdom Holy Ground 03 (14218007385).jpg")?.visualDecision?.startsWith("EXCLUDE_"));
 assert.equal(site("place:DE:aachener-dom-four-textiles")?.visualStatus,"LEGAL_RIGHTS_HOLD");
+assert.equal(six.rows.length,6);
+assert.equal(six.actual_preview_inspected,4);
+assert.ok(six.rows.every(r=>r.publication_authorized===false));
+assert.equal(site("place:LK:national-basilica-of-our-lady-of-lanka-tewatta")?.visualStatus,"HOLD_LOW_RESOLUTION");
+assert.equal(file("place:LK:national-basilica-of-our-lady-of-lanka-tewatta","File:Tewatte Basilica - Sri Lanka.jpg")?.visualDecision,"HOLD_LOW_RESOLUTION");
+assert.equal(site("place:SV:capilla-divina-providencia-san-salvador")?.visualStatus,"HOLD_WATERMARK_INTERIOR");
+assert.ok(html.includes('d.startsWith("HOLD_")'));
+assert.equal(site("place:LB:monastery-saint-maron-annaya")?.visualStatus,"SITE_SCENE_POTENTIAL_COVER");
 assert.ok(html.includes('if(filter==="visual"&&!p.previewInspected)return false;'));
 assert.ok(html.includes("function coverBlocked(p,f)"));
 assert.ok(html.includes("if(!source||coverBlocked(p,source))continue;"));
@@ -51,5 +60,5 @@ assert.ok(html.includes('if(v!=="hold"&&v!=="none"&&(!p.candidates[Number(v)]||c
 const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(x=>x[1]);
 assert.equal(scripts.length,1);
 new Script(scripts[0],{filename:"sacred-atlas-66-review.js"});
-console.log(JSON.stringify({status:"PASS",places:66,visually_reviewed:14,source_only:6,
+console.log(JSON.stringify({status:"PASS",places:66,visually_reviewed:18,source_only:8,
   first_look_corrected:1,exclude_inappropriate_haemi_portraits:true,publication_approved:0}));
