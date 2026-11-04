@@ -1,0 +1,63 @@
+// TLM batch 17 — 30 GB provisional GCatholic-linked church sites; identity and evidence-scope locks.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
+import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
+import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
+const baseline=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+const all=projectCL2PhysicalDirectory(baseline,index);
+const text=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
+const section=text.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
+const allKeys=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(m=>m[1]);
+assert.equal(new Set(allKeys).size,allKeys.length,"Duplicate physical group pin");
+const sites=[["RG-FF628C31EACD","AO-B35-L-GB-A907847FBC15",51.880063,-0.010937,"gcatholic:church:47963:plus:9C3XVXJQ+2J","https://gcatholic.org/churches/british-isles/47963","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-4D92A25CB442","AO-B35-L-GB-AAFDC671513B",54.111312,-2.636937,"gcatholic:church:92915:plus:9C6V4967+G6","https://gcatholic.org/churches/british-isles/92915","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-28AC6F34CF2D","AO-B34-L-GB-6DD6280B8263",54.010437,-2.787187,"gcatholic:church:92924:plus:9C6V2667+54","https://gcatholic.org/churches/british-isles/92924","LANCASTER_UNIVERSITY_ST_THOMAS_MORE_CHAPEL_GCATHOLIC_CAMPUS_LOCATION_NOT_SURVEYED_BUILDING_ENTRANCE_OR_CHAPLAINCY_MASS_CONFIRMATION"],["RG-5CA9C9CEE119","AO-B34-L-GB-C2AF862539E0",52.676812,-1.824688,"gcatholic:church:43367:plus:9C4WM5GG+P4","https://gcatholic.org/churches/british-isles/43367","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-E8FF88C66BBF","AO-B34-L-GB-B16B205AED85",53.021563,-2.173813,"gcatholic:church:90694:plus:9C5V2RCG+JF","https://gcatholic.org/churches/british-isles/90694","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-3E306FE8054D","AO-B34-L-GB-A8088AE37E5F",52.942062,-1.151937,"gcatholic:church:61838:plus:9C4WWRRX+R6","https://gcatholic.org/churches/british-isles/61838","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-DB7419F59996","AO-B35-L-GB-4C4D0ADF94F7",52.453812,-1.050312,"gcatholic:church:92869:plus:9C4WFW3X+GV","https://gcatholic.org/churches/british-isles/92869","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-B7C3235D24DE","AO-B35-L-GB-491B529FC1F5",52.772438,-1.215812,"gcatholic:church:71057:plus:9C4WQQCM+XM","https://gcatholic.org/churches/british-isles/71057","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-9FDA9AD0255F","AO-B34-L-GB-3A541E722C99",53.388188,-0.340937,"gcatholic:church:71074:plus:9C5X9MQ5+7J","https://gcatholic.org/churches/british-isles/71074","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-7E1B84E6441A","AO-B34-L-GB-CD720D81D5F8",53.146937,0.336063,"gcatholic:church:61810:plus:9F5248WP+QC","https://gcatholic.org/churches/british-isles/61810","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-9D6D83957204","AO-B35-L-GB-DECE3C295341",53.569062,-0.653187,"gcatholic:church:61804:plus:9C5XH89W+JP","https://gcatholic.org/churches/british-isles/61804","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-DDDF360612CB","AO-B35-L-GB-28ABE0300EAB",52.556562,-2.020938,"gcatholic:church:90741:plus:9C4VHX4H+JJ","https://gcatholic.org/churches/british-isles/90741","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-44CCED33F9CB","AO-B34-L-GB-7724074F6860",52.916438,-2.222063,"gcatholic:church:90727:plus:9C4VWQ8H+H5","https://gcatholic.org/churches/british-isles/90727","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-7F3EE9900261","AO-B34-L-GB-6EEF843557D6",53.594062,-0.654687,"gcatholic:church:61803:plus:9C5XH8VW+J4","https://gcatholic.org/churches/british-isles/61803","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-39884D4C0F33","AO-B34-L-GB-2DC6DD660883",50.367687,-4.142938,"gcatholic:church:91934:plus:9C2Q9V94+3R","https://gcatholic.org/churches/british-isles/91934","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-476E35E4E7E7","AO-B35-L-GB-795AD1EE8250",51.078187,-4.055187,"gcatholic:church:91904:plus:9C3Q3WHV+7W","https://gcatholic.org/churches/british-isles/91904","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-A8A6ED77286F","AO-B35-L-GB-41F84BB18EC1",50.591062,-3.589563,"gcatholic:church:91913:plus:9C2RHCR6+C5","https://gcatholic.org/churches/british-isles/91913","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-29288648E97A","AO-B35-L-GB-09CFA8B2CA7E",52.692437,-0.637687,"gcatholic:church:92830:plus:9C4XM9R6+XW","https://gcatholic.org/churches/british-isles/92830","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-A06A5AF5AD53","AO-B35-L-GB-284515AA03A0",52.672438,-0.730188,"gcatholic:church:61815:plus:9C4XM7C9+XW","https://gcatholic.org/churches/british-isles/61815","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-E8B55FD158ED","AO-B34-L-GB-0A6611CB2939",51.756188,-1.259812,"gcatholic:church:135660:plus:9C3WQP4R+F3","https://gcatholic.org/churches/british-isles/135660","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-4C1336C6B6D6","AO-B34-L-GB-69645802D7E3",53.830562,-0.194812,"gcatholic:church:92781:plus:9C5XRRJ4+63","https://gcatholic.org/churches/british-isles/92781","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-FA9FADD43968","AO-B35-L-GB-37FB4E17906A",53.740313,-0.196562,"gcatholic:church:92757:plus:9C5XPRR3+49","https://gcatholic.org/churches/british-isles/92757","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-2CAD5BB065D4","AO-B34-L-GB-203D1B7E48FB",54.563938,-1.241562,"gcatholic:church:92788:plus:9C6WHQ75+H9","https://gcatholic.org/churches/british-isles/92788","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-4EAB30BAA176","AO-B35-L-GB-2A1931FA55FC",50.209812,-5.295812,"gcatholic:church:91877:plus:9C2P6P53+WM","https://gcatholic.org/churches/british-isles/91877","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-D5921AA5F538","AO-B35-L-GB-9527215E0117",51.737063,-0.345812,"gcatholic:church:47992:plus:9C3XPMP3+RM","https://gcatholic.org/churches/british-isles/47992","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-ADC79B60F843","AO-B35-L-GB-787F6903790F",51.379812,-2.355812,"gcatholic:church:91841:plus:9C3V9JHV+WM","https://gcatholic.org/churches/british-isles/91841","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-2298D40EEC2E","AO-B34-L-GB-191DBE64C9C3",51.085062,-1.779562,"gcatholic:church:91872:plus:9C3W36PC+25","https://gcatholic.org/churches/british-isles/91872","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-4E54EA09BCD6","AO-B35-L-GB-C9C81ACA4EF0",53.725062,-1.346688,"gcatholic:church:90940:plus:9C5WPMG3+28","https://gcatholic.org/churches/british-isles/90940","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-1EE0737324B8","AO-B35-L-GB-191CFE51C011",52.631312,-1.148562,"gcatholic:church:61816:plus:9C4WJVJ2+GH","https://gcatholic.org/churches/british-isles/61816","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"],["RG-8DE39E8E9415","AO-B34-L-GB-93C243AF40AB",51.209938,-2.648188,"gcatholic:church:91859:plus:9C3V6952+XP","https://gcatholic.org/churches/british-isles/91859","GCATHOLIC_MATCHED_CATHOLIC_CHURCH_OPEN_LOCATION_CODE_CELL_CENTER_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"]];
+assert.equal(sites.length,30);
+for(const [anchor,id,lat,lng,ref,url,scope] of sites){
+ const frozen=index.records.find(r=>r[0]===anchor);
+ assert.ok(frozen?.[1].includes(id),"Frozen original source identity required: "+anchor);
+ assert.ok(!baseline.some(r=>frozen[1].includes(r.source_id)),"Source already pinned: "+anchor);
+ const item=all.find(r=>r.physical_group_id===anchor);
+ assert.ok(item&&item.source_id===id&&item.source_ids.includes(id));
+ assert.equal(item.title,frozen[2]);
+ assert.equal(item.country_code,frozen[3]);
+ assert.equal(item.map_publishable,true);
+ assert.equal(item.map_state,"PROVISIONAL");
+ assert.equal(item.geo.lat,lat);
+ assert.equal(item.geo.lng,lng);
+ assert.equal(item.geo.source_ref,ref);
+ assert.equal(item.geo.source_url,url);
+ assert.equal(item.geo.review_scope,scope);
+ assert.equal(item.geo.precision,"site");
+ assert.equal(item.geo.approximate,true);
+ assert.ok(item.source_links.some(x=>x.url===url));
+ assert.ok(item.source_links.some(x=>frozen[6].includes(x.url)));
+ assert.equal(item.status,"RESEARCH-LISTED · MASS UNVERIFIED");
+ assert.equal(item.celebration_evidence,undefined);
+ assert.equal(item.sections.length,0);
+ assert.equal(item.actions.length,0);
+ assert.ok(!item.cover_media);
+ for(const lang of ["en","fr"]){
+  const card=renderDirectoryVenueCard(item,lang);
+  const detail=renderTlmChurchProfile(item,lang);
+  assert.ok(card.includes('data-explore-item="'+item.item_id+'"'));
+  assert.ok(detail.includes('data-tlm-church-profile="'+id+'"'));
+  assert.ok(detail.includes("aoTlmProfileSources"));
+  assert.doesNotMatch(detail,/data-tlm-celebration-evidence=/);
+ }
+}
+const held=all.find(x=>x.physical_group_id==="RG-18E53EDD9E9C");
+assert.ok(held&&!held.map_publishable,"San Jose naming conflict remains held");
+const poi=all.find(x=>x.physical_group_id==="RG-8D3022768BBE");
+assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building outline")));
+const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
+assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
+assert.equal(all.length,2582);
+assert.equal(all.filter(x=>x.map_publishable).length,2147);
+const counts=tlmSiteEvidenceCounts(all);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:341,SOURCE_PIN:1806,ADDRESS_ONLY:435});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,435);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,341);
+console.log("PASS TLM batch 17: thirty reviewed source-identities, 2147 mapped, 435 unpinned; no invented Mass or image rights");
