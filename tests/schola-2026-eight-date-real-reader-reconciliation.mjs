@@ -121,6 +121,7 @@ try{
         p[plural]:p?.[single]?[p[single]]:[];
        details.selectedOrations[slot]=rows.map((row,index)=>({
         index,sourcePath:row?.sourcePath??null,
+        oneConclusion:row?.oneConclusion?{kind:row.oneConclusion.kind,status:row.oneConclusion.status}:null,
         latin:String(row?.lat??row?.la??""),
         english:String(row?.en??""),french:String(row?.fr??"")
        }));
