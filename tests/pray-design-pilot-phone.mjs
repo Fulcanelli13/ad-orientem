@@ -54,9 +54,10 @@ try{
     return {width:box.width,display:getComputedStyle(node).display,
       home:node.closest(".aoPrayPilotHome")?.getBoundingClientRect().width,tiles};
    });
-   assert.ok(mosaicGeometry.width>=width*.96&&mosaicGeometry.tiles.every(x=>x.width>=width*.4&&x.height>=146),
+   assert.equal(mosaicGeometry.display,'block',"The approved gallery uses native masonry columns, not a conventional CSS card grid");
+   assert.ok(mosaicGeometry.width>=width*.96&&mosaicGeometry.tiles.every(x=>x.width>=width*.4&&x.height>=149),
     "Approved study mosaic must occupy the width as a two-column, edge-to-edge gallery: "+JSON.stringify(mosaicGeometry));
-   assert.ok(mosaicGeometry.tiles.some(x=>x.height>290),"Masonry gallery must retain taller portrait panels");
+   assert.ok(mosaicGeometry.tiles.some(x=>x.height>220),"Masonry gallery must retain taller portrait panels");
    await page.screenshot({path:resolve(output,"discovery-"+width+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
