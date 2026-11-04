@@ -30,7 +30,7 @@
       "total_original_bytes": 198880443
     }
   },
-  "policy": "No candidate is editorially approved or legally cleared. An original hash check confirms file byte integrity only, not exact depicted site, architectural or sculptural rights, composition, or image crop. Do not publish without further evidence.",
+  "policy": "No candidate is editorially approved or legally cleared. An original hash check confirms file byte integrity only, not exact depicted site, architectural or sculptural rights, composition, or image crop. Do not publish without further evidence. Pukekaraka tree/presbytery source is not an eligible church cover pending exact-scene evidence.",
   "counts": {
     "places": 23,
     "images": 64,
@@ -518,7 +518,7 @@
       "name": "Hāto Mere / St Mary's Pukekaraka",
       "country": "NZ",
       "cohort": "ROUND24",
-      "site_warning": "Confirm the TreeChurch image depicts the Hāto Mere / St Mary's Pukekaraka site, not a distinct Otaki site",
+      "site_warning": "Commons describes this verified photograph as a pōhutukawa tree outside Pukekaraka and depicts Pukekaraka Presbytery in structured data, not a direct church exterior. Do not offer it as a St Mary's Church cover. Parish website has direct St Mary's church images; their publishing rights are unverified.",
       "images": [
         {
           "file": "File:TreeChurchOtaki.jpg",
@@ -530,10 +530,20 @@
           "author": "L Maule",
           "license": "CC BY-SA 4.0",
           "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-          "role": "COVER_CANDIDATE",
+          "role": "GALLERY_REVIEW_PENDING_EXACT_SUBJECT",
           "first_look": false,
           "byte_verified": true,
           "proof": "ROUND24_GITHUB_ACTIONS_39_PASS"
+        }
+      ],
+      "subject_evidence": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:TreeChurchOtaki.jpg",
+          "finding": "Commons description: old pōhutukawa outside special church; structured subject includes Pukekaraka Presbytery."
+        },
+        {
+          "url": "https://www.pukekaraka.com/",
+          "finding": "Parish-owned St Mary's church photographs show an identifiable yellow weatherboard church; image reuse permissions not established."
         }
       ]
     },
