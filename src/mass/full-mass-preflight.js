@@ -27,6 +27,13 @@ const KIND_LABELS=Object.freeze({
 });
 const txt=(pair,fr)=>pair?.[fr?1:0]??"";
 export const FULL_MASS_FORM_OPTIONS=Object.freeze(MASS_FORMS.map(id=>Object.freeze({id,en:LABELS[id][0],fr:LABELS[id][1]})));
+function humanPreflightDate(iso,language){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(String(iso||"")))return String(iso||"");
+  const d=new Date(iso+"T12:00:00");
+  return Number.isNaN(d.getTime())?String(iso):d.toLocaleDateString(
+    String(language).startsWith("fr")?"fr-FR":"en-GB",
+    {weekday:"long",day:"numeric",month:"long",year:"numeric"});
+}
 export function massCelebrationKind(legacy={}){
   const exceptional=String(legacy?.exceptionalProfile??"").toLowerCase();
   if(/good[-_]friday/.test(exceptional))return "GOOD_FRIDAY";
@@ -335,7 +342,8 @@ export function mountFullMassPreflight({
         '<section data-folio-panel="overview" class="aoMassFolioPanel">'+
         '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+ 
-         '<div data-m1-rows class="aoM1Choices" role="group" aria-label="Your Mass" hidden></div>'+
+         '<details class="aoM1AdjustSheet" data-folio-adjust><summary data-folio-adjust-label></summary>'+
+         '<div data-m1-rows class="aoM1Choices" role="group" aria-label="Your Mass" hidden></div></details>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
         '<h3 data-folio-celebration-heading></h3><p data-folio-celebration-intro></p>'+
@@ -647,7 +655,7 @@ export function mountFullMassPreflight({
       allSoulsDay&&chosenAllSoulsMass>1
         ?(chosenAllSoulsMass===2?l(" · Second Mass"," · Deuxième messe"):
            l(" · Third Mass"," · Troisième messe")):"");
-    word("[data-folio-date]",date,""+date);
+    word("[data-folio-date]",humanPreflightDate(date,summary.readerLanguage),humanPreflightDate(date,summary.readerLanguage));
     word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
     word("[data-folio-celebration]",displayTitle,displayTitle);
     word("[data-folio-season]",[context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "),
@@ -662,6 +670,7 @@ export function mountFullMassPreflight({
        (m1Focus?m1AccessRows(summary,{fr}).find(r=>r.id===m1Focus)?.title??l("Your Mass","Votre messe"):l("Your Mass","Votre messe")):
        l("Before Mass","Avant la messe"),"");
     word("[data-folio-label-overview]","Overview","Vue d’ensemble");
+    word("[data-folio-adjust-label]","Adjust Mass preferences","Modifier les préférences de messe");
     word("[data-folio-step-celebration]","Mass","Messe");
     if(m1Preview)word("[data-m1-other-summary]","Other Mass or Proper","Autre messe ou autre propre");
     word("[data-folio-step-ceremony]","Ceremony","Cérémonie");
@@ -669,8 +678,8 @@ export function mountFullMassPreflight({
     word("[data-folio-overview-heading]","Ready to begin","Prêt à commencer");
     word("[data-folio-overview-hint]","Your usual selections are ready. Change only what is different today.",
       "Vos choix habituels sont prêts. Ne modifiez que ce qui change aujourd’hui.");
-    word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode,
-      summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode);
+    word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode+" · "+(summary.readerLanguage==="fr"?"Français":"English"),
+      summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode+" · "+(summary.readerLanguage==="fr"?"Français":"English"));
     word("[data-folio-guide-start]","Review choices","Revoir les choix");
     word("[data-folio-celebration-heading]","Which Mass are you attending ?","Quelle messe allez-vous suivre ?");
     word("[data-folio-celebration-intro]","Today's Mass is already selected. Change it only when a different Mass is actually celebrated.",
