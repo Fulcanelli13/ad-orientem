@@ -117,7 +117,13 @@ try{
  },[...ordinary.map(x=>({...x,kind:"ORDINARY"})),
      ...special.map(x=>({...x,kind:"SPECIAL_RITE"}))]);
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
-assert.equal(report.schema,"ao-schola-2026-real-reader-eight-date-reconciliation-v1");
+// Always preserve the observed runtime evidence before the assertions:
+ // a failing historical correction must still produce a reviewable artifact.
+ const dest=resolve(root,"artifacts/mass");
+ await mkdir(dest,{recursive:true});
+ await writeFile(resolve(dest,"schola-2026-eight-date-real-reader-reconciliation.json"),
+  JSON.stringify(report,null,2)+"\n");
+ assert.equal(report.schema,"ao-schola-2026-real-reader-eight-date-reconciliation-v1");
 assert.equal(report.rows.length,8);
 for(const t of [...ordinary.map(x=>({...x,kind:"ORDINARY"})),...special.map(x=>({...x,kind:"SPECIAL_RITE"}))]){
  const row=report.rows.find(x=>x.date===t.date);
@@ -155,10 +161,6 @@ for(const lang of ["en","fr"]){
   "Previous source-attested C7b correction lost: "+lang);
 }
 assert.equal(report.publication.scoreApprovals,0);
-const dest=resolve(root,"artifacts/mass");
-await mkdir(dest,{recursive:true});
-await writeFile(resolve(dest,"schola-2026-eight-date-real-reader-reconciliation.json"),
- JSON.stringify(report,null,2)+"\n");
 console.log("SCHOLA_EIGHT_DATE_REAL_READER "+JSON.stringify({
  ordinary:ordinary.length,specialRites:special.length,
  readyAfterActualReader:report.rows.filter(x=>x.kind==="ORDINARY"&&
