@@ -54,8 +54,14 @@ try{
     id,window.AO_NOVENAS_V3.corpus[id].title
    ])));
    assert.ok(corpus.christmas.en&&corpus.christmas.fr&&corpus.st_michael.en&&corpus.st_michael.fr);
-   assert.equal(await page.locator(base+" [data-p435930-pilot-novena]").count(),16,
-    "The exact canonical sixteen must appear once each in search");
+   const searchIds=await page.locator(base+" [data-p435930-pilot-novena]").evaluateAll(
+    nodes=>nodes.map(n=>n.dataset.p435930PilotNovena));
+   assert.ok(searchIds.length>=16,"All canonical sixteen Novenas must be searchable");
+   assert.equal(new Set(searchIds).size,searchIds.length,"No Novena search result may appear twice");
+   const canonicalIds=await page.evaluate(()=>Object.keys(window.AO_NOVENAS_V3.corpus));
+   assert.equal(canonicalIds.length,16);
+   assert.ok(canonicalIds.every(id=>searchIds.includes(id)),
+    "Search must expose every existing canonical Novena, without rewriting its ID");
    // Every novena is read from its canonical corpus title, not a second catalogue.
    for(const id of ["christmas","st_michael"]){
     const title=corpus[id][language];
