@@ -1,0 +1,40 @@
+name: Biblical Atlas Cinematic Prototype Review
+on:
+  pull_request:
+    paths:
+      - "reviews/biblical-atlas-cinematic-prototype-20261011.html"
+      - "docs/biblical-atlas-cinematic-review-20261011.md"
+      - "tests/biblical-atlas-cinematic-prototype.mjs"
+      - "reviews/biblical-atlas-cinematic-expanded-181-20261011.html"
+      - "tests/biblical-atlas-expanded-prototype.mjs"
+      - ".github/workflows/biblical-atlas-prototype-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mobile-prototype:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install application test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Check prototype script syntax
+        run: node --check tests/biblical-atlas-cinematic-prototype.mjs
+      - name: Execute standalone phone and desktop experience
+        run: node tests/biblical-atlas-cinematic-prototype.mjs
+      - name: Execute expanded 181-scene Biblical Atlas phone acceptance
+        run: node tests/biblical-atlas-expanded-prototype.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: biblical-atlas-prototype-review
+          path: |
+            artifacts/biblical-atlas-prototype/
+            artifacts/biblical-atlas-expanded/
+          if-no-files-found: ignore
