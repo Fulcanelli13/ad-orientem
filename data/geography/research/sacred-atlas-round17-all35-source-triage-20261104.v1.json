@@ -8,11 +8,11 @@
     "exact_site_commons_collections": 2,
     "collection_file_entries": 7,
     "low_resolution_legacy_source_places": 2,
-    "total_new_file_leads": 9,
-    "places_with_file_leads": 4,
-    "site_or_identity_custodian_leads": 4,
-    "remaining_without_file_lead": 31,
-    "known_wrong_site_or_empty_category_exclusions": 5
+    "total_new_file_leads": 10,
+    "places_with_file_leads": 5,
+    "site_or_identity_custodian_leads": 7,
+    "remaining_without_file_lead": 30,
+    "known_wrong_site_or_empty_category_exclusions": 6
   },
   "governance": [
     "All 35 canonical Place IDs retained unchanged.",
@@ -21,7 +21,8 @@
     "Low-resolution and special public-domain files cannot be approved for cover.",
     "Publisher, shrine and institutional images remain rights-unknown until compatible grant identified; no owner contact or fees.",
     "Do not publish new covers without explicit primary-cover editorial selection and original hash verification.",
-    "Previously selected but held 34 and explicitly none-selected 51 records remain outside this queue."
+    "Previously selected but held 34 and explicitly none-selected 51 records remain outside this queue.",
+    "The Talawila St Anne statue photograph is site-specific but not a church exterior; gallery-only subject and possible underlying sculpture rights hold."
   ],
   "rows": [
     {
@@ -108,11 +109,24 @@
       "place_name": "St. Anne Shrine",
       "country": "US",
       "review_batch": 1,
-      "status": "NO_EXACT_COMMONS_PHOTO_FOUND_YET",
+      "status": "CUSTODIAN_OR_IDENTITY_SOURCE_ONLY",
       "category": null,
       "source_candidates": [],
-      "custodian_or_identity_leads": [],
-      "exclusions": [],
+      "custodian_or_identity_leads": [
+        {
+          "url": "https://www.stannestpatrickparish.com/st-annes-shrine",
+          "description": "Exact shrine and parish official site, source for identity; photographs not independently openly licensed",
+          "rights": "CUSTODIAN_COPYRIGHT_UNKNOWN"
+        }
+      ],
+      "exclusions": [
+        {
+          "place_id": "place:US:st-anne-fiskdale",
+          "url": "https://www.flickr.com/photos/edge_and_corner_wear/22163722731",
+          "finding": "ALL_RIGHTS_RESERVED_HISTORIC_POSTCARD",
+          "note": "1949 postcard image on Flickr is all rights reserved; not suitable for open-licensed cover import."
+        }
+      ],
       "research_decision": "RESEARCH_ONLY_NOT_USER_CHOICE",
       "publication_authorized": false
     },
@@ -250,9 +264,26 @@
       "place_name": "Saint Anne's National Shrine, Talawila",
       "country": "LK",
       "review_batch": 2,
-      "status": "NO_EXACT_COMMONS_PHOTO_FOUND_YET",
+      "status": "SUBJECT_ONLY_GALLERY_CANDIDATE_NOT_COVER",
       "category": null,
-      "source_candidates": [],
+      "source_candidates": [
+        {
+          "title": "File:St. Anne of Thalawila , Sri Lanka.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:St._Anne_of_Thalawila_,_Sri_Lanka.jpg",
+          "source_evidence": "GALLERY_ONLY_EXACT_SHRINE_STATUE_ARTWORK_RIGHTS_NOT_ASSESSED",
+          "dimensions": [
+            3072,
+            2304
+          ],
+          "metadata_verified": false,
+          "original_sha1": null,
+          "original_bytes_verified": false,
+          "photographer": "Mandovi1 (source-page claim)",
+          "license": "CC BY-SA 4.0 (source-page claim)",
+          "editorial_selected": false,
+          "publication_authorized": false
+        }
+      ],
       "custodian_or_identity_leads": [],
       "exclusions": [],
       "research_decision": "RESEARCH_ONLY_NOT_USER_CHOICE",
@@ -309,10 +340,16 @@
       "place_name": "Our Lady of Fatima Church and Shrine, Laventille",
       "country": "TT",
       "review_batch": 2,
-      "status": "NO_EXACT_COMMONS_PHOTO_FOUND_YET",
+      "status": "CUSTODIAN_OR_IDENTITY_SOURCE_ONLY",
       "category": null,
       "source_candidates": [],
-      "custodian_or_identity_leads": [],
+      "custodian_or_identity_leads": [
+        {
+          "url": "https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/",
+          "description": "Trinidad and Tobago National Trust location confirms Our Lady of Fatima Shrine, Upper Picton Road, Laventille",
+          "rights": "SITE_IDENTITY_SOURCE_ONLY"
+        }
+      ],
       "exclusions": [],
       "research_decision": "RESEARCH_ONLY_NOT_USER_CHOICE",
       "publication_authorized": false
@@ -642,10 +679,16 @@
       "place_name": "Basílica Menor Jesús Nazareno de Atalaya",
       "country": "PA",
       "review_batch": 3,
-      "status": "NO_EXACT_COMMONS_PHOTO_FOUND_YET",
+      "status": "CUSTODIAN_OR_IDENTITY_SOURCE_ONLY",
       "category": null,
       "source_candidates": [],
-      "custodian_or_identity_leads": [],
+      "custodian_or_identity_leads": [
+        {
+          "url": "https://www.nazarenodeatalaya.com/jesusnazareno",
+          "description": "Basilica custodian names Jesus Nazareno of Atalaya; published site's photographs not independently reusable",
+          "rights": "CUSTODIAN_COPYRIGHT_UNKNOWN"
+        }
+      ],
       "exclusions": [],
       "research_decision": "RESEARCH_ONLY_NOT_USER_CHOICE",
       "publication_authorized": false
