@@ -6,10 +6,23 @@ import {ESSENTIAL_HOLY_CARD_IDS_V1} from "../src/pray/essential-holy-card-parts.
 import {claudeHolyCard,claudeHolyCardCase,CLAUDE_HOLY_CARD_FAMILY} from "../src/pray/claude-holy-card.js";
 const read=x=>readFileSync(x,"utf8");
 const originalCss=read("tests/fixtures/claude-prayer/holy-card.app-ui.css");
+const essentialSource=read("src/pray/essential-flow-reader.js");
 const originalJs=read("tests/fixtures/claude-prayer/holy-card.app-ui.js");
 const styles=read("src/pray/claude-holy-card-styles.js");
 const runtime=read("src/pray/presentation-runtime.js");
 const escape=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+test("F01 default honours approved Holy Card; continuous reading requires explicit opt-in",()=>{
+ assert.match(runtime,/ESSENTIAL_FLOW_ALTERNATIVE_ENABLED=essentialFlowReaderEnabled\(window\)/,
+  "Normal Prayer entry must not silently replace the approved reversible card");
+ assert.match(runtime,/ESSENTIAL_FLOW_ALTERNATIVE_ENABLED\?renderEssentialFlowReader/,
+  "Continuous flow is only the opt-in branch");
+ assert.match(runtime,/:claudeHolyCard\(\{id,p,face:chosen/,
+  "Default reader must be the original Claude Holy Card");
+ assert.match(essentialSource,/get\("aoEssentialFlow"\)==="1"/,
+  "Flow alternative must require explicit user URL opt-in, never the general Prayer pilot");
+ assert.doesNotMatch(essentialSource,/get\("aoEssentialFlow"\)!=="0"/,
+  "Flow must not turn on for every ordinary Prayer session");
+});
 test("Source pinned from original Claude HTML — actual case, lace, Y-flip, initial",()=>{
  assert.match(originalCss,/\.fan\{display:grid;grid-template-columns:repeat\(3,1fr\)/);
  assert.match(originalCss,/\.lace\.flip \.inner\{transform:rotateY\(180deg\)/);
