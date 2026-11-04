@@ -69,7 +69,7 @@ const scores=FIRST12_1961_FACSIMILES.map(locator=>{
    printedNeumes:"PENDING_INDEPENDENT_VISUAL_READING",
    printedRhythmicSigns:"PENDING_INDEPENDENT_VISUAL_READING",
    printedSyllabicUnderlay:"PENDING_INDEPENDENT_VISUAL_READING",
-   1962SelectedProperUsage:"PENDING_EXACT_SOURCE_SELECTION",
+   selected1962ProperUsage:"PENDING_EXACT_SOURCE_SELECTION",
    editorialDecision:"NOT_APPROVED"},
   verifiedMusicalNoteCount:0,
   certifiedSourceUnderlay:false,approvedForNativeReader:false,publicScore:false,
