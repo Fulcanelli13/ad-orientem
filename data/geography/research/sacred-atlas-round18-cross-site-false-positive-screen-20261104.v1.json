@@ -1,0 +1,92 @@
+{
+  "schema": "AO_SACRED_ATLAS_ROUND18_CROSS_SITE_IMAGE_FALSE_POSITIVE_AND_CUSTODIAN_SCREEN_V1",
+  "date": "2026-11-04",
+  "scope": "EXACT_IDENTITY_AND_RIGHTS_RESEARCH_ONLY",
+  "observations": 11,
+  "place_ids": 9,
+  "policy": [
+    "Never import near-name photos without matching the same canonical Place ID and actual physical structure.",
+    "Institutional ownership or access to a photograph is not a free image licence; permission/fees routes are held because user requested no owner outreach and no fees.",
+    "This is supporting source evidence, not source-file verification and not user editorial selection.",
+    "No imagery downloaded, no map pins or Place registries changed."
+  ],
+  "rows": [
+    {
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:Christ_the_King_church_in_Nuuk",
+      "screen": "EXACT_COMMONS_CATEGORY_EMPTY",
+      "note": "Category exists but currently contains no files; do not substitute similarly named Christ the King church in Nauru.",
+      "rights": "NOT_APPLICABLE"
+    },
+    {
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Patrick_Cathedral_B.jpg",
+      "screen": "EXCLUDE_WRONG_COUNTRY",
+      "note": "Wikimedia file belongs to St Patrick's Cathedral in Manhattan, New York, not Barbados. Explicit category confirms NYC.",
+      "rights": "NOT_APPLICABLE"
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "source_url": "https://nljdigital.nlj.gov.jm/items/show/3213",
+      "screen": "SITE_IDENTITY_CONFIRMED_IMAGE_NOT_OPEN_LICENSED",
+      "note": "National Library of Jamaica identifies Catholic cathedral on North Street; rights require permission. No fees/contacting owners.",
+      "rights": "PERMISSION_REQUIRED"
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "source_url": "https://nljdigital.nlj.gov.jm/items/show/802",
+      "screen": "SITE_IDENTITY_CONFIRMED_IMAGE_NOT_OPEN_LICENSED",
+      "note": "Exact cathedral photo with congregation; institutional use fees and independent copyright-holder permission; not a free source.",
+      "rights": "PERMISSION_OR_FEE_REQUIRED"
+    },
+    {
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "source_url": "https://www.parrocchiaovada.it/wordpress/santuario-di-san-paolo-della-croce",
+      "screen": "PARISH_SOURCE_EXACT_SANCTUARY_IDENTIFIED",
+      "note": "Official parish distinguishes modern 1988 San Paolo della Croce sanctuary in Ovada, with distinctive concrete forms and high bronze sculpture; published parish photo is not automatically reuse-permitted.",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oratorio_della_Santissima_Annunziata_Ovada_01.jpg",
+      "screen": "EXCLUDE_WRONG_CHURCH",
+      "note": "Oratorio Santissima Annunziata at Via San Paolo della Croce is a different 16th-century building, not the modern sanctuary.",
+      "rights": "NOT_APPLICABLE"
+    },
+    {
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Mary_Roman_Catholic_Church_close_up.jpg",
+      "screen": "EXCLUDE_WRONG_CITY",
+      "note": "This Commons file is geotagged in Long Island City, Queens (NYC), not Oswego, NY.",
+      "rights": "NOT_APPLICABLE"
+    },
+    {
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Santuario_de_Guadalupe_(5482415578).jpg",
+      "screen": "EXCLUDE_WRONG_COUNTRY",
+      "note": "The file shows a shrine at Santa Fe, New Mexico, not Nicaragua's Ermita de Guadalupe in Matagalpa.",
+      "rights": "NOT_APPLICABLE"
+    },
+    {
+      "place_id": "place:AR:santuario-san-cayetano-liniers",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Centro_de_San_Cayetano.jpg",
+      "screen": "EXCLUDE_WRONG_MUNICIPALITY",
+      "note": "File depicts locality of San Cayetano in Buenos Aires province, not Liniers basilica/sanctuary in Buenos Aires city.",
+      "rights": "NOT_APPLICABLE"
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "source_url": "https://solasbhride.ie/development/",
+      "screen": "CUSTODIAN_IDENTIFIES_EXACT_MODERN_CENTRE",
+      "note": "Modern Solas Bhríde Centre and Hermitages opened 2015 near the well and cathedral; site photographs remain copyright unknown.",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "source_url": "https://mapcarta.com/W653760160",
+      "screen": "OSM_WAY_SITE_IDENTITY_CONFIRMED",
+      "note": "Sts Peter & Paul Catholic Church in Ruwi is correct; street/map images do not establish open photograph rights.",
+      "rights": "UNVERIFIED"
+    }
+  ]
+}
