@@ -205,3 +205,99 @@ for(const g of collisions.groups){
     assert.ok(g.recurrence_variants.length>1);
 }
 console.log("PASS Wave 2: 70/296 unique historical source rows checked, 31 scoped role observations; all 106 collision cases risk-triaged without any automatic event merge or promotion");
+
+// Wave 3: cite fresh pages while preserving all 69 historical CL2 row keys.
+const wave3=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/source-review-wave3.v1.json",import.meta.url),"utf8"));
+assert.equal(wave3.schema,"AO_CL27_CURRENT_SOURCE_WAVE3_V1");
+assert.equal(wave3.publication,"RESEARCH_ONLY_NO_APP_IMPORT");
+assert.equal(wave3.original_cl27_blob_sha,d.canonical_source.blob_sha);
+assert.equal(wave3.source_groups.length,16);
+assert.equal(wave3.reviewed_rows.length,69);
+assert.deepEqual(wave3.summary,{
+  new_historical_rows_reviewed:69,
+  new_source_pages_reviewed:16,
+  distinct_cl2_physical_anchors:19,
+  previous_reviewed:70,
+  cumulative_reviewed:139,
+  still_unreviewed:157,
+  new_approved_current_events:0,
+  new_published_cl27_classifications:0
+});
+const wave3IDs=new Set();
+const earlierIDs=new Set([...checked,...reviewedWave2]);
+const wave3Sources=new Map(wave3.source_groups.map(g=>[g.historical_source_url,g]));
+assert.equal(wave3Sources.size,16);
+const wave3Anchors=new Set();
+for(const row of wave3.reviewed_rows){
+ assert.ok(Number.isInteger(row.historical_row));
+ assert.ok(!earlierIDs.has(row.historical_row),"Wave 3 cannot repeat earlier reviewed historical row");
+ assert.ok(!wave3IDs.has(row.historical_row),"Wave 3 internal duplicate");
+ wave3IDs.add(row.historical_row);wave3Anchors.add(row.cl2_anchor);
+ const snapshot=byHistorical.get(row.historical_row);
+ assert.ok(snapshot&&snapshot.anchors.includes(row.cl2_anchor));
+ assert.equal(snapshot.historical_url,row.historical_owner_url);
+ const group=wave3Sources.get(row.historical_owner_url);
+ assert.ok(group&&group.cl2_anchors.includes(row.cl2_anchor));
+ assert.ok(group.reviewed_historical_rows.includes(row.historical_row));
+ assert.equal(group.independent_or_current_owner_url,row.reviewed_evidence_url);
+ assert.match(row.reviewed_evidence_url,/^https:\/\//);
+ assert.equal(row.approval,"HOLD_NO_PUBLIC_TIMETABLE_APPROVAL");
+ assert.ok(row.source_review_decision);
+ assert.ok(!Object.hasOwn(row,"una_cum")&&!Object.hasOwn(row,"canonical_status"));
+}
+assert.equal(wave3IDs.size,69);
+assert.equal(wave3Anchors.size,19);
+assert.equal(new Set([...earlierIDs,...wave3IDs]).size,139);
+assert.equal(wave3.reviewed_rows.filter(r=>
+ r.source_review_decision==="HISTORICAL_CLOCK_NOT_SUPPORTED_BY_LATEST_BULLETIN").length,3);
+assert.ok(wave3.reviewed_rows.some(r=>
+ r.historical_row===4676&&r.source_review_decision==="MASS_CLOCK_WITH_UNPROVEN_HOST_LOCATION"));
+assert.equal(wave3.reviewed_rows.filter(r=>
+ [4675,4676,4677,4678,4679].includes(r.historical_row)).length,5);
+// Research-only source scopes: no new venue-wide liturgical assumptions.
+const roleWave3=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/classification-role-review-wave3.v1.json",import.meta.url),"utf8"));
+assert.equal(roleWave3.schema,"AO_CL27_ROLE_OBSERVATIONS_WAVE3_V1");
+assert.equal(roleWave3.research_only,true);
+assert.equal(roleWave3.records.length,19);
+assert.equal(new Set(roleWave3.records.map(r=>r.cl2_anchor)).size,19);
+assert.deepEqual(new Set(roleWave3.records.map(r=>r.cl2_anchor)),wave3Anchors);
+for(const r of roleWave3.records){
+ assert.equal(r.publication,"HOLD_RESEARCH_ONLY");
+ assert.equal(r.source_scoped_only,true);
+ assert.ok(r.unknown_without_individual_evidence.includes("una_cum"));
+ assert.ok(r.unknown_without_individual_evidence.includes("canonical_status"));
+ assert.ok(r.unknown_without_individual_evidence.includes("mass_missal_edition"));
+ assert.ok(["SSPX","ICKSP","CAPUCINS_MORGON","TRANSFIGURATION"].includes(r.source_reported_community));
+ for(const fld of r.unknown_without_individual_evidence)assert.ok(!Object.hasOwn(r,fld));
+}
+// Seven source-adjudicated risk groups: an actual monthly first-Sunday versus
+// third-Sunday schedule must NEVER be joined as the same calendar occurrence.
+const collisionReview=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/collision-source-decisions-7.v1.json",import.meta.url),"utf8"));
+assert.equal(collisionReview.schema,"AO_CL27_COLLISION_SOURCE_DECISIONS_V1");
+assert.equal(collisionReview.publication,"RESEARCH_ONLY_NO_MERGED_EVENTS");
+assert.equal(collisionReview.records.length,7);
+assert.deepEqual(collisionReview.summary,{
+ source_reviewed_collision_groups:7,
+ source_alias_groups:5,
+ distinct_monthweek_groups:2,
+ remaining_without_source_disposition:99,
+ production_events_generated:0
+});
+const collisionScreen=new Map(collisions.groups.map(x=>[x.site_day_time_key,x]));
+for(const r of collisionReview.records){
+ const source=collisionScreen.get(r.site_day_time_key);
+ assert.ok(source&&source.physical_anchor===r.cl2_anchor);
+ assert.deepEqual(r.original_historical_rows,source.original_historical_rows);
+ assert.equal(r.event_merged_or_published,false);
+ assert.equal(r.historical_ids_retained,true);
+ assert.match(r.source_recheck_url,/^https:\/\//);
+ assert.ok([
+  "SOURCE_ALIAS_SAME_SCHEDULE_SLOT","DISTINCT_MONTHWEEK_RECURRENCES_NOT_DUPLICATES"
+ ].includes(r.decision));
+ if(r.decision==="DISTINCT_MONTHWEEK_RECURRENCES_NOT_DUPLICATES")
+   assert.ok(source.recurrence_variants.length>1);
+}
+console.log("PASS CL27 wave3: 139/296 unique original source rows / 19 new site roles; 7 first-party collision dispositions; no Mass event or unsupported ecclesial promotions");
