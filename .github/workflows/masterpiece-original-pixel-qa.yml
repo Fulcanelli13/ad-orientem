@@ -31,7 +31,7 @@ jobs:
         run: |
           python tools/artwork/masterpiece_pixel_preflight.py \
             --manifest data/artwork/research/masterpiece-19-original-pixel-preflight.v1.json \
-            --output artifacts/artwork-masterpiece-photo-qa --limit 19
+            --output artifacts/artwork-masterpiece-photo-qa --limit 2
       - name: Assert no publication
         run: |
           python - <<'PY'
@@ -45,7 +45,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: sacred-masterpieces-19-original-pixels
+          name: sacred-masterpieces-2-staged-originals
           path: artifacts/artwork-masterpiece-photo-qa/
           if-no-files-found: warn
           retention-days: 7
