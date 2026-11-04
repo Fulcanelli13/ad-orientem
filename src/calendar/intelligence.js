@@ -1,5 +1,5 @@
 import { formatDisplayDate } from "../app/date-format.js";
-import { NOVENA_CORPUS_V4, NOVENA_START_KIND } from "../pray/novena-corpus-v4.js";
+import { NOVENA_CALENDAR_METADATA, NOVENA_START_KIND } from "./novena-calendar-metadata.js";
 import { addDaysIso, dateFromIso, isoDate } from "./liturgical-year.js";
 import { v384Events, v384Dates } from "./traditional-year-v384.js";
 import { calendarCustomProfileActions } from "./customs-profile-links.js";
@@ -482,7 +482,7 @@ export function isFirstWeekday(value,weekday){
 }
 
 export function novenaWindowFor(novena,year){
-  const n=typeof novena==="string"?NOVENA_CORPUS_V4[novena]:novena;
+  const n=typeof novena==="string"?NOVENA_CALENDAR_METADATA[novena]:novena;
   if(!n?.calendar)throw new Error("Unknown novena calendar definition");
   const y=Number(year),c=n.calendar;
   if(c.type==="EASTER_OFFSET"){
@@ -521,7 +521,7 @@ export function novenaWindowFor(novena,year){
 }
 
 export function novenaStatusFor(novena,value,{fr=false}={}){
-  const n=typeof novena==="string"?NOVENA_CORPUS_V4[novena]:novena;
+  const n=typeof novena==="string"?NOVENA_CALENDAR_METADATA[novena]:novena;
   if(!n)return null;
   const id=keyOf(value),year=dateFromIso(id).getFullYear();
   let w=novenaWindowFor(n,year);
@@ -687,7 +687,7 @@ export function novenaTargetRegistryStatus(){
   return Object.freeze({
     registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,
     targetCount:NOVENA_TARGET_IDS.length,
-    playableCount:Object.keys(NOVENA_CORPUS_V4).length,
+    playableCount:Object.keys(NOVENA_CALENDAR_METADATA).length,
     heldCount:Object.keys(NOVENA_SOURCE_HOLDS).length,
     targetIds:NOVENA_TARGET_IDS,
     heldIds:Object.freeze(Object.keys(NOVENA_SOURCE_HOLDS)),
@@ -696,7 +696,7 @@ export function novenaTargetRegistryStatus(){
 
 export function calendarNovenaEvents(value,{fr=false,upcomingDays=0}={}){
   const date=keyOf(value),rows=[];
-  for(const novena of Object.values(NOVENA_CORPUS_V4)){
+  for(const novena of Object.values(NOVENA_CALENDAR_METADATA)){
     const status=novenaStatusFor(novena,date,{fr});
     if(!status)continue;
     const startsIn=diffDays(status.next||status.window.start,date);

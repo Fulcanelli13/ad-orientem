@@ -1,0 +1,36 @@
+name: Calendar novena metadata source parity
+on:
+  pull_request:
+    paths:
+      - src/calendar/intelligence.js
+      - src/calendar/devotional-registry.js
+      - src/calendar/novena-calendar-metadata.js
+      - src/pray/novena-corpus.js
+      - src/pray/novena-corpus-v4.js
+      - src/pray/novena-french-body-v1.js
+      - src/pray/novena-french-body-v1-marian.js
+      - src/pray/novena-french-body-v1-devotional.js
+      - src/pray/novena-french-guide-parity.v1.js
+      - src/pray/novena-holy-souls-print-corrections.v1.js
+      - tests/calendar-novena-metadata-parity.mjs
+      - tools/perf/generate-novena-calendar-metadata.mjs
+      - .github/workflows/calendar-novena-metadata-parity.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: calendar-novena-meta-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+jobs:
+  canonical-source-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify reproducible source-exact 16-novena Calendar projection
+        run: |
+          node tools/perf/generate-novena-calendar-metadata.mjs --check
+          node tests/calendar-novena-metadata-parity.mjs
