@@ -1028,8 +1028,9 @@ function renderPrayFamily(){
  const filterButtons=['all',...facets].map(type=>'<button type="button" data-p435930-door-filter="'+type+'" aria-pressed="'+(type==='all')+'">'+esc(facetLabels[type]||type)+'</button>').join('');
  const filters=facets.length>1?'<nav class="aoPrayDoorFilters" aria-label="'+esc(L("Filter prayers","Filtrer les prières"))+'">'+filterButtons+'</nav>':'';
  return `${head(L("Pray","Prier"),'')}<main class="aoP435930Body aoPrayDoorInterior aoPrayDoorMosaicInterior" data-ao-prayer-shelf="${esc(familyId)}">
-  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+assetIcon(family.assetId,'aoPrayDoorCoverIcon',{preferEmbedded:true})+'</span>'}</section>
-  <header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header>
+  <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+assetIcon(family.assetId,'aoPrayDoorCoverIcon',{preferEmbedded:true})+'</span>'}
+    <header class="aoPrayDoorHeading"><small class="aoPrayDoorEyebrow">${esc(L("PRAYER COLLECTION","PRIÈRES"))}</small><h2>${esc(family.title)}</h2></header></section>
+  <p class="aoPrayDoorDescription">${esc(family.description)}</p>
   ${filters}
   <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(family.title)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId,i)).join('')}</nav>
   ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
