@@ -110,8 +110,42 @@ try{
         ?.fullMassPreflight?.optionalRiteOverrides?.ASPERGES),true);
       await choices.locator("[data-h4-sheet-close]").last().click();
       await door.locator("[data-home-h4-begin]").click();
-      await page.waitForFunction(()=>window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ASP-R01",
-        null,{timeout:65000});
+      try {
+        await page.waitForFunction(()=>window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ASP-R01",
+          null,{timeout:65000});
+      } catch (failure) {
+        // Preserve a failed public-host verdict and capture the real app state.
+        // Do not relax the liturgical assertion or silently fall back to localhost.
+        const diag=await page.evaluate(()=>{
+          const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+          const preflight=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight;
+          const reader=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+          return {
+            href:location.href,
+            title:document.title,
+            readyState:document.readyState,
+            appRoute:state?.route,
+            resolutionDate:state?.resolution?.date,
+            properStatus:state?.resolution?.proper?.status,
+            readerMounted:Boolean(reader?.root?.isConnected),
+            currentCardId:reader?.getCurrentCard?.()?.id??null,
+            readerCardCount:reader?.model?.cards?.length??null,
+            selectedForm:preflight?.celebrationForm??null,
+            aspersionDecisionRequired:preflight?.aspersionDecisionRequired??null,
+            aspersionOverride:preflight?.optionalRiteOverrides?.ASPERGES??null,
+            dialogOpen:Boolean(document.querySelector(".aoH4ChoiceDialog[open]")),
+            doorVisible:Boolean(document.querySelector(".aoH7DoorView:not([hidden])")),
+            bodyTextTail:document.body?.innerText?.slice(-1200)??null
+          };
+        }).catch(error=>({captureError:String(error)}));
+        const screenshot=dir+"/"+test.width+"-"+test.language+"-pages-timeout.png";
+        try {await page.screenshot({path:screenshot,animations:"disabled"})}
+        catch (captureError) {diag.screenshotError=String(captureError)}
+        console.error("GITHUB_PAGES_H7_TIMEOUT",JSON.stringify({
+          case:test,diagnostics:diag,pageErrors:errors,error:String(failure)
+        }));
+        throw failure;
+      }
       const expected=await page.evaluate(()=>{
         const s=globalThis.AO_RUNTIME_V8.store.getState(),
           m=globalThis.AO_R17_NATIVE_READER_PREVIEW.model;
