@@ -6,6 +6,12 @@ import {essentialHolyCardParts} from "./essential-holy-card-parts.js";
  * continuous reading alternative. All words come from canonical prayer data.
  */
 export const ESSENTIAL_FLOW_READER_SCHEMA="ao-essential-flow-reader-v1";
+/** An explicitly selected reading alternative; never replace the approved F01 card by default. */
+export function essentialFlowReaderEnabled(win=globalThis){
+ try{return new URLSearchParams(win?.location?.search||"").get("aoEssentialFlow")==="1"}
+ catch{return false}
+}
+
 const safeImage=src=>typeof src==="string"&&(/^https:\/\//.test(src)||/^\/assets\/[a-zA-Z0-9/_-]+\.(?:jpe?g|png|webp)$/i.test(src));
 const prayerBeats=(id,p,language,esc)=>!language||!p[language]?"":(essentialHolyCardParts(id,language,p[language])||[])
  .map((part,i)=>'<span class="aoEssentialFlowBeat'+(part.collective?' aoEssentialFlowCollective':'')+
