@@ -25,11 +25,17 @@ try{
  const page=await browser.newPage({viewport:{width:390,height:844},
   deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-GB"});
  const errors=[];page.on("pageerror",error=>errors.push(error.message));
+ const scriptureRequests=[];page.on("request",request=>{
+   if(new URL(request.url()).pathname.endsWith("/src/scripture/library.js"))
+     scriptureRequests.push(request.url());
+ });
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
   {waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true&&
    globalThis.AO_CALENDAR_APP_V1?.select&&globalThis.AO_SCRIPTURE_CONTEXT_V1?.open,
    null,{timeout:45000});
+ assert.equal(scriptureRequests.length,0,
+   "Full Scripture reader must not be requested during cold Home");
  const day="2026-08-02";
  const selected=await page.evaluate(async date=>{
    const shell=globalThis.AO_APP_SHELL_V1;
@@ -75,6 +81,9 @@ try{
    globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 18:9",{language:"en"})),true);
  const scripture=page.locator("#ao-scripture-overlay");
  await scripture.waitFor({state:"visible",timeout:15000});
+ await scripture.locator(".aoScriptureReading h3").waitFor({state:"visible",timeout:15000});
+ assert.equal(scriptureRequests.length,1,
+   "Only the first genuine Scripture open should import the reader graph");
  const initial=await page.evaluate(()=>({
    title:document.querySelector("#ao-scripture-overlay .aoScriptureReading h3")?.textContent,
    edition:globalThis.AO_SCRIPTURE_APP_V1.status().reader?.editionId
