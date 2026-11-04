@@ -49,7 +49,9 @@ def queue():
     m=re.search(r"const places=(.*?); const auditStatuses=",h,re.S)
     if not m:raise ValueError("Missing canonical review")
     places=json.loads(m.group(1))
-    missing=[p for p in places if not p["candidates"] and not p.get("legalHold")]
+    # Freeze this initial Round 21 cohort by canonical ID: subsequent reviewed
+    # research leads must not invalidate reproducibility of the original search.
+    missing=[p for p in places if p["id"] in SEARCH]
     ids={p["id"] for p in missing}
     if len(missing)!=26 or ids!=set(SEARCH):raise ValueError(f"Frozen 26 cohort mismatch {len(missing)}")
     return missing
