@@ -89,6 +89,7 @@ try{
      "src/mass/reader-native-preview.js",
      "src/mass/reader-special-stage.js",
      "src/mass/reader-special-stage-styles.js",
+     "src/scripture/library.js",
      "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
@@ -131,6 +132,27 @@ try{
      "Deferred native R17 renderer cannot load from a new offline tab: "+JSON.stringify(r17Offline));
    console.log("PASS deferred R17 reader module and static descendants load on first offline tab");
  }finally{await r17OfflineTab.close();}
+
+ // The full Scripture reader is also a first-use dynamic import. It must
+ // actually open through the unchanged synchronous deep-link API on a
+ // disconnected, previously unvisited tab.
+ const bibleOfflineTab=await context.newPage();
+ try{
+   await bibleOfflineTab.goto(origin,{waitUntil:"domcontentloaded",timeout:90000});
+   await bibleOfflineTab.waitForFunction(()=>
+     typeof globalThis.AO_SCRIPTURE_CONTEXT_V1?.open==="function",
+     null,{timeout:30000});
+   const accepted=await bibleOfflineTab.evaluate(()=>
+     globalThis.AO_SCRIPTURE_CONTEXT_V1.open("John 1:1",{language:"en"}));
+   assert.equal(accepted,true,"Offline Scripture deep-link API did not accept the source reference");
+   const passage=bibleOfflineTab.locator("#ao-scripture-overlay .aoScriptureReading h3");
+   await passage.waitFor({state:"visible",timeout:30000});
+   assert.match(await passage.innerText(),/John 1:1/,
+     "Deferred Scripture reader did not mount the intended passage offline");
+   assert.equal(await bibleOfflineTab.evaluate(()=>
+     globalThis.AO_SCRIPTURE_APP_V1.status().open),true);
+   console.log("PASS deferred Scripture Bible reader opens from a fresh disconnected tab");
+ }finally{await bibleOfflineTab.close();}
 
  // The Rosary is a core devotional pilot journey: it must open on a first
  // offline launch after a completed bootstrap, even before it was opened online.
