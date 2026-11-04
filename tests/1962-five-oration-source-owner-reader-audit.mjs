@@ -161,10 +161,32 @@ for(const [date,sourcePath] of targets){
  assert.ok(["ready","cached"].includes(String(item.properStatus).toLowerCase()));
  assert.ok(item.sourceSections.some(x=>x.path===sourcePath),
   date+": selected original source was not examined");
- assert.equal(item.recoveredEN.ready,false,date+": English unexpectedly no longer held");
+ const monica=date==="2026-05-04";
+ assert.equal(item.recoveredEN.ready,monica,
+  date+": unexpected change in source-owned English orations");
+ assert.equal(item.recoveredFR.ready,monica||date==="2026-10-08",
+  date+": unexpected change in source-owned French orations");
  assert.ok(item.recoveredEN.missing.every(s=>
   ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(s)),
   date+": missing non-oration section");
+ if(monica){
+  assert.deepEqual(item.rawEN.missing,["COLLECT_SET"],
+   "The former raw St Monica Collect gap disappeared unexpectedly");
+  assert.deepEqual(item.rawFR.missing,["COLLECT_SET"]);
+  assert.ok(item.recoveredEN.sourceCorrections?.some(x=>
+   x.id==="1962_ST_MONICA_ROMAN_CONDITIONAL_COLLECT"),
+   "St Monica's Roman section not transparently restored");
+  assert.ok(item.recoveredFR.sourceCorrections?.some(x=>
+   x.id==="1962_ST_MONICA_ROMAN_CONDITIONAL_COLLECT"));
+  const original=item.sourceSections.find(x=>x.path==="Sancti/05-04");
+  for(const language of ["la","en","fr"]){
+   assert.equal(original?.languages?.[language]?.sections?.[
+    "Oratio (nisi rubrica cisterciensis)"]?.lineCount,2,
+    "Original Roman conditional Collect source not independently present: "+language);
+   assert.equal(original?.languages?.[language]?.sections?.Oratio?.lineCount,0,
+    "A competing bare Oratio source must prevent this narrow restoration");
+  }
+ }
 }
 assert.equal(report.cases.find(x=>x.date==="2026-10-08").recoveredFR.ready,true,
  "Bridget French inherited source recovered by existing reader");
