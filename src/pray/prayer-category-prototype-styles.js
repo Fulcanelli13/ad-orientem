@@ -13,6 +13,48 @@ const PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS=String.raw`
  background:transparent!important;
 }
 `;
+const PRAYER_CATEGORY_P0_POLISH_CSS=String.raw`
+/* Compact missal-like treatment of short source-owned shelves. The category
+ * artwork and numbered prayer list remain the approved presentation. */
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorDescription{
+ box-sizing:border-box;max-width:850px;margin:0 auto 10px;
+ padding:10px clamp(20px,7vw,60px) 0;
+ text-align:left;font:400 15px/1.5 var(--ao-font-liturgical,Georgia,serif)!important;
+ color:#c3bcb2;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCoverFallback{
+ display:none!important;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover[data-ao-art-binding="editorial-pending"]{
+ background:linear-gradient(138deg,#282c33,#14181f 66%,#0c1016);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters{
+ margin-bottom:10px;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext{
+ position:static!important;max-width:850px;margin:18px auto 32px;
+ padding:0 clamp(20px,7vw,60px);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext details{
+ position:static!important;max-width:100%;border-top:1px solid rgba(218,198,166,.27);
+ color:#c6bead;background:transparent;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext summary{
+ min-height:44px;padding:12px 0;cursor:pointer;
+ font:400 14px/1.35 var(--ao-font-liturgical,Georgia,serif);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext details:not([open])>*:not(summary){display:none!important}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto figcaption{
+ top:96px!important;right:12px!important;left:auto!important;bottom:auto!important;
+ max-width:118px!important;max-height:62px;overflow:auto;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head .aoP435930Back{
+ box-shadow:0 2px 10px rgba(0,0,0,.28)!important;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head .aoP435930Back:focus-visible{
+ outline:2px solid #e2c68e!important;outline-offset:2px;
+}
+`;
 const PRAYER_CATEGORY_SOURCE_CREDIT_CSS=String.raw`
 /* A cover retains its real source link. Never leave artist attribution
  * as near-black text inside the bottom title gradient. */
@@ -33,7 +75,7 @@ export function installPrayerCategoryPrototypeStyles(doc=globalThis.document){
  if(!doc?.head||doc.getElementById("ao-prayer-category-prototype-css"))return false;
  const node=doc.createElement("style");
  node.id="ao-prayer-category-prototype-css";
- node.textContent=PRAYER_CATEGORY_PROTOTYPE_CSS+PRAYER_CATEGORY_REFINEMENT_CSS+PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS+PRAYER_CATEGORY_SOURCE_CREDIT_CSS;
+ node.textContent=PRAYER_CATEGORY_PROTOTYPE_CSS+PRAYER_CATEGORY_REFINEMENT_CSS+PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS+PRAYER_CATEGORY_SOURCE_CREDIT_CSS+PRAYER_CATEGORY_P0_POLISH_CSS;
  doc.head.append(node);
  return true;
 }
