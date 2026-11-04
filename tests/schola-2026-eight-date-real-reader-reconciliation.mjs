@@ -168,8 +168,10 @@ for(const t of [...ordinary.map(x=>({...x,kind:"ORDINARY"})),...special.map(x=>(
   assert.equal(row.readerDisposition,"ACTUAL_EXISTING_READER_RECOVERY_AND_ADAPTER");
   assert.equal(row.readerSourcePath,t.sourcePath,t.date+" recovery changed selected Mass");
   for(const lang of ["en","fr"]){
-   assert.equal(row.raw[lang].ready,false,
-    t.date+" not a held raw Schola projection; review historic audit assumptions");
+   const expectedRawReady=t.date==="2026-03-06"||
+     (t.date==="2026-10-08"&&lang==="fr");
+   assert.equal(row.raw[lang].ready,expectedRawReady,
+    t.date+":"+lang+" unexpected raw Schola source projection status");
    assert.ok(row.raw[lang].missing.every(s=>
     ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(s)),
     t.date+" raw hold has a non-oration source defect");
