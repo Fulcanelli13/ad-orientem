@@ -48,7 +48,7 @@ assert.equal(review.reduce((n,p)=>n+p.candidates.length,0),119);
 assert.equal(review.filter(p=>p.candidates.length).length,37);
 const altoetting=review.find(p=>p.id==="place:DE:friedhofskirche-st-michael-altoetting");
 assert.equal(altoetting.candidates.filter(f=>f.round18).length,15);
-assert.ok(altoetting.candidates.every(f=>!f.publicationAuthorized&& !f.originalVerified));
+assert.ok(altoetting.candidates.every(f=>!f.publicationAuthorized && f.originalVerified && f.audit?.status==="ORIGINAL_INTEGRITY_PASS_USER_RIGHTS_AND_VISUAL_APPROVAL_REQUIRED"));
 const plaque=review.find(p=>p.id==="place:AU:marian-valley");
 assert.equal(plaque.candidates.length,1);
 assert.ok(plaque.candidates[0].visualDecision.startsWith("SECONDARY_GALLERY_"));
