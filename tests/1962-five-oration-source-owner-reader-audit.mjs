@@ -65,7 +65,7 @@ try{
    const projection=properToReaderSlots(p,{language:lang});
    return {ready:projection.ready,missing:projection.missing,
     sourceCorrections:(projection.sourceEditorialCorrections??[]).map(x=>({
-     id:x.id,slot:x.slot,sourcePath:x.sourcePath})),
+     id:x.id,slot:x.slot??null,sourceSection:x.sourceSection??x.section??null,sourcePath:x.sourcePath})),
     orations:Object.fromEntries(groups.map(([plural,single,section])=>{
      const rows=Array.isArray(p?.[plural])&&p[plural].length?
        p[plural]:p?.[single]?[p[single]]:[];
