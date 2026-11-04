@@ -1,0 +1,34 @@
+name: Schola 2026 Proper transport/source identity
+
+on:
+  pull_request:
+    paths:
+      - 'src/app/source-transport-compat.js'
+      - 'tests/source-transport-compat.mjs'
+      - 'src/mass/reader-schola-2026-proper-repeatability.js'
+      - 'tests/reader-schola-2026-proper-repeatability.mjs'
+      - 'scripts/schola/build-2026-selected-repertoire.mjs'
+      - '.github/workflows/schola-2026-proper-transport-stability.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pinned-transport-and-repeatability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact 1962 pinned-source GET-only retry, 404 and concurrency contract
+        run: |
+          node --check src/app/source-transport-compat.js
+          node tests/source-transport-compat.mjs
+      - name: Independent 17-day no-source-drift research gate
+        run: |
+          node --check src/mass/reader-schola-2026-proper-repeatability.js
+          node --check scripts/schola/build-2026-selected-repertoire.mjs
+          node tests/reader-schola-2026-proper-repeatability.mjs

@@ -2,6 +2,11 @@ export const DIVINUM_OFFICIUM_PIN="126a07f91ede04664108abb6fb20ace3f4de14b9";
 
 const RAW_DO="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/";
 const PINNED_DO=RAW_DO+DIVINUM_OFFICIUM_PIN+"/";
+// P0 #2404: verified English temporal formularies existed in the pinned
+// Divinum Officium revision, but the old Missalemeum mirror intermittently
+// answered HTTP 501. Route only those source-owner-equivalent English
+// Proper .txt paths to the authenticated fixed revision, never to HEAD.
+const MISSALEMEUM_EN_PROPER=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/English\/((?:Tempora|Sancti|Commune)\/[A-Za-z0-9_.-]+\.txt)$/i;
 const MISSALEMEUM_FR=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/Francais\/(.+)$/i;
 const DO_MISSA_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/web\/www\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
 const DO_OBSOLETE_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/obsolete\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
@@ -30,7 +35,16 @@ function canonicalLanguage(value){
 
 export function rewriteResolvedSourceUrl(input){
   const raw=String(input??"");
-  let match=raw.match(MISSALEMEUM_FR);
+  let match=raw.match(MISSALEMEUM_EN_PROPER);
+  if(match){
+    const relative=match[1];
+    // Exact English Commons usually reside under horas, except Coronatio,
+    // which is independently pinned in the Mass tree.
+    const root=/^Commune\//i.test(relative)&&!/^Commune\/Coronatio\.txt$/i.test(relative)
+      ?"horas":"missa";
+    return PINNED_DO+"web/www/"+root+"/English/"+relative;
+  }
+  match=raw.match(MISSALEMEUM_FR);
   if(match){
     const relative=match[1];
     const root=/^Commune\//i.test(relative)?"horas":"missa";
@@ -82,6 +96,30 @@ export function isLegacyFrenchWikisourceParserUrl(input){
   }catch{return false;}
 }
 
+// The legacy Mass DayResolver's MemoryTextFetcher has a 12-second per-file
+// timeout but no transient retry. 2026 audits proved that the SAME source
+// text/score hashes alternated between ready and failed across identical runs.
+// Limit retries strictly to the immutable pinned Latin/vernacular text URL;
+// never substitute a different witness, retry an authentic 404, or touch
+// unrelated browsing / Scripture requests.
+export const SOURCE_RETRYABLE_HTTP_STATUSES=Object.freeze([408,425,429,500,502,503,504]);
+const RETRYABLE_STATUS=new Set(SOURCE_RETRYABLE_HTTP_STATUSES);
+export function isPinned1962MissalTextUrl(input){
+  try{
+    const u=new URL(String(input??""));
+    return u.protocol==="https:"&&u.hostname==="raw.githubusercontent.com"&&
+      u.search===""&&u.hash===""&&
+      u.pathname.startsWith("/DivinumOfficium/divinum-officium/"+DIVINUM_OFFICIUM_PIN+"/web/www/")&&
+      /^\/(?:DivinumOfficium\/divinum-officium\/[^/]+\/web\/www\/)(?:missa|horas)\/(?:Latin|English|Francais|French)\/(?:Tempora|Sancti|Commune)\/[A-Za-z0-9_./-]+\.txt$/.test(u.pathname);
+  }catch{return false}
+}
+function safeReadMethod(input,init,win){
+  const method=String(init?.method??
+    (typeof win.Request==="function"&&input instanceof win.Request?input.method:"GET")).toUpperCase();
+  return method==="GET"&&!init?.signal&&
+    !(typeof win.Request==="function"&&input instanceof win.Request&&input.signal?.aborted);
+}
+
 function requestUrl(input){
   if(typeof input==="string")return input;
   if(typeof URL!=="undefined"&&input instanceof URL)return input.href;
@@ -93,6 +131,31 @@ export function installSourceTransportCompat(win=globalThis){
   if(win.__aoSourceTransportCompatInstalled)return win.AO_SOURCE_TRANSPORT_COMPAT_V1??Object.freeze({installed:true});
 
   const nativeFetch=win.fetch.bind(win);
+  const inFlight=new Map();
+  const counters={attempts:0,retries:0,coalesced:0,unrecovered:0};
+  const sleep=ms=>new Promise(done=>
+    (typeof win.setTimeout==="function"?win.setTimeout.bind(win):setTimeout)(done,ms));
+  const fetchPinned=async (target,input,init)=>{
+    const isRequest=typeof win.Request==="function"&&input instanceof win.Request;
+    for(let attempt=0;attempt<3;attempt++){
+      try{
+        counters.attempts++;
+        const response=await nativeFetch(
+          isRequest?new win.Request(target,input):target,init);
+        if(!RETRYABLE_STATUS.has(response?.status)||attempt===2){
+          if(RETRYABLE_STATUS.has(response?.status))counters.unrecovered++;
+          return response;
+        }
+      }catch(error){
+        if(attempt===2){counters.unrecovered++;throw error;}
+      }
+      counters.retries++;
+      // Stay within the boot fetcher's 12s deadline. Retry-after may exceed
+      // that deadline; a bounded delay is safer than a fabricated source.
+      await sleep(attempt===0?180:420);
+    }
+    throw Error("PINNED_SOURCE_RETRIES_EXHAUSTED");
+  };
   const wrapped=(input,init)=>{
     const raw=requestUrl(input);
     const rewritten=rewriteResolvedSourceUrl(raw);
@@ -118,6 +181,19 @@ export function installSourceTransportCompat(win=globalThis){
         headers:{"content-type":"text/plain; charset=utf-8","x-ao-source-compat":"known-absent"},
       }));
     }
+    if(isPinned1962MissalTextUrl(target)&&safeReadMethod(input,init,win)){
+      // Share only concurrent GETs for the same pin and return independent
+      // Response bodies. The settled Promise is removed even on rejection;
+      // an outage is NEVER cached as a permanently absent 1962 Proper.
+      let work=inFlight.get(target);
+      if(work)counters.coalesced++;
+      else{
+        work=fetchPinned(target,input,init).finally(()=>inFlight.delete(target));
+        inFlight.set(target,work);
+      }
+      return work.then(response=>typeof response?.clone==="function"
+        ?response.clone():response);
+    }
     if(!rewritten||rewritten===raw)return nativeFetch(input,init);
     try{
       if(typeof win.Request==="function"&&input instanceof win.Request){
@@ -128,8 +204,9 @@ export function installSourceTransportCompat(win=globalThis){
   };
 
   const api=Object.freeze({
-    version:"source-transport-compat-v1",
+    version:"source-transport-compat-v2-pinned-proper-transient-retry",
     installed:true,
+    sourceRetryStatus:()=>Object.freeze({...counters,activePinnedRequests:inFlight.size}),
     rewrite:rewriteResolvedSourceUrl,
     isKnownAbsent:isKnownAbsentResolvedSourceUrl,
   });

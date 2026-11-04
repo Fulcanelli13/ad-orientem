@@ -5,6 +5,10 @@ on:
     paths:
       - 'scripts/schola/capture-1961-first12-original-facsimiles.mjs'
       - 'tests/schola-1961-first12-original-facsimile-capture.mjs'
+      - 'scripts/schola/build-1961-first12-print-comparison-docket.mjs'
+      - 'tests/schola-1961-first12-print-comparison-docket.mjs'
+      - 'tests/schola-1961-first12-printed-incipits.mjs'
+      - 'data/research/schola-first12-1961-original-printed-incipits-20261104.v1.json'
       - 'src/mass/reader-proper-first12-1961-facsimile-locators.js'
       - '.github/workflows/schola-original-1961-first12-facsimiles.yml'
   workflow_dispatch:
@@ -25,6 +29,11 @@ jobs:
         run: node scripts/schola/capture-1961-first12-original-facsimiles.mjs
       - name: Verify source image SHA-256, source page and absence of music approvals
         run: node tests/schola-1961-first12-original-facsimile-capture.mjs
+      - name: Compare twelve archived GABCs to exact 1961 print identities and prepare all note-group review positions
+        run: |
+          node scripts/schola/build-1961-first12-print-comparison-docket.mjs
+          node tests/schola-1961-first12-print-comparison-docket.mjs
+          node tests/schola-1961-first12-printed-incipits.mjs
       - name: Preserve original PNGs and explicit source access holds
         if: always()
         uses: actions/upload-artifact@v4

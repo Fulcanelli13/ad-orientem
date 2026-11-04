@@ -25,6 +25,8 @@ on:
       - 'tests/reader-proper-first60-print-proof-gate.mjs'
       - 'src/mass/reader-proper-first12-1961-facsimile-locators.js'
       - 'tests/reader-proper-first12-facsimile-locators.mjs'
+      - 'tests/schola-2026-pinned-review-queue-lock.mjs'
+      - 'data/research/schola-2026-pinned-selected-mass-review-lock.v1.json'
       - 'tests/reader-proper-first60-collation-workbench.mjs'
       - 'tools/mass/proper-1961-first60-collation.html'
       - 'tests/reader-schola-selected-full-source-crosswalk.mjs'
@@ -86,6 +88,8 @@ jobs:
           node tests/reader-proper-first60-print-proof-gate.mjs
       - name: Confirm original printed 1961 facsimiles for first 12 reviewed scores
         run: node tests/reader-proper-first12-facsimile-locators.mjs
+      - name: Lock 365 pinned selected Mass identities and stable source-reviewed first60 priorities
+        run: node tests/schola-2026-pinned-review-queue-lock.mjs
       - name: Build consolidated 2026 worklist and 24 pre-Gospel print-review leads
         run: node scripts/schola/build-2026-score-publication-worklist.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets

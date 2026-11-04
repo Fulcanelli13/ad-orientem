@@ -1,0 +1,66 @@
+{
+  "schema": "ao-schola-2026-pinned-selected-mass-review-lock-v1",
+  "status": "RESEARCH_QUEUE_LOCKED_BY_ORIGINAL_SOURCE_EVIDENCE_NOT_PUBLICATION",
+  "pinnedDivinumOfficiumSourceRef": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+  "sourceAuthority": "AO_RUNTIME_V8.resolver.resolveDay",
+  "sourceScope": "2026 365 selected Masses, non-votive; every day had ready selected 1962 Proper in verified run 41792880714",
+  "generatedFromGitHubActionsRunId": 41792880714,
+  "sourceIdentity": {
+    "calendarDays": 365,
+    "ready": 365,
+    "blocked": 0,
+    "distinctSourcePaths": 300,
+    "sha256OfCanonical365SourceIdentities": "54c576ac4a849c1c707b54bd24eeb558f5397b9fe81f3e72c83c837882c923c5",
+    "canonicalFields": [
+      "date",
+      "principalId",
+      "sourcePath",
+      "selectedProperSha256"
+    ]
+  },
+  "first60Review": {
+    "candidates": 60,
+    "perFamily": {
+      "in": 20,
+      "of": 20,
+      "co": 20
+    },
+    "exactAntiphonText": 50,
+    "explicitTextVariantHolds": 10,
+    "sha256OfCanonical60SelectedScoreIdentities": "319b47a85c66ea2f025c8a6e7565ea57177c17392901d824da993d39f313088c",
+    "heldScoreIds": [
+      "GREGOBASE-1071",
+      "GREGOBASE-42",
+      "GREGOBASE-937",
+      "GREGOBASE-67",
+      "GREGOBASE-591",
+      "GREGOBASE-211",
+      "GREGOBASE-616",
+      "GREGOBASE-339",
+      "GREGOBASE-1127",
+      "GREGOBASE-1145"
+    ],
+    "priorityFirst12": [
+      "GREGOBASE-475",
+      "GREGOBASE-782",
+      "GREGOBASE-918",
+      "GREGOBASE-403",
+      "GREGOBASE-1147",
+      "GREGOBASE-182",
+      "GREGOBASE-265",
+      "GREGOBASE-464",
+      "GREGOBASE-95",
+      "GREGOBASE-1136",
+      "GREGOBASE-1165",
+      "GREGOBASE-1271"
+    ]
+  },
+  "musicalPublication": {
+    "verifiedPrintedPitches": 0,
+    "verifiedPrintedNeumes": 0,
+    "verifiedUnderlayGroups": 0,
+    "approvedScores": 0,
+    "publicScores": 0
+  },
+  "rule": "All source owner/hash and first60 ranking changes require explicit documented re-audit; stable queue is not approved musical notation"
+}
