@@ -35,6 +35,9 @@ const OFFLINE_CRITICAL_LAZY_R17=new URL("src/mass/reader-native-preview.js",BASE
 // Home. Both must be in the verified snapshot before any offline Mass start.
 const OFFLINE_CRITICAL_R17_STAGE=new URL("src/mass/reader-special-stage.js",BASE).href;
 const OFFLINE_CRITICAL_R17_STAGE_CSS=new URL("src/mass/reader-special-stage-styles.js",BASE).href;
+// The Bible reader is now first-use dynamic, but a fresh disconnected session
+// must retain its exact source-backed reader and static ESM dependency graph.
+const OFFLINE_CRITICAL_SCRIPTURE_READER=new URL("src/scripture/library.js",BASE).href;
 // The first-use Angelus cinematic is a local, approved work, not a network image.
 const OFFLINE_CRITICAL_ANGELUS_ART=new URL("assets/pray/angelus/tanner-annunciation-1898.webp",BASE).href;
 
@@ -137,7 +140,8 @@ async function stageSnapshot(){
   // both the HTML and an ESM/CSS import refer to it. Keep queue identity
   // distinct from actual certified resources (which are still hashed).
   const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,
-   OFFLINE_CRITICAL_LAZY_R17,OFFLINE_CRITICAL_R17_STAGE,OFFLINE_CRITICAL_R17_STAGE_CSS])];
+   OFFLINE_CRITICAL_LAZY_R17,OFFLINE_CRITICAL_R17_STAGE,OFFLINE_CRITICAL_R17_STAGE_CSS,
+   OFFLINE_CRITICAL_SCRIPTURE_READER])];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
